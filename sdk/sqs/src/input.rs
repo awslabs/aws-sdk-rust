@@ -18,6 +18,8 @@ pub mod add_permission_input {
             self.queue_url = Some(input.into());
             self
         }
+        /// <p>The URL of the Amazon SQS queue to which permissions are added.</p>
+        /// <p>Queue URLs and names are case-sensitive.</p>
         pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_url = input;
             self
@@ -27,16 +29,27 @@ pub mod add_permission_input {
             self.label = Some(input.into());
             self
         }
+        /// <p>The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>). Maximum 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.label = input;
             self
         }
+        /// Appends an item to `aws_account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_aws_account_ids`](Self::set_aws_account_ids).
+        ///
+        /// <p>The account numbers of the <a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a> who are to receive
+        /// permission. For information about locating the account identification, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
+        /// Guide</i>.</p>
         pub fn aws_account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.aws_account_ids.unwrap_or_default();
             v.push(input.into());
             self.aws_account_ids = Some(v);
             self
         }
+        /// <p>The account numbers of the <a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a> who are to receive
+        /// permission. For information about locating the account identification, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
+        /// Guide</i>.</p>
         pub fn set_aws_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -44,12 +57,26 @@ pub mod add_permission_input {
             self.aws_account_ids = input;
             self
         }
+        /// Appends an item to `actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>The action the client wants to allow for the specified principal. Valid values: the name of any action or <code>*</code>.</p>
+        /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a>
+        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>,
+        /// <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</p>
         pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
             self.actions = Some(v);
             self
         }
+        /// <p>The action the client wants to allow for the specified principal. Valid values: the name of any action or <code>*</code>.</p>
+        /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a>
+        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>,
+        /// <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -60,8 +87,10 @@ pub mod add_permission_input {
         /// Consumes the builder and constructs a [`AddPermissionInput`](crate::input::AddPermissionInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::AddPermissionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::AddPermissionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::AddPermissionInput {
                 queue_url: self.queue_url,
                 label: self.label,
@@ -82,16 +111,16 @@ impl AddPermissionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AddPermission,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AddPermissionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -99,7 +128,7 @@ impl AddPermissionInput {
         fn update_http_builder(
             input: &crate::input::AddPermissionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -108,24 +137,26 @@ impl AddPermissionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AddPermissionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_add_permission(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -148,25 +179,27 @@ impl AddPermissionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::AddPermission::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "AddPermission",
-                    "sqs",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AddPermission::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AddPermission",
+            "sqs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -197,6 +230,8 @@ pub mod change_message_visibility_input {
             self.queue_url = Some(input.into());
             self
         }
+        /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
+        /// <p>Queue URLs and names are case-sensitive.</p>
         pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_url = input;
             self
@@ -208,6 +243,9 @@ pub mod change_message_visibility_input {
             self.receipt_handle = Some(input.into());
             self
         }
+        /// <p>The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code>
+        /// <a>ReceiveMessage</a>
+        /// </code> action.</p>
         pub fn set_receipt_handle(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -220,6 +258,7 @@ pub mod change_message_visibility_input {
             self.visibility_timeout = Some(input);
             self
         }
+        /// <p>The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
         pub fn set_visibility_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.visibility_timeout = input;
             self
@@ -229,7 +268,7 @@ pub mod change_message_visibility_input {
             self,
         ) -> std::result::Result<
             crate::input::ChangeMessageVisibilityInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ChangeMessageVisibilityInput {
                 queue_url: self.queue_url,
@@ -251,16 +290,16 @@ impl ChangeMessageVisibilityInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ChangeMessageVisibility,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ChangeMessageVisibilityInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -268,7 +307,7 @@ impl ChangeMessageVisibilityInput {
         fn update_http_builder(
             input: &crate::input::ChangeMessageVisibilityInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -277,27 +316,29 @@ impl ChangeMessageVisibilityInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ChangeMessageVisibilityInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_change_message_visibility(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -320,15 +361,15 @@ impl ChangeMessageVisibilityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ChangeMessageVisibility::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ChangeMessageVisibility",
             "sqs",
         ));
@@ -337,10 +378,10 @@ impl ChangeMessageVisibilityInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -372,10 +413,17 @@ pub mod change_message_visibility_batch_input {
             self.queue_url = Some(input.into());
             self
         }
+        /// <p>The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
+        /// <p>Queue URLs and names are case-sensitive.</p>
         pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_url = input;
             self
         }
+        /// Appends an item to `entries`.
+        ///
+        /// To override the contents of this collection use [`set_entries`](Self::set_entries).
+        ///
+        /// <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
         pub fn entries(
             mut self,
             input: impl Into<crate::model::ChangeMessageVisibilityBatchRequestEntry>,
@@ -385,6 +433,7 @@ pub mod change_message_visibility_batch_input {
             self.entries = Some(v);
             self
         }
+        /// <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
         pub fn set_entries(
             mut self,
             input: std::option::Option<
@@ -399,7 +448,7 @@ pub mod change_message_visibility_batch_input {
             self,
         ) -> std::result::Result<
             crate::input::ChangeMessageVisibilityBatchInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ChangeMessageVisibilityBatchInput {
                 queue_url: self.queue_url,
@@ -420,16 +469,16 @@ impl ChangeMessageVisibilityBatchInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ChangeMessageVisibilityBatch,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ChangeMessageVisibilityBatchInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -437,7 +486,7 @@ impl ChangeMessageVisibilityBatchInput {
         fn update_http_builder(
             input: &crate::input::ChangeMessageVisibilityBatchInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -446,25 +495,25 @@ impl ChangeMessageVisibilityBatchInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ChangeMessageVisibilityBatchInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_change_message_visibility_batch(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_change_message_visibility_batch(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -487,15 +536,15 @@ impl ChangeMessageVisibilityBatchInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ChangeMessageVisibilityBatch::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ChangeMessageVisibilityBatch",
             "sqs",
         ));
@@ -504,10 +553,10 @@ impl ChangeMessageVisibilityBatchInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -553,10 +602,55 @@ pub mod create_queue_input {
             self.queue_name = Some(input.into());
             self
         }
+        /// <p>The name of the new queue. The following limits apply to this name:</p>
+        /// <ul>
+        /// <li>
+        /// <p>A queue name can have up to 80 characters.</p>               
+        /// </li>
+        /// <li>
+        /// <p>Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>A FIFO queue name must end with the <code>.fifo</code> suffix.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Queue URLs and names are case-sensitive.</p>
         pub fn set_queue_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_name = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
+        /// Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        ///
+        /// <p>When you use queue tags, keep the following guidelines in mind:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Adding more than 50 tags to a queue isn't recommended.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tags are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For a full list of tag restrictions, see
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas related to queues</a>
+        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <note>
+        /// <p>To be able to tag a queue on creation, you must have the
+        /// <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
+        /// <p>Cross-account permissions don't apply to this action. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// </note>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -567,6 +661,34 @@ pub mod create_queue_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
+        /// Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        ///
+        /// <p>When you use queue tags, keep the following guidelines in mind:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Adding more than 50 tags to a queue isn't recommended.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tags are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For a full list of tag restrictions, see
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas related to queues</a>
+        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <note>
+        /// <p>To be able to tag a queue on creation, you must have the
+        /// <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
+        /// <p>Cross-account permissions don't apply to this action. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// </note>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -576,6 +698,217 @@ pub mod create_queue_input {
             self.tags = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>A map of attributes with their corresponding values.</p>
+        /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateQueue</code> action uses:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). Default: 0.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days).
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code>
+        /// <a>ReceiveMessage</a>
+        /// </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter queues:</a>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality
+        /// of the source queue as a JSON object. The parameters are as follows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to
+        /// which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being
+        /// moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
+        /// for a queue, Amazon SQS moves the message to the dead-letter-queue.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RedriveAllowPolicy</code> – The string that includes the parameters for the permissions for the dead-letter
+        /// queue redrive permission and which source queues can specify dead-letter queues as a JSON object. The parameters are as follows:</p>              
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>redrivePermission</code> – The permission type that defines which source queues can
+        /// specify the current queue as the dead-letter queue. Valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services account in the same Region can
+        /// specify this queue as the dead-letter queue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>denyAll</code> – No source queues can specify this queue as the dead-letter
+        /// queue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>byQueue</code> – Only queues specified by the <code>sourceQueueArns</code> parameter can specify
+        /// this queue as the dead-letter queue.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source queues that can specify
+        /// this queue as the dead-letter queue and redrive messages. You can specify this parameter only when the
+        /// <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can specify up to 10 source queue ARNs.
+        /// To allow more than 10 source queues to specify dead-letter queues, set the <code>redrivePermission</code> parameter
+        /// to <code>allowAll</code>.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>The dead-letter queue of a
+        /// FIFO queue must also be a FIFO queue. Similarly, the dead-letter
+        /// queue of a standard queue must also be a standard queue.</p>
+        /// </note>
+        ///
+        ///
+        ///
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.
+        /// While the alias of the Amazon Web Services managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i>
+        /// </code>.
+        /// For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt
+        /// or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security
+        /// but results in more calls to KMS which might incur charges after Free Tier. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>FifoQueue</code> – Designates a queue as FIFO. Valid values are <code>true</code> and <code>false</code>. If you don't specify the <code>FifoQueue</code> attribute, Amazon SQS creates a standard queue.
+        /// You can provide this attribute only during queue creation. You can't change it for an existing queue.
+        /// When you set this attribute, you must also provide the <code>MessageGroupId</code> for your messages explicitly.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a>
+        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication. Valid values are <code>true</code> and <code>false</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the
+        /// <i>Amazon SQS Developer Guide</i>. Note the following:
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue,
+        /// Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set,
+        /// the action fails with an error.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates
+        /// and only one copy of the message is delivered.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same
+        /// as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>  
+        ///
+        ///
+        /// <p>The following attributes apply only to
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput
+        /// for FIFO queues</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the
+        /// message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput
+        /// quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>.
+        /// The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>To enable high throughput for FIFO queues, do the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you set these attributes to anything other than the values shown for enabling high
+        /// throughput, normal throughput is in effect and deduplication occurs as specified.</p>
+        /// <p>For information on throughput quotas,
+        /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a>
+        /// in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn attributes(
             mut self,
             k: impl Into<crate::model::QueueAttributeName>,
@@ -586,6 +919,213 @@ pub mod create_queue_input {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>A map of attributes with their corresponding values.</p>
+        /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateQueue</code> action uses:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). Default: 0.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days).
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code>
+        /// <a>ReceiveMessage</a>
+        /// </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter queues:</a>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality
+        /// of the source queue as a JSON object. The parameters are as follows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to
+        /// which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being
+        /// moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
+        /// for a queue, Amazon SQS moves the message to the dead-letter-queue.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RedriveAllowPolicy</code> – The string that includes the parameters for the permissions for the dead-letter
+        /// queue redrive permission and which source queues can specify dead-letter queues as a JSON object. The parameters are as follows:</p>              
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>redrivePermission</code> – The permission type that defines which source queues can
+        /// specify the current queue as the dead-letter queue. Valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services account in the same Region can
+        /// specify this queue as the dead-letter queue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>denyAll</code> – No source queues can specify this queue as the dead-letter
+        /// queue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>byQueue</code> – Only queues specified by the <code>sourceQueueArns</code> parameter can specify
+        /// this queue as the dead-letter queue.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source queues that can specify
+        /// this queue as the dead-letter queue and redrive messages. You can specify this parameter only when the
+        /// <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can specify up to 10 source queue ARNs.
+        /// To allow more than 10 source queues to specify dead-letter queues, set the <code>redrivePermission</code> parameter
+        /// to <code>allowAll</code>.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>The dead-letter queue of a
+        /// FIFO queue must also be a FIFO queue. Similarly, the dead-letter
+        /// queue of a standard queue must also be a standard queue.</p>
+        /// </note>
+        ///
+        ///
+        ///
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.
+        /// While the alias of the Amazon Web Services managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i>
+        /// </code>.
+        /// For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt
+        /// or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security
+        /// but results in more calls to KMS which might incur charges after Free Tier. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>FifoQueue</code> – Designates a queue as FIFO. Valid values are <code>true</code> and <code>false</code>. If you don't specify the <code>FifoQueue</code> attribute, Amazon SQS creates a standard queue.
+        /// You can provide this attribute only during queue creation. You can't change it for an existing queue.
+        /// When you set this attribute, you must also provide the <code>MessageGroupId</code> for your messages explicitly.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a>
+        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication. Valid values are <code>true</code> and <code>false</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the
+        /// <i>Amazon SQS Developer Guide</i>. Note the following:
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue,
+        /// Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set,
+        /// the action fails with an error.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates
+        /// and only one copy of the message is delivered.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same
+        /// as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>  
+        ///
+        ///
+        /// <p>The following attributes apply only to
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput
+        /// for FIFO queues</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the
+        /// message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput
+        /// quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>.
+        /// The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>To enable high throughput for FIFO queues, do the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you set these attributes to anything other than the values shown for enabling high
+        /// throughput, normal throughput is in effect and deduplication occurs as specified.</p>
+        /// <p>For information on throughput quotas,
+        /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a>
+        /// in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -598,8 +1138,10 @@ pub mod create_queue_input {
         /// Consumes the builder and constructs a [`CreateQueueInput`](crate::input::CreateQueueInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateQueueInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateQueueInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateQueueInput {
                 queue_name: self.queue_name,
                 tags: self.tags,
@@ -619,16 +1161,16 @@ impl CreateQueueInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateQueue,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateQueueInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -636,7 +1178,7 @@ impl CreateQueueInput {
         fn update_http_builder(
             input: &crate::input::CreateQueueInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -645,24 +1187,26 @@ impl CreateQueueInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateQueueInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_queue(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -685,22 +1229,27 @@ impl CreateQueueInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateQueue::new())
-                .with_metadata(smithy_http::operation::Metadata::new("CreateQueue", "sqs"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateQueue::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateQueue",
+            "sqs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -730,6 +1279,8 @@ pub mod delete_message_input {
             self.queue_url = Some(input.into());
             self
         }
+        /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
+        /// <p>Queue URLs and names are case-sensitive.</p>
         pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_url = input;
             self
@@ -739,6 +1290,7 @@ pub mod delete_message_input {
             self.receipt_handle = Some(input.into());
             self
         }
+        /// <p>The receipt handle associated with the message to delete.</p>
         pub fn set_receipt_handle(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -749,8 +1301,10 @@ pub mod delete_message_input {
         /// Consumes the builder and constructs a [`DeleteMessageInput`](crate::input::DeleteMessageInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteMessageInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteMessageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteMessageInput {
                 queue_url: self.queue_url,
                 receipt_handle: self.receipt_handle,
@@ -769,16 +1323,16 @@ impl DeleteMessageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteMessage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteMessageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -786,7 +1340,7 @@ impl DeleteMessageInput {
         fn update_http_builder(
             input: &crate::input::DeleteMessageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -795,24 +1349,26 @@ impl DeleteMessageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteMessageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_message(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -835,25 +1391,27 @@ impl DeleteMessageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteMessage::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteMessage",
-                    "sqs",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteMessage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteMessage",
+            "sqs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -884,10 +1442,17 @@ pub mod delete_message_batch_input {
             self.queue_url = Some(input.into());
             self
         }
+        /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
+        /// <p>Queue URLs and names are case-sensitive.</p>
         pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_url = input;
             self
         }
+        /// Appends an item to `entries`.
+        ///
+        /// To override the contents of this collection use [`set_entries`](Self::set_entries).
+        ///
+        /// <p>A list of receipt handles for the messages to be deleted.</p>
         pub fn entries(
             mut self,
             input: impl Into<crate::model::DeleteMessageBatchRequestEntry>,
@@ -897,6 +1462,7 @@ pub mod delete_message_batch_input {
             self.entries = Some(v);
             self
         }
+        /// <p>A list of receipt handles for the messages to be deleted.</p>
         pub fn set_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeleteMessageBatchRequestEntry>>,
@@ -909,7 +1475,7 @@ pub mod delete_message_batch_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteMessageBatchInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteMessageBatchInput {
                 queue_url: self.queue_url,
@@ -929,16 +1495,16 @@ impl DeleteMessageBatchInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteMessageBatch,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteMessageBatchInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -946,7 +1512,7 @@ impl DeleteMessageBatchInput {
         fn update_http_builder(
             input: &crate::input::DeleteMessageBatchInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -955,25 +1521,27 @@ impl DeleteMessageBatchInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteMessageBatchInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_message_batch(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -996,15 +1564,15 @@ impl DeleteMessageBatchInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteMessageBatch::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteMessageBatch",
             "sqs",
         ));
@@ -1013,10 +1581,10 @@ impl DeleteMessageBatchInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1045,6 +1613,8 @@ pub mod delete_queue_input {
             self.queue_url = Some(input.into());
             self
         }
+        /// <p>The URL of the Amazon SQS queue to delete.</p>
+        /// <p>Queue URLs and names are case-sensitive.</p>
         pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_url = input;
             self
@@ -1052,8 +1622,10 @@ pub mod delete_queue_input {
         /// Consumes the builder and constructs a [`DeleteQueueInput`](crate::input::DeleteQueueInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteQueueInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteQueueInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteQueueInput {
                 queue_url: self.queue_url,
             })
@@ -1071,16 +1643,16 @@ impl DeleteQueueInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteQueue,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteQueueInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1088,7 +1660,7 @@ impl DeleteQueueInput {
         fn update_http_builder(
             input: &crate::input::DeleteQueueInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1097,24 +1669,26 @@ impl DeleteQueueInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteQueueInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_queue(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1137,22 +1711,27 @@ impl DeleteQueueInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteQueue::new())
-                .with_metadata(smithy_http::operation::Metadata::new("DeleteQueue", "sqs"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteQueue::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteQueue",
+            "sqs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1183,10 +1762,231 @@ pub mod get_queue_attributes_input {
             self.queue_url = Some(input.into());
             self
         }
+        /// <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
+        /// <p>Queue URLs and names are case-sensitive.</p>
         pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_url = input;
             self
         }
+        /// Appends an item to `attribute_names`.
+        ///
+        /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
+        ///
+        /// <p>A list of attributes for which to retrieve information.</p>
+        /// <p>The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this parameter,
+        /// the request returns empty results.</p>
+        /// <note>
+        /// <p>In the future, new attributes might be added. If you write code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully.</p>
+        /// </note>
+        /// <p>The following attributes are supported:</p>
+        /// <important>
+        /// <p>The <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>,
+        /// and <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve consistency
+        /// until at least 1 minute after the producers stop sending messages. This period is required for
+        /// the queue metadata to reach eventual consistency. </p>
+        /// </important>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>All</code> – Returns all values. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ApproximateNumberOfMessages</code> – Returns the approximate number of
+        /// messages available for retrieval from the queue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ApproximateNumberOfMessagesDelayed</code> – Returns the approximate number
+        /// of messages in the queue that are delayed and not available for reading
+        /// immediately. This can happen when the queue is configured as a delay queue or
+        /// when a message has been sent with a delay parameter.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ApproximateNumberOfMessagesNotVisible</code> – Returns the approximate
+        /// number of messages that are in flight. Messages are considered to be
+        /// <i>in flight</i> if they have been sent to a client but have
+        /// not yet been deleted or have not yet reached the end of their visibility window. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CreatedTimestamp</code> – Returns the time when the queue was created in
+        /// seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch
+        /// time</a>).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DelaySeconds</code> – Returns the default delay on the queue in
+        /// seconds.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LastModifiedTimestamp</code> – Returns the time when the queue was last
+        /// changed in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch
+        /// time</a>).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MaximumMessageSize</code> – Returns the limit of how many bytes a message
+        /// can contain before Amazon SQS rejects it.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MessageRetentionPeriod</code> – Returns the length of time, in seconds,
+        /// for which Amazon SQS retains a message.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Policy</code> – Returns the policy of the queue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>QueueArn</code> – Returns the Amazon resource name (ARN) of the
+        /// queue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ReceiveMessageWaitTimeSeconds</code> – Returns the length of time, in
+        /// seconds, for which the <code>ReceiveMessage</code> action waits for a message to
+        /// arrive. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter queues:</a>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality
+        /// of the source queue as a JSON object. The parameters are as follows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to
+        /// which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being
+        /// moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
+        /// for a queue, Amazon SQS moves the message to the dead-letter-queue.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RedriveAllowPolicy</code> – The string that includes the parameters for the permissions for the dead-letter
+        /// queue redrive permission and which source queues can specify dead-letter queues as a JSON object. The parameters are as follows:</p>              
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>redrivePermission</code> – The permission type that defines which source queues can
+        /// specify the current queue as the dead-letter queue. Valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services account in the same Region can
+        /// specify this queue as the dead-letter queue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>denyAll</code> – No source queues can specify this queue as the dead-letter
+        /// queue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>byQueue</code> – Only queues specified by the <code>sourceQueueArns</code> parameter can specify
+        /// this queue as the dead-letter queue.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source queues that can specify
+        /// this queue as the dead-letter queue and redrive messages. You can specify this parameter only when the
+        /// <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can specify up to 10 source queue ARNs.
+        /// To allow more than 10 source queues to specify dead-letter queues, set the <code>redrivePermission</code> parameter
+        /// to <code>allowAll</code>.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>The dead-letter queue of a
+        /// FIFO queue must also be a FIFO queue. Similarly, the dead-letter
+        /// queue of a standard queue must also be a standard queue.</p>
+        /// </note>
+        ///
+        ///
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <note>
+        /// <p>To determine whether a queue is <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>, you can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.</p>
+        /// </note>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <p>The following attributes apply only to
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput
+        /// for FIFO queues</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the
+        /// message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput
+        /// quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>.
+        /// The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>To enable high throughput for FIFO queues, do the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you set these attributes to anything other than the values shown for enabling high
+        /// throughput, normal throughput is in effect and deduplication occurs as specified.</p>
+        /// <p>For information on throughput quotas,
+        /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a>
+        /// in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn attribute_names(
             mut self,
             input: impl Into<crate::model::QueueAttributeName>,
@@ -1196,6 +1996,221 @@ pub mod get_queue_attributes_input {
             self.attribute_names = Some(v);
             self
         }
+        /// <p>A list of attributes for which to retrieve information.</p>
+        /// <p>The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this parameter,
+        /// the request returns empty results.</p>
+        /// <note>
+        /// <p>In the future, new attributes might be added. If you write code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully.</p>
+        /// </note>
+        /// <p>The following attributes are supported:</p>
+        /// <important>
+        /// <p>The <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>,
+        /// and <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve consistency
+        /// until at least 1 minute after the producers stop sending messages. This period is required for
+        /// the queue metadata to reach eventual consistency. </p>
+        /// </important>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>All</code> – Returns all values. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ApproximateNumberOfMessages</code> – Returns the approximate number of
+        /// messages available for retrieval from the queue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ApproximateNumberOfMessagesDelayed</code> – Returns the approximate number
+        /// of messages in the queue that are delayed and not available for reading
+        /// immediately. This can happen when the queue is configured as a delay queue or
+        /// when a message has been sent with a delay parameter.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ApproximateNumberOfMessagesNotVisible</code> – Returns the approximate
+        /// number of messages that are in flight. Messages are considered to be
+        /// <i>in flight</i> if they have been sent to a client but have
+        /// not yet been deleted or have not yet reached the end of their visibility window. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CreatedTimestamp</code> – Returns the time when the queue was created in
+        /// seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch
+        /// time</a>).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DelaySeconds</code> – Returns the default delay on the queue in
+        /// seconds.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LastModifiedTimestamp</code> – Returns the time when the queue was last
+        /// changed in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch
+        /// time</a>).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MaximumMessageSize</code> – Returns the limit of how many bytes a message
+        /// can contain before Amazon SQS rejects it.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MessageRetentionPeriod</code> – Returns the length of time, in seconds,
+        /// for which Amazon SQS retains a message.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Policy</code> – Returns the policy of the queue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>QueueArn</code> – Returns the Amazon resource name (ARN) of the
+        /// queue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ReceiveMessageWaitTimeSeconds</code> – Returns the length of time, in
+        /// seconds, for which the <code>ReceiveMessage</code> action waits for a message to
+        /// arrive. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter queues:</a>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality
+        /// of the source queue as a JSON object. The parameters are as follows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to
+        /// which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being
+        /// moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
+        /// for a queue, Amazon SQS moves the message to the dead-letter-queue.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RedriveAllowPolicy</code> – The string that includes the parameters for the permissions for the dead-letter
+        /// queue redrive permission and which source queues can specify dead-letter queues as a JSON object. The parameters are as follows:</p>              
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>redrivePermission</code> – The permission type that defines which source queues can
+        /// specify the current queue as the dead-letter queue. Valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services account in the same Region can
+        /// specify this queue as the dead-letter queue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>denyAll</code> – No source queues can specify this queue as the dead-letter
+        /// queue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>byQueue</code> – Only queues specified by the <code>sourceQueueArns</code> parameter can specify
+        /// this queue as the dead-letter queue.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source queues that can specify
+        /// this queue as the dead-letter queue and redrive messages. You can specify this parameter only when the
+        /// <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can specify up to 10 source queue ARNs.
+        /// To allow more than 10 source queues to specify dead-letter queues, set the <code>redrivePermission</code> parameter
+        /// to <code>allowAll</code>.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>The dead-letter queue of a
+        /// FIFO queue must also be a FIFO queue. Similarly, the dead-letter
+        /// queue of a standard queue must also be a standard queue.</p>
+        /// </note>
+        ///
+        ///
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <note>
+        /// <p>To determine whether a queue is <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>, you can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.</p>
+        /// </note>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <p>The following attributes apply only to
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput
+        /// for FIFO queues</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the
+        /// message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput
+        /// quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>.
+        /// The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>To enable high throughput for FIFO queues, do the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you set these attributes to anything other than the values shown for enabling high
+        /// throughput, normal throughput is in effect and deduplication occurs as specified.</p>
+        /// <p>For information on throughput quotas,
+        /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a>
+        /// in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn set_attribute_names(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QueueAttributeName>>,
@@ -1208,7 +2223,7 @@ pub mod get_queue_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::GetQueueAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetQueueAttributesInput {
                 queue_url: self.queue_url,
@@ -1228,16 +2243,16 @@ impl GetQueueAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetQueueAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetQueueAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1245,7 +2260,7 @@ impl GetQueueAttributesInput {
         fn update_http_builder(
             input: &crate::input::GetQueueAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1254,25 +2269,27 @@ impl GetQueueAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetQueueAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_queue_attributes(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1295,15 +2312,15 @@ impl GetQueueAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetQueueAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetQueueAttributes",
             "sqs",
         ));
@@ -1312,10 +2329,10 @@ impl GetQueueAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1345,6 +2362,8 @@ pub mod get_queue_url_input {
             self.queue_name = Some(input.into());
             self
         }
+        /// <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
+        /// <p>Queue URLs and names are case-sensitive.</p>
         pub fn set_queue_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_name = input;
             self
@@ -1354,6 +2373,7 @@ pub mod get_queue_url_input {
             self.queue_owner_aws_account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the account that created the queue.</p>
         pub fn set_queue_owner_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1364,8 +2384,10 @@ pub mod get_queue_url_input {
         /// Consumes the builder and constructs a [`GetQueueUrlInput`](crate::input::GetQueueUrlInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetQueueUrlInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetQueueUrlInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetQueueUrlInput {
                 queue_name: self.queue_name,
                 queue_owner_aws_account_id: self.queue_owner_aws_account_id,
@@ -1384,16 +2406,16 @@ impl GetQueueUrlInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetQueueUrl,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetQueueUrlInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1401,7 +2423,7 @@ impl GetQueueUrlInput {
         fn update_http_builder(
             input: &crate::input::GetQueueUrlInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1410,26 +2432,26 @@ impl GetQueueUrlInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetQueueUrlInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_queue_url(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1452,22 +2474,27 @@ impl GetQueueUrlInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetQueueUrl::new())
-                .with_metadata(smithy_http::operation::Metadata::new("GetQueueUrl", "sqs"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetQueueUrl::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetQueueUrl",
+            "sqs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1498,6 +2525,8 @@ pub mod list_dead_letter_source_queues_input {
             self.queue_url = Some(input.into());
             self
         }
+        /// <p>The URL of a dead-letter queue.</p>
+        /// <p>Queue URLs and names are case-sensitive.</p>
         pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_url = input;
             self
@@ -1507,6 +2536,7 @@ pub mod list_dead_letter_source_queues_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Pagination token to request the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1517,6 +2547,8 @@ pub mod list_dead_letter_source_queues_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to include in the response. Value range is 1 to 1000.
+        /// You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1526,7 +2558,7 @@ pub mod list_dead_letter_source_queues_input {
             self,
         ) -> std::result::Result<
             crate::input::ListDeadLetterSourceQueuesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListDeadLetterSourceQueuesInput {
                 queue_url: self.queue_url,
@@ -1548,16 +2580,16 @@ impl ListDeadLetterSourceQueuesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListDeadLetterSourceQueues,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListDeadLetterSourceQueuesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1565,7 +2597,7 @@ impl ListDeadLetterSourceQueuesInput {
         fn update_http_builder(
             input: &crate::input::ListDeadLetterSourceQueuesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1574,25 +2606,25 @@ impl ListDeadLetterSourceQueuesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListDeadLetterSourceQueuesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_dead_letter_source_queues(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_dead_letter_source_queues(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1615,15 +2647,15 @@ impl ListDeadLetterSourceQueuesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListDeadLetterSourceQueues::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListDeadLetterSourceQueues",
             "sqs",
         ));
@@ -1632,10 +2664,10 @@ impl ListDeadLetterSourceQueuesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1666,6 +2698,8 @@ pub mod list_queues_input {
             self.queue_name_prefix = Some(input.into());
             self
         }
+        /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
+        /// <p>Queue URLs and names are case-sensitive.</p>
         pub fn set_queue_name_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1678,6 +2712,7 @@ pub mod list_queues_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Pagination token to request the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1688,6 +2723,8 @@ pub mod list_queues_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to include in the response. Value range is 1 to 1000.
+        /// You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1695,8 +2732,10 @@ pub mod list_queues_input {
         /// Consumes the builder and constructs a [`ListQueuesInput`](crate::input::ListQueuesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListQueuesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListQueuesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListQueuesInput {
                 queue_name_prefix: self.queue_name_prefix,
                 next_token: self.next_token,
@@ -1716,16 +2755,16 @@ impl ListQueuesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListQueues,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListQueuesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1733,7 +2772,7 @@ impl ListQueuesInput {
         fn update_http_builder(
             input: &crate::input::ListQueuesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1742,24 +2781,26 @@ impl ListQueuesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListQueuesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_queues(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1782,22 +2823,27 @@ impl ListQueuesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListQueues::new())
-                .with_metadata(smithy_http::operation::Metadata::new("ListQueues", "sqs"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListQueues::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListQueues",
+            "sqs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1825,6 +2871,7 @@ pub mod list_queue_tags_input {
             self.queue_url = Some(input.into());
             self
         }
+        /// <p>The URL of the queue.</p>
         pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_url = input;
             self
@@ -1832,8 +2879,10 @@ pub mod list_queue_tags_input {
         /// Consumes the builder and constructs a [`ListQueueTagsInput`](crate::input::ListQueueTagsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListQueueTagsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListQueueTagsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListQueueTagsInput {
                 queue_url: self.queue_url,
             })
@@ -1851,16 +2900,16 @@ impl ListQueueTagsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListQueueTags,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListQueueTagsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1868,7 +2917,7 @@ impl ListQueueTagsInput {
         fn update_http_builder(
             input: &crate::input::ListQueueTagsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1877,24 +2926,26 @@ impl ListQueueTagsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListQueueTagsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_queue_tags(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1917,25 +2968,27 @@ impl ListQueueTagsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListQueueTags::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListQueueTags",
-                    "sqs",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListQueueTags::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListQueueTags",
+            "sqs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1964,6 +3017,8 @@ pub mod purge_queue_input {
             self.queue_url = Some(input.into());
             self
         }
+        /// <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p>
+        /// <p>Queue URLs and names are case-sensitive.</p>
         pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_url = input;
             self
@@ -1971,8 +3026,10 @@ pub mod purge_queue_input {
         /// Consumes the builder and constructs a [`PurgeQueueInput`](crate::input::PurgeQueueInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::PurgeQueueInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PurgeQueueInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PurgeQueueInput {
                 queue_url: self.queue_url,
             })
@@ -1990,16 +3047,16 @@ impl PurgeQueueInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PurgeQueue,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PurgeQueueInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2007,7 +3064,7 @@ impl PurgeQueueInput {
         fn update_http_builder(
             input: &crate::input::PurgeQueueInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2016,24 +3073,26 @@ impl PurgeQueueInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PurgeQueueInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_purge_queue(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2056,22 +3115,27 @@ impl PurgeQueueInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::PurgeQueue::new())
-                .with_metadata(smithy_http::operation::Metadata::new("PurgeQueue", "sqs"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PurgeQueue::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PurgeQueue",
+            "sqs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2107,10 +3171,74 @@ pub mod receive_message_input {
             self.queue_url = Some(input.into());
             self
         }
+        /// <p>The URL of the Amazon SQS queue from which messages are received.</p>
+        /// <p>Queue URLs and names are case-sensitive.</p>
         pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_url = input;
             self
         }
+        /// Appends an item to `attribute_names`.
+        ///
+        /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
+        ///
+        /// <p>A list of attributes that need to be returned along with each message. These attributes
+        /// include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>All</code> – Returns all values.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ApproximateFirstReceiveTimestamp</code> – Returns the time the message was first received from the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ApproximateReceiveCount</code> – Returns the number of times a message has been received across all queues but not deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWSTraceHeader</code> – Returns the X-Ray trace header string.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SenderId</code>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For an IAM role, returns the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SentTimestamp</code> – Returns the time the message was sent to the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MessageDeduplicationId</code> – Returns the value provided by the
+        /// producer that calls the <code>
+        /// <a>SendMessage</a>
+        /// </code>
+        /// action.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MessageGroupId</code> – Returns the value provided by the producer that
+        /// calls the <code>
+        /// <a>SendMessage</a>
+        /// </code> action. Messages with the
+        /// same <code>MessageGroupId</code> are returned in sequence.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
+        /// </li>
+        /// </ul>
         pub fn attribute_names(
             mut self,
             input: impl Into<crate::model::QueueAttributeName>,
@@ -2120,6 +3248,64 @@ pub mod receive_message_input {
             self.attribute_names = Some(v);
             self
         }
+        /// <p>A list of attributes that need to be returned along with each message. These attributes
+        /// include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>All</code> – Returns all values.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ApproximateFirstReceiveTimestamp</code> – Returns the time the message was first received from the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ApproximateReceiveCount</code> – Returns the number of times a message has been received across all queues but not deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWSTraceHeader</code> – Returns the X-Ray trace header string.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SenderId</code>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For an IAM role, returns the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SentTimestamp</code> – Returns the time the message was sent to the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MessageDeduplicationId</code> – Returns the value provided by the
+        /// producer that calls the <code>
+        /// <a>SendMessage</a>
+        /// </code>
+        /// action.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MessageGroupId</code> – Returns the value provided by the producer that
+        /// calls the <code>
+        /// <a>SendMessage</a>
+        /// </code> action. Messages with the
+        /// same <code>MessageGroupId</code> are returned in sequence.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
+        /// </li>
+        /// </ul>
         pub fn set_attribute_names(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QueueAttributeName>>,
@@ -2127,12 +3313,58 @@ pub mod receive_message_input {
             self.attribute_names = input;
             self
         }
+        /// Appends an item to `message_attribute_names`.
+        ///
+        /// To override the contents of this collection use [`set_message_attribute_names`](Self::set_message_attribute_names).
+        ///
+        /// <p>The name of the message attribute, where <i>N</i> is the index.</p>
+        /// <ul>
+        /// <li>
+        /// <p>The name can contain alphanumeric characters and the underscore (<code>_</code>), hyphen (<code>-</code>), and period (<code>.</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>The name is case-sensitive and must be unique among all attribute names for the message.</p>
+        /// </li>
+        /// <li>
+        /// <p>The name must not start with AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any casing variants).</p>
+        /// </li>
+        /// <li>
+        /// <p>The name must not start or end with a period (<code>.</code>), and it should not have periods in succession (<code>..</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>The name can be up to 256 characters long.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request.
+        /// You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
         pub fn message_attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.message_attribute_names.unwrap_or_default();
             v.push(input.into());
             self.message_attribute_names = Some(v);
             self
         }
+        /// <p>The name of the message attribute, where <i>N</i> is the index.</p>
+        /// <ul>
+        /// <li>
+        /// <p>The name can contain alphanumeric characters and the underscore (<code>_</code>), hyphen (<code>-</code>), and period (<code>.</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>The name is case-sensitive and must be unique among all attribute names for the message.</p>
+        /// </li>
+        /// <li>
+        /// <p>The name must not start with AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any casing variants).</p>
+        /// </li>
+        /// <li>
+        /// <p>The name must not start or end with a period (<code>.</code>), and it should not have periods in succession (<code>..</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>The name can be up to 256 characters long.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request.
+        /// You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
         pub fn set_message_attribute_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2145,6 +3377,7 @@ pub mod receive_message_input {
             self.max_number_of_messages = Some(input);
             self
         }
+        /// <p>The maximum number of messages to return. Amazon SQS never returns more messages than this value (however, fewer messages might be returned). Valid values: 1 to 10. Default: 1.</p>
         pub fn set_max_number_of_messages(mut self, input: std::option::Option<i32>) -> Self {
             self.max_number_of_messages = input;
             self
@@ -2154,6 +3387,7 @@ pub mod receive_message_input {
             self.visibility_timeout = Some(input);
             self
         }
+        /// <p>The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a <code>ReceiveMessage</code> request.</p>
         pub fn set_visibility_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.visibility_timeout = input;
             self
@@ -2169,6 +3403,13 @@ pub mod receive_message_input {
             self.wait_time_seconds = Some(input);
             self
         }
+        /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
+        /// If no messages are available and the wait time expires, the call returns successfully with an empty list of messages.</p>
+        /// <important>
+        /// <p>To avoid HTTP errors, ensure that the HTTP response timeout for <code>ReceiveMessage</code>
+        /// requests is longer than the <code>WaitTimeSeconds</code> parameter. For example,
+        /// with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients. </p>
+        /// </important>
         pub fn set_wait_time_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.wait_time_seconds = input;
             self
@@ -2222,6 +3463,51 @@ pub mod receive_message_input {
             self.receive_request_attempt_id = Some(input.into());
             self
         }
+        /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
+        /// <p>The token used for deduplication of <code>ReceiveMessage</code> calls. If a networking issue occurs after a <code>ReceiveMessage</code> action, and instead of a response you receive a generic error,
+        /// it is possible to retry the same action with an identical <code>ReceiveRequestAttemptId</code> to retrieve the same set of messages, even if their visibility timeout has not yet expired.</p>
+        /// <ul>
+        /// <li>
+        /// <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes after a <code>ReceiveMessage</code> action.</p>
+        /// </li>
+        /// <li>
+        /// <p>When you set <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can provide a <code>ReceiveRequestAttemptId</code> explicitly.</p>
+        /// </li>
+        /// <li>
+        /// <p>If a caller of the <code>ReceiveMessage</code> action doesn't provide a <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a <code>ReceiveRequestAttemptId</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>It is possible to retry the <code>ReceiveMessage</code> action with the same <code>ReceiveRequestAttemptId</code> if none of the messages have been modified (deleted or had their visibility changes).</p>
+        /// </li>
+        /// <li>
+        /// <p>During a visibility timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code> return the same messages and receipt handles. If a retry occurs within the deduplication interval,
+        /// it resets the visibility timeout. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a>
+        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <important>
+        /// <p>If a caller of the <code>ReceiveMessage</code> action still processes
+        /// messages when the visibility timeout expires and messages become visible,
+        /// another worker consuming from the same queue can receive the same messages
+        /// and therefore process duplicates. Also, if a consumer whose message
+        /// processing time is longer than the visibility timeout tries to delete the
+        /// processed messages, the action fails with an error.</p>
+        /// <p>To mitigate this effect, ensure that your application observes a safe threshold before the visibility timeout expires and extend the visibility timeout as necessary.</p>
+        /// </important>
+        /// </li>
+        /// <li>
+        /// <p>While messages with a particular <code>MessageGroupId</code> are invisible, no more messages belonging to the same <code>MessageGroupId</code> are returned until the visibility timeout expires. You can still receive
+        /// messages with another <code>MessageGroupId</code> as long as it is also visible.</p>
+        /// </li>
+        /// <li>
+        /// <p>If a caller of <code>ReceiveMessage</code> can't track the <code>ReceiveRequestAttemptId</code>, no retries work until the original visibility timeout expires. As a result, delays might occur but
+        /// the messages in the queue remain in a strict order.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The maximum length of <code>ReceiveRequestAttemptId</code> is 128 characters. <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
+        /// punctuation (<code>!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~</code>).</p>
+        /// <p>For best practices of using <code>ReceiveRequestAttemptId</code>, see
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using the ReceiveRequestAttemptId Request Parameter</a>
+        /// in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn set_receive_request_attempt_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2234,7 +3520,7 @@ pub mod receive_message_input {
             self,
         ) -> std::result::Result<
             crate::input::ReceiveMessageInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ReceiveMessageInput {
                 queue_url: self.queue_url,
@@ -2259,16 +3545,16 @@ impl ReceiveMessageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ReceiveMessage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ReceiveMessageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2276,7 +3562,7 @@ impl ReceiveMessageInput {
         fn update_http_builder(
             input: &crate::input::ReceiveMessageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2285,24 +3571,26 @@ impl ReceiveMessageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ReceiveMessageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_receive_message(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2325,15 +3613,15 @@ impl ReceiveMessageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ReceiveMessage::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ReceiveMessage",
             "sqs",
         ));
@@ -2342,10 +3630,10 @@ impl ReceiveMessageInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2375,6 +3663,8 @@ pub mod remove_permission_input {
             self.queue_url = Some(input.into());
             self
         }
+        /// <p>The URL of the Amazon SQS queue from which permissions are removed.</p>
+        /// <p>Queue URLs and names are case-sensitive.</p>
         pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_url = input;
             self
@@ -2386,6 +3676,9 @@ pub mod remove_permission_input {
             self.label = Some(input.into());
             self
         }
+        /// <p>The identification of the permission to remove. This is the label added using the <code>
+        /// <a>AddPermission</a>
+        /// </code> action.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.label = input;
             self
@@ -2395,7 +3688,7 @@ pub mod remove_permission_input {
             self,
         ) -> std::result::Result<
             crate::input::RemovePermissionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RemovePermissionInput {
                 queue_url: self.queue_url,
@@ -2415,16 +3708,16 @@ impl RemovePermissionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RemovePermission,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RemovePermissionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2432,7 +3725,7 @@ impl RemovePermissionInput {
         fn update_http_builder(
             input: &crate::input::RemovePermissionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2441,27 +3734,27 @@ impl RemovePermissionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RemovePermissionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_remove_permission(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2484,15 +3777,15 @@ impl RemovePermissionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RemovePermission::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RemovePermission",
             "sqs",
         ));
@@ -2501,10 +3794,10 @@ impl RemovePermissionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2546,6 +3839,8 @@ pub mod send_message_input {
             self.queue_url = Some(input.into());
             self
         }
+        /// <p>The URL of the Amazon SQS queue to which a message is sent.</p>
+        /// <p>Queue URLs and names are case-sensitive.</p>
         pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_url = input;
             self
@@ -2562,6 +3857,14 @@ pub mod send_message_input {
             self.message_body = Some(input.into());
             self
         }
+        /// <p>The message to send. The minimum size is one character. The maximum size is 256 KB.</p>
+        /// <important>
+        /// <p>A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:</p>
+        /// <p>
+        /// <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
+        /// </p>
+        /// <p>Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.</p>
+        /// </important>
         pub fn set_message_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_body = input;
             self
@@ -2577,10 +3880,25 @@ pub mod send_message_input {
             self.delay_seconds = Some(input);
             self
         }
+        /// <p>
+        /// The length of time, in seconds, for which to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished.
+        /// If you don't specify a value, the default value for the queue applies.
+        /// </p>
+        /// <note>
+        /// <p>When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this parameter only on a queue level.</p>
+        /// </note>
         pub fn set_delay_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.delay_seconds = input;
             self
         }
+        /// Adds a key-value pair to `message_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_message_attributes`](Self::set_message_attributes).
+        ///
+        /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+        /// and <code>Value</code>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS
+        /// message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn message_attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -2591,6 +3909,10 @@ pub mod send_message_input {
             self.message_attributes = Some(hash_map);
             self
         }
+        /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+        /// and <code>Value</code>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS
+        /// message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn set_message_attributes(
             mut self,
             input: std::option::Option<
@@ -2600,6 +3922,23 @@ pub mod send_message_input {
             self.message_attributes = input;
             self
         }
+        /// Adds a key-value pair to `message_system_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_message_system_attributes`](Self::set_message_system_attributes).
+        ///
+        /// <p>The message system attribute to send. Each message system attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
+        /// <important>
+        /// <ul>
+        /// <li>
+        /// <p>Currently, the only supported message system attribute is <code>AWSTraceHeader</code>.
+        /// Its type must be <code>String</code> and its value must be a correctly formatted
+        /// X-Ray trace header string.</p>
+        /// </li>
+        /// <li>
+        /// <p>The size of a message system attribute doesn't count towards the total size of a message.</p>
+        /// </li>
+        /// </ul>
+        /// </important>
         pub fn message_system_attributes(
             mut self,
             k: impl Into<crate::model::MessageSystemAttributeNameForSends>,
@@ -2610,6 +3949,19 @@ pub mod send_message_input {
             self.message_system_attributes = Some(hash_map);
             self
         }
+        /// <p>The message system attribute to send. Each message system attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
+        /// <important>
+        /// <ul>
+        /// <li>
+        /// <p>Currently, the only supported message system attribute is <code>AWSTraceHeader</code>.
+        /// Its type must be <code>String</code> and its value must be a correctly formatted
+        /// X-Ray trace header string.</p>
+        /// </li>
+        /// <li>
+        /// <p>The size of a message system attribute doesn't count towards the total size of a message.</p>
+        /// </li>
+        /// </ul>
+        /// </important>
         pub fn set_message_system_attributes(
             mut self,
             input: std::option::Option<
@@ -2673,6 +4025,53 @@ pub mod send_message_input {
             self.message_deduplication_id = Some(input.into());
             self
         }
+        /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
+        /// <p>The token used for deduplication of sent messages. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same <code>MessageDeduplicationId</code>
+        /// are accepted successfully but aren't delivered during the 5-minute deduplication interval. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">
+        /// Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>,</p>
+        /// <ul>
+        /// <li>
+        /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue,
+        /// Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set,
+        /// the action fails with an error.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates
+        /// and only one copy of the message is delivered.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same
+        /// as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the
+        /// message (this can be useful for troubleshooting delivery issues).</p>
+        /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
+        /// <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.</p>
+        /// <p>Amazon SQS continues to keep track of the message deduplication ID even after the message is received and deleted.</p>
+        /// </note>
+        /// <p>The maximum length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
+        /// punctuation (<code>!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~</code>).</p>
+        /// <p>For best practices of using <code>MessageDeduplicationId</code>, see
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a>
+        /// in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn set_message_deduplication_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2710,6 +4109,32 @@ pub mod send_message_input {
             self.message_group_id = Some(input.into());
             self
         }
+        /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
+        /// <p>The tag that specifies that a message belongs to a specific message group. Messages
+        /// that belong to the same message group are processed in a FIFO manner (however,
+        /// messages in different message groups might be processed out of order). To interleave
+        /// multiple ordered streams within a single queue, use <code>MessageGroupId</code> values
+        /// (for example, session data for multiple users). In this scenario, multiple consumers can
+        /// process the queue, but the session data of each user is processed in a FIFO
+        /// fashion.</p>
+        /// <ul>
+        /// <li>
+        /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ReceiveMessage</code> might return messages with multiple <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the messages are sorted by time sent. The caller can't
+        /// specify a <code>MessageGroupId</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+        /// <p>For best practices of using <code>MessageGroupId</code>, see
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a>
+        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <important>
+        /// <p>
+        /// <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
+        /// </important>
         pub fn set_message_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2720,8 +4145,10 @@ pub mod send_message_input {
         /// Consumes the builder and constructs a [`SendMessageInput`](crate::input::SendMessageInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::SendMessageInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::SendMessageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SendMessageInput {
                 queue_url: self.queue_url,
                 message_body: self.message_body,
@@ -2745,16 +4172,16 @@ impl SendMessageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SendMessage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SendMessageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2762,7 +4189,7 @@ impl SendMessageInput {
         fn update_http_builder(
             input: &crate::input::SendMessageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2771,24 +4198,26 @@ impl SendMessageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SendMessageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_send_message(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2811,22 +4240,27 @@ impl SendMessageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::SendMessage::new())
-                .with_metadata(smithy_http::operation::Metadata::new("SendMessage", "sqs"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SendMessage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SendMessage",
+            "sqs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2857,10 +4291,19 @@ pub mod send_message_batch_input {
             self.queue_url = Some(input.into());
             self
         }
+        /// <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
+        /// <p>Queue URLs and names are case-sensitive.</p>
         pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_url = input;
             self
         }
+        /// Appends an item to `entries`.
+        ///
+        /// To override the contents of this collection use [`set_entries`](Self::set_entries).
+        ///
+        /// <p>A list of <code>
+        /// <a>SendMessageBatchRequestEntry</a>
+        /// </code> items.</p>
         pub fn entries(
             mut self,
             input: impl Into<crate::model::SendMessageBatchRequestEntry>,
@@ -2870,6 +4313,9 @@ pub mod send_message_batch_input {
             self.entries = Some(v);
             self
         }
+        /// <p>A list of <code>
+        /// <a>SendMessageBatchRequestEntry</a>
+        /// </code> items.</p>
         pub fn set_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SendMessageBatchRequestEntry>>,
@@ -2882,7 +4328,7 @@ pub mod send_message_batch_input {
             self,
         ) -> std::result::Result<
             crate::input::SendMessageBatchInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SendMessageBatchInput {
                 queue_url: self.queue_url,
@@ -2902,16 +4348,16 @@ impl SendMessageBatchInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SendMessageBatch,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SendMessageBatchInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2919,7 +4365,7 @@ impl SendMessageBatchInput {
         fn update_http_builder(
             input: &crate::input::SendMessageBatchInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2928,27 +4374,27 @@ impl SendMessageBatchInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SendMessageBatchInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_send_message_batch(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2971,15 +4417,15 @@ impl SendMessageBatchInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SendMessageBatch::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SendMessageBatch",
             "sqs",
         ));
@@ -2988,10 +4434,10 @@ impl SendMessageBatchInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3023,10 +4469,213 @@ pub mod set_queue_attributes_input {
             self.queue_url = Some(input.into());
             self
         }
+        /// <p>The URL of the Amazon SQS queue whose attributes are set.</p>
+        /// <p>Queue URLs and names are case-sensitive.</p>
         pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_url = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>A map of attributes to set.</p>
+        /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses:</p>      
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 (15 minutes). Default: 0.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days).
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a>
+        /// in the <i>Identity and Access Management User Guide</i>.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code>
+        /// <a>ReceiveMessage</a>
+        /// </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout,
+        /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter queues:</a>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality
+        /// of the source queue as a JSON object. The parameters are as follows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to
+        /// which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being
+        /// moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
+        /// for a queue, Amazon SQS moves the message to the dead-letter-queue.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RedriveAllowPolicy</code> – The string that includes the parameters for the permissions for the dead-letter
+        /// queue redrive permission and which source queues can specify dead-letter queues as a JSON object. The parameters are as follows:</p>              
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>redrivePermission</code> – The permission type that defines which source queues can
+        /// specify the current queue as the dead-letter queue. Valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services account in the same Region can
+        /// specify this queue as the dead-letter queue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>denyAll</code> – No source queues can specify this queue as the dead-letter
+        /// queue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>byQueue</code> – Only queues specified by the <code>sourceQueueArns</code> parameter can specify
+        /// this queue as the dead-letter queue.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source queues that can specify
+        /// this queue as the dead-letter queue and redrive messages. You can specify this parameter only when the
+        /// <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can specify up to 10 source queue ARNs.
+        /// To allow more than 10 source queues to specify dead-letter queues, set the <code>redrivePermission</code> parameter
+        /// to <code>allowAll</code>.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>The dead-letter queue of a
+        /// FIFO queue must also be a FIFO queue. Similarly, the dead-letter
+        /// queue of a standard queue must also be a standard queue.</p>
+        /// </note>
+        ///
+        ///
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>     
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.
+        /// While the alias of the AWS-managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i>
+        /// </code>.
+        /// For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt
+        /// or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security
+        /// but results in more calls to KMS which might incur charges after Free Tier. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the
+        /// <i>Amazon SQS Developer Guide</i>. Note the following:
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue,
+        /// Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set,
+        /// the action fails with an error.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates
+        /// and only one copy of the message is delivered.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same
+        /// as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.
+        /// </p>
+        /// </li>
+        /// </ul>  
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <p>The following attributes apply only to
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput
+        /// for FIFO queues</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the
+        /// message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput
+        /// quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>.
+        /// The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>To enable high throughput for FIFO queues, do the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you set these attributes to anything other than the values shown for enabling high
+        /// throughput, normal throughput is in effect and deduplication occurs as specified.</p>
+        /// <p>For information on throughput quotas,
+        /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a>
+        /// in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn attributes(
             mut self,
             k: impl Into<crate::model::QueueAttributeName>,
@@ -3037,6 +4686,203 @@ pub mod set_queue_attributes_input {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>A map of attributes to set.</p>
+        /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses:</p>      
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 (15 minutes). Default: 0.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days).
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a>
+        /// in the <i>Identity and Access Management User Guide</i>.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code>
+        /// <a>ReceiveMessage</a>
+        /// </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout,
+        /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter queues:</a>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality
+        /// of the source queue as a JSON object. The parameters are as follows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to
+        /// which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being
+        /// moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
+        /// for a queue, Amazon SQS moves the message to the dead-letter-queue.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RedriveAllowPolicy</code> – The string that includes the parameters for the permissions for the dead-letter
+        /// queue redrive permission and which source queues can specify dead-letter queues as a JSON object. The parameters are as follows:</p>              
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>redrivePermission</code> – The permission type that defines which source queues can
+        /// specify the current queue as the dead-letter queue. Valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services account in the same Region can
+        /// specify this queue as the dead-letter queue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>denyAll</code> – No source queues can specify this queue as the dead-letter
+        /// queue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>byQueue</code> – Only queues specified by the <code>sourceQueueArns</code> parameter can specify
+        /// this queue as the dead-letter queue.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source queues that can specify
+        /// this queue as the dead-letter queue and redrive messages. You can specify this parameter only when the
+        /// <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can specify up to 10 source queue ARNs.
+        /// To allow more than 10 source queues to specify dead-letter queues, set the <code>redrivePermission</code> parameter
+        /// to <code>allowAll</code>.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>The dead-letter queue of a
+        /// FIFO queue must also be a FIFO queue. Similarly, the dead-letter
+        /// queue of a standard queue must also be a standard queue.</p>
+        /// </note>
+        ///
+        ///
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>     
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.
+        /// While the alias of the AWS-managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i>
+        /// </code>.
+        /// For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt
+        /// or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security
+        /// but results in more calls to KMS which might incur charges after Free Tier. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the
+        /// <i>Amazon SQS Developer Guide</i>. Note the following:
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue,
+        /// Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set,
+        /// the action fails with an error.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates
+        /// and only one copy of the message is delivered.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same
+        /// as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.
+        /// </p>
+        /// </li>
+        /// </ul>  
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <p>The following attributes apply only to
+        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput
+        /// for FIFO queues</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the
+        /// message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput
+        /// quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>.
+        /// The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>To enable high throughput for FIFO queues, do the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you set these attributes to anything other than the values shown for enabling high
+        /// throughput, normal throughput is in effect and deduplication occurs as specified.</p>
+        /// <p>For information on throughput quotas,
+        /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a>
+        /// in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -3051,7 +4897,7 @@ pub mod set_queue_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::SetQueueAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetQueueAttributesInput {
                 queue_url: self.queue_url,
@@ -3071,16 +4917,16 @@ impl SetQueueAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetQueueAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetQueueAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3088,7 +4934,7 @@ impl SetQueueAttributesInput {
         fn update_http_builder(
             input: &crate::input::SetQueueAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3097,25 +4943,27 @@ impl SetQueueAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetQueueAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_queue_attributes(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3138,15 +4986,15 @@ impl SetQueueAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetQueueAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetQueueAttributes",
             "sqs",
         ));
@@ -3155,10 +5003,10 @@ impl SetQueueAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3189,10 +5037,16 @@ pub mod tag_queue_input {
             self.queue_url = Some(input.into());
             self
         }
+        /// <p>The URL of the queue.</p>
         pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_url = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of tags to be added to the specified queue.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3203,6 +5057,7 @@ pub mod tag_queue_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The list of tags to be added to the specified queue.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3215,7 +5070,7 @@ pub mod tag_queue_input {
         /// Consumes the builder and constructs a [`TagQueueInput`](crate::input::TagQueueInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagQueueInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::TagQueueInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::TagQueueInput {
                 queue_url: self.queue_url,
@@ -3235,16 +5090,16 @@ impl TagQueueInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagQueue,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagQueueInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3252,7 +5107,7 @@ impl TagQueueInput {
         fn update_http_builder(
             input: &crate::input::TagQueueInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3261,24 +5116,26 @@ impl TagQueueInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagQueueInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_queue(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3301,21 +5158,22 @@ impl TagQueueInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::TagQueue::new())
-            .with_metadata(smithy_http::operation::Metadata::new("TagQueue", "sqs"));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::TagQueue::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new("TagQueue", "sqs"));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3344,16 +5202,23 @@ pub mod untag_queue_input {
             self.queue_url = Some(input.into());
             self
         }
+        /// <p>The URL of the queue.</p>
         pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_url = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The list of tags to be removed from the specified queue.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>The list of tags to be removed from the specified queue.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3364,8 +5229,10 @@ pub mod untag_queue_input {
         /// Consumes the builder and constructs a [`UntagQueueInput`](crate::input::UntagQueueInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagQueueInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagQueueInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagQueueInput {
                 queue_url: self.queue_url,
                 tag_keys: self.tag_keys,
@@ -3384,16 +5251,16 @@ impl UntagQueueInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagQueue,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagQueueInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3401,7 +5268,7 @@ impl UntagQueueInput {
         fn update_http_builder(
             input: &crate::input::UntagQueueInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3410,24 +5277,26 @@ impl UntagQueueInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagQueueInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_queue(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3450,22 +5319,27 @@ impl UntagQueueInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagQueue::new())
-                .with_metadata(smithy_http::operation::Metadata::new("UntagQueue", "sqs"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagQueue::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagQueue",
+            "sqs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3479,6 +5353,7 @@ impl UntagQueueInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagQueueInput {
@@ -3496,6 +5371,7 @@ impl std::fmt::Debug for UntagQueueInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagQueueInput {
@@ -3558,6 +5434,7 @@ pub struct SetQueueAttributesInput {
     /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// </li>
     /// </ul>
+    ///
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter queues:</a>
     /// </p>
     /// <ul>
@@ -3622,6 +5499,8 @@ pub struct SetQueueAttributesInput {
     /// FIFO queue must also be a FIFO queue. Similarly, the dead-letter
     /// queue of a standard queue must also be a standard queue.</p>
     /// </note>
+    ///
+    ///
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>     
     /// <ul>
     /// <li>
@@ -3641,6 +5520,8 @@ pub struct SetQueueAttributesInput {
     /// </p>
     /// </li>
     /// </ul>
+    ///
+    ///
     /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>:</p>
     /// <ul>
     /// <li>
@@ -3681,6 +5562,8 @@ pub struct SetQueueAttributesInput {
     /// </ul>  
     /// </li>
     /// </ul>
+    ///
+    ///
     /// <p>The following attributes apply only to
     /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput
     /// for FIFO queues</a>:</p>
@@ -3990,6 +5873,7 @@ pub struct ReceiveMessageInput {
     /// <p>The name can be up to 256 characters long.</p>
     /// </li>
     /// </ul>
+    ///
     /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request.
     /// You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
     pub message_attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4085,6 +5969,7 @@ impl std::fmt::Debug for PurgeQueueInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQueueTagsInput {
@@ -4259,6 +6144,7 @@ pub struct GetQueueAttributesInput {
     /// </p>
     /// </li>
     /// </ul>
+    ///
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter queues:</a>
     /// </p>
     /// <ul>
@@ -4323,6 +6209,8 @@ pub struct GetQueueAttributesInput {
     /// FIFO queue must also be a FIFO queue. Similarly, the dead-letter
     /// queue of a standard queue must also be a standard queue.</p>
     /// </note>
+    ///
+    ///
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
     /// <ul>
     /// <li>
@@ -4337,6 +6225,8 @@ pub struct GetQueueAttributesInput {
     /// </p>
     /// </li>
     /// </ul>
+    ///
+    ///
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>:</p>
     /// <ul>
     /// <li>
@@ -4352,6 +6242,8 @@ pub struct GetQueueAttributesInput {
     /// </p>
     /// </li>
     /// </ul>
+    ///
+    ///
     /// <p>The following attributes apply only to
     /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput
     /// for FIFO queues</a>:</p>
@@ -4467,6 +6359,7 @@ pub struct CreateQueueInput {
     pub queue_name: std::option::Option<std::string::String>,
     /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
     /// Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    ///
     /// <p>When you use queue tags, keep the following guidelines in mind:</p>
     /// <ul>
     /// <li>
@@ -4530,6 +6423,8 @@ pub struct CreateQueueInput {
     /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// </li>
     /// </ul>
+    ///
+    ///
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter queues:</a>
     /// </p>
     /// <ul>
@@ -4594,6 +6489,9 @@ pub struct CreateQueueInput {
     /// FIFO queue must also be a FIFO queue. Similarly, the dead-letter
     /// queue of a standard queue must also be a standard queue.</p>
     /// </note>
+    ///
+    ///
+    ///
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
     /// <ul>
     /// <li>
@@ -4613,6 +6511,8 @@ pub struct CreateQueueInput {
     /// </p>
     /// </li>
     /// </ul>
+    ///
+    ///
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>:</p>
     /// <ul>
     /// <li>
@@ -4662,6 +6562,8 @@ pub struct CreateQueueInput {
     /// </ul>
     /// </li>
     /// </ul>  
+    ///
+    ///
     /// <p>The following attributes apply only to
     /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput
     /// for FIFO queues</a>:</p>
@@ -4726,6 +6628,7 @@ impl std::fmt::Debug for ChangeMessageVisibilityBatchInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeMessageVisibilityInput {

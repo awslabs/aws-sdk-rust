@@ -53,6 +53,7 @@ pub mod raw_message_content {
             self.s3_reference = Some(input);
             self
         }
+        /// <p>The S3 reference of an email message.</p>
         pub fn set_s3_reference(
             mut self,
             input: std::option::Option<crate::model::S3Reference>,
@@ -117,6 +118,7 @@ pub mod s3_reference {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The S3 bucket name.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -126,6 +128,7 @@ pub mod s3_reference {
             self.key = Some(input.into());
             self
         }
+        /// <p>The S3 key object name.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -135,6 +138,7 @@ pub mod s3_reference {
             self.object_version = Some(input.into());
             self
         }
+        /// <p>If you enable versioning for the bucket, you can specify the object version.</p>
         pub fn set_object_version(
             mut self,
             input: std::option::Option<std::string::String>,

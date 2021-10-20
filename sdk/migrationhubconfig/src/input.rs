@@ -16,6 +16,7 @@ pub mod create_home_region_control_input {
             self.home_region = Some(input.into());
             self
         }
+        /// <p>The name of the home region of the calling account.</p>
         pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.home_region = input;
             self
@@ -26,6 +27,8 @@ pub mod create_home_region_control_input {
             self.target = Some(input);
             self
         }
+        /// <p>The account for which this command sets up a home region control. The <code>Target</code>
+        /// is always of type <code>ACCOUNT</code>.</p>
         pub fn set_target(mut self, input: std::option::Option<crate::model::Target>) -> Self {
             self.target = input;
             self
@@ -36,6 +39,8 @@ pub mod create_home_region_control_input {
             self.dry_run = Some(input);
             self
         }
+        /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether
+        /// the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -45,7 +50,7 @@ pub mod create_home_region_control_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateHomeRegionControlInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateHomeRegionControlInput {
                 home_region: self.home_region,
@@ -67,16 +72,16 @@ impl CreateHomeRegionControlInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateHomeRegionControl,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateHomeRegionControlInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -84,7 +89,7 @@ impl CreateHomeRegionControlInput {
         fn update_http_builder(
             input: &crate::input::CreateHomeRegionControlInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -93,32 +98,34 @@ impl CreateHomeRegionControlInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateHomeRegionControlInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMigrationHubMultiAccountService.CreateHomeRegionControl",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_home_region_control(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -141,15 +148,15 @@ impl CreateHomeRegionControlInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateHomeRegionControl::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateHomeRegionControl",
             "migrationhubconfig",
         ));
@@ -158,10 +165,10 @@ impl CreateHomeRegionControlInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -194,6 +201,8 @@ pub mod describe_home_region_controls_input {
             self.control_id = Some(input.into());
             self
         }
+        /// <p>The <code>ControlID</code> is a unique identifier string of your
+        /// <code>HomeRegionControl</code> object.</p>
         pub fn set_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.control_id = input;
             self
@@ -203,6 +212,7 @@ pub mod describe_home_region_controls_input {
             self.home_region = Some(input.into());
             self
         }
+        /// <p>The name of the home region you'd like to view.</p>
         pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.home_region = input;
             self
@@ -214,6 +224,9 @@ pub mod describe_home_region_controls_input {
             self.target = Some(input);
             self
         }
+        /// <p>The target parameter specifies the identifier to which the home region is applied, which
+        /// is always of type <code>ACCOUNT</code>. It applies the home region to the current
+        /// <code>ACCOUNT</code>.</p>
         pub fn set_target(mut self, input: std::option::Option<crate::model::Target>) -> Self {
             self.target = input;
             self
@@ -223,6 +236,7 @@ pub mod describe_home_region_controls_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of filtering results to display per page. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -234,6 +248,9 @@ pub mod describe_home_region_controls_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available.
+        /// To retrieve the next page of results, make the call again using the returned token in
+        /// <code>NextToken</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -243,7 +260,7 @@ pub mod describe_home_region_controls_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeHomeRegionControlsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeHomeRegionControlsInput {
                 control_id: self.control_id,
@@ -267,16 +284,16 @@ impl DescribeHomeRegionControlsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeHomeRegionControls,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeHomeRegionControlsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -284,7 +301,7 @@ impl DescribeHomeRegionControlsInput {
         fn update_http_builder(
             input: &crate::input::DescribeHomeRegionControlsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -293,30 +310,30 @@ impl DescribeHomeRegionControlsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeHomeRegionControlsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMigrationHubMultiAccountService.DescribeHomeRegionControls",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_home_region_controls(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_home_region_controls(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -339,15 +356,15 @@ impl DescribeHomeRegionControlsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeHomeRegionControls::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeHomeRegionControls",
             "migrationhubconfig",
         ));
@@ -356,10 +373,10 @@ impl DescribeHomeRegionControlsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -383,8 +400,10 @@ pub mod get_home_region_input {
         /// Consumes the builder and constructs a [`GetHomeRegionInput`](crate::input::GetHomeRegionInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetHomeRegionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetHomeRegionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetHomeRegionInput {})
         }
     }
@@ -400,16 +419,16 @@ impl GetHomeRegionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetHomeRegion,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetHomeRegionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -417,7 +436,7 @@ impl GetHomeRegionInput {
         fn update_http_builder(
             input: &crate::input::GetHomeRegionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -426,29 +445,31 @@ impl GetHomeRegionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetHomeRegionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMigrationHubMultiAccountService.GetHomeRegion",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_home_region(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -471,25 +492,27 @@ impl GetHomeRegionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetHomeRegion::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetHomeRegion",
-                    "migrationhubconfig",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetHomeRegion::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetHomeRegion",
+            "migrationhubconfig",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -503,6 +526,7 @@ impl GetHomeRegionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHomeRegionInput {}
@@ -513,6 +537,7 @@ impl std::fmt::Debug for GetHomeRegionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHomeRegionControlsInput {
@@ -544,6 +569,7 @@ impl std::fmt::Debug for DescribeHomeRegionControlsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHomeRegionControlInput {

@@ -43,25 +43,30 @@ pub fn deser_payload_describe_profiling_group_describe_profiling_group_output_pr
 
 pub fn deser_header_get_profile_get_profile_output_content_encoding(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("Content-Encoding").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_header_get_profile_get_profile_output_content_type(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("Content-Type").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_get_profile_get_profile_output_profile(
     body: &[u8],
-) -> std::result::Result<std::option::Option<smithy_types::Blob>, crate::error::GetProfileError> {
+) -> std::result::Result<std::option::Option<aws_smithy_types::Blob>, crate::error::GetProfileError>
+{
     (!body.is_empty())
-        .then(|| Ok(smithy_types::Blob::new(body)))
+        .then(|| Ok(aws_smithy_types::Blob::new(body)))
         .transpose()
 }
 

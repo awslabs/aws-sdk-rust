@@ -27,6 +27,15 @@ pub mod update_deployment_group_output {
             std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
     }
     impl Builder {
+        /// Appends an item to `hooks_not_cleaned_up`.
+        ///
+        /// To override the contents of this collection use [`set_hooks_not_cleaned_up`](Self::set_hooks_not_cleaned_up).
+        ///
+        /// <p>If the output contains no data, and the corresponding deployment group contained at
+        /// least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto
+        /// Scaling lifecycle event hooks from the AWS account. If the output contains data, AWS
+        /// CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS
+        /// account.</p>
         pub fn hooks_not_cleaned_up(
             mut self,
             input: impl Into<crate::model::AutoScalingGroup>,
@@ -36,6 +45,11 @@ pub mod update_deployment_group_output {
             self.hooks_not_cleaned_up = Some(v);
             self
         }
+        /// <p>If the output contains no data, and the corresponding deployment group contained at
+        /// least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto
+        /// Scaling lifecycle event hooks from the AWS account. If the output contains data, AWS
+        /// CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS
+        /// account.</p>
         pub fn set_hooks_not_cleaned_up(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
@@ -58,6 +72,7 @@ impl UpdateDeploymentGroupOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationOutput {}
@@ -87,6 +102,7 @@ impl UpdateApplicationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
@@ -116,6 +132,7 @@ impl UntagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {}
@@ -193,6 +210,15 @@ pub mod stop_deployment_output {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the stop deployment operation:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Pending: The stop operation is pending.</p>
+        /// </li>
+        /// <li>
+        /// <p>Succeeded: The stop operation was successful.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StopStatus>) -> Self {
             self.status = input;
             self
@@ -202,6 +228,7 @@ pub mod stop_deployment_output {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>An accompanying status message.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -225,6 +252,7 @@ impl StopDeploymentOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SkipWaitTimeForInstanceTerminationOutput {}
@@ -254,6 +282,7 @@ impl SkipWaitTimeForInstanceTerminationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsFromOnPremisesInstancesOutput {}
@@ -283,6 +312,7 @@ impl RemoveTagsFromOnPremisesInstancesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterOnPremisesInstanceOutput {}
@@ -312,6 +342,7 @@ impl RegisterOnPremisesInstanceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterApplicationRevisionOutput {}
@@ -341,6 +372,7 @@ impl RegisterApplicationRevisionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLifecycleEventHookExecutionStatusOutput {
@@ -376,6 +408,8 @@ pub mod put_lifecycle_event_hook_execution_status_output {
             self.lifecycle_event_hook_execution_id = Some(input.into());
             self
         }
+        /// <p>The execution ID of the lifecycle event hook. A hook is specified in the
+        /// <code>hooks</code> section of the deployment's AppSpec file.</p>
         pub fn set_lifecycle_event_hook_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -398,6 +432,7 @@ impl PutLifecycleEventHookExecutionStatusOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
@@ -427,12 +462,20 @@ pub mod list_tags_for_resource_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p> A list of tags returned by <code>ListTagsForResource</code>. The tags are associated
+        /// with the resource identified by the input <code>ResourceArn</code> parameter. </p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p> A list of tags returned by <code>ListTagsForResource</code>. The tags are associated
+        /// with the resource identified by the input <code>ResourceArn</code> parameter. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -447,6 +490,9 @@ pub mod list_tags_for_resource_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can
+        /// be used in a subsequent list application revisions call to return the next set of
+        /// application revisions in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -496,12 +542,18 @@ pub mod list_on_premises_instances_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `instance_names`.
+        ///
+        /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
+        ///
+        /// <p>The list of matching on-premises instance names.</p>
         pub fn instance_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_names.unwrap_or_default();
             v.push(input.into());
             self.instance_names = Some(v);
             self
         }
+        /// <p>The list of matching on-premises instance names.</p>
         pub fn set_instance_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -516,6 +568,9 @@ pub mod list_on_premises_instances_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can
+        /// be used in a subsequent list on-premises instances call to return the next set of
+        /// on-premises instances in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -565,12 +620,18 @@ pub mod list_git_hub_account_token_names_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `token_name_list`.
+        ///
+        /// To override the contents of this collection use [`set_token_name_list`](Self::set_token_name_list).
+        ///
+        /// <p>A list of names of connections to GitHub accounts.</p>
         pub fn token_name_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.token_name_list.unwrap_or_default();
             v.push(input.into());
             self.token_name_list = Some(v);
             self
         }
+        /// <p>A list of names of connections to GitHub accounts.</p>
         pub fn set_token_name_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -585,6 +646,9 @@ pub mod list_git_hub_account_token_names_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can
+        /// be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the next
+        /// set of names in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -605,6 +669,7 @@ impl ListGitHubAccountTokenNamesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentTargetsOutput {
@@ -633,12 +698,18 @@ pub mod list_deployment_targets_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `target_ids`.
+        ///
+        /// To override the contents of this collection use [`set_target_ids`](Self::set_target_ids).
+        ///
+        /// <p> The unique IDs of deployment targets. </p>
         pub fn target_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_ids.unwrap_or_default();
             v.push(input.into());
             self.target_ids = Some(v);
             self
         }
+        /// <p> The unique IDs of deployment targets. </p>
         pub fn set_target_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -653,6 +724,9 @@ pub mod list_deployment_targets_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p> If a large amount of information is returned, a token identifier is also returned. It
+        /// can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next
+        /// set of deployment targets in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -702,12 +776,18 @@ pub mod list_deployments_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `deployments`.
+        ///
+        /// To override the contents of this collection use [`set_deployments`](Self::set_deployments).
+        ///
+        /// <p>A list of deployment IDs.</p>
         pub fn deployments(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.deployments.unwrap_or_default();
             v.push(input.into());
             self.deployments = Some(v);
             self
         }
+        /// <p>A list of deployment IDs.</p>
         pub fn set_deployments(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -722,6 +802,9 @@ pub mod list_deployments_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can
+        /// be used in a subsequent list deployments call to return the next set of deployments in
+        /// the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -771,12 +854,18 @@ pub mod list_deployment_instances_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `instances_list`.
+        ///
+        /// To override the contents of this collection use [`set_instances_list`](Self::set_instances_list).
+        ///
+        /// <p>A list of instance IDs.</p>
         pub fn instances_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instances_list.unwrap_or_default();
             v.push(input.into());
             self.instances_list = Some(v);
             self
         }
+        /// <p>A list of instance IDs.</p>
         pub fn set_instances_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -791,6 +880,9 @@ pub mod list_deployment_instances_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can
+        /// be used in a subsequent list deployment instances call to return the next set of
+        /// deployment instances in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -849,6 +941,7 @@ pub mod list_deployment_groups_output {
             self.application_name = Some(input.into());
             self
         }
+        /// <p>The application name.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -856,12 +949,18 @@ pub mod list_deployment_groups_output {
             self.application_name = input;
             self
         }
+        /// Appends an item to `deployment_groups`.
+        ///
+        /// To override the contents of this collection use [`set_deployment_groups`](Self::set_deployment_groups).
+        ///
+        /// <p>A list of deployment group names.</p>
         pub fn deployment_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.deployment_groups.unwrap_or_default();
             v.push(input.into());
             self.deployment_groups = Some(v);
             self
         }
+        /// <p>A list of deployment group names.</p>
         pub fn set_deployment_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -876,6 +975,9 @@ pub mod list_deployment_groups_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can
+        /// be used in a subsequent list deployment groups call to return the next set of deployment
+        /// groups in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -927,12 +1029,20 @@ pub mod list_deployment_configs_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `deployment_configs_list`.
+        ///
+        /// To override the contents of this collection use [`set_deployment_configs_list`](Self::set_deployment_configs_list).
+        ///
+        /// <p>A list of deployment configurations, including built-in configurations such as
+        /// <code>CodeDeployDefault.OneAtATime</code>.</p>
         pub fn deployment_configs_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.deployment_configs_list.unwrap_or_default();
             v.push(input.into());
             self.deployment_configs_list = Some(v);
             self
         }
+        /// <p>A list of deployment configurations, including built-in configurations such as
+        /// <code>CodeDeployDefault.OneAtATime</code>.</p>
         pub fn set_deployment_configs_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -947,6 +1057,9 @@ pub mod list_deployment_configs_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can
+        /// be used in a subsequent list deployment configurations call to return the next set of
+        /// deployment configurations in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -996,12 +1109,18 @@ pub mod list_applications_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `applications`.
+        ///
+        /// To override the contents of this collection use [`set_applications`](Self::set_applications).
+        ///
+        /// <p>A list of application names.</p>
         pub fn applications(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.applications.unwrap_or_default();
             v.push(input.into());
             self.applications = Some(v);
             self
         }
+        /// <p>A list of application names.</p>
         pub fn set_applications(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1016,6 +1135,9 @@ pub mod list_applications_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can
+        /// be used in a subsequent list applications call to return the next set of applications in
+        /// the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1065,12 +1187,18 @@ pub mod list_application_revisions_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `revisions`.
+        ///
+        /// To override the contents of this collection use [`set_revisions`](Self::set_revisions).
+        ///
+        /// <p>A list of locations that contain the matching revisions.</p>
         pub fn revisions(mut self, input: impl Into<crate::model::RevisionLocation>) -> Self {
             let mut v = self.revisions.unwrap_or_default();
             v.push(input.into());
             self.revisions = Some(v);
             self
         }
+        /// <p>A list of locations that contain the matching revisions.</p>
         pub fn set_revisions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RevisionLocation>>,
@@ -1085,6 +1213,9 @@ pub mod list_application_revisions_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can
+        /// be used in a subsequent list application revisions call to return the next set of
+        /// application revisions in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1133,6 +1264,7 @@ pub mod get_on_premises_instance_output {
             self.instance_info = Some(input);
             self
         }
+        /// <p> Information about the on-premises instance. </p>
         pub fn set_instance_info(
             mut self,
             input: std::option::Option<crate::model::InstanceInfo>,
@@ -1155,6 +1287,7 @@ impl GetOnPremisesInstanceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentTargetOutput {
@@ -1190,6 +1323,11 @@ pub mod get_deployment_target_output {
             self.deployment_target = Some(input);
             self
         }
+        /// <p> A deployment target that contains information about a deployment such as its status,
+        /// lifecycle events, and when it was last updated. It also contains metadata about the
+        /// deployment target. The deployment target metadata depends on the deployment target's
+        /// type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or
+        /// <code>ecsTarget</code>). </p>
         pub fn set_deployment_target(
             mut self,
             input: std::option::Option<crate::model::DeploymentTarget>,
@@ -1240,6 +1378,7 @@ pub mod get_deployment_instance_output {
             self.instance_summary = Some(input);
             self
         }
+        /// <p> Information about the instance. </p>
         pub fn set_instance_summary(
             mut self,
             input: std::option::Option<crate::model::InstanceSummary>,
@@ -1290,6 +1429,7 @@ pub mod get_deployment_group_output {
             self.deployment_group_info = Some(input);
             self
         }
+        /// <p>Information about the deployment group.</p>
         pub fn set_deployment_group_info(
             mut self,
             input: std::option::Option<crate::model::DeploymentGroupInfo>,
@@ -1340,6 +1480,7 @@ pub mod get_deployment_config_output {
             self.deployment_config_info = Some(input);
             self
         }
+        /// <p>Information about the deployment configuration.</p>
         pub fn set_deployment_config_info(
             mut self,
             input: std::option::Option<crate::model::DeploymentConfigInfo>,
@@ -1390,6 +1531,7 @@ pub mod get_deployment_output {
             self.deployment_info = Some(input);
             self
         }
+        /// <p>Information about the deployment.</p>
         pub fn set_deployment_info(
             mut self,
             input: std::option::Option<crate::model::DeploymentInfo>,
@@ -1448,6 +1590,7 @@ pub mod get_application_revision_output {
             self.application_name = Some(input.into());
             self
         }
+        /// <p>The name of the application that corresponds to the revision.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1460,6 +1603,7 @@ pub mod get_application_revision_output {
             self.revision = Some(input);
             self
         }
+        /// <p>Additional information about the revision, including type and location.</p>
         pub fn set_revision(
             mut self,
             input: std::option::Option<crate::model::RevisionLocation>,
@@ -1472,6 +1616,7 @@ pub mod get_application_revision_output {
             self.revision_info = Some(input);
             self
         }
+        /// <p>General information about the revision.</p>
         pub fn set_revision_info(
             mut self,
             input: std::option::Option<crate::model::GenericRevisionInfo>,
@@ -1524,6 +1669,7 @@ pub mod get_application_output {
             self.application = Some(input);
             self
         }
+        /// <p>Information about the application.</p>
         pub fn set_application(
             mut self,
             input: std::option::Option<crate::model::ApplicationInfo>,
@@ -1546,6 +1692,7 @@ impl GetApplicationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterOnPremisesInstanceOutput {}
@@ -1575,6 +1722,7 @@ impl DeregisterOnPremisesInstanceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourcesByExternalIdOutput {}
@@ -1632,6 +1780,7 @@ pub mod delete_git_hub_account_token_output {
             self.token_name = Some(input.into());
             self
         }
+        /// <p>The name of the GitHub account connection that was deleted.</p>
         pub fn set_token_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token_name = input;
             self
@@ -1679,6 +1828,15 @@ pub mod delete_deployment_group_output {
             std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
     }
     impl Builder {
+        /// Appends an item to `hooks_not_cleaned_up`.
+        ///
+        /// To override the contents of this collection use [`set_hooks_not_cleaned_up`](Self::set_hooks_not_cleaned_up).
+        ///
+        /// <p>If the output contains no data, and the corresponding deployment group contained at
+        /// least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto
+        /// Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.
+        /// If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle
+        /// event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
         pub fn hooks_not_cleaned_up(
             mut self,
             input: impl Into<crate::model::AutoScalingGroup>,
@@ -1688,6 +1846,11 @@ pub mod delete_deployment_group_output {
             self.hooks_not_cleaned_up = Some(v);
             self
         }
+        /// <p>If the output contains no data, and the corresponding deployment group contained at
+        /// least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto
+        /// Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.
+        /// If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle
+        /// event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
         pub fn set_hooks_not_cleaned_up(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
@@ -1710,6 +1873,7 @@ impl DeleteDeploymentGroupOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeploymentConfigOutput {}
@@ -1739,6 +1903,7 @@ impl DeleteDeploymentConfigOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationOutput {}
@@ -1796,6 +1961,7 @@ pub mod create_deployment_group_output {
             self.deployment_group_id = Some(input.into());
             self
         }
+        /// <p>A unique deployment group ID.</p>
         pub fn set_deployment_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1846,6 +2012,7 @@ pub mod create_deployment_config_output {
             self.deployment_config_id = Some(input.into());
             self
         }
+        /// <p>A unique deployment configuration ID.</p>
         pub fn set_deployment_config_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1896,6 +2063,7 @@ pub mod create_deployment_output {
             self.deployment_id = Some(input.into());
             self
         }
+        /// <p> The unique ID of a deployment. </p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1946,6 +2114,7 @@ pub mod create_application_output {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>A unique application ID.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1968,6 +2137,7 @@ impl CreateApplicationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContinueDeploymentOutput {}
@@ -2020,12 +2190,18 @@ pub mod batch_get_on_premises_instances_output {
         pub(crate) instance_infos: std::option::Option<std::vec::Vec<crate::model::InstanceInfo>>,
     }
     impl Builder {
+        /// Appends an item to `instance_infos`.
+        ///
+        /// To override the contents of this collection use [`set_instance_infos`](Self::set_instance_infos).
+        ///
+        /// <p>Information about the on-premises instances.</p>
         pub fn instance_infos(mut self, input: impl Into<crate::model::InstanceInfo>) -> Self {
             let mut v = self.instance_infos.unwrap_or_default();
             v.push(input.into());
             self.instance_infos = Some(v);
             self
         }
+        /// <p>Information about the on-premises instances.</p>
         pub fn set_instance_infos(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceInfo>>,
@@ -2048,6 +2224,7 @@ impl BatchGetOnPremisesInstancesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDeploymentTargetsOutput {
@@ -2095,6 +2272,35 @@ pub mod batch_get_deployment_targets_output {
             std::option::Option<std::vec::Vec<crate::model::DeploymentTarget>>,
     }
     impl Builder {
+        /// Appends an item to `deployment_targets`.
+        ///
+        /// To override the contents of this collection use [`set_deployment_targets`](Self::set_deployment_targets).
+        ///
+        /// <p> A list of target objects for a deployment. Each target object contains details about
+        /// the target, such as its status and lifecycle events. The type of the target objects
+        /// depends on the deployment' compute platform. </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>EC2/On-premises</b>: Each target object is an EC2
+        /// or on-premises instance. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>AWS Lambda</b>: The target object is a specific
+        /// version of an AWS Lambda function. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Amazon ECS</b>: The target object is an Amazon ECS
+        /// service. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>CloudFormation</b>: The target object is an AWS
+        /// CloudFormation blue/green deployment. </p>
+        /// </li>
+        /// </ul>
         pub fn deployment_targets(
             mut self,
             input: impl Into<crate::model::DeploymentTarget>,
@@ -2104,6 +2310,31 @@ pub mod batch_get_deployment_targets_output {
             self.deployment_targets = Some(v);
             self
         }
+        /// <p> A list of target objects for a deployment. Each target object contains details about
+        /// the target, such as its status and lifecycle events. The type of the target objects
+        /// depends on the deployment' compute platform. </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>EC2/On-premises</b>: Each target object is an EC2
+        /// or on-premises instance. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>AWS Lambda</b>: The target object is a specific
+        /// version of an AWS Lambda function. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Amazon ECS</b>: The target object is an Amazon ECS
+        /// service. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>CloudFormation</b>: The target object is an AWS
+        /// CloudFormation blue/green deployment. </p>
+        /// </li>
+        /// </ul>
         pub fn set_deployment_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeploymentTarget>>,
@@ -2150,12 +2381,18 @@ pub mod batch_get_deployments_output {
             std::option::Option<std::vec::Vec<crate::model::DeploymentInfo>>,
     }
     impl Builder {
+        /// Appends an item to `deployments_info`.
+        ///
+        /// To override the contents of this collection use [`set_deployments_info`](Self::set_deployments_info).
+        ///
+        /// <p> Information about the deployments. </p>
         pub fn deployments_info(mut self, input: impl Into<crate::model::DeploymentInfo>) -> Self {
             let mut v = self.deployments_info.unwrap_or_default();
             v.push(input.into());
             self.deployments_info = Some(v);
             self
         }
+        /// <p> Information about the deployments. </p>
         pub fn set_deployments_info(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeploymentInfo>>,
@@ -2206,6 +2443,11 @@ pub mod batch_get_deployment_instances_output {
         pub(crate) error_message: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `instances_summary`.
+        ///
+        /// To override the contents of this collection use [`set_instances_summary`](Self::set_instances_summary).
+        ///
+        /// <p>Information about the instance.</p>
         pub fn instances_summary(
             mut self,
             input: impl Into<crate::model::InstanceSummary>,
@@ -2215,6 +2457,7 @@ pub mod batch_get_deployment_instances_output {
             self.instances_summary = Some(v);
             self
         }
+        /// <p>Information about the instance.</p>
         pub fn set_instances_summary(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
@@ -2227,6 +2470,7 @@ pub mod batch_get_deployment_instances_output {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>Information about errors that might have occurred during the API call.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2279,6 +2523,11 @@ pub mod batch_get_deployment_groups_output {
         pub(crate) error_message: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `deployment_groups_info`.
+        ///
+        /// To override the contents of this collection use [`set_deployment_groups_info`](Self::set_deployment_groups_info).
+        ///
+        /// <p>Information about the deployment groups.</p>
         pub fn deployment_groups_info(
             mut self,
             input: impl Into<crate::model::DeploymentGroupInfo>,
@@ -2288,6 +2537,7 @@ pub mod batch_get_deployment_groups_output {
             self.deployment_groups_info = Some(v);
             self
         }
+        /// <p>Information about the deployment groups.</p>
         pub fn set_deployment_groups_info(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeploymentGroupInfo>>,
@@ -2300,6 +2550,7 @@ pub mod batch_get_deployment_groups_output {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>Information about errors that might have occurred during the API call.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2347,6 +2598,11 @@ pub mod batch_get_applications_output {
             std::option::Option<std::vec::Vec<crate::model::ApplicationInfo>>,
     }
     impl Builder {
+        /// Appends an item to `applications_info`.
+        ///
+        /// To override the contents of this collection use [`set_applications_info`](Self::set_applications_info).
+        ///
+        /// <p>Information about the applications.</p>
         pub fn applications_info(
             mut self,
             input: impl Into<crate::model::ApplicationInfo>,
@@ -2356,6 +2612,7 @@ pub mod batch_get_applications_output {
             self.applications_info = Some(v);
             self
         }
+        /// <p>Information about the applications.</p>
         pub fn set_applications_info(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ApplicationInfo>>,
@@ -2414,6 +2671,7 @@ pub mod batch_get_application_revisions_output {
             self.application_name = Some(input.into());
             self
         }
+        /// <p>The name of the application that corresponds to the revisions.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2426,6 +2684,7 @@ pub mod batch_get_application_revisions_output {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>Information about errors that might have occurred during the API call.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2433,12 +2692,18 @@ pub mod batch_get_application_revisions_output {
             self.error_message = input;
             self
         }
+        /// Appends an item to `revisions`.
+        ///
+        /// To override the contents of this collection use [`set_revisions`](Self::set_revisions).
+        ///
+        /// <p>Additional information about the revisions, including the type and location.</p>
         pub fn revisions(mut self, input: impl Into<crate::model::RevisionInfo>) -> Self {
             let mut v = self.revisions.unwrap_or_default();
             v.push(input.into());
             self.revisions = Some(v);
             self
         }
+        /// <p>Additional information about the revisions, including the type and location.</p>
         pub fn set_revisions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RevisionInfo>>,
@@ -2463,6 +2728,7 @@ impl BatchGetApplicationRevisionsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsToOnPremisesInstancesOutput {}

@@ -15,7 +15,7 @@ pub trait ErrorExt {
     fn extended_request_id(&self) -> Option<&str>;
 }
 
-impl ErrorExt for smithy_types::Error {
+impl ErrorExt for aws_smithy_types::Error {
     fn extended_request_id(&self) -> Option<&str> {
         self.extra(EXTENDED_REQUEST_ID)
     }
@@ -23,9 +23,9 @@ impl ErrorExt for smithy_types::Error {
 
 /// Parses the S3 Extended Request ID out of S3 error response headers.
 pub fn parse_extended_error(
-    error: smithy_types::Error,
+    error: aws_smithy_types::Error,
     headers: &HeaderMap<HeaderValue>,
-) -> smithy_types::Error {
+) -> aws_smithy_types::Error {
     let mut builder = error.into_builder();
     let host_id = headers
         .get("x-amz-id-2")
@@ -50,7 +50,7 @@ mod test {
             .status(400)
             .body("")
             .unwrap();
-        let error = smithy_types::Error::builder()
+        let error = aws_smithy_types::Error::builder()
             .message("123")
             .request_id("456")
             .build();
@@ -67,7 +67,7 @@ mod test {
     #[test]
     fn handle_missing_header() {
         let resp = http::Response::builder().status(400).body("").unwrap();
-        let error = smithy_types::Error::builder()
+        let error = aws_smithy_types::Error::builder()
             .message("123")
             .request_id("456")
             .build();

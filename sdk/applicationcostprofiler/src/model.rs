@@ -32,6 +32,7 @@ pub mod s3_location {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>Name of the S3 bucket.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -41,6 +42,7 @@ pub mod s3_location {
             self.prefix = Some(input.into());
             self
         }
+        /// <p>Prefix for the location to write to.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -61,6 +63,7 @@ impl S3Location {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -72,7 +75,9 @@ impl S3Location {
     std::hash::Hash,
 )]
 pub enum Format {
+    #[allow(missing_docs)] // documentation missing in model
     Csv,
+    #[allow(missing_docs)] // documentation missing in model
     Parquet,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -94,6 +99,7 @@ impl std::str::FromStr for Format {
     }
 }
 impl Format {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Format::Csv => "CSV",
@@ -101,6 +107,7 @@ impl Format {
             Format::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CSV", "PARQUET"]
     }
@@ -111,6 +118,7 @@ impl AsRef<str> for Format {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -122,8 +130,11 @@ impl AsRef<str> for Format {
     std::hash::Hash,
 )]
 pub enum ReportFrequency {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Daily,
+    #[allow(missing_docs)] // documentation missing in model
     Monthly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -146,6 +157,7 @@ impl std::str::FromStr for ReportFrequency {
     }
 }
 impl ReportFrequency {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportFrequency::All => "ALL",
@@ -154,6 +166,7 @@ impl ReportFrequency {
             ReportFrequency::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL", "DAILY", "MONTHLY"]
     }
@@ -179,9 +192,9 @@ pub struct ReportDefinition {
     /// <p>The location in Amazon Simple Storage Service (Amazon S3) the reports should be saved to.</p>
     pub destination_s3_location: std::option::Option<crate::model::S3Location>,
     /// <p>Timestamp (milliseconds) when this report definition was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
-    pub last_updated_at: std::option::Option<smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ReportDefinition {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -207,8 +220,8 @@ pub mod report_definition {
         pub(crate) report_frequency: std::option::Option<crate::model::ReportFrequency>,
         pub(crate) format: std::option::Option<crate::model::Format>,
         pub(crate) destination_s3_location: std::option::Option<crate::model::S3Location>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ID of the report.</p>
@@ -216,6 +229,7 @@ pub mod report_definition {
             self.report_id = Some(input.into());
             self
         }
+        /// <p>The ID of the report.</p>
         pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.report_id = input;
             self
@@ -225,6 +239,7 @@ pub mod report_definition {
             self.report_description = Some(input.into());
             self
         }
+        /// <p>Description of the report</p>
         pub fn set_report_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -237,6 +252,7 @@ pub mod report_definition {
             self.report_frequency = Some(input);
             self
         }
+        /// <p>The cadence at which the report is generated.</p>
         pub fn set_report_frequency(
             mut self,
             input: std::option::Option<crate::model::ReportFrequency>,
@@ -249,6 +265,7 @@ pub mod report_definition {
             self.format = Some(input);
             self
         }
+        /// <p>The format used for the generated reports.</p>
         pub fn set_format(mut self, input: std::option::Option<crate::model::Format>) -> Self {
             self.format = input;
             self
@@ -258,6 +275,7 @@ pub mod report_definition {
             self.destination_s3_location = Some(input);
             self
         }
+        /// <p>The location in Amazon Simple Storage Service (Amazon S3) the reports should be saved to.</p>
         pub fn set_destination_s3_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -266,22 +284,27 @@ pub mod report_definition {
             self
         }
         /// <p>Timestamp (milliseconds) when this report definition was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>Timestamp (milliseconds) when this report definition was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
-        pub fn last_updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_at = Some(input);
             self
         }
+        /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -346,6 +369,7 @@ pub mod source_s3_location {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>Name of the bucket.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -355,6 +379,7 @@ pub mod source_s3_location {
             self.key = Some(input.into());
             self
         }
+        /// <p>Key of the object.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -366,6 +391,9 @@ pub mod source_s3_location {
             self.region = Some(input);
             self
         }
+        /// <p>Region of the bucket. Only required for Regions that are disabled by default.
+        /// For more infomration about Regions that are disabled by default, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">
+        /// Enabling a Region</a> in the <i>AWS General Reference guide</i>.</p>
         pub fn set_region(
             mut self,
             input: std::option::Option<crate::model::S3BucketRegion>,
@@ -390,6 +418,7 @@ impl SourceS3Location {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -401,9 +430,13 @@ impl SourceS3Location {
     std::hash::Hash,
 )]
 pub enum S3BucketRegion {
+    #[allow(missing_docs)] // documentation missing in model
     AfSouth1,
+    #[allow(missing_docs)] // documentation missing in model
     ApEast1,
+    #[allow(missing_docs)] // documentation missing in model
     EuSouth1,
+    #[allow(missing_docs)] // documentation missing in model
     MeSouth1,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -427,6 +460,7 @@ impl std::str::FromStr for S3BucketRegion {
     }
 }
 impl S3BucketRegion {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             S3BucketRegion::AfSouth1 => "af-south-1",
@@ -436,6 +470,7 @@ impl S3BucketRegion {
             S3BucketRegion::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["af-south-1", "ap-east-1", "eu-south-1", "me-south-1"]
     }

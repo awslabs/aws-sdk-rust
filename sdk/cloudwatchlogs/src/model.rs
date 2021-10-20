@@ -38,6 +38,7 @@ pub mod metric_filter_match_record {
             self.event_number = Some(input);
             self
         }
+        /// <p>The event number.</p>
         pub fn set_event_number(mut self, input: std::option::Option<i64>) -> Self {
             self.event_number = input;
             self
@@ -47,6 +48,7 @@ pub mod metric_filter_match_record {
             self.event_message = Some(input.into());
             self
         }
+        /// <p>The raw event data.</p>
         pub fn set_event_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -54,6 +56,11 @@ pub mod metric_filter_match_record {
             self.event_message = input;
             self
         }
+        /// Adds a key-value pair to `extracted_values`.
+        ///
+        /// To override the contents of this collection use [`set_extracted_values`](Self::set_extracted_values).
+        ///
+        /// <p>The values extracted from the event data by the filter.</p>
         pub fn extracted_values(
             mut self,
             k: impl Into<std::string::String>,
@@ -64,6 +71,7 @@ pub mod metric_filter_match_record {
             self.extracted_values = Some(hash_map);
             self
         }
+        /// <p>The values extracted from the event data by the filter.</p>
         pub fn set_extracted_values(
             mut self,
             input: std::option::Option<
@@ -122,6 +130,7 @@ pub mod query_compile_error {
             self.location = Some(input);
             self
         }
+        /// <p>Reserved.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::QueryCompileErrorLocation>,
@@ -134,6 +143,7 @@ pub mod query_compile_error {
             self.message = Some(input.into());
             self
         }
+        /// <p>Reserved.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -186,6 +196,7 @@ pub mod query_compile_error_location {
             self.start_char_offset = Some(input);
             self
         }
+        /// <p>Reserved.</p>
         pub fn set_start_char_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.start_char_offset = input;
             self
@@ -195,6 +206,7 @@ pub mod query_compile_error_location {
             self.end_char_offset = Some(input);
             self
         }
+        /// <p>Reserved.</p>
         pub fn set_end_char_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.end_char_offset = input;
             self
@@ -228,7 +240,9 @@ impl QueryCompileErrorLocation {
     std::hash::Hash,
 )]
 pub enum Distribution {
+    #[allow(missing_docs)] // documentation missing in model
     ByLogStream,
+    #[allow(missing_docs)] // documentation missing in model
     Random,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -250,6 +264,7 @@ impl std::str::FromStr for Distribution {
     }
 }
 impl Distribution {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Distribution::ByLogStream => "ByLogStream",
@@ -257,6 +272,7 @@ impl Distribution {
             Distribution::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ByLogStream", "Random"]
     }
@@ -304,6 +320,7 @@ pub mod resource_policy {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The name of the resource policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
@@ -313,6 +330,7 @@ pub mod resource_policy {
             self.policy_document = Some(input.into());
             self
         }
+        /// <p>The details of the policy.</p>
         pub fn set_policy_document(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -326,6 +344,8 @@ pub mod resource_policy {
             self.last_updated_time = Some(input);
             self
         }
+        /// <p>Timestamp showing when this policy was last updated, expressed as the number of
+        /// milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
         pub fn set_last_updated_time(mut self, input: std::option::Option<i64>) -> Self {
             self.last_updated_time = input;
             self
@@ -418,6 +438,7 @@ pub mod metric_transformation {
             self.metric_name = Some(input.into());
             self
         }
+        /// <p>The name of the CloudWatch metric.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -428,6 +449,8 @@ pub mod metric_transformation {
             self.metric_namespace = Some(input.into());
             self
         }
+        /// <p>A custom namespace to contain your metric in CloudWatch. Use namespaces to group together metrics
+        /// that are similar. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">Namespaces</a>.</p>
         pub fn set_metric_namespace(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -440,6 +463,7 @@ pub mod metric_transformation {
             self.metric_value = Some(input.into());
             self
         }
+        /// <p>The value to publish to the CloudWatch metric when a filter pattern matches a log event.</p>
         pub fn set_metric_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_value = input;
             self
@@ -450,10 +474,34 @@ pub mod metric_transformation {
             self.default_value = Some(input);
             self
         }
+        /// <p>(Optional) The value to emit when a filter pattern does not match a log event.
+        /// This value can be null.</p>
         pub fn set_default_value(mut self, input: std::option::Option<f64>) -> Self {
             self.default_value = input;
             self
         }
+        /// Adds a key-value pair to `dimensions`.
+        ///
+        /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
+        ///
+        /// <p>The fields to use as dimensions for the metric. One metric filter can include
+        /// as many as three dimensions.</p>
+        /// <important>
+        /// <p>Metrics extracted from log events are charged as custom metrics.
+        /// To prevent unexpected high charges, do not specify high-cardinality fields such as
+        /// <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different value
+        /// found for
+        /// a dimension is treated as a separate metric and accrues charges as a separate custom metric.
+        /// </p>
+        /// <p>To help prevent accidental high charges, Amazon disables a metric filter
+        /// if it generates 1000 different name/value pairs for the dimensions that you
+        /// have specified within a certain amount of time.</p>
+        /// <p>You can also set up a billing alarm to alert you if your charges are higher than
+        /// expected. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
+        /// Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>.
+        /// </p>
+        /// </important>
         pub fn dimensions(
             mut self,
             k: impl Into<std::string::String>,
@@ -464,6 +512,24 @@ pub mod metric_transformation {
             self.dimensions = Some(hash_map);
             self
         }
+        /// <p>The fields to use as dimensions for the metric. One metric filter can include
+        /// as many as three dimensions.</p>
+        /// <important>
+        /// <p>Metrics extracted from log events are charged as custom metrics.
+        /// To prevent unexpected high charges, do not specify high-cardinality fields such as
+        /// <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different value
+        /// found for
+        /// a dimension is treated as a separate metric and accrues charges as a separate custom metric.
+        /// </p>
+        /// <p>To help prevent accidental high charges, Amazon disables a metric filter
+        /// if it generates 1000 different name/value pairs for the dimensions that you
+        /// have specified within a certain amount of time.</p>
+        /// <p>You can also set up a billing alarm to alert you if your charges are higher than
+        /// expected. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
+        /// Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>.
+        /// </p>
+        /// </important>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<
@@ -478,6 +544,7 @@ pub mod metric_transformation {
             self.unit = Some(input);
             self
         }
+        /// <p>The unit to assign to the metric. If you omit this, the unit is set as <code>None</code>.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::StandardUnit>) -> Self {
             self.unit = input;
             self
@@ -502,6 +569,7 @@ impl MetricTransformation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -513,32 +581,59 @@ impl MetricTransformation {
     std::hash::Hash,
 )]
 pub enum StandardUnit {
+    #[allow(missing_docs)] // documentation missing in model
     Bits,
+    #[allow(missing_docs)] // documentation missing in model
     BitsSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Bytes,
+    #[allow(missing_docs)] // documentation missing in model
     BytesSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Count,
+    #[allow(missing_docs)] // documentation missing in model
     CountSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Gigabits,
+    #[allow(missing_docs)] // documentation missing in model
     GigabitsSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Gigabytes,
+    #[allow(missing_docs)] // documentation missing in model
     GigabytesSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Kilobits,
+    #[allow(missing_docs)] // documentation missing in model
     KilobitsSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Kilobytes,
+    #[allow(missing_docs)] // documentation missing in model
     KilobytesSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Megabits,
+    #[allow(missing_docs)] // documentation missing in model
     MegabitsSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Megabytes,
+    #[allow(missing_docs)] // documentation missing in model
     MegabytesSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Microseconds,
+    #[allow(missing_docs)] // documentation missing in model
     Milliseconds,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Percent,
+    #[allow(missing_docs)] // documentation missing in model
     Seconds,
+    #[allow(missing_docs)] // documentation missing in model
     Terabits,
+    #[allow(missing_docs)] // documentation missing in model
     TerabitsSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Terabytes,
+    #[allow(missing_docs)] // documentation missing in model
     TerabytesSecond,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -585,6 +680,7 @@ impl std::str::FromStr for StandardUnit {
     }
 }
 impl StandardUnit {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StandardUnit::Bits => "Bits",
@@ -617,6 +713,7 @@ impl StandardUnit {
             StandardUnit::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Bits",
@@ -700,6 +797,7 @@ pub mod rejected_log_events_info {
             self.too_new_log_event_start_index = Some(input);
             self
         }
+        /// <p>The log events that are too new.</p>
         pub fn set_too_new_log_event_start_index(
             mut self,
             input: std::option::Option<i32>,
@@ -712,6 +810,7 @@ pub mod rejected_log_events_info {
             self.too_old_log_event_end_index = Some(input);
             self
         }
+        /// <p>The log events that are too old.</p>
         pub fn set_too_old_log_event_end_index(mut self, input: std::option::Option<i32>) -> Self {
             self.too_old_log_event_end_index = input;
             self
@@ -721,6 +820,7 @@ pub mod rejected_log_events_info {
             self.expired_log_event_end_index = Some(input);
             self
         }
+        /// <p>The expired log events.</p>
         pub fn set_expired_log_event_end_index(mut self, input: std::option::Option<i32>) -> Self {
             self.expired_log_event_end_index = input;
             self
@@ -777,6 +877,8 @@ pub mod input_log_event {
             self.timestamp = Some(input);
             self
         }
+        /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970
+        /// 00:00:00 UTC.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.timestamp = input;
             self
@@ -786,6 +888,7 @@ pub mod input_log_event {
             self.message = Some(input.into());
             self
         }
+        /// <p>The raw event message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -857,6 +960,7 @@ pub mod destination {
             self.destination_name = Some(input.into());
             self
         }
+        /// <p>The name of the destination.</p>
         pub fn set_destination_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -870,6 +974,8 @@ pub mod destination {
             self.target_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the physical target where the log events are
+        /// delivered (for example, a Kinesis stream).</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_arn = input;
             self
@@ -879,6 +985,7 @@ pub mod destination {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>A role for impersonation, used when delivering log events to the target.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -889,6 +996,8 @@ pub mod destination {
             self.access_policy = Some(input.into());
             self
         }
+        /// <p>An IAM policy document that governs which Amazon Web Services accounts can create subscription filters
+        /// against this destination.</p>
         pub fn set_access_policy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -901,6 +1010,7 @@ pub mod destination {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of this destination.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -911,6 +1021,8 @@ pub mod destination {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The creation time of the destination, expressed as the number of milliseconds after Jan
+        /// 1, 1970 00:00:00 UTC.</p>
         pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
             self.creation_time = input;
             self
@@ -935,7 +1047,7 @@ impl Destination {
     }
 }
 
-/// **NOTE:** `QueryStatus::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `QueryStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -947,13 +1059,19 @@ impl Destination {
     std::hash::Hash,
 )]
 pub enum QueryStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Complete,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Scheduled,
+    #[allow(missing_docs)] // documentation missing in model
     Timeout,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -980,6 +1098,7 @@ impl std::str::FromStr for QueryStatus {
     }
 }
 impl QueryStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             QueryStatus::Cancelled => "Cancelled",
@@ -992,6 +1111,7 @@ impl QueryStatus {
             QueryStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Cancelled",
@@ -1047,6 +1167,7 @@ pub mod query_statistics {
             self.records_matched = Some(input);
             self
         }
+        /// <p>The number of log events that matched the query string.</p>
         pub fn set_records_matched(mut self, input: std::option::Option<f64>) -> Self {
             self.records_matched = input;
             self
@@ -1056,6 +1177,7 @@ pub mod query_statistics {
             self.records_scanned = Some(input);
             self
         }
+        /// <p>The total number of log events scanned during the query.</p>
         pub fn set_records_scanned(mut self, input: std::option::Option<f64>) -> Self {
             self.records_scanned = input;
             self
@@ -1065,6 +1187,7 @@ pub mod query_statistics {
             self.bytes_scanned = Some(input);
             self
         }
+        /// <p>The total number of bytes in the log events scanned during the query.</p>
         pub fn set_bytes_scanned(mut self, input: std::option::Option<f64>) -> Self {
             self.bytes_scanned = input;
             self
@@ -1121,6 +1244,7 @@ pub mod result_field {
             self.field = Some(input.into());
             self
         }
+        /// <p>The log event field.</p>
         pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.field = input;
             self
@@ -1130,6 +1254,7 @@ pub mod result_field {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of this field.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1183,6 +1308,7 @@ pub mod log_group_field {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of a log field.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1192,6 +1318,7 @@ pub mod log_group_field {
             self.percent = Some(input);
             self
         }
+        /// <p>The percentage of log events queried that contained the field.</p>
         pub fn set_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.percent = input;
             self
@@ -1251,6 +1378,8 @@ pub mod output_log_event {
             self.timestamp = Some(input);
             self
         }
+        /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970
+        /// 00:00:00 UTC.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.timestamp = input;
             self
@@ -1260,6 +1389,7 @@ pub mod output_log_event {
             self.message = Some(input.into());
             self
         }
+        /// <p>The data contained in the log event.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1270,6 +1400,8 @@ pub mod output_log_event {
             self.ingestion_time = Some(input);
             self
         }
+        /// <p>The time the event was ingested, expressed as the number of milliseconds after Jan 1,
+        /// 1970 00:00:00 UTC.</p>
         pub fn set_ingestion_time(mut self, input: std::option::Option<i64>) -> Self {
             self.ingestion_time = input;
             self
@@ -1323,6 +1455,7 @@ pub mod searched_log_stream {
             self.log_stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the log stream.</p>
         pub fn set_log_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1335,6 +1468,7 @@ pub mod searched_log_stream {
             self.searched_completely = Some(input);
             self
         }
+        /// <p>Indicates whether all the events in this log stream were searched.</p>
         pub fn set_searched_completely(mut self, input: std::option::Option<bool>) -> Self {
             self.searched_completely = input;
             self
@@ -1401,6 +1535,7 @@ pub mod filtered_log_event {
             self.log_stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the log stream to which this event belongs.</p>
         pub fn set_log_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1414,6 +1549,8 @@ pub mod filtered_log_event {
             self.timestamp = Some(input);
             self
         }
+        /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970
+        /// 00:00:00 UTC.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.timestamp = input;
             self
@@ -1423,6 +1560,7 @@ pub mod filtered_log_event {
             self.message = Some(input.into());
             self
         }
+        /// <p>The data contained in the log event.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1433,6 +1571,8 @@ pub mod filtered_log_event {
             self.ingestion_time = Some(input);
             self
         }
+        /// <p>The time the event was ingested, expressed as the number of milliseconds after Jan 1,
+        /// 1970 00:00:00 UTC.</p>
         pub fn set_ingestion_time(mut self, input: std::option::Option<i64>) -> Self {
             self.ingestion_time = input;
             self
@@ -1442,6 +1582,7 @@ pub mod filtered_log_event {
             self.event_id = Some(input.into());
             self
         }
+        /// <p>The ID of the event.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_id = input;
             self
@@ -1521,6 +1662,7 @@ pub mod subscription_filter {
             self.filter_name = Some(input.into());
             self
         }
+        /// <p>The name of the subscription filter.</p>
         pub fn set_filter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter_name = input;
             self
@@ -1530,6 +1672,7 @@ pub mod subscription_filter {
             self.log_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the log group.</p>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1544,6 +1687,9 @@ pub mod subscription_filter {
             self.filter_pattern = Some(input.into());
             self
         }
+        /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log
+        /// event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You
+        /// use the filter pattern to specify what to look for in the log event message.</p>
         pub fn set_filter_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1556,6 +1702,7 @@ pub mod subscription_filter {
             self.destination_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the destination.</p>
         pub fn set_destination_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1568,6 +1715,7 @@ pub mod subscription_filter {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p></p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1578,6 +1726,8 @@ pub mod subscription_filter {
             self.distribution = Some(input);
             self
         }
+        /// <p>The method used to distribute log data to the destination, which can be either
+        /// random or grouped by log stream.</p>
         pub fn set_distribution(
             mut self,
             input: std::option::Option<crate::model::Distribution>,
@@ -1591,6 +1741,8 @@ pub mod subscription_filter {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The creation time of the subscription filter, expressed as the number of milliseconds
+        /// after Jan 1, 1970 00:00:00 UTC.</p>
         pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
             self.creation_time = input;
             self
@@ -1661,6 +1813,7 @@ pub mod query_definition {
             self.query_definition_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the query definition.</p>
         pub fn set_query_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1673,6 +1826,7 @@ pub mod query_definition {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the query definition.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1683,6 +1837,8 @@ pub mod query_definition {
             self.query_string = Some(input.into());
             self
         }
+        /// <p>The query string to use for this definition.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
         pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_string = input;
             self
@@ -1692,16 +1848,23 @@ pub mod query_definition {
             self.last_modified = Some(input);
             self
         }
+        /// <p>The date that the query definition was most recently modified.</p>
         pub fn set_last_modified(mut self, input: std::option::Option<i64>) -> Self {
             self.last_modified = input;
             self
         }
+        /// Appends an item to `log_group_names`.
+        ///
+        /// To override the contents of this collection use [`set_log_group_names`](Self::set_log_group_names).
+        ///
+        /// <p>If this query definition contains a list of log groups that it is limited to, that list appears here.</p>
         pub fn log_group_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.log_group_names.unwrap_or_default();
             v.push(input.into());
             self.log_group_names = Some(v);
             self
         }
+        /// <p>If this query definition contains a list of log groups that it is limited to, that list appears here.</p>
         pub fn set_log_group_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1773,6 +1936,7 @@ pub mod query_info {
             self.query_id = Some(input.into());
             self
         }
+        /// <p>The unique ID number of this query.</p>
         pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_id = input;
             self
@@ -1782,6 +1946,7 @@ pub mod query_info {
             self.query_string = Some(input.into());
             self
         }
+        /// <p>The query string used in this query.</p>
         pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_string = input;
             self
@@ -1792,6 +1957,8 @@ pub mod query_info {
             self.status = Some(input);
             self
         }
+        /// <p>The status of this query. Possible values are <code>Cancelled</code>,
+        /// <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, and <code>Unknown</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::QueryStatus>) -> Self {
             self.status = input;
             self
@@ -1801,6 +1968,7 @@ pub mod query_info {
             self.create_time = Some(input);
             self
         }
+        /// <p>The date and time that this query was created.</p>
         pub fn set_create_time(mut self, input: std::option::Option<i64>) -> Self {
             self.create_time = input;
             self
@@ -1810,6 +1978,7 @@ pub mod query_info {
             self.log_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the log group scanned by this query.</p>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1886,6 +2055,7 @@ pub mod metric_filter {
             self.filter_name = Some(input.into());
             self
         }
+        /// <p>The name of the metric filter.</p>
         pub fn set_filter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter_name = input;
             self
@@ -1897,6 +2067,9 @@ pub mod metric_filter {
             self.filter_pattern = Some(input.into());
             self
         }
+        /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log
+        /// event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You
+        /// use the filter pattern to specify what to look for in the log event message.</p>
         pub fn set_filter_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1904,6 +2077,11 @@ pub mod metric_filter {
             self.filter_pattern = input;
             self
         }
+        /// Appends an item to `metric_transformations`.
+        ///
+        /// To override the contents of this collection use [`set_metric_transformations`](Self::set_metric_transformations).
+        ///
+        /// <p>The metric transformations.</p>
         pub fn metric_transformations(
             mut self,
             input: impl Into<crate::model::MetricTransformation>,
@@ -1913,6 +2091,7 @@ pub mod metric_filter {
             self.metric_transformations = Some(v);
             self
         }
+        /// <p>The metric transformations.</p>
         pub fn set_metric_transformations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricTransformation>>,
@@ -1926,6 +2105,8 @@ pub mod metric_filter {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The creation time of the metric filter, expressed as the number of milliseconds after
+        /// Jan 1, 1970 00:00:00 UTC.</p>
         pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
             self.creation_time = input;
             self
@@ -1935,6 +2116,7 @@ pub mod metric_filter {
             self.log_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the log group.</p>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2029,6 +2211,7 @@ pub mod log_stream {
             self.log_stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the log stream.</p>
         pub fn set_log_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2042,6 +2225,8 @@ pub mod log_stream {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The creation time of the stream, expressed as the number of milliseconds after Jan 1,
+        /// 1970 00:00:00 UTC.</p>
         pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
             self.creation_time = input;
             self
@@ -2052,6 +2237,8 @@ pub mod log_stream {
             self.first_event_timestamp = Some(input);
             self
         }
+        /// <p>The time of the first event, expressed as the number of milliseconds after Jan 1, 1970
+        /// 00:00:00 UTC.</p>
         pub fn set_first_event_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.first_event_timestamp = input;
             self
@@ -2065,6 +2252,11 @@ pub mod log_stream {
             self.last_event_timestamp = Some(input);
             self
         }
+        /// <p>The time of the most recent log event in the log stream in CloudWatch Logs. This number
+        /// is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. The
+        /// <code>lastEventTime</code> value updates on an eventual consistency basis. It typically
+        /// updates in less than an hour from ingestion, but in rare situations might take
+        /// longer.</p>
         pub fn set_last_event_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.last_event_timestamp = input;
             self
@@ -2075,6 +2267,8 @@ pub mod log_stream {
             self.last_ingestion_time = Some(input);
             self
         }
+        /// <p>The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
+        /// UTC.</p>
         pub fn set_last_ingestion_time(mut self, input: std::option::Option<i64>) -> Self {
             self.last_ingestion_time = input;
             self
@@ -2084,6 +2278,7 @@ pub mod log_stream {
             self.upload_sequence_token = Some(input.into());
             self
         }
+        /// <p>The sequence token.</p>
         pub fn set_upload_sequence_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2096,6 +2291,7 @@ pub mod log_stream {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the log stream.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2109,6 +2305,11 @@ pub mod log_stream {
             self.stored_bytes = Some(input);
             self
         }
+        /// <p>The number of bytes stored.</p>
+        /// <p>
+        /// <b>Important:</b> On June 17, 2019, this parameter was
+        /// deprecated for log streams, and is always reported as zero. This change applies only to log
+        /// streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
         pub fn set_stored_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.stored_bytes = input;
             self
@@ -2135,6 +2336,7 @@ impl LogStream {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2146,7 +2348,9 @@ impl LogStream {
     std::hash::Hash,
 )]
 pub enum OrderBy {
+    #[allow(missing_docs)] // documentation missing in model
     LastEventTime,
+    #[allow(missing_docs)] // documentation missing in model
     LogStreamName,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2168,6 +2372,7 @@ impl std::str::FromStr for OrderBy {
     }
 }
 impl OrderBy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrderBy::LastEventTime => "LastEventTime",
@@ -2175,6 +2380,7 @@ impl OrderBy {
             OrderBy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LastEventTime", "LogStreamName"]
     }
@@ -2242,6 +2448,7 @@ pub mod log_group {
             self.log_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the log group.</p>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2255,6 +2462,8 @@ pub mod log_group {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The creation time of the log group, expressed as the number of milliseconds after Jan
+        /// 1, 1970 00:00:00 UTC.</p>
         pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
             self.creation_time = input;
             self
@@ -2268,6 +2477,11 @@ pub mod log_group {
             self.retention_in_days = Some(input);
             self
         }
+        /// <p>The number of days to retain the log events in the specified log group.
+        /// Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>
+        /// <p>To set a log group to never have log events expire, use
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>.
+        /// </p>
         pub fn set_retention_in_days(mut self, input: std::option::Option<i32>) -> Self {
             self.retention_in_days = input;
             self
@@ -2277,6 +2491,7 @@ pub mod log_group {
             self.metric_filter_count = Some(input);
             self
         }
+        /// <p>The number of metric filters.</p>
         pub fn set_metric_filter_count(mut self, input: std::option::Option<i32>) -> Self {
             self.metric_filter_count = input;
             self
@@ -2286,6 +2501,7 @@ pub mod log_group {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the log group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2295,6 +2511,7 @@ pub mod log_group {
             self.stored_bytes = Some(input);
             self
         }
+        /// <p>The number of bytes stored.</p>
         pub fn set_stored_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.stored_bytes = input;
             self
@@ -2304,6 +2521,7 @@ pub mod log_group {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -2391,6 +2609,7 @@ pub mod export_task {
             self.task_id = Some(input.into());
             self
         }
+        /// <p>The ID of the export task.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
@@ -2400,6 +2619,7 @@ pub mod export_task {
             self.task_name = Some(input.into());
             self
         }
+        /// <p>The name of the export task.</p>
         pub fn set_task_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_name = input;
             self
@@ -2409,6 +2629,7 @@ pub mod export_task {
             self.log_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the log group from which logs data was exported.</p>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2422,6 +2643,8 @@ pub mod export_task {
             self.from = Some(input);
             self
         }
+        /// <p>The start time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+        /// Events with a timestamp before this time are not exported.</p>
         pub fn set_from(mut self, input: std::option::Option<i64>) -> Self {
             self.from = input;
             self
@@ -2432,6 +2655,8 @@ pub mod export_task {
             self.to = Some(input);
             self
         }
+        /// <p>The end time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+        /// Events with a timestamp later than this time are not exported.</p>
         pub fn set_to(mut self, input: std::option::Option<i64>) -> Self {
             self.to = input;
             self
@@ -2441,6 +2666,7 @@ pub mod export_task {
             self.destination = Some(input.into());
             self
         }
+        /// <p>The name of the S3 bucket to which the log data was exported.</p>
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.destination = input;
             self
@@ -2450,6 +2676,7 @@ pub mod export_task {
             self.destination_prefix = Some(input.into());
             self
         }
+        /// <p>The prefix that was used as the start of Amazon S3 key for every object exported.</p>
         pub fn set_destination_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2462,6 +2689,7 @@ pub mod export_task {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the export task.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ExportTaskStatus>,
@@ -2474,6 +2702,7 @@ pub mod export_task {
             self.execution_info = Some(input);
             self
         }
+        /// <p>Execution information about the export task.</p>
         pub fn set_execution_info(
             mut self,
             input: std::option::Option<crate::model::ExportTaskExecutionInfo>,
@@ -2539,6 +2768,8 @@ pub mod export_task_execution_info {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The creation time of the export task, expressed as the number of milliseconds after Jan
+        /// 1, 1970 00:00:00 UTC.</p>
         pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
             self.creation_time = input;
             self
@@ -2549,6 +2780,8 @@ pub mod export_task_execution_info {
             self.completion_time = Some(input);
             self
         }
+        /// <p>The completion time of the export task, expressed as the number of milliseconds after
+        /// Jan 1, 1970 00:00:00 UTC.</p>
         pub fn set_completion_time(mut self, input: std::option::Option<i64>) -> Self {
             self.completion_time = input;
             self
@@ -2601,6 +2834,7 @@ pub mod export_task_status {
             self.code = Some(input);
             self
         }
+        /// <p>The status code of the export task.</p>
         pub fn set_code(
             mut self,
             input: std::option::Option<crate::model::ExportTaskStatusCode>,
@@ -2613,6 +2847,7 @@ pub mod export_task_status {
             self.message = Some(input.into());
             self
         }
+        /// <p>The status message related to the status code.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2633,6 +2868,7 @@ impl ExportTaskStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2644,11 +2880,17 @@ impl ExportTaskStatus {
     std::hash::Hash,
 )]
 pub enum ExportTaskStatusCode {
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     PendingCancel,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2674,6 +2916,7 @@ impl std::str::FromStr for ExportTaskStatusCode {
     }
 }
 impl ExportTaskStatusCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExportTaskStatusCode::Cancelled => "CANCELLED",
@@ -2685,6 +2928,7 @@ impl ExportTaskStatusCode {
             ExportTaskStatusCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",

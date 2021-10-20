@@ -15,16 +15,23 @@ pub mod add_tags_to_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+        ///
+        /// <p>One or more tags.</p>
         pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
             v.push(input.into());
             self.tag_list = Some(v);
             self
         }
+        /// <p>One or more tags.</p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -37,7 +44,7 @@ pub mod add_tags_to_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::AddTagsToResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AddTagsToResourceInput {
                 resource_arn: self.resource_arn,
@@ -57,16 +64,16 @@ impl AddTagsToResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AddTagsToResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AddTagsToResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -74,7 +81,7 @@ impl AddTagsToResourceInput {
         fn update_http_builder(
             input: &crate::input::AddTagsToResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -83,30 +90,32 @@ impl AddTagsToResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AddTagsToResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudHsmFrontendService.AddTagsToResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_tags_to_resource(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -129,15 +138,15 @@ impl AddTagsToResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AddTagsToResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AddTagsToResource",
             "cloudhsm",
         ));
@@ -146,10 +155,10 @@ impl AddTagsToResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -177,6 +186,7 @@ pub mod create_hapg_input {
             self.label = Some(input.into());
             self
         }
+        /// <p>The label of the new high-availability partition group.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.label = input;
             self
@@ -184,8 +194,10 @@ pub mod create_hapg_input {
         /// Consumes the builder and constructs a [`CreateHapgInput`](crate::input::CreateHapgInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateHapgInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateHapgInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateHapgInput { label: self.label })
         }
     }
@@ -201,16 +213,16 @@ impl CreateHapgInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateHapg,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateHapgInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -218,7 +230,7 @@ impl CreateHapgInput {
         fn update_http_builder(
             input: &crate::input::CreateHapgInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -227,29 +239,31 @@ impl CreateHapgInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateHapgInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudHsmFrontendService.CreateHapg",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_hapg(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -272,25 +286,27 @@ impl CreateHapgInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateHapg::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateHapg",
-                    "cloudhsm",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateHapg::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateHapg",
+            "cloudhsm",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -325,6 +341,7 @@ pub mod create_hsm_input {
             self.subnet_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the subnet in your VPC in which to place the HSM.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_id = input;
             self
@@ -334,6 +351,7 @@ pub mod create_hsm_input {
             self.ssh_key = Some(input.into());
             self
         }
+        /// <p>The SSH public key to install on the HSM.</p>
         pub fn set_ssh_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ssh_key = input;
             self
@@ -345,6 +363,9 @@ pub mod create_hsm_input {
             self.eni_ip = Some(input.into());
             self
         }
+        /// <p>The IP address to assign to the HSM's ENI.</p>
+        /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR
+        /// range of the subnet.</p>
         pub fn set_eni_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.eni_ip = input;
             self
@@ -355,6 +376,8 @@ pub mod create_hsm_input {
             self.iam_role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your
+        /// behalf.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -364,6 +387,7 @@ pub mod create_hsm_input {
             self.external_id = Some(input.into());
             self
         }
+        /// <p>The external ID from <code>IamRoleArn</code>, if present.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -385,6 +409,19 @@ pub mod create_hsm_input {
             self.subscription_type = Some(input);
             self
         }
+        /// <p>Specifies the type of subscription for the HSM.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>PRODUCTION</b> - The HSM is being used in a production
+        /// environment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>TRIAL</b> - The HSM is being used in a product
+        /// trial.</p>
+        /// </li>
+        /// </ul>
         pub fn set_subscription_type(
             mut self,
             input: std::option::Option<crate::model::SubscriptionType>,
@@ -398,6 +435,8 @@ pub mod create_hsm_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the
+        /// same token will be ignored.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -408,6 +447,8 @@ pub mod create_hsm_input {
             self.syslog_ip = Some(input.into());
             self
         }
+        /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one
+        /// syslog monitoring server.</p>
         pub fn set_syslog_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.syslog_ip = input;
             self
@@ -415,7 +456,7 @@ pub mod create_hsm_input {
         /// Consumes the builder and constructs a [`CreateHsmInput`](crate::input::CreateHsmInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateHsmInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::CreateHsmInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::CreateHsmInput {
                 subnet_id: self.subnet_id,
@@ -441,16 +482,16 @@ impl CreateHsmInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateHsm,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateHsmInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -458,7 +499,7 @@ impl CreateHsmInput {
         fn update_http_builder(
             input: &crate::input::CreateHsmInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -467,29 +508,31 @@ impl CreateHsmInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateHsmInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudHsmFrontendService.CreateHsm",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_hsm(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -512,13 +555,13 @@ impl CreateHsmInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateHsm::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::CreateHsm::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "CreateHsm",
                     "cloudhsm",
                 ));
@@ -527,10 +570,10 @@ impl CreateHsmInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -559,6 +602,7 @@ pub mod create_luna_client_input {
             self.label = Some(input.into());
             self
         }
+        /// <p>The label for the client.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.label = input;
             self
@@ -569,6 +613,8 @@ pub mod create_luna_client_input {
             self.certificate = Some(input.into());
             self
         }
+        /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used
+        /// by this client.</p>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.certificate = input;
             self
@@ -578,7 +624,7 @@ pub mod create_luna_client_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateLunaClientInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateLunaClientInput {
                 label: self.label,
@@ -598,16 +644,16 @@ impl CreateLunaClientInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateLunaClient,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateLunaClientInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -615,7 +661,7 @@ impl CreateLunaClientInput {
         fn update_http_builder(
             input: &crate::input::CreateLunaClientInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -624,32 +670,32 @@ impl CreateLunaClientInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateLunaClientInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudHsmFrontendService.CreateLunaClient",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_luna_client(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -672,15 +718,15 @@ impl CreateLunaClientInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateLunaClient::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateLunaClient",
             "cloudhsm",
         ));
@@ -689,10 +735,10 @@ impl CreateLunaClientInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -720,6 +766,7 @@ pub mod delete_hapg_input {
             self.hapg_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the high-availability partition group to delete.</p>
         pub fn set_hapg_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hapg_arn = input;
             self
@@ -727,8 +774,10 @@ pub mod delete_hapg_input {
         /// Consumes the builder and constructs a [`DeleteHapgInput`](crate::input::DeleteHapgInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteHapgInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteHapgInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteHapgInput {
                 hapg_arn: self.hapg_arn,
             })
@@ -746,16 +795,16 @@ impl DeleteHapgInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteHapg,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteHapgInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -763,7 +812,7 @@ impl DeleteHapgInput {
         fn update_http_builder(
             input: &crate::input::DeleteHapgInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -772,29 +821,31 @@ impl DeleteHapgInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteHapgInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudHsmFrontendService.DeleteHapg",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_hapg(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -817,25 +868,27 @@ impl DeleteHapgInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteHapg::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteHapg",
-                    "cloudhsm",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteHapg::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteHapg",
+            "cloudhsm",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -863,6 +916,7 @@ pub mod delete_hsm_input {
             self.hsm_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the HSM to delete.</p>
         pub fn set_hsm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hsm_arn = input;
             self
@@ -870,7 +924,7 @@ pub mod delete_hsm_input {
         /// Consumes the builder and constructs a [`DeleteHsmInput`](crate::input::DeleteHsmInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteHsmInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::DeleteHsmInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::DeleteHsmInput {
                 hsm_arn: self.hsm_arn,
@@ -889,16 +943,16 @@ impl DeleteHsmInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteHsm,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteHsmInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -906,7 +960,7 @@ impl DeleteHsmInput {
         fn update_http_builder(
             input: &crate::input::DeleteHsmInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -915,29 +969,31 @@ impl DeleteHsmInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteHsmInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudHsmFrontendService.DeleteHsm",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_hsm(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -960,13 +1016,13 @@ impl DeleteHsmInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteHsm::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteHsm::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "DeleteHsm",
                     "cloudhsm",
                 ));
@@ -975,10 +1031,10 @@ impl DeleteHsmInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1006,6 +1062,7 @@ pub mod delete_luna_client_input {
             self.client_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the client to delete.</p>
         pub fn set_client_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_arn = input;
             self
@@ -1015,7 +1072,7 @@ pub mod delete_luna_client_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteLunaClientInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteLunaClientInput {
                 client_arn: self.client_arn,
@@ -1034,16 +1091,16 @@ impl DeleteLunaClientInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteLunaClient,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteLunaClientInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1051,7 +1108,7 @@ impl DeleteLunaClientInput {
         fn update_http_builder(
             input: &crate::input::DeleteLunaClientInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1060,32 +1117,32 @@ impl DeleteLunaClientInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteLunaClientInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudHsmFrontendService.DeleteLunaClient",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_luna_client(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1108,15 +1165,15 @@ impl DeleteLunaClientInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteLunaClient::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteLunaClient",
             "cloudhsm",
         ));
@@ -1125,10 +1182,10 @@ impl DeleteLunaClientInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1156,6 +1213,7 @@ pub mod describe_hapg_input {
             self.hapg_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the high-availability partition group to describe.</p>
         pub fn set_hapg_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hapg_arn = input;
             self
@@ -1163,8 +1221,10 @@ pub mod describe_hapg_input {
         /// Consumes the builder and constructs a [`DescribeHapgInput`](crate::input::DescribeHapgInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeHapgInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeHapgInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeHapgInput {
                 hapg_arn: self.hapg_arn,
             })
@@ -1182,16 +1242,16 @@ impl DescribeHapgInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeHapg,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeHapgInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1199,7 +1259,7 @@ impl DescribeHapgInput {
         fn update_http_builder(
             input: &crate::input::DescribeHapgInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1208,31 +1268,31 @@ impl DescribeHapgInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeHapgInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudHsmFrontendService.DescribeHapg",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_hapg(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1255,25 +1315,27 @@ impl DescribeHapgInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeHapg::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeHapg",
-                    "cloudhsm",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeHapg::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeHapg",
+            "cloudhsm",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1303,6 +1365,8 @@ pub mod describe_hsm_input {
             self.hsm_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code>
+        /// parameter must be specified.</p>
         pub fn set_hsm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hsm_arn = input;
             self
@@ -1313,6 +1377,8 @@ pub mod describe_hsm_input {
             self.hsm_serial_number = Some(input.into());
             self
         }
+        /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the
+        /// <code>HsmSerialNumber</code> parameter must be specified.</p>
         pub fn set_hsm_serial_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1323,8 +1389,10 @@ pub mod describe_hsm_input {
         /// Consumes the builder and constructs a [`DescribeHsmInput`](crate::input::DescribeHsmInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeHsmInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeHsmInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeHsmInput {
                 hsm_arn: self.hsm_arn,
                 hsm_serial_number: self.hsm_serial_number,
@@ -1343,16 +1411,16 @@ impl DescribeHsmInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeHsm,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeHsmInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1360,7 +1428,7 @@ impl DescribeHsmInput {
         fn update_http_builder(
             input: &crate::input::DescribeHsmInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1369,29 +1437,31 @@ impl DescribeHsmInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeHsmInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudHsmFrontendService.DescribeHsm",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_hsm(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1414,25 +1484,27 @@ impl DescribeHsmInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeHsm::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeHsm",
-                    "cloudhsm",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeHsm::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeHsm",
+            "cloudhsm",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1461,6 +1533,7 @@ pub mod describe_luna_client_input {
             self.client_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the client.</p>
         pub fn set_client_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_arn = input;
             self
@@ -1470,6 +1543,7 @@ pub mod describe_luna_client_input {
             self.certificate_fingerprint = Some(input.into());
             self
         }
+        /// <p>The certificate fingerprint.</p>
         pub fn set_certificate_fingerprint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1482,7 +1556,7 @@ pub mod describe_luna_client_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeLunaClientInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeLunaClientInput {
                 client_arn: self.client_arn,
@@ -1502,16 +1576,16 @@ impl DescribeLunaClientInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeLunaClient,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeLunaClientInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1519,7 +1593,7 @@ impl DescribeLunaClientInput {
         fn update_http_builder(
             input: &crate::input::DescribeLunaClientInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1528,30 +1602,32 @@ impl DescribeLunaClientInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeLunaClientInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudHsmFrontendService.DescribeLunaClient",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_luna_client(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1574,15 +1650,15 @@ impl DescribeLunaClientInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeLunaClient::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeLunaClient",
             "cloudhsm",
         ));
@@ -1591,10 +1667,10 @@ impl DescribeLunaClientInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1624,6 +1700,7 @@ pub mod get_config_input {
             self.client_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the client.</p>
         pub fn set_client_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_arn = input;
             self
@@ -1633,6 +1710,7 @@ pub mod get_config_input {
             self.client_version = Some(input);
             self
         }
+        /// <p>The client version.</p>
         pub fn set_client_version(
             mut self,
             input: std::option::Option<crate::model::ClientVersion>,
@@ -1640,12 +1718,20 @@ pub mod get_config_input {
             self.client_version = input;
             self
         }
+        /// Appends an item to `hapg_list`.
+        ///
+        /// To override the contents of this collection use [`set_hapg_list`](Self::set_hapg_list).
+        ///
+        /// <p>A list of ARNs that identify the high-availability partition groups that are associated
+        /// with the client.</p>
         pub fn hapg_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.hapg_list.unwrap_or_default();
             v.push(input.into());
             self.hapg_list = Some(v);
             self
         }
+        /// <p>A list of ARNs that identify the high-availability partition groups that are associated
+        /// with the client.</p>
         pub fn set_hapg_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1656,7 +1742,7 @@ pub mod get_config_input {
         /// Consumes the builder and constructs a [`GetConfigInput`](crate::input::GetConfigInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetConfigInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetConfigInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetConfigInput {
                 client_arn: self.client_arn,
@@ -1677,16 +1763,16 @@ impl GetConfigInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetConfig,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetConfigInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1694,7 +1780,7 @@ impl GetConfigInput {
         fn update_http_builder(
             input: &crate::input::GetConfigInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1703,29 +1789,31 @@ impl GetConfigInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetConfigInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudHsmFrontendService.GetConfig",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_config(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1748,13 +1836,13 @@ impl GetConfigInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetConfig::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetConfig::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetConfig",
                     "cloudhsm",
                 ));
@@ -1763,10 +1851,10 @@ impl GetConfigInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1792,7 +1880,7 @@ pub mod list_available_zones_input {
             self,
         ) -> std::result::Result<
             crate::input::ListAvailableZonesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListAvailableZonesInput {})
         }
@@ -1809,16 +1897,16 @@ impl ListAvailableZonesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListAvailableZones,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListAvailableZonesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1826,7 +1914,7 @@ impl ListAvailableZonesInput {
         fn update_http_builder(
             input: &crate::input::ListAvailableZonesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1835,30 +1923,32 @@ impl ListAvailableZonesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListAvailableZonesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudHsmFrontendService.ListAvailableZones",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_available_zones(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1881,15 +1971,15 @@ impl ListAvailableZonesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListAvailableZones::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListAvailableZones",
             "cloudhsm",
         ));
@@ -1898,10 +1988,10 @@ impl ListAvailableZonesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1930,6 +2020,8 @@ pub mod list_hapgs_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass
+        /// null if this is the first call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1937,7 +2029,7 @@ pub mod list_hapgs_input {
         /// Consumes the builder and constructs a [`ListHapgsInput`](crate::input::ListHapgsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListHapgsInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListHapgsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListHapgsInput {
                 next_token: self.next_token,
@@ -1956,16 +2048,16 @@ impl ListHapgsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListHapgs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListHapgsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1973,7 +2065,7 @@ impl ListHapgsInput {
         fn update_http_builder(
             input: &crate::input::ListHapgsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1982,29 +2074,31 @@ impl ListHapgsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListHapgsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudHsmFrontendService.ListHapgs",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_hapgs(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2027,13 +2121,13 @@ impl ListHapgsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListHapgs::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListHapgs::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListHapgs",
                     "cloudhsm",
                 ));
@@ -2042,10 +2136,10 @@ impl ListHapgsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2074,6 +2168,8 @@ pub mod list_hsms_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass
+        /// null if this is the first call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2081,7 +2177,7 @@ pub mod list_hsms_input {
         /// Consumes the builder and constructs a [`ListHsmsInput`](crate::input::ListHsmsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListHsmsInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListHsmsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListHsmsInput {
                 next_token: self.next_token,
@@ -2100,16 +2196,16 @@ impl ListHsmsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListHsms,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListHsmsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2117,7 +2213,7 @@ impl ListHsmsInput {
         fn update_http_builder(
             input: &crate::input::ListHsmsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2126,29 +2222,31 @@ impl ListHsmsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListHsmsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudHsmFrontendService.ListHsms",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_hsms(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2171,23 +2269,24 @@ impl ListHsmsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::ListHsms::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListHsms", "cloudhsm",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListHsms::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "ListHsms", "cloudhsm",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2216,6 +2315,8 @@ pub mod list_luna_clients_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>.
+        /// Pass null if this is the first call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2225,7 +2326,7 @@ pub mod list_luna_clients_input {
             self,
         ) -> std::result::Result<
             crate::input::ListLunaClientsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListLunaClientsInput {
                 next_token: self.next_token,
@@ -2244,16 +2345,16 @@ impl ListLunaClientsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListLunaClients,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListLunaClientsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2261,7 +2362,7 @@ impl ListLunaClientsInput {
         fn update_http_builder(
             input: &crate::input::ListLunaClientsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2270,32 +2371,32 @@ impl ListLunaClientsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListLunaClientsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudHsmFrontendService.ListLunaClients",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_luna_clients(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2318,15 +2419,15 @@ impl ListLunaClientsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListLunaClients::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListLunaClients",
             "cloudhsm",
         ));
@@ -2335,10 +2436,10 @@ impl ListLunaClientsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2366,6 +2467,7 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2375,7 +2477,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -2394,16 +2496,16 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2411,7 +2513,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2420,32 +2522,32 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudHsmFrontendService.ListTagsForResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2468,15 +2570,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "cloudhsm",
         ));
@@ -2485,10 +2587,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2518,6 +2620,7 @@ pub mod modify_hapg_input {
             self.hapg_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the high-availability partition group to modify.</p>
         pub fn set_hapg_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hapg_arn = input;
             self
@@ -2527,16 +2630,25 @@ pub mod modify_hapg_input {
             self.label = Some(input.into());
             self
         }
+        /// <p>The new label for the high-availability partition group.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.label = input;
             self
         }
+        /// Appends an item to `partition_serial_list`.
+        ///
+        /// To override the contents of this collection use [`set_partition_serial_list`](Self::set_partition_serial_list).
+        ///
+        /// <p>The list of partition serial numbers to make members of the high-availability partition
+        /// group.</p>
         pub fn partition_serial_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.partition_serial_list.unwrap_or_default();
             v.push(input.into());
             self.partition_serial_list = Some(v);
             self
         }
+        /// <p>The list of partition serial numbers to make members of the high-availability partition
+        /// group.</p>
         pub fn set_partition_serial_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2547,8 +2659,10 @@ pub mod modify_hapg_input {
         /// Consumes the builder and constructs a [`ModifyHapgInput`](crate::input::ModifyHapgInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ModifyHapgInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ModifyHapgInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ModifyHapgInput {
                 hapg_arn: self.hapg_arn,
                 label: self.label,
@@ -2568,16 +2682,16 @@ impl ModifyHapgInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ModifyHapg,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ModifyHapgInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2585,7 +2699,7 @@ impl ModifyHapgInput {
         fn update_http_builder(
             input: &crate::input::ModifyHapgInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2594,29 +2708,31 @@ impl ModifyHapgInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ModifyHapgInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudHsmFrontendService.ModifyHapg",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_modify_hapg(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2639,25 +2755,27 @@ impl ModifyHapgInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ModifyHapg::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ModifyHapg",
-                    "cloudhsm",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ModifyHapg::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ModifyHapg",
+            "cloudhsm",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2690,6 +2808,7 @@ pub mod modify_hsm_input {
             self.hsm_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the HSM to modify.</p>
         pub fn set_hsm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hsm_arn = input;
             self
@@ -2700,6 +2819,8 @@ pub mod modify_hsm_input {
             self.subnet_id = Some(input.into());
             self
         }
+        /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same
+        /// Availability Zone as the current subnet.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_id = input;
             self
@@ -2712,6 +2833,10 @@ pub mod modify_hsm_input {
             self.eni_ip = Some(input.into());
             self
         }
+        /// <p>The new IP address for the elastic network interface (ENI) attached to the
+        /// HSM.</p>
+        /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP
+        /// address will be randomly chosen from the CIDR range of the new subnet.</p>
         pub fn set_eni_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.eni_ip = input;
             self
@@ -2721,6 +2846,7 @@ pub mod modify_hsm_input {
             self.iam_role_arn = Some(input.into());
             self
         }
+        /// <p>The new IAM role ARN.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -2730,6 +2856,7 @@ pub mod modify_hsm_input {
             self.external_id = Some(input.into());
             self
         }
+        /// <p>The new external ID.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -2740,6 +2867,8 @@ pub mod modify_hsm_input {
             self.syslog_ip = Some(input.into());
             self
         }
+        /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports
+        /// one syslog monitoring server.</p>
         pub fn set_syslog_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.syslog_ip = input;
             self
@@ -2747,7 +2876,7 @@ pub mod modify_hsm_input {
         /// Consumes the builder and constructs a [`ModifyHsmInput`](crate::input::ModifyHsmInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ModifyHsmInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ModifyHsmInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ModifyHsmInput {
                 hsm_arn: self.hsm_arn,
@@ -2771,16 +2900,16 @@ impl ModifyHsmInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ModifyHsm,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ModifyHsmInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2788,7 +2917,7 @@ impl ModifyHsmInput {
         fn update_http_builder(
             input: &crate::input::ModifyHsmInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2797,29 +2926,31 @@ impl ModifyHsmInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ModifyHsmInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudHsmFrontendService.ModifyHsm",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_modify_hsm(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2842,13 +2973,13 @@ impl ModifyHsmInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ModifyHsm::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ModifyHsm::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ModifyHsm",
                     "cloudhsm",
                 ));
@@ -2857,10 +2988,10 @@ impl ModifyHsmInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2889,6 +3020,7 @@ pub mod modify_luna_client_input {
             self.client_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the client.</p>
         pub fn set_client_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_arn = input;
             self
@@ -2898,6 +3030,7 @@ pub mod modify_luna_client_input {
             self.certificate = Some(input.into());
             self
         }
+        /// <p>The new certificate for the client.</p>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.certificate = input;
             self
@@ -2907,7 +3040,7 @@ pub mod modify_luna_client_input {
             self,
         ) -> std::result::Result<
             crate::input::ModifyLunaClientInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ModifyLunaClientInput {
                 client_arn: self.client_arn,
@@ -2927,16 +3060,16 @@ impl ModifyLunaClientInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ModifyLunaClient,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ModifyLunaClientInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2944,7 +3077,7 @@ impl ModifyLunaClientInput {
         fn update_http_builder(
             input: &crate::input::ModifyLunaClientInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2953,32 +3086,32 @@ impl ModifyLunaClientInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ModifyLunaClientInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudHsmFrontendService.ModifyLunaClient",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_luna_client(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3001,15 +3134,15 @@ impl ModifyLunaClientInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ModifyLunaClient::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ModifyLunaClient",
             "cloudhsm",
         ));
@@ -3018,10 +3151,10 @@ impl ModifyLunaClientInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3050,16 +3183,27 @@ pub mod remove_tags_from_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_key_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_key_list`](Self::set_tag_key_list).
+        ///
+        /// <p>The tag key or keys to remove.</p>
+        /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an
+        /// existing tag, use <a>AddTagsToResource</a>.</p>
         pub fn tag_key_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_key_list.unwrap_or_default();
             v.push(input.into());
             self.tag_key_list = Some(v);
             self
         }
+        /// <p>The tag key or keys to remove.</p>
+        /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an
+        /// existing tag, use <a>AddTagsToResource</a>.</p>
         pub fn set_tag_key_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3072,7 +3216,7 @@ pub mod remove_tags_from_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::RemoveTagsFromResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RemoveTagsFromResourceInput {
                 resource_arn: self.resource_arn,
@@ -3092,16 +3236,16 @@ impl RemoveTagsFromResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RemoveTagsFromResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RemoveTagsFromResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3109,7 +3253,7 @@ impl RemoveTagsFromResourceInput {
         fn update_http_builder(
             input: &crate::input::RemoveTagsFromResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3118,32 +3262,34 @@ impl RemoveTagsFromResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RemoveTagsFromResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudHsmFrontendService.RemoveTagsFromResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_remove_tags_from_resource(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3166,15 +3312,15 @@ impl RemoveTagsFromResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RemoveTagsFromResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RemoveTagsFromResource",
             "cloudhsm",
         ));
@@ -3183,10 +3329,10 @@ impl RemoveTagsFromResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3200,6 +3346,7 @@ impl RemoveTagsFromResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsFromResourceInput {
@@ -3219,6 +3366,7 @@ impl std::fmt::Debug for RemoveTagsFromResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyLunaClientInput {
@@ -3271,6 +3419,7 @@ impl std::fmt::Debug for ModifyHsmInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyHapgInput {
@@ -3292,6 +3441,7 @@ impl std::fmt::Debug for ModifyHapgInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -3306,6 +3456,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLunaClientsInput {
@@ -3321,6 +3472,7 @@ impl std::fmt::Debug for ListLunaClientsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHsmsInput {
@@ -3336,6 +3488,7 @@ impl std::fmt::Debug for ListHsmsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHapgsInput {
@@ -3362,6 +3515,7 @@ impl std::fmt::Debug for ListAvailableZonesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConfigInput {
@@ -3383,6 +3537,7 @@ impl std::fmt::Debug for GetConfigInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLunaClientInput {
@@ -3435,6 +3590,7 @@ impl std::fmt::Debug for DescribeHapgInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLunaClientInput {
@@ -3566,6 +3722,7 @@ impl std::fmt::Debug for CreateHapgInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsToResourceInput {

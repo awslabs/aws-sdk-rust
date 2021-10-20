@@ -29,6 +29,8 @@ pub mod start_support_data_export_output {
             self.data_set_request_id = Some(input.into());
             self
         }
+        /// A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be
+        /// used to correlate a request with notifications from the SNS topic.
         pub fn set_data_set_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -81,6 +83,8 @@ pub mod generate_data_set_output {
             self.data_set_request_id = Some(input.into());
             self
         }
+        /// A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be
+        /// used to correlate a request with notifications from the SNS topic.
         pub fn set_data_set_request_id(
             mut self,
             input: std::option::Option<std::string::String>,

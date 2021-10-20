@@ -69,10 +69,16 @@ pub mod savings_plan_offering {
             self.offering_id = Some(input.into());
             self
         }
+        /// <p>The ID of the offering.</p>
         pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.offering_id = input;
             self
         }
+        /// Appends an item to `product_types`.
+        ///
+        /// To override the contents of this collection use [`set_product_types`](Self::set_product_types).
+        ///
+        /// <p>The product type.</p>
         pub fn product_types(
             mut self,
             input: impl Into<crate::model::SavingsPlanProductType>,
@@ -82,6 +88,7 @@ pub mod savings_plan_offering {
             self.product_types = Some(v);
             self
         }
+        /// <p>The product type.</p>
         pub fn set_product_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanProductType>>,
@@ -94,6 +101,7 @@ pub mod savings_plan_offering {
             self.plan_type = Some(input);
             self
         }
+        /// <p>The plan type.</p>
         pub fn set_plan_type(
             mut self,
             input: std::option::Option<crate::model::SavingsPlanType>,
@@ -106,6 +114,7 @@ pub mod savings_plan_offering {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -115,6 +124,7 @@ pub mod savings_plan_offering {
             self.payment_option = Some(input);
             self
         }
+        /// <p>The payment option.</p>
         pub fn set_payment_option(
             mut self,
             input: std::option::Option<crate::model::SavingsPlanPaymentOption>,
@@ -127,6 +137,7 @@ pub mod savings_plan_offering {
             self.duration_seconds = Some(input);
             self
         }
+        /// <p>The duration, in seconds.</p>
         pub fn set_duration_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.duration_seconds = input;
             self
@@ -136,6 +147,7 @@ pub mod savings_plan_offering {
             self.currency = Some(input);
             self
         }
+        /// <p>The currency.</p>
         pub fn set_currency(
             mut self,
             input: std::option::Option<crate::model::CurrencyCode>,
@@ -148,6 +160,7 @@ pub mod savings_plan_offering {
             self.service_code = Some(input.into());
             self
         }
+        /// <p>The service.</p>
         pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_code = input;
             self
@@ -157,6 +170,7 @@ pub mod savings_plan_offering {
             self.usage_type = Some(input.into());
             self
         }
+        /// <p>The usage details of the line item in the billing report.</p>
         pub fn set_usage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.usage_type = input;
             self
@@ -166,10 +180,16 @@ pub mod savings_plan_offering {
             self.operation = Some(input.into());
             self
         }
+        /// <p>The specific AWS operation for the line item in the billing report.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation = input;
             self
         }
+        /// Appends an item to `properties`.
+        ///
+        /// To override the contents of this collection use [`set_properties`](Self::set_properties).
+        ///
+        /// <p>The properties.</p>
         pub fn properties(
             mut self,
             input: impl Into<crate::model::SavingsPlanOfferingProperty>,
@@ -179,6 +199,7 @@ pub mod savings_plan_offering {
             self.properties = Some(v);
             self
         }
+        /// <p>The properties.</p>
         pub fn set_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingProperty>>,
@@ -243,6 +264,7 @@ pub mod savings_plan_offering_property {
             self.name = Some(input);
             self
         }
+        /// <p>The property name.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::SavingsPlanOfferingPropertyKey>,
@@ -255,6 +277,7 @@ pub mod savings_plan_offering_property {
             self.value = Some(input.into());
             self
         }
+        /// <p>The property value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -275,6 +298,7 @@ impl SavingsPlanOfferingProperty {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -286,7 +310,9 @@ impl SavingsPlanOfferingProperty {
     std::hash::Hash,
 )]
 pub enum SavingsPlanOfferingPropertyKey {
+    #[allow(missing_docs)] // documentation missing in model
     InstanceFamily,
+    #[allow(missing_docs)] // documentation missing in model
     Region,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -308,6 +334,7 @@ impl std::str::FromStr for SavingsPlanOfferingPropertyKey {
     }
 }
 impl SavingsPlanOfferingPropertyKey {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SavingsPlanOfferingPropertyKey::InstanceFamily => "instanceFamily",
@@ -315,6 +342,7 @@ impl SavingsPlanOfferingPropertyKey {
             SavingsPlanOfferingPropertyKey::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["instanceFamily", "region"]
     }
@@ -325,6 +353,7 @@ impl AsRef<str> for SavingsPlanOfferingPropertyKey {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -336,7 +365,9 @@ impl AsRef<str> for SavingsPlanOfferingPropertyKey {
     std::hash::Hash,
 )]
 pub enum CurrencyCode {
+    #[allow(missing_docs)] // documentation missing in model
     Cny,
+    #[allow(missing_docs)] // documentation missing in model
     Usd,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -358,6 +389,7 @@ impl std::str::FromStr for CurrencyCode {
     }
 }
 impl CurrencyCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CurrencyCode::Cny => "CNY",
@@ -365,6 +397,7 @@ impl CurrencyCode {
             CurrencyCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CNY", "USD"]
     }
@@ -375,6 +408,7 @@ impl AsRef<str> for CurrencyCode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -386,8 +420,11 @@ impl AsRef<str> for CurrencyCode {
     std::hash::Hash,
 )]
 pub enum SavingsPlanPaymentOption {
+    #[allow(missing_docs)] // documentation missing in model
     AllUpfront,
+    #[allow(missing_docs)] // documentation missing in model
     NoUpfront,
+    #[allow(missing_docs)] // documentation missing in model
     PartialUpfront,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -410,6 +447,7 @@ impl std::str::FromStr for SavingsPlanPaymentOption {
     }
 }
 impl SavingsPlanPaymentOption {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SavingsPlanPaymentOption::AllUpfront => "All Upfront",
@@ -418,6 +456,7 @@ impl SavingsPlanPaymentOption {
             SavingsPlanPaymentOption::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["All Upfront", "No Upfront", "Partial Upfront"]
     }
@@ -428,6 +467,7 @@ impl AsRef<str> for SavingsPlanPaymentOption {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -439,8 +479,11 @@ impl AsRef<str> for SavingsPlanPaymentOption {
     std::hash::Hash,
 )]
 pub enum SavingsPlanType {
+    #[allow(missing_docs)] // documentation missing in model
     Compute,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2Instance,
+    #[allow(missing_docs)] // documentation missing in model
     Sagemaker,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -463,6 +506,7 @@ impl std::str::FromStr for SavingsPlanType {
     }
 }
 impl SavingsPlanType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SavingsPlanType::Compute => "Compute",
@@ -471,6 +515,7 @@ impl SavingsPlanType {
             SavingsPlanType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Compute", "EC2Instance", "SageMaker"]
     }
@@ -481,6 +526,7 @@ impl AsRef<str> for SavingsPlanType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -492,9 +538,13 @@ impl AsRef<str> for SavingsPlanType {
     std::hash::Hash,
 )]
 pub enum SavingsPlanProductType {
+    #[allow(missing_docs)] // documentation missing in model
     Ec2,
+    #[allow(missing_docs)] // documentation missing in model
     Fargate,
+    #[allow(missing_docs)] // documentation missing in model
     Lambda,
+    #[allow(missing_docs)] // documentation missing in model
     Sagemaker,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -518,6 +568,7 @@ impl std::str::FromStr for SavingsPlanProductType {
     }
 }
 impl SavingsPlanProductType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SavingsPlanProductType::Ec2 => "EC2",
@@ -527,6 +578,7 @@ impl SavingsPlanProductType {
             SavingsPlanProductType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EC2", "Fargate", "Lambda", "SageMaker"]
     }
@@ -569,6 +621,7 @@ pub mod savings_plan_offering_filter_element {
             self.name = Some(input);
             self
         }
+        /// <p>The filter name.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::SavingsPlanOfferingFilterAttribute>,
@@ -576,12 +629,18 @@ pub mod savings_plan_offering_filter_element {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The filter values.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The filter values.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -605,6 +664,7 @@ impl SavingsPlanOfferingFilterElement {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -616,7 +676,9 @@ impl SavingsPlanOfferingFilterElement {
     std::hash::Hash,
 )]
 pub enum SavingsPlanOfferingFilterAttribute {
+    #[allow(missing_docs)] // documentation missing in model
     InstanceFamily,
+    #[allow(missing_docs)] // documentation missing in model
     Region,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -638,6 +700,7 @@ impl std::str::FromStr for SavingsPlanOfferingFilterAttribute {
     }
 }
 impl SavingsPlanOfferingFilterAttribute {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SavingsPlanOfferingFilterAttribute::InstanceFamily => "instanceFamily",
@@ -645,6 +708,7 @@ impl SavingsPlanOfferingFilterAttribute {
             SavingsPlanOfferingFilterAttribute::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["instanceFamily", "region"]
     }
@@ -717,6 +781,7 @@ pub mod savings_plan_offering_rate {
             self.savings_plan_offering = Some(input);
             self
         }
+        /// <p>The Savings Plan offering.</p>
         pub fn set_savings_plan_offering(
             mut self,
             input: std::option::Option<crate::model::ParentSavingsPlanOffering>,
@@ -729,6 +794,7 @@ pub mod savings_plan_offering_rate {
             self.rate = Some(input.into());
             self
         }
+        /// <p>The Savings Plan rate.</p>
         pub fn set_rate(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rate = input;
             self
@@ -738,6 +804,7 @@ pub mod savings_plan_offering_rate {
             self.unit = Some(input);
             self
         }
+        /// <p>The unit.</p>
         pub fn set_unit(
             mut self,
             input: std::option::Option<crate::model::SavingsPlanRateUnit>,
@@ -750,6 +817,7 @@ pub mod savings_plan_offering_rate {
             self.product_type = Some(input);
             self
         }
+        /// <p>The product type.</p>
         pub fn set_product_type(
             mut self,
             input: std::option::Option<crate::model::SavingsPlanProductType>,
@@ -762,6 +830,7 @@ pub mod savings_plan_offering_rate {
             self.service_code = Some(input);
             self
         }
+        /// <p>The service.</p>
         pub fn set_service_code(
             mut self,
             input: std::option::Option<crate::model::SavingsPlanRateServiceCode>,
@@ -774,6 +843,7 @@ pub mod savings_plan_offering_rate {
             self.usage_type = Some(input.into());
             self
         }
+        /// <p>The usage details of the line item in the billing report.</p>
         pub fn set_usage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.usage_type = input;
             self
@@ -783,10 +853,16 @@ pub mod savings_plan_offering_rate {
             self.operation = Some(input.into());
             self
         }
+        /// <p>The specific AWS operation for the line item in the billing report.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation = input;
             self
         }
+        /// Appends an item to `properties`.
+        ///
+        /// To override the contents of this collection use [`set_properties`](Self::set_properties).
+        ///
+        /// <p>The properties.</p>
         pub fn properties(
             mut self,
             input: impl Into<crate::model::SavingsPlanOfferingRateProperty>,
@@ -796,6 +872,7 @@ pub mod savings_plan_offering_rate {
             self.properties = Some(v);
             self
         }
+        /// <p>The properties.</p>
         pub fn set_properties(
             mut self,
             input: std::option::Option<
@@ -859,6 +936,7 @@ pub mod savings_plan_offering_rate_property {
             self.name = Some(input.into());
             self
         }
+        /// <p>The property name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -868,6 +946,7 @@ pub mod savings_plan_offering_rate_property {
             self.value = Some(input.into());
             self
         }
+        /// <p>The property value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -888,6 +967,7 @@ impl SavingsPlanOfferingRateProperty {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -899,10 +979,15 @@ impl SavingsPlanOfferingRateProperty {
     std::hash::Hash,
 )]
 pub enum SavingsPlanRateServiceCode {
+    #[allow(missing_docs)] // documentation missing in model
     Lambda,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2,
+    #[allow(missing_docs)] // documentation missing in model
     Fargate,
+    #[allow(missing_docs)] // documentation missing in model
     FargateEks,
+    #[allow(missing_docs)] // documentation missing in model
     Sagemaker,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -927,6 +1012,7 @@ impl std::str::FromStr for SavingsPlanRateServiceCode {
     }
 }
 impl SavingsPlanRateServiceCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SavingsPlanRateServiceCode::Lambda => "AWSLambda",
@@ -937,6 +1023,7 @@ impl SavingsPlanRateServiceCode {
             SavingsPlanRateServiceCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AWSLambda",
@@ -953,6 +1040,7 @@ impl AsRef<str> for SavingsPlanRateServiceCode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -964,8 +1052,11 @@ impl AsRef<str> for SavingsPlanRateServiceCode {
     std::hash::Hash,
 )]
 pub enum SavingsPlanRateUnit {
+    #[allow(missing_docs)] // documentation missing in model
     Hours,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaGbSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Request,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -988,6 +1079,7 @@ impl std::str::FromStr for SavingsPlanRateUnit {
     }
 }
 impl SavingsPlanRateUnit {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SavingsPlanRateUnit::Hours => "Hrs",
@@ -996,6 +1088,7 @@ impl SavingsPlanRateUnit {
             SavingsPlanRateUnit::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Hrs", "Lambda-GB-Second", "Request"]
     }
@@ -1054,6 +1147,7 @@ pub mod parent_savings_plan_offering {
             self.offering_id = Some(input.into());
             self
         }
+        /// <p>The ID of the offering.</p>
         pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.offering_id = input;
             self
@@ -1063,6 +1157,7 @@ pub mod parent_savings_plan_offering {
             self.payment_option = Some(input);
             self
         }
+        /// <p>The payment option.</p>
         pub fn set_payment_option(
             mut self,
             input: std::option::Option<crate::model::SavingsPlanPaymentOption>,
@@ -1075,6 +1170,7 @@ pub mod parent_savings_plan_offering {
             self.plan_type = Some(input);
             self
         }
+        /// <p>The plan type.</p>
         pub fn set_plan_type(
             mut self,
             input: std::option::Option<crate::model::SavingsPlanType>,
@@ -1087,6 +1183,7 @@ pub mod parent_savings_plan_offering {
             self.duration_seconds = Some(input);
             self
         }
+        /// <p>The duration, in seconds.</p>
         pub fn set_duration_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.duration_seconds = input;
             self
@@ -1096,6 +1193,7 @@ pub mod parent_savings_plan_offering {
             self.currency = Some(input);
             self
         }
+        /// <p>The currency.</p>
         pub fn set_currency(
             mut self,
             input: std::option::Option<crate::model::CurrencyCode>,
@@ -1108,6 +1206,7 @@ pub mod parent_savings_plan_offering {
             self.plan_description = Some(input.into());
             self
         }
+        /// <p>The description.</p>
         pub fn set_plan_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1167,6 +1266,7 @@ pub mod savings_plan_offering_rate_filter_element {
             self.name = Some(input);
             self
         }
+        /// <p>The filter name.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::SavingsPlanRateFilterAttribute>,
@@ -1174,12 +1274,18 @@ pub mod savings_plan_offering_rate_filter_element {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The filter values.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The filter values.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1203,6 +1309,7 @@ impl SavingsPlanOfferingRateFilterElement {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1214,11 +1321,17 @@ impl SavingsPlanOfferingRateFilterElement {
     std::hash::Hash,
 )]
 pub enum SavingsPlanRateFilterAttribute {
+    #[allow(missing_docs)] // documentation missing in model
     InstanceFamily,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceType,
+    #[allow(missing_docs)] // documentation missing in model
     ProductDescription,
+    #[allow(missing_docs)] // documentation missing in model
     ProductId,
+    #[allow(missing_docs)] // documentation missing in model
     Region,
+    #[allow(missing_docs)] // documentation missing in model
     Tenancy,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1244,6 +1357,7 @@ impl std::str::FromStr for SavingsPlanRateFilterAttribute {
     }
 }
 impl SavingsPlanRateFilterAttribute {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SavingsPlanRateFilterAttribute::InstanceFamily => "instanceFamily",
@@ -1255,6 +1369,7 @@ impl SavingsPlanRateFilterAttribute {
             SavingsPlanRateFilterAttribute::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "instanceFamily",
@@ -1372,6 +1487,7 @@ pub mod savings_plan {
             self.offering_id = Some(input.into());
             self
         }
+        /// <p>The ID of the offering.</p>
         pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.offering_id = input;
             self
@@ -1381,6 +1497,7 @@ pub mod savings_plan {
             self.savings_plan_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Savings Plan.</p>
         pub fn set_savings_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1393,6 +1510,7 @@ pub mod savings_plan {
             self.savings_plan_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Savings Plan.</p>
         pub fn set_savings_plan_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1405,6 +1523,7 @@ pub mod savings_plan {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1414,6 +1533,7 @@ pub mod savings_plan {
             self.start = Some(input.into());
             self
         }
+        /// <p>The start time.</p>
         pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start = input;
             self
@@ -1423,6 +1543,7 @@ pub mod savings_plan {
             self.end = Some(input.into());
             self
         }
+        /// <p>The end time.</p>
         pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end = input;
             self
@@ -1432,6 +1553,7 @@ pub mod savings_plan {
             self.state = Some(input);
             self
         }
+        /// <p>The state.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::SavingsPlanState>,
@@ -1444,6 +1566,7 @@ pub mod savings_plan {
             self.region = Some(input.into());
             self
         }
+        /// <p>The AWS Region.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -1453,6 +1576,7 @@ pub mod savings_plan {
             self.ec2_instance_family = Some(input.into());
             self
         }
+        /// <p>The EC2 instance family.</p>
         pub fn set_ec2_instance_family(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1465,6 +1589,7 @@ pub mod savings_plan {
             self.savings_plan_type = Some(input);
             self
         }
+        /// <p>The plan type.</p>
         pub fn set_savings_plan_type(
             mut self,
             input: std::option::Option<crate::model::SavingsPlanType>,
@@ -1477,6 +1602,7 @@ pub mod savings_plan {
             self.payment_option = Some(input);
             self
         }
+        /// <p>The payment option.</p>
         pub fn set_payment_option(
             mut self,
             input: std::option::Option<crate::model::SavingsPlanPaymentOption>,
@@ -1484,6 +1610,11 @@ pub mod savings_plan {
             self.payment_option = input;
             self
         }
+        /// Appends an item to `product_types`.
+        ///
+        /// To override the contents of this collection use [`set_product_types`](Self::set_product_types).
+        ///
+        /// <p>The product types.</p>
         pub fn product_types(
             mut self,
             input: impl Into<crate::model::SavingsPlanProductType>,
@@ -1493,6 +1624,7 @@ pub mod savings_plan {
             self.product_types = Some(v);
             self
         }
+        /// <p>The product types.</p>
         pub fn set_product_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanProductType>>,
@@ -1505,6 +1637,7 @@ pub mod savings_plan {
             self.currency = Some(input);
             self
         }
+        /// <p>The currency.</p>
         pub fn set_currency(
             mut self,
             input: std::option::Option<crate::model::CurrencyCode>,
@@ -1517,6 +1650,7 @@ pub mod savings_plan {
             self.commitment = Some(input.into());
             self
         }
+        /// <p>The hourly commitment, in USD.</p>
         pub fn set_commitment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.commitment = input;
             self
@@ -1526,6 +1660,7 @@ pub mod savings_plan {
             self.upfront_payment_amount = Some(input.into());
             self
         }
+        /// <p>The up-front payment amount.</p>
         pub fn set_upfront_payment_amount(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1538,6 +1673,7 @@ pub mod savings_plan {
             self.recurring_payment_amount = Some(input.into());
             self
         }
+        /// <p>The recurring payment amount.</p>
         pub fn set_recurring_payment_amount(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1550,10 +1686,16 @@ pub mod savings_plan {
             self.term_duration_in_seconds = Some(input);
             self
         }
+        /// <p>The duration of the term, in seconds.</p>
         pub fn set_term_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.term_duration_in_seconds = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1564,6 +1706,7 @@ pub mod savings_plan {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>One or more tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1605,6 +1748,7 @@ impl SavingsPlan {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1616,11 +1760,17 @@ impl SavingsPlan {
     std::hash::Hash,
 )]
 pub enum SavingsPlanState {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     PaymentFailed,
+    #[allow(missing_docs)] // documentation missing in model
     PaymentPending,
+    #[allow(missing_docs)] // documentation missing in model
     Queued,
+    #[allow(missing_docs)] // documentation missing in model
     QueuedDeleted,
+    #[allow(missing_docs)] // documentation missing in model
     Retired,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1646,6 +1796,7 @@ impl std::str::FromStr for SavingsPlanState {
     }
 }
 impl SavingsPlanState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SavingsPlanState::Active => "active",
@@ -1657,6 +1808,7 @@ impl SavingsPlanState {
             SavingsPlanState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "active",
@@ -1706,6 +1858,7 @@ pub mod savings_plan_filter {
             self.name = Some(input);
             self
         }
+        /// <p>The filter name.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::SavingsPlansFilterName>,
@@ -1713,12 +1866,18 @@ pub mod savings_plan_filter {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The filter value.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The filter value.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1742,6 +1901,7 @@ impl SavingsPlanFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1753,14 +1913,23 @@ impl SavingsPlanFilter {
     std::hash::Hash,
 )]
 pub enum SavingsPlansFilterName {
+    #[allow(missing_docs)] // documentation missing in model
     Commitment,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2InstanceFamily,
+    #[allow(missing_docs)] // documentation missing in model
     End,
+    #[allow(missing_docs)] // documentation missing in model
     PaymentOption,
+    #[allow(missing_docs)] // documentation missing in model
     Region,
+    #[allow(missing_docs)] // documentation missing in model
     SavingsPlanType,
+    #[allow(missing_docs)] // documentation missing in model
     Start,
+    #[allow(missing_docs)] // documentation missing in model
     Term,
+    #[allow(missing_docs)] // documentation missing in model
     Upfront,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1789,6 +1958,7 @@ impl std::str::FromStr for SavingsPlansFilterName {
     }
 }
 impl SavingsPlansFilterName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SavingsPlansFilterName::Commitment => "commitment",
@@ -1803,6 +1973,7 @@ impl SavingsPlansFilterName {
             SavingsPlansFilterName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "commitment",
@@ -1880,6 +2051,7 @@ pub mod savings_plan_rate {
             self.rate = Some(input.into());
             self
         }
+        /// <p>The rate.</p>
         pub fn set_rate(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rate = input;
             self
@@ -1889,6 +2061,7 @@ pub mod savings_plan_rate {
             self.currency = Some(input);
             self
         }
+        /// <p>The currency.</p>
         pub fn set_currency(
             mut self,
             input: std::option::Option<crate::model::CurrencyCode>,
@@ -1901,6 +2074,7 @@ pub mod savings_plan_rate {
             self.unit = Some(input);
             self
         }
+        /// <p>The unit.</p>
         pub fn set_unit(
             mut self,
             input: std::option::Option<crate::model::SavingsPlanRateUnit>,
@@ -1913,6 +2087,7 @@ pub mod savings_plan_rate {
             self.product_type = Some(input);
             self
         }
+        /// <p>The product type.</p>
         pub fn set_product_type(
             mut self,
             input: std::option::Option<crate::model::SavingsPlanProductType>,
@@ -1925,6 +2100,7 @@ pub mod savings_plan_rate {
             self.service_code = Some(input);
             self
         }
+        /// <p>The service.</p>
         pub fn set_service_code(
             mut self,
             input: std::option::Option<crate::model::SavingsPlanRateServiceCode>,
@@ -1937,6 +2113,7 @@ pub mod savings_plan_rate {
             self.usage_type = Some(input.into());
             self
         }
+        /// <p>The usage details of the line item in the billing report.</p>
         pub fn set_usage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.usage_type = input;
             self
@@ -1946,10 +2123,16 @@ pub mod savings_plan_rate {
             self.operation = Some(input.into());
             self
         }
+        /// <p>The specific AWS operation for the line item in the billing report.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation = input;
             self
         }
+        /// Appends an item to `properties`.
+        ///
+        /// To override the contents of this collection use [`set_properties`](Self::set_properties).
+        ///
+        /// <p>The properties.</p>
         pub fn properties(
             mut self,
             input: impl Into<crate::model::SavingsPlanRateProperty>,
@@ -1959,6 +2142,7 @@ pub mod savings_plan_rate {
             self.properties = Some(v);
             self
         }
+        /// <p>The properties.</p>
         pub fn set_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanRateProperty>>,
@@ -2020,6 +2204,7 @@ pub mod savings_plan_rate_property {
             self.name = Some(input);
             self
         }
+        /// <p>The property name.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::SavingsPlanRatePropertyKey>,
@@ -2032,6 +2217,7 @@ pub mod savings_plan_rate_property {
             self.value = Some(input.into());
             self
         }
+        /// <p>The property value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -2052,6 +2238,7 @@ impl SavingsPlanRateProperty {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2063,10 +2250,15 @@ impl SavingsPlanRateProperty {
     std::hash::Hash,
 )]
 pub enum SavingsPlanRatePropertyKey {
+    #[allow(missing_docs)] // documentation missing in model
     InstanceFamily,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceType,
+    #[allow(missing_docs)] // documentation missing in model
     ProductDescription,
+    #[allow(missing_docs)] // documentation missing in model
     Region,
+    #[allow(missing_docs)] // documentation missing in model
     Tenancy,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2091,6 +2283,7 @@ impl std::str::FromStr for SavingsPlanRatePropertyKey {
     }
 }
 impl SavingsPlanRatePropertyKey {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SavingsPlanRatePropertyKey::InstanceFamily => "instanceFamily",
@@ -2101,6 +2294,7 @@ impl SavingsPlanRatePropertyKey {
             SavingsPlanRatePropertyKey::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "instanceFamily",
@@ -2149,6 +2343,7 @@ pub mod savings_plan_rate_filter {
             self.name = Some(input);
             self
         }
+        /// <p>The filter name.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::SavingsPlanRateFilterName>,
@@ -2156,12 +2351,18 @@ pub mod savings_plan_rate_filter {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The filter values.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The filter values.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2185,6 +2386,7 @@ impl SavingsPlanRateFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2196,13 +2398,21 @@ impl SavingsPlanRateFilter {
     std::hash::Hash,
 )]
 pub enum SavingsPlanRateFilterName {
+    #[allow(missing_docs)] // documentation missing in model
     InstanceType,
+    #[allow(missing_docs)] // documentation missing in model
     Operation,
+    #[allow(missing_docs)] // documentation missing in model
     ProductDescription,
+    #[allow(missing_docs)] // documentation missing in model
     ProductType,
+    #[allow(missing_docs)] // documentation missing in model
     Region,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceCode,
+    #[allow(missing_docs)] // documentation missing in model
     Tenancy,
+    #[allow(missing_docs)] // documentation missing in model
     UsageType,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2230,6 +2440,7 @@ impl std::str::FromStr for SavingsPlanRateFilterName {
     }
 }
 impl SavingsPlanRateFilterName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SavingsPlanRateFilterName::InstanceType => "instanceType",
@@ -2243,6 +2454,7 @@ impl SavingsPlanRateFilterName {
             SavingsPlanRateFilterName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "instanceType",

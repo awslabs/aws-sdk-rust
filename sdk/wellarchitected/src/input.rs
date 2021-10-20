@@ -15,16 +15,25 @@ pub mod associate_lenses_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
         }
+        /// Appends an item to `lens_aliases`.
+        ///
+        /// To override the contents of this collection use [`set_lens_aliases`](Self::set_lens_aliases).
+        ///
+        /// <p>List of lens aliases to associate or disassociate with a workload.</p>
+        /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
         pub fn lens_aliases(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.lens_aliases.unwrap_or_default();
             v.push(input.into());
             self.lens_aliases = Some(v);
             self
         }
+        /// <p>List of lens aliases to associate or disassociate with a workload.</p>
+        /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_aliases(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -37,7 +46,7 @@ pub mod associate_lenses_input {
             self,
         ) -> std::result::Result<
             crate::input::AssociateLensesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AssociateLensesInput {
                 workload_id: self.workload_id,
@@ -57,27 +66,27 @@ impl AssociateLensesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AssociateLenses,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AssociateLensesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.workload_id;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_id = smithy_http::label::fmt_string(input_1, false);
+            let workload_id = aws_smithy_http::label::fmt_string(input_1, false);
             if workload_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 });
@@ -94,7 +103,7 @@ impl AssociateLensesInput {
         fn update_http_builder(
             input: &crate::input::AssociateLensesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -103,27 +112,27 @@ impl AssociateLensesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AssociateLensesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_lenses(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -146,15 +155,15 @@ impl AssociateLensesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AssociateLenses::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AssociateLenses",
             "wellarchitected",
         ));
@@ -163,10 +172,10 @@ impl AssociateLensesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -196,6 +205,7 @@ pub mod create_milestone_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -206,6 +216,8 @@ pub mod create_milestone_input {
             self.milestone_name = Some(input.into());
             self
         }
+        /// <p>The name of the milestone in a workload.</p>
+        /// <p>Milestone names must be unique within a workload.</p>
         pub fn set_milestone_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -227,6 +239,16 @@ pub mod create_milestone_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+        /// (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with
+        /// the same client request token and the same parameters after it has completed
+        /// successfully, the result of the original request is returned. </p>
+        /// <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
+        /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+        /// you must provide this token or the request will fail.</p>
+        /// </important>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -239,7 +261,7 @@ pub mod create_milestone_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateMilestoneInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateMilestoneInput {
                 workload_id: self.workload_id,
@@ -260,27 +282,27 @@ impl CreateMilestoneInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateMilestone,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateMilestoneInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_2 = &_input.workload_id;
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_id = smithy_http::label::fmt_string(input_2, false);
+            let workload_id = aws_smithy_http::label::fmt_string(input_2, false);
             if workload_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 });
@@ -297,7 +319,7 @@ impl CreateMilestoneInput {
         fn update_http_builder(
             input: &crate::input::CreateMilestoneInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -306,10 +328,10 @@ impl CreateMilestoneInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateMilestoneInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -319,17 +341,17 @@ impl CreateMilestoneInput {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_milestone(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -352,15 +374,15 @@ impl CreateMilestoneInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateMilestone::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateMilestone",
             "wellarchitected",
         ));
@@ -369,10 +391,10 @@ impl CreateMilestoneInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -418,6 +440,9 @@ pub mod create_workload_input {
             self.workload_name = Some(input.into());
             self
         }
+        /// <p>The name of the workload.</p>
+        /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+        /// are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -430,6 +455,7 @@ pub mod create_workload_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for the workload.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -439,6 +465,7 @@ pub mod create_workload_input {
             self.environment = Some(input);
             self
         }
+        /// <p>The environment for the workload.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::WorkloadEnvironment>,
@@ -446,12 +473,18 @@ pub mod create_workload_input {
             self.environment = input;
             self
         }
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The list of AWS account IDs associated with the workload.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>The list of AWS account IDs associated with the workload.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -459,12 +492,20 @@ pub mod create_workload_input {
             self.account_ids = input;
             self
         }
+        /// Appends an item to `aws_regions`.
+        ///
+        /// To override the contents of this collection use [`set_aws_regions`](Self::set_aws_regions).
+        ///
+        /// <p>The list of AWS Regions associated with the workload, for example,
+        /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.aws_regions.unwrap_or_default();
             v.push(input.into());
             self.aws_regions = Some(v);
             self
         }
+        /// <p>The list of AWS Regions associated with the workload, for example,
+        /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn set_aws_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -472,12 +513,18 @@ pub mod create_workload_input {
             self.aws_regions = input;
             self
         }
+        /// Appends an item to `non_aws_regions`.
+        ///
+        /// To override the contents of this collection use [`set_non_aws_regions`](Self::set_non_aws_regions).
+        ///
+        /// <p> The list of non-AWS Regions associated with the workload.</p>
         pub fn non_aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.non_aws_regions.unwrap_or_default();
             v.push(input.into());
             self.non_aws_regions = Some(v);
             self
         }
+        /// <p> The list of non-AWS Regions associated with the workload.</p>
         pub fn set_non_aws_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -485,12 +532,20 @@ pub mod create_workload_input {
             self.non_aws_regions = input;
             self
         }
+        /// Appends an item to `pillar_priorities`.
+        ///
+        /// To override the contents of this collection use [`set_pillar_priorities`](Self::set_pillar_priorities).
+        ///
+        /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
+        /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
         pub fn pillar_priorities(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.pillar_priorities.unwrap_or_default();
             v.push(input.into());
             self.pillar_priorities = Some(v);
             self
         }
+        /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
+        /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
         pub fn set_pillar_priorities(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -503,6 +558,7 @@ pub mod create_workload_input {
             self.architectural_design = Some(input.into());
             self
         }
+        /// <p>The URL of the architectural design for the workload.</p>
         pub fn set_architectural_design(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -516,6 +572,8 @@ pub mod create_workload_input {
             self.review_owner = Some(input.into());
             self
         }
+        /// <p>The review owner of the workload. The name, email address, or identifier for the
+        /// primary group or individual that owns the workload review process.</p>
         pub fn set_review_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.review_owner = input;
             self
@@ -663,6 +721,145 @@ pub mod create_workload_input {
             self.industry_type = Some(input.into());
             self
         }
+        /// <p>The industry type for the workload.</p>
+        /// <p>If specified, must be one of the following:</p>  
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Agriculture</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Automobile</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Defense</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Design and Engineering</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Digital Advertising</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Education</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Environmental Protection</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Financial Services</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Gaming</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>General Public Services</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Healthcare</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Hospitality</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>InfoTech</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Justice and Public Safety</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Life Sciences</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Manufacturing</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Media & Entertainment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Mining & Resources</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Oil & Gas</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Power & Utilities</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Professional Services</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Real Estate & Construction</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Retail & Wholesale</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Social Protection</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Telecommunications</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Travel, Transportation & Logistics</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Other</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_industry_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -675,16 +872,23 @@ pub mod create_workload_input {
             self.industry = Some(input.into());
             self
         }
+        /// <p>The industry for the workload.</p>
         pub fn set_industry(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.industry = input;
             self
         }
+        /// Appends an item to `lenses`.
+        ///
+        /// To override the contents of this collection use [`set_lenses`](Self::set_lenses).
+        ///
+        /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn lenses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.lenses.unwrap_or_default();
             v.push(input.into());
             self.lenses = Some(v);
             self
         }
+        /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lenses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -697,6 +901,7 @@ pub mod create_workload_input {
             self.notes = Some(input.into());
             self
         }
+        /// <p>The notes associated with the workload.</p>
         pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.notes = input;
             self
@@ -715,6 +920,16 @@ pub mod create_workload_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+        /// (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with
+        /// the same client request token and the same parameters after it has completed
+        /// successfully, the result of the original request is returned. </p>
+        /// <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
+        /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+        /// you must provide this token or the request will fail.</p>
+        /// </important>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -722,6 +937,11 @@ pub mod create_workload_input {
             self.client_request_token = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to be associated with the workload.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -732,6 +952,7 @@ pub mod create_workload_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags to be associated with the workload.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -746,7 +967,7 @@ pub mod create_workload_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateWorkloadInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateWorkloadInput {
                 workload_name: self.workload_name,
@@ -779,16 +1000,16 @@ impl CreateWorkloadInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateWorkload,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateWorkloadInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/workloads").expect("formatting should succeed");
             Ok(())
         }
@@ -796,7 +1017,7 @@ impl CreateWorkloadInput {
         fn update_http_builder(
             input: &crate::input::CreateWorkloadInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -805,10 +1026,10 @@ impl CreateWorkloadInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateWorkloadInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -818,14 +1039,16 @@ impl CreateWorkloadInput {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_workload(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -848,15 +1071,15 @@ impl CreateWorkloadInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateWorkload::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateWorkload",
             "wellarchitected",
         ));
@@ -865,10 +1088,10 @@ impl CreateWorkloadInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -899,6 +1122,7 @@ pub mod create_workload_share_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -908,6 +1132,7 @@ pub mod create_workload_share_input {
             self.shared_with = Some(input.into());
             self
         }
+        /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
         pub fn set_shared_with(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shared_with = input;
             self
@@ -917,6 +1142,7 @@ pub mod create_workload_share_input {
             self.permission_type = Some(input);
             self
         }
+        /// <p>Permission granted on a workload share.</p>
         pub fn set_permission_type(
             mut self,
             input: std::option::Option<crate::model::PermissionType>,
@@ -938,6 +1164,16 @@ pub mod create_workload_share_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+        /// (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with
+        /// the same client request token and the same parameters after it has completed
+        /// successfully, the result of the original request is returned. </p>
+        /// <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
+        /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+        /// you must provide this token or the request will fail.</p>
+        /// </important>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -950,7 +1186,7 @@ pub mod create_workload_share_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateWorkloadShareInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateWorkloadShareInput {
                 workload_id: self.workload_id,
@@ -972,27 +1208,27 @@ impl CreateWorkloadShareInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateWorkloadShare,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateWorkloadShareInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_3 = &_input.workload_id;
             let input_3 =
                 input_3
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_id = smithy_http::label::fmt_string(input_3, false);
+            let workload_id = aws_smithy_http::label::fmt_string(input_3, false);
             if workload_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 });
@@ -1009,7 +1245,7 @@ impl CreateWorkloadShareInput {
         fn update_http_builder(
             input: &crate::input::CreateWorkloadShareInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1018,10 +1254,10 @@ impl CreateWorkloadShareInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateWorkloadShareInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1031,17 +1267,17 @@ impl CreateWorkloadShareInput {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_workload_share(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1064,15 +1300,15 @@ impl CreateWorkloadShareInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateWorkloadShare::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateWorkloadShare",
             "wellarchitected",
         ));
@@ -1081,10 +1317,10 @@ impl CreateWorkloadShareInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1113,6 +1349,7 @@ pub mod delete_workload_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -1131,6 +1368,16 @@ pub mod delete_workload_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+        /// (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with
+        /// the same client request token and the same parameters after it has completed
+        /// successfully, the result of the original request is returned. </p>
+        /// <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
+        /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+        /// you must provide this token or the request will fail.</p>
+        /// </important>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1143,7 +1390,7 @@ pub mod delete_workload_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteWorkloadInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteWorkloadInput {
                 workload_id: self.workload_id,
@@ -1163,27 +1410,27 @@ impl DeleteWorkloadInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteWorkload,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteWorkloadInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_4 = &_input.workload_id;
             let input_4 =
                 input_4
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_id = smithy_http::label::fmt_string(input_4, false);
+            let workload_id = aws_smithy_http::label::fmt_string(input_4, false);
             if workload_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 });
@@ -1193,11 +1440,11 @@ impl DeleteWorkloadInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DeleteWorkloadInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_5) = &_input.client_request_token {
                 query.push_kv(
                     "ClientRequestToken",
-                    &smithy_http::query::fmt_string(&inner_5),
+                    &aws_smithy_http::query::fmt_string(&inner_5),
                 );
             }
         }
@@ -1205,7 +1452,7 @@ impl DeleteWorkloadInput {
         fn update_http_builder(
             input: &crate::input::DeleteWorkloadInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1215,10 +1462,10 @@ impl DeleteWorkloadInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteWorkloadInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1228,13 +1475,13 @@ impl DeleteWorkloadInput {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1257,15 +1504,15 @@ impl DeleteWorkloadInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteWorkload::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteWorkload",
             "wellarchitected",
         ));
@@ -1274,10 +1521,10 @@ impl DeleteWorkloadInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1307,6 +1554,7 @@ pub mod delete_workload_share_input {
             self.share_id = Some(input.into());
             self
         }
+        /// <p>The ID associated with the workload share.</p>
         pub fn set_share_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.share_id = input;
             self
@@ -1316,6 +1564,7 @@ pub mod delete_workload_share_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -1334,6 +1583,16 @@ pub mod delete_workload_share_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+        /// (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with
+        /// the same client request token and the same parameters after it has completed
+        /// successfully, the result of the original request is returned. </p>
+        /// <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
+        /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+        /// you must provide this token or the request will fail.</p>
+        /// </important>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1346,7 +1605,7 @@ pub mod delete_workload_share_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteWorkloadShareInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteWorkloadShareInput {
                 share_id: self.share_id,
@@ -1367,27 +1626,27 @@ impl DeleteWorkloadShareInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteWorkloadShare,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteWorkloadShareInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_6 = &_input.workload_id;
             let input_6 =
                 input_6
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_id = smithy_http::label::fmt_string(input_6, false);
+            let workload_id = aws_smithy_http::label::fmt_string(input_6, false);
             if workload_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 });
@@ -1396,13 +1655,13 @@ impl DeleteWorkloadShareInput {
             let input_7 =
                 input_7
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "share_id",
                         details: "cannot be empty or unset",
                     })?;
-            let share_id = smithy_http::label::fmt_string(input_7, false);
+            let share_id = aws_smithy_http::label::fmt_string(input_7, false);
             if share_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "share_id",
                     details: "cannot be empty or unset",
                 });
@@ -1417,11 +1676,11 @@ impl DeleteWorkloadShareInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DeleteWorkloadShareInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_8) = &_input.client_request_token {
                 query.push_kv(
                     "ClientRequestToken",
-                    &smithy_http::query::fmt_string(&inner_8),
+                    &aws_smithy_http::query::fmt_string(&inner_8),
                 );
             }
         }
@@ -1429,7 +1688,7 @@ impl DeleteWorkloadShareInput {
         fn update_http_builder(
             input: &crate::input::DeleteWorkloadShareInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1439,10 +1698,10 @@ impl DeleteWorkloadShareInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteWorkloadShareInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1452,13 +1711,13 @@ impl DeleteWorkloadShareInput {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1481,15 +1740,15 @@ impl DeleteWorkloadShareInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteWorkloadShare::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteWorkloadShare",
             "wellarchitected",
         ));
@@ -1498,10 +1757,10 @@ impl DeleteWorkloadShareInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1530,16 +1789,25 @@ pub mod disassociate_lenses_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
         }
+        /// Appends an item to `lens_aliases`.
+        ///
+        /// To override the contents of this collection use [`set_lens_aliases`](Self::set_lens_aliases).
+        ///
+        /// <p>List of lens aliases to associate or disassociate with a workload.</p>
+        /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
         pub fn lens_aliases(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.lens_aliases.unwrap_or_default();
             v.push(input.into());
             self.lens_aliases = Some(v);
             self
         }
+        /// <p>List of lens aliases to associate or disassociate with a workload.</p>
+        /// <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_aliases(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1552,7 +1820,7 @@ pub mod disassociate_lenses_input {
             self,
         ) -> std::result::Result<
             crate::input::DisassociateLensesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisassociateLensesInput {
                 workload_id: self.workload_id,
@@ -1572,27 +1840,27 @@ impl DisassociateLensesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisassociateLenses,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisassociateLensesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_9 = &_input.workload_id;
             let input_9 =
                 input_9
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_id = smithy_http::label::fmt_string(input_9, false);
+            let workload_id = aws_smithy_http::label::fmt_string(input_9, false);
             if workload_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 });
@@ -1609,7 +1877,7 @@ impl DisassociateLensesInput {
         fn update_http_builder(
             input: &crate::input::DisassociateLensesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1618,27 +1886,27 @@ impl DisassociateLensesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisassociateLensesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disassociate_lenses(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1661,15 +1929,15 @@ impl DisassociateLensesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisassociateLenses::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisassociateLenses",
             "wellarchitected",
         ));
@@ -1678,10 +1946,10 @@ impl DisassociateLensesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1712,6 +1980,7 @@ pub mod get_answer_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -1722,6 +1991,8 @@ pub mod get_answer_input {
             self.lens_alias = Some(input.into());
             self
         }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -1731,6 +2002,7 @@ pub mod get_answer_input {
             self.question_id = Some(input.into());
             self
         }
+        /// <p>The ID of the question.</p>
         pub fn set_question_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.question_id = input;
             self
@@ -1741,6 +2013,8 @@ pub mod get_answer_input {
             self.milestone_number = Some(input);
             self
         }
+        /// <p>The milestone number.</p>
+        /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn set_milestone_number(mut self, input: std::option::Option<i32>) -> Self {
             self.milestone_number = input;
             self
@@ -1748,7 +2022,7 @@ pub mod get_answer_input {
         /// Consumes the builder and constructs a [`GetAnswerInput`](crate::input::GetAnswerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetAnswerInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetAnswerInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetAnswerInput {
                 workload_id: self.workload_id,
@@ -1770,27 +2044,27 @@ impl GetAnswerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAnswer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAnswerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_10 = &_input.workload_id;
             let input_10 =
                 input_10
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_id = smithy_http::label::fmt_string(input_10, false);
+            let workload_id = aws_smithy_http::label::fmt_string(input_10, false);
             if workload_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 });
@@ -1799,13 +2073,13 @@ impl GetAnswerInput {
             let input_11 =
                 input_11
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "lens_alias",
                         details: "cannot be empty or unset",
                     })?;
-            let lens_alias = smithy_http::label::fmt_string(input_11, false);
+            let lens_alias = aws_smithy_http::label::fmt_string(input_11, false);
             if lens_alias.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "lens_alias",
                     details: "cannot be empty or unset",
                 });
@@ -1814,13 +2088,13 @@ impl GetAnswerInput {
             let input_12 =
                 input_12
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "question_id",
                         details: "cannot be empty or unset",
                     })?;
-            let question_id = smithy_http::label::fmt_string(input_12, false);
+            let question_id = aws_smithy_http::label::fmt_string(input_12, false);
             if question_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "question_id",
                     details: "cannot be empty or unset",
                 });
@@ -1836,11 +2110,11 @@ impl GetAnswerInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::GetAnswerInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.milestone_number != 0 {
                 query.push_kv(
                     "MilestoneNumber",
-                    &smithy_types::primitive::Encoder::from(_input.milestone_number).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.milestone_number).encode(),
                 );
             }
         }
@@ -1848,7 +2122,7 @@ impl GetAnswerInput {
         fn update_http_builder(
             input: &crate::input::GetAnswerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1858,23 +2132,23 @@ impl GetAnswerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAnswerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1897,13 +2171,13 @@ impl GetAnswerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetAnswer::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetAnswer::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetAnswer",
                     "wellarchitected",
                 ));
@@ -1912,10 +2186,10 @@ impl GetAnswerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1945,6 +2219,7 @@ pub mod get_lens_review_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -1955,6 +2230,8 @@ pub mod get_lens_review_input {
             self.lens_alias = Some(input.into());
             self
         }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -1965,6 +2242,8 @@ pub mod get_lens_review_input {
             self.milestone_number = Some(input);
             self
         }
+        /// <p>The milestone number.</p>
+        /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn set_milestone_number(mut self, input: std::option::Option<i32>) -> Self {
             self.milestone_number = input;
             self
@@ -1972,8 +2251,10 @@ pub mod get_lens_review_input {
         /// Consumes the builder and constructs a [`GetLensReviewInput`](crate::input::GetLensReviewInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetLensReviewInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetLensReviewInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetLensReviewInput {
                 workload_id: self.workload_id,
                 lens_alias: self.lens_alias,
@@ -1993,27 +2274,27 @@ impl GetLensReviewInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetLensReview,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetLensReviewInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_13 = &_input.workload_id;
             let input_13 =
                 input_13
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_id = smithy_http::label::fmt_string(input_13, false);
+            let workload_id = aws_smithy_http::label::fmt_string(input_13, false);
             if workload_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 });
@@ -2022,13 +2303,13 @@ impl GetLensReviewInput {
             let input_14 =
                 input_14
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "lens_alias",
                         details: "cannot be empty or unset",
                     })?;
-            let lens_alias = smithy_http::label::fmt_string(input_14, false);
+            let lens_alias = aws_smithy_http::label::fmt_string(input_14, false);
             if lens_alias.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "lens_alias",
                     details: "cannot be empty or unset",
                 });
@@ -2043,11 +2324,11 @@ impl GetLensReviewInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::GetLensReviewInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.milestone_number != 0 {
                 query.push_kv(
                     "MilestoneNumber",
-                    &smithy_types::primitive::Encoder::from(_input.milestone_number).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.milestone_number).encode(),
                 );
             }
         }
@@ -2055,7 +2336,7 @@ impl GetLensReviewInput {
         fn update_http_builder(
             input: &crate::input::GetLensReviewInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2065,23 +2346,23 @@ impl GetLensReviewInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetLensReviewInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2104,25 +2385,27 @@ impl GetLensReviewInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetLensReview::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetLensReview",
-                    "wellarchitected",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetLensReview::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetLensReview",
+            "wellarchitected",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2152,6 +2435,7 @@ pub mod get_lens_review_report_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -2162,6 +2446,8 @@ pub mod get_lens_review_report_input {
             self.lens_alias = Some(input.into());
             self
         }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -2172,6 +2458,8 @@ pub mod get_lens_review_report_input {
             self.milestone_number = Some(input);
             self
         }
+        /// <p>The milestone number.</p>
+        /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn set_milestone_number(mut self, input: std::option::Option<i32>) -> Self {
             self.milestone_number = input;
             self
@@ -2181,7 +2469,7 @@ pub mod get_lens_review_report_input {
             self,
         ) -> std::result::Result<
             crate::input::GetLensReviewReportInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetLensReviewReportInput {
                 workload_id: self.workload_id,
@@ -2202,27 +2490,27 @@ impl GetLensReviewReportInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetLensReviewReport,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetLensReviewReportInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_15 = &_input.workload_id;
             let input_15 =
                 input_15
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_id = smithy_http::label::fmt_string(input_15, false);
+            let workload_id = aws_smithy_http::label::fmt_string(input_15, false);
             if workload_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 });
@@ -2231,13 +2519,13 @@ impl GetLensReviewReportInput {
             let input_16 =
                 input_16
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "lens_alias",
                         details: "cannot be empty or unset",
                     })?;
-            let lens_alias = smithy_http::label::fmt_string(input_16, false);
+            let lens_alias = aws_smithy_http::label::fmt_string(input_16, false);
             if lens_alias.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "lens_alias",
                     details: "cannot be empty or unset",
                 });
@@ -2252,11 +2540,11 @@ impl GetLensReviewReportInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::GetLensReviewReportInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.milestone_number != 0 {
                 query.push_kv(
                     "MilestoneNumber",
-                    &smithy_types::primitive::Encoder::from(_input.milestone_number).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.milestone_number).encode(),
                 );
             }
         }
@@ -2264,7 +2552,7 @@ impl GetLensReviewReportInput {
         fn update_http_builder(
             input: &crate::input::GetLensReviewReportInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2274,23 +2562,23 @@ impl GetLensReviewReportInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetLensReviewReportInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2313,15 +2601,15 @@ impl GetLensReviewReportInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetLensReviewReport::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetLensReviewReport",
             "wellarchitected",
         ));
@@ -2330,10 +2618,10 @@ impl GetLensReviewReportInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2363,6 +2651,8 @@ pub mod get_lens_version_difference_input {
             self.lens_alias = Some(input.into());
             self
         }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -2372,6 +2662,7 @@ pub mod get_lens_version_difference_input {
             self.base_lens_version = Some(input.into());
             self
         }
+        /// <p>The base version of the lens.</p>
         pub fn set_base_lens_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2384,7 +2675,7 @@ pub mod get_lens_version_difference_input {
             self,
         ) -> std::result::Result<
             crate::input::GetLensVersionDifferenceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetLensVersionDifferenceInput {
                 lens_alias: self.lens_alias,
@@ -2405,27 +2696,27 @@ impl GetLensVersionDifferenceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetLensVersionDifference,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetLensVersionDifferenceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_17 = &_input.lens_alias;
             let input_17 =
                 input_17
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "lens_alias",
                         details: "cannot be empty or unset",
                     })?;
-            let lens_alias = smithy_http::label::fmt_string(input_17, false);
+            let lens_alias = aws_smithy_http::label::fmt_string(input_17, false);
             if lens_alias.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "lens_alias",
                     details: "cannot be empty or unset",
                 });
@@ -2442,11 +2733,11 @@ impl GetLensVersionDifferenceInput {
             _input: &crate::input::GetLensVersionDifferenceInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_18) = &_input.base_lens_version {
                 query.push_kv(
                     "BaseLensVersion",
-                    &smithy_http::query::fmt_string(&inner_18),
+                    &aws_smithy_http::query::fmt_string(&inner_18),
                 );
             }
         }
@@ -2454,7 +2745,7 @@ impl GetLensVersionDifferenceInput {
         fn update_http_builder(
             input: &crate::input::GetLensVersionDifferenceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2464,23 +2755,23 @@ impl GetLensVersionDifferenceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetLensVersionDifferenceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2503,15 +2794,15 @@ impl GetLensVersionDifferenceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetLensVersionDifference::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetLensVersionDifference",
             "wellarchitected",
         ));
@@ -2520,10 +2811,10 @@ impl GetLensVersionDifferenceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2552,6 +2843,7 @@ pub mod get_milestone_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -2562,6 +2854,8 @@ pub mod get_milestone_input {
             self.milestone_number = Some(input);
             self
         }
+        /// <p>The milestone number.</p>
+        /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn set_milestone_number(mut self, input: std::option::Option<i32>) -> Self {
             self.milestone_number = input;
             self
@@ -2569,8 +2863,10 @@ pub mod get_milestone_input {
         /// Consumes the builder and constructs a [`GetMilestoneInput`](crate::input::GetMilestoneInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetMilestoneInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetMilestoneInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetMilestoneInput {
                 workload_id: self.workload_id,
                 milestone_number: self.milestone_number.unwrap_or_default(),
@@ -2589,36 +2885,37 @@ impl GetMilestoneInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetMilestone,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetMilestoneInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_19 = &_input.workload_id;
             let input_19 =
                 input_19
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_id = smithy_http::label::fmt_string(input_19, false);
+            let workload_id = aws_smithy_http::label::fmt_string(input_19, false);
             if workload_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 });
             }
             let input_20 = &_input.milestone_number;
-            let mut milestone_number_encoder = smithy_types::primitive::Encoder::from(*input_20);
+            let mut milestone_number_encoder =
+                aws_smithy_types::primitive::Encoder::from(*input_20);
             let milestone_number = milestone_number_encoder.encode();
             if milestone_number.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "milestone_number",
                     details: "cannot be empty or unset",
                 });
@@ -2636,7 +2933,7 @@ impl GetMilestoneInput {
         fn update_http_builder(
             input: &crate::input::GetMilestoneInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2645,23 +2942,23 @@ impl GetMilestoneInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetMilestoneInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2684,25 +2981,27 @@ impl GetMilestoneInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetMilestone::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetMilestone",
-                    "wellarchitected",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetMilestone::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetMilestone",
+            "wellarchitected",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2730,6 +3029,7 @@ pub mod get_workload_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -2737,8 +3037,10 @@ pub mod get_workload_input {
         /// Consumes the builder and constructs a [`GetWorkloadInput`](crate::input::GetWorkloadInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetWorkloadInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetWorkloadInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetWorkloadInput {
                 workload_id: self.workload_id,
             })
@@ -2756,27 +3058,27 @@ impl GetWorkloadInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetWorkload,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetWorkloadInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_21 = &_input.workload_id;
             let input_21 =
                 input_21
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_id = smithy_http::label::fmt_string(input_21, false);
+            let workload_id = aws_smithy_http::label::fmt_string(input_21, false);
             if workload_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 });
@@ -2789,7 +3091,7 @@ impl GetWorkloadInput {
         fn update_http_builder(
             input: &crate::input::GetWorkloadInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2798,23 +3100,23 @@ impl GetWorkloadInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetWorkloadInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2837,25 +3139,27 @@ impl GetWorkloadInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetWorkload::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetWorkload",
-                    "wellarchitected",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetWorkload::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetWorkload",
+            "wellarchitected",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2888,6 +3192,7 @@ pub mod list_answers_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -2898,6 +3203,8 @@ pub mod list_answers_input {
             self.lens_alias = Some(input.into());
             self
         }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -2908,6 +3215,8 @@ pub mod list_answers_input {
             self.pillar_id = Some(input.into());
             self
         }
+        /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
         pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pillar_id = input;
             self
@@ -2918,6 +3227,8 @@ pub mod list_answers_input {
             self.milestone_number = Some(input);
             self
         }
+        /// <p>The milestone number.</p>
+        /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn set_milestone_number(mut self, input: std::option::Option<i32>) -> Self {
             self.milestone_number = input;
             self
@@ -2927,6 +3238,7 @@ pub mod list_answers_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2936,6 +3248,7 @@ pub mod list_answers_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return for this request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2943,8 +3256,10 @@ pub mod list_answers_input {
         /// Consumes the builder and constructs a [`ListAnswersInput`](crate::input::ListAnswersInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListAnswersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListAnswersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListAnswersInput {
                 workload_id: self.workload_id,
                 lens_alias: self.lens_alias,
@@ -2967,27 +3282,27 @@ impl ListAnswersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListAnswers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListAnswersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_22 = &_input.workload_id;
             let input_22 =
                 input_22
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_id = smithy_http::label::fmt_string(input_22, false);
+            let workload_id = aws_smithy_http::label::fmt_string(input_22, false);
             if workload_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 });
@@ -2996,13 +3311,13 @@ impl ListAnswersInput {
             let input_23 =
                 input_23
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "lens_alias",
                         details: "cannot be empty or unset",
                     })?;
-            let lens_alias = smithy_http::label::fmt_string(input_23, false);
+            let lens_alias = aws_smithy_http::label::fmt_string(input_23, false);
             if lens_alias.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "lens_alias",
                     details: "cannot be empty or unset",
                 });
@@ -3017,23 +3332,23 @@ impl ListAnswersInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListAnswersInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_24) = &_input.pillar_id {
-                query.push_kv("PillarId", &smithy_http::query::fmt_string(&inner_24));
+                query.push_kv("PillarId", &aws_smithy_http::query::fmt_string(&inner_24));
             }
             if _input.milestone_number != 0 {
                 query.push_kv(
                     "MilestoneNumber",
-                    &smithy_types::primitive::Encoder::from(_input.milestone_number).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.milestone_number).encode(),
                 );
             }
             if let Some(inner_25) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_25));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_25));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
         }
@@ -3041,7 +3356,7 @@ impl ListAnswersInput {
         fn update_http_builder(
             input: &crate::input::ListAnswersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3051,23 +3366,23 @@ impl ListAnswersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListAnswersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3090,25 +3405,27 @@ impl ListAnswersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListAnswers::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListAnswers",
-                    "wellarchitected",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAnswers::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAnswers",
+            "wellarchitected",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3137,6 +3454,7 @@ pub mod list_lenses_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3146,6 +3464,7 @@ pub mod list_lenses_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return for this request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3153,8 +3472,10 @@ pub mod list_lenses_input {
         /// Consumes the builder and constructs a [`ListLensesInput`](crate::input::ListLensesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListLensesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListLensesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListLensesInput {
                 next_token: self.next_token,
                 max_results: self.max_results.unwrap_or_default(),
@@ -3173,28 +3494,28 @@ impl ListLensesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListLenses,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListLensesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/lenses").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListLensesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_26) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_26));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_26));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
         }
@@ -3202,7 +3523,7 @@ impl ListLensesInput {
         fn update_http_builder(
             input: &crate::input::ListLensesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3212,23 +3533,23 @@ impl ListLensesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListLensesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3251,25 +3572,27 @@ impl ListLensesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListLenses::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListLenses",
-                    "wellarchitected",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListLenses::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListLenses",
+            "wellarchitected",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3302,6 +3625,7 @@ pub mod list_lens_review_improvements_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -3312,6 +3636,8 @@ pub mod list_lens_review_improvements_input {
             self.lens_alias = Some(input.into());
             self
         }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -3322,6 +3648,8 @@ pub mod list_lens_review_improvements_input {
             self.pillar_id = Some(input.into());
             self
         }
+        /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
         pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pillar_id = input;
             self
@@ -3332,6 +3660,8 @@ pub mod list_lens_review_improvements_input {
             self.milestone_number = Some(input);
             self
         }
+        /// <p>The milestone number.</p>
+        /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn set_milestone_number(mut self, input: std::option::Option<i32>) -> Self {
             self.milestone_number = input;
             self
@@ -3341,6 +3671,7 @@ pub mod list_lens_review_improvements_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3350,6 +3681,7 @@ pub mod list_lens_review_improvements_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return for this request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3359,7 +3691,7 @@ pub mod list_lens_review_improvements_input {
             self,
         ) -> std::result::Result<
             crate::input::ListLensReviewImprovementsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListLensReviewImprovementsInput {
                 workload_id: self.workload_id,
@@ -3384,27 +3716,27 @@ impl ListLensReviewImprovementsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListLensReviewImprovements,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListLensReviewImprovementsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_27 = &_input.workload_id;
             let input_27 =
                 input_27
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_id = smithy_http::label::fmt_string(input_27, false);
+            let workload_id = aws_smithy_http::label::fmt_string(input_27, false);
             if workload_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 });
@@ -3413,13 +3745,13 @@ impl ListLensReviewImprovementsInput {
             let input_28 =
                 input_28
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "lens_alias",
                         details: "cannot be empty or unset",
                     })?;
-            let lens_alias = smithy_http::label::fmt_string(input_28, false);
+            let lens_alias = aws_smithy_http::label::fmt_string(input_28, false);
             if lens_alias.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "lens_alias",
                     details: "cannot be empty or unset",
                 });
@@ -3437,23 +3769,23 @@ impl ListLensReviewImprovementsInput {
             _input: &crate::input::ListLensReviewImprovementsInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_29) = &_input.pillar_id {
-                query.push_kv("PillarId", &smithy_http::query::fmt_string(&inner_29));
+                query.push_kv("PillarId", &aws_smithy_http::query::fmt_string(&inner_29));
             }
             if _input.milestone_number != 0 {
                 query.push_kv(
                     "MilestoneNumber",
-                    &smithy_types::primitive::Encoder::from(_input.milestone_number).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.milestone_number).encode(),
                 );
             }
             if let Some(inner_30) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_30));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_30));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
         }
@@ -3461,7 +3793,7 @@ impl ListLensReviewImprovementsInput {
         fn update_http_builder(
             input: &crate::input::ListLensReviewImprovementsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3471,23 +3803,23 @@ impl ListLensReviewImprovementsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListLensReviewImprovementsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3510,15 +3842,15 @@ impl ListLensReviewImprovementsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListLensReviewImprovements::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListLensReviewImprovements",
             "wellarchitected",
         ));
@@ -3527,10 +3859,10 @@ impl ListLensReviewImprovementsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3561,6 +3893,7 @@ pub mod list_lens_reviews_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -3571,6 +3904,8 @@ pub mod list_lens_reviews_input {
             self.milestone_number = Some(input);
             self
         }
+        /// <p>The milestone number.</p>
+        /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn set_milestone_number(mut self, input: std::option::Option<i32>) -> Self {
             self.milestone_number = input;
             self
@@ -3580,6 +3915,7 @@ pub mod list_lens_reviews_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3589,6 +3925,7 @@ pub mod list_lens_reviews_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return for this request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3598,7 +3935,7 @@ pub mod list_lens_reviews_input {
             self,
         ) -> std::result::Result<
             crate::input::ListLensReviewsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListLensReviewsInput {
                 workload_id: self.workload_id,
@@ -3620,27 +3957,27 @@ impl ListLensReviewsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListLensReviews,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListLensReviewsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_31 = &_input.workload_id;
             let input_31 =
                 input_31
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_id = smithy_http::label::fmt_string(input_31, false);
+            let workload_id = aws_smithy_http::label::fmt_string(input_31, false);
             if workload_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 });
@@ -3654,20 +3991,20 @@ impl ListLensReviewsInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListLensReviewsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.milestone_number != 0 {
                 query.push_kv(
                     "MilestoneNumber",
-                    &smithy_types::primitive::Encoder::from(_input.milestone_number).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.milestone_number).encode(),
                 );
             }
             if let Some(inner_32) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_32));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_32));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
         }
@@ -3675,7 +4012,7 @@ impl ListLensReviewsInput {
         fn update_http_builder(
             input: &crate::input::ListLensReviewsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3685,23 +4022,23 @@ impl ListLensReviewsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListLensReviewsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3724,15 +4061,15 @@ impl ListLensReviewsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListLensReviews::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListLensReviews",
             "wellarchitected",
         ));
@@ -3741,10 +4078,10 @@ impl ListLensReviewsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3774,6 +4111,7 @@ pub mod list_milestones_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -3783,6 +4121,7 @@ pub mod list_milestones_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3792,6 +4131,7 @@ pub mod list_milestones_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return for this request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3801,7 +4141,7 @@ pub mod list_milestones_input {
             self,
         ) -> std::result::Result<
             crate::input::ListMilestonesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListMilestonesInput {
                 workload_id: self.workload_id,
@@ -3822,27 +4162,27 @@ impl ListMilestonesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListMilestones,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListMilestonesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_33 = &_input.workload_id;
             let input_33 =
                 input_33
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_id = smithy_http::label::fmt_string(input_33, false);
+            let workload_id = aws_smithy_http::label::fmt_string(input_33, false);
             if workload_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 });
@@ -3859,7 +4199,7 @@ impl ListMilestonesInput {
         fn update_http_builder(
             input: &crate::input::ListMilestonesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3868,24 +4208,26 @@ impl ListMilestonesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListMilestonesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_milestones(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3908,15 +4250,15 @@ impl ListMilestonesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListMilestones::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListMilestones",
             "wellarchitected",
         ));
@@ -3925,10 +4267,10 @@ impl ListMilestonesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3958,6 +4300,7 @@ pub mod list_notifications_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -3967,6 +4310,7 @@ pub mod list_notifications_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3976,6 +4320,7 @@ pub mod list_notifications_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return for this request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3985,7 +4330,7 @@ pub mod list_notifications_input {
             self,
         ) -> std::result::Result<
             crate::input::ListNotificationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListNotificationsInput {
                 workload_id: self.workload_id,
@@ -4006,16 +4351,16 @@ impl ListNotificationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListNotifications,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListNotificationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/notifications").expect("formatting should succeed");
             Ok(())
         }
@@ -4023,7 +4368,7 @@ impl ListNotificationsInput {
         fn update_http_builder(
             input: &crate::input::ListNotificationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4032,27 +4377,27 @@ impl ListNotificationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListNotificationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_notifications(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4075,15 +4420,15 @@ impl ListNotificationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListNotifications::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListNotifications",
             "wellarchitected",
         ));
@@ -4092,10 +4437,10 @@ impl ListNotificationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4126,6 +4471,8 @@ pub mod list_share_invitations_input {
             self.workload_name_prefix = Some(input.into());
             self
         }
+        /// <p>An optional string added to the beginning of each workload name returned in the
+        /// results.</p>
         pub fn set_workload_name_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4138,6 +4485,7 @@ pub mod list_share_invitations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4147,6 +4495,7 @@ pub mod list_share_invitations_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return for this request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4156,7 +4505,7 @@ pub mod list_share_invitations_input {
             self,
         ) -> std::result::Result<
             crate::input::ListShareInvitationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListShareInvitationsInput {
                 workload_name_prefix: self.workload_name_prefix,
@@ -4177,34 +4526,34 @@ impl ListShareInvitationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListShareInvitations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListShareInvitationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/shareInvitations").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListShareInvitationsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_34) = &_input.workload_name_prefix {
                 query.push_kv(
                     "WorkloadNamePrefix",
-                    &smithy_http::query::fmt_string(&inner_34),
+                    &aws_smithy_http::query::fmt_string(&inner_34),
                 );
             }
             if let Some(inner_35) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_35));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_35));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
         }
@@ -4212,7 +4561,7 @@ impl ListShareInvitationsInput {
         fn update_http_builder(
             input: &crate::input::ListShareInvitationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4222,23 +4571,23 @@ impl ListShareInvitationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListShareInvitationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4261,15 +4610,15 @@ impl ListShareInvitationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListShareInvitations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListShareInvitations",
             "wellarchitected",
         ));
@@ -4278,10 +4627,10 @@ impl ListShareInvitationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4309,6 +4658,7 @@ pub mod list_tags_for_resource_input {
             self.workload_arn = Some(input.into());
             self
         }
+        /// <p>The ARN for the workload.</p>
         pub fn set_workload_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_arn = input;
             self
@@ -4318,7 +4668,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 workload_arn: self.workload_arn,
@@ -4337,27 +4687,27 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_36 = &_input.workload_arn;
             let input_36 =
                 input_36
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_arn = smithy_http::label::fmt_string(input_36, false);
+            let workload_arn = aws_smithy_http::label::fmt_string(input_36, false);
             if workload_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_arn",
                     details: "cannot be empty or unset",
                 });
@@ -4370,7 +4720,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4379,23 +4729,23 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4418,15 +4768,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "wellarchitected",
         ));
@@ -4435,10 +4785,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4469,6 +4819,8 @@ pub mod list_workloads_input {
             self.workload_name_prefix = Some(input.into());
             self
         }
+        /// <p>An optional string added to the beginning of each workload name returned in the
+        /// results.</p>
         pub fn set_workload_name_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4481,6 +4833,7 @@ pub mod list_workloads_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4490,6 +4843,7 @@ pub mod list_workloads_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return for this request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4497,8 +4851,10 @@ pub mod list_workloads_input {
         /// Consumes the builder and constructs a [`ListWorkloadsInput`](crate::input::ListWorkloadsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListWorkloadsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListWorkloadsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListWorkloadsInput {
                 workload_name_prefix: self.workload_name_prefix,
                 next_token: self.next_token,
@@ -4518,16 +4874,16 @@ impl ListWorkloadsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListWorkloads,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListWorkloadsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/workloadsSummaries").expect("formatting should succeed");
             Ok(())
         }
@@ -4535,7 +4891,7 @@ impl ListWorkloadsInput {
         fn update_http_builder(
             input: &crate::input::ListWorkloadsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4544,24 +4900,26 @@ impl ListWorkloadsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListWorkloadsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_workloads(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4584,25 +4942,27 @@ impl ListWorkloadsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListWorkloads::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListWorkloads",
-                    "wellarchitected",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListWorkloads::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListWorkloads",
+            "wellarchitected",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4633,6 +4993,7 @@ pub mod list_workload_shares_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -4642,6 +5003,7 @@ pub mod list_workload_shares_input {
             self.shared_with_prefix = Some(input.into());
             self
         }
+        /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
         pub fn set_shared_with_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4654,6 +5016,7 @@ pub mod list_workload_shares_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4663,6 +5026,7 @@ pub mod list_workload_shares_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return for this request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4672,7 +5036,7 @@ pub mod list_workload_shares_input {
             self,
         ) -> std::result::Result<
             crate::input::ListWorkloadSharesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListWorkloadSharesInput {
                 workload_id: self.workload_id,
@@ -4694,27 +5058,27 @@ impl ListWorkloadSharesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListWorkloadShares,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListWorkloadSharesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_37 = &_input.workload_id;
             let input_37 =
                 input_37
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_id = smithy_http::label::fmt_string(input_37, false);
+            let workload_id = aws_smithy_http::label::fmt_string(input_37, false);
             if workload_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 });
@@ -4728,20 +5092,20 @@ impl ListWorkloadSharesInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListWorkloadSharesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_38) = &_input.shared_with_prefix {
                 query.push_kv(
                     "SharedWithPrefix",
-                    &smithy_http::query::fmt_string(&inner_38),
+                    &aws_smithy_http::query::fmt_string(&inner_38),
                 );
             }
             if let Some(inner_39) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_39));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_39));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
         }
@@ -4749,7 +5113,7 @@ impl ListWorkloadSharesInput {
         fn update_http_builder(
             input: &crate::input::ListWorkloadSharesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4759,23 +5123,23 @@ impl ListWorkloadSharesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListWorkloadSharesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4798,15 +5162,15 @@ impl ListWorkloadSharesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListWorkloadShares::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListWorkloadShares",
             "wellarchitected",
         ));
@@ -4815,10 +5179,10 @@ impl ListWorkloadSharesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4849,10 +5213,16 @@ pub mod tag_resource_input {
             self.workload_arn = Some(input.into());
             self
         }
+        /// <p>The ARN for the workload.</p>
         pub fn set_workload_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags for the resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4863,6 +5233,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags for the resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4875,8 +5246,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 workload_arn: self.workload_arn,
                 tags: self.tags,
@@ -4895,27 +5268,27 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_40 = &_input.workload_arn;
             let input_40 =
                 input_40
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_arn = smithy_http::label::fmt_string(input_40, false);
+            let workload_arn = aws_smithy_http::label::fmt_string(input_40, false);
             if workload_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_arn",
                     details: "cannot be empty or unset",
                 });
@@ -4928,7 +5301,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4937,24 +5310,26 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4977,25 +5352,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "wellarchitected",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "wellarchitected",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5024,16 +5401,25 @@ pub mod untag_resource_input {
             self.workload_arn = Some(input.into());
             self
         }
+        /// <p>The ARN for the workload.</p>
         pub fn set_workload_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>A list of tag keys. Existing tags of the resource
+        /// whose keys are members of this list are removed from the resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>A list of tag keys. Existing tags of the resource
+        /// whose keys are members of this list are removed from the resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5044,8 +5430,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 workload_arn: self.workload_arn,
                 tag_keys: self.tag_keys,
@@ -5064,27 +5452,27 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_41 = &_input.workload_arn;
             let input_41 =
                 input_41
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_arn = smithy_http::label::fmt_string(input_41, false);
+            let workload_arn = aws_smithy_http::label::fmt_string(input_41, false);
             if workload_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_arn",
                     details: "cannot be empty or unset",
                 });
@@ -5094,10 +5482,10 @@ impl UntagResourceInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_42) = &_input.tag_keys {
                 for inner_43 in inner_42 {
-                    query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_43));
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_43));
                 }
             }
         }
@@ -5105,7 +5493,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5115,23 +5503,23 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5154,25 +5542,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "wellarchitected",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "wellarchitected",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5209,6 +5599,7 @@ pub mod update_answer_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -5219,6 +5610,8 @@ pub mod update_answer_input {
             self.lens_alias = Some(input.into());
             self
         }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -5228,16 +5621,25 @@ pub mod update_answer_input {
             self.question_id = Some(input.into());
             self
         }
+        /// <p>The ID of the question.</p>
         pub fn set_question_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.question_id = input;
             self
         }
+        /// Appends an item to `selected_choices`.
+        ///
+        /// To override the contents of this collection use [`set_selected_choices`](Self::set_selected_choices).
+        ///
+        /// <p>List of selected choice IDs in a question answer.</p>
+        /// <p>The values entered replace the previously selected choices.</p>
         pub fn selected_choices(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.selected_choices.unwrap_or_default();
             v.push(input.into());
             self.selected_choices = Some(v);
             self
         }
+        /// <p>List of selected choice IDs in a question answer.</p>
+        /// <p>The values entered replace the previously selected choices.</p>
         pub fn set_selected_choices(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5245,6 +5647,12 @@ pub mod update_answer_input {
             self.selected_choices = input;
             self
         }
+        /// Adds a key-value pair to `choice_updates`.
+        ///
+        /// To override the contents of this collection use [`set_choice_updates`](Self::set_choice_updates).
+        ///
+        /// <p>A list of choices to update on a question in your workload.  The String key
+        /// corresponds to the choice ID to be updated.</p>
         pub fn choice_updates(
             mut self,
             k: impl Into<std::string::String>,
@@ -5255,6 +5663,8 @@ pub mod update_answer_input {
             self.choice_updates = Some(hash_map);
             self
         }
+        /// <p>A list of choices to update on a question in your workload.  The String key
+        /// corresponds to the choice ID to be updated.</p>
         pub fn set_choice_updates(
             mut self,
             input: std::option::Option<
@@ -5269,6 +5679,7 @@ pub mod update_answer_input {
             self.notes = Some(input.into());
             self
         }
+        /// <p>The notes associated with the workload.</p>
         pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.notes = input;
             self
@@ -5278,6 +5689,7 @@ pub mod update_answer_input {
             self.is_applicable = Some(input);
             self
         }
+        /// <p>Defines whether this question is applicable to a lens review.</p>
         pub fn set_is_applicable(mut self, input: std::option::Option<bool>) -> Self {
             self.is_applicable = input;
             self
@@ -5287,6 +5699,7 @@ pub mod update_answer_input {
             self.reason = Some(input);
             self
         }
+        /// <p>The reason why a question is not applicable to your workload.</p>
         pub fn set_reason(
             mut self,
             input: std::option::Option<crate::model::AnswerReason>,
@@ -5297,8 +5710,10 @@ pub mod update_answer_input {
         /// Consumes the builder and constructs a [`UpdateAnswerInput`](crate::input::UpdateAnswerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateAnswerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateAnswerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateAnswerInput {
                 workload_id: self.workload_id,
                 lens_alias: self.lens_alias,
@@ -5323,27 +5738,27 @@ impl UpdateAnswerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateAnswer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateAnswerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_44 = &_input.workload_id;
             let input_44 =
                 input_44
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_id = smithy_http::label::fmt_string(input_44, false);
+            let workload_id = aws_smithy_http::label::fmt_string(input_44, false);
             if workload_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 });
@@ -5352,13 +5767,13 @@ impl UpdateAnswerInput {
             let input_45 =
                 input_45
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "lens_alias",
                         details: "cannot be empty or unset",
                     })?;
-            let lens_alias = smithy_http::label::fmt_string(input_45, false);
+            let lens_alias = aws_smithy_http::label::fmt_string(input_45, false);
             if lens_alias.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "lens_alias",
                     details: "cannot be empty or unset",
                 });
@@ -5367,13 +5782,13 @@ impl UpdateAnswerInput {
             let input_46 =
                 input_46
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "question_id",
                         details: "cannot be empty or unset",
                     })?;
-            let question_id = smithy_http::label::fmt_string(input_46, false);
+            let question_id = aws_smithy_http::label::fmt_string(input_46, false);
             if question_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "question_id",
                     details: "cannot be empty or unset",
                 });
@@ -5392,7 +5807,7 @@ impl UpdateAnswerInput {
         fn update_http_builder(
             input: &crate::input::UpdateAnswerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5401,26 +5816,26 @@ impl UpdateAnswerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateAnswerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_answer(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5443,25 +5858,27 @@ impl UpdateAnswerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateAnswer::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateAnswer",
-                    "wellarchitected",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateAnswer::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateAnswer",
+            "wellarchitected",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5494,6 +5911,7 @@ pub mod update_lens_review_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -5504,6 +5922,8 @@ pub mod update_lens_review_input {
             self.lens_alias = Some(input.into());
             self
         }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -5513,10 +5933,16 @@ pub mod update_lens_review_input {
             self.lens_notes = Some(input.into());
             self
         }
+        /// <p>The notes associated with the workload.</p>
         pub fn set_lens_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_notes = input;
             self
         }
+        /// Adds a key-value pair to `pillar_notes`.
+        ///
+        /// To override the contents of this collection use [`set_pillar_notes`](Self::set_pillar_notes).
+        ///
+        /// <p>List of pillar notes of a lens review in a workload.</p>
         pub fn pillar_notes(
             mut self,
             k: impl Into<std::string::String>,
@@ -5527,6 +5953,7 @@ pub mod update_lens_review_input {
             self.pillar_notes = Some(hash_map);
             self
         }
+        /// <p>List of pillar notes of a lens review in a workload.</p>
         pub fn set_pillar_notes(
             mut self,
             input: std::option::Option<
@@ -5541,7 +5968,7 @@ pub mod update_lens_review_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateLensReviewInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateLensReviewInput {
                 workload_id: self.workload_id,
@@ -5563,27 +5990,27 @@ impl UpdateLensReviewInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateLensReview,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateLensReviewInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_47 = &_input.workload_id;
             let input_47 =
                 input_47
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_id = smithy_http::label::fmt_string(input_47, false);
+            let workload_id = aws_smithy_http::label::fmt_string(input_47, false);
             if workload_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 });
@@ -5592,13 +6019,13 @@ impl UpdateLensReviewInput {
             let input_48 =
                 input_48
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "lens_alias",
                         details: "cannot be empty or unset",
                     })?;
-            let lens_alias = smithy_http::label::fmt_string(input_48, false);
+            let lens_alias = aws_smithy_http::label::fmt_string(input_48, false);
             if lens_alias.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "lens_alias",
                     details: "cannot be empty or unset",
                 });
@@ -5616,7 +6043,7 @@ impl UpdateLensReviewInput {
         fn update_http_builder(
             input: &crate::input::UpdateLensReviewInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5625,27 +6052,27 @@ impl UpdateLensReviewInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateLensReviewInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_lens_review(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5668,15 +6095,15 @@ impl UpdateLensReviewInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateLensReview::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateLensReview",
             "wellarchitected",
         ));
@@ -5685,10 +6112,10 @@ impl UpdateLensReviewInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5718,6 +6145,7 @@ pub mod update_share_invitation_input {
             self.share_invitation_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the share invitation.</p>
         pub fn set_share_invitation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5733,6 +6161,7 @@ pub mod update_share_invitation_input {
             self.share_invitation_action = Some(input);
             self
         }
+        /// <p>Share invitation action taken by contributor.</p>
         pub fn set_share_invitation_action(
             mut self,
             input: std::option::Option<crate::model::ShareInvitationAction>,
@@ -5745,7 +6174,7 @@ pub mod update_share_invitation_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateShareInvitationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateShareInvitationInput {
                 share_invitation_id: self.share_invitation_id,
@@ -5765,27 +6194,27 @@ impl UpdateShareInvitationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateShareInvitation,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateShareInvitationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_49 = &_input.share_invitation_id;
             let input_49 =
                 input_49
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "share_invitation_id",
                         details: "cannot be empty or unset",
                     })?;
-            let share_invitation_id = smithy_http::label::fmt_string(input_49, false);
+            let share_invitation_id = aws_smithy_http::label::fmt_string(input_49, false);
             if share_invitation_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "share_invitation_id",
                     details: "cannot be empty or unset",
                 });
@@ -5802,7 +6231,7 @@ impl UpdateShareInvitationInput {
         fn update_http_builder(
             input: &crate::input::UpdateShareInvitationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5811,27 +6240,29 @@ impl UpdateShareInvitationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateShareInvitationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_share_invitation(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5854,15 +6285,15 @@ impl UpdateShareInvitationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateShareInvitation::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateShareInvitation",
             "wellarchitected",
         ));
@@ -5871,10 +6302,10 @@ impl UpdateShareInvitationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5916,6 +6347,7 @@ pub mod update_workload_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -5927,6 +6359,9 @@ pub mod update_workload_input {
             self.workload_name = Some(input.into());
             self
         }
+        /// <p>The name of the workload.</p>
+        /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+        /// are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5939,6 +6374,7 @@ pub mod update_workload_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for the workload.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5948,6 +6384,7 @@ pub mod update_workload_input {
             self.environment = Some(input);
             self
         }
+        /// <p>The environment for the workload.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::WorkloadEnvironment>,
@@ -5955,12 +6392,18 @@ pub mod update_workload_input {
             self.environment = input;
             self
         }
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The list of AWS account IDs associated with the workload.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>The list of AWS account IDs associated with the workload.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5968,12 +6411,20 @@ pub mod update_workload_input {
             self.account_ids = input;
             self
         }
+        /// Appends an item to `aws_regions`.
+        ///
+        /// To override the contents of this collection use [`set_aws_regions`](Self::set_aws_regions).
+        ///
+        /// <p>The list of AWS Regions associated with the workload, for example,
+        /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.aws_regions.unwrap_or_default();
             v.push(input.into());
             self.aws_regions = Some(v);
             self
         }
+        /// <p>The list of AWS Regions associated with the workload, for example,
+        /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn set_aws_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5981,12 +6432,18 @@ pub mod update_workload_input {
             self.aws_regions = input;
             self
         }
+        /// Appends an item to `non_aws_regions`.
+        ///
+        /// To override the contents of this collection use [`set_non_aws_regions`](Self::set_non_aws_regions).
+        ///
+        /// <p> The list of non-AWS Regions associated with the workload.</p>
         pub fn non_aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.non_aws_regions.unwrap_or_default();
             v.push(input.into());
             self.non_aws_regions = Some(v);
             self
         }
+        /// <p> The list of non-AWS Regions associated with the workload.</p>
         pub fn set_non_aws_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5994,12 +6451,20 @@ pub mod update_workload_input {
             self.non_aws_regions = input;
             self
         }
+        /// Appends an item to `pillar_priorities`.
+        ///
+        /// To override the contents of this collection use [`set_pillar_priorities`](Self::set_pillar_priorities).
+        ///
+        /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
+        /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
         pub fn pillar_priorities(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.pillar_priorities.unwrap_or_default();
             v.push(input.into());
             self.pillar_priorities = Some(v);
             self
         }
+        /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
+        /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
         pub fn set_pillar_priorities(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6012,6 +6477,7 @@ pub mod update_workload_input {
             self.architectural_design = Some(input.into());
             self
         }
+        /// <p>The URL of the architectural design for the workload.</p>
         pub fn set_architectural_design(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6025,6 +6491,8 @@ pub mod update_workload_input {
             self.review_owner = Some(input.into());
             self
         }
+        /// <p>The review owner of the workload. The name, email address, or identifier for the
+        /// primary group or individual that owns the workload review process.</p>
         pub fn set_review_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.review_owner = input;
             self
@@ -6038,6 +6506,11 @@ pub mod update_workload_input {
             self.is_review_owner_update_acknowledged = Some(input);
             self
         }
+        /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review
+        /// owner</i> field is required.</p>
+        /// <p>If a <b>Review owner</b> is not added to the workload within
+        /// 60 days of acknowledgement, access to the workload is restricted until an owner is
+        /// added.</p>
         pub fn set_is_review_owner_update_acknowledged(
             mut self,
             input: std::option::Option<bool>,
@@ -6188,6 +6661,145 @@ pub mod update_workload_input {
             self.industry_type = Some(input.into());
             self
         }
+        /// <p>The industry type for the workload.</p>
+        /// <p>If specified, must be one of the following:</p>  
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Agriculture</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Automobile</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Defense</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Design and Engineering</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Digital Advertising</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Education</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Environmental Protection</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Financial Services</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Gaming</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>General Public Services</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Healthcare</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Hospitality</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>InfoTech</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Justice and Public Safety</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Life Sciences</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Manufacturing</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Media & Entertainment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Mining & Resources</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Oil & Gas</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Power & Utilities</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Professional Services</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Real Estate & Construction</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Retail & Wholesale</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Social Protection</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Telecommunications</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Travel, Transportation & Logistics</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Other</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_industry_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6200,6 +6812,7 @@ pub mod update_workload_input {
             self.industry = Some(input.into());
             self
         }
+        /// <p>The industry for the workload.</p>
         pub fn set_industry(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.industry = input;
             self
@@ -6209,6 +6822,7 @@ pub mod update_workload_input {
             self.notes = Some(input.into());
             self
         }
+        /// <p>The notes associated with the workload.</p>
         pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.notes = input;
             self
@@ -6221,6 +6835,7 @@ pub mod update_workload_input {
             self.improvement_status = Some(input);
             self
         }
+        /// <p>The improvement status for a workload.</p>
         pub fn set_improvement_status(
             mut self,
             input: std::option::Option<crate::model::WorkloadImprovementStatus>,
@@ -6233,7 +6848,7 @@ pub mod update_workload_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateWorkloadInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateWorkloadInput {
                 workload_id: self.workload_id,
@@ -6268,27 +6883,27 @@ impl UpdateWorkloadInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateWorkload,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateWorkloadInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_50 = &_input.workload_id;
             let input_50 =
                 input_50
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_id = smithy_http::label::fmt_string(input_50, false);
+            let workload_id = aws_smithy_http::label::fmt_string(input_50, false);
             if workload_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 });
@@ -6301,7 +6916,7 @@ impl UpdateWorkloadInput {
         fn update_http_builder(
             input: &crate::input::UpdateWorkloadInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6310,24 +6925,26 @@ impl UpdateWorkloadInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateWorkloadInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_workload(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6350,15 +6967,15 @@ impl UpdateWorkloadInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateWorkload::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateWorkload",
             "wellarchitected",
         ));
@@ -6367,10 +6984,10 @@ impl UpdateWorkloadInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6400,6 +7017,7 @@ pub mod update_workload_share_input {
             self.share_id = Some(input.into());
             self
         }
+        /// <p>The ID associated with the workload share.</p>
         pub fn set_share_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.share_id = input;
             self
@@ -6409,6 +7027,7 @@ pub mod update_workload_share_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -6418,6 +7037,7 @@ pub mod update_workload_share_input {
             self.permission_type = Some(input);
             self
         }
+        /// <p>Permission granted on a workload share.</p>
         pub fn set_permission_type(
             mut self,
             input: std::option::Option<crate::model::PermissionType>,
@@ -6430,7 +7050,7 @@ pub mod update_workload_share_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateWorkloadShareInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateWorkloadShareInput {
                 share_id: self.share_id,
@@ -6451,27 +7071,27 @@ impl UpdateWorkloadShareInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateWorkloadShare,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateWorkloadShareInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_51 = &_input.workload_id;
             let input_51 =
                 input_51
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_id = smithy_http::label::fmt_string(input_51, false);
+            let workload_id = aws_smithy_http::label::fmt_string(input_51, false);
             if workload_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 });
@@ -6480,13 +7100,13 @@ impl UpdateWorkloadShareInput {
             let input_52 =
                 input_52
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "share_id",
                         details: "cannot be empty or unset",
                     })?;
-            let share_id = smithy_http::label::fmt_string(input_52, false);
+            let share_id = aws_smithy_http::label::fmt_string(input_52, false);
             if share_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "share_id",
                     details: "cannot be empty or unset",
                 });
@@ -6504,7 +7124,7 @@ impl UpdateWorkloadShareInput {
         fn update_http_builder(
             input: &crate::input::UpdateWorkloadShareInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6513,27 +7133,27 @@ impl UpdateWorkloadShareInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateWorkloadShareInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_workload_share(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6556,15 +7176,15 @@ impl UpdateWorkloadShareInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateWorkloadShare::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateWorkloadShare",
             "wellarchitected",
         ));
@@ -6573,10 +7193,10 @@ impl UpdateWorkloadShareInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6607,6 +7227,7 @@ pub mod upgrade_lens_review_input {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -6617,6 +7238,8 @@ pub mod upgrade_lens_review_input {
             self.lens_alias = Some(input.into());
             self
         }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -6627,6 +7250,8 @@ pub mod upgrade_lens_review_input {
             self.milestone_name = Some(input.into());
             self
         }
+        /// <p>The name of the milestone in a workload.</p>
+        /// <p>Milestone names must be unique within a workload.</p>
         pub fn set_milestone_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6648,6 +7273,16 @@ pub mod upgrade_lens_review_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>A unique case-sensitive string used to ensure that this request is idempotent
+        /// (executes only once).</p>
+        /// <p>You should not reuse the same token for other requests. If you retry a request with
+        /// the same client request token and the same parameters after it has completed
+        /// successfully, the result of the original request is returned. </p>
+        /// <important>
+        /// <p>This token is listed as required, however, if you do not specify it, the AWS SDKs
+        /// automatically generate one for you. If you are not using the AWS SDK or the AWS CLI,
+        /// you must provide this token or the request will fail.</p>
+        /// </important>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6660,7 +7295,7 @@ pub mod upgrade_lens_review_input {
             self,
         ) -> std::result::Result<
             crate::input::UpgradeLensReviewInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpgradeLensReviewInput {
                 workload_id: self.workload_id,
@@ -6682,27 +7317,27 @@ impl UpgradeLensReviewInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpgradeLensReview,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpgradeLensReviewInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_53 = &_input.workload_id;
             let input_53 =
                 input_53
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workload_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workload_id = smithy_http::label::fmt_string(input_53, false);
+            let workload_id = aws_smithy_http::label::fmt_string(input_53, false);
             if workload_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workload_id",
                     details: "cannot be empty or unset",
                 });
@@ -6711,13 +7346,13 @@ impl UpgradeLensReviewInput {
             let input_54 =
                 input_54
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "lens_alias",
                         details: "cannot be empty or unset",
                     })?;
-            let lens_alias = smithy_http::label::fmt_string(input_54, false);
+            let lens_alias = aws_smithy_http::label::fmt_string(input_54, false);
             if lens_alias.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "lens_alias",
                     details: "cannot be empty or unset",
                 });
@@ -6735,7 +7370,7 @@ impl UpgradeLensReviewInput {
         fn update_http_builder(
             input: &crate::input::UpgradeLensReviewInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6744,27 +7379,27 @@ impl UpgradeLensReviewInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpgradeLensReviewInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_upgrade_lens_review(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6787,15 +7422,15 @@ impl UpgradeLensReviewInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpgradeLensReview::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpgradeLensReview",
             "wellarchitected",
         ));
@@ -6804,10 +7439,10 @@ impl UpgradeLensReviewInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6821,6 +7456,7 @@ impl UpgradeLensReviewInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpgradeLensReviewInput {
@@ -7168,6 +7804,7 @@ impl std::fmt::Debug for UpdateAnswerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -7186,6 +7823,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -7250,6 +7888,7 @@ impl std::fmt::Debug for ListWorkloadsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -7286,6 +7925,7 @@ impl std::fmt::Debug for ListShareInvitationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNotificationsInput {
@@ -7470,6 +8110,7 @@ impl std::fmt::Debug for GetMilestoneInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLensVersionDifferenceInput {

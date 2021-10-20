@@ -39,6 +39,7 @@ pub mod retained_message_summary {
             self.topic = Some(input.into());
             self
         }
+        /// <p>The topic name to which the retained message was published.</p>
         pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic = input;
             self
@@ -48,6 +49,7 @@ pub mod retained_message_summary {
             self.payload_size = Some(input);
             self
         }
+        /// <p>The size of the retained message's payload in bytes.</p>
         pub fn set_payload_size(mut self, input: std::option::Option<i64>) -> Self {
             self.payload_size = input;
             self
@@ -57,6 +59,7 @@ pub mod retained_message_summary {
             self.qos = Some(input);
             self
         }
+        /// <p>The quality of service (QoS) level used to publish the retained message.</p>
         pub fn set_qos(mut self, input: std::option::Option<i32>) -> Self {
             self.qos = input;
             self
@@ -66,6 +69,7 @@ pub mod retained_message_summary {
             self.last_modified_time = Some(input);
             self
         }
+        /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
         pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
             self.last_modified_time = input;
             self

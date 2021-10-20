@@ -15,6 +15,7 @@ pub mod cancel_quantum_task_input {
             self.quantum_task_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the task to cancel.</p>
         pub fn set_quantum_task_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27,6 +28,7 @@ pub mod cancel_quantum_task_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>The client token associated with the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -36,7 +38,7 @@ pub mod cancel_quantum_task_input {
             self,
         ) -> std::result::Result<
             crate::input::CancelQuantumTaskInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CancelQuantumTaskInput {
                 quantum_task_arn: self.quantum_task_arn,
@@ -56,27 +58,27 @@ impl CancelQuantumTaskInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CancelQuantumTask,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CancelQuantumTaskInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.quantum_task_arn;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "quantum_task_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let quantum_task_arn = smithy_http::label::fmt_string(input_1, false);
+            let quantum_task_arn = aws_smithy_http::label::fmt_string(input_1, false);
             if quantum_task_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "quantum_task_arn",
                     details: "cannot be empty or unset",
                 });
@@ -93,7 +95,7 @@ impl CancelQuantumTaskInput {
         fn update_http_builder(
             input: &crate::input::CancelQuantumTaskInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -102,10 +104,10 @@ impl CancelQuantumTaskInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CancelQuantumTaskInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -115,17 +117,17 @@ impl CancelQuantumTaskInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_cancel_quantum_task(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -148,15 +150,15 @@ impl CancelQuantumTaskInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CancelQuantumTask::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CancelQuantumTask",
             "braket",
         ));
@@ -165,10 +167,10 @@ impl CancelQuantumTaskInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -205,6 +207,7 @@ pub mod create_quantum_task_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>The client token associated with the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -214,6 +217,7 @@ pub mod create_quantum_task_input {
             self.device_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the device to run the task on.</p>
         pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_arn = input;
             self
@@ -223,6 +227,7 @@ pub mod create_quantum_task_input {
             self.device_parameters = Some(input.into());
             self
         }
+        /// <p>The parameters for the device to run the task on.</p>
         pub fn set_device_parameters(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -235,6 +240,7 @@ pub mod create_quantum_task_input {
             self.shots = Some(input);
             self
         }
+        /// <p>The number of shots to use for the task.</p>
         pub fn set_shots(mut self, input: std::option::Option<i64>) -> Self {
             self.shots = input;
             self
@@ -244,6 +250,7 @@ pub mod create_quantum_task_input {
             self.output_s3_bucket = Some(input.into());
             self
         }
+        /// <p>The S3 bucket to store task result files in.</p>
         pub fn set_output_s3_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -256,6 +263,7 @@ pub mod create_quantum_task_input {
             self.output_s3_key_prefix = Some(input.into());
             self
         }
+        /// <p>The key prefix for the location in the S3 bucket to store task results in.</p>
         pub fn set_output_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -268,10 +276,16 @@ pub mod create_quantum_task_input {
             self.action = Some(input.into());
             self
         }
+        /// <p>The action associated with the task.</p>
         pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags to be added to the quantum task you're creating.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -282,6 +296,7 @@ pub mod create_quantum_task_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Tags to be added to the quantum task you're creating.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -296,7 +311,7 @@ pub mod create_quantum_task_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateQuantumTaskInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateQuantumTaskInput {
                 client_token: self.client_token,
@@ -322,16 +337,16 @@ impl CreateQuantumTaskInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateQuantumTask,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateQuantumTaskInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/quantum-task").expect("formatting should succeed");
             Ok(())
         }
@@ -339,7 +354,7 @@ impl CreateQuantumTaskInput {
         fn update_http_builder(
             input: &crate::input::CreateQuantumTaskInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -348,10 +363,10 @@ impl CreateQuantumTaskInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateQuantumTaskInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -361,17 +376,17 @@ impl CreateQuantumTaskInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_quantum_task(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -394,15 +409,15 @@ impl CreateQuantumTaskInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateQuantumTask::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateQuantumTask",
             "braket",
         ));
@@ -411,10 +426,10 @@ impl CreateQuantumTaskInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -442,6 +457,7 @@ pub mod get_device_input {
             self.device_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the device to retrieve.</p>
         pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_arn = input;
             self
@@ -449,7 +465,7 @@ pub mod get_device_input {
         /// Consumes the builder and constructs a [`GetDeviceInput`](crate::input::GetDeviceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetDeviceInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetDeviceInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetDeviceInput {
                 device_arn: self.device_arn,
@@ -468,27 +484,27 @@ impl GetDeviceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetDevice,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetDeviceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_2 = &_input.device_arn;
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "device_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let device_arn = smithy_http::label::fmt_string(input_2, false);
+            let device_arn = aws_smithy_http::label::fmt_string(input_2, false);
             if device_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "device_arn",
                     details: "cannot be empty or unset",
                 });
@@ -501,7 +517,7 @@ impl GetDeviceInput {
         fn update_http_builder(
             input: &crate::input::GetDeviceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -510,23 +526,23 @@ impl GetDeviceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetDeviceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -549,22 +565,25 @@ impl GetDeviceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetDevice::new())
-                .with_metadata(smithy_http::operation::Metadata::new("GetDevice", "braket"));
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetDevice::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetDevice",
+                    "braket",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -592,6 +611,7 @@ pub mod get_quantum_task_input {
             self.quantum_task_arn = Some(input.into());
             self
         }
+        /// <p>the ARN of the task to retrieve.</p>
         pub fn set_quantum_task_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -604,7 +624,7 @@ pub mod get_quantum_task_input {
             self,
         ) -> std::result::Result<
             crate::input::GetQuantumTaskInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetQuantumTaskInput {
                 quantum_task_arn: self.quantum_task_arn,
@@ -623,27 +643,27 @@ impl GetQuantumTaskInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetQuantumTask,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetQuantumTaskInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_3 = &_input.quantum_task_arn;
             let input_3 =
                 input_3
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "quantum_task_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let quantum_task_arn = smithy_http::label::fmt_string(input_3, false);
+            let quantum_task_arn = aws_smithy_http::label::fmt_string(input_3, false);
             if quantum_task_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "quantum_task_arn",
                     details: "cannot be empty or unset",
                 });
@@ -660,7 +680,7 @@ impl GetQuantumTaskInput {
         fn update_http_builder(
             input: &crate::input::GetQuantumTaskInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -669,23 +689,23 @@ impl GetQuantumTaskInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetQuantumTaskInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -708,15 +728,15 @@ impl GetQuantumTaskInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetQuantumTask::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetQuantumTask",
             "braket",
         ));
@@ -725,10 +745,10 @@ impl GetQuantumTaskInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -756,6 +776,7 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>Specify the <code>resourceArn</code> for the resource whose tags to display.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -765,7 +786,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -784,27 +805,27 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_4 = &_input.resource_arn;
             let input_4 =
                 input_4
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_4, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_4, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -817,7 +838,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -826,23 +847,23 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -865,15 +886,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "braket",
         ));
@@ -882,10 +903,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -915,6 +936,7 @@ pub mod search_devices_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -924,16 +946,23 @@ pub mod search_devices_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The filter values to use to search for a device.</p>
         pub fn filters(mut self, input: impl Into<crate::model::SearchDevicesFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>The filter values to use to search for a device.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SearchDevicesFilter>>,
@@ -944,8 +973,10 @@ pub mod search_devices_input {
         /// Consumes the builder and constructs a [`SearchDevicesInput`](crate::input::SearchDevicesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::SearchDevicesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::SearchDevicesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SearchDevicesInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -965,16 +996,16 @@ impl SearchDevicesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SearchDevices,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SearchDevicesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/devices").expect("formatting should succeed");
             Ok(())
         }
@@ -982,7 +1013,7 @@ impl SearchDevicesInput {
         fn update_http_builder(
             input: &crate::input::SearchDevicesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -991,24 +1022,26 @@ impl SearchDevicesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SearchDevicesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_search_devices(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1031,25 +1064,27 @@ impl SearchDevicesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::SearchDevices::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "SearchDevices",
-                    "braket",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SearchDevices::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SearchDevices",
+            "braket",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1080,6 +1115,7 @@ pub mod search_quantum_tasks_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1089,16 +1125,23 @@ pub mod search_quantum_tasks_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Array of <code>SearchQuantumTasksFilter</code> objects.</p>
         pub fn filters(mut self, input: impl Into<crate::model::SearchQuantumTasksFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Array of <code>SearchQuantumTasksFilter</code> objects.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SearchQuantumTasksFilter>>,
@@ -1111,7 +1154,7 @@ pub mod search_quantum_tasks_input {
             self,
         ) -> std::result::Result<
             crate::input::SearchQuantumTasksInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SearchQuantumTasksInput {
                 next_token: self.next_token,
@@ -1132,16 +1175,16 @@ impl SearchQuantumTasksInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SearchQuantumTasks,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SearchQuantumTasksInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/quantum-tasks").expect("formatting should succeed");
             Ok(())
         }
@@ -1149,7 +1192,7 @@ impl SearchQuantumTasksInput {
         fn update_http_builder(
             input: &crate::input::SearchQuantumTasksInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1158,25 +1201,27 @@ impl SearchQuantumTasksInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SearchQuantumTasksInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_search_quantum_tasks(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1199,15 +1244,15 @@ impl SearchQuantumTasksInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SearchQuantumTasks::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SearchQuantumTasks",
             "braket",
         ));
@@ -1216,10 +1261,10 @@ impl SearchQuantumTasksInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1250,10 +1295,16 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>Specify the <code>resourceArn</code> of the resource to which a tag will be added.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Specify the tags to add to the resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1264,6 +1315,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Specify the tags to add to the resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1276,8 +1328,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -1296,27 +1350,27 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_5 = &_input.resource_arn;
             let input_5 =
                 input_5
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_5, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_5, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -1329,7 +1383,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1338,24 +1392,26 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1378,25 +1434,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "braket",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "braket",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1425,16 +1483,23 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>Specify the <code>resourceArn</code> for the resource from which to remove the tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>Specify the keys for the tags to remove from the resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>Specify the keys for the tags to remove from the resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1445,8 +1510,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -1465,27 +1532,27 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_6 = &_input.resource_arn;
             let input_6 =
                 input_6
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_6, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_6, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -1495,10 +1562,10 @@ impl UntagResourceInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_7) = &_input.tag_keys {
                 for inner_8 in inner_7 {
-                    query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_8));
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_8));
                 }
             }
         }
@@ -1506,7 +1573,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1516,23 +1583,23 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1555,25 +1622,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "braket",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "braket",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1587,6 +1656,7 @@ impl UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchQuantumTasksInput {
@@ -1607,6 +1677,7 @@ impl std::fmt::Debug for SearchQuantumTasksInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateQuantumTaskInput {
@@ -1643,6 +1714,7 @@ impl std::fmt::Debug for CreateQuantumTaskInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelQuantumTaskInput {
@@ -1660,6 +1732,7 @@ impl std::fmt::Debug for CancelQuantumTaskInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQuantumTaskInput {
@@ -1674,6 +1747,7 @@ impl std::fmt::Debug for GetQuantumTaskInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchDevicesInput {
@@ -1694,6 +1768,7 @@ impl std::fmt::Debug for SearchDevicesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceInput {
@@ -1708,6 +1783,7 @@ impl std::fmt::Debug for GetDeviceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -1725,6 +1801,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -1743,6 +1820,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {

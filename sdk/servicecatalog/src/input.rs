@@ -30,6 +30,21 @@ pub mod accept_portfolio_share_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -42,6 +57,7 @@ pub mod accept_portfolio_share_input {
             self.portfolio_id = Some(input.into());
             self
         }
+        /// <p>The portfolio identifier.</p>
         pub fn set_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.portfolio_id = input;
             self
@@ -68,6 +84,24 @@ pub mod accept_portfolio_share_input {
             self.portfolio_share_type = Some(input);
             self
         }
+        /// <p>The type of shared portfolios to accept. The default is to accept imported portfolios.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your
+        /// organization.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IMPORTED</code> - Accept imported portfolios.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
+        /// </p>
         pub fn set_portfolio_share_type(
             mut self,
             input: std::option::Option<crate::model::PortfolioShareType>,
@@ -80,7 +114,7 @@ pub mod accept_portfolio_share_input {
             self,
         ) -> std::result::Result<
             crate::input::AcceptPortfolioShareInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AcceptPortfolioShareInput {
                 accept_language: self.accept_language,
@@ -101,16 +135,16 @@ impl AcceptPortfolioShareInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AcceptPortfolioShare,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AcceptPortfolioShareInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -118,7 +152,7 @@ impl AcceptPortfolioShareInput {
         fn update_http_builder(
             input: &crate::input::AcceptPortfolioShareInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -127,32 +161,32 @@ impl AcceptPortfolioShareInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AcceptPortfolioShareInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.AcceptPortfolioShare",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_accept_portfolio_share(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -175,15 +209,15 @@ impl AcceptPortfolioShareInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AcceptPortfolioShare::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AcceptPortfolioShare",
             "servicecatalog",
         ));
@@ -192,10 +226,10 @@ impl AcceptPortfolioShareInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -224,6 +258,7 @@ pub mod associate_budget_with_resource_input {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p>The name of the budget you want to associate.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -233,6 +268,7 @@ pub mod associate_budget_with_resource_input {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -242,7 +278,7 @@ pub mod associate_budget_with_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::AssociateBudgetWithResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AssociateBudgetWithResourceInput {
                 budget_name: self.budget_name,
@@ -263,16 +299,16 @@ impl AssociateBudgetWithResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AssociateBudgetWithResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AssociateBudgetWithResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -280,7 +316,7 @@ impl AssociateBudgetWithResourceInput {
         fn update_http_builder(
             input: &crate::input::AssociateBudgetWithResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -289,30 +325,30 @@ impl AssociateBudgetWithResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AssociateBudgetWithResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.AssociateBudgetWithResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_budget_with_resource(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_budget_with_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -335,15 +371,15 @@ impl AssociateBudgetWithResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AssociateBudgetWithResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AssociateBudgetWithResource",
             "servicecatalog",
         ));
@@ -352,10 +388,10 @@ impl AssociateBudgetWithResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -400,6 +436,21 @@ pub mod associate_principal_with_portfolio_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -412,6 +463,7 @@ pub mod associate_principal_with_portfolio_input {
             self.portfolio_id = Some(input.into());
             self
         }
+        /// <p>The portfolio identifier.</p>
         pub fn set_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.portfolio_id = input;
             self
@@ -421,6 +473,7 @@ pub mod associate_principal_with_portfolio_input {
             self.principal_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the principal (IAM user, role, or group).</p>
         pub fn set_principal_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -433,6 +486,7 @@ pub mod associate_principal_with_portfolio_input {
             self.principal_type = Some(input);
             self
         }
+        /// <p>The principal type. The supported value is <code>IAM</code>.</p>
         pub fn set_principal_type(
             mut self,
             input: std::option::Option<crate::model::PrincipalType>,
@@ -445,7 +499,7 @@ pub mod associate_principal_with_portfolio_input {
             self,
         ) -> std::result::Result<
             crate::input::AssociatePrincipalWithPortfolioInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AssociatePrincipalWithPortfolioInput {
                 accept_language: self.accept_language,
@@ -468,16 +522,16 @@ impl AssociatePrincipalWithPortfolioInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AssociatePrincipalWithPortfolio,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AssociatePrincipalWithPortfolioInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -485,7 +539,7 @@ impl AssociatePrincipalWithPortfolioInput {
         fn update_http_builder(
             input: &crate::input::AssociatePrincipalWithPortfolioInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -494,30 +548,30 @@ impl AssociatePrincipalWithPortfolioInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AssociatePrincipalWithPortfolioInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.AssociatePrincipalWithPortfolio",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_principal_with_portfolio(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_principal_with_portfolio(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -540,15 +594,15 @@ impl AssociatePrincipalWithPortfolioInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AssociatePrincipalWithPortfolio::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AssociatePrincipalWithPortfolio",
             "servicecatalog",
         ));
@@ -557,10 +611,10 @@ impl AssociatePrincipalWithPortfolioInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -605,6 +659,21 @@ pub mod associate_product_with_portfolio_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -617,6 +686,7 @@ pub mod associate_product_with_portfolio_input {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -626,6 +696,7 @@ pub mod associate_product_with_portfolio_input {
             self.portfolio_id = Some(input.into());
             self
         }
+        /// <p>The portfolio identifier.</p>
         pub fn set_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.portfolio_id = input;
             self
@@ -635,6 +706,7 @@ pub mod associate_product_with_portfolio_input {
             self.source_portfolio_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the source portfolio.</p>
         pub fn set_source_portfolio_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -647,7 +719,7 @@ pub mod associate_product_with_portfolio_input {
             self,
         ) -> std::result::Result<
             crate::input::AssociateProductWithPortfolioInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AssociateProductWithPortfolioInput {
                 accept_language: self.accept_language,
@@ -670,16 +742,16 @@ impl AssociateProductWithPortfolioInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AssociateProductWithPortfolio,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AssociateProductWithPortfolioInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -687,7 +759,7 @@ impl AssociateProductWithPortfolioInput {
         fn update_http_builder(
             input: &crate::input::AssociateProductWithPortfolioInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -696,30 +768,30 @@ impl AssociateProductWithPortfolioInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AssociateProductWithPortfolioInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.AssociateProductWithPortfolio",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_product_with_portfolio(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_product_with_portfolio(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -742,15 +814,15 @@ impl AssociateProductWithPortfolioInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AssociateProductWithPortfolio::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AssociateProductWithPortfolio",
             "servicecatalog",
         ));
@@ -759,10 +831,10 @@ impl AssociateProductWithPortfolioInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -793,6 +865,7 @@ pub mod associate_service_action_with_provisioning_artifact_input {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -802,6 +875,7 @@ pub mod associate_service_action_with_provisioning_artifact_input {
             self.provisioning_artifact_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
         pub fn set_provisioning_artifact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -814,6 +888,7 @@ pub mod associate_service_action_with_provisioning_artifact_input {
             self.service_action_id = Some(input.into());
             self
         }
+        /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
         pub fn set_service_action_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -840,6 +915,21 @@ pub mod associate_service_action_with_provisioning_artifact_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -852,7 +942,7 @@ pub mod associate_service_action_with_provisioning_artifact_input {
             self,
         ) -> std::result::Result<
             crate::input::AssociateServiceActionWithProvisioningArtifactInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::AssociateServiceActionWithProvisioningArtifactInput {
@@ -878,16 +968,16 @@ impl AssociateServiceActionWithProvisioningArtifactInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AssociateServiceActionWithProvisioningArtifact,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AssociateServiceActionWithProvisioningArtifactInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -895,7 +985,7 @@ impl AssociateServiceActionWithProvisioningArtifactInput {
         fn update_http_builder(
             input: &crate::input::AssociateServiceActionWithProvisioningArtifactInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -904,30 +994,30 @@ impl AssociateServiceActionWithProvisioningArtifactInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AssociateServiceActionWithProvisioningArtifactInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.AssociateServiceActionWithProvisioningArtifact",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_service_action_with_provisioning_artifact(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_service_action_with_provisioning_artifact(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -950,15 +1040,15 @@ impl AssociateServiceActionWithProvisioningArtifactInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AssociateServiceActionWithProvisioningArtifact::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AssociateServiceActionWithProvisioningArtifact",
             "servicecatalog",
         ));
@@ -967,10 +1057,10 @@ impl AssociateServiceActionWithProvisioningArtifactInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1000,6 +1090,7 @@ pub mod associate_tag_option_with_resource_input {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The resource identifier.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -1009,6 +1100,7 @@ pub mod associate_tag_option_with_resource_input {
             self.tag_option_id = Some(input.into());
             self
         }
+        /// <p>The TagOption identifier.</p>
         pub fn set_tag_option_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1021,7 +1113,7 @@ pub mod associate_tag_option_with_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::AssociateTagOptionWithResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AssociateTagOptionWithResourceInput {
                 resource_id: self.resource_id,
@@ -1042,16 +1134,16 @@ impl AssociateTagOptionWithResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AssociateTagOptionWithResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AssociateTagOptionWithResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1059,7 +1151,7 @@ impl AssociateTagOptionWithResourceInput {
         fn update_http_builder(
             input: &crate::input::AssociateTagOptionWithResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1068,30 +1160,30 @@ impl AssociateTagOptionWithResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AssociateTagOptionWithResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.AssociateTagOptionWithResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_tag_option_with_resource(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_tag_option_with_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1114,15 +1206,15 @@ impl AssociateTagOptionWithResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AssociateTagOptionWithResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AssociateTagOptionWithResource",
             "servicecatalog",
         ));
@@ -1131,10 +1223,10 @@ impl AssociateTagOptionWithResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1159,6 +1251,11 @@ pub mod batch_associate_service_action_with_provisioning_artifact_input {
         pub(crate) accept_language: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `service_action_associations`.
+        ///
+        /// To override the contents of this collection use [`set_service_action_associations`](Self::set_service_action_associations).
+        ///
+        /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
         pub fn service_action_associations(
             mut self,
             input: impl Into<crate::model::ServiceActionAssociation>,
@@ -1168,6 +1265,7 @@ pub mod batch_associate_service_action_with_provisioning_artifact_input {
             self.service_action_associations = Some(v);
             self
         }
+        /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
         pub fn set_service_action_associations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceActionAssociation>>,
@@ -1194,6 +1292,21 @@ pub mod batch_associate_service_action_with_provisioning_artifact_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1206,7 +1319,7 @@ pub mod batch_associate_service_action_with_provisioning_artifact_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchAssociateServiceActionWithProvisioningArtifactInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::BatchAssociateServiceActionWithProvisioningArtifactInput {
@@ -1230,16 +1343,16 @@ impl BatchAssociateServiceActionWithProvisioningArtifactInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchAssociateServiceActionWithProvisioningArtifact,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchAssociateServiceActionWithProvisioningArtifactInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1247,7 +1360,7 @@ impl BatchAssociateServiceActionWithProvisioningArtifactInput {
         fn update_http_builder(
             input: &crate::input::BatchAssociateServiceActionWithProvisioningArtifactInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1256,30 +1369,30 @@ impl BatchAssociateServiceActionWithProvisioningArtifactInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchAssociateServiceActionWithProvisioningArtifactInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.BatchAssociateServiceActionWithProvisioningArtifact",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_associate_service_action_with_provisioning_artifact(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_associate_service_action_with_provisioning_artifact(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1302,15 +1415,15 @@ impl BatchAssociateServiceActionWithProvisioningArtifactInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchAssociateServiceActionWithProvisioningArtifact::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchAssociateServiceActionWithProvisioningArtifact",
             "servicecatalog",
         ));
@@ -1319,10 +1432,10 @@ impl BatchAssociateServiceActionWithProvisioningArtifactInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1349,6 +1462,11 @@ pub mod batch_disassociate_service_action_from_provisioning_artifact_input {
         pub(crate) accept_language: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `service_action_associations`.
+        ///
+        /// To override the contents of this collection use [`set_service_action_associations`](Self::set_service_action_associations).
+        ///
+        /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
         pub fn service_action_associations(
             mut self,
             input: impl Into<crate::model::ServiceActionAssociation>,
@@ -1358,6 +1476,7 @@ pub mod batch_disassociate_service_action_from_provisioning_artifact_input {
             self.service_action_associations = Some(v);
             self
         }
+        /// <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
         pub fn set_service_action_associations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceActionAssociation>>,
@@ -1384,6 +1503,21 @@ pub mod batch_disassociate_service_action_from_provisioning_artifact_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1396,7 +1530,7 @@ pub mod batch_disassociate_service_action_from_provisioning_artifact_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchDisassociateServiceActionFromProvisioningArtifactInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::BatchDisassociateServiceActionFromProvisioningArtifactInput {
@@ -1420,16 +1554,16 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchDisassociateServiceActionFromProvisioningArtifact,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchDisassociateServiceActionFromProvisioningArtifactInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1437,7 +1571,7 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactInput {
         fn update_http_builder(
             input: &crate::input::BatchDisassociateServiceActionFromProvisioningArtifactInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1446,30 +1580,30 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchDisassociateServiceActionFromProvisioningArtifactInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                                     builder,
                                     http::header::HeaderName::from_static("x-amz-target"),
                                     "AWS242ServiceCatalogService.BatchDisassociateServiceActionFromProvisioningArtifact"
                                 );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_service_action_from_provisioning_artifact(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_service_action_from_provisioning_artifact(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1492,15 +1626,15 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchDisassociateServiceActionFromProvisioningArtifact::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchDisassociateServiceActionFromProvisioningArtifact",
             "servicecatalog",
         ));
@@ -1509,10 +1643,10 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1569,6 +1703,21 @@ pub mod copy_product_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1581,6 +1730,7 @@ pub mod copy_product_input {
             self.source_product_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the source product.</p>
         pub fn set_source_product_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1593,6 +1743,7 @@ pub mod copy_product_input {
             self.target_product_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the target product. By default, a new product is created.</p>
         pub fn set_target_product_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1605,6 +1756,7 @@ pub mod copy_product_input {
             self.target_product_name = Some(input.into());
             self
         }
+        /// <p>A name for the target product. The default is the name of the source product.</p>
         pub fn set_target_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1612,6 +1764,12 @@ pub mod copy_product_input {
             self.target_product_name = input;
             self
         }
+        /// Appends an item to `source_provisioning_artifact_identifiers`.
+        ///
+        /// To override the contents of this collection use [`set_source_provisioning_artifact_identifiers`](Self::set_source_provisioning_artifact_identifiers).
+        ///
+        /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy.
+        /// By default, all provisioning artifacts are copied.</p>
         pub fn source_provisioning_artifact_identifiers(
             mut self,
             input: impl Into<
@@ -1628,6 +1786,8 @@ pub mod copy_product_input {
             self.source_provisioning_artifact_identifiers = Some(v);
             self
         }
+        /// <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy.
+        /// By default, all provisioning artifacts are copied.</p>
         pub fn set_source_provisioning_artifact_identifiers(
             mut self,
             input: std::option::Option<
@@ -1642,12 +1802,20 @@ pub mod copy_product_input {
             self.source_provisioning_artifact_identifiers = input;
             self
         }
+        /// Appends an item to `copy_options`.
+        ///
+        /// To override the contents of this collection use [`set_copy_options`](Self::set_copy_options).
+        ///
+        /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source
+        /// product are copied to the target product.</p>
         pub fn copy_options(mut self, input: impl Into<crate::model::CopyOption>) -> Self {
             let mut v = self.copy_options.unwrap_or_default();
             v.push(input.into());
             self.copy_options = Some(v);
             self
         }
+        /// <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source
+        /// product are copied to the target product.</p>
         pub fn set_copy_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CopyOption>>,
@@ -1661,6 +1829,8 @@ pub mod copy_product_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+        /// the same response is returned for each repeated request. </p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1671,8 +1841,10 @@ pub mod copy_product_input {
         /// Consumes the builder and constructs a [`CopyProductInput`](crate::input::CopyProductInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CopyProductInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CopyProductInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CopyProductInput {
                 accept_language: self.accept_language,
                 source_product_arn: self.source_product_arn,
@@ -1697,16 +1869,16 @@ impl CopyProductInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CopyProduct,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CopyProductInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1714,7 +1886,7 @@ impl CopyProductInput {
         fn update_http_builder(
             input: &crate::input::CopyProductInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1723,15 +1895,15 @@ impl CopyProductInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CopyProductInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.CopyProduct",
@@ -1741,14 +1913,16 @@ impl CopyProductInput {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_copy_product(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1771,25 +1945,27 @@ impl CopyProductInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CopyProduct::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CopyProduct",
-                    "servicecatalog",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CopyProduct::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CopyProduct",
+            "servicecatalog",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1837,6 +2013,21 @@ pub mod create_constraint_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1849,6 +2040,7 @@ pub mod create_constraint_input {
             self.portfolio_id = Some(input.into());
             self
         }
+        /// <p>The portfolio identifier.</p>
         pub fn set_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.portfolio_id = input;
             self
@@ -1858,6 +2050,7 @@ pub mod create_constraint_input {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -1918,6 +2111,58 @@ pub mod create_constraint_input {
             self.parameters = Some(input.into());
             self
         }
+        /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
+        /// <dl>
+        /// <dt>LAUNCH</dt>
+        /// <dd>
+        /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
+        /// <p>Specify the <code>RoleArn</code> property as follows:</p>
+        /// <p>
+        /// <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
+        /// </p>
+        /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
+        /// <p>
+        /// <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
+        /// </p>
+        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be
+        /// account-agnostic so the administrator can create fewer resources per shared account.</p>
+        /// <note>
+        /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
+        /// </note>
+        /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
+        /// <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>
+        /// </dd>
+        /// <dt>NOTIFICATION</dt>
+        /// <dd>
+        /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
+        /// <p>
+        /// <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
+        /// </p>
+        /// </dd>
+        /// <dt>RESOURCE_UPDATE</dt>
+        /// <dd>
+        /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
+        /// <p>
+        /// <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
+        /// </p>
+        /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
+        /// </dd>
+        /// <dt>STACKSET</dt>
+        /// <dd>
+        /// <p>Specify the <code>Parameters</code> property as follows:</p>
+        /// <p>
+        /// <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
+        /// </p>
+        /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
+        /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
+        /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
+        /// </dd>
+        /// <dt>TEMPLATE</dt>
+        /// <dd>
+        /// <p>Specify the <code>Rules</code> property. For more information, see
+        /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parameters = input;
             self
@@ -1954,6 +2199,34 @@ pub mod create_constraint_input {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of constraint.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>LAUNCH</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NOTIFICATION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RESOURCE_UPDATE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>STACKSET</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TEMPLATE</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -1963,6 +2236,7 @@ pub mod create_constraint_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the constraint.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1973,6 +2247,8 @@ pub mod create_constraint_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+        /// the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1985,7 +2261,7 @@ pub mod create_constraint_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateConstraintInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateConstraintInput {
                 accept_language: self.accept_language,
@@ -2010,16 +2286,16 @@ impl CreateConstraintInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateConstraint,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateConstraintInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2027,7 +2303,7 @@ impl CreateConstraintInput {
         fn update_http_builder(
             input: &crate::input::CreateConstraintInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2036,15 +2312,15 @@ impl CreateConstraintInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateConstraintInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.CreateConstraint",
@@ -2054,17 +2330,17 @@ impl CreateConstraintInput {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_constraint(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2087,15 +2363,15 @@ impl CreateConstraintInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateConstraint::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateConstraint",
             "servicecatalog",
         ));
@@ -2104,10 +2380,10 @@ impl CreateConstraintInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2154,6 +2430,21 @@ pub mod create_portfolio_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2166,6 +2457,7 @@ pub mod create_portfolio_input {
             self.display_name = Some(input.into());
             self
         }
+        /// <p>The name to use for display purposes.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -2175,6 +2467,7 @@ pub mod create_portfolio_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the portfolio.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2184,6 +2477,7 @@ pub mod create_portfolio_input {
             self.provider_name = Some(input.into());
             self
         }
+        /// <p>The name of the portfolio provider.</p>
         pub fn set_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2191,12 +2485,18 @@ pub mod create_portfolio_input {
             self.provider_name = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>One or more tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2210,6 +2510,8 @@ pub mod create_portfolio_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+        /// the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2222,7 +2524,7 @@ pub mod create_portfolio_input {
             self,
         ) -> std::result::Result<
             crate::input::CreatePortfolioInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreatePortfolioInput {
                 accept_language: self.accept_language,
@@ -2246,16 +2548,16 @@ impl CreatePortfolioInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreatePortfolio,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreatePortfolioInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2263,7 +2565,7 @@ impl CreatePortfolioInput {
         fn update_http_builder(
             input: &crate::input::CreatePortfolioInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2272,15 +2574,15 @@ impl CreatePortfolioInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreatePortfolioInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.CreatePortfolio",
@@ -2290,17 +2592,17 @@ impl CreatePortfolioInput {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_portfolio(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2323,15 +2625,15 @@ impl CreatePortfolioInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreatePortfolio::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreatePortfolio",
             "servicecatalog",
         ));
@@ -2340,10 +2642,10 @@ impl CreatePortfolioInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2389,6 +2691,21 @@ pub mod create_portfolio_share_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2401,6 +2718,7 @@ pub mod create_portfolio_share_input {
             self.portfolio_id = Some(input.into());
             self
         }
+        /// <p>The portfolio identifier.</p>
         pub fn set_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.portfolio_id = input;
             self
@@ -2410,6 +2728,7 @@ pub mod create_portfolio_share_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The AWS account ID. For example, <code>123456789012</code>.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2424,6 +2743,12 @@ pub mod create_portfolio_share_input {
             self.organization_node = Some(input);
             self
         }
+        /// <p>The organization node to whom you are going to share. If <code>OrganizationNode</code>
+        /// is passed in, <code>PortfolioShare</code> will be created for the node an
+        /// ListOrganizationPortfolioAccessd its children (when applies), and a
+        /// <code>PortfolioShareToken</code> will be returned in the output in order for the
+        /// administrator to monitor the status of the <code>PortfolioShare</code> creation
+        /// process.</p>
         pub fn set_organization_node(
             mut self,
             input: std::option::Option<crate::model::OrganizationNode>,
@@ -2436,6 +2761,7 @@ pub mod create_portfolio_share_input {
             self.share_tag_options = Some(input);
             self
         }
+        /// <p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>
         pub fn set_share_tag_options(mut self, input: std::option::Option<bool>) -> Self {
             self.share_tag_options = input;
             self
@@ -2445,7 +2771,7 @@ pub mod create_portfolio_share_input {
             self,
         ) -> std::result::Result<
             crate::input::CreatePortfolioShareInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreatePortfolioShareInput {
                 accept_language: self.accept_language,
@@ -2468,16 +2794,16 @@ impl CreatePortfolioShareInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreatePortfolioShare,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreatePortfolioShareInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2485,7 +2811,7 @@ impl CreatePortfolioShareInput {
         fn update_http_builder(
             input: &crate::input::CreatePortfolioShareInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2494,32 +2820,32 @@ impl CreatePortfolioShareInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreatePortfolioShareInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.CreatePortfolioShare",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_portfolio_share(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2542,15 +2868,15 @@ impl CreatePortfolioShareInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreatePortfolioShare::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreatePortfolioShare",
             "servicecatalog",
         ));
@@ -2559,10 +2885,10 @@ impl CreatePortfolioShareInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2616,6 +2942,21 @@ pub mod create_product_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2628,6 +2969,7 @@ pub mod create_product_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the product.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2637,6 +2979,7 @@ pub mod create_product_input {
             self.owner = Some(input.into());
             self
         }
+        /// <p>The owner of the product.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -2646,6 +2989,7 @@ pub mod create_product_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the product.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2655,6 +2999,7 @@ pub mod create_product_input {
             self.distributor = Some(input.into());
             self
         }
+        /// <p>The distributor of the product.</p>
         pub fn set_distributor(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.distributor = input;
             self
@@ -2664,6 +3009,7 @@ pub mod create_product_input {
             self.support_description = Some(input.into());
             self
         }
+        /// <p>The support information about the product.</p>
         pub fn set_support_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2676,6 +3022,7 @@ pub mod create_product_input {
             self.support_email = Some(input.into());
             self
         }
+        /// <p>The contact email for product support.</p>
         pub fn set_support_email(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2690,6 +3037,9 @@ pub mod create_product_input {
             self.support_url = Some(input.into());
             self
         }
+        /// <p>The contact URL for product support.</p>
+        /// <p>
+        /// <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
         pub fn set_support_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.support_url = input;
             self
@@ -2699,6 +3049,7 @@ pub mod create_product_input {
             self.product_type = Some(input);
             self
         }
+        /// <p>The type of product.</p>
         pub fn set_product_type(
             mut self,
             input: std::option::Option<crate::model::ProductType>,
@@ -2706,12 +3057,18 @@ pub mod create_product_input {
             self.product_type = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>One or more tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2727,6 +3084,7 @@ pub mod create_product_input {
             self.provisioning_artifact_parameters = Some(input);
             self
         }
+        /// <p>The configuration of the provisioning artifact. </p>
         pub fn set_provisioning_artifact_parameters(
             mut self,
             input: std::option::Option<crate::model::ProvisioningArtifactProperties>,
@@ -2740,6 +3098,8 @@ pub mod create_product_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+        /// the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2750,8 +3110,10 @@ pub mod create_product_input {
         /// Consumes the builder and constructs a [`CreateProductInput`](crate::input::CreateProductInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateProductInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateProductInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateProductInput {
                 accept_language: self.accept_language,
                 name: self.name,
@@ -2780,16 +3142,16 @@ impl CreateProductInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateProduct,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateProductInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2797,7 +3159,7 @@ impl CreateProductInput {
         fn update_http_builder(
             input: &crate::input::CreateProductInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2806,15 +3168,15 @@ impl CreateProductInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateProductInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.CreateProduct",
@@ -2824,14 +3186,16 @@ impl CreateProductInput {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_product(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2854,25 +3218,27 @@ impl CreateProductInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateProduct::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateProduct",
-                    "servicecatalog",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateProduct::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateProduct",
+            "servicecatalog",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2925,6 +3291,21 @@ pub mod create_provisioned_product_plan_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2937,6 +3318,7 @@ pub mod create_provisioned_product_plan_input {
             self.plan_name = Some(input.into());
             self
         }
+        /// <p>The name of the plan.</p>
         pub fn set_plan_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.plan_name = input;
             self
@@ -2946,6 +3328,7 @@ pub mod create_provisioned_product_plan_input {
             self.plan_type = Some(input);
             self
         }
+        /// <p>The plan type.</p>
         pub fn set_plan_type(
             mut self,
             input: std::option::Option<crate::model::ProvisionedProductPlanType>,
@@ -2953,12 +3336,20 @@ pub mod create_provisioned_product_plan_input {
             self.plan_type = input;
             self
         }
+        /// Appends an item to `notification_arns`.
+        ///
+        /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
+        ///
+        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
+        /// events.</p>
         pub fn notification_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.notification_arns.unwrap_or_default();
             v.push(input.into());
             self.notification_arns = Some(v);
             self
         }
+        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
+        /// events.</p>
         pub fn set_notification_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2973,6 +3364,9 @@ pub mod create_provisioned_product_plan_input {
             self.path_id = Some(input.into());
             self
         }
+        /// <p>The path identifier of the product. This value is optional if the product
+        /// has a default path, and required if the product has more than one path.
+        /// To list the paths for a product, use <a>ListLaunchPaths</a>.</p>
         pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path_id = input;
             self
@@ -2982,6 +3376,7 @@ pub mod create_provisioned_product_plan_input {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -2992,6 +3387,8 @@ pub mod create_provisioned_product_plan_input {
             self.provisioned_product_name = Some(input.into());
             self
         }
+        /// <p>A user-friendly name for the provisioned product. This value must be
+        /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3004,6 +3401,7 @@ pub mod create_provisioned_product_plan_input {
             self.provisioning_artifact_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioning artifact.</p>
         pub fn set_provisioning_artifact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3011,6 +3409,12 @@ pub mod create_provisioned_product_plan_input {
             self.provisioning_artifact_id = input;
             self
         }
+        /// Appends an item to `provisioning_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_provisioning_parameters`](Self::set_provisioning_parameters).
+        ///
+        /// <p>Parameters specified by the administrator that are required for provisioning the
+        /// product.</p>
         pub fn provisioning_parameters(
             mut self,
             input: impl Into<crate::model::UpdateProvisioningParameter>,
@@ -3020,6 +3424,8 @@ pub mod create_provisioned_product_plan_input {
             self.provisioning_parameters = Some(v);
             self
         }
+        /// <p>Parameters specified by the administrator that are required for provisioning the
+        /// product.</p>
         pub fn set_provisioning_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpdateProvisioningParameter>>,
@@ -3033,6 +3439,8 @@ pub mod create_provisioned_product_plan_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+        /// the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3040,12 +3448,20 @@ pub mod create_provisioned_product_plan_input {
             self.idempotency_token = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
+        /// <p>If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>One or more tags.</p>
+        /// <p>If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3058,7 +3474,7 @@ pub mod create_provisioned_product_plan_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateProvisionedProductPlanInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateProvisionedProductPlanInput {
                 accept_language: self.accept_language,
@@ -3088,16 +3504,16 @@ impl CreateProvisionedProductPlanInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateProvisionedProductPlan,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateProvisionedProductPlanInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3105,7 +3521,7 @@ impl CreateProvisionedProductPlanInput {
         fn update_http_builder(
             input: &crate::input::CreateProvisionedProductPlanInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3114,15 +3530,15 @@ impl CreateProvisionedProductPlanInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateProvisionedProductPlanInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.CreateProvisionedProductPlan",
@@ -3132,15 +3548,15 @@ impl CreateProvisionedProductPlanInput {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_provisioned_product_plan(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_provisioned_product_plan(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3163,15 +3579,15 @@ impl CreateProvisionedProductPlanInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateProvisionedProductPlan::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateProvisionedProductPlan",
             "servicecatalog",
         ));
@@ -3180,10 +3596,10 @@ impl CreateProvisionedProductPlanInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3228,6 +3644,21 @@ pub mod create_provisioning_artifact_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3240,6 +3671,7 @@ pub mod create_provisioning_artifact_input {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -3249,6 +3681,7 @@ pub mod create_provisioning_artifact_input {
             self.parameters = Some(input);
             self
         }
+        /// <p>The configuration for the provisioning artifact.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<crate::model::ProvisioningArtifactProperties>,
@@ -3262,6 +3695,8 @@ pub mod create_provisioning_artifact_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+        /// the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3274,7 +3709,7 @@ pub mod create_provisioning_artifact_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateProvisioningArtifactInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateProvisioningArtifactInput {
                 accept_language: self.accept_language,
@@ -3297,16 +3732,16 @@ impl CreateProvisioningArtifactInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateProvisioningArtifact,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateProvisioningArtifactInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3314,7 +3749,7 @@ impl CreateProvisioningArtifactInput {
         fn update_http_builder(
             input: &crate::input::CreateProvisioningArtifactInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3323,15 +3758,15 @@ impl CreateProvisioningArtifactInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateProvisioningArtifactInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.CreateProvisioningArtifact",
@@ -3341,17 +3776,19 @@ impl CreateProvisioningArtifactInput {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_provisioning_artifact(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3374,15 +3811,15 @@ impl CreateProvisioningArtifactInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateProvisioningArtifact::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateProvisioningArtifact",
             "servicecatalog",
         ));
@@ -3391,10 +3828,10 @@ impl CreateProvisioningArtifactInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3432,6 +3869,7 @@ pub mod create_service_action_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The self-service action name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3441,6 +3879,7 @@ pub mod create_service_action_input {
             self.definition_type = Some(input);
             self
         }
+        /// <p>The service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
         pub fn set_definition_type(
             mut self,
             input: std::option::Option<crate::model::ServiceActionDefinitionType>,
@@ -3448,6 +3887,33 @@ pub mod create_service_action_input {
             self.definition_type = input;
             self
         }
+        /// Adds a key-value pair to `definition`.
+        ///
+        /// To override the contents of this collection use [`set_definition`](Self::set_definition).
+        ///
+        /// <p>The self-service action definition. Can be one of the following:</p>
+        /// <dl>
+        /// <dt>Name</dt>
+        /// <dd>
+        /// <p>The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
+        /// <p>If you are using a shared SSM document, you must provide the ARN instead of the name.</p>
+        /// </dd>
+        /// <dt>Version</dt>
+        /// <dd>
+        /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code>
+        /// </p>
+        /// </dd>
+        /// <dt>AssumeRole</dt>
+        /// <dd>
+        /// <p>The Amazon Resource Name (ARN) of the role that performs the self-service actions on your behalf. For example, <code>"AssumeRole": "arn:aws:iam::12345678910:role/ActionRole"</code>.</p>
+        /// <p>To reuse the provisioned product launch role, set to <code>"AssumeRole": "LAUNCH_ROLE"</code>.</p>
+        /// </dd>
+        /// <dt>Parameters</dt>
+        /// <dd>
+        /// <p>The list of parameters in JSON format.</p>
+        /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
+        /// </dd>
+        /// </dl>
         pub fn definition(
             mut self,
             k: impl Into<crate::model::ServiceActionDefinitionKey>,
@@ -3458,6 +3924,29 @@ pub mod create_service_action_input {
             self.definition = Some(hash_map);
             self
         }
+        /// <p>The self-service action definition. Can be one of the following:</p>
+        /// <dl>
+        /// <dt>Name</dt>
+        /// <dd>
+        /// <p>The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>
+        /// <p>If you are using a shared SSM document, you must provide the ARN instead of the name.</p>
+        /// </dd>
+        /// <dt>Version</dt>
+        /// <dd>
+        /// <p>The AWS Systems Manager automation document version. For example, <code>"Version": "1"</code>
+        /// </p>
+        /// </dd>
+        /// <dt>AssumeRole</dt>
+        /// <dd>
+        /// <p>The Amazon Resource Name (ARN) of the role that performs the self-service actions on your behalf. For example, <code>"AssumeRole": "arn:aws:iam::12345678910:role/ActionRole"</code>.</p>
+        /// <p>To reuse the provisioned product launch role, set to <code>"AssumeRole": "LAUNCH_ROLE"</code>.</p>
+        /// </dd>
+        /// <dt>Parameters</dt>
+        /// <dd>
+        /// <p>The list of parameters in JSON format.</p>
+        /// <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_definition(
             mut self,
             input: std::option::Option<
@@ -3475,6 +3964,7 @@ pub mod create_service_action_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The self-service action description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3498,6 +3988,21 @@ pub mod create_service_action_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3511,6 +4016,8 @@ pub mod create_service_action_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+        /// the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3523,7 +4030,7 @@ pub mod create_service_action_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateServiceActionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateServiceActionInput {
                 name: self.name,
@@ -3547,16 +4054,16 @@ impl CreateServiceActionInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateServiceAction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateServiceActionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3564,7 +4071,7 @@ impl CreateServiceActionInput {
         fn update_http_builder(
             input: &crate::input::CreateServiceActionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3573,15 +4080,15 @@ impl CreateServiceActionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateServiceActionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.CreateServiceAction",
@@ -3591,17 +4098,17 @@ impl CreateServiceActionInput {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_service_action(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3624,15 +4131,15 @@ impl CreateServiceActionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateServiceAction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateServiceAction",
             "servicecatalog",
         ));
@@ -3641,10 +4148,10 @@ impl CreateServiceActionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3673,6 +4180,7 @@ pub mod create_tag_option_input {
             self.key = Some(input.into());
             self
         }
+        /// <p>The TagOption key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -3682,6 +4190,7 @@ pub mod create_tag_option_input {
             self.value = Some(input.into());
             self
         }
+        /// <p>The TagOption value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -3691,7 +4200,7 @@ pub mod create_tag_option_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateTagOptionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateTagOptionInput {
                 key: self.key,
@@ -3711,16 +4220,16 @@ impl CreateTagOptionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateTagOption,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateTagOptionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3728,7 +4237,7 @@ impl CreateTagOptionInput {
         fn update_http_builder(
             input: &crate::input::CreateTagOptionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3737,32 +4246,32 @@ impl CreateTagOptionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateTagOptionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.CreateTagOption",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_tag_option(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3785,15 +4294,15 @@ impl CreateTagOptionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateTagOption::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateTagOption",
             "servicecatalog",
         ));
@@ -3802,10 +4311,10 @@ impl CreateTagOptionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3848,6 +4357,21 @@ pub mod delete_constraint_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3860,6 +4384,7 @@ pub mod delete_constraint_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the constraint.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3869,7 +4394,7 @@ pub mod delete_constraint_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteConstraintInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteConstraintInput {
                 accept_language: self.accept_language,
@@ -3889,16 +4414,16 @@ impl DeleteConstraintInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteConstraint,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteConstraintInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3906,7 +4431,7 @@ impl DeleteConstraintInput {
         fn update_http_builder(
             input: &crate::input::DeleteConstraintInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3915,32 +4440,32 @@ impl DeleteConstraintInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteConstraintInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DeleteConstraint",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_constraint(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3963,15 +4488,15 @@ impl DeleteConstraintInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteConstraint::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteConstraint",
             "servicecatalog",
         ));
@@ -3980,10 +4505,10 @@ impl DeleteConstraintInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4026,6 +4551,21 @@ pub mod delete_portfolio_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4038,6 +4578,7 @@ pub mod delete_portfolio_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The portfolio identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4047,7 +4588,7 @@ pub mod delete_portfolio_input {
             self,
         ) -> std::result::Result<
             crate::input::DeletePortfolioInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeletePortfolioInput {
                 accept_language: self.accept_language,
@@ -4067,16 +4608,16 @@ impl DeletePortfolioInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeletePortfolio,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeletePortfolioInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4084,7 +4625,7 @@ impl DeletePortfolioInput {
         fn update_http_builder(
             input: &crate::input::DeletePortfolioInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4093,32 +4634,32 @@ impl DeletePortfolioInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeletePortfolioInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DeletePortfolio",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_portfolio(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4141,15 +4682,15 @@ impl DeletePortfolioInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeletePortfolio::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeletePortfolio",
             "servicecatalog",
         ));
@@ -4158,10 +4699,10 @@ impl DeletePortfolioInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4206,6 +4747,21 @@ pub mod delete_portfolio_share_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4218,6 +4774,7 @@ pub mod delete_portfolio_share_input {
             self.portfolio_id = Some(input.into());
             self
         }
+        /// <p>The portfolio identifier.</p>
         pub fn set_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.portfolio_id = input;
             self
@@ -4227,6 +4784,7 @@ pub mod delete_portfolio_share_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The AWS account ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -4236,6 +4794,7 @@ pub mod delete_portfolio_share_input {
             self.organization_node = Some(input);
             self
         }
+        /// <p>The organization node to whom you are going to stop sharing.</p>
         pub fn set_organization_node(
             mut self,
             input: std::option::Option<crate::model::OrganizationNode>,
@@ -4248,7 +4807,7 @@ pub mod delete_portfolio_share_input {
             self,
         ) -> std::result::Result<
             crate::input::DeletePortfolioShareInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeletePortfolioShareInput {
                 accept_language: self.accept_language,
@@ -4270,16 +4829,16 @@ impl DeletePortfolioShareInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeletePortfolioShare,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeletePortfolioShareInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4287,7 +4846,7 @@ impl DeletePortfolioShareInput {
         fn update_http_builder(
             input: &crate::input::DeletePortfolioShareInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4296,32 +4855,32 @@ impl DeletePortfolioShareInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeletePortfolioShareInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DeletePortfolioShare",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_portfolio_share(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4344,15 +4903,15 @@ impl DeletePortfolioShareInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeletePortfolioShare::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeletePortfolioShare",
             "servicecatalog",
         ));
@@ -4361,10 +4920,10 @@ impl DeletePortfolioShareInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4407,6 +4966,21 @@ pub mod delete_product_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4419,6 +4993,7 @@ pub mod delete_product_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4426,8 +5001,10 @@ pub mod delete_product_input {
         /// Consumes the builder and constructs a [`DeleteProductInput`](crate::input::DeleteProductInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteProductInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteProductInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteProductInput {
                 accept_language: self.accept_language,
                 id: self.id,
@@ -4446,16 +5023,16 @@ impl DeleteProductInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteProduct,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteProductInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4463,7 +5040,7 @@ impl DeleteProductInput {
         fn update_http_builder(
             input: &crate::input::DeleteProductInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4472,29 +5049,31 @@ impl DeleteProductInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteProductInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DeleteProduct",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_product(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4517,25 +5096,27 @@ impl DeleteProductInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteProduct::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteProduct",
-                    "servicecatalog",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteProduct::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteProduct",
+            "servicecatalog",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4579,6 +5160,21 @@ pub mod delete_provisioned_product_plan_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4591,6 +5187,7 @@ pub mod delete_provisioned_product_plan_input {
             self.plan_id = Some(input.into());
             self
         }
+        /// <p>The plan identifier.</p>
         pub fn set_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.plan_id = input;
             self
@@ -4601,6 +5198,8 @@ pub mod delete_provisioned_product_plan_input {
             self.ignore_errors = Some(input);
             self
         }
+        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
+        /// if it cannot delete the underlying resources.</p>
         pub fn set_ignore_errors(mut self, input: std::option::Option<bool>) -> Self {
             self.ignore_errors = input;
             self
@@ -4610,7 +5209,7 @@ pub mod delete_provisioned_product_plan_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteProvisionedProductPlanInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteProvisionedProductPlanInput {
                 accept_language: self.accept_language,
@@ -4632,16 +5231,16 @@ impl DeleteProvisionedProductPlanInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteProvisionedProductPlan,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteProvisionedProductPlanInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4649,7 +5248,7 @@ impl DeleteProvisionedProductPlanInput {
         fn update_http_builder(
             input: &crate::input::DeleteProvisionedProductPlanInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4658,30 +5257,30 @@ impl DeleteProvisionedProductPlanInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteProvisionedProductPlanInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DeleteProvisionedProductPlan",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_provisioned_product_plan(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_provisioned_product_plan(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4704,15 +5303,15 @@ impl DeleteProvisionedProductPlanInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteProvisionedProductPlan::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteProvisionedProductPlan",
             "servicecatalog",
         ));
@@ -4721,10 +5320,10 @@ impl DeleteProvisionedProductPlanInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4768,6 +5367,21 @@ pub mod delete_provisioning_artifact_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4780,6 +5394,7 @@ pub mod delete_provisioning_artifact_input {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -4789,6 +5404,7 @@ pub mod delete_provisioning_artifact_input {
             self.provisioning_artifact_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioning artifact.</p>
         pub fn set_provisioning_artifact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4801,7 +5417,7 @@ pub mod delete_provisioning_artifact_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteProvisioningArtifactInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteProvisioningArtifactInput {
                 accept_language: self.accept_language,
@@ -4823,16 +5439,16 @@ impl DeleteProvisioningArtifactInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteProvisioningArtifact,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteProvisioningArtifactInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4840,7 +5456,7 @@ impl DeleteProvisioningArtifactInput {
         fn update_http_builder(
             input: &crate::input::DeleteProvisioningArtifactInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4849,32 +5465,34 @@ impl DeleteProvisioningArtifactInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteProvisioningArtifactInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DeleteProvisioningArtifact",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_provisioning_artifact(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4897,15 +5515,15 @@ impl DeleteProvisioningArtifactInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteProvisioningArtifact::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteProvisioningArtifact",
             "servicecatalog",
         ));
@@ -4914,10 +5532,10 @@ impl DeleteProvisioningArtifactInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4946,6 +5564,7 @@ pub mod delete_service_action_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4969,6 +5588,21 @@ pub mod delete_service_action_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4981,7 +5615,7 @@ pub mod delete_service_action_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteServiceActionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteServiceActionInput {
                 id: self.id,
@@ -5001,16 +5635,16 @@ impl DeleteServiceActionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteServiceAction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteServiceActionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5018,7 +5652,7 @@ impl DeleteServiceActionInput {
         fn update_http_builder(
             input: &crate::input::DeleteServiceActionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5027,32 +5661,32 @@ impl DeleteServiceActionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteServiceActionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DeleteServiceAction",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_service_action(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5075,15 +5709,15 @@ impl DeleteServiceActionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteServiceAction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteServiceAction",
             "servicecatalog",
         ));
@@ -5092,10 +5726,10 @@ impl DeleteServiceActionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5123,6 +5757,7 @@ pub mod delete_tag_option_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The TagOption identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5132,7 +5767,7 @@ pub mod delete_tag_option_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteTagOptionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteTagOptionInput { id: self.id })
         }
@@ -5149,16 +5784,16 @@ impl DeleteTagOptionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteTagOption,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteTagOptionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5166,7 +5801,7 @@ impl DeleteTagOptionInput {
         fn update_http_builder(
             input: &crate::input::DeleteTagOptionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5175,32 +5810,32 @@ impl DeleteTagOptionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteTagOptionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DeleteTagOption",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_tag_option(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5223,15 +5858,15 @@ impl DeleteTagOptionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteTagOption::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteTagOption",
             "servicecatalog",
         ));
@@ -5240,10 +5875,10 @@ impl DeleteTagOptionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5286,6 +5921,21 @@ pub mod describe_constraint_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5298,6 +5948,7 @@ pub mod describe_constraint_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the constraint.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5307,7 +5958,7 @@ pub mod describe_constraint_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeConstraintInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeConstraintInput {
                 accept_language: self.accept_language,
@@ -5327,16 +5978,16 @@ impl DescribeConstraintInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeConstraint,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeConstraintInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5344,7 +5995,7 @@ impl DescribeConstraintInput {
         fn update_http_builder(
             input: &crate::input::DescribeConstraintInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5353,32 +6004,32 @@ impl DescribeConstraintInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeConstraintInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DescribeConstraint",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_constraint(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5401,15 +6052,15 @@ impl DescribeConstraintInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeConstraint::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeConstraint",
             "servicecatalog",
         ));
@@ -5418,10 +6069,10 @@ impl DescribeConstraintInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5464,6 +6115,21 @@ pub mod describe_copy_product_status_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5476,6 +6142,7 @@ pub mod describe_copy_product_status_input {
             self.copy_product_token = Some(input.into());
             self
         }
+        /// <p>The token for the copy product operation. This token is returned by <a>CopyProduct</a>.</p>
         pub fn set_copy_product_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5488,7 +6155,7 @@ pub mod describe_copy_product_status_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeCopyProductStatusInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeCopyProductStatusInput {
                 accept_language: self.accept_language,
@@ -5509,16 +6176,16 @@ impl DescribeCopyProductStatusInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCopyProductStatus,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeCopyProductStatusInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5526,7 +6193,7 @@ impl DescribeCopyProductStatusInput {
         fn update_http_builder(
             input: &crate::input::DescribeCopyProductStatusInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5535,32 +6202,34 @@ impl DescribeCopyProductStatusInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeCopyProductStatusInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DescribeCopyProductStatus",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_copy_product_status(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5583,15 +6252,15 @@ impl DescribeCopyProductStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCopyProductStatus::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCopyProductStatus",
             "servicecatalog",
         ));
@@ -5600,10 +6269,10 @@ impl DescribeCopyProductStatusInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5646,6 +6315,21 @@ pub mod describe_portfolio_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5658,6 +6342,7 @@ pub mod describe_portfolio_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The portfolio identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5667,7 +6352,7 @@ pub mod describe_portfolio_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribePortfolioInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribePortfolioInput {
                 accept_language: self.accept_language,
@@ -5687,16 +6372,16 @@ impl DescribePortfolioInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribePortfolio,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribePortfolioInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5704,7 +6389,7 @@ impl DescribePortfolioInput {
         fn update_http_builder(
             input: &crate::input::DescribePortfolioInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5713,32 +6398,32 @@ impl DescribePortfolioInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribePortfolioInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DescribePortfolio",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_portfolio(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5761,15 +6446,15 @@ impl DescribePortfolioInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribePortfolio::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribePortfolio",
             "servicecatalog",
         ));
@@ -5778,10 +6463,10 @@ impl DescribePortfolioInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5812,6 +6497,7 @@ pub mod describe_portfolio_shares_input {
             self.portfolio_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the portfolio for which shares will be retrieved.</p>
         pub fn set_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.portfolio_id = input;
             self
@@ -5825,6 +6511,11 @@ pub mod describe_portfolio_shares_input {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of portfolio share to summarize. This field acts as a filter on the type of portfolio share, which can be one of the following:</p>
+        /// <p>1. <code>ACCOUNT</code> - Represents an external account to account share.</p>
+        /// <p>2. <code>ORGANIZATION</code> - Represents a share to an organization. This share is available to every account in the organization.</p>
+        /// <p>3. <code>ORGANIZATIONAL_UNIT</code> - Represents a share to an organizational unit.</p>
+        /// <p>4. <code>ORGANIZATION_MEMBER_ACCOUNT</code> - Represents a share to an account in the organization.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DescribePortfolioShareType>,
@@ -5837,6 +6528,7 @@ pub mod describe_portfolio_shares_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -5846,6 +6538,7 @@ pub mod describe_portfolio_shares_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -5855,7 +6548,7 @@ pub mod describe_portfolio_shares_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribePortfolioSharesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribePortfolioSharesInput {
                 portfolio_id: self.portfolio_id,
@@ -5878,16 +6571,16 @@ impl DescribePortfolioSharesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribePortfolioShares,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribePortfolioSharesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5895,7 +6588,7 @@ impl DescribePortfolioSharesInput {
         fn update_http_builder(
             input: &crate::input::DescribePortfolioSharesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5904,32 +6597,34 @@ impl DescribePortfolioSharesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribePortfolioSharesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DescribePortfolioShares",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_portfolio_shares(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5952,15 +6647,15 @@ impl DescribePortfolioSharesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribePortfolioShares::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribePortfolioShares",
             "servicecatalog",
         ));
@@ -5969,10 +6664,10 @@ impl DescribePortfolioSharesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6000,6 +6695,7 @@ pub mod describe_portfolio_share_status_input {
             self.portfolio_share_token = Some(input.into());
             self
         }
+        /// <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
         pub fn set_portfolio_share_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6012,7 +6708,7 @@ pub mod describe_portfolio_share_status_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribePortfolioShareStatusInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribePortfolioShareStatusInput {
                 portfolio_share_token: self.portfolio_share_token,
@@ -6032,16 +6728,16 @@ impl DescribePortfolioShareStatusInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribePortfolioShareStatus,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribePortfolioShareStatusInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6049,7 +6745,7 @@ impl DescribePortfolioShareStatusInput {
         fn update_http_builder(
             input: &crate::input::DescribePortfolioShareStatusInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6058,30 +6754,30 @@ impl DescribePortfolioShareStatusInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribePortfolioShareStatusInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DescribePortfolioShareStatus",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_portfolio_share_status(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_portfolio_share_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6104,15 +6800,15 @@ impl DescribePortfolioShareStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribePortfolioShareStatus::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribePortfolioShareStatus",
             "servicecatalog",
         ));
@@ -6121,10 +6817,10 @@ impl DescribePortfolioShareStatusInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6168,6 +6864,21 @@ pub mod describe_product_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6180,6 +6891,7 @@ pub mod describe_product_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -6189,6 +6901,7 @@ pub mod describe_product_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The product name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6198,7 +6911,7 @@ pub mod describe_product_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeProductInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeProductInput {
                 accept_language: self.accept_language,
@@ -6219,16 +6932,16 @@ impl DescribeProductInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeProduct,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeProductInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6236,7 +6949,7 @@ impl DescribeProductInput {
         fn update_http_builder(
             input: &crate::input::DescribeProductInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6245,32 +6958,32 @@ impl DescribeProductInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeProductInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DescribeProduct",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_product(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6293,15 +7006,15 @@ impl DescribeProductInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeProduct::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeProduct",
             "servicecatalog",
         ));
@@ -6310,10 +7023,10 @@ impl DescribeProductInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6358,6 +7071,21 @@ pub mod describe_product_as_admin_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6370,6 +7098,7 @@ pub mod describe_product_as_admin_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -6379,6 +7108,7 @@ pub mod describe_product_as_admin_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The product name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6393,6 +7123,12 @@ pub mod describe_product_as_admin_input {
             self.source_portfolio_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the shared portfolio that the specified product is associated
+        /// with.</p>
+        /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the
+        /// product. If this parameter is provided and if TagOptions sharing is enabled in the
+        /// portfolio share, the API returns both local and shared TagOptions associated with the
+        /// product. Otherwise only local TagOptions will be returned. </p>
         pub fn set_source_portfolio_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6405,7 +7141,7 @@ pub mod describe_product_as_admin_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeProductAsAdminInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeProductAsAdminInput {
                 accept_language: self.accept_language,
@@ -6427,16 +7163,16 @@ impl DescribeProductAsAdminInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeProductAsAdmin,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeProductAsAdminInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6444,7 +7180,7 @@ impl DescribeProductAsAdminInput {
         fn update_http_builder(
             input: &crate::input::DescribeProductAsAdminInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6453,32 +7189,34 @@ impl DescribeProductAsAdminInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeProductAsAdminInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DescribeProductAsAdmin",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_product_as_admin(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6501,15 +7239,15 @@ impl DescribeProductAsAdminInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeProductAsAdmin::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeProductAsAdmin",
             "servicecatalog",
         ));
@@ -6518,10 +7256,10 @@ impl DescribeProductAsAdminInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6564,6 +7302,21 @@ pub mod describe_product_view_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6576,6 +7329,7 @@ pub mod describe_product_view_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The product view identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -6585,7 +7339,7 @@ pub mod describe_product_view_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeProductViewInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeProductViewInput {
                 accept_language: self.accept_language,
@@ -6605,16 +7359,16 @@ impl DescribeProductViewInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeProductView,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeProductViewInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6622,7 +7376,7 @@ impl DescribeProductViewInput {
         fn update_http_builder(
             input: &crate::input::DescribeProductViewInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6631,32 +7385,32 @@ impl DescribeProductViewInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeProductViewInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DescribeProductView",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_product_view(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6679,15 +7433,15 @@ impl DescribeProductViewInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeProductView::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeProductView",
             "servicecatalog",
         ));
@@ -6696,10 +7450,10 @@ impl DescribeProductViewInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6743,6 +7497,21 @@ pub mod describe_provisioned_product_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6756,6 +7525,8 @@ pub mod describe_provisioned_product_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The provisioned product identifier. You must provide the name or ID, but not both.</p>
+        /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -6766,6 +7537,8 @@ pub mod describe_provisioned_product_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the provisioned product. You must provide the name or ID, but not both.</p>
+        /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6775,7 +7548,7 @@ pub mod describe_provisioned_product_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeProvisionedProductInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeProvisionedProductInput {
                 accept_language: self.accept_language,
@@ -6797,16 +7570,16 @@ impl DescribeProvisionedProductInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeProvisionedProduct,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeProvisionedProductInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6814,7 +7587,7 @@ impl DescribeProvisionedProductInput {
         fn update_http_builder(
             input: &crate::input::DescribeProvisionedProductInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6823,32 +7596,34 @@ impl DescribeProvisionedProductInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeProvisionedProductInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DescribeProvisionedProduct",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_provisioned_product(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6871,15 +7646,15 @@ impl DescribeProvisionedProductInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeProvisionedProduct::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeProvisionedProduct",
             "servicecatalog",
         ));
@@ -6888,10 +7663,10 @@ impl DescribeProvisionedProductInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6936,6 +7711,21 @@ pub mod describe_provisioned_product_plan_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6948,6 +7738,7 @@ pub mod describe_provisioned_product_plan_input {
             self.plan_id = Some(input.into());
             self
         }
+        /// <p>The plan identifier.</p>
         pub fn set_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.plan_id = input;
             self
@@ -6957,6 +7748,7 @@ pub mod describe_provisioned_product_plan_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -6966,6 +7758,7 @@ pub mod describe_provisioned_product_plan_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -6975,7 +7768,7 @@ pub mod describe_provisioned_product_plan_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeProvisionedProductPlanInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeProvisionedProductPlanInput {
                 accept_language: self.accept_language,
@@ -6998,16 +7791,16 @@ impl DescribeProvisionedProductPlanInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeProvisionedProductPlan,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeProvisionedProductPlanInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7015,7 +7808,7 @@ impl DescribeProvisionedProductPlanInput {
         fn update_http_builder(
             input: &crate::input::DescribeProvisionedProductPlanInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7024,30 +7817,30 @@ impl DescribeProvisionedProductPlanInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeProvisionedProductPlanInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DescribeProvisionedProductPlan",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_provisioned_product_plan(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_provisioned_product_plan(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7070,15 +7863,15 @@ impl DescribeProvisionedProductPlanInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeProvisionedProductPlan::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeProvisionedProductPlan",
             "servicecatalog",
         ));
@@ -7087,10 +7880,10 @@ impl DescribeProvisionedProductPlanInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7137,6 +7930,21 @@ pub mod describe_provisioning_artifact_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7149,6 +7957,7 @@ pub mod describe_provisioning_artifact_input {
             self.provisioning_artifact_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioning artifact.</p>
         pub fn set_provisioning_artifact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7161,6 +7970,7 @@ pub mod describe_provisioning_artifact_input {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -7170,6 +7980,7 @@ pub mod describe_provisioning_artifact_input {
             self.provisioning_artifact_name = Some(input.into());
             self
         }
+        /// <p>The provisioning artifact name.</p>
         pub fn set_provisioning_artifact_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7182,6 +7993,7 @@ pub mod describe_provisioning_artifact_input {
             self.product_name = Some(input.into());
             self
         }
+        /// <p>The product name.</p>
         pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_name = input;
             self
@@ -7191,6 +8003,7 @@ pub mod describe_provisioning_artifact_input {
             self.verbose = Some(input);
             self
         }
+        /// <p>Indicates whether a verbose level of detail is enabled.</p>
         pub fn set_verbose(mut self, input: std::option::Option<bool>) -> Self {
             self.verbose = input;
             self
@@ -7200,7 +8013,7 @@ pub mod describe_provisioning_artifact_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeProvisioningArtifactInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeProvisioningArtifactInput {
                 accept_language: self.accept_language,
@@ -7225,16 +8038,16 @@ impl DescribeProvisioningArtifactInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeProvisioningArtifact,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeProvisioningArtifactInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7242,7 +8055,7 @@ impl DescribeProvisioningArtifactInput {
         fn update_http_builder(
             input: &crate::input::DescribeProvisioningArtifactInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7251,30 +8064,30 @@ impl DescribeProvisioningArtifactInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeProvisioningArtifactInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DescribeProvisioningArtifact",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_provisioning_artifact(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_provisioning_artifact(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7297,15 +8110,15 @@ impl DescribeProvisioningArtifactInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeProvisioningArtifact::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeProvisioningArtifact",
             "servicecatalog",
         ));
@@ -7314,10 +8127,10 @@ impl DescribeProvisioningArtifactInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7365,6 +8178,21 @@ pub mod describe_provisioning_parameters_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7377,6 +8205,7 @@ pub mod describe_provisioning_parameters_input {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier. You must provide the product name or ID, but not both.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -7386,6 +8215,7 @@ pub mod describe_provisioning_parameters_input {
             self.product_name = Some(input.into());
             self
         }
+        /// <p>The name of the product. You must provide the name or ID, but not both.</p>
         pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_name = input;
             self
@@ -7395,6 +8225,7 @@ pub mod describe_provisioning_parameters_input {
             self.provisioning_artifact_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
         pub fn set_provisioning_artifact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7407,6 +8238,7 @@ pub mod describe_provisioning_parameters_input {
             self.provisioning_artifact_name = Some(input.into());
             self
         }
+        /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
         pub fn set_provisioning_artifact_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7421,6 +8253,9 @@ pub mod describe_provisioning_parameters_input {
             self.path_id = Some(input.into());
             self
         }
+        /// <p>The path identifier of the product. This value is optional if the product
+        /// has a default path, and required if the product has more than one path.
+        /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
         pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path_id = input;
             self
@@ -7430,6 +8265,7 @@ pub mod describe_provisioning_parameters_input {
             self.path_name = Some(input.into());
             self
         }
+        /// <p>The name of the path. You must provide the name or ID, but not both.</p>
         pub fn set_path_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path_name = input;
             self
@@ -7439,7 +8275,7 @@ pub mod describe_provisioning_parameters_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeProvisioningParametersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeProvisioningParametersInput {
                 accept_language: self.accept_language,
@@ -7465,16 +8301,16 @@ impl DescribeProvisioningParametersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeProvisioningParameters,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeProvisioningParametersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7482,7 +8318,7 @@ impl DescribeProvisioningParametersInput {
         fn update_http_builder(
             input: &crate::input::DescribeProvisioningParametersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7491,30 +8327,30 @@ impl DescribeProvisioningParametersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeProvisioningParametersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DescribeProvisioningParameters",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_provisioning_parameters(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_provisioning_parameters(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7537,15 +8373,15 @@ impl DescribeProvisioningParametersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeProvisioningParameters::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeProvisioningParameters",
             "servicecatalog",
         ));
@@ -7554,10 +8390,10 @@ impl DescribeProvisioningParametersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7602,6 +8438,21 @@ pub mod describe_record_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7615,6 +8466,8 @@ pub mod describe_record_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The record identifier of the provisioned product. This identifier is returned by the
+        /// request operation.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -7624,6 +8477,7 @@ pub mod describe_record_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -7633,6 +8487,7 @@ pub mod describe_record_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -7642,7 +8497,7 @@ pub mod describe_record_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeRecordInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeRecordInput {
                 accept_language: self.accept_language,
@@ -7664,16 +8519,16 @@ impl DescribeRecordInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeRecord,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeRecordInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7681,7 +8536,7 @@ impl DescribeRecordInput {
         fn update_http_builder(
             input: &crate::input::DescribeRecordInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7690,29 +8545,31 @@ impl DescribeRecordInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeRecordInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DescribeRecord",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_record(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7735,15 +8592,15 @@ impl DescribeRecordInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeRecord::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeRecord",
             "servicecatalog",
         ));
@@ -7752,10 +8609,10 @@ impl DescribeRecordInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7784,6 +8641,7 @@ pub mod describe_service_action_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The self-service action identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -7807,6 +8665,21 @@ pub mod describe_service_action_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7819,7 +8692,7 @@ pub mod describe_service_action_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeServiceActionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeServiceActionInput {
                 id: self.id,
@@ -7839,16 +8712,16 @@ impl DescribeServiceActionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeServiceAction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeServiceActionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7856,7 +8729,7 @@ impl DescribeServiceActionInput {
         fn update_http_builder(
             input: &crate::input::DescribeServiceActionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7865,32 +8738,34 @@ impl DescribeServiceActionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeServiceActionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DescribeServiceAction",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_service_action(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7913,15 +8788,15 @@ impl DescribeServiceActionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeServiceAction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeServiceAction",
             "servicecatalog",
         ));
@@ -7930,10 +8805,10 @@ impl DescribeServiceActionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7963,6 +8838,7 @@ pub mod describe_service_action_execution_parameters_input {
             self.provisioned_product_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioned product.</p>
         pub fn set_provisioned_product_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7975,6 +8851,7 @@ pub mod describe_service_action_execution_parameters_input {
             self.service_action_id = Some(input.into());
             self
         }
+        /// <p>The self-service action identifier.</p>
         pub fn set_service_action_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8001,6 +8878,21 @@ pub mod describe_service_action_execution_parameters_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8013,7 +8905,7 @@ pub mod describe_service_action_execution_parameters_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeServiceActionExecutionParametersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::DescribeServiceActionExecutionParametersInput {
@@ -8038,16 +8930,16 @@ impl DescribeServiceActionExecutionParametersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeServiceActionExecutionParameters,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeServiceActionExecutionParametersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8055,7 +8947,7 @@ impl DescribeServiceActionExecutionParametersInput {
         fn update_http_builder(
             input: &crate::input::DescribeServiceActionExecutionParametersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8064,30 +8956,30 @@ impl DescribeServiceActionExecutionParametersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeServiceActionExecutionParametersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DescribeServiceActionExecutionParameters",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_service_action_execution_parameters(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_service_action_execution_parameters(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8110,15 +9002,15 @@ impl DescribeServiceActionExecutionParametersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeServiceActionExecutionParameters::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeServiceActionExecutionParameters",
             "servicecatalog",
         ));
@@ -8127,10 +9019,10 @@ impl DescribeServiceActionExecutionParametersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8158,6 +9050,7 @@ pub mod describe_tag_option_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The TagOption identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -8167,7 +9060,7 @@ pub mod describe_tag_option_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeTagOptionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeTagOptionInput { id: self.id })
         }
@@ -8184,16 +9077,16 @@ impl DescribeTagOptionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeTagOption,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeTagOptionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8201,7 +9094,7 @@ impl DescribeTagOptionInput {
         fn update_http_builder(
             input: &crate::input::DescribeTagOptionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8210,32 +9103,32 @@ impl DescribeTagOptionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeTagOptionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DescribeTagOption",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_tag_option(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8258,15 +9151,15 @@ impl DescribeTagOptionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeTagOption::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeTagOption",
             "servicecatalog",
         ));
@@ -8275,10 +9168,10 @@ impl DescribeTagOptionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8304,7 +9197,7 @@ pub mod disable_aws_organizations_access_input {
             self,
         ) -> std::result::Result<
             crate::input::DisableAwsOrganizationsAccessInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisableAwsOrganizationsAccessInput {})
         }
@@ -8322,16 +9215,16 @@ impl DisableAwsOrganizationsAccessInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisableAWSOrganizationsAccess,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisableAwsOrganizationsAccessInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8339,7 +9232,7 @@ impl DisableAwsOrganizationsAccessInput {
         fn update_http_builder(
             input: &crate::input::DisableAwsOrganizationsAccessInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8348,30 +9241,30 @@ impl DisableAwsOrganizationsAccessInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisableAwsOrganizationsAccessInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DisableAWSOrganizationsAccess",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disable_aws_organizations_access(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disable_aws_organizations_access(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8394,15 +9287,15 @@ impl DisableAwsOrganizationsAccessInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisableAWSOrganizationsAccess::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisableAWSOrganizationsAccess",
             "servicecatalog",
         ));
@@ -8411,10 +9304,10 @@ impl DisableAwsOrganizationsAccessInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8443,6 +9336,7 @@ pub mod disassociate_budget_from_resource_input {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p>The name of the budget you want to disassociate.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -8452,6 +9346,7 @@ pub mod disassociate_budget_from_resource_input {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The resource identifier you want to disassociate from. Either a portfolio-id or a product-id.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -8461,7 +9356,7 @@ pub mod disassociate_budget_from_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::DisassociateBudgetFromResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisassociateBudgetFromResourceInput {
                 budget_name: self.budget_name,
@@ -8482,16 +9377,16 @@ impl DisassociateBudgetFromResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisassociateBudgetFromResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisassociateBudgetFromResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8499,7 +9394,7 @@ impl DisassociateBudgetFromResourceInput {
         fn update_http_builder(
             input: &crate::input::DisassociateBudgetFromResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8508,30 +9403,30 @@ impl DisassociateBudgetFromResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisassociateBudgetFromResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DisassociateBudgetFromResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_budget_from_resource(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_budget_from_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8554,15 +9449,15 @@ impl DisassociateBudgetFromResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisassociateBudgetFromResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisassociateBudgetFromResource",
             "servicecatalog",
         ));
@@ -8571,10 +9466,10 @@ impl DisassociateBudgetFromResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8618,6 +9513,21 @@ pub mod disassociate_principal_from_portfolio_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8630,6 +9540,7 @@ pub mod disassociate_principal_from_portfolio_input {
             self.portfolio_id = Some(input.into());
             self
         }
+        /// <p>The portfolio identifier.</p>
         pub fn set_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.portfolio_id = input;
             self
@@ -8639,6 +9550,7 @@ pub mod disassociate_principal_from_portfolio_input {
             self.principal_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the principal (IAM user, role, or group).</p>
         pub fn set_principal_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8651,7 +9563,7 @@ pub mod disassociate_principal_from_portfolio_input {
             self,
         ) -> std::result::Result<
             crate::input::DisassociatePrincipalFromPortfolioInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisassociatePrincipalFromPortfolioInput {
                 accept_language: self.accept_language,
@@ -8673,16 +9585,16 @@ impl DisassociatePrincipalFromPortfolioInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisassociatePrincipalFromPortfolio,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisassociatePrincipalFromPortfolioInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8690,7 +9602,7 @@ impl DisassociatePrincipalFromPortfolioInput {
         fn update_http_builder(
             input: &crate::input::DisassociatePrincipalFromPortfolioInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8699,30 +9611,30 @@ impl DisassociatePrincipalFromPortfolioInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisassociatePrincipalFromPortfolioInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DisassociatePrincipalFromPortfolio",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_principal_from_portfolio(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_principal_from_portfolio(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8745,15 +9657,15 @@ impl DisassociatePrincipalFromPortfolioInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisassociatePrincipalFromPortfolio::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisassociatePrincipalFromPortfolio",
             "servicecatalog",
         ));
@@ -8762,10 +9674,10 @@ impl DisassociatePrincipalFromPortfolioInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8809,6 +9721,21 @@ pub mod disassociate_product_from_portfolio_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8821,6 +9748,7 @@ pub mod disassociate_product_from_portfolio_input {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -8830,6 +9758,7 @@ pub mod disassociate_product_from_portfolio_input {
             self.portfolio_id = Some(input.into());
             self
         }
+        /// <p>The portfolio identifier.</p>
         pub fn set_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.portfolio_id = input;
             self
@@ -8839,7 +9768,7 @@ pub mod disassociate_product_from_portfolio_input {
             self,
         ) -> std::result::Result<
             crate::input::DisassociateProductFromPortfolioInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisassociateProductFromPortfolioInput {
                 accept_language: self.accept_language,
@@ -8861,16 +9790,16 @@ impl DisassociateProductFromPortfolioInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisassociateProductFromPortfolio,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisassociateProductFromPortfolioInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8878,7 +9807,7 @@ impl DisassociateProductFromPortfolioInput {
         fn update_http_builder(
             input: &crate::input::DisassociateProductFromPortfolioInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8887,30 +9816,30 @@ impl DisassociateProductFromPortfolioInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisassociateProductFromPortfolioInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DisassociateProductFromPortfolio",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_product_from_portfolio(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_product_from_portfolio(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8933,15 +9862,15 @@ impl DisassociateProductFromPortfolioInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisassociateProductFromPortfolio::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisassociateProductFromPortfolio",
             "servicecatalog",
         ));
@@ -8950,10 +9879,10 @@ impl DisassociateProductFromPortfolioInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8984,6 +9913,7 @@ pub mod disassociate_service_action_from_provisioning_artifact_input {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -8993,6 +9923,7 @@ pub mod disassociate_service_action_from_provisioning_artifact_input {
             self.provisioning_artifact_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
         pub fn set_provisioning_artifact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9005,6 +9936,7 @@ pub mod disassociate_service_action_from_provisioning_artifact_input {
             self.service_action_id = Some(input.into());
             self
         }
+        /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
         pub fn set_service_action_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9031,6 +9963,21 @@ pub mod disassociate_service_action_from_provisioning_artifact_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9043,7 +9990,7 @@ pub mod disassociate_service_action_from_provisioning_artifact_input {
             self,
         ) -> std::result::Result<
             crate::input::DisassociateServiceActionFromProvisioningArtifactInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::DisassociateServiceActionFromProvisioningArtifactInput {
@@ -9069,16 +10016,16 @@ impl DisassociateServiceActionFromProvisioningArtifactInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisassociateServiceActionFromProvisioningArtifact,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisassociateServiceActionFromProvisioningArtifactInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9086,7 +10033,7 @@ impl DisassociateServiceActionFromProvisioningArtifactInput {
         fn update_http_builder(
             input: &crate::input::DisassociateServiceActionFromProvisioningArtifactInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9095,30 +10042,30 @@ impl DisassociateServiceActionFromProvisioningArtifactInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisassociateServiceActionFromProvisioningArtifactInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DisassociateServiceActionFromProvisioningArtifact",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_service_action_from_provisioning_artifact(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_service_action_from_provisioning_artifact(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9141,15 +10088,15 @@ impl DisassociateServiceActionFromProvisioningArtifactInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisassociateServiceActionFromProvisioningArtifact::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisassociateServiceActionFromProvisioningArtifact",
             "servicecatalog",
         ));
@@ -9158,10 +10105,10 @@ impl DisassociateServiceActionFromProvisioningArtifactInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9192,6 +10139,7 @@ pub mod disassociate_tag_option_from_resource_input {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The resource identifier.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -9201,6 +10149,7 @@ pub mod disassociate_tag_option_from_resource_input {
             self.tag_option_id = Some(input.into());
             self
         }
+        /// <p>The TagOption identifier.</p>
         pub fn set_tag_option_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9213,7 +10162,7 @@ pub mod disassociate_tag_option_from_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::DisassociateTagOptionFromResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisassociateTagOptionFromResourceInput {
                 resource_id: self.resource_id,
@@ -9234,16 +10183,16 @@ impl DisassociateTagOptionFromResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisassociateTagOptionFromResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisassociateTagOptionFromResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9251,7 +10200,7 @@ impl DisassociateTagOptionFromResourceInput {
         fn update_http_builder(
             input: &crate::input::DisassociateTagOptionFromResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9260,30 +10209,30 @@ impl DisassociateTagOptionFromResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisassociateTagOptionFromResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.DisassociateTagOptionFromResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_tag_option_from_resource(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_tag_option_from_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9306,15 +10255,15 @@ impl DisassociateTagOptionFromResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisassociateTagOptionFromResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisassociateTagOptionFromResource",
             "servicecatalog",
         ));
@@ -9323,10 +10272,10 @@ impl DisassociateTagOptionFromResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9352,7 +10301,7 @@ pub mod enable_aws_organizations_access_input {
             self,
         ) -> std::result::Result<
             crate::input::EnableAwsOrganizationsAccessInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::EnableAwsOrganizationsAccessInput {})
         }
@@ -9370,16 +10319,16 @@ impl EnableAwsOrganizationsAccessInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::EnableAWSOrganizationsAccess,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::EnableAwsOrganizationsAccessInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9387,7 +10336,7 @@ impl EnableAwsOrganizationsAccessInput {
         fn update_http_builder(
             input: &crate::input::EnableAwsOrganizationsAccessInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9396,30 +10345,30 @@ impl EnableAwsOrganizationsAccessInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::EnableAwsOrganizationsAccessInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.EnableAWSOrganizationsAccess",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_enable_aws_organizations_access(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_enable_aws_organizations_access(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9442,15 +10391,15 @@ impl EnableAwsOrganizationsAccessInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::EnableAWSOrganizationsAccess::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "EnableAWSOrganizationsAccess",
             "servicecatalog",
         ));
@@ -9459,10 +10408,10 @@ impl EnableAwsOrganizationsAccessInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9506,6 +10455,21 @@ pub mod execute_provisioned_product_plan_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9518,6 +10482,7 @@ pub mod execute_provisioned_product_plan_input {
             self.plan_id = Some(input.into());
             self
         }
+        /// <p>The plan identifier.</p>
         pub fn set_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.plan_id = input;
             self
@@ -9528,6 +10493,8 @@ pub mod execute_provisioned_product_plan_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+        /// the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9540,7 +10507,7 @@ pub mod execute_provisioned_product_plan_input {
             self,
         ) -> std::result::Result<
             crate::input::ExecuteProvisionedProductPlanInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ExecuteProvisionedProductPlanInput {
                 accept_language: self.accept_language,
@@ -9562,16 +10529,16 @@ impl ExecuteProvisionedProductPlanInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExecuteProvisionedProductPlan,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExecuteProvisionedProductPlanInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9579,7 +10546,7 @@ impl ExecuteProvisionedProductPlanInput {
         fn update_http_builder(
             input: &crate::input::ExecuteProvisionedProductPlanInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9588,15 +10555,15 @@ impl ExecuteProvisionedProductPlanInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExecuteProvisionedProductPlanInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ExecuteProvisionedProductPlan",
@@ -9606,15 +10573,15 @@ impl ExecuteProvisionedProductPlanInput {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_execute_provisioned_product_plan(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_execute_provisioned_product_plan(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9637,15 +10604,15 @@ impl ExecuteProvisionedProductPlanInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ExecuteProvisionedProductPlan::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ExecuteProvisionedProductPlan",
             "servicecatalog",
         ));
@@ -9654,10 +10621,10 @@ impl ExecuteProvisionedProductPlanInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9691,6 +10658,7 @@ pub mod execute_provisioned_product_service_action_input {
             self.provisioned_product_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioned product.</p>
         pub fn set_provisioned_product_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9703,6 +10671,7 @@ pub mod execute_provisioned_product_service_action_input {
             self.service_action_id = Some(input.into());
             self
         }
+        /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
         pub fn set_service_action_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9715,6 +10684,7 @@ pub mod execute_provisioned_product_service_action_input {
             self.execute_token = Some(input.into());
             self
         }
+        /// <p>An idempotency token that uniquely identifies the execute request.</p>
         pub fn set_execute_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9741,6 +10711,21 @@ pub mod execute_provisioned_product_service_action_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9748,6 +10733,13 @@ pub mod execute_provisioned_product_service_action_input {
             self.accept_language = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will
+        /// override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for
+        /// any special parameters such as <code>TARGET</code>.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -9758,6 +10750,9 @@ pub mod execute_provisioned_product_service_action_input {
             self.parameters = Some(hash_map);
             self
         }
+        /// <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will
+        /// override the default value generated by AWS Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for
+        /// any special parameters such as <code>TARGET</code>.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -9772,7 +10767,7 @@ pub mod execute_provisioned_product_service_action_input {
             self,
         ) -> std::result::Result<
             crate::input::ExecuteProvisionedProductServiceActionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ExecuteProvisionedProductServiceActionInput {
                 provisioned_product_id: self.provisioned_product_id,
@@ -9797,16 +10792,16 @@ impl ExecuteProvisionedProductServiceActionInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExecuteProvisionedProductServiceAction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExecuteProvisionedProductServiceActionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9814,7 +10809,7 @@ impl ExecuteProvisionedProductServiceActionInput {
         fn update_http_builder(
             input: &crate::input::ExecuteProvisionedProductServiceActionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9823,15 +10818,15 @@ impl ExecuteProvisionedProductServiceActionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExecuteProvisionedProductServiceActionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ExecuteProvisionedProductServiceAction",
@@ -9841,15 +10836,15 @@ impl ExecuteProvisionedProductServiceActionInput {
         if self.execute_token.is_none() {
             self.execute_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_execute_provisioned_product_service_action(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_execute_provisioned_product_service_action(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9872,15 +10867,15 @@ impl ExecuteProvisionedProductServiceActionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ExecuteProvisionedProductServiceAction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ExecuteProvisionedProductServiceAction",
             "servicecatalog",
         ));
@@ -9889,10 +10884,10 @@ impl ExecuteProvisionedProductServiceActionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9918,7 +10913,7 @@ pub mod get_aws_organizations_access_status_input {
             self,
         ) -> std::result::Result<
             crate::input::GetAwsOrganizationsAccessStatusInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetAwsOrganizationsAccessStatusInput {})
         }
@@ -9936,16 +10931,16 @@ impl GetAwsOrganizationsAccessStatusInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAWSOrganizationsAccessStatus,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAwsOrganizationsAccessStatusInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9953,7 +10948,7 @@ impl GetAwsOrganizationsAccessStatusInput {
         fn update_http_builder(
             input: &crate::input::GetAwsOrganizationsAccessStatusInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9962,30 +10957,30 @@ impl GetAwsOrganizationsAccessStatusInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAwsOrganizationsAccessStatusInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.GetAWSOrganizationsAccessStatus",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_aws_organizations_access_status(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_aws_organizations_access_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10008,15 +11003,15 @@ impl GetAwsOrganizationsAccessStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetAWSOrganizationsAccessStatus::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetAWSOrganizationsAccessStatus",
             "servicecatalog",
         ));
@@ -10025,10 +11020,10 @@ impl GetAwsOrganizationsAccessStatusInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10075,6 +11070,21 @@ pub mod get_provisioned_product_outputs_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10087,6 +11097,7 @@ pub mod get_provisioned_product_outputs_input {
             self.provisioned_product_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioned product that you want the outputs from.</p>
         pub fn set_provisioned_product_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10099,6 +11110,7 @@ pub mod get_provisioned_product_outputs_input {
             self.provisioned_product_name = Some(input.into());
             self
         }
+        /// <p>The name of the provisioned product that you want the outputs from.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10106,12 +11118,18 @@ pub mod get_provisioned_product_outputs_input {
             self.provisioned_product_name = input;
             self
         }
+        /// Appends an item to `output_keys`.
+        ///
+        /// To override the contents of this collection use [`set_output_keys`](Self::set_output_keys).
+        ///
+        /// <p>The list of keys that the API should return with their values. If none are provided, the API will return all outputs of the provisioned product.</p>
         pub fn output_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.output_keys.unwrap_or_default();
             v.push(input.into());
             self.output_keys = Some(v);
             self
         }
+        /// <p>The list of keys that the API should return with their values. If none are provided, the API will return all outputs of the provisioned product.</p>
         pub fn set_output_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10124,6 +11142,7 @@ pub mod get_provisioned_product_outputs_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -10133,6 +11152,7 @@ pub mod get_provisioned_product_outputs_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -10142,7 +11162,7 @@ pub mod get_provisioned_product_outputs_input {
             self,
         ) -> std::result::Result<
             crate::input::GetProvisionedProductOutputsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetProvisionedProductOutputsInput {
                 accept_language: self.accept_language,
@@ -10167,16 +11187,16 @@ impl GetProvisionedProductOutputsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetProvisionedProductOutputs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetProvisionedProductOutputsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10184,7 +11204,7 @@ impl GetProvisionedProductOutputsInput {
         fn update_http_builder(
             input: &crate::input::GetProvisionedProductOutputsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10193,30 +11213,30 @@ impl GetProvisionedProductOutputsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetProvisionedProductOutputsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.GetProvisionedProductOutputs",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_provisioned_product_outputs(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_provisioned_product_outputs(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10239,15 +11259,15 @@ impl GetProvisionedProductOutputsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetProvisionedProductOutputs::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetProvisionedProductOutputs",
             "servicecatalog",
         ));
@@ -10256,10 +11276,10 @@ impl GetProvisionedProductOutputsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10306,6 +11326,21 @@ pub mod import_as_provisioned_product_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10318,6 +11353,7 @@ pub mod import_as_provisioned_product_input {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -10327,6 +11363,7 @@ pub mod import_as_provisioned_product_input {
             self.provisioning_artifact_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioning artifact.</p>
         pub fn set_provisioning_artifact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10340,6 +11377,8 @@ pub mod import_as_provisioned_product_input {
             self.provisioned_product_name = Some(input.into());
             self
         }
+        /// <p>The user-friendly name of the provisioned product. The value must be unique for the AWS
+        /// account. The name cannot be updated after the product is provisioned. </p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10353,6 +11392,8 @@ pub mod import_as_provisioned_product_input {
             self.physical_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the resource to be imported. It only currently supports
+        /// CloudFormation stack IDs.</p>
         pub fn set_physical_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.physical_id = input;
             self
@@ -10363,6 +11404,8 @@ pub mod import_as_provisioned_product_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+        /// the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10375,7 +11418,7 @@ pub mod import_as_provisioned_product_input {
             self,
         ) -> std::result::Result<
             crate::input::ImportAsProvisionedProductInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ImportAsProvisionedProductInput {
                 accept_language: self.accept_language,
@@ -10400,16 +11443,16 @@ impl ImportAsProvisionedProductInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ImportAsProvisionedProduct,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ImportAsProvisionedProductInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10417,7 +11460,7 @@ impl ImportAsProvisionedProductInput {
         fn update_http_builder(
             input: &crate::input::ImportAsProvisionedProductInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10426,15 +11469,15 @@ impl ImportAsProvisionedProductInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ImportAsProvisionedProductInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ImportAsProvisionedProduct",
@@ -10444,15 +11487,15 @@ impl ImportAsProvisionedProductInput {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_import_as_provisioned_product(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_import_as_provisioned_product(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10475,15 +11518,15 @@ impl ImportAsProvisionedProductInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ImportAsProvisionedProduct::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ImportAsProvisionedProduct",
             "servicecatalog",
         ));
@@ -10492,10 +11535,10 @@ impl ImportAsProvisionedProductInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10540,6 +11583,21 @@ pub mod list_accepted_portfolio_shares_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10552,6 +11610,7 @@ pub mod list_accepted_portfolio_shares_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -10561,6 +11620,7 @@ pub mod list_accepted_portfolio_shares_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -10585,6 +11645,22 @@ pub mod list_accepted_portfolio_shares_input {
             self.portfolio_share_type = Some(input);
             self
         }
+        /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management
+        /// account of your organization</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS_SERVICECATALOG</code> - List default portfolios</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IMPORTED</code> - List imported portfolios</p>
+        /// </li>
+        /// </ul>
         pub fn set_portfolio_share_type(
             mut self,
             input: std::option::Option<crate::model::PortfolioShareType>,
@@ -10597,7 +11673,7 @@ pub mod list_accepted_portfolio_shares_input {
             self,
         ) -> std::result::Result<
             crate::input::ListAcceptedPortfolioSharesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListAcceptedPortfolioSharesInput {
                 accept_language: self.accept_language,
@@ -10620,16 +11696,16 @@ impl ListAcceptedPortfolioSharesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListAcceptedPortfolioShares,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListAcceptedPortfolioSharesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10637,7 +11713,7 @@ impl ListAcceptedPortfolioSharesInput {
         fn update_http_builder(
             input: &crate::input::ListAcceptedPortfolioSharesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10646,30 +11722,30 @@ impl ListAcceptedPortfolioSharesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListAcceptedPortfolioSharesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ListAcceptedPortfolioShares",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_accepted_portfolio_shares(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_accepted_portfolio_shares(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10692,15 +11768,15 @@ impl ListAcceptedPortfolioSharesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListAcceptedPortfolioShares::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListAcceptedPortfolioShares",
             "servicecatalog",
         ));
@@ -10709,10 +11785,10 @@ impl ListAcceptedPortfolioSharesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10757,6 +11833,21 @@ pub mod list_budgets_for_resource_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10769,6 +11860,7 @@ pub mod list_budgets_for_resource_input {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The resource identifier.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -10778,6 +11870,7 @@ pub mod list_budgets_for_resource_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -10787,6 +11880,7 @@ pub mod list_budgets_for_resource_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -10796,7 +11890,7 @@ pub mod list_budgets_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListBudgetsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListBudgetsForResourceInput {
                 accept_language: self.accept_language,
@@ -10818,16 +11912,16 @@ impl ListBudgetsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListBudgetsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListBudgetsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10835,7 +11929,7 @@ impl ListBudgetsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListBudgetsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10844,32 +11938,34 @@ impl ListBudgetsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListBudgetsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ListBudgetsForResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_budgets_for_resource(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10892,15 +11988,15 @@ impl ListBudgetsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListBudgetsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListBudgetsForResource",
             "servicecatalog",
         ));
@@ -10909,10 +12005,10 @@ impl ListBudgetsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10958,6 +12054,21 @@ pub mod list_constraints_for_portfolio_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10970,6 +12081,7 @@ pub mod list_constraints_for_portfolio_input {
             self.portfolio_id = Some(input.into());
             self
         }
+        /// <p>The portfolio identifier.</p>
         pub fn set_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.portfolio_id = input;
             self
@@ -10979,6 +12091,7 @@ pub mod list_constraints_for_portfolio_input {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -10988,6 +12101,7 @@ pub mod list_constraints_for_portfolio_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -10997,6 +12111,7 @@ pub mod list_constraints_for_portfolio_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -11006,7 +12121,7 @@ pub mod list_constraints_for_portfolio_input {
             self,
         ) -> std::result::Result<
             crate::input::ListConstraintsForPortfolioInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListConstraintsForPortfolioInput {
                 accept_language: self.accept_language,
@@ -11030,16 +12145,16 @@ impl ListConstraintsForPortfolioInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListConstraintsForPortfolio,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListConstraintsForPortfolioInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11047,7 +12162,7 @@ impl ListConstraintsForPortfolioInput {
         fn update_http_builder(
             input: &crate::input::ListConstraintsForPortfolioInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11056,30 +12171,30 @@ impl ListConstraintsForPortfolioInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListConstraintsForPortfolioInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ListConstraintsForPortfolio",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_constraints_for_portfolio(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_constraints_for_portfolio(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11102,15 +12217,15 @@ impl ListConstraintsForPortfolioInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListConstraintsForPortfolio::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListConstraintsForPortfolio",
             "servicecatalog",
         ));
@@ -11119,10 +12234,10 @@ impl ListConstraintsForPortfolioInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11167,6 +12282,21 @@ pub mod list_launch_paths_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11179,6 +12309,7 @@ pub mod list_launch_paths_input {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -11188,6 +12319,7 @@ pub mod list_launch_paths_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -11197,6 +12329,7 @@ pub mod list_launch_paths_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -11206,7 +12339,7 @@ pub mod list_launch_paths_input {
             self,
         ) -> std::result::Result<
             crate::input::ListLaunchPathsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListLaunchPathsInput {
                 accept_language: self.accept_language,
@@ -11228,16 +12361,16 @@ impl ListLaunchPathsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListLaunchPaths,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListLaunchPathsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11245,7 +12378,7 @@ impl ListLaunchPathsInput {
         fn update_http_builder(
             input: &crate::input::ListLaunchPathsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11254,32 +12387,32 @@ impl ListLaunchPathsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListLaunchPathsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ListLaunchPaths",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_launch_paths(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11302,15 +12435,15 @@ impl ListLaunchPathsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListLaunchPaths::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListLaunchPaths",
             "servicecatalog",
         ));
@@ -11319,10 +12452,10 @@ impl ListLaunchPathsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11368,6 +12501,21 @@ pub mod list_organization_portfolio_access_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11380,6 +12528,7 @@ pub mod list_organization_portfolio_access_input {
             self.portfolio_id = Some(input.into());
             self
         }
+        /// <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>
         pub fn set_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.portfolio_id = input;
             self
@@ -11403,6 +12552,21 @@ pub mod list_organization_portfolio_access_input {
             self.organization_node_type = Some(input);
             self
         }
+        /// <p>The organization node type that will be returned in the output.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p>
+        /// </li>
+        /// </ul>
         pub fn set_organization_node_type(
             mut self,
             input: std::option::Option<crate::model::OrganizationNodeType>,
@@ -11415,6 +12579,7 @@ pub mod list_organization_portfolio_access_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -11424,6 +12589,7 @@ pub mod list_organization_portfolio_access_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -11433,7 +12599,7 @@ pub mod list_organization_portfolio_access_input {
             self,
         ) -> std::result::Result<
             crate::input::ListOrganizationPortfolioAccessInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListOrganizationPortfolioAccessInput {
                 accept_language: self.accept_language,
@@ -11457,16 +12623,16 @@ impl ListOrganizationPortfolioAccessInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListOrganizationPortfolioAccess,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListOrganizationPortfolioAccessInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11474,7 +12640,7 @@ impl ListOrganizationPortfolioAccessInput {
         fn update_http_builder(
             input: &crate::input::ListOrganizationPortfolioAccessInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11483,30 +12649,30 @@ impl ListOrganizationPortfolioAccessInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListOrganizationPortfolioAccessInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ListOrganizationPortfolioAccess",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_organization_portfolio_access(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_organization_portfolio_access(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11529,15 +12695,15 @@ impl ListOrganizationPortfolioAccessInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListOrganizationPortfolioAccess::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListOrganizationPortfolioAccess",
             "servicecatalog",
         ));
@@ -11546,10 +12712,10 @@ impl ListOrganizationPortfolioAccessInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11595,6 +12761,21 @@ pub mod list_portfolio_access_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11607,6 +12788,7 @@ pub mod list_portfolio_access_input {
             self.portfolio_id = Some(input.into());
             self
         }
+        /// <p>The portfolio identifier.</p>
         pub fn set_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.portfolio_id = input;
             self
@@ -11616,6 +12798,7 @@ pub mod list_portfolio_access_input {
             self.organization_parent_id = Some(input.into());
             self
         }
+        /// <p>The ID of an organization node the portfolio is shared with. All children of this node with an inherited portfolio share will be returned.</p>
         pub fn set_organization_parent_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11628,6 +12811,7 @@ pub mod list_portfolio_access_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -11637,6 +12821,7 @@ pub mod list_portfolio_access_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -11646,7 +12831,7 @@ pub mod list_portfolio_access_input {
             self,
         ) -> std::result::Result<
             crate::input::ListPortfolioAccessInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListPortfolioAccessInput {
                 accept_language: self.accept_language,
@@ -11669,16 +12854,16 @@ impl ListPortfolioAccessInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListPortfolioAccess,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListPortfolioAccessInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11686,7 +12871,7 @@ impl ListPortfolioAccessInput {
         fn update_http_builder(
             input: &crate::input::ListPortfolioAccessInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11695,32 +12880,32 @@ impl ListPortfolioAccessInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListPortfolioAccessInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ListPortfolioAccess",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_portfolio_access(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11743,15 +12928,15 @@ impl ListPortfolioAccessInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListPortfolioAccess::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListPortfolioAccess",
             "servicecatalog",
         ));
@@ -11760,10 +12945,10 @@ impl ListPortfolioAccessInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11807,6 +12992,21 @@ pub mod list_portfolios_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11819,6 +13019,7 @@ pub mod list_portfolios_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -11828,6 +13029,7 @@ pub mod list_portfolios_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -11837,7 +13039,7 @@ pub mod list_portfolios_input {
             self,
         ) -> std::result::Result<
             crate::input::ListPortfoliosInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListPortfoliosInput {
                 accept_language: self.accept_language,
@@ -11858,16 +13060,16 @@ impl ListPortfoliosInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListPortfolios,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListPortfoliosInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11875,7 +13077,7 @@ impl ListPortfoliosInput {
         fn update_http_builder(
             input: &crate::input::ListPortfoliosInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11884,29 +13086,31 @@ impl ListPortfoliosInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListPortfoliosInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ListPortfolios",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_portfolios(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11929,15 +13133,15 @@ impl ListPortfoliosInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListPortfolios::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListPortfolios",
             "servicecatalog",
         ));
@@ -11946,10 +13150,10 @@ impl ListPortfoliosInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11994,6 +13198,21 @@ pub mod list_portfolios_for_product_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12006,6 +13225,7 @@ pub mod list_portfolios_for_product_input {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -12015,6 +13235,7 @@ pub mod list_portfolios_for_product_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -12024,6 +13245,7 @@ pub mod list_portfolios_for_product_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -12033,7 +13255,7 @@ pub mod list_portfolios_for_product_input {
             self,
         ) -> std::result::Result<
             crate::input::ListPortfoliosForProductInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListPortfoliosForProductInput {
                 accept_language: self.accept_language,
@@ -12056,16 +13278,16 @@ impl ListPortfoliosForProductInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListPortfoliosForProduct,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListPortfoliosForProductInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12073,7 +13295,7 @@ impl ListPortfoliosForProductInput {
         fn update_http_builder(
             input: &crate::input::ListPortfoliosForProductInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12082,32 +13304,34 @@ impl ListPortfoliosForProductInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListPortfoliosForProductInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ListPortfoliosForProduct",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_portfolios_for_product(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12130,15 +13354,15 @@ impl ListPortfoliosForProductInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListPortfoliosForProduct::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListPortfoliosForProduct",
             "servicecatalog",
         ));
@@ -12147,10 +13371,10 @@ impl ListPortfoliosForProductInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12195,6 +13419,21 @@ pub mod list_principals_for_portfolio_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12207,6 +13446,7 @@ pub mod list_principals_for_portfolio_input {
             self.portfolio_id = Some(input.into());
             self
         }
+        /// <p>The portfolio identifier.</p>
         pub fn set_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.portfolio_id = input;
             self
@@ -12216,6 +13456,7 @@ pub mod list_principals_for_portfolio_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -12225,6 +13466,7 @@ pub mod list_principals_for_portfolio_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -12234,7 +13476,7 @@ pub mod list_principals_for_portfolio_input {
             self,
         ) -> std::result::Result<
             crate::input::ListPrincipalsForPortfolioInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListPrincipalsForPortfolioInput {
                 accept_language: self.accept_language,
@@ -12257,16 +13499,16 @@ impl ListPrincipalsForPortfolioInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListPrincipalsForPortfolio,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListPrincipalsForPortfolioInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12274,7 +13516,7 @@ impl ListPrincipalsForPortfolioInput {
         fn update_http_builder(
             input: &crate::input::ListPrincipalsForPortfolioInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12283,30 +13525,30 @@ impl ListPrincipalsForPortfolioInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListPrincipalsForPortfolioInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ListPrincipalsForPortfolio",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_principals_for_portfolio(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_principals_for_portfolio(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12329,15 +13571,15 @@ impl ListPrincipalsForPortfolioInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListPrincipalsForPortfolio::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListPrincipalsForPortfolio",
             "servicecatalog",
         ));
@@ -12346,10 +13588,10 @@ impl ListPrincipalsForPortfolioInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12395,6 +13637,21 @@ pub mod list_provisioned_product_plans_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12407,6 +13664,7 @@ pub mod list_provisioned_product_plans_input {
             self.provision_product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_provision_product_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12419,6 +13677,7 @@ pub mod list_provisioned_product_plans_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -12428,6 +13687,7 @@ pub mod list_provisioned_product_plans_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -12437,6 +13697,7 @@ pub mod list_provisioned_product_plans_input {
             self.access_level_filter = Some(input);
             self
         }
+        /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
         pub fn set_access_level_filter(
             mut self,
             input: std::option::Option<crate::model::AccessLevelFilter>,
@@ -12449,7 +13710,7 @@ pub mod list_provisioned_product_plans_input {
             self,
         ) -> std::result::Result<
             crate::input::ListProvisionedProductPlansInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListProvisionedProductPlansInput {
                 accept_language: self.accept_language,
@@ -12473,16 +13734,16 @@ impl ListProvisionedProductPlansInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListProvisionedProductPlans,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListProvisionedProductPlansInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12490,7 +13751,7 @@ impl ListProvisionedProductPlansInput {
         fn update_http_builder(
             input: &crate::input::ListProvisionedProductPlansInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12499,30 +13760,30 @@ impl ListProvisionedProductPlansInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListProvisionedProductPlansInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ListProvisionedProductPlans",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_provisioned_product_plans(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_provisioned_product_plans(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12545,15 +13806,15 @@ impl ListProvisionedProductPlansInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListProvisionedProductPlans::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListProvisionedProductPlans",
             "servicecatalog",
         ));
@@ -12562,10 +13823,10 @@ impl ListProvisionedProductPlansInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12608,6 +13869,21 @@ pub mod list_provisioning_artifacts_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12620,6 +13896,7 @@ pub mod list_provisioning_artifacts_input {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -12629,7 +13906,7 @@ pub mod list_provisioning_artifacts_input {
             self,
         ) -> std::result::Result<
             crate::input::ListProvisioningArtifactsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListProvisioningArtifactsInput {
                 accept_language: self.accept_language,
@@ -12650,16 +13927,16 @@ impl ListProvisioningArtifactsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListProvisioningArtifacts,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListProvisioningArtifactsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12667,7 +13944,7 @@ impl ListProvisioningArtifactsInput {
         fn update_http_builder(
             input: &crate::input::ListProvisioningArtifactsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12676,32 +13953,34 @@ impl ListProvisioningArtifactsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListProvisioningArtifactsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ListProvisioningArtifacts",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_provisioning_artifacts(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12724,15 +14003,15 @@ impl ListProvisioningArtifactsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListProvisioningArtifacts::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListProvisioningArtifacts",
             "servicecatalog",
         ));
@@ -12741,10 +14020,10 @@ impl ListProvisioningArtifactsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12775,6 +14054,7 @@ pub mod list_provisioning_artifacts_for_service_action_input {
             self.service_action_id = Some(input.into());
             self
         }
+        /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
         pub fn set_service_action_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12787,6 +14067,7 @@ pub mod list_provisioning_artifacts_for_service_action_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -12796,6 +14077,7 @@ pub mod list_provisioning_artifacts_for_service_action_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -12819,6 +14101,21 @@ pub mod list_provisioning_artifacts_for_service_action_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12831,7 +14128,7 @@ pub mod list_provisioning_artifacts_for_service_action_input {
             self,
         ) -> std::result::Result<
             crate::input::ListProvisioningArtifactsForServiceActionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::ListProvisioningArtifactsForServiceActionInput {
@@ -12857,16 +14154,16 @@ impl ListProvisioningArtifactsForServiceActionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListProvisioningArtifactsForServiceAction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListProvisioningArtifactsForServiceActionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12874,7 +14171,7 @@ impl ListProvisioningArtifactsForServiceActionInput {
         fn update_http_builder(
             input: &crate::input::ListProvisioningArtifactsForServiceActionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12883,30 +14180,30 @@ impl ListProvisioningArtifactsForServiceActionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListProvisioningArtifactsForServiceActionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ListProvisioningArtifactsForServiceAction",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_provisioning_artifacts_for_service_action(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_provisioning_artifacts_for_service_action(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12929,15 +14226,15 @@ impl ListProvisioningArtifactsForServiceActionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListProvisioningArtifactsForServiceAction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListProvisioningArtifactsForServiceAction",
             "servicecatalog",
         ));
@@ -12946,10 +14243,10 @@ impl ListProvisioningArtifactsForServiceActionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12996,6 +14293,21 @@ pub mod list_record_history_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13008,6 +14320,7 @@ pub mod list_record_history_input {
             self.access_level_filter = Some(input);
             self
         }
+        /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
         pub fn set_access_level_filter(
             mut self,
             input: std::option::Option<crate::model::AccessLevelFilter>,
@@ -13020,6 +14333,7 @@ pub mod list_record_history_input {
             self.search_filter = Some(input);
             self
         }
+        /// <p>The search filter to scope the results.</p>
         pub fn set_search_filter(
             mut self,
             input: std::option::Option<crate::model::ListRecordHistorySearchFilter>,
@@ -13032,6 +14346,7 @@ pub mod list_record_history_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -13041,6 +14356,7 @@ pub mod list_record_history_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -13050,7 +14366,7 @@ pub mod list_record_history_input {
             self,
         ) -> std::result::Result<
             crate::input::ListRecordHistoryInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListRecordHistoryInput {
                 accept_language: self.accept_language,
@@ -13073,16 +14389,16 @@ impl ListRecordHistoryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListRecordHistory,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListRecordHistoryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13090,7 +14406,7 @@ impl ListRecordHistoryInput {
         fn update_http_builder(
             input: &crate::input::ListRecordHistoryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13099,32 +14415,32 @@ impl ListRecordHistoryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListRecordHistoryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ListRecordHistory",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_record_history(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13147,15 +14463,15 @@ impl ListRecordHistoryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListRecordHistory::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListRecordHistory",
             "servicecatalog",
         ));
@@ -13164,10 +14480,10 @@ impl ListRecordHistoryInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13198,6 +14514,7 @@ pub mod list_resources_for_tag_option_input {
             self.tag_option_id = Some(input.into());
             self
         }
+        /// <p>The TagOption identifier.</p>
         pub fn set_tag_option_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13222,6 +14539,19 @@ pub mod list_resources_for_tag_option_input {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The resource type.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Portfolio</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Product</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13234,6 +14564,7 @@ pub mod list_resources_for_tag_option_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -13243,6 +14574,7 @@ pub mod list_resources_for_tag_option_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -13252,7 +14584,7 @@ pub mod list_resources_for_tag_option_input {
             self,
         ) -> std::result::Result<
             crate::input::ListResourcesForTagOptionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListResourcesForTagOptionInput {
                 tag_option_id: self.tag_option_id,
@@ -13275,16 +14607,16 @@ impl ListResourcesForTagOptionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListResourcesForTagOption,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListResourcesForTagOptionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13292,7 +14624,7 @@ impl ListResourcesForTagOptionInput {
         fn update_http_builder(
             input: &crate::input::ListResourcesForTagOptionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13301,30 +14633,30 @@ impl ListResourcesForTagOptionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListResourcesForTagOptionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ListResourcesForTagOption",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_resources_for_tag_option(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_resources_for_tag_option(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13347,15 +14679,15 @@ impl ListResourcesForTagOptionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListResourcesForTagOption::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListResourcesForTagOption",
             "servicecatalog",
         ));
@@ -13364,10 +14696,10 @@ impl ListResourcesForTagOptionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13411,6 +14743,21 @@ pub mod list_service_actions_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13423,6 +14770,7 @@ pub mod list_service_actions_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -13432,6 +14780,7 @@ pub mod list_service_actions_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -13441,7 +14790,7 @@ pub mod list_service_actions_input {
             self,
         ) -> std::result::Result<
             crate::input::ListServiceActionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListServiceActionsInput {
                 accept_language: self.accept_language,
@@ -13462,16 +14811,16 @@ impl ListServiceActionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListServiceActions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListServiceActionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13479,7 +14828,7 @@ impl ListServiceActionsInput {
         fn update_http_builder(
             input: &crate::input::ListServiceActionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13488,30 +14837,32 @@ impl ListServiceActionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListServiceActionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ListServiceActions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_service_actions(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13534,15 +14885,15 @@ impl ListServiceActionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListServiceActions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListServiceActions",
             "servicecatalog",
         ));
@@ -13551,10 +14902,10 @@ impl ListServiceActionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13586,6 +14937,7 @@ pub mod list_service_actions_for_provisioning_artifact_input {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -13595,6 +14947,7 @@ pub mod list_service_actions_for_provisioning_artifact_input {
             self.provisioning_artifact_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
         pub fn set_provisioning_artifact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13607,6 +14960,7 @@ pub mod list_service_actions_for_provisioning_artifact_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -13616,6 +14970,7 @@ pub mod list_service_actions_for_provisioning_artifact_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -13639,6 +14994,21 @@ pub mod list_service_actions_for_provisioning_artifact_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13651,7 +15021,7 @@ pub mod list_service_actions_for_provisioning_artifact_input {
             self,
         ) -> std::result::Result<
             crate::input::ListServiceActionsForProvisioningArtifactInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::ListServiceActionsForProvisioningArtifactInput {
@@ -13678,16 +15048,16 @@ impl ListServiceActionsForProvisioningArtifactInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListServiceActionsForProvisioningArtifact,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListServiceActionsForProvisioningArtifactInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13695,7 +15065,7 @@ impl ListServiceActionsForProvisioningArtifactInput {
         fn update_http_builder(
             input: &crate::input::ListServiceActionsForProvisioningArtifactInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13704,30 +15074,30 @@ impl ListServiceActionsForProvisioningArtifactInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListServiceActionsForProvisioningArtifactInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ListServiceActionsForProvisioningArtifact",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_service_actions_for_provisioning_artifact(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_service_actions_for_provisioning_artifact(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13750,15 +15120,15 @@ impl ListServiceActionsForProvisioningArtifactInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListServiceActionsForProvisioningArtifact::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListServiceActionsForProvisioningArtifact",
             "servicecatalog",
         ));
@@ -13767,10 +15137,10 @@ impl ListServiceActionsForProvisioningArtifactInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13816,6 +15186,21 @@ pub mod list_stack_instances_for_provisioned_product_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13828,6 +15213,7 @@ pub mod list_stack_instances_for_provisioned_product_input {
             self.provisioned_product_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioned product.</p>
         pub fn set_provisioned_product_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13840,6 +15226,7 @@ pub mod list_stack_instances_for_provisioned_product_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -13849,6 +15236,7 @@ pub mod list_stack_instances_for_provisioned_product_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -13858,7 +15246,7 @@ pub mod list_stack_instances_for_provisioned_product_input {
             self,
         ) -> std::result::Result<
             crate::input::ListStackInstancesForProvisionedProductInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListStackInstancesForProvisionedProductInput {
                 accept_language: self.accept_language,
@@ -13882,16 +15270,16 @@ impl ListStackInstancesForProvisionedProductInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListStackInstancesForProvisionedProduct,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListStackInstancesForProvisionedProductInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13899,7 +15287,7 @@ impl ListStackInstancesForProvisionedProductInput {
         fn update_http_builder(
             input: &crate::input::ListStackInstancesForProvisionedProductInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13908,30 +15296,30 @@ impl ListStackInstancesForProvisionedProductInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListStackInstancesForProvisionedProductInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ListStackInstancesForProvisionedProduct",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_stack_instances_for_provisioned_product(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_stack_instances_for_provisioned_product(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13954,15 +15342,15 @@ impl ListStackInstancesForProvisionedProductInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListStackInstancesForProvisionedProduct::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListStackInstancesForProvisionedProduct",
             "servicecatalog",
         ));
@@ -13971,10 +15359,10 @@ impl ListStackInstancesForProvisionedProductInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14004,6 +15392,7 @@ pub mod list_tag_options_input {
             self.filters = Some(input);
             self
         }
+        /// <p>The search filters. If no search filters are specified, the output includes all TagOptions.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::ListTagOptionsFilters>,
@@ -14016,6 +15405,7 @@ pub mod list_tag_options_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -14025,6 +15415,7 @@ pub mod list_tag_options_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -14034,7 +15425,7 @@ pub mod list_tag_options_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagOptionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagOptionsInput {
                 filters: self.filters,
@@ -14055,16 +15446,16 @@ impl ListTagOptionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagOptions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagOptionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -14072,7 +15463,7 @@ impl ListTagOptionsInput {
         fn update_http_builder(
             input: &crate::input::ListTagOptionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14081,32 +15472,32 @@ impl ListTagOptionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagOptionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ListTagOptions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tag_options(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14129,15 +15520,15 @@ impl ListTagOptionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagOptions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagOptions",
             "servicecatalog",
         ));
@@ -14146,10 +15537,10 @@ impl ListTagOptionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14205,6 +15596,21 @@ pub mod provision_product_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14217,6 +15623,7 @@ pub mod provision_product_input {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier. You must provide the name or ID, but not both.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -14226,6 +15633,7 @@ pub mod provision_product_input {
             self.product_name = Some(input.into());
             self
         }
+        /// <p>The name of the product. You must provide the name or ID, but not both.</p>
         pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_name = input;
             self
@@ -14235,6 +15643,7 @@ pub mod provision_product_input {
             self.provisioning_artifact_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
         pub fn set_provisioning_artifact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14247,6 +15656,7 @@ pub mod provision_product_input {
             self.provisioning_artifact_name = Some(input.into());
             self
         }
+        /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
         pub fn set_provisioning_artifact_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14261,6 +15671,9 @@ pub mod provision_product_input {
             self.path_id = Some(input.into());
             self
         }
+        /// <p>The path identifier of the product. This value is optional if the product
+        /// has a default path, and required if the product has more than one path.
+        /// To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.</p>
         pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path_id = input;
             self
@@ -14270,6 +15683,7 @@ pub mod provision_product_input {
             self.path_name = Some(input.into());
             self
         }
+        /// <p>The name of the path. You must provide the name or ID, but not both.</p>
         pub fn set_path_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path_name = input;
             self
@@ -14280,6 +15694,8 @@ pub mod provision_product_input {
             self.provisioned_product_name = Some(input.into());
             self
         }
+        /// <p>A user-friendly name for the provisioned product. This value must be
+        /// unique for the AWS account and cannot be updated after the product is provisioned.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14287,6 +15703,12 @@ pub mod provision_product_input {
             self.provisioned_product_name = input;
             self
         }
+        /// Appends an item to `provisioning_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_provisioning_parameters`](Self::set_provisioning_parameters).
+        ///
+        /// <p>Parameters specified by the administrator that are required for provisioning the
+        /// product.</p>
         pub fn provisioning_parameters(
             mut self,
             input: impl Into<crate::model::ProvisioningParameter>,
@@ -14296,6 +15718,8 @@ pub mod provision_product_input {
             self.provisioning_parameters = Some(v);
             self
         }
+        /// <p>Parameters specified by the administrator that are required for provisioning the
+        /// product.</p>
         pub fn set_provisioning_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProvisioningParameter>>,
@@ -14311,6 +15735,7 @@ pub mod provision_product_input {
             self.provisioning_preferences = Some(input);
             self
         }
+        /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
         pub fn set_provisioning_preferences(
             mut self,
             input: std::option::Option<crate::model::ProvisioningPreferences>,
@@ -14318,12 +15743,18 @@ pub mod provision_product_input {
             self.provisioning_preferences = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>One or more tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -14331,12 +15762,20 @@ pub mod provision_product_input {
             self.tags = input;
             self
         }
+        /// Appends an item to `notification_arns`.
+        ///
+        /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
+        ///
+        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
+        /// events.</p>
         pub fn notification_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.notification_arns.unwrap_or_default();
             v.push(input.into());
             self.notification_arns = Some(v);
             self
         }
+        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
+        /// events.</p>
         pub fn set_notification_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14349,6 +15788,7 @@ pub mod provision_product_input {
             self.provision_token = Some(input.into());
             self
         }
+        /// <p>An idempotency token that uniquely identifies the provisioning request.</p>
         pub fn set_provision_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14361,7 +15801,7 @@ pub mod provision_product_input {
             self,
         ) -> std::result::Result<
             crate::input::ProvisionProductInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ProvisionProductInput {
                 accept_language: self.accept_language,
@@ -14392,16 +15832,16 @@ impl ProvisionProductInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ProvisionProduct,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ProvisionProductInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -14409,7 +15849,7 @@ impl ProvisionProductInput {
         fn update_http_builder(
             input: &crate::input::ProvisionProductInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14418,15 +15858,15 @@ impl ProvisionProductInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ProvisionProductInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ProvisionProduct",
@@ -14436,17 +15876,17 @@ impl ProvisionProductInput {
         if self.provision_token.is_none() {
             self.provision_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_provision_product(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14469,15 +15909,15 @@ impl ProvisionProductInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ProvisionProduct::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ProvisionProduct",
             "servicecatalog",
         ));
@@ -14486,10 +15926,10 @@ impl ProvisionProductInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14533,6 +15973,21 @@ pub mod reject_portfolio_share_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14545,6 +16000,7 @@ pub mod reject_portfolio_share_input {
             self.portfolio_id = Some(input.into());
             self
         }
+        /// <p>The portfolio identifier.</p>
         pub fn set_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.portfolio_id = input;
             self
@@ -14571,6 +16027,24 @@ pub mod reject_portfolio_share_input {
             self.portfolio_share_type = Some(input);
             self
         }
+        /// <p>The type of shared portfolios to reject. The default is to reject imported portfolios.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the management account of your
+        /// organization.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IMPORTED</code> - Reject imported portfolios.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
+        /// </p>
         pub fn set_portfolio_share_type(
             mut self,
             input: std::option::Option<crate::model::PortfolioShareType>,
@@ -14583,7 +16057,7 @@ pub mod reject_portfolio_share_input {
             self,
         ) -> std::result::Result<
             crate::input::RejectPortfolioShareInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RejectPortfolioShareInput {
                 accept_language: self.accept_language,
@@ -14604,16 +16078,16 @@ impl RejectPortfolioShareInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RejectPortfolioShare,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RejectPortfolioShareInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -14621,7 +16095,7 @@ impl RejectPortfolioShareInput {
         fn update_http_builder(
             input: &crate::input::RejectPortfolioShareInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14630,32 +16104,32 @@ impl RejectPortfolioShareInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RejectPortfolioShareInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.RejectPortfolioShare",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_reject_portfolio_share(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14678,15 +16152,15 @@ impl RejectPortfolioShareInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RejectPortfolioShare::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RejectPortfolioShare",
             "servicecatalog",
         ));
@@ -14695,10 +16169,10 @@ impl RejectPortfolioShareInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14743,6 +16217,21 @@ pub mod scan_provisioned_products_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14755,6 +16244,7 @@ pub mod scan_provisioned_products_input {
             self.access_level_filter = Some(input);
             self
         }
+        /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
         pub fn set_access_level_filter(
             mut self,
             input: std::option::Option<crate::model::AccessLevelFilter>,
@@ -14767,6 +16257,7 @@ pub mod scan_provisioned_products_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -14776,6 +16267,7 @@ pub mod scan_provisioned_products_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -14785,7 +16277,7 @@ pub mod scan_provisioned_products_input {
             self,
         ) -> std::result::Result<
             crate::input::ScanProvisionedProductsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ScanProvisionedProductsInput {
                 accept_language: self.accept_language,
@@ -14808,16 +16300,16 @@ impl ScanProvisionedProductsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ScanProvisionedProducts,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ScanProvisionedProductsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -14825,7 +16317,7 @@ impl ScanProvisionedProductsInput {
         fn update_http_builder(
             input: &crate::input::ScanProvisionedProductsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14834,32 +16326,34 @@ impl ScanProvisionedProductsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ScanProvisionedProductsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.ScanProvisionedProducts",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_scan_provisioned_products(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14882,15 +16376,15 @@ impl ScanProvisionedProductsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ScanProvisionedProducts::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ScanProvisionedProducts",
             "servicecatalog",
         ));
@@ -14899,10 +16393,10 @@ impl ScanProvisionedProductsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14954,6 +16448,21 @@ pub mod search_products_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14961,6 +16470,12 @@ pub mod search_products_input {
             self.accept_language = input;
             self
         }
+        /// Adds a key-value pair to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The search filters. If no search filters are specified, the output includes
+        /// all products to which the caller has access.</p>
         pub fn filters(
             mut self,
             k: impl Into<crate::model::ProductViewFilterBy>,
@@ -14971,6 +16486,8 @@ pub mod search_products_input {
             self.filters = Some(hash_map);
             self
         }
+        /// <p>The search filters. If no search filters are specified, the output includes
+        /// all products to which the caller has access.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -14988,6 +16505,7 @@ pub mod search_products_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -14997,6 +16515,7 @@ pub mod search_products_input {
             self.sort_by = Some(input);
             self
         }
+        /// <p>The sort field. If no value is specified, the results are not sorted.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::ProductViewSortBy>,
@@ -15009,6 +16528,7 @@ pub mod search_products_input {
             self.sort_order = Some(input);
             self
         }
+        /// <p>The sort order. If no value is specified, the results are not sorted.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -15021,6 +16541,7 @@ pub mod search_products_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -15030,7 +16551,7 @@ pub mod search_products_input {
             self,
         ) -> std::result::Result<
             crate::input::SearchProductsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SearchProductsInput {
                 accept_language: self.accept_language,
@@ -15054,16 +16575,16 @@ impl SearchProductsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SearchProducts,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SearchProductsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -15071,7 +16592,7 @@ impl SearchProductsInput {
         fn update_http_builder(
             input: &crate::input::SearchProductsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -15080,29 +16601,31 @@ impl SearchProductsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SearchProductsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.SearchProducts",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_search_products(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -15125,15 +16648,15 @@ impl SearchProductsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SearchProducts::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SearchProducts",
             "servicecatalog",
         ));
@@ -15142,10 +16665,10 @@ impl SearchProductsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -15199,6 +16722,21 @@ pub mod search_products_as_admin_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15211,10 +16749,17 @@ pub mod search_products_as_admin_input {
             self.portfolio_id = Some(input.into());
             self
         }
+        /// <p>The portfolio identifier.</p>
         pub fn set_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.portfolio_id = input;
             self
         }
+        /// Adds a key-value pair to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The search filters. If no search filters are specified, the output includes all products
+        /// to which the administrator has access.</p>
         pub fn filters(
             mut self,
             k: impl Into<crate::model::ProductViewFilterBy>,
@@ -15225,6 +16770,8 @@ pub mod search_products_as_admin_input {
             self.filters = Some(hash_map);
             self
         }
+        /// <p>The search filters. If no search filters are specified, the output includes all products
+        /// to which the administrator has access.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -15242,6 +16789,7 @@ pub mod search_products_as_admin_input {
             self.sort_by = Some(input);
             self
         }
+        /// <p>The sort field. If no value is specified, the results are not sorted.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::ProductViewSortBy>,
@@ -15254,6 +16802,7 @@ pub mod search_products_as_admin_input {
             self.sort_order = Some(input);
             self
         }
+        /// <p>The sort order. If no value is specified, the results are not sorted.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -15266,6 +16815,7 @@ pub mod search_products_as_admin_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -15275,6 +16825,7 @@ pub mod search_products_as_admin_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -15284,6 +16835,7 @@ pub mod search_products_as_admin_input {
             self.product_source = Some(input);
             self
         }
+        /// <p>Access level of the source of the product.</p>
         pub fn set_product_source(
             mut self,
             input: std::option::Option<crate::model::ProductSource>,
@@ -15296,7 +16848,7 @@ pub mod search_products_as_admin_input {
             self,
         ) -> std::result::Result<
             crate::input::SearchProductsAsAdminInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SearchProductsAsAdminInput {
                 accept_language: self.accept_language,
@@ -15322,16 +16874,16 @@ impl SearchProductsAsAdminInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SearchProductsAsAdmin,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SearchProductsAsAdminInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -15339,7 +16891,7 @@ impl SearchProductsAsAdminInput {
         fn update_http_builder(
             input: &crate::input::SearchProductsAsAdminInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -15348,32 +16900,34 @@ impl SearchProductsAsAdminInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SearchProductsAsAdminInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.SearchProductsAsAdmin",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_search_products_as_admin(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -15396,15 +16950,15 @@ impl SearchProductsAsAdminInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SearchProductsAsAdmin::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SearchProductsAsAdmin",
             "servicecatalog",
         ));
@@ -15413,10 +16967,10 @@ impl SearchProductsAsAdminInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -15469,6 +17023,21 @@ pub mod search_provisioned_products_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15481,6 +17050,7 @@ pub mod search_provisioned_products_input {
             self.access_level_filter = Some(input);
             self
         }
+        /// <p>The access level to use to obtain results. The default is <code>User</code>.</p>
         pub fn set_access_level_filter(
             mut self,
             input: std::option::Option<crate::model::AccessLevelFilter>,
@@ -15488,6 +17058,19 @@ pub mod search_provisioned_products_input {
             self.access_level_filter = input;
             self
         }
+        /// Adds a key-value pair to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The search filters.</p>
+        /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>,
+        /// <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>,
+        /// <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>,
+        /// <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
+        /// <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>,
+        /// <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
+        /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code>
+        /// </p>
         pub fn filters(
             mut self,
             k: impl Into<crate::model::ProvisionedProductViewFilterBy>,
@@ -15498,6 +17081,15 @@ pub mod search_provisioned_products_input {
             self.filters = Some(hash_map);
             self
         }
+        /// <p>The search filters.</p>
+        /// <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>,
+        /// <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>,
+        /// <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>,
+        /// <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
+        /// <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>,
+        /// <code>productName</code>, and <code>provisioningArtifactName</code>.</p>
+        /// <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code>
+        /// </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -15516,6 +17108,8 @@ pub mod search_provisioned_products_input {
             self.sort_by = Some(input.into());
             self
         }
+        /// <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>,
+        /// and <code>lastRecordId</code>.</p>
         pub fn set_sort_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sort_by = input;
             self
@@ -15525,6 +17119,7 @@ pub mod search_provisioned_products_input {
             self.sort_order = Some(input);
             self
         }
+        /// <p>The sort order. If no value is specified, the results are not sorted.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -15537,6 +17132,7 @@ pub mod search_provisioned_products_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -15546,6 +17142,7 @@ pub mod search_provisioned_products_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -15555,7 +17152,7 @@ pub mod search_provisioned_products_input {
             self,
         ) -> std::result::Result<
             crate::input::SearchProvisionedProductsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SearchProvisionedProductsInput {
                 accept_language: self.accept_language,
@@ -15581,16 +17178,16 @@ impl SearchProvisionedProductsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SearchProvisionedProducts,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SearchProvisionedProductsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -15598,7 +17195,7 @@ impl SearchProvisionedProductsInput {
         fn update_http_builder(
             input: &crate::input::SearchProvisionedProductsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -15607,32 +17204,34 @@ impl SearchProvisionedProductsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SearchProvisionedProductsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.SearchProvisionedProducts",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_search_provisioned_products(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -15655,15 +17254,15 @@ impl SearchProvisionedProductsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SearchProvisionedProducts::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SearchProvisionedProducts",
             "servicecatalog",
         ));
@@ -15672,10 +17271,10 @@ impl SearchProvisionedProductsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -15709,6 +17308,8 @@ pub mod terminate_provisioned_product_input {
             self.provisioned_product_name = Some(input.into());
             self
         }
+        /// <p>The name of the provisioned product. You cannot specify both
+        /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15722,6 +17323,8 @@ pub mod terminate_provisioned_product_input {
             self.provisioned_product_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioned product. You cannot specify both
+        /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
         pub fn set_provisioned_product_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15737,6 +17340,10 @@ pub mod terminate_provisioned_product_input {
             self.terminate_token = Some(input.into());
             self
         }
+        /// <p>An idempotency token that uniquely identifies the termination request. This token is
+        /// only valid during the termination process. After the provisioned product is terminated,
+        /// subsequent requests to terminate the same provisioned product always return
+        /// <b>ResourceNotFound</b>.</p>
         pub fn set_terminate_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15750,6 +17357,8 @@ pub mod terminate_provisioned_product_input {
             self.ignore_errors = Some(input);
             self
         }
+        /// <p>If set to true, AWS Service Catalog stops managing the specified provisioned product even
+        /// if it cannot delete the underlying resources.</p>
         pub fn set_ignore_errors(mut self, input: std::option::Option<bool>) -> Self {
             self.ignore_errors = input;
             self
@@ -15773,6 +17382,21 @@ pub mod terminate_provisioned_product_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15788,6 +17412,10 @@ pub mod terminate_provisioned_product_input {
             self.retain_physical_resources = Some(input);
             self
         }
+        /// <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes
+        /// the Service Catalog provisioned product. However, it does not remove the CloudFormation
+        /// stack, stack set, or the underlying resources of the deleted provisioned product. The
+        /// default value is false.</p>
         pub fn set_retain_physical_resources(mut self, input: std::option::Option<bool>) -> Self {
             self.retain_physical_resources = input;
             self
@@ -15797,7 +17425,7 @@ pub mod terminate_provisioned_product_input {
             self,
         ) -> std::result::Result<
             crate::input::TerminateProvisionedProductInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::TerminateProvisionedProductInput {
                 provisioned_product_name: self.provisioned_product_name,
@@ -15822,16 +17450,16 @@ impl TerminateProvisionedProductInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TerminateProvisionedProduct,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TerminateProvisionedProductInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -15839,7 +17467,7 @@ impl TerminateProvisionedProductInput {
         fn update_http_builder(
             input: &crate::input::TerminateProvisionedProductInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -15848,15 +17476,15 @@ impl TerminateProvisionedProductInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TerminateProvisionedProductInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.TerminateProvisionedProduct",
@@ -15866,15 +17494,15 @@ impl TerminateProvisionedProductInput {
         if self.terminate_token.is_none() {
             self.terminate_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_terminate_provisioned_product(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_terminate_provisioned_product(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -15897,15 +17525,15 @@ impl TerminateProvisionedProductInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::TerminateProvisionedProduct::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "TerminateProvisionedProduct",
             "servicecatalog",
         ));
@@ -15914,10 +17542,10 @@ impl TerminateProvisionedProductInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -15962,6 +17590,21 @@ pub mod update_constraint_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15974,6 +17617,7 @@ pub mod update_constraint_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the constraint.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -15983,6 +17627,7 @@ pub mod update_constraint_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The updated description of the constraint.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -16043,6 +17688,58 @@ pub mod update_constraint_input {
             self.parameters = Some(input.into());
             self
         }
+        /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
+        /// <dl>
+        /// <dt>LAUNCH</dt>
+        /// <dd>
+        /// <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>
+        /// <p>Specify the <code>RoleArn</code> property as follows:</p>
+        /// <p>
+        /// <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
+        /// </p>
+        /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
+        /// <p>
+        /// <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
+        /// </p>
+        /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be
+        /// account-agnostic so the administrator can create fewer resources per shared account.</p>
+        /// <note>
+        /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
+        /// </note>
+        /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
+        /// <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>
+        /// </dd>
+        /// <dt>NOTIFICATION</dt>
+        /// <dd>
+        /// <p>Specify the <code>NotificationArns</code> property as follows:</p>
+        /// <p>
+        /// <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
+        /// </p>
+        /// </dd>
+        /// <dt>RESOURCE_UPDATE</dt>
+        /// <dd>
+        /// <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>
+        /// <p>
+        /// <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code>
+        /// </p>
+        /// <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>
+        /// </dd>
+        /// <dt>STACKSET</dt>
+        /// <dd>
+        /// <p>Specify the <code>Parameters</code> property as follows:</p>
+        /// <p>
+        /// <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code>
+        /// </p>
+        /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
+        /// <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>
+        /// <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>
+        /// </dd>
+        /// <dt>TEMPLATE</dt>
+        /// <dd>
+        /// <p>Specify the <code>Rules</code> property. For more information, see
+        /// <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parameters = input;
             self
@@ -16052,7 +17749,7 @@ pub mod update_constraint_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateConstraintInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateConstraintInput {
                 accept_language: self.accept_language,
@@ -16074,16 +17771,16 @@ impl UpdateConstraintInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateConstraint,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateConstraintInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -16091,7 +17788,7 @@ impl UpdateConstraintInput {
         fn update_http_builder(
             input: &crate::input::UpdateConstraintInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -16100,32 +17797,32 @@ impl UpdateConstraintInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateConstraintInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.UpdateConstraint",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_constraint(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -16148,15 +17845,15 @@ impl UpdateConstraintInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateConstraint::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateConstraint",
             "servicecatalog",
         ));
@@ -16165,10 +17862,10 @@ impl UpdateConstraintInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -16216,6 +17913,21 @@ pub mod update_portfolio_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16228,6 +17940,7 @@ pub mod update_portfolio_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The portfolio identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -16237,6 +17950,7 @@ pub mod update_portfolio_input {
             self.display_name = Some(input.into());
             self
         }
+        /// <p>The name to use for display purposes.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -16246,6 +17960,7 @@ pub mod update_portfolio_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The updated description of the portfolio.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -16255,6 +17970,7 @@ pub mod update_portfolio_input {
             self.provider_name = Some(input.into());
             self
         }
+        /// <p>The updated name of the portfolio provider.</p>
         pub fn set_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16262,12 +17978,18 @@ pub mod update_portfolio_input {
             self.provider_name = input;
             self
         }
+        /// Appends an item to `add_tags`.
+        ///
+        /// To override the contents of this collection use [`set_add_tags`](Self::set_add_tags).
+        ///
+        /// <p>The tags to add.</p>
         pub fn add_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.add_tags.unwrap_or_default();
             v.push(input.into());
             self.add_tags = Some(v);
             self
         }
+        /// <p>The tags to add.</p>
         pub fn set_add_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -16275,12 +17997,18 @@ pub mod update_portfolio_input {
             self.add_tags = input;
             self
         }
+        /// Appends an item to `remove_tags`.
+        ///
+        /// To override the contents of this collection use [`set_remove_tags`](Self::set_remove_tags).
+        ///
+        /// <p>The tags to remove.</p>
         pub fn remove_tags(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.remove_tags.unwrap_or_default();
             v.push(input.into());
             self.remove_tags = Some(v);
             self
         }
+        /// <p>The tags to remove.</p>
         pub fn set_remove_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16293,7 +18021,7 @@ pub mod update_portfolio_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdatePortfolioInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdatePortfolioInput {
                 accept_language: self.accept_language,
@@ -16318,16 +18046,16 @@ impl UpdatePortfolioInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdatePortfolio,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdatePortfolioInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -16335,7 +18063,7 @@ impl UpdatePortfolioInput {
         fn update_http_builder(
             input: &crate::input::UpdatePortfolioInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -16344,32 +18072,32 @@ impl UpdatePortfolioInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdatePortfolioInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.UpdatePortfolio",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_portfolio(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -16392,15 +18120,15 @@ impl UpdatePortfolioInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdatePortfolio::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdatePortfolio",
             "servicecatalog",
         ));
@@ -16409,10 +18137,10 @@ impl UpdatePortfolioInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -16458,6 +18186,21 @@ pub mod update_portfolio_share_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16470,6 +18213,7 @@ pub mod update_portfolio_share_input {
             self.portfolio_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the portfolio for which the share will be updated.</p>
         pub fn set_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.portfolio_id = input;
             self
@@ -16479,6 +18223,7 @@ pub mod update_portfolio_share_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The AWS Account Id of the recipient account. This field is required when updating an external account to account type share.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -16488,6 +18233,7 @@ pub mod update_portfolio_share_input {
             self.organization_node = Some(input);
             self
         }
+        /// <p>Information about the organization node.</p>
         pub fn set_organization_node(
             mut self,
             input: std::option::Option<crate::model::OrganizationNode>,
@@ -16500,6 +18246,7 @@ pub mod update_portfolio_share_input {
             self.share_tag_options = Some(input);
             self
         }
+        /// <p>A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
         pub fn set_share_tag_options(mut self, input: std::option::Option<bool>) -> Self {
             self.share_tag_options = input;
             self
@@ -16509,7 +18256,7 @@ pub mod update_portfolio_share_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdatePortfolioShareInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdatePortfolioShareInput {
                 accept_language: self.accept_language,
@@ -16532,16 +18279,16 @@ impl UpdatePortfolioShareInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdatePortfolioShare,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdatePortfolioShareInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -16549,7 +18296,7 @@ impl UpdatePortfolioShareInput {
         fn update_http_builder(
             input: &crate::input::UpdatePortfolioShareInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -16558,32 +18305,32 @@ impl UpdatePortfolioShareInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdatePortfolioShareInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.UpdatePortfolioShare",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_portfolio_share(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -16606,15 +18353,15 @@ impl UpdatePortfolioShareInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdatePortfolioShare::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdatePortfolioShare",
             "servicecatalog",
         ));
@@ -16623,10 +18370,10 @@ impl UpdatePortfolioShareInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -16678,6 +18425,21 @@ pub mod update_product_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16690,6 +18452,7 @@ pub mod update_product_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -16699,6 +18462,7 @@ pub mod update_product_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The updated product name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -16708,6 +18472,7 @@ pub mod update_product_input {
             self.owner = Some(input.into());
             self
         }
+        /// <p>The updated owner of the product.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -16717,6 +18482,7 @@ pub mod update_product_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The updated description of the product.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -16726,6 +18492,7 @@ pub mod update_product_input {
             self.distributor = Some(input.into());
             self
         }
+        /// <p>The updated distributor of the product.</p>
         pub fn set_distributor(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.distributor = input;
             self
@@ -16735,6 +18502,7 @@ pub mod update_product_input {
             self.support_description = Some(input.into());
             self
         }
+        /// <p>The updated support description for the product.</p>
         pub fn set_support_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16747,6 +18515,7 @@ pub mod update_product_input {
             self.support_email = Some(input.into());
             self
         }
+        /// <p>The updated support email for the product.</p>
         pub fn set_support_email(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16759,16 +18528,23 @@ pub mod update_product_input {
             self.support_url = Some(input.into());
             self
         }
+        /// <p>The updated support URL for the product.</p>
         pub fn set_support_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.support_url = input;
             self
         }
+        /// Appends an item to `add_tags`.
+        ///
+        /// To override the contents of this collection use [`set_add_tags`](Self::set_add_tags).
+        ///
+        /// <p>The tags to add to the product.</p>
         pub fn add_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.add_tags.unwrap_or_default();
             v.push(input.into());
             self.add_tags = Some(v);
             self
         }
+        /// <p>The tags to add to the product.</p>
         pub fn set_add_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -16776,12 +18552,18 @@ pub mod update_product_input {
             self.add_tags = input;
             self
         }
+        /// Appends an item to `remove_tags`.
+        ///
+        /// To override the contents of this collection use [`set_remove_tags`](Self::set_remove_tags).
+        ///
+        /// <p>The tags to remove from the product.</p>
         pub fn remove_tags(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.remove_tags.unwrap_or_default();
             v.push(input.into());
             self.remove_tags = Some(v);
             self
         }
+        /// <p>The tags to remove from the product.</p>
         pub fn set_remove_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16792,8 +18574,10 @@ pub mod update_product_input {
         /// Consumes the builder and constructs a [`UpdateProductInput`](crate::input::UpdateProductInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateProductInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateProductInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateProductInput {
                 accept_language: self.accept_language,
                 id: self.id,
@@ -16821,16 +18605,16 @@ impl UpdateProductInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateProduct,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateProductInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -16838,7 +18622,7 @@ impl UpdateProductInput {
         fn update_http_builder(
             input: &crate::input::UpdateProductInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -16847,29 +18631,31 @@ impl UpdateProductInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateProductInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.UpdateProduct",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_product(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -16892,25 +18678,27 @@ impl UpdateProductInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateProduct::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateProduct",
-                    "servicecatalog",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateProduct::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateProduct",
+            "servicecatalog",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -16966,6 +18754,21 @@ pub mod update_provisioned_product_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16979,6 +18782,8 @@ pub mod update_provisioned_product_input {
             self.provisioned_product_name = Some(input.into());
             self
         }
+        /// <p>The name of the provisioned product. You cannot specify both
+        /// <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16991,6 +18796,7 @@ pub mod update_provisioned_product_input {
             self.provisioned_product_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioned product. You must provide the name or ID, but not both.</p>
         pub fn set_provisioned_product_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17003,6 +18809,7 @@ pub mod update_provisioned_product_input {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the product. You must provide the name or ID, but not both.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -17012,6 +18819,7 @@ pub mod update_provisioned_product_input {
             self.product_name = Some(input.into());
             self
         }
+        /// <p>The name of the product. You must provide the name or ID, but not both.</p>
         pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_name = input;
             self
@@ -17021,6 +18829,7 @@ pub mod update_provisioned_product_input {
             self.provisioning_artifact_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioning artifact.</p>
         pub fn set_provisioning_artifact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17033,6 +18842,7 @@ pub mod update_provisioned_product_input {
             self.provisioning_artifact_name = Some(input.into());
             self
         }
+        /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
         pub fn set_provisioning_artifact_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17046,6 +18856,8 @@ pub mod update_provisioned_product_input {
             self.path_id = Some(input.into());
             self
         }
+        /// <p>The path identifier. This value is optional if the product
+        /// has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
         pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path_id = input;
             self
@@ -17055,10 +18867,16 @@ pub mod update_provisioned_product_input {
             self.path_name = Some(input.into());
             self
         }
+        /// <p>The name of the path. You must provide the name or ID, but not both.</p>
         pub fn set_path_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path_name = input;
             self
         }
+        /// Appends an item to `provisioning_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_provisioning_parameters`](Self::set_provisioning_parameters).
+        ///
+        /// <p>The new parameters.</p>
         pub fn provisioning_parameters(
             mut self,
             input: impl Into<crate::model::UpdateProvisioningParameter>,
@@ -17068,6 +18886,7 @@ pub mod update_provisioned_product_input {
             self.provisioning_parameters = Some(v);
             self
         }
+        /// <p>The new parameters.</p>
         pub fn set_provisioning_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpdateProvisioningParameter>>,
@@ -17083,6 +18902,7 @@ pub mod update_provisioned_product_input {
             self.provisioning_preferences = Some(input);
             self
         }
+        /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
         pub fn set_provisioning_preferences(
             mut self,
             input: std::option::Option<crate::model::UpdateProvisioningPreferences>,
@@ -17090,12 +18910,18 @@ pub mod update_provisioned_product_input {
             self.provisioning_preferences = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -17108,6 +18934,7 @@ pub mod update_provisioned_product_input {
             self.update_token = Some(input.into());
             self
         }
+        /// <p>The idempotency token that uniquely identifies the provisioning update request.</p>
         pub fn set_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.update_token = input;
             self
@@ -17117,7 +18944,7 @@ pub mod update_provisioned_product_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateProvisionedProductInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateProvisionedProductInput {
                 accept_language: self.accept_language,
@@ -17149,16 +18976,16 @@ impl UpdateProvisionedProductInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateProvisionedProduct,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateProvisionedProductInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -17166,7 +18993,7 @@ impl UpdateProvisionedProductInput {
         fn update_http_builder(
             input: &crate::input::UpdateProvisionedProductInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -17175,15 +19002,15 @@ impl UpdateProvisionedProductInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateProvisionedProductInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.UpdateProvisionedProduct",
@@ -17193,17 +19020,19 @@ impl UpdateProvisionedProductInput {
         if self.update_token.is_none() {
             self.update_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_provisioned_product(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -17226,15 +19055,15 @@ impl UpdateProvisionedProductInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateProvisionedProduct::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateProvisionedProduct",
             "servicecatalog",
         ));
@@ -17243,10 +19072,10 @@ impl UpdateProvisionedProductInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -17293,6 +19122,21 @@ pub mod update_provisioned_product_properties_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17305,6 +19149,7 @@ pub mod update_provisioned_product_properties_input {
             self.provisioned_product_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioned product.</p>
         pub fn set_provisioned_product_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17312,6 +19157,29 @@ pub mod update_provisioned_product_properties_input {
             self.provisioned_product_id = input;
             self
         }
+        /// Adds a key-value pair to `provisioned_product_properties`.
+        ///
+        /// To override the contents of this collection use [`set_provisioned_product_properties`](Self::set_provisioned_product_properties).
+        ///
+        /// <p>A map that contains the provisioned product properties to be updated.</p>
+        /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
+        /// administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch
+        /// role that is associated with a provisioned product. This role is used when an end user
+        /// calls a provisioning operation such as <code>UpdateProvisionedProduct</code>,
+        /// <code>TerminateProvisionedProduct</code>, or
+        /// <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
+        ///
+        /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user
+        /// that has permission to see, update, terminate, and execute service actions in the
+        /// provisioned product.</p>
+        /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and
+        /// administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can
+        /// describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>,
+        /// but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
+        /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or
+        /// Service Catalog console such as update, terminate, and execute service actions.
+        /// If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through
+        /// API or the Service Catalog console on that provisioned product.</p>
         pub fn provisioned_product_properties(
             mut self,
             k: impl Into<crate::model::PropertyKey>,
@@ -17322,6 +19190,25 @@ pub mod update_provisioned_product_properties_input {
             self.provisioned_product_properties = Some(hash_map);
             self
         }
+        /// <p>A map that contains the provisioned product properties to be updated.</p>
+        /// <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an
+        /// administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch
+        /// role that is associated with a provisioned product. This role is used when an end user
+        /// calls a provisioning operation such as <code>UpdateProvisionedProduct</code>,
+        /// <code>TerminateProvisionedProduct</code>, or
+        /// <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
+        ///
+        /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user
+        /// that has permission to see, update, terminate, and execute service actions in the
+        /// provisioned product.</p>
+        /// <p>The administrator can change the owner of a provisioned product to another IAM user within the same account. Both end user owners and
+        /// administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can
+        /// describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>,
+        /// but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>
+        /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or
+        /// Service Catalog console such as update, terminate, and execute service actions.
+        /// If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through
+        /// API or the Service Catalog console on that provisioned product.</p>
         pub fn set_provisioned_product_properties(
             mut self,
             input: std::option::Option<
@@ -17336,6 +19223,7 @@ pub mod update_provisioned_product_properties_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>The idempotency token that uniquely identifies the provisioning product update request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17348,7 +19236,7 @@ pub mod update_provisioned_product_properties_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateProvisionedProductPropertiesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateProvisionedProductPropertiesInput {
                 accept_language: self.accept_language,
@@ -17371,16 +19259,16 @@ impl UpdateProvisionedProductPropertiesInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateProvisionedProductProperties,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateProvisionedProductPropertiesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -17388,7 +19276,7 @@ impl UpdateProvisionedProductPropertiesInput {
         fn update_http_builder(
             input: &crate::input::UpdateProvisionedProductPropertiesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -17397,15 +19285,15 @@ impl UpdateProvisionedProductPropertiesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateProvisionedProductPropertiesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.UpdateProvisionedProductProperties",
@@ -17415,15 +19303,15 @@ impl UpdateProvisionedProductPropertiesInput {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_provisioned_product_properties(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_provisioned_product_properties(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -17446,15 +19334,15 @@ impl UpdateProvisionedProductPropertiesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateProvisionedProductProperties::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateProvisionedProductProperties",
             "servicecatalog",
         ));
@@ -17463,10 +19351,10 @@ impl UpdateProvisionedProductPropertiesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -17514,6 +19402,21 @@ pub mod update_provisioning_artifact_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17526,6 +19429,7 @@ pub mod update_provisioning_artifact_input {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -17535,6 +19439,7 @@ pub mod update_provisioning_artifact_input {
             self.provisioning_artifact_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioning artifact.</p>
         pub fn set_provisioning_artifact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17547,6 +19452,7 @@ pub mod update_provisioning_artifact_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The updated name of the provisioning artifact.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -17556,6 +19462,7 @@ pub mod update_provisioning_artifact_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The updated description of the provisioning artifact.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -17566,6 +19473,8 @@ pub mod update_provisioning_artifact_input {
             self.active = Some(input);
             self
         }
+        /// <p>Indicates whether the product version is active.</p>
+        /// <p>Inactive provisioning artifacts are invisible to end users. End users cannot launch or update a provisioned product from an inactive provisioning artifact.</p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
             self.active = input;
             self
@@ -17579,6 +19488,11 @@ pub mod update_provisioning_artifact_input {
             self.guidance = Some(input);
             self
         }
+        /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
+        /// <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>
+        /// <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform
+        /// users that the product version is deprecated. Users are able to make updates to a provisioned product
+        /// of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
         pub fn set_guidance(
             mut self,
             input: std::option::Option<crate::model::ProvisioningArtifactGuidance>,
@@ -17591,7 +19505,7 @@ pub mod update_provisioning_artifact_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateProvisioningArtifactInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateProvisioningArtifactInput {
                 accept_language: self.accept_language,
@@ -17617,16 +19531,16 @@ impl UpdateProvisioningArtifactInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateProvisioningArtifact,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateProvisioningArtifactInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -17634,7 +19548,7 @@ impl UpdateProvisioningArtifactInput {
         fn update_http_builder(
             input: &crate::input::UpdateProvisioningArtifactInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -17643,32 +19557,34 @@ impl UpdateProvisioningArtifactInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateProvisioningArtifactInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.UpdateProvisioningArtifact",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_provisioning_artifact(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -17691,15 +19607,15 @@ impl UpdateProvisioningArtifactInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateProvisioningArtifact::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateProvisioningArtifact",
             "servicecatalog",
         ));
@@ -17708,10 +19624,10 @@ impl UpdateProvisioningArtifactInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -17748,6 +19664,7 @@ pub mod update_service_action_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The self-service action identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -17757,10 +19674,16 @@ pub mod update_service_action_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The self-service action name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Adds a key-value pair to `definition`.
+        ///
+        /// To override the contents of this collection use [`set_definition`](Self::set_definition).
+        ///
+        /// <p>A map that defines the self-service action.</p>
         pub fn definition(
             mut self,
             k: impl Into<crate::model::ServiceActionDefinitionKey>,
@@ -17771,6 +19694,7 @@ pub mod update_service_action_input {
             self.definition = Some(hash_map);
             self
         }
+        /// <p>A map that defines the self-service action.</p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<
@@ -17788,6 +19712,7 @@ pub mod update_service_action_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The self-service action description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -17811,6 +19736,21 @@ pub mod update_service_action_input {
             self.accept_language = Some(input.into());
             self
         }
+        /// <p>The language code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>en</code> - English (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>jp</code> - Japanese</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh</code> - Chinese</p>
+        /// </li>
+        /// </ul>
         pub fn set_accept_language(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17823,7 +19763,7 @@ pub mod update_service_action_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateServiceActionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateServiceActionInput {
                 id: self.id,
@@ -17846,16 +19786,16 @@ impl UpdateServiceActionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateServiceAction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateServiceActionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -17863,7 +19803,7 @@ impl UpdateServiceActionInput {
         fn update_http_builder(
             input: &crate::input::UpdateServiceActionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -17872,32 +19812,32 @@ impl UpdateServiceActionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateServiceActionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.UpdateServiceAction",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_service_action(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -17920,15 +19860,15 @@ impl UpdateServiceActionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateServiceAction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateServiceAction",
             "servicecatalog",
         ));
@@ -17937,10 +19877,10 @@ impl UpdateServiceActionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -17970,6 +19910,7 @@ pub mod update_tag_option_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The TagOption identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -17979,6 +19920,7 @@ pub mod update_tag_option_input {
             self.value = Some(input.into());
             self
         }
+        /// <p>The updated value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -17988,6 +19930,7 @@ pub mod update_tag_option_input {
             self.active = Some(input);
             self
         }
+        /// <p>The updated active state.</p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
             self.active = input;
             self
@@ -17997,7 +19940,7 @@ pub mod update_tag_option_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateTagOptionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateTagOptionInput {
                 id: self.id,
@@ -18018,16 +19961,16 @@ impl UpdateTagOptionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateTagOption,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateTagOptionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -18035,7 +19978,7 @@ impl UpdateTagOptionInput {
         fn update_http_builder(
             input: &crate::input::UpdateTagOptionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -18044,32 +19987,32 @@ impl UpdateTagOptionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateTagOptionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWS242ServiceCatalogService.UpdateTagOption",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_tag_option(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -18092,15 +20035,15 @@ impl UpdateTagOptionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateTagOption::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateTagOption",
             "servicecatalog",
         ));
@@ -18109,10 +20052,10 @@ impl UpdateTagOptionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -18126,6 +20069,7 @@ impl UpdateTagOptionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTagOptionInput {
@@ -18146,6 +20090,7 @@ impl std::fmt::Debug for UpdateTagOptionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceActionInput {
@@ -18188,6 +20133,7 @@ impl std::fmt::Debug for UpdateServiceActionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProvisioningArtifactInput {
@@ -18239,6 +20185,7 @@ impl std::fmt::Debug for UpdateProvisioningArtifactInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProvisionedProductPropertiesInput {
@@ -18267,6 +20214,7 @@ pub struct UpdateProvisionedProductPropertiesInput {
     /// calls a provisioning operation such as <code>UpdateProvisionedProduct</code>,
     /// <code>TerminateProvisionedProduct</code>, or
     /// <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>
+    ///
     /// <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the user
     /// that has permission to see, update, terminate, and execute service actions in the
     /// provisioned product.</p>
@@ -18298,6 +20246,7 @@ impl std::fmt::Debug for UpdateProvisionedProductPropertiesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProvisionedProductInput {
@@ -18368,6 +20317,7 @@ impl std::fmt::Debug for UpdateProvisionedProductInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProductInput {
@@ -18426,6 +20376,7 @@ impl std::fmt::Debug for UpdateProductInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePortfolioShareInput {
@@ -18466,6 +20417,7 @@ impl std::fmt::Debug for UpdatePortfolioShareInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePortfolioInput {
@@ -18512,6 +20464,7 @@ impl std::fmt::Debug for UpdatePortfolioInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConstraintInput {
@@ -18600,6 +20553,7 @@ impl std::fmt::Debug for UpdateConstraintInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateProvisionedProductInput {
@@ -18652,6 +20606,7 @@ impl std::fmt::Debug for TerminateProvisionedProductInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchProvisionedProductsInput {
@@ -18712,6 +20667,7 @@ impl std::fmt::Debug for SearchProvisionedProductsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchProductsAsAdminInput {
@@ -18767,6 +20723,7 @@ impl std::fmt::Debug for SearchProductsAsAdminInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchProductsInput {
@@ -18816,6 +20773,7 @@ impl std::fmt::Debug for SearchProductsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScanProvisionedProductsInput {
@@ -18853,6 +20811,7 @@ impl std::fmt::Debug for ScanProvisionedProductsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectPortfolioShareInput {
@@ -18904,6 +20863,7 @@ impl std::fmt::Debug for RejectPortfolioShareInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionProductInput {
@@ -18977,6 +20937,7 @@ impl std::fmt::Debug for ProvisionProductInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagOptionsInput {
@@ -18997,6 +20958,7 @@ impl std::fmt::Debug for ListTagOptionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStackInstancesForProvisionedProductInput {
@@ -19034,6 +20996,7 @@ impl std::fmt::Debug for ListStackInstancesForProvisionedProductInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceActionsForProvisioningArtifactInput {
@@ -19074,6 +21037,7 @@ impl std::fmt::Debug for ListServiceActionsForProvisioningArtifactInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceActionsInput {
@@ -19108,6 +21072,7 @@ impl std::fmt::Debug for ListServiceActionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesForTagOptionInput {
@@ -19143,6 +21108,7 @@ impl std::fmt::Debug for ListResourcesForTagOptionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecordHistoryInput {
@@ -19183,6 +21149,7 @@ impl std::fmt::Debug for ListRecordHistoryInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProvisioningArtifactsForServiceActionInput {
@@ -19220,6 +21187,7 @@ impl std::fmt::Debug for ListProvisioningArtifactsForServiceActionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProvisioningArtifactsInput {
@@ -19251,6 +21219,7 @@ impl std::fmt::Debug for ListProvisioningArtifactsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProvisionedProductPlansInput {
@@ -19291,6 +21260,7 @@ impl std::fmt::Debug for ListProvisionedProductPlansInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPrincipalsForPortfolioInput {
@@ -19328,6 +21298,7 @@ impl std::fmt::Debug for ListPrincipalsForPortfolioInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPortfoliosForProductInput {
@@ -19365,6 +21336,7 @@ impl std::fmt::Debug for ListPortfoliosForProductInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPortfoliosInput {
@@ -19399,6 +21371,7 @@ impl std::fmt::Debug for ListPortfoliosInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPortfolioAccessInput {
@@ -19439,6 +21412,7 @@ impl std::fmt::Debug for ListPortfolioAccessInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationPortfolioAccessInput {
@@ -19493,6 +21467,7 @@ impl std::fmt::Debug for ListOrganizationPortfolioAccessInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLaunchPathsInput {
@@ -19530,6 +21505,7 @@ impl std::fmt::Debug for ListLaunchPathsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConstraintsForPortfolioInput {
@@ -19570,6 +21546,7 @@ impl std::fmt::Debug for ListConstraintsForPortfolioInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBudgetsForResourceInput {
@@ -19607,6 +21584,7 @@ impl std::fmt::Debug for ListBudgetsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAcceptedPortfolioSharesInput {
@@ -19659,6 +21637,7 @@ impl std::fmt::Debug for ListAcceptedPortfolioSharesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportAsProvisionedProductInput {
@@ -19705,6 +21684,7 @@ impl std::fmt::Debug for ImportAsProvisionedProductInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProvisionedProductOutputsInput {
@@ -19748,6 +21728,7 @@ impl std::fmt::Debug for GetProvisionedProductOutputsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAwsOrganizationsAccessStatusInput {}
@@ -19758,6 +21739,7 @@ impl std::fmt::Debug for GetAwsOrganizationsAccessStatusInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteProvisionedProductServiceActionInput {
@@ -19802,6 +21784,7 @@ impl std::fmt::Debug for ExecuteProvisionedProductServiceActionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteProvisionedProductPlanInput {
@@ -19837,6 +21820,7 @@ impl std::fmt::Debug for ExecuteProvisionedProductPlanInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableAwsOrganizationsAccessInput {}
@@ -19847,6 +21831,7 @@ impl std::fmt::Debug for EnableAwsOrganizationsAccessInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateTagOptionFromResourceInput {
@@ -19864,6 +21849,7 @@ impl std::fmt::Debug for DisassociateTagOptionFromResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateServiceActionFromProvisioningArtifactInput {
@@ -19902,6 +21888,7 @@ impl std::fmt::Debug for DisassociateServiceActionFromProvisioningArtifactInput 
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateProductFromPortfolioInput {
@@ -19936,6 +21923,7 @@ impl std::fmt::Debug for DisassociateProductFromPortfolioInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociatePrincipalFromPortfolioInput {
@@ -19970,6 +21958,7 @@ impl std::fmt::Debug for DisassociatePrincipalFromPortfolioInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateBudgetFromResourceInput {
@@ -19987,6 +21976,7 @@ impl std::fmt::Debug for DisassociateBudgetFromResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableAwsOrganizationsAccessInput {}
@@ -19997,6 +21987,7 @@ impl std::fmt::Debug for DisableAwsOrganizationsAccessInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagOptionInput {
@@ -20011,6 +22002,7 @@ impl std::fmt::Debug for DescribeTagOptionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceActionExecutionParametersInput {
@@ -20045,6 +22037,7 @@ impl std::fmt::Debug for DescribeServiceActionExecutionParametersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceActionInput {
@@ -20076,6 +22069,7 @@ impl std::fmt::Debug for DescribeServiceActionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecordInput {
@@ -20114,6 +22108,7 @@ impl std::fmt::Debug for DescribeRecordInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProvisioningParametersInput {
@@ -20165,6 +22160,7 @@ impl std::fmt::Debug for DescribeProvisioningParametersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProvisioningArtifactInput {
@@ -20211,6 +22207,7 @@ impl std::fmt::Debug for DescribeProvisioningArtifactInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProvisionedProductPlanInput {
@@ -20249,10 +22246,13 @@ impl std::fmt::Debug for DescribeProvisionedProductPlanInput {
 }
 
 /// DescribeProvisionedProductAPI input structure.
+///
 /// AcceptLanguage - [Optional]
 /// The language code for localization.
+///
 /// Id - [Optional]
 /// The provisioned product identifier.
+///
 /// Name - [Optional]
 /// Another provisioned product identifier. Customers must provide either Id or Name.
 #[non_exhaustive]
@@ -20291,6 +22291,7 @@ impl std::fmt::Debug for DescribeProvisionedProductInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProductViewInput {
@@ -20322,6 +22323,7 @@ impl std::fmt::Debug for DescribeProductViewInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProductAsAdminInput {
@@ -20364,6 +22366,7 @@ impl std::fmt::Debug for DescribeProductAsAdminInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProductInput {
@@ -20398,6 +22401,7 @@ impl std::fmt::Debug for DescribeProductInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePortfolioShareStatusInput {
@@ -20412,6 +22416,7 @@ impl std::fmt::Debug for DescribePortfolioShareStatusInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePortfolioSharesInput {
@@ -20439,6 +22444,7 @@ impl std::fmt::Debug for DescribePortfolioSharesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePortfolioInput {
@@ -20470,6 +22476,7 @@ impl std::fmt::Debug for DescribePortfolioInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCopyProductStatusInput {
@@ -20501,6 +22508,7 @@ impl std::fmt::Debug for DescribeCopyProductStatusInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConstraintInput {
@@ -20532,6 +22540,7 @@ impl std::fmt::Debug for DescribeConstraintInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTagOptionInput {
@@ -20546,6 +22555,7 @@ impl std::fmt::Debug for DeleteTagOptionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServiceActionInput {
@@ -20577,6 +22587,7 @@ impl std::fmt::Debug for DeleteServiceActionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProvisioningArtifactInput {
@@ -20611,6 +22622,7 @@ impl std::fmt::Debug for DeleteProvisioningArtifactInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProvisionedProductPlanInput {
@@ -20646,6 +22658,7 @@ impl std::fmt::Debug for DeleteProvisionedProductPlanInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProductInput {
@@ -20677,6 +22690,7 @@ impl std::fmt::Debug for DeleteProductInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePortfolioShareInput {
@@ -20714,6 +22728,7 @@ impl std::fmt::Debug for DeletePortfolioShareInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePortfolioInput {
@@ -20745,6 +22760,7 @@ impl std::fmt::Debug for DeletePortfolioInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConstraintInput {
@@ -20776,6 +22792,7 @@ impl std::fmt::Debug for DeleteConstraintInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTagOptionInput {
@@ -20793,6 +22810,7 @@ impl std::fmt::Debug for CreateTagOptionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceActionInput {
@@ -20861,6 +22879,7 @@ impl std::fmt::Debug for CreateServiceActionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProvisioningArtifactInput {
@@ -20899,6 +22918,7 @@ impl std::fmt::Debug for CreateProvisioningArtifactInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProvisionedProductPlanInput {
@@ -20965,6 +22985,7 @@ impl std::fmt::Debug for CreateProvisionedProductPlanInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProductInput {
@@ -21033,6 +23054,7 @@ impl std::fmt::Debug for CreateProductInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePortfolioShareInput {
@@ -21078,6 +23100,7 @@ impl std::fmt::Debug for CreatePortfolioShareInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePortfolioInput {
@@ -21122,6 +23145,7 @@ impl std::fmt::Debug for CreatePortfolioInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConstraintInput {
@@ -21247,6 +23271,7 @@ impl std::fmt::Debug for CreateConstraintInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyProductInput {
@@ -21306,6 +23331,7 @@ impl std::fmt::Debug for CopyProductInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisassociateServiceActionFromProvisioningArtifactInput {
@@ -21342,6 +23368,7 @@ impl std::fmt::Debug for BatchDisassociateServiceActionFromProvisioningArtifactI
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAssociateServiceActionWithProvisioningArtifactInput {
@@ -21378,6 +23405,7 @@ impl std::fmt::Debug for BatchAssociateServiceActionWithProvisioningArtifactInpu
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateTagOptionWithResourceInput {
@@ -21395,6 +23423,7 @@ impl std::fmt::Debug for AssociateTagOptionWithResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateServiceActionWithProvisioningArtifactInput {
@@ -21432,6 +23461,7 @@ impl std::fmt::Debug for AssociateServiceActionWithProvisioningArtifactInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateProductWithPortfolioInput {
@@ -21469,6 +23499,7 @@ impl std::fmt::Debug for AssociateProductWithPortfolioInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatePrincipalWithPortfolioInput {
@@ -21506,6 +23537,7 @@ impl std::fmt::Debug for AssociatePrincipalWithPortfolioInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateBudgetWithResourceInput {
@@ -21523,6 +23555,7 @@ impl std::fmt::Debug for AssociateBudgetWithResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptPortfolioShareInput {

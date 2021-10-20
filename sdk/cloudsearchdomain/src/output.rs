@@ -40,6 +40,7 @@ pub mod upload_documents_output {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of an <code>UploadDocumentsRequest</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -49,6 +50,7 @@ pub mod upload_documents_output {
             self.adds = Some(input);
             self
         }
+        /// <p>The number of documents that were added to the search domain.</p>
         pub fn set_adds(mut self, input: std::option::Option<i64>) -> Self {
             self.adds = input;
             self
@@ -58,16 +60,23 @@ pub mod upload_documents_output {
             self.deletes = Some(input);
             self
         }
+        /// <p>The number of documents that were deleted from the search domain.</p>
         pub fn set_deletes(mut self, input: std::option::Option<i64>) -> Self {
             self.deletes = input;
             self
         }
+        /// Appends an item to `warnings`.
+        ///
+        /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
+        ///
+        /// <p>Any warnings returned by the document service about the documents being uploaded.</p>
         pub fn warnings(mut self, input: impl Into<crate::model::DocumentServiceWarning>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
             v.push(input.into());
             self.warnings = Some(v);
             self
         }
+        /// <p>Any warnings returned by the document service about the documents being uploaded.</p>
         pub fn set_warnings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DocumentServiceWarning>>,
@@ -125,6 +134,7 @@ pub mod suggest_output {
             self.status = Some(input);
             self
         }
+        /// <p>The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to process the request (<code>timems</code>).</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::SuggestStatus>,
@@ -137,6 +147,7 @@ pub mod suggest_output {
             self.suggest = Some(input);
             self
         }
+        /// <p>Container for the matching search suggestion information.</p>
         pub fn set_suggest(
             mut self,
             input: std::option::Option<crate::model::SuggestModel>,
@@ -208,6 +219,7 @@ pub mod search_output {
             self.status = Some(input);
             self
         }
+        /// <p>The status information returned for the search request.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::SearchStatus>,
@@ -220,10 +232,16 @@ pub mod search_output {
             self.hits = Some(input);
             self
         }
+        /// <p>The documents that match the search criteria.</p>
         pub fn set_hits(mut self, input: std::option::Option<crate::model::Hits>) -> Self {
             self.hits = input;
             self
         }
+        /// Adds a key-value pair to `facets`.
+        ///
+        /// To override the contents of this collection use [`set_facets`](Self::set_facets).
+        ///
+        /// <p>The requested facet information.</p>
         pub fn facets(
             mut self,
             k: impl Into<std::string::String>,
@@ -234,6 +252,7 @@ pub mod search_output {
             self.facets = Some(hash_map);
             self
         }
+        /// <p>The requested facet information.</p>
         pub fn set_facets(
             mut self,
             input: std::option::Option<
@@ -243,6 +262,11 @@ pub mod search_output {
             self.facets = input;
             self
         }
+        /// Adds a key-value pair to `stats`.
+        ///
+        /// To override the contents of this collection use [`set_stats`](Self::set_stats).
+        ///
+        /// <p>The requested field statistics information.</p>
         pub fn stats(
             mut self,
             k: impl Into<std::string::String>,
@@ -253,6 +277,7 @@ pub mod search_output {
             self.stats = Some(hash_map);
             self
         }
+        /// <p>The requested field statistics information.</p>
         pub fn set_stats(
             mut self,
             input: std::option::Option<

@@ -21,7 +21,7 @@ pub fn parse_add_tags_to_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -38,7 +38,7 @@ pub fn parse_add_tags_to_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -55,7 +55,7 @@ pub fn parse_add_tags_to_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -107,7 +107,7 @@ pub fn parse_create_hapg_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateHapgError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHapgError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -124,7 +124,7 @@ pub fn parse_create_hapg_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateHapgError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHapgError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -141,7 +141,7 @@ pub fn parse_create_hapg_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateHapgError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHapgError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -192,7 +192,7 @@ pub fn parse_create_hsm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -209,7 +209,7 @@ pub fn parse_create_hsm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -226,7 +226,7 @@ pub fn parse_create_hsm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -278,7 +278,7 @@ pub fn parse_create_luna_client_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateLunaClientError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLunaClientError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -295,7 +295,7 @@ pub fn parse_create_luna_client_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateLunaClientError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLunaClientError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -312,7 +312,7 @@ pub fn parse_create_luna_client_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateLunaClientError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLunaClientError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -364,7 +364,7 @@ pub fn parse_delete_hapg_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteHapgError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHapgError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -381,7 +381,7 @@ pub fn parse_delete_hapg_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteHapgError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHapgError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -398,7 +398,7 @@ pub fn parse_delete_hapg_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteHapgError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHapgError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -449,7 +449,7 @@ pub fn parse_delete_hsm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteHsmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHsmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -466,7 +466,7 @@ pub fn parse_delete_hsm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteHsmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHsmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -483,7 +483,7 @@ pub fn parse_delete_hsm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteHsmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHsmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -535,7 +535,7 @@ pub fn parse_delete_luna_client_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteLunaClientError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLunaClientError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -552,7 +552,7 @@ pub fn parse_delete_luna_client_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteLunaClientError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLunaClientError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -569,7 +569,7 @@ pub fn parse_delete_luna_client_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteLunaClientError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLunaClientError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -621,7 +621,7 @@ pub fn parse_describe_hapg_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeHapgError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHapgError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -638,7 +638,7 @@ pub fn parse_describe_hapg_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeHapgError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHapgError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -655,7 +655,7 @@ pub fn parse_describe_hapg_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeHapgError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHapgError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -706,7 +706,7 @@ pub fn parse_describe_hsm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeHsmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHsmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -723,7 +723,7 @@ pub fn parse_describe_hsm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeHsmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHsmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -740,7 +740,7 @@ pub fn parse_describe_hsm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeHsmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHsmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -794,7 +794,7 @@ pub fn parse_describe_luna_client_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeLunaClientError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLunaClientError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -811,7 +811,7 @@ pub fn parse_describe_luna_client_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeLunaClientError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLunaClientError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -828,7 +828,7 @@ pub fn parse_describe_luna_client_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeLunaClientError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLunaClientError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -882,7 +882,7 @@ pub fn parse_get_config_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetConfigError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -899,7 +899,7 @@ pub fn parse_get_config_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetConfigError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -916,7 +916,7 @@ pub fn parse_get_config_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetConfigError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -970,7 +970,7 @@ pub fn parse_list_available_zones_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAvailableZonesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAvailableZonesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -987,7 +987,7 @@ pub fn parse_list_available_zones_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAvailableZonesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAvailableZonesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1004,7 +1004,7 @@ pub fn parse_list_available_zones_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAvailableZonesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAvailableZonesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1058,7 +1058,7 @@ pub fn parse_list_hapgs_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListHapgsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHapgsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1075,7 +1075,7 @@ pub fn parse_list_hapgs_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListHapgsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHapgsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1092,7 +1092,7 @@ pub fn parse_list_hapgs_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListHapgsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHapgsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1143,7 +1143,7 @@ pub fn parse_list_hsms_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListHsmsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHsmsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1160,7 +1160,7 @@ pub fn parse_list_hsms_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListHsmsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHsmsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1177,7 +1177,7 @@ pub fn parse_list_hsms_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListHsmsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHsmsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1228,7 +1228,7 @@ pub fn parse_list_luna_clients_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLunaClientsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLunaClientsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1245,7 +1245,7 @@ pub fn parse_list_luna_clients_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLunaClientsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLunaClientsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1262,7 +1262,7 @@ pub fn parse_list_luna_clients_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLunaClientsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLunaClientsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1316,7 +1316,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1333,7 +1333,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1350,7 +1350,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1404,7 +1404,7 @@ pub fn parse_modify_hapg_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ModifyHapgError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyHapgError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1421,7 +1421,7 @@ pub fn parse_modify_hapg_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ModifyHapgError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyHapgError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1438,7 +1438,7 @@ pub fn parse_modify_hapg_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ModifyHapgError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyHapgError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1489,7 +1489,7 @@ pub fn parse_modify_hsm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ModifyHsmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyHsmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1506,7 +1506,7 @@ pub fn parse_modify_hsm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ModifyHsmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyHsmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1523,7 +1523,7 @@ pub fn parse_modify_hsm_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ModifyHsmError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyHsmError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1575,7 +1575,7 @@ pub fn parse_modify_luna_client_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ModifyLunaClientError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyLunaClientError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1634,7 +1634,7 @@ pub fn parse_remove_tags_from_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1651,7 +1651,7 @@ pub fn parse_remove_tags_from_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1668,7 +1668,7 @@ pub fn parse_remove_tags_from_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

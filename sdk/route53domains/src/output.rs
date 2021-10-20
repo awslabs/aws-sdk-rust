@@ -33,6 +33,8 @@ pub mod view_billing_output {
             self.next_page_marker = Some(input.into());
             self
         }
+        /// <p>If there are more billing records than you specified for <code>MaxItems</code> in the request, submit another
+        /// request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
         pub fn set_next_page_marker(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -40,12 +42,18 @@ pub mod view_billing_output {
             self.next_page_marker = input;
             self
         }
+        /// Appends an item to `billing_records`.
+        ///
+        /// To override the contents of this collection use [`set_billing_records`](Self::set_billing_records).
+        ///
+        /// <p>A summary of billing records.</p>
         pub fn billing_records(mut self, input: impl Into<crate::model::BillingRecord>) -> Self {
             let mut v = self.billing_records.unwrap_or_default();
             v.push(input.into());
             self.billing_records = Some(v);
             self
         }
+        /// <p>A summary of billing records.</p>
         pub fn set_billing_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BillingRecord>>,
@@ -69,6 +77,7 @@ impl ViewBillingOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTagsForDomainOutput {}
@@ -128,6 +137,8 @@ pub mod update_domain_nameservers_output {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>Identifier for tracking the progress of the request. To query the operation status, use
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -175,6 +186,7 @@ pub mod update_domain_contact_privacy_output {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>Identifier for tracking the progress of the request. To use this ID to query the operation status, use GetOperationDetail.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -224,6 +236,8 @@ pub mod update_domain_contact_output {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>Identifier for tracking the progress of the request. To query the operation status, use
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -280,6 +294,8 @@ pub mod transfer_domain_to_another_aws_account_output {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>Identifier for tracking the progress of the request. To query the operation status, use
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -292,6 +308,10 @@ pub mod transfer_domain_to_another_aws_account_output {
             self.password = Some(input.into());
             self
         }
+        /// <p>To finish transferring a domain to another AWS account, the account that the domain is being transferred to must submit an
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>
+        /// request. The request must include the value of the <code>Password</code> element that was returned in the
+        /// <code>TransferDomainToAnotherAwsAccount</code> response.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
@@ -342,6 +362,8 @@ pub mod transfer_domain_output {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>Identifier for tracking the progress of the request. To query the operation status, use
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -389,6 +411,7 @@ pub mod retrieve_domain_auth_code_output {
             self.auth_code = Some(input.into());
             self
         }
+        /// <p>The authorization code for the domain.</p>
         pub fn set_auth_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_code = input;
             self
@@ -408,6 +431,7 @@ impl RetrieveDomainAuthCodeOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResendContactReachabilityEmailOutput {
@@ -445,6 +469,7 @@ pub mod resend_contact_reachability_email_output {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name for which you requested a confirmation email.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -454,6 +479,7 @@ pub mod resend_contact_reachability_email_output {
             self.email_address = Some(input.into());
             self
         }
+        /// <p>The email address for the registrant contact at the time that we sent the verification email.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -468,6 +494,9 @@ pub mod resend_contact_reachability_email_output {
             self.is_already_verified = Some(input);
             self
         }
+        /// <p>
+        /// <code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise.
+        /// If the email address has already been verified, we don't send another confirmation email.</p>
         pub fn set_is_already_verified(mut self, input: std::option::Option<bool>) -> Self {
             self.is_already_verified = input;
             self
@@ -489,6 +518,7 @@ impl ResendContactReachabilityEmailOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RenewDomainOutput {
@@ -518,6 +548,8 @@ pub mod renew_domain_output {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>Identifier for tracking the progress of the request. To query the operation status, use
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -569,6 +601,9 @@ pub mod reject_domain_transfer_from_another_aws_account_output {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track the progress of the request.
+        /// Because the transfer request was rejected, the value is no longer valid, and you can't use <code>GetOperationDetail</code>
+        /// to query the operation status.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -619,6 +654,8 @@ pub mod register_domain_output {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>Identifier for tracking the progress of the request. To query the operation status, use
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -661,12 +698,18 @@ pub mod list_tags_for_domain_output {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
+        /// Appends an item to `tag_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+        ///
+        /// <p>A list of the tags that are associated with the specified domain.</p>
         pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
             v.push(input.into());
             self.tag_list = Some(v);
             self
         }
+        /// <p>A list of the tags that are associated with the specified domain.</p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -717,12 +760,18 @@ pub mod list_operations_output {
         pub(crate) next_page_marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `operations`.
+        ///
+        /// To override the contents of this collection use [`set_operations`](Self::set_operations).
+        ///
+        /// <p>Lists summaries of the operations.</p>
         pub fn operations(mut self, input: impl Into<crate::model::OperationSummary>) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input.into());
             self.operations = Some(v);
             self
         }
+        /// <p>Lists summaries of the operations.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OperationSummary>>,
@@ -736,6 +785,8 @@ pub mod list_operations_output {
             self.next_page_marker = Some(input.into());
             self
         }
+        /// <p>If there are more operations than you specified for <code>MaxItems</code> in the request, submit another
+        /// request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
         pub fn set_next_page_marker(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -787,12 +838,18 @@ pub mod list_domains_output {
         pub(crate) next_page_marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `domains`.
+        ///
+        /// To override the contents of this collection use [`set_domains`](Self::set_domains).
+        ///
+        /// <p>A summary of domains.</p>
         pub fn domains(mut self, input: impl Into<crate::model::DomainSummary>) -> Self {
             let mut v = self.domains.unwrap_or_default();
             v.push(input.into());
             self.domains = Some(v);
             self
         }
+        /// <p>A summary of domains.</p>
         pub fn set_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
@@ -806,6 +863,8 @@ pub mod list_domains_output {
             self.next_page_marker = Some(input.into());
             self
         }
+        /// <p>If there are more domains than you specified for <code>MaxItems</code> in the request, submit another
+        /// request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
         pub fn set_next_page_marker(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -844,7 +903,7 @@ pub struct GetOperationDetailOutput {
     /// <p>The type of operation that was requested.</p>
     pub r#type: std::option::Option<crate::model::OperationType>,
     /// <p>The date when the request was submitted.</p>
-    pub submitted_date: std::option::Option<smithy_types::Instant>,
+    pub submitted_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for GetOperationDetailOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -869,7 +928,7 @@ pub mod get_operation_detail_output {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::OperationType>,
-        pub(crate) submitted_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) submitted_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier for the operation.</p>
@@ -877,6 +936,7 @@ pub mod get_operation_detail_output {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the operation.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -886,6 +946,7 @@ pub mod get_operation_detail_output {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the requested operation in the system.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OperationStatus>,
@@ -898,6 +959,7 @@ pub mod get_operation_detail_output {
             self.message = Some(input.into());
             self
         }
+        /// <p>Detailed information on the status including possible errors.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -907,6 +969,7 @@ pub mod get_operation_detail_output {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of a domain.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -916,18 +979,20 @@ pub mod get_operation_detail_output {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of operation that was requested.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::OperationType>) -> Self {
             self.r#type = input;
             self
         }
         /// <p>The date when the request was submitted.</p>
-        pub fn submitted_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submitted_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submitted_date = Some(input);
             self
         }
+        /// <p>The date when the request was submitted.</p>
         pub fn set_submitted_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submitted_date = input;
             self
@@ -952,6 +1017,7 @@ impl GetOperationDetailOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainSuggestionsOutput {
@@ -976,6 +1042,12 @@ pub mod get_domain_suggestions_output {
             std::option::Option<std::vec::Vec<crate::model::DomainSuggestion>>,
     }
     impl Builder {
+        /// Appends an item to `suggestions_list`.
+        ///
+        /// To override the contents of this collection use [`set_suggestions_list`](Self::set_suggestions_list).
+        ///
+        /// <p>A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the request,
+        /// the list contains only domains that are available for registration.</p>
         pub fn suggestions_list(
             mut self,
             input: impl Into<crate::model::DomainSuggestion>,
@@ -985,6 +1057,8 @@ pub mod get_domain_suggestions_output {
             self.suggestions_list = Some(v);
             self
         }
+        /// <p>A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the request,
+        /// the list contains only domains that are available for registration.</p>
         pub fn set_suggestions_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainSuggestion>>,
@@ -1055,13 +1129,13 @@ pub struct GetDomainDetailOutput {
     pub registry_domain_id: std::option::Option<std::string::String>,
     /// <p>The date when the domain was created as found in the response to a WHOIS query. The date and time is in
     /// Unix time format and Coordinated Universal time (UTC).</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
     /// Unix time format and Coordinated Universal time (UTC).</p>
-    pub updated_date: std::option::Option<smithy_types::Instant>,
+    pub updated_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date when the registration for the domain is set to expire. The date and time is in
     /// Unix time format and Coordinated Universal time (UTC).</p>
-    pub expiration_date: std::option::Option<smithy_types::Instant>,
+    pub expiration_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code>
     /// as the reseller. </p>
     pub reseller: std::option::Option<std::string::String>,
@@ -1125,9 +1199,9 @@ pub mod get_domain_detail_output {
         pub(crate) abuse_contact_email: std::option::Option<std::string::String>,
         pub(crate) abuse_contact_phone: std::option::Option<std::string::String>,
         pub(crate) registry_domain_id: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) expiration_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expiration_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) reseller: std::option::Option<std::string::String>,
         pub(crate) dns_sec: std::option::Option<std::string::String>,
         pub(crate) status_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1138,16 +1212,23 @@ pub mod get_domain_detail_output {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of a domain.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
         }
+        /// Appends an item to `nameservers`.
+        ///
+        /// To override the contents of this collection use [`set_nameservers`](Self::set_nameservers).
+        ///
+        /// <p>The name of the domain.</p>
         pub fn nameservers(mut self, input: impl Into<crate::model::Nameserver>) -> Self {
             let mut v = self.nameservers.unwrap_or_default();
             v.push(input.into());
             self.nameservers = Some(v);
             self
         }
+        /// <p>The name of the domain.</p>
         pub fn set_nameservers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Nameserver>>,
@@ -1160,6 +1241,7 @@ pub mod get_domain_detail_output {
             self.auto_renew = Some(input);
             self
         }
+        /// <p>Specifies whether the domain registration is set to renew automatically.</p>
         pub fn set_auto_renew(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_renew = input;
             self
@@ -1169,6 +1251,7 @@ pub mod get_domain_detail_output {
             self.admin_contact = Some(input);
             self
         }
+        /// <p>Provides details about the domain administrative contact.</p>
         pub fn set_admin_contact(
             mut self,
             input: std::option::Option<crate::model::ContactDetail>,
@@ -1181,6 +1264,7 @@ pub mod get_domain_detail_output {
             self.registrant_contact = Some(input);
             self
         }
+        /// <p>Provides details about the domain registrant.</p>
         pub fn set_registrant_contact(
             mut self,
             input: std::option::Option<crate::model::ContactDetail>,
@@ -1193,6 +1277,7 @@ pub mod get_domain_detail_output {
             self.tech_contact = Some(input);
             self
         }
+        /// <p>Provides details about the domain technical contact.</p>
         pub fn set_tech_contact(
             mut self,
             input: std::option::Option<crate::model::ContactDetail>,
@@ -1208,6 +1293,10 @@ pub mod get_domain_detail_output {
             self.admin_privacy = Some(input);
             self
         }
+        /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
+        /// or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+        /// WHOIS queries return the information that you entered for the admin contact.</p>
         pub fn set_admin_privacy(mut self, input: std::option::Option<bool>) -> Self {
             self.admin_privacy = input;
             self
@@ -1220,6 +1309,10 @@ pub mod get_domain_detail_output {
             self.registrant_privacy = Some(input);
             self
         }
+        /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
+        /// or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+        /// WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
         pub fn set_registrant_privacy(mut self, input: std::option::Option<bool>) -> Self {
             self.registrant_privacy = input;
             self
@@ -1232,6 +1325,10 @@ pub mod get_domain_detail_output {
             self.tech_privacy = Some(input);
             self
         }
+        /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
+        /// or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+        /// WHOIS queries return the information that you entered for the technical contact.</p>
         pub fn set_tech_privacy(mut self, input: std::option::Option<bool>) -> Self {
             self.tech_privacy = input;
             self
@@ -1243,6 +1340,9 @@ pub mod get_domain_detail_output {
             self.registrar_name = Some(input.into());
             self
         }
+        /// <p>Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are registered by
+        /// Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for domains that are registered by
+        /// Gandi is <code>"GANDI SAS"</code>. </p>
         pub fn set_registrar_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1255,6 +1355,7 @@ pub mod get_domain_detail_output {
             self.who_is_server = Some(input.into());
             self
         }
+        /// <p>The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.</p>
         pub fn set_who_is_server(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1267,6 +1368,7 @@ pub mod get_domain_detail_output {
             self.registrar_url = Some(input.into());
             self
         }
+        /// <p>Web address of the registrar.</p>
         pub fn set_registrar_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1280,6 +1382,8 @@ pub mod get_domain_detail_output {
             self.abuse_contact_email = Some(input.into());
             self
         }
+        /// <p>Email address to contact to report incorrect contact information for a domain, to report that the domain
+        /// is being used to send spam, to report that someone is cybersquatting on a domain name, or report some other type of abuse.</p>
         pub fn set_abuse_contact_email(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1292,6 +1396,7 @@ pub mod get_domain_detail_output {
             self.abuse_contact_phone = Some(input.into());
             self
         }
+        /// <p>Phone number for reporting abuse.</p>
         pub fn set_abuse_contact_phone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1304,6 +1409,7 @@ pub mod get_domain_detail_output {
             self.registry_domain_id = Some(input.into());
             self
         }
+        /// <p>Reserved for future use.</p>
         pub fn set_registry_domain_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1313,39 +1419,45 @@ pub mod get_domain_detail_output {
         }
         /// <p>The date when the domain was created as found in the response to a WHOIS query. The date and time is in
         /// Unix time format and Coordinated Universal time (UTC).</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>The date when the domain was created as found in the response to a WHOIS query. The date and time is in
+        /// Unix time format and Coordinated Universal time (UTC).</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
         /// Unix time format and Coordinated Universal time (UTC).</p>
-        pub fn updated_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_date = Some(input);
             self
         }
+        /// <p>The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
+        /// Unix time format and Coordinated Universal time (UTC).</p>
         pub fn set_updated_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.updated_date = input;
             self
         }
         /// <p>The date when the registration for the domain is set to expire. The date and time is in
         /// Unix time format and Coordinated Universal time (UTC).</p>
-        pub fn expiration_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn expiration_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.expiration_date = Some(input);
             self
         }
+        /// <p>The date when the registration for the domain is set to expire. The date and time is in
+        /// Unix time format and Coordinated Universal time (UTC).</p>
         pub fn set_expiration_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.expiration_date = input;
             self
@@ -1356,6 +1468,8 @@ pub mod get_domain_detail_output {
             self.reseller = Some(input.into());
             self
         }
+        /// <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code>
+        /// as the reseller. </p>
         pub fn set_reseller(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reseller = input;
             self
@@ -1365,16 +1479,37 @@ pub mod get_domain_detail_output {
             self.dns_sec = Some(input.into());
             self
         }
+        /// <p>Reserved for future use.</p>
         pub fn set_dns_sec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dns_sec = input;
             self
         }
+        /// Appends an item to `status_list`.
+        ///
+        /// To override the contents of this collection use [`set_status_list`](Self::set_status_list).
+        ///
+        /// <p>An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status codes.</p>
+        /// <p>ICANN, the organization that maintains a central database of domain names, has developed a set of domain name
+        /// status codes that tell you the status of a variety of operations on a domain name, for example, registering a domain name,
+        /// transferring a domain name to another registrar, renewing the registration for a domain name, and so on. All registrars
+        /// use this same set of status codes.</p>
+        /// <p>For a current list of domain name status codes and an explanation of what each code means, go to the
+        /// <a href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>.
+        /// (Search on the ICANN website; web searches sometimes return an old version of the document.)</p>
         pub fn status_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.status_list.unwrap_or_default();
             v.push(input.into());
             self.status_list = Some(v);
             self
         }
+        /// <p>An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status codes.</p>
+        /// <p>ICANN, the organization that maintains a central database of domain names, has developed a set of domain name
+        /// status codes that tell you the status of a variety of operations on a domain name, for example, registering a domain name,
+        /// transferring a domain name to another registrar, renewing the registration for a domain name, and so on. All registrars
+        /// use this same set of status codes.</p>
+        /// <p>For a current list of domain name status codes and an explanation of what each code means, go to the
+        /// <a href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>.
+        /// (Search on the ICANN website; web searches sometimes return an old version of the document.)</p>
         pub fn set_status_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1417,6 +1552,7 @@ impl GetDomainDetailOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContactReachabilityStatusOutput {
@@ -1462,6 +1598,7 @@ pub mod get_contact_reachability_status_output {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name for which you requested the reachability status.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -1485,6 +1622,21 @@ pub mod get_contact_reachability_status_output {
             self.status = Some(input);
             self
         }
+        /// <p>Whether the registrant contact has responded. Values include the following:</p>
+        /// <dl>
+        /// <dt>PENDING</dt>
+        /// <dd>
+        /// <p>We sent the confirmation email and haven't received a response yet.</p>
+        /// </dd>
+        /// <dt>DONE</dt>
+        /// <dd>
+        /// <p>We sent the email and got confirmation from the registrant contact.</p>
+        /// </dd>
+        /// <dt>EXPIRED</dt>
+        /// <dd>
+        /// <p>The time limit expired before the registrant contact responded.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ReachabilityStatus>,
@@ -1536,6 +1688,7 @@ pub mod enable_domain_transfer_lock_output {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>Identifier for tracking the progress of the request. To use this ID to query the operation status, use GetOperationDetail.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -1555,6 +1708,7 @@ impl EnableDomainTransferLockOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableDomainAutoRenewOutput {}
@@ -1614,6 +1768,8 @@ pub mod disable_domain_transfer_lock_output {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>Identifier for tracking the progress of the request. To query the operation status, use
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -1633,6 +1789,7 @@ impl DisableDomainTransferLockOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableDomainAutoRenewOutput {}
@@ -1662,6 +1819,7 @@ impl DisableDomainAutoRenewOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTagsForDomainOutput {}
@@ -1719,6 +1877,7 @@ pub mod check_domain_transferability_output {
             self.transferability = Some(input);
             self
         }
+        /// <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
         pub fn set_transferability(
             mut self,
             input: std::option::Option<crate::model::DomainTransferability>,
@@ -1859,6 +2018,52 @@ pub mod check_domain_availability_output {
             self.availability = Some(input);
             self
         }
+        /// <p>Whether the domain name is available for registering.</p>
+        /// <note>
+        /// <p>You can register only domains designated as <code>AVAILABLE</code>.</p>
+        /// </note>
+        /// <p>Valid values:</p>
+        /// <dl>
+        /// <dt>AVAILABLE</dt>
+        /// <dd>
+        /// <p>The domain name is available.</p>
+        /// </dd>
+        /// <dt>AVAILABLE_RESERVED</dt>
+        /// <dd>
+        /// <p>The domain name is reserved under specific conditions.</p>
+        /// </dd>
+        /// <dt>AVAILABLE_PREORDER</dt>
+        /// <dd>
+        /// <p>The domain name is available and can be preordered.</p>
+        /// </dd>
+        /// <dt>DONT_KNOW</dt>
+        /// <dd>
+        /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name is available.
+        /// Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance.
+        /// Try again later.</p>
+        /// </dd>
+        /// <dt>PENDING</dt>
+        /// <dd>
+        /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed,
+        /// it usually takes just a few extra seconds. You can resubmit the request immediately.</p>
+        /// </dd>
+        /// <dt>RESERVED</dt>
+        /// <dd>
+        /// <p>The domain name has been reserved for another person or organization.</p>
+        /// </dd>
+        /// <dt>UNAVAILABLE</dt>
+        /// <dd>
+        /// <p>The domain name is not available.</p>
+        /// </dd>
+        /// <dt>UNAVAILABLE_PREMIUM</dt>
+        /// <dd>
+        /// <p>The domain name is not available.</p>
+        /// </dd>
+        /// <dt>UNAVAILABLE_RESTRICTED</dt>
+        /// <dd>
+        /// <p>The domain name is forbidden.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_availability(
             mut self,
             input: std::option::Option<crate::model::DomainAvailability>,
@@ -1913,6 +2118,9 @@ pub mod cancel_domain_transfer_to_another_aws_account_output {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track the progress of the request.
+        /// Because the transfer request was canceled, the value is no longer valid, and you can't use <code>GetOperationDetail</code>
+        /// to query the operation status.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -1963,6 +2171,8 @@ pub mod accept_domain_transfer_from_another_aws_account_output {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>Identifier for tracking the progress of the request. To query the operation status, use
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self

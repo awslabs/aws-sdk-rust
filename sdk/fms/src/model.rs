@@ -31,6 +31,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are case-sensitive.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -40,6 +41,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as "companyA" or "companyB." Tag values are case-sensitive.  </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -73,9 +75,9 @@ pub struct ProtocolsListData {
     /// You can retrieve the update token by getting the list. </p>
     pub list_update_token: std::option::Option<std::string::String>,
     /// <p>The time that the Firewall Manager protocols list was created.</p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the Firewall Manager protocols list was last updated.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
     pub protocols_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A map of previous version numbers to their corresponding protocol arrays.</p>
@@ -105,8 +107,8 @@ pub mod protocols_list_data {
         pub(crate) list_id: std::option::Option<std::string::String>,
         pub(crate) list_name: std::option::Option<std::string::String>,
         pub(crate) list_update_token: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) protocols_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) previous_protocols_list: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
@@ -118,6 +120,7 @@ pub mod protocols_list_data {
             self.list_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Firewall Manager protocols list.</p>
         pub fn set_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.list_id = input;
             self
@@ -127,6 +130,7 @@ pub mod protocols_list_data {
             self.list_name = Some(input.into());
             self
         }
+        /// <p>The name of the Firewall Manager protocols list.</p>
         pub fn set_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.list_name = input;
             self
@@ -138,6 +142,9 @@ pub mod protocols_list_data {
             self.list_update_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier for each update to the list. When you update
+        /// the list, the update token must match the token of the current version of the application list.
+        /// You can retrieve the update token by getting the list. </p>
         pub fn set_list_update_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -146,35 +153,43 @@ pub mod protocols_list_data {
             self
         }
         /// <p>The time that the Firewall Manager protocols list was created.</p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p>The time that the Firewall Manager protocols list was created.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p>The time that the Firewall Manager protocols list was last updated.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The time that the Firewall Manager protocols list was last updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
         }
+        /// Appends an item to `protocols_list`.
+        ///
+        /// To override the contents of this collection use [`set_protocols_list`](Self::set_protocols_list).
+        ///
+        /// <p>An array of protocols in the Firewall Manager protocols list.</p>
         pub fn protocols_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.protocols_list.unwrap_or_default();
             v.push(input.into());
             self.protocols_list = Some(v);
             self
         }
+        /// <p>An array of protocols in the Firewall Manager protocols list.</p>
         pub fn set_protocols_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -182,6 +197,11 @@ pub mod protocols_list_data {
             self.protocols_list = input;
             self
         }
+        /// Adds a key-value pair to `previous_protocols_list`.
+        ///
+        /// To override the contents of this collection use [`set_previous_protocols_list`](Self::set_previous_protocols_list).
+        ///
+        /// <p>A map of previous version numbers to their corresponding protocol arrays.</p>
         pub fn previous_protocols_list(
             mut self,
             k: impl Into<std::string::String>,
@@ -192,6 +212,7 @@ pub mod protocols_list_data {
             self.previous_protocols_list = Some(hash_map);
             self
         }
+        /// <p>A map of previous version numbers to their corresponding protocol arrays.</p>
         pub fn set_previous_protocols_list(
             mut self,
             input: std::option::Option<
@@ -378,6 +399,7 @@ pub mod policy {
             self.policy_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Firewall Manager policy.</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
@@ -387,6 +409,7 @@ pub mod policy {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The name of the Firewall Manager policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
@@ -400,6 +423,11 @@ pub mod policy {
             self.policy_update_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code>
+        /// request, the <code>PolicyUpdateToken</code> in the request must match the
+        /// <code>PolicyUpdateToken</code> of the current policy version. To get the
+        /// <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code>
+        /// request.</p>
         pub fn set_policy_update_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -415,6 +443,7 @@ pub mod policy {
             self.security_service_policy_data = Some(input);
             self
         }
+        /// <p>Details about the security service that is being used to protect the resources.</p>
         pub fn set_security_service_policy_data(
             mut self,
             input: std::option::Option<crate::model::SecurityServicePolicyData>,
@@ -437,6 +466,17 @@ pub mod policy {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The type of resource protected by or in scope of the policy. This is in the format shown
+        /// in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>.
+        /// To apply this policy to multiple resource types, specify a resource type of <code>ResourceTypeList</code> and then specify the resource types in a <code>ResourceTypeList</code>.</p>
+        /// <p>For WAF and Shield Advanced, example resource types include
+        /// <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
+        /// <code>AWS::CloudFront::Distribution</code>. For a security group common policy, valid values
+        /// are <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For a
+        /// security group content audit policy, valid values are <code>AWS::EC2::SecurityGroup</code>,
+        /// <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>. For a security
+        /// group usage audit policy, the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy,
+        /// the value is <code>AWS::EC2::VPC</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -444,12 +484,18 @@ pub mod policy {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `resource_type_list`.
+        ///
+        /// To override the contents of this collection use [`set_resource_type_list`](Self::set_resource_type_list).
+        ///
+        /// <p>An array of <code>ResourceType</code> objects. Use this only to specify multiple resource types. To specify a single resource type, use <code>ResourceType</code>.</p>
         pub fn resource_type_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_type_list.unwrap_or_default();
             v.push(input.into());
             self.resource_type_list = Some(v);
             self
         }
+        /// <p>An array of <code>ResourceType</code> objects. Use this only to specify multiple resource types. To specify a single resource type, use <code>ResourceType</code>.</p>
         pub fn set_resource_type_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -457,12 +503,18 @@ pub mod policy {
             self.resource_type_list = input;
             self
         }
+        /// Appends an item to `resource_tags`.
+        ///
+        /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
+        ///
+        /// <p>An array of <code>ResourceTag</code> objects.</p>
         pub fn resource_tags(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
             v.push(input.into());
             self.resource_tags = Some(v);
             self
         }
+        /// <p>An array of <code>ResourceTag</code> objects.</p>
         pub fn set_resource_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
@@ -478,6 +530,10 @@ pub mod policy {
             self.exclude_resource_tags = Some(input);
             self
         }
+        /// <p>If set to <code>True</code>, resources with the tags that are specified in the
+        /// <code>ResourceTag</code> array are not in scope of the policy. If set to <code>False</code>,
+        /// and the <code>ResourceTag</code> array is not null, only resources with the specified tags are
+        /// in scope of the policy.</p>
         pub fn set_exclude_resource_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.exclude_resource_tags = input;
             self
@@ -487,6 +543,7 @@ pub mod policy {
             self.remediation_enabled = Some(input);
             self
         }
+        /// <p>Indicates if the policy should be automatically applied to new resources.</p>
         pub fn set_remediation_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.remediation_enabled = input;
             self
@@ -496,6 +553,7 @@ pub mod policy {
             self.delete_unused_fm_managed_resources = Some(input);
             self
         }
+        /// <p>Indicates whether Firewall Manager should delete Firewall Manager managed resources, such as web ACLs and security groups, when they are not in use by the Firewall Manager policy. By default, Firewall Manager doesn't delete unused Firewall Manager managed resources. This option is not available for Shield Advanced or WAF Classic policies.</p>
         pub fn set_delete_unused_fm_managed_resources(
             mut self,
             input: std::option::Option<bool>,
@@ -503,6 +561,31 @@ pub mod policy {
             self.delete_unused_fm_managed_resources = input;
             self
         }
+        /// Adds a key-value pair to `include_map`.
+        ///
+        /// To override the contents of this collection use [`set_include_map`](Self::set_include_map).
+        ///
+        /// <p>Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to include in the policy.
+        /// Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time.</p>
+        /// <p>You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall Manager
+        /// applies the policy to all accounts specified by the <code>IncludeMap</code>, and
+        /// does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager
+        /// applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.</p>
+        /// <p>You can specify account IDs, OUs, or a combination: </p>
+        /// <ul>
+        /// <li>
+        /// <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map:  
+        /// <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map:
+        /// <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map:
+        /// <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn include_map(
             mut self,
             k: impl Into<crate::model::CustomerPolicyScopeIdType>,
@@ -513,6 +596,27 @@ pub mod policy {
             self.include_map = Some(hash_map);
             self
         }
+        /// <p>Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to include in the policy.
+        /// Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time.</p>
+        /// <p>You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall Manager
+        /// applies the policy to all accounts specified by the <code>IncludeMap</code>, and
+        /// does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager
+        /// applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.</p>
+        /// <p>You can specify account IDs, OUs, or a combination: </p>
+        /// <ul>
+        /// <li>
+        /// <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map:  
+        /// <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map:
+        /// <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map:
+        /// <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_include_map(
             mut self,
             input: std::option::Option<
@@ -525,6 +629,31 @@ pub mod policy {
             self.include_map = input;
             self
         }
+        /// Adds a key-value pair to `exclude_map`.
+        ///
+        /// To override the contents of this collection use [`set_exclude_map`](Self::set_exclude_map).
+        ///
+        /// <p>Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to exclude from the policy.
+        /// Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time.</p>
+        /// <p>You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall Manager
+        /// applies the policy to all accounts specified by the <code>IncludeMap</code>, and
+        /// does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager
+        /// applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.</p>
+        /// <p>You can specify account IDs, OUs, or a combination: </p>
+        /// <ul>
+        /// <li>
+        /// <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map:  
+        /// <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map:
+        /// <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map:
+        /// <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn exclude_map(
             mut self,
             k: impl Into<crate::model::CustomerPolicyScopeIdType>,
@@ -535,6 +664,27 @@ pub mod policy {
             self.exclude_map = Some(hash_map);
             self
         }
+        /// <p>Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to exclude from the policy.
+        /// Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time.</p>
+        /// <p>You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall Manager
+        /// applies the policy to all accounts specified by the <code>IncludeMap</code>, and
+        /// does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify an <code>IncludeMap</code>, then Firewall Manager
+        /// applies the policy to all accounts except for those specified by the <code>ExcludeMap</code>.</p>
+        /// <p>You can specify account IDs, OUs, or a combination: </p>
+        /// <ul>
+        /// <li>
+        /// <p>Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following is a valid map:  
+        /// <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following is a valid map:
+        /// <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Specify accounts and OUs together in a single map, separated with a comma. For example, the following is a valid map:
+        /// <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_exclude_map(
             mut self,
             input: std::option::Option<
@@ -575,6 +725,7 @@ impl Policy {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -586,7 +737,9 @@ impl Policy {
     std::hash::Hash,
 )]
 pub enum CustomerPolicyScopeIdType {
+    #[allow(missing_docs)] // documentation missing in model
     Account,
+    #[allow(missing_docs)] // documentation missing in model
     OrgUnit,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -608,6 +761,7 @@ impl std::str::FromStr for CustomerPolicyScopeIdType {
     }
 }
 impl CustomerPolicyScopeIdType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CustomerPolicyScopeIdType::Account => "ACCOUNT",
@@ -615,6 +769,7 @@ impl CustomerPolicyScopeIdType {
             CustomerPolicyScopeIdType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACCOUNT", "ORG_UNIT"]
     }
@@ -663,6 +818,7 @@ pub mod resource_tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The resource tag key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -672,6 +828,7 @@ pub mod resource_tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The resource tag value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -800,6 +957,11 @@ pub mod security_service_policy_data {
             self.r#type = Some(input);
             self
         }
+        /// <p>The service that the policy is using to protect the resources. This specifies the type of
+        /// policy that is created, either an WAF policy, a Shield Advanced policy, or a security
+        /// group policy. For security group policies, Firewall Manager supports one security group for
+        /// each common policy and for each content audit policy. This is an adjustable limit that you can
+        /// increase by contacting Amazon Web Services Support.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::SecurityServiceType>,
@@ -880,6 +1042,75 @@ pub mod security_service_policy_data {
             self.managed_service_data = Some(input.into());
             self
         }
+        /// <p>Details about the service that are specific to the service type, in JSON format. For
+        /// service type <code>SHIELD_ADVANCED</code>, this is an empty string.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Example: <code>DNS_FIREWALL</code>
+        /// </p>
+        /// <p>
+        /// <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
+        /// </p>
+        /// <note>
+        /// <p>Valid values for <code>preProcessRuleGroups</code> are between 1 and 99. Valid values for <code>postProcessRuleGroups</code> are between 9901 and 10000.</p>
+        /// </note>
+        /// </li>
+        /// <li>
+        /// <p>Example: <code>NETWORK_FIREWALL</code>
+        /// </p>
+        /// <p>
+        /// <code>"{\"type\":\"NETWORK_FIREWALL\",\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateless-rulegroup/rulegroup2\",\"priority\":10}],\"networkFirewallStatelessDefaultActions\":[\"aws:pass\",\"custom1\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"custom2\",\"aws:pass\"],\"networkFirewallStatelessCustomActions\":[{\"actionName\":\"custom1\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension1\"}]}}},{\"actionName\":\"custom2\",\"actionDefinition\":{\"publishMetricAction\":{\"dimensions\":[{\"value\":\"dimension2\"}]}}}],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-1:1234567891011:stateful-rulegroup/rulegroup1\"}],\"networkFirewallOrchestrationConfig\":{\"singleFirewallEndpointPerVPC\":true,\"allowedIPV4CidrList\":[\"10.24.34.0/28\"]} }"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Example: <code>WAFV2</code>
+        /// </p>
+        /// <p>
+        /// <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
+        /// </p>
+        /// <p>In the <code>loggingConfiguration</code>, you can specify one <code>logDestinationConfigs</code>, you can optionally provide up to 20 <code>redactedFields</code>, and the <code>RedactedFieldType</code> must be one of <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Example: <code>WAF Classic</code>
+        /// </p>
+        /// <p>
+        /// <code>"{\"type\": \"WAF\", \"ruleGroups\": [{\"id\":\"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Example: <code>SECURITY_GROUPS_COMMON</code>
+        /// </p>
+        /// <p>
+        /// <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Example: Shared VPCs. Apply the preceding policy to resources in shared VPCs as well as to those in VPCs that the account owns
+        /// </p>
+        /// <p>
+        /// <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Example: <code>SECURITY_GROUPS_CONTENT_AUDIT</code>
+        /// </p>
+        /// <p>
+        /// <code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\"sg-000e55995d61a06bd\"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code>
+        /// </p>
+        /// <p>The security group action for content audit can be <code>ALLOW</code> or
+        /// <code>DENY</code>. For <code>ALLOW</code>, all in-scope security group rules must be
+        /// within the allowed range of the policy's security group rules. For <code>DENY</code>, all
+        /// in-scope security group rules must not contain a value or a range that matches a rule
+        /// value or range in the policy security group.</p>
+        /// </li>
+        /// <li>
+        /// <p>Example: <code>SECURITY_GROUPS_USAGE_AUDIT</code>
+        /// </p>
+        /// <p>
+        /// <code>"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true}"</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_managed_service_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -903,6 +1134,7 @@ impl SecurityServicePolicyData {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -914,13 +1146,21 @@ impl SecurityServicePolicyData {
     std::hash::Hash,
 )]
 pub enum SecurityServiceType {
+    #[allow(missing_docs)] // documentation missing in model
     DnsFirewall,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkFirewall,
+    #[allow(missing_docs)] // documentation missing in model
     SecurityGroupsCommon,
+    #[allow(missing_docs)] // documentation missing in model
     SecurityGroupsContentAudit,
+    #[allow(missing_docs)] // documentation missing in model
     SecurityGroupsUsageAudit,
+    #[allow(missing_docs)] // documentation missing in model
     ShieldAdvanced,
+    #[allow(missing_docs)] // documentation missing in model
     Waf,
+    #[allow(missing_docs)] // documentation missing in model
     Wafv2,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -948,6 +1188,7 @@ impl std::str::FromStr for SecurityServiceType {
     }
 }
 impl SecurityServiceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SecurityServiceType::DnsFirewall => "DNS_FIREWALL",
@@ -961,6 +1202,7 @@ impl SecurityServiceType {
             SecurityServiceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DNS_FIREWALL",
@@ -993,9 +1235,9 @@ pub struct AppsListData {
     /// You can retrieve the update token by getting the list. </p>
     pub list_update_token: std::option::Option<std::string::String>,
     /// <p>The time that the Firewall Manager applications list was created.</p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the Firewall Manager applications list was last updated.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>An array of applications in the Firewall Manager applications list.</p>
     pub apps_list: std::option::Option<std::vec::Vec<crate::model::App>>,
     /// <p>A map of previous version numbers to their corresponding <code>App</code> object arrays.</p>
@@ -1025,8 +1267,8 @@ pub mod apps_list_data {
         pub(crate) list_id: std::option::Option<std::string::String>,
         pub(crate) list_name: std::option::Option<std::string::String>,
         pub(crate) list_update_token: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) apps_list: std::option::Option<std::vec::Vec<crate::model::App>>,
         pub(crate) previous_apps_list: std::option::Option<
             std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::App>>,
@@ -1038,6 +1280,7 @@ pub mod apps_list_data {
             self.list_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Firewall Manager applications list.</p>
         pub fn set_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.list_id = input;
             self
@@ -1047,6 +1290,7 @@ pub mod apps_list_data {
             self.list_name = Some(input.into());
             self
         }
+        /// <p>The name of the Firewall Manager applications list.</p>
         pub fn set_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.list_name = input;
             self
@@ -1058,6 +1302,9 @@ pub mod apps_list_data {
             self.list_update_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier for each update to the list. When you update
+        /// the list, the update token must match the token of the current version of the application list.
+        /// You can retrieve the update token by getting the list. </p>
         pub fn set_list_update_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1066,35 +1313,43 @@ pub mod apps_list_data {
             self
         }
         /// <p>The time that the Firewall Manager applications list was created.</p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p>The time that the Firewall Manager applications list was created.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p>The time that the Firewall Manager applications list was last updated.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The time that the Firewall Manager applications list was last updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
         }
+        /// Appends an item to `apps_list`.
+        ///
+        /// To override the contents of this collection use [`set_apps_list`](Self::set_apps_list).
+        ///
+        /// <p>An array of applications in the Firewall Manager applications list.</p>
         pub fn apps_list(mut self, input: impl Into<crate::model::App>) -> Self {
             let mut v = self.apps_list.unwrap_or_default();
             v.push(input.into());
             self.apps_list = Some(v);
             self
         }
+        /// <p>An array of applications in the Firewall Manager applications list.</p>
         pub fn set_apps_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::App>>,
@@ -1102,6 +1357,11 @@ pub mod apps_list_data {
             self.apps_list = input;
             self
         }
+        /// Adds a key-value pair to `previous_apps_list`.
+        ///
+        /// To override the contents of this collection use [`set_previous_apps_list`](Self::set_previous_apps_list).
+        ///
+        /// <p>A map of previous version numbers to their corresponding <code>App</code> object arrays.</p>
         pub fn previous_apps_list(
             mut self,
             k: impl Into<std::string::String>,
@@ -1112,6 +1372,7 @@ pub mod apps_list_data {
             self.previous_apps_list = Some(hash_map);
             self
         }
+        /// <p>A map of previous version numbers to their corresponding <code>App</code> object arrays.</p>
         pub fn set_previous_apps_list(
             mut self,
             input: std::option::Option<
@@ -1178,6 +1439,7 @@ pub mod app {
             self.app_name = Some(input.into());
             self
         }
+        /// <p>The application's name.</p>
         pub fn set_app_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_name = input;
             self
@@ -1187,6 +1449,7 @@ pub mod app {
             self.protocol = Some(input.into());
             self
         }
+        /// <p>The IP protocol name or number. The name can be one of <code>tcp</code>, <code>udp</code>, or <code>icmp</code>. For information on possible numbers, see <a href="https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>.</p>
         pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.protocol = input;
             self
@@ -1196,6 +1459,7 @@ pub mod app {
             self.port = Some(input);
             self
         }
+        /// <p>The application's port number, for example <code>80</code>.</p>
         pub fn set_port(mut self, input: std::option::Option<i64>) -> Self {
             self.port = input;
             self
@@ -1257,6 +1521,7 @@ pub mod protocols_list_data_summary {
             self.list_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
         pub fn set_list_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.list_arn = input;
             self
@@ -1266,6 +1531,7 @@ pub mod protocols_list_data_summary {
             self.list_id = Some(input.into());
             self
         }
+        /// <p>The ID of the specified protocols list.</p>
         pub fn set_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.list_id = input;
             self
@@ -1275,16 +1541,23 @@ pub mod protocols_list_data_summary {
             self.list_name = Some(input.into());
             self
         }
+        /// <p>The name of the specified protocols list.</p>
         pub fn set_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.list_name = input;
             self
         }
+        /// Appends an item to `protocols_list`.
+        ///
+        /// To override the contents of this collection use [`set_protocols_list`](Self::set_protocols_list).
+        ///
+        /// <p>An array of protocols in the Firewall Manager protocols list.</p>
         pub fn protocols_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.protocols_list.unwrap_or_default();
             v.push(input.into());
             self.protocols_list = Some(v);
             self
         }
+        /// <p>An array of protocols in the Firewall Manager protocols list.</p>
         pub fn set_protocols_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1376,6 +1649,7 @@ pub mod policy_summary {
             self.policy_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the specified policy.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input;
             self
@@ -1385,6 +1659,7 @@ pub mod policy_summary {
             self.policy_id = Some(input.into());
             self
         }
+        /// <p>The ID of the specified policy.</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
@@ -1394,6 +1669,7 @@ pub mod policy_summary {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The name of the specified policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
@@ -1412,6 +1688,16 @@ pub mod policy_summary {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The type of resource protected by or in scope of the policy. This is in the format shown
+        /// in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>.
+        /// For WAF and Shield Advanced, examples include
+        /// <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and
+        /// <code>AWS::CloudFront::Distribution</code>. For a security group common policy, valid values
+        /// are <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For a
+        /// security group content audit policy, valid values are <code>AWS::EC2::SecurityGroup</code>,
+        /// <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>. For a security
+        /// group usage audit policy, the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy,
+        /// the value is <code>AWS::EC2::VPC</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1426,6 +1712,9 @@ pub mod policy_summary {
             self.security_service_type = Some(input);
             self
         }
+        /// <p>The service that the policy is using to protect the resources. This specifies the type of
+        /// policy that is created, either an WAF policy, a Shield Advanced policy, or a security
+        /// group policy.</p>
         pub fn set_security_service_type(
             mut self,
             input: std::option::Option<crate::model::SecurityServiceType>,
@@ -1438,6 +1727,7 @@ pub mod policy_summary {
             self.remediation_enabled = Some(input);
             self
         }
+        /// <p>Indicates if the policy should be automatically applied to new resources.</p>
         pub fn set_remediation_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.remediation_enabled = input;
             self
@@ -1447,6 +1737,7 @@ pub mod policy_summary {
             self.delete_unused_fm_managed_resources = Some(input);
             self
         }
+        /// <p>Indicates whether Firewall Manager should delete Firewall Manager managed resources, such as web ACLs and security groups, when they are not in use by the Firewall Manager policy. By default, Firewall Manager doesn't delete unused Firewall Manager managed resources. This option is not available for Shield Advanced or WAF Classic policies.</p>
         pub fn set_delete_unused_fm_managed_resources(
             mut self,
             input: std::option::Option<bool>,
@@ -1495,7 +1786,7 @@ pub struct PolicyComplianceStatus {
     /// <p>An array of <code>EvaluationResult</code> objects.</p>
     pub evaluation_results: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
     /// <p>Timestamp of the last update to the <code>EvaluationResult</code> objects.</p>
-    pub last_updated: std::option::Option<smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Details about problems with dependent services, such as WAF or Config,
     /// and the error message received that indicates the problem with the service.</p>
     pub issue_info_map: std::option::Option<
@@ -1527,7 +1818,7 @@ pub mod policy_compliance_status {
         pub(crate) member_account: std::option::Option<std::string::String>,
         pub(crate) evaluation_results:
             std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
-        pub(crate) last_updated: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) issue_info_map: std::option::Option<
             std::collections::HashMap<crate::model::DependentServiceName, std::string::String>,
         >,
@@ -1538,6 +1829,7 @@ pub mod policy_compliance_status {
             self.policy_owner = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
         pub fn set_policy_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_owner = input;
             self
@@ -1547,6 +1839,7 @@ pub mod policy_compliance_status {
             self.policy_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Firewall Manager policy.</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
@@ -1556,6 +1849,7 @@ pub mod policy_compliance_status {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The name of the Firewall Manager policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
@@ -1565,6 +1859,7 @@ pub mod policy_compliance_status {
             self.member_account = Some(input.into());
             self
         }
+        /// <p>The member account ID.</p>
         pub fn set_member_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1572,6 +1867,11 @@ pub mod policy_compliance_status {
             self.member_account = input;
             self
         }
+        /// Appends an item to `evaluation_results`.
+        ///
+        /// To override the contents of this collection use [`set_evaluation_results`](Self::set_evaluation_results).
+        ///
+        /// <p>An array of <code>EvaluationResult</code> objects.</p>
         pub fn evaluation_results(
             mut self,
             input: impl Into<crate::model::EvaluationResult>,
@@ -1581,6 +1881,7 @@ pub mod policy_compliance_status {
             self.evaluation_results = Some(v);
             self
         }
+        /// <p>An array of <code>EvaluationResult</code> objects.</p>
         pub fn set_evaluation_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
@@ -1589,17 +1890,24 @@ pub mod policy_compliance_status {
             self
         }
         /// <p>Timestamp of the last update to the <code>EvaluationResult</code> objects.</p>
-        pub fn last_updated(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated = Some(input);
             self
         }
+        /// <p>Timestamp of the last update to the <code>EvaluationResult</code> objects.</p>
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated = input;
             self
         }
+        /// Adds a key-value pair to `issue_info_map`.
+        ///
+        /// To override the contents of this collection use [`set_issue_info_map`](Self::set_issue_info_map).
+        ///
+        /// <p>Details about problems with dependent services, such as WAF or Config,
+        /// and the error message received that indicates the problem with the service.</p>
         pub fn issue_info_map(
             mut self,
             k: impl Into<crate::model::DependentServiceName>,
@@ -1610,6 +1918,8 @@ pub mod policy_compliance_status {
             self.issue_info_map = Some(hash_map);
             self
         }
+        /// <p>Details about problems with dependent services, such as WAF or Config,
+        /// and the error message received that indicates the problem with the service.</p>
         pub fn set_issue_info_map(
             mut self,
             input: std::option::Option<
@@ -1640,6 +1950,7 @@ impl PolicyComplianceStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1651,9 +1962,13 @@ impl PolicyComplianceStatus {
     std::hash::Hash,
 )]
 pub enum DependentServiceName {
+    #[allow(missing_docs)] // documentation missing in model
     AwsConfig,
+    #[allow(missing_docs)] // documentation missing in model
     AwsShieldAdvanced,
+    #[allow(missing_docs)] // documentation missing in model
     AwsVirtualPrivateCloud,
+    #[allow(missing_docs)] // documentation missing in model
     Awswaf,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1677,6 +1992,7 @@ impl std::str::FromStr for DependentServiceName {
     }
 }
 impl DependentServiceName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DependentServiceName::AwsConfig => "AWSCONFIG",
@@ -1686,6 +2002,7 @@ impl DependentServiceName {
             DependentServiceName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AWSCONFIG", "AWSSHIELD_ADVANCED", "AWSVPC", "AWSWAF"]
     }
@@ -1741,6 +2058,7 @@ pub mod evaluation_result {
             self.compliance_status = Some(input);
             self
         }
+        /// <p>Describes an Amazon Web Services account's compliance with the Firewall Manager policy.</p>
         pub fn set_compliance_status(
             mut self,
             input: std::option::Option<crate::model::PolicyComplianceStatusType>,
@@ -1756,6 +2074,10 @@ pub mod evaluation_result {
             self.violator_count = Some(input);
             self
         }
+        /// <p>The number of resources that are noncompliant with the specified policy. For WAF and
+        /// Shield Advanced policies, a resource is considered noncompliant if it is not associated with
+        /// the policy. For security group policies, a resource is considered noncompliant if it doesn't
+        /// comply with the rules of the policy and remediation is disabled or not possible.</p>
         pub fn set_violator_count(mut self, input: std::option::Option<i64>) -> Self {
             self.violator_count = input;
             self
@@ -1766,6 +2088,8 @@ pub mod evaluation_result {
             self.evaluation_limit_exceeded = Some(input);
             self
         }
+        /// <p>Indicates that over 100 resources are noncompliant with the Firewall Manager
+        /// policy.</p>
         pub fn set_evaluation_limit_exceeded(mut self, input: std::option::Option<bool>) -> Self {
             self.evaluation_limit_exceeded = input;
             self
@@ -1787,6 +2111,7 @@ impl EvaluationResult {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1798,7 +2123,9 @@ impl EvaluationResult {
     std::hash::Hash,
 )]
 pub enum PolicyComplianceStatusType {
+    #[allow(missing_docs)] // documentation missing in model
     Compliant,
+    #[allow(missing_docs)] // documentation missing in model
     NonCompliant,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1820,6 +2147,7 @@ impl std::str::FromStr for PolicyComplianceStatusType {
     }
 }
 impl PolicyComplianceStatusType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PolicyComplianceStatusType::Compliant => "COMPLIANT",
@@ -1827,6 +2155,7 @@ impl PolicyComplianceStatusType {
             PolicyComplianceStatusType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COMPLIANT", "NON_COMPLIANT"]
     }
@@ -1877,6 +2206,7 @@ pub mod apps_list_data_summary {
             self.list_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
         pub fn set_list_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.list_arn = input;
             self
@@ -1886,6 +2216,7 @@ pub mod apps_list_data_summary {
             self.list_id = Some(input.into());
             self
         }
+        /// <p>The ID of the applications list.</p>
         pub fn set_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.list_id = input;
             self
@@ -1895,16 +2226,23 @@ pub mod apps_list_data_summary {
             self.list_name = Some(input.into());
             self
         }
+        /// <p>The name of the applications list.</p>
         pub fn set_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.list_name = input;
             self
         }
+        /// Appends an item to `apps_list`.
+        ///
+        /// To override the contents of this collection use [`set_apps_list`](Self::set_apps_list).
+        ///
+        /// <p>An array of <code>App</code> objects in the Firewall Manager applications list.</p>
         pub fn apps_list(mut self, input: impl Into<crate::model::App>) -> Self {
             let mut v = self.apps_list.unwrap_or_default();
             v.push(input.into());
             self.apps_list = Some(v);
             self
         }
+        /// <p>An array of <code>App</code> objects in the Firewall Manager applications list.</p>
         pub fn set_apps_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::App>>,
@@ -1983,6 +2321,7 @@ pub mod violation_detail {
             self.policy_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Firewall Manager policy that the violation details were requested for.</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
@@ -1992,6 +2331,7 @@ pub mod violation_detail {
             self.member_account = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account that the violation details were requested for.</p>
         pub fn set_member_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2004,6 +2344,7 @@ pub mod violation_detail {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The resource ID that the violation details were requested for.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -2013,6 +2354,7 @@ pub mod violation_detail {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The resource type that the violation details were requested for.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2020,6 +2362,11 @@ pub mod violation_detail {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `resource_violations`.
+        ///
+        /// To override the contents of this collection use [`set_resource_violations`](Self::set_resource_violations).
+        ///
+        /// <p>List of violations for the requested resource.</p>
         pub fn resource_violations(
             mut self,
             input: impl Into<crate::model::ResourceViolation>,
@@ -2029,6 +2376,7 @@ pub mod violation_detail {
             self.resource_violations = Some(v);
             self
         }
+        /// <p>List of violations for the requested resource.</p>
         pub fn set_resource_violations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceViolation>>,
@@ -2036,12 +2384,18 @@ pub mod violation_detail {
             self.resource_violations = input;
             self
         }
+        /// Appends an item to `resource_tags`.
+        ///
+        /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
+        ///
+        /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
         pub fn resource_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
             v.push(input.into());
             self.resource_tags = Some(v);
             self
         }
+        /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
         pub fn set_resource_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2054,6 +2408,7 @@ pub mod violation_detail {
             self.resource_description = Some(input.into());
             self
         }
+        /// <p>Brief description for the requested resource.</p>
         pub fn set_resource_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2268,6 +2623,7 @@ pub mod resource_violation {
             self.aws_vpc_security_group_violation = Some(input);
             self
         }
+        /// <p>Violation detail for security groups.</p>
         pub fn set_aws_vpc_security_group_violation(
             mut self,
             input: std::option::Option<crate::model::AwsVpcSecurityGroupViolation>,
@@ -2283,6 +2639,7 @@ pub mod resource_violation {
             self.aws_ec2_network_interface_violation = Some(input);
             self
         }
+        /// <p>Violation detail for a network interface.</p>
         pub fn set_aws_ec2_network_interface_violation(
             mut self,
             input: std::option::Option<crate::model::AwsEc2NetworkInterfaceViolation>,
@@ -2298,6 +2655,7 @@ pub mod resource_violation {
             self.aws_ec2_instance_violation = Some(input);
             self
         }
+        /// <p>Violation detail for an EC2 instance.</p>
         pub fn set_aws_ec2_instance_violation(
             mut self,
             input: std::option::Option<crate::model::AwsEc2InstanceViolation>,
@@ -2314,6 +2672,8 @@ pub mod resource_violation {
             self.network_firewall_missing_firewall_violation = Some(input);
             self
         }
+        /// <p>Violation detail for an Network Firewall policy that indicates that a subnet has no Firewall Manager
+        /// managed firewall in its VPC. </p>
         pub fn set_network_firewall_missing_firewall_violation(
             mut self,
             input: std::option::Option<crate::model::NetworkFirewallMissingFirewallViolation>,
@@ -2330,6 +2690,8 @@ pub mod resource_violation {
             self.network_firewall_missing_subnet_violation = Some(input);
             self
         }
+        /// <p>Violation detail for an Network Firewall policy that indicates that an Availability Zone is
+        /// missing the expected Firewall Manager managed subnet.</p>
         pub fn set_network_firewall_missing_subnet_violation(
             mut self,
             input: std::option::Option<crate::model::NetworkFirewallMissingSubnetViolation>,
@@ -2346,6 +2708,8 @@ pub mod resource_violation {
             self.network_firewall_missing_expected_rt_violation = Some(input);
             self
         }
+        /// <p>Violation detail for an Network Firewall policy that indicates that a subnet
+        /// is not associated with the expected Firewall Manager managed route table. </p>
         pub fn set_network_firewall_missing_expected_rt_violation(
             mut self,
             input: std::option::Option<crate::model::NetworkFirewallMissingExpectedRtViolation>,
@@ -2364,6 +2728,10 @@ pub mod resource_violation {
             self.network_firewall_policy_modified_violation = Some(input);
             self
         }
+        /// <p>Violation detail for an Network Firewall policy that indicates that a firewall policy
+        /// in an individual account has been modified in a way that makes it noncompliant.  
+        /// For example, the individual account owner might have deleted a rule group,
+        /// changed the priority of a stateless rule group, or changed a policy default action.</p>
         pub fn set_network_firewall_policy_modified_violation(
             mut self,
             input: std::option::Option<crate::model::NetworkFirewallPolicyModifiedViolation>,
@@ -2379,6 +2747,7 @@ pub mod resource_violation {
             self.network_firewall_internet_traffic_not_inspected_violation = Some(input);
             self
         }
+        /// <p>Violation detail for the subnet for which internet traffic hasn't been inspected.</p>
         pub fn set_network_firewall_internet_traffic_not_inspected_violation(
             mut self,
             input: std::option::Option<
@@ -2396,6 +2765,7 @@ pub mod resource_violation {
             self.network_firewall_invalid_route_configuration_violation = Some(input);
             self
         }
+        /// <p>The route configuration is invalid.</p>
         pub fn set_network_firewall_invalid_route_configuration_violation(
             mut self,
             input: std::option::Option<
@@ -2413,6 +2783,7 @@ pub mod resource_violation {
             self.network_firewall_black_hole_route_detected_violation = Some(input);
             self
         }
+        /// <p>Violation detail for an internet gateway route with an inactive state in the customer subnet route table or Network Firewall subnet route table.</p>
         pub fn set_network_firewall_black_hole_route_detected_violation(
             mut self,
             input: std::option::Option<
@@ -2430,6 +2801,7 @@ pub mod resource_violation {
             self.network_firewall_unexpected_firewall_routes_violation = Some(input);
             self
         }
+        /// <p>There's an unexpected firewall route.</p>
         pub fn set_network_firewall_unexpected_firewall_routes_violation(
             mut self,
             input: std::option::Option<
@@ -2447,6 +2819,7 @@ pub mod resource_violation {
             self.network_firewall_unexpected_gateway_routes_violation = Some(input);
             self
         }
+        /// <p>There's an unexpected gateway route.</p>
         pub fn set_network_firewall_unexpected_gateway_routes_violation(
             mut self,
             input: std::option::Option<
@@ -2464,6 +2837,7 @@ pub mod resource_violation {
             self.network_firewall_missing_expected_routes_violation = Some(input);
             self
         }
+        /// <p>Expected routes are missing from Network Firewall.</p>
         pub fn set_network_firewall_missing_expected_routes_violation(
             mut self,
             input: std::option::Option<crate::model::NetworkFirewallMissingExpectedRoutesViolation>,
@@ -2480,6 +2854,8 @@ pub mod resource_violation {
             self.dns_rule_group_priority_conflict_violation = Some(input);
             self
         }
+        /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager
+        /// tried to associate with a VPC has the same priority as a rule group that's already associated. </p>
         pub fn set_dns_rule_group_priority_conflict_violation(
             mut self,
             input: std::option::Option<crate::model::DnsRuleGroupPriorityConflictViolation>,
@@ -2496,6 +2872,8 @@ pub mod resource_violation {
             self.dns_duplicate_rule_group_violation = Some(input);
             self
         }
+        /// <p>Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager
+        /// tried to associate with a VPC is already associated with the VPC and can't be associated again. </p>
         pub fn set_dns_duplicate_rule_group_violation(
             mut self,
             input: std::option::Option<crate::model::DnsDuplicateRuleGroupViolation>,
@@ -2511,6 +2889,7 @@ pub mod resource_violation {
             self.dns_rule_group_limit_exceeded_violation = Some(input);
             self
         }
+        /// <p>Violation detail for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed. </p>
         pub fn set_dns_rule_group_limit_exceeded_violation(
             mut self,
             input: std::option::Option<crate::model::DnsRuleGroupLimitExceededViolation>,
@@ -2526,6 +2905,7 @@ pub mod resource_violation {
             self.possible_remediation_actions = Some(input);
             self
         }
+        /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
         pub fn set_possible_remediation_actions(
             mut self,
             input: std::option::Option<crate::model::PossibleRemediationActions>,
@@ -2609,10 +2989,16 @@ pub mod possible_remediation_actions {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the possible remediation actions list.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>Information about the actions.</p>
         pub fn actions(
             mut self,
             input: impl Into<crate::model::PossibleRemediationAction>,
@@ -2622,6 +3008,7 @@ pub mod possible_remediation_actions {
             self.actions = Some(v);
             self
         }
+        /// <p>Information about the actions.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PossibleRemediationAction>>,
@@ -2686,10 +3073,16 @@ pub mod possible_remediation_action {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the list of remediation actions.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `ordered_remediation_actions`.
+        ///
+        /// To override the contents of this collection use [`set_ordered_remediation_actions`](Self::set_ordered_remediation_actions).
+        ///
+        /// <p>The ordered list of remediation actions.</p>
         pub fn ordered_remediation_actions(
             mut self,
             input: impl Into<crate::model::RemediationActionWithOrder>,
@@ -2699,6 +3092,7 @@ pub mod possible_remediation_action {
             self.ordered_remediation_actions = Some(v);
             self
         }
+        /// <p>The ordered list of remediation actions.</p>
         pub fn set_ordered_remediation_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RemediationActionWithOrder>>,
@@ -2711,6 +3105,7 @@ pub mod possible_remediation_action {
             self.is_default_action = Some(input);
             self
         }
+        /// <p>Information about whether an action is taken by default.</p>
         pub fn set_is_default_action(mut self, input: std::option::Option<bool>) -> Self {
             self.is_default_action = input;
             self
@@ -2764,6 +3159,7 @@ pub mod remediation_action_with_order {
             self.remediation_action = Some(input);
             self
         }
+        /// <p>Information about an action you can take to remediate a violation.</p>
         pub fn set_remediation_action(
             mut self,
             input: std::option::Option<crate::model::RemediationAction>,
@@ -2776,6 +3172,7 @@ pub mod remediation_action_with_order {
             self.order = Some(input);
             self
         }
+        /// <p>The order of the remediation actions in the list.</p>
         pub fn set_order(mut self, input: std::option::Option<i32>) -> Self {
             self.order = input;
             self
@@ -2871,6 +3268,7 @@ pub mod remediation_action {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of a remediation action.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2883,6 +3281,7 @@ pub mod remediation_action {
             self.ec2_create_route_action = Some(input);
             self
         }
+        /// <p>Information about the CreateRoute action in the Amazon EC2 API.</p>
         pub fn set_ec2_create_route_action(
             mut self,
             input: std::option::Option<crate::model::Ec2CreateRouteAction>,
@@ -2898,6 +3297,7 @@ pub mod remediation_action {
             self.ec2_replace_route_action = Some(input);
             self
         }
+        /// <p>Information about the ReplaceRoute action in the Amazon EC2 API.</p>
         pub fn set_ec2_replace_route_action(
             mut self,
             input: std::option::Option<crate::model::Ec2ReplaceRouteAction>,
@@ -2913,6 +3313,7 @@ pub mod remediation_action {
             self.ec2_delete_route_action = Some(input);
             self
         }
+        /// <p>Information about the DeleteRoute action in the Amazon EC2 API.</p>
         pub fn set_ec2_delete_route_action(
             mut self,
             input: std::option::Option<crate::model::Ec2DeleteRouteAction>,
@@ -2928,6 +3329,7 @@ pub mod remediation_action {
             self.ec2_copy_route_table_action = Some(input);
             self
         }
+        /// <p>Information about the CopyRouteTable action in the Amazon EC2 API.</p>
         pub fn set_ec2_copy_route_table_action(
             mut self,
             input: std::option::Option<crate::model::Ec2CopyRouteTableAction>,
@@ -2943,6 +3345,7 @@ pub mod remediation_action {
             self.ec2_replace_route_table_association_action = Some(input);
             self
         }
+        /// <p>Information about the ReplaceRouteTableAssociation action in the Amazon EC2 API.</p>
         pub fn set_ec2_replace_route_table_association_action(
             mut self,
             input: std::option::Option<crate::model::Ec2ReplaceRouteTableAssociationAction>,
@@ -2958,6 +3361,7 @@ pub mod remediation_action {
             self.ec2_associate_route_table_action = Some(input);
             self
         }
+        /// <p>Information about the AssociateRouteTable action in the Amazon EC2 API.</p>
         pub fn set_ec2_associate_route_table_action(
             mut self,
             input: std::option::Option<crate::model::Ec2AssociateRouteTableAction>,
@@ -2973,6 +3377,7 @@ pub mod remediation_action {
             self.ec2_create_route_table_action = Some(input);
             self
         }
+        /// <p>Information about the CreateRouteTable action in the Amazon EC2 API.</p>
         pub fn set_ec2_create_route_table_action(
             mut self,
             input: std::option::Option<crate::model::Ec2CreateRouteTableAction>,
@@ -3035,6 +3440,7 @@ pub mod ec2_create_route_table_action {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the CreateRouteTable action.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3044,6 +3450,7 @@ pub mod ec2_create_route_table_action {
             self.vpc_id = Some(input);
             self
         }
+        /// <p>Information about the ID of a VPC.</p>
         pub fn set_vpc_id(
             mut self,
             input: std::option::Option<crate::model::ActionTarget>,
@@ -3099,6 +3506,7 @@ pub mod action_target {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the remediation target.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -3108,6 +3516,7 @@ pub mod action_target {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the remediation action target.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3168,6 +3577,7 @@ pub mod ec2_associate_route_table_action {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the EC2 route table that is associated with the remediation action.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3177,6 +3587,7 @@ pub mod ec2_associate_route_table_action {
             self.route_table_id = Some(input);
             self
         }
+        /// <p>The ID of the EC2 route table that is associated with the remediation action.</p>
         pub fn set_route_table_id(
             mut self,
             input: std::option::Option<crate::model::ActionTarget>,
@@ -3189,6 +3600,7 @@ pub mod ec2_associate_route_table_action {
             self.subnet_id = Some(input);
             self
         }
+        /// <p>The ID of the subnet for the EC2 route table that is associated with the remediation action.</p>
         pub fn set_subnet_id(
             mut self,
             input: std::option::Option<crate::model::ActionTarget>,
@@ -3201,6 +3613,7 @@ pub mod ec2_associate_route_table_action {
             self.gateway_id = Some(input);
             self
         }
+        /// <p>The ID of the gateway to be used with the EC2 route table that is associated with the remediation action.</p>
         pub fn set_gateway_id(
             mut self,
             input: std::option::Option<crate::model::ActionTarget>,
@@ -3262,6 +3675,7 @@ pub mod ec2_replace_route_table_association_action {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the ReplaceRouteTableAssociation action in Amazon EC2.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3271,6 +3685,7 @@ pub mod ec2_replace_route_table_association_action {
             self.association_id = Some(input);
             self
         }
+        /// <p>Information about the association ID.</p>
         pub fn set_association_id(
             mut self,
             input: std::option::Option<crate::model::ActionTarget>,
@@ -3283,6 +3698,7 @@ pub mod ec2_replace_route_table_association_action {
             self.route_table_id = Some(input);
             self
         }
+        /// <p>Information about the ID of the new route table to associate with the subnet.</p>
         pub fn set_route_table_id(
             mut self,
             input: std::option::Option<crate::model::ActionTarget>,
@@ -3343,6 +3759,7 @@ pub mod ec2_copy_route_table_action {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the copied EC2 route table that is associated with the remediation action.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3352,6 +3769,7 @@ pub mod ec2_copy_route_table_action {
             self.vpc_id = Some(input);
             self
         }
+        /// <p>The VPC ID of the copied EC2 route table that is associated with the remediation action.</p>
         pub fn set_vpc_id(
             mut self,
             input: std::option::Option<crate::model::ActionTarget>,
@@ -3364,6 +3782,7 @@ pub mod ec2_copy_route_table_action {
             self.route_table_id = Some(input);
             self
         }
+        /// <p>The ID of the copied EC2 route table that is associated with the remediation action.</p>
         pub fn set_route_table_id(
             mut self,
             input: std::option::Option<crate::model::ActionTarget>,
@@ -3438,6 +3857,7 @@ pub mod ec2_delete_route_action {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the DeleteRoute action.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3447,6 +3867,7 @@ pub mod ec2_delete_route_action {
             self.destination_cidr_block = Some(input.into());
             self
         }
+        /// <p>Information about the IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
         pub fn set_destination_cidr_block(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3459,6 +3880,7 @@ pub mod ec2_delete_route_action {
             self.destination_prefix_list_id = Some(input.into());
             self
         }
+        /// <p>Information about the ID of the prefix list for the route.</p>
         pub fn set_destination_prefix_list_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3474,6 +3896,7 @@ pub mod ec2_delete_route_action {
             self.destination_ipv6_cidr_block = Some(input.into());
             self
         }
+        /// <p>Information about the IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
         pub fn set_destination_ipv6_cidr_block(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3486,6 +3909,7 @@ pub mod ec2_delete_route_action {
             self.route_table_id = Some(input);
             self
         }
+        /// <p>Information about the ID of the route table.</p>
         pub fn set_route_table_id(
             mut self,
             input: std::option::Option<crate::model::ActionTarget>,
@@ -3566,6 +3990,7 @@ pub mod ec2_replace_route_action {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the ReplaceRoute action in Amazon EC2.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3575,6 +4000,7 @@ pub mod ec2_replace_route_action {
             self.destination_cidr_block = Some(input.into());
             self
         }
+        /// <p>Information about the IPv4 CIDR address block used for the destination match. The value that you provide must match the CIDR of an existing route in the table.</p>
         pub fn set_destination_cidr_block(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3587,6 +4013,7 @@ pub mod ec2_replace_route_action {
             self.destination_prefix_list_id = Some(input.into());
             self
         }
+        /// <p>Information about the ID of the prefix list for the route.</p>
         pub fn set_destination_prefix_list_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3602,6 +4029,7 @@ pub mod ec2_replace_route_action {
             self.destination_ipv6_cidr_block = Some(input.into());
             self
         }
+        /// <p>Information about the IPv6 CIDR address block used for the destination match. The value that you provide must match the CIDR of an existing route in the table.</p>
         pub fn set_destination_ipv6_cidr_block(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3614,6 +4042,7 @@ pub mod ec2_replace_route_action {
             self.gateway_id = Some(input);
             self
         }
+        /// <p>Information about the ID of an internet gateway or virtual private gateway.</p>
         pub fn set_gateway_id(
             mut self,
             input: std::option::Option<crate::model::ActionTarget>,
@@ -3626,6 +4055,7 @@ pub mod ec2_replace_route_action {
             self.route_table_id = Some(input);
             self
         }
+        /// <p>Information about the ID of the route table.</p>
         pub fn set_route_table_id(
             mut self,
             input: std::option::Option<crate::model::ActionTarget>,
@@ -3711,6 +4141,7 @@ pub mod ec2_create_route_action {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of CreateRoute action in Amazon EC2.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3720,6 +4151,7 @@ pub mod ec2_create_route_action {
             self.destination_cidr_block = Some(input.into());
             self
         }
+        /// <p>Information about the IPv4 CIDR address block used for the destination match.</p>
         pub fn set_destination_cidr_block(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3732,6 +4164,7 @@ pub mod ec2_create_route_action {
             self.destination_prefix_list_id = Some(input.into());
             self
         }
+        /// <p>Information about the ID of a prefix list used for the destination match.</p>
         pub fn set_destination_prefix_list_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3747,6 +4180,7 @@ pub mod ec2_create_route_action {
             self.destination_ipv6_cidr_block = Some(input.into());
             self
         }
+        /// <p>Information about the IPv6 CIDR block destination.</p>
         pub fn set_destination_ipv6_cidr_block(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3759,6 +4193,7 @@ pub mod ec2_create_route_action {
             self.vpc_endpoint_id = Some(input);
             self
         }
+        /// <p>Information about the ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.</p>
         pub fn set_vpc_endpoint_id(
             mut self,
             input: std::option::Option<crate::model::ActionTarget>,
@@ -3771,6 +4206,7 @@ pub mod ec2_create_route_action {
             self.gateway_id = Some(input);
             self
         }
+        /// <p>Information about the ID of an internet gateway or virtual private gateway attached to your VPC.</p>
         pub fn set_gateway_id(
             mut self,
             input: std::option::Option<crate::model::ActionTarget>,
@@ -3783,6 +4219,7 @@ pub mod ec2_create_route_action {
             self.route_table_id = Some(input);
             self
         }
+        /// <p>Information about the ID of the route table for the route.</p>
         pub fn set_route_table_id(
             mut self,
             input: std::option::Option<crate::model::ActionTarget>,
@@ -3853,6 +4290,7 @@ pub mod dns_rule_group_limit_exceeded_violation {
             self.violation_target = Some(input.into());
             self
         }
+        /// <p>Information about the VPC ID. </p>
         pub fn set_violation_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3868,6 +4306,7 @@ pub mod dns_rule_group_limit_exceeded_violation {
             self.violation_target_description = Some(input.into());
             self
         }
+        /// <p>A description of the violation that specifies the rule group and VPC.</p>
         pub fn set_violation_target_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3880,6 +4319,7 @@ pub mod dns_rule_group_limit_exceeded_violation {
             self.number_of_rule_groups_already_associated = Some(input);
             self
         }
+        /// <p>The number of rule groups currently associated with the VPC.  </p>
         pub fn set_number_of_rule_groups_already_associated(
             mut self,
             input: std::option::Option<i32>,
@@ -3942,6 +4382,7 @@ pub mod dns_duplicate_rule_group_violation {
             self.violation_target = Some(input.into());
             self
         }
+        /// <p>Information about the VPC ID. </p>
         pub fn set_violation_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3957,6 +4398,7 @@ pub mod dns_duplicate_rule_group_violation {
             self.violation_target_description = Some(input.into());
             self
         }
+        /// <p>A description of the violation that specifies the rule group and VPC.</p>
         pub fn set_violation_target_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4030,6 +4472,7 @@ pub mod dns_rule_group_priority_conflict_violation {
             self.violation_target = Some(input.into());
             self
         }
+        /// <p>Information about the VPC ID. </p>
         pub fn set_violation_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4045,6 +4488,7 @@ pub mod dns_rule_group_priority_conflict_violation {
             self.violation_target_description = Some(input.into());
             self
         }
+        /// <p>A description of the violation that specifies the VPC and the rule group that's already associated with it.</p>
         pub fn set_violation_target_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4057,6 +4501,7 @@ pub mod dns_rule_group_priority_conflict_violation {
             self.conflicting_priority = Some(input);
             self
         }
+        /// <p>The priority setting of the two conflicting rule groups.</p>
         pub fn set_conflicting_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.conflicting_priority = input;
             self
@@ -4067,6 +4512,8 @@ pub mod dns_rule_group_priority_conflict_violation {
             self.conflicting_policy_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Firewall Manager DNS Firewall policy that was already applied to the VPC.
+        /// This policy contains the rule group that's already associated with the VPC. </p>
         pub fn set_conflicting_policy_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4074,12 +4521,20 @@ pub mod dns_rule_group_priority_conflict_violation {
             self.conflicting_policy_id = input;
             self
         }
+        /// Appends an item to `unavailable_priorities`.
+        ///
+        /// To override the contents of this collection use [`set_unavailable_priorities`](Self::set_unavailable_priorities).
+        ///
+        /// <p>The priorities of rule groups that are already associated with the VPC. To retry your operation,
+        /// choose priority settings that aren't in this list for the rule groups in your new DNS Firewall policy. </p>
         pub fn unavailable_priorities(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.unavailable_priorities.unwrap_or_default();
             v.push(input.into());
             self.unavailable_priorities = Some(v);
             self
         }
+        /// <p>The priorities of rule groups that are already associated with the VPC. To retry your operation,
+        /// choose priority settings that aren't in this list for the rule groups in your new DNS Firewall policy. </p>
         pub fn set_unavailable_priorities(
             mut self,
             input: std::option::Option<std::vec::Vec<i32>>,
@@ -4142,6 +4597,7 @@ pub mod network_firewall_missing_expected_routes_violation {
             self.violation_target = Some(input.into());
             self
         }
+        /// <p>The target of the violation.</p>
         pub fn set_violation_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4149,12 +4605,18 @@ pub mod network_firewall_missing_expected_routes_violation {
             self.violation_target = input;
             self
         }
+        /// Appends an item to `expected_routes`.
+        ///
+        /// To override the contents of this collection use [`set_expected_routes`](Self::set_expected_routes).
+        ///
+        /// <p>The expected routes.</p>
         pub fn expected_routes(mut self, input: impl Into<crate::model::ExpectedRoute>) -> Self {
             let mut v = self.expected_routes.unwrap_or_default();
             v.push(input.into());
             self.expected_routes = Some(v);
             self
         }
+        /// <p>The expected routes.</p>
         pub fn set_expected_routes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExpectedRoute>>,
@@ -4167,6 +4629,7 @@ pub mod network_firewall_missing_expected_routes_violation {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>Information about the VPC ID.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -4236,6 +4699,7 @@ pub mod expected_route {
             self.ip_v4_cidr = Some(input.into());
             self
         }
+        /// <p>Information about the IPv4 CIDR block.</p>
         pub fn set_ip_v4_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_v4_cidr = input;
             self
@@ -4245,6 +4709,7 @@ pub mod expected_route {
             self.prefix_list_id = Some(input.into());
             self
         }
+        /// <p>Information about the ID of the prefix list for the route.</p>
         pub fn set_prefix_list_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4257,16 +4722,23 @@ pub mod expected_route {
             self.ip_v6_cidr = Some(input.into());
             self
         }
+        /// <p>Information about the IPv6 CIDR block.</p>
         pub fn set_ip_v6_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_v6_cidr = input;
             self
         }
+        /// Appends an item to `contributing_subnets`.
+        ///
+        /// To override the contents of this collection use [`set_contributing_subnets`](Self::set_contributing_subnets).
+        ///
+        /// <p>Information about the contributing subnets.</p>
         pub fn contributing_subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.contributing_subnets.unwrap_or_default();
             v.push(input.into());
             self.contributing_subnets = Some(v);
             self
         }
+        /// <p>Information about the contributing subnets.</p>
         pub fn set_contributing_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4274,12 +4746,18 @@ pub mod expected_route {
             self.contributing_subnets = input;
             self
         }
+        /// Appends an item to `allowed_targets`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_targets`](Self::set_allowed_targets).
+        ///
+        /// <p>Information about the allowed targets.</p>
         pub fn allowed_targets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_targets.unwrap_or_default();
             v.push(input.into());
             self.allowed_targets = Some(v);
             self
         }
+        /// <p>Information about the allowed targets.</p>
         pub fn set_allowed_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4292,6 +4770,7 @@ pub mod expected_route {
             self.route_table_id = Some(input.into());
             self
         }
+        /// <p>Information about the route table ID.</p>
         pub fn set_route_table_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4359,16 +4838,23 @@ pub mod network_firewall_unexpected_gateway_routes_violation {
             self.gateway_id = Some(input.into());
             self
         }
+        /// <p>Information about the gateway ID.</p>
         pub fn set_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.gateway_id = input;
             self
         }
+        /// Appends an item to `violating_routes`.
+        ///
+        /// To override the contents of this collection use [`set_violating_routes`](Self::set_violating_routes).
+        ///
+        /// <p>The routes that are in violation.</p>
         pub fn violating_routes(mut self, input: impl Into<crate::model::Route>) -> Self {
             let mut v = self.violating_routes.unwrap_or_default();
             v.push(input.into());
             self.violating_routes = Some(v);
             self
         }
+        /// <p>The routes that are in violation.</p>
         pub fn set_violating_routes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Route>>,
@@ -4381,6 +4867,7 @@ pub mod network_firewall_unexpected_gateway_routes_violation {
             self.route_table_id = Some(input.into());
             self
         }
+        /// <p>Information about the  route table.</p>
         pub fn set_route_table_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4393,6 +4880,7 @@ pub mod network_firewall_unexpected_gateway_routes_violation {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>Information about the VPC ID.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -4456,6 +4944,7 @@ pub mod route {
             self.destination_type = Some(input);
             self
         }
+        /// <p>The type of destination for the route.</p>
         pub fn set_destination_type(
             mut self,
             input: std::option::Option<crate::model::DestinationType>,
@@ -4468,6 +4957,7 @@ pub mod route {
             self.target_type = Some(input);
             self
         }
+        /// <p>The type of target for the route.</p>
         pub fn set_target_type(
             mut self,
             input: std::option::Option<crate::model::TargetType>,
@@ -4480,6 +4970,7 @@ pub mod route {
             self.destination = Some(input.into());
             self
         }
+        /// <p>The destination of the route.</p>
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.destination = input;
             self
@@ -4489,6 +4980,7 @@ pub mod route {
             self.target = Some(input.into());
             self
         }
+        /// <p>The route's target.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target = input;
             self
@@ -4511,6 +5003,7 @@ impl Route {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4522,15 +5015,25 @@ impl Route {
     std::hash::Hash,
 )]
 pub enum TargetType {
+    #[allow(missing_docs)] // documentation missing in model
     CarrierGateway,
+    #[allow(missing_docs)] // documentation missing in model
     EgressOnlyInternetGateway,
+    #[allow(missing_docs)] // documentation missing in model
     Gateway,
+    #[allow(missing_docs)] // documentation missing in model
     Instance,
+    #[allow(missing_docs)] // documentation missing in model
     LocalGateway,
+    #[allow(missing_docs)] // documentation missing in model
     NatGateway,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkInterface,
+    #[allow(missing_docs)] // documentation missing in model
     TransitGateway,
+    #[allow(missing_docs)] // documentation missing in model
     VpcEndpoint,
+    #[allow(missing_docs)] // documentation missing in model
     VpcPeeringConnection,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4560,6 +5063,7 @@ impl std::str::FromStr for TargetType {
     }
 }
 impl TargetType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TargetType::CarrierGateway => "CARRIER_GATEWAY",
@@ -4575,6 +5079,7 @@ impl TargetType {
             TargetType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CARRIER_GATEWAY",
@@ -4596,6 +5101,7 @@ impl AsRef<str> for TargetType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4607,8 +5113,11 @@ impl AsRef<str> for TargetType {
     std::hash::Hash,
 )]
 pub enum DestinationType {
+    #[allow(missing_docs)] // documentation missing in model
     Ipv4,
+    #[allow(missing_docs)] // documentation missing in model
     Ipv6,
+    #[allow(missing_docs)] // documentation missing in model
     PrefixList,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4631,6 +5140,7 @@ impl std::str::FromStr for DestinationType {
     }
 }
 impl DestinationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DestinationType::Ipv4 => "IPV4",
@@ -4639,6 +5149,7 @@ impl DestinationType {
             DestinationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["IPV4", "IPV6", "PREFIX_LIST"]
     }
@@ -4693,6 +5204,7 @@ pub mod network_firewall_unexpected_firewall_routes_violation {
             self.firewall_subnet_id = Some(input.into());
             self
         }
+        /// <p>The subnet ID for the firewall.</p>
         pub fn set_firewall_subnet_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4700,12 +5212,18 @@ pub mod network_firewall_unexpected_firewall_routes_violation {
             self.firewall_subnet_id = input;
             self
         }
+        /// Appends an item to `violating_routes`.
+        ///
+        /// To override the contents of this collection use [`set_violating_routes`](Self::set_violating_routes).
+        ///
+        /// <p>The routes that are in violation.</p>
         pub fn violating_routes(mut self, input: impl Into<crate::model::Route>) -> Self {
             let mut v = self.violating_routes.unwrap_or_default();
             v.push(input.into());
             self.violating_routes = Some(v);
             self
         }
+        /// <p>The routes that are in violation.</p>
         pub fn set_violating_routes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Route>>,
@@ -4718,6 +5236,7 @@ pub mod network_firewall_unexpected_firewall_routes_violation {
             self.route_table_id = Some(input.into());
             self
         }
+        /// <p>The ID of the route table.</p>
         pub fn set_route_table_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4730,6 +5249,7 @@ pub mod network_firewall_unexpected_firewall_routes_violation {
             self.firewall_endpoint = Some(input.into());
             self
         }
+        /// <p>The endpoint of the firewall.</p>
         pub fn set_firewall_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4742,6 +5262,7 @@ pub mod network_firewall_unexpected_firewall_routes_violation {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>Information about the VPC ID.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -4806,6 +5327,7 @@ pub mod network_firewall_black_hole_route_detected_violation {
             self.violation_target = Some(input.into());
             self
         }
+        /// <p>The subnet that has an inactive state.</p>
         pub fn set_violation_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4818,6 +5340,7 @@ pub mod network_firewall_black_hole_route_detected_violation {
             self.route_table_id = Some(input.into());
             self
         }
+        /// <p>Information about the route table ID.</p>
         pub fn set_route_table_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4830,16 +5353,23 @@ pub mod network_firewall_black_hole_route_detected_violation {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>Information about the VPC ID.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
         }
+        /// Appends an item to `violating_routes`.
+        ///
+        /// To override the contents of this collection use [`set_violating_routes`](Self::set_violating_routes).
+        ///
+        /// <p>Information about the route or routes that are in violation.</p>
         pub fn violating_routes(mut self, input: impl Into<crate::model::Route>) -> Self {
             let mut v = self.violating_routes.unwrap_or_default();
             v.push(input.into());
             self.violating_routes = Some(v);
             self
         }
+        /// <p>Information about the route or routes that are in violation.</p>
         pub fn set_violating_routes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Route>>,
@@ -4983,12 +5513,18 @@ pub mod network_firewall_invalid_route_configuration_violation {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `affected_subnets`.
+        ///
+        /// To override the contents of this collection use [`set_affected_subnets`](Self::set_affected_subnets).
+        ///
+        /// <p>The subnets that are affected.</p>
         pub fn affected_subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.affected_subnets.unwrap_or_default();
             v.push(input.into());
             self.affected_subnets = Some(v);
             self
         }
+        /// <p>The subnets that are affected.</p>
         pub fn set_affected_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5001,6 +5537,7 @@ pub mod network_firewall_invalid_route_configuration_violation {
             self.route_table_id = Some(input.into());
             self
         }
+        /// <p>The route table ID.</p>
         pub fn set_route_table_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5013,6 +5550,7 @@ pub mod network_firewall_invalid_route_configuration_violation {
             self.is_route_table_used_in_different_az = Some(input);
             self
         }
+        /// <p>Information about whether the route table is used in another Availability Zone.</p>
         pub fn set_is_route_table_used_in_different_az(
             mut self,
             input: std::option::Option<bool>,
@@ -5025,6 +5563,7 @@ pub mod network_firewall_invalid_route_configuration_violation {
             self.violating_route = Some(input);
             self
         }
+        /// <p>The route that's in violation.</p>
         pub fn set_violating_route(
             mut self,
             input: std::option::Option<crate::model::Route>,
@@ -5040,6 +5579,7 @@ pub mod network_firewall_invalid_route_configuration_violation {
             self.current_firewall_subnet_route_table = Some(input.into());
             self
         }
+        /// <p>The subnet route table for the current firewall.</p>
         pub fn set_current_firewall_subnet_route_table(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5052,6 +5592,7 @@ pub mod network_firewall_invalid_route_configuration_violation {
             self.expected_firewall_endpoint = Some(input.into());
             self
         }
+        /// <p>The firewall endpoint that's expected.</p>
         pub fn set_expected_firewall_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5064,6 +5605,7 @@ pub mod network_firewall_invalid_route_configuration_violation {
             self.actual_firewall_endpoint = Some(input.into());
             self
         }
+        /// <p>The actual firewall endpoint.</p>
         pub fn set_actual_firewall_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5079,6 +5621,7 @@ pub mod network_firewall_invalid_route_configuration_violation {
             self.expected_firewall_subnet_id = Some(input.into());
             self
         }
+        /// <p>The expected subnet ID for the firewall.</p>
         pub fn set_expected_firewall_subnet_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5091,6 +5634,7 @@ pub mod network_firewall_invalid_route_configuration_violation {
             self.actual_firewall_subnet_id = Some(input.into());
             self
         }
+        /// <p>The actual subnet ID for the firewall.</p>
         pub fn set_actual_firewall_subnet_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5098,6 +5642,11 @@ pub mod network_firewall_invalid_route_configuration_violation {
             self.actual_firewall_subnet_id = input;
             self
         }
+        /// Appends an item to `expected_firewall_subnet_routes`.
+        ///
+        /// To override the contents of this collection use [`set_expected_firewall_subnet_routes`](Self::set_expected_firewall_subnet_routes).
+        ///
+        /// <p>The firewall subnet routes that are expected.</p>
         pub fn expected_firewall_subnet_routes(
             mut self,
             input: impl Into<crate::model::ExpectedRoute>,
@@ -5107,6 +5656,7 @@ pub mod network_firewall_invalid_route_configuration_violation {
             self.expected_firewall_subnet_routes = Some(v);
             self
         }
+        /// <p>The firewall subnet routes that are expected.</p>
         pub fn set_expected_firewall_subnet_routes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExpectedRoute>>,
@@ -5114,6 +5664,11 @@ pub mod network_firewall_invalid_route_configuration_violation {
             self.expected_firewall_subnet_routes = input;
             self
         }
+        /// Appends an item to `actual_firewall_subnet_routes`.
+        ///
+        /// To override the contents of this collection use [`set_actual_firewall_subnet_routes`](Self::set_actual_firewall_subnet_routes).
+        ///
+        /// <p>The actual firewall subnet routes that are expected.</p>
         pub fn actual_firewall_subnet_routes(
             mut self,
             input: impl Into<crate::model::Route>,
@@ -5123,6 +5678,7 @@ pub mod network_firewall_invalid_route_configuration_violation {
             self.actual_firewall_subnet_routes = Some(v);
             self
         }
+        /// <p>The actual firewall subnet routes that are expected.</p>
         pub fn set_actual_firewall_subnet_routes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Route>>,
@@ -5135,6 +5691,7 @@ pub mod network_firewall_invalid_route_configuration_violation {
             self.internet_gateway_id = Some(input.into());
             self
         }
+        /// <p>The internet gateway ID.</p>
         pub fn set_internet_gateway_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5150,6 +5707,7 @@ pub mod network_firewall_invalid_route_configuration_violation {
             self.current_internet_gateway_route_table = Some(input.into());
             self
         }
+        /// <p>The route table for the current internet gateway.</p>
         pub fn set_current_internet_gateway_route_table(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5157,6 +5715,11 @@ pub mod network_firewall_invalid_route_configuration_violation {
             self.current_internet_gateway_route_table = input;
             self
         }
+        /// Appends an item to `expected_internet_gateway_routes`.
+        ///
+        /// To override the contents of this collection use [`set_expected_internet_gateway_routes`](Self::set_expected_internet_gateway_routes).
+        ///
+        /// <p>The expected routes for the internet gateway.</p>
         pub fn expected_internet_gateway_routes(
             mut self,
             input: impl Into<crate::model::ExpectedRoute>,
@@ -5166,6 +5729,7 @@ pub mod network_firewall_invalid_route_configuration_violation {
             self.expected_internet_gateway_routes = Some(v);
             self
         }
+        /// <p>The expected routes for the internet gateway.</p>
         pub fn set_expected_internet_gateway_routes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExpectedRoute>>,
@@ -5173,6 +5737,11 @@ pub mod network_firewall_invalid_route_configuration_violation {
             self.expected_internet_gateway_routes = input;
             self
         }
+        /// Appends an item to `actual_internet_gateway_routes`.
+        ///
+        /// To override the contents of this collection use [`set_actual_internet_gateway_routes`](Self::set_actual_internet_gateway_routes).
+        ///
+        /// <p>The actual internet gateway routes.</p>
         pub fn actual_internet_gateway_routes(
             mut self,
             input: impl Into<crate::model::Route>,
@@ -5182,6 +5751,7 @@ pub mod network_firewall_invalid_route_configuration_violation {
             self.actual_internet_gateway_routes = Some(v);
             self
         }
+        /// <p>The actual internet gateway routes.</p>
         pub fn set_actual_internet_gateway_routes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Route>>,
@@ -5194,6 +5764,7 @@ pub mod network_firewall_invalid_route_configuration_violation {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>Information about the VPC ID.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -5345,6 +5916,7 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
             self.subnet_id = Some(input.into());
             self
         }
+        /// <p>The subnet ID.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_id = input;
             self
@@ -5354,6 +5926,7 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
             self.subnet_availability_zone = Some(input.into());
             self
         }
+        /// <p>The subnet Availability Zone.</p>
         pub fn set_subnet_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5366,6 +5939,7 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
             self.route_table_id = Some(input.into());
             self
         }
+        /// <p>Information about the route table ID.</p>
         pub fn set_route_table_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5373,12 +5947,18 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
             self.route_table_id = input;
             self
         }
+        /// Appends an item to `violating_routes`.
+        ///
+        /// To override the contents of this collection use [`set_violating_routes`](Self::set_violating_routes).
+        ///
+        /// <p>The route or routes that are in violation.</p>
         pub fn violating_routes(mut self, input: impl Into<crate::model::Route>) -> Self {
             let mut v = self.violating_routes.unwrap_or_default();
             v.push(input.into());
             self.violating_routes = Some(v);
             self
         }
+        /// <p>The route or routes that are in violation.</p>
         pub fn set_violating_routes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Route>>,
@@ -5391,6 +5971,7 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
             self.is_route_table_used_in_different_az = Some(input);
             self
         }
+        /// <p>Information about whether the route table is used in another Availability Zone.</p>
         pub fn set_is_route_table_used_in_different_az(
             mut self,
             input: std::option::Option<bool>,
@@ -5406,6 +5987,7 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
             self.current_firewall_subnet_route_table = Some(input.into());
             self
         }
+        /// <p>Information about the subnet route table for the current firewall.</p>
         pub fn set_current_firewall_subnet_route_table(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5418,6 +6000,7 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
             self.expected_firewall_endpoint = Some(input.into());
             self
         }
+        /// <p>The expected endpoint for the current firewall.</p>
         pub fn set_expected_firewall_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5430,6 +6013,7 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
             self.firewall_subnet_id = Some(input.into());
             self
         }
+        /// <p>The firewall subnet ID.</p>
         pub fn set_firewall_subnet_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5437,6 +6021,11 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
             self.firewall_subnet_id = input;
             self
         }
+        /// Appends an item to `expected_firewall_subnet_routes`.
+        ///
+        /// To override the contents of this collection use [`set_expected_firewall_subnet_routes`](Self::set_expected_firewall_subnet_routes).
+        ///
+        /// <p>The firewall subnet routes that are expected.</p>
         pub fn expected_firewall_subnet_routes(
             mut self,
             input: impl Into<crate::model::ExpectedRoute>,
@@ -5446,6 +6035,7 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
             self.expected_firewall_subnet_routes = Some(v);
             self
         }
+        /// <p>The firewall subnet routes that are expected.</p>
         pub fn set_expected_firewall_subnet_routes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExpectedRoute>>,
@@ -5453,6 +6043,11 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
             self.expected_firewall_subnet_routes = input;
             self
         }
+        /// Appends an item to `actual_firewall_subnet_routes`.
+        ///
+        /// To override the contents of this collection use [`set_actual_firewall_subnet_routes`](Self::set_actual_firewall_subnet_routes).
+        ///
+        /// <p>The actual firewall subnet routes.</p>
         pub fn actual_firewall_subnet_routes(
             mut self,
             input: impl Into<crate::model::Route>,
@@ -5462,6 +6057,7 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
             self.actual_firewall_subnet_routes = Some(v);
             self
         }
+        /// <p>The actual firewall subnet routes.</p>
         pub fn set_actual_firewall_subnet_routes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Route>>,
@@ -5474,6 +6070,7 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
             self.internet_gateway_id = Some(input.into());
             self
         }
+        /// <p>The internet gateway ID.</p>
         pub fn set_internet_gateway_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5489,6 +6086,7 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
             self.current_internet_gateway_route_table = Some(input.into());
             self
         }
+        /// <p>The current route table for the internet gateway.</p>
         pub fn set_current_internet_gateway_route_table(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5496,6 +6094,11 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
             self.current_internet_gateway_route_table = input;
             self
         }
+        /// Appends an item to `expected_internet_gateway_routes`.
+        ///
+        /// To override the contents of this collection use [`set_expected_internet_gateway_routes`](Self::set_expected_internet_gateway_routes).
+        ///
+        /// <p>The internet gateway routes that are expected.</p>
         pub fn expected_internet_gateway_routes(
             mut self,
             input: impl Into<crate::model::ExpectedRoute>,
@@ -5505,6 +6108,7 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
             self.expected_internet_gateway_routes = Some(v);
             self
         }
+        /// <p>The internet gateway routes that are expected.</p>
         pub fn set_expected_internet_gateway_routes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExpectedRoute>>,
@@ -5512,6 +6116,11 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
             self.expected_internet_gateway_routes = input;
             self
         }
+        /// Appends an item to `actual_internet_gateway_routes`.
+        ///
+        /// To override the contents of this collection use [`set_actual_internet_gateway_routes`](Self::set_actual_internet_gateway_routes).
+        ///
+        /// <p>The actual internet gateway routes.</p>
         pub fn actual_internet_gateway_routes(
             mut self,
             input: impl Into<crate::model::Route>,
@@ -5521,6 +6130,7 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
             self.actual_internet_gateway_routes = Some(v);
             self
         }
+        /// <p>The actual internet gateway routes.</p>
         pub fn set_actual_internet_gateway_routes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Route>>,
@@ -5533,6 +6143,7 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>Information about the VPC ID.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -5616,6 +6227,7 @@ pub mod network_firewall_policy_modified_violation {
             self.violation_target = Some(input.into());
             self
         }
+        /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
         pub fn set_violation_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5631,6 +6243,7 @@ pub mod network_firewall_policy_modified_violation {
             self.current_policy_description = Some(input);
             self
         }
+        /// <p>The policy that's currently in use in the individual account. </p>
         pub fn set_current_policy_description(
             mut self,
             input: std::option::Option<crate::model::NetworkFirewallPolicyDescription>,
@@ -5646,6 +6259,7 @@ pub mod network_firewall_policy_modified_violation {
             self.expected_policy_description = Some(input);
             self
         }
+        /// <p>The policy that should be in use in the individual account in order to be compliant. </p>
         pub fn set_expected_policy_description(
             mut self,
             input: std::option::Option<crate::model::NetworkFirewallPolicyDescription>,
@@ -5717,6 +6331,11 @@ pub mod network_firewall_policy_description {
             std::option::Option<std::vec::Vec<crate::model::StatefulRuleGroup>>,
     }
     impl Builder {
+        /// Appends an item to `stateless_rule_groups`.
+        ///
+        /// To override the contents of this collection use [`set_stateless_rule_groups`](Self::set_stateless_rule_groups).
+        ///
+        /// <p>The stateless rule groups that are used in the Network Firewall firewall policy. </p>
         pub fn stateless_rule_groups(
             mut self,
             input: impl Into<crate::model::StatelessRuleGroup>,
@@ -5726,6 +6345,7 @@ pub mod network_firewall_policy_description {
             self.stateless_rule_groups = Some(v);
             self
         }
+        /// <p>The stateless rule groups that are used in the Network Firewall firewall policy. </p>
         pub fn set_stateless_rule_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StatelessRuleGroup>>,
@@ -5733,12 +6353,18 @@ pub mod network_firewall_policy_description {
             self.stateless_rule_groups = input;
             self
         }
+        /// Appends an item to `stateless_default_actions`.
+        ///
+        /// To override the contents of this collection use [`set_stateless_default_actions`](Self::set_stateless_default_actions).
+        ///
+        /// <p>The actions to take on packets that don't match any of the stateless rule groups. </p>
         pub fn stateless_default_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stateless_default_actions.unwrap_or_default();
             v.push(input.into());
             self.stateless_default_actions = Some(v);
             self
         }
+        /// <p>The actions to take on packets that don't match any of the stateless rule groups. </p>
         pub fn set_stateless_default_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5746,6 +6372,11 @@ pub mod network_firewall_policy_description {
             self.stateless_default_actions = input;
             self
         }
+        /// Appends an item to `stateless_fragment_default_actions`.
+        ///
+        /// To override the contents of this collection use [`set_stateless_fragment_default_actions`](Self::set_stateless_fragment_default_actions).
+        ///
+        /// <p>The actions to take on packet fragments that don't match any of the stateless rule groups. </p>
         pub fn stateless_fragment_default_actions(
             mut self,
             input: impl Into<std::string::String>,
@@ -5755,6 +6386,7 @@ pub mod network_firewall_policy_description {
             self.stateless_fragment_default_actions = Some(v);
             self
         }
+        /// <p>The actions to take on packet fragments that don't match any of the stateless rule groups. </p>
         pub fn set_stateless_fragment_default_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5762,12 +6394,18 @@ pub mod network_firewall_policy_description {
             self.stateless_fragment_default_actions = input;
             self
         }
+        /// Appends an item to `stateless_custom_actions`.
+        ///
+        /// To override the contents of this collection use [`set_stateless_custom_actions`](Self::set_stateless_custom_actions).
+        ///
+        /// <p>Names of custom actions that are available for use in the stateless default actions settings.</p>
         pub fn stateless_custom_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stateless_custom_actions.unwrap_or_default();
             v.push(input.into());
             self.stateless_custom_actions = Some(v);
             self
         }
+        /// <p>Names of custom actions that are available for use in the stateless default actions settings.</p>
         pub fn set_stateless_custom_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5775,6 +6413,11 @@ pub mod network_firewall_policy_description {
             self.stateless_custom_actions = input;
             self
         }
+        /// Appends an item to `stateful_rule_groups`.
+        ///
+        /// To override the contents of this collection use [`set_stateful_rule_groups`](Self::set_stateful_rule_groups).
+        ///
+        /// <p>The stateful rule groups that are used in the Network Firewall firewall policy. </p>
         pub fn stateful_rule_groups(
             mut self,
             input: impl Into<crate::model::StatefulRuleGroup>,
@@ -5784,6 +6427,7 @@ pub mod network_firewall_policy_description {
             self.stateful_rule_groups = Some(v);
             self
         }
+        /// <p>The stateful rule groups that are used in the Network Firewall firewall policy. </p>
         pub fn set_stateful_rule_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StatefulRuleGroup>>,
@@ -5842,6 +6486,7 @@ pub mod stateful_rule_group {
             self.rule_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the rule group.</p>
         pub fn set_rule_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5854,6 +6499,7 @@ pub mod stateful_rule_group {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The resource ID of the rule group.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -5910,6 +6556,7 @@ pub mod stateless_rule_group {
             self.rule_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the rule group.</p>
         pub fn set_rule_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5922,6 +6569,7 @@ pub mod stateless_rule_group {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The resource ID of the rule group.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -5931,6 +6579,7 @@ pub mod stateless_rule_group {
             self.priority = Some(input);
             self
         }
+        /// <p>The priority of the rule group. Network Firewall evaluates the stateless rule groups in a firewall policy starting from the lowest priority setting. </p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
@@ -5997,6 +6646,7 @@ pub mod network_firewall_missing_expected_rt_violation {
             self.violation_target = Some(input.into());
             self
         }
+        /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
         pub fn set_violation_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6009,6 +6659,7 @@ pub mod network_firewall_missing_expected_rt_violation {
             self.vpc = Some(input.into());
             self
         }
+        /// <p>The resource ID of the VPC associated with a violating subnet.</p>
         pub fn set_vpc(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc = input;
             self
@@ -6018,6 +6669,7 @@ pub mod network_firewall_missing_expected_rt_violation {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>The Availability Zone of a violating subnet. </p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6030,6 +6682,7 @@ pub mod network_firewall_missing_expected_rt_violation {
             self.current_route_table = Some(input.into());
             self
         }
+        /// <p>The resource ID of the current route table that's associated with the subnet, if one is available.</p>
         pub fn set_current_route_table(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6042,6 +6695,7 @@ pub mod network_firewall_missing_expected_rt_violation {
             self.expected_route_table = Some(input.into());
             self
         }
+        /// <p>The resource ID of the route table that should be associated with the subnet.</p>
         pub fn set_expected_route_table(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6109,6 +6763,7 @@ pub mod network_firewall_missing_subnet_violation {
             self.violation_target = Some(input.into());
             self
         }
+        /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
         pub fn set_violation_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6121,6 +6776,7 @@ pub mod network_firewall_missing_subnet_violation {
             self.vpc = Some(input.into());
             self
         }
+        /// <p>The resource ID of the VPC associated with a violating subnet.</p>
         pub fn set_vpc(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc = input;
             self
@@ -6130,6 +6786,7 @@ pub mod network_firewall_missing_subnet_violation {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>The Availability Zone of a violating subnet. </p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6142,6 +6799,7 @@ pub mod network_firewall_missing_subnet_violation {
             self.target_violation_reason = Some(input.into());
             self
         }
+        /// <p>The reason the resource has this violation, if one is available. </p>
         pub fn set_target_violation_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6208,6 +6866,7 @@ pub mod network_firewall_missing_firewall_violation {
             self.violation_target = Some(input.into());
             self
         }
+        /// <p>The ID of the Network Firewall or VPC resource that's in violation.</p>
         pub fn set_violation_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6220,6 +6879,7 @@ pub mod network_firewall_missing_firewall_violation {
             self.vpc = Some(input.into());
             self
         }
+        /// <p>The resource ID of the VPC associated with a violating subnet.</p>
         pub fn set_vpc(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc = input;
             self
@@ -6229,6 +6889,7 @@ pub mod network_firewall_missing_firewall_violation {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>The Availability Zone of a violating subnet. </p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6241,6 +6902,7 @@ pub mod network_firewall_missing_firewall_violation {
             self.target_violation_reason = Some(input.into());
             self
         }
+        /// <p>The reason the resource has this violation, if one is available. </p>
         pub fn set_target_violation_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6303,6 +6965,7 @@ pub mod aws_ec2_instance_violation {
             self.violation_target = Some(input.into());
             self
         }
+        /// <p>The resource ID of the EC2 instance.</p>
         pub fn set_violation_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6310,6 +6973,11 @@ pub mod aws_ec2_instance_violation {
             self.violation_target = input;
             self
         }
+        /// Appends an item to `aws_ec2_network_interface_violations`.
+        ///
+        /// To override the contents of this collection use [`set_aws_ec2_network_interface_violations`](Self::set_aws_ec2_network_interface_violations).
+        ///
+        /// <p>Violation detail for network interfaces associated with the EC2 instance.</p>
         pub fn aws_ec2_network_interface_violations(
             mut self,
             input: impl Into<crate::model::AwsEc2NetworkInterfaceViolation>,
@@ -6321,6 +6989,7 @@ pub mod aws_ec2_instance_violation {
             self.aws_ec2_network_interface_violations = Some(v);
             self
         }
+        /// <p>Violation detail for network interfaces associated with the EC2 instance.</p>
         pub fn set_aws_ec2_network_interface_violations(
             mut self,
             input: std::option::Option<
@@ -6379,6 +7048,7 @@ pub mod aws_ec2_network_interface_violation {
             self.violation_target = Some(input.into());
             self
         }
+        /// <p>The resource ID of the network interface.</p>
         pub fn set_violation_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6386,12 +7056,18 @@ pub mod aws_ec2_network_interface_violation {
             self.violation_target = input;
             self
         }
+        /// Appends an item to `violating_security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_violating_security_groups`](Self::set_violating_security_groups).
+        ///
+        /// <p>List of security groups that violate the rules specified in the primary security group of the Firewall Manager policy.</p>
         pub fn violating_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.violating_security_groups.unwrap_or_default();
             v.push(input.into());
             self.violating_security_groups = Some(v);
             self
         }
+        /// <p>List of security groups that violate the rules specified in the primary security group of the Firewall Manager policy.</p>
         pub fn set_violating_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6463,6 +7139,7 @@ pub mod aws_vpc_security_group_violation {
             self.violation_target = Some(input.into());
             self
         }
+        /// <p>The security group rule that is being evaluated.</p>
         pub fn set_violation_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6478,6 +7155,7 @@ pub mod aws_vpc_security_group_violation {
             self.violation_target_description = Some(input.into());
             self
         }
+        /// <p>A description of the security group that violates the policy.</p>
         pub fn set_violation_target_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6485,12 +7163,18 @@ pub mod aws_vpc_security_group_violation {
             self.violation_target_description = input;
             self
         }
+        /// Appends an item to `partial_matches`.
+        ///
+        /// To override the contents of this collection use [`set_partial_matches`](Self::set_partial_matches).
+        ///
+        /// <p>List of rules specified in the security group of the Firewall Manager policy that partially match the <code>ViolationTarget</code> rule.</p>
         pub fn partial_matches(mut self, input: impl Into<crate::model::PartialMatch>) -> Self {
             let mut v = self.partial_matches.unwrap_or_default();
             v.push(input.into());
             self.partial_matches = Some(v);
             self
         }
+        /// <p>List of rules specified in the security group of the Firewall Manager policy that partially match the <code>ViolationTarget</code> rule.</p>
         pub fn set_partial_matches(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PartialMatch>>,
@@ -6498,6 +7182,11 @@ pub mod aws_vpc_security_group_violation {
             self.partial_matches = input;
             self
         }
+        /// Appends an item to `possible_security_group_remediation_actions`.
+        ///
+        /// To override the contents of this collection use [`set_possible_security_group_remediation_actions`](Self::set_possible_security_group_remediation_actions).
+        ///
+        /// <p>Remediation options for the rule specified in the <code>ViolationTarget</code>.</p>
         pub fn possible_security_group_remediation_actions(
             mut self,
             input: impl Into<crate::model::SecurityGroupRemediationAction>,
@@ -6509,6 +7198,7 @@ pub mod aws_vpc_security_group_violation {
             self.possible_security_group_remediation_actions = Some(v);
             self
         }
+        /// <p>Remediation options for the rule specified in the <code>ViolationTarget</code>.</p>
         pub fn set_possible_security_group_remediation_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SecurityGroupRemediationAction>>,
@@ -6580,6 +7270,7 @@ pub mod security_group_remediation_action {
             self.remediation_action_type = Some(input);
             self
         }
+        /// <p>The remediation action that will be performed.</p>
         pub fn set_remediation_action_type(
             mut self,
             input: std::option::Option<crate::model::RemediationActionType>,
@@ -6592,6 +7283,7 @@ pub mod security_group_remediation_action {
             self.description = Some(input.into());
             self
         }
+        /// <p>Brief description of the action that will be performed.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -6604,6 +7296,7 @@ pub mod security_group_remediation_action {
             self.remediation_result = Some(input);
             self
         }
+        /// <p>The final state of the rule specified in the <code>ViolationTarget</code> after it is remediated.</p>
         pub fn set_remediation_result(
             mut self,
             input: std::option::Option<crate::model::SecurityGroupRuleDescription>,
@@ -6616,6 +7309,7 @@ pub mod security_group_remediation_action {
             self.is_default_action = Some(input);
             self
         }
+        /// <p>Indicates if the current action is the default action.</p>
         pub fn set_is_default_action(mut self, input: std::option::Option<bool>) -> Self {
             self.is_default_action = input;
             self
@@ -6686,6 +7380,7 @@ pub mod security_group_rule_description {
             self.ipv4_range = Some(input.into());
             self
         }
+        /// <p>The IPv4 ranges for the security group rule.</p>
         pub fn set_ipv4_range(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ipv4_range = input;
             self
@@ -6695,6 +7390,7 @@ pub mod security_group_rule_description {
             self.ipv6_range = Some(input.into());
             self
         }
+        /// <p>The IPv6 ranges for the security group rule.</p>
         pub fn set_ipv6_range(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ipv6_range = input;
             self
@@ -6704,6 +7400,7 @@ pub mod security_group_rule_description {
             self.prefix_list_id = Some(input.into());
             self
         }
+        /// <p>The ID of the prefix list for the security group rule.</p>
         pub fn set_prefix_list_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6716,6 +7413,7 @@ pub mod security_group_rule_description {
             self.protocol = Some(input.into());
             self
         }
+        /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number.</p>
         pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.protocol = input;
             self
@@ -6725,6 +7423,7 @@ pub mod security_group_rule_description {
             self.from_port = Some(input);
             self
         }
+        /// <p>The start of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of <code>-1</code> indicates all ICMP/ICMPv6 types.</p>
         pub fn set_from_port(mut self, input: std::option::Option<i64>) -> Self {
             self.from_port = input;
             self
@@ -6734,6 +7433,7 @@ pub mod security_group_rule_description {
             self.to_port = Some(input);
             self
         }
+        /// <p>The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates all ICMP/ICMPv6 codes.</p>
         pub fn set_to_port(mut self, input: std::option::Option<i64>) -> Self {
             self.to_port = input;
             self
@@ -6758,6 +7458,7 @@ impl SecurityGroupRuleDescription {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6769,7 +7470,9 @@ impl SecurityGroupRuleDescription {
     std::hash::Hash,
 )]
 pub enum RemediationActionType {
+    #[allow(missing_docs)] // documentation missing in model
     Modify,
+    #[allow(missing_docs)] // documentation missing in model
     Remove,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6791,6 +7494,7 @@ impl std::str::FromStr for RemediationActionType {
     }
 }
 impl RemediationActionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RemediationActionType::Modify => "MODIFY",
@@ -6798,6 +7502,7 @@ impl RemediationActionType {
             RemediationActionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MODIFY", "REMOVE"]
     }
@@ -6841,16 +7546,23 @@ pub mod partial_match {
             self.reference = Some(input.into());
             self
         }
+        /// <p>The reference rule from the primary security group of the Firewall Manager policy.</p>
         pub fn set_reference(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reference = input;
             self
         }
+        /// Appends an item to `target_violation_reasons`.
+        ///
+        /// To override the contents of this collection use [`set_target_violation_reasons`](Self::set_target_violation_reasons).
+        ///
+        /// <p>The violation reason.</p>
         pub fn target_violation_reasons(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_violation_reasons.unwrap_or_default();
             v.push(input.into());
             self.target_violation_reasons = Some(v);
             self
         }
+        /// <p>The violation reason.</p>
         pub fn set_target_violation_reasons(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6894,7 +7606,7 @@ pub struct PolicyComplianceDetail {
     pub evaluation_limit_exceeded: bool,
     /// <p>A timestamp that indicates when the returned information should be considered out of
     /// date.</p>
-    pub expired_at: std::option::Option<smithy_types::Instant>,
+    pub expired_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Details about problems with dependent services, such as WAF or Config,
     /// and the error message received that indicates the problem with the service.</p>
     pub issue_info_map: std::option::Option<
@@ -6925,7 +7637,7 @@ pub mod policy_compliance_detail {
         pub(crate) member_account: std::option::Option<std::string::String>,
         pub(crate) violators: std::option::Option<std::vec::Vec<crate::model::ComplianceViolator>>,
         pub(crate) evaluation_limit_exceeded: std::option::Option<bool>,
-        pub(crate) expired_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) expired_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) issue_info_map: std::option::Option<
             std::collections::HashMap<crate::model::DependentServiceName, std::string::String>,
         >,
@@ -6936,6 +7648,7 @@ pub mod policy_compliance_detail {
             self.policy_owner = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
         pub fn set_policy_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_owner = input;
             self
@@ -6945,6 +7658,7 @@ pub mod policy_compliance_detail {
             self.policy_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Firewall Manager policy.</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
@@ -6954,6 +7668,7 @@ pub mod policy_compliance_detail {
             self.member_account = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn set_member_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6961,12 +7676,20 @@ pub mod policy_compliance_detail {
             self.member_account = input;
             self
         }
+        /// Appends an item to `violators`.
+        ///
+        /// To override the contents of this collection use [`set_violators`](Self::set_violators).
+        ///
+        /// <p>An array of resources that aren't protected by the WAF or Shield Advanced policy or
+        /// that aren't in compliance with the security group policy.</p>
         pub fn violators(mut self, input: impl Into<crate::model::ComplianceViolator>) -> Self {
             let mut v = self.violators.unwrap_or_default();
             v.push(input.into());
             self.violators = Some(v);
             self
         }
+        /// <p>An array of resources that aren't protected by the WAF or Shield Advanced policy or
+        /// that aren't in compliance with the security group policy.</p>
         pub fn set_violators(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComplianceViolator>>,
@@ -6980,20 +7703,33 @@ pub mod policy_compliance_detail {
             self.evaluation_limit_exceeded = Some(input);
             self
         }
+        /// <p>Indicates if over 100 resources are noncompliant with the Firewall Manager
+        /// policy.</p>
         pub fn set_evaluation_limit_exceeded(mut self, input: std::option::Option<bool>) -> Self {
             self.evaluation_limit_exceeded = input;
             self
         }
         /// <p>A timestamp that indicates when the returned information should be considered out of
         /// date.</p>
-        pub fn expired_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn expired_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.expired_at = Some(input);
             self
         }
-        pub fn set_expired_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>A timestamp that indicates when the returned information should be considered out of
+        /// date.</p>
+        pub fn set_expired_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.expired_at = input;
             self
         }
+        /// Adds a key-value pair to `issue_info_map`.
+        ///
+        /// To override the contents of this collection use [`set_issue_info_map`](Self::set_issue_info_map).
+        ///
+        /// <p>Details about problems with dependent services, such as WAF or Config,
+        /// and the error message received that indicates the problem with the service.</p>
         pub fn issue_info_map(
             mut self,
             k: impl Into<crate::model::DependentServiceName>,
@@ -7004,6 +7740,8 @@ pub mod policy_compliance_detail {
             self.issue_info_map = Some(hash_map);
             self
         }
+        /// <p>Details about problems with dependent services, such as WAF or Config,
+        /// and the error message received that indicates the problem with the service.</p>
         pub fn set_issue_info_map(
             mut self,
             input: std::option::Option<
@@ -7073,6 +7811,7 @@ pub mod compliance_violator {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The resource ID.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -7082,6 +7821,7 @@ pub mod compliance_violator {
             self.violation_reason = Some(input);
             self
         }
+        /// <p>The reason that the resource is not protected by the policy.</p>
         pub fn set_violation_reason(
             mut self,
             input: std::option::Option<crate::model::ViolationReason>,
@@ -7097,6 +7837,10 @@ pub mod compliance_violator {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. For example:
+        /// <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+        /// <code>AWS::CloudFront::Distribution</code>, or
+        /// <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7121,6 +7865,7 @@ impl ComplianceViolator {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7132,30 +7877,55 @@ impl ComplianceViolator {
     std::hash::Hash,
 )]
 pub enum ViolationReason {
+    #[allow(missing_docs)] // documentation missing in model
     BlackHoleRouteDetected,
+    #[allow(missing_docs)] // documentation missing in model
     BlackHoleRouteDetectedInFirewallSubnet,
+    #[allow(missing_docs)] // documentation missing in model
     FirewallSubnetMissingExpectedRoute,
+    #[allow(missing_docs)] // documentation missing in model
     FmsCreatedSecurityGroupEdited,
+    #[allow(missing_docs)] // documentation missing in model
     InternetGatewayMissingExpectedRoute,
+    #[allow(missing_docs)] // documentation missing in model
     InternetTrafficNotInspected,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidRouteConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     MissingExpectedRouteTable,
+    #[allow(missing_docs)] // documentation missing in model
     MissingFirewall,
+    #[allow(missing_docs)] // documentation missing in model
     MissingFirewallSubnetInAz,
+    #[allow(missing_docs)] // documentation missing in model
     MissingTargetGateway,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkFirewallPolicyModified,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceIncorrectWebAcl,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceMissingDnsFirewall,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceMissingSecurityGroup,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceMissingShieldProtection,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceMissingWebAcl,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceMissingWebaclOrShieldProtection,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceViolatesAuditSecurityGroup,
+    #[allow(missing_docs)] // documentation missing in model
     SecurityGroupRedundant,
+    #[allow(missing_docs)] // documentation missing in model
     SecurityGroupUnused,
+    #[allow(missing_docs)] // documentation missing in model
     TrafficInspectionCrossesAzBoundary,
+    #[allow(missing_docs)] // documentation missing in model
     UnexpectedFirewallRoutes,
+    #[allow(missing_docs)] // documentation missing in model
     UnexpectedTargetGatewayRoutes,
+    #[allow(missing_docs)] // documentation missing in model
     WebAclMissingRuleGroup,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7214,6 +7984,7 @@ impl std::str::FromStr for ViolationReason {
     }
 }
 impl ViolationReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ViolationReason::BlackHoleRouteDetected => "BLACK_HOLE_ROUTE_DETECTED",
@@ -7258,6 +8029,7 @@ impl ViolationReason {
             ViolationReason::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BLACK_HOLE_ROUTE_DETECTED",
@@ -7294,6 +8066,7 @@ impl AsRef<str> for ViolationReason {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7305,10 +8078,15 @@ impl AsRef<str> for ViolationReason {
     std::hash::Hash,
 )]
 pub enum AccountRoleStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     PendingDeletion,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7333,6 +8111,7 @@ impl std::str::FromStr for AccountRoleStatus {
     }
 }
 impl AccountRoleStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccountRoleStatus::Creating => "CREATING",
@@ -7343,6 +8122,7 @@ impl AccountRoleStatus {
             AccountRoleStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATING",

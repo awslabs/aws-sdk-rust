@@ -14,6 +14,7 @@ pub mod delete_report_definition_input {
             self.report_id = Some(input.into());
             self
         }
+        /// <p>Required. ID of the report to delete.</p>
         pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.report_id = input;
             self
@@ -23,7 +24,7 @@ pub mod delete_report_definition_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteReportDefinitionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteReportDefinitionInput {
                 report_id: self.report_id,
@@ -42,27 +43,27 @@ impl DeleteReportDefinitionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteReportDefinition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteReportDefinitionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.report_id;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "report_id",
                         details: "cannot be empty or unset",
                     })?;
-            let report_id = smithy_http::label::fmt_string(input_1, false);
+            let report_id = aws_smithy_http::label::fmt_string(input_1, false);
             if report_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "report_id",
                     details: "cannot be empty or unset",
                 });
@@ -75,7 +76,7 @@ impl DeleteReportDefinitionInput {
         fn update_http_builder(
             input: &crate::input::DeleteReportDefinitionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -84,23 +85,23 @@ impl DeleteReportDefinitionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteReportDefinitionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -123,15 +124,15 @@ impl DeleteReportDefinitionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteReportDefinition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteReportDefinition",
             "applicationcostprofiler",
         ));
@@ -140,10 +141,10 @@ impl DeleteReportDefinitionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -171,6 +172,7 @@ pub mod get_report_definition_input {
             self.report_id = Some(input.into());
             self
         }
+        /// <p>ID of the report to retrieve.</p>
         pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.report_id = input;
             self
@@ -180,7 +182,7 @@ pub mod get_report_definition_input {
             self,
         ) -> std::result::Result<
             crate::input::GetReportDefinitionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetReportDefinitionInput {
                 report_id: self.report_id,
@@ -199,27 +201,27 @@ impl GetReportDefinitionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetReportDefinition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetReportDefinitionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_2 = &_input.report_id;
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "report_id",
                         details: "cannot be empty or unset",
                     })?;
-            let report_id = smithy_http::label::fmt_string(input_2, false);
+            let report_id = aws_smithy_http::label::fmt_string(input_2, false);
             if report_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "report_id",
                     details: "cannot be empty or unset",
                 });
@@ -232,7 +234,7 @@ impl GetReportDefinitionInput {
         fn update_http_builder(
             input: &crate::input::GetReportDefinitionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -241,23 +243,23 @@ impl GetReportDefinitionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetReportDefinitionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -280,15 +282,15 @@ impl GetReportDefinitionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetReportDefinition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetReportDefinition",
             "applicationcostprofiler",
         ));
@@ -297,10 +299,10 @@ impl GetReportDefinitionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -328,6 +330,7 @@ pub mod import_application_usage_input {
             self.source_s3_location = Some(input);
             self
         }
+        /// <p>Amazon S3 location to import application usage data from.</p>
         pub fn set_source_s3_location(
             mut self,
             input: std::option::Option<crate::model::SourceS3Location>,
@@ -340,7 +343,7 @@ pub mod import_application_usage_input {
             self,
         ) -> std::result::Result<
             crate::input::ImportApplicationUsageInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ImportApplicationUsageInput {
                 source_s3_location: self.source_s3_location,
@@ -359,16 +362,16 @@ impl ImportApplicationUsageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ImportApplicationUsage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ImportApplicationUsageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/importApplicationUsage").expect("formatting should succeed");
             Ok(())
         }
@@ -376,7 +379,7 @@ impl ImportApplicationUsageInput {
         fn update_http_builder(
             input: &crate::input::ImportApplicationUsageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -385,27 +388,29 @@ impl ImportApplicationUsageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ImportApplicationUsageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_import_application_usage(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -428,15 +433,15 @@ impl ImportApplicationUsageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ImportApplicationUsage::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ImportApplicationUsage",
             "applicationcostprofiler",
         ));
@@ -445,10 +450,10 @@ impl ImportApplicationUsageInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -477,6 +482,7 @@ pub mod list_report_definitions_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token value from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -486,6 +492,7 @@ pub mod list_report_definitions_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -495,7 +502,7 @@ pub mod list_report_definitions_input {
             self,
         ) -> std::result::Result<
             crate::input::ListReportDefinitionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListReportDefinitionsInput {
                 next_token: self.next_token,
@@ -515,28 +522,28 @@ impl ListReportDefinitionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListReportDefinitions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListReportDefinitionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/reportDefinition").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListReportDefinitionsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_3) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_3));
             }
             if let Some(inner_4) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_4).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
                 );
             }
         }
@@ -544,7 +551,7 @@ impl ListReportDefinitionsInput {
         fn update_http_builder(
             input: &crate::input::ListReportDefinitionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -554,23 +561,23 @@ impl ListReportDefinitionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListReportDefinitionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -593,15 +600,15 @@ impl ListReportDefinitionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListReportDefinitions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListReportDefinitions",
             "applicationcostprofiler",
         ));
@@ -610,10 +617,10 @@ impl ListReportDefinitionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -646,6 +653,8 @@ pub mod put_report_definition_input {
             self.report_id = Some(input.into());
             self
         }
+        /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the
+        /// ID.</p>
         pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.report_id = input;
             self
@@ -655,6 +664,7 @@ pub mod put_report_definition_input {
             self.report_description = Some(input.into());
             self
         }
+        /// <p>Required. Description of the report.</p>
         pub fn set_report_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -667,6 +677,7 @@ pub mod put_report_definition_input {
             self.report_frequency = Some(input);
             self
         }
+        /// <p>Required. The cadence to generate the report.</p>
         pub fn set_report_frequency(
             mut self,
             input: std::option::Option<crate::model::ReportFrequency>,
@@ -679,6 +690,7 @@ pub mod put_report_definition_input {
             self.format = Some(input);
             self
         }
+        /// <p>Required. The format to use for the generated report.</p>
         pub fn set_format(mut self, input: std::option::Option<crate::model::Format>) -> Self {
             self.format = input;
             self
@@ -689,6 +701,8 @@ pub mod put_report_definition_input {
             self.destination_s3_location = Some(input);
             self
         }
+        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
+        /// report.</p>
         pub fn set_destination_s3_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -701,7 +715,7 @@ pub mod put_report_definition_input {
             self,
         ) -> std::result::Result<
             crate::input::PutReportDefinitionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutReportDefinitionInput {
                 report_id: self.report_id,
@@ -724,16 +738,16 @@ impl PutReportDefinitionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutReportDefinition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutReportDefinitionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/reportDefinition").expect("formatting should succeed");
             Ok(())
         }
@@ -741,7 +755,7 @@ impl PutReportDefinitionInput {
         fn update_http_builder(
             input: &crate::input::PutReportDefinitionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -750,27 +764,27 @@ impl PutReportDefinitionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutReportDefinitionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_report_definition(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -793,15 +807,15 @@ impl PutReportDefinitionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutReportDefinition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutReportDefinition",
             "applicationcostprofiler",
         ));
@@ -810,10 +824,10 @@ impl PutReportDefinitionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -845,6 +859,7 @@ pub mod update_report_definition_input {
             self.report_id = Some(input.into());
             self
         }
+        /// <p>Required. ID of the report to update.</p>
         pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.report_id = input;
             self
@@ -854,6 +869,7 @@ pub mod update_report_definition_input {
             self.report_description = Some(input.into());
             self
         }
+        /// <p>Required. Description of the report.</p>
         pub fn set_report_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -866,6 +882,7 @@ pub mod update_report_definition_input {
             self.report_frequency = Some(input);
             self
         }
+        /// <p>Required. The cadence to generate the report.</p>
         pub fn set_report_frequency(
             mut self,
             input: std::option::Option<crate::model::ReportFrequency>,
@@ -878,6 +895,7 @@ pub mod update_report_definition_input {
             self.format = Some(input);
             self
         }
+        /// <p>Required. The format to use for the generated report.</p>
         pub fn set_format(mut self, input: std::option::Option<crate::model::Format>) -> Self {
             self.format = input;
             self
@@ -888,6 +906,8 @@ pub mod update_report_definition_input {
             self.destination_s3_location = Some(input);
             self
         }
+        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
+        /// report.</p>
         pub fn set_destination_s3_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -900,7 +920,7 @@ pub mod update_report_definition_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateReportDefinitionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateReportDefinitionInput {
                 report_id: self.report_id,
@@ -923,27 +943,27 @@ impl UpdateReportDefinitionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateReportDefinition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateReportDefinitionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_5 = &_input.report_id;
             let input_5 =
                 input_5
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "report_id",
                         details: "cannot be empty or unset",
                     })?;
-            let report_id = smithy_http::label::fmt_string(input_5, false);
+            let report_id = aws_smithy_http::label::fmt_string(input_5, false);
             if report_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "report_id",
                     details: "cannot be empty or unset",
                 });
@@ -956,7 +976,7 @@ impl UpdateReportDefinitionInput {
         fn update_http_builder(
             input: &crate::input::UpdateReportDefinitionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -965,27 +985,29 @@ impl UpdateReportDefinitionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateReportDefinitionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_report_definition(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1008,15 +1030,15 @@ impl UpdateReportDefinitionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateReportDefinition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateReportDefinition",
             "applicationcostprofiler",
         ));
@@ -1025,10 +1047,10 @@ impl UpdateReportDefinitionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1042,6 +1064,7 @@ impl UpdateReportDefinitionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReportDefinitionInput {
@@ -1069,6 +1092,7 @@ impl std::fmt::Debug for UpdateReportDefinitionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutReportDefinitionInput {
@@ -1097,6 +1121,7 @@ impl std::fmt::Debug for PutReportDefinitionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReportDefinitionsInput {
@@ -1114,6 +1139,7 @@ impl std::fmt::Debug for ListReportDefinitionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportApplicationUsageInput {
@@ -1128,6 +1154,7 @@ impl std::fmt::Debug for ImportApplicationUsageInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReportDefinitionInput {
@@ -1142,6 +1169,7 @@ impl std::fmt::Debug for GetReportDefinitionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReportDefinitionInput {

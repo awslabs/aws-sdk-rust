@@ -1,7 +1,7 @@
-use smithy_json::deserialize::token::skip_value;
-use smithy_json::deserialize::{json_token_iter, EscapeError, Token};
-use smithy_types::instant::Format;
-use smithy_types::Instant;
+use aws_smithy_json::deserialize::token::skip_value;
+use aws_smithy_json::deserialize::{json_token_iter, EscapeError, Token};
+use aws_smithy_types::instant::Format;
+use aws_smithy_types::Instant;
 use std::borrow::Cow;
 use std::error::Error;
 use std::fmt::{Display, Formatter};
@@ -24,8 +24,8 @@ impl From<EscapeError> for InvalidJsonCredentials {
     }
 }
 
-impl From<smithy_json::deserialize::Error> for InvalidJsonCredentials {
-    fn from(err: smithy_json::deserialize::Error) -> Self {
+impl From<aws_smithy_json::deserialize::Error> for InvalidJsonCredentials {
+    fn from(err: aws_smithy_json::deserialize::Error) -> Self {
         InvalidJsonCredentials::JsonError(err.into())
     }
 }

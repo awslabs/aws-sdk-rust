@@ -19,6 +19,11 @@ pub mod describe_group_input {
             self.identity_store_id = Some(input.into());
             self
         }
+        /// <p>The globally unique identifier for the identity store, such as
+        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
+        /// <code>1234567890</code> is a randomly generated string that contains number and lower
+        /// case letters. This value is generated at the time that a new identity store is
+        /// created.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -31,6 +36,7 @@ pub mod describe_group_input {
             self.group_id = Some(input.into());
             self
         }
+        /// <p>The identifier for a group in the identity store.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_id = input;
             self
@@ -38,8 +44,10 @@ pub mod describe_group_input {
         /// Consumes the builder and constructs a [`DescribeGroupInput`](crate::input::DescribeGroupInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeGroupInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeGroupInput {
                 identity_store_id: self.identity_store_id,
                 group_id: self.group_id,
@@ -58,16 +66,16 @@ impl DescribeGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -75,7 +83,7 @@ impl DescribeGroupInput {
         fn update_http_builder(
             input: &crate::input::DescribeGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -84,29 +92,31 @@ impl DescribeGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIdentityStore.DescribeGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_group(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -129,25 +139,27 @@ impl DescribeGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeGroup::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeGroup",
-                    "identitystore",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeGroup",
+            "identitystore",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -180,6 +192,11 @@ pub mod describe_user_input {
             self.identity_store_id = Some(input.into());
             self
         }
+        /// <p>The globally unique identifier for the identity store, such as
+        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
+        /// <code>1234567890</code> is a randomly generated string that contains number and lower
+        /// case letters. This value is generated at the time that a new identity store is
+        /// created.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -192,6 +209,7 @@ pub mod describe_user_input {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The identifier for a user in the identity store.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -199,8 +217,10 @@ pub mod describe_user_input {
         /// Consumes the builder and constructs a [`DescribeUserInput`](crate::input::DescribeUserInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeUserInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeUserInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeUserInput {
                 identity_store_id: self.identity_store_id,
                 user_id: self.user_id,
@@ -219,16 +239,16 @@ impl DescribeUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeUser,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -236,7 +256,7 @@ impl DescribeUserInput {
         fn update_http_builder(
             input: &crate::input::DescribeUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -245,31 +265,31 @@ impl DescribeUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIdentityStore.DescribeUser",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_user(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -292,25 +312,27 @@ impl DescribeUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeUser::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeUser",
-                    "identitystore",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeUser::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeUser",
+            "identitystore",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -345,6 +367,11 @@ pub mod list_groups_input {
             self.identity_store_id = Some(input.into());
             self
         }
+        /// <p>The globally unique identifier for the identity store, such as
+        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
+        /// <code>1234567890</code> is a randomly generated string that contains number and lower
+        /// case letters. This value is generated at the time that a new identity store is
+        /// created.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -359,6 +386,9 @@ pub mod list_groups_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to be returned per request. This parameter is used in the
+        /// <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results
+        /// to return in one page. The length limit is 50 characters.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -371,16 +401,26 @@ pub mod list_groups_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API
+        /// operations. This value is generated by the identity store service. It is returned in the
+        /// API response if the total results are more than the size of one page. This token is also
+        /// returned when it is used in the API request to search for the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> request. </p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> request. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -391,8 +431,10 @@ pub mod list_groups_input {
         /// Consumes the builder and constructs a [`ListGroupsInput`](crate::input::ListGroupsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListGroupsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListGroupsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListGroupsInput {
                 identity_store_id: self.identity_store_id,
                 max_results: self.max_results,
@@ -413,16 +455,16 @@ impl ListGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -430,7 +472,7 @@ impl ListGroupsInput {
         fn update_http_builder(
             input: &crate::input::ListGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -439,29 +481,31 @@ impl ListGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIdentityStore.ListGroups",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_groups(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -484,25 +528,27 @@ impl ListGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListGroups::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListGroups",
-                    "identitystore",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListGroups::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListGroups",
+            "identitystore",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -537,6 +583,11 @@ pub mod list_users_input {
             self.identity_store_id = Some(input.into());
             self
         }
+        /// <p>The globally unique identifier for the identity store, such as
+        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
+        /// <code>1234567890</code> is a randomly generated string that contains number and lower
+        /// case letters. This value is generated at the time that a new identity store is
+        /// created.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -551,6 +602,9 @@ pub mod list_users_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to be returned per request. This parameter is used in the
+        /// <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results
+        /// to return in one page. The length limit is 50 characters.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -563,16 +617,26 @@ pub mod list_users_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API
+        /// operations. This value is generated by the identity store service. It is returned in the
+        /// API response if the total results are more than the size of one page. This token is also
+        /// returned when it is used in the API request to search for the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> request. </p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> request. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -583,7 +647,7 @@ pub mod list_users_input {
         /// Consumes the builder and constructs a [`ListUsersInput`](crate::input::ListUsersInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListUsersInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListUsersInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListUsersInput {
                 identity_store_id: self.identity_store_id,
@@ -605,16 +669,16 @@ impl ListUsersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListUsers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListUsersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -622,7 +686,7 @@ impl ListUsersInput {
         fn update_http_builder(
             input: &crate::input::ListUsersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -631,29 +695,31 @@ impl ListUsersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListUsersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIdentityStore.ListUsers",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_users(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -676,13 +742,13 @@ impl ListUsersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListUsers::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListUsers::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListUsers",
                     "identitystore",
                 ));
@@ -691,10 +757,10 @@ impl ListUsersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -708,6 +774,7 @@ impl ListUsersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersInput {
@@ -740,6 +807,7 @@ impl std::fmt::Debug for ListUsersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsInput {
@@ -772,6 +840,7 @@ impl std::fmt::Debug for ListGroupsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserInput {
@@ -793,6 +862,7 @@ impl std::fmt::Debug for DescribeUserInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGroupInput {

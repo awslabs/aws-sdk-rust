@@ -38,6 +38,7 @@ pub mod service_change {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description for the service.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -47,6 +48,7 @@ pub mod service_change {
             self.dns_config = Some(input);
             self
         }
+        /// <p>Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.</p>
         pub fn set_dns_config(
             mut self,
             input: std::option::Option<crate::model::DnsConfigChange>,
@@ -62,6 +64,10 @@ pub mod service_change {
             self.health_check_config = Some(input);
             self
         }
+        /// <p>
+        /// <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify
+        /// settings for a health check, Cloud Map associates the health check with the records that you specify in
+        /// <code>DnsConfig</code>.</p>
         pub fn set_health_check_config(
             mut self,
             input: std::option::Option<crate::model::HealthCheckConfig>,
@@ -243,6 +249,35 @@ pub mod health_check_config {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of health check that you want to create, which indicates how Route 53 determines whether an endpoint is
+        /// healthy.</p>
+        /// <important>
+        /// <p>You can't change the value of <code>Type</code> after you create a health check.</p>
+        /// </important>
+        /// <p>You can create the following types of health checks:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>HTTP</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits
+        /// an HTTP request and waits for an HTTP status code of 200 or greater and less than 400.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>HTTPS</b>: Route 53 tries to establish a TCP connection. If successful, Route 53
+        /// submits an HTTPS request and waits for an HTTP status code of 200 or greater and less than 400.</p>
+        /// <important>
+        /// <p>If you specify HTTPS for the value of <code>Type</code>, the endpoint must support TLS v1.0 or later.</p>
+        /// </important>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>TCP</b>: Route 53 tries to establish a TCP connection.</p>
+        /// <p>If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for
+        /// <code>ResourcePath</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route 53 Determines Whether
+        /// an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::HealthCheckType>,
@@ -260,6 +295,12 @@ pub mod health_check_config {
             self.resource_path = Some(input.into());
             self
         }
+        /// <p>The path that you want Route 53 to request when performing health checks. The path can be any value that your
+        /// endpoint returns an HTTP status code of a 2xx or 3xx format for when the endpoint is healthy. An example file is
+        /// <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the service. If you don't
+        /// specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.</p>
+        /// <p>If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for
+        /// <code>ResourcePath</code>.</p>
         pub fn set_resource_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -274,6 +315,9 @@ pub mod health_check_config {
             self.failure_threshold = Some(input);
             self
         }
+        /// <p>The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the current
+        /// status of the endpoint from unhealthy to healthy or the other way around. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route 53
+        /// Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.</p>
         pub fn set_failure_threshold(mut self, input: std::option::Option<i32>) -> Self {
             self.failure_threshold = input;
             self
@@ -295,6 +339,7 @@ impl HealthCheckConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -306,8 +351,11 @@ impl HealthCheckConfig {
     std::hash::Hash,
 )]
 pub enum HealthCheckType {
+    #[allow(missing_docs)] // documentation missing in model
     Http,
+    #[allow(missing_docs)] // documentation missing in model
     Https,
+    #[allow(missing_docs)] // documentation missing in model
     Tcp,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -330,6 +378,7 @@ impl std::str::FromStr for HealthCheckType {
     }
 }
 impl HealthCheckType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HealthCheckType::Http => "HTTP",
@@ -338,6 +387,7 @@ impl HealthCheckType {
             HealthCheckType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HTTP", "HTTPS", "TCP"]
     }
@@ -373,12 +423,20 @@ pub mod dns_config_change {
         pub(crate) dns_records: std::option::Option<std::vec::Vec<crate::model::DnsRecord>>,
     }
     impl Builder {
+        /// Appends an item to `dns_records`.
+        ///
+        /// To override the contents of this collection use [`set_dns_records`](Self::set_dns_records).
+        ///
+        /// <p>An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to
+        /// create when you register an instance.</p>
         pub fn dns_records(mut self, input: impl Into<crate::model::DnsRecord>) -> Self {
             let mut v = self.dns_records.unwrap_or_default();
             v.push(input.into());
             self.dns_records = Some(v);
             self
         }
+        /// <p>An array that contains one <code>DnsRecord</code> object for each Route 53 record that you want Cloud Map to
+        /// create when you register an instance.</p>
         pub fn set_dns_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DnsRecord>>,
@@ -692,6 +750,133 @@ pub mod dns_record {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You
+        /// can specify values for <code>Type</code> in the following combinations:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>A</code>
+        /// </b>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>AAAA</code>
+        /// </b>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>A</code>
+        /// </b> and <b>
+        /// <code>AAAA</code>
+        /// </b>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>SRV</code>
+        /// </b>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>CNAME</code>
+        /// </b>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>If you want Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code> or
+        /// <code>AAAA</code> for <code>Type</code>.</p>
+        /// <p>You specify other settings, such as the IP address for <code>A</code> and <code>AAAA</code> records, when you
+        /// register an instance. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.</p>
+        /// <p>The following values are supported:</p>
+        /// <dl>
+        /// <dt>A</dt>
+        /// <dd>
+        /// <p>Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.</p>
+        /// </dd>
+        /// <dt>AAAA</dt>
+        /// <dd>
+        /// <p>Route 53 returns the IP address of the resource in IPv6 format, such as
+        /// 2001:0db8:85a3:0000:0000:abcd:0001:2345.</p>
+        /// </dd>
+        /// <dt>CNAME</dt>
+        /// <dd>
+        /// <p>Route 53 returns the domain name of the resource, such as www.example.com. Note the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>You specify the domain name that you want to route traffic to when you register an instance. For more
+        /// information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html#cloudmap-RegisterInstance-request-Attributes">Attributes</a> in the topic <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>You must specify <code>WEIGHTED</code> for the value of <code>RoutingPolicy</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>You can't specify both <code>CNAME</code> for <code>Type</code> and settings for
+        /// <code>HealthCheckConfig</code>. If you do, the request will fail with an <code>InvalidInput</code>
+        /// error.</p>
+        /// </li>
+        /// </ul>
+        /// </dd>
+        /// <dt>SRV</dt>
+        /// <dd>
+        /// <p>Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the
+        /// following values:</p>
+        /// <p>
+        /// <code>priority weight port service-hostname</code>
+        /// </p>
+        /// <p>Note the following about the values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The values of <code>priority</code> and <code>weight</code> are both set to <code>1</code> and can't be
+        /// changed. </p>
+        /// </li>
+        /// <li>
+        /// <p>The value of <code>port</code> comes from the value that you specify for the <code>AWS_INSTANCE_PORT</code>
+        /// attribute when you submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request.</p>
+        /// </li>
+        /// <li>
+        /// <p>The value of <code>service-hostname</code> is a concatenation of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The value that you specify for <code>InstanceId</code> when you register an instance.</p>
+        /// </li>
+        /// <li>
+        /// <p>The name of the service.</p>
+        /// </li>
+        /// <li>
+        /// <p>The name of the namespace. </p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, if the value of <code>InstanceId</code> is <code>test</code>, the name of the service is
+        /// <code>backend</code>, and the name of the namespace is <code>example.com</code>, the value of
+        /// <code>service-hostname</code> is the following:</p>
+        /// <p>
+        /// <code>test.backend.example.com</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>If you specify settings for an <code>SRV</code> record, note the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you specify values for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both in the
+        /// <code>RegisterInstance</code> request, Cloud Map automatically creates <code>A</code> and/or <code>AAAA</code>
+        /// records that have the same name as the value of <code>service-hostname</code> in the <code>SRV</code> record.
+        /// You can ignore these records.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you're using a system that requires a specific <code>SRV</code> format, such as HAProxy, see the <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html#cloudmap-CreateService-request-Name">Name</a> element in the documentation about <code>CreateService</code> for information about how to
+        /// specify the correct name format.</p>
+        /// </li>
+        /// </ul>
+        /// </dd>
+        /// </dl>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RecordType>) -> Self {
             self.r#type = input;
             self
@@ -707,6 +892,13 @@ pub mod dns_record {
             self.ttl = Some(input);
             self
         }
+        /// <p>The amount of time, in seconds, that you want DNS resolvers to cache the settings for this record.</p>
+        /// <note>
+        /// <p>Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web Services resource that an alias record routes
+        /// traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request, the
+        /// <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register
+        /// instances that create either alias or non-alias records.</p>
+        /// </note>
         pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.ttl = input;
             self
@@ -727,6 +919,7 @@ impl DnsRecord {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -738,9 +931,13 @@ impl DnsRecord {
     std::hash::Hash,
 )]
 pub enum RecordType {
+    #[allow(missing_docs)] // documentation missing in model
     A,
+    #[allow(missing_docs)] // documentation missing in model
     Aaaa,
+    #[allow(missing_docs)] // documentation missing in model
     Cname,
+    #[allow(missing_docs)] // documentation missing in model
     Srv,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -764,6 +961,7 @@ impl std::str::FromStr for RecordType {
     }
 }
 impl RecordType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RecordType::A => "A",
@@ -773,6 +971,7 @@ impl RecordType {
             RecordType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["A", "AAAA", "CNAME", "SRV"]
     }
@@ -820,6 +1019,8 @@ pub mod public_dns_namespace_change {
             self.description = Some(input.into());
             self
         }
+        /// <p>An updated description for the public DNS
+        /// namespace.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -833,6 +1034,8 @@ pub mod public_dns_namespace_change {
             self.properties = Some(input);
             self
         }
+        /// <p>Properties to be updated in the public
+        /// DNS namespace.</p>
         pub fn set_properties(
             mut self,
             input: std::option::Option<crate::model::PublicDnsNamespacePropertiesChange>,
@@ -891,6 +1094,8 @@ pub mod public_dns_namespace_properties_change {
             self.dns_properties = Some(input);
             self
         }
+        /// <p>Updated DNS properties for the hosted
+        /// zone for the public DNS namespace.</p>
         pub fn set_dns_properties(
             mut self,
             input: std::option::Option<crate::model::PublicDnsPropertiesMutableChange>,
@@ -944,6 +1149,8 @@ pub mod public_dns_properties_mutable_change {
             self.soa = Some(input);
             self
         }
+        /// <p>Updated fields for the Start of Authority
+        /// (SOA) record for the hosted zone for the public DNS namespace.</p>
         pub fn set_soa(mut self, input: std::option::Option<crate::model::SoaChange>) -> Self {
             self.soa = input;
             self
@@ -992,6 +1199,8 @@ pub mod soa_change {
             self.ttl = Some(input);
             self
         }
+        /// <p>The updated time to live (TTL) for
+        /// purposes of negative caching.</p>
         pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.ttl = input;
             self
@@ -1046,6 +1255,8 @@ pub mod private_dns_namespace_change {
             self.description = Some(input.into());
             self
         }
+        /// <p>An updated description for the private
+        /// DNS namespace.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1059,6 +1270,8 @@ pub mod private_dns_namespace_change {
             self.properties = Some(input);
             self
         }
+        /// <p>Properties to be updated in the private
+        /// DNS namespace.</p>
         pub fn set_properties(
             mut self,
             input: std::option::Option<crate::model::PrivateDnsNamespacePropertiesChange>,
@@ -1117,6 +1330,8 @@ pub mod private_dns_namespace_properties_change {
             self.dns_properties = Some(input);
             self
         }
+        /// <p>Updated DNS properties for the private
+        /// DNS namespace.</p>
         pub fn set_dns_properties(
             mut self,
             input: std::option::Option<crate::model::PrivateDnsPropertiesMutableChange>,
@@ -1170,6 +1385,8 @@ pub mod private_dns_properties_mutable_change {
             self.soa = Some(input);
             self
         }
+        /// <p>Updated fields for the Start of Authority
+        /// (SOA) record for the hosted zone for the private DNS namespace.</p>
         pub fn set_soa(mut self, input: std::option::Option<crate::model::SoaChange>) -> Self {
             self.soa = input;
             self
@@ -1187,6 +1404,7 @@ impl PrivateDnsPropertiesMutableChange {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1198,7 +1416,9 @@ impl PrivateDnsPropertiesMutableChange {
     std::hash::Hash,
 )]
 pub enum CustomHealthStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Healthy,
+    #[allow(missing_docs)] // documentation missing in model
     Unhealthy,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1220,6 +1440,7 @@ impl std::str::FromStr for CustomHealthStatus {
     }
 }
 impl CustomHealthStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CustomHealthStatus::Healthy => "HEALTHY",
@@ -1227,6 +1448,7 @@ impl CustomHealthStatus {
             CustomHealthStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HEALTHY", "UNHEALTHY"]
     }
@@ -1268,6 +1490,8 @@ pub mod http_namespace_change {
             self.description = Some(input.into());
             self
         }
+        /// <p>An updated description for the HTTP
+        /// namespace.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1320,6 +1544,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key identifier, or name, of the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -1330,6 +1555,8 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The string value that's associated with the key of the tag. You can set the value of a tag to an empty string,
+        /// but you can't set the value of a tag to null.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1408,7 +1635,7 @@ pub struct ServiceSummary {
     /// </important>
     pub health_check_custom_config: std::option::Option<crate::model::HealthCheckCustomConfig>,
     /// <p>The date and time that the service was created.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ServiceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1445,7 +1672,7 @@ pub mod service_summary {
         pub(crate) health_check_config: std::option::Option<crate::model::HealthCheckConfig>,
         pub(crate) health_check_custom_config:
             std::option::Option<crate::model::HealthCheckCustomConfig>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ID that Cloud Map assigned to the service when you created it.</p>
@@ -1453,6 +1680,7 @@ pub mod service_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID that Cloud Map assigned to the service when you created it.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1462,6 +1690,7 @@ pub mod service_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create it.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1471,6 +1700,7 @@ pub mod service_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the service.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1495,6 +1725,22 @@ pub mod service_summary {
             self.r#type = Some(input);
             self
         }
+        /// <p>Describes the systems that can be used to discover the service instances.</p>
+        /// <dl>
+        /// <dt>DNS_HTTP</dt>
+        /// <dd>
+        /// <p>The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+        /// operation.</p>
+        /// </dd>
+        /// <dt>HTTP</dt>
+        /// <dd>
+        /// <p>The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.</p>
+        /// </dd>
+        /// <dt>DNS</dt>
+        /// <dd>
+        /// <p>Reserved.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ServiceType>) -> Self {
             self.r#type = input;
             self
@@ -1504,6 +1750,7 @@ pub mod service_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description that you specify when you create the service.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1515,6 +1762,9 @@ pub mod service_summary {
             self.instance_count = Some(input);
             self
         }
+        /// <p>The number of instances that are currently associated with the service. Instances that were previously
+        /// associated with the service but that are deleted aren't included in the count. The count might not reflect pending
+        /// registrations and deregistrations.</p>
         pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
             self.instance_count = input;
             self
@@ -1524,6 +1774,7 @@ pub mod service_summary {
             self.dns_config = Some(input);
             self
         }
+        /// <p>Information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.</p>
         pub fn set_dns_config(
             mut self,
             input: std::option::Option<crate::model::DnsConfig>,
@@ -1539,6 +1790,10 @@ pub mod service_summary {
             self.health_check_config = Some(input);
             self
         }
+        /// <p>
+        /// <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify
+        /// settings for a health check, Cloud Map associates the health check with the records that you specify in
+        /// <code>DnsConfig</code>.</p>
         pub fn set_health_check_config(
             mut self,
             input: std::option::Option<crate::model::HealthCheckConfig>,
@@ -1569,6 +1824,22 @@ pub mod service_summary {
             self.health_check_custom_config = Some(input);
             self
         }
+        /// <p>Information about an optional custom health check. A custom health check, which requires that you use a
+        /// third-party health checker to evaluate the health of your resources, is useful in the following circumstances:</p>
+        /// <ul>
+        /// <li>
+        /// <p>You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't
+        /// available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC.
+        /// (To check the health of resources in a VPC, the health checker must also be in the VPC.)</p>
+        /// </li>
+        /// <li>
+        /// <p>You want to use a third-party health checker regardless of where your resources are located.</p>
+        /// </li>
+        /// </ul>
+        /// <important>
+        /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
+        /// <code>HealthCheckConfig</code> but not both.</p>
+        /// </important>
         pub fn set_health_check_custom_config(
             mut self,
             input: std::option::Option<crate::model::HealthCheckCustomConfig>,
@@ -1577,13 +1848,14 @@ pub mod service_summary {
             self
         }
         /// <p>The date and time that the service was created.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date and time that the service was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
@@ -1707,6 +1979,17 @@ pub mod health_check_custom_config {
             self.failure_threshold = Some(input);
             self
         }
+        /// <important>
+        /// <p>This parameter is no longer supported and is always set to 1. Cloud Map waits for approximately 30 seconds after
+        /// receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the status of the service
+        /// instance.</p>
+        /// </important>
+        /// <p>The number of 30-second intervals that you want Cloud Map to wait after receiving an
+        /// <code>UpdateInstanceCustomHealthStatus</code> request before it changes the health status of a service
+        /// instance.</p>
+        /// <p>Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request with the same value before
+        /// 30 seconds has passed doesn't accelerate the change. Cloud Map still waits <code>30</code> seconds after the first
+        /// request to make the change.</p>
         pub fn set_failure_threshold(mut self, input: std::option::Option<i32>) -> Self {
             self.failure_threshold = input;
             self
@@ -1799,6 +2082,7 @@ pub mod dns_config {
             self.namespace_id = Some(input.into());
             self
         }
+        /// <p>The ID of the namespace to use for DNS configuration.</p>
         pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace_id = input;
             self
@@ -1843,6 +2127,42 @@ pub mod dns_config {
             self.routing_policy = Some(input);
             self
         }
+        /// <p>The routing policy that you want to apply to all Route 53 DNS records that Cloud Map creates when you register an
+        /// instance and specify this service.</p>
+        /// <note>
+        /// <p>If you want to use this service to register instances that create alias records, specify <code>WEIGHTED</code>
+        /// for the routing policy.</p>
+        /// </note>
+        /// <p>You can specify the following values:</p>
+        /// <dl>
+        /// <dt>MULTIVALUE</dt>
+        /// <dd>
+        /// <p>If you define a health check for the service and the health check is healthy, Route 53 returns the applicable
+        /// value for up to eight instances.</p>
+        /// <p>For example, suppose that the service includes configurations for one <code>A</code> record and a health
+        /// check. You use the service to register 10 instances. Route 53 responds to DNS queries with IP addresses for up to
+        /// eight healthy instances. If fewer than eight instances are healthy, Route 53 responds to every DNS query with the IP
+        /// addresses for all of the healthy instances.</p>
+        /// <p>If you don't define a health check for the service, Route 53 assumes that all instances are healthy and returns
+        /// the values for up to eight instances.</p>
+        /// <p>For more information about the multivalue routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue Answer
+        /// Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
+        /// </dd>
+        /// <dt>WEIGHTED</dt>
+        /// <dd>
+        /// <p>Route 53 returns the applicable value from one randomly selected instance from among the instances that you
+        /// registered using the same service. Currently, all records have the same weight, so you can't route more or less
+        /// traffic to any instances.</p>
+        /// <p>For example, suppose that the service includes configurations for one <code>A</code> record and a health
+        /// check. You use the service to register 10 instances. Route 53 responds to DNS queries with the IP address for one
+        /// randomly selected instance from among the healthy instances. If no instances are healthy, Route 53 responds to DNS
+        /// queries as if all of the instances were healthy.</p>
+        /// <p>If you don't define a health check for the service, Route 53 assumes that all instances are healthy and returns
+        /// the applicable value for one randomly selected instance.</p>
+        /// <p>For more information about the weighted routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted Routing</a> in the
+        /// <i>Route 53 Developer Guide</i>.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_routing_policy(
             mut self,
             input: std::option::Option<crate::model::RoutingPolicy>,
@@ -1850,12 +2170,20 @@ pub mod dns_config {
             self.routing_policy = input;
             self
         }
+        /// Appends an item to `dns_records`.
+        ///
+        /// To override the contents of this collection use [`set_dns_records`](Self::set_dns_records).
+        ///
+        /// <p>An array that contains one <code>DnsRecord</code> object for each Route 53 DNS record that you want Cloud Map to
+        /// create when you register an instance.</p>
         pub fn dns_records(mut self, input: impl Into<crate::model::DnsRecord>) -> Self {
             let mut v = self.dns_records.unwrap_or_default();
             v.push(input.into());
             self.dns_records = Some(v);
             self
         }
+        /// <p>An array that contains one <code>DnsRecord</code> object for each Route 53 DNS record that you want Cloud Map to
+        /// create when you register an instance.</p>
         pub fn set_dns_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DnsRecord>>,
@@ -1880,6 +2208,7 @@ impl DnsConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1891,7 +2220,9 @@ impl DnsConfig {
     std::hash::Hash,
 )]
 pub enum RoutingPolicy {
+    #[allow(missing_docs)] // documentation missing in model
     Multivalue,
+    #[allow(missing_docs)] // documentation missing in model
     Weighted,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1913,6 +2244,7 @@ impl std::str::FromStr for RoutingPolicy {
     }
 }
 impl RoutingPolicy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RoutingPolicy::Multivalue => "MULTIVALUE",
@@ -1920,6 +2252,7 @@ impl RoutingPolicy {
             RoutingPolicy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MULTIVALUE", "WEIGHTED"]
     }
@@ -1930,6 +2263,7 @@ impl AsRef<str> for RoutingPolicy {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1941,8 +2275,11 @@ impl AsRef<str> for RoutingPolicy {
     std::hash::Hash,
 )]
 pub enum ServiceType {
+    #[allow(missing_docs)] // documentation missing in model
     Dns,
+    #[allow(missing_docs)] // documentation missing in model
     DnsHttp,
+    #[allow(missing_docs)] // documentation missing in model
     Http,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1965,6 +2302,7 @@ impl std::str::FromStr for ServiceType {
     }
 }
 impl ServiceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceType::Dns => "DNS",
@@ -1973,6 +2311,7 @@ impl ServiceType {
             ServiceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DNS", "DNS_HTTP", "HTTP"]
     }
@@ -2037,6 +2376,7 @@ pub mod service_filter {
             self.name = Some(input);
             self
         }
+        /// <p>Specify <code>NAMESPACE_ID</code>.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::ServiceFilterName>,
@@ -2044,12 +2384,20 @@ pub mod service_filter {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The values that are applicable to the value that you specify for <code>Condition</code> to filter the list of
+        /// services.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The values that are applicable to the value that you specify for <code>Condition</code> to filter the list of
+        /// services.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2079,6 +2427,24 @@ pub mod service_filter {
             self.condition = Some(input);
             self
         }
+        /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid
+        /// values for <code>Condition</code> include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>.
+        /// <code>EQ</code> is the default condition and can be omitted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IN</code>: When you specify <code>IN</code>, specify a list of the IDs for the namespaces that you want
+        /// <code>ListServices</code> to return a list of services for.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>BETWEEN</code>: Not applicable.</p>
+        /// </li>
+        /// </ul>
         pub fn set_condition(
             mut self,
             input: std::option::Option<crate::model::FilterCondition>,
@@ -2103,6 +2469,7 @@ impl ServiceFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2114,8 +2481,11 @@ impl ServiceFilter {
     std::hash::Hash,
 )]
 pub enum FilterCondition {
+    #[allow(missing_docs)] // documentation missing in model
     Between,
+    #[allow(missing_docs)] // documentation missing in model
     Eq,
+    #[allow(missing_docs)] // documentation missing in model
     In,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2138,6 +2508,7 @@ impl std::str::FromStr for FilterCondition {
     }
 }
 impl FilterCondition {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FilterCondition::Between => "BETWEEN",
@@ -2146,6 +2517,7 @@ impl FilterCondition {
             FilterCondition::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BETWEEN", "EQ", "IN"]
     }
@@ -2156,6 +2528,7 @@ impl AsRef<str> for FilterCondition {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2167,6 +2540,7 @@ impl AsRef<str> for FilterCondition {
     std::hash::Hash,
 )]
 pub enum ServiceFilterName {
+    #[allow(missing_docs)] // documentation missing in model
     NamespaceId,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2187,12 +2561,14 @@ impl std::str::FromStr for ServiceFilterName {
     }
 }
 impl ServiceFilterName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceFilterName::NamespaceId => "NAMESPACE_ID",
             ServiceFilterName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NAMESPACE_ID"]
     }
@@ -2257,6 +2633,7 @@ pub mod operation_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID for an operation.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2286,6 +2663,27 @@ pub mod operation_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the operation. Values include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>SUBMITTED</b>: This is the initial state immediately after you submit a
+        /// request.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>PENDING</b>: Cloud Map is performing the operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>SUCCESS</b>: The operation succeeded.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>FAIL</b>: The operation failed. For the failure reason, see
+        /// <code>ErrorMessage</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OperationStatus>,
@@ -2309,6 +2707,7 @@ impl OperationSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2320,9 +2719,13 @@ impl OperationSummary {
     std::hash::Hash,
 )]
 pub enum OperationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Fail,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Submitted,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2346,6 +2749,7 @@ impl std::str::FromStr for OperationStatus {
     }
 }
 impl OperationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OperationStatus::Fail => "FAIL",
@@ -2355,6 +2759,7 @@ impl OperationStatus {
             OperationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAIL", "PENDING", "SUBMITTED", "SUCCESS"]
     }
@@ -2496,6 +2901,31 @@ pub mod operation_filter {
             self.name = Some(input);
             self
         }
+        /// <p>Specify the operations that you want to get:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>NAMESPACE_ID</b>: Gets operations related to specified namespaces.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>SERVICE_ID</b>: Gets operations related to specified services.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>STATUS</b>: Gets operations based on the status of the operations:
+        /// <code>SUBMITTED</code>, <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>TYPE</b>: Gets specified types of operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time
+        /// range. </p>
+        /// </li>
+        /// </ul>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::OperationFilterName>,
@@ -2503,12 +2933,70 @@ pub mod operation_filter {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>NAMESPACE_ID</b>: Specify one namespace ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>SERVICE_ID</b>: Specify one service ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>STATUS</b>: Specify one or more statuses: <code>SUBMITTED</code>,
+        /// <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>TYPE</b>: Specify one or more of the following types:
+        /// <code>CREATE_NAMESPACE</code>, <code>DELETE_NAMESPACE</code>, <code>UPDATE_SERVICE</code>,
+        /// <code>REGISTER_INSTANCE</code>, or <code>DEREGISTER_INSTANCE</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format
+        /// and Coordinated Universal Time (UTC). The start date must be the first value.</p>
+        /// </li>
+        /// </ul>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>NAMESPACE_ID</b>: Specify one namespace ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>SERVICE_ID</b>: Specify one service ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>STATUS</b>: Specify one or more statuses: <code>SUBMITTED</code>,
+        /// <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>TYPE</b>: Specify one or more of the following types:
+        /// <code>CREATE_NAMESPACE</code>, <code>DELETE_NAMESPACE</code>, <code>UPDATE_SERVICE</code>,
+        /// <code>REGISTER_INSTANCE</code>, or <code>DEREGISTER_INSTANCE</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format
+        /// and Coordinated Universal Time (UTC). The start date must be the first value.</p>
+        /// </li>
+        /// </ul>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2542,6 +3030,28 @@ pub mod operation_filter {
             self.condition = Some(input);
             self
         }
+        /// <p>The operator that you want to use to determine whether an operation matches the specified value. Valid values
+        /// for condition include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>EQ</code>: When you specify <code>EQ</code> for the condition, you can specify only one value.
+        /// <code>EQ</code> is supported for <code>NAMESPACE_ID</code>, <code>SERVICE_ID</code>, <code>STATUS</code>, and
+        /// <code>TYPE</code>. <code>EQ</code> is the default condition and can be omitted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IN</code>: When you specify <code>IN</code> for the condition, you can specify a list of one or more
+        /// values. <code>IN</code> is supported for <code>STATUS</code> and <code>TYPE</code>. An operation must match one of
+        /// the specified values to be returned in the response.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>BETWEEN</code>: Specify a start date and an end date in Unix date/time format and Coordinated Universal
+        /// Time (UTC). The start date must be the first value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>.
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_condition(
             mut self,
             input: std::option::Option<crate::model::FilterCondition>,
@@ -2566,6 +3076,7 @@ impl OperationFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2577,10 +3088,15 @@ impl OperationFilter {
     std::hash::Hash,
 )]
 pub enum OperationFilterName {
+    #[allow(missing_docs)] // documentation missing in model
     NamespaceId,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceId,
+    #[allow(missing_docs)] // documentation missing in model
     Status,
+    #[allow(missing_docs)] // documentation missing in model
     Type,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateDate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2605,6 +3121,7 @@ impl std::str::FromStr for OperationFilterName {
     }
 }
 impl OperationFilterName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OperationFilterName::NamespaceId => "NAMESPACE_ID",
@@ -2615,6 +3132,7 @@ impl OperationFilterName {
             OperationFilterName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "NAMESPACE_ID",
@@ -2651,7 +3169,7 @@ pub struct NamespaceSummary {
     /// <p>The properties of the namespace.</p>
     pub properties: std::option::Option<crate::model::NamespaceProperties>,
     /// <p>The date and time that the namespace was created.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for NamespaceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2680,7 +3198,7 @@ pub mod namespace_summary {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) service_count: std::option::Option<i32>,
         pub(crate) properties: std::option::Option<crate::model::NamespaceProperties>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ID of the namespace.</p>
@@ -2688,6 +3206,7 @@ pub mod namespace_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the namespace.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2697,6 +3216,7 @@ pub mod namespace_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2707,6 +3227,8 @@ pub mod namespace_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the namespace. When you create a namespace, Cloud Map automatically creates a Route 53 hosted zone
+        /// that has the same name as the namespace.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2716,6 +3238,7 @@ pub mod namespace_summary {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the namespace, either public or private.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::NamespaceType>) -> Self {
             self.r#type = input;
             self
@@ -2725,6 +3248,7 @@ pub mod namespace_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description for the namespace.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2734,6 +3258,7 @@ pub mod namespace_summary {
             self.service_count = Some(input);
             self
         }
+        /// <p>The number of services that were created using the namespace.</p>
         pub fn set_service_count(mut self, input: std::option::Option<i32>) -> Self {
             self.service_count = input;
             self
@@ -2743,6 +3268,7 @@ pub mod namespace_summary {
             self.properties = Some(input);
             self
         }
+        /// <p>The properties of the namespace.</p>
         pub fn set_properties(
             mut self,
             input: std::option::Option<crate::model::NamespaceProperties>,
@@ -2751,13 +3277,14 @@ pub mod namespace_summary {
             self
         }
         /// <p>The date and time that the namespace was created.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date and time that the namespace was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
@@ -2818,6 +3345,8 @@ pub mod namespace_properties {
             self.dns_properties = Some(input);
             self
         }
+        /// <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a
+        /// namespace.</p>
         pub fn set_dns_properties(
             mut self,
             input: std::option::Option<crate::model::DnsProperties>,
@@ -2830,6 +3359,7 @@ pub mod namespace_properties {
             self.http_properties = Some(input);
             self
         }
+        /// <p>A complex type that contains the name of an HTTP namespace.</p>
         pub fn set_http_properties(
             mut self,
             input: std::option::Option<crate::model::HttpProperties>,
@@ -2881,6 +3411,7 @@ pub mod http_properties {
             self.http_name = Some(input.into());
             self
         }
+        /// <p>The name of an HTTP namespace.</p>
         pub fn set_http_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_name = input;
             self
@@ -2933,6 +3464,7 @@ pub mod dns_properties {
             self.hosted_zone_id = Some(input.into());
             self
         }
+        /// <p>The ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.</p>
         pub fn set_hosted_zone_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2945,6 +3477,7 @@ pub mod dns_properties {
             self.soa = Some(input);
             self
         }
+        /// <p>Start of Authority (SOA) record for the hosted zone.</p>
         pub fn set_soa(mut self, input: std::option::Option<crate::model::Soa>) -> Self {
             self.soa = input;
             self
@@ -2996,6 +3529,8 @@ pub mod soa {
             self.ttl = Some(input);
             self
         }
+        /// <p>The time to live (TTL) for purposes of
+        /// negative caching.</p>
         pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.ttl = input;
             self
@@ -3013,6 +3548,7 @@ impl Soa {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3024,8 +3560,11 @@ impl Soa {
     std::hash::Hash,
 )]
 pub enum NamespaceType {
+    #[allow(missing_docs)] // documentation missing in model
     DnsPrivate,
+    #[allow(missing_docs)] // documentation missing in model
     DnsPublic,
+    #[allow(missing_docs)] // documentation missing in model
     Http,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3048,6 +3587,7 @@ impl std::str::FromStr for NamespaceType {
     }
 }
 impl NamespaceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NamespaceType::DnsPrivate => "DNS_PRIVATE",
@@ -3056,6 +3596,7 @@ impl NamespaceType {
             NamespaceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DNS_PRIVATE", "DNS_PUBLIC", "HTTP"]
     }
@@ -3123,6 +3664,7 @@ pub mod namespace_filter {
             self.name = Some(input);
             self
         }
+        /// <p>Specify <code>TYPE</code>.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::NamespaceFilterName>,
@@ -3130,12 +3672,24 @@ pub mod namespace_filter {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>If you specify <code>EQ</code> for <code>Condition</code>, specify either <code>DNS_PUBLIC</code> or
+        /// <code>DNS_PRIVATE</code>.</p>
+        /// <p>If you specify <code>IN</code> for <code>Condition</code>, you can specify <code>DNS_PUBLIC</code>,
+        /// <code>DNS_PRIVATE</code>, or both.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>If you specify <code>EQ</code> for <code>Condition</code>, specify either <code>DNS_PUBLIC</code> or
+        /// <code>DNS_PRIVATE</code>.</p>
+        /// <p>If you specify <code>IN</code> for <code>Condition</code>, you can specify <code>DNS_PUBLIC</code>,
+        /// <code>DNS_PRIVATE</code>, or both.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3165,6 +3719,24 @@ pub mod namespace_filter {
             self.condition = Some(input);
             self
         }
+        /// <p>The operator that you want to use to determine whether <code>ListNamespaces</code> returns a namespace. Valid
+        /// values for <code>condition</code> include:</p>
+        /// <dl>
+        /// <dt>EQ</dt>
+        /// <dd>
+        /// <p>When you specify <code>EQ</code> for the condition, you can choose to list only public namespaces or private
+        /// namespaces, but not both. <code>EQ</code> is the default condition and can be omitted.</p>
+        /// </dd>
+        /// <dt>IN</dt>
+        /// <dd>
+        /// <p>When you specify <code>IN</code> for the condition, you can choose to list public namespaces, private
+        /// namespaces, or both. </p>
+        /// </dd>
+        /// <dt>BETWEEN</dt>
+        /// <dd>
+        /// <p> Not applicable</p>
+        /// </dd>
+        /// </dl>
         pub fn set_condition(
             mut self,
             input: std::option::Option<crate::model::FilterCondition>,
@@ -3189,6 +3761,7 @@ impl NamespaceFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3200,6 +3773,7 @@ impl NamespaceFilter {
     std::hash::Hash,
 )]
 pub enum NamespaceFilterName {
+    #[allow(missing_docs)] // documentation missing in model
     Type,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3220,12 +3794,14 @@ impl std::str::FromStr for NamespaceFilterName {
     }
 }
 impl NamespaceFilterName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NamespaceFilterName::Type => "TYPE",
             NamespaceFilterName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["TYPE"]
     }
@@ -3320,10 +3896,64 @@ pub mod instance_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID for an instance that you created by using a specified service.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>A string map that contains the following information:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The attributes that are associated with the instance. </p>
+        /// </li>
+        /// <li>
+        /// <p>For each attribute, the applicable value.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Supported attribute keys include the following:</p>
+        /// <dl>
+        /// <dt>AWS_ALIAS_DNS_NAME</dt>
+        /// <dd>
+        /// <p>For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that's associated with the
+        /// load balancer. </p>
+        /// </dd>
+        /// <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt>
+        /// <dd>
+        /// <p>The Amazon EC2 instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified,
+        /// then the <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.</p>
+        /// </dd>
+        /// <dt>AWS_INIT_HEALTH_STATUS</dt>
+        /// <dd>
+        /// <p>If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use
+        /// <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check,
+        /// <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for
+        /// <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.</p>
+        /// </dd>
+        /// <dt>AWS_INSTANCE_CNAME</dt>
+        /// <dd>
+        /// <p>For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for example,
+        /// <code>example.com</code>).</p>
+        /// </dd>
+        /// <dt>AWS_INSTANCE_IPV4</dt>
+        /// <dd>
+        /// <p>For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for example,
+        /// <code>192.0.2.44</code>).</p>
+        /// </dd>
+        /// <dt>AWS_INSTANCE_IPV6</dt>
+        /// <dd>
+        /// <p>For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for example,
+        /// <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
+        /// </dd>
+        /// <dt>AWS_INSTANCE_PORT</dt>
+        /// <dd>
+        /// <p>For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
+        /// includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.</p>
+        /// </dd>
+        /// </dl>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -3334,6 +3964,55 @@ pub mod instance_summary {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>A string map that contains the following information:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The attributes that are associated with the instance. </p>
+        /// </li>
+        /// <li>
+        /// <p>For each attribute, the applicable value.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Supported attribute keys include the following:</p>
+        /// <dl>
+        /// <dt>AWS_ALIAS_DNS_NAME</dt>
+        /// <dd>
+        /// <p>For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that's associated with the
+        /// load balancer. </p>
+        /// </dd>
+        /// <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt>
+        /// <dd>
+        /// <p>The Amazon EC2 instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified,
+        /// then the <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.</p>
+        /// </dd>
+        /// <dt>AWS_INIT_HEALTH_STATUS</dt>
+        /// <dd>
+        /// <p>If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use
+        /// <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check,
+        /// <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for
+        /// <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.</p>
+        /// </dd>
+        /// <dt>AWS_INSTANCE_CNAME</dt>
+        /// <dd>
+        /// <p>For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for example,
+        /// <code>example.com</code>).</p>
+        /// </dd>
+        /// <dt>AWS_INSTANCE_IPV4</dt>
+        /// <dd>
+        /// <p>For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for example,
+        /// <code>192.0.2.44</code>).</p>
+        /// </dd>
+        /// <dt>AWS_INSTANCE_IPV6</dt>
+        /// <dd>
+        /// <p>For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for example,
+        /// <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
+        /// </dd>
+        /// <dt>AWS_INSTANCE_PORT</dt>
+        /// <dd>
+        /// <p>For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
+        /// includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -3412,7 +4091,7 @@ pub struct Service {
     /// <p>The date and time that the service was created, in Unix format and Coordinated Universal Time (UTC). The value
     /// of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents
     /// Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of
     /// running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a
     /// date/timestamp).</p>
@@ -3456,7 +4135,7 @@ pub mod service {
         pub(crate) health_check_config: std::option::Option<crate::model::HealthCheckConfig>,
         pub(crate) health_check_custom_config:
             std::option::Option<crate::model::HealthCheckCustomConfig>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) creator_request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3465,6 +4144,7 @@ pub mod service {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID that Cloud Map assigned to the service when you created it.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3474,6 +4154,7 @@ pub mod service {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the service when you create it.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3483,6 +4164,7 @@ pub mod service {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the service.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3492,6 +4174,7 @@ pub mod service {
             self.namespace_id = Some(input.into());
             self
         }
+        /// <p>The ID of the namespace that was used to create the service.</p>
         pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace_id = input;
             self
@@ -3501,6 +4184,7 @@ pub mod service {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the service.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3512,6 +4196,9 @@ pub mod service {
             self.instance_count = Some(input);
             self
         }
+        /// <p>The number of instances that are currently associated with the service. Instances that were previously
+        /// associated with the service but that are deleted aren't included in the count. The count might not reflect pending
+        /// registrations and deregistrations.</p>
         pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
             self.instance_count = input;
             self
@@ -3522,6 +4209,8 @@ pub mod service {
             self.dns_config = Some(input);
             self
         }
+        /// <p>A complex type that contains information about the Route 53 DNS records that you want Cloud Map to create when you
+        /// register an instance.</p>
         pub fn set_dns_config(
             mut self,
             input: std::option::Option<crate::model::DnsConfig>,
@@ -3549,6 +4238,22 @@ pub mod service {
             self.r#type = Some(input);
             self
         }
+        /// <p>Describes the systems that can be used to discover the service instances.</p>
+        /// <dl>
+        /// <dt>DNS_HTTP</dt>
+        /// <dd>
+        /// <p>The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+        /// operation.</p>
+        /// </dd>
+        /// <dt>HTTP</dt>
+        /// <dd>
+        /// <p>The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.</p>
+        /// </dd>
+        /// <dt>DNS</dt>
+        /// <dd>
+        /// <p>Reserved.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ServiceType>) -> Self {
             self.r#type = input;
             self
@@ -3562,6 +4267,11 @@ pub mod service {
             self.health_check_config = Some(input);
             self
         }
+        /// <p>
+        /// <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional
+        /// health check. If you specify settings for a health check, Cloud Map associates the health check with the records
+        /// that you specify in <code>DnsConfig</code>.</p>
+        /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
         pub fn set_health_check_config(
             mut self,
             input: std::option::Option<crate::model::HealthCheckConfig>,
@@ -3581,6 +4291,11 @@ pub mod service {
             self.health_check_custom_config = Some(input);
             self
         }
+        /// <p>A complex type that contains information about an optional custom health check.</p>
+        /// <important>
+        /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
+        /// <code>HealthCheckConfig</code> but not both.</p>
+        /// </important>
         pub fn set_health_check_custom_config(
             mut self,
             input: std::option::Option<crate::model::HealthCheckCustomConfig>,
@@ -3591,13 +4306,16 @@ pub mod service {
         /// <p>The date and time that the service was created, in Unix format and Coordinated Universal Time (UTC). The value
         /// of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents
         /// Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date and time that the service was created, in Unix format and Coordinated Universal Time (UTC). The value
+        /// of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents
+        /// Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
@@ -3609,6 +4327,9 @@ pub mod service {
             self.creator_request_id = Some(input.into());
             self
         }
+        /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of
+        /// running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a
+        /// date/timestamp).</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3715,11 +4436,11 @@ pub struct Operation {
     /// <p>The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC).
     /// The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code>
     /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format
     /// and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For example,
     /// the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub update_date: std::option::Option<smithy_types::Instant>,
+    pub update_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of the target entity that's associated with the operation:</p>
     /// <dl>
     /// <dt>NAMESPACE</dt>
@@ -3764,8 +4485,8 @@ pub mod operation {
         pub(crate) status: std::option::Option<crate::model::OperationStatus>,
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) update_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) targets: std::option::Option<
             std::collections::HashMap<crate::model::OperationTargetType, std::string::String>,
         >,
@@ -3776,6 +4497,7 @@ pub mod operation {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the operation that you want to get information about.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3785,6 +4507,7 @@ pub mod operation {
             self.r#type = Some(input);
             self
         }
+        /// <p>The name of the operation that's associated with the specified ID.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::OperationType>) -> Self {
             self.r#type = input;
             self
@@ -3812,6 +4535,25 @@ pub mod operation {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the operation. Values include the following:</p>
+        /// <dl>
+        /// <dt>SUBMITTED</dt>
+        /// <dd>
+        /// <p>This is the initial state that occurs immediately after you submit a request.</p>
+        /// </dd>
+        /// <dt>PENDING</dt>
+        /// <dd>
+        /// <p>Cloud Map is performing the operation.</p>
+        /// </dd>
+        /// <dt>SUCCESS</dt>
+        /// <dd>
+        /// <p>The operation succeeded.</p>
+        /// </dd>
+        /// <dt>FAIL</dt>
+        /// <dd>
+        /// <p>The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OperationStatus>,
@@ -3824,6 +4566,7 @@ pub mod operation {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>If the value of <code>Status</code> is <code>FAIL</code>, the reason that the operation failed.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3874,6 +4617,45 @@ pub mod operation {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the
+        /// following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ACCESS_DENIED</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CANNOT_CREATE_HOSTED_ZONE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EXPIRED_TOKEN</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>HOSTED_ZONE_NOT_FOUND</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INTERNAL_FAILURE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INVALID_CHANGE_BATCH</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>THROTTLED_REQUEST</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -3881,13 +4663,16 @@ pub mod operation {
         /// <p>The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC).
         /// The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code>
         /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC).
+        /// The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code>
+        /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
@@ -3895,17 +4680,39 @@ pub mod operation {
         /// <p>The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format
         /// and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For example,
         /// the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn update_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_date = Some(input);
             self
         }
+        /// <p>The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format
+        /// and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For example,
+        /// the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_update_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_date = input;
             self
         }
+        /// Adds a key-value pair to `targets`.
+        ///
+        /// To override the contents of this collection use [`set_targets`](Self::set_targets).
+        ///
+        /// <p>The name of the target entity that's associated with the operation:</p>
+        /// <dl>
+        /// <dt>NAMESPACE</dt>
+        /// <dd>
+        /// <p>The namespace ID is returned in the <code>ResourceId</code> property.</p>
+        /// </dd>
+        /// <dt>SERVICE</dt>
+        /// <dd>
+        /// <p>The service ID is returned in the <code>ResourceId</code> property.</p>
+        /// </dd>
+        /// <dt>INSTANCE</dt>
+        /// <dd>
+        /// <p>The instance ID is returned in the <code>ResourceId</code> property.</p>
+        /// </dd>
+        /// </dl>
         pub fn targets(
             mut self,
             k: impl Into<crate::model::OperationTargetType>,
@@ -3916,6 +4723,21 @@ pub mod operation {
             self.targets = Some(hash_map);
             self
         }
+        /// <p>The name of the target entity that's associated with the operation:</p>
+        /// <dl>
+        /// <dt>NAMESPACE</dt>
+        /// <dd>
+        /// <p>The namespace ID is returned in the <code>ResourceId</code> property.</p>
+        /// </dd>
+        /// <dt>SERVICE</dt>
+        /// <dd>
+        /// <p>The service ID is returned in the <code>ResourceId</code> property.</p>
+        /// </dd>
+        /// <dt>INSTANCE</dt>
+        /// <dd>
+        /// <p>The instance ID is returned in the <code>ResourceId</code> property.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_targets(
             mut self,
             input: std::option::Option<
@@ -3947,6 +4769,7 @@ impl Operation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3958,8 +4781,11 @@ impl Operation {
     std::hash::Hash,
 )]
 pub enum OperationTargetType {
+    #[allow(missing_docs)] // documentation missing in model
     Instance,
+    #[allow(missing_docs)] // documentation missing in model
     Namespace,
+    #[allow(missing_docs)] // documentation missing in model
     Service,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3982,6 +4808,7 @@ impl std::str::FromStr for OperationTargetType {
     }
 }
 impl OperationTargetType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OperationTargetType::Instance => "INSTANCE",
@@ -3990,6 +4817,7 @@ impl OperationTargetType {
             OperationTargetType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["INSTANCE", "NAMESPACE", "SERVICE"]
     }
@@ -4000,6 +4828,7 @@ impl AsRef<str> for OperationTargetType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4011,11 +4840,17 @@ impl AsRef<str> for OperationTargetType {
     std::hash::Hash,
 )]
 pub enum OperationType {
+    #[allow(missing_docs)] // documentation missing in model
     CreateNamespace,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteNamespace,
+    #[allow(missing_docs)] // documentation missing in model
     DeregisterInstance,
+    #[allow(missing_docs)] // documentation missing in model
     RegisterInstance,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateNamespace,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateService,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4041,6 +4876,7 @@ impl std::str::FromStr for OperationType {
     }
 }
 impl OperationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OperationType::CreateNamespace => "CREATE_NAMESPACE",
@@ -4052,6 +4888,7 @@ impl OperationType {
             OperationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATE_NAMESPACE",
@@ -4106,7 +4943,7 @@ pub struct Namespace {
     /// <p>The date that the namespace was created, in Unix date/time format and Coordinated Universal Time (UTC). The
     /// value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code>
     /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of
     /// running an operation twice. </p>
     pub creator_request_id: std::option::Option<std::string::String>,
@@ -4139,7 +4976,7 @@ pub mod namespace {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) service_count: std::option::Option<i32>,
         pub(crate) properties: std::option::Option<crate::model::NamespaceProperties>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) creator_request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4148,6 +4985,7 @@ pub mod namespace {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of a namespace.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4157,6 +4995,7 @@ pub mod namespace {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -4166,6 +5005,7 @@ pub mod namespace {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the namespace, such as <code>example.com</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4191,6 +5031,23 @@ pub mod namespace {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the namespace. The methods for discovering instances depends on the value that you specify:</p>
+        /// <dl>
+        /// <dt>HTTP</dt>
+        /// <dd>
+        /// <p>Instances can be discovered only programmatically, using the Cloud Map <code>DiscoverInstances</code>
+        /// API.</p>
+        /// </dd>
+        /// <dt>DNS_PUBLIC</dt>
+        /// <dd>
+        /// <p>Instances can be discovered using public DNS queries and using the <code>DiscoverInstances</code> API.</p>
+        /// </dd>
+        /// <dt>DNS_PRIVATE</dt>
+        /// <dd>
+        /// <p>Instances can be discovered using DNS queries in VPCs and using the <code>DiscoverInstances</code>
+        /// API.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_type(mut self, input: std::option::Option<crate::model::NamespaceType>) -> Self {
             self.r#type = input;
             self
@@ -4200,6 +5057,7 @@ pub mod namespace {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description that you specify for the namespace when you create it.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -4209,6 +5067,7 @@ pub mod namespace {
             self.service_count = Some(input);
             self
         }
+        /// <p>The number of services that are associated with the namespace.</p>
         pub fn set_service_count(mut self, input: std::option::Option<i32>) -> Self {
             self.service_count = input;
             self
@@ -4218,6 +5077,7 @@ pub mod namespace {
             self.properties = Some(input);
             self
         }
+        /// <p>A complex type that contains information that's specific to the type of the namespace.</p>
         pub fn set_properties(
             mut self,
             input: std::option::Option<crate::model::NamespaceProperties>,
@@ -4228,13 +5088,16 @@ pub mod namespace {
         /// <p>The date that the namespace was created, in Unix date/time format and Coordinated Universal Time (UTC). The
         /// value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code>
         /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date that the namespace was created, in Unix date/time format and Coordinated Universal Time (UTC). The
+        /// value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code>
+        /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
@@ -4245,6 +5108,8 @@ pub mod namespace {
             self.creator_request_id = Some(input.into());
             self
         }
+        /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of
+        /// running an operation twice. </p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4275,7 +5140,7 @@ impl Namespace {
     }
 }
 
-/// **NOTE:** `HealthStatus::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `HealthStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4287,9 +5152,11 @@ impl Namespace {
     std::hash::Hash,
 )]
 pub enum HealthStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Healthy,
+    #[allow(missing_docs)] // documentation missing in model
     Unhealthy,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4312,6 +5179,7 @@ impl std::str::FromStr for HealthStatus {
     }
 }
 impl HealthStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HealthStatus::Healthy => "HEALTHY",
@@ -4320,6 +5188,7 @@ impl HealthStatus {
             HealthStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HEALTHY", "UNHEALTHY", "UNKNOWN"]
     }
@@ -4505,6 +5374,30 @@ pub mod instance {
             self.id = Some(input.into());
             self
         }
+        /// <p>An identifier that you want to associate with the instance. Note the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record,
+        /// the value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code>
+        /// record. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord > Type</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>You can use this value to update an existing instance.</p>
+        /// </li>
+        /// <li>
+        /// <p>To register a new instance, you must specify a value that's unique among instances that you register by using
+        /// the same service. </p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud Map updates the existing
+        /// DNS records. If there's also an existing health check, Cloud Map deletes the old health check and creates a new
+        /// one. </p>
+        /// <note>
+        /// <p>The health check isn't deleted immediately, so it will still appear for a while if you submit a
+        /// <code>ListHealthChecks</code> request, for example.</p>
+        /// </note>
+        /// </li>
+        /// </ul>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4518,6 +5411,11 @@ pub mod instance {
             self.creator_request_id = Some(input.into());
             self
         }
+        /// <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be
+        /// retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code> string
+        /// every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same
+        /// namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time
+        /// stamp).</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4525,6 +5423,96 @@ pub mod instance {
             self.creator_request_id = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>A string map that contains the following information for the service that you specify in
+        /// <code>ServiceId</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The attributes that apply to the records that are defined in the service. </p>
+        /// </li>
+        /// <li>
+        /// <p>For each attribute, the applicable value.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Supported attribute keys include the following:</p>
+        /// <dl>
+        /// <dt>AWS_ALIAS_DNS_NAME</dt>
+        /// <dd>
+        /// <p>If you want Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify
+        /// the DNS name that's associated with the load balancer. For information about how to get the DNS name, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget->DNSName</a> in the <i>Route 53 API Reference</i>.</p>
+        /// <p>Note the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an
+        /// <code>A</code> record, an <code>AAAA</code> record, or both.</p>
+        /// </li>
+        /// <li>
+        /// <p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be
+        /// <code>WEIGHTED</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings,
+        /// Cloud Map creates the health check, but it won't associate the health check with the alias record.</p>
+        /// </li>
+        /// <li>
+        /// <p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other
+        /// than ELB load balancers.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the
+        /// <code>AWS_INSTANCE</code> attributes.</p>
+        /// </li>
+        /// </ul>
+        /// </dd>
+        /// <dt>AWS_EC2_INSTANCE_ID</dt>
+        /// <dd>
+        /// <p>
+        /// <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The
+        /// <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.</p>
+        /// </dd>
+        /// <dt>AWS_INIT_HEALTH_STATUS</dt>
+        /// <dd>
+        /// <p>If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use
+        /// <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check,
+        /// <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for
+        /// <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.</p>
+        /// </dd>
+        /// <dt>AWS_INSTANCE_CNAME</dt>
+        /// <dd>
+        /// <p>If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to
+        /// return in response to DNS queries (for example, <code>example.com</code>).</p>
+        /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an
+        /// <code>CNAME</code> record.</p>
+        /// </dd>
+        /// <dt>AWS_INSTANCE_IPV4</dt>
+        /// <dd>
+        /// <p>If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to
+        /// return in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
+        /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an
+        /// <code>A</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value
+        /// for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
+        /// </dd>
+        /// <dt>AWS_INSTANCE_IPV6</dt>
+        /// <dd>
+        /// <p>If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
+        /// return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
+        /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an
+        /// <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a
+        /// value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
+        /// </dd>
+        /// <dt>AWS_INSTANCE_PORT</dt>
+        /// <dd>
+        /// <p>If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the
+        /// port.</p>
+        /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send
+        /// requests to. </p>
+        /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when
+        /// you created the service.</p>
+        /// </dd>
+        /// </dl>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -4535,6 +5523,92 @@ pub mod instance {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>A string map that contains the following information for the service that you specify in
+        /// <code>ServiceId</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The attributes that apply to the records that are defined in the service. </p>
+        /// </li>
+        /// <li>
+        /// <p>For each attribute, the applicable value.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Supported attribute keys include the following:</p>
+        /// <dl>
+        /// <dt>AWS_ALIAS_DNS_NAME</dt>
+        /// <dd>
+        /// <p>If you want Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify
+        /// the DNS name that's associated with the load balancer. For information about how to get the DNS name, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget->DNSName</a> in the <i>Route 53 API Reference</i>.</p>
+        /// <p>Note the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an
+        /// <code>A</code> record, an <code>AAAA</code> record, or both.</p>
+        /// </li>
+        /// <li>
+        /// <p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be
+        /// <code>WEIGHTED</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings,
+        /// Cloud Map creates the health check, but it won't associate the health check with the alias record.</p>
+        /// </li>
+        /// <li>
+        /// <p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other
+        /// than ELB load balancers.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the
+        /// <code>AWS_INSTANCE</code> attributes.</p>
+        /// </li>
+        /// </ul>
+        /// </dd>
+        /// <dt>AWS_EC2_INSTANCE_ID</dt>
+        /// <dd>
+        /// <p>
+        /// <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The
+        /// <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.</p>
+        /// </dd>
+        /// <dt>AWS_INIT_HEALTH_STATUS</dt>
+        /// <dd>
+        /// <p>If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use
+        /// <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check,
+        /// <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for
+        /// <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.</p>
+        /// </dd>
+        /// <dt>AWS_INSTANCE_CNAME</dt>
+        /// <dd>
+        /// <p>If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to
+        /// return in response to DNS queries (for example, <code>example.com</code>).</p>
+        /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an
+        /// <code>CNAME</code> record.</p>
+        /// </dd>
+        /// <dt>AWS_INSTANCE_IPV4</dt>
+        /// <dd>
+        /// <p>If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to
+        /// return in response to DNS queries (for example, <code>192.0.2.44</code>).</p>
+        /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an
+        /// <code>A</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value
+        /// for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
+        /// </dd>
+        /// <dt>AWS_INSTANCE_IPV6</dt>
+        /// <dd>
+        /// <p>If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
+        /// return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>
+        /// <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an
+        /// <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a
+        /// value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
+        /// </dd>
+        /// <dt>AWS_INSTANCE_PORT</dt>
+        /// <dd>
+        /// <p>If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the
+        /// port.</p>
+        /// <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send
+        /// requests to. </p>
+        /// <p>This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when
+        /// you created the service.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -4615,6 +5689,7 @@ pub mod http_instance_summary {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The ID of an instance that matches the values that you specified in the request.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -4630,6 +5705,13 @@ pub mod http_instance_summary {
             self.namespace_name = Some(input.into());
             self
         }
+        /// <p>
+        /// <code></code>
+        /// <code></code>
+        /// <code></code>
+        /// </p>
+        /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the
+        /// <code>Properties</code> member of the namespace.</p>
         pub fn set_namespace_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4642,6 +5724,7 @@ pub mod http_instance_summary {
             self.service_name = Some(input.into());
             self
         }
+        /// <p>The name of the service that you specified when you registered the instance.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -4651,6 +5734,7 @@ pub mod http_instance_summary {
             self.health_status = Some(input);
             self
         }
+        /// <p>If you configured health checking in the service, the current health status of the service instance.</p>
         pub fn set_health_status(
             mut self,
             input: std::option::Option<crate::model::HealthStatus>,
@@ -4658,6 +5742,11 @@ pub mod http_instance_summary {
             self.health_status = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>If you included any attributes when you registered the instance, the values of those attributes.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -4668,6 +5757,7 @@ pub mod http_instance_summary {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>If you included any attributes when you registered the instance, the values of those attributes.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -4696,6 +5786,7 @@ impl HttpInstanceSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4707,9 +5798,13 @@ impl HttpInstanceSummary {
     std::hash::Hash,
 )]
 pub enum HealthStatusFilter {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Healthy,
+    #[allow(missing_docs)] // documentation missing in model
     HealthyOrElseAll,
+    #[allow(missing_docs)] // documentation missing in model
     Unhealthy,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4733,6 +5828,7 @@ impl std::str::FromStr for HealthStatusFilter {
     }
 }
 impl HealthStatusFilter {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HealthStatusFilter::All => "ALL",
@@ -4742,6 +5838,7 @@ impl HealthStatusFilter {
             HealthStatusFilter::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL", "HEALTHY", "HEALTHY_OR_ELSE_ALL", "UNHEALTHY"]
     }
@@ -4752,6 +5849,7 @@ impl AsRef<str> for HealthStatusFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4763,6 +5861,7 @@ impl AsRef<str> for HealthStatusFilter {
     std::hash::Hash,
 )]
 pub enum ServiceTypeOption {
+    #[allow(missing_docs)] // documentation missing in model
     Http,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4783,12 +5882,14 @@ impl std::str::FromStr for ServiceTypeOption {
     }
 }
 impl ServiceTypeOption {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceTypeOption::Http => "HTTP",
             ServiceTypeOption::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HTTP"]
     }
@@ -4830,6 +5931,8 @@ pub mod public_dns_namespace_properties {
             self.dns_properties = Some(input);
             self
         }
+        /// <p>DNS properties for the public DNS
+        /// namespace.</p>
         pub fn set_dns_properties(
             mut self,
             input: std::option::Option<crate::model::PublicDnsPropertiesMutable>,
@@ -4883,6 +5986,8 @@ pub mod public_dns_properties_mutable {
             self.soa = Some(input);
             self
         }
+        /// <p>Start of Authority (SOA) record for the
+        /// hosted zone for the public DNS namespace.</p>
         pub fn set_soa(mut self, input: std::option::Option<crate::model::Soa>) -> Self {
             self.soa = input;
             self
@@ -4931,6 +6036,8 @@ pub mod private_dns_namespace_properties {
             self.dns_properties = Some(input);
             self
         }
+        /// <p>DNS properties for the private DNS
+        /// namespace.</p>
         pub fn set_dns_properties(
             mut self,
             input: std::option::Option<crate::model::PrivateDnsPropertiesMutable>,
@@ -4984,6 +6091,8 @@ pub mod private_dns_properties_mutable {
             self.soa = Some(input);
             self
         }
+        /// <p>Fields for the Start of Authority (SOA)
+        /// record for the hosted zone for the private DNS namespace.</p>
         pub fn set_soa(mut self, input: std::option::Option<crate::model::Soa>) -> Self {
             self.soa = input;
             self

@@ -12,7 +12,7 @@ pub mod describe_report_creation_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeReportCreationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeReportCreationInput {})
         }
@@ -29,16 +29,16 @@ impl DescribeReportCreationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeReportCreation,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeReportCreationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -46,7 +46,7 @@ impl DescribeReportCreationInput {
         fn update_http_builder(
             input: &crate::input::DescribeReportCreationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -55,32 +55,34 @@ impl DescribeReportCreationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeReportCreationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ResourceGroupsTaggingAPI_20170126.DescribeReportCreation",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_report_creation(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -103,15 +105,15 @@ impl DescribeReportCreationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeReportCreation::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeReportCreation",
             "resourcegroupstaggingapi",
         ));
@@ -120,10 +122,10 @@ impl DescribeReportCreationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -152,12 +154,22 @@ pub mod get_compliance_summary_input {
         pub(crate) pagination_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `target_id_filters`.
+        ///
+        /// To override the contents of this collection use [`set_target_id_filters`](Self::set_target_id_filters).
+        ///
+        /// <p>Specifies target identifiers (usually, specific account IDs) to limit the output by.
+        /// If you use this parameter, the count of returned noncompliant resources includes only
+        /// resources with the specified target IDs.</p>
         pub fn target_id_filters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_id_filters.unwrap_or_default();
             v.push(input.into());
             self.target_id_filters = Some(v);
             self
         }
+        /// <p>Specifies target identifiers (usually, specific account IDs) to limit the output by.
+        /// If you use this parameter, the count of returned noncompliant resources includes only
+        /// resources with the specified target IDs.</p>
         pub fn set_target_id_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -165,12 +177,22 @@ pub mod get_compliance_summary_input {
             self.target_id_filters = input;
             self
         }
+        /// Appends an item to `region_filters`.
+        ///
+        /// To override the contents of this collection use [`set_region_filters`](Self::set_region_filters).
+        ///
+        /// <p>Specifies a list of AWS Regions to limit the output by. If you use this parameter,
+        /// the count of returned noncompliant resources includes only resources in the specified
+        /// Regions.</p>
         pub fn region_filters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.region_filters.unwrap_or_default();
             v.push(input.into());
             self.region_filters = Some(v);
             self
         }
+        /// <p>Specifies a list of AWS Regions to limit the output by. If you use this parameter,
+        /// the count of returned noncompliant resources includes only resources in the specified
+        /// Regions.</p>
         pub fn set_region_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -178,12 +200,64 @@ pub mod get_compliance_summary_input {
             self.region_filters = input;
             self
         }
+        /// Appends an item to `resource_type_filters`.
+        ///
+        /// To override the contents of this collection use [`set_resource_type_filters`](Self::set_resource_type_filters).
+        ///
+        /// <p>Specifies that you want the response to include information for only resources of the
+        /// specified types. The format of each resource type is
+        /// <code>service[:resourceType]</code>. For example, specifying a resource type of
+        /// <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances).
+        /// Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p>
+        /// <p>The string for each service name and resource type is the same as that embedded in a
+        /// resource's Amazon Resource Name (ARN). Consult the <i>AWS General
+        /// Reference</i> for the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS Service Namespaces</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For resource type strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
+        /// ARNs</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+        /// (ARNs) and AWS Service Namespaces</a>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>You can specify multiple resource types by using a comma separated array. The array
+        /// can include up to 100 items. Note that the length constraint requirement applies to each
+        /// resource type filter. </p>
         pub fn resource_type_filters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_type_filters.unwrap_or_default();
             v.push(input.into());
             self.resource_type_filters = Some(v);
             self
         }
+        /// <p>Specifies that you want the response to include information for only resources of the
+        /// specified types. The format of each resource type is
+        /// <code>service[:resourceType]</code>. For example, specifying a resource type of
+        /// <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances).
+        /// Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p>
+        /// <p>The string for each service name and resource type is the same as that embedded in a
+        /// resource's Amazon Resource Name (ARN). Consult the <i>AWS General
+        /// Reference</i> for the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS Service Namespaces</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For resource type strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
+        /// ARNs</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+        /// (ARNs) and AWS Service Namespaces</a>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>You can specify multiple resource types by using a comma separated array. The array
+        /// can include up to 100 items. Note that the length constraint requirement applies to each
+        /// resource type filter. </p>
         pub fn set_resource_type_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -191,12 +265,22 @@ pub mod get_compliance_summary_input {
             self.resource_type_filters = input;
             self
         }
+        /// Appends an item to `tag_key_filters`.
+        ///
+        /// To override the contents of this collection use [`set_tag_key_filters`](Self::set_tag_key_filters).
+        ///
+        /// <p>Specifies that you want the response to include information for only resources that
+        /// have tags with the specified tag keys. If you use this parameter, the count of returned
+        /// noncompliant resources includes only resources that have the specified tag keys.</p>
         pub fn tag_key_filters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_key_filters.unwrap_or_default();
             v.push(input.into());
             self.tag_key_filters = Some(v);
             self
         }
+        /// <p>Specifies that you want the response to include information for only resources that
+        /// have tags with the specified tag keys. If you use this parameter, the count of returned
+        /// noncompliant resources includes only resources that have the specified tag keys.</p>
         pub fn set_tag_key_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -204,12 +288,20 @@ pub mod get_compliance_summary_input {
             self.tag_key_filters = input;
             self
         }
+        /// Appends an item to `group_by`.
+        ///
+        /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
+        ///
+        /// <p>Specifies a list of attributes to group the counts of noncompliant resources by. If
+        /// supplied, the counts are sorted by those attributes.</p>
         pub fn group_by(mut self, input: impl Into<crate::model::GroupByAttribute>) -> Self {
             let mut v = self.group_by.unwrap_or_default();
             v.push(input.into());
             self.group_by = Some(v);
             self
         }
+        /// <p>Specifies a list of attributes to group the counts of noncompliant resources by. If
+        /// supplied, the counts are sorted by those attributes.</p>
         pub fn set_group_by(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GroupByAttribute>>,
@@ -225,6 +317,10 @@ pub mod get_compliance_summary_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Specifies the maximum number of results to be returned in each page. A
+        /// query can return fewer than this maximum, even if there are more results still to return. You
+        /// should always check the <code>PaginationToken</code> response value to see if there are more
+        /// results. You can specify a minimum of 1 and a maximum value of 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -236,6 +332,9 @@ pub mod get_compliance_summary_input {
             self.pagination_token = Some(input.into());
             self
         }
+        /// <p>Specifies a <code>PaginationToken</code> response value from a
+        /// previous request to indicate that you want the next page of results. Leave this parameter empty
+        /// in your initial request.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -248,7 +347,7 @@ pub mod get_compliance_summary_input {
             self,
         ) -> std::result::Result<
             crate::input::GetComplianceSummaryInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetComplianceSummaryInput {
                 target_id_filters: self.target_id_filters,
@@ -273,16 +372,16 @@ impl GetComplianceSummaryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetComplianceSummary,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetComplianceSummaryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -290,7 +389,7 @@ impl GetComplianceSummaryInput {
         fn update_http_builder(
             input: &crate::input::GetComplianceSummaryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -299,32 +398,32 @@ impl GetComplianceSummaryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetComplianceSummaryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ResourceGroupsTaggingAPI_20170126.GetComplianceSummary",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_compliance_summary(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -347,15 +446,15 @@ impl GetComplianceSummaryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetComplianceSummary::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetComplianceSummary",
             "resourcegroupstaggingapi",
         ));
@@ -364,10 +463,10 @@ impl GetComplianceSummaryInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -404,6 +503,9 @@ pub mod get_resources_input {
             self.pagination_token = Some(input.into());
             self
         }
+        /// <p>Specifies a <code>PaginationToken</code> response value from a
+        /// previous request to indicate that you want the next page of results. Leave this parameter empty
+        /// in your initial request.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -411,12 +513,128 @@ pub mod get_resources_input {
             self.pagination_token = input;
             self
         }
+        /// Appends an item to `tag_filters`.
+        ///
+        /// To override the contents of this collection use [`set_tag_filters`](Self::set_tag_filters).
+        ///
+        /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those
+        /// resources that have the specified tag and, if included, the specified value. Each
+        /// <code>TagFilter</code> must contain a key with values optional. A request can
+        /// include up to 50 keys, and each key can include up to 20 values. </p>
+        /// <p>Note the following when deciding how to use TagFilters:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the
+        /// response includes all resources that are currently tagged or ever had a tag.
+        /// Resources that currently don't have tags are shown with an empty tag set, like
+        /// this: <code>"Tags": []</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify more than one filter in a single request, the response returns
+        /// only those resources that satisfy all filters.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify a filter that contains more than one value for a key, the
+        /// response returns resources that match any of the specified values for that
+        /// key.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you don't specify any values for a key, the response returns resources that
+        /// are tagged with that key and any or no value.</p>
+        /// <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>,
+        /// <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3=
+        /// {keyC}</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>GetResources({filter1})</code> returns resources tagged with
+        /// <code>key1=value1</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GetResources({filter2})</code> returns resources tagged with
+        /// <code>key2=value2</code> or <code>key2=value3</code> or
+        /// <code>key2=value4</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GetResources({filter3})</code> returns resources tagged with any
+        /// tag with the key <code>key3</code>, and with any or no value</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GetResources({filter1,filter2,filter3})</code> returns resources
+        /// tagged with <code>(key1=value1) and (key2=value2 or key2=value3 or
+        /// key2=value4) and (key3, any or no value)</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn tag_filters(mut self, input: impl Into<crate::model::TagFilter>) -> Self {
             let mut v = self.tag_filters.unwrap_or_default();
             v.push(input.into());
             self.tag_filters = Some(v);
             self
         }
+        /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those
+        /// resources that have the specified tag and, if included, the specified value. Each
+        /// <code>TagFilter</code> must contain a key with values optional. A request can
+        /// include up to 50 keys, and each key can include up to 20 values. </p>
+        /// <p>Note the following when deciding how to use TagFilters:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the
+        /// response includes all resources that are currently tagged or ever had a tag.
+        /// Resources that currently don't have tags are shown with an empty tag set, like
+        /// this: <code>"Tags": []</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify more than one filter in a single request, the response returns
+        /// only those resources that satisfy all filters.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify a filter that contains more than one value for a key, the
+        /// response returns resources that match any of the specified values for that
+        /// key.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you don't specify any values for a key, the response returns resources that
+        /// are tagged with that key and any or no value.</p>
+        /// <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>,
+        /// <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3=
+        /// {keyC}</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>GetResources({filter1})</code> returns resources tagged with
+        /// <code>key1=value1</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GetResources({filter2})</code> returns resources tagged with
+        /// <code>key2=value2</code> or <code>key2=value3</code> or
+        /// <code>key2=value4</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GetResources({filter3})</code> returns resources tagged with any
+        /// tag with the key <code>key3</code>, and with any or no value</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GetResources({filter1,filter2,filter3})</code> returns resources
+        /// tagged with <code>(key1=value1) and (key2=value2 or key2=value3 or
+        /// key2=value4) and (key3, any or no value)</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn set_tag_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
@@ -432,6 +650,10 @@ pub mod get_resources_input {
             self.resources_per_page = Some(input);
             self
         }
+        /// <p>Specifies the maximum number of results to be returned in each page. A
+        /// query can return fewer than this maximum, even if there are more results still to return. You
+        /// should always check the <code>PaginationToken</code> response value to see if there are more
+        /// results. You can specify a minimum of 1 and a maximum value of 100.</p>
         pub fn set_resources_per_page(mut self, input: std::option::Option<i32>) -> Self {
             self.resources_per_page = input;
             self
@@ -456,16 +678,62 @@ pub mod get_resources_input {
             self.tags_per_page = Some(input);
             self
         }
+        /// <p>AWS recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
+        /// <p>A limit that restricts the number of tags (key and value pairs) returned by
+        /// <code>GetResources</code> in paginated output. A resource with no tags is counted as
+        /// having one tag (one key and value pair).</p>
+        /// <p>
+        /// <code>GetResources</code> does not split a resource and its associated tags across
+        /// pages. If the specified <code>TagsPerPage</code> would cause such a break, a
+        /// <code>PaginationToken</code> is returned in place of the affected resource and its
+        /// tags. Use that token in another request to get the remaining data. For example, if you
+        /// specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources
+        /// with 10 tags each (meaning that each resource has 10 key and value pairs), the output
+        /// will consist of three pages. The first page displays the first 10 resources, each with
+        /// its 10 tags. The second page displays the next 10 resources, each with its 10 tags. The
+        /// third page displays the remaining 2 resources, each with its 10 tags.</p>
+        /// <p>You can set <code>TagsPerPage</code> to a minimum of 100 items up to a maximum of 500
+        /// items.</p>
         pub fn set_tags_per_page(mut self, input: std::option::Option<i32>) -> Self {
             self.tags_per_page = input;
             self
         }
+        /// Appends an item to `resource_type_filters`.
+        ///
+        /// To override the contents of this collection use [`set_resource_type_filters`](Self::set_resource_type_filters).
+        ///
+        /// <p>Specifies the resource types that you want included in the response. The format of
+        /// each resource type is <code>service[:resourceType]</code>. For example, specifying a
+        /// resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2
+        /// instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2
+        /// instances. </p>
+        /// <p>The string for each service name and resource type is the same as that embedded in a
+        /// resource's Amazon Resource Name (ARN). Consult the <i>AWS General
+        /// Reference</i> for the following:</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+        /// AWS Service Namespaces</a>.</p>
+        /// <p>You can specify multiple resource types by using an array. The array can include up to
+        /// 100 items. Note that the length constraint requirement applies to each resource type
+        /// filter. </p>
         pub fn resource_type_filters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_type_filters.unwrap_or_default();
             v.push(input.into());
             self.resource_type_filters = Some(v);
             self
         }
+        /// <p>Specifies the resource types that you want included in the response. The format of
+        /// each resource type is <code>service[:resourceType]</code>. For example, specifying a
+        /// resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2
+        /// instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2
+        /// instances. </p>
+        /// <p>The string for each service name and resource type is the same as that embedded in a
+        /// resource's Amazon Resource Name (ARN). Consult the <i>AWS General
+        /// Reference</i> for the following:</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+        /// AWS Service Namespaces</a>.</p>
+        /// <p>You can specify multiple resource types by using an array. The array can include up to
+        /// 100 items. Note that the length constraint requirement applies to each resource type
+        /// filter. </p>
         pub fn set_resource_type_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -480,6 +748,9 @@ pub mod get_resources_input {
             self.include_compliance_details = Some(input);
             self
         }
+        /// <p>Specifies whether to include details regarding the compliance with the effective tag
+        /// policy. Set this to <code>true</code> to determine whether resources are compliant with
+        /// the tag policy and to get details.</p>
         pub fn set_include_compliance_details(mut self, input: std::option::Option<bool>) -> Self {
             self.include_compliance_details = input;
             self
@@ -493,16 +764,47 @@ pub mod get_resources_input {
             self.exclude_compliant_resources = Some(input);
             self
         }
+        /// <p>Specifies whether to exclude resources that are compliant with the tag policy. Set
+        /// this to <code>true</code> if you are interested in retrieving information on
+        /// noncompliant resources only.</p>
+        /// <p>You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter
+        /// is also set to <code>true</code>.</p>
         pub fn set_exclude_compliant_resources(mut self, input: std::option::Option<bool>) -> Self {
             self.exclude_compliant_resources = input;
             self
         }
+        /// Appends an item to `resource_arn_list`.
+        ///
+        /// To override the contents of this collection use [`set_resource_arn_list`](Self::set_resource_arn_list).
+        ///
+        /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data. You
+        /// can't specify both this parameter and any of the pagination parameters
+        /// (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>,
+        /// <code>PaginationToken</code>) in the same request. If you specify both, you get an
+        /// <code>Invalid Parameter</code> exception.</p>
+        /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error;
+        /// it simply isn't included in the response.</p>
+        /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
+        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+        /// General Reference</i>.</p>
         pub fn resource_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arn_list.unwrap_or_default();
             v.push(input.into());
             self.resource_arn_list = Some(v);
             self
         }
+        /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data. You
+        /// can't specify both this parameter and any of the pagination parameters
+        /// (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>,
+        /// <code>PaginationToken</code>) in the same request. If you specify both, you get an
+        /// <code>Invalid Parameter</code> exception.</p>
+        /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error;
+        /// it simply isn't included in the response.</p>
+        /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
+        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+        /// General Reference</i>.</p>
         pub fn set_resource_arn_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -513,8 +815,10 @@ pub mod get_resources_input {
         /// Consumes the builder and constructs a [`GetResourcesInput`](crate::input::GetResourcesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetResourcesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetResourcesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetResourcesInput {
                 pagination_token: self.pagination_token,
                 tag_filters: self.tag_filters,
@@ -539,16 +843,16 @@ impl GetResourcesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetResources,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetResourcesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -556,7 +860,7 @@ impl GetResourcesInput {
         fn update_http_builder(
             input: &crate::input::GetResourcesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -565,31 +869,31 @@ impl GetResourcesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetResourcesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ResourceGroupsTaggingAPI_20170126.GetResources",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_resources(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -612,25 +916,27 @@ impl GetResourcesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetResources::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetResources",
-                    "resourcegroupstaggingapi",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetResources::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetResources",
+            "resourcegroupstaggingapi",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -660,6 +966,9 @@ pub mod get_tag_keys_input {
             self.pagination_token = Some(input.into());
             self
         }
+        /// <p>Specifies a <code>PaginationToken</code> response value from a
+        /// previous request to indicate that you want the next page of results. Leave this parameter empty
+        /// in your initial request.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -670,8 +979,10 @@ pub mod get_tag_keys_input {
         /// Consumes the builder and constructs a [`GetTagKeysInput`](crate::input::GetTagKeysInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetTagKeysInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetTagKeysInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetTagKeysInput {
                 pagination_token: self.pagination_token,
             })
@@ -689,16 +1000,16 @@ impl GetTagKeysInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetTagKeys,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetTagKeysInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -706,7 +1017,7 @@ impl GetTagKeysInput {
         fn update_http_builder(
             input: &crate::input::GetTagKeysInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -715,29 +1026,31 @@ impl GetTagKeysInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetTagKeysInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ResourceGroupsTaggingAPI_20170126.GetTagKeys",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_tag_keys(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -760,25 +1073,27 @@ impl GetTagKeysInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetTagKeys::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetTagKeys",
-                    "resourcegroupstaggingapi",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetTagKeys::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetTagKeys",
+            "resourcegroupstaggingapi",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -809,6 +1124,9 @@ pub mod get_tag_values_input {
             self.pagination_token = Some(input.into());
             self
         }
+        /// <p>Specifies a <code>PaginationToken</code> response value from a
+        /// previous request to indicate that you want the next page of results. Leave this parameter empty
+        /// in your initial request.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -822,6 +1140,8 @@ pub mod get_tag_values_input {
             self.key = Some(input.into());
             self
         }
+        /// <p>Specifies the tag key for which you want to list all existing values that are
+        /// currently used in the specified AWS Region for the calling AWS account.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -829,8 +1149,10 @@ pub mod get_tag_values_input {
         /// Consumes the builder and constructs a [`GetTagValuesInput`](crate::input::GetTagValuesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetTagValuesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetTagValuesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetTagValuesInput {
                 pagination_token: self.pagination_token,
                 key: self.key,
@@ -849,16 +1171,16 @@ impl GetTagValuesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetTagValues,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetTagValuesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -866,7 +1188,7 @@ impl GetTagValuesInput {
         fn update_http_builder(
             input: &crate::input::GetTagValuesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -875,29 +1197,31 @@ impl GetTagValuesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetTagValuesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ResourceGroupsTaggingAPI_20170126.GetTagValues",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_tag_values(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -920,25 +1244,27 @@ impl GetTagValuesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetTagValues::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetTagValues",
-                    "resourcegroupstaggingapi",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetTagValues::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetTagValues",
+            "resourcegroupstaggingapi",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -971,6 +1297,12 @@ pub mod start_report_creation_input {
             self.s3_bucket = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
+        /// <p>
+        /// <code>awsexamplebucket</code>
+        /// </p>
+        /// <p>For more information on S3 bucket requirements, including an example bucket policy,
+        /// see the example S3 bucket policy on this page.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_bucket = input;
             self
@@ -980,7 +1312,7 @@ pub mod start_report_creation_input {
             self,
         ) -> std::result::Result<
             crate::input::StartReportCreationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartReportCreationInput {
                 s3_bucket: self.s3_bucket,
@@ -999,16 +1331,16 @@ impl StartReportCreationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartReportCreation,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartReportCreationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1016,7 +1348,7 @@ impl StartReportCreationInput {
         fn update_http_builder(
             input: &crate::input::StartReportCreationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1025,32 +1357,32 @@ impl StartReportCreationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartReportCreationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ResourceGroupsTaggingAPI_20170126.StartReportCreation",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_report_creation(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1073,15 +1405,15 @@ impl StartReportCreationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartReportCreation::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartReportCreation",
             "resourcegroupstaggingapi",
         ));
@@ -1090,10 +1422,10 @@ impl StartReportCreationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1119,12 +1451,26 @@ pub mod tag_resources_input {
         >,
     }
     impl Builder {
+        /// Appends an item to `resource_arn_list`.
+        ///
+        /// To override the contents of this collection use [`set_resource_arn_list`](Self::set_resource_arn_list).
+        ///
+        /// <p>Specifies the list of ARNs of the resources that you want to apply tags to.</p>
+        /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
+        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+        /// General Reference</i>.</p>
         pub fn resource_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arn_list.unwrap_or_default();
             v.push(input.into());
             self.resource_arn_list = Some(v);
             self
         }
+        /// <p>Specifies the list of ARNs of the resources that you want to apply tags to.</p>
+        /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
+        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+        /// General Reference</i>.</p>
         pub fn set_resource_arn_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1132,6 +1478,12 @@ pub mod tag_resources_input {
             self.resource_arn_list = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Specifies a list of tags that you want to add to the specified resources. A tag
+        /// consists of a key and a value that you define.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1142,6 +1494,8 @@ pub mod tag_resources_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Specifies a list of tags that you want to add to the specified resources. A tag
+        /// consists of a key and a value that you define.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1154,8 +1508,10 @@ pub mod tag_resources_input {
         /// Consumes the builder and constructs a [`TagResourcesInput`](crate::input::TagResourcesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourcesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourcesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourcesInput {
                 resource_arn_list: self.resource_arn_list,
                 tags: self.tags,
@@ -1174,16 +1530,16 @@ impl TagResourcesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResources,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourcesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1191,7 +1547,7 @@ impl TagResourcesInput {
         fn update_http_builder(
             input: &crate::input::TagResourcesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1200,31 +1556,31 @@ impl TagResourcesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourcesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ResourceGroupsTaggingAPI_20170126.TagResources",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resources(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1247,25 +1603,27 @@ impl TagResourcesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResources::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResources",
-                    "resourcegroupstaggingapi",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResources::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResources",
+            "resourcegroupstaggingapi",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1289,12 +1647,26 @@ pub mod untag_resources_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `resource_arn_list`.
+        ///
+        /// To override the contents of this collection use [`set_resource_arn_list`](Self::set_resource_arn_list).
+        ///
+        /// <p>Specifies a list of ARNs of the resources that you want to remove tags from.</p>
+        /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
+        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+        /// General Reference</i>.</p>
         pub fn resource_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arn_list.unwrap_or_default();
             v.push(input.into());
             self.resource_arn_list = Some(v);
             self
         }
+        /// <p>Specifies a list of ARNs of the resources that you want to remove tags from.</p>
+        /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
+        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS
+        /// General Reference</i>.</p>
         pub fn set_resource_arn_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1302,12 +1674,20 @@ pub mod untag_resources_input {
             self.resource_arn_list = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>Specifies a list of tag keys that you want to remove from the specified
+        /// resources.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>Specifies a list of tag keys that you want to remove from the specified
+        /// resources.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1320,7 +1700,7 @@ pub mod untag_resources_input {
             self,
         ) -> std::result::Result<
             crate::input::UntagResourcesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UntagResourcesInput {
                 resource_arn_list: self.resource_arn_list,
@@ -1340,16 +1720,16 @@ impl UntagResourcesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResources,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourcesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1357,7 +1737,7 @@ impl UntagResourcesInput {
         fn update_http_builder(
             input: &crate::input::UntagResourcesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1366,29 +1746,31 @@ impl UntagResourcesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourcesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ResourceGroupsTaggingAPI_20170126.UntagResources",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resources(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1411,15 +1793,15 @@ impl UntagResourcesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UntagResources::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UntagResources",
             "resourcegroupstaggingapi",
         ));
@@ -1428,10 +1810,10 @@ impl UntagResourcesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1445,6 +1827,7 @@ impl UntagResourcesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourcesInput {
@@ -1467,6 +1850,7 @@ impl std::fmt::Debug for UntagResourcesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourcesInput {
@@ -1490,6 +1874,7 @@ impl std::fmt::Debug for TagResourcesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartReportCreationInput {
@@ -1509,6 +1894,7 @@ impl std::fmt::Debug for StartReportCreationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTagValuesInput {
@@ -1529,6 +1915,7 @@ impl std::fmt::Debug for GetTagValuesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTagKeysInput {
@@ -1545,6 +1932,7 @@ impl std::fmt::Debug for GetTagKeysInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcesInput {
@@ -1689,6 +2077,7 @@ impl std::fmt::Debug for GetResourcesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceSummaryInput {
@@ -1756,6 +2145,7 @@ impl std::fmt::Debug for GetComplianceSummaryInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReportCreationInput {}

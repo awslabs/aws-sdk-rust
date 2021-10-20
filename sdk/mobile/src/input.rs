@@ -8,7 +8,7 @@ pub mod create_project_input {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) region: std::option::Option<std::string::String>,
-        pub(crate) contents: std::option::Option<smithy_types::Blob>,
+        pub(crate) contents: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -19,6 +19,9 @@ pub mod create_project_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>
+        /// Name of the project.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -30,6 +33,9 @@ pub mod create_project_input {
             self.region = Some(input.into());
             self
         }
+        /// <p>
+        /// Default region where project resources should be created.
+        /// </p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -39,11 +45,16 @@ pub mod create_project_input {
         /// the project. This may be the contents of the file downloaded from the URL provided
         /// in an export project operation.
         /// </p>
-        pub fn contents(mut self, input: smithy_types::Blob) -> Self {
+        pub fn contents(mut self, input: aws_smithy_types::Blob) -> Self {
             self.contents = Some(input);
             self
         }
-        pub fn set_contents(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>
+        /// ZIP or YAML file which contains configuration settings to be used when creating
+        /// the project. This may be the contents of the file downloaded from the URL provided
+        /// in an export project operation.
+        /// </p>
+        pub fn set_contents(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.contents = input;
             self
         }
@@ -55,6 +66,10 @@ pub mod create_project_input {
             self.snapshot_id = Some(input.into());
             self
         }
+        /// <p>
+        /// Unique identifier for an exported snapshot of project configuration. This
+        /// snapshot identifier is included in the share URL when a project is exported.
+        /// </p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.snapshot_id = input;
             self
@@ -62,8 +77,10 @@ pub mod create_project_input {
         /// Consumes the builder and constructs a [`CreateProjectInput`](crate::input::CreateProjectInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateProjectInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateProjectInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateProjectInput {
                 name: self.name,
                 region: self.region,
@@ -84,36 +101,36 @@ impl CreateProjectInput {
         self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateProject,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateProjectInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/projects").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::CreateProjectInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_1) = &_input.name {
-                query.push_kv("name", &smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_1));
             }
             if let Some(inner_2) = &_input.region {
-                query.push_kv("region", &smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("region", &aws_smithy_http::query::fmt_string(&inner_2));
             }
             if let Some(inner_3) = &_input.snapshot_id {
-                query.push_kv("snapshotId", &smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("snapshotId", &aws_smithy_http::query::fmt_string(&inner_3));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateProjectInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -123,23 +140,23 @@ impl CreateProjectInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateProjectInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/octet-stream",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::ser_payload_create_project_input(self.contents)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -162,25 +179,27 @@ impl CreateProjectInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateProject::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateProject",
-                    "mobile",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateProject::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateProject",
+            "mobile",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -210,6 +229,9 @@ pub mod delete_project_input {
             self.project_id = Some(input.into());
             self
         }
+        /// <p>
+        /// Unique project identifier.
+        /// </p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_id = input;
             self
@@ -217,8 +239,10 @@ pub mod delete_project_input {
         /// Consumes the builder and constructs a [`DeleteProjectInput`](crate::input::DeleteProjectInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteProjectInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteProjectInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteProjectInput {
                 project_id: self.project_id,
             })
@@ -236,27 +260,27 @@ impl DeleteProjectInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteProject,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteProjectInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_4 = &_input.project_id;
             let input_4 =
                 input_4
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_id",
                         details: "cannot be empty or unset",
                     })?;
-            let project_id = smithy_http::label::fmt_string(input_4, false);
+            let project_id = aws_smithy_http::label::fmt_string(input_4, false);
             if project_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_id",
                     details: "cannot be empty or unset",
                 });
@@ -269,7 +293,7 @@ impl DeleteProjectInput {
         fn update_http_builder(
             input: &crate::input::DeleteProjectInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -278,23 +302,23 @@ impl DeleteProjectInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteProjectInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -317,25 +341,27 @@ impl DeleteProjectInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteProject::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteProject",
-                    "mobile",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteProject::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteProject",
+            "mobile",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -365,6 +391,9 @@ pub mod describe_bundle_input {
             self.bundle_id = Some(input.into());
             self
         }
+        /// <p>
+        /// Unique bundle identifier.
+        /// </p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
@@ -374,7 +403,7 @@ pub mod describe_bundle_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeBundleInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeBundleInput {
                 bundle_id: self.bundle_id,
@@ -393,27 +422,27 @@ impl DescribeBundleInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeBundle,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeBundleInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_5 = &_input.bundle_id;
             let input_5 =
                 input_5
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bundle_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bundle_id = smithy_http::label::fmt_string(input_5, false);
+            let bundle_id = aws_smithy_http::label::fmt_string(input_5, false);
             if bundle_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bundle_id",
                     details: "cannot be empty or unset",
                 });
@@ -426,7 +455,7 @@ impl DescribeBundleInput {
         fn update_http_builder(
             input: &crate::input::DescribeBundleInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -435,23 +464,23 @@ impl DescribeBundleInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeBundleInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -474,15 +503,15 @@ impl DescribeBundleInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeBundle::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeBundle",
             "mobile",
         ));
@@ -491,10 +520,10 @@ impl DescribeBundleInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -525,6 +554,9 @@ pub mod describe_project_input {
             self.project_id = Some(input.into());
             self
         }
+        /// <p>
+        /// Unique project identifier.
+        /// </p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_id = input;
             self
@@ -536,6 +568,9 @@ pub mod describe_project_input {
             self.sync_from_resources = Some(input);
             self
         }
+        /// <p>
+        /// If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project.
+        /// </p>
         pub fn set_sync_from_resources(mut self, input: std::option::Option<bool>) -> Self {
             self.sync_from_resources = input;
             self
@@ -545,7 +580,7 @@ pub mod describe_project_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeProjectInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeProjectInput {
                 project_id: self.project_id,
@@ -565,28 +600,29 @@ impl DescribeProjectInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeProject,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeProjectInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/project").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::DescribeProjectInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_6) = &_input.project_id {
-                query.push_kv("projectId", &smithy_http::query::fmt_string(&inner_6));
+                query.push_kv("projectId", &aws_smithy_http::query::fmt_string(&inner_6));
             }
             if _input.sync_from_resources {
                 query.push_kv(
                     "syncFromResources",
-                    &smithy_types::primitive::Encoder::from(_input.sync_from_resources).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.sync_from_resources)
+                        .encode(),
                 );
             }
         }
@@ -594,7 +630,7 @@ impl DescribeProjectInput {
         fn update_http_builder(
             input: &crate::input::DescribeProjectInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -604,23 +640,23 @@ impl DescribeProjectInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeProjectInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -643,15 +679,15 @@ impl DescribeProjectInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeProject::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeProject",
             "mobile",
         ));
@@ -660,10 +696,10 @@ impl DescribeProjectInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -695,6 +731,9 @@ pub mod export_bundle_input {
             self.bundle_id = Some(input.into());
             self
         }
+        /// <p>
+        /// Unique bundle identifier.
+        /// </p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
@@ -706,6 +745,9 @@ pub mod export_bundle_input {
             self.project_id = Some(input.into());
             self
         }
+        /// <p>
+        /// Unique project identifier.
+        /// </p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_id = input;
             self
@@ -717,6 +759,9 @@ pub mod export_bundle_input {
             self.platform = Some(input);
             self
         }
+        /// <p>
+        /// Developer desktop or target application platform.
+        /// </p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
@@ -724,8 +769,10 @@ pub mod export_bundle_input {
         /// Consumes the builder and constructs a [`ExportBundleInput`](crate::input::ExportBundleInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ExportBundleInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ExportBundleInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ExportBundleInput {
                 bundle_id: self.bundle_id,
                 project_id: self.project_id,
@@ -745,27 +792,27 @@ impl ExportBundleInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExportBundle,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExportBundleInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_7 = &_input.bundle_id;
             let input_7 =
                 input_7
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bundle_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bundle_id = smithy_http::label::fmt_string(input_7, false);
+            let bundle_id = aws_smithy_http::label::fmt_string(input_7, false);
             if bundle_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bundle_id",
                     details: "cannot be empty or unset",
                 });
@@ -775,19 +822,19 @@ impl ExportBundleInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ExportBundleInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_8) = &_input.project_id {
-                query.push_kv("projectId", &smithy_http::query::fmt_string(&inner_8));
+                query.push_kv("projectId", &aws_smithy_http::query::fmt_string(&inner_8));
             }
             if let Some(inner_9) = &_input.platform {
-                query.push_kv("platform", &smithy_http::query::fmt_string(&inner_9));
+                query.push_kv("platform", &aws_smithy_http::query::fmt_string(&inner_9));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ExportBundleInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -797,23 +844,23 @@ impl ExportBundleInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExportBundleInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -836,25 +883,27 @@ impl ExportBundleInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ExportBundle::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ExportBundle",
-                    "mobile",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ExportBundle::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ExportBundle",
+            "mobile",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -884,6 +933,9 @@ pub mod export_project_input {
             self.project_id = Some(input.into());
             self
         }
+        /// <p>
+        /// Unique project identifier.
+        /// </p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_id = input;
             self
@@ -891,8 +943,10 @@ pub mod export_project_input {
         /// Consumes the builder and constructs a [`ExportProjectInput`](crate::input::ExportProjectInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ExportProjectInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ExportProjectInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ExportProjectInput {
                 project_id: self.project_id,
             })
@@ -910,27 +964,27 @@ impl ExportProjectInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExportProject,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExportProjectInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_10 = &_input.project_id;
             let input_10 =
                 input_10
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_id",
                         details: "cannot be empty or unset",
                     })?;
-            let project_id = smithy_http::label::fmt_string(input_10, false);
+            let project_id = aws_smithy_http::label::fmt_string(input_10, false);
             if project_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_id",
                     details: "cannot be empty or unset",
                 });
@@ -943,7 +997,7 @@ impl ExportProjectInput {
         fn update_http_builder(
             input: &crate::input::ExportProjectInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -952,23 +1006,23 @@ impl ExportProjectInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExportProjectInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -991,25 +1045,27 @@ impl ExportProjectInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ExportProject::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ExportProject",
-                    "mobile",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ExportProject::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ExportProject",
+            "mobile",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1040,6 +1096,9 @@ pub mod list_bundles_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>
+        /// Maximum number of records to list in a single response.
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1053,6 +1112,11 @@ pub mod list_bundles_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>
+        /// Pagination token. Set to null to start listing bundles from start.
+        /// If non-null pagination token is returned in a result, then pass its
+        /// value in here in another request to list more bundles.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1060,8 +1124,10 @@ pub mod list_bundles_input {
         /// Consumes the builder and constructs a [`ListBundlesInput`](crate::input::ListBundlesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListBundlesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListBundlesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListBundlesInput {
                 max_results: self.max_results.unwrap_or_default(),
                 next_token: self.next_token,
@@ -1080,36 +1146,36 @@ impl ListBundlesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListBundles,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListBundlesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/bundles").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListBundlesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_11) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_11));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_11));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListBundlesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1119,23 +1185,23 @@ impl ListBundlesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListBundlesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1158,25 +1224,27 @@ impl ListBundlesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListBundles::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListBundles",
-                    "mobile",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListBundles::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListBundles",
+            "mobile",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1207,6 +1275,9 @@ pub mod list_projects_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>
+        /// Maximum number of records to list in a single response.
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1220,6 +1291,11 @@ pub mod list_projects_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>
+        /// Pagination token. Set to null to start listing projects from start.
+        /// If non-null pagination token is returned in a result, then pass its
+        /// value in here in another request to list more projects.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1227,8 +1303,10 @@ pub mod list_projects_input {
         /// Consumes the builder and constructs a [`ListProjectsInput`](crate::input::ListProjectsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListProjectsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListProjectsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListProjectsInput {
                 max_results: self.max_results.unwrap_or_default(),
                 next_token: self.next_token,
@@ -1247,36 +1325,36 @@ impl ListProjectsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListProjects,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListProjectsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/projects").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListProjectsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_12) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_12));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_12));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListProjectsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1286,23 +1364,23 @@ impl ListProjectsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListProjectsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1325,25 +1403,27 @@ impl ListProjectsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListProjects::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListProjects",
-                    "mobile",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListProjects::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListProjects",
+            "mobile",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1363,7 +1443,7 @@ pub mod update_project_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) contents: std::option::Option<smithy_types::Blob>,
+        pub(crate) contents: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) project_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1372,11 +1452,16 @@ pub mod update_project_input {
         /// be the contents of the file downloaded from the URL provided in an export project
         /// operation.
         /// </p>
-        pub fn contents(mut self, input: smithy_types::Blob) -> Self {
+        pub fn contents(mut self, input: aws_smithy_types::Blob) -> Self {
             self.contents = Some(input);
             self
         }
-        pub fn set_contents(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>
+        /// ZIP or YAML file which contains project configuration to be updated. This should
+        /// be the contents of the file downloaded from the URL provided in an export project
+        /// operation.
+        /// </p>
+        pub fn set_contents(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.contents = input;
             self
         }
@@ -1387,6 +1472,9 @@ pub mod update_project_input {
             self.project_id = Some(input.into());
             self
         }
+        /// <p>
+        /// Unique project identifier.
+        /// </p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_id = input;
             self
@@ -1394,8 +1482,10 @@ pub mod update_project_input {
         /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::input::UpdateProjectInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateProjectInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateProjectInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateProjectInput {
                 contents: self.contents,
                 project_id: self.project_id,
@@ -1414,30 +1504,30 @@ impl UpdateProjectInput {
         self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateProject,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateProjectInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/update").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::UpdateProjectInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_13) = &_input.project_id {
-                query.push_kv("projectId", &smithy_http::query::fmt_string(&inner_13));
+                query.push_kv("projectId", &aws_smithy_http::query::fmt_string(&inner_13));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::UpdateProjectInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1447,23 +1537,23 @@ impl UpdateProjectInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateProjectInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/octet-stream",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::ser_payload_update_project_input(self.contents)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1486,25 +1576,27 @@ impl UpdateProjectInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateProject::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateProject",
-                    "mobile",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateProject::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateProject",
+            "mobile",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1529,7 +1621,7 @@ pub struct UpdateProjectInput {
     /// be the contents of the file downloaded from the URL provided in an export project
     /// operation.
     /// </p>
-    pub contents: std::option::Option<smithy_types::Blob>,
+    pub contents: std::option::Option<aws_smithy_types::Blob>,
     /// <p>
     /// Unique project identifier.
     /// </p>
@@ -1726,7 +1818,7 @@ pub struct CreateProjectInput {
     /// the project. This may be the contents of the file downloaded from the URL provided
     /// in an export project operation.
     /// </p>
-    pub contents: std::option::Option<smithy_types::Blob>,
+    pub contents: std::option::Option<aws_smithy_types::Blob>,
     /// <p>
     /// Unique identifier for an exported snapshot of project configuration. This
     /// snapshot identifier is included in the share URL when a project is exported.

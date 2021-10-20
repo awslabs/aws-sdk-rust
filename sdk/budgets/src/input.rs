@@ -17,6 +17,7 @@ pub mod create_budget_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The <code>accountId</code> that is associated with the budget.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -26,10 +27,16 @@ pub mod create_budget_input {
             self.budget = Some(input);
             self
         }
+        /// <p>The budget object that you want to create.</p>
         pub fn set_budget(mut self, input: std::option::Option<crate::model::Budget>) -> Self {
             self.budget = input;
             self
         }
+        /// Appends an item to `notifications_with_subscribers`.
+        ///
+        /// To override the contents of this collection use [`set_notifications_with_subscribers`](Self::set_notifications_with_subscribers).
+        ///
+        /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.</p>
         pub fn notifications_with_subscribers(
             mut self,
             input: impl Into<crate::model::NotificationWithSubscribers>,
@@ -39,6 +46,7 @@ pub mod create_budget_input {
             self.notifications_with_subscribers = Some(v);
             self
         }
+        /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.</p>
         pub fn set_notifications_with_subscribers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotificationWithSubscribers>>,
@@ -49,8 +57,10 @@ pub mod create_budget_input {
         /// Consumes the builder and constructs a [`CreateBudgetInput`](crate::input::CreateBudgetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateBudgetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateBudgetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateBudgetInput {
                 account_id: self.account_id,
                 budget: self.budget,
@@ -70,16 +80,16 @@ impl CreateBudgetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateBudget,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateBudgetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -87,7 +97,7 @@ impl CreateBudgetInput {
         fn update_http_builder(
             input: &crate::input::CreateBudgetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -96,31 +106,31 @@ impl CreateBudgetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateBudgetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.CreateBudget",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_budget(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -143,25 +153,27 @@ impl CreateBudgetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateBudget::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateBudget",
-                    "budgets",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateBudget::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateBudget",
+            "budgets",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -197,6 +209,7 @@ pub mod create_budget_action_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the user. It should be a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -206,6 +219,7 @@ pub mod create_budget_action_input {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -215,6 +229,7 @@ pub mod create_budget_action_input {
             self.notification_type = Some(input);
             self
         }
+        /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
         pub fn set_notification_type(
             mut self,
             input: std::option::Option<crate::model::NotificationType>,
@@ -229,6 +244,9 @@ pub mod create_budget_action_input {
             self.action_type = Some(input);
             self
         }
+        /// <p>
+        /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
+        /// </p>
         pub fn set_action_type(
             mut self,
             input: std::option::Option<crate::model::ActionType>,
@@ -243,6 +261,9 @@ pub mod create_budget_action_input {
             self.action_threshold = Some(input);
             self
         }
+        /// <p>
+        /// The trigger threshold of the action.
+        /// </p>
         pub fn set_action_threshold(
             mut self,
             input: std::option::Option<crate::model::ActionThreshold>,
@@ -257,6 +278,9 @@ pub mod create_budget_action_input {
             self.definition = Some(input);
             self
         }
+        /// <p>
+        /// Specifies all of the type-specific parameters.
+        /// </p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::Definition>,
@@ -271,6 +295,9 @@ pub mod create_budget_action_input {
             self.execution_role_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The role passed for action execution and reversion. Roles and actions must be in the same account.
+        /// </p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -285,6 +312,9 @@ pub mod create_budget_action_input {
             self.approval_model = Some(input);
             self
         }
+        /// <p>
+        /// This specifies if the action needs manual or automatic approval.
+        /// </p>
         pub fn set_approval_model(
             mut self,
             input: std::option::Option<crate::model::ApprovalModel>,
@@ -292,12 +322,18 @@ pub mod create_budget_action_input {
             self.approval_model = input;
             self
         }
+        /// Appends an item to `subscribers`.
+        ///
+        /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
+        ///
+        /// <p> A list of subscribers.</p>
         pub fn subscribers(mut self, input: impl Into<crate::model::Subscriber>) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
             v.push(input.into());
             self.subscribers = Some(v);
             self
         }
+        /// <p> A list of subscribers.</p>
         pub fn set_subscribers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
@@ -310,7 +346,7 @@ pub mod create_budget_action_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateBudgetActionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateBudgetActionInput {
                 account_id: self.account_id,
@@ -337,16 +373,16 @@ impl CreateBudgetActionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateBudgetAction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateBudgetActionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -354,7 +390,7 @@ impl CreateBudgetActionInput {
         fn update_http_builder(
             input: &crate::input::CreateBudgetActionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -363,30 +399,32 @@ impl CreateBudgetActionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateBudgetActionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.CreateBudgetAction",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_budget_action(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -409,15 +447,15 @@ impl CreateBudgetActionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateBudgetAction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateBudgetAction",
             "budgets",
         ));
@@ -426,10 +464,10 @@ impl CreateBudgetActionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -460,6 +498,7 @@ pub mod create_notification_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -469,6 +508,7 @@ pub mod create_notification_input {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p>The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -478,6 +518,7 @@ pub mod create_notification_input {
             self.notification = Some(input);
             self
         }
+        /// <p>The notification that you want to create.</p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::Notification>,
@@ -485,12 +526,18 @@ pub mod create_notification_input {
             self.notification = input;
             self
         }
+        /// Appends an item to `subscribers`.
+        ///
+        /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
+        ///
+        /// <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
         pub fn subscribers(mut self, input: impl Into<crate::model::Subscriber>) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
             v.push(input.into());
             self.subscribers = Some(v);
             self
         }
+        /// <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
         pub fn set_subscribers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
@@ -503,7 +550,7 @@ pub mod create_notification_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateNotificationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateNotificationInput {
                 account_id: self.account_id,
@@ -525,16 +572,16 @@ impl CreateNotificationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateNotification,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateNotificationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -542,7 +589,7 @@ impl CreateNotificationInput {
         fn update_http_builder(
             input: &crate::input::CreateNotificationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -551,32 +598,32 @@ impl CreateNotificationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateNotificationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.CreateNotification",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_notification(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -599,15 +646,15 @@ impl CreateNotificationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateNotification::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateNotification",
             "budgets",
         ));
@@ -616,10 +663,10 @@ impl CreateNotificationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -650,6 +697,7 @@ pub mod create_subscriber_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -659,6 +707,7 @@ pub mod create_subscriber_input {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p>The name of the budget that you want to subscribe to. Budget names must be unique within an account.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -668,6 +717,7 @@ pub mod create_subscriber_input {
             self.notification = Some(input);
             self
         }
+        /// <p>The notification that you want to create a subscriber for.</p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::Notification>,
@@ -680,6 +730,7 @@ pub mod create_subscriber_input {
             self.subscriber = Some(input);
             self
         }
+        /// <p>The subscriber that you want to associate with a budget notification.</p>
         pub fn set_subscriber(
             mut self,
             input: std::option::Option<crate::model::Subscriber>,
@@ -692,7 +743,7 @@ pub mod create_subscriber_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateSubscriberInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateSubscriberInput {
                 account_id: self.account_id,
@@ -714,16 +765,16 @@ impl CreateSubscriberInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateSubscriber,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateSubscriberInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -731,7 +782,7 @@ impl CreateSubscriberInput {
         fn update_http_builder(
             input: &crate::input::CreateSubscriberInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -740,32 +791,32 @@ impl CreateSubscriberInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateSubscriberInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.CreateSubscriber",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_subscriber(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -788,15 +839,15 @@ impl CreateSubscriberInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateSubscriber::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateSubscriber",
             "budgets",
         ));
@@ -805,10 +856,10 @@ impl CreateSubscriberInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -837,6 +888,7 @@ pub mod delete_budget_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The <code>accountId</code> that is associated with the budget that you want to delete.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -846,6 +898,7 @@ pub mod delete_budget_input {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p>The name of the budget that you want to delete.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -853,8 +906,10 @@ pub mod delete_budget_input {
         /// Consumes the builder and constructs a [`DeleteBudgetInput`](crate::input::DeleteBudgetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteBudgetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteBudgetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteBudgetInput {
                 account_id: self.account_id,
                 budget_name: self.budget_name,
@@ -873,16 +928,16 @@ impl DeleteBudgetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteBudget,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteBudgetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -890,7 +945,7 @@ impl DeleteBudgetInput {
         fn update_http_builder(
             input: &crate::input::DeleteBudgetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -899,31 +954,31 @@ impl DeleteBudgetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteBudgetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.DeleteBudget",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_budget(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -946,25 +1001,27 @@ impl DeleteBudgetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteBudget::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteBudget",
-                    "budgets",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteBudget::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteBudget",
+            "budgets",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -994,6 +1051,7 @@ pub mod delete_budget_action_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the user. It should be a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1003,6 +1061,7 @@ pub mod delete_budget_action_input {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -1014,6 +1073,9 @@ pub mod delete_budget_action_input {
             self.action_id = Some(input.into());
             self
         }
+        /// <p>
+        /// A system-generated universally unique identifier (UUID) for the action.
+        /// </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -1023,7 +1085,7 @@ pub mod delete_budget_action_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteBudgetActionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBudgetActionInput {
                 account_id: self.account_id,
@@ -1044,16 +1106,16 @@ impl DeleteBudgetActionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteBudgetAction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteBudgetActionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1061,7 +1123,7 @@ impl DeleteBudgetActionInput {
         fn update_http_builder(
             input: &crate::input::DeleteBudgetActionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1070,30 +1132,32 @@ impl DeleteBudgetActionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteBudgetActionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.DeleteBudgetAction",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_budget_action(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1116,15 +1180,15 @@ impl DeleteBudgetActionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteBudgetAction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteBudgetAction",
             "budgets",
         ));
@@ -1133,10 +1197,10 @@ impl DeleteBudgetActionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1166,6 +1230,7 @@ pub mod delete_notification_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to delete.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1175,6 +1240,7 @@ pub mod delete_notification_input {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p>The name of the budget whose notification you want to delete.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -1184,6 +1250,7 @@ pub mod delete_notification_input {
             self.notification = Some(input);
             self
         }
+        /// <p>The notification that you want to delete.</p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::Notification>,
@@ -1196,7 +1263,7 @@ pub mod delete_notification_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteNotificationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteNotificationInput {
                 account_id: self.account_id,
@@ -1217,16 +1284,16 @@ impl DeleteNotificationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteNotification,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteNotificationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1234,7 +1301,7 @@ impl DeleteNotificationInput {
         fn update_http_builder(
             input: &crate::input::DeleteNotificationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1243,32 +1310,32 @@ impl DeleteNotificationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteNotificationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.DeleteNotification",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_notification(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1291,15 +1358,15 @@ impl DeleteNotificationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteNotification::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteNotification",
             "budgets",
         ));
@@ -1308,10 +1375,10 @@ impl DeleteNotificationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1342,6 +1409,7 @@ pub mod delete_subscriber_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1351,6 +1419,7 @@ pub mod delete_subscriber_input {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p>The name of the budget whose subscriber you want to delete.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -1360,6 +1429,7 @@ pub mod delete_subscriber_input {
             self.notification = Some(input);
             self
         }
+        /// <p>The notification whose subscriber you want to delete.</p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::Notification>,
@@ -1372,6 +1442,7 @@ pub mod delete_subscriber_input {
             self.subscriber = Some(input);
             self
         }
+        /// <p>The subscriber that you want to delete.</p>
         pub fn set_subscriber(
             mut self,
             input: std::option::Option<crate::model::Subscriber>,
@@ -1384,7 +1455,7 @@ pub mod delete_subscriber_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteSubscriberInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteSubscriberInput {
                 account_id: self.account_id,
@@ -1406,16 +1477,16 @@ impl DeleteSubscriberInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteSubscriber,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteSubscriberInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1423,7 +1494,7 @@ impl DeleteSubscriberInput {
         fn update_http_builder(
             input: &crate::input::DeleteSubscriberInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1432,32 +1503,32 @@ impl DeleteSubscriberInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteSubscriberInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.DeleteSubscriber",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_subscriber(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1480,15 +1551,15 @@ impl DeleteSubscriberInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteSubscriber::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteSubscriber",
             "budgets",
         ));
@@ -1497,10 +1568,10 @@ impl DeleteSubscriberInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1529,6 +1600,7 @@ pub mod describe_budget_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1538,6 +1610,7 @@ pub mod describe_budget_input {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p>The name of the budget that you want a description of.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -1547,7 +1620,7 @@ pub mod describe_budget_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeBudgetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeBudgetInput {
                 account_id: self.account_id,
@@ -1567,16 +1640,16 @@ impl DescribeBudgetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudget,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeBudgetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1584,7 +1657,7 @@ impl DescribeBudgetInput {
         fn update_http_builder(
             input: &crate::input::DescribeBudgetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1593,29 +1666,31 @@ impl DescribeBudgetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeBudgetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.DescribeBudget",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_budget(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1638,15 +1713,15 @@ impl DescribeBudgetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeBudget::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeBudget",
             "budgets",
         ));
@@ -1655,10 +1730,10 @@ impl DescribeBudgetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1688,6 +1763,7 @@ pub mod describe_budget_action_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the user. It should be a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1697,6 +1773,7 @@ pub mod describe_budget_action_input {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -1708,6 +1785,9 @@ pub mod describe_budget_action_input {
             self.action_id = Some(input.into());
             self
         }
+        /// <p>
+        /// A system-generated universally unique identifier (UUID) for the action.
+        /// </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -1717,7 +1797,7 @@ pub mod describe_budget_action_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeBudgetActionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeBudgetActionInput {
                 account_id: self.account_id,
@@ -1738,16 +1818,16 @@ impl DescribeBudgetActionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudgetAction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeBudgetActionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1755,7 +1835,7 @@ impl DescribeBudgetActionInput {
         fn update_http_builder(
             input: &crate::input::DescribeBudgetActionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1764,32 +1844,32 @@ impl DescribeBudgetActionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeBudgetActionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.DescribeBudgetAction",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_budget_action(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1812,15 +1892,15 @@ impl DescribeBudgetActionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeBudgetAction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeBudgetAction",
             "budgets",
         ));
@@ -1829,10 +1909,10 @@ impl DescribeBudgetActionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1865,6 +1945,7 @@ pub mod describe_budget_action_histories_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the user. It should be a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1874,6 +1955,7 @@ pub mod describe_budget_action_histories_input {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -1885,6 +1967,9 @@ pub mod describe_budget_action_histories_input {
             self.action_id = Some(input.into());
             self
         }
+        /// <p>
+        /// A system-generated universally unique identifier (UUID) for the action.
+        /// </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -1894,6 +1979,7 @@ pub mod describe_budget_action_histories_input {
             self.time_period = Some(input);
             self
         }
+        /// <p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::TimePeriod>,
@@ -1906,6 +1992,7 @@ pub mod describe_budget_action_histories_input {
             self.max_results = Some(input);
             self
         }
+        /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1915,6 +2002,7 @@ pub mod describe_budget_action_histories_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p> A generic string.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1924,7 +2012,7 @@ pub mod describe_budget_action_histories_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeBudgetActionHistoriesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeBudgetActionHistoriesInput {
                 account_id: self.account_id,
@@ -1949,16 +2037,16 @@ impl DescribeBudgetActionHistoriesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudgetActionHistories,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeBudgetActionHistoriesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1966,7 +2054,7 @@ impl DescribeBudgetActionHistoriesInput {
         fn update_http_builder(
             input: &crate::input::DescribeBudgetActionHistoriesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1975,30 +2063,30 @@ impl DescribeBudgetActionHistoriesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeBudgetActionHistoriesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.DescribeBudgetActionHistories",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_budget_action_histories(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_budget_action_histories(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2021,15 +2109,15 @@ impl DescribeBudgetActionHistoriesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeBudgetActionHistories::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeBudgetActionHistories",
             "budgets",
         ));
@@ -2038,10 +2126,10 @@ impl DescribeBudgetActionHistoriesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2071,6 +2159,7 @@ pub mod describe_budget_actions_for_account_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the user. It should be a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2080,6 +2169,7 @@ pub mod describe_budget_actions_for_account_input {
             self.max_results = Some(input);
             self
         }
+        /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2089,6 +2179,7 @@ pub mod describe_budget_actions_for_account_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p> A generic string.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2098,7 +2189,7 @@ pub mod describe_budget_actions_for_account_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeBudgetActionsForAccountInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeBudgetActionsForAccountInput {
                 account_id: self.account_id,
@@ -2120,16 +2211,16 @@ impl DescribeBudgetActionsForAccountInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudgetActionsForAccount,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeBudgetActionsForAccountInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2137,7 +2228,7 @@ impl DescribeBudgetActionsForAccountInput {
         fn update_http_builder(
             input: &crate::input::DescribeBudgetActionsForAccountInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2146,30 +2237,30 @@ impl DescribeBudgetActionsForAccountInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeBudgetActionsForAccountInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.DescribeBudgetActionsForAccount",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_budget_actions_for_account(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_budget_actions_for_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2192,15 +2283,15 @@ impl DescribeBudgetActionsForAccountInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeBudgetActionsForAccount::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeBudgetActionsForAccount",
             "budgets",
         ));
@@ -2209,10 +2300,10 @@ impl DescribeBudgetActionsForAccountInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2243,6 +2334,7 @@ pub mod describe_budget_actions_for_budget_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the user. It should be a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2252,6 +2344,7 @@ pub mod describe_budget_actions_for_budget_input {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -2261,6 +2354,7 @@ pub mod describe_budget_actions_for_budget_input {
             self.max_results = Some(input);
             self
         }
+        /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2270,6 +2364,7 @@ pub mod describe_budget_actions_for_budget_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p> A generic string.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2279,7 +2374,7 @@ pub mod describe_budget_actions_for_budget_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeBudgetActionsForBudgetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeBudgetActionsForBudgetInput {
                 account_id: self.account_id,
@@ -2302,16 +2397,16 @@ impl DescribeBudgetActionsForBudgetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudgetActionsForBudget,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeBudgetActionsForBudgetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2319,7 +2414,7 @@ impl DescribeBudgetActionsForBudgetInput {
         fn update_http_builder(
             input: &crate::input::DescribeBudgetActionsForBudgetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2328,30 +2423,30 @@ impl DescribeBudgetActionsForBudgetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeBudgetActionsForBudgetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.DescribeBudgetActionsForBudget",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_budget_actions_for_budget(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_budget_actions_for_budget(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2374,15 +2469,15 @@ impl DescribeBudgetActionsForBudgetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeBudgetActionsForBudget::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeBudgetActionsForBudget",
             "budgets",
         ));
@@ -2391,10 +2486,10 @@ impl DescribeBudgetActionsForBudgetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2426,6 +2521,7 @@ pub mod describe_budget_performance_history_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the user. It should be a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2435,6 +2531,7 @@ pub mod describe_budget_performance_history_input {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -2444,6 +2541,7 @@ pub mod describe_budget_performance_history_input {
             self.time_period = Some(input);
             self
         }
+        /// <p>Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::TimePeriod>,
@@ -2456,6 +2554,7 @@ pub mod describe_budget_performance_history_input {
             self.max_results = Some(input);
             self
         }
+        /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2465,6 +2564,7 @@ pub mod describe_budget_performance_history_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p> A generic string.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2474,7 +2574,7 @@ pub mod describe_budget_performance_history_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeBudgetPerformanceHistoryInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeBudgetPerformanceHistoryInput {
                 account_id: self.account_id,
@@ -2498,16 +2598,16 @@ impl DescribeBudgetPerformanceHistoryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudgetPerformanceHistory,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeBudgetPerformanceHistoryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2515,7 +2615,7 @@ impl DescribeBudgetPerformanceHistoryInput {
         fn update_http_builder(
             input: &crate::input::DescribeBudgetPerformanceHistoryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2524,30 +2624,30 @@ impl DescribeBudgetPerformanceHistoryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeBudgetPerformanceHistoryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.DescribeBudgetPerformanceHistory",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_budget_performance_history(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_budget_performance_history(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2570,15 +2670,15 @@ impl DescribeBudgetPerformanceHistoryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeBudgetPerformanceHistory::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeBudgetPerformanceHistory",
             "budgets",
         ));
@@ -2587,10 +2687,10 @@ impl DescribeBudgetPerformanceHistoryInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2620,6 +2720,7 @@ pub mod describe_budgets_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2629,6 +2730,7 @@ pub mod describe_budgets_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2638,6 +2740,7 @@ pub mod describe_budgets_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2647,7 +2750,7 @@ pub mod describe_budgets_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeBudgetsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeBudgetsInput {
                 account_id: self.account_id,
@@ -2668,16 +2771,16 @@ impl DescribeBudgetsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudgets,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeBudgetsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2685,7 +2788,7 @@ impl DescribeBudgetsInput {
         fn update_http_builder(
             input: &crate::input::DescribeBudgetsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2694,32 +2797,32 @@ impl DescribeBudgetsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeBudgetsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.DescribeBudgets",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_budgets(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2742,15 +2845,15 @@ impl DescribeBudgetsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeBudgets::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeBudgets",
             "budgets",
         ));
@@ -2759,10 +2862,10 @@ impl DescribeBudgetsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2793,6 +2896,7 @@ pub mod describe_notifications_for_budget_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2802,6 +2906,7 @@ pub mod describe_notifications_for_budget_input {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p>The name of the budget whose notifications you want descriptions of.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -2811,6 +2916,7 @@ pub mod describe_notifications_for_budget_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2820,6 +2926,7 @@ pub mod describe_notifications_for_budget_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2829,7 +2936,7 @@ pub mod describe_notifications_for_budget_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeNotificationsForBudgetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeNotificationsForBudgetInput {
                 account_id: self.account_id,
@@ -2852,16 +2959,16 @@ impl DescribeNotificationsForBudgetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeNotificationsForBudget,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeNotificationsForBudgetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2869,7 +2976,7 @@ impl DescribeNotificationsForBudgetInput {
         fn update_http_builder(
             input: &crate::input::DescribeNotificationsForBudgetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2878,30 +2985,30 @@ impl DescribeNotificationsForBudgetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeNotificationsForBudgetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.DescribeNotificationsForBudget",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_notifications_for_budget(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_notifications_for_budget(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2924,15 +3031,15 @@ impl DescribeNotificationsForBudgetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeNotificationsForBudget::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeNotificationsForBudget",
             "budgets",
         ));
@@ -2941,10 +3048,10 @@ impl DescribeNotificationsForBudgetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2976,6 +3083,7 @@ pub mod describe_subscribers_for_notification_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2985,6 +3093,7 @@ pub mod describe_subscribers_for_notification_input {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p>The name of the budget whose subscribers you want descriptions of.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -2994,6 +3103,7 @@ pub mod describe_subscribers_for_notification_input {
             self.notification = Some(input);
             self
         }
+        /// <p>The notification whose subscribers you want to list.</p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::Notification>,
@@ -3006,6 +3116,7 @@ pub mod describe_subscribers_for_notification_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3015,6 +3126,7 @@ pub mod describe_subscribers_for_notification_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3024,7 +3136,7 @@ pub mod describe_subscribers_for_notification_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeSubscribersForNotificationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeSubscribersForNotificationInput {
                 account_id: self.account_id,
@@ -3048,16 +3160,16 @@ impl DescribeSubscribersForNotificationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeSubscribersForNotification,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeSubscribersForNotificationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3065,7 +3177,7 @@ impl DescribeSubscribersForNotificationInput {
         fn update_http_builder(
             input: &crate::input::DescribeSubscribersForNotificationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3074,30 +3186,30 @@ impl DescribeSubscribersForNotificationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeSubscribersForNotificationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.DescribeSubscribersForNotification",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_subscribers_for_notification(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_subscribers_for_notification(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3120,15 +3232,15 @@ impl DescribeSubscribersForNotificationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeSubscribersForNotification::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeSubscribersForNotification",
             "budgets",
         ));
@@ -3137,10 +3249,10 @@ impl DescribeSubscribersForNotificationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3171,6 +3283,7 @@ pub mod execute_budget_action_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the user. It should be a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -3180,6 +3293,7 @@ pub mod execute_budget_action_input {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -3191,6 +3305,9 @@ pub mod execute_budget_action_input {
             self.action_id = Some(input.into());
             self
         }
+        /// <p>
+        /// A system-generated universally unique identifier (UUID) for the action.
+        /// </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -3202,6 +3319,9 @@ pub mod execute_budget_action_input {
             self.execution_type = Some(input);
             self
         }
+        /// <p>
+        /// The type of execution.
+        /// </p>
         pub fn set_execution_type(
             mut self,
             input: std::option::Option<crate::model::ExecutionType>,
@@ -3214,7 +3334,7 @@ pub mod execute_budget_action_input {
             self,
         ) -> std::result::Result<
             crate::input::ExecuteBudgetActionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ExecuteBudgetActionInput {
                 account_id: self.account_id,
@@ -3236,16 +3356,16 @@ impl ExecuteBudgetActionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExecuteBudgetAction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExecuteBudgetActionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3253,7 +3373,7 @@ impl ExecuteBudgetActionInput {
         fn update_http_builder(
             input: &crate::input::ExecuteBudgetActionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3262,32 +3382,32 @@ impl ExecuteBudgetActionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExecuteBudgetActionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.ExecuteBudgetAction",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_execute_budget_action(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3310,15 +3430,15 @@ impl ExecuteBudgetActionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ExecuteBudgetAction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ExecuteBudgetAction",
             "budgets",
         ));
@@ -3327,10 +3447,10 @@ impl ExecuteBudgetActionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3359,6 +3479,7 @@ pub mod update_budget_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -3368,6 +3489,7 @@ pub mod update_budget_input {
             self.new_budget = Some(input);
             self
         }
+        /// <p>The budget that you want to update your budget to.</p>
         pub fn set_new_budget(mut self, input: std::option::Option<crate::model::Budget>) -> Self {
             self.new_budget = input;
             self
@@ -3375,8 +3497,10 @@ pub mod update_budget_input {
         /// Consumes the builder and constructs a [`UpdateBudgetInput`](crate::input::UpdateBudgetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateBudgetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateBudgetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateBudgetInput {
                 account_id: self.account_id,
                 new_budget: self.new_budget,
@@ -3395,16 +3519,16 @@ impl UpdateBudgetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateBudget,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateBudgetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3412,7 +3536,7 @@ impl UpdateBudgetInput {
         fn update_http_builder(
             input: &crate::input::UpdateBudgetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3421,31 +3545,31 @@ impl UpdateBudgetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateBudgetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.UpdateBudget",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_budget(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3468,25 +3592,27 @@ impl UpdateBudgetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateBudget::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateBudget",
-                    "budgets",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateBudget::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateBudget",
+            "budgets",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3522,6 +3648,7 @@ pub mod update_budget_action_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the user. It should be a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -3531,6 +3658,7 @@ pub mod update_budget_action_input {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -3542,6 +3670,9 @@ pub mod update_budget_action_input {
             self.action_id = Some(input.into());
             self
         }
+        /// <p>
+        /// A system-generated universally unique identifier (UUID) for the action.
+        /// </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -3551,6 +3682,7 @@ pub mod update_budget_action_input {
             self.notification_type = Some(input);
             self
         }
+        /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
         pub fn set_notification_type(
             mut self,
             input: std::option::Option<crate::model::NotificationType>,
@@ -3565,6 +3697,9 @@ pub mod update_budget_action_input {
             self.action_threshold = Some(input);
             self
         }
+        /// <p>
+        /// The trigger threshold of the action.
+        /// </p>
         pub fn set_action_threshold(
             mut self,
             input: std::option::Option<crate::model::ActionThreshold>,
@@ -3579,6 +3714,9 @@ pub mod update_budget_action_input {
             self.definition = Some(input);
             self
         }
+        /// <p>
+        /// Specifies all of the type-specific parameters.
+        /// </p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::Definition>,
@@ -3593,6 +3731,9 @@ pub mod update_budget_action_input {
             self.execution_role_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The role passed for action execution and reversion. Roles and actions must be in the same account.
+        /// </p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3607,6 +3748,9 @@ pub mod update_budget_action_input {
             self.approval_model = Some(input);
             self
         }
+        /// <p>
+        /// This specifies if the action needs manual or automatic approval.
+        /// </p>
         pub fn set_approval_model(
             mut self,
             input: std::option::Option<crate::model::ApprovalModel>,
@@ -3614,12 +3758,18 @@ pub mod update_budget_action_input {
             self.approval_model = input;
             self
         }
+        /// Appends an item to `subscribers`.
+        ///
+        /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
+        ///
+        /// <p> A list of subscribers.</p>
         pub fn subscribers(mut self, input: impl Into<crate::model::Subscriber>) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
             v.push(input.into());
             self.subscribers = Some(v);
             self
         }
+        /// <p> A list of subscribers.</p>
         pub fn set_subscribers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
@@ -3632,7 +3782,7 @@ pub mod update_budget_action_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateBudgetActionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateBudgetActionInput {
                 account_id: self.account_id,
@@ -3659,16 +3809,16 @@ impl UpdateBudgetActionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateBudgetAction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateBudgetActionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3676,7 +3826,7 @@ impl UpdateBudgetActionInput {
         fn update_http_builder(
             input: &crate::input::UpdateBudgetActionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3685,30 +3835,32 @@ impl UpdateBudgetActionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateBudgetActionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.UpdateBudgetAction",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_budget_action(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3731,15 +3883,15 @@ impl UpdateBudgetActionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateBudgetAction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateBudgetAction",
             "budgets",
         ));
@@ -3748,10 +3900,10 @@ impl UpdateBudgetActionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3782,6 +3934,7 @@ pub mod update_notification_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -3791,6 +3944,7 @@ pub mod update_notification_input {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p>The name of the budget whose notification you want to update.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -3800,6 +3954,7 @@ pub mod update_notification_input {
             self.old_notification = Some(input);
             self
         }
+        /// <p>The previous notification that is associated with a budget.</p>
         pub fn set_old_notification(
             mut self,
             input: std::option::Option<crate::model::Notification>,
@@ -3812,6 +3967,7 @@ pub mod update_notification_input {
             self.new_notification = Some(input);
             self
         }
+        /// <p>The updated notification to be associated with a budget.</p>
         pub fn set_new_notification(
             mut self,
             input: std::option::Option<crate::model::Notification>,
@@ -3824,7 +3980,7 @@ pub mod update_notification_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateNotificationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateNotificationInput {
                 account_id: self.account_id,
@@ -3846,16 +4002,16 @@ impl UpdateNotificationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateNotification,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateNotificationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3863,7 +4019,7 @@ impl UpdateNotificationInput {
         fn update_http_builder(
             input: &crate::input::UpdateNotificationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3872,32 +4028,32 @@ impl UpdateNotificationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateNotificationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.UpdateNotification",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_notification(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3920,15 +4076,15 @@ impl UpdateNotificationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateNotification::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateNotification",
             "budgets",
         ));
@@ -3937,10 +4093,10 @@ impl UpdateNotificationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3972,6 +4128,7 @@ pub mod update_subscriber_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -3981,6 +4138,7 @@ pub mod update_subscriber_input {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p>The name of the budget whose subscriber you want to update.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -3990,6 +4148,7 @@ pub mod update_subscriber_input {
             self.notification = Some(input);
             self
         }
+        /// <p>The notification whose subscriber you want to update.</p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::Notification>,
@@ -4002,6 +4161,7 @@ pub mod update_subscriber_input {
             self.old_subscriber = Some(input);
             self
         }
+        /// <p>The previous subscriber that is associated with a budget notification.</p>
         pub fn set_old_subscriber(
             mut self,
             input: std::option::Option<crate::model::Subscriber>,
@@ -4014,6 +4174,7 @@ pub mod update_subscriber_input {
             self.new_subscriber = Some(input);
             self
         }
+        /// <p>The updated subscriber that is associated with a budget notification.</p>
         pub fn set_new_subscriber(
             mut self,
             input: std::option::Option<crate::model::Subscriber>,
@@ -4026,7 +4187,7 @@ pub mod update_subscriber_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateSubscriberInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateSubscriberInput {
                 account_id: self.account_id,
@@ -4049,16 +4210,16 @@ impl UpdateSubscriberInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateSubscriber,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateSubscriberInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4066,7 +4227,7 @@ impl UpdateSubscriberInput {
         fn update_http_builder(
             input: &crate::input::UpdateSubscriberInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4075,32 +4236,32 @@ impl UpdateSubscriberInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateSubscriberInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSBudgetServiceGateway.UpdateSubscriber",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_subscriber(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4123,15 +4284,15 @@ impl UpdateSubscriberInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateSubscriber::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateSubscriber",
             "budgets",
         ));
@@ -4140,10 +4301,10 @@ impl UpdateSubscriberInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4208,6 +4369,7 @@ impl std::fmt::Debug for UpdateNotificationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBudgetActionInput {
@@ -4274,6 +4436,7 @@ impl std::fmt::Debug for UpdateBudgetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteBudgetActionInput {
@@ -4373,6 +4536,7 @@ impl std::fmt::Debug for DescribeBudgetsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetPerformanceHistoryInput {
@@ -4399,6 +4563,7 @@ impl std::fmt::Debug for DescribeBudgetPerformanceHistoryInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionsForBudgetInput {
@@ -4422,6 +4587,7 @@ impl std::fmt::Debug for DescribeBudgetActionsForBudgetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionsForAccountInput {
@@ -4442,6 +4608,7 @@ impl std::fmt::Debug for DescribeBudgetActionsForAccountInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionHistoriesInput {
@@ -4473,6 +4640,7 @@ impl std::fmt::Debug for DescribeBudgetActionHistoriesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionInput {
@@ -4558,6 +4726,7 @@ impl std::fmt::Debug for DeleteNotificationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBudgetActionInput {
@@ -4646,6 +4815,7 @@ impl std::fmt::Debug for CreateNotificationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBudgetActionInput {

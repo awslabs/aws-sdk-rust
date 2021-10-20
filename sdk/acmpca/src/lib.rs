@@ -6,6 +6,7 @@
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(rustdoc::bare_urls)]
+#![warn(missing_docs)]
 //! <p>This is the <i>ACM Private CA API Reference</i>. It provides descriptions,
 //! syntax, and usage examples for each of the actions and data types involved in creating
 //! and managing private certificate authorities (CA) for your organization.</p>
@@ -20,6 +21,7 @@
 //! because the request exceeds the operation's quota for the number of requests per second.
 //! When a request is throttled, ACM Private CA returns a <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/CommonErrors.html">ThrottlingException</a> error. ACM Private CA does not guarantee a minimum request
 //! rate for APIs. </p>
+//!
 //! <p>To see an up-to-date list of your ACM Private CA quotas, or to request a quota increase,
 //! log into your AWS account and visit the <a href="https://console.aws.amazon.com/servicequotas/">Service Quotas</a>
 //! console.</p>
@@ -30,30 +32,38 @@ pub use error_meta::Error;
 pub use config::Config;
 
 mod aws_endpoint;
+/// Client and fluent builders for calling the service.
 #[cfg(feature = "client")]
 pub mod client;
+/// Configuration for the service.
 pub mod config;
+/// Errors that can occur when calling the service.
 pub mod error;
 mod error_meta;
+/// Input structures for operations.
 pub mod input;
 mod json_deser;
 mod json_errors;
 mod json_ser;
+/// Data structures used by operation inputs/outputs.
 pub mod model;
 mod no_credentials;
+/// All operations that this crate can perform.
 pub mod operation;
 mod operation_deser;
 mod operation_ser;
+/// Output structures for operations.
 pub mod output;
+/// Crate version number.
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
-pub use smithy_http::byte_stream::ByteStream;
-pub use smithy_http::result::SdkError;
-pub use smithy_types::Blob;
+pub use aws_smithy_http::byte_stream::ByteStream;
+pub use aws_smithy_http::result::SdkError;
+pub use aws_smithy_types::Blob;
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("acmpca", PKG_VERSION);
+pub use aws_smithy_http::endpoint::Endpoint;
+pub use aws_smithy_types::retry::RetryConfig;
 pub use aws_types::region::Region;
 pub use aws_types::Credentials;
 #[cfg(feature = "client")]
 pub use client::Client;
-pub use smithy_http::endpoint::Endpoint;
-pub use smithy_types::retry::RetryConfig;

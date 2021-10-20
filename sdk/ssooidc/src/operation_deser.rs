@@ -20,7 +20,7 @@ pub fn parse_create_token_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -38,7 +38,7 @@ pub fn parse_create_token_error(
                     let mut output =
                         crate::error::authorization_pending_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_authorization_pending_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_authorization_pending_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -55,7 +55,7 @@ pub fn parse_create_token_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::expired_token_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_expired_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_expired_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -72,7 +72,7 @@ pub fn parse_create_token_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -89,7 +89,7 @@ pub fn parse_create_token_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -106,7 +106,7 @@ pub fn parse_create_token_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_grant_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_grant_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_grant_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -123,7 +123,7 @@ pub fn parse_create_token_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -140,7 +140,7 @@ pub fn parse_create_token_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_scope_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_scope_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_scope_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -149,25 +149,23 @@ pub fn parse_create_token_error(
                 tmp
             }),
         },
-        "SlowDownException" => {
-            crate::error::CreateTokenError {
-                meta: generic,
-                kind: crate::error::CreateTokenErrorKind::SlowDownException({
+        "SlowDownException" => crate::error::CreateTokenError {
+            meta: generic,
+            kind: crate::error::CreateTokenErrorKind::SlowDownException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::slow_down_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_slow_down_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::slow_down_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_slow_down_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedClientException" => crate::error::CreateTokenError {
             meta: generic,
             kind: crate::error::CreateTokenErrorKind::UnauthorizedClientException({
@@ -177,7 +175,7 @@ pub fn parse_create_token_error(
                     let mut output =
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -195,7 +193,7 @@ pub fn parse_create_token_error(
                     let mut output =
                         crate::error::unsupported_grant_type_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unsupported_grant_type_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_grant_type_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTokenError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -246,7 +244,7 @@ pub fn parse_register_client_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterClientError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterClientError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -264,7 +262,7 @@ pub fn parse_register_client_error(
                     let mut output =
                         crate::error::invalid_client_metadata_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_client_metadata_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterClientError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_client_metadata_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterClientError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -281,7 +279,7 @@ pub fn parse_register_client_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterClientError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterClientError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -298,7 +296,7 @@ pub fn parse_register_client_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_scope_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_scope_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterClientError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_scope_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterClientError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -356,7 +354,7 @@ pub fn parse_start_device_authorization_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDeviceAuthorizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDeviceAuthorizationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -373,7 +371,7 @@ pub fn parse_start_device_authorization_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDeviceAuthorizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDeviceAuthorizationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -390,7 +388,7 @@ pub fn parse_start_device_authorization_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDeviceAuthorizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDeviceAuthorizationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -399,25 +397,23 @@ pub fn parse_start_device_authorization_error(
                 tmp
             }),
         },
-        "SlowDownException" => {
-            crate::error::StartDeviceAuthorizationError {
-                meta: generic,
-                kind: crate::error::StartDeviceAuthorizationErrorKind::SlowDownException({
+        "SlowDownException" => crate::error::StartDeviceAuthorizationError {
+            meta: generic,
+            kind: crate::error::StartDeviceAuthorizationErrorKind::SlowDownException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::slow_down_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_slow_down_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDeviceAuthorizationError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::slow_down_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_slow_down_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDeviceAuthorizationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "UnauthorizedClientException" => crate::error::StartDeviceAuthorizationError {
             meta: generic,
             kind: crate::error::StartDeviceAuthorizationErrorKind::UnauthorizedClientException({
@@ -427,7 +423,7 @@ pub fn parse_start_device_authorization_error(
                     let mut output =
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDeviceAuthorizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDeviceAuthorizationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

@@ -16,6 +16,7 @@ pub struct User {
     /// <p>Denotes whether the user requires a password to authenticate.</p>
     pub authentication: std::option::Option<crate::model::Authentication>,
     /// <p>The Amazon Resource Name (ARN) of the user.
+    ///
     /// </p>
     pub arn: std::option::Option<std::string::String>,
 }
@@ -52,6 +53,7 @@ pub mod user {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the user</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -61,6 +63,7 @@ pub mod user {
             self.status = Some(input.into());
             self
         }
+        /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -70,6 +73,7 @@ pub mod user {
             self.access_string = Some(input.into());
             self
         }
+        /// <p>Access permissions string used for this user.</p>
         pub fn set_access_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -77,12 +81,18 @@ pub mod user {
             self.access_string = input;
             self
         }
+        /// Appends an item to `acl_names`.
+        ///
+        /// To override the contents of this collection use [`set_acl_names`](Self::set_acl_names).
+        ///
+        /// <p>The names of the Access Control Lists to which the user belongs</p>
         pub fn acl_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.acl_names.unwrap_or_default();
             v.push(input.into());
             self.acl_names = Some(v);
             self
         }
+        /// <p>The names of the Access Control Lists to which the user belongs</p>
         pub fn set_acl_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -95,6 +105,7 @@ pub mod user {
             self.minimum_engine_version = Some(input.into());
             self
         }
+        /// <p>The minimum engine version supported for the user</p>
         pub fn set_minimum_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -107,6 +118,7 @@ pub mod user {
             self.authentication = Some(input);
             self
         }
+        /// <p>Denotes whether the user requires a password to authenticate.</p>
         pub fn set_authentication(
             mut self,
             input: std::option::Option<crate::model::Authentication>,
@@ -115,11 +127,15 @@ pub mod user {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the user.
+        ///
         /// </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the user.
+        ///
+        /// </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -177,6 +193,7 @@ pub mod authentication {
             self.r#type = Some(input);
             self
         }
+        /// <p>Indicates whether the user requires a password to authenticate.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::AuthenticationType>,
@@ -189,6 +206,7 @@ pub mod authentication {
             self.password_count = Some(input);
             self
         }
+        /// <p>The number of passwords belonging to the user. The maximum is two.</p>
         pub fn set_password_count(mut self, input: std::option::Option<i32>) -> Self {
             self.password_count = input;
             self
@@ -209,6 +227,7 @@ impl Authentication {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -220,7 +239,9 @@ impl Authentication {
     std::hash::Hash,
 )]
 pub enum AuthenticationType {
+    #[allow(missing_docs)] // documentation missing in model
     NoPassword,
+    #[allow(missing_docs)] // documentation missing in model
     Password,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -242,6 +263,7 @@ impl std::str::FromStr for AuthenticationType {
     }
 }
 impl AuthenticationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AuthenticationType::NoPassword => "no-password",
@@ -249,6 +271,7 @@ impl AuthenticationType {
             AuthenticationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["no-password", "password"]
     }
@@ -291,6 +314,7 @@ pub mod authentication_mode {
             self.r#type = Some(input);
             self
         }
+        /// <p>Indicates whether the user requires a password to authenticate. All newly-created users require a password.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::InputAuthenticationType>,
@@ -298,12 +322,18 @@ pub mod authentication_mode {
             self.r#type = input;
             self
         }
+        /// Appends an item to `passwords`.
+        ///
+        /// To override the contents of this collection use [`set_passwords`](Self::set_passwords).
+        ///
+        /// <p>The password(s) used for authentication</p>
         pub fn passwords(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.passwords.unwrap_or_default();
             v.push(input.into());
             self.passwords = Some(v);
             self
         }
+        /// <p>The password(s) used for authentication</p>
         pub fn set_passwords(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -327,6 +357,7 @@ impl AuthenticationMode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -338,6 +369,7 @@ impl AuthenticationMode {
     std::hash::Hash,
 )]
 pub enum InputAuthenticationType {
+    #[allow(missing_docs)] // documentation missing in model
     Password,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -358,12 +390,14 @@ impl std::str::FromStr for InputAuthenticationType {
     }
 }
 impl InputAuthenticationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputAuthenticationType::Password => "password",
             InputAuthenticationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["password"]
     }
@@ -427,6 +461,7 @@ pub mod subnet_group {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the subnet group</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -436,6 +471,7 @@ pub mod subnet_group {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the subnet group</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -445,16 +481,23 @@ pub mod subnet_group {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
         }
+        /// Appends an item to `subnets`.
+        ///
+        /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
+        ///
+        /// <p>A list of subnets associated with the subnet group.</p>
         pub fn subnets(mut self, input: impl Into<crate::model::Subnet>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
             v.push(input.into());
             self.subnets = Some(v);
             self
         }
+        /// <p>A list of subnets associated with the subnet group.</p>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
@@ -467,6 +510,7 @@ pub mod subnet_group {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN (Amazon Resource Name) of the subnet group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -522,6 +566,7 @@ pub mod subnet {
             self.identifier = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the subnet.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
             self
@@ -531,6 +576,7 @@ pub mod subnet {
             self.availability_zone = Some(input);
             self
         }
+        /// <p>The Availability Zone where the subnet resides</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<crate::model::AvailabilityZone>,
@@ -582,6 +628,7 @@ pub mod availability_zone {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Availability Zone.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -639,6 +686,7 @@ pub mod parameter_group {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the parameter group</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -648,6 +696,7 @@ pub mod parameter_group {
             self.family = Some(input.into());
             self
         }
+        /// <p>The name of the parameter group family that this  parameter group is compatible with.</p>
         pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.family = input;
             self
@@ -657,6 +706,7 @@ pub mod parameter_group {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the parameter group</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -666,6 +716,7 @@ pub mod parameter_group {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the parameter group</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -720,6 +771,7 @@ pub mod parameter_name_value {
             self.parameter_name = Some(input.into());
             self
         }
+        /// <p>The name of the parameter</p>
         pub fn set_parameter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -732,6 +784,7 @@ pub mod parameter_name_value {
             self.parameter_value = Some(input.into());
             self
         }
+        /// <p>The value of the parameter</p>
         pub fn set_parameter_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -804,7 +857,9 @@ pub struct Cluster {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. </p>
     pub maintenance_window: std::option::Option<std::string::String>,
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.
+    ///
     /// Example: 05:00-09:00
+    ///
     /// If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
     pub snapshot_window: std::option::Option<std::string::String>,
     /// <p>The name of the Access Control List associated with this cluster.</p>
@@ -885,6 +940,7 @@ pub mod cluster {
             self.name = Some(input.into());
             self
         }
+        /// <p>The user-supplied name of the cluster. This identifier is a unique key that identifies a cluster.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -894,6 +950,7 @@ pub mod cluster {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the cluster</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -903,6 +960,7 @@ pub mod cluster {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the cluster. For example, Available, Updating, Creating.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -912,6 +970,7 @@ pub mod cluster {
             self.pending_updates = Some(input);
             self
         }
+        /// <p>A group of settings that are currently being applied.</p>
         pub fn set_pending_updates(
             mut self,
             input: std::option::Option<crate::model::ClusterPendingUpdates>,
@@ -924,16 +983,23 @@ pub mod cluster {
             self.number_of_shards = Some(input);
             self
         }
+        /// <p>The number of shards in the cluster</p>
         pub fn set_number_of_shards(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_shards = input;
             self
         }
+        /// Appends an item to `shards`.
+        ///
+        /// To override the contents of this collection use [`set_shards`](Self::set_shards).
+        ///
+        /// <p>A list of shards that are members of the cluster.</p>
         pub fn shards(mut self, input: impl Into<crate::model::Shard>) -> Self {
             let mut v = self.shards.unwrap_or_default();
             v.push(input.into());
             self.shards = Some(v);
             self
         }
+        /// <p>A list of shards that are members of the cluster.</p>
         pub fn set_shards(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Shard>>,
@@ -946,6 +1012,7 @@ pub mod cluster {
             self.availability_mode = Some(input);
             self
         }
+        /// <p>Indicates if the cluster has a Multi-AZ configuration (multiaz) or not (singleaz).</p>
         pub fn set_availability_mode(
             mut self,
             input: std::option::Option<crate::model::AzStatus>,
@@ -958,6 +1025,7 @@ pub mod cluster {
             self.cluster_endpoint = Some(input);
             self
         }
+        /// <p>The cluster's configuration endpoint</p>
         pub fn set_cluster_endpoint(
             mut self,
             input: std::option::Option<crate::model::Endpoint>,
@@ -970,6 +1038,7 @@ pub mod cluster {
             self.node_type = Some(input.into());
             self
         }
+        /// <p>The cluster's node type</p>
         pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.node_type = input;
             self
@@ -979,6 +1048,7 @@ pub mod cluster {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The Redis engine version used by the cluster</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -991,6 +1061,7 @@ pub mod cluster {
             self.engine_patch_version = Some(input.into());
             self
         }
+        /// <p>The Redis engine patch version used by the cluster</p>
         pub fn set_engine_patch_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1003,6 +1074,7 @@ pub mod cluster {
             self.parameter_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the parameter group used by the cluster</p>
         pub fn set_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1015,6 +1087,7 @@ pub mod cluster {
             self.parameter_group_status = Some(input.into());
             self
         }
+        /// <p>The status of the parameter group used by the cluster, for example 'active' or 'applying'.</p>
         pub fn set_parameter_group_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1022,6 +1095,11 @@ pub mod cluster {
             self.parameter_group_status = input;
             self
         }
+        /// Appends an item to `security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+        ///
+        /// <p>A list of security groups used by the cluster</p>
         pub fn security_groups(
             mut self,
             input: impl Into<crate::model::SecurityGroupMembership>,
@@ -1031,6 +1109,7 @@ pub mod cluster {
             self.security_groups = Some(v);
             self
         }
+        /// <p>A list of security groups used by the cluster</p>
         pub fn set_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SecurityGroupMembership>>,
@@ -1043,6 +1122,7 @@ pub mod cluster {
             self.subnet_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the subnet group used by the cluster</p>
         pub fn set_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1055,6 +1135,7 @@ pub mod cluster {
             self.tls_enabled = Some(input);
             self
         }
+        /// <p>A flag to indicate if In-transit encryption is enabled</p>
         pub fn set_tls_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.tls_enabled = input;
             self
@@ -1064,6 +1145,7 @@ pub mod cluster {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The ID of the KMS key used to encrypt the cluster</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -1073,6 +1155,7 @@ pub mod cluster {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1082,6 +1165,7 @@ pub mod cluster {
             self.sns_topic_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the SNS notification topic</p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1094,6 +1178,7 @@ pub mod cluster {
             self.sns_topic_status = Some(input.into());
             self
         }
+        /// <p>The SNS topic must be in Active status to receive notifications</p>
         pub fn set_sns_topic_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1106,6 +1191,7 @@ pub mod cluster {
             self.snapshot_retention_limit = Some(input);
             self
         }
+        /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
         pub fn set_snapshot_retention_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.snapshot_retention_limit = input;
             self
@@ -1115,6 +1201,7 @@ pub mod cluster {
             self.maintenance_window = Some(input.into());
             self
         }
+        /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. </p>
         pub fn set_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1123,12 +1210,19 @@ pub mod cluster {
             self
         }
         /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.
+        ///
         /// Example: 05:00-09:00
+        ///
         /// If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
         pub fn snapshot_window(mut self, input: impl Into<std::string::String>) -> Self {
             self.snapshot_window = Some(input.into());
             self
         }
+        /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.
+        ///
+        /// Example: 05:00-09:00
+        ///
+        /// If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
         pub fn set_snapshot_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1141,6 +1235,7 @@ pub mod cluster {
             self.acl_name = Some(input.into());
             self
         }
+        /// <p>The name of the Access Control List associated with this cluster.</p>
         pub fn set_acl_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.acl_name = input;
             self
@@ -1150,6 +1245,7 @@ pub mod cluster {
             self.auto_minor_version_upgrade = Some(input);
             self
         }
+        /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_minor_version_upgrade = input;
             self
@@ -1225,6 +1321,7 @@ pub mod security_group_membership {
             self.security_group_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the security group.</p>
         pub fn set_security_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1237,6 +1334,7 @@ pub mod security_group_membership {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the security group membership. The status changes whenever a security group is modified, or when the security groups assigned to a cluster are modified.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -1289,6 +1387,7 @@ pub mod endpoint {
             self.address = Some(input.into());
             self
         }
+        /// <p>The DNS hostname of the node.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address = input;
             self
@@ -1298,6 +1397,7 @@ pub mod endpoint {
             self.port = Some(input);
             self
         }
+        /// <p>The port number that the engine is listening on.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -1318,6 +1418,7 @@ impl Endpoint {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1329,7 +1430,9 @@ impl Endpoint {
     std::hash::Hash,
 )]
 pub enum AzStatus {
+    #[allow(missing_docs)] // documentation missing in model
     MultiAz,
+    #[allow(missing_docs)] // documentation missing in model
     SingleAz,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1351,6 +1454,7 @@ impl std::str::FromStr for AzStatus {
     }
 }
 impl AzStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AzStatus::MultiAz => "multiaz",
@@ -1358,6 +1462,7 @@ impl AzStatus {
             AzStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["multiaz", "singleaz"]
     }
@@ -1412,6 +1517,7 @@ pub mod shard {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the shard</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1421,6 +1527,7 @@ pub mod shard {
             self.status = Some(input.into());
             self
         }
+        /// <p>The current state of this replication group - creating, available, modifying, deleting.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -1430,16 +1537,23 @@ pub mod shard {
             self.slots = Some(input.into());
             self
         }
+        /// <p>The keyspace for this shard.</p>
         pub fn set_slots(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slots = input;
             self
         }
+        /// Appends an item to `nodes`.
+        ///
+        /// To override the contents of this collection use [`set_nodes`](Self::set_nodes).
+        ///
+        /// <p>A list containing information about individual nodes within the shard</p>
         pub fn nodes(mut self, input: impl Into<crate::model::Node>) -> Self {
             let mut v = self.nodes.unwrap_or_default();
             v.push(input.into());
             self.nodes = Some(v);
             self
         }
+        /// <p>A list containing information about individual nodes within the shard</p>
         pub fn set_nodes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Node>>,
@@ -1452,6 +1566,7 @@ pub mod shard {
             self.number_of_nodes = Some(input);
             self
         }
+        /// <p>The number of nodes in the shard</p>
         pub fn set_number_of_nodes(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_nodes = input;
             self
@@ -1486,7 +1601,7 @@ pub struct Node {
     /// <p>The Availability Zone in which the node resides</p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The date and time when the node was created.</p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The hostname for connecting to this node.</p>
     pub endpoint: std::option::Option<crate::model::Endpoint>,
 }
@@ -1510,7 +1625,7 @@ pub mod node {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) availability_zone: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) endpoint: std::option::Option<crate::model::Endpoint>,
     }
     impl Builder {
@@ -1519,6 +1634,7 @@ pub mod node {
             self.name = Some(input.into());
             self
         }
+        /// <p>The  node identifier. A node name is a numeric identifier (0001, 0002, etc.). The combination of cluster name, shard name and node name uniquely identifies every node used in a customer's Amazon account.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1528,6 +1644,7 @@ pub mod node {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the service update on the node</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -1537,6 +1654,7 @@ pub mod node {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>The Availability Zone in which the node resides</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1545,13 +1663,14 @@ pub mod node {
             self
         }
         /// <p>The date and time when the node was created.</p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p>The date and time when the node was created.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
@@ -1561,6 +1680,7 @@ pub mod node {
             self.endpoint = Some(input);
             self
         }
+        /// <p>The hostname for connecting to this node.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<crate::model::Endpoint>) -> Self {
             self.endpoint = input;
             self
@@ -1622,6 +1742,7 @@ pub mod cluster_pending_updates {
             self.resharding = Some(input);
             self
         }
+        /// <p>The status of an online resharding operation.</p>
         pub fn set_resharding(
             mut self,
             input: std::option::Option<crate::model::ReshardingStatus>,
@@ -1634,6 +1755,7 @@ pub mod cluster_pending_updates {
             self.ac_ls = Some(input);
             self
         }
+        /// <p>A list of ACLs associated with the cluster that are being updated</p>
         pub fn set_ac_ls(
             mut self,
             input: std::option::Option<crate::model::AcLsUpdateStatus>,
@@ -1641,6 +1763,11 @@ pub mod cluster_pending_updates {
             self.ac_ls = input;
             self
         }
+        /// Appends an item to `service_updates`.
+        ///
+        /// To override the contents of this collection use [`set_service_updates`](Self::set_service_updates).
+        ///
+        /// <p>A list of service updates being applied to the cluster</p>
         pub fn service_updates(
             mut self,
             input: impl Into<crate::model::PendingModifiedServiceUpdate>,
@@ -1650,6 +1777,7 @@ pub mod cluster_pending_updates {
             self.service_updates = Some(v);
             self
         }
+        /// <p>A list of service updates being applied to the cluster</p>
         pub fn set_service_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PendingModifiedServiceUpdate>>,
@@ -1706,6 +1834,7 @@ pub mod pending_modified_service_update {
             self.service_update_name = Some(input.into());
             self
         }
+        /// <p>The unique ID of the service update</p>
         pub fn set_service_update_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1718,6 +1847,7 @@ pub mod pending_modified_service_update {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the service update</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ServiceUpdateStatus>,
@@ -1741,6 +1871,7 @@ impl PendingModifiedServiceUpdate {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1752,9 +1883,13 @@ impl PendingModifiedServiceUpdate {
     std::hash::Hash,
 )]
 pub enum ServiceUpdateStatus {
+    #[allow(missing_docs)] // documentation missing in model
     NotApplied,
+    #[allow(missing_docs)] // documentation missing in model
     Complete,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Scheduled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1778,6 +1913,7 @@ impl std::str::FromStr for ServiceUpdateStatus {
     }
 }
 impl ServiceUpdateStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceUpdateStatus::NotApplied => "available",
@@ -1787,6 +1923,7 @@ impl ServiceUpdateStatus {
             ServiceUpdateStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["available", "complete", "in-progress", "scheduled"]
     }
@@ -1825,6 +1962,7 @@ pub mod ac_ls_update_status {
             self.acl_to_apply = Some(input.into());
             self
         }
+        /// <p>A list of ACLs pending to be applied.</p>
         pub fn set_acl_to_apply(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.acl_to_apply = input;
             self
@@ -1872,6 +2010,7 @@ pub mod resharding_status {
             self.slot_migration = Some(input);
             self
         }
+        /// <p>The status of the online resharding slot migration</p>
         pub fn set_slot_migration(
             mut self,
             input: std::option::Option<crate::model::SlotMigration>,
@@ -1922,6 +2061,7 @@ pub mod slot_migration {
             self.progress_percentage = Some(input);
             self
         }
+        /// <p>The percentage of the slot migration that is complete.</p>
         pub fn set_progress_percentage(mut self, input: std::option::Option<f64>) -> Self {
             self.progress_percentage = input;
             self
@@ -1969,6 +2109,7 @@ pub mod shard_configuration_request {
             self.shard_count = Some(input);
             self
         }
+        /// <p>The number of shards in the cluster</p>
         pub fn set_shard_count(mut self, input: std::option::Option<i32>) -> Self {
             self.shard_count = input;
             self
@@ -2016,6 +2157,7 @@ pub mod replica_configuration_request {
             self.replica_count = Some(input);
             self
         }
+        /// <p>The number of replicas to scale up or down to</p>
         pub fn set_replica_count(mut self, input: std::option::Option<i32>) -> Self {
             self.replica_count = input;
             self
@@ -2036,6 +2178,7 @@ impl ReplicaConfigurationRequest {
 }
 
 /// <p>An Access Control List. You can authenticate users with Access Contol Lists.
+///
 /// ACLs enable you to control cluster access by grouping users. These Access control lists are designed as a way to organize access to clusters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2088,6 +2231,7 @@ pub mod acl {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Access Control List</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2097,16 +2241,23 @@ pub mod acl {
             self.status = Some(input.into());
             self
         }
+        /// <p>Indicates ACL status. Can be "creating", "active", "modifying", "deleting".</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
         }
+        /// Appends an item to `user_names`.
+        ///
+        /// To override the contents of this collection use [`set_user_names`](Self::set_user_names).
+        ///
+        /// <p>The list of user names that belong to the ACL.</p>
         pub fn user_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_names.unwrap_or_default();
             v.push(input.into());
             self.user_names = Some(v);
             self
         }
+        /// <p>The list of user names that belong to the ACL.</p>
         pub fn set_user_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2119,6 +2270,7 @@ pub mod acl {
             self.minimum_engine_version = Some(input.into());
             self
         }
+        /// <p>The minimum engine version supported for the ACL</p>
         pub fn set_minimum_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2131,6 +2283,7 @@ pub mod acl {
             self.pending_changes = Some(input);
             self
         }
+        /// <p>A list of updates being applied to the ACL.</p>
         pub fn set_pending_changes(
             mut self,
             input: std::option::Option<crate::model::AclPendingChanges>,
@@ -2138,12 +2291,18 @@ pub mod acl {
             self.pending_changes = input;
             self
         }
+        /// Appends an item to `clusters`.
+        ///
+        /// To override the contents of this collection use [`set_clusters`](Self::set_clusters).
+        ///
+        /// <p>A list of clusters associated with the ACL.</p>
         pub fn clusters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.clusters.unwrap_or_default();
             v.push(input.into());
             self.clusters = Some(v);
             self
         }
+        /// <p>A list of clusters associated with the ACL.</p>
         pub fn set_clusters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2156,6 +2315,7 @@ pub mod acl {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the ACL</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2208,12 +2368,18 @@ pub mod acl_pending_changes {
         pub(crate) user_names_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `user_names_to_remove`.
+        ///
+        /// To override the contents of this collection use [`set_user_names_to_remove`](Self::set_user_names_to_remove).
+        ///
+        /// <p>A list of user names being removed from the ACL</p>
         pub fn user_names_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_names_to_remove.unwrap_or_default();
             v.push(input.into());
             self.user_names_to_remove = Some(v);
             self
         }
+        /// <p>A list of user names being removed from the ACL</p>
         pub fn set_user_names_to_remove(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2221,12 +2387,18 @@ pub mod acl_pending_changes {
             self.user_names_to_remove = input;
             self
         }
+        /// Appends an item to `user_names_to_add`.
+        ///
+        /// To override the contents of this collection use [`set_user_names_to_add`](Self::set_user_names_to_add).
+        ///
+        /// <p>A list of users being added to the ACL</p>
         pub fn user_names_to_add(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_names_to_add.unwrap_or_default();
             v.push(input.into());
             self.user_names_to_add = Some(v);
             self
         }
+        /// <p>A list of users being added to the ACL</p>
         pub fn set_user_names_to_add(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2285,6 +2457,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key for the tag. May not be null.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -2294,6 +2467,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The tag's value. May be null.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -2346,16 +2520,23 @@ pub mod filter {
             self.name = Some(input.into());
             self
         }
+        /// <p>The property being filtered. For example, UserName.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The property values to filter on. For example, "user-123".</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The property values to filter on. For example, "user-123".</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2427,6 +2608,7 @@ pub mod snapshot {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the snapshot</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2436,6 +2618,7 @@ pub mod snapshot {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the snapshot. Valid values: creating | available | restoring | copying | deleting.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -2445,6 +2628,7 @@ pub mod snapshot {
             self.source = Some(input.into());
             self
         }
+        /// <p>Indicates whether the snapshot is from an automatic backup (automated) or was created manually (manual).</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -2454,6 +2638,7 @@ pub mod snapshot {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -2463,6 +2648,7 @@ pub mod snapshot {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN (Amazon Resource Name) of the snapshot.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2472,6 +2658,7 @@ pub mod snapshot {
             self.cluster_configuration = Some(input);
             self
         }
+        /// <p>The configuration of the cluster from which the snapshot was taken</p>
         pub fn set_cluster_configuration(
             mut self,
             input: std::option::Option<crate::model::ClusterConfiguration>,
@@ -2579,6 +2766,7 @@ pub mod cluster_configuration {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the cluster</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2588,6 +2776,7 @@ pub mod cluster_configuration {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the cluster configuration</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2597,6 +2786,7 @@ pub mod cluster_configuration {
             self.node_type = Some(input.into());
             self
         }
+        /// <p>The node type used for the cluster</p>
         pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.node_type = input;
             self
@@ -2606,6 +2796,7 @@ pub mod cluster_configuration {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The Redis engine version used by the cluster</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2618,6 +2809,7 @@ pub mod cluster_configuration {
             self.maintenance_window = Some(input.into());
             self
         }
+        /// <p>The specified maintenance window for the cluster</p>
         pub fn set_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2630,6 +2822,7 @@ pub mod cluster_configuration {
             self.topic_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the SNS notification topic for the cluster</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -2639,6 +2832,7 @@ pub mod cluster_configuration {
             self.port = Some(input);
             self
         }
+        /// <p>The port used by the cluster</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -2648,6 +2842,7 @@ pub mod cluster_configuration {
             self.parameter_group_name = Some(input.into());
             self
         }
+        /// <p>The name of parameter group used by the cluster</p>
         pub fn set_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2660,6 +2855,7 @@ pub mod cluster_configuration {
             self.subnet_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the subnet group used by the cluster</p>
         pub fn set_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2672,6 +2868,7 @@ pub mod cluster_configuration {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>The ID of the VPC the cluster belongs to</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -2681,6 +2878,7 @@ pub mod cluster_configuration {
             self.snapshot_retention_limit = Some(input);
             self
         }
+        /// <p>The snapshot retention limit set by the cluster</p>
         pub fn set_snapshot_retention_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.snapshot_retention_limit = input;
             self
@@ -2690,6 +2888,7 @@ pub mod cluster_configuration {
             self.snapshot_window = Some(input.into());
             self
         }
+        /// <p>The snapshot window set by the cluster</p>
         pub fn set_snapshot_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2702,16 +2901,23 @@ pub mod cluster_configuration {
             self.num_shards = Some(input);
             self
         }
+        /// <p>The number of shards in the cluster</p>
         pub fn set_num_shards(mut self, input: std::option::Option<i32>) -> Self {
             self.num_shards = input;
             self
         }
+        /// Appends an item to `shards`.
+        ///
+        /// To override the contents of this collection use [`set_shards`](Self::set_shards).
+        ///
+        /// <p>The list of shards in the cluster</p>
         pub fn shards(mut self, input: impl Into<crate::model::ShardDetail>) -> Self {
             let mut v = self.shards.unwrap_or_default();
             v.push(input.into());
             self.shards = Some(v);
             self
         }
+        /// <p>The list of shards in the cluster</p>
         pub fn set_shards(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ShardDetail>>,
@@ -2758,7 +2964,7 @@ pub struct ShardDetail {
     /// <p>The size of the shard's snapshot</p>
     pub size: std::option::Option<std::string::String>,
     /// <p>The date and time that the shard's snapshot was created</p>
-    pub snapshot_creation_time: std::option::Option<smithy_types::Instant>,
+    pub snapshot_creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ShardDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2779,7 +2985,7 @@ pub mod shard_detail {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) configuration: std::option::Option<crate::model::ShardConfiguration>,
         pub(crate) size: std::option::Option<std::string::String>,
-        pub(crate) snapshot_creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) snapshot_creation_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the shard</p>
@@ -2787,6 +2993,7 @@ pub mod shard_detail {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the shard</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2796,6 +3003,7 @@ pub mod shard_detail {
             self.configuration = Some(input);
             self
         }
+        /// <p>The configuration details of the shard</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ShardConfiguration>,
@@ -2808,18 +3016,20 @@ pub mod shard_detail {
             self.size = Some(input.into());
             self
         }
+        /// <p>The size of the shard's snapshot</p>
         pub fn set_size(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.size = input;
             self
         }
         /// <p>The date and time that the shard's snapshot was created</p>
-        pub fn snapshot_creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn snapshot_creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.snapshot_creation_time = Some(input);
             self
         }
+        /// <p>The date and time that the shard's snapshot was created</p>
         pub fn set_snapshot_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.snapshot_creation_time = input;
             self
@@ -2874,6 +3084,7 @@ pub mod shard_configuration {
             self.slots = Some(input.into());
             self
         }
+        /// <p>A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format startkey-endkey.</p>
         pub fn set_slots(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slots = input;
             self
@@ -2883,6 +3094,7 @@ pub mod shard_configuration {
             self.replica_count = Some(input);
             self
         }
+        /// <p>The number of read replica nodes in this shard.</p>
         pub fn set_replica_count(mut self, input: std::option::Option<i32>) -> Self {
             self.replica_count = input;
             self
@@ -2912,7 +3124,7 @@ pub struct ServiceUpdate {
     /// <p>The unique ID of the service update</p>
     pub service_update_name: std::option::Option<std::string::String>,
     /// <p>The date when the service update is initially available</p>
-    pub release_date: std::option::Option<smithy_types::Instant>,
+    pub release_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Provides details of the service update</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The status of the service update</p>
@@ -2922,7 +3134,7 @@ pub struct ServiceUpdate {
     /// <p>A list of nodes updated by the service update</p>
     pub nodes_updated: std::option::Option<std::string::String>,
     /// <p>The date at which the service update will be automatically applied</p>
-    pub auto_update_start_date: std::option::Option<smithy_types::Instant>,
+    pub auto_update_start_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ServiceUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2946,12 +3158,12 @@ pub mod service_update {
     pub struct Builder {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
         pub(crate) service_update_name: std::option::Option<std::string::String>,
-        pub(crate) release_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) release_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ServiceUpdateStatus>,
         pub(crate) r#type: std::option::Option<crate::model::ServiceUpdateType>,
         pub(crate) nodes_updated: std::option::Option<std::string::String>,
-        pub(crate) auto_update_start_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) auto_update_start_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the cluster to which the service update applies</p>
@@ -2959,6 +3171,7 @@ pub mod service_update {
             self.cluster_name = Some(input.into());
             self
         }
+        /// <p>The name of the cluster to which the service update applies</p>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_name = input;
             self
@@ -2968,6 +3181,7 @@ pub mod service_update {
             self.service_update_name = Some(input.into());
             self
         }
+        /// <p>The unique ID of the service update</p>
         pub fn set_service_update_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2976,13 +3190,14 @@ pub mod service_update {
             self
         }
         /// <p>The date when the service update is initially available</p>
-        pub fn release_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn release_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.release_date = Some(input);
             self
         }
+        /// <p>The date when the service update is initially available</p>
         pub fn set_release_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.release_date = input;
             self
@@ -2992,6 +3207,7 @@ pub mod service_update {
             self.description = Some(input.into());
             self
         }
+        /// <p>Provides details of the service update</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3001,6 +3217,7 @@ pub mod service_update {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the service update</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ServiceUpdateStatus>,
@@ -3013,6 +3230,7 @@ pub mod service_update {
             self.r#type = Some(input);
             self
         }
+        /// <p>Reflects the nature of the service update</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ServiceUpdateType>,
@@ -3025,6 +3243,7 @@ pub mod service_update {
             self.nodes_updated = Some(input.into());
             self
         }
+        /// <p>A list of nodes updated by the service update</p>
         pub fn set_nodes_updated(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3033,13 +3252,14 @@ pub mod service_update {
             self
         }
         /// <p>The date at which the service update will be automatically applied</p>
-        pub fn auto_update_start_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn auto_update_start_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.auto_update_start_date = Some(input);
             self
         }
+        /// <p>The date at which the service update will be automatically applied</p>
         pub fn set_auto_update_start_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.auto_update_start_date = input;
             self
@@ -3066,6 +3286,7 @@ impl ServiceUpdate {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3077,6 +3298,7 @@ impl ServiceUpdate {
     std::hash::Hash,
 )]
 pub enum ServiceUpdateType {
+    #[allow(missing_docs)] // documentation missing in model
     SecurityUpdate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3097,12 +3319,14 @@ impl std::str::FromStr for ServiceUpdateType {
     }
 }
 impl ServiceUpdateType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceUpdateType::SecurityUpdate => "security-update",
             ServiceUpdateType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["security-update"]
     }
@@ -3161,6 +3385,7 @@ pub mod parameter {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the parameter</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3170,6 +3395,7 @@ pub mod parameter {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the parameter</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -3179,6 +3405,7 @@ pub mod parameter {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the parameter</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3188,6 +3415,7 @@ pub mod parameter {
             self.data_type = Some(input.into());
             self
         }
+        /// <p>The parameter's data type</p>
         pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_type = input;
             self
@@ -3197,6 +3425,7 @@ pub mod parameter {
             self.allowed_values = Some(input.into());
             self
         }
+        /// <p>The valid range of values for the parameter.</p>
         pub fn set_allowed_values(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3209,6 +3438,7 @@ pub mod parameter {
             self.minimum_engine_version = Some(input.into());
             self
         }
+        /// <p>The earliest engine version to which the parameter can apply.</p>
         pub fn set_minimum_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3248,7 +3478,7 @@ pub struct Event {
     /// <p>The text of the event.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The date and time when the event occurred.</p>
-    pub date: std::option::Option<smithy_types::Instant>,
+    pub date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Event {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3269,7 +3499,7 @@ pub mod event {
         pub(crate) source_name: std::option::Option<std::string::String>,
         pub(crate) source_type: std::option::Option<crate::model::SourceType>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) date: std::option::Option<smithy_types::Instant>,
+        pub(crate) date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name for the source of the event. For example, if the event occurred at the cluster level, the identifier would be the name of the cluster.</p>
@@ -3277,6 +3507,7 @@ pub mod event {
             self.source_name = Some(input.into());
             self
         }
+        /// <p>The name for the source of the event. For example, if the event occurred at the cluster level, the identifier would be the name of the cluster.</p>
         pub fn set_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_name = input;
             self
@@ -3286,6 +3517,7 @@ pub mod event {
             self.source_type = Some(input);
             self
         }
+        /// <p>Specifies the origin of this event - a cluster, a parameter group, a security group, etc.</p>
         pub fn set_source_type(
             mut self,
             input: std::option::Option<crate::model::SourceType>,
@@ -3298,16 +3530,18 @@ pub mod event {
             self.message = Some(input.into());
             self
         }
+        /// <p>The text of the event.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
         /// <p>The date and time when the event occurred.</p>
-        pub fn date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date = Some(input);
             self
         }
-        pub fn set_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time when the event occurred.</p>
+        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
             self.date = input;
             self
         }
@@ -3329,6 +3563,7 @@ impl Event {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3340,11 +3575,17 @@ impl Event {
     std::hash::Hash,
 )]
 pub enum SourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Acl,
+    #[allow(missing_docs)] // documentation missing in model
     Cluster,
+    #[allow(missing_docs)] // documentation missing in model
     Node,
+    #[allow(missing_docs)] // documentation missing in model
     ParameterGroup,
+    #[allow(missing_docs)] // documentation missing in model
     SubnetGroup,
+    #[allow(missing_docs)] // documentation missing in model
     User,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3370,6 +3611,7 @@ impl std::str::FromStr for SourceType {
     }
 }
 impl SourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SourceType::Acl => "acl",
@@ -3381,6 +3623,7 @@ impl SourceType {
             SourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "acl",
@@ -3434,6 +3677,7 @@ pub mod engine_version_info {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The engine version</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3446,6 +3690,7 @@ pub mod engine_version_info {
             self.engine_patch_version = Some(input.into());
             self
         }
+        /// <p>The patched engine version</p>
         pub fn set_engine_patch_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3458,6 +3703,7 @@ pub mod engine_version_info {
             self.parameter_group_family = Some(input.into());
             self
         }
+        /// <p>Specifies the name of the parameter group family to which the engine default parameters apply.</p>
         pub fn set_parameter_group_family(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3518,6 +3764,7 @@ pub mod unprocessed_cluster {
             self.cluster_name = Some(input.into());
             self
         }
+        /// <p>The name of the cluster</p>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_name = input;
             self
@@ -3527,6 +3774,7 @@ pub mod unprocessed_cluster {
             self.error_type = Some(input.into());
             self
         }
+        /// <p>The error type associated with the update failure</p>
         pub fn set_error_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_type = input;
             self
@@ -3536,6 +3784,7 @@ pub mod unprocessed_cluster {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The error message associated with the update failure</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3594,6 +3843,7 @@ pub mod service_update_request {
             self.service_update_name_to_apply = Some(input.into());
             self
         }
+        /// <p>The unique ID of the service update</p>
         pub fn set_service_update_name_to_apply(
             mut self,
             input: std::option::Option<std::string::String>,

@@ -31,6 +31,7 @@ pub mod validation_exception_field {
             self.name = Some(input.into());
             self
         }
+        /// <p>The field that had the validation exception.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -40,6 +41,7 @@ pub mod validation_exception_field {
             self.message = Some(input.into());
             self
         }
+        /// <p>Information about the validation exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -72,9 +74,13 @@ impl ValidationExceptionField {
     std::hash::Hash,
 )]
 pub enum ValidationExceptionReason {
+    #[allow(missing_docs)] // documentation missing in model
     CannotParse,
+    #[allow(missing_docs)] // documentation missing in model
     FieldValidationFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Other,
+    #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -98,6 +104,7 @@ impl std::str::FromStr for ValidationExceptionReason {
     }
 }
 impl ValidationExceptionReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ValidationExceptionReason::CannotParse => "cannotParse",
@@ -107,6 +114,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "cannotParse",
@@ -154,6 +162,7 @@ pub mod update_routing_control_state_entry {
             self.routing_control_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Number (ARN) for the routing control state entry.</p>
         pub fn set_routing_control_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -166,6 +175,7 @@ pub mod update_routing_control_state_entry {
             self.routing_control_state = Some(input);
             self
         }
+        /// <p>The routing control state in a set of routing control state entries.</p>
         pub fn set_routing_control_state(
             mut self,
             input: std::option::Option<crate::model::RoutingControlState>,
@@ -189,6 +199,7 @@ impl UpdateRoutingControlStateEntry {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -200,7 +211,9 @@ impl UpdateRoutingControlStateEntry {
     std::hash::Hash,
 )]
 pub enum RoutingControlState {
+    #[allow(missing_docs)] // documentation missing in model
     Off,
+    #[allow(missing_docs)] // documentation missing in model
     On,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -222,6 +235,7 @@ impl std::str::FromStr for RoutingControlState {
     }
 }
 impl RoutingControlState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RoutingControlState::Off => "Off",
@@ -229,6 +243,7 @@ impl RoutingControlState {
             RoutingControlState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Off", "On"]
     }

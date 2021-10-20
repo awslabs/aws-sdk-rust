@@ -21,6 +21,7 @@ pub mod create_token_input {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier string for each client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -30,6 +31,7 @@ pub mod create_token_input {
             self.client_secret = Some(input.into());
             self
         }
+        /// <p>A secret string generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>
         pub fn set_client_secret(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -42,6 +44,7 @@ pub mod create_token_input {
             self.grant_type = Some(input.into());
             self
         }
+        /// <p>Supports grant types for authorization code, refresh token, and device code request.</p>
         pub fn set_grant_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_type = input;
             self
@@ -53,6 +56,9 @@ pub mod create_token_input {
             self.device_code = Some(input.into());
             self
         }
+        /// <p>Used only when calling this API for the device code grant type. This short-term code is
+        /// used to identify this authentication attempt. This should come from an in-memory reference to
+        /// the result of the <a>StartDeviceAuthorization</a> API.</p>
         pub fn set_device_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_code = input;
             self
@@ -62,6 +68,7 @@ pub mod create_token_input {
             self.code = Some(input.into());
             self
         }
+        /// <p>The authorization code received from the authorization service. This parameter is required to perform an authorization grant request to get access to a token.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
@@ -71,6 +78,7 @@ pub mod create_token_input {
             self.refresh_token = Some(input.into());
             self
         }
+        /// <p>The token used to obtain an access token in the event that the access token is invalid or expired. This token is not issued by the service.</p>
         pub fn set_refresh_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -78,12 +86,20 @@ pub mod create_token_input {
             self.refresh_token = input;
             self
         }
+        /// Appends an item to `scope`.
+        ///
+        /// To override the contents of this collection use [`set_scope`](Self::set_scope).
+        ///
+        /// <p>The list of scopes that is defined by the client. Upon authorization, this list is used to
+        /// restrict permissions when granting an access token.</p>
         pub fn scope(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.scope.unwrap_or_default();
             v.push(input.into());
             self.scope = Some(v);
             self
         }
+        /// <p>The list of scopes that is defined by the client. Upon authorization, this list is used to
+        /// restrict permissions when granting an access token.</p>
         pub fn set_scope(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -97,6 +113,8 @@ pub mod create_token_input {
             self.redirect_uri = Some(input.into());
             self
         }
+        /// <p>The location of the application that will receive the authorization code. Users authorize
+        /// the service to send the request to this location.</p>
         pub fn set_redirect_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.redirect_uri = input;
             self
@@ -104,8 +122,10 @@ pub mod create_token_input {
         /// Consumes the builder and constructs a [`CreateTokenInput`](crate::input::CreateTokenInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateTokenInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateTokenInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateTokenInput {
                 client_id: self.client_id,
                 client_secret: self.client_secret,
@@ -130,16 +150,16 @@ impl CreateTokenInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateToken,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateTokenInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/token").expect("formatting should succeed");
             Ok(())
         }
@@ -147,7 +167,7 @@ impl CreateTokenInput {
         fn update_http_builder(
             input: &crate::input::CreateTokenInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -156,24 +176,26 @@ impl CreateTokenInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateTokenInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_token(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -197,25 +219,27 @@ impl CreateTokenInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateToken::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateToken",
-                    "ssooidc",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateToken::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateToken",
+            "ssooidc",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -245,6 +269,7 @@ pub mod register_client_input {
             self.client_name = Some(input.into());
             self
         }
+        /// <p>The friendly name of the client.</p>
         pub fn set_client_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_name = input;
             self
@@ -254,16 +279,25 @@ pub mod register_client_input {
             self.client_type = Some(input.into());
             self
         }
+        /// <p>The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service.</p>
         pub fn set_client_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_type = input;
             self
         }
+        /// Appends an item to `scopes`.
+        ///
+        /// To override the contents of this collection use [`set_scopes`](Self::set_scopes).
+        ///
+        /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used
+        /// to restrict permissions when granting an access token.</p>
         pub fn scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.scopes.unwrap_or_default();
             v.push(input.into());
             self.scopes = Some(v);
             self
         }
+        /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used
+        /// to restrict permissions when granting an access token.</p>
         pub fn set_scopes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -276,7 +310,7 @@ pub mod register_client_input {
             self,
         ) -> std::result::Result<
             crate::input::RegisterClientInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RegisterClientInput {
                 client_name: self.client_name,
@@ -297,16 +331,16 @@ impl RegisterClientInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RegisterClient,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RegisterClientInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/client/register").expect("formatting should succeed");
             Ok(())
         }
@@ -314,7 +348,7 @@ impl RegisterClientInput {
         fn update_http_builder(
             input: &crate::input::RegisterClientInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -323,24 +357,26 @@ impl RegisterClientInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RegisterClientInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_register_client(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -364,15 +400,15 @@ impl RegisterClientInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RegisterClient::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RegisterClient",
             "ssooidc",
         ));
@@ -381,10 +417,10 @@ impl RegisterClientInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -416,6 +452,9 @@ pub mod start_device_authorization_input {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier string for the client that is registered with AWS SSO. This value
+        /// should come from the persisted result of the <a>RegisterClient</a> API
+        /// operation.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -426,6 +465,8 @@ pub mod start_device_authorization_input {
             self.client_secret = Some(input.into());
             self
         }
+        /// <p>A secret string that is generated for the client. This value should come from the
+        /// persisted result of the <a>RegisterClient</a> API operation.</p>
         pub fn set_client_secret(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -439,6 +480,8 @@ pub mod start_device_authorization_input {
             self.start_url = Some(input.into());
             self
         }
+        /// <p>The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
+        /// the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
         pub fn set_start_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_url = input;
             self
@@ -448,7 +491,7 @@ pub mod start_device_authorization_input {
             self,
         ) -> std::result::Result<
             crate::input::StartDeviceAuthorizationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartDeviceAuthorizationInput {
                 client_id: self.client_id,
@@ -470,16 +513,16 @@ impl StartDeviceAuthorizationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartDeviceAuthorization,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartDeviceAuthorizationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/device_authorization").expect("formatting should succeed");
             Ok(())
         }
@@ -487,7 +530,7 @@ impl StartDeviceAuthorizationInput {
         fn update_http_builder(
             input: &crate::input::StartDeviceAuthorizationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -496,27 +539,29 @@ impl StartDeviceAuthorizationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartDeviceAuthorizationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_device_authorization(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -540,15 +585,15 @@ impl StartDeviceAuthorizationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartDeviceAuthorization::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartDeviceAuthorization",
             "ssooidc",
         ));
@@ -557,10 +602,10 @@ impl StartDeviceAuthorizationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -574,6 +619,7 @@ impl StartDeviceAuthorizationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDeviceAuthorizationInput {
@@ -598,6 +644,7 @@ impl std::fmt::Debug for StartDeviceAuthorizationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterClientInput {
@@ -619,6 +666,7 @@ impl std::fmt::Debug for RegisterClientInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTokenInput {

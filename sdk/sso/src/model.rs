@@ -35,6 +35,7 @@ pub mod account_info {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the AWS account that is assigned to the user.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -44,6 +45,7 @@ pub mod account_info {
             self.account_name = Some(input.into());
             self
         }
+        /// <p>The display name of the AWS account that is assigned to the user.</p>
         pub fn set_account_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_name = input;
             self
@@ -53,6 +55,7 @@ pub mod account_info {
             self.email_address = Some(input.into());
             self
         }
+        /// <p>The email address of the AWS account that is assigned to the user.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -109,6 +112,7 @@ pub mod role_info {
             self.role_name = Some(input.into());
             self
         }
+        /// <p>The friendly name of the role that is assigned to the user.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_name = input;
             self
@@ -118,6 +122,7 @@ pub mod role_info {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the AWS account assigned to the user.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -184,6 +189,9 @@ pub mod role_credentials {
             self.access_key_id = Some(input.into());
             self
         }
+        /// <p>The identifier used for the temporary security credentials. For more information, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the
+        /// <i>AWS IAM User Guide</i>.</p>
         pub fn set_access_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -197,6 +205,8 @@ pub mod role_credentials {
             self.secret_access_key = Some(input.into());
             self
         }
+        /// <p>The key that is used to sign the request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the
+        /// <i>AWS IAM User Guide</i>.</p>
         pub fn set_secret_access_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -210,6 +220,8 @@ pub mod role_credentials {
             self.session_token = Some(input.into());
             self
         }
+        /// <p>The token used for temporary credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the
+        /// <i>AWS IAM User Guide</i>.</p>
         pub fn set_session_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -222,6 +234,7 @@ pub mod role_credentials {
             self.expiration = Some(input);
             self
         }
+        /// <p>The date on which temporary security credentials expire.</p>
         pub fn set_expiration(mut self, input: std::option::Option<i64>) -> Self {
             self.expiration = input;
             self

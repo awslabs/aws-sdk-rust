@@ -1,3 +1,46 @@
+vNext (Month Day, Year)
+=======================
+
+v0.0.22-alpha (October 20th, 2021)
+==================================
+
+**Breaking Changes**
+
+- `CredentialsError` variants became non-exhaustive. This makes them impossible to construct directly outside of the `aws_types` crate. In order to construct credentials errors, new methods have been added for each variant. Instead of `CredentialsError::Unhandled(...)`, you should instead use `CredentialsError::unhandled`. Matching methods exist for all variants. (#781)
+- The default credentials chain now returns `CredentialsError::CredentialsNotLoaded` instead of `ProviderError` when no credentials providers are configured.
+- :warning: All Smithy runtime crates have been renamed to have an `aws-` prefix. This may require code changes:
+  - _Cargo.toml_ changes:
+    - `smithy-async` -> `aws-smithy-async`
+    - `smithy-client` -> `aws-smithy-client`
+    - `smithy-eventstream` -> `aws-smithy-eventstream`
+    - `smithy-http` -> `aws-smithy-http`
+    - `smithy-http-tower` -> `aws-smithy-http-tower`
+    - `smithy-json` -> `aws-smithy-json`
+    - `smithy-protocol-test` -> `aws-smithy-protocol-test`
+    - `smithy-query` -> `aws-smithy-query`
+    - `smithy-types` -> `aws-smithy-types`
+    - `smithy-xml` -> `aws-smithy-xml`
+  - Rust `use` statement changes:
+    - `smithy_async` -> `aws_smithy_async`
+    - `smithy_client` -> `aws_smithy_client`
+    - `smithy_eventstream` -> `aws_smithy_eventstream`
+    - `smithy_http` -> `aws_smithy_http`
+    - `smithy_http_tower` -> `aws_smithy_http_tower`
+    - `smithy_json` -> `aws_smithy_json`
+    - `smithy_protocol_test` -> `aws_smithy_protocol_test`
+    - `smithy_query` -> `aws_smithy_query`
+    - `smithy_types` -> `aws_smithy_types`
+    - `smithy_xml` -> `aws_smithy_xml`
+
+**New this week**
+
+- Moved the contents of `aws-auth` into the `aws-http` runtime crate (smithy-rs#783)
+- Fix instances where docs were missing in generated services and add `#[warn_missing_docs]` (smithy-rs#779)
+- Add tracing output for resolved AWS endpoint (smithy-rs#784)
+- Update AWS service models (smithy-rs#790)
+- Add support for the following Glacier customizations:
+  - Set the ApiVersion header (smithy-rs#138, #787)
+
 v0.0.21-alpha (October 15th, 2021)
 ==================================
 
@@ -8,18 +51,9 @@ v0.0.21-alpha (October 15th, 2021)
 - All service crates now have generated README files (smithy-rs#766)
 - Update AWS service models (smithy-rs#772)
 - :tada: Add support for Amazon Managed Grafana (smithy-rs#772)
-- :tada: Make retry behavior configurable
-    - With env vars `AWS_MAX_ATTEMPTS` and `AWS_RETRY_MODE`
-    - With `~/.aws/config` settings `max_attempts` and `retry_mode`
-    - By calling the `with_retry_config` method on a `Config` and passing in a `RetryConfig`
-    - Only the `Standard` retry mode is currently implemented. `Adaptive` retry mode will be implemented at a later
-      date.
-    - For more info, see the AWS Reference pages on configuring these settings:
-        - [Setting global max attempts](https://docs.aws.amazon.com/sdkref/latest/guide/setting-global-max_attempts.html)
-        - [Setting global retry mode](https://docs.aws.amazon.com/sdkref/latest/guide/setting-global-retry_mode.html)
 
-v0.0.20-alpha (October, 7, 2021)
-================================
+v0.0.20-alpha (October 7, 2021)
+===============================
 
 **Breaking changes**
 
@@ -29,6 +63,15 @@ v0.0.20-alpha (October, 7, 2021)
 
 **New This Week**
 
+- :tada: Make retry behavior configurable
+    - With env vars `AWS_MAX_ATTEMPTS` and `AWS_RETRY_MODE`
+    - With `~/.aws/config` settings `max_attempts` and `retry_mode`
+    - By calling the `with_retry_config` method on a `Config` and passing in a `RetryConfig`
+    - Only the `Standard` retry mode is currently implemented. `Adaptive` retry mode will be implemented at a later
+      date.
+    - For more info, see the AWS Reference pages on configuring these settings:
+        - [Setting global max attempts](https://docs.aws.amazon.com/sdkref/latest/guide/setting-global-max_attempts.html)
+        - [Setting global retry mode](https://docs.aws.amazon.com/sdkref/latest/guide/setting-global-retry_mode.html)
 - :tada: Add presigned request support and examples for S3 GetObject and PutObject (smithy-rs#731, aws-sdk-rust#139)
 - :tada: Add presigned request support and example for Polly SynthesizeSpeech (smithy-rs#735, aws-sdk-rust#139)
 - Add connect & HTTP read timeouts to IMDS, defaulting to 1 second
@@ -41,12 +84,12 @@ v0.0.20-alpha (October, 7, 2021)
 - Updated Auto Scaling code example to move operation from main to separate function; added readme.
 - Updated AWS Config code examples to include a readme; added command-line options; added DeleteConfigurationRecorder, DeleteDeliveryChannel, ListConfigurationRecorders, ListDeliveryChannels, ListResources, ShowResourceHistory, and EnableConfig code examples.
 - :tada: Add support for 6 new AWS services:
-  - Wisdom
-  - VoiceId
-  - Account
-  - KafkaConnect
-  - OpenSearch
-  - CloudControl
+    - Wisdom
+    - VoiceId
+    - Account
+    - KafkaConnect
+    - OpenSearch
+    - CloudControl
 
 v0.0.19-alpha (September 24th, 2021)
 ====================================

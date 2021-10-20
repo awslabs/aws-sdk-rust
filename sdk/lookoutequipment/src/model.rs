@@ -38,6 +38,8 @@ pub mod inference_output_configuration {
             self.s3_output_configuration = Some(input);
             self
         }
+        /// <p> Specifies configuration information for the output results from for the inference,
+        /// output S3 location. </p>
         pub fn set_s3_output_configuration(
             mut self,
             input: std::option::Option<crate::model::InferenceS3OutputConfiguration>,
@@ -50,6 +52,7 @@ pub mod inference_output_configuration {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The ID number for the AWS KMS key used to encrypt the inference output. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -103,6 +106,7 @@ pub mod inference_s3_output_configuration {
             self.bucket = Some(input.into());
             self
         }
+        /// <p> The bucket containing the output results from the inference </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -112,6 +116,7 @@ pub mod inference_s3_output_configuration {
             self.prefix = Some(input.into());
             self
         }
+        /// <p> The prefix for the S3 bucket used for the output results from the inference. </p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -181,6 +186,8 @@ pub mod inference_input_configuration {
             self.s3_input_configuration = Some(input);
             self
         }
+        /// <p> Specifies configuration information for the input data for the inference, including S3
+        /// location of input data.. </p>
         pub fn set_s3_input_configuration(
             mut self,
             input: std::option::Option<crate::model::InferenceS3InputConfiguration>,
@@ -193,6 +200,7 @@ pub mod inference_input_configuration {
             self.input_time_zone_offset = Some(input.into());
             self
         }
+        /// <p>Indicates the difference between your time zone and Greenwich Mean Time (GMT). </p>
         pub fn set_input_time_zone_offset(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -209,6 +217,8 @@ pub mod inference_input_configuration {
             self.inference_input_name_configuration = Some(input);
             self
         }
+        /// <p>Specifies configuration information for the input data for the inference, including
+        /// timestamp format and delimiter. </p>
         pub fn set_inference_input_name_configuration(
             mut self,
             input: std::option::Option<crate::model::InferenceInputNameConfiguration>,
@@ -271,6 +281,8 @@ pub mod inference_input_name_configuration {
             self.timestamp_format = Some(input.into());
             self
         }
+        /// <p>The format of the timestamp, whether Epoch time, or standard, with or without hyphens
+        /// (-). </p>
         pub fn set_timestamp_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -286,6 +298,7 @@ pub mod inference_input_name_configuration {
             self.component_timestamp_delimiter = Some(input.into());
             self
         }
+        /// <p>Indicates the delimiter character used between items in the data. </p>
         pub fn set_component_timestamp_delimiter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -342,6 +355,7 @@ pub mod inference_s3_input_configuration {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The bucket containing the input dataset for the inference. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -351,6 +365,7 @@ pub mod inference_s3_input_configuration {
             self.prefix = Some(input.into());
             self
         }
+        /// <p>The prefix for the S3 bucket used for the input data for the inference. </p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -371,6 +386,7 @@ impl InferenceS3InputConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -382,10 +398,15 @@ impl InferenceS3InputConfiguration {
     std::hash::Hash,
 )]
 pub enum DataUploadFrequency {
+    #[allow(missing_docs)] // documentation missing in model
     Pt10M,
+    #[allow(missing_docs)] // documentation missing in model
     Pt15M,
+    #[allow(missing_docs)] // documentation missing in model
     Pt1H,
+    #[allow(missing_docs)] // documentation missing in model
     Pt30M,
+    #[allow(missing_docs)] // documentation missing in model
     Pt5M,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -410,6 +431,7 @@ impl std::str::FromStr for DataUploadFrequency {
     }
 }
 impl DataUploadFrequency {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataUploadFrequency::Pt10M => "PT10M",
@@ -420,6 +442,7 @@ impl DataUploadFrequency {
             DataUploadFrequency::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PT10M", "PT15M", "PT1H", "PT30M", "PT5M"]
     }
@@ -462,6 +485,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key for the specified tag. </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -471,6 +495,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value for the specified tag. </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -491,6 +516,7 @@ impl Tag {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -502,9 +528,13 @@ impl Tag {
     std::hash::Hash,
 )]
 pub enum InferenceSchedulerStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -528,6 +558,7 @@ impl std::str::FromStr for InferenceSchedulerStatus {
     }
 }
 impl InferenceSchedulerStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InferenceSchedulerStatus::Pending => "PENDING",
@@ -537,6 +568,7 @@ impl InferenceSchedulerStatus {
             InferenceSchedulerStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PENDING", "RUNNING", "STOPPED", "STOPPING"]
     }
@@ -547,6 +579,7 @@ impl AsRef<str> for InferenceSchedulerStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -558,8 +591,11 @@ impl AsRef<str> for InferenceSchedulerStatus {
     std::hash::Hash,
 )]
 pub enum IngestionJobStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -582,6 +618,7 @@ impl std::str::FromStr for IngestionJobStatus {
     }
 }
 impl IngestionJobStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IngestionJobStatus::Failed => "FAILED",
@@ -590,6 +627,7 @@ impl IngestionJobStatus {
             IngestionJobStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCESS"]
     }
@@ -635,6 +673,8 @@ pub mod ingestion_input_configuration {
             self.s3_input_configuration = Some(input);
             self
         }
+        /// <p>The location information for the S3 bucket used for input data for the data ingestion.
+        /// </p>
         pub fn set_s3_input_configuration(
             mut self,
             input: std::option::Option<crate::model::IngestionS3InputConfiguration>,
@@ -691,6 +731,7 @@ pub mod ingestion_s3_input_configuration {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The name of the S3 bucket used for the input data for the data ingestion. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -701,6 +742,8 @@ pub mod ingestion_s3_input_configuration {
             self.prefix = Some(input.into());
             self
         }
+        /// <p>The prefix for the S3 location being used for the input data for the data ingestion.
+        /// </p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -737,7 +780,7 @@ pub struct ModelSummary {
     /// <p>Indicates the status of the ML model. </p>
     pub status: std::option::Option<crate::model::ModelStatus>,
     /// <p>The time at which the specific model was created. </p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ModelSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -762,7 +805,7 @@ pub mod model_summary {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ModelStatus>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the ML model. </p>
@@ -770,6 +813,7 @@ pub mod model_summary {
             self.model_name = Some(input.into());
             self
         }
+        /// <p>The name of the ML model. </p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_name = input;
             self
@@ -779,6 +823,7 @@ pub mod model_summary {
             self.model_arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) of the ML model. </p>
         pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_arn = input;
             self
@@ -788,6 +833,7 @@ pub mod model_summary {
             self.dataset_name = Some(input.into());
             self
         }
+        /// <p>The name of the dataset being used for the ML model. </p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_name = input;
             self
@@ -797,6 +843,7 @@ pub mod model_summary {
             self.dataset_arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) of the dataset used to create the model. </p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_arn = input;
             self
@@ -806,16 +853,21 @@ pub mod model_summary {
             self.status = Some(input);
             self
         }
+        /// <p>Indicates the status of the ML model. </p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::ModelStatus>) -> Self {
             self.status = input;
             self
         }
         /// <p>The time at which the specific model was created. </p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time at which the specific model was created. </p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -839,6 +891,7 @@ impl ModelSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -850,8 +903,11 @@ impl ModelSummary {
     std::hash::Hash,
 )]
 pub enum ModelStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -874,6 +930,7 @@ impl std::str::FromStr for ModelStatus {
     }
 }
 impl ModelStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ModelStatus::Failed => "FAILED",
@@ -882,6 +939,7 @@ impl ModelStatus {
             ModelStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCESS"]
     }
@@ -958,6 +1016,7 @@ pub mod inference_scheduler_summary {
             self.model_name = Some(input.into());
             self
         }
+        /// <p>The name of the ML model used for the inference scheduler. </p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_name = input;
             self
@@ -967,6 +1026,7 @@ pub mod inference_scheduler_summary {
             self.model_arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) of the ML model used by the inference scheduler. </p>
         pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_arn = input;
             self
@@ -976,6 +1036,7 @@ pub mod inference_scheduler_summary {
             self.inference_scheduler_name = Some(input.into());
             self
         }
+        /// <p>The name of the inference scheduler. </p>
         pub fn set_inference_scheduler_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -988,6 +1049,7 @@ pub mod inference_scheduler_summary {
             self.inference_scheduler_arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) of the inference scheduler. </p>
         pub fn set_inference_scheduler_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1000,6 +1062,7 @@ pub mod inference_scheduler_summary {
             self.status = Some(input);
             self
         }
+        /// <p>Indicates the status of the inference scheduler. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::InferenceSchedulerStatus>,
@@ -1018,6 +1081,13 @@ pub mod inference_scheduler_summary {
             self.data_delay_offset_in_minutes = Some(input);
             self
         }
+        /// <p>A period of time (in minutes) by which inference on the data is delayed after the data
+        /// starts. For instance, if an offset delay time of five minutes was selected, inference will
+        /// not begin on the data until the first data measurement after the five minute mark. For example, if
+        /// five minutes is selected, the inference scheduler will wake up at the configured frequency with the
+        /// additional five minute delay time to check the customer S3 bucket. The customer can upload data at
+        /// the same frequency and they don't need to stop and restart the scheduler when uploading new data.
+        /// </p>
         pub fn set_data_delay_offset_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.data_delay_offset_in_minutes = input;
             self
@@ -1031,6 +1101,11 @@ pub mod inference_scheduler_summary {
             self.data_upload_frequency = Some(input);
             self
         }
+        /// <p>How often data is uploaded to the source S3 bucket for the input data. This value is the
+        /// length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment
+        /// will upload the real-time data to the source bucket once every 5 minutes. This frequency also
+        /// determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this
+        /// example, it starts once every 5 minutes. </p>
         pub fn set_data_upload_frequency(
             mut self,
             input: std::option::Option<crate::model::DataUploadFrequency>,
@@ -1075,13 +1150,13 @@ pub struct InferenceExecutionSummary {
     pub inference_scheduler_arn: std::option::Option<std::string::String>,
     /// <p>Indicates the start time at which the inference scheduler began the specific inference
     /// execution. </p>
-    pub scheduled_start_time: std::option::Option<smithy_types::Instant>,
+    pub scheduled_start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Indicates the time reference in the dataset at which the inference execution began.
     /// </p>
-    pub data_start_time: std::option::Option<smithy_types::Instant>,
+    pub data_start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Indicates the time reference in the dataset at which the inference execution stopped.
     /// </p>
-    pub data_end_time: std::option::Option<smithy_types::Instant>,
+    pub data_end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> Specifies configuration information for the input data for the inference scheduler,
     /// including delimiter, format, and dataset location. </p>
     pub data_input_configuration: std::option::Option<crate::model::InferenceInputConfiguration>,
@@ -1124,9 +1199,9 @@ pub mod inference_execution_summary {
         pub(crate) model_arn: std::option::Option<std::string::String>,
         pub(crate) inference_scheduler_name: std::option::Option<std::string::String>,
         pub(crate) inference_scheduler_arn: std::option::Option<std::string::String>,
-        pub(crate) scheduled_start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) data_start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) data_end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) scheduled_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) data_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) data_end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) data_input_configuration:
             std::option::Option<crate::model::InferenceInputConfiguration>,
         pub(crate) data_output_configuration:
@@ -1141,6 +1216,7 @@ pub mod inference_execution_summary {
             self.model_name = Some(input.into());
             self
         }
+        /// <p>The name of the ML model being used for the inference execution. </p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_name = input;
             self
@@ -1150,6 +1226,7 @@ pub mod inference_execution_summary {
             self.model_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the ML model used for the inference execution. </p>
         pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_arn = input;
             self
@@ -1159,6 +1236,7 @@ pub mod inference_execution_summary {
             self.inference_scheduler_name = Some(input.into());
             self
         }
+        /// <p>The name of the inference scheduler being used for the inference execution. </p>
         pub fn set_inference_scheduler_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1172,6 +1250,8 @@ pub mod inference_execution_summary {
             self.inference_scheduler_arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the inference
+        /// execution. </p>
         pub fn set_inference_scheduler_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1181,39 +1261,45 @@ pub mod inference_execution_summary {
         }
         /// <p>Indicates the start time at which the inference scheduler began the specific inference
         /// execution. </p>
-        pub fn scheduled_start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn scheduled_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.scheduled_start_time = Some(input);
             self
         }
+        /// <p>Indicates the start time at which the inference scheduler began the specific inference
+        /// execution. </p>
         pub fn set_scheduled_start_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.scheduled_start_time = input;
             self
         }
         /// <p>Indicates the time reference in the dataset at which the inference execution began.
         /// </p>
-        pub fn data_start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn data_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.data_start_time = Some(input);
             self
         }
+        /// <p>Indicates the time reference in the dataset at which the inference execution began.
+        /// </p>
         pub fn set_data_start_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.data_start_time = input;
             self
         }
         /// <p>Indicates the time reference in the dataset at which the inference execution stopped.
         /// </p>
-        pub fn data_end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn data_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.data_end_time = Some(input);
             self
         }
+        /// <p>Indicates the time reference in the dataset at which the inference execution stopped.
+        /// </p>
         pub fn set_data_end_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.data_end_time = input;
             self
@@ -1227,6 +1313,8 @@ pub mod inference_execution_summary {
             self.data_input_configuration = Some(input);
             self
         }
+        /// <p> Specifies configuration information for the input data for the inference scheduler,
+        /// including delimiter, format, and dataset location. </p>
         pub fn set_data_input_configuration(
             mut self,
             input: std::option::Option<crate::model::InferenceInputConfiguration>,
@@ -1243,6 +1331,8 @@ pub mod inference_execution_summary {
             self.data_output_configuration = Some(input);
             self
         }
+        /// <p> Specifies configuration information for the output results from for the inference
+        /// execution, including the output S3 location. </p>
         pub fn set_data_output_configuration(
             mut self,
             input: std::option::Option<crate::model::InferenceOutputConfiguration>,
@@ -1256,6 +1346,8 @@ pub mod inference_execution_summary {
             self.customer_result_object = Some(input);
             self
         }
+        /// <p>
+        /// </p>
         pub fn set_customer_result_object(
             mut self,
             input: std::option::Option<crate::model::S3Object>,
@@ -1268,6 +1360,7 @@ pub mod inference_execution_summary {
             self.status = Some(input);
             self
         }
+        /// <p>Indicates the status of the inference execution. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::InferenceExecutionStatus>,
@@ -1280,6 +1373,7 @@ pub mod inference_execution_summary {
             self.failed_reason = Some(input.into());
             self
         }
+        /// <p> Specifies the reason for failure when an inference execution has failed. </p>
         pub fn set_failed_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1313,6 +1407,7 @@ impl InferenceExecutionSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1324,8 +1419,11 @@ impl InferenceExecutionSummary {
     std::hash::Hash,
 )]
 pub enum InferenceExecutionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1348,6 +1446,7 @@ impl std::str::FromStr for InferenceExecutionStatus {
     }
 }
 impl InferenceExecutionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InferenceExecutionStatus::Failed => "FAILED",
@@ -1356,6 +1455,7 @@ impl InferenceExecutionStatus {
             InferenceExecutionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCESS"]
     }
@@ -1399,6 +1499,7 @@ pub mod s3_object {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The name of the specific S3 bucket. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -1409,6 +1510,8 @@ pub mod s3_object {
             self.key = Some(input.into());
             self
         }
+        /// <p>The AWS Key Management Service (AWS KMS) key being used to encrypt the S3 object.
+        /// Without this key, data in the bucket is not accessible. </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -1441,7 +1544,7 @@ pub struct DatasetSummary {
     /// <p>Indicates the status of the dataset. </p>
     pub status: std::option::Option<crate::model::DatasetStatus>,
     /// <p>The time at which the dataset was created in Amazon Lookout for Equipment. </p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DatasetSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1462,7 +1565,7 @@ pub mod dataset_summary {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) dataset_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DatasetStatus>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the dataset. </p>
@@ -1470,6 +1573,7 @@ pub mod dataset_summary {
             self.dataset_name = Some(input.into());
             self
         }
+        /// <p>The name of the dataset. </p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_name = input;
             self
@@ -1479,6 +1583,7 @@ pub mod dataset_summary {
             self.dataset_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the specified dataset. </p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_arn = input;
             self
@@ -1488,6 +1593,7 @@ pub mod dataset_summary {
             self.status = Some(input);
             self
         }
+        /// <p>Indicates the status of the dataset. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DatasetStatus>,
@@ -1496,11 +1602,15 @@ pub mod dataset_summary {
             self
         }
         /// <p>The time at which the dataset was created in Amazon Lookout for Equipment. </p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time at which the dataset was created in Amazon Lookout for Equipment. </p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -1522,6 +1632,7 @@ impl DatasetSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1533,8 +1644,11 @@ impl DatasetSummary {
     std::hash::Hash,
 )]
 pub enum DatasetStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Created,
+    #[allow(missing_docs)] // documentation missing in model
     IngestionInProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1557,6 +1671,7 @@ impl std::str::FromStr for DatasetStatus {
     }
 }
 impl DatasetStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DatasetStatus::Active => "ACTIVE",
@@ -1565,6 +1680,7 @@ impl DatasetStatus {
             DatasetStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATED", "INGESTION_IN_PROGRESS"]
     }
@@ -1626,6 +1742,7 @@ pub mod data_ingestion_job_summary {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>Indicates the job ID of the data ingestion job. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -1635,6 +1752,7 @@ pub mod data_ingestion_job_summary {
             self.dataset_name = Some(input.into());
             self
         }
+        /// <p>The name of the dataset used for the data ingestion job. </p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_name = input;
             self
@@ -1644,6 +1762,7 @@ pub mod data_ingestion_job_summary {
             self.dataset_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the dataset used in the data ingestion job. </p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_arn = input;
             self
@@ -1657,6 +1776,8 @@ pub mod data_ingestion_job_summary {
             self.ingestion_input_configuration = Some(input);
             self
         }
+        /// <p> Specifies information for the input data for the data inference job, including data S3
+        /// location parameters. </p>
         pub fn set_ingestion_input_configuration(
             mut self,
             input: std::option::Option<crate::model::IngestionInputConfiguration>,
@@ -1669,6 +1790,7 @@ pub mod data_ingestion_job_summary {
             self.status = Some(input);
             self
         }
+        /// <p>Indicates the status of the data ingestion job. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::IngestionJobStatus>,
@@ -1751,6 +1873,16 @@ pub mod data_pre_processing_configuration {
             self.target_sampling_rate = Some(input);
             self
         }
+        /// <p>The sampling rate of the data after post processing by Amazon Lookout for Equipment.
+        /// For example, if you provide data that has been collected at a 1 second level and
+        /// you want the system to resample the data at a 1 minute rate before training,
+        /// the <code>TargetSamplingRate</code> is 1 minute.</p>
+        /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach
+        /// the prefix "PT" to the rate you want.  The value for a 1 second rate is
+        /// therefore <i>PT1S</i>, the value for a 15 minute
+        /// rate is <i>PT15M</i>, and the value for a 1 hour rate
+        /// is <i>PT1H</i>
+        /// </p>
         pub fn set_target_sampling_rate(
             mut self,
             input: std::option::Option<crate::model::TargetSamplingRate>,
@@ -1773,6 +1905,7 @@ impl DataPreProcessingConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1784,16 +1917,27 @@ impl DataPreProcessingConfiguration {
     std::hash::Hash,
 )]
 pub enum TargetSamplingRate {
+    #[allow(missing_docs)] // documentation missing in model
     Pt10M,
+    #[allow(missing_docs)] // documentation missing in model
     Pt10S,
+    #[allow(missing_docs)] // documentation missing in model
     Pt15M,
+    #[allow(missing_docs)] // documentation missing in model
     Pt15S,
+    #[allow(missing_docs)] // documentation missing in model
     Pt1H,
+    #[allow(missing_docs)] // documentation missing in model
     Pt1M,
+    #[allow(missing_docs)] // documentation missing in model
     Pt1S,
+    #[allow(missing_docs)] // documentation missing in model
     Pt30M,
+    #[allow(missing_docs)] // documentation missing in model
     Pt30S,
+    #[allow(missing_docs)] // documentation missing in model
     Pt5M,
+    #[allow(missing_docs)] // documentation missing in model
     Pt5S,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1824,6 +1968,7 @@ impl std::str::FromStr for TargetSamplingRate {
     }
 }
 impl TargetSamplingRate {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TargetSamplingRate::Pt10M => "PT10M",
@@ -1840,6 +1985,7 @@ impl TargetSamplingRate {
             TargetSamplingRate::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "PT10M", "PT10S", "PT15M", "PT15S", "PT1H", "PT1M", "PT1S", "PT30M", "PT30S", "PT5M",
@@ -1886,6 +2032,7 @@ pub mod labels_input_configuration {
             self.s3_input_configuration = Some(input);
             self
         }
+        /// <p>Contains location information for the S3 location being used for label data. </p>
         pub fn set_s3_input_configuration(
             mut self,
             input: std::option::Option<crate::model::LabelsS3InputConfiguration>,
@@ -1941,6 +2088,7 @@ pub mod labels_s3_input_configuration {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The name of the S3 bucket holding the label data. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -1950,6 +2098,7 @@ pub mod labels_s3_input_configuration {
             self.prefix = Some(input.into());
             self
         }
+        /// <p> The prefix for the S3 bucket used for the label data. </p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -2000,6 +2149,8 @@ pub mod dataset_schema {
             self.inline_data_schema = Some(input.into());
             self
         }
+        /// <p>
+        /// </p>
         pub fn set_inline_data_schema(
             mut self,
             input: std::option::Option<std::string::String>,

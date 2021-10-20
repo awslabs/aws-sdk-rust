@@ -31,6 +31,7 @@ pub mod validation_exception_field {
             self.name = Some(input.into());
             self
         }
+        /// The field name.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -40,6 +41,7 @@ pub mod validation_exception_field {
             self.message = Some(input.into());
             self
         }
+        /// Message describing why the field failed validation.
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -72,9 +74,13 @@ impl ValidationExceptionField {
     std::hash::Hash,
 )]
 pub enum ValidationExceptionReason {
+    #[allow(missing_docs)] // documentation missing in model
     CannotParse,
+    #[allow(missing_docs)] // documentation missing in model
     FieldValidationFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Other,
+    #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -98,6 +104,7 @@ impl std::str::FromStr for ValidationExceptionReason {
     }
 }
 impl ValidationExceptionReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ValidationExceptionReason::CannotParse => "CANNOT_PARSE",
@@ -107,6 +114,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
@@ -135,7 +143,7 @@ pub struct WorkspaceSummary {
     /// The status of this workspace.
     pub status: std::option::Option<crate::model::WorkspaceStatus>,
     /// The time when the workspace was created.
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// The tags of this workspace.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -162,7 +170,7 @@ pub mod workspace_summary {
         pub(crate) alias: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::WorkspaceStatus>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -173,6 +181,7 @@ pub mod workspace_summary {
             self.workspace_id = Some(input.into());
             self
         }
+        /// Unique string identifying this workspace.
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -182,6 +191,7 @@ pub mod workspace_summary {
             self.alias = Some(input.into());
             self
         }
+        /// Alias of this workspace.
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias = input;
             self
@@ -191,6 +201,7 @@ pub mod workspace_summary {
             self.arn = Some(input.into());
             self
         }
+        /// The AmazonResourceName of this workspace.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -200,6 +211,7 @@ pub mod workspace_summary {
             self.status = Some(input);
             self
         }
+        /// The status of this workspace.
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::WorkspaceStatus>,
@@ -208,14 +220,23 @@ pub mod workspace_summary {
             self
         }
         /// The time when the workspace was created.
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// The time when the workspace was created.
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// The tags of this workspace.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -226,6 +247,7 @@ pub mod workspace_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// The tags of this workspace.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -283,6 +305,7 @@ pub mod workspace_status {
             self.status_code = Some(input);
             self
         }
+        /// Status code of this workspace.
         pub fn set_status_code(
             mut self,
             input: std::option::Option<crate::model::WorkspaceStatusCode>,
@@ -350,6 +373,7 @@ impl std::str::FromStr for WorkspaceStatusCode {
     }
 }
 impl WorkspaceStatusCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WorkspaceStatusCode::Active => "ACTIVE",
@@ -360,6 +384,7 @@ impl WorkspaceStatusCode {
             WorkspaceStatusCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -391,7 +416,7 @@ pub struct WorkspaceDescription {
     /// Prometheus endpoint URI.
     pub prometheus_endpoint: std::option::Option<std::string::String>,
     /// The time when the workspace was created.
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// The tags of this workspace.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -420,7 +445,7 @@ pub mod workspace_description {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::WorkspaceStatus>,
         pub(crate) prometheus_endpoint: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -431,6 +456,7 @@ pub mod workspace_description {
             self.workspace_id = Some(input.into());
             self
         }
+        /// Unique string identifying this workspace.
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -440,6 +466,7 @@ pub mod workspace_description {
             self.alias = Some(input.into());
             self
         }
+        /// Alias of this workspace.
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias = input;
             self
@@ -449,6 +476,7 @@ pub mod workspace_description {
             self.arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of this workspace.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -458,6 +486,7 @@ pub mod workspace_description {
             self.status = Some(input);
             self
         }
+        /// The status of this workspace.
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::WorkspaceStatus>,
@@ -470,6 +499,7 @@ pub mod workspace_description {
             self.prometheus_endpoint = Some(input.into());
             self
         }
+        /// Prometheus endpoint URI.
         pub fn set_prometheus_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -478,14 +508,23 @@ pub mod workspace_description {
             self
         }
         /// The time when the workspace was created.
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// The time when the workspace was created.
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// The tags of this workspace.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -496,6 +535,7 @@ pub mod workspace_description {
             self.tags = Some(hash_map);
             self
         }
+        /// The tags of this workspace.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -537,9 +577,9 @@ pub struct RuleGroupsNamespaceSummary {
     /// The status of rule groups namespace.
     pub status: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
     /// The time when the rule groups namespace was created.
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// The time when the rule groups namespace was modified.
-    pub modified_at: std::option::Option<smithy_types::Instant>,
+    pub modified_at: std::option::Option<aws_smithy_types::Instant>,
     /// The tags of this rule groups namespace.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -565,8 +605,8 @@ pub mod rule_groups_namespace_summary {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) modified_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) modified_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -577,6 +617,7 @@ pub mod rule_groups_namespace_summary {
             self.arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of this rule groups namespace.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -586,6 +627,7 @@ pub mod rule_groups_namespace_summary {
             self.name = Some(input.into());
             self
         }
+        /// The rule groups namespace name.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -595,6 +637,7 @@ pub mod rule_groups_namespace_summary {
             self.status = Some(input);
             self
         }
+        /// The status of rule groups namespace.
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
@@ -603,26 +646,36 @@ pub mod rule_groups_namespace_summary {
             self
         }
         /// The time when the rule groups namespace was created.
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// The time when the rule groups namespace was created.
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// The time when the rule groups namespace was modified.
-        pub fn modified_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.modified_at = Some(input);
             self
         }
+        /// The time when the rule groups namespace was modified.
         pub fn set_modified_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.modified_at = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// The tags of this rule groups namespace.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -633,6 +686,7 @@ pub mod rule_groups_namespace_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// The tags of this rule groups namespace.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -694,6 +748,7 @@ pub mod rule_groups_namespace_status {
             self.status_code = Some(input);
             self
         }
+        /// Status code of this namespace.
         pub fn set_status_code(
             mut self,
             input: std::option::Option<crate::model::RuleGroupsNamespaceStatusCode>,
@@ -706,6 +761,7 @@ pub mod rule_groups_namespace_status {
             self.status_reason = Some(input.into());
             self
         }
+        /// The reason for failure if any.
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -777,6 +833,7 @@ impl std::str::FromStr for RuleGroupsNamespaceStatusCode {
     }
 }
 impl RuleGroupsNamespaceStatusCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RuleGroupsNamespaceStatusCode::Active => "ACTIVE",
@@ -788,6 +845,7 @@ impl RuleGroupsNamespaceStatusCode {
             RuleGroupsNamespaceStatusCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -816,11 +874,11 @@ pub struct RuleGroupsNamespaceDescription {
     /// The status of rule groups namespace.
     pub status: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
     /// The rule groups namespace data.
-    pub data: std::option::Option<smithy_types::Blob>,
+    pub data: std::option::Option<aws_smithy_types::Blob>,
     /// The time when the rule groups namespace was created.
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// The time when the rule groups namespace was modified.
-    pub modified_at: std::option::Option<smithy_types::Instant>,
+    pub modified_at: std::option::Option<aws_smithy_types::Instant>,
     /// The tags of this rule groups namespace.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -847,9 +905,9 @@ pub mod rule_groups_namespace_description {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
-        pub(crate) data: std::option::Option<smithy_types::Blob>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) modified_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) modified_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -860,6 +918,7 @@ pub mod rule_groups_namespace_description {
             self.arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of this rule groups namespace.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -869,6 +928,7 @@ pub mod rule_groups_namespace_description {
             self.name = Some(input.into());
             self
         }
+        /// The rule groups namespace name.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -878,6 +938,7 @@ pub mod rule_groups_namespace_description {
             self.status = Some(input);
             self
         }
+        /// The status of rule groups namespace.
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
@@ -886,35 +947,46 @@ pub mod rule_groups_namespace_description {
             self
         }
         /// The rule groups namespace data.
-        pub fn data(mut self, input: smithy_types::Blob) -> Self {
+        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
             self.data = Some(input);
             self
         }
-        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// The rule groups namespace data.
+        pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.data = input;
             self
         }
         /// The time when the rule groups namespace was created.
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// The time when the rule groups namespace was created.
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// The time when the rule groups namespace was modified.
-        pub fn modified_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.modified_at = Some(input);
             self
         }
+        /// The time when the rule groups namespace was modified.
         pub fn set_modified_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.modified_at = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// The tags of this rule groups namespace.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -925,6 +997,7 @@ pub mod rule_groups_namespace_description {
             self.tags = Some(hash_map);
             self
         }
+        /// The tags of this rule groups namespace.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -990,6 +1063,7 @@ pub mod alert_manager_definition_status {
             self.status_code = Some(input);
             self
         }
+        /// Status code of this definition.
         pub fn set_status_code(
             mut self,
             input: std::option::Option<crate::model::AlertManagerDefinitionStatusCode>,
@@ -1002,6 +1076,7 @@ pub mod alert_manager_definition_status {
             self.status_reason = Some(input.into());
             self
         }
+        /// The reason for failure if any.
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1073,6 +1148,7 @@ impl std::str::FromStr for AlertManagerDefinitionStatusCode {
     }
 }
 impl AlertManagerDefinitionStatusCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AlertManagerDefinitionStatusCode::Active => "ACTIVE",
@@ -1084,6 +1160,7 @@ impl AlertManagerDefinitionStatusCode {
             AlertManagerDefinitionStatusCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -1108,11 +1185,11 @@ pub struct AlertManagerDefinitionDescription {
     /// The status of alert manager definition.
     pub status: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
     /// The alert manager definition.
-    pub data: std::option::Option<smithy_types::Blob>,
+    pub data: std::option::Option<aws_smithy_types::Blob>,
     /// The time when the alert manager definition was created.
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// The time when the alert manager definition was modified.
-    pub modified_at: std::option::Option<smithy_types::Instant>,
+    pub modified_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for AlertManagerDefinitionDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1131,9 +1208,9 @@ pub mod alert_manager_definition_description {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
-        pub(crate) data: std::option::Option<smithy_types::Blob>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) modified_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) modified_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// The status of alert manager definition.
@@ -1141,6 +1218,7 @@ pub mod alert_manager_definition_description {
             self.status = Some(input);
             self
         }
+        /// The status of alert manager definition.
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
@@ -1149,31 +1227,37 @@ pub mod alert_manager_definition_description {
             self
         }
         /// The alert manager definition.
-        pub fn data(mut self, input: smithy_types::Blob) -> Self {
+        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
             self.data = Some(input);
             self
         }
-        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// The alert manager definition.
+        pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.data = input;
             self
         }
         /// The time when the alert manager definition was created.
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// The time when the alert manager definition was created.
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// The time when the alert manager definition was modified.
-        pub fn modified_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.modified_at = Some(input);
             self
         }
+        /// The time when the alert manager definition was modified.
         pub fn set_modified_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.modified_at = input;
             self

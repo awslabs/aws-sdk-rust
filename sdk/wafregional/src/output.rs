@@ -29,6 +29,8 @@ pub mod update_xss_match_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateXssMatchSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -48,6 +50,7 @@ impl UpdateXssMatchSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWebAclOutput {
@@ -77,6 +80,8 @@ pub mod update_web_acl_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateWebACL</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -126,6 +131,8 @@ pub mod update_sql_injection_match_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSqlInjectionMatchSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -145,6 +152,7 @@ impl UpdateSqlInjectionMatchSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSizeConstraintSetOutput {
@@ -174,6 +182,8 @@ pub mod update_size_constraint_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSizeConstraintSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -193,6 +203,7 @@ impl UpdateSizeConstraintSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRuleGroupOutput {
@@ -222,6 +233,8 @@ pub mod update_rule_group_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRuleGroup</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -241,6 +254,7 @@ impl UpdateRuleGroupOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRuleOutput {
@@ -270,6 +284,8 @@ pub mod update_rule_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRule</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -289,6 +305,7 @@ impl UpdateRuleOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRegexPatternSetOutput {
@@ -318,6 +335,8 @@ pub mod update_regex_pattern_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRegexPatternSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -337,6 +356,7 @@ impl UpdateRegexPatternSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRegexMatchSetOutput {
@@ -366,6 +386,8 @@ pub mod update_regex_match_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateRegexMatchSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -385,6 +407,7 @@ impl UpdateRegexMatchSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRateBasedRuleOutput {
@@ -416,6 +439,9 @@ pub mod update_rate_based_rule_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the
+        /// <code>UpdateRateBasedRule</code> request. You can also use this value to query the
+        /// status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -435,6 +461,7 @@ impl UpdateRateBasedRuleOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIpSetOutput {
@@ -464,6 +491,8 @@ pub mod update_ip_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateIPSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -483,6 +512,7 @@ impl UpdateIpSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGeoMatchSetOutput {
@@ -512,6 +542,8 @@ pub mod update_geo_match_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateGeoMatchSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -531,6 +563,7 @@ impl UpdateGeoMatchSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateByteMatchSetOutput {
@@ -560,6 +593,8 @@ pub mod update_byte_match_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateByteMatchSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -579,6 +614,7 @@ impl UpdateByteMatchSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
@@ -608,6 +644,7 @@ impl UntagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {}
@@ -637,6 +674,7 @@ impl TagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPermissionPolicyOutput {}
@@ -666,6 +704,7 @@ impl PutPermissionPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLoggingConfigurationOutput {
@@ -693,6 +732,7 @@ pub mod put_logging_configuration_output {
             self.logging_configuration = Some(input);
             self
         }
+        /// <p>The <a>LoggingConfiguration</a> that you submitted in the request.</p>
         pub fn set_logging_configuration(
             mut self,
             input: std::option::Option<crate::model::LoggingConfiguration>,
@@ -754,10 +794,19 @@ pub mod list_xss_match_sets_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If you have more <a>XssMatchSet</a> objects than the number that you specified for <code>Limit</code> in the request,
+        /// the response includes a <code>NextMarker</code> value. To list more <code>XssMatchSet</code> objects, submit another
+        /// <code>ListXssMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the
+        /// <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
+        /// Appends an item to `xss_match_sets`.
+        ///
+        /// To override the contents of this collection use [`set_xss_match_sets`](Self::set_xss_match_sets).
+        ///
+        /// <p>An array of <a>XssMatchSetSummary</a> objects.</p>
         pub fn xss_match_sets(
             mut self,
             input: impl Into<crate::model::XssMatchSetSummary>,
@@ -767,6 +816,7 @@ pub mod list_xss_match_sets_output {
             self.xss_match_sets = Some(v);
             self
         }
+        /// <p>An array of <a>XssMatchSetSummary</a> objects.</p>
         pub fn set_xss_match_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::XssMatchSetSummary>>,
@@ -790,6 +840,7 @@ impl ListXssMatchSetsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWebAcLsOutput {
@@ -827,16 +878,26 @@ pub mod list_web_ac_ls_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If you have more <code>WebACL</code> objects than the number that you specified for <code>Limit</code> in the request,
+        /// the response includes a <code>NextMarker</code> value. To list more <code>WebACL</code> objects, submit another
+        /// <code>ListWebACLs</code> request, and specify the <code>NextMarker</code> value from the response in the
+        /// <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
+        /// Appends an item to `web_ac_ls`.
+        ///
+        /// To override the contents of this collection use [`set_web_ac_ls`](Self::set_web_ac_ls).
+        ///
+        /// <p>An array of <a>WebACLSummary</a> objects.</p>
         pub fn web_ac_ls(mut self, input: impl Into<crate::model::WebAclSummary>) -> Self {
             let mut v = self.web_ac_ls.unwrap_or_default();
             v.push(input.into());
             self.web_ac_ls = Some(v);
             self
         }
+        /// <p>An array of <a>WebACLSummary</a> objects.</p>
         pub fn set_web_ac_ls(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::WebAclSummary>>,
@@ -860,6 +921,7 @@ impl ListWebAcLsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
@@ -891,6 +953,7 @@ pub mod list_tags_for_resource_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p></p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -900,6 +963,7 @@ pub mod list_tags_for_resource_output {
             self.tag_info_for_resource = Some(input);
             self
         }
+        /// <p></p>
         pub fn set_tag_info_for_resource(
             mut self,
             input: std::option::Option<crate::model::TagInfoForResource>,
@@ -923,6 +987,7 @@ impl ListTagsForResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSubscribedRuleGroupsOutput {
@@ -961,10 +1026,19 @@ pub mod list_subscribed_rule_groups_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If you have more objects than the number that you specified for <code>Limit</code> in the request,
+        /// the response includes a <code>NextMarker</code> value. To list more objects, submit another
+        /// <code>ListSubscribedRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the
+        /// <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
+        /// Appends an item to `rule_groups`.
+        ///
+        /// To override the contents of this collection use [`set_rule_groups`](Self::set_rule_groups).
+        ///
+        /// <p>An array of <a>RuleGroup</a> objects.</p>
         pub fn rule_groups(
             mut self,
             input: impl Into<crate::model::SubscribedRuleGroupSummary>,
@@ -974,6 +1048,7 @@ pub mod list_subscribed_rule_groups_output {
             self.rule_groups = Some(v);
             self
         }
+        /// <p>An array of <a>RuleGroup</a> objects.</p>
         pub fn set_rule_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SubscribedRuleGroupSummary>>,
@@ -1037,10 +1112,19 @@ pub mod list_sql_injection_match_sets_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If you have more <a>SqlInjectionMatchSet</a> objects than the number that you specified for <code>Limit</code> in the request,
+        /// the response includes a <code>NextMarker</code> value. To list more <code>SqlInjectionMatchSet</code> objects, submit another
+        /// <code>ListSqlInjectionMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the
+        /// <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
+        /// Appends an item to `sql_injection_match_sets`.
+        ///
+        /// To override the contents of this collection use [`set_sql_injection_match_sets`](Self::set_sql_injection_match_sets).
+        ///
+        /// <p>An array of <a>SqlInjectionMatchSetSummary</a> objects.</p>
         pub fn sql_injection_match_sets(
             mut self,
             input: impl Into<crate::model::SqlInjectionMatchSetSummary>,
@@ -1050,6 +1134,7 @@ pub mod list_sql_injection_match_sets_output {
             self.sql_injection_match_sets = Some(v);
             self
         }
+        /// <p>An array of <a>SqlInjectionMatchSetSummary</a> objects.</p>
         pub fn set_sql_injection_match_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SqlInjectionMatchSetSummary>>,
@@ -1073,6 +1158,7 @@ impl ListSqlInjectionMatchSetsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSizeConstraintSetsOutput {
@@ -1112,10 +1198,19 @@ pub mod list_size_constraint_sets_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If you have more <code>SizeConstraintSet</code> objects than the number that you specified for <code>Limit</code> in the request,
+        /// the response includes a <code>NextMarker</code> value. To list more <code>SizeConstraintSet</code> objects, submit another
+        /// <code>ListSizeConstraintSets</code> request, and specify the <code>NextMarker</code> value from the response in the
+        /// <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
+        /// Appends an item to `size_constraint_sets`.
+        ///
+        /// To override the contents of this collection use [`set_size_constraint_sets`](Self::set_size_constraint_sets).
+        ///
+        /// <p>An array of <a>SizeConstraintSetSummary</a> objects.</p>
         pub fn size_constraint_sets(
             mut self,
             input: impl Into<crate::model::SizeConstraintSetSummary>,
@@ -1125,6 +1220,7 @@ pub mod list_size_constraint_sets_output {
             self.size_constraint_sets = Some(v);
             self
         }
+        /// <p>An array of <a>SizeConstraintSetSummary</a> objects.</p>
         pub fn set_size_constraint_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SizeConstraintSetSummary>>,
@@ -1148,6 +1244,7 @@ impl ListSizeConstraintSetsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRulesOutput {
@@ -1183,16 +1280,25 @@ pub mod list_rules_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If you have more <code>Rules</code> than the number that you specified for <code>Limit</code> in the request,       the response includes a <code>NextMarker</code> value. To list more <code>Rules</code>, submit another
+        /// <code>ListRules</code> request, and specify the <code>NextMarker</code> value from the response in the
+        /// <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>An array of <a>RuleSummary</a> objects.</p>
         pub fn rules(mut self, input: impl Into<crate::model::RuleSummary>) -> Self {
             let mut v = self.rules.unwrap_or_default();
             v.push(input.into());
             self.rules = Some(v);
             self
         }
+        /// <p>An array of <a>RuleSummary</a> objects.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
@@ -1216,6 +1322,7 @@ impl ListRulesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRuleGroupsOutput {
@@ -1247,16 +1354,23 @@ pub mod list_rule_groups_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If you have more <code>RuleGroups</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>RuleGroups</code>, submit another <code>ListRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
+        /// Appends an item to `rule_groups`.
+        ///
+        /// To override the contents of this collection use [`set_rule_groups`](Self::set_rule_groups).
+        ///
+        /// <p>An array of <a>RuleGroup</a> objects.</p>
         pub fn rule_groups(mut self, input: impl Into<crate::model::RuleGroupSummary>) -> Self {
             let mut v = self.rule_groups.unwrap_or_default();
             v.push(input.into());
             self.rule_groups = Some(v);
             self
         }
+        /// <p>An array of <a>RuleGroup</a> objects.</p>
         pub fn set_rule_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RuleGroupSummary>>,
@@ -1280,6 +1394,7 @@ impl ListRuleGroupsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesForWebAclOutput {
@@ -1302,12 +1417,18 @@ pub mod list_resources_for_web_acl_output {
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `resource_arns`.
+        ///
+        /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
+        ///
+        /// <p>An array of ARNs (Amazon Resource Names) of the resources associated with the specified web ACL. An array with zero elements is returned if there are no resources associated with the web ACL.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_arns = Some(v);
             self
         }
+        /// <p>An array of ARNs (Amazon Resource Names) of the resources associated with the specified web ACL. An array with zero elements is returned if there are no resources associated with the web ACL.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1330,6 +1451,7 @@ impl ListResourcesForWebAclOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRegexPatternSetsOutput {
@@ -1369,10 +1491,19 @@ pub mod list_regex_pattern_sets_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If you have more <code>RegexPatternSet</code> objects than the number that you specified for <code>Limit</code> in the request,
+        /// the response includes a <code>NextMarker</code> value. To list more <code>RegexPatternSet</code> objects, submit another
+        /// <code>ListRegexPatternSets</code> request, and specify the <code>NextMarker</code> value from the response in the
+        /// <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
+        /// Appends an item to `regex_pattern_sets`.
+        ///
+        /// To override the contents of this collection use [`set_regex_pattern_sets`](Self::set_regex_pattern_sets).
+        ///
+        /// <p>An array of <a>RegexPatternSetSummary</a> objects.</p>
         pub fn regex_pattern_sets(
             mut self,
             input: impl Into<crate::model::RegexPatternSetSummary>,
@@ -1382,6 +1513,7 @@ pub mod list_regex_pattern_sets_output {
             self.regex_pattern_sets = Some(v);
             self
         }
+        /// <p>An array of <a>RegexPatternSetSummary</a> objects.</p>
         pub fn set_regex_pattern_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RegexPatternSetSummary>>,
@@ -1405,6 +1537,7 @@ impl ListRegexPatternSetsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRegexMatchSetsOutput {
@@ -1443,10 +1576,19 @@ pub mod list_regex_match_sets_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If you have more <code>RegexMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request,
+        /// the response includes a <code>NextMarker</code> value. To list more <code>RegexMatchSet</code> objects, submit another
+        /// <code>ListRegexMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the
+        /// <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
+        /// Appends an item to `regex_match_sets`.
+        ///
+        /// To override the contents of this collection use [`set_regex_match_sets`](Self::set_regex_match_sets).
+        ///
+        /// <p>An array of <a>RegexMatchSetSummary</a> objects.</p>
         pub fn regex_match_sets(
             mut self,
             input: impl Into<crate::model::RegexMatchSetSummary>,
@@ -1456,6 +1598,7 @@ pub mod list_regex_match_sets_output {
             self.regex_match_sets = Some(v);
             self
         }
+        /// <p>An array of <a>RegexMatchSetSummary</a> objects.</p>
         pub fn set_regex_match_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RegexMatchSetSummary>>,
@@ -1479,6 +1622,7 @@ impl ListRegexMatchSetsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRateBasedRulesOutput {
@@ -1518,16 +1662,27 @@ pub mod list_rate_based_rules_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If you have more <code>Rules</code> than the number that you specified for
+        /// <code>Limit</code> in the request, the response includes a <code>NextMarker</code>
+        /// value. To list more <code>Rules</code>, submit another <code>ListRateBasedRules</code>
+        /// request, and specify the <code>NextMarker</code> value from the response in the
+        /// <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>An array of <a>RuleSummary</a> objects.</p>
         pub fn rules(mut self, input: impl Into<crate::model::RuleSummary>) -> Self {
             let mut v = self.rules.unwrap_or_default();
             v.push(input.into());
             self.rules = Some(v);
             self
         }
+        /// <p>An array of <a>RuleSummary</a> objects.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
@@ -1551,6 +1706,7 @@ impl ListRateBasedRulesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLoggingConfigurationsOutput {
@@ -1579,6 +1735,11 @@ pub mod list_logging_configurations_output {
         pub(crate) next_marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `logging_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_logging_configurations`](Self::set_logging_configurations).
+        ///
+        /// <p>An array of <a>LoggingConfiguration</a> objects.</p>
         pub fn logging_configurations(
             mut self,
             input: impl Into<crate::model::LoggingConfiguration>,
@@ -1588,6 +1749,7 @@ pub mod list_logging_configurations_output {
             self.logging_configurations = Some(v);
             self
         }
+        /// <p>An array of <a>LoggingConfiguration</a> objects.</p>
         pub fn set_logging_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LoggingConfiguration>>,
@@ -1600,6 +1762,7 @@ pub mod list_logging_configurations_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If you have more <code>LoggingConfigurations</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>LoggingConfigurations</code>, submit another <code>ListLoggingConfigurations</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -1620,6 +1783,7 @@ impl ListLoggingConfigurationsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIpSetsOutput {
@@ -1655,16 +1819,25 @@ pub mod list_ip_sets_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code>
+        /// request, and in the next request use the <code>NextMarker</code> response value as the
+        /// <code>NextMarker</code> value.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
+        /// Appends an item to `ip_sets`.
+        ///
+        /// To override the contents of this collection use [`set_ip_sets`](Self::set_ip_sets).
+        ///
+        /// <p>An array of <a>IPSetSummary</a> objects.</p>
         pub fn ip_sets(mut self, input: impl Into<crate::model::IpSetSummary>) -> Self {
             let mut v = self.ip_sets.unwrap_or_default();
             v.push(input.into());
             self.ip_sets = Some(v);
             self
         }
+        /// <p>An array of <a>IPSetSummary</a> objects.</p>
         pub fn set_ip_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IpSetSummary>>,
@@ -1688,6 +1861,7 @@ impl ListIpSetsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGeoMatchSetsOutput {
@@ -1726,10 +1900,19 @@ pub mod list_geo_match_sets_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If you have more <code>GeoMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request,
+        /// the response includes a <code>NextMarker</code> value. To list more <code>GeoMatchSet</code> objects, submit another
+        /// <code>ListGeoMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the
+        /// <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
+        /// Appends an item to `geo_match_sets`.
+        ///
+        /// To override the contents of this collection use [`set_geo_match_sets`](Self::set_geo_match_sets).
+        ///
+        /// <p>An array of <a>GeoMatchSetSummary</a> objects.</p>
         pub fn geo_match_sets(
             mut self,
             input: impl Into<crate::model::GeoMatchSetSummary>,
@@ -1739,6 +1922,7 @@ pub mod list_geo_match_sets_output {
             self.geo_match_sets = Some(v);
             self
         }
+        /// <p>An array of <a>GeoMatchSetSummary</a> objects.</p>
         pub fn set_geo_match_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GeoMatchSetSummary>>,
@@ -1762,6 +1946,7 @@ impl ListGeoMatchSetsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListByteMatchSetsOutput {
@@ -1800,10 +1985,19 @@ pub mod list_byte_match_sets_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If you have more <code>ByteMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request,
+        /// the response includes a <code>NextMarker</code> value. To list more <code>ByteMatchSet</code> objects, submit another
+        /// <code>ListByteMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the
+        /// <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
+        /// Appends an item to `byte_match_sets`.
+        ///
+        /// To override the contents of this collection use [`set_byte_match_sets`](Self::set_byte_match_sets).
+        ///
+        /// <p>An array of <a>ByteMatchSetSummary</a> objects.</p>
         pub fn byte_match_sets(
             mut self,
             input: impl Into<crate::model::ByteMatchSetSummary>,
@@ -1813,6 +2007,7 @@ pub mod list_byte_match_sets_output {
             self.byte_match_sets = Some(v);
             self
         }
+        /// <p>An array of <a>ByteMatchSetSummary</a> objects.</p>
         pub fn set_byte_match_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ByteMatchSetSummary>>,
@@ -1836,6 +2031,7 @@ impl ListByteMatchSetsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListActivatedRulesInRuleGroupOutput {
@@ -1867,16 +2063,23 @@ pub mod list_activated_rules_in_rule_group_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If you have more <code>ActivatedRules</code> than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>ActivatedRules</code>, submit another <code>ListActivatedRulesInRuleGroup</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
+        /// Appends an item to `activated_rules`.
+        ///
+        /// To override the contents of this collection use [`set_activated_rules`](Self::set_activated_rules).
+        ///
+        /// <p>An array of <code>ActivatedRules</code> objects.</p>
         pub fn activated_rules(mut self, input: impl Into<crate::model::ActivatedRule>) -> Self {
             let mut v = self.activated_rules.unwrap_or_default();
             v.push(input.into());
             self.activated_rules = Some(v);
             self
         }
+        /// <p>An array of <code>ActivatedRules</code> objects.</p>
         pub fn set_activated_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ActivatedRule>>,
@@ -1966,6 +2169,26 @@ pub mod get_xss_match_set_output {
             self.xss_match_set = Some(input);
             self
         }
+        /// <p>Information about the <a>XssMatchSet</a> that you specified in the <code>GetXssMatchSet</code> request.
+        /// For more information, see the following topics:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of
+        /// <code>XssMatchTuple</code> objects</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and
+        /// <code>TextTransformation</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_xss_match_set(
             mut self,
             input: std::option::Option<crate::model::XssMatchSet>,
@@ -1988,6 +2211,7 @@ impl GetXssMatchSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWebAclForResourceOutput {
@@ -2015,6 +2239,7 @@ pub mod get_web_acl_for_resource_output {
             self.web_acl_summary = Some(input);
             self
         }
+        /// <p>Information about the web ACL that you specified in the <code>GetWebACLForResource</code> request. If there is no associated resource, a null WebACLSummary is returned.</p>
         pub fn set_web_acl_summary(
             mut self,
             input: std::option::Option<crate::model::WebAclSummary>,
@@ -2037,6 +2262,7 @@ impl GetWebAclForResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWebAclOutput {
@@ -2114,6 +2340,32 @@ pub mod get_web_acl_output {
             self.web_acl = Some(input);
             self
         }
+        /// <p>Information about the <a>WebACL</a> that you specified in the <code>GetWebACL</code> request.
+        /// For more information, see the following topics:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <a>WebACL</a>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of
+        /// <code>Rule</code> objects, and <code>WebACLId</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains <code>Type</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>,
+        /// <code>Priority</code>, and <code>RuleId</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Action</code>: Contains <code>Type</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_web_acl(mut self, input: std::option::Option<crate::model::WebAcl>) -> Self {
             self.web_acl = input;
             self
@@ -2202,6 +2454,26 @@ pub mod get_sql_injection_match_set_output {
             self.sql_injection_match_set = Some(input);
             self
         }
+        /// <p>Information about the <a>SqlInjectionMatchSet</a> that you specified in the <code>GetSqlInjectionMatchSet</code> request.
+        /// For more information, see the following topics:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <a>SqlInjectionMatchSet</a>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>, and an array of
+        /// <code>SqlInjectionMatchTuple</code> objects</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a>SqlInjectionMatchTuple</a>: Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code> and
+        /// <code>TextTransformation</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_sql_injection_match_set(
             mut self,
             input: std::option::Option<crate::model::SqlInjectionMatchSet>,
@@ -2224,6 +2496,7 @@ impl GetSqlInjectionMatchSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSizeConstraintSetOutput {
@@ -2291,6 +2564,27 @@ pub mod get_size_constraint_set_output {
             self.size_constraint_set = Some(input);
             self
         }
+        /// <p>Information about the <a>SizeConstraintSet</a> that you specified in the <code>GetSizeConstraintSet</code> request. For more information, see the
+        /// following topics:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <a>SizeConstraintSet</a>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and <code>Name</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SizeConstraints</code>: Contains an array of <a>SizeConstraint</a> objects. Each <code>SizeConstraint</code>
+        /// object contains <a>FieldToMatch</a>, <code>TextTransformation</code>, <code>ComparisonOperator</code>,
+        /// and <code>Size</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_size_constraint_set(
             mut self,
             input: std::option::Option<crate::model::SizeConstraintSet>,
@@ -2313,6 +2607,7 @@ impl GetSizeConstraintSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSampledRequestsOutput {
@@ -2348,6 +2643,11 @@ pub mod get_sampled_requests_output {
         pub(crate) time_window: std::option::Option<crate::model::TimeWindow>,
     }
     impl Builder {
+        /// Appends an item to `sampled_requests`.
+        ///
+        /// To override the contents of this collection use [`set_sampled_requests`](Self::set_sampled_requests).
+        ///
+        /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
         pub fn sampled_requests(
             mut self,
             input: impl Into<crate::model::SampledHttpRequest>,
@@ -2357,6 +2657,7 @@ pub mod get_sampled_requests_output {
             self.sampled_requests = Some(v);
             self
         }
+        /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
         pub fn set_sampled_requests(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SampledHttpRequest>>,
@@ -2371,6 +2672,9 @@ pub mod get_sampled_requests_output {
             self.population_size = Some(input);
             self
         }
+        /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code> requests.
+        /// If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request that your AWS resource
+        /// received during the specified time range.</p>
         pub fn set_population_size(mut self, input: std::option::Option<i64>) -> Self {
             self.population_size = input;
             self
@@ -2382,6 +2686,9 @@ pub mod get_sampled_requests_output {
             self.time_window = Some(input);
             self
         }
+        /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code> request. However,
+        /// if your AWS resource received more than 5,000 requests during the time range that you specified in the request,
+        /// <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
         pub fn set_time_window(
             mut self,
             input: std::option::Option<crate::model::TimeWindow>,
@@ -2406,6 +2713,7 @@ impl GetSampledRequestsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRuleGroupOutput {
@@ -2433,6 +2741,7 @@ pub mod get_rule_group_output {
             self.rule_group = Some(input);
             self
         }
+        /// <p>Information about the <a>RuleGroup</a> that you specified in the <code>GetRuleGroup</code> request. </p>
         pub fn set_rule_group(
             mut self,
             input: std::option::Option<crate::model::RuleGroup>,
@@ -2455,6 +2764,7 @@ impl GetRuleGroupOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRuleOutput {
@@ -2512,6 +2822,22 @@ pub mod get_rule_output {
             self.rule = Some(input);
             self
         }
+        /// <p>Information about the <a>Rule</a> that you specified in the <code>GetRule</code> request.
+        /// For more information, see the following topics:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <a>Rule</a>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects,
+        /// and <code>RuleId</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a>Predicate</a>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and
+        /// <code>Type</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_rule(mut self, input: std::option::Option<crate::model::Rule>) -> Self {
             self.rule = input;
             self
@@ -2529,6 +2855,7 @@ impl GetRuleOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRegexPatternSetOutput {
@@ -2556,6 +2883,7 @@ pub mod get_regex_pattern_set_output {
             self.regex_pattern_set = Some(input);
             self
         }
+        /// <p>Information about the <a>RegexPatternSet</a> that you specified in the <code>GetRegexPatternSet</code> request, including the identifier of the pattern set and the regular expression patterns you want AWS WAF to search for. </p>
         pub fn set_regex_pattern_set(
             mut self,
             input: std::option::Option<crate::model::RegexPatternSet>,
@@ -2578,6 +2906,7 @@ impl GetRegexPatternSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRegexMatchSetOutput {
@@ -2605,6 +2934,7 @@ pub mod get_regex_match_set_output {
             self.regex_match_set = Some(input);
             self
         }
+        /// <p>Information about the <a>RegexMatchSet</a> that you specified in the <code>GetRegexMatchSet</code> request. For more information, see <a>RegexMatchTuple</a>.</p>
         pub fn set_regex_match_set(
             mut self,
             input: std::option::Option<crate::model::RegexMatchSet>,
@@ -2627,6 +2957,7 @@ impl GetRegexMatchSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRateBasedRuleManagedKeysOutput {
@@ -2653,12 +2984,18 @@ pub mod get_rate_based_rule_managed_keys_output {
         pub(crate) next_marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `managed_keys`.
+        ///
+        /// To override the contents of this collection use [`set_managed_keys`](Self::set_managed_keys).
+        ///
+        /// <p>An array of IP addresses that currently are blocked by the specified <a>RateBasedRule</a>. </p>
         pub fn managed_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.managed_keys.unwrap_or_default();
             v.push(input.into());
             self.managed_keys = Some(v);
             self
         }
+        /// <p>An array of IP addresses that currently are blocked by the specified <a>RateBasedRule</a>. </p>
         pub fn set_managed_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2671,6 +3008,7 @@ pub mod get_rate_based_rule_managed_keys_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>A null value and not currently used.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -2691,6 +3029,7 @@ impl GetRateBasedRuleManagedKeysOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRateBasedRuleOutput {
@@ -2720,6 +3059,8 @@ pub mod get_rate_based_rule_output {
             self.rule = Some(input);
             self
         }
+        /// <p>Information about the <a>RateBasedRule</a> that you specified in the
+        /// <code>GetRateBasedRule</code> request.</p>
         pub fn set_rule(mut self, input: std::option::Option<crate::model::RateBasedRule>) -> Self {
             self.rule = input;
             self
@@ -2737,6 +3078,7 @@ impl GetRateBasedRuleOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPermissionPolicyOutput {
@@ -2764,6 +3106,7 @@ pub mod get_permission_policy_output {
             self.policy = Some(input.into());
             self
         }
+        /// <p>The IAM policy attached to the specified RuleGroup.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -2783,6 +3126,7 @@ impl GetPermissionPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLoggingConfigurationOutput {
@@ -2810,6 +3154,7 @@ pub mod get_logging_configuration_output {
             self.logging_configuration = Some(input);
             self
         }
+        /// <p>The <a>LoggingConfiguration</a> for the specified web ACL.</p>
         pub fn set_logging_configuration(
             mut self,
             input: std::option::Option<crate::model::LoggingConfiguration>,
@@ -2832,6 +3177,7 @@ impl GetLoggingConfigurationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIpSetOutput {
@@ -2887,6 +3233,21 @@ pub mod get_ip_set_output {
             self.ip_set = Some(input);
             self
         }
+        /// <p>Information about the <a>IPSet</a> that you specified in the <code>GetIPSet</code> request. For more information, see the
+        /// following topics:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <a>IPSet</a>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IPSetDescriptors</code>: Contains an array of <a>IPSetDescriptor</a> objects. Each <code>IPSetDescriptor</code>
+        /// object contains <code>Type</code> and <code>Value</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_ip_set(mut self, input: std::option::Option<crate::model::IpSet>) -> Self {
             self.ip_set = input;
             self
@@ -2906,6 +3267,7 @@ impl GetIpSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGeoMatchSetOutput {
@@ -2933,6 +3295,7 @@ pub mod get_geo_match_set_output {
             self.geo_match_set = Some(input);
             self
         }
+        /// <p>Information about the <a>GeoMatchSet</a> that you specified in the <code>GetGeoMatchSet</code> request. This includes the <code>Type</code>, which for a <code>GeoMatchContraint</code> is always <code>Country</code>, as well as the <code>Value</code>, which is the identifier for a specific country.</p>
         pub fn set_geo_match_set(
             mut self,
             input: std::option::Option<crate::model::GeoMatchSet>,
@@ -2955,6 +3318,7 @@ impl GetGeoMatchSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChangeTokenStatusOutput {
@@ -2982,6 +3346,7 @@ pub mod get_change_token_status_output {
             self.change_token_status = Some(input);
             self
         }
+        /// <p>The status of the change token.</p>
         pub fn set_change_token_status(
             mut self,
             input: std::option::Option<crate::model::ChangeTokenStatus>,
@@ -3004,6 +3369,7 @@ impl GetChangeTokenStatusOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChangeTokenOutput {
@@ -3033,6 +3399,8 @@ pub mod get_change_token_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used in the request. Use this value in a <code>GetChangeTokenStatus</code> request
+        /// to get the current status of the request. </p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -3052,6 +3420,7 @@ impl GetChangeTokenOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetByteMatchSetOutput {
@@ -3119,6 +3488,27 @@ pub mod get_byte_match_set_output {
             self.byte_match_set = Some(input);
             self
         }
+        /// <p>Information about the <a>ByteMatchSet</a> that you specified in the <code>GetByteMatchSet</code> request. For more information, see the
+        /// following topics:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and <code>Name</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ByteMatchTuples</code>: Contains an array of <a>ByteMatchTuple</a> objects. Each <code>ByteMatchTuple</code>
+        /// object contains <a>FieldToMatch</a>, <code>PositionalConstraint</code>, <code>TargetString</code>,
+        /// and <code>TextTransformation</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_byte_match_set(
             mut self,
             input: std::option::Option<crate::model::ByteMatchSet>,
@@ -3141,6 +3531,7 @@ impl GetByteMatchSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateWebAclOutput {}
@@ -3200,6 +3591,8 @@ pub mod delete_xss_match_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteXssMatchSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -3219,6 +3612,7 @@ impl DeleteXssMatchSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWebAclOutput {
@@ -3248,6 +3642,8 @@ pub mod delete_web_acl_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteWebACL</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -3297,6 +3693,8 @@ pub mod delete_sql_injection_match_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSqlInjectionMatchSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -3316,6 +3714,7 @@ impl DeleteSqlInjectionMatchSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSizeConstraintSetOutput {
@@ -3345,6 +3744,8 @@ pub mod delete_size_constraint_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteSizeConstraintSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -3364,6 +3765,7 @@ impl DeleteSizeConstraintSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRuleGroupOutput {
@@ -3393,6 +3795,8 @@ pub mod delete_rule_group_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRuleGroup</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -3412,6 +3816,7 @@ impl DeleteRuleGroupOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRuleOutput {
@@ -3441,6 +3846,8 @@ pub mod delete_rule_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRule</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -3460,6 +3867,7 @@ impl DeleteRuleOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRegexPatternSetOutput {
@@ -3489,6 +3897,8 @@ pub mod delete_regex_pattern_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexPatternSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -3508,6 +3918,7 @@ impl DeleteRegexPatternSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRegexMatchSetOutput {
@@ -3537,6 +3948,8 @@ pub mod delete_regex_match_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteRegexMatchSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -3556,6 +3969,7 @@ impl DeleteRegexMatchSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRateBasedRuleOutput {
@@ -3587,6 +4001,9 @@ pub mod delete_rate_based_rule_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the
+        /// <code>DeleteRateBasedRule</code> request. You can also use this value to query the
+        /// status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -3606,6 +4023,7 @@ impl DeleteRateBasedRuleOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePermissionPolicyOutput {}
@@ -3635,6 +4053,7 @@ impl DeletePermissionPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLoggingConfigurationOutput {}
@@ -3664,6 +4083,7 @@ impl DeleteLoggingConfigurationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIpSetOutput {
@@ -3693,6 +4113,8 @@ pub mod delete_ip_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteIPSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -3712,6 +4134,7 @@ impl DeleteIpSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGeoMatchSetOutput {
@@ -3741,6 +4164,8 @@ pub mod delete_geo_match_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteGeoMatchSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -3760,6 +4185,7 @@ impl DeleteGeoMatchSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteByteMatchSetOutput {
@@ -3789,6 +4215,8 @@ pub mod delete_byte_match_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>DeleteByteMatchSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -3841,6 +4269,7 @@ pub mod create_xss_match_set_output {
             self.xss_match_set = Some(input);
             self
         }
+        /// <p>An <a>XssMatchSet</a>.</p>
         pub fn set_xss_match_set(
             mut self,
             input: std::option::Option<crate::model::XssMatchSet>,
@@ -3854,6 +4283,8 @@ pub mod create_xss_match_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateXssMatchSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -3874,6 +4305,7 @@ impl CreateXssMatchSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWebAclMigrationStackOutput {
@@ -3901,6 +4333,7 @@ pub mod create_web_acl_migration_stack_output {
             self.s3_object_url = Some(input.into());
             self
         }
+        /// <p>The URL of the template created in Amazon S3. </p>
         pub fn set_s3_object_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3923,6 +4356,7 @@ impl CreateWebAclMigrationStackOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWebAclOutput {
@@ -3955,6 +4389,7 @@ pub mod create_web_acl_output {
             self.web_acl = Some(input);
             self
         }
+        /// <p>The <a>WebACL</a> returned in the <code>CreateWebACL</code> response.</p>
         pub fn set_web_acl(mut self, input: std::option::Option<crate::model::WebAcl>) -> Self {
             self.web_acl = input;
             self
@@ -3965,6 +4400,8 @@ pub mod create_web_acl_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateWebACL</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -4021,6 +4458,7 @@ pub mod create_sql_injection_match_set_output {
             self.sql_injection_match_set = Some(input);
             self
         }
+        /// <p>A <a>SqlInjectionMatchSet</a>.</p>
         pub fn set_sql_injection_match_set(
             mut self,
             input: std::option::Option<crate::model::SqlInjectionMatchSet>,
@@ -4034,6 +4472,8 @@ pub mod create_sql_injection_match_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSqlInjectionMatchSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -4054,6 +4494,7 @@ impl CreateSqlInjectionMatchSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSizeConstraintSetOutput {
@@ -4086,6 +4527,7 @@ pub mod create_size_constraint_set_output {
             self.size_constraint_set = Some(input);
             self
         }
+        /// <p>A <a>SizeConstraintSet</a> that contains no <code>SizeConstraint</code> objects.</p>
         pub fn set_size_constraint_set(
             mut self,
             input: std::option::Option<crate::model::SizeConstraintSet>,
@@ -4099,6 +4541,8 @@ pub mod create_size_constraint_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSizeConstraintSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -4119,6 +4563,7 @@ impl CreateSizeConstraintSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRuleGroupOutput {
@@ -4151,6 +4596,7 @@ pub mod create_rule_group_output {
             self.rule_group = Some(input);
             self
         }
+        /// <p>An empty  <a>RuleGroup</a>.</p>
         pub fn set_rule_group(
             mut self,
             input: std::option::Option<crate::model::RuleGroup>,
@@ -4164,6 +4610,8 @@ pub mod create_rule_group_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRuleGroup</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -4184,6 +4632,7 @@ impl CreateRuleGroupOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRuleOutput {
@@ -4216,6 +4665,7 @@ pub mod create_rule_output {
             self.rule = Some(input);
             self
         }
+        /// <p>The <a>Rule</a> returned in the <code>CreateRule</code> response.</p>
         pub fn set_rule(mut self, input: std::option::Option<crate::model::Rule>) -> Self {
             self.rule = input;
             self
@@ -4226,6 +4676,8 @@ pub mod create_rule_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRule</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -4246,6 +4698,7 @@ impl CreateRuleOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRegexPatternSetOutput {
@@ -4278,6 +4731,7 @@ pub mod create_regex_pattern_set_output {
             self.regex_pattern_set = Some(input);
             self
         }
+        /// <p>A <a>RegexPatternSet</a> that contains no objects.</p>
         pub fn set_regex_pattern_set(
             mut self,
             input: std::option::Option<crate::model::RegexPatternSet>,
@@ -4291,6 +4745,8 @@ pub mod create_regex_pattern_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexPatternSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -4311,6 +4767,7 @@ impl CreateRegexPatternSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRegexMatchSetOutput {
@@ -4343,6 +4800,7 @@ pub mod create_regex_match_set_output {
             self.regex_match_set = Some(input);
             self
         }
+        /// <p>A <a>RegexMatchSet</a> that contains no <code>RegexMatchTuple</code> objects.</p>
         pub fn set_regex_match_set(
             mut self,
             input: std::option::Option<crate::model::RegexMatchSet>,
@@ -4356,6 +4814,8 @@ pub mod create_regex_match_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexMatchSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -4376,6 +4836,7 @@ impl CreateRegexMatchSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRateBasedRuleOutput {
@@ -4411,6 +4872,8 @@ pub mod create_rate_based_rule_output {
             self.rule = Some(input);
             self
         }
+        /// <p>The <a>RateBasedRule</a>
+        /// that is returned in the <code>CreateRateBasedRule</code> response.</p>
         pub fn set_rule(mut self, input: std::option::Option<crate::model::RateBasedRule>) -> Self {
             self.rule = input;
             self
@@ -4422,6 +4885,9 @@ pub mod create_rate_based_rule_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the
+        /// <code>CreateRateBasedRule</code> request. You can also use this value to query the
+        /// status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -4442,6 +4908,7 @@ impl CreateRateBasedRuleOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIpSetOutput {
@@ -4474,6 +4941,7 @@ pub mod create_ip_set_output {
             self.ip_set = Some(input);
             self
         }
+        /// <p>The <a>IPSet</a> returned in the <code>CreateIPSet</code> response.</p>
         pub fn set_ip_set(mut self, input: std::option::Option<crate::model::IpSet>) -> Self {
             self.ip_set = input;
             self
@@ -4484,6 +4952,8 @@ pub mod create_ip_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateIPSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -4504,6 +4974,7 @@ impl CreateIpSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGeoMatchSetOutput {
@@ -4536,6 +5007,7 @@ pub mod create_geo_match_set_output {
             self.geo_match_set = Some(input);
             self
         }
+        /// <p>The <a>GeoMatchSet</a> returned in the <code>CreateGeoMatchSet</code> response. The <code>GeoMatchSet</code> contains no <code>GeoMatchConstraints</code>.</p>
         pub fn set_geo_match_set(
             mut self,
             input: std::option::Option<crate::model::GeoMatchSet>,
@@ -4549,6 +5021,8 @@ pub mod create_geo_match_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateGeoMatchSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -4569,6 +5043,7 @@ impl CreateGeoMatchSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateByteMatchSetOutput {
@@ -4601,6 +5076,7 @@ pub mod create_byte_match_set_output {
             self.byte_match_set = Some(input);
             self
         }
+        /// <p>A <a>ByteMatchSet</a> that contains no <code>ByteMatchTuple</code> objects.</p>
         pub fn set_byte_match_set(
             mut self,
             input: std::option::Option<crate::model::ByteMatchSet>,
@@ -4614,6 +5090,8 @@ pub mod create_byte_match_set_output {
             self.change_token = Some(input.into());
             self
         }
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateByteMatchSet</code> request. You can also use this value
+        /// to query the status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -4634,6 +5112,7 @@ impl CreateByteMatchSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateWebAclOutput {}

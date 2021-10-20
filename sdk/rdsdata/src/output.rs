@@ -28,6 +28,7 @@ pub mod rollback_transaction_output {
             self.transaction_status = Some(input.into());
             self
         }
+        /// <p>The status of the rollback operation.</p>
         pub fn set_transaction_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -62,6 +63,7 @@ pub struct ExecuteStatementOutput {
     /// <p>The number of records updated by the request.</p>
     pub number_of_records_updated: i64,
     /// <p>Values for fields generated during the request.</p>
+    ///
     /// <note>
     /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL.
     /// To get the values of generated fields, use the <code>RETURNING</code> clause. For
@@ -93,12 +95,18 @@ pub mod execute_statement_output {
         pub(crate) generated_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
     }
     impl Builder {
+        /// Appends an item to `records`.
+        ///
+        /// To override the contents of this collection use [`set_records`](Self::set_records).
+        ///
+        /// <p>The records returned by the SQL statement.</p>
         pub fn records(mut self, input: impl Into<std::vec::Vec<crate::model::Field>>) -> Self {
             let mut v = self.records.unwrap_or_default();
             v.push(input.into());
             self.records = Some(v);
             self
         }
+        /// <p>The records returned by the SQL statement.</p>
         pub fn set_records(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::Field>>>,
@@ -106,12 +114,18 @@ pub mod execute_statement_output {
             self.records = input;
             self
         }
+        /// Appends an item to `column_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_column_metadata`](Self::set_column_metadata).
+        ///
+        /// <p>Metadata for the columns included in the results.</p>
         pub fn column_metadata(mut self, input: impl Into<crate::model::ColumnMetadata>) -> Self {
             let mut v = self.column_metadata.unwrap_or_default();
             v.push(input.into());
             self.column_metadata = Some(v);
             self
         }
+        /// <p>Metadata for the columns included in the results.</p>
         pub fn set_column_metadata(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
@@ -124,16 +138,37 @@ pub mod execute_statement_output {
             self.number_of_records_updated = Some(input);
             self
         }
+        /// <p>The number of records updated by the request.</p>
         pub fn set_number_of_records_updated(mut self, input: std::option::Option<i64>) -> Self {
             self.number_of_records_updated = input;
             self
         }
+        /// Appends an item to `generated_fields`.
+        ///
+        /// To override the contents of this collection use [`set_generated_fields`](Self::set_generated_fields).
+        ///
+        /// <p>Values for fields generated during the request.</p>
+        ///
+        /// <note>
+        /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL.
+        /// To get the values of generated fields, use the <code>RETURNING</code> clause. For
+        /// more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From
+        /// Modified Rows</a> in the PostgreSQL documentation.</p>
+        /// </note>
         pub fn generated_fields(mut self, input: impl Into<crate::model::Field>) -> Self {
             let mut v = self.generated_fields.unwrap_or_default();
             v.push(input.into());
             self.generated_fields = Some(v);
             self
         }
+        /// <p>Values for fields generated during the request.</p>
+        ///
+        /// <note>
+        /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL.
+        /// To get the values of generated fields, use the <code>RETURNING</code> clause. For
+        /// more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From
+        /// Modified Rows</a> in the PostgreSQL documentation.</p>
+        /// </note>
         pub fn set_generated_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Field>>,
@@ -184,6 +219,11 @@ pub mod execute_sql_output {
             std::option::Option<std::vec::Vec<crate::model::SqlStatementResult>>,
     }
     impl Builder {
+        /// Appends an item to `sql_statement_results`.
+        ///
+        /// To override the contents of this collection use [`set_sql_statement_results`](Self::set_sql_statement_results).
+        ///
+        /// <p>The results of the SQL statement or statements.</p>
         pub fn sql_statement_results(
             mut self,
             input: impl Into<crate::model::SqlStatementResult>,
@@ -193,6 +233,7 @@ pub mod execute_sql_output {
             self.sql_statement_results = Some(v);
             self
         }
+        /// <p>The results of the SQL statement or statements.</p>
         pub fn set_sql_statement_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SqlStatementResult>>,
@@ -243,6 +284,7 @@ pub mod commit_transaction_output {
             self.transaction_status = Some(input.into());
             self
         }
+        /// <p>The status of the commit operation.</p>
         pub fn set_transaction_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -294,6 +336,7 @@ pub mod begin_transaction_output {
             self.transaction_id = Some(input.into());
             self
         }
+        /// <p>The transaction ID of the transaction started by the call.</p>
         pub fn set_transaction_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -340,12 +383,18 @@ pub mod batch_execute_statement_output {
         pub(crate) update_results: std::option::Option<std::vec::Vec<crate::model::UpdateResult>>,
     }
     impl Builder {
+        /// Appends an item to `update_results`.
+        ///
+        /// To override the contents of this collection use [`set_update_results`](Self::set_update_results).
+        ///
+        /// <p>The execution results of each batch entry.</p>
         pub fn update_results(mut self, input: impl Into<crate::model::UpdateResult>) -> Self {
             let mut v = self.update_results.unwrap_or_default();
             v.push(input.into());
             self.update_results = Some(v);
             self
         }
+        /// <p>The execution results of each batch entry.</p>
         pub fn set_update_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpdateResult>>,

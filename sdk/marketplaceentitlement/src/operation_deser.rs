@@ -21,7 +21,7 @@ pub fn parse_get_entitlements_error(
                     let mut output =
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEntitlementsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEntitlementsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -38,7 +38,7 @@ pub fn parse_get_entitlements_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEntitlementsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEntitlementsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -55,7 +55,7 @@ pub fn parse_get_entitlements_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEntitlementsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEntitlementsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

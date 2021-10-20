@@ -21,6 +21,8 @@ pub mod create_lifecycle_policy_input {
             self.execution_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
+        /// the lifecycle policy.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -34,6 +36,8 @@ pub mod create_lifecycle_policy_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are
+        /// supported.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -43,6 +47,7 @@ pub mod create_lifecycle_policy_input {
             self.state = Some(input);
             self
         }
+        /// <p>The desired activation state of the lifecycle policy after creation.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::SettablePolicyStateValues>,
@@ -55,6 +60,7 @@ pub mod create_lifecycle_policy_input {
             self.policy_details = Some(input);
             self
         }
+        /// <p>The configuration details of the lifecycle policy.</p>
         pub fn set_policy_details(
             mut self,
             input: std::option::Option<crate::model::PolicyDetails>,
@@ -62,6 +68,11 @@ pub mod create_lifecycle_policy_input {
             self.policy_details = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to apply to the lifecycle policy during creation.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -72,6 +83,7 @@ pub mod create_lifecycle_policy_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags to apply to the lifecycle policy during creation.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -86,7 +98,7 @@ pub mod create_lifecycle_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateLifecyclePolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateLifecyclePolicyInput {
                 execution_role_arn: self.execution_role_arn,
@@ -109,16 +121,16 @@ impl CreateLifecyclePolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateLifecyclePolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateLifecyclePolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/policies").expect("formatting should succeed");
             Ok(())
         }
@@ -126,7 +138,7 @@ impl CreateLifecyclePolicyInput {
         fn update_http_builder(
             input: &crate::input::CreateLifecyclePolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -135,27 +147,29 @@ impl CreateLifecyclePolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateLifecyclePolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_lifecycle_policy(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -178,15 +192,15 @@ impl CreateLifecyclePolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateLifecyclePolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateLifecyclePolicy",
             "dlm",
         ));
@@ -195,10 +209,10 @@ impl CreateLifecyclePolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -226,6 +240,7 @@ pub mod delete_lifecycle_policy_input {
             self.policy_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the lifecycle policy.</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
@@ -235,7 +250,7 @@ pub mod delete_lifecycle_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteLifecyclePolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteLifecyclePolicyInput {
                 policy_id: self.policy_id,
@@ -254,27 +269,27 @@ impl DeleteLifecyclePolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteLifecyclePolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteLifecyclePolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.policy_id;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "policy_id",
                         details: "cannot be empty or unset",
                     })?;
-            let policy_id = smithy_http::label::fmt_string(input_1, false);
+            let policy_id = aws_smithy_http::label::fmt_string(input_1, false);
             if policy_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "policy_id",
                     details: "cannot be empty or unset",
                 });
@@ -287,7 +302,7 @@ impl DeleteLifecyclePolicyInput {
         fn update_http_builder(
             input: &crate::input::DeleteLifecyclePolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -296,23 +311,23 @@ impl DeleteLifecyclePolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteLifecyclePolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -335,15 +350,15 @@ impl DeleteLifecyclePolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteLifecyclePolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteLifecyclePolicy",
             "dlm",
         ));
@@ -352,10 +367,10 @@ impl DeleteLifecyclePolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -383,12 +398,18 @@ pub mod get_lifecycle_policies_input {
         pub(crate) tags_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `policy_ids`.
+        ///
+        /// To override the contents of this collection use [`set_policy_ids`](Self::set_policy_ids).
+        ///
+        /// <p>The identifiers of the data lifecycle policies.</p>
         pub fn policy_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_ids.unwrap_or_default();
             v.push(input.into());
             self.policy_ids = Some(v);
             self
         }
+        /// <p>The identifiers of the data lifecycle policies.</p>
         pub fn set_policy_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -401,6 +422,7 @@ pub mod get_lifecycle_policies_input {
             self.state = Some(input);
             self
         }
+        /// <p>The activation state.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::GettablePolicyStateValues>,
@@ -408,6 +430,11 @@ pub mod get_lifecycle_policies_input {
             self.state = input;
             self
         }
+        /// Appends an item to `resource_types`.
+        ///
+        /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
+        ///
+        /// <p>The resource type.</p>
         pub fn resource_types(
             mut self,
             input: impl Into<crate::model::ResourceTypeValues>,
@@ -417,6 +444,7 @@ pub mod get_lifecycle_policies_input {
             self.resource_types = Some(v);
             self
         }
+        /// <p>The resource type.</p>
         pub fn set_resource_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceTypeValues>>,
@@ -424,12 +452,20 @@ pub mod get_lifecycle_policies_input {
             self.resource_types = input;
             self
         }
+        /// Appends an item to `target_tags`.
+        ///
+        /// To override the contents of this collection use [`set_target_tags`](Self::set_target_tags).
+        ///
+        /// <p>The target tag for a policy.</p>
+        /// <p>Tags are strings in the format <code>key=value</code>.</p>
         pub fn target_tags(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_tags.unwrap_or_default();
             v.push(input.into());
             self.target_tags = Some(v);
             self
         }
+        /// <p>The target tag for a policy.</p>
+        /// <p>Tags are strings in the format <code>key=value</code>.</p>
         pub fn set_target_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -437,12 +473,22 @@ pub mod get_lifecycle_policies_input {
             self.target_tags = input;
             self
         }
+        /// Appends an item to `tags_to_add`.
+        ///
+        /// To override the contents of this collection use [`set_tags_to_add`](Self::set_tags_to_add).
+        ///
+        /// <p>The tags to add to objects created by the policy.</p>
+        /// <p>Tags are strings in the format <code>key=value</code>.</p>
+        /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
         pub fn tags_to_add(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tags_to_add.unwrap_or_default();
             v.push(input.into());
             self.tags_to_add = Some(v);
             self
         }
+        /// <p>The tags to add to objects created by the policy.</p>
+        /// <p>Tags are strings in the format <code>key=value</code>.</p>
+        /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
         pub fn set_tags_to_add(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -455,7 +501,7 @@ pub mod get_lifecycle_policies_input {
             self,
         ) -> std::result::Result<
             crate::input::GetLifecyclePoliciesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetLifecyclePoliciesInput {
                 policy_ids: self.policy_ids,
@@ -478,42 +524,45 @@ impl GetLifecyclePoliciesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetLifecyclePolicies,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetLifecyclePoliciesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/policies").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::GetLifecyclePoliciesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_2) = &_input.policy_ids {
                 for inner_3 in inner_2 {
-                    query.push_kv("policyIds", &smithy_http::query::fmt_string(&inner_3));
+                    query.push_kv("policyIds", &aws_smithy_http::query::fmt_string(&inner_3));
                 }
             }
             if let Some(inner_4) = &_input.state {
-                query.push_kv("state", &smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("state", &aws_smithy_http::query::fmt_string(&inner_4));
             }
             if let Some(inner_5) = &_input.resource_types {
                 for inner_6 in inner_5 {
-                    query.push_kv("resourceTypes", &smithy_http::query::fmt_string(&inner_6));
+                    query.push_kv(
+                        "resourceTypes",
+                        &aws_smithy_http::query::fmt_string(&inner_6),
+                    );
                 }
             }
             if let Some(inner_7) = &_input.target_tags {
                 for inner_8 in inner_7 {
-                    query.push_kv("targetTags", &smithy_http::query::fmt_string(&inner_8));
+                    query.push_kv("targetTags", &aws_smithy_http::query::fmt_string(&inner_8));
                 }
             }
             if let Some(inner_9) = &_input.tags_to_add {
                 for inner_10 in inner_9 {
-                    query.push_kv("tagsToAdd", &smithy_http::query::fmt_string(&inner_10));
+                    query.push_kv("tagsToAdd", &aws_smithy_http::query::fmt_string(&inner_10));
                 }
             }
         }
@@ -521,7 +570,7 @@ impl GetLifecyclePoliciesInput {
         fn update_http_builder(
             input: &crate::input::GetLifecyclePoliciesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -531,23 +580,23 @@ impl GetLifecyclePoliciesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetLifecyclePoliciesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -570,15 +619,15 @@ impl GetLifecyclePoliciesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetLifecyclePolicies::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetLifecyclePolicies",
             "dlm",
         ));
@@ -587,10 +636,10 @@ impl GetLifecyclePoliciesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -618,6 +667,7 @@ pub mod get_lifecycle_policy_input {
             self.policy_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the lifecycle policy.</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
@@ -627,7 +677,7 @@ pub mod get_lifecycle_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::GetLifecyclePolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetLifecyclePolicyInput {
                 policy_id: self.policy_id,
@@ -646,27 +696,27 @@ impl GetLifecyclePolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetLifecyclePolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetLifecyclePolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_11 = &_input.policy_id;
             let input_11 =
                 input_11
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "policy_id",
                         details: "cannot be empty or unset",
                     })?;
-            let policy_id = smithy_http::label::fmt_string(input_11, false);
+            let policy_id = aws_smithy_http::label::fmt_string(input_11, false);
             if policy_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "policy_id",
                     details: "cannot be empty or unset",
                 });
@@ -679,7 +729,7 @@ impl GetLifecyclePolicyInput {
         fn update_http_builder(
             input: &crate::input::GetLifecyclePolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -688,23 +738,23 @@ impl GetLifecyclePolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetLifecyclePolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -727,15 +777,15 @@ impl GetLifecyclePolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetLifecyclePolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetLifecyclePolicy",
             "dlm",
         ));
@@ -744,10 +794,10 @@ impl GetLifecyclePolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -775,6 +825,7 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -784,7 +835,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -803,27 +854,27 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_12 = &_input.resource_arn;
             let input_12 =
                 input_12
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_12, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_12, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -836,7 +887,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -845,23 +896,23 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -884,15 +935,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "dlm",
         ));
@@ -901,10 +952,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -935,10 +986,16 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -949,6 +1006,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>One or more tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -961,8 +1019,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -981,27 +1041,27 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_13 = &_input.resource_arn;
             let input_13 =
                 input_13
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_13, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_13, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -1014,7 +1074,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1023,24 +1083,26 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1063,22 +1125,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new("TagResource", "dlm"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "dlm",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1107,16 +1174,23 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The tag keys.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>The tag keys.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1127,8 +1201,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -1147,27 +1223,27 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_14 = &_input.resource_arn;
             let input_14 =
                 input_14
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_14, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_14, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -1177,10 +1253,10 @@ impl UntagResourceInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_15) = &_input.tag_keys {
                 for inner_16 in inner_15 {
-                    query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_16));
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_16));
                 }
             }
         }
@@ -1188,7 +1264,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1198,23 +1274,23 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1237,25 +1313,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "dlm",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "dlm",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1287,6 +1365,7 @@ pub mod update_lifecycle_policy_input {
             self.policy_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the lifecycle policy.</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
@@ -1297,6 +1376,8 @@ pub mod update_lifecycle_policy_input {
             self.execution_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
+        /// the lifecycle policy.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1309,6 +1390,7 @@ pub mod update_lifecycle_policy_input {
             self.state = Some(input);
             self
         }
+        /// <p>The desired activation state of the lifecycle policy after creation.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::SettablePolicyStateValues>,
@@ -1321,6 +1403,7 @@ pub mod update_lifecycle_policy_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the lifecycle policy.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1331,6 +1414,8 @@ pub mod update_lifecycle_policy_input {
             self.policy_details = Some(input);
             self
         }
+        /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the
+        /// resource type.</p>
         pub fn set_policy_details(
             mut self,
             input: std::option::Option<crate::model::PolicyDetails>,
@@ -1343,7 +1428,7 @@ pub mod update_lifecycle_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateLifecyclePolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateLifecyclePolicyInput {
                 policy_id: self.policy_id,
@@ -1366,27 +1451,27 @@ impl UpdateLifecyclePolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateLifecyclePolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateLifecyclePolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_17 = &_input.policy_id;
             let input_17 =
                 input_17
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "policy_id",
                         details: "cannot be empty or unset",
                     })?;
-            let policy_id = smithy_http::label::fmt_string(input_17, false);
+            let policy_id = aws_smithy_http::label::fmt_string(input_17, false);
             if policy_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "policy_id",
                     details: "cannot be empty or unset",
                 });
@@ -1399,7 +1484,7 @@ impl UpdateLifecyclePolicyInput {
         fn update_http_builder(
             input: &crate::input::UpdateLifecyclePolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1408,27 +1493,29 @@ impl UpdateLifecyclePolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateLifecyclePolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_lifecycle_policy(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1451,15 +1538,15 @@ impl UpdateLifecyclePolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateLifecyclePolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateLifecyclePolicy",
             "dlm",
         ));
@@ -1468,10 +1555,10 @@ impl UpdateLifecyclePolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1485,6 +1572,7 @@ impl UpdateLifecyclePolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLifecyclePolicyInput {
@@ -1513,6 +1601,7 @@ impl std::fmt::Debug for UpdateLifecyclePolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -1530,6 +1619,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -1548,6 +1638,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -1562,6 +1653,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLifecyclePolicyInput {
@@ -1576,6 +1668,7 @@ impl std::fmt::Debug for GetLifecyclePolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLifecyclePoliciesInput {
@@ -1605,6 +1698,7 @@ impl std::fmt::Debug for GetLifecyclePoliciesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLifecyclePolicyInput {
@@ -1619,6 +1713,7 @@ impl std::fmt::Debug for DeleteLifecyclePolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLifecyclePolicyInput {

@@ -67,6 +67,7 @@ pub mod pipeline_activity {
             self.channel = Some(input);
             self
         }
+        /// <p>Determines the source of the messages to be processed.</p>
         pub fn set_channel(
             mut self,
             input: std::option::Option<crate::model::ChannelActivity>,
@@ -79,6 +80,7 @@ pub mod pipeline_activity {
             self.lambda = Some(input);
             self
         }
+        /// <p>Runs a Lambda function to modify the message.</p>
         pub fn set_lambda(
             mut self,
             input: std::option::Option<crate::model::LambdaActivity>,
@@ -91,6 +93,7 @@ pub mod pipeline_activity {
             self.datastore = Some(input);
             self
         }
+        /// <p>Specifies where to store the processed message data.</p>
         pub fn set_datastore(
             mut self,
             input: std::option::Option<crate::model::DatastoreActivity>,
@@ -103,6 +106,7 @@ pub mod pipeline_activity {
             self.add_attributes = Some(input);
             self
         }
+        /// <p>Adds other attributes based on existing attributes in the message.</p>
         pub fn set_add_attributes(
             mut self,
             input: std::option::Option<crate::model::AddAttributesActivity>,
@@ -115,6 +119,7 @@ pub mod pipeline_activity {
             self.remove_attributes = Some(input);
             self
         }
+        /// <p>Removes attributes from a message.</p>
         pub fn set_remove_attributes(
             mut self,
             input: std::option::Option<crate::model::RemoveAttributesActivity>,
@@ -128,6 +133,8 @@ pub mod pipeline_activity {
             self.select_attributes = Some(input);
             self
         }
+        /// <p>Used to create a new message using only the specified attributes from the original
+        /// message. </p>
         pub fn set_select_attributes(
             mut self,
             input: std::option::Option<crate::model::SelectAttributesActivity>,
@@ -140,6 +147,7 @@ pub mod pipeline_activity {
             self.filter = Some(input);
             self
         }
+        /// <p>Filters a message based on its attributes.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::FilterActivity>,
@@ -153,6 +161,8 @@ pub mod pipeline_activity {
             self.math = Some(input);
             self
         }
+        /// <p>Computes an arithmetic expression using the message's attributes and adds it to the
+        /// message.</p>
         pub fn set_math(mut self, input: std::option::Option<crate::model::MathActivity>) -> Self {
             self.math = input;
             self
@@ -165,6 +175,7 @@ pub mod pipeline_activity {
             self.device_registry_enrich = Some(input);
             self
         }
+        /// <p>Adds data from the IoT device registry to your message.</p>
         pub fn set_device_registry_enrich(
             mut self,
             input: std::option::Option<crate::model::DeviceRegistryEnrichActivity>,
@@ -180,6 +191,7 @@ pub mod pipeline_activity {
             self.device_shadow_enrich = Some(input);
             self
         }
+        /// <p>Adds information from the IoT Device Shadow service to a message.</p>
         pub fn set_device_shadow_enrich(
             mut self,
             input: std::option::Option<crate::model::DeviceShadowEnrichActivity>,
@@ -256,6 +268,7 @@ pub mod device_shadow_enrich_activity {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -265,6 +278,7 @@ pub mod device_shadow_enrich_activity {
             self.attribute = Some(input.into());
             self
         }
+        /// <p>The name of the attribute that is added to the message.</p>
         pub fn set_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.attribute = input;
             self
@@ -274,6 +288,7 @@ pub mod device_shadow_enrich_activity {
             self.thing_name = Some(input.into());
             self
         }
+        /// <p>The name of the IoT device whose shadow information is added to the message.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_name = input;
             self
@@ -283,6 +298,7 @@ pub mod device_shadow_enrich_activity {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the role that allows access to the device's shadow.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -292,6 +308,7 @@ pub mod device_shadow_enrich_activity {
             self.next = Some(input.into());
             self
         }
+        /// <p>The next activity in the pipeline.</p>
         pub fn set_next(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next = input;
             self
@@ -359,6 +376,7 @@ pub mod device_registry_enrich_activity {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the <code>deviceRegistryEnrich</code> activity.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -368,6 +386,7 @@ pub mod device_registry_enrich_activity {
             self.attribute = Some(input.into());
             self
         }
+        /// <p>The name of the attribute that is added to the message.</p>
         pub fn set_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.attribute = input;
             self
@@ -377,6 +396,7 @@ pub mod device_registry_enrich_activity {
             self.thing_name = Some(input.into());
             self
         }
+        /// <p>The name of the IoT device whose registry information is added to the message.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_name = input;
             self
@@ -386,6 +406,7 @@ pub mod device_registry_enrich_activity {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the role that allows access to the device's registry information.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -395,6 +416,7 @@ pub mod device_registry_enrich_activity {
             self.next = Some(input.into());
             self
         }
+        /// <p>The next activity in the pipeline.</p>
         pub fn set_next(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next = input;
             self
@@ -459,6 +481,7 @@ pub mod math_activity {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the math activity.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -468,6 +491,7 @@ pub mod math_activity {
             self.attribute = Some(input.into());
             self
         }
+        /// <p>The name of the attribute that contains the result of the math operation.</p>
         pub fn set_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.attribute = input;
             self
@@ -478,6 +502,8 @@ pub mod math_activity {
             self.math = Some(input.into());
             self
         }
+        /// <p>An expression that uses one or more existing attributes and must return an integer
+        /// value.</p>
         pub fn set_math(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.math = input;
             self
@@ -487,6 +513,7 @@ pub mod math_activity {
             self.next = Some(input.into());
             self
         }
+        /// <p>The next activity in the pipeline.</p>
         pub fn set_next(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next = input;
             self
@@ -546,6 +573,7 @@ pub mod filter_activity {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the filter activity.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -556,6 +584,8 @@ pub mod filter_activity {
             self.filter = Some(input.into());
             self
         }
+        /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value.
+        /// Messages that satisfy the condition are passed to the next activity. </p>
         pub fn set_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter = input;
             self
@@ -565,6 +595,7 @@ pub mod filter_activity {
             self.next = Some(input.into());
             self
         }
+        /// <p>The next activity in the pipeline.</p>
         pub fn set_next(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next = input;
             self
@@ -623,16 +654,23 @@ pub mod select_attributes_activity {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the <code>selectAttributes</code> activity.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>A list of the attributes to select from the message.</p>
         pub fn attributes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
             v.push(input.into());
             self.attributes = Some(v);
             self
         }
+        /// <p>A list of the attributes to select from the message.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -645,6 +683,7 @@ pub mod select_attributes_activity {
             self.next = Some(input.into());
             self
         }
+        /// <p>The next activity in the pipeline.</p>
         pub fn set_next(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next = input;
             self
@@ -702,16 +741,23 @@ pub mod remove_attributes_activity {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the <code>removeAttributes</code> activity.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>A list of 1-50 attributes to remove from the message.</p>
         pub fn attributes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
             v.push(input.into());
             self.attributes = Some(v);
             self
         }
+        /// <p>A list of 1-50 attributes to remove from the message.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -724,6 +770,7 @@ pub mod remove_attributes_activity {
             self.next = Some(input.into());
             self
         }
+        /// <p>The next activity in the pipeline.</p>
         pub fn set_next(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next = input;
             self
@@ -789,10 +836,21 @@ pub mod add_attributes_activity {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the addAttributes activity.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to
+        /// a new attribute.</p>
+        /// <note>
+        /// <p>The existing attributes remain in the message, so if you want to remove the originals,
+        /// use <code>RemoveAttributeActivity</code>.</p>
+        /// </note>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -803,6 +861,12 @@ pub mod add_attributes_activity {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to
+        /// a new attribute.</p>
+        /// <note>
+        /// <p>The existing attributes remain in the message, so if you want to remove the originals,
+        /// use <code>RemoveAttributeActivity</code>.</p>
+        /// </note>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -817,6 +881,7 @@ pub mod add_attributes_activity {
             self.next = Some(input.into());
             self
         }
+        /// <p>The next activity in the pipeline.</p>
         pub fn set_next(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next = input;
             self
@@ -870,6 +935,7 @@ pub mod datastore_activity {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the datastore activity.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -879,6 +945,7 @@ pub mod datastore_activity {
             self.datastore_name = Some(input.into());
             self
         }
+        /// <p>The name of the data store where processed messages are stored.</p>
         pub fn set_datastore_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -944,6 +1011,7 @@ pub mod lambda_activity {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the lambda activity.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -953,6 +1021,7 @@ pub mod lambda_activity {
             self.lambda_name = Some(input.into());
             self
         }
+        /// <p>The name of the Lambda function that is run on the message.</p>
         pub fn set_lambda_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lambda_name = input;
             self
@@ -964,6 +1033,9 @@ pub mod lambda_activity {
             self.batch_size = Some(input);
             self
         }
+        /// <p>The number of messages passed to the Lambda function for processing.</p>
+        /// <p>The Lambda function must be able to process all of these messages within five minutes,
+        /// which is the maximum timeout duration for Lambda functions.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
             self.batch_size = input;
             self
@@ -973,6 +1045,7 @@ pub mod lambda_activity {
             self.next = Some(input.into());
             self
         }
+        /// <p>The next activity in the pipeline.</p>
         pub fn set_next(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next = input;
             self
@@ -1031,6 +1104,7 @@ pub mod channel_activity {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the channel activity.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1040,6 +1114,7 @@ pub mod channel_activity {
             self.channel_name = Some(input.into());
             self
         }
+        /// <p>The name of the channel from which the messages are processed.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self
@@ -1049,6 +1124,7 @@ pub mod channel_activity {
             self.next = Some(input.into());
             self
         }
+        /// <p>The next activity in the pipeline.</p>
         pub fn set_next(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next = input;
             self
@@ -1104,6 +1180,7 @@ pub mod file_format_configuration {
             self.json_configuration = Some(input);
             self
         }
+        /// <p>Contains the configuration information of the JSON format.</p>
         pub fn set_json_configuration(
             mut self,
             input: std::option::Option<crate::model::JsonConfiguration>,
@@ -1116,6 +1193,7 @@ pub mod file_format_configuration {
             self.parquet_configuration = Some(input);
             self
         }
+        /// <p>Contains the configuration information of the Parquet format.</p>
         pub fn set_parquet_configuration(
             mut self,
             input: std::option::Option<crate::model::ParquetConfiguration>,
@@ -1167,6 +1245,7 @@ pub mod parquet_configuration {
             self.schema_definition = Some(input);
             self
         }
+        /// <p>Information needed to define a schema.</p>
         pub fn set_schema_definition(
             mut self,
             input: std::option::Option<crate::model::SchemaDefinition>,
@@ -1214,12 +1293,22 @@ pub mod schema_definition {
         pub(crate) columns: std::option::Option<std::vec::Vec<crate::model::Column>>,
     }
     impl Builder {
+        /// Appends an item to `columns`.
+        ///
+        /// To override the contents of this collection use [`set_columns`](Self::set_columns).
+        ///
+        /// <p>Specifies one or more columns that store your data.</p>
+        /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested
+        /// types.</p>
         pub fn columns(mut self, input: impl Into<crate::model::Column>) -> Self {
             let mut v = self.columns.unwrap_or_default();
             v.push(input.into());
             self.columns = Some(v);
             self
         }
+        /// <p>Specifies one or more columns that store your data.</p>
+        /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested
+        /// types.</p>
         pub fn set_columns(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Column>>,
@@ -1275,6 +1364,7 @@ pub mod column {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the column.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1285,6 +1375,8 @@ pub mod column {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of data. For more information about the supported data types, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a>
+        /// in the <i>Glue Developer Guide</i>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -1335,6 +1427,7 @@ impl JsonConfiguration {
     }
 }
 
+/// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum DatastoreStorage {
@@ -1346,6 +1439,8 @@ pub enum DatastoreStorage {
     ServiceManagedS3(crate::model::ServiceManagedDatastoreS3Storage),
 }
 impl DatastoreStorage {
+    /// Tries to convert the enum instance into its [`DatastoreStorage`](crate::model::DatastoreStorage) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_customer_managed_s3(
         &self,
     ) -> std::result::Result<&crate::model::CustomerManagedDatastoreS3Storage, &Self> {
@@ -1355,9 +1450,12 @@ impl DatastoreStorage {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `DatastoreStorage` variant.
     pub fn is_customer_managed_s3(&self) -> bool {
         self.as_customer_managed_s3().is_ok()
     }
+    /// Tries to convert the enum instance into its [`DatastoreStorage`](crate::model::DatastoreStorage) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_iot_site_wise_multi_layer_storage(
         &self,
     ) -> std::result::Result<&crate::model::DatastoreIotSiteWiseMultiLayerStorage, &Self> {
@@ -1367,9 +1465,12 @@ impl DatastoreStorage {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `DatastoreStorage` variant.
     pub fn is_iot_site_wise_multi_layer_storage(&self) -> bool {
         self.as_iot_site_wise_multi_layer_storage().is_ok()
     }
+    /// Tries to convert the enum instance into its [`DatastoreStorage`](crate::model::DatastoreStorage) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_service_managed_s3(
         &self,
     ) -> std::result::Result<&crate::model::ServiceManagedDatastoreS3Storage, &Self> {
@@ -1379,6 +1480,7 @@ impl DatastoreStorage {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `DatastoreStorage` variant.
     pub fn is_service_managed_s3(&self) -> bool {
         self.as_service_managed_s3().is_ok()
     }
@@ -1420,6 +1522,7 @@ pub mod datastore_iot_site_wise_multi_layer_storage {
             self.customer_managed_s3_storage = Some(input);
             self
         }
+        /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. </p>
         pub fn set_customer_managed_s3_storage(
             mut self,
             input: std::option::Option<crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage>,
@@ -1474,6 +1577,7 @@ pub mod iot_site_wise_customer_managed_datastore_s3_storage {
             self.bucket = Some(input.into());
             self
         }
+        /// <p> The name of the Amazon S3 bucket where your data is stored. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -1483,6 +1587,7 @@ pub mod iot_site_wise_customer_managed_datastore_s3_storage {
             self.key_prefix = Some(input.into());
             self
         }
+        /// <p> (Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). </p>
         pub fn set_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_prefix = input;
             self
@@ -1539,6 +1644,7 @@ pub mod customer_managed_datastore_s3_storage {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon S3 bucket where your data is stored.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -1548,6 +1654,7 @@ pub mod customer_managed_datastore_s3_storage {
             self.key_prefix = Some(input.into());
             self
         }
+        /// <p>(Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
         pub fn set_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_prefix = input;
             self
@@ -1557,6 +1664,7 @@ pub mod customer_managed_datastore_s3_storage {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1641,6 +1749,7 @@ pub mod retention_period {
             self.unlimited = Some(input);
             self
         }
+        /// <p>If true, message data is kept indefinitely.</p>
         pub fn set_unlimited(mut self, input: std::option::Option<bool>) -> Self {
             self.unlimited = input;
             self
@@ -1651,6 +1760,8 @@ pub mod retention_period {
             self.number_of_days = Some(input);
             self
         }
+        /// <p>The number of days that message data is kept. The <code>unlimited</code> parameter must be
+        /// false.</p>
         pub fn set_number_of_days(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_days = input;
             self
@@ -1704,6 +1815,7 @@ pub mod late_data_rule {
             self.rule_name = Some(input.into());
             self
         }
+        /// <p>The name of the late data rule.</p>
         pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_name = input;
             self
@@ -1716,6 +1828,7 @@ pub mod late_data_rule {
             self.rule_configuration = Some(input);
             self
         }
+        /// <p>The information needed to configure the late data rule.</p>
         pub fn set_rule_configuration(
             mut self,
             input: std::option::Option<crate::model::LateDataRuleConfiguration>,
@@ -1775,6 +1888,7 @@ pub mod late_data_rule_configuration {
             self.delta_time_session_window_configuration = Some(input);
             self
         }
+        /// <p>The information needed to configure a delta time session window.</p>
         pub fn set_delta_time_session_window_configuration(
             mut self,
             input: std::option::Option<crate::model::DeltaTimeSessionWindowConfiguration>,
@@ -1843,6 +1957,11 @@ pub mod delta_time_session_window_configuration {
             self.timeout_in_minutes = Some(input);
             self
         }
+        /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT Analytics can batch up late
+        /// data notifications that have been generated since the last execution. IoT Analytics sends one batch of
+        /// notifications to Amazon CloudWatch Events at one time.</p>
+        /// <p>For more information about how to write a timestamp expression, see <a href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time Functions and
+        /// Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
         pub fn set_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_in_minutes = input;
             self
@@ -1895,6 +2014,7 @@ pub mod versioning_configuration {
             self.unlimited = Some(input);
             self
         }
+        /// <p>If true, unlimited versions of dataset contents are kept.</p>
         pub fn set_unlimited(mut self, input: std::option::Option<bool>) -> Self {
             self.unlimited = input;
             self
@@ -1905,6 +2025,8 @@ pub mod versioning_configuration {
             self.max_versions = Some(input);
             self
         }
+        /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must
+        /// be <code>false</code>.</p>
         pub fn set_max_versions(mut self, input: std::option::Option<i32>) -> Self {
             self.max_versions = input;
             self
@@ -1959,6 +2081,7 @@ pub mod dataset_content_delivery_rule {
             self.entry_name = Some(input.into());
             self
         }
+        /// <p>The name of the dataset content delivery rules entry.</p>
         pub fn set_entry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entry_name = input;
             self
@@ -1971,6 +2094,7 @@ pub mod dataset_content_delivery_rule {
             self.destination = Some(input);
             self
         }
+        /// <p>The destination to which dataset contents are delivered.</p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::DatasetContentDeliveryDestination>,
@@ -2038,6 +2162,7 @@ pub mod dataset_content_delivery_destination {
             self.iot_events_destination_configuration = Some(input);
             self
         }
+        /// <p>Configuration information for delivery of dataset contents to IoT Events.</p>
         pub fn set_iot_events_destination_configuration(
             mut self,
             input: std::option::Option<crate::model::IotEventsDestinationConfiguration>,
@@ -2053,6 +2178,7 @@ pub mod dataset_content_delivery_destination {
             self.s3_destination_configuration = Some(input);
             self
         }
+        /// <p>Configuration information for delivery of dataset contents to Amazon S3.</p>
         pub fn set_s3_destination_configuration(
             mut self,
             input: std::option::Option<crate::model::S3DestinationConfiguration>,
@@ -2143,6 +2269,7 @@ pub mod s3_destination_configuration {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The name of the S3 bucket to which dataset contents are delivered.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -2177,6 +2304,32 @@ pub mod s3_destination_configuration {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key of the dataset contents object in an S3 bucket. Each object has a key that is a
+        /// unique identifier. Each object has exactly one key.</p>
+        /// <p>You can create a unique key with the following options:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL
+        /// query run.</p>
+        /// </li>
+        /// <li>
+        /// <p>Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a
+        /// dataset content.</p>
+        /// </li>
+        /// <li>
+        /// <p>Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset
+        /// content.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The following example creates a unique key for a CSV file:
+        /// <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code>
+        /// </p>
+        /// <note>
+        /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might
+        /// get duplicate keys. For example, you might have two dataset contents with the same
+        /// <code>scheduleTime</code> but different <code>versionId</code>s. This means that one
+        /// dataset content overwrites the other. </p>
+        /// </note>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -2187,6 +2340,8 @@ pub mod s3_destination_configuration {
             self.glue_configuration = Some(input);
             self
         }
+        /// <p>Configuration information for coordination with Glue, a fully managed extract, transform
+        /// and load (ETL) service.</p>
         pub fn set_glue_configuration(
             mut self,
             input: std::option::Option<crate::model::GlueConfiguration>,
@@ -2200,6 +2355,8 @@ pub mod s3_destination_configuration {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue
+        /// resources.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -2260,6 +2417,9 @@ pub mod glue_configuration {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table in your Glue Data Catalog that is used to perform the ETL
+        /// operations. An Glue Data Catalog table contains partitioned data and descriptions of data
+        /// sources and targets.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -2270,6 +2430,8 @@ pub mod glue_configuration {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>The name of the database in your Glue Data Catalog in which the table is located. An
+        /// Glue Data Catalog database contains metadata tables.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2326,6 +2488,7 @@ pub mod iot_events_destination_configuration {
             self.input_name = Some(input.into());
             self
         }
+        /// <p>The name of the IoT Events input to which dataset contents are delivered.</p>
         pub fn set_input_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_name = input;
             self
@@ -2336,6 +2499,8 @@ pub mod iot_events_destination_configuration {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events
+        /// input.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -2390,6 +2555,7 @@ pub mod dataset_trigger {
             self.schedule = Some(input);
             self
         }
+        /// <p>The Schedule when the trigger is initiated.</p>
         pub fn set_schedule(mut self, input: std::option::Option<crate::model::Schedule>) -> Self {
             self.schedule = input;
             self
@@ -2400,6 +2566,8 @@ pub mod dataset_trigger {
             self.dataset = Some(input);
             self
         }
+        /// <p>The dataset whose content creation triggers the creation of this dataset's
+        /// contents.</p>
         pub fn set_dataset(
             mut self,
             input: std::option::Option<crate::model::TriggeringDataset>,
@@ -2454,6 +2622,8 @@ pub mod triggering_dataset {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the dataset whose content generation triggers the new dataset content
+        /// generation.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2503,6 +2673,9 @@ pub mod schedule {
             self.expression = Some(input.into());
             self
         }
+        /// <p>The expression that defines when to trigger an update. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+        /// Expressions for Rules</a> in the <i>Amazon CloudWatch Events User
+        /// Guide</i>.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expression = input;
             self
@@ -2562,6 +2735,7 @@ pub mod dataset_action {
             self.action_name = Some(input.into());
             self
         }
+        /// <p>The name of the dataset action by which dataset contents are automatically created.</p>
         pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_name = input;
             self
@@ -2572,6 +2746,8 @@ pub mod dataset_action {
             self.query_action = Some(input);
             self
         }
+        /// <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically
+        /// create dataset contents.</p>
         pub fn set_query_action(
             mut self,
             input: std::option::Option<crate::model::SqlQueryDatasetAction>,
@@ -2586,6 +2762,9 @@ pub mod dataset_action {
             self.container_action = Some(input);
             self
         }
+        /// <p>Information that allows the system to run a containerized application to create the
+        /// dataset contents. The application must be in a Docker container along with any required
+        /// support libraries.</p>
         pub fn set_container_action(
             mut self,
             input: std::option::Option<crate::model::ContainerDatasetAction>,
@@ -2658,6 +2837,8 @@ pub mod container_dataset_action {
             self.image = Some(input.into());
             self
         }
+        /// <p>The ARN of the Docker container stored in your account. The Docker container contains an
+        /// application and required support libraries and is used to generate dataset contents.</p>
         pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image = input;
             self
@@ -2669,6 +2850,9 @@ pub mod container_dataset_action {
             self.execution_role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the role that gives permission to the system to access required resources to
+        /// run the <code>containerAction</code>. This includes, at minimum, permission to retrieve the
+        /// dataset contents that are the input to the containerized application.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2684,6 +2868,7 @@ pub mod container_dataset_action {
             self.resource_configuration = Some(input);
             self
         }
+        /// <p>Configuration of the resource that executes the <code>containerAction</code>.</p>
         pub fn set_resource_configuration(
             mut self,
             input: std::option::Option<crate::model::ResourceConfiguration>,
@@ -2691,12 +2876,24 @@ pub mod container_dataset_action {
             self.resource_configuration = input;
             self
         }
+        /// Appends an item to `variables`.
+        ///
+        /// To override the contents of this collection use [`set_variables`](Self::set_variables).
+        ///
+        /// <p>The values of variables used in the context of the execution of the containerized
+        /// application (basically, parameters passed to the application). Each variable must have a name
+        /// and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>,
+        /// or <code>outputFileUriValue</code>.</p>
         pub fn variables(mut self, input: impl Into<crate::model::Variable>) -> Self {
             let mut v = self.variables.unwrap_or_default();
             v.push(input.into());
             self.variables = Some(v);
             self
         }
+        /// <p>The values of variables used in the context of the execution of the containerized
+        /// application (basically, parameters passed to the application). Each variable must have a name
+        /// and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>,
+        /// or <code>outputFileUriValue</code>.</p>
         pub fn set_variables(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Variable>>,
@@ -2773,6 +2970,7 @@ pub mod variable {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the variable.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2782,6 +2980,7 @@ pub mod variable {
             self.string_value = Some(input.into());
             self
         }
+        /// <p>The value of the variable as a string.</p>
         pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.string_value = input;
             self
@@ -2791,6 +2990,7 @@ pub mod variable {
             self.double_value = Some(input);
             self
         }
+        /// <p>The value of the variable as a double (numeric).</p>
         pub fn set_double_value(mut self, input: std::option::Option<f64>) -> Self {
             self.double_value = input;
             self
@@ -2803,6 +3003,7 @@ pub mod variable {
             self.dataset_content_version_value = Some(input);
             self
         }
+        /// <p>The value of the variable as a structure that specifies a dataset content version.</p>
         pub fn set_dataset_content_version_value(
             mut self,
             input: std::option::Option<crate::model::DatasetContentVersionValue>,
@@ -2815,6 +3016,7 @@ pub mod variable {
             self.output_file_uri_value = Some(input);
             self
         }
+        /// <p>The value of the variable as a structure that specifies an output file URI.</p>
         pub fn set_output_file_uri_value(
             mut self,
             input: std::option::Option<crate::model::OutputFileUriValue>,
@@ -2871,6 +3073,8 @@ pub mod output_file_uri_value {
             self.file_name = Some(input.into());
             self
         }
+        /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an
+        /// S3 bucket.</p>
         pub fn set_file_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_name = input;
             self
@@ -2920,6 +3124,8 @@ pub mod dataset_content_version_value {
             self.dataset_name = Some(input.into());
             self
         }
+        /// <p>The name of the dataset whose latest contents are used as input to the notebook or
+        /// application.</p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_name = input;
             self
@@ -2976,6 +3182,9 @@ pub mod resource_configuration {
             self.compute_type = Some(input);
             self
         }
+        /// <p>The type of the compute resource used to execute the <code>containerAction</code>.
+        /// Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8,
+        /// memory=32 GiB).</p>
         pub fn set_compute_type(
             mut self,
             input: std::option::Option<crate::model::ComputeType>,
@@ -2989,6 +3198,8 @@ pub mod resource_configuration {
             self.volume_size_in_gb = Some(input);
             self
         }
+        /// <p>The size, in GB, of the persistent storage available to the resource instance used to
+        /// execute the <code>containerAction</code> (min: 1, max: 50).</p>
         pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.volume_size_in_gb = input;
             self
@@ -3009,6 +3220,7 @@ impl ResourceConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3020,7 +3232,9 @@ impl ResourceConfiguration {
     std::hash::Hash,
 )]
 pub enum ComputeType {
+    #[allow(missing_docs)] // documentation missing in model
     Acu1,
+    #[allow(missing_docs)] // documentation missing in model
     Acu2,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3042,6 +3256,7 @@ impl std::str::FromStr for ComputeType {
     }
 }
 impl ComputeType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComputeType::Acu1 => "ACU_1",
@@ -3049,6 +3264,7 @@ impl ComputeType {
             ComputeType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACU_1", "ACU_2"]
     }
@@ -3091,16 +3307,23 @@ pub mod sql_query_dataset_action {
             self.sql_query = Some(input.into());
             self
         }
+        /// <p>A SQL query string.</p>
         pub fn set_sql_query(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sql_query = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Prefilters applied to message data.</p>
         pub fn filters(mut self, input: impl Into<crate::model::QueryFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Prefilters applied to message data.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QueryFilter>>,
@@ -3155,6 +3378,8 @@ pub mod query_filter {
             self.delta_time = Some(input);
             self
         }
+        /// <p>Used to limit data to that which has arrived since the last execution of the
+        /// action.</p>
         pub fn set_delta_time(
             mut self,
             input: std::option::Option<crate::model::DeltaTime>,
@@ -3224,6 +3449,13 @@ pub mod delta_time {
             self.offset_seconds = Some(input);
             self
         }
+        /// <p>The number of seconds of estimated in-flight lag time of message data. When you create
+        /// dataset contents using message data from a specified timeframe, some message data might still
+        /// be in flight when processing begins, and so do not arrive in time to be processed. Use this
+        /// field to make allowances for the in flight time of your message data, so that data not
+        /// processed from a previous timeframe is included with the next timeframe. Otherwise, missed
+        /// message data would be excluded from processing during the next timeframe too, because its
+        /// timestamp places it within the previous timeframe.</p>
         pub fn set_offset_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.offset_seconds = input;
             self
@@ -3235,6 +3467,9 @@ pub mod delta_time {
             self.time_expression = Some(input.into());
             self
         }
+        /// <p>An expression by which the time of the message data might be determined. This can be the
+        /// name of a timestamp field or a SQL expression that is used to derive the time the message data
+        /// was generated.</p>
         pub fn set_time_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3301,6 +3536,8 @@ pub mod channel_storage {
             self.service_managed_s3 = Some(input);
             self
         }
+        /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice
+        /// of S3 storage after the data store is created.</p>
         pub fn set_service_managed_s3(
             mut self,
             input: std::option::Option<crate::model::ServiceManagedChannelS3Storage>,
@@ -3318,6 +3555,9 @@ pub mod channel_storage {
             self.customer_managed_s3 = Some(input);
             self
         }
+        /// <p>Used to store channel data in an S3 bucket that you manage. If customer managed storage is
+        /// selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice
+        /// of S3 storage after the data store is created.</p>
         pub fn set_customer_managed_s3(
             mut self,
             input: std::option::Option<crate::model::CustomerManagedChannelS3Storage>,
@@ -3382,6 +3622,7 @@ pub mod customer_managed_channel_s3_storage {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The name of the S3 bucket in which channel data is stored.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -3393,6 +3634,9 @@ pub mod customer_managed_channel_s3_storage {
             self.key_prefix = Some(input.into());
             self
         }
+        /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in
+        /// an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket
+        /// has exactly one key. The prefix must end with a forward slash (/).</p>
         pub fn set_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_prefix = input;
             self
@@ -3403,6 +3647,8 @@ pub mod customer_managed_channel_s3_storage {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3
+        /// resources.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -3487,6 +3733,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The tag's key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -3496,6 +3743,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The tag's value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -3544,12 +3792,28 @@ pub mod channel_messages {
         pub(crate) s3_paths: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `s3_paths`.
+        ///
+        /// To override the contents of this collection use [`set_s3_paths`](Self::set_s3_paths).
+        ///
+        /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your
+        /// channel messages.</p>
+        /// <p>You must use the full path for the key.</p>
+        /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29
+        /// 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code>
+        /// </p>
         pub fn s3_paths(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.s3_paths.unwrap_or_default();
             v.push(input.into());
             self.s3_paths = Some(v);
             self
         }
+        /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your
+        /// channel messages.</p>
+        /// <p>You must use the full path for the key.</p>
+        /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29
+        /// 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code>
+        /// </p>
         pub fn set_s3_paths(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3608,6 +3872,7 @@ pub mod logging_options {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the role that grants permission to IoT Analytics to perform logging.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -3617,6 +3882,7 @@ pub mod logging_options {
             self.level = Some(input);
             self
         }
+        /// <p>The logging level. Currently, only ERROR is supported.</p>
         pub fn set_level(mut self, input: std::option::Option<crate::model::LoggingLevel>) -> Self {
             self.level = input;
             self
@@ -3626,6 +3892,7 @@ pub mod logging_options {
             self.enabled = Some(input);
             self
         }
+        /// <p>If true, logging is enabled for IoT Analytics.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -3647,6 +3914,7 @@ impl LoggingOptions {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3658,6 +3926,7 @@ impl LoggingOptions {
     std::hash::Hash,
 )]
 pub enum LoggingLevel {
+    #[allow(missing_docs)] // documentation missing in model
     Error,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3678,12 +3947,14 @@ impl std::str::FromStr for LoggingLevel {
     }
 }
 impl LoggingLevel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LoggingLevel::Error => "ERROR",
             LoggingLevel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ERROR"]
     }
@@ -3704,9 +3975,9 @@ pub struct PipelineSummary {
     pub reprocessing_summaries:
         std::option::Option<std::vec::Vec<crate::model::ReprocessingSummary>>,
     /// <p>When the pipeline was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>When the pipeline was last updated.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for PipelineSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3727,8 +3998,8 @@ pub mod pipeline_summary {
         pub(crate) pipeline_name: std::option::Option<std::string::String>,
         pub(crate) reprocessing_summaries:
             std::option::Option<std::vec::Vec<crate::model::ReprocessingSummary>>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the pipeline.</p>
@@ -3736,6 +4007,7 @@ pub mod pipeline_summary {
             self.pipeline_name = Some(input.into());
             self
         }
+        /// <p>The name of the pipeline.</p>
         pub fn set_pipeline_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3743,6 +4015,11 @@ pub mod pipeline_summary {
             self.pipeline_name = input;
             self
         }
+        /// Appends an item to `reprocessing_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_reprocessing_summaries`](Self::set_reprocessing_summaries).
+        ///
+        /// <p>A summary of information about the pipeline reprocessing.</p>
         pub fn reprocessing_summaries(
             mut self,
             input: impl Into<crate::model::ReprocessingSummary>,
@@ -3752,6 +4029,7 @@ pub mod pipeline_summary {
             self.reprocessing_summaries = Some(v);
             self
         }
+        /// <p>A summary of information about the pipeline reprocessing.</p>
         pub fn set_reprocessing_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReprocessingSummary>>,
@@ -3760,25 +4038,27 @@ pub mod pipeline_summary {
             self
         }
         /// <p>When the pipeline was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>When the pipeline was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>When the pipeline was last updated.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>When the pipeline was last updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -3810,7 +4090,7 @@ pub struct ReprocessingSummary {
     /// <p>The status of the pipeline reprocessing.</p>
     pub status: std::option::Option<crate::model::ReprocessingStatus>,
     /// <p>The time the pipeline reprocessing was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ReprocessingSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3829,7 +4109,7 @@ pub mod reprocessing_summary {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ReprocessingStatus>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.</p>
@@ -3837,6 +4117,7 @@ pub mod reprocessing_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3846,6 +4127,7 @@ pub mod reprocessing_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the pipeline reprocessing.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ReprocessingStatus>,
@@ -3854,13 +4136,14 @@ pub mod reprocessing_summary {
             self
         }
         /// <p>The time the pipeline reprocessing was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time the pipeline reprocessing was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -3882,6 +4165,7 @@ impl ReprocessingSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3893,9 +4177,13 @@ impl ReprocessingSummary {
     std::hash::Hash,
 )]
 pub enum ReprocessingStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3919,6 +4207,7 @@ impl std::str::FromStr for ReprocessingStatus {
     }
 }
 impl ReprocessingStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReprocessingStatus::Cancelled => "CANCELLED",
@@ -3928,6 +4217,7 @@ impl ReprocessingStatus {
             ReprocessingStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CANCELLED", "FAILED", "RUNNING", "SUCCEEDED"]
     }
@@ -3949,13 +4239,13 @@ pub struct DatastoreSummary {
     /// <p>The status of the data store.</p>
     pub status: std::option::Option<crate::model::DatastoreStatus>,
     /// <p>When the data store was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time the data store was updated.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time when a new message arrived in the data store.</p>
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-    pub last_message_arrival_time: std::option::Option<smithy_types::Instant>,
+    pub last_message_arrival_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The file format of the data in the data store.</p>
     pub file_format_type: std::option::Option<crate::model::FileFormatType>,
     /// <p> Contains information about the partition dimensions in a data store. </p>
@@ -3984,9 +4274,9 @@ pub mod datastore_summary {
         pub(crate) datastore_name: std::option::Option<std::string::String>,
         pub(crate) datastore_storage: std::option::Option<crate::model::DatastoreStorageSummary>,
         pub(crate) status: std::option::Option<crate::model::DatastoreStatus>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_message_arrival_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_message_arrival_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) file_format_type: std::option::Option<crate::model::FileFormatType>,
         pub(crate) datastore_partitions: std::option::Option<crate::model::DatastorePartitions>,
     }
@@ -3996,6 +4286,7 @@ pub mod datastore_summary {
             self.datastore_name = Some(input.into());
             self
         }
+        /// <p>The name of the data store.</p>
         pub fn set_datastore_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4008,6 +4299,7 @@ pub mod datastore_summary {
             self.datastore_storage = Some(input);
             self
         }
+        /// <p>Where data in a data store is stored.</p>
         pub fn set_datastore_storage(
             mut self,
             input: std::option::Option<crate::model::DatastoreStorageSummary>,
@@ -4020,6 +4312,7 @@ pub mod datastore_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the data store.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DatastoreStatus>,
@@ -4028,25 +4321,27 @@ pub mod datastore_summary {
             self
         }
         /// <p>When the data store was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>When the data store was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The last time the data store was updated.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The last time the data store was updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -4054,13 +4349,16 @@ pub mod datastore_summary {
         /// <p>The last time when a new message arrived in the data store.</p>
         /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
         /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-        pub fn last_message_arrival_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_message_arrival_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_message_arrival_time = Some(input);
             self
         }
+        /// <p>The last time when a new message arrived in the data store.</p>
+        /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
+        /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
         pub fn set_last_message_arrival_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_message_arrival_time = input;
             self
@@ -4070,6 +4368,7 @@ pub mod datastore_summary {
             self.file_format_type = Some(input);
             self
         }
+        /// <p>The file format of the data in the data store.</p>
         pub fn set_file_format_type(
             mut self,
             input: std::option::Option<crate::model::FileFormatType>,
@@ -4082,6 +4381,7 @@ pub mod datastore_summary {
             self.datastore_partitions = Some(input);
             self
         }
+        /// <p> Contains information about the partition dimensions in a data store. </p>
         pub fn set_datastore_partitions(
             mut self,
             input: std::option::Option<crate::model::DatastorePartitions>,
@@ -4134,12 +4434,18 @@ pub mod datastore_partitions {
         pub(crate) partitions: std::option::Option<std::vec::Vec<crate::model::DatastorePartition>>,
     }
     impl Builder {
+        /// Appends an item to `partitions`.
+        ///
+        /// To override the contents of this collection use [`set_partitions`](Self::set_partitions).
+        ///
+        /// <p> A list of partition dimensions in a data store. </p>
         pub fn partitions(mut self, input: impl Into<crate::model::DatastorePartition>) -> Self {
             let mut v = self.partitions.unwrap_or_default();
             v.push(input.into());
             self.partitions = Some(v);
             self
         }
+        /// <p> A list of partition dimensions in a data store. </p>
         pub fn set_partitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatastorePartition>>,
@@ -4195,6 +4501,7 @@ pub mod datastore_partition {
             self.attribute_partition = Some(input);
             self
         }
+        /// <p> A partition dimension defined by an <code>attributeName</code>. </p>
         pub fn set_attribute_partition(
             mut self,
             input: std::option::Option<crate::model::Partition>,
@@ -4207,6 +4514,7 @@ pub mod datastore_partition {
             self.timestamp_partition = Some(input);
             self
         }
+        /// <p> A partition dimension defined by a timestamp attribute. </p>
         pub fn set_timestamp_partition(
             mut self,
             input: std::option::Option<crate::model::TimestampPartition>,
@@ -4263,6 +4571,7 @@ pub mod timestamp_partition {
             self.attribute_name = Some(input.into());
             self
         }
+        /// <p> The attribute name of the partition defined by a timestamp. </p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4276,6 +4585,8 @@ pub mod timestamp_partition {
             self.timestamp_format = Some(input.into());
             self
         }
+        /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds
+        /// since epoch (January 1, 1970 at midnight UTC time). </p>
         pub fn set_timestamp_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4327,6 +4638,7 @@ pub mod partition {
             self.attribute_name = Some(input.into());
             self
         }
+        /// <p> The name of the attribute that defines a partition dimension. </p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4349,6 +4661,7 @@ impl Partition {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4360,7 +4673,9 @@ impl Partition {
     std::hash::Hash,
 )]
 pub enum FileFormatType {
+    #[allow(missing_docs)] // documentation missing in model
     Json,
+    #[allow(missing_docs)] // documentation missing in model
     Parquet,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4382,6 +4697,7 @@ impl std::str::FromStr for FileFormatType {
     }
 }
 impl FileFormatType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FileFormatType::Json => "JSON",
@@ -4389,6 +4705,7 @@ impl FileFormatType {
             FileFormatType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["JSON", "PARQUET"]
     }
@@ -4399,6 +4716,7 @@ impl AsRef<str> for FileFormatType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4410,8 +4728,11 @@ impl AsRef<str> for FileFormatType {
     std::hash::Hash,
 )]
 pub enum DatastoreStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4434,6 +4755,7 @@ impl std::str::FromStr for DatastoreStatus {
     }
 }
 impl DatastoreStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DatastoreStatus::Active => "ACTIVE",
@@ -4442,6 +4764,7 @@ impl DatastoreStatus {
             DatastoreStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING"]
     }
@@ -4500,6 +4823,7 @@ pub mod datastore_storage_summary {
             self.service_managed_s3 = Some(input);
             self
         }
+        /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
         pub fn set_service_managed_s3(
             mut self,
             input: std::option::Option<crate::model::ServiceManagedDatastoreS3StorageSummary>,
@@ -4515,6 +4839,7 @@ pub mod datastore_storage_summary {
             self.customer_managed_s3 = Some(input);
             self
         }
+        /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
         pub fn set_customer_managed_s3(
             mut self,
             input: std::option::Option<crate::model::CustomerManagedDatastoreS3StorageSummary>,
@@ -4530,6 +4855,7 @@ pub mod datastore_storage_summary {
             self.iot_site_wise_multi_layer_storage = Some(input);
             self
         }
+        /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. </p>
         pub fn set_iot_site_wise_multi_layer_storage(
             mut self,
             input: std::option::Option<crate::model::DatastoreIotSiteWiseMultiLayerStorageSummary>,
@@ -4590,6 +4916,7 @@ pub mod datastore_iot_site_wise_multi_layer_storage_summary {
             self.customer_managed_s3_storage = Some(input);
             self
         }
+        /// <p>Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage.</p>
         pub fn set_customer_managed_s3_storage(
             mut self,
             input: std::option::Option<
@@ -4646,6 +4973,7 @@ pub mod iot_site_wise_customer_managed_datastore_s3_storage_summary {
             self.bucket = Some(input.into());
             self
         }
+        /// <p> The name of the Amazon S3 bucket where your data is stored. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -4655,6 +4983,7 @@ pub mod iot_site_wise_customer_managed_datastore_s3_storage_summary {
             self.key_prefix = Some(input.into());
             self
         }
+        /// <p> (Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). </p>
         pub fn set_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_prefix = input;
             self
@@ -4713,6 +5042,7 @@ pub mod customer_managed_datastore_s3_storage_summary {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon S3 bucket where your data is stored.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -4722,6 +5052,7 @@ pub mod customer_managed_datastore_s3_storage_summary {
             self.key_prefix = Some(input.into());
             self
         }
+        /// <p>(Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
         pub fn set_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_prefix = input;
             self
@@ -4731,6 +5062,7 @@ pub mod customer_managed_datastore_s3_storage_summary {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -4791,9 +5123,9 @@ pub struct DatasetSummary {
     /// <p>The status of the dataset.</p>
     pub status: std::option::Option<crate::model::DatasetStatus>,
     /// <p>The time the dataset was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time the dataset was updated.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time
     /// interval or when another dataset is populated. The list of triggers can be empty or contain up
     /// to five <code>DataSetTrigger</code> objects</p>
@@ -4821,8 +5153,8 @@ pub mod dataset_summary {
     pub struct Builder {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DatasetStatus>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) triggers: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
         pub(crate) actions: std::option::Option<std::vec::Vec<crate::model::DatasetActionSummary>>,
     }
@@ -4832,6 +5164,7 @@ pub mod dataset_summary {
             self.dataset_name = Some(input.into());
             self
         }
+        /// <p>The name of the dataset.</p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_name = input;
             self
@@ -4841,6 +5174,7 @@ pub mod dataset_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the dataset.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DatasetStatus>,
@@ -4849,35 +5183,47 @@ pub mod dataset_summary {
             self
         }
         /// <p>The time the dataset was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time the dataset was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The last time the dataset was updated.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The last time the dataset was updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
         }
+        /// Appends an item to `triggers`.
+        ///
+        /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
+        ///
+        /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time
+        /// interval or when another dataset is populated. The list of triggers can be empty or contain up
+        /// to five <code>DataSetTrigger</code> objects</p>
         pub fn triggers(mut self, input: impl Into<crate::model::DatasetTrigger>) -> Self {
             let mut v = self.triggers.unwrap_or_default();
             v.push(input.into());
             self.triggers = Some(v);
             self
         }
+        /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time
+        /// interval or when another dataset is populated. The list of triggers can be empty or contain up
+        /// to five <code>DataSetTrigger</code> objects</p>
         pub fn set_triggers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
@@ -4885,12 +5231,18 @@ pub mod dataset_summary {
             self.triggers = input;
             self
         }
+        /// Appends an item to `actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>A list of <code>DataActionSummary</code> objects.</p>
         pub fn actions(mut self, input: impl Into<crate::model::DatasetActionSummary>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
             self.actions = Some(v);
             self
         }
+        /// <p>A list of <code>DataActionSummary</code> objects.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetActionSummary>>,
@@ -4950,6 +5302,7 @@ pub mod dataset_action_summary {
             self.action_name = Some(input.into());
             self
         }
+        /// <p>The name of the action that automatically creates the dataset's contents.</p>
         pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_name = input;
             self
@@ -4959,6 +5312,7 @@ pub mod dataset_action_summary {
             self.action_type = Some(input);
             self
         }
+        /// <p>The type of action by which the dataset's contents are automatically created.</p>
         pub fn set_action_type(
             mut self,
             input: std::option::Option<crate::model::DatasetActionType>,
@@ -4982,6 +5336,7 @@ impl DatasetActionSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4993,7 +5348,9 @@ impl DatasetActionSummary {
     std::hash::Hash,
 )]
 pub enum DatasetActionType {
+    #[allow(missing_docs)] // documentation missing in model
     Container,
+    #[allow(missing_docs)] // documentation missing in model
     Query,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5015,6 +5372,7 @@ impl std::str::FromStr for DatasetActionType {
     }
 }
 impl DatasetActionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DatasetActionType::Container => "CONTAINER",
@@ -5022,6 +5380,7 @@ impl DatasetActionType {
             DatasetActionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONTAINER", "QUERY"]
     }
@@ -5032,6 +5391,7 @@ impl AsRef<str> for DatasetActionType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5043,8 +5403,11 @@ impl AsRef<str> for DatasetActionType {
     std::hash::Hash,
 )]
 pub enum DatasetStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5067,6 +5430,7 @@ impl std::str::FromStr for DatasetStatus {
     }
 }
 impl DatasetStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DatasetStatus::Active => "ACTIVE",
@@ -5075,6 +5439,7 @@ impl DatasetStatus {
             DatasetStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING"]
     }
@@ -5094,11 +5459,11 @@ pub struct DatasetContentSummary {
     /// <p>The status of the dataset contents.</p>
     pub status: std::option::Option<crate::model::DatasetContentStatus>,
     /// <p>The actual time the creation of the dataset contents was started.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time the creation of the dataset contents was scheduled to start.</p>
-    pub schedule_time: std::option::Option<smithy_types::Instant>,
+    pub schedule_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
-    pub completion_time: std::option::Option<smithy_types::Instant>,
+    pub completion_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DatasetContentSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5119,9 +5484,9 @@ pub mod dataset_content_summary {
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DatasetContentStatus>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) schedule_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) completion_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) schedule_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) completion_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The version of the dataset contents.</p>
@@ -5129,6 +5494,7 @@ pub mod dataset_content_summary {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version of the dataset contents.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -5138,6 +5504,7 @@ pub mod dataset_content_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the dataset contents.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DatasetContentStatus>,
@@ -5146,37 +5513,40 @@ pub mod dataset_content_summary {
             self
         }
         /// <p>The actual time the creation of the dataset contents was started.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The actual time the creation of the dataset contents was started.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time the creation of the dataset contents was scheduled to start.</p>
-        pub fn schedule_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn schedule_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.schedule_time = Some(input);
             self
         }
+        /// <p>The time the creation of the dataset contents was scheduled to start.</p>
         pub fn set_schedule_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.schedule_time = input;
             self
         }
         /// <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
-        pub fn completion_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn completion_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.completion_time = Some(input);
             self
         }
+        /// <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
         pub fn set_completion_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.completion_time = input;
             self
@@ -5234,6 +5604,8 @@ pub mod dataset_content_status {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or
+        /// FAILED.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::DatasetContentState>,
@@ -5246,6 +5618,7 @@ pub mod dataset_content_status {
             self.reason = Some(input.into());
             self
         }
+        /// <p>The reason the dataset contents are in this state.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -5266,6 +5639,7 @@ impl DatasetContentStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5277,8 +5651,11 @@ impl DatasetContentStatus {
     std::hash::Hash,
 )]
 pub enum DatasetContentState {
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5301,6 +5678,7 @@ impl std::str::FromStr for DatasetContentState {
     }
 }
 impl DatasetContentState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DatasetContentState::Creating => "CREATING",
@@ -5309,6 +5687,7 @@ impl DatasetContentState {
             DatasetContentState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CREATING", "FAILED", "SUCCEEDED"]
     }
@@ -5330,13 +5709,13 @@ pub struct ChannelSummary {
     /// <p>The status of the channel.</p>
     pub status: std::option::Option<crate::model::ChannelStatus>,
     /// <p>When the channel was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time the channel was updated.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time when a new message arrived in the channel.</p>
     /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-    pub last_message_arrival_time: std::option::Option<smithy_types::Instant>,
+    pub last_message_arrival_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ChannelSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5359,9 +5738,9 @@ pub mod channel_summary {
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) channel_storage: std::option::Option<crate::model::ChannelStorageSummary>,
         pub(crate) status: std::option::Option<crate::model::ChannelStatus>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_message_arrival_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_message_arrival_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the channel.</p>
@@ -5369,6 +5748,7 @@ pub mod channel_summary {
             self.channel_name = Some(input.into());
             self
         }
+        /// <p>The name of the channel.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self
@@ -5378,6 +5758,7 @@ pub mod channel_summary {
             self.channel_storage = Some(input);
             self
         }
+        /// <p>Where channel data is stored.</p>
         pub fn set_channel_storage(
             mut self,
             input: std::option::Option<crate::model::ChannelStorageSummary>,
@@ -5390,6 +5771,7 @@ pub mod channel_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the channel.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ChannelStatus>,
@@ -5398,25 +5780,27 @@ pub mod channel_summary {
             self
         }
         /// <p>When the channel was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>When the channel was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The last time the channel was updated.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The last time the channel was updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -5424,13 +5808,16 @@ pub mod channel_summary {
         /// <p>The last time when a new message arrived in the channel.</p>
         /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
         /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-        pub fn last_message_arrival_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_message_arrival_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_message_arrival_time = Some(input);
             self
         }
+        /// <p>The last time when a new message arrived in the channel.</p>
+        /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
+        /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
         pub fn set_last_message_arrival_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_message_arrival_time = input;
             self
@@ -5455,6 +5842,7 @@ impl ChannelSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5466,8 +5854,11 @@ impl ChannelSummary {
     std::hash::Hash,
 )]
 pub enum ChannelStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5490,6 +5881,7 @@ impl std::str::FromStr for ChannelStatus {
     }
 }
 impl ChannelStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChannelStatus::Active => "ACTIVE",
@@ -5498,6 +5890,7 @@ impl ChannelStatus {
             ChannelStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING"]
     }
@@ -5547,6 +5940,7 @@ pub mod channel_storage_summary {
             self.service_managed_s3 = Some(input);
             self
         }
+        /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
         pub fn set_service_managed_s3(
             mut self,
             input: std::option::Option<crate::model::ServiceManagedChannelS3StorageSummary>,
@@ -5562,6 +5956,7 @@ pub mod channel_storage_summary {
             self.customer_managed_s3 = Some(input);
             self
         }
+        /// <p>Used to store channel data in an S3 bucket that you manage.</p>
         pub fn set_customer_managed_s3(
             mut self,
             input: std::option::Option<crate::model::CustomerManagedChannelS3StorageSummary>,
@@ -5624,6 +6019,7 @@ pub mod customer_managed_channel_s3_storage_summary {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The name of the S3 bucket in which channel data is stored.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -5635,6 +6031,9 @@ pub mod customer_managed_channel_s3_storage_summary {
             self.key_prefix = Some(input.into());
             self
         }
+        /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in
+        /// an S3 bucket has a key that is its unique identifier within the bucket (each object in a
+        /// bucket has exactly one key). The prefix must end with a forward slash (/).</p>
         pub fn set_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_prefix = input;
             self
@@ -5645,6 +6044,8 @@ pub mod customer_managed_channel_s3_storage_summary {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3
+        /// resources.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -5728,6 +6129,7 @@ pub mod dataset_entry {
             self.entry_name = Some(input.into());
             self
         }
+        /// <p>The name of the dataset item.</p>
         pub fn set_entry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entry_name = input;
             self
@@ -5737,6 +6139,7 @@ pub mod dataset_entry {
             self.data_uri = Some(input.into());
             self
         }
+        /// <p>The presigned URI of the dataset item.</p>
         pub fn set_data_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_uri = input;
             self
@@ -5771,9 +6174,9 @@ pub struct Pipeline {
     pub reprocessing_summaries:
         std::option::Option<std::vec::Vec<crate::model::ReprocessingSummary>>,
     /// <p>When the pipeline was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time the pipeline was updated.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Pipeline {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5798,8 +6201,8 @@ pub mod pipeline {
         pub(crate) activities: std::option::Option<std::vec::Vec<crate::model::PipelineActivity>>,
         pub(crate) reprocessing_summaries:
             std::option::Option<std::vec::Vec<crate::model::ReprocessingSummary>>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the pipeline.</p>
@@ -5807,6 +6210,7 @@ pub mod pipeline {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the pipeline.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5816,16 +6220,23 @@ pub mod pipeline {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the pipeline.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
+        /// Appends an item to `activities`.
+        ///
+        /// To override the contents of this collection use [`set_activities`](Self::set_activities).
+        ///
+        /// <p>The activities that perform transformations on the messages.</p>
         pub fn activities(mut self, input: impl Into<crate::model::PipelineActivity>) -> Self {
             let mut v = self.activities.unwrap_or_default();
             v.push(input.into());
             self.activities = Some(v);
             self
         }
+        /// <p>The activities that perform transformations on the messages.</p>
         pub fn set_activities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelineActivity>>,
@@ -5833,6 +6244,11 @@ pub mod pipeline {
             self.activities = input;
             self
         }
+        /// Appends an item to `reprocessing_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_reprocessing_summaries`](Self::set_reprocessing_summaries).
+        ///
+        /// <p>A summary of information about the pipeline reprocessing.</p>
         pub fn reprocessing_summaries(
             mut self,
             input: impl Into<crate::model::ReprocessingSummary>,
@@ -5842,6 +6258,7 @@ pub mod pipeline {
             self.reprocessing_summaries = Some(v);
             self
         }
+        /// <p>A summary of information about the pipeline reprocessing.</p>
         pub fn set_reprocessing_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReprocessingSummary>>,
@@ -5850,25 +6267,27 @@ pub mod pipeline {
             self
         }
         /// <p>When the pipeline was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>When the pipeline was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The last time the pipeline was updated.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The last time the pipeline was updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -5921,6 +6340,7 @@ pub mod datastore_statistics {
             self.size = Some(input);
             self
         }
+        /// <p>The estimated size of the data store.</p>
         pub fn set_size(
             mut self,
             input: std::option::Option<crate::model::EstimatedResourceSize>,
@@ -5948,7 +6368,7 @@ pub struct EstimatedResourceSize {
     /// <p>The estimated size of the resource, in bytes.</p>
     pub estimated_size_in_bytes: std::option::Option<f64>,
     /// <p>The time when the estimate of the size of the resource was made.</p>
-    pub estimated_on: std::option::Option<smithy_types::Instant>,
+    pub estimated_on: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for EstimatedResourceSize {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5965,7 +6385,7 @@ pub mod estimated_resource_size {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) estimated_size_in_bytes: std::option::Option<f64>,
-        pub(crate) estimated_on: std::option::Option<smithy_types::Instant>,
+        pub(crate) estimated_on: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The estimated size of the resource, in bytes.</p>
@@ -5973,18 +6393,20 @@ pub mod estimated_resource_size {
             self.estimated_size_in_bytes = Some(input);
             self
         }
+        /// <p>The estimated size of the resource, in bytes.</p>
         pub fn set_estimated_size_in_bytes(mut self, input: std::option::Option<f64>) -> Self {
             self.estimated_size_in_bytes = input;
             self
         }
         /// <p>The time when the estimate of the size of the resource was made.</p>
-        pub fn estimated_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn estimated_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.estimated_on = Some(input);
             self
         }
+        /// <p>The time when the estimate of the size of the resource was made.</p>
         pub fn set_estimated_on(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.estimated_on = input;
             self
@@ -6035,13 +6457,13 @@ pub struct Datastore {
     /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>When the data store was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time the data store was updated.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time when a new message arrived in the data store.</p>
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-    pub last_message_arrival_time: std::option::Option<smithy_types::Instant>,
+    pub last_message_arrival_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
@@ -6076,9 +6498,9 @@ pub mod datastore {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DatastoreStatus>,
         pub(crate) retention_period: std::option::Option<crate::model::RetentionPeriod>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_message_arrival_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_message_arrival_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) file_format_configuration:
             std::option::Option<crate::model::FileFormatConfiguration>,
         pub(crate) datastore_partitions: std::option::Option<crate::model::DatastorePartitions>,
@@ -6089,6 +6511,7 @@ pub mod datastore {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the data store.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6098,6 +6521,7 @@ pub mod datastore {
             self.storage = Some(input);
             self
         }
+        /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
         pub fn set_storage(
             mut self,
             input: std::option::Option<crate::model::DatastoreStorage>,
@@ -6110,6 +6534,7 @@ pub mod datastore {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the data store.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -6133,6 +6558,21 @@ pub mod datastore {
             self.status = Some(input);
             self
         }
+        /// <p>The status of a data store:</p>
+        /// <dl>
+        /// <dt>CREATING</dt>
+        /// <dd>
+        /// <p>The data store is being created.</p>
+        /// </dd>
+        /// <dt>ACTIVE</dt>
+        /// <dd>
+        /// <p>The data store has been created and can be used.</p>
+        /// </dd>
+        /// <dt>DELETING</dt>
+        /// <dd>
+        /// <p>The data store is being deleted.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DatastoreStatus>,
@@ -6146,6 +6586,8 @@ pub mod datastore {
             self.retention_period = Some(input);
             self
         }
+        /// <p>How long, in days, message data is kept for the data store. When
+        /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -6154,25 +6596,27 @@ pub mod datastore {
             self
         }
         /// <p>When the data store was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>When the data store was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The last time the data store was updated.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The last time the data store was updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -6180,13 +6624,16 @@ pub mod datastore {
         /// <p>The last time when a new message arrived in the data store.</p>
         /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
         /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-        pub fn last_message_arrival_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_message_arrival_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_message_arrival_time = Some(input);
             self
         }
+        /// <p>The last time when a new message arrived in the data store.</p>
+        /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
+        /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
         pub fn set_last_message_arrival_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_message_arrival_time = input;
             self
@@ -6201,6 +6648,9 @@ pub mod datastore {
             self.file_format_configuration = Some(input);
             self
         }
+        /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+        /// <p>The default file format is JSON. You can specify only one format.</p>
+        /// <p>You can't change the file format after you create the data store.</p>
         pub fn set_file_format_configuration(
             mut self,
             input: std::option::Option<crate::model::FileFormatConfiguration>,
@@ -6213,6 +6663,7 @@ pub mod datastore {
             self.datastore_partitions = Some(input);
             self
         }
+        /// <p> Contains information about the partition dimensions in a data store. </p>
         pub fn set_datastore_partitions(
             mut self,
             input: std::option::Option<crate::model::DatastorePartitions>,
@@ -6265,9 +6716,9 @@ pub struct Dataset {
     /// <p>The status of the dataset.</p>
     pub status: std::option::Option<crate::model::DatasetStatus>,
     /// <p>When the dataset was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time the dataset was updated.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Optional. How long, in days, message data is kept for the dataset.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
@@ -6310,8 +6761,8 @@ pub mod dataset {
         pub(crate) content_delivery_rules:
             std::option::Option<std::vec::Vec<crate::model::DatasetContentDeliveryRule>>,
         pub(crate) status: std::option::Option<crate::model::DatasetStatus>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) retention_period: std::option::Option<crate::model::RetentionPeriod>,
         pub(crate) versioning_configuration:
             std::option::Option<crate::model::VersioningConfiguration>,
@@ -6323,6 +6774,7 @@ pub mod dataset {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the dataset.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6332,16 +6784,25 @@ pub mod dataset {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the dataset.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
+        /// Appends an item to `actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>The <code>DatasetAction</code> objects that automatically create the dataset
+        /// contents.</p>
         pub fn actions(mut self, input: impl Into<crate::model::DatasetAction>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
             self.actions = Some(v);
             self
         }
+        /// <p>The <code>DatasetAction</code> objects that automatically create the dataset
+        /// contents.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetAction>>,
@@ -6349,12 +6810,20 @@ pub mod dataset {
             self.actions = input;
             self
         }
+        /// Appends an item to `triggers`.
+        ///
+        /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
+        ///
+        /// <p>The <code>DatasetTrigger</code> objects that specify when the dataset is automatically
+        /// updated.</p>
         pub fn triggers(mut self, input: impl Into<crate::model::DatasetTrigger>) -> Self {
             let mut v = self.triggers.unwrap_or_default();
             v.push(input.into());
             self.triggers = Some(v);
             self
         }
+        /// <p>The <code>DatasetTrigger</code> objects that specify when the dataset is automatically
+        /// updated.</p>
         pub fn set_triggers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
@@ -6362,6 +6831,12 @@ pub mod dataset {
             self.triggers = input;
             self
         }
+        /// Appends an item to `content_delivery_rules`.
+        ///
+        /// To override the contents of this collection use [`set_content_delivery_rules`](Self::set_content_delivery_rules).
+        ///
+        /// <p>When dataset contents are created they are delivered to destinations specified
+        /// here.</p>
         pub fn content_delivery_rules(
             mut self,
             input: impl Into<crate::model::DatasetContentDeliveryRule>,
@@ -6371,6 +6846,8 @@ pub mod dataset {
             self.content_delivery_rules = Some(v);
             self
         }
+        /// <p>When dataset contents are created they are delivered to destinations specified
+        /// here.</p>
         pub fn set_content_delivery_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetContentDeliveryRule>>,
@@ -6383,6 +6860,7 @@ pub mod dataset {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the dataset.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DatasetStatus>,
@@ -6391,25 +6869,27 @@ pub mod dataset {
             self
         }
         /// <p>When the dataset was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>When the dataset was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The last time the dataset was updated.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The last time the dataset was updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -6419,6 +6899,7 @@ pub mod dataset {
             self.retention_period = Some(input);
             self
         }
+        /// <p>Optional. How long, in days, message data is kept for the dataset.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -6439,6 +6920,12 @@ pub mod dataset {
             self.versioning_configuration = Some(input);
             self
         }
+        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
+        /// only the latest version plus the latest succeeded version (if they are different) are kept for
+        /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
+        /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
+        /// Keeping Multiple Versions of IoT Analytics datasets</a> in the
+        /// <i>IoT Analytics User Guide</i>.</p>
         pub fn set_versioning_configuration(
             mut self,
             input: std::option::Option<crate::model::VersioningConfiguration>,
@@ -6446,12 +6933,18 @@ pub mod dataset {
             self.versioning_configuration = input;
             self
         }
+        /// Appends an item to `late_data_rules`.
+        ///
+        /// To override the contents of this collection use [`set_late_data_rules`](Self::set_late_data_rules).
+        ///
+        /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
         pub fn late_data_rules(mut self, input: impl Into<crate::model::LateDataRule>) -> Self {
             let mut v = self.late_data_rules.unwrap_or_default();
             v.push(input.into());
             self.late_data_rules = Some(v);
             self
         }
+        /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
         pub fn set_late_data_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LateDataRule>>,
@@ -6512,6 +7005,7 @@ pub mod channel_statistics {
             self.size = Some(input);
             self
         }
+        /// <p>The estimated size of the channel.</p>
         pub fn set_size(
             mut self,
             input: std::option::Option<crate::model::EstimatedResourceSize>,
@@ -6551,13 +7045,13 @@ pub struct Channel {
     /// <p>How long, in days, message data is kept for the channel.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>When the channel was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>When the channel was last updated.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time when a new message arrived in the channel.</p>
     /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-    pub last_message_arrival_time: std::option::Option<smithy_types::Instant>,
+    pub last_message_arrival_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Channel {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6584,9 +7078,9 @@ pub mod channel {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ChannelStatus>,
         pub(crate) retention_period: std::option::Option<crate::model::RetentionPeriod>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_message_arrival_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_message_arrival_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the channel.</p>
@@ -6594,6 +7088,7 @@ pub mod channel {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the channel.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6606,6 +7101,10 @@ pub mod channel {
             self.storage = Some(input);
             self
         }
+        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
+        /// <code>customerManagedS3</code> storage. If not specified, the default is
+        /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
+        /// created.</p>
         pub fn set_storage(
             mut self,
             input: std::option::Option<crate::model::ChannelStorage>,
@@ -6618,6 +7117,7 @@ pub mod channel {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the channel.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -6627,6 +7127,7 @@ pub mod channel {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the channel.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ChannelStatus>,
@@ -6639,6 +7140,7 @@ pub mod channel {
             self.retention_period = Some(input);
             self
         }
+        /// <p>How long, in days, message data is kept for the channel.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -6647,25 +7149,27 @@ pub mod channel {
             self
         }
         /// <p>When the channel was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>When the channel was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>When the channel was last updated.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>When the channel was last updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -6673,13 +7177,16 @@ pub mod channel {
         /// <p>The last time when a new message arrived in the channel.</p>
         /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
         /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
-        pub fn last_message_arrival_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_message_arrival_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_message_arrival_time = Some(input);
             self
         }
+        /// <p>The last time when a new message arrived in the channel.</p>
+        /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
+        /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
         pub fn set_last_message_arrival_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_message_arrival_time = input;
             self
@@ -6744,6 +7251,8 @@ pub mod batch_put_message_error_entry {
             self.message_id = Some(input.into());
             self
         }
+        /// <p>The ID of the message that caused the error. See the value corresponding to the
+        /// <code>messageId</code> key in the message object.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self
@@ -6753,6 +7262,7 @@ pub mod batch_put_message_error_entry {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>The code associated with the error.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -6762,6 +7272,7 @@ pub mod batch_put_message_error_entry {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The message associated with the error.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6796,7 +7307,7 @@ pub struct Message {
     /// <p>The payload of the message. This can be a JSON string or a base64-encoded string
     /// representing binary data, in which case you must decode it by means of a pipeline
     /// activity.</p>
-    pub payload: std::option::Option<smithy_types::Blob>,
+    pub payload: std::option::Option<aws_smithy_types::Blob>,
 }
 impl std::fmt::Debug for Message {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6813,7 +7324,7 @@ pub mod message {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
-        pub(crate) payload: std::option::Option<smithy_types::Blob>,
+        pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
         /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique
@@ -6822,6 +7333,8 @@ pub mod message {
             self.message_id = Some(input.into());
             self
         }
+        /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique
+        /// within each batch sent.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self
@@ -6829,11 +7342,14 @@ pub mod message {
         /// <p>The payload of the message. This can be a JSON string or a base64-encoded string
         /// representing binary data, in which case you must decode it by means of a pipeline
         /// activity.</p>
-        pub fn payload(mut self, input: smithy_types::Blob) -> Self {
+        pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
             self.payload = Some(input);
             self
         }
-        pub fn set_payload(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The payload of the message. This can be a JSON string or a base64-encoded string
+        /// representing binary data, in which case you must decode it by means of a pipeline
+        /// activity.</p>
+        pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.payload = input;
             self
         }

@@ -57,6 +57,7 @@ pub mod application_summary {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique Id of the web application.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -69,6 +70,7 @@ pub mod application_summary {
             self.application_name = Some(input.into());
             self
         }
+        /// <p>The name of the web application.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -81,6 +83,7 @@ pub mod application_summary {
             self.application_description = Some(input.into());
             self
         }
+        /// <p>An optional description of the web application.</p>
         pub fn set_application_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -93,6 +96,7 @@ pub mod application_summary {
             self.application_url = Some(input.into());
             self
         }
+        /// <p>The URL of the web application.</p>
         pub fn set_application_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -105,6 +109,7 @@ pub mod application_summary {
             self.application_creation_date = Some(input);
             self
         }
+        /// <p>The date (in Unix epoch time) when the web application was created.</p>
         pub fn set_application_creation_date(mut self, input: std::option::Option<i64>) -> Self {
             self.application_creation_date = input;
             self
@@ -114,6 +119,7 @@ pub mod application_summary {
             self.application_last_update_date = Some(input);
             self
         }
+        /// <p>The date (in Unix epoch time) when the web application was last updated.</p>
         pub fn set_application_last_update_date(mut self, input: std::option::Option<i64>) -> Self {
             self.application_last_update_date = input;
             self
@@ -123,6 +129,7 @@ pub mod application_summary {
             self.application_state = Some(input);
             self
         }
+        /// <p>The current state of the web application.</p>
         pub fn set_application_state(
             mut self,
             input: std::option::Option<crate::model::ApplicationState>,
@@ -151,6 +158,7 @@ impl ApplicationSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -162,10 +170,15 @@ impl ApplicationSummary {
     std::hash::Hash,
 )]
 pub enum ApplicationState {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -190,6 +203,7 @@ impl std::str::FromStr for ApplicationState {
     }
 }
 impl ApplicationState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ApplicationState::Active => "ACTIVE",
@@ -200,6 +214,7 @@ impl ApplicationState {
             ApplicationState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",

@@ -39,6 +39,7 @@ pub mod create_broker_input {
             self.authentication_strategy = Some(input);
             self
         }
+        /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
         pub fn set_authentication_strategy(
             mut self,
             input: std::option::Option<crate::model::AuthenticationStrategy>,
@@ -51,6 +52,7 @@ pub mod create_broker_input {
             self.auto_minor_version_upgrade = Some(input);
             self
         }
+        /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_minor_version_upgrade = input;
             self
@@ -60,6 +62,7 @@ pub mod create_broker_input {
             self.broker_name = Some(input.into());
             self
         }
+        /// <p>Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
         pub fn set_broker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.broker_name = input;
             self
@@ -69,6 +72,7 @@ pub mod create_broker_input {
             self.configuration = Some(input);
             self
         }
+        /// <p>A list of information about the configuration.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ConfigurationId>,
@@ -81,6 +85,7 @@ pub mod create_broker_input {
             self.creator_request_id = Some(input.into());
             self
         }
+        /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -93,6 +98,7 @@ pub mod create_broker_input {
             self.deployment_mode = Some(input);
             self
         }
+        /// <p>Required. The broker's deployment mode.</p>
         pub fn set_deployment_mode(
             mut self,
             input: std::option::Option<crate::model::DeploymentMode>,
@@ -105,6 +111,7 @@ pub mod create_broker_input {
             self.encryption_options = Some(input);
             self
         }
+        /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
         pub fn set_encryption_options(
             mut self,
             input: std::option::Option<crate::model::EncryptionOptions>,
@@ -117,6 +124,7 @@ pub mod create_broker_input {
             self.engine_type = Some(input);
             self
         }
+        /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
         pub fn set_engine_type(
             mut self,
             input: std::option::Option<crate::model::EngineType>,
@@ -129,6 +137,7 @@ pub mod create_broker_input {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -141,6 +150,7 @@ pub mod create_broker_input {
             self.host_instance_type = Some(input.into());
             self
         }
+        /// <p>Required. The broker's instance type.</p>
         pub fn set_host_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -156,6 +166,7 @@ pub mod create_broker_input {
             self.ldap_server_metadata = Some(input);
             self
         }
+        /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
         pub fn set_ldap_server_metadata(
             mut self,
             input: std::option::Option<crate::model::LdapServerMetadataInput>,
@@ -168,6 +179,7 @@ pub mod create_broker_input {
             self.logs = Some(input);
             self
         }
+        /// <p>Enables Amazon CloudWatch logging for brokers.</p>
         pub fn set_logs(mut self, input: std::option::Option<crate::model::Logs>) -> Self {
             self.logs = input;
             self
@@ -180,6 +192,7 @@ pub mod create_broker_input {
             self.maintenance_window_start_time = Some(input);
             self
         }
+        /// <p>The parameters that determine the WeeklyStartTime.</p>
         pub fn set_maintenance_window_start_time(
             mut self,
             input: std::option::Option<crate::model::WeeklyStartTime>,
@@ -192,16 +205,23 @@ pub mod create_broker_input {
             self.publicly_accessible = Some(input);
             self
         }
+        /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by default, if no value is provided.</p>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
             self.publicly_accessible = input;
             self
         }
+        /// Appends an item to `security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+        ///
+        /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
             v.push(input.into());
             self.security_groups = Some(v);
             self
         }
+        /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
         pub fn set_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -214,6 +234,7 @@ pub mod create_broker_input {
             self.storage_type = Some(input);
             self
         }
+        /// <p>The broker's storage type.</p>
         pub fn set_storage_type(
             mut self,
             input: std::option::Option<crate::model::BrokerStorageType>,
@@ -221,12 +242,18 @@ pub mod create_broker_input {
             self.storage_type = input;
             self
         }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p> <important><p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.</p></important>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p> <important><p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.</p></important>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -234,6 +261,11 @@ pub mod create_broker_input {
             self.subnet_ids = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Create tags when creating the broker.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -244,6 +276,7 @@ pub mod create_broker_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Create tags when creating the broker.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -253,12 +286,18 @@ pub mod create_broker_input {
             self.tags = input;
             self
         }
+        /// Appends an item to `users`.
+        ///
+        /// To override the contents of this collection use [`set_users`](Self::set_users).
+        ///
+        /// <p>Required. The list of broker users (persons or applications) who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p> <important><title>Amazon MQ for RabbitMQ</title> <p>When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p></important>
         pub fn users(mut self, input: impl Into<crate::model::User>) -> Self {
             let mut v = self.users.unwrap_or_default();
             v.push(input.into());
             self.users = Some(v);
             self
         }
+        /// <p>Required. The list of broker users (persons or applications) who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p> <important><title>Amazon MQ for RabbitMQ</title> <p>When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p></important>
         pub fn set_users(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::User>>,
@@ -269,8 +308,10 @@ pub mod create_broker_input {
         /// Consumes the builder and constructs a [`CreateBrokerInput`](crate::input::CreateBrokerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateBrokerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateBrokerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateBrokerInput {
                 authentication_strategy: self.authentication_strategy,
                 auto_minor_version_upgrade: self.auto_minor_version_upgrade.unwrap_or_default(),
@@ -306,16 +347,16 @@ impl CreateBrokerInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateBroker,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateBrokerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v1/brokers").expect("formatting should succeed");
             Ok(())
         }
@@ -323,7 +364,7 @@ impl CreateBrokerInput {
         fn update_http_builder(
             input: &crate::input::CreateBrokerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -332,10 +373,10 @@ impl CreateBrokerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateBrokerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -345,16 +386,16 @@ impl CreateBrokerInput {
         if self.creator_request_id.is_none() {
             self.creator_request_id = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_broker(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -377,22 +418,27 @@ impl CreateBrokerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateBroker::new())
-                .with_metadata(smithy_http::operation::Metadata::new("CreateBroker", "mq"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateBroker::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateBroker",
+            "mq",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -430,6 +476,7 @@ pub mod create_configuration_input {
             self.authentication_strategy = Some(input);
             self
         }
+        /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
         pub fn set_authentication_strategy(
             mut self,
             input: std::option::Option<crate::model::AuthenticationStrategy>,
@@ -442,6 +489,7 @@ pub mod create_configuration_input {
             self.engine_type = Some(input);
             self
         }
+        /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
         pub fn set_engine_type(
             mut self,
             input: std::option::Option<crate::model::EngineType>,
@@ -454,6 +502,7 @@ pub mod create_configuration_input {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -466,10 +515,16 @@ pub mod create_configuration_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Create tags when creating the configuration.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -480,6 +535,7 @@ pub mod create_configuration_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Create tags when creating the configuration.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -494,7 +550,7 @@ pub mod create_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateConfigurationInput {
                 authentication_strategy: self.authentication_strategy,
@@ -517,16 +573,16 @@ impl CreateConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v1/configurations").expect("formatting should succeed");
             Ok(())
         }
@@ -534,7 +590,7 @@ impl CreateConfigurationInput {
         fn update_http_builder(
             input: &crate::input::CreateConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -543,25 +599,27 @@ impl CreateConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_configuration(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -584,15 +642,15 @@ impl CreateConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateConfiguration",
             "mq",
         ));
@@ -601,10 +659,10 @@ impl CreateConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -635,10 +693,16 @@ pub mod create_tags_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The key-value pair for the resource tag.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -649,6 +713,7 @@ pub mod create_tags_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The key-value pair for the resource tag.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -661,8 +726,10 @@ pub mod create_tags_input {
         /// Consumes the builder and constructs a [`CreateTagsInput`](crate::input::CreateTagsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateTagsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateTagsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateTagsInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -681,27 +748,27 @@ impl CreateTagsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateTags,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateTagsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.resource_arn;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_1, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_1, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -714,7 +781,7 @@ impl CreateTagsInput {
         fn update_http_builder(
             input: &crate::input::CreateTagsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -723,24 +790,26 @@ impl CreateTagsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateTagsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_tags(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -763,22 +832,27 @@ impl CreateTagsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateTags::new())
-                .with_metadata(smithy_http::operation::Metadata::new("CreateTags", "mq"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateTags::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateTags",
+            "mq",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -810,6 +884,7 @@ pub mod create_user_input {
             self.broker_id = Some(input.into());
             self
         }
+        /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn set_broker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.broker_id = input;
             self
@@ -819,16 +894,23 @@ pub mod create_user_input {
             self.console_access = Some(input);
             self
         }
+        /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>
         pub fn set_console_access(mut self, input: std::option::Option<bool>) -> Self {
             self.console_access = input;
             self
         }
+        /// Appends an item to `groups`.
+        ///
+        /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+        ///
+        /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
         pub fn groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.groups.unwrap_or_default();
             v.push(input.into());
             self.groups = Some(v);
             self
         }
+        /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
         pub fn set_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -841,6 +923,7 @@ pub mod create_user_input {
             self.password = Some(input.into());
             self
         }
+        /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
@@ -850,6 +933,7 @@ pub mod create_user_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -857,8 +941,10 @@ pub mod create_user_input {
         /// Consumes the builder and constructs a [`CreateUserInput`](crate::input::CreateUserInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateUserInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateUserInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateUserInput {
                 broker_id: self.broker_id,
                 console_access: self.console_access.unwrap_or_default(),
@@ -880,27 +966,27 @@ impl CreateUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateUser,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_2 = &_input.broker_id;
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "broker_id",
                         details: "cannot be empty or unset",
                     })?;
-            let broker_id = smithy_http::label::fmt_string(input_2, false);
+            let broker_id = aws_smithy_http::label::fmt_string(input_2, false);
             if broker_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "broker_id",
                     details: "cannot be empty or unset",
                 });
@@ -909,13 +995,13 @@ impl CreateUserInput {
             let input_3 =
                 input_3
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "username",
                         details: "cannot be empty or unset",
                     })?;
-            let username = smithy_http::label::fmt_string(input_3, false);
+            let username = aws_smithy_http::label::fmt_string(input_3, false);
             if username.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "username",
                     details: "cannot be empty or unset",
                 });
@@ -933,7 +1019,7 @@ impl CreateUserInput {
         fn update_http_builder(
             input: &crate::input::CreateUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -942,24 +1028,26 @@ impl CreateUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -982,22 +1070,27 @@ impl CreateUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateUser::new())
-                .with_metadata(smithy_http::operation::Metadata::new("CreateUser", "mq"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateUser::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateUser",
+            "mq",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1025,6 +1118,7 @@ pub mod delete_broker_input {
             self.broker_id = Some(input.into());
             self
         }
+        /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn set_broker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.broker_id = input;
             self
@@ -1032,8 +1126,10 @@ pub mod delete_broker_input {
         /// Consumes the builder and constructs a [`DeleteBrokerInput`](crate::input::DeleteBrokerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteBrokerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteBrokerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteBrokerInput {
                 broker_id: self.broker_id,
             })
@@ -1051,27 +1147,27 @@ impl DeleteBrokerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteBroker,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteBrokerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_4 = &_input.broker_id;
             let input_4 =
                 input_4
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "broker_id",
                         details: "cannot be empty or unset",
                     })?;
-            let broker_id = smithy_http::label::fmt_string(input_4, false);
+            let broker_id = aws_smithy_http::label::fmt_string(input_4, false);
             if broker_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "broker_id",
                     details: "cannot be empty or unset",
                 });
@@ -1084,7 +1180,7 @@ impl DeleteBrokerInput {
         fn update_http_builder(
             input: &crate::input::DeleteBrokerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1093,23 +1189,23 @@ impl DeleteBrokerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteBrokerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1132,22 +1228,27 @@ impl DeleteBrokerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteBroker::new())
-                .with_metadata(smithy_http::operation::Metadata::new("DeleteBroker", "mq"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteBroker::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteBroker",
+            "mq",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1176,16 +1277,23 @@ pub mod delete_tags_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>An array of tag keys to delete</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>An array of tag keys to delete</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1196,8 +1304,10 @@ pub mod delete_tags_input {
         /// Consumes the builder and constructs a [`DeleteTagsInput`](crate::input::DeleteTagsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteTagsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteTagsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteTagsInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -1216,27 +1326,27 @@ impl DeleteTagsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteTags,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteTagsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_5 = &_input.resource_arn;
             let input_5 =
                 input_5
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_5, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_5, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -1246,10 +1356,10 @@ impl DeleteTagsInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DeleteTagsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_6) = &_input.tag_keys {
                 for inner_7 in inner_6 {
-                    query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_7));
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_7));
                 }
             }
         }
@@ -1257,7 +1367,7 @@ impl DeleteTagsInput {
         fn update_http_builder(
             input: &crate::input::DeleteTagsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1267,23 +1377,23 @@ impl DeleteTagsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteTagsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1306,22 +1416,27 @@ impl DeleteTagsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteTags::new())
-                .with_metadata(smithy_http::operation::Metadata::new("DeleteTags", "mq"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteTags::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteTags",
+            "mq",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1350,6 +1465,7 @@ pub mod delete_user_input {
             self.broker_id = Some(input.into());
             self
         }
+        /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn set_broker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.broker_id = input;
             self
@@ -1359,6 +1475,7 @@ pub mod delete_user_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -1366,8 +1483,10 @@ pub mod delete_user_input {
         /// Consumes the builder and constructs a [`DeleteUserInput`](crate::input::DeleteUserInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteUserInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteUserInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteUserInput {
                 broker_id: self.broker_id,
                 username: self.username,
@@ -1386,27 +1505,27 @@ impl DeleteUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteUser,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_8 = &_input.broker_id;
             let input_8 =
                 input_8
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "broker_id",
                         details: "cannot be empty or unset",
                     })?;
-            let broker_id = smithy_http::label::fmt_string(input_8, false);
+            let broker_id = aws_smithy_http::label::fmt_string(input_8, false);
             if broker_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "broker_id",
                     details: "cannot be empty or unset",
                 });
@@ -1415,13 +1534,13 @@ impl DeleteUserInput {
             let input_9 =
                 input_9
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "username",
                         details: "cannot be empty or unset",
                     })?;
-            let username = smithy_http::label::fmt_string(input_9, false);
+            let username = aws_smithy_http::label::fmt_string(input_9, false);
             if username.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "username",
                     details: "cannot be empty or unset",
                 });
@@ -1439,7 +1558,7 @@ impl DeleteUserInput {
         fn update_http_builder(
             input: &crate::input::DeleteUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1448,23 +1567,23 @@ impl DeleteUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1487,22 +1606,27 @@ impl DeleteUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteUser::new())
-                .with_metadata(smithy_http::operation::Metadata::new("DeleteUser", "mq"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteUser::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteUser",
+            "mq",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1530,6 +1654,7 @@ pub mod describe_broker_input {
             self.broker_id = Some(input.into());
             self
         }
+        /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn set_broker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.broker_id = input;
             self
@@ -1539,7 +1664,7 @@ pub mod describe_broker_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeBrokerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeBrokerInput {
                 broker_id: self.broker_id,
@@ -1558,27 +1683,27 @@ impl DescribeBrokerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeBroker,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeBrokerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_10 = &_input.broker_id;
             let input_10 =
                 input_10
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "broker_id",
                         details: "cannot be empty or unset",
                     })?;
-            let broker_id = smithy_http::label::fmt_string(input_10, false);
+            let broker_id = aws_smithy_http::label::fmt_string(input_10, false);
             if broker_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "broker_id",
                     details: "cannot be empty or unset",
                 });
@@ -1591,7 +1716,7 @@ impl DescribeBrokerInput {
         fn update_http_builder(
             input: &crate::input::DescribeBrokerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1600,23 +1725,23 @@ impl DescribeBrokerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeBrokerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1639,15 +1764,15 @@ impl DescribeBrokerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeBroker::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeBroker",
             "mq",
         ));
@@ -1656,10 +1781,10 @@ impl DescribeBrokerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1689,6 +1814,7 @@ pub mod describe_broker_engine_types_input {
             self.engine_type = Some(input.into());
             self
         }
+        /// <p>Filter response by engine type.</p>
         pub fn set_engine_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine_type = input;
             self
@@ -1698,6 +1824,7 @@ pub mod describe_broker_engine_types_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1707,6 +1834,7 @@ pub mod describe_broker_engine_types_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1716,7 +1844,7 @@ pub mod describe_broker_engine_types_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeBrokerEngineTypesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeBrokerEngineTypesInput {
                 engine_type: self.engine_type,
@@ -1738,16 +1866,16 @@ impl DescribeBrokerEngineTypesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeBrokerEngineTypes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeBrokerEngineTypesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v1/broker-engine-types").expect("formatting should succeed");
             Ok(())
         }
@@ -1755,25 +1883,25 @@ impl DescribeBrokerEngineTypesInput {
             _input: &crate::input::DescribeBrokerEngineTypesInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_11) = &_input.engine_type {
-                query.push_kv("engineType", &smithy_http::query::fmt_string(&inner_11));
+                query.push_kv("engineType", &aws_smithy_http::query::fmt_string(&inner_11));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_12) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_12));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_12));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeBrokerEngineTypesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1783,23 +1911,23 @@ impl DescribeBrokerEngineTypesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeBrokerEngineTypesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1822,15 +1950,15 @@ impl DescribeBrokerEngineTypesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeBrokerEngineTypes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeBrokerEngineTypes",
             "mq",
         ));
@@ -1839,10 +1967,10 @@ impl DescribeBrokerEngineTypesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1874,6 +2002,7 @@ pub mod describe_broker_instance_options_input {
             self.engine_type = Some(input.into());
             self
         }
+        /// <p>Filter response by engine type.</p>
         pub fn set_engine_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine_type = input;
             self
@@ -1883,6 +2012,7 @@ pub mod describe_broker_instance_options_input {
             self.host_instance_type = Some(input.into());
             self
         }
+        /// <p>Filter response by host instance type.</p>
         pub fn set_host_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1895,6 +2025,7 @@ pub mod describe_broker_instance_options_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1904,6 +2035,7 @@ pub mod describe_broker_instance_options_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1913,6 +2045,7 @@ pub mod describe_broker_instance_options_input {
             self.storage_type = Some(input.into());
             self
         }
+        /// <p>Filter response by storage type.</p>
         pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.storage_type = input;
             self
@@ -1922,7 +2055,7 @@ pub mod describe_broker_instance_options_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeBrokerInstanceOptionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeBrokerInstanceOptionsInput {
                 engine_type: self.engine_type,
@@ -1946,16 +2079,16 @@ impl DescribeBrokerInstanceOptionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeBrokerInstanceOptions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeBrokerInstanceOptionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v1/broker-instance-options").expect("formatting should succeed");
             Ok(())
         }
@@ -1963,34 +2096,37 @@ impl DescribeBrokerInstanceOptionsInput {
             _input: &crate::input::DescribeBrokerInstanceOptionsInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_13) = &_input.engine_type {
-                query.push_kv("engineType", &smithy_http::query::fmt_string(&inner_13));
+                query.push_kv("engineType", &aws_smithy_http::query::fmt_string(&inner_13));
             }
             if let Some(inner_14) = &_input.host_instance_type {
                 query.push_kv(
                     "hostInstanceType",
-                    &smithy_http::query::fmt_string(&inner_14),
+                    &aws_smithy_http::query::fmt_string(&inner_14),
                 );
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_15) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_15));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_15));
             }
             if let Some(inner_16) = &_input.storage_type {
-                query.push_kv("storageType", &smithy_http::query::fmt_string(&inner_16));
+                query.push_kv(
+                    "storageType",
+                    &aws_smithy_http::query::fmt_string(&inner_16),
+                );
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeBrokerInstanceOptionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2000,23 +2136,23 @@ impl DescribeBrokerInstanceOptionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeBrokerInstanceOptionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2039,15 +2175,15 @@ impl DescribeBrokerInstanceOptionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeBrokerInstanceOptions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeBrokerInstanceOptions",
             "mq",
         ));
@@ -2056,10 +2192,10 @@ impl DescribeBrokerInstanceOptionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2087,6 +2223,7 @@ pub mod describe_configuration_input {
             self.configuration_id = Some(input.into());
             self
         }
+        /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
         pub fn set_configuration_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2099,7 +2236,7 @@ pub mod describe_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeConfigurationInput {
                 configuration_id: self.configuration_id,
@@ -2118,27 +2255,27 @@ impl DescribeConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_17 = &_input.configuration_id;
             let input_17 =
                 input_17
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "configuration_id",
                         details: "cannot be empty or unset",
                     })?;
-            let configuration_id = smithy_http::label::fmt_string(input_17, false);
+            let configuration_id = aws_smithy_http::label::fmt_string(input_17, false);
             if configuration_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "configuration_id",
                     details: "cannot be empty or unset",
                 });
@@ -2155,7 +2292,7 @@ impl DescribeConfigurationInput {
         fn update_http_builder(
             input: &crate::input::DescribeConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2164,23 +2301,23 @@ impl DescribeConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2203,15 +2340,15 @@ impl DescribeConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeConfiguration",
             "mq",
         ));
@@ -2220,10 +2357,10 @@ impl DescribeConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2252,6 +2389,7 @@ pub mod describe_configuration_revision_input {
             self.configuration_id = Some(input.into());
             self
         }
+        /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
         pub fn set_configuration_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2264,6 +2402,7 @@ pub mod describe_configuration_revision_input {
             self.configuration_revision = Some(input.into());
             self
         }
+        /// <p>The revision of the configuration.</p>
         pub fn set_configuration_revision(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2276,7 +2415,7 @@ pub mod describe_configuration_revision_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeConfigurationRevisionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeConfigurationRevisionInput {
                 configuration_id: self.configuration_id,
@@ -2297,27 +2436,27 @@ impl DescribeConfigurationRevisionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigurationRevision,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeConfigurationRevisionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_18 = &_input.configuration_id;
             let input_18 =
                 input_18
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "configuration_id",
                         details: "cannot be empty or unset",
                     })?;
-            let configuration_id = smithy_http::label::fmt_string(input_18, false);
+            let configuration_id = aws_smithy_http::label::fmt_string(input_18, false);
             if configuration_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "configuration_id",
                     details: "cannot be empty or unset",
                 });
@@ -2326,13 +2465,13 @@ impl DescribeConfigurationRevisionInput {
             let input_19 =
                 input_19
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "configuration_revision",
                         details: "cannot be empty or unset",
                     })?;
-            let configuration_revision = smithy_http::label::fmt_string(input_19, false);
+            let configuration_revision = aws_smithy_http::label::fmt_string(input_19, false);
             if configuration_revision.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "configuration_revision",
                     details: "cannot be empty or unset",
                 });
@@ -2350,7 +2489,7 @@ impl DescribeConfigurationRevisionInput {
         fn update_http_builder(
             input: &crate::input::DescribeConfigurationRevisionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2359,23 +2498,23 @@ impl DescribeConfigurationRevisionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeConfigurationRevisionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2398,15 +2537,15 @@ impl DescribeConfigurationRevisionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeConfigurationRevision::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeConfigurationRevision",
             "mq",
         ));
@@ -2415,10 +2554,10 @@ impl DescribeConfigurationRevisionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2447,6 +2586,7 @@ pub mod describe_user_input {
             self.broker_id = Some(input.into());
             self
         }
+        /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn set_broker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.broker_id = input;
             self
@@ -2456,6 +2596,7 @@ pub mod describe_user_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -2463,8 +2604,10 @@ pub mod describe_user_input {
         /// Consumes the builder and constructs a [`DescribeUserInput`](crate::input::DescribeUserInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeUserInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeUserInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeUserInput {
                 broker_id: self.broker_id,
                 username: self.username,
@@ -2483,27 +2626,27 @@ impl DescribeUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeUser,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_20 = &_input.broker_id;
             let input_20 =
                 input_20
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "broker_id",
                         details: "cannot be empty or unset",
                     })?;
-            let broker_id = smithy_http::label::fmt_string(input_20, false);
+            let broker_id = aws_smithy_http::label::fmt_string(input_20, false);
             if broker_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "broker_id",
                     details: "cannot be empty or unset",
                 });
@@ -2512,13 +2655,13 @@ impl DescribeUserInput {
             let input_21 =
                 input_21
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "username",
                         details: "cannot be empty or unset",
                     })?;
-            let username = smithy_http::label::fmt_string(input_21, false);
+            let username = aws_smithy_http::label::fmt_string(input_21, false);
             if username.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "username",
                     details: "cannot be empty or unset",
                 });
@@ -2536,7 +2679,7 @@ impl DescribeUserInput {
         fn update_http_builder(
             input: &crate::input::DescribeUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2545,23 +2688,23 @@ impl DescribeUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2584,22 +2727,27 @@ impl DescribeUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeUser::new())
-                .with_metadata(smithy_http::operation::Metadata::new("DescribeUser", "mq"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeUser::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeUser",
+            "mq",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2628,6 +2776,7 @@ pub mod list_brokers_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2637,6 +2786,7 @@ pub mod list_brokers_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2644,8 +2794,10 @@ pub mod list_brokers_input {
         /// Consumes the builder and constructs a [`ListBrokersInput`](crate::input::ListBrokersInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListBrokersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListBrokersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListBrokersInput {
                 max_results: self.max_results.unwrap_or_default(),
                 next_token: self.next_token,
@@ -2664,36 +2816,36 @@ impl ListBrokersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListBrokers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListBrokersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v1/brokers").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListBrokersInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_22) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_22));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_22));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListBrokersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2703,23 +2855,23 @@ impl ListBrokersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListBrokersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2742,22 +2894,27 @@ impl ListBrokersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListBrokers::new())
-                .with_metadata(smithy_http::operation::Metadata::new("ListBrokers", "mq"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListBrokers::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListBrokers",
+            "mq",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2787,6 +2944,7 @@ pub mod list_configuration_revisions_input {
             self.configuration_id = Some(input.into());
             self
         }
+        /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
         pub fn set_configuration_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2799,6 +2957,7 @@ pub mod list_configuration_revisions_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2808,6 +2967,7 @@ pub mod list_configuration_revisions_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2817,7 +2977,7 @@ pub mod list_configuration_revisions_input {
             self,
         ) -> std::result::Result<
             crate::input::ListConfigurationRevisionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListConfigurationRevisionsInput {
                 configuration_id: self.configuration_id,
@@ -2839,27 +2999,27 @@ impl ListConfigurationRevisionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListConfigurationRevisions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListConfigurationRevisionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_23 = &_input.configuration_id;
             let input_23 =
                 input_23
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "configuration_id",
                         details: "cannot be empty or unset",
                     })?;
-            let configuration_id = smithy_http::label::fmt_string(input_23, false);
+            let configuration_id = aws_smithy_http::label::fmt_string(input_23, false);
             if configuration_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "configuration_id",
                     details: "cannot be empty or unset",
                 });
@@ -2876,22 +3036,22 @@ impl ListConfigurationRevisionsInput {
             _input: &crate::input::ListConfigurationRevisionsInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_24) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_24));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_24));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListConfigurationRevisionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2901,23 +3061,23 @@ impl ListConfigurationRevisionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListConfigurationRevisionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2940,15 +3100,15 @@ impl ListConfigurationRevisionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListConfigurationRevisions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListConfigurationRevisions",
             "mq",
         ));
@@ -2957,10 +3117,10 @@ impl ListConfigurationRevisionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2989,6 +3149,7 @@ pub mod list_configurations_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2998,6 +3159,7 @@ pub mod list_configurations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3007,7 +3169,7 @@ pub mod list_configurations_input {
             self,
         ) -> std::result::Result<
             crate::input::ListConfigurationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListConfigurationsInput {
                 max_results: self.max_results.unwrap_or_default(),
@@ -3027,36 +3189,36 @@ impl ListConfigurationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListConfigurations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListConfigurationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v1/configurations").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListConfigurationsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_25) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_25));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_25));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListConfigurationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3066,23 +3228,23 @@ impl ListConfigurationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListConfigurationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3105,15 +3267,15 @@ impl ListConfigurationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListConfigurations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListConfigurations",
             "mq",
         ));
@@ -3122,10 +3284,10 @@ impl ListConfigurationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3153,6 +3315,7 @@ pub mod list_tags_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3160,7 +3323,7 @@ pub mod list_tags_input {
         /// Consumes the builder and constructs a [`ListTagsInput`](crate::input::ListTagsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListTagsInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListTagsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListTagsInput {
                 resource_arn: self.resource_arn,
@@ -3179,27 +3342,27 @@ impl ListTagsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTags,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_26 = &_input.resource_arn;
             let input_26 =
                 input_26
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_26, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_26, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -3212,7 +3375,7 @@ impl ListTagsInput {
         fn update_http_builder(
             input: &crate::input::ListTagsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3221,23 +3384,23 @@ impl ListTagsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3260,21 +3423,22 @@ impl ListTagsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::ListTags::new())
-            .with_metadata(smithy_http::operation::Metadata::new("ListTags", "mq"));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListTags::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new("ListTags", "mq"));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3304,6 +3468,7 @@ pub mod list_users_input {
             self.broker_id = Some(input.into());
             self
         }
+        /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn set_broker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.broker_id = input;
             self
@@ -3313,6 +3478,7 @@ pub mod list_users_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3322,6 +3488,7 @@ pub mod list_users_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3329,7 +3496,7 @@ pub mod list_users_input {
         /// Consumes the builder and constructs a [`ListUsersInput`](crate::input::ListUsersInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListUsersInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListUsersInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListUsersInput {
                 broker_id: self.broker_id,
@@ -3350,27 +3517,27 @@ impl ListUsersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListUsers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListUsersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_27 = &_input.broker_id;
             let input_27 =
                 input_27
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "broker_id",
                         details: "cannot be empty or unset",
                     })?;
-            let broker_id = smithy_http::label::fmt_string(input_27, false);
+            let broker_id = aws_smithy_http::label::fmt_string(input_27, false);
             if broker_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "broker_id",
                     details: "cannot be empty or unset",
                 });
@@ -3380,22 +3547,22 @@ impl ListUsersInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListUsersInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_28) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_28));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_28));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListUsersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3405,23 +3572,23 @@ impl ListUsersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListUsersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3444,22 +3611,22 @@ impl ListUsersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListUsers::new())
-                .with_metadata(smithy_http::operation::Metadata::new("ListUsers", "mq"));
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListUsers::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new("ListUsers", "mq"));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3487,6 +3654,7 @@ pub mod reboot_broker_input {
             self.broker_id = Some(input.into());
             self
         }
+        /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn set_broker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.broker_id = input;
             self
@@ -3494,8 +3662,10 @@ pub mod reboot_broker_input {
         /// Consumes the builder and constructs a [`RebootBrokerInput`](crate::input::RebootBrokerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::RebootBrokerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RebootBrokerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RebootBrokerInput {
                 broker_id: self.broker_id,
             })
@@ -3513,27 +3683,27 @@ impl RebootBrokerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RebootBroker,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RebootBrokerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_29 = &_input.broker_id;
             let input_29 =
                 input_29
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "broker_id",
                         details: "cannot be empty or unset",
                     })?;
-            let broker_id = smithy_http::label::fmt_string(input_29, false);
+            let broker_id = aws_smithy_http::label::fmt_string(input_29, false);
             if broker_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "broker_id",
                     details: "cannot be empty or unset",
                 });
@@ -3550,7 +3720,7 @@ impl RebootBrokerInput {
         fn update_http_builder(
             input: &crate::input::RebootBrokerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3559,23 +3729,23 @@ impl RebootBrokerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RebootBrokerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3598,22 +3768,27 @@ impl RebootBrokerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::RebootBroker::new())
-                .with_metadata(smithy_http::operation::Metadata::new("RebootBroker", "mq"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RebootBroker::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RebootBroker",
+            "mq",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3655,6 +3830,7 @@ pub mod update_broker_input {
             self.authentication_strategy = Some(input);
             self
         }
+        /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
         pub fn set_authentication_strategy(
             mut self,
             input: std::option::Option<crate::model::AuthenticationStrategy>,
@@ -3667,6 +3843,7 @@ pub mod update_broker_input {
             self.auto_minor_version_upgrade = Some(input);
             self
         }
+        /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_minor_version_upgrade = input;
             self
@@ -3676,6 +3853,7 @@ pub mod update_broker_input {
             self.broker_id = Some(input.into());
             self
         }
+        /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn set_broker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.broker_id = input;
             self
@@ -3685,6 +3863,7 @@ pub mod update_broker_input {
             self.configuration = Some(input);
             self
         }
+        /// <p>A list of information about the configuration.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ConfigurationId>,
@@ -3697,6 +3876,7 @@ pub mod update_broker_input {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The broker engine version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3709,6 +3889,7 @@ pub mod update_broker_input {
             self.host_instance_type = Some(input.into());
             self
         }
+        /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
         pub fn set_host_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3724,6 +3905,7 @@ pub mod update_broker_input {
             self.ldap_server_metadata = Some(input);
             self
         }
+        /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
         pub fn set_ldap_server_metadata(
             mut self,
             input: std::option::Option<crate::model::LdapServerMetadataInput>,
@@ -3736,6 +3918,7 @@ pub mod update_broker_input {
             self.logs = Some(input);
             self
         }
+        /// <p>Enables Amazon CloudWatch logging for brokers.</p>
         pub fn set_logs(mut self, input: std::option::Option<crate::model::Logs>) -> Self {
             self.logs = input;
             self
@@ -3748,6 +3931,7 @@ pub mod update_broker_input {
             self.maintenance_window_start_time = Some(input);
             self
         }
+        /// <p>The parameters that determine the WeeklyStartTime.</p>
         pub fn set_maintenance_window_start_time(
             mut self,
             input: std::option::Option<crate::model::WeeklyStartTime>,
@@ -3755,12 +3939,18 @@ pub mod update_broker_input {
             self.maintenance_window_start_time = input;
             self
         }
+        /// Appends an item to `security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+        ///
+        /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
             v.push(input.into());
             self.security_groups = Some(v);
             self
         }
+        /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
         pub fn set_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3771,8 +3961,10 @@ pub mod update_broker_input {
         /// Consumes the builder and constructs a [`UpdateBrokerInput`](crate::input::UpdateBrokerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateBrokerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateBrokerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateBrokerInput {
                 authentication_strategy: self.authentication_strategy,
                 auto_minor_version_upgrade: self.auto_minor_version_upgrade.unwrap_or_default(),
@@ -3799,27 +3991,27 @@ impl UpdateBrokerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateBroker,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateBrokerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_30 = &_input.broker_id;
             let input_30 =
                 input_30
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "broker_id",
                         details: "cannot be empty or unset",
                     })?;
-            let broker_id = smithy_http::label::fmt_string(input_30, false);
+            let broker_id = aws_smithy_http::label::fmt_string(input_30, false);
             if broker_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "broker_id",
                     details: "cannot be empty or unset",
                 });
@@ -3832,7 +4024,7 @@ impl UpdateBrokerInput {
         fn update_http_builder(
             input: &crate::input::UpdateBrokerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3841,26 +4033,26 @@ impl UpdateBrokerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateBrokerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_broker(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3883,22 +4075,27 @@ impl UpdateBrokerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateBroker::new())
-                .with_metadata(smithy_http::operation::Metadata::new("UpdateBroker", "mq"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateBroker::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateBroker",
+            "mq",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3928,6 +4125,7 @@ pub mod update_configuration_input {
             self.configuration_id = Some(input.into());
             self
         }
+        /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
         pub fn set_configuration_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3940,6 +4138,7 @@ pub mod update_configuration_input {
             self.data = Some(input.into());
             self
         }
+        /// <p>Required. The base64-encoded XML configuration.</p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data = input;
             self
@@ -3949,6 +4148,7 @@ pub mod update_configuration_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3958,7 +4158,7 @@ pub mod update_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateConfigurationInput {
                 configuration_id: self.configuration_id,
@@ -3979,27 +4179,27 @@ impl UpdateConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_31 = &_input.configuration_id;
             let input_31 =
                 input_31
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "configuration_id",
                         details: "cannot be empty or unset",
                     })?;
-            let configuration_id = smithy_http::label::fmt_string(input_31, false);
+            let configuration_id = aws_smithy_http::label::fmt_string(input_31, false);
             if configuration_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "configuration_id",
                     details: "cannot be empty or unset",
                 });
@@ -4016,7 +4216,7 @@ impl UpdateConfigurationInput {
         fn update_http_builder(
             input: &crate::input::UpdateConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4025,25 +4225,27 @@ impl UpdateConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_configuration(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4066,15 +4268,15 @@ impl UpdateConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateConfiguration",
             "mq",
         ));
@@ -4083,10 +4285,10 @@ impl UpdateConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4118,6 +4320,7 @@ pub mod update_user_input {
             self.broker_id = Some(input.into());
             self
         }
+        /// <p>The unique ID that Amazon MQ generates for the broker.</p>
         pub fn set_broker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.broker_id = input;
             self
@@ -4127,16 +4330,23 @@ pub mod update_user_input {
             self.console_access = Some(input);
             self
         }
+        /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
         pub fn set_console_access(mut self, input: std::option::Option<bool>) -> Self {
             self.console_access = input;
             self
         }
+        /// Appends an item to `groups`.
+        ///
+        /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+        ///
+        /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
         pub fn groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.groups.unwrap_or_default();
             v.push(input.into());
             self.groups = Some(v);
             self
         }
+        /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
         pub fn set_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4149,6 +4359,7 @@ pub mod update_user_input {
             self.password = Some(input.into());
             self
         }
+        /// <p>The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
@@ -4158,6 +4369,7 @@ pub mod update_user_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -4165,8 +4377,10 @@ pub mod update_user_input {
         /// Consumes the builder and constructs a [`UpdateUserInput`](crate::input::UpdateUserInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateUserInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateUserInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateUserInput {
                 broker_id: self.broker_id,
                 console_access: self.console_access.unwrap_or_default(),
@@ -4188,27 +4402,27 @@ impl UpdateUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateUser,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_32 = &_input.broker_id;
             let input_32 =
                 input_32
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "broker_id",
                         details: "cannot be empty or unset",
                     })?;
-            let broker_id = smithy_http::label::fmt_string(input_32, false);
+            let broker_id = aws_smithy_http::label::fmt_string(input_32, false);
             if broker_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "broker_id",
                     details: "cannot be empty or unset",
                 });
@@ -4217,13 +4431,13 @@ impl UpdateUserInput {
             let input_33 =
                 input_33
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "username",
                         details: "cannot be empty or unset",
                     })?;
-            let username = smithy_http::label::fmt_string(input_33, false);
+            let username = aws_smithy_http::label::fmt_string(input_33, false);
             if username.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "username",
                     details: "cannot be empty or unset",
                 });
@@ -4241,7 +4455,7 @@ impl UpdateUserInput {
         fn update_http_builder(
             input: &crate::input::UpdateUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4250,24 +4464,26 @@ impl UpdateUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_user(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4290,22 +4506,27 @@ impl UpdateUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateUser::new())
-                .with_metadata(smithy_http::operation::Metadata::new("UpdateUser", "mq"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateUser::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateUser",
+            "mq",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4415,6 +4636,7 @@ impl std::fmt::Debug for UpdateBrokerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootBrokerInput {
@@ -4429,6 +4651,7 @@ impl std::fmt::Debug for RebootBrokerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersInput {
@@ -4449,6 +4672,7 @@ impl std::fmt::Debug for ListUsersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
@@ -4463,6 +4687,7 @@ impl std::fmt::Debug for ListTagsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationsInput {
@@ -4480,6 +4705,7 @@ impl std::fmt::Debug for ListConfigurationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationRevisionsInput {
@@ -4500,6 +4726,7 @@ impl std::fmt::Debug for ListConfigurationRevisionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBrokersInput {
@@ -4517,6 +4744,7 @@ impl std::fmt::Debug for ListBrokersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserInput {
@@ -4534,6 +4762,7 @@ impl std::fmt::Debug for DescribeUserInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationRevisionInput {
@@ -4551,6 +4780,7 @@ impl std::fmt::Debug for DescribeConfigurationRevisionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationInput {
@@ -4565,6 +4795,7 @@ impl std::fmt::Debug for DescribeConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBrokerInstanceOptionsInput {
@@ -4591,6 +4822,7 @@ impl std::fmt::Debug for DescribeBrokerInstanceOptionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBrokerEngineTypesInput {
@@ -4611,6 +4843,7 @@ impl std::fmt::Debug for DescribeBrokerEngineTypesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBrokerInput {
@@ -4625,6 +4858,7 @@ impl std::fmt::Debug for DescribeBrokerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserInput {
@@ -4642,6 +4876,7 @@ impl std::fmt::Debug for DeleteUserInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTagsInput {
@@ -4659,6 +4894,7 @@ impl std::fmt::Debug for DeleteTagsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBrokerInput {

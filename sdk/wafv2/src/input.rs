@@ -16,11 +16,14 @@ pub mod associate_web_acl_input {
             self.web_acl_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the
+        /// resource.</p>
         pub fn set_web_acl_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.web_acl_arn = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to associate with the web ACL. </p>
+        ///
         /// <p>The ARN must be in one of the following formats:</p>
         /// <ul>
         /// <li>
@@ -43,6 +46,26 @@ pub mod associate_web_acl_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource to associate with the web ACL. </p>
+        ///
+        /// <p>The ARN must be in one of the following formats:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+        /// </code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
+        /// </code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i>
+        /// </code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -52,7 +75,7 @@ pub mod associate_web_acl_input {
             self,
         ) -> std::result::Result<
             crate::input::AssociateWebAclInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AssociateWebAclInput {
                 web_acl_arn: self.web_acl_arn,
@@ -72,16 +95,16 @@ impl AssociateWebAclInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AssociateWebACL,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AssociateWebAclInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -89,7 +112,7 @@ impl AssociateWebAclInput {
         fn update_http_builder(
             input: &crate::input::AssociateWebAclInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -98,32 +121,32 @@ impl AssociateWebAclInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AssociateWebAclInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.AssociateWebACL",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_web_acl(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -146,15 +169,15 @@ impl AssociateWebAclInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AssociateWebACL::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AssociateWebACL",
             "wafv2",
         ));
@@ -163,10 +186,10 @@ impl AssociateWebAclInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -204,16 +227,34 @@ pub mod check_capacity_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
         }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>An array of <a>Rule</a> that you're configuring to use in a rule group or web
+        /// ACL. </p>
         pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
             let mut v = self.rules.unwrap_or_default();
             v.push(input.into());
             self.rules = Some(v);
             self
         }
+        /// <p>An array of <a>Rule</a> that you're configuring to use in a rule group or web
+        /// ACL. </p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -224,8 +265,10 @@ pub mod check_capacity_input {
         /// Consumes the builder and constructs a [`CheckCapacityInput`](crate::input::CheckCapacityInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CheckCapacityInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CheckCapacityInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CheckCapacityInput {
                 scope: self.scope,
                 rules: self.rules,
@@ -244,16 +287,16 @@ impl CheckCapacityInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CheckCapacity,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CheckCapacityInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -261,7 +304,7 @@ impl CheckCapacityInput {
         fn update_http_builder(
             input: &crate::input::CheckCapacityInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -270,29 +313,31 @@ impl CheckCapacityInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CheckCapacityInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.CheckCapacity",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_check_capacity(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -315,25 +360,27 @@ impl CheckCapacityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CheckCapacity::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CheckCapacity",
-                    "wafv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CheckCapacity::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CheckCapacity",
+            "wafv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -366,6 +413,7 @@ pub mod create_ip_set_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -384,6 +432,16 @@ pub mod create_ip_set_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -393,6 +451,7 @@ pub mod create_ip_set_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the IP set that helps with identification. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -402,6 +461,7 @@ pub mod create_ip_set_input {
             self.ip_address_version = Some(input);
             self
         }
+        /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
         pub fn set_ip_address_version(
             mut self,
             input: std::option::Option<crate::model::IpAddressVersion>,
@@ -409,12 +469,52 @@ pub mod create_ip_set_input {
             self.ip_address_version = input;
             self
         }
+        /// Appends an item to `addresses`.
+        ///
+        /// To override the contents of this collection use [`set_addresses`](Self::set_addresses).
+        ///
+        /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+        /// <p>Examples: </p>
+        /// <ul>
+        /// <li>
+        /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify
+        /// <code>192.0.2.0/24</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
         pub fn addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.addresses.unwrap_or_default();
             v.push(input.into());
             self.addresses = Some(v);
             self
         }
+        /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+        /// <p>Examples: </p>
+        /// <ul>
+        /// <li>
+        /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify
+        /// <code>192.0.2.0/24</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
         pub fn set_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -422,12 +522,18 @@ pub mod create_ip_set_input {
             self.addresses = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>An array of key:value pairs to associate with the resource.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>An array of key:value pairs to associate with the resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -438,8 +544,10 @@ pub mod create_ip_set_input {
         /// Consumes the builder and constructs a [`CreateIpSetInput`](crate::input::CreateIpSetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateIpSetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateIpSetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateIpSetInput {
                 name: self.name,
                 scope: self.scope,
@@ -462,16 +570,16 @@ impl CreateIpSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateIPSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateIpSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -479,7 +587,7 @@ impl CreateIpSetInput {
         fn update_http_builder(
             input: &crate::input::CreateIpSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -488,31 +596,31 @@ impl CreateIpSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateIpSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.CreateIPSet",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_ip_set(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -535,25 +643,27 @@ impl CreateIpSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateIPSet::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateIPSet",
-                    "wafv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateIPSet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateIPSet",
+            "wafv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -585,6 +695,7 @@ pub mod create_regex_pattern_set_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the set. You cannot change the name after you create the set.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -603,6 +714,16 @@ pub mod create_regex_pattern_set_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -612,16 +733,23 @@ pub mod create_regex_pattern_set_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the set that helps with identification. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `regular_expression_list`.
+        ///
+        /// To override the contents of this collection use [`set_regular_expression_list`](Self::set_regular_expression_list).
+        ///
+        /// <p>Array of regular expression strings. </p>
         pub fn regular_expression_list(mut self, input: impl Into<crate::model::Regex>) -> Self {
             let mut v = self.regular_expression_list.unwrap_or_default();
             v.push(input.into());
             self.regular_expression_list = Some(v);
             self
         }
+        /// <p>Array of regular expression strings. </p>
         pub fn set_regular_expression_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Regex>>,
@@ -629,12 +757,18 @@ pub mod create_regex_pattern_set_input {
             self.regular_expression_list = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>An array of key:value pairs to associate with the resource.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>An array of key:value pairs to associate with the resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -647,7 +781,7 @@ pub mod create_regex_pattern_set_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateRegexPatternSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateRegexPatternSetInput {
                 name: self.name,
@@ -670,16 +804,16 @@ impl CreateRegexPatternSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateRegexPatternSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateRegexPatternSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -687,7 +821,7 @@ impl CreateRegexPatternSetInput {
         fn update_http_builder(
             input: &crate::input::CreateRegexPatternSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -696,32 +830,34 @@ impl CreateRegexPatternSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateRegexPatternSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.CreateRegexPatternSet",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_regex_pattern_set(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -744,15 +880,15 @@ impl CreateRegexPatternSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateRegexPatternSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateRegexPatternSet",
             "wafv2",
         ));
@@ -761,10 +897,10 @@ impl CreateRegexPatternSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -801,6 +937,7 @@ pub mod create_rule_group_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -819,6 +956,16 @@ pub mod create_rule_group_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -839,6 +986,18 @@ pub mod create_rule_group_input {
             self.capacity = Some(input);
             self
         }
+        /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
+        /// <p>When you create your own rule group, you define this, and you cannot change it after creation.
+        /// When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity
+        /// for a set of rules using <a>CheckCapacity</a>.</p>
+        /// <p>WAF uses WCUs to calculate and control the operating
+        /// resources that are used to run your rules, rule groups, and web ACLs. WAF
+        /// calculates capacity differently for each rule type, to reflect the relative cost of each rule.
+        /// Simple rules that cost little to run use fewer WCUs than more complex rules
+        /// that use more processing power.
+        /// Rule group capacity is fixed at creation, which helps users plan their  
+        /// web ACL WCU usage when they use a rule group.
+        /// The WCU limit for web ACLs is 1,500.  </p>
         pub fn set_capacity(mut self, input: std::option::Option<i64>) -> Self {
             self.capacity = input;
             self
@@ -848,16 +1007,29 @@ pub mod create_rule_group_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the rule group that helps with identification. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>The <a>Rule</a> statements used to identify the web requests that you
+        /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
+        /// web requests, and parameters that govern how WAF handles them.
+        /// </p>
         pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
             let mut v = self.rules.unwrap_or_default();
             v.push(input.into());
             self.rules = Some(v);
             self
         }
+        /// <p>The <a>Rule</a> statements used to identify the web requests that you
+        /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
+        /// web requests, and parameters that govern how WAF handles them.
+        /// </p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -870,6 +1042,7 @@ pub mod create_rule_group_input {
             self.visibility_config = Some(input);
             self
         }
+        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
         pub fn set_visibility_config(
             mut self,
             input: std::option::Option<crate::model::VisibilityConfig>,
@@ -877,12 +1050,18 @@ pub mod create_rule_group_input {
             self.visibility_config = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>An array of key:value pairs to associate with the resource.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>An array of key:value pairs to associate with the resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -890,6 +1069,15 @@ pub mod create_rule_group_input {
             self.tags = input;
             self
         }
+        /// Adds a key-value pair to `custom_response_bodies`.
+        ///
+        /// To override the contents of this collection use [`set_custom_response_bodies`](Self::set_custom_response_bodies).
+        ///
+        /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn custom_response_bodies(
             mut self,
             k: impl Into<std::string::String>,
@@ -900,6 +1088,11 @@ pub mod create_rule_group_input {
             self.custom_response_bodies = Some(hash_map);
             self
         }
+        /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn set_custom_response_bodies(
             mut self,
             input: std::option::Option<
@@ -914,7 +1107,7 @@ pub mod create_rule_group_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateRuleGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateRuleGroupInput {
                 name: self.name,
@@ -940,16 +1133,16 @@ impl CreateRuleGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateRuleGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateRuleGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -957,7 +1150,7 @@ impl CreateRuleGroupInput {
         fn update_http_builder(
             input: &crate::input::CreateRuleGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -966,32 +1159,32 @@ impl CreateRuleGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateRuleGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.CreateRuleGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_rule_group(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1014,15 +1207,15 @@ impl CreateRuleGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateRuleGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateRuleGroup",
             "wafv2",
         ));
@@ -1031,10 +1224,10 @@ impl CreateRuleGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1071,6 +1264,7 @@ pub mod create_web_acl_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1089,6 +1283,16 @@ pub mod create_web_acl_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -1098,6 +1302,7 @@ pub mod create_web_acl_input {
             self.default_action = Some(input);
             self
         }
+        /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
         pub fn set_default_action(
             mut self,
             input: std::option::Option<crate::model::DefaultAction>,
@@ -1110,16 +1315,29 @@ pub mod create_web_acl_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the web ACL that helps with identification. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>The <a>Rule</a> statements used to identify the web requests that you
+        /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
+        /// web requests, and parameters that govern how WAF handles them.
+        /// </p>
         pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
             let mut v = self.rules.unwrap_or_default();
             v.push(input.into());
             self.rules = Some(v);
             self
         }
+        /// <p>The <a>Rule</a> statements used to identify the web requests that you
+        /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
+        /// web requests, and parameters that govern how WAF handles them.
+        /// </p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -1132,6 +1350,7 @@ pub mod create_web_acl_input {
             self.visibility_config = Some(input);
             self
         }
+        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
         pub fn set_visibility_config(
             mut self,
             input: std::option::Option<crate::model::VisibilityConfig>,
@@ -1139,12 +1358,18 @@ pub mod create_web_acl_input {
             self.visibility_config = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>An array of key:value pairs to associate with the resource.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>An array of key:value pairs to associate with the resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1152,6 +1377,15 @@ pub mod create_web_acl_input {
             self.tags = input;
             self
         }
+        /// Adds a key-value pair to `custom_response_bodies`.
+        ///
+        /// To override the contents of this collection use [`set_custom_response_bodies`](Self::set_custom_response_bodies).
+        ///
+        /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn custom_response_bodies(
             mut self,
             k: impl Into<std::string::String>,
@@ -1162,6 +1396,11 @@ pub mod create_web_acl_input {
             self.custom_response_bodies = Some(hash_map);
             self
         }
+        /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn set_custom_response_bodies(
             mut self,
             input: std::option::Option<
@@ -1174,8 +1413,10 @@ pub mod create_web_acl_input {
         /// Consumes the builder and constructs a [`CreateWebAclInput`](crate::input::CreateWebAclInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateWebAclInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateWebAclInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateWebAclInput {
                 name: self.name,
                 scope: self.scope,
@@ -1200,16 +1441,16 @@ impl CreateWebAclInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateWebACL,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateWebAclInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1217,7 +1458,7 @@ impl CreateWebAclInput {
         fn update_http_builder(
             input: &crate::input::CreateWebAclInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1226,29 +1467,31 @@ impl CreateWebAclInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateWebAclInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.CreateWebACL",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_web_acl(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1271,25 +1514,27 @@ impl CreateWebAclInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateWebACL::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateWebACL",
-                    "wafv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateWebACL::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateWebACL",
+            "wafv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1318,6 +1563,7 @@ pub mod delete_firewall_manager_rule_groups_input {
             self.web_acl_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
         pub fn set_web_acl_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.web_acl_arn = input;
             self
@@ -1327,6 +1573,7 @@ pub mod delete_firewall_manager_rule_groups_input {
             self.web_acl_lock_token = Some(input.into());
             self
         }
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn set_web_acl_lock_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1339,7 +1586,7 @@ pub mod delete_firewall_manager_rule_groups_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteFirewallManagerRuleGroupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteFirewallManagerRuleGroupsInput {
                 web_acl_arn: self.web_acl_arn,
@@ -1360,16 +1607,16 @@ impl DeleteFirewallManagerRuleGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteFirewallManagerRuleGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteFirewallManagerRuleGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1377,7 +1624,7 @@ impl DeleteFirewallManagerRuleGroupsInput {
         fn update_http_builder(
             input: &crate::input::DeleteFirewallManagerRuleGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1386,30 +1633,30 @@ impl DeleteFirewallManagerRuleGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteFirewallManagerRuleGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.DeleteFirewallManagerRuleGroups",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_firewall_manager_rule_groups(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_firewall_manager_rule_groups(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1432,15 +1679,15 @@ impl DeleteFirewallManagerRuleGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteFirewallManagerRuleGroups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteFirewallManagerRuleGroups",
             "wafv2",
         ));
@@ -1449,10 +1696,10 @@ impl DeleteFirewallManagerRuleGroupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1483,6 +1730,7 @@ pub mod delete_ip_set_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1501,6 +1749,16 @@ pub mod delete_ip_set_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -1510,6 +1768,7 @@ pub mod delete_ip_set_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1519,6 +1778,7 @@ pub mod delete_ip_set_input {
             self.lock_token = Some(input.into());
             self
         }
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lock_token = input;
             self
@@ -1526,8 +1786,10 @@ pub mod delete_ip_set_input {
         /// Consumes the builder and constructs a [`DeleteIpSetInput`](crate::input::DeleteIpSetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteIpSetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteIpSetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteIpSetInput {
                 name: self.name,
                 scope: self.scope,
@@ -1548,16 +1810,16 @@ impl DeleteIpSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteIPSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteIpSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1565,7 +1827,7 @@ impl DeleteIpSetInput {
         fn update_http_builder(
             input: &crate::input::DeleteIpSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1574,31 +1836,31 @@ impl DeleteIpSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteIpSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.DeleteIPSet",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_ip_set(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1621,25 +1883,27 @@ impl DeleteIpSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteIPSet::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteIPSet",
-                    "wafv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteIPSet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteIPSet",
+            "wafv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1668,6 +1932,8 @@ pub mod delete_logging_configuration_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the
+        /// <a>LoggingConfiguration</a>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -1677,7 +1943,7 @@ pub mod delete_logging_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteLoggingConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteLoggingConfigurationInput {
                 resource_arn: self.resource_arn,
@@ -1697,16 +1963,16 @@ impl DeleteLoggingConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteLoggingConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteLoggingConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1714,7 +1980,7 @@ impl DeleteLoggingConfigurationInput {
         fn update_http_builder(
             input: &crate::input::DeleteLoggingConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1723,32 +1989,34 @@ impl DeleteLoggingConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteLoggingConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.DeleteLoggingConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_logging_configuration(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1771,15 +2039,15 @@ impl DeleteLoggingConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteLoggingConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteLoggingConfiguration",
             "wafv2",
         ));
@@ -1788,10 +2056,10 @@ impl DeleteLoggingConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1821,6 +2089,9 @@ pub mod delete_permission_policy_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the rule group from which you want to delete the
+        /// policy.</p>
+        /// <p>You must be the owner of the rule group to perform this operation.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -1830,7 +2101,7 @@ pub mod delete_permission_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::DeletePermissionPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeletePermissionPolicyInput {
                 resource_arn: self.resource_arn,
@@ -1849,16 +2120,16 @@ impl DeletePermissionPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeletePermissionPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeletePermissionPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1866,7 +2137,7 @@ impl DeletePermissionPolicyInput {
         fn update_http_builder(
             input: &crate::input::DeletePermissionPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1875,32 +2146,34 @@ impl DeletePermissionPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeletePermissionPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.DeletePermissionPolicy",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_permission_policy(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1923,15 +2196,15 @@ impl DeletePermissionPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeletePermissionPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeletePermissionPolicy",
             "wafv2",
         ));
@@ -1940,10 +2213,10 @@ impl DeletePermissionPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1974,6 +2247,7 @@ pub mod delete_regex_pattern_set_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the set. You cannot change the name after you create the set.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1992,6 +2266,16 @@ pub mod delete_regex_pattern_set_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -2001,6 +2285,7 @@ pub mod delete_regex_pattern_set_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2010,6 +2295,7 @@ pub mod delete_regex_pattern_set_input {
             self.lock_token = Some(input.into());
             self
         }
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lock_token = input;
             self
@@ -2019,7 +2305,7 @@ pub mod delete_regex_pattern_set_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteRegexPatternSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteRegexPatternSetInput {
                 name: self.name,
@@ -2041,16 +2327,16 @@ impl DeleteRegexPatternSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteRegexPatternSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteRegexPatternSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2058,7 +2344,7 @@ impl DeleteRegexPatternSetInput {
         fn update_http_builder(
             input: &crate::input::DeleteRegexPatternSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2067,32 +2353,34 @@ impl DeleteRegexPatternSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteRegexPatternSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.DeleteRegexPatternSet",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_regex_pattern_set(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2115,15 +2403,15 @@ impl DeleteRegexPatternSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteRegexPatternSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteRegexPatternSet",
             "wafv2",
         ));
@@ -2132,10 +2420,10 @@ impl DeleteRegexPatternSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2166,6 +2454,7 @@ pub mod delete_rule_group_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2184,6 +2473,16 @@ pub mod delete_rule_group_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -2193,6 +2492,7 @@ pub mod delete_rule_group_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2202,6 +2502,7 @@ pub mod delete_rule_group_input {
             self.lock_token = Some(input.into());
             self
         }
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lock_token = input;
             self
@@ -2211,7 +2512,7 @@ pub mod delete_rule_group_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteRuleGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteRuleGroupInput {
                 name: self.name,
@@ -2233,16 +2534,16 @@ impl DeleteRuleGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteRuleGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteRuleGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2250,7 +2551,7 @@ impl DeleteRuleGroupInput {
         fn update_http_builder(
             input: &crate::input::DeleteRuleGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2259,32 +2560,32 @@ impl DeleteRuleGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteRuleGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.DeleteRuleGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_rule_group(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2307,15 +2608,15 @@ impl DeleteRuleGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteRuleGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteRuleGroup",
             "wafv2",
         ));
@@ -2324,10 +2625,10 @@ impl DeleteRuleGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2358,6 +2659,7 @@ pub mod delete_web_acl_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2376,6 +2678,16 @@ pub mod delete_web_acl_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -2385,6 +2697,7 @@ pub mod delete_web_acl_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2394,6 +2707,7 @@ pub mod delete_web_acl_input {
             self.lock_token = Some(input.into());
             self
         }
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lock_token = input;
             self
@@ -2401,8 +2715,10 @@ pub mod delete_web_acl_input {
         /// Consumes the builder and constructs a [`DeleteWebAclInput`](crate::input::DeleteWebAclInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteWebAclInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteWebAclInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteWebAclInput {
                 name: self.name,
                 scope: self.scope,
@@ -2423,16 +2739,16 @@ impl DeleteWebAclInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteWebACL,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteWebAclInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2440,7 +2756,7 @@ impl DeleteWebAclInput {
         fn update_http_builder(
             input: &crate::input::DeleteWebAclInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2449,29 +2765,31 @@ impl DeleteWebAclInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteWebAclInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.DeleteWebACL",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_web_acl(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2494,25 +2812,27 @@ impl DeleteWebAclInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteWebACL::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteWebACL",
-                    "wafv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteWebACL::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteWebACL",
+            "wafv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2543,6 +2863,7 @@ pub mod describe_managed_rule_group_input {
             self.vendor_name = Some(input.into());
             self
         }
+        /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
         pub fn set_vendor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vendor_name = input;
             self
@@ -2552,6 +2873,7 @@ pub mod describe_managed_rule_group_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2570,6 +2892,16 @@ pub mod describe_managed_rule_group_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -2581,6 +2913,9 @@ pub mod describe_managed_rule_group_input {
             self.version_name = Some(input.into());
             self
         }
+        /// <p>The version of the rule group. You can only use a version that is not
+        /// scheduled for expiration. If you don't provide this, WAF uses the vendor's default version.
+        /// </p>
         pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_name = input;
             self
@@ -2590,7 +2925,7 @@ pub mod describe_managed_rule_group_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeManagedRuleGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeManagedRuleGroupInput {
                 vendor_name: self.vendor_name,
@@ -2613,16 +2948,16 @@ impl DescribeManagedRuleGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeManagedRuleGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeManagedRuleGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2630,7 +2965,7 @@ impl DescribeManagedRuleGroupInput {
         fn update_http_builder(
             input: &crate::input::DescribeManagedRuleGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2639,32 +2974,34 @@ impl DescribeManagedRuleGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeManagedRuleGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.DescribeManagedRuleGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_managed_rule_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2687,15 +3024,15 @@ impl DescribeManagedRuleGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeManagedRuleGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeManagedRuleGroup",
             "wafv2",
         ));
@@ -2704,10 +3041,10 @@ impl DescribeManagedRuleGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2731,6 +3068,7 @@ pub mod disassociate_web_acl_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resource to disassociate from the web ACL. </p>
+        ///
         /// <p>The ARN must be in one of the following formats:</p>
         /// <ul>
         /// <li>
@@ -2753,6 +3091,26 @@ pub mod disassociate_web_acl_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource to disassociate from the web ACL. </p>
+        ///
+        /// <p>The ARN must be in one of the following formats:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+        /// </code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
+        /// </code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i>
+        /// </code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2762,7 +3120,7 @@ pub mod disassociate_web_acl_input {
             self,
         ) -> std::result::Result<
             crate::input::DisassociateWebAclInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisassociateWebAclInput {
                 resource_arn: self.resource_arn,
@@ -2781,16 +3139,16 @@ impl DisassociateWebAclInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisassociateWebACL,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisassociateWebAclInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2798,7 +3156,7 @@ impl DisassociateWebAclInput {
         fn update_http_builder(
             input: &crate::input::DisassociateWebAclInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2807,30 +3165,32 @@ impl DisassociateWebAclInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisassociateWebAclInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.DisassociateWebACL",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disassociate_web_acl(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2853,15 +3213,15 @@ impl DisassociateWebAclInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisassociateWebACL::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisassociateWebACL",
             "wafv2",
         ));
@@ -2870,10 +3230,10 @@ impl DisassociateWebAclInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2903,6 +3263,7 @@ pub mod get_ip_set_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2921,6 +3282,16 @@ pub mod get_ip_set_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -2930,6 +3301,7 @@ pub mod get_ip_set_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2937,7 +3309,7 @@ pub mod get_ip_set_input {
         /// Consumes the builder and constructs a [`GetIpSetInput`](crate::input::GetIpSetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetIpSetInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetIpSetInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetIpSetInput {
                 name: self.name,
@@ -2958,16 +3330,16 @@ impl GetIpSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetIPSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetIpSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2975,7 +3347,7 @@ impl GetIpSetInput {
         fn update_http_builder(
             input: &crate::input::GetIpSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2984,29 +3356,31 @@ impl GetIpSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetIpSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.GetIPSet",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_ip_set(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3029,21 +3403,24 @@ impl GetIpSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::GetIPSet::new())
-            .with_metadata(smithy_http::operation::Metadata::new("GetIPSet", "wafv2"));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetIPSet::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetIPSet", "wafv2",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3072,6 +3449,8 @@ pub mod get_logging_configuration_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the
+        /// <a>LoggingConfiguration</a>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3081,7 +3460,7 @@ pub mod get_logging_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::GetLoggingConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetLoggingConfigurationInput {
                 resource_arn: self.resource_arn,
@@ -3101,16 +3480,16 @@ impl GetLoggingConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetLoggingConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetLoggingConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3118,7 +3497,7 @@ impl GetLoggingConfigurationInput {
         fn update_http_builder(
             input: &crate::input::GetLoggingConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3127,32 +3506,34 @@ impl GetLoggingConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetLoggingConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.GetLoggingConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_logging_configuration(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3175,15 +3556,15 @@ impl GetLoggingConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetLoggingConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetLoggingConfiguration",
             "wafv2",
         ));
@@ -3192,10 +3573,10 @@ impl GetLoggingConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3226,6 +3607,8 @@ pub mod get_managed_rule_set_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
+        /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3244,6 +3627,16 @@ pub mod get_managed_rule_set_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -3253,6 +3646,7 @@ pub mod get_managed_rule_set_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3262,7 +3656,7 @@ pub mod get_managed_rule_set_input {
             self,
         ) -> std::result::Result<
             crate::input::GetManagedRuleSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetManagedRuleSetInput {
                 name: self.name,
@@ -3283,16 +3677,16 @@ impl GetManagedRuleSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetManagedRuleSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetManagedRuleSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3300,7 +3694,7 @@ impl GetManagedRuleSetInput {
         fn update_http_builder(
             input: &crate::input::GetManagedRuleSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3309,30 +3703,32 @@ impl GetManagedRuleSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetManagedRuleSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.GetManagedRuleSet",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_managed_rule_set(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3355,15 +3751,15 @@ impl GetManagedRuleSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetManagedRuleSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetManagedRuleSet",
             "wafv2",
         ));
@@ -3372,10 +3768,10 @@ impl GetManagedRuleSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3404,6 +3800,8 @@ pub mod get_permission_policy_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the rule group for which you want to get the
+        /// policy.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3413,7 +3811,7 @@ pub mod get_permission_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::GetPermissionPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetPermissionPolicyInput {
                 resource_arn: self.resource_arn,
@@ -3432,16 +3830,16 @@ impl GetPermissionPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetPermissionPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetPermissionPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3449,7 +3847,7 @@ impl GetPermissionPolicyInput {
         fn update_http_builder(
             input: &crate::input::GetPermissionPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3458,32 +3856,32 @@ impl GetPermissionPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetPermissionPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.GetPermissionPolicy",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_permission_policy(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3506,15 +3904,15 @@ impl GetPermissionPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetPermissionPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetPermissionPolicy",
             "wafv2",
         ));
@@ -3523,10 +3921,10 @@ impl GetPermissionPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3567,6 +3965,16 @@ pub mod get_rate_based_statement_managed_keys_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -3576,6 +3984,7 @@ pub mod get_rate_based_statement_managed_keys_input {
             self.web_acl_name = Some(input.into());
             self
         }
+        /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
         pub fn set_web_acl_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.web_acl_name = input;
             self
@@ -3585,6 +3994,7 @@ pub mod get_rate_based_statement_managed_keys_input {
             self.web_acl_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
         pub fn set_web_acl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.web_acl_id = input;
             self
@@ -3595,6 +4005,8 @@ pub mod get_rate_based_statement_managed_keys_input {
             self.rule_group_rule_name = Some(input.into());
             self
         }
+        /// <p>The name of the rule group reference statement in your web ACL. This is required only when you have the rate-based rule nested
+        /// inside a rule group. </p>
         pub fn set_rule_group_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3607,6 +4019,7 @@ pub mod get_rate_based_statement_managed_keys_input {
             self.rule_name = Some(input.into());
             self
         }
+        /// <p>The name of the rate-based rule to get the keys for. If you have the rule defined inside a rule group that you're using in your web ACL, also provide the name of the rule group reference statement in the request parameter <code>RuleGroupRuleName</code>.</p>
         pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_name = input;
             self
@@ -3616,7 +4029,7 @@ pub mod get_rate_based_statement_managed_keys_input {
             self,
         ) -> std::result::Result<
             crate::input::GetRateBasedStatementManagedKeysInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetRateBasedStatementManagedKeysInput {
                 scope: self.scope,
@@ -3640,16 +4053,16 @@ impl GetRateBasedStatementManagedKeysInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetRateBasedStatementManagedKeys,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetRateBasedStatementManagedKeysInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3657,7 +4070,7 @@ impl GetRateBasedStatementManagedKeysInput {
         fn update_http_builder(
             input: &crate::input::GetRateBasedStatementManagedKeysInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3666,30 +4079,30 @@ impl GetRateBasedStatementManagedKeysInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetRateBasedStatementManagedKeysInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.GetRateBasedStatementManagedKeys",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_rate_based_statement_managed_keys(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_rate_based_statement_managed_keys(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3712,15 +4125,15 @@ impl GetRateBasedStatementManagedKeysInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetRateBasedStatementManagedKeys::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetRateBasedStatementManagedKeys",
             "wafv2",
         ));
@@ -3729,10 +4142,10 @@ impl GetRateBasedStatementManagedKeysInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3762,6 +4175,7 @@ pub mod get_regex_pattern_set_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the set. You cannot change the name after you create the set.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3780,6 +4194,16 @@ pub mod get_regex_pattern_set_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -3789,6 +4213,7 @@ pub mod get_regex_pattern_set_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3798,7 +4223,7 @@ pub mod get_regex_pattern_set_input {
             self,
         ) -> std::result::Result<
             crate::input::GetRegexPatternSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetRegexPatternSetInput {
                 name: self.name,
@@ -3819,16 +4244,16 @@ impl GetRegexPatternSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetRegexPatternSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetRegexPatternSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3836,7 +4261,7 @@ impl GetRegexPatternSetInput {
         fn update_http_builder(
             input: &crate::input::GetRegexPatternSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3845,32 +4270,32 @@ impl GetRegexPatternSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetRegexPatternSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.GetRegexPatternSet",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_regex_pattern_set(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3893,15 +4318,15 @@ impl GetRegexPatternSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetRegexPatternSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetRegexPatternSet",
             "wafv2",
         ));
@@ -3910,10 +4335,10 @@ impl GetRegexPatternSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3944,6 +4369,7 @@ pub mod get_rule_group_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3962,6 +4388,16 @@ pub mod get_rule_group_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -3971,6 +4407,7 @@ pub mod get_rule_group_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3980,6 +4417,7 @@ pub mod get_rule_group_input {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the entity.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3987,8 +4425,10 @@ pub mod get_rule_group_input {
         /// Consumes the builder and constructs a [`GetRuleGroupInput`](crate::input::GetRuleGroupInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetRuleGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetRuleGroupInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetRuleGroupInput {
                 name: self.name,
                 scope: self.scope,
@@ -4009,16 +4449,16 @@ impl GetRuleGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetRuleGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetRuleGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4026,7 +4466,7 @@ impl GetRuleGroupInput {
         fn update_http_builder(
             input: &crate::input::GetRuleGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4035,29 +4475,31 @@ impl GetRuleGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetRuleGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.GetRuleGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_rule_group(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4080,25 +4522,27 @@ impl GetRuleGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetRuleGroup::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetRuleGroup",
-                    "wafv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetRuleGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetRuleGroup",
+            "wafv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4131,6 +4575,8 @@ pub mod get_sampled_requests_input {
             self.web_acl_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of
+        /// requests.</p>
         pub fn set_web_acl_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.web_acl_arn = input;
             self
@@ -4141,6 +4587,8 @@ pub mod get_sampled_requests_input {
             self.rule_metric_name = Some(input.into());
             self
         }
+        /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which
+        /// you want a sample of requests.</p>
         pub fn set_rule_metric_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4162,6 +4610,16 @@ pub mod get_sampled_requests_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -4176,6 +4634,12 @@ pub mod get_sampled_requests_input {
             self.time_window = Some(input);
             self
         }
+        /// <p>The start date and time and the end date and time of the range for which you want
+        /// <code>GetSampledRequests</code> to return a sample of requests. You must specify the
+        /// times in Coordinated Universal Time (UTC) format. UTC format includes the special
+        /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
+        /// any time range in the previous three hours. If you specify a start time that's earlier than
+        /// three hours ago, WAF sets it to three hours ago.</p>
         pub fn set_time_window(
             mut self,
             input: std::option::Option<crate::model::TimeWindow>,
@@ -4191,6 +4655,10 @@ pub mod get_sampled_requests_input {
             self.max_items = Some(input);
             self
         }
+        /// <p>The number of requests that you want WAF to return from among the first 5,000
+        /// requests that your Amazon Web Services resource received during the time range. If your resource received
+        /// fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code>
+        /// returns information about all of them. </p>
         pub fn set_max_items(mut self, input: std::option::Option<i64>) -> Self {
             self.max_items = input;
             self
@@ -4200,7 +4668,7 @@ pub mod get_sampled_requests_input {
             self,
         ) -> std::result::Result<
             crate::input::GetSampledRequestsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetSampledRequestsInput {
                 web_acl_arn: self.web_acl_arn,
@@ -4223,16 +4691,16 @@ impl GetSampledRequestsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetSampledRequests,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetSampledRequestsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4240,7 +4708,7 @@ impl GetSampledRequestsInput {
         fn update_http_builder(
             input: &crate::input::GetSampledRequestsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4249,30 +4717,32 @@ impl GetSampledRequestsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetSampledRequestsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.GetSampledRequests",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_sampled_requests(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4295,15 +4765,15 @@ impl GetSampledRequestsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetSampledRequests::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetSampledRequests",
             "wafv2",
         ));
@@ -4312,10 +4782,10 @@ impl GetSampledRequestsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4345,6 +4815,7 @@ pub mod get_web_acl_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4363,6 +4834,16 @@ pub mod get_web_acl_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -4372,6 +4853,7 @@ pub mod get_web_acl_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4379,7 +4861,7 @@ pub mod get_web_acl_input {
         /// Consumes the builder and constructs a [`GetWebAclInput`](crate::input::GetWebAclInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetWebAclInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetWebAclInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetWebAclInput {
                 name: self.name,
@@ -4400,16 +4882,16 @@ impl GetWebAclInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetWebACL,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetWebAclInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4417,7 +4899,7 @@ impl GetWebAclInput {
         fn update_http_builder(
             input: &crate::input::GetWebAclInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4426,29 +4908,31 @@ impl GetWebAclInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetWebAclInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.GetWebACL",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_web_acl(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4471,22 +4955,25 @@ impl GetWebAclInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetWebACL::new())
-                .with_metadata(smithy_http::operation::Metadata::new("GetWebACL", "wafv2"));
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetWebACL::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetWebACL",
+                    "wafv2",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4514,6 +5001,7 @@ pub mod get_web_acl_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The ARN (Amazon Resource Name) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4523,7 +5011,7 @@ pub mod get_web_acl_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::GetWebAclForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetWebAclForResourceInput {
                 resource_arn: self.resource_arn,
@@ -4542,16 +5030,16 @@ impl GetWebAclForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetWebACLForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetWebAclForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4559,7 +5047,7 @@ impl GetWebAclForResourceInput {
         fn update_http_builder(
             input: &crate::input::GetWebAclForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4568,32 +5056,34 @@ impl GetWebAclForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetWebAclForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.GetWebACLForResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_web_acl_for_resource(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4616,15 +5106,15 @@ impl GetWebAclForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetWebACLForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetWebACLForResource",
             "wafv2",
         ));
@@ -4633,10 +5123,10 @@ impl GetWebAclForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4675,6 +5165,16 @@ pub mod list_available_managed_rule_groups_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -4686,6 +5186,9 @@ pub mod list_available_managed_rule_groups_input {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -4697,6 +5200,9 @@ pub mod list_available_managed_rule_groups_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more
+        /// objects are available, in the response, WAF provides a
+        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -4706,7 +5212,7 @@ pub mod list_available_managed_rule_groups_input {
             self,
         ) -> std::result::Result<
             crate::input::ListAvailableManagedRuleGroupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListAvailableManagedRuleGroupsInput {
                 scope: self.scope,
@@ -4728,16 +5234,16 @@ impl ListAvailableManagedRuleGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListAvailableManagedRuleGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListAvailableManagedRuleGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4745,7 +5251,7 @@ impl ListAvailableManagedRuleGroupsInput {
         fn update_http_builder(
             input: &crate::input::ListAvailableManagedRuleGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4754,30 +5260,30 @@ impl ListAvailableManagedRuleGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListAvailableManagedRuleGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.ListAvailableManagedRuleGroups",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_available_managed_rule_groups(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_available_managed_rule_groups(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4800,15 +5306,15 @@ impl ListAvailableManagedRuleGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListAvailableManagedRuleGroups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListAvailableManagedRuleGroups",
             "wafv2",
         ));
@@ -4817,10 +5323,10 @@ impl ListAvailableManagedRuleGroupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4852,6 +5358,7 @@ pub mod list_available_managed_rule_group_versions_input {
             self.vendor_name = Some(input.into());
             self
         }
+        /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
         pub fn set_vendor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vendor_name = input;
             self
@@ -4861,6 +5368,7 @@ pub mod list_available_managed_rule_group_versions_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4879,6 +5387,16 @@ pub mod list_available_managed_rule_group_versions_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -4890,6 +5408,9 @@ pub mod list_available_managed_rule_group_versions_input {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -4901,6 +5422,9 @@ pub mod list_available_managed_rule_group_versions_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more
+        /// objects are available, in the response, WAF provides a
+        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -4910,7 +5434,7 @@ pub mod list_available_managed_rule_group_versions_input {
             self,
         ) -> std::result::Result<
             crate::input::ListAvailableManagedRuleGroupVersionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListAvailableManagedRuleGroupVersionsInput {
                 vendor_name: self.vendor_name,
@@ -4935,16 +5459,16 @@ impl ListAvailableManagedRuleGroupVersionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListAvailableManagedRuleGroupVersions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListAvailableManagedRuleGroupVersionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4952,7 +5476,7 @@ impl ListAvailableManagedRuleGroupVersionsInput {
         fn update_http_builder(
             input: &crate::input::ListAvailableManagedRuleGroupVersionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4961,30 +5485,30 @@ impl ListAvailableManagedRuleGroupVersionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListAvailableManagedRuleGroupVersionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.ListAvailableManagedRuleGroupVersions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_available_managed_rule_group_versions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_available_managed_rule_group_versions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5007,15 +5531,15 @@ impl ListAvailableManagedRuleGroupVersionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListAvailableManagedRuleGroupVersions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListAvailableManagedRuleGroupVersions",
             "wafv2",
         ));
@@ -5024,10 +5548,10 @@ impl ListAvailableManagedRuleGroupVersionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5066,6 +5590,16 @@ pub mod list_ip_sets_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -5077,6 +5611,9 @@ pub mod list_ip_sets_input {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -5088,6 +5625,9 @@ pub mod list_ip_sets_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more
+        /// objects are available, in the response, WAF provides a
+        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5095,8 +5635,10 @@ pub mod list_ip_sets_input {
         /// Consumes the builder and constructs a [`ListIpSetsInput`](crate::input::ListIpSetsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListIpSetsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListIpSetsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListIpSetsInput {
                 scope: self.scope,
                 next_marker: self.next_marker,
@@ -5116,16 +5658,16 @@ impl ListIpSetsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListIPSets,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListIpSetsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5133,7 +5675,7 @@ impl ListIpSetsInput {
         fn update_http_builder(
             input: &crate::input::ListIpSetsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5142,29 +5684,31 @@ impl ListIpSetsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListIpSetsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.ListIPSets",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_ip_sets(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5187,22 +5731,27 @@ impl ListIpSetsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListIPSets::new())
-                .with_metadata(smithy_http::operation::Metadata::new("ListIPSets", "wafv2"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListIPSets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListIPSets",
+            "wafv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5241,6 +5790,16 @@ pub mod list_logging_configurations_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -5252,6 +5811,9 @@ pub mod list_logging_configurations_input {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -5263,6 +5825,9 @@ pub mod list_logging_configurations_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more
+        /// objects are available, in the response, WAF provides a
+        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5272,7 +5837,7 @@ pub mod list_logging_configurations_input {
             self,
         ) -> std::result::Result<
             crate::input::ListLoggingConfigurationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListLoggingConfigurationsInput {
                 scope: self.scope,
@@ -5294,16 +5859,16 @@ impl ListLoggingConfigurationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListLoggingConfigurations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListLoggingConfigurationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5311,7 +5876,7 @@ impl ListLoggingConfigurationsInput {
         fn update_http_builder(
             input: &crate::input::ListLoggingConfigurationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5320,32 +5885,34 @@ impl ListLoggingConfigurationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListLoggingConfigurationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.ListLoggingConfigurations",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_logging_configurations(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5368,15 +5935,15 @@ impl ListLoggingConfigurationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListLoggingConfigurations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListLoggingConfigurations",
             "wafv2",
         ));
@@ -5385,10 +5952,10 @@ impl ListLoggingConfigurationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5427,6 +5994,16 @@ pub mod list_managed_rule_sets_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -5438,6 +6015,9 @@ pub mod list_managed_rule_sets_input {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -5449,6 +6029,9 @@ pub mod list_managed_rule_sets_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more
+        /// objects are available, in the response, WAF provides a
+        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5458,7 +6041,7 @@ pub mod list_managed_rule_sets_input {
             self,
         ) -> std::result::Result<
             crate::input::ListManagedRuleSetsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListManagedRuleSetsInput {
                 scope: self.scope,
@@ -5479,16 +6062,16 @@ impl ListManagedRuleSetsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListManagedRuleSets,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListManagedRuleSetsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5496,7 +6079,7 @@ impl ListManagedRuleSetsInput {
         fn update_http_builder(
             input: &crate::input::ListManagedRuleSetsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5505,32 +6088,32 @@ impl ListManagedRuleSetsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListManagedRuleSetsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.ListManagedRuleSets",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_managed_rule_sets(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5553,15 +6136,15 @@ impl ListManagedRuleSetsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListManagedRuleSets::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListManagedRuleSets",
             "wafv2",
         ));
@@ -5570,10 +6153,10 @@ impl ListManagedRuleSetsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5612,6 +6195,16 @@ pub mod list_regex_pattern_sets_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -5623,6 +6216,9 @@ pub mod list_regex_pattern_sets_input {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -5634,6 +6230,9 @@ pub mod list_regex_pattern_sets_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more
+        /// objects are available, in the response, WAF provides a
+        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5643,7 +6242,7 @@ pub mod list_regex_pattern_sets_input {
             self,
         ) -> std::result::Result<
             crate::input::ListRegexPatternSetsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListRegexPatternSetsInput {
                 scope: self.scope,
@@ -5664,16 +6263,16 @@ impl ListRegexPatternSetsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListRegexPatternSets,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListRegexPatternSetsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5681,7 +6280,7 @@ impl ListRegexPatternSetsInput {
         fn update_http_builder(
             input: &crate::input::ListRegexPatternSetsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5690,32 +6289,34 @@ impl ListRegexPatternSetsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListRegexPatternSetsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.ListRegexPatternSets",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_regex_pattern_sets(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5738,15 +6339,15 @@ impl ListRegexPatternSetsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListRegexPatternSets::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListRegexPatternSets",
             "wafv2",
         ));
@@ -5755,10 +6356,10 @@ impl ListRegexPatternSetsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5787,6 +6388,7 @@ pub mod list_resources_for_web_acl_input {
             self.web_acl_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
         pub fn set_web_acl_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.web_acl_arn = input;
             self
@@ -5797,6 +6399,8 @@ pub mod list_resources_for_web_acl_input {
             self.resource_type = Some(input);
             self
         }
+        /// <p>Used for web ACLs that are scoped for regional applications.
+        /// A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -5809,7 +6413,7 @@ pub mod list_resources_for_web_acl_input {
             self,
         ) -> std::result::Result<
             crate::input::ListResourcesForWebAclInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListResourcesForWebAclInput {
                 web_acl_arn: self.web_acl_arn,
@@ -5829,16 +6433,16 @@ impl ListResourcesForWebAclInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListResourcesForWebACL,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListResourcesForWebAclInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5846,7 +6450,7 @@ impl ListResourcesForWebAclInput {
         fn update_http_builder(
             input: &crate::input::ListResourcesForWebAclInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5855,32 +6459,34 @@ impl ListResourcesForWebAclInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListResourcesForWebAclInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.ListResourcesForWebACL",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_resources_for_web_acl(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5903,15 +6509,15 @@ impl ListResourcesForWebAclInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListResourcesForWebACL::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListResourcesForWebACL",
             "wafv2",
         ));
@@ -5920,10 +6526,10 @@ impl ListResourcesForWebAclInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5962,6 +6568,16 @@ pub mod list_rule_groups_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -5973,6 +6589,9 @@ pub mod list_rule_groups_input {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -5984,6 +6603,9 @@ pub mod list_rule_groups_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more
+        /// objects are available, in the response, WAF provides a
+        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5993,7 +6615,7 @@ pub mod list_rule_groups_input {
             self,
         ) -> std::result::Result<
             crate::input::ListRuleGroupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListRuleGroupsInput {
                 scope: self.scope,
@@ -6014,16 +6636,16 @@ impl ListRuleGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListRuleGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListRuleGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6031,7 +6653,7 @@ impl ListRuleGroupsInput {
         fn update_http_builder(
             input: &crate::input::ListRuleGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6040,32 +6662,32 @@ impl ListRuleGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListRuleGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.ListRuleGroups",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_rule_groups(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6088,15 +6710,15 @@ impl ListRuleGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListRuleGroups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListRuleGroups",
             "wafv2",
         ));
@@ -6105,10 +6727,10 @@ impl ListRuleGroupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6140,6 +6762,9 @@ pub mod list_tags_for_resource_input {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -6151,6 +6776,9 @@ pub mod list_tags_for_resource_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more
+        /// objects are available, in the response, WAF provides a
+        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -6160,6 +6788,7 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -6169,7 +6798,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 next_marker: self.next_marker,
@@ -6190,16 +6819,16 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6207,7 +6836,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6216,32 +6845,32 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.ListTagsForResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6264,15 +6893,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "wafv2",
         ));
@@ -6281,10 +6910,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6323,6 +6952,16 @@ pub mod list_web_ac_ls_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -6334,6 +6973,9 @@ pub mod list_web_ac_ls_input {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -6345,6 +6987,9 @@ pub mod list_web_ac_ls_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more
+        /// objects are available, in the response, WAF provides a
+        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -6352,8 +6997,10 @@ pub mod list_web_ac_ls_input {
         /// Consumes the builder and constructs a [`ListWebAcLsInput`](crate::input::ListWebAcLsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListWebAcLsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListWebAcLsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListWebAcLsInput {
                 scope: self.scope,
                 next_marker: self.next_marker,
@@ -6373,16 +7020,16 @@ impl ListWebAcLsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListWebACLs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListWebAcLsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6390,7 +7037,7 @@ impl ListWebAcLsInput {
         fn update_http_builder(
             input: &crate::input::ListWebAcLsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6399,29 +7046,31 @@ impl ListWebAcLsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListWebAcLsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.ListWebACLs",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_web_ac_ls(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6444,25 +7093,27 @@ impl ListWebAcLsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListWebACLs::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListWebACLs",
-                    "wafv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListWebACLs::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListWebACLs",
+            "wafv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6490,6 +7141,7 @@ pub mod put_logging_configuration_input {
             self.logging_configuration = Some(input);
             self
         }
+        /// <p></p>
         pub fn set_logging_configuration(
             mut self,
             input: std::option::Option<crate::model::LoggingConfiguration>,
@@ -6502,7 +7154,7 @@ pub mod put_logging_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::PutLoggingConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutLoggingConfigurationInput {
                 logging_configuration: self.logging_configuration,
@@ -6522,16 +7174,16 @@ impl PutLoggingConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutLoggingConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutLoggingConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6539,7 +7191,7 @@ impl PutLoggingConfigurationInput {
         fn update_http_builder(
             input: &crate::input::PutLoggingConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6548,32 +7200,34 @@ impl PutLoggingConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutLoggingConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.PutLoggingConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_logging_configuration(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6596,15 +7250,15 @@ impl PutLoggingConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutLoggingConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutLoggingConfiguration",
             "wafv2",
         ));
@@ -6613,10 +7267,10 @@ impl PutLoggingConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6652,6 +7306,8 @@ pub mod put_managed_rule_set_versions_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
+        /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6670,6 +7326,16 @@ pub mod put_managed_rule_set_versions_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -6679,6 +7345,7 @@ pub mod put_managed_rule_set_versions_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -6688,6 +7355,7 @@ pub mod put_managed_rule_set_versions_input {
             self.lock_token = Some(input.into());
             self
         }
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lock_token = input;
             self
@@ -6698,6 +7366,8 @@ pub mod put_managed_rule_set_versions_input {
             self.recommended_version = Some(input.into());
             self
         }
+        /// <p>The version of the named managed rule group that you'd like your customers to choose,
+        /// from among your version offerings. </p>
         pub fn set_recommended_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6705,6 +7375,12 @@ pub mod put_managed_rule_set_versions_input {
             self.recommended_version = input;
             self
         }
+        /// Adds a key-value pair to `versions_to_publish`.
+        ///
+        /// To override the contents of this collection use [`set_versions_to_publish`](Self::set_versions_to_publish).
+        ///
+        /// <p>The versions of the named managed rule group that you want to offer to your customers.
+        /// </p>
         pub fn versions_to_publish(
             mut self,
             k: impl Into<std::string::String>,
@@ -6715,6 +7391,8 @@ pub mod put_managed_rule_set_versions_input {
             self.versions_to_publish = Some(hash_map);
             self
         }
+        /// <p>The versions of the named managed rule group that you want to offer to your customers.
+        /// </p>
         pub fn set_versions_to_publish(
             mut self,
             input: std::option::Option<
@@ -6729,7 +7407,7 @@ pub mod put_managed_rule_set_versions_input {
             self,
         ) -> std::result::Result<
             crate::input::PutManagedRuleSetVersionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutManagedRuleSetVersionsInput {
                 name: self.name,
@@ -6754,16 +7432,16 @@ impl PutManagedRuleSetVersionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutManagedRuleSetVersions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutManagedRuleSetVersionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6771,7 +7449,7 @@ impl PutManagedRuleSetVersionsInput {
         fn update_http_builder(
             input: &crate::input::PutManagedRuleSetVersionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6780,30 +7458,30 @@ impl PutManagedRuleSetVersionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutManagedRuleSetVersionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.PutManagedRuleSetVersions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_managed_rule_set_versions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_managed_rule_set_versions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6826,15 +7504,15 @@ impl PutManagedRuleSetVersionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutManagedRuleSetVersions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutManagedRuleSetVersions",
             "wafv2",
         ));
@@ -6843,10 +7521,10 @@ impl PutManagedRuleSetVersionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6876,11 +7554,14 @@ pub mod put_permission_policy_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the <a>RuleGroup</a> to which you want to
+        /// attach the policy.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
         /// <p>The policy to attach to the specified rule group. </p>
+        ///
         /// <p>The policy specifications must conform to the following:</p>
         /// <ul>
         /// <li>
@@ -6906,6 +7587,29 @@ pub mod put_permission_policy_input {
             self.policy = Some(input.into());
             self
         }
+        /// <p>The policy to attach to the specified rule group. </p>
+        ///
+        /// <p>The policy specifications must conform to the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p>
+        /// </li>
+        /// <li>
+        /// <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Effect</code> must specify <code>Allow</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions or wildcard actions in the policy.</p>
+        /// </li>
+        /// <li>
+        /// <p>The policy must not include a <code>Resource</code> parameter.</p>
+        /// </li>
+        /// </ul>     
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>.  </p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -6915,7 +7619,7 @@ pub mod put_permission_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::PutPermissionPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutPermissionPolicyInput {
                 resource_arn: self.resource_arn,
@@ -6935,16 +7639,16 @@ impl PutPermissionPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutPermissionPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutPermissionPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6952,7 +7656,7 @@ impl PutPermissionPolicyInput {
         fn update_http_builder(
             input: &crate::input::PutPermissionPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6961,32 +7665,32 @@ impl PutPermissionPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutPermissionPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.PutPermissionPolicy",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_permission_policy(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7009,15 +7713,15 @@ impl PutPermissionPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutPermissionPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutPermissionPolicy",
             "wafv2",
         ));
@@ -7026,10 +7730,10 @@ impl PutPermissionPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7058,16 +7762,23 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>An array of key:value pairs to associate with the resource.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>An array of key:value pairs to associate with the resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7078,8 +7789,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -7098,16 +7811,16 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7115,7 +7828,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7124,29 +7837,31 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.TagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7169,25 +7884,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "wafv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "wafv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7216,16 +7933,23 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>An array of keys identifying the tags to disassociate from the resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>An array of keys identifying the tags to disassociate from the resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7236,8 +7960,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -7256,16 +7982,16 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7273,7 +7999,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7282,29 +8008,31 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.UntagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7327,25 +8055,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "wafv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "wafv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7378,6 +8108,7 @@ pub mod update_ip_set_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7396,6 +8127,16 @@ pub mod update_ip_set_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -7405,6 +8146,7 @@ pub mod update_ip_set_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -7414,16 +8156,57 @@ pub mod update_ip_set_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the IP set that helps with identification. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `addresses`.
+        ///
+        /// To override the contents of this collection use [`set_addresses`](Self::set_addresses).
+        ///
+        /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+        /// <p>Examples: </p>
+        /// <ul>
+        /// <li>
+        /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify
+        /// <code>192.0.2.0/24</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
         pub fn addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.addresses.unwrap_or_default();
             v.push(input.into());
             self.addresses = Some(v);
             self
         }
+        /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
+        /// <p>Examples: </p>
+        /// <ul>
+        /// <li>
+        /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify
+        /// <code>192.0.2.0/24</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
         pub fn set_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7436,6 +8219,7 @@ pub mod update_ip_set_input {
             self.lock_token = Some(input.into());
             self
         }
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lock_token = input;
             self
@@ -7443,8 +8227,10 @@ pub mod update_ip_set_input {
         /// Consumes the builder and constructs a [`UpdateIpSetInput`](crate::input::UpdateIpSetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateIpSetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateIpSetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateIpSetInput {
                 name: self.name,
                 scope: self.scope,
@@ -7467,16 +8253,16 @@ impl UpdateIpSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateIPSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateIpSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7484,7 +8270,7 @@ impl UpdateIpSetInput {
         fn update_http_builder(
             input: &crate::input::UpdateIpSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7493,31 +8279,31 @@ impl UpdateIpSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateIpSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.UpdateIPSet",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_ip_set(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7540,25 +8326,27 @@ impl UpdateIpSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateIPSet::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateIPSet",
-                    "wafv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateIPSet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateIPSet",
+            "wafv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7583,7 +8371,7 @@ pub mod update_managed_rule_set_version_expiry_date_input {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) lock_token: std::option::Option<std::string::String>,
         pub(crate) version_to_expire: std::option::Option<std::string::String>,
-        pub(crate) expiry_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) expiry_timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
@@ -7592,6 +8380,8 @@ pub mod update_managed_rule_set_version_expiry_date_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
+        /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7610,6 +8400,16 @@ pub mod update_managed_rule_set_version_expiry_date_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -7619,6 +8419,7 @@ pub mod update_managed_rule_set_version_expiry_date_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -7628,6 +8429,7 @@ pub mod update_managed_rule_set_version_expiry_date_input {
             self.lock_token = Some(input.into());
             self
         }
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lock_token = input;
             self
@@ -7638,6 +8440,8 @@ pub mod update_managed_rule_set_version_expiry_date_input {
             self.version_to_expire = Some(input.into());
             self
         }
+        /// <p>The version that you want to remove from your list of offerings for the named managed
+        /// rule group. </p>
         pub fn set_version_to_expire(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7647,13 +8451,15 @@ pub mod update_managed_rule_set_version_expiry_date_input {
         }
         /// <p>The time that you want the version to expire.</p>
         /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-        pub fn expiry_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn expiry_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.expiry_timestamp = Some(input);
             self
         }
+        /// <p>The time that you want the version to expire.</p>
+        /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
         pub fn set_expiry_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.expiry_timestamp = input;
             self
@@ -7663,7 +8469,7 @@ pub mod update_managed_rule_set_version_expiry_date_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateManagedRuleSetVersionExpiryDateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateManagedRuleSetVersionExpiryDateInput {
                 name: self.name,
@@ -7689,16 +8495,16 @@ impl UpdateManagedRuleSetVersionExpiryDateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateManagedRuleSetVersionExpiryDate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateManagedRuleSetVersionExpiryDateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7706,7 +8512,7 @@ impl UpdateManagedRuleSetVersionExpiryDateInput {
         fn update_http_builder(
             input: &crate::input::UpdateManagedRuleSetVersionExpiryDateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7715,30 +8521,30 @@ impl UpdateManagedRuleSetVersionExpiryDateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateManagedRuleSetVersionExpiryDateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.UpdateManagedRuleSetVersionExpiryDate",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_managed_rule_set_version_expiry_date(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_managed_rule_set_version_expiry_date(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7761,15 +8567,15 @@ impl UpdateManagedRuleSetVersionExpiryDateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateManagedRuleSetVersionExpiryDate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateManagedRuleSetVersionExpiryDate",
             "wafv2",
         ));
@@ -7778,10 +8584,10 @@ impl UpdateManagedRuleSetVersionExpiryDateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7814,6 +8620,7 @@ pub mod update_regex_pattern_set_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the set. You cannot change the name after you create the set.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7832,6 +8639,16 @@ pub mod update_regex_pattern_set_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -7841,6 +8658,7 @@ pub mod update_regex_pattern_set_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -7850,16 +8668,23 @@ pub mod update_regex_pattern_set_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the set that helps with identification. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `regular_expression_list`.
+        ///
+        /// To override the contents of this collection use [`set_regular_expression_list`](Self::set_regular_expression_list).
+        ///
+        /// <p></p>
         pub fn regular_expression_list(mut self, input: impl Into<crate::model::Regex>) -> Self {
             let mut v = self.regular_expression_list.unwrap_or_default();
             v.push(input.into());
             self.regular_expression_list = Some(v);
             self
         }
+        /// <p></p>
         pub fn set_regular_expression_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Regex>>,
@@ -7872,6 +8697,7 @@ pub mod update_regex_pattern_set_input {
             self.lock_token = Some(input.into());
             self
         }
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lock_token = input;
             self
@@ -7881,7 +8707,7 @@ pub mod update_regex_pattern_set_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateRegexPatternSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateRegexPatternSetInput {
                 name: self.name,
@@ -7905,16 +8731,16 @@ impl UpdateRegexPatternSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateRegexPatternSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateRegexPatternSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7922,7 +8748,7 @@ impl UpdateRegexPatternSetInput {
         fn update_http_builder(
             input: &crate::input::UpdateRegexPatternSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7931,32 +8757,34 @@ impl UpdateRegexPatternSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateRegexPatternSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.UpdateRegexPatternSet",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_regex_pattern_set(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7979,15 +8807,15 @@ impl UpdateRegexPatternSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateRegexPatternSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateRegexPatternSet",
             "wafv2",
         ));
@@ -7996,10 +8824,10 @@ impl UpdateRegexPatternSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8036,6 +8864,7 @@ pub mod update_rule_group_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8054,6 +8883,16 @@ pub mod update_rule_group_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -8063,6 +8902,7 @@ pub mod update_rule_group_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -8072,16 +8912,29 @@ pub mod update_rule_group_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the rule group that helps with identification. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>The <a>Rule</a> statements used to identify the web requests that you
+        /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
+        /// web requests, and parameters that govern how WAF handles them.
+        /// </p>
         pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
             let mut v = self.rules.unwrap_or_default();
             v.push(input.into());
             self.rules = Some(v);
             self
         }
+        /// <p>The <a>Rule</a> statements used to identify the web requests that you
+        /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
+        /// web requests, and parameters that govern how WAF handles them.
+        /// </p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -8094,6 +8947,7 @@ pub mod update_rule_group_input {
             self.visibility_config = Some(input);
             self
         }
+        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
         pub fn set_visibility_config(
             mut self,
             input: std::option::Option<crate::model::VisibilityConfig>,
@@ -8106,10 +8960,20 @@ pub mod update_rule_group_input {
             self.lock_token = Some(input.into());
             self
         }
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lock_token = input;
             self
         }
+        /// Adds a key-value pair to `custom_response_bodies`.
+        ///
+        /// To override the contents of this collection use [`set_custom_response_bodies`](Self::set_custom_response_bodies).
+        ///
+        /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn custom_response_bodies(
             mut self,
             k: impl Into<std::string::String>,
@@ -8120,6 +8984,11 @@ pub mod update_rule_group_input {
             self.custom_response_bodies = Some(hash_map);
             self
         }
+        /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn set_custom_response_bodies(
             mut self,
             input: std::option::Option<
@@ -8134,7 +9003,7 @@ pub mod update_rule_group_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateRuleGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateRuleGroupInput {
                 name: self.name,
@@ -8160,16 +9029,16 @@ impl UpdateRuleGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateRuleGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateRuleGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8177,7 +9046,7 @@ impl UpdateRuleGroupInput {
         fn update_http_builder(
             input: &crate::input::UpdateRuleGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8186,32 +9055,32 @@ impl UpdateRuleGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateRuleGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.UpdateRuleGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_rule_group(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8234,15 +9103,15 @@ impl UpdateRuleGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateRuleGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateRuleGroup",
             "wafv2",
         ));
@@ -8251,10 +9120,10 @@ impl UpdateRuleGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8292,6 +9161,7 @@ pub mod update_web_acl_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8310,6 +9180,16 @@ pub mod update_web_acl_input {
             self.scope = Some(input);
             self
         }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -8319,6 +9199,7 @@ pub mod update_web_acl_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -8328,6 +9209,7 @@ pub mod update_web_acl_input {
             self.default_action = Some(input);
             self
         }
+        /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
         pub fn set_default_action(
             mut self,
             input: std::option::Option<crate::model::DefaultAction>,
@@ -8340,16 +9222,29 @@ pub mod update_web_acl_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the web ACL that helps with identification. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>The <a>Rule</a> statements used to identify the web requests that you
+        /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
+        /// web requests, and parameters that govern how WAF handles them.
+        /// </p>
         pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
             let mut v = self.rules.unwrap_or_default();
             v.push(input.into());
             self.rules = Some(v);
             self
         }
+        /// <p>The <a>Rule</a> statements used to identify the web requests that you
+        /// want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching  
+        /// web requests, and parameters that govern how WAF handles them.
+        /// </p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -8362,6 +9257,7 @@ pub mod update_web_acl_input {
             self.visibility_config = Some(input);
             self
         }
+        /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
         pub fn set_visibility_config(
             mut self,
             input: std::option::Option<crate::model::VisibilityConfig>,
@@ -8374,10 +9270,20 @@ pub mod update_web_acl_input {
             self.lock_token = Some(input.into());
             self
         }
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lock_token = input;
             self
         }
+        /// Adds a key-value pair to `custom_response_bodies`.
+        ///
+        /// To override the contents of this collection use [`set_custom_response_bodies`](Self::set_custom_response_bodies).
+        ///
+        /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn custom_response_bodies(
             mut self,
             k: impl Into<std::string::String>,
@@ -8388,6 +9294,11 @@ pub mod update_web_acl_input {
             self.custom_response_bodies = Some(hash_map);
             self
         }
+        /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>
+        /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+        /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
+        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
         pub fn set_custom_response_bodies(
             mut self,
             input: std::option::Option<
@@ -8400,8 +9311,10 @@ pub mod update_web_acl_input {
         /// Consumes the builder and constructs a [`UpdateWebAclInput`](crate::input::UpdateWebAclInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateWebAclInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateWebAclInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateWebAclInput {
                 name: self.name,
                 scope: self.scope,
@@ -8427,16 +9340,16 @@ impl UpdateWebAclInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateWebACL,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateWebAclInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8444,7 +9357,7 @@ impl UpdateWebAclInput {
         fn update_http_builder(
             input: &crate::input::UpdateWebAclInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8453,29 +9366,31 @@ impl UpdateWebAclInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateWebAclInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSWAF_20190729.UpdateWebACL",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_web_acl(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8498,25 +9413,27 @@ impl UpdateWebAclInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateWebACL::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateWebACL",
-                    "wafv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateWebACL::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateWebACL",
+            "wafv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8530,6 +9447,7 @@ impl UpdateWebAclInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWebAclInput {
@@ -8586,6 +9504,7 @@ impl std::fmt::Debug for UpdateWebAclInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRuleGroupInput {
@@ -8639,6 +9558,7 @@ impl std::fmt::Debug for UpdateRuleGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRegexPatternSetInput {
@@ -8677,6 +9597,7 @@ impl std::fmt::Debug for UpdateRegexPatternSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateManagedRuleSetVersionExpiryDateInput {
@@ -8703,7 +9624,7 @@ pub struct UpdateManagedRuleSetVersionExpiryDateInput {
     pub version_to_expire: std::option::Option<std::string::String>,
     /// <p>The time that you want the version to expire.</p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-    pub expiry_timestamp: std::option::Option<smithy_types::Instant>,
+    pub expiry_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for UpdateManagedRuleSetVersionExpiryDateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8718,6 +9639,7 @@ impl std::fmt::Debug for UpdateManagedRuleSetVersionExpiryDateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIpSetInput {
@@ -8773,6 +9695,7 @@ impl std::fmt::Debug for UpdateIpSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -8790,6 +9713,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -8807,6 +9731,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPermissionPolicyInput {
@@ -8814,6 +9739,7 @@ pub struct PutPermissionPolicyInput {
     /// attach the policy.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The policy to attach to the specified rule group. </p>
+    ///
     /// <p>The policy specifications must conform to the following:</p>
     /// <ul>
     /// <li>
@@ -8846,6 +9772,7 @@ impl std::fmt::Debug for PutPermissionPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutManagedRuleSetVersionsInput {
@@ -8889,6 +9816,7 @@ impl std::fmt::Debug for PutManagedRuleSetVersionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLoggingConfigurationInput {
@@ -8903,6 +9831,7 @@ impl std::fmt::Debug for PutLoggingConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWebAcLsInput {
@@ -8936,6 +9865,7 @@ impl std::fmt::Debug for ListWebAcLsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -8960,6 +9890,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRuleGroupsInput {
@@ -8993,6 +9924,7 @@ impl std::fmt::Debug for ListRuleGroupsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesForWebAclInput {
@@ -9011,6 +9943,7 @@ impl std::fmt::Debug for ListResourcesForWebAclInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRegexPatternSetsInput {
@@ -9044,6 +9977,7 @@ impl std::fmt::Debug for ListRegexPatternSetsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListManagedRuleSetsInput {
@@ -9077,6 +10011,7 @@ impl std::fmt::Debug for ListManagedRuleSetsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLoggingConfigurationsInput {
@@ -9110,6 +10045,7 @@ impl std::fmt::Debug for ListLoggingConfigurationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIpSetsInput {
@@ -9143,6 +10079,7 @@ impl std::fmt::Debug for ListIpSetsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAvailableManagedRuleGroupVersionsInput {
@@ -9182,6 +10119,7 @@ impl std::fmt::Debug for ListAvailableManagedRuleGroupVersionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAvailableManagedRuleGroupsInput {
@@ -9215,6 +10153,7 @@ impl std::fmt::Debug for ListAvailableManagedRuleGroupsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWebAclForResourceInput {
@@ -9229,6 +10168,7 @@ impl std::fmt::Debug for GetWebAclForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWebAclInput {
@@ -9258,6 +10198,7 @@ impl std::fmt::Debug for GetWebAclInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSampledRequestsInput {
@@ -9303,6 +10244,7 @@ impl std::fmt::Debug for GetSampledRequestsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRuleGroupInput {
@@ -9335,6 +10277,7 @@ impl std::fmt::Debug for GetRuleGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRegexPatternSetInput {
@@ -9364,6 +10307,7 @@ impl std::fmt::Debug for GetRegexPatternSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRateBasedStatementManagedKeysInput {
@@ -9400,6 +10344,7 @@ impl std::fmt::Debug for GetRateBasedStatementManagedKeysInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPermissionPolicyInput {
@@ -9415,6 +10360,7 @@ impl std::fmt::Debug for GetPermissionPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetManagedRuleSetInput {
@@ -9445,6 +10391,7 @@ impl std::fmt::Debug for GetManagedRuleSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLoggingConfigurationInput {
@@ -9460,6 +10407,7 @@ impl std::fmt::Debug for GetLoggingConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIpSetInput {
@@ -9489,10 +10437,12 @@ impl std::fmt::Debug for GetIpSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateWebAclInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to disassociate from the web ACL. </p>
+    ///
     /// <p>The ARN must be in one of the following formats:</p>
     /// <ul>
     /// <li>
@@ -9521,6 +10471,7 @@ impl std::fmt::Debug for DisassociateWebAclInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeManagedRuleGroupInput {
@@ -9555,6 +10506,7 @@ impl std::fmt::Debug for DescribeManagedRuleGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWebAclInput {
@@ -9587,6 +10539,7 @@ impl std::fmt::Debug for DeleteWebAclInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRuleGroupInput {
@@ -9619,6 +10572,7 @@ impl std::fmt::Debug for DeleteRuleGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRegexPatternSetInput {
@@ -9651,6 +10605,7 @@ impl std::fmt::Debug for DeleteRegexPatternSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePermissionPolicyInput {
@@ -9667,6 +10622,7 @@ impl std::fmt::Debug for DeletePermissionPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLoggingConfigurationInput {
@@ -9682,6 +10638,7 @@ impl std::fmt::Debug for DeleteLoggingConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIpSetInput {
@@ -9714,6 +10671,7 @@ impl std::fmt::Debug for DeleteIpSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFirewallManagerRuleGroupsInput {
@@ -9731,6 +10689,7 @@ impl std::fmt::Debug for DeleteFirewallManagerRuleGroupsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWebAclInput {
@@ -9784,6 +10743,7 @@ impl std::fmt::Debug for CreateWebAclInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRuleGroupInput {
@@ -9848,6 +10808,7 @@ impl std::fmt::Debug for CreateRuleGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRegexPatternSetInput {
@@ -9883,6 +10844,7 @@ impl std::fmt::Debug for CreateRegexPatternSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIpSetInput {
@@ -9938,6 +10900,7 @@ impl std::fmt::Debug for CreateIpSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CheckCapacityInput {
@@ -9965,6 +10928,7 @@ impl std::fmt::Debug for CheckCapacityInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateWebAclInput {
@@ -9972,6 +10936,7 @@ pub struct AssociateWebAclInput {
     /// resource.</p>
     pub web_acl_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource to associate with the web ACL. </p>
+    ///
     /// <p>The ARN must be in one of the following formats:</p>
     /// <ul>
     /// <li>

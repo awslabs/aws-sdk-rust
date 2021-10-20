@@ -42,6 +42,7 @@ pub mod user_phone_config {
             self.phone_type = Some(input);
             self
         }
+        /// <p>The phone type.</p>
         pub fn set_phone_type(
             mut self,
             input: std::option::Option<crate::model::PhoneType>,
@@ -54,6 +55,7 @@ pub mod user_phone_config {
             self.auto_accept = Some(input);
             self
         }
+        /// <p>The Auto accept setting.</p>
         pub fn set_auto_accept(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_accept = input;
             self
@@ -63,6 +65,7 @@ pub mod user_phone_config {
             self.after_contact_work_time_limit = Some(input);
             self
         }
+        /// <p>The After Call Work (ACW) timeout setting, in seconds.</p>
         pub fn set_after_contact_work_time_limit(
             mut self,
             input: std::option::Option<i32>,
@@ -75,6 +78,7 @@ pub mod user_phone_config {
             self.desk_phone_number = Some(input.into());
             self
         }
+        /// <p>The phone number for the user's desk phone.</p>
         pub fn set_desk_phone_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -102,6 +106,7 @@ impl UserPhoneConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -113,7 +118,9 @@ impl UserPhoneConfig {
     std::hash::Hash,
 )]
 pub enum PhoneType {
+    #[allow(missing_docs)] // documentation missing in model
     DeskPhone,
+    #[allow(missing_docs)] // documentation missing in model
     SoftPhone,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -135,6 +142,7 @@ impl std::str::FromStr for PhoneType {
     }
 }
 impl PhoneType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PhoneType::DeskPhone => "DESK_PHONE",
@@ -142,6 +150,7 @@ impl PhoneType {
             PhoneType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DESK_PHONE", "SOFT_PHONE"]
     }
@@ -192,6 +201,8 @@ pub mod user_identity_info {
             self.first_name = Some(input.into());
             self
         }
+        /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity
+        /// management.</p>
         pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.first_name = input;
             self
@@ -202,6 +213,8 @@ pub mod user_identity_info {
             self.last_name = Some(input.into());
             self
         }
+        /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity
+        /// management.</p>
         pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.last_name = input;
             self
@@ -212,6 +225,8 @@ pub mod user_identity_info {
             self.email = Some(input.into());
             self
         }
+        /// <p>The email address. If you are using SAML for identity management and include this parameter,
+        /// an error is returned.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.email = input;
             self
@@ -233,6 +248,7 @@ impl UserIdentityInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -244,12 +260,19 @@ impl UserIdentityInfo {
     std::hash::Hash,
 )]
 pub enum ResourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Contact,
+    #[allow(missing_docs)] // documentation missing in model
     ContactFlow,
+    #[allow(missing_docs)] // documentation missing in model
     HierarchyGroup,
+    #[allow(missing_docs)] // documentation missing in model
     HierarchyLevel,
+    #[allow(missing_docs)] // documentation missing in model
     Instance,
+    #[allow(missing_docs)] // documentation missing in model
     Participant,
+    #[allow(missing_docs)] // documentation missing in model
     User,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -276,6 +299,7 @@ impl std::str::FromStr for ResourceType {
     }
 }
 impl ResourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Contact => "CONTACT",
@@ -288,6 +312,7 @@ impl ResourceType {
             ResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CONTACT",
@@ -354,6 +379,9 @@ pub mod hierarchy_structure_update {
             self.level_one = Some(input);
             self
         }
+        /// <p>The
+        /// update
+        /// for level one.</p>
         pub fn set_level_one(
             mut self,
             input: std::option::Option<crate::model::HierarchyLevelUpdate>,
@@ -366,6 +394,7 @@ pub mod hierarchy_structure_update {
             self.level_two = Some(input);
             self
         }
+        /// <p>The update for level two.</p>
         pub fn set_level_two(
             mut self,
             input: std::option::Option<crate::model::HierarchyLevelUpdate>,
@@ -378,6 +407,7 @@ pub mod hierarchy_structure_update {
             self.level_three = Some(input);
             self
         }
+        /// <p>The update for level three.</p>
         pub fn set_level_three(
             mut self,
             input: std::option::Option<crate::model::HierarchyLevelUpdate>,
@@ -390,6 +420,7 @@ pub mod hierarchy_structure_update {
             self.level_four = Some(input);
             self
         }
+        /// <p>The update for level four.</p>
         pub fn set_level_four(
             mut self,
             input: std::option::Option<crate::model::HierarchyLevelUpdate>,
@@ -402,6 +433,7 @@ pub mod hierarchy_structure_update {
             self.level_five = Some(input);
             self
         }
+        /// <p>The update for level five.</p>
         pub fn set_level_five(
             mut self,
             input: std::option::Option<crate::model::HierarchyLevelUpdate>,
@@ -456,6 +488,7 @@ pub mod hierarchy_level_update {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the user hierarchy level. Must not be more than 50 characters.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -517,6 +550,7 @@ pub mod routing_profile_queue_config {
             self.queue_reference = Some(input);
             self
         }
+        /// <p>Contains information about a queue resource.</p>
         pub fn set_queue_reference(
             mut self,
             input: std::option::Option<crate::model::RoutingProfileQueueReference>,
@@ -531,6 +565,9 @@ pub mod routing_profile_queue_config {
             self.priority = Some(input);
             self
         }
+        /// <p>The order in which contacts are to be handled for the queue. For more information, see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
+        /// delay</a>.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
@@ -542,6 +579,9 @@ pub mod routing_profile_queue_config {
             self.delay = Some(input);
             self
         }
+        /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an
+        /// available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
+        /// delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn set_delay(mut self, input: std::option::Option<i32>) -> Self {
             self.delay = input;
             self
@@ -596,6 +636,7 @@ pub mod routing_profile_queue_reference {
             self.queue_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the queue.</p>
         pub fn set_queue_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_id = input;
             self
@@ -606,6 +647,8 @@ pub mod routing_profile_queue_reference {
             self.channel = Some(input);
             self
         }
+        /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing
+        /// profile.</p>
         pub fn set_channel(mut self, input: std::option::Option<crate::model::Channel>) -> Self {
             self.channel = input;
             self
@@ -626,6 +669,7 @@ impl RoutingProfileQueueReference {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -637,8 +681,11 @@ impl RoutingProfileQueueReference {
     std::hash::Hash,
 )]
 pub enum Channel {
+    #[allow(missing_docs)] // documentation missing in model
     Chat,
+    #[allow(missing_docs)] // documentation missing in model
     Task,
+    #[allow(missing_docs)] // documentation missing in model
     Voice,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -661,6 +708,7 @@ impl std::str::FromStr for Channel {
     }
 }
 impl Channel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Channel::Chat => "CHAT",
@@ -669,6 +717,7 @@ impl Channel {
             Channel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CHAT", "TASK", "VOICE"]
     }
@@ -715,6 +764,7 @@ pub mod media_concurrency {
             self.channel = Some(input);
             self
         }
+        /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
         pub fn set_channel(mut self, input: std::option::Option<crate::model::Channel>) -> Self {
             self.channel = input;
             self
@@ -727,6 +777,10 @@ pub mod media_concurrency {
             self.concurrency = Some(input);
             self
         }
+        /// <p>The number of contacts an agent can have on a channel simultaneously.</p>
+        /// <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.</p>
+        /// <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.</p>
+        /// <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.</p>
         pub fn set_concurrency(mut self, input: std::option::Option<i32>) -> Self {
             self.concurrency = input;
             self
@@ -789,6 +843,8 @@ pub mod quick_connect_config {
             self.quick_connect_type = Some(input);
             self
         }
+        /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
+        /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
         pub fn set_quick_connect_type(
             mut self,
             input: std::option::Option<crate::model::QuickConnectType>,
@@ -801,6 +857,7 @@ pub mod quick_connect_config {
             self.user_config = Some(input);
             self
         }
+        /// <p>The user configuration. This is required only if QuickConnectType is USER.</p>
         pub fn set_user_config(
             mut self,
             input: std::option::Option<crate::model::UserQuickConnectConfig>,
@@ -813,6 +870,7 @@ pub mod quick_connect_config {
             self.queue_config = Some(input);
             self
         }
+        /// <p>The queue configuration. This is required only if QuickConnectType is QUEUE.</p>
         pub fn set_queue_config(
             mut self,
             input: std::option::Option<crate::model::QueueQuickConnectConfig>,
@@ -825,6 +883,7 @@ pub mod quick_connect_config {
             self.phone_config = Some(input);
             self
         }
+        /// <p>The phone configuration. This is required only if QuickConnectType is PHONE_NUMBER.</p>
         pub fn set_phone_config(
             mut self,
             input: std::option::Option<crate::model::PhoneNumberQuickConnectConfig>,
@@ -878,6 +937,7 @@ pub mod phone_number_quick_connect_config {
             self.phone_number = Some(input.into());
             self
         }
+        /// <p>The phone number in E.164 format.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -930,6 +990,7 @@ pub mod queue_quick_connect_config {
             self.queue_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the queue.</p>
         pub fn set_queue_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_id = input;
             self
@@ -939,6 +1000,7 @@ pub mod queue_quick_connect_config {
             self.contact_flow_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the contact flow.</p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -995,6 +1057,7 @@ pub mod user_quick_connect_config {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the user.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -1004,6 +1067,7 @@ pub mod user_quick_connect_config {
             self.contact_flow_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the contact flow.</p>
         pub fn set_contact_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1027,6 +1091,7 @@ impl UserQuickConnectConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1038,8 +1103,11 @@ impl UserQuickConnectConfig {
     std::hash::Hash,
 )]
 pub enum QuickConnectType {
+    #[allow(missing_docs)] // documentation missing in model
     PhoneNumber,
+    #[allow(missing_docs)] // documentation missing in model
     Queue,
+    #[allow(missing_docs)] // documentation missing in model
     User,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1062,6 +1130,7 @@ impl std::str::FromStr for QuickConnectType {
     }
 }
 impl QuickConnectType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             QuickConnectType::PhoneNumber => "PHONE_NUMBER",
@@ -1070,6 +1139,7 @@ impl QuickConnectType {
             QuickConnectType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PHONE_NUMBER", "QUEUE", "USER"]
     }
@@ -1080,6 +1150,7 @@ impl AsRef<str> for QuickConnectType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1091,7 +1162,9 @@ impl AsRef<str> for QuickConnectType {
     std::hash::Hash,
 )]
 pub enum QueueStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1113,6 +1186,7 @@ impl std::str::FromStr for QueueStatus {
     }
 }
 impl QueueStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             QueueStatus::Disabled => "DISABLED",
@@ -1120,6 +1194,7 @@ impl QueueStatus {
             QueueStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -1169,6 +1244,7 @@ pub mod outbound_caller_config {
             self.outbound_caller_id_name = Some(input.into());
             self
         }
+        /// <p>The caller ID name.</p>
         pub fn set_outbound_caller_id_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1184,6 +1260,7 @@ pub mod outbound_caller_config {
             self.outbound_caller_id_number_id = Some(input.into());
             self
         }
+        /// <p>The caller ID number.</p>
         pub fn set_outbound_caller_id_number_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1196,6 +1273,7 @@ pub mod outbound_caller_config {
             self.outbound_flow_id = Some(input.into());
             self
         }
+        /// <p>The outbound whisper flow to be used during an outbound call.</p>
         pub fn set_outbound_flow_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1274,6 +1352,7 @@ pub mod instance_storage_config {
             self.association_id = Some(input.into());
             self
         }
+        /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
         pub fn set_association_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1286,6 +1365,7 @@ pub mod instance_storage_config {
             self.storage_type = Some(input);
             self
         }
+        /// <p>A valid storage type.</p>
         pub fn set_storage_type(
             mut self,
             input: std::option::Option<crate::model::StorageType>,
@@ -1299,6 +1379,8 @@ pub mod instance_storage_config {
             self.s3_config = Some(input);
             self
         }
+        /// <p>The S3 bucket
+        /// configuration.</p>
         pub fn set_s3_config(mut self, input: std::option::Option<crate::model::S3Config>) -> Self {
             self.s3_config = input;
             self
@@ -1311,6 +1393,7 @@ pub mod instance_storage_config {
             self.kinesis_video_stream_config = Some(input);
             self
         }
+        /// <p>The configuration of the Kinesis video stream.</p>
         pub fn set_kinesis_video_stream_config(
             mut self,
             input: std::option::Option<crate::model::KinesisVideoStreamConfig>,
@@ -1323,6 +1406,7 @@ pub mod instance_storage_config {
             self.kinesis_stream_config = Some(input);
             self
         }
+        /// <p>The configuration of the Kinesis data stream.</p>
         pub fn set_kinesis_stream_config(
             mut self,
             input: std::option::Option<crate::model::KinesisStreamConfig>,
@@ -1338,6 +1422,7 @@ pub mod instance_storage_config {
             self.kinesis_firehose_config = Some(input);
             self
         }
+        /// <p>The configuration of the Kinesis Firehose delivery stream.</p>
         pub fn set_kinesis_firehose_config(
             mut self,
             input: std::option::Option<crate::model::KinesisFirehoseConfig>,
@@ -1393,6 +1478,7 @@ pub mod kinesis_firehose_config {
             self.firehose_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
         pub fn set_firehose_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.firehose_arn = input;
             self
@@ -1440,6 +1526,7 @@ pub mod kinesis_stream_config {
             self.stream_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the data stream.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -1497,6 +1584,7 @@ pub mod kinesis_video_stream_config {
             self.prefix = Some(input.into());
             self
         }
+        /// <p>The prefix of the video stream.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -1508,6 +1596,9 @@ pub mod kinesis_video_stream_config {
             self.retention_period_hours = Some(input);
             self
         }
+        /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data
+        /// in a data store that is associated with the stream.</p>
+        /// <p>The default value is 0, indicating that the stream does not persist data.</p>
         pub fn set_retention_period_hours(mut self, input: std::option::Option<i32>) -> Self {
             self.retention_period_hours = input;
             self
@@ -1517,6 +1608,7 @@ pub mod kinesis_video_stream_config {
             self.encryption_config = Some(input);
             self
         }
+        /// <p>The encryption configuration.</p>
         pub fn set_encryption_config(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfig>,
@@ -1576,6 +1668,7 @@ pub mod encryption_config {
             self.encryption_type = Some(input);
             self
         }
+        /// <p>The type of encryption.</p>
         pub fn set_encryption_type(
             mut self,
             input: std::option::Option<crate::model::EncryptionType>,
@@ -1591,6 +1684,10 @@ pub mod encryption_config {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>The full ARN of the encryption key. </p>
+        /// <note>
+        /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
+        /// </note>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -1611,6 +1708,7 @@ impl EncryptionConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1622,6 +1720,7 @@ impl EncryptionConfig {
     std::hash::Hash,
 )]
 pub enum EncryptionType {
+    #[allow(missing_docs)] // documentation missing in model
     Kms,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1642,12 +1741,14 @@ impl std::str::FromStr for EncryptionType {
     }
 }
 impl EncryptionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncryptionType::Kms => "KMS",
             EncryptionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["KMS"]
     }
@@ -1694,6 +1795,7 @@ pub mod s3_config {
             self.bucket_name = Some(input.into());
             self
         }
+        /// <p>The S3 bucket name.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
@@ -1703,6 +1805,7 @@ pub mod s3_config {
             self.bucket_prefix = Some(input.into());
             self
         }
+        /// <p>The S3 bucket prefix.</p>
         pub fn set_bucket_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1715,6 +1818,7 @@ pub mod s3_config {
             self.encryption_config = Some(input);
             self
         }
+        /// <p>The Amazon S3 encryption configuration.</p>
         pub fn set_encryption_config(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfig>,
@@ -1739,6 +1843,7 @@ impl S3Config {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1750,9 +1855,13 @@ impl S3Config {
     std::hash::Hash,
 )]
 pub enum StorageType {
+    #[allow(missing_docs)] // documentation missing in model
     KinesisFirehose,
+    #[allow(missing_docs)] // documentation missing in model
     KinesisStream,
+    #[allow(missing_docs)] // documentation missing in model
     KinesisVideoStream,
+    #[allow(missing_docs)] // documentation missing in model
     S3,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1776,6 +1885,7 @@ impl std::str::FromStr for StorageType {
     }
 }
 impl StorageType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StorageType::KinesisFirehose => "KINESIS_FIREHOSE",
@@ -1785,6 +1895,7 @@ impl StorageType {
             StorageType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "KINESIS_FIREHOSE",
@@ -1800,6 +1911,7 @@ impl AsRef<str> for StorageType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1811,11 +1923,17 @@ impl AsRef<str> for StorageType {
     std::hash::Hash,
 )]
 pub enum InstanceStorageResourceType {
+    #[allow(missing_docs)] // documentation missing in model
     AgentEvents,
+    #[allow(missing_docs)] // documentation missing in model
     CallRecordings,
+    #[allow(missing_docs)] // documentation missing in model
     ChatTranscripts,
+    #[allow(missing_docs)] // documentation missing in model
     ContactTraceRecords,
+    #[allow(missing_docs)] // documentation missing in model
     MediaStreams,
+    #[allow(missing_docs)] // documentation missing in model
     ScheduledReports,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1841,6 +1959,7 @@ impl std::str::FromStr for InstanceStorageResourceType {
     }
 }
 impl InstanceStorageResourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InstanceStorageResourceType::AgentEvents => "AGENT_EVENTS",
@@ -1852,6 +1971,7 @@ impl InstanceStorageResourceType {
             InstanceStorageResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AGENT_EVENTS",
@@ -1869,6 +1989,7 @@ impl AsRef<str> for InstanceStorageResourceType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1880,12 +2001,19 @@ impl AsRef<str> for InstanceStorageResourceType {
     std::hash::Hash,
 )]
 pub enum InstanceAttributeType {
+    #[allow(missing_docs)] // documentation missing in model
     AutoResolveBestVoices,
+    #[allow(missing_docs)] // documentation missing in model
     ContactflowLogs,
+    #[allow(missing_docs)] // documentation missing in model
     ContactLens,
+    #[allow(missing_docs)] // documentation missing in model
     EarlyMedia,
+    #[allow(missing_docs)] // documentation missing in model
     InboundCalls,
+    #[allow(missing_docs)] // documentation missing in model
     OutboundCalls,
+    #[allow(missing_docs)] // documentation missing in model
     UseCustomTtsVoices,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1912,6 +2040,7 @@ impl std::str::FromStr for InstanceAttributeType {
     }
 }
 impl InstanceAttributeType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InstanceAttributeType::AutoResolveBestVoices => "AUTO_RESOLVE_BEST_VOICES",
@@ -1924,6 +2053,7 @@ impl InstanceAttributeType {
             InstanceAttributeType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AUTO_RESOLVE_BEST_VOICES",
@@ -1978,6 +2108,7 @@ pub mod hours_of_operation_config {
             self.day = Some(input);
             self
         }
+        /// <p>The day that the hours of operation applies to.</p>
         pub fn set_day(
             mut self,
             input: std::option::Option<crate::model::HoursOfOperationDays>,
@@ -1990,6 +2121,7 @@ pub mod hours_of_operation_config {
             self.start_time = Some(input);
             self
         }
+        /// <p>The start time that your contact center is open.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<crate::model::HoursOfOperationTimeSlice>,
@@ -2002,6 +2134,7 @@ pub mod hours_of_operation_config {
             self.end_time = Some(input);
             self
         }
+        /// <p>The end time that your contact center is closes.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<crate::model::HoursOfOperationTimeSlice>,
@@ -2058,6 +2191,7 @@ pub mod hours_of_operation_time_slice {
             self.hours = Some(input);
             self
         }
+        /// <p>The hours.</p>
         pub fn set_hours(mut self, input: std::option::Option<i32>) -> Self {
             self.hours = input;
             self
@@ -2067,6 +2201,7 @@ pub mod hours_of_operation_time_slice {
             self.minutes = Some(input);
             self
         }
+        /// <p>The minutes.</p>
         pub fn set_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.minutes = input;
             self
@@ -2087,6 +2222,7 @@ impl HoursOfOperationTimeSlice {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2098,12 +2234,19 @@ impl HoursOfOperationTimeSlice {
     std::hash::Hash,
 )]
 pub enum HoursOfOperationDays {
+    #[allow(missing_docs)] // documentation missing in model
     Friday,
+    #[allow(missing_docs)] // documentation missing in model
     Monday,
+    #[allow(missing_docs)] // documentation missing in model
     Saturday,
+    #[allow(missing_docs)] // documentation missing in model
     Sunday,
+    #[allow(missing_docs)] // documentation missing in model
     Thursday,
+    #[allow(missing_docs)] // documentation missing in model
     Tuesday,
+    #[allow(missing_docs)] // documentation missing in model
     Wednesday,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2130,6 +2273,7 @@ impl std::str::FromStr for HoursOfOperationDays {
     }
 }
 impl HoursOfOperationDays {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HoursOfOperationDays::Friday => "FRIDAY",
@@ -2142,6 +2286,7 @@ impl HoursOfOperationDays {
             HoursOfOperationDays::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "FRIDAY",
@@ -2188,6 +2333,7 @@ pub mod problem_detail {
             self.message = Some(input.into());
             self
         }
+        /// <p>The problem detail's message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2207,6 +2353,7 @@ impl ProblemDetail {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2218,7 +2365,9 @@ impl ProblemDetail {
     std::hash::Hash,
 )]
 pub enum AgentStatusState {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2240,6 +2389,7 @@ impl std::str::FromStr for AgentStatusState {
     }
 }
 impl AgentStatusState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AgentStatusState::Disabled => "DISABLED",
@@ -2247,6 +2397,7 @@ impl AgentStatusState {
             AgentStatusState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -2291,6 +2442,7 @@ pub mod reference {
             self.value = Some(input.into());
             self
         }
+        /// <p>A formatted URL that displays to an agent in the Contact Control Panel (CCP)</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -2301,6 +2453,8 @@ pub mod reference {
             self.r#type = Some(input);
             self
         }
+        /// <p>A valid
+        /// URL.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ReferenceType>) -> Self {
             self.r#type = input;
             self
@@ -2321,6 +2475,7 @@ impl Reference {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2332,6 +2487,7 @@ impl Reference {
     std::hash::Hash,
 )]
 pub enum ReferenceType {
+    #[allow(missing_docs)] // documentation missing in model
     Url,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2352,12 +2508,14 @@ impl std::str::FromStr for ReferenceType {
     }
 }
 impl ReferenceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReferenceType::Url => "URL",
             ReferenceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["URL"]
     }
@@ -2368,6 +2526,7 @@ impl AsRef<str> for ReferenceType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2379,7 +2538,9 @@ impl AsRef<str> for ReferenceType {
     std::hash::Hash,
 )]
 pub enum TrafficType {
+    #[allow(missing_docs)] // documentation missing in model
     Campaign,
+    #[allow(missing_docs)] // documentation missing in model
     General,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2401,6 +2562,7 @@ impl std::str::FromStr for TrafficType {
     }
 }
 impl TrafficType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TrafficType::Campaign => "CAMPAIGN",
@@ -2408,6 +2570,7 @@ impl TrafficType {
             TrafficType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CAMPAIGN", "GENERAL"]
     }
@@ -2460,6 +2623,9 @@ pub mod answer_machine_detection_config {
             self.enable_answer_machine_detection = Some(input);
             self
         }
+        /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice
+        /// call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>.
+        /// </p>
         pub fn set_enable_answer_machine_detection(
             mut self,
             input: std::option::Option<bool>,
@@ -2472,6 +2638,7 @@ pub mod answer_machine_detection_config {
             self.await_answer_machine_prompt = Some(input);
             self
         }
+        /// <p>Wait for the answering machine prompt.</p>
         pub fn set_await_answer_machine_prompt(mut self, input: std::option::Option<bool>) -> Self {
             self.await_answer_machine_prompt = input;
             self
@@ -2522,6 +2689,7 @@ pub mod voice_recording_configuration {
             self.voice_recording_track = Some(input);
             self
         }
+        /// <p>Identifies which track is being recorded.</p>
         pub fn set_voice_recording_track(
             mut self,
             input: std::option::Option<crate::model::VoiceRecordingTrack>,
@@ -2544,6 +2712,7 @@ impl VoiceRecordingConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2555,8 +2724,11 @@ impl VoiceRecordingConfiguration {
     std::hash::Hash,
 )]
 pub enum VoiceRecordingTrack {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     FromAgent,
+    #[allow(missing_docs)] // documentation missing in model
     ToAgent,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2579,6 +2751,7 @@ impl std::str::FromStr for VoiceRecordingTrack {
     }
 }
 impl VoiceRecordingTrack {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             VoiceRecordingTrack::All => "ALL",
@@ -2587,6 +2760,7 @@ impl VoiceRecordingTrack {
             VoiceRecordingTrack::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL", "FROM_AGENT", "TO_AGENT"]
     }
@@ -2629,6 +2803,7 @@ pub mod chat_message {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The type of the content. Supported types are text and plain.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -2638,6 +2813,7 @@ pub mod chat_message {
             self.content = Some(input.into());
             self
         }
+        /// <p>The content of the chat message.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -2686,6 +2862,7 @@ pub mod participant_details {
             self.display_name = Some(input.into());
             self
         }
+        /// <p>Display name of the participant.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -2741,6 +2918,7 @@ pub mod user_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the user account.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2750,6 +2928,7 @@ pub mod user_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the user account.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2759,6 +2938,7 @@ pub mod user_summary {
             self.username = Some(input.into());
             self
         }
+        /// <p>The Amazon Connect user name of the user account.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -2816,6 +2996,7 @@ pub mod hierarchy_group_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the hierarchy group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2825,6 +3006,7 @@ pub mod hierarchy_group_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2834,6 +3016,7 @@ pub mod hierarchy_group_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the hierarchy group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2894,6 +3077,7 @@ pub mod use_case {
             self.use_case_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the use case.</p>
         pub fn set_use_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.use_case_id = input;
             self
@@ -2903,6 +3087,7 @@ pub mod use_case {
             self.use_case_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the use case.</p>
         pub fn set_use_case_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.use_case_arn = input;
             self
@@ -2913,6 +3098,8 @@ pub mod use_case {
             self.use_case_type = Some(input);
             self
         }
+        /// <p>The type of use case to associate to the integration association. Each integration
+        /// association can have only one of each use case type.</p>
         pub fn set_use_case_type(
             mut self,
             input: std::option::Option<crate::model::UseCaseType>,
@@ -2937,6 +3124,7 @@ impl UseCase {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2948,7 +3136,9 @@ impl UseCase {
     std::hash::Hash,
 )]
 pub enum UseCaseType {
+    #[allow(missing_docs)] // documentation missing in model
     ConnectCampaigns,
+    #[allow(missing_docs)] // documentation missing in model
     RulesEvaluation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2970,6 +3160,7 @@ impl std::str::FromStr for UseCaseType {
     }
 }
 impl UseCaseType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UseCaseType::ConnectCampaigns => "CONNECT_CAMPAIGNS",
@@ -2977,6 +3168,7 @@ impl UseCaseType {
             UseCaseType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONNECT_CAMPAIGNS", "RULES_EVALUATION"]
     }
@@ -3023,6 +3215,7 @@ pub mod security_profile_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the security profile.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3032,6 +3225,7 @@ pub mod security_profile_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the security profile.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3041,6 +3235,7 @@ pub mod security_profile_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the security profile.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3071,7 +3266,7 @@ pub struct SecurityKey {
     /// <p>The key of the security key.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>When the security key was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for SecurityKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3090,7 +3285,7 @@ pub mod security_key {
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
@@ -3098,6 +3293,7 @@ pub mod security_key {
             self.association_id = Some(input.into());
             self
         }
+        /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
         pub fn set_association_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3110,18 +3306,20 @@ pub mod security_key {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key of the security key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
         /// <p>When the security key was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>When the security key was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -3179,6 +3377,7 @@ pub mod routing_profile_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the routing profile.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3188,6 +3387,7 @@ pub mod routing_profile_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3197,6 +3397,7 @@ pub mod routing_profile_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the routing profile.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3270,6 +3471,7 @@ pub mod routing_profile_queue_config_summary {
             self.queue_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the queue.</p>
         pub fn set_queue_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_id = input;
             self
@@ -3279,6 +3481,7 @@ pub mod routing_profile_queue_config_summary {
             self.queue_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the queue.</p>
         pub fn set_queue_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_arn = input;
             self
@@ -3288,6 +3491,7 @@ pub mod routing_profile_queue_config_summary {
             self.queue_name = Some(input.into());
             self
         }
+        /// <p>The name of the queue.</p>
         pub fn set_queue_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_name = input;
             self
@@ -3299,6 +3503,9 @@ pub mod routing_profile_queue_config_summary {
             self.priority = Some(input);
             self
         }
+        /// <p>The order in which contacts are to be handled for the queue. For more information, see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
+        /// delay</a>.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
@@ -3310,6 +3517,9 @@ pub mod routing_profile_queue_config_summary {
             self.delay = Some(input);
             self
         }
+        /// <p>The delay, in seconds, that a contact should be in the queue before they are routed to an
+        /// available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
+        /// delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn set_delay(mut self, input: std::option::Option<i32>) -> Self {
             self.delay = input;
             self
@@ -3319,6 +3529,7 @@ pub mod routing_profile_queue_config_summary {
             self.channel = Some(input);
             self
         }
+        /// <p>The channels this queue supports.</p>
         pub fn set_channel(mut self, input: std::option::Option<crate::model::Channel>) -> Self {
             self.channel = input;
             self
@@ -3384,6 +3595,7 @@ pub mod quick_connect_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier for the quick connect.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3393,6 +3605,7 @@ pub mod quick_connect_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the quick connect.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3402,6 +3615,7 @@ pub mod quick_connect_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the quick connect.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3412,6 +3626,8 @@ pub mod quick_connect_summary {
             self.quick_connect_type = Some(input);
             self
         }
+        /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
+        /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
         pub fn set_quick_connect_type(
             mut self,
             input: std::option::Option<crate::model::QuickConnectType>,
@@ -3477,6 +3693,7 @@ pub mod queue_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the queue.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3486,6 +3703,7 @@ pub mod queue_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the queue.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3495,6 +3713,7 @@ pub mod queue_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the queue.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3504,6 +3723,7 @@ pub mod queue_summary {
             self.queue_type = Some(input);
             self
         }
+        /// <p>The type of queue.</p>
         pub fn set_queue_type(
             mut self,
             input: std::option::Option<crate::model::QueueType>,
@@ -3529,6 +3749,7 @@ impl QueueSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3540,7 +3761,9 @@ impl QueueSummary {
     std::hash::Hash,
 )]
 pub enum QueueType {
+    #[allow(missing_docs)] // documentation missing in model
     Agent,
+    #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3562,6 +3785,7 @@ impl std::str::FromStr for QueueType {
     }
 }
 impl QueueType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             QueueType::Agent => "AGENT",
@@ -3569,6 +3793,7 @@ impl QueueType {
             QueueType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AGENT", "STANDARD"]
     }
@@ -3615,6 +3840,7 @@ pub mod prompt_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the prompt.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3624,6 +3850,7 @@ pub mod prompt_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the prompt.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3633,6 +3860,7 @@ pub mod prompt_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the prompt.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3699,6 +3927,7 @@ pub mod phone_number_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the phone number.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3708,6 +3937,7 @@ pub mod phone_number_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3717,6 +3947,7 @@ pub mod phone_number_summary {
             self.phone_number = Some(input.into());
             self
         }
+        /// <p>The phone number.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -3726,6 +3957,7 @@ pub mod phone_number_summary {
             self.phone_number_type = Some(input);
             self
         }
+        /// <p>The type of phone number.</p>
         pub fn set_phone_number_type(
             mut self,
             input: std::option::Option<crate::model::PhoneNumberType>,
@@ -3741,6 +3973,7 @@ pub mod phone_number_summary {
             self.phone_number_country_code = Some(input);
             self
         }
+        /// <p>The ISO country code.</p>
         pub fn set_phone_number_country_code(
             mut self,
             input: std::option::Option<crate::model::PhoneNumberCountryCode>,
@@ -3767,6 +4000,7 @@ impl PhoneNumberSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3778,242 +4012,479 @@ impl PhoneNumberSummary {
     std::hash::Hash,
 )]
 pub enum PhoneNumberCountryCode {
+    #[allow(missing_docs)] // documentation missing in model
     Ad,
+    #[allow(missing_docs)] // documentation missing in model
     Ae,
+    #[allow(missing_docs)] // documentation missing in model
     Af,
+    #[allow(missing_docs)] // documentation missing in model
     Ag,
+    #[allow(missing_docs)] // documentation missing in model
     Ai,
+    #[allow(missing_docs)] // documentation missing in model
     Al,
+    #[allow(missing_docs)] // documentation missing in model
     Am,
+    #[allow(missing_docs)] // documentation missing in model
     An,
+    #[allow(missing_docs)] // documentation missing in model
     Ao,
+    #[allow(missing_docs)] // documentation missing in model
     Aq,
+    #[allow(missing_docs)] // documentation missing in model
     Ar,
+    #[allow(missing_docs)] // documentation missing in model
     As,
+    #[allow(missing_docs)] // documentation missing in model
     At,
+    #[allow(missing_docs)] // documentation missing in model
     Au,
+    #[allow(missing_docs)] // documentation missing in model
     Aw,
+    #[allow(missing_docs)] // documentation missing in model
     Az,
+    #[allow(missing_docs)] // documentation missing in model
     Ba,
+    #[allow(missing_docs)] // documentation missing in model
     Bb,
+    #[allow(missing_docs)] // documentation missing in model
     Bd,
+    #[allow(missing_docs)] // documentation missing in model
     Be,
+    #[allow(missing_docs)] // documentation missing in model
     Bf,
+    #[allow(missing_docs)] // documentation missing in model
     Bg,
+    #[allow(missing_docs)] // documentation missing in model
     Bh,
+    #[allow(missing_docs)] // documentation missing in model
     Bi,
+    #[allow(missing_docs)] // documentation missing in model
     Bj,
+    #[allow(missing_docs)] // documentation missing in model
     Bl,
+    #[allow(missing_docs)] // documentation missing in model
     Bm,
+    #[allow(missing_docs)] // documentation missing in model
     Bn,
+    #[allow(missing_docs)] // documentation missing in model
     Bo,
+    #[allow(missing_docs)] // documentation missing in model
     Br,
+    #[allow(missing_docs)] // documentation missing in model
     Bs,
+    #[allow(missing_docs)] // documentation missing in model
     Bt,
+    #[allow(missing_docs)] // documentation missing in model
     Bw,
+    #[allow(missing_docs)] // documentation missing in model
     By,
+    #[allow(missing_docs)] // documentation missing in model
     Bz,
+    #[allow(missing_docs)] // documentation missing in model
     Ca,
+    #[allow(missing_docs)] // documentation missing in model
     Cc,
+    #[allow(missing_docs)] // documentation missing in model
     Cd,
+    #[allow(missing_docs)] // documentation missing in model
     Cf,
+    #[allow(missing_docs)] // documentation missing in model
     Cg,
+    #[allow(missing_docs)] // documentation missing in model
     Ch,
+    #[allow(missing_docs)] // documentation missing in model
     Ci,
+    #[allow(missing_docs)] // documentation missing in model
     Ck,
+    #[allow(missing_docs)] // documentation missing in model
     Cl,
+    #[allow(missing_docs)] // documentation missing in model
     Cm,
+    #[allow(missing_docs)] // documentation missing in model
     Cn,
+    #[allow(missing_docs)] // documentation missing in model
     Co,
+    #[allow(missing_docs)] // documentation missing in model
     Cr,
+    #[allow(missing_docs)] // documentation missing in model
     Cu,
+    #[allow(missing_docs)] // documentation missing in model
     Cv,
+    #[allow(missing_docs)] // documentation missing in model
     Cw,
+    #[allow(missing_docs)] // documentation missing in model
     Cx,
+    #[allow(missing_docs)] // documentation missing in model
     Cy,
+    #[allow(missing_docs)] // documentation missing in model
     Cz,
+    #[allow(missing_docs)] // documentation missing in model
     De,
+    #[allow(missing_docs)] // documentation missing in model
     Dj,
+    #[allow(missing_docs)] // documentation missing in model
     Dk,
+    #[allow(missing_docs)] // documentation missing in model
     Dm,
+    #[allow(missing_docs)] // documentation missing in model
     Do,
+    #[allow(missing_docs)] // documentation missing in model
     Dz,
+    #[allow(missing_docs)] // documentation missing in model
     Ec,
+    #[allow(missing_docs)] // documentation missing in model
     Ee,
+    #[allow(missing_docs)] // documentation missing in model
     Eg,
+    #[allow(missing_docs)] // documentation missing in model
     Eh,
+    #[allow(missing_docs)] // documentation missing in model
     Er,
+    #[allow(missing_docs)] // documentation missing in model
     Es,
+    #[allow(missing_docs)] // documentation missing in model
     Et,
+    #[allow(missing_docs)] // documentation missing in model
     Fi,
+    #[allow(missing_docs)] // documentation missing in model
     Fj,
+    #[allow(missing_docs)] // documentation missing in model
     Fk,
+    #[allow(missing_docs)] // documentation missing in model
     Fm,
+    #[allow(missing_docs)] // documentation missing in model
     Fo,
+    #[allow(missing_docs)] // documentation missing in model
     Fr,
+    #[allow(missing_docs)] // documentation missing in model
     Ga,
+    #[allow(missing_docs)] // documentation missing in model
     Gb,
+    #[allow(missing_docs)] // documentation missing in model
     Gd,
+    #[allow(missing_docs)] // documentation missing in model
     Ge,
+    #[allow(missing_docs)] // documentation missing in model
     Gg,
+    #[allow(missing_docs)] // documentation missing in model
     Gh,
+    #[allow(missing_docs)] // documentation missing in model
     Gi,
+    #[allow(missing_docs)] // documentation missing in model
     Gl,
+    #[allow(missing_docs)] // documentation missing in model
     Gm,
+    #[allow(missing_docs)] // documentation missing in model
     Gn,
+    #[allow(missing_docs)] // documentation missing in model
     Gq,
+    #[allow(missing_docs)] // documentation missing in model
     Gr,
+    #[allow(missing_docs)] // documentation missing in model
     Gt,
+    #[allow(missing_docs)] // documentation missing in model
     Gu,
+    #[allow(missing_docs)] // documentation missing in model
     Gw,
+    #[allow(missing_docs)] // documentation missing in model
     Gy,
+    #[allow(missing_docs)] // documentation missing in model
     Hk,
+    #[allow(missing_docs)] // documentation missing in model
     Hn,
+    #[allow(missing_docs)] // documentation missing in model
     Hr,
+    #[allow(missing_docs)] // documentation missing in model
     Ht,
+    #[allow(missing_docs)] // documentation missing in model
     Hu,
+    #[allow(missing_docs)] // documentation missing in model
     Id,
+    #[allow(missing_docs)] // documentation missing in model
     Ie,
+    #[allow(missing_docs)] // documentation missing in model
     Il,
+    #[allow(missing_docs)] // documentation missing in model
     Im,
+    #[allow(missing_docs)] // documentation missing in model
     In,
+    #[allow(missing_docs)] // documentation missing in model
     Io,
+    #[allow(missing_docs)] // documentation missing in model
     Iq,
+    #[allow(missing_docs)] // documentation missing in model
     Ir,
+    #[allow(missing_docs)] // documentation missing in model
     Is,
+    #[allow(missing_docs)] // documentation missing in model
     It,
+    #[allow(missing_docs)] // documentation missing in model
     Je,
+    #[allow(missing_docs)] // documentation missing in model
     Jm,
+    #[allow(missing_docs)] // documentation missing in model
     Jo,
+    #[allow(missing_docs)] // documentation missing in model
     Jp,
+    #[allow(missing_docs)] // documentation missing in model
     Ke,
+    #[allow(missing_docs)] // documentation missing in model
     Kg,
+    #[allow(missing_docs)] // documentation missing in model
     Kh,
+    #[allow(missing_docs)] // documentation missing in model
     Ki,
+    #[allow(missing_docs)] // documentation missing in model
     Km,
+    #[allow(missing_docs)] // documentation missing in model
     Kn,
+    #[allow(missing_docs)] // documentation missing in model
     Kp,
+    #[allow(missing_docs)] // documentation missing in model
     Kr,
+    #[allow(missing_docs)] // documentation missing in model
     Kw,
+    #[allow(missing_docs)] // documentation missing in model
     Ky,
+    #[allow(missing_docs)] // documentation missing in model
     Kz,
+    #[allow(missing_docs)] // documentation missing in model
     La,
+    #[allow(missing_docs)] // documentation missing in model
     Lb,
+    #[allow(missing_docs)] // documentation missing in model
     Lc,
+    #[allow(missing_docs)] // documentation missing in model
     Li,
+    #[allow(missing_docs)] // documentation missing in model
     Lk,
+    #[allow(missing_docs)] // documentation missing in model
     Lr,
+    #[allow(missing_docs)] // documentation missing in model
     Ls,
+    #[allow(missing_docs)] // documentation missing in model
     Lt,
+    #[allow(missing_docs)] // documentation missing in model
     Lu,
+    #[allow(missing_docs)] // documentation missing in model
     Lv,
+    #[allow(missing_docs)] // documentation missing in model
     Ly,
+    #[allow(missing_docs)] // documentation missing in model
     Ma,
+    #[allow(missing_docs)] // documentation missing in model
     Mc,
+    #[allow(missing_docs)] // documentation missing in model
     Md,
+    #[allow(missing_docs)] // documentation missing in model
     Me,
+    #[allow(missing_docs)] // documentation missing in model
     Mf,
+    #[allow(missing_docs)] // documentation missing in model
     Mg,
+    #[allow(missing_docs)] // documentation missing in model
     Mh,
+    #[allow(missing_docs)] // documentation missing in model
     Mk,
+    #[allow(missing_docs)] // documentation missing in model
     Ml,
+    #[allow(missing_docs)] // documentation missing in model
     Mm,
+    #[allow(missing_docs)] // documentation missing in model
     Mn,
+    #[allow(missing_docs)] // documentation missing in model
     Mo,
+    #[allow(missing_docs)] // documentation missing in model
     Mp,
+    #[allow(missing_docs)] // documentation missing in model
     Mr,
+    #[allow(missing_docs)] // documentation missing in model
     Ms,
+    #[allow(missing_docs)] // documentation missing in model
     Mt,
+    #[allow(missing_docs)] // documentation missing in model
     Mu,
+    #[allow(missing_docs)] // documentation missing in model
     Mv,
+    #[allow(missing_docs)] // documentation missing in model
     Mw,
+    #[allow(missing_docs)] // documentation missing in model
     Mx,
+    #[allow(missing_docs)] // documentation missing in model
     My,
+    #[allow(missing_docs)] // documentation missing in model
     Mz,
+    #[allow(missing_docs)] // documentation missing in model
     Na,
+    #[allow(missing_docs)] // documentation missing in model
     Nc,
+    #[allow(missing_docs)] // documentation missing in model
     Ne,
+    #[allow(missing_docs)] // documentation missing in model
     Ng,
+    #[allow(missing_docs)] // documentation missing in model
     Ni,
+    #[allow(missing_docs)] // documentation missing in model
     Nl,
+    #[allow(missing_docs)] // documentation missing in model
     No,
+    #[allow(missing_docs)] // documentation missing in model
     Np,
+    #[allow(missing_docs)] // documentation missing in model
     Nr,
+    #[allow(missing_docs)] // documentation missing in model
     Nu,
+    #[allow(missing_docs)] // documentation missing in model
     Nz,
+    #[allow(missing_docs)] // documentation missing in model
     Om,
+    #[allow(missing_docs)] // documentation missing in model
     Pa,
+    #[allow(missing_docs)] // documentation missing in model
     Pe,
+    #[allow(missing_docs)] // documentation missing in model
     Pf,
+    #[allow(missing_docs)] // documentation missing in model
     Pg,
+    #[allow(missing_docs)] // documentation missing in model
     Ph,
+    #[allow(missing_docs)] // documentation missing in model
     Pk,
+    #[allow(missing_docs)] // documentation missing in model
     Pl,
+    #[allow(missing_docs)] // documentation missing in model
     Pm,
+    #[allow(missing_docs)] // documentation missing in model
     Pn,
+    #[allow(missing_docs)] // documentation missing in model
     Pr,
+    #[allow(missing_docs)] // documentation missing in model
     Pt,
+    #[allow(missing_docs)] // documentation missing in model
     Pw,
+    #[allow(missing_docs)] // documentation missing in model
     Py,
+    #[allow(missing_docs)] // documentation missing in model
     Qa,
+    #[allow(missing_docs)] // documentation missing in model
     Re,
+    #[allow(missing_docs)] // documentation missing in model
     Ro,
+    #[allow(missing_docs)] // documentation missing in model
     Rs,
+    #[allow(missing_docs)] // documentation missing in model
     Ru,
+    #[allow(missing_docs)] // documentation missing in model
     Rw,
+    #[allow(missing_docs)] // documentation missing in model
     Sa,
+    #[allow(missing_docs)] // documentation missing in model
     Sb,
+    #[allow(missing_docs)] // documentation missing in model
     Sc,
+    #[allow(missing_docs)] // documentation missing in model
     Sd,
+    #[allow(missing_docs)] // documentation missing in model
     Se,
+    #[allow(missing_docs)] // documentation missing in model
     Sg,
+    #[allow(missing_docs)] // documentation missing in model
     Sh,
+    #[allow(missing_docs)] // documentation missing in model
     Si,
+    #[allow(missing_docs)] // documentation missing in model
     Sj,
+    #[allow(missing_docs)] // documentation missing in model
     Sk,
+    #[allow(missing_docs)] // documentation missing in model
     Sl,
+    #[allow(missing_docs)] // documentation missing in model
     Sm,
+    #[allow(missing_docs)] // documentation missing in model
     Sn,
+    #[allow(missing_docs)] // documentation missing in model
     So,
+    #[allow(missing_docs)] // documentation missing in model
     Sr,
+    #[allow(missing_docs)] // documentation missing in model
     St,
+    #[allow(missing_docs)] // documentation missing in model
     Sv,
+    #[allow(missing_docs)] // documentation missing in model
     Sx,
+    #[allow(missing_docs)] // documentation missing in model
     Sy,
+    #[allow(missing_docs)] // documentation missing in model
     Sz,
+    #[allow(missing_docs)] // documentation missing in model
     Tc,
+    #[allow(missing_docs)] // documentation missing in model
     Td,
+    #[allow(missing_docs)] // documentation missing in model
     Tg,
+    #[allow(missing_docs)] // documentation missing in model
     Th,
+    #[allow(missing_docs)] // documentation missing in model
     Tj,
+    #[allow(missing_docs)] // documentation missing in model
     Tk,
+    #[allow(missing_docs)] // documentation missing in model
     Tl,
+    #[allow(missing_docs)] // documentation missing in model
     Tm,
+    #[allow(missing_docs)] // documentation missing in model
     Tn,
+    #[allow(missing_docs)] // documentation missing in model
     To,
+    #[allow(missing_docs)] // documentation missing in model
     Tr,
+    #[allow(missing_docs)] // documentation missing in model
     Tt,
+    #[allow(missing_docs)] // documentation missing in model
     Tv,
+    #[allow(missing_docs)] // documentation missing in model
     Tw,
+    #[allow(missing_docs)] // documentation missing in model
     Tz,
+    #[allow(missing_docs)] // documentation missing in model
     Ua,
+    #[allow(missing_docs)] // documentation missing in model
     Ug,
+    #[allow(missing_docs)] // documentation missing in model
     Us,
+    #[allow(missing_docs)] // documentation missing in model
     Uy,
+    #[allow(missing_docs)] // documentation missing in model
     Uz,
+    #[allow(missing_docs)] // documentation missing in model
     Va,
+    #[allow(missing_docs)] // documentation missing in model
     Vc,
+    #[allow(missing_docs)] // documentation missing in model
     Ve,
+    #[allow(missing_docs)] // documentation missing in model
     Vg,
+    #[allow(missing_docs)] // documentation missing in model
     Vi,
+    #[allow(missing_docs)] // documentation missing in model
     Vn,
+    #[allow(missing_docs)] // documentation missing in model
     Vu,
+    #[allow(missing_docs)] // documentation missing in model
     Wf,
+    #[allow(missing_docs)] // documentation missing in model
     Ws,
+    #[allow(missing_docs)] // documentation missing in model
     Ye,
+    #[allow(missing_docs)] // documentation missing in model
     Yt,
+    #[allow(missing_docs)] // documentation missing in model
     Za,
+    #[allow(missing_docs)] // documentation missing in model
     Zm,
+    #[allow(missing_docs)] // documentation missing in model
     Zw,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4270,6 +4741,7 @@ impl std::str::FromStr for PhoneNumberCountryCode {
     }
 }
 impl PhoneNumberCountryCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PhoneNumberCountryCode::Ad => "AD",
@@ -4512,6 +4984,7 @@ impl PhoneNumberCountryCode {
             PhoneNumberCountryCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AN", "AO", "AQ", "AR", "AS", "AT", "AU",
@@ -4540,6 +5013,7 @@ impl AsRef<str> for PhoneNumberCountryCode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4551,7 +5025,9 @@ impl AsRef<str> for PhoneNumberCountryCode {
     std::hash::Hash,
 )]
 pub enum PhoneNumberType {
+    #[allow(missing_docs)] // documentation missing in model
     Did,
+    #[allow(missing_docs)] // documentation missing in model
     TollFree,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4573,6 +5049,7 @@ impl std::str::FromStr for PhoneNumberType {
     }
 }
 impl PhoneNumberType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PhoneNumberType::Did => "DID",
@@ -4580,6 +5057,7 @@ impl PhoneNumberType {
             PhoneNumberType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DID", "TOLL_FREE"]
     }
@@ -4622,6 +5100,7 @@ pub mod lex_bot {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon Lex bot.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4631,6 +5110,7 @@ pub mod lex_bot {
             self.lex_region = Some(input.into());
             self
         }
+        /// <p>The Region that the Amazon Lex bot was created in.</p>
         pub fn set_lex_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lex_region = input;
             self
@@ -4713,6 +5193,7 @@ pub mod integration_association_summary {
             self.integration_association_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the AppIntegration association.</p>
         pub fn set_integration_association_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4728,6 +5209,7 @@ pub mod integration_association_summary {
             self.integration_association_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the AppIntegration association.</p>
         pub fn set_integration_association_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4740,6 +5222,7 @@ pub mod integration_association_summary {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -4749,6 +5232,7 @@ pub mod integration_association_summary {
             self.integration_type = Some(input);
             self
         }
+        /// <p>The integration type.</p>
         pub fn set_integration_type(
             mut self,
             input: std::option::Option<crate::model::IntegrationType>,
@@ -4761,6 +5245,7 @@ pub mod integration_association_summary {
             self.integration_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the AppIntegration.</p>
         pub fn set_integration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4773,6 +5258,7 @@ pub mod integration_association_summary {
             self.source_application_url = Some(input.into());
             self
         }
+        /// <p>The URL for the external application.</p>
         pub fn set_source_application_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4785,6 +5271,7 @@ pub mod integration_association_summary {
             self.source_application_name = Some(input.into());
             self
         }
+        /// <p>The user-provided, friendly name for the external application.</p>
         pub fn set_source_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4797,6 +5284,7 @@ pub mod integration_association_summary {
             self.source_type = Some(input);
             self
         }
+        /// <p>The name of the source.</p>
         pub fn set_source_type(
             mut self,
             input: std::option::Option<crate::model::SourceType>,
@@ -4826,6 +5314,7 @@ impl IntegrationAssociationSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4837,7 +5326,9 @@ impl IntegrationAssociationSummary {
     std::hash::Hash,
 )]
 pub enum SourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Salesforce,
+    #[allow(missing_docs)] // documentation missing in model
     Zendesk,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4859,6 +5350,7 @@ impl std::str::FromStr for SourceType {
     }
 }
 impl SourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SourceType::Salesforce => "SALESFORCE",
@@ -4866,6 +5358,7 @@ impl SourceType {
             SourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SALESFORCE", "ZENDESK"]
     }
@@ -4876,6 +5369,7 @@ impl AsRef<str> for SourceType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4887,10 +5381,15 @@ impl AsRef<str> for SourceType {
     std::hash::Hash,
 )]
 pub enum IntegrationType {
+    #[allow(missing_docs)] // documentation missing in model
     Event,
+    #[allow(missing_docs)] // documentation missing in model
     PinpointApp,
+    #[allow(missing_docs)] // documentation missing in model
     VoiceId,
+    #[allow(missing_docs)] // documentation missing in model
     WisdomAssistant,
+    #[allow(missing_docs)] // documentation missing in model
     WisdomKnowledgeBase,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4915,6 +5414,7 @@ impl std::str::FromStr for IntegrationType {
     }
 }
 impl IntegrationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IntegrationType::Event => "EVENT",
@@ -4925,6 +5425,7 @@ impl IntegrationType {
             IntegrationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "EVENT",
@@ -4954,7 +5455,7 @@ pub struct InstanceSummary {
     /// <p>The alias of the instance.</p>
     pub instance_alias: std::option::Option<std::string::String>,
     /// <p>When the instance was created.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The service role of the instance.</p>
     pub service_role: std::option::Option<std::string::String>,
     /// <p>The state of the instance.</p>
@@ -4989,7 +5490,7 @@ pub mod instance_summary {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) identity_management_type: std::option::Option<crate::model::DirectoryType>,
         pub(crate) instance_alias: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) service_role: std::option::Option<std::string::String>,
         pub(crate) instance_status: std::option::Option<crate::model::InstanceStatus>,
         pub(crate) inbound_calls_enabled: std::option::Option<bool>,
@@ -5001,6 +5502,7 @@ pub mod instance_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the instance.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5010,6 +5512,7 @@ pub mod instance_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the instance.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5019,6 +5522,7 @@ pub mod instance_summary {
             self.identity_management_type = Some(input);
             self
         }
+        /// <p>The identity management type of the instance.</p>
         pub fn set_identity_management_type(
             mut self,
             input: std::option::Option<crate::model::DirectoryType>,
@@ -5031,6 +5535,7 @@ pub mod instance_summary {
             self.instance_alias = Some(input.into());
             self
         }
+        /// <p>The alias of the instance.</p>
         pub fn set_instance_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5039,13 +5544,14 @@ pub mod instance_summary {
             self
         }
         /// <p>When the instance was created.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>When the instance was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
@@ -5055,6 +5561,7 @@ pub mod instance_summary {
             self.service_role = Some(input.into());
             self
         }
+        /// <p>The service role of the instance.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_role = input;
             self
@@ -5064,6 +5571,7 @@ pub mod instance_summary {
             self.instance_status = Some(input);
             self
         }
+        /// <p>The state of the instance.</p>
         pub fn set_instance_status(
             mut self,
             input: std::option::Option<crate::model::InstanceStatus>,
@@ -5076,6 +5584,7 @@ pub mod instance_summary {
             self.inbound_calls_enabled = Some(input);
             self
         }
+        /// <p>Whether inbound calls are enabled.</p>
         pub fn set_inbound_calls_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inbound_calls_enabled = input;
             self
@@ -5085,6 +5594,7 @@ pub mod instance_summary {
             self.outbound_calls_enabled = Some(input);
             self
         }
+        /// <p>Whether outbound calls are enabled.</p>
         pub fn set_outbound_calls_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.outbound_calls_enabled = input;
             self
@@ -5112,6 +5622,7 @@ impl InstanceSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5123,8 +5634,11 @@ impl InstanceSummary {
     std::hash::Hash,
 )]
 pub enum InstanceStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     CreationFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CreationInProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5147,6 +5661,7 @@ impl std::str::FromStr for InstanceStatus {
     }
 }
 impl InstanceStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InstanceStatus::Active => "ACTIVE",
@@ -5155,6 +5670,7 @@ impl InstanceStatus {
             InstanceStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATION_FAILED", "CREATION_IN_PROGRESS"]
     }
@@ -5165,6 +5681,7 @@ impl AsRef<str> for InstanceStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5176,8 +5693,11 @@ impl AsRef<str> for InstanceStatus {
     std::hash::Hash,
 )]
 pub enum DirectoryType {
+    #[allow(missing_docs)] // documentation missing in model
     ConnectManaged,
+    #[allow(missing_docs)] // documentation missing in model
     ExistingDirectory,
+    #[allow(missing_docs)] // documentation missing in model
     Saml,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5200,6 +5720,7 @@ impl std::str::FromStr for DirectoryType {
     }
 }
 impl DirectoryType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DirectoryType::ConnectManaged => "CONNECT_MANAGED",
@@ -5208,6 +5729,7 @@ impl DirectoryType {
             DirectoryType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONNECT_MANAGED", "EXISTING_DIRECTORY", "SAML"]
     }
@@ -5250,6 +5772,7 @@ pub mod attribute {
             self.attribute_type = Some(input);
             self
         }
+        /// <p>The type of attribute.</p>
         pub fn set_attribute_type(
             mut self,
             input: std::option::Option<crate::model::InstanceAttributeType>,
@@ -5262,6 +5785,7 @@ pub mod attribute {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the attribute.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -5318,6 +5842,7 @@ pub mod hours_of_operation_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the hours of operation.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5327,6 +5852,7 @@ pub mod hours_of_operation_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the hours of operation.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5336,6 +5862,7 @@ pub mod hours_of_operation_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the hours of operation.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5399,6 +5926,7 @@ pub mod contact_flow_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the contact flow.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5408,6 +5936,7 @@ pub mod contact_flow_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the contact flow.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5417,6 +5946,7 @@ pub mod contact_flow_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the contact flow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5426,6 +5956,7 @@ pub mod contact_flow_summary {
             self.contact_flow_type = Some(input);
             self
         }
+        /// <p>The type of contact flow.</p>
         pub fn set_contact_flow_type(
             mut self,
             input: std::option::Option<crate::model::ContactFlowType>,
@@ -5451,6 +5982,7 @@ impl ContactFlowSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5462,14 +5994,23 @@ impl ContactFlowSummary {
     std::hash::Hash,
 )]
 pub enum ContactFlowType {
+    #[allow(missing_docs)] // documentation missing in model
     AgentHold,
+    #[allow(missing_docs)] // documentation missing in model
     AgentTransfer,
+    #[allow(missing_docs)] // documentation missing in model
     AgentWhisper,
+    #[allow(missing_docs)] // documentation missing in model
     ContactFlow,
+    #[allow(missing_docs)] // documentation missing in model
     CustomerHold,
+    #[allow(missing_docs)] // documentation missing in model
     CustomerQueue,
+    #[allow(missing_docs)] // documentation missing in model
     CustomerWhisper,
+    #[allow(missing_docs)] // documentation missing in model
     OutboundWhisper,
+    #[allow(missing_docs)] // documentation missing in model
     QueueTransfer,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5498,6 +6039,7 @@ impl std::str::FromStr for ContactFlowType {
     }
 }
 impl ContactFlowType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContactFlowType::AgentHold => "AGENT_HOLD",
@@ -5512,6 +6054,7 @@ impl ContactFlowType {
             ContactFlowType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AGENT_HOLD",
@@ -5564,6 +6107,7 @@ pub mod lex_bot_config {
             self.lex_bot = Some(input);
             self
         }
+        /// <p>Configuration information of an Amazon Lex bot.</p>
         pub fn set_lex_bot(mut self, input: std::option::Option<crate::model::LexBot>) -> Self {
             self.lex_bot = input;
             self
@@ -5573,6 +6117,7 @@ pub mod lex_bot_config {
             self.lex_v2_bot = Some(input);
             self
         }
+        /// <p>Configuration information of an Amazon Lex V2 bot.</p>
         pub fn set_lex_v2_bot(
             mut self,
             input: std::option::Option<crate::model::LexV2Bot>,
@@ -5624,6 +6169,7 @@ pub mod lex_v2_bot {
             self.alias_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Lex V2 bot.</p>
         pub fn set_alias_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_arn = input;
             self
@@ -5643,6 +6189,7 @@ impl LexV2Bot {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5654,7 +6201,9 @@ impl LexV2Bot {
     std::hash::Hash,
 )]
 pub enum LexVersion {
+    #[allow(missing_docs)] // documentation missing in model
     V1,
+    #[allow(missing_docs)] // documentation missing in model
     V2,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5676,6 +6225,7 @@ impl std::str::FromStr for LexVersion {
     }
 }
 impl LexVersion {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LexVersion::V1 => "V1",
@@ -5683,6 +6233,7 @@ impl LexVersion {
             LexVersion::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["V1", "V2"]
     }
@@ -5733,6 +6284,7 @@ pub mod agent_status_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier for an agent status.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5742,6 +6294,7 @@ pub mod agent_status_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the agent status.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5751,6 +6304,7 @@ pub mod agent_status_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the agent status.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5760,6 +6314,7 @@ pub mod agent_status_summary {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the agent status.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::AgentStatusType>,
@@ -5785,6 +6340,7 @@ impl AgentStatusSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5796,8 +6352,11 @@ impl AgentStatusSummary {
     std::hash::Hash,
 )]
 pub enum AgentStatusType {
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
+    #[allow(missing_docs)] // documentation missing in model
     Offline,
+    #[allow(missing_docs)] // documentation missing in model
     Routable,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5820,6 +6379,7 @@ impl std::str::FromStr for AgentStatusType {
     }
 }
 impl AgentStatusType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AgentStatusType::Custom => "CUSTOM",
@@ -5828,6 +6388,7 @@ impl AgentStatusType {
             AgentStatusType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CUSTOM", "OFFLINE", "ROUTABLE"]
     }
@@ -5871,6 +6432,7 @@ pub mod historical_metric_result {
             self.dimensions = Some(input);
             self
         }
+        /// <p>The dimension for the metrics.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<crate::model::Dimensions>,
@@ -5878,12 +6440,18 @@ pub mod historical_metric_result {
             self.dimensions = input;
             self
         }
+        /// Appends an item to `collections`.
+        ///
+        /// To override the contents of this collection use [`set_collections`](Self::set_collections).
+        ///
+        /// <p>The set of metrics.</p>
         pub fn collections(mut self, input: impl Into<crate::model::HistoricalMetricData>) -> Self {
             let mut v = self.collections.unwrap_or_default();
             v.push(input.into());
             self.collections = Some(v);
             self
         }
+        /// <p>The set of metrics.</p>
         pub fn set_collections(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HistoricalMetricData>>,
@@ -5939,6 +6507,7 @@ pub mod historical_metric_data {
             self.metric = Some(input);
             self
         }
+        /// <p>Information about the metric.</p>
         pub fn set_metric(
             mut self,
             input: std::option::Option<crate::model::HistoricalMetric>,
@@ -5951,6 +6520,7 @@ pub mod historical_metric_data {
             self.value = Some(input);
             self
         }
+        /// <p>The value of the metric.</p>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
             self.value = input;
             self
@@ -6012,6 +6582,7 @@ pub mod historical_metric {
             self.name = Some(input);
             self
         }
+        /// <p>The name of the metric.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::HistoricalMetricName>,
@@ -6024,6 +6595,7 @@ pub mod historical_metric {
             self.threshold = Some(input);
             self
         }
+        /// <p>The threshold for the metric, used with service level metrics.</p>
         pub fn set_threshold(
             mut self,
             input: std::option::Option<crate::model::Threshold>,
@@ -6036,6 +6608,7 @@ pub mod historical_metric {
             self.statistic = Some(input);
             self
         }
+        /// <p>The statistic for the metric.</p>
         pub fn set_statistic(
             mut self,
             input: std::option::Option<crate::model::Statistic>,
@@ -6048,6 +6621,7 @@ pub mod historical_metric {
             self.unit = Some(input);
             self
         }
+        /// <p>The unit for the metric.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::Unit>) -> Self {
             self.unit = input;
             self
@@ -6070,6 +6644,7 @@ impl HistoricalMetric {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6081,8 +6656,11 @@ impl HistoricalMetric {
     std::hash::Hash,
 )]
 pub enum Unit {
+    #[allow(missing_docs)] // documentation missing in model
     Count,
+    #[allow(missing_docs)] // documentation missing in model
     Percent,
+    #[allow(missing_docs)] // documentation missing in model
     Seconds,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6105,6 +6683,7 @@ impl std::str::FromStr for Unit {
     }
 }
 impl Unit {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Unit::Count => "COUNT",
@@ -6113,6 +6692,7 @@ impl Unit {
             Unit::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COUNT", "PERCENT", "SECONDS"]
     }
@@ -6123,6 +6703,7 @@ impl AsRef<str> for Unit {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6134,8 +6715,11 @@ impl AsRef<str> for Unit {
     std::hash::Hash,
 )]
 pub enum Statistic {
+    #[allow(missing_docs)] // documentation missing in model
     Avg,
+    #[allow(missing_docs)] // documentation missing in model
     Max,
+    #[allow(missing_docs)] // documentation missing in model
     Sum,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6158,6 +6742,7 @@ impl std::str::FromStr for Statistic {
     }
 }
 impl Statistic {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Statistic::Avg => "AVG",
@@ -6166,6 +6751,7 @@ impl Statistic {
             Statistic::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVG", "MAX", "SUM"]
     }
@@ -6208,6 +6794,7 @@ pub mod threshold {
             self.comparison = Some(input);
             self
         }
+        /// <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
         pub fn set_comparison(
             mut self,
             input: std::option::Option<crate::model::Comparison>,
@@ -6220,6 +6807,7 @@ pub mod threshold {
             self.threshold_value = Some(input);
             self
         }
+        /// <p>The threshold value to compare.</p>
         pub fn set_threshold_value(mut self, input: std::option::Option<f64>) -> Self {
             self.threshold_value = input;
             self
@@ -6240,6 +6828,7 @@ impl Threshold {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6251,6 +6840,7 @@ impl Threshold {
     std::hash::Hash,
 )]
 pub enum Comparison {
+    #[allow(missing_docs)] // documentation missing in model
     Lt,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6271,12 +6861,14 @@ impl std::str::FromStr for Comparison {
     }
 }
 impl Comparison {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Comparison::Lt => "LT",
             Comparison::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LT"]
     }
@@ -6299,30 +6891,55 @@ impl AsRef<str> for Comparison {
     std::hash::Hash,
 )]
 pub enum HistoricalMetricName {
+    #[allow(missing_docs)] // documentation missing in model
     AbandonTime,
+    #[allow(missing_docs)] // documentation missing in model
     AfterContactWorkTime,
+    #[allow(missing_docs)] // documentation missing in model
     ApiContactsHandled,
+    #[allow(missing_docs)] // documentation missing in model
     CallbackContactsHandled,
+    #[allow(missing_docs)] // documentation missing in model
     ContactsAbandoned,
+    #[allow(missing_docs)] // documentation missing in model
     ContactsAgentHungUpFirst,
+    #[allow(missing_docs)] // documentation missing in model
     ContactsConsulted,
+    #[allow(missing_docs)] // documentation missing in model
     ContactsHandled,
+    #[allow(missing_docs)] // documentation missing in model
     ContactsHandledIncoming,
+    #[allow(missing_docs)] // documentation missing in model
     ContactsHandledOutbound,
+    #[allow(missing_docs)] // documentation missing in model
     ContactsHoldAbandons,
+    #[allow(missing_docs)] // documentation missing in model
     ContactsMissed,
+    #[allow(missing_docs)] // documentation missing in model
     ContactsQueued,
+    #[allow(missing_docs)] // documentation missing in model
     ContactsTransferredIn,
+    #[allow(missing_docs)] // documentation missing in model
     ContactsTransferredInFromQueue,
+    #[allow(missing_docs)] // documentation missing in model
     ContactsTransferredOut,
+    #[allow(missing_docs)] // documentation missing in model
     ContactsTransferredOutFromQueue,
+    #[allow(missing_docs)] // documentation missing in model
     HandleTime,
+    #[allow(missing_docs)] // documentation missing in model
     HoldTime,
+    #[allow(missing_docs)] // documentation missing in model
     InteractionAndHoldTime,
+    #[allow(missing_docs)] // documentation missing in model
     InteractionTime,
+    #[allow(missing_docs)] // documentation missing in model
     Occupancy,
+    #[allow(missing_docs)] // documentation missing in model
     QueuedTime,
+    #[allow(missing_docs)] // documentation missing in model
     QueueAnswerTime,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceLevel,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6371,6 +6988,7 @@ impl std::str::FromStr for HistoricalMetricName {
     }
 }
 impl HistoricalMetricName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HistoricalMetricName::AbandonTime => "ABANDON_TIME",
@@ -6405,6 +7023,7 @@ impl HistoricalMetricName {
             HistoricalMetricName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ABANDON_TIME",
@@ -6473,6 +7092,7 @@ pub mod dimensions {
             self.queue = Some(input);
             self
         }
+        /// <p>Information about the queue for which metrics are returned.</p>
         pub fn set_queue(
             mut self,
             input: std::option::Option<crate::model::QueueReference>,
@@ -6485,6 +7105,7 @@ pub mod dimensions {
             self.channel = Some(input);
             self
         }
+        /// <p>The channel used for grouping and filters.</p>
         pub fn set_channel(mut self, input: std::option::Option<crate::model::Channel>) -> Self {
             self.channel = input;
             self
@@ -6537,6 +7158,7 @@ pub mod queue_reference {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the queue.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -6546,6 +7168,7 @@ pub mod queue_reference {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the queue.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -6566,6 +7189,7 @@ impl QueueReference {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6577,7 +7201,9 @@ impl QueueReference {
     std::hash::Hash,
 )]
 pub enum Grouping {
+    #[allow(missing_docs)] // documentation missing in model
     Channel,
+    #[allow(missing_docs)] // documentation missing in model
     Queue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6599,6 +7225,7 @@ impl std::str::FromStr for Grouping {
     }
 }
 impl Grouping {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Grouping::Channel => "CHANNEL",
@@ -6606,6 +7233,7 @@ impl Grouping {
             Grouping::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CHANNEL", "QUEUE"]
     }
@@ -6644,12 +7272,20 @@ pub mod filters {
         pub(crate) channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
     }
     impl Builder {
+        /// Appends an item to `queues`.
+        ///
+        /// To override the contents of this collection use [`set_queues`](Self::set_queues).
+        ///
+        /// <p>The queues to use to filter the metrics. You can specify up to 100 queues per
+        /// request.</p>
         pub fn queues(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.queues.unwrap_or_default();
             v.push(input.into());
             self.queues = Some(v);
             self
         }
+        /// <p>The queues to use to filter the metrics. You can specify up to 100 queues per
+        /// request.</p>
         pub fn set_queues(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6657,12 +7293,18 @@ pub mod filters {
             self.queues = input;
             self
         }
+        /// Appends an item to `channels`.
+        ///
+        /// To override the contents of this collection use [`set_channels`](Self::set_channels).
+        ///
+        /// <p>The channel to use to filter the metrics.</p>
         pub fn channels(mut self, input: impl Into<crate::model::Channel>) -> Self {
             let mut v = self.channels.unwrap_or_default();
             v.push(input.into());
             self.channels = Some(v);
             self
         }
+        /// <p>The channel to use to filter the metrics.</p>
         pub fn set_channels(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Channel>>,
@@ -6694,11 +7336,11 @@ pub struct Credentials {
     pub access_token: std::option::Option<std::string::String>,
     /// <p>A token generated with an expiration time for the session a user is logged in to
     /// Amazon Connect.</p>
-    pub access_token_expiration: std::option::Option<smithy_types::Instant>,
+    pub access_token_expiration: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Renews a token generated for a user to access the Amazon Connect instance.</p>
     pub refresh_token: std::option::Option<std::string::String>,
     /// <p>Renews the expiration timer for a generated token.</p>
-    pub refresh_token_expiration: std::option::Option<smithy_types::Instant>,
+    pub refresh_token_expiration: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Credentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6717,9 +7359,9 @@ pub mod credentials {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
-        pub(crate) access_token_expiration: std::option::Option<smithy_types::Instant>,
+        pub(crate) access_token_expiration: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) refresh_token: std::option::Option<std::string::String>,
-        pub(crate) refresh_token_expiration: std::option::Option<smithy_types::Instant>,
+        pub(crate) refresh_token_expiration: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>An access token generated for a federated user to access Amazon Connect.</p>
@@ -6727,19 +7369,22 @@ pub mod credentials {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>An access token generated for a federated user to access Amazon Connect.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
         }
         /// <p>A token generated with an expiration time for the session a user is logged in to
         /// Amazon Connect.</p>
-        pub fn access_token_expiration(mut self, input: smithy_types::Instant) -> Self {
+        pub fn access_token_expiration(mut self, input: aws_smithy_types::Instant) -> Self {
             self.access_token_expiration = Some(input);
             self
         }
+        /// <p>A token generated with an expiration time for the session a user is logged in to
+        /// Amazon Connect.</p>
         pub fn set_access_token_expiration(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.access_token_expiration = input;
             self
@@ -6749,6 +7394,7 @@ pub mod credentials {
             self.refresh_token = Some(input.into());
             self
         }
+        /// <p>Renews a token generated for a user to access the Amazon Connect instance.</p>
         pub fn set_refresh_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6757,13 +7403,14 @@ pub mod credentials {
             self
         }
         /// <p>Renews the expiration timer for a generated token.</p>
-        pub fn refresh_token_expiration(mut self, input: smithy_types::Instant) -> Self {
+        pub fn refresh_token_expiration(mut self, input: aws_smithy_types::Instant) -> Self {
             self.refresh_token_expiration = Some(input);
             self
         }
+        /// <p>Renews the expiration timer for a generated token.</p>
         pub fn set_refresh_token_expiration(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.refresh_token_expiration = input;
             self
@@ -6818,6 +7465,7 @@ pub mod current_metric_result {
             self.dimensions = Some(input);
             self
         }
+        /// <p>The dimensions for the metrics.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<crate::model::Dimensions>,
@@ -6825,12 +7473,18 @@ pub mod current_metric_result {
             self.dimensions = input;
             self
         }
+        /// Appends an item to `collections`.
+        ///
+        /// To override the contents of this collection use [`set_collections`](Self::set_collections).
+        ///
+        /// <p>The set of metrics.</p>
         pub fn collections(mut self, input: impl Into<crate::model::CurrentMetricData>) -> Self {
             let mut v = self.collections.unwrap_or_default();
             v.push(input.into());
             self.collections = Some(v);
             self
         }
+        /// <p>The set of metrics.</p>
         pub fn set_collections(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CurrentMetricData>>,
@@ -6886,6 +7540,7 @@ pub mod current_metric_data {
             self.metric = Some(input);
             self
         }
+        /// <p>Information about the metric.</p>
         pub fn set_metric(
             mut self,
             input: std::option::Option<crate::model::CurrentMetric>,
@@ -6898,6 +7553,7 @@ pub mod current_metric_data {
             self.value = Some(input);
             self
         }
+        /// <p>The value of the metric.</p>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
             self.value = input;
             self
@@ -6951,6 +7607,7 @@ pub mod current_metric {
             self.name = Some(input);
             self
         }
+        /// <p>The name of the metric.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::CurrentMetricName>,
@@ -6963,6 +7620,7 @@ pub mod current_metric {
             self.unit = Some(input);
             self
         }
+        /// <p>The unit for the metric.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::Unit>) -> Self {
             self.unit = input;
             self
@@ -6995,18 +7653,31 @@ impl CurrentMetric {
     std::hash::Hash,
 )]
 pub enum CurrentMetricName {
+    #[allow(missing_docs)] // documentation missing in model
     AgentsAfterContactWork,
+    #[allow(missing_docs)] // documentation missing in model
     AgentsAvailable,
+    #[allow(missing_docs)] // documentation missing in model
     AgentsError,
+    #[allow(missing_docs)] // documentation missing in model
     AgentsNonProductive,
+    #[allow(missing_docs)] // documentation missing in model
     AgentsOnline,
+    #[allow(missing_docs)] // documentation missing in model
     AgentsOnCall,
+    #[allow(missing_docs)] // documentation missing in model
     AgentsOnContact,
+    #[allow(missing_docs)] // documentation missing in model
     AgentsStaffed,
+    #[allow(missing_docs)] // documentation missing in model
     ContactsInQueue,
+    #[allow(missing_docs)] // documentation missing in model
     ContactsScheduled,
+    #[allow(missing_docs)] // documentation missing in model
     OldestContactAge,
+    #[allow(missing_docs)] // documentation missing in model
     SlotsActive,
+    #[allow(missing_docs)] // documentation missing in model
     SlotsAvailable,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7039,6 +7710,7 @@ impl std::str::FromStr for CurrentMetricName {
     }
 }
 impl CurrentMetricName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CurrentMetricName::AgentsAfterContactWork => "AGENTS_AFTER_CONTACT_WORK",
@@ -7057,6 +7729,7 @@ impl CurrentMetricName {
             CurrentMetricName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AGENTS_AFTER_CONTACT_WORK",
@@ -7125,6 +7798,7 @@ pub mod hierarchy_structure {
             self.level_one = Some(input);
             self
         }
+        /// <p>Information about level one.</p>
         pub fn set_level_one(
             mut self,
             input: std::option::Option<crate::model::HierarchyLevel>,
@@ -7137,6 +7811,7 @@ pub mod hierarchy_structure {
             self.level_two = Some(input);
             self
         }
+        /// <p>Information about level two.</p>
         pub fn set_level_two(
             mut self,
             input: std::option::Option<crate::model::HierarchyLevel>,
@@ -7149,6 +7824,7 @@ pub mod hierarchy_structure {
             self.level_three = Some(input);
             self
         }
+        /// <p>Information about level three.</p>
         pub fn set_level_three(
             mut self,
             input: std::option::Option<crate::model::HierarchyLevel>,
@@ -7161,6 +7837,7 @@ pub mod hierarchy_structure {
             self.level_four = Some(input);
             self
         }
+        /// <p>Information about level four.</p>
         pub fn set_level_four(
             mut self,
             input: std::option::Option<crate::model::HierarchyLevel>,
@@ -7173,6 +7850,7 @@ pub mod hierarchy_structure {
             self.level_five = Some(input);
             self
         }
+        /// <p>Information about level five.</p>
         pub fn set_level_five(
             mut self,
             input: std::option::Option<crate::model::HierarchyLevel>,
@@ -7235,6 +7913,7 @@ pub mod hierarchy_level {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the hierarchy level.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -7244,6 +7923,7 @@ pub mod hierarchy_level {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the hierarchy level.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -7253,6 +7933,7 @@ pub mod hierarchy_level {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the hierarchy level.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7318,6 +7999,7 @@ pub mod hierarchy_group {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the hierarchy group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -7327,6 +8009,7 @@ pub mod hierarchy_group {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the hierarchy group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -7336,6 +8019,7 @@ pub mod hierarchy_group {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the hierarchy group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7345,6 +8029,7 @@ pub mod hierarchy_group {
             self.level_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the level in the hierarchy group.</p>
         pub fn set_level_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.level_id = input;
             self
@@ -7354,6 +8039,7 @@ pub mod hierarchy_group {
             self.hierarchy_path = Some(input);
             self
         }
+        /// <p>Information about the levels in the hierarchy group.</p>
         pub fn set_hierarchy_path(
             mut self,
             input: std::option::Option<crate::model::HierarchyPath>,
@@ -7424,6 +8110,7 @@ pub mod hierarchy_path {
             self.level_one = Some(input);
             self
         }
+        /// <p>Information about level one.</p>
         pub fn set_level_one(
             mut self,
             input: std::option::Option<crate::model::HierarchyGroupSummary>,
@@ -7436,6 +8123,7 @@ pub mod hierarchy_path {
             self.level_two = Some(input);
             self
         }
+        /// <p>Information about level two.</p>
         pub fn set_level_two(
             mut self,
             input: std::option::Option<crate::model::HierarchyGroupSummary>,
@@ -7448,6 +8136,7 @@ pub mod hierarchy_path {
             self.level_three = Some(input);
             self
         }
+        /// <p>Information about level three.</p>
         pub fn set_level_three(
             mut self,
             input: std::option::Option<crate::model::HierarchyGroupSummary>,
@@ -7460,6 +8149,7 @@ pub mod hierarchy_path {
             self.level_four = Some(input);
             self
         }
+        /// <p>Information about level four.</p>
         pub fn set_level_four(
             mut self,
             input: std::option::Option<crate::model::HierarchyGroupSummary>,
@@ -7472,6 +8162,7 @@ pub mod hierarchy_path {
             self.level_five = Some(input);
             self
         }
+        /// <p>Information about level five.</p>
         pub fn set_level_five(
             mut self,
             input: std::option::Option<crate::model::HierarchyGroupSummary>,
@@ -7566,6 +8257,7 @@ pub mod user {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the user account.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -7575,6 +8267,7 @@ pub mod user {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the user account.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -7584,6 +8277,7 @@ pub mod user {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name assigned to the user account.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -7593,6 +8287,7 @@ pub mod user {
             self.identity_info = Some(input);
             self
         }
+        /// <p>Information about the user identity.</p>
         pub fn set_identity_info(
             mut self,
             input: std::option::Option<crate::model::UserIdentityInfo>,
@@ -7605,6 +8300,7 @@ pub mod user {
             self.phone_config = Some(input);
             self
         }
+        /// <p>Information about the phone configuration for the user.</p>
         pub fn set_phone_config(
             mut self,
             input: std::option::Option<crate::model::UserPhoneConfig>,
@@ -7617,6 +8313,7 @@ pub mod user {
             self.directory_user_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the user account in the directory used for identity management.</p>
         pub fn set_directory_user_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7624,12 +8321,18 @@ pub mod user {
             self.directory_user_id = input;
             self
         }
+        /// Appends an item to `security_profile_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_profile_ids`](Self::set_security_profile_ids).
+        ///
+        /// <p>The identifiers of the security profiles for the user.</p>
         pub fn security_profile_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_profile_ids.unwrap_or_default();
             v.push(input.into());
             self.security_profile_ids = Some(v);
             self
         }
+        /// <p>The identifiers of the security profiles for the user.</p>
         pub fn set_security_profile_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7642,6 +8345,7 @@ pub mod user {
             self.routing_profile_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the routing profile for the user.</p>
         pub fn set_routing_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7654,6 +8358,7 @@ pub mod user {
             self.hierarchy_group_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the hierarchy group for the user.</p>
         pub fn set_hierarchy_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7661,6 +8366,12 @@ pub mod user {
             self.hierarchy_group_id = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The
+        /// tags.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -7671,6 +8382,8 @@ pub mod user {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The
+        /// tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -7765,6 +8478,7 @@ pub mod routing_profile {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -7774,6 +8488,7 @@ pub mod routing_profile {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the routing profile.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7783,6 +8498,7 @@ pub mod routing_profile {
             self.routing_profile_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
         pub fn set_routing_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7795,6 +8511,7 @@ pub mod routing_profile {
             self.routing_profile_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the routing profile.</p>
         pub fn set_routing_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7807,10 +8524,17 @@ pub mod routing_profile {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the routing profile.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `media_concurrencies`.
+        ///
+        /// To override the contents of this collection use [`set_media_concurrencies`](Self::set_media_concurrencies).
+        ///
+        /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing
+        /// profile.</p>
         pub fn media_concurrencies(
             mut self,
             input: impl Into<crate::model::MediaConcurrency>,
@@ -7820,6 +8544,8 @@ pub mod routing_profile {
             self.media_concurrencies = Some(v);
             self
         }
+        /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing
+        /// profile.</p>
         pub fn set_media_concurrencies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MediaConcurrency>>,
@@ -7832,6 +8558,7 @@ pub mod routing_profile {
             self.default_outbound_queue_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the default outbound queue for this routing profile.</p>
         pub fn set_default_outbound_queue_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7839,6 +8566,11 @@ pub mod routing_profile {
             self.default_outbound_queue_id = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -7849,6 +8581,7 @@ pub mod routing_profile {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>One or more tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -7931,6 +8664,7 @@ pub mod quick_connect {
             self.quick_connect_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the quick connect.</p>
         pub fn set_quick_connect_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7943,6 +8677,7 @@ pub mod quick_connect {
             self.quick_connect_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the quick connect.</p>
         pub fn set_quick_connect_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7955,6 +8690,7 @@ pub mod quick_connect {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the quick connect.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7964,6 +8700,7 @@ pub mod quick_connect {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -7973,6 +8710,7 @@ pub mod quick_connect {
             self.quick_connect_config = Some(input);
             self
         }
+        /// <p>Contains information about the quick connect.</p>
         pub fn set_quick_connect_config(
             mut self,
             input: std::option::Option<crate::model::QuickConnectConfig>,
@@ -7980,6 +8718,11 @@ pub mod quick_connect {
             self.quick_connect_config = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -7990,6 +8733,7 @@ pub mod quick_connect {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>One or more tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -8082,6 +8826,7 @@ pub mod queue {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the queue.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8091,6 +8836,7 @@ pub mod queue {
             self.queue_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the queue.</p>
         pub fn set_queue_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_arn = input;
             self
@@ -8100,6 +8846,7 @@ pub mod queue {
             self.queue_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the queue.</p>
         pub fn set_queue_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_id = input;
             self
@@ -8109,6 +8856,7 @@ pub mod queue {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the queue.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -8118,6 +8866,7 @@ pub mod queue {
             self.outbound_caller_config = Some(input);
             self
         }
+        /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
         pub fn set_outbound_caller_config(
             mut self,
             input: std::option::Option<crate::model::OutboundCallerConfig>,
@@ -8130,6 +8879,7 @@ pub mod queue {
             self.hours_of_operation_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the hours of operation.</p>
         pub fn set_hours_of_operation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8142,6 +8892,7 @@ pub mod queue {
             self.max_contacts = Some(input);
             self
         }
+        /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
         pub fn set_max_contacts(mut self, input: std::option::Option<i32>) -> Self {
             self.max_contacts = input;
             self
@@ -8151,10 +8902,16 @@ pub mod queue {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the queue.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::QueueStatus>) -> Self {
             self.status = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -8165,6 +8922,7 @@ pub mod queue {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>One or more tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -8210,7 +8968,7 @@ pub struct Instance {
     /// <p>The alias of instance.</p>
     pub instance_alias: std::option::Option<std::string::String>,
     /// <p>When the instance was created.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The service role of the instance.</p>
     pub service_role: std::option::Option<std::string::String>,
     /// <p>The state of the instance.</p>
@@ -8249,7 +9007,7 @@ pub mod instance {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) identity_management_type: std::option::Option<crate::model::DirectoryType>,
         pub(crate) instance_alias: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) service_role: std::option::Option<std::string::String>,
         pub(crate) instance_status: std::option::Option<crate::model::InstanceStatus>,
         pub(crate) status_reason: std::option::Option<crate::model::InstanceStatusReason>,
@@ -8262,6 +9020,7 @@ pub mod instance {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -8271,6 +9030,7 @@ pub mod instance {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the instance.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -8280,6 +9040,7 @@ pub mod instance {
             self.identity_management_type = Some(input);
             self
         }
+        /// <p>The identity management type.</p>
         pub fn set_identity_management_type(
             mut self,
             input: std::option::Option<crate::model::DirectoryType>,
@@ -8292,6 +9053,7 @@ pub mod instance {
             self.instance_alias = Some(input.into());
             self
         }
+        /// <p>The alias of instance.</p>
         pub fn set_instance_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8300,13 +9062,14 @@ pub mod instance {
             self
         }
         /// <p>When the instance was created.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>When the instance was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
@@ -8316,6 +9079,7 @@ pub mod instance {
             self.service_role = Some(input.into());
             self
         }
+        /// <p>The service role of the instance.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_role = input;
             self
@@ -8325,6 +9089,7 @@ pub mod instance {
             self.instance_status = Some(input);
             self
         }
+        /// <p>The state of the instance.</p>
         pub fn set_instance_status(
             mut self,
             input: std::option::Option<crate::model::InstanceStatus>,
@@ -8338,6 +9103,8 @@ pub mod instance {
             self.status_reason = Some(input);
             self
         }
+        /// <p>Relevant
+        /// details why the instance was not successfully created. </p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<crate::model::InstanceStatusReason>,
@@ -8350,6 +9117,7 @@ pub mod instance {
             self.inbound_calls_enabled = Some(input);
             self
         }
+        /// <p>Whether inbound calls are enabled.</p>
         pub fn set_inbound_calls_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inbound_calls_enabled = input;
             self
@@ -8359,6 +9127,7 @@ pub mod instance {
             self.outbound_calls_enabled = Some(input);
             self
         }
+        /// <p>Whether outbound calls are enabled.</p>
         pub fn set_outbound_calls_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.outbound_calls_enabled = input;
             self
@@ -8416,6 +9185,7 @@ pub mod instance_status_reason {
             self.message = Some(input.into());
             self
         }
+        /// <p>The message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -8490,6 +9260,7 @@ pub mod hours_of_operation {
             self.hours_of_operation_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the hours of operation.</p>
         pub fn set_hours_of_operation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8502,6 +9273,7 @@ pub mod hours_of_operation {
             self.hours_of_operation_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
         pub fn set_hours_of_operation_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8514,6 +9286,7 @@ pub mod hours_of_operation {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name for the hours of operation.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8523,6 +9296,7 @@ pub mod hours_of_operation {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for the hours of operation.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -8532,16 +9306,23 @@ pub mod hours_of_operation {
             self.time_zone = Some(input.into());
             self
         }
+        /// <p>The time zone for the hours of operation.</p>
         pub fn set_time_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.time_zone = input;
             self
         }
+        /// Appends an item to `config`.
+        ///
+        /// To override the contents of this collection use [`set_config`](Self::set_config).
+        ///
+        /// <p>Configuration information for the hours of operation.</p>
         pub fn config(mut self, input: impl Into<crate::model::HoursOfOperationConfig>) -> Self {
             let mut v = self.config.unwrap_or_default();
             v.push(input.into());
             self.config = Some(v);
             self
         }
+        /// <p>Configuration information for the hours of operation.</p>
         pub fn set_config(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HoursOfOperationConfig>>,
@@ -8549,6 +9330,11 @@ pub mod hours_of_operation {
             self.config = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -8559,6 +9345,7 @@ pub mod hours_of_operation {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>One or more tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -8645,6 +9432,7 @@ pub mod contact_flow {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the contact flow.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -8654,6 +9442,7 @@ pub mod contact_flow {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the contact flow.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -8663,6 +9452,7 @@ pub mod contact_flow {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the contact flow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8673,6 +9463,8 @@ pub mod contact_flow {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ContactFlowType>,
@@ -8685,6 +9477,7 @@ pub mod contact_flow {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the contact flow.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -8694,10 +9487,16 @@ pub mod contact_flow {
             self.content = Some(input.into());
             self
         }
+        /// <p>The content of the contact flow.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -8708,6 +9507,7 @@ pub mod contact_flow {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>One or more tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -8797,6 +9597,7 @@ pub mod agent_status {
             self.agent_status_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the agent status.</p>
         pub fn set_agent_status_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8809,6 +9610,7 @@ pub mod agent_status {
             self.agent_status_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the agent status.</p>
         pub fn set_agent_status_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8821,6 +9623,7 @@ pub mod agent_status {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the agent status.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8830,6 +9633,7 @@ pub mod agent_status {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the agent status.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -8839,6 +9643,7 @@ pub mod agent_status {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of agent status.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::AgentStatusType>,
@@ -8851,6 +9656,7 @@ pub mod agent_status {
             self.display_order = Some(input);
             self
         }
+        /// <p>The display order of the agent status.</p>
         pub fn set_display_order(mut self, input: std::option::Option<i32>) -> Self {
             self.display_order = input;
             self
@@ -8860,6 +9666,7 @@ pub mod agent_status {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the agent status.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::AgentStatusState>,
@@ -8867,6 +9674,11 @@ pub mod agent_status {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -8877,6 +9689,7 @@ pub mod agent_status {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>One or more tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<

@@ -12,7 +12,7 @@ pub struct Stack {
     /// <p>The stack name to display.</p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The time the stack was created.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The storage connectors to enable.</p>
     pub storage_connectors: std::option::Option<std::vec::Vec<crate::model::StorageConnector>>,
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
@@ -59,7 +59,7 @@ pub mod stack {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) storage_connectors:
             std::option::Option<std::vec::Vec<crate::model::StorageConnector>>,
         pub(crate) redirect_url: std::option::Option<std::string::String>,
@@ -78,6 +78,7 @@ pub mod stack {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the stack.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -87,6 +88,7 @@ pub mod stack {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the stack.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -96,6 +98,7 @@ pub mod stack {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description to display.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -105,22 +108,29 @@ pub mod stack {
             self.display_name = Some(input.into());
             self
         }
+        /// <p>The stack name to display.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
         }
         /// <p>The time the stack was created.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The time the stack was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
         }
+        /// Appends an item to `storage_connectors`.
+        ///
+        /// To override the contents of this collection use [`set_storage_connectors`](Self::set_storage_connectors).
+        ///
+        /// <p>The storage connectors to enable.</p>
         pub fn storage_connectors(
             mut self,
             input: impl Into<crate::model::StorageConnector>,
@@ -130,6 +140,7 @@ pub mod stack {
             self.storage_connectors = Some(v);
             self
         }
+        /// <p>The storage connectors to enable.</p>
         pub fn set_storage_connectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StorageConnector>>,
@@ -142,6 +153,7 @@ pub mod stack {
             self.redirect_url = Some(input.into());
             self
         }
+        /// <p>The URL that users are redirected to after their streaming session ends.</p>
         pub fn set_redirect_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.redirect_url = input;
             self
@@ -151,16 +163,23 @@ pub mod stack {
             self.feedback_url = Some(input.into());
             self
         }
+        /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
         pub fn set_feedback_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.feedback_url = input;
             self
         }
+        /// Appends an item to `stack_errors`.
+        ///
+        /// To override the contents of this collection use [`set_stack_errors`](Self::set_stack_errors).
+        ///
+        /// <p>The errors for the stack.</p>
         pub fn stack_errors(mut self, input: impl Into<crate::model::StackError>) -> Self {
             let mut v = self.stack_errors.unwrap_or_default();
             v.push(input.into());
             self.stack_errors = Some(v);
             self
         }
+        /// <p>The errors for the stack.</p>
         pub fn set_stack_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StackError>>,
@@ -168,12 +187,18 @@ pub mod stack {
             self.stack_errors = input;
             self
         }
+        /// Appends an item to `user_settings`.
+        ///
+        /// To override the contents of this collection use [`set_user_settings`](Self::set_user_settings).
+        ///
+        /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default these actions are enabled.</p>
         pub fn user_settings(mut self, input: impl Into<crate::model::UserSetting>) -> Self {
             let mut v = self.user_settings.unwrap_or_default();
             v.push(input.into());
             self.user_settings = Some(v);
             self
         }
+        /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default these actions are enabled.</p>
         pub fn set_user_settings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UserSetting>>,
@@ -189,6 +214,7 @@ pub mod stack {
             self.application_settings = Some(input);
             self
         }
+        /// <p>The persistent application settings for users of the stack.</p>
         pub fn set_application_settings(
             mut self,
             input: std::option::Option<crate::model::ApplicationSettingsResponse>,
@@ -196,12 +222,18 @@ pub mod stack {
             self.application_settings = input;
             self
         }
+        /// Appends an item to `access_endpoints`.
+        ///
+        /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).
+        ///
+        /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints. </p>
         pub fn access_endpoints(mut self, input: impl Into<crate::model::AccessEndpoint>) -> Self {
             let mut v = self.access_endpoints.unwrap_or_default();
             v.push(input.into());
             self.access_endpoints = Some(v);
             self
         }
+        /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints. </p>
         pub fn set_access_endpoints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>,
@@ -209,12 +241,18 @@ pub mod stack {
             self.access_endpoints = input;
             self
         }
+        /// Appends an item to `embed_host_domains`.
+        ///
+        /// To override the contents of this collection use [`set_embed_host_domains`](Self::set_embed_host_domains).
+        ///
+        /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
         pub fn embed_host_domains(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.embed_host_domains.unwrap_or_default();
             v.push(input.into());
             self.embed_host_domains = Some(v);
             self
         }
+        /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
         pub fn set_embed_host_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -281,6 +319,7 @@ pub mod access_endpoint {
             self.endpoint_type = Some(input);
             self
         }
+        /// <p>The type of interface endpoint.</p>
         pub fn set_endpoint_type(
             mut self,
             input: std::option::Option<crate::model::AccessEndpointType>,
@@ -293,6 +332,7 @@ pub mod access_endpoint {
             self.vpce_id = Some(input.into());
             self
         }
+        /// <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
         pub fn set_vpce_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpce_id = input;
             self
@@ -313,6 +353,7 @@ impl AccessEndpoint {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -324,6 +365,7 @@ impl AccessEndpoint {
     std::hash::Hash,
 )]
 pub enum AccessEndpointType {
+    #[allow(missing_docs)] // documentation missing in model
     Streaming,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -344,12 +386,14 @@ impl std::str::FromStr for AccessEndpointType {
     }
 }
 impl AccessEndpointType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccessEndpointType::Streaming => "STREAMING",
             AccessEndpointType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["STREAMING"]
     }
@@ -397,6 +441,7 @@ pub mod application_settings_response {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether persistent application settings are enabled for users during their streaming sessions.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -406,6 +451,7 @@ pub mod application_settings_response {
             self.settings_group = Some(input.into());
             self
         }
+        /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored.</p>
         pub fn set_settings_group(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -419,6 +465,8 @@ pub mod application_settings_response {
             self.s3_bucket_name = Some(input.into());
             self
         }
+        /// <p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region.
+        /// </p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -475,6 +523,7 @@ pub mod user_setting {
             self.action = Some(input);
             self
         }
+        /// <p>The action that is enabled or disabled.</p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.action = input;
             self
@@ -484,6 +533,7 @@ pub mod user_setting {
             self.permission = Some(input);
             self
         }
+        /// <p>Indicates whether the action is enabled or disabled.</p>
         pub fn set_permission(
             mut self,
             input: std::option::Option<crate::model::Permission>,
@@ -507,6 +557,7 @@ impl UserSetting {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -518,7 +569,9 @@ impl UserSetting {
     std::hash::Hash,
 )]
 pub enum Permission {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -540,6 +593,7 @@ impl std::str::FromStr for Permission {
     }
 }
 impl Permission {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Permission::Disabled => "DISABLED",
@@ -547,6 +601,7 @@ impl Permission {
             Permission::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -557,6 +612,7 @@ impl AsRef<str> for Permission {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -568,12 +624,19 @@ impl AsRef<str> for Permission {
     std::hash::Hash,
 )]
 pub enum Action {
+    #[allow(missing_docs)] // documentation missing in model
     ClipboardCopyFromLocalDevice,
+    #[allow(missing_docs)] // documentation missing in model
     ClipboardCopyToLocalDevice,
+    #[allow(missing_docs)] // documentation missing in model
     DomainPasswordSignin,
+    #[allow(missing_docs)] // documentation missing in model
     DomainSmartCardSignin,
+    #[allow(missing_docs)] // documentation missing in model
     FileDownload,
+    #[allow(missing_docs)] // documentation missing in model
     FileUpload,
+    #[allow(missing_docs)] // documentation missing in model
     PrintingToLocalDevice,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -600,6 +663,7 @@ impl std::str::FromStr for Action {
     }
 }
 impl Action {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Action::ClipboardCopyFromLocalDevice => "CLIPBOARD_COPY_FROM_LOCAL_DEVICE",
@@ -612,6 +676,7 @@ impl Action {
             Action::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CLIPBOARD_COPY_FROM_LOCAL_DEVICE",
@@ -662,6 +727,7 @@ pub mod stack_error {
             self.error_code = Some(input);
             self
         }
+        /// <p>The error code.</p>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::StackErrorCode>,
@@ -674,6 +740,7 @@ pub mod stack_error {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The error message.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -697,6 +764,7 @@ impl StackError {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -708,7 +776,9 @@ impl StackError {
     std::hash::Hash,
 )]
 pub enum StackErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
     InternalServiceError,
+    #[allow(missing_docs)] // documentation missing in model
     StorageConnectorError,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -730,6 +800,7 @@ impl std::str::FromStr for StackErrorCode {
     }
 }
 impl StackErrorCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StackErrorCode::InternalServiceError => "INTERNAL_SERVICE_ERROR",
@@ -737,6 +808,7 @@ impl StackErrorCode {
             StackErrorCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["INTERNAL_SERVICE_ERROR", "STORAGE_CONNECTOR_ERROR"]
     }
@@ -783,6 +855,7 @@ pub mod storage_connector {
             self.connector_type = Some(input);
             self
         }
+        /// <p>The type of storage connector.</p>
         pub fn set_connector_type(
             mut self,
             input: std::option::Option<crate::model::StorageConnectorType>,
@@ -795,6 +868,7 @@ pub mod storage_connector {
             self.resource_identifier = Some(input.into());
             self
         }
+        /// <p>The ARN of the storage connector.</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -802,12 +876,18 @@ pub mod storage_connector {
             self.resource_identifier = input;
             self
         }
+        /// Appends an item to `domains`.
+        ///
+        /// To override the contents of this collection use [`set_domains`](Self::set_domains).
+        ///
+        /// <p>The names of the domains for the account.</p>
         pub fn domains(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.domains.unwrap_or_default();
             v.push(input.into());
             self.domains = Some(v);
             self
         }
+        /// <p>The names of the domains for the account.</p>
         pub fn set_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -844,8 +924,11 @@ impl StorageConnector {
     std::hash::Hash,
 )]
 pub enum StorageConnectorType {
+    #[allow(missing_docs)] // documentation missing in model
     GoogleDrive,
+    #[allow(missing_docs)] // documentation missing in model
     Homefolders,
+    #[allow(missing_docs)] // documentation missing in model
     OneDrive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -868,6 +951,7 @@ impl std::str::FromStr for StorageConnectorType {
     }
 }
 impl StorageConnectorType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StorageConnectorType::GoogleDrive => "GOOGLE_DRIVE",
@@ -876,6 +960,7 @@ impl StorageConnectorType {
             StorageConnectorType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GOOGLE_DRIVE", "HOMEFOLDERS", "ONE_DRIVE"]
     }
@@ -918,6 +1003,7 @@ pub mod application_settings {
             self.enabled = Some(input);
             self
         }
+        /// <p>Enables or disables persistent application settings for users during their streaming sessions. </p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -927,6 +1013,7 @@ pub mod application_settings {
             self.settings_group = Some(input.into());
             self
         }
+        /// <p>The path prefix for the S3 bucket where users’ persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack. </p>
         pub fn set_settings_group(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -950,6 +1037,7 @@ impl ApplicationSettings {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -961,16 +1049,27 @@ impl ApplicationSettings {
     std::hash::Hash,
 )]
 pub enum StackAttribute {
+    #[allow(missing_docs)] // documentation missing in model
     AccessEndpoints,
+    #[allow(missing_docs)] // documentation missing in model
     EmbedHostDomains,
+    #[allow(missing_docs)] // documentation missing in model
     FeedbackUrl,
+    #[allow(missing_docs)] // documentation missing in model
     IamRoleArn,
+    #[allow(missing_docs)] // documentation missing in model
     RedirectUrl,
+    #[allow(missing_docs)] // documentation missing in model
     StorageConnectors,
+    #[allow(missing_docs)] // documentation missing in model
     StorageConnectorGoogleDrive,
+    #[allow(missing_docs)] // documentation missing in model
     StorageConnectorHomefolders,
+    #[allow(missing_docs)] // documentation missing in model
     StorageConnectorOneDrive,
+    #[allow(missing_docs)] // documentation missing in model
     ThemeName,
+    #[allow(missing_docs)] // documentation missing in model
     UserSettings,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1001,6 +1100,7 @@ impl std::str::FromStr for StackAttribute {
     }
 }
 impl StackAttribute {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StackAttribute::AccessEndpoints => "ACCESS_ENDPOINTS",
@@ -1017,6 +1117,7 @@ impl StackAttribute {
             StackAttribute::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACCESS_ENDPOINTS",
@@ -1071,6 +1172,7 @@ pub mod image_permissions {
             self.allow_fleet = Some(input);
             self
         }
+        /// <p>Indicates whether the image can be used for a fleet.</p>
         pub fn set_allow_fleet(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_fleet = input;
             self
@@ -1080,6 +1182,7 @@ pub mod image_permissions {
             self.allow_image_builder = Some(input);
             self
         }
+        /// <p>Indicates whether the image can be used for an image builder.</p>
         pub fn set_allow_image_builder(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_image_builder = input;
             self
@@ -1247,7 +1350,7 @@ pub struct Fleet {
     /// <p>The VPC configuration for the fleet.</p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>The time the fleet was created.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The fleet errors.</p>
     pub fleet_errors: std::option::Option<std::vec::Vec<crate::model::FleetError>>,
     /// <p>Indicates whether default internet access is enabled for the fleet.</p>
@@ -1265,14 +1368,17 @@ pub struct Fleet {
     /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
     /// disconnected.</p>
     /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
+    ///
     /// <note>
     /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
     /// </note>
     pub idle_disconnect_timeout_in_seconds: std::option::Option<i32>,
     /// <p>The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
+    ///
     /// <p>The default value is <code>APP</code>.</p>
     pub stream_view: std::option::Option<crate::model::StreamView>,
 }
@@ -1334,7 +1440,7 @@ pub mod fleet {
         pub(crate) disconnect_timeout_in_seconds: std::option::Option<i32>,
         pub(crate) state: std::option::Option<crate::model::FleetState>,
         pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) fleet_errors: std::option::Option<std::vec::Vec<crate::model::FleetError>>,
         pub(crate) enable_default_internet_access: std::option::Option<bool>,
         pub(crate) domain_join_info: std::option::Option<crate::model::DomainJoinInfo>,
@@ -1348,6 +1454,7 @@ pub mod fleet {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the fleet.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1357,6 +1464,7 @@ pub mod fleet {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the fleet.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1366,6 +1474,7 @@ pub mod fleet {
             self.display_name = Some(input.into());
             self
         }
+        /// <p>The fleet name to display.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -1375,6 +1484,7 @@ pub mod fleet {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description to display.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1384,6 +1494,7 @@ pub mod fleet {
             self.image_name = Some(input.into());
             self
         }
+        /// <p>The name of the image used to create the fleet.</p>
         pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_name = input;
             self
@@ -1393,6 +1504,7 @@ pub mod fleet {
             self.image_arn = Some(input.into());
             self
         }
+        /// <p>The ARN for the public, private, or shared image.</p>
         pub fn set_image_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_arn = input;
             self
@@ -1503,6 +1615,108 @@ pub mod fleet {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>    
+        /// <ul>
+        /// <li>
+        /// <p>stream.standard.small</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.standard.medium</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.standard.large</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.compute.large</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.compute.xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.compute.2xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.compute.4xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.compute.8xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.large</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.2xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.4xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.8xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.z1d.large</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.z1d.xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.z1d.2xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.z1d.3xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.z1d.6xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.z1d.12xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics-design.large</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics-design.xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics-design.2xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics-design.4xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics-desktop.2xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics.g4dn.xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics.g4dn.2xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics.g4dn.4xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics.g4dn.8xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics.g4dn.12xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics.g4dn.16xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics-pro.4xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics-pro.8xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics-pro.16xlarge</p>
+        /// </li>
+        /// </ul>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1528,6 +1742,20 @@ pub mod fleet {
             self.fleet_type = Some(input);
             self
         }
+        /// <p>The fleet type.</p>
+        /// <dl>
+        /// <dt>ALWAYS_ON</dt>
+        /// <dd>
+        /// <p>Provides users with instant-on access to their apps.
+        /// You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
+        /// </dd>
+        /// <dt>ON_DEMAND</dt>
+        /// <dd>
+        /// <p>Provide users with access to applications after they connect, which takes one to two minutes.
+        /// You are charged for instance streaming when users are connected and a
+        /// small hourly fee for instances that are not streaming apps.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_fleet_type(
             mut self,
             input: std::option::Option<crate::model::FleetType>,
@@ -1543,6 +1771,7 @@ pub mod fleet {
             self.compute_capacity_status = Some(input);
             self
         }
+        /// <p>The capacity status for the fleet.</p>
         pub fn set_compute_capacity_status(
             mut self,
             input: std::option::Option<crate::model::ComputeCapacityStatus>,
@@ -1556,6 +1785,8 @@ pub mod fleet {
             self.max_user_duration_in_seconds = Some(input);
             self
         }
+        /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance. </p>
+        /// <p>Specify a value between 600 and 360000.</p>
         pub fn set_max_user_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.max_user_duration_in_seconds = input;
             self
@@ -1566,6 +1797,8 @@ pub mod fleet {
             self.disconnect_timeout_in_seconds = Some(input);
             self
         }
+        /// <p>The amount of time that a streaming session remains active after users disconnect. If they try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance.</p>
+        /// <p>Specify a value between 60 and 360000.</p>
         pub fn set_disconnect_timeout_in_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -1578,6 +1811,7 @@ pub mod fleet {
             self.state = Some(input);
             self
         }
+        /// <p>The current state for the fleet.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::FleetState>) -> Self {
             self.state = input;
             self
@@ -1587,6 +1821,7 @@ pub mod fleet {
             self.vpc_config = Some(input);
             self
         }
+        /// <p>The VPC configuration for the fleet.</p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -1595,23 +1830,30 @@ pub mod fleet {
             self
         }
         /// <p>The time the fleet was created.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The time the fleet was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
         }
+        /// Appends an item to `fleet_errors`.
+        ///
+        /// To override the contents of this collection use [`set_fleet_errors`](Self::set_fleet_errors).
+        ///
+        /// <p>The fleet errors.</p>
         pub fn fleet_errors(mut self, input: impl Into<crate::model::FleetError>) -> Self {
             let mut v = self.fleet_errors.unwrap_or_default();
             v.push(input.into());
             self.fleet_errors = Some(v);
             self
         }
+        /// <p>The fleet errors.</p>
         pub fn set_fleet_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FleetError>>,
@@ -1624,6 +1866,7 @@ pub mod fleet {
             self.enable_default_internet_access = Some(input);
             self
         }
+        /// <p>Indicates whether default internet access is enabled for the fleet.</p>
         pub fn set_enable_default_internet_access(
             mut self,
             input: std::option::Option<bool>,
@@ -1636,6 +1879,7 @@ pub mod fleet {
             self.domain_join_info = Some(input);
             self
         }
+        /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
         pub fn set_domain_join_info(
             mut self,
             input: std::option::Option<crate::model::DomainJoinInfo>,
@@ -1654,6 +1898,7 @@ pub mod fleet {
         /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
         /// disconnected.</p>
         /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
+        ///
         /// <note>
         /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
         /// </note>
@@ -1661,6 +1906,21 @@ pub mod fleet {
             self.idle_disconnect_timeout_in_seconds = Some(input);
             self
         }
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected
+        /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
+        /// interval begins. Users are notified before they are disconnected due to inactivity. If
+        /// users try to reconnect to the streaming session before the time interval specified in
+        /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
+        /// previous session. Users are considered idle when they stop providing keyboard or mouse
+        /// input during their streaming session. File uploads and downloads, audio in, audio out,
+        /// and pixels changing do not qualify as user activity. If users continue to be idle after
+        /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
+        /// disconnected.</p>
+        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
+        ///
+        /// <note>
+        /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
+        /// </note>
         pub fn set_idle_disconnect_timeout_in_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -1669,21 +1929,29 @@ pub mod fleet {
             self
         }
         /// <p>The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+        ///
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
         }
         /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
+        ///
         /// <p>The default value is <code>APP</code>.</p>
         pub fn stream_view(mut self, input: crate::model::StreamView) -> Self {
             self.stream_view = Some(input);
             self
         }
+        /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
+        ///
+        /// <p>The default value is <code>APP</code>.</p>
         pub fn set_stream_view(
             mut self,
             input: std::option::Option<crate::model::StreamView>,
@@ -1725,6 +1993,7 @@ impl Fleet {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1736,7 +2005,9 @@ impl Fleet {
     std::hash::Hash,
 )]
 pub enum StreamView {
+    #[allow(missing_docs)] // documentation missing in model
     App,
+    #[allow(missing_docs)] // documentation missing in model
     Desktop,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1758,6 +2029,7 @@ impl std::str::FromStr for StreamView {
     }
 }
 impl StreamView {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StreamView::App => "APP",
@@ -1765,6 +2037,7 @@ impl StreamView {
             StreamView::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["APP", "DESKTOP"]
     }
@@ -1810,6 +2083,7 @@ pub mod domain_join_info {
             self.directory_name = Some(input.into());
             self
         }
+        /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
         pub fn set_directory_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1825,6 +2099,7 @@ pub mod domain_join_info {
             self.organizational_unit_distinguished_name = Some(input.into());
             self
         }
+        /// <p>The distinguished name of the organizational unit for computer accounts.</p>
         pub fn set_organizational_unit_distinguished_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1880,6 +2155,7 @@ pub mod fleet_error {
             self.error_code = Some(input);
             self
         }
+        /// <p>The error code.</p>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::FleetErrorCode>,
@@ -1892,6 +2168,7 @@ pub mod fleet_error {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The error message.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1915,6 +2192,7 @@ impl FleetError {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1926,35 +2204,65 @@ impl FleetError {
     std::hash::Hash,
 )]
 pub enum FleetErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
     DomainJoinErrorAccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
     DomainJoinErrorDsMachineAccountQuotaExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     DomainJoinErrorFileNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     DomainJoinErrorInvalidParameter,
+    #[allow(missing_docs)] // documentation missing in model
     DomainJoinErrorLogonFailure,
+    #[allow(missing_docs)] // documentation missing in model
     DomainJoinErrorMoreData,
+    #[allow(missing_docs)] // documentation missing in model
     DomainJoinErrorNotSupported,
+    #[allow(missing_docs)] // documentation missing in model
     DomainJoinErrorNoSuchDomain,
+    #[allow(missing_docs)] // documentation missing in model
     DomainJoinInternalServiceError,
+    #[allow(missing_docs)] // documentation missing in model
     DomainJoinNerrInvalidWorkgroupName,
+    #[allow(missing_docs)] // documentation missing in model
     DomainJoinNerrPasswordExpired,
+    #[allow(missing_docs)] // documentation missing in model
     DomainJoinNerrWorkstationNotStarted,
+    #[allow(missing_docs)] // documentation missing in model
     FleetInstanceProvisioningFailure,
+    #[allow(missing_docs)] // documentation missing in model
     FleetStopped,
+    #[allow(missing_docs)] // documentation missing in model
     IamServiceRoleIsMissing,
+    #[allow(missing_docs)] // documentation missing in model
     IamServiceRoleMissingDescribeSecurityGroupsAction,
+    #[allow(missing_docs)] // documentation missing in model
     IamServiceRoleMissingDescribeSubnetAction,
+    #[allow(missing_docs)] // documentation missing in model
     IamServiceRoleMissingEniCreateAction,
+    #[allow(missing_docs)] // documentation missing in model
     IamServiceRoleMissingEniDeleteAction,
+    #[allow(missing_docs)] // documentation missing in model
     IamServiceRoleMissingEniDescribeAction,
+    #[allow(missing_docs)] // documentation missing in model
     IgwNotAttached,
+    #[allow(missing_docs)] // documentation missing in model
     ImageNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     InternalServiceError,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidSubnetConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     MachineRoleIsMissing,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkInterfaceLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     SecurityGroupsNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     StsDisabledInRegion,
+    #[allow(missing_docs)] // documentation missing in model
     SubnetHasInsufficientIpAddresses,
+    #[allow(missing_docs)] // documentation missing in model
     SubnetNotFound,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2026,6 +2334,7 @@ impl std::str::FromStr for FleetErrorCode {
     }
 }
 impl FleetErrorCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FleetErrorCode::DomainJoinErrorAccessDenied => "DOMAIN_JOIN_ERROR_ACCESS_DENIED",
@@ -2083,6 +2392,7 @@ impl FleetErrorCode {
             FleetErrorCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DOMAIN_JOIN_ERROR_ACCESS_DENIED",
@@ -2151,12 +2461,18 @@ pub mod vpc_config {
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>The identifiers of the subnets to which a network interface is attached from the fleet instance or image builder instance. Fleet instances use one or more subnets. Image builder instances use one subnet.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// <p>The identifiers of the subnets to which a network interface is attached from the fleet instance or image builder instance. Fleet instances use one or more subnets. Image builder instances use one subnet.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2164,12 +2480,18 @@ pub mod vpc_config {
             self.subnet_ids = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>The identifiers of the security groups for the fleet or image builder.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// <p>The identifiers of the security groups for the fleet or image builder.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2193,6 +2515,7 @@ impl VpcConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2204,9 +2527,13 @@ impl VpcConfig {
     std::hash::Hash,
 )]
 pub enum FleetState {
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Starting,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2230,6 +2557,7 @@ impl std::str::FromStr for FleetState {
     }
 }
 impl FleetState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FleetState::Running => "RUNNING",
@@ -2239,6 +2567,7 @@ impl FleetState {
             FleetState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["RUNNING", "STARTING", "STOPPED", "STOPPING"]
     }
@@ -2290,6 +2619,7 @@ pub mod compute_capacity_status {
             self.desired = Some(input);
             self
         }
+        /// <p>The desired number of streaming instances.</p>
         pub fn set_desired(mut self, input: std::option::Option<i32>) -> Self {
             self.desired = input;
             self
@@ -2299,6 +2629,7 @@ pub mod compute_capacity_status {
             self.running = Some(input);
             self
         }
+        /// <p>The total number of simultaneous streaming instances that are running.</p>
         pub fn set_running(mut self, input: std::option::Option<i32>) -> Self {
             self.running = input;
             self
@@ -2308,6 +2639,7 @@ pub mod compute_capacity_status {
             self.in_use = Some(input);
             self
         }
+        /// <p>The number of instances in use for streaming.</p>
         pub fn set_in_use(mut self, input: std::option::Option<i32>) -> Self {
             self.in_use = input;
             self
@@ -2318,6 +2650,8 @@ pub mod compute_capacity_status {
             self.available = Some(input);
             self
         }
+        /// <p>The number of currently available instances that can be used to stream
+        /// sessions.</p>
         pub fn set_available(mut self, input: std::option::Option<i32>) -> Self {
             self.available = input;
             self
@@ -2340,6 +2674,7 @@ impl ComputeCapacityStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2351,7 +2686,9 @@ impl ComputeCapacityStatus {
     std::hash::Hash,
 )]
 pub enum FleetType {
+    #[allow(missing_docs)] // documentation missing in model
     AlwaysOn,
+    #[allow(missing_docs)] // documentation missing in model
     OnDemand,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2373,6 +2710,7 @@ impl std::str::FromStr for FleetType {
     }
 }
 impl FleetType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FleetType::AlwaysOn => "ALWAYS_ON",
@@ -2380,6 +2718,7 @@ impl FleetType {
             FleetType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALWAYS_ON", "ON_DEMAND"]
     }
@@ -2402,9 +2741,13 @@ impl AsRef<str> for FleetType {
     std::hash::Hash,
 )]
 pub enum FleetAttribute {
+    #[allow(missing_docs)] // documentation missing in model
     DomainJoinInfo,
+    #[allow(missing_docs)] // documentation missing in model
     IamRoleArn,
+    #[allow(missing_docs)] // documentation missing in model
     VpcConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     VpcConfigurationSecurityGroupIds,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2430,6 +2773,7 @@ impl std::str::FromStr for FleetAttribute {
     }
 }
 impl FleetAttribute {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FleetAttribute::DomainJoinInfo => "DOMAIN_JOIN_INFO",
@@ -2441,6 +2785,7 @@ impl FleetAttribute {
             FleetAttribute::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DOMAIN_JOIN_INFO",
@@ -2484,6 +2829,7 @@ pub mod compute_capacity {
             self.desired_instances = Some(input);
             self
         }
+        /// <p>The desired number of streaming instances.</p>
         pub fn set_desired_instances(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_instances = input;
             self
@@ -2515,7 +2861,7 @@ pub struct DirectoryConfig {
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
     pub service_account_credentials: std::option::Option<crate::model::ServiceAccountCredentials>,
     /// <p>The time the directory configuration was created.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DirectoryConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2544,7 +2890,7 @@ pub mod directory_config {
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) service_account_credentials:
             std::option::Option<crate::model::ServiceAccountCredentials>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
@@ -2552,6 +2898,7 @@ pub mod directory_config {
             self.directory_name = Some(input.into());
             self
         }
+        /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
         pub fn set_directory_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2559,6 +2906,11 @@ pub mod directory_config {
             self.directory_name = input;
             self
         }
+        /// Appends an item to `organizational_unit_distinguished_names`.
+        ///
+        /// To override the contents of this collection use [`set_organizational_unit_distinguished_names`](Self::set_organizational_unit_distinguished_names).
+        ///
+        /// <p>The distinguished names of the organizational units for computer accounts.</p>
         pub fn organizational_unit_distinguished_names(
             mut self,
             input: impl Into<std::string::String>,
@@ -2570,6 +2922,7 @@ pub mod directory_config {
             self.organizational_unit_distinguished_names = Some(v);
             self
         }
+        /// <p>The distinguished names of the organizational units for computer accounts.</p>
         pub fn set_organizational_unit_distinguished_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2585,6 +2938,7 @@ pub mod directory_config {
             self.service_account_credentials = Some(input);
             self
         }
+        /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
         pub fn set_service_account_credentials(
             mut self,
             input: std::option::Option<crate::model::ServiceAccountCredentials>,
@@ -2593,13 +2947,14 @@ pub mod directory_config {
             self
         }
         /// <p>The time the directory configuration was created.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The time the directory configuration was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
@@ -2659,6 +3014,9 @@ pub mod service_account_credentials {
             self.account_name = Some(input.into());
             self
         }
+        /// <p>The user name of the account. This account must have the following privileges: create computer objects,
+        /// join computers to the domain, and change/reset the password on descendant computer objects for the
+        /// organizational units specified.</p>
         pub fn set_account_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_name = input;
             self
@@ -2668,6 +3026,7 @@ pub mod service_account_credentials {
             self.account_password = Some(input.into());
             self
         }
+        /// <p>The password for the account.</p>
         pub fn set_account_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2813,6 +3172,7 @@ pub struct ImageBuilder {
     /// <p>The operating system platform of the image builder.</p>
     pub platform: std::option::Option<crate::model::PlatformType>,
     /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The state of the image builder.</p>
@@ -2820,7 +3180,7 @@ pub struct ImageBuilder {
     /// <p>The reason why the last state change occurred.</p>
     pub state_change_reason: std::option::Option<crate::model::ImageBuilderStateChangeReason>,
     /// <p>The time stamp when the image builder was created.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Enables or disables default internet access for the image builder.</p>
     pub enable_default_internet_access: std::option::Option<bool>,
     /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
@@ -2882,7 +3242,7 @@ pub mod image_builder {
         pub(crate) state: std::option::Option<crate::model::ImageBuilderState>,
         pub(crate) state_change_reason:
             std::option::Option<crate::model::ImageBuilderStateChangeReason>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) enable_default_internet_access: std::option::Option<bool>,
         pub(crate) domain_join_info: std::option::Option<crate::model::DomainJoinInfo>,
         pub(crate) network_access_configuration:
@@ -2899,6 +3259,7 @@ pub mod image_builder {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the image builder.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2908,6 +3269,7 @@ pub mod image_builder {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN for the image builder.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2917,6 +3279,7 @@ pub mod image_builder {
             self.image_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the image from which this builder was created.</p>
         pub fn set_image_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_arn = input;
             self
@@ -2926,6 +3289,7 @@ pub mod image_builder {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description to display.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2935,6 +3299,7 @@ pub mod image_builder {
             self.display_name = Some(input.into());
             self
         }
+        /// <p>The image builder name to display.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -2944,6 +3309,7 @@ pub mod image_builder {
             self.vpc_config = Some(input);
             self
         }
+        /// <p>The VPC configuration of the image builder.</p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -3057,6 +3423,108 @@ pub mod image_builder {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>The instance type for the image builder. The following instance types are available:</p>   
+        /// <ul>
+        /// <li>
+        /// <p>stream.standard.small</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.standard.medium</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.standard.large</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.compute.large</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.compute.xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.compute.2xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.compute.4xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.compute.8xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.large</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.2xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.4xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.8xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.z1d.large</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.z1d.xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.z1d.2xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.z1d.3xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.z1d.6xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.memory.z1d.12xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics-design.large</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics-design.xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics-design.2xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics-design.4xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics-desktop.2xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics.g4dn.xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics.g4dn.2xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics.g4dn.4xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics.g4dn.8xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics.g4dn.12xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics.g4dn.16xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics-pro.4xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics-pro.8xlarge</p>
+        /// </li>
+        /// <li>
+        /// <p>stream.graphics-pro.16xlarge</p>
+        /// </li>
+        /// </ul>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3069,6 +3537,7 @@ pub mod image_builder {
             self.platform = Some(input);
             self
         }
+        /// <p>The operating system platform of the image builder.</p>
         pub fn set_platform(
             mut self,
             input: std::option::Option<crate::model::PlatformType>,
@@ -3077,11 +3546,15 @@ pub mod image_builder {
             self
         }
         /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+        ///
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -3091,6 +3564,7 @@ pub mod image_builder {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the image builder.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ImageBuilderState>,
@@ -3106,6 +3580,7 @@ pub mod image_builder {
             self.state_change_reason = Some(input);
             self
         }
+        /// <p>The reason why the last state change occurred.</p>
         pub fn set_state_change_reason(
             mut self,
             input: std::option::Option<crate::model::ImageBuilderStateChangeReason>,
@@ -3114,13 +3589,14 @@ pub mod image_builder {
             self
         }
         /// <p>The time stamp when the image builder was created.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The time stamp when the image builder was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
@@ -3130,6 +3606,7 @@ pub mod image_builder {
             self.enable_default_internet_access = Some(input);
             self
         }
+        /// <p>Enables or disables default internet access for the image builder.</p>
         pub fn set_enable_default_internet_access(
             mut self,
             input: std::option::Option<bool>,
@@ -3142,6 +3619,7 @@ pub mod image_builder {
             self.domain_join_info = Some(input);
             self
         }
+        /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
         pub fn set_domain_join_info(
             mut self,
             input: std::option::Option<crate::model::DomainJoinInfo>,
@@ -3157,6 +3635,7 @@ pub mod image_builder {
             self.network_access_configuration = Some(input);
             self
         }
+        /// <p>Describes the network details of the fleet or image builder instance.</p>
         pub fn set_network_access_configuration(
             mut self,
             input: std::option::Option<crate::model::NetworkAccessConfiguration>,
@@ -3164,6 +3643,11 @@ pub mod image_builder {
             self.network_access_configuration = input;
             self
         }
+        /// Appends an item to `image_builder_errors`.
+        ///
+        /// To override the contents of this collection use [`set_image_builder_errors`](Self::set_image_builder_errors).
+        ///
+        /// <p>The image builder errors.</p>
         pub fn image_builder_errors(
             mut self,
             input: impl Into<crate::model::ResourceError>,
@@ -3173,6 +3657,7 @@ pub mod image_builder {
             self.image_builder_errors = Some(v);
             self
         }
+        /// <p>The image builder errors.</p>
         pub fn set_image_builder_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceError>>,
@@ -3185,6 +3670,7 @@ pub mod image_builder {
             self.appstream_agent_version = Some(input.into());
             self
         }
+        /// <p>The version of the AppStream 2.0 agent that is currently being used by the image builder. </p>
         pub fn set_appstream_agent_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3192,12 +3678,18 @@ pub mod image_builder {
             self.appstream_agent_version = input;
             self
         }
+        /// Appends an item to `access_endpoints`.
+        ///
+        /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).
+        ///
+        /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
         pub fn access_endpoints(mut self, input: impl Into<crate::model::AccessEndpoint>) -> Self {
             let mut v = self.access_endpoints.unwrap_or_default();
             v.push(input.into());
             self.access_endpoints = Some(v);
             self
         }
+        /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image builder only through the specified endpoints.</p>
         pub fn set_access_endpoints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccessEndpoint>>,
@@ -3246,7 +3738,7 @@ pub struct ResourceError {
     /// <p>The error message.</p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The time the error occurred.</p>
-    pub error_timestamp: std::option::Option<smithy_types::Instant>,
+    pub error_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3265,7 +3757,7 @@ pub mod resource_error {
     pub struct Builder {
         pub(crate) error_code: std::option::Option<crate::model::FleetErrorCode>,
         pub(crate) error_message: std::option::Option<std::string::String>,
-        pub(crate) error_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) error_timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The error code.</p>
@@ -3273,6 +3765,7 @@ pub mod resource_error {
             self.error_code = Some(input);
             self
         }
+        /// <p>The error code.</p>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::FleetErrorCode>,
@@ -3285,6 +3778,7 @@ pub mod resource_error {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The error message.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3293,13 +3787,14 @@ pub mod resource_error {
             self
         }
         /// <p>The time the error occurred.</p>
-        pub fn error_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn error_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.error_timestamp = Some(input);
             self
         }
+        /// <p>The time the error occurred.</p>
         pub fn set_error_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.error_timestamp = input;
             self
@@ -3353,6 +3848,7 @@ pub mod network_access_configuration {
             self.eni_private_ip_address = Some(input.into());
             self
         }
+        /// <p>The private IP address of the elastic network interface that is attached to instances in your VPC.</p>
         pub fn set_eni_private_ip_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3365,6 +3861,7 @@ pub mod network_access_configuration {
             self.eni_id = Some(input.into());
             self
         }
+        /// <p>The resource identifier of the elastic network interface that is attached to instances in your VPC. All network interfaces have the eni-xxxxxxxx resource identifier.</p>
         pub fn set_eni_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.eni_id = input;
             self
@@ -3417,6 +3914,7 @@ pub mod image_builder_state_change_reason {
             self.code = Some(input);
             self
         }
+        /// <p>The state change reason code.</p>
         pub fn set_code(
             mut self,
             input: std::option::Option<crate::model::ImageBuilderStateChangeReasonCode>,
@@ -3429,6 +3927,7 @@ pub mod image_builder_state_change_reason {
             self.message = Some(input.into());
             self
         }
+        /// <p>The state change reason message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3449,6 +3948,7 @@ impl ImageBuilderStateChangeReason {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3460,7 +3960,9 @@ impl ImageBuilderStateChangeReason {
     std::hash::Hash,
 )]
 pub enum ImageBuilderStateChangeReasonCode {
+    #[allow(missing_docs)] // documentation missing in model
     ImageUnavailable,
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3482,6 +3984,7 @@ impl std::str::FromStr for ImageBuilderStateChangeReasonCode {
     }
 }
 impl ImageBuilderStateChangeReasonCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImageBuilderStateChangeReasonCode::ImageUnavailable => "IMAGE_UNAVAILABLE",
@@ -3489,6 +3992,7 @@ impl ImageBuilderStateChangeReasonCode {
             ImageBuilderStateChangeReasonCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["IMAGE_UNAVAILABLE", "INTERNAL_ERROR"]
     }
@@ -3499,6 +4003,7 @@ impl AsRef<str> for ImageBuilderStateChangeReasonCode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3510,16 +4015,27 @@ impl AsRef<str> for ImageBuilderStateChangeReasonCode {
     std::hash::Hash,
 )]
 pub enum ImageBuilderState {
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     PendingQualification,
+    #[allow(missing_docs)] // documentation missing in model
     Rebooting,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Snapshotting,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
+    #[allow(missing_docs)] // documentation missing in model
     UpdatingAgent,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3550,6 +4066,7 @@ impl std::str::FromStr for ImageBuilderState {
     }
 }
 impl ImageBuilderState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImageBuilderState::Deleting => "DELETING",
@@ -3566,6 +4083,7 @@ impl ImageBuilderState {
             ImageBuilderState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DELETING",
@@ -3588,6 +4106,7 @@ impl AsRef<str> for ImageBuilderState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3599,8 +4118,11 @@ impl AsRef<str> for ImageBuilderState {
     std::hash::Hash,
 )]
 pub enum PlatformType {
+    #[allow(missing_docs)] // documentation missing in model
     Windows,
+    #[allow(missing_docs)] // documentation missing in model
     WindowsServer2016,
+    #[allow(missing_docs)] // documentation missing in model
     WindowsServer2019,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3623,6 +4145,7 @@ impl std::str::FromStr for PlatformType {
     }
 }
 impl PlatformType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PlatformType::Windows => "WINDOWS",
@@ -3631,6 +4154,7 @@ impl PlatformType {
             PlatformType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["WINDOWS", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019"]
     }
@@ -3641,6 +4165,7 @@ impl AsRef<str> for PlatformType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3652,8 +4177,11 @@ impl AsRef<str> for PlatformType {
     std::hash::Hash,
 )]
 pub enum AuthenticationType {
+    #[allow(missing_docs)] // documentation missing in model
     Api,
+    #[allow(missing_docs)] // documentation missing in model
     Saml,
+    #[allow(missing_docs)] // documentation missing in model
     Userpool,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3676,6 +4204,7 @@ impl std::str::FromStr for AuthenticationType {
     }
 }
 impl AuthenticationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AuthenticationType::Api => "API",
@@ -3684,6 +4213,7 @@ impl AuthenticationType {
             AuthenticationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["API", "SAML", "USERPOOL"]
     }
@@ -3701,6 +4231,7 @@ pub struct UserStackAssociation {
     /// <p>The name of the stack that is associated with the user.</p>
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>The email address of the user who is associated with the stack.</p>
+    ///
     /// <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
@@ -3737,11 +4268,13 @@ pub mod user_stack_association {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name of the stack that is associated with the user.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
         }
         /// <p>The email address of the user who is associated with the stack.</p>
+        ///
         /// <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
@@ -3749,6 +4282,11 @@ pub mod user_stack_association {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The email address of the user who is associated with the stack.</p>
+        ///
+        /// <note>
+        /// <p>Users' email addresses are case-sensitive.</p>
+        /// </note>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -3758,6 +4296,7 @@ pub mod user_stack_association {
             self.authentication_type = Some(input);
             self
         }
+        /// <p>The authentication type for the user.</p>
         pub fn set_authentication_type(
             mut self,
             input: std::option::Option<crate::model::AuthenticationType>,
@@ -3770,6 +4309,7 @@ pub mod user_stack_association {
             self.send_email_notification = Some(input);
             self
         }
+        /// <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>
         pub fn set_send_email_notification(mut self, input: std::option::Option<bool>) -> Self {
             self.send_email_notification = input;
             self
@@ -3799,6 +4339,7 @@ pub struct User {
     /// <p>The ARN of the user.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The email address of the user.</p>
+    ///
     /// <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
@@ -3829,7 +4370,7 @@ pub struct User {
     /// <p>The last name, or surname, of the user.</p>
     pub last_name: std::option::Option<std::string::String>,
     /// <p>The date and time the user was created in the user pool.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The authentication type for the user.</p>
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
 }
@@ -3859,7 +4400,7 @@ pub mod user {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) first_name: std::option::Option<std::string::String>,
         pub(crate) last_name: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
     }
     impl Builder {
@@ -3868,11 +4409,13 @@ pub mod user {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the user.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The email address of the user.</p>
+        ///
         /// <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
@@ -3880,6 +4423,11 @@ pub mod user {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The email address of the user.</p>
+        ///
+        /// <note>
+        /// <p>Users' email addresses are case-sensitive.</p>
+        /// </note>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -3889,6 +4437,7 @@ pub mod user {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether the user in the user pool is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -3915,6 +4464,24 @@ pub mod user {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the user in the user pool. The status can be one of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>UNCONFIRMED – The user is created but not confirmed.</p>
+        /// </li>
+        /// <li>
+        /// <p>CONFIRMED – The user is confirmed.</p>
+        /// </li>
+        /// <li>
+        /// <p>ARCHIVED – The user is no longer active.</p>
+        /// </li>
+        /// <li>
+        /// <p>COMPROMISED – The user is disabled because of a potential security threat.</p>
+        /// </li>
+        /// <li>
+        /// <p>UNKNOWN – The user status is not known.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -3924,6 +4491,7 @@ pub mod user {
             self.first_name = Some(input.into());
             self
         }
+        /// <p>The first name, or given name, of the user.</p>
         pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.first_name = input;
             self
@@ -3933,18 +4501,20 @@ pub mod user {
             self.last_name = Some(input.into());
             self
         }
+        /// <p>The last name, or surname, of the user.</p>
         pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.last_name = input;
             self
         }
         /// <p>The date and time the user was created in the user pool.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The date and time the user was created in the user pool.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
@@ -3954,6 +4524,7 @@ pub mod user {
             self.authentication_type = Some(input);
             self
         }
+        /// <p>The authentication type for the user.</p>
         pub fn set_authentication_type(
             mut self,
             input: std::option::Option<crate::model::AuthenticationType>,
@@ -3988,6 +4559,7 @@ impl User {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsageReportSubscription {
     /// <p>The Amazon S3 bucket where generated reports are stored.</p>
+    ///
     /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script
     /// configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is
     /// unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0
@@ -3997,7 +4569,7 @@ pub struct UsageReportSubscription {
     /// <p>The schedule for generating usage reports.</p>
     pub schedule: std::option::Option<crate::model::UsageReportSchedule>,
     /// <p>The time when the last usage report was generated.</p>
-    pub last_generated_report_date: std::option::Option<smithy_types::Instant>,
+    pub last_generated_report_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The errors that were returned if usage reports couldn't be generated.</p>
     pub subscription_errors:
         std::option::Option<std::vec::Vec<crate::model::LastReportGenerationExecutionError>>,
@@ -4023,12 +4595,13 @@ pub mod usage_report_subscription {
     pub struct Builder {
         pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
         pub(crate) schedule: std::option::Option<crate::model::UsageReportSchedule>,
-        pub(crate) last_generated_report_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_generated_report_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) subscription_errors:
             std::option::Option<std::vec::Vec<crate::model::LastReportGenerationExecutionError>>,
     }
     impl Builder {
         /// <p>The Amazon S3 bucket where generated reports are stored.</p>
+        ///
         /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script
         /// configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is
         /// unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0
@@ -4038,6 +4611,13 @@ pub mod usage_report_subscription {
             self.s3_bucket_name = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 bucket where generated reports are stored.</p>
+        ///
+        /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script
+        /// configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is
+        /// unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0
+        /// uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts,
+        /// when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4050,6 +4630,7 @@ pub mod usage_report_subscription {
             self.schedule = Some(input);
             self
         }
+        /// <p>The schedule for generating usage reports.</p>
         pub fn set_schedule(
             mut self,
             input: std::option::Option<crate::model::UsageReportSchedule>,
@@ -4058,17 +4639,23 @@ pub mod usage_report_subscription {
             self
         }
         /// <p>The time when the last usage report was generated.</p>
-        pub fn last_generated_report_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_generated_report_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_generated_report_date = Some(input);
             self
         }
+        /// <p>The time when the last usage report was generated.</p>
         pub fn set_last_generated_report_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_generated_report_date = input;
             self
         }
+        /// Appends an item to `subscription_errors`.
+        ///
+        /// To override the contents of this collection use [`set_subscription_errors`](Self::set_subscription_errors).
+        ///
+        /// <p>The errors that were returned if usage reports couldn't be generated.</p>
         pub fn subscription_errors(
             mut self,
             input: impl Into<crate::model::LastReportGenerationExecutionError>,
@@ -4078,6 +4665,7 @@ pub mod usage_report_subscription {
             self.subscription_errors = Some(v);
             self
         }
+        /// <p>The errors that were returned if usage reports couldn't be generated.</p>
         pub fn set_subscription_errors(
             mut self,
             input: std::option::Option<
@@ -4137,6 +4725,7 @@ pub mod last_report_generation_execution_error {
             self.error_code = Some(input);
             self
         }
+        /// <p>The error code for the error that is returned when a usage report can't be generated.</p>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::UsageReportExecutionErrorCode>,
@@ -4149,6 +4738,7 @@ pub mod last_report_generation_execution_error {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The error message for the error that is returned when a usage report can't be generated.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4172,6 +4762,7 @@ impl LastReportGenerationExecutionError {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4183,8 +4774,11 @@ impl LastReportGenerationExecutionError {
     std::hash::Hash,
 )]
 pub enum UsageReportExecutionErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
     InternalServiceError,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceNotFound,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4207,6 +4801,7 @@ impl std::str::FromStr for UsageReportExecutionErrorCode {
     }
 }
 impl UsageReportExecutionErrorCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UsageReportExecutionErrorCode::AccessDenied => "ACCESS_DENIED",
@@ -4215,6 +4810,7 @@ impl UsageReportExecutionErrorCode {
             UsageReportExecutionErrorCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
@@ -4229,6 +4825,7 @@ impl AsRef<str> for UsageReportExecutionErrorCode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4240,6 +4837,7 @@ impl AsRef<str> for UsageReportExecutionErrorCode {
     std::hash::Hash,
 )]
 pub enum UsageReportSchedule {
+    #[allow(missing_docs)] // documentation missing in model
     Daily,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4260,12 +4858,14 @@ impl std::str::FromStr for UsageReportSchedule {
     }
 }
 impl UsageReportSchedule {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UsageReportSchedule::Daily => "DAILY",
             UsageReportSchedule::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DAILY"]
     }
@@ -4293,9 +4893,9 @@ pub struct Session {
     /// <p>Specifies whether a user is connected to the streaming session.</p>
     pub connection_state: std::option::Option<crate::model::SessionConnectionState>,
     /// <p>The time when a streaming instance is dedicated for the user.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the streaming session is set to expire. This time is based on the <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming instance is terminated and the streaming session ends.</p>
-    pub max_expiration_time: std::option::Option<smithy_types::Instant>,
+    pub max_expiration_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The authentication method. The user is authenticated using a streaming URL
     /// (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
@@ -4333,8 +4933,8 @@ pub mod session {
         pub(crate) fleet_name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::SessionState>,
         pub(crate) connection_state: std::option::Option<crate::model::SessionConnectionState>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) max_expiration_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) max_expiration_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
         pub(crate) network_access_configuration:
             std::option::Option<crate::model::NetworkAccessConfiguration>,
@@ -4345,6 +4945,7 @@ pub mod session {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the streaming session.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4354,6 +4955,7 @@ pub mod session {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the user for whom the session was created.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -4363,6 +4965,7 @@ pub mod session {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name of the stack for the streaming session.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -4372,6 +4975,7 @@ pub mod session {
             self.fleet_name = Some(input.into());
             self
         }
+        /// <p>The name of the fleet for the streaming session.</p>
         pub fn set_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_name = input;
             self
@@ -4381,6 +4985,7 @@ pub mod session {
             self.state = Some(input);
             self
         }
+        /// <p>The current state of the streaming session.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::SessionState>) -> Self {
             self.state = input;
             self
@@ -4390,6 +4995,7 @@ pub mod session {
             self.connection_state = Some(input);
             self
         }
+        /// <p>Specifies whether a user is connected to the streaming session.</p>
         pub fn set_connection_state(
             mut self,
             input: std::option::Option<crate::model::SessionConnectionState>,
@@ -4398,22 +5004,27 @@ pub mod session {
             self
         }
         /// <p>The time when a streaming instance is dedicated for the user.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when a streaming instance is dedicated for the user.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time when the streaming session is set to expire. This time is based on the <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming instance is terminated and the streaming session ends.</p>
-        pub fn max_expiration_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn max_expiration_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.max_expiration_time = Some(input);
             self
         }
+        /// <p>The time when the streaming session is set to expire. This time is based on the <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming instance is terminated and the streaming session ends.</p>
         pub fn set_max_expiration_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.max_expiration_time = input;
             self
@@ -4424,6 +5035,8 @@ pub mod session {
             self.authentication_type = Some(input);
             self
         }
+        /// <p>The authentication method. The user is authenticated using a streaming URL
+        /// (<code>API</code>) or SAML 2.0 federation (<code>SAML</code>).</p>
         pub fn set_authentication_type(
             mut self,
             input: std::option::Option<crate::model::AuthenticationType>,
@@ -4439,6 +5052,7 @@ pub mod session {
             self.network_access_configuration = Some(input);
             self
         }
+        /// <p>The network details for the streaming session.</p>
         pub fn set_network_access_configuration(
             mut self,
             input: std::option::Option<crate::model::NetworkAccessConfiguration>,
@@ -4470,6 +5084,7 @@ impl Session {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4481,7 +5096,9 @@ impl Session {
     std::hash::Hash,
 )]
 pub enum SessionConnectionState {
+    #[allow(missing_docs)] // documentation missing in model
     Connected,
+    #[allow(missing_docs)] // documentation missing in model
     NotConnected,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4503,6 +5120,7 @@ impl std::str::FromStr for SessionConnectionState {
     }
 }
 impl SessionConnectionState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SessionConnectionState::Connected => "CONNECTED",
@@ -4510,6 +5128,7 @@ impl SessionConnectionState {
             SessionConnectionState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONNECTED", "NOT_CONNECTED"]
     }
@@ -4532,8 +5151,11 @@ impl AsRef<str> for SessionConnectionState {
     std::hash::Hash,
 )]
 pub enum SessionState {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Expired,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4556,6 +5178,7 @@ impl std::str::FromStr for SessionState {
     }
 }
 impl SessionState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SessionState::Active => "ACTIVE",
@@ -4564,6 +5187,7 @@ impl SessionState {
             SessionState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "EXPIRED", "PENDING"]
     }
@@ -4604,10 +5228,10 @@ pub struct Image {
     /// <p>The applications associated with the image.</p>
     pub applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
     /// <p>The time the image was created.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The release date of the public base image.
     /// For private images, this date is the release date of the base image from which the image was created.</p>
-    pub public_base_image_released_date: std::option::Option<smithy_types::Instant>,
+    pub public_base_image_released_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image. </p>
     pub appstream_agent_version: std::option::Option<std::string::String>,
     /// <p>The permissions to provide to the destination AWS account for the specified image.</p>
@@ -4659,8 +5283,8 @@ pub mod image {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) state_change_reason: std::option::Option<crate::model::ImageStateChangeReason>,
         pub(crate) applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) public_base_image_released_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) public_base_image_released_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) appstream_agent_version: std::option::Option<std::string::String>,
         pub(crate) image_permissions: std::option::Option<crate::model::ImagePermissions>,
         pub(crate) image_errors: std::option::Option<std::vec::Vec<crate::model::ResourceError>>,
@@ -4671,6 +5295,7 @@ pub mod image {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the image.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4680,6 +5305,7 @@ pub mod image {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the image.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -4689,6 +5315,7 @@ pub mod image {
             self.base_image_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the image from which this image was created.</p>
         pub fn set_base_image_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4701,6 +5328,7 @@ pub mod image {
             self.display_name = Some(input.into());
             self
         }
+        /// <p>The image name to display.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -4711,6 +5339,8 @@ pub mod image {
             self.state = Some(input);
             self
         }
+        /// <p>The image starts in the <code>PENDING</code> state. If image creation succeeds, the
+        /// state is <code>AVAILABLE</code>. If image creation fails, the state is <code>FAILED</code>.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ImageState>) -> Self {
             self.state = input;
             self
@@ -4720,6 +5350,7 @@ pub mod image {
             self.visibility = Some(input);
             self
         }
+        /// <p>Indicates whether the image is public or private.</p>
         pub fn set_visibility(
             mut self,
             input: std::option::Option<crate::model::VisibilityType>,
@@ -4732,6 +5363,7 @@ pub mod image {
             self.image_builder_supported = Some(input);
             self
         }
+        /// <p>Indicates whether an image builder can be launched from this image.</p>
         pub fn set_image_builder_supported(mut self, input: std::option::Option<bool>) -> Self {
             self.image_builder_supported = input;
             self
@@ -4741,6 +5373,7 @@ pub mod image {
             self.image_builder_name = Some(input.into());
             self
         }
+        /// <p>The name of the image builder that was used to create the private image. If the image is shared, this value is null.</p>
         pub fn set_image_builder_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4753,6 +5386,7 @@ pub mod image {
             self.platform = Some(input);
             self
         }
+        /// <p>The operating system platform of the image.</p>
         pub fn set_platform(
             mut self,
             input: std::option::Option<crate::model::PlatformType>,
@@ -4765,6 +5399,7 @@ pub mod image {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description to display.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -4774,6 +5409,7 @@ pub mod image {
             self.state_change_reason = Some(input);
             self
         }
+        /// <p>The reason why the last state change occurred.</p>
         pub fn set_state_change_reason(
             mut self,
             input: std::option::Option<crate::model::ImageStateChangeReason>,
@@ -4781,12 +5417,18 @@ pub mod image {
             self.state_change_reason = input;
             self
         }
+        /// Appends an item to `applications`.
+        ///
+        /// To override the contents of this collection use [`set_applications`](Self::set_applications).
+        ///
+        /// <p>The applications associated with the image.</p>
         pub fn applications(mut self, input: impl Into<crate::model::Application>) -> Self {
             let mut v = self.applications.unwrap_or_default();
             v.push(input.into());
             self.applications = Some(v);
             self
         }
+        /// <p>The applications associated with the image.</p>
         pub fn set_applications(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Application>>,
@@ -4795,26 +5437,29 @@ pub mod image {
             self
         }
         /// <p>The time the image was created.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The time the image was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
         }
         /// <p>The release date of the public base image.
         /// For private images, this date is the release date of the base image from which the image was created.</p>
-        pub fn public_base_image_released_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn public_base_image_released_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.public_base_image_released_date = Some(input);
             self
         }
+        /// <p>The release date of the public base image.
+        /// For private images, this date is the release date of the base image from which the image was created.</p>
         pub fn set_public_base_image_released_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.public_base_image_released_date = input;
             self
@@ -4824,6 +5469,7 @@ pub mod image {
             self.appstream_agent_version = Some(input.into());
             self
         }
+        /// <p>The version of the AppStream 2.0 agent to use for instances that are launched from this image. </p>
         pub fn set_appstream_agent_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4836,6 +5482,7 @@ pub mod image {
             self.image_permissions = Some(input);
             self
         }
+        /// <p>The permissions to provide to the destination AWS account for the specified image.</p>
         pub fn set_image_permissions(
             mut self,
             input: std::option::Option<crate::model::ImagePermissions>,
@@ -4843,12 +5490,18 @@ pub mod image {
             self.image_permissions = input;
             self
         }
+        /// Appends an item to `image_errors`.
+        ///
+        /// To override the contents of this collection use [`set_image_errors`](Self::set_image_errors).
+        ///
+        /// <p>Describes the errors that are returned when a new image can't be created.</p>
         pub fn image_errors(mut self, input: impl Into<crate::model::ResourceError>) -> Self {
             let mut v = self.image_errors.unwrap_or_default();
             v.push(input.into());
             self.image_errors = Some(v);
             self
         }
+        /// <p>Describes the errors that are returned when a new image can't be created.</p>
         pub fn set_image_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceError>>,
@@ -4942,6 +5595,7 @@ pub mod application {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4951,6 +5605,7 @@ pub mod application {
             self.display_name = Some(input.into());
             self
         }
+        /// <p>The application name to display.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -4960,6 +5615,7 @@ pub mod application {
             self.icon_url = Some(input.into());
             self
         }
+        /// <p>The URL for the application icon. This URL might be time-limited.</p>
         pub fn set_icon_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.icon_url = input;
             self
@@ -4969,6 +5625,7 @@ pub mod application {
             self.launch_path = Some(input.into());
             self
         }
+        /// <p>The path to the application executable in the instance.</p>
         pub fn set_launch_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.launch_path = input;
             self
@@ -4978,6 +5635,7 @@ pub mod application {
             self.launch_parameters = Some(input.into());
             self
         }
+        /// <p>The arguments that are passed to the application at launch.</p>
         pub fn set_launch_parameters(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4990,10 +5648,16 @@ pub mod application {
             self.enabled = Some(input);
             self
         }
+        /// <p>If there is a problem, the application can be disabled after image creation.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
         }
+        /// Adds a key-value pair to `metadata`.
+        ///
+        /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+        ///
+        /// <p>Additional attributes that describe the application.</p>
         pub fn metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -5004,6 +5668,7 @@ pub mod application {
             self.metadata = Some(hash_map);
             self
         }
+        /// <p>Additional attributes that describe the application.</p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<
@@ -5066,6 +5731,7 @@ pub mod image_state_change_reason {
             self.code = Some(input);
             self
         }
+        /// <p>The state change reason code.</p>
         pub fn set_code(
             mut self,
             input: std::option::Option<crate::model::ImageStateChangeReasonCode>,
@@ -5078,6 +5744,7 @@ pub mod image_state_change_reason {
             self.message = Some(input.into());
             self
         }
+        /// <p>The state change reason message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5098,6 +5765,7 @@ impl ImageStateChangeReason {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5109,8 +5777,11 @@ impl ImageStateChangeReason {
     std::hash::Hash,
 )]
 pub enum ImageStateChangeReasonCode {
+    #[allow(missing_docs)] // documentation missing in model
     ImageBuilderNotAvailable,
+    #[allow(missing_docs)] // documentation missing in model
     ImageCopyFailure,
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5133,6 +5804,7 @@ impl std::str::FromStr for ImageStateChangeReasonCode {
     }
 }
 impl ImageStateChangeReasonCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImageStateChangeReasonCode::ImageBuilderNotAvailable => "IMAGE_BUILDER_NOT_AVAILABLE",
@@ -5141,6 +5813,7 @@ impl ImageStateChangeReasonCode {
             ImageStateChangeReasonCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "IMAGE_BUILDER_NOT_AVAILABLE",
@@ -5155,6 +5828,7 @@ impl AsRef<str> for ImageStateChangeReasonCode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5166,8 +5840,11 @@ impl AsRef<str> for ImageStateChangeReasonCode {
     std::hash::Hash,
 )]
 pub enum VisibilityType {
+    #[allow(missing_docs)] // documentation missing in model
     Private,
+    #[allow(missing_docs)] // documentation missing in model
     Public,
+    #[allow(missing_docs)] // documentation missing in model
     Shared,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5190,6 +5867,7 @@ impl std::str::FromStr for VisibilityType {
     }
 }
 impl VisibilityType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             VisibilityType::Private => "PRIVATE",
@@ -5198,6 +5876,7 @@ impl VisibilityType {
             VisibilityType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PRIVATE", "PUBLIC", "SHARED"]
     }
@@ -5208,6 +5887,7 @@ impl AsRef<str> for VisibilityType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5219,12 +5899,19 @@ impl AsRef<str> for VisibilityType {
     std::hash::Hash,
 )]
 pub enum ImageState {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Copying,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Importing,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5251,6 +5938,7 @@ impl std::str::FromStr for ImageState {
     }
 }
 impl ImageState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImageState::Available => "AVAILABLE",
@@ -5263,6 +5951,7 @@ impl ImageState {
             ImageState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -5313,6 +6002,7 @@ pub mod shared_image_permissions {
             self.shared_account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit identifier of the AWS account with which the image is shared.</p>
         pub fn set_shared_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5325,6 +6015,7 @@ pub mod shared_image_permissions {
             self.image_permissions = Some(input);
             self
         }
+        /// <p>Describes the permissions for a shared image.</p>
         pub fn set_image_permissions(
             mut self,
             input: std::option::Option<crate::model::ImagePermissions>,
@@ -5348,6 +6039,7 @@ impl SharedImagePermissions {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5359,7 +6051,9 @@ impl SharedImagePermissions {
     std::hash::Hash,
 )]
 pub enum MessageAction {
+    #[allow(missing_docs)] // documentation missing in model
     Resend,
+    #[allow(missing_docs)] // documentation missing in model
     Suppress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5381,6 +6075,7 @@ impl std::str::FromStr for MessageAction {
     }
 }
 impl MessageAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MessageAction::Resend => "RESEND",
@@ -5388,6 +6083,7 @@ impl MessageAction {
             MessageAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["RESEND", "SUPPRESS"]
     }
@@ -5434,6 +6130,7 @@ pub mod user_stack_association_error {
             self.user_stack_association = Some(input);
             self
         }
+        /// <p>Information about the user and associated stack.</p>
         pub fn set_user_stack_association(
             mut self,
             input: std::option::Option<crate::model::UserStackAssociation>,
@@ -5446,6 +6143,7 @@ pub mod user_stack_association_error {
             self.error_code = Some(input);
             self
         }
+        /// <p>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::UserStackAssociationErrorCode>,
@@ -5458,6 +6156,7 @@ pub mod user_stack_association_error {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5482,6 +6181,7 @@ impl UserStackAssociationError {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5493,9 +6193,13 @@ impl UserStackAssociationError {
     std::hash::Hash,
 )]
 pub enum UserStackAssociationErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
     DirectoryNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
+    #[allow(missing_docs)] // documentation missing in model
     StackNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     UserNameNotFound,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5519,6 +6223,7 @@ impl std::str::FromStr for UserStackAssociationErrorCode {
     }
 }
 impl UserStackAssociationErrorCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UserStackAssociationErrorCode::DirectoryNotFound => "DIRECTORY_NOT_FOUND",
@@ -5528,6 +6233,7 @@ impl UserStackAssociationErrorCode {
             UserStackAssociationErrorCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DIRECTORY_NOT_FOUND",

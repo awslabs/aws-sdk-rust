@@ -39,6 +39,9 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>
+        /// The key portion of a tag. Tag keys are case sensitive.
+        /// </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -50,6 +53,9 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>
+        /// The value portion of tag. Tag values are case sensitive.
+        /// </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -70,6 +76,7 @@ impl Tag {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -81,10 +88,15 @@ impl Tag {
     std::hash::Hash,
 )]
 pub enum JobStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     CompletedWithErrors,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Submitted,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -109,6 +121,7 @@ impl std::str::FromStr for JobStatus {
     }
 }
 impl JobStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobStatus::Completed => "COMPLETED",
@@ -119,6 +132,7 @@ impl JobStatus {
             JobStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -135,6 +149,7 @@ impl AsRef<str> for JobStatus {
     }
 }
 
+/// <p>The output data configuration that was supplied when the export job was created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum OutputDataConfig {
@@ -145,6 +160,8 @@ pub enum OutputDataConfig {
 }
 impl OutputDataConfig {
     #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into its [`OutputDataConfig`](crate::model::OutputDataConfig) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_s3_configuration(
         &self,
     ) -> std::result::Result<&crate::model::S3Configuration, &Self> {
@@ -154,6 +171,7 @@ impl OutputDataConfig {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `OutputDataConfig` variant.
     pub fn is_s3_configuration(&self) -> bool {
         self.as_s3_configuration().is_ok()
     }
@@ -199,6 +217,9 @@ pub mod s3_configuration {
             self.s3_uri = Some(input.into());
             self
         }
+        /// <p>
+        /// The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake.
+        /// </p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
@@ -210,6 +231,9 @@ pub mod s3_configuration {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The KMS key ID used to access the S3 bucket.
+        /// </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -230,6 +254,7 @@ impl S3Configuration {
     }
 }
 
+/// <p> The input properties for an import job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum InputDataConfig {
@@ -238,6 +263,8 @@ pub enum InputDataConfig {
 }
 impl InputDataConfig {
     #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into its [`InputDataConfig`](crate::model::InputDataConfig) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_s3_uri(&self) -> std::result::Result<&std::string::String, &Self> {
         if let InputDataConfig::S3Uri(val) = &self {
             Ok(&val)
@@ -245,6 +272,7 @@ impl InputDataConfig {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `InputDataConfig` variant.
     pub fn is_s3_uri(&self) -> bool {
         self.as_s3_uri().is_ok()
     }
@@ -261,9 +289,9 @@ pub struct ImportJobProperties {
     /// <p>The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, FAILED.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>The time that the Import job was submitted for processing.</p>
-    pub submit_time: std::option::Option<smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the Import job was completed.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The datastore id used when the Import job was created. </p>
     pub datastore_id: std::option::Option<std::string::String>,
     /// <p>The input data configuration that was supplied when the Import job was created.</p>
@@ -300,8 +328,8 @@ pub mod import_job_properties {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submit_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) datastore_id: std::option::Option<std::string::String>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) job_output_data_config: std::option::Option<crate::model::OutputDataConfig>,
@@ -314,6 +342,7 @@ pub mod import_job_properties {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The AWS-generated id number for the Import job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -323,6 +352,7 @@ pub mod import_job_properties {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>The user-generated name for an Import job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -332,6 +362,7 @@ pub mod import_job_properties {
             self.job_status = Some(input);
             self
         }
+        /// <p>The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, FAILED.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -340,23 +371,28 @@ pub mod import_job_properties {
             self
         }
         /// <p>The time that the Import job was submitted for processing.</p>
-        pub fn submit_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time = Some(input);
             self
         }
+        /// <p>The time that the Import job was submitted for processing.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that the Import job was completed.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the Import job was completed.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -365,6 +401,7 @@ pub mod import_job_properties {
             self.datastore_id = Some(input.into());
             self
         }
+        /// <p>The datastore id used when the Import job was created. </p>
         pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.datastore_id = input;
             self
@@ -374,6 +411,7 @@ pub mod import_job_properties {
             self.input_data_config = Some(input);
             self
         }
+        /// <p>The input data configuration that was supplied when the Import job was created.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -386,6 +424,7 @@ pub mod import_job_properties {
             self.job_output_data_config = Some(input);
             self
         }
+        /// <p>The output data configuration that was supplied when the export job was created.</p>
         pub fn set_job_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -398,6 +437,7 @@ pub mod import_job_properties {
             self.data_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your input data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -410,6 +450,7 @@ pub mod import_job_properties {
             self.message = Some(input.into());
             self
         }
+        /// <p>An explanation of any errors that may have occurred during the FHIR import job. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -449,9 +490,9 @@ pub struct ExportJobProperties {
     /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>The time an export job was initiated.</p>
-    pub submit_time: std::option::Option<smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time an export job completed.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
     pub datastore_id: std::option::Option<std::string::String>,
     /// <p>The output data configuration that was supplied when the export job was created.</p>
@@ -485,8 +526,8 @@ pub mod export_job_properties {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submit_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) datastore_id: std::option::Option<std::string::String>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
         pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
@@ -498,6 +539,7 @@ pub mod export_job_properties {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The AWS generated ID for an export job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -507,6 +549,7 @@ pub mod export_job_properties {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>The user generated name for an export job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -516,6 +559,7 @@ pub mod export_job_properties {
             self.job_status = Some(input);
             self
         }
+        /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -524,23 +568,28 @@ pub mod export_job_properties {
             self
         }
         /// <p>The time an export job was initiated.</p>
-        pub fn submit_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time = Some(input);
             self
         }
+        /// <p>The time an export job was initiated.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time an export job completed.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time an export job completed.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -549,6 +598,7 @@ pub mod export_job_properties {
             self.datastore_id = Some(input.into());
             self
         }
+        /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
         pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.datastore_id = input;
             self
@@ -558,6 +608,7 @@ pub mod export_job_properties {
             self.output_data_config = Some(input);
             self
         }
+        /// <p>The output data configuration that was supplied when the export job was created.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -570,6 +621,7 @@ pub mod export_job_properties {
             self.data_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name used during the initiation of the job.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -582,6 +634,7 @@ pub mod export_job_properties {
             self.message = Some(input.into());
             self
         }
+        /// <p>An explanation of any errors that may have occurred during the export job.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -622,7 +675,7 @@ pub struct DatastoreProperties {
     /// <p>The status of the Data Store. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.</p>
     pub datastore_status: std::option::Option<crate::model::DatastoreStatus>,
     /// <p>The time that a Data Store was created. </p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The FHIR version. Only R4 version data is supported.</p>
     pub datastore_type_version: std::option::Option<crate::model::FhirVersion>,
     /// <p>The AWS endpoint for the Data Store. Each Data Store will have it's own endpoint with Data Store ID in the endpoint URL.</p>
@@ -659,7 +712,7 @@ pub mod datastore_properties {
         pub(crate) datastore_arn: std::option::Option<std::string::String>,
         pub(crate) datastore_name: std::option::Option<std::string::String>,
         pub(crate) datastore_status: std::option::Option<crate::model::DatastoreStatus>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) datastore_type_version: std::option::Option<crate::model::FhirVersion>,
         pub(crate) datastore_endpoint: std::option::Option<std::string::String>,
         pub(crate) sse_configuration: std::option::Option<crate::model::SseConfiguration>,
@@ -671,6 +724,7 @@ pub mod datastore_properties {
             self.datastore_id = Some(input.into());
             self
         }
+        /// <p>The AWS-generated ID number for the Data Store.</p>
         pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.datastore_id = input;
             self
@@ -680,6 +734,7 @@ pub mod datastore_properties {
             self.datastore_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name used in the creation of the Data Store.</p>
         pub fn set_datastore_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -692,6 +747,7 @@ pub mod datastore_properties {
             self.datastore_name = Some(input.into());
             self
         }
+        /// <p>The user-generated name for the Data Store.</p>
         pub fn set_datastore_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -704,6 +760,7 @@ pub mod datastore_properties {
             self.datastore_status = Some(input);
             self
         }
+        /// <p>The status of the Data Store. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.</p>
         pub fn set_datastore_status(
             mut self,
             input: std::option::Option<crate::model::DatastoreStatus>,
@@ -712,11 +769,15 @@ pub mod datastore_properties {
             self
         }
         /// <p>The time that a Data Store was created. </p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that a Data Store was created. </p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -725,6 +786,7 @@ pub mod datastore_properties {
             self.datastore_type_version = Some(input);
             self
         }
+        /// <p>The FHIR version. Only R4 version data is supported.</p>
         pub fn set_datastore_type_version(
             mut self,
             input: std::option::Option<crate::model::FhirVersion>,
@@ -737,6 +799,7 @@ pub mod datastore_properties {
             self.datastore_endpoint = Some(input.into());
             self
         }
+        /// <p>The AWS endpoint for the Data Store. Each Data Store will have it's own endpoint with Data Store ID in the endpoint URL.</p>
         pub fn set_datastore_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -751,6 +814,9 @@ pub mod datastore_properties {
             self.sse_configuration = Some(input);
             self
         }
+        /// <p>
+        /// The server-side encryption key configuration for a customer provided encryption key (CMK).
+        /// </p>
         pub fn set_sse_configuration(
             mut self,
             input: std::option::Option<crate::model::SseConfiguration>,
@@ -763,6 +829,7 @@ pub mod datastore_properties {
             self.preload_data_config = Some(input);
             self
         }
+        /// <p>The preloaded data configuration for the Data Store. Only data preloaded from Synthea is supported.</p>
         pub fn set_preload_data_config(
             mut self,
             input: std::option::Option<crate::model::PreloadDataConfig>,
@@ -821,6 +888,7 @@ pub mod preload_data_config {
             self.preload_data_type = Some(input);
             self
         }
+        /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
         pub fn set_preload_data_type(
             mut self,
             input: std::option::Option<crate::model::PreloadDataType>,
@@ -843,6 +911,7 @@ impl PreloadDataConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -854,6 +923,7 @@ impl PreloadDataConfig {
     std::hash::Hash,
 )]
 pub enum PreloadDataType {
+    #[allow(missing_docs)] // documentation missing in model
     Synthea,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -874,12 +944,14 @@ impl std::str::FromStr for PreloadDataType {
     }
 }
 impl PreloadDataType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PreloadDataType::Synthea => "SYNTHEA",
             PreloadDataType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SYNTHEA"]
     }
@@ -924,6 +996,9 @@ pub mod sse_configuration {
             self.kms_encryption_config = Some(input);
             self
         }
+        /// <p>
+        /// The KMS encryption configuration used to provide details for data encryption.
+        /// </p>
         pub fn set_kms_encryption_config(
             mut self,
             input: std::option::Option<crate::model::KmsEncryptionConfig>,
@@ -986,6 +1061,9 @@ pub mod kms_encryption_config {
             self.cmk_type = Some(input);
             self
         }
+        /// <p>
+        /// The type of customer-managed-key(CMK) used for encyrption. The two types of supported CMKs are customer owned CMKs and AWS owned CMKs.
+        /// </p>
         pub fn set_cmk_type(mut self, input: std::option::Option<crate::model::CmkType>) -> Self {
             self.cmk_type = input;
             self
@@ -997,6 +1075,9 @@ pub mod kms_encryption_config {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The KMS encryption key id/alias used to encrypt the Data Store contents at rest.
+        /// </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -1017,6 +1098,7 @@ impl KmsEncryptionConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1028,7 +1110,9 @@ impl KmsEncryptionConfig {
     std::hash::Hash,
 )]
 pub enum CmkType {
+    #[allow(missing_docs)] // documentation missing in model
     AoCmk,
+    #[allow(missing_docs)] // documentation missing in model
     CmCmk,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1050,6 +1134,7 @@ impl std::str::FromStr for CmkType {
     }
 }
 impl CmkType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CmkType::AoCmk => "AWS_OWNED_KMS_KEY",
@@ -1057,6 +1142,7 @@ impl CmkType {
             CmkType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AWS_OWNED_KMS_KEY", "CUSTOMER_MANAGED_KMS_KEY"]
     }
@@ -1067,6 +1153,7 @@ impl AsRef<str> for CmkType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1078,6 +1165,7 @@ impl AsRef<str> for CmkType {
     std::hash::Hash,
 )]
 pub enum FhirVersion {
+    #[allow(missing_docs)] // documentation missing in model
     R4,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1098,12 +1186,14 @@ impl std::str::FromStr for FhirVersion {
     }
 }
 impl FhirVersion {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FhirVersion::R4 => "R4",
             FhirVersion::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["R4"]
     }
@@ -1114,6 +1204,7 @@ impl AsRef<str> for FhirVersion {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1125,9 +1216,13 @@ impl AsRef<str> for FhirVersion {
     std::hash::Hash,
 )]
 pub enum DatastoreStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1151,6 +1246,7 @@ impl std::str::FromStr for DatastoreStatus {
     }
 }
 impl DatastoreStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DatastoreStatus::Active => "ACTIVE",
@@ -1160,6 +1256,7 @@ impl DatastoreStatus {
             DatastoreStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETED", "DELETING"]
     }
@@ -1180,10 +1277,10 @@ pub struct DatastoreFilter {
     pub datastore_status: std::option::Option<crate::model::DatastoreStatus>,
     /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created
     /// before the specified date will be included in the results. </p>
-    pub created_before: std::option::Option<smithy_types::Instant>,
+    pub created_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created
     /// after the specified date will be included in the results.</p>
-    pub created_after: std::option::Option<smithy_types::Instant>,
+    pub created_after: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DatastoreFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1203,8 +1300,8 @@ pub mod datastore_filter {
     pub struct Builder {
         pub(crate) datastore_name: std::option::Option<std::string::String>,
         pub(crate) datastore_status: std::option::Option<crate::model::DatastoreStatus>,
-        pub(crate) created_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) created_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_after: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Allows the user to filter Data Store results by name.</p>
@@ -1212,6 +1309,7 @@ pub mod datastore_filter {
             self.datastore_name = Some(input.into());
             self
         }
+        /// <p>Allows the user to filter Data Store results by name.</p>
         pub fn set_datastore_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1224,6 +1322,7 @@ pub mod datastore_filter {
             self.datastore_status = Some(input);
             self
         }
+        /// <p>Allows the user to filter Data Store results by status.</p>
         pub fn set_datastore_status(
             mut self,
             input: std::option::Option<crate::model::DatastoreStatus>,
@@ -1233,26 +1332,30 @@ pub mod datastore_filter {
         }
         /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created
         /// before the specified date will be included in the results. </p>
-        pub fn created_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_before = Some(input);
             self
         }
+        /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created
+        /// before the specified date will be included in the results. </p>
         pub fn set_created_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_before = input;
             self
         }
         /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created
         /// after the specified date will be included in the results.</p>
-        pub fn created_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_after = Some(input);
             self
         }
+        /// <p>A filter that allows the user to set cutoff dates for records. All Data Stores created
+        /// after the specified date will be included in the results.</p>
         pub fn set_created_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_after = input;
             self

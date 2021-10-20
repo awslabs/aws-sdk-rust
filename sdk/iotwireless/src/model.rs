@@ -31,6 +31,7 @@ pub mod lo_ra_wan_update_device {
             self.device_profile_id = Some(input.into());
             self
         }
+        /// <p>The ID of the device profile for the wireless device.</p>
         pub fn set_device_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -43,6 +44,7 @@ pub mod lo_ra_wan_update_device {
             self.service_profile_id = Some(input.into());
             self
         }
+        /// <p>The ID of the service profile.</p>
         pub fn set_service_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -66,6 +68,7 @@ impl LoRaWanUpdateDevice {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -77,6 +80,7 @@ impl LoRaWanUpdateDevice {
     std::hash::Hash,
 )]
 pub enum PartnerType {
+    #[allow(missing_docs)] // documentation missing in model
     Sidewalk,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -97,12 +101,14 @@ impl std::str::FromStr for PartnerType {
     }
 }
 impl PartnerType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PartnerType::Sidewalk => "Sidewalk",
             PartnerType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Sidewalk"]
     }
@@ -141,6 +147,7 @@ pub mod sidewalk_update_account {
             self.app_server_private_key = Some(input.into());
             self
         }
+        /// <p>The new Sidewalk application server private key.</p>
         pub fn set_app_server_private_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -200,6 +207,7 @@ pub mod wireless_gateway_log_option {
             self.r#type = Some(input);
             self
         }
+        /// <p>The wireless gateway type.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::WirelessGatewayType>,
@@ -212,10 +220,16 @@ pub mod wireless_gateway_log_option {
             self.log_level = Some(input);
             self
         }
+        /// <p>The log level for a log message.</p>
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
             self.log_level = input;
             self
         }
+        /// Appends an item to `events`.
+        ///
+        /// To override the contents of this collection use [`set_events`](Self::set_events).
+        ///
+        /// <p>The list of wireless gateway event log options.</p>
         pub fn events(
             mut self,
             input: impl Into<crate::model::WirelessGatewayEventLogOption>,
@@ -225,6 +239,7 @@ pub mod wireless_gateway_log_option {
             self.events = Some(v);
             self
         }
+        /// <p>The list of wireless gateway event log options.</p>
         pub fn set_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::WirelessGatewayEventLogOption>>,
@@ -282,6 +297,7 @@ pub mod wireless_gateway_event_log_option {
             self.event = Some(input);
             self
         }
+        /// <p>The event for a log message, if the log message is tied to a wireless gateway.</p>
         pub fn set_event(
             mut self,
             input: std::option::Option<crate::model::WirelessGatewayEvent>,
@@ -294,6 +310,7 @@ pub mod wireless_gateway_event_log_option {
             self.log_level = Some(input);
             self
         }
+        /// <p>The log level for a log message.</p>
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
             self.log_level = input;
             self
@@ -326,8 +343,11 @@ impl WirelessGatewayEventLogOption {
     std::hash::Hash,
 )]
 pub enum LogLevel {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Info,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -350,6 +370,7 @@ impl std::str::FromStr for LogLevel {
     }
 }
 impl LogLevel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LogLevel::Disabled => "DISABLED",
@@ -358,6 +379,7 @@ impl LogLevel {
             LogLevel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ERROR", "INFO"]
     }
@@ -380,7 +402,9 @@ impl AsRef<str> for LogLevel {
     std::hash::Hash,
 )]
 pub enum WirelessGatewayEvent {
+    #[allow(missing_docs)] // documentation missing in model
     CupsRequest,
+    #[allow(missing_docs)] // documentation missing in model
     Certificate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -402,6 +426,7 @@ impl std::str::FromStr for WirelessGatewayEvent {
     }
 }
 impl WirelessGatewayEvent {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WirelessGatewayEvent::CupsRequest => "CUPS_Request",
@@ -409,6 +434,7 @@ impl WirelessGatewayEvent {
             WirelessGatewayEvent::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CUPS_Request", "Certificate"]
     }
@@ -431,6 +457,7 @@ impl AsRef<str> for WirelessGatewayEvent {
     std::hash::Hash,
 )]
 pub enum WirelessGatewayType {
+    #[allow(missing_docs)] // documentation missing in model
     LoRaWan,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -451,12 +478,14 @@ impl std::str::FromStr for WirelessGatewayType {
     }
 }
 impl WirelessGatewayType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WirelessGatewayType::LoRaWan => "LoRaWAN",
             WirelessGatewayType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LoRaWAN"]
     }
@@ -504,6 +533,7 @@ pub mod wireless_device_log_option {
             self.r#type = Some(input);
             self
         }
+        /// <p>The wireless device type.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::WirelessDeviceType>,
@@ -516,10 +546,16 @@ pub mod wireless_device_log_option {
             self.log_level = Some(input);
             self
         }
+        /// <p>The log level for a log message.</p>
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
             self.log_level = input;
             self
         }
+        /// Appends an item to `events`.
+        ///
+        /// To override the contents of this collection use [`set_events`](Self::set_events).
+        ///
+        /// <p>The list of wireless device event log options.</p>
         pub fn events(
             mut self,
             input: impl Into<crate::model::WirelessDeviceEventLogOption>,
@@ -529,6 +565,7 @@ pub mod wireless_device_log_option {
             self.events = Some(v);
             self
         }
+        /// <p>The list of wireless device event log options.</p>
         pub fn set_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::WirelessDeviceEventLogOption>>,
@@ -588,6 +625,7 @@ pub mod wireless_device_event_log_option {
             self.event = Some(input);
             self
         }
+        /// <p>The event for a log message, if the log message is tied to a wireless device.</p>
         pub fn set_event(
             mut self,
             input: std::option::Option<crate::model::WirelessDeviceEvent>,
@@ -600,6 +638,7 @@ pub mod wireless_device_event_log_option {
             self.log_level = Some(input);
             self
         }
+        /// <p>The log level for a log message.</p>
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
             self.log_level = input;
             self
@@ -632,10 +671,15 @@ impl WirelessDeviceEventLogOption {
     std::hash::Hash,
 )]
 pub enum WirelessDeviceEvent {
+    #[allow(missing_docs)] // documentation missing in model
     DownlinkData,
+    #[allow(missing_docs)] // documentation missing in model
     Join,
+    #[allow(missing_docs)] // documentation missing in model
     Registration,
+    #[allow(missing_docs)] // documentation missing in model
     Rejoin,
+    #[allow(missing_docs)] // documentation missing in model
     UplinkData,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -660,6 +704,7 @@ impl std::str::FromStr for WirelessDeviceEvent {
     }
 }
 impl WirelessDeviceEvent {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WirelessDeviceEvent::DownlinkData => "Downlink_Data",
@@ -670,6 +715,7 @@ impl WirelessDeviceEvent {
             WirelessDeviceEvent::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Downlink_Data",
@@ -686,6 +732,7 @@ impl AsRef<str> for WirelessDeviceEvent {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -697,7 +744,9 @@ impl AsRef<str> for WirelessDeviceEvent {
     std::hash::Hash,
 )]
 pub enum WirelessDeviceType {
+    #[allow(missing_docs)] // documentation missing in model
     LoRaWan,
+    #[allow(missing_docs)] // documentation missing in model
     Sidewalk,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -719,6 +768,7 @@ impl std::str::FromStr for WirelessDeviceType {
     }
 }
 impl WirelessDeviceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WirelessDeviceType::LoRaWan => "LoRaWAN",
@@ -726,6 +776,7 @@ impl WirelessDeviceType {
             WirelessDeviceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LoRaWAN", "Sidewalk"]
     }
@@ -736,6 +787,7 @@ impl AsRef<str> for WirelessDeviceType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -747,7 +799,9 @@ impl AsRef<str> for WirelessDeviceType {
     std::hash::Hash,
 )]
 pub enum ExpressionType {
+    #[allow(missing_docs)] // documentation missing in model
     MqttTopic,
+    #[allow(missing_docs)] // documentation missing in model
     RuleName,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -769,6 +823,7 @@ impl std::str::FromStr for ExpressionType {
     }
 }
 impl ExpressionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExpressionType::MqttTopic => "MqttTopic",
@@ -776,6 +831,7 @@ impl ExpressionType {
             ExpressionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MqttTopic", "RuleName"]
     }
@@ -818,6 +874,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The tag's key value.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -827,6 +884,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The tag's value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -879,6 +937,7 @@ pub mod wireless_metadata {
             self.lo_ra_wan = Some(input);
             self
         }
+        /// <p>LoRaWAN device info.</p>
         pub fn set_lo_ra_wan(
             mut self,
             input: std::option::Option<crate::model::LoRaWanSendDataToDevice>,
@@ -891,6 +950,7 @@ pub mod wireless_metadata {
             self.sidewalk = Some(input);
             self
         }
+        /// <p>The Sidewalk account credentials.</p>
         pub fn set_sidewalk(
             mut self,
             input: std::option::Option<crate::model::SidewalkSendDataToDevice>,
@@ -946,6 +1006,7 @@ pub mod sidewalk_send_data_to_device {
             self.seq = Some(input);
             self
         }
+        /// <p>The sequence number.</p>
         pub fn set_seq(mut self, input: std::option::Option<i32>) -> Self {
             self.seq = input;
             self
@@ -955,6 +1016,7 @@ pub mod sidewalk_send_data_to_device {
             self.message_type = Some(input);
             self
         }
+        /// <p>Sidewalk device message type. Default value is <code>CUSTOM_COMMAND_ID_NOTIFY</code>.</p>
         pub fn set_message_type(
             mut self,
             input: std::option::Option<crate::model::MessageType>,
@@ -990,9 +1052,13 @@ impl SidewalkSendDataToDevice {
     std::hash::Hash,
 )]
 pub enum MessageType {
+    #[allow(missing_docs)] // documentation missing in model
     CustomCommandIdGet,
+    #[allow(missing_docs)] // documentation missing in model
     CustomCommandIdNotify,
+    #[allow(missing_docs)] // documentation missing in model
     CustomCommandIdResp,
+    #[allow(missing_docs)] // documentation missing in model
     CustomCommandIdSet,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1016,6 +1082,7 @@ impl std::str::FromStr for MessageType {
     }
 }
 impl MessageType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MessageType::CustomCommandIdGet => "CUSTOM_COMMAND_ID_GET",
@@ -1025,6 +1092,7 @@ impl MessageType {
             MessageType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CUSTOM_COMMAND_ID_GET",
@@ -1068,6 +1136,7 @@ pub mod lo_ra_wan_send_data_to_device {
             self.f_port = Some(input);
             self
         }
+        /// <p>The Fport value.</p>
         pub fn set_f_port(mut self, input: std::option::Option<i32>) -> Self {
             self.f_port = input;
             self
@@ -1123,6 +1192,7 @@ pub mod update_wireless_gateway_task_entry {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the new wireless gateway task entry.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1132,6 +1202,7 @@ pub mod update_wireless_gateway_task_entry {
             self.lo_ra_wan = Some(input);
             self
         }
+        /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
         pub fn set_lo_ra_wan(
             mut self,
             input: std::option::Option<crate::model::LoRaWanUpdateGatewayTaskEntry>,
@@ -1144,6 +1215,7 @@ pub mod update_wireless_gateway_task_entry {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1197,6 +1269,7 @@ pub mod lo_ra_wan_update_gateway_task_entry {
             self.current_version = Some(input);
             self
         }
+        /// <p>The version of the gateways that should receive the update.</p>
         pub fn set_current_version(
             mut self,
             input: std::option::Option<crate::model::LoRaWanGatewayVersion>,
@@ -1209,6 +1282,7 @@ pub mod lo_ra_wan_update_gateway_task_entry {
             self.update_version = Some(input);
             self
         }
+        /// <p>The firmware version to update the gateway to.</p>
         pub fn set_update_version(
             mut self,
             input: std::option::Option<crate::model::LoRaWanGatewayVersion>,
@@ -1268,6 +1342,7 @@ pub mod lo_ra_wan_gateway_version {
             self.package_version = Some(input.into());
             self
         }
+        /// <p>The version of the wireless gateway firmware.</p>
         pub fn set_package_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1280,6 +1355,7 @@ pub mod lo_ra_wan_gateway_version {
             self.model = Some(input.into());
             self
         }
+        /// <p>The model number of the wireless gateway.</p>
         pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model = input;
             self
@@ -1289,6 +1365,7 @@ pub mod lo_ra_wan_gateway_version {
             self.station = Some(input.into());
             self
         }
+        /// <p>The basic station version of the wireless gateway.</p>
         pub fn set_station(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.station = input;
             self
@@ -1310,6 +1387,7 @@ impl LoRaWanGatewayVersion {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1321,6 +1399,7 @@ impl LoRaWanGatewayVersion {
     std::hash::Hash,
 )]
 pub enum WirelessGatewayTaskDefinitionType {
+    #[allow(missing_docs)] // documentation missing in model
     Update,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1341,12 +1420,14 @@ impl std::str::FromStr for WirelessGatewayTaskDefinitionType {
     }
 }
 impl WirelessGatewayTaskDefinitionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WirelessGatewayTaskDefinitionType::Update => "UPDATE",
             WirelessGatewayTaskDefinitionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["UPDATE"]
     }
@@ -1405,6 +1486,7 @@ pub mod wireless_gateway_statistics {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1414,6 +1496,7 @@ pub mod wireless_gateway_statistics {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the wireless gateway reporting the data.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1423,6 +1506,7 @@ pub mod wireless_gateway_statistics {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1432,6 +1516,7 @@ pub mod wireless_gateway_statistics {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1441,6 +1526,7 @@ pub mod wireless_gateway_statistics {
             self.lo_ra_wan = Some(input);
             self
         }
+        /// <p>LoRaWAN gateway info.</p>
         pub fn set_lo_ra_wan(
             mut self,
             input: std::option::Option<crate::model::LoRaWanGateway>,
@@ -1453,6 +1539,7 @@ pub mod wireless_gateway_statistics {
             self.last_uplink_received_at = Some(input.into());
             self
         }
+        /// <p>The date and time when the most recent uplink was received.</p>
         pub fn set_last_uplink_received_at(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1525,6 +1612,7 @@ pub mod lo_ra_wan_gateway {
             self.gateway_eui = Some(input.into());
             self
         }
+        /// <p>The gateway's EUI value.</p>
         pub fn set_gateway_eui(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.gateway_eui = input;
             self
@@ -1534,10 +1622,16 @@ pub mod lo_ra_wan_gateway {
             self.rf_region = Some(input.into());
             self
         }
+        /// <p>The frequency band (RFRegion) value.</p>
         pub fn set_rf_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rf_region = input;
             self
         }
+        /// Appends an item to `join_eui_filters`.
+        ///
+        /// To override the contents of this collection use [`set_join_eui_filters`](Self::set_join_eui_filters).
+        ///
+        /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
         pub fn join_eui_filters(
             mut self,
             input: impl Into<std::vec::Vec<std::string::String>>,
@@ -1547,6 +1641,7 @@ pub mod lo_ra_wan_gateway {
             self.join_eui_filters = Some(v);
             self
         }
+        /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
         pub fn set_join_eui_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
@@ -1554,12 +1649,18 @@ pub mod lo_ra_wan_gateway {
             self.join_eui_filters = input;
             self
         }
+        /// Appends an item to `net_id_filters`.
+        ///
+        /// To override the contents of this collection use [`set_net_id_filters`](Self::set_net_id_filters).
+        ///
+        /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
         pub fn net_id_filters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.net_id_filters.unwrap_or_default();
             v.push(input.into());
             self.net_id_filters = Some(v);
             self
         }
+        /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
         pub fn set_net_id_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1567,12 +1668,18 @@ pub mod lo_ra_wan_gateway {
             self.net_id_filters = input;
             self
         }
+        /// Appends an item to `sub_bands`.
+        ///
+        /// To override the contents of this collection use [`set_sub_bands`](Self::set_sub_bands).
+        ///
+        /// <p>A list of integer indicating which sub bands are supported by LoRa gateway.</p>
         pub fn sub_bands(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.sub_bands.unwrap_or_default();
             v.push(input.into());
             self.sub_bands = Some(v);
             self
         }
+        /// <p>A list of integer indicating which sub bands are supported by LoRa gateway.</p>
         pub fn set_sub_bands(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
             self.sub_bands = input;
             self
@@ -1652,6 +1759,7 @@ pub mod wireless_device_statistics {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1661,6 +1769,7 @@ pub mod wireless_device_statistics {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the wireless device reporting the data.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1670,6 +1779,7 @@ pub mod wireless_device_statistics {
             self.r#type = Some(input);
             self
         }
+        /// <p>The wireless device type.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::WirelessDeviceType>,
@@ -1682,6 +1792,7 @@ pub mod wireless_device_statistics {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1691,6 +1802,7 @@ pub mod wireless_device_statistics {
             self.destination_name = Some(input.into());
             self
         }
+        /// <p>The name of the destination to which the device is assigned.</p>
         pub fn set_destination_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1703,6 +1815,7 @@ pub mod wireless_device_statistics {
             self.last_uplink_received_at = Some(input.into());
             self
         }
+        /// <p>The date and time when the most recent uplink was received.</p>
         pub fn set_last_uplink_received_at(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1715,6 +1828,7 @@ pub mod wireless_device_statistics {
             self.lo_ra_wan = Some(input);
             self
         }
+        /// <p>LoRaWAN device info.</p>
         pub fn set_lo_ra_wan(
             mut self,
             input: std::option::Option<crate::model::LoRaWanListDevice>,
@@ -1727,6 +1841,7 @@ pub mod wireless_device_statistics {
             self.sidewalk = Some(input);
             self
         }
+        /// <p>The Sidewalk account credentials.</p>
         pub fn set_sidewalk(
             mut self,
             input: std::option::Option<crate::model::SidewalkListDevice>,
@@ -1797,6 +1912,7 @@ pub mod sidewalk_list_device {
             self.amazon_id = Some(input.into());
             self
         }
+        /// <p>The Sidewalk Amazon ID.</p>
         pub fn set_amazon_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.amazon_id = input;
             self
@@ -1806,6 +1922,7 @@ pub mod sidewalk_list_device {
             self.sidewalk_id = Some(input.into());
             self
         }
+        /// <p>The sidewalk device identification.</p>
         pub fn set_sidewalk_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sidewalk_id = input;
             self
@@ -1815,6 +1932,7 @@ pub mod sidewalk_list_device {
             self.sidewalk_manufacturing_sn = Some(input.into());
             self
         }
+        /// <p>The Sidewalk manufacturing series number.</p>
         pub fn set_sidewalk_manufacturing_sn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1822,6 +1940,11 @@ pub mod sidewalk_list_device {
             self.sidewalk_manufacturing_sn = input;
             self
         }
+        /// Appends an item to `device_certificates`.
+        ///
+        /// To override the contents of this collection use [`set_device_certificates`](Self::set_device_certificates).
+        ///
+        /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
         pub fn device_certificates(
             mut self,
             input: impl Into<crate::model::CertificateList>,
@@ -1831,6 +1954,7 @@ pub mod sidewalk_list_device {
             self.device_certificates = Some(v);
             self
         }
+        /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
         pub fn set_device_certificates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CertificateList>>,
@@ -1888,6 +2012,7 @@ pub mod certificate_list {
             self.signing_alg = Some(input);
             self
         }
+        /// <p>The certificate chain algorithm provided by sidewalk.</p>
         pub fn set_signing_alg(
             mut self,
             input: std::option::Option<crate::model::SigningAlg>,
@@ -1900,6 +2025,7 @@ pub mod certificate_list {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the chosen sidewalk certificate.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1932,7 +2058,9 @@ impl CertificateList {
     std::hash::Hash,
 )]
 pub enum SigningAlg {
+    #[allow(missing_docs)] // documentation missing in model
     Ed25519,
+    #[allow(missing_docs)] // documentation missing in model
     P256r1,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1954,6 +2082,7 @@ impl std::str::FromStr for SigningAlg {
     }
 }
 impl SigningAlg {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SigningAlg::Ed25519 => "Ed25519",
@@ -1961,6 +2090,7 @@ impl SigningAlg {
             SigningAlg::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Ed25519", "P256r1"]
     }
@@ -1999,6 +2129,7 @@ pub mod lo_ra_wan_list_device {
             self.dev_eui = Some(input.into());
             self
         }
+        /// <p>The DevEUI value.</p>
         pub fn set_dev_eui(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dev_eui = input;
             self
@@ -2054,6 +2185,7 @@ pub mod service_profile {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2063,6 +2195,7 @@ pub mod service_profile {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2072,6 +2205,7 @@ pub mod service_profile {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the service profile.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2129,6 +2263,7 @@ pub mod sidewalk_account_info_with_fingerprint {
             self.amazon_id = Some(input.into());
             self
         }
+        /// <p>The Sidewalk Amazon ID.</p>
         pub fn set_amazon_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.amazon_id = input;
             self
@@ -2138,6 +2273,7 @@ pub mod sidewalk_account_info_with_fingerprint {
             self.fingerprint = Some(input.into());
             self
         }
+        /// <p>The fingerprint of the Sidewalk application server private key.</p>
         pub fn set_fingerprint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fingerprint = input;
             self
@@ -2147,6 +2283,7 @@ pub mod sidewalk_account_info_with_fingerprint {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2204,6 +2341,7 @@ pub mod device_profile {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2213,6 +2351,7 @@ pub mod device_profile {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2222,6 +2361,7 @@ pub mod device_profile {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the device profile.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2291,6 +2431,7 @@ pub mod destinations {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2300,6 +2441,7 @@ pub mod destinations {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2309,6 +2451,7 @@ pub mod destinations {
             self.expression_type = Some(input);
             self
         }
+        /// <p>The type of value in <code>Expression</code>.</p>
         pub fn set_expression_type(
             mut self,
             input: std::option::Option<crate::model::ExpressionType>,
@@ -2321,6 +2464,7 @@ pub mod destinations {
             self.expression = Some(input.into());
             self
         }
+        /// <p>The rule name or topic rule to send messages to.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expression = input;
             self
@@ -2330,6 +2474,7 @@ pub mod destinations {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2339,6 +2484,7 @@ pub mod destinations {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM Role that authorizes the destination.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -2399,6 +2545,7 @@ pub mod update_wireless_gateway_task_create {
             self.update_data_source = Some(input.into());
             self
         }
+        /// <p>The link to the S3 bucket.</p>
         pub fn set_update_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2411,6 +2558,7 @@ pub mod update_wireless_gateway_task_create {
             self.update_data_role = Some(input.into());
             self
         }
+        /// <p>The IAM role used to read data from the S3 bucket.</p>
         pub fn set_update_data_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2423,6 +2571,7 @@ pub mod update_wireless_gateway_task_create {
             self.lo_ra_wan = Some(input);
             self
         }
+        /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
         pub fn set_lo_ra_wan(
             mut self,
             input: std::option::Option<crate::model::LoRaWanUpdateGatewayTaskCreate>,
@@ -2487,6 +2636,7 @@ pub mod lo_ra_wan_update_gateway_task_create {
             self.update_signature = Some(input.into());
             self
         }
+        /// <p>The signature used to verify the update firmware.</p>
         pub fn set_update_signature(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2499,6 +2649,7 @@ pub mod lo_ra_wan_update_gateway_task_create {
             self.sig_key_crc = Some(input);
             self
         }
+        /// <p>The CRC of the signature private key to check.</p>
         pub fn set_sig_key_crc(mut self, input: std::option::Option<i64>) -> Self {
             self.sig_key_crc = input;
             self
@@ -2508,6 +2659,7 @@ pub mod lo_ra_wan_update_gateway_task_create {
             self.current_version = Some(input);
             self
         }
+        /// <p>The version of the gateways that should receive the update.</p>
         pub fn set_current_version(
             mut self,
             input: std::option::Option<crate::model::LoRaWanGatewayVersion>,
@@ -2520,6 +2672,7 @@ pub mod lo_ra_wan_update_gateway_task_create {
             self.update_version = Some(input);
             self
         }
+        /// <p>The firmware version to update the gateway to.</p>
         pub fn set_update_version(
             mut self,
             input: std::option::Option<crate::model::LoRaWanGatewayVersion>,
@@ -2545,6 +2698,7 @@ impl LoRaWanUpdateGatewayTaskCreate {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2556,11 +2710,17 @@ impl LoRaWanUpdateGatewayTaskCreate {
     std::hash::Hash,
 )]
 pub enum WirelessGatewayTaskStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     FirstRetry,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     SecondRetry,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2586,6 +2746,7 @@ impl std::str::FromStr for WirelessGatewayTaskStatus {
     }
 }
 impl WirelessGatewayTaskStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WirelessGatewayTaskStatus::Completed => "COMPLETED",
@@ -2597,6 +2758,7 @@ impl WirelessGatewayTaskStatus {
             WirelessGatewayTaskStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -2614,6 +2776,7 @@ impl AsRef<str> for WirelessGatewayTaskStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2625,7 +2788,9 @@ impl AsRef<str> for WirelessGatewayTaskStatus {
     std::hash::Hash,
 )]
 pub enum ConnectionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Connected,
+    #[allow(missing_docs)] // documentation missing in model
     Disconnected,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2647,6 +2812,7 @@ impl std::str::FromStr for ConnectionStatus {
     }
 }
 impl ConnectionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConnectionStatus::Connected => "Connected",
@@ -2654,6 +2820,7 @@ impl ConnectionStatus {
             ConnectionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Connected", "Disconnected"]
     }
@@ -2692,6 +2859,7 @@ pub mod lo_ra_wan_gateway_current_version {
             self.current_version = Some(input);
             self
         }
+        /// <p>The version of the gateways that should receive the update.</p>
         pub fn set_current_version(
             mut self,
             input: std::option::Option<crate::model::LoRaWanGatewayVersion>,
@@ -2714,6 +2882,7 @@ impl LoRaWanGatewayCurrentVersion {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2725,8 +2894,11 @@ impl LoRaWanGatewayCurrentVersion {
     std::hash::Hash,
 )]
 pub enum WirelessGatewayIdType {
+    #[allow(missing_docs)] // documentation missing in model
     GatewayEui,
+    #[allow(missing_docs)] // documentation missing in model
     ThingName,
+    #[allow(missing_docs)] // documentation missing in model
     WirelessGatewayId,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2749,6 +2921,7 @@ impl std::str::FromStr for WirelessGatewayIdType {
     }
 }
 impl WirelessGatewayIdType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WirelessGatewayIdType::GatewayEui => "GatewayEui",
@@ -2757,6 +2930,7 @@ impl WirelessGatewayIdType {
             WirelessGatewayIdType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GatewayEui", "ThingName", "WirelessGatewayId"]
     }
@@ -2807,6 +2981,7 @@ pub mod sidewalk_device_metadata {
             self.rssi = Some(input);
             self
         }
+        /// <p>The RSSI value.</p>
         pub fn set_rssi(mut self, input: std::option::Option<i32>) -> Self {
             self.rssi = input;
             self
@@ -2816,6 +2991,7 @@ pub mod sidewalk_device_metadata {
             self.battery_level = Some(input);
             self
         }
+        /// <p>Sidewalk device battery level.</p>
         pub fn set_battery_level(
             mut self,
             input: std::option::Option<crate::model::BatteryLevel>,
@@ -2828,6 +3004,7 @@ pub mod sidewalk_device_metadata {
             self.event = Some(input);
             self
         }
+        /// <p>Sidewalk device status notification.</p>
         pub fn set_event(mut self, input: std::option::Option<crate::model::Event>) -> Self {
             self.event = input;
             self
@@ -2837,6 +3014,7 @@ pub mod sidewalk_device_metadata {
             self.device_state = Some(input);
             self
         }
+        /// <p>Device state defines the device status of sidewalk device.</p>
         pub fn set_device_state(
             mut self,
             input: std::option::Option<crate::model::DeviceState>,
@@ -2874,9 +3052,13 @@ impl SidewalkDeviceMetadata {
     std::hash::Hash,
 )]
 pub enum DeviceState {
+    #[allow(missing_docs)] // documentation missing in model
     Provisioned,
+    #[allow(missing_docs)] // documentation missing in model
     Registerednotseen,
+    #[allow(missing_docs)] // documentation missing in model
     Registeredreachable,
+    #[allow(missing_docs)] // documentation missing in model
     Registeredunreachable,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2900,6 +3082,7 @@ impl std::str::FromStr for DeviceState {
     }
 }
 impl DeviceState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeviceState::Provisioned => "Provisioned",
@@ -2909,6 +3092,7 @@ impl DeviceState {
             DeviceState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Provisioned",
@@ -2936,10 +3120,15 @@ impl AsRef<str> for DeviceState {
     std::hash::Hash,
 )]
 pub enum Event {
+    #[allow(missing_docs)] // documentation missing in model
     Ack,
+    #[allow(missing_docs)] // documentation missing in model
     Discovered,
+    #[allow(missing_docs)] // documentation missing in model
     Lost,
+    #[allow(missing_docs)] // documentation missing in model
     Nack,
+    #[allow(missing_docs)] // documentation missing in model
     Passthrough,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2964,6 +3153,7 @@ impl std::str::FromStr for Event {
     }
 }
 impl Event {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Event::Ack => "ack",
@@ -2974,6 +3164,7 @@ impl Event {
             Event::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ack", "discovered", "lost", "nack", "passthrough"]
     }
@@ -2996,8 +3187,11 @@ impl AsRef<str> for Event {
     std::hash::Hash,
 )]
 pub enum BatteryLevel {
+    #[allow(missing_docs)] // documentation missing in model
     Critical,
+    #[allow(missing_docs)] // documentation missing in model
     Low,
+    #[allow(missing_docs)] // documentation missing in model
     Normal,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3020,6 +3214,7 @@ impl std::str::FromStr for BatteryLevel {
     }
 }
 impl BatteryLevel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BatteryLevel::Critical => "critical",
@@ -3028,6 +3223,7 @@ impl BatteryLevel {
             BatteryLevel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["critical", "low", "normal"]
     }
@@ -3087,6 +3283,7 @@ pub mod lo_ra_wan_device_metadata {
             self.dev_eui = Some(input.into());
             self
         }
+        /// <p>The DevEUI value.</p>
         pub fn set_dev_eui(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dev_eui = input;
             self
@@ -3096,6 +3293,7 @@ pub mod lo_ra_wan_device_metadata {
             self.f_port = Some(input);
             self
         }
+        /// <p>The FPort value.</p>
         pub fn set_f_port(mut self, input: std::option::Option<i32>) -> Self {
             self.f_port = input;
             self
@@ -3105,6 +3303,7 @@ pub mod lo_ra_wan_device_metadata {
             self.data_rate = Some(input);
             self
         }
+        /// <p>The DataRate value.</p>
         pub fn set_data_rate(mut self, input: std::option::Option<i32>) -> Self {
             self.data_rate = input;
             self
@@ -3114,6 +3313,7 @@ pub mod lo_ra_wan_device_metadata {
             self.frequency = Some(input);
             self
         }
+        /// <p>The device's channel frequency in Hz.</p>
         pub fn set_frequency(mut self, input: std::option::Option<i32>) -> Self {
             self.frequency = input;
             self
@@ -3123,16 +3323,23 @@ pub mod lo_ra_wan_device_metadata {
             self.timestamp = Some(input.into());
             self
         }
+        /// <p>The date and time of the metadata.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timestamp = input;
             self
         }
+        /// Appends an item to `gateways`.
+        ///
+        /// To override the contents of this collection use [`set_gateways`](Self::set_gateways).
+        ///
+        /// <p>Information about the gateways accessed by the device.</p>
         pub fn gateways(mut self, input: impl Into<crate::model::LoRaWanGatewayMetadata>) -> Self {
             let mut v = self.gateways.unwrap_or_default();
             v.push(input.into());
             self.gateways = Some(v);
             self
         }
+        /// <p>Information about the gateways accessed by the device.</p>
         pub fn set_gateways(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LoRaWanGatewayMetadata>>,
@@ -3196,6 +3403,7 @@ pub mod lo_ra_wan_gateway_metadata {
             self.gateway_eui = Some(input.into());
             self
         }
+        /// <p>The gateway's EUI value.</p>
         pub fn set_gateway_eui(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.gateway_eui = input;
             self
@@ -3205,6 +3413,7 @@ pub mod lo_ra_wan_gateway_metadata {
             self.snr = Some(input);
             self
         }
+        /// <p>The SNR value.</p>
         pub fn set_snr(mut self, input: std::option::Option<f64>) -> Self {
             self.snr = input;
             self
@@ -3214,6 +3423,7 @@ pub mod lo_ra_wan_gateway_metadata {
             self.rssi = Some(input);
             self
         }
+        /// <p>The RSSI value.</p>
         pub fn set_rssi(mut self, input: std::option::Option<f64>) -> Self {
             self.rssi = input;
             self
@@ -3276,6 +3486,7 @@ pub mod sidewalk_device {
             self.amazon_id = Some(input.into());
             self
         }
+        /// <p>The Sidewalk Amazon ID.</p>
         pub fn set_amazon_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.amazon_id = input;
             self
@@ -3285,6 +3496,7 @@ pub mod sidewalk_device {
             self.sidewalk_id = Some(input.into());
             self
         }
+        /// <p>The sidewalk device identification.</p>
         pub fn set_sidewalk_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sidewalk_id = input;
             self
@@ -3294,6 +3506,7 @@ pub mod sidewalk_device {
             self.sidewalk_manufacturing_sn = Some(input.into());
             self
         }
+        /// <p>The Sidewalk manufacturing series number.</p>
         pub fn set_sidewalk_manufacturing_sn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3301,6 +3514,11 @@ pub mod sidewalk_device {
             self.sidewalk_manufacturing_sn = input;
             self
         }
+        /// Appends an item to `device_certificates`.
+        ///
+        /// To override the contents of this collection use [`set_device_certificates`](Self::set_device_certificates).
+        ///
+        /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
         pub fn device_certificates(
             mut self,
             input: impl Into<crate::model::CertificateList>,
@@ -3310,6 +3528,7 @@ pub mod sidewalk_device {
             self.device_certificates = Some(v);
             self
         }
+        /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
         pub fn set_device_certificates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CertificateList>>,
@@ -3387,6 +3606,7 @@ pub mod lo_ra_wan_device {
             self.dev_eui = Some(input.into());
             self
         }
+        /// <p>The DevEUI value.</p>
         pub fn set_dev_eui(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dev_eui = input;
             self
@@ -3396,6 +3616,7 @@ pub mod lo_ra_wan_device {
             self.device_profile_id = Some(input.into());
             self
         }
+        /// <p>The ID of the device profile for the new wireless device.</p>
         pub fn set_device_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3408,6 +3629,7 @@ pub mod lo_ra_wan_device {
             self.service_profile_id = Some(input.into());
             self
         }
+        /// <p>The ID of the service profile.</p>
         pub fn set_service_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3420,6 +3642,7 @@ pub mod lo_ra_wan_device {
             self.otaa_v1_1 = Some(input);
             self
         }
+        /// <p>OTAA device object for v1.1 for create APIs</p>
         pub fn set_otaa_v1_1(mut self, input: std::option::Option<crate::model::OtaaV11>) -> Self {
             self.otaa_v1_1 = input;
             self
@@ -3429,6 +3652,7 @@ pub mod lo_ra_wan_device {
             self.otaa_v1_0_x = Some(input);
             self
         }
+        /// <p>OTAA device object for create APIs for v1.0.x</p>
         pub fn set_otaa_v1_0_x(
             mut self,
             input: std::option::Option<crate::model::OtaaV10X>,
@@ -3441,6 +3665,7 @@ pub mod lo_ra_wan_device {
             self.abp_v1_1 = Some(input);
             self
         }
+        /// <p>ABP device object for create APIs for v1.1</p>
         pub fn set_abp_v1_1(mut self, input: std::option::Option<crate::model::AbpV11>) -> Self {
             self.abp_v1_1 = input;
             self
@@ -3450,6 +3675,7 @@ pub mod lo_ra_wan_device {
             self.abp_v1_0_x = Some(input);
             self
         }
+        /// <p>LoRaWAN object for create APIs</p>
         pub fn set_abp_v1_0_x(mut self, input: std::option::Option<crate::model::AbpV10X>) -> Self {
             self.abp_v1_0_x = input;
             self
@@ -3507,6 +3733,7 @@ pub mod abp_v10_x {
             self.dev_addr = Some(input.into());
             self
         }
+        /// <p>The DevAddr value.</p>
         pub fn set_dev_addr(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dev_addr = input;
             self
@@ -3516,6 +3743,7 @@ pub mod abp_v10_x {
             self.session_keys = Some(input);
             self
         }
+        /// <p>Session keys for ABP v1.0.x</p>
         pub fn set_session_keys(
             mut self,
             input: std::option::Option<crate::model::SessionKeysAbpV10X>,
@@ -3571,6 +3799,7 @@ pub mod session_keys_abp_v10_x {
             self.nwk_s_key = Some(input.into());
             self
         }
+        /// <p>The NwkSKey value.</p>
         pub fn set_nwk_s_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.nwk_s_key = input;
             self
@@ -3580,6 +3809,7 @@ pub mod session_keys_abp_v10_x {
             self.app_s_key = Some(input.into());
             self
         }
+        /// <p>The AppSKey value.</p>
         pub fn set_app_s_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_s_key = input;
             self
@@ -3632,6 +3862,7 @@ pub mod abp_v11 {
             self.dev_addr = Some(input.into());
             self
         }
+        /// <p>The DevAddr value.</p>
         pub fn set_dev_addr(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dev_addr = input;
             self
@@ -3641,6 +3872,7 @@ pub mod abp_v11 {
             self.session_keys = Some(input);
             self
         }
+        /// <p>Session keys for ABP v1.1</p>
         pub fn set_session_keys(
             mut self,
             input: std::option::Option<crate::model::SessionKeysAbpV11>,
@@ -3704,6 +3936,7 @@ pub mod session_keys_abp_v11 {
             self.f_nwk_s_int_key = Some(input.into());
             self
         }
+        /// <p>The FNwkSIntKey value.</p>
         pub fn set_f_nwk_s_int_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3716,6 +3949,7 @@ pub mod session_keys_abp_v11 {
             self.s_nwk_s_int_key = Some(input.into());
             self
         }
+        /// <p>The SNwkSIntKey value.</p>
         pub fn set_s_nwk_s_int_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3728,6 +3962,7 @@ pub mod session_keys_abp_v11 {
             self.nwk_s_enc_key = Some(input.into());
             self
         }
+        /// <p>The NwkSEncKey value.</p>
         pub fn set_nwk_s_enc_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3740,6 +3975,7 @@ pub mod session_keys_abp_v11 {
             self.app_s_key = Some(input.into());
             self
         }
+        /// <p>The AppSKey value.</p>
         pub fn set_app_s_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_s_key = input;
             self
@@ -3794,6 +4030,7 @@ pub mod otaa_v10_x {
             self.app_key = Some(input.into());
             self
         }
+        /// <p>The AppKey value.</p>
         pub fn set_app_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_key = input;
             self
@@ -3803,6 +4040,7 @@ pub mod otaa_v10_x {
             self.app_eui = Some(input.into());
             self
         }
+        /// <p>The AppEUI value.</p>
         pub fn set_app_eui(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_eui = input;
             self
@@ -3859,6 +4097,7 @@ pub mod otaa_v11 {
             self.app_key = Some(input.into());
             self
         }
+        /// <p>The AppKey value.</p>
         pub fn set_app_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_key = input;
             self
@@ -3868,6 +4107,7 @@ pub mod otaa_v11 {
             self.nwk_key = Some(input.into());
             self
         }
+        /// <p>The NwkKey value.</p>
         pub fn set_nwk_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.nwk_key = input;
             self
@@ -3877,6 +4117,7 @@ pub mod otaa_v11 {
             self.join_eui = Some(input.into());
             self
         }
+        /// <p>The JoinEUI value.</p>
         pub fn set_join_eui(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.join_eui = input;
             self
@@ -3898,6 +4139,7 @@ impl OtaaV11 {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3909,9 +4151,13 @@ impl OtaaV11 {
     std::hash::Hash,
 )]
 pub enum WirelessDeviceIdType {
+    #[allow(missing_docs)] // documentation missing in model
     DevEui,
+    #[allow(missing_docs)] // documentation missing in model
     SidewalkManufacturingSn,
+    #[allow(missing_docs)] // documentation missing in model
     ThingName,
+    #[allow(missing_docs)] // documentation missing in model
     WirelessDeviceId,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3935,6 +4181,7 @@ impl std::str::FromStr for WirelessDeviceIdType {
     }
 }
 impl WirelessDeviceIdType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WirelessDeviceIdType::DevEui => "DevEui",
@@ -3944,6 +4191,7 @@ impl WirelessDeviceIdType {
             WirelessDeviceIdType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DevEui",
@@ -4059,6 +4307,7 @@ pub mod lo_ra_wan_get_service_profile_info {
             self.ul_rate = Some(input);
             self
         }
+        /// <p>The ULRate value.</p>
         pub fn set_ul_rate(mut self, input: std::option::Option<i32>) -> Self {
             self.ul_rate = input;
             self
@@ -4068,6 +4317,7 @@ pub mod lo_ra_wan_get_service_profile_info {
             self.ul_bucket_size = Some(input);
             self
         }
+        /// <p>The ULBucketSize value.</p>
         pub fn set_ul_bucket_size(mut self, input: std::option::Option<i32>) -> Self {
             self.ul_bucket_size = input;
             self
@@ -4077,6 +4327,7 @@ pub mod lo_ra_wan_get_service_profile_info {
             self.ul_rate_policy = Some(input.into());
             self
         }
+        /// <p>The ULRatePolicy value.</p>
         pub fn set_ul_rate_policy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4089,6 +4340,7 @@ pub mod lo_ra_wan_get_service_profile_info {
             self.dl_rate = Some(input);
             self
         }
+        /// <p>The DLRate value.</p>
         pub fn set_dl_rate(mut self, input: std::option::Option<i32>) -> Self {
             self.dl_rate = input;
             self
@@ -4098,6 +4350,7 @@ pub mod lo_ra_wan_get_service_profile_info {
             self.dl_bucket_size = Some(input);
             self
         }
+        /// <p>The DLBucketSize value.</p>
         pub fn set_dl_bucket_size(mut self, input: std::option::Option<i32>) -> Self {
             self.dl_bucket_size = input;
             self
@@ -4107,6 +4360,7 @@ pub mod lo_ra_wan_get_service_profile_info {
             self.dl_rate_policy = Some(input.into());
             self
         }
+        /// <p>The DLRatePolicy value.</p>
         pub fn set_dl_rate_policy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4119,6 +4373,7 @@ pub mod lo_ra_wan_get_service_profile_info {
             self.add_gw_metadata = Some(input);
             self
         }
+        /// <p>The AddGWMetaData value.</p>
         pub fn set_add_gw_metadata(mut self, input: std::option::Option<bool>) -> Self {
             self.add_gw_metadata = input;
             self
@@ -4128,6 +4383,7 @@ pub mod lo_ra_wan_get_service_profile_info {
             self.dev_status_req_freq = Some(input);
             self
         }
+        /// <p>The DevStatusReqFreq value.</p>
         pub fn set_dev_status_req_freq(mut self, input: std::option::Option<i32>) -> Self {
             self.dev_status_req_freq = input;
             self
@@ -4137,6 +4393,7 @@ pub mod lo_ra_wan_get_service_profile_info {
             self.report_dev_status_battery = Some(input);
             self
         }
+        /// <p>The ReportDevStatusBattery value.</p>
         pub fn set_report_dev_status_battery(mut self, input: std::option::Option<bool>) -> Self {
             self.report_dev_status_battery = input;
             self
@@ -4146,6 +4403,7 @@ pub mod lo_ra_wan_get_service_profile_info {
             self.report_dev_status_margin = Some(input);
             self
         }
+        /// <p>The ReportDevStatusMargin value.</p>
         pub fn set_report_dev_status_margin(mut self, input: std::option::Option<bool>) -> Self {
             self.report_dev_status_margin = input;
             self
@@ -4155,6 +4413,7 @@ pub mod lo_ra_wan_get_service_profile_info {
             self.dr_min = Some(input);
             self
         }
+        /// <p>The DRMin value.</p>
         pub fn set_dr_min(mut self, input: std::option::Option<i32>) -> Self {
             self.dr_min = input;
             self
@@ -4164,6 +4423,7 @@ pub mod lo_ra_wan_get_service_profile_info {
             self.dr_max = Some(input);
             self
         }
+        /// <p>The DRMax value.</p>
         pub fn set_dr_max(mut self, input: std::option::Option<i32>) -> Self {
             self.dr_max = input;
             self
@@ -4173,6 +4433,7 @@ pub mod lo_ra_wan_get_service_profile_info {
             self.channel_mask = Some(input.into());
             self
         }
+        /// <p>The ChannelMask value.</p>
         pub fn set_channel_mask(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_mask = input;
             self
@@ -4182,6 +4443,7 @@ pub mod lo_ra_wan_get_service_profile_info {
             self.pr_allowed = Some(input);
             self
         }
+        /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
         pub fn set_pr_allowed(mut self, input: std::option::Option<bool>) -> Self {
             self.pr_allowed = input;
             self
@@ -4191,6 +4453,7 @@ pub mod lo_ra_wan_get_service_profile_info {
             self.hr_allowed = Some(input);
             self
         }
+        /// <p>The HRAllowed value that describes whether handover roaming is allowed.</p>
         pub fn set_hr_allowed(mut self, input: std::option::Option<bool>) -> Self {
             self.hr_allowed = input;
             self
@@ -4200,6 +4463,7 @@ pub mod lo_ra_wan_get_service_profile_info {
             self.ra_allowed = Some(input);
             self
         }
+        /// <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
         pub fn set_ra_allowed(mut self, input: std::option::Option<bool>) -> Self {
             self.ra_allowed = input;
             self
@@ -4209,6 +4473,7 @@ pub mod lo_ra_wan_get_service_profile_info {
             self.nwk_geo_loc = Some(input);
             self
         }
+        /// <p>The NwkGeoLoc value.</p>
         pub fn set_nwk_geo_loc(mut self, input: std::option::Option<bool>) -> Self {
             self.nwk_geo_loc = input;
             self
@@ -4218,6 +4483,7 @@ pub mod lo_ra_wan_get_service_profile_info {
             self.target_per = Some(input);
             self
         }
+        /// <p>The TargetPER value.</p>
         pub fn set_target_per(mut self, input: std::option::Option<i32>) -> Self {
             self.target_per = input;
             self
@@ -4227,6 +4493,7 @@ pub mod lo_ra_wan_get_service_profile_info {
             self.min_gw_diversity = Some(input);
             self
         }
+        /// <p>The MinGwDiversity value.</p>
         pub fn set_min_gw_diversity(mut self, input: std::option::Option<i32>) -> Self {
             self.min_gw_diversity = input;
             self
@@ -4264,6 +4531,7 @@ impl LoRaWanGetServiceProfileInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4275,7 +4543,9 @@ impl LoRaWanGetServiceProfileInfo {
     std::hash::Hash,
 )]
 pub enum WirelessGatewayServiceType {
+    #[allow(missing_docs)] // documentation missing in model
     Cups,
+    #[allow(missing_docs)] // documentation missing in model
     Lns,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4297,6 +4567,7 @@ impl std::str::FromStr for WirelessGatewayServiceType {
     }
 }
 impl WirelessGatewayServiceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WirelessGatewayServiceType::Cups => "CUPS",
@@ -4304,6 +4575,7 @@ impl WirelessGatewayServiceType {
             WirelessGatewayServiceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CUPS", "LNS"]
     }
@@ -4414,6 +4686,7 @@ pub mod lo_ra_wan_device_profile {
             self.supports_class_b = Some(input);
             self
         }
+        /// <p>The SupportsClassB value.</p>
         pub fn set_supports_class_b(mut self, input: std::option::Option<bool>) -> Self {
             self.supports_class_b = input;
             self
@@ -4423,6 +4696,7 @@ pub mod lo_ra_wan_device_profile {
             self.class_b_timeout = Some(input);
             self
         }
+        /// <p>The ClassBTimeout value.</p>
         pub fn set_class_b_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.class_b_timeout = input;
             self
@@ -4432,6 +4706,7 @@ pub mod lo_ra_wan_device_profile {
             self.ping_slot_period = Some(input);
             self
         }
+        /// <p>The PingSlotPeriod value.</p>
         pub fn set_ping_slot_period(mut self, input: std::option::Option<i32>) -> Self {
             self.ping_slot_period = input;
             self
@@ -4441,6 +4716,7 @@ pub mod lo_ra_wan_device_profile {
             self.ping_slot_dr = Some(input);
             self
         }
+        /// <p>The PingSlotDR value.</p>
         pub fn set_ping_slot_dr(mut self, input: std::option::Option<i32>) -> Self {
             self.ping_slot_dr = input;
             self
@@ -4450,6 +4726,7 @@ pub mod lo_ra_wan_device_profile {
             self.ping_slot_freq = Some(input);
             self
         }
+        /// <p>The PingSlotFreq value.</p>
         pub fn set_ping_slot_freq(mut self, input: std::option::Option<i32>) -> Self {
             self.ping_slot_freq = input;
             self
@@ -4459,6 +4736,7 @@ pub mod lo_ra_wan_device_profile {
             self.supports_class_c = Some(input);
             self
         }
+        /// <p>The SupportsClassC value.</p>
         pub fn set_supports_class_c(mut self, input: std::option::Option<bool>) -> Self {
             self.supports_class_c = input;
             self
@@ -4468,6 +4746,7 @@ pub mod lo_ra_wan_device_profile {
             self.class_c_timeout = Some(input);
             self
         }
+        /// <p>The ClassCTimeout value.</p>
         pub fn set_class_c_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.class_c_timeout = input;
             self
@@ -4477,6 +4756,7 @@ pub mod lo_ra_wan_device_profile {
             self.mac_version = Some(input.into());
             self
         }
+        /// <p>The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device profile.</p>
         pub fn set_mac_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mac_version = input;
             self
@@ -4486,6 +4766,7 @@ pub mod lo_ra_wan_device_profile {
             self.reg_params_revision = Some(input.into());
             self
         }
+        /// <p>The version of regional parameters.</p>
         pub fn set_reg_params_revision(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4498,6 +4779,7 @@ pub mod lo_ra_wan_device_profile {
             self.rx_delay1 = Some(input);
             self
         }
+        /// <p>The RXDelay1 value.</p>
         pub fn set_rx_delay1(mut self, input: std::option::Option<i32>) -> Self {
             self.rx_delay1 = input;
             self
@@ -4507,6 +4789,7 @@ pub mod lo_ra_wan_device_profile {
             self.rx_dr_offset1 = Some(input);
             self
         }
+        /// <p>The RXDROffset1 value.</p>
         pub fn set_rx_dr_offset1(mut self, input: std::option::Option<i32>) -> Self {
             self.rx_dr_offset1 = input;
             self
@@ -4516,6 +4799,7 @@ pub mod lo_ra_wan_device_profile {
             self.rx_data_rate2 = Some(input);
             self
         }
+        /// <p>The RXDataRate2 value.</p>
         pub fn set_rx_data_rate2(mut self, input: std::option::Option<i32>) -> Self {
             self.rx_data_rate2 = input;
             self
@@ -4525,16 +4809,23 @@ pub mod lo_ra_wan_device_profile {
             self.rx_freq2 = Some(input);
             self
         }
+        /// <p>The RXFreq2 value.</p>
         pub fn set_rx_freq2(mut self, input: std::option::Option<i32>) -> Self {
             self.rx_freq2 = input;
             self
         }
+        /// Appends an item to `factory_preset_freqs_list`.
+        ///
+        /// To override the contents of this collection use [`set_factory_preset_freqs_list`](Self::set_factory_preset_freqs_list).
+        ///
+        /// <p>The list of values that make up the FactoryPresetFreqs value.</p>
         pub fn factory_preset_freqs_list(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.factory_preset_freqs_list.unwrap_or_default();
             v.push(input.into());
             self.factory_preset_freqs_list = Some(v);
             self
         }
+        /// <p>The list of values that make up the FactoryPresetFreqs value.</p>
         pub fn set_factory_preset_freqs_list(
             mut self,
             input: std::option::Option<std::vec::Vec<i32>>,
@@ -4547,6 +4838,7 @@ pub mod lo_ra_wan_device_profile {
             self.max_eirp = Some(input);
             self
         }
+        /// <p>The MaxEIRP value.</p>
         pub fn set_max_eirp(mut self, input: std::option::Option<i32>) -> Self {
             self.max_eirp = input;
             self
@@ -4556,6 +4848,7 @@ pub mod lo_ra_wan_device_profile {
             self.max_duty_cycle = Some(input);
             self
         }
+        /// <p>The MaxDutyCycle value.</p>
         pub fn set_max_duty_cycle(mut self, input: std::option::Option<i32>) -> Self {
             self.max_duty_cycle = input;
             self
@@ -4565,6 +4858,7 @@ pub mod lo_ra_wan_device_profile {
             self.rf_region = Some(input.into());
             self
         }
+        /// <p>The frequency band (RFRegion) value.</p>
         pub fn set_rf_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rf_region = input;
             self
@@ -4574,6 +4868,7 @@ pub mod lo_ra_wan_device_profile {
             self.supports_join = Some(input);
             self
         }
+        /// <p>The SupportsJoin value.</p>
         pub fn set_supports_join(mut self, input: std::option::Option<bool>) -> Self {
             self.supports_join = input;
             self
@@ -4583,6 +4878,7 @@ pub mod lo_ra_wan_device_profile {
             self.supports32_bit_f_cnt = Some(input);
             self
         }
+        /// <p>The Supports32BitFCnt value.</p>
         pub fn set_supports32_bit_f_cnt(mut self, input: std::option::Option<bool>) -> Self {
             self.supports32_bit_f_cnt = input;
             self
@@ -4648,6 +4944,7 @@ pub mod lo_ra_wan_service_profile {
             self.add_gw_metadata = Some(input);
             self
         }
+        /// <p>The AddGWMetaData value.</p>
         pub fn set_add_gw_metadata(mut self, input: std::option::Option<bool>) -> Self {
             self.add_gw_metadata = input;
             self
@@ -4699,6 +4996,7 @@ pub mod sidewalk_account_info {
             self.amazon_id = Some(input.into());
             self
         }
+        /// <p>The Sidewalk Amazon ID.</p>
         pub fn set_amazon_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.amazon_id = input;
             self
@@ -4708,6 +5006,7 @@ pub mod sidewalk_account_info {
             self.app_server_private_key = Some(input.into());
             self
         }
+        /// <p>The Sidewalk application server private key.</p>
         pub fn set_app_server_private_key(
             mut self,
             input: std::option::Option<std::string::String>,

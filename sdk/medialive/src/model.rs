@@ -99,6 +99,7 @@ pub mod reservation {
             self.arn = Some(input.into());
             self
         }
+        /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -108,6 +109,7 @@ pub mod reservation {
             self.count = Some(input);
             self
         }
+        /// Number of reserved resources
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
@@ -117,6 +119,7 @@ pub mod reservation {
             self.currency_code = Some(input.into());
             self
         }
+        /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
         pub fn set_currency_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -129,6 +132,7 @@ pub mod reservation {
             self.duration = Some(input);
             self
         }
+        /// Lease duration, e.g. '12'
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.duration = input;
             self
@@ -138,6 +142,7 @@ pub mod reservation {
             self.duration_units = Some(input);
             self
         }
+        /// Units for duration, e.g. 'MONTHS'
         pub fn set_duration_units(
             mut self,
             input: std::option::Option<crate::model::OfferingDurationUnits>,
@@ -150,6 +155,7 @@ pub mod reservation {
             self.end = Some(input.into());
             self
         }
+        /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
         pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end = input;
             self
@@ -159,6 +165,7 @@ pub mod reservation {
             self.fixed_price = Some(input);
             self
         }
+        /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
         pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
             self.fixed_price = input;
             self
@@ -168,6 +175,7 @@ pub mod reservation {
             self.name = Some(input.into());
             self
         }
+        /// User specified reservation name
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -177,6 +185,7 @@ pub mod reservation {
             self.offering_description = Some(input.into());
             self
         }
+        /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
         pub fn set_offering_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -189,6 +198,7 @@ pub mod reservation {
             self.offering_id = Some(input.into());
             self
         }
+        /// Unique offering ID, e.g. '87654321'
         pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.offering_id = input;
             self
@@ -198,6 +208,7 @@ pub mod reservation {
             self.offering_type = Some(input);
             self
         }
+        /// Offering type, e.g. 'NO_UPFRONT'
         pub fn set_offering_type(
             mut self,
             input: std::option::Option<crate::model::OfferingType>,
@@ -210,6 +221,7 @@ pub mod reservation {
             self.region = Some(input.into());
             self
         }
+        /// AWS region, e.g. 'us-west-2'
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -219,6 +231,7 @@ pub mod reservation {
             self.reservation_id = Some(input.into());
             self
         }
+        /// Unique reservation ID, e.g. '1234567'
         pub fn set_reservation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -234,6 +247,7 @@ pub mod reservation {
             self.resource_specification = Some(input);
             self
         }
+        /// Resource configuration details
         pub fn set_resource_specification(
             mut self,
             input: std::option::Option<crate::model::ReservationResourceSpecification>,
@@ -246,6 +260,7 @@ pub mod reservation {
             self.start = Some(input.into());
             self
         }
+        /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
         pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start = input;
             self
@@ -255,6 +270,7 @@ pub mod reservation {
             self.state = Some(input);
             self
         }
+        /// Current state of reservation, e.g. 'ACTIVE'
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ReservationState>,
@@ -262,6 +278,11 @@ pub mod reservation {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// A collection of key-value pairs
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -272,6 +293,7 @@ pub mod reservation {
             self.tags = Some(hash_map);
             self
         }
+        /// A collection of key-value pairs
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -286,6 +308,7 @@ pub mod reservation {
             self.usage_price = Some(input);
             self
         }
+        /// Recurring usage charge for each reserved resource, e.g. '157.0'
         pub fn set_usage_price(mut self, input: std::option::Option<f64>) -> Self {
             self.usage_price = input;
             self
@@ -334,9 +357,13 @@ impl Reservation {
     std::hash::Hash,
 )]
 pub enum ReservationState {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Canceled,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Expired,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -360,6 +387,7 @@ impl std::str::FromStr for ReservationState {
     }
 }
 impl ReservationState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReservationState::Active => "ACTIVE",
@@ -369,6 +397,7 @@ impl ReservationState {
             ReservationState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "CANCELED", "DELETED", "EXPIRED"]
     }
@@ -436,6 +465,7 @@ pub mod reservation_resource_specification {
             self.channel_class = Some(input);
             self
         }
+        /// Channel class, e.g. 'STANDARD'
         pub fn set_channel_class(
             mut self,
             input: std::option::Option<crate::model::ChannelClass>,
@@ -448,6 +478,7 @@ pub mod reservation_resource_specification {
             self.codec = Some(input);
             self
         }
+        /// Codec, e.g. 'AVC'
         pub fn set_codec(
             mut self,
             input: std::option::Option<crate::model::ReservationCodec>,
@@ -460,6 +491,7 @@ pub mod reservation_resource_specification {
             self.maximum_bitrate = Some(input);
             self
         }
+        /// Maximum bitrate, e.g. 'MAX_20_MBPS'
         pub fn set_maximum_bitrate(
             mut self,
             input: std::option::Option<crate::model::ReservationMaximumBitrate>,
@@ -475,6 +507,7 @@ pub mod reservation_resource_specification {
             self.maximum_framerate = Some(input);
             self
         }
+        /// Maximum framerate, e.g. 'MAX_30_FPS' (Outputs only)
         pub fn set_maximum_framerate(
             mut self,
             input: std::option::Option<crate::model::ReservationMaximumFramerate>,
@@ -487,6 +520,7 @@ pub mod reservation_resource_specification {
             self.resolution = Some(input);
             self
         }
+        /// Resolution, e.g. 'HD'
         pub fn set_resolution(
             mut self,
             input: std::option::Option<crate::model::ReservationResolution>,
@@ -499,6 +533,7 @@ pub mod reservation_resource_specification {
             self.resource_type = Some(input);
             self
         }
+        /// Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ReservationResourceType>,
@@ -511,6 +546,7 @@ pub mod reservation_resource_specification {
             self.special_feature = Some(input);
             self
         }
+        /// Special feature, e.g. 'AUDIO_NORMALIZATION' (Channels only)
         pub fn set_special_feature(
             mut self,
             input: std::option::Option<crate::model::ReservationSpecialFeature>,
@@ -523,6 +559,7 @@ pub mod reservation_resource_specification {
             self.video_quality = Some(input);
             self
         }
+        /// Video quality, e.g. 'STANDARD' (Outputs only)
         pub fn set_video_quality(
             mut self,
             input: std::option::Option<crate::model::ReservationVideoQuality>,
@@ -564,8 +601,11 @@ impl ReservationResourceSpecification {
     std::hash::Hash,
 )]
 pub enum ReservationVideoQuality {
+    #[allow(missing_docs)] // documentation missing in model
     Enhanced,
+    #[allow(missing_docs)] // documentation missing in model
     Premium,
+    #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -588,6 +628,7 @@ impl std::str::FromStr for ReservationVideoQuality {
     }
 }
 impl ReservationVideoQuality {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReservationVideoQuality::Enhanced => "ENHANCED",
@@ -596,6 +637,7 @@ impl ReservationVideoQuality {
             ReservationVideoQuality::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ENHANCED", "PREMIUM", "STANDARD"]
     }
@@ -618,9 +660,13 @@ impl AsRef<str> for ReservationVideoQuality {
     std::hash::Hash,
 )]
 pub enum ReservationSpecialFeature {
+    #[allow(missing_docs)] // documentation missing in model
     AdvancedAudio,
+    #[allow(missing_docs)] // documentation missing in model
     AudioNormalization,
+    #[allow(missing_docs)] // documentation missing in model
     Mghd,
+    #[allow(missing_docs)] // documentation missing in model
     Mguhd,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -644,6 +690,7 @@ impl std::str::FromStr for ReservationSpecialFeature {
     }
 }
 impl ReservationSpecialFeature {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReservationSpecialFeature::AdvancedAudio => "ADVANCED_AUDIO",
@@ -653,6 +700,7 @@ impl ReservationSpecialFeature {
             ReservationSpecialFeature::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ADVANCED_AUDIO", "AUDIO_NORMALIZATION", "MGHD", "MGUHD"]
     }
@@ -675,9 +723,13 @@ impl AsRef<str> for ReservationSpecialFeature {
     std::hash::Hash,
 )]
 pub enum ReservationResourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Channel,
+    #[allow(missing_docs)] // documentation missing in model
     Input,
+    #[allow(missing_docs)] // documentation missing in model
     Multiplex,
+    #[allow(missing_docs)] // documentation missing in model
     Output,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -701,6 +753,7 @@ impl std::str::FromStr for ReservationResourceType {
     }
 }
 impl ReservationResourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReservationResourceType::Channel => "CHANNEL",
@@ -710,6 +763,7 @@ impl ReservationResourceType {
             ReservationResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CHANNEL", "INPUT", "MULTIPLEX", "OUTPUT"]
     }
@@ -732,9 +786,13 @@ impl AsRef<str> for ReservationResourceType {
     std::hash::Hash,
 )]
 pub enum ReservationResolution {
+    #[allow(missing_docs)] // documentation missing in model
     Fhd,
+    #[allow(missing_docs)] // documentation missing in model
     Hd,
+    #[allow(missing_docs)] // documentation missing in model
     Sd,
+    #[allow(missing_docs)] // documentation missing in model
     Uhd,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -758,6 +816,7 @@ impl std::str::FromStr for ReservationResolution {
     }
 }
 impl ReservationResolution {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReservationResolution::Fhd => "FHD",
@@ -767,6 +826,7 @@ impl ReservationResolution {
             ReservationResolution::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FHD", "HD", "SD", "UHD"]
     }
@@ -789,7 +849,9 @@ impl AsRef<str> for ReservationResolution {
     std::hash::Hash,
 )]
 pub enum ReservationMaximumFramerate {
+    #[allow(missing_docs)] // documentation missing in model
     Max30Fps,
+    #[allow(missing_docs)] // documentation missing in model
     Max60Fps,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -811,6 +873,7 @@ impl std::str::FromStr for ReservationMaximumFramerate {
     }
 }
 impl ReservationMaximumFramerate {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReservationMaximumFramerate::Max30Fps => "MAX_30_FPS",
@@ -818,6 +881,7 @@ impl ReservationMaximumFramerate {
             ReservationMaximumFramerate::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MAX_30_FPS", "MAX_60_FPS"]
     }
@@ -840,8 +904,11 @@ impl AsRef<str> for ReservationMaximumFramerate {
     std::hash::Hash,
 )]
 pub enum ReservationMaximumBitrate {
+    #[allow(missing_docs)] // documentation missing in model
     Max10Mbps,
+    #[allow(missing_docs)] // documentation missing in model
     Max20Mbps,
+    #[allow(missing_docs)] // documentation missing in model
     Max50Mbps,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -864,6 +931,7 @@ impl std::str::FromStr for ReservationMaximumBitrate {
     }
 }
 impl ReservationMaximumBitrate {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReservationMaximumBitrate::Max10Mbps => "MAX_10_MBPS",
@@ -872,6 +940,7 @@ impl ReservationMaximumBitrate {
             ReservationMaximumBitrate::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MAX_10_MBPS", "MAX_20_MBPS", "MAX_50_MBPS"]
     }
@@ -894,10 +963,15 @@ impl AsRef<str> for ReservationMaximumBitrate {
     std::hash::Hash,
 )]
 pub enum ReservationCodec {
+    #[allow(missing_docs)] // documentation missing in model
     Audio,
+    #[allow(missing_docs)] // documentation missing in model
     Avc,
+    #[allow(missing_docs)] // documentation missing in model
     Hevc,
+    #[allow(missing_docs)] // documentation missing in model
     Link,
+    #[allow(missing_docs)] // documentation missing in model
     Mpeg2,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -922,6 +996,7 @@ impl std::str::FromStr for ReservationCodec {
     }
 }
 impl ReservationCodec {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReservationCodec::Audio => "AUDIO",
@@ -932,6 +1007,7 @@ impl ReservationCodec {
             ReservationCodec::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUDIO", "AVC", "HEVC", "LINK", "MPEG2"]
     }
@@ -954,7 +1030,9 @@ impl AsRef<str> for ReservationCodec {
     std::hash::Hash,
 )]
 pub enum ChannelClass {
+    #[allow(missing_docs)] // documentation missing in model
     SinglePipeline,
+    #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -976,6 +1054,7 @@ impl std::str::FromStr for ChannelClass {
     }
 }
 impl ChannelClass {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChannelClass::SinglePipeline => "SINGLE_PIPELINE",
@@ -983,6 +1062,7 @@ impl ChannelClass {
             ChannelClass::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SINGLE_PIPELINE", "STANDARD"]
     }
@@ -1005,6 +1085,7 @@ impl AsRef<str> for ChannelClass {
     std::hash::Hash,
 )]
 pub enum OfferingType {
+    #[allow(missing_docs)] // documentation missing in model
     NoUpfront,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1025,12 +1106,14 @@ impl std::str::FromStr for OfferingType {
     }
 }
 impl OfferingType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OfferingType::NoUpfront => "NO_UPFRONT",
             OfferingType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NO_UPFRONT"]
     }
@@ -1053,6 +1136,7 @@ impl AsRef<str> for OfferingType {
     std::hash::Hash,
 )]
 pub enum OfferingDurationUnits {
+    #[allow(missing_docs)] // documentation missing in model
     Months,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1073,12 +1157,14 @@ impl std::str::FromStr for OfferingDurationUnits {
     }
 }
 impl OfferingDurationUnits {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OfferingDurationUnits::Months => "MONTHS",
             OfferingDurationUnits::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MONTHS"]
     }
@@ -1121,6 +1207,7 @@ pub mod validation_error {
             self.element_path = Some(input.into());
             self
         }
+        /// Path to the source of the error.
         pub fn set_element_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.element_path = input;
             self
@@ -1130,6 +1217,7 @@ pub mod validation_error {
             self.error_message = Some(input.into());
             self
         }
+        /// The error message.
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1205,6 +1293,7 @@ pub mod multiplex_program {
             self.channel_id = Some(input.into());
             self
         }
+        /// The MediaLive channel associated with the program.
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_id = input;
             self
@@ -1217,6 +1306,7 @@ pub mod multiplex_program {
             self.multiplex_program_settings = Some(input);
             self
         }
+        /// The settings for this multiplex program.
         pub fn set_multiplex_program_settings(
             mut self,
             input: std::option::Option<crate::model::MultiplexProgramSettings>,
@@ -1232,6 +1322,7 @@ pub mod multiplex_program {
             self.packet_identifiers_map = Some(input);
             self
         }
+        /// The packet identifier map for this multiplex program.
         pub fn set_packet_identifiers_map(
             mut self,
             input: std::option::Option<crate::model::MultiplexProgramPacketIdentifiersMap>,
@@ -1239,6 +1330,11 @@ pub mod multiplex_program {
             self.packet_identifiers_map = input;
             self
         }
+        /// Appends an item to `pipeline_details`.
+        ///
+        /// To override the contents of this collection use [`set_pipeline_details`](Self::set_pipeline_details).
+        ///
+        /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
         pub fn pipeline_details(
             mut self,
             input: impl Into<crate::model::MultiplexProgramPipelineDetail>,
@@ -1248,6 +1344,7 @@ pub mod multiplex_program {
             self.pipeline_details = Some(v);
             self
         }
+        /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
         pub fn set_pipeline_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MultiplexProgramPipelineDetail>>,
@@ -1260,6 +1357,7 @@ pub mod multiplex_program {
             self.program_name = Some(input.into());
             self
         }
+        /// The name of the multiplex program.
         pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.program_name = input;
             self
@@ -1315,6 +1413,7 @@ pub mod multiplex_program_pipeline_detail {
             self.active_channel_pipeline = Some(input.into());
             self
         }
+        /// Identifies the channel pipeline that is currently active for the pipeline (identified by PipelineId) in the multiplex.
         pub fn set_active_channel_pipeline(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1327,6 +1426,7 @@ pub mod multiplex_program_pipeline_detail {
             self.pipeline_id = Some(input.into());
             self
         }
+        /// Identifies a specific pipeline in the multiplex.
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pipeline_id = input;
             self
@@ -1418,22 +1518,34 @@ pub mod multiplex_program_packet_identifiers_map {
         pub(crate) video_pid: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `audio_pids`.
+        ///
+        /// To override the contents of this collection use [`set_audio_pids`](Self::set_audio_pids).
+        ///
+        /// Placeholder documentation for __listOf__integer
         pub fn audio_pids(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.audio_pids.unwrap_or_default();
             v.push(input.into());
             self.audio_pids = Some(v);
             self
         }
+        /// Placeholder documentation for __listOf__integer
         pub fn set_audio_pids(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
             self.audio_pids = input;
             self
         }
+        /// Appends an item to `dvb_sub_pids`.
+        ///
+        /// To override the contents of this collection use [`set_dvb_sub_pids`](Self::set_dvb_sub_pids).
+        ///
+        /// Placeholder documentation for __listOf__integer
         pub fn dvb_sub_pids(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.dvb_sub_pids.unwrap_or_default();
             v.push(input.into());
             self.dvb_sub_pids = Some(v);
             self
         }
+        /// Placeholder documentation for __listOf__integer
         pub fn set_dvb_sub_pids(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
             self.dvb_sub_pids = input;
             self
@@ -1443,6 +1555,7 @@ pub mod multiplex_program_packet_identifiers_map {
             self.dvb_teletext_pid = Some(input);
             self
         }
+        /// Placeholder documentation for __integer
         pub fn set_dvb_teletext_pid(mut self, input: std::option::Option<i32>) -> Self {
             self.dvb_teletext_pid = input;
             self
@@ -1452,6 +1565,7 @@ pub mod multiplex_program_packet_identifiers_map {
             self.etv_platform_pid = Some(input);
             self
         }
+        /// Placeholder documentation for __integer
         pub fn set_etv_platform_pid(mut self, input: std::option::Option<i32>) -> Self {
             self.etv_platform_pid = input;
             self
@@ -1461,16 +1575,23 @@ pub mod multiplex_program_packet_identifiers_map {
             self.etv_signal_pid = Some(input);
             self
         }
+        /// Placeholder documentation for __integer
         pub fn set_etv_signal_pid(mut self, input: std::option::Option<i32>) -> Self {
             self.etv_signal_pid = input;
             self
         }
+        /// Appends an item to `klv_data_pids`.
+        ///
+        /// To override the contents of this collection use [`set_klv_data_pids`](Self::set_klv_data_pids).
+        ///
+        /// Placeholder documentation for __listOf__integer
         pub fn klv_data_pids(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.klv_data_pids.unwrap_or_default();
             v.push(input.into());
             self.klv_data_pids = Some(v);
             self
         }
+        /// Placeholder documentation for __listOf__integer
         pub fn set_klv_data_pids(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
             self.klv_data_pids = input;
             self
@@ -1480,6 +1601,7 @@ pub mod multiplex_program_packet_identifiers_map {
             self.pcr_pid = Some(input);
             self
         }
+        /// Placeholder documentation for __integer
         pub fn set_pcr_pid(mut self, input: std::option::Option<i32>) -> Self {
             self.pcr_pid = input;
             self
@@ -1489,6 +1611,7 @@ pub mod multiplex_program_packet_identifiers_map {
             self.pmt_pid = Some(input);
             self
         }
+        /// Placeholder documentation for __integer
         pub fn set_pmt_pid(mut self, input: std::option::Option<i32>) -> Self {
             self.pmt_pid = input;
             self
@@ -1498,16 +1621,23 @@ pub mod multiplex_program_packet_identifiers_map {
             self.private_metadata_pid = Some(input);
             self
         }
+        /// Placeholder documentation for __integer
         pub fn set_private_metadata_pid(mut self, input: std::option::Option<i32>) -> Self {
             self.private_metadata_pid = input;
             self
         }
+        /// Appends an item to `scte27_pids`.
+        ///
+        /// To override the contents of this collection use [`set_scte27_pids`](Self::set_scte27_pids).
+        ///
+        /// Placeholder documentation for __listOf__integer
         pub fn scte27_pids(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.scte27_pids.unwrap_or_default();
             v.push(input.into());
             self.scte27_pids = Some(v);
             self
         }
+        /// Placeholder documentation for __listOf__integer
         pub fn set_scte27_pids(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
             self.scte27_pids = input;
             self
@@ -1517,6 +1647,7 @@ pub mod multiplex_program_packet_identifiers_map {
             self.scte35_pid = Some(input);
             self
         }
+        /// Placeholder documentation for __integer
         pub fn set_scte35_pid(mut self, input: std::option::Option<i32>) -> Self {
             self.scte35_pid = input;
             self
@@ -1526,6 +1657,7 @@ pub mod multiplex_program_packet_identifiers_map {
             self.timed_metadata_pid = Some(input);
             self
         }
+        /// Placeholder documentation for __integer
         pub fn set_timed_metadata_pid(mut self, input: std::option::Option<i32>) -> Self {
             self.timed_metadata_pid = input;
             self
@@ -1535,6 +1667,7 @@ pub mod multiplex_program_packet_identifiers_map {
             self.video_pid = Some(input);
             self
         }
+        /// Placeholder documentation for __integer
         pub fn set_video_pid(mut self, input: std::option::Option<i32>) -> Self {
             self.video_pid = input;
             self
@@ -1614,6 +1747,7 @@ pub mod multiplex_program_settings {
             self.preferred_channel_pipeline = Some(input);
             self
         }
+        /// Indicates which pipeline is preferred by the multiplex for program ingest.
         pub fn set_preferred_channel_pipeline(
             mut self,
             input: std::option::Option<crate::model::PreferredChannelPipeline>,
@@ -1626,6 +1760,7 @@ pub mod multiplex_program_settings {
             self.program_number = Some(input);
             self
         }
+        /// Unique program number.
         pub fn set_program_number(mut self, input: std::option::Option<i32>) -> Self {
             self.program_number = input;
             self
@@ -1638,6 +1773,7 @@ pub mod multiplex_program_settings {
             self.service_descriptor = Some(input);
             self
         }
+        /// Transport stream service descriptor configuration for the Multiplex program.
         pub fn set_service_descriptor(
             mut self,
             input: std::option::Option<crate::model::MultiplexProgramServiceDescriptor>,
@@ -1650,6 +1786,7 @@ pub mod multiplex_program_settings {
             self.video_settings = Some(input);
             self
         }
+        /// Program video settings configuration.
         pub fn set_video_settings(
             mut self,
             input: std::option::Option<crate::model::MultiplexVideoSettings>,
@@ -1711,6 +1848,8 @@ pub mod multiplex_video_settings {
             self.constant_bitrate = Some(input);
             self
         }
+        /// The constant bitrate configuration for the video encode.
+        /// When this field is defined, StatmuxSettings must be undefined.
         pub fn set_constant_bitrate(mut self, input: std::option::Option<i32>) -> Self {
             self.constant_bitrate = input;
             self
@@ -1724,6 +1863,8 @@ pub mod multiplex_video_settings {
             self.statmux_settings = Some(input);
             self
         }
+        /// Statmux rate control settings.
+        /// When this field is defined, ConstantBitrate must be undefined.
         pub fn set_statmux_settings(
             mut self,
             input: std::option::Option<crate::model::MultiplexStatmuxVideoSettings>,
@@ -1783,6 +1924,7 @@ pub mod multiplex_statmux_video_settings {
             self.maximum_bitrate = Some(input);
             self
         }
+        /// Maximum statmux bitrate.
         pub fn set_maximum_bitrate(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_bitrate = input;
             self
@@ -1792,6 +1934,7 @@ pub mod multiplex_statmux_video_settings {
             self.minimum_bitrate = Some(input);
             self
         }
+        /// Minimum statmux bitrate.
         pub fn set_minimum_bitrate(mut self, input: std::option::Option<i32>) -> Self {
             self.minimum_bitrate = input;
             self
@@ -1801,6 +1944,7 @@ pub mod multiplex_statmux_video_settings {
             self.priority = Some(input);
             self
         }
+        /// The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others.  Channels that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels in the multiplex with lower priority.
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
@@ -1854,6 +1998,7 @@ pub mod multiplex_program_service_descriptor {
             self.provider_name = Some(input.into());
             self
         }
+        /// Name of the provider.
         pub fn set_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1866,6 +2011,7 @@ pub mod multiplex_program_service_descriptor {
             self.service_name = Some(input.into());
             self
         }
+        /// Name of the service.
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -1902,8 +2048,11 @@ impl MultiplexProgramServiceDescriptor {
     std::hash::Hash,
 )]
 pub enum PreferredChannelPipeline {
+    #[allow(missing_docs)] // documentation missing in model
     CurrentlyActive,
+    #[allow(missing_docs)] // documentation missing in model
     Pipeline0,
+    #[allow(missing_docs)] // documentation missing in model
     Pipeline1,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1926,6 +2075,7 @@ impl std::str::FromStr for PreferredChannelPipeline {
     }
 }
 impl PreferredChannelPipeline {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PreferredChannelPipeline::CurrentlyActive => "CURRENTLY_ACTIVE",
@@ -1934,6 +2084,7 @@ impl PreferredChannelPipeline {
             PreferredChannelPipeline::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CURRENTLY_ACTIVE", "PIPELINE_0", "PIPELINE_1"]
     }
@@ -2012,16 +2163,23 @@ pub mod multiplex {
             self.arn = Some(input.into());
             self
         }
+        /// The unique arn of the multiplex.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
+        /// Appends an item to `availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
+        ///
+        /// A list of availability zones for the multiplex.
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
+        /// A list of availability zones for the multiplex.
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2029,6 +2187,11 @@ pub mod multiplex {
             self.availability_zones = input;
             self
         }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// A list of the multiplex output destinations.
         pub fn destinations(
             mut self,
             input: impl Into<crate::model::MultiplexOutputDestination>,
@@ -2038,6 +2201,7 @@ pub mod multiplex {
             self.destinations = Some(v);
             self
         }
+        /// A list of the multiplex output destinations.
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
@@ -2050,6 +2214,7 @@ pub mod multiplex {
             self.id = Some(input.into());
             self
         }
+        /// The unique id of the multiplex.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2059,6 +2224,7 @@ pub mod multiplex {
             self.multiplex_settings = Some(input);
             self
         }
+        /// Configuration for a multiplex event.
         pub fn set_multiplex_settings(
             mut self,
             input: std::option::Option<crate::model::MultiplexSettings>,
@@ -2071,6 +2237,7 @@ pub mod multiplex {
             self.name = Some(input.into());
             self
         }
+        /// The name of the multiplex.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2080,6 +2247,7 @@ pub mod multiplex {
             self.pipelines_running_count = Some(input);
             self
         }
+        /// The number of currently healthy pipelines.
         pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
             self.pipelines_running_count = input;
             self
@@ -2089,6 +2257,7 @@ pub mod multiplex {
             self.program_count = Some(input);
             self
         }
+        /// The number of programs in the multiplex.
         pub fn set_program_count(mut self, input: std::option::Option<i32>) -> Self {
             self.program_count = input;
             self
@@ -2098,6 +2267,7 @@ pub mod multiplex {
             self.state = Some(input);
             self
         }
+        /// The current state of the multiplex.
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::MultiplexState>,
@@ -2105,6 +2275,11 @@ pub mod multiplex {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// A collection of key-value pairs.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2115,6 +2290,7 @@ pub mod multiplex {
             self.tags = Some(hash_map);
             self
         }
+        /// A collection of key-value pairs.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2160,14 +2336,23 @@ impl Multiplex {
     std::hash::Hash,
 )]
 pub enum MultiplexState {
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Idle,
+    #[allow(missing_docs)] // documentation missing in model
     Recovering,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Starting,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2196,6 +2381,7 @@ impl std::str::FromStr for MultiplexState {
     }
 }
 impl MultiplexState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MultiplexState::CreateFailed => "CREATE_FAILED",
@@ -2210,6 +2396,7 @@ impl MultiplexState {
             MultiplexState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -2276,6 +2463,7 @@ pub mod multiplex_settings {
             self.maximum_video_buffer_delay_milliseconds = Some(input);
             self
         }
+        /// Maximum video buffer delay in milliseconds.
         pub fn set_maximum_video_buffer_delay_milliseconds(
             mut self,
             input: std::option::Option<i32>,
@@ -2288,6 +2476,7 @@ pub mod multiplex_settings {
             self.transport_stream_bitrate = Some(input);
             self
         }
+        /// Transport stream bit rate.
         pub fn set_transport_stream_bitrate(mut self, input: std::option::Option<i32>) -> Self {
             self.transport_stream_bitrate = input;
             self
@@ -2297,6 +2486,7 @@ pub mod multiplex_settings {
             self.transport_stream_id = Some(input);
             self
         }
+        /// Transport stream ID.
         pub fn set_transport_stream_id(mut self, input: std::option::Option<i32>) -> Self {
             self.transport_stream_id = input;
             self
@@ -2306,6 +2496,7 @@ pub mod multiplex_settings {
             self.transport_stream_reserved_bitrate = Some(input);
             self
         }
+        /// Transport stream reserved bit rate.
         pub fn set_transport_stream_reserved_bitrate(
             mut self,
             input: std::option::Option<i32>,
@@ -2368,6 +2559,7 @@ pub mod multiplex_output_destination {
             self.media_connect_settings = Some(input);
             self
         }
+        /// Multiplex MediaConnect output destination settings.
         pub fn set_media_connect_settings(
             mut self,
             input: std::option::Option<
@@ -2420,6 +2612,7 @@ pub mod multiplex_media_connect_output_destination_settings {
             self.entitlement_arn = Some(input.into());
             self
         }
+        /// The MediaConnect entitlement ARN available as a Flow source.
         pub fn set_entitlement_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2494,6 +2687,7 @@ pub mod input_security_group {
             self.arn = Some(input.into());
             self
         }
+        /// Unique ARN of Input Security Group
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2503,16 +2697,23 @@ pub mod input_security_group {
             self.id = Some(input.into());
             self
         }
+        /// The Id of the Input Security Group
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// The list of inputs currently using this Input Security Group.
         pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.inputs.unwrap_or_default();
             v.push(input.into());
             self.inputs = Some(v);
             self
         }
+        /// The list of inputs currently using this Input Security Group.
         pub fn set_inputs(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2525,6 +2726,7 @@ pub mod input_security_group {
             self.state = Some(input);
             self
         }
+        /// The current state of the Input Security Group.
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::InputSecurityGroupState>,
@@ -2532,6 +2734,11 @@ pub mod input_security_group {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// A collection of key-value pairs.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2542,6 +2749,7 @@ pub mod input_security_group {
             self.tags = Some(hash_map);
             self
         }
+        /// A collection of key-value pairs.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2551,6 +2759,11 @@ pub mod input_security_group {
             self.tags = input;
             self
         }
+        /// Appends an item to `whitelist_rules`.
+        ///
+        /// To override the contents of this collection use [`set_whitelist_rules`](Self::set_whitelist_rules).
+        ///
+        /// Whitelist rules and their sync status
         pub fn whitelist_rules(
             mut self,
             input: impl Into<crate::model::InputWhitelistRule>,
@@ -2560,6 +2773,7 @@ pub mod input_security_group {
             self.whitelist_rules = Some(v);
             self
         }
+        /// Whitelist rules and their sync status
         pub fn set_whitelist_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRule>>,
@@ -2615,6 +2829,7 @@ pub mod input_whitelist_rule {
             self.cidr = Some(input.into());
             self
         }
+        /// The IPv4 CIDR that's whitelisted.
         pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cidr = input;
             self
@@ -2644,9 +2859,13 @@ impl InputWhitelistRule {
     std::hash::Hash,
 )]
 pub enum InputSecurityGroupState {
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Idle,
+    #[allow(missing_docs)] // documentation missing in model
     InUse,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2670,6 +2889,7 @@ impl std::str::FromStr for InputSecurityGroupState {
     }
 }
 impl InputSecurityGroupState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputSecurityGroupState::Deleted => "DELETED",
@@ -2679,6 +2899,7 @@ impl InputSecurityGroupState {
             InputSecurityGroupState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DELETED", "IDLE", "IN_USE", "UPDATING"]
     }
@@ -2717,6 +2938,7 @@ pub mod input_whitelist_rule_cidr {
             self.cidr = Some(input.into());
             self
         }
+        /// The IPv4 CIDR to whitelist.
         pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cidr = input;
             self
@@ -2790,6 +3012,7 @@ pub mod input_device_uhd_settings {
             self.active_input = Some(input);
             self
         }
+        /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
         pub fn set_active_input(
             mut self,
             input: std::option::Option<crate::model::InputDeviceActiveInput>,
@@ -2802,6 +3025,7 @@ pub mod input_device_uhd_settings {
             self.configured_input = Some(input);
             self
         }
+        /// The source at the input device that is currently active. You can specify this source.
         pub fn set_configured_input(
             mut self,
             input: std::option::Option<crate::model::InputDeviceConfiguredInput>,
@@ -2814,6 +3038,7 @@ pub mod input_device_uhd_settings {
             self.device_state = Some(input);
             self
         }
+        /// The state of the input device.
         pub fn set_device_state(
             mut self,
             input: std::option::Option<crate::model::InputDeviceState>,
@@ -2826,6 +3051,7 @@ pub mod input_device_uhd_settings {
             self.framerate = Some(input);
             self
         }
+        /// The frame rate of the video source.
         pub fn set_framerate(mut self, input: std::option::Option<f64>) -> Self {
             self.framerate = input;
             self
@@ -2835,6 +3061,7 @@ pub mod input_device_uhd_settings {
             self.height = Some(input);
             self
         }
+        /// The height of the video source, in pixels.
         pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
             self.height = input;
             self
@@ -2844,6 +3071,7 @@ pub mod input_device_uhd_settings {
             self.max_bitrate = Some(input);
             self
         }
+        /// The current maximum bitrate for ingesting this source, in bits per second. You can specify this maximum.
         pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
             self.max_bitrate = input;
             self
@@ -2853,6 +3081,7 @@ pub mod input_device_uhd_settings {
             self.scan_type = Some(input);
             self
         }
+        /// The scan type of the video source.
         pub fn set_scan_type(
             mut self,
             input: std::option::Option<crate::model::InputDeviceScanType>,
@@ -2865,6 +3094,7 @@ pub mod input_device_uhd_settings {
             self.width = Some(input);
             self
         }
+        /// The width of the video source, in pixels.
         pub fn set_width(mut self, input: std::option::Option<i32>) -> Self {
             self.width = input;
             self
@@ -2903,7 +3133,9 @@ impl InputDeviceUhdSettings {
     std::hash::Hash,
 )]
 pub enum InputDeviceScanType {
+    #[allow(missing_docs)] // documentation missing in model
     Interlaced,
+    #[allow(missing_docs)] // documentation missing in model
     Progressive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2925,6 +3157,7 @@ impl std::str::FromStr for InputDeviceScanType {
     }
 }
 impl InputDeviceScanType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputDeviceScanType::Interlaced => "INTERLACED",
@@ -2932,6 +3165,7 @@ impl InputDeviceScanType {
             InputDeviceScanType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["INTERLACED", "PROGRESSIVE"]
     }
@@ -2954,7 +3188,9 @@ impl AsRef<str> for InputDeviceScanType {
     std::hash::Hash,
 )]
 pub enum InputDeviceState {
+    #[allow(missing_docs)] // documentation missing in model
     Idle,
+    #[allow(missing_docs)] // documentation missing in model
     Streaming,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2976,6 +3212,7 @@ impl std::str::FromStr for InputDeviceState {
     }
 }
 impl InputDeviceState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputDeviceState::Idle => "IDLE",
@@ -2983,6 +3220,7 @@ impl InputDeviceState {
             InputDeviceState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["IDLE", "STREAMING"]
     }
@@ -3005,8 +3243,11 @@ impl AsRef<str> for InputDeviceState {
     std::hash::Hash,
 )]
 pub enum InputDeviceConfiguredInput {
+    #[allow(missing_docs)] // documentation missing in model
     Auto,
+    #[allow(missing_docs)] // documentation missing in model
     Hdmi,
+    #[allow(missing_docs)] // documentation missing in model
     Sdi,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3029,6 +3270,7 @@ impl std::str::FromStr for InputDeviceConfiguredInput {
     }
 }
 impl InputDeviceConfiguredInput {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputDeviceConfiguredInput::Auto => "AUTO",
@@ -3037,6 +3279,7 @@ impl InputDeviceConfiguredInput {
             InputDeviceConfiguredInput::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUTO", "HDMI", "SDI"]
     }
@@ -3059,7 +3302,9 @@ impl AsRef<str> for InputDeviceConfiguredInput {
     std::hash::Hash,
 )]
 pub enum InputDeviceActiveInput {
+    #[allow(missing_docs)] // documentation missing in model
     Hdmi,
+    #[allow(missing_docs)] // documentation missing in model
     Sdi,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3081,6 +3326,7 @@ impl std::str::FromStr for InputDeviceActiveInput {
     }
 }
 impl InputDeviceActiveInput {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputDeviceActiveInput::Hdmi => "HDMI",
@@ -3088,6 +3334,7 @@ impl InputDeviceActiveInput {
             InputDeviceActiveInput::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HDMI", "SDI"]
     }
@@ -3110,6 +3357,7 @@ impl AsRef<str> for InputDeviceActiveInput {
     std::hash::Hash,
 )]
 pub enum InputDeviceType {
+    #[allow(missing_docs)] // documentation missing in model
     Hd,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3130,12 +3378,14 @@ impl std::str::FromStr for InputDeviceType {
     }
 }
 impl InputDeviceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputDeviceType::Hd => "HD",
             InputDeviceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HD"]
     }
@@ -3185,12 +3435,18 @@ pub mod input_device_network_settings {
         pub(crate) subnet_mask: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `dns_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_dns_addresses`](Self::set_dns_addresses).
+        ///
+        /// The DNS addresses of the input device.
         pub fn dns_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dns_addresses.unwrap_or_default();
             v.push(input.into());
             self.dns_addresses = Some(v);
             self
         }
+        /// The DNS addresses of the input device.
         pub fn set_dns_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3203,6 +3459,7 @@ pub mod input_device_network_settings {
             self.gateway = Some(input.into());
             self
         }
+        /// The network gateway IP address.
         pub fn set_gateway(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.gateway = input;
             self
@@ -3212,6 +3469,7 @@ pub mod input_device_network_settings {
             self.ip_address = Some(input.into());
             self
         }
+        /// The IP address of the input device.
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_address = input;
             self
@@ -3221,6 +3479,7 @@ pub mod input_device_network_settings {
             self.ip_scheme = Some(input);
             self
         }
+        /// Specifies whether the input device has been configured (outside of MediaLive) to use a dynamic IP address assignment (DHCP) or a static IP address.
         pub fn set_ip_scheme(
             mut self,
             input: std::option::Option<crate::model::InputDeviceIpScheme>,
@@ -3233,6 +3492,7 @@ pub mod input_device_network_settings {
             self.subnet_mask = Some(input.into());
             self
         }
+        /// The subnet mask of the input device.
         pub fn set_subnet_mask(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_mask = input;
             self
@@ -3268,7 +3528,9 @@ impl InputDeviceNetworkSettings {
     std::hash::Hash,
 )]
 pub enum InputDeviceIpScheme {
+    #[allow(missing_docs)] // documentation missing in model
     Dhcp,
+    #[allow(missing_docs)] // documentation missing in model
     Static,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3290,6 +3552,7 @@ impl std::str::FromStr for InputDeviceIpScheme {
     }
 }
 impl InputDeviceIpScheme {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputDeviceIpScheme::Dhcp => "DHCP",
@@ -3297,6 +3560,7 @@ impl InputDeviceIpScheme {
             InputDeviceIpScheme::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DHCP", "STATIC"]
     }
@@ -3363,6 +3627,7 @@ pub mod input_device_hd_settings {
             self.active_input = Some(input);
             self
         }
+        /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
         pub fn set_active_input(
             mut self,
             input: std::option::Option<crate::model::InputDeviceActiveInput>,
@@ -3375,6 +3640,7 @@ pub mod input_device_hd_settings {
             self.configured_input = Some(input);
             self
         }
+        /// The source at the input device that is currently active. You can specify this source.
         pub fn set_configured_input(
             mut self,
             input: std::option::Option<crate::model::InputDeviceConfiguredInput>,
@@ -3387,6 +3653,7 @@ pub mod input_device_hd_settings {
             self.device_state = Some(input);
             self
         }
+        /// The state of the input device.
         pub fn set_device_state(
             mut self,
             input: std::option::Option<crate::model::InputDeviceState>,
@@ -3399,6 +3666,7 @@ pub mod input_device_hd_settings {
             self.framerate = Some(input);
             self
         }
+        /// The frame rate of the video source.
         pub fn set_framerate(mut self, input: std::option::Option<f64>) -> Self {
             self.framerate = input;
             self
@@ -3408,6 +3676,7 @@ pub mod input_device_hd_settings {
             self.height = Some(input);
             self
         }
+        /// The height of the video source, in pixels.
         pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
             self.height = input;
             self
@@ -3417,6 +3686,7 @@ pub mod input_device_hd_settings {
             self.max_bitrate = Some(input);
             self
         }
+        /// The current maximum bitrate for ingesting this source, in bits per second. You can specify this maximum.
         pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
             self.max_bitrate = input;
             self
@@ -3426,6 +3696,7 @@ pub mod input_device_hd_settings {
             self.scan_type = Some(input);
             self
         }
+        /// The scan type of the video source.
         pub fn set_scan_type(
             mut self,
             input: std::option::Option<crate::model::InputDeviceScanType>,
@@ -3438,6 +3709,7 @@ pub mod input_device_hd_settings {
             self.width = Some(input);
             self
         }
+        /// The width of the video source, in pixels.
         pub fn set_width(mut self, input: std::option::Option<i32>) -> Self {
             self.width = input;
             self
@@ -3476,7 +3748,9 @@ impl InputDeviceHdSettings {
     std::hash::Hash,
 )]
 pub enum DeviceUpdateStatus {
+    #[allow(missing_docs)] // documentation missing in model
     NotUpToDate,
+    #[allow(missing_docs)] // documentation missing in model
     UpToDate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3498,6 +3772,7 @@ impl std::str::FromStr for DeviceUpdateStatus {
     }
 }
 impl DeviceUpdateStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeviceUpdateStatus::NotUpToDate => "NOT_UP_TO_DATE",
@@ -3505,6 +3780,7 @@ impl DeviceUpdateStatus {
             DeviceUpdateStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NOT_UP_TO_DATE", "UP_TO_DATE"]
     }
@@ -3527,7 +3803,9 @@ impl AsRef<str> for DeviceUpdateStatus {
     std::hash::Hash,
 )]
 pub enum DeviceSettingsSyncState {
+    #[allow(missing_docs)] // documentation missing in model
     Synced,
+    #[allow(missing_docs)] // documentation missing in model
     Syncing,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3549,6 +3827,7 @@ impl std::str::FromStr for DeviceSettingsSyncState {
     }
 }
 impl DeviceSettingsSyncState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeviceSettingsSyncState::Synced => "SYNCED",
@@ -3556,6 +3835,7 @@ impl DeviceSettingsSyncState {
             DeviceSettingsSyncState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SYNCED", "SYNCING"]
     }
@@ -3578,7 +3858,9 @@ impl AsRef<str> for DeviceSettingsSyncState {
     std::hash::Hash,
 )]
 pub enum InputDeviceConnectionState {
+    #[allow(missing_docs)] // documentation missing in model
     Connected,
+    #[allow(missing_docs)] // documentation missing in model
     Disconnected,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3600,6 +3882,7 @@ impl std::str::FromStr for InputDeviceConnectionState {
     }
 }
 impl InputDeviceConnectionState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputDeviceConnectionState::Connected => "CONNECTED",
@@ -3607,6 +3890,7 @@ impl InputDeviceConnectionState {
             InputDeviceConnectionState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONNECTED", "DISCONNECTED"]
     }
@@ -3649,6 +3933,7 @@ pub mod input_device_configurable_settings {
             self.configured_input = Some(input);
             self
         }
+        /// The input source that you want to use. If the device has a source connected to only one of its input ports, or if you don't care which source the device sends, specify Auto. If the device has sources connected to both its input ports, and you want to use a specific source, specify the source.
         pub fn set_configured_input(
             mut self,
             input: std::option::Option<crate::model::InputDeviceConfiguredInput>,
@@ -3661,6 +3946,7 @@ pub mod input_device_configurable_settings {
             self.max_bitrate = Some(input);
             self
         }
+        /// The maximum bitrate in bits per second. Set a value here to throttle the bitrate of the source video.
         pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
             self.max_bitrate = input;
             self
@@ -3776,16 +4062,23 @@ pub mod input {
             self.arn = Some(input.into());
             self
         }
+        /// The Unique ARN of the input (generated, immutable).
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
+        /// Appends an item to `attached_channels`.
+        ///
+        /// To override the contents of this collection use [`set_attached_channels`](Self::set_attached_channels).
+        ///
+        /// A list of channel IDs that that input is attached to (currently an input can only be attached to one channel).
         pub fn attached_channels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attached_channels.unwrap_or_default();
             v.push(input.into());
             self.attached_channels = Some(v);
             self
         }
+        /// A list of channel IDs that that input is attached to (currently an input can only be attached to one channel).
         pub fn set_attached_channels(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3793,12 +4086,18 @@ pub mod input {
             self.attached_channels = input;
             self
         }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// A list of the destinations of the input (PUSH-type).
         pub fn destinations(mut self, input: impl Into<crate::model::InputDestination>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input.into());
             self.destinations = Some(v);
             self
         }
+        /// A list of the destinations of the input (PUSH-type).
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputDestination>>,
@@ -3811,6 +4110,7 @@ pub mod input {
             self.id = Some(input.into());
             self
         }
+        /// The generated ID of the input (unique for user account, immutable).
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3821,6 +4121,8 @@ pub mod input {
             self.input_class = Some(input);
             self
         }
+        /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails.
+        /// SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also  SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
         pub fn set_input_class(
             mut self,
             input: std::option::Option<crate::model::InputClass>,
@@ -3828,6 +4130,11 @@ pub mod input {
             self.input_class = input;
             self
         }
+        /// Appends an item to `input_devices`.
+        ///
+        /// To override the contents of this collection use [`set_input_devices`](Self::set_input_devices).
+        ///
+        /// Settings for the input devices.
         pub fn input_devices(
             mut self,
             input: impl Into<crate::model::InputDeviceSettings>,
@@ -3837,6 +4144,7 @@ pub mod input {
             self.input_devices = Some(v);
             self
         }
+        /// Settings for the input devices.
         pub fn set_input_devices(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputDeviceSettings>>,
@@ -3844,12 +4152,18 @@ pub mod input {
             self.input_devices = input;
             self
         }
+        /// Appends an item to `input_partner_ids`.
+        ///
+        /// To override the contents of this collection use [`set_input_partner_ids`](Self::set_input_partner_ids).
+        ///
+        /// A list of IDs for all Inputs which are partners of this one.
         pub fn input_partner_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.input_partner_ids.unwrap_or_default();
             v.push(input.into());
             self.input_partner_ids = Some(v);
             self
         }
+        /// A list of IDs for all Inputs which are partners of this one.
         pub fn set_input_partner_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3863,6 +4177,8 @@ pub mod input {
             self.input_source_type = Some(input);
             self
         }
+        /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes
+        /// during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
         pub fn set_input_source_type(
             mut self,
             input: std::option::Option<crate::model::InputSourceType>,
@@ -3870,6 +4186,11 @@ pub mod input {
             self.input_source_type = input;
             self
         }
+        /// Appends an item to `media_connect_flows`.
+        ///
+        /// To override the contents of this collection use [`set_media_connect_flows`](Self::set_media_connect_flows).
+        ///
+        /// A list of MediaConnect Flows for this input.
         pub fn media_connect_flows(
             mut self,
             input: impl Into<crate::model::MediaConnectFlow>,
@@ -3879,6 +4200,7 @@ pub mod input {
             self.media_connect_flows = Some(v);
             self
         }
+        /// A list of MediaConnect Flows for this input.
         pub fn set_media_connect_flows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlow>>,
@@ -3891,6 +4213,7 @@ pub mod input {
             self.name = Some(input.into());
             self
         }
+        /// The user-assigned name (This is a mutable value).
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3900,16 +4223,23 @@ pub mod input {
             self.role_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
+        /// Appends an item to `security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+        ///
+        /// A list of IDs for all the Input Security Groups attached to the input.
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
             v.push(input.into());
             self.security_groups = Some(v);
             self
         }
+        /// A list of IDs for all the Input Security Groups attached to the input.
         pub fn set_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3917,12 +4247,18 @@ pub mod input {
             self.security_groups = input;
             self
         }
+        /// Appends an item to `sources`.
+        ///
+        /// To override the contents of this collection use [`set_sources`](Self::set_sources).
+        ///
+        /// A list of the sources of the input (PULL-type).
         pub fn sources(mut self, input: impl Into<crate::model::InputSource>) -> Self {
             let mut v = self.sources.unwrap_or_default();
             v.push(input.into());
             self.sources = Some(v);
             self
         }
+        /// A list of the sources of the input (PULL-type).
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputSource>>,
@@ -3935,10 +4271,16 @@ pub mod input {
             self.state = Some(input);
             self
         }
+        /// Placeholder documentation for InputState
         pub fn set_state(mut self, input: std::option::Option<crate::model::InputState>) -> Self {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// A collection of key-value pairs.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3949,6 +4291,7 @@ pub mod input {
             self.tags = Some(hash_map);
             self
         }
+        /// A collection of key-value pairs.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3963,6 +4306,7 @@ pub mod input {
             self.r#type = Some(input);
             self
         }
+        /// The different types of inputs that AWS Elemental MediaLive supports.
         pub fn set_type(mut self, input: std::option::Option<crate::model::InputType>) -> Self {
             self.r#type = input;
             self
@@ -4009,15 +4353,25 @@ impl Input {
     std::hash::Hash,
 )]
 pub enum InputType {
+    #[allow(missing_docs)] // documentation missing in model
     AwsCdi,
+    #[allow(missing_docs)] // documentation missing in model
     InputDevice,
+    #[allow(missing_docs)] // documentation missing in model
     Mediaconnect,
+    #[allow(missing_docs)] // documentation missing in model
     Mp4File,
+    #[allow(missing_docs)] // documentation missing in model
     RtmpPull,
+    #[allow(missing_docs)] // documentation missing in model
     RtmpPush,
+    #[allow(missing_docs)] // documentation missing in model
     RtpPush,
+    #[allow(missing_docs)] // documentation missing in model
     TsFile,
+    #[allow(missing_docs)] // documentation missing in model
     UdpPush,
+    #[allow(missing_docs)] // documentation missing in model
     UrlPull,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4047,6 +4401,7 @@ impl std::str::FromStr for InputType {
     }
 }
 impl InputType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputType::AwsCdi => "AWS_CDI",
@@ -4062,6 +4417,7 @@ impl InputType {
             InputType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AWS_CDI",
@@ -4095,10 +4451,15 @@ impl AsRef<str> for InputType {
     std::hash::Hash,
 )]
 pub enum InputState {
+    #[allow(missing_docs)] // documentation missing in model
     Attached,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Detached,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4123,6 +4484,7 @@ impl std::str::FromStr for InputState {
     }
 }
 impl InputState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputState::Attached => "ATTACHED",
@@ -4133,6 +4495,7 @@ impl InputState {
             InputState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ATTACHED", "CREATING", "DELETED", "DELETING", "DETACHED"]
     }
@@ -4180,6 +4543,7 @@ pub mod input_source {
             self.password_param = Some(input.into());
             self
         }
+        /// The key used to extract the password from EC2 Parameter store.
         pub fn set_password_param(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4193,6 +4557,8 @@ pub mod input_source {
             self.url = Some(input.into());
             self
         }
+        /// This represents the customer's source URL where stream is
+        /// pulled from.
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -4202,6 +4568,7 @@ pub mod input_source {
             self.username = Some(input.into());
             self
         }
+        /// The username for the input source.
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -4251,6 +4618,7 @@ pub mod media_connect_flow {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The unique ARN of the MediaConnect Flow being used as a source.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
@@ -4284,7 +4652,9 @@ impl MediaConnectFlow {
     std::hash::Hash,
 )]
 pub enum InputSourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Dynamic,
+    #[allow(missing_docs)] // documentation missing in model
     Static,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4306,6 +4676,7 @@ impl std::str::FromStr for InputSourceType {
     }
 }
 impl InputSourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputSourceType::Dynamic => "DYNAMIC",
@@ -4313,6 +4684,7 @@ impl InputSourceType {
             InputSourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DYNAMIC", "STATIC"]
     }
@@ -4351,6 +4723,7 @@ pub mod input_device_settings {
             self.id = Some(input.into());
             self
         }
+        /// The unique ID for the device.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4380,7 +4753,9 @@ impl InputDeviceSettings {
     std::hash::Hash,
 )]
 pub enum InputClass {
+    #[allow(missing_docs)] // documentation missing in model
     SinglePipeline,
+    #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4402,6 +4777,7 @@ impl std::str::FromStr for InputClass {
     }
 }
 impl InputClass {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputClass::SinglePipeline => "SINGLE_PIPELINE",
@@ -4409,6 +4785,7 @@ impl InputClass {
             InputClass::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SINGLE_PIPELINE", "STANDARD"]
     }
@@ -4462,6 +4839,8 @@ pub mod input_destination {
             self.ip = Some(input.into());
             self
         }
+        /// The system-generated static IP address of endpoint.
+        /// It remains fixed for the lifetime of the input.
         pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip = input;
             self
@@ -4471,6 +4850,7 @@ pub mod input_destination {
             self.port = Some(input.into());
             self
         }
+        /// The port number for the input.
         pub fn set_port(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.port = input;
             self
@@ -4481,6 +4861,8 @@ pub mod input_destination {
             self.url = Some(input.into());
             self
         }
+        /// This represents the endpoint that the customer stream will be
+        /// pushed to.
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -4490,6 +4872,7 @@ pub mod input_destination {
             self.vpc = Some(input);
             self
         }
+        /// The properties for a VPC type input destination.
         pub fn set_vpc(
             mut self,
             input: std::option::Option<crate::model::InputDestinationVpc>,
@@ -4547,6 +4930,7 @@ pub mod input_destination_vpc {
             self.availability_zone = Some(input.into());
             self
         }
+        /// The availability zone of the Input destination.
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4559,6 +4943,7 @@ pub mod input_destination_vpc {
             self.network_interface_id = Some(input.into());
             self
         }
+        /// The network interface ID of the Input destination in the VPC.
         pub fn set_network_interface_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4619,6 +5004,7 @@ pub mod input_source_request {
             self.password_param = Some(input.into());
             self
         }
+        /// The key used to extract the password from EC2 Parameter store.
         pub fn set_password_param(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4632,6 +5018,8 @@ pub mod input_source_request {
             self.url = Some(input.into());
             self
         }
+        /// This represents the customer's source URL where stream is
+        /// pulled from.
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -4641,6 +5029,7 @@ pub mod input_source_request {
             self.username = Some(input.into());
             self
         }
+        /// The username for the input source.
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -4690,6 +5079,7 @@ pub mod media_connect_flow_request {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The ARN of the MediaConnect Flow that you want to use as a source.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
@@ -4737,6 +5127,7 @@ pub mod input_device_request {
             self.id = Some(input.into());
             self
         }
+        /// The unique ID for the device.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4784,6 +5175,8 @@ pub mod input_destination_request {
             self.stream_name = Some(input.into());
             self
         }
+        /// A unique name for the location the RTMP stream is being pushed
+        /// to.
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -4905,6 +5298,7 @@ pub mod channel {
             self.arn = Some(input.into());
             self
         }
+        /// The unique arn of the channel.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -4917,6 +5311,7 @@ pub mod channel {
             self.cdi_input_specification = Some(input);
             self
         }
+        /// Specification of CDI inputs for this channel
         pub fn set_cdi_input_specification(
             mut self,
             input: std::option::Option<crate::model::CdiInputSpecification>,
@@ -4929,6 +5324,7 @@ pub mod channel {
             self.channel_class = Some(input);
             self
         }
+        /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
         pub fn set_channel_class(
             mut self,
             input: std::option::Option<crate::model::ChannelClass>,
@@ -4936,12 +5332,22 @@ pub mod channel {
             self.channel_class = input;
             self
         }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// A list of destinations of the channel. For UDP outputs, there is one
+        /// destination per output. For other types (HLS, for example), there is
+        /// one destination per packager.
         pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input.into());
             self.destinations = Some(v);
             self
         }
+        /// A list of destinations of the channel. For UDP outputs, there is one
+        /// destination per output. For other types (HLS, for example), there is
+        /// one destination per packager.
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
@@ -4949,6 +5355,11 @@ pub mod channel {
             self.destinations = input;
             self
         }
+        /// Appends an item to `egress_endpoints`.
+        ///
+        /// To override the contents of this collection use [`set_egress_endpoints`](Self::set_egress_endpoints).
+        ///
+        /// The endpoints where outgoing connections initiate from
         pub fn egress_endpoints(
             mut self,
             input: impl Into<crate::model::ChannelEgressEndpoint>,
@@ -4958,6 +5369,7 @@ pub mod channel {
             self.egress_endpoints = Some(v);
             self
         }
+        /// The endpoints where outgoing connections initiate from
         pub fn set_egress_endpoints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
@@ -4970,6 +5382,7 @@ pub mod channel {
             self.encoder_settings = Some(input);
             self
         }
+        /// Encoder Settings
         pub fn set_encoder_settings(
             mut self,
             input: std::option::Option<crate::model::EncoderSettings>,
@@ -4982,10 +5395,16 @@ pub mod channel {
             self.id = Some(input.into());
             self
         }
+        /// The unique id of the channel.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
+        /// Appends an item to `input_attachments`.
+        ///
+        /// To override the contents of this collection use [`set_input_attachments`](Self::set_input_attachments).
+        ///
+        /// List of input attachments for channel.
         pub fn input_attachments(
             mut self,
             input: impl Into<crate::model::InputAttachment>,
@@ -4995,6 +5414,7 @@ pub mod channel {
             self.input_attachments = Some(v);
             self
         }
+        /// List of input attachments for channel.
         pub fn set_input_attachments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
@@ -5007,6 +5427,7 @@ pub mod channel {
             self.input_specification = Some(input);
             self
         }
+        /// Specification of network and file inputs for this channel
         pub fn set_input_specification(
             mut self,
             input: std::option::Option<crate::model::InputSpecification>,
@@ -5019,6 +5440,7 @@ pub mod channel {
             self.log_level = Some(input);
             self
         }
+        /// The log level being written to CloudWatch Logs.
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
             self.log_level = input;
             self
@@ -5028,16 +5450,23 @@ pub mod channel {
             self.name = Some(input.into());
             self
         }
+        /// The name of the channel. (user-mutable)
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `pipeline_details`.
+        ///
+        /// To override the contents of this collection use [`set_pipeline_details`](Self::set_pipeline_details).
+        ///
+        /// Runtime details for the pipelines of a running channel.
         pub fn pipeline_details(mut self, input: impl Into<crate::model::PipelineDetail>) -> Self {
             let mut v = self.pipeline_details.unwrap_or_default();
             v.push(input.into());
             self.pipeline_details = Some(v);
             self
         }
+        /// Runtime details for the pipelines of a running channel.
         pub fn set_pipeline_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
@@ -5050,6 +5479,7 @@ pub mod channel {
             self.pipelines_running_count = Some(input);
             self
         }
+        /// The number of currently healthy pipelines.
         pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
             self.pipelines_running_count = input;
             self
@@ -5059,6 +5489,7 @@ pub mod channel {
             self.role_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -5068,10 +5499,16 @@ pub mod channel {
             self.state = Some(input);
             self
         }
+        /// Placeholder documentation for ChannelState
         pub fn set_state(mut self, input: std::option::Option<crate::model::ChannelState>) -> Self {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// A collection of key-value pairs.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5082,6 +5519,7 @@ pub mod channel {
             self.tags = Some(hash_map);
             self
         }
+        /// A collection of key-value pairs.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5096,6 +5534,7 @@ pub mod channel {
             self.vpc = Some(input);
             self
         }
+        /// Settings for VPC output
         pub fn set_vpc(
             mut self,
             input: std::option::Option<crate::model::VpcOutputSettingsDescription>,
@@ -5172,12 +5611,22 @@ pub mod vpc_output_settings_description {
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
+        ///
+        /// The Availability Zones where the vpc subnets are located.
+        /// The first Availability Zone applies to the first subnet in the list of subnets.
+        /// The second Availability Zone applies to the second subnet.
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
+        /// The Availability Zones where the vpc subnets are located.
+        /// The first Availability Zone applies to the first subnet in the list of subnets.
+        /// The second Availability Zone applies to the second subnet.
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5185,12 +5634,18 @@ pub mod vpc_output_settings_description {
             self.availability_zones = input;
             self
         }
+        /// Appends an item to `network_interface_ids`.
+        ///
+        /// To override the contents of this collection use [`set_network_interface_ids`](Self::set_network_interface_ids).
+        ///
+        /// A list of Elastic Network Interfaces created by MediaLive in the customer's VPC
         pub fn network_interface_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.network_interface_ids.unwrap_or_default();
             v.push(input.into());
             self.network_interface_ids = Some(v);
             self
         }
+        /// A list of Elastic Network Interfaces created by MediaLive in the customer's VPC
         pub fn set_network_interface_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5198,12 +5653,18 @@ pub mod vpc_output_settings_description {
             self.network_interface_ids = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// A list of up EC2 VPC security group IDs attached to the Output VPC network interfaces.
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// A list of up EC2 VPC security group IDs attached to the Output VPC network interfaces.
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5211,12 +5672,20 @@ pub mod vpc_output_settings_description {
             self.security_group_ids = input;
             self
         }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// A list of VPC subnet IDs from the same VPC.
+        /// If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// A list of VPC subnet IDs from the same VPC.
+        /// If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5254,16 +5723,27 @@ impl VpcOutputSettingsDescription {
     std::hash::Hash,
 )]
 pub enum ChannelState {
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Idle,
+    #[allow(missing_docs)] // documentation missing in model
     Recovering,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Starting,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5294,6 +5774,7 @@ impl std::str::FromStr for ChannelState {
     }
 }
 impl ChannelState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChannelState::CreateFailed => "CREATE_FAILED",
@@ -5310,6 +5791,7 @@ impl ChannelState {
             ChannelState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -5391,6 +5873,7 @@ pub mod pipeline_detail {
             self.active_input_attachment_name = Some(input.into());
             self
         }
+        /// The name of the active input attachment currently being ingested by this pipeline.
         pub fn set_active_input_attachment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5406,6 +5889,7 @@ pub mod pipeline_detail {
             self.active_input_switch_action_name = Some(input.into());
             self
         }
+        /// The name of the input switch schedule action that occurred most recently and that resulted in the switch to the current input attachment for this pipeline.
         pub fn set_active_input_switch_action_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5421,6 +5905,7 @@ pub mod pipeline_detail {
             self.active_motion_graphics_action_name = Some(input.into());
             self
         }
+        /// The name of the motion graphics activate action that occurred most recently and that resulted in the current graphics URI for this pipeline.
         pub fn set_active_motion_graphics_action_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5433,6 +5918,7 @@ pub mod pipeline_detail {
             self.active_motion_graphics_uri = Some(input.into());
             self
         }
+        /// The current URI being used for HTML5 motion graphics for this pipeline.
         pub fn set_active_motion_graphics_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5445,6 +5931,7 @@ pub mod pipeline_detail {
             self.pipeline_id = Some(input.into());
             self
         }
+        /// Pipeline ID
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pipeline_id = input;
             self
@@ -5480,10 +5967,15 @@ impl PipelineDetail {
     std::hash::Hash,
 )]
 pub enum LogLevel {
+    #[allow(missing_docs)] // documentation missing in model
     Debug,
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Info,
+    #[allow(missing_docs)] // documentation missing in model
     Warning,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5508,6 +6000,7 @@ impl std::str::FromStr for LogLevel {
     }
 }
 impl LogLevel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LogLevel::Debug => "DEBUG",
@@ -5518,6 +6011,7 @@ impl LogLevel {
             LogLevel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEBUG", "DISABLED", "ERROR", "INFO", "WARNING"]
     }
@@ -5564,6 +6058,7 @@ pub mod input_specification {
             self.codec = Some(input);
             self
         }
+        /// Input codec
         pub fn set_codec(mut self, input: std::option::Option<crate::model::InputCodec>) -> Self {
             self.codec = input;
             self
@@ -5573,6 +6068,7 @@ pub mod input_specification {
             self.maximum_bitrate = Some(input);
             self
         }
+        /// Maximum input bitrate, categorized coarsely
         pub fn set_maximum_bitrate(
             mut self,
             input: std::option::Option<crate::model::InputMaximumBitrate>,
@@ -5585,6 +6081,7 @@ pub mod input_specification {
             self.resolution = Some(input);
             self
         }
+        /// Input resolution, categorized coarsely
         pub fn set_resolution(
             mut self,
             input: std::option::Option<crate::model::InputResolution>,
@@ -5621,8 +6118,11 @@ impl InputSpecification {
     std::hash::Hash,
 )]
 pub enum InputResolution {
+    #[allow(missing_docs)] // documentation missing in model
     Hd,
+    #[allow(missing_docs)] // documentation missing in model
     Sd,
+    #[allow(missing_docs)] // documentation missing in model
     Uhd,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5645,6 +6145,7 @@ impl std::str::FromStr for InputResolution {
     }
 }
 impl InputResolution {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputResolution::Hd => "HD",
@@ -5653,6 +6154,7 @@ impl InputResolution {
             InputResolution::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HD", "SD", "UHD"]
     }
@@ -5675,8 +6177,11 @@ impl AsRef<str> for InputResolution {
     std::hash::Hash,
 )]
 pub enum InputMaximumBitrate {
+    #[allow(missing_docs)] // documentation missing in model
     Max10Mbps,
+    #[allow(missing_docs)] // documentation missing in model
     Max20Mbps,
+    #[allow(missing_docs)] // documentation missing in model
     Max50Mbps,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5699,6 +6204,7 @@ impl std::str::FromStr for InputMaximumBitrate {
     }
 }
 impl InputMaximumBitrate {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputMaximumBitrate::Max10Mbps => "MAX_10_MBPS",
@@ -5707,6 +6213,7 @@ impl InputMaximumBitrate {
             InputMaximumBitrate::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MAX_10_MBPS", "MAX_20_MBPS", "MAX_50_MBPS"]
     }
@@ -5729,8 +6236,11 @@ impl AsRef<str> for InputMaximumBitrate {
     std::hash::Hash,
 )]
 pub enum InputCodec {
+    #[allow(missing_docs)] // documentation missing in model
     Avc,
+    #[allow(missing_docs)] // documentation missing in model
     Hevc,
+    #[allow(missing_docs)] // documentation missing in model
     Mpeg2,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5753,6 +6263,7 @@ impl std::str::FromStr for InputCodec {
     }
 }
 impl InputCodec {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputCodec::Avc => "AVC",
@@ -5761,6 +6272,7 @@ impl InputCodec {
             InputCodec::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVC", "HEVC", "MPEG2"]
     }
@@ -5819,6 +6331,7 @@ pub mod input_attachment {
             self.automatic_input_failover_settings = Some(input);
             self
         }
+        /// User-specified settings for defining what the conditions are for declaring the input unhealthy and failing over to a different input.
         pub fn set_automatic_input_failover_settings(
             mut self,
             input: std::option::Option<crate::model::AutomaticInputFailoverSettings>,
@@ -5831,6 +6344,7 @@ pub mod input_attachment {
             self.input_attachment_name = Some(input.into());
             self
         }
+        /// User-specified name for the attachment. This is required if the user wants to use this input in an input switch action.
         pub fn set_input_attachment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5843,6 +6357,7 @@ pub mod input_attachment {
             self.input_id = Some(input.into());
             self
         }
+        /// The ID of the input
         pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_id = input;
             self
@@ -5852,6 +6367,7 @@ pub mod input_attachment {
             self.input_settings = Some(input);
             self
         }
+        /// Settings of an input (caption selector, etc.)
         pub fn set_input_settings(
             mut self,
             input: std::option::Option<crate::model::InputSettings>,
@@ -5943,12 +6459,18 @@ pub mod input_settings {
         pub(crate) video_selector: std::option::Option<crate::model::VideoSelector>,
     }
     impl Builder {
+        /// Appends an item to `audio_selectors`.
+        ///
+        /// To override the contents of this collection use [`set_audio_selectors`](Self::set_audio_selectors).
+        ///
+        /// Used to select the audio stream to decode for inputs that have multiple available.
         pub fn audio_selectors(mut self, input: impl Into<crate::model::AudioSelector>) -> Self {
             let mut v = self.audio_selectors.unwrap_or_default();
             v.push(input.into());
             self.audio_selectors = Some(v);
             self
         }
+        /// Used to select the audio stream to decode for inputs that have multiple available.
         pub fn set_audio_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AudioSelector>>,
@@ -5956,6 +6478,11 @@ pub mod input_settings {
             self.audio_selectors = input;
             self
         }
+        /// Appends an item to `caption_selectors`.
+        ///
+        /// To override the contents of this collection use [`set_caption_selectors`](Self::set_caption_selectors).
+        ///
+        /// Used to select the caption input to use for inputs that have multiple available.
         pub fn caption_selectors(
             mut self,
             input: impl Into<crate::model::CaptionSelector>,
@@ -5965,6 +6492,7 @@ pub mod input_settings {
             self.caption_selectors = Some(v);
             self
         }
+        /// Used to select the caption input to use for inputs that have multiple available.
         pub fn set_caption_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CaptionSelector>>,
@@ -5977,6 +6505,7 @@ pub mod input_settings {
             self.deblock_filter = Some(input);
             self
         }
+        /// Enable or disable the deblock filter when filtering.
         pub fn set_deblock_filter(
             mut self,
             input: std::option::Option<crate::model::InputDeblockFilter>,
@@ -5989,6 +6518,7 @@ pub mod input_settings {
             self.denoise_filter = Some(input);
             self
         }
+        /// Enable or disable the denoise filter when filtering.
         pub fn set_denoise_filter(
             mut self,
             input: std::option::Option<crate::model::InputDenoiseFilter>,
@@ -6001,6 +6531,7 @@ pub mod input_settings {
             self.filter_strength = Some(input);
             self
         }
+        /// Adjusts the magnitude of filtering from 1 (minimal) to 5 (strongest).
         pub fn set_filter_strength(mut self, input: std::option::Option<i32>) -> Self {
             self.filter_strength = input;
             self
@@ -6013,6 +6544,10 @@ pub mod input_settings {
             self.input_filter = Some(input);
             self
         }
+        /// Turns on the filter for this input. MPEG-2 inputs have the deblocking filter enabled by default.
+        /// 1) auto - filtering will be applied depending on input type/quality
+        /// 2) disabled - no filtering will be applied to the input
+        /// 3) forced - filtering will be applied regardless of input type
         pub fn set_input_filter(
             mut self,
             input: std::option::Option<crate::model::InputFilter>,
@@ -6025,6 +6560,7 @@ pub mod input_settings {
             self.network_input_settings = Some(input);
             self
         }
+        /// Input settings.
         pub fn set_network_input_settings(
             mut self,
             input: std::option::Option<crate::model::NetworkInputSettings>,
@@ -6042,6 +6578,9 @@ pub mod input_settings {
             self.smpte2038_data_preference = Some(input);
             self
         }
+        /// Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data types are captions, timecode, AFD, and SCTE-104 messages.
+        /// - PREFER: Extract from SMPTE-2038 if present in this input, otherwise extract from another source (if any).
+        /// - IGNORE: Never extract any ancillary data from SMPTE-2038.
         pub fn set_smpte2038_data_preference(
             mut self,
             input: std::option::Option<crate::model::Smpte2038DataPreference>,
@@ -6054,6 +6593,7 @@ pub mod input_settings {
             self.source_end_behavior = Some(input);
             self
         }
+        /// Loop input if it is a file. This allows a file input to be streamed indefinitely.
         pub fn set_source_end_behavior(
             mut self,
             input: std::option::Option<crate::model::InputSourceEndBehavior>,
@@ -6066,6 +6606,7 @@ pub mod input_settings {
             self.video_selector = Some(input);
             self
         }
+        /// Informs which video elementary stream to decode for input types that have multiple available.
         pub fn set_video_selector(
             mut self,
             input: std::option::Option<crate::model::VideoSelector>,
@@ -6139,6 +6680,7 @@ pub mod video_selector {
             self.color_space = Some(input);
             self
         }
+        /// Specifies the color space of an input. This setting works in tandem with colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine if any conversion will be performed.
         pub fn set_color_space(
             mut self,
             input: std::option::Option<crate::model::VideoSelectorColorSpace>,
@@ -6154,6 +6696,7 @@ pub mod video_selector {
             self.color_space_settings = Some(input);
             self
         }
+        /// Color space settings
         pub fn set_color_space_settings(
             mut self,
             input: std::option::Option<crate::model::VideoSelectorColorSpaceSettings>,
@@ -6169,6 +6712,7 @@ pub mod video_selector {
             self.color_space_usage = Some(input);
             self
         }
+        /// Applies only if colorSpace is a value other than follow. This field controls how the value in the colorSpace field will be used. fallback means that when the input does include color space data, that data will be used, but when the input has no color space data, the value in colorSpace will be used. Choose fallback if your input is sometimes missing color space data, but when it does have color space data, that data is correct. force means to always use the value in colorSpace. Choose force if your input usually has no color space data or might have unreliable color space data.
         pub fn set_color_space_usage(
             mut self,
             input: std::option::Option<crate::model::VideoSelectorColorSpaceUsage>,
@@ -6181,6 +6725,7 @@ pub mod video_selector {
             self.selector_settings = Some(input);
             self
         }
+        /// The video selector settings.
         pub fn set_selector_settings(
             mut self,
             input: std::option::Option<crate::model::VideoSelectorSettings>,
@@ -6239,6 +6784,7 @@ pub mod video_selector_settings {
             self.video_selector_pid = Some(input);
             self
         }
+        /// Video Selector Pid
         pub fn set_video_selector_pid(
             mut self,
             input: std::option::Option<crate::model::VideoSelectorPid>,
@@ -6254,6 +6800,7 @@ pub mod video_selector_settings {
             self.video_selector_program_id = Some(input);
             self
         }
+        /// Video Selector Program Id
         pub fn set_video_selector_program_id(
             mut self,
             input: std::option::Option<crate::model::VideoSelectorProgramId>,
@@ -6305,6 +6852,7 @@ pub mod video_selector_program_id {
             self.program_id = Some(input);
             self
         }
+        /// Selects a specific program from within a multi-program transport stream. If the program doesn't exist, the first program within the transport stream will be selected by default.
         pub fn set_program_id(mut self, input: std::option::Option<i32>) -> Self {
             self.program_id = input;
             self
@@ -6352,6 +6900,7 @@ pub mod video_selector_pid {
             self.pid = Some(input);
             self
         }
+        /// Selects a specific PID from within a video source.
         pub fn set_pid(mut self, input: std::option::Option<i32>) -> Self {
             self.pid = input;
             self
@@ -6383,7 +6932,9 @@ impl VideoSelectorPid {
     std::hash::Hash,
 )]
 pub enum VideoSelectorColorSpaceUsage {
+    #[allow(missing_docs)] // documentation missing in model
     Fallback,
+    #[allow(missing_docs)] // documentation missing in model
     Force,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6405,6 +6956,7 @@ impl std::str::FromStr for VideoSelectorColorSpaceUsage {
     }
 }
 impl VideoSelectorColorSpaceUsage {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             VideoSelectorColorSpaceUsage::Fallback => "FALLBACK",
@@ -6412,6 +6964,7 @@ impl VideoSelectorColorSpaceUsage {
             VideoSelectorColorSpaceUsage::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FALLBACK", "FORCE"]
     }
@@ -6450,6 +7003,7 @@ pub mod video_selector_color_space_settings {
             self.hdr10_settings = Some(input);
             self
         }
+        /// Hdr10 Settings
         pub fn set_hdr10_settings(
             mut self,
             input: std::option::Option<crate::model::Hdr10Settings>,
@@ -6510,6 +7064,9 @@ pub mod hdr10_settings {
             self.max_cll = Some(input);
             self
         }
+        /// Maximum Content Light Level
+        /// An integer metadata value defining the maximum light level, in nits,
+        /// of any single pixel within an encoded HDR video stream or file.
         pub fn set_max_cll(mut self, input: std::option::Option<i32>) -> Self {
             self.max_cll = input;
             self
@@ -6521,6 +7078,9 @@ pub mod hdr10_settings {
             self.max_fall = Some(input);
             self
         }
+        /// Maximum Frame Average Light Level
+        /// An integer metadata value defining the maximum average light level, in nits,
+        /// for any single frame within an encoded HDR video stream or file.
         pub fn set_max_fall(mut self, input: std::option::Option<i32>) -> Self {
             self.max_fall = input;
             self
@@ -6553,10 +7113,15 @@ impl Hdr10Settings {
     std::hash::Hash,
 )]
 pub enum VideoSelectorColorSpace {
+    #[allow(missing_docs)] // documentation missing in model
     Follow,
+    #[allow(missing_docs)] // documentation missing in model
     Hdr10,
+    #[allow(missing_docs)] // documentation missing in model
     Hlg2020,
+    #[allow(missing_docs)] // documentation missing in model
     Rec601,
+    #[allow(missing_docs)] // documentation missing in model
     Rec709,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6581,6 +7146,7 @@ impl std::str::FromStr for VideoSelectorColorSpace {
     }
 }
 impl VideoSelectorColorSpace {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             VideoSelectorColorSpace::Follow => "FOLLOW",
@@ -6591,6 +7157,7 @@ impl VideoSelectorColorSpace {
             VideoSelectorColorSpace::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FOLLOW", "HDR10", "HLG_2020", "REC_601", "REC_709"]
     }
@@ -6613,7 +7180,9 @@ impl AsRef<str> for VideoSelectorColorSpace {
     std::hash::Hash,
 )]
 pub enum InputSourceEndBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     Continue,
+    #[allow(missing_docs)] // documentation missing in model
     Loop,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6635,6 +7204,7 @@ impl std::str::FromStr for InputSourceEndBehavior {
     }
 }
 impl InputSourceEndBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputSourceEndBehavior::Continue => "CONTINUE",
@@ -6642,6 +7212,7 @@ impl InputSourceEndBehavior {
             InputSourceEndBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONTINUE", "LOOP"]
     }
@@ -6664,7 +7235,9 @@ impl AsRef<str> for InputSourceEndBehavior {
     std::hash::Hash,
 )]
 pub enum Smpte2038DataPreference {
+    #[allow(missing_docs)] // documentation missing in model
     Ignore,
+    #[allow(missing_docs)] // documentation missing in model
     Prefer,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6686,6 +7259,7 @@ impl std::str::FromStr for Smpte2038DataPreference {
     }
 }
 impl Smpte2038DataPreference {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Smpte2038DataPreference::Ignore => "IGNORE",
@@ -6693,6 +7267,7 @@ impl Smpte2038DataPreference {
             Smpte2038DataPreference::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["IGNORE", "PREFER"]
     }
@@ -6736,6 +7311,7 @@ pub mod network_input_settings {
             self.hls_input_settings = Some(input);
             self
         }
+        /// Specifies HLS input settings when the uri is for a HLS manifest.
         pub fn set_hls_input_settings(
             mut self,
             input: std::option::Option<crate::model::HlsInputSettings>,
@@ -6751,6 +7327,7 @@ pub mod network_input_settings {
             self.server_validation = Some(input);
             self
         }
+        /// Check HTTPS server certificates. When set to checkCryptographyOnly, cryptography in the certificate will be checked, but not the server's name. Certain subdomains (notably S3 buckets that use dots in the bucket name) do not strictly match the corresponding certificate's wildcard pattern and would otherwise cause the event to error. This setting is ignored for protocols that do not use https.
         pub fn set_server_validation(
             mut self,
             input: std::option::Option<crate::model::NetworkInputServerValidation>,
@@ -6786,7 +7363,9 @@ impl NetworkInputSettings {
     std::hash::Hash,
 )]
 pub enum NetworkInputServerValidation {
+    #[allow(missing_docs)] // documentation missing in model
     CheckCryptographyAndValidateName,
+    #[allow(missing_docs)] // documentation missing in model
     CheckCryptographyOnly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6810,6 +7389,7 @@ impl std::str::FromStr for NetworkInputServerValidation {
     }
 }
 impl NetworkInputServerValidation {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NetworkInputServerValidation::CheckCryptographyAndValidateName => {
@@ -6819,6 +7399,7 @@ impl NetworkInputServerValidation {
             NetworkInputServerValidation::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME",
@@ -6876,6 +7457,7 @@ pub mod hls_input_settings {
             self.bandwidth = Some(input);
             self
         }
+        /// When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen, otherwise the highest bandwidth stream in the m3u8 will be chosen.  The bitrate is specified in bits per second, as in an HLS manifest.
         pub fn set_bandwidth(mut self, input: std::option::Option<i32>) -> Self {
             self.bandwidth = input;
             self
@@ -6885,6 +7467,7 @@ pub mod hls_input_settings {
             self.buffer_segments = Some(input);
             self
         }
+        /// When specified, reading of the HLS input will begin this many buffer segments from the end (most recently written segment).  When not specified, the HLS input will begin with the first segment specified in the m3u8.
         pub fn set_buffer_segments(mut self, input: std::option::Option<i32>) -> Self {
             self.buffer_segments = input;
             self
@@ -6894,6 +7477,7 @@ pub mod hls_input_settings {
             self.retries = Some(input);
             self
         }
+        /// The number of consecutive times that attempts to read a manifest or segment must fail before the input is considered unavailable.
         pub fn set_retries(mut self, input: std::option::Option<i32>) -> Self {
             self.retries = input;
             self
@@ -6903,6 +7487,7 @@ pub mod hls_input_settings {
             self.retry_interval = Some(input);
             self
         }
+        /// The number of seconds between retries when an attempt to read a manifest or segment fails.
         pub fn set_retry_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.retry_interval = input;
             self
@@ -6912,6 +7497,7 @@ pub mod hls_input_settings {
             self.scte35_source = Some(input);
             self
         }
+        /// Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from the content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores SCTE-35 information in the source that is not selected.
         pub fn set_scte35_source(
             mut self,
             input: std::option::Option<crate::model::HlsScte35SourceType>,
@@ -6950,7 +7536,9 @@ impl HlsInputSettings {
     std::hash::Hash,
 )]
 pub enum HlsScte35SourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Manifest,
+    #[allow(missing_docs)] // documentation missing in model
     Segments,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6972,6 +7560,7 @@ impl std::str::FromStr for HlsScte35SourceType {
     }
 }
 impl HlsScte35SourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsScte35SourceType::Manifest => "MANIFEST",
@@ -6979,6 +7568,7 @@ impl HlsScte35SourceType {
             HlsScte35SourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MANIFEST", "SEGMENTS"]
     }
@@ -7001,8 +7591,11 @@ impl AsRef<str> for HlsScte35SourceType {
     std::hash::Hash,
 )]
 pub enum InputFilter {
+    #[allow(missing_docs)] // documentation missing in model
     Auto,
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Forced,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7025,6 +7618,7 @@ impl std::str::FromStr for InputFilter {
     }
 }
 impl InputFilter {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputFilter::Auto => "AUTO",
@@ -7033,6 +7627,7 @@ impl InputFilter {
             InputFilter::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUTO", "DISABLED", "FORCED"]
     }
@@ -7055,7 +7650,9 @@ impl AsRef<str> for InputFilter {
     std::hash::Hash,
 )]
 pub enum InputDenoiseFilter {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7077,6 +7674,7 @@ impl std::str::FromStr for InputDenoiseFilter {
     }
 }
 impl InputDenoiseFilter {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputDenoiseFilter::Disabled => "DISABLED",
@@ -7084,6 +7682,7 @@ impl InputDenoiseFilter {
             InputDenoiseFilter::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -7106,7 +7705,9 @@ impl AsRef<str> for InputDenoiseFilter {
     std::hash::Hash,
 )]
 pub enum InputDeblockFilter {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7128,6 +7729,7 @@ impl std::str::FromStr for InputDeblockFilter {
     }
 }
 impl InputDeblockFilter {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputDeblockFilter::Disabled => "DISABLED",
@@ -7135,6 +7737,7 @@ impl InputDeblockFilter {
             InputDeblockFilter::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -7181,6 +7784,7 @@ pub mod caption_selector {
             self.language_code = Some(input.into());
             self
         }
+        /// When specified this field indicates the three letter language code of the caption track to extract from the source.
         pub fn set_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7193,6 +7797,7 @@ pub mod caption_selector {
             self.name = Some(input.into());
             self
         }
+        /// Name identifier for a caption selector.  This name is used to associate this caption selector with one or more caption descriptions.  Names must be unique within an event.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7202,6 +7807,7 @@ pub mod caption_selector {
             self.selector_settings = Some(input);
             self
         }
+        /// Caption selector settings.
         pub fn set_selector_settings(
             mut self,
             input: std::option::Option<crate::model::CaptionSelectorSettings>,
@@ -7284,6 +7890,7 @@ pub mod caption_selector_settings {
             self.ancillary_source_settings = Some(input);
             self
         }
+        /// Ancillary Source Settings
         pub fn set_ancillary_source_settings(
             mut self,
             input: std::option::Option<crate::model::AncillarySourceSettings>,
@@ -7296,6 +7903,7 @@ pub mod caption_selector_settings {
             self.arib_source_settings = Some(input);
             self
         }
+        /// Arib Source Settings
         pub fn set_arib_source_settings(
             mut self,
             input: std::option::Option<crate::model::AribSourceSettings>,
@@ -7311,6 +7919,7 @@ pub mod caption_selector_settings {
             self.dvb_sub_source_settings = Some(input);
             self
         }
+        /// Dvb Sub Source Settings
         pub fn set_dvb_sub_source_settings(
             mut self,
             input: std::option::Option<crate::model::DvbSubSourceSettings>,
@@ -7326,6 +7935,7 @@ pub mod caption_selector_settings {
             self.embedded_source_settings = Some(input);
             self
         }
+        /// Embedded Source Settings
         pub fn set_embedded_source_settings(
             mut self,
             input: std::option::Option<crate::model::EmbeddedSourceSettings>,
@@ -7338,6 +7948,7 @@ pub mod caption_selector_settings {
             self.scte20_source_settings = Some(input);
             self
         }
+        /// Scte20 Source Settings
         pub fn set_scte20_source_settings(
             mut self,
             input: std::option::Option<crate::model::Scte20SourceSettings>,
@@ -7350,6 +7961,7 @@ pub mod caption_selector_settings {
             self.scte27_source_settings = Some(input);
             self
         }
+        /// Scte27 Source Settings
         pub fn set_scte27_source_settings(
             mut self,
             input: std::option::Option<crate::model::Scte27SourceSettings>,
@@ -7365,6 +7977,7 @@ pub mod caption_selector_settings {
             self.teletext_source_settings = Some(input);
             self
         }
+        /// Teletext Source Settings
         pub fn set_teletext_source_settings(
             mut self,
             input: std::option::Option<crate::model::TeletextSourceSettings>,
@@ -7425,6 +8038,7 @@ pub mod teletext_source_settings {
             self.output_rectangle = Some(input);
             self
         }
+        /// Optionally defines a region where TTML style captions will be displayed
         pub fn set_output_rectangle(
             mut self,
             input: std::option::Option<crate::model::CaptionRectangle>,
@@ -7437,6 +8051,7 @@ pub mod teletext_source_settings {
             self.page_number = Some(input.into());
             self
         }
+        /// Specifies the teletext page number within the data stream from which to extract captions. Range of 0x100 (256) to 0x8FF (2303). Unused for passthrough. Should be specified as a hexadecimal string with no "0x" prefix.
         pub fn set_page_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_number = input;
             self
@@ -7508,6 +8123,9 @@ pub mod caption_rectangle {
             self.height = Some(input);
             self
         }
+        /// See the description in leftOffset.
+        /// For height, specify the entire height of the rectangle as a percentage of the underlying frame height. For example, \"80\" means the rectangle height is 80% of the underlying frame height. The topOffset and rectangleHeight must add up to 100% or less.
+        /// This field corresponds to tts:extent - Y in the TTML standard.
         pub fn set_height(mut self, input: std::option::Option<f64>) -> Self {
             self.height = input;
             self
@@ -7520,6 +8138,10 @@ pub mod caption_rectangle {
             self.left_offset = Some(input);
             self
         }
+        /// Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. (Make sure to leave the default if you don't have either of these formats in the output.) You can define a display rectangle for the captions that is smaller than the underlying video frame. You define the rectangle by specifying the position of the left edge, top edge, bottom edge, and right edge of the rectangle, all within the underlying video frame. The units for the measurements are percentages.
+        /// If you specify a value for one of these fields, you must specify a value for all of them.
+        /// For leftOffset, specify the position of the left edge of the rectangle, as a percentage of the underlying frame width, and relative to the left edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame width. The rectangle left edge starts at that position from the left edge of the frame.
+        /// This field corresponds to tts:origin - X in the TTML standard.
         pub fn set_left_offset(mut self, input: std::option::Option<f64>) -> Self {
             self.left_offset = input;
             self
@@ -7531,6 +8153,9 @@ pub mod caption_rectangle {
             self.top_offset = Some(input);
             self
         }
+        /// See the description in leftOffset.
+        /// For topOffset, specify the position of the top edge of the rectangle, as a percentage of the underlying frame height, and relative to the top edge of the frame. For example, \"10\" means the measurement is 10% of the underlying frame height. The rectangle top edge starts at that position from the top edge of the frame.
+        /// This field corresponds to tts:origin - Y in the TTML standard.
         pub fn set_top_offset(mut self, input: std::option::Option<f64>) -> Self {
             self.top_offset = input;
             self
@@ -7542,6 +8167,9 @@ pub mod caption_rectangle {
             self.width = Some(input);
             self
         }
+        /// See the description in leftOffset.
+        /// For width, specify the entire width of the rectangle as a percentage of the underlying frame width. For example, \"80\" means the rectangle width is 80% of the underlying frame width. The leftOffset and rectangleWidth must add up to 100% or less.
+        /// This field corresponds to tts:extent - X in the TTML standard.
         pub fn set_width(mut self, input: std::option::Option<f64>) -> Self {
             self.width = input;
             self
@@ -7602,6 +8230,8 @@ pub mod scte27_source_settings {
             self.ocr_language = Some(input);
             self
         }
+        /// If you will configure a WebVTT caption description that references this caption selector, use this field to
+        /// provide the language to consider when translating the image-based source to text.
         pub fn set_ocr_language(
             mut self,
             input: std::option::Option<crate::model::Scte27OcrLanguage>,
@@ -7618,6 +8248,11 @@ pub mod scte27_source_settings {
             self.pid = Some(input);
             self
         }
+        /// The pid field is used in conjunction with the caption selector languageCode field as follows:
+        /// - Specify PID and Language: Extracts captions from that PID; the language is "informational".
+        /// - Specify PID and omit Language: Extracts the specified PID.
+        /// - Omit PID and specify Language: Extracts the specified language, whichever PID that happens to be.
+        /// - Omit PID and omit Language: Valid only if source is DVB-Sub that is being passed through; all languages will be passed through.
         pub fn set_pid(mut self, input: std::option::Option<i32>) -> Self {
             self.pid = input;
             self
@@ -7650,11 +8285,17 @@ impl Scte27SourceSettings {
     std::hash::Hash,
 )]
 pub enum Scte27OcrLanguage {
+    #[allow(missing_docs)] // documentation missing in model
     Deu,
+    #[allow(missing_docs)] // documentation missing in model
     Eng,
+    #[allow(missing_docs)] // documentation missing in model
     Fra,
+    #[allow(missing_docs)] // documentation missing in model
     Nld,
+    #[allow(missing_docs)] // documentation missing in model
     Por,
+    #[allow(missing_docs)] // documentation missing in model
     Spa,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7680,6 +8321,7 @@ impl std::str::FromStr for Scte27OcrLanguage {
     }
 }
 impl Scte27OcrLanguage {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Scte27OcrLanguage::Deu => "DEU",
@@ -7691,6 +8333,7 @@ impl Scte27OcrLanguage {
             Scte27OcrLanguage::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEU", "ENG", "FRA", "NLD", "POR", "SPA"]
     }
@@ -7733,6 +8376,7 @@ pub mod scte20_source_settings {
             self.convert608_to708 = Some(input);
             self
         }
+        /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
         pub fn set_convert608_to708(
             mut self,
             input: std::option::Option<crate::model::Scte20Convert608To708>,
@@ -7745,6 +8389,7 @@ pub mod scte20_source_settings {
             self.source608_channel_number = Some(input);
             self
         }
+        /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
         pub fn set_source608_channel_number(mut self, input: std::option::Option<i32>) -> Self {
             self.source608_channel_number = input;
             self
@@ -7777,7 +8422,9 @@ impl Scte20SourceSettings {
     std::hash::Hash,
 )]
 pub enum Scte20Convert608To708 {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Upconvert,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7799,6 +8446,7 @@ impl std::str::FromStr for Scte20Convert608To708 {
     }
 }
 impl Scte20Convert608To708 {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Scte20Convert608To708::Disabled => "DISABLED",
@@ -7806,6 +8454,7 @@ impl Scte20Convert608To708 {
             Scte20Convert608To708::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "UPCONVERT"]
     }
@@ -7856,6 +8505,7 @@ pub mod embedded_source_settings {
             self.convert608_to708 = Some(input);
             self
         }
+        /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
         pub fn set_convert608_to708(
             mut self,
             input: std::option::Option<crate::model::EmbeddedConvert608To708>,
@@ -7868,6 +8518,7 @@ pub mod embedded_source_settings {
             self.scte20_detection = Some(input);
             self
         }
+        /// Set to "auto" to handle streams with intermittent and/or non-aligned SCTE-20 and Embedded captions.
         pub fn set_scte20_detection(
             mut self,
             input: std::option::Option<crate::model::EmbeddedScte20Detection>,
@@ -7880,6 +8531,7 @@ pub mod embedded_source_settings {
             self.source608_channel_number = Some(input);
             self
         }
+        /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
         pub fn set_source608_channel_number(mut self, input: std::option::Option<i32>) -> Self {
             self.source608_channel_number = input;
             self
@@ -7889,6 +8541,7 @@ pub mod embedded_source_settings {
             self.source608_track_number = Some(input);
             self
         }
+        /// This field is unused and deprecated.
         pub fn set_source608_track_number(mut self, input: std::option::Option<i32>) -> Self {
             self.source608_track_number = input;
             self
@@ -7923,7 +8576,9 @@ impl EmbeddedSourceSettings {
     std::hash::Hash,
 )]
 pub enum EmbeddedScte20Detection {
+    #[allow(missing_docs)] // documentation missing in model
     Auto,
+    #[allow(missing_docs)] // documentation missing in model
     Off,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7945,6 +8600,7 @@ impl std::str::FromStr for EmbeddedScte20Detection {
     }
 }
 impl EmbeddedScte20Detection {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EmbeddedScte20Detection::Auto => "AUTO",
@@ -7952,6 +8608,7 @@ impl EmbeddedScte20Detection {
             EmbeddedScte20Detection::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUTO", "OFF"]
     }
@@ -7974,7 +8631,9 @@ impl AsRef<str> for EmbeddedScte20Detection {
     std::hash::Hash,
 )]
 pub enum EmbeddedConvert608To708 {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Upconvert,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7996,6 +8655,7 @@ impl std::str::FromStr for EmbeddedConvert608To708 {
     }
 }
 impl EmbeddedConvert608To708 {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EmbeddedConvert608To708::Disabled => "DISABLED",
@@ -8003,6 +8663,7 @@ impl EmbeddedConvert608To708 {
             EmbeddedConvert608To708::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "UPCONVERT"]
     }
@@ -8047,6 +8708,8 @@ pub mod dvb_sub_source_settings {
             self.ocr_language = Some(input);
             self
         }
+        /// If you will configure a WebVTT caption description that references this caption selector, use this field to
+        /// provide the language to consider when translating the image-based source to text.
         pub fn set_ocr_language(
             mut self,
             input: std::option::Option<crate::model::DvbSubOcrLanguage>,
@@ -8059,6 +8722,7 @@ pub mod dvb_sub_source_settings {
             self.pid = Some(input);
             self
         }
+        /// When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.
         pub fn set_pid(mut self, input: std::option::Option<i32>) -> Self {
             self.pid = input;
             self
@@ -8091,11 +8755,17 @@ impl DvbSubSourceSettings {
     std::hash::Hash,
 )]
 pub enum DvbSubOcrLanguage {
+    #[allow(missing_docs)] // documentation missing in model
     Deu,
+    #[allow(missing_docs)] // documentation missing in model
     Eng,
+    #[allow(missing_docs)] // documentation missing in model
     Fra,
+    #[allow(missing_docs)] // documentation missing in model
     Nld,
+    #[allow(missing_docs)] // documentation missing in model
     Por,
+    #[allow(missing_docs)] // documentation missing in model
     Spa,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8121,6 +8791,7 @@ impl std::str::FromStr for DvbSubOcrLanguage {
     }
 }
 impl DvbSubOcrLanguage {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DvbSubOcrLanguage::Deu => "DEU",
@@ -8132,6 +8803,7 @@ impl DvbSubOcrLanguage {
             DvbSubOcrLanguage::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEU", "ENG", "FRA", "NLD", "POR", "SPA"]
     }
@@ -8203,6 +8875,7 @@ pub mod ancillary_source_settings {
             self.source_ancillary_channel_number = Some(input);
             self
         }
+        /// Specifies the number (1 to 4) of the captions channel you want to extract from the ancillary captions. If you plan to convert the ancillary captions to another format, complete this field. If you plan to choose Embedded as the captions destination in the output (to pass through all the channels in the ancillary captions), leave this field blank because MediaLive ignores the field.
         pub fn set_source_ancillary_channel_number(
             mut self,
             input: std::option::Option<i32>,
@@ -8259,6 +8932,7 @@ pub mod audio_selector {
             self.name = Some(input.into());
             self
         }
+        /// The name of this AudioSelector. AudioDescriptions will use this name to uniquely identify this Selector.  Selector names should be unique per input.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8268,6 +8942,7 @@ pub mod audio_selector {
             self.selector_settings = Some(input);
             self
         }
+        /// The audio selector settings.
         pub fn set_selector_settings(
             mut self,
             input: std::option::Option<crate::model::AudioSelectorSettings>,
@@ -8340,6 +9015,7 @@ pub mod audio_selector_settings {
             self.audio_hls_rendition_selection = Some(input);
             self
         }
+        /// Audio Hls Rendition Selection
         pub fn set_audio_hls_rendition_selection(
             mut self,
             input: std::option::Option<crate::model::AudioHlsRenditionSelection>,
@@ -8355,6 +9031,7 @@ pub mod audio_selector_settings {
             self.audio_language_selection = Some(input);
             self
         }
+        /// Audio Language Selection
         pub fn set_audio_language_selection(
             mut self,
             input: std::option::Option<crate::model::AudioLanguageSelection>,
@@ -8367,6 +9044,7 @@ pub mod audio_selector_settings {
             self.audio_pid_selection = Some(input);
             self
         }
+        /// Audio Pid Selection
         pub fn set_audio_pid_selection(
             mut self,
             input: std::option::Option<crate::model::AudioPidSelection>,
@@ -8379,6 +9057,7 @@ pub mod audio_selector_settings {
             self.audio_track_selection = Some(input);
             self
         }
+        /// Audio Track Selection
         pub fn set_audio_track_selection(
             mut self,
             input: std::option::Option<crate::model::AudioTrackSelection>,
@@ -8427,12 +9106,18 @@ pub mod audio_track_selection {
         pub(crate) tracks: std::option::Option<std::vec::Vec<crate::model::AudioTrack>>,
     }
     impl Builder {
+        /// Appends an item to `tracks`.
+        ///
+        /// To override the contents of this collection use [`set_tracks`](Self::set_tracks).
+        ///
+        /// Selects one or more unique audio tracks from within a source.
         pub fn tracks(mut self, input: impl Into<crate::model::AudioTrack>) -> Self {
             let mut v = self.tracks.unwrap_or_default();
             v.push(input.into());
             self.tracks = Some(v);
             self
         }
+        /// Selects one or more unique audio tracks from within a source.
         pub fn set_tracks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AudioTrack>>,
@@ -8483,6 +9168,7 @@ pub mod audio_track {
             self.track = Some(input);
             self
         }
+        /// 1-based integer value that maps to a specific audio track
         pub fn set_track(mut self, input: std::option::Option<i32>) -> Self {
             self.track = input;
             self
@@ -8530,6 +9216,7 @@ pub mod audio_pid_selection {
             self.pid = Some(input);
             self
         }
+        /// Selects a specific PID from within a source.
         pub fn set_pid(mut self, input: std::option::Option<i32>) -> Self {
             self.pid = input;
             self
@@ -8582,6 +9269,7 @@ pub mod audio_language_selection {
             self.language_code = Some(input.into());
             self
         }
+        /// Selects a specific three-letter language code from within an audio source.
         pub fn set_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8597,6 +9285,7 @@ pub mod audio_language_selection {
             self.language_selection_policy = Some(input);
             self
         }
+        /// When set to "strict", the transport stream demux strictly identifies audio streams by their language descriptor. If a PMT update occurs such that an audio stream matching the initially selected language is no longer present then mute will be encoded until the language returns. If "loose", then on a PMT update the demux will choose another audio stream in the program with the same stream type if it can't find one with the same language.
         pub fn set_language_selection_policy(
             mut self,
             input: std::option::Option<crate::model::AudioLanguageSelectionPolicy>,
@@ -8632,7 +9321,9 @@ impl AudioLanguageSelection {
     std::hash::Hash,
 )]
 pub enum AudioLanguageSelectionPolicy {
+    #[allow(missing_docs)] // documentation missing in model
     Loose,
+    #[allow(missing_docs)] // documentation missing in model
     Strict,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8654,6 +9345,7 @@ impl std::str::FromStr for AudioLanguageSelectionPolicy {
     }
 }
 impl AudioLanguageSelectionPolicy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AudioLanguageSelectionPolicy::Loose => "LOOSE",
@@ -8661,6 +9353,7 @@ impl AudioLanguageSelectionPolicy {
             AudioLanguageSelectionPolicy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LOOSE", "STRICT"]
     }
@@ -8703,6 +9396,7 @@ pub mod audio_hls_rendition_selection {
             self.group_id = Some(input.into());
             self
         }
+        /// Specifies the GROUP-ID in the #EXT-X-MEDIA tag of the target HLS audio rendition.
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_id = input;
             self
@@ -8712,6 +9406,7 @@ pub mod audio_hls_rendition_selection {
             self.name = Some(input.into());
             self
         }
+        /// Specifies the NAME in the #EXT-X-MEDIA tag of the target HLS audio rendition.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8773,10 +9468,16 @@ pub mod automatic_input_failover_settings {
             self.error_clear_time_msec = Some(input);
             self
         }
+        /// This clear time defines the requirement a recovered input must meet to be considered healthy. The input must have no failover conditions for this length of time. Enter a time in milliseconds. This value is particularly important if the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED, because after this time, MediaLive will switch back to the primary input.
         pub fn set_error_clear_time_msec(mut self, input: std::option::Option<i32>) -> Self {
             self.error_clear_time_msec = input;
             self
         }
+        /// Appends an item to `failover_conditions`.
+        ///
+        /// To override the contents of this collection use [`set_failover_conditions`](Self::set_failover_conditions).
+        ///
+        /// A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the other input.
         pub fn failover_conditions(
             mut self,
             input: impl Into<crate::model::FailoverCondition>,
@@ -8786,6 +9487,7 @@ pub mod automatic_input_failover_settings {
             self.failover_conditions = Some(v);
             self
         }
+        /// A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the other input.
         pub fn set_failover_conditions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FailoverCondition>>,
@@ -8798,6 +9500,7 @@ pub mod automatic_input_failover_settings {
             self.input_preference = Some(input);
             self
         }
+        /// Input preference when deciding which input to make active when a previously failed input has recovered.
         pub fn set_input_preference(
             mut self,
             input: std::option::Option<crate::model::InputPreference>,
@@ -8810,6 +9513,7 @@ pub mod automatic_input_failover_settings {
             self.secondary_input_id = Some(input.into());
             self
         }
+        /// The input ID of the secondary input in the automatic input failover pair.
         pub fn set_secondary_input_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8849,7 +9553,9 @@ impl AutomaticInputFailoverSettings {
     std::hash::Hash,
 )]
 pub enum InputPreference {
+    #[allow(missing_docs)] // documentation missing in model
     EqualInputPreference,
+    #[allow(missing_docs)] // documentation missing in model
     PrimaryInputPreferred,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8871,6 +9577,7 @@ impl std::str::FromStr for InputPreference {
     }
 }
 impl InputPreference {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputPreference::EqualInputPreference => "EQUAL_INPUT_PREFERENCE",
@@ -8878,6 +9585,7 @@ impl InputPreference {
             InputPreference::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EQUAL_INPUT_PREFERENCE", "PRIMARY_INPUT_PREFERRED"]
     }
@@ -8923,6 +9631,7 @@ pub mod failover_condition {
             self.failover_condition_settings = Some(input);
             self
         }
+        /// Failover condition type-specific settings.
         pub fn set_failover_condition_settings(
             mut self,
             input: std::option::Option<crate::model::FailoverConditionSettings>,
@@ -8987,6 +9696,7 @@ pub mod failover_condition_settings {
             self.audio_silence_settings = Some(input);
             self
         }
+        /// MediaLive will perform a failover if the specified audio selector is silent for the specified period.
         pub fn set_audio_silence_settings(
             mut self,
             input: std::option::Option<crate::model::AudioSilenceFailoverSettings>,
@@ -9002,6 +9712,7 @@ pub mod failover_condition_settings {
             self.input_loss_settings = Some(input);
             self
         }
+        /// MediaLive will perform a failover if content is not detected in this input for the specified period.
         pub fn set_input_loss_settings(
             mut self,
             input: std::option::Option<crate::model::InputLossFailoverSettings>,
@@ -9017,6 +9728,7 @@ pub mod failover_condition_settings {
             self.video_black_settings = Some(input);
             self
         }
+        /// MediaLive will perform a failover if content is considered black for the specified period.
         pub fn set_video_black_settings(
             mut self,
             input: std::option::Option<crate::model::VideoBlackFailoverSettings>,
@@ -9076,6 +9788,7 @@ pub mod video_black_failover_settings {
             self.black_detect_threshold = Some(input);
             self
         }
+        /// A value used in calculating the threshold below which MediaLive considers a pixel to be 'black'. For the input to be considered black, every pixel in a frame must be below this threshold. The threshold is calculated as a percentage (expressed as a decimal) of white. Therefore .1 means 10% white (or 90% black). Note how the formula works for any color depth. For example, if you set this field to 0.1 in 10-bit color depth: (1023*0.1=102.3), which means a pixel value of 102 or less is 'black'. If you set this field to .1 in an 8-bit color depth: (255*0.1=25.5), which means a pixel value of 25 or less is 'black'. The range is 0.0 to 1.0, with any number of decimal places.
         pub fn set_black_detect_threshold(mut self, input: std::option::Option<f64>) -> Self {
             self.black_detect_threshold = input;
             self
@@ -9085,6 +9798,7 @@ pub mod video_black_failover_settings {
             self.video_black_threshold_msec = Some(input);
             self
         }
+        /// The amount of time (in milliseconds) that the active input must be black before automatic input failover occurs.
         pub fn set_video_black_threshold_msec(mut self, input: std::option::Option<i32>) -> Self {
             self.video_black_threshold_msec = input;
             self
@@ -9133,6 +9847,7 @@ pub mod input_loss_failover_settings {
             self.input_loss_threshold_msec = Some(input);
             self
         }
+        /// The amount of time (in milliseconds) that no input is detected. After that time, an input failover will occur.
         pub fn set_input_loss_threshold_msec(mut self, input: std::option::Option<i32>) -> Self {
             self.input_loss_threshold_msec = input;
             self
@@ -9187,6 +9902,7 @@ pub mod audio_silence_failover_settings {
             self.audio_selector_name = Some(input.into());
             self
         }
+        /// The name of the audio selector in the input that MediaLive should monitor to detect silence. Select your most important rendition. If you didn't create an audio selector in this input, leave blank.
         pub fn set_audio_selector_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9199,6 +9915,7 @@ pub mod audio_silence_failover_settings {
             self.audio_silence_threshold_msec = Some(input);
             self
         }
+        /// The amount of time (in milliseconds) that the active input must be silent before automatic input failover occurs. Silence is defined as audio loss or audio quieter than -50 dBFS.
         pub fn set_audio_silence_threshold_msec(mut self, input: std::option::Option<i32>) -> Self {
             self.audio_silence_threshold_msec = input;
             self
@@ -9294,6 +10011,11 @@ pub mod encoder_settings {
             std::option::Option<std::vec::Vec<crate::model::VideoDescription>>,
     }
     impl Builder {
+        /// Appends an item to `audio_descriptions`.
+        ///
+        /// To override the contents of this collection use [`set_audio_descriptions`](Self::set_audio_descriptions).
+        ///
+        /// Placeholder documentation for __listOfAudioDescription
         pub fn audio_descriptions(
             mut self,
             input: impl Into<crate::model::AudioDescription>,
@@ -9303,6 +10025,7 @@ pub mod encoder_settings {
             self.audio_descriptions = Some(v);
             self
         }
+        /// Placeholder documentation for __listOfAudioDescription
         pub fn set_audio_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AudioDescription>>,
@@ -9315,6 +10038,7 @@ pub mod encoder_settings {
             self.avail_blanking = Some(input);
             self
         }
+        /// Settings for ad avail blanking.
         pub fn set_avail_blanking(
             mut self,
             input: std::option::Option<crate::model::AvailBlanking>,
@@ -9327,6 +10051,7 @@ pub mod encoder_settings {
             self.avail_configuration = Some(input);
             self
         }
+        /// Event-wide configuration settings for ad avail insertion.
         pub fn set_avail_configuration(
             mut self,
             input: std::option::Option<crate::model::AvailConfiguration>,
@@ -9339,6 +10064,7 @@ pub mod encoder_settings {
             self.blackout_slate = Some(input);
             self
         }
+        /// Settings for blackout slate.
         pub fn set_blackout_slate(
             mut self,
             input: std::option::Option<crate::model::BlackoutSlate>,
@@ -9346,6 +10072,11 @@ pub mod encoder_settings {
             self.blackout_slate = input;
             self
         }
+        /// Appends an item to `caption_descriptions`.
+        ///
+        /// To override the contents of this collection use [`set_caption_descriptions`](Self::set_caption_descriptions).
+        ///
+        /// Settings for caption decriptions
         pub fn caption_descriptions(
             mut self,
             input: impl Into<crate::model::CaptionDescription>,
@@ -9355,6 +10086,7 @@ pub mod encoder_settings {
             self.caption_descriptions = Some(v);
             self
         }
+        /// Settings for caption decriptions
         pub fn set_caption_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CaptionDescription>>,
@@ -9367,6 +10099,7 @@ pub mod encoder_settings {
             self.feature_activations = Some(input);
             self
         }
+        /// Feature Activations
         pub fn set_feature_activations(
             mut self,
             input: std::option::Option<crate::model::FeatureActivations>,
@@ -9379,6 +10112,7 @@ pub mod encoder_settings {
             self.global_configuration = Some(input);
             self
         }
+        /// Configuration settings that apply to the event as a whole.
         pub fn set_global_configuration(
             mut self,
             input: std::option::Option<crate::model::GlobalConfiguration>,
@@ -9394,6 +10128,7 @@ pub mod encoder_settings {
             self.motion_graphics_configuration = Some(input);
             self
         }
+        /// Settings for motion graphics.
         pub fn set_motion_graphics_configuration(
             mut self,
             input: std::option::Option<crate::model::MotionGraphicsConfiguration>,
@@ -9406,6 +10141,7 @@ pub mod encoder_settings {
             self.nielsen_configuration = Some(input);
             self
         }
+        /// Nielsen configuration settings.
         pub fn set_nielsen_configuration(
             mut self,
             input: std::option::Option<crate::model::NielsenConfiguration>,
@@ -9413,12 +10149,18 @@ pub mod encoder_settings {
             self.nielsen_configuration = input;
             self
         }
+        /// Appends an item to `output_groups`.
+        ///
+        /// To override the contents of this collection use [`set_output_groups`](Self::set_output_groups).
+        ///
+        /// Placeholder documentation for __listOfOutputGroup
         pub fn output_groups(mut self, input: impl Into<crate::model::OutputGroup>) -> Self {
             let mut v = self.output_groups.unwrap_or_default();
             v.push(input.into());
             self.output_groups = Some(v);
             self
         }
+        /// Placeholder documentation for __listOfOutputGroup
         pub fn set_output_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputGroup>>,
@@ -9431,6 +10173,7 @@ pub mod encoder_settings {
             self.timecode_config = Some(input);
             self
         }
+        /// Contains settings used to acquire and adjust timecode information from inputs.
         pub fn set_timecode_config(
             mut self,
             input: std::option::Option<crate::model::TimecodeConfig>,
@@ -9438,6 +10181,11 @@ pub mod encoder_settings {
             self.timecode_config = input;
             self
         }
+        /// Appends an item to `video_descriptions`.
+        ///
+        /// To override the contents of this collection use [`set_video_descriptions`](Self::set_video_descriptions).
+        ///
+        /// Placeholder documentation for __listOfVideoDescription
         pub fn video_descriptions(
             mut self,
             input: impl Into<crate::model::VideoDescription>,
@@ -9447,6 +10195,7 @@ pub mod encoder_settings {
             self.video_descriptions = Some(v);
             self
         }
+        /// Placeholder documentation for __listOfVideoDescription
         pub fn set_video_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VideoDescription>>,
@@ -9536,6 +10285,7 @@ pub mod video_description {
             self.codec_settings = Some(input);
             self
         }
+        /// Video codec settings.
         pub fn set_codec_settings(
             mut self,
             input: std::option::Option<crate::model::VideoCodecSettings>,
@@ -9548,6 +10298,7 @@ pub mod video_description {
             self.height = Some(input);
             self
         }
+        /// Output video height, in pixels. Must be an even number. For most codecs, you can leave this field and width blank in order to use the height and width (resolution) from the source. Note, however, that leaving blank is not recommended. For the Frame Capture codec, height and width are required.
         pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
             self.height = input;
             self
@@ -9557,6 +10308,7 @@ pub mod video_description {
             self.name = Some(input.into());
             self
         }
+        /// The name of this VideoDescription. Outputs will use this name to uniquely identify this Description.  Description names should be unique within this Live Event.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9569,6 +10321,10 @@ pub mod video_description {
             self.respond_to_afd = Some(input);
             self
         }
+        /// Indicates how MediaLive will respond to the AFD values that might be in the input video. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose PASSTHROUGH.
+        /// RESPOND: MediaLive clips the input video using a formula that uses the AFD values (configured in afdSignaling ), the input display aspect ratio, and the output display aspect ratio. MediaLive also includes the AFD values in the output, unless the codec for this encode is FRAME_CAPTURE.
+        /// PASSTHROUGH: MediaLive ignores the AFD values and does not clip the video. But MediaLive does include the values in the output.
+        /// NONE: MediaLive does not clip the input video and does not include the AFD values in the output
         pub fn set_respond_to_afd(
             mut self,
             input: std::option::Option<crate::model::VideoDescriptionRespondToAfd>,
@@ -9584,6 +10340,7 @@ pub mod video_description {
             self.scaling_behavior = Some(input);
             self
         }
+        /// STRETCH_TO_OUTPUT configures the output position to stretch the video to the specified output resolution (height and width). This option will override any position value. DEFAULT may insert black boxes (pillar boxes or letter boxes) around the video to provide the specified output resolution.
         pub fn set_scaling_behavior(
             mut self,
             input: std::option::Option<crate::model::VideoDescriptionScalingBehavior>,
@@ -9596,6 +10353,7 @@ pub mod video_description {
             self.sharpness = Some(input);
             self
         }
+        /// Changes the strength of the anti-alias filter used for scaling. 0 is the softest setting, 100 is the sharpest. A setting of 50 is recommended for most content.
         pub fn set_sharpness(mut self, input: std::option::Option<i32>) -> Self {
             self.sharpness = input;
             self
@@ -9605,6 +10363,7 @@ pub mod video_description {
             self.width = Some(input);
             self
         }
+        /// Output video width, in pixels. Must be an even number. For most codecs, you can leave this field and height blank in order to use the height and width (resolution) from the source. Note, however, that leaving blank is not recommended. For the Frame Capture codec, height and width are required.
         pub fn set_width(mut self, input: std::option::Option<i32>) -> Self {
             self.width = input;
             self
@@ -9642,7 +10401,9 @@ impl VideoDescription {
     std::hash::Hash,
 )]
 pub enum VideoDescriptionScalingBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     Default,
+    #[allow(missing_docs)] // documentation missing in model
     StretchToOutput,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9664,6 +10425,7 @@ impl std::str::FromStr for VideoDescriptionScalingBehavior {
     }
 }
 impl VideoDescriptionScalingBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             VideoDescriptionScalingBehavior::Default => "DEFAULT",
@@ -9671,6 +10433,7 @@ impl VideoDescriptionScalingBehavior {
             VideoDescriptionScalingBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEFAULT", "STRETCH_TO_OUTPUT"]
     }
@@ -9693,8 +10456,11 @@ impl AsRef<str> for VideoDescriptionScalingBehavior {
     std::hash::Hash,
 )]
 pub enum VideoDescriptionRespondToAfd {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Passthrough,
+    #[allow(missing_docs)] // documentation missing in model
     Respond,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9717,6 +10483,7 @@ impl std::str::FromStr for VideoDescriptionRespondToAfd {
     }
 }
 impl VideoDescriptionRespondToAfd {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             VideoDescriptionRespondToAfd::None => "NONE",
@@ -9725,6 +10492,7 @@ impl VideoDescriptionRespondToAfd {
             VideoDescriptionRespondToAfd::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "PASSTHROUGH", "RESPOND"]
     }
@@ -9775,6 +10543,7 @@ pub mod video_codec_settings {
             self.frame_capture_settings = Some(input);
             self
         }
+        /// Frame Capture Settings
         pub fn set_frame_capture_settings(
             mut self,
             input: std::option::Option<crate::model::FrameCaptureSettings>,
@@ -9787,6 +10556,7 @@ pub mod video_codec_settings {
             self.h264_settings = Some(input);
             self
         }
+        /// H264 Settings
         pub fn set_h264_settings(
             mut self,
             input: std::option::Option<crate::model::H264Settings>,
@@ -9799,6 +10569,7 @@ pub mod video_codec_settings {
             self.h265_settings = Some(input);
             self
         }
+        /// H265 Settings
         pub fn set_h265_settings(
             mut self,
             input: std::option::Option<crate::model::H265Settings>,
@@ -9811,6 +10582,7 @@ pub mod video_codec_settings {
             self.mpeg2_settings = Some(input);
             self
         }
+        /// Mpeg2 Settings
         pub fn set_mpeg2_settings(
             mut self,
             input: std::option::Option<crate::model::Mpeg2Settings>,
@@ -9942,6 +10714,7 @@ pub mod mpeg2_settings {
             self.adaptive_quantization = Some(input);
             self
         }
+        /// Choose Off to disable adaptive quantization. Or choose another value to enable the quantizer and set its strength. The strengths are: Auto, Off, Low, Medium, High. When you enable this field, MediaLive allows intra-frame quantizers to vary, which might improve visual quality.
         pub fn set_adaptive_quantization(
             mut self,
             input: std::option::Option<crate::model::Mpeg2AdaptiveQuantization>,
@@ -9956,6 +10729,9 @@ pub mod mpeg2_settings {
             self.afd_signaling = Some(input);
             self
         }
+        /// Indicates the AFD values that MediaLive will write into the video encode. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose AUTO.
+        /// AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid).
+        /// FIXED: MediaLive will use the value you specify in fixedAFD.
         pub fn set_afd_signaling(
             mut self,
             input: std::option::Option<crate::model::AfdSignaling>,
@@ -9968,6 +10744,7 @@ pub mod mpeg2_settings {
             self.color_metadata = Some(input);
             self
         }
+        /// Specifies whether to include the color space metadata. The metadata describes the color space that applies to the video (the colorSpace field). We recommend that you insert the metadata.
         pub fn set_color_metadata(
             mut self,
             input: std::option::Option<crate::model::Mpeg2ColorMetadata>,
@@ -9982,6 +10759,9 @@ pub mod mpeg2_settings {
             self.color_space = Some(input);
             self
         }
+        /// Choose the type of color space conversion to apply to the output. For detailed information on setting up both the input and the output to obtain the desired color space in the output, see the section on \"MediaLive Features - Video - color space\" in the MediaLive User Guide.
+        /// PASSTHROUGH: Keep the color space of the input content - do not convert it.
+        /// AUTO:Convert all content that is SD to rec 601, and convert all content that is HD to rec 709.
         pub fn set_color_space(
             mut self,
             input: std::option::Option<crate::model::Mpeg2ColorSpace>,
@@ -9994,6 +10774,7 @@ pub mod mpeg2_settings {
             self.display_aspect_ratio = Some(input);
             self
         }
+        /// Sets the pixel aspect ratio for the encode.
         pub fn set_display_aspect_ratio(
             mut self,
             input: std::option::Option<crate::model::Mpeg2DisplayRatio>,
@@ -10009,6 +10790,10 @@ pub mod mpeg2_settings {
             self.filter_settings = Some(input);
             self
         }
+        /// Optionally specify a noise reduction filter, which can improve quality of compressed content. If you do not choose a filter, no filter will be applied.
+        /// TEMPORAL: This filter is useful for both source content that is noisy (when it has excessive digital artifacts) and source content that is clean.
+        /// When the content is noisy, the filter cleans up the source content before the encoding phase, with these two effects: First, it improves the output video quality because the content has been cleaned up. Secondly, it decreases the bandwidth because MediaLive does not waste bits on encoding noise.
+        /// When the content is reasonably clean, the filter tends to decrease the bitrate.
         pub fn set_filter_settings(
             mut self,
             input: std::option::Option<crate::model::Mpeg2FilterSettings>,
@@ -10021,6 +10806,7 @@ pub mod mpeg2_settings {
             self.fixed_afd = Some(input);
             self
         }
+        /// Complete this field only when afdSignaling is set to FIXED. Enter the AFD value (4 bits) to write on all frames of the video encode.
         pub fn set_fixed_afd(mut self, input: std::option::Option<crate::model::FixedAfd>) -> Self {
             self.fixed_afd = input;
             self
@@ -10030,6 +10816,7 @@ pub mod mpeg2_settings {
             self.framerate_denominator = Some(input);
             self
         }
+        /// description": "The framerate denominator. For example, 1001. The framerate is the numerator divided by the denominator. For example, 24000 / 1001 = 23.976 FPS.
         pub fn set_framerate_denominator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_denominator = input;
             self
@@ -10039,6 +10826,7 @@ pub mod mpeg2_settings {
             self.framerate_numerator = Some(input);
             self
         }
+        /// The framerate numerator. For example, 24000. The framerate is the numerator divided by the denominator. For example, 24000 / 1001 = 23.976 FPS.
         pub fn set_framerate_numerator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_numerator = input;
             self
@@ -10048,6 +10836,7 @@ pub mod mpeg2_settings {
             self.gop_closed_cadence = Some(input);
             self
         }
+        /// MPEG2: default is open GOP.
         pub fn set_gop_closed_cadence(mut self, input: std::option::Option<i32>) -> Self {
             self.gop_closed_cadence = input;
             self
@@ -10057,6 +10846,7 @@ pub mod mpeg2_settings {
             self.gop_num_b_frames = Some(input);
             self
         }
+        /// Relates to the GOP structure. The number of B-frames between reference frames. If you do not know what a B-frame is, use the default.
         pub fn set_gop_num_b_frames(mut self, input: std::option::Option<i32>) -> Self {
             self.gop_num_b_frames = input;
             self
@@ -10068,6 +10858,9 @@ pub mod mpeg2_settings {
             self.gop_size = Some(input);
             self
         }
+        /// Relates to the GOP structure. The GOP size (keyframe interval) in the units specified in gopSizeUnits. If you do not know what GOP is, use the default.
+        /// If gopSizeUnits is frames, then the gopSize must be an integer and must be greater than or equal to 1.
+        /// If gopSizeUnits is seconds, the gopSize must be greater than 0, but does not need to be an integer.
         pub fn set_gop_size(mut self, input: std::option::Option<f64>) -> Self {
             self.gop_size = input;
             self
@@ -10077,6 +10870,7 @@ pub mod mpeg2_settings {
             self.gop_size_units = Some(input);
             self
         }
+        /// Relates to the GOP structure. Specifies whether the gopSize is specified in frames or seconds. If you do not plan to change the default gopSize, leave the default. If you specify SECONDS, MediaLive will internally convert the gop size to a frame count.
         pub fn set_gop_size_units(
             mut self,
             input: std::option::Option<crate::model::Mpeg2GopSizeUnits>,
@@ -10089,6 +10883,7 @@ pub mod mpeg2_settings {
             self.scan_type = Some(input);
             self
         }
+        /// Set the scan type of the output to PROGRESSIVE or INTERLACED (top field first).
         pub fn set_scan_type(
             mut self,
             input: std::option::Option<crate::model::Mpeg2ScanType>,
@@ -10103,6 +10898,9 @@ pub mod mpeg2_settings {
             self.subgop_length = Some(input);
             self
         }
+        /// Relates to the GOP structure. If you do not know what GOP is, use the default.
+        /// FIXED: Set the number of B-frames in each sub-GOP to the value in gopNumBFrames.
+        /// DYNAMIC: Let MediaLive optimize the number of B-frames in each sub-GOP, to improve visual quality.
         pub fn set_subgop_length(
             mut self,
             input: std::option::Option<crate::model::Mpeg2SubGopLength>,
@@ -10120,6 +10918,9 @@ pub mod mpeg2_settings {
             self.timecode_insertion = Some(input);
             self
         }
+        /// Determines how MediaLive inserts timecodes in the output video. For detailed information about setting up the input and the output for a timecode, see the section on \"MediaLive Features - Timecode configuration\" in the MediaLive User Guide.
+        /// DISABLED: do not include timecodes.
+        /// GOP_TIMECODE: Include timecode metadata in the GOP header.
         pub fn set_timecode_insertion(
             mut self,
             input: std::option::Option<crate::model::Mpeg2TimecodeInsertionBehavior>,
@@ -10169,7 +10970,9 @@ impl Mpeg2Settings {
     std::hash::Hash,
 )]
 pub enum Mpeg2TimecodeInsertionBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     GopTimecode,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10191,6 +10994,7 @@ impl std::str::FromStr for Mpeg2TimecodeInsertionBehavior {
     }
 }
 impl Mpeg2TimecodeInsertionBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Mpeg2TimecodeInsertionBehavior::Disabled => "DISABLED",
@@ -10198,6 +11002,7 @@ impl Mpeg2TimecodeInsertionBehavior {
             Mpeg2TimecodeInsertionBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "GOP_TIMECODE"]
     }
@@ -10220,7 +11025,9 @@ impl AsRef<str> for Mpeg2TimecodeInsertionBehavior {
     std::hash::Hash,
 )]
 pub enum Mpeg2SubGopLength {
+    #[allow(missing_docs)] // documentation missing in model
     Dynamic,
+    #[allow(missing_docs)] // documentation missing in model
     Fixed,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10242,6 +11049,7 @@ impl std::str::FromStr for Mpeg2SubGopLength {
     }
 }
 impl Mpeg2SubGopLength {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Mpeg2SubGopLength::Dynamic => "DYNAMIC",
@@ -10249,6 +11057,7 @@ impl Mpeg2SubGopLength {
             Mpeg2SubGopLength::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DYNAMIC", "FIXED"]
     }
@@ -10271,7 +11080,9 @@ impl AsRef<str> for Mpeg2SubGopLength {
     std::hash::Hash,
 )]
 pub enum Mpeg2ScanType {
+    #[allow(missing_docs)] // documentation missing in model
     Interlaced,
+    #[allow(missing_docs)] // documentation missing in model
     Progressive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10293,6 +11104,7 @@ impl std::str::FromStr for Mpeg2ScanType {
     }
 }
 impl Mpeg2ScanType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Mpeg2ScanType::Interlaced => "INTERLACED",
@@ -10300,6 +11112,7 @@ impl Mpeg2ScanType {
             Mpeg2ScanType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["INTERLACED", "PROGRESSIVE"]
     }
@@ -10322,7 +11135,9 @@ impl AsRef<str> for Mpeg2ScanType {
     std::hash::Hash,
 )]
 pub enum Mpeg2GopSizeUnits {
+    #[allow(missing_docs)] // documentation missing in model
     Frames,
+    #[allow(missing_docs)] // documentation missing in model
     Seconds,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10344,6 +11159,7 @@ impl std::str::FromStr for Mpeg2GopSizeUnits {
     }
 }
 impl Mpeg2GopSizeUnits {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Mpeg2GopSizeUnits::Frames => "FRAMES",
@@ -10351,6 +11167,7 @@ impl Mpeg2GopSizeUnits {
             Mpeg2GopSizeUnits::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FRAMES", "SECONDS"]
     }
@@ -10373,16 +11190,27 @@ impl AsRef<str> for Mpeg2GopSizeUnits {
     std::hash::Hash,
 )]
 pub enum FixedAfd {
+    #[allow(missing_docs)] // documentation missing in model
     Afd0000,
+    #[allow(missing_docs)] // documentation missing in model
     Afd0010,
+    #[allow(missing_docs)] // documentation missing in model
     Afd0011,
+    #[allow(missing_docs)] // documentation missing in model
     Afd0100,
+    #[allow(missing_docs)] // documentation missing in model
     Afd1000,
+    #[allow(missing_docs)] // documentation missing in model
     Afd1001,
+    #[allow(missing_docs)] // documentation missing in model
     Afd1010,
+    #[allow(missing_docs)] // documentation missing in model
     Afd1011,
+    #[allow(missing_docs)] // documentation missing in model
     Afd1101,
+    #[allow(missing_docs)] // documentation missing in model
     Afd1110,
+    #[allow(missing_docs)] // documentation missing in model
     Afd1111,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10413,6 +11241,7 @@ impl std::str::FromStr for FixedAfd {
     }
 }
 impl FixedAfd {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FixedAfd::Afd0000 => "AFD_0000",
@@ -10429,6 +11258,7 @@ impl FixedAfd {
             FixedAfd::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AFD_0000", "AFD_0010", "AFD_0011", "AFD_0100", "AFD_1000", "AFD_1001", "AFD_1010",
@@ -10474,6 +11304,7 @@ pub mod mpeg2_filter_settings {
             self.temporal_filter_settings = Some(input);
             self
         }
+        /// Temporal Filter Settings
         pub fn set_temporal_filter_settings(
             mut self,
             input: std::option::Option<crate::model::TemporalFilterSettings>,
@@ -10537,6 +11368,9 @@ pub mod temporal_filter_settings {
             self.post_filter_sharpening = Some(input);
             self
         }
+        /// If you enable this filter, the results are the following:
+        /// - If the source content is noisy (it contains excessive digital artifacts), the filter cleans up the source.
+        /// - If the source content is already clean, the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
         pub fn set_post_filter_sharpening(
             mut self,
             input: std::option::Option<crate::model::TemporalFilterPostFilterSharpening>,
@@ -10549,6 +11383,7 @@ pub mod temporal_filter_settings {
             self.strength = Some(input);
             self
         }
+        /// Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good information, resulting in an image that is overly soft.
         pub fn set_strength(
             mut self,
             input: std::option::Option<crate::model::TemporalFilterStrength>,
@@ -10584,22 +11419,39 @@ impl TemporalFilterSettings {
     std::hash::Hash,
 )]
 pub enum TemporalFilterStrength {
+    #[allow(missing_docs)] // documentation missing in model
     Auto,
+    #[allow(missing_docs)] // documentation missing in model
     Strength1,
+    #[allow(missing_docs)] // documentation missing in model
     Strength10,
+    #[allow(missing_docs)] // documentation missing in model
     Strength11,
+    #[allow(missing_docs)] // documentation missing in model
     Strength12,
+    #[allow(missing_docs)] // documentation missing in model
     Strength13,
+    #[allow(missing_docs)] // documentation missing in model
     Strength14,
+    #[allow(missing_docs)] // documentation missing in model
     Strength15,
+    #[allow(missing_docs)] // documentation missing in model
     Strength16,
+    #[allow(missing_docs)] // documentation missing in model
     Strength2,
+    #[allow(missing_docs)] // documentation missing in model
     Strength3,
+    #[allow(missing_docs)] // documentation missing in model
     Strength4,
+    #[allow(missing_docs)] // documentation missing in model
     Strength5,
+    #[allow(missing_docs)] // documentation missing in model
     Strength6,
+    #[allow(missing_docs)] // documentation missing in model
     Strength7,
+    #[allow(missing_docs)] // documentation missing in model
     Strength8,
+    #[allow(missing_docs)] // documentation missing in model
     Strength9,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10636,6 +11488,7 @@ impl std::str::FromStr for TemporalFilterStrength {
     }
 }
 impl TemporalFilterStrength {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TemporalFilterStrength::Auto => "AUTO",
@@ -10658,6 +11511,7 @@ impl TemporalFilterStrength {
             TemporalFilterStrength::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AUTO",
@@ -10698,8 +11552,11 @@ impl AsRef<str> for TemporalFilterStrength {
     std::hash::Hash,
 )]
 pub enum TemporalFilterPostFilterSharpening {
+    #[allow(missing_docs)] // documentation missing in model
     Auto,
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10722,6 +11579,7 @@ impl std::str::FromStr for TemporalFilterPostFilterSharpening {
     }
 }
 impl TemporalFilterPostFilterSharpening {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TemporalFilterPostFilterSharpening::Auto => "AUTO",
@@ -10730,6 +11588,7 @@ impl TemporalFilterPostFilterSharpening {
             TemporalFilterPostFilterSharpening::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUTO", "DISABLED", "ENABLED"]
     }
@@ -10752,7 +11611,9 @@ impl AsRef<str> for TemporalFilterPostFilterSharpening {
     std::hash::Hash,
 )]
 pub enum Mpeg2DisplayRatio {
+    #[allow(missing_docs)] // documentation missing in model
     Displayratio16X9,
+    #[allow(missing_docs)] // documentation missing in model
     Displayratio4X3,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10774,6 +11635,7 @@ impl std::str::FromStr for Mpeg2DisplayRatio {
     }
 }
 impl Mpeg2DisplayRatio {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Mpeg2DisplayRatio::Displayratio16X9 => "DISPLAYRATIO16X9",
@@ -10781,6 +11643,7 @@ impl Mpeg2DisplayRatio {
             Mpeg2DisplayRatio::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISPLAYRATIO16X9", "DISPLAYRATIO4X3"]
     }
@@ -10803,7 +11666,9 @@ impl AsRef<str> for Mpeg2DisplayRatio {
     std::hash::Hash,
 )]
 pub enum Mpeg2ColorSpace {
+    #[allow(missing_docs)] // documentation missing in model
     Auto,
+    #[allow(missing_docs)] // documentation missing in model
     Passthrough,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10825,6 +11690,7 @@ impl std::str::FromStr for Mpeg2ColorSpace {
     }
 }
 impl Mpeg2ColorSpace {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Mpeg2ColorSpace::Auto => "AUTO",
@@ -10832,6 +11698,7 @@ impl Mpeg2ColorSpace {
             Mpeg2ColorSpace::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUTO", "PASSTHROUGH"]
     }
@@ -10854,7 +11721,9 @@ impl AsRef<str> for Mpeg2ColorSpace {
     std::hash::Hash,
 )]
 pub enum Mpeg2ColorMetadata {
+    #[allow(missing_docs)] // documentation missing in model
     Ignore,
+    #[allow(missing_docs)] // documentation missing in model
     Insert,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10876,6 +11745,7 @@ impl std::str::FromStr for Mpeg2ColorMetadata {
     }
 }
 impl Mpeg2ColorMetadata {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Mpeg2ColorMetadata::Ignore => "IGNORE",
@@ -10883,6 +11753,7 @@ impl Mpeg2ColorMetadata {
             Mpeg2ColorMetadata::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["IGNORE", "INSERT"]
     }
@@ -10905,8 +11776,11 @@ impl AsRef<str> for Mpeg2ColorMetadata {
     std::hash::Hash,
 )]
 pub enum AfdSignaling {
+    #[allow(missing_docs)] // documentation missing in model
     Auto,
+    #[allow(missing_docs)] // documentation missing in model
     Fixed,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10929,6 +11803,7 @@ impl std::str::FromStr for AfdSignaling {
     }
 }
 impl AfdSignaling {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AfdSignaling::Auto => "AUTO",
@@ -10937,6 +11812,7 @@ impl AfdSignaling {
             AfdSignaling::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUTO", "FIXED", "NONE"]
     }
@@ -10959,10 +11835,15 @@ impl AsRef<str> for AfdSignaling {
     std::hash::Hash,
 )]
 pub enum Mpeg2AdaptiveQuantization {
+    #[allow(missing_docs)] // documentation missing in model
     Auto,
+    #[allow(missing_docs)] // documentation missing in model
     High,
+    #[allow(missing_docs)] // documentation missing in model
     Low,
+    #[allow(missing_docs)] // documentation missing in model
     Medium,
+    #[allow(missing_docs)] // documentation missing in model
     Off,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10987,6 +11868,7 @@ impl std::str::FromStr for Mpeg2AdaptiveQuantization {
     }
 }
 impl Mpeg2AdaptiveQuantization {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Mpeg2AdaptiveQuantization::Auto => "AUTO",
@@ -10997,6 +11879,7 @@ impl Mpeg2AdaptiveQuantization {
             Mpeg2AdaptiveQuantization::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUTO", "HIGH", "LOW", "MEDIUM", "OFF"]
     }
@@ -11064,10 +11947,13 @@ pub struct H265Settings {
     /// - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
     pub qvbr_quality_level: i32,
     /// Rate control mode.
+    ///
     /// QVBR: Quality will match the specified quality level except when it is constrained by the
     /// maximum bitrate.  Recommended if you or your viewers pay for bandwidth.
+    ///
     /// CBR: Quality varies, depending on the video complexity. Recommended only if you distribute
     /// your assets to devices that cannot handle variable bitrates.
+    ///
     /// Multiplex: This rate control mode is only supported (and is required) when the video is being
     /// delivered to a MediaLive Multiplex in which case the rate control configuration is controlled
     /// by the properties within the Multiplex Program.
@@ -11173,6 +12059,7 @@ pub mod h265_settings {
             self.adaptive_quantization = Some(input);
             self
         }
+        /// Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
         pub fn set_adaptive_quantization(
             mut self,
             input: std::option::Option<crate::model::H265AdaptiveQuantization>,
@@ -11185,6 +12072,7 @@ pub mod h265_settings {
             self.afd_signaling = Some(input);
             self
         }
+        /// Indicates that AFD values will be written into the output stream.  If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
         pub fn set_afd_signaling(
             mut self,
             input: std::option::Option<crate::model::AfdSignaling>,
@@ -11200,6 +12088,7 @@ pub mod h265_settings {
             self.alternative_transfer_function = Some(input);
             self
         }
+        /// Whether or not EML should insert an Alternative Transfer Function SEI message to support backwards compatibility with non-HDR decoders and displays.
         pub fn set_alternative_transfer_function(
             mut self,
             input: std::option::Option<crate::model::H265AlternativeTransferFunction>,
@@ -11212,6 +12101,7 @@ pub mod h265_settings {
             self.bitrate = Some(input);
             self
         }
+        /// Average bitrate in bits/second. Required when the rate control mode is VBR or CBR. Not used for QVBR. In an MS Smooth output group, each output must have a unique value when its bitrate is rounded down to the nearest multiple of 1000.
         pub fn set_bitrate(mut self, input: std::option::Option<i32>) -> Self {
             self.bitrate = input;
             self
@@ -11221,6 +12111,7 @@ pub mod h265_settings {
             self.buf_size = Some(input);
             self
         }
+        /// Size of buffer (HRD buffer model) in bits.
         pub fn set_buf_size(mut self, input: std::option::Option<i32>) -> Self {
             self.buf_size = input;
             self
@@ -11230,6 +12121,7 @@ pub mod h265_settings {
             self.color_metadata = Some(input);
             self
         }
+        /// Includes colorspace metadata in the output.
         pub fn set_color_metadata(
             mut self,
             input: std::option::Option<crate::model::H265ColorMetadata>,
@@ -11242,6 +12134,7 @@ pub mod h265_settings {
             self.color_space_settings = Some(input);
             self
         }
+        /// Color Space settings
         pub fn set_color_space_settings(
             mut self,
             input: std::option::Option<crate::model::H265ColorSpaceSettings>,
@@ -11254,6 +12147,7 @@ pub mod h265_settings {
             self.filter_settings = Some(input);
             self
         }
+        /// Optional filters that you can apply to an encode.
         pub fn set_filter_settings(
             mut self,
             input: std::option::Option<crate::model::H265FilterSettings>,
@@ -11266,6 +12160,7 @@ pub mod h265_settings {
             self.fixed_afd = Some(input);
             self
         }
+        /// Four bit AFD value to write on all frames of video in the output stream. Only valid when afdSignaling is set to 'Fixed'.
         pub fn set_fixed_afd(mut self, input: std::option::Option<crate::model::FixedAfd>) -> Self {
             self.fixed_afd = input;
             self
@@ -11275,6 +12170,7 @@ pub mod h265_settings {
             self.flicker_aq = Some(input);
             self
         }
+        /// If set to enabled, adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
         pub fn set_flicker_aq(
             mut self,
             input: std::option::Option<crate::model::H265FlickerAq>,
@@ -11287,6 +12183,7 @@ pub mod h265_settings {
             self.framerate_denominator = Some(input);
             self
         }
+        /// Framerate denominator.
         pub fn set_framerate_denominator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_denominator = input;
             self
@@ -11296,6 +12193,7 @@ pub mod h265_settings {
             self.framerate_numerator = Some(input);
             self
         }
+        /// Framerate numerator - framerate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
         pub fn set_framerate_numerator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_numerator = input;
             self
@@ -11305,6 +12203,7 @@ pub mod h265_settings {
             self.gop_closed_cadence = Some(input);
             self
         }
+        /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
         pub fn set_gop_closed_cadence(mut self, input: std::option::Option<i32>) -> Self {
             self.gop_closed_cadence = input;
             self
@@ -11316,6 +12215,9 @@ pub mod h265_settings {
             self.gop_size = Some(input);
             self
         }
+        /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits.
+        /// If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1.
+        /// If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
         pub fn set_gop_size(mut self, input: std::option::Option<f64>) -> Self {
             self.gop_size = input;
             self
@@ -11325,6 +12227,7 @@ pub mod h265_settings {
             self.gop_size_units = Some(input);
             self
         }
+        /// Indicates if the gopSize is specified in frames or seconds. If seconds the system will convert the gopSize into a frame count at run time.
         pub fn set_gop_size_units(
             mut self,
             input: std::option::Option<crate::model::H265GopSizeUnits>,
@@ -11337,6 +12240,7 @@ pub mod h265_settings {
             self.level = Some(input);
             self
         }
+        /// H.265 Level.
         pub fn set_level(mut self, input: std::option::Option<crate::model::H265Level>) -> Self {
             self.level = input;
             self
@@ -11349,6 +12253,7 @@ pub mod h265_settings {
             self.look_ahead_rate_control = Some(input);
             self
         }
+        /// Amount of lookahead. A value of low can decrease latency and memory usage, while high can produce better quality for certain content.
         pub fn set_look_ahead_rate_control(
             mut self,
             input: std::option::Option<crate::model::H265LookAheadRateControl>,
@@ -11361,6 +12266,7 @@ pub mod h265_settings {
             self.max_bitrate = Some(input);
             self
         }
+        /// For QVBR: See the tooltip for Quality level
         pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
             self.max_bitrate = input;
             self
@@ -11370,6 +12276,7 @@ pub mod h265_settings {
             self.min_i_interval = Some(input);
             self
         }
+        /// Only meaningful if sceneChangeDetect is set to enabled.  Defaults to 5 if multiplex rate control is used.  Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
         pub fn set_min_i_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.min_i_interval = input;
             self
@@ -11379,6 +12286,7 @@ pub mod h265_settings {
             self.par_denominator = Some(input);
             self
         }
+        /// Pixel Aspect Ratio denominator.
         pub fn set_par_denominator(mut self, input: std::option::Option<i32>) -> Self {
             self.par_denominator = input;
             self
@@ -11388,6 +12296,7 @@ pub mod h265_settings {
             self.par_numerator = Some(input);
             self
         }
+        /// Pixel Aspect Ratio numerator.
         pub fn set_par_numerator(mut self, input: std::option::Option<i32>) -> Self {
             self.par_numerator = input;
             self
@@ -11397,6 +12306,7 @@ pub mod h265_settings {
             self.profile = Some(input);
             self
         }
+        /// H.265 Profile.
         pub fn set_profile(
             mut self,
             input: std::option::Option<crate::model::H265Profile>,
@@ -11412,15 +12322,22 @@ pub mod h265_settings {
             self.qvbr_quality_level = Some(input);
             self
         }
+        /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended values are:
+        /// - Primary screen: Quality level: 8 to 10. Max bitrate: 4M
+        /// - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M
+        /// - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
         pub fn set_qvbr_quality_level(mut self, input: std::option::Option<i32>) -> Self {
             self.qvbr_quality_level = input;
             self
         }
         /// Rate control mode.
+        ///
         /// QVBR: Quality will match the specified quality level except when it is constrained by the
         /// maximum bitrate.  Recommended if you or your viewers pay for bandwidth.
+        ///
         /// CBR: Quality varies, depending on the video complexity. Recommended only if you distribute
         /// your assets to devices that cannot handle variable bitrates.
+        ///
         /// Multiplex: This rate control mode is only supported (and is required) when the video is being
         /// delivered to a MediaLive Multiplex in which case the rate control configuration is controlled
         /// by the properties within the Multiplex Program.
@@ -11428,6 +12345,17 @@ pub mod h265_settings {
             self.rate_control_mode = Some(input);
             self
         }
+        /// Rate control mode.
+        ///
+        /// QVBR: Quality will match the specified quality level except when it is constrained by the
+        /// maximum bitrate.  Recommended if you or your viewers pay for bandwidth.
+        ///
+        /// CBR: Quality varies, depending on the video complexity. Recommended only if you distribute
+        /// your assets to devices that cannot handle variable bitrates.
+        ///
+        /// Multiplex: This rate control mode is only supported (and is required) when the video is being
+        /// delivered to a MediaLive Multiplex in which case the rate control configuration is controlled
+        /// by the properties within the Multiplex Program.
         pub fn set_rate_control_mode(
             mut self,
             input: std::option::Option<crate::model::H265RateControlMode>,
@@ -11440,6 +12368,7 @@ pub mod h265_settings {
             self.scan_type = Some(input);
             self
         }
+        /// Sets the scan type of the output to progressive or top-field-first interlaced.
         pub fn set_scan_type(
             mut self,
             input: std::option::Option<crate::model::H265ScanType>,
@@ -11452,6 +12381,7 @@ pub mod h265_settings {
             self.scene_change_detect = Some(input);
             self
         }
+        /// Scene change detection.
         pub fn set_scene_change_detect(
             mut self,
             input: std::option::Option<crate::model::H265SceneChangeDetect>,
@@ -11465,6 +12395,8 @@ pub mod h265_settings {
             self.slices = Some(input);
             self
         }
+        /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
+        /// This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
         pub fn set_slices(mut self, input: std::option::Option<i32>) -> Self {
             self.slices = input;
             self
@@ -11474,6 +12406,7 @@ pub mod h265_settings {
             self.tier = Some(input);
             self
         }
+        /// H.265 Tier.
         pub fn set_tier(mut self, input: std::option::Option<crate::model::H265Tier>) -> Self {
             self.tier = input;
             self
@@ -11488,6 +12421,9 @@ pub mod h265_settings {
             self.timecode_insertion = Some(input);
             self
         }
+        /// Determines how timecodes should be inserted into the video elementary stream.
+        /// - 'disabled': Do not include timecodes
+        /// - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
         pub fn set_timecode_insertion(
             mut self,
             input: std::option::Option<crate::model::H265TimecodeInsertionBehavior>,
@@ -11550,7 +12486,9 @@ impl H265Settings {
     std::hash::Hash,
 )]
 pub enum H265TimecodeInsertionBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     PicTimingSei,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11572,6 +12510,7 @@ impl std::str::FromStr for H265TimecodeInsertionBehavior {
     }
 }
 impl H265TimecodeInsertionBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H265TimecodeInsertionBehavior::Disabled => "DISABLED",
@@ -11579,6 +12518,7 @@ impl H265TimecodeInsertionBehavior {
             H265TimecodeInsertionBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "PIC_TIMING_SEI"]
     }
@@ -11601,7 +12541,9 @@ impl AsRef<str> for H265TimecodeInsertionBehavior {
     std::hash::Hash,
 )]
 pub enum H265Tier {
+    #[allow(missing_docs)] // documentation missing in model
     High,
+    #[allow(missing_docs)] // documentation missing in model
     Main,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11623,6 +12565,7 @@ impl std::str::FromStr for H265Tier {
     }
 }
 impl H265Tier {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H265Tier::High => "HIGH",
@@ -11630,6 +12573,7 @@ impl H265Tier {
             H265Tier::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HIGH", "MAIN"]
     }
@@ -11652,7 +12596,9 @@ impl AsRef<str> for H265Tier {
     std::hash::Hash,
 )]
 pub enum H265SceneChangeDetect {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11674,6 +12620,7 @@ impl std::str::FromStr for H265SceneChangeDetect {
     }
 }
 impl H265SceneChangeDetect {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H265SceneChangeDetect::Disabled => "DISABLED",
@@ -11681,6 +12628,7 @@ impl H265SceneChangeDetect {
             H265SceneChangeDetect::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -11703,7 +12651,9 @@ impl AsRef<str> for H265SceneChangeDetect {
     std::hash::Hash,
 )]
 pub enum H265ScanType {
+    #[allow(missing_docs)] // documentation missing in model
     Interlaced,
+    #[allow(missing_docs)] // documentation missing in model
     Progressive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11725,6 +12675,7 @@ impl std::str::FromStr for H265ScanType {
     }
 }
 impl H265ScanType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H265ScanType::Interlaced => "INTERLACED",
@@ -11732,6 +12683,7 @@ impl H265ScanType {
             H265ScanType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["INTERLACED", "PROGRESSIVE"]
     }
@@ -11754,8 +12706,11 @@ impl AsRef<str> for H265ScanType {
     std::hash::Hash,
 )]
 pub enum H265RateControlMode {
+    #[allow(missing_docs)] // documentation missing in model
     Cbr,
+    #[allow(missing_docs)] // documentation missing in model
     Multiplex,
+    #[allow(missing_docs)] // documentation missing in model
     Qvbr,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11778,6 +12733,7 @@ impl std::str::FromStr for H265RateControlMode {
     }
 }
 impl H265RateControlMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H265RateControlMode::Cbr => "CBR",
@@ -11786,6 +12742,7 @@ impl H265RateControlMode {
             H265RateControlMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CBR", "MULTIPLEX", "QVBR"]
     }
@@ -11808,7 +12765,9 @@ impl AsRef<str> for H265RateControlMode {
     std::hash::Hash,
 )]
 pub enum H265Profile {
+    #[allow(missing_docs)] // documentation missing in model
     Main,
+    #[allow(missing_docs)] // documentation missing in model
     Main10Bit,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11830,6 +12789,7 @@ impl std::str::FromStr for H265Profile {
     }
 }
 impl H265Profile {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H265Profile::Main => "MAIN",
@@ -11837,6 +12797,7 @@ impl H265Profile {
             H265Profile::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MAIN", "MAIN_10BIT"]
     }
@@ -11859,8 +12820,11 @@ impl AsRef<str> for H265Profile {
     std::hash::Hash,
 )]
 pub enum H265LookAheadRateControl {
+    #[allow(missing_docs)] // documentation missing in model
     High,
+    #[allow(missing_docs)] // documentation missing in model
     Low,
+    #[allow(missing_docs)] // documentation missing in model
     Medium,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11883,6 +12847,7 @@ impl std::str::FromStr for H265LookAheadRateControl {
     }
 }
 impl H265LookAheadRateControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H265LookAheadRateControl::High => "HIGH",
@@ -11891,6 +12856,7 @@ impl H265LookAheadRateControl {
             H265LookAheadRateControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "MEDIUM"]
     }
@@ -11913,19 +12879,33 @@ impl AsRef<str> for H265LookAheadRateControl {
     std::hash::Hash,
 )]
 pub enum H265Level {
+    #[allow(missing_docs)] // documentation missing in model
     H265Level1,
+    #[allow(missing_docs)] // documentation missing in model
     H265Level2,
+    #[allow(missing_docs)] // documentation missing in model
     H265Level21,
+    #[allow(missing_docs)] // documentation missing in model
     H265Level3,
+    #[allow(missing_docs)] // documentation missing in model
     H265Level31,
+    #[allow(missing_docs)] // documentation missing in model
     H265Level4,
+    #[allow(missing_docs)] // documentation missing in model
     H265Level41,
+    #[allow(missing_docs)] // documentation missing in model
     H265Level5,
+    #[allow(missing_docs)] // documentation missing in model
     H265Level51,
+    #[allow(missing_docs)] // documentation missing in model
     H265Level52,
+    #[allow(missing_docs)] // documentation missing in model
     H265Level6,
+    #[allow(missing_docs)] // documentation missing in model
     H265Level61,
+    #[allow(missing_docs)] // documentation missing in model
     H265Level62,
+    #[allow(missing_docs)] // documentation missing in model
     H265LevelAuto,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11959,6 +12939,7 @@ impl std::str::FromStr for H265Level {
     }
 }
 impl H265Level {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H265Level::H265Level1 => "H265_LEVEL_1",
@@ -11978,6 +12959,7 @@ impl H265Level {
             H265Level::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "H265_LEVEL_1",
@@ -12015,7 +12997,9 @@ impl AsRef<str> for H265Level {
     std::hash::Hash,
 )]
 pub enum H265GopSizeUnits {
+    #[allow(missing_docs)] // documentation missing in model
     Frames,
+    #[allow(missing_docs)] // documentation missing in model
     Seconds,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12037,6 +13021,7 @@ impl std::str::FromStr for H265GopSizeUnits {
     }
 }
 impl H265GopSizeUnits {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H265GopSizeUnits::Frames => "FRAMES",
@@ -12044,6 +13029,7 @@ impl H265GopSizeUnits {
             H265GopSizeUnits::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FRAMES", "SECONDS"]
     }
@@ -12066,7 +13052,9 @@ impl AsRef<str> for H265GopSizeUnits {
     std::hash::Hash,
 )]
 pub enum H265FlickerAq {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12088,6 +13076,7 @@ impl std::str::FromStr for H265FlickerAq {
     }
 }
 impl H265FlickerAq {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H265FlickerAq::Disabled => "DISABLED",
@@ -12095,6 +13084,7 @@ impl H265FlickerAq {
             H265FlickerAq::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -12137,6 +13127,7 @@ pub mod h265_filter_settings {
             self.temporal_filter_settings = Some(input);
             self
         }
+        /// Temporal Filter Settings
         pub fn set_temporal_filter_settings(
             mut self,
             input: std::option::Option<crate::model::TemporalFilterSettings>,
@@ -12207,6 +13198,7 @@ pub mod h265_color_space_settings {
             self.color_space_passthrough_settings = Some(input);
             self
         }
+        /// Passthrough applies no color space conversion to the output
         pub fn set_color_space_passthrough_settings(
             mut self,
             input: std::option::Option<crate::model::ColorSpacePassthroughSettings>,
@@ -12219,6 +13211,7 @@ pub mod h265_color_space_settings {
             self.hdr10_settings = Some(input);
             self
         }
+        /// Hdr10 Settings
         pub fn set_hdr10_settings(
             mut self,
             input: std::option::Option<crate::model::Hdr10Settings>,
@@ -12231,6 +13224,7 @@ pub mod h265_color_space_settings {
             self.rec601_settings = Some(input);
             self
         }
+        /// Rec601 Settings
         pub fn set_rec601_settings(
             mut self,
             input: std::option::Option<crate::model::Rec601Settings>,
@@ -12243,6 +13237,7 @@ pub mod h265_color_space_settings {
             self.rec709_settings = Some(input);
             self
         }
+        /// Rec709 Settings
         pub fn set_rec709_settings(
             mut self,
             input: std::option::Option<crate::model::Rec709Settings>,
@@ -12370,7 +13365,9 @@ impl ColorSpacePassthroughSettings {
     std::hash::Hash,
 )]
 pub enum H265ColorMetadata {
+    #[allow(missing_docs)] // documentation missing in model
     Ignore,
+    #[allow(missing_docs)] // documentation missing in model
     Insert,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12392,6 +13389,7 @@ impl std::str::FromStr for H265ColorMetadata {
     }
 }
 impl H265ColorMetadata {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H265ColorMetadata::Ignore => "IGNORE",
@@ -12399,6 +13397,7 @@ impl H265ColorMetadata {
             H265ColorMetadata::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["IGNORE", "INSERT"]
     }
@@ -12421,7 +13420,9 @@ impl AsRef<str> for H265ColorMetadata {
     std::hash::Hash,
 )]
 pub enum H265AlternativeTransferFunction {
+    #[allow(missing_docs)] // documentation missing in model
     Insert,
+    #[allow(missing_docs)] // documentation missing in model
     Omit,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12443,6 +13444,7 @@ impl std::str::FromStr for H265AlternativeTransferFunction {
     }
 }
 impl H265AlternativeTransferFunction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H265AlternativeTransferFunction::Insert => "INSERT",
@@ -12450,6 +13452,7 @@ impl H265AlternativeTransferFunction {
             H265AlternativeTransferFunction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["INSERT", "OMIT"]
     }
@@ -12472,12 +13475,19 @@ impl AsRef<str> for H265AlternativeTransferFunction {
     std::hash::Hash,
 )]
 pub enum H265AdaptiveQuantization {
+    #[allow(missing_docs)] // documentation missing in model
     Auto,
+    #[allow(missing_docs)] // documentation missing in model
     High,
+    #[allow(missing_docs)] // documentation missing in model
     Higher,
+    #[allow(missing_docs)] // documentation missing in model
     Low,
+    #[allow(missing_docs)] // documentation missing in model
     Max,
+    #[allow(missing_docs)] // documentation missing in model
     Medium,
+    #[allow(missing_docs)] // documentation missing in model
     Off,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12504,6 +13514,7 @@ impl std::str::FromStr for H265AdaptiveQuantization {
     }
 }
 impl H265AdaptiveQuantization {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H265AdaptiveQuantization::Auto => "AUTO",
@@ -12516,6 +13527,7 @@ impl H265AdaptiveQuantization {
             H265AdaptiveQuantization::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUTO", "HIGH", "HIGHER", "LOW", "MAX", "MEDIUM", "OFF"]
     }
@@ -12579,6 +13591,7 @@ pub struct H264Settings {
     /// Amount of lookahead. A value of low can decrease latency and memory usage, while high can produce better quality for certain content.
     pub look_ahead_rate_control: std::option::Option<crate::model::H264LookAheadRateControl>,
     /// For QVBR: See the tooltip for Quality level
+    ///
     /// For VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity of the video.
     pub max_bitrate: i32,
     /// Only meaningful if sceneChangeDetect is set to enabled.  Defaults to 5 if multiplex rate control is used.  Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
@@ -12604,12 +13617,16 @@ pub struct H264Settings {
     /// To let MediaLive decide, leave the QVBR quality level field empty, and in Max bitrate enter the maximum rate you want in the video. For more information, see the section called "Video - rate control mode" in the MediaLive user guide
     pub qvbr_quality_level: i32,
     /// Rate control mode.
+    ///
     /// QVBR: Quality will match the specified quality level except when it is constrained by the
     /// maximum bitrate.  Recommended if you or your viewers pay for bandwidth.
+    ///
     /// VBR: Quality and bitrate vary, depending on the video complexity. Recommended instead of QVBR
     /// if you want to maintain a specific average bitrate over the duration of the channel.
+    ///
     /// CBR: Quality varies, depending on the video complexity. Recommended only if you distribute
     /// your assets to devices that cannot handle variable bitrates.
+    ///
     /// Multiplex: This rate control mode is only supported (and is required) when the video is being
     /// delivered to a MediaLive Multiplex in which case the rate control configuration is controlled
     /// by the properties within the Multiplex Program.
@@ -12617,6 +13634,7 @@ pub struct H264Settings {
     /// Sets the scan type of the output to progressive or top-field-first interlaced.
     pub scan_type: std::option::Option<crate::model::H264ScanType>,
     /// Scene change detection.
+    ///
     /// - On: inserts I-frames when scene change is detected.
     /// - Off: does not force an I-frame when scene change is detected.
     pub scene_change_detect: std::option::Option<crate::model::H264SceneChangeDetect>,
@@ -12745,6 +13763,7 @@ pub mod h264_settings {
             self.adaptive_quantization = Some(input);
             self
         }
+        /// Enables or disables adaptive quantization, which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: flicker, spatial, and temporal. Set the field in one of these ways: Set to Auto. Recommended. For each type of AQ, MediaLive will determine if AQ is needed, and if so, the appropriate strength. Set a strength (a value other than Auto or Disable). This strength will apply to any of the AQ fields that you choose to enable. Set to Disabled to disable all types of adaptive quantization.
         pub fn set_adaptive_quantization(
             mut self,
             input: std::option::Option<crate::model::H264AdaptiveQuantization>,
@@ -12757,6 +13776,7 @@ pub mod h264_settings {
             self.afd_signaling = Some(input);
             self
         }
+        /// Indicates that AFD values will be written into the output stream.  If afdSignaling is "auto", the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to "fixed", the AFD value will be the value configured in the fixedAfd parameter.
         pub fn set_afd_signaling(
             mut self,
             input: std::option::Option<crate::model::AfdSignaling>,
@@ -12769,6 +13789,7 @@ pub mod h264_settings {
             self.bitrate = Some(input);
             self
         }
+        /// Average bitrate in bits/second. Required when the rate control mode is VBR or CBR. Not used for QVBR. In an MS Smooth output group, each output must have a unique value when its bitrate is rounded down to the nearest multiple of 1000.
         pub fn set_bitrate(mut self, input: std::option::Option<i32>) -> Self {
             self.bitrate = input;
             self
@@ -12778,6 +13799,7 @@ pub mod h264_settings {
             self.buf_fill_pct = Some(input);
             self
         }
+        /// Percentage of the buffer that should initially be filled (HRD buffer model).
         pub fn set_buf_fill_pct(mut self, input: std::option::Option<i32>) -> Self {
             self.buf_fill_pct = input;
             self
@@ -12787,6 +13809,7 @@ pub mod h264_settings {
             self.buf_size = Some(input);
             self
         }
+        /// Size of buffer (HRD buffer model) in bits.
         pub fn set_buf_size(mut self, input: std::option::Option<i32>) -> Self {
             self.buf_size = input;
             self
@@ -12796,6 +13819,7 @@ pub mod h264_settings {
             self.color_metadata = Some(input);
             self
         }
+        /// Includes colorspace metadata in the output.
         pub fn set_color_metadata(
             mut self,
             input: std::option::Option<crate::model::H264ColorMetadata>,
@@ -12808,6 +13832,7 @@ pub mod h264_settings {
             self.color_space_settings = Some(input);
             self
         }
+        /// Color Space settings
         pub fn set_color_space_settings(
             mut self,
             input: std::option::Option<crate::model::H264ColorSpaceSettings>,
@@ -12820,6 +13845,7 @@ pub mod h264_settings {
             self.entropy_encoding = Some(input);
             self
         }
+        /// Entropy encoding mode.  Use cabac (must be in Main or High profile) or cavlc.
         pub fn set_entropy_encoding(
             mut self,
             input: std::option::Option<crate::model::H264EntropyEncoding>,
@@ -12832,6 +13858,7 @@ pub mod h264_settings {
             self.filter_settings = Some(input);
             self
         }
+        /// Optional filters that you can apply to an encode.
         pub fn set_filter_settings(
             mut self,
             input: std::option::Option<crate::model::H264FilterSettings>,
@@ -12844,6 +13871,7 @@ pub mod h264_settings {
             self.fixed_afd = Some(input);
             self
         }
+        /// Four bit AFD value to write on all frames of video in the output stream. Only valid when afdSignaling is set to 'Fixed'.
         pub fn set_fixed_afd(mut self, input: std::option::Option<crate::model::FixedAfd>) -> Self {
             self.fixed_afd = input;
             self
@@ -12853,6 +13881,7 @@ pub mod h264_settings {
             self.flicker_aq = Some(input);
             self
         }
+        /// Flicker AQ makes adjustments within each frame to reduce flicker or 'pop' on I-frames. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if flicker AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply flicker AQ using the specified strength. Disabled: MediaLive won't apply flicker AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply flicker AQ.
         pub fn set_flicker_aq(
             mut self,
             input: std::option::Option<crate::model::H264FlickerAq>,
@@ -12867,6 +13896,9 @@ pub mod h264_settings {
             self.force_field_pictures = Some(input);
             self
         }
+        /// This setting applies only when scan type is "interlaced." It controls whether coding is performed on a field basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame basis.)
+        /// enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded separately.
+        /// disabled: Code the two sets of fields separately (on a field basis) or together (on a frame basis using PAFF), depending on what is most appropriate for the content.
         pub fn set_force_field_pictures(
             mut self,
             input: std::option::Option<crate::model::H264ForceFieldPictures>,
@@ -12879,6 +13911,7 @@ pub mod h264_settings {
             self.framerate_control = Some(input);
             self
         }
+        /// This field indicates how the output video frame rate is specified.  If "specified" is selected then the output video frame rate is determined by framerateNumerator and framerateDenominator, else if "initializeFromSource" is selected then the output video frame rate will be set equal to the input video frame rate of the first input.
         pub fn set_framerate_control(
             mut self,
             input: std::option::Option<crate::model::H264FramerateControl>,
@@ -12891,6 +13924,7 @@ pub mod h264_settings {
             self.framerate_denominator = Some(input);
             self
         }
+        /// Framerate denominator.
         pub fn set_framerate_denominator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_denominator = input;
             self
@@ -12900,6 +13934,7 @@ pub mod h264_settings {
             self.framerate_numerator = Some(input);
             self
         }
+        /// Framerate numerator - framerate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
         pub fn set_framerate_numerator(mut self, input: std::option::Option<i32>) -> Self {
             self.framerate_numerator = input;
             self
@@ -12909,6 +13944,7 @@ pub mod h264_settings {
             self.gop_b_reference = Some(input);
             self
         }
+        /// Documentation update needed
         pub fn set_gop_b_reference(
             mut self,
             input: std::option::Option<crate::model::H264GopBReference>,
@@ -12921,6 +13957,7 @@ pub mod h264_settings {
             self.gop_closed_cadence = Some(input);
             self
         }
+        /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
         pub fn set_gop_closed_cadence(mut self, input: std::option::Option<i32>) -> Self {
             self.gop_closed_cadence = input;
             self
@@ -12930,6 +13967,7 @@ pub mod h264_settings {
             self.gop_num_b_frames = Some(input);
             self
         }
+        /// Number of B-frames between reference frames.
         pub fn set_gop_num_b_frames(mut self, input: std::option::Option<i32>) -> Self {
             self.gop_num_b_frames = input;
             self
@@ -12941,6 +13979,9 @@ pub mod h264_settings {
             self.gop_size = Some(input);
             self
         }
+        /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits.
+        /// If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1.
+        /// If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
         pub fn set_gop_size(mut self, input: std::option::Option<f64>) -> Self {
             self.gop_size = input;
             self
@@ -12950,6 +13991,7 @@ pub mod h264_settings {
             self.gop_size_units = Some(input);
             self
         }
+        /// Indicates if the gopSize is specified in frames or seconds. If seconds the system will convert the gopSize into a frame count at run time.
         pub fn set_gop_size_units(
             mut self,
             input: std::option::Option<crate::model::H264GopSizeUnits>,
@@ -12962,6 +14004,7 @@ pub mod h264_settings {
             self.level = Some(input);
             self
         }
+        /// H.264 Level.
         pub fn set_level(mut self, input: std::option::Option<crate::model::H264Level>) -> Self {
             self.level = input;
             self
@@ -12974,6 +14017,7 @@ pub mod h264_settings {
             self.look_ahead_rate_control = Some(input);
             self
         }
+        /// Amount of lookahead. A value of low can decrease latency and memory usage, while high can produce better quality for certain content.
         pub fn set_look_ahead_rate_control(
             mut self,
             input: std::option::Option<crate::model::H264LookAheadRateControl>,
@@ -12982,11 +14026,15 @@ pub mod h264_settings {
             self
         }
         /// For QVBR: See the tooltip for Quality level
+        ///
         /// For VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity of the video.
         pub fn max_bitrate(mut self, input: i32) -> Self {
             self.max_bitrate = Some(input);
             self
         }
+        /// For QVBR: See the tooltip for Quality level
+        ///
+        /// For VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity of the video.
         pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
             self.max_bitrate = input;
             self
@@ -12996,6 +14044,7 @@ pub mod h264_settings {
             self.min_i_interval = Some(input);
             self
         }
+        /// Only meaningful if sceneChangeDetect is set to enabled.  Defaults to 5 if multiplex rate control is used.  Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
         pub fn set_min_i_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.min_i_interval = input;
             self
@@ -13005,6 +14054,7 @@ pub mod h264_settings {
             self.num_ref_frames = Some(input);
             self
         }
+        /// Number of reference frames to use. The encoder may use more than requested if using B-frames and/or interlaced encoding.
         pub fn set_num_ref_frames(mut self, input: std::option::Option<i32>) -> Self {
             self.num_ref_frames = input;
             self
@@ -13014,6 +14064,7 @@ pub mod h264_settings {
             self.par_control = Some(input);
             self
         }
+        /// This field indicates how the output pixel aspect ratio is specified.  If "specified" is selected then the output video pixel aspect ratio is determined by parNumerator and parDenominator, else if "initializeFromSource" is selected then the output pixsel aspect ratio will be set equal to the input video pixel aspect ratio of the first input.
         pub fn set_par_control(
             mut self,
             input: std::option::Option<crate::model::H264ParControl>,
@@ -13026,6 +14077,7 @@ pub mod h264_settings {
             self.par_denominator = Some(input);
             self
         }
+        /// Pixel Aspect Ratio denominator.
         pub fn set_par_denominator(mut self, input: std::option::Option<i32>) -> Self {
             self.par_denominator = input;
             self
@@ -13035,6 +14087,7 @@ pub mod h264_settings {
             self.par_numerator = Some(input);
             self
         }
+        /// Pixel Aspect Ratio numerator.
         pub fn set_par_numerator(mut self, input: std::option::Option<i32>) -> Self {
             self.par_numerator = input;
             self
@@ -13044,6 +14097,7 @@ pub mod h264_settings {
             self.profile = Some(input);
             self
         }
+        /// H.264 Profile.
         pub fn set_profile(
             mut self,
             input: std::option::Option<crate::model::H264Profile>,
@@ -13058,6 +14112,9 @@ pub mod h264_settings {
             self.quality_level = Some(input);
             self
         }
+        /// Leave as STANDARD_QUALITY or choose a different value (which might result in additional costs to run the channel).
+        /// - ENHANCED_QUALITY: Produces a slightly better video quality without an increase in the bitrate. Has an effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive multiplex, the value must be ENHANCED_QUALITY.
+        /// - STANDARD_QUALITY: Valid for any Rate control mode.
         pub fn set_quality_level(
             mut self,
             input: std::option::Option<crate::model::H264QualityLevel>,
@@ -13074,17 +14131,26 @@ pub mod h264_settings {
             self.qvbr_quality_level = Some(input);
             self
         }
+        /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. You can set a target quality or you can let MediaLive determine the best quality. To set a target quality, enter values in the QVBR quality level field and the Max bitrate field. Enter values that suit your most important viewing devices. Recommended values are:
+        /// - Primary screen: Quality level: 8 to 10. Max bitrate: 4M
+        /// - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M
+        /// - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
+        /// To let MediaLive decide, leave the QVBR quality level field empty, and in Max bitrate enter the maximum rate you want in the video. For more information, see the section called "Video - rate control mode" in the MediaLive user guide
         pub fn set_qvbr_quality_level(mut self, input: std::option::Option<i32>) -> Self {
             self.qvbr_quality_level = input;
             self
         }
         /// Rate control mode.
+        ///
         /// QVBR: Quality will match the specified quality level except when it is constrained by the
         /// maximum bitrate.  Recommended if you or your viewers pay for bandwidth.
+        ///
         /// VBR: Quality and bitrate vary, depending on the video complexity. Recommended instead of QVBR
         /// if you want to maintain a specific average bitrate over the duration of the channel.
+        ///
         /// CBR: Quality varies, depending on the video complexity. Recommended only if you distribute
         /// your assets to devices that cannot handle variable bitrates.
+        ///
         /// Multiplex: This rate control mode is only supported (and is required) when the video is being
         /// delivered to a MediaLive Multiplex in which case the rate control configuration is controlled
         /// by the properties within the Multiplex Program.
@@ -13092,6 +14158,20 @@ pub mod h264_settings {
             self.rate_control_mode = Some(input);
             self
         }
+        /// Rate control mode.
+        ///
+        /// QVBR: Quality will match the specified quality level except when it is constrained by the
+        /// maximum bitrate.  Recommended if you or your viewers pay for bandwidth.
+        ///
+        /// VBR: Quality and bitrate vary, depending on the video complexity. Recommended instead of QVBR
+        /// if you want to maintain a specific average bitrate over the duration of the channel.
+        ///
+        /// CBR: Quality varies, depending on the video complexity. Recommended only if you distribute
+        /// your assets to devices that cannot handle variable bitrates.
+        ///
+        /// Multiplex: This rate control mode is only supported (and is required) when the video is being
+        /// delivered to a MediaLive Multiplex in which case the rate control configuration is controlled
+        /// by the properties within the Multiplex Program.
         pub fn set_rate_control_mode(
             mut self,
             input: std::option::Option<crate::model::H264RateControlMode>,
@@ -13104,6 +14184,7 @@ pub mod h264_settings {
             self.scan_type = Some(input);
             self
         }
+        /// Sets the scan type of the output to progressive or top-field-first interlaced.
         pub fn set_scan_type(
             mut self,
             input: std::option::Option<crate::model::H264ScanType>,
@@ -13112,12 +14193,17 @@ pub mod h264_settings {
             self
         }
         /// Scene change detection.
+        ///
         /// - On: inserts I-frames when scene change is detected.
         /// - Off: does not force an I-frame when scene change is detected.
         pub fn scene_change_detect(mut self, input: crate::model::H264SceneChangeDetect) -> Self {
             self.scene_change_detect = Some(input);
             self
         }
+        /// Scene change detection.
+        ///
+        /// - On: inserts I-frames when scene change is detected.
+        /// - Off: does not force an I-frame when scene change is detected.
         pub fn set_scene_change_detect(
             mut self,
             input: std::option::Option<crate::model::H264SceneChangeDetect>,
@@ -13131,6 +14217,8 @@ pub mod h264_settings {
             self.slices = Some(input);
             self
         }
+        /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
+        /// This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
         pub fn set_slices(mut self, input: std::option::Option<i32>) -> Self {
             self.slices = input;
             self
@@ -13140,6 +14228,7 @@ pub mod h264_settings {
             self.softness = Some(input);
             self
         }
+        /// Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image.  If not set to zero, must be greater than 15.
         pub fn set_softness(mut self, input: std::option::Option<i32>) -> Self {
             self.softness = input;
             self
@@ -13149,6 +14238,7 @@ pub mod h264_settings {
             self.spatial_aq = Some(input);
             self
         }
+        /// Spatial AQ makes adjustments within each frame based on spatial variation of content complexity. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if spatial AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply spatial AQ using the specified strength. Disabled: MediaLive won't apply spatial AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply spatial AQ.
         pub fn set_spatial_aq(
             mut self,
             input: std::option::Option<crate::model::H264SpatialAq>,
@@ -13161,6 +14251,7 @@ pub mod h264_settings {
             self.subgop_length = Some(input);
             self
         }
+        /// If set to fixed, use gopNumBFrames B-frames per sub-GOP. If set to dynamic, optimize the number of B-frames used for each sub-GOP to improve visual quality.
         pub fn set_subgop_length(
             mut self,
             input: std::option::Option<crate::model::H264SubGopLength>,
@@ -13173,6 +14264,7 @@ pub mod h264_settings {
             self.syntax = Some(input);
             self
         }
+        /// Produces a bitstream compliant with SMPTE RP-2027.
         pub fn set_syntax(mut self, input: std::option::Option<crate::model::H264Syntax>) -> Self {
             self.syntax = input;
             self
@@ -13182,6 +14274,7 @@ pub mod h264_settings {
             self.temporal_aq = Some(input);
             self
         }
+        /// Temporal makes adjustments within each frame based on temporal variation of content complexity. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if temporal AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply temporal AQ using the specified strength. Disabled: MediaLive won't apply temporal AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply temporal AQ.
         pub fn set_temporal_aq(
             mut self,
             input: std::option::Option<crate::model::H264TemporalAq>,
@@ -13199,6 +14292,9 @@ pub mod h264_settings {
             self.timecode_insertion = Some(input);
             self
         }
+        /// Determines how timecodes should be inserted into the video elementary stream.
+        /// - 'disabled': Do not include timecodes
+        /// - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
         pub fn set_timecode_insertion(
             mut self,
             input: std::option::Option<crate::model::H264TimecodeInsertionBehavior>,
@@ -13273,7 +14369,9 @@ impl H264Settings {
     std::hash::Hash,
 )]
 pub enum H264TimecodeInsertionBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     PicTimingSei,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13295,6 +14393,7 @@ impl std::str::FromStr for H264TimecodeInsertionBehavior {
     }
 }
 impl H264TimecodeInsertionBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H264TimecodeInsertionBehavior::Disabled => "DISABLED",
@@ -13302,6 +14401,7 @@ impl H264TimecodeInsertionBehavior {
             H264TimecodeInsertionBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "PIC_TIMING_SEI"]
     }
@@ -13324,7 +14424,9 @@ impl AsRef<str> for H264TimecodeInsertionBehavior {
     std::hash::Hash,
 )]
 pub enum H264TemporalAq {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13346,6 +14448,7 @@ impl std::str::FromStr for H264TemporalAq {
     }
 }
 impl H264TemporalAq {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H264TemporalAq::Disabled => "DISABLED",
@@ -13353,6 +14456,7 @@ impl H264TemporalAq {
             H264TemporalAq::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -13375,7 +14479,9 @@ impl AsRef<str> for H264TemporalAq {
     std::hash::Hash,
 )]
 pub enum H264Syntax {
+    #[allow(missing_docs)] // documentation missing in model
     Default,
+    #[allow(missing_docs)] // documentation missing in model
     Rp2027,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13397,6 +14503,7 @@ impl std::str::FromStr for H264Syntax {
     }
 }
 impl H264Syntax {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H264Syntax::Default => "DEFAULT",
@@ -13404,6 +14511,7 @@ impl H264Syntax {
             H264Syntax::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEFAULT", "RP2027"]
     }
@@ -13426,7 +14534,9 @@ impl AsRef<str> for H264Syntax {
     std::hash::Hash,
 )]
 pub enum H264SubGopLength {
+    #[allow(missing_docs)] // documentation missing in model
     Dynamic,
+    #[allow(missing_docs)] // documentation missing in model
     Fixed,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13448,6 +14558,7 @@ impl std::str::FromStr for H264SubGopLength {
     }
 }
 impl H264SubGopLength {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H264SubGopLength::Dynamic => "DYNAMIC",
@@ -13455,6 +14566,7 @@ impl H264SubGopLength {
             H264SubGopLength::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DYNAMIC", "FIXED"]
     }
@@ -13477,7 +14589,9 @@ impl AsRef<str> for H264SubGopLength {
     std::hash::Hash,
 )]
 pub enum H264SpatialAq {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13499,6 +14613,7 @@ impl std::str::FromStr for H264SpatialAq {
     }
 }
 impl H264SpatialAq {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H264SpatialAq::Disabled => "DISABLED",
@@ -13506,6 +14621,7 @@ impl H264SpatialAq {
             H264SpatialAq::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -13528,7 +14644,9 @@ impl AsRef<str> for H264SpatialAq {
     std::hash::Hash,
 )]
 pub enum H264SceneChangeDetect {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13550,6 +14668,7 @@ impl std::str::FromStr for H264SceneChangeDetect {
     }
 }
 impl H264SceneChangeDetect {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H264SceneChangeDetect::Disabled => "DISABLED",
@@ -13557,6 +14676,7 @@ impl H264SceneChangeDetect {
             H264SceneChangeDetect::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -13579,7 +14699,9 @@ impl AsRef<str> for H264SceneChangeDetect {
     std::hash::Hash,
 )]
 pub enum H264ScanType {
+    #[allow(missing_docs)] // documentation missing in model
     Interlaced,
+    #[allow(missing_docs)] // documentation missing in model
     Progressive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13601,6 +14723,7 @@ impl std::str::FromStr for H264ScanType {
     }
 }
 impl H264ScanType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H264ScanType::Interlaced => "INTERLACED",
@@ -13608,6 +14731,7 @@ impl H264ScanType {
             H264ScanType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["INTERLACED", "PROGRESSIVE"]
     }
@@ -13630,9 +14754,13 @@ impl AsRef<str> for H264ScanType {
     std::hash::Hash,
 )]
 pub enum H264RateControlMode {
+    #[allow(missing_docs)] // documentation missing in model
     Cbr,
+    #[allow(missing_docs)] // documentation missing in model
     Multiplex,
+    #[allow(missing_docs)] // documentation missing in model
     Qvbr,
+    #[allow(missing_docs)] // documentation missing in model
     Vbr,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13656,6 +14784,7 @@ impl std::str::FromStr for H264RateControlMode {
     }
 }
 impl H264RateControlMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H264RateControlMode::Cbr => "CBR",
@@ -13665,6 +14794,7 @@ impl H264RateControlMode {
             H264RateControlMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CBR", "MULTIPLEX", "QVBR", "VBR"]
     }
@@ -13687,7 +14817,9 @@ impl AsRef<str> for H264RateControlMode {
     std::hash::Hash,
 )]
 pub enum H264QualityLevel {
+    #[allow(missing_docs)] // documentation missing in model
     EnhancedQuality,
+    #[allow(missing_docs)] // documentation missing in model
     StandardQuality,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13709,6 +14841,7 @@ impl std::str::FromStr for H264QualityLevel {
     }
 }
 impl H264QualityLevel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H264QualityLevel::EnhancedQuality => "ENHANCED_QUALITY",
@@ -13716,6 +14849,7 @@ impl H264QualityLevel {
             H264QualityLevel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ENHANCED_QUALITY", "STANDARD_QUALITY"]
     }
@@ -13738,11 +14872,17 @@ impl AsRef<str> for H264QualityLevel {
     std::hash::Hash,
 )]
 pub enum H264Profile {
+    #[allow(missing_docs)] // documentation missing in model
     Baseline,
+    #[allow(missing_docs)] // documentation missing in model
     High,
+    #[allow(missing_docs)] // documentation missing in model
     High10Bit,
+    #[allow(missing_docs)] // documentation missing in model
     High422,
+    #[allow(missing_docs)] // documentation missing in model
     High42210Bit,
+    #[allow(missing_docs)] // documentation missing in model
     Main,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13768,6 +14908,7 @@ impl std::str::FromStr for H264Profile {
     }
 }
 impl H264Profile {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H264Profile::Baseline => "BASELINE",
@@ -13779,6 +14920,7 @@ impl H264Profile {
             H264Profile::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BASELINE",
@@ -13808,7 +14950,9 @@ impl AsRef<str> for H264Profile {
     std::hash::Hash,
 )]
 pub enum H264ParControl {
+    #[allow(missing_docs)] // documentation missing in model
     InitializeFromSource,
+    #[allow(missing_docs)] // documentation missing in model
     Specified,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13830,6 +14974,7 @@ impl std::str::FromStr for H264ParControl {
     }
 }
 impl H264ParControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H264ParControl::InitializeFromSource => "INITIALIZE_FROM_SOURCE",
@@ -13837,6 +14982,7 @@ impl H264ParControl {
             H264ParControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["INITIALIZE_FROM_SOURCE", "SPECIFIED"]
     }
@@ -13859,8 +15005,11 @@ impl AsRef<str> for H264ParControl {
     std::hash::Hash,
 )]
 pub enum H264LookAheadRateControl {
+    #[allow(missing_docs)] // documentation missing in model
     High,
+    #[allow(missing_docs)] // documentation missing in model
     Low,
+    #[allow(missing_docs)] // documentation missing in model
     Medium,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13883,6 +15032,7 @@ impl std::str::FromStr for H264LookAheadRateControl {
     }
 }
 impl H264LookAheadRateControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H264LookAheadRateControl::High => "HIGH",
@@ -13891,6 +15041,7 @@ impl H264LookAheadRateControl {
             H264LookAheadRateControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "MEDIUM"]
     }
@@ -13913,22 +15064,39 @@ impl AsRef<str> for H264LookAheadRateControl {
     std::hash::Hash,
 )]
 pub enum H264Level {
+    #[allow(missing_docs)] // documentation missing in model
     H264Level1,
+    #[allow(missing_docs)] // documentation missing in model
     H264Level11,
+    #[allow(missing_docs)] // documentation missing in model
     H264Level12,
+    #[allow(missing_docs)] // documentation missing in model
     H264Level13,
+    #[allow(missing_docs)] // documentation missing in model
     H264Level2,
+    #[allow(missing_docs)] // documentation missing in model
     H264Level21,
+    #[allow(missing_docs)] // documentation missing in model
     H264Level22,
+    #[allow(missing_docs)] // documentation missing in model
     H264Level3,
+    #[allow(missing_docs)] // documentation missing in model
     H264Level31,
+    #[allow(missing_docs)] // documentation missing in model
     H264Level32,
+    #[allow(missing_docs)] // documentation missing in model
     H264Level4,
+    #[allow(missing_docs)] // documentation missing in model
     H264Level41,
+    #[allow(missing_docs)] // documentation missing in model
     H264Level42,
+    #[allow(missing_docs)] // documentation missing in model
     H264Level5,
+    #[allow(missing_docs)] // documentation missing in model
     H264Level51,
+    #[allow(missing_docs)] // documentation missing in model
     H264Level52,
+    #[allow(missing_docs)] // documentation missing in model
     H264LevelAuto,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13965,6 +15133,7 @@ impl std::str::FromStr for H264Level {
     }
 }
 impl H264Level {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H264Level::H264Level1 => "H264_LEVEL_1",
@@ -13987,6 +15156,7 @@ impl H264Level {
             H264Level::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "H264_LEVEL_1",
@@ -14027,7 +15197,9 @@ impl AsRef<str> for H264Level {
     std::hash::Hash,
 )]
 pub enum H264GopSizeUnits {
+    #[allow(missing_docs)] // documentation missing in model
     Frames,
+    #[allow(missing_docs)] // documentation missing in model
     Seconds,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -14049,6 +15221,7 @@ impl std::str::FromStr for H264GopSizeUnits {
     }
 }
 impl H264GopSizeUnits {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H264GopSizeUnits::Frames => "FRAMES",
@@ -14056,6 +15229,7 @@ impl H264GopSizeUnits {
             H264GopSizeUnits::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FRAMES", "SECONDS"]
     }
@@ -14078,7 +15252,9 @@ impl AsRef<str> for H264GopSizeUnits {
     std::hash::Hash,
 )]
 pub enum H264GopBReference {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -14100,6 +15276,7 @@ impl std::str::FromStr for H264GopBReference {
     }
 }
 impl H264GopBReference {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H264GopBReference::Disabled => "DISABLED",
@@ -14107,6 +15284,7 @@ impl H264GopBReference {
             H264GopBReference::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -14129,7 +15307,9 @@ impl AsRef<str> for H264GopBReference {
     std::hash::Hash,
 )]
 pub enum H264FramerateControl {
+    #[allow(missing_docs)] // documentation missing in model
     InitializeFromSource,
+    #[allow(missing_docs)] // documentation missing in model
     Specified,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -14151,6 +15331,7 @@ impl std::str::FromStr for H264FramerateControl {
     }
 }
 impl H264FramerateControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H264FramerateControl::InitializeFromSource => "INITIALIZE_FROM_SOURCE",
@@ -14158,6 +15339,7 @@ impl H264FramerateControl {
             H264FramerateControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["INITIALIZE_FROM_SOURCE", "SPECIFIED"]
     }
@@ -14180,7 +15362,9 @@ impl AsRef<str> for H264FramerateControl {
     std::hash::Hash,
 )]
 pub enum H264ForceFieldPictures {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -14202,6 +15386,7 @@ impl std::str::FromStr for H264ForceFieldPictures {
     }
 }
 impl H264ForceFieldPictures {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H264ForceFieldPictures::Disabled => "DISABLED",
@@ -14209,6 +15394,7 @@ impl H264ForceFieldPictures {
             H264ForceFieldPictures::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -14231,7 +15417,9 @@ impl AsRef<str> for H264ForceFieldPictures {
     std::hash::Hash,
 )]
 pub enum H264FlickerAq {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -14253,6 +15441,7 @@ impl std::str::FromStr for H264FlickerAq {
     }
 }
 impl H264FlickerAq {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H264FlickerAq::Disabled => "DISABLED",
@@ -14260,6 +15449,7 @@ impl H264FlickerAq {
             H264FlickerAq::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -14302,6 +15492,7 @@ pub mod h264_filter_settings {
             self.temporal_filter_settings = Some(input);
             self
         }
+        /// Temporal Filter Settings
         pub fn set_temporal_filter_settings(
             mut self,
             input: std::option::Option<crate::model::TemporalFilterSettings>,
@@ -14336,7 +15527,9 @@ impl H264FilterSettings {
     std::hash::Hash,
 )]
 pub enum H264EntropyEncoding {
+    #[allow(missing_docs)] // documentation missing in model
     Cabac,
+    #[allow(missing_docs)] // documentation missing in model
     Cavlc,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -14358,6 +15551,7 @@ impl std::str::FromStr for H264EntropyEncoding {
     }
 }
 impl H264EntropyEncoding {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H264EntropyEncoding::Cabac => "CABAC",
@@ -14365,6 +15559,7 @@ impl H264EntropyEncoding {
             H264EntropyEncoding::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CABAC", "CAVLC"]
     }
@@ -14419,6 +15614,7 @@ pub mod h264_color_space_settings {
             self.color_space_passthrough_settings = Some(input);
             self
         }
+        /// Passthrough applies no color space conversion to the output
         pub fn set_color_space_passthrough_settings(
             mut self,
             input: std::option::Option<crate::model::ColorSpacePassthroughSettings>,
@@ -14431,6 +15627,7 @@ pub mod h264_color_space_settings {
             self.rec601_settings = Some(input);
             self
         }
+        /// Rec601 Settings
         pub fn set_rec601_settings(
             mut self,
             input: std::option::Option<crate::model::Rec601Settings>,
@@ -14443,6 +15640,7 @@ pub mod h264_color_space_settings {
             self.rec709_settings = Some(input);
             self
         }
+        /// Rec709 Settings
         pub fn set_rec709_settings(
             mut self,
             input: std::option::Option<crate::model::Rec709Settings>,
@@ -14479,7 +15677,9 @@ impl H264ColorSpaceSettings {
     std::hash::Hash,
 )]
 pub enum H264ColorMetadata {
+    #[allow(missing_docs)] // documentation missing in model
     Ignore,
+    #[allow(missing_docs)] // documentation missing in model
     Insert,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -14501,6 +15701,7 @@ impl std::str::FromStr for H264ColorMetadata {
     }
 }
 impl H264ColorMetadata {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H264ColorMetadata::Ignore => "IGNORE",
@@ -14508,6 +15709,7 @@ impl H264ColorMetadata {
             H264ColorMetadata::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["IGNORE", "INSERT"]
     }
@@ -14530,12 +15732,19 @@ impl AsRef<str> for H264ColorMetadata {
     std::hash::Hash,
 )]
 pub enum H264AdaptiveQuantization {
+    #[allow(missing_docs)] // documentation missing in model
     Auto,
+    #[allow(missing_docs)] // documentation missing in model
     High,
+    #[allow(missing_docs)] // documentation missing in model
     Higher,
+    #[allow(missing_docs)] // documentation missing in model
     Low,
+    #[allow(missing_docs)] // documentation missing in model
     Max,
+    #[allow(missing_docs)] // documentation missing in model
     Medium,
+    #[allow(missing_docs)] // documentation missing in model
     Off,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -14562,6 +15771,7 @@ impl std::str::FromStr for H264AdaptiveQuantization {
     }
 }
 impl H264AdaptiveQuantization {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             H264AdaptiveQuantization::Auto => "AUTO",
@@ -14574,6 +15784,7 @@ impl H264AdaptiveQuantization {
             H264AdaptiveQuantization::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUTO", "HIGH", "HIGHER", "LOW", "MAX", "MEDIUM", "OFF"]
     }
@@ -14617,6 +15828,7 @@ pub mod frame_capture_settings {
             self.capture_interval = Some(input);
             self
         }
+        /// The frequency at which to capture frames for inclusion in the output. May be specified in either seconds or milliseconds, as specified by captureIntervalUnits.
         pub fn set_capture_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.capture_interval = input;
             self
@@ -14629,6 +15841,7 @@ pub mod frame_capture_settings {
             self.capture_interval_units = Some(input);
             self
         }
+        /// Unit for the frame capture interval.
         pub fn set_capture_interval_units(
             mut self,
             input: std::option::Option<crate::model::FrameCaptureIntervalUnit>,
@@ -14664,7 +15877,9 @@ impl FrameCaptureSettings {
     std::hash::Hash,
 )]
 pub enum FrameCaptureIntervalUnit {
+    #[allow(missing_docs)] // documentation missing in model
     Milliseconds,
+    #[allow(missing_docs)] // documentation missing in model
     Seconds,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -14686,6 +15901,7 @@ impl std::str::FromStr for FrameCaptureIntervalUnit {
     }
 }
 impl FrameCaptureIntervalUnit {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FrameCaptureIntervalUnit::Milliseconds => "MILLISECONDS",
@@ -14693,6 +15909,7 @@ impl FrameCaptureIntervalUnit {
             FrameCaptureIntervalUnit::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MILLISECONDS", "SECONDS"]
     }
@@ -14741,6 +15958,10 @@ pub mod timecode_config {
             self.source = Some(input);
             self
         }
+        /// Identifies the source for the timecode that will be associated with the events outputs.
+        /// -Embedded (embedded): Initialize the output timecode with timecode from the the source.  If no embedded timecode is detected in the source, the system falls back to using "Start at 0" (zerobased).
+        /// -System Clock (systemclock): Use the UTC time.
+        /// -Start at 0 (zerobased): The time of the first frame of the event will be 00:00:00:00.
         pub fn set_source(
             mut self,
             input: std::option::Option<crate::model::TimecodeConfigSource>,
@@ -14753,6 +15974,7 @@ pub mod timecode_config {
             self.sync_threshold = Some(input);
             self
         }
+        /// Threshold in frames beyond which output timecode is resynchronized to the input timecode. Discrepancies below this threshold are permitted to avoid unnecessary discontinuities in the output timecode. No timecode sync when this is not specified.
         pub fn set_sync_threshold(mut self, input: std::option::Option<i32>) -> Self {
             self.sync_threshold = input;
             self
@@ -14785,8 +16007,11 @@ impl TimecodeConfig {
     std::hash::Hash,
 )]
 pub enum TimecodeConfigSource {
+    #[allow(missing_docs)] // documentation missing in model
     Embedded,
+    #[allow(missing_docs)] // documentation missing in model
     Systemclock,
+    #[allow(missing_docs)] // documentation missing in model
     Zerobased,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -14809,6 +16034,7 @@ impl std::str::FromStr for TimecodeConfigSource {
     }
 }
 impl TimecodeConfigSource {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TimecodeConfigSource::Embedded => "EMBEDDED",
@@ -14817,6 +16043,7 @@ impl TimecodeConfigSource {
             TimecodeConfigSource::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EMBEDDED", "SYSTEMCLOCK", "ZEROBASED"]
     }
@@ -14863,6 +16090,7 @@ pub mod output_group {
             self.name = Some(input.into());
             self
         }
+        /// Custom output group name optionally defined by the user.  Only letters, numbers, and the underscore character allowed; only 32 characters allowed.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -14872,6 +16100,7 @@ pub mod output_group {
             self.output_group_settings = Some(input);
             self
         }
+        /// Settings associated with the output group.
         pub fn set_output_group_settings(
             mut self,
             input: std::option::Option<crate::model::OutputGroupSettings>,
@@ -14879,12 +16108,18 @@ pub mod output_group {
             self.output_group_settings = input;
             self
         }
+        /// Appends an item to `outputs`.
+        ///
+        /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
+        ///
+        /// Placeholder documentation for __listOfOutput
         pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
             let mut v = self.outputs.unwrap_or_default();
             v.push(input.into());
             self.outputs = Some(v);
             self
         }
+        /// Placeholder documentation for __listOfOutput
         pub fn set_outputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Output>>,
@@ -14949,12 +16184,18 @@ pub mod output {
         pub(crate) video_description_name: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `audio_description_names`.
+        ///
+        /// To override the contents of this collection use [`set_audio_description_names`](Self::set_audio_description_names).
+        ///
+        /// The names of the AudioDescriptions used as audio sources for this output.
         pub fn audio_description_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.audio_description_names.unwrap_or_default();
             v.push(input.into());
             self.audio_description_names = Some(v);
             self
         }
+        /// The names of the AudioDescriptions used as audio sources for this output.
         pub fn set_audio_description_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14962,12 +16203,18 @@ pub mod output {
             self.audio_description_names = input;
             self
         }
+        /// Appends an item to `caption_description_names`.
+        ///
+        /// To override the contents of this collection use [`set_caption_description_names`](Self::set_caption_description_names).
+        ///
+        /// The names of the CaptionDescriptions used as caption sources for this output.
         pub fn caption_description_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.caption_description_names.unwrap_or_default();
             v.push(input.into());
             self.caption_description_names = Some(v);
             self
         }
+        /// The names of the CaptionDescriptions used as caption sources for this output.
         pub fn set_caption_description_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14980,6 +16227,7 @@ pub mod output {
             self.output_name = Some(input.into());
             self
         }
+        /// The name used to identify an output.
         pub fn set_output_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output_name = input;
             self
@@ -14989,6 +16237,7 @@ pub mod output {
             self.output_settings = Some(input);
             self
         }
+        /// Output type-specific settings.
         pub fn set_output_settings(
             mut self,
             input: std::option::Option<crate::model::OutputSettings>,
@@ -15001,6 +16250,7 @@ pub mod output {
             self.video_description_name = Some(input.into());
             self
         }
+        /// The name of the VideoDescription used as the source for this output.
         pub fn set_video_description_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15099,6 +16349,7 @@ pub mod output_settings {
             self.archive_output_settings = Some(input);
             self
         }
+        /// Archive Output Settings
         pub fn set_archive_output_settings(
             mut self,
             input: std::option::Option<crate::model::ArchiveOutputSettings>,
@@ -15114,6 +16365,7 @@ pub mod output_settings {
             self.frame_capture_output_settings = Some(input);
             self
         }
+        /// Frame Capture Output Settings
         pub fn set_frame_capture_output_settings(
             mut self,
             input: std::option::Option<crate::model::FrameCaptureOutputSettings>,
@@ -15126,6 +16378,7 @@ pub mod output_settings {
             self.hls_output_settings = Some(input);
             self
         }
+        /// Hls Output Settings
         pub fn set_hls_output_settings(
             mut self,
             input: std::option::Option<crate::model::HlsOutputSettings>,
@@ -15141,6 +16394,7 @@ pub mod output_settings {
             self.media_package_output_settings = Some(input);
             self
         }
+        /// Media Package Output Settings
         pub fn set_media_package_output_settings(
             mut self,
             input: std::option::Option<crate::model::MediaPackageOutputSettings>,
@@ -15156,6 +16410,7 @@ pub mod output_settings {
             self.ms_smooth_output_settings = Some(input);
             self
         }
+        /// Ms Smooth Output Settings
         pub fn set_ms_smooth_output_settings(
             mut self,
             input: std::option::Option<crate::model::MsSmoothOutputSettings>,
@@ -15171,6 +16426,7 @@ pub mod output_settings {
             self.multiplex_output_settings = Some(input);
             self
         }
+        /// Multiplex Output Settings
         pub fn set_multiplex_output_settings(
             mut self,
             input: std::option::Option<crate::model::MultiplexOutputSettings>,
@@ -15183,6 +16439,7 @@ pub mod output_settings {
             self.rtmp_output_settings = Some(input);
             self
         }
+        /// Rtmp Output Settings
         pub fn set_rtmp_output_settings(
             mut self,
             input: std::option::Option<crate::model::RtmpOutputSettings>,
@@ -15195,6 +16452,7 @@ pub mod output_settings {
             self.udp_output_settings = Some(input);
             self
         }
+        /// Udp Output Settings
         pub fn set_udp_output_settings(
             mut self,
             input: std::option::Option<crate::model::UdpOutputSettings>,
@@ -15264,6 +16522,7 @@ pub mod udp_output_settings {
             self.buffer_msec = Some(input);
             self
         }
+        /// UDP output buffering in milliseconds. Larger values increase latency through the transcoder but simultaneously assist the transcoder in maintaining a constant, low-jitter UDP/RTP output while accommodating clock recovery, input switching, input disruptions, picture reordering, etc.
         pub fn set_buffer_msec(mut self, input: std::option::Option<i32>) -> Self {
             self.buffer_msec = input;
             self
@@ -15273,6 +16532,7 @@ pub mod udp_output_settings {
             self.container_settings = Some(input);
             self
         }
+        /// Udp Container Settings
         pub fn set_container_settings(
             mut self,
             input: std::option::Option<crate::model::UdpContainerSettings>,
@@ -15285,6 +16545,7 @@ pub mod udp_output_settings {
             self.destination = Some(input);
             self
         }
+        /// Destination address and port number for RTP or UDP packets. Can be unicast or multicast RTP or UDP (eg. rtp://239.10.10.10:5001 or udp://10.100.100.100:5002).
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::OutputLocationRef>,
@@ -15297,6 +16558,7 @@ pub mod udp_output_settings {
             self.fec_output_settings = Some(input);
             self
         }
+        /// Settings for enabling and adjusting Forward Error Correction on UDP outputs.
         pub fn set_fec_output_settings(
             mut self,
             input: std::option::Option<crate::model::FecOutputSettings>,
@@ -15358,6 +16620,7 @@ pub mod fec_output_settings {
             self.column_depth = Some(input);
             self
         }
+        /// Parameter D from SMPTE 2022-1. The height of the FEC protection matrix.  The number of transport stream packets per column error correction packet. Must be between 4 and 20, inclusive.
         pub fn set_column_depth(mut self, input: std::option::Option<i32>) -> Self {
             self.column_depth = input;
             self
@@ -15367,6 +16630,7 @@ pub mod fec_output_settings {
             self.include_fec = Some(input);
             self
         }
+        /// Enables column only or column and row based FEC
         pub fn set_include_fec(
             mut self,
             input: std::option::Option<crate::model::FecOutputIncludeFec>,
@@ -15379,6 +16643,7 @@ pub mod fec_output_settings {
             self.row_length = Some(input);
             self
         }
+        /// Parameter L from SMPTE 2022-1. The width of the FEC protection matrix.  Must be between 1 and 20, inclusive. If only Column FEC is used, then larger values increase robustness.  If Row FEC is used, then this is the number of transport stream packets per row error correction packet, and the value must be between 4 and 20, inclusive, if includeFec is columnAndRow. If includeFec is column, this value must be 1 to 20, inclusive.
         pub fn set_row_length(mut self, input: std::option::Option<i32>) -> Self {
             self.row_length = input;
             self
@@ -15412,7 +16677,9 @@ impl FecOutputSettings {
     std::hash::Hash,
 )]
 pub enum FecOutputIncludeFec {
+    #[allow(missing_docs)] // documentation missing in model
     Column,
+    #[allow(missing_docs)] // documentation missing in model
     ColumnAndRow,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -15434,6 +16701,7 @@ impl std::str::FromStr for FecOutputIncludeFec {
     }
 }
 impl FecOutputIncludeFec {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FecOutputIncludeFec::Column => "COLUMN",
@@ -15441,6 +16709,7 @@ impl FecOutputIncludeFec {
             FecOutputIncludeFec::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COLUMN", "COLUMN_AND_ROW"]
     }
@@ -15479,6 +16748,7 @@ pub mod output_location_ref {
             self.destination_ref_id = Some(input.into());
             self
         }
+        /// Placeholder documentation for __string
         pub fn set_destination_ref_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15529,6 +16799,7 @@ pub mod udp_container_settings {
             self.m2ts_settings = Some(input);
             self
         }
+        /// M2ts Settings
         pub fn set_m2ts_settings(
             mut self,
             input: std::option::Option<crate::model::M2tsSettings>,
@@ -15639,7 +16910,9 @@ pub struct M2tsSettings {
     /// Inserts segmentation markers at each segmentationTime period. raiSegstart sets the Random Access Indicator bit in the adaptation field. raiAdapt sets the RAI bit and adds the current timecode in the private data bytes. psiSegstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebpLegacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format.
     pub segmentation_markers: std::option::Option<crate::model::M2tsSegmentationMarkers>,
     /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted.
+    ///
     /// When a segmentation style of "resetCadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of $segmentationTime seconds.
+    ///
     /// When a segmentation style of "maintainCadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentationTime seconds. Note that EBP lookahead is a slight exception to this rule.
     pub segmentation_style: std::option::Option<crate::model::M2tsSegmentationStyle>,
     /// The length in seconds of each segment. Required unless markers is set to _none_.
@@ -15775,6 +17048,7 @@ pub mod m2ts_settings {
             self.absent_input_audio_behavior = Some(input);
             self
         }
+        /// When set to drop, output audio streams will be removed from the program if the selected input audio stream is removed from the input. This allows the output audio configuration to dynamically change based on input configuration. If this is set to encodeSilence, all output audio streams will output encoded silence when not connected to an active input stream.
         pub fn set_absent_input_audio_behavior(
             mut self,
             input: std::option::Option<crate::model::M2tsAbsentInputAudioBehavior>,
@@ -15787,6 +17061,7 @@ pub mod m2ts_settings {
             self.arib = Some(input);
             self
         }
+        /// When set to enabled, uses ARIB-compliant field muxing and removes video descriptor.
         pub fn set_arib(mut self, input: std::option::Option<crate::model::M2tsArib>) -> Self {
             self.arib = input;
             self
@@ -15796,6 +17071,7 @@ pub mod m2ts_settings {
             self.arib_captions_pid = Some(input.into());
             self
         }
+        /// Packet Identifier (PID) for ARIB Captions in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_arib_captions_pid(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15811,6 +17087,7 @@ pub mod m2ts_settings {
             self.arib_captions_pid_control = Some(input);
             self
         }
+        /// If set to auto, pid number used for ARIB Captions will be auto-selected from unused pids.  If set to useConfigured, ARIB Captions will be on the configured pid number.
         pub fn set_arib_captions_pid_control(
             mut self,
             input: std::option::Option<crate::model::M2tsAribCaptionsPidControl>,
@@ -15823,6 +17100,7 @@ pub mod m2ts_settings {
             self.audio_buffer_model = Some(input);
             self
         }
+        /// When set to dvb, uses DVB buffer model for Dolby Digital audio.  When set to atsc, the ATSC model is used.
         pub fn set_audio_buffer_model(
             mut self,
             input: std::option::Option<crate::model::M2tsAudioBufferModel>,
@@ -15835,6 +17113,7 @@ pub mod m2ts_settings {
             self.audio_frames_per_pes = Some(input);
             self
         }
+        /// The number of audio frames to insert for each PES packet.
         pub fn set_audio_frames_per_pes(mut self, input: std::option::Option<i32>) -> Self {
             self.audio_frames_per_pes = input;
             self
@@ -15844,6 +17123,7 @@ pub mod m2ts_settings {
             self.audio_pids = Some(input.into());
             self
         }
+        /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_audio_pids(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.audio_pids = input;
             self
@@ -15853,6 +17133,7 @@ pub mod m2ts_settings {
             self.audio_stream_type = Some(input);
             self
         }
+        /// When set to atsc, uses stream type = 0x81 for AC3 and stream type = 0x87 for EAC3. When set to dvb, uses stream type = 0x06.
         pub fn set_audio_stream_type(
             mut self,
             input: std::option::Option<crate::model::M2tsAudioStreamType>,
@@ -15865,6 +17146,7 @@ pub mod m2ts_settings {
             self.bitrate = Some(input);
             self
         }
+        /// The output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically determine the appropriate bitrate.
         pub fn set_bitrate(mut self, input: std::option::Option<i32>) -> Self {
             self.bitrate = input;
             self
@@ -15874,6 +17156,7 @@ pub mod m2ts_settings {
             self.buffer_model = Some(input);
             self
         }
+        /// Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to ensure accurate network packet timing. Or set to NONE, which might result in lower latency but will result in more variability in output network packet timing. This variability might cause interruptions, jitter, or bursty behavior in your playback or receiving devices.
         pub fn set_buffer_model(
             mut self,
             input: std::option::Option<crate::model::M2tsBufferModel>,
@@ -15886,6 +17169,7 @@ pub mod m2ts_settings {
             self.cc_descriptor = Some(input);
             self
         }
+        /// When set to enabled, generates captionServiceDescriptor in PMT.
         pub fn set_cc_descriptor(
             mut self,
             input: std::option::Option<crate::model::M2tsCcDescriptor>,
@@ -15898,6 +17182,7 @@ pub mod m2ts_settings {
             self.dvb_nit_settings = Some(input);
             self
         }
+        /// Inserts DVB Network Information Table (NIT) at the specified table repetition interval.
         pub fn set_dvb_nit_settings(
             mut self,
             input: std::option::Option<crate::model::DvbNitSettings>,
@@ -15910,6 +17195,7 @@ pub mod m2ts_settings {
             self.dvb_sdt_settings = Some(input);
             self
         }
+        /// Inserts DVB Service Description Table (SDT) at the specified table repetition interval.
         pub fn set_dvb_sdt_settings(
             mut self,
             input: std::option::Option<crate::model::DvbSdtSettings>,
@@ -15922,6 +17208,7 @@ pub mod m2ts_settings {
             self.dvb_sub_pids = Some(input.into());
             self
         }
+        /// Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.  Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_dvb_sub_pids(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dvb_sub_pids = input;
             self
@@ -15931,6 +17218,7 @@ pub mod m2ts_settings {
             self.dvb_tdt_settings = Some(input);
             self
         }
+        /// Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.
         pub fn set_dvb_tdt_settings(
             mut self,
             input: std::option::Option<crate::model::DvbTdtSettings>,
@@ -15943,6 +17231,7 @@ pub mod m2ts_settings {
             self.dvb_teletext_pid = Some(input.into());
             self
         }
+        /// Packet Identifier (PID) for input source DVB Teletext data to this output. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_dvb_teletext_pid(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15955,6 +17244,7 @@ pub mod m2ts_settings {
             self.ebif = Some(input);
             self
         }
+        /// If set to passthrough, passes any EBIF data from the input source to this output.
         pub fn set_ebif(
             mut self,
             input: std::option::Option<crate::model::M2tsEbifControl>,
@@ -15967,6 +17257,7 @@ pub mod m2ts_settings {
             self.ebp_audio_interval = Some(input);
             self
         }
+        /// When videoAndFixedIntervals is selected, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. Only available when EBP Cablelabs segmentation markers are selected.  Partitions 1 and 2 will always follow the video interval.
         pub fn set_ebp_audio_interval(
             mut self,
             input: std::option::Option<crate::model::M2tsAudioInterval>,
@@ -15979,6 +17270,7 @@ pub mod m2ts_settings {
             self.ebp_lookahead_ms = Some(input);
             self
         }
+        /// When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by looking ahead at input video. If another EBP is going to come in within the specified time interval, the current EBP is not emitted, and the segment is "stretched" to the next marker.  The lookahead value does not add latency to the system. The Live Event must be configured elsewhere to create sufficient latency to make the lookahead accurate.
         pub fn set_ebp_lookahead_ms(mut self, input: std::option::Option<i32>) -> Self {
             self.ebp_lookahead_ms = input;
             self
@@ -15988,6 +17280,7 @@ pub mod m2ts_settings {
             self.ebp_placement = Some(input);
             self
         }
+        /// Controls placement of EBP on Audio PIDs. If set to videoAndAudioPids, EBP markers will be placed on the video PID and all audio PIDs.  If set to videoPid, EBP markers will be placed on only the video PID.
         pub fn set_ebp_placement(
             mut self,
             input: std::option::Option<crate::model::M2tsEbpPlacement>,
@@ -16000,6 +17293,7 @@ pub mod m2ts_settings {
             self.ecm_pid = Some(input.into());
             self
         }
+        /// This field is unused and deprecated.
         pub fn set_ecm_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ecm_pid = input;
             self
@@ -16009,6 +17303,7 @@ pub mod m2ts_settings {
             self.es_rate_in_pes = Some(input);
             self
         }
+        /// Include or exclude the ES Rate field in the PES header.
         pub fn set_es_rate_in_pes(
             mut self,
             input: std::option::Option<crate::model::M2tsEsRateInPes>,
@@ -16021,6 +17316,7 @@ pub mod m2ts_settings {
             self.etv_platform_pid = Some(input.into());
             self
         }
+        /// Packet Identifier (PID) for input source ETV Platform data to this output. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_etv_platform_pid(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16033,6 +17329,7 @@ pub mod m2ts_settings {
             self.etv_signal_pid = Some(input.into());
             self
         }
+        /// Packet Identifier (PID) for input source ETV Signal data to this output. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_etv_signal_pid(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16045,6 +17342,7 @@ pub mod m2ts_settings {
             self.fragment_time = Some(input);
             self
         }
+        /// The length in seconds of each fragment. Only used with EBP markers.
         pub fn set_fragment_time(mut self, input: std::option::Option<f64>) -> Self {
             self.fragment_time = input;
             self
@@ -16054,6 +17352,7 @@ pub mod m2ts_settings {
             self.klv = Some(input);
             self
         }
+        /// If set to passthrough, passes any KLV data from the input source to this output.
         pub fn set_klv(mut self, input: std::option::Option<crate::model::M2tsKlv>) -> Self {
             self.klv = input;
             self
@@ -16063,6 +17362,7 @@ pub mod m2ts_settings {
             self.klv_data_pids = Some(input.into());
             self
         }
+        /// Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.  Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_klv_data_pids(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16075,6 +17375,7 @@ pub mod m2ts_settings {
             self.nielsen_id3_behavior = Some(input);
             self
         }
+        /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
         pub fn set_nielsen_id3_behavior(
             mut self,
             input: std::option::Option<crate::model::M2tsNielsenId3Behavior>,
@@ -16087,6 +17388,7 @@ pub mod m2ts_settings {
             self.null_packet_bitrate = Some(input);
             self
         }
+        /// Value in bits per second of extra null packets to insert into the transport stream. This can be used if a downstream encryption system requires periodic null packets.
         pub fn set_null_packet_bitrate(mut self, input: std::option::Option<f64>) -> Self {
             self.null_packet_bitrate = input;
             self
@@ -16096,6 +17398,7 @@ pub mod m2ts_settings {
             self.pat_interval = Some(input);
             self
         }
+        /// The number of milliseconds between instances of this table in the output transport stream.  Valid values are 0, 10..1000.
         pub fn set_pat_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.pat_interval = input;
             self
@@ -16105,6 +17408,7 @@ pub mod m2ts_settings {
             self.pcr_control = Some(input);
             self
         }
+        /// When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
         pub fn set_pcr_control(
             mut self,
             input: std::option::Option<crate::model::M2tsPcrControl>,
@@ -16117,6 +17421,7 @@ pub mod m2ts_settings {
             self.pcr_period = Some(input);
             self
         }
+        /// Maximum time in milliseconds between Program Clock Reference (PCRs) inserted into the transport stream.
         pub fn set_pcr_period(mut self, input: std::option::Option<i32>) -> Self {
             self.pcr_period = input;
             self
@@ -16126,6 +17431,7 @@ pub mod m2ts_settings {
             self.pcr_pid = Some(input.into());
             self
         }
+        /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_pcr_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pcr_pid = input;
             self
@@ -16135,6 +17441,7 @@ pub mod m2ts_settings {
             self.pmt_interval = Some(input);
             self
         }
+        /// The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.
         pub fn set_pmt_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.pmt_interval = input;
             self
@@ -16144,6 +17451,7 @@ pub mod m2ts_settings {
             self.pmt_pid = Some(input.into());
             self
         }
+        /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_pmt_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pmt_pid = input;
             self
@@ -16153,6 +17461,7 @@ pub mod m2ts_settings {
             self.program_num = Some(input);
             self
         }
+        /// The value of the program number field in the Program Map Table.
         pub fn set_program_num(mut self, input: std::option::Option<i32>) -> Self {
             self.program_num = input;
             self
@@ -16162,6 +17471,7 @@ pub mod m2ts_settings {
             self.rate_mode = Some(input);
             self
         }
+        /// When vbr, does not insert null packets into transport stream to fill specified bitrate. The bitrate setting acts as the maximum bitrate when vbr is set.
         pub fn set_rate_mode(
             mut self,
             input: std::option::Option<crate::model::M2tsRateMode>,
@@ -16174,6 +17484,7 @@ pub mod m2ts_settings {
             self.scte27_pids = Some(input.into());
             self
         }
+        /// Packet Identifier (PID) for input source SCTE-27 data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.  Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_scte27_pids(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.scte27_pids = input;
             self
@@ -16183,6 +17494,7 @@ pub mod m2ts_settings {
             self.scte35_control = Some(input);
             self
         }
+        /// Optionally pass SCTE-35 signals from the input source to this output.
         pub fn set_scte35_control(
             mut self,
             input: std::option::Option<crate::model::M2tsScte35Control>,
@@ -16195,6 +17507,7 @@ pub mod m2ts_settings {
             self.scte35_pid = Some(input.into());
             self
         }
+        /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_scte35_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.scte35_pid = input;
             self
@@ -16207,6 +17520,7 @@ pub mod m2ts_settings {
             self.segmentation_markers = Some(input);
             self
         }
+        /// Inserts segmentation markers at each segmentationTime period. raiSegstart sets the Random Access Indicator bit in the adaptation field. raiAdapt sets the RAI bit and adds the current timecode in the private data bytes. psiSegstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebpLegacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format.
         pub fn set_segmentation_markers(
             mut self,
             input: std::option::Option<crate::model::M2tsSegmentationMarkers>,
@@ -16215,12 +17529,19 @@ pub mod m2ts_settings {
             self
         }
         /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted.
+        ///
         /// When a segmentation style of "resetCadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of $segmentationTime seconds.
+        ///
         /// When a segmentation style of "maintainCadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentationTime seconds. Note that EBP lookahead is a slight exception to this rule.
         pub fn segmentation_style(mut self, input: crate::model::M2tsSegmentationStyle) -> Self {
             self.segmentation_style = Some(input);
             self
         }
+        /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted.
+        ///
+        /// When a segmentation style of "resetCadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of $segmentationTime seconds.
+        ///
+        /// When a segmentation style of "maintainCadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentationTime seconds. Note that EBP lookahead is a slight exception to this rule.
         pub fn set_segmentation_style(
             mut self,
             input: std::option::Option<crate::model::M2tsSegmentationStyle>,
@@ -16233,6 +17554,7 @@ pub mod m2ts_settings {
             self.segmentation_time = Some(input);
             self
         }
+        /// The length in seconds of each segment. Required unless markers is set to _none_.
         pub fn set_segmentation_time(mut self, input: std::option::Option<f64>) -> Self {
             self.segmentation_time = input;
             self
@@ -16245,6 +17567,7 @@ pub mod m2ts_settings {
             self.timed_metadata_behavior = Some(input);
             self
         }
+        /// When set to passthrough, timed metadata will be passed through from input to output.
         pub fn set_timed_metadata_behavior(
             mut self,
             input: std::option::Option<crate::model::M2tsTimedMetadataBehavior>,
@@ -16257,6 +17580,7 @@ pub mod m2ts_settings {
             self.timed_metadata_pid = Some(input.into());
             self
         }
+        /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_timed_metadata_pid(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16269,6 +17593,7 @@ pub mod m2ts_settings {
             self.transport_stream_id = Some(input);
             self
         }
+        /// The value of the transport stream ID field in the Program Map Table.
         pub fn set_transport_stream_id(mut self, input: std::option::Option<i32>) -> Self {
             self.transport_stream_id = input;
             self
@@ -16278,6 +17603,7 @@ pub mod m2ts_settings {
             self.video_pid = Some(input.into());
             self
         }
+        /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_video_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.video_pid = input;
             self
@@ -16355,7 +17681,9 @@ impl M2tsSettings {
     std::hash::Hash,
 )]
 pub enum M2tsTimedMetadataBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     NoPassthrough,
+    #[allow(missing_docs)] // documentation missing in model
     Passthrough,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -16377,6 +17705,7 @@ impl std::str::FromStr for M2tsTimedMetadataBehavior {
     }
 }
 impl M2tsTimedMetadataBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M2tsTimedMetadataBehavior::NoPassthrough => "NO_PASSTHROUGH",
@@ -16384,6 +17713,7 @@ impl M2tsTimedMetadataBehavior {
             M2tsTimedMetadataBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NO_PASSTHROUGH", "PASSTHROUGH"]
     }
@@ -16406,7 +17736,9 @@ impl AsRef<str> for M2tsTimedMetadataBehavior {
     std::hash::Hash,
 )]
 pub enum M2tsSegmentationStyle {
+    #[allow(missing_docs)] // documentation missing in model
     MaintainCadence,
+    #[allow(missing_docs)] // documentation missing in model
     ResetCadence,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -16428,6 +17760,7 @@ impl std::str::FromStr for M2tsSegmentationStyle {
     }
 }
 impl M2tsSegmentationStyle {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M2tsSegmentationStyle::MaintainCadence => "MAINTAIN_CADENCE",
@@ -16435,6 +17768,7 @@ impl M2tsSegmentationStyle {
             M2tsSegmentationStyle::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MAINTAIN_CADENCE", "RESET_CADENCE"]
     }
@@ -16457,11 +17791,17 @@ impl AsRef<str> for M2tsSegmentationStyle {
     std::hash::Hash,
 )]
 pub enum M2tsSegmentationMarkers {
+    #[allow(missing_docs)] // documentation missing in model
     Ebp,
+    #[allow(missing_docs)] // documentation missing in model
     EbpLegacy,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     PsiSegstart,
+    #[allow(missing_docs)] // documentation missing in model
     RaiAdapt,
+    #[allow(missing_docs)] // documentation missing in model
     RaiSegstart,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -16487,6 +17827,7 @@ impl std::str::FromStr for M2tsSegmentationMarkers {
     }
 }
 impl M2tsSegmentationMarkers {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M2tsSegmentationMarkers::Ebp => "EBP",
@@ -16498,6 +17839,7 @@ impl M2tsSegmentationMarkers {
             M2tsSegmentationMarkers::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "EBP",
@@ -16527,7 +17869,9 @@ impl AsRef<str> for M2tsSegmentationMarkers {
     std::hash::Hash,
 )]
 pub enum M2tsScte35Control {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Passthrough,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -16549,6 +17893,7 @@ impl std::str::FromStr for M2tsScte35Control {
     }
 }
 impl M2tsScte35Control {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M2tsScte35Control::None => "NONE",
@@ -16556,6 +17901,7 @@ impl M2tsScte35Control {
             M2tsScte35Control::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "PASSTHROUGH"]
     }
@@ -16578,7 +17924,9 @@ impl AsRef<str> for M2tsScte35Control {
     std::hash::Hash,
 )]
 pub enum M2tsRateMode {
+    #[allow(missing_docs)] // documentation missing in model
     Cbr,
+    #[allow(missing_docs)] // documentation missing in model
     Vbr,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -16600,6 +17948,7 @@ impl std::str::FromStr for M2tsRateMode {
     }
 }
 impl M2tsRateMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M2tsRateMode::Cbr => "CBR",
@@ -16607,6 +17956,7 @@ impl M2tsRateMode {
             M2tsRateMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CBR", "VBR"]
     }
@@ -16629,7 +17979,9 @@ impl AsRef<str> for M2tsRateMode {
     std::hash::Hash,
 )]
 pub enum M2tsPcrControl {
+    #[allow(missing_docs)] // documentation missing in model
     ConfiguredPcrPeriod,
+    #[allow(missing_docs)] // documentation missing in model
     PcrEveryPesPacket,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -16651,6 +18003,7 @@ impl std::str::FromStr for M2tsPcrControl {
     }
 }
 impl M2tsPcrControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M2tsPcrControl::ConfiguredPcrPeriod => "CONFIGURED_PCR_PERIOD",
@@ -16658,6 +18011,7 @@ impl M2tsPcrControl {
             M2tsPcrControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONFIGURED_PCR_PERIOD", "PCR_EVERY_PES_PACKET"]
     }
@@ -16680,7 +18034,9 @@ impl AsRef<str> for M2tsPcrControl {
     std::hash::Hash,
 )]
 pub enum M2tsNielsenId3Behavior {
+    #[allow(missing_docs)] // documentation missing in model
     NoPassthrough,
+    #[allow(missing_docs)] // documentation missing in model
     Passthrough,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -16702,6 +18058,7 @@ impl std::str::FromStr for M2tsNielsenId3Behavior {
     }
 }
 impl M2tsNielsenId3Behavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M2tsNielsenId3Behavior::NoPassthrough => "NO_PASSTHROUGH",
@@ -16709,6 +18066,7 @@ impl M2tsNielsenId3Behavior {
             M2tsNielsenId3Behavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NO_PASSTHROUGH", "PASSTHROUGH"]
     }
@@ -16731,7 +18089,9 @@ impl AsRef<str> for M2tsNielsenId3Behavior {
     std::hash::Hash,
 )]
 pub enum M2tsKlv {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Passthrough,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -16753,6 +18113,7 @@ impl std::str::FromStr for M2tsKlv {
     }
 }
 impl M2tsKlv {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M2tsKlv::None => "NONE",
@@ -16760,6 +18121,7 @@ impl M2tsKlv {
             M2tsKlv::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "PASSTHROUGH"]
     }
@@ -16782,7 +18144,9 @@ impl AsRef<str> for M2tsKlv {
     std::hash::Hash,
 )]
 pub enum M2tsEsRateInPes {
+    #[allow(missing_docs)] // documentation missing in model
     Exclude,
+    #[allow(missing_docs)] // documentation missing in model
     Include,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -16804,6 +18168,7 @@ impl std::str::FromStr for M2tsEsRateInPes {
     }
 }
 impl M2tsEsRateInPes {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M2tsEsRateInPes::Exclude => "EXCLUDE",
@@ -16811,6 +18176,7 @@ impl M2tsEsRateInPes {
             M2tsEsRateInPes::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EXCLUDE", "INCLUDE"]
     }
@@ -16833,7 +18199,9 @@ impl AsRef<str> for M2tsEsRateInPes {
     std::hash::Hash,
 )]
 pub enum M2tsEbpPlacement {
+    #[allow(missing_docs)] // documentation missing in model
     VideoAndAudioPids,
+    #[allow(missing_docs)] // documentation missing in model
     VideoPid,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -16855,6 +18223,7 @@ impl std::str::FromStr for M2tsEbpPlacement {
     }
 }
 impl M2tsEbpPlacement {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M2tsEbpPlacement::VideoAndAudioPids => "VIDEO_AND_AUDIO_PIDS",
@@ -16862,6 +18231,7 @@ impl M2tsEbpPlacement {
             M2tsEbpPlacement::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["VIDEO_AND_AUDIO_PIDS", "VIDEO_PID"]
     }
@@ -16884,7 +18254,9 @@ impl AsRef<str> for M2tsEbpPlacement {
     std::hash::Hash,
 )]
 pub enum M2tsAudioInterval {
+    #[allow(missing_docs)] // documentation missing in model
     VideoAndFixedIntervals,
+    #[allow(missing_docs)] // documentation missing in model
     VideoInterval,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -16906,6 +18278,7 @@ impl std::str::FromStr for M2tsAudioInterval {
     }
 }
 impl M2tsAudioInterval {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M2tsAudioInterval::VideoAndFixedIntervals => "VIDEO_AND_FIXED_INTERVALS",
@@ -16913,6 +18286,7 @@ impl M2tsAudioInterval {
             M2tsAudioInterval::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["VIDEO_AND_FIXED_INTERVALS", "VIDEO_INTERVAL"]
     }
@@ -16935,7 +18309,9 @@ impl AsRef<str> for M2tsAudioInterval {
     std::hash::Hash,
 )]
 pub enum M2tsEbifControl {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Passthrough,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -16957,6 +18333,7 @@ impl std::str::FromStr for M2tsEbifControl {
     }
 }
 impl M2tsEbifControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M2tsEbifControl::None => "NONE",
@@ -16964,6 +18341,7 @@ impl M2tsEbifControl {
             M2tsEbifControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "PASSTHROUGH"]
     }
@@ -17002,6 +18380,7 @@ pub mod dvb_tdt_settings {
             self.rep_interval = Some(input);
             self
         }
+        /// The number of milliseconds between instances of this table in the output transport stream.
         pub fn set_rep_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.rep_interval = input;
             self
@@ -17061,6 +18440,7 @@ pub mod dvb_sdt_settings {
             self.output_sdt = Some(input);
             self
         }
+        /// Selects method of inserting SDT information into output stream. The sdtFollow setting copies SDT information from input stream to output stream. The sdtFollowIfPresent setting copies SDT information from input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. The sdtManual setting means user will enter the SDT information. The sdtNone setting means output stream will not contain SDT information.
         pub fn set_output_sdt(
             mut self,
             input: std::option::Option<crate::model::DvbSdtOutputSdt>,
@@ -17073,6 +18453,7 @@ pub mod dvb_sdt_settings {
             self.rep_interval = Some(input);
             self
         }
+        /// The number of milliseconds between instances of this table in the output transport stream.
         pub fn set_rep_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.rep_interval = input;
             self
@@ -17082,6 +18463,7 @@ pub mod dvb_sdt_settings {
             self.service_name = Some(input.into());
             self
         }
+        /// The service name placed in the serviceDescriptor in the Service Description Table. Maximum length is 256 characters.
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -17091,6 +18473,7 @@ pub mod dvb_sdt_settings {
             self.service_provider_name = Some(input.into());
             self
         }
+        /// The service provider name placed in the serviceDescriptor in the Service Description Table. Maximum length is 256 characters.
         pub fn set_service_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17128,9 +18511,13 @@ impl DvbSdtSettings {
     std::hash::Hash,
 )]
 pub enum DvbSdtOutputSdt {
+    #[allow(missing_docs)] // documentation missing in model
     SdtFollow,
+    #[allow(missing_docs)] // documentation missing in model
     SdtFollowIfPresent,
+    #[allow(missing_docs)] // documentation missing in model
     SdtManual,
+    #[allow(missing_docs)] // documentation missing in model
     SdtNone,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -17154,6 +18541,7 @@ impl std::str::FromStr for DvbSdtOutputSdt {
     }
 }
 impl DvbSdtOutputSdt {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DvbSdtOutputSdt::SdtFollow => "SDT_FOLLOW",
@@ -17163,6 +18551,7 @@ impl DvbSdtOutputSdt {
             DvbSdtOutputSdt::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "SDT_FOLLOW",
@@ -17214,6 +18603,7 @@ pub mod dvb_nit_settings {
             self.network_id = Some(input);
             self
         }
+        /// The numeric value placed in the Network Information Table (NIT).
         pub fn set_network_id(mut self, input: std::option::Option<i32>) -> Self {
             self.network_id = input;
             self
@@ -17223,6 +18613,7 @@ pub mod dvb_nit_settings {
             self.network_name = Some(input.into());
             self
         }
+        /// The network name text placed in the networkNameDescriptor inside the Network Information Table. Maximum length is 256 characters.
         pub fn set_network_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.network_name = input;
             self
@@ -17232,6 +18623,7 @@ pub mod dvb_nit_settings {
             self.rep_interval = Some(input);
             self
         }
+        /// The number of milliseconds between instances of this table in the output transport stream.
         pub fn set_rep_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.rep_interval = input;
             self
@@ -17265,7 +18657,9 @@ impl DvbNitSettings {
     std::hash::Hash,
 )]
 pub enum M2tsCcDescriptor {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -17287,6 +18681,7 @@ impl std::str::FromStr for M2tsCcDescriptor {
     }
 }
 impl M2tsCcDescriptor {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M2tsCcDescriptor::Disabled => "DISABLED",
@@ -17294,6 +18689,7 @@ impl M2tsCcDescriptor {
             M2tsCcDescriptor::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -17316,7 +18712,9 @@ impl AsRef<str> for M2tsCcDescriptor {
     std::hash::Hash,
 )]
 pub enum M2tsBufferModel {
+    #[allow(missing_docs)] // documentation missing in model
     Multiplex,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -17338,6 +18736,7 @@ impl std::str::FromStr for M2tsBufferModel {
     }
 }
 impl M2tsBufferModel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M2tsBufferModel::Multiplex => "MULTIPLEX",
@@ -17345,6 +18744,7 @@ impl M2tsBufferModel {
             M2tsBufferModel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MULTIPLEX", "NONE"]
     }
@@ -17367,7 +18767,9 @@ impl AsRef<str> for M2tsBufferModel {
     std::hash::Hash,
 )]
 pub enum M2tsAudioStreamType {
+    #[allow(missing_docs)] // documentation missing in model
     Atsc,
+    #[allow(missing_docs)] // documentation missing in model
     Dvb,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -17389,6 +18791,7 @@ impl std::str::FromStr for M2tsAudioStreamType {
     }
 }
 impl M2tsAudioStreamType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M2tsAudioStreamType::Atsc => "ATSC",
@@ -17396,6 +18799,7 @@ impl M2tsAudioStreamType {
             M2tsAudioStreamType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ATSC", "DVB"]
     }
@@ -17418,7 +18822,9 @@ impl AsRef<str> for M2tsAudioStreamType {
     std::hash::Hash,
 )]
 pub enum M2tsAudioBufferModel {
+    #[allow(missing_docs)] // documentation missing in model
     Atsc,
+    #[allow(missing_docs)] // documentation missing in model
     Dvb,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -17440,6 +18846,7 @@ impl std::str::FromStr for M2tsAudioBufferModel {
     }
 }
 impl M2tsAudioBufferModel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M2tsAudioBufferModel::Atsc => "ATSC",
@@ -17447,6 +18854,7 @@ impl M2tsAudioBufferModel {
             M2tsAudioBufferModel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ATSC", "DVB"]
     }
@@ -17469,7 +18877,9 @@ impl AsRef<str> for M2tsAudioBufferModel {
     std::hash::Hash,
 )]
 pub enum M2tsAribCaptionsPidControl {
+    #[allow(missing_docs)] // documentation missing in model
     Auto,
+    #[allow(missing_docs)] // documentation missing in model
     UseConfigured,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -17491,6 +18901,7 @@ impl std::str::FromStr for M2tsAribCaptionsPidControl {
     }
 }
 impl M2tsAribCaptionsPidControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M2tsAribCaptionsPidControl::Auto => "AUTO",
@@ -17498,6 +18909,7 @@ impl M2tsAribCaptionsPidControl {
             M2tsAribCaptionsPidControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUTO", "USE_CONFIGURED"]
     }
@@ -17520,7 +18932,9 @@ impl AsRef<str> for M2tsAribCaptionsPidControl {
     std::hash::Hash,
 )]
 pub enum M2tsArib {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -17542,6 +18956,7 @@ impl std::str::FromStr for M2tsArib {
     }
 }
 impl M2tsArib {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M2tsArib::Disabled => "DISABLED",
@@ -17549,6 +18964,7 @@ impl M2tsArib {
             M2tsArib::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -17571,7 +18987,9 @@ impl AsRef<str> for M2tsArib {
     std::hash::Hash,
 )]
 pub enum M2tsAbsentInputAudioBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     Drop,
+    #[allow(missing_docs)] // documentation missing in model
     EncodeSilence,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -17593,6 +19011,7 @@ impl std::str::FromStr for M2tsAbsentInputAudioBehavior {
     }
 }
 impl M2tsAbsentInputAudioBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M2tsAbsentInputAudioBehavior::Drop => "DROP",
@@ -17600,6 +19019,7 @@ impl M2tsAbsentInputAudioBehavior {
             M2tsAbsentInputAudioBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DROP", "ENCODE_SILENCE"]
     }
@@ -17650,6 +19070,7 @@ pub mod rtmp_output_settings {
             self.certificate_mode = Some(input);
             self
         }
+        /// If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA).  This will cause rtmps outputs with self-signed certificates to fail.
         pub fn set_certificate_mode(
             mut self,
             input: std::option::Option<crate::model::RtmpOutputCertificateMode>,
@@ -17662,6 +19083,7 @@ pub mod rtmp_output_settings {
             self.connection_retry_interval = Some(input);
             self
         }
+        /// Number of seconds to wait before retrying a connection to the Flash Media server if the connection is lost.
         pub fn set_connection_retry_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.connection_retry_interval = input;
             self
@@ -17671,6 +19093,7 @@ pub mod rtmp_output_settings {
             self.destination = Some(input);
             self
         }
+        /// The RTMP endpoint excluding the stream name (eg. rtmp://host/appname). For connection to Akamai, a username and password must be supplied. URI fields accept format identifiers.
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::OutputLocationRef>,
@@ -17683,6 +19106,7 @@ pub mod rtmp_output_settings {
             self.num_retries = Some(input);
             self
         }
+        /// Number of retry attempts.
         pub fn set_num_retries(mut self, input: std::option::Option<i32>) -> Self {
             self.num_retries = input;
             self
@@ -17717,7 +19141,9 @@ impl RtmpOutputSettings {
     std::hash::Hash,
 )]
 pub enum RtmpOutputCertificateMode {
+    #[allow(missing_docs)] // documentation missing in model
     SelfSigned,
+    #[allow(missing_docs)] // documentation missing in model
     VerifyAuthenticity,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -17739,6 +19165,7 @@ impl std::str::FromStr for RtmpOutputCertificateMode {
     }
 }
 impl RtmpOutputCertificateMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RtmpOutputCertificateMode::SelfSigned => "SELF_SIGNED",
@@ -17746,6 +19173,7 @@ impl RtmpOutputCertificateMode {
             RtmpOutputCertificateMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SELF_SIGNED", "VERIFY_AUTHENTICITY"]
     }
@@ -17784,6 +19212,7 @@ pub mod multiplex_output_settings {
             self.destination = Some(input);
             self
         }
+        /// Destination is a Multiplex.
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::OutputLocationRef>,
@@ -17844,6 +19273,8 @@ pub mod ms_smooth_output_settings {
             self.h265_packaging_type = Some(input);
             self
         }
+        /// Only applicable when this output is referencing an H.265 video description.
+        /// Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
         pub fn set_h265_packaging_type(
             mut self,
             input: std::option::Option<crate::model::MsSmoothH265PackagingType>,
@@ -17856,6 +19287,7 @@ pub mod ms_smooth_output_settings {
             self.name_modifier = Some(input.into());
             self
         }
+        /// String concatenated to the end of the destination filename.  Required for multiple outputs of the same type.
         pub fn set_name_modifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17891,7 +19323,9 @@ impl MsSmoothOutputSettings {
     std::hash::Hash,
 )]
 pub enum MsSmoothH265PackagingType {
+    #[allow(missing_docs)] // documentation missing in model
     Hev1,
+    #[allow(missing_docs)] // documentation missing in model
     Hvc1,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -17913,6 +19347,7 @@ impl std::str::FromStr for MsSmoothH265PackagingType {
     }
 }
 impl MsSmoothH265PackagingType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MsSmoothH265PackagingType::Hev1 => "HEV1",
@@ -17920,6 +19355,7 @@ impl MsSmoothH265PackagingType {
             MsSmoothH265PackagingType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HEV1", "HVC1"]
     }
@@ -18002,6 +19438,8 @@ pub mod hls_output_settings {
             self.h265_packaging_type = Some(input);
             self
         }
+        /// Only applicable when this output is referencing an H.265 video description.
+        /// Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
         pub fn set_h265_packaging_type(
             mut self,
             input: std::option::Option<crate::model::HlsH265PackagingType>,
@@ -18014,6 +19452,7 @@ pub mod hls_output_settings {
             self.hls_settings = Some(input);
             self
         }
+        /// Settings regarding the underlying stream. These settings are different for audio-only outputs.
         pub fn set_hls_settings(
             mut self,
             input: std::option::Option<crate::model::HlsSettings>,
@@ -18026,6 +19465,7 @@ pub mod hls_output_settings {
             self.name_modifier = Some(input.into());
             self
         }
+        /// String concatenated to the end of the destination filename. Accepts \"Format Identifiers\":#formatIdentifierParameters.
         pub fn set_name_modifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18038,6 +19478,7 @@ pub mod hls_output_settings {
             self.segment_modifier = Some(input.into());
             self
         }
+        /// String concatenated to end of segment filenames.
         pub fn set_segment_modifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18110,6 +19551,7 @@ pub mod hls_settings {
             self.audio_only_hls_settings = Some(input);
             self
         }
+        /// Audio Only Hls Settings
         pub fn set_audio_only_hls_settings(
             mut self,
             input: std::option::Option<crate::model::AudioOnlyHlsSettings>,
@@ -18122,6 +19564,7 @@ pub mod hls_settings {
             self.fmp4_hls_settings = Some(input);
             self
         }
+        /// Fmp4 Hls Settings
         pub fn set_fmp4_hls_settings(
             mut self,
             input: std::option::Option<crate::model::Fmp4HlsSettings>,
@@ -18137,6 +19580,7 @@ pub mod hls_settings {
             self.frame_capture_hls_settings = Some(input);
             self
         }
+        /// Frame Capture Hls Settings
         pub fn set_frame_capture_hls_settings(
             mut self,
             input: std::option::Option<crate::model::FrameCaptureHlsSettings>,
@@ -18149,6 +19593,7 @@ pub mod hls_settings {
             self.standard_hls_settings = Some(input);
             self
         }
+        /// Standard Hls Settings
         pub fn set_standard_hls_settings(
             mut self,
             input: std::option::Option<crate::model::StandardHlsSettings>,
@@ -18206,6 +19651,7 @@ pub mod standard_hls_settings {
             self.audio_rendition_sets = Some(input.into());
             self
         }
+        /// List all the audio groups that are used with the video output stream. Input all the audio GROUP-IDs that are associated to the video, separate by ','.
         pub fn set_audio_rendition_sets(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18218,6 +19664,7 @@ pub mod standard_hls_settings {
             self.m3u8_settings = Some(input);
             self
         }
+        /// Settings information for the .m3u8 container
         pub fn set_m3u8_settings(
             mut self,
             input: std::option::Option<crate::model::M3u8Settings>,
@@ -18334,6 +19781,7 @@ pub mod m3u8_settings {
             self.audio_frames_per_pes = Some(input);
             self
         }
+        /// The number of audio frames to insert for each PES packet.
         pub fn set_audio_frames_per_pes(mut self, input: std::option::Option<i32>) -> Self {
             self.audio_frames_per_pes = input;
             self
@@ -18343,6 +19791,7 @@ pub mod m3u8_settings {
             self.audio_pids = Some(input.into());
             self
         }
+        /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.
         pub fn set_audio_pids(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.audio_pids = input;
             self
@@ -18352,6 +19801,7 @@ pub mod m3u8_settings {
             self.ecm_pid = Some(input.into());
             self
         }
+        /// This parameter is unused and deprecated.
         pub fn set_ecm_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ecm_pid = input;
             self
@@ -18361,6 +19811,7 @@ pub mod m3u8_settings {
             self.nielsen_id3_behavior = Some(input);
             self
         }
+        /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
         pub fn set_nielsen_id3_behavior(
             mut self,
             input: std::option::Option<crate::model::M3u8NielsenId3Behavior>,
@@ -18373,6 +19824,7 @@ pub mod m3u8_settings {
             self.pat_interval = Some(input);
             self
         }
+        /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
         pub fn set_pat_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.pat_interval = input;
             self
@@ -18382,6 +19834,7 @@ pub mod m3u8_settings {
             self.pcr_control = Some(input);
             self
         }
+        /// When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
         pub fn set_pcr_control(
             mut self,
             input: std::option::Option<crate::model::M3u8PcrControl>,
@@ -18394,6 +19847,7 @@ pub mod m3u8_settings {
             self.pcr_period = Some(input);
             self
         }
+        /// Maximum time in milliseconds between Program Clock References (PCRs) inserted into the transport stream.
         pub fn set_pcr_period(mut self, input: std::option::Option<i32>) -> Self {
             self.pcr_period = input;
             self
@@ -18403,6 +19857,7 @@ pub mod m3u8_settings {
             self.pcr_pid = Some(input.into());
             self
         }
+        /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value.
         pub fn set_pcr_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pcr_pid = input;
             self
@@ -18412,6 +19867,7 @@ pub mod m3u8_settings {
             self.pmt_interval = Some(input);
             self
         }
+        /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
         pub fn set_pmt_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.pmt_interval = input;
             self
@@ -18421,6 +19877,7 @@ pub mod m3u8_settings {
             self.pmt_pid = Some(input.into());
             self
         }
+        /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value.
         pub fn set_pmt_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pmt_pid = input;
             self
@@ -18430,6 +19887,7 @@ pub mod m3u8_settings {
             self.program_num = Some(input);
             self
         }
+        /// The value of the program number field in the Program Map Table.
         pub fn set_program_num(mut self, input: std::option::Option<i32>) -> Self {
             self.program_num = input;
             self
@@ -18439,6 +19897,7 @@ pub mod m3u8_settings {
             self.scte35_behavior = Some(input);
             self
         }
+        /// If set to passthrough, passes any SCTE-35 signals from the input source to this output.
         pub fn set_scte35_behavior(
             mut self,
             input: std::option::Option<crate::model::M3u8Scte35Behavior>,
@@ -18451,6 +19910,7 @@ pub mod m3u8_settings {
             self.scte35_pid = Some(input.into());
             self
         }
+        /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value.
         pub fn set_scte35_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.scte35_pid = input;
             self
@@ -18463,6 +19923,7 @@ pub mod m3u8_settings {
             self.timed_metadata_behavior = Some(input);
             self
         }
+        /// When set to passthrough, timed metadata is passed through from input to output.
         pub fn set_timed_metadata_behavior(
             mut self,
             input: std::option::Option<crate::model::M3u8TimedMetadataBehavior>,
@@ -18475,6 +19936,7 @@ pub mod m3u8_settings {
             self.timed_metadata_pid = Some(input.into());
             self
         }
+        /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
         pub fn set_timed_metadata_pid(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18487,6 +19949,7 @@ pub mod m3u8_settings {
             self.transport_stream_id = Some(input);
             self
         }
+        /// The value of the transport stream ID field in the Program Map Table.
         pub fn set_transport_stream_id(mut self, input: std::option::Option<i32>) -> Self {
             self.transport_stream_id = input;
             self
@@ -18496,6 +19959,7 @@ pub mod m3u8_settings {
             self.video_pid = Some(input.into());
             self
         }
+        /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value.
         pub fn set_video_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.video_pid = input;
             self
@@ -18543,7 +20007,9 @@ impl M3u8Settings {
     std::hash::Hash,
 )]
 pub enum M3u8TimedMetadataBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     NoPassthrough,
+    #[allow(missing_docs)] // documentation missing in model
     Passthrough,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -18565,6 +20031,7 @@ impl std::str::FromStr for M3u8TimedMetadataBehavior {
     }
 }
 impl M3u8TimedMetadataBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M3u8TimedMetadataBehavior::NoPassthrough => "NO_PASSTHROUGH",
@@ -18572,6 +20039,7 @@ impl M3u8TimedMetadataBehavior {
             M3u8TimedMetadataBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NO_PASSTHROUGH", "PASSTHROUGH"]
     }
@@ -18594,7 +20062,9 @@ impl AsRef<str> for M3u8TimedMetadataBehavior {
     std::hash::Hash,
 )]
 pub enum M3u8Scte35Behavior {
+    #[allow(missing_docs)] // documentation missing in model
     NoPassthrough,
+    #[allow(missing_docs)] // documentation missing in model
     Passthrough,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -18616,6 +20086,7 @@ impl std::str::FromStr for M3u8Scte35Behavior {
     }
 }
 impl M3u8Scte35Behavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M3u8Scte35Behavior::NoPassthrough => "NO_PASSTHROUGH",
@@ -18623,6 +20094,7 @@ impl M3u8Scte35Behavior {
             M3u8Scte35Behavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NO_PASSTHROUGH", "PASSTHROUGH"]
     }
@@ -18645,7 +20117,9 @@ impl AsRef<str> for M3u8Scte35Behavior {
     std::hash::Hash,
 )]
 pub enum M3u8PcrControl {
+    #[allow(missing_docs)] // documentation missing in model
     ConfiguredPcrPeriod,
+    #[allow(missing_docs)] // documentation missing in model
     PcrEveryPesPacket,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -18667,6 +20141,7 @@ impl std::str::FromStr for M3u8PcrControl {
     }
 }
 impl M3u8PcrControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M3u8PcrControl::ConfiguredPcrPeriod => "CONFIGURED_PCR_PERIOD",
@@ -18674,6 +20149,7 @@ impl M3u8PcrControl {
             M3u8PcrControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONFIGURED_PCR_PERIOD", "PCR_EVERY_PES_PACKET"]
     }
@@ -18696,7 +20172,9 @@ impl AsRef<str> for M3u8PcrControl {
     std::hash::Hash,
 )]
 pub enum M3u8NielsenId3Behavior {
+    #[allow(missing_docs)] // documentation missing in model
     NoPassthrough,
+    #[allow(missing_docs)] // documentation missing in model
     Passthrough,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -18718,6 +20196,7 @@ impl std::str::FromStr for M3u8NielsenId3Behavior {
     }
 }
 impl M3u8NielsenId3Behavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             M3u8NielsenId3Behavior::NoPassthrough => "NO_PASSTHROUGH",
@@ -18725,6 +20204,7 @@ impl M3u8NielsenId3Behavior {
             M3u8NielsenId3Behavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NO_PASSTHROUGH", "PASSTHROUGH"]
     }
@@ -18802,6 +20282,7 @@ pub mod fmp4_hls_settings {
             self.audio_rendition_sets = Some(input.into());
             self
         }
+        /// List all the audio groups that are used with the video output stream. Input all the audio GROUP-IDs that are associated to the video, separate by ','.
         pub fn set_audio_rendition_sets(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18814,6 +20295,7 @@ pub mod fmp4_hls_settings {
             self.nielsen_id3_behavior = Some(input);
             self
         }
+        /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
         pub fn set_nielsen_id3_behavior(
             mut self,
             input: std::option::Option<crate::model::Fmp4NielsenId3Behavior>,
@@ -18829,6 +20311,7 @@ pub mod fmp4_hls_settings {
             self.timed_metadata_behavior = Some(input);
             self
         }
+        /// When set to passthrough, timed metadata is passed through from input to output.
         pub fn set_timed_metadata_behavior(
             mut self,
             input: std::option::Option<crate::model::Fmp4TimedMetadataBehavior>,
@@ -18865,7 +20348,9 @@ impl Fmp4HlsSettings {
     std::hash::Hash,
 )]
 pub enum Fmp4TimedMetadataBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     NoPassthrough,
+    #[allow(missing_docs)] // documentation missing in model
     Passthrough,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -18887,6 +20372,7 @@ impl std::str::FromStr for Fmp4TimedMetadataBehavior {
     }
 }
 impl Fmp4TimedMetadataBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Fmp4TimedMetadataBehavior::NoPassthrough => "NO_PASSTHROUGH",
@@ -18894,6 +20380,7 @@ impl Fmp4TimedMetadataBehavior {
             Fmp4TimedMetadataBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NO_PASSTHROUGH", "PASSTHROUGH"]
     }
@@ -18916,7 +20403,9 @@ impl AsRef<str> for Fmp4TimedMetadataBehavior {
     std::hash::Hash,
 )]
 pub enum Fmp4NielsenId3Behavior {
+    #[allow(missing_docs)] // documentation missing in model
     NoPassthrough,
+    #[allow(missing_docs)] // documentation missing in model
     Passthrough,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -18938,6 +20427,7 @@ impl std::str::FromStr for Fmp4NielsenId3Behavior {
     }
 }
 impl Fmp4NielsenId3Behavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Fmp4NielsenId3Behavior::NoPassthrough => "NO_PASSTHROUGH",
@@ -18945,6 +20435,7 @@ impl Fmp4NielsenId3Behavior {
             Fmp4NielsenId3Behavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NO_PASSTHROUGH", "PASSTHROUGH"]
     }
@@ -18962,15 +20453,20 @@ pub struct AudioOnlyHlsSettings {
     /// Specifies the group to which the audio Rendition belongs.
     pub audio_group_id: std::option::Option<std::string::String>,
     /// Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend a low bit-size file because the image increases the output audio bandwidth.
+    ///
     /// The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the "ID3 tag version 2.4.0 - Native Frames" standard.
     pub audio_only_image: std::option::Option<crate::model::InputLocation>,
     /// Four types of audio-only tracks are supported:
+    ///
     /// Audio-Only Variant Stream
     /// The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest.
+    ///
     /// Alternate Audio, Auto Select, Default
     /// Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES
+    ///
     /// Alternate Audio, Auto Select, Not Default
     /// Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES
+    ///
     /// Alternate Audio, not Auto Select
     /// Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
     pub audio_track_type: std::option::Option<crate::model::AudioOnlyHlsTrackType>,
@@ -19004,6 +20500,7 @@ pub mod audio_only_hls_settings {
             self.audio_group_id = Some(input.into());
             self
         }
+        /// Specifies the group to which the audio Rendition belongs.
         pub fn set_audio_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19012,11 +20509,15 @@ pub mod audio_only_hls_settings {
             self
         }
         /// Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend a low bit-size file because the image increases the output audio bandwidth.
+        ///
         /// The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the "ID3 tag version 2.4.0 - Native Frames" standard.
         pub fn audio_only_image(mut self, input: crate::model::InputLocation) -> Self {
             self.audio_only_image = Some(input);
             self
         }
+        /// Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend a low bit-size file because the image increases the output audio bandwidth.
+        ///
+        /// The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the "ID3 tag version 2.4.0 - Native Frames" standard.
         pub fn set_audio_only_image(
             mut self,
             input: std::option::Option<crate::model::InputLocation>,
@@ -19025,18 +20526,35 @@ pub mod audio_only_hls_settings {
             self
         }
         /// Four types of audio-only tracks are supported:
+        ///
         /// Audio-Only Variant Stream
         /// The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest.
+        ///
         /// Alternate Audio, Auto Select, Default
         /// Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES
+        ///
         /// Alternate Audio, Auto Select, Not Default
         /// Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES
+        ///
         /// Alternate Audio, not Auto Select
         /// Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
         pub fn audio_track_type(mut self, input: crate::model::AudioOnlyHlsTrackType) -> Self {
             self.audio_track_type = Some(input);
             self
         }
+        /// Four types of audio-only tracks are supported:
+        ///
+        /// Audio-Only Variant Stream
+        /// The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest.
+        ///
+        /// Alternate Audio, Auto Select, Default
+        /// Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES
+        ///
+        /// Alternate Audio, Auto Select, Not Default
+        /// Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES
+        ///
+        /// Alternate Audio, not Auto Select
+        /// Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
         pub fn set_audio_track_type(
             mut self,
             input: std::option::Option<crate::model::AudioOnlyHlsTrackType>,
@@ -19049,6 +20567,7 @@ pub mod audio_only_hls_settings {
             self.segment_type = Some(input);
             self
         }
+        /// Specifies the segment type.
         pub fn set_segment_type(
             mut self,
             input: std::option::Option<crate::model::AudioOnlyHlsSegmentType>,
@@ -19086,7 +20605,9 @@ impl AudioOnlyHlsSettings {
     std::hash::Hash,
 )]
 pub enum AudioOnlyHlsSegmentType {
+    #[allow(missing_docs)] // documentation missing in model
     Aac,
+    #[allow(missing_docs)] // documentation missing in model
     Fmp4,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -19108,6 +20629,7 @@ impl std::str::FromStr for AudioOnlyHlsSegmentType {
     }
 }
 impl AudioOnlyHlsSegmentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AudioOnlyHlsSegmentType::Aac => "AAC",
@@ -19115,6 +20637,7 @@ impl AudioOnlyHlsSegmentType {
             AudioOnlyHlsSegmentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AAC", "FMP4"]
     }
@@ -19137,9 +20660,13 @@ impl AsRef<str> for AudioOnlyHlsSegmentType {
     std::hash::Hash,
 )]
 pub enum AudioOnlyHlsTrackType {
+    #[allow(missing_docs)] // documentation missing in model
     AlternateAudioAutoSelect,
+    #[allow(missing_docs)] // documentation missing in model
     AlternateAudioAutoSelectDefault,
+    #[allow(missing_docs)] // documentation missing in model
     AlternateAudioNotAutoSelect,
+    #[allow(missing_docs)] // documentation missing in model
     AudioOnlyVariantStream,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -19165,6 +20692,7 @@ impl std::str::FromStr for AudioOnlyHlsTrackType {
     }
 }
 impl AudioOnlyHlsTrackType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AudioOnlyHlsTrackType::AlternateAudioAutoSelect => "ALTERNATE_AUDIO_AUTO_SELECT",
@@ -19176,6 +20704,7 @@ impl AudioOnlyHlsTrackType {
             AudioOnlyHlsTrackType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ALTERNATE_AUDIO_AUTO_SELECT",
@@ -19227,6 +20756,7 @@ pub mod input_location {
             self.password_param = Some(input.into());
             self
         }
+        /// key used to extract the password from EC2 Parameter store
         pub fn set_password_param(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19239,6 +20769,7 @@ pub mod input_location {
             self.uri = Some(input.into());
             self
         }
+        /// Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a http:// URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.uri = input;
             self
@@ -19248,6 +20779,7 @@ pub mod input_location {
             self.username = Some(input.into());
             self
         }
+        /// Documentation update needed
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -19281,7 +20813,9 @@ impl InputLocation {
     std::hash::Hash,
 )]
 pub enum HlsH265PackagingType {
+    #[allow(missing_docs)] // documentation missing in model
     Hev1,
+    #[allow(missing_docs)] // documentation missing in model
     Hvc1,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -19303,6 +20837,7 @@ impl std::str::FromStr for HlsH265PackagingType {
     }
 }
 impl HlsH265PackagingType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsH265PackagingType::Hev1 => "HEV1",
@@ -19310,6 +20845,7 @@ impl HlsH265PackagingType {
             HlsH265PackagingType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HEV1", "HVC1"]
     }
@@ -19348,6 +20884,7 @@ pub mod frame_capture_output_settings {
             self.name_modifier = Some(input.into());
             self
         }
+        /// Required if the output group contains more than one output. This modifier forms part of the output file name.
         pub fn set_name_modifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19406,6 +20943,7 @@ pub mod archive_output_settings {
             self.container_settings = Some(input);
             self
         }
+        /// Settings specific to the container type of the file.
         pub fn set_container_settings(
             mut self,
             input: std::option::Option<crate::model::ArchiveContainerSettings>,
@@ -19418,6 +20956,7 @@ pub mod archive_output_settings {
             self.extension = Some(input.into());
             self
         }
+        /// Output file extension. If excluded, this will be auto-selected from the container type.
         pub fn set_extension(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.extension = input;
             self
@@ -19427,6 +20966,7 @@ pub mod archive_output_settings {
             self.name_modifier = Some(input.into());
             self
         }
+        /// String concatenated to the end of the destination filename.  Required for multiple outputs of the same type.
         pub fn set_name_modifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19483,6 +21023,7 @@ pub mod archive_container_settings {
             self.m2ts_settings = Some(input);
             self
         }
+        /// M2ts Settings
         pub fn set_m2ts_settings(
             mut self,
             input: std::option::Option<crate::model::M2tsSettings>,
@@ -19495,6 +21036,7 @@ pub mod archive_container_settings {
             self.raw_settings = Some(input);
             self
         }
+        /// Raw Settings
         pub fn set_raw_settings(
             mut self,
             input: std::option::Option<crate::model::RawSettings>,
@@ -19614,6 +21156,7 @@ pub mod output_group_settings {
             self.archive_group_settings = Some(input);
             self
         }
+        /// Archive Group Settings
         pub fn set_archive_group_settings(
             mut self,
             input: std::option::Option<crate::model::ArchiveGroupSettings>,
@@ -19629,6 +21172,7 @@ pub mod output_group_settings {
             self.frame_capture_group_settings = Some(input);
             self
         }
+        /// Frame Capture Group Settings
         pub fn set_frame_capture_group_settings(
             mut self,
             input: std::option::Option<crate::model::FrameCaptureGroupSettings>,
@@ -19641,6 +21185,7 @@ pub mod output_group_settings {
             self.hls_group_settings = Some(input);
             self
         }
+        /// Hls Group Settings
         pub fn set_hls_group_settings(
             mut self,
             input: std::option::Option<crate::model::HlsGroupSettings>,
@@ -19656,6 +21201,7 @@ pub mod output_group_settings {
             self.media_package_group_settings = Some(input);
             self
         }
+        /// Media Package Group Settings
         pub fn set_media_package_group_settings(
             mut self,
             input: std::option::Option<crate::model::MediaPackageGroupSettings>,
@@ -19671,6 +21217,7 @@ pub mod output_group_settings {
             self.ms_smooth_group_settings = Some(input);
             self
         }
+        /// Ms Smooth Group Settings
         pub fn set_ms_smooth_group_settings(
             mut self,
             input: std::option::Option<crate::model::MsSmoothGroupSettings>,
@@ -19686,6 +21233,7 @@ pub mod output_group_settings {
             self.multiplex_group_settings = Some(input);
             self
         }
+        /// Multiplex Group Settings
         pub fn set_multiplex_group_settings(
             mut self,
             input: std::option::Option<crate::model::MultiplexGroupSettings>,
@@ -19698,6 +21246,7 @@ pub mod output_group_settings {
             self.rtmp_group_settings = Some(input);
             self
         }
+        /// Rtmp Group Settings
         pub fn set_rtmp_group_settings(
             mut self,
             input: std::option::Option<crate::model::RtmpGroupSettings>,
@@ -19710,6 +21259,7 @@ pub mod output_group_settings {
             self.udp_group_settings = Some(input);
             self
         }
+        /// Udp Group Settings
         pub fn set_udp_group_settings(
             mut self,
             input: std::option::Option<crate::model::UdpGroupSettings>,
@@ -19776,6 +21326,7 @@ pub mod udp_group_settings {
             self.input_loss_action = Some(input);
             self
         }
+        /// Specifies behavior of last resort when input video is lost, and no more backup inputs are available. When dropTs is selected the entire transport stream will stop being emitted.  When dropProgram is selected the program can be dropped from the transport stream (and replaced with null packets to meet the TS bitrate requirement).  Or, when emitProgram is chosen the transport stream will continue to be produced normally with repeat frames, black frames, or slate frames substituted for the absent input video.
         pub fn set_input_loss_action(
             mut self,
             input: std::option::Option<crate::model::InputLossActionForUdpOut>,
@@ -19791,6 +21342,7 @@ pub mod udp_group_settings {
             self.timed_metadata_id3_frame = Some(input);
             self
         }
+        /// Indicates ID3 frame that has the timecode.
         pub fn set_timed_metadata_id3_frame(
             mut self,
             input: std::option::Option<crate::model::UdpTimedMetadataId3Frame>,
@@ -19803,6 +21355,7 @@ pub mod udp_group_settings {
             self.timed_metadata_id3_period = Some(input);
             self
         }
+        /// Timed Metadata interval in seconds.
         pub fn set_timed_metadata_id3_period(mut self, input: std::option::Option<i32>) -> Self {
             self.timed_metadata_id3_period = input;
             self
@@ -19836,8 +21389,11 @@ impl UdpGroupSettings {
     std::hash::Hash,
 )]
 pub enum UdpTimedMetadataId3Frame {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Priv,
+    #[allow(missing_docs)] // documentation missing in model
     Tdrl,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -19860,6 +21416,7 @@ impl std::str::FromStr for UdpTimedMetadataId3Frame {
     }
 }
 impl UdpTimedMetadataId3Frame {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UdpTimedMetadataId3Frame::None => "NONE",
@@ -19868,6 +21425,7 @@ impl UdpTimedMetadataId3Frame {
             UdpTimedMetadataId3Frame::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "PRIV", "TDRL"]
     }
@@ -19890,8 +21448,11 @@ impl AsRef<str> for UdpTimedMetadataId3Frame {
     std::hash::Hash,
 )]
 pub enum InputLossActionForUdpOut {
+    #[allow(missing_docs)] // documentation missing in model
     DropProgram,
+    #[allow(missing_docs)] // documentation missing in model
     DropTs,
+    #[allow(missing_docs)] // documentation missing in model
     EmitProgram,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -19914,6 +21475,7 @@ impl std::str::FromStr for InputLossActionForUdpOut {
     }
 }
 impl InputLossActionForUdpOut {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputLossActionForUdpOut::DropProgram => "DROP_PROGRAM",
@@ -19922,6 +21484,7 @@ impl InputLossActionForUdpOut {
             InputLossActionForUdpOut::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DROP_PROGRAM", "DROP_TS", "EMIT_PROGRAM"]
     }
@@ -19947,6 +21510,7 @@ pub struct RtmpGroupSettings {
     /// Controls the types of data that passes to onCaptionInfo outputs.  If set to 'all' then 608 and 708 carried DTVCC data will be passed.  If set to 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from both fields will be passed. If set to 'field1608' then only the data carried in 608 from field 1 video will be passed.
     pub caption_data: std::option::Option<crate::model::RtmpCaptionData>,
     /// Controls the behavior of this RTMP group if input becomes unavailable.
+    ///
     /// - emitOutput: Emit a slate until input returns.
     /// - pauseOutput: Stop transmitting data until input returns. This does not close the underlying RTMP connection.
     pub input_loss_action: std::option::Option<crate::model::InputLossActionForRtmpOut>,
@@ -19981,12 +21545,18 @@ pub mod rtmp_group_settings {
         pub(crate) restart_delay: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `ad_markers`.
+        ///
+        /// To override the contents of this collection use [`set_ad_markers`](Self::set_ad_markers).
+        ///
+        /// Choose the ad marker type for this output group. MediaLive will create a message based on the content of each SCTE-35 message, format it for that marker type, and insert it in the datastream.
         pub fn ad_markers(mut self, input: impl Into<crate::model::RtmpAdMarkers>) -> Self {
             let mut v = self.ad_markers.unwrap_or_default();
             v.push(input.into());
             self.ad_markers = Some(v);
             self
         }
+        /// Choose the ad marker type for this output group. MediaLive will create a message based on the content of each SCTE-35 message, format it for that marker type, and insert it in the datastream.
         pub fn set_ad_markers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RtmpAdMarkers>>,
@@ -19999,6 +21569,7 @@ pub mod rtmp_group_settings {
             self.authentication_scheme = Some(input);
             self
         }
+        /// Authentication scheme to use when connecting with CDN
         pub fn set_authentication_scheme(
             mut self,
             input: std::option::Option<crate::model::AuthenticationScheme>,
@@ -20011,6 +21582,7 @@ pub mod rtmp_group_settings {
             self.cache_full_behavior = Some(input);
             self
         }
+        /// Controls behavior when content cache fills up. If remote origin server stalls the RTMP connection and does not accept content fast enough the 'Media Cache' will fill up. When the cache reaches the duration specified by cacheLength the cache will stop accepting new content. If set to disconnectImmediately, the RTMP output will force a disconnect. Clear the media cache, and reconnect after restartDelay seconds. If set to waitForServer, the RTMP output will wait up to 5 minutes to allow the origin server to begin accepting data again.
         pub fn set_cache_full_behavior(
             mut self,
             input: std::option::Option<crate::model::RtmpCacheFullBehavior>,
@@ -20023,6 +21595,7 @@ pub mod rtmp_group_settings {
             self.cache_length = Some(input);
             self
         }
+        /// Cache length, in seconds, is used to calculate buffer size.
         pub fn set_cache_length(mut self, input: std::option::Option<i32>) -> Self {
             self.cache_length = input;
             self
@@ -20032,6 +21605,7 @@ pub mod rtmp_group_settings {
             self.caption_data = Some(input);
             self
         }
+        /// Controls the types of data that passes to onCaptionInfo outputs.  If set to 'all' then 608 and 708 carried DTVCC data will be passed.  If set to 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from both fields will be passed. If set to 'field1608' then only the data carried in 608 from field 1 video will be passed.
         pub fn set_caption_data(
             mut self,
             input: std::option::Option<crate::model::RtmpCaptionData>,
@@ -20040,12 +21614,17 @@ pub mod rtmp_group_settings {
             self
         }
         /// Controls the behavior of this RTMP group if input becomes unavailable.
+        ///
         /// - emitOutput: Emit a slate until input returns.
         /// - pauseOutput: Stop transmitting data until input returns. This does not close the underlying RTMP connection.
         pub fn input_loss_action(mut self, input: crate::model::InputLossActionForRtmpOut) -> Self {
             self.input_loss_action = Some(input);
             self
         }
+        /// Controls the behavior of this RTMP group if input becomes unavailable.
+        ///
+        /// - emitOutput: Emit a slate until input returns.
+        /// - pauseOutput: Stop transmitting data until input returns. This does not close the underlying RTMP connection.
         pub fn set_input_loss_action(
             mut self,
             input: std::option::Option<crate::model::InputLossActionForRtmpOut>,
@@ -20058,6 +21637,7 @@ pub mod rtmp_group_settings {
             self.restart_delay = Some(input);
             self
         }
+        /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
         pub fn set_restart_delay(mut self, input: std::option::Option<i32>) -> Self {
             self.restart_delay = input;
             self
@@ -20095,7 +21675,9 @@ impl RtmpGroupSettings {
     std::hash::Hash,
 )]
 pub enum InputLossActionForRtmpOut {
+    #[allow(missing_docs)] // documentation missing in model
     EmitOutput,
+    #[allow(missing_docs)] // documentation missing in model
     PauseOutput,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -20117,6 +21699,7 @@ impl std::str::FromStr for InputLossActionForRtmpOut {
     }
 }
 impl InputLossActionForRtmpOut {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputLossActionForRtmpOut::EmitOutput => "EMIT_OUTPUT",
@@ -20124,6 +21707,7 @@ impl InputLossActionForRtmpOut {
             InputLossActionForRtmpOut::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EMIT_OUTPUT", "PAUSE_OUTPUT"]
     }
@@ -20146,8 +21730,11 @@ impl AsRef<str> for InputLossActionForRtmpOut {
     std::hash::Hash,
 )]
 pub enum RtmpCaptionData {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Field1608,
+    #[allow(missing_docs)] // documentation missing in model
     Field1AndField2608,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -20170,6 +21757,7 @@ impl std::str::FromStr for RtmpCaptionData {
     }
 }
 impl RtmpCaptionData {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RtmpCaptionData::All => "ALL",
@@ -20178,6 +21766,7 @@ impl RtmpCaptionData {
             RtmpCaptionData::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL", "FIELD1_608", "FIELD1_AND_FIELD2_608"]
     }
@@ -20200,7 +21789,9 @@ impl AsRef<str> for RtmpCaptionData {
     std::hash::Hash,
 )]
 pub enum RtmpCacheFullBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     DisconnectImmediately,
+    #[allow(missing_docs)] // documentation missing in model
     WaitForServer,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -20222,6 +21813,7 @@ impl std::str::FromStr for RtmpCacheFullBehavior {
     }
 }
 impl RtmpCacheFullBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RtmpCacheFullBehavior::DisconnectImmediately => "DISCONNECT_IMMEDIATELY",
@@ -20229,6 +21821,7 @@ impl RtmpCacheFullBehavior {
             RtmpCacheFullBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISCONNECT_IMMEDIATELY", "WAIT_FOR_SERVER"]
     }
@@ -20251,7 +21844,9 @@ impl AsRef<str> for RtmpCacheFullBehavior {
     std::hash::Hash,
 )]
 pub enum AuthenticationScheme {
+    #[allow(missing_docs)] // documentation missing in model
     Akamai,
+    #[allow(missing_docs)] // documentation missing in model
     Common,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -20273,6 +21868,7 @@ impl std::str::FromStr for AuthenticationScheme {
     }
 }
 impl AuthenticationScheme {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AuthenticationScheme::Akamai => "AKAMAI",
@@ -20280,6 +21876,7 @@ impl AuthenticationScheme {
             AuthenticationScheme::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AKAMAI", "COMMON"]
     }
@@ -20302,6 +21899,7 @@ impl AsRef<str> for AuthenticationScheme {
     std::hash::Hash,
 )]
 pub enum RtmpAdMarkers {
+    #[allow(missing_docs)] // documentation missing in model
     OnCuePointScte35,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -20322,12 +21920,14 @@ impl std::str::FromStr for RtmpAdMarkers {
     }
 }
 impl RtmpAdMarkers {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RtmpAdMarkers::OnCuePointScte35 => "ON_CUE_POINT_SCTE35",
             RtmpAdMarkers::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ON_CUE_POINT_SCTE35"]
     }
@@ -20384,9 +21984,11 @@ pub struct MsSmoothGroupSettings {
     /// Smooth Streaming publish point on an IIS server. Elemental Live acts as a "Push" encoder to IIS.
     pub destination: std::option::Option<crate::model::OutputLocationRef>,
     /// MS Smooth event ID to be sent to the IIS server.
+    ///
     /// Should only be specified if eventIdMode is set to useConfigured.
     pub event_id: std::option::Option<std::string::String>,
     /// Specifies whether or not to send an event ID to the IIS server. If no event ID is sent and the same Live Event is used without changing the publishing point, clients might see cached video from the previous run.
+    ///
     /// Options:
     /// - "useConfigured" - use the value provided in eventId
     /// - "useTimestamp" - generate and send an event ID based on the current timestamp
@@ -20489,6 +22091,7 @@ pub mod ms_smooth_group_settings {
             self.acquisition_point_id = Some(input.into());
             self
         }
+        /// The ID to include in each message in the sparse track. Ignored if sparseTrackType is NONE.
         pub fn set_acquisition_point_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20504,6 +22107,7 @@ pub mod ms_smooth_group_settings {
             self.audio_only_timecode_control = Some(input);
             self
         }
+        /// If set to passthrough for an audio-only MS Smooth output, the fragment absolute time will be set to the current timecode. This option does not write timecodes to the audio elementary stream.
         pub fn set_audio_only_timecode_control(
             mut self,
             input: std::option::Option<crate::model::SmoothGroupAudioOnlyTimecodeControl>,
@@ -20516,6 +22120,7 @@ pub mod ms_smooth_group_settings {
             self.certificate_mode = Some(input);
             self
         }
+        /// If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA).  This will cause https outputs to self-signed certificates to fail.
         pub fn set_certificate_mode(
             mut self,
             input: std::option::Option<crate::model::SmoothGroupCertificateMode>,
@@ -20528,6 +22133,7 @@ pub mod ms_smooth_group_settings {
             self.connection_retry_interval = Some(input);
             self
         }
+        /// Number of seconds to wait before retrying connection to the IIS server if the connection is lost. Content will be cached during this time and the cache will be be delivered to the IIS server once the connection is re-established.
         pub fn set_connection_retry_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.connection_retry_interval = input;
             self
@@ -20537,6 +22143,7 @@ pub mod ms_smooth_group_settings {
             self.destination = Some(input);
             self
         }
+        /// Smooth Streaming publish point on an IIS server. Elemental Live acts as a "Push" encoder to IIS.
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::OutputLocationRef>,
@@ -20545,16 +22152,21 @@ pub mod ms_smooth_group_settings {
             self
         }
         /// MS Smooth event ID to be sent to the IIS server.
+        ///
         /// Should only be specified if eventIdMode is set to useConfigured.
         pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_id = Some(input.into());
             self
         }
+        /// MS Smooth event ID to be sent to the IIS server.
+        ///
+        /// Should only be specified if eventIdMode is set to useConfigured.
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_id = input;
             self
         }
         /// Specifies whether or not to send an event ID to the IIS server. If no event ID is sent and the same Live Event is used without changing the publishing point, clients might see cached video from the previous run.
+        ///
         /// Options:
         /// - "useConfigured" - use the value provided in eventId
         /// - "useTimestamp" - generate and send an event ID based on the current timestamp
@@ -20563,6 +22175,12 @@ pub mod ms_smooth_group_settings {
             self.event_id_mode = Some(input);
             self
         }
+        /// Specifies whether or not to send an event ID to the IIS server. If no event ID is sent and the same Live Event is used without changing the publishing point, clients might see cached video from the previous run.
+        ///
+        /// Options:
+        /// - "useConfigured" - use the value provided in eventId
+        /// - "useTimestamp" - generate and send an event ID based on the current timestamp
+        /// - "noEventId" - do not send an event ID to the IIS server.
         pub fn set_event_id_mode(
             mut self,
             input: std::option::Option<crate::model::SmoothGroupEventIdMode>,
@@ -20578,6 +22196,7 @@ pub mod ms_smooth_group_settings {
             self.event_stop_behavior = Some(input);
             self
         }
+        /// When set to sendEos, send EOS signal to IIS server when stopping the event
         pub fn set_event_stop_behavior(
             mut self,
             input: std::option::Option<crate::model::SmoothGroupEventStopBehavior>,
@@ -20590,6 +22209,7 @@ pub mod ms_smooth_group_settings {
             self.filecache_duration = Some(input);
             self
         }
+        /// Size in seconds of file cache for streaming outputs.
         pub fn set_filecache_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.filecache_duration = input;
             self
@@ -20599,6 +22219,7 @@ pub mod ms_smooth_group_settings {
             self.fragment_length = Some(input);
             self
         }
+        /// Length of mp4 fragments to generate (in seconds). Fragment length must be compatible with GOP size and framerate.
         pub fn set_fragment_length(mut self, input: std::option::Option<i32>) -> Self {
             self.fragment_length = input;
             self
@@ -20611,6 +22232,7 @@ pub mod ms_smooth_group_settings {
             self.input_loss_action = Some(input);
             self
         }
+        /// Parameter that control output group behavior on input loss.
         pub fn set_input_loss_action(
             mut self,
             input: std::option::Option<crate::model::InputLossActionForMsSmoothOut>,
@@ -20623,6 +22245,7 @@ pub mod ms_smooth_group_settings {
             self.num_retries = Some(input);
             self
         }
+        /// Number of retry attempts.
         pub fn set_num_retries(mut self, input: std::option::Option<i32>) -> Self {
             self.num_retries = input;
             self
@@ -20632,6 +22255,7 @@ pub mod ms_smooth_group_settings {
             self.restart_delay = Some(input);
             self
         }
+        /// Number of seconds before initiating a restart due to output failure, due to exhausting the numRetries on one segment, or exceeding filecacheDuration.
         pub fn set_restart_delay(mut self, input: std::option::Option<i32>) -> Self {
             self.restart_delay = input;
             self
@@ -20644,6 +22268,7 @@ pub mod ms_smooth_group_settings {
             self.segmentation_mode = Some(input);
             self
         }
+        /// useInputSegmentation has been deprecated. The configured segment size is always used.
         pub fn set_segmentation_mode(
             mut self,
             input: std::option::Option<crate::model::SmoothGroupSegmentationMode>,
@@ -20656,6 +22281,7 @@ pub mod ms_smooth_group_settings {
             self.send_delay_ms = Some(input);
             self
         }
+        /// Number of milliseconds to delay the output from the second pipeline.
         pub fn set_send_delay_ms(mut self, input: std::option::Option<i32>) -> Self {
             self.send_delay_ms = input;
             self
@@ -20671,6 +22297,10 @@ pub mod ms_smooth_group_settings {
             self.sparse_track_type = Some(input);
             self
         }
+        /// Identifies the type of data to place in the sparse track:
+        /// - SCTE35: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame to start a new segment.
+        /// - SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame but don't start a new segment.
+        /// - NONE: Don't generate a sparse track for any outputs in this output group.
         pub fn set_sparse_track_type(
             mut self,
             input: std::option::Option<crate::model::SmoothGroupSparseTrackType>,
@@ -20686,6 +22316,7 @@ pub mod ms_smooth_group_settings {
             self.stream_manifest_behavior = Some(input);
             self
         }
+        /// When set to send, send stream manifest so publishing point doesn't start until all streams start.
         pub fn set_stream_manifest_behavior(
             mut self,
             input: std::option::Option<crate::model::SmoothGroupStreamManifestBehavior>,
@@ -20698,6 +22329,7 @@ pub mod ms_smooth_group_settings {
             self.timestamp_offset = Some(input.into());
             self
         }
+        /// Timestamp offset for the event.  Only used if timestampOffsetMode is set to useConfiguredOffset.
         pub fn set_timestamp_offset(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20715,6 +22347,9 @@ pub mod ms_smooth_group_settings {
             self.timestamp_offset_mode = Some(input);
             self
         }
+        /// Type of timestamp date offset to use.
+        /// - useEventStartDate: Use the date the event was started as the offset
+        /// - useConfiguredOffset: Use an explicitly configured date as the offset
         pub fn set_timestamp_offset_mode(
             mut self,
             input: std::option::Option<crate::model::SmoothGroupTimestampOffsetMode>,
@@ -20767,7 +22402,9 @@ impl MsSmoothGroupSettings {
     std::hash::Hash,
 )]
 pub enum SmoothGroupTimestampOffsetMode {
+    #[allow(missing_docs)] // documentation missing in model
     UseConfiguredOffset,
+    #[allow(missing_docs)] // documentation missing in model
     UseEventStartDate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -20789,6 +22426,7 @@ impl std::str::FromStr for SmoothGroupTimestampOffsetMode {
     }
 }
 impl SmoothGroupTimestampOffsetMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SmoothGroupTimestampOffsetMode::UseConfiguredOffset => "USE_CONFIGURED_OFFSET",
@@ -20796,6 +22434,7 @@ impl SmoothGroupTimestampOffsetMode {
             SmoothGroupTimestampOffsetMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["USE_CONFIGURED_OFFSET", "USE_EVENT_START_DATE"]
     }
@@ -20818,7 +22457,9 @@ impl AsRef<str> for SmoothGroupTimestampOffsetMode {
     std::hash::Hash,
 )]
 pub enum SmoothGroupStreamManifestBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     DoNotSend,
+    #[allow(missing_docs)] // documentation missing in model
     Send,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -20840,6 +22481,7 @@ impl std::str::FromStr for SmoothGroupStreamManifestBehavior {
     }
 }
 impl SmoothGroupStreamManifestBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SmoothGroupStreamManifestBehavior::DoNotSend => "DO_NOT_SEND",
@@ -20847,6 +22489,7 @@ impl SmoothGroupStreamManifestBehavior {
             SmoothGroupStreamManifestBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DO_NOT_SEND", "SEND"]
     }
@@ -20869,8 +22512,11 @@ impl AsRef<str> for SmoothGroupStreamManifestBehavior {
     std::hash::Hash,
 )]
 pub enum SmoothGroupSparseTrackType {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Scte35,
+    #[allow(missing_docs)] // documentation missing in model
     Scte35WithoutSegmentation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -20893,6 +22539,7 @@ impl std::str::FromStr for SmoothGroupSparseTrackType {
     }
 }
 impl SmoothGroupSparseTrackType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SmoothGroupSparseTrackType::None => "NONE",
@@ -20901,6 +22548,7 @@ impl SmoothGroupSparseTrackType {
             SmoothGroupSparseTrackType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "SCTE_35", "SCTE_35_WITHOUT_SEGMENTATION"]
     }
@@ -20923,7 +22571,9 @@ impl AsRef<str> for SmoothGroupSparseTrackType {
     std::hash::Hash,
 )]
 pub enum SmoothGroupSegmentationMode {
+    #[allow(missing_docs)] // documentation missing in model
     UseInputSegmentation,
+    #[allow(missing_docs)] // documentation missing in model
     UseSegmentDuration,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -20945,6 +22595,7 @@ impl std::str::FromStr for SmoothGroupSegmentationMode {
     }
 }
 impl SmoothGroupSegmentationMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SmoothGroupSegmentationMode::UseInputSegmentation => "USE_INPUT_SEGMENTATION",
@@ -20952,6 +22603,7 @@ impl SmoothGroupSegmentationMode {
             SmoothGroupSegmentationMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["USE_INPUT_SEGMENTATION", "USE_SEGMENT_DURATION"]
     }
@@ -20974,7 +22626,9 @@ impl AsRef<str> for SmoothGroupSegmentationMode {
     std::hash::Hash,
 )]
 pub enum InputLossActionForMsSmoothOut {
+    #[allow(missing_docs)] // documentation missing in model
     EmitOutput,
+    #[allow(missing_docs)] // documentation missing in model
     PauseOutput,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -20996,6 +22650,7 @@ impl std::str::FromStr for InputLossActionForMsSmoothOut {
     }
 }
 impl InputLossActionForMsSmoothOut {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputLossActionForMsSmoothOut::EmitOutput => "EMIT_OUTPUT",
@@ -21003,6 +22658,7 @@ impl InputLossActionForMsSmoothOut {
             InputLossActionForMsSmoothOut::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EMIT_OUTPUT", "PAUSE_OUTPUT"]
     }
@@ -21025,7 +22681,9 @@ impl AsRef<str> for InputLossActionForMsSmoothOut {
     std::hash::Hash,
 )]
 pub enum SmoothGroupEventStopBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     SendEos,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -21047,6 +22705,7 @@ impl std::str::FromStr for SmoothGroupEventStopBehavior {
     }
 }
 impl SmoothGroupEventStopBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SmoothGroupEventStopBehavior::None => "NONE",
@@ -21054,6 +22713,7 @@ impl SmoothGroupEventStopBehavior {
             SmoothGroupEventStopBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "SEND_EOS"]
     }
@@ -21076,8 +22736,11 @@ impl AsRef<str> for SmoothGroupEventStopBehavior {
     std::hash::Hash,
 )]
 pub enum SmoothGroupEventIdMode {
+    #[allow(missing_docs)] // documentation missing in model
     NoEventId,
+    #[allow(missing_docs)] // documentation missing in model
     UseConfigured,
+    #[allow(missing_docs)] // documentation missing in model
     UseTimestamp,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -21100,6 +22763,7 @@ impl std::str::FromStr for SmoothGroupEventIdMode {
     }
 }
 impl SmoothGroupEventIdMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SmoothGroupEventIdMode::NoEventId => "NO_EVENT_ID",
@@ -21108,6 +22772,7 @@ impl SmoothGroupEventIdMode {
             SmoothGroupEventIdMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NO_EVENT_ID", "USE_CONFIGURED", "USE_TIMESTAMP"]
     }
@@ -21130,7 +22795,9 @@ impl AsRef<str> for SmoothGroupEventIdMode {
     std::hash::Hash,
 )]
 pub enum SmoothGroupCertificateMode {
+    #[allow(missing_docs)] // documentation missing in model
     SelfSigned,
+    #[allow(missing_docs)] // documentation missing in model
     VerifyAuthenticity,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -21152,6 +22819,7 @@ impl std::str::FromStr for SmoothGroupCertificateMode {
     }
 }
 impl SmoothGroupCertificateMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SmoothGroupCertificateMode::SelfSigned => "SELF_SIGNED",
@@ -21159,6 +22827,7 @@ impl SmoothGroupCertificateMode {
             SmoothGroupCertificateMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SELF_SIGNED", "VERIFY_AUTHENTICITY"]
     }
@@ -21181,7 +22850,9 @@ impl AsRef<str> for SmoothGroupCertificateMode {
     std::hash::Hash,
 )]
 pub enum SmoothGroupAudioOnlyTimecodeControl {
+    #[allow(missing_docs)] // documentation missing in model
     Passthrough,
+    #[allow(missing_docs)] // documentation missing in model
     UseConfiguredClock,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -21203,6 +22874,7 @@ impl std::str::FromStr for SmoothGroupAudioOnlyTimecodeControl {
     }
 }
 impl SmoothGroupAudioOnlyTimecodeControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SmoothGroupAudioOnlyTimecodeControl::Passthrough => "PASSTHROUGH",
@@ -21210,6 +22882,7 @@ impl SmoothGroupAudioOnlyTimecodeControl {
             SmoothGroupAudioOnlyTimecodeControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PASSTHROUGH", "USE_CONFIGURED_CLOCK"]
     }
@@ -21248,6 +22921,7 @@ pub mod media_package_group_settings {
             self.destination = Some(input);
             self
         }
+        /// MediaPackage channel destination.
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::OutputLocationRef>,
@@ -21279,11 +22953,13 @@ pub struct HlsGroupSettings {
     /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
     pub base_url_content: std::option::Option<std::string::String>,
     /// Optional. One value per output group.
+    ///
     /// This field is required only if you are completing Base URL content A, and the downstream system has notified you that the media files for pipeline 1 of all outputs are in a location different from the media files for pipeline 0.
     pub base_url_content1: std::option::Option<std::string::String>,
     /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
     pub base_url_manifest: std::option::Option<std::string::String>,
     /// Optional. One value per output group.
+    ///
     /// Complete this field only if you are completing Base URL manifest A, and the downstream system has notified you that the child manifest files for pipeline 1 of all outputs are in a location different from the child manifest files for pipeline 0.
     pub base_url_manifest1: std::option::Option<std::string::String>,
     /// Mapping of up to 4 caption channels to caption languages.  Is only meaningful if captionLanguageSetting is set to "insert".
@@ -21315,6 +22991,7 @@ pub struct HlsGroupSettings {
     /// State of HLS ID3 Segment Tagging
     pub hls_id3_segment_tagging: std::option::Option<crate::model::HlsId3SegmentTaggingState>,
     /// DISABLED: Do not create an I-frame-only manifest, but do create the master and media manifests (according to the Output Selection field).
+    ///
     /// STANDARD: Create an I-frame-only manifest for each output that contains video, as well as the other manifests (according to the Output Selection field). The I-frame manifest contains a #EXT-X-I-FRAMES-ONLY tag to indicate it is I-frame only, and one or more #EXT-X-BYTERANGE entries identifying the I-frame position. For example, #EXT-X-BYTERANGE:160364@1461888"
     pub i_frame_only_playlists: std::option::Option<crate::model::IFrameOnlyPlaylistType>,
     /// Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops producing output because of a channel stop, a channel pause or a loss of input to the pipeline.
@@ -21323,6 +23000,7 @@ pub struct HlsGroupSettings {
     pub incomplete_segment_behavior:
         std::option::Option<crate::model::HlsIncompleteSegmentBehavior>,
     /// Applies only if Mode field is LIVE.
+    ///
     /// Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
     pub index_n_segments: i32,
     /// Parameter that control output group behavior on input loss.
@@ -21332,7 +23010,9 @@ pub struct HlsGroupSettings {
     /// For use with encryptionType. The IV (Initialization Vector) is a 128-bit number used in conjunction with the key for encrypting blocks. If this setting is "followsSegmentNumber", it will cause the IV to change every segment (to match the segment number). If this is set to "explicit", you must enter a constantIv value.
     pub iv_source: std::option::Option<crate::model::HlsIvSource>,
     /// Applies only if Mode field is LIVE.
+    ///
     /// Specifies the number of media segments to retain in the destination directory. This number should be bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
+    ///
     /// If this "keep segments" number is too low, the following might happen: the player is still reading a media manifest file that lists this segment, but that segment has been removed from the destination directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
     pub keep_segments: i32,
     /// The value specifies how the key is represented in the resource identified by the URI.  If parameter is absent, an implicit value of "identity" is used.  A reverse DNS string can also be given.
@@ -21348,10 +23028,13 @@ pub struct HlsGroupSettings {
     /// When set, minimumSegmentLength is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
     pub min_segment_length: i32,
     /// If "vod", all segments are indexed and kept permanently in the destination and manifest. If "live", only the number segments specified in keepSegments and indexNSegments are kept; newer segments replace older segments, which may prevent players from rewinding all the way to the beginning of the event.
+    ///
     /// VOD mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running, converting it to a "VOD" type manifest on completion of the stream.
     pub mode: std::option::Option<crate::model::HlsMode>,
     /// MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output group.
+    ///
     /// VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest.
+    ///
     /// SEGMENTS_ONLY: Does not generate any manifests for this output group.
     pub output_selection: std::option::Option<crate::model::HlsOutputSelection>,
     /// Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows: either the program date and time are initialized using the input timecode source, or the time is initialized using the input timecode source and the date is initialized using the timestampOffset.
@@ -21359,7 +23042,9 @@ pub struct HlsGroupSettings {
     /// Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds.
     pub program_date_time_period: i32,
     /// ENABLED: The master manifest (.m3u8 file) for each pipeline includes information about both pipelines: first its own media files, then the media files of the other pipeline. This feature allows playout device that support stale manifest detection to switch from one manifest to the other, when the current manifest seems to be stale. There are still two destinations and two master manifests, but both master manifests reference the media files from both pipelines.
+    ///
     /// DISABLED: The master manifest (.m3u8 file) for each pipeline includes information about its own pipeline only.
+    ///
     /// For an HLS output group with MediaPackage as the destination, the DISABLED behavior is always followed. MediaPackage regenerates the manifests it serves to players so a redundant manifest from MediaLive is irrelevant.
     pub redundant_manifest: std::option::Option<crate::model::HlsRedundantManifest>,
     /// Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next keyframe after this number of seconds, so actual segment length may be longer.
@@ -21377,6 +23062,7 @@ pub struct HlsGroupSettings {
     /// Provides an extra millisecond delta offset to fine tune the timestamps.
     pub timestamp_delta_milliseconds: i32,
     /// SEGMENTED_FILES: Emit the program as segments - multiple .ts media files.
+    ///
     /// SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is running is not guaranteed due to HTTP server caching.
     pub ts_file_mode: std::option::Option<crate::model::HlsTsFileMode>,
 }
@@ -21491,12 +23177,18 @@ pub mod hls_group_settings {
         pub(crate) ts_file_mode: std::option::Option<crate::model::HlsTsFileMode>,
     }
     impl Builder {
+        /// Appends an item to `ad_markers`.
+        ///
+        /// To override the contents of this collection use [`set_ad_markers`](Self::set_ad_markers).
+        ///
+        /// Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.
         pub fn ad_markers(mut self, input: impl Into<crate::model::HlsAdMarkers>) -> Self {
             let mut v = self.ad_markers.unwrap_or_default();
             v.push(input.into());
             self.ad_markers = Some(v);
             self
         }
+        /// Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.
         pub fn set_ad_markers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HlsAdMarkers>>,
@@ -21509,6 +23201,7 @@ pub mod hls_group_settings {
             self.base_url_content = Some(input.into());
             self
         }
+        /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
         pub fn set_base_url_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21517,11 +23210,15 @@ pub mod hls_group_settings {
             self
         }
         /// Optional. One value per output group.
+        ///
         /// This field is required only if you are completing Base URL content A, and the downstream system has notified you that the media files for pipeline 1 of all outputs are in a location different from the media files for pipeline 0.
         pub fn base_url_content1(mut self, input: impl Into<std::string::String>) -> Self {
             self.base_url_content1 = Some(input.into());
             self
         }
+        /// Optional. One value per output group.
+        ///
+        /// This field is required only if you are completing Base URL content A, and the downstream system has notified you that the media files for pipeline 1 of all outputs are in a location different from the media files for pipeline 0.
         pub fn set_base_url_content1(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21534,6 +23231,7 @@ pub mod hls_group_settings {
             self.base_url_manifest = Some(input.into());
             self
         }
+        /// A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.
         pub fn set_base_url_manifest(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21542,11 +23240,15 @@ pub mod hls_group_settings {
             self
         }
         /// Optional. One value per output group.
+        ///
         /// Complete this field only if you are completing Base URL manifest A, and the downstream system has notified you that the child manifest files for pipeline 1 of all outputs are in a location different from the child manifest files for pipeline 0.
         pub fn base_url_manifest1(mut self, input: impl Into<std::string::String>) -> Self {
             self.base_url_manifest1 = Some(input.into());
             self
         }
+        /// Optional. One value per output group.
+        ///
+        /// Complete this field only if you are completing Base URL manifest A, and the downstream system has notified you that the child manifest files for pipeline 1 of all outputs are in a location different from the child manifest files for pipeline 0.
         pub fn set_base_url_manifest1(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21554,6 +23256,11 @@ pub mod hls_group_settings {
             self.base_url_manifest1 = input;
             self
         }
+        /// Appends an item to `caption_language_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_caption_language_mappings`](Self::set_caption_language_mappings).
+        ///
+        /// Mapping of up to 4 caption channels to caption languages.  Is only meaningful if captionLanguageSetting is set to "insert".
         pub fn caption_language_mappings(
             mut self,
             input: impl Into<crate::model::CaptionLanguageMapping>,
@@ -21563,6 +23270,7 @@ pub mod hls_group_settings {
             self.caption_language_mappings = Some(v);
             self
         }
+        /// Mapping of up to 4 caption channels to caption languages.  Is only meaningful if captionLanguageSetting is set to "insert".
         pub fn set_caption_language_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CaptionLanguageMapping>>,
@@ -21581,6 +23289,10 @@ pub mod hls_group_settings {
             self.caption_language_setting = Some(input);
             self
         }
+        /// Applies only to 608 Embedded output captions.
+        /// insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions.
+        /// none: Include CLOSED-CAPTIONS=NONE line in the manifest.
+        /// omit: Omit any CLOSED-CAPTIONS line from the manifest.
         pub fn set_caption_language_setting(
             mut self,
             input: std::option::Option<crate::model::HlsCaptionLanguageSetting>,
@@ -21593,6 +23305,7 @@ pub mod hls_group_settings {
             self.client_cache = Some(input);
             self
         }
+        /// When set to "disabled", sets the #EXT-X-ALLOW-CACHE:no tag in the manifest, which prevents clients from saving media segments for later replay.
         pub fn set_client_cache(
             mut self,
             input: std::option::Option<crate::model::HlsClientCache>,
@@ -21605,6 +23318,7 @@ pub mod hls_group_settings {
             self.codec_specification = Some(input);
             self
         }
+        /// Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
         pub fn set_codec_specification(
             mut self,
             input: std::option::Option<crate::model::HlsCodecSpecification>,
@@ -21617,6 +23331,7 @@ pub mod hls_group_settings {
             self.constant_iv = Some(input.into());
             self
         }
+        /// For use with encryptionType. This is a 128-bit, 16-byte hex value represented by a 32-character text string. If ivSource is set to "explicit" then this parameter is required and is used as the IV for encryption.
         pub fn set_constant_iv(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.constant_iv = input;
             self
@@ -21626,6 +23341,7 @@ pub mod hls_group_settings {
             self.destination = Some(input);
             self
         }
+        /// A directory or HTTP destination for the HLS segments, manifest files, and encryption keys (if enabled).
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::OutputLocationRef>,
@@ -21638,6 +23354,7 @@ pub mod hls_group_settings {
             self.directory_structure = Some(input);
             self
         }
+        /// Place segments in subdirectories.
         pub fn set_directory_structure(
             mut self,
             input: std::option::Option<crate::model::HlsDirectoryStructure>,
@@ -21652,6 +23369,9 @@ pub mod hls_group_settings {
             self.discontinuity_tags = Some(input);
             self
         }
+        /// Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group.
+        /// Typically, choose Insert because these tags are required in the manifest (according to the HLS specification) and serve an important purpose.
+        /// Choose Never Insert only if the downstream system is doing real-time failover (without using the MediaLive automatic failover feature) and only if that downstream system has advised you to exclude the tags.
         pub fn set_discontinuity_tags(
             mut self,
             input: std::option::Option<crate::model::HlsDiscontinuityTags>,
@@ -21664,6 +23384,7 @@ pub mod hls_group_settings {
             self.encryption_type = Some(input);
             self
         }
+        /// Encrypts the segments with the given encryption scheme.  Exclude this parameter if no encryption is desired.
         pub fn set_encryption_type(
             mut self,
             input: std::option::Option<crate::model::HlsEncryptionType>,
@@ -21676,6 +23397,7 @@ pub mod hls_group_settings {
             self.hls_cdn_settings = Some(input);
             self
         }
+        /// Parameters that control interactions with the CDN.
         pub fn set_hls_cdn_settings(
             mut self,
             input: std::option::Option<crate::model::HlsCdnSettings>,
@@ -21691,6 +23413,7 @@ pub mod hls_group_settings {
             self.hls_id3_segment_tagging = Some(input);
             self
         }
+        /// State of HLS ID3 Segment Tagging
         pub fn set_hls_id3_segment_tagging(
             mut self,
             input: std::option::Option<crate::model::HlsId3SegmentTaggingState>,
@@ -21699,6 +23422,7 @@ pub mod hls_group_settings {
             self
         }
         /// DISABLED: Do not create an I-frame-only manifest, but do create the master and media manifests (according to the Output Selection field).
+        ///
         /// STANDARD: Create an I-frame-only manifest for each output that contains video, as well as the other manifests (according to the Output Selection field). The I-frame manifest contains a #EXT-X-I-FRAMES-ONLY tag to indicate it is I-frame only, and one or more #EXT-X-BYTERANGE entries identifying the I-frame position. For example, #EXT-X-BYTERANGE:160364@1461888"
         pub fn i_frame_only_playlists(
             mut self,
@@ -21707,6 +23431,9 @@ pub mod hls_group_settings {
             self.i_frame_only_playlists = Some(input);
             self
         }
+        /// DISABLED: Do not create an I-frame-only manifest, but do create the master and media manifests (according to the Output Selection field).
+        ///
+        /// STANDARD: Create an I-frame-only manifest for each output that contains video, as well as the other manifests (according to the Output Selection field). The I-frame manifest contains a #EXT-X-I-FRAMES-ONLY tag to indicate it is I-frame only, and one or more #EXT-X-BYTERANGE entries identifying the I-frame position. For example, #EXT-X-BYTERANGE:160364@1461888"
         pub fn set_i_frame_only_playlists(
             mut self,
             input: std::option::Option<crate::model::IFrameOnlyPlaylistType>,
@@ -21724,6 +23451,9 @@ pub mod hls_group_settings {
             self.incomplete_segment_behavior = Some(input);
             self
         }
+        /// Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops producing output because of a channel stop, a channel pause or a loss of input to the pipeline.
+        /// Auto means that MediaLive decides whether to include the final segment, depending on the channel class and the types of output groups.
+        /// Suppress means to never include the incomplete segment. We recommend you choose Auto and let MediaLive control the behavior.
         pub fn set_incomplete_segment_behavior(
             mut self,
             input: std::option::Option<crate::model::HlsIncompleteSegmentBehavior>,
@@ -21732,11 +23462,15 @@ pub mod hls_group_settings {
             self
         }
         /// Applies only if Mode field is LIVE.
+        ///
         /// Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
         pub fn index_n_segments(mut self, input: i32) -> Self {
             self.index_n_segments = Some(input);
             self
         }
+        /// Applies only if Mode field is LIVE.
+        ///
+        /// Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
         pub fn set_index_n_segments(mut self, input: std::option::Option<i32>) -> Self {
             self.index_n_segments = input;
             self
@@ -21746,6 +23480,7 @@ pub mod hls_group_settings {
             self.input_loss_action = Some(input);
             self
         }
+        /// Parameter that control output group behavior on input loss.
         pub fn set_input_loss_action(
             mut self,
             input: std::option::Option<crate::model::InputLossActionForHlsOut>,
@@ -21758,6 +23493,7 @@ pub mod hls_group_settings {
             self.iv_in_manifest = Some(input);
             self
         }
+        /// For use with encryptionType. The IV (Initialization Vector) is a 128-bit number used in conjunction with the key for encrypting blocks. If set to "include", IV is listed in the manifest, otherwise the IV is not in the manifest.
         pub fn set_iv_in_manifest(
             mut self,
             input: std::option::Option<crate::model::HlsIvInManifest>,
@@ -21770,6 +23506,7 @@ pub mod hls_group_settings {
             self.iv_source = Some(input);
             self
         }
+        /// For use with encryptionType. The IV (Initialization Vector) is a 128-bit number used in conjunction with the key for encrypting blocks. If this setting is "followsSegmentNumber", it will cause the IV to change every segment (to match the segment number). If this is set to "explicit", you must enter a constantIv value.
         pub fn set_iv_source(
             mut self,
             input: std::option::Option<crate::model::HlsIvSource>,
@@ -21778,12 +23515,19 @@ pub mod hls_group_settings {
             self
         }
         /// Applies only if Mode field is LIVE.
+        ///
         /// Specifies the number of media segments to retain in the destination directory. This number should be bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
+        ///
         /// If this "keep segments" number is too low, the following might happen: the player is still reading a media manifest file that lists this segment, but that segment has been removed from the destination directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
         pub fn keep_segments(mut self, input: i32) -> Self {
             self.keep_segments = Some(input);
             self
         }
+        /// Applies only if Mode field is LIVE.
+        ///
+        /// Specifies the number of media segments to retain in the destination directory. This number should be bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
+        ///
+        /// If this "keep segments" number is too low, the following might happen: the player is still reading a media manifest file that lists this segment, but that segment has been removed from the destination directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
         pub fn set_keep_segments(mut self, input: std::option::Option<i32>) -> Self {
             self.keep_segments = input;
             self
@@ -21793,6 +23537,7 @@ pub mod hls_group_settings {
             self.key_format = Some(input.into());
             self
         }
+        /// The value specifies how the key is represented in the resource identified by the URI.  If parameter is absent, an implicit value of "identity" is used.  A reverse DNS string can also be given.
         pub fn set_key_format(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_format = input;
             self
@@ -21802,6 +23547,7 @@ pub mod hls_group_settings {
             self.key_format_versions = Some(input.into());
             self
         }
+        /// Either a single positive integer version value or a slash delimited list of version values (1/2/3).
         pub fn set_key_format_versions(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21814,6 +23560,7 @@ pub mod hls_group_settings {
             self.key_provider_settings = Some(input);
             self
         }
+        /// The key provider settings.
         pub fn set_key_provider_settings(
             mut self,
             input: std::option::Option<crate::model::KeyProviderSettings>,
@@ -21826,6 +23573,7 @@ pub mod hls_group_settings {
             self.manifest_compression = Some(input);
             self
         }
+        /// When set to gzip, compresses HLS playlist.
         pub fn set_manifest_compression(
             mut self,
             input: std::option::Option<crate::model::HlsManifestCompression>,
@@ -21841,6 +23589,7 @@ pub mod hls_group_settings {
             self.manifest_duration_format = Some(input);
             self
         }
+        /// Indicates whether the output manifest should use floating point or integer values for segment duration.
         pub fn set_manifest_duration_format(
             mut self,
             input: std::option::Option<crate::model::HlsManifestDurationFormat>,
@@ -21853,27 +23602,39 @@ pub mod hls_group_settings {
             self.min_segment_length = Some(input);
             self
         }
+        /// When set, minimumSegmentLength is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
         pub fn set_min_segment_length(mut self, input: std::option::Option<i32>) -> Self {
             self.min_segment_length = input;
             self
         }
         /// If "vod", all segments are indexed and kept permanently in the destination and manifest. If "live", only the number segments specified in keepSegments and indexNSegments are kept; newer segments replace older segments, which may prevent players from rewinding all the way to the beginning of the event.
+        ///
         /// VOD mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running, converting it to a "VOD" type manifest on completion of the stream.
         pub fn mode(mut self, input: crate::model::HlsMode) -> Self {
             self.mode = Some(input);
             self
         }
+        /// If "vod", all segments are indexed and kept permanently in the destination and manifest. If "live", only the number segments specified in keepSegments and indexNSegments are kept; newer segments replace older segments, which may prevent players from rewinding all the way to the beginning of the event.
+        ///
+        /// VOD mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running, converting it to a "VOD" type manifest on completion of the stream.
         pub fn set_mode(mut self, input: std::option::Option<crate::model::HlsMode>) -> Self {
             self.mode = input;
             self
         }
         /// MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output group.
+        ///
         /// VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest.
+        ///
         /// SEGMENTS_ONLY: Does not generate any manifests for this output group.
         pub fn output_selection(mut self, input: crate::model::HlsOutputSelection) -> Self {
             self.output_selection = Some(input);
             self
         }
+        /// MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output group.
+        ///
+        /// VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest.
+        ///
+        /// SEGMENTS_ONLY: Does not generate any manifests for this output group.
         pub fn set_output_selection(
             mut self,
             input: std::option::Option<crate::model::HlsOutputSelection>,
@@ -21886,6 +23647,7 @@ pub mod hls_group_settings {
             self.program_date_time = Some(input);
             self
         }
+        /// Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows: either the program date and time are initialized using the input timecode source, or the time is initialized using the input timecode source and the date is initialized using the timestampOffset.
         pub fn set_program_date_time(
             mut self,
             input: std::option::Option<crate::model::HlsProgramDateTime>,
@@ -21898,17 +23660,25 @@ pub mod hls_group_settings {
             self.program_date_time_period = Some(input);
             self
         }
+        /// Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds.
         pub fn set_program_date_time_period(mut self, input: std::option::Option<i32>) -> Self {
             self.program_date_time_period = input;
             self
         }
         /// ENABLED: The master manifest (.m3u8 file) for each pipeline includes information about both pipelines: first its own media files, then the media files of the other pipeline. This feature allows playout device that support stale manifest detection to switch from one manifest to the other, when the current manifest seems to be stale. There are still two destinations and two master manifests, but both master manifests reference the media files from both pipelines.
+        ///
         /// DISABLED: The master manifest (.m3u8 file) for each pipeline includes information about its own pipeline only.
+        ///
         /// For an HLS output group with MediaPackage as the destination, the DISABLED behavior is always followed. MediaPackage regenerates the manifests it serves to players so a redundant manifest from MediaLive is irrelevant.
         pub fn redundant_manifest(mut self, input: crate::model::HlsRedundantManifest) -> Self {
             self.redundant_manifest = Some(input);
             self
         }
+        /// ENABLED: The master manifest (.m3u8 file) for each pipeline includes information about both pipelines: first its own media files, then the media files of the other pipeline. This feature allows playout device that support stale manifest detection to switch from one manifest to the other, when the current manifest seems to be stale. There are still two destinations and two master manifests, but both master manifests reference the media files from both pipelines.
+        ///
+        /// DISABLED: The master manifest (.m3u8 file) for each pipeline includes information about its own pipeline only.
+        ///
+        /// For an HLS output group with MediaPackage as the destination, the DISABLED behavior is always followed. MediaPackage regenerates the manifests it serves to players so a redundant manifest from MediaLive is irrelevant.
         pub fn set_redundant_manifest(
             mut self,
             input: std::option::Option<crate::model::HlsRedundantManifest>,
@@ -21921,6 +23691,7 @@ pub mod hls_group_settings {
             self.segment_length = Some(input);
             self
         }
+        /// Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next keyframe after this number of seconds, so actual segment length may be longer.
         pub fn set_segment_length(mut self, input: std::option::Option<i32>) -> Self {
             self.segment_length = input;
             self
@@ -21930,6 +23701,7 @@ pub mod hls_group_settings {
             self.segmentation_mode = Some(input);
             self
         }
+        /// useInputSegmentation has been deprecated. The configured segment size is always used.
         pub fn set_segmentation_mode(
             mut self,
             input: std::option::Option<crate::model::HlsSegmentationMode>,
@@ -21942,6 +23714,7 @@ pub mod hls_group_settings {
             self.segments_per_subdirectory = Some(input);
             self
         }
+        /// Number of segments to write to a subdirectory before starting a new one. directoryStructure must be subdirectoryPerStream for this setting to have an effect.
         pub fn set_segments_per_subdirectory(mut self, input: std::option::Option<i32>) -> Self {
             self.segments_per_subdirectory = input;
             self
@@ -21954,6 +23727,7 @@ pub mod hls_group_settings {
             self.stream_inf_resolution = Some(input);
             self
         }
+        /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
         pub fn set_stream_inf_resolution(
             mut self,
             input: std::option::Option<crate::model::HlsStreamInfResolution>,
@@ -21969,6 +23743,7 @@ pub mod hls_group_settings {
             self.timed_metadata_id3_frame = Some(input);
             self
         }
+        /// Indicates ID3 frame that has the timecode.
         pub fn set_timed_metadata_id3_frame(
             mut self,
             input: std::option::Option<crate::model::HlsTimedMetadataId3Frame>,
@@ -21981,6 +23756,7 @@ pub mod hls_group_settings {
             self.timed_metadata_id3_period = Some(input);
             self
         }
+        /// Timed Metadata interval in seconds.
         pub fn set_timed_metadata_id3_period(mut self, input: std::option::Option<i32>) -> Self {
             self.timed_metadata_id3_period = input;
             self
@@ -21990,16 +23766,21 @@ pub mod hls_group_settings {
             self.timestamp_delta_milliseconds = Some(input);
             self
         }
+        /// Provides an extra millisecond delta offset to fine tune the timestamps.
         pub fn set_timestamp_delta_milliseconds(mut self, input: std::option::Option<i32>) -> Self {
             self.timestamp_delta_milliseconds = input;
             self
         }
         /// SEGMENTED_FILES: Emit the program as segments - multiple .ts media files.
+        ///
         /// SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is running is not guaranteed due to HTTP server caching.
         pub fn ts_file_mode(mut self, input: crate::model::HlsTsFileMode) -> Self {
             self.ts_file_mode = Some(input);
             self
         }
+        /// SEGMENTED_FILES: Emit the program as segments - multiple .ts media files.
+        ///
+        /// SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is running is not guaranteed due to HTTP server caching.
         pub fn set_ts_file_mode(
             mut self,
             input: std::option::Option<crate::model::HlsTsFileMode>,
@@ -22075,7 +23856,9 @@ impl HlsGroupSettings {
     std::hash::Hash,
 )]
 pub enum HlsTsFileMode {
+    #[allow(missing_docs)] // documentation missing in model
     SegmentedFiles,
+    #[allow(missing_docs)] // documentation missing in model
     SingleFile,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -22097,6 +23880,7 @@ impl std::str::FromStr for HlsTsFileMode {
     }
 }
 impl HlsTsFileMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsTsFileMode::SegmentedFiles => "SEGMENTED_FILES",
@@ -22104,6 +23888,7 @@ impl HlsTsFileMode {
             HlsTsFileMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SEGMENTED_FILES", "SINGLE_FILE"]
     }
@@ -22126,8 +23911,11 @@ impl AsRef<str> for HlsTsFileMode {
     std::hash::Hash,
 )]
 pub enum HlsTimedMetadataId3Frame {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Priv,
+    #[allow(missing_docs)] // documentation missing in model
     Tdrl,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -22150,6 +23938,7 @@ impl std::str::FromStr for HlsTimedMetadataId3Frame {
     }
 }
 impl HlsTimedMetadataId3Frame {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsTimedMetadataId3Frame::None => "NONE",
@@ -22158,6 +23947,7 @@ impl HlsTimedMetadataId3Frame {
             HlsTimedMetadataId3Frame::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "PRIV", "TDRL"]
     }
@@ -22180,7 +23970,9 @@ impl AsRef<str> for HlsTimedMetadataId3Frame {
     std::hash::Hash,
 )]
 pub enum HlsStreamInfResolution {
+    #[allow(missing_docs)] // documentation missing in model
     Exclude,
+    #[allow(missing_docs)] // documentation missing in model
     Include,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -22202,6 +23994,7 @@ impl std::str::FromStr for HlsStreamInfResolution {
     }
 }
 impl HlsStreamInfResolution {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsStreamInfResolution::Exclude => "EXCLUDE",
@@ -22209,6 +24002,7 @@ impl HlsStreamInfResolution {
             HlsStreamInfResolution::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EXCLUDE", "INCLUDE"]
     }
@@ -22231,7 +24025,9 @@ impl AsRef<str> for HlsStreamInfResolution {
     std::hash::Hash,
 )]
 pub enum HlsSegmentationMode {
+    #[allow(missing_docs)] // documentation missing in model
     UseInputSegmentation,
+    #[allow(missing_docs)] // documentation missing in model
     UseSegmentDuration,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -22253,6 +24049,7 @@ impl std::str::FromStr for HlsSegmentationMode {
     }
 }
 impl HlsSegmentationMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsSegmentationMode::UseInputSegmentation => "USE_INPUT_SEGMENTATION",
@@ -22260,6 +24057,7 @@ impl HlsSegmentationMode {
             HlsSegmentationMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["USE_INPUT_SEGMENTATION", "USE_SEGMENT_DURATION"]
     }
@@ -22282,7 +24080,9 @@ impl AsRef<str> for HlsSegmentationMode {
     std::hash::Hash,
 )]
 pub enum HlsRedundantManifest {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -22304,6 +24104,7 @@ impl std::str::FromStr for HlsRedundantManifest {
     }
 }
 impl HlsRedundantManifest {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsRedundantManifest::Disabled => "DISABLED",
@@ -22311,6 +24112,7 @@ impl HlsRedundantManifest {
             HlsRedundantManifest::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -22333,7 +24135,9 @@ impl AsRef<str> for HlsRedundantManifest {
     std::hash::Hash,
 )]
 pub enum HlsProgramDateTime {
+    #[allow(missing_docs)] // documentation missing in model
     Exclude,
+    #[allow(missing_docs)] // documentation missing in model
     Include,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -22355,6 +24159,7 @@ impl std::str::FromStr for HlsProgramDateTime {
     }
 }
 impl HlsProgramDateTime {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsProgramDateTime::Exclude => "EXCLUDE",
@@ -22362,6 +24167,7 @@ impl HlsProgramDateTime {
             HlsProgramDateTime::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EXCLUDE", "INCLUDE"]
     }
@@ -22384,8 +24190,11 @@ impl AsRef<str> for HlsProgramDateTime {
     std::hash::Hash,
 )]
 pub enum HlsOutputSelection {
+    #[allow(missing_docs)] // documentation missing in model
     ManifestsAndSegments,
+    #[allow(missing_docs)] // documentation missing in model
     SegmentsOnly,
+    #[allow(missing_docs)] // documentation missing in model
     VariantManifestsAndSegments,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -22408,6 +24217,7 @@ impl std::str::FromStr for HlsOutputSelection {
     }
 }
 impl HlsOutputSelection {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsOutputSelection::ManifestsAndSegments => "MANIFESTS_AND_SEGMENTS",
@@ -22416,6 +24226,7 @@ impl HlsOutputSelection {
             HlsOutputSelection::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "MANIFESTS_AND_SEGMENTS",
@@ -22442,7 +24253,9 @@ impl AsRef<str> for HlsOutputSelection {
     std::hash::Hash,
 )]
 pub enum HlsMode {
+    #[allow(missing_docs)] // documentation missing in model
     Live,
+    #[allow(missing_docs)] // documentation missing in model
     Vod,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -22464,6 +24277,7 @@ impl std::str::FromStr for HlsMode {
     }
 }
 impl HlsMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsMode::Live => "LIVE",
@@ -22471,6 +24285,7 @@ impl HlsMode {
             HlsMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LIVE", "VOD"]
     }
@@ -22493,7 +24308,9 @@ impl AsRef<str> for HlsMode {
     std::hash::Hash,
 )]
 pub enum HlsManifestDurationFormat {
+    #[allow(missing_docs)] // documentation missing in model
     FloatingPoint,
+    #[allow(missing_docs)] // documentation missing in model
     Integer,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -22515,6 +24332,7 @@ impl std::str::FromStr for HlsManifestDurationFormat {
     }
 }
 impl HlsManifestDurationFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsManifestDurationFormat::FloatingPoint => "FLOATING_POINT",
@@ -22522,6 +24340,7 @@ impl HlsManifestDurationFormat {
             HlsManifestDurationFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FLOATING_POINT", "INTEGER"]
     }
@@ -22544,7 +24363,9 @@ impl AsRef<str> for HlsManifestDurationFormat {
     std::hash::Hash,
 )]
 pub enum HlsManifestCompression {
+    #[allow(missing_docs)] // documentation missing in model
     Gzip,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -22566,6 +24387,7 @@ impl std::str::FromStr for HlsManifestCompression {
     }
 }
 impl HlsManifestCompression {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsManifestCompression::Gzip => "GZIP",
@@ -22573,6 +24395,7 @@ impl HlsManifestCompression {
             HlsManifestCompression::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GZIP", "NONE"]
     }
@@ -22611,6 +24434,7 @@ pub mod key_provider_settings {
             self.static_key_settings = Some(input);
             self
         }
+        /// Static Key Settings
         pub fn set_static_key_settings(
             mut self,
             input: std::option::Option<crate::model::StaticKeySettings>,
@@ -22665,6 +24489,7 @@ pub mod static_key_settings {
             self.key_provider_server = Some(input);
             self
         }
+        /// The URL of the license server used for protecting content.
         pub fn set_key_provider_server(
             mut self,
             input: std::option::Option<crate::model::InputLocation>,
@@ -22677,6 +24502,7 @@ pub mod static_key_settings {
             self.static_key_value = Some(input.into());
             self
         }
+        /// Static key value as a 32 character hexadecimal string.
         pub fn set_static_key_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22712,7 +24538,9 @@ impl StaticKeySettings {
     std::hash::Hash,
 )]
 pub enum HlsIvSource {
+    #[allow(missing_docs)] // documentation missing in model
     Explicit,
+    #[allow(missing_docs)] // documentation missing in model
     FollowsSegmentNumber,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -22734,6 +24562,7 @@ impl std::str::FromStr for HlsIvSource {
     }
 }
 impl HlsIvSource {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsIvSource::Explicit => "EXPLICIT",
@@ -22741,6 +24570,7 @@ impl HlsIvSource {
             HlsIvSource::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EXPLICIT", "FOLLOWS_SEGMENT_NUMBER"]
     }
@@ -22763,7 +24593,9 @@ impl AsRef<str> for HlsIvSource {
     std::hash::Hash,
 )]
 pub enum HlsIvInManifest {
+    #[allow(missing_docs)] // documentation missing in model
     Exclude,
+    #[allow(missing_docs)] // documentation missing in model
     Include,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -22785,6 +24617,7 @@ impl std::str::FromStr for HlsIvInManifest {
     }
 }
 impl HlsIvInManifest {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsIvInManifest::Exclude => "EXCLUDE",
@@ -22792,6 +24625,7 @@ impl HlsIvInManifest {
             HlsIvInManifest::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EXCLUDE", "INCLUDE"]
     }
@@ -22814,7 +24648,9 @@ impl AsRef<str> for HlsIvInManifest {
     std::hash::Hash,
 )]
 pub enum InputLossActionForHlsOut {
+    #[allow(missing_docs)] // documentation missing in model
     EmitOutput,
+    #[allow(missing_docs)] // documentation missing in model
     PauseOutput,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -22836,6 +24672,7 @@ impl std::str::FromStr for InputLossActionForHlsOut {
     }
 }
 impl InputLossActionForHlsOut {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputLossActionForHlsOut::EmitOutput => "EMIT_OUTPUT",
@@ -22843,6 +24680,7 @@ impl InputLossActionForHlsOut {
             InputLossActionForHlsOut::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EMIT_OUTPUT", "PAUSE_OUTPUT"]
     }
@@ -22865,7 +24703,9 @@ impl AsRef<str> for InputLossActionForHlsOut {
     std::hash::Hash,
 )]
 pub enum HlsIncompleteSegmentBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     Auto,
+    #[allow(missing_docs)] // documentation missing in model
     Suppress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -22887,6 +24727,7 @@ impl std::str::FromStr for HlsIncompleteSegmentBehavior {
     }
 }
 impl HlsIncompleteSegmentBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsIncompleteSegmentBehavior::Auto => "AUTO",
@@ -22894,6 +24735,7 @@ impl HlsIncompleteSegmentBehavior {
             HlsIncompleteSegmentBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUTO", "SUPPRESS"]
     }
@@ -22916,7 +24758,9 @@ impl AsRef<str> for HlsIncompleteSegmentBehavior {
     std::hash::Hash,
 )]
 pub enum IFrameOnlyPlaylistType {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -22938,6 +24782,7 @@ impl std::str::FromStr for IFrameOnlyPlaylistType {
     }
 }
 impl IFrameOnlyPlaylistType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IFrameOnlyPlaylistType::Disabled => "DISABLED",
@@ -22945,6 +24790,7 @@ impl IFrameOnlyPlaylistType {
             IFrameOnlyPlaylistType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "STANDARD"]
     }
@@ -22967,7 +24813,9 @@ impl AsRef<str> for IFrameOnlyPlaylistType {
     std::hash::Hash,
 )]
 pub enum HlsId3SegmentTaggingState {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -22989,6 +24837,7 @@ impl std::str::FromStr for HlsId3SegmentTaggingState {
     }
 }
 impl HlsId3SegmentTaggingState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsId3SegmentTaggingState::Disabled => "DISABLED",
@@ -22996,6 +24845,7 @@ impl HlsId3SegmentTaggingState {
             HlsId3SegmentTaggingState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -23051,6 +24901,7 @@ pub mod hls_cdn_settings {
             self.hls_akamai_settings = Some(input);
             self
         }
+        /// Hls Akamai Settings
         pub fn set_hls_akamai_settings(
             mut self,
             input: std::option::Option<crate::model::HlsAkamaiSettings>,
@@ -23063,6 +24914,7 @@ pub mod hls_cdn_settings {
             self.hls_basic_put_settings = Some(input);
             self
         }
+        /// Hls Basic Put Settings
         pub fn set_hls_basic_put_settings(
             mut self,
             input: std::option::Option<crate::model::HlsBasicPutSettings>,
@@ -23078,6 +24930,7 @@ pub mod hls_cdn_settings {
             self.hls_media_store_settings = Some(input);
             self
         }
+        /// Hls Media Store Settings
         pub fn set_hls_media_store_settings(
             mut self,
             input: std::option::Option<crate::model::HlsMediaStoreSettings>,
@@ -23090,6 +24943,7 @@ pub mod hls_cdn_settings {
             self.hls_s3_settings = Some(input);
             self
         }
+        /// Hls S3 Settings
         pub fn set_hls_s3_settings(
             mut self,
             input: std::option::Option<crate::model::HlsS3Settings>,
@@ -23102,6 +24956,7 @@ pub mod hls_cdn_settings {
             self.hls_webdav_settings = Some(input);
             self
         }
+        /// Hls Webdav Settings
         pub fn set_hls_webdav_settings(
             mut self,
             input: std::option::Option<crate::model::HlsWebdavSettings>,
@@ -23172,6 +25027,7 @@ pub mod hls_webdav_settings {
             self.connection_retry_interval = Some(input);
             self
         }
+        /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
         pub fn set_connection_retry_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.connection_retry_interval = input;
             self
@@ -23181,6 +25037,7 @@ pub mod hls_webdav_settings {
             self.filecache_duration = Some(input);
             self
         }
+        /// Size in seconds of file cache for streaming outputs.
         pub fn set_filecache_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.filecache_duration = input;
             self
@@ -23193,6 +25050,7 @@ pub mod hls_webdav_settings {
             self.http_transfer_mode = Some(input);
             self
         }
+        /// Specify whether or not to use chunked transfer encoding to WebDAV.
         pub fn set_http_transfer_mode(
             mut self,
             input: std::option::Option<crate::model::HlsWebdavHttpTransferMode>,
@@ -23205,6 +25063,7 @@ pub mod hls_webdav_settings {
             self.num_retries = Some(input);
             self
         }
+        /// Number of retry attempts that will be made before the Live Event is put into an error state.
         pub fn set_num_retries(mut self, input: std::option::Option<i32>) -> Self {
             self.num_retries = input;
             self
@@ -23214,6 +25073,7 @@ pub mod hls_webdav_settings {
             self.restart_delay = Some(input);
             self
         }
+        /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
         pub fn set_restart_delay(mut self, input: std::option::Option<i32>) -> Self {
             self.restart_delay = input;
             self
@@ -23249,7 +25109,9 @@ impl HlsWebdavSettings {
     std::hash::Hash,
 )]
 pub enum HlsWebdavHttpTransferMode {
+    #[allow(missing_docs)] // documentation missing in model
     Chunked,
+    #[allow(missing_docs)] // documentation missing in model
     NonChunked,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -23271,6 +25133,7 @@ impl std::str::FromStr for HlsWebdavHttpTransferMode {
     }
 }
 impl HlsWebdavHttpTransferMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsWebdavHttpTransferMode::Chunked => "CHUNKED",
@@ -23278,6 +25141,7 @@ impl HlsWebdavHttpTransferMode {
             HlsWebdavHttpTransferMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CHUNKED", "NON_CHUNKED"]
     }
@@ -23316,6 +25180,7 @@ pub mod hls_s3_settings {
             self.canned_acl = Some(input);
             self
         }
+        /// Specify the canned ACL to apply to each S3 request. Defaults to none.
         pub fn set_canned_acl(
             mut self,
             input: std::option::Option<crate::model::S3CannedAcl>,
@@ -23350,9 +25215,13 @@ impl HlsS3Settings {
     std::hash::Hash,
 )]
 pub enum S3CannedAcl {
+    #[allow(missing_docs)] // documentation missing in model
     AuthenticatedRead,
+    #[allow(missing_docs)] // documentation missing in model
     BucketOwnerFullControl,
+    #[allow(missing_docs)] // documentation missing in model
     BucketOwnerRead,
+    #[allow(missing_docs)] // documentation missing in model
     PublicRead,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -23376,6 +25245,7 @@ impl std::str::FromStr for S3CannedAcl {
     }
 }
 impl S3CannedAcl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             S3CannedAcl::AuthenticatedRead => "AUTHENTICATED_READ",
@@ -23385,6 +25255,7 @@ impl S3CannedAcl {
             S3CannedAcl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AUTHENTICATED_READ",
@@ -23445,6 +25316,7 @@ pub mod hls_media_store_settings {
             self.connection_retry_interval = Some(input);
             self
         }
+        /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
         pub fn set_connection_retry_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.connection_retry_interval = input;
             self
@@ -23454,6 +25326,7 @@ pub mod hls_media_store_settings {
             self.filecache_duration = Some(input);
             self
         }
+        /// Size in seconds of file cache for streaming outputs.
         pub fn set_filecache_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.filecache_duration = input;
             self
@@ -23466,6 +25339,7 @@ pub mod hls_media_store_settings {
             self.media_store_storage_class = Some(input);
             self
         }
+        /// When set to temporal, output files are stored in non-persistent memory for faster reading and writing.
         pub fn set_media_store_storage_class(
             mut self,
             input: std::option::Option<crate::model::HlsMediaStoreStorageClass>,
@@ -23478,6 +25352,7 @@ pub mod hls_media_store_settings {
             self.num_retries = Some(input);
             self
         }
+        /// Number of retry attempts that will be made before the Live Event is put into an error state.
         pub fn set_num_retries(mut self, input: std::option::Option<i32>) -> Self {
             self.num_retries = input;
             self
@@ -23487,6 +25362,7 @@ pub mod hls_media_store_settings {
             self.restart_delay = Some(input);
             self
         }
+        /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
         pub fn set_restart_delay(mut self, input: std::option::Option<i32>) -> Self {
             self.restart_delay = input;
             self
@@ -23522,6 +25398,7 @@ impl HlsMediaStoreSettings {
     std::hash::Hash,
 )]
 pub enum HlsMediaStoreStorageClass {
+    #[allow(missing_docs)] // documentation missing in model
     Temporal,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -23542,12 +25419,14 @@ impl std::str::FromStr for HlsMediaStoreStorageClass {
     }
 }
 impl HlsMediaStoreStorageClass {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsMediaStoreStorageClass::Temporal => "TEMPORAL",
             HlsMediaStoreStorageClass::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["TEMPORAL"]
     }
@@ -23598,6 +25477,7 @@ pub mod hls_basic_put_settings {
             self.connection_retry_interval = Some(input);
             self
         }
+        /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
         pub fn set_connection_retry_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.connection_retry_interval = input;
             self
@@ -23607,6 +25487,7 @@ pub mod hls_basic_put_settings {
             self.filecache_duration = Some(input);
             self
         }
+        /// Size in seconds of file cache for streaming outputs.
         pub fn set_filecache_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.filecache_duration = input;
             self
@@ -23616,6 +25497,7 @@ pub mod hls_basic_put_settings {
             self.num_retries = Some(input);
             self
         }
+        /// Number of retry attempts that will be made before the Live Event is put into an error state.
         pub fn set_num_retries(mut self, input: std::option::Option<i32>) -> Self {
             self.num_retries = input;
             self
@@ -23625,6 +25507,7 @@ pub mod hls_basic_put_settings {
             self.restart_delay = Some(input);
             self
         }
+        /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
         pub fn set_restart_delay(mut self, input: std::option::Option<i32>) -> Self {
             self.restart_delay = input;
             self
@@ -23699,6 +25582,7 @@ pub mod hls_akamai_settings {
             self.connection_retry_interval = Some(input);
             self
         }
+        /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
         pub fn set_connection_retry_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.connection_retry_interval = input;
             self
@@ -23708,6 +25592,7 @@ pub mod hls_akamai_settings {
             self.filecache_duration = Some(input);
             self
         }
+        /// Size in seconds of file cache for streaming outputs.
         pub fn set_filecache_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.filecache_duration = input;
             self
@@ -23720,6 +25605,7 @@ pub mod hls_akamai_settings {
             self.http_transfer_mode = Some(input);
             self
         }
+        /// Specify whether or not to use chunked transfer encoding to Akamai. User should contact Akamai to enable this feature.
         pub fn set_http_transfer_mode(
             mut self,
             input: std::option::Option<crate::model::HlsAkamaiHttpTransferMode>,
@@ -23732,6 +25618,7 @@ pub mod hls_akamai_settings {
             self.num_retries = Some(input);
             self
         }
+        /// Number of retry attempts that will be made before the Live Event is put into an error state.
         pub fn set_num_retries(mut self, input: std::option::Option<i32>) -> Self {
             self.num_retries = input;
             self
@@ -23741,6 +25628,7 @@ pub mod hls_akamai_settings {
             self.restart_delay = Some(input);
             self
         }
+        /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
         pub fn set_restart_delay(mut self, input: std::option::Option<i32>) -> Self {
             self.restart_delay = input;
             self
@@ -23750,6 +25638,7 @@ pub mod hls_akamai_settings {
             self.salt = Some(input.into());
             self
         }
+        /// Salt for authenticated Akamai.
         pub fn set_salt(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.salt = input;
             self
@@ -23759,6 +25648,7 @@ pub mod hls_akamai_settings {
             self.token = Some(input.into());
             self
         }
+        /// Token parameter for authenticated akamai. If not specified, _gda_ is used.
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token = input;
             self
@@ -23796,7 +25686,9 @@ impl HlsAkamaiSettings {
     std::hash::Hash,
 )]
 pub enum HlsAkamaiHttpTransferMode {
+    #[allow(missing_docs)] // documentation missing in model
     Chunked,
+    #[allow(missing_docs)] // documentation missing in model
     NonChunked,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -23818,6 +25710,7 @@ impl std::str::FromStr for HlsAkamaiHttpTransferMode {
     }
 }
 impl HlsAkamaiHttpTransferMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsAkamaiHttpTransferMode::Chunked => "CHUNKED",
@@ -23825,6 +25718,7 @@ impl HlsAkamaiHttpTransferMode {
             HlsAkamaiHttpTransferMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CHUNKED", "NON_CHUNKED"]
     }
@@ -23847,7 +25741,9 @@ impl AsRef<str> for HlsAkamaiHttpTransferMode {
     std::hash::Hash,
 )]
 pub enum HlsEncryptionType {
+    #[allow(missing_docs)] // documentation missing in model
     Aes128,
+    #[allow(missing_docs)] // documentation missing in model
     SampleAes,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -23869,6 +25765,7 @@ impl std::str::FromStr for HlsEncryptionType {
     }
 }
 impl HlsEncryptionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsEncryptionType::Aes128 => "AES128",
@@ -23876,6 +25773,7 @@ impl HlsEncryptionType {
             HlsEncryptionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AES128", "SAMPLE_AES"]
     }
@@ -23898,7 +25796,9 @@ impl AsRef<str> for HlsEncryptionType {
     std::hash::Hash,
 )]
 pub enum HlsDiscontinuityTags {
+    #[allow(missing_docs)] // documentation missing in model
     Insert,
+    #[allow(missing_docs)] // documentation missing in model
     NeverInsert,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -23920,6 +25820,7 @@ impl std::str::FromStr for HlsDiscontinuityTags {
     }
 }
 impl HlsDiscontinuityTags {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsDiscontinuityTags::Insert => "INSERT",
@@ -23927,6 +25828,7 @@ impl HlsDiscontinuityTags {
             HlsDiscontinuityTags::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["INSERT", "NEVER_INSERT"]
     }
@@ -23949,7 +25851,9 @@ impl AsRef<str> for HlsDiscontinuityTags {
     std::hash::Hash,
 )]
 pub enum HlsDirectoryStructure {
+    #[allow(missing_docs)] // documentation missing in model
     SingleDirectory,
+    #[allow(missing_docs)] // documentation missing in model
     SubdirectoryPerStream,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -23971,6 +25875,7 @@ impl std::str::FromStr for HlsDirectoryStructure {
     }
 }
 impl HlsDirectoryStructure {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsDirectoryStructure::SingleDirectory => "SINGLE_DIRECTORY",
@@ -23978,6 +25883,7 @@ impl HlsDirectoryStructure {
             HlsDirectoryStructure::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SINGLE_DIRECTORY", "SUBDIRECTORY_PER_STREAM"]
     }
@@ -24000,7 +25906,9 @@ impl AsRef<str> for HlsDirectoryStructure {
     std::hash::Hash,
 )]
 pub enum HlsCodecSpecification {
+    #[allow(missing_docs)] // documentation missing in model
     Rfc4281,
+    #[allow(missing_docs)] // documentation missing in model
     Rfc6381,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -24022,6 +25930,7 @@ impl std::str::FromStr for HlsCodecSpecification {
     }
 }
 impl HlsCodecSpecification {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsCodecSpecification::Rfc4281 => "RFC_4281",
@@ -24029,6 +25938,7 @@ impl HlsCodecSpecification {
             HlsCodecSpecification::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["RFC_4281", "RFC_6381"]
     }
@@ -24051,7 +25961,9 @@ impl AsRef<str> for HlsCodecSpecification {
     std::hash::Hash,
 )]
 pub enum HlsClientCache {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -24073,6 +25985,7 @@ impl std::str::FromStr for HlsClientCache {
     }
 }
 impl HlsClientCache {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsClientCache::Disabled => "DISABLED",
@@ -24080,6 +25993,7 @@ impl HlsClientCache {
             HlsClientCache::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -24102,8 +26016,11 @@ impl AsRef<str> for HlsClientCache {
     std::hash::Hash,
 )]
 pub enum HlsCaptionLanguageSetting {
+    #[allow(missing_docs)] // documentation missing in model
     Insert,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Omit,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -24126,6 +26043,7 @@ impl std::str::FromStr for HlsCaptionLanguageSetting {
     }
 }
 impl HlsCaptionLanguageSetting {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsCaptionLanguageSetting::Insert => "INSERT",
@@ -24134,6 +26052,7 @@ impl HlsCaptionLanguageSetting {
             HlsCaptionLanguageSetting::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["INSERT", "NONE", "OMIT"]
     }
@@ -24180,6 +26099,7 @@ pub mod caption_language_mapping {
             self.caption_channel = Some(input);
             self
         }
+        /// The closed caption channel being described by this CaptionLanguageMapping.  Each channel mapping must have a unique channel number (maximum of 4)
         pub fn set_caption_channel(mut self, input: std::option::Option<i32>) -> Self {
             self.caption_channel = input;
             self
@@ -24189,6 +26109,7 @@ pub mod caption_language_mapping {
             self.language_code = Some(input.into());
             self
         }
+        /// Three character ISO 639-2 language code (see http://www.loc.gov/standards/iso639-2)
         pub fn set_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24201,6 +26122,7 @@ pub mod caption_language_mapping {
             self.language_description = Some(input.into());
             self
         }
+        /// Textual description of language
         pub fn set_language_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24237,8 +26159,11 @@ impl CaptionLanguageMapping {
     std::hash::Hash,
 )]
 pub enum HlsAdMarkers {
+    #[allow(missing_docs)] // documentation missing in model
     Adobe,
+    #[allow(missing_docs)] // documentation missing in model
     Elemental,
+    #[allow(missing_docs)] // documentation missing in model
     ElementalScte35,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -24261,6 +26186,7 @@ impl std::str::FromStr for HlsAdMarkers {
     }
 }
 impl HlsAdMarkers {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HlsAdMarkers::Adobe => "ADOBE",
@@ -24269,6 +26195,7 @@ impl HlsAdMarkers {
             HlsAdMarkers::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ADOBE", "ELEMENTAL", "ELEMENTAL_SCTE35"]
     }
@@ -24315,6 +26242,7 @@ pub mod frame_capture_group_settings {
             self.destination = Some(input);
             self
         }
+        /// The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the destination field (for example, "curling-") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg).  For example, curling-low.00001.jpg
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::OutputLocationRef>,
@@ -24330,6 +26258,7 @@ pub mod frame_capture_group_settings {
             self.frame_capture_cdn_settings = Some(input);
             self
         }
+        /// Parameters that control interactions with the CDN.
         pub fn set_frame_capture_cdn_settings(
             mut self,
             input: std::option::Option<crate::model::FrameCaptureCdnSettings>,
@@ -24385,6 +26314,7 @@ pub mod frame_capture_cdn_settings {
             self.frame_capture_s3_settings = Some(input);
             self
         }
+        /// Frame Capture S3 Settings
         pub fn set_frame_capture_s3_settings(
             mut self,
             input: std::option::Option<crate::model::FrameCaptureS3Settings>,
@@ -24435,6 +26365,7 @@ pub mod frame_capture_s3_settings {
             self.canned_acl = Some(input);
             self
         }
+        /// Specify the canned ACL to apply to each S3 request. Defaults to none.
         pub fn set_canned_acl(
             mut self,
             input: std::option::Option<crate::model::S3CannedAcl>,
@@ -24493,6 +26424,7 @@ pub mod archive_group_settings {
             self.archive_cdn_settings = Some(input);
             self
         }
+        /// Parameters that control interactions with the CDN.
         pub fn set_archive_cdn_settings(
             mut self,
             input: std::option::Option<crate::model::ArchiveCdnSettings>,
@@ -24505,6 +26437,7 @@ pub mod archive_group_settings {
             self.destination = Some(input);
             self
         }
+        /// A directory and base filename where archive files should be written.
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::OutputLocationRef>,
@@ -24517,6 +26450,7 @@ pub mod archive_group_settings {
             self.rollover_interval = Some(input);
             self
         }
+        /// Number of seconds to write to archive file before closing and starting a new one.
         pub fn set_rollover_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.rollover_interval = input;
             self
@@ -24566,6 +26500,7 @@ pub mod archive_cdn_settings {
             self.archive_s3_settings = Some(input);
             self
         }
+        /// Archive S3 Settings
         pub fn set_archive_s3_settings(
             mut self,
             input: std::option::Option<crate::model::ArchiveS3Settings>,
@@ -24616,6 +26551,7 @@ pub mod archive_s3_settings {
             self.canned_acl = Some(input);
             self
         }
+        /// Specify the canned ACL to apply to each S3 request. Defaults to none.
         pub fn set_canned_acl(
             mut self,
             input: std::option::Option<crate::model::S3CannedAcl>,
@@ -24674,6 +26610,7 @@ pub mod nielsen_configuration {
             self.distributor_id = Some(input.into());
             self
         }
+        /// Enter the Distributor ID assigned to your organization by Nielsen.
         pub fn set_distributor_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24689,6 +26626,7 @@ pub mod nielsen_configuration {
             self.nielsen_pcm_to_id3_tagging = Some(input);
             self
         }
+        /// Enables Nielsen PCM to ID3 tagging
         pub fn set_nielsen_pcm_to_id3_tagging(
             mut self,
             input: std::option::Option<crate::model::NielsenPcmToId3TaggingState>,
@@ -24724,7 +26662,9 @@ impl NielsenConfiguration {
     std::hash::Hash,
 )]
 pub enum NielsenPcmToId3TaggingState {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -24746,6 +26686,7 @@ impl std::str::FromStr for NielsenPcmToId3TaggingState {
     }
 }
 impl NielsenPcmToId3TaggingState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NielsenPcmToId3TaggingState::Disabled => "DISABLED",
@@ -24753,6 +26694,7 @@ impl NielsenPcmToId3TaggingState {
             NielsenPcmToId3TaggingState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -24800,6 +26742,7 @@ pub mod motion_graphics_configuration {
             self.motion_graphics_insertion = Some(input);
             self
         }
+        /// Motion Graphics Insertion
         pub fn set_motion_graphics_insertion(
             mut self,
             input: std::option::Option<crate::model::MotionGraphicsInsertion>,
@@ -24815,6 +26758,7 @@ pub mod motion_graphics_configuration {
             self.motion_graphics_settings = Some(input);
             self
         }
+        /// Motion Graphics Settings
         pub fn set_motion_graphics_settings(
             mut self,
             input: std::option::Option<crate::model::MotionGraphicsSettings>,
@@ -24874,6 +26818,7 @@ pub mod motion_graphics_settings {
             self.html_motion_graphics_settings = Some(input);
             self
         }
+        /// Html Motion Graphics Settings
         pub fn set_html_motion_graphics_settings(
             mut self,
             input: std::option::Option<crate::model::HtmlMotionGraphicsSettings>,
@@ -24938,7 +26883,9 @@ impl HtmlMotionGraphicsSettings {
     std::hash::Hash,
 )]
 pub enum MotionGraphicsInsertion {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -24960,6 +26907,7 @@ impl std::str::FromStr for MotionGraphicsInsertion {
     }
 }
 impl MotionGraphicsInsertion {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MotionGraphicsInsertion::Disabled => "DISABLED",
@@ -24967,6 +26915,7 @@ impl MotionGraphicsInsertion {
             MotionGraphicsInsertion::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -24988,6 +26937,7 @@ pub struct GlobalConfiguration {
     /// Settings for system actions when input is lost.
     pub input_loss_behavior: std::option::Option<crate::model::InputLossBehavior>,
     /// Indicates how MediaLive pipelines are synchronized.
+    ///
     /// PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
     /// EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
     pub output_locking_mode:
@@ -25037,6 +26987,7 @@ pub mod global_configuration {
             self.initial_audio_gain = Some(input);
             self
         }
+        /// Value to set the initial audio gain for the Live Event.
         pub fn set_initial_audio_gain(mut self, input: std::option::Option<i32>) -> Self {
             self.initial_audio_gain = input;
             self
@@ -25049,6 +27000,7 @@ pub mod global_configuration {
             self.input_end_action = Some(input);
             self
         }
+        /// Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is configured the encoder will restart at the beginning of the first input.  When "none" is configured the encoder will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
         pub fn set_input_end_action(
             mut self,
             input: std::option::Option<crate::model::GlobalConfigurationInputEndAction>,
@@ -25061,6 +27013,7 @@ pub mod global_configuration {
             self.input_loss_behavior = Some(input);
             self
         }
+        /// Settings for system actions when input is lost.
         pub fn set_input_loss_behavior(
             mut self,
             input: std::option::Option<crate::model::InputLossBehavior>,
@@ -25069,6 +27022,7 @@ pub mod global_configuration {
             self
         }
         /// Indicates how MediaLive pipelines are synchronized.
+        ///
         /// PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
         /// EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
         pub fn output_locking_mode(
@@ -25078,6 +27032,10 @@ pub mod global_configuration {
             self.output_locking_mode = Some(input);
             self
         }
+        /// Indicates how MediaLive pipelines are synchronized.
+        ///
+        /// PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
+        /// EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
         pub fn set_output_locking_mode(
             mut self,
             input: std::option::Option<crate::model::GlobalConfigurationOutputLockingMode>,
@@ -25093,6 +27051,7 @@ pub mod global_configuration {
             self.output_timing_source = Some(input);
             self
         }
+        /// Indicates whether the rate of frames emitted by the Live encoder should be paced by its system clock (which optionally may be locked to another source via NTP) or should be locked to the clock of the source that is providing the input stream.
         pub fn set_output_timing_source(
             mut self,
             input: std::option::Option<crate::model::GlobalConfigurationOutputTimingSource>,
@@ -25108,6 +27067,7 @@ pub mod global_configuration {
             self.support_low_framerate_inputs = Some(input);
             self
         }
+        /// Adjusts video input buffer for streams with very low video framerates. This is commonly set to enabled for music channels with less than one video frame per second.
         pub fn set_support_low_framerate_inputs(
             mut self,
             input: std::option::Option<crate::model::GlobalConfigurationLowFramerateInputs>,
@@ -25147,7 +27107,9 @@ impl GlobalConfiguration {
     std::hash::Hash,
 )]
 pub enum GlobalConfigurationLowFramerateInputs {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -25169,6 +27131,7 @@ impl std::str::FromStr for GlobalConfigurationLowFramerateInputs {
     }
 }
 impl GlobalConfigurationLowFramerateInputs {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GlobalConfigurationLowFramerateInputs::Disabled => "DISABLED",
@@ -25176,6 +27139,7 @@ impl GlobalConfigurationLowFramerateInputs {
             GlobalConfigurationLowFramerateInputs::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -25198,7 +27162,9 @@ impl AsRef<str> for GlobalConfigurationLowFramerateInputs {
     std::hash::Hash,
 )]
 pub enum GlobalConfigurationOutputTimingSource {
+    #[allow(missing_docs)] // documentation missing in model
     InputClock,
+    #[allow(missing_docs)] // documentation missing in model
     SystemClock,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -25220,6 +27186,7 @@ impl std::str::FromStr for GlobalConfigurationOutputTimingSource {
     }
 }
 impl GlobalConfigurationOutputTimingSource {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GlobalConfigurationOutputTimingSource::InputClock => "INPUT_CLOCK",
@@ -25227,6 +27194,7 @@ impl GlobalConfigurationOutputTimingSource {
             GlobalConfigurationOutputTimingSource::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["INPUT_CLOCK", "SYSTEM_CLOCK"]
     }
@@ -25249,7 +27217,9 @@ impl AsRef<str> for GlobalConfigurationOutputTimingSource {
     std::hash::Hash,
 )]
 pub enum GlobalConfigurationOutputLockingMode {
+    #[allow(missing_docs)] // documentation missing in model
     EpochLocking,
+    #[allow(missing_docs)] // documentation missing in model
     PipelineLocking,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -25271,6 +27241,7 @@ impl std::str::FromStr for GlobalConfigurationOutputLockingMode {
     }
 }
 impl GlobalConfigurationOutputLockingMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GlobalConfigurationOutputLockingMode::EpochLocking => "EPOCH_LOCKING",
@@ -25278,6 +27249,7 @@ impl GlobalConfigurationOutputLockingMode {
             GlobalConfigurationOutputLockingMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EPOCH_LOCKING", "PIPELINE_LOCKING"]
     }
@@ -25332,6 +27304,7 @@ pub mod input_loss_behavior {
             self.black_frame_msec = Some(input);
             self
         }
+        /// Documentation update needed
         pub fn set_black_frame_msec(mut self, input: std::option::Option<i32>) -> Self {
             self.black_frame_msec = input;
             self
@@ -25341,6 +27314,7 @@ pub mod input_loss_behavior {
             self.input_loss_image_color = Some(input.into());
             self
         }
+        /// When input loss image type is "color" this field specifies the color to use. Value: 6 hex characters representing the values of RGB.
         pub fn set_input_loss_image_color(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25353,6 +27327,7 @@ pub mod input_loss_behavior {
             self.input_loss_image_slate = Some(input);
             self
         }
+        /// When input loss image type is "slate" these fields specify the parameters for accessing the slate.
         pub fn set_input_loss_image_slate(
             mut self,
             input: std::option::Option<crate::model::InputLocation>,
@@ -25365,6 +27340,7 @@ pub mod input_loss_behavior {
             self.input_loss_image_type = Some(input);
             self
         }
+        /// Indicates whether to substitute a solid color or a slate into the output after input loss exceeds blackFrameMsec.
         pub fn set_input_loss_image_type(
             mut self,
             input: std::option::Option<crate::model::InputLossImageType>,
@@ -25377,6 +27353,7 @@ pub mod input_loss_behavior {
             self.repeat_frame_msec = Some(input);
             self
         }
+        /// Documentation update needed
         pub fn set_repeat_frame_msec(mut self, input: std::option::Option<i32>) -> Self {
             self.repeat_frame_msec = input;
             self
@@ -25412,7 +27389,9 @@ impl InputLossBehavior {
     std::hash::Hash,
 )]
 pub enum InputLossImageType {
+    #[allow(missing_docs)] // documentation missing in model
     Color,
+    #[allow(missing_docs)] // documentation missing in model
     Slate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -25434,6 +27413,7 @@ impl std::str::FromStr for InputLossImageType {
     }
 }
 impl InputLossImageType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputLossImageType::Color => "COLOR",
@@ -25441,6 +27421,7 @@ impl InputLossImageType {
             InputLossImageType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COLOR", "SLATE"]
     }
@@ -25463,7 +27444,9 @@ impl AsRef<str> for InputLossImageType {
     std::hash::Hash,
 )]
 pub enum GlobalConfigurationInputEndAction {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     SwitchAndLoopInputs,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -25485,6 +27468,7 @@ impl std::str::FromStr for GlobalConfigurationInputEndAction {
     }
 }
 impl GlobalConfigurationInputEndAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GlobalConfigurationInputEndAction::None => "NONE",
@@ -25492,6 +27476,7 @@ impl GlobalConfigurationInputEndAction {
             GlobalConfigurationInputEndAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "SWITCH_AND_LOOP_INPUTS"]
     }
@@ -25540,6 +27525,8 @@ pub mod feature_activations {
             self.input_prepare_schedule_actions = Some(input);
             self
         }
+        /// Enables the Input Prepare feature. You can create Input Prepare actions in the schedule only if this feature is enabled.
+        /// If you disable the feature on an existing schedule, make sure that you first delete all input prepare actions from the schedule.
         pub fn set_input_prepare_schedule_actions(
             mut self,
             input: std::option::Option<crate::model::FeatureActivationsInputPrepareScheduleActions>,
@@ -25574,7 +27561,9 @@ impl FeatureActivations {
     std::hash::Hash,
 )]
 pub enum FeatureActivationsInputPrepareScheduleActions {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -25596,6 +27585,7 @@ impl std::str::FromStr for FeatureActivationsInputPrepareScheduleActions {
     }
 }
 impl FeatureActivationsInputPrepareScheduleActions {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FeatureActivationsInputPrepareScheduleActions::Disabled => "DISABLED",
@@ -25603,6 +27593,7 @@ impl FeatureActivationsInputPrepareScheduleActions {
             FeatureActivationsInputPrepareScheduleActions::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -25658,6 +27649,7 @@ pub mod caption_description {
             self.caption_selector_name = Some(input.into());
             self
         }
+        /// Specifies which input caption selector to use as a caption source when generating output captions. This field should match a captionSelector name.
         pub fn set_caption_selector_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25673,6 +27665,7 @@ pub mod caption_description {
             self.destination_settings = Some(input);
             self
         }
+        /// Additional settings for captions destination that depend on the destination type.
         pub fn set_destination_settings(
             mut self,
             input: std::option::Option<crate::model::CaptionDestinationSettings>,
@@ -25685,6 +27678,7 @@ pub mod caption_description {
             self.language_code = Some(input.into());
             self
         }
+        /// ISO 639-2 three-digit code: http://www.loc.gov/standards/iso639-2/
         pub fn set_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25697,6 +27691,7 @@ pub mod caption_description {
             self.language_description = Some(input.into());
             self
         }
+        /// Human readable information to indicate captions available for players (eg. English, or Spanish).
         pub fn set_language_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25709,6 +27704,7 @@ pub mod caption_description {
             self.name = Some(input.into());
             self
         }
+        /// Name of the caption description.  Used to associate a caption description with an output.  Names must be unique within an event.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -25863,6 +27859,7 @@ pub mod caption_destination_settings {
             self.arib_destination_settings = Some(input);
             self
         }
+        /// Arib Destination Settings
         pub fn set_arib_destination_settings(
             mut self,
             input: std::option::Option<crate::model::AribDestinationSettings>,
@@ -25878,6 +27875,7 @@ pub mod caption_destination_settings {
             self.burn_in_destination_settings = Some(input);
             self
         }
+        /// Burn In Destination Settings
         pub fn set_burn_in_destination_settings(
             mut self,
             input: std::option::Option<crate::model::BurnInDestinationSettings>,
@@ -25893,6 +27891,7 @@ pub mod caption_destination_settings {
             self.dvb_sub_destination_settings = Some(input);
             self
         }
+        /// Dvb Sub Destination Settings
         pub fn set_dvb_sub_destination_settings(
             mut self,
             input: std::option::Option<crate::model::DvbSubDestinationSettings>,
@@ -25908,6 +27907,7 @@ pub mod caption_destination_settings {
             self.ebu_tt_d_destination_settings = Some(input);
             self
         }
+        /// Ebu Tt DDestination Settings
         pub fn set_ebu_tt_d_destination_settings(
             mut self,
             input: std::option::Option<crate::model::EbuTtDDestinationSettings>,
@@ -25923,6 +27923,7 @@ pub mod caption_destination_settings {
             self.embedded_destination_settings = Some(input);
             self
         }
+        /// Embedded Destination Settings
         pub fn set_embedded_destination_settings(
             mut self,
             input: std::option::Option<crate::model::EmbeddedDestinationSettings>,
@@ -25938,6 +27939,7 @@ pub mod caption_destination_settings {
             self.embedded_plus_scte20_destination_settings = Some(input);
             self
         }
+        /// Embedded Plus Scte20 Destination Settings
         pub fn set_embedded_plus_scte20_destination_settings(
             mut self,
             input: std::option::Option<crate::model::EmbeddedPlusScte20DestinationSettings>,
@@ -25953,6 +27955,7 @@ pub mod caption_destination_settings {
             self.rtmp_caption_info_destination_settings = Some(input);
             self
         }
+        /// Rtmp Caption Info Destination Settings
         pub fn set_rtmp_caption_info_destination_settings(
             mut self,
             input: std::option::Option<crate::model::RtmpCaptionInfoDestinationSettings>,
@@ -25968,6 +27971,7 @@ pub mod caption_destination_settings {
             self.scte20_plus_embedded_destination_settings = Some(input);
             self
         }
+        /// Scte20 Plus Embedded Destination Settings
         pub fn set_scte20_plus_embedded_destination_settings(
             mut self,
             input: std::option::Option<crate::model::Scte20PlusEmbeddedDestinationSettings>,
@@ -25983,6 +27987,7 @@ pub mod caption_destination_settings {
             self.scte27_destination_settings = Some(input);
             self
         }
+        /// Scte27 Destination Settings
         pub fn set_scte27_destination_settings(
             mut self,
             input: std::option::Option<crate::model::Scte27DestinationSettings>,
@@ -25998,6 +28003,7 @@ pub mod caption_destination_settings {
             self.smpte_tt_destination_settings = Some(input);
             self
         }
+        /// Smpte Tt Destination Settings
         pub fn set_smpte_tt_destination_settings(
             mut self,
             input: std::option::Option<crate::model::SmpteTtDestinationSettings>,
@@ -26013,6 +28019,7 @@ pub mod caption_destination_settings {
             self.teletext_destination_settings = Some(input);
             self
         }
+        /// Teletext Destination Settings
         pub fn set_teletext_destination_settings(
             mut self,
             input: std::option::Option<crate::model::TeletextDestinationSettings>,
@@ -26028,6 +28035,7 @@ pub mod caption_destination_settings {
             self.ttml_destination_settings = Some(input);
             self
         }
+        /// Ttml Destination Settings
         pub fn set_ttml_destination_settings(
             mut self,
             input: std::option::Option<crate::model::TtmlDestinationSettings>,
@@ -26043,6 +28051,7 @@ pub mod caption_destination_settings {
             self.webvtt_destination_settings = Some(input);
             self
         }
+        /// Webvtt Destination Settings
         pub fn set_webvtt_destination_settings(
             mut self,
             input: std::option::Option<crate::model::WebvttDestinationSettings>,
@@ -26107,6 +28116,7 @@ pub mod webvtt_destination_settings {
             self.style_control = Some(input);
             self
         }
+        /// Controls whether the color and position of the source captions is passed through to the WebVTT output captions.  PASSTHROUGH - Valid only if the source captions are EMBEDDED or TELETEXT.  NO_STYLE_DATA - Don't pass through the style. The output captions will not contain any font styling information.
         pub fn set_style_control(
             mut self,
             input: std::option::Option<crate::model::WebvttDestinationStyleControl>,
@@ -26141,7 +28151,9 @@ impl WebvttDestinationSettings {
     std::hash::Hash,
 )]
 pub enum WebvttDestinationStyleControl {
+    #[allow(missing_docs)] // documentation missing in model
     NoStyleData,
+    #[allow(missing_docs)] // documentation missing in model
     Passthrough,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -26163,6 +28175,7 @@ impl std::str::FromStr for WebvttDestinationStyleControl {
     }
 }
 impl WebvttDestinationStyleControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WebvttDestinationStyleControl::NoStyleData => "NO_STYLE_DATA",
@@ -26170,6 +28183,7 @@ impl WebvttDestinationStyleControl {
             WebvttDestinationStyleControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NO_STYLE_DATA", "PASSTHROUGH"]
     }
@@ -26208,6 +28222,7 @@ pub mod ttml_destination_settings {
             self.style_control = Some(input);
             self
         }
+        /// When set to passthrough, passes through style and position information from a TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT output or TTML output.
         pub fn set_style_control(
             mut self,
             input: std::option::Option<crate::model::TtmlDestinationStyleControl>,
@@ -26242,7 +28257,9 @@ impl TtmlDestinationSettings {
     std::hash::Hash,
 )]
 pub enum TtmlDestinationStyleControl {
+    #[allow(missing_docs)] // documentation missing in model
     Passthrough,
+    #[allow(missing_docs)] // documentation missing in model
     UseConfigured,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -26264,6 +28281,7 @@ impl std::str::FromStr for TtmlDestinationStyleControl {
     }
 }
 impl TtmlDestinationStyleControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TtmlDestinationStyleControl::Passthrough => "PASSTHROUGH",
@@ -26271,6 +28289,7 @@ impl TtmlDestinationStyleControl {
             TtmlDestinationStyleControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PASSTHROUGH", "USE_CONFIGURED"]
     }
@@ -26498,15 +28517,19 @@ pub struct EbuTtDDestinationSettings {
     /// Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. Complete this field if you want to include the name of the copyright holder in the copyright metadata tag in the TTML
     pub copyright_holder: std::option::Option<std::string::String>,
     /// Specifies how to handle the gap between the lines (in multi-line captions).
+    ///
     /// - enabled: Fill with the captions background color (as specified in the input captions).
     /// - disabled: Leave the gap unfilled.
     pub fill_line_gap: std::option::Option<crate::model::EbuTtDFillLineGapControl>,
     /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to "monospaced". (If styleControl is set to exclude, the font family is always set to "monospaced".)
+    ///
     /// You specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size.
+    ///
     /// - Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as “Arial”), or a generic font family (such as “serif”), or “default” (to let the downstream player choose the font).
     /// - Leave blank to set the family to “monospace”.
     pub font_family: std::option::Option<std::string::String>,
     /// Specifies the style information (font color, font position, and so on) to include in the font data that is attached to the EBU-TT captions.
+    ///
     /// - include: Take the style information (font color, font position, and so on) from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext.
     /// - exclude: In the font data attached to the EBU-TT captions, set the font family to "monospaced". Do not include any other style information.
     pub style_control: std::option::Option<crate::model::EbuTtDDestinationStyleControl>,
@@ -26538,6 +28561,7 @@ pub mod ebu_tt_d_destination_settings {
             self.copyright_holder = Some(input.into());
             self
         }
+        /// Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. Complete this field if you want to include the name of the copyright holder in the copyright metadata tag in the TTML
         pub fn set_copyright_holder(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -26546,12 +28570,17 @@ pub mod ebu_tt_d_destination_settings {
             self
         }
         /// Specifies how to handle the gap between the lines (in multi-line captions).
+        ///
         /// - enabled: Fill with the captions background color (as specified in the input captions).
         /// - disabled: Leave the gap unfilled.
         pub fn fill_line_gap(mut self, input: crate::model::EbuTtDFillLineGapControl) -> Self {
             self.fill_line_gap = Some(input);
             self
         }
+        /// Specifies how to handle the gap between the lines (in multi-line captions).
+        ///
+        /// - enabled: Fill with the captions background color (as specified in the input captions).
+        /// - disabled: Leave the gap unfilled.
         pub fn set_fill_line_gap(
             mut self,
             input: std::option::Option<crate::model::EbuTtDFillLineGapControl>,
@@ -26560,24 +28589,37 @@ pub mod ebu_tt_d_destination_settings {
             self
         }
         /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to "monospaced". (If styleControl is set to exclude, the font family is always set to "monospaced".)
+        ///
         /// You specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size.
+        ///
         /// - Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as “Arial”), or a generic font family (such as “serif”), or “default” (to let the downstream player choose the font).
         /// - Leave blank to set the family to “monospace”.
         pub fn font_family(mut self, input: impl Into<std::string::String>) -> Self {
             self.font_family = Some(input.into());
             self
         }
+        /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to "monospaced". (If styleControl is set to exclude, the font family is always set to "monospaced".)
+        ///
+        /// You specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size.
+        ///
+        /// - Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as “Arial”), or a generic font family (such as “serif”), or “default” (to let the downstream player choose the font).
+        /// - Leave blank to set the family to “monospace”.
         pub fn set_font_family(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.font_family = input;
             self
         }
         /// Specifies the style information (font color, font position, and so on) to include in the font data that is attached to the EBU-TT captions.
+        ///
         /// - include: Take the style information (font color, font position, and so on) from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext.
         /// - exclude: In the font data attached to the EBU-TT captions, set the font family to "monospaced". Do not include any other style information.
         pub fn style_control(mut self, input: crate::model::EbuTtDDestinationStyleControl) -> Self {
             self.style_control = Some(input);
             self
         }
+        /// Specifies the style information (font color, font position, and so on) to include in the font data that is attached to the EBU-TT captions.
+        ///
+        /// - include: Take the style information (font color, font position, and so on) from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext.
+        /// - exclude: In the font data attached to the EBU-TT captions, set the font family to "monospaced". Do not include any other style information.
         pub fn set_style_control(
             mut self,
             input: std::option::Option<crate::model::EbuTtDDestinationStyleControl>,
@@ -26615,7 +28657,9 @@ impl EbuTtDDestinationSettings {
     std::hash::Hash,
 )]
 pub enum EbuTtDDestinationStyleControl {
+    #[allow(missing_docs)] // documentation missing in model
     Exclude,
+    #[allow(missing_docs)] // documentation missing in model
     Include,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -26637,6 +28681,7 @@ impl std::str::FromStr for EbuTtDDestinationStyleControl {
     }
 }
 impl EbuTtDDestinationStyleControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EbuTtDDestinationStyleControl::Exclude => "EXCLUDE",
@@ -26644,6 +28689,7 @@ impl EbuTtDDestinationStyleControl {
             EbuTtDDestinationStyleControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EXCLUDE", "INCLUDE"]
     }
@@ -26666,7 +28712,9 @@ impl AsRef<str> for EbuTtDDestinationStyleControl {
     std::hash::Hash,
 )]
 pub enum EbuTtDFillLineGapControl {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -26688,6 +28736,7 @@ impl std::str::FromStr for EbuTtDFillLineGapControl {
     }
 }
 impl EbuTtDFillLineGapControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EbuTtDFillLineGapControl::Disabled => "DISABLED",
@@ -26695,6 +28744,7 @@ impl EbuTtDFillLineGapControl {
             EbuTtDFillLineGapControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -26800,6 +28850,7 @@ pub mod dvb_sub_destination_settings {
             self.alignment = Some(input);
             self
         }
+        /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles.  This option is not valid for source captions that are STL or 608/embedded.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
         pub fn set_alignment(
             mut self,
             input: std::option::Option<crate::model::DvbSubDestinationAlignment>,
@@ -26815,6 +28866,7 @@ pub mod dvb_sub_destination_settings {
             self.background_color = Some(input);
             self
         }
+        /// Specifies the color of the rectangle behind the captions.  All burn-in and DVB-Sub font settings must match.
         pub fn set_background_color(
             mut self,
             input: std::option::Option<crate::model::DvbSubDestinationBackgroundColor>,
@@ -26827,6 +28879,7 @@ pub mod dvb_sub_destination_settings {
             self.background_opacity = Some(input);
             self
         }
+        /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
         pub fn set_background_opacity(mut self, input: std::option::Option<i32>) -> Self {
             self.background_opacity = input;
             self
@@ -26836,6 +28889,7 @@ pub mod dvb_sub_destination_settings {
             self.font = Some(input);
             self
         }
+        /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'.  Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts.  All burn-in and DVB-Sub font settings must match.
         pub fn set_font(mut self, input: std::option::Option<crate::model::InputLocation>) -> Self {
             self.font = input;
             self
@@ -26845,6 +28899,7 @@ pub mod dvb_sub_destination_settings {
             self.font_color = Some(input);
             self
         }
+        /// Specifies the color of the burned-in captions.  This option is not valid for source captions that are STL, 608/embedded or teletext.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
         pub fn set_font_color(
             mut self,
             input: std::option::Option<crate::model::DvbSubDestinationFontColor>,
@@ -26857,6 +28912,7 @@ pub mod dvb_sub_destination_settings {
             self.font_opacity = Some(input);
             self
         }
+        /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent.  All burn-in and DVB-Sub font settings must match.
         pub fn set_font_opacity(mut self, input: std::option::Option<i32>) -> Self {
             self.font_opacity = input;
             self
@@ -26866,6 +28922,7 @@ pub mod dvb_sub_destination_settings {
             self.font_resolution = Some(input);
             self
         }
+        /// Font resolution in DPI (dots per inch); default is 96 dpi.  All burn-in and DVB-Sub font settings must match.
         pub fn set_font_resolution(mut self, input: std::option::Option<i32>) -> Self {
             self.font_resolution = input;
             self
@@ -26875,6 +28932,7 @@ pub mod dvb_sub_destination_settings {
             self.font_size = Some(input.into());
             self
         }
+        /// When set to auto fontSize will scale depending on the size of the output.  Giving a positive integer will specify the exact font size in points.  All burn-in and DVB-Sub font settings must match.
         pub fn set_font_size(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.font_size = input;
             self
@@ -26884,6 +28942,7 @@ pub mod dvb_sub_destination_settings {
             self.outline_color = Some(input);
             self
         }
+        /// Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
         pub fn set_outline_color(
             mut self,
             input: std::option::Option<crate::model::DvbSubDestinationOutlineColor>,
@@ -26896,6 +28955,7 @@ pub mod dvb_sub_destination_settings {
             self.outline_size = Some(input);
             self
         }
+        /// Specifies font outline size in pixels. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
         pub fn set_outline_size(mut self, input: std::option::Option<i32>) -> Self {
             self.outline_size = input;
             self
@@ -26905,6 +28965,7 @@ pub mod dvb_sub_destination_settings {
             self.shadow_color = Some(input);
             self
         }
+        /// Specifies the color of the shadow cast by the captions.  All burn-in and DVB-Sub font settings must match.
         pub fn set_shadow_color(
             mut self,
             input: std::option::Option<crate::model::DvbSubDestinationShadowColor>,
@@ -26917,6 +28978,7 @@ pub mod dvb_sub_destination_settings {
             self.shadow_opacity = Some(input);
             self
         }
+        /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
         pub fn set_shadow_opacity(mut self, input: std::option::Option<i32>) -> Self {
             self.shadow_opacity = input;
             self
@@ -26926,6 +28988,7 @@ pub mod dvb_sub_destination_settings {
             self.shadow_x_offset = Some(input);
             self
         }
+        /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left.  All burn-in and DVB-Sub font settings must match.
         pub fn set_shadow_x_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.shadow_x_offset = input;
             self
@@ -26935,6 +28998,7 @@ pub mod dvb_sub_destination_settings {
             self.shadow_y_offset = Some(input);
             self
         }
+        /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text.  All burn-in and DVB-Sub font settings must match.
         pub fn set_shadow_y_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.shadow_y_offset = input;
             self
@@ -26947,6 +29011,7 @@ pub mod dvb_sub_destination_settings {
             self.teletext_grid_control = Some(input);
             self
         }
+        /// Controls whether a fixed grid size will be used to generate the output subtitles bitmap. Only applicable for Teletext inputs and DVB-Sub/Burn-in outputs.
         pub fn set_teletext_grid_control(
             mut self,
             input: std::option::Option<crate::model::DvbSubDestinationTeletextGridControl>,
@@ -26959,6 +29024,7 @@ pub mod dvb_sub_destination_settings {
             self.x_position = Some(input);
             self
         }
+        /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter.  This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
         pub fn set_x_position(mut self, input: std::option::Option<i32>) -> Self {
             self.x_position = input;
             self
@@ -26968,6 +29034,7 @@ pub mod dvb_sub_destination_settings {
             self.y_position = Some(input);
             self
         }
+        /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output.  This option is not valid for source captions that are STL, 608/embedded or teletext.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
         pub fn set_y_position(mut self, input: std::option::Option<i32>) -> Self {
             self.y_position = input;
             self
@@ -27015,7 +29082,9 @@ impl DvbSubDestinationSettings {
     std::hash::Hash,
 )]
 pub enum DvbSubDestinationTeletextGridControl {
+    #[allow(missing_docs)] // documentation missing in model
     Fixed,
+    #[allow(missing_docs)] // documentation missing in model
     Scaled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -27037,6 +29106,7 @@ impl std::str::FromStr for DvbSubDestinationTeletextGridControl {
     }
 }
 impl DvbSubDestinationTeletextGridControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DvbSubDestinationTeletextGridControl::Fixed => "FIXED",
@@ -27044,6 +29114,7 @@ impl DvbSubDestinationTeletextGridControl {
             DvbSubDestinationTeletextGridControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FIXED", "SCALED"]
     }
@@ -27066,8 +29137,11 @@ impl AsRef<str> for DvbSubDestinationTeletextGridControl {
     std::hash::Hash,
 )]
 pub enum DvbSubDestinationShadowColor {
+    #[allow(missing_docs)] // documentation missing in model
     Black,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     White,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -27090,6 +29164,7 @@ impl std::str::FromStr for DvbSubDestinationShadowColor {
     }
 }
 impl DvbSubDestinationShadowColor {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DvbSubDestinationShadowColor::Black => "BLACK",
@@ -27098,6 +29173,7 @@ impl DvbSubDestinationShadowColor {
             DvbSubDestinationShadowColor::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BLACK", "NONE", "WHITE"]
     }
@@ -27120,11 +29196,17 @@ impl AsRef<str> for DvbSubDestinationShadowColor {
     std::hash::Hash,
 )]
 pub enum DvbSubDestinationOutlineColor {
+    #[allow(missing_docs)] // documentation missing in model
     Black,
+    #[allow(missing_docs)] // documentation missing in model
     Blue,
+    #[allow(missing_docs)] // documentation missing in model
     Green,
+    #[allow(missing_docs)] // documentation missing in model
     Red,
+    #[allow(missing_docs)] // documentation missing in model
     White,
+    #[allow(missing_docs)] // documentation missing in model
     Yellow,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -27150,6 +29232,7 @@ impl std::str::FromStr for DvbSubDestinationOutlineColor {
     }
 }
 impl DvbSubDestinationOutlineColor {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DvbSubDestinationOutlineColor::Black => "BLACK",
@@ -27161,6 +29244,7 @@ impl DvbSubDestinationOutlineColor {
             DvbSubDestinationOutlineColor::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BLACK", "BLUE", "GREEN", "RED", "WHITE", "YELLOW"]
     }
@@ -27183,11 +29267,17 @@ impl AsRef<str> for DvbSubDestinationOutlineColor {
     std::hash::Hash,
 )]
 pub enum DvbSubDestinationFontColor {
+    #[allow(missing_docs)] // documentation missing in model
     Black,
+    #[allow(missing_docs)] // documentation missing in model
     Blue,
+    #[allow(missing_docs)] // documentation missing in model
     Green,
+    #[allow(missing_docs)] // documentation missing in model
     Red,
+    #[allow(missing_docs)] // documentation missing in model
     White,
+    #[allow(missing_docs)] // documentation missing in model
     Yellow,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -27213,6 +29303,7 @@ impl std::str::FromStr for DvbSubDestinationFontColor {
     }
 }
 impl DvbSubDestinationFontColor {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DvbSubDestinationFontColor::Black => "BLACK",
@@ -27224,6 +29315,7 @@ impl DvbSubDestinationFontColor {
             DvbSubDestinationFontColor::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BLACK", "BLUE", "GREEN", "RED", "WHITE", "YELLOW"]
     }
@@ -27246,8 +29338,11 @@ impl AsRef<str> for DvbSubDestinationFontColor {
     std::hash::Hash,
 )]
 pub enum DvbSubDestinationBackgroundColor {
+    #[allow(missing_docs)] // documentation missing in model
     Black,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     White,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -27270,6 +29365,7 @@ impl std::str::FromStr for DvbSubDestinationBackgroundColor {
     }
 }
 impl DvbSubDestinationBackgroundColor {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DvbSubDestinationBackgroundColor::Black => "BLACK",
@@ -27278,6 +29374,7 @@ impl DvbSubDestinationBackgroundColor {
             DvbSubDestinationBackgroundColor::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BLACK", "NONE", "WHITE"]
     }
@@ -27300,8 +29397,11 @@ impl AsRef<str> for DvbSubDestinationBackgroundColor {
     std::hash::Hash,
 )]
 pub enum DvbSubDestinationAlignment {
+    #[allow(missing_docs)] // documentation missing in model
     Centered,
+    #[allow(missing_docs)] // documentation missing in model
     Left,
+    #[allow(missing_docs)] // documentation missing in model
     Smart,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -27324,6 +29424,7 @@ impl std::str::FromStr for DvbSubDestinationAlignment {
     }
 }
 impl DvbSubDestinationAlignment {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DvbSubDestinationAlignment::Centered => "CENTERED",
@@ -27332,6 +29433,7 @@ impl DvbSubDestinationAlignment {
             DvbSubDestinationAlignment::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CENTERED", "LEFT", "SMART"]
     }
@@ -27435,6 +29537,7 @@ pub mod burn_in_destination_settings {
             self.alignment = Some(input);
             self
         }
+        /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles.  All burn-in and DVB-Sub font settings must match.
         pub fn set_alignment(
             mut self,
             input: std::option::Option<crate::model::BurnInAlignment>,
@@ -27447,6 +29550,7 @@ pub mod burn_in_destination_settings {
             self.background_color = Some(input);
             self
         }
+        /// Specifies the color of the rectangle behind the captions.  All burn-in and DVB-Sub font settings must match.
         pub fn set_background_color(
             mut self,
             input: std::option::Option<crate::model::BurnInBackgroundColor>,
@@ -27459,6 +29563,7 @@ pub mod burn_in_destination_settings {
             self.background_opacity = Some(input);
             self
         }
+        /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
         pub fn set_background_opacity(mut self, input: std::option::Option<i32>) -> Self {
             self.background_opacity = input;
             self
@@ -27468,6 +29573,7 @@ pub mod burn_in_destination_settings {
             self.font = Some(input);
             self
         }
+        /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'.  Although the user can select output fonts for many different types of input captions,  embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts.  All burn-in and DVB-Sub font settings must match.
         pub fn set_font(mut self, input: std::option::Option<crate::model::InputLocation>) -> Self {
             self.font = input;
             self
@@ -27477,6 +29583,7 @@ pub mod burn_in_destination_settings {
             self.font_color = Some(input);
             self
         }
+        /// Specifies the color of the burned-in captions.  This option is not valid for source captions that are STL, 608/embedded or teletext.  These source settings are already pre-defined by the caption stream.  All burn-in and DVB-Sub font settings must match.
         pub fn set_font_color(
             mut self,
             input: std::option::Option<crate::model::BurnInFontColor>,
@@ -27489,6 +29596,7 @@ pub mod burn_in_destination_settings {
             self.font_opacity = Some(input);
             self
         }
+        /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent.  All burn-in and DVB-Sub font settings must match.
         pub fn set_font_opacity(mut self, input: std::option::Option<i32>) -> Self {
             self.font_opacity = input;
             self
@@ -27498,6 +29606,7 @@ pub mod burn_in_destination_settings {
             self.font_resolution = Some(input);
             self
         }
+        /// Font resolution in DPI (dots per inch); default is 96 dpi.  All burn-in and DVB-Sub font settings must match.
         pub fn set_font_resolution(mut self, input: std::option::Option<i32>) -> Self {
             self.font_resolution = input;
             self
@@ -27507,6 +29616,7 @@ pub mod burn_in_destination_settings {
             self.font_size = Some(input.into());
             self
         }
+        /// When set to 'auto' fontSize will scale depending on the size of the output.  Giving a positive integer will specify the exact font size in points.  All burn-in and DVB-Sub font settings must match.
         pub fn set_font_size(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.font_size = input;
             self
@@ -27516,6 +29626,7 @@ pub mod burn_in_destination_settings {
             self.outline_color = Some(input);
             self
         }
+        /// Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
         pub fn set_outline_color(
             mut self,
             input: std::option::Option<crate::model::BurnInOutlineColor>,
@@ -27528,6 +29639,7 @@ pub mod burn_in_destination_settings {
             self.outline_size = Some(input);
             self
         }
+        /// Specifies font outline size in pixels. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
         pub fn set_outline_size(mut self, input: std::option::Option<i32>) -> Self {
             self.outline_size = input;
             self
@@ -27537,6 +29649,7 @@ pub mod burn_in_destination_settings {
             self.shadow_color = Some(input);
             self
         }
+        /// Specifies the color of the shadow cast by the captions.  All burn-in and DVB-Sub font settings must match.
         pub fn set_shadow_color(
             mut self,
             input: std::option::Option<crate::model::BurnInShadowColor>,
@@ -27549,6 +29662,7 @@ pub mod burn_in_destination_settings {
             self.shadow_opacity = Some(input);
             self
         }
+        /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
         pub fn set_shadow_opacity(mut self, input: std::option::Option<i32>) -> Self {
             self.shadow_opacity = input;
             self
@@ -27558,6 +29672,7 @@ pub mod burn_in_destination_settings {
             self.shadow_x_offset = Some(input);
             self
         }
+        /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left.  All burn-in and DVB-Sub font settings must match.
         pub fn set_shadow_x_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.shadow_x_offset = input;
             self
@@ -27567,6 +29682,7 @@ pub mod burn_in_destination_settings {
             self.shadow_y_offset = Some(input);
             self
         }
+        /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text.  All burn-in and DVB-Sub font settings must match.
         pub fn set_shadow_y_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.shadow_y_offset = input;
             self
@@ -27579,6 +29695,7 @@ pub mod burn_in_destination_settings {
             self.teletext_grid_control = Some(input);
             self
         }
+        /// Controls whether a fixed grid size will be used to generate the output subtitles bitmap. Only applicable for Teletext inputs and DVB-Sub/Burn-in outputs.
         pub fn set_teletext_grid_control(
             mut self,
             input: std::option::Option<crate::model::BurnInTeletextGridControl>,
@@ -27591,6 +29708,7 @@ pub mod burn_in_destination_settings {
             self.x_position = Some(input);
             self
         }
+        /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter.  All burn-in and DVB-Sub font settings must match.
         pub fn set_x_position(mut self, input: std::option::Option<i32>) -> Self {
             self.x_position = input;
             self
@@ -27600,6 +29718,7 @@ pub mod burn_in_destination_settings {
             self.y_position = Some(input);
             self
         }
+        /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output.  All burn-in and DVB-Sub font settings must match.
         pub fn set_y_position(mut self, input: std::option::Option<i32>) -> Self {
             self.y_position = input;
             self
@@ -27647,7 +29766,9 @@ impl BurnInDestinationSettings {
     std::hash::Hash,
 )]
 pub enum BurnInTeletextGridControl {
+    #[allow(missing_docs)] // documentation missing in model
     Fixed,
+    #[allow(missing_docs)] // documentation missing in model
     Scaled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -27669,6 +29790,7 @@ impl std::str::FromStr for BurnInTeletextGridControl {
     }
 }
 impl BurnInTeletextGridControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BurnInTeletextGridControl::Fixed => "FIXED",
@@ -27676,6 +29798,7 @@ impl BurnInTeletextGridControl {
             BurnInTeletextGridControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FIXED", "SCALED"]
     }
@@ -27698,8 +29821,11 @@ impl AsRef<str> for BurnInTeletextGridControl {
     std::hash::Hash,
 )]
 pub enum BurnInShadowColor {
+    #[allow(missing_docs)] // documentation missing in model
     Black,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     White,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -27722,6 +29848,7 @@ impl std::str::FromStr for BurnInShadowColor {
     }
 }
 impl BurnInShadowColor {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BurnInShadowColor::Black => "BLACK",
@@ -27730,6 +29857,7 @@ impl BurnInShadowColor {
             BurnInShadowColor::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BLACK", "NONE", "WHITE"]
     }
@@ -27752,11 +29880,17 @@ impl AsRef<str> for BurnInShadowColor {
     std::hash::Hash,
 )]
 pub enum BurnInOutlineColor {
+    #[allow(missing_docs)] // documentation missing in model
     Black,
+    #[allow(missing_docs)] // documentation missing in model
     Blue,
+    #[allow(missing_docs)] // documentation missing in model
     Green,
+    #[allow(missing_docs)] // documentation missing in model
     Red,
+    #[allow(missing_docs)] // documentation missing in model
     White,
+    #[allow(missing_docs)] // documentation missing in model
     Yellow,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -27782,6 +29916,7 @@ impl std::str::FromStr for BurnInOutlineColor {
     }
 }
 impl BurnInOutlineColor {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BurnInOutlineColor::Black => "BLACK",
@@ -27793,6 +29928,7 @@ impl BurnInOutlineColor {
             BurnInOutlineColor::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BLACK", "BLUE", "GREEN", "RED", "WHITE", "YELLOW"]
     }
@@ -27815,11 +29951,17 @@ impl AsRef<str> for BurnInOutlineColor {
     std::hash::Hash,
 )]
 pub enum BurnInFontColor {
+    #[allow(missing_docs)] // documentation missing in model
     Black,
+    #[allow(missing_docs)] // documentation missing in model
     Blue,
+    #[allow(missing_docs)] // documentation missing in model
     Green,
+    #[allow(missing_docs)] // documentation missing in model
     Red,
+    #[allow(missing_docs)] // documentation missing in model
     White,
+    #[allow(missing_docs)] // documentation missing in model
     Yellow,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -27845,6 +29987,7 @@ impl std::str::FromStr for BurnInFontColor {
     }
 }
 impl BurnInFontColor {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BurnInFontColor::Black => "BLACK",
@@ -27856,6 +29999,7 @@ impl BurnInFontColor {
             BurnInFontColor::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BLACK", "BLUE", "GREEN", "RED", "WHITE", "YELLOW"]
     }
@@ -27878,8 +30022,11 @@ impl AsRef<str> for BurnInFontColor {
     std::hash::Hash,
 )]
 pub enum BurnInBackgroundColor {
+    #[allow(missing_docs)] // documentation missing in model
     Black,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     White,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -27902,6 +30049,7 @@ impl std::str::FromStr for BurnInBackgroundColor {
     }
 }
 impl BurnInBackgroundColor {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BurnInBackgroundColor::Black => "BLACK",
@@ -27910,6 +30058,7 @@ impl BurnInBackgroundColor {
             BurnInBackgroundColor::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BLACK", "NONE", "WHITE"]
     }
@@ -27932,8 +30081,11 @@ impl AsRef<str> for BurnInBackgroundColor {
     std::hash::Hash,
 )]
 pub enum BurnInAlignment {
+    #[allow(missing_docs)] // documentation missing in model
     Centered,
+    #[allow(missing_docs)] // documentation missing in model
     Left,
+    #[allow(missing_docs)] // documentation missing in model
     Smart,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -27956,6 +30108,7 @@ impl std::str::FromStr for BurnInAlignment {
     }
 }
 impl BurnInAlignment {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BurnInAlignment::Centered => "CENTERED",
@@ -27964,6 +30117,7 @@ impl BurnInAlignment {
             BurnInAlignment::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CENTERED", "LEFT", "SMART"]
     }
@@ -28052,6 +30206,7 @@ pub mod blackout_slate {
             self.blackout_slate_image = Some(input);
             self
         }
+        /// Blackout slate image to be used. Leave empty for solid black. Only bmp and png images are supported.
         pub fn set_blackout_slate_image(
             mut self,
             input: std::option::Option<crate::model::InputLocation>,
@@ -28067,6 +30222,7 @@ pub mod blackout_slate {
             self.network_end_blackout = Some(input);
             self
         }
+        /// Setting to enabled causes the encoder to blackout the video, audio, and captions, and raise the "Network Blackout Image" slate when an SCTE104/35 Network End Segmentation Descriptor is encountered. The blackout will be lifted when the Network Start Segmentation Descriptor is encountered. The Network End and Network Start descriptors must contain a network ID that matches the value entered in "Network ID".
         pub fn set_network_end_blackout(
             mut self,
             input: std::option::Option<crate::model::BlackoutSlateNetworkEndBlackout>,
@@ -28079,6 +30235,7 @@ pub mod blackout_slate {
             self.network_end_blackout_image = Some(input);
             self
         }
+        /// Path to local file to use as Network End Blackout image. Image will be scaled to fill the entire output raster.
         pub fn set_network_end_blackout_image(
             mut self,
             input: std::option::Option<crate::model::InputLocation>,
@@ -28091,6 +30248,7 @@ pub mod blackout_slate {
             self.network_id = Some(input.into());
             self
         }
+        /// Provides Network ID that matches EIDR ID format (e.g., "10.XXXX/XXXX-XXXX-XXXX-XXXX-XXXX-C").
         pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.network_id = input;
             self
@@ -28100,6 +30258,7 @@ pub mod blackout_slate {
             self.state = Some(input);
             self
         }
+        /// When set to enabled, causes video, audio and captions to be blanked when indicated by program metadata.
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::BlackoutSlateState>,
@@ -28138,7 +30297,9 @@ impl BlackoutSlate {
     std::hash::Hash,
 )]
 pub enum BlackoutSlateState {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -28160,6 +30321,7 @@ impl std::str::FromStr for BlackoutSlateState {
     }
 }
 impl BlackoutSlateState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BlackoutSlateState::Disabled => "DISABLED",
@@ -28167,6 +30329,7 @@ impl BlackoutSlateState {
             BlackoutSlateState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -28189,7 +30352,9 @@ impl AsRef<str> for BlackoutSlateState {
     std::hash::Hash,
 )]
 pub enum BlackoutSlateNetworkEndBlackout {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -28211,6 +30376,7 @@ impl std::str::FromStr for BlackoutSlateNetworkEndBlackout {
     }
 }
 impl BlackoutSlateNetworkEndBlackout {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BlackoutSlateNetworkEndBlackout::Disabled => "DISABLED",
@@ -28218,6 +30384,7 @@ impl BlackoutSlateNetworkEndBlackout {
             BlackoutSlateNetworkEndBlackout::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -28256,6 +30423,7 @@ pub mod avail_configuration {
             self.avail_settings = Some(input);
             self
         }
+        /// Ad avail settings.
         pub fn set_avail_settings(
             mut self,
             input: std::option::Option<crate::model::AvailSettings>,
@@ -28310,6 +30478,7 @@ pub mod avail_settings {
             self.scte35_splice_insert = Some(input);
             self
         }
+        /// Scte35 Splice Insert
         pub fn set_scte35_splice_insert(
             mut self,
             input: std::option::Option<crate::model::Scte35SpliceInsert>,
@@ -28325,6 +30494,7 @@ pub mod avail_settings {
             self.scte35_time_signal_apos = Some(input);
             self
         }
+        /// Scte35 Time Signal Apos
         pub fn set_scte35_time_signal_apos(
             mut self,
             input: std::option::Option<crate::model::Scte35TimeSignalApos>,
@@ -28388,6 +30558,7 @@ pub mod scte35_time_signal_apos {
             self.ad_avail_offset = Some(input);
             self
         }
+        /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.
         pub fn set_ad_avail_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.ad_avail_offset = input;
             self
@@ -28400,6 +30571,7 @@ pub mod scte35_time_signal_apos {
             self.no_regional_blackout_flag = Some(input);
             self
         }
+        /// When set to ignore, Segment Descriptors with noRegionalBlackoutFlag set to 0 will no longer trigger blackouts or Ad Avail slates
         pub fn set_no_regional_blackout_flag(
             mut self,
             input: std::option::Option<crate::model::Scte35AposNoRegionalBlackoutBehavior>,
@@ -28415,6 +30587,7 @@ pub mod scte35_time_signal_apos {
             self.web_delivery_allowed_flag = Some(input);
             self
         }
+        /// When set to ignore, Segment Descriptors with webDeliveryAllowedFlag set to 0 will no longer trigger blackouts or Ad Avail slates
         pub fn set_web_delivery_allowed_flag(
             mut self,
             input: std::option::Option<crate::model::Scte35AposWebDeliveryAllowedBehavior>,
@@ -28451,7 +30624,9 @@ impl Scte35TimeSignalApos {
     std::hash::Hash,
 )]
 pub enum Scte35AposWebDeliveryAllowedBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     Follow,
+    #[allow(missing_docs)] // documentation missing in model
     Ignore,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -28473,6 +30648,7 @@ impl std::str::FromStr for Scte35AposWebDeliveryAllowedBehavior {
     }
 }
 impl Scte35AposWebDeliveryAllowedBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Scte35AposWebDeliveryAllowedBehavior::Follow => "FOLLOW",
@@ -28480,6 +30656,7 @@ impl Scte35AposWebDeliveryAllowedBehavior {
             Scte35AposWebDeliveryAllowedBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FOLLOW", "IGNORE"]
     }
@@ -28502,7 +30679,9 @@ impl AsRef<str> for Scte35AposWebDeliveryAllowedBehavior {
     std::hash::Hash,
 )]
 pub enum Scte35AposNoRegionalBlackoutBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     Follow,
+    #[allow(missing_docs)] // documentation missing in model
     Ignore,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -28524,6 +30703,7 @@ impl std::str::FromStr for Scte35AposNoRegionalBlackoutBehavior {
     }
 }
 impl Scte35AposNoRegionalBlackoutBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Scte35AposNoRegionalBlackoutBehavior::Follow => "FOLLOW",
@@ -28531,6 +30711,7 @@ impl Scte35AposNoRegionalBlackoutBehavior {
             Scte35AposNoRegionalBlackoutBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FOLLOW", "IGNORE"]
     }
@@ -28581,6 +30762,7 @@ pub mod scte35_splice_insert {
             self.ad_avail_offset = Some(input);
             self
         }
+        /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.
         pub fn set_ad_avail_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.ad_avail_offset = input;
             self
@@ -28593,6 +30775,7 @@ pub mod scte35_splice_insert {
             self.no_regional_blackout_flag = Some(input);
             self
         }
+        /// When set to ignore, Segment Descriptors with noRegionalBlackoutFlag set to 0 will no longer trigger blackouts or Ad Avail slates
         pub fn set_no_regional_blackout_flag(
             mut self,
             input: std::option::Option<crate::model::Scte35SpliceInsertNoRegionalBlackoutBehavior>,
@@ -28608,6 +30791,7 @@ pub mod scte35_splice_insert {
             self.web_delivery_allowed_flag = Some(input);
             self
         }
+        /// When set to ignore, Segment Descriptors with webDeliveryAllowedFlag set to 0 will no longer trigger blackouts or Ad Avail slates
         pub fn set_web_delivery_allowed_flag(
             mut self,
             input: std::option::Option<crate::model::Scte35SpliceInsertWebDeliveryAllowedBehavior>,
@@ -28644,7 +30828,9 @@ impl Scte35SpliceInsert {
     std::hash::Hash,
 )]
 pub enum Scte35SpliceInsertWebDeliveryAllowedBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     Follow,
+    #[allow(missing_docs)] // documentation missing in model
     Ignore,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -28666,6 +30852,7 @@ impl std::str::FromStr for Scte35SpliceInsertWebDeliveryAllowedBehavior {
     }
 }
 impl Scte35SpliceInsertWebDeliveryAllowedBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Scte35SpliceInsertWebDeliveryAllowedBehavior::Follow => "FOLLOW",
@@ -28673,6 +30860,7 @@ impl Scte35SpliceInsertWebDeliveryAllowedBehavior {
             Scte35SpliceInsertWebDeliveryAllowedBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FOLLOW", "IGNORE"]
     }
@@ -28695,7 +30883,9 @@ impl AsRef<str> for Scte35SpliceInsertWebDeliveryAllowedBehavior {
     std::hash::Hash,
 )]
 pub enum Scte35SpliceInsertNoRegionalBlackoutBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     Follow,
+    #[allow(missing_docs)] // documentation missing in model
     Ignore,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -28717,6 +30907,7 @@ impl std::str::FromStr for Scte35SpliceInsertNoRegionalBlackoutBehavior {
     }
 }
 impl Scte35SpliceInsertNoRegionalBlackoutBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Scte35SpliceInsertNoRegionalBlackoutBehavior::Follow => "FOLLOW",
@@ -28724,6 +30915,7 @@ impl Scte35SpliceInsertNoRegionalBlackoutBehavior {
             Scte35SpliceInsertNoRegionalBlackoutBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FOLLOW", "IGNORE"]
     }
@@ -28766,6 +30958,7 @@ pub mod avail_blanking {
             self.avail_blanking_image = Some(input);
             self
         }
+        /// Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.
         pub fn set_avail_blanking_image(
             mut self,
             input: std::option::Option<crate::model::InputLocation>,
@@ -28778,6 +30971,7 @@ pub mod avail_blanking {
             self.state = Some(input);
             self
         }
+        /// When set to enabled, causes video, audio and captions to be blanked when insertion metadata is added.
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::AvailBlankingState>,
@@ -28813,7 +31007,9 @@ impl AvailBlanking {
     std::hash::Hash,
 )]
 pub enum AvailBlankingState {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -28835,6 +31031,7 @@ impl std::str::FromStr for AvailBlankingState {
     }
 }
 impl AvailBlankingState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AvailBlankingState::Disabled => "DISABLED",
@@ -28842,6 +31039,7 @@ impl AvailBlankingState {
             AvailBlankingState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -28937,6 +31135,7 @@ pub mod audio_description {
             self.audio_normalization_settings = Some(input);
             self
         }
+        /// Advanced audio normalization settings.
         pub fn set_audio_normalization_settings(
             mut self,
             input: std::option::Option<crate::model::AudioNormalizationSettings>,
@@ -28949,6 +31148,7 @@ pub mod audio_description {
             self.audio_selector_name = Some(input.into());
             self
         }
+        /// The name of the AudioSelector used as the source for this AudioDescription.
         pub fn set_audio_selector_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28961,6 +31161,7 @@ pub mod audio_description {
             self.audio_type = Some(input);
             self
         }
+        /// Applies only if audioTypeControl is useConfigured. The values for audioType are defined in ISO-IEC 13818-1.
         pub fn set_audio_type(
             mut self,
             input: std::option::Option<crate::model::AudioType>,
@@ -28979,6 +31180,10 @@ pub mod audio_description {
             self.audio_type_control = Some(input);
             self
         }
+        /// Determines how audio type is determined.
+        /// followInput: If the input contains an ISO 639 audioType, then that value is passed through to the output. If the input contains no ISO 639 audioType, the value in Audio Type is included in the output.
+        /// useConfigured: The value in Audio Type is included in the output.
+        /// Note that this field and audioType are both ignored if inputType is broadcasterMixedAd.
         pub fn set_audio_type_control(
             mut self,
             input: std::option::Option<crate::model::AudioDescriptionAudioTypeControl>,
@@ -28994,6 +31199,7 @@ pub mod audio_description {
             self.audio_watermarking_settings = Some(input);
             self
         }
+        /// Settings to configure one or more solutions that insert audio watermarks in the audio encode
         pub fn set_audio_watermarking_settings(
             mut self,
             input: std::option::Option<crate::model::AudioWatermarkSettings>,
@@ -29006,6 +31212,7 @@ pub mod audio_description {
             self.codec_settings = Some(input);
             self
         }
+        /// Audio codec settings.
         pub fn set_codec_settings(
             mut self,
             input: std::option::Option<crate::model::AudioCodecSettings>,
@@ -29018,6 +31225,7 @@ pub mod audio_description {
             self.language_code = Some(input.into());
             self
         }
+        /// RFC 5646 language code representing the language of the audio output track. Only used if languageControlMode is useConfigured, or there is no ISO 639 language code specified in the input.
         pub fn set_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -29033,6 +31241,7 @@ pub mod audio_description {
             self.language_code_control = Some(input);
             self
         }
+        /// Choosing followInput will cause the ISO 639 language code of the output to follow the ISO 639 language code of the input. The languageCode will be used when useConfigured is set, or when followInput is selected but there is no ISO 639 language code specified by the input.
         pub fn set_language_code_control(
             mut self,
             input: std::option::Option<crate::model::AudioDescriptionLanguageCodeControl>,
@@ -29045,6 +31254,7 @@ pub mod audio_description {
             self.name = Some(input.into());
             self
         }
+        /// The name of this AudioDescription. Outputs will use this name to uniquely identify this AudioDescription.  Description names should be unique within this Live Event.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -29054,6 +31264,7 @@ pub mod audio_description {
             self.remix_settings = Some(input);
             self
         }
+        /// Settings that control how input audio channels are remixed into the output audio channels.
         pub fn set_remix_settings(
             mut self,
             input: std::option::Option<crate::model::RemixSettings>,
@@ -29066,6 +31277,7 @@ pub mod audio_description {
             self.stream_name = Some(input.into());
             self
         }
+        /// Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the player (eg. English, or Director Commentary).
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -29128,6 +31340,11 @@ pub mod remix_settings {
         pub(crate) channels_out: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `channel_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_channel_mappings`](Self::set_channel_mappings).
+        ///
+        /// Mapping of input channels to output channels, with appropriate gain adjustments.
         pub fn channel_mappings(
             mut self,
             input: impl Into<crate::model::AudioChannelMapping>,
@@ -29137,6 +31354,7 @@ pub mod remix_settings {
             self.channel_mappings = Some(v);
             self
         }
+        /// Mapping of input channels to output channels, with appropriate gain adjustments.
         pub fn set_channel_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AudioChannelMapping>>,
@@ -29149,6 +31367,7 @@ pub mod remix_settings {
             self.channels_in = Some(input);
             self
         }
+        /// Number of input channels to be used.
         pub fn set_channels_in(mut self, input: std::option::Option<i32>) -> Self {
             self.channels_in = input;
             self
@@ -29159,6 +31378,8 @@ pub mod remix_settings {
             self.channels_out = Some(input);
             self
         }
+        /// Number of output channels to be produced.
+        /// Valid values: 1, 2, 4, 6, 8
         pub fn set_channels_out(mut self, input: std::option::Option<i32>) -> Self {
             self.channels_out = input;
             self
@@ -29208,6 +31429,11 @@ pub mod audio_channel_mapping {
         pub(crate) output_channel: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `input_channel_levels`.
+        ///
+        /// To override the contents of this collection use [`set_input_channel_levels`](Self::set_input_channel_levels).
+        ///
+        /// Indices and gain values for each input channel that should be remixed into this output channel.
         pub fn input_channel_levels(
             mut self,
             input: impl Into<crate::model::InputChannelLevel>,
@@ -29217,6 +31443,7 @@ pub mod audio_channel_mapping {
             self.input_channel_levels = Some(v);
             self
         }
+        /// Indices and gain values for each input channel that should be remixed into this output channel.
         pub fn set_input_channel_levels(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputChannelLevel>>,
@@ -29229,6 +31456,7 @@ pub mod audio_channel_mapping {
             self.output_channel = Some(input);
             self
         }
+        /// The index of the output channel being produced.
         pub fn set_output_channel(mut self, input: std::option::Option<i32>) -> Self {
             self.output_channel = input;
             self
@@ -29281,6 +31509,7 @@ pub mod input_channel_level {
             self.gain = Some(input);
             self
         }
+        /// Remixing value. Units are in dB and acceptable values are within the range from -60 (mute) and 6 dB.
         pub fn set_gain(mut self, input: std::option::Option<i32>) -> Self {
             self.gain = input;
             self
@@ -29290,6 +31519,7 @@ pub mod input_channel_level {
             self.input_channel = Some(input);
             self
         }
+        /// The index of the input channel used as a source.
         pub fn set_input_channel(mut self, input: std::option::Option<i32>) -> Self {
             self.input_channel = input;
             self
@@ -29322,7 +31552,9 @@ impl InputChannelLevel {
     std::hash::Hash,
 )]
 pub enum AudioDescriptionLanguageCodeControl {
+    #[allow(missing_docs)] // documentation missing in model
     FollowInput,
+    #[allow(missing_docs)] // documentation missing in model
     UseConfigured,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -29344,6 +31576,7 @@ impl std::str::FromStr for AudioDescriptionLanguageCodeControl {
     }
 }
 impl AudioDescriptionLanguageCodeControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AudioDescriptionLanguageCodeControl::FollowInput => "FOLLOW_INPUT",
@@ -29351,6 +31584,7 @@ impl AudioDescriptionLanguageCodeControl {
             AudioDescriptionLanguageCodeControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FOLLOW_INPUT", "USE_CONFIGURED"]
     }
@@ -29409,6 +31643,7 @@ pub mod audio_codec_settings {
             self.aac_settings = Some(input);
             self
         }
+        /// Aac Settings
         pub fn set_aac_settings(
             mut self,
             input: std::option::Option<crate::model::AacSettings>,
@@ -29421,6 +31656,7 @@ pub mod audio_codec_settings {
             self.ac3_settings = Some(input);
             self
         }
+        /// Ac3 Settings
         pub fn set_ac3_settings(
             mut self,
             input: std::option::Option<crate::model::Ac3Settings>,
@@ -29433,6 +31669,7 @@ pub mod audio_codec_settings {
             self.eac3_settings = Some(input);
             self
         }
+        /// Eac3 Settings
         pub fn set_eac3_settings(
             mut self,
             input: std::option::Option<crate::model::Eac3Settings>,
@@ -29445,6 +31682,7 @@ pub mod audio_codec_settings {
             self.mp2_settings = Some(input);
             self
         }
+        /// Mp2 Settings
         pub fn set_mp2_settings(
             mut self,
             input: std::option::Option<crate::model::Mp2Settings>,
@@ -29457,6 +31695,7 @@ pub mod audio_codec_settings {
             self.pass_through_settings = Some(input);
             self
         }
+        /// Pass Through Settings
         pub fn set_pass_through_settings(
             mut self,
             input: std::option::Option<crate::model::PassThroughSettings>,
@@ -29469,6 +31708,7 @@ pub mod audio_codec_settings {
             self.wav_settings = Some(input);
             self
         }
+        /// Wav Settings
         pub fn set_wav_settings(
             mut self,
             input: std::option::Option<crate::model::WavSettings>,
@@ -29532,6 +31772,7 @@ pub mod wav_settings {
             self.bit_depth = Some(input);
             self
         }
+        /// Bits per sample.
         pub fn set_bit_depth(mut self, input: std::option::Option<f64>) -> Self {
             self.bit_depth = input;
             self
@@ -29541,6 +31782,7 @@ pub mod wav_settings {
             self.coding_mode = Some(input);
             self
         }
+        /// The audio coding mode for the WAV audio. The mode determines the number of channels in the audio.
         pub fn set_coding_mode(
             mut self,
             input: std::option::Option<crate::model::WavCodingMode>,
@@ -29553,6 +31795,7 @@ pub mod wav_settings {
             self.sample_rate = Some(input);
             self
         }
+        /// Sample rate in Hz.
         pub fn set_sample_rate(mut self, input: std::option::Option<f64>) -> Self {
             self.sample_rate = input;
             self
@@ -29586,9 +31829,13 @@ impl WavSettings {
     std::hash::Hash,
 )]
 pub enum WavCodingMode {
+    #[allow(missing_docs)] // documentation missing in model
     CodingMode10,
+    #[allow(missing_docs)] // documentation missing in model
     CodingMode20,
+    #[allow(missing_docs)] // documentation missing in model
     CodingMode40,
+    #[allow(missing_docs)] // documentation missing in model
     CodingMode80,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -29612,6 +31859,7 @@ impl std::str::FromStr for WavCodingMode {
     }
 }
 impl WavCodingMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WavCodingMode::CodingMode10 => "CODING_MODE_1_0",
@@ -29621,6 +31869,7 @@ impl WavCodingMode {
             WavCodingMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CODING_MODE_1_0",
@@ -29702,6 +31951,7 @@ pub mod mp2_settings {
             self.bitrate = Some(input);
             self
         }
+        /// Average bitrate in bits/second.
         pub fn set_bitrate(mut self, input: std::option::Option<f64>) -> Self {
             self.bitrate = input;
             self
@@ -29711,6 +31961,7 @@ pub mod mp2_settings {
             self.coding_mode = Some(input);
             self
         }
+        /// The MPEG2 Audio coding mode.  Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
         pub fn set_coding_mode(
             mut self,
             input: std::option::Option<crate::model::Mp2CodingMode>,
@@ -29723,6 +31974,7 @@ pub mod mp2_settings {
             self.sample_rate = Some(input);
             self
         }
+        /// Sample rate in Hz.
         pub fn set_sample_rate(mut self, input: std::option::Option<f64>) -> Self {
             self.sample_rate = input;
             self
@@ -29756,7 +32008,9 @@ impl Mp2Settings {
     std::hash::Hash,
 )]
 pub enum Mp2CodingMode {
+    #[allow(missing_docs)] // documentation missing in model
     CodingMode10,
+    #[allow(missing_docs)] // documentation missing in model
     CodingMode20,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -29778,6 +32032,7 @@ impl std::str::FromStr for Mp2CodingMode {
     }
 }
 impl Mp2CodingMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Mp2CodingMode::CodingMode10 => "CODING_MODE_1_0",
@@ -29785,6 +32040,7 @@ impl Mp2CodingMode {
             Mp2CodingMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CODING_MODE_1_0", "CODING_MODE_2_0"]
     }
@@ -29899,6 +32155,7 @@ pub mod eac3_settings {
             self.attenuation_control = Some(input);
             self
         }
+        /// When set to attenuate3Db, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
         pub fn set_attenuation_control(
             mut self,
             input: std::option::Option<crate::model::Eac3AttenuationControl>,
@@ -29911,6 +32168,7 @@ pub mod eac3_settings {
             self.bitrate = Some(input);
             self
         }
+        /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
         pub fn set_bitrate(mut self, input: std::option::Option<f64>) -> Self {
             self.bitrate = input;
             self
@@ -29920,6 +32178,7 @@ pub mod eac3_settings {
             self.bitstream_mode = Some(input);
             self
         }
+        /// Specifies the bitstream mode (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for background on these values.
         pub fn set_bitstream_mode(
             mut self,
             input: std::option::Option<crate::model::Eac3BitstreamMode>,
@@ -29932,6 +32191,7 @@ pub mod eac3_settings {
             self.coding_mode = Some(input);
             self
         }
+        /// Dolby Digital Plus coding mode. Determines number of channels.
         pub fn set_coding_mode(
             mut self,
             input: std::option::Option<crate::model::Eac3CodingMode>,
@@ -29944,6 +32204,7 @@ pub mod eac3_settings {
             self.dc_filter = Some(input);
             self
         }
+        /// When set to enabled, activates a DC highpass filter for all input channels.
         pub fn set_dc_filter(
             mut self,
             input: std::option::Option<crate::model::Eac3DcFilter>,
@@ -29956,6 +32217,7 @@ pub mod eac3_settings {
             self.dialnorm = Some(input);
             self
         }
+        /// Sets the dialnorm for the output. If blank and input audio is Dolby Digital Plus, dialnorm will be passed through.
         pub fn set_dialnorm(mut self, input: std::option::Option<i32>) -> Self {
             self.dialnorm = input;
             self
@@ -29965,6 +32227,7 @@ pub mod eac3_settings {
             self.drc_line = Some(input);
             self
         }
+        /// Sets the Dolby dynamic range compression profile.
         pub fn set_drc_line(
             mut self,
             input: std::option::Option<crate::model::Eac3DrcLine>,
@@ -29977,6 +32240,7 @@ pub mod eac3_settings {
             self.drc_rf = Some(input);
             self
         }
+        /// Sets the profile for heavy Dolby dynamic range compression, ensures that the instantaneous signal peaks do not exceed specified levels.
         pub fn set_drc_rf(mut self, input: std::option::Option<crate::model::Eac3DrcRf>) -> Self {
             self.drc_rf = input;
             self
@@ -29986,6 +32250,7 @@ pub mod eac3_settings {
             self.lfe_control = Some(input);
             self
         }
+        /// When encoding 3/2 audio, setting to lfe enables the LFE channel
         pub fn set_lfe_control(
             mut self,
             input: std::option::Option<crate::model::Eac3LfeControl>,
@@ -29998,6 +32263,7 @@ pub mod eac3_settings {
             self.lfe_filter = Some(input);
             self
         }
+        /// When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with codingMode32 coding mode.
         pub fn set_lfe_filter(
             mut self,
             input: std::option::Option<crate::model::Eac3LfeFilter>,
@@ -30010,6 +32276,7 @@ pub mod eac3_settings {
             self.lo_ro_center_mix_level = Some(input);
             self
         }
+        /// Left only/Right only center mix level. Only used for 3/2 coding mode.
         pub fn set_lo_ro_center_mix_level(mut self, input: std::option::Option<f64>) -> Self {
             self.lo_ro_center_mix_level = input;
             self
@@ -30019,6 +32286,7 @@ pub mod eac3_settings {
             self.lo_ro_surround_mix_level = Some(input);
             self
         }
+        /// Left only/Right only surround mix level. Only used for 3/2 coding mode.
         pub fn set_lo_ro_surround_mix_level(mut self, input: std::option::Option<f64>) -> Self {
             self.lo_ro_surround_mix_level = input;
             self
@@ -30028,6 +32296,7 @@ pub mod eac3_settings {
             self.lt_rt_center_mix_level = Some(input);
             self
         }
+        /// Left total/Right total center mix level. Only used for 3/2 coding mode.
         pub fn set_lt_rt_center_mix_level(mut self, input: std::option::Option<f64>) -> Self {
             self.lt_rt_center_mix_level = input;
             self
@@ -30037,6 +32306,7 @@ pub mod eac3_settings {
             self.lt_rt_surround_mix_level = Some(input);
             self
         }
+        /// Left total/Right total surround mix level. Only used for 3/2 coding mode.
         pub fn set_lt_rt_surround_mix_level(mut self, input: std::option::Option<f64>) -> Self {
             self.lt_rt_surround_mix_level = input;
             self
@@ -30046,6 +32316,7 @@ pub mod eac3_settings {
             self.metadata_control = Some(input);
             self
         }
+        /// When set to followInput, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
         pub fn set_metadata_control(
             mut self,
             input: std::option::Option<crate::model::Eac3MetadataControl>,
@@ -30058,6 +32329,7 @@ pub mod eac3_settings {
             self.passthrough_control = Some(input);
             self
         }
+        /// When set to whenPossible, input DD+ audio will be passed through if it is present on the input. This detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding.
         pub fn set_passthrough_control(
             mut self,
             input: std::option::Option<crate::model::Eac3PassthroughControl>,
@@ -30070,6 +32342,7 @@ pub mod eac3_settings {
             self.phase_control = Some(input);
             self
         }
+        /// When set to shift90Degrees, applies a 90-degree phase shift to the surround channels. Only used for 3/2 coding mode.
         pub fn set_phase_control(
             mut self,
             input: std::option::Option<crate::model::Eac3PhaseControl>,
@@ -30082,6 +32355,7 @@ pub mod eac3_settings {
             self.stereo_downmix = Some(input);
             self
         }
+        /// Stereo downmix preference. Only used for 3/2 coding mode.
         pub fn set_stereo_downmix(
             mut self,
             input: std::option::Option<crate::model::Eac3StereoDownmix>,
@@ -30094,6 +32368,7 @@ pub mod eac3_settings {
             self.surround_ex_mode = Some(input);
             self
         }
+        /// When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and right surround channels.
         pub fn set_surround_ex_mode(
             mut self,
             input: std::option::Option<crate::model::Eac3SurroundExMode>,
@@ -30106,6 +32381,7 @@ pub mod eac3_settings {
             self.surround_mode = Some(input);
             self
         }
+        /// When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
         pub fn set_surround_mode(
             mut self,
             input: std::option::Option<crate::model::Eac3SurroundMode>,
@@ -30159,8 +32435,11 @@ impl Eac3Settings {
     std::hash::Hash,
 )]
 pub enum Eac3SurroundMode {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
+    #[allow(missing_docs)] // documentation missing in model
     NotIndicated,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -30183,6 +32462,7 @@ impl std::str::FromStr for Eac3SurroundMode {
     }
 }
 impl Eac3SurroundMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Eac3SurroundMode::Disabled => "DISABLED",
@@ -30191,6 +32471,7 @@ impl Eac3SurroundMode {
             Eac3SurroundMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED", "NOT_INDICATED"]
     }
@@ -30213,8 +32494,11 @@ impl AsRef<str> for Eac3SurroundMode {
     std::hash::Hash,
 )]
 pub enum Eac3SurroundExMode {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
+    #[allow(missing_docs)] // documentation missing in model
     NotIndicated,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -30237,6 +32521,7 @@ impl std::str::FromStr for Eac3SurroundExMode {
     }
 }
 impl Eac3SurroundExMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Eac3SurroundExMode::Disabled => "DISABLED",
@@ -30245,6 +32530,7 @@ impl Eac3SurroundExMode {
             Eac3SurroundExMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED", "NOT_INDICATED"]
     }
@@ -30267,9 +32553,13 @@ impl AsRef<str> for Eac3SurroundExMode {
     std::hash::Hash,
 )]
 pub enum Eac3StereoDownmix {
+    #[allow(missing_docs)] // documentation missing in model
     Dpl2,
+    #[allow(missing_docs)] // documentation missing in model
     LoRo,
+    #[allow(missing_docs)] // documentation missing in model
     LtRt,
+    #[allow(missing_docs)] // documentation missing in model
     NotIndicated,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -30293,6 +32583,7 @@ impl std::str::FromStr for Eac3StereoDownmix {
     }
 }
 impl Eac3StereoDownmix {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Eac3StereoDownmix::Dpl2 => "DPL2",
@@ -30302,6 +32593,7 @@ impl Eac3StereoDownmix {
             Eac3StereoDownmix::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DPL2", "LO_RO", "LT_RT", "NOT_INDICATED"]
     }
@@ -30324,7 +32616,9 @@ impl AsRef<str> for Eac3StereoDownmix {
     std::hash::Hash,
 )]
 pub enum Eac3PhaseControl {
+    #[allow(missing_docs)] // documentation missing in model
     NoShift,
+    #[allow(missing_docs)] // documentation missing in model
     Shift90Degrees,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -30346,6 +32640,7 @@ impl std::str::FromStr for Eac3PhaseControl {
     }
 }
 impl Eac3PhaseControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Eac3PhaseControl::NoShift => "NO_SHIFT",
@@ -30353,6 +32648,7 @@ impl Eac3PhaseControl {
             Eac3PhaseControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NO_SHIFT", "SHIFT_90_DEGREES"]
     }
@@ -30375,7 +32671,9 @@ impl AsRef<str> for Eac3PhaseControl {
     std::hash::Hash,
 )]
 pub enum Eac3PassthroughControl {
+    #[allow(missing_docs)] // documentation missing in model
     NoPassthrough,
+    #[allow(missing_docs)] // documentation missing in model
     WhenPossible,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -30397,6 +32695,7 @@ impl std::str::FromStr for Eac3PassthroughControl {
     }
 }
 impl Eac3PassthroughControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Eac3PassthroughControl::NoPassthrough => "NO_PASSTHROUGH",
@@ -30404,6 +32703,7 @@ impl Eac3PassthroughControl {
             Eac3PassthroughControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NO_PASSTHROUGH", "WHEN_POSSIBLE"]
     }
@@ -30426,7 +32726,9 @@ impl AsRef<str> for Eac3PassthroughControl {
     std::hash::Hash,
 )]
 pub enum Eac3MetadataControl {
+    #[allow(missing_docs)] // documentation missing in model
     FollowInput,
+    #[allow(missing_docs)] // documentation missing in model
     UseConfigured,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -30448,6 +32750,7 @@ impl std::str::FromStr for Eac3MetadataControl {
     }
 }
 impl Eac3MetadataControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Eac3MetadataControl::FollowInput => "FOLLOW_INPUT",
@@ -30455,6 +32758,7 @@ impl Eac3MetadataControl {
             Eac3MetadataControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FOLLOW_INPUT", "USE_CONFIGURED"]
     }
@@ -30477,7 +32781,9 @@ impl AsRef<str> for Eac3MetadataControl {
     std::hash::Hash,
 )]
 pub enum Eac3LfeFilter {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -30499,6 +32805,7 @@ impl std::str::FromStr for Eac3LfeFilter {
     }
 }
 impl Eac3LfeFilter {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Eac3LfeFilter::Disabled => "DISABLED",
@@ -30506,6 +32813,7 @@ impl Eac3LfeFilter {
             Eac3LfeFilter::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -30528,7 +32836,9 @@ impl AsRef<str> for Eac3LfeFilter {
     std::hash::Hash,
 )]
 pub enum Eac3LfeControl {
+    #[allow(missing_docs)] // documentation missing in model
     Lfe,
+    #[allow(missing_docs)] // documentation missing in model
     NoLfe,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -30550,6 +32860,7 @@ impl std::str::FromStr for Eac3LfeControl {
     }
 }
 impl Eac3LfeControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Eac3LfeControl::Lfe => "LFE",
@@ -30557,6 +32868,7 @@ impl Eac3LfeControl {
             Eac3LfeControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LFE", "NO_LFE"]
     }
@@ -30579,11 +32891,17 @@ impl AsRef<str> for Eac3LfeControl {
     std::hash::Hash,
 )]
 pub enum Eac3DrcRf {
+    #[allow(missing_docs)] // documentation missing in model
     FilmLight,
+    #[allow(missing_docs)] // documentation missing in model
     FilmStandard,
+    #[allow(missing_docs)] // documentation missing in model
     MusicLight,
+    #[allow(missing_docs)] // documentation missing in model
     MusicStandard,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Speech,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -30609,6 +32927,7 @@ impl std::str::FromStr for Eac3DrcRf {
     }
 }
 impl Eac3DrcRf {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Eac3DrcRf::FilmLight => "FILM_LIGHT",
@@ -30620,6 +32939,7 @@ impl Eac3DrcRf {
             Eac3DrcRf::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "FILM_LIGHT",
@@ -30649,11 +32969,17 @@ impl AsRef<str> for Eac3DrcRf {
     std::hash::Hash,
 )]
 pub enum Eac3DrcLine {
+    #[allow(missing_docs)] // documentation missing in model
     FilmLight,
+    #[allow(missing_docs)] // documentation missing in model
     FilmStandard,
+    #[allow(missing_docs)] // documentation missing in model
     MusicLight,
+    #[allow(missing_docs)] // documentation missing in model
     MusicStandard,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Speech,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -30679,6 +33005,7 @@ impl std::str::FromStr for Eac3DrcLine {
     }
 }
 impl Eac3DrcLine {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Eac3DrcLine::FilmLight => "FILM_LIGHT",
@@ -30690,6 +33017,7 @@ impl Eac3DrcLine {
             Eac3DrcLine::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "FILM_LIGHT",
@@ -30719,7 +33047,9 @@ impl AsRef<str> for Eac3DrcLine {
     std::hash::Hash,
 )]
 pub enum Eac3DcFilter {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -30741,6 +33071,7 @@ impl std::str::FromStr for Eac3DcFilter {
     }
 }
 impl Eac3DcFilter {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Eac3DcFilter::Disabled => "DISABLED",
@@ -30748,6 +33079,7 @@ impl Eac3DcFilter {
             Eac3DcFilter::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -30770,8 +33102,11 @@ impl AsRef<str> for Eac3DcFilter {
     std::hash::Hash,
 )]
 pub enum Eac3CodingMode {
+    #[allow(missing_docs)] // documentation missing in model
     CodingMode10,
+    #[allow(missing_docs)] // documentation missing in model
     CodingMode20,
+    #[allow(missing_docs)] // documentation missing in model
     CodingMode32,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -30794,6 +33129,7 @@ impl std::str::FromStr for Eac3CodingMode {
     }
 }
 impl Eac3CodingMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Eac3CodingMode::CodingMode10 => "CODING_MODE_1_0",
@@ -30802,6 +33138,7 @@ impl Eac3CodingMode {
             Eac3CodingMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CODING_MODE_1_0", "CODING_MODE_2_0", "CODING_MODE_3_2"]
     }
@@ -30824,10 +33161,15 @@ impl AsRef<str> for Eac3CodingMode {
     std::hash::Hash,
 )]
 pub enum Eac3BitstreamMode {
+    #[allow(missing_docs)] // documentation missing in model
     Commentary,
+    #[allow(missing_docs)] // documentation missing in model
     CompleteMain,
+    #[allow(missing_docs)] // documentation missing in model
     Emergency,
+    #[allow(missing_docs)] // documentation missing in model
     HearingImpaired,
+    #[allow(missing_docs)] // documentation missing in model
     VisuallyImpaired,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -30852,6 +33194,7 @@ impl std::str::FromStr for Eac3BitstreamMode {
     }
 }
 impl Eac3BitstreamMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Eac3BitstreamMode::Commentary => "COMMENTARY",
@@ -30862,6 +33205,7 @@ impl Eac3BitstreamMode {
             Eac3BitstreamMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "COMMENTARY",
@@ -30890,7 +33234,9 @@ impl AsRef<str> for Eac3BitstreamMode {
     std::hash::Hash,
 )]
 pub enum Eac3AttenuationControl {
+    #[allow(missing_docs)] // documentation missing in model
     Attenuate3Db,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -30912,6 +33258,7 @@ impl std::str::FromStr for Eac3AttenuationControl {
     }
 }
 impl Eac3AttenuationControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Eac3AttenuationControl::Attenuate3Db => "ATTENUATE_3_DB",
@@ -30919,6 +33266,7 @@ impl Eac3AttenuationControl {
             Eac3AttenuationControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ATTENUATE_3_DB", "NONE"]
     }
@@ -30981,6 +33329,7 @@ pub mod ac3_settings {
             self.bitrate = Some(input);
             self
         }
+        /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
         pub fn set_bitrate(mut self, input: std::option::Option<f64>) -> Self {
             self.bitrate = input;
             self
@@ -30990,6 +33339,7 @@ pub mod ac3_settings {
             self.bitstream_mode = Some(input);
             self
         }
+        /// Specifies the bitstream mode (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these values.
         pub fn set_bitstream_mode(
             mut self,
             input: std::option::Option<crate::model::Ac3BitstreamMode>,
@@ -31002,6 +33352,7 @@ pub mod ac3_settings {
             self.coding_mode = Some(input);
             self
         }
+        /// Dolby Digital coding mode. Determines number of channels.
         pub fn set_coding_mode(
             mut self,
             input: std::option::Option<crate::model::Ac3CodingMode>,
@@ -31014,6 +33365,7 @@ pub mod ac3_settings {
             self.dialnorm = Some(input);
             self
         }
+        /// Sets the dialnorm for the output. If excluded and input audio is Dolby Digital, dialnorm will be passed through.
         pub fn set_dialnorm(mut self, input: std::option::Option<i32>) -> Self {
             self.dialnorm = input;
             self
@@ -31023,6 +33375,7 @@ pub mod ac3_settings {
             self.drc_profile = Some(input);
             self
         }
+        /// If set to filmStandard, adds dynamic range compression signaling to the output bitstream as defined in the Dolby Digital specification.
         pub fn set_drc_profile(
             mut self,
             input: std::option::Option<crate::model::Ac3DrcProfile>,
@@ -31035,6 +33388,7 @@ pub mod ac3_settings {
             self.lfe_filter = Some(input);
             self
         }
+        /// When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid in codingMode32Lfe mode.
         pub fn set_lfe_filter(
             mut self,
             input: std::option::Option<crate::model::Ac3LfeFilter>,
@@ -31047,6 +33401,7 @@ pub mod ac3_settings {
             self.metadata_control = Some(input);
             self
         }
+        /// When set to "followInput", encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
         pub fn set_metadata_control(
             mut self,
             input: std::option::Option<crate::model::Ac3MetadataControl>,
@@ -31087,7 +33442,9 @@ impl Ac3Settings {
     std::hash::Hash,
 )]
 pub enum Ac3MetadataControl {
+    #[allow(missing_docs)] // documentation missing in model
     FollowInput,
+    #[allow(missing_docs)] // documentation missing in model
     UseConfigured,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -31109,6 +33466,7 @@ impl std::str::FromStr for Ac3MetadataControl {
     }
 }
 impl Ac3MetadataControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Ac3MetadataControl::FollowInput => "FOLLOW_INPUT",
@@ -31116,6 +33474,7 @@ impl Ac3MetadataControl {
             Ac3MetadataControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FOLLOW_INPUT", "USE_CONFIGURED"]
     }
@@ -31138,7 +33497,9 @@ impl AsRef<str> for Ac3MetadataControl {
     std::hash::Hash,
 )]
 pub enum Ac3LfeFilter {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -31160,6 +33521,7 @@ impl std::str::FromStr for Ac3LfeFilter {
     }
 }
 impl Ac3LfeFilter {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Ac3LfeFilter::Disabled => "DISABLED",
@@ -31167,6 +33529,7 @@ impl Ac3LfeFilter {
             Ac3LfeFilter::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -31189,7 +33552,9 @@ impl AsRef<str> for Ac3LfeFilter {
     std::hash::Hash,
 )]
 pub enum Ac3DrcProfile {
+    #[allow(missing_docs)] // documentation missing in model
     FilmStandard,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -31211,6 +33576,7 @@ impl std::str::FromStr for Ac3DrcProfile {
     }
 }
 impl Ac3DrcProfile {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Ac3DrcProfile::FilmStandard => "FILM_STANDARD",
@@ -31218,6 +33584,7 @@ impl Ac3DrcProfile {
             Ac3DrcProfile::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FILM_STANDARD", "NONE"]
     }
@@ -31240,9 +33607,13 @@ impl AsRef<str> for Ac3DrcProfile {
     std::hash::Hash,
 )]
 pub enum Ac3CodingMode {
+    #[allow(missing_docs)] // documentation missing in model
     CodingMode10,
+    #[allow(missing_docs)] // documentation missing in model
     CodingMode11,
+    #[allow(missing_docs)] // documentation missing in model
     CodingMode20,
+    #[allow(missing_docs)] // documentation missing in model
     CodingMode32Lfe,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -31266,6 +33637,7 @@ impl std::str::FromStr for Ac3CodingMode {
     }
 }
 impl Ac3CodingMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Ac3CodingMode::CodingMode10 => "CODING_MODE_1_0",
@@ -31275,6 +33647,7 @@ impl Ac3CodingMode {
             Ac3CodingMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CODING_MODE_1_0",
@@ -31302,13 +33675,21 @@ impl AsRef<str> for Ac3CodingMode {
     std::hash::Hash,
 )]
 pub enum Ac3BitstreamMode {
+    #[allow(missing_docs)] // documentation missing in model
     Commentary,
+    #[allow(missing_docs)] // documentation missing in model
     CompleteMain,
+    #[allow(missing_docs)] // documentation missing in model
     Dialogue,
+    #[allow(missing_docs)] // documentation missing in model
     Emergency,
+    #[allow(missing_docs)] // documentation missing in model
     HearingImpaired,
+    #[allow(missing_docs)] // documentation missing in model
     MusicAndEffects,
+    #[allow(missing_docs)] // documentation missing in model
     VisuallyImpaired,
+    #[allow(missing_docs)] // documentation missing in model
     VoiceOver,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -31336,6 +33717,7 @@ impl std::str::FromStr for Ac3BitstreamMode {
     }
 }
 impl Ac3BitstreamMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Ac3BitstreamMode::Commentary => "COMMENTARY",
@@ -31349,6 +33731,7 @@ impl Ac3BitstreamMode {
             Ac3BitstreamMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "COMMENTARY",
@@ -31377,6 +33760,7 @@ pub struct AacSettings {
     /// Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and profile. The adReceiverMix setting receives a stereo description plus control track and emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101 154 Annex E.
     pub coding_mode: std::option::Option<crate::model::AacCodingMode>,
     /// Set to "broadcasterMixedAd" when input contains pre-mixed main audio + AD (narration) as a stereo pair.  The Audio Type field (audioType) will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. The values in audioTypeControl and audioType (in AudioDescription) are ignored when set to broadcasterMixedAd.
+    ///
     /// Leave set to "normal" when input does not contain pre-mixed audio + AD.
     pub input_type: std::option::Option<crate::model::AacInputType>,
     /// AAC Profile.
@@ -31429,6 +33813,7 @@ pub mod aac_settings {
             self.bitrate = Some(input);
             self
         }
+        /// Average bitrate in bits/second. Valid values depend on rate control mode and profile.
         pub fn set_bitrate(mut self, input: std::option::Option<f64>) -> Self {
             self.bitrate = input;
             self
@@ -31438,6 +33823,7 @@ pub mod aac_settings {
             self.coding_mode = Some(input);
             self
         }
+        /// Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and profile. The adReceiverMix setting receives a stereo description plus control track and emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101 154 Annex E.
         pub fn set_coding_mode(
             mut self,
             input: std::option::Option<crate::model::AacCodingMode>,
@@ -31446,11 +33832,15 @@ pub mod aac_settings {
             self
         }
         /// Set to "broadcasterMixedAd" when input contains pre-mixed main audio + AD (narration) as a stereo pair.  The Audio Type field (audioType) will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. The values in audioTypeControl and audioType (in AudioDescription) are ignored when set to broadcasterMixedAd.
+        ///
         /// Leave set to "normal" when input does not contain pre-mixed audio + AD.
         pub fn input_type(mut self, input: crate::model::AacInputType) -> Self {
             self.input_type = Some(input);
             self
         }
+        /// Set to "broadcasterMixedAd" when input contains pre-mixed main audio + AD (narration) as a stereo pair.  The Audio Type field (audioType) will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. The values in audioTypeControl and audioType (in AudioDescription) are ignored when set to broadcasterMixedAd.
+        ///
+        /// Leave set to "normal" when input does not contain pre-mixed audio + AD.
         pub fn set_input_type(
             mut self,
             input: std::option::Option<crate::model::AacInputType>,
@@ -31463,6 +33853,7 @@ pub mod aac_settings {
             self.profile = Some(input);
             self
         }
+        /// AAC Profile.
         pub fn set_profile(mut self, input: std::option::Option<crate::model::AacProfile>) -> Self {
             self.profile = input;
             self
@@ -31472,6 +33863,7 @@ pub mod aac_settings {
             self.rate_control_mode = Some(input);
             self
         }
+        /// Rate Control Mode.
         pub fn set_rate_control_mode(
             mut self,
             input: std::option::Option<crate::model::AacRateControlMode>,
@@ -31484,6 +33876,7 @@ pub mod aac_settings {
             self.raw_format = Some(input);
             self
         }
+        /// Sets LATM / LOAS AAC output for raw containers.
         pub fn set_raw_format(
             mut self,
             input: std::option::Option<crate::model::AacRawFormat>,
@@ -31496,6 +33889,7 @@ pub mod aac_settings {
             self.sample_rate = Some(input);
             self
         }
+        /// Sample rate in Hz. Valid values depend on rate control mode and profile.
         pub fn set_sample_rate(mut self, input: std::option::Option<f64>) -> Self {
             self.sample_rate = input;
             self
@@ -31505,6 +33899,7 @@ pub mod aac_settings {
             self.spec = Some(input);
             self
         }
+        /// Use MPEG-2 AAC audio instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
         pub fn set_spec(mut self, input: std::option::Option<crate::model::AacSpec>) -> Self {
             self.spec = input;
             self
@@ -31514,6 +33909,7 @@ pub mod aac_settings {
             self.vbr_quality = Some(input);
             self
         }
+        /// VBR Quality Level - Only used if rateControlMode is VBR.
         pub fn set_vbr_quality(
             mut self,
             input: std::option::Option<crate::model::AacVbrQuality>,
@@ -31556,9 +33952,13 @@ impl AacSettings {
     std::hash::Hash,
 )]
 pub enum AacVbrQuality {
+    #[allow(missing_docs)] // documentation missing in model
     High,
+    #[allow(missing_docs)] // documentation missing in model
     Low,
+    #[allow(missing_docs)] // documentation missing in model
     MediumHigh,
+    #[allow(missing_docs)] // documentation missing in model
     MediumLow,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -31582,6 +33982,7 @@ impl std::str::FromStr for AacVbrQuality {
     }
 }
 impl AacVbrQuality {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AacVbrQuality::High => "HIGH",
@@ -31591,6 +33992,7 @@ impl AacVbrQuality {
             AacVbrQuality::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "MEDIUM_HIGH", "MEDIUM_LOW"]
     }
@@ -31613,7 +34015,9 @@ impl AsRef<str> for AacVbrQuality {
     std::hash::Hash,
 )]
 pub enum AacSpec {
+    #[allow(missing_docs)] // documentation missing in model
     Mpeg2,
+    #[allow(missing_docs)] // documentation missing in model
     Mpeg4,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -31635,6 +34039,7 @@ impl std::str::FromStr for AacSpec {
     }
 }
 impl AacSpec {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AacSpec::Mpeg2 => "MPEG2",
@@ -31642,6 +34047,7 @@ impl AacSpec {
             AacSpec::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MPEG2", "MPEG4"]
     }
@@ -31664,7 +34070,9 @@ impl AsRef<str> for AacSpec {
     std::hash::Hash,
 )]
 pub enum AacRawFormat {
+    #[allow(missing_docs)] // documentation missing in model
     LatmLoas,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -31686,6 +34094,7 @@ impl std::str::FromStr for AacRawFormat {
     }
 }
 impl AacRawFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AacRawFormat::LatmLoas => "LATM_LOAS",
@@ -31693,6 +34102,7 @@ impl AacRawFormat {
             AacRawFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LATM_LOAS", "NONE"]
     }
@@ -31715,7 +34125,9 @@ impl AsRef<str> for AacRawFormat {
     std::hash::Hash,
 )]
 pub enum AacRateControlMode {
+    #[allow(missing_docs)] // documentation missing in model
     Cbr,
+    #[allow(missing_docs)] // documentation missing in model
     Vbr,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -31737,6 +34149,7 @@ impl std::str::FromStr for AacRateControlMode {
     }
 }
 impl AacRateControlMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AacRateControlMode::Cbr => "CBR",
@@ -31744,6 +34157,7 @@ impl AacRateControlMode {
             AacRateControlMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CBR", "VBR"]
     }
@@ -31766,8 +34180,11 @@ impl AsRef<str> for AacRateControlMode {
     std::hash::Hash,
 )]
 pub enum AacProfile {
+    #[allow(missing_docs)] // documentation missing in model
     Hev1,
+    #[allow(missing_docs)] // documentation missing in model
     Hev2,
+    #[allow(missing_docs)] // documentation missing in model
     Lc,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -31790,6 +34207,7 @@ impl std::str::FromStr for AacProfile {
     }
 }
 impl AacProfile {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AacProfile::Hev1 => "HEV1",
@@ -31798,6 +34216,7 @@ impl AacProfile {
             AacProfile::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HEV1", "HEV2", "LC"]
     }
@@ -31820,7 +34239,9 @@ impl AsRef<str> for AacProfile {
     std::hash::Hash,
 )]
 pub enum AacInputType {
+    #[allow(missing_docs)] // documentation missing in model
     BroadcasterMixedAd,
+    #[allow(missing_docs)] // documentation missing in model
     Normal,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -31842,6 +34263,7 @@ impl std::str::FromStr for AacInputType {
     }
 }
 impl AacInputType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AacInputType::BroadcasterMixedAd => "BROADCASTER_MIXED_AD",
@@ -31849,6 +34271,7 @@ impl AacInputType {
             AacInputType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BROADCASTER_MIXED_AD", "NORMAL"]
     }
@@ -31871,10 +34294,15 @@ impl AsRef<str> for AacInputType {
     std::hash::Hash,
 )]
 pub enum AacCodingMode {
+    #[allow(missing_docs)] // documentation missing in model
     AdReceiverMix,
+    #[allow(missing_docs)] // documentation missing in model
     CodingMode10,
+    #[allow(missing_docs)] // documentation missing in model
     CodingMode11,
+    #[allow(missing_docs)] // documentation missing in model
     CodingMode20,
+    #[allow(missing_docs)] // documentation missing in model
     CodingMode51,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -31899,6 +34327,7 @@ impl std::str::FromStr for AacCodingMode {
     }
 }
 impl AacCodingMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AacCodingMode::AdReceiverMix => "AD_RECEIVER_MIX",
@@ -31909,6 +34338,7 @@ impl AacCodingMode {
             AacCodingMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AD_RECEIVER_MIX",
@@ -31960,6 +34390,7 @@ pub mod audio_watermark_settings {
             self.nielsen_watermarks_settings = Some(input);
             self
         }
+        /// Settings to configure Nielsen Watermarks in the audio encode
         pub fn set_nielsen_watermarks_settings(
             mut self,
             input: std::option::Option<crate::model::NielsenWatermarksSettings>,
@@ -32025,6 +34456,7 @@ pub mod nielsen_watermarks_settings {
             self.nielsen_cbet_settings = Some(input);
             self
         }
+        /// Complete these fields only if you want to insert watermarks of type Nielsen CBET
         pub fn set_nielsen_cbet_settings(
             mut self,
             input: std::option::Option<crate::model::NielsenCbet>,
@@ -32042,6 +34474,9 @@ pub mod nielsen_watermarks_settings {
             self.nielsen_distribution_type = Some(input);
             self
         }
+        /// Choose the distribution types that you want to assign to the watermarks:
+        /// - PROGRAM_CONTENT
+        /// - FINAL_DISTRIBUTOR
         pub fn set_nielsen_distribution_type(
             mut self,
             input: std::option::Option<crate::model::NielsenWatermarksDistributionTypes>,
@@ -32054,6 +34489,7 @@ pub mod nielsen_watermarks_settings {
             self.nielsen_naes_ii_nw_settings = Some(input);
             self
         }
+        /// Complete these fields only if you want to insert watermarks of type Nielsen NAES II (N2) and Nielsen NAES VI (NW).
         pub fn set_nielsen_naes_ii_nw_settings(
             mut self,
             input: std::option::Option<crate::model::NielsenNaesIiNw>,
@@ -32110,6 +34546,7 @@ pub mod nielsen_naes_ii_nw {
             self.check_digit_string = Some(input.into());
             self
         }
+        /// Enter the check digit string for the watermark
         pub fn set_check_digit_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -32122,6 +34559,7 @@ pub mod nielsen_naes_ii_nw {
             self.sid = Some(input);
             self
         }
+        /// Enter the Nielsen Source ID (SID) to include in the watermark
         pub fn set_sid(mut self, input: std::option::Option<f64>) -> Self {
             self.sid = input;
             self
@@ -32154,7 +34592,9 @@ impl NielsenNaesIiNw {
     std::hash::Hash,
 )]
 pub enum NielsenWatermarksDistributionTypes {
+    #[allow(missing_docs)] // documentation missing in model
     FinalDistributor,
+    #[allow(missing_docs)] // documentation missing in model
     ProgramContent,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -32176,6 +34616,7 @@ impl std::str::FromStr for NielsenWatermarksDistributionTypes {
     }
 }
 impl NielsenWatermarksDistributionTypes {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NielsenWatermarksDistributionTypes::FinalDistributor => "FINAL_DISTRIBUTOR",
@@ -32183,6 +34624,7 @@ impl NielsenWatermarksDistributionTypes {
             NielsenWatermarksDistributionTypes::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FINAL_DISTRIBUTOR", "PROGRAM_CONTENT"]
     }
@@ -32230,6 +34672,7 @@ pub mod nielsen_cbet {
             self.cbet_check_digit_string = Some(input.into());
             self
         }
+        /// Enter the CBET check digits to use in the watermark.
         pub fn set_cbet_check_digit_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -32245,6 +34688,7 @@ pub mod nielsen_cbet {
             self.cbet_stepaside = Some(input);
             self
         }
+        /// Determines the method of CBET insertion mode when prior encoding is detected on the same layer.
         pub fn set_cbet_stepaside(
             mut self,
             input: std::option::Option<crate::model::NielsenWatermarksCbetStepaside>,
@@ -32257,6 +34701,7 @@ pub mod nielsen_cbet {
             self.csid = Some(input.into());
             self
         }
+        /// Enter the CBET Source ID (CSID) to use in the watermark
         pub fn set_csid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.csid = input;
             self
@@ -32290,7 +34735,9 @@ impl NielsenCbet {
     std::hash::Hash,
 )]
 pub enum NielsenWatermarksCbetStepaside {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -32312,6 +34759,7 @@ impl std::str::FromStr for NielsenWatermarksCbetStepaside {
     }
 }
 impl NielsenWatermarksCbetStepaside {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NielsenWatermarksCbetStepaside::Disabled => "DISABLED",
@@ -32319,6 +34767,7 @@ impl NielsenWatermarksCbetStepaside {
             NielsenWatermarksCbetStepaside::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -32341,7 +34790,9 @@ impl AsRef<str> for NielsenWatermarksCbetStepaside {
     std::hash::Hash,
 )]
 pub enum AudioDescriptionAudioTypeControl {
+    #[allow(missing_docs)] // documentation missing in model
     FollowInput,
+    #[allow(missing_docs)] // documentation missing in model
     UseConfigured,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -32363,6 +34814,7 @@ impl std::str::FromStr for AudioDescriptionAudioTypeControl {
     }
 }
 impl AudioDescriptionAudioTypeControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AudioDescriptionAudioTypeControl::FollowInput => "FOLLOW_INPUT",
@@ -32370,6 +34822,7 @@ impl AudioDescriptionAudioTypeControl {
             AudioDescriptionAudioTypeControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FOLLOW_INPUT", "USE_CONFIGURED"]
     }
@@ -32392,9 +34845,13 @@ impl AsRef<str> for AudioDescriptionAudioTypeControl {
     std::hash::Hash,
 )]
 pub enum AudioType {
+    #[allow(missing_docs)] // documentation missing in model
     CleanEffects,
+    #[allow(missing_docs)] // documentation missing in model
     HearingImpaired,
+    #[allow(missing_docs)] // documentation missing in model
     Undefined,
+    #[allow(missing_docs)] // documentation missing in model
     VisualImpairedCommentary,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -32418,6 +34875,7 @@ impl std::str::FromStr for AudioType {
     }
 }
 impl AudioType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AudioType::CleanEffects => "CLEAN_EFFECTS",
@@ -32427,6 +34885,7 @@ impl AudioType {
             AudioType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CLEAN_EFFECTS",
@@ -32479,6 +34938,7 @@ pub mod audio_normalization_settings {
             self.algorithm = Some(input);
             self
         }
+        /// Audio normalization algorithm to use. itu17701 conforms to the CALM Act specification, itu17702 conforms to the EBU R-128 specification.
         pub fn set_algorithm(
             mut self,
             input: std::option::Option<crate::model::AudioNormalizationAlgorithm>,
@@ -32494,6 +34954,7 @@ pub mod audio_normalization_settings {
             self.algorithm_control = Some(input);
             self
         }
+        /// When set to correctAudio the output audio is corrected using the chosen algorithm. If set to measureOnly, the audio will be measured but not adjusted.
         pub fn set_algorithm_control(
             mut self,
             input: std::option::Option<crate::model::AudioNormalizationAlgorithmControl>,
@@ -32506,6 +34967,7 @@ pub mod audio_normalization_settings {
             self.target_lkfs = Some(input);
             self
         }
+        /// Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the chosen algorithm.  The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends a target of -23 LKFS.
         pub fn set_target_lkfs(mut self, input: std::option::Option<f64>) -> Self {
             self.target_lkfs = input;
             self
@@ -32539,6 +35001,7 @@ impl AudioNormalizationSettings {
     std::hash::Hash,
 )]
 pub enum AudioNormalizationAlgorithmControl {
+    #[allow(missing_docs)] // documentation missing in model
     CorrectAudio,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -32559,12 +35022,14 @@ impl std::str::FromStr for AudioNormalizationAlgorithmControl {
     }
 }
 impl AudioNormalizationAlgorithmControl {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AudioNormalizationAlgorithmControl::CorrectAudio => "CORRECT_AUDIO",
             AudioNormalizationAlgorithmControl::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CORRECT_AUDIO"]
     }
@@ -32587,7 +35052,9 @@ impl AsRef<str> for AudioNormalizationAlgorithmControl {
     std::hash::Hash,
 )]
 pub enum AudioNormalizationAlgorithm {
+    #[allow(missing_docs)] // documentation missing in model
     Itu17701,
+    #[allow(missing_docs)] // documentation missing in model
     Itu17702,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -32609,6 +35076,7 @@ impl std::str::FromStr for AudioNormalizationAlgorithm {
     }
 }
 impl AudioNormalizationAlgorithm {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AudioNormalizationAlgorithm::Itu17701 => "ITU_1770_1",
@@ -32616,6 +35084,7 @@ impl AudioNormalizationAlgorithm {
             AudioNormalizationAlgorithm::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ITU_1770_1", "ITU_1770_2"]
     }
@@ -32654,6 +35123,7 @@ pub mod channel_egress_endpoint {
             self.source_ip = Some(input.into());
             self
         }
+        /// Public IP of where a channel's output comes from
         pub fn set_source_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_ip = input;
             self
@@ -32718,10 +35188,16 @@ pub mod output_destination {
             self.id = Some(input.into());
             self
         }
+        /// User-specified id. This is used in an output group or an output.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
+        /// Appends an item to `media_package_settings`.
+        ///
+        /// To override the contents of this collection use [`set_media_package_settings`](Self::set_media_package_settings).
+        ///
+        /// Destination settings for a MediaPackage output; one destination for both encoders.
         pub fn media_package_settings(
             mut self,
             input: impl Into<crate::model::MediaPackageOutputDestinationSettings>,
@@ -32731,6 +35207,7 @@ pub mod output_destination {
             self.media_package_settings = Some(v);
             self
         }
+        /// Destination settings for a MediaPackage output; one destination for both encoders.
         pub fn set_media_package_settings(
             mut self,
             input: std::option::Option<
@@ -32748,6 +35225,7 @@ pub mod output_destination {
             self.multiplex_settings = Some(input);
             self
         }
+        /// Destination settings for a Multiplex output; one destination for both encoders.
         pub fn set_multiplex_settings(
             mut self,
             input: std::option::Option<crate::model::MultiplexProgramChannelDestinationSettings>,
@@ -32755,6 +35233,11 @@ pub mod output_destination {
             self.multiplex_settings = input;
             self
         }
+        /// Appends an item to `settings`.
+        ///
+        /// To override the contents of this collection use [`set_settings`](Self::set_settings).
+        ///
+        /// Destination settings for a standard output; one destination for each redundant encoder.
         pub fn settings(
             mut self,
             input: impl Into<crate::model::OutputDestinationSettings>,
@@ -32764,6 +35247,7 @@ pub mod output_destination {
             self.settings = Some(v);
             self
         }
+        /// Destination settings for a standard output; one destination for each redundant encoder.
         pub fn set_settings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputDestinationSettings>>,
@@ -32829,6 +35313,7 @@ pub mod output_destination_settings {
             self.password_param = Some(input.into());
             self
         }
+        /// key used to extract the password from EC2 Parameter store
         pub fn set_password_param(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -32841,6 +35326,7 @@ pub mod output_destination_settings {
             self.stream_name = Some(input.into());
             self
         }
+        /// Stream name for RTMP destinations (URLs of type rtmp://)
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -32850,6 +35336,7 @@ pub mod output_destination_settings {
             self.url = Some(input.into());
             self
         }
+        /// A URL specifying a destination
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -32859,6 +35346,7 @@ pub mod output_destination_settings {
             self.username = Some(input.into());
             self
         }
+        /// username for destination
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -32915,6 +35403,8 @@ pub mod multiplex_program_channel_destination_settings {
             self.multiplex_id = Some(input.into());
             self
         }
+        /// The ID of the Multiplex that the encoder is providing output to. You do not need to specify the individual inputs to the Multiplex; MediaLive will handle the connection of the two MediaLive pipelines to the two Multiplex instances.
+        /// The Multiplex must be in the same region as the Channel.
         pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.multiplex_id = input;
             self
@@ -32924,6 +35414,7 @@ pub mod multiplex_program_channel_destination_settings {
             self.program_name = Some(input.into());
             self
         }
+        /// The program name of the Multiplex program that the encoder is providing output to.
         pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.program_name = input;
             self
@@ -32972,6 +35463,7 @@ pub mod media_package_output_destination_settings {
             self.channel_id = Some(input.into());
             self
         }
+        /// ID of the channel in MediaPackage that is the destination for this output group. You do not need to specify the individual inputs in MediaPackage; MediaLive will handle the connection of the two MediaLive pipelines to the two MediaPackage inputs. The MediaPackage channel and MediaLive channel must be in the same region.
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_id = input;
             self
@@ -33019,6 +35511,7 @@ pub mod cdi_input_specification {
             self.resolution = Some(input);
             self
         }
+        /// Maximum CDI input resolution
         pub fn set_resolution(
             mut self,
             input: std::option::Option<crate::model::CdiInputResolution>,
@@ -33053,9 +35546,13 @@ impl CdiInputSpecification {
     std::hash::Hash,
 )]
 pub enum CdiInputResolution {
+    #[allow(missing_docs)] // documentation missing in model
     Fhd,
+    #[allow(missing_docs)] // documentation missing in model
     Hd,
+    #[allow(missing_docs)] // documentation missing in model
     Sd,
+    #[allow(missing_docs)] // documentation missing in model
     Uhd,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -33079,6 +35576,7 @@ impl std::str::FromStr for CdiInputResolution {
     }
 }
 impl CdiInputResolution {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CdiInputResolution::Fhd => "FHD",
@@ -33088,6 +35586,7 @@ impl CdiInputResolution {
             CdiInputResolution::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FHD", "HD", "SD", "UHD"]
     }
@@ -33167,6 +35666,7 @@ pub mod offering {
             self.arn = Some(input.into());
             self
         }
+        /// Unique offering ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:offering:87654321'
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -33176,6 +35676,7 @@ pub mod offering {
             self.currency_code = Some(input.into());
             self
         }
+        /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
         pub fn set_currency_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -33188,6 +35689,7 @@ pub mod offering {
             self.duration = Some(input);
             self
         }
+        /// Lease duration, e.g. '12'
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.duration = input;
             self
@@ -33197,6 +35699,7 @@ pub mod offering {
             self.duration_units = Some(input);
             self
         }
+        /// Units for duration, e.g. 'MONTHS'
         pub fn set_duration_units(
             mut self,
             input: std::option::Option<crate::model::OfferingDurationUnits>,
@@ -33209,6 +35712,7 @@ pub mod offering {
             self.fixed_price = Some(input);
             self
         }
+        /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
         pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
             self.fixed_price = input;
             self
@@ -33218,6 +35722,7 @@ pub mod offering {
             self.offering_description = Some(input.into());
             self
         }
+        /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
         pub fn set_offering_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -33230,6 +35735,7 @@ pub mod offering {
             self.offering_id = Some(input.into());
             self
         }
+        /// Unique offering ID, e.g. '87654321'
         pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.offering_id = input;
             self
@@ -33239,6 +35745,7 @@ pub mod offering {
             self.offering_type = Some(input);
             self
         }
+        /// Offering type, e.g. 'NO_UPFRONT'
         pub fn set_offering_type(
             mut self,
             input: std::option::Option<crate::model::OfferingType>,
@@ -33251,6 +35758,7 @@ pub mod offering {
             self.region = Some(input.into());
             self
         }
+        /// AWS region, e.g. 'us-west-2'
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -33263,6 +35771,7 @@ pub mod offering {
             self.resource_specification = Some(input);
             self
         }
+        /// Resource configuration details
         pub fn set_resource_specification(
             mut self,
             input: std::option::Option<crate::model::ReservationResourceSpecification>,
@@ -33275,6 +35784,7 @@ pub mod offering {
             self.usage_price = Some(input);
             self
         }
+        /// Recurring usage charge for each reserved resource, e.g. '157.0'
         pub fn set_usage_price(mut self, input: std::option::Option<f64>) -> Self {
             self.usage_price = input;
             self
@@ -33336,6 +35846,7 @@ pub mod multiplex_program_summary {
             self.channel_id = Some(input.into());
             self
         }
+        /// The MediaLive Channel associated with the program.
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_id = input;
             self
@@ -33345,6 +35856,7 @@ pub mod multiplex_program_summary {
             self.program_name = Some(input.into());
             self
         }
+        /// The name of the multiplex program.
         pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.program_name = input;
             self
@@ -33428,16 +35940,23 @@ pub mod multiplex_summary {
             self.arn = Some(input.into());
             self
         }
+        /// The unique arn of the multiplex.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
+        /// Appends an item to `availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
+        ///
+        /// A list of availability zones for the multiplex.
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
+        /// A list of availability zones for the multiplex.
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -33450,6 +35969,7 @@ pub mod multiplex_summary {
             self.id = Some(input.into());
             self
         }
+        /// The unique id of the multiplex.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -33459,6 +35979,7 @@ pub mod multiplex_summary {
             self.multiplex_settings = Some(input);
             self
         }
+        /// Configuration for a multiplex event.
         pub fn set_multiplex_settings(
             mut self,
             input: std::option::Option<crate::model::MultiplexSettingsSummary>,
@@ -33471,6 +35992,7 @@ pub mod multiplex_summary {
             self.name = Some(input.into());
             self
         }
+        /// The name of the multiplex.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -33480,6 +36002,7 @@ pub mod multiplex_summary {
             self.pipelines_running_count = Some(input);
             self
         }
+        /// The number of currently healthy pipelines.
         pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
             self.pipelines_running_count = input;
             self
@@ -33489,6 +36012,7 @@ pub mod multiplex_summary {
             self.program_count = Some(input);
             self
         }
+        /// The number of programs in the multiplex.
         pub fn set_program_count(mut self, input: std::option::Option<i32>) -> Self {
             self.program_count = input;
             self
@@ -33498,6 +36022,7 @@ pub mod multiplex_summary {
             self.state = Some(input);
             self
         }
+        /// The current state of the multiplex.
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::MultiplexState>,
@@ -33505,6 +36030,11 @@ pub mod multiplex_summary {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// A collection of key-value pairs.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -33515,6 +36045,7 @@ pub mod multiplex_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// A collection of key-value pairs.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -33575,6 +36106,7 @@ pub mod multiplex_settings_summary {
             self.transport_stream_bitrate = Some(input);
             self
         }
+        /// Transport stream bit rate.
         pub fn set_transport_stream_bitrate(mut self, input: std::option::Option<i32>) -> Self {
             self.transport_stream_bitrate = input;
             self
@@ -33634,6 +36166,7 @@ pub mod transferring_input_device_summary {
             self.id = Some(input.into());
             self
         }
+        /// The unique ID of the input device.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -33643,6 +36176,7 @@ pub mod transferring_input_device_summary {
             self.message = Some(input.into());
             self
         }
+        /// The optional message that the sender has attached to the transfer.
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -33652,6 +36186,7 @@ pub mod transferring_input_device_summary {
             self.target_customer_id = Some(input.into());
             self
         }
+        /// The AWS account ID for the recipient of the input device transfer.
         pub fn set_target_customer_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -33664,6 +36199,7 @@ pub mod transferring_input_device_summary {
             self.transfer_type = Some(input);
             self
         }
+        /// The type (direction) of the input device transfer.
         pub fn set_transfer_type(
             mut self,
             input: std::option::Option<crate::model::InputDeviceTransferType>,
@@ -33701,7 +36237,9 @@ impl TransferringInputDeviceSummary {
     std::hash::Hash,
 )]
 pub enum InputDeviceTransferType {
+    #[allow(missing_docs)] // documentation missing in model
     Incoming,
+    #[allow(missing_docs)] // documentation missing in model
     Outgoing,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -33723,6 +36261,7 @@ impl std::str::FromStr for InputDeviceTransferType {
     }
 }
 impl InputDeviceTransferType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputDeviceTransferType::Incoming => "INCOMING",
@@ -33730,6 +36269,7 @@ impl InputDeviceTransferType {
             InputDeviceTransferType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["INCOMING", "OUTGOING"]
     }
@@ -33816,6 +36356,7 @@ pub mod input_device_summary {
             self.arn = Some(input.into());
             self
         }
+        /// The unique ARN of the input device.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -33825,6 +36366,7 @@ pub mod input_device_summary {
             self.connection_state = Some(input);
             self
         }
+        /// The state of the connection between the input device and AWS.
         pub fn set_connection_state(
             mut self,
             input: std::option::Option<crate::model::InputDeviceConnectionState>,
@@ -33840,6 +36382,7 @@ pub mod input_device_summary {
             self.device_settings_sync_state = Some(input);
             self
         }
+        /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
         pub fn set_device_settings_sync_state(
             mut self,
             input: std::option::Option<crate::model::DeviceSettingsSyncState>,
@@ -33852,6 +36395,7 @@ pub mod input_device_summary {
             self.device_update_status = Some(input);
             self
         }
+        /// The status of software on the input device.
         pub fn set_device_update_status(
             mut self,
             input: std::option::Option<crate::model::DeviceUpdateStatus>,
@@ -33864,6 +36408,7 @@ pub mod input_device_summary {
             self.hd_device_settings = Some(input);
             self
         }
+        /// Settings that describe an input device that is type HD.
         pub fn set_hd_device_settings(
             mut self,
             input: std::option::Option<crate::model::InputDeviceHdSettings>,
@@ -33876,6 +36421,7 @@ pub mod input_device_summary {
             self.id = Some(input.into());
             self
         }
+        /// The unique ID of the input device.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -33885,6 +36431,7 @@ pub mod input_device_summary {
             self.mac_address = Some(input.into());
             self
         }
+        /// The network MAC address of the input device.
         pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mac_address = input;
             self
@@ -33894,6 +36441,7 @@ pub mod input_device_summary {
             self.name = Some(input.into());
             self
         }
+        /// A name that you specify for the input device.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -33903,6 +36451,7 @@ pub mod input_device_summary {
             self.network_settings = Some(input);
             self
         }
+        /// Network settings for the input device.
         pub fn set_network_settings(
             mut self,
             input: std::option::Option<crate::model::InputDeviceNetworkSettings>,
@@ -33915,6 +36464,7 @@ pub mod input_device_summary {
             self.serial_number = Some(input.into());
             self
         }
+        /// The unique serial number of the input device.
         pub fn set_serial_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -33927,6 +36477,7 @@ pub mod input_device_summary {
             self.r#type = Some(input);
             self
         }
+        /// The type of the input device.
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::InputDeviceType>,
@@ -33939,6 +36490,7 @@ pub mod input_device_summary {
             self.uhd_device_settings = Some(input);
             self
         }
+        /// Settings that describe an input device that is type UHD.
         pub fn set_uhd_device_settings(
             mut self,
             input: std::option::Option<crate::model::InputDeviceUhdSettings>,
@@ -34065,6 +36617,7 @@ pub mod channel_summary {
             self.arn = Some(input.into());
             self
         }
+        /// The unique arn of the channel.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -34077,6 +36630,7 @@ pub mod channel_summary {
             self.cdi_input_specification = Some(input);
             self
         }
+        /// Specification of CDI inputs for this channel
         pub fn set_cdi_input_specification(
             mut self,
             input: std::option::Option<crate::model::CdiInputSpecification>,
@@ -34089,6 +36643,7 @@ pub mod channel_summary {
             self.channel_class = Some(input);
             self
         }
+        /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
         pub fn set_channel_class(
             mut self,
             input: std::option::Option<crate::model::ChannelClass>,
@@ -34096,12 +36651,22 @@ pub mod channel_summary {
             self.channel_class = input;
             self
         }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// A list of destinations of the channel. For UDP outputs, there is one
+        /// destination per output. For other types (HLS, for example), there is
+        /// one destination per packager.
         pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input.into());
             self.destinations = Some(v);
             self
         }
+        /// A list of destinations of the channel. For UDP outputs, there is one
+        /// destination per output. For other types (HLS, for example), there is
+        /// one destination per packager.
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
@@ -34109,6 +36674,11 @@ pub mod channel_summary {
             self.destinations = input;
             self
         }
+        /// Appends an item to `egress_endpoints`.
+        ///
+        /// To override the contents of this collection use [`set_egress_endpoints`](Self::set_egress_endpoints).
+        ///
+        /// The endpoints where outgoing connections initiate from
         pub fn egress_endpoints(
             mut self,
             input: impl Into<crate::model::ChannelEgressEndpoint>,
@@ -34118,6 +36688,7 @@ pub mod channel_summary {
             self.egress_endpoints = Some(v);
             self
         }
+        /// The endpoints where outgoing connections initiate from
         pub fn set_egress_endpoints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
@@ -34130,10 +36701,16 @@ pub mod channel_summary {
             self.id = Some(input.into());
             self
         }
+        /// The unique id of the channel.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
+        /// Appends an item to `input_attachments`.
+        ///
+        /// To override the contents of this collection use [`set_input_attachments`](Self::set_input_attachments).
+        ///
+        /// List of input attachments for channel.
         pub fn input_attachments(
             mut self,
             input: impl Into<crate::model::InputAttachment>,
@@ -34143,6 +36720,7 @@ pub mod channel_summary {
             self.input_attachments = Some(v);
             self
         }
+        /// List of input attachments for channel.
         pub fn set_input_attachments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
@@ -34155,6 +36733,7 @@ pub mod channel_summary {
             self.input_specification = Some(input);
             self
         }
+        /// Specification of network and file inputs for this channel
         pub fn set_input_specification(
             mut self,
             input: std::option::Option<crate::model::InputSpecification>,
@@ -34167,6 +36746,7 @@ pub mod channel_summary {
             self.log_level = Some(input);
             self
         }
+        /// The log level being written to CloudWatch Logs.
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
             self.log_level = input;
             self
@@ -34176,6 +36756,7 @@ pub mod channel_summary {
             self.name = Some(input.into());
             self
         }
+        /// The name of the channel. (user-mutable)
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -34185,6 +36766,7 @@ pub mod channel_summary {
             self.pipelines_running_count = Some(input);
             self
         }
+        /// The number of currently healthy pipelines.
         pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
             self.pipelines_running_count = input;
             self
@@ -34194,6 +36776,7 @@ pub mod channel_summary {
             self.role_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -34203,10 +36786,16 @@ pub mod channel_summary {
             self.state = Some(input);
             self
         }
+        /// Placeholder documentation for ChannelState
         pub fn set_state(mut self, input: std::option::Option<crate::model::ChannelState>) -> Self {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// A collection of key-value pairs.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -34217,6 +36806,7 @@ pub mod channel_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// A collection of key-value pairs.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -34231,6 +36821,7 @@ pub mod channel_summary {
             self.vpc = Some(input);
             self
         }
+        /// Settings for any VPC outputs.
         pub fn set_vpc(
             mut self,
             input: std::option::Option<crate::model::VpcOutputSettingsDescription>,
@@ -34309,6 +36900,7 @@ pub mod schedule_action {
             self.action_name = Some(input.into());
             self
         }
+        /// The name of the action, must be unique within the schedule. This name provides the main reference to an action once it is added to the schedule. A name is unique if it is no longer in the schedule. The schedule is automatically cleaned up to remove actions with a start time of more than 1 hour ago (approximately) so at that point a name can be reused.
         pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_name = input;
             self
@@ -34321,6 +36913,7 @@ pub mod schedule_action {
             self.schedule_action_settings = Some(input);
             self
         }
+        /// Settings for this schedule action.
         pub fn set_schedule_action_settings(
             mut self,
             input: std::option::Option<crate::model::ScheduleActionSettings>,
@@ -34336,6 +36929,7 @@ pub mod schedule_action {
             self.schedule_action_start_settings = Some(input);
             self
         }
+        /// The time for the action to start in the channel.
         pub fn set_schedule_action_start_settings(
             mut self,
             input: std::option::Option<crate::model::ScheduleActionStartSettings>,
@@ -34414,6 +37008,7 @@ pub mod schedule_action_start_settings {
             self.fixed_mode_schedule_action_start_settings = Some(input);
             self
         }
+        /// Option for specifying the start time for an action.
         pub fn set_fixed_mode_schedule_action_start_settings(
             mut self,
             input: std::option::Option<crate::model::FixedModeScheduleActionStartSettings>,
@@ -34429,6 +37024,7 @@ pub mod schedule_action_start_settings {
             self.follow_mode_schedule_action_start_settings = Some(input);
             self
         }
+        /// Option for specifying an action as relative to another action.
         pub fn set_follow_mode_schedule_action_start_settings(
             mut self,
             input: std::option::Option<crate::model::FollowModeScheduleActionStartSettings>,
@@ -34444,6 +37040,7 @@ pub mod schedule_action_start_settings {
             self.immediate_mode_schedule_action_start_settings = Some(input);
             self
         }
+        /// Option for specifying an action that should be applied immediately.
         pub fn set_immediate_mode_schedule_action_start_settings(
             mut self,
             input: std::option::Option<crate::model::ImmediateModeScheduleActionStartSettings>,
@@ -34533,6 +37130,7 @@ pub mod follow_mode_schedule_action_start_settings {
             self.follow_point = Some(input);
             self
         }
+        /// Identifies whether this action starts relative to the start or relative to the end of the reference action.
         pub fn set_follow_point(
             mut self,
             input: std::option::Option<crate::model::FollowPoint>,
@@ -34545,6 +37143,7 @@ pub mod follow_mode_schedule_action_start_settings {
             self.reference_action_name = Some(input.into());
             self
         }
+        /// The action name of another action that this one refers to.
         pub fn set_reference_action_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -34580,7 +37179,9 @@ impl FollowModeScheduleActionStartSettings {
     std::hash::Hash,
 )]
 pub enum FollowPoint {
+    #[allow(missing_docs)] // documentation missing in model
     End,
+    #[allow(missing_docs)] // documentation missing in model
     Start,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -34602,6 +37203,7 @@ impl std::str::FromStr for FollowPoint {
     }
 }
 impl FollowPoint {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FollowPoint::End => "END",
@@ -34609,6 +37211,7 @@ impl FollowPoint {
             FollowPoint::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["END", "START"]
     }
@@ -34647,6 +37250,7 @@ pub mod fixed_mode_schedule_action_start_settings {
             self.time = Some(input.into());
             self
         }
+        /// Start time for the action to start in the channel. (Not the time for the action to be added to the schedule: actions are always added to the schedule immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All the letters are digits (for example, mm might be 01) except for the two constants "T" for time and "Z" for "UTC format".
         pub fn set_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.time = input;
             self
@@ -34788,6 +37392,7 @@ pub mod schedule_action_settings {
             self.hls_id3_segment_tagging_settings = Some(input);
             self
         }
+        /// Action to insert HLS ID3 segment tagging
         pub fn set_hls_id3_segment_tagging_settings(
             mut self,
             input: std::option::Option<crate::model::HlsId3SegmentTaggingScheduleActionSettings>,
@@ -34803,6 +37408,7 @@ pub mod schedule_action_settings {
             self.hls_timed_metadata_settings = Some(input);
             self
         }
+        /// Action to insert HLS metadata
         pub fn set_hls_timed_metadata_settings(
             mut self,
             input: std::option::Option<crate::model::HlsTimedMetadataScheduleActionSettings>,
@@ -34818,6 +37424,7 @@ pub mod schedule_action_settings {
             self.input_prepare_settings = Some(input);
             self
         }
+        /// Action to prepare an input for a future immediate input switch
         pub fn set_input_prepare_settings(
             mut self,
             input: std::option::Option<crate::model::InputPrepareScheduleActionSettings>,
@@ -34833,6 +37440,7 @@ pub mod schedule_action_settings {
             self.input_switch_settings = Some(input);
             self
         }
+        /// Action to switch the input
         pub fn set_input_switch_settings(
             mut self,
             input: std::option::Option<crate::model::InputSwitchScheduleActionSettings>,
@@ -34848,6 +37456,7 @@ pub mod schedule_action_settings {
             self.motion_graphics_image_activate_settings = Some(input);
             self
         }
+        /// Action to activate a motion graphics image overlay
         pub fn set_motion_graphics_image_activate_settings(
             mut self,
             input: std::option::Option<crate::model::MotionGraphicsActivateScheduleActionSettings>,
@@ -34863,6 +37472,7 @@ pub mod schedule_action_settings {
             self.motion_graphics_image_deactivate_settings = Some(input);
             self
         }
+        /// Action to deactivate a motion graphics image overlay
         pub fn set_motion_graphics_image_deactivate_settings(
             mut self,
             input: std::option::Option<
@@ -34880,6 +37490,7 @@ pub mod schedule_action_settings {
             self.pause_state_settings = Some(input);
             self
         }
+        /// Action to pause or unpause one or both channel pipelines
         pub fn set_pause_state_settings(
             mut self,
             input: std::option::Option<crate::model::PauseStateScheduleActionSettings>,
@@ -34895,6 +37506,7 @@ pub mod schedule_action_settings {
             self.scte35_return_to_network_settings = Some(input);
             self
         }
+        /// Action to insert SCTE-35 return_to_network message
         pub fn set_scte35_return_to_network_settings(
             mut self,
             input: std::option::Option<crate::model::Scte35ReturnToNetworkScheduleActionSettings>,
@@ -34910,6 +37522,7 @@ pub mod schedule_action_settings {
             self.scte35_splice_insert_settings = Some(input);
             self
         }
+        /// Action to insert SCTE-35 splice_insert message
         pub fn set_scte35_splice_insert_settings(
             mut self,
             input: std::option::Option<crate::model::Scte35SpliceInsertScheduleActionSettings>,
@@ -34925,6 +37538,7 @@ pub mod schedule_action_settings {
             self.scte35_time_signal_settings = Some(input);
             self
         }
+        /// Action to insert SCTE-35 time_signal message
         pub fn set_scte35_time_signal_settings(
             mut self,
             input: std::option::Option<crate::model::Scte35TimeSignalScheduleActionSettings>,
@@ -34940,6 +37554,7 @@ pub mod schedule_action_settings {
             self.static_image_activate_settings = Some(input);
             self
         }
+        /// Action to activate a static image overlay
         pub fn set_static_image_activate_settings(
             mut self,
             input: std::option::Option<crate::model::StaticImageActivateScheduleActionSettings>,
@@ -34955,6 +37570,7 @@ pub mod schedule_action_settings {
             self.static_image_deactivate_settings = Some(input);
             self
         }
+        /// Action to deactivate a static image overlay
         pub fn set_static_image_deactivate_settings(
             mut self,
             input: std::option::Option<crate::model::StaticImageDeactivateScheduleActionSettings>,
@@ -35022,6 +37638,7 @@ pub mod static_image_deactivate_schedule_action_settings {
             self.fade_out = Some(input);
             self
         }
+        /// The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
         pub fn set_fade_out(mut self, input: std::option::Option<i32>) -> Self {
             self.fade_out = input;
             self
@@ -35031,6 +37648,7 @@ pub mod static_image_deactivate_schedule_action_settings {
             self.layer = Some(input);
             self
         }
+        /// The image overlay layer to deactivate, 0 to 7. Default is 0.
         pub fn set_layer(mut self, input: std::option::Option<i32>) -> Self {
             self.layer = input;
             self
@@ -35115,6 +37733,7 @@ pub mod static_image_activate_schedule_action_settings {
             self.duration = Some(input);
             self
         }
+        /// The duration in milliseconds for the image to remain on the video. If omitted or set to 0 the duration is unlimited and the image will remain until it is explicitly deactivated.
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.duration = input;
             self
@@ -35124,6 +37743,7 @@ pub mod static_image_activate_schedule_action_settings {
             self.fade_in = Some(input);
             self
         }
+        /// The time in milliseconds for the image to fade in. The fade-in starts at the start time of the overlay. Default is 0 (no fade-in).
         pub fn set_fade_in(mut self, input: std::option::Option<i32>) -> Self {
             self.fade_in = input;
             self
@@ -35133,6 +37753,7 @@ pub mod static_image_activate_schedule_action_settings {
             self.fade_out = Some(input);
             self
         }
+        /// Applies only if a duration is specified. The time in milliseconds for the image to fade out. The fade-out starts when the duration time is hit, so it effectively extends the duration. Default is 0 (no fade-out).
         pub fn set_fade_out(mut self, input: std::option::Option<i32>) -> Self {
             self.fade_out = input;
             self
@@ -35142,6 +37763,7 @@ pub mod static_image_activate_schedule_action_settings {
             self.height = Some(input);
             self
         }
+        /// The height of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified height. Leave blank to use the native height of the overlay.
         pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
             self.height = input;
             self
@@ -35151,6 +37773,7 @@ pub mod static_image_activate_schedule_action_settings {
             self.image = Some(input);
             self
         }
+        /// The location and filename of the image file to overlay on the video. The file must be a 32-bit BMP, PNG, or TGA file, and must not be larger (in pixels) than the input video.
         pub fn set_image(
             mut self,
             input: std::option::Option<crate::model::InputLocation>,
@@ -35163,6 +37786,7 @@ pub mod static_image_activate_schedule_action_settings {
             self.image_x = Some(input);
             self
         }
+        /// Placement of the left edge of the overlay relative to the left edge of the video frame, in pixels. 0 (the default) is the left edge of the frame. If the placement causes the overlay to extend beyond the right edge of the underlying video, then the overlay is cropped on the right.
         pub fn set_image_x(mut self, input: std::option::Option<i32>) -> Self {
             self.image_x = input;
             self
@@ -35172,6 +37796,7 @@ pub mod static_image_activate_schedule_action_settings {
             self.image_y = Some(input);
             self
         }
+        /// Placement of the top edge of the overlay relative to the top edge of the video frame, in pixels. 0 (the default) is the top edge of the frame. If the placement causes the overlay to extend beyond the bottom edge of the underlying video, then the overlay is cropped on the bottom.
         pub fn set_image_y(mut self, input: std::option::Option<i32>) -> Self {
             self.image_y = input;
             self
@@ -35181,6 +37806,7 @@ pub mod static_image_activate_schedule_action_settings {
             self.layer = Some(input);
             self
         }
+        /// The number of the layer, 0 to 7. There are 8 layers that can be overlaid on the video, each layer with a different image. The layers are in Z order, which means that overlays with higher values of layer are inserted on top of overlays with lower values of layer. Default is 0.
         pub fn set_layer(mut self, input: std::option::Option<i32>) -> Self {
             self.layer = input;
             self
@@ -35190,6 +37816,7 @@ pub mod static_image_activate_schedule_action_settings {
             self.opacity = Some(input);
             self
         }
+        /// Opacity of image where 0 is transparent and 100 is fully opaque. Default is 100.
         pub fn set_opacity(mut self, input: std::option::Option<i32>) -> Self {
             self.opacity = input;
             self
@@ -35199,6 +37826,7 @@ pub mod static_image_activate_schedule_action_settings {
             self.width = Some(input);
             self
         }
+        /// The width of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified width. Leave blank to use the native width of the overlay.
         pub fn set_width(mut self, input: std::option::Option<i32>) -> Self {
             self.width = input;
             self
@@ -35251,6 +37879,11 @@ pub mod scte35_time_signal_schedule_action_settings {
             std::option::Option<std::vec::Vec<crate::model::Scte35Descriptor>>,
     }
     impl Builder {
+        /// Appends an item to `scte35_descriptors`.
+        ///
+        /// To override the contents of this collection use [`set_scte35_descriptors`](Self::set_scte35_descriptors).
+        ///
+        /// The list of SCTE-35 descriptors accompanying the SCTE-35 time_signal.
         pub fn scte35_descriptors(
             mut self,
             input: impl Into<crate::model::Scte35Descriptor>,
@@ -35260,6 +37893,7 @@ pub mod scte35_time_signal_schedule_action_settings {
             self.scte35_descriptors = Some(v);
             self
         }
+        /// The list of SCTE-35 descriptors accompanying the SCTE-35 time_signal.
         pub fn set_scte35_descriptors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Scte35Descriptor>>,
@@ -35317,6 +37951,7 @@ pub mod scte35_descriptor {
             self.scte35_descriptor_settings = Some(input);
             self
         }
+        /// SCTE-35 Descriptor Settings.
         pub fn set_scte35_descriptor_settings(
             mut self,
             input: std::option::Option<crate::model::Scte35DescriptorSettings>,
@@ -35375,6 +38010,7 @@ pub mod scte35_descriptor_settings {
             self.segmentation_descriptor_scte35_descriptor_settings = Some(input);
             self
         }
+        /// SCTE-35 Segmentation Descriptor.
         pub fn set_segmentation_descriptor_scte35_descriptor_settings(
             mut self,
             input: std::option::Option<crate::model::Scte35SegmentationDescriptor>,
@@ -35475,6 +38111,7 @@ pub mod scte35_segmentation_descriptor {
             self.delivery_restrictions = Some(input);
             self
         }
+        /// Holds the four SCTE-35 delivery restriction parameters.
         pub fn set_delivery_restrictions(
             mut self,
             input: std::option::Option<crate::model::Scte35DeliveryRestrictions>,
@@ -35487,6 +38124,7 @@ pub mod scte35_segmentation_descriptor {
             self.segment_num = Some(input);
             self
         }
+        /// Corresponds to SCTE-35 segment_num. A value that is valid for the specified segmentation_type_id.
         pub fn set_segment_num(mut self, input: std::option::Option<i32>) -> Self {
             self.segment_num = input;
             self
@@ -35499,6 +38137,7 @@ pub mod scte35_segmentation_descriptor {
             self.segmentation_cancel_indicator = Some(input);
             self
         }
+        /// Corresponds to SCTE-35 segmentation_event_cancel_indicator.
         pub fn set_segmentation_cancel_indicator(
             mut self,
             input: std::option::Option<crate::model::Scte35SegmentationCancelIndicator>,
@@ -35511,6 +38150,7 @@ pub mod scte35_segmentation_descriptor {
             self.segmentation_duration = Some(input);
             self
         }
+        /// Corresponds to SCTE-35 segmentation_duration. Optional. The duration for the time_signal, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds by 90,000. Enter time in 90 KHz clock ticks. If you do not enter a duration, the time_signal will continue until you insert a cancellation message.
         pub fn set_segmentation_duration(mut self, input: std::option::Option<i64>) -> Self {
             self.segmentation_duration = input;
             self
@@ -35520,6 +38160,7 @@ pub mod scte35_segmentation_descriptor {
             self.segmentation_event_id = Some(input);
             self
         }
+        /// Corresponds to SCTE-35 segmentation_event_id.
         pub fn set_segmentation_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.segmentation_event_id = input;
             self
@@ -35529,6 +38170,7 @@ pub mod scte35_segmentation_descriptor {
             self.segmentation_type_id = Some(input);
             self
         }
+        /// Corresponds to SCTE-35 segmentation_type_id. One of the segmentation_type_id values listed in the SCTE-35 specification. On the console, enter the ID in decimal (for example, "52"). In the CLI, API, or an SDK, enter the ID in hex (for example, "0x34") or decimal (for example, "52").
         pub fn set_segmentation_type_id(mut self, input: std::option::Option<i32>) -> Self {
             self.segmentation_type_id = input;
             self
@@ -35538,6 +38180,7 @@ pub mod scte35_segmentation_descriptor {
             self.segmentation_upid = Some(input.into());
             self
         }
+        /// Corresponds to SCTE-35 segmentation_upid. Enter a string containing the hexadecimal representation of the characters that make up the SCTE-35 segmentation_upid value. Must contain an even number of hex characters. Do not include spaces between each hex pair. For example, the ASCII "ADS Information" becomes hex "41445320496e666f726d6174696f6e.
         pub fn set_segmentation_upid(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -35550,6 +38193,7 @@ pub mod scte35_segmentation_descriptor {
             self.segmentation_upid_type = Some(input);
             self
         }
+        /// Corresponds to SCTE-35 segmentation_upid_type. On the console, enter one of the types listed in the SCTE-35 specification, converted to a decimal. For example, "0x0C" hex from the specification is "12" in decimal. In the CLI, API, or an SDK, enter one of the types listed in the SCTE-35 specification, in either hex (for example, "0x0C" ) or in decimal (for example, "12").
         pub fn set_segmentation_upid_type(mut self, input: std::option::Option<i32>) -> Self {
             self.segmentation_upid_type = input;
             self
@@ -35559,6 +38203,7 @@ pub mod scte35_segmentation_descriptor {
             self.segments_expected = Some(input);
             self
         }
+        /// Corresponds to SCTE-35 segments_expected. A value that is valid for the specified segmentation_type_id.
         pub fn set_segments_expected(mut self, input: std::option::Option<i32>) -> Self {
             self.segments_expected = input;
             self
@@ -35568,6 +38213,7 @@ pub mod scte35_segmentation_descriptor {
             self.sub_segment_num = Some(input);
             self
         }
+        /// Corresponds to SCTE-35 sub_segment_num. A value that is valid for the specified segmentation_type_id.
         pub fn set_sub_segment_num(mut self, input: std::option::Option<i32>) -> Self {
             self.sub_segment_num = input;
             self
@@ -35577,6 +38223,7 @@ pub mod scte35_segmentation_descriptor {
             self.sub_segments_expected = Some(input);
             self
         }
+        /// Corresponds to SCTE-35 sub_segments_expected. A value that is valid for the specified segmentation_type_id.
         pub fn set_sub_segments_expected(mut self, input: std::option::Option<i32>) -> Self {
             self.sub_segments_expected = input;
             self
@@ -35618,7 +38265,9 @@ impl Scte35SegmentationDescriptor {
     std::hash::Hash,
 )]
 pub enum Scte35SegmentationCancelIndicator {
+    #[allow(missing_docs)] // documentation missing in model
     SegmentationEventCanceled,
+    #[allow(missing_docs)] // documentation missing in model
     SegmentationEventNotCanceled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -35644,6 +38293,7 @@ impl std::str::FromStr for Scte35SegmentationCancelIndicator {
     }
 }
 impl Scte35SegmentationCancelIndicator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Scte35SegmentationCancelIndicator::SegmentationEventCanceled => {
@@ -35655,6 +38305,7 @@ impl Scte35SegmentationCancelIndicator {
             Scte35SegmentationCancelIndicator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "SEGMENTATION_EVENT_CANCELED",
@@ -35714,6 +38365,7 @@ pub mod scte35_delivery_restrictions {
             self.archive_allowed_flag = Some(input);
             self
         }
+        /// Corresponds to SCTE-35 archive_allowed_flag.
         pub fn set_archive_allowed_flag(
             mut self,
             input: std::option::Option<crate::model::Scte35ArchiveAllowedFlag>,
@@ -35729,6 +38381,7 @@ pub mod scte35_delivery_restrictions {
             self.device_restrictions = Some(input);
             self
         }
+        /// Corresponds to SCTE-35 device_restrictions parameter.
         pub fn set_device_restrictions(
             mut self,
             input: std::option::Option<crate::model::Scte35DeviceRestrictions>,
@@ -35744,6 +38397,7 @@ pub mod scte35_delivery_restrictions {
             self.no_regional_blackout_flag = Some(input);
             self
         }
+        /// Corresponds to SCTE-35 no_regional_blackout_flag parameter.
         pub fn set_no_regional_blackout_flag(
             mut self,
             input: std::option::Option<crate::model::Scte35NoRegionalBlackoutFlag>,
@@ -35759,6 +38413,7 @@ pub mod scte35_delivery_restrictions {
             self.web_delivery_allowed_flag = Some(input);
             self
         }
+        /// Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
         pub fn set_web_delivery_allowed_flag(
             mut self,
             input: std::option::Option<crate::model::Scte35WebDeliveryAllowedFlag>,
@@ -35796,7 +38451,9 @@ impl Scte35DeliveryRestrictions {
     std::hash::Hash,
 )]
 pub enum Scte35WebDeliveryAllowedFlag {
+    #[allow(missing_docs)] // documentation missing in model
     WebDeliveryAllowed,
+    #[allow(missing_docs)] // documentation missing in model
     WebDeliveryNotAllowed,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -35818,6 +38475,7 @@ impl std::str::FromStr for Scte35WebDeliveryAllowedFlag {
     }
 }
 impl Scte35WebDeliveryAllowedFlag {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Scte35WebDeliveryAllowedFlag::WebDeliveryAllowed => "WEB_DELIVERY_ALLOWED",
@@ -35825,6 +38483,7 @@ impl Scte35WebDeliveryAllowedFlag {
             Scte35WebDeliveryAllowedFlag::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["WEB_DELIVERY_ALLOWED", "WEB_DELIVERY_NOT_ALLOWED"]
     }
@@ -35847,7 +38506,9 @@ impl AsRef<str> for Scte35WebDeliveryAllowedFlag {
     std::hash::Hash,
 )]
 pub enum Scte35NoRegionalBlackoutFlag {
+    #[allow(missing_docs)] // documentation missing in model
     NoRegionalBlackout,
+    #[allow(missing_docs)] // documentation missing in model
     RegionalBlackout,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -35869,6 +38530,7 @@ impl std::str::FromStr for Scte35NoRegionalBlackoutFlag {
     }
 }
 impl Scte35NoRegionalBlackoutFlag {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Scte35NoRegionalBlackoutFlag::NoRegionalBlackout => "NO_REGIONAL_BLACKOUT",
@@ -35876,6 +38538,7 @@ impl Scte35NoRegionalBlackoutFlag {
             Scte35NoRegionalBlackoutFlag::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NO_REGIONAL_BLACKOUT", "REGIONAL_BLACKOUT"]
     }
@@ -35898,9 +38561,13 @@ impl AsRef<str> for Scte35NoRegionalBlackoutFlag {
     std::hash::Hash,
 )]
 pub enum Scte35DeviceRestrictions {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     RestrictGroup0,
+    #[allow(missing_docs)] // documentation missing in model
     RestrictGroup1,
+    #[allow(missing_docs)] // documentation missing in model
     RestrictGroup2,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -35924,6 +38591,7 @@ impl std::str::FromStr for Scte35DeviceRestrictions {
     }
 }
 impl Scte35DeviceRestrictions {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Scte35DeviceRestrictions::None => "NONE",
@@ -35933,6 +38601,7 @@ impl Scte35DeviceRestrictions {
             Scte35DeviceRestrictions::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "NONE",
@@ -35960,7 +38629,9 @@ impl AsRef<str> for Scte35DeviceRestrictions {
     std::hash::Hash,
 )]
 pub enum Scte35ArchiveAllowedFlag {
+    #[allow(missing_docs)] // documentation missing in model
     ArchiveAllowed,
+    #[allow(missing_docs)] // documentation missing in model
     ArchiveNotAllowed,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -35982,6 +38653,7 @@ impl std::str::FromStr for Scte35ArchiveAllowedFlag {
     }
 }
 impl Scte35ArchiveAllowedFlag {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Scte35ArchiveAllowedFlag::ArchiveAllowed => "ARCHIVE_ALLOWED",
@@ -35989,6 +38661,7 @@ impl Scte35ArchiveAllowedFlag {
             Scte35ArchiveAllowedFlag::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ARCHIVE_ALLOWED", "ARCHIVE_NOT_ALLOWED"]
     }
@@ -36031,6 +38704,7 @@ pub mod scte35_splice_insert_schedule_action_settings {
             self.duration = Some(input);
             self
         }
+        /// Optional, the duration for the splice_insert, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds by 90,000. If you enter a duration, there is an expectation that the downstream system can read the duration and cue in at that time. If you do not enter a duration, the splice_insert will continue indefinitely and there is an expectation that you will enter a return_to_network to end the splice_insert at the appropriate time.
         pub fn set_duration(mut self, input: std::option::Option<i64>) -> Self {
             self.duration = input;
             self
@@ -36040,6 +38714,7 @@ pub mod scte35_splice_insert_schedule_action_settings {
             self.splice_event_id = Some(input);
             self
         }
+        /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
         pub fn set_splice_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.splice_event_id = input;
             self
@@ -36088,6 +38763,7 @@ pub mod scte35_return_to_network_schedule_action_settings {
             self.splice_event_id = Some(input);
             self
         }
+        /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
         pub fn set_splice_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.splice_event_id = input;
             self
@@ -36131,6 +38807,11 @@ pub mod pause_state_schedule_action_settings {
             std::option::Option<std::vec::Vec<crate::model::PipelinePauseStateSettings>>,
     }
     impl Builder {
+        /// Appends an item to `pipelines`.
+        ///
+        /// To override the contents of this collection use [`set_pipelines`](Self::set_pipelines).
+        ///
+        /// Placeholder documentation for __listOfPipelinePauseStateSettings
         pub fn pipelines(
             mut self,
             input: impl Into<crate::model::PipelinePauseStateSettings>,
@@ -36140,6 +38821,7 @@ pub mod pause_state_schedule_action_settings {
             self.pipelines = Some(v);
             self
         }
+        /// Placeholder documentation for __listOfPipelinePauseStateSettings
         pub fn set_pipelines(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelinePauseStateSettings>>,
@@ -36190,6 +38872,7 @@ pub mod pipeline_pause_state_settings {
             self.pipeline_id = Some(input);
             self
         }
+        /// Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
         pub fn set_pipeline_id(
             mut self,
             input: std::option::Option<crate::model::PipelineId>,
@@ -36224,7 +38907,9 @@ impl PipelinePauseStateSettings {
     std::hash::Hash,
 )]
 pub enum PipelineId {
+    #[allow(missing_docs)] // documentation missing in model
     Pipeline0,
+    #[allow(missing_docs)] // documentation missing in model
     Pipeline1,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -36246,6 +38931,7 @@ impl std::str::FromStr for PipelineId {
     }
 }
 impl PipelineId {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PipelineId::Pipeline0 => "PIPELINE_0",
@@ -36253,6 +38939,7 @@ impl PipelineId {
             PipelineId::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PIPELINE_0", "PIPELINE_1"]
     }
@@ -36333,6 +39020,7 @@ pub mod motion_graphics_activate_schedule_action_settings {
             self.duration = Some(input);
             self
         }
+        /// Duration (in milliseconds) that motion graphics should render on to the video stream. Leaving out this property or setting to 0 will result in rendering continuing until a deactivate action is processed.
         pub fn set_duration(mut self, input: std::option::Option<i64>) -> Self {
             self.duration = input;
             self
@@ -36342,6 +39030,7 @@ pub mod motion_graphics_activate_schedule_action_settings {
             self.password_param = Some(input.into());
             self
         }
+        /// Key used to extract the password from EC2 Parameter store
         pub fn set_password_param(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -36354,6 +39043,7 @@ pub mod motion_graphics_activate_schedule_action_settings {
             self.url = Some(input.into());
             self
         }
+        /// URI of the HTML5 content to be rendered into the live stream.
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -36363,6 +39053,7 @@ pub mod motion_graphics_activate_schedule_action_settings {
             self.username = Some(input.into());
             self
         }
+        /// Documentation update needed
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -36428,6 +39119,7 @@ pub mod input_switch_schedule_action_settings {
             self.input_attachment_name_reference = Some(input.into());
             self
         }
+        /// The name of the input attachment (not the name of the input!) to switch to. The name is specified in the channel configuration.
         pub fn set_input_attachment_name_reference(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -36443,6 +39135,7 @@ pub mod input_switch_schedule_action_settings {
             self.input_clipping_settings = Some(input);
             self
         }
+        /// Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
         pub fn set_input_clipping_settings(
             mut self,
             input: std::option::Option<crate::model::InputClippingSettings>,
@@ -36450,12 +39143,18 @@ pub mod input_switch_schedule_action_settings {
             self.input_clipping_settings = input;
             self
         }
+        /// Appends an item to `url_path`.
+        ///
+        /// To override the contents of this collection use [`set_url_path`](Self::set_url_path).
+        ///
+        /// The value for the variable portion of the URL for the dynamic input, for this instance of the input. Each time you use the same dynamic input in an input switch action, you can provide a different value, in order to connect the input to a different content source.
         pub fn url_path(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.url_path.unwrap_or_default();
             v.push(input.into());
             self.url_path = Some(v);
             self
         }
+        /// The value for the variable portion of the URL for the dynamic input, for this instance of the input. Each time you use the same dynamic input in an input switch action, you can provide a different value, in order to connect the input to a different content source.
         pub fn set_url_path(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -36516,6 +39215,7 @@ pub mod input_clipping_settings {
             self.input_timecode_source = Some(input);
             self
         }
+        /// The source of the timecodes in the source being clipped.
         pub fn set_input_timecode_source(
             mut self,
             input: std::option::Option<crate::model::InputTimecodeSource>,
@@ -36528,6 +39228,7 @@ pub mod input_clipping_settings {
             self.start_timecode = Some(input);
             self
         }
+        /// Settings to identify the start of the clip.
         pub fn set_start_timecode(
             mut self,
             input: std::option::Option<crate::model::StartTimecode>,
@@ -36540,6 +39241,7 @@ pub mod input_clipping_settings {
             self.stop_timecode = Some(input);
             self
         }
+        /// Settings to identify the end of the clip.
         pub fn set_stop_timecode(
             mut self,
             input: std::option::Option<crate::model::StopTimecode>,
@@ -36603,6 +39305,7 @@ pub mod stop_timecode {
             self.last_frame_clipping_behavior = Some(input);
             self
         }
+        /// If you specify a StopTimecode in an input (in order to clip the file), you can specify if you want the clip to exclude (the default) or include the frame specified by the timecode.
         pub fn set_last_frame_clipping_behavior(
             mut self,
             input: std::option::Option<crate::model::LastFrameClippingBehavior>,
@@ -36615,6 +39318,7 @@ pub mod stop_timecode {
             self.timecode = Some(input.into());
             self
         }
+        /// The timecode for the frame where you want to stop the clip. Optional; if not specified, the clip continues to the end of the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
         pub fn set_timecode(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timecode = input;
             self
@@ -36647,7 +39351,9 @@ impl StopTimecode {
     std::hash::Hash,
 )]
 pub enum LastFrameClippingBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     ExcludeLastFrame,
+    #[allow(missing_docs)] // documentation missing in model
     IncludeLastFrame,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -36669,6 +39375,7 @@ impl std::str::FromStr for LastFrameClippingBehavior {
     }
 }
 impl LastFrameClippingBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LastFrameClippingBehavior::ExcludeLastFrame => "EXCLUDE_LAST_FRAME",
@@ -36676,6 +39383,7 @@ impl LastFrameClippingBehavior {
             LastFrameClippingBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EXCLUDE_LAST_FRAME", "INCLUDE_LAST_FRAME"]
     }
@@ -36714,6 +39422,7 @@ pub mod start_timecode {
             self.timecode = Some(input.into());
             self
         }
+        /// The timecode for the frame where you want to start the clip. Optional; if not specified, the clip starts at first frame in the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
         pub fn set_timecode(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timecode = input;
             self
@@ -36745,7 +39454,9 @@ impl StartTimecode {
     std::hash::Hash,
 )]
 pub enum InputTimecodeSource {
+    #[allow(missing_docs)] // documentation missing in model
     Embedded,
+    #[allow(missing_docs)] // documentation missing in model
     Zerobased,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -36767,6 +39478,7 @@ impl std::str::FromStr for InputTimecodeSource {
     }
 }
 impl InputTimecodeSource {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputTimecodeSource::Embedded => "EMBEDDED",
@@ -36774,6 +39486,7 @@ impl InputTimecodeSource {
             InputTimecodeSource::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EMBEDDED", "ZEROBASED"]
     }
@@ -36827,6 +39540,7 @@ pub mod input_prepare_schedule_action_settings {
             self.input_attachment_name_reference = Some(input.into());
             self
         }
+        /// The name of the input attachment that should be prepared by this action. If no name is provided, the action will stop the most recent prepare (if any) when activated.
         pub fn set_input_attachment_name_reference(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -36842,6 +39556,7 @@ pub mod input_prepare_schedule_action_settings {
             self.input_clipping_settings = Some(input);
             self
         }
+        /// Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
         pub fn set_input_clipping_settings(
             mut self,
             input: std::option::Option<crate::model::InputClippingSettings>,
@@ -36849,12 +39564,18 @@ pub mod input_prepare_schedule_action_settings {
             self.input_clipping_settings = input;
             self
         }
+        /// Appends an item to `url_path`.
+        ///
+        /// To override the contents of this collection use [`set_url_path`](Self::set_url_path).
+        ///
+        /// The value for the variable portion of the URL for the dynamic input, for this instance of the input. Each time you use the same dynamic input in an input switch action, you can provide a different value, in order to connect the input to a different content source.
         pub fn url_path(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.url_path.unwrap_or_default();
             v.push(input.into());
             self.url_path = Some(v);
             self
         }
+        /// The value for the variable portion of the URL for the dynamic input, for this instance of the input. Each time you use the same dynamic input in an input switch action, you can provide a different value, in order to connect the input to a different content source.
         pub fn set_url_path(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -36907,6 +39628,7 @@ pub mod hls_timed_metadata_schedule_action_settings {
             self.id3 = Some(input.into());
             self
         }
+        /// Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
         pub fn set_id3(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id3 = input;
             self
@@ -36952,6 +39674,7 @@ pub mod hls_id3_segment_tagging_schedule_action_settings {
             self.tag = Some(input.into());
             self
         }
+        /// ID3 tag to insert into each segment. Supports special keyword identifiers to substitute in segment-related values.\nSupported keyword identifiers: https://docs.aws.amazon.com/medialive/latest/ug/variable-data-identifiers.html
         pub fn set_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tag = input;
             self
@@ -36981,6 +39704,7 @@ impl HlsId3SegmentTaggingScheduleActionSettings {
     std::hash::Hash,
 )]
 pub enum ContentType {
+    #[allow(missing_docs)] // documentation missing in model
     ImageJpeg,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -37001,12 +39725,14 @@ impl std::str::FromStr for ContentType {
     }
 }
 impl ContentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContentType::ImageJpeg => "image/jpeg",
             ContentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["image/jpeg"]
     }
@@ -37029,6 +39755,7 @@ impl AsRef<str> for ContentType {
     std::hash::Hash,
 )]
 pub enum AcceptHeader {
+    #[allow(missing_docs)] // documentation missing in model
     ImageJpeg,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -37049,12 +39776,14 @@ impl std::str::FromStr for AcceptHeader {
     }
 }
 impl AcceptHeader {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AcceptHeader::ImageJpeg => "image/jpeg",
             AcceptHeader::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["image/jpeg"]
     }
@@ -37097,12 +39826,20 @@ pub mod input_vpc_request {
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// A list of up to 5 EC2 VPC security group IDs to attach to the Input VPC network interfaces.
+        /// Requires subnetIds. If none are specified then the VPC default security group will be used.
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// A list of up to 5 EC2 VPC security group IDs to attach to the Input VPC network interfaces.
+        /// Requires subnetIds. If none are specified then the VPC default security group will be used.
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -37110,12 +39847,20 @@ pub mod input_vpc_request {
             self.security_group_ids = input;
             self
         }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// A list of 2 VPC subnet IDs from the same VPC.
+        /// Subnet IDs must be mapped to two unique availability zones (AZ).
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// A list of 2 VPC subnet IDs from the same VPC.
+        /// Subnet IDs must be mapped to two unique availability zones (AZ).
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -37178,6 +39923,12 @@ pub mod vpc_output_settings {
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `public_address_allocation_ids`.
+        ///
+        /// To override the contents of this collection use [`set_public_address_allocation_ids`](Self::set_public_address_allocation_ids).
+        ///
+        /// List of public address allocation ids to associate with ENIs that will be created in Output VPC.
+        /// Must specify one for SINGLE_PIPELINE, two for STANDARD channels
         pub fn public_address_allocation_ids(
             mut self,
             input: impl Into<std::string::String>,
@@ -37187,6 +39938,8 @@ pub mod vpc_output_settings {
             self.public_address_allocation_ids = Some(v);
             self
         }
+        /// List of public address allocation ids to associate with ENIs that will be created in Output VPC.
+        /// Must specify one for SINGLE_PIPELINE, two for STANDARD channels
         pub fn set_public_address_allocation_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -37194,12 +39947,20 @@ pub mod vpc_output_settings {
             self.public_address_allocation_ids = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// A list of up to 5 EC2 VPC security group IDs to attach to the Output VPC network interfaces.
+        /// If none are specified then the VPC default security group will be used
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// A list of up to 5 EC2 VPC security group IDs to attach to the Output VPC network interfaces.
+        /// If none are specified then the VPC default security group will be used
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -37207,12 +39968,20 @@ pub mod vpc_output_settings {
             self.security_group_ids = input;
             self
         }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// A list of VPC subnet IDs from the same VPC.
+        /// If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// A list of VPC subnet IDs from the same VPC.
+        /// If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -37261,12 +40030,18 @@ pub mod batch_schedule_action_delete_result {
             std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
     }
     impl Builder {
+        /// Appends an item to `schedule_actions`.
+        ///
+        /// To override the contents of this collection use [`set_schedule_actions`](Self::set_schedule_actions).
+        ///
+        /// List of actions that have been deleted from the schedule.
         pub fn schedule_actions(mut self, input: impl Into<crate::model::ScheduleAction>) -> Self {
             let mut v = self.schedule_actions.unwrap_or_default();
             v.push(input.into());
             self.schedule_actions = Some(v);
             self
         }
+        /// List of actions that have been deleted from the schedule.
         pub fn set_schedule_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
@@ -37313,12 +40088,18 @@ pub mod batch_schedule_action_create_result {
             std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
     }
     impl Builder {
+        /// Appends an item to `schedule_actions`.
+        ///
+        /// To override the contents of this collection use [`set_schedule_actions`](Self::set_schedule_actions).
+        ///
+        /// List of actions that have been created in the schedule.
         pub fn schedule_actions(mut self, input: impl Into<crate::model::ScheduleAction>) -> Self {
             let mut v = self.schedule_actions.unwrap_or_default();
             v.push(input.into());
             self.schedule_actions = Some(v);
             self
         }
+        /// List of actions that have been created in the schedule.
         pub fn set_schedule_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
@@ -37364,12 +40145,18 @@ pub mod batch_schedule_action_delete_request {
         pub(crate) action_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `action_names`.
+        ///
+        /// To override the contents of this collection use [`set_action_names`](Self::set_action_names).
+        ///
+        /// A list of schedule actions to delete.
         pub fn action_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.action_names.unwrap_or_default();
             v.push(input.into());
             self.action_names = Some(v);
             self
         }
+        /// A list of schedule actions to delete.
         pub fn set_action_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -37416,12 +40203,18 @@ pub mod batch_schedule_action_create_request {
             std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
     }
     impl Builder {
+        /// Appends an item to `schedule_actions`.
+        ///
+        /// To override the contents of this collection use [`set_schedule_actions`](Self::set_schedule_actions).
+        ///
+        /// A list of schedule actions to create.
         pub fn schedule_actions(mut self, input: impl Into<crate::model::ScheduleAction>) -> Self {
             let mut v = self.schedule_actions.unwrap_or_default();
             v.push(input.into());
             self.schedule_actions = Some(v);
             self
         }
+        /// A list of schedule actions to create.
         pub fn set_schedule_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
@@ -37480,6 +40273,7 @@ pub mod batch_successful_result_model {
             self.arn = Some(input.into());
             self
         }
+        /// ARN of the resource
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -37489,6 +40283,7 @@ pub mod batch_successful_result_model {
             self.id = Some(input.into());
             self
         }
+        /// ID of the resource
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -37498,6 +40293,7 @@ pub mod batch_successful_result_model {
             self.state = Some(input.into());
             self
         }
+        /// Current state of the resource
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -37559,6 +40355,7 @@ pub mod batch_failed_result_model {
             self.arn = Some(input.into());
             self
         }
+        /// ARN of the resource
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -37568,6 +40365,7 @@ pub mod batch_failed_result_model {
             self.code = Some(input.into());
             self
         }
+        /// Error code for the failed operation
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
@@ -37577,6 +40375,7 @@ pub mod batch_failed_result_model {
             self.id = Some(input.into());
             self
         }
+        /// ID of the resource
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -37586,6 +40385,7 @@ pub mod batch_failed_result_model {
             self.message = Some(input.into());
             self
         }
+        /// Error message for the failed operation
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self

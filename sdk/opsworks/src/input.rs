@@ -15,16 +15,23 @@ pub mod assign_instance_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The instance ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
         }
+        /// Appends an item to `layer_ids`.
+        ///
+        /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
+        ///
+        /// <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
         pub fn layer_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.layer_ids.unwrap_or_default();
             v.push(input.into());
             self.layer_ids = Some(v);
             self
         }
+        /// <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
         pub fn set_layer_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -37,7 +44,7 @@ pub mod assign_instance_input {
             self,
         ) -> std::result::Result<
             crate::input::AssignInstanceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AssignInstanceInput {
                 instance_id: self.instance_id,
@@ -57,16 +64,16 @@ impl AssignInstanceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AssignInstance,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AssignInstanceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -74,7 +81,7 @@ impl AssignInstanceInput {
         fn update_http_builder(
             input: &crate::input::AssignInstanceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -83,29 +90,31 @@ impl AssignInstanceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AssignInstanceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.AssignInstance",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_assign_instance(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -128,15 +137,15 @@ impl AssignInstanceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AssignInstance::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AssignInstance",
             "opsworks",
         ));
@@ -145,10 +154,10 @@ impl AssignInstanceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -177,6 +186,7 @@ pub mod assign_volume_input {
             self.volume_id = Some(input.into());
             self
         }
+        /// <p>The volume ID.</p>
         pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.volume_id = input;
             self
@@ -186,6 +196,7 @@ pub mod assign_volume_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The instance ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -193,8 +204,10 @@ pub mod assign_volume_input {
         /// Consumes the builder and constructs a [`AssignVolumeInput`](crate::input::AssignVolumeInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::AssignVolumeInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::AssignVolumeInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::AssignVolumeInput {
                 volume_id: self.volume_id,
                 instance_id: self.instance_id,
@@ -213,16 +226,16 @@ impl AssignVolumeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AssignVolume,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AssignVolumeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -230,7 +243,7 @@ impl AssignVolumeInput {
         fn update_http_builder(
             input: &crate::input::AssignVolumeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -239,31 +252,31 @@ impl AssignVolumeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AssignVolumeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.AssignVolume",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_assign_volume(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -286,25 +299,27 @@ impl AssignVolumeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::AssignVolume::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "AssignVolume",
-                    "opsworks",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AssignVolume::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AssignVolume",
+            "opsworks",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -333,6 +348,7 @@ pub mod associate_elastic_ip_input {
             self.elastic_ip = Some(input.into());
             self
         }
+        /// <p>The Elastic IP address.</p>
         pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.elastic_ip = input;
             self
@@ -342,6 +358,7 @@ pub mod associate_elastic_ip_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The instance ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -351,7 +368,7 @@ pub mod associate_elastic_ip_input {
             self,
         ) -> std::result::Result<
             crate::input::AssociateElasticIpInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AssociateElasticIpInput {
                 elastic_ip: self.elastic_ip,
@@ -371,16 +388,16 @@ impl AssociateElasticIpInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AssociateElasticIp,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AssociateElasticIpInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -388,7 +405,7 @@ impl AssociateElasticIpInput {
         fn update_http_builder(
             input: &crate::input::AssociateElasticIpInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -397,30 +414,32 @@ impl AssociateElasticIpInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AssociateElasticIpInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.AssociateElasticIp",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_elastic_ip(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -443,15 +462,15 @@ impl AssociateElasticIpInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AssociateElasticIp::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AssociateElasticIp",
             "opsworks",
         ));
@@ -460,10 +479,10 @@ impl AssociateElasticIpInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -492,6 +511,7 @@ pub mod attach_elastic_load_balancer_input {
             self.elastic_load_balancer_name = Some(input.into());
             self
         }
+        /// <p>The Elastic Load Balancing instance's name.</p>
         pub fn set_elastic_load_balancer_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -504,6 +524,7 @@ pub mod attach_elastic_load_balancer_input {
             self.layer_id = Some(input.into());
             self
         }
+        /// <p>The ID of the layer to which the Elastic Load Balancing instance is to be attached.</p>
         pub fn set_layer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.layer_id = input;
             self
@@ -513,7 +534,7 @@ pub mod attach_elastic_load_balancer_input {
             self,
         ) -> std::result::Result<
             crate::input::AttachElasticLoadBalancerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AttachElasticLoadBalancerInput {
                 elastic_load_balancer_name: self.elastic_load_balancer_name,
@@ -534,16 +555,16 @@ impl AttachElasticLoadBalancerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AttachElasticLoadBalancer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AttachElasticLoadBalancerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -551,7 +572,7 @@ impl AttachElasticLoadBalancerInput {
         fn update_http_builder(
             input: &crate::input::AttachElasticLoadBalancerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -560,32 +581,34 @@ impl AttachElasticLoadBalancerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AttachElasticLoadBalancerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.AttachElasticLoadBalancer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_attach_elastic_load_balancer(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -608,15 +631,15 @@ impl AttachElasticLoadBalancerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AttachElasticLoadBalancer::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AttachElasticLoadBalancer",
             "opsworks",
         ));
@@ -625,10 +648,10 @@ impl AttachElasticLoadBalancerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -680,6 +703,7 @@ pub mod clone_stack_input {
             self.source_stack_id = Some(input.into());
             self
         }
+        /// <p>The source stack ID.</p>
         pub fn set_source_stack_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -692,6 +716,7 @@ pub mod clone_stack_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The cloned stack name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -702,6 +727,8 @@ pub mod clone_stack_input {
             self.region = Some(input.into());
             self
         }
+        /// <p>The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -737,10 +764,42 @@ pub mod clone_stack_input {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All
+        /// instances are launched into this VPC, and you cannot change the ID later.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If your account supports EC2 Classic, the default value is no VPC.</p>
+        /// </li>
+        /// <li>
+        /// <p>If your account does not support EC2 Classic, the default value is the default VPC for the specified region.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If the VPC ID corresponds to a default VPC and you have specified either the
+        /// <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only,
+        /// AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets
+        /// these parameters to the first valid Availability Zone for the specified region and the
+        /// corresponding default VPC subnet ID, respectively. </p>
+        /// <p>If you specify a nondefault VPC ID, note the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>It must belong to a VPC in your account that is in the specified region.</p>
+        /// </li>
+        /// <li>
+        /// <p>You must specify a value for <code>DefaultSubnetId</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
+        /// VPC</a>. For more information about default VPC and EC2 Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+        /// Platforms</a>. </p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>A list of stack attributes and values as key/value pairs to be added to the cloned stack.</p>
         pub fn attributes(
             mut self,
             k: impl Into<crate::model::StackAttributesKeys>,
@@ -751,6 +810,7 @@ pub mod clone_stack_input {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>A list of stack attributes and values as key/value pairs to be added to the cloned stack.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -773,6 +833,15 @@ pub mod clone_stack_input {
             self.service_role_arn = Some(input.into());
             self
         }
+        /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS
+        /// resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an
+        /// existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for
+        /// you. You can obtain an existing stack's IAM ARN programmatically by calling
+        /// <a>DescribePermissions</a>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// Identifiers</a>.</p>
+        /// <note>
+        /// <p>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service role ARN, if you prefer, but you must do so explicitly.</p>
+        /// </note>
         pub fn set_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -790,6 +859,9 @@ pub mod clone_stack_input {
             self.default_instance_profile_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances.
+        /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// Identifiers</a>.</p>
         pub fn set_default_instance_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -837,6 +909,42 @@ pub mod clone_stack_input {
             self.default_os = Some(input.into());
             self
         }
+        /// <p>The stack's operating system, which must be set to one of the following.</p>
+        /// <ul>
+        /// <li>
+        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
+        /// 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CentOS Linux 7</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Red Hat Enterprise Linux 7</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
+        /// you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+        /// Custom AMIs</a>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The default option is the parent stack's operating system.
+        /// For more information about supported operating systems,
+        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+        /// <note>
+        /// <p>You can specify a different Linux operating system for the cloned stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
+        /// </note>
         pub fn set_default_os(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.default_os = input;
             self
@@ -908,6 +1016,69 @@ pub mod clone_stack_input {
             self.hostname_theme = Some(input.into());
             self
         }
+        /// <p>The stack's host name theme, with spaces are replaced by underscores. The theme is used to
+        /// generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set
+        /// to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's
+        /// short name. The other themes are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Baked_Goods</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Clouds</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Europe_Cities</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Fruits</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Greek_Deities_and_Titans</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Legendary_creatures_from_Japan</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Planets_and_Moons</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Roman_Deities</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Scottish_Islands</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>US_Cities</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Wild_Cats</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
+        /// host name based on the current theme.</p>
         pub fn set_hostname_theme(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -924,6 +1095,11 @@ pub mod clone_stack_input {
             self.default_availability_zone = Some(input.into());
             self
         }
+        /// <p>The cloned stack's default Availability Zone, which must be in the specified region. For more
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+        /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
+        /// be in the same zone. For more information, see the <code>VpcId</code> parameter description.
+        /// </p>
         pub fn set_default_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -941,6 +1117,12 @@ pub mod clone_stack_input {
             self.default_subnet_id = Some(input.into());
             self
         }
+        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
+        /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
+        /// otherwise when you create the instance. If you also specify a value for
+        /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
+        /// default values and when this parameter is required, see the <code>VpcId</code> parameter
+        /// description. </p>
         pub fn set_default_subnet_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -959,6 +1141,13 @@ pub mod clone_stack_input {
             self.custom_json = Some(input.into());
             self
         }
+        /// <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format:</p>
+        /// <p>
+        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+        /// </p>
+        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
+        /// Modify the Stack Configuration Attributes</a>
+        /// </p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.custom_json = input;
             self
@@ -971,6 +1160,7 @@ pub mod clone_stack_input {
             self.configuration_manager = Some(input);
             self
         }
+        /// <p>The configuration manager. When you clone a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
         pub fn set_configuration_manager(
             mut self,
             input: std::option::Option<crate::model::StackConfigurationManager>,
@@ -984,6 +1174,8 @@ pub mod clone_stack_input {
             self.chef_configuration = Some(input);
             self
         }
+        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
+        /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn set_chef_configuration(
             mut self,
             input: std::option::Option<crate::model::ChefConfiguration>,
@@ -996,6 +1188,7 @@ pub mod clone_stack_input {
             self.use_custom_cookbooks = Some(input);
             self
         }
+        /// <p>Whether to use custom cookbooks.</p>
         pub fn set_use_custom_cookbooks(mut self, input: std::option::Option<bool>) -> Self {
             self.use_custom_cookbooks = input;
             self
@@ -1019,6 +1212,21 @@ pub mod clone_stack_input {
             self.use_opsworks_security_groups = Some(input);
             self
         }
+        /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
+        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
+        /// associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead
+        /// provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the
+        /// following settings: </p>
+        /// <ul>
+        /// <li>
+        /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it but you cannot delete the built-in security group.</p>
+        /// </li>
+        /// <li>
+        /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2) security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
+        /// Stack</a>.</p>
         pub fn set_use_opsworks_security_groups(
             mut self,
             input: std::option::Option<bool>,
@@ -1032,6 +1240,8 @@ pub mod clone_stack_input {
             self.custom_cookbooks_source = Some(input);
             self
         }
+        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
         pub fn set_custom_cookbooks_source(
             mut self,
             input: std::option::Option<crate::model::Source>,
@@ -1050,6 +1260,13 @@ pub mod clone_stack_input {
             self.default_ssh_key_name = Some(input.into());
             self
         }
+        /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS
+        /// OpsWorks installs the public key on the instance and you can use the private key with an SSH
+        /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
+        /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
+        /// Access</a>. You can override this setting by specifying a different key pair, or no key
+        /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
+        /// create an instance</a>. </p>
         pub fn set_default_ssh_key_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1062,16 +1279,23 @@ pub mod clone_stack_input {
             self.clone_permissions = Some(input);
             self
         }
+        /// <p>Whether to clone the source stack's permissions.</p>
         pub fn set_clone_permissions(mut self, input: std::option::Option<bool>) -> Self {
             self.clone_permissions = input;
             self
         }
+        /// Appends an item to `clone_app_ids`.
+        ///
+        /// To override the contents of this collection use [`set_clone_app_ids`](Self::set_clone_app_ids).
+        ///
+        /// <p>A list of source stack app IDs to be included in the cloned stack.</p>
         pub fn clone_app_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.clone_app_ids.unwrap_or_default();
             v.push(input.into());
             self.clone_app_ids = Some(v);
             self
         }
+        /// <p>A list of source stack app IDs to be included in the cloned stack.</p>
         pub fn set_clone_app_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1085,6 +1309,8 @@ pub mod clone_stack_input {
             self.default_root_device_type = Some(input);
             self
         }
+        /// <p>The default root device type. This value is used by default for all instances in the cloned
+        /// stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
         pub fn set_default_root_device_type(
             mut self,
             input: std::option::Option<crate::model::RootDeviceType>,
@@ -1115,6 +1341,25 @@ pub mod clone_stack_input {
             self.agent_version = Some(input.into());
             self
         }
+        /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
+        /// automatically installs new agent versions on the stack's instances as soon as
+        /// they are available.</p>
+        /// </li>
+        /// <li>
+        /// <p>Fixed version - Set this parameter to your preferred agent version. To update
+        /// the agent version, you must edit the stack configuration and specify a new version.
+        /// AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The default setting is <code>LATEST</code>. To specify an agent version,
+        /// you must use the complete version number, not the abbreviated number shown on the console.
+        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
+        /// <note>
+        /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
+        /// </note>
         pub fn set_agent_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1125,8 +1370,10 @@ pub mod clone_stack_input {
         /// Consumes the builder and constructs a [`CloneStackInput`](crate::input::CloneStackInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CloneStackInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CloneStackInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CloneStackInput {
                 source_stack_id: self.source_stack_id,
                 name: self.name,
@@ -1165,16 +1412,16 @@ impl CloneStackInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CloneStack,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CloneStackInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1182,7 +1429,7 @@ impl CloneStackInput {
         fn update_http_builder(
             input: &crate::input::CloneStackInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1191,29 +1438,31 @@ impl CloneStackInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CloneStackInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.CloneStack",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_clone_stack(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1236,25 +1485,27 @@ impl CloneStackInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CloneStack::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CloneStack",
-                    "opsworks",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CloneStack::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CloneStack",
+            "opsworks",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1296,6 +1547,7 @@ pub mod create_app_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -1305,6 +1557,7 @@ pub mod create_app_input {
             self.shortname = Some(input.into());
             self
         }
+        /// <p>The app's short name.</p>
         pub fn set_shortname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shortname = input;
             self
@@ -1314,6 +1567,7 @@ pub mod create_app_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The app name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1323,16 +1577,23 @@ pub mod create_app_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the app.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `data_sources`.
+        ///
+        /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
+        ///
+        /// <p>The app's data source.</p>
         pub fn data_sources(mut self, input: impl Into<crate::model::DataSource>) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
             v.push(input.into());
             self.data_sources = Some(v);
             self
         }
+        /// <p>The app's data source.</p>
         pub fn set_data_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
@@ -1348,6 +1609,10 @@ pub mod create_app_input {
             self.r#type = Some(input);
             self
         }
+        /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP
+        /// applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances
+        /// that are members of the corresponding layer. If your app isn't one of the standard types, or
+        /// you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::AppType>) -> Self {
             self.r#type = input;
             self
@@ -1357,16 +1622,27 @@ pub mod create_app_input {
             self.app_source = Some(input);
             self
         }
+        /// <p>A <code>Source</code> object that specifies the app repository.</p>
         pub fn set_app_source(mut self, input: std::option::Option<crate::model::Source>) -> Self {
             self.app_source = input;
             self
         }
+        /// Appends an item to `domains`.
+        ///
+        /// To override the contents of this collection use [`set_domains`](Self::set_domains).
+        ///
+        /// <p>The app virtual host settings, with multiple domains separated by commas. For example:
+        /// <code>'www.example.com, example.com'</code>
+        /// </p>
         pub fn domains(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.domains.unwrap_or_default();
             v.push(input.into());
             self.domains = Some(v);
             self
         }
+        /// <p>The app virtual host settings, with multiple domains separated by commas. For example:
+        /// <code>'www.example.com, example.com'</code>
+        /// </p>
         pub fn set_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1379,6 +1655,7 @@ pub mod create_app_input {
             self.enable_ssl = Some(input);
             self
         }
+        /// <p>Whether to enable SSL for the app.</p>
         pub fn set_enable_ssl(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_ssl = input;
             self
@@ -1388,6 +1665,7 @@ pub mod create_app_input {
             self.ssl_configuration = Some(input);
             self
         }
+        /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
         pub fn set_ssl_configuration(
             mut self,
             input: std::option::Option<crate::model::SslConfiguration>,
@@ -1395,6 +1673,11 @@ pub mod create_app_input {
             self.ssl_configuration = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
         pub fn attributes(
             mut self,
             k: impl Into<crate::model::AppAttributesKeys>,
@@ -1405,6 +1688,7 @@ pub mod create_app_input {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -1414,12 +1698,30 @@ pub mod create_app_input {
             self.attributes = input;
             self
         }
+        /// Appends an item to `environment`.
+        ///
+        /// To override the contents of this collection use [`set_environment`](Self::set_environment).
+        ///
+        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
+        /// associated with the app. After you deploy the app, these variables are defined on the
+        /// associated app server instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
+        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p>
+        /// <note>
+        /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
+        /// </note>
         pub fn environment(mut self, input: impl Into<crate::model::EnvironmentVariable>) -> Self {
             let mut v = self.environment.unwrap_or_default();
             v.push(input.into());
             self.environment = Some(v);
             self
         }
+        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
+        /// associated with the app. After you deploy the app, these variables are defined on the
+        /// associated app server instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
+        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p>
+        /// <note>
+        /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
+        /// </note>
         pub fn set_environment(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
@@ -1430,7 +1732,7 @@ pub mod create_app_input {
         /// Consumes the builder and constructs a [`CreateAppInput`](crate::input::CreateAppInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateAppInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::CreateAppInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::CreateAppInput {
                 stack_id: self.stack_id,
@@ -1460,16 +1762,16 @@ impl CreateAppInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateApp,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateAppInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1477,7 +1779,7 @@ impl CreateAppInput {
         fn update_http_builder(
             input: &crate::input::CreateAppInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1486,29 +1788,31 @@ impl CreateAppInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateAppInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.CreateApp",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_app(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1531,13 +1835,13 @@ impl CreateAppInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateApp::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::CreateApp::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "CreateApp",
                     "opsworks",
                 ));
@@ -1546,10 +1850,10 @@ impl CreateAppInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1583,6 +1887,7 @@ pub mod create_deployment_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -1592,16 +1897,23 @@ pub mod create_deployment_input {
             self.app_id = Some(input.into());
             self
         }
+        /// <p>The app ID. This parameter is required for app deployments, but not for other deployment commands.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_id = input;
             self
         }
+        /// Appends an item to `instance_ids`.
+        ///
+        /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
+        ///
+        /// <p>The instance IDs for the deployment targets.</p>
         pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
             v.push(input.into());
             self.instance_ids = Some(v);
             self
         }
+        /// <p>The instance IDs for the deployment targets.</p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1609,12 +1921,18 @@ pub mod create_deployment_input {
             self.instance_ids = input;
             self
         }
+        /// Appends an item to `layer_ids`.
+        ///
+        /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
+        ///
+        /// <p>The layer IDs for the deployment targets.</p>
         pub fn layer_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.layer_ids.unwrap_or_default();
             v.push(input.into());
             self.layer_ids = Some(v);
             self
         }
+        /// <p>The layer IDs for the deployment targets.</p>
         pub fn set_layer_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1628,6 +1946,8 @@ pub mod create_deployment_input {
             self.command = Some(input);
             self
         }
+        /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any
+        /// associated arguments.</p>
         pub fn set_command(
             mut self,
             input: std::option::Option<crate::model::DeploymentCommand>,
@@ -1640,6 +1960,7 @@ pub mod create_deployment_input {
             self.comment = Some(input.into());
             self
         }
+        /// <p>A user-defined comment.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input;
             self
@@ -1655,6 +1976,13 @@ pub mod create_deployment_input {
             self.custom_json = Some(input.into());
             self
         }
+        /// <p>A string that contains user-defined, custom JSON. You can use this parameter to override some corresponding default stack configuration JSON values. The string should be in the following format:</p>
+        /// <p>
+        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+        /// </p>
+        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
+        /// Modify the Stack Configuration Attributes</a> and
+        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.custom_json = input;
             self
@@ -1664,7 +1992,7 @@ pub mod create_deployment_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateDeploymentInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateDeploymentInput {
                 stack_id: self.stack_id,
@@ -1689,16 +2017,16 @@ impl CreateDeploymentInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateDeployment,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateDeploymentInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1706,7 +2034,7 @@ impl CreateDeploymentInput {
         fn update_http_builder(
             input: &crate::input::CreateDeploymentInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1715,32 +2043,32 @@ impl CreateDeploymentInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateDeploymentInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.CreateDeployment",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_deployment(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1763,15 +2091,15 @@ impl CreateDeploymentInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateDeployment::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateDeployment",
             "opsworks",
         ));
@@ -1780,10 +2108,10 @@ impl CreateDeploymentInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1829,16 +2157,23 @@ pub mod create_instance_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
         }
+        /// Appends an item to `layer_ids`.
+        ///
+        /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
+        ///
+        /// <p>An array that contains the instance's layer IDs.</p>
         pub fn layer_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.layer_ids.unwrap_or_default();
             v.push(input.into());
             self.layer_ids = Some(v);
             self
         }
+        /// <p>An array that contains the instance's layer IDs.</p>
         pub fn set_layer_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1855,6 +2190,11 @@ pub mod create_instance_input {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types,
+        /// open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>.
+        /// The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+        /// Families and Types</a>. The parameter values that you use to specify the various types are
+        /// in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1867,6 +2207,7 @@ pub mod create_instance_input {
             self.auto_scaling_type = Some(input);
             self
         }
+        /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
         pub fn set_auto_scaling_type(
             mut self,
             input: std::option::Option<crate::model::AutoScalingType>,
@@ -1879,6 +2220,7 @@ pub mod create_instance_input {
             self.hostname = Some(input.into());
             self
         }
+        /// <p>The instance host name.</p>
         pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hostname = input;
             self
@@ -1921,6 +2263,40 @@ pub mod create_instance_input {
             self.os = Some(input.into());
             self
         }
+        /// <p>The instance's operating system, which must be set to one of the following.</p>
+        /// <ul>
+        /// <li>
+        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
+        /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CentOS Linux 7</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Red Hat Enterprise Linux 7</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>A custom AMI: <code>Custom</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about the supported operating systems,
+        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+        /// <p>The default option is the current Amazon Linux version. If you set this parameter to
+        /// <code>Custom</code>, you must use the <a>CreateInstance</a> action's AmiId parameter to
+        /// specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating
+        /// systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+        /// Custom AMIs</a>.</p>
         pub fn set_os(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.os = input;
             self
@@ -1936,6 +2312,13 @@ pub mod create_instance_input {
             self.ami_id = Some(input.into());
             self
         }
+        /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the
+        /// supported operating systems.
+        /// For more information, see
+        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
+        /// <note>
+        /// <p>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</p>
+        /// </note>
         pub fn set_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ami_id = input;
             self
@@ -1945,6 +2328,7 @@ pub mod create_instance_input {
             self.ssh_key_name = Some(input.into());
             self
         }
+        /// <p>The instance's Amazon EC2 key-pair name.</p>
         pub fn set_ssh_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ssh_key_name = input;
             self
@@ -1954,6 +2338,7 @@ pub mod create_instance_input {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1966,6 +2351,7 @@ pub mod create_instance_input {
             self.virtualization_type = Some(input.into());
             self
         }
+        /// <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
         pub fn set_virtualization_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1978,6 +2364,7 @@ pub mod create_instance_input {
             self.subnet_id = Some(input.into());
             self
         }
+        /// <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_id = input;
             self
@@ -1990,6 +2377,10 @@ pub mod create_instance_input {
             self.architecture = Some(input);
             self
         }
+        /// <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not
+        /// necessarily support both architectures. For a list of the architectures that are supported by
+        /// the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
+        /// Types</a>.</p>
         pub fn set_architecture(
             mut self,
             input: std::option::Option<crate::model::Architecture>,
@@ -2002,6 +2393,7 @@ pub mod create_instance_input {
             self.root_device_type = Some(input);
             self
         }
+        /// <p>The instance root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
         pub fn set_root_device_type(
             mut self,
             input: std::option::Option<crate::model::RootDeviceType>,
@@ -2009,6 +2401,13 @@ pub mod create_instance_input {
             self.root_device_type = input;
             self
         }
+        /// Appends an item to `block_device_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
+        ///
+        /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block
+        /// devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+        /// Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
         pub fn block_device_mappings(
             mut self,
             input: impl Into<crate::model::BlockDeviceMapping>,
@@ -2018,6 +2417,9 @@ pub mod create_instance_input {
             self.block_device_mappings = Some(v);
             self
         }
+        /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block
+        /// devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+        /// Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
         pub fn set_block_device_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BlockDeviceMapping>>,
@@ -2039,6 +2441,16 @@ pub mod create_instance_input {
             self.install_updates_on_boot = Some(input);
             self
         }
+        /// <p>Whether to install operating system and package updates when the instance boots. The default
+        /// value is <code>true</code>. To control when updates are installed, set this value to
+        /// <code>false</code>. You must then update your instances manually by using
+        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
+        /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
+        /// instances. </p>
+        /// <note>
+        /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your
+        /// instances have the latest security updates.</p>
+        /// </note>
         pub fn set_install_updates_on_boot(mut self, input: std::option::Option<bool>) -> Self {
             self.install_updates_on_boot = input;
             self
@@ -2048,6 +2460,7 @@ pub mod create_instance_input {
             self.ebs_optimized = Some(input);
             self
         }
+        /// <p>Whether to create an Amazon EBS-optimized instance.</p>
         pub fn set_ebs_optimized(mut self, input: std::option::Option<bool>) -> Self {
             self.ebs_optimized = input;
             self
@@ -2074,6 +2487,24 @@ pub mod create_instance_input {
             self.agent_version = Some(input.into());
             self
         }
+        /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INHERIT</code> - Use the stack's default agent version setting.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>version_number</i> - Use the specified agent version.
+        /// This value overrides the stack's default setting.
+        /// To update the agent version, edit the instance configuration and specify a
+        /// new version.
+        /// AWS OpsWorks Stacks then automatically installs that version on the instance.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The default setting is <code>INHERIT</code>. To specify an agent version,
+        /// you must use the complete version number, not the abbreviated number shown on the console.
+        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
         pub fn set_agent_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2086,6 +2517,7 @@ pub mod create_instance_input {
             self.tenancy = Some(input.into());
             self
         }
+        /// <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter:  <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
         pub fn set_tenancy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tenancy = input;
             self
@@ -2095,7 +2527,7 @@ pub mod create_instance_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateInstanceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateInstanceInput {
                 stack_id: self.stack_id,
@@ -2131,16 +2563,16 @@ impl CreateInstanceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateInstance,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateInstanceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2148,7 +2580,7 @@ impl CreateInstanceInput {
         fn update_http_builder(
             input: &crate::input::CreateInstanceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2157,29 +2589,31 @@ impl CreateInstanceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateInstanceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.CreateInstance",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_instance(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2202,15 +2636,15 @@ impl CreateInstanceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateInstance::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateInstance",
             "opsworks",
         ));
@@ -2219,10 +2653,10 @@ impl CreateInstanceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2273,6 +2707,7 @@ pub mod create_layer_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The layer stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -2282,6 +2717,7 @@ pub mod create_layer_input {
             self.r#type = Some(input);
             self
         }
+        /// <p>The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of custom layers. Built-in layers are not available in Chef 12 stacks.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::LayerType>) -> Self {
             self.r#type = input;
             self
@@ -2291,6 +2727,7 @@ pub mod create_layer_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The layer name, which is used by the console.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2301,10 +2738,18 @@ pub mod create_layer_input {
             self.shortname = Some(input.into());
             self
         }
+        /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and '.'.</p>
+        /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.</p>
         pub fn set_shortname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shortname = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
+        /// <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
         pub fn attributes(
             mut self,
             k: impl Into<crate::model::LayerAttributesKeys>,
@@ -2315,6 +2760,8 @@ pub mod create_layer_input {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
+        /// <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -2332,6 +2779,7 @@ pub mod create_layer_input {
             self.cloud_watch_logs_configuration = Some(input);
             self
         }
+        /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <a>CloudWatchLogsLogStream</a>.</p>
         pub fn set_cloud_watch_logs_configuration(
             mut self,
             input: std::option::Option<crate::model::CloudWatchLogsConfiguration>,
@@ -2348,6 +2796,8 @@ pub mod create_layer_input {
             self.custom_instance_profile_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information
+        /// about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn set_custom_instance_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2364,16 +2814,27 @@ pub mod create_layer_input {
             self.custom_json = Some(input.into());
             self
         }
+        /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes
+        /// to be installed on the layer's instances. For more information, see
+        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+        /// Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
+        /// </p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.custom_json = input;
             self
         }
+        /// Appends an item to `custom_security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_custom_security_group_ids`](Self::set_custom_security_group_ids).
+        ///
+        /// <p>An array containing the layer custom security group IDs.</p>
         pub fn custom_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.custom_security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.custom_security_group_ids = Some(v);
             self
         }
+        /// <p>An array containing the layer custom security group IDs.</p>
         pub fn set_custom_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2381,12 +2842,18 @@ pub mod create_layer_input {
             self.custom_security_group_ids = input;
             self
         }
+        /// Appends an item to `packages`.
+        ///
+        /// To override the contents of this collection use [`set_packages`](Self::set_packages).
+        ///
+        /// <p>An array of <code>Package</code> objects that describes the layer packages.</p>
         pub fn packages(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.packages.unwrap_or_default();
             v.push(input.into());
             self.packages = Some(v);
             self
         }
+        /// <p>An array of <code>Package</code> objects that describes the layer packages.</p>
         pub fn set_packages(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2394,6 +2861,11 @@ pub mod create_layer_input {
             self.packages = input;
             self
         }
+        /// Appends an item to `volume_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_volume_configurations`](Self::set_volume_configurations).
+        ///
+        /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
         pub fn volume_configurations(
             mut self,
             input: impl Into<crate::model::VolumeConfiguration>,
@@ -2403,6 +2875,7 @@ pub mod create_layer_input {
             self.volume_configurations = Some(v);
             self
         }
+        /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
         pub fn set_volume_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VolumeConfiguration>>,
@@ -2415,6 +2888,7 @@ pub mod create_layer_input {
             self.enable_auto_healing = Some(input);
             self
         }
+        /// <p>Whether to disable auto healing for the layer.</p>
         pub fn set_enable_auto_healing(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_auto_healing = input;
             self
@@ -2426,6 +2900,9 @@ pub mod create_layer_input {
             self.auto_assign_elastic_ips = Some(input);
             self
         }
+        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+        /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
+        /// a Layer</a>.</p>
         pub fn set_auto_assign_elastic_ips(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_assign_elastic_ips = input;
             self
@@ -2437,6 +2914,9 @@ pub mod create_layer_input {
             self.auto_assign_public_ips = Some(input);
             self
         }
+        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
+        /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
+        /// a Layer</a>.</p>
         pub fn set_auto_assign_public_ips(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_assign_public_ips = input;
             self
@@ -2446,6 +2926,7 @@ pub mod create_layer_input {
             self.custom_recipes = Some(input);
             self
         }
+        /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer custom recipes.</p>
         pub fn set_custom_recipes(
             mut self,
             input: std::option::Option<crate::model::Recipes>,
@@ -2467,6 +2948,16 @@ pub mod create_layer_input {
             self.install_updates_on_boot = Some(input);
             self
         }
+        /// <p>Whether to install operating system and package updates when the instance boots. The default
+        /// value is <code>true</code>. To control when updates are installed, set this value to
+        /// <code>false</code>. You must then update your instances manually by using
+        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
+        /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
+        /// instances. </p>
+        /// <note>
+        /// <p>To ensure that your
+        /// instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p>
+        /// </note>
         pub fn set_install_updates_on_boot(mut self, input: std::option::Option<bool>) -> Self {
             self.install_updates_on_boot = input;
             self
@@ -2476,6 +2967,7 @@ pub mod create_layer_input {
             self.use_ebs_optimized_instances = Some(input);
             self
         }
+        /// <p>Whether to use Amazon EBS-optimized instances.</p>
         pub fn set_use_ebs_optimized_instances(mut self, input: std::option::Option<bool>) -> Self {
             self.use_ebs_optimized_instances = input;
             self
@@ -2490,6 +2982,9 @@ pub mod create_layer_input {
             self.lifecycle_event_configuration = Some(input);
             self
         }
+        /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to
+        /// specify an execution timeout and enable or disable Elastic Load Balancer connection
+        /// draining.</p>
         pub fn set_lifecycle_event_configuration(
             mut self,
             input: std::option::Option<crate::model::LifecycleEventConfiguration>,
@@ -2500,8 +2995,10 @@ pub mod create_layer_input {
         /// Consumes the builder and constructs a [`CreateLayerInput`](crate::input::CreateLayerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateLayerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateLayerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateLayerInput {
                 stack_id: self.stack_id,
                 r#type: self.r#type,
@@ -2536,16 +3033,16 @@ impl CreateLayerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateLayer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateLayerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2553,7 +3050,7 @@ impl CreateLayerInput {
         fn update_http_builder(
             input: &crate::input::CreateLayerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2562,29 +3059,31 @@ impl CreateLayerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateLayerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.CreateLayer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_layer(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2607,25 +3106,27 @@ impl CreateLayerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateLayer::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateLayer",
-                    "opsworks",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateLayer::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateLayer",
+            "opsworks",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2674,6 +3175,7 @@ pub mod create_stack_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The stack name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2703,6 +3205,27 @@ pub mod create_stack_input {
             self.region = Some(input.into());
             self
         }
+        /// <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information about
+        /// Amazon regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+        /// <note>
+        /// <p>In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the
+        /// <code>--stack-region</code> parameter and the AWS CLI common parameter
+        /// <code>--region</code> are set to the same value, the stack uses a
+        /// <i>regional</i> endpoint. If the <code>--stack-region</code>
+        /// parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also
+        /// results in a stack with a <i>regional</i> endpoint. However, if the
+        /// <code>--region</code> parameter is set to <code>us-east-1</code>, and the
+        /// <code>--stack-region</code> parameter is set to one of the following, then the
+        /// stack uses a legacy or <i>classic</i> region: <code>us-west-1,
+        /// us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1,
+        /// ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in
+        /// <code>us-east-1</code>. Only the preceding regions are supported as classic
+        /// regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to
+        /// choose the regional endpoint that is closest to where you manage AWS, we recommend
+        /// that you use regional endpoints for new stacks. The AWS CLI common
+        /// <code>--region</code> parameter always specifies a regional API endpoint; it
+        /// cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
+        /// </note>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -2738,10 +3261,42 @@ pub mod create_stack_input {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>The ID of the VPC that the stack is to be launched into. The VPC must be in the stack's region. All instances are launched into this VPC. You cannot change the ID later.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If your account supports EC2-Classic, the default value is <code>no VPC</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If your account does not support EC2-Classic, the default value is the default VPC for the specified region.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If the VPC ID corresponds to a default VPC and you have specified either the
+        /// <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only,
+        /// AWS OpsWorks Stacks infers the value of the
+        /// other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets
+        /// these parameters to the first valid Availability Zone for the specified region and the
+        /// corresponding default VPC subnet ID, respectively.</p>
+        /// <p>If you specify a nondefault VPC ID, note the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>It must belong to a VPC in your account that is in the specified region.</p>
+        /// </li>
+        /// <li>
+        /// <p>You must specify a value for <code>DefaultSubnetId</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
+        /// VPC</a>. For more information about default VPC and EC2-Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+        /// Platforms</a>. </p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
         pub fn attributes(
             mut self,
             k: impl Into<crate::model::StackAttributesKeys>,
@@ -2752,6 +3307,7 @@ pub mod create_stack_input {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -2769,6 +3325,10 @@ pub mod create_stack_input {
             self.service_role_arn = Some(input.into());
             self
         }
+        /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS
+        /// resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an
+        /// existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// Identifiers</a>.</p>
         pub fn set_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2786,6 +3346,9 @@ pub mod create_stack_input {
             self.default_instance_profile_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances.
+        /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// Identifiers</a>.</p>
         pub fn set_default_instance_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2832,6 +3395,41 @@ pub mod create_stack_input {
             self.default_os = Some(input.into());
             self
         }
+        /// <p>The stack's default operating system, which is installed on every instance unless you specify a different operating system when you create the instance. You can specify one of the following.</p>
+        /// <ul>
+        /// <li>
+        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
+        /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CentOS Linux 7</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Red Hat Enterprise Linux 7</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
+        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
+        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
+        /// you create instances. For more
+        /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
+        /// Using Custom AMIs</a>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The default option is the current Amazon Linux version.
+        /// For more information about supported operating systems,
+        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
         pub fn set_default_os(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.default_os = input;
             self
@@ -2903,6 +3501,69 @@ pub mod create_stack_input {
             self.hostname_theme = Some(input.into());
             self
         }
+        /// <p>The stack's host name theme, with spaces replaced by underscores. The theme is used to
+        /// generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set
+        /// to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's
+        /// short name. The other themes are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Baked_Goods</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Clouds</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Europe_Cities</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Fruits</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Greek_Deities_and_Titans</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Legendary_creatures_from_Japan</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Planets_and_Moons</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Roman_Deities</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Scottish_Islands</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>US_Cities</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Wild_Cats</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
+        /// host name based on the current theme.</p>
         pub fn set_hostname_theme(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2919,6 +3580,11 @@ pub mod create_stack_input {
             self.default_availability_zone = Some(input.into());
             self
         }
+        /// <p>The stack's default Availability Zone, which must be in the specified region. For more
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+        /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
+        /// be in the same zone. For more information, see the <code>VpcId</code> parameter description.
+        /// </p>
         pub fn set_default_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2936,6 +3602,12 @@ pub mod create_stack_input {
             self.default_subnet_id = Some(input.into());
             self
         }
+        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
+        /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
+        /// otherwise when you create the instance. If you also specify a value for
+        /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
+        /// default values and when this parameter is required, see the <code>VpcId</code> parameter
+        /// description. </p>
         pub fn set_default_subnet_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2953,6 +3625,12 @@ pub mod create_stack_input {
             self.custom_json = Some(input.into());
             self
         }
+        /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
+        /// <p>
+        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+        /// </p>
+        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
+        /// Modify the Stack Configuration Attributes</a>.</p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.custom_json = input;
             self
@@ -2965,6 +3643,7 @@ pub mod create_stack_input {
             self.configuration_manager = Some(input);
             self
         }
+        /// <p>The configuration manager. When you create a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
         pub fn set_configuration_manager(
             mut self,
             input: std::option::Option<crate::model::StackConfigurationManager>,
@@ -2978,6 +3657,8 @@ pub mod create_stack_input {
             self.chef_configuration = Some(input);
             self
         }
+        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
+        /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn set_chef_configuration(
             mut self,
             input: std::option::Option<crate::model::ChefConfiguration>,
@@ -2990,6 +3671,7 @@ pub mod create_stack_input {
             self.use_custom_cookbooks = Some(input);
             self
         }
+        /// <p>Whether the stack uses custom cookbooks.</p>
         pub fn set_use_custom_cookbooks(mut self, input: std::option::Option<bool>) -> Self {
             self.use_custom_cookbooks = input;
             self
@@ -3013,6 +3695,21 @@ pub mod create_stack_input {
             self.use_opsworks_security_groups = Some(input);
             self
         }
+        /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
+        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
+        /// associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead
+        /// provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the
+        /// following settings: </p>
+        /// <ul>
+        /// <li>
+        /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p>
+        /// </li>
+        /// <li>
+        /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
+        /// Stack</a>.</p>
         pub fn set_use_opsworks_security_groups(
             mut self,
             input: std::option::Option<bool>,
@@ -3027,6 +3724,9 @@ pub mod create_stack_input {
             self.custom_cookbooks_source = Some(input);
             self
         }
+        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or
+        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
         pub fn set_custom_cookbooks_source(
             mut self,
             input: std::option::Option<crate::model::Source>,
@@ -3045,6 +3745,13 @@ pub mod create_stack_input {
             self.default_ssh_key_name = Some(input.into());
             self
         }
+        /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS
+        /// OpsWorks installs the public key on the instance and you can use the private key with an SSH
+        /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
+        /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
+        /// Access</a>. You can override this setting by specifying a different key pair, or no key
+        /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
+        /// create an instance</a>. </p>
         pub fn set_default_ssh_key_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3059,6 +3766,9 @@ pub mod create_stack_input {
             self.default_root_device_type = Some(input);
             self
         }
+        /// <p>The default root device type. This value is the default for all instances in the stack,
+        /// but you can override it when you create an instance. The default option is
+        /// <code>instance-store</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
         pub fn set_default_root_device_type(
             mut self,
             input: std::option::Option<crate::model::RootDeviceType>,
@@ -3087,6 +3797,23 @@ pub mod create_stack_input {
             self.agent_version = Some(input.into());
             self
         }
+        /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
+        /// automatically installs new agent versions on the stack's instances as soon as
+        /// they are available.</p>
+        /// </li>
+        /// <li>
+        /// <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The default setting is the most recent release of the agent. To specify an agent version,
+        /// you must use the complete version number, not the abbreviated number shown on the console.
+        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
+        /// <note>
+        /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
+        /// </note>
         pub fn set_agent_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3097,8 +3824,10 @@ pub mod create_stack_input {
         /// Consumes the builder and constructs a [`CreateStackInput`](crate::input::CreateStackInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateStackInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateStackInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateStackInput {
                 name: self.name,
                 region: self.region,
@@ -3134,16 +3863,16 @@ impl CreateStackInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateStack,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateStackInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3151,7 +3880,7 @@ impl CreateStackInput {
         fn update_http_builder(
             input: &crate::input::CreateStackInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3160,29 +3889,31 @@ impl CreateStackInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateStackInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.CreateStack",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_stack(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3205,25 +3936,27 @@ impl CreateStackInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateStack::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateStack",
-                    "opsworks",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateStack::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateStack",
+            "opsworks",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3254,6 +3987,7 @@ pub mod create_user_profile_input {
             self.iam_user_arn = Some(input.into());
             self
         }
+        /// <p>The user's IAM ARN; this can also be a federated user's ARN.</p>
         pub fn set_iam_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_user_arn = input;
             self
@@ -3266,6 +4000,10 @@ pub mod create_user_profile_input {
             self.ssh_username = Some(input.into());
             self
         }
+        /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If
+        /// the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example,
+        /// <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH
+        /// user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
         pub fn set_ssh_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ssh_username = input;
             self
@@ -3275,6 +4013,7 @@ pub mod create_user_profile_input {
             self.ssh_public_key = Some(input.into());
             self
         }
+        /// <p>The user's public SSH key.</p>
         pub fn set_ssh_public_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3289,6 +4028,9 @@ pub mod create_user_profile_input {
             self.allow_self_management = Some(input);
             self
         }
+        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
+        /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Setting an IAM
+        /// User's Public SSH Key</a>.</p>
         pub fn set_allow_self_management(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_self_management = input;
             self
@@ -3298,7 +4040,7 @@ pub mod create_user_profile_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateUserProfileInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateUserProfileInput {
                 iam_user_arn: self.iam_user_arn,
@@ -3320,16 +4062,16 @@ impl CreateUserProfileInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateUserProfile,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateUserProfileInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3337,7 +4079,7 @@ impl CreateUserProfileInput {
         fn update_http_builder(
             input: &crate::input::CreateUserProfileInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3346,32 +4088,32 @@ impl CreateUserProfileInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateUserProfileInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.CreateUserProfile",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_user_profile(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3394,15 +4136,15 @@ impl CreateUserProfileInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateUserProfile::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateUserProfile",
             "opsworks",
         ));
@@ -3411,10 +4153,10 @@ impl CreateUserProfileInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3442,6 +4184,7 @@ pub mod delete_app_input {
             self.app_id = Some(input.into());
             self
         }
+        /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_id = input;
             self
@@ -3449,7 +4192,7 @@ pub mod delete_app_input {
         /// Consumes the builder and constructs a [`DeleteAppInput`](crate::input::DeleteAppInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteAppInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::DeleteAppInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::DeleteAppInput {
                 app_id: self.app_id,
@@ -3468,16 +4211,16 @@ impl DeleteAppInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteApp,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteAppInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3485,7 +4228,7 @@ impl DeleteAppInput {
         fn update_http_builder(
             input: &crate::input::DeleteAppInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3494,29 +4237,31 @@ impl DeleteAppInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteAppInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DeleteApp",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_app(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3539,13 +4284,13 @@ impl DeleteAppInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteApp::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteApp::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "DeleteApp",
                     "opsworks",
                 ));
@@ -3554,10 +4299,10 @@ impl DeleteAppInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3587,6 +4332,7 @@ pub mod delete_instance_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The instance ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -3596,6 +4342,7 @@ pub mod delete_instance_input {
             self.delete_elastic_ip = Some(input);
             self
         }
+        /// <p>Whether to delete the instance Elastic IP address.</p>
         pub fn set_delete_elastic_ip(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_elastic_ip = input;
             self
@@ -3605,6 +4352,7 @@ pub mod delete_instance_input {
             self.delete_volumes = Some(input);
             self
         }
+        /// <p>Whether to delete the instance's Amazon EBS volumes.</p>
         pub fn set_delete_volumes(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_volumes = input;
             self
@@ -3614,7 +4362,7 @@ pub mod delete_instance_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteInstanceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteInstanceInput {
                 instance_id: self.instance_id,
@@ -3635,16 +4383,16 @@ impl DeleteInstanceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteInstance,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteInstanceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3652,7 +4400,7 @@ impl DeleteInstanceInput {
         fn update_http_builder(
             input: &crate::input::DeleteInstanceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3661,29 +4409,31 @@ impl DeleteInstanceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteInstanceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DeleteInstance",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_instance(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3706,15 +4456,15 @@ impl DeleteInstanceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteInstance::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteInstance",
             "opsworks",
         ));
@@ -3723,10 +4473,10 @@ impl DeleteInstanceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3754,6 +4504,7 @@ pub mod delete_layer_input {
             self.layer_id = Some(input.into());
             self
         }
+        /// <p>The layer ID.</p>
         pub fn set_layer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.layer_id = input;
             self
@@ -3761,8 +4512,10 @@ pub mod delete_layer_input {
         /// Consumes the builder and constructs a [`DeleteLayerInput`](crate::input::DeleteLayerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteLayerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteLayerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteLayerInput {
                 layer_id: self.layer_id,
             })
@@ -3780,16 +4533,16 @@ impl DeleteLayerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteLayer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteLayerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3797,7 +4550,7 @@ impl DeleteLayerInput {
         fn update_http_builder(
             input: &crate::input::DeleteLayerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3806,29 +4559,31 @@ impl DeleteLayerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteLayerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DeleteLayer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_layer(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3851,25 +4606,27 @@ impl DeleteLayerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteLayer::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteLayer",
-                    "opsworks",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteLayer::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteLayer",
+            "opsworks",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3897,6 +4654,7 @@ pub mod delete_stack_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -3904,8 +4662,10 @@ pub mod delete_stack_input {
         /// Consumes the builder and constructs a [`DeleteStackInput`](crate::input::DeleteStackInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteStackInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteStackInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteStackInput {
                 stack_id: self.stack_id,
             })
@@ -3923,16 +4683,16 @@ impl DeleteStackInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteStack,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteStackInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3940,7 +4700,7 @@ impl DeleteStackInput {
         fn update_http_builder(
             input: &crate::input::DeleteStackInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3949,29 +4709,31 @@ impl DeleteStackInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteStackInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DeleteStack",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_stack(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3994,25 +4756,27 @@ impl DeleteStackInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteStack::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteStack",
-                    "opsworks",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteStack::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteStack",
+            "opsworks",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4040,6 +4804,7 @@ pub mod delete_user_profile_input {
             self.iam_user_arn = Some(input.into());
             self
         }
+        /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
         pub fn set_iam_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_user_arn = input;
             self
@@ -4049,7 +4814,7 @@ pub mod delete_user_profile_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteUserProfileInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteUserProfileInput {
                 iam_user_arn: self.iam_user_arn,
@@ -4068,16 +4833,16 @@ impl DeleteUserProfileInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteUserProfile,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteUserProfileInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4085,7 +4850,7 @@ impl DeleteUserProfileInput {
         fn update_http_builder(
             input: &crate::input::DeleteUserProfileInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4094,32 +4859,32 @@ impl DeleteUserProfileInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteUserProfileInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DeleteUserProfile",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_user_profile(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4142,15 +4907,15 @@ impl DeleteUserProfileInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteUserProfile::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteUserProfile",
             "opsworks",
         ));
@@ -4159,10 +4924,10 @@ impl DeleteUserProfileInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4190,6 +4955,7 @@ pub mod deregister_ecs_cluster_input {
             self.ecs_cluster_arn = Some(input.into());
             self
         }
+        /// <p>The cluster's Amazon Resource Number (ARN).</p>
         pub fn set_ecs_cluster_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4202,7 +4968,7 @@ pub mod deregister_ecs_cluster_input {
             self,
         ) -> std::result::Result<
             crate::input::DeregisterEcsClusterInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeregisterEcsClusterInput {
                 ecs_cluster_arn: self.ecs_cluster_arn,
@@ -4221,16 +4987,16 @@ impl DeregisterEcsClusterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeregisterEcsCluster,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeregisterEcsClusterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4238,7 +5004,7 @@ impl DeregisterEcsClusterInput {
         fn update_http_builder(
             input: &crate::input::DeregisterEcsClusterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4247,32 +5013,32 @@ impl DeregisterEcsClusterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeregisterEcsClusterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DeregisterEcsCluster",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deregister_ecs_cluster(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4295,15 +5061,15 @@ impl DeregisterEcsClusterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeregisterEcsCluster::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeregisterEcsCluster",
             "opsworks",
         ));
@@ -4312,10 +5078,10 @@ impl DeregisterEcsClusterInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4343,6 +5109,7 @@ pub mod deregister_elastic_ip_input {
             self.elastic_ip = Some(input.into());
             self
         }
+        /// <p>The Elastic IP address.</p>
         pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.elastic_ip = input;
             self
@@ -4352,7 +5119,7 @@ pub mod deregister_elastic_ip_input {
             self,
         ) -> std::result::Result<
             crate::input::DeregisterElasticIpInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeregisterElasticIpInput {
                 elastic_ip: self.elastic_ip,
@@ -4371,16 +5138,16 @@ impl DeregisterElasticIpInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeregisterElasticIp,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeregisterElasticIpInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4388,7 +5155,7 @@ impl DeregisterElasticIpInput {
         fn update_http_builder(
             input: &crate::input::DeregisterElasticIpInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4397,32 +5164,32 @@ impl DeregisterElasticIpInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeregisterElasticIpInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DeregisterElasticIp",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deregister_elastic_ip(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4445,15 +5212,15 @@ impl DeregisterElasticIpInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeregisterElasticIp::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeregisterElasticIp",
             "opsworks",
         ));
@@ -4462,10 +5229,10 @@ impl DeregisterElasticIpInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4493,6 +5260,7 @@ pub mod deregister_instance_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The instance ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -4502,7 +5270,7 @@ pub mod deregister_instance_input {
             self,
         ) -> std::result::Result<
             crate::input::DeregisterInstanceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeregisterInstanceInput {
                 instance_id: self.instance_id,
@@ -4521,16 +5289,16 @@ impl DeregisterInstanceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeregisterInstance,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeregisterInstanceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4538,7 +5306,7 @@ impl DeregisterInstanceInput {
         fn update_http_builder(
             input: &crate::input::DeregisterInstanceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4547,32 +5315,32 @@ impl DeregisterInstanceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeregisterInstanceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DeregisterInstance",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deregister_instance(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4595,15 +5363,15 @@ impl DeregisterInstanceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeregisterInstance::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeregisterInstance",
             "opsworks",
         ));
@@ -4612,10 +5380,10 @@ impl DeregisterInstanceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4643,6 +5411,7 @@ pub mod deregister_rds_db_instance_input {
             self.rds_db_instance_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon RDS instance's ARN.</p>
         pub fn set_rds_db_instance_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4655,7 +5424,7 @@ pub mod deregister_rds_db_instance_input {
             self,
         ) -> std::result::Result<
             crate::input::DeregisterRdsDbInstanceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeregisterRdsDbInstanceInput {
                 rds_db_instance_arn: self.rds_db_instance_arn,
@@ -4675,16 +5444,16 @@ impl DeregisterRdsDbInstanceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeregisterRdsDbInstance,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeregisterRdsDbInstanceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4692,7 +5461,7 @@ impl DeregisterRdsDbInstanceInput {
         fn update_http_builder(
             input: &crate::input::DeregisterRdsDbInstanceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4701,32 +5470,34 @@ impl DeregisterRdsDbInstanceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeregisterRdsDbInstanceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DeregisterRdsDbInstance",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deregister_rds_db_instance(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4749,15 +5520,15 @@ impl DeregisterRdsDbInstanceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeregisterRdsDbInstance::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeregisterRdsDbInstance",
             "opsworks",
         ));
@@ -4766,10 +5537,10 @@ impl DeregisterRdsDbInstanceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4797,6 +5568,7 @@ pub mod deregister_volume_input {
             self.volume_id = Some(input.into());
             self
         }
+        /// <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID.</p>
         pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.volume_id = input;
             self
@@ -4806,7 +5578,7 @@ pub mod deregister_volume_input {
             self,
         ) -> std::result::Result<
             crate::input::DeregisterVolumeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeregisterVolumeInput {
                 volume_id: self.volume_id,
@@ -4825,16 +5597,16 @@ impl DeregisterVolumeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeregisterVolume,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeregisterVolumeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4842,7 +5614,7 @@ impl DeregisterVolumeInput {
         fn update_http_builder(
             input: &crate::input::DeregisterVolumeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4851,32 +5623,32 @@ impl DeregisterVolumeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeregisterVolumeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DeregisterVolume",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deregister_volume(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4899,15 +5671,15 @@ impl DeregisterVolumeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeregisterVolume::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeregisterVolume",
             "opsworks",
         ));
@@ -4916,10 +5688,10 @@ impl DeregisterVolumeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4949,6 +5721,7 @@ pub mod describe_agent_versions_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -4961,6 +5734,7 @@ pub mod describe_agent_versions_input {
             self.configuration_manager = Some(input);
             self
         }
+        /// <p>The configuration manager.</p>
         pub fn set_configuration_manager(
             mut self,
             input: std::option::Option<crate::model::StackConfigurationManager>,
@@ -4973,7 +5747,7 @@ pub mod describe_agent_versions_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeAgentVersionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeAgentVersionsInput {
                 stack_id: self.stack_id,
@@ -4993,16 +5767,16 @@ impl DescribeAgentVersionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeAgentVersions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeAgentVersionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5010,7 +5784,7 @@ impl DescribeAgentVersionsInput {
         fn update_http_builder(
             input: &crate::input::DescribeAgentVersionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5019,32 +5793,34 @@ impl DescribeAgentVersionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeAgentVersionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribeAgentVersions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_agent_versions(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5067,15 +5843,15 @@ impl DescribeAgentVersionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeAgentVersions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeAgentVersions",
             "opsworks",
         ));
@@ -5084,10 +5860,10 @@ impl DescribeAgentVersionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5117,16 +5893,28 @@ pub mod describe_apps_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description
+        /// of the apps in the specified stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
         }
+        /// Appends an item to `app_ids`.
+        ///
+        /// To override the contents of this collection use [`set_app_ids`](Self::set_app_ids).
+        ///
+        /// <p>An array of app IDs for the apps to be described. If you use this parameter,
+        /// <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns
+        /// a description of every app.</p>
         pub fn app_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.app_ids.unwrap_or_default();
             v.push(input.into());
             self.app_ids = Some(v);
             self
         }
+        /// <p>An array of app IDs for the apps to be described. If you use this parameter,
+        /// <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns
+        /// a description of every app.</p>
         pub fn set_app_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5137,8 +5925,10 @@ pub mod describe_apps_input {
         /// Consumes the builder and constructs a [`DescribeAppsInput`](crate::input::DescribeAppsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeAppsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeAppsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeAppsInput {
                 stack_id: self.stack_id,
                 app_ids: self.app_ids,
@@ -5157,16 +5947,16 @@ impl DescribeAppsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeApps,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeAppsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5174,7 +5964,7 @@ impl DescribeAppsInput {
         fn update_http_builder(
             input: &crate::input::DescribeAppsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5183,31 +5973,31 @@ impl DescribeAppsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeAppsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribeApps",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_apps(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5230,25 +6020,27 @@ impl DescribeAppsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeApps::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeApps",
-                    "opsworks",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeApps::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeApps",
+            "opsworks",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5279,6 +6071,8 @@ pub mod describe_commands_input {
             self.deployment_id = Some(input.into());
             self
         }
+        /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a
+        /// description of the commands associated with the specified deployment.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5292,16 +6086,28 @@ pub mod describe_commands_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a
+        /// description of the commands associated with the specified instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
         }
+        /// Appends an item to `command_ids`.
+        ///
+        /// To override the contents of this collection use [`set_command_ids`](Self::set_command_ids).
+        ///
+        /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns
+        /// a description of the specified commands. Otherwise, it returns a description of every
+        /// command.</p>
         pub fn command_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.command_ids.unwrap_or_default();
             v.push(input.into());
             self.command_ids = Some(v);
             self
         }
+        /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns
+        /// a description of the specified commands. Otherwise, it returns a description of every
+        /// command.</p>
         pub fn set_command_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5314,7 +6120,7 @@ pub mod describe_commands_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeCommandsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeCommandsInput {
                 deployment_id: self.deployment_id,
@@ -5335,16 +6141,16 @@ impl DescribeCommandsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCommands,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeCommandsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5352,7 +6158,7 @@ impl DescribeCommandsInput {
         fn update_http_builder(
             input: &crate::input::DescribeCommandsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5361,32 +6167,32 @@ impl DescribeCommandsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeCommandsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribeCommands",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_commands(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5409,15 +6215,15 @@ impl DescribeCommandsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCommands::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCommands",
             "opsworks",
         ));
@@ -5426,10 +6232,10 @@ impl DescribeCommandsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5460,6 +6266,8 @@ pub mod describe_deployments_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The stack ID. If you include this parameter, the command returns a
+        /// description of the commands associated with the specified stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -5470,16 +6278,28 @@ pub mod describe_deployments_input {
             self.app_id = Some(input.into());
             self
         }
+        /// <p>The app ID. If you include this parameter, the command returns a
+        /// description of the commands associated with the specified app.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_id = input;
             self
         }
+        /// Appends an item to `deployment_ids`.
+        ///
+        /// To override the contents of this collection use [`set_deployment_ids`](Self::set_deployment_ids).
+        ///
+        /// <p>An array of deployment IDs to be described. If you include this parameter,
+        /// the command returns a description of the specified deployments.
+        /// Otherwise, it returns a description of every deployment.</p>
         pub fn deployment_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.deployment_ids.unwrap_or_default();
             v.push(input.into());
             self.deployment_ids = Some(v);
             self
         }
+        /// <p>An array of deployment IDs to be described. If you include this parameter,
+        /// the command returns a description of the specified deployments.
+        /// Otherwise, it returns a description of every deployment.</p>
         pub fn set_deployment_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5492,7 +6312,7 @@ pub mod describe_deployments_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeDeploymentsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeDeploymentsInput {
                 stack_id: self.stack_id,
@@ -5513,16 +6333,16 @@ impl DescribeDeploymentsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeDeployments,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeDeploymentsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5530,7 +6350,7 @@ impl DescribeDeploymentsInput {
         fn update_http_builder(
             input: &crate::input::DescribeDeploymentsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5539,30 +6359,32 @@ impl DescribeDeploymentsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeDeploymentsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribeDeployments",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_deployments(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5585,15 +6407,15 @@ impl DescribeDeploymentsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeDeployments::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeDeployments",
             "opsworks",
         ));
@@ -5602,10 +6424,10 @@ impl DescribeDeploymentsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5631,12 +6453,18 @@ pub mod describe_ecs_clusters_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `ecs_cluster_arns`.
+        ///
+        /// To override the contents of this collection use [`set_ecs_cluster_arns`](Self::set_ecs_cluster_arns).
+        ///
+        /// <p>A list of ARNs, one for each cluster to be described.</p>
         pub fn ecs_cluster_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ecs_cluster_arns.unwrap_or_default();
             v.push(input.into());
             self.ecs_cluster_arns = Some(v);
             self
         }
+        /// <p>A list of ARNs, one for each cluster to be described.</p>
         pub fn set_ecs_cluster_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5650,6 +6478,8 @@ pub mod describe_ecs_clusters_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>A stack ID.
+        /// <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -5664,6 +6494,12 @@ pub mod describe_ecs_clusters_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous paginated request did not return all of the remaining results,
+        /// the response object's<code>NextToken</code> parameter value is set to a token.
+        /// To retrieve the next set of results, call <code>DescribeEcsClusters</code>
+        /// again and assign that token to the request object's <code>NextToken</code> parameter.
+        /// If there are no remaining results, the previous response
+        /// object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5676,6 +6512,10 @@ pub mod describe_ecs_clusters_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>To receive a paginated response, use this parameter to specify the maximum number
+        /// of results to be returned with a single call. If the number of available results exceeds this maximum, the
+        /// response includes a <code>NextToken</code> value that you can assign
+        /// to the <code>NextToken</code> request parameter to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5685,7 +6525,7 @@ pub mod describe_ecs_clusters_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeEcsClustersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeEcsClustersInput {
                 ecs_cluster_arns: self.ecs_cluster_arns,
@@ -5707,16 +6547,16 @@ impl DescribeEcsClustersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeEcsClusters,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeEcsClustersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5724,7 +6564,7 @@ impl DescribeEcsClustersInput {
         fn update_http_builder(
             input: &crate::input::DescribeEcsClustersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5733,32 +6573,32 @@ impl DescribeEcsClustersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeEcsClustersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribeEcsClusters",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_ecs_clusters(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5781,15 +6621,15 @@ impl DescribeEcsClustersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeEcsClusters::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeEcsClusters",
             "opsworks",
         ));
@@ -5798,10 +6638,10 @@ impl DescribeEcsClustersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5832,6 +6672,8 @@ pub mod describe_elastic_ips_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a
+        /// description of the Elastic IP addresses associated with the specified instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -5842,16 +6684,28 @@ pub mod describe_elastic_ips_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a
+        /// description of the Elastic IP addresses that are registered with the specified stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
         }
+        /// Appends an item to `ips`.
+        ///
+        /// To override the contents of this collection use [`set_ips`](Self::set_ips).
+        ///
+        /// <p>An array of Elastic IP addresses to be described. If you include this parameter,
+        /// <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses.
+        /// Otherwise, it returns a description of every Elastic IP address.</p>
         pub fn ips(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ips.unwrap_or_default();
             v.push(input.into());
             self.ips = Some(v);
             self
         }
+        /// <p>An array of Elastic IP addresses to be described. If you include this parameter,
+        /// <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses.
+        /// Otherwise, it returns a description of every Elastic IP address.</p>
         pub fn set_ips(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5864,7 +6718,7 @@ pub mod describe_elastic_ips_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeElasticIpsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeElasticIpsInput {
                 instance_id: self.instance_id,
@@ -5885,16 +6739,16 @@ impl DescribeElasticIpsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeElasticIps,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeElasticIpsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5902,7 +6756,7 @@ impl DescribeElasticIpsInput {
         fn update_http_builder(
             input: &crate::input::DescribeElasticIpsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5911,30 +6765,32 @@ impl DescribeElasticIpsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeElasticIpsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribeElasticIps",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_elastic_ips(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5957,15 +6813,15 @@ impl DescribeElasticIpsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeElasticIps::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeElasticIps",
             "opsworks",
         ));
@@ -5974,10 +6830,10 @@ impl DescribeElasticIpsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6006,16 +6862,23 @@ pub mod describe_elastic_load_balancers_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
         }
+        /// Appends an item to `layer_ids`.
+        ///
+        /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
+        ///
+        /// <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
         pub fn layer_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.layer_ids.unwrap_or_default();
             v.push(input.into());
             self.layer_ids = Some(v);
             self
         }
+        /// <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
         pub fn set_layer_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6028,7 +6891,7 @@ pub mod describe_elastic_load_balancers_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeElasticLoadBalancersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeElasticLoadBalancersInput {
                 stack_id: self.stack_id,
@@ -6049,16 +6912,16 @@ impl DescribeElasticLoadBalancersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeElasticLoadBalancers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeElasticLoadBalancersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6066,7 +6929,7 @@ impl DescribeElasticLoadBalancersInput {
         fn update_http_builder(
             input: &crate::input::DescribeElasticLoadBalancersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6075,30 +6938,30 @@ impl DescribeElasticLoadBalancersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeElasticLoadBalancersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribeElasticLoadBalancers",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_elastic_load_balancers(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_elastic_load_balancers(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6121,15 +6984,15 @@ impl DescribeElasticLoadBalancersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeElasticLoadBalancers::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeElasticLoadBalancers",
             "opsworks",
         ));
@@ -6138,10 +7001,10 @@ impl DescribeElasticLoadBalancersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6172,6 +7035,8 @@ pub mod describe_instances_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of
+        /// the instances associated with the specified stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -6182,16 +7047,28 @@ pub mod describe_instances_input {
             self.layer_id = Some(input.into());
             self
         }
+        /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of
+        /// the instances associated with the specified layer.</p>
         pub fn set_layer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.layer_id = input;
             self
         }
+        /// Appends an item to `instance_ids`.
+        ///
+        /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
+        ///
+        /// <p>An array of instance IDs to be described. If you use this parameter,
+        /// <code>DescribeInstances</code> returns a description of the specified instances. Otherwise,
+        /// it returns a description of every instance.</p>
         pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
             v.push(input.into());
             self.instance_ids = Some(v);
             self
         }
+        /// <p>An array of instance IDs to be described. If you use this parameter,
+        /// <code>DescribeInstances</code> returns a description of the specified instances. Otherwise,
+        /// it returns a description of every instance.</p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6204,7 +7081,7 @@ pub mod describe_instances_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeInstancesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeInstancesInput {
                 stack_id: self.stack_id,
@@ -6225,16 +7102,16 @@ impl DescribeInstancesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeInstances,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeInstancesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6242,7 +7119,7 @@ impl DescribeInstancesInput {
         fn update_http_builder(
             input: &crate::input::DescribeInstancesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6251,32 +7128,32 @@ impl DescribeInstancesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeInstancesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribeInstances",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_instances(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6299,15 +7176,15 @@ impl DescribeInstancesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeInstances::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeInstances",
             "opsworks",
         ));
@@ -6316,10 +7193,10 @@ impl DescribeInstancesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6348,16 +7225,25 @@ pub mod describe_layers_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
         }
+        /// Appends an item to `layer_ids`.
+        ///
+        /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
+        ///
+        /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter,
+        /// <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
         pub fn layer_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.layer_ids.unwrap_or_default();
             v.push(input.into());
             self.layer_ids = Some(v);
             self
         }
+        /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter,
+        /// <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
         pub fn set_layer_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6370,7 +7256,7 @@ pub mod describe_layers_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeLayersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeLayersInput {
                 stack_id: self.stack_id,
@@ -6390,16 +7276,16 @@ impl DescribeLayersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeLayers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeLayersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6407,7 +7293,7 @@ impl DescribeLayersInput {
         fn update_http_builder(
             input: &crate::input::DescribeLayersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6416,29 +7302,31 @@ impl DescribeLayersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeLayersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribeLayers",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_layers(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6461,15 +7349,15 @@ impl DescribeLayersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeLayers::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeLayers",
             "opsworks",
         ));
@@ -6478,10 +7366,10 @@ impl DescribeLayersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6504,12 +7392,18 @@ pub mod describe_load_based_auto_scaling_input {
         pub(crate) layer_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `layer_ids`.
+        ///
+        /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
+        ///
+        /// <p>An array of layer IDs.</p>
         pub fn layer_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.layer_ids.unwrap_or_default();
             v.push(input.into());
             self.layer_ids = Some(v);
             self
         }
+        /// <p>An array of layer IDs.</p>
         pub fn set_layer_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6522,7 +7416,7 @@ pub mod describe_load_based_auto_scaling_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeLoadBasedAutoScalingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeLoadBasedAutoScalingInput {
                 layer_ids: self.layer_ids,
@@ -6542,16 +7436,16 @@ impl DescribeLoadBasedAutoScalingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeLoadBasedAutoScaling,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeLoadBasedAutoScalingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6559,7 +7453,7 @@ impl DescribeLoadBasedAutoScalingInput {
         fn update_http_builder(
             input: &crate::input::DescribeLoadBasedAutoScalingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6568,30 +7462,30 @@ impl DescribeLoadBasedAutoScalingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeLoadBasedAutoScalingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribeLoadBasedAutoScaling",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_load_based_auto_scaling(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_load_based_auto_scaling(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6614,15 +7508,15 @@ impl DescribeLoadBasedAutoScalingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeLoadBasedAutoScaling::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeLoadBasedAutoScaling",
             "opsworks",
         ));
@@ -6631,10 +7525,10 @@ impl DescribeLoadBasedAutoScalingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6660,7 +7554,7 @@ pub mod describe_my_user_profile_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeMyUserProfileInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeMyUserProfileInput {})
         }
@@ -6677,16 +7571,16 @@ impl DescribeMyUserProfileInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeMyUserProfile,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeMyUserProfileInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6694,7 +7588,7 @@ impl DescribeMyUserProfileInput {
         fn update_http_builder(
             input: &crate::input::DescribeMyUserProfileInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6703,32 +7597,34 @@ impl DescribeMyUserProfileInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeMyUserProfileInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribeMyUserProfile",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_my_user_profile(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6751,15 +7647,15 @@ impl DescribeMyUserProfileInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeMyUserProfile::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeMyUserProfile",
             "opsworks",
         ));
@@ -6768,10 +7664,10 @@ impl DescribeMyUserProfileInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6797,7 +7693,7 @@ pub mod describe_operating_systems_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeOperatingSystemsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeOperatingSystemsInput {})
         }
@@ -6815,16 +7711,16 @@ impl DescribeOperatingSystemsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeOperatingSystems,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeOperatingSystemsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6832,7 +7728,7 @@ impl DescribeOperatingSystemsInput {
         fn update_http_builder(
             input: &crate::input::DescribeOperatingSystemsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6841,32 +7737,34 @@ impl DescribeOperatingSystemsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeOperatingSystemsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribeOperatingSystems",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_operating_systems(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6889,15 +7787,15 @@ impl DescribeOperatingSystemsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeOperatingSystems::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeOperatingSystems",
             "opsworks",
         ));
@@ -6906,10 +7804,10 @@ impl DescribeOperatingSystemsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6939,6 +7837,8 @@ pub mod describe_permissions_input {
             self.iam_user_arn = Some(input.into());
             self
         }
+        /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// Identifiers</a>.</p>
         pub fn set_iam_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_user_arn = input;
             self
@@ -6948,6 +7848,7 @@ pub mod describe_permissions_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -6957,7 +7858,7 @@ pub mod describe_permissions_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribePermissionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribePermissionsInput {
                 iam_user_arn: self.iam_user_arn,
@@ -6977,16 +7878,16 @@ impl DescribePermissionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribePermissions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribePermissionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6994,7 +7895,7 @@ impl DescribePermissionsInput {
         fn update_http_builder(
             input: &crate::input::DescribePermissionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7003,30 +7904,32 @@ impl DescribePermissionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribePermissionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribePermissions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_permissions(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7049,15 +7952,15 @@ impl DescribePermissionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribePermissions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribePermissions",
             "opsworks",
         ));
@@ -7066,10 +7969,10 @@ impl DescribePermissionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7100,6 +8003,8 @@ pub mod describe_raid_arrays_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns
+        /// descriptions of the RAID arrays associated with the specified instance. </p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -7109,16 +8014,27 @@ pub mod describe_raid_arrays_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
         }
+        /// Appends an item to `raid_array_ids`.
+        ///
+        /// To override the contents of this collection use [`set_raid_array_ids`](Self::set_raid_array_ids).
+        ///
+        /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code>
+        /// returns descriptions of the specified arrays. Otherwise, it returns a description of every
+        /// array.</p>
         pub fn raid_array_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.raid_array_ids.unwrap_or_default();
             v.push(input.into());
             self.raid_array_ids = Some(v);
             self
         }
+        /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code>
+        /// returns descriptions of the specified arrays. Otherwise, it returns a description of every
+        /// array.</p>
         pub fn set_raid_array_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7131,7 +8047,7 @@ pub mod describe_raid_arrays_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeRaidArraysInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeRaidArraysInput {
                 instance_id: self.instance_id,
@@ -7152,16 +8068,16 @@ impl DescribeRaidArraysInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeRaidArrays,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeRaidArraysInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7169,7 +8085,7 @@ impl DescribeRaidArraysInput {
         fn update_http_builder(
             input: &crate::input::DescribeRaidArraysInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7178,30 +8094,32 @@ impl DescribeRaidArraysInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeRaidArraysInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribeRaidArrays",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_raid_arrays(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7224,15 +8142,15 @@ impl DescribeRaidArraysInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeRaidArrays::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeRaidArrays",
             "opsworks",
         ));
@@ -7241,10 +8159,10 @@ impl DescribeRaidArraysInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7273,16 +8191,23 @@ pub mod describe_rds_db_instances_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The ID of the stack with which the instances are registered. The operation returns descriptions of all registered Amazon RDS instances.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
         }
+        /// Appends an item to `rds_db_instance_arns`.
+        ///
+        /// To override the contents of this collection use [`set_rds_db_instance_arns`](Self::set_rds_db_instance_arns).
+        ///
+        /// <p>An array containing the ARNs of the instances to be described.</p>
         pub fn rds_db_instance_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.rds_db_instance_arns.unwrap_or_default();
             v.push(input.into());
             self.rds_db_instance_arns = Some(v);
             self
         }
+        /// <p>An array containing the ARNs of the instances to be described.</p>
         pub fn set_rds_db_instance_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7295,7 +8220,7 @@ pub mod describe_rds_db_instances_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeRdsDbInstancesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeRdsDbInstancesInput {
                 stack_id: self.stack_id,
@@ -7315,16 +8240,16 @@ impl DescribeRdsDbInstancesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeRdsDbInstances,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeRdsDbInstancesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7332,7 +8257,7 @@ impl DescribeRdsDbInstancesInput {
         fn update_http_builder(
             input: &crate::input::DescribeRdsDbInstancesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7341,32 +8266,34 @@ impl DescribeRdsDbInstancesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeRdsDbInstancesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribeRdsDbInstances",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_rds_db_instances(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7389,15 +8316,15 @@ impl DescribeRdsDbInstancesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeRdsDbInstances::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeRdsDbInstances",
             "opsworks",
         ));
@@ -7406,10 +8333,10 @@ impl DescribeRdsDbInstancesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7440,6 +8367,8 @@ pub mod describe_service_errors_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
+        /// descriptions of the errors associated with the specified stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -7450,16 +8379,28 @@ pub mod describe_service_errors_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
+        /// descriptions of the errors associated with the specified instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
         }
+        /// Appends an item to `service_error_ids`.
+        ///
+        /// To override the contents of this collection use [`set_service_error_ids`](Self::set_service_error_ids).
+        ///
+        /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code>
+        /// returns descriptions of the specified errors. Otherwise, it returns a description of every
+        /// error.</p>
         pub fn service_error_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.service_error_ids.unwrap_or_default();
             v.push(input.into());
             self.service_error_ids = Some(v);
             self
         }
+        /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code>
+        /// returns descriptions of the specified errors. Otherwise, it returns a description of every
+        /// error.</p>
         pub fn set_service_error_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7472,7 +8413,7 @@ pub mod describe_service_errors_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeServiceErrorsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeServiceErrorsInput {
                 stack_id: self.stack_id,
@@ -7493,16 +8434,16 @@ impl DescribeServiceErrorsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeServiceErrors,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeServiceErrorsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7510,7 +8451,7 @@ impl DescribeServiceErrorsInput {
         fn update_http_builder(
             input: &crate::input::DescribeServiceErrorsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7519,32 +8460,34 @@ impl DescribeServiceErrorsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeServiceErrorsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribeServiceErrors",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_service_errors(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7567,15 +8510,15 @@ impl DescribeServiceErrorsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeServiceErrors::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeServiceErrors",
             "opsworks",
         ));
@@ -7584,10 +8527,10 @@ impl DescribeServiceErrorsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7615,6 +8558,7 @@ pub mod describe_stack_provisioning_parameters_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -7624,7 +8568,7 @@ pub mod describe_stack_provisioning_parameters_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeStackProvisioningParametersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeStackProvisioningParametersInput {
                 stack_id: self.stack_id,
@@ -7645,16 +8589,16 @@ impl DescribeStackProvisioningParametersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeStackProvisioningParameters,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeStackProvisioningParametersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7662,7 +8606,7 @@ impl DescribeStackProvisioningParametersInput {
         fn update_http_builder(
             input: &crate::input::DescribeStackProvisioningParametersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7671,30 +8615,30 @@ impl DescribeStackProvisioningParametersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeStackProvisioningParametersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribeStackProvisioningParameters",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_stack_provisioning_parameters(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_stack_provisioning_parameters(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7717,15 +8661,15 @@ impl DescribeStackProvisioningParametersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeStackProvisioningParameters::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeStackProvisioningParameters",
             "opsworks",
         ));
@@ -7734,10 +8678,10 @@ impl DescribeStackProvisioningParametersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7760,12 +8704,20 @@ pub mod describe_stacks_input {
         pub(crate) stack_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `stack_ids`.
+        ///
+        /// To override the contents of this collection use [`set_stack_ids`](Self::set_stack_ids).
+        ///
+        /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter,
+        /// <code>DescribeStacks</code> returns a description of every stack.</p>
         pub fn stack_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stack_ids.unwrap_or_default();
             v.push(input.into());
             self.stack_ids = Some(v);
             self
         }
+        /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter,
+        /// <code>DescribeStacks</code> returns a description of every stack.</p>
         pub fn set_stack_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7778,7 +8730,7 @@ pub mod describe_stacks_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeStacksInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeStacksInput {
                 stack_ids: self.stack_ids,
@@ -7797,16 +8749,16 @@ impl DescribeStacksInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeStacks,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeStacksInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7814,7 +8766,7 @@ impl DescribeStacksInput {
         fn update_http_builder(
             input: &crate::input::DescribeStacksInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7823,29 +8775,31 @@ impl DescribeStacksInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeStacksInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribeStacks",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_stacks(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7868,15 +8822,15 @@ impl DescribeStacksInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeStacks::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeStacks",
             "opsworks",
         ));
@@ -7885,10 +8839,10 @@ impl DescribeStacksInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7916,6 +8870,7 @@ pub mod describe_stack_summary_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -7925,7 +8880,7 @@ pub mod describe_stack_summary_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeStackSummaryInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeStackSummaryInput {
                 stack_id: self.stack_id,
@@ -7944,16 +8899,16 @@ impl DescribeStackSummaryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeStackSummary,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeStackSummaryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7961,7 +8916,7 @@ impl DescribeStackSummaryInput {
         fn update_http_builder(
             input: &crate::input::DescribeStackSummaryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7970,32 +8925,32 @@ impl DescribeStackSummaryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeStackSummaryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribeStackSummary",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_stack_summary(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8018,15 +8973,15 @@ impl DescribeStackSummaryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeStackSummary::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeStackSummary",
             "opsworks",
         ));
@@ -8035,10 +8990,10 @@ impl DescribeStackSummaryInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8061,12 +9016,18 @@ pub mod describe_time_based_auto_scaling_input {
         pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `instance_ids`.
+        ///
+        /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
+        ///
+        /// <p>An array of instance IDs.</p>
         pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
             v.push(input.into());
             self.instance_ids = Some(v);
             self
         }
+        /// <p>An array of instance IDs.</p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8079,7 +9040,7 @@ pub mod describe_time_based_auto_scaling_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeTimeBasedAutoScalingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeTimeBasedAutoScalingInput {
                 instance_ids: self.instance_ids,
@@ -8099,16 +9060,16 @@ impl DescribeTimeBasedAutoScalingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeTimeBasedAutoScaling,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeTimeBasedAutoScalingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8116,7 +9077,7 @@ impl DescribeTimeBasedAutoScalingInput {
         fn update_http_builder(
             input: &crate::input::DescribeTimeBasedAutoScalingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8125,30 +9086,30 @@ impl DescribeTimeBasedAutoScalingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeTimeBasedAutoScalingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribeTimeBasedAutoScaling",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_time_based_auto_scaling(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_time_based_auto_scaling(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8171,15 +9132,15 @@ impl DescribeTimeBasedAutoScalingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeTimeBasedAutoScaling::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeTimeBasedAutoScaling",
             "opsworks",
         ));
@@ -8188,10 +9149,10 @@ impl DescribeTimeBasedAutoScalingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8214,12 +9175,18 @@ pub mod describe_user_profiles_input {
         pub(crate) iam_user_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `iam_user_arns`.
+        ///
+        /// To override the contents of this collection use [`set_iam_user_arns`](Self::set_iam_user_arns).
+        ///
+        /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
         pub fn iam_user_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.iam_user_arns.unwrap_or_default();
             v.push(input.into());
             self.iam_user_arns = Some(v);
             self
         }
+        /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
         pub fn set_iam_user_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8232,7 +9199,7 @@ pub mod describe_user_profiles_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeUserProfilesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeUserProfilesInput {
                 iam_user_arns: self.iam_user_arns,
@@ -8251,16 +9218,16 @@ impl DescribeUserProfilesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeUserProfiles,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeUserProfilesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8268,7 +9235,7 @@ impl DescribeUserProfilesInput {
         fn update_http_builder(
             input: &crate::input::DescribeUserProfilesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8277,32 +9244,32 @@ impl DescribeUserProfilesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeUserProfilesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribeUserProfiles",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_user_profiles(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8325,15 +9292,15 @@ impl DescribeUserProfilesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeUserProfiles::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeUserProfiles",
             "opsworks",
         ));
@@ -8342,10 +9309,10 @@ impl DescribeUserProfilesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8377,6 +9344,8 @@ pub mod describe_volumes_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions
+        /// of the volumes associated with the specified instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -8386,6 +9355,7 @@ pub mod describe_volumes_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>A stack ID. The action describes the stack's registered Amazon EBS volumes.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -8396,6 +9366,8 @@ pub mod describe_volumes_input {
             self.raid_array_id = Some(input.into());
             self
         }
+        /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns
+        /// descriptions of the volumes associated with the specified RAID array.</p>
         pub fn set_raid_array_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8403,12 +9375,22 @@ pub mod describe_volumes_input {
             self.raid_array_id = input;
             self
         }
+        /// Appends an item to `volume_ids`.
+        ///
+        /// To override the contents of this collection use [`set_volume_ids`](Self::set_volume_ids).
+        ///
+        /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns
+        /// descriptions of the specified volumes. Otherwise, it returns a description of every
+        /// volume.</p>
         pub fn volume_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.volume_ids.unwrap_or_default();
             v.push(input.into());
             self.volume_ids = Some(v);
             self
         }
+        /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns
+        /// descriptions of the specified volumes. Otherwise, it returns a description of every
+        /// volume.</p>
         pub fn set_volume_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8421,7 +9403,7 @@ pub mod describe_volumes_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeVolumesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeVolumesInput {
                 instance_id: self.instance_id,
@@ -8443,16 +9425,16 @@ impl DescribeVolumesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeVolumes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeVolumesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8460,7 +9442,7 @@ impl DescribeVolumesInput {
         fn update_http_builder(
             input: &crate::input::DescribeVolumesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8469,32 +9451,32 @@ impl DescribeVolumesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeVolumesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DescribeVolumes",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_volumes(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8517,15 +9499,15 @@ impl DescribeVolumesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeVolumes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeVolumes",
             "opsworks",
         ));
@@ -8534,10 +9516,10 @@ impl DescribeVolumesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8566,6 +9548,7 @@ pub mod detach_elastic_load_balancer_input {
             self.elastic_load_balancer_name = Some(input.into());
             self
         }
+        /// <p>The Elastic Load Balancing instance's name.</p>
         pub fn set_elastic_load_balancer_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8578,6 +9561,7 @@ pub mod detach_elastic_load_balancer_input {
             self.layer_id = Some(input.into());
             self
         }
+        /// <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
         pub fn set_layer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.layer_id = input;
             self
@@ -8587,7 +9571,7 @@ pub mod detach_elastic_load_balancer_input {
             self,
         ) -> std::result::Result<
             crate::input::DetachElasticLoadBalancerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DetachElasticLoadBalancerInput {
                 elastic_load_balancer_name: self.elastic_load_balancer_name,
@@ -8608,16 +9592,16 @@ impl DetachElasticLoadBalancerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DetachElasticLoadBalancer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DetachElasticLoadBalancerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8625,7 +9609,7 @@ impl DetachElasticLoadBalancerInput {
         fn update_http_builder(
             input: &crate::input::DetachElasticLoadBalancerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8634,32 +9618,34 @@ impl DetachElasticLoadBalancerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DetachElasticLoadBalancerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DetachElasticLoadBalancer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_detach_elastic_load_balancer(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8682,15 +9668,15 @@ impl DetachElasticLoadBalancerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DetachElasticLoadBalancer::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DetachElasticLoadBalancer",
             "opsworks",
         ));
@@ -8699,10 +9685,10 @@ impl DetachElasticLoadBalancerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8730,6 +9716,7 @@ pub mod disassociate_elastic_ip_input {
             self.elastic_ip = Some(input.into());
             self
         }
+        /// <p>The Elastic IP address.</p>
         pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.elastic_ip = input;
             self
@@ -8739,7 +9726,7 @@ pub mod disassociate_elastic_ip_input {
             self,
         ) -> std::result::Result<
             crate::input::DisassociateElasticIpInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisassociateElasticIpInput {
                 elastic_ip: self.elastic_ip,
@@ -8758,16 +9745,16 @@ impl DisassociateElasticIpInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisassociateElasticIp,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisassociateElasticIpInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8775,7 +9762,7 @@ impl DisassociateElasticIpInput {
         fn update_http_builder(
             input: &crate::input::DisassociateElasticIpInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8784,32 +9771,34 @@ impl DisassociateElasticIpInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisassociateElasticIpInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.DisassociateElasticIp",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disassociate_elastic_ip(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8832,15 +9821,15 @@ impl DisassociateElasticIpInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisassociateElasticIp::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisassociateElasticIp",
             "opsworks",
         ));
@@ -8849,10 +9838,10 @@ impl DisassociateElasticIpInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8880,6 +9869,7 @@ pub mod get_hostname_suggestion_input {
             self.layer_id = Some(input.into());
             self
         }
+        /// <p>The layer ID.</p>
         pub fn set_layer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.layer_id = input;
             self
@@ -8889,7 +9879,7 @@ pub mod get_hostname_suggestion_input {
             self,
         ) -> std::result::Result<
             crate::input::GetHostnameSuggestionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetHostnameSuggestionInput {
                 layer_id: self.layer_id,
@@ -8908,16 +9898,16 @@ impl GetHostnameSuggestionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetHostnameSuggestion,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetHostnameSuggestionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8925,7 +9915,7 @@ impl GetHostnameSuggestionInput {
         fn update_http_builder(
             input: &crate::input::GetHostnameSuggestionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8934,32 +9924,34 @@ impl GetHostnameSuggestionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetHostnameSuggestionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.GetHostnameSuggestion",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_hostname_suggestion(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8982,15 +9974,15 @@ impl GetHostnameSuggestionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetHostnameSuggestion::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetHostnameSuggestion",
             "opsworks",
         ));
@@ -8999,10 +9991,10 @@ impl GetHostnameSuggestionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9031,6 +10023,7 @@ pub mod grant_access_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The instance's AWS OpsWorks Stacks ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -9040,6 +10033,7 @@ pub mod grant_access_input {
             self.valid_for_in_minutes = Some(input);
             self
         }
+        /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
         pub fn set_valid_for_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.valid_for_in_minutes = input;
             self
@@ -9047,8 +10041,10 @@ pub mod grant_access_input {
         /// Consumes the builder and constructs a [`GrantAccessInput`](crate::input::GrantAccessInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GrantAccessInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GrantAccessInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GrantAccessInput {
                 instance_id: self.instance_id,
                 valid_for_in_minutes: self.valid_for_in_minutes,
@@ -9067,16 +10063,16 @@ impl GrantAccessInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GrantAccess,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GrantAccessInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9084,7 +10080,7 @@ impl GrantAccessInput {
         fn update_http_builder(
             input: &crate::input::GrantAccessInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9093,29 +10089,31 @@ impl GrantAccessInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GrantAccessInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.GrantAccess",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_grant_access(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9138,25 +10136,27 @@ impl GrantAccessInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GrantAccess::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GrantAccess",
-                    "opsworks",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GrantAccess::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GrantAccess",
+            "opsworks",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9186,6 +10186,7 @@ pub mod list_tags_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -9196,6 +10197,8 @@ pub mod list_tags_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call.
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -9206,6 +10209,8 @@ pub mod list_tags_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9213,7 +10218,7 @@ pub mod list_tags_input {
         /// Consumes the builder and constructs a [`ListTagsInput`](crate::input::ListTagsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListTagsInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListTagsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListTagsInput {
                 resource_arn: self.resource_arn,
@@ -9234,16 +10239,16 @@ impl ListTagsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTags,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9251,7 +10256,7 @@ impl ListTagsInput {
         fn update_http_builder(
             input: &crate::input::ListTagsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9260,29 +10265,31 @@ impl ListTagsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.ListTags",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_tags(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9305,23 +10312,24 @@ impl ListTagsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::ListTags::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListTags", "opsworks",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListTags::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "ListTags", "opsworks",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9349,6 +10357,7 @@ pub mod reboot_instance_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The instance ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -9358,7 +10367,7 @@ pub mod reboot_instance_input {
             self,
         ) -> std::result::Result<
             crate::input::RebootInstanceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RebootInstanceInput {
                 instance_id: self.instance_id,
@@ -9377,16 +10386,16 @@ impl RebootInstanceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RebootInstance,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RebootInstanceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9394,7 +10403,7 @@ impl RebootInstanceInput {
         fn update_http_builder(
             input: &crate::input::RebootInstanceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9403,29 +10412,31 @@ impl RebootInstanceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RebootInstanceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.RebootInstance",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_reboot_instance(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9448,15 +10459,15 @@ impl RebootInstanceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RebootInstance::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RebootInstance",
             "opsworks",
         ));
@@ -9465,10 +10476,10 @@ impl RebootInstanceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9497,6 +10508,7 @@ pub mod register_ecs_cluster_input {
             self.ecs_cluster_arn = Some(input.into());
             self
         }
+        /// <p>The cluster's ARN.</p>
         pub fn set_ecs_cluster_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9509,6 +10521,7 @@ pub mod register_ecs_cluster_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -9518,7 +10531,7 @@ pub mod register_ecs_cluster_input {
             self,
         ) -> std::result::Result<
             crate::input::RegisterEcsClusterInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RegisterEcsClusterInput {
                 ecs_cluster_arn: self.ecs_cluster_arn,
@@ -9538,16 +10551,16 @@ impl RegisterEcsClusterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RegisterEcsCluster,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RegisterEcsClusterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9555,7 +10568,7 @@ impl RegisterEcsClusterInput {
         fn update_http_builder(
             input: &crate::input::RegisterEcsClusterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9564,30 +10577,32 @@ impl RegisterEcsClusterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RegisterEcsClusterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.RegisterEcsCluster",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_register_ecs_cluster(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9610,15 +10625,15 @@ impl RegisterEcsClusterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RegisterEcsCluster::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RegisterEcsCluster",
             "opsworks",
         ));
@@ -9627,10 +10642,10 @@ impl RegisterEcsClusterInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9659,6 +10674,7 @@ pub mod register_elastic_ip_input {
             self.elastic_ip = Some(input.into());
             self
         }
+        /// <p>The Elastic IP address.</p>
         pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.elastic_ip = input;
             self
@@ -9668,6 +10684,7 @@ pub mod register_elastic_ip_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -9677,7 +10694,7 @@ pub mod register_elastic_ip_input {
             self,
         ) -> std::result::Result<
             crate::input::RegisterElasticIpInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RegisterElasticIpInput {
                 elastic_ip: self.elastic_ip,
@@ -9697,16 +10714,16 @@ impl RegisterElasticIpInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RegisterElasticIp,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RegisterElasticIpInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9714,7 +10731,7 @@ impl RegisterElasticIpInput {
         fn update_http_builder(
             input: &crate::input::RegisterElasticIpInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9723,32 +10740,32 @@ impl RegisterElasticIpInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RegisterElasticIpInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.RegisterElasticIp",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_register_elastic_ip(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9771,15 +10788,15 @@ impl RegisterElasticIpInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RegisterElasticIp::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RegisterElasticIp",
             "opsworks",
         ));
@@ -9788,10 +10805,10 @@ impl RegisterElasticIpInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9825,6 +10842,7 @@ pub mod register_instance_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The ID of the stack that the instance is to be registered with.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -9834,6 +10852,7 @@ pub mod register_instance_input {
             self.hostname = Some(input.into());
             self
         }
+        /// <p>The instance's hostname.</p>
         pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hostname = input;
             self
@@ -9843,6 +10862,7 @@ pub mod register_instance_input {
             self.public_ip = Some(input.into());
             self
         }
+        /// <p>The instance's public IP address.</p>
         pub fn set_public_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.public_ip = input;
             self
@@ -9852,6 +10872,7 @@ pub mod register_instance_input {
             self.private_ip = Some(input.into());
             self
         }
+        /// <p>The instance's private IP address.</p>
         pub fn set_private_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.private_ip = input;
             self
@@ -9861,6 +10882,7 @@ pub mod register_instance_input {
             self.rsa_public_key = Some(input.into());
             self
         }
+        /// <p>The instances public RSA key. This key is used to encrypt communication between the instance and the service.</p>
         pub fn set_rsa_public_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9873,6 +10895,7 @@ pub mod register_instance_input {
             self.rsa_public_key_fingerprint = Some(input.into());
             self
         }
+        /// <p>The instances public RSA key fingerprint.</p>
         pub fn set_rsa_public_key_fingerprint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9885,6 +10908,7 @@ pub mod register_instance_input {
             self.instance_identity = Some(input);
             self
         }
+        /// <p>An InstanceIdentity object that contains the instance's identity.</p>
         pub fn set_instance_identity(
             mut self,
             input: std::option::Option<crate::model::InstanceIdentity>,
@@ -9897,7 +10921,7 @@ pub mod register_instance_input {
             self,
         ) -> std::result::Result<
             crate::input::RegisterInstanceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RegisterInstanceInput {
                 stack_id: self.stack_id,
@@ -9922,16 +10946,16 @@ impl RegisterInstanceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RegisterInstance,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RegisterInstanceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9939,7 +10963,7 @@ impl RegisterInstanceInput {
         fn update_http_builder(
             input: &crate::input::RegisterInstanceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9948,32 +10972,32 @@ impl RegisterInstanceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RegisterInstanceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.RegisterInstance",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_register_instance(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9996,15 +11020,15 @@ impl RegisterInstanceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RegisterInstance::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RegisterInstance",
             "opsworks",
         ));
@@ -10013,10 +11037,10 @@ impl RegisterInstanceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10047,6 +11071,7 @@ pub mod register_rds_db_instance_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -10056,6 +11081,7 @@ pub mod register_rds_db_instance_input {
             self.rds_db_instance_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon RDS instance's ARN.</p>
         pub fn set_rds_db_instance_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10068,6 +11094,7 @@ pub mod register_rds_db_instance_input {
             self.db_user = Some(input.into());
             self
         }
+        /// <p>The database's master user name.</p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_user = input;
             self
@@ -10077,6 +11104,7 @@ pub mod register_rds_db_instance_input {
             self.db_password = Some(input.into());
             self
         }
+        /// <p>The database password.</p>
         pub fn set_db_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_password = input;
             self
@@ -10086,7 +11114,7 @@ pub mod register_rds_db_instance_input {
             self,
         ) -> std::result::Result<
             crate::input::RegisterRdsDbInstanceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RegisterRdsDbInstanceInput {
                 stack_id: self.stack_id,
@@ -10108,16 +11136,16 @@ impl RegisterRdsDbInstanceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RegisterRdsDbInstance,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RegisterRdsDbInstanceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10125,7 +11153,7 @@ impl RegisterRdsDbInstanceInput {
         fn update_http_builder(
             input: &crate::input::RegisterRdsDbInstanceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10134,32 +11162,34 @@ impl RegisterRdsDbInstanceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RegisterRdsDbInstanceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.RegisterRdsDbInstance",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_register_rds_db_instance(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10182,15 +11212,15 @@ impl RegisterRdsDbInstanceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RegisterRdsDbInstance::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RegisterRdsDbInstance",
             "opsworks",
         ));
@@ -10199,10 +11229,10 @@ impl RegisterRdsDbInstanceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10231,6 +11261,7 @@ pub mod register_volume_input {
             self.ec2_volume_id = Some(input.into());
             self
         }
+        /// <p>The Amazon EBS volume ID.</p>
         pub fn set_ec2_volume_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10243,6 +11274,7 @@ pub mod register_volume_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -10252,7 +11284,7 @@ pub mod register_volume_input {
             self,
         ) -> std::result::Result<
             crate::input::RegisterVolumeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RegisterVolumeInput {
                 ec2_volume_id: self.ec2_volume_id,
@@ -10272,16 +11304,16 @@ impl RegisterVolumeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RegisterVolume,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RegisterVolumeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10289,7 +11321,7 @@ impl RegisterVolumeInput {
         fn update_http_builder(
             input: &crate::input::RegisterVolumeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10298,29 +11330,31 @@ impl RegisterVolumeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RegisterVolumeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.RegisterVolume",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_register_volume(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10343,15 +11377,15 @@ impl RegisterVolumeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RegisterVolume::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RegisterVolume",
             "opsworks",
         ));
@@ -10360,10 +11394,10 @@ impl RegisterVolumeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10394,6 +11428,7 @@ pub mod set_load_based_auto_scaling_input {
             self.layer_id = Some(input.into());
             self
         }
+        /// <p>The layer ID.</p>
         pub fn set_layer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.layer_id = input;
             self
@@ -10403,6 +11438,7 @@ pub mod set_load_based_auto_scaling_input {
             self.enable = Some(input);
             self
         }
+        /// <p>Enables load-based auto scaling for the layer.</p>
         pub fn set_enable(mut self, input: std::option::Option<bool>) -> Self {
             self.enable = input;
             self
@@ -10414,6 +11450,9 @@ pub mod set_load_based_auto_scaling_input {
             self.up_scaling = Some(input);
             self
         }
+        /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If
+        /// the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified
+        /// number of instances.</p>
         pub fn set_up_scaling(
             mut self,
             input: std::option::Option<crate::model::AutoScalingThresholds>,
@@ -10428,6 +11467,9 @@ pub mod set_load_based_auto_scaling_input {
             self.down_scaling = Some(input);
             self
         }
+        /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If
+        /// the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified
+        /// number of instances.</p>
         pub fn set_down_scaling(
             mut self,
             input: std::option::Option<crate::model::AutoScalingThresholds>,
@@ -10440,7 +11482,7 @@ pub mod set_load_based_auto_scaling_input {
             self,
         ) -> std::result::Result<
             crate::input::SetLoadBasedAutoScalingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetLoadBasedAutoScalingInput {
                 layer_id: self.layer_id,
@@ -10463,16 +11505,16 @@ impl SetLoadBasedAutoScalingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetLoadBasedAutoScaling,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetLoadBasedAutoScalingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10480,7 +11522,7 @@ impl SetLoadBasedAutoScalingInput {
         fn update_http_builder(
             input: &crate::input::SetLoadBasedAutoScalingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10489,32 +11531,34 @@ impl SetLoadBasedAutoScalingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetLoadBasedAutoScalingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.SetLoadBasedAutoScaling",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_load_based_auto_scaling(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10537,15 +11581,15 @@ impl SetLoadBasedAutoScalingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetLoadBasedAutoScaling::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetLoadBasedAutoScaling",
             "opsworks",
         ));
@@ -10554,10 +11598,10 @@ impl SetLoadBasedAutoScalingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10589,6 +11633,7 @@ pub mod set_permission_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -10598,6 +11643,7 @@ pub mod set_permission_input {
             self.iam_user_arn = Some(input.into());
             self
         }
+        /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
         pub fn set_iam_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_user_arn = input;
             self
@@ -10607,6 +11653,7 @@ pub mod set_permission_input {
             self.allow_ssh = Some(input);
             self
         }
+        /// <p>The user is allowed to use SSH to communicate with the instance.</p>
         pub fn set_allow_ssh(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_ssh = input;
             self
@@ -10616,6 +11663,7 @@ pub mod set_permission_input {
             self.allow_sudo = Some(input);
             self
         }
+        /// <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
         pub fn set_allow_sudo(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_sudo = input;
             self
@@ -10653,6 +11701,35 @@ pub mod set_permission_input {
             self.level = Some(input.into());
             self
         }
+        /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>deny</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>show</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deploy</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>manage</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>iam_only</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
         pub fn set_level(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.level = input;
             self
@@ -10660,8 +11737,10 @@ pub mod set_permission_input {
         /// Consumes the builder and constructs a [`SetPermissionInput`](crate::input::SetPermissionInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::SetPermissionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::SetPermissionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SetPermissionInput {
                 stack_id: self.stack_id,
                 iam_user_arn: self.iam_user_arn,
@@ -10683,16 +11762,16 @@ impl SetPermissionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetPermission,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetPermissionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10700,7 +11779,7 @@ impl SetPermissionInput {
         fn update_http_builder(
             input: &crate::input::SetPermissionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10709,29 +11788,31 @@ impl SetPermissionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetPermissionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.SetPermission",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_set_permission(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10754,25 +11835,27 @@ impl SetPermissionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::SetPermission::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "SetPermission",
-                    "opsworks",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SetPermission::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SetPermission",
+            "opsworks",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10802,6 +11885,7 @@ pub mod set_time_based_auto_scaling_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The instance ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -10814,6 +11898,7 @@ pub mod set_time_based_auto_scaling_input {
             self.auto_scaling_schedule = Some(input);
             self
         }
+        /// <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
         pub fn set_auto_scaling_schedule(
             mut self,
             input: std::option::Option<crate::model::WeeklyAutoScalingSchedule>,
@@ -10826,7 +11911,7 @@ pub mod set_time_based_auto_scaling_input {
             self,
         ) -> std::result::Result<
             crate::input::SetTimeBasedAutoScalingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetTimeBasedAutoScalingInput {
                 instance_id: self.instance_id,
@@ -10847,16 +11932,16 @@ impl SetTimeBasedAutoScalingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetTimeBasedAutoScaling,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetTimeBasedAutoScalingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10864,7 +11949,7 @@ impl SetTimeBasedAutoScalingInput {
         fn update_http_builder(
             input: &crate::input::SetTimeBasedAutoScalingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10873,32 +11958,34 @@ impl SetTimeBasedAutoScalingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetTimeBasedAutoScalingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.SetTimeBasedAutoScaling",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_time_based_auto_scaling(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10921,15 +12008,15 @@ impl SetTimeBasedAutoScalingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetTimeBasedAutoScaling::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetTimeBasedAutoScaling",
             "opsworks",
         ));
@@ -10938,10 +12025,10 @@ impl SetTimeBasedAutoScalingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10969,6 +12056,7 @@ pub mod start_instance_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The instance ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -10976,8 +12064,10 @@ pub mod start_instance_input {
         /// Consumes the builder and constructs a [`StartInstanceInput`](crate::input::StartInstanceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::StartInstanceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StartInstanceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StartInstanceInput {
                 instance_id: self.instance_id,
             })
@@ -10995,16 +12085,16 @@ impl StartInstanceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartInstance,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartInstanceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11012,7 +12102,7 @@ impl StartInstanceInput {
         fn update_http_builder(
             input: &crate::input::StartInstanceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11021,29 +12111,31 @@ impl StartInstanceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartInstanceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.StartInstance",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_start_instance(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11066,25 +12158,27 @@ impl StartInstanceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::StartInstance::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "StartInstance",
-                    "opsworks",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartInstance::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartInstance",
+            "opsworks",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11112,6 +12206,7 @@ pub mod start_stack_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -11119,8 +12214,10 @@ pub mod start_stack_input {
         /// Consumes the builder and constructs a [`StartStackInput`](crate::input::StartStackInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::StartStackInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StartStackInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StartStackInput {
                 stack_id: self.stack_id,
             })
@@ -11138,16 +12235,16 @@ impl StartStackInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartStack,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartStackInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11155,7 +12252,7 @@ impl StartStackInput {
         fn update_http_builder(
             input: &crate::input::StartStackInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11164,29 +12261,31 @@ impl StartStackInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartStackInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.StartStack",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_start_stack(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11209,25 +12308,27 @@ impl StartStackInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::StartStack::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "StartStack",
-                    "opsworks",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartStack::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartStack",
+            "opsworks",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11256,6 +12357,7 @@ pub mod stop_instance_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The instance ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -11267,6 +12369,9 @@ pub mod stop_instance_input {
             self.force = Some(input);
             self
         }
+        /// <p>Specifies whether to force an instance to stop. If the instance's root device type is <code>ebs</code>, or EBS-backed,
+        /// adding the <code>Force</code> parameter to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks instance.
+        /// You must also delete the formerly-associated instance in EC2 after troubleshooting and replacing the AWS OpsWorks Stacks instance with a new one.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
@@ -11274,8 +12379,10 @@ pub mod stop_instance_input {
         /// Consumes the builder and constructs a [`StopInstanceInput`](crate::input::StopInstanceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::StopInstanceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StopInstanceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StopInstanceInput {
                 instance_id: self.instance_id,
                 force: self.force,
@@ -11294,16 +12401,16 @@ impl StopInstanceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StopInstance,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StopInstanceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11311,7 +12418,7 @@ impl StopInstanceInput {
         fn update_http_builder(
             input: &crate::input::StopInstanceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11320,31 +12427,31 @@ impl StopInstanceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StopInstanceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.StopInstance",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_stop_instance(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11367,25 +12474,27 @@ impl StopInstanceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::StopInstance::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "StopInstance",
-                    "opsworks",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StopInstance::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StopInstance",
+            "opsworks",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11413,6 +12522,7 @@ pub mod stop_stack_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -11420,7 +12530,7 @@ pub mod stop_stack_input {
         /// Consumes the builder and constructs a [`StopStackInput`](crate::input::StopStackInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::StopStackInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::StopStackInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::StopStackInput {
                 stack_id: self.stack_id,
@@ -11439,16 +12549,16 @@ impl StopStackInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StopStack,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StopStackInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11456,7 +12566,7 @@ impl StopStackInput {
         fn update_http_builder(
             input: &crate::input::StopStackInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11465,29 +12575,31 @@ impl StopStackInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StopStackInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.StopStack",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_stop_stack(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11510,13 +12622,13 @@ impl StopStackInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::StopStack::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::StopStack::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "StopStack",
                     "opsworks",
                 ));
@@ -11525,10 +12637,10 @@ impl StopStackInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11559,10 +12671,35 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A map that contains tag keys and tag values that are attached to a stack or layer.</p>
+        /// <ul>
+        /// <li>
+        /// <p>The key cannot be empty.</p>
+        /// </li>
+        /// <li>
+        /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p>
+        /// </li>
+        /// <li>
+        /// <p>A maximum of 40 tags is allowed for any resource.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -11573,6 +12710,26 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A map that contains tag keys and tag values that are attached to a stack or layer.</p>
+        /// <ul>
+        /// <li>
+        /// <p>The key cannot be empty.</p>
+        /// </li>
+        /// <li>
+        /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p>
+        /// </li>
+        /// <li>
+        /// <p>A maximum of 40 tags is allowed for any resource.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -11585,8 +12742,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -11605,16 +12764,16 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11622,7 +12781,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11631,29 +12790,31 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.TagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11676,25 +12837,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "opsworks",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "opsworks",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11722,6 +12885,7 @@ pub mod unassign_instance_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The instance ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -11731,7 +12895,7 @@ pub mod unassign_instance_input {
             self,
         ) -> std::result::Result<
             crate::input::UnassignInstanceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UnassignInstanceInput {
                 instance_id: self.instance_id,
@@ -11750,16 +12914,16 @@ impl UnassignInstanceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UnassignInstance,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UnassignInstanceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11767,7 +12931,7 @@ impl UnassignInstanceInput {
         fn update_http_builder(
             input: &crate::input::UnassignInstanceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11776,32 +12940,32 @@ impl UnassignInstanceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UnassignInstanceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.UnassignInstance",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_unassign_instance(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11824,15 +12988,15 @@ impl UnassignInstanceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UnassignInstance::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UnassignInstance",
             "opsworks",
         ));
@@ -11841,10 +13005,10 @@ impl UnassignInstanceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11872,6 +13036,7 @@ pub mod unassign_volume_input {
             self.volume_id = Some(input.into());
             self
         }
+        /// <p>The volume ID.</p>
         pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.volume_id = input;
             self
@@ -11881,7 +13046,7 @@ pub mod unassign_volume_input {
             self,
         ) -> std::result::Result<
             crate::input::UnassignVolumeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UnassignVolumeInput {
                 volume_id: self.volume_id,
@@ -11900,16 +13065,16 @@ impl UnassignVolumeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UnassignVolume,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UnassignVolumeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11917,7 +13082,7 @@ impl UnassignVolumeInput {
         fn update_http_builder(
             input: &crate::input::UnassignVolumeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11926,29 +13091,31 @@ impl UnassignVolumeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UnassignVolumeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.UnassignVolume",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_unassign_volume(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11971,15 +13138,15 @@ impl UnassignVolumeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UnassignVolume::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UnassignVolume",
             "opsworks",
         ));
@@ -11988,10 +13155,10 @@ impl UnassignVolumeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12020,16 +13187,23 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>A list of the keys of tags to be removed from a stack or layer.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>A list of the keys of tags to be removed from a stack or layer.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12040,8 +13214,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -12060,16 +13236,16 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12077,7 +13253,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12086,29 +13262,31 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.UntagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12131,25 +13309,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "opsworks",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "opsworks",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12190,6 +13370,7 @@ pub mod update_app_input {
             self.app_id = Some(input.into());
             self
         }
+        /// <p>The app ID.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_id = input;
             self
@@ -12199,6 +13380,7 @@ pub mod update_app_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The app name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -12208,16 +13390,23 @@ pub mod update_app_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the app.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `data_sources`.
+        ///
+        /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
+        ///
+        /// <p>The app's data sources.</p>
         pub fn data_sources(mut self, input: impl Into<crate::model::DataSource>) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
             v.push(input.into());
             self.data_sources = Some(v);
             self
         }
+        /// <p>The app's data sources.</p>
         pub fn set_data_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
@@ -12230,6 +13419,7 @@ pub mod update_app_input {
             self.r#type = Some(input);
             self
         }
+        /// <p>The app type.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::AppType>) -> Self {
             self.r#type = input;
             self
@@ -12239,16 +13429,27 @@ pub mod update_app_input {
             self.app_source = Some(input);
             self
         }
+        /// <p>A <code>Source</code> object that specifies the app repository.</p>
         pub fn set_app_source(mut self, input: std::option::Option<crate::model::Source>) -> Self {
             self.app_source = input;
             self
         }
+        /// Appends an item to `domains`.
+        ///
+        /// To override the contents of this collection use [`set_domains`](Self::set_domains).
+        ///
+        /// <p>The app's virtual host settings, with multiple domains separated by commas. For example:
+        /// <code>'www.example.com, example.com'</code>
+        /// </p>
         pub fn domains(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.domains.unwrap_or_default();
             v.push(input.into());
             self.domains = Some(v);
             self
         }
+        /// <p>The app's virtual host settings, with multiple domains separated by commas. For example:
+        /// <code>'www.example.com, example.com'</code>
+        /// </p>
         pub fn set_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12261,6 +13462,7 @@ pub mod update_app_input {
             self.enable_ssl = Some(input);
             self
         }
+        /// <p>Whether SSL is enabled for the app.</p>
         pub fn set_enable_ssl(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_ssl = input;
             self
@@ -12270,6 +13472,7 @@ pub mod update_app_input {
             self.ssl_configuration = Some(input);
             self
         }
+        /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
         pub fn set_ssl_configuration(
             mut self,
             input: std::option::Option<crate::model::SslConfiguration>,
@@ -12277,6 +13480,11 @@ pub mod update_app_input {
             self.ssl_configuration = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
         pub fn attributes(
             mut self,
             k: impl Into<crate::model::AppAttributesKeys>,
@@ -12287,6 +13495,7 @@ pub mod update_app_input {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -12296,12 +13505,30 @@ pub mod update_app_input {
             self.attributes = input;
             self
         }
+        /// Appends an item to `environment`.
+        ///
+        /// To override the contents of this collection use [`set_environment`](Self::set_environment).
+        ///
+        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
+        /// associated with the app. After you deploy the app, these variables are defined on the
+        /// associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
+        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p>
+        /// <note>
+        /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
+        /// </note>
         pub fn environment(mut self, input: impl Into<crate::model::EnvironmentVariable>) -> Self {
             let mut v = self.environment.unwrap_or_default();
             v.push(input.into());
             self.environment = Some(v);
             self
         }
+        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
+        /// associated with the app. After you deploy the app, these variables are defined on the
+        /// associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
+        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p>
+        /// <note>
+        /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
+        /// </note>
         pub fn set_environment(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
@@ -12312,7 +13539,7 @@ pub mod update_app_input {
         /// Consumes the builder and constructs a [`UpdateAppInput`](crate::input::UpdateAppInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateAppInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::UpdateAppInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::UpdateAppInput {
                 app_id: self.app_id,
@@ -12341,16 +13568,16 @@ impl UpdateAppInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateApp,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateAppInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12358,7 +13585,7 @@ impl UpdateAppInput {
         fn update_http_builder(
             input: &crate::input::UpdateAppInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12367,29 +13594,31 @@ impl UpdateAppInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateAppInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.UpdateApp",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_app(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12412,13 +13641,13 @@ impl UpdateAppInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateApp::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateApp::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "UpdateApp",
                     "opsworks",
                 ));
@@ -12427,10 +13656,10 @@ impl UpdateAppInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12459,6 +13688,7 @@ pub mod update_elastic_ip_input {
             self.elastic_ip = Some(input.into());
             self
         }
+        /// <p>The IP address for which you want to update the name.</p>
         pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.elastic_ip = input;
             self
@@ -12468,6 +13698,7 @@ pub mod update_elastic_ip_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The new name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -12477,7 +13708,7 @@ pub mod update_elastic_ip_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateElasticIpInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateElasticIpInput {
                 elastic_ip: self.elastic_ip,
@@ -12497,16 +13728,16 @@ impl UpdateElasticIpInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateElasticIp,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateElasticIpInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12514,7 +13745,7 @@ impl UpdateElasticIpInput {
         fn update_http_builder(
             input: &crate::input::UpdateElasticIpInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12523,32 +13754,32 @@ impl UpdateElasticIpInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateElasticIpInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.UpdateElasticIp",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_elastic_ip(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12571,15 +13802,15 @@ impl UpdateElasticIpInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateElasticIp::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateElasticIp",
             "opsworks",
         ));
@@ -12588,10 +13819,10 @@ impl UpdateElasticIpInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12630,16 +13861,23 @@ pub mod update_instance_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The instance ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
         }
+        /// Appends an item to `layer_ids`.
+        ///
+        /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
+        ///
+        /// <p>The instance's layer IDs.</p>
         pub fn layer_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.layer_ids.unwrap_or_default();
             v.push(input.into());
             self.layer_ids = Some(v);
             self
         }
+        /// <p>The instance's layer IDs.</p>
         pub fn set_layer_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12656,6 +13894,11 @@ pub mod update_instance_input {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types,
+        /// open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>.
+        /// The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+        /// Families and Types</a>. The parameter values that you use to specify the various types are
+        /// in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12668,6 +13911,7 @@ pub mod update_instance_input {
             self.auto_scaling_type = Some(input);
             self
         }
+        /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
         pub fn set_auto_scaling_type(
             mut self,
             input: std::option::Option<crate::model::AutoScalingType>,
@@ -12680,6 +13924,7 @@ pub mod update_instance_input {
             self.hostname = Some(input.into());
             self
         }
+        /// <p>The instance host name.</p>
         pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hostname = input;
             self
@@ -12722,6 +13967,40 @@ pub mod update_instance_input {
             self.os = Some(input.into());
             self
         }
+        /// <p>The instance's operating system, which must be set to one of the following. You cannot update an instance that is using a custom AMI.</p>
+        /// <ul>
+        /// <li>
+        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
+        /// 2015.03</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CentOS Linux 7</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Red Hat Enterprise Linux 7</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about supported operating systems,
+        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+        /// <p>The default option is the current Amazon Linux version. If you set this parameter to
+        /// <code>Custom</code>, you must use the AmiId parameter to
+        /// specify the custom AMI that you want to use. For more information about supported operating
+        /// systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+        /// Custom AMIs</a>.</p>
+        /// <note>
+        /// <p>You can specify a different Linux operating system for the updated stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
+        /// </note>
         pub fn set_os(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.os = input;
             self
@@ -12733,6 +14012,9 @@ pub mod update_instance_input {
             self.ami_id = Some(input.into());
             self
         }
+        /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using.
+        /// You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs.
+        /// </p>
         pub fn set_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ami_id = input;
             self
@@ -12742,6 +14024,7 @@ pub mod update_instance_input {
             self.ssh_key_name = Some(input.into());
             self
         }
+        /// <p>The instance's Amazon EC2 key name.</p>
         pub fn set_ssh_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ssh_key_name = input;
             self
@@ -12753,6 +14036,9 @@ pub mod update_instance_input {
             self.architecture = Some(input);
             self
         }
+        /// <p>The instance architecture. Instance types do not necessarily support both architectures. For
+        /// a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+        /// Families and Types</a>.</p>
         pub fn set_architecture(
             mut self,
             input: std::option::Option<crate::model::Architecture>,
@@ -12774,6 +14060,16 @@ pub mod update_instance_input {
             self.install_updates_on_boot = Some(input);
             self
         }
+        /// <p>Whether to install operating system and package updates when the instance boots. The default
+        /// value is <code>true</code>. To control when updates are installed, set this value to
+        /// <code>false</code>. You must then update your instances manually by using
+        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
+        /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
+        /// instances. </p>
+        /// <note>
+        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
+        /// instances have the latest security updates.</p>
+        /// </note>
         pub fn set_install_updates_on_boot(mut self, input: std::option::Option<bool>) -> Self {
             self.install_updates_on_boot = input;
             self
@@ -12783,6 +14079,7 @@ pub mod update_instance_input {
             self.ebs_optimized = Some(input);
             self
         }
+        /// <p>This property cannot be updated.</p>
         pub fn set_ebs_optimized(mut self, input: std::option::Option<bool>) -> Self {
             self.ebs_optimized = input;
             self
@@ -12810,6 +14107,25 @@ pub mod update_instance_input {
             self.agent_version = Some(input.into());
             self
         }
+        /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INHERIT</code> - Use the stack's default agent version setting.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>version_number</i> - Use the specified agent version.
+        /// This value overrides the stack's default setting.
+        /// To update the agent version, you must edit the instance configuration and specify a
+        /// new version.
+        /// AWS OpsWorks Stacks then automatically installs that version on the instance.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The default setting is <code>INHERIT</code>. To specify an agent version,
+        /// you must use the complete version number, not the abbreviated number shown on the console.
+        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
+        /// <p>AgentVersion cannot be set to Chef 12.2.</p>
         pub fn set_agent_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12822,7 +14138,7 @@ pub mod update_instance_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateInstanceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateInstanceInput {
                 instance_id: self.instance_id,
@@ -12852,16 +14168,16 @@ impl UpdateInstanceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateInstance,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateInstanceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12869,7 +14185,7 @@ impl UpdateInstanceInput {
         fn update_http_builder(
             input: &crate::input::UpdateInstanceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12878,29 +14194,31 @@ impl UpdateInstanceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateInstanceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.UpdateInstance",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_instance(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12923,15 +14241,15 @@ impl UpdateInstanceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateInstance::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateInstance",
             "opsworks",
         ));
@@ -12940,10 +14258,10 @@ impl UpdateInstanceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12993,6 +14311,7 @@ pub mod update_layer_input {
             self.layer_id = Some(input.into());
             self
         }
+        /// <p>The layer ID.</p>
         pub fn set_layer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.layer_id = input;
             self
@@ -13002,6 +14321,7 @@ pub mod update_layer_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The layer name, which is used by the console.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -13013,10 +14333,18 @@ pub mod update_layer_input {
             self.shortname = Some(input.into());
             self
         }
+        /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p>
+        /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
+        /// </p>
         pub fn set_shortname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shortname = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
         pub fn attributes(
             mut self,
             k: impl Into<crate::model::LayerAttributesKeys>,
@@ -13027,6 +14355,7 @@ pub mod update_layer_input {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -13044,6 +14373,7 @@ pub mod update_layer_input {
             self.cloud_watch_logs_configuration = Some(input);
             self
         }
+        /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <a>CloudWatchLogsLogStream</a>.</p>
         pub fn set_cloud_watch_logs_configuration(
             mut self,
             input: std::option::Option<crate::model::CloudWatchLogsConfiguration>,
@@ -13061,6 +14391,9 @@ pub mod update_layer_input {
             self.custom_instance_profile_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more
+        /// information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// Identifiers</a>.</p>
         pub fn set_custom_instance_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13077,16 +14410,27 @@ pub mod update_layer_input {
             self.custom_json = Some(input.into());
             self
         }
+        /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes
+        /// to be installed on the layer's instances. For more information, see
+        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+        /// Using Custom JSON</a>.
+        /// </p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.custom_json = input;
             self
         }
+        /// Appends an item to `custom_security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_custom_security_group_ids`](Self::set_custom_security_group_ids).
+        ///
+        /// <p>An array containing the layer's custom security group IDs.</p>
         pub fn custom_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.custom_security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.custom_security_group_ids = Some(v);
             self
         }
+        /// <p>An array containing the layer's custom security group IDs.</p>
         pub fn set_custom_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13094,12 +14438,18 @@ pub mod update_layer_input {
             self.custom_security_group_ids = input;
             self
         }
+        /// Appends an item to `packages`.
+        ///
+        /// To override the contents of this collection use [`set_packages`](Self::set_packages).
+        ///
+        /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
         pub fn packages(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.packages.unwrap_or_default();
             v.push(input.into());
             self.packages = Some(v);
             self
         }
+        /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
         pub fn set_packages(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13107,6 +14457,11 @@ pub mod update_layer_input {
             self.packages = input;
             self
         }
+        /// Appends an item to `volume_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_volume_configurations`](Self::set_volume_configurations).
+        ///
+        /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
         pub fn volume_configurations(
             mut self,
             input: impl Into<crate::model::VolumeConfiguration>,
@@ -13116,6 +14471,7 @@ pub mod update_layer_input {
             self.volume_configurations = Some(v);
             self
         }
+        /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
         pub fn set_volume_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VolumeConfiguration>>,
@@ -13128,6 +14484,7 @@ pub mod update_layer_input {
             self.enable_auto_healing = Some(input);
             self
         }
+        /// <p>Whether to disable auto healing for the layer.</p>
         pub fn set_enable_auto_healing(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_auto_healing = input;
             self
@@ -13139,6 +14496,9 @@ pub mod update_layer_input {
             self.auto_assign_elastic_ips = Some(input);
             self
         }
+        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+        /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
+        /// a Layer</a>.</p>
         pub fn set_auto_assign_elastic_ips(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_assign_elastic_ips = input;
             self
@@ -13150,6 +14510,9 @@ pub mod update_layer_input {
             self.auto_assign_public_ips = Some(input);
             self
         }
+        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
+        /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
+        /// a Layer</a>.</p>
         pub fn set_auto_assign_public_ips(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_assign_public_ips = input;
             self
@@ -13159,6 +14522,7 @@ pub mod update_layer_input {
             self.custom_recipes = Some(input);
             self
         }
+        /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
         pub fn set_custom_recipes(
             mut self,
             input: std::option::Option<crate::model::Recipes>,
@@ -13180,6 +14544,16 @@ pub mod update_layer_input {
             self.install_updates_on_boot = Some(input);
             self
         }
+        /// <p>Whether to install operating system and package updates when the instance boots. The default
+        /// value is <code>true</code>. To control when updates are installed, set this value to
+        /// <code>false</code>. You must then update your instances manually by using
+        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
+        /// manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
+        /// instances. </p>
+        /// <note>
+        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
+        /// instances have the latest security updates.</p>
+        /// </note>
         pub fn set_install_updates_on_boot(mut self, input: std::option::Option<bool>) -> Self {
             self.install_updates_on_boot = input;
             self
@@ -13189,6 +14563,7 @@ pub mod update_layer_input {
             self.use_ebs_optimized_instances = Some(input);
             self
         }
+        /// <p>Whether to use Amazon EBS-optimized instances.</p>
         pub fn set_use_ebs_optimized_instances(mut self, input: std::option::Option<bool>) -> Self {
             self.use_ebs_optimized_instances = input;
             self
@@ -13201,6 +14576,7 @@ pub mod update_layer_input {
             self.lifecycle_event_configuration = Some(input);
             self
         }
+        /// <p></p>
         pub fn set_lifecycle_event_configuration(
             mut self,
             input: std::option::Option<crate::model::LifecycleEventConfiguration>,
@@ -13211,8 +14587,10 @@ pub mod update_layer_input {
         /// Consumes the builder and constructs a [`UpdateLayerInput`](crate::input::UpdateLayerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateLayerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateLayerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateLayerInput {
                 layer_id: self.layer_id,
                 name: self.name,
@@ -13246,16 +14624,16 @@ impl UpdateLayerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateLayer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateLayerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13263,7 +14641,7 @@ impl UpdateLayerInput {
         fn update_http_builder(
             input: &crate::input::UpdateLayerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13272,29 +14650,31 @@ impl UpdateLayerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateLayerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.UpdateLayer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_layer(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13317,25 +14697,27 @@ impl UpdateLayerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateLayer::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateLayer",
-                    "opsworks",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateLayer::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateLayer",
+            "opsworks",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13363,6 +14745,7 @@ pub mod update_my_user_profile_input {
             self.ssh_public_key = Some(input.into());
             self
         }
+        /// <p>The user's SSH public key.</p>
         pub fn set_ssh_public_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13375,7 +14758,7 @@ pub mod update_my_user_profile_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateMyUserProfileInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateMyUserProfileInput {
                 ssh_public_key: self.ssh_public_key,
@@ -13394,16 +14777,16 @@ impl UpdateMyUserProfileInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateMyUserProfile,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateMyUserProfileInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13411,7 +14794,7 @@ impl UpdateMyUserProfileInput {
         fn update_http_builder(
             input: &crate::input::UpdateMyUserProfileInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13420,32 +14803,32 @@ impl UpdateMyUserProfileInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateMyUserProfileInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.UpdateMyUserProfile",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_my_user_profile(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13468,15 +14851,15 @@ impl UpdateMyUserProfileInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateMyUserProfile::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateMyUserProfile",
             "opsworks",
         ));
@@ -13485,10 +14868,10 @@ impl UpdateMyUserProfileInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13518,6 +14901,7 @@ pub mod update_rds_db_instance_input {
             self.rds_db_instance_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon RDS instance's ARN.</p>
         pub fn set_rds_db_instance_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13530,6 +14914,7 @@ pub mod update_rds_db_instance_input {
             self.db_user = Some(input.into());
             self
         }
+        /// <p>The master user name.</p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_user = input;
             self
@@ -13539,6 +14924,7 @@ pub mod update_rds_db_instance_input {
             self.db_password = Some(input.into());
             self
         }
+        /// <p>The database password.</p>
         pub fn set_db_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_password = input;
             self
@@ -13548,7 +14934,7 @@ pub mod update_rds_db_instance_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateRdsDbInstanceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateRdsDbInstanceInput {
                 rds_db_instance_arn: self.rds_db_instance_arn,
@@ -13569,16 +14955,16 @@ impl UpdateRdsDbInstanceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateRdsDbInstance,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateRdsDbInstanceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13586,7 +14972,7 @@ impl UpdateRdsDbInstanceInput {
         fn update_http_builder(
             input: &crate::input::UpdateRdsDbInstanceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13595,32 +14981,32 @@ impl UpdateRdsDbInstanceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateRdsDbInstanceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.UpdateRdsDbInstance",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_rds_db_instance(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13643,15 +15029,15 @@ impl UpdateRdsDbInstanceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateRdsDbInstance::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateRdsDbInstance",
             "opsworks",
         ));
@@ -13660,10 +15046,10 @@ impl UpdateRdsDbInstanceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13711,6 +15097,7 @@ pub mod update_stack_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The stack ID.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -13720,10 +15107,16 @@ pub mod update_stack_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The stack's new name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
         pub fn attributes(
             mut self,
             k: impl Into<crate::model::StackAttributesKeys>,
@@ -13734,6 +15127,7 @@ pub mod update_stack_input {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -13748,6 +15142,7 @@ pub mod update_stack_input {
             self.service_role_arn = Some(input.into());
             self
         }
+        /// <p>Do not use this parameter. You cannot update a stack's service role.</p>
         pub fn set_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13765,6 +15160,9 @@ pub mod update_stack_input {
             self.default_instance_profile_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances.
+        /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// Identifiers</a>.</p>
         pub fn set_default_instance_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13808,6 +15206,38 @@ pub mod update_stack_input {
             self.default_os = Some(input.into());
             self
         }
+        /// <p>The stack's operating system, which must be set to one of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
+        /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CentOS Linux 7</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Red Hat Enterprise Linux 7</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
+        /// you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+        /// Custom AMIs</a>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The default option is the stack's current operating system.
+        /// For more information about supported operating systems,
+        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
         pub fn set_default_os(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.default_os = input;
             self
@@ -13879,6 +15309,69 @@ pub mod update_stack_input {
             self.hostname_theme = Some(input.into());
             self
         }
+        /// <p>The stack's new host name theme, with spaces replaced by underscores.
+        /// The theme is used to generate host names for the stack's instances.
+        /// By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the
+        /// layer's short name. The other themes are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Baked_Goods</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Clouds</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Europe_Cities</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Fruits</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Greek_Deities_and_Titans</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Legendary_creatures_from_Japan</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Planets_and_Moons</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Roman_Deities</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Scottish_Islands</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>US_Cities</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Wild_Cats</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
+        /// host name based on the current theme.</p>
         pub fn set_hostname_theme(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13895,6 +15388,11 @@ pub mod update_stack_input {
             self.default_availability_zone = Some(input.into());
             self
         }
+        /// <p>The stack's default Availability Zone, which must be in the
+        /// stack's region. For more
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+        /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
+        /// be in the same zone. For more information, see <a>CreateStack</a>. </p>
         pub fn set_default_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13912,6 +15410,12 @@ pub mod update_stack_input {
             self.default_subnet_id = Some(input.into());
             self
         }
+        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
+        /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
+        /// otherwise when you create the instance. If you also specify a value for
+        /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
+        /// default values and when this parameter is required, see the <code>VpcId</code> parameter
+        /// description. </p>
         pub fn set_default_subnet_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13929,6 +15433,12 @@ pub mod update_stack_input {
             self.custom_json = Some(input.into());
             self
         }
+        /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration JSON values or to pass data to recipes. The string should be in the following format:</p>
+        /// <p>
+        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
+        /// </p>
+        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
+        /// Modify the Stack Configuration Attributes</a>.</p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.custom_json = input;
             self
@@ -13941,6 +15451,7 @@ pub mod update_stack_input {
             self.configuration_manager = Some(input);
             self
         }
+        /// <p>The configuration manager. When you update a stack, we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
         pub fn set_configuration_manager(
             mut self,
             input: std::option::Option<crate::model::StackConfigurationManager>,
@@ -13954,6 +15465,8 @@ pub mod update_stack_input {
             self.chef_configuration = Some(input);
             self
         }
+        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
+        /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn set_chef_configuration(
             mut self,
             input: std::option::Option<crate::model::ChefConfiguration>,
@@ -13966,6 +15479,7 @@ pub mod update_stack_input {
             self.use_custom_cookbooks = Some(input);
             self
         }
+        /// <p>Whether the stack uses custom cookbooks.</p>
         pub fn set_use_custom_cookbooks(mut self, input: std::option::Option<bool>) -> Self {
             self.use_custom_cookbooks = input;
             self
@@ -13976,6 +15490,8 @@ pub mod update_stack_input {
             self.custom_cookbooks_source = Some(input);
             self
         }
+        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
         pub fn set_custom_cookbooks_source(
             mut self,
             input: std::option::Option<crate::model::Source>,
@@ -13995,6 +15511,14 @@ pub mod update_stack_input {
             self.default_ssh_key_name = Some(input.into());
             self
         }
+        /// <p>A default Amazon EC2 key-pair name. The default value is
+        /// <code>none</code>. If you specify a key-pair name,
+        /// AWS OpsWorks Stacks installs the public key on the instance and you can use the private key with an SSH
+        /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
+        /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
+        /// Access</a>. You can override this setting by specifying a different key pair, or no key
+        /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
+        /// create an instance</a>. </p>
         pub fn set_default_ssh_key_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14008,6 +15532,8 @@ pub mod update_stack_input {
             self.default_root_device_type = Some(input);
             self
         }
+        /// <p>The default root device type. This value is used by default for all instances in the stack,
+        /// but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
         pub fn set_default_root_device_type(
             mut self,
             input: std::option::Option<crate::model::RootDeviceType>,
@@ -14035,6 +15561,22 @@ pub mod update_stack_input {
             self.use_opsworks_security_groups = Some(input);
             self
         }
+        /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
+        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
+        /// associated with layers by default. <code>UseOpsworksSecurityGroups</code> allows you to
+        /// provide your own custom security groups
+        /// instead of using the built-in groups. <code>UseOpsworksSecurityGroups</code> has
+        /// the following settings: </p>
+        /// <ul>
+        /// <li>
+        /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p>
+        /// </li>
+        /// <li>
+        /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
+        /// Stack</a>.</p>
         pub fn set_use_opsworks_security_groups(
             mut self,
             input: std::option::Option<bool>,
@@ -14064,6 +15606,24 @@ pub mod update_stack_input {
             self.agent_version = Some(input.into());
             self
         }
+        /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
+        /// automatically installs new agent versions on the stack's instances as soon as
+        /// they are available.</p>
+        /// </li>
+        /// <li>
+        /// <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The default setting is <code>LATEST</code>. To specify an agent version,
+        /// you must use the complete version number, not the abbreviated number shown on the console.
+        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.
+        /// AgentVersion cannot be set to Chef 12.2.</p>
+        /// <note>
+        /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
+        /// </note>
         pub fn set_agent_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14074,8 +15634,10 @@ pub mod update_stack_input {
         /// Consumes the builder and constructs a [`UpdateStackInput`](crate::input::UpdateStackInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateStackInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateStackInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateStackInput {
                 stack_id: self.stack_id,
                 name: self.name,
@@ -14110,16 +15672,16 @@ impl UpdateStackInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateStack,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateStackInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -14127,7 +15689,7 @@ impl UpdateStackInput {
         fn update_http_builder(
             input: &crate::input::UpdateStackInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14136,29 +15698,31 @@ impl UpdateStackInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateStackInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.UpdateStack",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_stack(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14181,25 +15745,27 @@ impl UpdateStackInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateStack::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateStack",
-                    "opsworks",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateStack::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateStack",
+            "opsworks",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14230,6 +15796,7 @@ pub mod update_user_profile_input {
             self.iam_user_arn = Some(input.into());
             self
         }
+        /// <p>The user IAM ARN. This can also be a federated user's ARN.</p>
         pub fn set_iam_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_user_arn = input;
             self
@@ -14242,6 +15809,10 @@ pub mod update_user_profile_input {
             self.ssh_username = Some(input.into());
             self
         }
+        /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If
+        /// the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example,
+        /// <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH
+        /// user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
         pub fn set_ssh_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ssh_username = input;
             self
@@ -14251,6 +15822,7 @@ pub mod update_user_profile_input {
             self.ssh_public_key = Some(input.into());
             self
         }
+        /// <p>The user's new SSH public key.</p>
         pub fn set_ssh_public_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14265,6 +15837,9 @@ pub mod update_user_profile_input {
             self.allow_self_management = Some(input);
             self
         }
+        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
+        /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
+        /// Permissions</a>.</p>
         pub fn set_allow_self_management(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_self_management = input;
             self
@@ -14274,7 +15849,7 @@ pub mod update_user_profile_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateUserProfileInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateUserProfileInput {
                 iam_user_arn: self.iam_user_arn,
@@ -14296,16 +15871,16 @@ impl UpdateUserProfileInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateUserProfile,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateUserProfileInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -14313,7 +15888,7 @@ impl UpdateUserProfileInput {
         fn update_http_builder(
             input: &crate::input::UpdateUserProfileInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14322,32 +15897,32 @@ impl UpdateUserProfileInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateUserProfileInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.UpdateUserProfile",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_user_profile(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14370,15 +15945,15 @@ impl UpdateUserProfileInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateUserProfile::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateUserProfile",
             "opsworks",
         ));
@@ -14387,10 +15962,10 @@ impl UpdateUserProfileInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14420,6 +15995,7 @@ pub mod update_volume_input {
             self.volume_id = Some(input.into());
             self
         }
+        /// <p>The volume ID.</p>
         pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.volume_id = input;
             self
@@ -14429,6 +16005,7 @@ pub mod update_volume_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The new name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -14438,6 +16015,7 @@ pub mod update_volume_input {
             self.mount_point = Some(input.into());
             self
         }
+        /// <p>The new mount point.</p>
         pub fn set_mount_point(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mount_point = input;
             self
@@ -14445,8 +16023,10 @@ pub mod update_volume_input {
         /// Consumes the builder and constructs a [`UpdateVolumeInput`](crate::input::UpdateVolumeInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateVolumeInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateVolumeInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateVolumeInput {
                 volume_id: self.volume_id,
                 name: self.name,
@@ -14466,16 +16046,16 @@ impl UpdateVolumeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateVolume,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateVolumeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -14483,7 +16063,7 @@ impl UpdateVolumeInput {
         fn update_http_builder(
             input: &crate::input::UpdateVolumeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14492,31 +16072,31 @@ impl UpdateVolumeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateVolumeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OpsWorks_20130218.UpdateVolume",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_volume(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14539,25 +16119,27 @@ impl UpdateVolumeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateVolume::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateVolume",
-                    "opsworks",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateVolume::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateVolume",
+            "opsworks",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14571,6 +16153,7 @@ impl UpdateVolumeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVolumeInput {
@@ -14591,6 +16174,7 @@ impl std::fmt::Debug for UpdateVolumeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserProfileInput {
@@ -14619,6 +16203,7 @@ impl std::fmt::Debug for UpdateUserProfileInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStackInput {
@@ -14843,6 +16428,7 @@ impl std::fmt::Debug for UpdateStackInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRdsDbInstanceInput {
@@ -14863,6 +16449,7 @@ impl std::fmt::Debug for UpdateRdsDbInstanceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMyUserProfileInput {
@@ -14877,6 +16464,7 @@ impl std::fmt::Debug for UpdateMyUserProfileInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLayerInput {
@@ -14977,6 +16565,7 @@ impl std::fmt::Debug for UpdateLayerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInstanceInput {
@@ -15092,6 +16681,7 @@ impl std::fmt::Debug for UpdateInstanceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateElasticIpInput {
@@ -15109,6 +16699,7 @@ impl std::fmt::Debug for UpdateElasticIpInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppInput {
@@ -15163,6 +16754,7 @@ impl std::fmt::Debug for UpdateAppInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -15180,6 +16772,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnassignVolumeInput {
@@ -15194,6 +16787,7 @@ impl std::fmt::Debug for UnassignVolumeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnassignInstanceInput {
@@ -15208,6 +16802,7 @@ impl std::fmt::Debug for UnassignInstanceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -15245,6 +16840,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopStackInput {
@@ -15259,6 +16855,7 @@ impl std::fmt::Debug for StopStackInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopInstanceInput {
@@ -15278,6 +16875,7 @@ impl std::fmt::Debug for StopInstanceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartStackInput {
@@ -15292,6 +16890,7 @@ impl std::fmt::Debug for StartStackInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartInstanceInput {
@@ -15306,6 +16905,7 @@ impl std::fmt::Debug for StartInstanceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetTimeBasedAutoScalingInput {
@@ -15323,6 +16923,7 @@ impl std::fmt::Debug for SetTimeBasedAutoScalingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetPermissionInput {
@@ -15377,6 +16978,7 @@ impl std::fmt::Debug for SetPermissionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetLoadBasedAutoScalingInput {
@@ -15404,6 +17006,7 @@ impl std::fmt::Debug for SetLoadBasedAutoScalingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterVolumeInput {
@@ -15421,6 +17024,7 @@ impl std::fmt::Debug for RegisterVolumeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterRdsDbInstanceInput {
@@ -15444,6 +17048,7 @@ impl std::fmt::Debug for RegisterRdsDbInstanceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterInstanceInput {
@@ -15479,6 +17084,7 @@ impl std::fmt::Debug for RegisterInstanceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterElasticIpInput {
@@ -15496,6 +17102,7 @@ impl std::fmt::Debug for RegisterElasticIpInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterEcsClusterInput {
@@ -15513,6 +17120,7 @@ impl std::fmt::Debug for RegisterEcsClusterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootInstanceInput {
@@ -15527,6 +17135,7 @@ impl std::fmt::Debug for RebootInstanceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
@@ -15549,6 +17158,7 @@ impl std::fmt::Debug for ListTagsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrantAccessInput {
@@ -15566,6 +17176,7 @@ impl std::fmt::Debug for GrantAccessInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHostnameSuggestionInput {
@@ -15580,6 +17191,7 @@ impl std::fmt::Debug for GetHostnameSuggestionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateElasticIpInput {
@@ -15594,6 +17206,7 @@ impl std::fmt::Debug for DisassociateElasticIpInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachElasticLoadBalancerInput {
@@ -15614,6 +17227,7 @@ impl std::fmt::Debug for DetachElasticLoadBalancerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVolumesInput {
@@ -15641,6 +17255,7 @@ impl std::fmt::Debug for DescribeVolumesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserProfilesInput {
@@ -15655,6 +17270,7 @@ impl std::fmt::Debug for DescribeUserProfilesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTimeBasedAutoScalingInput {
@@ -15669,6 +17285,7 @@ impl std::fmt::Debug for DescribeTimeBasedAutoScalingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStackSummaryInput {
@@ -15683,6 +17300,7 @@ impl std::fmt::Debug for DescribeStackSummaryInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStacksInput {
@@ -15698,6 +17316,7 @@ impl std::fmt::Debug for DescribeStacksInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStackProvisioningParametersInput {
@@ -15712,6 +17331,7 @@ impl std::fmt::Debug for DescribeStackProvisioningParametersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceErrorsInput {
@@ -15736,6 +17356,7 @@ impl std::fmt::Debug for DescribeServiceErrorsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRdsDbInstancesInput {
@@ -15753,6 +17374,7 @@ impl std::fmt::Debug for DescribeRdsDbInstancesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRaidArraysInput {
@@ -15776,6 +17398,7 @@ impl std::fmt::Debug for DescribeRaidArraysInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePermissionsInput {
@@ -15794,6 +17417,7 @@ impl std::fmt::Debug for DescribePermissionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOperatingSystemsInput {}
@@ -15804,6 +17428,7 @@ impl std::fmt::Debug for DescribeOperatingSystemsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMyUserProfileInput {}
@@ -15814,6 +17439,7 @@ impl std::fmt::Debug for DescribeMyUserProfileInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoadBasedAutoScalingInput {
@@ -15828,6 +17454,7 @@ impl std::fmt::Debug for DescribeLoadBasedAutoScalingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLayersInput {
@@ -15846,6 +17473,7 @@ impl std::fmt::Debug for DescribeLayersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstancesInput {
@@ -15870,6 +17498,7 @@ impl std::fmt::Debug for DescribeInstancesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeElasticLoadBalancersInput {
@@ -15887,6 +17516,7 @@ impl std::fmt::Debug for DescribeElasticLoadBalancersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeElasticIpsInput {
@@ -15911,6 +17541,7 @@ impl std::fmt::Debug for DescribeElasticIpsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEcsClustersInput {
@@ -15943,6 +17574,7 @@ impl std::fmt::Debug for DescribeEcsClustersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeploymentsInput {
@@ -15967,6 +17599,7 @@ impl std::fmt::Debug for DescribeDeploymentsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCommandsInput {
@@ -15991,6 +17624,7 @@ impl std::fmt::Debug for DescribeCommandsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppsInput {
@@ -16011,6 +17645,7 @@ impl std::fmt::Debug for DescribeAppsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAgentVersionsInput {
@@ -16028,6 +17663,7 @@ impl std::fmt::Debug for DescribeAgentVersionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterVolumeInput {
@@ -16042,6 +17678,7 @@ impl std::fmt::Debug for DeregisterVolumeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterRdsDbInstanceInput {
@@ -16056,6 +17693,7 @@ impl std::fmt::Debug for DeregisterRdsDbInstanceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterInstanceInput {
@@ -16070,6 +17708,7 @@ impl std::fmt::Debug for DeregisterInstanceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterElasticIpInput {
@@ -16084,6 +17723,7 @@ impl std::fmt::Debug for DeregisterElasticIpInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterEcsClusterInput {
@@ -16098,6 +17738,7 @@ impl std::fmt::Debug for DeregisterEcsClusterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserProfileInput {
@@ -16112,6 +17753,7 @@ impl std::fmt::Debug for DeleteUserProfileInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStackInput {
@@ -16126,6 +17768,7 @@ impl std::fmt::Debug for DeleteStackInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLayerInput {
@@ -16140,6 +17783,7 @@ impl std::fmt::Debug for DeleteLayerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInstanceInput {
@@ -16160,6 +17804,7 @@ impl std::fmt::Debug for DeleteInstanceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppInput {
@@ -16174,6 +17819,7 @@ impl std::fmt::Debug for DeleteAppInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserProfileInput {
@@ -16202,6 +17848,7 @@ impl std::fmt::Debug for CreateUserProfileInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStackInput {
@@ -16480,6 +18127,7 @@ impl std::fmt::Debug for CreateStackInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLayerInput {
@@ -16584,6 +18232,7 @@ impl std::fmt::Debug for CreateLayerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInstanceInput {
@@ -16723,6 +18372,7 @@ impl std::fmt::Debug for CreateInstanceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentInput {
@@ -16762,6 +18412,7 @@ impl std::fmt::Debug for CreateDeploymentInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppInput {
@@ -16822,6 +18473,7 @@ impl std::fmt::Debug for CreateAppInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloneStackInput {
@@ -17097,6 +18749,7 @@ impl std::fmt::Debug for CloneStackInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachElasticLoadBalancerInput {
@@ -17117,6 +18770,7 @@ impl std::fmt::Debug for AttachElasticLoadBalancerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateElasticIpInput {
@@ -17134,6 +18788,7 @@ impl std::fmt::Debug for AssociateElasticIpInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssignVolumeInput {
@@ -17151,6 +18806,7 @@ impl std::fmt::Debug for AssignVolumeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssignInstanceInput {

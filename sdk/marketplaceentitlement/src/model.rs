@@ -23,7 +23,7 @@ pub struct Entitlement {
     /// expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date
     /// is the date at which the customer will renew or cancel their contract. Customers who are opting
     /// to renew their contract will still have entitlements with an expiration date.</p>
-    pub expiration_date: std::option::Option<smithy_types::Instant>,
+    pub expiration_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Entitlement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -46,7 +46,7 @@ pub mod entitlement {
         pub(crate) dimension: std::option::Option<std::string::String>,
         pub(crate) customer_identifier: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<crate::model::EntitlementValue>,
-        pub(crate) expiration_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) expiration_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The product code for which the given entitlement applies. Product codes are provided by
@@ -55,6 +55,8 @@ pub mod entitlement {
             self.product_code = Some(input.into());
             self
         }
+        /// <p>The product code for which the given entitlement applies. Product codes are provided by
+        /// AWS Marketplace when the product listing is created.</p>
         pub fn set_product_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_code = input;
             self
@@ -66,6 +68,9 @@ pub mod entitlement {
             self.dimension = Some(input.into());
             self
         }
+        /// <p>The dimension for which the given entitlement applies. Dimensions represent categories of
+        /// capacity in a product and are specified when the product is listed in AWS
+        /// Marketplace.</p>
         pub fn set_dimension(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dimension = input;
             self
@@ -77,6 +82,9 @@ pub mod entitlement {
             self.customer_identifier = Some(input.into());
             self
         }
+        /// <p>The customer identifier is a handle to each unique customer in an application. Customer
+        /// identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering
+        /// Service.</p>
         pub fn set_customer_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -90,6 +98,8 @@ pub mod entitlement {
             self.value = Some(input);
             self
         }
+        /// <p>The EntitlementValue represents the amount of capacity that the customer is entitled to
+        /// for the product.</p>
         pub fn set_value(
             mut self,
             input: std::option::Option<crate::model::EntitlementValue>,
@@ -101,13 +111,17 @@ pub mod entitlement {
         /// expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date
         /// is the date at which the customer will renew or cancel their contract. Customers who are opting
         /// to renew their contract will still have entitlements with an expiration date.</p>
-        pub fn expiration_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn expiration_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.expiration_date = Some(input);
             self
         }
+        /// <p>The expiration date represents the minimum date through which this entitlement is
+        /// expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date
+        /// is the date at which the customer will renew or cancel their contract. Customers who are opting
+        /// to renew their contract will still have entitlements with an expiration date.</p>
         pub fn set_expiration_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.expiration_date = input;
             self
@@ -131,6 +145,8 @@ impl Entitlement {
     }
 }
 
+/// <p>The EntitlementValue represents the amount of capacity that the customer is entitled to
+/// for the product.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum EntitlementValue {
@@ -148,6 +164,8 @@ pub enum EntitlementValue {
     StringValue(std::string::String),
 }
 impl EntitlementValue {
+    /// Tries to convert the enum instance into its [`EntitlementValue`](crate::model::EntitlementValue) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
         if let EntitlementValue::BooleanValue(val) = &self {
             Ok(&val)
@@ -155,9 +173,12 @@ impl EntitlementValue {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `EntitlementValue` variant.
     pub fn is_boolean_value(&self) -> bool {
         self.as_boolean_value().is_ok()
     }
+    /// Tries to convert the enum instance into its [`EntitlementValue`](crate::model::EntitlementValue) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_double_value(&self) -> std::result::Result<&f64, &Self> {
         if let EntitlementValue::DoubleValue(val) = &self {
             Ok(&val)
@@ -165,9 +186,12 @@ impl EntitlementValue {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `EntitlementValue` variant.
     pub fn is_double_value(&self) -> bool {
         self.as_double_value().is_ok()
     }
+    /// Tries to convert the enum instance into its [`EntitlementValue`](crate::model::EntitlementValue) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_integer_value(&self) -> std::result::Result<&i32, &Self> {
         if let EntitlementValue::IntegerValue(val) = &self {
             Ok(&val)
@@ -175,9 +199,12 @@ impl EntitlementValue {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `EntitlementValue` variant.
     pub fn is_integer_value(&self) -> bool {
         self.as_integer_value().is_ok()
     }
+    /// Tries to convert the enum instance into its [`EntitlementValue`](crate::model::EntitlementValue) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let EntitlementValue::StringValue(val) = &self {
             Ok(&val)
@@ -185,11 +212,13 @@ impl EntitlementValue {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `EntitlementValue` variant.
     pub fn is_string_value(&self) -> bool {
         self.as_string_value().is_ok()
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -201,7 +230,9 @@ impl EntitlementValue {
     std::hash::Hash,
 )]
 pub enum GetEntitlementFilterName {
+    #[allow(missing_docs)] // documentation missing in model
     CustomerIdentifier,
+    #[allow(missing_docs)] // documentation missing in model
     Dimension,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -223,6 +254,7 @@ impl std::str::FromStr for GetEntitlementFilterName {
     }
 }
 impl GetEntitlementFilterName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GetEntitlementFilterName::CustomerIdentifier => "CUSTOMER_IDENTIFIER",
@@ -230,6 +262,7 @@ impl GetEntitlementFilterName {
             GetEntitlementFilterName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CUSTOMER_IDENTIFIER", "DIMENSION"]
     }

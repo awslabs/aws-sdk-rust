@@ -35,6 +35,8 @@ pub mod group_query {
             self.group_name = Some(input.into());
             self
         }
+        /// <p>The name of the resource group that is associated with the specified resource
+        /// query.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -45,6 +47,8 @@ pub mod group_query {
             self.resource_query = Some(input);
             self
         }
+        /// <p>The resource query that determines which AWS resources are members of the associated
+        /// resource group.</p>
         pub fn set_resource_query(
             mut self,
             input: std::option::Option<crate::model::ResourceQuery>,
@@ -334,6 +338,74 @@ pub mod resource_query {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the query. You can use the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>
+        /// <code>CLOUDFORMATION_STACK_1_0:</code>
+        /// </i>Specifies that the
+        /// <code>Query</code> contains an ARN for a CloudFormation stack.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>
+        /// <code>TAG_FILTERS_1_0:</code>
+        /// </i>Specifies that the
+        /// <code>Query</code> parameter contains a JSON string that represents a
+        /// collection of simple tag filters for resource types and tags. The JSON string
+        /// uses a syntax similar to the <code>
+        /// <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a>
+        /// </code> operation, but uses only the <code>
+        /// <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-ResourceTypeFilters"> ResourceTypeFilters</a>
+        /// </code> and <code>
+        /// <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-TagFiltersTagFilters">TagFilters</a>
+        /// </code> fields. If you specify more than one tag key,
+        /// only resources that match all tag keys, and at least one value of each specified
+        /// tag key, are returned in your query. If you specify more than one value for a
+        /// tag key, a resource matches the filter if it has a tag key value that matches
+        /// <i>any</i> of the specified values.</p>
+        /// <p>For example, consider the following sample query for resources that have two
+        /// tags, <code>Stage</code> and <code>Version</code>, with two values each:</p>
+        /// <p>
+        /// <code>[{"Stage":["Test","Deploy"]},{"Version":["1","2"]}]</code>
+        /// </p>
+        /// <p>The results of this query could include the following.</p>
+        /// <ul>
+        /// <li>
+        /// <p>An EC2 instance that has the following two tags:
+        /// <code>{"Stage":"Deploy"}</code>, and
+        /// <code>{"Version":"2"}</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>An S3 bucket that has the following two tags:
+        /// <code>{"Stage":"Test"}</code>, and
+        /// <code>{"Version":"1"}</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The query would not include the following items in the results, however. </p>
+        /// <ul>
+        /// <li>
+        /// <p>An EC2 instance that has only the following tag:
+        /// <code>{"Stage":"Deploy"}</code>.</p>
+        /// <p>The instance does not have <b>all</b> of the
+        /// tag keys specified in the filter, so it is excluded from the
+        /// results.</p>
+        /// </li>
+        /// <li>
+        /// <p>An RDS database that has the following two tags:
+        /// <code>{"Stage":"Archived"}</code> and
+        /// <code>{"Version":"4"}</code>
+        /// </p>
+        /// <p>The database has all of the tag keys, but none of those keys has an
+        /// associated value that matches at least one of the specified values in
+        /// the filter.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::QueryType>) -> Self {
             self.r#type = input;
             self
@@ -343,6 +415,7 @@ pub mod resource_query {
             self.query = Some(input.into());
             self
         }
+        /// <p>The query that defines a group or a search.</p>
         pub fn set_query(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query = input;
             self
@@ -363,6 +436,7 @@ impl ResourceQuery {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -374,7 +448,9 @@ impl ResourceQuery {
     std::hash::Hash,
 )]
 pub enum QueryType {
+    #[allow(missing_docs)] // documentation missing in model
     CloudformationStack10,
+    #[allow(missing_docs)] // documentation missing in model
     TagFilters10,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -396,6 +472,7 @@ impl std::str::FromStr for QueryType {
     }
 }
 impl QueryType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             QueryType::CloudformationStack10 => "CLOUDFORMATION_STACK_1_0",
@@ -403,6 +480,7 @@ impl QueryType {
             QueryType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CLOUDFORMATION_STACK_1_0", "TAG_FILTERS_1_0"]
     }
@@ -465,6 +543,7 @@ pub mod group {
             self.group_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the resource group.</p>
         pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_arn = input;
             self
@@ -474,6 +553,7 @@ pub mod group {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the resource group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -483,6 +563,7 @@ pub mod group {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the resource group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -534,6 +615,7 @@ pub mod pending_resource {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon resource name (ARN) of the resource that's in a pending state.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -589,6 +671,7 @@ pub mod failed_resource {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the resource that failed to be added or removed.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -598,6 +681,7 @@ pub mod failed_resource {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The error message text associated with the failure.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -610,6 +694,7 @@ pub mod failed_resource {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>The error code associated with the failure.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -674,6 +759,8 @@ pub mod query_error {
             self.error_code = Some(input);
             self
         }
+        /// <p>Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
+        /// <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::QueryErrorCode>,
@@ -690,6 +777,11 @@ pub mod query_error {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message that explains the <code>ErrorCode</code> value. Messages might state that
+        /// the specified CloudFormation stack does not exist (or no longer exists). For
+        /// <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states that the
+        /// CloudFormation stack has a status that is not (or no longer) active, such as
+        /// <code>CREATE_FAILED</code>.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -710,6 +802,7 @@ impl QueryError {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -721,7 +814,9 @@ impl QueryError {
     std::hash::Hash,
 )]
 pub enum QueryErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
     CloudformationStackInactive,
+    #[allow(missing_docs)] // documentation missing in model
     CloudformationStackNotExisting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -743,6 +838,7 @@ impl std::str::FromStr for QueryErrorCode {
     }
 }
 impl QueryErrorCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             QueryErrorCode::CloudformationStackInactive => "CLOUDFORMATION_STACK_INACTIVE",
@@ -750,6 +846,7 @@ impl QueryErrorCode {
             QueryErrorCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CLOUDFORMATION_STACK_INACTIVE",
@@ -795,6 +892,7 @@ pub mod resource_identifier {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of a resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -804,6 +902,7 @@ pub mod resource_identifier {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -870,10 +969,21 @@ pub mod group_configuration_item {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>Specifies the type of group configuration item. Each item must have a unique value for
+        /// <code>type</code>. For the list of types that you can specify for a configuration
+        /// item, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and
+        /// parameters</a>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
         }
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>A collection of parameters for this group configuration item. For the list of
+        /// parameters that you can use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported
+        /// resource types and parameters</a>.</p>
         pub fn parameters(
             mut self,
             input: impl Into<crate::model::GroupConfigurationParameter>,
@@ -883,6 +993,9 @@ pub mod group_configuration_item {
             self.parameters = Some(v);
             self
         }
+        /// <p>A collection of parameters for this group configuration item. For the list of
+        /// parameters that you can use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported
+        /// resource types and parameters</a>.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GroupConfigurationParameter>>,
@@ -946,16 +1059,29 @@ pub mod group_configuration_parameter {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the group configuration parameter. For the list of parameters that you can
+        /// use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and
+        /// parameters</a>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The value or values to be used for the specified parameter. For the list of values you
+        /// can use with each parameter, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and
+        /// parameters</a>.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The value or values to be used for the specified parameter. For the list of values you
+        /// can use with each parameter, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and
+        /// parameters</a>.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1011,6 +1137,7 @@ pub mod group_identifier {
             self.group_name = Some(input.into());
             self
         }
+        /// <p>The name of the resource group.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -1020,6 +1147,7 @@ pub mod group_identifier {
             self.group_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the resource group.</p>
         pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_arn = input;
             self
@@ -1074,6 +1202,7 @@ pub mod group_filter {
             self.name = Some(input);
             self
         }
+        /// <p>The name of the filter. Filter names are case-sensitive.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::GroupFilterName>,
@@ -1081,12 +1210,20 @@ pub mod group_filter {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>One or more filter values. Allowed filter values vary by group filter name, and are
+        /// case-sensitive.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>One or more filter values. Allowed filter values vary by group filter name, and are
+        /// case-sensitive.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1110,6 +1247,7 @@ impl GroupFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1121,7 +1259,9 @@ impl GroupFilter {
     std::hash::Hash,
 )]
 pub enum GroupFilterName {
+    #[allow(missing_docs)] // documentation missing in model
     ConfigurationType,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceType,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1143,6 +1283,7 @@ impl std::str::FromStr for GroupFilterName {
     }
 }
 impl GroupFilterName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GroupFilterName::ConfigurationType => "configuration-type",
@@ -1150,6 +1291,7 @@ impl GroupFilterName {
             GroupFilterName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["configuration-type", "resource-type"]
     }
@@ -1199,6 +1341,7 @@ pub mod list_group_resources_item {
             self.identifier = Some(input);
             self
         }
+        /// <p>A structure that contains the ARN of a resource and its resource type.</p>
         pub fn set_identifier(
             mut self,
             input: std::option::Option<crate::model::ResourceIdentifier>,
@@ -1216,6 +1359,12 @@ pub mod list_group_resources_item {
             self.status = Some(input);
             self
         }
+        /// <p>A structure that contains the status of this resource's membership in the
+        /// group.</p>
+        /// <note>
+        /// <p>This field is present in the response only if the group is of type
+        /// <code>AWS::EC2::HostManagement</code>.</p>
+        /// </note>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ResourceStatus>,
@@ -1270,6 +1419,7 @@ pub mod resource_status {
             self.name = Some(input);
             self
         }
+        /// <p>The current status.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::ResourceStatusValue>,
@@ -1290,6 +1440,7 @@ impl ResourceStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1301,6 +1452,7 @@ impl ResourceStatus {
     std::hash::Hash,
 )]
 pub enum ResourceStatusValue {
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1321,12 +1473,14 @@ impl std::str::FromStr for ResourceStatusValue {
     }
 }
 impl ResourceStatusValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceStatusValue::Pending => "PENDING",
             ResourceStatusValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PENDING"]
     }
@@ -1371,6 +1525,7 @@ pub mod resource_filter {
             self.name = Some(input);
             self
         }
+        /// <p>The name of the filter. Filter names are case-sensitive.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::ResourceFilterName>,
@@ -1378,12 +1533,20 @@ pub mod resource_filter {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>One or more filter values. Allowed filter values vary by resource filter name, and are
+        /// case-sensitive.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>One or more filter values. Allowed filter values vary by resource filter name, and are
+        /// case-sensitive.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1407,6 +1570,7 @@ impl ResourceFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1418,6 +1582,7 @@ impl ResourceFilter {
     std::hash::Hash,
 )]
 pub enum ResourceFilterName {
+    #[allow(missing_docs)] // documentation missing in model
     ResourceType,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1438,12 +1603,14 @@ impl std::str::FromStr for ResourceFilterName {
     }
 }
 impl ResourceFilterName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceFilterName::ResourceType => "resource-type",
             ResourceFilterName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["resource-type"]
     }
@@ -1498,6 +1665,11 @@ pub mod group_configuration {
         pub(crate) failure_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `configuration`.
+        ///
+        /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
+        ///
+        /// <p>The configuration currently associated with the group and in effect.</p>
         pub fn configuration(
             mut self,
             input: impl Into<crate::model::GroupConfigurationItem>,
@@ -1507,6 +1679,7 @@ pub mod group_configuration {
             self.configuration = Some(v);
             self
         }
+        /// <p>The configuration currently associated with the group and in effect.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GroupConfigurationItem>>,
@@ -1514,6 +1687,12 @@ pub mod group_configuration {
             self.configuration = input;
             self
         }
+        /// Appends an item to `proposed_configuration`.
+        ///
+        /// To override the contents of this collection use [`set_proposed_configuration`](Self::set_proposed_configuration).
+        ///
+        /// <p>If present, the new configuration that is in the process of being applied to the
+        /// group.</p>
         pub fn proposed_configuration(
             mut self,
             input: impl Into<crate::model::GroupConfigurationItem>,
@@ -1523,6 +1702,8 @@ pub mod group_configuration {
             self.proposed_configuration = Some(v);
             self
         }
+        /// <p>If present, the new configuration that is in the process of being applied to the
+        /// group.</p>
         pub fn set_proposed_configuration(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GroupConfigurationItem>>,
@@ -1535,6 +1716,7 @@ pub mod group_configuration {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of an attempt to update the group configuration.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::GroupConfigurationStatus>,
@@ -1547,6 +1729,7 @@ pub mod group_configuration {
             self.failure_reason = Some(input.into());
             self
         }
+        /// <p>If present, the reason why a request to update the group configuration failed.</p>
         pub fn set_failure_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1572,6 +1755,7 @@ impl GroupConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1583,8 +1767,11 @@ impl GroupConfiguration {
     std::hash::Hash,
 )]
 pub enum GroupConfigurationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     UpdateComplete,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1607,6 +1794,7 @@ impl std::str::FromStr for GroupConfigurationStatus {
     }
 }
 impl GroupConfigurationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GroupConfigurationStatus::UpdateComplete => "UPDATE_COMPLETE",
@@ -1615,6 +1803,7 @@ impl GroupConfigurationStatus {
             GroupConfigurationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["UPDATE_COMPLETE", "UPDATE_FAILED", "UPDATING"]
     }

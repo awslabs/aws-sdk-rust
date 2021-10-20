@@ -16,6 +16,7 @@ pub mod describe_stream_input {
             self.stream_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the stream.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -25,6 +26,7 @@ pub mod describe_stream_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of shard objects to return. The upper limit is 100.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -35,6 +37,8 @@ pub mod describe_stream_input {
             self.exclusive_start_shard_id = Some(input.into());
             self
         }
+        /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was
+        /// returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
         pub fn set_exclusive_start_shard_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -47,7 +51,7 @@ pub mod describe_stream_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeStreamInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeStreamInput {
                 stream_arn: self.stream_arn,
@@ -68,16 +72,16 @@ impl DescribeStreamInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeStream,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeStreamInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -85,7 +89,7 @@ impl DescribeStreamInput {
         fn update_http_builder(
             input: &crate::input::DescribeStreamInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -94,29 +98,31 @@ impl DescribeStreamInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeStreamInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDBStreams_20120810.DescribeStream",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_stream(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -139,15 +145,15 @@ impl DescribeStreamInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeStream::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeStream",
             "dynamodbstreams",
         ));
@@ -156,10 +162,10 @@ impl DescribeStreamInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -188,6 +194,7 @@ pub mod get_records_input {
             self.shard_iterator = Some(input.into());
             self
         }
+        /// <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
         pub fn set_shard_iterator(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -200,6 +207,7 @@ pub mod get_records_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of records to return from the shard. The upper limit is 1000.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -207,8 +215,10 @@ pub mod get_records_input {
         /// Consumes the builder and constructs a [`GetRecordsInput`](crate::input::GetRecordsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetRecordsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetRecordsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetRecordsInput {
                 shard_iterator: self.shard_iterator,
                 limit: self.limit,
@@ -227,16 +237,16 @@ impl GetRecordsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetRecords,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetRecordsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -244,7 +254,7 @@ impl GetRecordsInput {
         fn update_http_builder(
             input: &crate::input::GetRecordsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -253,29 +263,31 @@ impl GetRecordsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetRecordsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDBStreams_20120810.GetRecords",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_records(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -298,25 +310,27 @@ impl GetRecordsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetRecords::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetRecords",
-                    "dynamodbstreams",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetRecords::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetRecords",
+            "dynamodbstreams",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -347,6 +361,7 @@ pub mod get_shard_iterator_input {
             self.stream_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the stream.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -356,6 +371,7 @@ pub mod get_shard_iterator_input {
             self.shard_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
         pub fn set_shard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shard_id = input;
             self
@@ -389,6 +405,31 @@ pub mod get_shard_iterator_input {
             self.shard_iterator_type = Some(input);
             self
         }
+        /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a
+        /// specific sequence number.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a
+        /// specific sequence number.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is
+        /// the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention.
+        /// Stream records whose age exceeds this limit are subject to removal (trimming) from the
+        /// stream.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LATEST</code> - Start reading just after the most recent stream record in the
+        /// shard, so that you always read the most recent data in the shard.</p>
+        /// </li>
+        /// </ul>
         pub fn set_shard_iterator_type(
             mut self,
             input: std::option::Option<crate::model::ShardIteratorType>,
@@ -401,6 +442,7 @@ pub mod get_shard_iterator_input {
             self.sequence_number = Some(input.into());
             self
         }
+        /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
         pub fn set_sequence_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -413,7 +455,7 @@ pub mod get_shard_iterator_input {
             self,
         ) -> std::result::Result<
             crate::input::GetShardIteratorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetShardIteratorInput {
                 stream_arn: self.stream_arn,
@@ -435,16 +477,16 @@ impl GetShardIteratorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetShardIterator,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetShardIteratorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -452,7 +494,7 @@ impl GetShardIteratorInput {
         fn update_http_builder(
             input: &crate::input::GetShardIteratorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -461,32 +503,32 @@ impl GetShardIteratorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetShardIteratorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDBStreams_20120810.GetShardIterator",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_shard_iterator(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -509,15 +551,15 @@ impl GetShardIteratorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetShardIterator::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetShardIterator",
             "dynamodbstreams",
         ));
@@ -526,10 +568,10 @@ impl GetShardIteratorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -559,6 +601,7 @@ pub mod list_streams_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>If this parameter is provided, then only the streams associated with this table name are returned.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -568,6 +611,7 @@ pub mod list_streams_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of streams to return. The upper limit is 100.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -579,6 +623,9 @@ pub mod list_streams_input {
             self.exclusive_start_stream_arn = Some(input.into());
             self
         }
+        /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the
+        /// value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation.
+        /// </p>
         pub fn set_exclusive_start_stream_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -589,8 +636,10 @@ pub mod list_streams_input {
         /// Consumes the builder and constructs a [`ListStreamsInput`](crate::input::ListStreamsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListStreamsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListStreamsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListStreamsInput {
                 table_name: self.table_name,
                 limit: self.limit,
@@ -610,16 +659,16 @@ impl ListStreamsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListStreams,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListStreamsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -627,7 +676,7 @@ impl ListStreamsInput {
         fn update_http_builder(
             input: &crate::input::ListStreamsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -636,29 +685,31 @@ impl ListStreamsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListStreamsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDBStreams_20120810.ListStreams",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_streams(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -681,25 +732,27 @@ impl ListStreamsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListStreams::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListStreams",
-                    "dynamodbstreams",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListStreams::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListStreams",
+            "dynamodbstreams",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,

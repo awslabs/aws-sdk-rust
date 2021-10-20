@@ -19,6 +19,9 @@ pub mod create_capacity_provider_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the capacity provider. Up to 255 characters are allowed, including letters
+        /// (upper and lowercase), numbers, underscores, and hyphens. The name cannot be prefixed
+        /// with "<code>aws</code>", "<code>ecs</code>", or "<code>fargate</code>".</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -31,6 +34,7 @@ pub mod create_capacity_provider_input {
             self.auto_scaling_group_provider = Some(input);
             self
         }
+        /// <p>The details of the Auto Scaling group for the capacity provider.</p>
         pub fn set_auto_scaling_group_provider(
             mut self,
             input: std::option::Option<crate::model::AutoScalingGroupProvider>,
@@ -38,12 +42,84 @@ pub mod create_capacity_provider_input {
             self.auto_scaling_group_provider = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The metadata that you apply to the capacity provider to help you categorize and
+        /// organize them. Each tag consists of a key and an optional value, both of which you
+        /// define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The metadata that you apply to the capacity provider to help you categorize and
+        /// organize them. Each tag consists of a key and an optional value, both of which you
+        /// define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -56,7 +132,7 @@ pub mod create_capacity_provider_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateCapacityProviderInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateCapacityProviderInput {
                 name: self.name,
@@ -77,16 +153,16 @@ impl CreateCapacityProviderInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateCapacityProvider,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateCapacityProviderInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -94,7 +170,7 @@ impl CreateCapacityProviderInput {
         fn update_http_builder(
             input: &crate::input::CreateCapacityProviderInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -103,32 +179,34 @@ impl CreateCapacityProviderInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateCapacityProviderInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.CreateCapacityProvider",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_capacity_provider(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -151,15 +229,15 @@ impl CreateCapacityProviderInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateCapacityProvider::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateCapacityProvider",
             "ecs",
         ));
@@ -168,10 +246,10 @@ impl CreateCapacityProviderInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -206,16 +284,88 @@ pub mod create_cluster_input {
             self.cluster_name = Some(input.into());
             self
         }
+        /// <p>The name of your cluster. If you do not specify a name for your cluster, you create a
+        /// cluster named <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. </p>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_name = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The metadata that you apply to the cluster to help you categorize and organize them.
+        /// Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The metadata that you apply to the cluster to help you categorize and organize them.
+        /// Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -223,12 +373,24 @@ pub mod create_cluster_input {
             self.tags = input;
             self
         }
+        /// Appends an item to `settings`.
+        ///
+        /// To override the contents of this collection use [`set_settings`](Self::set_settings).
+        ///
+        /// <p>The setting to use when creating a cluster. This parameter is used to enable CloudWatch
+        /// Container Insights for a cluster. If this value is specified, it will override the
+        /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
+        /// <a>PutAccountSettingDefault</a>.</p>
         pub fn settings(mut self, input: impl Into<crate::model::ClusterSetting>) -> Self {
             let mut v = self.settings.unwrap_or_default();
             v.push(input.into());
             self.settings = Some(v);
             self
         }
+        /// <p>The setting to use when creating a cluster. This parameter is used to enable CloudWatch
+        /// Container Insights for a cluster. If this value is specified, it will override the
+        /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
+        /// <a>PutAccountSettingDefault</a>.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ClusterSetting>>,
@@ -241,6 +403,7 @@ pub mod create_cluster_input {
             self.configuration = Some(input);
             self
         }
+        /// <p>The execute command configuration for the cluster.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ClusterConfiguration>,
@@ -248,12 +411,44 @@ pub mod create_cluster_input {
             self.configuration = input;
             self
         }
+        /// Appends an item to `capacity_providers`.
+        ///
+        /// To override the contents of this collection use [`set_capacity_providers`](Self::set_capacity_providers).
+        ///
+        /// <p>The short name of one or more capacity providers to associate with the cluster. A
+        /// capacity provider must be associated with a cluster before it can be included as part of
+        /// the default capacity provider strategy of the cluster or used in a capacity provider
+        /// strategy when calling the <a>CreateService</a> or <a>RunTask</a>
+        /// actions.</p>
+        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
+        /// provider must already be created and not already associated with another cluster. New
+        /// Auto Scaling group capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
+        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
+        /// available to all accounts and only need to be associated with a cluster to be
+        /// used.</p>
+        /// <p>The <a>PutClusterCapacityProviders</a> API operation is used to update the
+        /// list of available capacity providers for a cluster after the cluster is created.</p>
         pub fn capacity_providers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.capacity_providers.unwrap_or_default();
             v.push(input.into());
             self.capacity_providers = Some(v);
             self
         }
+        /// <p>The short name of one or more capacity providers to associate with the cluster. A
+        /// capacity provider must be associated with a cluster before it can be included as part of
+        /// the default capacity provider strategy of the cluster or used in a capacity provider
+        /// strategy when calling the <a>CreateService</a> or <a>RunTask</a>
+        /// actions.</p>
+        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
+        /// provider must already be created and not already associated with another cluster. New
+        /// Auto Scaling group capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
+        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
+        /// available to all accounts and only need to be associated with a cluster to be
+        /// used.</p>
+        /// <p>The <a>PutClusterCapacityProviders</a> API operation is used to update the
+        /// list of available capacity providers for a cluster after the cluster is created.</p>
         pub fn set_capacity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -261,6 +456,17 @@ pub mod create_cluster_input {
             self.capacity_providers = input;
             self
         }
+        /// Appends an item to `default_capacity_provider_strategy`.
+        ///
+        /// To override the contents of this collection use [`set_default_capacity_provider_strategy`](Self::set_default_capacity_provider_strategy).
+        ///
+        /// <p>The capacity provider strategy to set as the default for the cluster. When a default
+        /// capacity provider strategy is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity
+        /// provider strategy or launch type specified, the default capacity provider strategy for
+        /// the cluster is used.</p>
+        /// <p>If a default capacity provider strategy is not defined for a cluster during creation,
+        /// it can be defined later with the <a>PutClusterCapacityProviders</a> API
+        /// operation.</p>
         pub fn default_capacity_provider_strategy(
             mut self,
             input: impl Into<crate::model::CapacityProviderStrategyItem>,
@@ -270,6 +476,13 @@ pub mod create_cluster_input {
             self.default_capacity_provider_strategy = Some(v);
             self
         }
+        /// <p>The capacity provider strategy to set as the default for the cluster. When a default
+        /// capacity provider strategy is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity
+        /// provider strategy or launch type specified, the default capacity provider strategy for
+        /// the cluster is used.</p>
+        /// <p>If a default capacity provider strategy is not defined for a cluster during creation,
+        /// it can be defined later with the <a>PutClusterCapacityProviders</a> API
+        /// operation.</p>
         pub fn set_default_capacity_provider_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
@@ -280,8 +493,10 @@ pub mod create_cluster_input {
         /// Consumes the builder and constructs a [`CreateClusterInput`](crate::input::CreateClusterInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateClusterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateClusterInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateClusterInput {
                 cluster_name: self.cluster_name,
                 tags: self.tags,
@@ -304,16 +519,16 @@ impl CreateClusterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateCluster,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateClusterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -321,7 +536,7 @@ impl CreateClusterInput {
         fn update_http_builder(
             input: &crate::input::CreateClusterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -330,29 +545,31 @@ impl CreateClusterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateClusterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.CreateCluster",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_cluster(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -375,25 +592,27 @@ impl CreateClusterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateCluster::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateCluster",
-                    "ecs",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateCluster::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateCluster",
+            "ecs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -448,6 +667,8 @@ pub mod create_service_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to run your service.
+        /// If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -459,6 +680,9 @@ pub mod create_service_input {
             self.service_name = Some(input.into());
             self
         }
+        /// <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. Service names must be unique within
+        /// a cluster, but you can have similarly named services in multiple clusters within a
+        /// Region or across multiple Regions.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -472,6 +696,11 @@ pub mod create_service_input {
             self.task_definition = Some(input.into());
             self
         }
+        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
+        /// full ARN of the task definition to run in your service. If a <code>revision</code> is
+        /// not specified, the latest <code>ACTIVE</code> revision is used.</p>
+        /// <p>A task definition must be specified if the service is using either the
+        /// <code>ECS</code> or <code>CODE_DEPLOY</code> deployment controllers.</p>
         pub fn set_task_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -479,12 +708,90 @@ pub mod create_service_input {
             self.task_definition = input;
             self
         }
+        /// Appends an item to `load_balancers`.
+        ///
+        /// To override the contents of this collection use [`set_load_balancers`](Self::set_load_balancers).
+        ///
+        /// <p>A load balancer object representing the load balancers to use with your service. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load Balancing</a> in the
+        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>If the service is using the rolling update (<code>ECS</code>) deployment controller
+        /// and using either an Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to
+        /// attach to the service. The service-linked role is required for services that make use of
+        /// multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECS</a> in the
+        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>If the service is using the <code>CODE_DEPLOY</code> deployment controller, the
+        /// service is required to use either an Application Load Balancer or Network Load Balancer. When creating an CodeDeploy deployment
+        /// group, you specify two target groups (referred to as a <code>targetGroupPair</code>).
+        /// During a deployment, CodeDeploy determines which task set in your service has the status
+        /// <code>PRIMARY</code> and associates one target group with it, and then associates
+        /// the other target group with the replacement task set. The load balancer can also have up
+        /// to two listeners: a required listener for production traffic and an optional listener
+        /// that allows you perform validation tests with Lambda functions before routing production
+        /// traffic to it.</p>
+        /// <p>After you create a service using the <code>ECS</code> deployment controller, the load
+        /// balancer name or target group ARN, container name, and container port specified in the
+        /// service definition are immutable. If you are using the <code>CODE_DEPLOY</code>
+        /// deployment controller, these values can be changed when updating the service.</p>
+        /// <p>For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target group ARN,
+        /// the container name (as it appears in a container definition), and the container port to
+        /// access from the load balancer. The load balancer name parameter must be omitted. When a
+        /// task from this service is placed on a container instance, the container instance and
+        /// port combination is registered as a target in the target group specified here.</p>
+        /// <p>For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
+        /// appears in a container definition), and the container port to access from the load
+        /// balancer. The target group ARN parameter must be omitted. When a task from this service
+        /// is placed on a container instance, the container instance is registered with the load
+        /// balancer specified here.</p>
+        /// <p>Services with tasks that use the <code>awsvpc</code> network mode (for example, those
+        /// with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are
+        /// not supported. Also, when you create any target groups for these services, you must
+        /// choose <code>ip</code> as the target type, not <code>instance</code>, because tasks that
+        /// use the <code>awsvpc</code> network mode are associated with an elastic network
+        /// interface, not an Amazon EC2 instance.</p>
         pub fn load_balancers(mut self, input: impl Into<crate::model::LoadBalancer>) -> Self {
             let mut v = self.load_balancers.unwrap_or_default();
             v.push(input.into());
             self.load_balancers = Some(v);
             self
         }
+        /// <p>A load balancer object representing the load balancers to use with your service. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load Balancing</a> in the
+        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>If the service is using the rolling update (<code>ECS</code>) deployment controller
+        /// and using either an Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to
+        /// attach to the service. The service-linked role is required for services that make use of
+        /// multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECS</a> in the
+        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>If the service is using the <code>CODE_DEPLOY</code> deployment controller, the
+        /// service is required to use either an Application Load Balancer or Network Load Balancer. When creating an CodeDeploy deployment
+        /// group, you specify two target groups (referred to as a <code>targetGroupPair</code>).
+        /// During a deployment, CodeDeploy determines which task set in your service has the status
+        /// <code>PRIMARY</code> and associates one target group with it, and then associates
+        /// the other target group with the replacement task set. The load balancer can also have up
+        /// to two listeners: a required listener for production traffic and an optional listener
+        /// that allows you perform validation tests with Lambda functions before routing production
+        /// traffic to it.</p>
+        /// <p>After you create a service using the <code>ECS</code> deployment controller, the load
+        /// balancer name or target group ARN, container name, and container port specified in the
+        /// service definition are immutable. If you are using the <code>CODE_DEPLOY</code>
+        /// deployment controller, these values can be changed when updating the service.</p>
+        /// <p>For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target group ARN,
+        /// the container name (as it appears in a container definition), and the container port to
+        /// access from the load balancer. The load balancer name parameter must be omitted. When a
+        /// task from this service is placed on a container instance, the container instance and
+        /// port combination is registered as a target in the target group specified here.</p>
+        /// <p>For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
+        /// appears in a container definition), and the container port to access from the load
+        /// balancer. The target group ARN parameter must be omitted. When a task from this service
+        /// is placed on a container instance, the container instance is registered with the load
+        /// balancer specified here.</p>
+        /// <p>Services with tasks that use the <code>awsvpc</code> network mode (for example, those
+        /// with the Fargate launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are
+        /// not supported. Also, when you create any target groups for these services, you must
+        /// choose <code>ip</code> as the target type, not <code>instance</code>, because tasks that
+        /// use the <code>awsvpc</code> network mode are associated with an elastic network
+        /// interface, not an Amazon EC2 instance.</p>
         pub fn set_load_balancers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
@@ -492,6 +799,17 @@ pub mod create_service_input {
             self.load_balancers = input;
             self
         }
+        /// Appends an item to `service_registries`.
+        ///
+        /// To override the contents of this collection use [`set_service_registries`](Self::set_service_registries).
+        ///
+        /// <p>The details of the service discovery registry to associate with this service. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+        /// discovery</a>.</p>
+        /// <note>
+        /// <p>Each service may be associated with one service registry. Multiple service
+        /// registries per service isn't supported.</p>
+        /// </note>
         pub fn service_registries(
             mut self,
             input: impl Into<crate::model::ServiceRegistry>,
@@ -501,6 +819,13 @@ pub mod create_service_input {
             self.service_registries = Some(v);
             self
         }
+        /// <p>The details of the service discovery registry to associate with this service. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+        /// discovery</a>.</p>
+        /// <note>
+        /// <p>Each service may be associated with one service registry. Multiple service
+        /// registries per service isn't supported.</p>
+        /// </note>
         pub fn set_service_registries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceRegistry>>,
@@ -517,6 +842,11 @@ pub mod create_service_input {
             self.desired_count = Some(input);
             self
         }
+        /// <p>The number of instantiations of the specified task definition to place and keep
+        /// running on your cluster.</p>
+        /// <p>This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or is not
+        /// specified. If <code>schedulingStrategy</code> is <code>DAEMON</code> then this is not
+        /// required.</p>
         pub fn set_desired_count(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_count = input;
             self
@@ -527,6 +857,8 @@ pub mod create_service_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. Up to 32 ASCII characters are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -551,6 +883,22 @@ pub mod create_service_input {
             self.launch_type = Some(input);
             self
         }
+        /// <p>The infrastructure on which to run your service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+        /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand
+        /// infrastructure.</p>
+        /// <note>
+        /// <p>Fargate Spot infrastructure is available for use but a capacity provider
+        /// strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the
+        /// <i>Amazon ECS User Guide for Fargate</i>.</p>
+        /// </note>
+        /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your
+        /// cluster.</p>
+        /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
+        /// virtual machine (VM) capacity registered to your cluster.</p>
+        /// <p>A service can use either a launch type or a capacity provider strategy. If a
+        /// <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
+        /// parameter must be omitted.</p>
         pub fn set_launch_type(
             mut self,
             input: std::option::Option<crate::model::LaunchType>,
@@ -558,6 +906,16 @@ pub mod create_service_input {
             self.launch_type = input;
             self
         }
+        /// Appends an item to `capacity_provider_strategy`.
+        ///
+        /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
+        ///
+        /// <p>The capacity provider strategy to use for the service.</p>
+        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+        /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+        /// <code>launchType</code> is specified, the
+        /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+        /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
         pub fn capacity_provider_strategy(
             mut self,
             input: impl Into<crate::model::CapacityProviderStrategyItem>,
@@ -567,6 +925,12 @@ pub mod create_service_input {
             self.capacity_provider_strategy = Some(v);
             self
         }
+        /// <p>The capacity provider strategy to use for the service.</p>
+        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+        /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+        /// <code>launchType</code> is specified, the
+        /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+        /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
         pub fn set_capacity_provider_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
@@ -583,6 +947,11 @@ pub mod create_service_input {
             self.platform_version = Some(input.into());
             self
         }
+        /// <p>The platform version that your tasks in the service are running on. A platform version
+        /// is specified only for tasks using the Fargate launch type. If one isn't
+        /// specified, the <code>LATEST</code> platform version is used by default. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
+        /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_platform_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -614,6 +983,26 @@ pub mod create_service_input {
             self.role = Some(input.into());
             self
         }
+        /// <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your
+        /// load balancer on your behalf. This parameter is only permitted if you are using a load
+        /// balancer with your service and your task definition does not use the <code>awsvpc</code>
+        /// network mode. If you specify the <code>role</code> parameter, you must also specify a
+        /// load balancer object with the <code>loadBalancers</code> parameter.</p>
+        /// <important>
+        /// <p>If your account has already created the Amazon ECS service-linked role, that role is
+        /// used by default for your service unless you specify a role here. The service-linked
+        /// role is required if your task definition uses the <code>awsvpc</code> network mode
+        /// or if the service is configured to use service discovery, an external deployment
+        /// controller, multiple target groups, or Elastic Inference accelerators in which case
+        /// you should not specify a role here. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+        /// service-linked roles for Amazon ECS</a> in the
+        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// </important>
+        /// <p>If your specified role has a path other than <code>/</code>, then you must either
+        /// specify the full role ARN (this is recommended) or prefix the role name with the path.
+        /// For example, if a role with the name <code>bar</code> has a path of <code>/foo/</code>
+        /// then you would specify <code>/foo/bar</code> as the role name. For more information, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -627,6 +1016,8 @@ pub mod create_service_input {
             self.deployment_configuration = Some(input);
             self
         }
+        /// <p>Optional deployment parameters that control how many tasks run during the deployment
+        /// and the ordering of stopping and starting tasks.</p>
         pub fn set_deployment_configuration(
             mut self,
             input: std::option::Option<crate::model::DeploymentConfiguration>,
@@ -634,6 +1025,13 @@ pub mod create_service_input {
             self.deployment_configuration = input;
             self
         }
+        /// Appends an item to `placement_constraints`.
+        ///
+        /// To override the contents of this collection use [`set_placement_constraints`](Self::set_placement_constraints).
+        ///
+        /// <p>An array of placement constraint objects to use for tasks in your service. You can
+        /// specify a maximum of 10 constraints per task (this limit includes constraints in the
+        /// task definition and those specified at runtime).</p>
         pub fn placement_constraints(
             mut self,
             input: impl Into<crate::model::PlacementConstraint>,
@@ -643,6 +1041,9 @@ pub mod create_service_input {
             self.placement_constraints = Some(v);
             self
         }
+        /// <p>An array of placement constraint objects to use for tasks in your service. You can
+        /// specify a maximum of 10 constraints per task (this limit includes constraints in the
+        /// task definition and those specified at runtime).</p>
         pub fn set_placement_constraints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
@@ -650,6 +1051,12 @@ pub mod create_service_input {
             self.placement_constraints = input;
             self
         }
+        /// Appends an item to `placement_strategy`.
+        ///
+        /// To override the contents of this collection use [`set_placement_strategy`](Self::set_placement_strategy).
+        ///
+        /// <p>The placement strategy objects to use for tasks in your service. You can specify a
+        /// maximum of 5 strategy rules per service.</p>
         pub fn placement_strategy(
             mut self,
             input: impl Into<crate::model::PlacementStrategy>,
@@ -659,6 +1066,8 @@ pub mod create_service_input {
             self.placement_strategy = Some(v);
             self
         }
+        /// <p>The placement strategy objects to use for tasks in your service. You can specify a
+        /// maximum of 5 strategy rules per service.</p>
         pub fn set_placement_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
@@ -675,6 +1084,11 @@ pub mod create_service_input {
             self.network_configuration = Some(input);
             self
         }
+        /// <p>The network configuration for the service. This parameter is required for task
+        /// definitions that use the <code>awsvpc</code> network mode to receive their own elastic
+        /// network interface, and it is not supported for other network modes. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
+        /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_network_configuration(
             mut self,
             input: std::option::Option<crate::model::NetworkConfiguration>,
@@ -696,6 +1110,16 @@ pub mod create_service_input {
             self.health_check_grace_period_seconds = Some(input);
             self
         }
+        /// <p>The period of time, in seconds, that the Amazon ECS service scheduler should ignore
+        /// unhealthy Elastic Load Balancing target health checks after a task has first started. This is only used
+        /// when your service is configured to use a load balancer. If your service has a load
+        /// balancer defined and you don't specify a health check grace period value, the default
+        /// value of <code>0</code> is used.</p>
+        /// <p>If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you
+        /// can specify a health check grace period of up to 2,147,483,647 seconds. During that
+        /// time, the Amazon ECS service scheduler ignores health check status. This grace period can
+        /// prevent the service scheduler from marking tasks as unhealthy and stopping them before
+        /// they have time to come up.</p>
         pub fn set_health_check_grace_period_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -736,6 +1160,35 @@ pub mod create_service_input {
             self.scheduling_strategy = Some(input);
             self
         }
+        /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+        /// <p>There are two service scheduler strategies available:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>REPLICA</code>-The replica scheduling strategy places and
+        /// maintains the desired number of tasks across your cluster. By default, the
+        /// service scheduler spreads tasks across Availability Zones. You can use task
+        /// placement strategies and constraints to customize task placement decisions. This
+        /// scheduler strategy is required if the service is using the
+        /// <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller
+        /// types.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one
+        /// task on each active container instance that meets all of the task placement
+        /// constraints that you specify in your cluster. The service scheduler also
+        /// evaluates the task placement constraints for running tasks and will stop tasks
+        /// that do not meet the placement constraints. When you're using this strategy, you
+        /// don't need to specify a desired number of tasks, a task placement strategy, or
+        /// use Service Auto Scaling policies.</p>
+        /// <note>
+        /// <p>Tasks using the Fargate launch type or the
+        /// <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller
+        /// types don't support the <code>DAEMON</code> scheduling strategy.</p>
+        /// </note>
+        /// </li>
+        /// </ul>
         pub fn set_scheduling_strategy(
             mut self,
             input: std::option::Option<crate::model::SchedulingStrategy>,
@@ -749,6 +1202,8 @@ pub mod create_service_input {
             self.deployment_controller = Some(input);
             self
         }
+        /// <p>The deployment controller to use for the service. If no deployment controller is
+        /// specified, the default value of <code>ECS</code> is used.</p>
         pub fn set_deployment_controller(
             mut self,
             input: std::option::Option<crate::model::DeploymentController>,
@@ -756,12 +1211,84 @@ pub mod create_service_input {
             self.deployment_controller = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The metadata that you apply to the service to help you categorize and organize them.
+        /// Each tag consists of a key and an optional value, both of which you define. When a
+        /// service is deleted, the tags are deleted as well.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The metadata that you apply to the service to help you categorize and organize them.
+        /// Each tag consists of a key and an optional value, both of which you define. When a
+        /// service is deleted, the tags are deleted as well.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -776,6 +1303,9 @@ pub mod create_service_input {
             self.enable_ecs_managed_tags = Some(input);
             self
         }
+        /// <p>Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
+        /// Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_enable_ecs_managed_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_ecs_managed_tags = input;
             self
@@ -789,6 +1319,11 @@ pub mod create_service_input {
             self.propagate_tags = Some(input);
             self
         }
+        /// <p>Specifies whether to propagate the tags from the task definition or the service to the
+        /// tasks in the service. If no value is specified, the tags are not propagated. Tags can
+        /// only be propagated to the tasks within the service during service creation. To add tags
+        /// to a task after service creation or task creation, use the <a>TagResource</a> API
+        /// action.</p>
         pub fn set_propagate_tags(
             mut self,
             input: std::option::Option<crate::model::PropagateTags>,
@@ -803,6 +1338,9 @@ pub mod create_service_input {
             self.enable_execute_command = Some(input);
             self
         }
+        /// <p>Whether or not the execute command functionality is enabled for the service. If
+        /// <code>true</code>, this enables execute command functionality on all containers in
+        /// the service tasks.</p>
         pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_execute_command = input;
             self
@@ -810,8 +1348,10 @@ pub mod create_service_input {
         /// Consumes the builder and constructs a [`CreateServiceInput`](crate::input::CreateServiceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateServiceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateServiceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateServiceInput {
                 cluster: self.cluster,
                 service_name: self.service_name,
@@ -850,16 +1390,16 @@ impl CreateServiceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateService,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateServiceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -867,7 +1407,7 @@ impl CreateServiceInput {
         fn update_http_builder(
             input: &crate::input::CreateServiceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -876,29 +1416,31 @@ impl CreateServiceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateServiceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.CreateService",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_service(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -921,25 +1463,27 @@ impl CreateServiceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateService::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateService",
-                    "ecs",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateService::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateService",
+            "ecs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -981,6 +1525,7 @@ pub mod create_task_set_input {
             self.service = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the service to create the task set in.</p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service = input;
             self
@@ -991,6 +1536,8 @@ pub mod create_task_set_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the
+        /// task set in.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -1003,6 +1550,10 @@ pub mod create_task_set_input {
             self.external_id = Some(input.into());
             self
         }
+        /// <p>An optional non-unique tag that identifies this task set in external systems. If the
+        /// task set is associated with a service discovery registry, the tasks in this task set
+        /// will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute set to the provided
+        /// value.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -1012,6 +1563,7 @@ pub mod create_task_set_input {
             self.task_definition = Some(input.into());
             self
         }
+        /// <p>The task definition for the tasks in the task set to use.</p>
         pub fn set_task_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1024,6 +1576,7 @@ pub mod create_task_set_input {
             self.network_configuration = Some(input);
             self
         }
+        /// <p>An object representing the network configuration for a task set.</p>
         pub fn set_network_configuration(
             mut self,
             input: std::option::Option<crate::model::NetworkConfiguration>,
@@ -1031,12 +1584,20 @@ pub mod create_task_set_input {
             self.network_configuration = input;
             self
         }
+        /// Appends an item to `load_balancers`.
+        ///
+        /// To override the contents of this collection use [`set_load_balancers`](Self::set_load_balancers).
+        ///
+        /// <p>A load balancer object representing the load balancer to use with the task set. The
+        /// supported load balancer types are either an Application Load Balancer or a Network Load Balancer.</p>
         pub fn load_balancers(mut self, input: impl Into<crate::model::LoadBalancer>) -> Self {
             let mut v = self.load_balancers.unwrap_or_default();
             v.push(input.into());
             self.load_balancers = Some(v);
             self
         }
+        /// <p>A load balancer object representing the load balancer to use with the task set. The
+        /// supported load balancer types are either an Application Load Balancer or a Network Load Balancer.</p>
         pub fn set_load_balancers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
@@ -1044,6 +1605,13 @@ pub mod create_task_set_input {
             self.load_balancers = input;
             self
         }
+        /// Appends an item to `service_registries`.
+        ///
+        /// To override the contents of this collection use [`set_service_registries`](Self::set_service_registries).
+        ///
+        /// <p>The details of the service discovery registries to assign to this task set. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+        /// Discovery</a>.</p>
         pub fn service_registries(
             mut self,
             input: impl Into<crate::model::ServiceRegistry>,
@@ -1053,6 +1621,9 @@ pub mod create_task_set_input {
             self.service_registries = Some(v);
             self
         }
+        /// <p>The details of the service discovery registries to assign to this task set. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+        /// Discovery</a>.</p>
         pub fn set_service_registries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceRegistry>>,
@@ -1068,6 +1639,10 @@ pub mod create_task_set_input {
             self.launch_type = Some(input);
             self
         }
+        /// <p>The launch type that new tasks in the task set will use. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
+        /// parameter must be omitted.</p>
         pub fn set_launch_type(
             mut self,
             input: std::option::Option<crate::model::LaunchType>,
@@ -1075,6 +1650,29 @@ pub mod create_task_set_input {
             self.launch_type = input;
             self
         }
+        /// Appends an item to `capacity_provider_strategy`.
+        ///
+        /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
+        ///
+        /// <p>The capacity provider strategy to use for the task set.</p>
+        /// <p>A capacity provider strategy consists of one or more capacity providers along with the
+        /// <code>base</code> and <code>weight</code> to assign to them. A capacity provider
+        /// must be associated with the cluster to be used in a capacity provider strategy. The
+        /// <a>PutClusterCapacityProviders</a> API is used to associate a capacity
+        /// provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
+        /// <code>UPDATING</code> status can be used.</p>
+        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+        /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+        /// <code>launchType</code> is specified, the
+        /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
+        /// provider must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
+        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
+        /// available to all accounts and only need to be associated with a cluster to be
+        /// used.</p>
+        /// <p>The <a>PutClusterCapacityProviders</a> API operation is used to update the
+        /// list of available capacity providers for a cluster after the cluster is created.</p>
         pub fn capacity_provider_strategy(
             mut self,
             input: impl Into<crate::model::CapacityProviderStrategyItem>,
@@ -1084,6 +1682,25 @@ pub mod create_task_set_input {
             self.capacity_provider_strategy = Some(v);
             self
         }
+        /// <p>The capacity provider strategy to use for the task set.</p>
+        /// <p>A capacity provider strategy consists of one or more capacity providers along with the
+        /// <code>base</code> and <code>weight</code> to assign to them. A capacity provider
+        /// must be associated with the cluster to be used in a capacity provider strategy. The
+        /// <a>PutClusterCapacityProviders</a> API is used to associate a capacity
+        /// provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
+        /// <code>UPDATING</code> status can be used.</p>
+        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+        /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+        /// <code>launchType</code> is specified, the
+        /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
+        /// provider must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
+        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
+        /// available to all accounts and only need to be associated with a cluster to be
+        /// used.</p>
+        /// <p>The <a>PutClusterCapacityProviders</a> API operation is used to update the
+        /// list of available capacity providers for a cluster after the cluster is created.</p>
         pub fn set_capacity_provider_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
@@ -1098,6 +1715,9 @@ pub mod create_task_set_input {
             self.platform_version = Some(input.into());
             self
         }
+        /// <p>The platform version that the tasks in the task set should use. A platform version is
+        /// specified only for tasks using the Fargate launch type. If one isn't
+        /// specified, the <code>LATEST</code> platform version is used by default.</p>
         pub fn set_platform_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1111,6 +1731,8 @@ pub mod create_task_set_input {
             self.scale = Some(input);
             self
         }
+        /// <p>A floating-point percentage of the desired number of tasks to place and keep running
+        /// in the task set.</p>
         pub fn set_scale(mut self, input: std::option::Option<crate::model::Scale>) -> Self {
             self.scale = input;
             self
@@ -1121,16 +1743,90 @@ pub mod create_task_set_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. Up to 32 ASCII characters are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The metadata that you apply to the task set to help you categorize and organize them.
+        /// Each tag consists of a key and an optional value, both of which you define. When a
+        /// service is deleted, the tags are deleted as well.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The metadata that you apply to the task set to help you categorize and organize them.
+        /// Each tag consists of a key and an optional value, both of which you define. When a
+        /// service is deleted, the tags are deleted as well.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1141,8 +1837,10 @@ pub mod create_task_set_input {
         /// Consumes the builder and constructs a [`CreateTaskSetInput`](crate::input::CreateTaskSetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateTaskSetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateTaskSetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateTaskSetInput {
                 service: self.service,
                 cluster: self.cluster,
@@ -1172,16 +1870,16 @@ impl CreateTaskSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateTaskSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateTaskSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1189,7 +1887,7 @@ impl CreateTaskSetInput {
         fn update_http_builder(
             input: &crate::input::CreateTaskSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1198,29 +1896,31 @@ impl CreateTaskSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateTaskSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.CreateTaskSet",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_task_set(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1243,25 +1943,27 @@ impl CreateTaskSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateTaskSet::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateTaskSet",
-                    "ecs",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateTaskSet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateTaskSet",
+            "ecs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1296,6 +1998,13 @@ pub mod delete_account_setting_input {
             self.name = Some(input);
             self
         }
+        /// <p>The resource name for which to disable the account setting. If
+        /// <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is
+        /// affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for
+        /// your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is
+        /// specified, the ARN and resource ID for your Amazon ECS container instances is affected. If
+        /// <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container
+        /// instances is affected.</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::SettingName>) -> Self {
             self.name = input;
             self
@@ -1309,6 +2018,11 @@ pub mod delete_account_setting_input {
             self.principal_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you
+        /// specify the root user, it disables the account setting for all IAM users, IAM roles, and
+        /// the root user of the account unless an IAM user or role explicitly overrides these
+        /// settings. If this field is omitted, the setting is changed only for the authenticated
+        /// user.</p>
         pub fn set_principal_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1321,7 +2035,7 @@ pub mod delete_account_setting_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteAccountSettingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteAccountSettingInput {
                 name: self.name,
@@ -1341,16 +2055,16 @@ impl DeleteAccountSettingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccountSetting,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteAccountSettingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1358,7 +2072,7 @@ impl DeleteAccountSettingInput {
         fn update_http_builder(
             input: &crate::input::DeleteAccountSettingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1367,32 +2081,32 @@ impl DeleteAccountSettingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteAccountSettingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.DeleteAccountSetting",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_account_setting(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1415,15 +2129,15 @@ impl DeleteAccountSettingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteAccountSetting::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteAccountSetting",
             "ecs",
         ));
@@ -1432,10 +2146,10 @@ impl DeleteAccountSettingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1465,16 +2179,30 @@ pub mod delete_attributes_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to delete
+        /// attributes. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
         }
+        /// Appends an item to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>The attributes to delete from your resource. You can specify up to 10 attributes per
+        /// request. For custom attributes, specify the attribute name and target ID, but do not
+        /// specify the value. If you specify the target ID using the short form, you must also
+        /// specify the target type.</p>
         pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
             v.push(input.into());
             self.attributes = Some(v);
             self
         }
+        /// <p>The attributes to delete from your resource. You can specify up to 10 attributes per
+        /// request. For custom attributes, specify the attribute name and target ID, but do not
+        /// specify the value. If you specify the target ID using the short form, you must also
+        /// specify the target type.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -1487,7 +2215,7 @@ pub mod delete_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteAttributesInput {
                 cluster: self.cluster,
@@ -1507,16 +2235,16 @@ impl DeleteAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1524,7 +2252,7 @@ impl DeleteAttributesInput {
         fn update_http_builder(
             input: &crate::input::DeleteAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1533,32 +2261,32 @@ impl DeleteAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.DeleteAttributes",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_attributes(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1581,15 +2309,15 @@ impl DeleteAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteAttributes",
             "ecs",
         ));
@@ -1598,10 +2326,10 @@ impl DeleteAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1629,6 +2357,7 @@ pub mod delete_capacity_provider_input {
             self.capacity_provider = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the capacity provider to delete.</p>
         pub fn set_capacity_provider(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1641,7 +2370,7 @@ pub mod delete_capacity_provider_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteCapacityProviderInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteCapacityProviderInput {
                 capacity_provider: self.capacity_provider,
@@ -1660,16 +2389,16 @@ impl DeleteCapacityProviderInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteCapacityProvider,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteCapacityProviderInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1677,7 +2406,7 @@ impl DeleteCapacityProviderInput {
         fn update_http_builder(
             input: &crate::input::DeleteCapacityProviderInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1686,32 +2415,34 @@ impl DeleteCapacityProviderInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteCapacityProviderInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.DeleteCapacityProvider",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_capacity_provider(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1734,15 +2465,15 @@ impl DeleteCapacityProviderInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteCapacityProvider::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteCapacityProvider",
             "ecs",
         ));
@@ -1751,10 +2482,10 @@ impl DeleteCapacityProviderInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1782,6 +2513,7 @@ pub mod delete_cluster_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to delete.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -1789,8 +2521,10 @@ pub mod delete_cluster_input {
         /// Consumes the builder and constructs a [`DeleteClusterInput`](crate::input::DeleteClusterInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteClusterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteClusterInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteClusterInput {
                 cluster: self.cluster,
             })
@@ -1808,16 +2542,16 @@ impl DeleteClusterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteCluster,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteClusterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1825,7 +2559,7 @@ impl DeleteClusterInput {
         fn update_http_builder(
             input: &crate::input::DeleteClusterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1834,29 +2568,31 @@ impl DeleteClusterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteClusterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.DeleteCluster",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_cluster(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1879,25 +2615,27 @@ impl DeleteClusterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteCluster::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteCluster",
-                    "ecs",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteCluster::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteCluster",
+            "ecs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1928,6 +2666,8 @@ pub mod delete_service_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to delete.
+        /// If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -1937,6 +2677,7 @@ pub mod delete_service_input {
             self.service = Some(input.into());
             self
         }
+        /// <p>The name of the service to delete.</p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service = input;
             self
@@ -1948,6 +2689,9 @@ pub mod delete_service_input {
             self.force = Some(input);
             self
         }
+        /// <p>If <code>true</code>, allows you to delete a service even if it has not been scaled
+        /// down to zero tasks. It is only necessary to use this if the service is using the
+        /// <code>REPLICA</code> scheduling strategy.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
@@ -1955,8 +2699,10 @@ pub mod delete_service_input {
         /// Consumes the builder and constructs a [`DeleteServiceInput`](crate::input::DeleteServiceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteServiceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteServiceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteServiceInput {
                 cluster: self.cluster,
                 service: self.service,
@@ -1976,16 +2722,16 @@ impl DeleteServiceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteService,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteServiceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1993,7 +2739,7 @@ impl DeleteServiceInput {
         fn update_http_builder(
             input: &crate::input::DeleteServiceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2002,29 +2748,31 @@ impl DeleteServiceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteServiceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.DeleteService",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_service(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2047,25 +2795,27 @@ impl DeleteServiceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteService::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteService",
-                    "ecs",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteService::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteService",
+            "ecs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2097,6 +2847,8 @@ pub mod delete_task_set_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
+        /// set exists in to delete.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -2107,6 +2859,8 @@ pub mod delete_task_set_input {
             self.service = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the service that hosts the task set to
+        /// delete.</p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service = input;
             self
@@ -2116,6 +2870,7 @@ pub mod delete_task_set_input {
             self.task_set = Some(input.into());
             self
         }
+        /// <p>The task set ID or full Amazon Resource Name (ARN) of the task set to delete.</p>
         pub fn set_task_set(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_set = input;
             self
@@ -2126,6 +2881,8 @@ pub mod delete_task_set_input {
             self.force = Some(input);
             self
         }
+        /// <p>If <code>true</code>, this allows you to delete a task set even if it hasn't been
+        /// scaled down to zero.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
@@ -2133,8 +2890,10 @@ pub mod delete_task_set_input {
         /// Consumes the builder and constructs a [`DeleteTaskSetInput`](crate::input::DeleteTaskSetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteTaskSetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteTaskSetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteTaskSetInput {
                 cluster: self.cluster,
                 service: self.service,
@@ -2155,16 +2914,16 @@ impl DeleteTaskSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteTaskSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteTaskSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2172,7 +2931,7 @@ impl DeleteTaskSetInput {
         fn update_http_builder(
             input: &crate::input::DeleteTaskSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2181,29 +2940,31 @@ impl DeleteTaskSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteTaskSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.DeleteTaskSet",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_task_set(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2226,25 +2987,27 @@ impl DeleteTaskSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteTaskSet::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteTaskSet",
-                    "ecs",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteTaskSet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteTaskSet",
+            "ecs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2275,6 +3038,8 @@ pub mod deregister_container_instance_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to
+        /// deregister. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -2285,6 +3050,8 @@ pub mod deregister_container_instance_input {
             self.container_instance = Some(input.into());
             self
         }
+        /// <p>The container instance ID or full ARN of the container instance to deregister.
+        /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
         pub fn set_container_instance(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2306,6 +3073,16 @@ pub mod deregister_container_instance_input {
             self.force = Some(input);
             self
         }
+        /// <p>Forces the deregistration of the container instance. If you have tasks running on the
+        /// container instance when you deregister it with the <code>force</code> option, these
+        /// tasks remain running until you terminate the instance or the tasks stop through some
+        /// other means, but they are orphaned (no longer monitored or accounted for by Amazon ECS). If
+        /// an orphaned task on your container instance is part of an Amazon ECS service, then the
+        /// service scheduler starts another copy of that task, on a different container instance if
+        /// possible. </p>
+        /// <p>Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an Application Load Balancer
+        /// target group are deregistered. They begin connection draining according to the settings
+        /// on the load balancer or target group.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
@@ -2315,7 +3092,7 @@ pub mod deregister_container_instance_input {
             self,
         ) -> std::result::Result<
             crate::input::DeregisterContainerInstanceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeregisterContainerInstanceInput {
                 cluster: self.cluster,
@@ -2337,16 +3114,16 @@ impl DeregisterContainerInstanceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeregisterContainerInstance,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeregisterContainerInstanceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2354,7 +3131,7 @@ impl DeregisterContainerInstanceInput {
         fn update_http_builder(
             input: &crate::input::DeregisterContainerInstanceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2363,30 +3140,30 @@ impl DeregisterContainerInstanceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeregisterContainerInstanceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.DeregisterContainerInstance",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_deregister_container_instance(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_deregister_container_instance(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2409,15 +3186,15 @@ impl DeregisterContainerInstanceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeregisterContainerInstance::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeregisterContainerInstance",
             "ecs",
         ));
@@ -2426,10 +3203,10 @@ impl DeregisterContainerInstanceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2459,6 +3236,9 @@ pub mod deregister_task_definition_input {
             self.task_definition = Some(input.into());
             self
         }
+        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
+        /// full Amazon Resource Name (ARN) of the task definition to deregister. You must specify a
+        /// <code>revision</code>.</p>
         pub fn set_task_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2471,7 +3251,7 @@ pub mod deregister_task_definition_input {
             self,
         ) -> std::result::Result<
             crate::input::DeregisterTaskDefinitionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeregisterTaskDefinitionInput {
                 task_definition: self.task_definition,
@@ -2491,16 +3271,16 @@ impl DeregisterTaskDefinitionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeregisterTaskDefinition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeregisterTaskDefinitionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2508,7 +3288,7 @@ impl DeregisterTaskDefinitionInput {
         fn update_http_builder(
             input: &crate::input::DeregisterTaskDefinitionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2517,32 +3297,34 @@ impl DeregisterTaskDefinitionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeregisterTaskDefinitionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.DeregisterTaskDefinition",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deregister_task_definition(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2565,15 +3347,15 @@ impl DeregisterTaskDefinitionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeregisterTaskDefinition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeregisterTaskDefinition",
             "ecs",
         ));
@@ -2582,10 +3364,10 @@ impl DeregisterTaskDefinitionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2611,12 +3393,20 @@ pub mod describe_capacity_providers_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `capacity_providers`.
+        ///
+        /// To override the contents of this collection use [`set_capacity_providers`](Self::set_capacity_providers).
+        ///
+        /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to
+        /// <code>100</code> capacity providers can be described in an action.</p>
         pub fn capacity_providers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.capacity_providers.unwrap_or_default();
             v.push(input.into());
             self.capacity_providers = Some(v);
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to
+        /// <code>100</code> capacity providers can be described in an action.</p>
         pub fn set_capacity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2624,12 +3414,22 @@ pub mod describe_capacity_providers_input {
             self.capacity_providers = input;
             self
         }
+        /// Appends an item to `include`.
+        ///
+        /// To override the contents of this collection use [`set_include`](Self::set_include).
+        ///
+        /// <p>Specifies whether or not you want to see the resource tags for the capacity provider.
+        /// If <code>TAGS</code> is specified, the tags are included in the response. If this field
+        /// is omitted, tags are not included in the response.</p>
         pub fn include(mut self, input: impl Into<crate::model::CapacityProviderField>) -> Self {
             let mut v = self.include.unwrap_or_default();
             v.push(input.into());
             self.include = Some(v);
             self
         }
+        /// <p>Specifies whether or not you want to see the resource tags for the capacity provider.
+        /// If <code>TAGS</code> is specified, the tags are included in the response. If this field
+        /// is omitted, tags are not included in the response.</p>
         pub fn set_include(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderField>>,
@@ -2652,6 +3452,17 @@ pub mod describe_capacity_providers_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of account setting results returned by
+        /// <code>DescribeCapacityProviders</code> in paginated output. When this parameter is
+        /// used, <code>DescribeCapacityProviders</code> only returns <code>maxResults</code>
+        /// results in a single page along with a <code>nextToken</code> response element. The
+        /// remaining results of the initial request can be seen by sending another
+        /// <code>DescribeCapacityProviders</code> request with the returned
+        /// <code>nextToken</code> value. This value can be between
+        /// 1 and 10. If this
+        /// parameter is not used, then <code>DescribeCapacityProviders</code> returns up to
+        /// 10 results and a <code>nextToken</code> value
+        /// if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2668,6 +3479,14 @@ pub mod describe_capacity_providers_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated
+        /// <code>DescribeCapacityProviders</code> request where <code>maxResults</code> was
+        /// used and the results exceeded the value of that parameter. Pagination continues from the
+        /// end of the previous results that returned the <code>nextToken</code> value.</p>
+        /// <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to
+        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2677,7 +3496,7 @@ pub mod describe_capacity_providers_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeCapacityProvidersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeCapacityProvidersInput {
                 capacity_providers: self.capacity_providers,
@@ -2700,16 +3519,16 @@ impl DescribeCapacityProvidersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCapacityProviders,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeCapacityProvidersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2717,7 +3536,7 @@ impl DescribeCapacityProvidersInput {
         fn update_http_builder(
             input: &crate::input::DescribeCapacityProvidersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2726,32 +3545,34 @@ impl DescribeCapacityProvidersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeCapacityProvidersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.DescribeCapacityProviders",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_capacity_providers(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2774,15 +3595,15 @@ impl DescribeCapacityProvidersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCapacityProviders::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCapacityProviders",
             "ecs",
         ));
@@ -2791,10 +3612,10 @@ impl DescribeCapacityProvidersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2818,12 +3639,20 @@ pub mod describe_clusters_input {
         pub(crate) include: std::option::Option<std::vec::Vec<crate::model::ClusterField>>,
     }
     impl Builder {
+        /// Appends an item to `clusters`.
+        ///
+        /// To override the contents of this collection use [`set_clusters`](Self::set_clusters).
+        ///
+        /// <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN) entries.
+        /// If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn clusters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.clusters.unwrap_or_default();
             v.push(input.into());
             self.clusters = Some(v);
             self
         }
+        /// <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN) entries.
+        /// If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_clusters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2831,12 +3660,40 @@ pub mod describe_clusters_input {
             self.clusters = input;
             self
         }
+        /// Appends an item to `include`.
+        ///
+        /// To override the contents of this collection use [`set_include`](Self::set_include).
+        ///
+        /// <p>Whether to include additional information about the clusters in the response. If this
+        /// field is omitted, this information isn't included.</p>
+        /// <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container instances
+        /// or tasks within the cluster are included.</p>
+        /// <p>If <code>SETTINGS</code> is specified, the settings for the cluster are
+        /// included.</p>
+        /// <p>If <code>CONFIGURATIONS</code> is specified, the configuration for the cluster is
+        /// included.</p>
+        /// <p>If <code>STATISTICS</code> is specified, the task and service count is included,
+        /// separated by launch type.</p>
+        /// <p>If <code>TAGS</code> is specified, the metadata tags associated with the cluster are
+        /// included.</p>
         pub fn include(mut self, input: impl Into<crate::model::ClusterField>) -> Self {
             let mut v = self.include.unwrap_or_default();
             v.push(input.into());
             self.include = Some(v);
             self
         }
+        /// <p>Whether to include additional information about the clusters in the response. If this
+        /// field is omitted, this information isn't included.</p>
+        /// <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container instances
+        /// or tasks within the cluster are included.</p>
+        /// <p>If <code>SETTINGS</code> is specified, the settings for the cluster are
+        /// included.</p>
+        /// <p>If <code>CONFIGURATIONS</code> is specified, the configuration for the cluster is
+        /// included.</p>
+        /// <p>If <code>STATISTICS</code> is specified, the task and service count is included,
+        /// separated by launch type.</p>
+        /// <p>If <code>TAGS</code> is specified, the metadata tags associated with the cluster are
+        /// included.</p>
         pub fn set_include(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ClusterField>>,
@@ -2849,7 +3706,7 @@ pub mod describe_clusters_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeClustersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeClustersInput {
                 clusters: self.clusters,
@@ -2869,16 +3726,16 @@ impl DescribeClustersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeClusters,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeClustersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2886,7 +3743,7 @@ impl DescribeClustersInput {
         fn update_http_builder(
             input: &crate::input::DescribeClustersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2895,32 +3752,32 @@ impl DescribeClustersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeClustersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.DescribeClusters",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_clusters(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2943,15 +3800,15 @@ impl DescribeClustersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeClusters::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeClusters",
             "ecs",
         ));
@@ -2960,10 +3817,10 @@ impl DescribeClustersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2997,16 +3854,26 @@ pub mod describe_container_instances_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to
+        /// describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the container instance
+        /// or container instances you are describing were launched in any cluster other than the
+        /// default cluster.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
         }
+        /// Appends an item to `container_instances`.
+        ///
+        /// To override the contents of this collection use [`set_container_instances`](Self::set_container_instances).
+        ///
+        /// <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN) entries.</p>
         pub fn container_instances(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.container_instances.unwrap_or_default();
             v.push(input.into());
             self.container_instances = Some(v);
             self
         }
+        /// <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN) entries.</p>
         pub fn set_container_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3014,12 +3881,22 @@ pub mod describe_container_instances_input {
             self.container_instances = input;
             self
         }
+        /// Appends an item to `include`.
+        ///
+        /// To override the contents of this collection use [`set_include`](Self::set_include).
+        ///
+        /// <p>Specifies whether you want to see the resource tags for the container instance. If
+        /// <code>TAGS</code> is specified, the tags are included in the response. If this field
+        /// is omitted, tags are not included in the response.</p>
         pub fn include(mut self, input: impl Into<crate::model::ContainerInstanceField>) -> Self {
             let mut v = self.include.unwrap_or_default();
             v.push(input.into());
             self.include = Some(v);
             self
         }
+        /// <p>Specifies whether you want to see the resource tags for the container instance. If
+        /// <code>TAGS</code> is specified, the tags are included in the response. If this field
+        /// is omitted, tags are not included in the response.</p>
         pub fn set_include(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContainerInstanceField>>,
@@ -3032,7 +3909,7 @@ pub mod describe_container_instances_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeContainerInstancesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeContainerInstancesInput {
                 cluster: self.cluster,
@@ -3054,16 +3931,16 @@ impl DescribeContainerInstancesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeContainerInstances,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeContainerInstancesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3071,7 +3948,7 @@ impl DescribeContainerInstancesInput {
         fn update_http_builder(
             input: &crate::input::DescribeContainerInstancesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3080,32 +3957,34 @@ impl DescribeContainerInstancesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeContainerInstancesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.DescribeContainerInstances",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_container_instances(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3128,15 +4007,15 @@ impl DescribeContainerInstancesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeContainerInstances::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeContainerInstances",
             "ecs",
         ));
@@ -3145,10 +4024,10 @@ impl DescribeContainerInstancesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3180,16 +4059,27 @@ pub mod describe_services_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN)the cluster that hosts the service to describe.
+        /// If you do not specify a cluster, the default cluster is assumed. This parameter is required if the service or services you are
+        /// describing were launched in any cluster other than the default cluster.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
         }
+        /// Appends an item to `services`.
+        ///
+        /// To override the contents of this collection use [`set_services`](Self::set_services).
+        ///
+        /// <p>A list of services to describe. You may specify up to 10 services to describe in a
+        /// single operation.</p>
         pub fn services(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.services.unwrap_or_default();
             v.push(input.into());
             self.services = Some(v);
             self
         }
+        /// <p>A list of services to describe. You may specify up to 10 services to describe in a
+        /// single operation.</p>
         pub fn set_services(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3197,12 +4087,22 @@ pub mod describe_services_input {
             self.services = input;
             self
         }
+        /// Appends an item to `include`.
+        ///
+        /// To override the contents of this collection use [`set_include`](Self::set_include).
+        ///
+        /// <p>Specifies whether you want to see the resource tags for the service. If
+        /// <code>TAGS</code> is specified, the tags are included in the response. If this field
+        /// is omitted, tags are not included in the response.</p>
         pub fn include(mut self, input: impl Into<crate::model::ServiceField>) -> Self {
             let mut v = self.include.unwrap_or_default();
             v.push(input.into());
             self.include = Some(v);
             self
         }
+        /// <p>Specifies whether you want to see the resource tags for the service. If
+        /// <code>TAGS</code> is specified, the tags are included in the response. If this field
+        /// is omitted, tags are not included in the response.</p>
         pub fn set_include(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceField>>,
@@ -3215,7 +4115,7 @@ pub mod describe_services_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeServicesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeServicesInput {
                 cluster: self.cluster,
@@ -3236,16 +4136,16 @@ impl DescribeServicesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeServices,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeServicesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3253,7 +4153,7 @@ impl DescribeServicesInput {
         fn update_http_builder(
             input: &crate::input::DescribeServicesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3262,32 +4162,32 @@ impl DescribeServicesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeServicesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.DescribeServices",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_services(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3310,15 +4210,15 @@ impl DescribeServicesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeServices::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeServices",
             "ecs",
         ));
@@ -3327,10 +4227,10 @@ impl DescribeServicesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3362,6 +4262,10 @@ pub mod describe_task_definition_input {
             self.task_definition = Some(input.into());
             self
         }
+        /// <p>The <code>family</code> for the latest <code>ACTIVE</code> revision,
+        /// <code>family</code> and <code>revision</code> (<code>family:revision</code>) for a
+        /// specific revision in the family, or full Amazon Resource Name (ARN) of the task definition to
+        /// describe.</p>
         pub fn set_task_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3369,12 +4273,22 @@ pub mod describe_task_definition_input {
             self.task_definition = input;
             self
         }
+        /// Appends an item to `include`.
+        ///
+        /// To override the contents of this collection use [`set_include`](Self::set_include).
+        ///
+        /// <p>Specifies whether to see the resource tags for the task definition. If
+        /// <code>TAGS</code> is specified, the tags are included in the response. If this field
+        /// is omitted, tags are not included in the response.</p>
         pub fn include(mut self, input: impl Into<crate::model::TaskDefinitionField>) -> Self {
             let mut v = self.include.unwrap_or_default();
             v.push(input.into());
             self.include = Some(v);
             self
         }
+        /// <p>Specifies whether to see the resource tags for the task definition. If
+        /// <code>TAGS</code> is specified, the tags are included in the response. If this field
+        /// is omitted, tags are not included in the response.</p>
         pub fn set_include(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TaskDefinitionField>>,
@@ -3387,7 +4301,7 @@ pub mod describe_task_definition_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeTaskDefinitionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeTaskDefinitionInput {
                 task_definition: self.task_definition,
@@ -3407,16 +4321,16 @@ impl DescribeTaskDefinitionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeTaskDefinition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeTaskDefinitionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3424,7 +4338,7 @@ impl DescribeTaskDefinitionInput {
         fn update_http_builder(
             input: &crate::input::DescribeTaskDefinitionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3433,32 +4347,34 @@ impl DescribeTaskDefinitionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeTaskDefinitionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.DescribeTaskDefinition",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_task_definition(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3481,15 +4397,15 @@ impl DescribeTaskDefinitionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeTaskDefinition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeTaskDefinition",
             "ecs",
         ));
@@ -3498,10 +4414,10 @@ impl DescribeTaskDefinitionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3533,16 +4449,25 @@ pub mod describe_tasks_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to
+        /// describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the task or tasks you
+        /// are describing were launched in any cluster other than the default cluster.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
         }
+        /// Appends an item to `tasks`.
+        ///
+        /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
+        ///
+        /// <p>A list of up to 100 task IDs or full ARN entries.</p>
         pub fn tasks(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tasks.unwrap_or_default();
             v.push(input.into());
             self.tasks = Some(v);
             self
         }
+        /// <p>A list of up to 100 task IDs or full ARN entries.</p>
         pub fn set_tasks(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3550,12 +4475,22 @@ pub mod describe_tasks_input {
             self.tasks = input;
             self
         }
+        /// Appends an item to `include`.
+        ///
+        /// To override the contents of this collection use [`set_include`](Self::set_include).
+        ///
+        /// <p>Specifies whether you want to see the resource tags for the task. If <code>TAGS</code>
+        /// is specified, the tags are included in the response. If this field is omitted, tags are
+        /// not included in the response.</p>
         pub fn include(mut self, input: impl Into<crate::model::TaskField>) -> Self {
             let mut v = self.include.unwrap_or_default();
             v.push(input.into());
             self.include = Some(v);
             self
         }
+        /// <p>Specifies whether you want to see the resource tags for the task. If <code>TAGS</code>
+        /// is specified, the tags are included in the response. If this field is omitted, tags are
+        /// not included in the response.</p>
         pub fn set_include(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TaskField>>,
@@ -3566,8 +4501,10 @@ pub mod describe_tasks_input {
         /// Consumes the builder and constructs a [`DescribeTasksInput`](crate::input::DescribeTasksInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeTasksInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeTasksInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeTasksInput {
                 cluster: self.cluster,
                 tasks: self.tasks,
@@ -3587,16 +4524,16 @@ impl DescribeTasksInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeTasks,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeTasksInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3604,7 +4541,7 @@ impl DescribeTasksInput {
         fn update_http_builder(
             input: &crate::input::DescribeTasksInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3613,29 +4550,31 @@ impl DescribeTasksInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeTasksInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.DescribeTasks",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_tasks(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3658,25 +4597,27 @@ impl DescribeTasksInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeTasks::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeTasks",
-                    "ecs",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeTasks::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeTasks",
+            "ecs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3708,6 +4649,8 @@ pub mod describe_task_sets_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
+        /// sets exist in.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -3717,16 +4660,25 @@ pub mod describe_task_sets_input {
             self.service = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task sets exist in.</p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service = input;
             self
         }
+        /// Appends an item to `task_sets`.
+        ///
+        /// To override the contents of this collection use [`set_task_sets`](Self::set_task_sets).
+        ///
+        /// <p>The ID or full Amazon Resource Name (ARN) of task sets to
+        /// describe.</p>
         pub fn task_sets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.task_sets.unwrap_or_default();
             v.push(input.into());
             self.task_sets = Some(v);
             self
         }
+        /// <p>The ID or full Amazon Resource Name (ARN) of task sets to
+        /// describe.</p>
         pub fn set_task_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3734,12 +4686,22 @@ pub mod describe_task_sets_input {
             self.task_sets = input;
             self
         }
+        /// Appends an item to `include`.
+        ///
+        /// To override the contents of this collection use [`set_include`](Self::set_include).
+        ///
+        /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is
+        /// specified, the tags are included in the response. If this field is omitted, tags are not
+        /// included in the response.</p>
         pub fn include(mut self, input: impl Into<crate::model::TaskSetField>) -> Self {
             let mut v = self.include.unwrap_or_default();
             v.push(input.into());
             self.include = Some(v);
             self
         }
+        /// <p>Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is
+        /// specified, the tags are included in the response. If this field is omitted, tags are not
+        /// included in the response.</p>
         pub fn set_include(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TaskSetField>>,
@@ -3752,7 +4714,7 @@ pub mod describe_task_sets_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeTaskSetsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeTaskSetsInput {
                 cluster: self.cluster,
@@ -3774,16 +4736,16 @@ impl DescribeTaskSetsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeTaskSets,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeTaskSetsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3791,7 +4753,7 @@ impl DescribeTaskSetsInput {
         fn update_http_builder(
             input: &crate::input::DescribeTaskSetsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3800,32 +4762,32 @@ impl DescribeTaskSetsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeTaskSetsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.DescribeTaskSets",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_task_sets(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3848,15 +4810,15 @@ impl DescribeTaskSetsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeTaskSets::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeTaskSets",
             "ecs",
         ));
@@ -3865,10 +4827,10 @@ impl DescribeTaskSetsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3898,6 +4860,8 @@ pub mod discover_poll_endpoint_input {
             self.container_instance = Some(input.into());
             self
         }
+        /// <p>The container instance ID or full ARN of the container instance.
+        /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
         pub fn set_container_instance(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3911,6 +4875,8 @@ pub mod discover_poll_endpoint_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to which the container instance
+        /// belongs.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -3920,7 +4886,7 @@ pub mod discover_poll_endpoint_input {
             self,
         ) -> std::result::Result<
             crate::input::DiscoverPollEndpointInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DiscoverPollEndpointInput {
                 container_instance: self.container_instance,
@@ -3940,16 +4906,16 @@ impl DiscoverPollEndpointInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DiscoverPollEndpoint,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DiscoverPollEndpointInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3957,7 +4923,7 @@ impl DiscoverPollEndpointInput {
         fn update_http_builder(
             input: &crate::input::DiscoverPollEndpointInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3966,32 +4932,32 @@ impl DiscoverPollEndpointInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DiscoverPollEndpointInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.DiscoverPollEndpoint",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_discover_poll_endpoint(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4014,15 +4980,15 @@ impl DiscoverPollEndpointInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DiscoverPollEndpoint::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DiscoverPollEndpoint",
             "ecs",
         ));
@@ -4031,10 +4997,10 @@ impl DiscoverPollEndpointInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4067,6 +5033,8 @@ pub mod execute_command_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) or short name of the cluster the task is running in.
+        /// If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -4077,6 +5045,8 @@ pub mod execute_command_input {
             self.container = Some(input.into());
             self
         }
+        /// <p>The name of the container to execute the command on. A container name only needs to be
+        /// specified for tasks containing multiple containers.</p>
         pub fn set_container(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.container = input;
             self
@@ -4086,6 +5056,7 @@ pub mod execute_command_input {
             self.command = Some(input.into());
             self
         }
+        /// <p>The command to run on the container.</p>
         pub fn set_command(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.command = input;
             self
@@ -4095,6 +5066,7 @@ pub mod execute_command_input {
             self.interactive = Some(input);
             self
         }
+        /// <p>Use this flag to run your command in interactive mode.</p>
         pub fn set_interactive(mut self, input: std::option::Option<bool>) -> Self {
             self.interactive = input;
             self
@@ -4104,6 +5076,7 @@ pub mod execute_command_input {
             self.task = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) or ID of the task the container is part of.</p>
         pub fn set_task(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task = input;
             self
@@ -4113,7 +5086,7 @@ pub mod execute_command_input {
             self,
         ) -> std::result::Result<
             crate::input::ExecuteCommandInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ExecuteCommandInput {
                 cluster: self.cluster,
@@ -4136,16 +5109,16 @@ impl ExecuteCommandInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExecuteCommand,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExecuteCommandInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4153,7 +5126,7 @@ impl ExecuteCommandInput {
         fn update_http_builder(
             input: &crate::input::ExecuteCommandInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4162,29 +5135,31 @@ impl ExecuteCommandInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExecuteCommandInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.ExecuteCommand",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_execute_command(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4207,15 +5182,15 @@ impl ExecuteCommandInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ExecuteCommand::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ExecuteCommand",
             "ecs",
         ));
@@ -4224,10 +5199,10 @@ impl ExecuteCommandInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4260,6 +5235,7 @@ pub mod list_account_settings_input {
             self.name = Some(input);
             self
         }
+        /// <p>The name of the account setting you want to list the settings for.</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::SettingName>) -> Self {
             self.name = input;
             self
@@ -4270,6 +5246,8 @@ pub mod list_account_settings_input {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the account settings with which to filter results. You must also specify
+        /// an account setting name to use this parameter.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -4285,6 +5263,13 @@ pub mod list_account_settings_input {
             self.principal_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If
+        /// this field is omitted, the account settings are listed only for the authenticated
+        /// user.</p>
+        /// <note>
+        /// <p>Federated users assume the account setting of the root user and can't have
+        /// explicit account settings set for them.</p>
+        /// </note>
         pub fn set_principal_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4300,6 +5285,10 @@ pub mod list_account_settings_input {
             self.effective_settings = Some(input);
             self
         }
+        /// <p>Specifies whether to return the effective settings. If <code>true</code>, the account
+        /// settings for the root user or the default setting for the <code>principalArn</code> are
+        /// returned. If <code>false</code>, the account settings for the <code>principalArn</code>
+        /// are returned if they are set. Otherwise, no account settings are returned.</p>
         pub fn set_effective_settings(mut self, input: std::option::Option<bool>) -> Self {
             self.effective_settings = input;
             self
@@ -4316,6 +5305,14 @@ pub mod list_account_settings_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a <code>ListAccountSettings</code>
+        /// request indicating that more results are available to fulfill the request and further
+        /// calls will be needed. If <code>maxResults</code> was provided, it is possible the number
+        /// of results to be fewer than <code>maxResults</code>.</p>
+        /// <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to
+        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4334,6 +5331,16 @@ pub mod list_account_settings_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of account setting results returned by
+        /// <code>ListAccountSettings</code> in paginated output. When this parameter is used,
+        /// <code>ListAccountSettings</code> only returns <code>maxResults</code> results in a
+        /// single page along with a <code>nextToken</code> response element. The remaining results
+        /// of the initial request can be seen by sending another <code>ListAccountSettings</code>
+        /// request with the returned <code>nextToken</code> value. This value can be between
+        /// 1 and 10. If this
+        /// parameter is not used, then <code>ListAccountSettings</code> returns up to
+        /// 10 results and a <code>nextToken</code> value
+        /// if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4343,7 +5350,7 @@ pub mod list_account_settings_input {
             self,
         ) -> std::result::Result<
             crate::input::ListAccountSettingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListAccountSettingsInput {
                 name: self.name,
@@ -4367,16 +5374,16 @@ impl ListAccountSettingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListAccountSettings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListAccountSettingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4384,7 +5391,7 @@ impl ListAccountSettingsInput {
         fn update_http_builder(
             input: &crate::input::ListAccountSettingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4393,32 +5400,32 @@ impl ListAccountSettingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListAccountSettingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.ListAccountSettings",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_account_settings(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4441,15 +5448,15 @@ impl ListAccountSettingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListAccountSettings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListAccountSettings",
             "ecs",
         ));
@@ -4458,10 +5465,10 @@ impl ListAccountSettingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4495,6 +5502,8 @@ pub mod list_attributes_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to list attributes.
+        /// If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -4504,6 +5513,7 @@ pub mod list_attributes_input {
             self.target_type = Some(input);
             self
         }
+        /// <p>The type of the target with which to list attributes.</p>
         pub fn set_target_type(
             mut self,
             input: std::option::Option<crate::model::TargetType>,
@@ -4516,6 +5526,7 @@ pub mod list_attributes_input {
             self.attribute_name = Some(input.into());
             self
         }
+        /// <p>The name of the attribute with which to filter the results. </p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4529,6 +5540,8 @@ pub mod list_attributes_input {
             self.attribute_value = Some(input.into());
             self
         }
+        /// <p>The value of the attribute with which to filter results. You must also specify an
+        /// attribute name to use this parameter.</p>
         pub fn set_attribute_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4548,6 +5561,14 @@ pub mod list_attributes_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a <code>ListAttributes</code> request
+        /// indicating that more results are available to fulfill the request and further calls will
+        /// be needed. If <code>maxResults</code> was provided, it is possible the number of results
+        /// to be fewer than <code>maxResults</code>.</p>
+        /// <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to
+        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4564,6 +5585,14 @@ pub mod list_attributes_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of cluster results returned by <code>ListAttributes</code> in
+        /// paginated output. When this parameter is used, <code>ListAttributes</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListAttributes</code> request with the returned <code>nextToken</code>
+        /// value. This value can be between 1 and 100. If this
+        /// parameter is not used, then <code>ListAttributes</code> returns up to
+        /// 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4573,7 +5602,7 @@ pub mod list_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::ListAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListAttributesInput {
                 cluster: self.cluster,
@@ -4597,16 +5626,16 @@ impl ListAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4614,7 +5643,7 @@ impl ListAttributesInput {
         fn update_http_builder(
             input: &crate::input::ListAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4623,29 +5652,31 @@ impl ListAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.ListAttributes",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_attributes(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4668,15 +5699,15 @@ impl ListAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListAttributes",
             "ecs",
         ));
@@ -4685,10 +5716,10 @@ impl ListAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4724,6 +5755,14 @@ pub mod list_clusters_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a <code>ListClusters</code> request
+        /// indicating that more results are available to fulfill the request and further calls will
+        /// be needed. If <code>maxResults</code> was provided, it is possible the number of results
+        /// to be fewer than <code>maxResults</code>.</p>
+        /// <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to
+        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4740,6 +5779,14 @@ pub mod list_clusters_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of cluster results returned by <code>ListClusters</code> in
+        /// paginated output. When this parameter is used, <code>ListClusters</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListClusters</code> request with the returned <code>nextToken</code>
+        /// value. This value can be between 1 and 100. If this
+        /// parameter is not used, then <code>ListClusters</code> returns up to
+        /// 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4747,8 +5794,10 @@ pub mod list_clusters_input {
         /// Consumes the builder and constructs a [`ListClustersInput`](crate::input::ListClustersInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListClustersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListClustersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListClustersInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -4767,16 +5816,16 @@ impl ListClustersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListClusters,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListClustersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4784,7 +5833,7 @@ impl ListClustersInput {
         fn update_http_builder(
             input: &crate::input::ListClustersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4793,31 +5842,31 @@ impl ListClustersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListClustersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.ListClusters",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_clusters(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4840,22 +5889,27 @@ impl ListClustersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListClusters::new())
-                .with_metadata(smithy_http::operation::Metadata::new("ListClusters", "ecs"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListClusters::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListClusters",
+            "ecs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4888,6 +5942,8 @@ pub mod list_container_instances_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instances to
+        /// list. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -4899,6 +5955,9 @@ pub mod list_container_instances_input {
             self.filter = Some(input.into());
             self
         }
+        /// <p>You can filter the results of a <code>ListContainerInstances</code> operation with
+        /// cluster query language statements. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the
+        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter = input;
             self
@@ -4915,6 +5974,14 @@ pub mod list_container_instances_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a <code>ListContainerInstances</code>
+        /// request indicating that more results are available to fulfill the request and further
+        /// calls will be needed. If <code>maxResults</code> was provided, it is possible the number
+        /// of results to be fewer than <code>maxResults</code>.</p>
+        /// <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to
+        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4932,6 +5999,15 @@ pub mod list_container_instances_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of container instance results returned by
+        /// <code>ListContainerInstances</code> in paginated output. When this parameter is
+        /// used, <code>ListContainerInstances</code> only returns <code>maxResults</code> results
+        /// in a single page along with a <code>nextToken</code> response element. The remaining
+        /// results of the initial request can be seen by sending another
+        /// <code>ListContainerInstances</code> request with the returned <code>nextToken</code>
+        /// value. This value can be between 1 and 100. If this
+        /// parameter is not used, then <code>ListContainerInstances</code> returns up to
+        /// 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4945,6 +6021,11 @@ pub mod list_container_instances_input {
             self.status = Some(input);
             self
         }
+        /// <p>Filters the container instances by status. For example, if you specify the
+        /// <code>DRAINING</code> status, the results include only container instances that have
+        /// been set to <code>DRAINING</code> using <a>UpdateContainerInstancesState</a>.
+        /// If you do not specify this parameter, the default is to include container instances set
+        /// to all states other than <code>INACTIVE</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ContainerInstanceStatus>,
@@ -4957,7 +6038,7 @@ pub mod list_container_instances_input {
             self,
         ) -> std::result::Result<
             crate::input::ListContainerInstancesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListContainerInstancesInput {
                 cluster: self.cluster,
@@ -4980,16 +6061,16 @@ impl ListContainerInstancesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListContainerInstances,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListContainerInstancesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4997,7 +6078,7 @@ impl ListContainerInstancesInput {
         fn update_http_builder(
             input: &crate::input::ListContainerInstancesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5006,32 +6087,34 @@ impl ListContainerInstancesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListContainerInstancesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.ListContainerInstances",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_container_instances(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5054,15 +6137,15 @@ impl ListContainerInstancesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListContainerInstances::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListContainerInstances",
             "ecs",
         ));
@@ -5071,10 +6154,10 @@ impl ListContainerInstancesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5107,6 +6190,8 @@ pub mod list_services_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the
+        /// <code>ListServices</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -5123,6 +6208,14 @@ pub mod list_services_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a <code>ListServices</code> request
+        /// indicating that more results are available to fulfill the request and further calls will
+        /// be needed. If <code>maxResults</code> was provided, it is possible the number of results
+        /// to be fewer than <code>maxResults</code>.</p>
+        /// <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to
+        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5140,6 +6233,15 @@ pub mod list_services_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of service results returned by <code>ListServices</code> in
+        /// paginated output. When this parameter is used, <code>ListServices</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListServices</code> request with the returned <code>nextToken</code>
+        /// value. This value can be between 1 and 100. If
+        /// this parameter is not used, then <code>ListServices</code> returns up to
+        /// 10 results and a <code>nextToken</code> value if
+        /// applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5149,6 +6251,7 @@ pub mod list_services_input {
             self.launch_type = Some(input);
             self
         }
+        /// <p>The launch type to use when filtering the <code>ListServices</code> results.</p>
         pub fn set_launch_type(
             mut self,
             input: std::option::Option<crate::model::LaunchType>,
@@ -5162,6 +6265,8 @@ pub mod list_services_input {
             self.scheduling_strategy = Some(input);
             self
         }
+        /// <p>The scheduling strategy to use when filtering the <code>ListServices</code>
+        /// results.</p>
         pub fn set_scheduling_strategy(
             mut self,
             input: std::option::Option<crate::model::SchedulingStrategy>,
@@ -5172,8 +6277,10 @@ pub mod list_services_input {
         /// Consumes the builder and constructs a [`ListServicesInput`](crate::input::ListServicesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListServicesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListServicesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListServicesInput {
                 cluster: self.cluster,
                 next_token: self.next_token,
@@ -5195,16 +6302,16 @@ impl ListServicesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListServices,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListServicesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5212,7 +6319,7 @@ impl ListServicesInput {
         fn update_http_builder(
             input: &crate::input::ListServicesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5221,31 +6328,31 @@ impl ListServicesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListServicesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.ListServices",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_services(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5268,22 +6375,27 @@ impl ListServicesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListServices::new())
-                .with_metadata(smithy_http::operation::Metadata::new("ListServices", "ecs"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListServices::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListServices",
+            "ecs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5313,6 +6425,9 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
+        /// supported resources are Amazon ECS tasks, services, task definitions, clusters, and container
+        /// instances.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -5322,7 +6437,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -5341,16 +6456,16 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5358,7 +6473,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5367,32 +6482,32 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.ListTagsForResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5415,15 +6530,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "ecs",
         ));
@@ -5432,10 +6547,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5469,6 +6584,10 @@ pub mod list_task_definition_families_input {
             self.family_prefix = Some(input.into());
             self
         }
+        /// <p>The <code>familyPrefix</code> is a string that is used to filter the results of
+        /// <code>ListTaskDefinitionFamilies</code>. If you specify a <code>familyPrefix</code>,
+        /// only task definition family names that begin with the <code>familyPrefix</code> string
+        /// are returned.</p>
         pub fn set_family_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5489,6 +6608,15 @@ pub mod list_task_definition_families_input {
             self.status = Some(input);
             self
         }
+        /// <p>The task definition family status with which to filter the
+        /// <code>ListTaskDefinitionFamilies</code> results. By default, both
+        /// <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are listed.
+        /// If this parameter is set to <code>ACTIVE</code>, only task definition families that have
+        /// an <code>ACTIVE</code> task definition revision are returned. If this parameter is set
+        /// to <code>INACTIVE</code>, only task definition families that do not have any
+        /// <code>ACTIVE</code> task definition revisions are returned. If you paginate the
+        /// resulting output, be sure to keep the <code>status</code> value constant in each
+        /// subsequent request.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TaskDefinitionFamilyStatus>,
@@ -5509,6 +6637,15 @@ pub mod list_task_definition_families_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a
+        /// <code>ListTaskDefinitionFamilies</code> request indicating that more results are
+        /// available to fulfill the request and further calls will be needed. If
+        /// <code>maxResults</code> was provided, it is possible the number of results to be
+        /// fewer than <code>maxResults</code>.</p>
+        /// <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to
+        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5527,6 +6664,16 @@ pub mod list_task_definition_families_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of task definition family results returned by
+        /// <code>ListTaskDefinitionFamilies</code> in paginated output. When this parameter is
+        /// used, <code>ListTaskDefinitions</code> only returns <code>maxResults</code> results in a
+        /// single page along with a <code>nextToken</code> response element. The remaining results
+        /// of the initial request can be seen by sending another
+        /// <code>ListTaskDefinitionFamilies</code> request with the returned
+        /// <code>nextToken</code> value. This value can be between 1 and
+        /// 100. If this parameter is not used, then
+        /// <code>ListTaskDefinitionFamilies</code> returns up to 100 results
+        /// and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5536,7 +6683,7 @@ pub mod list_task_definition_families_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTaskDefinitionFamiliesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTaskDefinitionFamiliesInput {
                 family_prefix: self.family_prefix,
@@ -5559,16 +6706,16 @@ impl ListTaskDefinitionFamiliesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTaskDefinitionFamilies,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTaskDefinitionFamiliesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5576,7 +6723,7 @@ impl ListTaskDefinitionFamiliesInput {
         fn update_http_builder(
             input: &crate::input::ListTaskDefinitionFamiliesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5585,30 +6732,30 @@ impl ListTaskDefinitionFamiliesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTaskDefinitionFamiliesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.ListTaskDefinitionFamilies",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_task_definition_families(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_task_definition_families(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5631,15 +6778,15 @@ impl ListTaskDefinitionFamiliesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTaskDefinitionFamilies::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTaskDefinitionFamilies",
             "ecs",
         ));
@@ -5648,10 +6795,10 @@ impl ListTaskDefinitionFamiliesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5685,6 +6832,9 @@ pub mod list_task_definitions_input {
             self.family_prefix = Some(input.into());
             self
         }
+        /// <p>The full family name with which to filter the <code>ListTaskDefinitions</code>
+        /// results. Specifying a <code>familyPrefix</code> limits the listed task definitions to
+        /// task definition revisions that belong to that family.</p>
         pub fn set_family_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5702,6 +6852,12 @@ pub mod list_task_definitions_input {
             self.status = Some(input);
             self
         }
+        /// <p>The task definition status with which to filter the <code>ListTaskDefinitions</code>
+        /// results. By default, only <code>ACTIVE</code> task definitions are listed. By setting
+        /// this parameter to <code>INACTIVE</code>, you can view task definitions that are
+        /// <code>INACTIVE</code> as long as an active task or service still references them. If
+        /// you paginate the resulting output, be sure to keep the <code>status</code> value
+        /// constant in each subsequent request.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TaskDefinitionStatus>,
@@ -5719,6 +6875,12 @@ pub mod list_task_definitions_input {
             self.sort = Some(input);
             self
         }
+        /// <p>The order in which to sort the results. Valid values are <code>ASC</code> and
+        /// <code>DESC</code>. By default (<code>ASC</code>), task definitions are listed
+        /// lexicographically by family name and in ascending numerical order by revision so that
+        /// the newest task definitions in a family are listed last. Setting this parameter to
+        /// <code>DESC</code> reverses the sort order on family name and revision so that the
+        /// newest task definitions in a family are listed first.</p>
         pub fn set_sort(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
             self.sort = input;
             self
@@ -5735,6 +6897,14 @@ pub mod list_task_definitions_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a <code>ListTaskDefinitions</code>
+        /// request indicating that more results are available to fulfill the request and further
+        /// calls will be needed. If <code>maxResults</code> was provided, it is possible the number
+        /// of results to be fewer than <code>maxResults</code>.</p>
+        /// <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to
+        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5752,6 +6922,15 @@ pub mod list_task_definitions_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of task definition results returned by
+        /// <code>ListTaskDefinitions</code> in paginated output. When this parameter is used,
+        /// <code>ListTaskDefinitions</code> only returns <code>maxResults</code> results in a
+        /// single page along with a <code>nextToken</code> response element. The remaining results
+        /// of the initial request can be seen by sending another <code>ListTaskDefinitions</code>
+        /// request with the returned <code>nextToken</code> value. This value can be between
+        /// 1 and 100. If this parameter is not used, then
+        /// <code>ListTaskDefinitions</code> returns up to 100 results and a
+        /// <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5761,7 +6940,7 @@ pub mod list_task_definitions_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTaskDefinitionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTaskDefinitionsInput {
                 family_prefix: self.family_prefix,
@@ -5784,16 +6963,16 @@ impl ListTaskDefinitionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTaskDefinitions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTaskDefinitionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5801,7 +6980,7 @@ impl ListTaskDefinitionsInput {
         fn update_http_builder(
             input: &crate::input::ListTaskDefinitionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5810,32 +6989,32 @@ impl ListTaskDefinitionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTaskDefinitionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.ListTaskDefinitions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_task_definitions(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5858,15 +7037,15 @@ impl ListTaskDefinitionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTaskDefinitions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTaskDefinitions",
             "ecs",
         ));
@@ -5875,10 +7054,10 @@ impl ListTaskDefinitionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5915,6 +7094,8 @@ pub mod list_tasks_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the
+        /// <code>ListTasks</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -5927,6 +7108,10 @@ pub mod list_tasks_input {
             self.container_instance = Some(input.into());
             self
         }
+        /// <p>The container instance ID or full ARN of the container instance to use when
+        /// filtering the <code>ListTasks</code> results. Specifying a
+        /// <code>containerInstance</code> limits the results to tasks that belong to that
+        /// container instance.</p>
         pub fn set_container_instance(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5941,6 +7126,9 @@ pub mod list_tasks_input {
             self.family = Some(input.into());
             self
         }
+        /// <p>The name of the task definition family to use when filtering the
+        /// <code>ListTasks</code> results. Specifying a <code>family</code> limits the results
+        /// to tasks that belong to that family.</p>
         pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.family = input;
             self
@@ -5957,6 +7145,14 @@ pub mod list_tasks_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a <code>ListTasks</code> request
+        /// indicating that more results are available to fulfill the request and further calls will
+        /// be needed. If <code>maxResults</code> was provided, it is possible the number of results
+        /// to be fewer than <code>maxResults</code>.</p>
+        /// <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to
+        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5973,6 +7169,14 @@ pub mod list_tasks_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of task results returned by <code>ListTasks</code> in paginated
+        /// output. When this parameter is used, <code>ListTasks</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element. The remaining results of the initial request can be seen by sending
+        /// another <code>ListTasks</code> request with the returned <code>nextToken</code> value.
+        /// This value can be between 1 and 100. If this parameter is
+        /// not used, then <code>ListTasks</code> returns up to 100 results and a
+        /// <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5984,6 +7188,9 @@ pub mod list_tasks_input {
             self.started_by = Some(input.into());
             self
         }
+        /// <p>The <code>startedBy</code> value with which to filter the task results. Specifying a
+        /// <code>startedBy</code> value limits the results to tasks that were started with that
+        /// value.</p>
         pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.started_by = input;
             self
@@ -5995,6 +7202,9 @@ pub mod list_tasks_input {
             self.service_name = Some(input.into());
             self
         }
+        /// <p>The name of the service to use when filtering the <code>ListTasks</code> results.
+        /// Specifying a <code>serviceName</code> limits the results to tasks that belong to that
+        /// service.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -6015,6 +7225,18 @@ pub mod list_tasks_input {
             self.desired_status = Some(input);
             self
         }
+        /// <p>The task desired status to use when filtering the <code>ListTasks</code> results.
+        /// Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to
+        /// tasks that Amazon ECS has set the desired status to <code>STOPPED</code>. This can be useful
+        /// for debugging tasks that are not starting properly or have died or finished. The default
+        /// status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
+        /// status to <code>RUNNING</code>.</p>
+        /// <note>
+        /// <p>Although you can filter results based on a desired status of <code>PENDING</code>,
+        /// this does not return any results. Amazon ECS never sets the desired status of a task to
+        /// that value (only a task's <code>lastStatus</code> may have a value of
+        /// <code>PENDING</code>).</p>
+        /// </note>
         pub fn set_desired_status(
             mut self,
             input: std::option::Option<crate::model::DesiredStatus>,
@@ -6027,6 +7249,7 @@ pub mod list_tasks_input {
             self.launch_type = Some(input);
             self
         }
+        /// <p>The launch type to use when filtering the <code>ListTasks</code> results.</p>
         pub fn set_launch_type(
             mut self,
             input: std::option::Option<crate::model::LaunchType>,
@@ -6037,7 +7260,7 @@ pub mod list_tasks_input {
         /// Consumes the builder and constructs a [`ListTasksInput`](crate::input::ListTasksInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListTasksInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListTasksInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListTasksInput {
                 cluster: self.cluster,
@@ -6064,16 +7287,16 @@ impl ListTasksInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTasks,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTasksInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6081,7 +7304,7 @@ impl ListTasksInput {
         fn update_http_builder(
             input: &crate::input::ListTasksInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6090,29 +7313,31 @@ impl ListTasksInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTasksInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.ListTasks",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_tasks(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6135,22 +7360,25 @@ impl ListTasksInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListTasks::new())
-                .with_metadata(smithy_http::operation::Metadata::new("ListTasks", "ecs"));
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListTasks::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "ListTasks",
+                    "ecs",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6188,6 +7416,15 @@ pub mod put_account_setting_input {
             self.name = Some(input);
             self
         }
+        /// <p>The Amazon ECS resource name for which to modify the account setting. If
+        /// <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is
+        /// affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for
+        /// your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is
+        /// specified, the ARN and resource ID for your Amazon ECS container instances is affected. If
+        /// <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit
+        /// for your Amazon ECS container instances is affected. If <code>containerInsights</code> is
+        /// specified, the default setting for CloudWatch Container Insights for your clusters is
+        /// affected.</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::SettingName>) -> Self {
             self.name = input;
             self
@@ -6198,6 +7435,8 @@ pub mod put_account_setting_input {
             self.value = Some(input.into());
             self
         }
+        /// <p>The account setting value for the specified principal ARN. Accepted values are
+        /// <code>enabled</code> and <code>disabled</code>.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -6215,6 +7454,15 @@ pub mod put_account_setting_input {
             self.principal_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you
+        /// specify the root user, it modifies the account setting for all IAM users, IAM roles, and
+        /// the root user of the account unless an IAM user or role explicitly overrides these
+        /// settings. If this field is omitted, the setting is changed only for the authenticated
+        /// user.</p>
+        /// <note>
+        /// <p>Federated users assume the account setting of the root user and can't have
+        /// explicit account settings set for them.</p>
+        /// </note>
         pub fn set_principal_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6227,7 +7475,7 @@ pub mod put_account_setting_input {
             self,
         ) -> std::result::Result<
             crate::input::PutAccountSettingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutAccountSettingInput {
                 name: self.name,
@@ -6248,16 +7496,16 @@ impl PutAccountSettingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutAccountSetting,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutAccountSettingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6265,7 +7513,7 @@ impl PutAccountSettingInput {
         fn update_http_builder(
             input: &crate::input::PutAccountSettingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6274,32 +7522,32 @@ impl PutAccountSettingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutAccountSettingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.PutAccountSetting",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_account_setting(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6322,15 +7570,15 @@ impl PutAccountSettingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutAccountSetting::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutAccountSetting",
             "ecs",
         ));
@@ -6339,10 +7587,10 @@ impl PutAccountSettingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6378,6 +7626,14 @@ pub mod put_account_setting_default_input {
             self.name = Some(input);
             self
         }
+        /// <p>The resource name for which to modify the account setting. If
+        /// <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is
+        /// affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for
+        /// your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is
+        /// specified, the ARN and resource ID for your Amazon ECS container instances is affected. If
+        /// <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container
+        /// instances is affected. If <code>containerInsights</code> is specified, the default
+        /// setting for CloudWatch Container Insights for your clusters is affected.</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::SettingName>) -> Self {
             self.name = input;
             self
@@ -6388,6 +7644,8 @@ pub mod put_account_setting_default_input {
             self.value = Some(input.into());
             self
         }
+        /// <p>The account setting value for the specified principal ARN. Accepted values are
+        /// <code>enabled</code> and <code>disabled</code>.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -6397,7 +7655,7 @@ pub mod put_account_setting_default_input {
             self,
         ) -> std::result::Result<
             crate::input::PutAccountSettingDefaultInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutAccountSettingDefaultInput {
                 name: self.name,
@@ -6418,16 +7676,16 @@ impl PutAccountSettingDefaultInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutAccountSettingDefault,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutAccountSettingDefaultInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6435,7 +7693,7 @@ impl PutAccountSettingDefaultInput {
         fn update_http_builder(
             input: &crate::input::PutAccountSettingDefaultInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6444,32 +7702,34 @@ impl PutAccountSettingDefaultInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutAccountSettingDefaultInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.PutAccountSettingDefault",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_account_setting_default(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6492,15 +7752,15 @@ impl PutAccountSettingDefaultInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutAccountSettingDefault::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutAccountSettingDefault",
             "ecs",
         ));
@@ -6509,10 +7769,10 @@ impl PutAccountSettingDefaultInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6542,16 +7802,26 @@ pub mod put_attributes_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to apply
+        /// attributes. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
         }
+        /// Appends an item to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes
+        /// per resource. You can specify up to 10 attributes in a single call.</p>
         pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
             v.push(input.into());
             self.attributes = Some(v);
             self
         }
+        /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes
+        /// per resource. You can specify up to 10 attributes in a single call.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -6562,8 +7832,10 @@ pub mod put_attributes_input {
         /// Consumes the builder and constructs a [`PutAttributesInput`](crate::input::PutAttributesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::PutAttributesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutAttributesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutAttributesInput {
                 cluster: self.cluster,
                 attributes: self.attributes,
@@ -6582,16 +7854,16 @@ impl PutAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6599,7 +7871,7 @@ impl PutAttributesInput {
         fn update_http_builder(
             input: &crate::input::PutAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6608,29 +7880,31 @@ impl PutAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.PutAttributes",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_put_attributes(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6653,25 +7927,27 @@ impl PutAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::PutAttributes::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "PutAttributes",
-                    "ecs",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutAttributes::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutAttributes",
+            "ecs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6703,16 +7979,36 @@ pub mod put_cluster_capacity_providers_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to modify the capacity provider
+        /// settings for. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
         }
+        /// Appends an item to `capacity_providers`.
+        ///
+        /// To override the contents of this collection use [`set_capacity_providers`](Self::set_capacity_providers).
+        ///
+        /// <p>The name of one or more capacity providers to associate with the cluster.</p>
+        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
+        /// provider must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
+        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
+        /// available to all accounts and only need to be associated with a cluster to be
+        /// used.</p>
         pub fn capacity_providers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.capacity_providers.unwrap_or_default();
             v.push(input.into());
             self.capacity_providers = Some(v);
             self
         }
+        /// <p>The name of one or more capacity providers to associate with the cluster.</p>
+        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
+        /// provider must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
+        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
+        /// available to all accounts and only need to be associated with a cluster to be
+        /// used.</p>
         pub fn set_capacity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6720,6 +8016,26 @@ pub mod put_cluster_capacity_providers_input {
             self.capacity_providers = input;
             self
         }
+        /// Appends an item to `default_capacity_provider_strategy`.
+        ///
+        /// To override the contents of this collection use [`set_default_capacity_provider_strategy`](Self::set_default_capacity_provider_strategy).
+        ///
+        /// <p>The capacity provider strategy to use by default for the cluster.</p>
+        /// <p>When creating a service or running a task on a cluster, if no capacity provider or
+        /// launch type is specified then the default capacity provider strategy for the cluster is
+        /// used.</p>
+        /// <p>A capacity provider strategy consists of one or more capacity providers along with the
+        /// <code>base</code> and <code>weight</code> to assign to them. A capacity provider
+        /// must be associated with the cluster to be used in a capacity provider strategy. The
+        /// <a>PutClusterCapacityProviders</a> API is used to associate a capacity
+        /// provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
+        /// <code>UPDATING</code> status can be used.</p>
+        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
+        /// provider must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
+        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
+        /// available to all accounts and only need to be associated with a cluster to be
+        /// used.</p>
         pub fn default_capacity_provider_strategy(
             mut self,
             input: impl Into<crate::model::CapacityProviderStrategyItem>,
@@ -6729,6 +8045,22 @@ pub mod put_cluster_capacity_providers_input {
             self.default_capacity_provider_strategy = Some(v);
             self
         }
+        /// <p>The capacity provider strategy to use by default for the cluster.</p>
+        /// <p>When creating a service or running a task on a cluster, if no capacity provider or
+        /// launch type is specified then the default capacity provider strategy for the cluster is
+        /// used.</p>
+        /// <p>A capacity provider strategy consists of one or more capacity providers along with the
+        /// <code>base</code> and <code>weight</code> to assign to them. A capacity provider
+        /// must be associated with the cluster to be used in a capacity provider strategy. The
+        /// <a>PutClusterCapacityProviders</a> API is used to associate a capacity
+        /// provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
+        /// <code>UPDATING</code> status can be used.</p>
+        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
+        /// provider must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
+        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
+        /// available to all accounts and only need to be associated with a cluster to be
+        /// used.</p>
         pub fn set_default_capacity_provider_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
@@ -6741,7 +8073,7 @@ pub mod put_cluster_capacity_providers_input {
             self,
         ) -> std::result::Result<
             crate::input::PutClusterCapacityProvidersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutClusterCapacityProvidersInput {
                 cluster: self.cluster,
@@ -6763,16 +8095,16 @@ impl PutClusterCapacityProvidersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutClusterCapacityProviders,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutClusterCapacityProvidersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6780,7 +8112,7 @@ impl PutClusterCapacityProvidersInput {
         fn update_http_builder(
             input: &crate::input::PutClusterCapacityProvidersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6789,30 +8121,30 @@ impl PutClusterCapacityProvidersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutClusterCapacityProvidersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.PutClusterCapacityProviders",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_cluster_capacity_providers(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_cluster_capacity_providers(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6835,15 +8167,15 @@ impl PutClusterCapacityProvidersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutClusterCapacityProviders::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutClusterCapacityProviders",
             "ecs",
         ));
@@ -6852,10 +8184,10 @@ impl PutClusterCapacityProvidersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6893,6 +8225,8 @@ pub mod register_container_instance_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster with which to register your container
+        /// instance. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -6905,6 +8239,10 @@ pub mod register_container_instance_input {
             self.instance_identity_document = Some(input.into());
             self
         }
+        /// <p>The instance identity document for the EC2 instance to register. This document can be
+        /// found by running the following command from the instance: <code>curl
+        /// http://169.254.169.254/latest/dynamic/instance-identity/document/</code>
+        /// </p>
         pub fn set_instance_identity_document(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6923,6 +8261,10 @@ pub mod register_container_instance_input {
             self.instance_identity_document_signature = Some(input.into());
             self
         }
+        /// <p>The instance identity document signature for the EC2 instance to register. This
+        /// signature can be found by running the following command from the instance: <code>curl
+        /// http://169.254.169.254/latest/dynamic/instance-identity/signature/</code>
+        /// </p>
         pub fn set_instance_identity_document_signature(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6930,12 +8272,18 @@ pub mod register_container_instance_input {
             self.instance_identity_document_signature = input;
             self
         }
+        /// Appends an item to `total_resources`.
+        ///
+        /// To override the contents of this collection use [`set_total_resources`](Self::set_total_resources).
+        ///
+        /// <p>The resources available on the instance.</p>
         pub fn total_resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
             let mut v = self.total_resources.unwrap_or_default();
             v.push(input.into());
             self.total_resources = Some(v);
             self
         }
+        /// <p>The resources available on the instance.</p>
         pub fn set_total_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -6949,6 +8297,8 @@ pub mod register_container_instance_input {
             self.version_info = Some(input);
             self
         }
+        /// <p>The version information for the Amazon ECS container agent and Docker daemon running on the
+        /// container instance.</p>
         pub fn set_version_info(
             mut self,
             input: std::option::Option<crate::model::VersionInfo>,
@@ -6961,6 +8311,7 @@ pub mod register_container_instance_input {
             self.container_instance_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the container instance (if it was previously registered).</p>
         pub fn set_container_instance_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6968,12 +8319,18 @@ pub mod register_container_instance_input {
             self.container_instance_arn = input;
             self
         }
+        /// Appends an item to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>The container instance attributes that this container instance supports.</p>
         pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
             v.push(input.into());
             self.attributes = Some(v);
             self
         }
+        /// <p>The container instance attributes that this container instance supports.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -6981,12 +8338,20 @@ pub mod register_container_instance_input {
             self.attributes = input;
             self
         }
+        /// Appends an item to `platform_devices`.
+        ///
+        /// To override the contents of this collection use [`set_platform_devices`](Self::set_platform_devices).
+        ///
+        /// <p>The devices that are available on the container instance. The only supported device
+        /// type is a GPU.</p>
         pub fn platform_devices(mut self, input: impl Into<crate::model::PlatformDevice>) -> Self {
             let mut v = self.platform_devices.unwrap_or_default();
             v.push(input.into());
             self.platform_devices = Some(v);
             self
         }
+        /// <p>The devices that are available on the container instance. The only supported device
+        /// type is a GPU.</p>
         pub fn set_platform_devices(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlatformDevice>>,
@@ -6994,12 +8359,84 @@ pub mod register_container_instance_input {
             self.platform_devices = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The metadata that you apply to the container instance to help you categorize and
+        /// organize them. Each tag consists of a key and an optional value, both of which you
+        /// define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The metadata that you apply to the container instance to help you categorize and
+        /// organize them. Each tag consists of a key and an optional value, both of which you
+        /// define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7012,7 +8449,7 @@ pub mod register_container_instance_input {
             self,
         ) -> std::result::Result<
             crate::input::RegisterContainerInstanceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RegisterContainerInstanceInput {
                 cluster: self.cluster,
@@ -7040,16 +8477,16 @@ impl RegisterContainerInstanceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RegisterContainerInstance,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RegisterContainerInstanceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7057,7 +8494,7 @@ impl RegisterContainerInstanceInput {
         fn update_http_builder(
             input: &crate::input::RegisterContainerInstanceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7066,32 +8503,34 @@ impl RegisterContainerInstanceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RegisterContainerInstanceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.RegisterContainerInstance",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_register_container_instance(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7114,15 +8553,15 @@ impl RegisterContainerInstanceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RegisterContainerInstance::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RegisterContainerInstance",
             "ecs",
         ));
@@ -7131,10 +8570,10 @@ impl RegisterContainerInstanceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7183,6 +8622,9 @@ pub mod register_task_definition_input {
             self.family = Some(input.into());
             self
         }
+        /// <p>You must specify a <code>family</code> for a task definition, which allows you to
+        /// track multiple versions of the same task definition. The <code>family</code> is used as
+        /// a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
         pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.family = input;
             self
@@ -7195,6 +8637,10 @@ pub mod register_task_definition_input {
             self.task_role_arn = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the IAM role that containers in this task can
+        /// assume. All containers in this task are granted the permissions that are specified in
+        /// this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for
+        /// Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_task_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7210,6 +8656,10 @@ pub mod register_task_definition_input {
             self.execution_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent
+        /// permission to make Amazon Web Services API calls on your behalf. The task execution IAM role is required
+        /// depending on the requirements of your task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+        /// execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7249,6 +8699,34 @@ pub mod register_task_definition_input {
             self.network_mode = Some(input);
             self
         }
+        /// <p>The Docker networking mode to use for the containers in the task. The valid values are
+        /// <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>.
+        /// If no network mode is specified, the default is <code>bridge</code>.</p>
+        /// <p>For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required.
+        /// For Amazon ECS tasks on Amazon EC2 Linux instances, any network mode can be used.  For Amazon ECS tasks on Amazon EC2 Windows instances, <code><default></code> or <code>awsvpc</code> can be used. If the network
+        /// mode is set to <code>none</code>, you cannot specify port mappings in your container
+        /// definitions, and the tasks containers do not have external connectivity. The
+        /// <code>host</code> and <code>awsvpc</code> network modes offer the highest networking
+        /// performance for containers because they use the EC2 network stack instead of the
+        /// virtualized network stack provided by the <code>bridge</code> mode.</p>
+        /// <p>With the <code>host</code> and <code>awsvpc</code> network modes, exposed container
+        /// ports are mapped directly to the corresponding host port (for the <code>host</code>
+        /// network mode) or the attached elastic network interface port (for the
+        /// <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port
+        /// mappings. </p>
+        /// <important>
+        /// <p>When using the <code>host</code> network mode, you should not run
+        /// containers using the root user (UID 0). It is considered best practice
+        /// to use a non-root user.</p>
+        /// </important>
+        /// <p>If the network mode is <code>awsvpc</code>, the task is allocated an elastic network
+        /// interface, and you must specify a <a>NetworkConfiguration</a> value when you create
+        /// a service or run a task with the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
+        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>If the network mode is <code>host</code>, you cannot run multiple instantiations of the
+        /// same task on a single container instance when port mappings are used.</p>
+        /// <p>For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+        /// settings</a> in the <i>Docker run reference</i>.</p>
         pub fn set_network_mode(
             mut self,
             input: std::option::Option<crate::model::NetworkMode>,
@@ -7256,6 +8734,12 @@ pub mod register_task_definition_input {
             self.network_mode = input;
             self
         }
+        /// Appends an item to `container_definitions`.
+        ///
+        /// To override the contents of this collection use [`set_container_definitions`](Self::set_container_definitions).
+        ///
+        /// <p>A list of container definitions in JSON format that describe the different containers
+        /// that make up your task.</p>
         pub fn container_definitions(
             mut self,
             input: impl Into<crate::model::ContainerDefinition>,
@@ -7265,6 +8749,8 @@ pub mod register_task_definition_input {
             self.container_definitions = Some(v);
             self
         }
+        /// <p>A list of container definitions in JSON format that describe the different containers
+        /// that make up your task.</p>
         pub fn set_container_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContainerDefinition>>,
@@ -7272,12 +8758,20 @@ pub mod register_task_definition_input {
             self.container_definitions = input;
             self
         }
+        /// Appends an item to `volumes`.
+        ///
+        /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
+        ///
+        /// <p>A list of volume definitions in JSON format that containers in your task may
+        /// use.</p>
         pub fn volumes(mut self, input: impl Into<crate::model::Volume>) -> Self {
             let mut v = self.volumes.unwrap_or_default();
             v.push(input.into());
             self.volumes = Some(v);
             self
         }
+        /// <p>A list of volume definitions in JSON format that containers in your task may
+        /// use.</p>
         pub fn set_volumes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Volume>>,
@@ -7285,6 +8779,13 @@ pub mod register_task_definition_input {
             self.volumes = input;
             self
         }
+        /// Appends an item to `placement_constraints`.
+        ///
+        /// To override the contents of this collection use [`set_placement_constraints`](Self::set_placement_constraints).
+        ///
+        /// <p>An array of placement constraint objects to use for the task. You can specify a
+        /// maximum of 10 constraints per task (this limit includes constraints in the task
+        /// definition and those specified at runtime).</p>
         pub fn placement_constraints(
             mut self,
             input: impl Into<crate::model::TaskDefinitionPlacementConstraint>,
@@ -7294,6 +8795,9 @@ pub mod register_task_definition_input {
             self.placement_constraints = Some(v);
             self
         }
+        /// <p>An array of placement constraint objects to use for the task. You can specify a
+        /// maximum of 10 constraints per task (this limit includes constraints in the task
+        /// definition and those specified at runtime).</p>
         pub fn set_placement_constraints(
             mut self,
             input: std::option::Option<
@@ -7303,6 +8807,14 @@ pub mod register_task_definition_input {
             self.placement_constraints = input;
             self
         }
+        /// Appends an item to `requires_compatibilities`.
+        ///
+        /// To override the contents of this collection use [`set_requires_compatibilities`](Self::set_requires_compatibilities).
+        ///
+        /// <p>The task launch type that Amazon ECS should validate the task definition against. A client
+        /// exception is returned if the task definition doesn't validate against the
+        /// compatibilities specified. If no value is specified, the parameter is omitted from the
+        /// response.</p>
         pub fn requires_compatibilities(
             mut self,
             input: impl Into<crate::model::Compatibility>,
@@ -7312,6 +8824,10 @@ pub mod register_task_definition_input {
             self.requires_compatibilities = Some(v);
             self
         }
+        /// <p>The task launch type that Amazon ECS should validate the task definition against. A client
+        /// exception is returned if the task definition doesn't validate against the
+        /// compatibilities specified. If no value is specified, the parameter is omitted from the
+        /// response.</p>
         pub fn set_requires_compatibilities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
@@ -7355,6 +8871,38 @@ pub mod register_task_definition_input {
             self.cpu = Some(input.into());
             self
         }
+        /// <p>The number of CPU units used by the task. It can be expressed as an integer using CPU
+        /// units, for example <code>1024</code>, or as a string using vCPUs, for example <code>1
+        /// vCPU</code> or <code>1 vcpu</code>, in a task definition. String values are
+        /// converted to an integer indicating the CPU units when the task definition is
+        /// registered.</p>
+        /// <note>
+        /// <p>Task-level CPU and memory parameters are ignored for Windows containers. We
+        /// recommend specifying container-level resources for Windows containers.</p>
+        /// </note>
+        /// <p>If you are using the EC2 launch type, this field is optional. Supported
+        /// values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and
+        /// <code>10240</code> CPU units (<code>10</code> vCPUs).</p>
+        /// <p>If you are using the Fargate launch type, this field is required and you
+        /// must use one of the following values, which determines your range of supported values
+        /// for the <code>memory</code> parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
+        /// </li>
+        /// <li>
+        /// <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p>
+        /// </li>
+        /// <li>
+        /// <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p>
+        /// </li>
+        /// <li>
+        /// <p>2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p>
+        /// </li>
+        /// <li>
+        /// <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p>
+        /// </li>
+        /// </ul>
         pub fn set_cpu(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cpu = input;
             self
@@ -7393,16 +8941,116 @@ pub mod register_task_definition_input {
             self.memory = Some(input.into());
             self
         }
+        /// <p>The amount of memory (in MiB) used by the task. It can be expressed as an integer
+        /// using MiB, for example <code>1024</code>, or as a string using GB, for example
+        /// <code>1GB</code> or <code>1 GB</code>, in a task definition. String values are
+        /// converted to an integer indicating the MiB when the task definition is
+        /// registered.</p>
+        /// <note>
+        /// <p>Task-level CPU and memory parameters are ignored for Windows containers. We
+        /// recommend specifying container-level resources for Windows containers.</p>
+        /// </note>
+        /// <p>If using the EC2 launch type, this field is optional.</p>
+        /// <p>If using the Fargate launch type, this field is required and you must
+        /// use one of the following values, which determines your range of supported values for the
+        /// <code>cpu</code> parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p>
+        /// </li>
+        /// <li>
+        /// <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p>
+        /// </li>
+        /// <li>
+        /// <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p>
+        /// </li>
+        /// <li>
+        /// <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
+        /// </li>
+        /// <li>
+        /// <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
+        /// </li>
+        /// </ul>
         pub fn set_memory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.memory = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The metadata that you apply to the task definition to help you categorize and organize
+        /// them. Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The metadata that you apply to the task definition to help you categorize and organize
+        /// them. Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7430,6 +9078,22 @@ pub mod register_task_definition_input {
             self.pid_mode = Some(input);
             self
         }
+        /// <p>The process namespace to use for the containers in the task. The valid
+        /// values are <code>host</code> or <code>task</code>. If <code>host</code>
+        /// is specified, then all containers within the tasks that specified the
+        /// <code>host</code> PID mode on the same container instance share the
+        /// same process namespace with the host Amazon EC2 instance. If <code>task</code> is
+        /// specified, all containers within the specified task share the same
+        /// process namespace. If no value is specified, the default is a private
+        /// namespace. For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run
+        /// reference</i>.</p>
+        /// <p>If the <code>host</code> PID mode is used, be aware that there is a
+        /// heightened risk of undesired process namespace expose. For more
+        /// information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+        /// security</a>.</p>
+        /// <note>
+        /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
+        /// </note>
         pub fn set_pid_mode(mut self, input: std::option::Option<crate::model::PidMode>) -> Self {
             self.pid_mode = input;
             self
@@ -7470,6 +9134,38 @@ pub mod register_task_definition_input {
             self.ipc_mode = Some(input);
             self
         }
+        /// <p>The IPC resource namespace to use for the containers in the task. The valid values are
+        /// <code>host</code>, <code>task</code>, or <code>none</code>. If <code>host</code> is
+        /// specified, then all containers within the tasks that specified the <code>host</code> IPC
+        /// mode on the same container instance share the same IPC resources with the host Amazon EC2
+        /// instance. If <code>task</code> is specified, all containers within the specified task
+        /// share the same IPC resources. If <code>none</code> is specified, then IPC resources
+        /// within the containers of a task are private and not shared with other containers in a
+        /// task or on the container instance. If no value is specified, then the IPC resource
+        /// namespace sharing depends on the Docker daemon setting on the container instance. For
+        /// more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC
+        /// settings</a> in the <i>Docker run reference</i>.</p>
+        /// <p>If the <code>host</code> IPC mode is used, be aware that there is a heightened risk of
+        /// undesired IPC namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+        /// security</a>.</p>
+        /// <p>If you are setting namespaced kernel parameters using <code>systemControls</code> for
+        /// the containers in the task, the following will apply to your IPC resource namespace. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+        /// Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For tasks that use the <code>host</code> IPC mode, IPC namespace related
+        /// <code>systemControls</code> are not supported.</p>
+        /// </li>
+        /// <li>
+        /// <p>For tasks that use the <code>task</code> IPC mode, IPC namespace related
+        /// <code>systemControls</code> will apply to all containers within a
+        /// task.</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
+        /// </note>
         pub fn set_ipc_mode(mut self, input: std::option::Option<crate::model::IpcMode>) -> Self {
             self.ipc_mode = input;
             self
@@ -7486,6 +9182,14 @@ pub mod register_task_definition_input {
             self.proxy_configuration = Some(input);
             self
         }
+        /// <p>The configuration details for the App Mesh proxy.</p>
+        /// <p>For tasks hosted on Amazon EC2 instances, the container instances require at least version
+        /// <code>1.26.0</code> of the container agent and at least version
+        /// <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy
+        /// configuration. If your container instances are launched from the Amazon ECS-optimized
+        /// AMI version <code>20190301</code> or later, then they contain the required versions of
+        /// the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon ECS-optimized AMI versions</a> in the
+        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_proxy_configuration(
             mut self,
             input: std::option::Option<crate::model::ProxyConfiguration>,
@@ -7493,6 +9197,11 @@ pub mod register_task_definition_input {
             self.proxy_configuration = input;
             self
         }
+        /// Appends an item to `inference_accelerators`.
+        ///
+        /// To override the contents of this collection use [`set_inference_accelerators`](Self::set_inference_accelerators).
+        ///
+        /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
         pub fn inference_accelerators(
             mut self,
             input: impl Into<crate::model::InferenceAccelerator>,
@@ -7502,6 +9211,7 @@ pub mod register_task_definition_input {
             self.inference_accelerators = Some(v);
             self
         }
+        /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
         pub fn set_inference_accelerators(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InferenceAccelerator>>,
@@ -7521,6 +9231,14 @@ pub mod register_task_definition_input {
             self.ephemeral_storage = Some(input);
             self
         }
+        /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to
+        /// expand the total amount of ephemeral storage available, beyond the default amount, for
+        /// tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
+        /// storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
+        /// <note>
+        /// <p>This parameter is only supported for tasks hosted on Fargate using platform
+        /// version <code>1.4.0</code> or later.</p>
+        /// </note>
         pub fn set_ephemeral_storage(
             mut self,
             input: std::option::Option<crate::model::EphemeralStorage>,
@@ -7533,7 +9251,7 @@ pub mod register_task_definition_input {
             self,
         ) -> std::result::Result<
             crate::input::RegisterTaskDefinitionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RegisterTaskDefinitionInput {
                 family: self.family,
@@ -7567,16 +9285,16 @@ impl RegisterTaskDefinitionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RegisterTaskDefinition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RegisterTaskDefinitionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7584,7 +9302,7 @@ impl RegisterTaskDefinitionInput {
         fn update_http_builder(
             input: &crate::input::RegisterTaskDefinitionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7593,32 +9311,34 @@ impl RegisterTaskDefinitionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RegisterTaskDefinitionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.RegisterTaskDefinition",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_register_task_definition(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7641,15 +9361,15 @@ impl RegisterTaskDefinitionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RegisterTaskDefinition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RegisterTaskDefinition",
             "ecs",
         ));
@@ -7658,10 +9378,10 @@ impl RegisterTaskDefinitionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7703,6 +9423,17 @@ pub mod run_task_input {
         pub(crate) task_definition: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `capacity_provider_strategy`.
+        ///
+        /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
+        ///
+        /// <p>The capacity provider strategy to use for the task.</p>
+        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+        /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+        /// <code>launchType</code> is specified, the
+        /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+        /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+        /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
         pub fn capacity_provider_strategy(
             mut self,
             input: impl Into<crate::model::CapacityProviderStrategyItem>,
@@ -7712,6 +9443,13 @@ pub mod run_task_input {
             self.capacity_provider_strategy = Some(v);
             self
         }
+        /// <p>The capacity provider strategy to use for the task.</p>
+        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+        /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+        /// <code>launchType</code> is specified, the
+        /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+        /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+        /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
         pub fn set_capacity_provider_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
@@ -7725,6 +9463,8 @@ pub mod run_task_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to run your task.
+        /// If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -7735,6 +9475,8 @@ pub mod run_task_input {
             self.count = Some(input);
             self
         }
+        /// <p>The number of instantiations of the specified task to place on your cluster. You can
+        /// specify up to 10 tasks per call.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
@@ -7746,6 +9488,9 @@ pub mod run_task_input {
             self.enable_ecs_managed_tags = Some(input);
             self
         }
+        /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
+        /// Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_enable_ecs_managed_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_ecs_managed_tags = input;
             self
@@ -7757,6 +9502,9 @@ pub mod run_task_input {
             self.enable_execute_command = Some(input);
             self
         }
+        /// <p>Whether or not to enable the execute command functionality for the containers in this
+        /// task. If <code>true</code>, this enables execute command functionality on all containers
+        /// in the task.</p>
         pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_execute_command = input;
             self
@@ -7767,6 +9515,8 @@ pub mod run_task_input {
             self.group = Some(input.into());
             self
         }
+        /// <p>The name of the task group to associate with the task. The default value is the family
+        /// name of the task definition (for example, <code>family:my-family-name</code>).</p>
         pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group = input;
             self
@@ -7792,6 +9542,23 @@ pub mod run_task_input {
             self.launch_type = Some(input);
             self
         }
+        /// <p>The infrastructure on which to run your standalone task. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand
+        /// infrastructure.</p>
+        /// <note>
+        /// <p>Fargate Spot infrastructure is available for use but a capacity provider
+        /// strategy must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity providers</a> in the
+        /// <i>Amazon ECS User Guide for Fargate</i>.</p>
+        /// </note>
+        /// <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your
+        /// cluster.</p>
+        /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
+        /// virtual machine (VM) capacity registered to your cluster.</p>
+        /// <p>A task can use either a launch type or a capacity provider strategy. If a
+        /// <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
+        /// parameter must be omitted.</p>
+        /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
         pub fn set_launch_type(
             mut self,
             input: std::option::Option<crate::model::LaunchType>,
@@ -7808,6 +9575,11 @@ pub mod run_task_input {
             self.network_configuration = Some(input);
             self
         }
+        /// <p>The network configuration for the task. This parameter is required for task
+        /// definitions that use the <code>awsvpc</code> network mode to receive their own elastic
+        /// network interface, and it is not supported for other network modes. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
+        /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_network_configuration(
             mut self,
             input: std::option::Option<crate::model::NetworkConfiguration>,
@@ -7827,6 +9599,14 @@ pub mod run_task_input {
             self.overrides = Some(input);
             self
         }
+        /// <p>A list of container overrides in JSON format that specify the name of a container in
+        /// the specified task definition and the overrides it should receive. You can override the
+        /// default command for a container (that is specified in the task definition or Docker
+        /// image) with a <code>command</code> override. You can also override existing environment
+        /// variables (that are specified in the task definition or Docker image) on a container or
+        /// add new environment variables to it with an <code>environment</code> override.</p>
+        /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON
+        /// formatting characters of the override structure.</p>
         pub fn set_overrides(
             mut self,
             input: std::option::Option<crate::model::TaskOverride>,
@@ -7834,6 +9614,13 @@ pub mod run_task_input {
             self.overrides = input;
             self
         }
+        /// Appends an item to `placement_constraints`.
+        ///
+        /// To override the contents of this collection use [`set_placement_constraints`](Self::set_placement_constraints).
+        ///
+        /// <p>An array of placement constraint objects to use for the task. You can specify up to 10
+        /// constraints per task (including constraints in the task definition and those specified
+        /// at runtime).</p>
         pub fn placement_constraints(
             mut self,
             input: impl Into<crate::model::PlacementConstraint>,
@@ -7843,6 +9630,9 @@ pub mod run_task_input {
             self.placement_constraints = Some(v);
             self
         }
+        /// <p>An array of placement constraint objects to use for the task. You can specify up to 10
+        /// constraints per task (including constraints in the task definition and those specified
+        /// at runtime).</p>
         pub fn set_placement_constraints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
@@ -7850,6 +9640,12 @@ pub mod run_task_input {
             self.placement_constraints = input;
             self
         }
+        /// Appends an item to `placement_strategy`.
+        ///
+        /// To override the contents of this collection use [`set_placement_strategy`](Self::set_placement_strategy).
+        ///
+        /// <p>The placement strategy objects to use for the task. You can specify a maximum of 5
+        /// strategy rules per task.</p>
         pub fn placement_strategy(
             mut self,
             input: impl Into<crate::model::PlacementStrategy>,
@@ -7859,6 +9655,8 @@ pub mod run_task_input {
             self.placement_strategy = Some(v);
             self
         }
+        /// <p>The placement strategy objects to use for the task. You can specify a maximum of 5
+        /// strategy rules per task.</p>
         pub fn set_placement_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
@@ -7874,6 +9672,10 @@ pub mod run_task_input {
             self.platform_version = Some(input.into());
             self
         }
+        /// <p>The platform version the task should use. A platform version is only specified for
+        /// tasks hosted on Fargate. If one is not specified, the <code>LATEST</code>
+        /// platform version is used by default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the
+        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_platform_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7892,6 +9694,13 @@ pub mod run_task_input {
             self.propagate_tags = Some(input);
             self
         }
+        /// <p>Specifies whether to propagate the tags from the task definition to the task. If no
+        /// value is specified, the tags are not propagated. Tags can only be propagated to the task
+        /// during task creation. To add tags to a task after task creation, use the <a>TagResource</a> API action.</p>
+        /// <note>
+        /// <p>An error will be received if you specify the <code>SERVICE</code> option when
+        /// running a task.</p>
+        /// </note>
         pub fn set_propagate_tags(
             mut self,
             input: std::option::Option<crate::model::PropagateTags>,
@@ -7905,6 +9714,8 @@ pub mod run_task_input {
             self.reference_id = Some(input.into());
             self
         }
+        /// <p>The reference ID to use for the task. The reference ID can have a maximum length of
+        /// 1024 characters.</p>
         pub fn set_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reference_id = input;
             self
@@ -7921,16 +9732,94 @@ pub mod run_task_input {
             self.started_by = Some(input.into());
             self
         }
+        /// <p>An optional tag specified when a task is started. For example, if you automatically
+        /// trigger a task to run a batch process job, you could apply a unique identifier for that
+        /// job to your task with the <code>startedBy</code> parameter. You can then identify which
+        /// tasks belong to that job by filtering the results of a <a>ListTasks</a> call
+        /// with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase),
+        /// numbers, hyphens, and underscores are allowed.</p>
+        /// <p>If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter
+        /// contains the deployment ID of the service that starts it.</p>
         pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.started_by = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The metadata that you apply to the task to help you categorize and organize them. Each
+        /// tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The metadata that you apply to the task to help you categorize and organize them. Each
+        /// tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7950,6 +9839,14 @@ pub mod run_task_input {
             self.task_definition = Some(input.into());
             self
         }
+        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
+        /// full ARN of the task definition to run. If a <code>revision</code> is not specified,
+        /// the latest <code>ACTIVE</code> revision is used.</p>
+        /// <p>The full ARN value must match the value that you specified ias the <code>Resource</code>
+        /// of the IAM principal's permissions policy. For example, if the <code>Resource</code> is
+        /// arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*, the
+        /// <code>taskDefinition</code> ARN value must be
+        /// <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
         pub fn set_task_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7960,7 +9857,7 @@ pub mod run_task_input {
         /// Consumes the builder and constructs a [`RunTaskInput`](crate::input::RunTaskInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::RunTaskInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::RunTaskInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::RunTaskInput {
                 capacity_provider_strategy: self.capacity_provider_strategy,
@@ -7995,13 +9892,16 @@ impl RunTaskInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::RunTask, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::RunTask,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RunTaskInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8009,7 +9909,7 @@ impl RunTaskInput {
         fn update_http_builder(
             input: &crate::input::RunTaskInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8018,29 +9918,31 @@ impl RunTaskInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RunTaskInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.RunTask",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_run_task(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8063,21 +9965,22 @@ impl RunTaskInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::RunTask::new())
-            .with_metadata(smithy_http::operation::Metadata::new("RunTask", "ecs"));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::RunTask::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new("RunTask", "ecs"));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8117,16 +10020,26 @@ pub mod start_task_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to start your task.
+        /// If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
         }
+        /// Appends an item to `container_instances`.
+        ///
+        /// To override the contents of this collection use [`set_container_instances`](Self::set_container_instances).
+        ///
+        /// <p>The container instance IDs or full ARN entries for the container instances on which
+        /// you would like to place your task. You can specify up to 10 container instances.</p>
         pub fn container_instances(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.container_instances.unwrap_or_default();
             v.push(input.into());
             self.container_instances = Some(v);
             self
         }
+        /// <p>The container instance IDs or full ARN entries for the container instances on which
+        /// you would like to place your task. You can specify up to 10 container instances.</p>
         pub fn set_container_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8141,6 +10054,9 @@ pub mod start_task_input {
             self.enable_ecs_managed_tags = Some(input);
             self
         }
+        /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
+        /// Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_enable_ecs_managed_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_ecs_managed_tags = input;
             self
@@ -8152,6 +10068,9 @@ pub mod start_task_input {
             self.enable_execute_command = Some(input);
             self
         }
+        /// <p>Whether or not the execute command functionality is enabled for the task. If
+        /// <code>true</code>, this enables execute command functionality on all containers in
+        /// the task.</p>
         pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_execute_command = input;
             self
@@ -8162,6 +10081,8 @@ pub mod start_task_input {
             self.group = Some(input.into());
             self
         }
+        /// <p>The name of the task group to associate with the task. The default value is the family
+        /// name of the task definition (for example, family:my-family-name).</p>
         pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group = input;
             self
@@ -8172,6 +10093,8 @@ pub mod start_task_input {
             self.network_configuration = Some(input);
             self
         }
+        /// <p>The VPC subnet and security group configuration for tasks that receive their own
+        /// elastic network interface by using the <code>awsvpc</code> networking mode.</p>
         pub fn set_network_configuration(
             mut self,
             input: std::option::Option<crate::model::NetworkConfiguration>,
@@ -8193,6 +10116,16 @@ pub mod start_task_input {
             self.overrides = Some(input);
             self
         }
+        /// <p>A list of container overrides in JSON format that specify the name of a container in
+        /// the specified task definition and the overrides it should receive. You can override the
+        /// default command for a container (that is specified in the task definition or Docker
+        /// image) with a <code>command</code> override. You can also override existing environment
+        /// variables (that are specified in the task definition or Docker image) on a container or
+        /// add new environment variables to it with an <code>environment</code> override.</p>
+        /// <note>
+        /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON
+        /// formatting characters of the override structure.</p>
+        /// </note>
         pub fn set_overrides(
             mut self,
             input: std::option::Option<crate::model::TaskOverride>,
@@ -8206,6 +10139,8 @@ pub mod start_task_input {
             self.propagate_tags = Some(input);
             self
         }
+        /// <p>Specifies whether to propagate the tags from the task definition or the service to the
+        /// task. If no value is specified, the tags are not propagated.</p>
         pub fn set_propagate_tags(
             mut self,
             input: std::option::Option<crate::model::PropagateTags>,
@@ -8218,6 +10153,7 @@ pub mod start_task_input {
             self.reference_id = Some(input.into());
             self
         }
+        /// <p>The reference ID to use for the task.</p>
         pub fn set_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reference_id = input;
             self
@@ -8234,16 +10170,94 @@ pub mod start_task_input {
             self.started_by = Some(input.into());
             self
         }
+        /// <p>An optional tag specified when a task is started. For example, if you automatically
+        /// trigger a task to run a batch process job, you could apply a unique identifier for that
+        /// job to your task with the <code>startedBy</code> parameter. You can then identify which
+        /// tasks belong to that job by filtering the results of a <a>ListTasks</a> call
+        /// with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase),
+        /// numbers, hyphens, and underscores are allowed.</p>
+        /// <p>If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter
+        /// contains the deployment ID of the service that starts it.</p>
         pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.started_by = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The metadata that you apply to the task to help you categorize and organize them. Each
+        /// tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The metadata that you apply to the task to help you categorize and organize them. Each
+        /// tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8258,6 +10272,9 @@ pub mod start_task_input {
             self.task_definition = Some(input.into());
             self
         }
+        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
+        /// full ARN of the task definition to start. If a <code>revision</code> is not specified,
+        /// the latest <code>ACTIVE</code> revision is used.</p>
         pub fn set_task_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8268,7 +10285,7 @@ pub mod start_task_input {
         /// Consumes the builder and constructs a [`StartTaskInput`](crate::input::StartTaskInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::StartTaskInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::StartTaskInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::StartTaskInput {
                 cluster: self.cluster,
@@ -8298,16 +10315,16 @@ impl StartTaskInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartTask,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartTaskInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8315,7 +10332,7 @@ impl StartTaskInput {
         fn update_http_builder(
             input: &crate::input::StartTaskInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8324,29 +10341,31 @@ impl StartTaskInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartTaskInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.StartTask",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_start_task(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8369,22 +10388,25 @@ impl StartTaskInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::StartTask::new())
-                .with_metadata(smithy_http::operation::Metadata::new("StartTask", "ecs"));
+            aws_smithy_http::operation::Operation::new(request, crate::operation::StartTask::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "StartTask",
+                    "ecs",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8415,6 +10437,8 @@ pub mod stop_task_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to stop.
+        /// If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -8424,6 +10448,7 @@ pub mod stop_task_input {
             self.task = Some(input.into());
             self
         }
+        /// <p>The task ID or full Amazon Resource Name (ARN) of the task to stop.</p>
         pub fn set_task(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task = input;
             self
@@ -8436,6 +10461,10 @@ pub mod stop_task_input {
             self.reason = Some(input.into());
             self
         }
+        /// <p>An optional message specified when a task is stopped. For example, if you are using a
+        /// custom scheduler, you can use this parameter to specify the reason for stopping the task
+        /// here, and the message appears in subsequent <a>DescribeTasks</a> API
+        /// operations on this task. Up to 255 characters are allowed in this message.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -8443,7 +10472,7 @@ pub mod stop_task_input {
         /// Consumes the builder and constructs a [`StopTaskInput`](crate::input::StopTaskInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::StopTaskInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::StopTaskInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::StopTaskInput {
                 cluster: self.cluster,
@@ -8464,16 +10493,16 @@ impl StopTaskInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StopTask,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StopTaskInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8481,7 +10510,7 @@ impl StopTaskInput {
         fn update_http_builder(
             input: &crate::input::StopTaskInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8490,29 +10519,31 @@ impl StopTaskInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StopTaskInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.StopTask",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_stop_task(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8535,21 +10566,22 @@ impl StopTaskInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::StopTask::new())
-            .with_metadata(smithy_http::operation::Metadata::new("StopTask", "ecs"));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::StopTask::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new("StopTask", "ecs"));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8580,10 +10612,17 @@ pub mod submit_attachment_state_changes_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full ARN of the cluster that hosts the container instance the
+        /// attachment belongs to.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
         }
+        /// Appends an item to `attachments`.
+        ///
+        /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
+        ///
+        /// <p>Any attachments associated with the state change request.</p>
         pub fn attachments(
             mut self,
             input: impl Into<crate::model::AttachmentStateChange>,
@@ -8593,6 +10632,7 @@ pub mod submit_attachment_state_changes_input {
             self.attachments = Some(v);
             self
         }
+        /// <p>Any attachments associated with the state change request.</p>
         pub fn set_attachments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttachmentStateChange>>,
@@ -8605,7 +10645,7 @@ pub mod submit_attachment_state_changes_input {
             self,
         ) -> std::result::Result<
             crate::input::SubmitAttachmentStateChangesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SubmitAttachmentStateChangesInput {
                 cluster: self.cluster,
@@ -8626,16 +10666,16 @@ impl SubmitAttachmentStateChangesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SubmitAttachmentStateChanges,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SubmitAttachmentStateChangesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8643,7 +10683,7 @@ impl SubmitAttachmentStateChangesInput {
         fn update_http_builder(
             input: &crate::input::SubmitAttachmentStateChangesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8652,30 +10692,30 @@ impl SubmitAttachmentStateChangesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SubmitAttachmentStateChangesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.SubmitAttachmentStateChanges",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_submit_attachment_state_changes(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_submit_attachment_state_changes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8698,15 +10738,15 @@ impl SubmitAttachmentStateChangesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SubmitAttachmentStateChanges::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SubmitAttachmentStateChanges",
             "ecs",
         ));
@@ -8715,10 +10755,10 @@ impl SubmitAttachmentStateChangesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8754,6 +10794,7 @@ pub mod submit_container_state_change_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full ARN of the cluster that hosts the container.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -8763,6 +10804,7 @@ pub mod submit_container_state_change_input {
             self.task = Some(input.into());
             self
         }
+        /// <p>The task ID or full Amazon Resource Name (ARN) of the task that hosts the container.</p>
         pub fn set_task(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task = input;
             self
@@ -8772,6 +10814,7 @@ pub mod submit_container_state_change_input {
             self.container_name = Some(input.into());
             self
         }
+        /// <p>The name of the container.</p>
         pub fn set_container_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8784,6 +10827,7 @@ pub mod submit_container_state_change_input {
             self.runtime_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Docker container.</p>
         pub fn set_runtime_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.runtime_id = input;
             self
@@ -8793,6 +10837,7 @@ pub mod submit_container_state_change_input {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the state change request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -8802,6 +10847,7 @@ pub mod submit_container_state_change_input {
             self.exit_code = Some(input);
             self
         }
+        /// <p>The exit code returned for the state change request.</p>
         pub fn set_exit_code(mut self, input: std::option::Option<i32>) -> Self {
             self.exit_code = input;
             self
@@ -8811,16 +10857,23 @@ pub mod submit_container_state_change_input {
             self.reason = Some(input.into());
             self
         }
+        /// <p>The reason for the state change request.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
         }
+        /// Appends an item to `network_bindings`.
+        ///
+        /// To override the contents of this collection use [`set_network_bindings`](Self::set_network_bindings).
+        ///
+        /// <p>The network bindings of the container.</p>
         pub fn network_bindings(mut self, input: impl Into<crate::model::NetworkBinding>) -> Self {
             let mut v = self.network_bindings.unwrap_or_default();
             v.push(input.into());
             self.network_bindings = Some(v);
             self
         }
+        /// <p>The network bindings of the container.</p>
         pub fn set_network_bindings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NetworkBinding>>,
@@ -8833,7 +10886,7 @@ pub mod submit_container_state_change_input {
             self,
         ) -> std::result::Result<
             crate::input::SubmitContainerStateChangeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SubmitContainerStateChangeInput {
                 cluster: self.cluster,
@@ -8860,16 +10913,16 @@ impl SubmitContainerStateChangeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SubmitContainerStateChange,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SubmitContainerStateChangeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8877,7 +10930,7 @@ impl SubmitContainerStateChangeInput {
         fn update_http_builder(
             input: &crate::input::SubmitContainerStateChangeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8886,30 +10939,30 @@ impl SubmitContainerStateChangeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SubmitContainerStateChangeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.SubmitContainerStateChange",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_submit_container_state_change(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_submit_container_state_change(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8932,15 +10985,15 @@ impl SubmitContainerStateChangeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SubmitContainerStateChange::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SubmitContainerStateChange",
             "ecs",
         ));
@@ -8949,10 +11002,10 @@ impl SubmitContainerStateChangeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8982,9 +11035,9 @@ pub mod submit_task_state_change_input {
             std::option::Option<std::vec::Vec<crate::model::AttachmentStateChange>>,
         pub(crate) managed_agents:
             std::option::Option<std::vec::Vec<crate::model::ManagedAgentStateChange>>,
-        pub(crate) pull_started_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) pull_stopped_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) execution_stopped_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) pull_started_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) pull_stopped_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) execution_stopped_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
@@ -8992,6 +11045,7 @@ pub mod submit_task_state_change_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -9001,6 +11055,7 @@ pub mod submit_task_state_change_input {
             self.task = Some(input.into());
             self
         }
+        /// <p>The task ID or full ARN of the task in the state change request.</p>
         pub fn set_task(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task = input;
             self
@@ -9010,6 +11065,7 @@ pub mod submit_task_state_change_input {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the state change request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -9019,16 +11075,23 @@ pub mod submit_task_state_change_input {
             self.reason = Some(input.into());
             self
         }
+        /// <p>The reason for the state change request.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
         }
+        /// Appends an item to `containers`.
+        ///
+        /// To override the contents of this collection use [`set_containers`](Self::set_containers).
+        ///
+        /// <p>Any containers associated with the state change request.</p>
         pub fn containers(mut self, input: impl Into<crate::model::ContainerStateChange>) -> Self {
             let mut v = self.containers.unwrap_or_default();
             v.push(input.into());
             self.containers = Some(v);
             self
         }
+        /// <p>Any containers associated with the state change request.</p>
         pub fn set_containers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContainerStateChange>>,
@@ -9036,6 +11099,11 @@ pub mod submit_task_state_change_input {
             self.containers = input;
             self
         }
+        /// Appends an item to `attachments`.
+        ///
+        /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
+        ///
+        /// <p>Any attachments associated with the state change request.</p>
         pub fn attachments(
             mut self,
             input: impl Into<crate::model::AttachmentStateChange>,
@@ -9045,6 +11113,7 @@ pub mod submit_task_state_change_input {
             self.attachments = Some(v);
             self
         }
+        /// <p>Any attachments associated with the state change request.</p>
         pub fn set_attachments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttachmentStateChange>>,
@@ -9052,6 +11121,11 @@ pub mod submit_task_state_change_input {
             self.attachments = input;
             self
         }
+        /// Appends an item to `managed_agents`.
+        ///
+        /// To override the contents of this collection use [`set_managed_agents`](Self::set_managed_agents).
+        ///
+        /// <p>The details for the managed agent associated with the task.</p>
         pub fn managed_agents(
             mut self,
             input: impl Into<crate::model::ManagedAgentStateChange>,
@@ -9061,6 +11135,7 @@ pub mod submit_task_state_change_input {
             self.managed_agents = Some(v);
             self
         }
+        /// <p>The details for the managed agent associated with the task.</p>
         pub fn set_managed_agents(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ManagedAgentStateChange>>,
@@ -9069,37 +11144,40 @@ pub mod submit_task_state_change_input {
             self
         }
         /// <p>The Unix timestamp for when the container image pull began.</p>
-        pub fn pull_started_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn pull_started_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.pull_started_at = Some(input);
             self
         }
+        /// <p>The Unix timestamp for when the container image pull began.</p>
         pub fn set_pull_started_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.pull_started_at = input;
             self
         }
         /// <p>The Unix timestamp for when the container image pull completed.</p>
-        pub fn pull_stopped_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn pull_stopped_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.pull_stopped_at = Some(input);
             self
         }
+        /// <p>The Unix timestamp for when the container image pull completed.</p>
         pub fn set_pull_stopped_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.pull_stopped_at = input;
             self
         }
         /// <p>The Unix timestamp for when the task execution stopped.</p>
-        pub fn execution_stopped_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn execution_stopped_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.execution_stopped_at = Some(input);
             self
         }
+        /// <p>The Unix timestamp for when the task execution stopped.</p>
         pub fn set_execution_stopped_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.execution_stopped_at = input;
             self
@@ -9109,7 +11187,7 @@ pub mod submit_task_state_change_input {
             self,
         ) -> std::result::Result<
             crate::input::SubmitTaskStateChangeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SubmitTaskStateChangeInput {
                 cluster: self.cluster,
@@ -9137,16 +11215,16 @@ impl SubmitTaskStateChangeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SubmitTaskStateChange,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SubmitTaskStateChangeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9154,7 +11232,7 @@ impl SubmitTaskStateChangeInput {
         fn update_http_builder(
             input: &crate::input::SubmitTaskStateChangeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9163,32 +11241,34 @@ impl SubmitTaskStateChangeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SubmitTaskStateChangeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.SubmitTaskStateChange",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_submit_task_state_change(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9211,15 +11291,15 @@ impl SubmitTaskStateChangeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SubmitTaskStateChange::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SubmitTaskStateChange",
             "ecs",
         ));
@@ -9228,10 +11308,10 @@ impl SubmitTaskStateChangeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9262,16 +11342,87 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources
+        /// are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container
+        /// instances.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -9282,8 +11433,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -9302,16 +11455,16 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9319,7 +11472,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9328,29 +11481,31 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.TagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9373,22 +11528,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new("TagResource", "ecs"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "ecs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9419,16 +11579,25 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
+        /// resources are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and
+        /// container instances.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The keys of the tags to be removed.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>The keys of the tags to be removed.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9439,8 +11608,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -9459,16 +11630,16 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9476,7 +11647,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9485,29 +11656,31 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.UntagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9530,25 +11703,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "ecs",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "ecs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9578,6 +11753,7 @@ pub mod update_capacity_provider_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the capacity provider to update.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9591,6 +11767,8 @@ pub mod update_capacity_provider_input {
             self.auto_scaling_group_provider = Some(input);
             self
         }
+        /// <p>An object representing the parameters to update for the Auto Scaling group capacity
+        /// provider.</p>
         pub fn set_auto_scaling_group_provider(
             mut self,
             input: std::option::Option<crate::model::AutoScalingGroupProviderUpdate>,
@@ -9603,7 +11781,7 @@ pub mod update_capacity_provider_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateCapacityProviderInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateCapacityProviderInput {
                 name: self.name,
@@ -9623,16 +11801,16 @@ impl UpdateCapacityProviderInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateCapacityProvider,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateCapacityProviderInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9640,7 +11818,7 @@ impl UpdateCapacityProviderInput {
         fn update_http_builder(
             input: &crate::input::UpdateCapacityProviderInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9649,32 +11827,34 @@ impl UpdateCapacityProviderInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateCapacityProviderInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.UpdateCapacityProvider",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_capacity_provider(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9697,15 +11877,15 @@ impl UpdateCapacityProviderInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateCapacityProvider::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateCapacityProvider",
             "ecs",
         ));
@@ -9714,10 +11894,10 @@ impl UpdateCapacityProviderInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9747,16 +11927,23 @@ pub mod update_cluster_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The name of the cluster to modify the settings for.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
         }
+        /// Appends an item to `settings`.
+        ///
+        /// To override the contents of this collection use [`set_settings`](Self::set_settings).
+        ///
+        /// <p>The cluster settings for your cluster.</p>
         pub fn settings(mut self, input: impl Into<crate::model::ClusterSetting>) -> Self {
             let mut v = self.settings.unwrap_or_default();
             v.push(input.into());
             self.settings = Some(v);
             self
         }
+        /// <p>The cluster settings for your cluster.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ClusterSetting>>,
@@ -9769,6 +11956,7 @@ pub mod update_cluster_input {
             self.configuration = Some(input);
             self
         }
+        /// <p>The execute command configuration for the cluster.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ClusterConfiguration>,
@@ -9779,8 +11967,10 @@ pub mod update_cluster_input {
         /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::input::UpdateClusterInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateClusterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateClusterInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateClusterInput {
                 cluster: self.cluster,
                 settings: self.settings,
@@ -9800,16 +11990,16 @@ impl UpdateClusterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateCluster,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateClusterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9817,7 +12007,7 @@ impl UpdateClusterInput {
         fn update_http_builder(
             input: &crate::input::UpdateClusterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9826,29 +12016,31 @@ impl UpdateClusterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateClusterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.UpdateCluster",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_cluster(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9871,25 +12063,27 @@ impl UpdateClusterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateCluster::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateCluster",
-                    "ecs",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateCluster::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateCluster",
+            "ecs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9918,16 +12112,29 @@ pub mod update_cluster_settings_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The name of the cluster to modify the settings for.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
         }
+        /// Appends an item to `settings`.
+        ///
+        /// To override the contents of this collection use [`set_settings`](Self::set_settings).
+        ///
+        /// <p>The setting to use by default for a cluster. This parameter is used to enable CloudWatch
+        /// Container Insights for a cluster. If this value is specified, it will override the
+        /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
+        /// <a>PutAccountSettingDefault</a>.</p>
         pub fn settings(mut self, input: impl Into<crate::model::ClusterSetting>) -> Self {
             let mut v = self.settings.unwrap_or_default();
             v.push(input.into());
             self.settings = Some(v);
             self
         }
+        /// <p>The setting to use by default for a cluster. This parameter is used to enable CloudWatch
+        /// Container Insights for a cluster. If this value is specified, it will override the
+        /// <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
+        /// <a>PutAccountSettingDefault</a>.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ClusterSetting>>,
@@ -9940,7 +12147,7 @@ pub mod update_cluster_settings_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateClusterSettingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateClusterSettingsInput {
                 cluster: self.cluster,
@@ -9960,16 +12167,16 @@ impl UpdateClusterSettingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateClusterSettings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateClusterSettingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9977,7 +12184,7 @@ impl UpdateClusterSettingsInput {
         fn update_http_builder(
             input: &crate::input::UpdateClusterSettingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9986,32 +12193,34 @@ impl UpdateClusterSettingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateClusterSettingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.UpdateClusterSettings",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_cluster_settings(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10034,15 +12243,15 @@ impl UpdateClusterSettingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateClusterSettings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateClusterSettings",
             "ecs",
         ));
@@ -10051,10 +12260,10 @@ impl UpdateClusterSettingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10084,6 +12293,8 @@ pub mod update_container_agent_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is
+        /// running on. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -10094,6 +12305,8 @@ pub mod update_container_agent_input {
             self.container_instance = Some(input.into());
             self
         }
+        /// <p>The container instance ID or full ARN entries for the container instance on which
+        /// you would like to update the Amazon ECS container agent.</p>
         pub fn set_container_instance(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10106,7 +12319,7 @@ pub mod update_container_agent_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateContainerAgentInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateContainerAgentInput {
                 cluster: self.cluster,
@@ -10126,16 +12339,16 @@ impl UpdateContainerAgentInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateContainerAgent,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateContainerAgentInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10143,7 +12356,7 @@ impl UpdateContainerAgentInput {
         fn update_http_builder(
             input: &crate::input::UpdateContainerAgentInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10152,32 +12365,32 @@ impl UpdateContainerAgentInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateContainerAgentInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.UpdateContainerAgent",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_container_agent(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10200,15 +12413,15 @@ impl UpdateContainerAgentInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateContainerAgent::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateContainerAgent",
             "ecs",
         ));
@@ -10217,10 +12430,10 @@ impl UpdateContainerAgentInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10251,16 +12464,24 @@ pub mod update_container_instances_state_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to
+        /// update. If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
         }
+        /// Appends an item to `container_instances`.
+        ///
+        /// To override the contents of this collection use [`set_container_instances`](Self::set_container_instances).
+        ///
+        /// <p>A list of container instance IDs or full ARN entries.</p>
         pub fn container_instances(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.container_instances.unwrap_or_default();
             v.push(input.into());
             self.container_instances = Some(v);
             self
         }
+        /// <p>A list of container instance IDs or full ARN entries.</p>
         pub fn set_container_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10279,6 +12500,13 @@ pub mod update_container_instances_state_input {
             self.status = Some(input);
             self
         }
+        /// <p>The container instance state with which to update the container instance. The only
+        /// valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A
+        /// container instance can only be updated to <code>DRAINING</code> status once it has
+        /// reached an <code>ACTIVE</code> state. If a container instance is in
+        /// <code>REGISTERING</code>, <code>DEREGISTERING</code>, or
+        /// <code>REGISTRATION_FAILED</code> state you can describe the container instance but
+        /// will be unable to update the container instance state.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ContainerInstanceStatus>,
@@ -10291,7 +12519,7 @@ pub mod update_container_instances_state_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateContainerInstancesStateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateContainerInstancesStateInput {
                 cluster: self.cluster,
@@ -10313,16 +12541,16 @@ impl UpdateContainerInstancesStateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateContainerInstancesState,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateContainerInstancesStateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10330,7 +12558,7 @@ impl UpdateContainerInstancesStateInput {
         fn update_http_builder(
             input: &crate::input::UpdateContainerInstancesStateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10339,30 +12567,30 @@ impl UpdateContainerInstancesStateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateContainerInstancesStateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.UpdateContainerInstancesState",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_container_instances_state(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_container_instances_state(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10385,15 +12613,15 @@ impl UpdateContainerInstancesStateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateContainerInstancesState::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateContainerInstancesState",
             "ecs",
         ));
@@ -10402,10 +12630,10 @@ impl UpdateContainerInstancesStateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10450,6 +12678,8 @@ pub mod update_service_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your service is running on.
+        /// If you do not specify a cluster, the default cluster is assumed.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -10459,6 +12689,7 @@ pub mod update_service_input {
             self.service = Some(input.into());
             self
         }
+        /// <p>The name of the service to update.</p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service = input;
             self
@@ -10469,6 +12700,8 @@ pub mod update_service_input {
             self.desired_count = Some(input);
             self
         }
+        /// <p>The number of instantiations of the task to place and keep running in your
+        /// service.</p>
         pub fn set_desired_count(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_count = input;
             self
@@ -10482,6 +12715,11 @@ pub mod update_service_input {
             self.task_definition = Some(input.into());
             self
         }
+        /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
+        /// full ARN of the task definition to run in your service. If a <code>revision</code> is
+        /// not specified, the latest <code>ACTIVE</code> revision is used. If you modify the task
+        /// definition with <code>UpdateService</code>, Amazon ECS spawns a task with the new version of
+        /// the task definition and then stops an old task after the new version is running.</p>
         pub fn set_task_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10489,6 +12727,31 @@ pub mod update_service_input {
             self.task_definition = input;
             self
         }
+        /// Appends an item to `capacity_provider_strategy`.
+        ///
+        /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
+        ///
+        /// <p>The capacity provider strategy to update the service to use.</p>
+        /// <p>If the service is using the default capacity provider strategy for the cluster, the
+        /// service can be updated to use one or more capacity providers as opposed to the default
+        /// capacity provider strategy. However, when a service is using a capacity provider
+        /// strategy that is not the default capacity provider strategy, the service cannot be
+        /// updated to use the cluster's default capacity provider strategy.</p>
+        /// <p>A capacity provider strategy consists of one or more capacity providers along with the
+        /// <code>base</code> and <code>weight</code> to assign to them. A capacity provider
+        /// must be associated with the cluster to be used in a capacity provider strategy. The
+        /// <a>PutClusterCapacityProviders</a> API is used to associate a capacity
+        /// provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
+        /// <code>UPDATING</code> status can be used.</p>
+        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
+        /// provider must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
+        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
+        /// available to all accounts and only need to be associated with a cluster to be
+        /// used.</p>
+        /// <p>The <a>PutClusterCapacityProviders</a> API operation is used to update the
+        /// list of available capacity providers for a cluster after the cluster is created.</p>
+        /// <p></p>
         pub fn capacity_provider_strategy(
             mut self,
             input: impl Into<crate::model::CapacityProviderStrategyItem>,
@@ -10498,6 +12761,27 @@ pub mod update_service_input {
             self.capacity_provider_strategy = Some(v);
             self
         }
+        /// <p>The capacity provider strategy to update the service to use.</p>
+        /// <p>If the service is using the default capacity provider strategy for the cluster, the
+        /// service can be updated to use one or more capacity providers as opposed to the default
+        /// capacity provider strategy. However, when a service is using a capacity provider
+        /// strategy that is not the default capacity provider strategy, the service cannot be
+        /// updated to use the cluster's default capacity provider strategy.</p>
+        /// <p>A capacity provider strategy consists of one or more capacity providers along with the
+        /// <code>base</code> and <code>weight</code> to assign to them. A capacity provider
+        /// must be associated with the cluster to be used in a capacity provider strategy. The
+        /// <a>PutClusterCapacityProviders</a> API is used to associate a capacity
+        /// provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
+        /// <code>UPDATING</code> status can be used.</p>
+        /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity
+        /// provider must already be created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.</p>
+        /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or
+        /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
+        /// available to all accounts and only need to be associated with a cluster to be
+        /// used.</p>
+        /// <p>The <a>PutClusterCapacityProviders</a> API operation is used to update the
+        /// list of available capacity providers for a cluster after the cluster is created.</p>
+        /// <p></p>
         pub fn set_capacity_provider_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
@@ -10514,6 +12798,8 @@ pub mod update_service_input {
             self.deployment_configuration = Some(input);
             self
         }
+        /// <p>Optional deployment parameters that control how many tasks run during the deployment
+        /// and the ordering of stopping and starting tasks.</p>
         pub fn set_deployment_configuration(
             mut self,
             input: std::option::Option<crate::model::DeploymentConfiguration>,
@@ -10526,6 +12812,7 @@ pub mod update_service_input {
             self.network_configuration = Some(input);
             self
         }
+        /// <p>An object representing the network configuration for the service.</p>
         pub fn set_network_configuration(
             mut self,
             input: std::option::Option<crate::model::NetworkConfiguration>,
@@ -10533,6 +12820,17 @@ pub mod update_service_input {
             self.network_configuration = input;
             self
         }
+        /// Appends an item to `placement_constraints`.
+        ///
+        /// To override the contents of this collection use [`set_placement_constraints`](Self::set_placement_constraints).
+        ///
+        /// <p>An array of task placement constraint objects to update the service to use. If no
+        /// value is specified, the existing placement constraints for the service will remain
+        /// unchanged. If this value is specified, it will override any existing placement
+        /// constraints defined for the service. To remove all existing placement constraints,
+        /// specify an empty array.</p>
+        /// <p>You can specify a maximum of 10 constraints per task (this limit includes constraints
+        /// in the task definition and those specified at runtime).</p>
         pub fn placement_constraints(
             mut self,
             input: impl Into<crate::model::PlacementConstraint>,
@@ -10542,6 +12840,13 @@ pub mod update_service_input {
             self.placement_constraints = Some(v);
             self
         }
+        /// <p>An array of task placement constraint objects to update the service to use. If no
+        /// value is specified, the existing placement constraints for the service will remain
+        /// unchanged. If this value is specified, it will override any existing placement
+        /// constraints defined for the service. To remove all existing placement constraints,
+        /// specify an empty array.</p>
+        /// <p>You can specify a maximum of 10 constraints per task (this limit includes constraints
+        /// in the task definition and those specified at runtime).</p>
         pub fn set_placement_constraints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
@@ -10549,6 +12854,15 @@ pub mod update_service_input {
             self.placement_constraints = input;
             self
         }
+        /// Appends an item to `placement_strategy`.
+        ///
+        /// To override the contents of this collection use [`set_placement_strategy`](Self::set_placement_strategy).
+        ///
+        /// <p>The task placement strategy objects to update the service to use. If no value is
+        /// specified, the existing placement strategy for the service will remain unchanged. If
+        /// this value is specified, it will override the existing placement strategy defined for
+        /// the service. To remove an existing placement strategy, specify an empty object.</p>
+        /// <p>You can specify a maximum of five strategy rules per service.</p>
         pub fn placement_strategy(
             mut self,
             input: impl Into<crate::model::PlacementStrategy>,
@@ -10558,6 +12872,11 @@ pub mod update_service_input {
             self.placement_strategy = Some(v);
             self
         }
+        /// <p>The task placement strategy objects to update the service to use. If no value is
+        /// specified, the existing placement strategy for the service will remain unchanged. If
+        /// this value is specified, it will override the existing placement strategy defined for
+        /// the service. To remove an existing placement strategy, specify an empty object.</p>
+        /// <p>You can specify a maximum of five strategy rules per service.</p>
         pub fn set_placement_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
@@ -10574,6 +12893,11 @@ pub mod update_service_input {
             self.platform_version = Some(input.into());
             self
         }
+        /// <p>The platform version on which your tasks in the service are running. A platform
+        /// version is only specified for tasks using the Fargate launch type. If a
+        /// platform version is not specified, the <code>LATEST</code> platform version is used by
+        /// default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
+        /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_platform_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10590,6 +12914,11 @@ pub mod update_service_input {
             self.force_new_deployment = Some(input);
             self
         }
+        /// <p>Whether to force a new deployment of the service. Deployments are not forced by
+        /// default. You can use this option to trigger a new deployment with no service definition
+        /// changes. For example, you can update a service's tasks to use a newer Docker image with
+        /// the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate tasks
+        /// onto a newer platform version.</p>
         pub fn set_force_new_deployment(mut self, input: std::option::Option<bool>) -> Self {
             self.force_new_deployment = input;
             self
@@ -10606,6 +12935,14 @@ pub mod update_service_input {
             self.health_check_grace_period_seconds = Some(input);
             self
         }
+        /// <p>The period of time, in seconds, that the Amazon ECS service scheduler should ignore
+        /// unhealthy Elastic Load Balancing target health checks after a task has first started. This is only valid
+        /// if your service is configured to use a load balancer. If your service's tasks take a
+        /// while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace
+        /// period of up to 2,147,483,647 seconds. During that time, the Amazon ECS service
+        /// scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS
+        /// service scheduler from marking tasks as unhealthy and stopping them before they have
+        /// time to come up.</p>
         pub fn set_health_check_grace_period_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -10621,6 +12958,10 @@ pub mod update_service_input {
             self.enable_execute_command = Some(input);
             self
         }
+        /// <p>If <code>true</code>, this enables execute command functionality on all task
+        /// containers.</p>
+        /// <p>If you do not want to override the value that was set when the service was created,
+        /// you can set this to <code>null</code> when performing this action.</p>
         pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_execute_command = input;
             self
@@ -10628,8 +12969,10 @@ pub mod update_service_input {
         /// Consumes the builder and constructs a [`UpdateServiceInput`](crate::input::UpdateServiceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateServiceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateServiceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateServiceInput {
                 cluster: self.cluster,
                 service: self.service,
@@ -10659,16 +13002,16 @@ impl UpdateServiceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateService,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateServiceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10676,7 +13019,7 @@ impl UpdateServiceInput {
         fn update_http_builder(
             input: &crate::input::UpdateServiceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10685,29 +13028,31 @@ impl UpdateServiceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateServiceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.UpdateService",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_service(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10730,25 +13075,27 @@ impl UpdateServiceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateService::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateService",
-                    "ecs",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateService::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateService",
+            "ecs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10779,6 +13126,8 @@ pub mod update_service_primary_task_set_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
+        /// set exists in.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -10788,6 +13137,7 @@ pub mod update_service_primary_task_set_input {
             self.service = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.</p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service = input;
             self
@@ -10798,6 +13148,8 @@ pub mod update_service_primary_task_set_input {
             self.primary_task_set = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the task set to set as the primary task set in the
+        /// deployment.</p>
         pub fn set_primary_task_set(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10810,7 +13162,7 @@ pub mod update_service_primary_task_set_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateServicePrimaryTaskSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateServicePrimaryTaskSetInput {
                 cluster: self.cluster,
@@ -10832,16 +13184,16 @@ impl UpdateServicePrimaryTaskSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateServicePrimaryTaskSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateServicePrimaryTaskSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10849,7 +13201,7 @@ impl UpdateServicePrimaryTaskSetInput {
         fn update_http_builder(
             input: &crate::input::UpdateServicePrimaryTaskSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10858,30 +13210,30 @@ impl UpdateServicePrimaryTaskSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateServicePrimaryTaskSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.UpdateServicePrimaryTaskSet",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_service_primary_task_set(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_service_primary_task_set(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10904,15 +13256,15 @@ impl UpdateServicePrimaryTaskSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateServicePrimaryTaskSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateServicePrimaryTaskSet",
             "ecs",
         ));
@@ -10921,10 +13273,10 @@ impl UpdateServicePrimaryTaskSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10956,6 +13308,8 @@ pub mod update_task_set_input {
             self.cluster = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task
+        /// set exists in.</p>
         pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster = input;
             self
@@ -10965,6 +13319,7 @@ pub mod update_task_set_input {
             self.service = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.</p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service = input;
             self
@@ -10974,6 +13329,7 @@ pub mod update_task_set_input {
             self.task_set = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the task set to update.</p>
         pub fn set_task_set(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_set = input;
             self
@@ -10984,6 +13340,8 @@ pub mod update_task_set_input {
             self.scale = Some(input);
             self
         }
+        /// <p>A floating-point percentage of the desired number of tasks to place and keep running
+        /// in the task set.</p>
         pub fn set_scale(mut self, input: std::option::Option<crate::model::Scale>) -> Self {
             self.scale = input;
             self
@@ -10991,8 +13349,10 @@ pub mod update_task_set_input {
         /// Consumes the builder and constructs a [`UpdateTaskSetInput`](crate::input::UpdateTaskSetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateTaskSetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateTaskSetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateTaskSetInput {
                 cluster: self.cluster,
                 service: self.service,
@@ -11013,16 +13373,16 @@ impl UpdateTaskSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateTaskSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateTaskSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11030,7 +13390,7 @@ impl UpdateTaskSetInput {
         fn update_http_builder(
             input: &crate::input::UpdateTaskSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11039,29 +13399,31 @@ impl UpdateTaskSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateTaskSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonEC2ContainerServiceV20141113.UpdateTaskSet",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_task_set(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11084,25 +13446,27 @@ impl UpdateTaskSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateTaskSet::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateTaskSet",
-                    "ecs",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateTaskSet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateTaskSet",
+            "ecs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11116,6 +13480,7 @@ impl UpdateTaskSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTaskSetInput {
@@ -11141,6 +13506,7 @@ impl std::fmt::Debug for UpdateTaskSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServicePrimaryTaskSetInput {
@@ -11163,6 +13529,7 @@ impl std::fmt::Debug for UpdateServicePrimaryTaskSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceInput {
@@ -11276,6 +13643,7 @@ impl std::fmt::Debug for UpdateServiceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContainerInstancesStateInput {
@@ -11303,6 +13671,7 @@ impl std::fmt::Debug for UpdateContainerInstancesStateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContainerAgentInput {
@@ -11322,6 +13691,7 @@ impl std::fmt::Debug for UpdateContainerAgentInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateClusterSettingsInput {
@@ -11342,6 +13712,7 @@ impl std::fmt::Debug for UpdateClusterSettingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateClusterInput {
@@ -11362,6 +13733,7 @@ impl std::fmt::Debug for UpdateClusterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCapacityProviderInput {
@@ -11384,6 +13756,7 @@ impl std::fmt::Debug for UpdateCapacityProviderInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -11403,6 +13776,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -11453,6 +13827,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubmitTaskStateChangeInput {
@@ -11471,11 +13846,11 @@ pub struct SubmitTaskStateChangeInput {
     /// <p>The details for the managed agent associated with the task.</p>
     pub managed_agents: std::option::Option<std::vec::Vec<crate::model::ManagedAgentStateChange>>,
     /// <p>The Unix timestamp for when the container image pull began.</p>
-    pub pull_started_at: std::option::Option<smithy_types::Instant>,
+    pub pull_started_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Unix timestamp for when the container image pull completed.</p>
-    pub pull_stopped_at: std::option::Option<smithy_types::Instant>,
+    pub pull_stopped_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Unix timestamp for when the task execution stopped.</p>
-    pub execution_stopped_at: std::option::Option<smithy_types::Instant>,
+    pub execution_stopped_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for SubmitTaskStateChangeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11494,6 +13869,7 @@ impl std::fmt::Debug for SubmitTaskStateChangeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubmitContainerStateChangeInput {
@@ -11529,6 +13905,7 @@ impl std::fmt::Debug for SubmitContainerStateChangeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubmitAttachmentStateChangesInput {
@@ -11547,6 +13924,7 @@ impl std::fmt::Debug for SubmitAttachmentStateChangesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopTaskInput {
@@ -11571,6 +13949,7 @@ impl std::fmt::Debug for StopTaskInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTaskInput {
@@ -11677,6 +14056,7 @@ impl std::fmt::Debug for StartTaskInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunTaskInput {
@@ -11843,6 +14223,7 @@ impl std::fmt::Debug for RunTaskInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterTaskDefinitionInput {
@@ -12099,6 +14480,7 @@ impl std::fmt::Debug for RegisterTaskDefinitionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterContainerInstanceInput {
@@ -12185,6 +14567,7 @@ impl std::fmt::Debug for RegisterContainerInstanceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutClusterCapacityProvidersInput {
@@ -12231,6 +14614,7 @@ impl std::fmt::Debug for PutClusterCapacityProvidersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAttributesInput {
@@ -12250,6 +14634,7 @@ impl std::fmt::Debug for PutAttributesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccountSettingDefaultInput {
@@ -12275,6 +14660,7 @@ impl std::fmt::Debug for PutAccountSettingDefaultInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccountSettingInput {
@@ -12312,6 +14698,7 @@ impl std::fmt::Debug for PutAccountSettingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTasksInput {
@@ -12385,6 +14772,7 @@ impl std::fmt::Debug for ListTasksInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTaskDefinitionsInput {
@@ -12438,6 +14826,7 @@ impl std::fmt::Debug for ListTaskDefinitionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTaskDefinitionFamiliesInput {
@@ -12489,6 +14878,7 @@ impl std::fmt::Debug for ListTaskDefinitionFamiliesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -12505,6 +14895,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicesInput {
@@ -12548,6 +14939,7 @@ impl std::fmt::Debug for ListServicesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContainerInstancesInput {
@@ -12596,6 +14988,7 @@ impl std::fmt::Debug for ListContainerInstancesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersInput {
@@ -12627,6 +15020,7 @@ impl std::fmt::Debug for ListClustersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAttributesInput {
@@ -12672,6 +15066,7 @@ impl std::fmt::Debug for ListAttributesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountSettingsInput {
@@ -12727,6 +15122,7 @@ impl std::fmt::Debug for ListAccountSettingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteCommandInput {
@@ -12755,6 +15151,7 @@ impl std::fmt::Debug for ExecuteCommandInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DiscoverPollEndpointInput {
@@ -12774,6 +15171,7 @@ impl std::fmt::Debug for DiscoverPollEndpointInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTaskSetsInput {
@@ -12801,6 +15199,7 @@ impl std::fmt::Debug for DescribeTaskSetsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTasksInput {
@@ -12825,6 +15224,7 @@ impl std::fmt::Debug for DescribeTasksInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTaskDefinitionInput {
@@ -12847,6 +15247,7 @@ impl std::fmt::Debug for DescribeTaskDefinitionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServicesInput {
@@ -12872,6 +15273,7 @@ impl std::fmt::Debug for DescribeServicesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContainerInstancesInput {
@@ -12897,6 +15299,7 @@ impl std::fmt::Debug for DescribeContainerInstancesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClustersInput {
@@ -12926,6 +15329,7 @@ impl std::fmt::Debug for DescribeClustersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCapacityProvidersInput {
@@ -12969,6 +15373,7 @@ impl std::fmt::Debug for DescribeCapacityProvidersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterTaskDefinitionInput {
@@ -12985,6 +15390,7 @@ impl std::fmt::Debug for DeregisterTaskDefinitionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterContainerInstanceInput {
@@ -13016,6 +15422,7 @@ impl std::fmt::Debug for DeregisterContainerInstanceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTaskSetInput {
@@ -13042,6 +15449,7 @@ impl std::fmt::Debug for DeleteTaskSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServiceInput {
@@ -13065,6 +15473,7 @@ impl std::fmt::Debug for DeleteServiceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClusterInput {
@@ -13079,6 +15488,7 @@ impl std::fmt::Debug for DeleteClusterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCapacityProviderInput {
@@ -13093,6 +15503,7 @@ impl std::fmt::Debug for DeleteCapacityProviderInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAttributesInput {
@@ -13114,6 +15525,7 @@ impl std::fmt::Debug for DeleteAttributesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccountSettingInput {
@@ -13141,6 +15553,7 @@ impl std::fmt::Debug for DeleteAccountSettingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTaskSetInput {
@@ -13260,6 +15673,7 @@ impl std::fmt::Debug for CreateTaskSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceInput {
@@ -13529,6 +15943,7 @@ impl std::fmt::Debug for CreateServiceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterInput {
@@ -13617,6 +16032,7 @@ impl std::fmt::Debug for CreateClusterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCapacityProviderInput {

@@ -38,6 +38,7 @@ pub mod upload_metadata {
             self.url = Some(input.into());
             self
         }
+        /// <p>The pre-signed URL using which file would be downloaded from Amazon S3 by the API caller.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -47,10 +48,16 @@ pub mod upload_metadata {
             self.url_expiry = Some(input.into());
             self
         }
+        /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
         pub fn set_url_expiry(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url_expiry = input;
             self
         }
+        /// Adds a key-value pair to `headers_to_include`.
+        ///
+        /// To override the contents of this collection use [`set_headers_to_include`](Self::set_headers_to_include).
+        ///
+        /// <p>The headers to be provided while uploading the file to the URL.</p>
         pub fn headers_to_include(
             mut self,
             k: impl Into<std::string::String>,
@@ -61,6 +68,7 @@ pub mod upload_metadata {
             self.headers_to_include = Some(hash_map);
             self
         }
+        /// <p>The headers to be provided while uploading the file to the URL.</p>
         pub fn set_headers_to_include(
             mut self,
             input: std::option::Option<
@@ -151,6 +159,9 @@ pub mod item {
             self.absolute_time = Some(input.into());
             self
         }
+        /// <p>The time when the message or event was sent.</p>
+        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
+        /// 2019-11-08T02:41:28.172Z.</p>
         pub fn set_absolute_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -163,6 +174,7 @@ pub mod item {
             self.content = Some(input.into());
             self
         }
+        /// <p>The content of the message or event.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -172,6 +184,7 @@ pub mod item {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The type of content of the item.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -181,6 +194,7 @@ pub mod item {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the item.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -190,6 +204,7 @@ pub mod item {
             self.r#type = Some(input);
             self
         }
+        /// <p>Type of the item: message or event. </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChatItemType>) -> Self {
             self.r#type = input;
             self
@@ -199,6 +214,7 @@ pub mod item {
             self.participant_id = Some(input.into());
             self
         }
+        /// <p>The ID of the sender in the session.</p>
         pub fn set_participant_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -211,6 +227,7 @@ pub mod item {
             self.display_name = Some(input.into());
             self
         }
+        /// <p>The chat display name of the sender.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -220,6 +237,7 @@ pub mod item {
             self.participant_role = Some(input);
             self
         }
+        /// <p>The role of the sender. For example, is it a customer, agent, or system.</p>
         pub fn set_participant_role(
             mut self,
             input: std::option::Option<crate::model::ParticipantRole>,
@@ -227,12 +245,18 @@ pub mod item {
             self.participant_role = input;
             self
         }
+        /// Appends an item to `attachments`.
+        ///
+        /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
+        ///
+        /// <p>Provides information about the attachments.</p>
         pub fn attachments(mut self, input: impl Into<crate::model::AttachmentItem>) -> Self {
             let mut v = self.attachments.unwrap_or_default();
             v.push(input.into());
             self.attachments = Some(v);
             self
         }
+        /// <p>Provides information about the attachments.</p>
         pub fn set_attachments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttachmentItem>>,
@@ -304,6 +328,7 @@ pub mod attachment_item {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -313,6 +338,7 @@ pub mod attachment_item {
             self.attachment_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the attachment.</p>
         pub fn set_attachment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -325,6 +351,7 @@ pub mod attachment_item {
             self.attachment_name = Some(input.into());
             self
         }
+        /// <p>A case-sensitive name of the attachment being uploaded.</p>
         pub fn set_attachment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -337,6 +364,7 @@ pub mod attachment_item {
             self.status = Some(input);
             self
         }
+        /// <p>Status of the attachment.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ArtifactStatus>,
@@ -362,6 +390,7 @@ impl AttachmentItem {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -373,8 +402,11 @@ impl AttachmentItem {
     std::hash::Hash,
 )]
 pub enum ArtifactStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Approved,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Rejected,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -397,6 +429,7 @@ impl std::str::FromStr for ArtifactStatus {
     }
 }
 impl ArtifactStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ArtifactStatus::Approved => "APPROVED",
@@ -405,6 +438,7 @@ impl ArtifactStatus {
             ArtifactStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["APPROVED", "IN_PROGRESS", "REJECTED"]
     }
@@ -415,6 +449,7 @@ impl AsRef<str> for ArtifactStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -426,8 +461,11 @@ impl AsRef<str> for ArtifactStatus {
     std::hash::Hash,
 )]
 pub enum ParticipantRole {
+    #[allow(missing_docs)] // documentation missing in model
     Agent,
+    #[allow(missing_docs)] // documentation missing in model
     Customer,
+    #[allow(missing_docs)] // documentation missing in model
     System,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -450,6 +488,7 @@ impl std::str::FromStr for ParticipantRole {
     }
 }
 impl ParticipantRole {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ParticipantRole::Agent => "AGENT",
@@ -458,6 +497,7 @@ impl ParticipantRole {
             ParticipantRole::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AGENT", "CUSTOMER", "SYSTEM"]
     }
@@ -468,6 +508,7 @@ impl AsRef<str> for ParticipantRole {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -479,15 +520,25 @@ impl AsRef<str> for ParticipantRole {
     std::hash::Hash,
 )]
 pub enum ChatItemType {
+    #[allow(missing_docs)] // documentation missing in model
     Attachment,
+    #[allow(missing_docs)] // documentation missing in model
     ChatEnded,
+    #[allow(missing_docs)] // documentation missing in model
     ConnectionAck,
+    #[allow(missing_docs)] // documentation missing in model
     Event,
+    #[allow(missing_docs)] // documentation missing in model
     Message,
+    #[allow(missing_docs)] // documentation missing in model
     ParticipantJoined,
+    #[allow(missing_docs)] // documentation missing in model
     ParticipantLeft,
+    #[allow(missing_docs)] // documentation missing in model
     TransferFailed,
+    #[allow(missing_docs)] // documentation missing in model
     TransferSucceeded,
+    #[allow(missing_docs)] // documentation missing in model
     Typing,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -517,6 +568,7 @@ impl std::str::FromStr for ChatItemType {
     }
 }
 impl ChatItemType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChatItemType::Attachment => "ATTACHMENT",
@@ -532,6 +584,7 @@ impl ChatItemType {
             ChatItemType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ATTACHMENT",
@@ -592,6 +645,7 @@ pub mod start_position {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the message or event where to start. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -603,6 +657,9 @@ pub mod start_position {
             self.absolute_time = Some(input.into());
             self
         }
+        /// <p>The time in ISO format where to start.</p>
+        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
+        /// 2019-11-08T02:41:28.172Z.</p>
         pub fn set_absolute_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -615,6 +672,7 @@ pub mod start_position {
             self.most_recent = Some(input);
             self
         }
+        /// <p>The start position of the most recent message where you want to start. </p>
         pub fn set_most_recent(mut self, input: std::option::Option<i32>) -> Self {
             self.most_recent = input;
             self
@@ -636,6 +694,7 @@ impl StartPosition {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -647,7 +706,9 @@ impl StartPosition {
     std::hash::Hash,
 )]
 pub enum SortKey {
+    #[allow(missing_docs)] // documentation missing in model
     Ascending,
+    #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -669,6 +730,7 @@ impl std::str::FromStr for SortKey {
     }
 }
 impl SortKey {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortKey::Ascending => "ASCENDING",
@@ -676,6 +738,7 @@ impl SortKey {
             SortKey::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
@@ -686,6 +749,7 @@ impl AsRef<str> for SortKey {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -697,7 +761,9 @@ impl AsRef<str> for SortKey {
     std::hash::Hash,
 )]
 pub enum ScanDirection {
+    #[allow(missing_docs)] // documentation missing in model
     Backward,
+    #[allow(missing_docs)] // documentation missing in model
     Forward,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -719,6 +785,7 @@ impl std::str::FromStr for ScanDirection {
     }
 }
 impl ScanDirection {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScanDirection::Backward => "BACKWARD",
@@ -726,6 +793,7 @@ impl ScanDirection {
             ScanDirection::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BACKWARD", "FORWARD"]
     }
@@ -770,6 +838,7 @@ pub mod connection_credentials {
             self.connection_token = Some(input.into());
             self
         }
+        /// <p>The connection token.</p>
         pub fn set_connection_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -784,6 +853,9 @@ pub mod connection_credentials {
             self.expiry = Some(input.into());
             self
         }
+        /// <p>The expiration of the token.</p>
+        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
+        /// 2019-11-08T02:41:28.172Z.</p>
         pub fn set_expiry(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expiry = input;
             self
@@ -838,6 +910,7 @@ pub mod websocket {
             self.url = Some(input.into());
             self
         }
+        /// <p>The URL of the websocket.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -849,6 +922,9 @@ pub mod websocket {
             self.connection_expiry = Some(input.into());
             self
         }
+        /// <p>The URL expiration timestamp in ISO date format.</p>
+        /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
+        /// 2019-11-08T02:41:28.172Z.</p>
         pub fn set_connection_expiry(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -872,6 +948,7 @@ impl Websocket {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -883,7 +960,9 @@ impl Websocket {
     std::hash::Hash,
 )]
 pub enum ConnectionType {
+    #[allow(missing_docs)] // documentation missing in model
     ConnectionCredentials,
+    #[allow(missing_docs)] // documentation missing in model
     Websocket,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -905,6 +984,7 @@ impl std::str::FromStr for ConnectionType {
     }
 }
 impl ConnectionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConnectionType::ConnectionCredentials => "CONNECTION_CREDENTIALS",
@@ -912,6 +992,7 @@ impl ConnectionType {
             ConnectionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONNECTION_CREDENTIALS", "WEBSOCKET"]
     }

@@ -27,6 +27,7 @@ pub mod update_webhook_output {
             self.webhook = Some(input);
             self
         }
+        /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
         pub fn set_webhook(mut self, input: std::option::Option<crate::model::Webhook>) -> Self {
             self.webhook = input;
             self
@@ -76,6 +77,8 @@ pub mod update_domain_association_output {
             self.domain_association = Some(input);
             self
         }
+        /// <p> Describes a domain association, which associates a custom domain with an Amplify app.
+        /// </p>
         pub fn set_domain_association(
             mut self,
             input: std::option::Option<crate::model::DomainAssociation>,
@@ -126,6 +129,7 @@ pub mod update_branch_output {
             self.branch = Some(input);
             self
         }
+        /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
         pub fn set_branch(mut self, input: std::option::Option<crate::model::Branch>) -> Self {
             self.branch = input;
             self
@@ -173,6 +177,7 @@ pub mod update_app_output {
             self.app = Some(input);
             self
         }
+        /// <p> Represents the updated Amplify app. </p>
         pub fn set_app(mut self, input: std::option::Option<crate::model::App>) -> Self {
             self.app = input;
             self
@@ -278,6 +283,7 @@ pub mod stop_job_output {
             self.job_summary = Some(input);
             self
         }
+        /// <p> The summary for the job. </p>
         pub fn set_job_summary(
             mut self,
             input: std::option::Option<crate::model::JobSummary>,
@@ -328,6 +334,7 @@ pub mod start_job_output {
             self.job_summary = Some(input);
             self
         }
+        /// <p> The summary for the job. </p>
         pub fn set_job_summary(
             mut self,
             input: std::option::Option<crate::model::JobSummary>,
@@ -378,6 +385,7 @@ pub mod start_deployment_output {
             self.job_summary = Some(input);
             self
         }
+        /// <p> The summary for the job. </p>
         pub fn set_job_summary(
             mut self,
             input: std::option::Option<crate::model::JobSummary>,
@@ -428,12 +436,18 @@ pub mod list_webhooks_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `webhooks`.
+        ///
+        /// To override the contents of this collection use [`set_webhooks`](Self::set_webhooks).
+        ///
+        /// <p> A list of webhooks. </p>
         pub fn webhooks(mut self, input: impl Into<crate::model::Webhook>) -> Self {
             let mut v = self.webhooks.unwrap_or_default();
             v.push(input.into());
             self.webhooks = Some(v);
             self
         }
+        /// <p> A list of webhooks. </p>
         pub fn set_webhooks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Webhook>>,
@@ -447,6 +461,8 @@ pub mod list_webhooks_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
+        /// its value in another request to retrieve more entries. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -493,6 +509,11 @@ pub mod list_tags_for_resource_output {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p> A list of tags for the specified The Amazon Resource Name (ARN). </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -503,6 +524,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p> A list of tags for the specified The Amazon Resource Name (ARN). </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -553,12 +575,18 @@ pub mod list_jobs_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `job_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_job_summaries`](Self::set_job_summaries).
+        ///
+        /// <p> The result structure for the list job result request. </p>
         pub fn job_summaries(mut self, input: impl Into<crate::model::JobSummary>) -> Self {
             let mut v = self.job_summaries.unwrap_or_default();
             v.push(input.into());
             self.job_summaries = Some(v);
             self
         }
+        /// <p> The result structure for the list job result request. </p>
         pub fn set_job_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
@@ -572,6 +600,8 @@ pub mod list_jobs_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass
+        /// its value in another request to retrieve more entries. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -621,6 +651,11 @@ pub mod list_domain_associations_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `domain_associations`.
+        ///
+        /// To override the contents of this collection use [`set_domain_associations`](Self::set_domain_associations).
+        ///
+        /// <p> A list of domain associations. </p>
         pub fn domain_associations(
             mut self,
             input: impl Into<crate::model::DomainAssociation>,
@@ -630,6 +665,7 @@ pub mod list_domain_associations_output {
             self.domain_associations = Some(v);
             self
         }
+        /// <p> A list of domain associations. </p>
         pub fn set_domain_associations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainAssociation>>,
@@ -643,6 +679,8 @@ pub mod list_domain_associations_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its
+        /// value in another request to retrieve more entries. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -691,12 +729,18 @@ pub mod list_branches_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `branches`.
+        ///
+        /// To override the contents of this collection use [`set_branches`](Self::set_branches).
+        ///
+        /// <p> A list of branches for an Amplify app. </p>
         pub fn branches(mut self, input: impl Into<crate::model::Branch>) -> Self {
             let mut v = self.branches.unwrap_or_default();
             v.push(input.into());
             self.branches = Some(v);
             self
         }
+        /// <p> A list of branches for an Amplify app. </p>
         pub fn set_branches(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Branch>>,
@@ -710,6 +754,8 @@ pub mod list_branches_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its
+        /// value in another request to retrieve more entries. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -759,6 +805,11 @@ pub mod list_backend_environments_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `backend_environments`.
+        ///
+        /// To override the contents of this collection use [`set_backend_environments`](Self::set_backend_environments).
+        ///
+        /// <p> The list of backend environments for an Amplify app. </p>
         pub fn backend_environments(
             mut self,
             input: impl Into<crate::model::BackendEnvironment>,
@@ -768,6 +819,7 @@ pub mod list_backend_environments_output {
             self.backend_environments = Some(v);
             self
         }
+        /// <p> The list of backend environments for an Amplify app. </p>
         pub fn set_backend_environments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BackendEnvironment>>,
@@ -781,6 +833,8 @@ pub mod list_backend_environments_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its
+        /// value in another request to retrieve more entries. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -829,12 +883,18 @@ pub mod list_artifacts_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `artifacts`.
+        ///
+        /// To override the contents of this collection use [`set_artifacts`](Self::set_artifacts).
+        ///
+        /// <p> A list of artifacts. </p>
         pub fn artifacts(mut self, input: impl Into<crate::model::Artifact>) -> Self {
             let mut v = self.artifacts.unwrap_or_default();
             v.push(input.into());
             self.artifacts = Some(v);
             self
         }
+        /// <p> A list of artifacts. </p>
         pub fn set_artifacts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Artifact>>,
@@ -848,6 +908,8 @@ pub mod list_artifacts_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its
+        /// value in another request to retrieve more entries. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -897,12 +959,18 @@ pub mod list_apps_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `apps`.
+        ///
+        /// To override the contents of this collection use [`set_apps`](Self::set_apps).
+        ///
+        /// <p> A list of Amplify apps. </p>
         pub fn apps(mut self, input: impl Into<crate::model::App>) -> Self {
             let mut v = self.apps.unwrap_or_default();
             v.push(input.into());
             self.apps = Some(v);
             self
         }
+        /// <p> A list of Amplify apps. </p>
         pub fn set_apps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::App>>,
@@ -917,6 +985,9 @@ pub mod list_apps_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p> A pagination token. Set to null to start listing apps from start. If non-null, the
+        /// pagination token is returned in a result. Pass its value in here to list more projects.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -965,6 +1036,7 @@ pub mod get_webhook_output {
             self.webhook = Some(input);
             self
         }
+        /// <p> Describes the structure of a webhook. </p>
         pub fn set_webhook(mut self, input: std::option::Option<crate::model::Webhook>) -> Self {
             self.webhook = input;
             self
@@ -984,6 +1056,7 @@ impl GetWebhookOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobOutput {
@@ -1011,6 +1084,7 @@ pub mod get_job_output {
             self.job = Some(input);
             self
         }
+        /// <p> Describes an execution job for an Amplify app. </p>
         pub fn set_job(mut self, input: std::option::Option<crate::model::Job>) -> Self {
             self.job = input;
             self
@@ -1058,6 +1132,8 @@ pub mod get_domain_association_output {
             self.domain_association = Some(input);
             self
         }
+        /// <p> Describes the structure of a domain association, which associates a custom domain
+        /// with an Amplify app. </p>
         pub fn set_domain_association(
             mut self,
             input: std::option::Option<crate::model::DomainAssociation>,
@@ -1080,6 +1156,7 @@ impl GetDomainAssociationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBranchOutput {
@@ -1107,6 +1184,7 @@ pub mod get_branch_output {
             self.branch = Some(input);
             self
         }
+        /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
         pub fn set_branch(mut self, input: std::option::Option<crate::model::Branch>) -> Self {
             self.branch = input;
             self
@@ -1154,6 +1232,7 @@ pub mod get_backend_environment_output {
             self.backend_environment = Some(input);
             self
         }
+        /// <p> Describes the backend environment for an Amplify app. </p>
         pub fn set_backend_environment(
             mut self,
             input: std::option::Option<crate::model::BackendEnvironment>,
@@ -1208,6 +1287,7 @@ pub mod get_artifact_url_output {
             self.artifact_id = Some(input.into());
             self
         }
+        /// <p> The unique ID for an artifact. </p>
         pub fn set_artifact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.artifact_id = input;
             self
@@ -1217,6 +1297,7 @@ pub mod get_artifact_url_output {
             self.artifact_url = Some(input.into());
             self
         }
+        /// <p> The presigned URL for the artifact. </p>
         pub fn set_artifact_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.artifact_url = input;
             self
@@ -1237,6 +1318,7 @@ impl GetArtifactUrlOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppOutput {
@@ -1266,6 +1348,8 @@ pub mod get_app_output {
             self.app = Some(input);
             self
         }
+        /// <p> Represents the different branches of a repository for building, deploying, and
+        /// hosting an Amplify app. </p>
         pub fn set_app(mut self, input: std::option::Option<crate::model::App>) -> Self {
             self.app = input;
             self
@@ -1311,6 +1395,7 @@ pub mod generate_access_logs_output {
             self.log_url = Some(input.into());
             self
         }
+        /// <p> The pre-signed URL for the requested access logs. </p>
         pub fn set_log_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_url = input;
             self
@@ -1358,6 +1443,7 @@ pub mod delete_webhook_output {
             self.webhook = Some(input);
             self
         }
+        /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
         pub fn set_webhook(mut self, input: std::option::Option<crate::model::Webhook>) -> Self {
             self.webhook = input;
             self
@@ -1405,6 +1491,7 @@ pub mod delete_job_output {
             self.job_summary = Some(input);
             self
         }
+        /// <p> Describes the summary for an execution job for an Amplify app. </p>
         pub fn set_job_summary(
             mut self,
             input: std::option::Option<crate::model::JobSummary>,
@@ -1427,6 +1514,7 @@ impl DeleteJobOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainAssociationOutput {
@@ -1456,6 +1544,8 @@ pub mod delete_domain_association_output {
             self.domain_association = Some(input);
             self
         }
+        /// <p> Describes a domain association that associates a custom domain with an Amplify app.
+        /// </p>
         pub fn set_domain_association(
             mut self,
             input: std::option::Option<crate::model::DomainAssociation>,
@@ -1506,6 +1596,7 @@ pub mod delete_branch_output {
             self.branch = Some(input);
             self
         }
+        /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
         pub fn set_branch(mut self, input: std::option::Option<crate::model::Branch>) -> Self {
             self.branch = input;
             self
@@ -1553,6 +1644,7 @@ pub mod delete_backend_environment_output {
             self.backend_environment = Some(input);
             self
         }
+        /// <p> Describes the backend environment for an Amplify app. </p>
         pub fn set_backend_environment(
             mut self,
             input: std::option::Option<crate::model::BackendEnvironment>,
@@ -1605,6 +1697,8 @@ pub mod delete_app_output {
             self.app = Some(input);
             self
         }
+        /// <p> Represents the different branches of a repository for building, deploying, and
+        /// hosting an Amplify app. </p>
         pub fn set_app(mut self, input: std::option::Option<crate::model::App>) -> Self {
             self.app = input;
             self
@@ -1650,6 +1744,7 @@ pub mod create_webhook_output {
             self.webhook = Some(input);
             self
         }
+        /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
         pub fn set_webhook(mut self, input: std::option::Option<crate::model::Webhook>) -> Self {
             self.webhook = input;
             self
@@ -1699,6 +1794,8 @@ pub mod create_domain_association_output {
             self.domain_association = Some(input);
             self
         }
+        /// <p> Describes the structure of a domain association, which associates a custom domain
+        /// with an Amplify app. </p>
         pub fn set_domain_association(
             mut self,
             input: std::option::Option<crate::model::DomainAssociation>,
@@ -1762,10 +1859,17 @@ pub mod create_deployment_output {
             self.job_id = Some(input.into());
             self
         }
+        /// <p> The job ID for this deployment. will supply to start deployment api. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
         }
+        /// Adds a key-value pair to `file_upload_urls`.
+        ///
+        /// To override the contents of this collection use [`set_file_upload_urls`](Self::set_file_upload_urls).
+        ///
+        /// <p> When the <code>fileMap</code> argument is provided in the request,
+        /// <code>fileUploadUrls</code> will contain a map of file names to upload URLs. </p>
         pub fn file_upload_urls(
             mut self,
             k: impl Into<std::string::String>,
@@ -1776,6 +1880,8 @@ pub mod create_deployment_output {
             self.file_upload_urls = Some(hash_map);
             self
         }
+        /// <p> When the <code>fileMap</code> argument is provided in the request,
+        /// <code>fileUploadUrls</code> will contain a map of file names to upload URLs. </p>
         pub fn set_file_upload_urls(
             mut self,
             input: std::option::Option<
@@ -1791,6 +1897,8 @@ pub mod create_deployment_output {
             self.zip_upload_url = Some(input.into());
             self
         }
+        /// <p> When the <code>fileMap</code> argument is not provided in the request, this
+        /// <code>zipUploadUrl</code> is returned. </p>
         pub fn set_zip_upload_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1845,6 +1953,8 @@ pub mod create_branch_output {
             self.branch = Some(input);
             self
         }
+        /// <p> Describes the branch for an Amplify app, which maps to a third-party repository
+        /// branch. </p>
         pub fn set_branch(mut self, input: std::option::Option<crate::model::Branch>) -> Self {
             self.branch = input;
             self
@@ -1892,6 +2002,7 @@ pub mod create_backend_environment_output {
             self.backend_environment = Some(input);
             self
         }
+        /// <p> Describes the backend environment for an Amplify app. </p>
         pub fn set_backend_environment(
             mut self,
             input: std::option::Option<crate::model::BackendEnvironment>,
@@ -1914,6 +2025,7 @@ impl CreateBackendEnvironmentOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppOutput {
@@ -1943,6 +2055,8 @@ pub mod create_app_output {
             self.app = Some(input);
             self
         }
+        /// <p> Represents the different branches of a repository for building, deploying, and
+        /// hosting an Amplify app. </p>
         pub fn set_app(mut self, input: std::option::Option<crate::model::App>) -> Self {
             self.app = input;
             self

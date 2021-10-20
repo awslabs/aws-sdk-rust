@@ -31,6 +31,7 @@ pub mod validation_exception_field {
             self.name = Some(input.into());
             self
         }
+        /// <p>The field name for which validation failed.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -40,6 +41,7 @@ pub mod validation_exception_field {
             self.message = Some(input.into());
             self
         }
+        /// <p>Description of the error.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -72,9 +74,13 @@ impl ValidationExceptionField {
     std::hash::Hash,
 )]
 pub enum ValidationExceptionReason {
+    #[allow(missing_docs)] // documentation missing in model
     CannotParse,
+    #[allow(missing_docs)] // documentation missing in model
     FieldValidationFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Other,
+    #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -98,6 +104,7 @@ impl std::str::FromStr for ValidationExceptionReason {
     }
 }
 impl ValidationExceptionReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ValidationExceptionReason::CannotParse => "CANNOT_PARSE",
@@ -107,6 +114,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
@@ -176,6 +184,7 @@ pub mod workload_share {
             self.share_id = Some(input.into());
             self
         }
+        /// <p>The ID associated with the workload share.</p>
         pub fn set_share_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.share_id = input;
             self
@@ -185,6 +194,7 @@ pub mod workload_share {
             self.shared_by = Some(input.into());
             self
         }
+        /// <p>An AWS account ID.</p>
         pub fn set_shared_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shared_by = input;
             self
@@ -194,6 +204,7 @@ pub mod workload_share {
             self.shared_with = Some(input.into());
             self
         }
+        /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
         pub fn set_shared_with(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shared_with = input;
             self
@@ -203,6 +214,7 @@ pub mod workload_share {
             self.permission_type = Some(input);
             self
         }
+        /// <p>Permission granted on a workload share.</p>
         pub fn set_permission_type(
             mut self,
             input: std::option::Option<crate::model::PermissionType>,
@@ -215,6 +227,7 @@ pub mod workload_share {
             self.status = Some(input);
             self
         }
+        /// <p>The status of a workload share.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::ShareStatus>) -> Self {
             self.status = input;
             self
@@ -226,6 +239,9 @@ pub mod workload_share {
             self.workload_name = Some(input.into());
             self
         }
+        /// <p>The name of the workload.</p>
+        /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+        /// are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -238,6 +254,7 @@ pub mod workload_share {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -275,10 +292,15 @@ impl WorkloadShare {
     std::hash::Hash,
 )]
 pub enum ShareStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Accepted,
+    #[allow(missing_docs)] // documentation missing in model
     Expired,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Rejected,
+    #[allow(missing_docs)] // documentation missing in model
     Revoked,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -303,6 +325,7 @@ impl std::str::FromStr for ShareStatus {
     }
 }
 impl ShareStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ShareStatus::Accepted => "ACCEPTED",
@@ -313,6 +336,7 @@ impl ShareStatus {
             ShareStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACCEPTED", "EXPIRED", "PENDING", "REJECTED", "REVOKED"]
     }
@@ -335,7 +359,9 @@ impl AsRef<str> for ShareStatus {
     std::hash::Hash,
 )]
 pub enum PermissionType {
+    #[allow(missing_docs)] // documentation missing in model
     Contributor,
+    #[allow(missing_docs)] // documentation missing in model
     Readonly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -357,6 +383,7 @@ impl std::str::FromStr for PermissionType {
     }
 }
 impl PermissionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PermissionType::Contributor => "CONTRIBUTOR",
@@ -364,6 +391,7 @@ impl PermissionType {
             PermissionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONTRIBUTOR", "READONLY"]
     }
@@ -391,7 +419,7 @@ pub struct Workload {
     /// <p>The environment for the workload.</p>
     pub environment: std::option::Option<crate::model::WorkloadEnvironment>,
     /// <p>The date and time recorded.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The list of AWS account IDs associated with the workload.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of AWS Regions associated with the workload, for example,
@@ -405,7 +433,7 @@ pub struct Workload {
     /// primary group or individual that owns the workload review process.</p>
     pub review_owner: std::option::Option<std::string::String>,
     /// <p>The date and time recorded.</p>
-    pub review_restriction_date: std::option::Option<smithy_types::Instant>,
+    pub review_restriction_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review
     /// owner</i> field is required.</p>
     /// <p>If a <b>Review owner</b> is not added to the workload within
@@ -616,13 +644,13 @@ pub mod workload {
         pub(crate) workload_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) environment: std::option::Option<crate::model::WorkloadEnvironment>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) non_aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) architectural_design: std::option::Option<std::string::String>,
         pub(crate) review_owner: std::option::Option<std::string::String>,
-        pub(crate) review_restriction_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) review_restriction_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) is_review_owner_update_acknowledged: std::option::Option<bool>,
         pub(crate) industry_type: std::option::Option<std::string::String>,
         pub(crate) industry: std::option::Option<std::string::String>,
@@ -644,6 +672,7 @@ pub mod workload {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -653,6 +682,7 @@ pub mod workload {
             self.workload_arn = Some(input.into());
             self
         }
+        /// <p>The ARN for the workload.</p>
         pub fn set_workload_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_arn = input;
             self
@@ -664,6 +694,9 @@ pub mod workload {
             self.workload_name = Some(input.into());
             self
         }
+        /// <p>The name of the workload.</p>
+        /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+        /// are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -676,6 +709,7 @@ pub mod workload {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for the workload.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -685,6 +719,7 @@ pub mod workload {
             self.environment = Some(input);
             self
         }
+        /// <p>The environment for the workload.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::WorkloadEnvironment>,
@@ -693,20 +728,30 @@ pub mod workload {
             self
         }
         /// <p>The date and time recorded.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time recorded.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The list of AWS account IDs associated with the workload.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>The list of AWS account IDs associated with the workload.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -714,12 +759,20 @@ pub mod workload {
             self.account_ids = input;
             self
         }
+        /// Appends an item to `aws_regions`.
+        ///
+        /// To override the contents of this collection use [`set_aws_regions`](Self::set_aws_regions).
+        ///
+        /// <p>The list of AWS Regions associated with the workload, for example,
+        /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.aws_regions.unwrap_or_default();
             v.push(input.into());
             self.aws_regions = Some(v);
             self
         }
+        /// <p>The list of AWS Regions associated with the workload, for example,
+        /// <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
         pub fn set_aws_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -727,12 +780,18 @@ pub mod workload {
             self.aws_regions = input;
             self
         }
+        /// Appends an item to `non_aws_regions`.
+        ///
+        /// To override the contents of this collection use [`set_non_aws_regions`](Self::set_non_aws_regions).
+        ///
+        /// <p> The list of non-AWS Regions associated with the workload.</p>
         pub fn non_aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.non_aws_regions.unwrap_or_default();
             v.push(input.into());
             self.non_aws_regions = Some(v);
             self
         }
+        /// <p> The list of non-AWS Regions associated with the workload.</p>
         pub fn set_non_aws_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -745,6 +804,7 @@ pub mod workload {
             self.architectural_design = Some(input.into());
             self
         }
+        /// <p>The URL of the architectural design for the workload.</p>
         pub fn set_architectural_design(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -758,18 +818,21 @@ pub mod workload {
             self.review_owner = Some(input.into());
             self
         }
+        /// <p>The review owner of the workload. The name, email address, or identifier for the
+        /// primary group or individual that owns the workload review process.</p>
         pub fn set_review_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.review_owner = input;
             self
         }
         /// <p>The date and time recorded.</p>
-        pub fn review_restriction_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn review_restriction_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.review_restriction_date = Some(input);
             self
         }
+        /// <p>The date and time recorded.</p>
         pub fn set_review_restriction_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.review_restriction_date = input;
             self
@@ -783,6 +846,11 @@ pub mod workload {
             self.is_review_owner_update_acknowledged = Some(input);
             self
         }
+        /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review
+        /// owner</i> field is required.</p>
+        /// <p>If a <b>Review owner</b> is not added to the workload within
+        /// 60 days of acknowledgement, access to the workload is restricted until an owner is
+        /// added.</p>
         pub fn set_is_review_owner_update_acknowledged(
             mut self,
             input: std::option::Option<bool>,
@@ -933,6 +1001,145 @@ pub mod workload {
             self.industry_type = Some(input.into());
             self
         }
+        /// <p>The industry type for the workload.</p>
+        /// <p>If specified, must be one of the following:</p>  
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Agriculture</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Automobile</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Defense</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Design and Engineering</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Digital Advertising</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Education</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Environmental Protection</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Financial Services</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Gaming</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>General Public Services</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Healthcare</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Hospitality</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>InfoTech</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Justice and Public Safety</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Life Sciences</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Manufacturing</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Media & Entertainment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Mining & Resources</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Oil & Gas</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Power & Utilities</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Professional Services</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Real Estate & Construction</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Retail & Wholesale</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Social Protection</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Telecommunications</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Travel, Transportation & Logistics</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Other</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_industry_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -945,6 +1152,7 @@ pub mod workload {
             self.industry = Some(input.into());
             self
         }
+        /// <p>The industry for the workload.</p>
         pub fn set_industry(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.industry = input;
             self
@@ -954,6 +1162,7 @@ pub mod workload {
             self.notes = Some(input.into());
             self
         }
+        /// <p>The notes associated with the workload.</p>
         pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.notes = input;
             self
@@ -966,6 +1175,7 @@ pub mod workload {
             self.improvement_status = Some(input);
             self
         }
+        /// <p>The improvement status for a workload.</p>
         pub fn set_improvement_status(
             mut self,
             input: std::option::Option<crate::model::WorkloadImprovementStatus>,
@@ -973,12 +1183,18 @@ pub mod workload {
             self.improvement_status = input;
             self
         }
+        /// Adds a key-value pair to `risk_counts`.
+        ///
+        /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
+        ///
+        /// <p>A map from risk names to the count of how questions have that rating.</p>
         pub fn risk_counts(mut self, k: impl Into<crate::model::Risk>, v: impl Into<i32>) -> Self {
             let mut hash_map = self.risk_counts.unwrap_or_default();
             hash_map.insert(k.into(), v.into());
             self.risk_counts = Some(hash_map);
             self
         }
+        /// <p>A map from risk names to the count of how questions have that rating.</p>
         pub fn set_risk_counts(
             mut self,
             input: std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
@@ -986,12 +1202,20 @@ pub mod workload {
             self.risk_counts = input;
             self
         }
+        /// Appends an item to `pillar_priorities`.
+        ///
+        /// To override the contents of this collection use [`set_pillar_priorities`](Self::set_pillar_priorities).
+        ///
+        /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
+        /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
         pub fn pillar_priorities(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.pillar_priorities.unwrap_or_default();
             v.push(input.into());
             self.pillar_priorities = Some(v);
             self
         }
+        /// <p>The priorities of the pillars, which are used to order items in the improvement plan.
+        /// Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.</p>
         pub fn set_pillar_priorities(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -999,12 +1223,18 @@ pub mod workload {
             self.pillar_priorities = input;
             self
         }
+        /// Appends an item to `lenses`.
+        ///
+        /// To override the contents of this collection use [`set_lenses`](Self::set_lenses).
+        ///
+        /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn lenses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.lenses.unwrap_or_default();
             v.push(input.into());
             self.lenses = Some(v);
             self
         }
+        /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lenses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1017,6 +1247,7 @@ pub mod workload {
             self.owner = Some(input.into());
             self
         }
+        /// <p>An AWS account ID.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -1026,6 +1257,7 @@ pub mod workload {
             self.share_invitation_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the share invitation.</p>
         pub fn set_share_invitation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1033,6 +1265,11 @@ pub mod workload {
             self.share_invitation_id = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the workload.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1043,6 +1280,7 @@ pub mod workload {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags associated with the workload.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1103,10 +1341,15 @@ impl Workload {
     std::hash::Hash,
 )]
 pub enum Risk {
+    #[allow(missing_docs)] // documentation missing in model
     High,
+    #[allow(missing_docs)] // documentation missing in model
     Medium,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     NotApplicable,
+    #[allow(missing_docs)] // documentation missing in model
     Unanswered,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1131,6 +1374,7 @@ impl std::str::FromStr for Risk {
     }
 }
 impl Risk {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Risk::High => "HIGH",
@@ -1141,6 +1385,7 @@ impl Risk {
             Risk::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HIGH", "MEDIUM", "NONE", "NOT_APPLICABLE", "UNANSWERED"]
     }
@@ -1163,10 +1408,15 @@ impl AsRef<str> for Risk {
     std::hash::Hash,
 )]
 pub enum WorkloadImprovementStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Complete,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     NotApplicable,
+    #[allow(missing_docs)] // documentation missing in model
     NotStarted,
+    #[allow(missing_docs)] // documentation missing in model
     RiskAcknowledged,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1191,6 +1441,7 @@ impl std::str::FromStr for WorkloadImprovementStatus {
     }
 }
 impl WorkloadImprovementStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WorkloadImprovementStatus::Complete => "COMPLETE",
@@ -1201,6 +1452,7 @@ impl WorkloadImprovementStatus {
             WorkloadImprovementStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "COMPLETE",
@@ -1229,7 +1481,9 @@ impl AsRef<str> for WorkloadImprovementStatus {
     std::hash::Hash,
 )]
 pub enum WorkloadEnvironment {
+    #[allow(missing_docs)] // documentation missing in model
     Preproduction,
+    #[allow(missing_docs)] // documentation missing in model
     Production,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1251,6 +1505,7 @@ impl std::str::FromStr for WorkloadEnvironment {
     }
 }
 impl WorkloadEnvironment {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WorkloadEnvironment::Preproduction => "PREPRODUCTION",
@@ -1258,6 +1513,7 @@ impl WorkloadEnvironment {
             WorkloadEnvironment::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PREPRODUCTION", "PRODUCTION"]
     }
@@ -1300,6 +1556,7 @@ pub mod share_invitation {
             self.share_invitation_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the share invitation.</p>
         pub fn set_share_invitation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1312,6 +1569,7 @@ pub mod share_invitation {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -1344,7 +1602,9 @@ impl ShareInvitation {
     std::hash::Hash,
 )]
 pub enum ShareInvitationAction {
+    #[allow(missing_docs)] // documentation missing in model
     Accept,
+    #[allow(missing_docs)] // documentation missing in model
     Reject,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1366,6 +1626,7 @@ impl std::str::FromStr for ShareInvitationAction {
     }
 }
 impl ShareInvitationAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ShareInvitationAction::Accept => "ACCEPT",
@@ -1373,6 +1634,7 @@ impl ShareInvitationAction {
             ShareInvitationAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACCEPT", "REJECT"]
     }
@@ -1400,7 +1662,7 @@ pub struct LensReview {
     pub pillar_review_summaries:
         std::option::Option<std::vec::Vec<crate::model::PillarReviewSummary>>,
     /// <p>The date and time recorded.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The notes associated with the workload.</p>
     pub notes: std::option::Option<std::string::String>,
     /// <p>A map from risk names to the count of how questions have that rating.</p>
@@ -1435,7 +1697,7 @@ pub mod lens_review {
         pub(crate) lens_status: std::option::Option<crate::model::LensStatus>,
         pub(crate) pillar_review_summaries:
             std::option::Option<std::vec::Vec<crate::model::PillarReviewSummary>>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) notes: std::option::Option<std::string::String>,
         pub(crate) risk_counts:
             std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
@@ -1448,6 +1710,8 @@ pub mod lens_review {
             self.lens_alias = Some(input.into());
             self
         }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -1457,6 +1721,7 @@ pub mod lens_review {
             self.lens_version = Some(input.into());
             self
         }
+        /// <p>The version of the lens.</p>
         pub fn set_lens_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_version = input;
             self
@@ -1466,6 +1731,7 @@ pub mod lens_review {
             self.lens_name = Some(input.into());
             self
         }
+        /// <p>The full name of the lens.</p>
         pub fn set_lens_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_name = input;
             self
@@ -1475,6 +1741,7 @@ pub mod lens_review {
             self.lens_status = Some(input);
             self
         }
+        /// <p>The status of the lens.</p>
         pub fn set_lens_status(
             mut self,
             input: std::option::Option<crate::model::LensStatus>,
@@ -1482,6 +1749,11 @@ pub mod lens_review {
             self.lens_status = input;
             self
         }
+        /// Appends an item to `pillar_review_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_pillar_review_summaries`](Self::set_pillar_review_summaries).
+        ///
+        /// <p>List of pillar review summaries of lens review in a workload.</p>
         pub fn pillar_review_summaries(
             mut self,
             input: impl Into<crate::model::PillarReviewSummary>,
@@ -1491,6 +1763,7 @@ pub mod lens_review {
             self.pillar_review_summaries = Some(v);
             self
         }
+        /// <p>List of pillar review summaries of lens review in a workload.</p>
         pub fn set_pillar_review_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PillarReviewSummary>>,
@@ -1499,11 +1772,15 @@ pub mod lens_review {
             self
         }
         /// <p>The date and time recorded.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time recorded.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
@@ -1512,16 +1789,23 @@ pub mod lens_review {
             self.notes = Some(input.into());
             self
         }
+        /// <p>The notes associated with the workload.</p>
         pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.notes = input;
             self
         }
+        /// Adds a key-value pair to `risk_counts`.
+        ///
+        /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
+        ///
+        /// <p>A map from risk names to the count of how questions have that rating.</p>
         pub fn risk_counts(mut self, k: impl Into<crate::model::Risk>, v: impl Into<i32>) -> Self {
             let mut hash_map = self.risk_counts.unwrap_or_default();
             hash_map.insert(k.into(), v.into());
             self.risk_counts = Some(hash_map);
             self
         }
+        /// <p>A map from risk names to the count of how questions have that rating.</p>
         pub fn set_risk_counts(
             mut self,
             input: std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
@@ -1534,6 +1818,7 @@ pub mod lens_review {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to use to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1604,6 +1889,8 @@ pub mod pillar_review_summary {
             self.pillar_id = Some(input.into());
             self
         }
+        /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
         pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pillar_id = input;
             self
@@ -1613,6 +1900,7 @@ pub mod pillar_review_summary {
             self.pillar_name = Some(input.into());
             self
         }
+        /// <p>The name of the pillar.</p>
         pub fn set_pillar_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pillar_name = input;
             self
@@ -1622,16 +1910,23 @@ pub mod pillar_review_summary {
             self.notes = Some(input.into());
             self
         }
+        /// <p>The notes associated with the workload.</p>
         pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.notes = input;
             self
         }
+        /// Adds a key-value pair to `risk_counts`.
+        ///
+        /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
+        ///
+        /// <p>A map from risk names to the count of how questions have that rating.</p>
         pub fn risk_counts(mut self, k: impl Into<crate::model::Risk>, v: impl Into<i32>) -> Self {
             let mut hash_map = self.risk_counts.unwrap_or_default();
             hash_map.insert(k.into(), v.into());
             self.risk_counts = Some(hash_map);
             self
         }
+        /// <p>A map from risk names to the count of how questions have that rating.</p>
         pub fn set_risk_counts(
             mut self,
             input: std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
@@ -1657,6 +1952,7 @@ impl PillarReviewSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1668,8 +1964,11 @@ impl PillarReviewSummary {
     std::hash::Hash,
 )]
 pub enum LensStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Current,
+    #[allow(missing_docs)] // documentation missing in model
     Deprecated,
+    #[allow(missing_docs)] // documentation missing in model
     NotCurrent,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1692,6 +1991,7 @@ impl std::str::FromStr for LensStatus {
     }
 }
 impl LensStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LensStatus::Current => "CURRENT",
@@ -1700,6 +2000,7 @@ impl LensStatus {
             LensStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CURRENT", "DEPRECATED", "NOT_CURRENT"]
     }
@@ -1789,6 +2090,7 @@ pub mod answer {
             self.question_id = Some(input.into());
             self
         }
+        /// <p>The ID of the question.</p>
         pub fn set_question_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.question_id = input;
             self
@@ -1799,6 +2101,8 @@ pub mod answer {
             self.pillar_id = Some(input.into());
             self
         }
+        /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
         pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pillar_id = input;
             self
@@ -1808,6 +2112,7 @@ pub mod answer {
             self.question_title = Some(input.into());
             self
         }
+        /// <p>The title of the question.</p>
         pub fn set_question_title(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1820,6 +2125,7 @@ pub mod answer {
             self.question_description = Some(input.into());
             self
         }
+        /// <p>The description of the question.</p>
         pub fn set_question_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1833,6 +2139,8 @@ pub mod answer {
             self.improvement_plan_url = Some(input.into());
             self
         }
+        /// <p>The improvement plan URL for a question.</p>
+        /// <p>This value is only available if the question has been answered.</p>
         pub fn set_improvement_plan_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1845,6 +2153,7 @@ pub mod answer {
             self.helpful_resource_url = Some(input.into());
             self
         }
+        /// <p>The helpful resource URL for a question.</p>
         pub fn set_helpful_resource_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1852,12 +2161,18 @@ pub mod answer {
             self.helpful_resource_url = input;
             self
         }
+        /// Appends an item to `choices`.
+        ///
+        /// To override the contents of this collection use [`set_choices`](Self::set_choices).
+        ///
+        /// <p>List of choices available for a question.</p>
         pub fn choices(mut self, input: impl Into<crate::model::Choice>) -> Self {
             let mut v = self.choices.unwrap_or_default();
             v.push(input.into());
             self.choices = Some(v);
             self
         }
+        /// <p>List of choices available for a question.</p>
         pub fn set_choices(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Choice>>,
@@ -1865,12 +2180,20 @@ pub mod answer {
             self.choices = input;
             self
         }
+        /// Appends an item to `selected_choices`.
+        ///
+        /// To override the contents of this collection use [`set_selected_choices`](Self::set_selected_choices).
+        ///
+        /// <p>List of selected choice IDs in a question answer.</p>
+        /// <p>The values entered replace the previously selected choices.</p>
         pub fn selected_choices(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.selected_choices.unwrap_or_default();
             v.push(input.into());
             self.selected_choices = Some(v);
             self
         }
+        /// <p>List of selected choice IDs in a question answer.</p>
+        /// <p>The values entered replace the previously selected choices.</p>
         pub fn set_selected_choices(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1878,12 +2201,18 @@ pub mod answer {
             self.selected_choices = input;
             self
         }
+        /// Appends an item to `choice_answers`.
+        ///
+        /// To override the contents of this collection use [`set_choice_answers`](Self::set_choice_answers).
+        ///
+        /// <p>A list of selected choices to a question in your workload.</p>
         pub fn choice_answers(mut self, input: impl Into<crate::model::ChoiceAnswer>) -> Self {
             let mut v = self.choice_answers.unwrap_or_default();
             v.push(input.into());
             self.choice_answers = Some(v);
             self
         }
+        /// <p>A list of selected choices to a question in your workload.</p>
         pub fn set_choice_answers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ChoiceAnswer>>,
@@ -1896,6 +2225,7 @@ pub mod answer {
             self.is_applicable = Some(input);
             self
         }
+        /// <p>Defines whether this question is applicable to a lens review.</p>
         pub fn set_is_applicable(mut self, input: std::option::Option<bool>) -> Self {
             self.is_applicable = input;
             self
@@ -1905,6 +2235,7 @@ pub mod answer {
             self.risk = Some(input);
             self
         }
+        /// <p>The risk for a given workload, lens review, pillar, or question.</p>
         pub fn set_risk(mut self, input: std::option::Option<crate::model::Risk>) -> Self {
             self.risk = input;
             self
@@ -1914,6 +2245,7 @@ pub mod answer {
             self.notes = Some(input.into());
             self
         }
+        /// <p>The notes associated with the workload.</p>
         pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.notes = input;
             self
@@ -1923,6 +2255,7 @@ pub mod answer {
             self.reason = Some(input);
             self
         }
+        /// <p>The reason why the question is not applicable to your workload.</p>
         pub fn set_reason(
             mut self,
             input: std::option::Option<crate::model::AnswerReason>,
@@ -1957,6 +2290,7 @@ impl Answer {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1968,10 +2302,15 @@ impl Answer {
     std::hash::Hash,
 )]
 pub enum AnswerReason {
+    #[allow(missing_docs)] // documentation missing in model
     ArchitectureConstraints,
+    #[allow(missing_docs)] // documentation missing in model
     BusinessPriorities,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Other,
+    #[allow(missing_docs)] // documentation missing in model
     OutOfScope,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1996,6 +2335,7 @@ impl std::str::FromStr for AnswerReason {
     }
 }
 impl AnswerReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AnswerReason::ArchitectureConstraints => "ARCHITECTURE_CONSTRAINTS",
@@ -2006,6 +2346,7 @@ impl AnswerReason {
             AnswerReason::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ARCHITECTURE_CONSTRAINTS",
@@ -2062,6 +2403,7 @@ pub mod choice_answer {
             self.choice_id = Some(input.into());
             self
         }
+        /// <p>The ID of a choice.</p>
         pub fn set_choice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.choice_id = input;
             self
@@ -2071,6 +2413,7 @@ pub mod choice_answer {
             self.status = Some(input);
             self
         }
+        /// <p>The status of a choice.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ChoiceStatus>,
@@ -2083,6 +2426,7 @@ pub mod choice_answer {
             self.reason = Some(input);
             self
         }
+        /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
         pub fn set_reason(
             mut self,
             input: std::option::Option<crate::model::ChoiceReason>,
@@ -2095,6 +2439,7 @@ pub mod choice_answer {
             self.notes = Some(input.into());
             self
         }
+        /// <p>The notes associated with a choice.</p>
         pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.notes = input;
             self
@@ -2117,6 +2462,7 @@ impl ChoiceAnswer {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2128,10 +2474,15 @@ impl ChoiceAnswer {
     std::hash::Hash,
 )]
 pub enum ChoiceReason {
+    #[allow(missing_docs)] // documentation missing in model
     ArchitectureConstraints,
+    #[allow(missing_docs)] // documentation missing in model
     BusinessPriorities,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Other,
+    #[allow(missing_docs)] // documentation missing in model
     OutOfScope,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2156,6 +2507,7 @@ impl std::str::FromStr for ChoiceReason {
     }
 }
 impl ChoiceReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChoiceReason::ArchitectureConstraints => "ARCHITECTURE_CONSTRAINTS",
@@ -2166,6 +2518,7 @@ impl ChoiceReason {
             ChoiceReason::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ARCHITECTURE_CONSTRAINTS",
@@ -2182,6 +2535,7 @@ impl AsRef<str> for ChoiceReason {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2193,8 +2547,11 @@ impl AsRef<str> for ChoiceReason {
     std::hash::Hash,
 )]
 pub enum ChoiceStatus {
+    #[allow(missing_docs)] // documentation missing in model
     NotApplicable,
+    #[allow(missing_docs)] // documentation missing in model
     Selected,
+    #[allow(missing_docs)] // documentation missing in model
     Unselected,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2217,6 +2574,7 @@ impl std::str::FromStr for ChoiceStatus {
     }
 }
 impl ChoiceStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChoiceStatus::NotApplicable => "NOT_APPLICABLE",
@@ -2225,6 +2583,7 @@ impl ChoiceStatus {
             ChoiceStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NOT_APPLICABLE", "SELECTED", "UNSELECTED"]
     }
@@ -2271,6 +2630,7 @@ pub mod choice {
             self.choice_id = Some(input.into());
             self
         }
+        /// <p>The ID of a choice.</p>
         pub fn set_choice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.choice_id = input;
             self
@@ -2280,6 +2640,7 @@ pub mod choice {
             self.title = Some(input.into());
             self
         }
+        /// <p>The title of a choice.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -2289,6 +2650,7 @@ pub mod choice {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of a choice.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2346,6 +2708,7 @@ pub mod choice_update {
             self.status = Some(input);
             self
         }
+        /// <p>The status of a choice.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ChoiceStatus>,
@@ -2358,6 +2721,7 @@ pub mod choice_update {
             self.reason = Some(input);
             self
         }
+        /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
         pub fn set_reason(
             mut self,
             input: std::option::Option<crate::model::ChoiceReason>,
@@ -2370,6 +2734,7 @@ pub mod choice_update {
             self.notes = Some(input.into());
             self
         }
+        /// <p>The notes associated with a choice.</p>
         pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.notes = input;
             self
@@ -2431,6 +2796,7 @@ pub mod workload_share_summary {
             self.share_id = Some(input.into());
             self
         }
+        /// <p>The ID associated with the workload share.</p>
         pub fn set_share_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.share_id = input;
             self
@@ -2440,6 +2806,7 @@ pub mod workload_share_summary {
             self.shared_with = Some(input.into());
             self
         }
+        /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
         pub fn set_shared_with(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shared_with = input;
             self
@@ -2449,6 +2816,7 @@ pub mod workload_share_summary {
             self.permission_type = Some(input);
             self
         }
+        /// <p>Permission granted on a workload share.</p>
         pub fn set_permission_type(
             mut self,
             input: std::option::Option<crate::model::PermissionType>,
@@ -2461,6 +2829,7 @@ pub mod workload_share_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of a workload share.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::ShareStatus>) -> Self {
             self.status = input;
             self
@@ -2498,7 +2867,7 @@ pub struct WorkloadSummary {
     /// <p>An AWS account ID.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>The date and time recorded.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
     pub lenses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A map from risk names to the count of how questions have that rating.</p>
@@ -2530,7 +2899,7 @@ pub mod workload_summary {
         pub(crate) workload_arn: std::option::Option<std::string::String>,
         pub(crate) workload_name: std::option::Option<std::string::String>,
         pub(crate) owner: std::option::Option<std::string::String>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) lenses: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) risk_counts:
             std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
@@ -2542,6 +2911,7 @@ pub mod workload_summary {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -2551,6 +2921,7 @@ pub mod workload_summary {
             self.workload_arn = Some(input.into());
             self
         }
+        /// <p>The ARN for the workload.</p>
         pub fn set_workload_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_arn = input;
             self
@@ -2562,6 +2933,9 @@ pub mod workload_summary {
             self.workload_name = Some(input.into());
             self
         }
+        /// <p>The name of the workload.</p>
+        /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+        /// are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2574,25 +2948,36 @@ pub mod workload_summary {
             self.owner = Some(input.into());
             self
         }
+        /// <p>An AWS account ID.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
         }
         /// <p>The date and time recorded.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time recorded.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
+        /// Appends an item to `lenses`.
+        ///
+        /// To override the contents of this collection use [`set_lenses`](Self::set_lenses).
+        ///
+        /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn lenses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.lenses.unwrap_or_default();
             v.push(input.into());
             self.lenses = Some(v);
             self
         }
+        /// <p>The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lenses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2600,12 +2985,18 @@ pub mod workload_summary {
             self.lenses = input;
             self
         }
+        /// Adds a key-value pair to `risk_counts`.
+        ///
+        /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
+        ///
+        /// <p>A map from risk names to the count of how questions have that rating.</p>
         pub fn risk_counts(mut self, k: impl Into<crate::model::Risk>, v: impl Into<i32>) -> Self {
             let mut hash_map = self.risk_counts.unwrap_or_default();
             hash_map.insert(k.into(), v.into());
             self.risk_counts = Some(hash_map);
             self
         }
+        /// <p>A map from risk names to the count of how questions have that rating.</p>
         pub fn set_risk_counts(
             mut self,
             input: std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
@@ -2621,6 +3012,7 @@ pub mod workload_summary {
             self.improvement_status = Some(input);
             self
         }
+        /// <p>The improvement status for a workload.</p>
         pub fn set_improvement_status(
             mut self,
             input: std::option::Option<crate::model::WorkloadImprovementStatus>,
@@ -2700,6 +3092,7 @@ pub mod share_invitation_summary {
             self.share_invitation_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the share invitation.</p>
         pub fn set_share_invitation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2712,6 +3105,7 @@ pub mod share_invitation_summary {
             self.shared_by = Some(input.into());
             self
         }
+        /// <p>An AWS account ID.</p>
         pub fn set_shared_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shared_by = input;
             self
@@ -2721,6 +3115,7 @@ pub mod share_invitation_summary {
             self.shared_with = Some(input.into());
             self
         }
+        /// <p>The AWS account ID or IAM role with which the workload is shared.</p>
         pub fn set_shared_with(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shared_with = input;
             self
@@ -2730,6 +3125,7 @@ pub mod share_invitation_summary {
             self.permission_type = Some(input);
             self
         }
+        /// <p>Permission granted on a workload share.</p>
         pub fn set_permission_type(
             mut self,
             input: std::option::Option<crate::model::PermissionType>,
@@ -2744,6 +3140,9 @@ pub mod share_invitation_summary {
             self.workload_name = Some(input.into());
             self
         }
+        /// <p>The name of the workload.</p>
+        /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+        /// are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2756,6 +3155,7 @@ pub mod share_invitation_summary {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -2812,6 +3212,7 @@ pub mod notification_summary {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of notification.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::NotificationType>,
@@ -2824,6 +3225,7 @@ pub mod notification_summary {
             self.lens_upgrade_summary = Some(input);
             self
         }
+        /// <p>Summary of lens upgrade.</p>
         pub fn set_lens_upgrade_summary(
             mut self,
             input: std::option::Option<crate::model::LensUpgradeSummary>,
@@ -2894,6 +3296,7 @@ pub mod lens_upgrade_summary {
             self.workload_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the workload. This ID is unique within an AWS Region.</p>
         pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workload_id = input;
             self
@@ -2905,6 +3308,9 @@ pub mod lens_upgrade_summary {
             self.workload_name = Some(input.into());
             self
         }
+        /// <p>The name of the workload.</p>
+        /// <p>The name must be unique within an account within a Region. Spaces and capitalization
+        /// are ignored when checking for uniqueness.</p>
         pub fn set_workload_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2918,6 +3324,8 @@ pub mod lens_upgrade_summary {
             self.lens_alias = Some(input.into());
             self
         }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -2927,6 +3335,7 @@ pub mod lens_upgrade_summary {
             self.current_lens_version = Some(input.into());
             self
         }
+        /// <p>The current version of the lens.</p>
         pub fn set_current_lens_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2939,6 +3348,7 @@ pub mod lens_upgrade_summary {
             self.latest_lens_version = Some(input.into());
             self
         }
+        /// <p>The latest version of the lens.</p>
         pub fn set_latest_lens_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2965,6 +3375,7 @@ impl LensUpgradeSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2976,7 +3387,9 @@ impl LensUpgradeSummary {
     std::hash::Hash,
 )]
 pub enum NotificationType {
+    #[allow(missing_docs)] // documentation missing in model
     LensVersionDeprecated,
+    #[allow(missing_docs)] // documentation missing in model
     LensVersionUpgraded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2998,6 +3411,7 @@ impl std::str::FromStr for NotificationType {
     }
 }
 impl NotificationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NotificationType::LensVersionDeprecated => "LENS_VERSION_DEPRECATED",
@@ -3005,6 +3419,7 @@ impl NotificationType {
             NotificationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LENS_VERSION_DEPRECATED", "LENS_VERSION_UPGRADED"]
     }
@@ -3026,7 +3441,7 @@ pub struct MilestoneSummary {
     /// <p>Milestone names must be unique within a workload.</p>
     pub milestone_name: std::option::Option<std::string::String>,
     /// <p>The date and time recorded.</p>
-    pub recorded_at: std::option::Option<smithy_types::Instant>,
+    pub recorded_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A workload summary return object.</p>
     pub workload_summary: std::option::Option<crate::model::WorkloadSummary>,
 }
@@ -3048,7 +3463,7 @@ pub mod milestone_summary {
     pub struct Builder {
         pub(crate) milestone_number: std::option::Option<i32>,
         pub(crate) milestone_name: std::option::Option<std::string::String>,
-        pub(crate) recorded_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) recorded_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) workload_summary: std::option::Option<crate::model::WorkloadSummary>,
     }
     impl Builder {
@@ -3058,6 +3473,8 @@ pub mod milestone_summary {
             self.milestone_number = Some(input);
             self
         }
+        /// <p>The milestone number.</p>
+        /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn set_milestone_number(mut self, input: std::option::Option<i32>) -> Self {
             self.milestone_number = input;
             self
@@ -3068,6 +3485,8 @@ pub mod milestone_summary {
             self.milestone_name = Some(input.into());
             self
         }
+        /// <p>The name of the milestone in a workload.</p>
+        /// <p>Milestone names must be unique within a workload.</p>
         pub fn set_milestone_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3076,13 +3495,14 @@ pub mod milestone_summary {
             self
         }
         /// <p>The date and time recorded.</p>
-        pub fn recorded_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn recorded_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.recorded_at = Some(input);
             self
         }
+        /// <p>The date and time recorded.</p>
         pub fn set_recorded_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.recorded_at = input;
             self
@@ -3092,6 +3512,7 @@ pub mod milestone_summary {
             self.workload_summary = Some(input);
             self
         }
+        /// <p>A workload summary return object.</p>
         pub fn set_workload_summary(
             mut self,
             input: std::option::Option<crate::model::WorkloadSummary>,
@@ -3131,7 +3552,7 @@ pub struct LensReviewSummary {
     /// <p>The status of the lens.</p>
     pub lens_status: std::option::Option<crate::model::LensStatus>,
     /// <p>The date and time recorded.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A map from risk names to the count of how questions have that rating.</p>
     pub risk_counts: std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
 }
@@ -3157,7 +3578,7 @@ pub mod lens_review_summary {
         pub(crate) lens_version: std::option::Option<std::string::String>,
         pub(crate) lens_name: std::option::Option<std::string::String>,
         pub(crate) lens_status: std::option::Option<crate::model::LensStatus>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) risk_counts:
             std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
     }
@@ -3168,6 +3589,8 @@ pub mod lens_review_summary {
             self.lens_alias = Some(input.into());
             self
         }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -3177,6 +3600,7 @@ pub mod lens_review_summary {
             self.lens_version = Some(input.into());
             self
         }
+        /// <p>The version of the lens.</p>
         pub fn set_lens_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_version = input;
             self
@@ -3186,6 +3610,7 @@ pub mod lens_review_summary {
             self.lens_name = Some(input.into());
             self
         }
+        /// <p>The full name of the lens.</p>
         pub fn set_lens_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_name = input;
             self
@@ -3195,6 +3620,7 @@ pub mod lens_review_summary {
             self.lens_status = Some(input);
             self
         }
+        /// <p>The status of the lens.</p>
         pub fn set_lens_status(
             mut self,
             input: std::option::Option<crate::model::LensStatus>,
@@ -3203,20 +3629,30 @@ pub mod lens_review_summary {
             self
         }
         /// <p>The date and time recorded.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time recorded.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
+        /// Adds a key-value pair to `risk_counts`.
+        ///
+        /// To override the contents of this collection use [`set_risk_counts`](Self::set_risk_counts).
+        ///
+        /// <p>A map from risk names to the count of how questions have that rating.</p>
         pub fn risk_counts(mut self, k: impl Into<crate::model::Risk>, v: impl Into<i32>) -> Self {
             let mut hash_map = self.risk_counts.unwrap_or_default();
             hash_map.insert(k.into(), v.into());
             self.risk_counts = Some(hash_map);
             self
         }
+        /// <p>A map from risk names to the count of how questions have that rating.</p>
         pub fn set_risk_counts(
             mut self,
             input: std::option::Option<std::collections::HashMap<crate::model::Risk, i32>>,
@@ -3290,6 +3726,7 @@ pub mod improvement_summary {
             self.question_id = Some(input.into());
             self
         }
+        /// <p>The ID of the question.</p>
         pub fn set_question_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.question_id = input;
             self
@@ -3300,6 +3737,8 @@ pub mod improvement_summary {
             self.pillar_id = Some(input.into());
             self
         }
+        /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
         pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pillar_id = input;
             self
@@ -3309,6 +3748,7 @@ pub mod improvement_summary {
             self.question_title = Some(input.into());
             self
         }
+        /// <p>The title of the question.</p>
         pub fn set_question_title(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3321,6 +3761,7 @@ pub mod improvement_summary {
             self.risk = Some(input);
             self
         }
+        /// <p>The risk for a given workload, lens review, pillar, or question.</p>
         pub fn set_risk(mut self, input: std::option::Option<crate::model::Risk>) -> Self {
             self.risk = input;
             self
@@ -3331,6 +3772,8 @@ pub mod improvement_summary {
             self.improvement_plan_url = Some(input.into());
             self
         }
+        /// <p>The improvement plan URL for a question.</p>
+        /// <p>This value is only available if the question has been answered.</p>
         pub fn set_improvement_plan_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3399,6 +3842,8 @@ pub mod lens_summary {
             self.lens_alias = Some(input.into());
             self
         }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -3408,6 +3853,7 @@ pub mod lens_summary {
             self.lens_version = Some(input.into());
             self
         }
+        /// <p>The version of the lens.</p>
         pub fn set_lens_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_version = input;
             self
@@ -3417,6 +3863,7 @@ pub mod lens_summary {
             self.lens_name = Some(input.into());
             self
         }
+        /// <p>The full name of the lens.</p>
         pub fn set_lens_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_name = input;
             self
@@ -3426,6 +3873,7 @@ pub mod lens_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the lens.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3512,6 +3960,7 @@ pub mod answer_summary {
             self.question_id = Some(input.into());
             self
         }
+        /// <p>The ID of the question.</p>
         pub fn set_question_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.question_id = input;
             self
@@ -3522,6 +3971,8 @@ pub mod answer_summary {
             self.pillar_id = Some(input.into());
             self
         }
+        /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
         pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pillar_id = input;
             self
@@ -3531,6 +3982,7 @@ pub mod answer_summary {
             self.question_title = Some(input.into());
             self
         }
+        /// <p>The title of the question.</p>
         pub fn set_question_title(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3538,12 +3990,18 @@ pub mod answer_summary {
             self.question_title = input;
             self
         }
+        /// Appends an item to `choices`.
+        ///
+        /// To override the contents of this collection use [`set_choices`](Self::set_choices).
+        ///
+        /// <p>List of choices available for a question.</p>
         pub fn choices(mut self, input: impl Into<crate::model::Choice>) -> Self {
             let mut v = self.choices.unwrap_or_default();
             v.push(input.into());
             self.choices = Some(v);
             self
         }
+        /// <p>List of choices available for a question.</p>
         pub fn set_choices(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Choice>>,
@@ -3551,12 +4009,20 @@ pub mod answer_summary {
             self.choices = input;
             self
         }
+        /// Appends an item to `selected_choices`.
+        ///
+        /// To override the contents of this collection use [`set_selected_choices`](Self::set_selected_choices).
+        ///
+        /// <p>List of selected choice IDs in a question answer.</p>
+        /// <p>The values entered replace the previously selected choices.</p>
         pub fn selected_choices(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.selected_choices.unwrap_or_default();
             v.push(input.into());
             self.selected_choices = Some(v);
             self
         }
+        /// <p>List of selected choice IDs in a question answer.</p>
+        /// <p>The values entered replace the previously selected choices.</p>
         pub fn set_selected_choices(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3564,6 +4030,11 @@ pub mod answer_summary {
             self.selected_choices = input;
             self
         }
+        /// Appends an item to `choice_answer_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_choice_answer_summaries`](Self::set_choice_answer_summaries).
+        ///
+        /// <p>A list of selected choices to a question in your workload.</p>
         pub fn choice_answer_summaries(
             mut self,
             input: impl Into<crate::model::ChoiceAnswerSummary>,
@@ -3573,6 +4044,7 @@ pub mod answer_summary {
             self.choice_answer_summaries = Some(v);
             self
         }
+        /// <p>A list of selected choices to a question in your workload.</p>
         pub fn set_choice_answer_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ChoiceAnswerSummary>>,
@@ -3585,6 +4057,7 @@ pub mod answer_summary {
             self.is_applicable = Some(input);
             self
         }
+        /// <p>Defines whether this question is applicable to a lens review.</p>
         pub fn set_is_applicable(mut self, input: std::option::Option<bool>) -> Self {
             self.is_applicable = input;
             self
@@ -3594,6 +4067,7 @@ pub mod answer_summary {
             self.risk = Some(input);
             self
         }
+        /// <p>The risk for a given workload, lens review, pillar, or question.</p>
         pub fn set_risk(mut self, input: std::option::Option<crate::model::Risk>) -> Self {
             self.risk = input;
             self
@@ -3603,6 +4077,7 @@ pub mod answer_summary {
             self.reason = Some(input);
             self
         }
+        /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
         pub fn set_reason(
             mut self,
             input: std::option::Option<crate::model::AnswerReason>,
@@ -3669,6 +4144,7 @@ pub mod choice_answer_summary {
             self.choice_id = Some(input.into());
             self
         }
+        /// <p>The ID of a choice.</p>
         pub fn set_choice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.choice_id = input;
             self
@@ -3678,6 +4154,7 @@ pub mod choice_answer_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of a choice.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ChoiceStatus>,
@@ -3690,6 +4167,7 @@ pub mod choice_answer_summary {
             self.reason = Some(input);
             self
         }
+        /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
         pub fn set_reason(
             mut self,
             input: std::option::Option<crate::model::ChoiceReason>,
@@ -3725,7 +4203,7 @@ pub struct Milestone {
     /// <p>Milestone names must be unique within a workload.</p>
     pub milestone_name: std::option::Option<std::string::String>,
     /// <p>The date and time recorded.</p>
-    pub recorded_at: std::option::Option<smithy_types::Instant>,
+    pub recorded_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A workload return object.</p>
     pub workload: std::option::Option<crate::model::Workload>,
 }
@@ -3747,7 +4225,7 @@ pub mod milestone {
     pub struct Builder {
         pub(crate) milestone_number: std::option::Option<i32>,
         pub(crate) milestone_name: std::option::Option<std::string::String>,
-        pub(crate) recorded_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) recorded_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) workload: std::option::Option<crate::model::Workload>,
     }
     impl Builder {
@@ -3757,6 +4235,8 @@ pub mod milestone {
             self.milestone_number = Some(input);
             self
         }
+        /// <p>The milestone number.</p>
+        /// <p>A workload can have a maximum of 100 milestones.</p>
         pub fn set_milestone_number(mut self, input: std::option::Option<i32>) -> Self {
             self.milestone_number = input;
             self
@@ -3767,6 +4247,8 @@ pub mod milestone {
             self.milestone_name = Some(input.into());
             self
         }
+        /// <p>The name of the milestone in a workload.</p>
+        /// <p>Milestone names must be unique within a workload.</p>
         pub fn set_milestone_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3775,13 +4257,14 @@ pub mod milestone {
             self
         }
         /// <p>The date and time recorded.</p>
-        pub fn recorded_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn recorded_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.recorded_at = Some(input);
             self
         }
+        /// <p>The date and time recorded.</p>
         pub fn set_recorded_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.recorded_at = input;
             self
@@ -3791,6 +4274,7 @@ pub mod milestone {
             self.workload = Some(input);
             self
         }
+        /// <p>A workload return object.</p>
         pub fn set_workload(mut self, input: std::option::Option<crate::model::Workload>) -> Self {
             self.workload = input;
             self
@@ -3837,6 +4321,11 @@ pub mod version_differences {
             std::option::Option<std::vec::Vec<crate::model::PillarDifference>>,
     }
     impl Builder {
+        /// Appends an item to `pillar_differences`.
+        ///
+        /// To override the contents of this collection use [`set_pillar_differences`](Self::set_pillar_differences).
+        ///
+        /// <p>The differences between the base and latest versions of the lens.</p>
         pub fn pillar_differences(
             mut self,
             input: impl Into<crate::model::PillarDifference>,
@@ -3846,6 +4335,7 @@ pub mod version_differences {
             self.pillar_differences = Some(v);
             self
         }
+        /// <p>The differences between the base and latest versions of the lens.</p>
         pub fn set_pillar_differences(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PillarDifference>>,
@@ -3907,6 +4397,8 @@ pub mod pillar_difference {
             self.pillar_id = Some(input.into());
             self
         }
+        /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+        /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
         pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pillar_id = input;
             self
@@ -3916,6 +4408,7 @@ pub mod pillar_difference {
             self.difference_status = Some(input);
             self
         }
+        /// <p>Indicates the type of change to the pillar.</p>
         pub fn set_difference_status(
             mut self,
             input: std::option::Option<crate::model::DifferenceStatus>,
@@ -3923,6 +4416,11 @@ pub mod pillar_difference {
             self.difference_status = input;
             self
         }
+        /// Appends an item to `question_differences`.
+        ///
+        /// To override the contents of this collection use [`set_question_differences`](Self::set_question_differences).
+        ///
+        /// <p>List of question differences.</p>
         pub fn question_differences(
             mut self,
             input: impl Into<crate::model::QuestionDifference>,
@@ -3932,6 +4430,7 @@ pub mod pillar_difference {
             self.question_differences = Some(v);
             self
         }
+        /// <p>List of question differences.</p>
         pub fn set_question_differences(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QuestionDifference>>,
@@ -3992,6 +4491,7 @@ pub mod question_difference {
             self.question_id = Some(input.into());
             self
         }
+        /// <p>The ID of the question.</p>
         pub fn set_question_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.question_id = input;
             self
@@ -4001,6 +4501,7 @@ pub mod question_difference {
             self.question_title = Some(input.into());
             self
         }
+        /// <p>The title of the question.</p>
         pub fn set_question_title(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4013,6 +4514,7 @@ pub mod question_difference {
             self.difference_status = Some(input);
             self
         }
+        /// <p>Indicates the type of change to the question.</p>
         pub fn set_difference_status(
             mut self,
             input: std::option::Option<crate::model::DifferenceStatus>,
@@ -4037,6 +4539,7 @@ impl QuestionDifference {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4048,8 +4551,11 @@ impl QuestionDifference {
     std::hash::Hash,
 )]
 pub enum DifferenceStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     New,
+    #[allow(missing_docs)] // documentation missing in model
     Updated,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4072,6 +4578,7 @@ impl std::str::FromStr for DifferenceStatus {
     }
 }
 impl DifferenceStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DifferenceStatus::Deleted => "DELETED",
@@ -4080,6 +4587,7 @@ impl DifferenceStatus {
             DifferenceStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DELETED", "NEW", "UPDATED"]
     }
@@ -4125,6 +4633,8 @@ pub mod lens_review_report {
             self.lens_alias = Some(input.into());
             self
         }
+        /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
+        /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
         pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lens_alias = input;
             self
@@ -4135,6 +4645,8 @@ pub mod lens_review_report {
             self.base64_string = Some(input.into());
             self
         }
+        /// <p>The Base64-encoded string representation of a lens review report.</p>
+        /// <p>This data can be used to create a PDF file.</p>
         pub fn set_base64_string(
             mut self,
             input: std::option::Option<std::string::String>,

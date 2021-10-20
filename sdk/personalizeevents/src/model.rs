@@ -39,6 +39,7 @@ pub mod user {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The ID associated with the user.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -54,6 +55,13 @@ pub mod user {
             self.properties = Some(input.into());
             self
         }
+        /// <p>A string map of user-specific metadata. Each element in the map consists of a key-value pair.
+        /// For example, <code>{"numberOfVideosWatched": "45"}</code>.</p>
+        /// <p>The keys use camel case names that match the fields in the schema for the Users
+        /// dataset. In the previous example, the <code>numberOfVideosWatched</code> matches the
+        /// 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema. For categorical string data,
+        /// to include multiple categories for a single user, separate each category with a pipe separator (<code>|</code>).
+        /// For example, <code>\"Member|Frequent shopper\"</code>.</p>
         pub fn set_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.properties = input;
             self
@@ -114,6 +122,7 @@ pub mod item {
             self.item_id = Some(input.into());
             self
         }
+        /// <p>The ID associated with the item.</p>
         pub fn set_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.item_id = input;
             self
@@ -128,6 +137,12 @@ pub mod item {
             self.properties = Some(input.into());
             self
         }
+        /// <p>A string map of item-specific metadata. Each element in the map consists of a key-value pair.
+        /// For example, <code>{"numberOfRatings": "12"}</code>.</p>
+        /// <p>The keys use camel case names that match the fields in the schema for the Items
+        /// dataset. In the previous example, the <code>numberOfRatings</code> matches the
+        /// 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string data, to include multiple categories for a single item,
+        /// separate each category with a pipe separator (<code>|</code>). For example, <code>\"Horror|Action\"</code>.</p>
         pub fn set_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.properties = input;
             self
@@ -169,6 +184,7 @@ pub struct Event {
     /// user rates a movie on your site, other than movie ID (<code>itemId</code>) and rating (<code>eventValue</code>)
     /// , you might also send the number of movie ratings made by the user.</p>
     /// <p>Each item in the map consists of a key-value pair. For example,</p>
+    ///
     /// <p>
     /// <code>{"numberOfRatings": "12"}</code>
     /// </p>
@@ -177,7 +193,7 @@ pub struct Event {
     /// 'NUMBER_OF_RATINGS' field defined in the Interactions schema.</p>
     pub properties: std::option::Option<std::string::String>,
     /// <p>The timestamp (in Unix time) on the client side when the event occurred.</p>
-    pub sent_at: std::option::Option<smithy_types::Instant>,
+    pub sent_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The ID of the recommendation.</p>
     pub recommendation_id: std::option::Option<std::string::String>,
     /// <p>A list of item IDs that represents the sequence of items you have shown the user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>.</p>
@@ -208,7 +224,7 @@ pub mod event {
         pub(crate) event_value: std::option::Option<f32>,
         pub(crate) item_id: std::option::Option<std::string::String>,
         pub(crate) properties: std::option::Option<std::string::String>,
-        pub(crate) sent_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) sent_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) recommendation_id: std::option::Option<std::string::String>,
         pub(crate) impression: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -221,6 +237,10 @@ pub mod event {
             self.event_id = Some(input.into());
             self
         }
+        /// <p>An ID associated with the event. If an event ID is not provided, Amazon Personalize generates
+        /// a unique ID for the event. An event ID is not used as an input to the model. Amazon Personalize uses
+        /// the event ID to distinquish unique events. Any subsequent events after the first with the
+        /// same event ID are not used in model training.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_id = input;
             self
@@ -231,6 +251,8 @@ pub mod event {
             self.event_type = Some(input.into());
             self
         }
+        /// <p>The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code>
+        /// field of your Interactions schema and depends on the types of events you are tracking.</p>
         pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_type = input;
             self
@@ -240,6 +262,7 @@ pub mod event {
             self.event_value = Some(input);
             self
         }
+        /// <p>The event value that corresponds to the <code>EVENT_VALUE</code> field of the Interactions schema.</p>
         pub fn set_event_value(mut self, input: std::option::Option<f32>) -> Self {
             self.event_value = input;
             self
@@ -249,6 +272,7 @@ pub mod event {
             self.item_id = Some(input.into());
             self
         }
+        /// <p>The item ID key that corresponds to the <code>ITEM_ID</code> field of the Interactions schema.</p>
         pub fn set_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.item_id = input;
             self
@@ -257,6 +281,7 @@ pub mod event {
         /// user rates a movie on your site, other than movie ID (<code>itemId</code>) and rating (<code>eventValue</code>)
         /// , you might also send the number of movie ratings made by the user.</p>
         /// <p>Each item in the map consists of a key-value pair. For example,</p>
+        ///
         /// <p>
         /// <code>{"numberOfRatings": "12"}</code>
         /// </p>
@@ -267,16 +292,31 @@ pub mod event {
             self.properties = Some(input.into());
             self
         }
+        /// <p>A string map of event-specific data that you might choose to record. For example, if a
+        /// user rates a movie on your site, other than movie ID (<code>itemId</code>) and rating (<code>eventValue</code>)
+        /// , you might also send the number of movie ratings made by the user.</p>
+        /// <p>Each item in the map consists of a key-value pair. For example,</p>
+        ///
+        /// <p>
+        /// <code>{"numberOfRatings": "12"}</code>
+        /// </p>
+        /// <p>The keys use camel case names that match the fields in the Interactions
+        /// schema. In the above example, the <code>numberOfRatings</code> would match the
+        /// 'NUMBER_OF_RATINGS' field defined in the Interactions schema.</p>
         pub fn set_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.properties = input;
             self
         }
         /// <p>The timestamp (in Unix time) on the client side when the event occurred.</p>
-        pub fn sent_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn sent_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.sent_at = Some(input);
             self
         }
-        pub fn set_sent_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp (in Unix time) on the client side when the event occurred.</p>
+        pub fn set_sent_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.sent_at = input;
             self
         }
@@ -285,6 +325,7 @@ pub mod event {
             self.recommendation_id = Some(input.into());
             self
         }
+        /// <p>The ID of the recommendation.</p>
         pub fn set_recommendation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -292,12 +333,18 @@ pub mod event {
             self.recommendation_id = input;
             self
         }
+        /// Appends an item to `impression`.
+        ///
+        /// To override the contents of this collection use [`set_impression`](Self::set_impression).
+        ///
+        /// <p>A list of item IDs that represents the sequence of items you have shown the user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>.</p>
         pub fn impression(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.impression.unwrap_or_default();
             v.push(input.into());
             self.impression = Some(v);
             self
         }
+        /// <p>A list of item IDs that represents the sequence of items you have shown the user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>.</p>
         pub fn set_impression(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

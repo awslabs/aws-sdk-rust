@@ -8,8 +8,8 @@
 use std::sync::Arc;
 use std::time::Duration;
 
-use smithy_async::future::timeout::Timeout;
-use smithy_async::rt::sleep::AsyncSleep;
+use aws_smithy_async::future::timeout::Timeout;
+use aws_smithy_async::rt::sleep::AsyncSleep;
 use tracing::{trace_span, Instrument};
 
 use aws_types::credentials::{future, CredentialsError, ProvideCredentials};
@@ -89,7 +89,7 @@ impl ProvideCredentials for LazyCachingCredentialsProvider {
                     .get_or_load(|| {
                         async move {
                             let credentials = future.await.map_err(|_err| {
-                                CredentialsError::ProviderTimedOut(load_timeout)
+                                CredentialsError::provider_timed_out(load_timeout)
                             })??;
                             // If the credentials don't have an expiration time, then create a default one
                             let expiry = credentials
@@ -114,8 +114,8 @@ mod builder {
     use std::sync::Arc;
     use std::time::Duration;
 
+    use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
     use aws_types::credentials::ProvideCredentials;
-    use smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
 
     use super::{
         LazyCachingCredentialsProvider, DEFAULT_BUFFER_TIME, DEFAULT_CREDENTIAL_EXPIRATION,
@@ -173,7 +173,7 @@ mod builder {
         /// Implementation of [`AsyncSleep`] to use for timeouts. This enables use of
         /// the `LazyCachingCredentialsProvider` with other async runtimes.
         /// If using Tokio as the async runtime, this should be set to an instance of
-        /// [`TokioSleep`](smithy_async::rt::sleep::TokioSleep).
+        /// [`TokioSleep`](aws_smithy_async::rt::sleep::TokioSleep).
         pub fn sleep(mut self, sleep: impl AsyncSleep + 'static) -> Self {
             self.sleep = Some(Arc::new(sleep));
             self
@@ -206,9 +206,9 @@ mod builder {
 
         /// Creates the [`LazyCachingCredentialsProvider`].
         ///
-        /// ## Note:
+        /// # Panics
         /// This will panic if no `sleep` implementation is given and if no default crate features
-        /// are used. By default, the [`TokioSleep`](smithy_async::rt::sleep::TokioSleep)
+        /// are used. By default, the [`TokioSleep`](aws_smithy_async::rt::sleep::TokioSleep)
         /// implementation will be set automatically.
         pub fn build(self) -> LazyCachingCredentialsProvider {
             let default_credential_expiration = self
@@ -237,9 +237,9 @@ mod tests {
     use std::sync::{Arc, Mutex};
     use std::time::{Duration, SystemTime, UNIX_EPOCH};
 
+    use aws_smithy_async::rt::sleep::TokioSleep;
     use aws_types::credentials::{self, CredentialsError, ProvideCredentials};
     use aws_types::Credentials;
-    use smithy_async::rt::sleep::TokioSleep;
     use tracing::info;
     use tracing_test::traced_test;
 
@@ -347,7 +347,7 @@ mod tests {
             TimeSource::manual(&time),
             vec![
                 Ok(credentials(1000)),
-                Err(CredentialsError::CredentialsNotLoaded),
+                Err(CredentialsError::not_loaded("failed")),
             ],
         );
 
@@ -421,7 +421,7 @@ mod tests {
 
         assert!(matches!(
             provider.provide_credentials().await,
-            Err(CredentialsError::ProviderTimedOut(_))
+            Err(CredentialsError::ProviderTimedOut { .. })
         ));
     }
 }

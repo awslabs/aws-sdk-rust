@@ -1,0 +1,23 @@
+[package]
+name = "aws-smithy-types"
+version = "0.27.0-alpha"
+authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
+description = "Types for smithy-rs codegen."
+edition = "2018"
+license = "Apache-2.0"
+repository = "https://github.com/awslabs/smithy-rs"
+
+[features]
+chrono-conversions = []
+default = ["chrono-conversions"]
+
+[dependencies]
+chrono = { version = "0.4", default-features = false, features = [] }
+itoa = "0.4.0"
+num-integer = "0.1"
+ryu = "1.0.5"
+
+[dev-dependencies]
+base64 = "0.13.0"
+chrono = { version = "0.4", default-features = false, features = ["alloc"] }
+proptest = "1"

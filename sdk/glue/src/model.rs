@@ -43,6 +43,7 @@ pub mod user_defined_function_input {
             self.function_name = Some(input.into());
             self
         }
+        /// <p>The name of the function.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -55,6 +56,7 @@ pub mod user_defined_function_input {
             self.class_name = Some(input.into());
             self
         }
+        /// <p>The Java class that contains the function code.</p>
         pub fn set_class_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.class_name = input;
             self
@@ -64,6 +66,7 @@ pub mod user_defined_function_input {
             self.owner_name = Some(input.into());
             self
         }
+        /// <p>The owner of the function.</p>
         pub fn set_owner_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner_name = input;
             self
@@ -73,6 +76,7 @@ pub mod user_defined_function_input {
             self.owner_type = Some(input);
             self
         }
+        /// <p>The owner type.</p>
         pub fn set_owner_type(
             mut self,
             input: std::option::Option<crate::model::PrincipalType>,
@@ -80,12 +84,18 @@ pub mod user_defined_function_input {
             self.owner_type = input;
             self
         }
+        /// Appends an item to `resource_uris`.
+        ///
+        /// To override the contents of this collection use [`set_resource_uris`](Self::set_resource_uris).
+        ///
+        /// <p>The resource URIs for the function.</p>
         pub fn resource_uris(mut self, input: impl Into<crate::model::ResourceUri>) -> Self {
             let mut v = self.resource_uris.unwrap_or_default();
             v.push(input.into());
             self.resource_uris = Some(v);
             self
         }
+        /// <p>The resource URIs for the function.</p>
         pub fn set_resource_uris(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceUri>>,
@@ -144,6 +154,7 @@ pub mod resource_uri {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The type of the resource.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -156,6 +167,7 @@ pub mod resource_uri {
             self.uri = Some(input.into());
             self
         }
+        /// <p>The URI for accessing the resource.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.uri = input;
             self
@@ -176,6 +188,7 @@ impl ResourceUri {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -187,8 +200,11 @@ impl ResourceUri {
     std::hash::Hash,
 )]
 pub enum ResourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Archive,
+    #[allow(missing_docs)] // documentation missing in model
     File,
+    #[allow(missing_docs)] // documentation missing in model
     Jar,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -211,6 +227,7 @@ impl std::str::FromStr for ResourceType {
     }
 }
 impl ResourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Archive => "ARCHIVE",
@@ -219,6 +236,7 @@ impl ResourceType {
             ResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ARCHIVE", "FILE", "JAR"]
     }
@@ -229,6 +247,7 @@ impl AsRef<str> for ResourceType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -240,8 +259,11 @@ impl AsRef<str> for ResourceType {
     std::hash::Hash,
 )]
 pub enum PrincipalType {
+    #[allow(missing_docs)] // documentation missing in model
     Group,
+    #[allow(missing_docs)] // documentation missing in model
     Role,
+    #[allow(missing_docs)] // documentation missing in model
     User,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -264,6 +286,7 @@ impl std::str::FromStr for PrincipalType {
     }
 }
 impl PrincipalType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PrincipalType::Group => "GROUP",
@@ -272,6 +295,7 @@ impl PrincipalType {
             PrincipalType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GROUP", "ROLE", "USER"]
     }
@@ -351,6 +375,7 @@ pub mod trigger {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the trigger.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -360,6 +385,7 @@ pub mod trigger {
             self.workflow_name = Some(input.into());
             self
         }
+        /// <p>The name of the workflow associated with the trigger.</p>
         pub fn set_workflow_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -372,6 +398,7 @@ pub mod trigger {
             self.id = Some(input.into());
             self
         }
+        /// <p>Reserved for future use.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -381,6 +408,7 @@ pub mod trigger {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of trigger that this is.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::TriggerType>) -> Self {
             self.r#type = input;
             self
@@ -390,6 +418,7 @@ pub mod trigger {
             self.state = Some(input);
             self
         }
+        /// <p>The current state of the trigger.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::TriggerState>) -> Self {
             self.state = input;
             self
@@ -399,6 +428,7 @@ pub mod trigger {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of this trigger.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -411,16 +441,26 @@ pub mod trigger {
             self.schedule = Some(input.into());
             self
         }
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+        /// Schedules for Jobs and Crawlers</a>. For example, to run
+        /// something every day at 12:15 UTC, you would specify:
+        /// <code>cron(15 12 * * ? *)</code>.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schedule = input;
             self
         }
+        /// Appends an item to `actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>The actions initiated by this trigger.</p>
         pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
             self.actions = Some(v);
             self
         }
+        /// <p>The actions initiated by this trigger.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Action>>,
@@ -433,6 +473,7 @@ pub mod trigger {
             self.predicate = Some(input);
             self
         }
+        /// <p>The predicate of this trigger, which defines when it will fire.</p>
         pub fn set_predicate(
             mut self,
             input: std::option::Option<crate::model::Predicate>,
@@ -449,6 +490,8 @@ pub mod trigger {
             self.event_batching_condition = Some(input);
             self
         }
+        /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
+        /// before EventBridge event trigger fires.</p>
         pub fn set_event_batching_condition(
             mut self,
             input: std::option::Option<crate::model::EventBatchingCondition>,
@@ -513,6 +556,7 @@ pub mod event_batching_condition {
             self.batch_size = Some(input);
             self
         }
+        /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
             self.batch_size = input;
             self
@@ -522,6 +566,7 @@ pub mod event_batching_condition {
             self.batch_window = Some(input);
             self
         }
+        /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
         pub fn set_batch_window(mut self, input: std::option::Option<i32>) -> Self {
             self.batch_window = input;
             self
@@ -576,16 +621,24 @@ pub mod predicate {
             self.logical = Some(input);
             self
         }
+        /// <p>An optional field if only one condition is listed. If multiple conditions are listed, then
+        /// this field is required.</p>
         pub fn set_logical(mut self, input: std::option::Option<crate::model::Logical>) -> Self {
             self.logical = input;
             self
         }
+        /// Appends an item to `conditions`.
+        ///
+        /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
+        ///
+        /// <p>A list of the conditions that determine when the trigger will fire.</p>
         pub fn conditions(mut self, input: impl Into<crate::model::Condition>) -> Self {
             let mut v = self.conditions.unwrap_or_default();
             v.push(input.into());
             self.conditions = Some(v);
             self
         }
+        /// <p>A list of the conditions that determine when the trigger will fire.</p>
         pub fn set_conditions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Condition>>,
@@ -654,6 +707,7 @@ pub mod condition {
             self.logical_operator = Some(input);
             self
         }
+        /// <p>A logical operator.</p>
         pub fn set_logical_operator(
             mut self,
             input: std::option::Option<crate::model::LogicalOperator>,
@@ -667,6 +721,8 @@ pub mod condition {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>The name of the job whose <code>JobRuns</code> this condition applies to, and on which
+        /// this trigger waits.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -676,6 +732,7 @@ pub mod condition {
             self.state = Some(input);
             self
         }
+        /// <p>The condition state. Currently, the only job states that a trigger can listen for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::JobRunState>) -> Self {
             self.state = input;
             self
@@ -685,6 +742,7 @@ pub mod condition {
             self.crawler_name = Some(input.into());
             self
         }
+        /// <p>The name of the crawler to which this condition applies.</p>
         pub fn set_crawler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.crawler_name = input;
             self
@@ -694,6 +752,7 @@ pub mod condition {
             self.crawl_state = Some(input);
             self
         }
+        /// <p>The state of the crawler to which this condition applies.</p>
         pub fn set_crawl_state(
             mut self,
             input: std::option::Option<crate::model::CrawlState>,
@@ -720,6 +779,7 @@ impl Condition {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -731,10 +791,15 @@ impl Condition {
     std::hash::Hash,
 )]
 pub enum CrawlState {
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Cancelling,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -759,6 +824,7 @@ impl std::str::FromStr for CrawlState {
     }
 }
 impl CrawlState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CrawlState::Cancelled => "CANCELLED",
@@ -769,6 +835,7 @@ impl CrawlState {
             CrawlState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CANCELLED", "CANCELLING", "FAILED", "RUNNING", "SUCCEEDED"]
     }
@@ -779,6 +846,7 @@ impl AsRef<str> for CrawlState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -790,12 +858,19 @@ impl AsRef<str> for CrawlState {
     std::hash::Hash,
 )]
 pub enum JobRunState {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Starting,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
+    #[allow(missing_docs)] // documentation missing in model
     Timeout,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -822,6 +897,7 @@ impl std::str::FromStr for JobRunState {
     }
 }
 impl JobRunState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobRunState::Failed => "FAILED",
@@ -834,6 +910,7 @@ impl JobRunState {
             JobRunState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "FAILED",
@@ -852,6 +929,7 @@ impl AsRef<str> for JobRunState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -863,6 +941,7 @@ impl AsRef<str> for JobRunState {
     std::hash::Hash,
 )]
 pub enum LogicalOperator {
+    #[allow(missing_docs)] // documentation missing in model
     Equals,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -883,12 +962,14 @@ impl std::str::FromStr for LogicalOperator {
     }
 }
 impl LogicalOperator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LogicalOperator::Equals => "EQUALS",
             LogicalOperator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EQUALS"]
     }
@@ -899,6 +980,7 @@ impl AsRef<str> for LogicalOperator {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -910,7 +992,9 @@ impl AsRef<str> for LogicalOperator {
     std::hash::Hash,
 )]
 pub enum Logical {
+    #[allow(missing_docs)] // documentation missing in model
     And,
+    #[allow(missing_docs)] // documentation missing in model
     Any,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -932,6 +1016,7 @@ impl std::str::FromStr for Logical {
     }
 }
 impl Logical {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Logical::And => "AND",
@@ -939,6 +1024,7 @@ impl Logical {
             Logical::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AND", "ANY"]
     }
@@ -1007,10 +1093,20 @@ pub mod action {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>The name of a job to be run.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
         }
+        /// Adds a key-value pair to `arguments`.
+        ///
+        /// To override the contents of this collection use [`set_arguments`](Self::set_arguments).
+        ///
+        /// <p>The job arguments used when this trigger fires. For this job run, they replace the default arguments set in the job definition itself.</p>
+        /// <p>You can specify arguments here that your own job-execution script
+        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
+        /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn arguments(
             mut self,
             k: impl Into<std::string::String>,
@@ -1021,6 +1117,11 @@ pub mod action {
             self.arguments = Some(hash_map);
             self
         }
+        /// <p>The job arguments used when this trigger fires. For this job run, they replace the default arguments set in the job definition itself.</p>
+        /// <p>You can specify arguments here that your own job-execution script
+        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
+        /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn set_arguments(
             mut self,
             input: std::option::Option<
@@ -1037,6 +1138,9 @@ pub mod action {
             self.timeout = Some(input);
             self
         }
+        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
+        /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
+        /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
@@ -1047,6 +1151,8 @@ pub mod action {
             self.security_configuration = Some(input.into());
             self
         }
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
+        /// action.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1059,6 +1165,7 @@ pub mod action {
             self.notification_property = Some(input);
             self
         }
+        /// <p>Specifies configuration properties of a job run notification.</p>
         pub fn set_notification_property(
             mut self,
             input: std::option::Option<crate::model::NotificationProperty>,
@@ -1071,6 +1178,7 @@ pub mod action {
             self.crawler_name = Some(input.into());
             self
         }
+        /// <p>The name of the crawler to be used with this action.</p>
         pub fn set_crawler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.crawler_name = input;
             self
@@ -1125,6 +1233,8 @@ pub mod notification_property {
             self.notify_delay_after = Some(input);
             self
         }
+        /// <p>After a job run starts, the number of minutes to wait before
+        /// sending a job run delay notification.</p>
         pub fn set_notify_delay_after(mut self, input: std::option::Option<i32>) -> Self {
             self.notify_delay_after = input;
             self
@@ -1144,6 +1254,7 @@ impl NotificationProperty {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1155,13 +1266,21 @@ impl NotificationProperty {
     std::hash::Hash,
 )]
 pub enum TriggerState {
+    #[allow(missing_docs)] // documentation missing in model
     Activated,
+    #[allow(missing_docs)] // documentation missing in model
     Activating,
+    #[allow(missing_docs)] // documentation missing in model
     Created,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deactivated,
+    #[allow(missing_docs)] // documentation missing in model
     Deactivating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1189,6 +1308,7 @@ impl std::str::FromStr for TriggerState {
     }
 }
 impl TriggerState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TriggerState::Activated => "ACTIVATED",
@@ -1202,6 +1322,7 @@ impl TriggerState {
             TriggerState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVATED",
@@ -1221,6 +1342,7 @@ impl AsRef<str> for TriggerState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1232,9 +1354,13 @@ impl AsRef<str> for TriggerState {
     std::hash::Hash,
 )]
 pub enum TriggerType {
+    #[allow(missing_docs)] // documentation missing in model
     Conditional,
+    #[allow(missing_docs)] // documentation missing in model
     Event,
+    #[allow(missing_docs)] // documentation missing in model
     OnDemand,
+    #[allow(missing_docs)] // documentation missing in model
     Scheduled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1258,6 +1384,7 @@ impl std::str::FromStr for TriggerType {
     }
 }
 impl TriggerType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TriggerType::Conditional => "CONDITIONAL",
@@ -1267,6 +1394,7 @@ impl TriggerType {
             TriggerType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONDITIONAL", "EVENT", "ON_DEMAND", "SCHEDULED"]
     }
@@ -1331,6 +1459,7 @@ pub mod trigger_update {
             self.name = Some(input.into());
             self
         }
+        /// <p>Reserved for future use.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1340,6 +1469,7 @@ pub mod trigger_update {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of this trigger.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1352,16 +1482,26 @@ pub mod trigger_update {
             self.schedule = Some(input.into());
             self
         }
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+        /// Schedules for Jobs and Crawlers</a>. For example, to run
+        /// something every day at 12:15 UTC, you would specify:
+        /// <code>cron(15 12 * * ? *)</code>.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schedule = input;
             self
         }
+        /// Appends an item to `actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>The actions initiated by this trigger.</p>
         pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
             self.actions = Some(v);
             self
         }
+        /// <p>The actions initiated by this trigger.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Action>>,
@@ -1374,6 +1514,7 @@ pub mod trigger_update {
             self.predicate = Some(input);
             self
         }
+        /// <p>The predicate of this trigger, which defines when it will fire.</p>
         pub fn set_predicate(
             mut self,
             input: std::option::Option<crate::model::Predicate>,
@@ -1390,6 +1531,8 @@ pub mod trigger_update {
             self.event_batching_condition = Some(input);
             self
         }
+        /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
+        /// before EventBridge event trigger fires.</p>
         pub fn set_event_batching_condition(
             mut self,
             input: std::option::Option<crate::model::EventBatchingCondition>,
@@ -1429,9 +1572,9 @@ pub struct TableInput {
     /// <p>The table owner.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>The last time that the table was accessed.</p>
-    pub last_access_time: std::option::Option<smithy_types::Instant>,
+    pub last_access_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time that column statistics were computed for this table.</p>
-    pub last_analyzed_time: std::option::Option<smithy_types::Instant>,
+    pub last_analyzed_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The retention time for this table.</p>
     pub retention: i32,
     /// <p>A storage descriptor containing information about the physical storage
@@ -1486,8 +1629,8 @@ pub mod table_input {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) owner: std::option::Option<std::string::String>,
-        pub(crate) last_access_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_analyzed_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_access_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_analyzed_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) retention: std::option::Option<i32>,
         pub(crate) storage_descriptor: std::option::Option<crate::model::StorageDescriptor>,
         pub(crate) partition_keys: std::option::Option<std::vec::Vec<crate::model::Column>>,
@@ -1506,6 +1649,8 @@ pub mod table_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The table name. For Hive compatibility, this is folded to
+        /// lowercase when it is stored.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1515,6 +1660,7 @@ pub mod table_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the table.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1524,30 +1670,33 @@ pub mod table_input {
             self.owner = Some(input.into());
             self
         }
+        /// <p>The table owner.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
         }
         /// <p>The last time that the table was accessed.</p>
-        pub fn last_access_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_access_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_access_time = Some(input);
             self
         }
+        /// <p>The last time that the table was accessed.</p>
         pub fn set_last_access_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_access_time = input;
             self
         }
         /// <p>The last time that column statistics were computed for this table.</p>
-        pub fn last_analyzed_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_analyzed_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_analyzed_time = Some(input);
             self
         }
+        /// <p>The last time that column statistics were computed for this table.</p>
         pub fn set_last_analyzed_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_analyzed_time = input;
             self
@@ -1557,6 +1706,7 @@ pub mod table_input {
             self.retention = Some(input);
             self
         }
+        /// <p>The retention time for this table.</p>
         pub fn set_retention(mut self, input: std::option::Option<i32>) -> Self {
             self.retention = input;
             self
@@ -1567,6 +1717,8 @@ pub mod table_input {
             self.storage_descriptor = Some(input);
             self
         }
+        /// <p>A storage descriptor containing information about the physical storage
+        /// of this table.</p>
         pub fn set_storage_descriptor(
             mut self,
             input: std::option::Option<crate::model::StorageDescriptor>,
@@ -1574,12 +1726,32 @@ pub mod table_input {
             self.storage_descriptor = input;
             self
         }
+        /// Appends an item to `partition_keys`.
+        ///
+        /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
+        ///
+        /// <p>A list of columns by which the table is partitioned. Only primitive
+        /// types are supported as partition keys.</p>
+        /// <p>When you create a table used by Amazon Athena, and you do not specify any
+        /// <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to
+        /// an empty list. For example:</p>
+        /// <p>
+        /// <code>"PartitionKeys": []</code>
+        /// </p>
         pub fn partition_keys(mut self, input: impl Into<crate::model::Column>) -> Self {
             let mut v = self.partition_keys.unwrap_or_default();
             v.push(input.into());
             self.partition_keys = Some(v);
             self
         }
+        /// <p>A list of columns by which the table is partitioned. Only primitive
+        /// types are supported as partition keys.</p>
+        /// <p>When you create a table used by Amazon Athena, and you do not specify any
+        /// <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to
+        /// an empty list. For example:</p>
+        /// <p>
+        /// <code>"PartitionKeys": []</code>
+        /// </p>
         pub fn set_partition_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Column>>,
@@ -1592,6 +1764,7 @@ pub mod table_input {
             self.view_original_text = Some(input.into());
             self
         }
+        /// <p>If the table is a view, the original text of the view; otherwise <code>null</code>.</p>
         pub fn set_view_original_text(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1604,6 +1777,7 @@ pub mod table_input {
             self.view_expanded_text = Some(input.into());
             self
         }
+        /// <p>If the table is a view, the expanded text of the view; otherwise <code>null</code>.</p>
         pub fn set_view_expanded_text(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1616,10 +1790,16 @@ pub mod table_input {
             self.table_type = Some(input.into());
             self
         }
+        /// <p>The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).</p>
         pub fn set_table_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_type = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>These key-value pairs define properties associated with the table.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -1630,6 +1810,7 @@ pub mod table_input {
             self.parameters = Some(hash_map);
             self
         }
+        /// <p>These key-value pairs define properties associated with the table.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -1644,6 +1825,7 @@ pub mod table_input {
             self.target_table = Some(input);
             self
         }
+        /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
         pub fn set_target_table(
             mut self,
             input: std::option::Option<crate::model::TableIdentifier>,
@@ -1714,6 +1896,7 @@ pub mod table_identifier {
             self.catalog_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Data Catalog in which the table resides.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -1723,6 +1906,7 @@ pub mod table_identifier {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>The name of the catalog database that contains the target table.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1735,6 +1919,7 @@ pub mod table_identifier {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the target table.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1799,6 +1984,7 @@ pub mod column {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the <code>Column</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1808,6 +1994,7 @@ pub mod column {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The data type of the <code>Column</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -1817,10 +2004,16 @@ pub mod column {
             self.comment = Some(input.into());
             self
         }
+        /// <p>A free-form text comment.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>These key-value pairs define properties associated with the column.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -1831,6 +2024,7 @@ pub mod column {
             self.parameters = Some(hash_map);
             self
         }
+        /// <p>These key-value pairs define properties associated with the column.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -1897,6 +2091,7 @@ pub struct StorageDescriptor {
     /// not.</p>
     pub stored_as_sub_directories: bool,
     /// <p>An object that references a schema stored in the Glue Schema Registry.</p>
+    ///
     /// <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
     pub schema_reference: std::option::Option<crate::model::SchemaReference>,
 }
@@ -1942,12 +2137,18 @@ pub mod storage_descriptor {
         pub(crate) schema_reference: std::option::Option<crate::model::SchemaReference>,
     }
     impl Builder {
+        /// Appends an item to `columns`.
+        ///
+        /// To override the contents of this collection use [`set_columns`](Self::set_columns).
+        ///
+        /// <p>A list of the <code>Columns</code> in the table.</p>
         pub fn columns(mut self, input: impl Into<crate::model::Column>) -> Self {
             let mut v = self.columns.unwrap_or_default();
             v.push(input.into());
             self.columns = Some(v);
             self
         }
+        /// <p>A list of the <code>Columns</code> in the table.</p>
         pub fn set_columns(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Column>>,
@@ -1962,6 +2163,9 @@ pub mod storage_descriptor {
             self.location = Some(input.into());
             self
         }
+        /// <p>The physical location of the table. By default, this takes the form of the warehouse
+        /// location, followed by the database location in the warehouse, followed by the table
+        /// name.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -1972,6 +2176,8 @@ pub mod storage_descriptor {
             self.input_format = Some(input.into());
             self
         }
+        /// <p>The input format: <code>SequenceFileInputFormat</code> (binary),
+        /// or <code>TextInputFormat</code>, or a custom format.</p>
         pub fn set_input_format(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_format = input;
             self
@@ -1982,6 +2188,8 @@ pub mod storage_descriptor {
             self.output_format = Some(input.into());
             self
         }
+        /// <p>The output format: <code>SequenceFileOutputFormat</code> (binary),
+        /// or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
         pub fn set_output_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1996,6 +2204,9 @@ pub mod storage_descriptor {
             self.compressed = Some(input);
             self
         }
+        /// <p>
+        /// <code>True</code> if the data in the table is compressed, or <code>False</code> if
+        /// not.</p>
         pub fn set_compressed(mut self, input: std::option::Option<bool>) -> Self {
             self.compressed = input;
             self
@@ -2005,6 +2216,7 @@ pub mod storage_descriptor {
             self.number_of_buckets = Some(input);
             self
         }
+        /// <p>Must be specified if the table contains any dimension columns.</p>
         pub fn set_number_of_buckets(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_buckets = input;
             self
@@ -2014,6 +2226,7 @@ pub mod storage_descriptor {
             self.serde_info = Some(input);
             self
         }
+        /// <p>The serialization/deserialization (SerDe) information.</p>
         pub fn set_serde_info(
             mut self,
             input: std::option::Option<crate::model::SerDeInfo>,
@@ -2021,12 +2234,20 @@ pub mod storage_descriptor {
             self.serde_info = input;
             self
         }
+        /// Appends an item to `bucket_columns`.
+        ///
+        /// To override the contents of this collection use [`set_bucket_columns`](Self::set_bucket_columns).
+        ///
+        /// <p>A list of reducer grouping columns, clustering columns, and
+        /// bucketing columns in the table.</p>
         pub fn bucket_columns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.bucket_columns.unwrap_or_default();
             v.push(input.into());
             self.bucket_columns = Some(v);
             self
         }
+        /// <p>A list of reducer grouping columns, clustering columns, and
+        /// bucketing columns in the table.</p>
         pub fn set_bucket_columns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2034,12 +2255,18 @@ pub mod storage_descriptor {
             self.bucket_columns = input;
             self
         }
+        /// Appends an item to `sort_columns`.
+        ///
+        /// To override the contents of this collection use [`set_sort_columns`](Self::set_sort_columns).
+        ///
+        /// <p>A list specifying the sort order of each bucket in the table.</p>
         pub fn sort_columns(mut self, input: impl Into<crate::model::Order>) -> Self {
             let mut v = self.sort_columns.unwrap_or_default();
             v.push(input.into());
             self.sort_columns = Some(v);
             self
         }
+        /// <p>A list specifying the sort order of each bucket in the table.</p>
         pub fn set_sort_columns(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Order>>,
@@ -2047,6 +2274,11 @@ pub mod storage_descriptor {
             self.sort_columns = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The user-supplied properties in key-value form.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2057,6 +2289,7 @@ pub mod storage_descriptor {
             self.parameters = Some(hash_map);
             self
         }
+        /// <p>The user-supplied properties in key-value form.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -2071,6 +2304,7 @@ pub mod storage_descriptor {
             self.skewed_info = Some(input);
             self
         }
+        /// <p>The information about values that appear frequently in a column (skewed values).</p>
         pub fn set_skewed_info(
             mut self,
             input: std::option::Option<crate::model::SkewedInfo>,
@@ -2085,16 +2319,23 @@ pub mod storage_descriptor {
             self.stored_as_sub_directories = Some(input);
             self
         }
+        /// <p>
+        /// <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if
+        /// not.</p>
         pub fn set_stored_as_sub_directories(mut self, input: std::option::Option<bool>) -> Self {
             self.stored_as_sub_directories = input;
             self
         }
         /// <p>An object that references a schema stored in the Glue Schema Registry.</p>
+        ///
         /// <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
         pub fn schema_reference(mut self, input: crate::model::SchemaReference) -> Self {
             self.schema_reference = Some(input);
             self
         }
+        /// <p>An object that references a schema stored in the Glue Schema Registry.</p>
+        ///
+        /// <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
         pub fn set_schema_reference(
             mut self,
             input: std::option::Option<crate::model::SchemaReference>,
@@ -2165,6 +2406,7 @@ pub mod schema_reference {
             self.schema_id = Some(input);
             self
         }
+        /// <p>A structure that contains schema identity fields. Either this or the <code>SchemaVersionId</code> has to be provided.</p>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.schema_id = input;
             self
@@ -2174,6 +2416,7 @@ pub mod schema_reference {
             self.schema_version_id = Some(input.into());
             self
         }
+        /// <p>The unique ID assigned to a version of the schema. Either this or the <code>SchemaId</code> has to be provided.</p>
         pub fn set_schema_version_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2186,6 +2429,7 @@ pub mod schema_reference {
             self.schema_version_number = Some(input);
             self
         }
+        /// <p>The version number of the schema.</p>
         pub fn set_schema_version_number(mut self, input: std::option::Option<i64>) -> Self {
             self.schema_version_number = input;
             self
@@ -2243,6 +2487,7 @@ pub mod schema_id {
             self.schema_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_arn = input;
             self
@@ -2252,6 +2497,7 @@ pub mod schema_id {
             self.schema_name = Some(input.into());
             self
         }
+        /// <p>The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
         pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_name = input;
             self
@@ -2261,6 +2507,7 @@ pub mod schema_id {
             self.registry_name = Some(input.into());
             self
         }
+        /// <p>The name of the schema registry that contains the schema.</p>
         pub fn set_registry_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2324,12 +2571,18 @@ pub mod skewed_info {
         >,
     }
     impl Builder {
+        /// Appends an item to `skewed_column_names`.
+        ///
+        /// To override the contents of this collection use [`set_skewed_column_names`](Self::set_skewed_column_names).
+        ///
+        /// <p>A list of names of columns that contain skewed values.</p>
         pub fn skewed_column_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.skewed_column_names.unwrap_or_default();
             v.push(input.into());
             self.skewed_column_names = Some(v);
             self
         }
+        /// <p>A list of names of columns that contain skewed values.</p>
         pub fn set_skewed_column_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2337,12 +2590,20 @@ pub mod skewed_info {
             self.skewed_column_names = input;
             self
         }
+        /// Appends an item to `skewed_column_values`.
+        ///
+        /// To override the contents of this collection use [`set_skewed_column_values`](Self::set_skewed_column_values).
+        ///
+        /// <p>A list of values that appear so frequently as to be considered
+        /// skewed.</p>
         pub fn skewed_column_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.skewed_column_values.unwrap_or_default();
             v.push(input.into());
             self.skewed_column_values = Some(v);
             self
         }
+        /// <p>A list of values that appear so frequently as to be considered
+        /// skewed.</p>
         pub fn set_skewed_column_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2350,6 +2611,11 @@ pub mod skewed_info {
             self.skewed_column_values = input;
             self
         }
+        /// Adds a key-value pair to `skewed_column_value_location_maps`.
+        ///
+        /// To override the contents of this collection use [`set_skewed_column_value_location_maps`](Self::set_skewed_column_value_location_maps).
+        ///
+        /// <p>A mapping of skewed values to the columns that contain them.</p>
         pub fn skewed_column_value_location_maps(
             mut self,
             k: impl Into<std::string::String>,
@@ -2360,6 +2626,7 @@ pub mod skewed_info {
             self.skewed_column_value_location_maps = Some(hash_map);
             self
         }
+        /// <p>A mapping of skewed values to the columns that contain them.</p>
         pub fn set_skewed_column_value_location_maps(
             mut self,
             input: std::option::Option<
@@ -2419,6 +2686,7 @@ pub mod order {
             self.column = Some(input.into());
             self
         }
+        /// <p>The name of the column.</p>
         pub fn set_column(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.column = input;
             self
@@ -2429,6 +2697,8 @@ pub mod order {
             self.sort_order = Some(input);
             self
         }
+        /// <p>Indicates that the column is sorted in ascending order
+        /// (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
         pub fn set_sort_order(mut self, input: std::option::Option<i32>) -> Self {
             self.sort_order = input;
             self
@@ -2490,6 +2760,7 @@ pub mod ser_de_info {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name of the SerDe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2500,6 +2771,8 @@ pub mod ser_de_info {
             self.serialization_library = Some(input.into());
             self
         }
+        /// <p>Usually the class that implements the SerDe. An example is
+        /// <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
         pub fn set_serialization_library(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2507,6 +2780,11 @@ pub mod ser_de_info {
             self.serialization_library = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>These key-value pairs define initialization parameters for the SerDe.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2517,6 +2795,7 @@ pub mod ser_de_info {
             self.parameters = Some(hash_map);
             self
         }
+        /// <p>These key-value pairs define initialization parameters for the SerDe.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -2543,6 +2822,7 @@ impl SerDeInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2554,13 +2834,21 @@ impl SerDeInfo {
     std::hash::Hash,
 )]
 pub enum Compatibility {
+    #[allow(missing_docs)] // documentation missing in model
     Backward,
+    #[allow(missing_docs)] // documentation missing in model
     BackwardAll,
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Forward,
+    #[allow(missing_docs)] // documentation missing in model
     ForwardAll,
+    #[allow(missing_docs)] // documentation missing in model
     Full,
+    #[allow(missing_docs)] // documentation missing in model
     FullAll,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2588,6 +2876,7 @@ impl std::str::FromStr for Compatibility {
     }
 }
 impl Compatibility {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Compatibility::Backward => "BACKWARD",
@@ -2601,6 +2890,7 @@ impl Compatibility {
             Compatibility::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BACKWARD",
@@ -2652,6 +2942,7 @@ pub mod schema_version_number {
             self.latest_version = Some(input);
             self
         }
+        /// <p>The latest version available for the schema.</p>
         pub fn set_latest_version(mut self, input: std::option::Option<bool>) -> Self {
             self.latest_version = input;
             self
@@ -2661,6 +2952,7 @@ pub mod schema_version_number {
             self.version_number = Some(input);
             self
         }
+        /// <p>The version number of the schema.</p>
         pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
             self.version_number = input;
             self
@@ -2713,6 +3005,7 @@ pub mod registry_id {
             self.registry_name = Some(input.into());
             self
         }
+        /// <p>Name of the registry. Used only for lookup. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided. </p>
         pub fn set_registry_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2725,6 +3018,7 @@ pub mod registry_id {
             self.registry_arn = Some(input.into());
             self
         }
+        /// <p>Arn of the registry to be updated. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided.</p>
         pub fn set_registry_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_arn = input;
             self
@@ -2750,10 +3044,11 @@ impl RegistryId {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PartitionInput {
     /// <p>The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter for a valid input.</p>
+    ///
     /// <p>The values for the keys for the new partition must be passed as an array of String objects that must be ordered in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The last time at which the partition was accessed.</p>
-    pub last_access_time: std::option::Option<smithy_types::Instant>,
+    pub last_access_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Provides information about the physical
     /// location where the partition is stored.</p>
     pub storage_descriptor: std::option::Option<crate::model::StorageDescriptor>,
@@ -2761,7 +3056,7 @@ pub struct PartitionInput {
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The last time at which column statistics were computed for this partition.</p>
-    pub last_analyzed_time: std::option::Option<smithy_types::Instant>,
+    pub last_analyzed_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for PartitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2781,20 +3076,30 @@ pub mod partition_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) last_access_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_access_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) storage_descriptor: std::option::Option<crate::model::StorageDescriptor>,
         pub(crate) parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) last_analyzed_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_analyzed_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter for a valid input.</p>
+        ///
+        /// <p>The values for the keys for the new partition must be passed as an array of String objects that must be ordered in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter for a valid input.</p>
+        ///
+        /// <p>The values for the keys for the new partition must be passed as an array of String objects that must be ordered in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2803,13 +3108,14 @@ pub mod partition_input {
             self
         }
         /// <p>The last time at which the partition was accessed.</p>
-        pub fn last_access_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_access_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_access_time = Some(input);
             self
         }
+        /// <p>The last time at which the partition was accessed.</p>
         pub fn set_last_access_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_access_time = input;
             self
@@ -2820,6 +3126,8 @@ pub mod partition_input {
             self.storage_descriptor = Some(input);
             self
         }
+        /// <p>Provides information about the physical
+        /// location where the partition is stored.</p>
         pub fn set_storage_descriptor(
             mut self,
             input: std::option::Option<crate::model::StorageDescriptor>,
@@ -2827,6 +3135,11 @@ pub mod partition_input {
             self.storage_descriptor = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>These key-value pairs define partition parameters.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2837,6 +3150,7 @@ pub mod partition_input {
             self.parameters = Some(hash_map);
             self
         }
+        /// <p>These key-value pairs define partition parameters.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -2847,13 +3161,14 @@ pub mod partition_input {
             self
         }
         /// <p>The last time at which column statistics were computed for this partition.</p>
-        pub fn last_analyzed_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_analyzed_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_analyzed_time = Some(input);
             self
         }
+        /// <p>The last time at which column statistics were computed for this partition.</p>
         pub fn set_last_analyzed_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_analyzed_time = input;
             self
@@ -2877,6 +3192,7 @@ impl PartitionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2888,8 +3204,11 @@ impl PartitionInput {
     std::hash::Hash,
 )]
 pub enum WorkerType {
+    #[allow(missing_docs)] // documentation missing in model
     G1X,
+    #[allow(missing_docs)] // documentation missing in model
     G2X,
+    #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2912,6 +3231,7 @@ impl std::str::FromStr for WorkerType {
     }
 }
 impl WorkerType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WorkerType::G1X => "G.1X",
@@ -2920,6 +3240,7 @@ impl WorkerType {
             WorkerType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["G.1X", "G.2X", "Standard"]
     }
@@ -2966,6 +3287,8 @@ pub mod transform_parameters {
             self.transform_type = Some(input);
             self
         }
+        /// <p>The type of machine learning transform.</p>
+        /// <p>For information about the types of machine learning transforms, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html">Creating Machine Learning Transforms</a>.</p>
         pub fn set_transform_type(
             mut self,
             input: std::option::Option<crate::model::TransformType>,
@@ -2981,6 +3304,7 @@ pub mod transform_parameters {
             self.find_matches_parameters = Some(input);
             self
         }
+        /// <p>The parameters for the find matches algorithm.</p>
         pub fn set_find_matches_parameters(
             mut self,
             input: std::option::Option<crate::model::FindMatchesParameters>,
@@ -3014,7 +3338,9 @@ pub struct FindMatchesParameters {
     /// A value of 0.5 means no preference; a value of 1.0 means a bias purely for precision, and a
     /// value of 0.0 means a bias for recall. Because this is a tradeoff, choosing values close to 1.0
     /// means very low recall, and choosing values close to 0.0 results in very low precision.</p>
+    ///
     /// <p>The precision metric indicates how often your model is correct when it predicts a match. </p>
+    ///
     /// <p>The recall metric indicates that for an actual match, how often your model predicts the
     /// match.</p>
     pub precision_recall_tradeoff: std::option::Option<f64>,
@@ -3023,7 +3349,9 @@ pub struct FindMatchesParameters {
     /// means a bias purely for accuracy, which typically results in a higher cost, sometimes
     /// substantially higher. A value of 0.0 means a bias purely for cost, which results in a less
     /// accurate <code>FindMatches</code> transform, sometimes with unacceptable accuracy.</p>
+    ///
     /// <p>Accuracy measures how well the transform finds true positives and true negatives. Increasing accuracy requires more machine resources and cost. But it also results in increased recall. </p>
+    ///
     /// <p>Cost measures how many compute resources, and thus money, are consumed to run the
     /// transform.</p>
     pub accuracy_cost_tradeoff: std::option::Option<f64>,
@@ -3058,6 +3386,7 @@ pub mod find_matches_parameters {
             self.primary_key_column_name = Some(input.into());
             self
         }
+        /// <p>The name of a column that uniquely identifies rows in the source table. Used to help identify matching records.</p>
         pub fn set_primary_key_column_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3069,13 +3398,24 @@ pub mod find_matches_parameters {
         /// A value of 0.5 means no preference; a value of 1.0 means a bias purely for precision, and a
         /// value of 0.0 means a bias for recall. Because this is a tradeoff, choosing values close to 1.0
         /// means very low recall, and choosing values close to 0.0 results in very low precision.</p>
+        ///
         /// <p>The precision metric indicates how often your model is correct when it predicts a match. </p>
+        ///
         /// <p>The recall metric indicates that for an actual match, how often your model predicts the
         /// match.</p>
         pub fn precision_recall_tradeoff(mut self, input: f64) -> Self {
             self.precision_recall_tradeoff = Some(input);
             self
         }
+        /// <p>The value selected when tuning your transform for a balance between precision and recall.
+        /// A value of 0.5 means no preference; a value of 1.0 means a bias purely for precision, and a
+        /// value of 0.0 means a bias for recall. Because this is a tradeoff, choosing values close to 1.0
+        /// means very low recall, and choosing values close to 0.0 results in very low precision.</p>
+        ///
+        /// <p>The precision metric indicates how often your model is correct when it predicts a match. </p>
+        ///
+        /// <p>The recall metric indicates that for an actual match, how often your model predicts the
+        /// match.</p>
         pub fn set_precision_recall_tradeoff(mut self, input: std::option::Option<f64>) -> Self {
             self.precision_recall_tradeoff = input;
             self
@@ -3085,13 +3425,25 @@ pub mod find_matches_parameters {
         /// means a bias purely for accuracy, which typically results in a higher cost, sometimes
         /// substantially higher. A value of 0.0 means a bias purely for cost, which results in a less
         /// accurate <code>FindMatches</code> transform, sometimes with unacceptable accuracy.</p>
+        ///
         /// <p>Accuracy measures how well the transform finds true positives and true negatives. Increasing accuracy requires more machine resources and cost. But it also results in increased recall. </p>
+        ///
         /// <p>Cost measures how many compute resources, and thus money, are consumed to run the
         /// transform.</p>
         pub fn accuracy_cost_tradeoff(mut self, input: f64) -> Self {
             self.accuracy_cost_tradeoff = Some(input);
             self
         }
+        /// <p>The value that is selected when tuning your transform for a balance between accuracy and
+        /// cost. A value of 0.5 means that the system balances accuracy and cost concerns. A value of 1.0
+        /// means a bias purely for accuracy, which typically results in a higher cost, sometimes
+        /// substantially higher. A value of 0.0 means a bias purely for cost, which results in a less
+        /// accurate <code>FindMatches</code> transform, sometimes with unacceptable accuracy.</p>
+        ///
+        /// <p>Accuracy measures how well the transform finds true positives and true negatives. Increasing accuracy requires more machine resources and cost. But it also results in increased recall. </p>
+        ///
+        /// <p>Cost measures how many compute resources, and thus money, are consumed to run the
+        /// transform.</p>
         pub fn set_accuracy_cost_tradeoff(mut self, input: std::option::Option<f64>) -> Self {
             self.accuracy_cost_tradeoff = input;
             self
@@ -3102,6 +3454,8 @@ pub mod find_matches_parameters {
             self.enforce_provided_labels = Some(input);
             self
         }
+        /// <p>The value to switch on or off to force the output to match the provided labels from users. If the value is <code>True</code>, the <code>find matches</code> transform forces the output to match the provided labels. The results override the normal conflation results. If the value is <code>False</code>, the <code>find matches</code> transform does not ensure all the labels provided are respected, and the results rely on the trained model.</p>
+        /// <p>Note that setting this value to true may increase the conflation execution time.</p>
         pub fn set_enforce_provided_labels(mut self, input: std::option::Option<bool>) -> Self {
             self.enforce_provided_labels = input;
             self
@@ -3124,6 +3478,7 @@ impl FindMatchesParameters {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3135,6 +3490,7 @@ impl FindMatchesParameters {
     std::hash::Hash,
 )]
 pub enum TransformType {
+    #[allow(missing_docs)] // documentation missing in model
     FindMatches,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3155,12 +3511,14 @@ impl std::str::FromStr for TransformType {
     }
 }
 impl TransformType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TransformType::FindMatches => "FIND_MATCHES",
             TransformType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FIND_MATCHES"]
     }
@@ -3203,6 +3561,7 @@ pub struct JobUpdate {
     /// <p>The maximum number of times to retry this job if it fails.</p>
     pub max_retries: i32,
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
+    ///
     /// <p>The number of Glue data processing units (DPUs) to allocate to this job. You can
     /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
     /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
@@ -3215,9 +3574,12 @@ pub struct JobUpdate {
     pub timeout: std::option::Option<i32>,
     /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
     /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+    ///
     /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>       
+    ///
     /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
     /// running a Python shell job or an Apache Spark ETL job:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
@@ -3245,6 +3607,7 @@ pub struct JobUpdate {
     /// </ul>
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+    ///
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
     pub number_of_workers: std::option::Option<i32>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
@@ -3253,6 +3616,7 @@ pub struct JobUpdate {
     /// <p>Specifies the configuration properties of a job notification.</p>
     pub notification_property: std::option::Option<crate::model::NotificationProperty>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
+    ///
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     pub glue_version: std::option::Option<std::string::String>,
 }
@@ -3313,6 +3677,7 @@ pub mod job_update {
             self.description = Some(input.into());
             self
         }
+        /// <p>Description of the job being defined.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3322,6 +3687,7 @@ pub mod job_update {
             self.log_uri = Some(input.into());
             self
         }
+        /// <p>This field is reserved for future use.</p>
         pub fn set_log_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_uri = input;
             self
@@ -3332,6 +3698,8 @@ pub mod job_update {
             self.role = Some(input.into());
             self
         }
+        /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job
+        /// (required).</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -3342,6 +3710,8 @@ pub mod job_update {
             self.execution_property = Some(input);
             self
         }
+        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
+        /// for this job.</p>
         pub fn set_execution_property(
             mut self,
             input: std::option::Option<crate::model::ExecutionProperty>,
@@ -3354,10 +3724,20 @@ pub mod job_update {
             self.command = Some(input);
             self
         }
+        /// <p>The <code>JobCommand</code> that runs this job (required).</p>
         pub fn set_command(mut self, input: std::option::Option<crate::model::JobCommand>) -> Self {
             self.command = input;
             self
         }
+        /// Adds a key-value pair to `default_arguments`.
+        ///
+        /// To override the contents of this collection use [`set_default_arguments`](Self::set_default_arguments).
+        ///
+        /// <p>The default arguments for this job.</p>
+        /// <p>You can specify arguments here that your own job-execution script
+        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
+        /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn default_arguments(
             mut self,
             k: impl Into<std::string::String>,
@@ -3368,6 +3748,11 @@ pub mod job_update {
             self.default_arguments = Some(hash_map);
             self
         }
+        /// <p>The default arguments for this job.</p>
+        /// <p>You can specify arguments here that your own job-execution script
+        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
+        /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn set_default_arguments(
             mut self,
             input: std::option::Option<
@@ -3377,6 +3762,11 @@ pub mod job_update {
             self.default_arguments = input;
             self
         }
+        /// Adds a key-value pair to `non_overridable_arguments`.
+        ///
+        /// To override the contents of this collection use [`set_non_overridable_arguments`](Self::set_non_overridable_arguments).
+        ///
+        /// <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
         pub fn non_overridable_arguments(
             mut self,
             k: impl Into<std::string::String>,
@@ -3387,6 +3777,7 @@ pub mod job_update {
             self.non_overridable_arguments = Some(hash_map);
             self
         }
+        /// <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
         pub fn set_non_overridable_arguments(
             mut self,
             input: std::option::Option<
@@ -3401,6 +3792,7 @@ pub mod job_update {
             self.connections = Some(input);
             self
         }
+        /// <p>The connections used for this job.</p>
         pub fn set_connections(
             mut self,
             input: std::option::Option<crate::model::ConnectionsList>,
@@ -3413,11 +3805,13 @@ pub mod job_update {
             self.max_retries = Some(input);
             self
         }
+        /// <p>The maximum number of times to retry this job if it fails.</p>
         pub fn set_max_retries(mut self, input: std::option::Option<i32>) -> Self {
             self.max_retries = input;
             self
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
+        ///
         /// <p>The number of Glue data processing units (DPUs) to allocate to this job. You can
         /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
         /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
@@ -3427,6 +3821,13 @@ pub mod job_update {
             self.allocated_capacity = Some(input);
             self
         }
+        /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
+        ///
+        /// <p>The number of Glue data processing units (DPUs) to allocate to this job. You can
+        /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
+        /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
+        /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
+        /// page</a>.</p>
         pub fn set_allocated_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.allocated_capacity = input;
             self
@@ -3438,15 +3839,21 @@ pub mod job_update {
             self.timeout = Some(input);
             self
         }
+        /// <p>The job timeout in minutes.  This is the maximum time that a job run
+        /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
+        /// status. The default is 2,880 minutes (48 hours).</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
         }
         /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
         /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+        ///
         /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>       
+        ///
         /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
         /// running a Python shell job or an Apache Spark ETL job:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
@@ -3463,6 +3870,26 @@ pub mod job_update {
             self.max_capacity = Some(input);
             self
         }
+        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
+        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+        ///
+        /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>       
+        ///
+        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
+        /// running a Python shell job or an Apache Spark ETL job:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
+        /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
+        /// </li>
+        /// <li>
+        /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache
+        /// Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
+        /// The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
+        /// </li>
+        /// </ul>    
+        /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.max_capacity = input;
             self
@@ -3483,6 +3910,18 @@ pub mod job_update {
             self.worker_type = Some(input);
             self
         }
+        /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
+        /// </li>
+        /// <li>
+        /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
+        /// </li>
+        /// <li>
+        /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
+        /// </li>
+        /// </ul>
         pub fn set_worker_type(
             mut self,
             input: std::option::Option<crate::model::WorkerType>,
@@ -3491,11 +3930,15 @@ pub mod job_update {
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn number_of_workers(mut self, input: i32) -> Self {
             self.number_of_workers = Some(input);
             self
         }
+        /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+        ///
+        /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_workers = input;
             self
@@ -3506,6 +3949,8 @@ pub mod job_update {
             self.security_configuration = Some(input.into());
             self
         }
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
+        /// job.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3518,6 +3963,7 @@ pub mod job_update {
             self.notification_property = Some(input);
             self
         }
+        /// <p>Specifies the configuration properties of a job notification.</p>
         pub fn set_notification_property(
             mut self,
             input: std::option::Option<crate::model::NotificationProperty>,
@@ -3526,11 +3972,15 @@ pub mod job_update {
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
+        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.glue_version = Some(input.into());
             self
         }
+        /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
+        ///
+        /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.glue_version = input;
             self
@@ -3589,12 +4039,18 @@ pub mod connections_list {
         pub(crate) connections: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `connections`.
+        ///
+        /// To override the contents of this collection use [`set_connections`](Self::set_connections).
+        ///
+        /// <p>A list of connections used by the job.</p>
         pub fn connections(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.connections.unwrap_or_default();
             v.push(input.into());
             self.connections = Some(v);
             self
         }
+        /// <p>A list of connections used by the job.</p>
         pub fn set_connections(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3658,6 +4114,9 @@ pub mod job_command {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the job command. For an Apache Spark ETL job, this must be
+        /// <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>.
+        /// For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3668,6 +4127,8 @@ pub mod job_command {
             self.script_location = Some(input.into());
             self
         }
+        /// <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a
+        /// job.</p>
         pub fn set_script_location(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3680,6 +4141,7 @@ pub mod job_command {
             self.python_version = Some(input.into());
             self
         }
+        /// <p>The Python version being used to run a Python shell job. Allowed values are 2 or 3.</p>
         pub fn set_python_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3736,6 +4198,9 @@ pub mod execution_property {
             self.max_concurrent_runs = Some(input);
             self
         }
+        /// <p>The maximum number of concurrent runs allowed for the job.
+        /// The default is 1. An error is returned when this threshold is reached.
+        /// The maximum value you can specify is controlled by a service limit.</p>
         pub fn set_max_concurrent_runs(mut self, input: std::option::Option<i32>) -> Self {
             self.max_concurrent_runs = input;
             self
@@ -3805,6 +4270,14 @@ pub mod dev_endpoint_custom_libraries {
             self.extra_python_libs_s3_path = Some(input.into());
             self
         }
+        /// <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3)
+        /// bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be
+        /// complete paths separated by a comma.</p>
+        /// <note>
+        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
+        /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
+        /// analysis library, are not currently supported.</p>
+        /// </note>
         pub fn set_extra_python_libs_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3821,6 +4294,11 @@ pub mod dev_endpoint_custom_libraries {
             self.extra_jars_s3_path = Some(input.into());
             self
         }
+        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
+        /// in your <code>DevEndpoint</code>.</p>
+        /// <note>
+        /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
+        /// </note>
         pub fn set_extra_jars_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3904,6 +4382,8 @@ pub mod database_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is
+        /// stored.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3913,6 +4393,7 @@ pub mod database_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the database.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3922,10 +4403,18 @@ pub mod database_input {
             self.location_uri = Some(input.into());
             self
         }
+        /// <p>The location of the database (for example, an HDFS path). </p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_uri = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>These key-value pairs define parameters and properties
+        /// of the database.</p>
+        /// <p>These key-value pairs define parameters and properties of the database.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -3936,6 +4425,9 @@ pub mod database_input {
             self.parameters = Some(hash_map);
             self
         }
+        /// <p>These key-value pairs define parameters and properties
+        /// of the database.</p>
+        /// <p>These key-value pairs define parameters and properties of the database.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -3945,6 +4437,11 @@ pub mod database_input {
             self.parameters = input;
             self
         }
+        /// Appends an item to `create_table_default_permissions`.
+        ///
+        /// To override the contents of this collection use [`set_create_table_default_permissions`](Self::set_create_table_default_permissions).
+        ///
+        /// <p>Creates a set of default permissions on the table for principals. </p>
         pub fn create_table_default_permissions(
             mut self,
             input: impl Into<crate::model::PrincipalPermissions>,
@@ -3954,6 +4451,7 @@ pub mod database_input {
             self.create_table_default_permissions = Some(v);
             self
         }
+        /// <p>Creates a set of default permissions on the table for principals. </p>
         pub fn set_create_table_default_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
@@ -3966,6 +4464,7 @@ pub mod database_input {
             self.target_database = Some(input);
             self
         }
+        /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
         pub fn set_target_database(
             mut self,
             input: std::option::Option<crate::model::DatabaseIdentifier>,
@@ -4025,6 +4524,7 @@ pub mod database_identifier {
             self.catalog_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Data Catalog in which the database resides.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -4034,6 +4534,7 @@ pub mod database_identifier {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>The name of the catalog database.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4089,6 +4590,7 @@ pub mod principal_permissions {
             self.principal = Some(input);
             self
         }
+        /// <p>The principal who is granted permissions.</p>
         pub fn set_principal(
             mut self,
             input: std::option::Option<crate::model::DataLakePrincipal>,
@@ -4096,12 +4598,18 @@ pub mod principal_permissions {
             self.principal = input;
             self
         }
+        /// Appends an item to `permissions`.
+        ///
+        /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
+        ///
+        /// <p>The permissions that are granted to the principal.</p>
         pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
             let mut v = self.permissions.unwrap_or_default();
             v.push(input.into());
             self.permissions = Some(v);
             self
         }
+        /// <p>The permissions that are granted to the principal.</p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Permission>>,
@@ -4125,6 +4633,7 @@ impl PrincipalPermissions {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4136,14 +4645,23 @@ impl PrincipalPermissions {
     std::hash::Hash,
 )]
 pub enum Permission {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Alter,
+    #[allow(missing_docs)] // documentation missing in model
     CreateDatabase,
+    #[allow(missing_docs)] // documentation missing in model
     CreateTable,
+    #[allow(missing_docs)] // documentation missing in model
     DataLocationAccess,
+    #[allow(missing_docs)] // documentation missing in model
     Delete,
+    #[allow(missing_docs)] // documentation missing in model
     Drop,
+    #[allow(missing_docs)] // documentation missing in model
     Insert,
+    #[allow(missing_docs)] // documentation missing in model
     Select,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4172,6 +4690,7 @@ impl std::str::FromStr for Permission {
     }
 }
 impl Permission {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Permission::All => "ALL",
@@ -4186,6 +4705,7 @@ impl Permission {
             Permission::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ALL",
@@ -4240,6 +4760,7 @@ pub mod data_lake_principal {
             self.data_lake_principal_identifier = Some(input.into());
             self
         }
+        /// <p>An identifier for the Lake Formation principal.</p>
         pub fn set_data_lake_principal_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4267,6 +4788,7 @@ impl DataLakePrincipal {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LineageConfiguration {
     /// <p>Specifies whether data lineage is enabled for the crawler. Valid values are:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>ENABLE: enables data lineage for the crawler</p>
@@ -4295,6 +4817,7 @@ pub mod lineage_configuration {
     }
     impl Builder {
         /// <p>Specifies whether data lineage is enabled for the crawler. Valid values are:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>ENABLE: enables data lineage for the crawler</p>
@@ -4310,6 +4833,16 @@ pub mod lineage_configuration {
             self.crawler_lineage_settings = Some(input);
             self
         }
+        /// <p>Specifies whether data lineage is enabled for the crawler. Valid values are:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>ENABLE: enables data lineage for the crawler</p>
+        /// </li>
+        /// <li>
+        /// <p>DISABLE: disables data lineage for the crawler</p>
+        /// </li>
+        /// </ul>
         pub fn set_crawler_lineage_settings(
             mut self,
             input: std::option::Option<crate::model::CrawlerLineageSettings>,
@@ -4332,6 +4865,7 @@ impl LineageConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4343,7 +4877,9 @@ impl LineageConfiguration {
     std::hash::Hash,
 )]
 pub enum CrawlerLineageSettings {
+    #[allow(missing_docs)] // documentation missing in model
     Disable,
+    #[allow(missing_docs)] // documentation missing in model
     Enable,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4365,6 +4901,7 @@ impl std::str::FromStr for CrawlerLineageSettings {
     }
 }
 impl CrawlerLineageSettings {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CrawlerLineageSettings::Disable => "DISABLE",
@@ -4372,6 +4909,7 @@ impl CrawlerLineageSettings {
             CrawlerLineageSettings::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLE", "ENABLE"]
     }
@@ -4387,8 +4925,12 @@ impl AsRef<str> for CrawlerLineageSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecrawlPolicy {
     /// <p>Specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run.</p>
+    ///
     /// <p>A value of <code>CRAWL_EVERYTHING</code> specifies crawling the entire dataset again.</p>
+    ///
     /// <p>A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the last crawler run.</p>
+    ///
+    /// <p>A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.</p>
     pub recrawl_behavior: std::option::Option<crate::model::RecrawlBehavior>,
 }
 impl std::fmt::Debug for RecrawlPolicy {
@@ -4408,12 +4950,23 @@ pub mod recrawl_policy {
     }
     impl Builder {
         /// <p>Specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run.</p>
+        ///
         /// <p>A value of <code>CRAWL_EVERYTHING</code> specifies crawling the entire dataset again.</p>
+        ///
         /// <p>A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the last crawler run.</p>
+        ///
+        /// <p>A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.</p>
         pub fn recrawl_behavior(mut self, input: crate::model::RecrawlBehavior) -> Self {
             self.recrawl_behavior = Some(input);
             self
         }
+        /// <p>Specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run.</p>
+        ///
+        /// <p>A value of <code>CRAWL_EVERYTHING</code> specifies crawling the entire dataset again.</p>
+        ///
+        /// <p>A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the last crawler run.</p>
+        ///
+        /// <p>A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.</p>
         pub fn set_recrawl_behavior(
             mut self,
             input: std::option::Option<crate::model::RecrawlBehavior>,
@@ -4436,6 +4989,7 @@ impl RecrawlPolicy {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4447,7 +5001,11 @@ impl RecrawlPolicy {
     std::hash::Hash,
 )]
 pub enum RecrawlBehavior {
+    #[allow(missing_docs)] // documentation missing in model
+    CrawlEventMode,
+    #[allow(missing_docs)] // documentation missing in model
     CrawlEverything,
+    #[allow(missing_docs)] // documentation missing in model
     CrawlNewFoldersOnly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4455,6 +5013,7 @@ pub enum RecrawlBehavior {
 impl std::convert::From<&str> for RecrawlBehavior {
     fn from(s: &str) -> Self {
         match s {
+            "CRAWL_EVENT_MODE" => RecrawlBehavior::CrawlEventMode,
             "CRAWL_EVERYTHING" => RecrawlBehavior::CrawlEverything,
             "CRAWL_NEW_FOLDERS_ONLY" => RecrawlBehavior::CrawlNewFoldersOnly,
             other => RecrawlBehavior::Unknown(other.to_owned()),
@@ -4469,15 +5028,22 @@ impl std::str::FromStr for RecrawlBehavior {
     }
 }
 impl RecrawlBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RecrawlBehavior::CrawlEventMode => "CRAWL_EVENT_MODE",
             RecrawlBehavior::CrawlEverything => "CRAWL_EVERYTHING",
             RecrawlBehavior::CrawlNewFoldersOnly => "CRAWL_NEW_FOLDERS_ONLY",
             RecrawlBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["CRAWL_EVERYTHING", "CRAWL_NEW_FOLDERS_ONLY"]
+        &[
+            "CRAWL_EVENT_MODE",
+            "CRAWL_EVERYTHING",
+            "CRAWL_NEW_FOLDERS_ONLY",
+        ]
     }
 }
 impl AsRef<str> for RecrawlBehavior {
@@ -4518,6 +5084,7 @@ pub mod schema_change_policy {
             self.update_behavior = Some(input);
             self
         }
+        /// <p>The update behavior when the crawler finds a changed schema.</p>
         pub fn set_update_behavior(
             mut self,
             input: std::option::Option<crate::model::UpdateBehavior>,
@@ -4530,6 +5097,7 @@ pub mod schema_change_policy {
             self.delete_behavior = Some(input);
             self
         }
+        /// <p>The deletion behavior when the crawler finds a deleted object.</p>
         pub fn set_delete_behavior(
             mut self,
             input: std::option::Option<crate::model::DeleteBehavior>,
@@ -4553,6 +5121,7 @@ impl SchemaChangePolicy {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4564,8 +5133,11 @@ impl SchemaChangePolicy {
     std::hash::Hash,
 )]
 pub enum DeleteBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFromDatabase,
+    #[allow(missing_docs)] // documentation missing in model
     DeprecateInDatabase,
+    #[allow(missing_docs)] // documentation missing in model
     Log,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4588,6 +5160,7 @@ impl std::str::FromStr for DeleteBehavior {
     }
 }
 impl DeleteBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeleteBehavior::DeleteFromDatabase => "DELETE_FROM_DATABASE",
@@ -4596,6 +5169,7 @@ impl DeleteBehavior {
             DeleteBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DELETE_FROM_DATABASE", "DEPRECATE_IN_DATABASE", "LOG"]
     }
@@ -4606,6 +5180,7 @@ impl AsRef<str> for DeleteBehavior {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4617,7 +5192,9 @@ impl AsRef<str> for DeleteBehavior {
     std::hash::Hash,
 )]
 pub enum UpdateBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     Log,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateInDatabase,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4639,6 +5216,7 @@ impl std::str::FromStr for UpdateBehavior {
     }
 }
 impl UpdateBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UpdateBehavior::Log => "LOG",
@@ -4646,6 +5224,7 @@ impl UpdateBehavior {
             UpdateBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LOG", "UPDATE_IN_DATABASE"]
     }
@@ -4697,12 +5276,18 @@ pub mod crawler_targets {
         pub(crate) catalog_targets: std::option::Option<std::vec::Vec<crate::model::CatalogTarget>>,
     }
     impl Builder {
+        /// Appends an item to `s3_targets`.
+        ///
+        /// To override the contents of this collection use [`set_s3_targets`](Self::set_s3_targets).
+        ///
+        /// <p>Specifies Amazon Simple Storage Service (Amazon S3) targets.</p>
         pub fn s3_targets(mut self, input: impl Into<crate::model::S3Target>) -> Self {
             let mut v = self.s3_targets.unwrap_or_default();
             v.push(input.into());
             self.s3_targets = Some(v);
             self
         }
+        /// <p>Specifies Amazon Simple Storage Service (Amazon S3) targets.</p>
         pub fn set_s3_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::S3Target>>,
@@ -4710,12 +5295,18 @@ pub mod crawler_targets {
             self.s3_targets = input;
             self
         }
+        /// Appends an item to `jdbc_targets`.
+        ///
+        /// To override the contents of this collection use [`set_jdbc_targets`](Self::set_jdbc_targets).
+        ///
+        /// <p>Specifies JDBC targets.</p>
         pub fn jdbc_targets(mut self, input: impl Into<crate::model::JdbcTarget>) -> Self {
             let mut v = self.jdbc_targets.unwrap_or_default();
             v.push(input.into());
             self.jdbc_targets = Some(v);
             self
         }
+        /// <p>Specifies JDBC targets.</p>
         pub fn set_jdbc_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::JdbcTarget>>,
@@ -4723,12 +5314,18 @@ pub mod crawler_targets {
             self.jdbc_targets = input;
             self
         }
+        /// Appends an item to `mongo_db_targets`.
+        ///
+        /// To override the contents of this collection use [`set_mongo_db_targets`](Self::set_mongo_db_targets).
+        ///
+        /// <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
         pub fn mongo_db_targets(mut self, input: impl Into<crate::model::MongoDbTarget>) -> Self {
             let mut v = self.mongo_db_targets.unwrap_or_default();
             v.push(input.into());
             self.mongo_db_targets = Some(v);
             self
         }
+        /// <p>Specifies Amazon DocumentDB or MongoDB targets.</p>
         pub fn set_mongo_db_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MongoDbTarget>>,
@@ -4736,12 +5333,18 @@ pub mod crawler_targets {
             self.mongo_db_targets = input;
             self
         }
+        /// Appends an item to `dynamo_db_targets`.
+        ///
+        /// To override the contents of this collection use [`set_dynamo_db_targets`](Self::set_dynamo_db_targets).
+        ///
+        /// <p>Specifies Amazon DynamoDB targets.</p>
         pub fn dynamo_db_targets(mut self, input: impl Into<crate::model::DynamoDbTarget>) -> Self {
             let mut v = self.dynamo_db_targets.unwrap_or_default();
             v.push(input.into());
             self.dynamo_db_targets = Some(v);
             self
         }
+        /// <p>Specifies Amazon DynamoDB targets.</p>
         pub fn set_dynamo_db_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DynamoDbTarget>>,
@@ -4749,12 +5352,18 @@ pub mod crawler_targets {
             self.dynamo_db_targets = input;
             self
         }
+        /// Appends an item to `catalog_targets`.
+        ///
+        /// To override the contents of this collection use [`set_catalog_targets`](Self::set_catalog_targets).
+        ///
+        /// <p>Specifies Glue Data Catalog targets.</p>
         pub fn catalog_targets(mut self, input: impl Into<crate::model::CatalogTarget>) -> Self {
             let mut v = self.catalog_targets.unwrap_or_default();
             v.push(input.into());
             self.catalog_targets = Some(v);
             self
         }
+        /// <p>Specifies Glue Data Catalog targets.</p>
         pub fn set_catalog_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CatalogTarget>>,
@@ -4813,6 +5422,7 @@ pub mod catalog_target {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>The name of the database to be synchronized.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4820,12 +5430,18 @@ pub mod catalog_target {
             self.database_name = input;
             self
         }
+        /// Appends an item to `tables`.
+        ///
+        /// To override the contents of this collection use [`set_tables`](Self::set_tables).
+        ///
+        /// <p>A list of the tables to be synchronized.</p>
         pub fn tables(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tables.unwrap_or_default();
             v.push(input.into());
             self.tables = Some(v);
             self
         }
+        /// <p>A list of the tables to be synchronized.</p>
         pub fn set_tables(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4856,9 +5472,11 @@ pub struct DynamoDbTarget {
     /// <p>The name of the DynamoDB table to crawl.</p>
     pub path: std::option::Option<std::string::String>,
     /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
+    ///
     /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
     pub scan_all: std::option::Option<bool>,
     /// <p>The percentage of the configured read capacity units to use by the Glue crawler. Read capacity units is a term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be performed on that table per second.</p>
+    ///
     /// <p>The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a value, and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the max configured Read Capacity Unit (for tables using on-demand mode).</p>
     pub scan_rate: std::option::Option<f64>,
 }
@@ -4887,26 +5505,35 @@ pub mod dynamo_db_target {
             self.path = Some(input.into());
             self
         }
+        /// <p>The name of the DynamoDB table to crawl.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
         }
         /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
+        ///
         /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
         pub fn scan_all(mut self, input: bool) -> Self {
             self.scan_all = Some(input);
             self
         }
+        /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
+        ///
+        /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
         pub fn set_scan_all(mut self, input: std::option::Option<bool>) -> Self {
             self.scan_all = input;
             self
         }
         /// <p>The percentage of the configured read capacity units to use by the Glue crawler. Read capacity units is a term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be performed on that table per second.</p>
+        ///
         /// <p>The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a value, and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the max configured Read Capacity Unit (for tables using on-demand mode).</p>
         pub fn scan_rate(mut self, input: f64) -> Self {
             self.scan_rate = Some(input);
             self
         }
+        /// <p>The percentage of the configured read capacity units to use by the Glue crawler. Read capacity units is a term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be performed on that table per second.</p>
+        ///
+        /// <p>The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a value, and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the max configured Read Capacity Unit (for tables using on-demand mode).</p>
         pub fn set_scan_rate(mut self, input: std::option::Option<f64>) -> Self {
             self.scan_rate = input;
             self
@@ -4937,6 +5564,7 @@ pub struct MongoDbTarget {
     /// <p>The path of the Amazon DocumentDB or MongoDB target (database/collection).</p>
     pub path: std::option::Option<std::string::String>,
     /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
+    ///
     /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
     pub scan_all: std::option::Option<bool>,
 }
@@ -4965,6 +5593,7 @@ pub mod mongo_db_target {
             self.connection_name = Some(input.into());
             self
         }
+        /// <p>The name of the connection to use to connect to the Amazon DocumentDB or MongoDB target.</p>
         pub fn set_connection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4977,16 +5606,21 @@ pub mod mongo_db_target {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path of the Amazon DocumentDB or MongoDB target (database/collection).</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
         }
         /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
+        ///
         /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
         pub fn scan_all(mut self, input: bool) -> Self {
             self.scan_all = Some(input);
             self
         }
+        /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
+        ///
+        /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
         pub fn set_scan_all(mut self, input: std::option::Option<bool>) -> Self {
             self.scan_all = input;
             self
@@ -5045,6 +5679,7 @@ pub mod jdbc_target {
             self.connection_name = Some(input.into());
             self
         }
+        /// <p>The name of the connection to use to connect to the JDBC target.</p>
         pub fn set_connection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5057,16 +5692,25 @@ pub mod jdbc_target {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path of the JDBC target.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
         }
+        /// Appends an item to `exclusions`.
+        ///
+        /// To override the contents of this collection use [`set_exclusions`](Self::set_exclusions).
+        ///
+        /// <p>A list of glob patterns used to exclude from the crawl.
+        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
         pub fn exclusions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exclusions.unwrap_or_default();
             v.push(input.into());
             self.exclusions = Some(v);
             self
         }
+        /// <p>A list of glob patterns used to exclude from the crawl.
+        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
         pub fn set_exclusions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5104,6 +5748,10 @@ pub struct S3Target {
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>Sets the number of files in each leaf folder to be crawled when crawling sample files in a dataset. If not set, all the files are crawled. A valid value is an integer between 1 and 249.</p>
     pub sample_size: std::option::Option<i32>,
+    /// <p>A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.</p>
+    pub event_queue_arn: std::option::Option<std::string::String>,
+    /// <p>A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+    pub dlq_event_queue_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for S3Target {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5112,6 +5760,8 @@ impl std::fmt::Debug for S3Target {
         formatter.field("exclusions", &self.exclusions);
         formatter.field("connection_name", &self.connection_name);
         formatter.field("sample_size", &self.sample_size);
+        formatter.field("event_queue_arn", &self.event_queue_arn);
+        formatter.field("dlq_event_queue_arn", &self.dlq_event_queue_arn);
         formatter.finish()
     }
 }
@@ -5125,6 +5775,8 @@ pub mod s3_target {
         pub(crate) exclusions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) connection_name: std::option::Option<std::string::String>,
         pub(crate) sample_size: std::option::Option<i32>,
+        pub(crate) event_queue_arn: std::option::Option<std::string::String>,
+        pub(crate) dlq_event_queue_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The path to the Amazon S3 target.</p>
@@ -5132,16 +5784,25 @@ pub mod s3_target {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path to the Amazon S3 target.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
         }
+        /// Appends an item to `exclusions`.
+        ///
+        /// To override the contents of this collection use [`set_exclusions`](Self::set_exclusions).
+        ///
+        /// <p>A list of glob patterns used to exclude from the crawl.
+        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
         pub fn exclusions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exclusions.unwrap_or_default();
             v.push(input.into());
             self.exclusions = Some(v);
             self
         }
+        /// <p>A list of glob patterns used to exclude from the crawl.
+        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
         pub fn set_exclusions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5154,6 +5815,7 @@ pub mod s3_target {
             self.connection_name = Some(input.into());
             self
         }
+        /// <p>The name of a connection which allows a job or crawler to access data in Amazon S3 within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
         pub fn set_connection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5166,8 +5828,35 @@ pub mod s3_target {
             self.sample_size = Some(input);
             self
         }
+        /// <p>Sets the number of files in each leaf folder to be crawled when crawling sample files in a dataset. If not set, all the files are crawled. A valid value is an integer between 1 and 249.</p>
         pub fn set_sample_size(mut self, input: std::option::Option<i32>) -> Self {
             self.sample_size = input;
+            self
+        }
+        /// <p>A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.</p>
+        pub fn event_queue_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_queue_arn = Some(input.into());
+            self
+        }
+        /// <p>A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.</p>
+        pub fn set_event_queue_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_queue_arn = input;
+            self
+        }
+        /// <p>A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+        pub fn dlq_event_queue_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dlq_event_queue_arn = Some(input.into());
+            self
+        }
+        /// <p>A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+        pub fn set_dlq_event_queue_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.dlq_event_queue_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`S3Target`](crate::model::S3Target)
@@ -5177,6 +5866,8 @@ pub mod s3_target {
                 exclusions: self.exclusions,
                 connection_name: self.connection_name,
                 sample_size: self.sample_size,
+                event_queue_arn: self.event_queue_arn,
+                dlq_event_queue_arn: self.dlq_event_queue_arn,
             }
         }
     }
@@ -5273,6 +5964,7 @@ pub mod connection_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the connection.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5282,6 +5974,7 @@ pub mod connection_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the connection.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5318,6 +6011,34 @@ pub mod connection_input {
             self.connection_type = Some(input);
             self
         }
+        /// <p>The type of the connection. Currently, these types are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>JDBC</code> - Designates a connection to a database through Java Database Connectivity (JDBC).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MONGODB</code> - Designates a connection to a MongoDB document database.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from Amazon Web Services Marketplace to read from and write to data stores that are not natively supported by Glue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data stores that are not natively supported by Glue.</p>
+        /// </li>
+        /// </ul>
+        /// <p>SFTP is not supported.</p>
         pub fn set_connection_type(
             mut self,
             input: std::option::Option<crate::model::ConnectionType>,
@@ -5325,12 +6046,18 @@ pub mod connection_input {
             self.connection_type = input;
             self
         }
+        /// Appends an item to `match_criteria`.
+        ///
+        /// To override the contents of this collection use [`set_match_criteria`](Self::set_match_criteria).
+        ///
+        /// <p>A list of criteria that can be used in selecting this connection.</p>
         pub fn match_criteria(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.match_criteria.unwrap_or_default();
             v.push(input.into());
             self.match_criteria = Some(v);
             self
         }
+        /// <p>A list of criteria that can be used in selecting this connection.</p>
         pub fn set_match_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5338,6 +6065,11 @@ pub mod connection_input {
             self.match_criteria = input;
             self
         }
+        /// Adds a key-value pair to `connection_properties`.
+        ///
+        /// To override the contents of this collection use [`set_connection_properties`](Self::set_connection_properties).
+        ///
+        /// <p>These key-value pairs define parameters for the connection.</p>
         pub fn connection_properties(
             mut self,
             k: impl Into<crate::model::ConnectionPropertyKey>,
@@ -5348,6 +6080,7 @@ pub mod connection_input {
             self.connection_properties = Some(hash_map);
             self
         }
+        /// <p>These key-value pairs define parameters for the connection.</p>
         pub fn set_connection_properties(
             mut self,
             input: std::option::Option<
@@ -5366,6 +6099,8 @@ pub mod connection_input {
             self.physical_connection_requirements = Some(input);
             self
         }
+        /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and
+        /// <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
         pub fn set_physical_connection_requirements(
             mut self,
             input: std::option::Option<crate::model::PhysicalConnectionRequirements>,
@@ -5431,16 +6166,23 @@ pub mod physical_connection_requirements {
             self.subnet_id = Some(input.into());
             self
         }
+        /// <p>The subnet ID used by the connection.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_id = input;
             self
         }
+        /// Appends an item to `security_group_id_list`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_id_list`](Self::set_security_group_id_list).
+        ///
+        /// <p>The security group ID list used by the connection.</p>
         pub fn security_group_id_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_id_list.unwrap_or_default();
             v.push(input.into());
             self.security_group_id_list = Some(v);
             self
         }
+        /// <p>The security group ID list used by the connection.</p>
         pub fn set_security_group_id_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5455,6 +6197,9 @@ pub mod physical_connection_requirements {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>The connection's Availability Zone. This field is redundant because the specified subnet
+        /// implies the Availability Zone to be used. Currently the field must be populated, but it will
+        /// be deprecated in the future.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5479,6 +6224,7 @@ impl PhysicalConnectionRequirements {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5490,35 +6236,65 @@ impl PhysicalConnectionRequirements {
     std::hash::Hash,
 )]
 pub enum ConnectionPropertyKey {
+    #[allow(missing_docs)] // documentation missing in model
     ConfigFiles,
+    #[allow(missing_docs)] // documentation missing in model
     ConnectionUrl,
+    #[allow(missing_docs)] // documentation missing in model
     ConnectorClassName,
+    #[allow(missing_docs)] // documentation missing in model
     ConnectorType,
+    #[allow(missing_docs)] // documentation missing in model
     ConnectorUrl,
+    #[allow(missing_docs)] // documentation missing in model
     CustomJdbcCert,
+    #[allow(missing_docs)] // documentation missing in model
     CustomJdbcCertString,
+    #[allow(missing_docs)] // documentation missing in model
     EncryptedKafkaClientKeystorePassword,
+    #[allow(missing_docs)] // documentation missing in model
     EncryptedKafkaClientKeyPassword,
+    #[allow(missing_docs)] // documentation missing in model
     EncryptedPassword,
+    #[allow(missing_docs)] // documentation missing in model
     Host,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceId,
+    #[allow(missing_docs)] // documentation missing in model
     JdbcConnectionUrl,
+    #[allow(missing_docs)] // documentation missing in model
     JdbcDriverClassName,
+    #[allow(missing_docs)] // documentation missing in model
     JdbcDriverJarUri,
+    #[allow(missing_docs)] // documentation missing in model
     JdbcEnforceSsl,
+    #[allow(missing_docs)] // documentation missing in model
     JdbcEngine,
+    #[allow(missing_docs)] // documentation missing in model
     JdbcEngineVersion,
+    #[allow(missing_docs)] // documentation missing in model
     KafkaBootstrapServers,
+    #[allow(missing_docs)] // documentation missing in model
     KafkaClientKeystore,
+    #[allow(missing_docs)] // documentation missing in model
     KafkaClientKeystorePassword,
+    #[allow(missing_docs)] // documentation missing in model
     KafkaClientKeyPassword,
+    #[allow(missing_docs)] // documentation missing in model
     KafkaCustomCert,
+    #[allow(missing_docs)] // documentation missing in model
     KafkaSkipCustomCertValidation,
+    #[allow(missing_docs)] // documentation missing in model
     KafkaSslEnabled,
+    #[allow(missing_docs)] // documentation missing in model
     Password,
+    #[allow(missing_docs)] // documentation missing in model
     Port,
+    #[allow(missing_docs)] // documentation missing in model
     SecretId,
+    #[allow(missing_docs)] // documentation missing in model
     SkipCustomJdbcCertValidation,
+    #[allow(missing_docs)] // documentation missing in model
     UserName,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5576,6 +6352,7 @@ impl std::str::FromStr for ConnectionPropertyKey {
     }
 }
 impl ConnectionPropertyKey {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConnectionPropertyKey::ConfigFiles => "CONFIG_FILES",
@@ -5619,6 +6396,7 @@ impl ConnectionPropertyKey {
             ConnectionPropertyKey::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CONFIG_FILES",
@@ -5660,6 +6438,7 @@ impl AsRef<str> for ConnectionPropertyKey {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5671,12 +6450,19 @@ impl AsRef<str> for ConnectionPropertyKey {
     std::hash::Hash,
 )]
 pub enum ConnectionType {
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
+    #[allow(missing_docs)] // documentation missing in model
     Jdbc,
+    #[allow(missing_docs)] // documentation missing in model
     Kafka,
+    #[allow(missing_docs)] // documentation missing in model
     Marketplace,
+    #[allow(missing_docs)] // documentation missing in model
     Mongodb,
+    #[allow(missing_docs)] // documentation missing in model
     Network,
+    #[allow(missing_docs)] // documentation missing in model
     Sftp,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5703,6 +6489,7 @@ impl std::str::FromStr for ConnectionType {
     }
 }
 impl ConnectionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConnectionType::Custom => "CUSTOM",
@@ -5715,6 +6502,7 @@ impl ConnectionType {
             ConnectionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CUSTOM",
@@ -5765,6 +6553,7 @@ pub mod column_statistics_error {
             self.column_statistics = Some(input);
             self
         }
+        /// <p>The <code>ColumnStatistics</code> of the column.</p>
         pub fn set_column_statistics(
             mut self,
             input: std::option::Option<crate::model::ColumnStatistics>,
@@ -5777,6 +6566,7 @@ pub mod column_statistics_error {
             self.error = Some(input);
             self
         }
+        /// <p>An error message with the reason for the failure of an operation.</p>
         pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorDetail>) -> Self {
             self.error = input;
             self
@@ -5829,6 +6619,7 @@ pub mod error_detail {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>The code associated with this error.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -5838,6 +6629,7 @@ pub mod error_detail {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>A message describing the error.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5870,7 +6662,7 @@ pub struct ColumnStatistics {
     /// <p>The data type of the column.</p>
     pub column_type: std::option::Option<std::string::String>,
     /// <p>The timestamp of when column statistics were generated.</p>
-    pub analyzed_time: std::option::Option<smithy_types::Instant>,
+    pub analyzed_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A <code>ColumnStatisticData</code> object that contains the statistics data values.</p>
     pub statistics_data: std::option::Option<crate::model::ColumnStatisticsData>,
 }
@@ -5892,7 +6684,7 @@ pub mod column_statistics {
     pub struct Builder {
         pub(crate) column_name: std::option::Option<std::string::String>,
         pub(crate) column_type: std::option::Option<std::string::String>,
-        pub(crate) analyzed_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) analyzed_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) statistics_data: std::option::Option<crate::model::ColumnStatisticsData>,
     }
     impl Builder {
@@ -5901,6 +6693,7 @@ pub mod column_statistics {
             self.column_name = Some(input.into());
             self
         }
+        /// <p>Name of column which statistics belong to.</p>
         pub fn set_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.column_name = input;
             self
@@ -5910,18 +6703,20 @@ pub mod column_statistics {
             self.column_type = Some(input.into());
             self
         }
+        /// <p>The data type of the column.</p>
         pub fn set_column_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.column_type = input;
             self
         }
         /// <p>The timestamp of when column statistics were generated.</p>
-        pub fn analyzed_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn analyzed_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.analyzed_time = Some(input);
             self
         }
+        /// <p>The timestamp of when column statistics were generated.</p>
         pub fn set_analyzed_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.analyzed_time = input;
             self
@@ -5931,6 +6726,7 @@ pub mod column_statistics {
             self.statistics_data = Some(input);
             self
         }
+        /// <p>A <code>ColumnStatisticData</code> object that contains the statistics data values.</p>
         pub fn set_statistics_data(
             mut self,
             input: std::option::Option<crate::model::ColumnStatisticsData>,
@@ -6045,6 +6841,7 @@ pub mod column_statistics_data {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of column statistics data.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ColumnStatisticsType>,
@@ -6060,6 +6857,7 @@ pub mod column_statistics_data {
             self.boolean_column_statistics_data = Some(input);
             self
         }
+        /// <p>Boolean column statistics data.</p>
         pub fn set_boolean_column_statistics_data(
             mut self,
             input: std::option::Option<crate::model::BooleanColumnStatisticsData>,
@@ -6075,6 +6873,7 @@ pub mod column_statistics_data {
             self.date_column_statistics_data = Some(input);
             self
         }
+        /// <p>Date column statistics data.</p>
         pub fn set_date_column_statistics_data(
             mut self,
             input: std::option::Option<crate::model::DateColumnStatisticsData>,
@@ -6090,6 +6889,7 @@ pub mod column_statistics_data {
             self.decimal_column_statistics_data = Some(input);
             self
         }
+        /// <p>Decimal column statistics data.</p>
         pub fn set_decimal_column_statistics_data(
             mut self,
             input: std::option::Option<crate::model::DecimalColumnStatisticsData>,
@@ -6105,6 +6905,7 @@ pub mod column_statistics_data {
             self.double_column_statistics_data = Some(input);
             self
         }
+        /// <p>Double column statistics data.</p>
         pub fn set_double_column_statistics_data(
             mut self,
             input: std::option::Option<crate::model::DoubleColumnStatisticsData>,
@@ -6120,6 +6921,7 @@ pub mod column_statistics_data {
             self.long_column_statistics_data = Some(input);
             self
         }
+        /// <p>Long column statistics data.</p>
         pub fn set_long_column_statistics_data(
             mut self,
             input: std::option::Option<crate::model::LongColumnStatisticsData>,
@@ -6135,6 +6937,7 @@ pub mod column_statistics_data {
             self.string_column_statistics_data = Some(input);
             self
         }
+        /// <p>String column statistics data.</p>
         pub fn set_string_column_statistics_data(
             mut self,
             input: std::option::Option<crate::model::StringColumnStatisticsData>,
@@ -6150,6 +6953,7 @@ pub mod column_statistics_data {
             self.binary_column_statistics_data = Some(input);
             self
         }
+        /// <p>Binary column statistics data.</p>
         pub fn set_binary_column_statistics_data(
             mut self,
             input: std::option::Option<crate::model::BinaryColumnStatisticsData>,
@@ -6215,6 +7019,7 @@ pub mod binary_column_statistics_data {
             self.maximum_length = Some(input);
             self
         }
+        /// <p>The size of the longest bit sequence in the column.</p>
         pub fn set_maximum_length(mut self, input: std::option::Option<i64>) -> Self {
             self.maximum_length = input;
             self
@@ -6224,6 +7029,7 @@ pub mod binary_column_statistics_data {
             self.average_length = Some(input);
             self
         }
+        /// <p>The average bit sequence length in the column.</p>
         pub fn set_average_length(mut self, input: std::option::Option<f64>) -> Self {
             self.average_length = input;
             self
@@ -6233,6 +7039,7 @@ pub mod binary_column_statistics_data {
             self.number_of_nulls = Some(input);
             self
         }
+        /// <p>The number of null values in the column.</p>
         pub fn set_number_of_nulls(mut self, input: std::option::Option<i64>) -> Self {
             self.number_of_nulls = input;
             self
@@ -6294,6 +7101,7 @@ pub mod string_column_statistics_data {
             self.maximum_length = Some(input);
             self
         }
+        /// <p>The size of the longest string in the column.</p>
         pub fn set_maximum_length(mut self, input: std::option::Option<i64>) -> Self {
             self.maximum_length = input;
             self
@@ -6303,6 +7111,7 @@ pub mod string_column_statistics_data {
             self.average_length = Some(input);
             self
         }
+        /// <p>The average string length in the column.</p>
         pub fn set_average_length(mut self, input: std::option::Option<f64>) -> Self {
             self.average_length = input;
             self
@@ -6312,6 +7121,7 @@ pub mod string_column_statistics_data {
             self.number_of_nulls = Some(input);
             self
         }
+        /// <p>The number of null values in the column.</p>
         pub fn set_number_of_nulls(mut self, input: std::option::Option<i64>) -> Self {
             self.number_of_nulls = input;
             self
@@ -6321,6 +7131,7 @@ pub mod string_column_statistics_data {
             self.number_of_distinct_values = Some(input);
             self
         }
+        /// <p>The number of distinct values in a column.</p>
         pub fn set_number_of_distinct_values(mut self, input: std::option::Option<i64>) -> Self {
             self.number_of_distinct_values = input;
             self
@@ -6383,6 +7194,7 @@ pub mod long_column_statistics_data {
             self.minimum_value = Some(input);
             self
         }
+        /// <p>The lowest value in the column.</p>
         pub fn set_minimum_value(mut self, input: std::option::Option<i64>) -> Self {
             self.minimum_value = input;
             self
@@ -6392,6 +7204,7 @@ pub mod long_column_statistics_data {
             self.maximum_value = Some(input);
             self
         }
+        /// <p>The highest value in the column.</p>
         pub fn set_maximum_value(mut self, input: std::option::Option<i64>) -> Self {
             self.maximum_value = input;
             self
@@ -6401,6 +7214,7 @@ pub mod long_column_statistics_data {
             self.number_of_nulls = Some(input);
             self
         }
+        /// <p>The number of null values in the column.</p>
         pub fn set_number_of_nulls(mut self, input: std::option::Option<i64>) -> Self {
             self.number_of_nulls = input;
             self
@@ -6410,6 +7224,7 @@ pub mod long_column_statistics_data {
             self.number_of_distinct_values = Some(input);
             self
         }
+        /// <p>The number of distinct values in a column.</p>
         pub fn set_number_of_distinct_values(mut self, input: std::option::Option<i64>) -> Self {
             self.number_of_distinct_values = input;
             self
@@ -6472,6 +7287,7 @@ pub mod double_column_statistics_data {
             self.minimum_value = Some(input);
             self
         }
+        /// <p>The lowest value in the column.</p>
         pub fn set_minimum_value(mut self, input: std::option::Option<f64>) -> Self {
             self.minimum_value = input;
             self
@@ -6481,6 +7297,7 @@ pub mod double_column_statistics_data {
             self.maximum_value = Some(input);
             self
         }
+        /// <p>The highest value in the column.</p>
         pub fn set_maximum_value(mut self, input: std::option::Option<f64>) -> Self {
             self.maximum_value = input;
             self
@@ -6490,6 +7307,7 @@ pub mod double_column_statistics_data {
             self.number_of_nulls = Some(input);
             self
         }
+        /// <p>The number of null values in the column.</p>
         pub fn set_number_of_nulls(mut self, input: std::option::Option<i64>) -> Self {
             self.number_of_nulls = input;
             self
@@ -6499,6 +7317,7 @@ pub mod double_column_statistics_data {
             self.number_of_distinct_values = Some(input);
             self
         }
+        /// <p>The number of distinct values in a column.</p>
         pub fn set_number_of_distinct_values(mut self, input: std::option::Option<i64>) -> Self {
             self.number_of_distinct_values = input;
             self
@@ -6561,6 +7380,7 @@ pub mod decimal_column_statistics_data {
             self.minimum_value = Some(input);
             self
         }
+        /// <p>The lowest value in the column.</p>
         pub fn set_minimum_value(
             mut self,
             input: std::option::Option<crate::model::DecimalNumber>,
@@ -6573,6 +7393,7 @@ pub mod decimal_column_statistics_data {
             self.maximum_value = Some(input);
             self
         }
+        /// <p>The highest value in the column.</p>
         pub fn set_maximum_value(
             mut self,
             input: std::option::Option<crate::model::DecimalNumber>,
@@ -6585,6 +7406,7 @@ pub mod decimal_column_statistics_data {
             self.number_of_nulls = Some(input);
             self
         }
+        /// <p>The number of null values in the column.</p>
         pub fn set_number_of_nulls(mut self, input: std::option::Option<i64>) -> Self {
             self.number_of_nulls = input;
             self
@@ -6594,6 +7416,7 @@ pub mod decimal_column_statistics_data {
             self.number_of_distinct_values = Some(input);
             self
         }
+        /// <p>The number of distinct values in a column.</p>
         pub fn set_number_of_distinct_values(mut self, input: std::option::Option<i64>) -> Self {
             self.number_of_distinct_values = input;
             self
@@ -6621,7 +7444,7 @@ impl DecimalColumnStatisticsData {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecimalNumber {
     /// <p>The unscaled numeric value.</p>
-    pub unscaled_value: std::option::Option<smithy_types::Blob>,
+    pub unscaled_value: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The scale that determines where the decimal point falls in the
     /// unscaled value.</p>
     pub scale: i32,
@@ -6640,18 +7463,19 @@ pub mod decimal_number {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) unscaled_value: std::option::Option<smithy_types::Blob>,
+        pub(crate) unscaled_value: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) scale: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The unscaled numeric value.</p>
-        pub fn unscaled_value(mut self, input: smithy_types::Blob) -> Self {
+        pub fn unscaled_value(mut self, input: aws_smithy_types::Blob) -> Self {
             self.unscaled_value = Some(input);
             self
         }
+        /// <p>The unscaled numeric value.</p>
         pub fn set_unscaled_value(
             mut self,
-            input: std::option::Option<smithy_types::Blob>,
+            input: std::option::Option<aws_smithy_types::Blob>,
         ) -> Self {
             self.unscaled_value = input;
             self
@@ -6662,6 +7486,8 @@ pub mod decimal_number {
             self.scale = Some(input);
             self
         }
+        /// <p>The scale that determines where the decimal point falls in the
+        /// unscaled value.</p>
         pub fn set_scale(mut self, input: std::option::Option<i32>) -> Self {
             self.scale = input;
             self
@@ -6687,9 +7513,9 @@ impl DecimalNumber {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DateColumnStatisticsData {
     /// <p>The lowest value in the column.</p>
-    pub minimum_value: std::option::Option<smithy_types::Instant>,
+    pub minimum_value: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The highest value in the column.</p>
-    pub maximum_value: std::option::Option<smithy_types::Instant>,
+    pub maximum_value: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The number of null values in the column.</p>
     pub number_of_nulls: i64,
     /// <p>The number of distinct values in a column.</p>
@@ -6711,32 +7537,34 @@ pub mod date_column_statistics_data {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) minimum_value: std::option::Option<smithy_types::Instant>,
-        pub(crate) maximum_value: std::option::Option<smithy_types::Instant>,
+        pub(crate) minimum_value: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) maximum_value: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) number_of_nulls: std::option::Option<i64>,
         pub(crate) number_of_distinct_values: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>The lowest value in the column.</p>
-        pub fn minimum_value(mut self, input: smithy_types::Instant) -> Self {
+        pub fn minimum_value(mut self, input: aws_smithy_types::Instant) -> Self {
             self.minimum_value = Some(input);
             self
         }
+        /// <p>The lowest value in the column.</p>
         pub fn set_minimum_value(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.minimum_value = input;
             self
         }
         /// <p>The highest value in the column.</p>
-        pub fn maximum_value(mut self, input: smithy_types::Instant) -> Self {
+        pub fn maximum_value(mut self, input: aws_smithy_types::Instant) -> Self {
             self.maximum_value = Some(input);
             self
         }
+        /// <p>The highest value in the column.</p>
         pub fn set_maximum_value(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.maximum_value = input;
             self
@@ -6746,6 +7574,7 @@ pub mod date_column_statistics_data {
             self.number_of_nulls = Some(input);
             self
         }
+        /// <p>The number of null values in the column.</p>
         pub fn set_number_of_nulls(mut self, input: std::option::Option<i64>) -> Self {
             self.number_of_nulls = input;
             self
@@ -6755,6 +7584,7 @@ pub mod date_column_statistics_data {
             self.number_of_distinct_values = Some(input);
             self
         }
+        /// <p>The number of distinct values in a column.</p>
         pub fn set_number_of_distinct_values(mut self, input: std::option::Option<i64>) -> Self {
             self.number_of_distinct_values = input;
             self
@@ -6813,6 +7643,7 @@ pub mod boolean_column_statistics_data {
             self.number_of_trues = Some(input);
             self
         }
+        /// <p>The number of true values in the column.</p>
         pub fn set_number_of_trues(mut self, input: std::option::Option<i64>) -> Self {
             self.number_of_trues = input;
             self
@@ -6822,6 +7653,7 @@ pub mod boolean_column_statistics_data {
             self.number_of_falses = Some(input);
             self
         }
+        /// <p>The number of false values in the column.</p>
         pub fn set_number_of_falses(mut self, input: std::option::Option<i64>) -> Self {
             self.number_of_falses = input;
             self
@@ -6831,6 +7663,7 @@ pub mod boolean_column_statistics_data {
             self.number_of_nulls = Some(input);
             self
         }
+        /// <p>The number of null values in the column.</p>
         pub fn set_number_of_nulls(mut self, input: std::option::Option<i64>) -> Self {
             self.number_of_nulls = input;
             self
@@ -6852,6 +7685,7 @@ impl BooleanColumnStatisticsData {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6863,12 +7697,19 @@ impl BooleanColumnStatisticsData {
     std::hash::Hash,
 )]
 pub enum ColumnStatisticsType {
+    #[allow(missing_docs)] // documentation missing in model
     Binary,
+    #[allow(missing_docs)] // documentation missing in model
     Boolean,
+    #[allow(missing_docs)] // documentation missing in model
     Date,
+    #[allow(missing_docs)] // documentation missing in model
     Decimal,
+    #[allow(missing_docs)] // documentation missing in model
     Double,
+    #[allow(missing_docs)] // documentation missing in model
     Long,
+    #[allow(missing_docs)] // documentation missing in model
     String,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6895,6 +7736,7 @@ impl std::str::FromStr for ColumnStatisticsType {
     }
 }
 impl ColumnStatisticsType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ColumnStatisticsType::Binary => "BINARY",
@@ -6907,6 +7749,7 @@ impl ColumnStatisticsType {
             ColumnStatisticsType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BINARY", "BOOLEAN", "DATE", "DECIMAL", "DOUBLE", "LONG", "STRING",
@@ -6972,6 +7815,7 @@ pub mod update_csv_classifier_request {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the classifier.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6981,6 +7825,7 @@ pub mod update_csv_classifier_request {
             self.delimiter = Some(input.into());
             self
         }
+        /// <p>A custom symbol to denote what separates each column entry in the row.</p>
         pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.delimiter = input;
             self
@@ -6991,6 +7836,8 @@ pub mod update_csv_classifier_request {
             self.quote_symbol = Some(input.into());
             self
         }
+        /// <p>A custom symbol to denote what combines content into a single column value. It must be
+        /// different from the column delimiter.</p>
         pub fn set_quote_symbol(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.quote_symbol = input;
             self
@@ -7000,6 +7847,7 @@ pub mod update_csv_classifier_request {
             self.contains_header = Some(input);
             self
         }
+        /// <p>Indicates whether the CSV file contains a header.</p>
         pub fn set_contains_header(
             mut self,
             input: std::option::Option<crate::model::CsvHeaderOption>,
@@ -7007,12 +7855,18 @@ pub mod update_csv_classifier_request {
             self.contains_header = input;
             self
         }
+        /// Appends an item to `header`.
+        ///
+        /// To override the contents of this collection use [`set_header`](Self::set_header).
+        ///
+        /// <p>A list of strings representing column names.</p>
         pub fn header(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.header.unwrap_or_default();
             v.push(input.into());
             self.header = Some(v);
             self
         }
+        /// <p>A list of strings representing column names.</p>
         pub fn set_header(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7025,6 +7879,7 @@ pub mod update_csv_classifier_request {
             self.disable_value_trimming = Some(input);
             self
         }
+        /// <p>Specifies not to trim values before identifying the type of column values. The default value is true.</p>
         pub fn set_disable_value_trimming(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_value_trimming = input;
             self
@@ -7034,6 +7889,7 @@ pub mod update_csv_classifier_request {
             self.allow_single_column = Some(input);
             self
         }
+        /// <p>Enables the processing of files that contain only one column.</p>
         pub fn set_allow_single_column(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_single_column = input;
             self
@@ -7059,7 +7915,7 @@ impl UpdateCsvClassifierRequest {
     }
 }
 
-/// **NOTE:** `CsvHeaderOption::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `CsvHeaderOption::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7071,9 +7927,11 @@ impl UpdateCsvClassifierRequest {
     std::hash::Hash,
 )]
 pub enum CsvHeaderOption {
+    #[allow(missing_docs)] // documentation missing in model
     Absent,
+    #[allow(missing_docs)] // documentation missing in model
     Present,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7096,6 +7954,7 @@ impl std::str::FromStr for CsvHeaderOption {
     }
 }
 impl CsvHeaderOption {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CsvHeaderOption::Absent => "ABSENT",
@@ -7104,6 +7963,7 @@ impl CsvHeaderOption {
             CsvHeaderOption::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ABSENT", "PRESENT", "UNKNOWN"]
     }
@@ -7147,6 +8007,7 @@ pub mod update_json_classifier_request {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the classifier.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7157,6 +8018,8 @@ pub mod update_json_classifier_request {
             self.json_path = Some(input.into());
             self
         }
+        /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify.
+        /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
         pub fn set_json_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.json_path = input;
             self
@@ -7217,6 +8080,7 @@ pub mod update_xml_classifier_request {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the classifier.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7226,6 +8090,7 @@ pub mod update_xml_classifier_request {
             self.classification = Some(input.into());
             self
         }
+        /// <p>An identifier of the data format that the classifier matches.</p>
         pub fn set_classification(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7242,6 +8107,11 @@ pub mod update_xml_classifier_request {
             self.row_tag = Some(input.into());
             self
         }
+        /// <p>The XML tag designating the element that contains each record in an XML document being
+        /// parsed. This cannot identify a self-closing element (closed by <code>/></code>). An empty
+        /// row element that contains only attributes can be parsed as long as it ends with a closing tag
+        /// (for example, <code><row item_a="A" item_b="B"></row></code> is okay, but
+        /// <code><row item_a="A" item_b="B" /></code> is not).</p>
         pub fn set_row_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.row_tag = input;
             self
@@ -7305,6 +8175,7 @@ pub mod update_grok_classifier_request {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the <code>GrokClassifier</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7315,6 +8186,8 @@ pub mod update_grok_classifier_request {
             self.classification = Some(input.into());
             self
         }
+        /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs,
+        /// Amazon CloudWatch Logs, and so on.</p>
         pub fn set_classification(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7327,6 +8200,7 @@ pub mod update_grok_classifier_request {
             self.grok_pattern = Some(input.into());
             self
         }
+        /// <p>The grok pattern used by this classifier.</p>
         pub fn set_grok_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grok_pattern = input;
             self
@@ -7336,6 +8210,7 @@ pub mod update_grok_classifier_request {
             self.custom_patterns = Some(input.into());
             self
         }
+        /// <p>Optional custom grok patterns used by this classifier.</p>
         pub fn set_custom_patterns(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7376,14 +8251,14 @@ pub struct Table {
     /// <p>The owner of the table.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>The time when the table definition was created in the Data Catalog.</p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time that the table was updated.</p>
-    pub update_time: std::option::Option<smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time that the table was accessed. This is usually taken from HDFS, and might not
     /// be reliable.</p>
-    pub last_access_time: std::option::Option<smithy_types::Instant>,
+    pub last_access_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time that column statistics were computed for this table.</p>
-    pub last_analyzed_time: std::option::Option<smithy_types::Instant>,
+    pub last_analyzed_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The retention time for this table.</p>
     pub retention: i32,
     /// <p>A storage descriptor containing information about the physical storage
@@ -7454,10 +8329,10 @@ pub mod table {
         pub(crate) database_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) owner: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_access_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_analyzed_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_access_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_analyzed_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) retention: std::option::Option<i32>,
         pub(crate) storage_descriptor: std::option::Option<crate::model::StorageDescriptor>,
         pub(crate) partition_keys: std::option::Option<std::vec::Vec<crate::model::Column>>,
@@ -7479,6 +8354,8 @@ pub mod table {
             self.name = Some(input.into());
             self
         }
+        /// <p>The table name. For Hive compatibility, this must be entirely
+        /// lowercase.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7489,6 +8366,8 @@ pub mod table {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>The name of the database where the table metadata resides.
+        /// For Hive compatibility, this must be all lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7501,6 +8380,7 @@ pub mod table {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the table.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -7510,55 +8390,61 @@ pub mod table {
             self.owner = Some(input.into());
             self
         }
+        /// <p>The owner of the table.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
         }
         /// <p>The time when the table definition was created in the Data Catalog.</p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p>The time when the table definition was created in the Data Catalog.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p>The last time that the table was updated.</p>
-        pub fn update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_time = Some(input);
             self
         }
+        /// <p>The last time that the table was updated.</p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_time = input;
             self
         }
         /// <p>The last time that the table was accessed. This is usually taken from HDFS, and might not
         /// be reliable.</p>
-        pub fn last_access_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_access_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_access_time = Some(input);
             self
         }
+        /// <p>The last time that the table was accessed. This is usually taken from HDFS, and might not
+        /// be reliable.</p>
         pub fn set_last_access_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_access_time = input;
             self
         }
         /// <p>The last time that column statistics were computed for this table.</p>
-        pub fn last_analyzed_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_analyzed_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_analyzed_time = Some(input);
             self
         }
+        /// <p>The last time that column statistics were computed for this table.</p>
         pub fn set_last_analyzed_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_analyzed_time = input;
             self
@@ -7568,6 +8454,7 @@ pub mod table {
             self.retention = Some(input);
             self
         }
+        /// <p>The retention time for this table.</p>
         pub fn set_retention(mut self, input: std::option::Option<i32>) -> Self {
             self.retention = input;
             self
@@ -7578,6 +8465,8 @@ pub mod table {
             self.storage_descriptor = Some(input);
             self
         }
+        /// <p>A storage descriptor containing information about the physical storage
+        /// of this table.</p>
         pub fn set_storage_descriptor(
             mut self,
             input: std::option::Option<crate::model::StorageDescriptor>,
@@ -7585,12 +8474,32 @@ pub mod table {
             self.storage_descriptor = input;
             self
         }
+        /// Appends an item to `partition_keys`.
+        ///
+        /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
+        ///
+        /// <p>A list of columns by which the table is partitioned. Only primitive
+        /// types are supported as partition keys.</p>
+        /// <p>When you create a table used by Amazon Athena, and you do not specify any
+        /// <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to
+        /// an empty list. For example:</p>
+        /// <p>
+        /// <code>"PartitionKeys": []</code>
+        /// </p>
         pub fn partition_keys(mut self, input: impl Into<crate::model::Column>) -> Self {
             let mut v = self.partition_keys.unwrap_or_default();
             v.push(input.into());
             self.partition_keys = Some(v);
             self
         }
+        /// <p>A list of columns by which the table is partitioned. Only primitive
+        /// types are supported as partition keys.</p>
+        /// <p>When you create a table used by Amazon Athena, and you do not specify any
+        /// <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to
+        /// an empty list. For example:</p>
+        /// <p>
+        /// <code>"PartitionKeys": []</code>
+        /// </p>
         pub fn set_partition_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Column>>,
@@ -7603,6 +8512,7 @@ pub mod table {
             self.view_original_text = Some(input.into());
             self
         }
+        /// <p>If the table is a view, the original text of the view; otherwise <code>null</code>.</p>
         pub fn set_view_original_text(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7615,6 +8525,7 @@ pub mod table {
             self.view_expanded_text = Some(input.into());
             self
         }
+        /// <p>If the table is a view, the expanded text of the view; otherwise <code>null</code>.</p>
         pub fn set_view_expanded_text(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7627,10 +8538,16 @@ pub mod table {
             self.table_type = Some(input.into());
             self
         }
+        /// <p>The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).</p>
         pub fn set_table_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_type = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>These key-value pairs define properties associated with the table.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -7641,6 +8558,7 @@ pub mod table {
             self.parameters = Some(hash_map);
             self
         }
+        /// <p>These key-value pairs define properties associated with the table.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -7655,6 +8573,7 @@ pub mod table {
             self.created_by = Some(input.into());
             self
         }
+        /// <p>The person or entity who created the table.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_by = input;
             self
@@ -7664,6 +8583,7 @@ pub mod table {
             self.is_registered_with_lake_formation = Some(input);
             self
         }
+        /// <p>Indicates whether the table has been registered with Lake Formation.</p>
         pub fn set_is_registered_with_lake_formation(
             mut self,
             input: std::option::Option<bool>,
@@ -7676,6 +8596,7 @@ pub mod table {
             self.target_table = Some(input);
             self
         }
+        /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
         pub fn set_target_table(
             mut self,
             input: std::option::Option<crate::model::TableIdentifier>,
@@ -7688,6 +8609,7 @@ pub mod table {
             self.catalog_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Data Catalog in which the table resides.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -7727,6 +8649,7 @@ impl Table {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7738,7 +8661,9 @@ impl Table {
     std::hash::Hash,
 )]
 pub enum ResourceShareType {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Foreign,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7760,6 +8685,7 @@ impl std::str::FromStr for ResourceShareType {
     }
 }
 impl ResourceShareType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceShareType::All => "ALL",
@@ -7767,6 +8693,7 @@ impl ResourceShareType {
             ResourceShareType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL", "FOREIGN"]
     }
@@ -7809,6 +8736,7 @@ pub mod sort_criterion {
             self.field_name = Some(input.into());
             self
         }
+        /// <p>The name of the field on which to sort.</p>
         pub fn set_field_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.field_name = input;
             self
@@ -7818,6 +8746,7 @@ pub mod sort_criterion {
             self.sort = Some(input);
             self
         }
+        /// <p>An ascending or descending sort.</p>
         pub fn set_sort(mut self, input: std::option::Option<crate::model::Sort>) -> Self {
             self.sort = input;
             self
@@ -7838,6 +8767,7 @@ impl SortCriterion {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7849,7 +8779,9 @@ impl SortCriterion {
     std::hash::Hash,
 )]
 pub enum Sort {
+    #[allow(missing_docs)] // documentation missing in model
     Ascending,
+    #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7871,6 +8803,7 @@ impl std::str::FromStr for Sort {
     }
 }
 impl Sort {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Sort::Ascending => "ASC",
@@ -7878,6 +8811,7 @@ impl Sort {
             Sort::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ASC", "DESC"]
     }
@@ -7924,6 +8858,7 @@ pub mod property_predicate {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key of the property.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -7933,6 +8868,7 @@ pub mod property_predicate {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the property.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -7942,6 +8878,7 @@ pub mod property_predicate {
             self.comparator = Some(input);
             self
         }
+        /// <p>The comparator used to compare this property to others.</p>
         pub fn set_comparator(
             mut self,
             input: std::option::Option<crate::model::Comparator>,
@@ -7966,6 +8903,7 @@ impl PropertyPredicate {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7977,10 +8915,15 @@ impl PropertyPredicate {
     std::hash::Hash,
 )]
 pub enum Comparator {
+    #[allow(missing_docs)] // documentation missing in model
     Equals,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThan,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThanEquals,
+    #[allow(missing_docs)] // documentation missing in model
     LessThan,
+    #[allow(missing_docs)] // documentation missing in model
     LessThanEquals,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8005,6 +8948,7 @@ impl std::str::FromStr for Comparator {
     }
 }
 impl Comparator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Comparator::Equals => "EQUALS",
@@ -8015,6 +8959,7 @@ impl Comparator {
             Comparator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "EQUALS",
@@ -8083,6 +9028,7 @@ pub mod job_bookmark_entry {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>The name of the job in question.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -8092,6 +9038,7 @@ pub mod job_bookmark_entry {
             self.version = Some(input);
             self
         }
+        /// <p>The version of the job.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
             self.version = input;
             self
@@ -8101,6 +9048,7 @@ pub mod job_bookmark_entry {
             self.run = Some(input);
             self
         }
+        /// <p>The run ID number.</p>
         pub fn set_run(mut self, input: std::option::Option<i32>) -> Self {
             self.run = input;
             self
@@ -8110,6 +9058,7 @@ pub mod job_bookmark_entry {
             self.attempt = Some(input);
             self
         }
+        /// <p>The attempt ID number.</p>
         pub fn set_attempt(mut self, input: std::option::Option<i32>) -> Self {
             self.attempt = input;
             self
@@ -8119,6 +9068,7 @@ pub mod job_bookmark_entry {
             self.previous_run_id = Some(input.into());
             self
         }
+        /// <p>The unique run identifier associated with the previous job run.</p>
         pub fn set_previous_run_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8131,6 +9081,7 @@ pub mod job_bookmark_entry {
             self.run_id = Some(input.into());
             self
         }
+        /// <p>The run ID number.</p>
         pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.run_id = input;
             self
@@ -8140,6 +9091,7 @@ pub mod job_bookmark_entry {
             self.job_bookmark = Some(input.into());
             self
         }
+        /// <p>The bookmark itself.</p>
         pub fn set_job_bookmark(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_bookmark = input;
             self
@@ -8197,6 +9149,7 @@ pub mod metadata_key_value_pair {
             self.metadata_key = Some(input.into());
             self
         }
+        /// <p>A metadata key.</p>
         pub fn set_metadata_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metadata_key = input;
             self
@@ -8206,6 +9159,7 @@ pub mod metadata_key_value_pair {
             self.metadata_value = Some(input.into());
             self
         }
+        /// <p>A metadata key’s corresponding value.</p>
         pub fn set_metadata_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8229,6 +9183,7 @@ impl MetadataKeyValuePair {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8240,9 +9195,13 @@ impl MetadataKeyValuePair {
     std::hash::Hash,
 )]
 pub enum SchemaVersionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failure,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8266,6 +9225,7 @@ impl std::str::FromStr for SchemaVersionStatus {
     }
 }
 impl SchemaVersionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SchemaVersionStatus::Available => "AVAILABLE",
@@ -8275,6 +9235,7 @@ impl SchemaVersionStatus {
             SchemaVersionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "FAILURE", "PENDING"]
     }
@@ -8323,6 +9284,7 @@ pub mod metadata_info {
             self.metadata_value = Some(input.into());
             self
         }
+        /// <p>The metadata key’s corresponding value.</p>
         pub fn set_metadata_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8335,10 +9297,16 @@ pub mod metadata_info {
             self.created_time = Some(input.into());
             self
         }
+        /// <p>The time at which the entry was created.</p>
         pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_time = input;
             self
         }
+        /// Appends an item to `other_metadata_value_list`.
+        ///
+        /// To override the contents of this collection use [`set_other_metadata_value_list`](Self::set_other_metadata_value_list).
+        ///
+        /// <p>Other metadata belonging to the same metadata key.</p>
         pub fn other_metadata_value_list(
             mut self,
             input: impl Into<crate::model::OtherMetadataValueListItem>,
@@ -8348,6 +9316,7 @@ pub mod metadata_info {
             self.other_metadata_value_list = Some(v);
             self
         }
+        /// <p>Other metadata belonging to the same metadata key.</p>
         pub fn set_other_metadata_value_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OtherMetadataValueListItem>>,
@@ -8404,6 +9373,7 @@ pub mod other_metadata_value_list_item {
             self.metadata_value = Some(input.into());
             self
         }
+        /// <p>The metadata key’s corresponding value for the other metadata belonging to the same metadata key.</p>
         pub fn set_metadata_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8416,6 +9386,7 @@ pub mod other_metadata_value_list_item {
             self.created_time = Some(input.into());
             self
         }
+        /// <p>The time at which the entry was created.</p>
         pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_time = input;
             self
@@ -8436,6 +9407,7 @@ impl OtherMetadataValueListItem {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8447,7 +9419,9 @@ impl OtherMetadataValueListItem {
     std::hash::Hash,
 )]
 pub enum EnableHybridValues {
+    #[allow(missing_docs)] // documentation missing in model
     False,
+    #[allow(missing_docs)] // documentation missing in model
     True,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8469,6 +9443,7 @@ impl std::str::FromStr for EnableHybridValues {
     }
 }
 impl EnableHybridValues {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EnableHybridValues::False => "FALSE",
@@ -8476,6 +9451,7 @@ impl EnableHybridValues {
             EnableHybridValues::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FALSE", "TRUE"]
     }
@@ -8486,6 +9462,7 @@ impl AsRef<str> for EnableHybridValues {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8497,8 +9474,11 @@ impl AsRef<str> for EnableHybridValues {
     std::hash::Hash,
 )]
 pub enum ExistCondition {
+    #[allow(missing_docs)] // documentation missing in model
     MustExist,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     NotExist,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8521,6 +9501,7 @@ impl std::str::FromStr for ExistCondition {
     }
 }
 impl ExistCondition {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExistCondition::MustExist => "MUST_EXIST",
@@ -8529,6 +9510,7 @@ impl ExistCondition {
             ExistCondition::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MUST_EXIST", "NONE", "NOT_EXIST"]
     }
@@ -8580,6 +9562,7 @@ pub mod data_catalog_encryption_settings {
             self.encryption_at_rest = Some(input);
             self
         }
+        /// <p>Specifies the encryption-at-rest configuration for the Data Catalog.</p>
         pub fn set_encryption_at_rest(
             mut self,
             input: std::option::Option<crate::model::EncryptionAtRest>,
@@ -8599,6 +9582,11 @@ pub mod data_catalog_encryption_settings {
             self.connection_password_encryption = Some(input);
             self
         }
+        /// <p>When connection password protection is enabled, the Data Catalog uses a customer-provided
+        /// key to encrypt the password as part of <code>CreateConnection</code> or
+        /// <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in
+        /// the connection properties. You can enable catalog encryption or only password
+        /// encryption.</p>
         pub fn set_connection_password_encryption(
             mut self,
             input: std::option::Option<crate::model::ConnectionPasswordEncryption>,
@@ -8626,9 +9614,11 @@ impl DataCatalogEncryptionSettings {
 /// <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
 /// <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog
 /// encryption or only password encryption.</p>
+///
 /// <p>When a <code>CreationConnection</code> request arrives containing a password, the Data
 /// Catalog first encrypts the password using your KMS key. It then encrypts the whole
 /// connection object again if catalog encryption is also enabled.</p>
+///
 /// <p>This encryption requires that you set KMS key permissions to enable or restrict access
 /// on the password key according to your security requirements. For example, you might want only
 /// administrators to have decrypt permission on the password key.</p>
@@ -8638,9 +9628,11 @@ pub struct ConnectionPasswordEncryption {
     /// <p>When the <code>ReturnConnectionPasswordEncrypted</code> flag is set to "true", passwords remain encrypted in the responses of <code>GetConnection</code> and <code>GetConnections</code>. This encryption takes effect independently from catalog encryption. </p>
     pub return_connection_password_encrypted: bool,
     /// <p>An KMS key that is used to encrypt the connection password. </p>
+    ///
     /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code>
     /// and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the
     /// specified KMS key, to encrypt passwords before storing them in the Data Catalog. </p>
+    ///
     /// <p>You can set the decrypt permission to enable or restrict access on the password key according to your security requirements.</p>
     pub aws_kms_key_id: std::option::Option<std::string::String>,
 }
@@ -8670,6 +9662,7 @@ pub mod connection_password_encryption {
             self.return_connection_password_encrypted = Some(input);
             self
         }
+        /// <p>When the <code>ReturnConnectionPasswordEncrypted</code> flag is set to "true", passwords remain encrypted in the responses of <code>GetConnection</code> and <code>GetConnections</code>. This encryption takes effect independently from catalog encryption. </p>
         pub fn set_return_connection_password_encrypted(
             mut self,
             input: std::option::Option<bool>,
@@ -8678,14 +9671,23 @@ pub mod connection_password_encryption {
             self
         }
         /// <p>An KMS key that is used to encrypt the connection password. </p>
+        ///
         /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code>
         /// and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the
         /// specified KMS key, to encrypt passwords before storing them in the Data Catalog. </p>
+        ///
         /// <p>You can set the decrypt permission to enable or restrict access on the password key according to your security requirements.</p>
         pub fn aws_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_kms_key_id = Some(input.into());
             self
         }
+        /// <p>An KMS key that is used to encrypt the connection password. </p>
+        ///
+        /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code>
+        /// and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the
+        /// specified KMS key, to encrypt passwords before storing them in the Data Catalog. </p>
+        ///
+        /// <p>You can set the decrypt permission to enable or restrict access on the password key according to your security requirements.</p>
         pub fn set_aws_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8747,6 +9749,7 @@ pub mod encryption_at_rest {
             self.catalog_encryption_mode = Some(input);
             self
         }
+        /// <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
         pub fn set_catalog_encryption_mode(
             mut self,
             input: std::option::Option<crate::model::CatalogEncryptionMode>,
@@ -8759,6 +9762,7 @@ pub mod encryption_at_rest {
             self.sse_aws_kms_key_id = Some(input.into());
             self
         }
+        /// <p>The ID of the KMS key to use for encryption at rest.</p>
         pub fn set_sse_aws_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8782,6 +9786,7 @@ impl EncryptionAtRest {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8793,7 +9798,9 @@ impl EncryptionAtRest {
     std::hash::Hash,
 )]
 pub enum CatalogEncryptionMode {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Ssekms,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8815,6 +9822,7 @@ impl std::str::FromStr for CatalogEncryptionMode {
     }
 }
 impl CatalogEncryptionMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CatalogEncryptionMode::Disabled => "DISABLED",
@@ -8822,6 +9830,7 @@ impl CatalogEncryptionMode {
             CatalogEncryptionMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "SSE-KMS"]
     }
@@ -8876,6 +9885,7 @@ pub mod schema_version_list_item {
             self.schema_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the schema.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_arn = input;
             self
@@ -8885,6 +9895,7 @@ pub mod schema_version_list_item {
             self.schema_version_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the schema version.</p>
         pub fn set_schema_version_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8897,6 +9908,7 @@ pub mod schema_version_list_item {
             self.version_number = Some(input);
             self
         }
+        /// <p>The version number of the schema.</p>
         pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
             self.version_number = input;
             self
@@ -8906,6 +9918,7 @@ pub mod schema_version_list_item {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the schema version.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::SchemaVersionStatus>,
@@ -8918,6 +9931,7 @@ pub mod schema_version_list_item {
             self.created_time = Some(input.into());
             self
         }
+        /// <p>The date and time the schema version was created.</p>
         pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_time = input;
             self
@@ -8993,6 +10007,7 @@ pub mod schema_list_item {
             self.registry_name = Some(input.into());
             self
         }
+        /// <p>the name of the registry where the schema resides.</p>
         pub fn set_registry_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9005,6 +10020,7 @@ pub mod schema_list_item {
             self.schema_name = Some(input.into());
             self
         }
+        /// <p>The name of the schema.</p>
         pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_name = input;
             self
@@ -9014,6 +10030,7 @@ pub mod schema_list_item {
             self.schema_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the schema.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_arn = input;
             self
@@ -9023,6 +10040,7 @@ pub mod schema_list_item {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description for the schema.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -9032,6 +10050,7 @@ pub mod schema_list_item {
             self.schema_status = Some(input);
             self
         }
+        /// <p>The status of the schema.</p>
         pub fn set_schema_status(
             mut self,
             input: std::option::Option<crate::model::SchemaStatus>,
@@ -9044,6 +10063,7 @@ pub mod schema_list_item {
             self.created_time = Some(input.into());
             self
         }
+        /// <p>The date and time that a schema was created.</p>
         pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_time = input;
             self
@@ -9053,6 +10073,7 @@ pub mod schema_list_item {
             self.updated_time = Some(input.into());
             self
         }
+        /// <p>The date and time that a schema was updated.</p>
         pub fn set_updated_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.updated_time = input;
             self
@@ -9078,6 +10099,7 @@ impl SchemaListItem {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9089,8 +10111,11 @@ impl SchemaListItem {
     std::hash::Hash,
 )]
 pub enum SchemaStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9113,6 +10138,7 @@ impl std::str::FromStr for SchemaStatus {
     }
 }
 impl SchemaStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SchemaStatus::Available => "AVAILABLE",
@@ -9121,6 +10147,7 @@ impl SchemaStatus {
             SchemaStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "PENDING"]
     }
@@ -9179,6 +10206,7 @@ pub mod registry_list_item {
             self.registry_name = Some(input.into());
             self
         }
+        /// <p>The name of the registry.</p>
         pub fn set_registry_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9191,6 +10219,7 @@ pub mod registry_list_item {
             self.registry_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the registry.</p>
         pub fn set_registry_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_arn = input;
             self
@@ -9200,6 +10229,7 @@ pub mod registry_list_item {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the registry.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -9209,6 +10239,7 @@ pub mod registry_list_item {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the registry.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::RegistryStatus>,
@@ -9221,6 +10252,7 @@ pub mod registry_list_item {
             self.created_time = Some(input.into());
             self
         }
+        /// <p>The data the registry was created.</p>
         pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_time = input;
             self
@@ -9230,6 +10262,7 @@ pub mod registry_list_item {
             self.updated_time = Some(input.into());
             self
         }
+        /// <p>The date the registry was updated.</p>
         pub fn set_updated_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.updated_time = input;
             self
@@ -9254,6 +10287,7 @@ impl RegistryListItem {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9265,7 +10299,9 @@ impl RegistryListItem {
     std::hash::Hash,
 )]
 pub enum RegistryStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9287,6 +10323,7 @@ impl std::str::FromStr for RegistryStatus {
     }
 }
 impl RegistryStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RegistryStatus::Available => "AVAILABLE",
@@ -9294,6 +10331,7 @@ impl RegistryStatus {
             RegistryStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING"]
     }
@@ -9339,6 +10377,8 @@ pub mod transform_sort_criteria {
             self.column = Some(input);
             self
         }
+        /// <p>The column to be used in the sorting criteria that are associated with the machine
+        /// learning transform.</p>
         pub fn set_column(
             mut self,
             input: std::option::Option<crate::model::TransformSortColumnType>,
@@ -9352,6 +10392,8 @@ pub mod transform_sort_criteria {
             self.sort_direction = Some(input);
             self
         }
+        /// <p>The sort direction to be used in the sorting criteria that are associated with the machine
+        /// learning transform.</p>
         pub fn set_sort_direction(
             mut self,
             input: std::option::Option<crate::model::SortDirectionType>,
@@ -9375,6 +10417,7 @@ impl TransformSortCriteria {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9386,7 +10429,9 @@ impl TransformSortCriteria {
     std::hash::Hash,
 )]
 pub enum SortDirectionType {
+    #[allow(missing_docs)] // documentation missing in model
     Ascending,
+    #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9408,6 +10453,7 @@ impl std::str::FromStr for SortDirectionType {
     }
 }
 impl SortDirectionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortDirectionType::Ascending => "ASCENDING",
@@ -9415,6 +10461,7 @@ impl SortDirectionType {
             SortDirectionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
@@ -9425,6 +10472,7 @@ impl AsRef<str> for SortDirectionType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9436,10 +10484,15 @@ impl AsRef<str> for SortDirectionType {
     std::hash::Hash,
 )]
 pub enum TransformSortColumnType {
+    #[allow(missing_docs)] // documentation missing in model
     Created,
+    #[allow(missing_docs)] // documentation missing in model
     LastModified,
+    #[allow(missing_docs)] // documentation missing in model
     Name,
+    #[allow(missing_docs)] // documentation missing in model
     Status,
+    #[allow(missing_docs)] // documentation missing in model
     TransformType,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9464,6 +10517,7 @@ impl std::str::FromStr for TransformSortColumnType {
     }
 }
 impl TransformSortColumnType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TransformSortColumnType::Created => "CREATED",
@@ -9474,6 +10528,7 @@ impl TransformSortColumnType {
             TransformSortColumnType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATED",
@@ -9504,13 +10559,13 @@ pub struct TransformFilterCriteria {
     /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>The time and date before which the transforms were created.</p>
-    pub created_before: std::option::Option<smithy_types::Instant>,
+    pub created_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time and date after which the transforms were created.</p>
-    pub created_after: std::option::Option<smithy_types::Instant>,
+    pub created_after: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Filter on transforms last modified before this date.</p>
-    pub last_modified_before: std::option::Option<smithy_types::Instant>,
+    pub last_modified_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Filter on transforms last modified after this date.</p>
-    pub last_modified_after: std::option::Option<smithy_types::Instant>,
+    pub last_modified_after: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Filters on datasets with a specific schema. The <code>Map<Column, Type></code>
     /// object is an array of key-value pairs representing the schema this transform accepts, where
     /// <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data
@@ -9542,10 +10597,10 @@ pub mod transform_filter_criteria {
         pub(crate) transform_type: std::option::Option<crate::model::TransformType>,
         pub(crate) status: std::option::Option<crate::model::TransformStatusType>,
         pub(crate) glue_version: std::option::Option<std::string::String>,
-        pub(crate) created_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) created_after: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_modified_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_modified_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_after: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) schema: std::option::Option<std::vec::Vec<crate::model::SchemaColumn>>,
     }
     impl Builder {
@@ -9554,6 +10609,7 @@ pub mod transform_filter_criteria {
             self.name = Some(input.into());
             self
         }
+        /// <p>A unique transform name that is used to filter the machine learning transforms.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9564,6 +10620,8 @@ pub mod transform_filter_criteria {
             self.transform_type = Some(input);
             self
         }
+        /// <p>The type of machine learning transform that is used to filter the machine learning
+        /// transforms.</p>
         pub fn set_transform_type(
             mut self,
             input: std::option::Option<crate::model::TransformType>,
@@ -9576,6 +10634,7 @@ pub mod transform_filter_criteria {
             self.status = Some(input);
             self
         }
+        /// <p>Filters the list of machine learning transforms by the last known status of the transforms (to indicate whether a transform can be used or not). One of "NOT_READY", "READY", or "DELETING".</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TransformStatusType>,
@@ -9588,64 +10647,81 @@ pub mod transform_filter_criteria {
             self.glue_version = Some(input.into());
             self
         }
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.glue_version = input;
             self
         }
         /// <p>The time and date before which the transforms were created.</p>
-        pub fn created_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_before = Some(input);
             self
         }
+        /// <p>The time and date before which the transforms were created.</p>
         pub fn set_created_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_before = input;
             self
         }
         /// <p>The time and date after which the transforms were created.</p>
-        pub fn created_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_after = Some(input);
             self
         }
+        /// <p>The time and date after which the transforms were created.</p>
         pub fn set_created_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_after = input;
             self
         }
         /// <p>Filter on transforms last modified before this date.</p>
-        pub fn last_modified_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_before = Some(input);
             self
         }
+        /// <p>Filter on transforms last modified before this date.</p>
         pub fn set_last_modified_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_before = input;
             self
         }
         /// <p>Filter on transforms last modified after this date.</p>
-        pub fn last_modified_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_after = Some(input);
             self
         }
+        /// <p>Filter on transforms last modified after this date.</p>
         pub fn set_last_modified_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_after = input;
             self
         }
+        /// Appends an item to `schema`.
+        ///
+        /// To override the contents of this collection use [`set_schema`](Self::set_schema).
+        ///
+        /// <p>Filters on datasets with a specific schema. The <code>Map<Column, Type></code>
+        /// object is an array of key-value pairs representing the schema this transform accepts, where
+        /// <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data
+        /// such as an integer or string. Has an upper bound of 100 columns.</p>
         pub fn schema(mut self, input: impl Into<crate::model::SchemaColumn>) -> Self {
             let mut v = self.schema.unwrap_or_default();
             v.push(input.into());
             self.schema = Some(v);
             self
         }
+        /// <p>Filters on datasets with a specific schema. The <code>Map<Column, Type></code>
+        /// object is an array of key-value pairs representing the schema this transform accepts, where
+        /// <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data
+        /// such as an integer or string. Has an upper bound of 100 columns.</p>
         pub fn set_schema(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SchemaColumn>>,
@@ -9709,6 +10785,7 @@ pub mod schema_column {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the column.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9718,6 +10795,7 @@ pub mod schema_column {
             self.data_type = Some(input.into());
             self
         }
+        /// <p>The type of data in the column.</p>
         pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_type = input;
             self
@@ -9738,6 +10816,7 @@ impl SchemaColumn {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9749,8 +10828,11 @@ impl SchemaColumn {
     std::hash::Hash,
 )]
 pub enum TransformStatusType {
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     NotReady,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9773,6 +10855,7 @@ impl std::str::FromStr for TransformStatusType {
     }
 }
 impl TransformStatusType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TransformStatusType::Deleting => "DELETING",
@@ -9781,6 +10864,7 @@ impl TransformStatusType {
             TransformStatusType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DELETING", "NOT_READY", "READY"]
     }
@@ -9805,9 +10889,9 @@ pub struct WorkflowRun {
     pub workflow_run_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time when the workflow run was started.</p>
-    pub started_on: std::option::Option<smithy_types::Instant>,
+    pub started_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time when the workflow run completed.</p>
-    pub completed_on: std::option::Option<smithy_types::Instant>,
+    pub completed_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the workflow run.</p>
     pub status: std::option::Option<crate::model::WorkflowRunStatus>,
     /// <p>This error message describes any error that may have occurred in starting the workflow run. Currently the only error message is "Concurrent runs exceeded for workflow: <code>foo</code>."</p>
@@ -9853,8 +10937,8 @@ pub mod workflow_run {
         pub(crate) workflow_run_properties: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) started_on: std::option::Option<smithy_types::Instant>,
-        pub(crate) completed_on: std::option::Option<smithy_types::Instant>,
+        pub(crate) started_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) completed_on: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::WorkflowRunStatus>,
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) statistics: std::option::Option<crate::model::WorkflowRunStatistics>,
@@ -9868,6 +10952,7 @@ pub mod workflow_run {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name of the workflow that was run.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9877,6 +10962,7 @@ pub mod workflow_run {
             self.workflow_run_id = Some(input.into());
             self
         }
+        /// <p>The ID of this workflow run.</p>
         pub fn set_workflow_run_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9889,6 +10975,7 @@ pub mod workflow_run {
             self.previous_run_id = Some(input.into());
             self
         }
+        /// <p>The ID of the previous workflow run.</p>
         pub fn set_previous_run_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9896,6 +10983,11 @@ pub mod workflow_run {
             self.previous_run_id = input;
             self
         }
+        /// Adds a key-value pair to `workflow_run_properties`.
+        ///
+        /// To override the contents of this collection use [`set_workflow_run_properties`](Self::set_workflow_run_properties).
+        ///
+        /// <p>The workflow run properties which were set during the run.</p>
         pub fn workflow_run_properties(
             mut self,
             k: impl Into<std::string::String>,
@@ -9906,6 +10998,7 @@ pub mod workflow_run {
             self.workflow_run_properties = Some(hash_map);
             self
         }
+        /// <p>The workflow run properties which were set during the run.</p>
         pub fn set_workflow_run_properties(
             mut self,
             input: std::option::Option<
@@ -9916,22 +11009,27 @@ pub mod workflow_run {
             self
         }
         /// <p>The date and time when the workflow run was started.</p>
-        pub fn started_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn started_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.started_on = Some(input);
             self
         }
-        pub fn set_started_on(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time when the workflow run was started.</p>
+        pub fn set_started_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.started_on = input;
             self
         }
         /// <p>The date and time when the workflow run completed.</p>
-        pub fn completed_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn completed_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.completed_on = Some(input);
             self
         }
+        /// <p>The date and time when the workflow run completed.</p>
         pub fn set_completed_on(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.completed_on = input;
             self
@@ -9941,6 +11039,7 @@ pub mod workflow_run {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the workflow run.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::WorkflowRunStatus>,
@@ -9953,6 +11052,7 @@ pub mod workflow_run {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>This error message describes any error that may have occurred in starting the workflow run. Currently the only error message is "Concurrent runs exceeded for workflow: <code>foo</code>."</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9965,6 +11065,7 @@ pub mod workflow_run {
             self.statistics = Some(input);
             self
         }
+        /// <p>The statistics of the run.</p>
         pub fn set_statistics(
             mut self,
             input: std::option::Option<crate::model::WorkflowRunStatistics>,
@@ -9978,6 +11079,8 @@ pub mod workflow_run {
             self.graph = Some(input);
             self
         }
+        /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed
+        /// connections between them as edges.</p>
         pub fn set_graph(
             mut self,
             input: std::option::Option<crate::model::WorkflowGraph>,
@@ -9993,6 +11096,7 @@ pub mod workflow_run {
             self.starting_event_batch_condition = Some(input);
             self
         }
+        /// <p>The batch condition that started the workflow run.</p>
         pub fn set_starting_event_batch_condition(
             mut self,
             input: std::option::Option<crate::model::StartingEventBatchCondition>,
@@ -10059,6 +11163,7 @@ pub mod starting_event_batch_condition {
             self.batch_size = Some(input);
             self
         }
+        /// <p>Number of events in the batch.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
             self.batch_size = input;
             self
@@ -10068,6 +11173,7 @@ pub mod starting_event_batch_condition {
             self.batch_window = Some(input);
             self
         }
+        /// <p>Duration of the batch window in seconds.</p>
         pub fn set_batch_window(mut self, input: std::option::Option<i32>) -> Self {
             self.batch_window = input;
             self
@@ -10116,12 +11222,18 @@ pub mod workflow_graph {
         pub(crate) edges: std::option::Option<std::vec::Vec<crate::model::Edge>>,
     }
     impl Builder {
+        /// Appends an item to `nodes`.
+        ///
+        /// To override the contents of this collection use [`set_nodes`](Self::set_nodes).
+        ///
+        /// <p>A list of the the Glue components belong to the workflow represented as nodes.</p>
         pub fn nodes(mut self, input: impl Into<crate::model::Node>) -> Self {
             let mut v = self.nodes.unwrap_or_default();
             v.push(input.into());
             self.nodes = Some(v);
             self
         }
+        /// <p>A list of the the Glue components belong to the workflow represented as nodes.</p>
         pub fn set_nodes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Node>>,
@@ -10129,12 +11241,18 @@ pub mod workflow_graph {
             self.nodes = input;
             self
         }
+        /// Appends an item to `edges`.
+        ///
+        /// To override the contents of this collection use [`set_edges`](Self::set_edges).
+        ///
+        /// <p>A list of all the directed connections between the nodes belonging to the workflow.</p>
         pub fn edges(mut self, input: impl Into<crate::model::Edge>) -> Self {
             let mut v = self.edges.unwrap_or_default();
             v.push(input.into());
             self.edges = Some(v);
             self
         }
+        /// <p>A list of all the directed connections between the nodes belonging to the workflow.</p>
         pub fn set_edges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Edge>>,
@@ -10191,6 +11309,7 @@ pub mod edge {
             self.source_id = Some(input.into());
             self
         }
+        /// <p>The unique of the node within the workflow where the edge starts.</p>
         pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_id = input;
             self
@@ -10200,6 +11319,7 @@ pub mod edge {
             self.destination_id = Some(input.into());
             self
         }
+        /// <p>The unique of the node within the workflow where the edge ends.</p>
         pub fn set_destination_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10271,6 +11391,7 @@ pub mod node {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of Glue component represented by the node.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::NodeType>) -> Self {
             self.r#type = input;
             self
@@ -10280,6 +11401,7 @@ pub mod node {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Glue component represented by the node.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10289,6 +11411,7 @@ pub mod node {
             self.unique_id = Some(input.into());
             self
         }
+        /// <p>The unique Id assigned to the node within the workflow.</p>
         pub fn set_unique_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unique_id = input;
             self
@@ -10298,6 +11421,7 @@ pub mod node {
             self.trigger_details = Some(input);
             self
         }
+        /// <p>Details of the Trigger when the node represents a Trigger.</p>
         pub fn set_trigger_details(
             mut self,
             input: std::option::Option<crate::model::TriggerNodeDetails>,
@@ -10310,6 +11434,7 @@ pub mod node {
             self.job_details = Some(input);
             self
         }
+        /// <p>Details of the Job when the node represents a Job.</p>
         pub fn set_job_details(
             mut self,
             input: std::option::Option<crate::model::JobNodeDetails>,
@@ -10322,6 +11447,7 @@ pub mod node {
             self.crawler_details = Some(input);
             self
         }
+        /// <p>Details of the crawler when the node represents a crawler.</p>
         pub fn set_crawler_details(
             mut self,
             input: std::option::Option<crate::model::CrawlerNodeDetails>,
@@ -10372,12 +11498,18 @@ pub mod crawler_node_details {
         pub(crate) crawls: std::option::Option<std::vec::Vec<crate::model::Crawl>>,
     }
     impl Builder {
+        /// Appends an item to `crawls`.
+        ///
+        /// To override the contents of this collection use [`set_crawls`](Self::set_crawls).
+        ///
+        /// <p>A list of crawls represented by the crawl node.</p>
         pub fn crawls(mut self, input: impl Into<crate::model::Crawl>) -> Self {
             let mut v = self.crawls.unwrap_or_default();
             v.push(input.into());
             self.crawls = Some(v);
             self
         }
+        /// <p>A list of crawls represented by the crawl node.</p>
         pub fn set_crawls(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Crawl>>,
@@ -10407,9 +11539,9 @@ pub struct Crawl {
     /// <p>The state of the crawler.</p>
     pub state: std::option::Option<crate::model::CrawlState>,
     /// <p>The date and time on which the crawl started.</p>
-    pub started_on: std::option::Option<smithy_types::Instant>,
+    pub started_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time on which the crawl completed.</p>
-    pub completed_on: std::option::Option<smithy_types::Instant>,
+    pub completed_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The error message associated with the crawl.</p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The log group associated with the crawl.</p>
@@ -10436,8 +11568,8 @@ pub mod crawl {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::CrawlState>,
-        pub(crate) started_on: std::option::Option<smithy_types::Instant>,
-        pub(crate) completed_on: std::option::Option<smithy_types::Instant>,
+        pub(crate) started_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) completed_on: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) log_group: std::option::Option<std::string::String>,
         pub(crate) log_stream: std::option::Option<std::string::String>,
@@ -10448,27 +11580,33 @@ pub mod crawl {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the crawler.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::CrawlState>) -> Self {
             self.state = input;
             self
         }
         /// <p>The date and time on which the crawl started.</p>
-        pub fn started_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn started_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.started_on = Some(input);
             self
         }
-        pub fn set_started_on(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time on which the crawl started.</p>
+        pub fn set_started_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.started_on = input;
             self
         }
         /// <p>The date and time on which the crawl completed.</p>
-        pub fn completed_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn completed_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.completed_on = Some(input);
             self
         }
+        /// <p>The date and time on which the crawl completed.</p>
         pub fn set_completed_on(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.completed_on = input;
             self
@@ -10478,6 +11616,7 @@ pub mod crawl {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The error message associated with the crawl.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10490,6 +11629,7 @@ pub mod crawl {
             self.log_group = Some(input.into());
             self
         }
+        /// <p>The log group associated with the crawl.</p>
         pub fn set_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_group = input;
             self
@@ -10499,6 +11639,7 @@ pub mod crawl {
             self.log_stream = Some(input.into());
             self
         }
+        /// <p>The log stream associated with the crawl.</p>
         pub fn set_log_stream(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_stream = input;
             self
@@ -10546,12 +11687,18 @@ pub mod job_node_details {
         pub(crate) job_runs: std::option::Option<std::vec::Vec<crate::model::JobRun>>,
     }
     impl Builder {
+        /// Appends an item to `job_runs`.
+        ///
+        /// To override the contents of this collection use [`set_job_runs`](Self::set_job_runs).
+        ///
+        /// <p>The information for the job runs represented by the job node.</p>
         pub fn job_runs(mut self, input: impl Into<crate::model::JobRun>) -> Self {
             let mut v = self.job_runs.unwrap_or_default();
             v.push(input.into());
             self.job_runs = Some(v);
             self
         }
+        /// <p>The information for the job runs represented by the job node.</p>
         pub fn set_job_runs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::JobRun>>,
@@ -10590,11 +11737,11 @@ pub struct JobRun {
     /// <p>The name of the job definition being used in this run.</p>
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The date and time at which this job run was started.</p>
-    pub started_on: std::option::Option<smithy_types::Instant>,
+    pub started_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time that this job run was modified.</p>
-    pub last_modified_on: std::option::Option<smithy_types::Instant>,
+    pub last_modified_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that this job run completed.</p>
-    pub completed_on: std::option::Option<smithy_types::Instant>,
+    pub completed_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The current state of the job run. For more information about the statuses of jobs that have terminated abnormally, see <a href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">Glue Job Run Statuses</a>.</p>
     pub job_run_state: std::option::Option<crate::model::JobRunState>,
     /// <p>The job arguments associated with this run. For this job run, they replace the default arguments set in the job definition itself.</p>
@@ -10609,6 +11756,7 @@ pub struct JobRun {
     /// <p>A list of predecessors to this job run.</p>
     pub predecessor_runs: std::option::Option<std::vec::Vec<crate::model::Predecessor>>,
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
+    ///
     /// <p>The number of Glue data processing units (DPUs) allocated to this JobRun.
     /// From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure
     /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
@@ -10625,7 +11773,9 @@ pub struct JobRun {
     /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
     /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
     /// pricing page</a>.</p>
+    ///
     /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
+    ///
     /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
     /// running a Python shell job or an Apache Spark ETL job:</p>
     /// <ul>
@@ -10652,6 +11802,7 @@ pub struct JobRun {
     /// </ul>
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+    ///
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
     pub number_of_workers: std::option::Option<i32>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job
@@ -10667,7 +11818,9 @@ pub struct JobRun {
     /// <p>Specifies configuration properties of a job run notification.</p>
     pub notification_property: std::option::Option<crate::model::NotificationProperty>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
+    ///
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
+    ///
     /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
     pub glue_version: std::option::Option<std::string::String>,
 }
@@ -10710,9 +11863,9 @@ pub mod job_run {
         pub(crate) previous_run_id: std::option::Option<std::string::String>,
         pub(crate) trigger_name: std::option::Option<std::string::String>,
         pub(crate) job_name: std::option::Option<std::string::String>,
-        pub(crate) started_on: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_modified_on: std::option::Option<smithy_types::Instant>,
-        pub(crate) completed_on: std::option::Option<smithy_types::Instant>,
+        pub(crate) started_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) completed_on: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) job_run_state: std::option::Option<crate::model::JobRunState>,
         pub(crate) arguments: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -10736,6 +11889,7 @@ pub mod job_run {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of this job run.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -10745,6 +11899,7 @@ pub mod job_run {
             self.attempt = Some(input);
             self
         }
+        /// <p>The number of the attempt to run this job.</p>
         pub fn set_attempt(mut self, input: std::option::Option<i32>) -> Self {
             self.attempt = input;
             self
@@ -10755,6 +11910,8 @@ pub mod job_run {
             self.previous_run_id = Some(input.into());
             self
         }
+        /// <p>The ID of the previous run of this job. For example, the <code>JobRunId</code> specified
+        /// in the <code>StartJobRun</code> action.</p>
         pub fn set_previous_run_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10767,6 +11924,7 @@ pub mod job_run {
             self.trigger_name = Some(input.into());
             self
         }
+        /// <p>The name of the trigger that started this job run.</p>
         pub fn set_trigger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trigger_name = input;
             self
@@ -10776,39 +11934,46 @@ pub mod job_run {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>The name of the job definition being used in this run.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
         }
         /// <p>The date and time at which this job run was started.</p>
-        pub fn started_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn started_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.started_on = Some(input);
             self
         }
-        pub fn set_started_on(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time at which this job run was started.</p>
+        pub fn set_started_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.started_on = input;
             self
         }
         /// <p>The last time that this job run was modified.</p>
-        pub fn last_modified_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_on = Some(input);
             self
         }
+        /// <p>The last time that this job run was modified.</p>
         pub fn set_last_modified_on(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_on = input;
             self
         }
         /// <p>The date and time that this job run completed.</p>
-        pub fn completed_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn completed_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.completed_on = Some(input);
             self
         }
+        /// <p>The date and time that this job run completed.</p>
         pub fn set_completed_on(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.completed_on = input;
             self
@@ -10818,6 +11983,7 @@ pub mod job_run {
             self.job_run_state = Some(input);
             self
         }
+        /// <p>The current state of the job run. For more information about the statuses of jobs that have terminated abnormally, see <a href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">Glue Job Run Statuses</a>.</p>
         pub fn set_job_run_state(
             mut self,
             input: std::option::Option<crate::model::JobRunState>,
@@ -10825,6 +11991,15 @@ pub mod job_run {
             self.job_run_state = input;
             self
         }
+        /// Adds a key-value pair to `arguments`.
+        ///
+        /// To override the contents of this collection use [`set_arguments`](Self::set_arguments).
+        ///
+        /// <p>The job arguments associated with this run. For this job run, they replace the default arguments set in the job definition itself.</p>
+        /// <p>You can specify arguments here that your own job-execution script
+        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>For information about how to specify and consume your own job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
+        /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn arguments(
             mut self,
             k: impl Into<std::string::String>,
@@ -10835,6 +12010,11 @@ pub mod job_run {
             self.arguments = Some(hash_map);
             self
         }
+        /// <p>The job arguments associated with this run. For this job run, they replace the default arguments set in the job definition itself.</p>
+        /// <p>You can specify arguments here that your own job-execution script
+        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>For information about how to specify and consume your own job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
+        /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn set_arguments(
             mut self,
             input: std::option::Option<
@@ -10849,6 +12029,7 @@ pub mod job_run {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>An error message associated with this job run.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10856,12 +12037,18 @@ pub mod job_run {
             self.error_message = input;
             self
         }
+        /// Appends an item to `predecessor_runs`.
+        ///
+        /// To override the contents of this collection use [`set_predecessor_runs`](Self::set_predecessor_runs).
+        ///
+        /// <p>A list of predecessors to this job run.</p>
         pub fn predecessor_runs(mut self, input: impl Into<crate::model::Predecessor>) -> Self {
             let mut v = self.predecessor_runs.unwrap_or_default();
             v.push(input.into());
             self.predecessor_runs = Some(v);
             self
         }
+        /// <p>A list of predecessors to this job run.</p>
         pub fn set_predecessor_runs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Predecessor>>,
@@ -10870,6 +12057,7 @@ pub mod job_run {
             self
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
+        ///
         /// <p>The number of Glue data processing units (DPUs) allocated to this JobRun.
         /// From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure
         /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
@@ -10879,6 +12067,13 @@ pub mod job_run {
             self.allocated_capacity = Some(input);
             self
         }
+        /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
+        ///
+        /// <p>The number of Glue data processing units (DPUs) allocated to this JobRun.
+        /// From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure
+        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
+        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
+        /// pricing page</a>.</p>
         pub fn set_allocated_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.allocated_capacity = input;
             self
@@ -10888,6 +12083,7 @@ pub mod job_run {
             self.execution_time = Some(input);
             self
         }
+        /// <p>The amount of time (in seconds) that the job run consumed resources.</p>
         pub fn set_execution_time(mut self, input: std::option::Option<i32>) -> Self {
             self.execution_time = input;
             self
@@ -10899,6 +12095,9 @@ pub mod job_run {
             self.timeout = Some(input);
             self
         }
+        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
+        /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
+        /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
@@ -10907,7 +12106,9 @@ pub mod job_run {
         /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
         /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
         /// pricing page</a>.</p>
+        ///
         /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
+        ///
         /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
         /// running a Python shell job or an Apache Spark ETL job:</p>
         /// <ul>
@@ -10923,6 +12124,24 @@ pub mod job_run {
             self.max_capacity = Some(input);
             self
         }
+        /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
+        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
+        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
+        /// pricing page</a>.</p>
+        ///
+        /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
+        ///
+        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
+        /// running a Python shell job or an Apache Spark ETL job:</p>
+        /// <ul>
+        /// <li>
+        /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
+        /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
+        /// </li>
+        /// <li>
+        /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
+        /// </li>
+        /// </ul>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.max_capacity = input;
             self
@@ -10943,6 +12162,18 @@ pub mod job_run {
             self.worker_type = Some(input);
             self
         }
+        /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
+        /// </li>
+        /// <li>
+        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
+        /// </li>
+        /// <li>
+        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
+        /// </li>
+        /// </ul>
         pub fn set_worker_type(
             mut self,
             input: std::option::Option<crate::model::WorkerType>,
@@ -10951,11 +12182,15 @@ pub mod job_run {
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn number_of_workers(mut self, input: i32) -> Self {
             self.number_of_workers = Some(input);
             self
         }
+        /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+        ///
+        /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_workers = input;
             self
@@ -10966,6 +12201,8 @@ pub mod job_run {
             self.security_configuration = Some(input.into());
             self
         }
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job
+        /// run.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10983,6 +12220,12 @@ pub mod job_run {
             self.log_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the log group for secure logging that can be server-side encrypted in Amazon
+        /// CloudWatch using KMS. This name can be <code>/aws-glue/jobs/</code>, in which case the
+        /// default encryption is <code>NONE</code>. If you add a role name and
+        /// <code>SecurityConfiguration</code> name (in other words,
+        /// <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then that security
+        /// configuration is used to encrypt the log group.</p>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10995,6 +12238,7 @@ pub mod job_run {
             self.notification_property = Some(input);
             self
         }
+        /// <p>Specifies configuration properties of a job run notification.</p>
         pub fn set_notification_property(
             mut self,
             input: std::option::Option<crate::model::NotificationProperty>,
@@ -11003,12 +12247,19 @@ pub mod job_run {
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
+        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
+        ///
         /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.glue_version = Some(input.into());
             self
         }
+        /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
+        ///
+        /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
+        ///
+        /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.glue_version = input;
             self
@@ -11082,6 +12333,7 @@ pub mod predecessor {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>The name of the job definition used by the predecessor job run.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -11091,6 +12343,7 @@ pub mod predecessor {
             self.run_id = Some(input.into());
             self
         }
+        /// <p>The job-run ID of the predecessor job run.</p>
         pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.run_id = input;
             self
@@ -11139,6 +12392,7 @@ pub mod trigger_node_details {
             self.trigger = Some(input);
             self
         }
+        /// <p>The information of the trigger represented by the trigger node.</p>
         pub fn set_trigger(mut self, input: std::option::Option<crate::model::Trigger>) -> Self {
             self.trigger = input;
             self
@@ -11158,6 +12412,7 @@ impl TriggerNodeDetails {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11169,8 +12424,11 @@ impl TriggerNodeDetails {
     std::hash::Hash,
 )]
 pub enum NodeType {
+    #[allow(missing_docs)] // documentation missing in model
     Crawler,
+    #[allow(missing_docs)] // documentation missing in model
     Job,
+    #[allow(missing_docs)] // documentation missing in model
     Trigger,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11193,6 +12451,7 @@ impl std::str::FromStr for NodeType {
     }
 }
 impl NodeType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NodeType::Crawler => "CRAWLER",
@@ -11201,6 +12460,7 @@ impl NodeType {
             NodeType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CRAWLER", "JOB", "TRIGGER"]
     }
@@ -11259,6 +12519,7 @@ pub mod workflow_run_statistics {
             self.total_actions = Some(input);
             self
         }
+        /// <p>Total number of Actions in the workflow run.</p>
         pub fn set_total_actions(mut self, input: std::option::Option<i32>) -> Self {
             self.total_actions = input;
             self
@@ -11268,6 +12529,7 @@ pub mod workflow_run_statistics {
             self.timeout_actions = Some(input);
             self
         }
+        /// <p>Total number of Actions that timed out.</p>
         pub fn set_timeout_actions(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_actions = input;
             self
@@ -11277,6 +12539,7 @@ pub mod workflow_run_statistics {
             self.failed_actions = Some(input);
             self
         }
+        /// <p>Total number of Actions that have failed.</p>
         pub fn set_failed_actions(mut self, input: std::option::Option<i32>) -> Self {
             self.failed_actions = input;
             self
@@ -11286,6 +12549,7 @@ pub mod workflow_run_statistics {
             self.stopped_actions = Some(input);
             self
         }
+        /// <p>Total number of Actions that have stopped.</p>
         pub fn set_stopped_actions(mut self, input: std::option::Option<i32>) -> Self {
             self.stopped_actions = input;
             self
@@ -11295,6 +12559,7 @@ pub mod workflow_run_statistics {
             self.succeeded_actions = Some(input);
             self
         }
+        /// <p>Total number of Actions that have succeeded.</p>
         pub fn set_succeeded_actions(mut self, input: std::option::Option<i32>) -> Self {
             self.succeeded_actions = input;
             self
@@ -11304,6 +12569,7 @@ pub mod workflow_run_statistics {
             self.running_actions = Some(input);
             self
         }
+        /// <p>Total number Actions in running state.</p>
         pub fn set_running_actions(mut self, input: std::option::Option<i32>) -> Self {
             self.running_actions = input;
             self
@@ -11328,6 +12594,7 @@ impl WorkflowRunStatistics {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11339,10 +12606,15 @@ impl WorkflowRunStatistics {
     std::hash::Hash,
 )]
 pub enum WorkflowRunStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11367,6 +12639,7 @@ impl std::str::FromStr for WorkflowRunStatus {
     }
 }
 impl WorkflowRunStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WorkflowRunStatus::Completed => "COMPLETED",
@@ -11377,6 +12650,7 @@ impl WorkflowRunStatus {
             WorkflowRunStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COMPLETED", "ERROR", "RUNNING", "STOPPED", "STOPPING"]
     }
@@ -11403,9 +12677,9 @@ pub struct Workflow {
     pub default_run_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time when the workflow was created.</p>
-    pub created_on: std::option::Option<smithy_types::Instant>,
+    pub created_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time when the workflow was last modified.</p>
-    pub last_modified_on: std::option::Option<smithy_types::Instant>,
+    pub last_modified_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The information about the last execution of the workflow.</p>
     pub last_run: std::option::Option<crate::model::WorkflowRun>,
     /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed
@@ -11442,8 +12716,8 @@ pub mod workflow {
         pub(crate) default_run_properties: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) created_on: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_modified_on: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_on: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) last_run: std::option::Option<crate::model::WorkflowRun>,
         pub(crate) graph: std::option::Option<crate::model::WorkflowGraph>,
         pub(crate) max_concurrent_runs: std::option::Option<i32>,
@@ -11455,6 +12729,7 @@ pub mod workflow {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the workflow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -11464,10 +12739,18 @@ pub mod workflow {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the workflow.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `default_run_properties`.
+        ///
+        /// To override the contents of this collection use [`set_default_run_properties`](Self::set_default_run_properties).
+        ///
+        /// <p>A collection of properties to be used as part of each execution of the workflow.
+        /// The run properties are made available to each job in the workflow. A job can modify
+        /// the properties for the next jobs in the flow.</p>
         pub fn default_run_properties(
             mut self,
             k: impl Into<std::string::String>,
@@ -11478,6 +12761,9 @@ pub mod workflow {
             self.default_run_properties = Some(hash_map);
             self
         }
+        /// <p>A collection of properties to be used as part of each execution of the workflow.
+        /// The run properties are made available to each job in the workflow. A job can modify
+        /// the properties for the next jobs in the flow.</p>
         pub fn set_default_run_properties(
             mut self,
             input: std::option::Option<
@@ -11488,22 +12774,27 @@ pub mod workflow {
             self
         }
         /// <p>The date and time when the workflow was created.</p>
-        pub fn created_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_on = Some(input);
             self
         }
-        pub fn set_created_on(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time when the workflow was created.</p>
+        pub fn set_created_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_on = input;
             self
         }
         /// <p>The date and time when the workflow was last modified.</p>
-        pub fn last_modified_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_on = Some(input);
             self
         }
+        /// <p>The date and time when the workflow was last modified.</p>
         pub fn set_last_modified_on(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_on = input;
             self
@@ -11513,6 +12804,7 @@ pub mod workflow {
             self.last_run = Some(input);
             self
         }
+        /// <p>The information about the last execution of the workflow.</p>
         pub fn set_last_run(
             mut self,
             input: std::option::Option<crate::model::WorkflowRun>,
@@ -11526,6 +12818,8 @@ pub mod workflow {
             self.graph = Some(input);
             self
         }
+        /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed
+        /// connections between them as edges.</p>
         pub fn set_graph(
             mut self,
             input: std::option::Option<crate::model::WorkflowGraph>,
@@ -11538,6 +12832,7 @@ pub mod workflow {
             self.max_concurrent_runs = Some(input);
             self
         }
+        /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
         pub fn set_max_concurrent_runs(mut self, input: std::option::Option<i32>) -> Self {
             self.max_concurrent_runs = input;
             self
@@ -11547,6 +12842,7 @@ pub mod workflow {
             self.blueprint_details = Some(input);
             self
         }
+        /// <p>This structure indicates the details of the blueprint that this particular workflow is created from.</p>
         pub fn set_blueprint_details(
             mut self,
             input: std::option::Option<crate::model::BlueprintDetails>,
@@ -11609,6 +12905,7 @@ pub mod blueprint_details {
             self.blueprint_name = Some(input.into());
             self
         }
+        /// <p>The name of the blueprint.</p>
         pub fn set_blueprint_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11621,6 +12918,7 @@ pub mod blueprint_details {
             self.run_id = Some(input.into());
             self
         }
+        /// <p>The run ID for this blueprint.</p>
         pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.run_id = input;
             self
@@ -11657,7 +12955,7 @@ pub struct UserDefinedFunction {
     /// <p>The owner type.</p>
     pub owner_type: std::option::Option<crate::model::PrincipalType>,
     /// <p>The time at which the function was created.</p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The resource URIs for the function.</p>
     pub resource_uris: std::option::Option<std::vec::Vec<crate::model::ResourceUri>>,
     /// <p>The ID of the Data Catalog in which the function resides.</p>
@@ -11688,7 +12986,7 @@ pub mod user_defined_function {
         pub(crate) class_name: std::option::Option<std::string::String>,
         pub(crate) owner_name: std::option::Option<std::string::String>,
         pub(crate) owner_type: std::option::Option<crate::model::PrincipalType>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) resource_uris: std::option::Option<std::vec::Vec<crate::model::ResourceUri>>,
         pub(crate) catalog_id: std::option::Option<std::string::String>,
     }
@@ -11698,6 +12996,7 @@ pub mod user_defined_function {
             self.function_name = Some(input.into());
             self
         }
+        /// <p>The name of the function.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11710,6 +13009,7 @@ pub mod user_defined_function {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>The name of the catalog database that contains the function.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11722,6 +13022,7 @@ pub mod user_defined_function {
             self.class_name = Some(input.into());
             self
         }
+        /// <p>The Java class that contains the function code.</p>
         pub fn set_class_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.class_name = input;
             self
@@ -11731,6 +13032,7 @@ pub mod user_defined_function {
             self.owner_name = Some(input.into());
             self
         }
+        /// <p>The owner of the function.</p>
         pub fn set_owner_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner_name = input;
             self
@@ -11740,6 +13042,7 @@ pub mod user_defined_function {
             self.owner_type = Some(input);
             self
         }
+        /// <p>The owner type.</p>
         pub fn set_owner_type(
             mut self,
             input: std::option::Option<crate::model::PrincipalType>,
@@ -11748,23 +13051,30 @@ pub mod user_defined_function {
             self
         }
         /// <p>The time at which the function was created.</p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p>The time at which the function was created.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
         }
+        /// Appends an item to `resource_uris`.
+        ///
+        /// To override the contents of this collection use [`set_resource_uris`](Self::set_resource_uris).
+        ///
+        /// <p>The resource URIs for the function.</p>
         pub fn resource_uris(mut self, input: impl Into<crate::model::ResourceUri>) -> Self {
             let mut v = self.resource_uris.unwrap_or_default();
             v.push(input.into());
             self.resource_uris = Some(v);
             self
         }
+        /// <p>The resource URIs for the function.</p>
         pub fn set_resource_uris(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceUri>>,
@@ -11777,6 +13087,7 @@ pub mod user_defined_function {
             self.catalog_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Data Catalog in which the function resides.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -11835,6 +13146,7 @@ pub mod table_version {
             self.table = Some(input);
             self
         }
+        /// <p>The table in question.</p>
         pub fn set_table(mut self, input: std::option::Option<crate::model::Table>) -> Self {
             self.table = input;
             self
@@ -11844,6 +13156,7 @@ pub mod table_version {
             self.version_id = Some(input.into());
             self
         }
+        /// <p>The ID value that identifies this table version. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -11871,7 +13184,7 @@ pub struct SecurityConfiguration {
     /// <p>The name of the security configuration.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The time at which this security configuration was created.</p>
-    pub created_time_stamp: std::option::Option<smithy_types::Instant>,
+    pub created_time_stamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The encryption configuration associated with this security configuration.</p>
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
 }
@@ -11891,7 +13204,7 @@ pub mod security_configuration {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) created_time_stamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time_stamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) encryption_configuration:
             std::option::Option<crate::model::EncryptionConfiguration>,
     }
@@ -11901,18 +13214,20 @@ pub mod security_configuration {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the security configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
         /// <p>The time at which this security configuration was created.</p>
-        pub fn created_time_stamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time_stamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time_stamp = Some(input);
             self
         }
+        /// <p>The time at which this security configuration was created.</p>
         pub fn set_created_time_stamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time_stamp = input;
             self
@@ -11925,6 +13240,7 @@ pub mod security_configuration {
             self.encryption_configuration = Some(input);
             self
         }
+        /// <p>The encryption configuration associated with this security configuration.</p>
         pub fn set_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfiguration>,
@@ -11981,12 +13297,18 @@ pub mod encryption_configuration {
             std::option::Option<crate::model::JobBookmarksEncryption>,
     }
     impl Builder {
+        /// Appends an item to `s3_encryption`.
+        ///
+        /// To override the contents of this collection use [`set_s3_encryption`](Self::set_s3_encryption).
+        ///
+        /// <p>The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.</p>
         pub fn s3_encryption(mut self, input: impl Into<crate::model::S3Encryption>) -> Self {
             let mut v = self.s3_encryption.unwrap_or_default();
             v.push(input.into());
             self.s3_encryption = Some(v);
             self
         }
+        /// <p>The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.</p>
         pub fn set_s3_encryption(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::S3Encryption>>,
@@ -11999,6 +13321,7 @@ pub mod encryption_configuration {
             self.cloud_watch_encryption = Some(input);
             self
         }
+        /// <p>The encryption configuration for Amazon CloudWatch.</p>
         pub fn set_cloud_watch_encryption(
             mut self,
             input: std::option::Option<crate::model::CloudWatchEncryption>,
@@ -12014,6 +13337,7 @@ pub mod encryption_configuration {
             self.job_bookmarks_encryption = Some(input);
             self
         }
+        /// <p>The encryption configuration for job bookmarks.</p>
         pub fn set_job_bookmarks_encryption(
             mut self,
             input: std::option::Option<crate::model::JobBookmarksEncryption>,
@@ -12078,6 +13402,7 @@ pub mod job_bookmarks_encryption {
             self.job_bookmarks_encryption_mode = Some(input);
             self
         }
+        /// <p>The encryption mode to use for job bookmarks data.</p>
         pub fn set_job_bookmarks_encryption_mode(
             mut self,
             input: std::option::Option<crate::model::JobBookmarksEncryptionMode>,
@@ -12090,6 +13415,7 @@ pub mod job_bookmarks_encryption {
             self.kms_key_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -12110,6 +13436,7 @@ impl JobBookmarksEncryption {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -12121,7 +13448,9 @@ impl JobBookmarksEncryption {
     std::hash::Hash,
 )]
 pub enum JobBookmarksEncryptionMode {
+    #[allow(missing_docs)] // documentation missing in model
     Csekms,
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12143,6 +13472,7 @@ impl std::str::FromStr for JobBookmarksEncryptionMode {
     }
 }
 impl JobBookmarksEncryptionMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobBookmarksEncryptionMode::Csekms => "CSE-KMS",
@@ -12150,6 +13480,7 @@ impl JobBookmarksEncryptionMode {
             JobBookmarksEncryptionMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CSE-KMS", "DISABLED"]
     }
@@ -12199,6 +13530,7 @@ pub mod cloud_watch_encryption {
             self.cloud_watch_encryption_mode = Some(input);
             self
         }
+        /// <p>The encryption mode to use for CloudWatch data.</p>
         pub fn set_cloud_watch_encryption_mode(
             mut self,
             input: std::option::Option<crate::model::CloudWatchEncryptionMode>,
@@ -12211,6 +13543,7 @@ pub mod cloud_watch_encryption {
             self.kms_key_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -12231,6 +13564,7 @@ impl CloudWatchEncryption {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -12242,7 +13576,9 @@ impl CloudWatchEncryption {
     std::hash::Hash,
 )]
 pub enum CloudWatchEncryptionMode {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Ssekms,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12264,6 +13600,7 @@ impl std::str::FromStr for CloudWatchEncryptionMode {
     }
 }
 impl CloudWatchEncryptionMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CloudWatchEncryptionMode::Disabled => "DISABLED",
@@ -12271,6 +13608,7 @@ impl CloudWatchEncryptionMode {
             CloudWatchEncryptionMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "SSE-KMS"]
     }
@@ -12313,6 +13651,7 @@ pub mod s3_encryption {
             self.s3_encryption_mode = Some(input);
             self
         }
+        /// <p>The encryption mode to use for Amazon S3 data.</p>
         pub fn set_s3_encryption_mode(
             mut self,
             input: std::option::Option<crate::model::S3EncryptionMode>,
@@ -12325,6 +13664,7 @@ pub mod s3_encryption {
             self.kms_key_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -12345,6 +13685,7 @@ impl S3Encryption {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -12356,8 +13697,11 @@ impl S3Encryption {
     std::hash::Hash,
 )]
 pub enum S3EncryptionMode {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Ssekms,
+    #[allow(missing_docs)] // documentation missing in model
     Sses3,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12380,6 +13724,7 @@ impl std::str::FromStr for S3EncryptionMode {
     }
 }
 impl S3EncryptionMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             S3EncryptionMode::Disabled => "DISABLED",
@@ -12388,6 +13733,7 @@ impl S3EncryptionMode {
             S3EncryptionMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "SSE-KMS", "SSE-S3"]
     }
@@ -12398,6 +13744,7 @@ impl AsRef<str> for S3EncryptionMode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -12409,6 +13756,7 @@ impl AsRef<str> for S3EncryptionMode {
     std::hash::Hash,
 )]
 pub enum SchemaDiffType {
+    #[allow(missing_docs)] // documentation missing in model
     SyntaxDiff,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12429,12 +13777,14 @@ impl std::str::FromStr for SchemaDiffType {
     }
 }
 impl SchemaDiffType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SchemaDiffType::SyntaxDiff => "SYNTAX_DIFF",
             SchemaDiffType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SYNTAX_DIFF"]
     }
@@ -12445,6 +13795,7 @@ impl AsRef<str> for SchemaDiffType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -12456,7 +13807,9 @@ impl AsRef<str> for SchemaDiffType {
     std::hash::Hash,
 )]
 pub enum DataFormat {
+    #[allow(missing_docs)] // documentation missing in model
     Avro,
+    #[allow(missing_docs)] // documentation missing in model
     Json,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12478,6 +13831,7 @@ impl std::str::FromStr for DataFormat {
     }
 }
 impl DataFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataFormat::Avro => "AVRO",
@@ -12485,6 +13839,7 @@ impl DataFormat {
             DataFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVRO", "JSON"]
     }
@@ -12504,9 +13859,9 @@ pub struct GluePolicy {
     /// <p>Contains the hash value associated with this policy.</p>
     pub policy_hash: std::option::Option<std::string::String>,
     /// <p>The date and time at which the policy was created.</p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time at which the policy was last updated.</p>
-    pub update_time: std::option::Option<smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for GluePolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12526,8 +13881,8 @@ pub mod glue_policy {
     pub struct Builder {
         pub(crate) policy_in_json: std::option::Option<std::string::String>,
         pub(crate) policy_hash: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Contains the requested policy document, in JSON format.</p>
@@ -12535,6 +13890,7 @@ pub mod glue_policy {
             self.policy_in_json = Some(input.into());
             self
         }
+        /// <p>Contains the requested policy document, in JSON format.</p>
         pub fn set_policy_in_json(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12547,30 +13903,33 @@ pub mod glue_policy {
             self.policy_hash = Some(input.into());
             self
         }
+        /// <p>Contains the hash value associated with this policy.</p>
         pub fn set_policy_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_hash = input;
             self
         }
         /// <p>The date and time at which the policy was created.</p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p>The date and time at which the policy was created.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p>The date and time at which the policy was last updated.</p>
-        pub fn update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_time = Some(input);
             self
         }
+        /// <p>The date and time at which the policy was last updated.</p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_time = input;
             self
@@ -12593,6 +13952,7 @@ impl GluePolicy {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -12604,7 +13964,9 @@ impl GluePolicy {
     std::hash::Hash,
 )]
 pub enum Language {
+    #[allow(missing_docs)] // documentation missing in model
     Python,
+    #[allow(missing_docs)] // documentation missing in model
     Scala,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12626,6 +13988,7 @@ impl std::str::FromStr for Language {
     }
 }
 impl Language {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Language::Python => "PYTHON",
@@ -12633,6 +13996,7 @@ impl Language {
             Language::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PYTHON", "SCALA"]
     }
@@ -12674,12 +14038,18 @@ pub mod location {
         pub(crate) dynamo_db: std::option::Option<std::vec::Vec<crate::model::CodeGenNodeArg>>,
     }
     impl Builder {
+        /// Appends an item to `jdbc`.
+        ///
+        /// To override the contents of this collection use [`set_jdbc`](Self::set_jdbc).
+        ///
+        /// <p>A JDBC location.</p>
         pub fn jdbc(mut self, input: impl Into<crate::model::CodeGenNodeArg>) -> Self {
             let mut v = self.jdbc.unwrap_or_default();
             v.push(input.into());
             self.jdbc = Some(v);
             self
         }
+        /// <p>A JDBC location.</p>
         pub fn set_jdbc(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CodeGenNodeArg>>,
@@ -12687,12 +14057,18 @@ pub mod location {
             self.jdbc = input;
             self
         }
+        /// Appends an item to `s3`.
+        ///
+        /// To override the contents of this collection use [`set_s3`](Self::set_s3).
+        ///
+        /// <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
         pub fn s3(mut self, input: impl Into<crate::model::CodeGenNodeArg>) -> Self {
             let mut v = self.s3.unwrap_or_default();
             v.push(input.into());
             self.s3 = Some(v);
             self
         }
+        /// <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
         pub fn set_s3(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CodeGenNodeArg>>,
@@ -12700,12 +14076,18 @@ pub mod location {
             self.s3 = input;
             self
         }
+        /// Appends an item to `dynamo_db`.
+        ///
+        /// To override the contents of this collection use [`set_dynamo_db`](Self::set_dynamo_db).
+        ///
+        /// <p>An Amazon DynamoDB table location.</p>
         pub fn dynamo_db(mut self, input: impl Into<crate::model::CodeGenNodeArg>) -> Self {
             let mut v = self.dynamo_db.unwrap_or_default();
             v.push(input.into());
             self.dynamo_db = Some(v);
             self
         }
+        /// <p>An Amazon DynamoDB table location.</p>
         pub fn set_dynamo_db(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CodeGenNodeArg>>,
@@ -12766,6 +14148,7 @@ pub mod code_gen_node_arg {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the argument or property.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -12775,6 +14158,7 @@ pub mod code_gen_node_arg {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the argument or property.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -12784,6 +14168,7 @@ pub mod code_gen_node_arg {
             self.param = Some(input);
             self
         }
+        /// <p>True if the value is used as a parameter.</p>
         pub fn set_param(mut self, input: std::option::Option<bool>) -> Self {
             self.param = input;
             self
@@ -12837,6 +14222,7 @@ pub mod catalog_entry {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>The database in which the table metadata resides.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12849,6 +14235,7 @@ pub mod catalog_entry {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table in question.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -12917,6 +14304,7 @@ pub mod mapping_entry {
             self.source_table = Some(input.into());
             self
         }
+        /// <p>The name of the source table.</p>
         pub fn set_source_table(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_table = input;
             self
@@ -12926,6 +14314,7 @@ pub mod mapping_entry {
             self.source_path = Some(input.into());
             self
         }
+        /// <p>The source path.</p>
         pub fn set_source_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_path = input;
             self
@@ -12935,6 +14324,7 @@ pub mod mapping_entry {
             self.source_type = Some(input.into());
             self
         }
+        /// <p>The source type.</p>
         pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_type = input;
             self
@@ -12944,6 +14334,7 @@ pub mod mapping_entry {
             self.target_table = Some(input.into());
             self
         }
+        /// <p>The target table.</p>
         pub fn set_target_table(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_table = input;
             self
@@ -12953,6 +14344,7 @@ pub mod mapping_entry {
             self.target_path = Some(input.into());
             self
         }
+        /// <p>The target path.</p>
         pub fn set_target_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_path = input;
             self
@@ -12962,6 +14354,7 @@ pub mod mapping_entry {
             self.target_type = Some(input.into());
             self
         }
+        /// <p>The target type.</p>
         pub fn set_target_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_type = input;
             self
@@ -12997,9 +14390,9 @@ pub struct Partition {
     /// <p>The name of the database table in which to create the partition.</p>
     pub table_name: std::option::Option<std::string::String>,
     /// <p>The time at which the partition was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time at which the partition was accessed.</p>
-    pub last_access_time: std::option::Option<smithy_types::Instant>,
+    pub last_access_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Provides information about the physical
     /// location where the partition is stored.</p>
     pub storage_descriptor: std::option::Option<crate::model::StorageDescriptor>,
@@ -13008,7 +14401,7 @@ pub struct Partition {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The last time at which column statistics were computed for this
     /// partition.</p>
-    pub last_analyzed_time: std::option::Option<smithy_types::Instant>,
+    pub last_analyzed_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The ID of the Data Catalog in which the partition resides.</p>
     pub catalog_id: std::option::Option<std::string::String>,
 }
@@ -13036,22 +14429,28 @@ pub mod partition {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) database_name: std::option::Option<std::string::String>,
         pub(crate) table_name: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_access_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_access_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) storage_descriptor: std::option::Option<crate::model::StorageDescriptor>,
         pub(crate) parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) last_analyzed_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_analyzed_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) catalog_id: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The values of the partition.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The values of the partition.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13064,6 +14463,7 @@ pub mod partition {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>The name of the catalog database in which to create the partition.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13076,30 +14476,33 @@ pub mod partition {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the database table in which to create the partition.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
         }
         /// <p>The time at which the partition was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time at which the partition was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The last time at which the partition was accessed.</p>
-        pub fn last_access_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_access_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_access_time = Some(input);
             self
         }
+        /// <p>The last time at which the partition was accessed.</p>
         pub fn set_last_access_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_access_time = input;
             self
@@ -13110,6 +14513,8 @@ pub mod partition {
             self.storage_descriptor = Some(input);
             self
         }
+        /// <p>Provides information about the physical
+        /// location where the partition is stored.</p>
         pub fn set_storage_descriptor(
             mut self,
             input: std::option::Option<crate::model::StorageDescriptor>,
@@ -13117,6 +14522,11 @@ pub mod partition {
             self.storage_descriptor = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>These key-value pairs define partition parameters.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -13127,6 +14537,7 @@ pub mod partition {
             self.parameters = Some(hash_map);
             self
         }
+        /// <p>These key-value pairs define partition parameters.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -13138,13 +14549,15 @@ pub mod partition {
         }
         /// <p>The last time at which column statistics were computed for this
         /// partition.</p>
-        pub fn last_analyzed_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_analyzed_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_analyzed_time = Some(input);
             self
         }
+        /// <p>The last time at which column statistics were computed for this
+        /// partition.</p>
         pub fn set_last_analyzed_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_analyzed_time = input;
             self
@@ -13154,6 +14567,7 @@ pub mod partition {
             self.catalog_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Data Catalog in which the partition resides.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -13216,6 +14630,8 @@ pub mod segment {
             self.segment_number = Some(input);
             self
         }
+        /// <p>The zero-based index number of the segment. For example, if the total number of segments
+        /// is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
         pub fn set_segment_number(mut self, input: std::option::Option<i32>) -> Self {
             self.segment_number = input;
             self
@@ -13225,6 +14641,7 @@ pub mod segment {
             self.total_segments = Some(input);
             self
         }
+        /// <p>The total number of segments.</p>
         pub fn set_total_segments(mut self, input: std::option::Option<i32>) -> Self {
             self.total_segments = input;
             self
@@ -13254,6 +14671,7 @@ pub struct PartitionIndexDescriptor {
     /// <p>A list of one or more keys, as <code>KeySchemaElement</code> structures, for the partition index.</p>
     pub keys: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
     /// <p>The status of the partition index. </p>
+    ///
     /// <p>The possible statuses are:</p>
     /// <ul>
     /// <li>
@@ -13300,16 +14718,23 @@ pub mod partition_index_descriptor {
             self.index_name = Some(input.into());
             self
         }
+        /// <p>The name of the partition index.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_name = input;
             self
         }
+        /// Appends an item to `keys`.
+        ///
+        /// To override the contents of this collection use [`set_keys`](Self::set_keys).
+        ///
+        /// <p>A list of one or more keys, as <code>KeySchemaElement</code> structures, for the partition index.</p>
         pub fn keys(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
             let mut v = self.keys.unwrap_or_default();
             v.push(input.into());
             self.keys = Some(v);
             self
         }
+        /// <p>A list of one or more keys, as <code>KeySchemaElement</code> structures, for the partition index.</p>
         pub fn set_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
@@ -13318,6 +14743,7 @@ pub mod partition_index_descriptor {
             self
         }
         /// <p>The status of the partition index. </p>
+        ///
         /// <p>The possible statuses are:</p>
         /// <ul>
         /// <li>
@@ -13337,6 +14763,23 @@ pub mod partition_index_descriptor {
             self.index_status = Some(input);
             self
         }
+        /// <p>The status of the partition index. </p>
+        ///
+        /// <p>The possible statuses are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>ACTIVE: The index creation succeeds.</p>
+        /// </li>
+        /// <li>
+        /// <p>FAILED: The index creation fails. </p>
+        /// </li>
+        /// <li>
+        /// <p>DELETING: The index is deleted from the list of indexes.</p>
+        /// </li>
+        /// </ul>
         pub fn set_index_status(
             mut self,
             input: std::option::Option<crate::model::PartitionIndexStatus>,
@@ -13344,12 +14787,18 @@ pub mod partition_index_descriptor {
             self.index_status = input;
             self
         }
+        /// Appends an item to `backfill_errors`.
+        ///
+        /// To override the contents of this collection use [`set_backfill_errors`](Self::set_backfill_errors).
+        ///
+        /// <p>A list of errors that can occur when registering partition indexes for an existing table.</p>
         pub fn backfill_errors(mut self, input: impl Into<crate::model::BackfillError>) -> Self {
             let mut v = self.backfill_errors.unwrap_or_default();
             v.push(input.into());
             self.backfill_errors = Some(v);
             self
         }
+        /// <p>A list of errors that can occur when registering partition indexes for an existing table.</p>
         pub fn set_backfill_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BackfillError>>,
@@ -13376,7 +14825,9 @@ impl PartitionIndexDescriptor {
 }
 
 /// <p>A list of errors that can occur when registering partition indexes for an existing table.</p>
+///
 /// <p>These errors give the details about why an index registration failed and provide a limited number of partitions in the response, so that you can fix the partitions at fault and try registering the index again. The most common set of errors that can occur are categorized as follows:</p>
+///
 /// <ul>
 /// <li>
 /// <p>EncryptedPartitionError: The partitions are encrypted.</p>
@@ -13425,6 +14876,7 @@ pub mod backfill_error {
             self.code = Some(input);
             self
         }
+        /// <p>The error code for an error that occurred when registering partition indexes for an existing table.</p>
         pub fn set_code(
             mut self,
             input: std::option::Option<crate::model::BackfillErrorCode>,
@@ -13432,12 +14884,18 @@ pub mod backfill_error {
             self.code = input;
             self
         }
+        /// Appends an item to `partitions`.
+        ///
+        /// To override the contents of this collection use [`set_partitions`](Self::set_partitions).
+        ///
+        /// <p>A list of a limited number of partitions in the response.</p>
         pub fn partitions(mut self, input: impl Into<crate::model::PartitionValueList>) -> Self {
             let mut v = self.partitions.unwrap_or_default();
             v.push(input.into());
             self.partitions = Some(v);
             self
         }
+        /// <p>A list of a limited number of partitions in the response.</p>
         pub fn set_partitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PartitionValueList>>,
@@ -13484,12 +14942,18 @@ pub mod partition_value_list {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The list of values.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The list of values.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13512,6 +14976,7 @@ impl PartitionValueList {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -13523,10 +14988,15 @@ impl PartitionValueList {
     std::hash::Hash,
 )]
 pub enum BackfillErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
     EncryptedPartitionError,
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidPartitionTypeDataError,
+    #[allow(missing_docs)] // documentation missing in model
     MissingPartitionValueError,
+    #[allow(missing_docs)] // documentation missing in model
     UnsupportedPartitionCharacterError,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13553,6 +15023,7 @@ impl std::str::FromStr for BackfillErrorCode {
     }
 }
 impl BackfillErrorCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BackfillErrorCode::EncryptedPartitionError => "ENCRYPTED_PARTITION_ERROR",
@@ -13565,6 +15036,7 @@ impl BackfillErrorCode {
             BackfillErrorCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ENCRYPTED_PARTITION_ERROR",
@@ -13581,6 +15053,7 @@ impl AsRef<str> for BackfillErrorCode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -13592,9 +15065,13 @@ impl AsRef<str> for BackfillErrorCode {
     std::hash::Hash,
 )]
 pub enum PartitionIndexStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13618,6 +15095,7 @@ impl std::str::FromStr for PartitionIndexStatus {
     }
 }
 impl PartitionIndexStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PartitionIndexStatus::Active => "ACTIVE",
@@ -13627,6 +15105,7 @@ impl PartitionIndexStatus {
             PartitionIndexStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING", "FAILED"]
     }
@@ -13669,6 +15148,7 @@ pub mod key_schema_element {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of a partition key.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -13678,6 +15158,7 @@ pub mod key_schema_element {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of a partition key.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -13714,9 +15195,9 @@ pub struct MlTransform {
     /// <p>The current status of the machine learning transform.</p>
     pub status: std::option::Option<crate::model::TransformStatusType>,
     /// <p>A timestamp. The time and date that this machine learning transform was created.</p>
-    pub created_on: std::option::Option<smithy_types::Instant>,
+    pub created_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A timestamp. The last point in time when this machine learning transform was modified.</p>
-    pub last_modified_on: std::option::Option<smithy_types::Instant>,
+    pub last_modified_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A list of Glue table definitions used by the transform.</p>
     pub input_record_tables: std::option::Option<std::vec::Vec<crate::model::GlueTable>>,
     /// <p>A <code>TransformParameters</code> object. You can use parameters to tune (customize) the
@@ -13731,6 +15212,7 @@ pub struct MlTransform {
     /// run against. Has an upper bound of 100 columns.</p>
     pub schema: std::option::Option<std::vec::Vec<crate::model::SchemaColumn>>,
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
+    ///
     /// <ul>
     /// <li>
     /// <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p>
@@ -13746,6 +15228,7 @@ pub struct MlTransform {
     /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
     /// information, see the <a href="http://aws.amazon.com/glue/pricing/">Glue pricing
     /// page</a>. </p>
+    ///
     /// <p>
     /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
     /// <ul>
@@ -13763,6 +15246,7 @@ pub struct MlTransform {
     /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
     /// </li>
     /// </ul>
+    ///
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
     pub max_capacity: std::option::Option<f64>,
     /// <p>The type of predefined worker that is allocated when a task of this transform runs. Accepts a value of Standard, G.1X, or G.2X.</p>
@@ -13777,6 +15261,7 @@ pub struct MlTransform {
     /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
     /// </li>
     /// </ul>
+    ///
     /// <p>
     /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
     /// <ul>
@@ -13796,6 +15281,7 @@ pub struct MlTransform {
     /// </ul>
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a task of the transform runs.</p>
+    ///
     /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
     pub number_of_workers: std::option::Option<i32>,
     /// <p>The timeout in minutes of the machine learning transform.</p>
@@ -13841,8 +15327,8 @@ pub mod ml_transform {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::TransformStatusType>,
-        pub(crate) created_on: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_modified_on: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_on: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) input_record_tables: std::option::Option<std::vec::Vec<crate::model::GlueTable>>,
         pub(crate) parameters: std::option::Option<crate::model::TransformParameters>,
         pub(crate) evaluation_metrics: std::option::Option<crate::model::EvaluationMetrics>,
@@ -13864,6 +15350,8 @@ pub mod ml_transform {
             self.transform_id = Some(input.into());
             self
         }
+        /// <p>The unique transform ID that is generated for the machine learning transform. The ID is
+        /// guaranteed to be unique and does not change.</p>
         pub fn set_transform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.transform_id = input;
             self
@@ -13874,6 +15362,8 @@ pub mod ml_transform {
             self.name = Some(input.into());
             self
         }
+        /// <p>A user-defined name for the machine learning transform. Names are not guaranteed unique
+        /// and can be changed at any time.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -13884,6 +15374,8 @@ pub mod ml_transform {
             self.description = Some(input.into());
             self
         }
+        /// <p>A user-defined, long-form description text for the machine learning transform.
+        /// Descriptions are not guaranteed to be unique and can be changed at any time.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -13893,6 +15385,7 @@ pub mod ml_transform {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the machine learning transform.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TransformStatusType>,
@@ -13901,32 +15394,43 @@ pub mod ml_transform {
             self
         }
         /// <p>A timestamp. The time and date that this machine learning transform was created.</p>
-        pub fn created_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_on = Some(input);
             self
         }
-        pub fn set_created_on(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>A timestamp. The time and date that this machine learning transform was created.</p>
+        pub fn set_created_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_on = input;
             self
         }
         /// <p>A timestamp. The last point in time when this machine learning transform was modified.</p>
-        pub fn last_modified_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_on = Some(input);
             self
         }
+        /// <p>A timestamp. The last point in time when this machine learning transform was modified.</p>
         pub fn set_last_modified_on(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_on = input;
             self
         }
+        /// Appends an item to `input_record_tables`.
+        ///
+        /// To override the contents of this collection use [`set_input_record_tables`](Self::set_input_record_tables).
+        ///
+        /// <p>A list of Glue table definitions used by the transform.</p>
         pub fn input_record_tables(mut self, input: impl Into<crate::model::GlueTable>) -> Self {
             let mut v = self.input_record_tables.unwrap_or_default();
             v.push(input.into());
             self.input_record_tables = Some(v);
             self
         }
+        /// <p>A list of Glue table definitions used by the transform.</p>
         pub fn set_input_record_tables(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GlueTable>>,
@@ -13941,6 +15445,9 @@ pub mod ml_transform {
             self.parameters = Some(input);
             self
         }
+        /// <p>A <code>TransformParameters</code> object. You can use parameters to tune (customize) the
+        /// behavior of the machine learning transform by specifying what data it learns from and your
+        /// preference on various tradeoffs (such as precious vs. recall, or accuracy vs. cost).</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<crate::model::TransformParameters>,
@@ -13953,6 +15460,7 @@ pub mod ml_transform {
             self.evaluation_metrics = Some(input);
             self
         }
+        /// <p>An <code>EvaluationMetrics</code> object. Evaluation metrics provide an estimate of the quality of your machine learning transform.</p>
         pub fn set_evaluation_metrics(
             mut self,
             input: std::option::Option<crate::model::EvaluationMetrics>,
@@ -13965,16 +15473,25 @@ pub mod ml_transform {
             self.label_count = Some(input);
             self
         }
+        /// <p>A count identifier for the labeling files generated by Glue for this transform. As you create a better transform, you can iteratively download, label, and upload the labeling file.</p>
         pub fn set_label_count(mut self, input: std::option::Option<i32>) -> Self {
             self.label_count = input;
             self
         }
+        /// Appends an item to `schema`.
+        ///
+        /// To override the contents of this collection use [`set_schema`](Self::set_schema).
+        ///
+        /// <p>A map of key-value pairs representing the columns and data types that this transform can
+        /// run against. Has an upper bound of 100 columns.</p>
         pub fn schema(mut self, input: impl Into<crate::model::SchemaColumn>) -> Self {
             let mut v = self.schema.unwrap_or_default();
             v.push(input.into());
             self.schema = Some(v);
             self
         }
+        /// <p>A map of key-value pairs representing the columns and data types that this transform can
+        /// run against. Has an upper bound of 100 columns.</p>
         pub fn set_schema(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SchemaColumn>>,
@@ -13983,6 +15500,7 @@ pub mod ml_transform {
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
+        ///
         /// <ul>
         /// <li>
         /// <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p>
@@ -13995,6 +15513,16 @@ pub mod ml_transform {
             self.role = Some(input.into());
             self
         }
+        /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p>
+        /// </li>
+        /// </ul>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -14004,6 +15532,7 @@ pub mod ml_transform {
             self.glue_version = Some(input.into());
             self
         }
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.glue_version = input;
             self
@@ -14012,6 +15541,7 @@ pub mod ml_transform {
         /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
         /// information, see the <a href="http://aws.amazon.com/glue/pricing/">Glue pricing
         /// page</a>. </p>
+        ///
         /// <p>
         /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
         /// <ul>
@@ -14029,11 +15559,36 @@ pub mod ml_transform {
         /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
         /// </li>
         /// </ul>
+        ///
         /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         pub fn max_capacity(mut self, input: f64) -> Self {
             self.max_capacity = Some(input);
             self
         }
+        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
+        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
+        /// information, see the <a href="http://aws.amazon.com/glue/pricing/">Glue pricing
+        /// page</a>. </p>
+        ///
+        /// <p>
+        /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
+        /// </li>
+        /// <li>
+        /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
+        /// </li>
+        /// <li>
+        /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.max_capacity = input;
             self
@@ -14050,6 +15605,7 @@ pub mod ml_transform {
         /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
         /// </li>
         /// </ul>
+        ///
         /// <p>
         /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
         /// <ul>
@@ -14071,6 +15627,36 @@ pub mod ml_transform {
             self.worker_type = Some(input);
             self
         }
+        /// <p>The type of predefined worker that is allocated when a task of this transform runs. Accepts a value of Standard, G.1X, or G.2X.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
+        /// </li>
+        /// <li>
+        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
+        /// </li>
+        /// <li>
+        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>
+        /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
+        /// </li>
+        /// <li>
+        /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
+        /// </li>
+        /// <li>
+        /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
+        /// </li>
+        /// </ul>
         pub fn set_worker_type(
             mut self,
             input: std::option::Option<crate::model::WorkerType>,
@@ -14079,11 +15665,15 @@ pub mod ml_transform {
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a task of the transform runs.</p>
+        ///
         /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
         pub fn number_of_workers(mut self, input: i32) -> Self {
             self.number_of_workers = Some(input);
             self
         }
+        /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a task of the transform runs.</p>
+        ///
+        /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_workers = input;
             self
@@ -14093,6 +15683,7 @@ pub mod ml_transform {
             self.timeout = Some(input);
             self
         }
+        /// <p>The timeout in minutes of the machine learning transform.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
@@ -14103,6 +15694,8 @@ pub mod ml_transform {
             self.max_retries = Some(input);
             self
         }
+        /// <p>The maximum number of times to retry after an <code>MLTaskRun</code> of the machine
+        /// learning transform fails.</p>
         pub fn set_max_retries(mut self, input: std::option::Option<i32>) -> Self {
             self.max_retries = input;
             self
@@ -14112,6 +15705,7 @@ pub mod ml_transform {
             self.transform_encryption = Some(input);
             self
         }
+        /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
         pub fn set_transform_encryption(
             mut self,
             input: std::option::Option<crate::model::TransformEncryption>,
@@ -14153,6 +15747,7 @@ impl MlTransform {
 }
 
 /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
+///
 /// <p>Additionally, imported labels and trained transforms can now be encrypted using a customer provided KMS key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -14191,6 +15786,7 @@ pub mod transform_encryption {
             self.ml_user_data_encryption = Some(input);
             self
         }
+        /// <p>An <code>MLUserDataEncryption</code> object containing the encryption mode and customer-provided KMS key ID.</p>
         pub fn set_ml_user_data_encryption(
             mut self,
             input: std::option::Option<crate::model::MlUserDataEncryption>,
@@ -14206,6 +15802,7 @@ pub mod transform_encryption {
             self.task_run_security_configuration_name = Some(input.into());
             self
         }
+        /// <p>The name of the security configuration.</p>
         pub fn set_task_run_security_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14234,6 +15831,7 @@ impl TransformEncryption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MlUserDataEncryption {
     /// <p>The encryption mode applied to user data. Valid values are:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>DISABLED: encryption is disabled</p>
@@ -14270,6 +15868,7 @@ pub mod ml_user_data_encryption {
     }
     impl Builder {
         /// <p>The encryption mode applied to user data. Valid values are:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>DISABLED: encryption is disabled</p>
@@ -14285,6 +15884,16 @@ pub mod ml_user_data_encryption {
             self.ml_user_data_encryption_mode = Some(input);
             self
         }
+        /// <p>The encryption mode applied to user data. Valid values are:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>DISABLED: encryption is disabled</p>
+        /// </li>
+        /// <li>
+        /// <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p>
+        /// </li>
+        /// </ul>
         pub fn set_ml_user_data_encryption_mode(
             mut self,
             input: std::option::Option<crate::model::MlUserDataEncryptionModeString>,
@@ -14297,6 +15906,7 @@ pub mod ml_user_data_encryption {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The ID for the customer-provided KMS key.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -14317,6 +15927,7 @@ impl MlUserDataEncryption {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -14328,7 +15939,9 @@ impl MlUserDataEncryption {
     std::hash::Hash,
 )]
 pub enum MlUserDataEncryptionModeString {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Ssekms,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -14350,6 +15963,7 @@ impl std::str::FromStr for MlUserDataEncryptionModeString {
     }
 }
 impl MlUserDataEncryptionModeString {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MlUserDataEncryptionModeString::Disabled => "DISABLED",
@@ -14357,6 +15971,7 @@ impl MlUserDataEncryptionModeString {
             MlUserDataEncryptionModeString::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "SSE-KMS"]
     }
@@ -14399,6 +16014,7 @@ pub mod evaluation_metrics {
             self.transform_type = Some(input);
             self
         }
+        /// <p>The type of machine learning transform.</p>
         pub fn set_transform_type(
             mut self,
             input: std::option::Option<crate::model::TransformType>,
@@ -14411,6 +16027,7 @@ pub mod evaluation_metrics {
             self.find_matches_metrics = Some(input);
             self
         }
+        /// <p>The evaluation metrics for the find matches algorithm.</p>
         pub fn set_find_matches_metrics(
             mut self,
             input: std::option::Option<crate::model::FindMatchesMetrics>,
@@ -14498,6 +16115,10 @@ pub mod find_matches_metrics {
             self.area_under_pr_curve = Some(input);
             self
         }
+        /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall
+        /// quality of the transform, that is independent of the choice made for precision vs. recall.
+        /// Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p>
+        /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
         pub fn set_area_under_pr_curve(mut self, input: std::option::Option<f64>) -> Self {
             self.area_under_pr_curve = input;
             self
@@ -14508,6 +16129,8 @@ pub mod find_matches_metrics {
             self.precision = Some(input);
             self
         }
+        /// <p>The precision metric indicates when often your transform is correct when it predicts a match. Specifically, it measures how well the transform finds true positives from the total true positives possible.</p>
+        /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
         pub fn set_precision(mut self, input: std::option::Option<f64>) -> Self {
             self.precision = input;
             self
@@ -14520,6 +16143,10 @@ pub mod find_matches_metrics {
             self.recall = Some(input);
             self
         }
+        /// <p>The recall metric indicates that for an actual match, how often your transform predicts
+        /// the match. Specifically, it measures how well the transform finds true positives from the
+        /// total records in the source data.</p>
+        /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
         pub fn set_recall(mut self, input: std::option::Option<f64>) -> Self {
             self.recall = input;
             self
@@ -14530,6 +16157,8 @@ pub mod find_matches_metrics {
             self.f1 = Some(input);
             self
         }
+        /// <p>The maximum F1 metric indicates the transform's accuracy between 0 and 1, where 1 is the best accuracy.</p>
+        /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/F1_score">F1 score</a> in Wikipedia.</p>
         pub fn set_f1(mut self, input: std::option::Option<f64>) -> Self {
             self.f1 = input;
             self
@@ -14540,6 +16169,8 @@ pub mod find_matches_metrics {
             self.confusion_matrix = Some(input);
             self
         }
+        /// <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p>
+        /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a> in Wikipedia.</p>
         pub fn set_confusion_matrix(
             mut self,
             input: std::option::Option<crate::model::ConfusionMatrix>,
@@ -14547,6 +16178,11 @@ pub mod find_matches_metrics {
             self.confusion_matrix = input;
             self
         }
+        /// Appends an item to `column_importances`.
+        ///
+        /// To override the contents of this collection use [`set_column_importances`](Self::set_column_importances).
+        ///
+        /// <p>A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order of descending importance.</p>
         pub fn column_importances(
             mut self,
             input: impl Into<crate::model::ColumnImportance>,
@@ -14556,6 +16192,7 @@ pub mod find_matches_metrics {
             self.column_importances = Some(v);
             self
         }
+        /// <p>A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order of descending importance.</p>
         pub fn set_column_importances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ColumnImportance>>,
@@ -14584,6 +16221,7 @@ impl FindMatchesMetrics {
 }
 
 /// <p>A structure containing the column name and column importance score for a column. </p>
+///
 /// <p>Column importance helps you understand how columns contribute to your model, by identifying which columns in your records are more important than others.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -14616,6 +16254,7 @@ pub mod column_importance {
             self.column_name = Some(input.into());
             self
         }
+        /// <p>The name of a column.</p>
         pub fn set_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.column_name = input;
             self
@@ -14625,6 +16264,7 @@ pub mod column_importance {
             self.importance = Some(input);
             self
         }
+        /// <p>The column importance score for the column, as a decimal.</p>
         pub fn set_importance(mut self, input: std::option::Option<f64>) -> Self {
             self.importance = input;
             self
@@ -14646,6 +16286,7 @@ impl ColumnImportance {
 }
 
 /// <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p>
+///
 /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a> in Wikipedia.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -14688,6 +16329,7 @@ pub mod confusion_matrix {
             self.num_true_positives = Some(input);
             self
         }
+        /// <p>The number of matches in the data that the transform correctly found, in the confusion matrix for your transform.</p>
         pub fn set_num_true_positives(mut self, input: std::option::Option<i64>) -> Self {
             self.num_true_positives = input;
             self
@@ -14698,6 +16340,8 @@ pub mod confusion_matrix {
             self.num_false_positives = Some(input);
             self
         }
+        /// <p>The number of nonmatches in the data that the transform incorrectly classified as a match,
+        /// in the confusion matrix for your transform.</p>
         pub fn set_num_false_positives(mut self, input: std::option::Option<i64>) -> Self {
             self.num_false_positives = input;
             self
@@ -14708,6 +16352,8 @@ pub mod confusion_matrix {
             self.num_true_negatives = Some(input);
             self
         }
+        /// <p>The number of nonmatches in the data that the transform correctly rejected, in the
+        /// confusion matrix for your transform.</p>
         pub fn set_num_true_negatives(mut self, input: std::option::Option<i64>) -> Self {
             self.num_true_negatives = input;
             self
@@ -14717,6 +16363,7 @@ pub mod confusion_matrix {
             self.num_false_negatives = Some(input);
             self
         }
+        /// <p>The number of matches in the data that the transform didn't find, in the confusion matrix for your transform.</p>
         pub fn set_num_false_negatives(mut self, input: std::option::Option<i64>) -> Self {
             self.num_false_negatives = input;
             self
@@ -14779,6 +16426,7 @@ pub mod glue_table {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>A database name in the Glue Data Catalog.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14791,6 +16439,7 @@ pub mod glue_table {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>A table name in the Glue Data Catalog.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -14800,6 +16449,7 @@ pub mod glue_table {
             self.catalog_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the Glue Data Catalog.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -14809,6 +16459,7 @@ pub mod glue_table {
             self.connection_name = Some(input.into());
             self
         }
+        /// <p>The name of the connection to the Glue Data Catalog.</p>
         pub fn set_connection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14851,11 +16502,11 @@ pub struct TaskRun {
     /// <p>The list of error strings associated with this task run.</p>
     pub error_string: std::option::Option<std::string::String>,
     /// <p>The date and time that this task run started.</p>
-    pub started_on: std::option::Option<smithy_types::Instant>,
+    pub started_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last point in time that the requested task run was updated.</p>
-    pub last_modified_on: std::option::Option<smithy_types::Instant>,
+    pub last_modified_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last point in time that the requested task run was completed.</p>
-    pub completed_on: std::option::Option<smithy_types::Instant>,
+    pub completed_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The amount of time (in seconds) that the task run consumed resources.</p>
     pub execution_time: i32,
 }
@@ -14887,9 +16538,9 @@ pub mod task_run {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) properties: std::option::Option<crate::model::TaskRunProperties>,
         pub(crate) error_string: std::option::Option<std::string::String>,
-        pub(crate) started_on: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_modified_on: std::option::Option<smithy_types::Instant>,
-        pub(crate) completed_on: std::option::Option<smithy_types::Instant>,
+        pub(crate) started_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) completed_on: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) execution_time: std::option::Option<i32>,
     }
     impl Builder {
@@ -14898,6 +16549,7 @@ pub mod task_run {
             self.transform_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the transform.</p>
         pub fn set_transform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.transform_id = input;
             self
@@ -14907,6 +16559,7 @@ pub mod task_run {
             self.task_run_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for this task run.</p>
         pub fn set_task_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_run_id = input;
             self
@@ -14916,6 +16569,7 @@ pub mod task_run {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the requested task run.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TaskStatusType>,
@@ -14928,6 +16582,7 @@ pub mod task_run {
             self.log_group_name = Some(input.into());
             self
         }
+        /// <p>The names of the log group for secure logging, associated with this task run.</p>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14940,6 +16595,7 @@ pub mod task_run {
             self.properties = Some(input);
             self
         }
+        /// <p>Specifies configuration properties associated with this task run.</p>
         pub fn set_properties(
             mut self,
             input: std::option::Option<crate::model::TaskRunProperties>,
@@ -14952,39 +16608,46 @@ pub mod task_run {
             self.error_string = Some(input.into());
             self
         }
+        /// <p>The list of error strings associated with this task run.</p>
         pub fn set_error_string(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_string = input;
             self
         }
         /// <p>The date and time that this task run started.</p>
-        pub fn started_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn started_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.started_on = Some(input);
             self
         }
-        pub fn set_started_on(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time that this task run started.</p>
+        pub fn set_started_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.started_on = input;
             self
         }
         /// <p>The last point in time that the requested task run was updated.</p>
-        pub fn last_modified_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_on = Some(input);
             self
         }
+        /// <p>The last point in time that the requested task run was updated.</p>
         pub fn set_last_modified_on(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_on = input;
             self
         }
         /// <p>The last point in time that the requested task run was completed.</p>
-        pub fn completed_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn completed_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.completed_on = Some(input);
             self
         }
+        /// <p>The last point in time that the requested task run was completed.</p>
         pub fn set_completed_on(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.completed_on = input;
             self
@@ -14994,6 +16657,7 @@ pub mod task_run {
             self.execution_time = Some(input);
             self
         }
+        /// <p>The amount of time (in seconds) that the task run consumed resources.</p>
         pub fn set_execution_time(mut self, input: std::option::Option<i32>) -> Self {
             self.execution_time = input;
             self
@@ -15086,6 +16750,7 @@ pub mod task_run_properties {
             self.task_type = Some(input);
             self
         }
+        /// <p>The type of task run.</p>
         pub fn set_task_type(mut self, input: std::option::Option<crate::model::TaskType>) -> Self {
             self.task_type = input;
             self
@@ -15098,6 +16763,7 @@ pub mod task_run_properties {
             self.import_labels_task_run_properties = Some(input);
             self
         }
+        /// <p>The configuration properties for an importing labels task run.</p>
         pub fn set_import_labels_task_run_properties(
             mut self,
             input: std::option::Option<crate::model::ImportLabelsTaskRunProperties>,
@@ -15113,6 +16779,7 @@ pub mod task_run_properties {
             self.export_labels_task_run_properties = Some(input);
             self
         }
+        /// <p>The configuration properties for an exporting labels task run.</p>
         pub fn set_export_labels_task_run_properties(
             mut self,
             input: std::option::Option<crate::model::ExportLabelsTaskRunProperties>,
@@ -15128,6 +16795,7 @@ pub mod task_run_properties {
             self.labeling_set_generation_task_run_properties = Some(input);
             self
         }
+        /// <p>The configuration properties for a labeling set generation task run.</p>
         pub fn set_labeling_set_generation_task_run_properties(
             mut self,
             input: std::option::Option<crate::model::LabelingSetGenerationTaskRunProperties>,
@@ -15143,6 +16811,7 @@ pub mod task_run_properties {
             self.find_matches_task_run_properties = Some(input);
             self
         }
+        /// <p>The configuration properties for a find matches task run.</p>
         pub fn set_find_matches_task_run_properties(
             mut self,
             input: std::option::Option<crate::model::FindMatchesTaskRunProperties>,
@@ -15206,6 +16875,7 @@ pub mod find_matches_task_run_properties {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The job ID for the Find Matches task run.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -15215,6 +16885,7 @@ pub mod find_matches_task_run_properties {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>The name assigned to the job for the Find Matches task run.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -15224,6 +16895,7 @@ pub mod find_matches_task_run_properties {
             self.job_run_id = Some(input.into());
             self
         }
+        /// <p>The job run ID for the Find Matches task run.</p>
         pub fn set_job_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_run_id = input;
             self
@@ -15275,6 +16947,8 @@ pub mod labeling_set_generation_task_run_properties {
             self.output_s3_path = Some(input.into());
             self
         }
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will generate the labeling
+        /// set.</p>
         pub fn set_output_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15327,6 +17001,8 @@ pub mod export_labels_task_run_properties {
             self.output_s3_path = Some(input.into());
             self
         }
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will export the
+        /// labels.</p>
         pub fn set_output_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15383,6 +17059,8 @@ pub mod import_labels_task_run_properties {
             self.input_s3_path = Some(input.into());
             self
         }
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you will import the
+        /// labels.</p>
         pub fn set_input_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15395,6 +17073,7 @@ pub mod import_labels_task_run_properties {
             self.replace = Some(input);
             self
         }
+        /// <p>Indicates whether to overwrite your existing labels.</p>
         pub fn set_replace(mut self, input: std::option::Option<bool>) -> Self {
             self.replace = input;
             self
@@ -15415,6 +17094,7 @@ impl ImportLabelsTaskRunProperties {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -15426,10 +17106,15 @@ impl ImportLabelsTaskRunProperties {
     std::hash::Hash,
 )]
 pub enum TaskType {
+    #[allow(missing_docs)] // documentation missing in model
     Evaluation,
+    #[allow(missing_docs)] // documentation missing in model
     ExportLabels,
+    #[allow(missing_docs)] // documentation missing in model
     FindMatches,
+    #[allow(missing_docs)] // documentation missing in model
     ImportLabels,
+    #[allow(missing_docs)] // documentation missing in model
     LabelingSetGeneration,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -15454,6 +17139,7 @@ impl std::str::FromStr for TaskType {
     }
 }
 impl TaskType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TaskType::Evaluation => "EVALUATION",
@@ -15464,6 +17150,7 @@ impl TaskType {
             TaskType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "EVALUATION",
@@ -15480,6 +17167,7 @@ impl AsRef<str> for TaskType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -15491,12 +17179,19 @@ impl AsRef<str> for TaskType {
     std::hash::Hash,
 )]
 pub enum TaskStatusType {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Starting,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
+    #[allow(missing_docs)] // documentation missing in model
     Timeout,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -15523,6 +17218,7 @@ impl std::str::FromStr for TaskStatusType {
     }
 }
 impl TaskStatusType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TaskStatusType::Failed => "FAILED",
@@ -15535,6 +17231,7 @@ impl TaskStatusType {
             TaskStatusType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "FAILED",
@@ -15589,6 +17286,8 @@ pub mod task_run_sort_criteria {
             self.column = Some(input);
             self
         }
+        /// <p>The column to be used to sort the list of task runs for the machine learning
+        /// transform.</p>
         pub fn set_column(
             mut self,
             input: std::option::Option<crate::model::TaskRunSortColumnType>,
@@ -15602,6 +17301,8 @@ pub mod task_run_sort_criteria {
             self.sort_direction = Some(input);
             self
         }
+        /// <p>The sort direction to be used to sort the list of task runs for the machine learning
+        /// transform.</p>
         pub fn set_sort_direction(
             mut self,
             input: std::option::Option<crate::model::SortDirectionType>,
@@ -15625,6 +17326,7 @@ impl TaskRunSortCriteria {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -15636,8 +17338,11 @@ impl TaskRunSortCriteria {
     std::hash::Hash,
 )]
 pub enum TaskRunSortColumnType {
+    #[allow(missing_docs)] // documentation missing in model
     Started,
+    #[allow(missing_docs)] // documentation missing in model
     Status,
+    #[allow(missing_docs)] // documentation missing in model
     TaskRunType,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -15660,6 +17365,7 @@ impl std::str::FromStr for TaskRunSortColumnType {
     }
 }
 impl TaskRunSortColumnType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TaskRunSortColumnType::Started => "STARTED",
@@ -15668,6 +17374,7 @@ impl TaskRunSortColumnType {
             TaskRunSortColumnType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["STARTED", "STATUS", "TASK_RUN_TYPE"]
     }
@@ -15688,9 +17395,9 @@ pub struct TaskRunFilterCriteria {
     /// <p>The current status of the task run.</p>
     pub status: std::option::Option<crate::model::TaskStatusType>,
     /// <p>Filter on task runs started before this date.</p>
-    pub started_before: std::option::Option<smithy_types::Instant>,
+    pub started_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Filter on task runs started after this date.</p>
-    pub started_after: std::option::Option<smithy_types::Instant>,
+    pub started_after: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for TaskRunFilterCriteria {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15710,8 +17417,8 @@ pub mod task_run_filter_criteria {
     pub struct Builder {
         pub(crate) task_run_type: std::option::Option<crate::model::TaskType>,
         pub(crate) status: std::option::Option<crate::model::TaskStatusType>,
-        pub(crate) started_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) started_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) started_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started_after: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The type of task run.</p>
@@ -15719,6 +17426,7 @@ pub mod task_run_filter_criteria {
             self.task_run_type = Some(input);
             self
         }
+        /// <p>The type of task run.</p>
         pub fn set_task_run_type(
             mut self,
             input: std::option::Option<crate::model::TaskType>,
@@ -15731,6 +17439,7 @@ pub mod task_run_filter_criteria {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the task run.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TaskStatusType>,
@@ -15739,25 +17448,27 @@ pub mod task_run_filter_criteria {
             self
         }
         /// <p>Filter on task runs started before this date.</p>
-        pub fn started_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn started_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.started_before = Some(input);
             self
         }
+        /// <p>Filter on task runs started before this date.</p>
         pub fn set_started_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.started_before = input;
             self
         }
         /// <p>Filter on task runs started after this date.</p>
-        pub fn started_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn started_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.started_after = Some(input);
             self
         }
+        /// <p>Filter on task runs started after this date.</p>
         pub fn set_started_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.started_after = input;
             self
@@ -15793,9 +17504,9 @@ pub struct Job {
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job.</p>
     pub role: std::option::Option<std::string::String>,
     /// <p>The time and date that this job definition was created.</p>
-    pub created_on: std::option::Option<smithy_types::Instant>,
+    pub created_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last point in time when this job definition was modified.</p>
-    pub last_modified_on: std::option::Option<smithy_types::Instant>,
+    pub last_modified_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
     /// for this job.</p>
     pub execution_property: std::option::Option<crate::model::ExecutionProperty>,
@@ -15816,6 +17527,7 @@ pub struct Job {
     /// <p>The maximum number of times to retry this job after a JobRun fails.</p>
     pub max_retries: i32,
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
+    ///
     /// <p>The number of Glue data processing units (DPUs) allocated to runs of this job. You can
     /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
     /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
@@ -15831,7 +17543,9 @@ pub struct Job {
     /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
     /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
     /// pricing page</a>.</p>
+    ///
     /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
+    ///
     /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
     /// running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL
     /// job:</p>
@@ -15862,6 +17576,7 @@ pub struct Job {
     /// </ul>
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+    ///
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
     pub number_of_workers: std::option::Option<i32>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
@@ -15870,7 +17585,9 @@ pub struct Job {
     /// <p>Specifies configuration properties of a job notification.</p>
     pub notification_property: std::option::Option<crate::model::NotificationProperty>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
+    ///
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
+    ///
     /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
     pub glue_version: std::option::Option<std::string::String>,
 }
@@ -15910,8 +17627,8 @@ pub mod job {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) log_uri: std::option::Option<std::string::String>,
         pub(crate) role: std::option::Option<std::string::String>,
-        pub(crate) created_on: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_modified_on: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_on: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) execution_property: std::option::Option<crate::model::ExecutionProperty>,
         pub(crate) command: std::option::Option<crate::model::JobCommand>,
         pub(crate) default_arguments: std::option::Option<
@@ -15937,6 +17654,7 @@ pub mod job {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name you assign to this job definition.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -15946,6 +17664,7 @@ pub mod job {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the job.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -15955,6 +17674,7 @@ pub mod job {
             self.log_uri = Some(input.into());
             self
         }
+        /// <p>This field is reserved for future use.</p>
         pub fn set_log_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_uri = input;
             self
@@ -15964,27 +17684,33 @@ pub mod job {
             self.role = Some(input.into());
             self
         }
+        /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
         }
         /// <p>The time and date that this job definition was created.</p>
-        pub fn created_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_on = Some(input);
             self
         }
-        pub fn set_created_on(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time and date that this job definition was created.</p>
+        pub fn set_created_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_on = input;
             self
         }
         /// <p>The last point in time when this job definition was modified.</p>
-        pub fn last_modified_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_on = Some(input);
             self
         }
+        /// <p>The last point in time when this job definition was modified.</p>
         pub fn set_last_modified_on(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_on = input;
             self
@@ -15995,6 +17721,8 @@ pub mod job {
             self.execution_property = Some(input);
             self
         }
+        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
+        /// for this job.</p>
         pub fn set_execution_property(
             mut self,
             input: std::option::Option<crate::model::ExecutionProperty>,
@@ -16007,10 +17735,20 @@ pub mod job {
             self.command = Some(input);
             self
         }
+        /// <p>The <code>JobCommand</code> that runs this job.</p>
         pub fn set_command(mut self, input: std::option::Option<crate::model::JobCommand>) -> Self {
             self.command = input;
             self
         }
+        /// Adds a key-value pair to `default_arguments`.
+        ///
+        /// To override the contents of this collection use [`set_default_arguments`](Self::set_default_arguments).
+        ///
+        /// <p>The default arguments for this job, specified as name-value pairs.</p>
+        /// <p>You can specify arguments here that your own job-execution script
+        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
+        /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn default_arguments(
             mut self,
             k: impl Into<std::string::String>,
@@ -16021,6 +17759,11 @@ pub mod job {
             self.default_arguments = Some(hash_map);
             self
         }
+        /// <p>The default arguments for this job, specified as name-value pairs.</p>
+        /// <p>You can specify arguments here that your own job-execution script
+        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
+        /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn set_default_arguments(
             mut self,
             input: std::option::Option<
@@ -16030,6 +17773,11 @@ pub mod job {
             self.default_arguments = input;
             self
         }
+        /// Adds a key-value pair to `non_overridable_arguments`.
+        ///
+        /// To override the contents of this collection use [`set_non_overridable_arguments`](Self::set_non_overridable_arguments).
+        ///
+        /// <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
         pub fn non_overridable_arguments(
             mut self,
             k: impl Into<std::string::String>,
@@ -16040,6 +17788,7 @@ pub mod job {
             self.non_overridable_arguments = Some(hash_map);
             self
         }
+        /// <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
         pub fn set_non_overridable_arguments(
             mut self,
             input: std::option::Option<
@@ -16054,6 +17803,7 @@ pub mod job {
             self.connections = Some(input);
             self
         }
+        /// <p>The connections used for this job.</p>
         pub fn set_connections(
             mut self,
             input: std::option::Option<crate::model::ConnectionsList>,
@@ -16066,11 +17816,13 @@ pub mod job {
             self.max_retries = Some(input);
             self
         }
+        /// <p>The maximum number of times to retry this job after a JobRun fails.</p>
         pub fn set_max_retries(mut self, input: std::option::Option<i32>) -> Self {
             self.max_retries = input;
             self
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
+        ///
         /// <p>The number of Glue data processing units (DPUs) allocated to runs of this job. You can
         /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
         /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
@@ -16081,6 +17833,14 @@ pub mod job {
             self.allocated_capacity = Some(input);
             self
         }
+        /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
+        ///
+        /// <p>The number of Glue data processing units (DPUs) allocated to runs of this job. You can
+        /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
+        /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
+        /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
+        /// page</a>.</p>
+        /// <p></p>
         pub fn set_allocated_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.allocated_capacity = input;
             self
@@ -16092,6 +17852,9 @@ pub mod job {
             self.timeout = Some(input);
             self
         }
+        /// <p>The job timeout in minutes.  This is the maximum time that a job run
+        /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
+        /// status. The default is 2,880 minutes (48 hours).</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
@@ -16100,7 +17863,9 @@ pub mod job {
         /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
         /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
         /// pricing page</a>.</p>
+        ///
         /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
+        ///
         /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
         /// running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL
         /// job:</p>
@@ -16120,6 +17885,28 @@ pub mod job {
             self.max_capacity = Some(input);
             self
         }
+        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
+        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
+        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
+        /// pricing page</a>.</p>
+        ///
+        /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
+        ///
+        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
+        /// running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL
+        /// job:</p>
+        /// <ul>
+        /// <li>
+        /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
+        /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
+        /// </li>
+        /// <li>
+        /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache
+        /// Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
+        /// The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.max_capacity = input;
             self
@@ -16140,6 +17927,18 @@ pub mod job {
             self.worker_type = Some(input);
             self
         }
+        /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
+        /// </li>
+        /// <li>
+        /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
+        /// </li>
+        /// <li>
+        /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
+        /// </li>
+        /// </ul>
         pub fn set_worker_type(
             mut self,
             input: std::option::Option<crate::model::WorkerType>,
@@ -16148,11 +17947,15 @@ pub mod job {
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn number_of_workers(mut self, input: i32) -> Self {
             self.number_of_workers = Some(input);
             self
         }
+        /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+        ///
+        /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_workers = input;
             self
@@ -16163,6 +17966,8 @@ pub mod job {
             self.security_configuration = Some(input.into());
             self
         }
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
+        /// job.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16175,6 +17980,7 @@ pub mod job {
             self.notification_property = Some(input);
             self
         }
+        /// <p>Specifies configuration properties of a job notification.</p>
         pub fn set_notification_property(
             mut self,
             input: std::option::Option<crate::model::NotificationProperty>,
@@ -16183,12 +17989,19 @@ pub mod job {
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
+        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
+        ///
         /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.glue_version = Some(input.into());
             self
         }
+        /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
+        ///
+        /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
+        ///
+        /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.glue_version = input;
             self
@@ -16267,15 +18080,20 @@ pub struct DevEndpoint {
     /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
     /// </li>
     /// </ul>
+    ///
     /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code>
     /// <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
+    ///
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
+    ///
     /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>  
+    ///
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
+    ///
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
     pub number_of_workers: std::option::Option<i32>,
     /// <p>The number of Glue Data Processing Units (DPUs) allocated to this
@@ -16288,6 +18106,7 @@ pub struct DevEndpoint {
     /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in
     /// your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a
     /// comma.</p>
+    ///
     /// <note>
     /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
     /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
@@ -16305,9 +18124,9 @@ pub struct DevEndpoint {
     /// <p>The status of the last update.</p>
     pub last_update_status: std::option::Option<std::string::String>,
     /// <p>The point in time at which this DevEndpoint was created.</p>
-    pub created_timestamp: std::option::Option<smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The point in time at which this <code>DevEndpoint</code> was last modified.</p>
-    pub last_modified_timestamp: std::option::Option<smithy_types::Instant>,
+    pub last_modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This
     /// attribute is provided for backward compatibility because the recommended attribute to use is
     /// public keys.</p>
@@ -16334,6 +18153,7 @@ pub struct DevEndpoint {
     /// </p>
     /// </li>
     /// </ul>
+    ///
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -16397,8 +18217,8 @@ pub mod dev_endpoint {
         pub(crate) extra_jars_s3_path: std::option::Option<std::string::String>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) last_update_status: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_modified_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) public_key: std::option::Option<std::string::String>,
         pub(crate) public_keys: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) security_configuration: std::option::Option<std::string::String>,
@@ -16412,6 +18232,7 @@ pub mod dev_endpoint {
             self.endpoint_name = Some(input.into());
             self
         }
+        /// <p>The name of the <code>DevEndpoint</code>.</p>
         pub fn set_endpoint_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16425,16 +18246,24 @@ pub mod dev_endpoint {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used in this
+        /// <code>DevEndpoint</code>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>A list of security group identifiers used in this <code>DevEndpoint</code>.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// <p>A list of security group identifiers used in this <code>DevEndpoint</code>.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16447,6 +18276,7 @@ pub mod dev_endpoint {
             self.subnet_id = Some(input.into());
             self
         }
+        /// <p>The subnet ID for this <code>DevEndpoint</code>.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_id = input;
             self
@@ -16456,6 +18286,7 @@ pub mod dev_endpoint {
             self.yarn_endpoint_address = Some(input.into());
             self
         }
+        /// <p>The YARN endpoint address used by this <code>DevEndpoint</code>.</p>
         pub fn set_yarn_endpoint_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16470,6 +18301,9 @@ pub mod dev_endpoint {
             self.private_address = Some(input.into());
             self
         }
+        /// <p>A private IP address to access the <code>DevEndpoint</code> within a VPC if the
+        /// <code>DevEndpoint</code> is created within one. The <code>PrivateAddress</code> field is
+        /// present only when you create the <code>DevEndpoint</code> within your VPC.</p>
         pub fn set_private_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16482,6 +18316,7 @@ pub mod dev_endpoint {
             self.zeppelin_remote_spark_interpreter_port = Some(input);
             self
         }
+        /// <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
         pub fn set_zeppelin_remote_spark_interpreter_port(
             mut self,
             input: std::option::Option<i32>,
@@ -16496,6 +18331,9 @@ pub mod dev_endpoint {
             self.public_address = Some(input.into());
             self
         }
+        /// <p>The public IP address used by this <code>DevEndpoint</code>. The
+        /// <code>PublicAddress</code> field is present only when you create a non-virtual private cloud
+        /// (VPC) <code>DevEndpoint</code>.</p>
         pub fn set_public_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16508,6 +18346,7 @@ pub mod dev_endpoint {
             self.status = Some(input.into());
             self
         }
+        /// <p>The current status of this <code>DevEndpoint</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -16524,12 +18363,28 @@ pub mod dev_endpoint {
         /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
         /// </li>
         /// </ul>
+        ///
         /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code>
         /// <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
         pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
             self.worker_type = Some(input);
             self
         }
+        /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
+        /// </li>
+        /// <li>
+        /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
+        /// </li>
+        /// <li>
+        /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code>
+        /// <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
         pub fn set_worker_type(
             mut self,
             input: std::option::Option<crate::model::WorkerType>,
@@ -16538,23 +18393,37 @@ pub mod dev_endpoint {
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
+        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
+        ///
         /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>  
+        ///
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.glue_version = Some(input.into());
             self
         }
+        /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
+        ///
+        /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
+        ///
+        /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>  
+        ///
+        /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.glue_version = input;
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
+        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn number_of_workers(mut self, input: i32) -> Self {
             self.number_of_workers = Some(input);
             self
         }
+        /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
+        ///
+        /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_workers = input;
             self
@@ -16565,6 +18434,8 @@ pub mod dev_endpoint {
             self.number_of_nodes = Some(input);
             self
         }
+        /// <p>The number of Glue Data Processing Units (DPUs) allocated to this
+        /// <code>DevEndpoint</code>.</p>
         pub fn set_number_of_nodes(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_nodes = input;
             self
@@ -16574,6 +18445,7 @@ pub mod dev_endpoint {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16586,6 +18458,7 @@ pub mod dev_endpoint {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -16593,6 +18466,7 @@ pub mod dev_endpoint {
         /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in
         /// your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a
         /// comma.</p>
+        ///
         /// <note>
         /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
         /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
@@ -16602,6 +18476,15 @@ pub mod dev_endpoint {
             self.extra_python_libs_s3_path = Some(input.into());
             self
         }
+        /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in
+        /// your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a
+        /// comma.</p>
+        ///
+        /// <note>
+        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
+        /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
+        /// analysis library, are not currently supported.</p>
+        /// </note>
         pub fn set_extra_python_libs_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16618,6 +18501,11 @@ pub mod dev_endpoint {
             self.extra_jars_s3_path = Some(input.into());
             self
         }
+        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
+        /// in your <code>DevEndpoint</code>.</p>
+        /// <note>
+        /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
+        /// </note>
         pub fn set_extra_jars_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16630,6 +18518,7 @@ pub mod dev_endpoint {
             self.failure_reason = Some(input.into());
             self
         }
+        /// <p>The reason for a current failure in this <code>DevEndpoint</code>.</p>
         pub fn set_failure_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16642,6 +18531,7 @@ pub mod dev_endpoint {
             self.last_update_status = Some(input.into());
             self
         }
+        /// <p>The status of the last update.</p>
         pub fn set_last_update_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16650,25 +18540,27 @@ pub mod dev_endpoint {
             self
         }
         /// <p>The point in time at which this DevEndpoint was created.</p>
-        pub fn created_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_timestamp = Some(input);
             self
         }
+        /// <p>The point in time at which this DevEndpoint was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The point in time at which this <code>DevEndpoint</code> was last modified.</p>
-        pub fn last_modified_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_timestamp = Some(input);
             self
         }
+        /// <p>The point in time at which this <code>DevEndpoint</code> was last modified.</p>
         pub fn set_last_modified_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_timestamp = input;
             self
@@ -16680,16 +18572,41 @@ pub mod dev_endpoint {
             self.public_key = Some(input.into());
             self
         }
+        /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This
+        /// attribute is provided for backward compatibility because the recommended attribute to use is
+        /// public keys.</p>
         pub fn set_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.public_key = input;
             self
         }
+        /// Appends an item to `public_keys`.
+        ///
+        /// To override the contents of this collection use [`set_public_keys`](Self::set_public_keys).
+        ///
+        /// <p>A list of public keys to be used by the <code>DevEndpoints</code> for authentication.
+        /// Using this attribute is preferred over a single public key because the public keys allow you
+        /// to have a different private key per client.</p>
+        /// <note>
+        /// <p>If you previously created an endpoint with a public key, you must remove that key to be
+        /// able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API operation
+        /// with the public key content in the <code>deletePublicKeys</code> attribute, and the list of
+        /// new keys in the <code>addPublicKeys</code> attribute.</p>
+        /// </note>
         pub fn public_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.public_keys.unwrap_or_default();
             v.push(input.into());
             self.public_keys = Some(v);
             self
         }
+        /// <p>A list of public keys to be used by the <code>DevEndpoints</code> for authentication.
+        /// Using this attribute is preferred over a single public key because the public keys allow you
+        /// to have a different private key per client.</p>
+        /// <note>
+        /// <p>If you previously created an endpoint with a public key, you must remove that key to be
+        /// able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API operation
+        /// with the public key content in the <code>deletePublicKeys</code> attribute, and the list of
+        /// new keys in the <code>addPublicKeys</code> attribute.</p>
+        /// </note>
         pub fn set_public_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16703,6 +18620,8 @@ pub mod dev_endpoint {
             self.security_configuration = Some(input.into());
             self
         }
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
+        /// <code>DevEndpoint</code>.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16710,6 +18629,21 @@ pub mod dev_endpoint {
             self.security_configuration = input;
             self
         }
+        /// Adds a key-value pair to `arguments`.
+        ///
+        /// To override the contents of this collection use [`set_arguments`](Self::set_arguments).
+        ///
+        /// <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
+        /// <p>Valid arguments are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>"--enable-glue-datacatalog": ""</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn arguments(
             mut self,
             k: impl Into<std::string::String>,
@@ -16720,6 +18654,17 @@ pub mod dev_endpoint {
             self.arguments = Some(hash_map);
             self
         }
+        /// <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
+        /// <p>Valid arguments are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>"--enable-glue-datacatalog": ""</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn set_arguments(
             mut self,
             input: std::option::Option<
@@ -16806,6 +18751,7 @@ pub mod code_gen_edge {
             self.source = Some(input.into());
             self
         }
+        /// <p>The ID of the node at which the edge starts.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -16815,6 +18761,7 @@ pub mod code_gen_edge {
             self.target = Some(input.into());
             self
         }
+        /// <p>The ID of the node at which the edge ends.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target = input;
             self
@@ -16824,6 +18771,7 @@ pub mod code_gen_edge {
             self.target_parameter = Some(input.into());
             self
         }
+        /// <p>The target of the edge.</p>
         pub fn set_target_parameter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16888,6 +18836,7 @@ pub mod code_gen_node {
             self.id = Some(input.into());
             self
         }
+        /// <p>A node identifier that is unique within the node's graph.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -16897,16 +18846,23 @@ pub mod code_gen_node {
             self.node_type = Some(input.into());
             self
         }
+        /// <p>The type of node that this is.</p>
         pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.node_type = input;
             self
         }
+        /// Appends an item to `args`.
+        ///
+        /// To override the contents of this collection use [`set_args`](Self::set_args).
+        ///
+        /// <p>Properties of the node, in the form of name-value pairs.</p>
         pub fn args(mut self, input: impl Into<crate::model::CodeGenNodeArg>) -> Self {
             let mut v = self.args.unwrap_or_default();
             v.push(input.into());
             self.args = Some(v);
             self
         }
+        /// <p>Properties of the node, in the form of name-value pairs.</p>
         pub fn set_args(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CodeGenNodeArg>>,
@@ -16919,6 +18875,7 @@ pub mod code_gen_node {
             self.line_number = Some(input);
             self
         }
+        /// <p>The line number of the node.</p>
         pub fn set_line_number(mut self, input: std::option::Option<i32>) -> Self {
             self.line_number = input;
             self
@@ -16958,7 +18915,7 @@ pub struct Database {
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The time at which the metadata database was created in the catalog.</p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Creates a set of default permissions on the table for principals. </p>
     pub create_table_default_permissions:
         std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
@@ -16996,7 +18953,7 @@ pub mod database {
         pub(crate) parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) create_table_default_permissions:
             std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
         pub(crate) target_database: std::option::Option<crate::model::DatabaseIdentifier>,
@@ -17009,6 +18966,8 @@ pub mod database {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is
+        /// stored.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -17018,6 +18977,7 @@ pub mod database {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the database.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -17027,10 +18987,17 @@ pub mod database {
             self.location_uri = Some(input.into());
             self
         }
+        /// <p>The location of the database (for example, an HDFS path).</p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_uri = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>These key-value pairs define parameters and properties
+        /// of the database.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -17041,6 +19008,8 @@ pub mod database {
             self.parameters = Some(hash_map);
             self
         }
+        /// <p>These key-value pairs define parameters and properties
+        /// of the database.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -17051,17 +19020,23 @@ pub mod database {
             self
         }
         /// <p>The time at which the metadata database was created in the catalog.</p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p>The time at which the metadata database was created in the catalog.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
         }
+        /// Appends an item to `create_table_default_permissions`.
+        ///
+        /// To override the contents of this collection use [`set_create_table_default_permissions`](Self::set_create_table_default_permissions).
+        ///
+        /// <p>Creates a set of default permissions on the table for principals. </p>
         pub fn create_table_default_permissions(
             mut self,
             input: impl Into<crate::model::PrincipalPermissions>,
@@ -17071,6 +19046,7 @@ pub mod database {
             self.create_table_default_permissions = Some(v);
             self
         }
+        /// <p>Creates a set of default permissions on the table for principals. </p>
         pub fn set_create_table_default_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
@@ -17083,6 +19059,7 @@ pub mod database {
             self.target_database = Some(input);
             self
         }
+        /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
         pub fn set_target_database(
             mut self,
             input: std::option::Option<crate::model::DatabaseIdentifier>,
@@ -17095,6 +19072,7 @@ pub mod database {
             self.catalog_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Data Catalog in which the database resides.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -17157,9 +19135,9 @@ pub struct Crawler {
     /// began.</p>
     pub crawl_elapsed_time: i64,
     /// <p>The time that the crawler was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the crawler was last updated.</p>
-    pub last_updated: std::option::Option<smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the last crawl, and potentially error information if
     /// an error occurred.</p>
     pub last_crawl: std::option::Option<crate::model::LastCrawlInfo>,
@@ -17220,8 +19198,8 @@ pub mod crawler {
         pub(crate) table_prefix: std::option::Option<std::string::String>,
         pub(crate) schedule: std::option::Option<crate::model::Schedule>,
         pub(crate) crawl_elapsed_time: std::option::Option<i64>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) last_crawl: std::option::Option<crate::model::LastCrawlInfo>,
         pub(crate) version: std::option::Option<i64>,
         pub(crate) configuration: std::option::Option<std::string::String>,
@@ -17233,6 +19211,7 @@ pub mod crawler {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the crawler.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -17243,6 +19222,8 @@ pub mod crawler {
             self.role = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer resources,
+        /// such as Amazon Simple Storage Service (Amazon S3) data.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -17252,6 +19233,7 @@ pub mod crawler {
             self.targets = Some(input);
             self
         }
+        /// <p>A collection of targets to crawl.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<crate::model::CrawlerTargets>,
@@ -17264,6 +19246,7 @@ pub mod crawler {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>The name of the database in which the crawler's output is stored.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17276,16 +19259,25 @@ pub mod crawler {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the crawler.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `classifiers`.
+        ///
+        /// To override the contents of this collection use [`set_classifiers`](Self::set_classifiers).
+        ///
+        /// <p>A list of UTF-8 strings that specify the custom classifiers that are associated
+        /// with the crawler.</p>
         pub fn classifiers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.classifiers.unwrap_or_default();
             v.push(input.into());
             self.classifiers = Some(v);
             self
         }
+        /// <p>A list of UTF-8 strings that specify the custom classifiers that are associated
+        /// with the crawler.</p>
         pub fn set_classifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -17298,6 +19290,7 @@ pub mod crawler {
             self.recrawl_policy = Some(input);
             self
         }
+        /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
         pub fn set_recrawl_policy(
             mut self,
             input: std::option::Option<crate::model::RecrawlPolicy>,
@@ -17310,6 +19303,7 @@ pub mod crawler {
             self.schema_change_policy = Some(input);
             self
         }
+        /// <p>The policy that specifies update and delete behaviors for the crawler.</p>
         pub fn set_schema_change_policy(
             mut self,
             input: std::option::Option<crate::model::SchemaChangePolicy>,
@@ -17322,6 +19316,7 @@ pub mod crawler {
             self.lineage_configuration = Some(input);
             self
         }
+        /// <p>A configuration that specifies whether data lineage is enabled for the crawler.</p>
         pub fn set_lineage_configuration(
             mut self,
             input: std::option::Option<crate::model::LineageConfiguration>,
@@ -17334,6 +19329,7 @@ pub mod crawler {
             self.state = Some(input);
             self
         }
+        /// <p>Indicates whether the crawler is running, or whether a run is pending.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::CrawlerState>) -> Self {
             self.state = input;
             self
@@ -17343,6 +19339,7 @@ pub mod crawler {
             self.table_prefix = Some(input.into());
             self
         }
+        /// <p>The prefix added to the names of tables that are created.</p>
         pub fn set_table_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_prefix = input;
             self
@@ -17352,6 +19349,7 @@ pub mod crawler {
             self.schedule = Some(input);
             self
         }
+        /// <p>For scheduled crawlers, the schedule when the crawler runs.</p>
         pub fn set_schedule(mut self, input: std::option::Option<crate::model::Schedule>) -> Self {
             self.schedule = input;
             self
@@ -17362,30 +19360,34 @@ pub mod crawler {
             self.crawl_elapsed_time = Some(input);
             self
         }
+        /// <p>If the crawler is running, contains the total time elapsed since the last crawl
+        /// began.</p>
         pub fn set_crawl_elapsed_time(mut self, input: std::option::Option<i64>) -> Self {
             self.crawl_elapsed_time = input;
             self
         }
         /// <p>The time that the crawler was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time that the crawler was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time that the crawler was last updated.</p>
-        pub fn last_updated(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated = Some(input);
             self
         }
+        /// <p>The time that the crawler was last updated.</p>
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated = input;
             self
@@ -17396,6 +19398,8 @@ pub mod crawler {
             self.last_crawl = Some(input);
             self
         }
+        /// <p>The status of the last crawl, and potentially error information if
+        /// an error occurred.</p>
         pub fn set_last_crawl(
             mut self,
             input: std::option::Option<crate::model::LastCrawlInfo>,
@@ -17408,6 +19412,7 @@ pub mod crawler {
             self.version = Some(input);
             self
         }
+        /// <p>The version of the crawler.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
             self.version = input;
             self
@@ -17419,6 +19424,9 @@ pub mod crawler {
             self.configuration = Some(input.into());
             self
         }
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify
+        /// aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include and Exclude
+        /// Patterns</a>.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17435,6 +19443,8 @@ pub mod crawler {
             self.crawler_security_configuration = Some(input.into());
             self
         }
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
+        /// crawler.</p>
         pub fn set_crawler_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17490,7 +19500,7 @@ pub struct LastCrawlInfo {
     /// <p>The prefix for a message about this crawl.</p>
     pub message_prefix: std::option::Option<std::string::String>,
     /// <p>The time at which the crawl started.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for LastCrawlInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17515,7 +19525,7 @@ pub mod last_crawl_info {
         pub(crate) log_group: std::option::Option<std::string::String>,
         pub(crate) log_stream: std::option::Option<std::string::String>,
         pub(crate) message_prefix: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Status of the last crawl.</p>
@@ -17523,6 +19533,7 @@ pub mod last_crawl_info {
             self.status = Some(input);
             self
         }
+        /// <p>Status of the last crawl.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::LastCrawlStatus>,
@@ -17535,6 +19546,7 @@ pub mod last_crawl_info {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>If an error occurred, the error information about the last crawl.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17547,6 +19559,7 @@ pub mod last_crawl_info {
             self.log_group = Some(input.into());
             self
         }
+        /// <p>The log group for the last crawl.</p>
         pub fn set_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_group = input;
             self
@@ -17556,6 +19569,7 @@ pub mod last_crawl_info {
             self.log_stream = Some(input.into());
             self
         }
+        /// <p>The log stream for the last crawl.</p>
         pub fn set_log_stream(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_stream = input;
             self
@@ -17565,6 +19579,7 @@ pub mod last_crawl_info {
             self.message_prefix = Some(input.into());
             self
         }
+        /// <p>The prefix for a message about this crawl.</p>
         pub fn set_message_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17573,11 +19588,15 @@ pub mod last_crawl_info {
             self
         }
         /// <p>The time at which the crawl started.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time at which the crawl started.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
@@ -17601,6 +19620,7 @@ impl LastCrawlInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -17612,8 +19632,11 @@ impl LastCrawlInfo {
     std::hash::Hash,
 )]
 pub enum LastCrawlStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -17636,6 +19659,7 @@ impl std::str::FromStr for LastCrawlStatus {
     }
 }
 impl LastCrawlStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LastCrawlStatus::Cancelled => "CANCELLED",
@@ -17644,6 +19668,7 @@ impl LastCrawlStatus {
             LastCrawlStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CANCELLED", "FAILED", "SUCCEEDED"]
     }
@@ -17690,6 +19715,9 @@ pub mod schedule {
             self.schedule_expression = Some(input.into());
             self
         }
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
+        /// something every day at 12:15 UTC, you would specify:
+        /// <code>cron(15 12 * * ? *)</code>.</p>
         pub fn set_schedule_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17702,6 +19730,7 @@ pub mod schedule {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the schedule.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ScheduleState>,
@@ -17725,6 +19754,7 @@ impl Schedule {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -17736,8 +19766,11 @@ impl Schedule {
     std::hash::Hash,
 )]
 pub enum ScheduleState {
+    #[allow(missing_docs)] // documentation missing in model
     NotScheduled,
+    #[allow(missing_docs)] // documentation missing in model
     Scheduled,
+    #[allow(missing_docs)] // documentation missing in model
     Transitioning,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -17760,6 +19793,7 @@ impl std::str::FromStr for ScheduleState {
     }
 }
 impl ScheduleState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScheduleState::NotScheduled => "NOT_SCHEDULED",
@@ -17768,6 +19802,7 @@ impl ScheduleState {
             ScheduleState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NOT_SCHEDULED", "SCHEDULED", "TRANSITIONING"]
     }
@@ -17778,6 +19813,7 @@ impl AsRef<str> for ScheduleState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -17789,8 +19825,11 @@ impl AsRef<str> for ScheduleState {
     std::hash::Hash,
 )]
 pub enum CrawlerState {
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -17813,6 +19852,7 @@ impl std::str::FromStr for CrawlerState {
     }
 }
 impl CrawlerState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CrawlerState::Ready => "READY",
@@ -17821,6 +19861,7 @@ impl CrawlerState {
             CrawlerState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["READY", "RUNNING", "STOPPING"]
     }
@@ -17887,6 +19928,7 @@ pub mod crawler_metrics {
             self.crawler_name = Some(input.into());
             self
         }
+        /// <p>The name of the crawler.</p>
         pub fn set_crawler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.crawler_name = input;
             self
@@ -17896,6 +19938,7 @@ pub mod crawler_metrics {
             self.time_left_seconds = Some(input);
             self
         }
+        /// <p>The estimated time left to complete a running crawl.</p>
         pub fn set_time_left_seconds(mut self, input: std::option::Option<f64>) -> Self {
             self.time_left_seconds = input;
             self
@@ -17905,6 +19948,7 @@ pub mod crawler_metrics {
             self.still_estimating = Some(input);
             self
         }
+        /// <p>True if the crawler is still estimating how long it will take to complete this run.</p>
         pub fn set_still_estimating(mut self, input: std::option::Option<bool>) -> Self {
             self.still_estimating = input;
             self
@@ -17914,6 +19958,7 @@ pub mod crawler_metrics {
             self.last_runtime_seconds = Some(input);
             self
         }
+        /// <p>The duration of the crawler's most recent run, in seconds.</p>
         pub fn set_last_runtime_seconds(mut self, input: std::option::Option<f64>) -> Self {
             self.last_runtime_seconds = input;
             self
@@ -17923,6 +19968,7 @@ pub mod crawler_metrics {
             self.median_runtime_seconds = Some(input);
             self
         }
+        /// <p>The median duration of this crawler's runs, in seconds.</p>
         pub fn set_median_runtime_seconds(mut self, input: std::option::Option<f64>) -> Self {
             self.median_runtime_seconds = input;
             self
@@ -17932,6 +19978,7 @@ pub mod crawler_metrics {
             self.tables_created = Some(input);
             self
         }
+        /// <p>The number of tables created by this crawler.</p>
         pub fn set_tables_created(mut self, input: std::option::Option<i32>) -> Self {
             self.tables_created = input;
             self
@@ -17941,6 +19988,7 @@ pub mod crawler_metrics {
             self.tables_updated = Some(input);
             self
         }
+        /// <p>The number of tables updated by this crawler.</p>
         pub fn set_tables_updated(mut self, input: std::option::Option<i32>) -> Self {
             self.tables_updated = input;
             self
@@ -17950,6 +19998,7 @@ pub mod crawler_metrics {
             self.tables_deleted = Some(input);
             self
         }
+        /// <p>The number of tables deleted by this crawler.</p>
         pub fn set_tables_deleted(mut self, input: std::option::Option<i32>) -> Self {
             self.tables_deleted = input;
             self
@@ -18128,9 +20177,9 @@ pub struct Connection {
     pub physical_connection_requirements:
         std::option::Option<crate::model::PhysicalConnectionRequirements>,
     /// <p>The time that this connection definition was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time that this connection definition was updated.</p>
-    pub last_updated_time: std::option::Option<smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The user, group, or role that last updated this connection definition.</p>
     pub last_updated_by: std::option::Option<std::string::String>,
 }
@@ -18167,8 +20216,8 @@ pub mod connection {
         >,
         pub(crate) physical_connection_requirements:
             std::option::Option<crate::model::PhysicalConnectionRequirements>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) last_updated_by: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -18177,6 +20226,7 @@ pub mod connection {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the connection definition.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -18186,6 +20236,7 @@ pub mod connection {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the connection.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -18195,6 +20246,7 @@ pub mod connection {
             self.connection_type = Some(input);
             self
         }
+        /// <p>The type of the connection. Currently, SFTP is not supported.</p>
         pub fn set_connection_type(
             mut self,
             input: std::option::Option<crate::model::ConnectionType>,
@@ -18202,12 +20254,18 @@ pub mod connection {
             self.connection_type = input;
             self
         }
+        /// Appends an item to `match_criteria`.
+        ///
+        /// To override the contents of this collection use [`set_match_criteria`](Self::set_match_criteria).
+        ///
+        /// <p>A list of criteria that can be used in selecting this connection.</p>
         pub fn match_criteria(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.match_criteria.unwrap_or_default();
             v.push(input.into());
             self.match_criteria = Some(v);
             self
         }
+        /// <p>A list of criteria that can be used in selecting this connection.</p>
         pub fn set_match_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18215,6 +20273,142 @@ pub mod connection {
             self.match_criteria = input;
             self
         }
+        /// Adds a key-value pair to `connection_properties`.
+        ///
+        /// To override the contents of this collection use [`set_connection_properties`](Self::set_connection_properties).
+        ///
+        /// <p>These key-value pairs define parameters for the connection:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>HOST</code> - The host URI: either the
+        /// fully qualified domain name (FQDN) or the IPv4 address of
+        /// the database host.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PORT</code> - The port number, between
+        /// 1024 and 65535, of the port on which the database host is
+        /// listening for database connections.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>USER_NAME</code> -  The name under which
+        /// to log in to the database. The value string for <code>USER_NAME</code> is "<code>USERNAME</code>".</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PASSWORD</code> - A password,
+        /// if one is used, for the user name.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the encrypted password.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the
+        /// JAR file that contains the JDBC driver to use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CONFIG_FILES</code> - (Reserved for future use.)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INSTANCE_ID</code> - The instance ID to use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>JDBC_CONNECTION_URL</code> - The URL for connecting to a JDBC data source.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure
+        /// Sockets Layer (SSL) with hostname matching is enforced for the JDBC connection on the
+        /// client. The default is false.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. Glue uses this root certificate to validate the customer’s certificate when connecting to the customer database. Glue only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM format.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. Glue validates the Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to skip Glue’s validation of the customer certificate.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is "true".</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an empty string.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side authentication (Optional).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to access the client key to be used with the Kafka server side key (Optional).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore password (if the user has the Glue encrypt passwords setting selected).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the user has the Glue encrypt passwords setting selected).</p>
+        /// </li>
+        /// </ul>
         pub fn connection_properties(
             mut self,
             k: impl Into<crate::model::ConnectionPropertyKey>,
@@ -18225,6 +20419,138 @@ pub mod connection {
             self.connection_properties = Some(hash_map);
             self
         }
+        /// <p>These key-value pairs define parameters for the connection:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>HOST</code> - The host URI: either the
+        /// fully qualified domain name (FQDN) or the IPv4 address of
+        /// the database host.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PORT</code> - The port number, between
+        /// 1024 and 65535, of the port on which the database host is
+        /// listening for database connections.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>USER_NAME</code> -  The name under which
+        /// to log in to the database. The value string for <code>USER_NAME</code> is "<code>USERNAME</code>".</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PASSWORD</code> - A password,
+        /// if one is used, for the user name.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the encrypted password.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the
+        /// JAR file that contains the JDBC driver to use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CONFIG_FILES</code> - (Reserved for future use.)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INSTANCE_ID</code> - The instance ID to use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>JDBC_CONNECTION_URL</code> - The URL for connecting to a JDBC data source.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure
+        /// Sockets Layer (SSL) with hostname matching is enforced for the JDBC connection on the
+        /// client. The default is false.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. Glue uses this root certificate to validate the customer’s certificate when connecting to the customer database. Glue only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM format.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. Glue validates the Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to skip Glue’s validation of the customer certificate.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is "true".</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an empty string.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side authentication (Optional).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to access the client key to be used with the Kafka server side key (Optional).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore password (if the user has the Glue encrypt passwords setting selected).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the user has the Glue encrypt passwords setting selected).</p>
+        /// </li>
+        /// </ul>
         pub fn set_connection_properties(
             mut self,
             input: std::option::Option<
@@ -18243,6 +20569,8 @@ pub mod connection {
             self.physical_connection_requirements = Some(input);
             self
         }
+        /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and
+        /// <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
         pub fn set_physical_connection_requirements(
             mut self,
             input: std::option::Option<crate::model::PhysicalConnectionRequirements>,
@@ -18251,25 +20579,27 @@ pub mod connection {
             self
         }
         /// <p>The time that this connection definition was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time that this connection definition was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The last time that this connection definition was updated.</p>
-        pub fn last_updated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_time = Some(input);
             self
         }
+        /// <p>The last time that this connection definition was updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -18279,6 +20609,7 @@ pub mod connection {
             self.last_updated_by = Some(input.into());
             self
         }
+        /// <p>The user, group, or role that last updated this connection definition.</p>
         pub fn set_last_updated_by(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18338,12 +20669,20 @@ pub mod get_connections_filter {
         pub(crate) connection_type: std::option::Option<crate::model::ConnectionType>,
     }
     impl Builder {
+        /// Appends an item to `match_criteria`.
+        ///
+        /// To override the contents of this collection use [`set_match_criteria`](Self::set_match_criteria).
+        ///
+        /// <p>A criteria string that must match the criteria recorded in the
+        /// connection definition for that connection definition to be returned.</p>
         pub fn match_criteria(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.match_criteria.unwrap_or_default();
             v.push(input.into());
             self.match_criteria = Some(v);
             self
         }
+        /// <p>A criteria string that must match the criteria recorded in the
+        /// connection definition for that connection definition to be returned.</p>
         pub fn set_match_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18356,6 +20695,7 @@ pub mod get_connections_filter {
             self.connection_type = Some(input);
             self
         }
+        /// <p>The type of connections to return. Currently, SFTP is not supported.</p>
         pub fn set_connection_type(
             mut self,
             input: std::option::Option<crate::model::ConnectionType>,
@@ -18411,6 +20751,7 @@ pub mod column_error {
             self.column_name = Some(input.into());
             self
         }
+        /// <p>The name of the column that failed.</p>
         pub fn set_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.column_name = input;
             self
@@ -18420,6 +20761,7 @@ pub mod column_error {
             self.error = Some(input);
             self
         }
+        /// <p>An error message with the reason for the failure of an operation.</p>
         pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorDetail>) -> Self {
             self.error = input;
             self
@@ -18487,6 +20829,7 @@ pub mod classifier {
             self.grok_classifier = Some(input);
             self
         }
+        /// <p>A classifier that uses <code>grok</code>.</p>
         pub fn set_grok_classifier(
             mut self,
             input: std::option::Option<crate::model::GrokClassifier>,
@@ -18499,6 +20842,7 @@ pub mod classifier {
             self.xml_classifier = Some(input);
             self
         }
+        /// <p>A classifier for XML content.</p>
         pub fn set_xml_classifier(
             mut self,
             input: std::option::Option<crate::model::XmlClassifier>,
@@ -18511,6 +20855,7 @@ pub mod classifier {
             self.json_classifier = Some(input);
             self
         }
+        /// <p>A classifier for JSON content.</p>
         pub fn set_json_classifier(
             mut self,
             input: std::option::Option<crate::model::JsonClassifier>,
@@ -18523,6 +20868,7 @@ pub mod classifier {
             self.csv_classifier = Some(input);
             self
         }
+        /// <p>A classifier for comma-separated values (CSV).</p>
         pub fn set_csv_classifier(
             mut self,
             input: std::option::Option<crate::model::CsvClassifier>,
@@ -18555,9 +20901,9 @@ pub struct CsvClassifier {
     /// <p>The name of the classifier.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The time that this classifier was registered.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that this classifier was last updated.</p>
-    pub last_updated: std::option::Option<smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The version of this classifier.</p>
     pub version: i64,
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
@@ -18598,8 +20944,8 @@ pub mod csv_classifier {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) version: std::option::Option<i64>,
         pub(crate) delimiter: std::option::Option<std::string::String>,
         pub(crate) quote_symbol: std::option::Option<std::string::String>,
@@ -18614,30 +20960,33 @@ pub mod csv_classifier {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the classifier.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
         /// <p>The time that this classifier was registered.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time that this classifier was registered.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time that this classifier was last updated.</p>
-        pub fn last_updated(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated = Some(input);
             self
         }
+        /// <p>The time that this classifier was last updated.</p>
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated = input;
             self
@@ -18647,6 +20996,7 @@ pub mod csv_classifier {
             self.version = Some(input);
             self
         }
+        /// <p>The version of this classifier.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
             self.version = input;
             self
@@ -18656,6 +21006,7 @@ pub mod csv_classifier {
             self.delimiter = Some(input.into());
             self
         }
+        /// <p>A custom symbol to denote what separates each column entry in the row.</p>
         pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.delimiter = input;
             self
@@ -18666,6 +21017,8 @@ pub mod csv_classifier {
             self.quote_symbol = Some(input.into());
             self
         }
+        /// <p>A custom symbol to denote what combines content into a single column value. It must be
+        /// different from the column delimiter.</p>
         pub fn set_quote_symbol(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.quote_symbol = input;
             self
@@ -18675,6 +21028,7 @@ pub mod csv_classifier {
             self.contains_header = Some(input);
             self
         }
+        /// <p>Indicates whether the CSV file contains a header.</p>
         pub fn set_contains_header(
             mut self,
             input: std::option::Option<crate::model::CsvHeaderOption>,
@@ -18682,12 +21036,18 @@ pub mod csv_classifier {
             self.contains_header = input;
             self
         }
+        /// Appends an item to `header`.
+        ///
+        /// To override the contents of this collection use [`set_header`](Self::set_header).
+        ///
+        /// <p>A list of strings representing column names.</p>
         pub fn header(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.header.unwrap_or_default();
             v.push(input.into());
             self.header = Some(v);
             self
         }
+        /// <p>A list of strings representing column names.</p>
         pub fn set_header(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18701,6 +21061,8 @@ pub mod csv_classifier {
             self.disable_value_trimming = Some(input);
             self
         }
+        /// <p>Specifies not to trim values before identifying the type of column values. The default
+        /// value is <code>true</code>.</p>
         pub fn set_disable_value_trimming(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_value_trimming = input;
             self
@@ -18710,6 +21072,7 @@ pub mod csv_classifier {
             self.allow_single_column = Some(input);
             self
         }
+        /// <p>Enables the processing of files that contain only one column.</p>
         pub fn set_allow_single_column(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_single_column = input;
             self
@@ -18745,9 +21108,9 @@ pub struct JsonClassifier {
     /// <p>The name of the classifier.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The time that this classifier was registered.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that this classifier was last updated.</p>
-    pub last_updated: std::option::Option<smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The version of this classifier.</p>
     pub version: i64,
     /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify.
@@ -18772,8 +21135,8 @@ pub mod json_classifier {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) version: std::option::Option<i64>,
         pub(crate) json_path: std::option::Option<std::string::String>,
     }
@@ -18783,30 +21146,33 @@ pub mod json_classifier {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the classifier.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
         /// <p>The time that this classifier was registered.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time that this classifier was registered.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time that this classifier was last updated.</p>
-        pub fn last_updated(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated = Some(input);
             self
         }
+        /// <p>The time that this classifier was last updated.</p>
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated = input;
             self
@@ -18816,6 +21182,7 @@ pub mod json_classifier {
             self.version = Some(input);
             self
         }
+        /// <p>The version of this classifier.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
             self.version = input;
             self
@@ -18826,6 +21193,8 @@ pub mod json_classifier {
             self.json_path = Some(input.into());
             self
         }
+        /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify.
+        /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
         pub fn set_json_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.json_path = input;
             self
@@ -18858,9 +21227,9 @@ pub struct XmlClassifier {
     /// <p>An identifier of the data format that the classifier matches.</p>
     pub classification: std::option::Option<std::string::String>,
     /// <p>The time that this classifier was registered.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that this classifier was last updated.</p>
-    pub last_updated: std::option::Option<smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The version of this classifier.</p>
     pub version: i64,
     /// <p>The XML tag designating the element that contains each record in an XML document being
@@ -18890,8 +21259,8 @@ pub mod xml_classifier {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) classification: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) version: std::option::Option<i64>,
         pub(crate) row_tag: std::option::Option<std::string::String>,
     }
@@ -18901,6 +21270,7 @@ pub mod xml_classifier {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the classifier.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -18910,6 +21280,7 @@ pub mod xml_classifier {
             self.classification = Some(input.into());
             self
         }
+        /// <p>An identifier of the data format that the classifier matches.</p>
         pub fn set_classification(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18918,25 +21289,27 @@ pub mod xml_classifier {
             self
         }
         /// <p>The time that this classifier was registered.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time that this classifier was registered.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time that this classifier was last updated.</p>
-        pub fn last_updated(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated = Some(input);
             self
         }
+        /// <p>The time that this classifier was last updated.</p>
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated = input;
             self
@@ -18946,6 +21319,7 @@ pub mod xml_classifier {
             self.version = Some(input);
             self
         }
+        /// <p>The version of this classifier.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
             self.version = input;
             self
@@ -18959,6 +21333,11 @@ pub mod xml_classifier {
             self.row_tag = Some(input.into());
             self
         }
+        /// <p>The XML tag designating the element that contains each record in an XML document being
+        /// parsed. This can't identify a self-closing element (closed by <code>/></code>). An empty
+        /// row element that contains only attributes can be parsed as long as it ends with a closing tag
+        /// (for example, <code><row item_a="A" item_b="B"></row></code> is okay, but
+        /// <code><row item_a="A" item_b="B" /></code> is not).</p>
         pub fn set_row_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.row_tag = input;
             self
@@ -18993,9 +21372,9 @@ pub struct GrokClassifier {
     /// so on.</p>
     pub classification: std::option::Option<std::string::String>,
     /// <p>The time that this classifier was registered.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that this classifier was last updated.</p>
-    pub last_updated: std::option::Option<smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The version of this classifier.</p>
     pub version: i64,
     /// <p>The grok pattern applied to a data store by this classifier.
@@ -19026,8 +21405,8 @@ pub mod grok_classifier {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) classification: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) version: std::option::Option<i64>,
         pub(crate) grok_pattern: std::option::Option<std::string::String>,
         pub(crate) custom_patterns: std::option::Option<std::string::String>,
@@ -19038,6 +21417,7 @@ pub mod grok_classifier {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the classifier.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -19048,6 +21428,8 @@ pub mod grok_classifier {
             self.classification = Some(input.into());
             self
         }
+        /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, and
+        /// so on.</p>
         pub fn set_classification(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19056,25 +21438,27 @@ pub mod grok_classifier {
             self
         }
         /// <p>The time that this classifier was registered.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time that this classifier was registered.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time that this classifier was last updated.</p>
-        pub fn last_updated(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated = Some(input);
             self
         }
+        /// <p>The time that this classifier was last updated.</p>
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated = input;
             self
@@ -19084,6 +21468,7 @@ pub mod grok_classifier {
             self.version = Some(input);
             self
         }
+        /// <p>The version of this classifier.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
             self.version = input;
             self
@@ -19094,6 +21479,8 @@ pub mod grok_classifier {
             self.grok_pattern = Some(input.into());
             self
         }
+        /// <p>The grok pattern applied to a data store by this classifier.
+        /// For more information, see built-in patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
         pub fn set_grok_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grok_pattern = input;
             self
@@ -19104,6 +21491,8 @@ pub mod grok_classifier {
             self.custom_patterns = Some(input.into());
             self
         }
+        /// <p>Optional custom grok patterns defined by this classifier.
+        /// For more information, see custom patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
         pub fn set_custom_patterns(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19140,7 +21529,7 @@ pub struct CatalogImportStatus {
     /// <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
     pub import_completed: bool,
     /// <p>The time that the migration was started.</p>
-    pub import_time: std::option::Option<smithy_types::Instant>,
+    pub import_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of the person who initiated the migration.</p>
     pub imported_by: std::option::Option<std::string::String>,
 }
@@ -19160,7 +21549,7 @@ pub mod catalog_import_status {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_completed: std::option::Option<bool>,
-        pub(crate) import_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) import_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) imported_by: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -19170,18 +21559,21 @@ pub mod catalog_import_status {
             self.import_completed = Some(input);
             self
         }
+        /// <p>
+        /// <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
         pub fn set_import_completed(mut self, input: std::option::Option<bool>) -> Self {
             self.import_completed = input;
             self
         }
         /// <p>The time that the migration was started.</p>
-        pub fn import_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn import_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.import_time = Some(input);
             self
         }
+        /// <p>The time that the migration was started.</p>
         pub fn set_import_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.import_time = input;
             self
@@ -19191,6 +21583,7 @@ pub mod catalog_import_status {
             self.imported_by = Some(input.into());
             self
         }
+        /// <p>The name of the person who initiated the migration.</p>
         pub fn set_imported_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.imported_by = input;
             self
@@ -19223,6 +21616,7 @@ pub struct BlueprintRun {
     /// <p>The name of a workflow that is created as a result of a successful blueprint run. If a blueprint run has an error, there will not be a workflow created.</p>
     pub workflow_name: std::option::Option<std::string::String>,
     /// <p>The state of the blueprint run. Possible values are:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>Running — The blueprint run is in progress.</p>
@@ -19239,9 +21633,9 @@ pub struct BlueprintRun {
     /// </ul>
     pub state: std::option::Option<crate::model::BlueprintRunState>,
     /// <p>The date and time that the blueprint run started.</p>
-    pub started_on: std::option::Option<smithy_types::Instant>,
+    pub started_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that the blueprint run completed.</p>
-    pub completed_on: std::option::Option<smithy_types::Instant>,
+    pub completed_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Indicates any errors that are seen while running the blueprint.</p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>If there are any errors while creating the entities of a workflow, we try to roll back the created entities until that point and delete them. This attribute indicates the errors seen while trying to delete the entities that are created.</p>
@@ -19277,8 +21671,8 @@ pub mod blueprint_run {
         pub(crate) run_id: std::option::Option<std::string::String>,
         pub(crate) workflow_name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::BlueprintRunState>,
-        pub(crate) started_on: std::option::Option<smithy_types::Instant>,
-        pub(crate) completed_on: std::option::Option<smithy_types::Instant>,
+        pub(crate) started_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) completed_on: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) rollback_error_message: std::option::Option<std::string::String>,
         pub(crate) parameters: std::option::Option<std::string::String>,
@@ -19290,6 +21684,7 @@ pub mod blueprint_run {
             self.blueprint_name = Some(input.into());
             self
         }
+        /// <p>The name of the blueprint.</p>
         pub fn set_blueprint_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19302,6 +21697,7 @@ pub mod blueprint_run {
             self.run_id = Some(input.into());
             self
         }
+        /// <p>The run ID for this blueprint run.</p>
         pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.run_id = input;
             self
@@ -19311,6 +21707,7 @@ pub mod blueprint_run {
             self.workflow_name = Some(input.into());
             self
         }
+        /// <p>The name of a workflow that is created as a result of a successful blueprint run. If a blueprint run has an error, there will not be a workflow created.</p>
         pub fn set_workflow_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19319,6 +21716,7 @@ pub mod blueprint_run {
             self
         }
         /// <p>The state of the blueprint run. Possible values are:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>Running — The blueprint run is in progress.</p>
@@ -19337,6 +21735,22 @@ pub mod blueprint_run {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the blueprint run. Possible values are:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>Running — The blueprint run is in progress.</p>
+        /// </li>
+        /// <li>
+        /// <p>Succeeded — The blueprint run completed successfully.</p>
+        /// </li>
+        /// <li>
+        /// <p>Failed — The blueprint run failed and rollback is complete.</p>
+        /// </li>
+        /// <li>
+        /// <p>Rolling Back — The blueprint run failed and rollback is in progress.</p>
+        /// </li>
+        /// </ul>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::BlueprintRunState>,
@@ -19345,22 +21759,27 @@ pub mod blueprint_run {
             self
         }
         /// <p>The date and time that the blueprint run started.</p>
-        pub fn started_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn started_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.started_on = Some(input);
             self
         }
-        pub fn set_started_on(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time that the blueprint run started.</p>
+        pub fn set_started_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.started_on = input;
             self
         }
         /// <p>The date and time that the blueprint run completed.</p>
-        pub fn completed_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn completed_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.completed_on = Some(input);
             self
         }
+        /// <p>The date and time that the blueprint run completed.</p>
         pub fn set_completed_on(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.completed_on = input;
             self
@@ -19370,6 +21789,7 @@ pub mod blueprint_run {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>Indicates any errors that are seen while running the blueprint.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19382,6 +21802,7 @@ pub mod blueprint_run {
             self.rollback_error_message = Some(input.into());
             self
         }
+        /// <p>If there are any errors while creating the entities of a workflow, we try to roll back the created entities until that point and delete them. This attribute indicates the errors seen while trying to delete the entities that are created.</p>
         pub fn set_rollback_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19394,6 +21815,7 @@ pub mod blueprint_run {
             self.parameters = Some(input.into());
             self
         }
+        /// <p>The blueprint parameters as a string. You will have to provide a value for each key that is required from the parameter spec that is defined in the <code>Blueprint$ParameterSpec</code>.</p>
         pub fn set_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parameters = input;
             self
@@ -19403,6 +21825,7 @@ pub mod blueprint_run {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The role ARN. This role will be assumed by the Glue service and will be used to create the workflow and other entities of a workflow.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -19431,6 +21854,7 @@ impl BlueprintRun {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -19442,9 +21866,13 @@ impl BlueprintRun {
     std::hash::Hash,
 )]
 pub enum BlueprintRunState {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     RollingBack,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -19468,6 +21896,7 @@ impl std::str::FromStr for BlueprintRunState {
     }
 }
 impl BlueprintRunState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BlueprintRunState::Failed => "FAILED",
@@ -19477,6 +21906,7 @@ impl BlueprintRunState {
             BlueprintRunState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "ROLLING_BACK", "RUNNING", "SUCCEEDED"]
     }
@@ -19496,9 +21926,9 @@ pub struct Blueprint {
     /// <p>The description of the blueprint.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time the blueprint was registered.</p>
-    pub created_on: std::option::Option<smithy_types::Instant>,
+    pub created_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time the blueprint was last modified.</p>
-    pub last_modified_on: std::option::Option<smithy_types::Instant>,
+    pub last_modified_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A JSON string that indicates the list of parameter specifications for the blueprint.</p>
     pub parameter_spec: std::option::Option<std::string::String>,
     /// <p>Specifies the path in Amazon S3 where the blueprint is published.</p>
@@ -19506,6 +21936,7 @@ pub struct Blueprint {
     /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you call <code>CreateBlueprint/UpdateBlueprint</code> to register the blueprint in Glue.</p>
     pub blueprint_service_location: std::option::Option<std::string::String>,
     /// <p>The status of the blueprint registration.</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>Creating — The blueprint registration is in progress.</p>
@@ -19553,8 +21984,8 @@ pub mod blueprint {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_on: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_modified_on: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_on: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_on: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) parameter_spec: std::option::Option<std::string::String>,
         pub(crate) blueprint_location: std::option::Option<std::string::String>,
         pub(crate) blueprint_service_location: std::option::Option<std::string::String>,
@@ -19568,6 +21999,7 @@ pub mod blueprint {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the blueprint.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -19577,27 +22009,33 @@ pub mod blueprint {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the blueprint.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The date and time the blueprint was registered.</p>
-        pub fn created_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_on = Some(input);
             self
         }
-        pub fn set_created_on(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time the blueprint was registered.</p>
+        pub fn set_created_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_on = input;
             self
         }
         /// <p>The date and time the blueprint was last modified.</p>
-        pub fn last_modified_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_on = Some(input);
             self
         }
+        /// <p>The date and time the blueprint was last modified.</p>
         pub fn set_last_modified_on(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_on = input;
             self
@@ -19607,6 +22045,7 @@ pub mod blueprint {
             self.parameter_spec = Some(input.into());
             self
         }
+        /// <p>A JSON string that indicates the list of parameter specifications for the blueprint.</p>
         pub fn set_parameter_spec(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19619,6 +22058,7 @@ pub mod blueprint {
             self.blueprint_location = Some(input.into());
             self
         }
+        /// <p>Specifies the path in Amazon S3 where the blueprint is published.</p>
         pub fn set_blueprint_location(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19631,6 +22071,7 @@ pub mod blueprint {
             self.blueprint_service_location = Some(input.into());
             self
         }
+        /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you call <code>CreateBlueprint/UpdateBlueprint</code> to register the blueprint in Glue.</p>
         pub fn set_blueprint_service_location(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19639,6 +22080,7 @@ pub mod blueprint {
             self
         }
         /// <p>The status of the blueprint registration.</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>Creating — The blueprint registration is in progress.</p>
@@ -19657,6 +22099,22 @@ pub mod blueprint {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the blueprint registration.</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>Creating — The blueprint registration is in progress.</p>
+        /// </li>
+        /// <li>
+        /// <p>Active — The blueprint has been successfully registered.</p>
+        /// </li>
+        /// <li>
+        /// <p>Updating — An update to the blueprint registration is in progress.</p>
+        /// </li>
+        /// <li>
+        /// <p>Failed — The blueprint registration failed.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::BlueprintStatus>,
@@ -19669,6 +22127,7 @@ pub mod blueprint {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>An error message.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19681,6 +22140,7 @@ pub mod blueprint {
             self.last_active_definition = Some(input);
             self
         }
+        /// <p>When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service.</p>
         pub fn set_last_active_definition(
             mut self,
             input: std::option::Option<crate::model::LastActiveDefinition>,
@@ -19719,7 +22179,7 @@ pub struct LastActiveDefinition {
     /// <p>The description of the blueprint.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time the blueprint was last modified.</p>
-    pub last_modified_on: std::option::Option<smithy_types::Instant>,
+    pub last_modified_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A JSON string specifying the parameters for the blueprint.</p>
     pub parameter_spec: std::option::Option<std::string::String>,
     /// <p>Specifies a path in Amazon S3 where the blueprint is published by the Glue developer.</p>
@@ -19748,7 +22208,7 @@ pub mod last_active_definition {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) last_modified_on: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_on: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) parameter_spec: std::option::Option<std::string::String>,
         pub(crate) blueprint_location: std::option::Option<std::string::String>,
         pub(crate) blueprint_service_location: std::option::Option<std::string::String>,
@@ -19759,18 +22219,20 @@ pub mod last_active_definition {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the blueprint.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The date and time the blueprint was last modified.</p>
-        pub fn last_modified_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_on = Some(input);
             self
         }
+        /// <p>The date and time the blueprint was last modified.</p>
         pub fn set_last_modified_on(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_on = input;
             self
@@ -19780,6 +22242,7 @@ pub mod last_active_definition {
             self.parameter_spec = Some(input.into());
             self
         }
+        /// <p>A JSON string specifying the parameters for the blueprint.</p>
         pub fn set_parameter_spec(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19792,6 +22255,7 @@ pub mod last_active_definition {
             self.blueprint_location = Some(input.into());
             self
         }
+        /// <p>Specifies a path in Amazon S3 where the blueprint is published by the Glue developer.</p>
         pub fn set_blueprint_location(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19804,6 +22268,7 @@ pub mod last_active_definition {
             self.blueprint_service_location = Some(input.into());
             self
         }
+        /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you create or update the blueprint.</p>
         pub fn set_blueprint_service_location(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19830,6 +22295,7 @@ impl LastActiveDefinition {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -19841,9 +22307,13 @@ impl LastActiveDefinition {
     std::hash::Hash,
 )]
 pub enum BlueprintStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -19867,6 +22337,7 @@ impl std::str::FromStr for BlueprintStatus {
     }
 }
 impl BlueprintStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BlueprintStatus::Active => "ACTIVE",
@@ -19876,6 +22347,7 @@ impl BlueprintStatus {
             BlueprintStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "FAILED", "UPDATING"]
     }
@@ -19918,6 +22390,7 @@ pub mod schema_version_error_item {
             self.version_number = Some(input);
             self
         }
+        /// <p>The version number of the schema.</p>
         pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
             self.version_number = input;
             self
@@ -19927,6 +22400,7 @@ pub mod schema_version_error_item {
             self.error_details = Some(input);
             self
         }
+        /// <p>The details of the error for the schema version.</p>
         pub fn set_error_details(
             mut self,
             input: std::option::Option<crate::model::ErrorDetails>,
@@ -19982,6 +22456,7 @@ pub mod error_details {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>The error code for an error.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -19991,6 +22466,7 @@ pub mod error_details {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The error message for an error.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20041,12 +22517,18 @@ pub mod partition_index {
         pub(crate) index_name: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `keys`.
+        ///
+        /// To override the contents of this collection use [`set_keys`](Self::set_keys).
+        ///
+        /// <p>The keys for the partition index.</p>
         pub fn keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.keys.unwrap_or_default();
             v.push(input.into());
             self.keys = Some(v);
             self
         }
+        /// <p>The keys for the partition index.</p>
         pub fn set_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20059,6 +22541,7 @@ pub mod partition_index {
             self.index_name = Some(input.into());
             self
         }
+        /// <p>The name of the partition index.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_name = input;
             self
@@ -20131,6 +22614,7 @@ pub mod create_csv_classifier_request {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the classifier.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -20140,6 +22624,7 @@ pub mod create_csv_classifier_request {
             self.delimiter = Some(input.into());
             self
         }
+        /// <p>A custom symbol to denote what separates each column entry in the row.</p>
         pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.delimiter = input;
             self
@@ -20149,6 +22634,7 @@ pub mod create_csv_classifier_request {
             self.quote_symbol = Some(input.into());
             self
         }
+        /// <p>A custom symbol to denote what combines content into a single column value. Must be different from the column delimiter.</p>
         pub fn set_quote_symbol(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.quote_symbol = input;
             self
@@ -20158,6 +22644,7 @@ pub mod create_csv_classifier_request {
             self.contains_header = Some(input);
             self
         }
+        /// <p>Indicates whether the CSV file contains a header.</p>
         pub fn set_contains_header(
             mut self,
             input: std::option::Option<crate::model::CsvHeaderOption>,
@@ -20165,12 +22652,18 @@ pub mod create_csv_classifier_request {
             self.contains_header = input;
             self
         }
+        /// Appends an item to `header`.
+        ///
+        /// To override the contents of this collection use [`set_header`](Self::set_header).
+        ///
+        /// <p>A list of strings representing column names.</p>
         pub fn header(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.header.unwrap_or_default();
             v.push(input.into());
             self.header = Some(v);
             self
         }
+        /// <p>A list of strings representing column names.</p>
         pub fn set_header(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20183,6 +22676,7 @@ pub mod create_csv_classifier_request {
             self.disable_value_trimming = Some(input);
             self
         }
+        /// <p>Specifies not to trim values before identifying the type of column values. The default value is true.</p>
         pub fn set_disable_value_trimming(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_value_trimming = input;
             self
@@ -20192,6 +22686,7 @@ pub mod create_csv_classifier_request {
             self.allow_single_column = Some(input);
             self
         }
+        /// <p>Enables the processing of files that contain only one column.</p>
         pub fn set_allow_single_column(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_single_column = input;
             self
@@ -20250,6 +22745,7 @@ pub mod create_json_classifier_request {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the classifier.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -20260,6 +22756,8 @@ pub mod create_json_classifier_request {
             self.json_path = Some(input.into());
             self
         }
+        /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify.
+        /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
         pub fn set_json_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.json_path = input;
             self
@@ -20320,6 +22818,7 @@ pub mod create_xml_classifier_request {
             self.classification = Some(input.into());
             self
         }
+        /// <p>An identifier of the data format that the classifier matches.</p>
         pub fn set_classification(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20332,6 +22831,7 @@ pub mod create_xml_classifier_request {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the classifier.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -20345,6 +22845,11 @@ pub mod create_xml_classifier_request {
             self.row_tag = Some(input.into());
             self
         }
+        /// <p>The XML tag designating the element that contains each record in an XML document being
+        /// parsed. This can't identify a self-closing element (closed by <code>/></code>). An empty
+        /// row element that contains only attributes can be parsed as long as it ends with a closing tag
+        /// (for example, <code><row item_a="A" item_b="B"></row></code> is okay, but
+        /// <code><row item_a="A" item_b="B" /></code> is not).</p>
         pub fn set_row_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.row_tag = input;
             self
@@ -20409,6 +22914,8 @@ pub mod create_grok_classifier_request {
             self.classification = Some(input.into());
             self
         }
+        /// <p>An identifier of the data format that the classifier matches,
+        /// such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
         pub fn set_classification(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20421,6 +22928,7 @@ pub mod create_grok_classifier_request {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the new classifier.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -20430,6 +22938,7 @@ pub mod create_grok_classifier_request {
             self.grok_pattern = Some(input.into());
             self
         }
+        /// <p>The grok pattern used by this classifier.</p>
         pub fn set_grok_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grok_pattern = input;
             self
@@ -20439,6 +22948,7 @@ pub mod create_grok_classifier_request {
             self.custom_patterns = Some(input.into());
             self
         }
+        /// <p>Optional custom grok patterns used by this classifier.</p>
         pub fn set_custom_patterns(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20491,12 +23001,18 @@ pub mod batch_update_partition_failure_entry {
         pub(crate) error_detail: std::option::Option<crate::model::ErrorDetail>,
     }
     impl Builder {
+        /// Appends an item to `partition_value_list`.
+        ///
+        /// To override the contents of this collection use [`set_partition_value_list`](Self::set_partition_value_list).
+        ///
+        /// <p>A list of values defining the partitions.</p>
         pub fn partition_value_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.partition_value_list.unwrap_or_default();
             v.push(input.into());
             self.partition_value_list = Some(v);
             self
         }
+        /// <p>A list of values defining the partitions.</p>
         pub fn set_partition_value_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20509,6 +23025,7 @@ pub mod batch_update_partition_failure_entry {
             self.error_detail = Some(input);
             self
         }
+        /// <p>The details about the batch update partition error.</p>
         pub fn set_error_detail(
             mut self,
             input: std::option::Option<crate::model::ErrorDetail>,
@@ -20559,12 +23076,18 @@ pub mod batch_update_partition_request_entry {
         pub(crate) partition_input: std::option::Option<crate::model::PartitionInput>,
     }
     impl Builder {
+        /// Appends an item to `partition_value_list`.
+        ///
+        /// To override the contents of this collection use [`set_partition_value_list`](Self::set_partition_value_list).
+        ///
+        /// <p>A list of values defining the partitions.</p>
         pub fn partition_value_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.partition_value_list.unwrap_or_default();
             v.push(input.into());
             self.partition_value_list = Some(v);
             self
         }
+        /// <p>A list of values defining the partitions.</p>
         pub fn set_partition_value_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20577,6 +23100,7 @@ pub mod batch_update_partition_request_entry {
             self.partition_input = Some(input);
             self
         }
+        /// <p>The structure used to update a partition.</p>
         pub fn set_partition_input(
             mut self,
             input: std::option::Option<crate::model::PartitionInput>,
@@ -20637,6 +23161,7 @@ pub mod batch_stop_job_run_error {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>The name of the job definition that is used in the job run in question.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -20646,6 +23171,7 @@ pub mod batch_stop_job_run_error {
             self.job_run_id = Some(input.into());
             self
         }
+        /// <p>The <code>JobRunId</code> of the job run in question.</p>
         pub fn set_job_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_run_id = input;
             self
@@ -20655,6 +23181,7 @@ pub mod batch_stop_job_run_error {
             self.error_detail = Some(input);
             self
         }
+        /// <p>Specifies details about the error that was encountered.</p>
         pub fn set_error_detail(
             mut self,
             input: std::option::Option<crate::model::ErrorDetail>,
@@ -20711,6 +23238,7 @@ pub mod batch_stop_job_run_successful_submission {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>The name of the job definition used in the job run that was stopped.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -20720,6 +23248,7 @@ pub mod batch_stop_job_run_successful_submission {
             self.job_run_id = Some(input.into());
             self
         }
+        /// <p>The <code>JobRunId</code> of the job run that was stopped.</p>
         pub fn set_job_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_run_id = input;
             self
@@ -20776,6 +23305,7 @@ pub mod table_version_error {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table in question.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -20785,6 +23315,7 @@ pub mod table_version_error {
             self.version_id = Some(input.into());
             self
         }
+        /// <p>The ID value of the version in question. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -20794,6 +23325,7 @@ pub mod table_version_error {
             self.error_detail = Some(input);
             self
         }
+        /// <p>The details about the error.</p>
         pub fn set_error_detail(
             mut self,
             input: std::option::Option<crate::model::ErrorDetail>,
@@ -20850,6 +23382,7 @@ pub mod table_error {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table. For Hive compatibility, this must be entirely lowercase.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -20859,6 +23392,7 @@ pub mod table_error {
             self.error_detail = Some(input);
             self
         }
+        /// <p>The details about the error.</p>
         pub fn set_error_detail(
             mut self,
             input: std::option::Option<crate::model::ErrorDetail>,
@@ -20909,12 +23443,18 @@ pub mod partition_error {
         pub(crate) error_detail: std::option::Option<crate::model::ErrorDetail>,
     }
     impl Builder {
+        /// Appends an item to `partition_values`.
+        ///
+        /// To override the contents of this collection use [`set_partition_values`](Self::set_partition_values).
+        ///
+        /// <p>The values that define the partition.</p>
         pub fn partition_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.partition_values.unwrap_or_default();
             v.push(input.into());
             self.partition_values = Some(v);
             self
         }
+        /// <p>The values that define the partition.</p>
         pub fn set_partition_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20927,6 +23467,7 @@ pub mod partition_error {
             self.error_detail = Some(input);
             self
         }
+        /// <p>The details about the partition error.</p>
         pub fn set_error_detail(
             mut self,
             input: std::option::Option<crate::model::ErrorDetail>,

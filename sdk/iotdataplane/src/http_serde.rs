@@ -2,30 +2,32 @@
 pub fn deser_payload_delete_thing_shadow_delete_thing_shadow_output_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<smithy_types::Blob>,
+    std::option::Option<aws_smithy_types::Blob>,
     crate::error::DeleteThingShadowError,
 > {
     (!body.is_empty())
-        .then(|| Ok(smithy_types::Blob::new(body)))
+        .then(|| Ok(aws_smithy_types::Blob::new(body)))
         .transpose()
 }
 
 pub fn deser_payload_get_thing_shadow_get_thing_shadow_output_payload(
     body: &[u8],
-) -> std::result::Result<std::option::Option<smithy_types::Blob>, crate::error::GetThingShadowError>
-{
+) -> std::result::Result<
+    std::option::Option<aws_smithy_types::Blob>,
+    crate::error::GetThingShadowError,
+> {
     (!body.is_empty())
-        .then(|| Ok(smithy_types::Blob::new(body)))
+        .then(|| Ok(aws_smithy_types::Blob::new(body)))
         .transpose()
 }
 
 pub fn deser_payload_update_thing_shadow_update_thing_shadow_output_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<smithy_types::Blob>,
+    std::option::Option<aws_smithy_types::Blob>,
     crate::error::UpdateThingShadowError,
 > {
     (!body.is_empty())
-        .then(|| Ok(smithy_types::Blob::new(body)))
+        .then(|| Ok(aws_smithy_types::Blob::new(body)))
         .transpose()
 }

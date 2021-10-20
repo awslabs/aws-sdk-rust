@@ -6,10 +6,13 @@
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(rustdoc::bare_urls)]
+#![warn(missing_docs)]
 //! <fullname>Amazon RDS Performance Insights</fullname>
+//!
 //! <p>Amazon RDS Performance Insights enables you to monitor and explore different dimensions of
 //! database load based on data captured from a running DB instance. The guide provides detailed
 //! information about Performance Insights data types, parameters and errors.</p>
+//!
 //! <p>When Performance Insights is enabled, the Amazon RDS Performance Insights API provides visibility into the performance of your DB instance. Amazon
 //! CloudWatch provides the authoritative source for AWS service-vended monitoring metrics.  Performance Insights offers a domain-specific
 //! view of DB load. </p>
@@ -17,6 +20,7 @@
 //! time-series dataset. The time dimension provides DB load data for each time point in the queried time range. Each time
 //! point decomposes overall load in relation to the requested dimensions, measured at that time point. Examples include
 //! SQL, Wait event, User, and Host.</p>
+//!
 //! <ul>
 //! <li>
 //! <p>To learn more about Performance Insights and Amazon Aurora DB instances, go to the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights.html">Amazon Aurora User Guide</a>.</p>
@@ -32,30 +36,38 @@ pub use error_meta::Error;
 pub use config::Config;
 
 mod aws_endpoint;
+/// Client and fluent builders for calling the service.
 #[cfg(feature = "client")]
 pub mod client;
+/// Configuration for the service.
 pub mod config;
+/// Errors that can occur when calling the service.
 pub mod error;
 mod error_meta;
+/// Input structures for operations.
 pub mod input;
 mod json_deser;
 mod json_errors;
 mod json_ser;
+/// Data structures used by operation inputs/outputs.
 pub mod model;
 mod no_credentials;
+/// All operations that this crate can perform.
 pub mod operation;
 mod operation_deser;
 mod operation_ser;
+/// Output structures for operations.
 pub mod output;
+/// Crate version number.
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
-pub use smithy_http::byte_stream::ByteStream;
-pub use smithy_http::result::SdkError;
-pub use smithy_types::Blob;
+pub use aws_smithy_http::byte_stream::ByteStream;
+pub use aws_smithy_http::result::SdkError;
+pub use aws_smithy_types::Blob;
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("pi", PKG_VERSION);
+pub use aws_smithy_http::endpoint::Endpoint;
+pub use aws_smithy_types::retry::RetryConfig;
 pub use aws_types::region::Region;
 pub use aws_types::Credentials;
 #[cfg(feature = "client")]
 pub use client::Client;
-pub use smithy_http::endpoint::Endpoint;
-pub use smithy_types::retry::RetryConfig;

@@ -7,7 +7,7 @@ pub mod generate_data_set_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_type: std::option::Option<crate::model::DataSetType>,
-        pub(crate) data_set_publication_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) data_set_publication_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) role_name_arn: std::option::Option<std::string::String>,
         pub(crate) destination_s3_bucket_name: std::option::Option<std::string::String>,
         pub(crate) destination_s3_prefix: std::option::Option<std::string::String>,
@@ -126,6 +126,111 @@ pub mod generate_data_set_input {
             self.data_set_type = Some(input);
             self
         }
+        /// <p>The desired data set type.</p>
+        /// <p>
+        /// <ul>
+        /// <li>
+        /// <strong>customer_subscriber_hourly_monthly_subscriptions</strong>
+        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
+        /// </li>
+        /// <li>
+        /// <strong>customer_subscriber_annual_subscriptions</strong>
+        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
+        /// </li>
+        /// <li>
+        /// <strong>daily_business_usage_by_instance_type</strong>
+        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
+        /// </li>
+        /// <li>
+        /// <strong>daily_business_fees</strong>
+        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
+        /// </li>
+        /// <li>
+        /// <strong>daily_business_free_trial_conversions</strong>
+        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
+        /// </li>
+        /// <li>
+        /// <strong>daily_business_new_instances</strong>
+        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
+        /// </li>
+        /// <li>
+        /// <strong>daily_business_new_product_subscribers</strong>
+        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
+        /// </li>
+        /// <li>
+        /// <strong>daily_business_canceled_product_subscribers</strong>
+        /// <p>From 2017-09-15 to present: Available daily by 24:00 UTC.</p>
+        /// </li>
+        /// <li>
+        /// <strong>monthly_revenue_billing_and_revenue_data</strong>
+        /// <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC. Data includes metered transactions (e.g. hourly) from one month prior.</p>
+        /// </li>
+        /// <li>
+        /// <strong>monthly_revenue_annual_subscriptions</strong>
+        /// <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC. Data includes up-front software charges (e.g. annual) from one month prior.</p>
+        /// </li>
+        /// <li>
+        /// <strong>monthly_revenue_field_demonstration_usage</strong>
+        /// <p>From 2018-03-15 to present: Available monthly on the 15th day of the month by 24:00 UTC.</p>
+        /// </li>
+        /// <li>
+        /// <strong>monthly_revenue_flexible_payment_schedule</strong>
+        /// <p>From 2018-11-15 to present: Available monthly on the 15th day of the month by 24:00 UTC.</p>
+        /// </li>
+        /// <li>
+        /// <strong>disbursed_amount_by_product</strong>
+        /// <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p>
+        /// </li>
+        /// <li>
+        /// <strong>disbursed_amount_by_instance_hours</strong>
+        /// <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p>
+        /// </li>
+        /// <li>
+        /// <strong>disbursed_amount_by_customer_geo</strong>
+        /// <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p>
+        /// </li>
+        /// <li>
+        /// <strong>disbursed_amount_by_age_of_uncollected_funds</strong>
+        /// <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p>
+        /// </li>
+        /// <li>
+        /// <strong>disbursed_amount_by_age_of_disbursed_funds</strong>
+        /// <p>From 2017-09-15 to present: Available every 30 days by 24:00 UTC.</p>
+        /// </li>
+        /// <li>
+        /// <strong>disbursed_amount_by_age_of_past_due_funds</strong>
+        /// <p>From 2018-04-07 to present: Available every 30 days by 24:00 UTC.</p>
+        /// </li>
+        /// <li>
+        /// <strong>disbursed_amount_by_uncollected_funds_breakdown</strong>
+        /// <p>From 2019-10-04 to present: Available every 30 days by 24:00 UTC.</p>
+        /// </li>
+        /// <li>
+        /// <strong>sales_compensation_billed_revenue</strong>
+        /// <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC. Data includes metered transactions (e.g. hourly) from one month prior, and up-front software charges (e.g. annual) from one month prior.</p>
+        /// </li>
+        /// <li>
+        /// <strong>us_sales_and_use_tax_records</strong>
+        /// <p>From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00 UTC.</p>
+        /// </li>
+        /// <li>
+        /// <strong>disbursed_amount_by_product_with_uncollected_funds</strong>
+        /// <p>This data set is deprecated. Download related reports from AMMP instead!</p>
+        /// </li>
+        /// <li>
+        /// <strong>customer_profile_by_industry</strong>
+        /// <p>This data set is deprecated. Download related reports from AMMP instead!</p>
+        /// </li>
+        /// <li>
+        /// <strong>customer_profile_by_revenue</strong>
+        /// <p>This data set is deprecated. Download related reports from AMMP instead!</p>
+        /// </li>
+        /// <li>
+        /// <strong>customer_profile_by_geography</strong>
+        /// <p>This data set is deprecated. Download related reports from AMMP instead!</p>
+        /// </li>
+        /// </ul>
+        /// </p>
         pub fn set_data_set_type(
             mut self,
             input: std::option::Option<crate::model::DataSetType>,
@@ -137,13 +242,17 @@ pub mod generate_data_set_input {
         /// For daily data sets, provide a date with day-level granularity for the desired day.
         /// For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity for the desired month (the day value will be ignored).
         /// For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
-        pub fn data_set_publication_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn data_set_publication_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.data_set_publication_date = Some(input);
             self
         }
+        /// The date a data set was published.
+        /// For daily data sets, provide a date with day-level granularity for the desired day.
+        /// For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity for the desired month (the day value will be ignored).
+        /// For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
         pub fn set_data_set_publication_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.data_set_publication_date = input;
             self
@@ -154,6 +263,8 @@ pub mod generate_data_set_input {
             self.role_name_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided
+        /// AWS services.
         pub fn set_role_name_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -166,6 +277,7 @@ pub mod generate_data_set_input {
             self.destination_s3_bucket_name = Some(input.into());
             self
         }
+        /// The name (friendly name, not ARN) of the destination S3 bucket.
         pub fn set_destination_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -182,6 +294,11 @@ pub mod generate_data_set_input {
             self.destination_s3_prefix = Some(input.into());
             self
         }
+        /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems.
+        /// For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file
+        /// "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile".
+        /// If the prefix directory structure does not exist, it will be created.
+        /// If no prefix is provided, the data set will be published to the S3 bucket root.
         pub fn set_destination_s3_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -195,6 +312,8 @@ pub mod generate_data_set_input {
             self.sns_topic_arn = Some(input.into());
             self
         }
+        /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an
+        /// error has occurred.
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -202,6 +321,14 @@ pub mod generate_data_set_input {
             self.sns_topic_arn = input;
             self
         }
+        /// Adds a key-value pair to `customer_defined_values`.
+        ///
+        /// To override the contents of this collection use [`set_customer_defined_values`](Self::set_customer_defined_values).
+        ///
+        /// (Optional) Key-value pairs which will be returned, unmodified, in the
+        /// Amazon SNS notification message and the data set metadata file. These
+        /// key-value pairs can be used to correlated responses with tracking
+        /// information from other systems.
         pub fn customer_defined_values(
             mut self,
             k: impl Into<std::string::String>,
@@ -212,6 +339,10 @@ pub mod generate_data_set_input {
             self.customer_defined_values = Some(hash_map);
             self
         }
+        /// (Optional) Key-value pairs which will be returned, unmodified, in the
+        /// Amazon SNS notification message and the data set metadata file. These
+        /// key-value pairs can be used to correlated responses with tracking
+        /// information from other systems.
         pub fn set_customer_defined_values(
             mut self,
             input: std::option::Option<
@@ -226,7 +357,7 @@ pub mod generate_data_set_input {
             self,
         ) -> std::result::Result<
             crate::input::GenerateDataSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GenerateDataSetInput {
                 data_set_type: self.data_set_type,
@@ -251,16 +382,16 @@ impl GenerateDataSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GenerateDataSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GenerateDataSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -268,7 +399,7 @@ impl GenerateDataSetInput {
         fn update_http_builder(
             input: &crate::input::GenerateDataSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -277,32 +408,32 @@ impl GenerateDataSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GenerateDataSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MarketplaceCommerceAnalytics20150701.GenerateDataSet",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_generate_data_set(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -325,15 +456,15 @@ impl GenerateDataSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GenerateDataSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GenerateDataSet",
             "marketplacecommerceanalytics",
         ));
@@ -342,10 +473,10 @@ impl GenerateDataSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -366,7 +497,7 @@ pub mod start_support_data_export_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_type: std::option::Option<crate::model::SupportDataSetType>,
-        pub(crate) from_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) from_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) role_name_arn: std::option::Option<std::string::String>,
         pub(crate) destination_s3_bucket_name: std::option::Option<std::string::String>,
         pub(crate) destination_s3_prefix: std::option::Option<std::string::String>,
@@ -392,6 +523,18 @@ pub mod start_support_data_export_input {
             self.data_set_type = Some(input);
             self
         }
+        /// <p>
+        /// Specifies the data set type to be written to the output csv file. The data set types customer_support_contacts_data and
+        /// test_customer_support_contacts_data both result in a csv file containing the following fields: Product Id, Product Code, Customer Guid,
+        /// Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title,
+        /// Country Code, ZIP Code, Operation Type, and Operation Time.
+        /// </p>
+        /// <p>
+        /// <ul>
+        /// <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all changes (Creates, Updates, and Deletes) to customer support contact data from the date specified in the from_date parameter.</li>
+        /// <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format as customer_support_contacts_data</li>
+        /// </ul>
+        /// </p>
         pub fn set_data_set_type(
             mut self,
             input: std::option::Option<crate::model::SupportDataSetType>,
@@ -400,11 +543,15 @@ pub mod start_support_data_export_input {
             self
         }
         /// The start date from which to retrieve the data set in UTC.  This parameter only affects the customer_support_contacts_data data set type.
-        pub fn from_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn from_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.from_date = Some(input);
             self
         }
-        pub fn set_from_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// The start date from which to retrieve the data set in UTC.  This parameter only affects the customer_support_contacts_data data set type.
+        pub fn set_from_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.from_date = input;
             self
         }
@@ -414,6 +561,8 @@ pub mod start_support_data_export_input {
             self.role_name_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided
+        /// AWS services.
         pub fn set_role_name_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -426,6 +575,7 @@ pub mod start_support_data_export_input {
             self.destination_s3_bucket_name = Some(input.into());
             self
         }
+        /// The name (friendly name, not ARN) of the destination S3 bucket.
         pub fn set_destination_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -442,6 +592,11 @@ pub mod start_support_data_export_input {
             self.destination_s3_prefix = Some(input.into());
             self
         }
+        /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems.
+        /// For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file
+        /// "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile".
+        /// If the prefix directory structure does not exist, it will be created.
+        /// If no prefix is provided, the data set will be published to the S3 bucket root.
         pub fn set_destination_s3_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -455,6 +610,8 @@ pub mod start_support_data_export_input {
             self.sns_topic_arn = Some(input.into());
             self
         }
+        /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an
+        /// error has occurred.
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -462,6 +619,12 @@ pub mod start_support_data_export_input {
             self.sns_topic_arn = input;
             self
         }
+        /// Adds a key-value pair to `customer_defined_values`.
+        ///
+        /// To override the contents of this collection use [`set_customer_defined_values`](Self::set_customer_defined_values).
+        ///
+        /// (Optional) Key-value pairs which will be returned, unmodified, in the
+        /// Amazon SNS notification message and the data set metadata file.
         pub fn customer_defined_values(
             mut self,
             k: impl Into<std::string::String>,
@@ -472,6 +635,8 @@ pub mod start_support_data_export_input {
             self.customer_defined_values = Some(hash_map);
             self
         }
+        /// (Optional) Key-value pairs which will be returned, unmodified, in the
+        /// Amazon SNS notification message and the data set metadata file.
         pub fn set_customer_defined_values(
             mut self,
             input: std::option::Option<
@@ -486,7 +651,7 @@ pub mod start_support_data_export_input {
             self,
         ) -> std::result::Result<
             crate::input::StartSupportDataExportInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartSupportDataExportInput {
                 data_set_type: self.data_set_type,
@@ -511,16 +676,16 @@ impl StartSupportDataExportInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartSupportDataExport,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartSupportDataExportInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -528,7 +693,7 @@ impl StartSupportDataExportInput {
         fn update_http_builder(
             input: &crate::input::StartSupportDataExportInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -537,32 +702,34 @@ impl StartSupportDataExportInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartSupportDataExportInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MarketplaceCommerceAnalytics20150701.StartSupportDataExport",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_support_data_export(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -585,15 +752,15 @@ impl StartSupportDataExportInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartSupportDataExport::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartSupportDataExport",
             "marketplacecommerceanalytics",
         ));
@@ -602,10 +769,10 @@ impl StartSupportDataExportInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -637,7 +804,7 @@ pub struct StartSupportDataExportInput {
     /// </p>
     pub data_set_type: std::option::Option<crate::model::SupportDataSetType>,
     /// The start date from which to retrieve the data set in UTC.  This parameter only affects the customer_support_contacts_data data set type.
-    pub from_date: std::option::Option<smithy_types::Instant>,
+    pub from_date: std::option::Option<aws_smithy_types::Instant>,
     /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided
     /// AWS services.
     pub role_name_arn: std::option::Option<std::string::String>,
@@ -788,7 +955,7 @@ pub struct GenerateDataSetInput {
     /// For daily data sets, provide a date with day-level granularity for the desired day.
     /// For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity for the desired month (the day value will be ignored).
     /// For data sets with prefix disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we will look backwards in time over the range of 31 days until the first data set is found (the latest one).
-    pub data_set_publication_date: std::option::Option<smithy_types::Instant>,
+    pub data_set_publication_date: std::option::Option<aws_smithy_types::Instant>,
     /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided
     /// AWS services.
     pub role_name_arn: std::option::Option<std::string::String>,

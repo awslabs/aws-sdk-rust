@@ -9,7 +9,7 @@
 //!
 //! This module contains an shared configuration representation that is agnostic from a specific service.
 
-use smithy_types::retry::RetryConfig;
+use aws_smithy_types::retry::RetryConfig;
 
 use crate::credentials::SharedCredentialsProvider;
 use crate::region::Region;
@@ -69,7 +69,7 @@ impl Builder {
     /// # Examples
     /// ```rust
     /// use aws_types::config::Config;
-    /// use smithy_types::retry::RetryConfig;
+    /// use aws_smithy_types::retry::RetryConfig;
     ///
     /// let retry_config = RetryConfig::new().with_max_attempts(5);
     /// let config = Config::builder().retry_config(retry_config).build();
@@ -84,7 +84,7 @@ impl Builder {
     /// # Examples
     /// ```rust
     /// use aws_types::config::{Config, Builder};
-    /// use smithy_types::retry::RetryConfig;
+    /// use aws_smithy_types::retry::RetryConfig;
     ///
     /// fn disable_retries(builder: &mut Builder) {
     ///     let retry_config = RetryConfig::new().with_max_attempts(1);

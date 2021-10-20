@@ -48,6 +48,7 @@ pub mod vpce_configuration {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -58,6 +59,8 @@ pub mod vpce_configuration {
             self.vpce_configuration_name = Some(input.into());
             self
         }
+        /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more
+        /// easily.</p>
         pub fn set_vpce_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -70,6 +73,7 @@ pub mod vpce_configuration {
             self.vpce_service_name = Some(input.into());
             self
         }
+        /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
         pub fn set_vpce_service_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -83,6 +87,8 @@ pub mod vpce_configuration {
             self.service_dns_name = Some(input.into());
             self
         }
+        /// <p>The DNS name that maps to the private IP address of the service you want to
+        /// access.</p>
         pub fn set_service_dns_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -98,6 +104,7 @@ pub mod vpce_configuration {
             self.vpce_configuration_description = Some(input.into());
             self
         }
+        /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
         pub fn set_vpce_configuration_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -134,7 +141,7 @@ pub struct Upload {
     /// <p>The upload's file name.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>When the upload was created.</p>
-    pub created: std::option::Option<smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The upload's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
@@ -298,7 +305,7 @@ pub mod upload {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) created: std::option::Option<smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) r#type: std::option::Option<crate::model::UploadType>,
         pub(crate) status: std::option::Option<crate::model::UploadStatus>,
         pub(crate) url: std::option::Option<std::string::String>,
@@ -313,6 +320,7 @@ pub mod upload {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The upload's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -322,16 +330,21 @@ pub mod upload {
             self.name = Some(input.into());
             self
         }
+        /// <p>The upload's file name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
         /// <p>When the upload was created.</p>
-        pub fn created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created = Some(input);
             self
         }
-        pub fn set_created(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>When the upload was created.</p>
+        pub fn set_created(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created = input;
             self
         }
@@ -439,6 +452,106 @@ pub mod upload {
             self.r#type = Some(input);
             self
         }
+        /// <p>The upload's type.</p>
+        /// <p>Must be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>ANDROID_APP</p>
+        /// </li>
+        /// <li>
+        /// <p>IOS_APP</p>
+        /// </li>
+        /// <li>
+        /// <p>WEB_APP</p>
+        /// </li>
+        /// <li>
+        /// <p>EXTERNAL_DATA</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_NODE_TEST_PACKAGE</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
+        /// </li>
+        /// <li>
+        /// <p>CALABASH_TEST_PACKAGE</p>
+        /// </li>
+        /// <li>
+        /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
+        /// </li>
+        /// <li>
+        /// <p>UIAUTOMATION_TEST_PACKAGE</p>
+        /// </li>
+        /// <li>
+        /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
+        /// </li>
+        /// <li>
+        /// <p>XCTEST_TEST_PACKAGE</p>
+        /// </li>
+        /// <li>
+        /// <p>XCTEST_UI_TEST_PACKAGE</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_PYTHON_TEST_SPEC</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_NODE_TEST_SPEC</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_RUBY_TEST_SPEC</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
+        /// </li>
+        /// <li>
+        /// <p>INSTRUMENTATION_TEST_SPEC</p>
+        /// </li>
+        /// <li>
+        /// <p>XCTEST_UI_TEST_SPEC</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::UploadType>) -> Self {
             self.r#type = input;
             self
@@ -463,6 +576,22 @@ pub mod upload {
             self.status = Some(input);
             self
         }
+        /// <p>The upload's status.</p>
+        /// <p>Must be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>FAILED</p>
+        /// </li>
+        /// <li>
+        /// <p>INITIALIZED</p>
+        /// </li>
+        /// <li>
+        /// <p>PROCESSING</p>
+        /// </li>
+        /// <li>
+        /// <p>SUCCEEDED</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::UploadStatus>,
@@ -475,6 +604,7 @@ pub mod upload {
             self.url = Some(input.into());
             self
         }
+        /// <p>The presigned Amazon S3 URL that was used to store a file using a PUT request.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -486,6 +616,9 @@ pub mod upload {
             self.metadata = Some(input.into());
             self
         }
+        /// <p>The upload's metadata. For example, for Android, this contains information that is
+        /// parsed from the manifest and is displayed in the AWS Device Farm console after the
+        /// associated app is uploaded.</p>
         pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metadata = input;
             self
@@ -495,6 +628,7 @@ pub mod upload {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -504,6 +638,7 @@ pub mod upload {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message about the upload's result.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -521,6 +656,15 @@ pub mod upload {
             self.category = Some(input);
             self
         }
+        /// <p>The upload's category. Allowed values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>CURATED: An upload managed by AWS Device Farm.</p>
+        /// </li>
+        /// <li>
+        /// <p>PRIVATE: An upload managed by the AWS Device Farm customer.</p>
+        /// </li>
+        /// </ul>
         pub fn set_category(
             mut self,
             input: std::option::Option<crate::model::UploadCategory>,
@@ -552,6 +696,7 @@ impl Upload {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -563,7 +708,9 @@ impl Upload {
     std::hash::Hash,
 )]
 pub enum UploadCategory {
+    #[allow(missing_docs)] // documentation missing in model
     Curated,
+    #[allow(missing_docs)] // documentation missing in model
     Private,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -585,6 +732,7 @@ impl std::str::FromStr for UploadCategory {
     }
 }
 impl UploadCategory {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UploadCategory::Curated => "CURATED",
@@ -592,6 +740,7 @@ impl UploadCategory {
             UploadCategory::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CURATED", "PRIVATE"]
     }
@@ -602,6 +751,7 @@ impl AsRef<str> for UploadCategory {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -613,9 +763,13 @@ impl AsRef<str> for UploadCategory {
     std::hash::Hash,
 )]
 pub enum UploadStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Initialized,
+    #[allow(missing_docs)] // documentation missing in model
     Processing,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -639,6 +793,7 @@ impl std::str::FromStr for UploadStatus {
     }
 }
 impl UploadStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UploadStatus::Failed => "FAILED",
@@ -648,6 +803,7 @@ impl UploadStatus {
             UploadStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "INITIALIZED", "PROCESSING", "SUCCEEDED"]
     }
@@ -658,6 +814,7 @@ impl AsRef<str> for UploadStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -669,37 +826,69 @@ impl AsRef<str> for UploadStatus {
     std::hash::Hash,
 )]
 pub enum UploadType {
+    #[allow(missing_docs)] // documentation missing in model
     AndroidApp,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumJavaJunitTestPackage,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumJavaJunitTestSpec,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumJavaTestngTestPackage,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumJavaTestngTestSpec,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumNodeTestPackage,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumNodeTestSpec,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumPythonTestPackage,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumPythonTestSpec,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumRubyTestPackage,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumRubyTestSpec,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumWebJavaJunitTestPackage,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumWebJavaJunitTestSpec,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumWebJavaTestngTestPackage,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumWebJavaTestngTestSpec,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumWebNodeTestPackage,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumWebNodeTestSpec,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumWebPythonTestPackage,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumWebPythonTestSpec,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumWebRubyTestPackage,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumWebRubyTestSpec,
+    #[allow(missing_docs)] // documentation missing in model
     CalabashTestPackage,
+    #[allow(missing_docs)] // documentation missing in model
     ExternalData,
+    #[allow(missing_docs)] // documentation missing in model
     InstrumentationTestPackage,
+    #[allow(missing_docs)] // documentation missing in model
     InstrumentationTestSpec,
+    #[allow(missing_docs)] // documentation missing in model
     IosApp,
+    #[allow(missing_docs)] // documentation missing in model
     UiautomationTestPackage,
+    #[allow(missing_docs)] // documentation missing in model
     UiautomatorTestPackage,
+    #[allow(missing_docs)] // documentation missing in model
     WebApp,
+    #[allow(missing_docs)] // documentation missing in model
     XctestTestPackage,
+    #[allow(missing_docs)] // documentation missing in model
     XctestUiTestPackage,
+    #[allow(missing_docs)] // documentation missing in model
     XctestUiTestSpec,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -751,6 +940,7 @@ impl std::str::FromStr for UploadType {
     }
 }
 impl UploadType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UploadType::AndroidApp => "ANDROID_APP",
@@ -788,6 +978,7 @@ impl UploadType {
             UploadType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ANDROID_APP",
@@ -844,7 +1035,7 @@ pub struct TestGridProject {
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub vpc_config: std::option::Option<crate::model::TestGridVpcConfig>,
     /// <p>When the project was created.</p>
-    pub created: std::option::Option<smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for TestGridProject {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -867,7 +1058,7 @@ pub mod test_grid_project {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) vpc_config: std::option::Option<crate::model::TestGridVpcConfig>,
-        pub(crate) created: std::option::Option<smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ARN for the project.</p>
@@ -875,6 +1066,7 @@ pub mod test_grid_project {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN for the project.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -884,6 +1076,7 @@ pub mod test_grid_project {
             self.name = Some(input.into());
             self
         }
+        /// <p>A human-readable name for the project.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -893,6 +1086,7 @@ pub mod test_grid_project {
             self.description = Some(input.into());
             self
         }
+        /// <p>A human-readable description for the project.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -902,6 +1096,7 @@ pub mod test_grid_project {
             self.vpc_config = Some(input);
             self
         }
+        /// <p>The VPC security groups and subnets that are attached to a project.</p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::TestGridVpcConfig>,
@@ -910,11 +1105,15 @@ pub mod test_grid_project {
             self
         }
         /// <p>When the project was created.</p>
-        pub fn created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created = Some(input);
             self
         }
-        pub fn set_created(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>When the project was created.</p>
+        pub fn set_created(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created = input;
             self
         }
@@ -968,12 +1167,18 @@ pub mod test_grid_vpc_config {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>A list of VPC security group IDs in your Amazon VPC.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// <p>A list of VPC security group IDs in your Amazon VPC.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -981,12 +1186,18 @@ pub mod test_grid_vpc_config {
             self.security_group_ids = input;
             self
         }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>A list of VPC subnet IDs in your Amazon VPC.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// <p>A list of VPC subnet IDs in your Amazon VPC.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -999,6 +1210,7 @@ pub mod test_grid_vpc_config {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon VPC.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -1033,7 +1245,7 @@ pub struct Project {
     /// default value is 150 minutes.</p>
     pub default_job_timeout_minutes: std::option::Option<i32>,
     /// <p>When the project was created.</p>
-    pub created: std::option::Option<smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Project {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1057,7 +1269,7 @@ pub mod project {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) default_job_timeout_minutes: std::option::Option<i32>,
-        pub(crate) created: std::option::Option<smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The project's ARN.</p>
@@ -1065,6 +1277,7 @@ pub mod project {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The project's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1074,6 +1287,7 @@ pub mod project {
             self.name = Some(input.into());
             self
         }
+        /// <p>The project's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1084,16 +1298,22 @@ pub mod project {
             self.default_job_timeout_minutes = Some(input);
             self
         }
+        /// <p>The default number of minutes (at the project level) a test run executes before it times out. The
+        /// default value is 150 minutes.</p>
         pub fn set_default_job_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.default_job_timeout_minutes = input;
             self
         }
         /// <p>When the project was created.</p>
-        pub fn created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created = Some(input);
             self
         }
-        pub fn set_created(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>When the project was created.</p>
+        pub fn set_created(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created = input;
             self
         }
@@ -1194,6 +1414,7 @@ pub mod network_profile {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the network profile.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1203,6 +1424,7 @@ pub mod network_profile {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the network profile.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1212,6 +1434,7 @@ pub mod network_profile {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the network profile.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1221,6 +1444,7 @@ pub mod network_profile {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of network profile. Valid values are listed here.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::NetworkProfileType>,
@@ -1234,6 +1458,8 @@ pub mod network_profile {
             self.uplink_bandwidth_bits = Some(input);
             self
         }
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to
+        /// 104857600.</p>
         pub fn set_uplink_bandwidth_bits(mut self, input: std::option::Option<i64>) -> Self {
             self.uplink_bandwidth_bits = input;
             self
@@ -1244,6 +1470,8 @@ pub mod network_profile {
             self.downlink_bandwidth_bits = Some(input);
             self
         }
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to
+        /// 104857600.</p>
         pub fn set_downlink_bandwidth_bits(mut self, input: std::option::Option<i64>) -> Self {
             self.downlink_bandwidth_bits = input;
             self
@@ -1254,6 +1482,8 @@ pub mod network_profile {
             self.uplink_delay_ms = Some(input);
             self
         }
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
+        /// 2000.</p>
         pub fn set_uplink_delay_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.uplink_delay_ms = input;
             self
@@ -1264,6 +1494,8 @@ pub mod network_profile {
             self.downlink_delay_ms = Some(input);
             self
         }
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
+        /// 2000.</p>
         pub fn set_downlink_delay_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.downlink_delay_ms = input;
             self
@@ -1274,6 +1506,8 @@ pub mod network_profile {
             self.uplink_jitter_ms = Some(input);
             self
         }
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
+        /// 0 to 2000.</p>
         pub fn set_uplink_jitter_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.uplink_jitter_ms = input;
             self
@@ -1284,6 +1518,8 @@ pub mod network_profile {
             self.downlink_jitter_ms = Some(input);
             self
         }
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
+        /// 0 to 2000.</p>
         pub fn set_downlink_jitter_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.downlink_jitter_ms = input;
             self
@@ -1294,6 +1530,8 @@ pub mod network_profile {
             self.uplink_loss_percent = Some(input);
             self
         }
+        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
+        /// percent.</p>
         pub fn set_uplink_loss_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.uplink_loss_percent = input;
             self
@@ -1303,6 +1541,7 @@ pub mod network_profile {
             self.downlink_loss_percent = Some(input);
             self
         }
+        /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
         pub fn set_downlink_loss_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.downlink_loss_percent = input;
             self
@@ -1333,6 +1572,7 @@ impl NetworkProfile {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1344,7 +1584,9 @@ impl NetworkProfile {
     std::hash::Hash,
 )]
 pub enum NetworkProfileType {
+    #[allow(missing_docs)] // documentation missing in model
     Curated,
+    #[allow(missing_docs)] // documentation missing in model
     Private,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1366,6 +1608,7 @@ impl std::str::FromStr for NetworkProfileType {
     }
 }
 impl NetworkProfileType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NetworkProfileType::Curated => "CURATED",
@@ -1373,6 +1616,7 @@ impl NetworkProfileType {
             NetworkProfileType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CURATED", "PRIVATE"]
     }
@@ -1440,6 +1684,7 @@ pub mod instance_profile {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1450,10 +1695,20 @@ pub mod instance_profile {
             self.package_cleanup = Some(input);
             self
         }
+        /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
+        /// <code>false</code> for private devices.</p>
         pub fn set_package_cleanup(mut self, input: std::option::Option<bool>) -> Self {
             self.package_cleanup = input;
             self
         }
+        /// Appends an item to `exclude_app_packages_from_cleanup`.
+        ///
+        /// To override the contents of this collection use [`set_exclude_app_packages_from_cleanup`](Self::set_exclude_app_packages_from_cleanup).
+        ///
+        /// <p>An array of strings containing the list of app packages that should not be cleaned up from the device
+        /// after a test run completes.</p>
+        /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to
+        /// <code>true</code>.</p>
         pub fn exclude_app_packages_from_cleanup(
             mut self,
             input: impl Into<std::string::String>,
@@ -1463,6 +1718,10 @@ pub mod instance_profile {
             self.exclude_app_packages_from_cleanup = Some(v);
             self
         }
+        /// <p>An array of strings containing the list of app packages that should not be cleaned up from the device
+        /// after a test run completes.</p>
+        /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to
+        /// <code>true</code>.</p>
         pub fn set_exclude_app_packages_from_cleanup(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1476,6 +1735,8 @@ pub mod instance_profile {
             self.reboot_after_use = Some(input);
             self
         }
+        /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
+        /// <code>true</code>.</p>
         pub fn set_reboot_after_use(mut self, input: std::option::Option<bool>) -> Self {
             self.reboot_after_use = input;
             self
@@ -1485,6 +1746,7 @@ pub mod instance_profile {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the instance profile.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1494,6 +1756,7 @@ pub mod instance_profile {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the instance profile.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1582,6 +1845,7 @@ pub mod device_pool {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The device pool's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1591,6 +1855,7 @@ pub mod device_pool {
             self.name = Some(input.into());
             self
         }
+        /// <p>The device pool's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1600,6 +1865,7 @@ pub mod device_pool {
             self.description = Some(input.into());
             self
         }
+        /// <p>The device pool's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1620,6 +1886,18 @@ pub mod device_pool {
             self.r#type = Some(input);
             self
         }
+        /// <p>The device pool's type.</p>
+        /// <p>Allowed values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>CURATED: A device pool that is created and managed by AWS Device
+        /// Farm.</p>
+        /// </li>
+        /// <li>
+        /// <p>PRIVATE: A device pool that is created and managed by the device pool
+        /// developer.</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DevicePoolType>,
@@ -1627,12 +1905,18 @@ pub mod device_pool {
             self.r#type = input;
             self
         }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>Information about the device pool's rules.</p>
         pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
             let mut v = self.rules.unwrap_or_default();
             v.push(input.into());
             self.rules = Some(v);
             self
         }
+        /// <p>Information about the device pool's rules.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -1650,6 +1934,12 @@ pub mod device_pool {
             self.max_devices = Some(input);
             self
         }
+        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are
+        /// available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many
+        /// devices meet these constraints, your device pool might contain fewer devices than the value for this
+        /// parameter.</p>
+        /// <p>By specifying the maximum number of devices, you can control the costs that you incur
+        /// by running tests.</p>
         pub fn set_max_devices(mut self, input: std::option::Option<i32>) -> Self {
             self.max_devices = input;
             self
@@ -1908,6 +2198,105 @@ pub mod rule {
             self.attribute = Some(input);
             self
         }
+        /// <p>The rule's stringified attribute. For example, specify the value as
+        /// <code>"\"abc\""</code>.</p>
+        /// <p>The supported operators for each attribute are provided in the following
+        /// list.</p>
+        /// <dl>
+        /// <dt>APPIUM_VERSION</dt>
+        /// <dd>
+        /// <p>The Appium version for the test.</p>
+        /// <p>Supported operators: <code>CONTAINS</code>
+        /// </p>
+        /// </dd>
+        /// <dt>ARN</dt>
+        /// <dd>
+        /// <p>The Amazon Resource Name (ARN) of the device (for example,
+        /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>.</p>
+        /// <p>Supported operators: <code>EQUALS</code>,
+        /// <code>IN</code>, <code>NOT_IN</code>
+        /// </p>
+        /// </dd>
+        /// <dt>AVAILABILITY</dt>
+        /// <dd>
+        /// <p>The current availability of the device. Valid values are AVAILABLE,
+        /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
+        /// <p>Supported operators: <code>EQUALS</code>
+        /// </p>
+        /// </dd>
+        /// <dt>FLEET_TYPE</dt>
+        /// <dd>
+        /// <p>The fleet type. Valid values are PUBLIC or PRIVATE.</p>
+        /// <p>Supported operators: <code>EQUALS</code>
+        /// </p>
+        /// </dd>
+        /// <dt>FORM_FACTOR</dt>
+        /// <dd>
+        /// <p>The device form factor. Valid values are PHONE or TABLET.</p>
+        /// <p>Supported operators: <code>EQUALS</code>,
+        /// <code>IN</code>, <code>NOT_IN</code>
+        /// </p>
+        /// </dd>
+        /// <dt>INSTANCE_ARN</dt>
+        /// <dd>
+        /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
+        /// <p>Supported operators: <code>IN</code>,
+        /// <code>NOT_IN</code>
+        /// </p>
+        /// </dd>
+        /// <dt>INSTANCE_LABELS</dt>
+        /// <dd>
+        /// <p>The label of the device instance.</p>
+        /// <p>Supported operators: <code>CONTAINS</code>
+        /// </p>
+        /// </dd>
+        /// <dt>MANUFACTURER</dt>
+        /// <dd>
+        /// <p>The device manufacturer (for example, Apple).</p>
+        /// <p>Supported operators: <code>EQUALS</code>,
+        /// <code>IN</code>, <code>NOT_IN</code>
+        /// </p>
+        /// </dd>
+        /// <dt>MODEL</dt>
+        /// <dd>
+        /// <p>The device model, such as Apple iPad Air 2 or Google Pixel.</p>
+        /// <p>Supported operators: <code>CONTAINS</code>,
+        /// <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
+        /// </p>
+        /// </dd>
+        /// <dt>OS_VERSION</dt>
+        /// <dd>
+        /// <p>The operating system version (for example, 10.3.2).</p>
+        /// <p>Supported operators: <code>EQUALS</code>,
+        /// <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>,
+        /// <code>IN</code>, <code>LESS_THAN</code>,
+        /// <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code>
+        /// </p>
+        /// </dd>
+        /// <dt>PLATFORM</dt>
+        /// <dd>
+        /// <p>The device platform. Valid values are ANDROID or IOS.</p>
+        /// <p>Supported operators: <code>EQUALS</code>,
+        /// <code>IN</code>, <code>NOT_IN</code>
+        /// </p>
+        /// </dd>
+        /// <dt>REMOTE_ACCESS_ENABLED</dt>
+        /// <dd>
+        /// <p>Whether the device is enabled for remote access. Valid values are TRUE
+        /// or FALSE.</p>
+        /// <p>Supported operators: <code>EQUALS</code>
+        /// </p>
+        /// </dd>
+        /// <dt>REMOTE_DEBUG_ENABLED</dt>
+        /// <dd>
+        /// <p>Whether the device is enabled for remote debugging. Valid values are
+        /// TRUE or FALSE.</p>
+        /// <p>Supported operators: <code>EQUALS</code>
+        /// </p>
+        /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+        /// supported</a>, this filter is ignored.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_attribute(
             mut self,
             input: std::option::Option<crate::model::DeviceAttribute>,
@@ -1922,6 +2311,9 @@ pub mod rule {
             self.operator = Some(input);
             self
         }
+        /// <p>Specifies how Device Farm compares the rule's attribute to the value. For the
+        /// operators that are supported by each attribute, see the attribute
+        /// descriptions.</p>
         pub fn set_operator(
             mut self,
             input: std::option::Option<crate::model::RuleOperator>,
@@ -1934,6 +2326,7 @@ pub mod rule {
             self.value = Some(input.into());
             self
         }
+        /// <p>The rule's value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1955,6 +2348,7 @@ impl Rule {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1966,13 +2360,21 @@ impl Rule {
     std::hash::Hash,
 )]
 pub enum RuleOperator {
+    #[allow(missing_docs)] // documentation missing in model
     Contains,
+    #[allow(missing_docs)] // documentation missing in model
     Equals,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThan,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThanOrEquals,
+    #[allow(missing_docs)] // documentation missing in model
     In,
+    #[allow(missing_docs)] // documentation missing in model
     LessThan,
+    #[allow(missing_docs)] // documentation missing in model
     LessThanOrEquals,
+    #[allow(missing_docs)] // documentation missing in model
     NotIn,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2000,6 +2402,7 @@ impl std::str::FromStr for RuleOperator {
     }
 }
 impl RuleOperator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RuleOperator::Contains => "CONTAINS",
@@ -2013,6 +2416,7 @@ impl RuleOperator {
             RuleOperator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CONTAINS",
@@ -2032,6 +2436,7 @@ impl AsRef<str> for RuleOperator {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2043,18 +2448,31 @@ impl AsRef<str> for RuleOperator {
     std::hash::Hash,
 )]
 pub enum DeviceAttribute {
+    #[allow(missing_docs)] // documentation missing in model
     AppiumVersion,
+    #[allow(missing_docs)] // documentation missing in model
     Arn,
+    #[allow(missing_docs)] // documentation missing in model
     Availability,
+    #[allow(missing_docs)] // documentation missing in model
     FleetType,
+    #[allow(missing_docs)] // documentation missing in model
     FormFactor,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceArn,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceLabels,
+    #[allow(missing_docs)] // documentation missing in model
     Manufacturer,
+    #[allow(missing_docs)] // documentation missing in model
     Model,
+    #[allow(missing_docs)] // documentation missing in model
     OsVersion,
+    #[allow(missing_docs)] // documentation missing in model
     Platform,
+    #[allow(missing_docs)] // documentation missing in model
     RemoteAccessEnabled,
+    #[allow(missing_docs)] // documentation missing in model
     RemoteDebugEnabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2087,6 +2505,7 @@ impl std::str::FromStr for DeviceAttribute {
     }
 }
 impl DeviceAttribute {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeviceAttribute::AppiumVersion => "APPIUM_VERSION",
@@ -2105,6 +2524,7 @@ impl DeviceAttribute {
             DeviceAttribute::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "APPIUM_VERSION",
@@ -2129,6 +2549,7 @@ impl AsRef<str> for DeviceAttribute {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2140,7 +2561,9 @@ impl AsRef<str> for DeviceAttribute {
     std::hash::Hash,
 )]
 pub enum DevicePoolType {
+    #[allow(missing_docs)] // documentation missing in model
     Curated,
+    #[allow(missing_docs)] // documentation missing in model
     Private,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2162,6 +2585,7 @@ impl std::str::FromStr for DevicePoolType {
     }
 }
 impl DevicePoolType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DevicePoolType::Curated => "CURATED",
@@ -2169,6 +2593,7 @@ impl DevicePoolType {
             DevicePoolType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CURATED", "PRIVATE"]
     }
@@ -2227,6 +2652,7 @@ pub mod device_instance {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2236,16 +2662,23 @@ pub mod device_instance {
             self.device_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the device.</p>
         pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_arn = input;
             self
         }
+        /// Appends an item to `labels`.
+        ///
+        /// To override the contents of this collection use [`set_labels`](Self::set_labels).
+        ///
+        /// <p>An array of strings that describe the device instance.</p>
         pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.labels.unwrap_or_default();
             v.push(input.into());
             self.labels = Some(v);
             self
         }
+        /// <p>An array of strings that describe the device instance.</p>
         pub fn set_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2258,6 +2691,7 @@ pub mod device_instance {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the device instance. Valid values are listed here.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::InstanceStatus>,
@@ -2270,6 +2704,7 @@ pub mod device_instance {
             self.udid = Some(input.into());
             self
         }
+        /// <p>Unique device identifier for the device instance.</p>
         pub fn set_udid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.udid = input;
             self
@@ -2279,6 +2714,7 @@ pub mod device_instance {
             self.instance_profile = Some(input);
             self
         }
+        /// <p>A object that contains information about the instance profile.</p>
         pub fn set_instance_profile(
             mut self,
             input: std::option::Option<crate::model::InstanceProfile>,
@@ -2306,6 +2742,7 @@ impl DeviceInstance {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2317,9 +2754,13 @@ impl DeviceInstance {
     std::hash::Hash,
 )]
 pub enum InstanceStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     InUse,
+    #[allow(missing_docs)] // documentation missing in model
     NotAvailable,
+    #[allow(missing_docs)] // documentation missing in model
     Preparing,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2343,6 +2784,7 @@ impl std::str::FromStr for InstanceStatus {
     }
 }
 impl InstanceStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InstanceStatus::Available => "AVAILABLE",
@@ -2352,6 +2794,7 @@ impl InstanceStatus {
             InstanceStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "IN_USE", "NOT_AVAILABLE", "PREPARING"]
     }
@@ -2399,6 +2842,8 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>One part of a key-value pair that makes up a tag. A <code>key</code> is a general label that acts like a
+        /// category for more specific tag values.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -2409,6 +2854,8 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The optional part of a key-value pair that makes up a tag. A <code>value</code> acts as a descriptor in a
+        /// tag category (key).</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -2513,7 +2960,7 @@ pub struct Run {
     /// </ul>
     pub platform: std::option::Option<crate::model::DevicePlatform>,
     /// <p>When the run was created.</p>
-    pub created: std::option::Option<smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The run's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
@@ -2573,9 +3020,9 @@ pub struct Run {
     /// </ul>
     pub result: std::option::Option<crate::model::ExecutionResult>,
     /// <p>The run's start time.</p>
-    pub started: std::option::Option<smithy_types::Instant>,
+    pub started: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The run's stop time.</p>
-    pub stopped: std::option::Option<smithy_types::Instant>,
+    pub stopped: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The run's result counters.</p>
     pub counters: std::option::Option<crate::model::Counters>,
     /// <p>A message about the run's result.</p>
@@ -2682,11 +3129,11 @@ pub mod run {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::TestType>,
         pub(crate) platform: std::option::Option<crate::model::DevicePlatform>,
-        pub(crate) created: std::option::Option<smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::ExecutionStatus>,
         pub(crate) result: std::option::Option<crate::model::ExecutionResult>,
-        pub(crate) started: std::option::Option<smithy_types::Instant>,
-        pub(crate) stopped: std::option::Option<smithy_types::Instant>,
+        pub(crate) started: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) stopped: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) counters: std::option::Option<crate::model::Counters>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) total_jobs: std::option::Option<i32>,
@@ -2718,6 +3165,7 @@ pub mod run {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The run's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2727,6 +3175,7 @@ pub mod run {
             self.name = Some(input.into());
             self
         }
+        /// <p>The run's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2797,6 +3246,68 @@ pub mod run {
             self.r#type = Some(input);
             self
         }
+        /// <p>The run's type.</p>
+        /// <p>Must be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>BUILTIN_FUZZ</p>
+        /// </li>
+        /// <li>
+        /// <p>BUILTIN_EXPLORER</p>
+        /// <note>
+        /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing
+        /// screenshots at the same time.</p>
+        /// </note>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_JAVA_JUNIT</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_JAVA_TESTNG</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_PYTHON</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_NODE</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_RUBY</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_JAVA_JUNIT</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_JAVA_TESTNG</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_PYTHON</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_NODE</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_RUBY</p>
+        /// </li>
+        /// <li>
+        /// <p>CALABASH</p>
+        /// </li>
+        /// <li>
+        /// <p>INSTRUMENTATION</p>
+        /// </li>
+        /// <li>
+        /// <p>UIAUTOMATION</p>
+        /// </li>
+        /// <li>
+        /// <p>UIAUTOMATOR</p>
+        /// </li>
+        /// <li>
+        /// <p>XCTEST</p>
+        /// </li>
+        /// <li>
+        /// <p>XCTEST_UI</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::TestType>) -> Self {
             self.r#type = input;
             self
@@ -2815,6 +3326,16 @@ pub mod run {
             self.platform = Some(input);
             self
         }
+        /// <p>The run's platform.</p>
+        /// <p>Allowed values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>ANDROID</p>
+        /// </li>
+        /// <li>
+        /// <p>IOS</p>
+        /// </li>
+        /// </ul>
         pub fn set_platform(
             mut self,
             input: std::option::Option<crate::model::DevicePlatform>,
@@ -2823,11 +3344,15 @@ pub mod run {
             self
         }
         /// <p>When the run was created.</p>
-        pub fn created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created = Some(input);
             self
         }
-        pub fn set_created(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>When the run was created.</p>
+        pub fn set_created(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created = input;
             self
         }
@@ -2866,6 +3391,37 @@ pub mod run {
             self.status = Some(input);
             self
         }
+        /// <p>The run's status.</p>
+        /// <p>Allowed values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>PENDING</p>
+        /// </li>
+        /// <li>
+        /// <p>PENDING_CONCURRENCY</p>
+        /// </li>
+        /// <li>
+        /// <p>PENDING_DEVICE</p>
+        /// </li>
+        /// <li>
+        /// <p>PROCESSING</p>
+        /// </li>
+        /// <li>
+        /// <p>SCHEDULING</p>
+        /// </li>
+        /// <li>
+        /// <p>PREPARING</p>
+        /// </li>
+        /// <li>
+        /// <p>RUNNING</p>
+        /// </li>
+        /// <li>
+        /// <p>COMPLETED</p>
+        /// </li>
+        /// <li>
+        /// <p>STOPPING</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ExecutionStatus>,
@@ -2902,6 +3458,31 @@ pub mod run {
             self.result = Some(input);
             self
         }
+        /// <p>The run's result.</p>
+        /// <p>Allowed values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>PENDING</p>
+        /// </li>
+        /// <li>
+        /// <p>PASSED</p>
+        /// </li>
+        /// <li>
+        /// <p>WARNED</p>
+        /// </li>
+        /// <li>
+        /// <p>FAILED</p>
+        /// </li>
+        /// <li>
+        /// <p>SKIPPED</p>
+        /// </li>
+        /// <li>
+        /// <p>ERRORED</p>
+        /// </li>
+        /// <li>
+        /// <p>STOPPED</p>
+        /// </li>
+        /// </ul>
         pub fn set_result(
             mut self,
             input: std::option::Option<crate::model::ExecutionResult>,
@@ -2910,20 +3491,28 @@ pub mod run {
             self
         }
         /// <p>The run's start time.</p>
-        pub fn started(mut self, input: smithy_types::Instant) -> Self {
+        pub fn started(mut self, input: aws_smithy_types::Instant) -> Self {
             self.started = Some(input);
             self
         }
-        pub fn set_started(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The run's start time.</p>
+        pub fn set_started(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.started = input;
             self
         }
         /// <p>The run's stop time.</p>
-        pub fn stopped(mut self, input: smithy_types::Instant) -> Self {
+        pub fn stopped(mut self, input: aws_smithy_types::Instant) -> Self {
             self.stopped = Some(input);
             self
         }
-        pub fn set_stopped(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The run's stop time.</p>
+        pub fn set_stopped(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.stopped = input;
             self
         }
@@ -2932,6 +3521,7 @@ pub mod run {
             self.counters = Some(input);
             self
         }
+        /// <p>The run's result counters.</p>
         pub fn set_counters(mut self, input: std::option::Option<crate::model::Counters>) -> Self {
             self.counters = input;
             self
@@ -2941,6 +3531,7 @@ pub mod run {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message about the run's result.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2950,6 +3541,7 @@ pub mod run {
             self.total_jobs = Some(input);
             self
         }
+        /// <p>The total number of jobs for the run.</p>
         pub fn set_total_jobs(mut self, input: std::option::Option<i32>) -> Self {
             self.total_jobs = input;
             self
@@ -2959,6 +3551,7 @@ pub mod run {
             self.completed_jobs = Some(input);
             self
         }
+        /// <p>The total number of completed jobs.</p>
         pub fn set_completed_jobs(mut self, input: std::option::Option<i32>) -> Self {
             self.completed_jobs = input;
             self
@@ -2974,6 +3567,13 @@ pub mod run {
             self.billing_method = Some(input);
             self
         }
+        /// <p>Specifies the billing method for a test run: <code>metered</code> or
+        /// <code>unmetered</code>. If the parameter is not specified, the default value is
+        /// <code>metered</code>.</p>
+        /// <note>
+        /// <p>If you have unmetered device slots, you must set this to <code>unmetered</code> to use them.
+        /// Otherwise, the run is counted toward metered device minutes.</p>
+        /// </note>
         pub fn set_billing_method(
             mut self,
             input: std::option::Option<crate::model::BillingMethod>,
@@ -2986,6 +3586,7 @@ pub mod run {
             self.device_minutes = Some(input);
             self
         }
+        /// <p>Represents the total (metered or unmetered) minutes used by the test run.</p>
         pub fn set_device_minutes(
             mut self,
             input: std::option::Option<crate::model::DeviceMinutes>,
@@ -2998,6 +3599,7 @@ pub mod run {
             self.network_profile = Some(input);
             self
         }
+        /// <p>The network profile being used for a test run.</p>
         pub fn set_network_profile(
             mut self,
             input: std::option::Option<crate::model::NetworkProfile>,
@@ -3012,6 +3614,9 @@ pub mod run {
             self.parsing_result_url = Some(input.into());
             self
         }
+        /// <p>Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package.
+        /// If the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points
+        /// to.</p>
         pub fn set_parsing_result_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3025,6 +3630,8 @@ pub mod run {
             self.result_code = Some(input);
             self
         }
+        /// <p>Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+        /// <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.</p>
         pub fn set_result_code(
             mut self,
             input: std::option::Option<crate::model::ExecutionResultCode>,
@@ -3038,6 +3645,8 @@ pub mod run {
             self.seed = Some(input);
             self
         }
+        /// <p>For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same
+        /// seed value between tests ensures identical event sequences.</p>
         pub fn set_seed(mut self, input: std::option::Option<i32>) -> Self {
             self.seed = input;
             self
@@ -3047,6 +3656,7 @@ pub mod run {
             self.app_upload = Some(input.into());
             self
         }
+        /// <p>An app to upload or that has been uploaded.</p>
         pub fn set_app_upload(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_upload = input;
             self
@@ -3057,6 +3667,8 @@ pub mod run {
             self.event_count = Some(input);
             self
         }
+        /// <p>For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz
+        /// test should perform.</p>
         pub fn set_event_count(mut self, input: std::option::Option<i32>) -> Self {
             self.event_count = input;
             self
@@ -3066,6 +3678,7 @@ pub mod run {
             self.job_timeout_minutes = Some(input);
             self
         }
+        /// <p>The number of minutes the job executes before it times out.</p>
         pub fn set_job_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.job_timeout_minutes = input;
             self
@@ -3075,6 +3688,7 @@ pub mod run {
             self.device_pool_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the device pool for the run.</p>
         pub fn set_device_pool_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3087,6 +3701,7 @@ pub mod run {
             self.locale = Some(input.into());
             self
         }
+        /// <p>Information about the locale that is used for the run.</p>
         pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale = input;
             self
@@ -3096,6 +3711,7 @@ pub mod run {
             self.radios = Some(input);
             self
         }
+        /// <p>Information about the radio states for the run.</p>
         pub fn set_radios(mut self, input: std::option::Option<crate::model::Radios>) -> Self {
             self.radios = input;
             self
@@ -3105,6 +3721,7 @@ pub mod run {
             self.location = Some(input);
             self
         }
+        /// <p>Information about the location that is used for the run.</p>
         pub fn set_location(mut self, input: std::option::Option<crate::model::Location>) -> Self {
             self.location = input;
             self
@@ -3117,6 +3734,7 @@ pub mod run {
             self.customer_artifact_paths = Some(input);
             self
         }
+        /// <p>Output <code>CustomerArtifactPaths</code> object for the test run.</p>
         pub fn set_customer_artifact_paths(
             mut self,
             input: std::option::Option<crate::model::CustomerArtifactPaths>,
@@ -3129,6 +3747,7 @@ pub mod run {
             self.web_url = Some(input.into());
             self
         }
+        /// <p>The Device Farm console URL for the recording of the run.</p>
         pub fn set_web_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.web_url = input;
             self
@@ -3141,6 +3760,10 @@ pub mod run {
             self.skip_app_resign = Some(input);
             self
         }
+        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
+        /// devices, Device Farm always signs your apps again.</p>
+        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device
+        /// Farm FAQs</i>.</p>
         pub fn set_skip_app_resign(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_app_resign = input;
             self
@@ -3150,6 +3773,7 @@ pub mod run {
             self.test_spec_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the YAML-formatted test specification for the run.</p>
         pub fn set_test_spec_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3165,6 +3789,7 @@ pub mod run {
             self.device_selection_result = Some(input);
             self
         }
+        /// <p>The results of a device filter used to select the devices for a test run.</p>
         pub fn set_device_selection_result(
             mut self,
             input: std::option::Option<crate::model::DeviceSelectionResult>,
@@ -3250,12 +3875,18 @@ pub mod device_selection_result {
         pub(crate) max_devices: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The filters in a device selection result.</p>
         pub fn filters(mut self, input: impl Into<crate::model::DeviceFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>The filters in a device selection result.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeviceFilter>>,
@@ -3268,6 +3899,7 @@ pub mod device_selection_result {
             self.matched_devices_count = Some(input);
             self
         }
+        /// <p>The number of devices that matched the device filter selection criteria.</p>
         pub fn set_matched_devices_count(mut self, input: std::option::Option<i32>) -> Self {
             self.matched_devices_count = input;
             self
@@ -3278,6 +3910,8 @@ pub mod device_selection_result {
             self.max_devices = Some(input);
             self
         }
+        /// <p>The maximum number of devices to be selected by a device filter and included in a test
+        /// run.</p>
         pub fn set_max_devices(mut self, input: std::option::Option<i32>) -> Self {
             self.max_devices = input;
             self
@@ -3545,6 +4179,94 @@ pub mod device_filter {
             self.attribute = Some(input);
             self
         }
+        /// <p>The aspect of a device such as platform or model used as the selection criteria in a
+        /// device filter.</p>
+        /// <p>The supported operators for each attribute are provided in the following list.</p>
+        /// <dl>
+        /// <dt>ARN</dt>
+        /// <dd>
+        /// <p>The Amazon Resource Name (ARN) of the device (for example,
+        /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code>
+        /// </p>
+        /// </dd>
+        /// <dt>PLATFORM</dt>
+        /// <dd>
+        /// <p>The device platform. Valid values are ANDROID or IOS.</p>
+        /// <p>Supported operators: <code>EQUALS</code>
+        /// </p>
+        /// </dd>
+        /// <dt>OS_VERSION</dt>
+        /// <dd>
+        /// <p>The operating system version (for example, 10.3.2).</p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>GREATER_THAN</code>,
+        /// <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>,
+        /// <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>,
+        /// <code>NOT_IN</code>
+        /// </p>
+        /// </dd>
+        /// <dt>MODEL</dt>
+        /// <dd>
+        /// <p>The device model (for example, iPad 5th Gen).</p>
+        /// <p>Supported operators: <code>CONTAINS</code>, <code>EQUALS</code>,
+        /// <code>IN</code>, <code>NOT_IN</code>
+        /// </p>
+        /// </dd>
+        /// <dt>AVAILABILITY</dt>
+        /// <dd>
+        /// <p>The current availability of the device. Valid values are AVAILABLE,
+        /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
+        /// <p>Supported operators: <code>EQUALS</code>
+        /// </p>
+        /// </dd>
+        /// <dt>FORM_FACTOR</dt>
+        /// <dd>
+        /// <p>The device form factor. Valid values are PHONE or TABLET.</p>
+        /// <p>Supported operators: <code>EQUALS</code>
+        /// </p>
+        /// </dd>
+        /// <dt>MANUFACTURER</dt>
+        /// <dd>
+        /// <p>The device manufacturer (for example, Apple).</p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>,
+        /// <code>NOT_IN</code>
+        /// </p>
+        /// </dd>
+        /// <dt>REMOTE_ACCESS_ENABLED</dt>
+        /// <dd>
+        /// <p>Whether the device is enabled for remote access. Valid values are TRUE or
+        /// FALSE.</p>
+        /// <p>Supported operators: <code>EQUALS</code>
+        /// </p>
+        /// </dd>
+        /// <dt>REMOTE_DEBUG_ENABLED</dt>
+        /// <dd>
+        /// <p>Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE.</p>
+        /// <p>Supported operators: <code>EQUALS</code>
+        /// </p>
+        /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+        /// supported</a>, this filter is ignored.</p>
+        /// </dd>
+        /// <dt>INSTANCE_ARN</dt>
+        /// <dd>
+        /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
+        /// <p>Supported operators: <code>EQUALS</code>, <code>IN</code>,
+        /// <code>NOT_IN</code>
+        /// </p>
+        /// </dd>
+        /// <dt>INSTANCE_LABELS</dt>
+        /// <dd>
+        /// <p>The label of the device instance.</p>
+        /// <p>Supported operators: <code>CONTAINS</code>
+        /// </p>
+        /// </dd>
+        /// <dt>FLEET_TYPE</dt>
+        /// <dd>
+        /// <p>The fleet type. Valid values are PUBLIC or PRIVATE.</p>
+        /// <p>Supported operators: <code>EQUALS</code>
+        /// </p>
+        /// </dd>
+        /// </dl>
         pub fn set_attribute(
             mut self,
             input: std::option::Option<crate::model::DeviceFilterAttribute>,
@@ -3558,6 +4280,8 @@ pub mod device_filter {
             self.operator = Some(input);
             self
         }
+        /// <p>Specifies how Device Farm compares the filter's attribute to the value. See the attribute
+        /// descriptions.</p>
         pub fn set_operator(
             mut self,
             input: std::option::Option<crate::model::RuleOperator>,
@@ -3565,12 +4289,78 @@ pub mod device_filter {
             self.operator = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>An array of one or more filter values used in a device filter.</p>
+        /// <p class="title">
+        /// <b>Operator Values</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>The IN and NOT_IN operators can take a values array that has more than one
+        /// element.</p>
+        /// </li>
+        /// <li>
+        /// <p>The other operators require an array with a single element.</p>
+        /// </li>
+        /// </ul>
+        /// <p class="title">
+        /// <b>Attribute Values</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p>
+        /// </li>
+        /// <li>
+        /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or
+        /// TEMPORARY_NOT_AVAILABLE.</p>
+        /// </li>
+        /// <li>
+        /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p>
+        /// </li>
+        /// <li>
+        /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p>
+        /// </li>
+        /// </ul>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>An array of one or more filter values used in a device filter.</p>
+        /// <p class="title">
+        /// <b>Operator Values</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>The IN and NOT_IN operators can take a values array that has more than one
+        /// element.</p>
+        /// </li>
+        /// <li>
+        /// <p>The other operators require an array with a single element.</p>
+        /// </li>
+        /// </ul>
+        /// <p class="title">
+        /// <b>Attribute Values</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p>
+        /// </li>
+        /// <li>
+        /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or
+        /// TEMPORARY_NOT_AVAILABLE.</p>
+        /// </li>
+        /// <li>
+        /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p>
+        /// </li>
+        /// <li>
+        /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p>
+        /// </li>
+        /// </ul>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3595,6 +4385,7 @@ impl DeviceFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3606,17 +4397,29 @@ impl DeviceFilter {
     std::hash::Hash,
 )]
 pub enum DeviceFilterAttribute {
+    #[allow(missing_docs)] // documentation missing in model
     Arn,
+    #[allow(missing_docs)] // documentation missing in model
     Availability,
+    #[allow(missing_docs)] // documentation missing in model
     FleetType,
+    #[allow(missing_docs)] // documentation missing in model
     FormFactor,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceArn,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceLabels,
+    #[allow(missing_docs)] // documentation missing in model
     Manufacturer,
+    #[allow(missing_docs)] // documentation missing in model
     Model,
+    #[allow(missing_docs)] // documentation missing in model
     OsVersion,
+    #[allow(missing_docs)] // documentation missing in model
     Platform,
+    #[allow(missing_docs)] // documentation missing in model
     RemoteAccessEnabled,
+    #[allow(missing_docs)] // documentation missing in model
     RemoteDebugEnabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3648,6 +4451,7 @@ impl std::str::FromStr for DeviceFilterAttribute {
     }
 }
 impl DeviceFilterAttribute {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeviceFilterAttribute::Arn => "ARN",
@@ -3665,6 +4469,7 @@ impl DeviceFilterAttribute {
             DeviceFilterAttribute::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ARN",
@@ -3727,12 +4532,20 @@ pub mod customer_artifact_paths {
         pub(crate) device_host_paths: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `ios_paths`.
+        ///
+        /// To override the contents of this collection use [`set_ios_paths`](Self::set_ios_paths).
+        ///
+        /// <p>Comma-separated list of paths on the iOS device where the artifacts generated by the customer's tests
+        /// are pulled from.</p>
         pub fn ios_paths(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ios_paths.unwrap_or_default();
             v.push(input.into());
             self.ios_paths = Some(v);
             self
         }
+        /// <p>Comma-separated list of paths on the iOS device where the artifacts generated by the customer's tests
+        /// are pulled from.</p>
         pub fn set_ios_paths(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3740,12 +4553,20 @@ pub mod customer_artifact_paths {
             self.ios_paths = input;
             self
         }
+        /// Appends an item to `android_paths`.
+        ///
+        /// To override the contents of this collection use [`set_android_paths`](Self::set_android_paths).
+        ///
+        /// <p>Comma-separated list of paths on the Android device where the artifacts generated by the customer's
+        /// tests are pulled from.</p>
         pub fn android_paths(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.android_paths.unwrap_or_default();
             v.push(input.into());
             self.android_paths = Some(v);
             self
         }
+        /// <p>Comma-separated list of paths on the Android device where the artifacts generated by the customer's
+        /// tests are pulled from.</p>
         pub fn set_android_paths(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3753,12 +4574,20 @@ pub mod customer_artifact_paths {
             self.android_paths = input;
             self
         }
+        /// Appends an item to `device_host_paths`.
+        ///
+        /// To override the contents of this collection use [`set_device_host_paths`](Self::set_device_host_paths).
+        ///
+        /// <p>Comma-separated list of paths in the test execution environment where the artifacts generated by the
+        /// customer's tests are pulled from.</p>
         pub fn device_host_paths(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.device_host_paths.unwrap_or_default();
             v.push(input.into());
             self.device_host_paths = Some(v);
             self
         }
+        /// <p>Comma-separated list of paths in the test execution environment where the artifacts generated by the
+        /// customer's tests are pulled from.</p>
         pub fn set_device_host_paths(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3817,6 +4646,7 @@ pub mod location {
             self.latitude = Some(input);
             self
         }
+        /// <p>The latitude.</p>
         pub fn set_latitude(mut self, input: std::option::Option<f64>) -> Self {
             self.latitude = input;
             self
@@ -3826,6 +4656,7 @@ pub mod location {
             self.longitude = Some(input);
             self
         }
+        /// <p>The longitude.</p>
         pub fn set_longitude(mut self, input: std::option::Option<f64>) -> Self {
             self.longitude = input;
             self
@@ -3887,6 +4718,7 @@ pub mod radios {
             self.wifi = Some(input);
             self
         }
+        /// <p>True if Wi-Fi is enabled at the beginning of the test. Otherwise, false.</p>
         pub fn set_wifi(mut self, input: std::option::Option<bool>) -> Self {
             self.wifi = input;
             self
@@ -3896,6 +4728,7 @@ pub mod radios {
             self.bluetooth = Some(input);
             self
         }
+        /// <p>True if Bluetooth is enabled at the beginning of the test. Otherwise, false.</p>
         pub fn set_bluetooth(mut self, input: std::option::Option<bool>) -> Self {
             self.bluetooth = input;
             self
@@ -3905,6 +4738,7 @@ pub mod radios {
             self.nfc = Some(input);
             self
         }
+        /// <p>True if NFC is enabled at the beginning of the test. Otherwise, false.</p>
         pub fn set_nfc(mut self, input: std::option::Option<bool>) -> Self {
             self.nfc = input;
             self
@@ -3914,6 +4748,7 @@ pub mod radios {
             self.gps = Some(input);
             self
         }
+        /// <p>True if GPS is enabled at the beginning of the test. Otherwise, false.</p>
         pub fn set_gps(mut self, input: std::option::Option<bool>) -> Self {
             self.gps = input;
             self
@@ -3936,6 +4771,7 @@ impl Radios {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3947,7 +4783,9 @@ impl Radios {
     std::hash::Hash,
 )]
 pub enum ExecutionResultCode {
+    #[allow(missing_docs)] // documentation missing in model
     ParsingFailed,
+    #[allow(missing_docs)] // documentation missing in model
     VpcEndpointSetupFailed,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3969,6 +4807,7 @@ impl std::str::FromStr for ExecutionResultCode {
     }
 }
 impl ExecutionResultCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExecutionResultCode::ParsingFailed => "PARSING_FAILED",
@@ -3976,6 +4815,7 @@ impl ExecutionResultCode {
             ExecutionResultCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PARSING_FAILED", "VPC_ENDPOINT_SETUP_FAILED"]
     }
@@ -4027,6 +4867,8 @@ pub mod device_minutes {
             self.total = Some(input);
             self
         }
+        /// <p>When specified, represents the total minutes used by the resource to run
+        /// tests.</p>
         pub fn set_total(mut self, input: std::option::Option<f64>) -> Self {
             self.total = input;
             self
@@ -4037,6 +4879,8 @@ pub mod device_minutes {
             self.metered = Some(input);
             self
         }
+        /// <p>When specified, represents only the sum of metered minutes used by the resource to
+        /// run tests.</p>
         pub fn set_metered(mut self, input: std::option::Option<f64>) -> Self {
             self.metered = input;
             self
@@ -4047,6 +4891,8 @@ pub mod device_minutes {
             self.unmetered = Some(input);
             self
         }
+        /// <p>When specified, represents only the sum of unmetered minutes used by the resource
+        /// to run tests.</p>
         pub fn set_unmetered(mut self, input: std::option::Option<f64>) -> Self {
             self.unmetered = input;
             self
@@ -4068,6 +4914,7 @@ impl DeviceMinutes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4079,7 +4926,9 @@ impl DeviceMinutes {
     std::hash::Hash,
 )]
 pub enum BillingMethod {
+    #[allow(missing_docs)] // documentation missing in model
     Metered,
+    #[allow(missing_docs)] // documentation missing in model
     Unmetered,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4101,6 +4950,7 @@ impl std::str::FromStr for BillingMethod {
     }
 }
 impl BillingMethod {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BillingMethod::Metered => "METERED",
@@ -4108,6 +4958,7 @@ impl BillingMethod {
             BillingMethod::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["METERED", "UNMETERED"]
     }
@@ -4170,6 +5021,7 @@ pub mod counters {
             self.total = Some(input);
             self
         }
+        /// <p>The total number of entities.</p>
         pub fn set_total(mut self, input: std::option::Option<i32>) -> Self {
             self.total = input;
             self
@@ -4179,6 +5031,7 @@ pub mod counters {
             self.passed = Some(input);
             self
         }
+        /// <p>The number of passed entities.</p>
         pub fn set_passed(mut self, input: std::option::Option<i32>) -> Self {
             self.passed = input;
             self
@@ -4188,6 +5041,7 @@ pub mod counters {
             self.failed = Some(input);
             self
         }
+        /// <p>The number of failed entities.</p>
         pub fn set_failed(mut self, input: std::option::Option<i32>) -> Self {
             self.failed = input;
             self
@@ -4197,6 +5051,7 @@ pub mod counters {
             self.warned = Some(input);
             self
         }
+        /// <p>The number of warned entities.</p>
         pub fn set_warned(mut self, input: std::option::Option<i32>) -> Self {
             self.warned = input;
             self
@@ -4206,6 +5061,7 @@ pub mod counters {
             self.errored = Some(input);
             self
         }
+        /// <p>The number of errored entities.</p>
         pub fn set_errored(mut self, input: std::option::Option<i32>) -> Self {
             self.errored = input;
             self
@@ -4215,6 +5071,7 @@ pub mod counters {
             self.stopped = Some(input);
             self
         }
+        /// <p>The number of stopped entities.</p>
         pub fn set_stopped(mut self, input: std::option::Option<i32>) -> Self {
             self.stopped = input;
             self
@@ -4224,6 +5081,7 @@ pub mod counters {
             self.skipped = Some(input);
             self
         }
+        /// <p>The number of skipped entities.</p>
         pub fn set_skipped(mut self, input: std::option::Option<i32>) -> Self {
             self.skipped = input;
             self
@@ -4249,6 +5107,7 @@ impl Counters {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4260,12 +5119,19 @@ impl Counters {
     std::hash::Hash,
 )]
 pub enum ExecutionResult {
+    #[allow(missing_docs)] // documentation missing in model
     Errored,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Passed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Skipped,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Warned,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4292,6 +5158,7 @@ impl std::str::FromStr for ExecutionResult {
     }
 }
 impl ExecutionResult {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExecutionResult::Errored => "ERRORED",
@@ -4304,6 +5171,7 @@ impl ExecutionResult {
             ExecutionResult::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ERRORED", "FAILED", "PASSED", "PENDING", "SKIPPED", "STOPPED", "WARNED",
@@ -4316,6 +5184,7 @@ impl AsRef<str> for ExecutionResult {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4327,14 +5196,23 @@ impl AsRef<str> for ExecutionResult {
     std::hash::Hash,
 )]
 pub enum ExecutionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     PendingConcurrnecy,
+    #[allow(missing_docs)] // documentation missing in model
     PendingDevice,
+    #[allow(missing_docs)] // documentation missing in model
     Preparing,
+    #[allow(missing_docs)] // documentation missing in model
     Processing,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Scheduling,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4363,6 +5241,7 @@ impl std::str::FromStr for ExecutionStatus {
     }
 }
 impl ExecutionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExecutionStatus::Completed => "COMPLETED",
@@ -4377,6 +5256,7 @@ impl ExecutionStatus {
             ExecutionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -4397,6 +5277,7 @@ impl AsRef<str> for ExecutionStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4408,7 +5289,9 @@ impl AsRef<str> for ExecutionStatus {
     std::hash::Hash,
 )]
 pub enum DevicePlatform {
+    #[allow(missing_docs)] // documentation missing in model
     Android,
+    #[allow(missing_docs)] // documentation missing in model
     Ios,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4430,6 +5313,7 @@ impl std::str::FromStr for DevicePlatform {
     }
 }
 impl DevicePlatform {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DevicePlatform::Android => "ANDROID",
@@ -4437,6 +5321,7 @@ impl DevicePlatform {
             DevicePlatform::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ANDROID", "IOS"]
     }
@@ -4447,6 +5332,7 @@ impl AsRef<str> for DevicePlatform {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4458,26 +5344,47 @@ impl AsRef<str> for DevicePlatform {
     std::hash::Hash,
 )]
 pub enum TestType {
+    #[allow(missing_docs)] // documentation missing in model
     AppiumJavaJunit,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumJavaTestng,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumNode,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumPython,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumRuby,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumWebJavaJunit,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumWebJavaTestng,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumWebNode,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumWebPython,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumWebRuby,
+    #[allow(missing_docs)] // documentation missing in model
     BuiltinExplorer,
+    #[allow(missing_docs)] // documentation missing in model
     BuiltinFuzz,
+    #[allow(missing_docs)] // documentation missing in model
     Calabash,
+    #[allow(missing_docs)] // documentation missing in model
     Instrumentation,
+    #[allow(missing_docs)] // documentation missing in model
     RemoteAccessRecord,
+    #[allow(missing_docs)] // documentation missing in model
     RemoteAccessReplay,
+    #[allow(missing_docs)] // documentation missing in model
     Uiautomation,
+    #[allow(missing_docs)] // documentation missing in model
     Uiautomator,
+    #[allow(missing_docs)] // documentation missing in model
     WebPerformanceProfile,
+    #[allow(missing_docs)] // documentation missing in model
     Xctest,
+    #[allow(missing_docs)] // documentation missing in model
     XctestUi,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4518,6 +5425,7 @@ impl std::str::FromStr for TestType {
     }
 }
 impl TestType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TestType::AppiumJavaJunit => "APPIUM_JAVA_JUNIT",
@@ -4544,6 +5452,7 @@ impl TestType {
             TestType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "APPIUM_JAVA_JUNIT",
@@ -4585,7 +5494,7 @@ pub struct RemoteAccessSession {
     /// <p>The name of the remote access session.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The date and time the remote access session was created.</p>
-    pub created: std::option::Option<smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the remote access session. Can be any of the following:</p>
     /// <ul>
     /// <li>
@@ -4645,9 +5554,9 @@ pub struct RemoteAccessSession {
     /// <p>A message about the remote access session.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The date and time the remote access session was started.</p>
-    pub started: std::option::Option<smithy_types::Instant>,
+    pub started: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time the remote access session was stopped.</p>
-    pub stopped: std::option::Option<smithy_types::Instant>,
+    pub stopped: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The device (phone or tablet) used in the remote access session.</p>
     pub device: std::option::Option<crate::model::Device>,
     /// <p>The ARN of the instance.</p>
@@ -4745,12 +5654,12 @@ pub mod remote_access_session {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) created: std::option::Option<smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::ExecutionStatus>,
         pub(crate) result: std::option::Option<crate::model::ExecutionResult>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) started: std::option::Option<smithy_types::Instant>,
-        pub(crate) stopped: std::option::Option<smithy_types::Instant>,
+        pub(crate) started: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) stopped: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) device: std::option::Option<crate::model::Device>,
         pub(crate) instance_arn: std::option::Option<std::string::String>,
         pub(crate) remote_debug_enabled: std::option::Option<bool>,
@@ -4771,6 +5680,7 @@ pub mod remote_access_session {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the remote access session.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -4780,16 +5690,21 @@ pub mod remote_access_session {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the remote access session.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
         /// <p>The date and time the remote access session was created.</p>
-        pub fn created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created = Some(input);
             self
         }
-        pub fn set_created(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time the remote access session was created.</p>
+        pub fn set_created(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created = input;
             self
         }
@@ -4827,6 +5742,36 @@ pub mod remote_access_session {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the remote access session. Can be any of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>PENDING.</p>
+        /// </li>
+        /// <li>
+        /// <p>PENDING_CONCURRENCY.</p>
+        /// </li>
+        /// <li>
+        /// <p>PENDING_DEVICE.</p>
+        /// </li>
+        /// <li>
+        /// <p>PROCESSING.</p>
+        /// </li>
+        /// <li>
+        /// <p>SCHEDULING.</p>
+        /// </li>
+        /// <li>
+        /// <p>PREPARING.</p>
+        /// </li>
+        /// <li>
+        /// <p>RUNNING.</p>
+        /// </li>
+        /// <li>
+        /// <p>COMPLETED.</p>
+        /// </li>
+        /// <li>
+        /// <p>STOPPING.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ExecutionStatus>,
@@ -4862,6 +5807,30 @@ pub mod remote_access_session {
             self.result = Some(input);
             self
         }
+        /// <p>The result of the remote access session. Can be any of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>PENDING.</p>
+        /// </li>
+        /// <li>
+        /// <p>PASSED.</p>
+        /// </li>
+        /// <li>
+        /// <p>WARNED.</p>
+        /// </li>
+        /// <li>
+        /// <p>FAILED.</p>
+        /// </li>
+        /// <li>
+        /// <p>SKIPPED.</p>
+        /// </li>
+        /// <li>
+        /// <p>ERRORED.</p>
+        /// </li>
+        /// <li>
+        /// <p>STOPPED.</p>
+        /// </li>
+        /// </ul>
         pub fn set_result(
             mut self,
             input: std::option::Option<crate::model::ExecutionResult>,
@@ -4874,25 +5843,34 @@ pub mod remote_access_session {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message about the remote access session.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
         /// <p>The date and time the remote access session was started.</p>
-        pub fn started(mut self, input: smithy_types::Instant) -> Self {
+        pub fn started(mut self, input: aws_smithy_types::Instant) -> Self {
             self.started = Some(input);
             self
         }
-        pub fn set_started(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time the remote access session was started.</p>
+        pub fn set_started(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.started = input;
             self
         }
         /// <p>The date and time the remote access session was stopped.</p>
-        pub fn stopped(mut self, input: smithy_types::Instant) -> Self {
+        pub fn stopped(mut self, input: aws_smithy_types::Instant) -> Self {
             self.stopped = Some(input);
             self
         }
-        pub fn set_stopped(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time the remote access session was stopped.</p>
+        pub fn set_stopped(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.stopped = input;
             self
         }
@@ -4901,6 +5879,7 @@ pub mod remote_access_session {
             self.device = Some(input);
             self
         }
+        /// <p>The device (phone or tablet) used in the remote access session.</p>
         pub fn set_device(mut self, input: std::option::Option<crate::model::Device>) -> Self {
             self.device = input;
             self
@@ -4910,6 +5889,7 @@ pub mod remote_access_session {
             self.instance_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the instance.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_arn = input;
             self
@@ -4922,6 +5902,10 @@ pub mod remote_access_session {
             self.remote_debug_enabled = Some(input);
             self
         }
+        /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the remote
+        /// access session.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>.</p>
         pub fn set_remote_debug_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.remote_debug_enabled = input;
             self
@@ -4932,6 +5916,8 @@ pub mod remote_access_session {
             self.remote_record_enabled = Some(input);
             self
         }
+        /// <p>This flag is set to <code>true</code> if remote recording is enabled for the remote
+        /// access session.</p>
         pub fn set_remote_record_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.remote_record_enabled = input;
             self
@@ -4941,6 +5927,7 @@ pub mod remote_access_session {
             self.remote_record_app_arn = Some(input.into());
             self
         }
+        /// <p>The ARN for the app to be recorded in the remote access session.</p>
         pub fn set_remote_record_app_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4956,6 +5943,10 @@ pub mod remote_access_session {
             self.host_address = Some(input.into());
             self
         }
+        /// <p>IP address of the EC2 host where you need to connect to remotely debug devices.
+        /// Only returned if remote debugging is enabled for the remote access session.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>.</p>
         pub fn set_host_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_address = input;
             self
@@ -4968,6 +5959,10 @@ pub mod remote_access_session {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>Unique identifier of your client for the remote access session. Only returned if
+        /// remote debugging is enabled for the remote access session.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -4979,6 +5974,9 @@ pub mod remote_access_session {
             self.billing_method = Some(input);
             self
         }
+        /// <p>The billing method of the remote access session. Possible values include <code>METERED</code> or
+        /// <code>UNMETERED</code>. For more information about metered devices, see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device Farm
+        /// terminology</a>.</p>
         pub fn set_billing_method(
             mut self,
             input: std::option::Option<crate::model::BillingMethod>,
@@ -4992,6 +5990,8 @@ pub mod remote_access_session {
             self.device_minutes = Some(input);
             self
         }
+        /// <p>The number of minutes a device is used in a remote access session (including setup
+        /// and teardown minutes).</p>
         pub fn set_device_minutes(
             mut self,
             input: std::option::Option<crate::model::DeviceMinutes>,
@@ -5004,6 +6004,7 @@ pub mod remote_access_session {
             self.endpoint = Some(input.into());
             self
         }
+        /// <p>The endpoint for the remote access sesssion.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint = input;
             self
@@ -5016,6 +6017,10 @@ pub mod remote_access_session {
             self.device_udid = Some(input.into());
             self
         }
+        /// <p>Unique device identifier for the remote device. Only returned if remote debugging
+        /// is enabled for the remote access session.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>.</p>
         pub fn set_device_udid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_udid = input;
             self
@@ -5041,6 +6046,23 @@ pub mod remote_access_session {
             self.interaction_mode = Some(input);
             self
         }
+        /// <p>The interaction mode of the remote access session. Valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and
+        /// rotating the screen. You cannot run XCUITest framework-based tests in this
+        /// mode.</p>
+        /// </li>
+        /// <li>
+        /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This
+        /// mode has the fastest test execution speed. You can run XCUITest framework-based tests in this
+        /// mode.</p>
+        /// </li>
+        /// <li>
+        /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest
+        /// framework-based tests and watch the screen in this mode.</p>
+        /// </li>
+        /// </ul>
         pub fn set_interaction_mode(
             mut self,
             input: std::option::Option<crate::model::InteractionMode>,
@@ -5056,6 +6078,10 @@ pub mod remote_access_session {
             self.skip_app_resign = Some(input);
             self
         }
+        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
+        /// devices, Device Farm always signs your apps again.</p>
+        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device
+        /// Farm FAQs</i>.</p>
         pub fn set_skip_app_resign(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_app_resign = input;
             self
@@ -5095,6 +6121,7 @@ impl RemoteAccessSession {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5106,8 +6133,11 @@ impl RemoteAccessSession {
     std::hash::Hash,
 )]
 pub enum InteractionMode {
+    #[allow(missing_docs)] // documentation missing in model
     Interactive,
+    #[allow(missing_docs)] // documentation missing in model
     NoVideo,
+    #[allow(missing_docs)] // documentation missing in model
     VideoOnly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5130,6 +6160,7 @@ impl std::str::FromStr for InteractionMode {
     }
 }
 impl InteractionMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InteractionMode::Interactive => "INTERACTIVE",
@@ -5138,6 +6169,7 @@ impl InteractionMode {
             InteractionMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["INTERACTIVE", "NO_VIDEO", "VIDEO_ONLY"]
     }
@@ -5278,6 +6310,7 @@ pub mod device {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The device's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5287,6 +6320,7 @@ pub mod device {
             self.name = Some(input.into());
             self
         }
+        /// <p>The device's display name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5296,6 +6330,7 @@ pub mod device {
             self.manufacturer = Some(input.into());
             self
         }
+        /// <p>The device's manufacturer name.</p>
         pub fn set_manufacturer(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.manufacturer = input;
             self
@@ -5305,6 +6340,7 @@ pub mod device {
             self.model = Some(input.into());
             self
         }
+        /// <p>The device's model name.</p>
         pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model = input;
             self
@@ -5314,6 +6350,7 @@ pub mod device {
             self.model_id = Some(input.into());
             self
         }
+        /// <p>The device's model ID.</p>
         pub fn set_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_id = input;
             self
@@ -5332,6 +6369,16 @@ pub mod device {
             self.form_factor = Some(input);
             self
         }
+        /// <p>The device's form factor.</p>
+        /// <p>Allowed values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>PHONE</p>
+        /// </li>
+        /// <li>
+        /// <p>TABLET</p>
+        /// </li>
+        /// </ul>
         pub fn set_form_factor(
             mut self,
             input: std::option::Option<crate::model::DeviceFormFactor>,
@@ -5353,6 +6400,16 @@ pub mod device {
             self.platform = Some(input);
             self
         }
+        /// <p>The device's platform.</p>
+        /// <p>Allowed values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>ANDROID</p>
+        /// </li>
+        /// <li>
+        /// <p>IOS</p>
+        /// </li>
+        /// </ul>
         pub fn set_platform(
             mut self,
             input: std::option::Option<crate::model::DevicePlatform>,
@@ -5365,6 +6422,7 @@ pub mod device {
             self.os = Some(input.into());
             self
         }
+        /// <p>The device's operating system type.</p>
         pub fn set_os(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.os = input;
             self
@@ -5374,6 +6432,7 @@ pub mod device {
             self.cpu = Some(input);
             self
         }
+        /// <p>Information about the device's CPU.</p>
         pub fn set_cpu(mut self, input: std::option::Option<crate::model::Cpu>) -> Self {
             self.cpu = input;
             self
@@ -5383,6 +6442,7 @@ pub mod device {
             self.resolution = Some(input);
             self
         }
+        /// <p>The resolution of the device.</p>
         pub fn set_resolution(
             mut self,
             input: std::option::Option<crate::model::Resolution>,
@@ -5395,6 +6455,7 @@ pub mod device {
             self.heap_size = Some(input);
             self
         }
+        /// <p>The device's heap size, expressed in bytes.</p>
         pub fn set_heap_size(mut self, input: std::option::Option<i64>) -> Self {
             self.heap_size = input;
             self
@@ -5404,6 +6465,7 @@ pub mod device {
             self.memory = Some(input);
             self
         }
+        /// <p>The device's total memory size, expressed in bytes.</p>
         pub fn set_memory(mut self, input: std::option::Option<i64>) -> Self {
             self.memory = input;
             self
@@ -5413,6 +6475,7 @@ pub mod device {
             self.image = Some(input.into());
             self
         }
+        /// <p>The device's image name.</p>
         pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image = input;
             self
@@ -5422,6 +6485,7 @@ pub mod device {
             self.carrier = Some(input.into());
             self
         }
+        /// <p>The device's carrier.</p>
         pub fn set_carrier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.carrier = input;
             self
@@ -5431,6 +6495,7 @@ pub mod device {
             self.radio = Some(input.into());
             self
         }
+        /// <p>The device's radio.</p>
         pub fn set_radio(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.radio = input;
             self
@@ -5441,6 +6506,8 @@ pub mod device {
             self.remote_access_enabled = Some(input);
             self
         }
+        /// <p>Specifies whether remote access has been enabled for the specified
+        /// device.</p>
         pub fn set_remote_access_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.remote_access_enabled = input;
             self
@@ -5453,6 +6520,10 @@ pub mod device {
             self.remote_debug_enabled = Some(input);
             self
         }
+        /// <p>This flag is set to <code>true</code> if remote debugging is enabled for the
+        /// device.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>.</p>
         pub fn set_remote_debug_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.remote_debug_enabled = input;
             self
@@ -5462,6 +6533,7 @@ pub mod device {
             self.fleet_type = Some(input.into());
             self
         }
+        /// <p>The type of fleet to which this device belongs. Possible values are PRIVATE and PUBLIC.</p>
         pub fn set_fleet_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_type = input;
             self
@@ -5471,16 +6543,23 @@ pub mod device {
             self.fleet_name = Some(input.into());
             self
         }
+        /// <p>The name of the fleet to which this device belongs.</p>
         pub fn set_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_name = input;
             self
         }
+        /// Appends an item to `instances`.
+        ///
+        /// To override the contents of this collection use [`set_instances`](Self::set_instances).
+        ///
+        /// <p>The instances that belong to this device.</p>
         pub fn instances(mut self, input: impl Into<crate::model::DeviceInstance>) -> Self {
             let mut v = self.instances.unwrap_or_default();
             v.push(input.into());
             self.instances = Some(v);
             self
         }
+        /// <p>The instances that belong to this device.</p>
         pub fn set_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeviceInstance>>,
@@ -5493,6 +6572,7 @@ pub mod device {
             self.availability = Some(input);
             self
         }
+        /// <p>Indicates how likely a device is available for a test run. Currently available in the <a>ListDevices</a> and GetDevice API methods.</p>
         pub fn set_availability(
             mut self,
             input: std::option::Option<crate::model::DeviceAvailability>,
@@ -5535,6 +6615,7 @@ impl Device {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5546,9 +6627,13 @@ impl Device {
     std::hash::Hash,
 )]
 pub enum DeviceAvailability {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Busy,
+    #[allow(missing_docs)] // documentation missing in model
     HighlyAvailable,
+    #[allow(missing_docs)] // documentation missing in model
     TemporaryNotAvailable,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5572,6 +6657,7 @@ impl std::str::FromStr for DeviceAvailability {
     }
 }
 impl DeviceAvailability {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeviceAvailability::Available => "AVAILABLE",
@@ -5581,6 +6667,7 @@ impl DeviceAvailability {
             DeviceAvailability::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -5629,6 +6716,7 @@ pub mod resolution {
             self.width = Some(input);
             self
         }
+        /// <p>The screen resolution's width, expressed in pixels.</p>
         pub fn set_width(mut self, input: std::option::Option<i32>) -> Self {
             self.width = input;
             self
@@ -5638,6 +6726,7 @@ pub mod resolution {
             self.height = Some(input);
             self
         }
+        /// <p>The screen resolution's height, expressed in pixels.</p>
         pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
             self.height = input;
             self
@@ -5696,6 +6785,7 @@ pub mod cpu {
             self.frequency = Some(input.into());
             self
         }
+        /// <p>The CPU's frequency.</p>
         pub fn set_frequency(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.frequency = input;
             self
@@ -5705,6 +6795,7 @@ pub mod cpu {
             self.architecture = Some(input.into());
             self
         }
+        /// <p>The CPU's architecture (for example, x86 or ARM).</p>
         pub fn set_architecture(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.architecture = input;
             self
@@ -5715,6 +6806,8 @@ pub mod cpu {
             self.clock = Some(input);
             self
         }
+        /// <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a 1.2
+        /// GHz CPU is expressed as 1200000000.</p>
         pub fn set_clock(mut self, input: std::option::Option<f64>) -> Self {
             self.clock = input;
             self
@@ -5736,6 +6829,7 @@ impl Cpu {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5747,7 +6841,9 @@ impl Cpu {
     std::hash::Hash,
 )]
 pub enum DeviceFormFactor {
+    #[allow(missing_docs)] // documentation missing in model
     Phone,
+    #[allow(missing_docs)] // documentation missing in model
     Tablet,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5769,6 +6865,7 @@ impl std::str::FromStr for DeviceFormFactor {
     }
 }
 impl DeviceFormFactor {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeviceFormFactor::Phone => "PHONE",
@@ -5776,6 +6873,7 @@ impl DeviceFormFactor {
             DeviceFormFactor::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PHONE", "TABLET"]
     }
@@ -5855,7 +6953,7 @@ pub struct Job {
     /// </ul>
     pub r#type: std::option::Option<crate::model::TestType>,
     /// <p>When the job was created.</p>
-    pub created: std::option::Option<smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The job's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
@@ -5915,9 +7013,9 @@ pub struct Job {
     /// </ul>
     pub result: std::option::Option<crate::model::ExecutionResult>,
     /// <p>The job's start time.</p>
-    pub started: std::option::Option<smithy_types::Instant>,
+    pub started: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The job's stop time.</p>
-    pub stopped: std::option::Option<smithy_types::Instant>,
+    pub stopped: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The job's result counters.</p>
     pub counters: std::option::Option<crate::model::Counters>,
     /// <p>A message about the job's result.</p>
@@ -5963,11 +7061,11 @@ pub mod job {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::TestType>,
-        pub(crate) created: std::option::Option<smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::ExecutionStatus>,
         pub(crate) result: std::option::Option<crate::model::ExecutionResult>,
-        pub(crate) started: std::option::Option<smithy_types::Instant>,
-        pub(crate) stopped: std::option::Option<smithy_types::Instant>,
+        pub(crate) started: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) stopped: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) counters: std::option::Option<crate::model::Counters>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) device: std::option::Option<crate::model::Device>,
@@ -5982,6 +7080,7 @@ pub mod job {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The job's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5991,6 +7090,7 @@ pub mod job {
             self.name = Some(input.into());
             self
         }
+        /// <p>The job's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6058,16 +7158,79 @@ pub mod job {
             self.r#type = Some(input);
             self
         }
+        /// <p>The job's type.</p>
+        /// <p>Allowed values include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>BUILTIN_FUZZ</p>
+        /// </li>
+        /// <li>
+        /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with
+        /// it and capturing screenshots at the same time.</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_JAVA_JUNIT</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_JAVA_TESTNG</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_PYTHON</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_NODE</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_RUBY</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_JAVA_JUNIT</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_JAVA_TESTNG</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_PYTHON</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_NODE</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_RUBY</p>
+        /// </li>
+        /// <li>
+        /// <p>CALABASH</p>
+        /// </li>
+        /// <li>
+        /// <p>INSTRUMENTATION</p>
+        /// </li>
+        /// <li>
+        /// <p>UIAUTOMATION</p>
+        /// </li>
+        /// <li>
+        /// <p>UIAUTOMATOR</p>
+        /// </li>
+        /// <li>
+        /// <p>XCTEST</p>
+        /// </li>
+        /// <li>
+        /// <p>XCTEST_UI</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::TestType>) -> Self {
             self.r#type = input;
             self
         }
         /// <p>When the job was created.</p>
-        pub fn created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created = Some(input);
             self
         }
-        pub fn set_created(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>When the job was created.</p>
+        pub fn set_created(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created = input;
             self
         }
@@ -6106,6 +7269,37 @@ pub mod job {
             self.status = Some(input);
             self
         }
+        /// <p>The job's status.</p>
+        /// <p>Allowed values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>PENDING</p>
+        /// </li>
+        /// <li>
+        /// <p>PENDING_CONCURRENCY</p>
+        /// </li>
+        /// <li>
+        /// <p>PENDING_DEVICE</p>
+        /// </li>
+        /// <li>
+        /// <p>PROCESSING</p>
+        /// </li>
+        /// <li>
+        /// <p>SCHEDULING</p>
+        /// </li>
+        /// <li>
+        /// <p>PREPARING</p>
+        /// </li>
+        /// <li>
+        /// <p>RUNNING</p>
+        /// </li>
+        /// <li>
+        /// <p>COMPLETED</p>
+        /// </li>
+        /// <li>
+        /// <p>STOPPING</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ExecutionStatus>,
@@ -6142,6 +7336,31 @@ pub mod job {
             self.result = Some(input);
             self
         }
+        /// <p>The job's result.</p>
+        /// <p>Allowed values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>PENDING</p>
+        /// </li>
+        /// <li>
+        /// <p>PASSED</p>
+        /// </li>
+        /// <li>
+        /// <p>WARNED</p>
+        /// </li>
+        /// <li>
+        /// <p>FAILED</p>
+        /// </li>
+        /// <li>
+        /// <p>SKIPPED</p>
+        /// </li>
+        /// <li>
+        /// <p>ERRORED</p>
+        /// </li>
+        /// <li>
+        /// <p>STOPPED</p>
+        /// </li>
+        /// </ul>
         pub fn set_result(
             mut self,
             input: std::option::Option<crate::model::ExecutionResult>,
@@ -6150,20 +7369,28 @@ pub mod job {
             self
         }
         /// <p>The job's start time.</p>
-        pub fn started(mut self, input: smithy_types::Instant) -> Self {
+        pub fn started(mut self, input: aws_smithy_types::Instant) -> Self {
             self.started = Some(input);
             self
         }
-        pub fn set_started(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The job's start time.</p>
+        pub fn set_started(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.started = input;
             self
         }
         /// <p>The job's stop time.</p>
-        pub fn stopped(mut self, input: smithy_types::Instant) -> Self {
+        pub fn stopped(mut self, input: aws_smithy_types::Instant) -> Self {
             self.stopped = Some(input);
             self
         }
-        pub fn set_stopped(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The job's stop time.</p>
+        pub fn set_stopped(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.stopped = input;
             self
         }
@@ -6172,6 +7399,7 @@ pub mod job {
             self.counters = Some(input);
             self
         }
+        /// <p>The job's result counters.</p>
         pub fn set_counters(mut self, input: std::option::Option<crate::model::Counters>) -> Self {
             self.counters = input;
             self
@@ -6181,6 +7409,7 @@ pub mod job {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message about the job's result.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -6190,6 +7419,7 @@ pub mod job {
             self.device = Some(input);
             self
         }
+        /// <p>The device (phone or tablet).</p>
         pub fn set_device(mut self, input: std::option::Option<crate::model::Device>) -> Self {
             self.device = input;
             self
@@ -6199,6 +7429,7 @@ pub mod job {
             self.instance_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the instance.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_arn = input;
             self
@@ -6208,6 +7439,7 @@ pub mod job {
             self.device_minutes = Some(input);
             self
         }
+        /// <p>Represents the total (metered or unmetered) minutes used by the job.</p>
         pub fn set_device_minutes(
             mut self,
             input: std::option::Option<crate::model::DeviceMinutes>,
@@ -6220,6 +7452,7 @@ pub mod job {
             self.video_endpoint = Some(input.into());
             self
         }
+        /// <p>The endpoint for streaming device video.</p>
         pub fn set_video_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6232,6 +7465,7 @@ pub mod job {
             self.video_capture = Some(input);
             self
         }
+        /// <p>This value is set to true if video capture is enabled. Otherwise, it is set to false.</p>
         pub fn set_video_capture(mut self, input: std::option::Option<bool>) -> Self {
             self.video_capture = input;
             self
@@ -6313,6 +7547,7 @@ pub mod execution_configuration {
             self.job_timeout_minutes = Some(input);
             self
         }
+        /// <p>The number of minutes a test run executes before it times out.</p>
         pub fn set_job_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.job_timeout_minutes = input;
             self
@@ -6322,6 +7557,7 @@ pub mod execution_configuration {
             self.accounts_cleanup = Some(input);
             self
         }
+        /// <p>True if account cleanup is enabled at the beginning of the test. Otherwise, false.</p>
         pub fn set_accounts_cleanup(mut self, input: std::option::Option<bool>) -> Self {
             self.accounts_cleanup = input;
             self
@@ -6331,6 +7567,7 @@ pub mod execution_configuration {
             self.app_packages_cleanup = Some(input);
             self
         }
+        /// <p>True if app package cleanup is enabled at the beginning of the test. Otherwise, false.</p>
         pub fn set_app_packages_cleanup(mut self, input: std::option::Option<bool>) -> Self {
             self.app_packages_cleanup = input;
             self
@@ -6340,6 +7577,7 @@ pub mod execution_configuration {
             self.video_capture = Some(input);
             self
         }
+        /// <p>Set to true to enable video capture. Otherwise, set to false. The default is true.</p>
         pub fn set_video_capture(mut self, input: std::option::Option<bool>) -> Self {
             self.video_capture = input;
             self
@@ -6352,6 +7590,10 @@ pub mod execution_configuration {
             self.skip_app_resign = Some(input);
             self
         }
+        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
+        /// devices, Device Farm always signs your apps again.</p>
+        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device
+        /// Farm FAQs</i>.</p>
         pub fn set_skip_app_resign(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_app_resign = input;
             self
@@ -6446,6 +7688,8 @@ pub mod schedule_run_configuration {
             self.extra_data_package_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to
+        /// external data for Android or the app's sandbox for iOS.</p>
         pub fn set_extra_data_package_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6458,6 +7702,7 @@ pub mod schedule_run_configuration {
             self.network_profile_arn = Some(input.into());
             self
         }
+        /// <p>Reserved for internal use.</p>
         pub fn set_network_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6470,6 +7715,7 @@ pub mod schedule_run_configuration {
             self.locale = Some(input.into());
             self
         }
+        /// <p>Information about the locale that is used for the run.</p>
         pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale = input;
             self
@@ -6479,16 +7725,23 @@ pub mod schedule_run_configuration {
             self.location = Some(input);
             self
         }
+        /// <p>Information about the location that is used for the run.</p>
         pub fn set_location(mut self, input: std::option::Option<crate::model::Location>) -> Self {
             self.location = input;
             self
         }
+        /// Appends an item to `vpce_configuration_arns`.
+        ///
+        /// To override the contents of this collection use [`set_vpce_configuration_arns`](Self::set_vpce_configuration_arns).
+        ///
+        /// <p>An array of ARNs for your VPC endpoint configurations.</p>
         pub fn vpce_configuration_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpce_configuration_arns.unwrap_or_default();
             v.push(input.into());
             self.vpce_configuration_arns = Some(v);
             self
         }
+        /// <p>An array of ARNs for your VPC endpoint configurations.</p>
         pub fn set_vpce_configuration_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6505,6 +7758,8 @@ pub mod schedule_run_configuration {
             self.customer_artifact_paths = Some(input);
             self
         }
+        /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run
+        /// configuration.</p>
         pub fn set_customer_artifact_paths(
             mut self,
             input: std::option::Option<crate::model::CustomerArtifactPaths>,
@@ -6517,16 +7772,23 @@ pub mod schedule_run_configuration {
             self.radios = Some(input);
             self
         }
+        /// <p>Information about the radio states for the run.</p>
         pub fn set_radios(mut self, input: std::option::Option<crate::model::Radios>) -> Self {
             self.radios = input;
             self
         }
+        /// Appends an item to `auxiliary_apps`.
+        ///
+        /// To override the contents of this collection use [`set_auxiliary_apps`](Self::set_auxiliary_apps).
+        ///
+        /// <p>A list of upload ARNs for app packages to be installed with your app.</p>
         pub fn auxiliary_apps(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.auxiliary_apps.unwrap_or_default();
             v.push(input.into());
             self.auxiliary_apps = Some(v);
             self
         }
+        /// <p>A list of upload ARNs for app packages to be installed with your app.</p>
         pub fn set_auxiliary_apps(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6545,6 +7807,13 @@ pub mod schedule_run_configuration {
             self.billing_method = Some(input);
             self
         }
+        /// <p>Specifies the billing method for a test run: <code>metered</code> or
+        /// <code>unmetered</code>. If the parameter is not specified, the default value is
+        /// <code>metered</code>.</p>
+        /// <note>
+        /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to
+        /// make use of them. Otherwise, your run counts against your metered time.</p>
+        /// </note>
         pub fn set_billing_method(
             mut self,
             input: std::option::Option<crate::model::BillingMethod>,
@@ -6674,6 +7943,7 @@ pub struct ScheduleRunTest {
     /// (and later), latest, and default.</p>
     /// <ul>
     /// <li>
+    ///
     /// <p>latest runs the latest Appium version supported by Device
     /// Farm (1.9.1).</p>
     /// </li>
@@ -6874,6 +8144,66 @@ pub mod schedule_run_test {
             self.r#type = Some(input);
             self
         }
+        /// <p>The test's type.</p>
+        /// <p>Must be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>BUILTIN_FUZZ</p>
+        /// </li>
+        /// <li>
+        /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an
+        /// Android app, interacting with it and capturing screenshots at the same
+        /// time.</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_JAVA_JUNIT</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_JAVA_TESTNG</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_PYTHON</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_NODE</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_RUBY</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_JAVA_JUNIT</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_JAVA_TESTNG</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_PYTHON</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_NODE</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_RUBY</p>
+        /// </li>
+        /// <li>
+        /// <p>CALABASH</p>
+        /// </li>
+        /// <li>
+        /// <p>INSTRUMENTATION</p>
+        /// </li>
+        /// <li>
+        /// <p>UIAUTOMATION</p>
+        /// </li>
+        /// <li>
+        /// <p>UIAUTOMATOR</p>
+        /// </li>
+        /// <li>
+        /// <p>XCTEST</p>
+        /// </li>
+        /// <li>
+        /// <p>XCTEST_UI</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::TestType>) -> Self {
             self.r#type = input;
             self
@@ -6883,6 +8213,7 @@ pub mod schedule_run_test {
             self.test_package_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the uploaded test to be run.</p>
         pub fn set_test_package_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6895,6 +8226,7 @@ pub mod schedule_run_test {
             self.test_spec_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the YAML-formatted test specification.</p>
         pub fn set_test_spec_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6907,10 +8239,150 @@ pub mod schedule_run_test {
             self.filter = Some(input.into());
             self
         }
+        /// <p>The test's filter.</p>
         pub fn set_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The test's parameters, such as test framework parameters and fixture settings.
+        /// Parameters are represented by name-value pairs of strings.</p>
+        /// <p>For all tests:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>app_performance_monitoring</code>: Performance monitoring is enabled by default.
+        /// Set this parameter to false to disable it.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For Calabash tests:</p>
+        /// <ul>
+        /// <li>
+        /// <p>profile: A cucumber profile (for example, <code>my_profile_name</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>tags: You can limit execution to features or scenarios that have (or don't
+        /// have) certain tags (for example, @smoke or @smoke,~@wip).</p>
+        /// </li>
+        /// </ul>
+        /// <p>For Appium tests (all types):</p>
+        /// <ul>
+        /// <li>
+        /// <p>appium_version: The Appium version. Currently supported values are 1.6.5
+        /// (and later), latest, and default.</p>
+        /// <ul>
+        /// <li>
+        ///
+        /// <p>latest runs the latest Appium version supported by Device
+        /// Farm (1.9.1).</p>
+        /// </li>
+        /// <li>
+        /// <p>For default, Device Farm selects a compatible version of
+        /// Appium for the device. The current behavior is to run 1.7.2 on Android
+        /// devices and iOS 9 and earlier and 1.7.2 for iOS 10 and later.</p>
+        /// </li>
+        /// <li>
+        /// <p>This behavior is subject to change.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <p>For fuzz tests (Android only):</p>
+        /// <ul>
+        /// <li>
+        /// <p>event_count: The number of events, between 1 and 10000, that the UI fuzz
+        /// test should perform.</p>
+        /// </li>
+        /// <li>
+        /// <p>throttle: The time, in ms, between 0 and 1000, that the UI fuzz test should
+        /// wait between events.</p>
+        /// </li>
+        /// <li>
+        /// <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed
+        /// value between tests ensures identical event sequences.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For Explorer tests:</p>
+        /// <ul>
+        /// <li>
+        /// <p>username: A user name to use if the Explorer encounters a login form. If not supplied, no user
+        /// name is inserted.</p>
+        /// </li>
+        /// <li>
+        /// <p>password: A password to use if the Explorer encounters a login form. If not supplied, no
+        /// password is inserted.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For Instrumentation:</p>
+        /// <ul>
+        /// <li>
+        /// <p>filter: A test filter string. Examples:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Running a single test case: <code>com.android.abc.Test1</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Running a single test: <code>com.android.abc.Test1#smoke</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Running multiple tests:
+        /// <code>com.android.abc.Test1,com.android.abc.Test2</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <p>For XCTest and XCTestUI:</p>
+        /// <ul>
+        /// <li>
+        /// <p>filter: A test filter string. Examples:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Running a single test class: <code>LoginTests</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Running a multiple test classes: <code>LoginTests,SmokeTests</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Running a single test: <code>LoginTests/testValid</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Running multiple tests:
+        /// <code>LoginTests/testValid,LoginTests/testInvalid</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <p>For UIAutomator:</p>
+        /// <ul>
+        /// <li>
+        /// <p>filter: A test filter string. Examples:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Running a single test case: <code>com.android.abc.Test1</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Running a single test: <code>com.android.abc.Test1#smoke</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Running multiple tests:
+        /// <code>com.android.abc.Test1,com.android.abc.Test2</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -6921,6 +8393,141 @@ pub mod schedule_run_test {
             self.parameters = Some(hash_map);
             self
         }
+        /// <p>The test's parameters, such as test framework parameters and fixture settings.
+        /// Parameters are represented by name-value pairs of strings.</p>
+        /// <p>For all tests:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>app_performance_monitoring</code>: Performance monitoring is enabled by default.
+        /// Set this parameter to false to disable it.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For Calabash tests:</p>
+        /// <ul>
+        /// <li>
+        /// <p>profile: A cucumber profile (for example, <code>my_profile_name</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>tags: You can limit execution to features or scenarios that have (or don't
+        /// have) certain tags (for example, @smoke or @smoke,~@wip).</p>
+        /// </li>
+        /// </ul>
+        /// <p>For Appium tests (all types):</p>
+        /// <ul>
+        /// <li>
+        /// <p>appium_version: The Appium version. Currently supported values are 1.6.5
+        /// (and later), latest, and default.</p>
+        /// <ul>
+        /// <li>
+        ///
+        /// <p>latest runs the latest Appium version supported by Device
+        /// Farm (1.9.1).</p>
+        /// </li>
+        /// <li>
+        /// <p>For default, Device Farm selects a compatible version of
+        /// Appium for the device. The current behavior is to run 1.7.2 on Android
+        /// devices and iOS 9 and earlier and 1.7.2 for iOS 10 and later.</p>
+        /// </li>
+        /// <li>
+        /// <p>This behavior is subject to change.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <p>For fuzz tests (Android only):</p>
+        /// <ul>
+        /// <li>
+        /// <p>event_count: The number of events, between 1 and 10000, that the UI fuzz
+        /// test should perform.</p>
+        /// </li>
+        /// <li>
+        /// <p>throttle: The time, in ms, between 0 and 1000, that the UI fuzz test should
+        /// wait between events.</p>
+        /// </li>
+        /// <li>
+        /// <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed
+        /// value between tests ensures identical event sequences.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For Explorer tests:</p>
+        /// <ul>
+        /// <li>
+        /// <p>username: A user name to use if the Explorer encounters a login form. If not supplied, no user
+        /// name is inserted.</p>
+        /// </li>
+        /// <li>
+        /// <p>password: A password to use if the Explorer encounters a login form. If not supplied, no
+        /// password is inserted.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For Instrumentation:</p>
+        /// <ul>
+        /// <li>
+        /// <p>filter: A test filter string. Examples:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Running a single test case: <code>com.android.abc.Test1</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Running a single test: <code>com.android.abc.Test1#smoke</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Running multiple tests:
+        /// <code>com.android.abc.Test1,com.android.abc.Test2</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <p>For XCTest and XCTestUI:</p>
+        /// <ul>
+        /// <li>
+        /// <p>filter: A test filter string. Examples:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Running a single test class: <code>LoginTests</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Running a multiple test classes: <code>LoginTests,SmokeTests</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Running a single test: <code>LoginTests/testValid</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Running multiple tests:
+        /// <code>LoginTests/testValid,LoginTests/testInvalid</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <p>For UIAutomator:</p>
+        /// <ul>
+        /// <li>
+        /// <p>filter: A test filter string. Examples:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Running a single test case: <code>com.android.abc.Test1</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Running a single test: <code>com.android.abc.Test1#smoke</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Running multiple tests:
+        /// <code>com.android.abc.Test1,com.android.abc.Test2</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -7098,12 +8705,260 @@ pub mod device_selection_configuration {
         pub(crate) max_devices: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Used to dynamically select a set of devices for a test run. A filter is made up of an
+        /// attribute, an operator, and one or more values.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>Attribute</b>
+        /// </p>
+        /// <p>The aspect of a device such as platform or model used as the selection
+        /// criteria in a device filter.</p>
+        /// <p>Allowed values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>ARN: The Amazon Resource Name (ARN) of the device (for example,
+        /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>PLATFORM: The device platform. Valid values are ANDROID or
+        /// IOS.</p>
+        /// </li>
+        /// <li>
+        /// <p>OS_VERSION: The operating system version (for example,
+        /// 10.3.2).</p>
+        /// </li>
+        /// <li>
+        /// <p>MODEL: The device model (for example, iPad 5th Gen).</p>
+        /// </li>
+        /// <li>
+        /// <p>AVAILABILITY: The current availability of the device. Valid values
+        /// are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or
+        /// TEMPORARY_NOT_AVAILABLE.</p>
+        /// </li>
+        /// <li>
+        /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or
+        /// TABLET.</p>
+        /// </li>
+        /// <li>
+        /// <p>MANUFACTURER: The device manufacturer (for example,
+        /// Apple).</p>
+        /// </li>
+        /// <li>
+        /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote
+        /// access. Valid values are TRUE or FALSE.</p>
+        /// </li>
+        /// <li>
+        /// <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
+        /// are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>, this filter is ignored.</p>
+        /// </li>
+        /// <li>
+        /// <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device
+        /// instance.</p>
+        /// </li>
+        /// <li>
+        /// <p>INSTANCE_LABELS: The label of the device instance.</p>
+        /// </li>
+        /// <li>
+        /// <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Operator</b>
+        /// </p>
+        /// <p>The filter operator.</p>
+        /// <ul>
+        /// <li>
+        /// <p>The EQUALS operator is available for every attribute except
+        /// INSTANCE_LABELS.</p>
+        /// </li>
+        /// <li>
+        /// <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
+        /// attributes.</p>
+        /// </li>
+        /// <li>
+        /// <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
+        /// MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>
+        /// </li>
+        /// <li>
+        /// <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
+        /// GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
+        /// attribute.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Values</b>
+        /// </p>
+        /// <p>An array of one or more filter values.</p>
+        /// <p class="title">
+        /// <b>Operator Values</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>The IN and NOT_IN operators can take a values array that has more than
+        /// one element.</p>
+        /// </li>
+        /// <li>
+        /// <p>The other operators require an array with a single element.</p>
+        /// </li>
+        /// </ul>
+        /// <p class="title">
+        /// <b>Attribute Values</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p>
+        /// </li>
+        /// <li>
+        /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or
+        /// TEMPORARY_NOT_AVAILABLE.</p>
+        /// </li>
+        /// <li>
+        /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p>
+        /// </li>
+        /// <li>
+        /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, input: impl Into<crate::model::DeviceFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Used to dynamically select a set of devices for a test run. A filter is made up of an
+        /// attribute, an operator, and one or more values.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>Attribute</b>
+        /// </p>
+        /// <p>The aspect of a device such as platform or model used as the selection
+        /// criteria in a device filter.</p>
+        /// <p>Allowed values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>ARN: The Amazon Resource Name (ARN) of the device (for example,
+        /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>PLATFORM: The device platform. Valid values are ANDROID or
+        /// IOS.</p>
+        /// </li>
+        /// <li>
+        /// <p>OS_VERSION: The operating system version (for example,
+        /// 10.3.2).</p>
+        /// </li>
+        /// <li>
+        /// <p>MODEL: The device model (for example, iPad 5th Gen).</p>
+        /// </li>
+        /// <li>
+        /// <p>AVAILABILITY: The current availability of the device. Valid values
+        /// are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or
+        /// TEMPORARY_NOT_AVAILABLE.</p>
+        /// </li>
+        /// <li>
+        /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or
+        /// TABLET.</p>
+        /// </li>
+        /// <li>
+        /// <p>MANUFACTURER: The device manufacturer (for example,
+        /// Apple).</p>
+        /// </li>
+        /// <li>
+        /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote
+        /// access. Valid values are TRUE or FALSE.</p>
+        /// </li>
+        /// <li>
+        /// <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
+        /// are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+        /// longer supported</a>, this filter is ignored.</p>
+        /// </li>
+        /// <li>
+        /// <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device
+        /// instance.</p>
+        /// </li>
+        /// <li>
+        /// <p>INSTANCE_LABELS: The label of the device instance.</p>
+        /// </li>
+        /// <li>
+        /// <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Operator</b>
+        /// </p>
+        /// <p>The filter operator.</p>
+        /// <ul>
+        /// <li>
+        /// <p>The EQUALS operator is available for every attribute except
+        /// INSTANCE_LABELS.</p>
+        /// </li>
+        /// <li>
+        /// <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
+        /// attributes.</p>
+        /// </li>
+        /// <li>
+        /// <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
+        /// MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>
+        /// </li>
+        /// <li>
+        /// <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
+        /// GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
+        /// attribute.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Values</b>
+        /// </p>
+        /// <p>An array of one or more filter values.</p>
+        /// <p class="title">
+        /// <b>Operator Values</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>The IN and NOT_IN operators can take a values array that has more than
+        /// one element.</p>
+        /// </li>
+        /// <li>
+        /// <p>The other operators require an array with a single element.</p>
+        /// </li>
+        /// </ul>
+        /// <p class="title">
+        /// <b>Attribute Values</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p>
+        /// </li>
+        /// <li>
+        /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or
+        /// TEMPORARY_NOT_AVAILABLE.</p>
+        /// </li>
+        /// <li>
+        /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p>
+        /// </li>
+        /// <li>
+        /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeviceFilter>>,
@@ -7116,6 +8971,7 @@ pub mod device_selection_configuration {
             self.max_devices = Some(input);
             self
         }
+        /// <p>The maximum number of devices to be included in a test run.</p>
         pub fn set_max_devices(mut self, input: std::option::Option<i32>) -> Self {
             self.max_devices = input;
             self
@@ -7147,7 +9003,7 @@ pub struct OfferingTransaction {
     /// <p>The ID that corresponds to a device offering promotion.</p>
     pub offering_promotion_id: std::option::Option<std::string::String>,
     /// <p>The date on which an offering transaction was created.</p>
-    pub created_on: std::option::Option<smithy_types::Instant>,
+    pub created_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The cost of an offering transaction.</p>
     pub cost: std::option::Option<crate::model::MonetaryAmount>,
 }
@@ -7171,7 +9027,7 @@ pub mod offering_transaction {
         pub(crate) offering_status: std::option::Option<crate::model::OfferingStatus>,
         pub(crate) transaction_id: std::option::Option<std::string::String>,
         pub(crate) offering_promotion_id: std::option::Option<std::string::String>,
-        pub(crate) created_on: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_on: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) cost: std::option::Option<crate::model::MonetaryAmount>,
     }
     impl Builder {
@@ -7180,6 +9036,7 @@ pub mod offering_transaction {
             self.offering_status = Some(input);
             self
         }
+        /// <p>The status of an offering transaction.</p>
         pub fn set_offering_status(
             mut self,
             input: std::option::Option<crate::model::OfferingStatus>,
@@ -7192,6 +9049,7 @@ pub mod offering_transaction {
             self.transaction_id = Some(input.into());
             self
         }
+        /// <p>The transaction ID of the offering transaction.</p>
         pub fn set_transaction_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7204,6 +9062,7 @@ pub mod offering_transaction {
             self.offering_promotion_id = Some(input.into());
             self
         }
+        /// <p>The ID that corresponds to a device offering promotion.</p>
         pub fn set_offering_promotion_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7212,11 +9071,15 @@ pub mod offering_transaction {
             self
         }
         /// <p>The date on which an offering transaction was created.</p>
-        pub fn created_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_on = Some(input);
             self
         }
-        pub fn set_created_on(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date on which an offering transaction was created.</p>
+        pub fn set_created_on(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_on = input;
             self
         }
@@ -7225,6 +9088,7 @@ pub mod offering_transaction {
             self.cost = Some(input);
             self
         }
+        /// <p>The cost of an offering transaction.</p>
         pub fn set_cost(
             mut self,
             input: std::option::Option<crate::model::MonetaryAmount>,
@@ -7283,6 +9147,7 @@ pub mod monetary_amount {
             self.amount = Some(input);
             self
         }
+        /// <p>The numerical amount of an offering or transaction.</p>
         pub fn set_amount(mut self, input: std::option::Option<f64>) -> Self {
             self.amount = input;
             self
@@ -7292,6 +9157,7 @@ pub mod monetary_amount {
             self.currency_code = Some(input);
             self
         }
+        /// <p>The currency code of a monetary amount. For example, <code>USD</code> means U.S. dollars.</p>
         pub fn set_currency_code(
             mut self,
             input: std::option::Option<crate::model::CurrencyCode>,
@@ -7315,6 +9181,7 @@ impl MonetaryAmount {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7326,6 +9193,7 @@ impl MonetaryAmount {
     std::hash::Hash,
 )]
 pub enum CurrencyCode {
+    #[allow(missing_docs)] // documentation missing in model
     Usd,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7346,12 +9214,14 @@ impl std::str::FromStr for CurrencyCode {
     }
 }
 impl CurrencyCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CurrencyCode::Usd => "USD",
             CurrencyCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["USD"]
     }
@@ -7373,7 +9243,7 @@ pub struct OfferingStatus {
     /// <p>The number of available devices in the offering.</p>
     pub quantity: std::option::Option<i32>,
     /// <p>The date on which the offering is effective.</p>
-    pub effective_on: std::option::Option<smithy_types::Instant>,
+    pub effective_on: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for OfferingStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7394,7 +9264,7 @@ pub mod offering_status {
         pub(crate) r#type: std::option::Option<crate::model::OfferingTransactionType>,
         pub(crate) offering: std::option::Option<crate::model::Offering>,
         pub(crate) quantity: std::option::Option<i32>,
-        pub(crate) effective_on: std::option::Option<smithy_types::Instant>,
+        pub(crate) effective_on: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The type specified for the offering status.</p>
@@ -7402,6 +9272,7 @@ pub mod offering_status {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type specified for the offering status.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::OfferingTransactionType>,
@@ -7414,6 +9285,7 @@ pub mod offering_status {
             self.offering = Some(input);
             self
         }
+        /// <p>Represents the metadata of an offering status.</p>
         pub fn set_offering(mut self, input: std::option::Option<crate::model::Offering>) -> Self {
             self.offering = input;
             self
@@ -7423,18 +9295,20 @@ pub mod offering_status {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of available devices in the offering.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
         /// <p>The date on which the offering is effective.</p>
-        pub fn effective_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn effective_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.effective_on = Some(input);
             self
         }
+        /// <p>The date on which the offering is effective.</p>
         pub fn set_effective_on(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.effective_on = input;
             self
@@ -7502,6 +9376,7 @@ pub mod offering {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID that corresponds to a device offering.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -7511,6 +9386,7 @@ pub mod offering {
             self.description = Some(input.into());
             self
         }
+        /// <p>A string that describes the offering.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -7520,6 +9396,7 @@ pub mod offering {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of offering (for example, <code>RECURRING</code>) for a device.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::OfferingType>) -> Self {
             self.r#type = input;
             self
@@ -7529,6 +9406,7 @@ pub mod offering {
             self.platform = Some(input);
             self
         }
+        /// <p>The platform of the device (for example, <code>ANDROID</code> or <code>IOS</code>).</p>
         pub fn set_platform(
             mut self,
             input: std::option::Option<crate::model::DevicePlatform>,
@@ -7536,6 +9414,11 @@ pub mod offering {
             self.platform = input;
             self
         }
+        /// Appends an item to `recurring_charges`.
+        ///
+        /// To override the contents of this collection use [`set_recurring_charges`](Self::set_recurring_charges).
+        ///
+        /// <p>Specifies whether there are recurring charges for the offering.</p>
         pub fn recurring_charges(
             mut self,
             input: impl Into<crate::model::RecurringCharge>,
@@ -7545,6 +9428,7 @@ pub mod offering {
             self.recurring_charges = Some(v);
             self
         }
+        /// <p>Specifies whether there are recurring charges for the offering.</p>
         pub fn set_recurring_charges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
@@ -7603,6 +9487,7 @@ pub mod recurring_charge {
             self.cost = Some(input);
             self
         }
+        /// <p>The cost of the recurring charge.</p>
         pub fn set_cost(
             mut self,
             input: std::option::Option<crate::model::MonetaryAmount>,
@@ -7615,6 +9500,7 @@ pub mod recurring_charge {
             self.frequency = Some(input);
             self
         }
+        /// <p>The frequency in which charges recur.</p>
         pub fn set_frequency(
             mut self,
             input: std::option::Option<crate::model::RecurringChargeFrequency>,
@@ -7638,6 +9524,7 @@ impl RecurringCharge {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7649,6 +9536,7 @@ impl RecurringCharge {
     std::hash::Hash,
 )]
 pub enum RecurringChargeFrequency {
+    #[allow(missing_docs)] // documentation missing in model
     Monthly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7669,12 +9557,14 @@ impl std::str::FromStr for RecurringChargeFrequency {
     }
 }
 impl RecurringChargeFrequency {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RecurringChargeFrequency::Monthly => "MONTHLY",
             RecurringChargeFrequency::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MONTHLY"]
     }
@@ -7685,6 +9575,7 @@ impl AsRef<str> for RecurringChargeFrequency {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7696,6 +9587,7 @@ impl AsRef<str> for RecurringChargeFrequency {
     std::hash::Hash,
 )]
 pub enum OfferingType {
+    #[allow(missing_docs)] // documentation missing in model
     Recurring,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7716,12 +9608,14 @@ impl std::str::FromStr for OfferingType {
     }
 }
 impl OfferingType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OfferingType::Recurring => "RECURRING",
             OfferingType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["RECURRING"]
     }
@@ -7732,6 +9626,7 @@ impl AsRef<str> for OfferingType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7743,8 +9638,11 @@ impl AsRef<str> for OfferingType {
     std::hash::Hash,
 )]
 pub enum OfferingTransactionType {
+    #[allow(missing_docs)] // documentation missing in model
     Purchase,
+    #[allow(missing_docs)] // documentation missing in model
     Renew,
+    #[allow(missing_docs)] // documentation missing in model
     System,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7767,6 +9665,7 @@ impl std::str::FromStr for OfferingTransactionType {
     }
 }
 impl OfferingTransactionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OfferingTransactionType::Purchase => "PURCHASE",
@@ -7775,6 +9674,7 @@ impl OfferingTransactionType {
             OfferingTransactionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PURCHASE", "RENEW", "SYSTEM"]
     }
@@ -7817,16 +9717,23 @@ pub mod unique_problem {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message about the unique problems' result.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
+        /// Appends an item to `problems`.
+        ///
+        /// To override the contents of this collection use [`set_problems`](Self::set_problems).
+        ///
+        /// <p>Information about the problems.</p>
         pub fn problems(mut self, input: impl Into<crate::model::Problem>) -> Self {
             let mut v = self.problems.unwrap_or_default();
             v.push(input.into());
             self.problems = Some(v);
             self
         }
+        /// <p>Information about the problems.</p>
         pub fn set_problems(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Problem>>,
@@ -7926,6 +9833,7 @@ pub mod problem {
             self.run = Some(input);
             self
         }
+        /// <p>Information about the associated run.</p>
         pub fn set_run(mut self, input: std::option::Option<crate::model::ProblemDetail>) -> Self {
             self.run = input;
             self
@@ -7935,6 +9843,7 @@ pub mod problem {
             self.job = Some(input);
             self
         }
+        /// <p>Information about the associated job.</p>
         pub fn set_job(mut self, input: std::option::Option<crate::model::ProblemDetail>) -> Self {
             self.job = input;
             self
@@ -7944,6 +9853,7 @@ pub mod problem {
             self.suite = Some(input);
             self
         }
+        /// <p>Information about the associated suite.</p>
         pub fn set_suite(
             mut self,
             input: std::option::Option<crate::model::ProblemDetail>,
@@ -7956,6 +9866,7 @@ pub mod problem {
             self.test = Some(input);
             self
         }
+        /// <p>Information about the associated test.</p>
         pub fn set_test(mut self, input: std::option::Option<crate::model::ProblemDetail>) -> Self {
             self.test = input;
             self
@@ -7965,6 +9876,7 @@ pub mod problem {
             self.device = Some(input);
             self
         }
+        /// <p>Information about the associated device.</p>
         pub fn set_device(mut self, input: std::option::Option<crate::model::Device>) -> Self {
             self.device = input;
             self
@@ -7998,6 +9910,31 @@ pub mod problem {
             self.result = Some(input);
             self
         }
+        /// <p>The problem's result.</p>
+        /// <p>Allowed values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>PENDING</p>
+        /// </li>
+        /// <li>
+        /// <p>PASSED</p>
+        /// </li>
+        /// <li>
+        /// <p>WARNED</p>
+        /// </li>
+        /// <li>
+        /// <p>FAILED</p>
+        /// </li>
+        /// <li>
+        /// <p>SKIPPED</p>
+        /// </li>
+        /// <li>
+        /// <p>ERRORED</p>
+        /// </li>
+        /// <li>
+        /// <p>STOPPED</p>
+        /// </li>
+        /// </ul>
         pub fn set_result(
             mut self,
             input: std::option::Option<crate::model::ExecutionResult>,
@@ -8010,6 +9947,7 @@ pub mod problem {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message about the problem's result.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -8067,6 +10005,7 @@ pub mod problem_detail {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The problem detail's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -8076,6 +10015,7 @@ pub mod problem_detail {
             self.name = Some(input.into());
             self
         }
+        /// <p>The problem detail's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8168,7 +10108,7 @@ pub struct Test {
     /// </ul>
     pub r#type: std::option::Option<crate::model::TestType>,
     /// <p>When the test was created.</p>
-    pub created: std::option::Option<smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The test's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
@@ -8228,9 +10168,9 @@ pub struct Test {
     /// </ul>
     pub result: std::option::Option<crate::model::ExecutionResult>,
     /// <p>The test's start time.</p>
-    pub started: std::option::Option<smithy_types::Instant>,
+    pub started: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The test's stop time.</p>
-    pub stopped: std::option::Option<smithy_types::Instant>,
+    pub stopped: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The test's result counters.</p>
     pub counters: std::option::Option<crate::model::Counters>,
     /// <p>A message about the test's result.</p>
@@ -8264,11 +10204,11 @@ pub mod test {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::TestType>,
-        pub(crate) created: std::option::Option<smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::ExecutionStatus>,
         pub(crate) result: std::option::Option<crate::model::ExecutionResult>,
-        pub(crate) started: std::option::Option<smithy_types::Instant>,
-        pub(crate) stopped: std::option::Option<smithy_types::Instant>,
+        pub(crate) started: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) stopped: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) counters: std::option::Option<crate::model::Counters>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) device_minutes: std::option::Option<crate::model::DeviceMinutes>,
@@ -8279,6 +10219,7 @@ pub mod test {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The test's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -8288,6 +10229,7 @@ pub mod test {
             self.name = Some(input.into());
             self
         }
+        /// <p>The test's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8358,16 +10300,82 @@ pub mod test {
             self.r#type = Some(input);
             self
         }
+        /// <p>The test's type.</p>
+        /// <p>Must be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>BUILTIN_FUZZ</p>
+        /// </li>
+        /// <li>
+        /// <p>BUILTIN_EXPLORER</p>
+        /// <note>
+        /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing
+        /// screenshots at the same time.</p>
+        /// </note>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_JAVA_JUNIT</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_JAVA_TESTNG</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_PYTHON</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_NODE</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_RUBY</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_JAVA_JUNIT</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_JAVA_TESTNG</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_PYTHON</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_NODE</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_RUBY</p>
+        /// </li>
+        /// <li>
+        /// <p>CALABASH</p>
+        /// </li>
+        /// <li>
+        /// <p>INSTRUMENTATION</p>
+        /// </li>
+        /// <li>
+        /// <p>UIAUTOMATION</p>
+        /// </li>
+        /// <li>
+        /// <p>UIAUTOMATOR</p>
+        /// </li>
+        /// <li>
+        /// <p>XCTEST</p>
+        /// </li>
+        /// <li>
+        /// <p>XCTEST_UI</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::TestType>) -> Self {
             self.r#type = input;
             self
         }
         /// <p>When the test was created.</p>
-        pub fn created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created = Some(input);
             self
         }
-        pub fn set_created(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>When the test was created.</p>
+        pub fn set_created(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created = input;
             self
         }
@@ -8406,6 +10414,37 @@ pub mod test {
             self.status = Some(input);
             self
         }
+        /// <p>The test's status.</p>
+        /// <p>Allowed values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>PENDING</p>
+        /// </li>
+        /// <li>
+        /// <p>PENDING_CONCURRENCY</p>
+        /// </li>
+        /// <li>
+        /// <p>PENDING_DEVICE</p>
+        /// </li>
+        /// <li>
+        /// <p>PROCESSING</p>
+        /// </li>
+        /// <li>
+        /// <p>SCHEDULING</p>
+        /// </li>
+        /// <li>
+        /// <p>PREPARING</p>
+        /// </li>
+        /// <li>
+        /// <p>RUNNING</p>
+        /// </li>
+        /// <li>
+        /// <p>COMPLETED</p>
+        /// </li>
+        /// <li>
+        /// <p>STOPPING</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ExecutionStatus>,
@@ -8442,6 +10481,31 @@ pub mod test {
             self.result = Some(input);
             self
         }
+        /// <p>The test's result.</p>
+        /// <p>Allowed values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>PENDING</p>
+        /// </li>
+        /// <li>
+        /// <p>PASSED</p>
+        /// </li>
+        /// <li>
+        /// <p>WARNED</p>
+        /// </li>
+        /// <li>
+        /// <p>FAILED</p>
+        /// </li>
+        /// <li>
+        /// <p>SKIPPED</p>
+        /// </li>
+        /// <li>
+        /// <p>ERRORED</p>
+        /// </li>
+        /// <li>
+        /// <p>STOPPED</p>
+        /// </li>
+        /// </ul>
         pub fn set_result(
             mut self,
             input: std::option::Option<crate::model::ExecutionResult>,
@@ -8450,20 +10514,28 @@ pub mod test {
             self
         }
         /// <p>The test's start time.</p>
-        pub fn started(mut self, input: smithy_types::Instant) -> Self {
+        pub fn started(mut self, input: aws_smithy_types::Instant) -> Self {
             self.started = Some(input);
             self
         }
-        pub fn set_started(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The test's start time.</p>
+        pub fn set_started(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.started = input;
             self
         }
         /// <p>The test's stop time.</p>
-        pub fn stopped(mut self, input: smithy_types::Instant) -> Self {
+        pub fn stopped(mut self, input: aws_smithy_types::Instant) -> Self {
             self.stopped = Some(input);
             self
         }
-        pub fn set_stopped(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The test's stop time.</p>
+        pub fn set_stopped(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.stopped = input;
             self
         }
@@ -8472,6 +10544,7 @@ pub mod test {
             self.counters = Some(input);
             self
         }
+        /// <p>The test's result counters.</p>
         pub fn set_counters(mut self, input: std::option::Option<crate::model::Counters>) -> Self {
             self.counters = input;
             self
@@ -8481,6 +10554,7 @@ pub mod test {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message about the test's result.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -8490,6 +10564,7 @@ pub mod test {
             self.device_minutes = Some(input);
             self
         }
+        /// <p>Represents the total (metered or unmetered) minutes used by the test.</p>
         pub fn set_device_minutes(
             mut self,
             input: std::option::Option<crate::model::DeviceMinutes>,
@@ -8532,9 +10607,9 @@ pub struct TestGridSession {
     /// <p>The state of the session.</p>
     pub status: std::option::Option<crate::model::TestGridSessionStatus>,
     /// <p>The time that the session was started.</p>
-    pub created: std::option::Option<smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time the session ended.</p>
-    pub ended: std::option::Option<smithy_types::Instant>,
+    pub ended: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The number of billed minutes that were used for this session. </p>
     pub billing_minutes: std::option::Option<f64>,
     /// <p>A JSON object of options and parameters passed to the Selenium WebDriver.</p>
@@ -8560,8 +10635,8 @@ pub mod test_grid_session {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::TestGridSessionStatus>,
-        pub(crate) created: std::option::Option<smithy_types::Instant>,
-        pub(crate) ended: std::option::Option<smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) ended: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) billing_minutes: std::option::Option<f64>,
         pub(crate) selenium_properties: std::option::Option<std::string::String>,
     }
@@ -8571,6 +10646,7 @@ pub mod test_grid_session {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the session.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -8580,6 +10656,7 @@ pub mod test_grid_session {
             self.status = Some(input);
             self
         }
+        /// <p>The state of the session.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TestGridSessionStatus>,
@@ -8588,20 +10665,25 @@ pub mod test_grid_session {
             self
         }
         /// <p>The time that the session was started.</p>
-        pub fn created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created = Some(input);
             self
         }
-        pub fn set_created(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the session was started.</p>
+        pub fn set_created(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created = input;
             self
         }
         /// <p>The time the session ended.</p>
-        pub fn ended(mut self, input: smithy_types::Instant) -> Self {
+        pub fn ended(mut self, input: aws_smithy_types::Instant) -> Self {
             self.ended = Some(input);
             self
         }
-        pub fn set_ended(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time the session ended.</p>
+        pub fn set_ended(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
             self.ended = input;
             self
         }
@@ -8610,6 +10692,7 @@ pub mod test_grid_session {
             self.billing_minutes = Some(input);
             self
         }
+        /// <p>The number of billed minutes that were used for this session. </p>
         pub fn set_billing_minutes(mut self, input: std::option::Option<f64>) -> Self {
             self.billing_minutes = input;
             self
@@ -8619,6 +10702,7 @@ pub mod test_grid_session {
             self.selenium_properties = Some(input.into());
             self
         }
+        /// <p>A JSON object of options and parameters passed to the Selenium WebDriver.</p>
         pub fn set_selenium_properties(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8646,6 +10730,7 @@ impl TestGridSession {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8657,8 +10742,11 @@ impl TestGridSession {
     std::hash::Hash,
 )]
 pub enum TestGridSessionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Closed,
+    #[allow(missing_docs)] // documentation missing in model
     Errored,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8681,6 +10769,7 @@ impl std::str::FromStr for TestGridSessionStatus {
     }
 }
 impl TestGridSessionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TestGridSessionStatus::Active => "ACTIVE",
@@ -8689,6 +10778,7 @@ impl TestGridSessionStatus {
             TestGridSessionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "CLOSED", "ERRORED"]
     }
@@ -8739,6 +10829,7 @@ pub mod test_grid_session_artifact {
             self.filename = Some(input.into());
             self
         }
+        /// <p>The file name of the artifact.</p>
         pub fn set_filename(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filename = input;
             self
@@ -8748,6 +10839,7 @@ pub mod test_grid_session_artifact {
             self.r#type = Some(input);
             self
         }
+        /// <p>The kind of artifact.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::TestGridSessionArtifactType>,
@@ -8760,6 +10852,7 @@ pub mod test_grid_session_artifact {
             self.url = Some(input.into());
             self
         }
+        /// <p>A semi-stable URL to the content of the object.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -8781,7 +10874,7 @@ impl TestGridSessionArtifact {
     }
 }
 
-/// **NOTE:** `TestGridSessionArtifactType::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `TestGridSessionArtifactType::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8793,9 +10886,11 @@ impl TestGridSessionArtifact {
     std::hash::Hash,
 )]
 pub enum TestGridSessionArtifactType {
+    #[allow(missing_docs)] // documentation missing in model
     SeleniumLog,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
+    #[allow(missing_docs)] // documentation missing in model
     Video,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8818,6 +10913,7 @@ impl std::str::FromStr for TestGridSessionArtifactType {
     }
 }
 impl TestGridSessionArtifactType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TestGridSessionArtifactType::SeleniumLog => "SELENIUM_LOG",
@@ -8826,6 +10922,7 @@ impl TestGridSessionArtifactType {
             TestGridSessionArtifactType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SELENIUM_LOG", "UNKNOWN", "VIDEO"]
     }
@@ -8836,6 +10933,7 @@ impl AsRef<str> for TestGridSessionArtifactType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8847,7 +10945,9 @@ impl AsRef<str> for TestGridSessionArtifactType {
     std::hash::Hash,
 )]
 pub enum TestGridSessionArtifactCategory {
+    #[allow(missing_docs)] // documentation missing in model
     Log,
+    #[allow(missing_docs)] // documentation missing in model
     Video,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8869,6 +10969,7 @@ impl std::str::FromStr for TestGridSessionArtifactCategory {
     }
 }
 impl TestGridSessionArtifactCategory {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TestGridSessionArtifactCategory::Log => "LOG",
@@ -8876,6 +10977,7 @@ impl TestGridSessionArtifactCategory {
             TestGridSessionArtifactCategory::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LOG", "VIDEO"]
     }
@@ -8893,7 +10995,7 @@ pub struct TestGridSessionAction {
     /// <p>The action taken by the session.</p>
     pub action: std::option::Option<std::string::String>,
     /// <p>The time that the session invoked the action.</p>
-    pub started: std::option::Option<smithy_types::Instant>,
+    pub started: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time, in milliseconds, that the action took to complete in the browser.</p>
     pub duration: std::option::Option<i64>,
     /// <p>HTTP status code returned to the browser when the action was taken.</p>
@@ -8919,7 +11021,7 @@ pub mod test_grid_session_action {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<std::string::String>,
-        pub(crate) started: std::option::Option<smithy_types::Instant>,
+        pub(crate) started: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) duration: std::option::Option<i64>,
         pub(crate) status_code: std::option::Option<std::string::String>,
         pub(crate) request_method: std::option::Option<std::string::String>,
@@ -8930,16 +11032,21 @@ pub mod test_grid_session_action {
             self.action = Some(input.into());
             self
         }
+        /// <p>The action taken by the session.</p>
         pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action = input;
             self
         }
         /// <p>The time that the session invoked the action.</p>
-        pub fn started(mut self, input: smithy_types::Instant) -> Self {
+        pub fn started(mut self, input: aws_smithy_types::Instant) -> Self {
             self.started = Some(input);
             self
         }
-        pub fn set_started(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the session invoked the action.</p>
+        pub fn set_started(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.started = input;
             self
         }
@@ -8948,6 +11055,7 @@ pub mod test_grid_session_action {
             self.duration = Some(input);
             self
         }
+        /// <p>The time, in milliseconds, that the action took to complete in the browser.</p>
         pub fn set_duration(mut self, input: std::option::Option<i64>) -> Self {
             self.duration = input;
             self
@@ -8957,6 +11065,7 @@ pub mod test_grid_session_action {
             self.status_code = Some(input.into());
             self
         }
+        /// <p>HTTP status code returned to the browser when the action was taken.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
@@ -8966,6 +11075,7 @@ pub mod test_grid_session_action {
             self.request_method = Some(input.into());
             self
         }
+        /// <p>HTTP method that the browser used to make the request.</p>
         pub fn set_request_method(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9064,7 +11174,7 @@ pub struct Suite {
     /// </ul>
     pub r#type: std::option::Option<crate::model::TestType>,
     /// <p>When the suite was created.</p>
-    pub created: std::option::Option<smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The suite's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
@@ -9124,9 +11234,9 @@ pub struct Suite {
     /// </ul>
     pub result: std::option::Option<crate::model::ExecutionResult>,
     /// <p>The suite's start time.</p>
-    pub started: std::option::Option<smithy_types::Instant>,
+    pub started: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The suite's stop time.</p>
-    pub stopped: std::option::Option<smithy_types::Instant>,
+    pub stopped: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The suite's result counters.</p>
     pub counters: std::option::Option<crate::model::Counters>,
     /// <p>A message about the suite's result.</p>
@@ -9161,11 +11271,11 @@ pub mod suite {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::TestType>,
-        pub(crate) created: std::option::Option<smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::ExecutionStatus>,
         pub(crate) result: std::option::Option<crate::model::ExecutionResult>,
-        pub(crate) started: std::option::Option<smithy_types::Instant>,
-        pub(crate) stopped: std::option::Option<smithy_types::Instant>,
+        pub(crate) started: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) stopped: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) counters: std::option::Option<crate::model::Counters>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) device_minutes: std::option::Option<crate::model::DeviceMinutes>,
@@ -9176,6 +11286,7 @@ pub mod suite {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The suite's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -9185,6 +11296,7 @@ pub mod suite {
             self.name = Some(input.into());
             self
         }
+        /// <p>The suite's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9255,16 +11367,82 @@ pub mod suite {
             self.r#type = Some(input);
             self
         }
+        /// <p>The suite's type.</p>
+        /// <p>Must be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>BUILTIN_FUZZ</p>
+        /// </li>
+        /// <li>
+        /// <p>BUILTIN_EXPLORER </p>
+        /// <note>
+        /// <p>Only available for Android; an app explorer that traverses an Android app, interacting with it
+        /// and capturing screenshots at the same time.</p>
+        /// </note>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_JAVA_JUNIT</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_JAVA_TESTNG</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_PYTHON</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_NODE</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_RUBY</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_JAVA_JUNIT</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_JAVA_TESTNG</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_PYTHON</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_NODE</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_WEB_RUBY</p>
+        /// </li>
+        /// <li>
+        /// <p>CALABASH</p>
+        /// </li>
+        /// <li>
+        /// <p>INSTRUMENTATION</p>
+        /// </li>
+        /// <li>
+        /// <p>UIAUTOMATION</p>
+        /// </li>
+        /// <li>
+        /// <p>UIAUTOMATOR</p>
+        /// </li>
+        /// <li>
+        /// <p>XCTEST</p>
+        /// </li>
+        /// <li>
+        /// <p>XCTEST_UI</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::TestType>) -> Self {
             self.r#type = input;
             self
         }
         /// <p>When the suite was created.</p>
-        pub fn created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created = Some(input);
             self
         }
-        pub fn set_created(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>When the suite was created.</p>
+        pub fn set_created(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created = input;
             self
         }
@@ -9303,6 +11481,37 @@ pub mod suite {
             self.status = Some(input);
             self
         }
+        /// <p>The suite's status.</p>
+        /// <p>Allowed values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>PENDING</p>
+        /// </li>
+        /// <li>
+        /// <p>PENDING_CONCURRENCY</p>
+        /// </li>
+        /// <li>
+        /// <p>PENDING_DEVICE</p>
+        /// </li>
+        /// <li>
+        /// <p>PROCESSING</p>
+        /// </li>
+        /// <li>
+        /// <p>SCHEDULING</p>
+        /// </li>
+        /// <li>
+        /// <p>PREPARING</p>
+        /// </li>
+        /// <li>
+        /// <p>RUNNING</p>
+        /// </li>
+        /// <li>
+        /// <p>COMPLETED</p>
+        /// </li>
+        /// <li>
+        /// <p>STOPPING</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ExecutionStatus>,
@@ -9339,6 +11548,31 @@ pub mod suite {
             self.result = Some(input);
             self
         }
+        /// <p>The suite's result.</p>
+        /// <p>Allowed values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>PENDING</p>
+        /// </li>
+        /// <li>
+        /// <p>PASSED</p>
+        /// </li>
+        /// <li>
+        /// <p>WARNED</p>
+        /// </li>
+        /// <li>
+        /// <p>FAILED</p>
+        /// </li>
+        /// <li>
+        /// <p>SKIPPED</p>
+        /// </li>
+        /// <li>
+        /// <p>ERRORED</p>
+        /// </li>
+        /// <li>
+        /// <p>STOPPED</p>
+        /// </li>
+        /// </ul>
         pub fn set_result(
             mut self,
             input: std::option::Option<crate::model::ExecutionResult>,
@@ -9347,20 +11581,28 @@ pub mod suite {
             self
         }
         /// <p>The suite's start time.</p>
-        pub fn started(mut self, input: smithy_types::Instant) -> Self {
+        pub fn started(mut self, input: aws_smithy_types::Instant) -> Self {
             self.started = Some(input);
             self
         }
-        pub fn set_started(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The suite's start time.</p>
+        pub fn set_started(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.started = input;
             self
         }
         /// <p>The suite's stop time.</p>
-        pub fn stopped(mut self, input: smithy_types::Instant) -> Self {
+        pub fn stopped(mut self, input: aws_smithy_types::Instant) -> Self {
             self.stopped = Some(input);
             self
         }
-        pub fn set_stopped(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The suite's stop time.</p>
+        pub fn set_stopped(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.stopped = input;
             self
         }
@@ -9369,6 +11611,7 @@ pub mod suite {
             self.counters = Some(input);
             self
         }
+        /// <p>The suite's result counters.</p>
         pub fn set_counters(mut self, input: std::option::Option<crate::model::Counters>) -> Self {
             self.counters = input;
             self
@@ -9378,6 +11621,7 @@ pub mod suite {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message about the suite's result.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -9388,6 +11632,8 @@ pub mod suite {
             self.device_minutes = Some(input);
             self
         }
+        /// <p>Represents the total (metered or unmetered) minutes used by the test
+        /// suite.</p>
         pub fn set_device_minutes(
             mut self,
             input: std::option::Option<crate::model::DeviceMinutes>,
@@ -9516,6 +11762,7 @@ pub mod sample {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The sample's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -9584,6 +11831,66 @@ pub mod sample {
             self.r#type = Some(input);
             self
         }
+        /// <p>The sample's type.</p>
+        /// <p>Must be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>CPU: A CPU sample type. This is expressed as the app processing CPU time
+        /// (including child processes) as reported by process, as a percentage.</p>
+        /// </li>
+        /// <li>
+        /// <p>MEMORY: A memory usage sample type. This is expressed as the total
+        /// proportional set size of an app process, in kilobytes.</p>
+        /// </li>
+        /// <li>
+        /// <p>NATIVE_AVG_DRAWTIME</p>
+        /// </li>
+        /// <li>
+        /// <p>NATIVE_FPS</p>
+        /// </li>
+        /// <li>
+        /// <p>NATIVE_FRAMES</p>
+        /// </li>
+        /// <li>
+        /// <p>NATIVE_MAX_DRAWTIME</p>
+        /// </li>
+        /// <li>
+        /// <p>NATIVE_MIN_DRAWTIME</p>
+        /// </li>
+        /// <li>
+        /// <p>OPENGL_AVG_DRAWTIME</p>
+        /// </li>
+        /// <li>
+        /// <p>OPENGL_FPS</p>
+        /// </li>
+        /// <li>
+        /// <p>OPENGL_FRAMES</p>
+        /// </li>
+        /// <li>
+        /// <p>OPENGL_MAX_DRAWTIME</p>
+        /// </li>
+        /// <li>
+        /// <p>OPENGL_MIN_DRAWTIME</p>
+        /// </li>
+        /// <li>
+        /// <p>RX</p>
+        /// </li>
+        /// <li>
+        /// <p>RX_RATE: The total number of bytes per second (TCP and UDP) that are sent,
+        /// by app process.</p>
+        /// </li>
+        /// <li>
+        /// <p>THREADS: A threads sample type. This is expressed as the total number of
+        /// threads per app process.</p>
+        /// </li>
+        /// <li>
+        /// <p>TX</p>
+        /// </li>
+        /// <li>
+        /// <p>TX_RATE: The total number of bytes per second (TCP and UDP) that are
+        /// received, by app process.</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::SampleType>) -> Self {
             self.r#type = input;
             self
@@ -9594,6 +11901,8 @@ pub mod sample {
             self.url = Some(input.into());
             self
         }
+        /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the sample's
+        /// file.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -9615,6 +11924,7 @@ impl Sample {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9626,22 +11936,39 @@ impl Sample {
     std::hash::Hash,
 )]
 pub enum SampleType {
+    #[allow(missing_docs)] // documentation missing in model
     Cpu,
+    #[allow(missing_docs)] // documentation missing in model
     Memory,
+    #[allow(missing_docs)] // documentation missing in model
     NativeAvgDrawtime,
+    #[allow(missing_docs)] // documentation missing in model
     NativeFps,
+    #[allow(missing_docs)] // documentation missing in model
     NativeFrames,
+    #[allow(missing_docs)] // documentation missing in model
     NativeMaxDrawtime,
+    #[allow(missing_docs)] // documentation missing in model
     NativeMinDrawtime,
+    #[allow(missing_docs)] // documentation missing in model
     OpenglAvgDrawtime,
+    #[allow(missing_docs)] // documentation missing in model
     OpenglFps,
+    #[allow(missing_docs)] // documentation missing in model
     OpenglFrames,
+    #[allow(missing_docs)] // documentation missing in model
     OpenglMaxDrawtime,
+    #[allow(missing_docs)] // documentation missing in model
     OpenglMinDrawtime,
+    #[allow(missing_docs)] // documentation missing in model
     Rx,
+    #[allow(missing_docs)] // documentation missing in model
     RxRate,
+    #[allow(missing_docs)] // documentation missing in model
     Threads,
+    #[allow(missing_docs)] // documentation missing in model
     Tx,
+    #[allow(missing_docs)] // documentation missing in model
     TxRate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9678,6 +12005,7 @@ impl std::str::FromStr for SampleType {
     }
 }
 impl SampleType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SampleType::Cpu => "CPU",
@@ -9700,6 +12028,7 @@ impl SampleType {
             SampleType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CPU",
@@ -9760,6 +12089,7 @@ pub mod offering_promotion {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the offering promotion.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -9769,6 +12099,7 @@ pub mod offering_promotion {
             self.description = Some(input.into());
             self
         }
+        /// <p>A string that describes the offering promotion.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -9922,6 +12253,7 @@ pub mod artifact {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The artifact's ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -9931,6 +12263,7 @@ pub mod artifact {
             self.name = Some(input.into());
             self
         }
+        /// <p>The artifact's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10027,6 +12360,94 @@ pub mod artifact {
             self.r#type = Some(input);
             self
         }
+        /// <p>The artifact's type.</p>
+        /// <p>Allowed values include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>UNKNOWN</p>
+        /// </li>
+        /// <li>
+        /// <p>SCREENSHOT</p>
+        /// </li>
+        /// <li>
+        /// <p>DEVICE_LOG</p>
+        /// </li>
+        /// <li>
+        /// <p>MESSAGE_LOG</p>
+        /// </li>
+        /// <li>
+        /// <p>VIDEO_LOG</p>
+        /// </li>
+        /// <li>
+        /// <p>RESULT_LOG</p>
+        /// </li>
+        /// <li>
+        /// <p>SERVICE_LOG</p>
+        /// </li>
+        /// <li>
+        /// <p>WEBKIT_LOG</p>
+        /// </li>
+        /// <li>
+        /// <p>INSTRUMENTATION_OUTPUT</p>
+        /// </li>
+        /// <li>
+        /// <p>EXERCISER_MONKEY_OUTPUT: the artifact (log) generated by an Android fuzz test.</p>
+        /// </li>
+        /// <li>
+        /// <p>CALABASH_JSON_OUTPUT</p>
+        /// </li>
+        /// <li>
+        /// <p>CALABASH_PRETTY_OUTPUT</p>
+        /// </li>
+        /// <li>
+        /// <p>CALABASH_STANDARD_OUTPUT</p>
+        /// </li>
+        /// <li>
+        /// <p>CALABASH_JAVA_XML_OUTPUT</p>
+        /// </li>
+        /// <li>
+        /// <p>AUTOMATION_OUTPUT</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_SERVER_OUTPUT</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_JAVA_OUTPUT</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_JAVA_XML_OUTPUT</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_PYTHON_OUTPUT</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_PYTHON_XML_OUTPUT</p>
+        /// </li>
+        /// <li>
+        /// <p>EXPLORER_EVENT_LOG</p>
+        /// </li>
+        /// <li>
+        /// <p>EXPLORER_SUMMARY_LOG</p>
+        /// </li>
+        /// <li>
+        /// <p>APPLICATION_CRASH_REPORT</p>
+        /// </li>
+        /// <li>
+        /// <p>XCTEST_LOG</p>
+        /// </li>
+        /// <li>
+        /// <p>VIDEO</p>
+        /// </li>
+        /// <li>
+        /// <p>CUSTOMER_ARTIFACT</p>
+        /// </li>
+        /// <li>
+        /// <p>CUSTOMER_ARTIFACT_LOG</p>
+        /// </li>
+        /// <li>
+        /// <p>TESTSPEC_OUTPUT</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ArtifactType>) -> Self {
             self.r#type = input;
             self
@@ -10036,6 +12457,7 @@ pub mod artifact {
             self.extension = Some(input.into());
             self
         }
+        /// <p>The artifact's file extension.</p>
         pub fn set_extension(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.extension = input;
             self
@@ -10046,6 +12468,8 @@ pub mod artifact {
             self.url = Some(input.into());
             self
         }
+        /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the artifact's
+        /// file.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -10069,7 +12493,7 @@ impl Artifact {
     }
 }
 
-/// **NOTE:** `ArtifactType::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `ArtifactType::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10081,34 +12505,61 @@ impl Artifact {
     std::hash::Hash,
 )]
 pub enum ArtifactType {
+    #[allow(missing_docs)] // documentation missing in model
     AppiumJavaOutput,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumJavaXmlOutput,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumPythonOutput,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumPythonXmlOutput,
+    #[allow(missing_docs)] // documentation missing in model
     AppiumServerOutput,
+    #[allow(missing_docs)] // documentation missing in model
     ApplicationCrashReport,
+    #[allow(missing_docs)] // documentation missing in model
     AutomationOutput,
+    #[allow(missing_docs)] // documentation missing in model
     CalabashJavaXmlOutput,
+    #[allow(missing_docs)] // documentation missing in model
     CalabashJsonOutput,
+    #[allow(missing_docs)] // documentation missing in model
     CalabashPrettyOutput,
+    #[allow(missing_docs)] // documentation missing in model
     CalabashStandardOutput,
+    #[allow(missing_docs)] // documentation missing in model
     CustomerArtifact,
+    #[allow(missing_docs)] // documentation missing in model
     CustomerArtifactLog,
+    #[allow(missing_docs)] // documentation missing in model
     DeviceLog,
+    #[allow(missing_docs)] // documentation missing in model
     ExerciserMonkeyOutput,
+    #[allow(missing_docs)] // documentation missing in model
     ExplorerEventLog,
+    #[allow(missing_docs)] // documentation missing in model
     ExplorerSummaryLog,
+    #[allow(missing_docs)] // documentation missing in model
     InstrumentationOutput,
+    #[allow(missing_docs)] // documentation missing in model
     MessageLog,
+    #[allow(missing_docs)] // documentation missing in model
     ResultLog,
+    #[allow(missing_docs)] // documentation missing in model
     Screenshot,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceLog,
+    #[allow(missing_docs)] // documentation missing in model
     TestspecOutput,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
+    #[allow(missing_docs)] // documentation missing in model
     Video,
+    #[allow(missing_docs)] // documentation missing in model
     VideoLog,
+    #[allow(missing_docs)] // documentation missing in model
     WebkitLog,
+    #[allow(missing_docs)] // documentation missing in model
     XctestLog,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10156,6 +12607,7 @@ impl std::str::FromStr for ArtifactType {
     }
 }
 impl ArtifactType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ArtifactType::AppiumJavaOutput => "APPIUM_JAVA_OUTPUT",
@@ -10189,6 +12641,7 @@ impl ArtifactType {
             ArtifactType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "APPIUM_JAVA_OUTPUT",
@@ -10228,6 +12681,7 @@ impl AsRef<str> for ArtifactType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10239,8 +12693,11 @@ impl AsRef<str> for ArtifactType {
     std::hash::Hash,
 )]
 pub enum ArtifactCategory {
+    #[allow(missing_docs)] // documentation missing in model
     File,
+    #[allow(missing_docs)] // documentation missing in model
     Log,
+    #[allow(missing_docs)] // documentation missing in model
     Screenshot,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10263,6 +12720,7 @@ impl std::str::FromStr for ArtifactCategory {
     }
 }
 impl ArtifactCategory {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ArtifactCategory::File => "FILE",
@@ -10271,6 +12729,7 @@ impl ArtifactCategory {
             ArtifactCategory::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FILE", "LOG", "SCREENSHOT"]
     }
@@ -10319,6 +12778,7 @@ pub mod device_pool_compatibility_result {
             self.device = Some(input);
             self
         }
+        /// <p>The device (phone or tablet) to return information about.</p>
         pub fn set_device(mut self, input: std::option::Option<crate::model::Device>) -> Self {
             self.device = input;
             self
@@ -10328,10 +12788,16 @@ pub mod device_pool_compatibility_result {
             self.compatible = Some(input);
             self
         }
+        /// <p>Whether the result was compatible with the device pool.</p>
         pub fn set_compatible(mut self, input: std::option::Option<bool>) -> Self {
             self.compatible = input;
             self
         }
+        /// Appends an item to `incompatibility_messages`.
+        ///
+        /// To override the contents of this collection use [`set_incompatibility_messages`](Self::set_incompatibility_messages).
+        ///
+        /// <p>Information about the compatibility.</p>
         pub fn incompatibility_messages(
             mut self,
             input: impl Into<crate::model::IncompatibilityMessage>,
@@ -10341,6 +12807,7 @@ pub mod device_pool_compatibility_result {
             self.incompatibility_messages = Some(v);
             self
         }
+        /// <p>Information about the compatibility.</p>
         pub fn set_incompatibility_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IncompatibilityMessage>>,
@@ -10418,6 +12885,7 @@ pub mod incompatibility_message {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message about the incompatibility.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -10448,6 +12916,28 @@ pub mod incompatibility_message {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of incompatibility.</p>
+        /// <p>Allowed values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>ARN</p>
+        /// </li>
+        /// <li>
+        /// <p>FORM_FACTOR (for example, phone or tablet)</p>
+        /// </li>
+        /// <li>
+        /// <p>MANUFACTURER</p>
+        /// </li>
+        /// <li>
+        /// <p>PLATFORM (for example, Android or iOS)</p>
+        /// </li>
+        /// <li>
+        /// <p>REMOTE_ACCESS_ENABLED</p>
+        /// </li>
+        /// <li>
+        /// <p>APPIUM_VERSION</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DeviceAttribute>,
@@ -10548,6 +13038,8 @@ pub mod account_settings {
             self.aws_account_number = Some(input.into());
             self
         }
+        /// <p>The AWS account number specified in the <code>AccountSettings</code>
+        /// container.</p>
         pub fn set_aws_account_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10555,6 +13047,11 @@ pub mod account_settings {
             self.aws_account_number = input;
             self
         }
+        /// Adds a key-value pair to `unmetered_devices`.
+        ///
+        /// To override the contents of this collection use [`set_unmetered_devices`](Self::set_unmetered_devices).
+        ///
+        /// <p>Returns the unmetered devices you have purchased or want to purchase.</p>
         pub fn unmetered_devices(
             mut self,
             k: impl Into<crate::model::DevicePlatform>,
@@ -10565,6 +13062,7 @@ pub mod account_settings {
             self.unmetered_devices = Some(hash_map);
             self
         }
+        /// <p>Returns the unmetered devices you have purchased or want to purchase.</p>
         pub fn set_unmetered_devices(
             mut self,
             input: std::option::Option<
@@ -10574,6 +13072,12 @@ pub mod account_settings {
             self.unmetered_devices = input;
             self
         }
+        /// Adds a key-value pair to `unmetered_remote_access_devices`.
+        ///
+        /// To override the contents of this collection use [`set_unmetered_remote_access_devices`](Self::set_unmetered_remote_access_devices).
+        ///
+        /// <p>Returns the unmetered remote access devices you have purchased or want to
+        /// purchase.</p>
         pub fn unmetered_remote_access_devices(
             mut self,
             k: impl Into<crate::model::DevicePlatform>,
@@ -10584,6 +13088,8 @@ pub mod account_settings {
             self.unmetered_remote_access_devices = Some(hash_map);
             self
         }
+        /// <p>Returns the unmetered remote access devices you have purchased or want to
+        /// purchase.</p>
         pub fn set_unmetered_remote_access_devices(
             mut self,
             input: std::option::Option<
@@ -10598,6 +13104,7 @@ pub mod account_settings {
             self.max_job_timeout_minutes = Some(input);
             self
         }
+        /// <p>The maximum number of minutes a test run executes before it times out.</p>
         pub fn set_max_job_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.max_job_timeout_minutes = input;
             self
@@ -10607,6 +13114,7 @@ pub mod account_settings {
             self.trial_minutes = Some(input);
             self
         }
+        /// <p>Information about an AWS account's usage of free trial device minutes.</p>
         pub fn set_trial_minutes(
             mut self,
             input: std::option::Option<crate::model::TrialMinutes>,
@@ -10614,12 +13122,24 @@ pub mod account_settings {
             self.trial_minutes = input;
             self
         }
+        /// Adds a key-value pair to `max_slots`.
+        ///
+        /// To override the contents of this collection use [`set_max_slots`](Self::set_max_slots).
+        ///
+        /// <p>The maximum number of device slots that the AWS account can purchase. Each maximum
+        /// is expressed as an <code>offering-id:number</code> pair, where the
+        /// <code>offering-id</code> represents one of the IDs returned by the
+        /// <code>ListOfferings</code> command.</p>
         pub fn max_slots(mut self, k: impl Into<std::string::String>, v: impl Into<i32>) -> Self {
             let mut hash_map = self.max_slots.unwrap_or_default();
             hash_map.insert(k.into(), v.into());
             self.max_slots = Some(hash_map);
             self
         }
+        /// <p>The maximum number of device slots that the AWS account can purchase. Each maximum
+        /// is expressed as an <code>offering-id:number</code> pair, where the
+        /// <code>offering-id</code> represents one of the IDs returned by the
+        /// <code>ListOfferings</code> command.</p>
         pub fn set_max_slots(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
@@ -10633,6 +13153,8 @@ pub mod account_settings {
             self.default_job_timeout_minutes = Some(input);
             self
         }
+        /// <p>The default number of minutes (at the account level) a test run executes before it times out. The
+        /// default value is 150 minutes.</p>
         pub fn set_default_job_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.default_job_timeout_minutes = input;
             self
@@ -10645,6 +13167,10 @@ pub mod account_settings {
             self.skip_app_resign = Some(input);
             self
         }
+        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
+        /// devices, Device Farm always signs your apps again.</p>
+        /// <p>For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device
+        /// Farm FAQs</i>.</p>
         pub fn set_skip_app_resign(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_app_resign = input;
             self
@@ -10704,6 +13230,7 @@ pub mod trial_minutes {
             self.total = Some(input);
             self
         }
+        /// <p>The total number of free trial minutes that the account started with.</p>
         pub fn set_total(mut self, input: std::option::Option<f64>) -> Self {
             self.total = input;
             self
@@ -10713,6 +13240,7 @@ pub mod trial_minutes {
             self.remaining = Some(input);
             self
         }
+        /// <p>The number of free trial minutes remaining in the account.</p>
         pub fn set_remaining(mut self, input: std::option::Option<f64>) -> Self {
             self.remaining = input;
             self
@@ -10766,6 +13294,7 @@ pub mod create_remote_access_session_configuration {
             self.billing_method = Some(input);
             self
         }
+        /// <p>The billing method for the remote access session.</p>
         pub fn set_billing_method(
             mut self,
             input: std::option::Option<crate::model::BillingMethod>,
@@ -10773,12 +13302,18 @@ pub mod create_remote_access_session_configuration {
             self.billing_method = input;
             self
         }
+        /// Appends an item to `vpce_configuration_arns`.
+        ///
+        /// To override the contents of this collection use [`set_vpce_configuration_arns`](Self::set_vpce_configuration_arns).
+        ///
+        /// <p>An array of ARNs included in the VPC endpoint configuration.</p>
         pub fn vpce_configuration_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpce_configuration_arns.unwrap_or_default();
             v.push(input.into());
             self.vpce_configuration_arns = Some(v);
             self
         }
+        /// <p>An array of ARNs included in the VPC endpoint configuration.</p>
         pub fn set_vpce_configuration_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

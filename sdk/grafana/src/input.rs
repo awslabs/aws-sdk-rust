@@ -15,6 +15,7 @@ pub mod associate_license_input {
             self.workspace_id = Some(input.into());
             self
         }
+        /// <p>The ID of the workspace to associate the license with.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -24,6 +25,7 @@ pub mod associate_license_input {
             self.license_type = Some(input);
             self
         }
+        /// <p>The type of license to associate with the workspace.</p>
         pub fn set_license_type(
             mut self,
             input: std::option::Option<crate::model::LicenseType>,
@@ -36,7 +38,7 @@ pub mod associate_license_input {
             self,
         ) -> std::result::Result<
             crate::input::AssociateLicenseInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AssociateLicenseInput {
                 workspace_id: self.workspace_id,
@@ -56,27 +58,27 @@ impl AssociateLicenseInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AssociateLicense,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AssociateLicenseInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.workspace_id;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workspace_id = smithy_http::label::fmt_string(input_1, false);
+            let workspace_id = aws_smithy_http::label::fmt_string(input_1, false);
             if workspace_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workspace_id",
                     details: "cannot be empty or unset",
                 });
@@ -85,13 +87,13 @@ impl AssociateLicenseInput {
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "license_type",
                         details: "cannot be empty or unset",
                     })?;
-            let license_type = smithy_http::label::fmt_string(input_2, false);
+            let license_type = aws_smithy_http::label::fmt_string(input_2, false);
             if license_type.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "license_type",
                     details: "cannot be empty or unset",
                 });
@@ -109,7 +111,7 @@ impl AssociateLicenseInput {
         fn update_http_builder(
             input: &crate::input::AssociateLicenseInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -118,23 +120,23 @@ impl AssociateLicenseInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AssociateLicenseInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -157,15 +159,15 @@ impl AssociateLicenseInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AssociateLicense::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AssociateLicense",
             "grafana",
         ));
@@ -174,10 +176,10 @@ impl AssociateLicenseInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -223,6 +225,10 @@ pub mod create_workspace_input {
             self.account_access_type = Some(input);
             self
         }
+        /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in
+        /// other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must
+        /// specify which organizational units the workspace can access in the
+        /// <code>workspaceOrganizationalUnits</code> parameter.</p>
         pub fn set_account_access_type(
             mut self,
             input: std::option::Option<crate::model::AccountAccessType>,
@@ -235,6 +241,7 @@ pub mod create_workspace_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>A unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -245,6 +252,8 @@ pub mod create_workspace_input {
             self.organization_role_name = Some(input.into());
             self
         }
+        /// <p>The name of an IAM role that already exists to use with Organizations to access Amazon Web Services
+        /// data sources and notification channels in other accounts in an organization.</p>
         pub fn set_organization_role_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -266,6 +275,16 @@ pub mod create_workspace_input {
             self.permission_type = Some(input);
             self
         }
+        /// <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates
+        /// the IAM roles and provisions the permissions that the workspace needs to use
+        /// Amazon Web Services data sources and notification channels.</p>
+        /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and
+        /// permissions yourself. If you are creating this workspace in a member account of an
+        /// organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services
+        /// accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for
+        /// Amazon Web Services data sources and notification channels</a>
+        /// </p>
         pub fn set_permission_type(
             mut self,
             input: std::option::Option<crate::model::PermissionType>,
@@ -279,6 +298,8 @@ pub mod create_workspace_input {
             self.stack_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the CloudFormation stack set to use to generate IAM roles
+        /// to be used for this workspace.</p>
         pub fn set_stack_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -286,6 +307,17 @@ pub mod create_workspace_input {
             self.stack_set_name = input;
             self
         }
+        /// Appends an item to `workspace_data_sources`.
+        ///
+        /// To override the contents of this collection use [`set_workspace_data_sources`](Self::set_workspace_data_sources).
+        ///
+        /// <p>Specify the Amazon Web Services data sources that you want to be queried in this
+        /// workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to read data from these
+        /// sources. You must still add them as data sources in the Grafana console in the
+        /// workspace.</p>
+        /// <p>If you don't specify a data source here, you can still add it as a data source in the
+        /// workspace console later. However, you will then have to manually configure permissions for
+        /// it.</p>
         pub fn workspace_data_sources(
             mut self,
             input: impl Into<crate::model::DataSourceType>,
@@ -295,6 +327,13 @@ pub mod create_workspace_input {
             self.workspace_data_sources = Some(v);
             self
         }
+        /// <p>Specify the Amazon Web Services data sources that you want to be queried in this
+        /// workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to read data from these
+        /// sources. You must still add them as data sources in the Grafana console in the
+        /// workspace.</p>
+        /// <p>If you don't specify a data source here, you can still add it as a data source in the
+        /// workspace console later. However, you will then have to manually configure permissions for
+        /// it.</p>
         pub fn set_workspace_data_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceType>>,
@@ -307,6 +346,7 @@ pub mod create_workspace_input {
             self.workspace_description = Some(input.into());
             self
         }
+        /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
         pub fn set_workspace_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -319,6 +359,7 @@ pub mod create_workspace_input {
             self.workspace_name = Some(input.into());
             self
         }
+        /// <p>The name for the workspace. It does not have to be unique.</p>
         pub fn set_workspace_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -326,6 +367,13 @@ pub mod create_workspace_input {
             self.workspace_name = input;
             self
         }
+        /// Appends an item to `workspace_notification_destinations`.
+        ///
+        /// To override the contents of this collection use [`set_workspace_notification_destinations`](Self::set_workspace_notification_destinations).
+        ///
+        /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these
+        /// data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow
+        /// Amazon Managed Grafana to use these channels.</p>
         pub fn workspace_notification_destinations(
             mut self,
             input: impl Into<crate::model::NotificationDestinationType>,
@@ -335,6 +383,9 @@ pub mod create_workspace_input {
             self.workspace_notification_destinations = Some(v);
             self
         }
+        /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these
+        /// data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow
+        /// Amazon Managed Grafana to use these channels.</p>
         pub fn set_workspace_notification_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotificationDestinationType>>,
@@ -342,6 +393,12 @@ pub mod create_workspace_input {
             self.workspace_notification_destinations = input;
             self
         }
+        /// Appends an item to `workspace_organizational_units`.
+        ///
+        /// To override the contents of this collection use [`set_workspace_organizational_units`](Self::set_workspace_organizational_units).
+        ///
+        /// <p>Specifies the organizational units that this workspace is allowed to use data sources
+        /// from, if this workspace is in an account that is part of an organization.</p>
         pub fn workspace_organizational_units(
             mut self,
             input: impl Into<std::string::String>,
@@ -351,6 +408,8 @@ pub mod create_workspace_input {
             self.workspace_organizational_units = Some(v);
             self
         }
+        /// <p>Specifies the organizational units that this workspace is allowed to use data sources
+        /// from, if this workspace is in an account that is part of an organization.</p>
         pub fn set_workspace_organizational_units(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -367,6 +426,11 @@ pub mod create_workspace_input {
             self.workspace_role_arn = Some(input.into());
             self
         }
+        /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the
+        /// workspace will view data from. If you already have a role that you want to use, specify it here. If you omit
+        /// this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or
+        /// <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is
+        /// automatically created.</p>
         pub fn set_workspace_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -374,6 +438,14 @@ pub mod create_workspace_input {
             self.workspace_role_arn = input;
             self
         }
+        /// Appends an item to `authentication_providers`.
+        ///
+        /// To override the contents of this collection use [`set_authentication_providers`](Self::set_authentication_providers).
+        ///
+        /// <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate
+        /// users for using the Grafana console within a workspace. For more information,
+        /// see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in
+        /// Amazon Managed Grafana</a>.</p>
         pub fn authentication_providers(
             mut self,
             input: impl Into<crate::model::AuthenticationProviderTypes>,
@@ -383,6 +455,10 @@ pub mod create_workspace_input {
             self.authentication_providers = Some(v);
             self
         }
+        /// <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate
+        /// users for using the Grafana console within a workspace. For more information,
+        /// see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in
+        /// Amazon Managed Grafana</a>.</p>
         pub fn set_authentication_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
@@ -395,7 +471,7 @@ pub mod create_workspace_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateWorkspaceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateWorkspaceInput {
                 account_access_type: self.account_access_type,
@@ -425,16 +501,16 @@ impl CreateWorkspaceInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateWorkspace,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateWorkspaceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/workspaces").expect("formatting should succeed");
             Ok(())
         }
@@ -442,7 +518,7 @@ impl CreateWorkspaceInput {
         fn update_http_builder(
             input: &crate::input::CreateWorkspaceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -451,10 +527,10 @@ impl CreateWorkspaceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateWorkspaceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -464,17 +540,17 @@ impl CreateWorkspaceInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_workspace(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -497,15 +573,15 @@ impl CreateWorkspaceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateWorkspace::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateWorkspace",
             "grafana",
         ));
@@ -514,10 +590,10 @@ impl CreateWorkspaceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -545,6 +621,7 @@ pub mod delete_workspace_input {
             self.workspace_id = Some(input.into());
             self
         }
+        /// <p>The ID of the workspace to delete.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -554,7 +631,7 @@ pub mod delete_workspace_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteWorkspaceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteWorkspaceInput {
                 workspace_id: self.workspace_id,
@@ -573,27 +650,27 @@ impl DeleteWorkspaceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteWorkspace,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteWorkspaceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_3 = &_input.workspace_id;
             let input_3 =
                 input_3
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workspace_id = smithy_http::label::fmt_string(input_3, false);
+            let workspace_id = aws_smithy_http::label::fmt_string(input_3, false);
             if workspace_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workspace_id",
                     details: "cannot be empty or unset",
                 });
@@ -610,7 +687,7 @@ impl DeleteWorkspaceInput {
         fn update_http_builder(
             input: &crate::input::DeleteWorkspaceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -619,23 +696,23 @@ impl DeleteWorkspaceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteWorkspaceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -658,15 +735,15 @@ impl DeleteWorkspaceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteWorkspace::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteWorkspace",
             "grafana",
         ));
@@ -675,10 +752,10 @@ impl DeleteWorkspaceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -706,6 +783,7 @@ pub mod describe_workspace_input {
             self.workspace_id = Some(input.into());
             self
         }
+        /// <p>The ID of the workspace to display information about.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -715,7 +793,7 @@ pub mod describe_workspace_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeWorkspaceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeWorkspaceInput {
                 workspace_id: self.workspace_id,
@@ -734,27 +812,27 @@ impl DescribeWorkspaceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkspace,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeWorkspaceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_4 = &_input.workspace_id;
             let input_4 =
                 input_4
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workspace_id = smithy_http::label::fmt_string(input_4, false);
+            let workspace_id = aws_smithy_http::label::fmt_string(input_4, false);
             if workspace_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workspace_id",
                     details: "cannot be empty or unset",
                 });
@@ -771,7 +849,7 @@ impl DescribeWorkspaceInput {
         fn update_http_builder(
             input: &crate::input::DescribeWorkspaceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -780,23 +858,23 @@ impl DescribeWorkspaceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeWorkspaceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -819,15 +897,15 @@ impl DescribeWorkspaceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeWorkspace::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeWorkspace",
             "grafana",
         ));
@@ -836,10 +914,10 @@ impl DescribeWorkspaceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -867,6 +945,7 @@ pub mod describe_workspace_authentication_input {
             self.workspace_id = Some(input.into());
             self
         }
+        /// <p>The ID of the workspace to return authentication information about.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -876,7 +955,7 @@ pub mod describe_workspace_authentication_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeWorkspaceAuthenticationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeWorkspaceAuthenticationInput {
                 workspace_id: self.workspace_id,
@@ -896,27 +975,27 @@ impl DescribeWorkspaceAuthenticationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkspaceAuthentication,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeWorkspaceAuthenticationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_5 = &_input.workspace_id;
             let input_5 =
                 input_5
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workspace_id = smithy_http::label::fmt_string(input_5, false);
+            let workspace_id = aws_smithy_http::label::fmt_string(input_5, false);
             if workspace_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workspace_id",
                     details: "cannot be empty or unset",
                 });
@@ -933,7 +1012,7 @@ impl DescribeWorkspaceAuthenticationInput {
         fn update_http_builder(
             input: &crate::input::DescribeWorkspaceAuthenticationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -942,23 +1021,23 @@ impl DescribeWorkspaceAuthenticationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeWorkspaceAuthenticationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -981,15 +1060,15 @@ impl DescribeWorkspaceAuthenticationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeWorkspaceAuthentication::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeWorkspaceAuthentication",
             "grafana",
         ));
@@ -998,10 +1077,10 @@ impl DescribeWorkspaceAuthenticationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1030,6 +1109,7 @@ pub mod disassociate_license_input {
             self.workspace_id = Some(input.into());
             self
         }
+        /// <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -1039,6 +1119,7 @@ pub mod disassociate_license_input {
             self.license_type = Some(input);
             self
         }
+        /// <p>The type of license to remove from the workspace.</p>
         pub fn set_license_type(
             mut self,
             input: std::option::Option<crate::model::LicenseType>,
@@ -1051,7 +1132,7 @@ pub mod disassociate_license_input {
             self,
         ) -> std::result::Result<
             crate::input::DisassociateLicenseInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisassociateLicenseInput {
                 workspace_id: self.workspace_id,
@@ -1071,27 +1152,27 @@ impl DisassociateLicenseInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisassociateLicense,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisassociateLicenseInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_6 = &_input.workspace_id;
             let input_6 =
                 input_6
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workspace_id = smithy_http::label::fmt_string(input_6, false);
+            let workspace_id = aws_smithy_http::label::fmt_string(input_6, false);
             if workspace_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workspace_id",
                     details: "cannot be empty or unset",
                 });
@@ -1100,13 +1181,13 @@ impl DisassociateLicenseInput {
             let input_7 =
                 input_7
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "license_type",
                         details: "cannot be empty or unset",
                     })?;
-            let license_type = smithy_http::label::fmt_string(input_7, false);
+            let license_type = aws_smithy_http::label::fmt_string(input_7, false);
             if license_type.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "license_type",
                     details: "cannot be empty or unset",
                 });
@@ -1124,7 +1205,7 @@ impl DisassociateLicenseInput {
         fn update_http_builder(
             input: &crate::input::DisassociateLicenseInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1133,23 +1214,23 @@ impl DisassociateLicenseInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisassociateLicenseInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1172,15 +1253,15 @@ impl DisassociateLicenseInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisassociateLicense::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisassociateLicense",
             "grafana",
         ));
@@ -1189,10 +1270,10 @@ impl DisassociateLicenseInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1225,6 +1306,7 @@ pub mod list_permissions_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to include in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1235,6 +1317,8 @@ pub mod list_permissions_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to use when requesting the next set of results. You received this token from a previous
+        /// <code>ListPermissions</code> operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1246,6 +1330,9 @@ pub mod list_permissions_input {
             self.user_type = Some(input);
             self
         }
+        /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of Amazon Web Services SSO users
+        /// are returned. If you specify <code>SSO_GROUP</code>, only the permissions of Amazon Web Services SSO groups
+        /// are returned.</p>
         pub fn set_user_type(mut self, input: std::option::Option<crate::model::UserType>) -> Self {
             self.user_type = input;
             self
@@ -1255,6 +1342,7 @@ pub mod list_permissions_input {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>(Optional) Limits the results to only the user that matches this ID.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -1264,6 +1352,7 @@ pub mod list_permissions_input {
             self.group_id = Some(input.into());
             self
         }
+        /// <p>(Optional) Limits the results to only the group that matches this ID.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_id = input;
             self
@@ -1273,6 +1362,7 @@ pub mod list_permissions_input {
             self.workspace_id = Some(input.into());
             self
         }
+        /// <p>The ID of the workspace to list permissions for. This parameter is required.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -1282,7 +1372,7 @@ pub mod list_permissions_input {
             self,
         ) -> std::result::Result<
             crate::input::ListPermissionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListPermissionsInput {
                 max_results: self.max_results,
@@ -1306,27 +1396,27 @@ impl ListPermissionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListPermissions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListPermissionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_8 = &_input.workspace_id;
             let input_8 =
                 input_8
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workspace_id = smithy_http::label::fmt_string(input_8, false);
+            let workspace_id = aws_smithy_http::label::fmt_string(input_8, false);
             if workspace_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workspace_id",
                     details: "cannot be empty or unset",
                 });
@@ -1340,31 +1430,31 @@ impl ListPermissionsInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListPermissionsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_9) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_9).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_9).encode(),
                 );
             }
             if let Some(inner_10) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_10));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
             }
             if let Some(inner_11) = &_input.user_type {
-                query.push_kv("userType", &smithy_http::query::fmt_string(&inner_11));
+                query.push_kv("userType", &aws_smithy_http::query::fmt_string(&inner_11));
             }
             if let Some(inner_12) = &_input.user_id {
-                query.push_kv("userId", &smithy_http::query::fmt_string(&inner_12));
+                query.push_kv("userId", &aws_smithy_http::query::fmt_string(&inner_12));
             }
             if let Some(inner_13) = &_input.group_id {
-                query.push_kv("groupId", &smithy_http::query::fmt_string(&inner_13));
+                query.push_kv("groupId", &aws_smithy_http::query::fmt_string(&inner_13));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListPermissionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1374,23 +1464,23 @@ impl ListPermissionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListPermissionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1413,15 +1503,15 @@ impl ListPermissionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListPermissions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListPermissions",
             "grafana",
         ));
@@ -1430,10 +1520,10 @@ impl ListPermissionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1462,6 +1552,7 @@ pub mod list_workspaces_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of workspaces to include in the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1472,6 +1563,8 @@ pub mod list_workspaces_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of workspaces to return. (You receive this token from a
+        /// previous <code>ListWorkspaces</code> operation.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1481,7 +1574,7 @@ pub mod list_workspaces_input {
             self,
         ) -> std::result::Result<
             crate::input::ListWorkspacesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListWorkspacesInput {
                 max_results: self.max_results,
@@ -1501,36 +1594,36 @@ impl ListWorkspacesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListWorkspaces,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListWorkspacesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/workspaces").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListWorkspacesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_14) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_14).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
                 );
             }
             if let Some(inner_15) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_15));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_15));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListWorkspacesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1540,23 +1633,23 @@ impl ListWorkspacesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListWorkspacesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1579,15 +1672,15 @@ impl ListWorkspacesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListWorkspaces::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListWorkspaces",
             "grafana",
         ));
@@ -1596,10 +1689,10 @@ impl ListWorkspacesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1624,6 +1717,11 @@ pub mod update_permissions_input {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `update_instruction_batch`.
+        ///
+        /// To override the contents of this collection use [`set_update_instruction_batch`](Self::set_update_instruction_batch).
+        ///
+        /// <p>An array of structures that contain the permission updates to make.</p>
         pub fn update_instruction_batch(
             mut self,
             input: impl Into<crate::model::UpdateInstruction>,
@@ -1633,6 +1731,7 @@ pub mod update_permissions_input {
             self.update_instruction_batch = Some(v);
             self
         }
+        /// <p>An array of structures that contain the permission updates to make.</p>
         pub fn set_update_instruction_batch(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpdateInstruction>>,
@@ -1645,6 +1744,7 @@ pub mod update_permissions_input {
             self.workspace_id = Some(input.into());
             self
         }
+        /// <p>The ID of the workspace to update.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -1654,7 +1754,7 @@ pub mod update_permissions_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdatePermissionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdatePermissionsInput {
                 update_instruction_batch: self.update_instruction_batch,
@@ -1674,27 +1774,27 @@ impl UpdatePermissionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdatePermissions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdatePermissionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_16 = &_input.workspace_id;
             let input_16 =
                 input_16
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workspace_id = smithy_http::label::fmt_string(input_16, false);
+            let workspace_id = aws_smithy_http::label::fmt_string(input_16, false);
             if workspace_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workspace_id",
                     details: "cannot be empty or unset",
                 });
@@ -1711,7 +1811,7 @@ impl UpdatePermissionsInput {
         fn update_http_builder(
             input: &crate::input::UpdatePermissionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1720,27 +1820,27 @@ impl UpdatePermissionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdatePermissionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_permissions(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1763,15 +1863,15 @@ impl UpdatePermissionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdatePermissions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdatePermissions",
             "grafana",
         ));
@@ -1780,10 +1880,10 @@ impl UpdatePermissionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1827,6 +1927,10 @@ pub mod update_workspace_input {
             self.account_access_type = Some(input);
             self
         }
+        /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in
+        /// other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must
+        /// specify which organizational units the workspace can access in the
+        /// <code>workspaceOrganizationalUnits</code> parameter.</p>
         pub fn set_account_access_type(
             mut self,
             input: std::option::Option<crate::model::AccountAccessType>,
@@ -1839,6 +1943,7 @@ pub mod update_workspace_input {
             self.organization_role_name = Some(input.into());
             self
         }
+        /// <p>The name of an IAM role that already exists to use to access resources through Organizations.</p>
         pub fn set_organization_role_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1860,6 +1965,16 @@ pub mod update_workspace_input {
             self.permission_type = Some(input);
             self
         }
+        /// <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates
+        /// the IAM roles and provisions the permissions that the workspace needs to use
+        /// Amazon Web Services data sources and notification channels.</p>
+        /// <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and
+        /// permissions yourself. If you are creating this workspace in a member account of an
+        /// organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services
+        /// accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for
+        /// Amazon Web Services data sources and notification channels</a>
+        /// </p>
         pub fn set_permission_type(
             mut self,
             input: std::option::Option<crate::model::PermissionType>,
@@ -1873,6 +1988,8 @@ pub mod update_workspace_input {
             self.stack_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the CloudFormation stack set to use to generate IAM roles
+        /// to be used for this workspace.</p>
         pub fn set_stack_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1880,6 +1997,17 @@ pub mod update_workspace_input {
             self.stack_set_name = input;
             self
         }
+        /// Appends an item to `workspace_data_sources`.
+        ///
+        /// To override the contents of this collection use [`set_workspace_data_sources`](Self::set_workspace_data_sources).
+        ///
+        /// <p>Specify the Amazon Web Services data sources that you want to be queried in this
+        /// workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to read data from these
+        /// sources. You must still add them as data sources in the Grafana console in the
+        /// workspace.</p>
+        /// <p>If you don't specify a data source here, you can still add it as a data source later in
+        /// the workspace console. However, you will then have to manually configure permissions for
+        /// it.</p>
         pub fn workspace_data_sources(
             mut self,
             input: impl Into<crate::model::DataSourceType>,
@@ -1889,6 +2017,13 @@ pub mod update_workspace_input {
             self.workspace_data_sources = Some(v);
             self
         }
+        /// <p>Specify the Amazon Web Services data sources that you want to be queried in this
+        /// workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to read data from these
+        /// sources. You must still add them as data sources in the Grafana console in the
+        /// workspace.</p>
+        /// <p>If you don't specify a data source here, you can still add it as a data source later in
+        /// the workspace console. However, you will then have to manually configure permissions for
+        /// it.</p>
         pub fn set_workspace_data_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceType>>,
@@ -1901,6 +2036,7 @@ pub mod update_workspace_input {
             self.workspace_description = Some(input.into());
             self
         }
+        /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
         pub fn set_workspace_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1913,6 +2049,7 @@ pub mod update_workspace_input {
             self.workspace_id = Some(input.into());
             self
         }
+        /// <p>The ID of the workspace to update.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -1922,6 +2059,7 @@ pub mod update_workspace_input {
             self.workspace_name = Some(input.into());
             self
         }
+        /// <p>A new name for the workspace to update.</p>
         pub fn set_workspace_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1929,6 +2067,13 @@ pub mod update_workspace_input {
             self.workspace_name = input;
             self
         }
+        /// Appends an item to `workspace_notification_destinations`.
+        ///
+        /// To override the contents of this collection use [`set_workspace_notification_destinations`](Self::set_workspace_notification_destinations).
+        ///
+        /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these
+        /// data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow
+        /// Amazon Managed Grafana to use these channels.</p>
         pub fn workspace_notification_destinations(
             mut self,
             input: impl Into<crate::model::NotificationDestinationType>,
@@ -1938,6 +2083,9 @@ pub mod update_workspace_input {
             self.workspace_notification_destinations = Some(v);
             self
         }
+        /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these
+        /// data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow
+        /// Amazon Managed Grafana to use these channels.</p>
         pub fn set_workspace_notification_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotificationDestinationType>>,
@@ -1945,6 +2093,12 @@ pub mod update_workspace_input {
             self.workspace_notification_destinations = input;
             self
         }
+        /// Appends an item to `workspace_organizational_units`.
+        ///
+        /// To override the contents of this collection use [`set_workspace_organizational_units`](Self::set_workspace_organizational_units).
+        ///
+        /// <p>Specifies the organizational units that this workspace is allowed to use data sources
+        /// from, if this workspace is in an account that is part of an organization.</p>
         pub fn workspace_organizational_units(
             mut self,
             input: impl Into<std::string::String>,
@@ -1954,6 +2108,8 @@ pub mod update_workspace_input {
             self.workspace_organizational_units = Some(v);
             self
         }
+        /// <p>Specifies the organizational units that this workspace is allowed to use data sources
+        /// from, if this workspace is in an account that is part of an organization.</p>
         pub fn set_workspace_organizational_units(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1970,6 +2126,11 @@ pub mod update_workspace_input {
             self.workspace_role_arn = Some(input.into());
             self
         }
+        /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the
+        /// workspace will view data from. If you already have a role that you want to use, specify it here. If you omit
+        /// this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or
+        /// <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is
+        /// automatically created.</p>
         pub fn set_workspace_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1982,7 +2143,7 @@ pub mod update_workspace_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateWorkspaceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateWorkspaceInput {
                 account_access_type: self.account_access_type,
@@ -2011,27 +2172,27 @@ impl UpdateWorkspaceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateWorkspace,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateWorkspaceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_17 = &_input.workspace_id;
             let input_17 =
                 input_17
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workspace_id = smithy_http::label::fmt_string(input_17, false);
+            let workspace_id = aws_smithy_http::label::fmt_string(input_17, false);
             if workspace_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workspace_id",
                     details: "cannot be empty or unset",
                 });
@@ -2048,7 +2209,7 @@ impl UpdateWorkspaceInput {
         fn update_http_builder(
             input: &crate::input::UpdateWorkspaceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2057,27 +2218,27 @@ impl UpdateWorkspaceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateWorkspaceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_workspace(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2100,15 +2261,15 @@ impl UpdateWorkspaceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateWorkspace::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateWorkspace",
             "grafana",
         ));
@@ -2117,10 +2278,10 @@ impl UpdateWorkspaceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2151,10 +2312,19 @@ pub mod update_workspace_authentication_input {
             self.workspace_id = Some(input.into());
             self
         }
+        /// <p>The ID of the workspace to update the authentication for.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
         }
+        /// Appends an item to `authentication_providers`.
+        ///
+        /// To override the contents of this collection use [`set_authentication_providers`](Self::set_authentication_providers).
+        ///
+        /// <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate
+        /// users for using the Grafana console within a workspace. For more information,
+        /// see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in
+        /// Amazon Managed Grafana</a>.</p>
         pub fn authentication_providers(
             mut self,
             input: impl Into<crate::model::AuthenticationProviderTypes>,
@@ -2164,6 +2334,10 @@ pub mod update_workspace_authentication_input {
             self.authentication_providers = Some(v);
             self
         }
+        /// <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate
+        /// users for using the Grafana console within a workspace. For more information,
+        /// see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in
+        /// Amazon Managed Grafana</a>.</p>
         pub fn set_authentication_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
@@ -2179,6 +2353,10 @@ pub mod update_workspace_authentication_input {
             self.saml_configuration = Some(input);
             self
         }
+        /// <p>If the workspace uses SAML, use this structure to
+        /// map SAML assertion attributes to workspace user information and
+        /// define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles
+        /// in the workspace.</p>
         pub fn set_saml_configuration(
             mut self,
             input: std::option::Option<crate::model::SamlConfiguration>,
@@ -2191,7 +2369,7 @@ pub mod update_workspace_authentication_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateWorkspaceAuthenticationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateWorkspaceAuthenticationInput {
                 workspace_id: self.workspace_id,
@@ -2213,27 +2391,27 @@ impl UpdateWorkspaceAuthenticationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateWorkspaceAuthentication,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateWorkspaceAuthenticationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_18 = &_input.workspace_id;
             let input_18 =
                 input_18
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workspace_id = smithy_http::label::fmt_string(input_18, false);
+            let workspace_id = aws_smithy_http::label::fmt_string(input_18, false);
             if workspace_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workspace_id",
                     details: "cannot be empty or unset",
                 });
@@ -2250,7 +2428,7 @@ impl UpdateWorkspaceAuthenticationInput {
         fn update_http_builder(
             input: &crate::input::UpdateWorkspaceAuthenticationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2259,25 +2437,25 @@ impl UpdateWorkspaceAuthenticationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateWorkspaceAuthenticationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_workspace_authentication(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_workspace_authentication(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2300,15 +2478,15 @@ impl UpdateWorkspaceAuthenticationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateWorkspaceAuthentication::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateWorkspaceAuthentication",
             "grafana",
         ));
@@ -2317,10 +2495,10 @@ impl UpdateWorkspaceAuthenticationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2334,6 +2512,7 @@ impl UpdateWorkspaceAuthenticationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkspacesInput {
@@ -2352,6 +2531,7 @@ impl std::fmt::Debug for ListWorkspacesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkspaceInput {
@@ -2437,6 +2617,7 @@ impl std::fmt::Debug for CreateWorkspaceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkspaceInput {
@@ -2451,6 +2632,7 @@ impl std::fmt::Debug for DeleteWorkspaceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkspaceInput {
@@ -2528,6 +2710,7 @@ impl std::fmt::Debug for UpdateWorkspaceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceInput {
@@ -2542,6 +2725,7 @@ impl std::fmt::Debug for DescribeWorkspaceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePermissionsInput {
@@ -2560,6 +2744,7 @@ impl std::fmt::Debug for UpdatePermissionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionsInput {
@@ -2592,6 +2777,7 @@ impl std::fmt::Debug for ListPermissionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateLicenseInput {
@@ -2609,6 +2795,7 @@ impl std::fmt::Debug for DisassociateLicenseInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateLicenseInput {
@@ -2626,6 +2813,7 @@ impl std::fmt::Debug for AssociateLicenseInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkspaceAuthenticationInput {
@@ -2653,6 +2841,7 @@ impl std::fmt::Debug for UpdateWorkspaceAuthenticationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkspaceAuthenticationInput {

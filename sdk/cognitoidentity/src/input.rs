@@ -28,6 +28,7 @@ pub mod create_identity_pool_input {
             self.identity_pool_name = Some(input.into());
             self
         }
+        /// <p>A string that you provide.</p>
         pub fn set_identity_pool_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -40,6 +41,7 @@ pub mod create_identity_pool_input {
             self.allow_unauthenticated_identities = Some(input);
             self
         }
+        /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
         pub fn set_allow_unauthenticated_identities(
             mut self,
             input: std::option::Option<bool>,
@@ -53,10 +55,17 @@ pub mod create_identity_pool_input {
             self.allow_classic_flow = Some(input);
             self
         }
+        /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
+        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
         pub fn set_allow_classic_flow(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_classic_flow = input;
             self
         }
+        /// Adds a key-value pair to `supported_login_providers`.
+        ///
+        /// To override the contents of this collection use [`set_supported_login_providers`](Self::set_supported_login_providers).
+        ///
+        /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
         pub fn supported_login_providers(
             mut self,
             k: impl Into<std::string::String>,
@@ -67,6 +76,7 @@ pub mod create_identity_pool_input {
             self.supported_login_providers = Some(hash_map);
             self
         }
+        /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
         pub fn set_supported_login_providers(
             mut self,
             input: std::option::Option<
@@ -87,6 +97,13 @@ pub mod create_identity_pool_input {
             self.developer_provider_name = Some(input.into());
             self
         }
+        /// <p>The "domain" by which Cognito will refer to your users. This name acts as a
+        /// placeholder that allows your backend and the Cognito service to communicate about the
+        /// developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well
+        /// as period (<code>.</code>), underscore (<code>_</code>), and dash
+        /// (<code>-</code>).</p>
+        /// <p>Once you have set a developer provider name, you cannot change it. Please take care
+        /// in setting this parameter.</p>
         pub fn set_developer_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -94,6 +111,11 @@ pub mod create_identity_pool_input {
             self.developer_provider_name = input;
             self
         }
+        /// Appends an item to `open_id_connect_provider_ar_ns`.
+        ///
+        /// To override the contents of this collection use [`set_open_id_connect_provider_ar_ns`](Self::set_open_id_connect_provider_ar_ns).
+        ///
+        /// <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
         pub fn open_id_connect_provider_ar_ns(
             mut self,
             input: impl Into<std::string::String>,
@@ -103,6 +125,7 @@ pub mod create_identity_pool_input {
             self.open_id_connect_provider_ar_ns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
         pub fn set_open_id_connect_provider_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -110,6 +133,11 @@ pub mod create_identity_pool_input {
             self.open_id_connect_provider_ar_ns = input;
             self
         }
+        /// Appends an item to `cognito_identity_providers`.
+        ///
+        /// To override the contents of this collection use [`set_cognito_identity_providers`](Self::set_cognito_identity_providers).
+        ///
+        /// <p>An array of Amazon Cognito user pools and their client IDs.</p>
         pub fn cognito_identity_providers(
             mut self,
             input: impl Into<crate::model::CognitoIdentityProvider>,
@@ -119,6 +147,7 @@ pub mod create_identity_pool_input {
             self.cognito_identity_providers = Some(v);
             self
         }
+        /// <p>An array of Amazon Cognito user pools and their client IDs.</p>
         pub fn set_cognito_identity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>,
@@ -126,12 +155,20 @@ pub mod create_identity_pool_input {
             self.cognito_identity_providers = input;
             self
         }
+        /// Appends an item to `saml_provider_ar_ns`.
+        ///
+        /// To override the contents of this collection use [`set_saml_provider_ar_ns`](Self::set_saml_provider_ar_ns).
+        ///
+        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
+        /// pool.</p>
         pub fn saml_provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.saml_provider_ar_ns.unwrap_or_default();
             v.push(input.into());
             self.saml_provider_ar_ns = Some(v);
             self
         }
+        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
+        /// pool.</p>
         pub fn set_saml_provider_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -139,6 +176,13 @@ pub mod create_identity_pool_input {
             self.saml_provider_ar_ns = input;
             self
         }
+        /// Adds a key-value pair to `identity_pool_tags`.
+        ///
+        /// To override the contents of this collection use [`set_identity_pool_tags`](Self::set_identity_pool_tags).
+        ///
+        /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity
+        /// pools to categorize and manage them in different ways, such as by purpose, owner,
+        /// environment, or other criteria.</p>
         pub fn identity_pool_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -149,6 +193,9 @@ pub mod create_identity_pool_input {
             self.identity_pool_tags = Some(hash_map);
             self
         }
+        /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity
+        /// pools to categorize and manage them in different ways, such as by purpose, owner,
+        /// environment, or other criteria.</p>
         pub fn set_identity_pool_tags(
             mut self,
             input: std::option::Option<
@@ -163,7 +210,7 @@ pub mod create_identity_pool_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateIdentityPoolInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateIdentityPoolInput {
                 identity_pool_name: self.identity_pool_name,
@@ -192,16 +239,16 @@ impl CreateIdentityPoolInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateIdentityPool,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateIdentityPoolInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -209,7 +256,7 @@ impl CreateIdentityPoolInput {
         fn update_http_builder(
             input: &crate::input::CreateIdentityPoolInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -218,30 +265,32 @@ impl CreateIdentityPoolInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateIdentityPoolInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.CreateIdentityPool",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_identity_pool(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -264,15 +313,15 @@ impl CreateIdentityPoolInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateIdentityPool::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateIdentityPool",
             "cognitoidentity",
         ));
@@ -281,10 +330,10 @@ impl CreateIdentityPoolInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -307,12 +356,18 @@ pub mod delete_identities_input {
         pub(crate) identity_ids_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `identity_ids_to_delete`.
+        ///
+        /// To override the contents of this collection use [`set_identity_ids_to_delete`](Self::set_identity_ids_to_delete).
+        ///
+        /// <p>A list of 1-60 identities that you want to delete.</p>
         pub fn identity_ids_to_delete(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.identity_ids_to_delete.unwrap_or_default();
             v.push(input.into());
             self.identity_ids_to_delete = Some(v);
             self
         }
+        /// <p>A list of 1-60 identities that you want to delete.</p>
         pub fn set_identity_ids_to_delete(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -325,7 +380,7 @@ pub mod delete_identities_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteIdentitiesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteIdentitiesInput {
                 identity_ids_to_delete: self.identity_ids_to_delete,
@@ -344,16 +399,16 @@ impl DeleteIdentitiesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteIdentities,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteIdentitiesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -361,7 +416,7 @@ impl DeleteIdentitiesInput {
         fn update_http_builder(
             input: &crate::input::DeleteIdentitiesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -370,32 +425,32 @@ impl DeleteIdentitiesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteIdentitiesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.DeleteIdentities",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_identities(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -418,15 +473,15 @@ impl DeleteIdentitiesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteIdentities::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteIdentities",
             "cognitoidentity",
         ));
@@ -435,10 +490,10 @@ impl DeleteIdentitiesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -466,6 +521,7 @@ pub mod delete_identity_pool_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>An identity pool ID in the format REGION:GUID.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -478,7 +534,7 @@ pub mod delete_identity_pool_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteIdentityPoolInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteIdentityPoolInput {
                 identity_pool_id: self.identity_pool_id,
@@ -497,16 +553,16 @@ impl DeleteIdentityPoolInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteIdentityPool,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteIdentityPoolInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -514,7 +570,7 @@ impl DeleteIdentityPoolInput {
         fn update_http_builder(
             input: &crate::input::DeleteIdentityPoolInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -523,30 +579,32 @@ impl DeleteIdentityPoolInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteIdentityPoolInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.DeleteIdentityPool",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_identity_pool(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -569,15 +627,15 @@ impl DeleteIdentityPoolInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteIdentityPool::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteIdentityPool",
             "cognitoidentity",
         ));
@@ -586,10 +644,10 @@ impl DeleteIdentityPoolInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -617,6 +675,7 @@ pub mod describe_identity_input {
             self.identity_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -626,7 +685,7 @@ pub mod describe_identity_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeIdentityInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeIdentityInput {
                 identity_id: self.identity_id,
@@ -645,16 +704,16 @@ impl DescribeIdentityInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeIdentity,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeIdentityInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -662,7 +721,7 @@ impl DescribeIdentityInput {
         fn update_http_builder(
             input: &crate::input::DescribeIdentityInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -671,32 +730,32 @@ impl DescribeIdentityInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeIdentityInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.DescribeIdentity",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_identity(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -719,15 +778,15 @@ impl DescribeIdentityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeIdentity::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeIdentity",
             "cognitoidentity",
         ));
@@ -736,10 +795,10 @@ impl DescribeIdentityInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -767,6 +826,7 @@ pub mod describe_identity_pool_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>An identity pool ID in the format REGION:GUID.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -779,7 +839,7 @@ pub mod describe_identity_pool_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeIdentityPoolInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeIdentityPoolInput {
                 identity_pool_id: self.identity_pool_id,
@@ -798,16 +858,16 @@ impl DescribeIdentityPoolInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeIdentityPool,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeIdentityPoolInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -815,7 +875,7 @@ impl DescribeIdentityPoolInput {
         fn update_http_builder(
             input: &crate::input::DescribeIdentityPoolInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -824,32 +884,32 @@ impl DescribeIdentityPoolInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeIdentityPoolInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.DescribeIdentityPool",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_identity_pool(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -872,15 +932,15 @@ impl DescribeIdentityPoolInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeIdentityPool::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeIdentityPool",
             "cognitoidentity",
         ));
@@ -889,10 +949,10 @@ impl DescribeIdentityPoolInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -924,10 +984,24 @@ pub mod get_credentials_for_identity_input {
             self.identity_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
         }
+        /// Adds a key-value pair to `logins`.
+        ///
+        /// To override the contents of this collection use [`set_logins`](Self::set_logins).
+        ///
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The
+        /// name-value pair will follow the syntax "provider_name":
+        /// "provider_user_identifier".</p>
+        /// <p>Logins should not be specified when trying to get credentials for an unauthenticated
+        /// identity.</p>
+        /// <p>The Logins parameter is required when using identities associated with external
+        /// identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code
+        /// examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer
+        /// Guide.</p>
         pub fn logins(
             mut self,
             k: impl Into<std::string::String>,
@@ -938,6 +1012,15 @@ pub mod get_credentials_for_identity_input {
             self.logins = Some(hash_map);
             self
         }
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The
+        /// name-value pair will follow the syntax "provider_name":
+        /// "provider_user_identifier".</p>
+        /// <p>Logins should not be specified when trying to get credentials for an unauthenticated
+        /// identity.</p>
+        /// <p>The Logins parameter is required when using identities associated with external
+        /// identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code
+        /// examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer
+        /// Guide.</p>
         pub fn set_logins(
             mut self,
             input: std::option::Option<
@@ -955,6 +1038,10 @@ pub mod get_credentials_for_identity_input {
             self.custom_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were
+        /// received in the token from the identity provider. For example, a SAML-based identity
+        /// provider. This parameter is optional for identity providers that do not support role
+        /// customization.</p>
         pub fn set_custom_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -967,7 +1054,7 @@ pub mod get_credentials_for_identity_input {
             self,
         ) -> std::result::Result<
             crate::input::GetCredentialsForIdentityInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetCredentialsForIdentityInput {
                 identity_id: self.identity_id,
@@ -989,16 +1076,16 @@ impl GetCredentialsForIdentityInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetCredentialsForIdentity,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetCredentialsForIdentityInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1006,7 +1093,7 @@ impl GetCredentialsForIdentityInput {
         fn update_http_builder(
             input: &crate::input::GetCredentialsForIdentityInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1015,32 +1102,34 @@ impl GetCredentialsForIdentityInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetCredentialsForIdentityInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.GetCredentialsForIdentity",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_credentials_for_identity(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1064,15 +1153,15 @@ impl GetCredentialsForIdentityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetCredentialsForIdentity::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetCredentialsForIdentity",
             "cognitoidentity",
         ));
@@ -1081,10 +1170,10 @@ impl GetCredentialsForIdentityInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1116,6 +1205,7 @@ pub mod get_id_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>A standard AWS account ID (9+ digits).</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1125,6 +1215,7 @@ pub mod get_id_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>An identity pool ID in the format REGION:GUID.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1132,6 +1223,40 @@ pub mod get_id_input {
             self.identity_pool_id = input;
             self
         }
+        /// Adds a key-value pair to `logins`.
+        ///
+        /// To override the contents of this collection use [`set_logins`](Self::set_logins).
+        ///
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The
+        /// available provider names for <code>Logins</code> are as follows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Facebook: <code>graph.facebook.com</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito user pool:
+        /// <code>cognito-idp.<region>.amazonaws.com/<YOUR_USER_POOL_ID></code>,
+        /// for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Google: <code>accounts.google.com</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon: <code>www.amazon.com</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Twitter: <code>api.twitter.com</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Digits: <code>www.digits.com</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn logins(
             mut self,
             k: impl Into<std::string::String>,
@@ -1142,6 +1267,36 @@ pub mod get_id_input {
             self.logins = Some(hash_map);
             self
         }
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The
+        /// available provider names for <code>Logins</code> are as follows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Facebook: <code>graph.facebook.com</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito user pool:
+        /// <code>cognito-idp.<region>.amazonaws.com/<YOUR_USER_POOL_ID></code>,
+        /// for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Google: <code>accounts.google.com</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon: <code>www.amazon.com</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Twitter: <code>api.twitter.com</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Digits: <code>www.digits.com</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_logins(
             mut self,
             input: std::option::Option<
@@ -1154,7 +1309,7 @@ pub mod get_id_input {
         /// Consumes the builder and constructs a [`GetIdInput`](crate::input::GetIdInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetIdInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetIdInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetIdInput {
                 account_id: self.account_id,
@@ -1175,13 +1330,16 @@ impl GetIdInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::GetId, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetId,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetIdInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1189,7 +1347,7 @@ impl GetIdInput {
         fn update_http_builder(
             input: &crate::input::GetIdInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1198,29 +1356,31 @@ impl GetIdInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetIdInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.GetId",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_id(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1244,24 +1404,25 @@ impl GetIdInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::GetId::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetId",
-                "cognitoidentity",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetId::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetId",
+                    "cognitoidentity",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1289,6 +1450,7 @@ pub mod get_identity_pool_roles_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>An identity pool ID in the format REGION:GUID.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1301,7 +1463,7 @@ pub mod get_identity_pool_roles_input {
             self,
         ) -> std::result::Result<
             crate::input::GetIdentityPoolRolesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetIdentityPoolRolesInput {
                 identity_pool_id: self.identity_pool_id,
@@ -1320,16 +1482,16 @@ impl GetIdentityPoolRolesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityPoolRoles,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetIdentityPoolRolesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1337,7 +1499,7 @@ impl GetIdentityPoolRolesInput {
         fn update_http_builder(
             input: &crate::input::GetIdentityPoolRolesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1346,32 +1508,34 @@ impl GetIdentityPoolRolesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetIdentityPoolRolesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.GetIdentityPoolRoles",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_identity_pool_roles(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1394,15 +1558,15 @@ impl GetIdentityPoolRolesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetIdentityPoolRoles::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetIdentityPoolRoles",
             "cognitoidentity",
         ));
@@ -1411,10 +1575,10 @@ impl GetIdentityPoolRolesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1445,10 +1609,19 @@ pub mod get_open_id_token_input {
             self.identity_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
         }
+        /// Adds a key-value pair to `logins`.
+        ///
+        /// To override the contents of this collection use [`set_logins`](Self::set_logins).
+        ///
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. When
+        /// using graph.facebook.com and www.amazon.com, supply the access_token returned from the
+        /// provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any
+        /// other OpenID Connect provider, always include the <code>id_token</code>.</p>
         pub fn logins(
             mut self,
             k: impl Into<std::string::String>,
@@ -1459,6 +1632,10 @@ pub mod get_open_id_token_input {
             self.logins = Some(hash_map);
             self
         }
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. When
+        /// using graph.facebook.com and www.amazon.com, supply the access_token returned from the
+        /// provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any
+        /// other OpenID Connect provider, always include the <code>id_token</code>.</p>
         pub fn set_logins(
             mut self,
             input: std::option::Option<
@@ -1473,7 +1650,7 @@ pub mod get_open_id_token_input {
             self,
         ) -> std::result::Result<
             crate::input::GetOpenIdTokenInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetOpenIdTokenInput {
                 identity_id: self.identity_id,
@@ -1493,16 +1670,16 @@ impl GetOpenIdTokenInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetOpenIdToken,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetOpenIdTokenInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1510,7 +1687,7 @@ impl GetOpenIdTokenInput {
         fn update_http_builder(
             input: &crate::input::GetOpenIdTokenInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1519,32 +1696,32 @@ impl GetOpenIdTokenInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetOpenIdTokenInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.GetOpenIdToken",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_open_id_token(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1568,15 +1745,15 @@ impl GetOpenIdTokenInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetOpenIdToken::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetOpenIdToken",
             "cognitoidentity",
         ));
@@ -1585,10 +1762,10 @@ impl GetOpenIdTokenInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1624,6 +1801,7 @@ pub mod get_open_id_token_for_developer_identity_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>An identity pool ID in the format REGION:GUID.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1636,10 +1814,23 @@ pub mod get_open_id_token_for_developer_identity_input {
             self.identity_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
         }
+        /// Adds a key-value pair to `logins`.
+        ///
+        /// To override the contents of this collection use [`set_logins`](Self::set_logins).
+        ///
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each
+        /// name-value pair represents a user from a public provider or developer provider. If the user
+        /// is from a developer provider, the name-value pair will follow the syntax
+        /// <code>"developer_provider_name": "developer_user_identifier"</code>. The developer
+        /// provider is the "domain" by which Cognito will refer to your users; you provided this
+        /// domain while creating/updating the identity pool. The developer user identifier is an
+        /// identifier from your backend that uniquely identifies a user. When you create an identity
+        /// pool, you can specify the supported logins.</p>
         pub fn logins(
             mut self,
             k: impl Into<std::string::String>,
@@ -1650,6 +1841,14 @@ pub mod get_open_id_token_for_developer_identity_input {
             self.logins = Some(hash_map);
             self
         }
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each
+        /// name-value pair represents a user from a public provider or developer provider. If the user
+        /// is from a developer provider, the name-value pair will follow the syntax
+        /// <code>"developer_provider_name": "developer_user_identifier"</code>. The developer
+        /// provider is the "domain" by which Cognito will refer to your users; you provided this
+        /// domain while creating/updating the identity pool. The developer user identifier is an
+        /// identifier from your backend that uniquely identifies a user. When you create an identity
+        /// pool, you can specify the supported logins.</p>
         pub fn set_logins(
             mut self,
             input: std::option::Option<
@@ -1659,6 +1858,11 @@ pub mod get_open_id_token_for_developer_identity_input {
             self.logins = input;
             self
         }
+        /// Adds a key-value pair to `principal_tags`.
+        ///
+        /// To override the contents of this collection use [`set_principal_tags`](Self::set_principal_tags).
+        ///
+        /// <p>Use this operation to configure attribute mappings for custom providers. </p>
         pub fn principal_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1669,6 +1873,7 @@ pub mod get_open_id_token_for_developer_identity_input {
             self.principal_tags = Some(hash_map);
             self
         }
+        /// <p>Use this operation to configure attribute mappings for custom providers. </p>
         pub fn set_principal_tags(
             mut self,
             input: std::option::Option<
@@ -1692,6 +1897,16 @@ pub mod get_open_id_token_for_developer_identity_input {
             self.token_duration = Some(input);
             self
         }
+        /// <p>The expiration time of the token, in seconds. You can specify a custom expiration
+        /// time for the token so that you can cache it. If you don't provide an expiration time, the
+        /// token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS
+        /// credentials, which are valid for a maximum of one hour. The maximum token duration you can
+        /// set is 24 hours. You should take care in setting the expiration time for a token, as there
+        /// are significant security implications: an attacker could use a leaked token to access your
+        /// AWS resources for the token's duration.</p>
+        /// <note>
+        /// <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p>
+        /// </note>
         pub fn set_token_duration(mut self, input: std::option::Option<i64>) -> Self {
             self.token_duration = input;
             self
@@ -1701,7 +1916,7 @@ pub mod get_open_id_token_for_developer_identity_input {
             self,
         ) -> std::result::Result<
             crate::input::GetOpenIdTokenForDeveloperIdentityInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetOpenIdTokenForDeveloperIdentityInput {
                 identity_pool_id: self.identity_pool_id,
@@ -1725,16 +1940,16 @@ impl GetOpenIdTokenForDeveloperIdentityInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetOpenIdTokenForDeveloperIdentity,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetOpenIdTokenForDeveloperIdentityInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1742,7 +1957,7 @@ impl GetOpenIdTokenForDeveloperIdentityInput {
         fn update_http_builder(
             input: &crate::input::GetOpenIdTokenForDeveloperIdentityInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1751,30 +1966,30 @@ impl GetOpenIdTokenForDeveloperIdentityInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetOpenIdTokenForDeveloperIdentityInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.GetOpenIdTokenForDeveloperIdentity",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_open_id_token_for_developer_identity(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_open_id_token_for_developer_identity(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1797,15 +2012,15 @@ impl GetOpenIdTokenForDeveloperIdentityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetOpenIdTokenForDeveloperIdentity::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetOpenIdTokenForDeveloperIdentity",
             "cognitoidentity",
         ));
@@ -1814,10 +2029,10 @@ impl GetOpenIdTokenForDeveloperIdentityInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1846,6 +2061,7 @@ pub mod get_principal_tag_attribute_map_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>You can use this operation to get the ID of the Identity Pool you setup attribute mappings for.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1858,6 +2074,7 @@ pub mod get_principal_tag_attribute_map_input {
             self.identity_provider_name = Some(input.into());
             self
         }
+        /// <p>You can use this operation to get the provider name.</p>
         pub fn set_identity_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1870,7 +2087,7 @@ pub mod get_principal_tag_attribute_map_input {
             self,
         ) -> std::result::Result<
             crate::input::GetPrincipalTagAttributeMapInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetPrincipalTagAttributeMapInput {
                 identity_pool_id: self.identity_pool_id,
@@ -1891,16 +2108,16 @@ impl GetPrincipalTagAttributeMapInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetPrincipalTagAttributeMap,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetPrincipalTagAttributeMapInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1908,7 +2125,7 @@ impl GetPrincipalTagAttributeMapInput {
         fn update_http_builder(
             input: &crate::input::GetPrincipalTagAttributeMapInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1917,30 +2134,30 @@ impl GetPrincipalTagAttributeMapInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetPrincipalTagAttributeMapInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.GetPrincipalTagAttributeMap",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_principal_tag_attribute_map(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_principal_tag_attribute_map(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1963,15 +2180,15 @@ impl GetPrincipalTagAttributeMapInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetPrincipalTagAttributeMap::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetPrincipalTagAttributeMap",
             "cognitoidentity",
         ));
@@ -1980,10 +2197,10 @@ impl GetPrincipalTagAttributeMapInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2014,6 +2231,7 @@ pub mod list_identities_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>An identity pool ID in the format REGION:GUID.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2026,6 +2244,7 @@ pub mod list_identities_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of identities to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2035,6 +2254,7 @@ pub mod list_identities_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2045,6 +2265,8 @@ pub mod list_identities_input {
             self.hide_disabled = Some(input);
             self
         }
+        /// <p>An optional boolean parameter that allows you to hide disabled identities. If
+        /// omitted, the ListIdentities API will include disabled identities in the response.</p>
         pub fn set_hide_disabled(mut self, input: std::option::Option<bool>) -> Self {
             self.hide_disabled = input;
             self
@@ -2054,7 +2276,7 @@ pub mod list_identities_input {
             self,
         ) -> std::result::Result<
             crate::input::ListIdentitiesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListIdentitiesInput {
                 identity_pool_id: self.identity_pool_id,
@@ -2076,16 +2298,16 @@ impl ListIdentitiesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListIdentities,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListIdentitiesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2093,7 +2315,7 @@ impl ListIdentitiesInput {
         fn update_http_builder(
             input: &crate::input::ListIdentitiesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2102,29 +2324,31 @@ impl ListIdentitiesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListIdentitiesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.ListIdentities",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_identities(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2147,15 +2371,15 @@ impl ListIdentitiesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListIdentities::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListIdentities",
             "cognitoidentity",
         ));
@@ -2164,10 +2388,10 @@ impl ListIdentitiesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2196,6 +2420,7 @@ pub mod list_identity_pools_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of identities to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2205,6 +2430,7 @@ pub mod list_identity_pools_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2214,7 +2440,7 @@ pub mod list_identity_pools_input {
             self,
         ) -> std::result::Result<
             crate::input::ListIdentityPoolsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListIdentityPoolsInput {
                 max_results: self.max_results.unwrap_or_default(),
@@ -2234,16 +2460,16 @@ impl ListIdentityPoolsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListIdentityPools,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListIdentityPoolsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2251,7 +2477,7 @@ impl ListIdentityPoolsInput {
         fn update_http_builder(
             input: &crate::input::ListIdentityPoolsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2260,32 +2486,32 @@ impl ListIdentityPoolsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListIdentityPoolsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.ListIdentityPools",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_identity_pools(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2308,15 +2534,15 @@ impl ListIdentityPoolsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListIdentityPools::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListIdentityPools",
             "cognitoidentity",
         ));
@@ -2325,10 +2551,10 @@ impl ListIdentityPoolsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2357,6 +2583,8 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned
+        /// to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2366,7 +2594,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -2385,16 +2613,16 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2402,7 +2630,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2411,32 +2639,32 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.ListTagsForResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2459,15 +2687,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "cognitoidentity",
         ));
@@ -2476,10 +2704,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2511,6 +2739,7 @@ pub mod lookup_developer_identity_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>An identity pool ID in the format REGION:GUID.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2523,6 +2752,7 @@ pub mod lookup_developer_identity_input {
             self.identity_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -2534,6 +2764,9 @@ pub mod lookup_developer_identity_input {
             self.developer_user_identifier = Some(input.into());
             self
         }
+        /// <p>A unique ID used by your backend authentication process to identify a user.
+        /// Typically, a developer identity provider would issue many developer user identifiers, in
+        /// keeping with the number of users.</p>
         pub fn set_developer_user_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2546,6 +2779,7 @@ pub mod lookup_developer_identity_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of identities to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2560,6 +2794,12 @@ pub mod lookup_developer_identity_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to
+        /// null. After that the service will return <code>NextToken</code> values as needed. For
+        /// example, let's say you make a request with <code>MaxResults</code> set to 10, and there are
+        /// 20 matches in the database. The service will return a pagination token as a part of the
+        /// response. This token can be used to call the API again and get results starting from the
+        /// 11th match.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2569,7 +2809,7 @@ pub mod lookup_developer_identity_input {
             self,
         ) -> std::result::Result<
             crate::input::LookupDeveloperIdentityInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::LookupDeveloperIdentityInput {
                 identity_pool_id: self.identity_pool_id,
@@ -2593,16 +2833,16 @@ impl LookupDeveloperIdentityInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::LookupDeveloperIdentity,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::LookupDeveloperIdentityInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2610,7 +2850,7 @@ impl LookupDeveloperIdentityInput {
         fn update_http_builder(
             input: &crate::input::LookupDeveloperIdentityInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2619,32 +2859,34 @@ impl LookupDeveloperIdentityInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::LookupDeveloperIdentityInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.LookupDeveloperIdentity",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_lookup_developer_identity(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2667,15 +2909,15 @@ impl LookupDeveloperIdentityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::LookupDeveloperIdentity::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "LookupDeveloperIdentity",
             "cognitoidentity",
         ));
@@ -2684,10 +2926,10 @@ impl LookupDeveloperIdentityInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2719,6 +2961,8 @@ pub mod merge_developer_identities_input {
             self.source_user_identifier = Some(input.into());
             self
         }
+        /// <p>User identifier for the source user. The value should be a
+        /// <code>DeveloperUserIdentifier</code>.</p>
         pub fn set_source_user_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2735,6 +2979,8 @@ pub mod merge_developer_identities_input {
             self.destination_user_identifier = Some(input.into());
             self
         }
+        /// <p>User identifier for the destination user. The value should be a
+        /// <code>DeveloperUserIdentifier</code>.</p>
         pub fn set_destination_user_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2751,6 +2997,11 @@ pub mod merge_developer_identities_input {
             self.developer_provider_name = Some(input.into());
             self
         }
+        /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain
+        /// name that you provide while creating an identity pool. This name acts as a placeholder that
+        /// allows your backend and the Cognito service to communicate about the developer provider.
+        /// For the <code>DeveloperProviderName</code>, you can use letters as well as period (.),
+        /// underscore (_), and dash (-).</p>
         pub fn set_developer_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2763,6 +3014,7 @@ pub mod merge_developer_identities_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>An identity pool ID in the format REGION:GUID.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2775,7 +3027,7 @@ pub mod merge_developer_identities_input {
             self,
         ) -> std::result::Result<
             crate::input::MergeDeveloperIdentitiesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::MergeDeveloperIdentitiesInput {
                 source_user_identifier: self.source_user_identifier,
@@ -2798,16 +3050,16 @@ impl MergeDeveloperIdentitiesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::MergeDeveloperIdentities,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::MergeDeveloperIdentitiesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2815,7 +3067,7 @@ impl MergeDeveloperIdentitiesInput {
         fn update_http_builder(
             input: &crate::input::MergeDeveloperIdentitiesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2824,32 +3076,34 @@ impl MergeDeveloperIdentitiesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::MergeDeveloperIdentitiesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.MergeDeveloperIdentities",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_merge_developer_identities(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2872,15 +3126,15 @@ impl MergeDeveloperIdentitiesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::MergeDeveloperIdentities::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "MergeDeveloperIdentities",
             "cognitoidentity",
         ));
@@ -2889,10 +3143,10 @@ impl MergeDeveloperIdentitiesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2926,6 +3180,7 @@ pub mod set_identity_pool_roles_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>An identity pool ID in the format REGION:GUID.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2933,6 +3188,12 @@ pub mod set_identity_pool_roles_input {
             self.identity_pool_id = input;
             self
         }
+        /// Adds a key-value pair to `roles`.
+        ///
+        /// To override the contents of this collection use [`set_roles`](Self::set_roles).
+        ///
+        /// <p>The map of roles associated with this pool. For a given role, the key will be either
+        /// "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
         pub fn roles(
             mut self,
             k: impl Into<std::string::String>,
@@ -2943,6 +3204,8 @@ pub mod set_identity_pool_roles_input {
             self.roles = Some(hash_map);
             self
         }
+        /// <p>The map of roles associated with this pool. For a given role, the key will be either
+        /// "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
         pub fn set_roles(
             mut self,
             input: std::option::Option<
@@ -2952,6 +3215,15 @@ pub mod set_identity_pool_roles_input {
             self.roles = input;
             self
         }
+        /// Adds a key-value pair to `role_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_role_mappings`](Self::set_role_mappings).
+        ///
+        /// <p>How users for a specific identity provider are to mapped to roles. This is a string
+        /// to <a>RoleMapping</a> object map. The string identifies the identity provider,
+        /// for example, "graph.facebook.com" or
+        /// "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+        /// <p>Up to 25 rules can be specified per identity provider.</p>
         pub fn role_mappings(
             mut self,
             k: impl Into<std::string::String>,
@@ -2962,6 +3234,11 @@ pub mod set_identity_pool_roles_input {
             self.role_mappings = Some(hash_map);
             self
         }
+        /// <p>How users for a specific identity provider are to mapped to roles. This is a string
+        /// to <a>RoleMapping</a> object map. The string identifies the identity provider,
+        /// for example, "graph.facebook.com" or
+        /// "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+        /// <p>Up to 25 rules can be specified per identity provider.</p>
         pub fn set_role_mappings(
             mut self,
             input: std::option::Option<
@@ -2976,7 +3253,7 @@ pub mod set_identity_pool_roles_input {
             self,
         ) -> std::result::Result<
             crate::input::SetIdentityPoolRolesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetIdentityPoolRolesInput {
                 identity_pool_id: self.identity_pool_id,
@@ -2997,16 +3274,16 @@ impl SetIdentityPoolRolesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetIdentityPoolRoles,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetIdentityPoolRolesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3014,7 +3291,7 @@ impl SetIdentityPoolRolesInput {
         fn update_http_builder(
             input: &crate::input::SetIdentityPoolRolesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3023,32 +3300,34 @@ impl SetIdentityPoolRolesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetIdentityPoolRolesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.SetIdentityPoolRoles",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_identity_pool_roles(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3071,15 +3350,15 @@ impl SetIdentityPoolRolesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetIdentityPoolRoles::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetIdentityPoolRoles",
             "cognitoidentity",
         ));
@@ -3088,10 +3367,10 @@ impl SetIdentityPoolRolesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3124,6 +3403,7 @@ pub mod set_principal_tag_attribute_map_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3136,6 +3416,7 @@ pub mod set_principal_tag_attribute_map_input {
             self.identity_provider_name = Some(input.into());
             self
         }
+        /// <p>The provider name you want to use for attribute mappings.</p>
         pub fn set_identity_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3148,10 +3429,16 @@ pub mod set_principal_tag_attribute_map_input {
             self.use_defaults = Some(input);
             self
         }
+        /// <p>You can use this operation to use default (username and clientID) attribute mappings.</p>
         pub fn set_use_defaults(mut self, input: std::option::Option<bool>) -> Self {
             self.use_defaults = input;
             self
         }
+        /// Adds a key-value pair to `principal_tags`.
+        ///
+        /// To override the contents of this collection use [`set_principal_tags`](Self::set_principal_tags).
+        ///
+        /// <p>You can use this operation to add principal tags.</p>
         pub fn principal_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3162,6 +3449,7 @@ pub mod set_principal_tag_attribute_map_input {
             self.principal_tags = Some(hash_map);
             self
         }
+        /// <p>You can use this operation to add principal tags.</p>
         pub fn set_principal_tags(
             mut self,
             input: std::option::Option<
@@ -3176,7 +3464,7 @@ pub mod set_principal_tag_attribute_map_input {
             self,
         ) -> std::result::Result<
             crate::input::SetPrincipalTagAttributeMapInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetPrincipalTagAttributeMapInput {
                 identity_pool_id: self.identity_pool_id,
@@ -3199,16 +3487,16 @@ impl SetPrincipalTagAttributeMapInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetPrincipalTagAttributeMap,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetPrincipalTagAttributeMapInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3216,7 +3504,7 @@ impl SetPrincipalTagAttributeMapInput {
         fn update_http_builder(
             input: &crate::input::SetPrincipalTagAttributeMapInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3225,30 +3513,30 @@ impl SetPrincipalTagAttributeMapInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetPrincipalTagAttributeMapInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.SetPrincipalTagAttributeMap",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_principal_tag_attribute_map(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_set_principal_tag_attribute_map(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3271,15 +3559,15 @@ impl SetPrincipalTagAttributeMapInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetPrincipalTagAttributeMap::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetPrincipalTagAttributeMap",
             "cognitoidentity",
         ));
@@ -3288,10 +3576,10 @@ impl SetPrincipalTagAttributeMapInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3322,10 +3610,16 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to assign to the identity pool.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3336,6 +3630,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags to assign to the identity pool.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3348,8 +3643,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -3368,16 +3665,16 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3385,7 +3682,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3394,29 +3691,31 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.TagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3439,25 +3738,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "cognitoidentity",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3488,6 +3789,7 @@ pub mod unlink_developer_identity_input {
             self.identity_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -3497,6 +3799,7 @@ pub mod unlink_developer_identity_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>An identity pool ID in the format REGION:GUID.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3509,6 +3812,7 @@ pub mod unlink_developer_identity_input {
             self.developer_provider_name = Some(input.into());
             self
         }
+        /// <p>The "domain" by which Cognito will refer to your users.</p>
         pub fn set_developer_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3521,6 +3825,7 @@ pub mod unlink_developer_identity_input {
             self.developer_user_identifier = Some(input.into());
             self
         }
+        /// <p>A unique ID used by your backend authentication process to identify a user.</p>
         pub fn set_developer_user_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3533,7 +3838,7 @@ pub mod unlink_developer_identity_input {
             self,
         ) -> std::result::Result<
             crate::input::UnlinkDeveloperIdentityInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UnlinkDeveloperIdentityInput {
                 identity_id: self.identity_id,
@@ -3556,16 +3861,16 @@ impl UnlinkDeveloperIdentityInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UnlinkDeveloperIdentity,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UnlinkDeveloperIdentityInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3573,7 +3878,7 @@ impl UnlinkDeveloperIdentityInput {
         fn update_http_builder(
             input: &crate::input::UnlinkDeveloperIdentityInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3582,32 +3887,34 @@ impl UnlinkDeveloperIdentityInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UnlinkDeveloperIdentityInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.UnlinkDeveloperIdentity",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_unlink_developer_identity(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3630,15 +3937,15 @@ impl UnlinkDeveloperIdentityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UnlinkDeveloperIdentity::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UnlinkDeveloperIdentity",
             "cognitoidentity",
         ));
@@ -3647,10 +3954,10 @@ impl UnlinkDeveloperIdentityInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3682,10 +3989,17 @@ pub mod unlink_identity_input {
             self.identity_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
         }
+        /// Adds a key-value pair to `logins`.
+        ///
+        /// To override the contents of this collection use [`set_logins`](Self::set_logins).
+        ///
+        /// <p>A set of optional name-value pairs that map provider names to provider
+        /// tokens.</p>
         pub fn logins(
             mut self,
             k: impl Into<std::string::String>,
@@ -3696,6 +4010,8 @@ pub mod unlink_identity_input {
             self.logins = Some(hash_map);
             self
         }
+        /// <p>A set of optional name-value pairs that map provider names to provider
+        /// tokens.</p>
         pub fn set_logins(
             mut self,
             input: std::option::Option<
@@ -3705,12 +4021,18 @@ pub mod unlink_identity_input {
             self.logins = input;
             self
         }
+        /// Appends an item to `logins_to_remove`.
+        ///
+        /// To override the contents of this collection use [`set_logins_to_remove`](Self::set_logins_to_remove).
+        ///
+        /// <p>Provider names to unlink from this identity.</p>
         pub fn logins_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.logins_to_remove.unwrap_or_default();
             v.push(input.into());
             self.logins_to_remove = Some(v);
             self
         }
+        /// <p>Provider names to unlink from this identity.</p>
         pub fn set_logins_to_remove(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3723,7 +4045,7 @@ pub mod unlink_identity_input {
             self,
         ) -> std::result::Result<
             crate::input::UnlinkIdentityInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UnlinkIdentityInput {
                 identity_id: self.identity_id,
@@ -3744,16 +4066,16 @@ impl UnlinkIdentityInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UnlinkIdentity,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UnlinkIdentityInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3761,7 +4083,7 @@ impl UnlinkIdentityInput {
         fn update_http_builder(
             input: &crate::input::UnlinkIdentityInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3770,29 +4092,31 @@ impl UnlinkIdentityInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UnlinkIdentityInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.UnlinkIdentity",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_unlink_identity(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3816,15 +4140,15 @@ impl UnlinkIdentityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UnlinkIdentity::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UnlinkIdentity",
             "cognitoidentity",
         ));
@@ -3833,10 +4157,10 @@ impl UnlinkIdentityInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3865,16 +4189,23 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The keys of the tags to remove from the user pool.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>The keys of the tags to remove from the user pool.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3885,8 +4216,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -3905,16 +4238,16 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3922,7 +4255,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3931,29 +4264,31 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.UntagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3976,25 +4311,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "cognitoidentity",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "cognitoidentity",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4037,6 +4374,7 @@ pub mod update_identity_pool_input {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>An identity pool ID in the format REGION:GUID.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4049,6 +4387,7 @@ pub mod update_identity_pool_input {
             self.identity_pool_name = Some(input.into());
             self
         }
+        /// <p>A string that you provide.</p>
         pub fn set_identity_pool_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4061,6 +4400,7 @@ pub mod update_identity_pool_input {
             self.allow_unauthenticated_identities = Some(input);
             self
         }
+        /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
         pub fn set_allow_unauthenticated_identities(
             mut self,
             input: std::option::Option<bool>,
@@ -4074,10 +4414,17 @@ pub mod update_identity_pool_input {
             self.allow_classic_flow = Some(input);
             self
         }
+        /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
+        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
         pub fn set_allow_classic_flow(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_classic_flow = input;
             self
         }
+        /// Adds a key-value pair to `supported_login_providers`.
+        ///
+        /// To override the contents of this collection use [`set_supported_login_providers`](Self::set_supported_login_providers).
+        ///
+        /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
         pub fn supported_login_providers(
             mut self,
             k: impl Into<std::string::String>,
@@ -4088,6 +4435,7 @@ pub mod update_identity_pool_input {
             self.supported_login_providers = Some(hash_map);
             self
         }
+        /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
         pub fn set_supported_login_providers(
             mut self,
             input: std::option::Option<
@@ -4102,6 +4450,7 @@ pub mod update_identity_pool_input {
             self.developer_provider_name = Some(input.into());
             self
         }
+        /// <p>The "domain" by which Cognito will refer to your users.</p>
         pub fn set_developer_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4109,6 +4458,11 @@ pub mod update_identity_pool_input {
             self.developer_provider_name = input;
             self
         }
+        /// Appends an item to `open_id_connect_provider_ar_ns`.
+        ///
+        /// To override the contents of this collection use [`set_open_id_connect_provider_ar_ns`](Self::set_open_id_connect_provider_ar_ns).
+        ///
+        /// <p>The ARNs of the OpenID Connect providers.</p>
         pub fn open_id_connect_provider_ar_ns(
             mut self,
             input: impl Into<std::string::String>,
@@ -4118,6 +4472,7 @@ pub mod update_identity_pool_input {
             self.open_id_connect_provider_ar_ns = Some(v);
             self
         }
+        /// <p>The ARNs of the OpenID Connect providers.</p>
         pub fn set_open_id_connect_provider_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4125,6 +4480,11 @@ pub mod update_identity_pool_input {
             self.open_id_connect_provider_ar_ns = input;
             self
         }
+        /// Appends an item to `cognito_identity_providers`.
+        ///
+        /// To override the contents of this collection use [`set_cognito_identity_providers`](Self::set_cognito_identity_providers).
+        ///
+        /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
         pub fn cognito_identity_providers(
             mut self,
             input: impl Into<crate::model::CognitoIdentityProvider>,
@@ -4134,6 +4494,7 @@ pub mod update_identity_pool_input {
             self.cognito_identity_providers = Some(v);
             self
         }
+        /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
         pub fn set_cognito_identity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>,
@@ -4141,12 +4502,20 @@ pub mod update_identity_pool_input {
             self.cognito_identity_providers = input;
             self
         }
+        /// Appends an item to `saml_provider_ar_ns`.
+        ///
+        /// To override the contents of this collection use [`set_saml_provider_ar_ns`](Self::set_saml_provider_ar_ns).
+        ///
+        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
+        /// pool.</p>
         pub fn saml_provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.saml_provider_ar_ns.unwrap_or_default();
             v.push(input.into());
             self.saml_provider_ar_ns = Some(v);
             self
         }
+        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
+        /// pool.</p>
         pub fn set_saml_provider_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4154,6 +4523,13 @@ pub mod update_identity_pool_input {
             self.saml_provider_ar_ns = input;
             self
         }
+        /// Adds a key-value pair to `identity_pool_tags`.
+        ///
+        /// To override the contents of this collection use [`set_identity_pool_tags`](Self::set_identity_pool_tags).
+        ///
+        /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to
+        /// identity pools to categorize and manage them in different ways, such as by purpose, owner,
+        /// environment, or other criteria.</p>
         pub fn identity_pool_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4164,6 +4540,9 @@ pub mod update_identity_pool_input {
             self.identity_pool_tags = Some(hash_map);
             self
         }
+        /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to
+        /// identity pools to categorize and manage them in different ways, such as by purpose, owner,
+        /// environment, or other criteria.</p>
         pub fn set_identity_pool_tags(
             mut self,
             input: std::option::Option<
@@ -4178,7 +4557,7 @@ pub mod update_identity_pool_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateIdentityPoolInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateIdentityPoolInput {
                 identity_pool_id: self.identity_pool_id,
@@ -4208,16 +4587,16 @@ impl UpdateIdentityPoolInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateIdentityPool,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateIdentityPoolInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4225,7 +4604,7 @@ impl UpdateIdentityPoolInput {
         fn update_http_builder(
             input: &crate::input::UpdateIdentityPoolInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4234,30 +4613,32 @@ impl UpdateIdentityPoolInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateIdentityPoolInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityService.UpdateIdentityPool",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_identity_pool(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4280,15 +4661,15 @@ impl UpdateIdentityPoolInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateIdentityPool::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateIdentityPool",
             "cognitoidentity",
         ));
@@ -4297,10 +4678,10 @@ impl UpdateIdentityPoolInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4372,6 +4753,7 @@ impl std::fmt::Debug for UpdateIdentityPoolInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -4436,6 +4818,7 @@ impl std::fmt::Debug for UnlinkDeveloperIdentityInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -4454,6 +4837,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetPrincipalTagAttributeMapInput {
@@ -4574,6 +4958,7 @@ impl std::fmt::Debug for LookupDeveloperIdentityInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -4632,6 +5017,7 @@ impl std::fmt::Debug for ListIdentitiesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPrincipalTagAttributeMapInput {

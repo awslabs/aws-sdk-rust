@@ -16,10 +16,16 @@ pub mod add_custom_attributes_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool where you want to add custom attributes.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
         }
+        /// Appends an item to `custom_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_custom_attributes`](Self::set_custom_attributes).
+        ///
+        /// <p>An array of custom attributes, such as Mutable and Name.</p>
         pub fn custom_attributes(
             mut self,
             input: impl Into<crate::model::SchemaAttributeType>,
@@ -29,6 +35,7 @@ pub mod add_custom_attributes_input {
             self.custom_attributes = Some(v);
             self
         }
+        /// <p>An array of custom attributes, such as Mutable and Name.</p>
         pub fn set_custom_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SchemaAttributeType>>,
@@ -41,7 +48,7 @@ pub mod add_custom_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::AddCustomAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AddCustomAttributesInput {
                 user_pool_id: self.user_pool_id,
@@ -61,16 +68,16 @@ impl AddCustomAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AddCustomAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AddCustomAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -78,7 +85,7 @@ impl AddCustomAttributesInput {
         fn update_http_builder(
             input: &crate::input::AddCustomAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -87,32 +94,32 @@ impl AddCustomAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AddCustomAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AddCustomAttributes",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_custom_attributes(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -135,15 +142,15 @@ impl AddCustomAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AddCustomAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AddCustomAttributes",
             "cognitoidentityprovider",
         ));
@@ -152,10 +159,10 @@ impl AddCustomAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -185,6 +192,7 @@ pub mod admin_add_user_to_group_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -194,6 +202,7 @@ pub mod admin_add_user_to_group_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The username for the user.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -203,6 +212,7 @@ pub mod admin_add_user_to_group_input {
             self.group_name = Some(input.into());
             self
         }
+        /// <p>The group name.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -212,7 +222,7 @@ pub mod admin_add_user_to_group_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminAddUserToGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminAddUserToGroupInput {
                 user_pool_id: self.user_pool_id,
@@ -233,16 +243,16 @@ impl AdminAddUserToGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminAddUserToGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminAddUserToGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -250,7 +260,7 @@ impl AdminAddUserToGroupInput {
         fn update_http_builder(
             input: &crate::input::AdminAddUserToGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -259,32 +269,34 @@ impl AdminAddUserToGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminAddUserToGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminAddUserToGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_add_user_to_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -307,15 +319,15 @@ impl AdminAddUserToGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminAddUserToGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminAddUserToGroup",
             "cognitoidentityprovider",
         ));
@@ -324,10 +336,10 @@ impl AdminAddUserToGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -359,6 +371,7 @@ pub mod admin_confirm_sign_up_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for which you want to confirm user registration.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -368,10 +381,46 @@ pub mod admin_confirm_sign_up_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name for which you want to confirm user registration.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
         }
+        /// Adds a key-value pair to `client_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
+        ///
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>If your user pool configuration includes triggers, the AdminConfirmSignUp API action
+        /// invokes the Lambda function that is specified for the <i>post
+        /// confirmation</i> trigger. When Amazon Cognito invokes this function, it
+        /// passes a JSON payload, which the function receives as input. In this payload, the
+        /// <code>clientMetadata</code> attribute provides the data that you assigned to the
+        /// ClientMetadata parameter in your AdminConfirmSignUp request. In your function code in
+        /// Lambda, you can process the ClientMetadata value to enhance your workflow for your
+        /// specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn client_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -382,6 +431,37 @@ pub mod admin_confirm_sign_up_input {
             self.client_metadata = Some(hash_map);
             self
         }
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>If your user pool configuration includes triggers, the AdminConfirmSignUp API action
+        /// invokes the Lambda function that is specified for the <i>post
+        /// confirmation</i> trigger. When Amazon Cognito invokes this function, it
+        /// passes a JSON payload, which the function receives as input. In this payload, the
+        /// <code>clientMetadata</code> attribute provides the data that you assigned to the
+        /// ClientMetadata parameter in your AdminConfirmSignUp request. In your function code in
+        /// Lambda, you can process the ClientMetadata value to enhance your workflow for your
+        /// specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn set_client_metadata(
             mut self,
             input: std::option::Option<
@@ -396,7 +476,7 @@ pub mod admin_confirm_sign_up_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminConfirmSignUpInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminConfirmSignUpInput {
                 user_pool_id: self.user_pool_id,
@@ -417,16 +497,16 @@ impl AdminConfirmSignUpInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminConfirmSignUp,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminConfirmSignUpInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -434,7 +514,7 @@ impl AdminConfirmSignUpInput {
         fn update_http_builder(
             input: &crate::input::AdminConfirmSignUpInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -443,32 +523,32 @@ impl AdminConfirmSignUpInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminConfirmSignUpInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminConfirmSignUp",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_confirm_sign_up(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -491,15 +571,15 @@ impl AdminConfirmSignUpInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminConfirmSignUp::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminConfirmSignUp",
             "cognitoidentityprovider",
         ));
@@ -508,10 +588,10 @@ impl AdminConfirmSignUpInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -550,6 +630,7 @@ pub mod admin_create_user_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool where the user will be created.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -561,16 +642,93 @@ pub mod admin_create_user_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The username for the user. Must be unique within the user pool. Must be a UTF-8 string
+        /// between 1 and 128 characters. After the user is created, the username cannot be
+        /// changed.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
         }
+        /// Appends an item to `user_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
+        ///
+        /// <p>An array of name-value pairs that contain user attributes and attribute values to be
+        /// set for the user to be created. You can create a user without specifying any attributes
+        /// other than <code>Username</code>. However, any attributes that you specify as required
+        /// (when creating a user pool or in the <b>Attributes</b> tab of
+        /// the console) must be supplied either by you (in your call to
+        /// <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to
+        /// your welcome message).</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
+        /// attribute name.</p>
+        /// <p>To send a message inviting the user to sign up, you must specify the user's email
+        /// address or phone number. This can be done in your call to AdminCreateUser or in the
+        /// <b>Users</b> tab of the Amazon Cognito console for
+        /// managing your user pools.</p>
+        /// <p>In your call to <code>AdminCreateUser</code>, you can set the
+        /// <code>email_verified</code> attribute to <code>True</code>, and you can set the
+        /// <code>phone_number_verified</code> attribute to <code>True</code>. (You can also do
+        /// this by calling <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>email</b>: The email address of the user to whom
+        /// the message that contains the code and username will be sent. Required if the
+        /// <code>email_verified</code> attribute is set to <code>True</code>, or if
+        /// <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
+        /// parameter.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>phone_number</b>: The phone number of the user to
+        /// whom the message that contains the code and username will be sent. Required if
+        /// the <code>phone_number_verified</code> attribute is set to <code>True</code>, or
+        /// if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
+        /// parameter.</p>
+        /// </li>
+        /// </ul>
         pub fn user_attributes(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
             v.push(input.into());
             self.user_attributes = Some(v);
             self
         }
+        /// <p>An array of name-value pairs that contain user attributes and attribute values to be
+        /// set for the user to be created. You can create a user without specifying any attributes
+        /// other than <code>Username</code>. However, any attributes that you specify as required
+        /// (when creating a user pool or in the <b>Attributes</b> tab of
+        /// the console) must be supplied either by you (in your call to
+        /// <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to
+        /// your welcome message).</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
+        /// attribute name.</p>
+        /// <p>To send a message inviting the user to sign up, you must specify the user's email
+        /// address or phone number. This can be done in your call to AdminCreateUser or in the
+        /// <b>Users</b> tab of the Amazon Cognito console for
+        /// managing your user pools.</p>
+        /// <p>In your call to <code>AdminCreateUser</code>, you can set the
+        /// <code>email_verified</code> attribute to <code>True</code>, and you can set the
+        /// <code>phone_number_verified</code> attribute to <code>True</code>. (You can also do
+        /// this by calling <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>email</b>: The email address of the user to whom
+        /// the message that contains the code and username will be sent. Required if the
+        /// <code>email_verified</code> attribute is set to <code>True</code>, or if
+        /// <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
+        /// parameter.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>phone_number</b>: The phone number of the user to
+        /// whom the message that contains the code and username will be sent. Required if
+        /// the <code>phone_number_verified</code> attribute is set to <code>True</code>, or
+        /// if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code>
+        /// parameter.</p>
+        /// </li>
+        /// </ul>
         pub fn set_user_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
@@ -578,12 +736,32 @@ pub mod admin_create_user_input {
             self.user_attributes = input;
             self
         }
+        /// Appends an item to `validation_data`.
+        ///
+        /// To override the contents of this collection use [`set_validation_data`](Self::set_validation_data).
+        ///
+        /// <p>The user's validation data. This is an array of name-value pairs that contain user
+        /// attributes and attribute values that you can use for custom validation, such as
+        /// restricting the types of user accounts that can be registered. For example, you might
+        /// choose to allow or disallow user sign-up based on the user's domain.</p>
+        /// <p>To configure custom validation, you must create a Pre Sign-up Lambda trigger for the
+        /// user pool as described in the Amazon Cognito Developer Guide. The Lambda trigger
+        /// receives the validation data and uses it in the validation process.</p>
+        /// <p>The user's validation data is not persisted.</p>
         pub fn validation_data(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
             let mut v = self.validation_data.unwrap_or_default();
             v.push(input.into());
             self.validation_data = Some(v);
             self
         }
+        /// <p>The user's validation data. This is an array of name-value pairs that contain user
+        /// attributes and attribute values that you can use for custom validation, such as
+        /// restricting the types of user accounts that can be registered. For example, you might
+        /// choose to allow or disallow user sign-up based on the user's domain.</p>
+        /// <p>To configure custom validation, you must create a Pre Sign-up Lambda trigger for the
+        /// user pool as described in the Amazon Cognito Developer Guide. The Lambda trigger
+        /// receives the validation data and uses it in the validation process.</p>
+        /// <p>The user's validation data is not persisted.</p>
         pub fn set_validation_data(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
@@ -606,6 +784,17 @@ pub mod admin_create_user_input {
             self.temporary_password = Some(input.into());
             self
         }
+        /// <p>The user's temporary password. This password must conform to the password policy that
+        /// you specified when you created the user pool.</p>
+        /// <p>The temporary password is valid only once. To complete the Admin Create User flow, the
+        /// user must enter the temporary password in the sign-in page along with a new password to
+        /// be used in all future sign-ins.</p>
+        /// <p>This parameter is not required. If you do not specify a value, Amazon Cognito
+        /// generates one for you.</p>
+        /// <p>The temporary password can only be used until the user account expiration limit that
+        /// you specified when you created the user pool. To reset the account after that time
+        /// limit, you must call <code>AdminCreateUser</code> again, specifying
+        /// <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
         pub fn set_temporary_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -627,6 +816,16 @@ pub mod admin_create_user_input {
             self.force_alias_creation = Some(input);
             self
         }
+        /// <p>This parameter is only used if the <code>phone_number_verified</code> or
+        /// <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it is
+        /// ignored.</p>
+        /// <p>If this parameter is set to <code>True</code> and the phone number or email address
+        /// specified in the UserAttributes parameter already exists as an alias with a different
+        /// user, the API call will migrate the alias from the previous user to the newly created
+        /// user. The previous user will no longer be able to log in using that alias.</p>
+        /// <p>If this parameter is set to <code>False</code>, the API throws an
+        /// <code>AliasExistsException</code> error if the alias already exists. The default
+        /// value is <code>False</code>.</p>
         pub fn set_force_alias_creation(mut self, input: std::option::Option<bool>) -> Self {
             self.force_alias_creation = input;
             self
@@ -639,6 +838,10 @@ pub mod admin_create_user_input {
             self.message_action = Some(input);
             self
         }
+        /// <p>Set to <code>"RESEND"</code> to resend the invitation message to a user that already
+        /// exists and reset the expiration limit on the user's account. Set to
+        /// <code>"SUPPRESS"</code> to suppress sending the message. Only one value can be
+        /// specified.</p>
         pub fn set_message_action(
             mut self,
             input: std::option::Option<crate::model::MessageActionType>,
@@ -646,6 +849,13 @@ pub mod admin_create_user_input {
             self.message_action = input;
             self
         }
+        /// Appends an item to `desired_delivery_mediums`.
+        ///
+        /// To override the contents of this collection use [`set_desired_delivery_mediums`](Self::set_desired_delivery_mediums).
+        ///
+        /// <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message.
+        /// Specify <code>"SMS"</code> if the phone number will be used. The default value is
+        /// <code>"SMS"</code>. More than one value can be specified.</p>
         pub fn desired_delivery_mediums(
             mut self,
             input: impl Into<crate::model::DeliveryMediumType>,
@@ -655,6 +865,9 @@ pub mod admin_create_user_input {
             self.desired_delivery_mediums = Some(v);
             self
         }
+        /// <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message.
+        /// Specify <code>"SMS"</code> if the phone number will be used. The default value is
+        /// <code>"SMS"</code>. More than one value can be specified.</p>
         pub fn set_desired_delivery_mediums(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeliveryMediumType>>,
@@ -662,6 +875,41 @@ pub mod admin_create_user_input {
             self.desired_delivery_mediums = input;
             self
         }
+        /// Adds a key-value pair to `client_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
+        ///
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the AdminCreateUser API action, Amazon Cognito invokes the function that is
+        /// assigned to the <i>pre sign-up</i> trigger. When Amazon Cognito invokes
+        /// this function, it passes a JSON payload, which the function receives as input. This
+        /// payload contains a <code>clientMetadata</code> attribute, which provides the data that
+        /// you assigned to the ClientMetadata parameter in your AdminCreateUser request. In your
+        /// function code in Lambda, you can process the <code>clientMetadata</code> value to
+        /// enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn client_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -672,6 +920,37 @@ pub mod admin_create_user_input {
             self.client_metadata = Some(hash_map);
             self
         }
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the AdminCreateUser API action, Amazon Cognito invokes the function that is
+        /// assigned to the <i>pre sign-up</i> trigger. When Amazon Cognito invokes
+        /// this function, it passes a JSON payload, which the function receives as input. This
+        /// payload contains a <code>clientMetadata</code> attribute, which provides the data that
+        /// you assigned to the ClientMetadata parameter in your AdminCreateUser request. In your
+        /// function code in Lambda, you can process the <code>clientMetadata</code> value to
+        /// enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn set_client_metadata(
             mut self,
             input: std::option::Option<
@@ -686,7 +965,7 @@ pub mod admin_create_user_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminCreateUserInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminCreateUserInput {
                 user_pool_id: self.user_pool_id,
@@ -713,16 +992,16 @@ impl AdminCreateUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminCreateUser,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminCreateUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -730,7 +1009,7 @@ impl AdminCreateUserInput {
         fn update_http_builder(
             input: &crate::input::AdminCreateUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -739,32 +1018,32 @@ impl AdminCreateUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminCreateUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminCreateUser",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_create_user(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -787,15 +1066,15 @@ impl AdminCreateUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminCreateUser::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminCreateUser",
             "cognitoidentityprovider",
         ));
@@ -804,10 +1083,10 @@ impl AdminCreateUserInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -836,6 +1115,7 @@ pub mod admin_delete_user_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool where you want to delete the user.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -845,6 +1125,7 @@ pub mod admin_delete_user_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name of the user you wish to delete.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -854,7 +1135,7 @@ pub mod admin_delete_user_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminDeleteUserInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminDeleteUserInput {
                 user_pool_id: self.user_pool_id,
@@ -874,16 +1155,16 @@ impl AdminDeleteUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminDeleteUser,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminDeleteUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -891,7 +1172,7 @@ impl AdminDeleteUserInput {
         fn update_http_builder(
             input: &crate::input::AdminDeleteUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -900,32 +1181,32 @@ impl AdminDeleteUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminDeleteUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminDeleteUser",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_delete_user(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -948,15 +1229,15 @@ impl AdminDeleteUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminDeleteUser::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminDeleteUser",
             "cognitoidentityprovider",
         ));
@@ -965,10 +1246,10 @@ impl AdminDeleteUserInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -998,6 +1279,7 @@ pub mod admin_delete_user_attributes_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool where you want to delete user attributes.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -1007,16 +1289,27 @@ pub mod admin_delete_user_attributes_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name of the user from which you would like to delete attributes.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
         }
+        /// Appends an item to `user_attribute_names`.
+        ///
+        /// To override the contents of this collection use [`set_user_attribute_names`](Self::set_user_attribute_names).
+        ///
+        /// <p>An array of strings representing the user attribute names you wish to delete.</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
+        /// attribute name.</p>
         pub fn user_attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_attribute_names.unwrap_or_default();
             v.push(input.into());
             self.user_attribute_names = Some(v);
             self
         }
+        /// <p>An array of strings representing the user attribute names you wish to delete.</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
+        /// attribute name.</p>
         pub fn set_user_attribute_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1029,7 +1322,7 @@ pub mod admin_delete_user_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminDeleteUserAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminDeleteUserAttributesInput {
                 user_pool_id: self.user_pool_id,
@@ -1051,16 +1344,16 @@ impl AdminDeleteUserAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminDeleteUserAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminDeleteUserAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1068,7 +1361,7 @@ impl AdminDeleteUserAttributesInput {
         fn update_http_builder(
             input: &crate::input::AdminDeleteUserAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1077,32 +1370,34 @@ impl AdminDeleteUserAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminDeleteUserAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminDeleteUserAttributes",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_delete_user_attributes(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1125,15 +1420,15 @@ impl AdminDeleteUserAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminDeleteUserAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminDeleteUserAttributes",
             "cognitoidentityprovider",
         ));
@@ -1142,10 +1437,10 @@ impl AdminDeleteUserAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1174,6 +1469,7 @@ pub mod admin_disable_provider_for_user_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -1183,6 +1479,7 @@ pub mod admin_disable_provider_for_user_input {
             self.user = Some(input);
             self
         }
+        /// <p>The user to be disabled.</p>
         pub fn set_user(
             mut self,
             input: std::option::Option<crate::model::ProviderUserIdentifierType>,
@@ -1195,7 +1492,7 @@ pub mod admin_disable_provider_for_user_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminDisableProviderForUserInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminDisableProviderForUserInput {
                 user_pool_id: self.user_pool_id,
@@ -1216,16 +1513,16 @@ impl AdminDisableProviderForUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminDisableProviderForUser,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminDisableProviderForUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1233,7 +1530,7 @@ impl AdminDisableProviderForUserInput {
         fn update_http_builder(
             input: &crate::input::AdminDisableProviderForUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1242,30 +1539,30 @@ impl AdminDisableProviderForUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminDisableProviderForUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminDisableProviderForUser",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_admin_disable_provider_for_user(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_admin_disable_provider_for_user(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1288,15 +1585,15 @@ impl AdminDisableProviderForUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminDisableProviderForUser::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminDisableProviderForUser",
             "cognitoidentityprovider",
         ));
@@ -1305,10 +1602,10 @@ impl AdminDisableProviderForUserInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1337,6 +1634,7 @@ pub mod admin_disable_user_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool where you want to disable the user.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -1346,6 +1644,7 @@ pub mod admin_disable_user_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name of the user you wish to disable.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -1355,7 +1654,7 @@ pub mod admin_disable_user_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminDisableUserInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminDisableUserInput {
                 user_pool_id: self.user_pool_id,
@@ -1375,16 +1674,16 @@ impl AdminDisableUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminDisableUser,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminDisableUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1392,7 +1691,7 @@ impl AdminDisableUserInput {
         fn update_http_builder(
             input: &crate::input::AdminDisableUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1401,32 +1700,32 @@ impl AdminDisableUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminDisableUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminDisableUser",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_disable_user(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1449,15 +1748,15 @@ impl AdminDisableUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminDisableUser::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminDisableUser",
             "cognitoidentityprovider",
         ));
@@ -1466,10 +1765,10 @@ impl AdminDisableUserInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1498,6 +1797,7 @@ pub mod admin_enable_user_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool where you want to enable the user.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -1507,6 +1807,7 @@ pub mod admin_enable_user_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name of the user you wish to enable.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -1516,7 +1817,7 @@ pub mod admin_enable_user_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminEnableUserInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminEnableUserInput {
                 user_pool_id: self.user_pool_id,
@@ -1536,16 +1837,16 @@ impl AdminEnableUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminEnableUser,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminEnableUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1553,7 +1854,7 @@ impl AdminEnableUserInput {
         fn update_http_builder(
             input: &crate::input::AdminEnableUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1562,32 +1863,32 @@ impl AdminEnableUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminEnableUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminEnableUser",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_enable_user(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1610,15 +1911,15 @@ impl AdminEnableUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminEnableUser::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminEnableUser",
             "cognitoidentityprovider",
         ));
@@ -1627,10 +1928,10 @@ impl AdminEnableUserInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1660,6 +1961,7 @@ pub mod admin_forget_device_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -1669,6 +1971,7 @@ pub mod admin_forget_device_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -1678,6 +1981,7 @@ pub mod admin_forget_device_input {
             self.device_key = Some(input.into());
             self
         }
+        /// <p>The device key.</p>
         pub fn set_device_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_key = input;
             self
@@ -1687,7 +1991,7 @@ pub mod admin_forget_device_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminForgetDeviceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminForgetDeviceInput {
                 user_pool_id: self.user_pool_id,
@@ -1708,16 +2012,16 @@ impl AdminForgetDeviceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminForgetDevice,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminForgetDeviceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1725,7 +2029,7 @@ impl AdminForgetDeviceInput {
         fn update_http_builder(
             input: &crate::input::AdminForgetDeviceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1734,32 +2038,32 @@ impl AdminForgetDeviceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminForgetDeviceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminForgetDevice",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_forget_device(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1782,15 +2086,15 @@ impl AdminForgetDeviceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminForgetDevice::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminForgetDevice",
             "cognitoidentityprovider",
         ));
@@ -1799,10 +2103,10 @@ impl AdminForgetDeviceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1832,6 +2136,7 @@ pub mod admin_get_device_input {
             self.device_key = Some(input.into());
             self
         }
+        /// <p>The device key.</p>
         pub fn set_device_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_key = input;
             self
@@ -1841,6 +2146,7 @@ pub mod admin_get_device_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -1850,6 +2156,7 @@ pub mod admin_get_device_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -1859,7 +2166,7 @@ pub mod admin_get_device_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminGetDeviceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminGetDeviceInput {
                 device_key: self.device_key,
@@ -1880,16 +2187,16 @@ impl AdminGetDeviceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminGetDevice,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminGetDeviceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1897,7 +2204,7 @@ impl AdminGetDeviceInput {
         fn update_http_builder(
             input: &crate::input::AdminGetDeviceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1906,32 +2213,32 @@ impl AdminGetDeviceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminGetDeviceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminGetDevice",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_get_device(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1954,15 +2261,15 @@ impl AdminGetDeviceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminGetDevice::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminGetDevice",
             "cognitoidentityprovider",
         ));
@@ -1971,10 +2278,10 @@ impl AdminGetDeviceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2004,6 +2311,8 @@ pub mod admin_get_user_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool where you want to get information about the
+        /// user.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -2013,6 +2322,7 @@ pub mod admin_get_user_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name of the user you wish to retrieve.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -2020,8 +2330,10 @@ pub mod admin_get_user_input {
         /// Consumes the builder and constructs a [`AdminGetUserInput`](crate::input::AdminGetUserInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::AdminGetUserInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::AdminGetUserInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::AdminGetUserInput {
                 user_pool_id: self.user_pool_id,
                 username: self.username,
@@ -2040,16 +2352,16 @@ impl AdminGetUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminGetUser,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminGetUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2057,7 +2369,7 @@ impl AdminGetUserInput {
         fn update_http_builder(
             input: &crate::input::AdminGetUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2066,29 +2378,31 @@ impl AdminGetUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminGetUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminGetUser",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_admin_get_user(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2111,25 +2425,27 @@ impl AdminGetUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::AdminGetUser::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "AdminGetUser",
-                    "cognitoidentityprovider",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AdminGetUser::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AdminGetUser",
+            "cognitoidentityprovider",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2167,6 +2483,7 @@ pub mod admin_initiate_auth_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon Cognito user pool.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -2176,6 +2493,7 @@ pub mod admin_initiate_auth_input {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The app client ID.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -2242,6 +2560,64 @@ pub mod admin_initiate_auth_input {
             self.auth_flow = Some(input);
             self
         }
+        /// <p>The authentication flow for this call to execute. The API action will depend on this
+        /// value. For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return
+        /// new tokens.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
+        /// <code>SRP_A</code> and return the SRP variables to be used for next
+        /// challenge execution.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and
+        /// <code>PASSWORD</code> and return the next challenge or tokens.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
+        /// (SRP) protocol.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication
+        /// flow for refreshing the access token and ID token by supplying a valid refresh
+        /// token.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CUSTOM_AUTH</code>: Custom authentication flow.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in
+        /// the USERNAME and PASSWORD directly if the flow is enabled for calling the app
+        /// client.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and
+        /// PASSWORD are passed directly. If a user migration Lambda trigger is set, this
+        /// flow will invoke the user migration Lambda if the USERNAME is not found in the
+        /// user pool. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password
+        /// authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication
+        /// flow. In this flow, Cognito receives the password in the request instead of
+        /// using the SRP process to verify passwords.</p>
+        /// </li>
+        /// </ul>
         pub fn set_auth_flow(
             mut self,
             input: std::option::Option<crate::model::AuthFlowType>,
@@ -2249,6 +2625,37 @@ pub mod admin_initiate_auth_input {
             self.auth_flow = input;
             self
         }
+        /// Adds a key-value pair to `auth_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_auth_parameters`](Self::set_auth_parameters).
+        ///
+        /// <p>The authentication parameters. These are inputs corresponding to the
+        /// <code>AuthFlow</code> that you are invoking. The required values depend on the value
+        /// of <code>AuthFlow</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required),
+        /// <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app
+        /// client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
+        /// (required), <code>SECRET_HASH</code> (required if the app client is configured
+        /// with a client secret), <code>DEVICE_KEY</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
+        /// <code>SECRET_HASH</code> (if app client is configured with client secret),
+        /// <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+        /// <code>SECRET_HASH</code> (if app client is configured with client secret),
+        /// <code>DEVICE_KEY</code>. To start the authentication flow with password
+        /// verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
+        /// SRP_A Value)</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn auth_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2259,6 +2666,33 @@ pub mod admin_initiate_auth_input {
             self.auth_parameters = Some(hash_map);
             self
         }
+        /// <p>The authentication parameters. These are inputs corresponding to the
+        /// <code>AuthFlow</code> that you are invoking. The required values depend on the value
+        /// of <code>AuthFlow</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required),
+        /// <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app
+        /// client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
+        /// (required), <code>SECRET_HASH</code> (required if the app client is configured
+        /// with a client secret), <code>DEVICE_KEY</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
+        /// <code>SECRET_HASH</code> (if app client is configured with client secret),
+        /// <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+        /// <code>SECRET_HASH</code> (if app client is configured with client secret),
+        /// <code>DEVICE_KEY</code>. To start the authentication flow with password
+        /// verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
+        /// SRP_A Value)</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_auth_parameters(
             mut self,
             input: std::option::Option<
@@ -2268,6 +2702,77 @@ pub mod admin_initiate_auth_input {
             self.auth_parameters = input;
             self
         }
+        /// Adds a key-value pair to `client_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
+        ///
+        /// <p>A map of custom key-value pairs that you can provide as input for certain custom
+        /// workflows that this action triggers.</p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the AdminInitiateAuth API action, Amazon Cognito invokes the Lambda
+        /// functions that are specified for various triggers. The ClientMetadata value is passed as
+        /// input to the functions for only the following triggers:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Pre signup</p>
+        /// </li>
+        /// <li>
+        /// <p>Pre authentication</p>
+        /// </li>
+        /// <li>
+        /// <p>User migration</p>
+        /// </li>
+        /// </ul>
+        /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON
+        /// payload, which the function receives as input. This payload contains a
+        /// <code>validationData</code> attribute, which provides the data that you assigned to
+        /// the ClientMetadata parameter in your AdminInitiateAuth request. In your function code in
+        /// Lambda, you can process the <code>validationData</code> value to enhance your
+        /// workflow for your specific needs.</p>
+        /// <p>When you use the AdminInitiateAuth API action, Amazon Cognito also invokes the
+        /// functions for the following triggers, but it does not provide the ClientMetadata value
+        /// as input:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Post authentication</p>
+        /// </li>
+        /// <li>
+        /// <p>Custom message</p>
+        /// </li>
+        /// <li>
+        /// <p>Pre token generation</p>
+        /// </li>
+        /// <li>
+        /// <p>Create auth challenge</p>
+        /// </li>
+        /// <li>
+        /// <p>Define auth challenge</p>
+        /// </li>
+        /// <li>
+        /// <p>Verify auth challenge</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn client_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -2278,6 +2783,73 @@ pub mod admin_initiate_auth_input {
             self.client_metadata = Some(hash_map);
             self
         }
+        /// <p>A map of custom key-value pairs that you can provide as input for certain custom
+        /// workflows that this action triggers.</p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the AdminInitiateAuth API action, Amazon Cognito invokes the Lambda
+        /// functions that are specified for various triggers. The ClientMetadata value is passed as
+        /// input to the functions for only the following triggers:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Pre signup</p>
+        /// </li>
+        /// <li>
+        /// <p>Pre authentication</p>
+        /// </li>
+        /// <li>
+        /// <p>User migration</p>
+        /// </li>
+        /// </ul>
+        /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON
+        /// payload, which the function receives as input. This payload contains a
+        /// <code>validationData</code> attribute, which provides the data that you assigned to
+        /// the ClientMetadata parameter in your AdminInitiateAuth request. In your function code in
+        /// Lambda, you can process the <code>validationData</code> value to enhance your
+        /// workflow for your specific needs.</p>
+        /// <p>When you use the AdminInitiateAuth API action, Amazon Cognito also invokes the
+        /// functions for the following triggers, but it does not provide the ClientMetadata value
+        /// as input:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Post authentication</p>
+        /// </li>
+        /// <li>
+        /// <p>Custom message</p>
+        /// </li>
+        /// <li>
+        /// <p>Pre token generation</p>
+        /// </li>
+        /// <li>
+        /// <p>Create auth challenge</p>
+        /// </li>
+        /// <li>
+        /// <p>Define auth challenge</p>
+        /// </li>
+        /// <li>
+        /// <p>Verify auth challenge</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn set_client_metadata(
             mut self,
             input: std::option::Option<
@@ -2293,6 +2865,8 @@ pub mod admin_initiate_auth_input {
             self.analytics_metadata = Some(input);
             self
         }
+        /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for
+        /// <code>AdminInitiateAuth</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -2307,6 +2881,9 @@ pub mod admin_initiate_auth_input {
             self.context_data = Some(input);
             self
         }
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
+        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
+        /// security.</p>
         pub fn set_context_data(
             mut self,
             input: std::option::Option<crate::model::ContextDataType>,
@@ -2319,7 +2896,7 @@ pub mod admin_initiate_auth_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminInitiateAuthInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminInitiateAuthInput {
                 user_pool_id: self.user_pool_id,
@@ -2344,16 +2921,16 @@ impl AdminInitiateAuthInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminInitiateAuth,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminInitiateAuthInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2361,7 +2938,7 @@ impl AdminInitiateAuthInput {
         fn update_http_builder(
             input: &crate::input::AdminInitiateAuthInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2370,32 +2947,32 @@ impl AdminInitiateAuthInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminInitiateAuthInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminInitiateAuth",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_initiate_auth(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2418,15 +2995,15 @@ impl AdminInitiateAuthInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminInitiateAuth::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminInitiateAuth",
             "cognitoidentityprovider",
         ));
@@ -2435,10 +3012,10 @@ impl AdminInitiateAuthInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2468,6 +3045,7 @@ pub mod admin_link_provider_for_user_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -2488,6 +3066,18 @@ pub mod admin_link_provider_for_user_input {
             self.destination_user = Some(input);
             self
         }
+        /// <p>The existing user in the user pool to be linked to the external identity provider user
+        /// account. Can be a native (Username + Password) Cognito User Pools user or a federated
+        /// user (for example, a SAML or Facebook user). If the user doesn't exist, an exception is
+        /// thrown. This is the user that is returned when the new user (with the linked identity
+        /// provider attribute) signs in.</p>
+        /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the
+        /// <code>DestinationUser</code> should be the username in the user pool. For a
+        /// federated user, it should be the provider-specific <code>user_id</code>.</p>
+        /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is
+        /// ignored.</p>
+        /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in
+        /// Cognito user pools.</p>
         pub fn set_destination_user(
             mut self,
             input: std::option::Option<crate::model::ProviderUserIdentifierType>,
@@ -2519,6 +3109,26 @@ pub mod admin_link_provider_for_user_input {
             self.source_user = Some(input);
             self
         }
+        /// <p>An external identity provider account for a user who does not currently exist yet in
+        /// the user pool. This user must be a federated user (for example, a SAML or Facebook
+        /// user), not another native user.</p>
+        /// <p>If the <code>SourceUser</code> is a federated social identity provider user (Facebook,
+        /// Google, or Login with Amazon), you must set the <code>ProviderAttributeName</code> to
+        /// <code>Cognito_Subject</code>. For social identity providers, the
+        /// <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or
+        /// <code>LoginWithAmazon</code>, and Cognito will automatically parse the Facebook,
+        /// Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and
+        /// <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the
+        /// user must be the same value as the <code>id</code>, <code>sub</code>, or
+        /// <code>user_id</code> value found in the social identity provider token.</p>
+        /// <p></p>
+        /// <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim
+        /// in the SAML assertion. If you wish to link SAML users based on the subject of the SAML
+        /// assertion, you should map the subject to a claim through the SAML identity provider and
+        /// submit that claim name as the <code>ProviderAttributeName</code>. If you set
+        /// <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Cognito will
+        /// automatically parse the default unique identifier found in the subject from the SAML
+        /// token.</p>
         pub fn set_source_user(
             mut self,
             input: std::option::Option<crate::model::ProviderUserIdentifierType>,
@@ -2531,7 +3141,7 @@ pub mod admin_link_provider_for_user_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminLinkProviderForUserInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminLinkProviderForUserInput {
                 user_pool_id: self.user_pool_id,
@@ -2553,16 +3163,16 @@ impl AdminLinkProviderForUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminLinkProviderForUser,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminLinkProviderForUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2570,7 +3180,7 @@ impl AdminLinkProviderForUserInput {
         fn update_http_builder(
             input: &crate::input::AdminLinkProviderForUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2579,32 +3189,34 @@ impl AdminLinkProviderForUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminLinkProviderForUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminLinkProviderForUser",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_link_provider_for_user(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2627,15 +3239,15 @@ impl AdminLinkProviderForUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminLinkProviderForUser::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminLinkProviderForUser",
             "cognitoidentityprovider",
         ));
@@ -2644,10 +3256,10 @@ impl AdminLinkProviderForUserInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2678,6 +3290,7 @@ pub mod admin_list_devices_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -2687,6 +3300,7 @@ pub mod admin_list_devices_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -2696,6 +3310,7 @@ pub mod admin_list_devices_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The limit of the devices request.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -2705,6 +3320,7 @@ pub mod admin_list_devices_input {
             self.pagination_token = Some(input.into());
             self
         }
+        /// <p>The pagination token.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2717,7 +3333,7 @@ pub mod admin_list_devices_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminListDevicesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminListDevicesInput {
                 user_pool_id: self.user_pool_id,
@@ -2739,16 +3355,16 @@ impl AdminListDevicesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminListDevices,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminListDevicesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2756,7 +3372,7 @@ impl AdminListDevicesInput {
         fn update_http_builder(
             input: &crate::input::AdminListDevicesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2765,32 +3381,32 @@ impl AdminListDevicesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminListDevicesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminListDevices",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_list_devices(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2813,15 +3429,15 @@ impl AdminListDevicesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminListDevices::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminListDevices",
             "cognitoidentityprovider",
         ));
@@ -2830,10 +3446,10 @@ impl AdminListDevicesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2864,6 +3480,7 @@ pub mod admin_list_groups_for_user_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The username for the user.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -2873,6 +3490,7 @@ pub mod admin_list_groups_for_user_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -2882,6 +3500,7 @@ pub mod admin_list_groups_for_user_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The limit of the request to list groups.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -2892,6 +3511,8 @@ pub mod admin_list_groups_for_user_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An identifier that was returned from the previous call to this operation, which can be
+        /// used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2901,7 +3522,7 @@ pub mod admin_list_groups_for_user_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminListGroupsForUserInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminListGroupsForUserInput {
                 username: self.username,
@@ -2923,16 +3544,16 @@ impl AdminListGroupsForUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminListGroupsForUser,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminListGroupsForUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2940,7 +3561,7 @@ impl AdminListGroupsForUserInput {
         fn update_http_builder(
             input: &crate::input::AdminListGroupsForUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2949,32 +3570,34 @@ impl AdminListGroupsForUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminListGroupsForUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminListGroupsForUser",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_list_groups_for_user(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2997,15 +3620,15 @@ impl AdminListGroupsForUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminListGroupsForUser::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminListGroupsForUser",
             "cognitoidentityprovider",
         ));
@@ -3014,10 +3637,10 @@ impl AdminListGroupsForUserInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3048,6 +3671,7 @@ pub mod admin_list_user_auth_events_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -3057,6 +3681,7 @@ pub mod admin_list_user_auth_events_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user pool username or an alias.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -3066,6 +3691,7 @@ pub mod admin_list_user_auth_events_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of authentication events to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3075,6 +3701,7 @@ pub mod admin_list_user_auth_events_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3084,7 +3711,7 @@ pub mod admin_list_user_auth_events_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminListUserAuthEventsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminListUserAuthEventsInput {
                 user_pool_id: self.user_pool_id,
@@ -3107,16 +3734,16 @@ impl AdminListUserAuthEventsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminListUserAuthEvents,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminListUserAuthEventsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3124,7 +3751,7 @@ impl AdminListUserAuthEventsInput {
         fn update_http_builder(
             input: &crate::input::AdminListUserAuthEventsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3133,32 +3760,34 @@ impl AdminListUserAuthEventsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminListUserAuthEventsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminListUserAuthEvents",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_list_user_auth_events(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3181,15 +3810,15 @@ impl AdminListUserAuthEventsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminListUserAuthEvents::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminListUserAuthEvents",
             "cognitoidentityprovider",
         ));
@@ -3198,10 +3827,10 @@ impl AdminListUserAuthEventsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3231,6 +3860,7 @@ pub mod admin_remove_user_from_group_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -3240,6 +3870,7 @@ pub mod admin_remove_user_from_group_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The username for the user.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -3249,6 +3880,7 @@ pub mod admin_remove_user_from_group_input {
             self.group_name = Some(input.into());
             self
         }
+        /// <p>The group name.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -3258,7 +3890,7 @@ pub mod admin_remove_user_from_group_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminRemoveUserFromGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminRemoveUserFromGroupInput {
                 user_pool_id: self.user_pool_id,
@@ -3280,16 +3912,16 @@ impl AdminRemoveUserFromGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminRemoveUserFromGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminRemoveUserFromGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3297,7 +3929,7 @@ impl AdminRemoveUserFromGroupInput {
         fn update_http_builder(
             input: &crate::input::AdminRemoveUserFromGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3306,32 +3938,34 @@ impl AdminRemoveUserFromGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminRemoveUserFromGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminRemoveUserFromGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_remove_user_from_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3354,15 +3988,15 @@ impl AdminRemoveUserFromGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminRemoveUserFromGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminRemoveUserFromGroup",
             "cognitoidentityprovider",
         ));
@@ -3371,10 +4005,10 @@ impl AdminRemoveUserFromGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3406,6 +4040,7 @@ pub mod admin_reset_user_password_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool where you want to reset the user's password.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -3415,10 +4050,47 @@ pub mod admin_reset_user_password_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name of the user whose password you wish to reset.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
         }
+        /// Adds a key-value pair to `client_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
+        ///
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the AdminResetUserPassword API action, Amazon Cognito invokes the function
+        /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
+        /// invokes this function, it passes a JSON payload, which the function receives as input.
+        /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
+        /// that you assigned to the ClientMetadata parameter in your AdminResetUserPassword
+        /// request. In your function code in Lambda, you can process the
+        /// <code>clientMetadata</code> value to enhance your workflow for your specific
+        /// needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn client_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -3429,6 +4101,38 @@ pub mod admin_reset_user_password_input {
             self.client_metadata = Some(hash_map);
             self
         }
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the AdminResetUserPassword API action, Amazon Cognito invokes the function
+        /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
+        /// invokes this function, it passes a JSON payload, which the function receives as input.
+        /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
+        /// that you assigned to the ClientMetadata parameter in your AdminResetUserPassword
+        /// request. In your function code in Lambda, you can process the
+        /// <code>clientMetadata</code> value to enhance your workflow for your specific
+        /// needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn set_client_metadata(
             mut self,
             input: std::option::Option<
@@ -3443,7 +4147,7 @@ pub mod admin_reset_user_password_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminResetUserPasswordInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminResetUserPasswordInput {
                 user_pool_id: self.user_pool_id,
@@ -3464,16 +4168,16 @@ impl AdminResetUserPasswordInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminResetUserPassword,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminResetUserPasswordInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3481,7 +4185,7 @@ impl AdminResetUserPasswordInput {
         fn update_http_builder(
             input: &crate::input::AdminResetUserPasswordInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3490,32 +4194,34 @@ impl AdminResetUserPasswordInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminResetUserPasswordInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminResetUserPassword",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_reset_user_password(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3538,15 +4244,15 @@ impl AdminResetUserPasswordInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminResetUserPassword::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminResetUserPassword",
             "cognitoidentityprovider",
         ));
@@ -3555,10 +4261,10 @@ impl AdminResetUserPasswordInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3597,6 +4303,7 @@ pub mod admin_respond_to_auth_challenge_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon Cognito user pool.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -3606,6 +4313,7 @@ pub mod admin_respond_to_auth_challenge_input {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The app client ID.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -3615,6 +4323,7 @@ pub mod admin_respond_to_auth_challenge_input {
             self.challenge_name = Some(input);
             self
         }
+        /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
         pub fn set_challenge_name(
             mut self,
             input: std::option::Option<crate::model::ChallengeNameType>,
@@ -3622,6 +4331,50 @@ pub mod admin_respond_to_auth_challenge_input {
             self.challenge_name = input;
             self
         }
+        /// Adds a key-value pair to `challenge_responses`.
+        ///
+        /// To override the contents of this collection use [`set_challenge_responses`](Self::set_challenge_responses).
+        ///
+        /// <p>The challenge responses. These are inputs corresponding to the value of
+        /// <code>ChallengeName</code>, for example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>,
+        /// <code>SECRET_HASH</code> (if app client is configured with client
+        /// secret).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
+        /// <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
+        /// <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
+        /// with client secret).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>,
+        /// <code>SECRET_HASH</code> (if app client is configured with client secret).
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+        /// required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+        /// client is configured with client secret). </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use
+        /// the session value returned by <code>VerifySoftwareToken</code> in the
+        /// <code>Session</code> parameter.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username,
+        /// not an alias (such as email address or phone number). To make this easier, the
+        /// <code>AdminInitiateAuth</code> response includes the actual username value in the
+        /// <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an alias in
+        /// your call to <code>AdminInitiateAuth</code>.</p>
         pub fn challenge_responses(
             mut self,
             k: impl Into<std::string::String>,
@@ -3632,6 +4385,46 @@ pub mod admin_respond_to_auth_challenge_input {
             self.challenge_responses = Some(hash_map);
             self
         }
+        /// <p>The challenge responses. These are inputs corresponding to the value of
+        /// <code>ChallengeName</code>, for example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>,
+        /// <code>SECRET_HASH</code> (if app client is configured with client
+        /// secret).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
+        /// <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
+        /// <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
+        /// with client secret).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>,
+        /// <code>SECRET_HASH</code> (if app client is configured with client secret).
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+        /// required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+        /// client is configured with client secret). </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use
+        /// the session value returned by <code>VerifySoftwareToken</code> in the
+        /// <code>Session</code> parameter.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The value of the <code>USERNAME</code> attribute must be the user's actual username,
+        /// not an alias (such as email address or phone number). To make this easier, the
+        /// <code>AdminInitiateAuth</code> response includes the actual username value in the
+        /// <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an alias in
+        /// your call to <code>AdminInitiateAuth</code>.</p>
         pub fn set_challenge_responses(
             mut self,
             input: std::option::Option<
@@ -3650,6 +4443,11 @@ pub mod admin_respond_to_auth_challenge_input {
             self.session = Some(input.into());
             self
         }
+        /// <p>The session which should be passed both ways in challenge-response calls to the
+        /// service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call
+        /// determines that the caller needs to go through another challenge, they return a session
+        /// with other challenge parameters. This session should be passed as it is to the next
+        /// <code>RespondToAuthChallenge</code> API call.</p>
         pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session = input;
             self
@@ -3660,6 +4458,8 @@ pub mod admin_respond_to_auth_challenge_input {
             self.analytics_metadata = Some(input);
             self
         }
+        /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for
+        /// <code>AdminRespondToAuthChallenge</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -3674,6 +4474,9 @@ pub mod admin_respond_to_auth_challenge_input {
             self.context_data = Some(input);
             self
         }
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
+        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
+        /// security.</p>
         pub fn set_context_data(
             mut self,
             input: std::option::Option<crate::model::ContextDataType>,
@@ -3681,6 +4484,46 @@ pub mod admin_respond_to_auth_challenge_input {
             self.context_data = input;
             self
         }
+        /// Adds a key-value pair to `client_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
+        ///
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the AdminRespondToAuthChallenge API action, Amazon Cognito invokes any
+        /// functions that are assigned to the following triggers: <i>pre sign-up</i>,
+        /// <i>custom message</i>, <i>post authentication</i>,
+        /// <i>user migration</i>, <i>pre token generation</i>,
+        /// <i>define auth challenge</i>, <i>create auth
+        /// challenge</i>, and <i>verify auth challenge response</i>. When
+        /// Amazon Cognito invokes any of these functions, it passes a JSON payload, which the
+        /// function receives as input. This payload contains a <code>clientMetadata</code>
+        /// attribute, which provides the data that you assigned to the ClientMetadata parameter in
+        /// your AdminRespondToAuthChallenge request. In your function code in Lambda, you can
+        /// process the <code>clientMetadata</code> value to enhance your workflow for your specific
+        /// needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn client_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -3691,6 +4534,42 @@ pub mod admin_respond_to_auth_challenge_input {
             self.client_metadata = Some(hash_map);
             self
         }
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the AdminRespondToAuthChallenge API action, Amazon Cognito invokes any
+        /// functions that are assigned to the following triggers: <i>pre sign-up</i>,
+        /// <i>custom message</i>, <i>post authentication</i>,
+        /// <i>user migration</i>, <i>pre token generation</i>,
+        /// <i>define auth challenge</i>, <i>create auth
+        /// challenge</i>, and <i>verify auth challenge response</i>. When
+        /// Amazon Cognito invokes any of these functions, it passes a JSON payload, which the
+        /// function receives as input. This payload contains a <code>clientMetadata</code>
+        /// attribute, which provides the data that you assigned to the ClientMetadata parameter in
+        /// your AdminRespondToAuthChallenge request. In your function code in Lambda, you can
+        /// process the <code>clientMetadata</code> value to enhance your workflow for your specific
+        /// needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn set_client_metadata(
             mut self,
             input: std::option::Option<
@@ -3705,7 +4584,7 @@ pub mod admin_respond_to_auth_challenge_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminRespondToAuthChallengeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminRespondToAuthChallengeInput {
                 user_pool_id: self.user_pool_id,
@@ -3732,16 +4611,16 @@ impl AdminRespondToAuthChallengeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminRespondToAuthChallenge,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminRespondToAuthChallengeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3749,7 +4628,7 @@ impl AdminRespondToAuthChallengeInput {
         fn update_http_builder(
             input: &crate::input::AdminRespondToAuthChallengeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3758,30 +4637,30 @@ impl AdminRespondToAuthChallengeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminRespondToAuthChallengeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminRespondToAuthChallenge",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_admin_respond_to_auth_challenge(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_admin_respond_to_auth_challenge(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3804,15 +4683,15 @@ impl AdminRespondToAuthChallengeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminRespondToAuthChallenge::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminRespondToAuthChallenge",
             "cognitoidentityprovider",
         ));
@@ -3821,10 +4700,10 @@ impl AdminRespondToAuthChallengeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3856,6 +4735,7 @@ pub mod admin_set_user_mfa_preference_input {
             self.sms_mfa_settings = Some(input);
             self
         }
+        /// <p>The SMS text message MFA settings.</p>
         pub fn set_sms_mfa_settings(
             mut self,
             input: std::option::Option<crate::model::SmsMfaSettingsType>,
@@ -3871,6 +4751,7 @@ pub mod admin_set_user_mfa_preference_input {
             self.software_token_mfa_settings = Some(input);
             self
         }
+        /// <p>The time-based one-time password software token MFA settings.</p>
         pub fn set_software_token_mfa_settings(
             mut self,
             input: std::option::Option<crate::model::SoftwareTokenMfaSettingsType>,
@@ -3883,6 +4764,7 @@ pub mod admin_set_user_mfa_preference_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user pool username or alias.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -3892,6 +4774,7 @@ pub mod admin_set_user_mfa_preference_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -3901,7 +4784,7 @@ pub mod admin_set_user_mfa_preference_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminSetUserMfaPreferenceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminSetUserMfaPreferenceInput {
                 sms_mfa_settings: self.sms_mfa_settings,
@@ -3924,16 +4807,16 @@ impl AdminSetUserMfaPreferenceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminSetUserMFAPreference,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminSetUserMfaPreferenceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3941,7 +4824,7 @@ impl AdminSetUserMfaPreferenceInput {
         fn update_http_builder(
             input: &crate::input::AdminSetUserMfaPreferenceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3950,30 +4833,30 @@ impl AdminSetUserMfaPreferenceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminSetUserMfaPreferenceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminSetUserMFAPreference",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_admin_set_user_mfa_preference(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_admin_set_user_mfa_preference(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3996,15 +4879,15 @@ impl AdminSetUserMfaPreferenceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminSetUserMFAPreference::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminSetUserMFAPreference",
             "cognitoidentityprovider",
         ));
@@ -4013,10 +4896,10 @@ impl AdminSetUserMfaPreferenceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4047,6 +4930,7 @@ pub mod admin_set_user_password_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -4056,6 +4940,7 @@ pub mod admin_set_user_password_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name of the user whose password you wish to set.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -4065,6 +4950,7 @@ pub mod admin_set_user_password_input {
             self.password = Some(input.into());
             self
         }
+        /// <p>The password for the user.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
@@ -4076,6 +4962,9 @@ pub mod admin_set_user_password_input {
             self.permanent = Some(input);
             self
         }
+        /// <p>
+        /// <code>True</code> if the password is permanent, <code>False</code> if it is
+        /// temporary.</p>
         pub fn set_permanent(mut self, input: std::option::Option<bool>) -> Self {
             self.permanent = input;
             self
@@ -4085,7 +4974,7 @@ pub mod admin_set_user_password_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminSetUserPasswordInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminSetUserPasswordInput {
                 user_pool_id: self.user_pool_id,
@@ -4107,16 +4996,16 @@ impl AdminSetUserPasswordInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminSetUserPassword,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminSetUserPasswordInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4124,7 +5013,7 @@ impl AdminSetUserPasswordInput {
         fn update_http_builder(
             input: &crate::input::AdminSetUserPasswordInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4133,32 +5022,34 @@ impl AdminSetUserPasswordInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminSetUserPasswordInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminSetUserPassword",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_set_user_password(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4181,15 +5072,15 @@ impl AdminSetUserPasswordInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminSetUserPassword::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminSetUserPassword",
             "cognitoidentityprovider",
         ));
@@ -4198,10 +5089,10 @@ impl AdminSetUserPasswordInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4232,6 +5123,8 @@ pub mod admin_set_user_settings_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The ID of the user pool that contains the user that you are setting options
+        /// for.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -4241,16 +5134,25 @@ pub mod admin_set_user_settings_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name of the user that you are setting options for.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
         }
+        /// Appends an item to `mfa_options`.
+        ///
+        /// To override the contents of this collection use [`set_mfa_options`](Self::set_mfa_options).
+        ///
+        /// <p>You can use this parameter only to set an SMS configuration that uses SMS for
+        /// delivery.</p>
         pub fn mfa_options(mut self, input: impl Into<crate::model::MfaOptionType>) -> Self {
             let mut v = self.mfa_options.unwrap_or_default();
             v.push(input.into());
             self.mfa_options = Some(v);
             self
         }
+        /// <p>You can use this parameter only to set an SMS configuration that uses SMS for
+        /// delivery.</p>
         pub fn set_mfa_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
@@ -4263,7 +5165,7 @@ pub mod admin_set_user_settings_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminSetUserSettingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminSetUserSettingsInput {
                 user_pool_id: self.user_pool_id,
@@ -4284,16 +5186,16 @@ impl AdminSetUserSettingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminSetUserSettings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminSetUserSettingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4301,7 +5203,7 @@ impl AdminSetUserSettingsInput {
         fn update_http_builder(
             input: &crate::input::AdminSetUserSettingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4310,32 +5212,34 @@ impl AdminSetUserSettingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminSetUserSettingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminSetUserSettings",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_set_user_settings(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4358,15 +5262,15 @@ impl AdminSetUserSettingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminSetUserSettings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminSetUserSettings",
             "cognitoidentityprovider",
         ));
@@ -4375,10 +5279,10 @@ impl AdminSetUserSettingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4409,6 +5313,7 @@ pub mod admin_update_auth_event_feedback_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -4418,6 +5323,7 @@ pub mod admin_update_auth_event_feedback_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user pool username.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -4427,6 +5333,7 @@ pub mod admin_update_auth_event_feedback_input {
             self.event_id = Some(input.into());
             self
         }
+        /// <p>The authentication event ID.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_id = input;
             self
@@ -4436,6 +5343,7 @@ pub mod admin_update_auth_event_feedback_input {
             self.feedback_value = Some(input);
             self
         }
+        /// <p>The authentication event feedback value.</p>
         pub fn set_feedback_value(
             mut self,
             input: std::option::Option<crate::model::FeedbackValueType>,
@@ -4448,7 +5356,7 @@ pub mod admin_update_auth_event_feedback_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminUpdateAuthEventFeedbackInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminUpdateAuthEventFeedbackInput {
                 user_pool_id: self.user_pool_id,
@@ -4471,16 +5379,16 @@ impl AdminUpdateAuthEventFeedbackInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminUpdateAuthEventFeedback,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminUpdateAuthEventFeedbackInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4488,7 +5396,7 @@ impl AdminUpdateAuthEventFeedbackInput {
         fn update_http_builder(
             input: &crate::input::AdminUpdateAuthEventFeedbackInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4497,30 +5405,30 @@ impl AdminUpdateAuthEventFeedbackInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminUpdateAuthEventFeedbackInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminUpdateAuthEventFeedback",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_admin_update_auth_event_feedback(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_admin_update_auth_event_feedback(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4543,15 +5451,15 @@ impl AdminUpdateAuthEventFeedbackInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminUpdateAuthEventFeedback::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminUpdateAuthEventFeedback",
             "cognitoidentityprovider",
         ));
@@ -4560,10 +5468,10 @@ impl AdminUpdateAuthEventFeedbackInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4595,6 +5503,7 @@ pub mod admin_update_device_status_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -4604,6 +5513,7 @@ pub mod admin_update_device_status_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -4613,6 +5523,7 @@ pub mod admin_update_device_status_input {
             self.device_key = Some(input.into());
             self
         }
+        /// <p>The device key.</p>
         pub fn set_device_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_key = input;
             self
@@ -4625,6 +5536,7 @@ pub mod admin_update_device_status_input {
             self.device_remembered_status = Some(input);
             self
         }
+        /// <p>The status indicating whether a device has been remembered or not.</p>
         pub fn set_device_remembered_status(
             mut self,
             input: std::option::Option<crate::model::DeviceRememberedStatusType>,
@@ -4637,7 +5549,7 @@ pub mod admin_update_device_status_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminUpdateDeviceStatusInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminUpdateDeviceStatusInput {
                 user_pool_id: self.user_pool_id,
@@ -4660,16 +5572,16 @@ impl AdminUpdateDeviceStatusInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminUpdateDeviceStatus,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminUpdateDeviceStatusInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4677,7 +5589,7 @@ impl AdminUpdateDeviceStatusInput {
         fn update_http_builder(
             input: &crate::input::AdminUpdateDeviceStatusInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4686,32 +5598,34 @@ impl AdminUpdateDeviceStatusInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminUpdateDeviceStatusInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminUpdateDeviceStatus",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_update_device_status(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4734,15 +5648,15 @@ impl AdminUpdateDeviceStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminUpdateDeviceStatus::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminUpdateDeviceStatus",
             "cognitoidentityprovider",
         ));
@@ -4751,10 +5665,10 @@ impl AdminUpdateDeviceStatusInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4787,6 +5701,7 @@ pub mod admin_update_user_attributes_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool where you want to update user attributes.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -4796,16 +5711,27 @@ pub mod admin_update_user_attributes_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name of the user for whom you want to update user attributes.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
         }
+        /// Appends an item to `user_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
+        ///
+        /// <p>An array of name-value pairs representing user attributes.</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
+        /// attribute name.</p>
         pub fn user_attributes(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
             v.push(input.into());
             self.user_attributes = Some(v);
             self
         }
+        /// <p>An array of name-value pairs representing user attributes.</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
+        /// attribute name.</p>
         pub fn set_user_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
@@ -4813,6 +5739,42 @@ pub mod admin_update_user_attributes_input {
             self.user_attributes = input;
             self
         }
+        /// Adds a key-value pair to `client_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
+        ///
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the
+        /// function that is assigned to the <i>custom message</i> trigger. When
+        /// Amazon Cognito invokes this function, it passes a JSON payload, which the function
+        /// receives as input. This payload contains a <code>clientMetadata</code> attribute, which
+        /// provides the data that you assigned to the ClientMetadata parameter in your
+        /// AdminUpdateUserAttributes request. In your function code in Lambda, you can process
+        /// the <code>clientMetadata</code> value to enhance your workflow for your specific
+        /// needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn client_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -4823,6 +5785,38 @@ pub mod admin_update_user_attributes_input {
             self.client_metadata = Some(hash_map);
             self
         }
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the
+        /// function that is assigned to the <i>custom message</i> trigger. When
+        /// Amazon Cognito invokes this function, it passes a JSON payload, which the function
+        /// receives as input. This payload contains a <code>clientMetadata</code> attribute, which
+        /// provides the data that you assigned to the ClientMetadata parameter in your
+        /// AdminUpdateUserAttributes request. In your function code in Lambda, you can process
+        /// the <code>clientMetadata</code> value to enhance your workflow for your specific
+        /// needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn set_client_metadata(
             mut self,
             input: std::option::Option<
@@ -4837,7 +5831,7 @@ pub mod admin_update_user_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminUpdateUserAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminUpdateUserAttributesInput {
                 user_pool_id: self.user_pool_id,
@@ -4860,16 +5854,16 @@ impl AdminUpdateUserAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminUpdateUserAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminUpdateUserAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4877,7 +5871,7 @@ impl AdminUpdateUserAttributesInput {
         fn update_http_builder(
             input: &crate::input::AdminUpdateUserAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4886,32 +5880,34 @@ impl AdminUpdateUserAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminUpdateUserAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminUpdateUserAttributes",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_update_user_attributes(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4934,15 +5930,15 @@ impl AdminUpdateUserAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminUpdateUserAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminUpdateUserAttributes",
             "cognitoidentityprovider",
         ));
@@ -4951,10 +5947,10 @@ impl AdminUpdateUserAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4983,6 +5979,7 @@ pub mod admin_user_global_sign_out_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -4992,6 +5989,7 @@ pub mod admin_user_global_sign_out_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -5001,7 +5999,7 @@ pub mod admin_user_global_sign_out_input {
             self,
         ) -> std::result::Result<
             crate::input::AdminUserGlobalSignOutInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdminUserGlobalSignOutInput {
                 user_pool_id: self.user_pool_id,
@@ -5021,16 +6019,16 @@ impl AdminUserGlobalSignOutInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdminUserGlobalSignOut,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdminUserGlobalSignOutInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5038,7 +6036,7 @@ impl AdminUserGlobalSignOutInput {
         fn update_http_builder(
             input: &crate::input::AdminUserGlobalSignOutInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5047,32 +6045,34 @@ impl AdminUserGlobalSignOutInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdminUserGlobalSignOutInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AdminUserGlobalSignOut",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_admin_user_global_sign_out(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5095,15 +6095,15 @@ impl AdminUserGlobalSignOutInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdminUserGlobalSignOut::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdminUserGlobalSignOut",
             "cognitoidentityprovider",
         ));
@@ -5112,10 +6112,10 @@ impl AdminUserGlobalSignOutInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5144,6 +6144,7 @@ pub mod associate_software_token_input {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>The access token.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -5154,6 +6155,8 @@ pub mod associate_software_token_input {
             self.session = Some(input.into());
             self
         }
+        /// <p>The session which should be passed both ways in challenge-response calls to the
+        /// service. This allows authentication of the user as part of the MFA setup process.</p>
         pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session = input;
             self
@@ -5163,7 +6166,7 @@ pub mod associate_software_token_input {
             self,
         ) -> std::result::Result<
             crate::input::AssociateSoftwareTokenInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AssociateSoftwareTokenInput {
                 access_token: self.access_token,
@@ -5183,16 +6186,16 @@ impl AssociateSoftwareTokenInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AssociateSoftwareToken,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AssociateSoftwareTokenInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5200,7 +6203,7 @@ impl AssociateSoftwareTokenInput {
         fn update_http_builder(
             input: &crate::input::AssociateSoftwareTokenInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5209,32 +6212,34 @@ impl AssociateSoftwareTokenInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AssociateSoftwareTokenInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.AssociateSoftwareToken",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_software_token(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5257,15 +6262,15 @@ impl AssociateSoftwareTokenInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AssociateSoftwareToken::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AssociateSoftwareToken",
             "cognitoidentityprovider",
         ));
@@ -5274,10 +6279,10 @@ impl AssociateSoftwareTokenInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5307,6 +6312,7 @@ pub mod change_password_input {
             self.previous_password = Some(input.into());
             self
         }
+        /// <p>The old password.</p>
         pub fn set_previous_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5319,6 +6325,7 @@ pub mod change_password_input {
             self.proposed_password = Some(input.into());
             self
         }
+        /// <p>The new password.</p>
         pub fn set_proposed_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5331,6 +6338,7 @@ pub mod change_password_input {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>The access token.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -5340,7 +6348,7 @@ pub mod change_password_input {
             self,
         ) -> std::result::Result<
             crate::input::ChangePasswordInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ChangePasswordInput {
                 previous_password: self.previous_password,
@@ -5361,16 +6369,16 @@ impl ChangePasswordInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ChangePassword,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ChangePasswordInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5378,7 +6386,7 @@ impl ChangePasswordInput {
         fn update_http_builder(
             input: &crate::input::ChangePasswordInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5387,29 +6395,31 @@ impl ChangePasswordInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ChangePasswordInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.ChangePassword",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_change_password(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5433,15 +6443,15 @@ impl ChangePasswordInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ChangePassword::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ChangePassword",
             "cognitoidentityprovider",
         ));
@@ -5450,10 +6460,10 @@ impl ChangePasswordInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5485,6 +6495,7 @@ pub mod confirm_device_input {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>The access token.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -5494,6 +6505,7 @@ pub mod confirm_device_input {
             self.device_key = Some(input.into());
             self
         }
+        /// <p>The device key.</p>
         pub fn set_device_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_key = input;
             self
@@ -5506,6 +6518,7 @@ pub mod confirm_device_input {
             self.device_secret_verifier_config = Some(input);
             self
         }
+        /// <p>The configuration of the device secret verifier.</p>
         pub fn set_device_secret_verifier_config(
             mut self,
             input: std::option::Option<crate::model::DeviceSecretVerifierConfigType>,
@@ -5518,6 +6531,7 @@ pub mod confirm_device_input {
             self.device_name = Some(input.into());
             self
         }
+        /// <p>The device name.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_name = input;
             self
@@ -5525,8 +6539,10 @@ pub mod confirm_device_input {
         /// Consumes the builder and constructs a [`ConfirmDeviceInput`](crate::input::ConfirmDeviceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ConfirmDeviceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ConfirmDeviceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ConfirmDeviceInput {
                 access_token: self.access_token,
                 device_key: self.device_key,
@@ -5547,16 +6563,16 @@ impl ConfirmDeviceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ConfirmDevice,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ConfirmDeviceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5564,7 +6580,7 @@ impl ConfirmDeviceInput {
         fn update_http_builder(
             input: &crate::input::ConfirmDeviceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5573,29 +6589,31 @@ impl ConfirmDeviceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ConfirmDeviceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.ConfirmDevice",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_confirm_device(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5618,25 +6636,27 @@ impl ConfirmDeviceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ConfirmDevice::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ConfirmDevice",
-                    "cognitoidentityprovider",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ConfirmDevice::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ConfirmDevice",
+            "cognitoidentityprovider",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5673,6 +6693,7 @@ pub mod confirm_forgot_password_input {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The app client ID of the app associated with the user pool.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -5683,6 +6704,8 @@ pub mod confirm_forgot_password_input {
             self.secret_hash = Some(input.into());
             self
         }
+        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
+        /// user pool client and username plus the client ID in the message.</p>
         pub fn set_secret_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_hash = input;
             self
@@ -5693,6 +6716,8 @@ pub mod confirm_forgot_password_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name of the user for whom you want to enter a code to retrieve a forgotten
+        /// password.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -5703,6 +6728,8 @@ pub mod confirm_forgot_password_input {
             self.confirmation_code = Some(input.into());
             self
         }
+        /// <p>The confirmation code sent by a user's request to retrieve a forgotten password. For
+        /// more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
         pub fn set_confirmation_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5715,6 +6742,7 @@ pub mod confirm_forgot_password_input {
             self.password = Some(input.into());
             self
         }
+        /// <p>The password sent by a user's request to retrieve a forgotten password.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
@@ -5725,6 +6753,8 @@ pub mod confirm_forgot_password_input {
             self.analytics_metadata = Some(input);
             self
         }
+        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+        /// <code>ConfirmForgotPassword</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -5739,6 +6769,9 @@ pub mod confirm_forgot_password_input {
             self.user_context_data = Some(input);
             self
         }
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
+        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
+        /// security.</p>
         pub fn set_user_context_data(
             mut self,
             input: std::option::Option<crate::model::UserContextDataType>,
@@ -5746,6 +6779,42 @@ pub mod confirm_forgot_password_input {
             self.user_context_data = input;
             self
         }
+        /// Adds a key-value pair to `client_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
+        ///
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the ConfirmForgotPassword API action, Amazon Cognito invokes the function
+        /// that is assigned to the <i>post confirmation</i> trigger. When Amazon
+        /// Cognito invokes this function, it passes a JSON payload, which the function receives as
+        /// input. This payload contains a <code>clientMetadata</code> attribute, which provides the
+        /// data that you assigned to the ClientMetadata parameter in your ConfirmForgotPassword
+        /// request. In your function code in Lambda, you can process the
+        /// <code>clientMetadata</code> value to enhance your workflow for your specific
+        /// needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn client_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -5756,6 +6825,38 @@ pub mod confirm_forgot_password_input {
             self.client_metadata = Some(hash_map);
             self
         }
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the ConfirmForgotPassword API action, Amazon Cognito invokes the function
+        /// that is assigned to the <i>post confirmation</i> trigger. When Amazon
+        /// Cognito invokes this function, it passes a JSON payload, which the function receives as
+        /// input. This payload contains a <code>clientMetadata</code> attribute, which provides the
+        /// data that you assigned to the ClientMetadata parameter in your ConfirmForgotPassword
+        /// request. In your function code in Lambda, you can process the
+        /// <code>clientMetadata</code> value to enhance your workflow for your specific
+        /// needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn set_client_metadata(
             mut self,
             input: std::option::Option<
@@ -5770,7 +6871,7 @@ pub mod confirm_forgot_password_input {
             self,
         ) -> std::result::Result<
             crate::input::ConfirmForgotPasswordInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ConfirmForgotPasswordInput {
                 client_id: self.client_id,
@@ -5796,16 +6897,16 @@ impl ConfirmForgotPasswordInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ConfirmForgotPassword,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ConfirmForgotPasswordInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5813,7 +6914,7 @@ impl ConfirmForgotPasswordInput {
         fn update_http_builder(
             input: &crate::input::ConfirmForgotPasswordInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5822,32 +6923,34 @@ impl ConfirmForgotPasswordInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ConfirmForgotPasswordInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.ConfirmForgotPassword",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_confirm_forgot_password(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5871,15 +6974,15 @@ impl ConfirmForgotPasswordInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ConfirmForgotPassword::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ConfirmForgotPassword",
             "cognitoidentityprovider",
         ));
@@ -5888,10 +6991,10 @@ impl ConfirmForgotPasswordInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5928,6 +7031,7 @@ pub mod confirm_sign_up_input {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The ID of the app client associated with the user pool.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -5938,6 +7042,8 @@ pub mod confirm_sign_up_input {
             self.secret_hash = Some(input.into());
             self
         }
+        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
+        /// user pool client and username plus the client ID in the message.</p>
         pub fn set_secret_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_hash = input;
             self
@@ -5947,6 +7053,7 @@ pub mod confirm_sign_up_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name of the user whose registration you wish to confirm.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -5956,6 +7063,7 @@ pub mod confirm_sign_up_input {
             self.confirmation_code = Some(input.into());
             self
         }
+        /// <p>The confirmation code sent by a user's request to confirm registration.</p>
         pub fn set_confirmation_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5973,6 +7081,12 @@ pub mod confirm_sign_up_input {
             self.force_alias_creation = Some(input);
             self
         }
+        /// <p>Boolean to be specified to force user confirmation irrespective of existing alias. By
+        /// default set to <code>False</code>. If this parameter is set to <code>True</code> and the
+        /// phone number/email used for sign up confirmation already exists as an alias with a
+        /// different user, the API call will migrate the alias from the previous user to the newly
+        /// created user being confirmed. If set to <code>False</code>, the API will throw an
+        /// <b>AliasExistsException</b> error.</p>
         pub fn set_force_alias_creation(mut self, input: std::option::Option<bool>) -> Self {
             self.force_alias_creation = input;
             self
@@ -5983,6 +7097,8 @@ pub mod confirm_sign_up_input {
             self.analytics_metadata = Some(input);
             self
         }
+        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+        /// <code>ConfirmSignUp</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -5997,6 +7113,9 @@ pub mod confirm_sign_up_input {
             self.user_context_data = Some(input);
             self
         }
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
+        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
+        /// security.</p>
         pub fn set_user_context_data(
             mut self,
             input: std::option::Option<crate::model::UserContextDataType>,
@@ -6004,6 +7123,41 @@ pub mod confirm_sign_up_input {
             self.user_context_data = input;
             self
         }
+        /// Adds a key-value pair to `client_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
+        ///
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the ConfirmSignUp API action, Amazon Cognito invokes the function that is
+        /// assigned to the <i>post confirmation</i> trigger. When Amazon Cognito
+        /// invokes this function, it passes a JSON payload, which the function receives as input.
+        /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
+        /// that you assigned to the ClientMetadata parameter in your ConfirmSignUp request. In your
+        /// function code in Lambda, you can process the <code>clientMetadata</code> value to
+        /// enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn client_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -6014,6 +7168,37 @@ pub mod confirm_sign_up_input {
             self.client_metadata = Some(hash_map);
             self
         }
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the ConfirmSignUp API action, Amazon Cognito invokes the function that is
+        /// assigned to the <i>post confirmation</i> trigger. When Amazon Cognito
+        /// invokes this function, it passes a JSON payload, which the function receives as input.
+        /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
+        /// that you assigned to the ClientMetadata parameter in your ConfirmSignUp request. In your
+        /// function code in Lambda, you can process the <code>clientMetadata</code> value to
+        /// enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn set_client_metadata(
             mut self,
             input: std::option::Option<
@@ -6026,8 +7211,10 @@ pub mod confirm_sign_up_input {
         /// Consumes the builder and constructs a [`ConfirmSignUpInput`](crate::input::ConfirmSignUpInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ConfirmSignUpInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ConfirmSignUpInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ConfirmSignUpInput {
                 client_id: self.client_id,
                 secret_hash: self.secret_hash,
@@ -6052,16 +7239,16 @@ impl ConfirmSignUpInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ConfirmSignUp,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ConfirmSignUpInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6069,7 +7256,7 @@ impl ConfirmSignUpInput {
         fn update_http_builder(
             input: &crate::input::ConfirmSignUpInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6078,29 +7265,31 @@ impl ConfirmSignUpInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ConfirmSignUpInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.ConfirmSignUp",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_confirm_sign_up(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6124,25 +7313,27 @@ impl ConfirmSignUpInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ConfirmSignUp::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ConfirmSignUp",
-                    "cognitoidentityprovider",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ConfirmSignUp::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ConfirmSignUp",
+            "cognitoidentityprovider",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6174,6 +7365,7 @@ pub mod create_group_input {
             self.group_name = Some(input.into());
             self
         }
+        /// <p>The name of the group. Must be unique.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -6183,6 +7375,7 @@ pub mod create_group_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -6192,6 +7385,7 @@ pub mod create_group_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A string containing the description of the group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -6201,6 +7395,7 @@ pub mod create_group_input {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The role ARN for the group.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -6223,6 +7418,20 @@ pub mod create_group_input {
             self.precedence = Some(input);
             self
         }
+        /// <p>A nonnegative integer value that specifies the precedence of this group relative to
+        /// the other groups that a user can belong to in the user pool. Zero is the highest
+        /// precedence value. Groups with lower <code>Precedence</code> values take precedence over
+        /// groups with higher or null <code>Precedence</code> values. If a user belongs to two or
+        /// more groups, it is the group with the lowest precedence value whose role ARN will be
+        /// used in the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in
+        /// the user's tokens.</p>
+        /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither
+        /// group takes precedence over the other. If two groups with the same
+        /// <code>Precedence</code> have the same role ARN, that role is used in the
+        /// <code>cognito:preferred_role</code> claim in tokens for users in each group. If the
+        /// two groups have different role ARNs, the <code>cognito:preferred_role</code> claim is
+        /// not set in users' tokens.</p>
+        /// <p>The default <code>Precedence</code> value is null.</p>
         pub fn set_precedence(mut self, input: std::option::Option<i32>) -> Self {
             self.precedence = input;
             self
@@ -6230,8 +7439,10 @@ pub mod create_group_input {
         /// Consumes the builder and constructs a [`CreateGroupInput`](crate::input::CreateGroupInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateGroupInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateGroupInput {
                 group_name: self.group_name,
                 user_pool_id: self.user_pool_id,
@@ -6253,16 +7464,16 @@ impl CreateGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6270,7 +7481,7 @@ impl CreateGroupInput {
         fn update_http_builder(
             input: &crate::input::CreateGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6279,29 +7490,31 @@ impl CreateGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.CreateGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_group(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6324,25 +7537,27 @@ impl CreateGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateGroup::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateGroup",
-                    "cognitoidentityprovider",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateGroup",
+            "cognitoidentityprovider",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6379,6 +7594,7 @@ pub mod create_identity_provider_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -6388,6 +7604,7 @@ pub mod create_identity_provider_input {
             self.provider_name = Some(input.into());
             self
         }
+        /// <p>The identity provider name.</p>
         pub fn set_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6400,6 +7617,7 @@ pub mod create_identity_provider_input {
             self.provider_type = Some(input);
             self
         }
+        /// <p>The identity provider type.</p>
         pub fn set_provider_type(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderTypeType>,
@@ -6407,6 +7625,117 @@ pub mod create_identity_provider_input {
             self.provider_type = input;
             self
         }
+        /// Adds a key-value pair to `provider_details`.
+        ///
+        /// To override the contents of this collection use [`set_provider_details`](Self::set_provider_details).
+        ///
+        /// <p>The identity provider details. The following list describes the provider detail keys
+        /// for each identity provider type.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For Google and Login with Amazon:</p>
+        /// <ul>
+        /// <li>
+        /// <p>client_id</p>
+        /// </li>
+        /// <li>
+        /// <p>client_secret</p>
+        /// </li>
+        /// <li>
+        /// <p>authorize_scopes</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>For Facebook:</p>
+        /// <ul>
+        /// <li>
+        /// <p>client_id</p>
+        /// </li>
+        /// <li>
+        /// <p>client_secret</p>
+        /// </li>
+        /// <li>
+        /// <p>authorize_scopes</p>
+        /// </li>
+        /// <li>
+        /// <p>api_version</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>For Sign in with Apple:</p>
+        /// <ul>
+        /// <li>
+        /// <p>client_id</p>
+        /// </li>
+        /// <li>
+        /// <p>team_id</p>
+        /// </li>
+        /// <li>
+        /// <p>key_id</p>
+        /// </li>
+        /// <li>
+        /// <p>private_key</p>
+        /// </li>
+        /// <li>
+        /// <p>authorize_scopes</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>For OIDC providers:</p>
+        /// <ul>
+        /// <li>
+        /// <p>client_id</p>
+        /// </li>
+        /// <li>
+        /// <p>client_secret</p>
+        /// </li>
+        /// <li>
+        /// <p>attributes_request_method</p>
+        /// </li>
+        /// <li>
+        /// <p>oidc_issuer</p>
+        /// </li>
+        /// <li>
+        /// <p>authorize_scopes</p>
+        /// </li>
+        /// <li>
+        /// <p>authorize_url <i>if not available from discovery URL specified
+        /// by oidc_issuer key</i>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>token_url <i>if not available from discovery URL specified by
+        /// oidc_issuer key</i>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>attributes_url <i>if not available from discovery URL specified
+        /// by oidc_issuer key</i>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>jwks_uri <i>if not available from discovery URL specified by
+        /// oidc_issuer key</i>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>For SAML providers:</p>
+        /// <ul>
+        /// <li>
+        /// <p>MetadataFile OR MetadataURL</p>
+        /// </li>
+        /// <li>
+        /// <p>IDPSignout <i>optional</i>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn provider_details(
             mut self,
             k: impl Into<std::string::String>,
@@ -6417,6 +7746,113 @@ pub mod create_identity_provider_input {
             self.provider_details = Some(hash_map);
             self
         }
+        /// <p>The identity provider details. The following list describes the provider detail keys
+        /// for each identity provider type.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For Google and Login with Amazon:</p>
+        /// <ul>
+        /// <li>
+        /// <p>client_id</p>
+        /// </li>
+        /// <li>
+        /// <p>client_secret</p>
+        /// </li>
+        /// <li>
+        /// <p>authorize_scopes</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>For Facebook:</p>
+        /// <ul>
+        /// <li>
+        /// <p>client_id</p>
+        /// </li>
+        /// <li>
+        /// <p>client_secret</p>
+        /// </li>
+        /// <li>
+        /// <p>authorize_scopes</p>
+        /// </li>
+        /// <li>
+        /// <p>api_version</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>For Sign in with Apple:</p>
+        /// <ul>
+        /// <li>
+        /// <p>client_id</p>
+        /// </li>
+        /// <li>
+        /// <p>team_id</p>
+        /// </li>
+        /// <li>
+        /// <p>key_id</p>
+        /// </li>
+        /// <li>
+        /// <p>private_key</p>
+        /// </li>
+        /// <li>
+        /// <p>authorize_scopes</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>For OIDC providers:</p>
+        /// <ul>
+        /// <li>
+        /// <p>client_id</p>
+        /// </li>
+        /// <li>
+        /// <p>client_secret</p>
+        /// </li>
+        /// <li>
+        /// <p>attributes_request_method</p>
+        /// </li>
+        /// <li>
+        /// <p>oidc_issuer</p>
+        /// </li>
+        /// <li>
+        /// <p>authorize_scopes</p>
+        /// </li>
+        /// <li>
+        /// <p>authorize_url <i>if not available from discovery URL specified
+        /// by oidc_issuer key</i>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>token_url <i>if not available from discovery URL specified by
+        /// oidc_issuer key</i>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>attributes_url <i>if not available from discovery URL specified
+        /// by oidc_issuer key</i>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>jwks_uri <i>if not available from discovery URL specified by
+        /// oidc_issuer key</i>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>For SAML providers:</p>
+        /// <ul>
+        /// <li>
+        /// <p>MetadataFile OR MetadataURL</p>
+        /// </li>
+        /// <li>
+        /// <p>IDPSignout <i>optional</i>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn set_provider_details(
             mut self,
             input: std::option::Option<
@@ -6426,6 +7862,12 @@ pub mod create_identity_provider_input {
             self.provider_details = input;
             self
         }
+        /// Adds a key-value pair to `attribute_mapping`.
+        ///
+        /// To override the contents of this collection use [`set_attribute_mapping`](Self::set_attribute_mapping).
+        ///
+        /// <p>A mapping of identity provider attributes to standard and custom user pool
+        /// attributes.</p>
         pub fn attribute_mapping(
             mut self,
             k: impl Into<std::string::String>,
@@ -6436,6 +7878,8 @@ pub mod create_identity_provider_input {
             self.attribute_mapping = Some(hash_map);
             self
         }
+        /// <p>A mapping of identity provider attributes to standard and custom user pool
+        /// attributes.</p>
         pub fn set_attribute_mapping(
             mut self,
             input: std::option::Option<
@@ -6445,12 +7889,18 @@ pub mod create_identity_provider_input {
             self.attribute_mapping = input;
             self
         }
+        /// Appends an item to `idp_identifiers`.
+        ///
+        /// To override the contents of this collection use [`set_idp_identifiers`](Self::set_idp_identifiers).
+        ///
+        /// <p>A list of identity provider identifiers.</p>
         pub fn idp_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.idp_identifiers.unwrap_or_default();
             v.push(input.into());
             self.idp_identifiers = Some(v);
             self
         }
+        /// <p>A list of identity provider identifiers.</p>
         pub fn set_idp_identifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6463,7 +7913,7 @@ pub mod create_identity_provider_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateIdentityProviderInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateIdentityProviderInput {
                 user_pool_id: self.user_pool_id,
@@ -6487,16 +7937,16 @@ impl CreateIdentityProviderInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateIdentityProvider,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateIdentityProviderInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6504,7 +7954,7 @@ impl CreateIdentityProviderInput {
         fn update_http_builder(
             input: &crate::input::CreateIdentityProviderInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6513,32 +7963,34 @@ impl CreateIdentityProviderInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateIdentityProviderInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.CreateIdentityProvider",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_identity_provider(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6561,15 +8013,15 @@ impl CreateIdentityProviderInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateIdentityProvider::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateIdentityProvider",
             "cognitoidentityprovider",
         ));
@@ -6578,10 +8030,10 @@ impl CreateIdentityProviderInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6613,6 +8065,7 @@ pub mod create_resource_server_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -6624,6 +8077,9 @@ pub mod create_resource_server_input {
             self.identifier = Some(input.into());
             self
         }
+        /// <p>A unique resource server identifier for the resource server. This could be an HTTPS
+        /// endpoint where the resource server is located. For example,
+        /// <code>https://my-weather-api.example.com</code>.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
             self
@@ -6633,16 +8089,25 @@ pub mod create_resource_server_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A friendly name for the resource server.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `scopes`.
+        ///
+        /// To override the contents of this collection use [`set_scopes`](Self::set_scopes).
+        ///
+        /// <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and
+        /// <code>description</code>.</p>
         pub fn scopes(mut self, input: impl Into<crate::model::ResourceServerScopeType>) -> Self {
             let mut v = self.scopes.unwrap_or_default();
             v.push(input.into());
             self.scopes = Some(v);
             self
         }
+        /// <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and
+        /// <code>description</code>.</p>
         pub fn set_scopes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceServerScopeType>>,
@@ -6655,7 +8120,7 @@ pub mod create_resource_server_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateResourceServerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateResourceServerInput {
                 user_pool_id: self.user_pool_id,
@@ -6677,16 +8142,16 @@ impl CreateResourceServerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateResourceServer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateResourceServerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6694,7 +8159,7 @@ impl CreateResourceServerInput {
         fn update_http_builder(
             input: &crate::input::CreateResourceServerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6703,32 +8168,32 @@ impl CreateResourceServerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateResourceServerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.CreateResourceServer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_resource_server(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6751,15 +8216,15 @@ impl CreateResourceServerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateResourceServer::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateResourceServer",
             "cognitoidentityprovider",
         ));
@@ -6768,10 +8233,10 @@ impl CreateResourceServerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6801,6 +8266,7 @@ pub mod create_user_import_job_input {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>The job name for the user import job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -6810,6 +8276,7 @@ pub mod create_user_import_job_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool that the users are being imported into.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -6819,6 +8286,7 @@ pub mod create_user_import_job_input {
             self.cloud_watch_logs_role_arn = Some(input.into());
             self
         }
+        /// <p>The role ARN for the Amazon CloudWatch Logging role for the user import job.</p>
         pub fn set_cloud_watch_logs_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6831,7 +8299,7 @@ pub mod create_user_import_job_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateUserImportJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateUserImportJobInput {
                 job_name: self.job_name,
@@ -6852,16 +8320,16 @@ impl CreateUserImportJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateUserImportJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateUserImportJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6869,7 +8337,7 @@ impl CreateUserImportJobInput {
         fn update_http_builder(
             input: &crate::input::CreateUserImportJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6878,32 +8346,32 @@ impl CreateUserImportJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateUserImportJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.CreateUserImportJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_user_import_job(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6926,15 +8394,15 @@ impl CreateUserImportJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateUserImportJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateUserImportJob",
             "cognitoidentityprovider",
         ));
@@ -6943,10 +8411,10 @@ impl CreateUserImportJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7003,6 +8471,7 @@ pub mod create_user_pool_input {
             self.pool_name = Some(input.into());
             self
         }
+        /// <p>A string used to name the user pool.</p>
         pub fn set_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pool_name = input;
             self
@@ -7012,6 +8481,7 @@ pub mod create_user_pool_input {
             self.policies = Some(input);
             self
         }
+        /// <p>The policies associated with the new user pool.</p>
         pub fn set_policies(
             mut self,
             input: std::option::Option<crate::model::UserPoolPolicyType>,
@@ -7034,6 +8504,17 @@ pub mod create_user_pool_input {
             self.lambda_config = Some(input);
             self
         }
+        /// <p>The Lambda trigger configuration information for the new user pool.</p>
+        /// <note>
+        /// <p>In a push model, event sources (such as Amazon S3 and custom applications) need
+        /// permission to invoke a function. So you will need to make an extra call to add
+        /// permission for these event sources to invoke your Lambda function.</p>
+        /// <p></p>
+        /// <p>For more information on using the Lambda API to add permission, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
+        /// AddPermission </a>. </p>
+        /// <p>For adding permission using the CLI, see <a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission
+        /// </a>.</p>
+        /// </note>
         pub fn set_lambda_config(
             mut self,
             input: std::option::Option<crate::model::LambdaConfigType>,
@@ -7041,6 +8522,11 @@ pub mod create_user_pool_input {
             self.lambda_config = input;
             self
         }
+        /// Appends an item to `auto_verified_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_auto_verified_attributes`](Self::set_auto_verified_attributes).
+        ///
+        /// <p>The attributes to be auto-verified. Possible values: <b>email</b>, <b>phone_number</b>.</p>
         pub fn auto_verified_attributes(
             mut self,
             input: impl Into<crate::model::VerifiedAttributeType>,
@@ -7050,6 +8536,7 @@ pub mod create_user_pool_input {
             self.auto_verified_attributes = Some(v);
             self
         }
+        /// <p>The attributes to be auto-verified. Possible values: <b>email</b>, <b>phone_number</b>.</p>
         pub fn set_auto_verified_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VerifiedAttributeType>>,
@@ -7057,6 +8544,12 @@ pub mod create_user_pool_input {
             self.auto_verified_attributes = input;
             self
         }
+        /// Appends an item to `alias_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_alias_attributes`](Self::set_alias_attributes).
+        ///
+        /// <p>Attributes supported as an alias for this user pool. Possible values: <b>phone_number</b>, <b>email</b>, or
+        /// <b>preferred_username</b>.</p>
         pub fn alias_attributes(
             mut self,
             input: impl Into<crate::model::AliasAttributeType>,
@@ -7066,6 +8559,8 @@ pub mod create_user_pool_input {
             self.alias_attributes = Some(v);
             self
         }
+        /// <p>Attributes supported as an alias for this user pool. Possible values: <b>phone_number</b>, <b>email</b>, or
+        /// <b>preferred_username</b>.</p>
         pub fn set_alias_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AliasAttributeType>>,
@@ -7073,6 +8568,12 @@ pub mod create_user_pool_input {
             self.alias_attributes = input;
             self
         }
+        /// Appends an item to `username_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_username_attributes`](Self::set_username_attributes).
+        ///
+        /// <p>Specifies whether email addresses or phone numbers can be specified as usernames when
+        /// a user signs up.</p>
         pub fn username_attributes(
             mut self,
             input: impl Into<crate::model::UsernameAttributeType>,
@@ -7082,6 +8583,8 @@ pub mod create_user_pool_input {
             self.username_attributes = Some(v);
             self
         }
+        /// <p>Specifies whether email addresses or phone numbers can be specified as usernames when
+        /// a user signs up.</p>
         pub fn set_username_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UsernameAttributeType>>,
@@ -7094,6 +8597,7 @@ pub mod create_user_pool_input {
             self.sms_verification_message = Some(input.into());
             self
         }
+        /// <p>A string representing the SMS verification message.</p>
         pub fn set_sms_verification_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7107,6 +8611,8 @@ pub mod create_user_pool_input {
             self.email_verification_message = Some(input.into());
             self
         }
+        /// <p>A string representing the email verification message. EmailVerificationMessage is
+        /// allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
         pub fn set_email_verification_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7120,6 +8626,8 @@ pub mod create_user_pool_input {
             self.email_verification_subject = Some(input.into());
             self
         }
+        /// <p>A string representing the email verification subject. EmailVerificationSubject is
+        /// allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
         pub fn set_email_verification_subject(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7136,6 +8644,8 @@ pub mod create_user_pool_input {
             self.verification_message_template = Some(input);
             self
         }
+        /// <p>The template for the verification message that the user sees when the app requests
+        /// permission to access the user's information.</p>
         pub fn set_verification_message_template(
             mut self,
             input: std::option::Option<crate::model::VerificationMessageTemplateType>,
@@ -7148,6 +8658,7 @@ pub mod create_user_pool_input {
             self.sms_authentication_message = Some(input.into());
             self
         }
+        /// <p>A string representing the SMS authentication message.</p>
         pub fn set_sms_authentication_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7160,6 +8671,7 @@ pub mod create_user_pool_input {
             self.mfa_configuration = Some(input);
             self
         }
+        /// <p>Specifies MFA configuration details.</p>
         pub fn set_mfa_configuration(
             mut self,
             input: std::option::Option<crate::model::UserPoolMfaType>,
@@ -7175,6 +8687,7 @@ pub mod create_user_pool_input {
             self.device_configuration = Some(input);
             self
         }
+        /// <p>The device configuration.</p>
         pub fn set_device_configuration(
             mut self,
             input: std::option::Option<crate::model::DeviceConfigurationType>,
@@ -7187,6 +8700,7 @@ pub mod create_user_pool_input {
             self.email_configuration = Some(input);
             self
         }
+        /// <p>The email configuration.</p>
         pub fn set_email_configuration(
             mut self,
             input: std::option::Option<crate::model::EmailConfigurationType>,
@@ -7199,6 +8713,7 @@ pub mod create_user_pool_input {
             self.sms_configuration = Some(input);
             self
         }
+        /// <p>The SMS configuration.</p>
         pub fn set_sms_configuration(
             mut self,
             input: std::option::Option<crate::model::SmsConfigurationType>,
@@ -7206,6 +8721,13 @@ pub mod create_user_pool_input {
             self.sms_configuration = input;
             self
         }
+        /// Adds a key-value pair to `user_pool_tags`.
+        ///
+        /// To override the contents of this collection use [`set_user_pool_tags`](Self::set_user_pool_tags).
+        ///
+        /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use
+        /// to categorize and manage user pools in different ways, such as by purpose, owner,
+        /// environment, or other criteria.</p>
         pub fn user_pool_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -7216,6 +8738,9 @@ pub mod create_user_pool_input {
             self.user_pool_tags = Some(hash_map);
             self
         }
+        /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use
+        /// to categorize and manage user pools in different ways, such as by purpose, owner,
+        /// environment, or other criteria.</p>
         pub fn set_user_pool_tags(
             mut self,
             input: std::option::Option<
@@ -7233,6 +8758,7 @@ pub mod create_user_pool_input {
             self.admin_create_user_config = Some(input);
             self
         }
+        /// <p>The configuration for <code>AdminCreateUser</code> requests.</p>
         pub fn set_admin_create_user_config(
             mut self,
             input: std::option::Option<crate::model::AdminCreateUserConfigType>,
@@ -7240,12 +8766,20 @@ pub mod create_user_pool_input {
             self.admin_create_user_config = input;
             self
         }
+        /// Appends an item to `schema`.
+        ///
+        /// To override the contents of this collection use [`set_schema`](Self::set_schema).
+        ///
+        /// <p>An array of schema attributes for the new user pool. These attributes can be standard
+        /// or custom attributes.</p>
         pub fn schema(mut self, input: impl Into<crate::model::SchemaAttributeType>) -> Self {
             let mut v = self.schema.unwrap_or_default();
             v.push(input.into());
             self.schema = Some(v);
             self
         }
+        /// <p>An array of schema attributes for the new user pool. These attributes can be standard
+        /// or custom attributes.</p>
         pub fn set_schema(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SchemaAttributeType>>,
@@ -7259,6 +8793,8 @@ pub mod create_user_pool_input {
             self.user_pool_add_ons = Some(input);
             self
         }
+        /// <p>Used to enable advanced security risk detection. Set the key
+        /// <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
         pub fn set_user_pool_add_ons(
             mut self,
             input: std::option::Option<crate::model::UserPoolAddOnsType>,
@@ -7277,6 +8813,10 @@ pub mod create_user_pool_input {
             self.username_configuration = Some(input);
             self
         }
+        /// <p>You can choose to set case sensitivity on the username input for the selected sign-in
+        /// option. For example, when this is set to <code>False</code>, users will be able to sign
+        /// in using either "username" or "Username". This configuration is immutable once it has
+        /// been set. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
         pub fn set_username_configuration(
             mut self,
             input: std::option::Option<crate::model::UsernameConfigurationType>,
@@ -7297,6 +8837,12 @@ pub mod create_user_pool_input {
             self.account_recovery_setting = Some(input);
             self
         }
+        /// <p>Use this setting to define which verified available method a user can use to recover
+        /// their password when they call <code>ForgotPassword</code>. It allows you to define a
+        /// preferred method when a user has more than one method available. With this setting, SMS
+        /// does not qualify for a valid password recovery mechanism if the user also has SMS MFA
+        /// enabled. In the absence of this setting, Cognito uses the legacy behavior to determine
+        /// the recovery method where SMS is preferred over email.</p>
         pub fn set_account_recovery_setting(
             mut self,
             input: std::option::Option<crate::model::AccountRecoverySettingType>,
@@ -7309,7 +8855,7 @@ pub mod create_user_pool_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateUserPoolInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateUserPoolInput {
                 pool_name: self.pool_name,
@@ -7348,16 +8894,16 @@ impl CreateUserPoolInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateUserPool,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateUserPoolInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7365,7 +8911,7 @@ impl CreateUserPoolInput {
         fn update_http_builder(
             input: &crate::input::CreateUserPoolInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7374,32 +8920,32 @@ impl CreateUserPoolInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateUserPoolInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.CreateUserPool",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_user_pool(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7422,15 +8968,15 @@ impl CreateUserPoolInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateUserPool::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateUserPool",
             "cognitoidentityprovider",
         ));
@@ -7439,10 +8985,10 @@ impl CreateUserPoolInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7494,6 +9040,7 @@ pub mod create_user_pool_client_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool where you want to create a user pool client.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -7503,6 +9050,7 @@ pub mod create_user_pool_client_input {
             self.client_name = Some(input.into());
             self
         }
+        /// <p>The client name for the user pool client you would like to create.</p>
         pub fn set_client_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_name = input;
             self
@@ -7513,6 +9061,8 @@ pub mod create_user_pool_client_input {
             self.generate_secret = Some(input);
             self
         }
+        /// <p>Boolean to specify whether you want to generate a secret for the user pool client
+        /// being created.</p>
         pub fn set_generate_secret(mut self, input: std::option::Option<bool>) -> Self {
             self.generate_secret = input;
             self
@@ -7523,6 +9073,8 @@ pub mod create_user_pool_client_input {
             self.refresh_token_validity = Some(input);
             self
         }
+        /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot
+        /// be used.</p>
         pub fn set_refresh_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.refresh_token_validity = input;
             self
@@ -7534,6 +9086,9 @@ pub mod create_user_pool_client_input {
             self.access_token_validity = Some(input);
             self
         }
+        /// <p>The time limit, between 5 minutes and 1 day, after which the access token is no longer
+        /// valid and cannot be used. This value will be overridden if you have entered a value in
+        /// TokenValidityUnits.</p>
         pub fn set_access_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.access_token_validity = input;
             self
@@ -7545,6 +9100,9 @@ pub mod create_user_pool_client_input {
             self.id_token_validity = Some(input);
             self
         }
+        /// <p>The time limit, between 5 minutes and 1 day, after which the ID token is no longer
+        /// valid and cannot be used. This value will be overridden if you have entered a value in
+        /// TokenValidityUnits.</p>
         pub fn set_id_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.id_token_validity = input;
             self
@@ -7555,6 +9113,8 @@ pub mod create_user_pool_client_input {
             self.token_validity_units = Some(input);
             self
         }
+        /// <p>The units in which the validity times are represented in. Default for RefreshToken is
+        /// days, and default for ID and access tokens are hours.</p>
         pub fn set_token_validity_units(
             mut self,
             input: std::option::Option<crate::model::TokenValidityUnitsType>,
@@ -7562,12 +9122,18 @@ pub mod create_user_pool_client_input {
             self.token_validity_units = input;
             self
         }
+        /// Appends an item to `read_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_read_attributes`](Self::set_read_attributes).
+        ///
+        /// <p>The read attributes.</p>
         pub fn read_attributes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.read_attributes.unwrap_or_default();
             v.push(input.into());
             self.read_attributes = Some(v);
             self
         }
+        /// <p>The read attributes.</p>
         pub fn set_read_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7575,12 +9141,32 @@ pub mod create_user_pool_client_input {
             self.read_attributes = input;
             self
         }
+        /// Appends an item to `write_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_write_attributes`](Self::set_write_attributes).
+        ///
+        /// <p>The user pool attributes that the app client can write to.</p>
+        /// <p>If your app client allows users to sign in through an identity provider, this array
+        /// must include all attributes that are mapped to identity provider attributes. Amazon
+        /// Cognito updates mapped attributes when users sign in to your application through an
+        /// identity provider. If your app client lacks write access to a mapped attribute, Amazon
+        /// Cognito throws an error when it attempts to update the attribute. For more information,
+        /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User
+        /// Pool</a>.</p>
         pub fn write_attributes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.write_attributes.unwrap_or_default();
             v.push(input.into());
             self.write_attributes = Some(v);
             self
         }
+        /// <p>The user pool attributes that the app client can write to.</p>
+        /// <p>If your app client allows users to sign in through an identity provider, this array
+        /// must include all attributes that are mapped to identity provider attributes. Amazon
+        /// Cognito updates mapped attributes when users sign in to your application through an
+        /// identity provider. If your app client lacks write access to a mapped attribute, Amazon
+        /// Cognito throws an error when it attempts to update the attribute. For more information,
+        /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User
+        /// Pool</a>.</p>
         pub fn set_write_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7588,6 +9174,45 @@ pub mod create_user_pool_client_input {
             self.write_attributes = input;
             self
         }
+        /// Appends an item to `explicit_auth_flows`.
+        ///
+        /// To override the contents of this collection use [`set_explicit_auth_flows`](Self::set_explicit_auth_flows).
+        ///
+        /// <p>The authentication flows that are supported by the user pool clients. Flow names
+        /// without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the
+        /// <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot
+        /// be used along with values without <code>ALLOW_</code> prefix.</p>
+        /// <p>Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
+        /// authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
+        /// the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
+        /// Cognito receives the password in the request instead of using the SRP (Secure
+        /// Remote Password protocol) protocol to verify passwords.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based
+        /// authentication.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
+        /// authentication. In this flow, Cognito receives the password in the request
+        /// instead of using the SRP protocol to verify passwords.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
+        /// tokens.</p>
+        /// </li>
+        /// </ul>
         pub fn explicit_auth_flows(
             mut self,
             input: impl Into<crate::model::ExplicitAuthFlowsType>,
@@ -7597,6 +9222,41 @@ pub mod create_user_pool_client_input {
             self.explicit_auth_flows = Some(v);
             self
         }
+        /// <p>The authentication flows that are supported by the user pool clients. Flow names
+        /// without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the
+        /// <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot
+        /// be used along with values without <code>ALLOW_</code> prefix.</p>
+        /// <p>Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
+        /// authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
+        /// the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
+        /// Cognito receives the password in the request instead of using the SRP (Secure
+        /// Remote Password protocol) protocol to verify passwords.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based
+        /// authentication.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
+        /// authentication. In this flow, Cognito receives the password in the request
+        /// instead of using the SRP protocol to verify passwords.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
+        /// tokens.</p>
+        /// </li>
+        /// </ul>
         pub fn set_explicit_auth_flows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExplicitAuthFlowsType>>,
@@ -7604,6 +9264,13 @@ pub mod create_user_pool_client_input {
             self.explicit_auth_flows = input;
             self
         }
+        /// Appends an item to `supported_identity_providers`.
+        ///
+        /// To override the contents of this collection use [`set_supported_identity_providers`](Self::set_supported_identity_providers).
+        ///
+        /// <p>A list of provider names for the identity providers that are supported on this client.
+        /// The following are supported: <code>COGNITO</code>, <code>Facebook</code>,
+        /// <code>Google</code> and <code>LoginWithAmazon</code>.</p>
         pub fn supported_identity_providers(
             mut self,
             input: impl Into<std::string::String>,
@@ -7613,6 +9280,9 @@ pub mod create_user_pool_client_input {
             self.supported_identity_providers = Some(v);
             self
         }
+        /// <p>A list of provider names for the identity providers that are supported on this client.
+        /// The following are supported: <code>COGNITO</code>, <code>Facebook</code>,
+        /// <code>Google</code> and <code>LoginWithAmazon</code>.</p>
         pub fn set_supported_identity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7620,12 +9290,52 @@ pub mod create_user_pool_client_input {
             self.supported_identity_providers = input;
             self
         }
+        /// Appends an item to `callback_ur_ls`.
+        ///
+        /// To override the contents of this collection use [`set_callback_ur_ls`](Self::set_callback_ur_ls).
+        ///
+        /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+        /// <p>A redirect URI must:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Be an absolute URI.</p>
+        /// </li>
+        /// <li>
+        /// <p>Be registered with the authorization server.</p>
+        /// </li>
+        /// <li>
+        /// <p>Not include a fragment component.</p>
+        /// </li>
+        /// </ul>
+        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
+        /// Redirection Endpoint</a>.</p>
+        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
+        /// purposes only.</p>
+        /// <p>App callback URLs such as myapp://example are also supported.</p>
         pub fn callback_ur_ls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.callback_ur_ls.unwrap_or_default();
             v.push(input.into());
             self.callback_ur_ls = Some(v);
             self
         }
+        /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+        /// <p>A redirect URI must:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Be an absolute URI.</p>
+        /// </li>
+        /// <li>
+        /// <p>Be registered with the authorization server.</p>
+        /// </li>
+        /// <li>
+        /// <p>Not include a fragment component.</p>
+        /// </li>
+        /// </ul>
+        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
+        /// Redirection Endpoint</a>.</p>
+        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
+        /// purposes only.</p>
+        /// <p>App callback URLs such as myapp://example are also supported.</p>
         pub fn set_callback_ur_ls(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7633,12 +9343,18 @@ pub mod create_user_pool_client_input {
             self.callback_ur_ls = input;
             self
         }
+        /// Appends an item to `logout_ur_ls`.
+        ///
+        /// To override the contents of this collection use [`set_logout_ur_ls`](Self::set_logout_ur_ls).
+        ///
+        /// <p>A list of allowed logout URLs for the identity providers.</p>
         pub fn logout_ur_ls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.logout_ur_ls.unwrap_or_default();
             v.push(input.into());
             self.logout_ur_ls = Some(v);
             self
         }
+        /// <p>A list of allowed logout URLs for the identity providers.</p>
         pub fn set_logout_ur_ls(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7668,6 +9384,24 @@ pub mod create_user_pool_client_input {
             self.default_redirect_uri = Some(input.into());
             self
         }
+        /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
+        /// <p>A redirect URI must:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Be an absolute URI.</p>
+        /// </li>
+        /// <li>
+        /// <p>Be registered with the authorization server.</p>
+        /// </li>
+        /// <li>
+        /// <p>Not include a fragment component.</p>
+        /// </li>
+        /// </ul>
+        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
+        /// Redirection Endpoint</a>.</p>
+        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
+        /// purposes only.</p>
+        /// <p>App callback URLs such as myapp://example are also supported.</p>
         pub fn set_default_redirect_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7675,6 +9409,19 @@ pub mod create_user_pool_client_input {
             self.default_redirect_uri = input;
             self
         }
+        /// Appends an item to `allowed_o_auth_flows`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_o_auth_flows`](Self::set_allowed_o_auth_flows).
+        ///
+        /// <p>The allowed OAuth flows.</p>
+        /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an
+        /// authorization code as the response. This code can be exchanged for access tokens with
+        /// the token endpoint.</p>
+        /// <p>Set to <code>implicit</code> to specify that the client should get the access token
+        /// (and, optionally, ID token, based on scopes) directly.</p>
+        /// <p>Set to <code>client_credentials</code> to specify that the client should get the
+        /// access token (and, optionally, ID token, based on scopes) from the token endpoint using
+        /// a combination of client and client_secret.</p>
         pub fn allowed_o_auth_flows(
             mut self,
             input: impl Into<crate::model::OAuthFlowType>,
@@ -7684,6 +9431,15 @@ pub mod create_user_pool_client_input {
             self.allowed_o_auth_flows = Some(v);
             self
         }
+        /// <p>The allowed OAuth flows.</p>
+        /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an
+        /// authorization code as the response. This code can be exchanged for access tokens with
+        /// the token endpoint.</p>
+        /// <p>Set to <code>implicit</code> to specify that the client should get the access token
+        /// (and, optionally, ID token, based on scopes) directly.</p>
+        /// <p>Set to <code>client_credentials</code> to specify that the client should get the
+        /// access token (and, optionally, ID token, based on scopes) from the token endpoint using
+        /// a combination of client and client_secret.</p>
         pub fn set_allowed_o_auth_flows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OAuthFlowType>>,
@@ -7691,12 +9447,24 @@ pub mod create_user_pool_client_input {
             self.allowed_o_auth_flows = input;
             self
         }
+        /// Appends an item to `allowed_o_auth_scopes`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_o_auth_scopes`](Self::set_allowed_o_auth_scopes).
+        ///
+        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
+        /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
+        /// provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
+        /// in Resource Servers are also supported.</p>
         pub fn allowed_o_auth_scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_o_auth_scopes.unwrap_or_default();
             v.push(input.into());
             self.allowed_o_auth_scopes = Some(v);
             self
         }
+        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
+        /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
+        /// provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
+        /// in Resource Servers are also supported.</p>
         pub fn set_allowed_o_auth_scopes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7710,6 +9478,8 @@ pub mod create_user_pool_client_input {
             self.allowed_o_auth_flows_user_pool_client = Some(input);
             self
         }
+        /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting
+        /// with Cognito user pools.</p>
         pub fn set_allowed_o_auth_flows_user_pool_client(
             mut self,
             input: std::option::Option<bool>,
@@ -7732,6 +9502,14 @@ pub mod create_user_pool_client_input {
             self.analytics_configuration = Some(input);
             self
         }
+        /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user
+        /// pool.</p>
+        /// <note>
+        /// <p>In regions where Pinpoint is not available, Cognito User Pools only supports
+        /// sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint
+        /// is available, Cognito User Pools will support sending events to Amazon Pinpoint
+        /// projects within that same region. </p>
+        /// </note>
         pub fn set_analytics_configuration(
             mut self,
             input: std::option::Option<crate::model::AnalyticsConfigurationType>,
@@ -7759,6 +9537,8 @@ pub mod create_user_pool_client_input {
         /// existence related errors are not prevented.</p>
         /// </li>
         /// </ul>
+        ///
+        ///
         /// <note>
         /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code>
         /// will default to <code>ENABLED</code> for newly created user pool clients if no value
@@ -7771,6 +9551,33 @@ pub mod create_user_pool_client_input {
             self.prevent_user_existence_errors = Some(input);
             self
         }
+        /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs
+        /// during authentication, account confirmation, and password recovery when the user does
+        /// not exist in the user pool. When set to <code>ENABLED</code> and the user does not
+        /// exist, authentication returns an error indicating either the username or password was
+        /// incorrect, and account confirmation and password recovery return a response indicating a
+        /// code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs
+        /// will return a <code>UserNotFoundException</code> exception if the user does not exist in
+        /// the user pool.</p>
+        /// <p>Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ENABLED</code> - This prevents user existence-related errors.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LEGACY</code> - This represents the old behavior of Cognito where user
+        /// existence related errors are not prevented.</p>
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <note>
+        /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code>
+        /// will default to <code>ENABLED</code> for newly created user pool clients if no value
+        /// is provided.</p>
+        /// </note>
         pub fn set_prevent_user_existence_errors(
             mut self,
             input: std::option::Option<crate::model::PreventUserExistenceErrorTypes>,
@@ -7785,6 +9592,9 @@ pub mod create_user_pool_client_input {
             self.enable_token_revocation = Some(input);
             self
         }
+        /// <p>Enables or disables token revocation. For more information
+        /// about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
+        /// <p>If you don't include this parameter, token revocation is automatically enabled for the new user pool client.</p>
         pub fn set_enable_token_revocation(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_token_revocation = input;
             self
@@ -7794,7 +9604,7 @@ pub mod create_user_pool_client_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateUserPoolClientInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateUserPoolClientInput {
                 user_pool_id: self.user_pool_id,
@@ -7834,16 +9644,16 @@ impl CreateUserPoolClientInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateUserPoolClient,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateUserPoolClientInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7851,7 +9661,7 @@ impl CreateUserPoolClientInput {
         fn update_http_builder(
             input: &crate::input::CreateUserPoolClientInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7860,32 +9670,34 @@ impl CreateUserPoolClientInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateUserPoolClientInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.CreateUserPoolClient",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_user_pool_client(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7908,15 +9720,15 @@ impl CreateUserPoolClientInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateUserPoolClient::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateUserPoolClient",
             "cognitoidentityprovider",
         ));
@@ -7925,10 +9737,10 @@ impl CreateUserPoolClientInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7958,6 +9770,7 @@ pub mod create_user_pool_domain_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The domain string.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -7967,6 +9780,7 @@ pub mod create_user_pool_domain_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -7981,6 +9795,12 @@ pub mod create_user_pool_domain_input {
             self.custom_domain_config = Some(input);
             self
         }
+        /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for
+        /// your application.</p>
+        /// <p>Provide this parameter only if you want to use a custom domain for your user pool.
+        /// Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain
+        /// instead.</p>
+        /// <p>For more information about the hosted domain and custom domains, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring a User Pool Domain</a>.</p>
         pub fn set_custom_domain_config(
             mut self,
             input: std::option::Option<crate::model::CustomDomainConfigType>,
@@ -7993,7 +9813,7 @@ pub mod create_user_pool_domain_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateUserPoolDomainInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateUserPoolDomainInput {
                 domain: self.domain,
@@ -8014,16 +9834,16 @@ impl CreateUserPoolDomainInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateUserPoolDomain,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateUserPoolDomainInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8031,7 +9851,7 @@ impl CreateUserPoolDomainInput {
         fn update_http_builder(
             input: &crate::input::CreateUserPoolDomainInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8040,32 +9860,34 @@ impl CreateUserPoolDomainInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateUserPoolDomainInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.CreateUserPoolDomain",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_user_pool_domain(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8088,15 +9910,15 @@ impl CreateUserPoolDomainInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateUserPoolDomain::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateUserPoolDomain",
             "cognitoidentityprovider",
         ));
@@ -8105,10 +9927,10 @@ impl CreateUserPoolDomainInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8137,6 +9959,7 @@ pub mod delete_group_input {
             self.group_name = Some(input.into());
             self
         }
+        /// <p>The name of the group.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -8146,6 +9969,7 @@ pub mod delete_group_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -8153,8 +9977,10 @@ pub mod delete_group_input {
         /// Consumes the builder and constructs a [`DeleteGroupInput`](crate::input::DeleteGroupInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteGroupInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteGroupInput {
                 group_name: self.group_name,
                 user_pool_id: self.user_pool_id,
@@ -8173,16 +9999,16 @@ impl DeleteGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8190,7 +10016,7 @@ impl DeleteGroupInput {
         fn update_http_builder(
             input: &crate::input::DeleteGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8199,29 +10025,31 @@ impl DeleteGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.DeleteGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_group(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8244,25 +10072,27 @@ impl DeleteGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteGroup::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteGroup",
-                    "cognitoidentityprovider",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteGroup",
+            "cognitoidentityprovider",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8291,6 +10121,7 @@ pub mod delete_identity_provider_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -8300,6 +10131,7 @@ pub mod delete_identity_provider_input {
             self.provider_name = Some(input.into());
             self
         }
+        /// <p>The identity provider name.</p>
         pub fn set_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8312,7 +10144,7 @@ pub mod delete_identity_provider_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteIdentityProviderInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteIdentityProviderInput {
                 user_pool_id: self.user_pool_id,
@@ -8332,16 +10164,16 @@ impl DeleteIdentityProviderInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteIdentityProvider,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteIdentityProviderInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8349,7 +10181,7 @@ impl DeleteIdentityProviderInput {
         fn update_http_builder(
             input: &crate::input::DeleteIdentityProviderInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8358,32 +10190,34 @@ impl DeleteIdentityProviderInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteIdentityProviderInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.DeleteIdentityProvider",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_identity_provider(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8406,15 +10240,15 @@ impl DeleteIdentityProviderInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteIdentityProvider::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteIdentityProvider",
             "cognitoidentityprovider",
         ));
@@ -8423,10 +10257,10 @@ impl DeleteIdentityProviderInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8455,6 +10289,7 @@ pub mod delete_resource_server_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool that hosts the resource server.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -8464,6 +10299,7 @@ pub mod delete_resource_server_input {
             self.identifier = Some(input.into());
             self
         }
+        /// <p>The identifier for the resource server.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
             self
@@ -8473,7 +10309,7 @@ pub mod delete_resource_server_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteResourceServerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteResourceServerInput {
                 user_pool_id: self.user_pool_id,
@@ -8493,16 +10329,16 @@ impl DeleteResourceServerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteResourceServer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteResourceServerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8510,7 +10346,7 @@ impl DeleteResourceServerInput {
         fn update_http_builder(
             input: &crate::input::DeleteResourceServerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8519,32 +10355,32 @@ impl DeleteResourceServerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteResourceServerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.DeleteResourceServer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_resource_server(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8567,15 +10403,15 @@ impl DeleteResourceServerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteResourceServer::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteResourceServer",
             "cognitoidentityprovider",
         ));
@@ -8584,10 +10420,10 @@ impl DeleteResourceServerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8615,6 +10451,7 @@ pub mod delete_user_input {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>The access token from a request to delete a user.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -8622,8 +10459,10 @@ pub mod delete_user_input {
         /// Consumes the builder and constructs a [`DeleteUserInput`](crate::input::DeleteUserInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteUserInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteUserInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteUserInput {
                 access_token: self.access_token,
             })
@@ -8641,16 +10480,16 @@ impl DeleteUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteUser,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8658,7 +10497,7 @@ impl DeleteUserInput {
         fn update_http_builder(
             input: &crate::input::DeleteUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8667,29 +10506,31 @@ impl DeleteUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.DeleteUser",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_user(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8713,25 +10554,27 @@ impl DeleteUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteUser::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteUser",
-                    "cognitoidentityprovider",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteUser::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteUser",
+            "cognitoidentityprovider",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8755,12 +10598,22 @@ pub mod delete_user_attributes_input {
         pub(crate) access_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `user_attribute_names`.
+        ///
+        /// To override the contents of this collection use [`set_user_attribute_names`](Self::set_user_attribute_names).
+        ///
+        /// <p>An array of strings representing the user attribute names you wish to delete.</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
+        /// attribute name.</p>
         pub fn user_attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_attribute_names.unwrap_or_default();
             v.push(input.into());
             self.user_attribute_names = Some(v);
             self
         }
+        /// <p>An array of strings representing the user attribute names you wish to delete.</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
+        /// attribute name.</p>
         pub fn set_user_attribute_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8773,6 +10626,7 @@ pub mod delete_user_attributes_input {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>The access token used in the request to delete user attributes.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -8782,7 +10636,7 @@ pub mod delete_user_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteUserAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteUserAttributesInput {
                 user_attribute_names: self.user_attribute_names,
@@ -8802,16 +10656,16 @@ impl DeleteUserAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteUserAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteUserAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8819,7 +10673,7 @@ impl DeleteUserAttributesInput {
         fn update_http_builder(
             input: &crate::input::DeleteUserAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8828,32 +10682,32 @@ impl DeleteUserAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteUserAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.DeleteUserAttributes",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_user_attributes(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8877,15 +10731,15 @@ impl DeleteUserAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteUserAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteUserAttributes",
             "cognitoidentityprovider",
         ));
@@ -8894,10 +10748,10 @@ impl DeleteUserAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8925,6 +10779,7 @@ pub mod delete_user_pool_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool you want to delete.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -8934,7 +10789,7 @@ pub mod delete_user_pool_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteUserPoolInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteUserPoolInput {
                 user_pool_id: self.user_pool_id,
@@ -8953,16 +10808,16 @@ impl DeleteUserPoolInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteUserPool,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteUserPoolInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8970,7 +10825,7 @@ impl DeleteUserPoolInput {
         fn update_http_builder(
             input: &crate::input::DeleteUserPoolInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8979,32 +10834,32 @@ impl DeleteUserPoolInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteUserPoolInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.DeleteUserPool",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_user_pool(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9027,15 +10882,15 @@ impl DeleteUserPoolInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteUserPool::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteUserPool",
             "cognitoidentityprovider",
         ));
@@ -9044,10 +10899,10 @@ impl DeleteUserPoolInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9076,6 +10931,7 @@ pub mod delete_user_pool_client_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool where you want to delete the client.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -9085,6 +10941,7 @@ pub mod delete_user_pool_client_input {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The app client ID of the app associated with the user pool.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -9094,7 +10951,7 @@ pub mod delete_user_pool_client_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteUserPoolClientInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteUserPoolClientInput {
                 user_pool_id: self.user_pool_id,
@@ -9114,16 +10971,16 @@ impl DeleteUserPoolClientInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteUserPoolClient,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteUserPoolClientInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9131,7 +10988,7 @@ impl DeleteUserPoolClientInput {
         fn update_http_builder(
             input: &crate::input::DeleteUserPoolClientInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9140,32 +10997,34 @@ impl DeleteUserPoolClientInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteUserPoolClientInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.DeleteUserPoolClient",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_user_pool_client(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9188,15 +11047,15 @@ impl DeleteUserPoolClientInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteUserPoolClient::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteUserPoolClient",
             "cognitoidentityprovider",
         ));
@@ -9205,10 +11064,10 @@ impl DeleteUserPoolClientInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9237,6 +11096,7 @@ pub mod delete_user_pool_domain_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The domain string.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -9246,6 +11106,7 @@ pub mod delete_user_pool_domain_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -9255,7 +11116,7 @@ pub mod delete_user_pool_domain_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteUserPoolDomainInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteUserPoolDomainInput {
                 domain: self.domain,
@@ -9275,16 +11136,16 @@ impl DeleteUserPoolDomainInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteUserPoolDomain,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteUserPoolDomainInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9292,7 +11153,7 @@ impl DeleteUserPoolDomainInput {
         fn update_http_builder(
             input: &crate::input::DeleteUserPoolDomainInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9301,32 +11162,34 @@ impl DeleteUserPoolDomainInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteUserPoolDomainInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.DeleteUserPoolDomain",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_user_pool_domain(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9349,15 +11212,15 @@ impl DeleteUserPoolDomainInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteUserPoolDomain::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteUserPoolDomain",
             "cognitoidentityprovider",
         ));
@@ -9366,10 +11229,10 @@ impl DeleteUserPoolDomainInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9398,6 +11261,7 @@ pub mod describe_identity_provider_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -9407,6 +11271,7 @@ pub mod describe_identity_provider_input {
             self.provider_name = Some(input.into());
             self
         }
+        /// <p>The identity provider name.</p>
         pub fn set_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9419,7 +11284,7 @@ pub mod describe_identity_provider_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeIdentityProviderInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeIdentityProviderInput {
                 user_pool_id: self.user_pool_id,
@@ -9440,16 +11305,16 @@ impl DescribeIdentityProviderInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeIdentityProvider,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeIdentityProviderInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9457,7 +11322,7 @@ impl DescribeIdentityProviderInput {
         fn update_http_builder(
             input: &crate::input::DescribeIdentityProviderInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9466,32 +11331,34 @@ impl DescribeIdentityProviderInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeIdentityProviderInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.DescribeIdentityProvider",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_identity_provider(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9514,15 +11381,15 @@ impl DescribeIdentityProviderInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeIdentityProvider::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeIdentityProvider",
             "cognitoidentityprovider",
         ));
@@ -9531,10 +11398,10 @@ impl DescribeIdentityProviderInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9563,6 +11430,7 @@ pub mod describe_resource_server_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool that hosts the resource server.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -9572,6 +11440,7 @@ pub mod describe_resource_server_input {
             self.identifier = Some(input.into());
             self
         }
+        /// <p>The identifier for the resource server</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
             self
@@ -9581,7 +11450,7 @@ pub mod describe_resource_server_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeResourceServerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeResourceServerInput {
                 user_pool_id: self.user_pool_id,
@@ -9601,16 +11470,16 @@ impl DescribeResourceServerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeResourceServer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeResourceServerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9618,7 +11487,7 @@ impl DescribeResourceServerInput {
         fn update_http_builder(
             input: &crate::input::DescribeResourceServerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9627,32 +11496,34 @@ impl DescribeResourceServerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeResourceServerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.DescribeResourceServer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_resource_server(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9675,15 +11546,15 @@ impl DescribeResourceServerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeResourceServer::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeResourceServer",
             "cognitoidentityprovider",
         ));
@@ -9692,10 +11563,10 @@ impl DescribeResourceServerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9724,6 +11595,7 @@ pub mod describe_risk_configuration_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -9733,6 +11605,7 @@ pub mod describe_risk_configuration_input {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The app client ID.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -9742,7 +11615,7 @@ pub mod describe_risk_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeRiskConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeRiskConfigurationInput {
                 user_pool_id: self.user_pool_id,
@@ -9763,16 +11636,16 @@ impl DescribeRiskConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeRiskConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeRiskConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9780,7 +11653,7 @@ impl DescribeRiskConfigurationInput {
         fn update_http_builder(
             input: &crate::input::DescribeRiskConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9789,32 +11662,34 @@ impl DescribeRiskConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeRiskConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.DescribeRiskConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_risk_configuration(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9837,15 +11712,15 @@ impl DescribeRiskConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeRiskConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeRiskConfiguration",
             "cognitoidentityprovider",
         ));
@@ -9854,10 +11729,10 @@ impl DescribeRiskConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9886,6 +11761,7 @@ pub mod describe_user_import_job_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool that the users are being imported into.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -9895,6 +11771,7 @@ pub mod describe_user_import_job_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The job ID for the user import job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -9904,7 +11781,7 @@ pub mod describe_user_import_job_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeUserImportJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeUserImportJobInput {
                 user_pool_id: self.user_pool_id,
@@ -9924,16 +11801,16 @@ impl DescribeUserImportJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeUserImportJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeUserImportJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9941,7 +11818,7 @@ impl DescribeUserImportJobInput {
         fn update_http_builder(
             input: &crate::input::DescribeUserImportJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9950,32 +11827,34 @@ impl DescribeUserImportJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeUserImportJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.DescribeUserImportJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_user_import_job(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9998,15 +11877,15 @@ impl DescribeUserImportJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeUserImportJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeUserImportJob",
             "cognitoidentityprovider",
         ));
@@ -10015,10 +11894,10 @@ impl DescribeUserImportJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10046,6 +11925,7 @@ pub mod describe_user_pool_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool you want to describe.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -10055,7 +11935,7 @@ pub mod describe_user_pool_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeUserPoolInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeUserPoolInput {
                 user_pool_id: self.user_pool_id,
@@ -10074,16 +11954,16 @@ impl DescribeUserPoolInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeUserPool,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeUserPoolInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10091,7 +11971,7 @@ impl DescribeUserPoolInput {
         fn update_http_builder(
             input: &crate::input::DescribeUserPoolInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10100,32 +11980,32 @@ impl DescribeUserPoolInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeUserPoolInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.DescribeUserPool",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_user_pool(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10148,15 +12028,15 @@ impl DescribeUserPoolInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeUserPool::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeUserPool",
             "cognitoidentityprovider",
         ));
@@ -10165,10 +12045,10 @@ impl DescribeUserPoolInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10197,6 +12077,7 @@ pub mod describe_user_pool_client_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool you want to describe.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -10206,6 +12087,7 @@ pub mod describe_user_pool_client_input {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The app client ID of the app associated with the user pool.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -10215,7 +12097,7 @@ pub mod describe_user_pool_client_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeUserPoolClientInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeUserPoolClientInput {
                 user_pool_id: self.user_pool_id,
@@ -10235,16 +12117,16 @@ impl DescribeUserPoolClientInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeUserPoolClient,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeUserPoolClientInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10252,7 +12134,7 @@ impl DescribeUserPoolClientInput {
         fn update_http_builder(
             input: &crate::input::DescribeUserPoolClientInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10261,32 +12143,34 @@ impl DescribeUserPoolClientInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeUserPoolClientInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.DescribeUserPoolClient",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_user_pool_client(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10309,15 +12193,15 @@ impl DescribeUserPoolClientInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeUserPoolClient::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeUserPoolClient",
             "cognitoidentityprovider",
         ));
@@ -10326,10 +12210,10 @@ impl DescribeUserPoolClientInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10357,6 +12241,7 @@ pub mod describe_user_pool_domain_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The domain string.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -10366,7 +12251,7 @@ pub mod describe_user_pool_domain_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeUserPoolDomainInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeUserPoolDomainInput {
                 domain: self.domain,
@@ -10385,16 +12270,16 @@ impl DescribeUserPoolDomainInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeUserPoolDomain,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeUserPoolDomainInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10402,7 +12287,7 @@ impl DescribeUserPoolDomainInput {
         fn update_http_builder(
             input: &crate::input::DescribeUserPoolDomainInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10411,32 +12296,34 @@ impl DescribeUserPoolDomainInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeUserPoolDomainInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.DescribeUserPoolDomain",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_user_pool_domain(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10459,15 +12346,15 @@ impl DescribeUserPoolDomainInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeUserPoolDomain::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeUserPoolDomain",
             "cognitoidentityprovider",
         ));
@@ -10476,10 +12363,10 @@ impl DescribeUserPoolDomainInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10508,6 +12395,7 @@ pub mod forget_device_input {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>The access token for the forgotten device request.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -10517,6 +12405,7 @@ pub mod forget_device_input {
             self.device_key = Some(input.into());
             self
         }
+        /// <p>The device key.</p>
         pub fn set_device_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_key = input;
             self
@@ -10524,8 +12413,10 @@ pub mod forget_device_input {
         /// Consumes the builder and constructs a [`ForgetDeviceInput`](crate::input::ForgetDeviceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ForgetDeviceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ForgetDeviceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ForgetDeviceInput {
                 access_token: self.access_token,
                 device_key: self.device_key,
@@ -10544,16 +12435,16 @@ impl ForgetDeviceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ForgetDevice,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ForgetDeviceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10561,7 +12452,7 @@ impl ForgetDeviceInput {
         fn update_http_builder(
             input: &crate::input::ForgetDeviceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10570,31 +12461,31 @@ impl ForgetDeviceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ForgetDeviceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.ForgetDevice",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_forget_device(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10617,25 +12508,27 @@ impl ForgetDeviceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ForgetDevice::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ForgetDevice",
-                    "cognitoidentityprovider",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ForgetDevice::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ForgetDevice",
+            "cognitoidentityprovider",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10670,6 +12563,7 @@ pub mod forgot_password_input {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The ID of the client associated with the user pool.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -10680,6 +12574,8 @@ pub mod forgot_password_input {
             self.secret_hash = Some(input.into());
             self
         }
+        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
+        /// user pool client and username plus the client ID in the message.</p>
         pub fn set_secret_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_hash = input;
             self
@@ -10691,6 +12587,9 @@ pub mod forgot_password_input {
             self.user_context_data = Some(input);
             self
         }
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
+        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
+        /// security.</p>
         pub fn set_user_context_data(
             mut self,
             input: std::option::Option<crate::model::UserContextDataType>,
@@ -10704,6 +12603,8 @@ pub mod forgot_password_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name of the user for whom you want to enter a code to reset a forgotten
+        /// password.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -10714,6 +12615,8 @@ pub mod forgot_password_input {
             self.analytics_metadata = Some(input);
             self
         }
+        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+        /// <code>ForgotPassword</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -10721,6 +12624,43 @@ pub mod forgot_password_input {
             self.analytics_metadata = input;
             self
         }
+        /// Adds a key-value pair to `client_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
+        ///
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the ForgotPassword API action, Amazon Cognito invokes any functions that
+        /// are assigned to the following triggers: <i>pre sign-up</i>,
+        /// <i>custom message</i>, and <i>user migration</i>. When
+        /// Amazon Cognito invokes any of these functions, it passes a JSON payload, which the
+        /// function receives as input. This payload contains a <code>clientMetadata</code>
+        /// attribute, which provides the data that you assigned to the ClientMetadata parameter in
+        /// your ForgotPassword request. In your function code in Lambda, you can process the
+        /// <code>clientMetadata</code> value to enhance your workflow for your specific
+        /// needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn client_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -10731,6 +12671,39 @@ pub mod forgot_password_input {
             self.client_metadata = Some(hash_map);
             self
         }
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the ForgotPassword API action, Amazon Cognito invokes any functions that
+        /// are assigned to the following triggers: <i>pre sign-up</i>,
+        /// <i>custom message</i>, and <i>user migration</i>. When
+        /// Amazon Cognito invokes any of these functions, it passes a JSON payload, which the
+        /// function receives as input. This payload contains a <code>clientMetadata</code>
+        /// attribute, which provides the data that you assigned to the ClientMetadata parameter in
+        /// your ForgotPassword request. In your function code in Lambda, you can process the
+        /// <code>clientMetadata</code> value to enhance your workflow for your specific
+        /// needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn set_client_metadata(
             mut self,
             input: std::option::Option<
@@ -10745,7 +12718,7 @@ pub mod forgot_password_input {
             self,
         ) -> std::result::Result<
             crate::input::ForgotPasswordInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ForgotPasswordInput {
                 client_id: self.client_id,
@@ -10769,16 +12742,16 @@ impl ForgotPasswordInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ForgotPassword,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ForgotPasswordInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10786,7 +12759,7 @@ impl ForgotPasswordInput {
         fn update_http_builder(
             input: &crate::input::ForgotPasswordInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10795,29 +12768,31 @@ impl ForgotPasswordInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ForgotPasswordInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.ForgotPassword",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_forgot_password(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10841,15 +12816,15 @@ impl ForgotPasswordInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ForgotPassword::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ForgotPassword",
             "cognitoidentityprovider",
         ));
@@ -10858,10 +12833,10 @@ impl ForgotPasswordInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10889,6 +12864,7 @@ pub mod get_csv_header_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool that the users are to be imported into.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -10896,8 +12872,10 @@ pub mod get_csv_header_input {
         /// Consumes the builder and constructs a [`GetCsvHeaderInput`](crate::input::GetCsvHeaderInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetCsvHeaderInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetCsvHeaderInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetCsvHeaderInput {
                 user_pool_id: self.user_pool_id,
             })
@@ -10915,16 +12893,16 @@ impl GetCsvHeaderInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetCSVHeader,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetCsvHeaderInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10932,7 +12910,7 @@ impl GetCsvHeaderInput {
         fn update_http_builder(
             input: &crate::input::GetCsvHeaderInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10941,29 +12919,31 @@ impl GetCsvHeaderInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetCsvHeaderInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.GetCSVHeader",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_csv_header(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10986,25 +12966,27 @@ impl GetCsvHeaderInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetCSVHeader::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetCSVHeader",
-                    "cognitoidentityprovider",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetCSVHeader::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetCSVHeader",
+            "cognitoidentityprovider",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11033,6 +13015,7 @@ pub mod get_device_input {
             self.device_key = Some(input.into());
             self
         }
+        /// <p>The device key.</p>
         pub fn set_device_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_key = input;
             self
@@ -11042,6 +13025,7 @@ pub mod get_device_input {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>The access token.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -11049,7 +13033,7 @@ pub mod get_device_input {
         /// Consumes the builder and constructs a [`GetDeviceInput`](crate::input::GetDeviceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetDeviceInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetDeviceInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetDeviceInput {
                 device_key: self.device_key,
@@ -11069,16 +13053,16 @@ impl GetDeviceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetDevice,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetDeviceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11086,7 +13070,7 @@ impl GetDeviceInput {
         fn update_http_builder(
             input: &crate::input::GetDeviceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11095,29 +13079,31 @@ impl GetDeviceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetDeviceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.GetDevice",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_device(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11140,13 +13126,13 @@ impl GetDeviceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetDevice::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetDevice::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetDevice",
                     "cognitoidentityprovider",
                 ));
@@ -11155,10 +13141,10 @@ impl GetDeviceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11187,6 +13173,7 @@ pub mod get_group_input {
             self.group_name = Some(input.into());
             self
         }
+        /// <p>The name of the group.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -11196,6 +13183,7 @@ pub mod get_group_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -11203,7 +13191,7 @@ pub mod get_group_input {
         /// Consumes the builder and constructs a [`GetGroupInput`](crate::input::GetGroupInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetGroupInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetGroupInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetGroupInput {
                 group_name: self.group_name,
@@ -11223,16 +13211,16 @@ impl GetGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11240,7 +13228,7 @@ impl GetGroupInput {
         fn update_http_builder(
             input: &crate::input::GetGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11249,29 +13237,31 @@ impl GetGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.GetGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_group(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11294,24 +13284,25 @@ impl GetGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::GetGroup::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetGroup",
-                "cognitoidentityprovider",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetGroup::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetGroup",
+                    "cognitoidentityprovider",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11340,6 +13331,7 @@ pub mod get_identity_provider_by_identifier_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -11349,6 +13341,7 @@ pub mod get_identity_provider_by_identifier_input {
             self.idp_identifier = Some(input.into());
             self
         }
+        /// <p>The identity provider ID.</p>
         pub fn set_idp_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11361,7 +13354,7 @@ pub mod get_identity_provider_by_identifier_input {
             self,
         ) -> std::result::Result<
             crate::input::GetIdentityProviderByIdentifierInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetIdentityProviderByIdentifierInput {
                 user_pool_id: self.user_pool_id,
@@ -11382,16 +13375,16 @@ impl GetIdentityProviderByIdentifierInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityProviderByIdentifier,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetIdentityProviderByIdentifierInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11399,7 +13392,7 @@ impl GetIdentityProviderByIdentifierInput {
         fn update_http_builder(
             input: &crate::input::GetIdentityProviderByIdentifierInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11408,30 +13401,30 @@ impl GetIdentityProviderByIdentifierInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetIdentityProviderByIdentifierInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.GetIdentityProviderByIdentifier",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_identity_provider_by_identifier(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_identity_provider_by_identifier(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11454,15 +13447,15 @@ impl GetIdentityProviderByIdentifierInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetIdentityProviderByIdentifier::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetIdentityProviderByIdentifier",
             "cognitoidentityprovider",
         ));
@@ -11471,10 +13464,10 @@ impl GetIdentityProviderByIdentifierInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11502,6 +13495,7 @@ pub mod get_signing_certificate_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -11511,7 +13505,7 @@ pub mod get_signing_certificate_input {
             self,
         ) -> std::result::Result<
             crate::input::GetSigningCertificateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetSigningCertificateInput {
                 user_pool_id: self.user_pool_id,
@@ -11530,16 +13524,16 @@ impl GetSigningCertificateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetSigningCertificate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetSigningCertificateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11547,7 +13541,7 @@ impl GetSigningCertificateInput {
         fn update_http_builder(
             input: &crate::input::GetSigningCertificateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11556,32 +13550,34 @@ impl GetSigningCertificateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetSigningCertificateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.GetSigningCertificate",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_signing_certificate(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11604,15 +13600,15 @@ impl GetSigningCertificateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetSigningCertificate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetSigningCertificate",
             "cognitoidentityprovider",
         ));
@@ -11621,10 +13617,10 @@ impl GetSigningCertificateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11653,6 +13649,7 @@ pub mod get_ui_customization_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -11662,6 +13659,7 @@ pub mod get_ui_customization_input {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The client ID for the client app.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -11671,7 +13669,7 @@ pub mod get_ui_customization_input {
             self,
         ) -> std::result::Result<
             crate::input::GetUiCustomizationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetUiCustomizationInput {
                 user_pool_id: self.user_pool_id,
@@ -11691,16 +13689,16 @@ impl GetUiCustomizationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetUICustomization,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetUiCustomizationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11708,7 +13706,7 @@ impl GetUiCustomizationInput {
         fn update_http_builder(
             input: &crate::input::GetUiCustomizationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11717,30 +13715,32 @@ impl GetUiCustomizationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetUiCustomizationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.GetUICustomization",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_ui_customization(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11763,15 +13763,15 @@ impl GetUiCustomizationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetUICustomization::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetUICustomization",
             "cognitoidentityprovider",
         ));
@@ -11780,10 +13780,10 @@ impl GetUiCustomizationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11812,6 +13812,8 @@ pub mod get_user_input {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>The access token returned by the server response to get information about the
+        /// user.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -11819,7 +13821,7 @@ pub mod get_user_input {
         /// Consumes the builder and constructs a [`GetUserInput`](crate::input::GetUserInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetUserInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetUserInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetUserInput {
                 access_token: self.access_token,
@@ -11838,13 +13840,16 @@ impl GetUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::GetUser, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetUser,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11852,7 +13857,7 @@ impl GetUserInput {
         fn update_http_builder(
             input: &crate::input::GetUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11861,29 +13866,31 @@ impl GetUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.GetUser",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_user(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11907,24 +13914,25 @@ impl GetUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::GetUser::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetUser",
-                "cognitoidentityprovider",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetUser::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetUser",
+                    "cognitoidentityprovider",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11957,6 +13965,8 @@ pub mod get_user_attribute_verification_code_input {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>The access token returned by the server response to get the user attribute
+        /// verification code.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -11967,6 +13977,8 @@ pub mod get_user_attribute_verification_code_input {
             self.attribute_name = Some(input.into());
             self
         }
+        /// <p>The attribute name returned by the server response to get the user attribute
+        /// verification code.</p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11974,6 +13986,42 @@ pub mod get_user_attribute_verification_code_input {
             self.attribute_name = input;
             self
         }
+        /// Adds a key-value pair to `client_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
+        ///
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the GetUserAttributeVerificationCode API action, Amazon Cognito invokes the
+        /// function that is assigned to the <i>custom message</i> trigger. When
+        /// Amazon Cognito invokes this function, it passes a JSON payload, which the function
+        /// receives as input. This payload contains a <code>clientMetadata</code> attribute, which
+        /// provides the data that you assigned to the ClientMetadata parameter in your
+        /// GetUserAttributeVerificationCode request. In your function code in Lambda, you can
+        /// process the <code>clientMetadata</code> value to enhance your workflow for your specific
+        /// needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn client_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -11984,6 +14032,38 @@ pub mod get_user_attribute_verification_code_input {
             self.client_metadata = Some(hash_map);
             self
         }
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the GetUserAttributeVerificationCode API action, Amazon Cognito invokes the
+        /// function that is assigned to the <i>custom message</i> trigger. When
+        /// Amazon Cognito invokes this function, it passes a JSON payload, which the function
+        /// receives as input. This payload contains a <code>clientMetadata</code> attribute, which
+        /// provides the data that you assigned to the ClientMetadata parameter in your
+        /// GetUserAttributeVerificationCode request. In your function code in Lambda, you can
+        /// process the <code>clientMetadata</code> value to enhance your workflow for your specific
+        /// needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn set_client_metadata(
             mut self,
             input: std::option::Option<
@@ -11998,7 +14078,7 @@ pub mod get_user_attribute_verification_code_input {
             self,
         ) -> std::result::Result<
             crate::input::GetUserAttributeVerificationCodeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetUserAttributeVerificationCodeInput {
                 access_token: self.access_token,
@@ -12020,16 +14100,16 @@ impl GetUserAttributeVerificationCodeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetUserAttributeVerificationCode,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetUserAttributeVerificationCodeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12037,7 +14117,7 @@ impl GetUserAttributeVerificationCodeInput {
         fn update_http_builder(
             input: &crate::input::GetUserAttributeVerificationCodeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12046,30 +14126,30 @@ impl GetUserAttributeVerificationCodeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetUserAttributeVerificationCodeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.GetUserAttributeVerificationCode",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_user_attribute_verification_code(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_user_attribute_verification_code(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12093,15 +14173,15 @@ impl GetUserAttributeVerificationCodeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetUserAttributeVerificationCode::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetUserAttributeVerificationCode",
             "cognitoidentityprovider",
         ));
@@ -12110,10 +14190,10 @@ impl GetUserAttributeVerificationCodeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12141,6 +14221,7 @@ pub mod get_user_pool_mfa_config_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -12150,7 +14231,7 @@ pub mod get_user_pool_mfa_config_input {
             self,
         ) -> std::result::Result<
             crate::input::GetUserPoolMfaConfigInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetUserPoolMfaConfigInput {
                 user_pool_id: self.user_pool_id,
@@ -12169,16 +14250,16 @@ impl GetUserPoolMfaConfigInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetUserPoolMfaConfig,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetUserPoolMfaConfigInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12186,7 +14267,7 @@ impl GetUserPoolMfaConfigInput {
         fn update_http_builder(
             input: &crate::input::GetUserPoolMfaConfigInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12195,32 +14276,34 @@ impl GetUserPoolMfaConfigInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetUserPoolMfaConfigInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.GetUserPoolMfaConfig",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_user_pool_mfa_config(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12243,15 +14326,15 @@ impl GetUserPoolMfaConfigInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetUserPoolMfaConfig::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetUserPoolMfaConfig",
             "cognitoidentityprovider",
         ));
@@ -12260,10 +14343,10 @@ impl GetUserPoolMfaConfigInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12291,6 +14374,7 @@ pub mod global_sign_out_input {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>The access token.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -12298,8 +14382,10 @@ pub mod global_sign_out_input {
         /// Consumes the builder and constructs a [`GlobalSignOutInput`](crate::input::GlobalSignOutInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GlobalSignOutInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GlobalSignOutInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GlobalSignOutInput {
                 access_token: self.access_token,
             })
@@ -12317,16 +14403,16 @@ impl GlobalSignOutInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GlobalSignOut,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GlobalSignOutInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12334,7 +14420,7 @@ impl GlobalSignOutInput {
         fn update_http_builder(
             input: &crate::input::GlobalSignOutInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12343,29 +14429,31 @@ impl GlobalSignOutInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GlobalSignOutInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.GlobalSignOut",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_global_sign_out(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12388,25 +14476,27 @@ impl GlobalSignOutInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GlobalSignOut::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GlobalSignOut",
-                    "cognitoidentityprovider",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GlobalSignOut::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GlobalSignOut",
+            "cognitoidentityprovider",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12496,6 +14586,60 @@ pub mod initiate_auth_input {
             self.auth_flow = Some(input);
             self
         }
+        /// <p>The authentication flow for this call to execute. The API action will depend on this
+        /// value. For example: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return
+        /// new tokens.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
+        /// <code>SRP_A</code> and return the SRP variables to be used for next
+        /// challenge execution.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and
+        /// <code>PASSWORD</code> and return the next challenge or tokens.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
+        /// (SRP) protocol.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication
+        /// flow for refreshing the access token and ID token by supplying a valid refresh
+        /// token.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CUSTOM_AUTH</code>: Custom authentication flow.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and
+        /// PASSWORD are passed directly. If a user migration Lambda trigger is set, this
+        /// flow will invoke the user migration Lambda if the USERNAME is not found in the
+        /// user pool. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password
+        /// authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication
+        /// flow. In this flow, Cognito receives the password in the request instead of
+        /// using the SRP process to verify passwords.</p>
+        /// </li>
+        /// </ul>
+        /// <p>
+        /// <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
         pub fn set_auth_flow(
             mut self,
             input: std::option::Option<crate::model::AuthFlowType>,
@@ -12503,6 +14647,32 @@ pub mod initiate_auth_input {
             self.auth_flow = input;
             self
         }
+        /// Adds a key-value pair to `auth_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_auth_parameters`](Self::set_auth_parameters).
+        ///
+        /// <p>The authentication parameters. These are inputs corresponding to the
+        /// <code>AuthFlow</code> that you are invoking. The required values depend on the value
+        /// of <code>AuthFlow</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required),
+        /// <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app
+        /// client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
+        /// (required), <code>SECRET_HASH</code> (required if the app client is configured
+        /// with a client secret), <code>DEVICE_KEY</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+        /// <code>SECRET_HASH</code> (if app client is configured with client secret),
+        /// <code>DEVICE_KEY</code>. To start the authentication flow with password
+        /// verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
+        /// SRP_A Value)</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn auth_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -12513,6 +14683,28 @@ pub mod initiate_auth_input {
             self.auth_parameters = Some(hash_map);
             self
         }
+        /// <p>The authentication parameters. These are inputs corresponding to the
+        /// <code>AuthFlow</code> that you are invoking. The required values depend on the value
+        /// of <code>AuthFlow</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required),
+        /// <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app
+        /// client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
+        /// (required), <code>SECRET_HASH</code> (required if the app client is configured
+        /// with a client secret), <code>DEVICE_KEY</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+        /// <code>SECRET_HASH</code> (if app client is configured with client secret),
+        /// <code>DEVICE_KEY</code>. To start the authentication flow with password
+        /// verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The
+        /// SRP_A Value)</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_auth_parameters(
             mut self,
             input: std::option::Option<
@@ -12522,6 +14714,76 @@ pub mod initiate_auth_input {
             self.auth_parameters = input;
             self
         }
+        /// Adds a key-value pair to `client_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
+        ///
+        /// <p>A map of custom key-value pairs that you can provide as input for certain custom
+        /// workflows that this action triggers.</p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the InitiateAuth API action, Amazon Cognito invokes the Lambda
+        /// functions that are specified for various triggers. The ClientMetadata value is passed as
+        /// input to the functions for only the following triggers:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Pre signup</p>
+        /// </li>
+        /// <li>
+        /// <p>Pre authentication</p>
+        /// </li>
+        /// <li>
+        /// <p>User migration</p>
+        /// </li>
+        /// </ul>
+        /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON
+        /// payload, which the function receives as input. This payload contains a
+        /// <code>validationData</code> attribute, which provides the data that you assigned to
+        /// the ClientMetadata parameter in your InitiateAuth request. In your function code in Lambda, you can process the <code>validationData</code> value to enhance your workflow
+        /// for your specific needs.</p>
+        /// <p>When you use the InitiateAuth API action, Amazon Cognito also invokes the functions
+        /// for the following triggers, but it does not provide the ClientMetadata value as
+        /// input:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Post authentication</p>
+        /// </li>
+        /// <li>
+        /// <p>Custom message</p>
+        /// </li>
+        /// <li>
+        /// <p>Pre token generation</p>
+        /// </li>
+        /// <li>
+        /// <p>Create auth challenge</p>
+        /// </li>
+        /// <li>
+        /// <p>Define auth challenge</p>
+        /// </li>
+        /// <li>
+        /// <p>Verify auth challenge</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn client_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -12532,6 +14794,72 @@ pub mod initiate_auth_input {
             self.client_metadata = Some(hash_map);
             self
         }
+        /// <p>A map of custom key-value pairs that you can provide as input for certain custom
+        /// workflows that this action triggers.</p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the InitiateAuth API action, Amazon Cognito invokes the Lambda
+        /// functions that are specified for various triggers. The ClientMetadata value is passed as
+        /// input to the functions for only the following triggers:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Pre signup</p>
+        /// </li>
+        /// <li>
+        /// <p>Pre authentication</p>
+        /// </li>
+        /// <li>
+        /// <p>User migration</p>
+        /// </li>
+        /// </ul>
+        /// <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON
+        /// payload, which the function receives as input. This payload contains a
+        /// <code>validationData</code> attribute, which provides the data that you assigned to
+        /// the ClientMetadata parameter in your InitiateAuth request. In your function code in Lambda, you can process the <code>validationData</code> value to enhance your workflow
+        /// for your specific needs.</p>
+        /// <p>When you use the InitiateAuth API action, Amazon Cognito also invokes the functions
+        /// for the following triggers, but it does not provide the ClientMetadata value as
+        /// input:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Post authentication</p>
+        /// </li>
+        /// <li>
+        /// <p>Custom message</p>
+        /// </li>
+        /// <li>
+        /// <p>Pre token generation</p>
+        /// </li>
+        /// <li>
+        /// <p>Create auth challenge</p>
+        /// </li>
+        /// <li>
+        /// <p>Define auth challenge</p>
+        /// </li>
+        /// <li>
+        /// <p>Verify auth challenge</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn set_client_metadata(
             mut self,
             input: std::option::Option<
@@ -12546,6 +14874,7 @@ pub mod initiate_auth_input {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The app client ID.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -12556,6 +14885,8 @@ pub mod initiate_auth_input {
             self.analytics_metadata = Some(input);
             self
         }
+        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+        /// <code>InitiateAuth</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -12570,6 +14901,9 @@ pub mod initiate_auth_input {
             self.user_context_data = Some(input);
             self
         }
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
+        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
+        /// security.</p>
         pub fn set_user_context_data(
             mut self,
             input: std::option::Option<crate::model::UserContextDataType>,
@@ -12580,8 +14914,10 @@ pub mod initiate_auth_input {
         /// Consumes the builder and constructs a [`InitiateAuthInput`](crate::input::InitiateAuthInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::InitiateAuthInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::InitiateAuthInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::InitiateAuthInput {
                 auth_flow: self.auth_flow,
                 auth_parameters: self.auth_parameters,
@@ -12604,16 +14940,16 @@ impl InitiateAuthInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::InitiateAuth,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::InitiateAuthInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12621,7 +14957,7 @@ impl InitiateAuthInput {
         fn update_http_builder(
             input: &crate::input::InitiateAuthInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12630,31 +14966,31 @@ impl InitiateAuthInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::InitiateAuthInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.InitiateAuth",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_initiate_auth(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12678,25 +15014,27 @@ impl InitiateAuthInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::InitiateAuth::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "InitiateAuth",
-                    "cognitoidentityprovider",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::InitiateAuth::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "InitiateAuth",
+            "cognitoidentityprovider",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12726,6 +15064,7 @@ pub mod list_devices_input {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>The access tokens for the request to list devices.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -12735,6 +15074,7 @@ pub mod list_devices_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The limit of the device request.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -12744,6 +15084,7 @@ pub mod list_devices_input {
             self.pagination_token = Some(input.into());
             self
         }
+        /// <p>The pagination token for the list request.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12754,8 +15095,10 @@ pub mod list_devices_input {
         /// Consumes the builder and constructs a [`ListDevicesInput`](crate::input::ListDevicesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListDevicesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListDevicesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListDevicesInput {
                 access_token: self.access_token,
                 limit: self.limit,
@@ -12775,16 +15118,16 @@ impl ListDevicesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListDevices,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListDevicesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12792,7 +15135,7 @@ impl ListDevicesInput {
         fn update_http_builder(
             input: &crate::input::ListDevicesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12801,29 +15144,31 @@ impl ListDevicesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListDevicesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.ListDevices",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_devices(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12846,25 +15191,27 @@ impl ListDevicesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListDevices::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListDevices",
-                    "cognitoidentityprovider",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDevices::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDevices",
+            "cognitoidentityprovider",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12894,6 +15241,7 @@ pub mod list_groups_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -12903,6 +15251,7 @@ pub mod list_groups_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The limit of the request to list groups.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -12913,6 +15262,8 @@ pub mod list_groups_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An identifier that was returned from the previous call to this operation, which can be
+        /// used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -12920,8 +15271,10 @@ pub mod list_groups_input {
         /// Consumes the builder and constructs a [`ListGroupsInput`](crate::input::ListGroupsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListGroupsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListGroupsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListGroupsInput {
                 user_pool_id: self.user_pool_id,
                 limit: self.limit,
@@ -12941,16 +15294,16 @@ impl ListGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12958,7 +15311,7 @@ impl ListGroupsInput {
         fn update_http_builder(
             input: &crate::input::ListGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12967,29 +15320,31 @@ impl ListGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.ListGroups",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_groups(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13012,25 +15367,27 @@ impl ListGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListGroups::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListGroups",
-                    "cognitoidentityprovider",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListGroups::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListGroups",
+            "cognitoidentityprovider",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13060,6 +15417,7 @@ pub mod list_identity_providers_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -13069,6 +15427,7 @@ pub mod list_identity_providers_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of identity providers to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -13078,6 +15437,7 @@ pub mod list_identity_providers_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -13087,7 +15447,7 @@ pub mod list_identity_providers_input {
             self,
         ) -> std::result::Result<
             crate::input::ListIdentityProvidersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListIdentityProvidersInput {
                 user_pool_id: self.user_pool_id,
@@ -13108,16 +15468,16 @@ impl ListIdentityProvidersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListIdentityProviders,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListIdentityProvidersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13125,7 +15485,7 @@ impl ListIdentityProvidersInput {
         fn update_http_builder(
             input: &crate::input::ListIdentityProvidersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13134,32 +15494,34 @@ impl ListIdentityProvidersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListIdentityProvidersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.ListIdentityProviders",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_identity_providers(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13182,15 +15544,15 @@ impl ListIdentityProvidersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListIdentityProviders::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListIdentityProviders",
             "cognitoidentityprovider",
         ));
@@ -13199,10 +15561,10 @@ impl ListIdentityProvidersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13232,6 +15594,7 @@ pub mod list_resource_servers_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -13241,6 +15604,7 @@ pub mod list_resource_servers_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of resource servers to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -13250,6 +15614,7 @@ pub mod list_resource_servers_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -13259,7 +15624,7 @@ pub mod list_resource_servers_input {
             self,
         ) -> std::result::Result<
             crate::input::ListResourceServersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListResourceServersInput {
                 user_pool_id: self.user_pool_id,
@@ -13280,16 +15645,16 @@ impl ListResourceServersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListResourceServers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListResourceServersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13297,7 +15662,7 @@ impl ListResourceServersInput {
         fn update_http_builder(
             input: &crate::input::ListResourceServersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13306,32 +15671,32 @@ impl ListResourceServersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListResourceServersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.ListResourceServers",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_resource_servers(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13354,15 +15719,15 @@ impl ListResourceServersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListResourceServers::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListResourceServers",
             "cognitoidentityprovider",
         ));
@@ -13371,10 +15736,10 @@ impl ListResourceServersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13402,6 +15767,7 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the user pool that the tags are assigned to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -13411,7 +15777,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -13430,16 +15796,16 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13447,7 +15813,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13456,32 +15822,32 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.ListTagsForResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13504,15 +15870,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "cognitoidentityprovider",
         ));
@@ -13521,10 +15887,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13554,6 +15920,7 @@ pub mod list_user_import_jobs_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool that the users are being imported into.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -13563,6 +15930,7 @@ pub mod list_user_import_jobs_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of import jobs you want the request to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -13574,6 +15942,9 @@ pub mod list_user_import_jobs_input {
             self.pagination_token = Some(input.into());
             self
         }
+        /// <p>An identifier that was returned from the previous call to
+        /// <code>ListUserImportJobs</code>, which can be used to return the next set of import
+        /// jobs in the list.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13586,7 +15957,7 @@ pub mod list_user_import_jobs_input {
             self,
         ) -> std::result::Result<
             crate::input::ListUserImportJobsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListUserImportJobsInput {
                 user_pool_id: self.user_pool_id,
@@ -13607,16 +15978,16 @@ impl ListUserImportJobsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListUserImportJobs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListUserImportJobsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13624,7 +15995,7 @@ impl ListUserImportJobsInput {
         fn update_http_builder(
             input: &crate::input::ListUserImportJobsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13633,32 +16004,32 @@ impl ListUserImportJobsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListUserImportJobsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.ListUserImportJobs",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_user_import_jobs(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13681,15 +16052,15 @@ impl ListUserImportJobsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListUserImportJobs::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListUserImportJobs",
             "cognitoidentityprovider",
         ));
@@ -13698,10 +16069,10 @@ impl ListUserImportJobsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13731,6 +16102,7 @@ pub mod list_user_pool_clients_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool where you want to list user pool clients.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -13741,6 +16113,8 @@ pub mod list_user_pool_clients_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results you want the request to return when listing the user
+        /// pool clients.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -13751,6 +16125,8 @@ pub mod list_user_pool_clients_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An identifier that was returned from the previous call to this operation, which can be
+        /// used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -13760,7 +16136,7 @@ pub mod list_user_pool_clients_input {
             self,
         ) -> std::result::Result<
             crate::input::ListUserPoolClientsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListUserPoolClientsInput {
                 user_pool_id: self.user_pool_id,
@@ -13781,16 +16157,16 @@ impl ListUserPoolClientsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListUserPoolClients,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListUserPoolClientsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13798,7 +16174,7 @@ impl ListUserPoolClientsInput {
         fn update_http_builder(
             input: &crate::input::ListUserPoolClientsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13807,32 +16183,32 @@ impl ListUserPoolClientsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListUserPoolClientsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.ListUserPoolClients",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_user_pool_clients(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13855,15 +16231,15 @@ impl ListUserPoolClientsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListUserPoolClients::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListUserPoolClients",
             "cognitoidentityprovider",
         ));
@@ -13872,10 +16248,10 @@ impl ListUserPoolClientsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13905,6 +16281,8 @@ pub mod list_user_pools_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An identifier that was returned from the previous call to this operation, which can be
+        /// used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -13915,6 +16293,8 @@ pub mod list_user_pools_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results you want the request to return when listing the user
+        /// pools.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -13922,8 +16302,10 @@ pub mod list_user_pools_input {
         /// Consumes the builder and constructs a [`ListUserPoolsInput`](crate::input::ListUserPoolsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListUserPoolsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListUserPoolsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListUserPoolsInput {
                 next_token: self.next_token,
                 max_results: self.max_results.unwrap_or_default(),
@@ -13942,16 +16324,16 @@ impl ListUserPoolsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListUserPools,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListUserPoolsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13959,7 +16341,7 @@ impl ListUserPoolsInput {
         fn update_http_builder(
             input: &crate::input::ListUserPoolsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13968,29 +16350,31 @@ impl ListUserPoolsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListUserPoolsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.ListUserPools",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_user_pools(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14013,25 +16397,27 @@ impl ListUserPoolsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListUserPools::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListUserPools",
-                    "cognitoidentityprovider",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListUserPools::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListUserPools",
+            "cognitoidentityprovider",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14063,16 +16449,27 @@ pub mod list_users_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool on which the search should be performed.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
         }
+        /// Appends an item to `attributes_to_get`.
+        ///
+        /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
+        ///
+        /// <p>An array of strings, where each string is the name of a user attribute to be returned
+        /// for each user in the search results. If the array is null, all attributes are
+        /// returned.</p>
         pub fn attributes_to_get(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attributes_to_get.unwrap_or_default();
             v.push(input.into());
             self.attributes_to_get = Some(v);
             self
         }
+        /// <p>An array of strings, where each string is the name of a user attribute to be returned
+        /// for each user in the search results. If the array is null, all attributes are
+        /// returned.</p>
         pub fn set_attributes_to_get(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14085,6 +16482,7 @@ pub mod list_users_input {
             self.limit = Some(input);
             self
         }
+        /// <p>Maximum number of users to be returned.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -14095,6 +16493,8 @@ pub mod list_users_input {
             self.pagination_token = Some(input.into());
             self
         }
+        /// <p>An identifier that was returned from the previous call to this operation, which can be
+        /// used to return the next set of items in the list.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14185,6 +16585,85 @@ pub mod list_users_input {
             self.filter = Some(input.into());
             self
         }
+        /// <p>A filter string of the form "<i>AttributeName</i>
+        /// <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks
+        /// within the filter string must be escaped using the backslash (\) character. For example,
+        /// "<code>family_name</code> = \"Reddy\"".</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>AttributeName</i>: The name of the attribute to search for.
+        /// You can only search for one attribute at a time.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>Filter-Type</i>: For an exact match, use =, for example,
+        /// "<code>given_name</code> = \"Jon\"". For a prefix ("starts with") match, use
+        /// ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>AttributeValue</i>: The attribute value that must be matched
+        /// for each user.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If the filter string is empty, <code>ListUsers</code> returns all users in the user
+        /// pool.</p>
+        /// <p>You can only search for the following standard attributes:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>username</code> (case-sensitive)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>email</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>phone_number</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>name</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>given_name</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>family_name</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>preferred_username</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>status (called <b>Enabled</b> in the Console)
+        /// (case-sensitive)</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sub</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Custom attributes are not searchable.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito
+        /// Developer Guide</i>.</p>
         pub fn set_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter = input;
             self
@@ -14192,7 +16671,7 @@ pub mod list_users_input {
         /// Consumes the builder and constructs a [`ListUsersInput`](crate::input::ListUsersInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListUsersInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListUsersInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListUsersInput {
                 user_pool_id: self.user_pool_id,
@@ -14215,16 +16694,16 @@ impl ListUsersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListUsers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListUsersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -14232,7 +16711,7 @@ impl ListUsersInput {
         fn update_http_builder(
             input: &crate::input::ListUsersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14241,29 +16720,31 @@ impl ListUsersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListUsersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.ListUsers",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_users(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14286,13 +16767,13 @@ impl ListUsersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListUsers::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListUsers::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListUsers",
                     "cognitoidentityprovider",
                 ));
@@ -14301,10 +16782,10 @@ impl ListUsersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14335,6 +16816,7 @@ pub mod list_users_in_group_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -14344,6 +16826,7 @@ pub mod list_users_in_group_input {
             self.group_name = Some(input.into());
             self
         }
+        /// <p>The name of the group.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -14353,6 +16836,7 @@ pub mod list_users_in_group_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The limit of the request to list users.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -14363,6 +16847,8 @@ pub mod list_users_in_group_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An identifier that was returned from the previous call to this operation, which can be
+        /// used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -14372,7 +16858,7 @@ pub mod list_users_in_group_input {
             self,
         ) -> std::result::Result<
             crate::input::ListUsersInGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListUsersInGroupInput {
                 user_pool_id: self.user_pool_id,
@@ -14394,16 +16880,16 @@ impl ListUsersInGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListUsersInGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListUsersInGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -14411,7 +16897,7 @@ impl ListUsersInGroupInput {
         fn update_http_builder(
             input: &crate::input::ListUsersInGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14420,32 +16906,32 @@ impl ListUsersInGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListUsersInGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.ListUsersInGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_users_in_group(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14468,15 +16954,15 @@ impl ListUsersInGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListUsersInGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListUsersInGroup",
             "cognitoidentityprovider",
         ));
@@ -14485,10 +16971,10 @@ impl ListUsersInGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14523,6 +17009,7 @@ pub mod resend_confirmation_code_input {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The ID of the client associated with the user pool.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -14533,6 +17020,8 @@ pub mod resend_confirmation_code_input {
             self.secret_hash = Some(input.into());
             self
         }
+        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
+        /// user pool client and username plus the client ID in the message.</p>
         pub fn set_secret_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_hash = input;
             self
@@ -14544,6 +17033,9 @@ pub mod resend_confirmation_code_input {
             self.user_context_data = Some(input);
             self
         }
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
+        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
+        /// security.</p>
         pub fn set_user_context_data(
             mut self,
             input: std::option::Option<crate::model::UserContextDataType>,
@@ -14556,6 +17048,7 @@ pub mod resend_confirmation_code_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name of the user to whom you wish to resend a confirmation code.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -14566,6 +17059,8 @@ pub mod resend_confirmation_code_input {
             self.analytics_metadata = Some(input);
             self
         }
+        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+        /// <code>ResendConfirmationCode</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -14573,6 +17068,42 @@ pub mod resend_confirmation_code_input {
             self.analytics_metadata = input;
             self
         }
+        /// Adds a key-value pair to `client_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
+        ///
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the ResendConfirmationCode API action, Amazon Cognito invokes the function
+        /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
+        /// invokes this function, it passes a JSON payload, which the function receives as input.
+        /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
+        /// that you assigned to the ClientMetadata parameter in your ResendConfirmationCode
+        /// request. In your function code in Lambda, you can process the
+        /// <code>clientMetadata</code> value to enhance your workflow for your specific
+        /// needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn client_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -14583,6 +17114,38 @@ pub mod resend_confirmation_code_input {
             self.client_metadata = Some(hash_map);
             self
         }
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the ResendConfirmationCode API action, Amazon Cognito invokes the function
+        /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
+        /// invokes this function, it passes a JSON payload, which the function receives as input.
+        /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
+        /// that you assigned to the ClientMetadata parameter in your ResendConfirmationCode
+        /// request. In your function code in Lambda, you can process the
+        /// <code>clientMetadata</code> value to enhance your workflow for your specific
+        /// needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn set_client_metadata(
             mut self,
             input: std::option::Option<
@@ -14597,7 +17160,7 @@ pub mod resend_confirmation_code_input {
             self,
         ) -> std::result::Result<
             crate::input::ResendConfirmationCodeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ResendConfirmationCodeInput {
                 client_id: self.client_id,
@@ -14621,16 +17184,16 @@ impl ResendConfirmationCodeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ResendConfirmationCode,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ResendConfirmationCodeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -14638,7 +17201,7 @@ impl ResendConfirmationCodeInput {
         fn update_http_builder(
             input: &crate::input::ResendConfirmationCodeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14647,32 +17210,34 @@ impl ResendConfirmationCodeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ResendConfirmationCodeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.ResendConfirmationCode",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_resend_confirmation_code(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14696,15 +17261,15 @@ impl ResendConfirmationCodeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ResendConfirmationCode::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ResendConfirmationCode",
             "cognitoidentityprovider",
         ));
@@ -14713,10 +17278,10 @@ impl ResendConfirmationCodeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14754,6 +17319,7 @@ pub mod respond_to_auth_challenge_input {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The app client ID.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -14765,6 +17331,9 @@ pub mod respond_to_auth_challenge_input {
             self.challenge_name = Some(input);
             self
         }
+        /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
+        /// <p>
+        /// <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
         pub fn set_challenge_name(
             mut self,
             input: std::option::Option<crate::model::ChallengeNameType>,
@@ -14781,10 +17350,65 @@ pub mod respond_to_auth_challenge_input {
             self.session = Some(input.into());
             self
         }
+        /// <p>The session which should be passed both ways in challenge-response calls to the
+        /// service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call
+        /// determines that the caller needs to go through another challenge, they return a session
+        /// with other challenge parameters. This session should be passed as it is to the next
+        /// <code>RespondToAuthChallenge</code> API call.</p>
         pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session = input;
             self
         }
+        /// Adds a key-value pair to `challenge_responses`.
+        ///
+        /// To override the contents of this collection use [`set_challenge_responses`](Self::set_challenge_responses).
+        ///
+        /// <p>The challenge responses. These are inputs corresponding to the value of
+        /// <code>ChallengeName</code>, for example:</p>
+        /// <note>
+        /// <p>
+        /// <code>SECRET_HASH</code> (if app client is configured with client secret) applies
+        /// to all inputs below (including <code>SOFTWARE_TOKEN_MFA</code>).</p>
+        /// </note>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
+        /// <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
+        /// <code>USERNAME</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+        /// required attributes, <code>USERNAME</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and
+        /// <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>,
+        /// <code>DEVICE_KEY</code>, <code>SRP_A</code> (and
+        /// <code>SECRET_HASH</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
+        /// <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use
+        /// the session value returned by <code>VerifySoftwareToken</code> in the
+        /// <code>Session</code> parameter.</p>
+        /// </li>
+        /// </ul>
         pub fn challenge_responses(
             mut self,
             k: impl Into<std::string::String>,
@@ -14795,6 +17419,52 @@ pub mod respond_to_auth_challenge_input {
             self.challenge_responses = Some(hash_map);
             self
         }
+        /// <p>The challenge responses. These are inputs corresponding to the value of
+        /// <code>ChallengeName</code>, for example:</p>
+        /// <note>
+        /// <p>
+        /// <code>SECRET_HASH</code> (if app client is configured with client secret) applies
+        /// to all inputs below (including <code>SOFTWARE_TOKEN_MFA</code>).</p>
+        /// </note>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
+        /// <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
+        /// <code>USERNAME</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+        /// required attributes, <code>USERNAME</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and
+        /// <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>,
+        /// <code>DEVICE_KEY</code>, <code>SRP_A</code> (and
+        /// <code>SECRET_HASH</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
+        /// <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use
+        /// the session value returned by <code>VerifySoftwareToken</code> in the
+        /// <code>Session</code> parameter.</p>
+        /// </li>
+        /// </ul>
         pub fn set_challenge_responses(
             mut self,
             input: std::option::Option<
@@ -14810,6 +17480,8 @@ pub mod respond_to_auth_challenge_input {
             self.analytics_metadata = Some(input);
             self
         }
+        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+        /// <code>RespondToAuthChallenge</code> calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -14824,6 +17496,9 @@ pub mod respond_to_auth_challenge_input {
             self.user_context_data = Some(input);
             self
         }
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
+        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
+        /// security.</p>
         pub fn set_user_context_data(
             mut self,
             input: std::option::Option<crate::model::UserContextDataType>,
@@ -14831,6 +17506,44 @@ pub mod respond_to_auth_challenge_input {
             self.user_context_data = input;
             self
         }
+        /// Adds a key-value pair to `client_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
+        ///
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the RespondToAuthChallenge API action, Amazon Cognito invokes any functions
+        /// that are assigned to the following triggers: <i>post authentication</i>,
+        /// <i>pre token generation</i>, <i>define auth
+        /// challenge</i>, <i>create auth challenge</i>, and
+        /// <i>verify auth challenge</i>. When Amazon Cognito invokes any of these
+        /// functions, it passes a JSON payload, which the function receives as input. This payload
+        /// contains a <code>clientMetadata</code> attribute, which provides the data that you
+        /// assigned to the ClientMetadata parameter in your RespondToAuthChallenge request. In your
+        /// function code in Lambda, you can process the <code>clientMetadata</code> value to
+        /// enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn client_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -14841,6 +17554,40 @@ pub mod respond_to_auth_challenge_input {
             self.client_metadata = Some(hash_map);
             self
         }
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the RespondToAuthChallenge API action, Amazon Cognito invokes any functions
+        /// that are assigned to the following triggers: <i>post authentication</i>,
+        /// <i>pre token generation</i>, <i>define auth
+        /// challenge</i>, <i>create auth challenge</i>, and
+        /// <i>verify auth challenge</i>. When Amazon Cognito invokes any of these
+        /// functions, it passes a JSON payload, which the function receives as input. This payload
+        /// contains a <code>clientMetadata</code> attribute, which provides the data that you
+        /// assigned to the ClientMetadata parameter in your RespondToAuthChallenge request. In your
+        /// function code in Lambda, you can process the <code>clientMetadata</code> value to
+        /// enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn set_client_metadata(
             mut self,
             input: std::option::Option<
@@ -14855,7 +17602,7 @@ pub mod respond_to_auth_challenge_input {
             self,
         ) -> std::result::Result<
             crate::input::RespondToAuthChallengeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RespondToAuthChallengeInput {
                 client_id: self.client_id,
@@ -14880,16 +17627,16 @@ impl RespondToAuthChallengeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RespondToAuthChallenge,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RespondToAuthChallengeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -14897,7 +17644,7 @@ impl RespondToAuthChallengeInput {
         fn update_http_builder(
             input: &crate::input::RespondToAuthChallengeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14906,32 +17653,34 @@ impl RespondToAuthChallengeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RespondToAuthChallengeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.RespondToAuthChallenge",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_respond_to_auth_challenge(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14955,15 +17704,15 @@ impl RespondToAuthChallengeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RespondToAuthChallenge::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RespondToAuthChallenge",
             "cognitoidentityprovider",
         ));
@@ -14972,10 +17721,10 @@ impl RespondToAuthChallengeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -15005,6 +17754,7 @@ pub mod revoke_token_input {
             self.token = Some(input.into());
             self
         }
+        /// <p>The token that you want to revoke.</p>
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token = input;
             self
@@ -15014,6 +17764,7 @@ pub mod revoke_token_input {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The client ID for the token that you want to revoke.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -15023,6 +17774,7 @@ pub mod revoke_token_input {
             self.client_secret = Some(input.into());
             self
         }
+        /// <p>The secret for the client ID. This is required only if the client ID has a secret.</p>
         pub fn set_client_secret(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15033,8 +17785,10 @@ pub mod revoke_token_input {
         /// Consumes the builder and constructs a [`RevokeTokenInput`](crate::input::RevokeTokenInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::RevokeTokenInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RevokeTokenInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RevokeTokenInput {
                 token: self.token,
                 client_id: self.client_id,
@@ -15054,16 +17808,16 @@ impl RevokeTokenInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RevokeToken,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RevokeTokenInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -15071,7 +17825,7 @@ impl RevokeTokenInput {
         fn update_http_builder(
             input: &crate::input::RevokeTokenInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -15080,29 +17834,31 @@ impl RevokeTokenInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RevokeTokenInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.RevokeToken",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_revoke_token(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -15125,25 +17881,27 @@ impl RevokeTokenInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::RevokeToken::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "RevokeToken",
-                    "cognitoidentityprovider",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RevokeToken::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RevokeToken",
+            "cognitoidentityprovider",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -15178,6 +17936,7 @@ pub mod set_risk_configuration_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID. </p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -15192,6 +17951,12 @@ pub mod set_risk_configuration_input {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The app client ID. If <code>ClientId</code> is null, then the risk configuration is
+        /// mapped to <code>userPoolId</code>. When the client ID is null, the same risk
+        /// configuration is applied to all the clients in the userPool.</p>
+        /// <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID is not
+        /// null, the user pool configuration is overridden and the risk configuration for the
+        /// client is used instead.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -15204,6 +17969,7 @@ pub mod set_risk_configuration_input {
             self.compromised_credentials_risk_configuration = Some(input);
             self
         }
+        /// <p>The compromised credentials risk configuration.</p>
         pub fn set_compromised_credentials_risk_configuration(
             mut self,
             input: std::option::Option<crate::model::CompromisedCredentialsRiskConfigurationType>,
@@ -15219,6 +17985,7 @@ pub mod set_risk_configuration_input {
             self.account_takeover_risk_configuration = Some(input);
             self
         }
+        /// <p>The account takeover risk configuration.</p>
         pub fn set_account_takeover_risk_configuration(
             mut self,
             input: std::option::Option<crate::model::AccountTakeoverRiskConfigurationType>,
@@ -15234,6 +18001,7 @@ pub mod set_risk_configuration_input {
             self.risk_exception_configuration = Some(input);
             self
         }
+        /// <p>The configuration to override the risk decision.</p>
         pub fn set_risk_exception_configuration(
             mut self,
             input: std::option::Option<crate::model::RiskExceptionConfigurationType>,
@@ -15246,7 +18014,7 @@ pub mod set_risk_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::SetRiskConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetRiskConfigurationInput {
                 user_pool_id: self.user_pool_id,
@@ -15270,16 +18038,16 @@ impl SetRiskConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetRiskConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetRiskConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -15287,7 +18055,7 @@ impl SetRiskConfigurationInput {
         fn update_http_builder(
             input: &crate::input::SetRiskConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -15296,32 +18064,32 @@ impl SetRiskConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetRiskConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.SetRiskConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_risk_configuration(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -15344,15 +18112,15 @@ impl SetRiskConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetRiskConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetRiskConfiguration",
             "cognitoidentityprovider",
         ));
@@ -15361,10 +18129,10 @@ impl SetRiskConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -15387,7 +18155,7 @@ pub mod set_ui_customization_input {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) css: std::option::Option<std::string::String>,
-        pub(crate) image_file: std::option::Option<smithy_types::Blob>,
+        pub(crate) image_file: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
         /// <p>The user pool ID for the user pool.</p>
@@ -15395,6 +18163,7 @@ pub mod set_ui_customization_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -15404,6 +18173,7 @@ pub mod set_ui_customization_input {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The client ID for the client app.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -15413,16 +18183,21 @@ pub mod set_ui_customization_input {
             self.css = Some(input.into());
             self
         }
+        /// <p>The CSS values in the UI customization.</p>
         pub fn set_css(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.css = input;
             self
         }
         /// <p>The uploaded logo image for the UI customization.</p>
-        pub fn image_file(mut self, input: smithy_types::Blob) -> Self {
+        pub fn image_file(mut self, input: aws_smithy_types::Blob) -> Self {
             self.image_file = Some(input);
             self
         }
-        pub fn set_image_file(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The uploaded logo image for the UI customization.</p>
+        pub fn set_image_file(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
             self.image_file = input;
             self
         }
@@ -15431,7 +18206,7 @@ pub mod set_ui_customization_input {
             self,
         ) -> std::result::Result<
             crate::input::SetUiCustomizationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetUiCustomizationInput {
                 user_pool_id: self.user_pool_id,
@@ -15453,16 +18228,16 @@ impl SetUiCustomizationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetUICustomization,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetUiCustomizationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -15470,7 +18245,7 @@ impl SetUiCustomizationInput {
         fn update_http_builder(
             input: &crate::input::SetUiCustomizationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -15479,30 +18254,32 @@ impl SetUiCustomizationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetUiCustomizationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.SetUICustomization",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_ui_customization(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -15525,15 +18302,15 @@ impl SetUiCustomizationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetUICustomization::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetUICustomization",
             "cognitoidentityprovider",
         ));
@@ -15542,10 +18319,10 @@ impl SetUiCustomizationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -15576,6 +18353,7 @@ pub mod set_user_mfa_preference_input {
             self.sms_mfa_settings = Some(input);
             self
         }
+        /// <p>The SMS text message multi-factor authentication (MFA) settings.</p>
         pub fn set_sms_mfa_settings(
             mut self,
             input: std::option::Option<crate::model::SmsMfaSettingsType>,
@@ -15591,6 +18369,7 @@ pub mod set_user_mfa_preference_input {
             self.software_token_mfa_settings = Some(input);
             self
         }
+        /// <p>The time-based one-time password software token MFA settings.</p>
         pub fn set_software_token_mfa_settings(
             mut self,
             input: std::option::Option<crate::model::SoftwareTokenMfaSettingsType>,
@@ -15603,6 +18382,7 @@ pub mod set_user_mfa_preference_input {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>The access token for the user.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -15612,7 +18392,7 @@ pub mod set_user_mfa_preference_input {
             self,
         ) -> std::result::Result<
             crate::input::SetUserMfaPreferenceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetUserMfaPreferenceInput {
                 sms_mfa_settings: self.sms_mfa_settings,
@@ -15633,16 +18413,16 @@ impl SetUserMfaPreferenceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetUserMFAPreference,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetUserMfaPreferenceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -15650,7 +18430,7 @@ impl SetUserMfaPreferenceInput {
         fn update_http_builder(
             input: &crate::input::SetUserMfaPreferenceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -15659,32 +18439,34 @@ impl SetUserMfaPreferenceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetUserMfaPreferenceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.SetUserMFAPreference",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_user_mfa_preference(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -15707,15 +18489,15 @@ impl SetUserMfaPreferenceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetUserMFAPreference::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetUserMFAPreference",
             "cognitoidentityprovider",
         ));
@@ -15724,10 +18506,10 @@ impl SetUserMfaPreferenceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -15759,6 +18541,7 @@ pub mod set_user_pool_mfa_config_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -15768,6 +18551,7 @@ pub mod set_user_pool_mfa_config_input {
             self.sms_mfa_configuration = Some(input);
             self
         }
+        /// <p>The SMS text message MFA configuration.</p>
         pub fn set_sms_mfa_configuration(
             mut self,
             input: std::option::Option<crate::model::SmsMfaConfigType>,
@@ -15783,6 +18567,7 @@ pub mod set_user_pool_mfa_config_input {
             self.software_token_mfa_configuration = Some(input);
             self
         }
+        /// <p>The software token MFA configuration.</p>
         pub fn set_software_token_mfa_configuration(
             mut self,
             input: std::option::Option<crate::model::SoftwareTokenMfaConfigType>,
@@ -15813,6 +18598,25 @@ pub mod set_user_pool_mfa_config_input {
             self.mfa_configuration = Some(input);
             self
         }
+        /// <p>The MFA configuration. Users who don't have an MFA factor set up won't be able to
+        /// sign-in if you set the MfaConfiguration value to ‘ON’. See <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor
+        /// Authentication (MFA) to a User Pool</a> to learn more. Valid values
+        /// include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>OFF</code> MFA will not be used for any users.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ON</code> MFA is required for all users to sign in.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIONAL</code> MFA will be required only for individual users who have
+        /// an MFA factor enabled.</p>
+        /// </li>
+        /// </ul>
         pub fn set_mfa_configuration(
             mut self,
             input: std::option::Option<crate::model::UserPoolMfaType>,
@@ -15825,7 +18629,7 @@ pub mod set_user_pool_mfa_config_input {
             self,
         ) -> std::result::Result<
             crate::input::SetUserPoolMfaConfigInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetUserPoolMfaConfigInput {
                 user_pool_id: self.user_pool_id,
@@ -15847,16 +18651,16 @@ impl SetUserPoolMfaConfigInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetUserPoolMfaConfig,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetUserPoolMfaConfigInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -15864,7 +18668,7 @@ impl SetUserPoolMfaConfigInput {
         fn update_http_builder(
             input: &crate::input::SetUserPoolMfaConfigInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -15873,32 +18677,34 @@ impl SetUserPoolMfaConfigInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetUserPoolMfaConfigInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.SetUserPoolMfaConfig",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_user_pool_mfa_config(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -15921,15 +18727,15 @@ impl SetUserPoolMfaConfigInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetUserPoolMfaConfig::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetUserPoolMfaConfig",
             "cognitoidentityprovider",
         ));
@@ -15938,10 +18744,10 @@ impl SetUserPoolMfaConfigInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -15970,16 +18776,25 @@ pub mod set_user_settings_input {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>The access token for the set user settings request.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
         }
+        /// Appends an item to `mfa_options`.
+        ///
+        /// To override the contents of this collection use [`set_mfa_options`](Self::set_mfa_options).
+        ///
+        /// <p>You can use this parameter only to set an SMS configuration that uses SMS for
+        /// delivery.</p>
         pub fn mfa_options(mut self, input: impl Into<crate::model::MfaOptionType>) -> Self {
             let mut v = self.mfa_options.unwrap_or_default();
             v.push(input.into());
             self.mfa_options = Some(v);
             self
         }
+        /// <p>You can use this parameter only to set an SMS configuration that uses SMS for
+        /// delivery.</p>
         pub fn set_mfa_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
@@ -15992,7 +18807,7 @@ pub mod set_user_settings_input {
             self,
         ) -> std::result::Result<
             crate::input::SetUserSettingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetUserSettingsInput {
                 access_token: self.access_token,
@@ -16012,16 +18827,16 @@ impl SetUserSettingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetUserSettings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetUserSettingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -16029,7 +18844,7 @@ impl SetUserSettingsInput {
         fn update_http_builder(
             input: &crate::input::SetUserSettingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -16038,32 +18853,32 @@ impl SetUserSettingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetUserSettingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.SetUserSettings",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_user_settings(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -16087,15 +18902,15 @@ impl SetUserSettingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetUserSettings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetUserSettings",
             "cognitoidentityprovider",
         ));
@@ -16104,10 +18919,10 @@ impl SetUserSettingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -16145,6 +18960,7 @@ pub mod sign_up_input {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The ID of the client associated with the user pool.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -16155,6 +18971,8 @@ pub mod sign_up_input {
             self.secret_hash = Some(input.into());
             self
         }
+        /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
+        /// user pool client and username plus the client ID in the message.</p>
         pub fn set_secret_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_hash = input;
             self
@@ -16164,6 +18982,7 @@ pub mod sign_up_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name of the user you wish to register.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -16173,16 +18992,27 @@ pub mod sign_up_input {
             self.password = Some(input.into());
             self
         }
+        /// <p>The password of the user you wish to register.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
         }
+        /// Appends an item to `user_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
+        ///
+        /// <p>An array of name-value pairs representing user attributes.</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
+        /// attribute name.</p>
         pub fn user_attributes(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
             v.push(input.into());
             self.user_attributes = Some(v);
             self
         }
+        /// <p>An array of name-value pairs representing user attributes.</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
+        /// attribute name.</p>
         pub fn set_user_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
@@ -16190,12 +19020,18 @@ pub mod sign_up_input {
             self.user_attributes = input;
             self
         }
+        /// Appends an item to `validation_data`.
+        ///
+        /// To override the contents of this collection use [`set_validation_data`](Self::set_validation_data).
+        ///
+        /// <p>The validation data in the request to register a user.</p>
         pub fn validation_data(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
             let mut v = self.validation_data.unwrap_or_default();
             v.push(input.into());
             self.validation_data = Some(v);
             self
         }
+        /// <p>The validation data in the request to register a user.</p>
         pub fn set_validation_data(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
@@ -16209,6 +19045,8 @@ pub mod sign_up_input {
             self.analytics_metadata = Some(input);
             self
         }
+        /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code>
+        /// calls.</p>
         pub fn set_analytics_metadata(
             mut self,
             input: std::option::Option<crate::model::AnalyticsMetadataType>,
@@ -16223,6 +19061,9 @@ pub mod sign_up_input {
             self.user_context_data = Some(input);
             self
         }
+        /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
+        /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
+        /// security.</p>
         pub fn set_user_context_data(
             mut self,
             input: std::option::Option<crate::model::UserContextDataType>,
@@ -16230,6 +19071,42 @@ pub mod sign_up_input {
             self.user_context_data = input;
             self
         }
+        /// Adds a key-value pair to `client_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
+        ///
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the SignUp API action, Amazon Cognito invokes any functions that are
+        /// assigned to the following triggers: <i>pre sign-up</i>, <i>custom
+        /// message</i>, and <i>post confirmation</i>. When Amazon Cognito
+        /// invokes any of these functions, it passes a JSON payload, which the function receives as
+        /// input. This payload contains a <code>clientMetadata</code> attribute, which provides the
+        /// data that you assigned to the ClientMetadata parameter in your SignUp request. In your
+        /// function code in Lambda, you can process the <code>clientMetadata</code> value to
+        /// enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn client_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -16240,6 +19117,38 @@ pub mod sign_up_input {
             self.client_metadata = Some(hash_map);
             self
         }
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the SignUp API action, Amazon Cognito invokes any functions that are
+        /// assigned to the following triggers: <i>pre sign-up</i>, <i>custom
+        /// message</i>, and <i>post confirmation</i>. When Amazon Cognito
+        /// invokes any of these functions, it passes a JSON payload, which the function receives as
+        /// input. This payload contains a <code>clientMetadata</code> attribute, which provides the
+        /// data that you assigned to the ClientMetadata parameter in your SignUp request. In your
+        /// function code in Lambda, you can process the <code>clientMetadata</code> value to
+        /// enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn set_client_metadata(
             mut self,
             input: std::option::Option<
@@ -16252,7 +19161,7 @@ pub mod sign_up_input {
         /// Consumes the builder and constructs a [`SignUpInput`](crate::input::SignUpInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::SignUpInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::SignUpInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::SignUpInput {
                 client_id: self.client_id,
@@ -16279,13 +19188,16 @@ impl SignUpInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::SignUp, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::SignUp,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SignUpInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -16293,7 +19205,7 @@ impl SignUpInput {
         fn update_http_builder(
             input: &crate::input::SignUpInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -16302,29 +19214,31 @@ impl SignUpInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SignUpInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.SignUp",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_sign_up(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -16348,24 +19262,25 @@ impl SignUpInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::SignUp::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "SignUp",
-                "cognitoidentityprovider",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::SignUp::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "SignUp",
+                    "cognitoidentityprovider",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -16394,6 +19309,7 @@ pub mod start_user_import_job_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool that the users are being imported into.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -16403,6 +19319,7 @@ pub mod start_user_import_job_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The job ID for the user import job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -16412,7 +19329,7 @@ pub mod start_user_import_job_input {
             self,
         ) -> std::result::Result<
             crate::input::StartUserImportJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartUserImportJobInput {
                 user_pool_id: self.user_pool_id,
@@ -16432,16 +19349,16 @@ impl StartUserImportJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartUserImportJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartUserImportJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -16449,7 +19366,7 @@ impl StartUserImportJobInput {
         fn update_http_builder(
             input: &crate::input::StartUserImportJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -16458,32 +19375,32 @@ impl StartUserImportJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartUserImportJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.StartUserImportJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_user_import_job(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -16506,15 +19423,15 @@ impl StartUserImportJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartUserImportJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartUserImportJob",
             "cognitoidentityprovider",
         ));
@@ -16523,10 +19440,10 @@ impl StartUserImportJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -16555,6 +19472,7 @@ pub mod stop_user_import_job_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool that the users are being imported into.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -16564,6 +19482,7 @@ pub mod stop_user_import_job_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The job ID for the user import job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -16573,7 +19492,7 @@ pub mod stop_user_import_job_input {
             self,
         ) -> std::result::Result<
             crate::input::StopUserImportJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StopUserImportJobInput {
                 user_pool_id: self.user_pool_id,
@@ -16593,16 +19512,16 @@ impl StopUserImportJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StopUserImportJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StopUserImportJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -16610,7 +19529,7 @@ impl StopUserImportJobInput {
         fn update_http_builder(
             input: &crate::input::StopUserImportJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -16619,30 +19538,32 @@ impl StopUserImportJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StopUserImportJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.StopUserImportJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_user_import_job(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -16665,15 +19586,15 @@ impl StopUserImportJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StopUserImportJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StopUserImportJob",
             "cognitoidentityprovider",
         ));
@@ -16682,10 +19603,10 @@ impl StopUserImportJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -16716,10 +19637,16 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the user pool to assign the tags to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to assign to the user pool.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -16730,6 +19657,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags to assign to the user pool.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -16742,8 +19670,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -16762,16 +19692,16 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -16779,7 +19709,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -16788,29 +19718,31 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.TagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -16833,25 +19765,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "cognitoidentityprovider",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "cognitoidentityprovider",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -16880,16 +19814,23 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the user pool that the tags are assigned to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The keys of the tags to remove from the user pool.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>The keys of the tags to remove from the user pool.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16900,8 +19841,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -16920,16 +19863,16 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -16937,7 +19880,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -16946,29 +19889,31 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.UntagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -16991,25 +19936,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "cognitoidentityprovider",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "cognitoidentityprovider",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -17041,6 +19988,7 @@ pub mod update_auth_event_feedback_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -17050,6 +19998,7 @@ pub mod update_auth_event_feedback_input {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user pool username.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -17059,6 +20008,7 @@ pub mod update_auth_event_feedback_input {
             self.event_id = Some(input.into());
             self
         }
+        /// <p>The event ID.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_id = input;
             self
@@ -17068,6 +20018,7 @@ pub mod update_auth_event_feedback_input {
             self.feedback_token = Some(input.into());
             self
         }
+        /// <p>The feedback token.</p>
         pub fn set_feedback_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17080,6 +20031,7 @@ pub mod update_auth_event_feedback_input {
             self.feedback_value = Some(input);
             self
         }
+        /// <p>The authentication event feedback value.</p>
         pub fn set_feedback_value(
             mut self,
             input: std::option::Option<crate::model::FeedbackValueType>,
@@ -17092,7 +20044,7 @@ pub mod update_auth_event_feedback_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateAuthEventFeedbackInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateAuthEventFeedbackInput {
                 user_pool_id: self.user_pool_id,
@@ -17116,16 +20068,16 @@ impl UpdateAuthEventFeedbackInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateAuthEventFeedback,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateAuthEventFeedbackInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -17133,7 +20085,7 @@ impl UpdateAuthEventFeedbackInput {
         fn update_http_builder(
             input: &crate::input::UpdateAuthEventFeedbackInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -17142,32 +20094,34 @@ impl UpdateAuthEventFeedbackInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateAuthEventFeedbackInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.UpdateAuthEventFeedback",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_auth_event_feedback(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -17190,15 +20144,15 @@ impl UpdateAuthEventFeedbackInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateAuthEventFeedback::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateAuthEventFeedback",
             "cognitoidentityprovider",
         ));
@@ -17207,10 +20161,10 @@ impl UpdateAuthEventFeedbackInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -17241,6 +20195,7 @@ pub mod update_device_status_input {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>The access token.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -17250,6 +20205,7 @@ pub mod update_device_status_input {
             self.device_key = Some(input.into());
             self
         }
+        /// <p>The device key.</p>
         pub fn set_device_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_key = input;
             self
@@ -17262,6 +20218,7 @@ pub mod update_device_status_input {
             self.device_remembered_status = Some(input);
             self
         }
+        /// <p>The status of whether a device is remembered.</p>
         pub fn set_device_remembered_status(
             mut self,
             input: std::option::Option<crate::model::DeviceRememberedStatusType>,
@@ -17274,7 +20231,7 @@ pub mod update_device_status_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateDeviceStatusInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateDeviceStatusInput {
                 access_token: self.access_token,
@@ -17295,16 +20252,16 @@ impl UpdateDeviceStatusInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateDeviceStatus,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateDeviceStatusInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -17312,7 +20269,7 @@ impl UpdateDeviceStatusInput {
         fn update_http_builder(
             input: &crate::input::UpdateDeviceStatusInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -17321,30 +20278,32 @@ impl UpdateDeviceStatusInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateDeviceStatusInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.UpdateDeviceStatus",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_device_status(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -17367,15 +20326,15 @@ impl UpdateDeviceStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateDeviceStatus::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateDeviceStatus",
             "cognitoidentityprovider",
         ));
@@ -17384,10 +20343,10 @@ impl UpdateDeviceStatusInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -17419,6 +20378,7 @@ pub mod update_group_input {
             self.group_name = Some(input.into());
             self
         }
+        /// <p>The name of the group.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -17428,6 +20388,7 @@ pub mod update_group_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -17437,6 +20398,7 @@ pub mod update_group_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A string containing the new description of the group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -17448,6 +20410,9 @@ pub mod update_group_input {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The new role ARN for the group. This is used for setting the
+        /// <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the
+        /// token.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -17458,6 +20423,8 @@ pub mod update_group_input {
             self.precedence = Some(input);
             self
         }
+        /// <p>The new precedence value for the group. For more information about this parameter, see
+        /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
         pub fn set_precedence(mut self, input: std::option::Option<i32>) -> Self {
             self.precedence = input;
             self
@@ -17465,8 +20432,10 @@ pub mod update_group_input {
         /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::input::UpdateGroupInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateGroupInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateGroupInput {
                 group_name: self.group_name,
                 user_pool_id: self.user_pool_id,
@@ -17488,16 +20457,16 @@ impl UpdateGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -17505,7 +20474,7 @@ impl UpdateGroupInput {
         fn update_http_builder(
             input: &crate::input::UpdateGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -17514,29 +20483,31 @@ impl UpdateGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.UpdateGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_group(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -17559,25 +20530,27 @@ impl UpdateGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateGroup::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateGroup",
-                    "cognitoidentityprovider",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateGroup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateGroup",
+            "cognitoidentityprovider",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -17613,6 +20586,7 @@ pub mod update_identity_provider_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -17622,6 +20596,7 @@ pub mod update_identity_provider_input {
             self.provider_name = Some(input.into());
             self
         }
+        /// <p>The identity provider name.</p>
         pub fn set_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17629,6 +20604,12 @@ pub mod update_identity_provider_input {
             self.provider_name = input;
             self
         }
+        /// Adds a key-value pair to `provider_details`.
+        ///
+        /// To override the contents of this collection use [`set_provider_details`](Self::set_provider_details).
+        ///
+        /// <p>The identity provider details to be updated, such as <code>MetadataURL</code> and
+        /// <code>MetadataFile</code>.</p>
         pub fn provider_details(
             mut self,
             k: impl Into<std::string::String>,
@@ -17639,6 +20620,8 @@ pub mod update_identity_provider_input {
             self.provider_details = Some(hash_map);
             self
         }
+        /// <p>The identity provider details to be updated, such as <code>MetadataURL</code> and
+        /// <code>MetadataFile</code>.</p>
         pub fn set_provider_details(
             mut self,
             input: std::option::Option<
@@ -17648,6 +20631,11 @@ pub mod update_identity_provider_input {
             self.provider_details = input;
             self
         }
+        /// Adds a key-value pair to `attribute_mapping`.
+        ///
+        /// To override the contents of this collection use [`set_attribute_mapping`](Self::set_attribute_mapping).
+        ///
+        /// <p>The identity provider attribute mapping to be changed.</p>
         pub fn attribute_mapping(
             mut self,
             k: impl Into<std::string::String>,
@@ -17658,6 +20646,7 @@ pub mod update_identity_provider_input {
             self.attribute_mapping = Some(hash_map);
             self
         }
+        /// <p>The identity provider attribute mapping to be changed.</p>
         pub fn set_attribute_mapping(
             mut self,
             input: std::option::Option<
@@ -17667,12 +20656,18 @@ pub mod update_identity_provider_input {
             self.attribute_mapping = input;
             self
         }
+        /// Appends an item to `idp_identifiers`.
+        ///
+        /// To override the contents of this collection use [`set_idp_identifiers`](Self::set_idp_identifiers).
+        ///
+        /// <p>A list of identity provider identifiers.</p>
         pub fn idp_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.idp_identifiers.unwrap_or_default();
             v.push(input.into());
             self.idp_identifiers = Some(v);
             self
         }
+        /// <p>A list of identity provider identifiers.</p>
         pub fn set_idp_identifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -17685,7 +20680,7 @@ pub mod update_identity_provider_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateIdentityProviderInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateIdentityProviderInput {
                 user_pool_id: self.user_pool_id,
@@ -17708,16 +20703,16 @@ impl UpdateIdentityProviderInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateIdentityProvider,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateIdentityProviderInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -17725,7 +20720,7 @@ impl UpdateIdentityProviderInput {
         fn update_http_builder(
             input: &crate::input::UpdateIdentityProviderInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -17734,32 +20729,34 @@ impl UpdateIdentityProviderInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateIdentityProviderInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.UpdateIdentityProvider",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_identity_provider(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -17782,15 +20779,15 @@ impl UpdateIdentityProviderInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateIdentityProvider::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateIdentityProvider",
             "cognitoidentityprovider",
         ));
@@ -17799,10 +20796,10 @@ impl UpdateIdentityProviderInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -17834,6 +20831,7 @@ pub mod update_resource_server_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -17843,6 +20841,7 @@ pub mod update_resource_server_input {
             self.identifier = Some(input.into());
             self
         }
+        /// <p>The identifier for the resource server.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
             self
@@ -17852,16 +20851,23 @@ pub mod update_resource_server_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the resource server.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `scopes`.
+        ///
+        /// To override the contents of this collection use [`set_scopes`](Self::set_scopes).
+        ///
+        /// <p>The scope values to be set for the resource server.</p>
         pub fn scopes(mut self, input: impl Into<crate::model::ResourceServerScopeType>) -> Self {
             let mut v = self.scopes.unwrap_or_default();
             v.push(input.into());
             self.scopes = Some(v);
             self
         }
+        /// <p>The scope values to be set for the resource server.</p>
         pub fn set_scopes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceServerScopeType>>,
@@ -17874,7 +20880,7 @@ pub mod update_resource_server_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateResourceServerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateResourceServerInput {
                 user_pool_id: self.user_pool_id,
@@ -17896,16 +20902,16 @@ impl UpdateResourceServerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateResourceServer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateResourceServerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -17913,7 +20919,7 @@ impl UpdateResourceServerInput {
         fn update_http_builder(
             input: &crate::input::UpdateResourceServerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -17922,32 +20928,32 @@ impl UpdateResourceServerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateResourceServerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.UpdateResourceServer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_resource_server(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -17970,15 +20976,15 @@ impl UpdateResourceServerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateResourceServer::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateResourceServer",
             "cognitoidentityprovider",
         ));
@@ -17987,10 +20993,10 @@ impl UpdateResourceServerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -18017,12 +21023,22 @@ pub mod update_user_attributes_input {
         >,
     }
     impl Builder {
+        /// Appends an item to `user_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
+        ///
+        /// <p>An array of name-value pairs representing user attributes.</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
+        /// attribute name.</p>
         pub fn user_attributes(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
             v.push(input.into());
             self.user_attributes = Some(v);
             self
         }
+        /// <p>An array of name-value pairs representing user attributes.</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
+        /// attribute name.</p>
         pub fn set_user_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
@@ -18035,10 +21051,46 @@ pub mod update_user_attributes_input {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>The access token for the request to update user attributes.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
         }
+        /// Adds a key-value pair to `client_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_client_metadata`](Self::set_client_metadata).
+        ///
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the UpdateUserAttributes API action, Amazon Cognito invokes the function
+        /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
+        /// invokes this function, it passes a JSON payload, which the function receives as input.
+        /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
+        /// that you assigned to the ClientMetadata parameter in your UpdateUserAttributes request.
+        /// In your function code in Lambda, you can process the <code>clientMetadata</code>
+        /// value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn client_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -18049,6 +21101,37 @@ pub mod update_user_attributes_input {
             self.client_metadata = Some(hash_map);
             self
         }
+        /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. </p>
+        /// <p>You create custom workflows by assigning Lambda functions to user pool triggers.
+        /// When you use the UpdateUserAttributes API action, Amazon Cognito invokes the function
+        /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
+        /// invokes this function, it passes a JSON payload, which the function receives as input.
+        /// This payload contains a <code>clientMetadata</code> attribute, which provides the data
+        /// that you assigned to the ClientMetadata parameter in your UpdateUserAttributes request.
+        /// In your function code in Lambda, you can process the <code>clientMetadata</code>
+        /// value to enhance your workflow for your specific needs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the
+        /// <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Take the following limitations into consideration when you use the ClientMetadata
+        /// parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Cognito does not store the ClientMetadata value. This data is
+        /// available only to Lambda triggers that are assigned to a user pool to
+        /// support custom workflows. If your user pool configuration does not include
+        /// triggers, the ClientMetadata parameter serves no purpose.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not validate the ClientMetadata value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use
+        /// it to provide sensitive information.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn set_client_metadata(
             mut self,
             input: std::option::Option<
@@ -18063,7 +21146,7 @@ pub mod update_user_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateUserAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateUserAttributesInput {
                 user_attributes: self.user_attributes,
@@ -18084,16 +21167,16 @@ impl UpdateUserAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateUserAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateUserAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -18101,7 +21184,7 @@ impl UpdateUserAttributesInput {
         fn update_http_builder(
             input: &crate::input::UpdateUserAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -18110,32 +21193,32 @@ impl UpdateUserAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateUserAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.UpdateUserAttributes",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_user_attributes(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -18159,15 +21242,15 @@ impl UpdateUserAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateUserAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateUserAttributes",
             "cognitoidentityprovider",
         ));
@@ -18176,10 +21259,10 @@ impl UpdateUserAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -18229,6 +21312,7 @@ pub mod update_user_pool_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool you want to update.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -18238,6 +21322,7 @@ pub mod update_user_pool_input {
             self.policies = Some(input);
             self
         }
+        /// <p>A container with the policies you wish to update in a user pool.</p>
         pub fn set_policies(
             mut self,
             input: std::option::Option<crate::model::UserPoolPolicyType>,
@@ -18251,6 +21336,8 @@ pub mod update_user_pool_input {
             self.lambda_config = Some(input);
             self
         }
+        /// <p>The Lambda configuration information from the request to update the user
+        /// pool.</p>
         pub fn set_lambda_config(
             mut self,
             input: std::option::Option<crate::model::LambdaConfigType>,
@@ -18258,6 +21345,12 @@ pub mod update_user_pool_input {
             self.lambda_config = input;
             self
         }
+        /// Appends an item to `auto_verified_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_auto_verified_attributes`](Self::set_auto_verified_attributes).
+        ///
+        /// <p>The attributes that are automatically verified when the Amazon Cognito service makes a
+        /// request to update user pools.</p>
         pub fn auto_verified_attributes(
             mut self,
             input: impl Into<crate::model::VerifiedAttributeType>,
@@ -18267,6 +21360,8 @@ pub mod update_user_pool_input {
             self.auto_verified_attributes = Some(v);
             self
         }
+        /// <p>The attributes that are automatically verified when the Amazon Cognito service makes a
+        /// request to update user pools.</p>
         pub fn set_auto_verified_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VerifiedAttributeType>>,
@@ -18279,6 +21374,7 @@ pub mod update_user_pool_input {
             self.sms_verification_message = Some(input.into());
             self
         }
+        /// <p>A container with information about the SMS verification message.</p>
         pub fn set_sms_verification_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18291,6 +21387,7 @@ pub mod update_user_pool_input {
             self.email_verification_message = Some(input.into());
             self
         }
+        /// <p>The contents of the email verification message.</p>
         pub fn set_email_verification_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18303,6 +21400,7 @@ pub mod update_user_pool_input {
             self.email_verification_subject = Some(input.into());
             self
         }
+        /// <p>The subject of the email verification message.</p>
         pub fn set_email_verification_subject(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18318,6 +21416,7 @@ pub mod update_user_pool_input {
             self.verification_message_template = Some(input);
             self
         }
+        /// <p>The template for verification messages.</p>
         pub fn set_verification_message_template(
             mut self,
             input: std::option::Option<crate::model::VerificationMessageTemplateType>,
@@ -18330,6 +21429,7 @@ pub mod update_user_pool_input {
             self.sms_authentication_message = Some(input.into());
             self
         }
+        /// <p>The contents of the SMS authentication message.</p>
         pub fn set_sms_authentication_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18361,6 +21461,26 @@ pub mod update_user_pool_input {
             self.mfa_configuration = Some(input);
             self
         }
+        /// <p>Can be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>OFF</code> - MFA tokens are not required and cannot be specified during
+        /// user registration.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ON</code> - MFA tokens are required for all user registrations. You can
+        /// only specify ON when you are initially creating a user pool. You can use the
+        /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing
+        /// user pools. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIONAL</code> - Users have the option when registering to create an MFA
+        /// token.</p>
+        /// </li>
+        /// </ul>
         pub fn set_mfa_configuration(
             mut self,
             input: std::option::Option<crate::model::UserPoolMfaType>,
@@ -18376,6 +21496,7 @@ pub mod update_user_pool_input {
             self.device_configuration = Some(input);
             self
         }
+        /// <p>Device configuration.</p>
         pub fn set_device_configuration(
             mut self,
             input: std::option::Option<crate::model::DeviceConfigurationType>,
@@ -18388,6 +21509,7 @@ pub mod update_user_pool_input {
             self.email_configuration = Some(input);
             self
         }
+        /// <p>Email configuration.</p>
         pub fn set_email_configuration(
             mut self,
             input: std::option::Option<crate::model::EmailConfigurationType>,
@@ -18400,6 +21522,7 @@ pub mod update_user_pool_input {
             self.sms_configuration = Some(input);
             self
         }
+        /// <p>SMS configuration.</p>
         pub fn set_sms_configuration(
             mut self,
             input: std::option::Option<crate::model::SmsConfigurationType>,
@@ -18407,6 +21530,13 @@ pub mod update_user_pool_input {
             self.sms_configuration = input;
             self
         }
+        /// Adds a key-value pair to `user_pool_tags`.
+        ///
+        /// To override the contents of this collection use [`set_user_pool_tags`](Self::set_user_pool_tags).
+        ///
+        /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use
+        /// to categorize and manage user pools in different ways, such as by purpose, owner,
+        /// environment, or other criteria.</p>
         pub fn user_pool_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -18417,6 +21547,9 @@ pub mod update_user_pool_input {
             self.user_pool_tags = Some(hash_map);
             self
         }
+        /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use
+        /// to categorize and manage user pools in different ways, such as by purpose, owner,
+        /// environment, or other criteria.</p>
         pub fn set_user_pool_tags(
             mut self,
             input: std::option::Option<
@@ -18434,6 +21567,7 @@ pub mod update_user_pool_input {
             self.admin_create_user_config = Some(input);
             self
         }
+        /// <p>The configuration for <code>AdminCreateUser</code> requests.</p>
         pub fn set_admin_create_user_config(
             mut self,
             input: std::option::Option<crate::model::AdminCreateUserConfigType>,
@@ -18447,6 +21581,8 @@ pub mod update_user_pool_input {
             self.user_pool_add_ons = Some(input);
             self
         }
+        /// <p>Used to enable advanced security risk detection. Set the key
+        /// <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
         pub fn set_user_pool_add_ons(
             mut self,
             input: std::option::Option<crate::model::UserPoolAddOnsType>,
@@ -18467,6 +21603,12 @@ pub mod update_user_pool_input {
             self.account_recovery_setting = Some(input);
             self
         }
+        /// <p>Use this setting to define which verified available method a user can use to recover
+        /// their password when they call <code>ForgotPassword</code>. It allows you to define a
+        /// preferred method when a user has more than one method available. With this setting, SMS
+        /// does not qualify for a valid password recovery mechanism if the user also has SMS MFA
+        /// enabled. In the absence of this setting, Cognito uses the legacy behavior to determine
+        /// the recovery method where SMS is preferred over email.</p>
         pub fn set_account_recovery_setting(
             mut self,
             input: std::option::Option<crate::model::AccountRecoverySettingType>,
@@ -18479,7 +21621,7 @@ pub mod update_user_pool_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateUserPoolInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateUserPoolInput {
                 user_pool_id: self.user_pool_id,
@@ -18514,16 +21656,16 @@ impl UpdateUserPoolInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateUserPool,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateUserPoolInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -18531,7 +21673,7 @@ impl UpdateUserPoolInput {
         fn update_http_builder(
             input: &crate::input::UpdateUserPoolInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -18540,32 +21682,32 @@ impl UpdateUserPoolInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateUserPoolInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.UpdateUserPool",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_user_pool(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -18588,15 +21730,15 @@ impl UpdateUserPoolInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateUserPool::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateUserPool",
             "cognitoidentityprovider",
         ));
@@ -18605,10 +21747,10 @@ impl UpdateUserPoolInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -18661,6 +21803,8 @@ pub mod update_user_pool_client_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool where you want to update the user pool
+        /// client.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -18670,6 +21814,7 @@ pub mod update_user_pool_client_input {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The ID of the client associated with the user pool.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -18679,6 +21824,7 @@ pub mod update_user_pool_client_input {
             self.client_name = Some(input.into());
             self
         }
+        /// <p>The client name from the update user pool client request.</p>
         pub fn set_client_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_name = input;
             self
@@ -18689,6 +21835,8 @@ pub mod update_user_pool_client_input {
             self.refresh_token_validity = Some(input);
             self
         }
+        /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot
+        /// be used.</p>
         pub fn set_refresh_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.refresh_token_validity = input;
             self
@@ -18699,6 +21847,8 @@ pub mod update_user_pool_client_input {
             self.access_token_validity = Some(input);
             self
         }
+        /// <p>The time limit, after which the access token is no longer valid and cannot be
+        /// used.</p>
         pub fn set_access_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.access_token_validity = input;
             self
@@ -18708,6 +21858,7 @@ pub mod update_user_pool_client_input {
             self.id_token_validity = Some(input);
             self
         }
+        /// <p>The time limit, after which the ID token is no longer valid and cannot be used.</p>
         pub fn set_id_token_validity(mut self, input: std::option::Option<i32>) -> Self {
             self.id_token_validity = input;
             self
@@ -18718,6 +21869,8 @@ pub mod update_user_pool_client_input {
             self.token_validity_units = Some(input);
             self
         }
+        /// <p>The units in which the validity times are represented in. Default for RefreshToken is
+        /// days, and default for ID and access tokens are hours.</p>
         pub fn set_token_validity_units(
             mut self,
             input: std::option::Option<crate::model::TokenValidityUnitsType>,
@@ -18725,12 +21878,18 @@ pub mod update_user_pool_client_input {
             self.token_validity_units = input;
             self
         }
+        /// Appends an item to `read_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_read_attributes`](Self::set_read_attributes).
+        ///
+        /// <p>The read-only attributes of the user pool.</p>
         pub fn read_attributes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.read_attributes.unwrap_or_default();
             v.push(input.into());
             self.read_attributes = Some(v);
             self
         }
+        /// <p>The read-only attributes of the user pool.</p>
         pub fn set_read_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18738,12 +21897,18 @@ pub mod update_user_pool_client_input {
             self.read_attributes = input;
             self
         }
+        /// Appends an item to `write_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_write_attributes`](Self::set_write_attributes).
+        ///
+        /// <p>The writeable attributes of the user pool.</p>
         pub fn write_attributes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.write_attributes.unwrap_or_default();
             v.push(input.into());
             self.write_attributes = Some(v);
             self
         }
+        /// <p>The writeable attributes of the user pool.</p>
         pub fn set_write_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18751,6 +21916,45 @@ pub mod update_user_pool_client_input {
             self.write_attributes = input;
             self
         }
+        /// Appends an item to `explicit_auth_flows`.
+        ///
+        /// To override the contents of this collection use [`set_explicit_auth_flows`](Self::set_explicit_auth_flows).
+        ///
+        /// <p>The authentication flows that are supported by the user pool clients. Flow names
+        /// without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the
+        /// <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot
+        /// be used along with values without <code>ALLOW_</code> prefix.</p>
+        /// <p>Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
+        /// authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
+        /// the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
+        /// Cognito receives the password in the request instead of using the SRP (Secure
+        /// Remote Password protocol) protocol to verify passwords.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based
+        /// authentication.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
+        /// authentication. In this flow, Cognito receives the password in the request
+        /// instead of using the SRP protocol to verify passwords.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
+        /// tokens.</p>
+        /// </li>
+        /// </ul>
         pub fn explicit_auth_flows(
             mut self,
             input: impl Into<crate::model::ExplicitAuthFlowsType>,
@@ -18760,6 +21964,41 @@ pub mod update_user_pool_client_input {
             self.explicit_auth_flows = Some(v);
             self
         }
+        /// <p>The authentication flows that are supported by the user pool clients. Flow names
+        /// without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the
+        /// <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot
+        /// be used along with values without <code>ALLOW_</code> prefix.</p>
+        /// <p>Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
+        /// authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
+        /// the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
+        /// Cognito receives the password in the request instead of using the SRP (Secure
+        /// Remote Password protocol) protocol to verify passwords.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based
+        /// authentication.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
+        /// authentication. In this flow, Cognito receives the password in the request
+        /// instead of using the SRP protocol to verify passwords.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
+        /// tokens.</p>
+        /// </li>
+        /// </ul>
         pub fn set_explicit_auth_flows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExplicitAuthFlowsType>>,
@@ -18767,6 +22006,12 @@ pub mod update_user_pool_client_input {
             self.explicit_auth_flows = input;
             self
         }
+        /// Appends an item to `supported_identity_providers`.
+        ///
+        /// To override the contents of this collection use [`set_supported_identity_providers`](Self::set_supported_identity_providers).
+        ///
+        /// <p>A list of provider names for the identity providers that are supported on this
+        /// client.</p>
         pub fn supported_identity_providers(
             mut self,
             input: impl Into<std::string::String>,
@@ -18776,6 +22021,8 @@ pub mod update_user_pool_client_input {
             self.supported_identity_providers = Some(v);
             self
         }
+        /// <p>A list of provider names for the identity providers that are supported on this
+        /// client.</p>
         pub fn set_supported_identity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18783,12 +22030,52 @@ pub mod update_user_pool_client_input {
             self.supported_identity_providers = input;
             self
         }
+        /// Appends an item to `callback_ur_ls`.
+        ///
+        /// To override the contents of this collection use [`set_callback_ur_ls`](Self::set_callback_ur_ls).
+        ///
+        /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+        /// <p>A redirect URI must:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Be an absolute URI.</p>
+        /// </li>
+        /// <li>
+        /// <p>Be registered with the authorization server.</p>
+        /// </li>
+        /// <li>
+        /// <p>Not include a fragment component.</p>
+        /// </li>
+        /// </ul>
+        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
+        /// Redirection Endpoint</a>.</p>
+        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
+        /// purposes only.</p>
+        /// <p>App callback URLs such as myapp://example are also supported.</p>
         pub fn callback_ur_ls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.callback_ur_ls.unwrap_or_default();
             v.push(input.into());
             self.callback_ur_ls = Some(v);
             self
         }
+        /// <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+        /// <p>A redirect URI must:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Be an absolute URI.</p>
+        /// </li>
+        /// <li>
+        /// <p>Be registered with the authorization server.</p>
+        /// </li>
+        /// <li>
+        /// <p>Not include a fragment component.</p>
+        /// </li>
+        /// </ul>
+        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
+        /// Redirection Endpoint</a>.</p>
+        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
+        /// purposes only.</p>
+        /// <p>App callback URLs such as myapp://example are also supported.</p>
         pub fn set_callback_ur_ls(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18796,12 +22083,18 @@ pub mod update_user_pool_client_input {
             self.callback_ur_ls = input;
             self
         }
+        /// Appends an item to `logout_ur_ls`.
+        ///
+        /// To override the contents of this collection use [`set_logout_ur_ls`](Self::set_logout_ur_ls).
+        ///
+        /// <p>A list of allowed logout URLs for the identity providers.</p>
         pub fn logout_ur_ls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.logout_ur_ls.unwrap_or_default();
             v.push(input.into());
             self.logout_ur_ls = Some(v);
             self
         }
+        /// <p>A list of allowed logout URLs for the identity providers.</p>
         pub fn set_logout_ur_ls(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18831,6 +22124,24 @@ pub mod update_user_pool_client_input {
             self.default_redirect_uri = Some(input.into());
             self
         }
+        /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
+        /// <p>A redirect URI must:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Be an absolute URI.</p>
+        /// </li>
+        /// <li>
+        /// <p>Be registered with the authorization server.</p>
+        /// </li>
+        /// <li>
+        /// <p>Not include a fragment component.</p>
+        /// </li>
+        /// </ul>
+        /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 -
+        /// Redirection Endpoint</a>.</p>
+        /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
+        /// purposes only.</p>
+        /// <p>App callback URLs such as myapp://example are also supported.</p>
         pub fn set_default_redirect_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18838,6 +22149,19 @@ pub mod update_user_pool_client_input {
             self.default_redirect_uri = input;
             self
         }
+        /// Appends an item to `allowed_o_auth_flows`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_o_auth_flows`](Self::set_allowed_o_auth_flows).
+        ///
+        /// <p>The allowed OAuth flows.</p>
+        /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an
+        /// authorization code as the response. This code can be exchanged for access tokens with
+        /// the token endpoint.</p>
+        /// <p>Set to <code>implicit</code> to specify that the client should get the access token
+        /// (and, optionally, ID token, based on scopes) directly.</p>
+        /// <p>Set to <code>client_credentials</code> to specify that the client should get the
+        /// access token (and, optionally, ID token, based on scopes) from the token endpoint using
+        /// a combination of client and client_secret.</p>
         pub fn allowed_o_auth_flows(
             mut self,
             input: impl Into<crate::model::OAuthFlowType>,
@@ -18847,6 +22171,15 @@ pub mod update_user_pool_client_input {
             self.allowed_o_auth_flows = Some(v);
             self
         }
+        /// <p>The allowed OAuth flows.</p>
+        /// <p>Set to <code>code</code> to initiate a code grant flow, which provides an
+        /// authorization code as the response. This code can be exchanged for access tokens with
+        /// the token endpoint.</p>
+        /// <p>Set to <code>implicit</code> to specify that the client should get the access token
+        /// (and, optionally, ID token, based on scopes) directly.</p>
+        /// <p>Set to <code>client_credentials</code> to specify that the client should get the
+        /// access token (and, optionally, ID token, based on scopes) from the token endpoint using
+        /// a combination of client and client_secret.</p>
         pub fn set_allowed_o_auth_flows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OAuthFlowType>>,
@@ -18854,12 +22187,24 @@ pub mod update_user_pool_client_input {
             self.allowed_o_auth_flows = input;
             self
         }
+        /// Appends an item to `allowed_o_auth_scopes`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_o_auth_scopes`](Self::set_allowed_o_auth_scopes).
+        ///
+        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
+        /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
+        /// provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
+        /// in Resource Servers are also supported.</p>
         pub fn allowed_o_auth_scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_o_auth_scopes.unwrap_or_default();
             v.push(input.into());
             self.allowed_o_auth_scopes = Some(v);
             self
         }
+        /// <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>,
+        /// <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values
+        /// provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created
+        /// in Resource Servers are also supported.</p>
         pub fn set_allowed_o_auth_scopes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18873,6 +22218,8 @@ pub mod update_user_pool_client_input {
             self.allowed_o_auth_flows_user_pool_client = Some(input);
             self
         }
+        /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting
+        /// with Cognito user pools.</p>
         pub fn set_allowed_o_auth_flows_user_pool_client(
             mut self,
             input: std::option::Option<bool>,
@@ -18895,6 +22242,14 @@ pub mod update_user_pool_client_input {
             self.analytics_configuration = Some(input);
             self
         }
+        /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user
+        /// pool.</p>
+        /// <note>
+        /// <p>In regions where Pinpoint is not available, Cognito User Pools only supports
+        /// sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint
+        /// is available, Cognito User Pools will support sending events to Amazon Pinpoint
+        /// projects within that same region. </p>
+        /// </note>
         pub fn set_analytics_configuration(
             mut self,
             input: std::option::Option<crate::model::AnalyticsConfigurationType>,
@@ -18922,6 +22277,8 @@ pub mod update_user_pool_client_input {
         /// existence related errors are not prevented.</p>
         /// </li>
         /// </ul>
+        ///
+        ///
         /// <note>
         /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code>
         /// will default to <code>ENABLED</code> for newly created user pool clients if no value
@@ -18934,6 +22291,33 @@ pub mod update_user_pool_client_input {
             self.prevent_user_existence_errors = Some(input);
             self
         }
+        /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs
+        /// during authentication, account confirmation, and password recovery when the user does
+        /// not exist in the user pool. When set to <code>ENABLED</code> and the user does not
+        /// exist, authentication returns an error indicating either the username or password was
+        /// incorrect, and account confirmation and password recovery return a response indicating a
+        /// code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs
+        /// will return a <code>UserNotFoundException</code> exception if the user does not exist in
+        /// the user pool.</p>
+        /// <p>Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ENABLED</code> - This prevents user existence-related errors.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LEGACY</code> - This represents the old behavior of Cognito where user
+        /// existence related errors are not prevented.</p>
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <note>
+        /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code>
+        /// will default to <code>ENABLED</code> for newly created user pool clients if no value
+        /// is provided.</p>
+        /// </note>
         pub fn set_prevent_user_existence_errors(
             mut self,
             input: std::option::Option<crate::model::PreventUserExistenceErrorTypes>,
@@ -18947,6 +22331,8 @@ pub mod update_user_pool_client_input {
             self.enable_token_revocation = Some(input);
             self
         }
+        /// <p>Enables or disables token revocation. For more information
+        /// about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
         pub fn set_enable_token_revocation(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_token_revocation = input;
             self
@@ -18956,7 +22342,7 @@ pub mod update_user_pool_client_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateUserPoolClientInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateUserPoolClientInput {
                 user_pool_id: self.user_pool_id,
@@ -18996,16 +22382,16 @@ impl UpdateUserPoolClientInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateUserPoolClient,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateUserPoolClientInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -19013,7 +22399,7 @@ impl UpdateUserPoolClientInput {
         fn update_http_builder(
             input: &crate::input::UpdateUserPoolClientInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -19022,32 +22408,34 @@ impl UpdateUserPoolClientInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateUserPoolClientInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.UpdateUserPoolClient",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_user_pool_client(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -19070,15 +22458,15 @@ impl UpdateUserPoolClientInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateUserPoolClient::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateUserPoolClient",
             "cognitoidentityprovider",
         ));
@@ -19087,10 +22475,10 @@ impl UpdateUserPoolClientInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -19123,6 +22511,10 @@ pub mod update_user_pool_domain_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The domain name for the custom domain that hosts the sign-up and sign-in pages for
+        /// your application. For example: <code>auth.example.com</code>. </p>
+        /// <p>This string can include only lowercase letters, numbers, and hyphens. Do not use a
+        /// hyphen for the first or last character. Use periods to separate subdomain names.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -19133,6 +22525,8 @@ pub mod update_user_pool_domain_input {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The ID of the user pool that is associated with the custom domain that you are
+        /// updating the certificate for.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -19144,6 +22538,9 @@ pub mod update_user_pool_domain_input {
             self.custom_domain_config = Some(input);
             self
         }
+        /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for
+        /// your application. Use this object to specify an SSL certificate that is managed by
+        /// ACM.</p>
         pub fn set_custom_domain_config(
             mut self,
             input: std::option::Option<crate::model::CustomDomainConfigType>,
@@ -19156,7 +22553,7 @@ pub mod update_user_pool_domain_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateUserPoolDomainInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateUserPoolDomainInput {
                 domain: self.domain,
@@ -19177,16 +22574,16 @@ impl UpdateUserPoolDomainInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateUserPoolDomain,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateUserPoolDomainInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -19194,7 +22591,7 @@ impl UpdateUserPoolDomainInput {
         fn update_http_builder(
             input: &crate::input::UpdateUserPoolDomainInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -19203,32 +22600,34 @@ impl UpdateUserPoolDomainInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateUserPoolDomainInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.UpdateUserPoolDomain",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_user_pool_domain(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -19251,15 +22650,15 @@ impl UpdateUserPoolDomainInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateUserPoolDomain::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateUserPoolDomain",
             "cognitoidentityprovider",
         ));
@@ -19268,10 +22667,10 @@ impl UpdateUserPoolDomainInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -19302,6 +22701,7 @@ pub mod verify_software_token_input {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>The access token.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -19312,6 +22712,8 @@ pub mod verify_software_token_input {
             self.session = Some(input.into());
             self
         }
+        /// <p>The session which should be passed both ways in challenge-response calls to the
+        /// service.</p>
         pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session = input;
             self
@@ -19321,6 +22723,7 @@ pub mod verify_software_token_input {
             self.user_code = Some(input.into());
             self
         }
+        /// <p>The one time password computed using the secret code returned by <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
         pub fn set_user_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_code = input;
             self
@@ -19330,6 +22733,7 @@ pub mod verify_software_token_input {
             self.friendly_device_name = Some(input.into());
             self
         }
+        /// <p>The friendly device name.</p>
         pub fn set_friendly_device_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19342,7 +22746,7 @@ pub mod verify_software_token_input {
             self,
         ) -> std::result::Result<
             crate::input::VerifySoftwareTokenInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::VerifySoftwareTokenInput {
                 access_token: self.access_token,
@@ -19364,16 +22768,16 @@ impl VerifySoftwareTokenInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::VerifySoftwareToken,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::VerifySoftwareTokenInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -19381,7 +22785,7 @@ impl VerifySoftwareTokenInput {
         fn update_http_builder(
             input: &crate::input::VerifySoftwareTokenInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -19390,32 +22794,32 @@ impl VerifySoftwareTokenInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::VerifySoftwareTokenInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.VerifySoftwareToken",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_verify_software_token(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -19438,15 +22842,15 @@ impl VerifySoftwareTokenInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::VerifySoftwareToken::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "VerifySoftwareToken",
             "cognitoidentityprovider",
         ));
@@ -19455,10 +22859,10 @@ impl VerifySoftwareTokenInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -19488,6 +22892,7 @@ pub mod verify_user_attribute_input {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>Represents the access token of the request to verify user attributes.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -19497,6 +22902,7 @@ pub mod verify_user_attribute_input {
             self.attribute_name = Some(input.into());
             self
         }
+        /// <p>The attribute name in the request to verify user attributes.</p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19509,6 +22915,7 @@ pub mod verify_user_attribute_input {
             self.code = Some(input.into());
             self
         }
+        /// <p>The verification code in the request to verify user attributes.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
@@ -19518,7 +22925,7 @@ pub mod verify_user_attribute_input {
             self,
         ) -> std::result::Result<
             crate::input::VerifyUserAttributeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::VerifyUserAttributeInput {
                 access_token: self.access_token,
@@ -19539,16 +22946,16 @@ impl VerifyUserAttributeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::VerifyUserAttribute,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::VerifyUserAttributeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -19556,7 +22963,7 @@ impl VerifyUserAttributeInput {
         fn update_http_builder(
             input: &crate::input::VerifyUserAttributeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -19565,32 +22972,32 @@ impl VerifyUserAttributeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::VerifyUserAttributeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSCognitoIdentityProviderService.VerifyUserAttribute",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_verify_user_attribute(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -19614,15 +23021,15 @@ impl VerifyUserAttributeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::VerifyUserAttribute::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "VerifyUserAttribute",
             "cognitoidentityprovider",
         ));
@@ -19631,10 +23038,10 @@ impl VerifyUserAttributeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -19669,6 +23076,7 @@ impl std::fmt::Debug for VerifyUserAttributeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifySoftwareTokenInput {
@@ -19873,6 +23281,8 @@ pub struct UpdateUserPoolClientInput {
     /// existence related errors are not prevented.</p>
     /// </li>
     /// </ul>
+    ///
+    ///
     /// <note>
     /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code>
     /// will default to <code>ENABLED</code> for newly created user pool clients if no value
@@ -20081,6 +23491,7 @@ impl std::fmt::Debug for UpdateUserAttributesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceServerInput {
@@ -20104,6 +23515,7 @@ impl std::fmt::Debug for UpdateResourceServerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIdentityProviderInput {
@@ -20133,6 +23545,7 @@ impl std::fmt::Debug for UpdateIdentityProviderInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGroupInput {
@@ -20183,6 +23596,7 @@ impl std::fmt::Debug for UpdateDeviceStatusInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAuthEventFeedbackInput {
@@ -20209,6 +23623,7 @@ impl std::fmt::Debug for UpdateAuthEventFeedbackInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -20226,6 +23641,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -20376,6 +23792,7 @@ impl std::fmt::Debug for SetUserSettingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetUserPoolMfaConfigInput {
@@ -20421,6 +23838,7 @@ impl std::fmt::Debug for SetUserPoolMfaConfigInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetUserMfaPreferenceInput {
@@ -20445,6 +23863,7 @@ impl std::fmt::Debug for SetUserMfaPreferenceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetUiCustomizationInput {
@@ -20455,7 +23874,7 @@ pub struct SetUiCustomizationInput {
     /// <p>The CSS values in the UI customization.</p>
     pub css: std::option::Option<std::string::String>,
     /// <p>The uploaded logo image for the UI customization.</p>
-    pub image_file: std::option::Option<smithy_types::Blob>,
+    pub image_file: std::option::Option<aws_smithy_types::Blob>,
 }
 impl std::fmt::Debug for SetUiCustomizationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -20468,6 +23887,7 @@ impl std::fmt::Debug for SetUiCustomizationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetRiskConfigurationInput {
@@ -20511,6 +23931,7 @@ impl std::fmt::Debug for SetRiskConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeTokenInput {
@@ -20719,6 +24140,7 @@ impl std::fmt::Debug for ResendConfirmationCodeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersInGroupInput {
@@ -20917,6 +24339,7 @@ impl std::fmt::Debug for ListUserImportJobsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -20931,6 +24354,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceServersInput {
@@ -20951,6 +24375,7 @@ impl std::fmt::Debug for ListResourceServersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIdentityProvidersInput {
@@ -20971,6 +24396,7 @@ impl std::fmt::Debug for ListIdentityProvidersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsInput {
@@ -21202,6 +24628,7 @@ impl std::fmt::Debug for GlobalSignOutInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserPoolMfaConfigInput {
@@ -21287,6 +24714,7 @@ impl std::fmt::Debug for GetUserInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUiCustomizationInput {
@@ -21319,6 +24747,7 @@ impl std::fmt::Debug for GetSigningCertificateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityProviderByIdentifierInput {
@@ -21336,6 +24765,7 @@ impl std::fmt::Debug for GetIdentityProviderByIdentifierInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupInput {
@@ -21473,6 +24903,7 @@ impl std::fmt::Debug for ForgetDeviceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserPoolDomainInput {
@@ -21538,6 +24969,7 @@ impl std::fmt::Debug for DescribeUserImportJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRiskConfigurationInput {
@@ -21555,6 +24987,7 @@ impl std::fmt::Debug for DescribeRiskConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourceServerInput {
@@ -21572,6 +25005,7 @@ impl std::fmt::Debug for DescribeResourceServerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIdentityProviderInput {
@@ -21589,6 +25023,7 @@ impl std::fmt::Debug for DescribeIdentityProviderInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserPoolDomainInput {
@@ -21674,6 +25109,7 @@ impl std::fmt::Debug for DeleteUserInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceServerInput {
@@ -21691,6 +25127,7 @@ impl std::fmt::Debug for DeleteResourceServerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIdentityProviderInput {
@@ -21708,6 +25145,7 @@ impl std::fmt::Debug for DeleteIdentityProviderInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGroupInput {
@@ -21725,6 +25163,7 @@ impl std::fmt::Debug for DeleteGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserPoolDomainInput {
@@ -21914,6 +25353,8 @@ pub struct CreateUserPoolClientInput {
     /// existence related errors are not prevented.</p>
     /// </li>
     /// </ul>
+    ///
+    ///
     /// <note>
     /// <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code>
     /// will default to <code>ENABLED</code> for newly created user pool clients if no value
@@ -22101,6 +25542,7 @@ impl std::fmt::Debug for CreateUserImportJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceServerInput {
@@ -22127,6 +25569,7 @@ impl std::fmt::Debug for CreateResourceServerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIdentityProviderInput {
@@ -22265,6 +25708,7 @@ impl std::fmt::Debug for CreateIdentityProviderInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupInput {
@@ -22503,6 +25947,7 @@ impl std::fmt::Debug for ChangePasswordInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateSoftwareTokenInput {
@@ -22621,6 +26066,7 @@ impl std::fmt::Debug for AdminUpdateDeviceStatusInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminUpdateAuthEventFeedbackInput {
@@ -22668,6 +26114,7 @@ impl std::fmt::Debug for AdminSetUserSettingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminSetUserPasswordInput {
@@ -22693,6 +26140,7 @@ impl std::fmt::Debug for AdminSetUserPasswordInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminSetUserMfaPreferenceInput {
@@ -22892,6 +26340,7 @@ impl std::fmt::Debug for AdminResetUserPasswordInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminRemoveUserFromGroupInput {
@@ -22912,6 +26361,7 @@ impl std::fmt::Debug for AdminRemoveUserFromGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminListUserAuthEventsInput {
@@ -22935,6 +26385,7 @@ impl std::fmt::Debug for AdminListUserAuthEventsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminListGroupsForUserInput {
@@ -22983,6 +26434,7 @@ impl std::fmt::Debug for AdminListDevicesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminLinkProviderForUserInput {
@@ -23317,6 +26769,7 @@ impl std::fmt::Debug for AdminDisableUserInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminDisableProviderForUserInput {
@@ -23565,6 +27018,7 @@ impl std::fmt::Debug for AdminConfirmSignUpInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminAddUserToGroupInput {

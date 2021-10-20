@@ -4,7 +4,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_complete_multipart_upload_inp
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("CompleteMultipartUpload")
@@ -19,7 +19,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_create_bucket_input_create_bu
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("CreateBucketConfiguration")
@@ -34,7 +34,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_delete_objects_input_delete(
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("Delete")
@@ -49,7 +49,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_accelerate_configu
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("AccelerateConfiguration")
@@ -64,7 +64,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_acl_input_access_c
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("AccessControlPolicy")
@@ -79,7 +79,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_analytics_configur
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("AnalyticsConfiguration")
@@ -94,7 +94,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_cors_input_cors_co
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("CORSConfiguration")
@@ -109,7 +109,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_encryption_input_s
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("ServerSideEncryptionConfiguration")
@@ -126,7 +126,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_intelligent_tierin
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("IntelligentTieringConfiguration")
@@ -143,7 +143,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_inventory_configur
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("InventoryConfiguration")
@@ -158,7 +158,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_lifecycle_configur
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("LifecycleConfiguration")
@@ -175,7 +175,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_logging_input_buck
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("BucketLoggingStatus")
@@ -190,7 +190,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_metrics_configurat
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("MetricsConfiguration")
@@ -205,7 +205,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_notification_confi
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("NotificationConfiguration")
@@ -220,7 +220,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_ownership_controls
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("OwnershipControls")
@@ -235,7 +235,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_replication_input_
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("ReplicationConfiguration")
@@ -250,7 +250,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_request_payment_in
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("RequestPaymentConfiguration")
@@ -265,7 +265,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_tagging_input_tagg
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("Tagging")
@@ -280,7 +280,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_versioning_input_v
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("VersioningConfiguration")
@@ -295,7 +295,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_bucket_website_input_webs
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("WebsiteConfiguration")
@@ -310,7 +310,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_object_acl_input_access_c
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("AccessControlPolicy")
@@ -325,7 +325,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_object_legal_hold_input_l
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("LegalHold")
@@ -340,7 +340,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_object_lock_configuration
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("ObjectLockConfiguration")
@@ -355,7 +355,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_object_retention_input_re
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("Retention")
@@ -370,7 +370,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_object_tagging_input_tagg
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("Tagging")
@@ -385,7 +385,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_put_public_access_block_input
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("PublicAccessBlockConfiguration")
@@ -402,7 +402,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_restore_object_input_restore_
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("RestoreRequest")
@@ -414,7 +414,7 @@ pub fn serialize_member_com_amazonaws_s3_synthetic_restore_object_input_restore_
 
 pub fn serialize_structure_crate_input_select_object_content_input(
     input: &crate::input::SelectObjectContentInput,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -461,7 +461,7 @@ pub fn serialize_structure_crate_input_select_object_content_input(
 
 pub fn serialize_structure_crate_model_completed_multipart_upload(
     input: &crate::model::CompletedMultipartUpload,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -483,7 +483,7 @@ pub fn serialize_structure_crate_model_completed_multipart_upload(
 
 pub fn serialize_structure_crate_model_create_bucket_configuration(
     input: &crate::model::CreateBucketConfiguration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -499,7 +499,7 @@ pub fn serialize_structure_crate_model_create_bucket_configuration(
 
 pub fn serialize_structure_crate_model_delete(
     input: &crate::model::Delete,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -521,14 +521,14 @@ pub fn serialize_structure_crate_model_delete(
             .start_el("Quiet")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(input.quiet).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(input.quiet).encode());
     }
     scope.finish();
 }
 
 pub fn serialize_structure_crate_model_accelerate_configuration(
     input: &crate::model::AccelerateConfiguration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -544,7 +544,7 @@ pub fn serialize_structure_crate_model_accelerate_configuration(
 
 pub fn serialize_structure_crate_model_access_control_policy(
     input: &crate::model::AccessControlPolicy,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -573,7 +573,7 @@ pub fn serialize_structure_crate_model_access_control_policy(
 
 pub fn serialize_structure_crate_model_analytics_configuration(
     input: &crate::model::AnalyticsConfiguration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -604,7 +604,7 @@ pub fn serialize_structure_crate_model_analytics_configuration(
 
 pub fn serialize_structure_crate_model_cors_configuration(
     input: &crate::model::CorsConfiguration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -626,7 +626,7 @@ pub fn serialize_structure_crate_model_cors_configuration(
 
 pub fn serialize_structure_crate_model_server_side_encryption_configuration(
     input: &crate::model::ServerSideEncryptionConfiguration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -648,7 +648,7 @@ pub fn serialize_structure_crate_model_server_side_encryption_configuration(
 
 pub fn serialize_structure_crate_model_intelligent_tiering_configuration(
     input: &crate::model::IntelligentTieringConfiguration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -690,7 +690,7 @@ pub fn serialize_structure_crate_model_intelligent_tiering_configuration(
 
 pub fn serialize_structure_crate_model_inventory_configuration(
     input: &crate::model::InventoryConfiguration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -705,7 +705,7 @@ pub fn serialize_structure_crate_model_inventory_configuration(
             .start_el("IsEnabled")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(input.is_enabled).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(input.is_enabled).encode());
     }
     if let Some(var_29) = &input.filter {
         let inner_writer = scope
@@ -753,7 +753,7 @@ pub fn serialize_structure_crate_model_inventory_configuration(
 
 pub fn serialize_structure_crate_model_bucket_lifecycle_configuration(
     input: &crate::model::BucketLifecycleConfiguration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -775,7 +775,7 @@ pub fn serialize_structure_crate_model_bucket_lifecycle_configuration(
 
 pub fn serialize_structure_crate_model_bucket_logging_status(
     input: &crate::model::BucketLoggingStatus,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -790,7 +790,7 @@ pub fn serialize_structure_crate_model_bucket_logging_status(
 
 pub fn serialize_structure_crate_model_metrics_configuration(
     input: &crate::model::MetricsConfiguration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -812,7 +812,7 @@ pub fn serialize_structure_crate_model_metrics_configuration(
 
 pub fn serialize_structure_crate_model_notification_configuration(
     input: &crate::model::NotificationConfiguration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -860,7 +860,7 @@ pub fn serialize_structure_crate_model_notification_configuration(
 
 pub fn serialize_structure_crate_model_ownership_controls(
     input: &crate::model::OwnershipControls,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -882,7 +882,7 @@ pub fn serialize_structure_crate_model_ownership_controls(
 
 pub fn serialize_structure_crate_model_replication_configuration(
     input: &crate::model::ReplicationConfiguration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -911,7 +911,7 @@ pub fn serialize_structure_crate_model_replication_configuration(
 
 pub fn serialize_structure_crate_model_request_payment_configuration(
     input: &crate::model::RequestPaymentConfiguration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -927,7 +927,7 @@ pub fn serialize_structure_crate_model_request_payment_configuration(
 
 pub fn serialize_structure_crate_model_tagging(
     input: &crate::model::Tagging,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -950,7 +950,7 @@ pub fn serialize_structure_crate_model_tagging(
 
 pub fn serialize_structure_crate_model_versioning_configuration(
     input: &crate::model::VersioningConfiguration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -973,7 +973,7 @@ pub fn serialize_structure_crate_model_versioning_configuration(
 
 pub fn serialize_structure_crate_model_website_configuration(
     input: &crate::model::WebsiteConfiguration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1020,7 +1020,7 @@ pub fn serialize_structure_crate_model_website_configuration(
 
 pub fn serialize_structure_crate_model_object_lock_legal_hold(
     input: &crate::model::ObjectLockLegalHold,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1036,7 +1036,7 @@ pub fn serialize_structure_crate_model_object_lock_legal_hold(
 
 pub fn serialize_structure_crate_model_object_lock_configuration(
     input: &crate::model::ObjectLockConfiguration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1058,7 +1058,7 @@ pub fn serialize_structure_crate_model_object_lock_configuration(
 
 pub fn serialize_structure_crate_model_object_lock_retention(
     input: &crate::model::ObjectLockRetention,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1074,14 +1074,18 @@ pub fn serialize_structure_crate_model_object_lock_retention(
             .start_el("RetainUntilDate")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(var_65.fmt(smithy_types::instant::Format::DateTime).as_ref());
+        inner_writer.data(
+            var_65
+                .fmt(aws_smithy_types::instant::Format::DateTime)
+                .as_ref(),
+        );
     }
     scope.finish();
 }
 
 pub fn serialize_structure_crate_model_public_access_block_configuration(
     input: &crate::model::PublicAccessBlockConfiguration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1090,7 +1094,8 @@ pub fn serialize_structure_crate_model_public_access_block_configuration(
             .start_el("BlockPublicAcls")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(input.block_public_acls).encode());
+        inner_writer
+            .data(aws_smithy_types::primitive::Encoder::from(input.block_public_acls).encode());
     }
     if input.ignore_public_acls {
         let mut inner_writer = scope
@@ -1098,7 +1103,7 @@ pub fn serialize_structure_crate_model_public_access_block_configuration(
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
         inner_writer
-            .data(smithy_types::primitive::Encoder::from(input.ignore_public_acls).encode());
+            .data(aws_smithy_types::primitive::Encoder::from(input.ignore_public_acls).encode());
     }
     if input.block_public_policy {
         let mut inner_writer = scope
@@ -1106,22 +1111,23 @@ pub fn serialize_structure_crate_model_public_access_block_configuration(
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
         inner_writer
-            .data(smithy_types::primitive::Encoder::from(input.block_public_policy).encode());
+            .data(aws_smithy_types::primitive::Encoder::from(input.block_public_policy).encode());
     }
     if input.restrict_public_buckets {
         let mut inner_writer = scope
             .start_el("RestrictPublicBuckets")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer
-            .data(smithy_types::primitive::Encoder::from(input.restrict_public_buckets).encode());
+        inner_writer.data(
+            aws_smithy_types::primitive::Encoder::from(input.restrict_public_buckets).encode(),
+        );
     }
     scope.finish();
 }
 
 pub fn serialize_structure_crate_model_restore_request(
     input: &crate::model::RestoreRequest,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1130,7 +1136,7 @@ pub fn serialize_structure_crate_model_restore_request(
             .start_el("Days")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(input.days).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(input.days).encode());
     }
     if let Some(var_66) = &input.glacier_job_parameters {
         let inner_writer = scope
@@ -1179,7 +1185,7 @@ pub fn serialize_structure_crate_model_restore_request(
 
 pub fn serialize_structure_crate_model_input_serialization(
     input: &crate::model::InputSerialization,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1213,7 +1219,7 @@ pub fn serialize_structure_crate_model_input_serialization(
 
 pub fn serialize_structure_crate_model_output_serialization(
     input: &crate::model::OutputSerialization,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1234,7 +1240,7 @@ pub fn serialize_structure_crate_model_output_serialization(
 
 pub fn serialize_structure_crate_model_request_progress(
     input: &crate::model::RequestProgress,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1243,14 +1249,14 @@ pub fn serialize_structure_crate_model_request_progress(
             .start_el("Enabled")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(input.enabled).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(input.enabled).encode());
     }
     scope.finish();
 }
 
 pub fn serialize_structure_crate_model_scan_range(
     input: &crate::model::ScanRange,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1259,21 +1265,21 @@ pub fn serialize_structure_crate_model_scan_range(
             .start_el("Start")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(input.start).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(input.start).encode());
     }
     if input.end != 0 {
         let mut inner_writer = scope
             .start_el("End")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(input.end).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(input.end).encode());
     }
     scope.finish();
 }
 
 pub fn serialize_structure_crate_model_completed_part(
     input: &crate::model::CompletedPart,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1289,14 +1295,14 @@ pub fn serialize_structure_crate_model_completed_part(
             .start_el("PartNumber")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(input.part_number).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(input.part_number).encode());
     }
     scope.finish();
 }
 
 pub fn serialize_structure_crate_model_object_identifier(
     input: &crate::model::ObjectIdentifier,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1319,7 +1325,7 @@ pub fn serialize_structure_crate_model_object_identifier(
 
 pub fn serialize_structure_crate_model_grant(
     input: &crate::model::Grant,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1341,7 +1347,7 @@ pub fn serialize_structure_crate_model_grant(
 
 pub fn serialize_structure_crate_model_owner(
     input: &crate::model::Owner,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1364,7 +1370,7 @@ pub fn serialize_structure_crate_model_owner(
 
 pub fn serialize_union_crate_model_analytics_filter(
     input: &crate::model::AnalyticsFilter,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     let mut scope_writer = writer.finish();
     match input {
@@ -1395,7 +1401,7 @@ pub fn serialize_union_crate_model_analytics_filter(
 
 pub fn serialize_structure_crate_model_storage_class_analysis(
     input: &crate::model::StorageClassAnalysis,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1413,7 +1419,7 @@ pub fn serialize_structure_crate_model_storage_class_analysis(
 
 pub fn serialize_structure_crate_model_cors_rule(
     input: &crate::model::CorsRule,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1473,14 +1479,15 @@ pub fn serialize_structure_crate_model_cors_rule(
             .start_el("MaxAgeSeconds")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(input.max_age_seconds).encode());
+        inner_writer
+            .data(aws_smithy_types::primitive::Encoder::from(input.max_age_seconds).encode());
     }
     scope.finish();
 }
 
 pub fn serialize_structure_crate_model_server_side_encryption_rule(
     input: &crate::model::ServerSideEncryptionRule,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1499,14 +1506,14 @@ pub fn serialize_structure_crate_model_server_side_encryption_rule(
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
         inner_writer
-            .data(smithy_types::primitive::Encoder::from(input.bucket_key_enabled).encode());
+            .data(aws_smithy_types::primitive::Encoder::from(input.bucket_key_enabled).encode());
     }
     scope.finish();
 }
 
 pub fn serialize_structure_crate_model_intelligent_tiering_filter(
     input: &crate::model::IntelligentTieringFilter,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1537,7 +1544,7 @@ pub fn serialize_structure_crate_model_intelligent_tiering_filter(
 
 pub fn serialize_structure_crate_model_tiering(
     input: &crate::model::Tiering,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1546,7 +1553,7 @@ pub fn serialize_structure_crate_model_tiering(
             .start_el("Days")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(input.days).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(input.days).encode());
     }
     if let Some(var_99) = &input.access_tier {
         let mut inner_writer = scope
@@ -1560,7 +1567,7 @@ pub fn serialize_structure_crate_model_tiering(
 
 pub fn serialize_structure_crate_model_inventory_destination(
     input: &crate::model::InventoryDestination,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1578,7 +1585,7 @@ pub fn serialize_structure_crate_model_inventory_destination(
 
 pub fn serialize_structure_crate_model_inventory_filter(
     input: &crate::model::InventoryFilter,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1594,7 +1601,7 @@ pub fn serialize_structure_crate_model_inventory_filter(
 
 pub fn serialize_structure_crate_model_inventory_schedule(
     input: &crate::model::InventorySchedule,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1610,7 +1617,7 @@ pub fn serialize_structure_crate_model_inventory_schedule(
 
 pub fn serialize_structure_crate_model_lifecycle_rule(
     input: &crate::model::LifecycleRule,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1696,7 +1703,7 @@ pub fn serialize_structure_crate_model_lifecycle_rule(
 
 pub fn serialize_structure_crate_model_logging_enabled(
     input: &crate::model::LoggingEnabled,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1736,7 +1743,7 @@ pub fn serialize_structure_crate_model_logging_enabled(
 
 pub fn serialize_union_crate_model_metrics_filter(
     input: &crate::model::MetricsFilter,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     let mut scope_writer = writer.finish();
     match input {
@@ -1774,7 +1781,7 @@ pub fn serialize_union_crate_model_metrics_filter(
 
 pub fn serialize_structure_crate_model_topic_configuration(
     input: &crate::model::TopicConfiguration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1817,7 +1824,7 @@ pub fn serialize_structure_crate_model_topic_configuration(
 
 pub fn serialize_structure_crate_model_queue_configuration(
     input: &crate::model::QueueConfiguration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1860,7 +1867,7 @@ pub fn serialize_structure_crate_model_queue_configuration(
 
 pub fn serialize_structure_crate_model_lambda_function_configuration(
     input: &crate::model::LambdaFunctionConfiguration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1903,7 +1910,7 @@ pub fn serialize_structure_crate_model_lambda_function_configuration(
 
 pub fn serialize_structure_crate_model_ownership_controls_rule(
     input: &crate::model::OwnershipControlsRule,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1919,7 +1926,7 @@ pub fn serialize_structure_crate_model_ownership_controls_rule(
 
 pub fn serialize_structure_crate_model_replication_rule(
     input: &crate::model::ReplicationRule,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1935,7 +1942,7 @@ pub fn serialize_structure_crate_model_replication_rule(
             .start_el("Priority")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(input.priority).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(input.priority).encode());
     }
     if let Some(var_135) = &input.prefix {
         let mut inner_writer = scope
@@ -1995,7 +2002,7 @@ pub fn serialize_structure_crate_model_replication_rule(
 
 pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2018,7 +2025,7 @@ pub fn serialize_structure_crate_model_tag(
 
 pub fn serialize_structure_crate_model_error_document(
     input: &crate::model::ErrorDocument,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2034,7 +2041,7 @@ pub fn serialize_structure_crate_model_error_document(
 
 pub fn serialize_structure_crate_model_index_document(
     input: &crate::model::IndexDocument,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2050,7 +2057,7 @@ pub fn serialize_structure_crate_model_index_document(
 
 pub fn serialize_structure_crate_model_redirect_all_requests_to(
     input: &crate::model::RedirectAllRequestsTo,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2073,7 +2080,7 @@ pub fn serialize_structure_crate_model_redirect_all_requests_to(
 
 pub fn serialize_structure_crate_model_routing_rule(
     input: &crate::model::RoutingRule,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2094,7 +2101,7 @@ pub fn serialize_structure_crate_model_routing_rule(
 
 pub fn serialize_structure_crate_model_object_lock_rule(
     input: &crate::model::ObjectLockRule,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2109,7 +2116,7 @@ pub fn serialize_structure_crate_model_object_lock_rule(
 
 pub fn serialize_structure_crate_model_glacier_job_parameters(
     input: &crate::model::GlacierJobParameters,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2125,7 +2132,7 @@ pub fn serialize_structure_crate_model_glacier_job_parameters(
 
 pub fn serialize_structure_crate_model_select_parameters(
     input: &crate::model::SelectParameters,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2160,7 +2167,7 @@ pub fn serialize_structure_crate_model_select_parameters(
 
 pub fn serialize_structure_crate_model_output_location(
     input: &crate::model::OutputLocation,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2175,7 +2182,7 @@ pub fn serialize_structure_crate_model_output_location(
 
 pub fn serialize_structure_crate_model_csv_input(
     input: &crate::model::CsvInput,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2227,7 +2234,8 @@ pub fn serialize_structure_crate_model_csv_input(
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
         inner_writer.data(
-            smithy_types::primitive::Encoder::from(input.allow_quoted_record_delimiter).encode(),
+            aws_smithy_types::primitive::Encoder::from(input.allow_quoted_record_delimiter)
+                .encode(),
         );
     }
     scope.finish();
@@ -2235,7 +2243,7 @@ pub fn serialize_structure_crate_model_csv_input(
 
 pub fn serialize_structure_crate_model_json_input(
     input: &crate::model::JsonInput,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2251,7 +2259,7 @@ pub fn serialize_structure_crate_model_json_input(
 
 pub fn serialize_structure_crate_model_parquet_input(
     input: &crate::model::ParquetInput,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     let _ = input;
     #[allow(unused_mut)]
@@ -2261,7 +2269,7 @@ pub fn serialize_structure_crate_model_parquet_input(
 
 pub fn serialize_structure_crate_model_csv_output(
     input: &crate::model::CsvOutput,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2305,7 +2313,7 @@ pub fn serialize_structure_crate_model_csv_output(
 
 pub fn serialize_structure_crate_model_json_output(
     input: &crate::model::JsonOutput,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2321,7 +2329,7 @@ pub fn serialize_structure_crate_model_json_output(
 
 pub fn serialize_structure_crate_model_grantee(
     input: &crate::model::Grantee,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     let mut writer = writer;
     if let Some(var_170) = &input.r#type {
@@ -2362,7 +2370,7 @@ pub fn serialize_structure_crate_model_grantee(
 
 pub fn serialize_structure_crate_model_analytics_and_operator(
     input: &crate::model::AnalyticsAndOperator,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2388,7 +2396,7 @@ pub fn serialize_structure_crate_model_analytics_and_operator(
 
 pub fn serialize_structure_crate_model_storage_class_analysis_data_export(
     input: &crate::model::StorageClassAnalysisDataExport,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2413,7 +2421,7 @@ pub fn serialize_structure_crate_model_storage_class_analysis_data_export(
 
 pub fn serialize_structure_crate_model_server_side_encryption_by_default(
     input: &crate::model::ServerSideEncryptionByDefault,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2436,7 +2444,7 @@ pub fn serialize_structure_crate_model_server_side_encryption_by_default(
 
 pub fn serialize_structure_crate_model_intelligent_tiering_and_operator(
     input: &crate::model::IntelligentTieringAndOperator,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2462,7 +2470,7 @@ pub fn serialize_structure_crate_model_intelligent_tiering_and_operator(
 
 pub fn serialize_structure_crate_model_inventory_s3_bucket_destination(
     input: &crate::model::InventoryS3BucketDestination,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2505,7 +2513,7 @@ pub fn serialize_structure_crate_model_inventory_s3_bucket_destination(
 
 pub fn serialize_structure_crate_model_lifecycle_expiration(
     input: &crate::model::LifecycleExpiration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2516,7 +2524,7 @@ pub fn serialize_structure_crate_model_lifecycle_expiration(
             .finish();
         inner_writer.data(
             var_190
-                .fmt(smithy_types::instant::Format::DateTime)
+                .fmt(aws_smithy_types::instant::Format::DateTime)
                 .as_ref(),
         );
     }
@@ -2525,7 +2533,7 @@ pub fn serialize_structure_crate_model_lifecycle_expiration(
             .start_el("Days")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(input.days).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(input.days).encode());
     }
     if input.expired_object_delete_marker {
         let mut inner_writer = scope
@@ -2533,7 +2541,7 @@ pub fn serialize_structure_crate_model_lifecycle_expiration(
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
         inner_writer.data(
-            smithy_types::primitive::Encoder::from(input.expired_object_delete_marker).encode(),
+            aws_smithy_types::primitive::Encoder::from(input.expired_object_delete_marker).encode(),
         );
     }
     scope.finish();
@@ -2541,7 +2549,7 @@ pub fn serialize_structure_crate_model_lifecycle_expiration(
 
 pub fn serialize_union_crate_model_lifecycle_rule_filter(
     input: &crate::model::LifecycleRuleFilter,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     let mut scope_writer = writer.finish();
     match input {
@@ -2572,7 +2580,7 @@ pub fn serialize_union_crate_model_lifecycle_rule_filter(
 
 pub fn serialize_structure_crate_model_transition(
     input: &crate::model::Transition,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2583,7 +2591,7 @@ pub fn serialize_structure_crate_model_transition(
             .finish();
         inner_writer.data(
             var_191
-                .fmt(smithy_types::instant::Format::DateTime)
+                .fmt(aws_smithy_types::instant::Format::DateTime)
                 .as_ref(),
         );
     }
@@ -2592,7 +2600,7 @@ pub fn serialize_structure_crate_model_transition(
             .start_el("Days")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(input.days).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(input.days).encode());
     }
     if let Some(var_192) = &input.storage_class {
         let mut inner_writer = scope
@@ -2606,7 +2614,7 @@ pub fn serialize_structure_crate_model_transition(
 
 pub fn serialize_structure_crate_model_noncurrent_version_transition(
     input: &crate::model::NoncurrentVersionTransition,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2615,7 +2623,8 @@ pub fn serialize_structure_crate_model_noncurrent_version_transition(
             .start_el("NoncurrentDays")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(input.noncurrent_days).encode());
+        inner_writer
+            .data(aws_smithy_types::primitive::Encoder::from(input.noncurrent_days).encode());
     }
     if let Some(var_193) = &input.storage_class {
         let mut inner_writer = scope
@@ -2629,7 +2638,7 @@ pub fn serialize_structure_crate_model_noncurrent_version_transition(
 
 pub fn serialize_structure_crate_model_noncurrent_version_expiration(
     input: &crate::model::NoncurrentVersionExpiration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2638,14 +2647,15 @@ pub fn serialize_structure_crate_model_noncurrent_version_expiration(
             .start_el("NoncurrentDays")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(input.noncurrent_days).encode());
+        inner_writer
+            .data(aws_smithy_types::primitive::Encoder::from(input.noncurrent_days).encode());
     }
     scope.finish();
 }
 
 pub fn serialize_structure_crate_model_abort_incomplete_multipart_upload(
     input: &crate::model::AbortIncompleteMultipartUpload,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2655,14 +2665,14 @@ pub fn serialize_structure_crate_model_abort_incomplete_multipart_upload(
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
         inner_writer
-            .data(smithy_types::primitive::Encoder::from(input.days_after_initiation).encode());
+            .data(aws_smithy_types::primitive::Encoder::from(input.days_after_initiation).encode());
     }
     scope.finish();
 }
 
 pub fn serialize_structure_crate_model_target_grant(
     input: &crate::model::TargetGrant,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2684,7 +2694,7 @@ pub fn serialize_structure_crate_model_target_grant(
 
 pub fn serialize_structure_crate_model_metrics_and_operator(
     input: &crate::model::MetricsAndOperator,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2717,7 +2727,7 @@ pub fn serialize_structure_crate_model_metrics_and_operator(
 
 pub fn serialize_structure_crate_model_notification_configuration_filter(
     input: &crate::model::NotificationConfigurationFilter,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2732,7 +2742,7 @@ pub fn serialize_structure_crate_model_notification_configuration_filter(
 
 pub fn serialize_union_crate_model_replication_rule_filter(
     input: &crate::model::ReplicationRuleFilter,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     let mut scope_writer = writer.finish();
     match input {
@@ -2763,7 +2773,7 @@ pub fn serialize_union_crate_model_replication_rule_filter(
 
 pub fn serialize_structure_crate_model_source_selection_criteria(
     input: &crate::model::SourceSelectionCriteria,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2790,7 +2800,7 @@ pub fn serialize_structure_crate_model_source_selection_criteria(
 
 pub fn serialize_structure_crate_model_existing_object_replication(
     input: &crate::model::ExistingObjectReplication,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2806,7 +2816,7 @@ pub fn serialize_structure_crate_model_existing_object_replication(
 
 pub fn serialize_structure_crate_model_destination(
     input: &crate::model::Destination,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2866,7 +2876,7 @@ pub fn serialize_structure_crate_model_destination(
 
 pub fn serialize_structure_crate_model_delete_marker_replication(
     input: &crate::model::DeleteMarkerReplication,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2882,7 +2892,7 @@ pub fn serialize_structure_crate_model_delete_marker_replication(
 
 pub fn serialize_structure_crate_model_condition(
     input: &crate::model::Condition,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2905,7 +2915,7 @@ pub fn serialize_structure_crate_model_condition(
 
 pub fn serialize_structure_crate_model_redirect(
     input: &crate::model::Redirect,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2949,7 +2959,7 @@ pub fn serialize_structure_crate_model_redirect(
 
 pub fn serialize_structure_crate_model_default_retention(
     input: &crate::model::DefaultRetention,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2965,21 +2975,21 @@ pub fn serialize_structure_crate_model_default_retention(
             .start_el("Days")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(input.days).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(input.days).encode());
     }
     if input.years != 0 {
         let mut inner_writer = scope
             .start_el("Years")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(input.years).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(input.years).encode());
     }
     scope.finish();
 }
 
 pub fn serialize_structure_crate_model_s3_location(
     input: &crate::model::S3Location,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3059,7 +3069,7 @@ pub fn serialize_structure_crate_model_s3_location(
 
 pub fn serialize_structure_crate_model_analytics_export_destination(
     input: &crate::model::AnalyticsExportDestination,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3077,7 +3087,7 @@ pub fn serialize_structure_crate_model_analytics_export_destination(
 
 pub fn serialize_structure_crate_model_inventory_encryption(
     input: &crate::model::InventoryEncryption,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3098,7 +3108,7 @@ pub fn serialize_structure_crate_model_inventory_encryption(
 
 pub fn serialize_structure_crate_model_lifecycle_rule_and_operator(
     input: &crate::model::LifecycleRuleAndOperator,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3124,7 +3134,7 @@ pub fn serialize_structure_crate_model_lifecycle_rule_and_operator(
 
 pub fn serialize_structure_crate_model_s3_key_filter(
     input: &crate::model::S3KeyFilter,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3146,7 +3156,7 @@ pub fn serialize_structure_crate_model_s3_key_filter(
 
 pub fn serialize_structure_crate_model_replication_rule_and_operator(
     input: &crate::model::ReplicationRuleAndOperator,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3172,7 +3182,7 @@ pub fn serialize_structure_crate_model_replication_rule_and_operator(
 
 pub fn serialize_structure_crate_model_sse_kms_encrypted_objects(
     input: &crate::model::SseKmsEncryptedObjects,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3188,7 +3198,7 @@ pub fn serialize_structure_crate_model_sse_kms_encrypted_objects(
 
 pub fn serialize_structure_crate_model_replica_modifications(
     input: &crate::model::ReplicaModifications,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3204,7 +3214,7 @@ pub fn serialize_structure_crate_model_replica_modifications(
 
 pub fn serialize_structure_crate_model_access_control_translation(
     input: &crate::model::AccessControlTranslation,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3220,7 +3230,7 @@ pub fn serialize_structure_crate_model_access_control_translation(
 
 pub fn serialize_structure_crate_model_encryption_configuration(
     input: &crate::model::EncryptionConfiguration,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3236,7 +3246,7 @@ pub fn serialize_structure_crate_model_encryption_configuration(
 
 pub fn serialize_structure_crate_model_replication_time(
     input: &crate::model::ReplicationTime,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3261,7 +3271,7 @@ pub fn serialize_structure_crate_model_replication_time(
 
 pub fn serialize_structure_crate_model_metrics(
     input: &crate::model::Metrics,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3286,7 +3296,7 @@ pub fn serialize_structure_crate_model_metrics(
 
 pub fn serialize_structure_crate_model_encryption(
     input: &crate::model::Encryption,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3316,7 +3326,7 @@ pub fn serialize_structure_crate_model_encryption(
 
 pub fn serialize_structure_crate_model_metadata_entry(
     input: &crate::model::MetadataEntry,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3339,7 +3349,7 @@ pub fn serialize_structure_crate_model_metadata_entry(
 
 pub fn serialize_structure_crate_model_analytics_s3_bucket_destination(
     input: &crate::model::AnalyticsS3BucketDestination,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3376,7 +3386,7 @@ pub fn serialize_structure_crate_model_analytics_s3_bucket_destination(
 
 pub fn serialize_structure_crate_model_sses3(
     input: &crate::model::Sses3,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     let _ = input;
     #[allow(unused_mut)]
@@ -3386,7 +3396,7 @@ pub fn serialize_structure_crate_model_sses3(
 
 pub fn serialize_structure_crate_model_ssekms(
     input: &crate::model::Ssekms,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3402,7 +3412,7 @@ pub fn serialize_structure_crate_model_ssekms(
 
 pub fn serialize_structure_crate_model_filter_rule(
     input: &crate::model::FilterRule,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3425,7 +3435,7 @@ pub fn serialize_structure_crate_model_filter_rule(
 
 pub fn serialize_structure_crate_model_replication_time_value(
     input: &crate::model::ReplicationTimeValue,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3434,7 +3444,7 @@ pub fn serialize_structure_crate_model_replication_time_value(
             .start_el("Minutes")
             .write_ns("http://s3.amazonaws.com/doc/2006-03-01/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(input.minutes).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(input.minutes).encode());
     }
     scope.finish();
 }

@@ -31,6 +31,7 @@ pub mod validation_exception_field {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the field.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -40,6 +41,7 @@ pub mod validation_exception_field {
             self.message = Some(input.into());
             self
         }
+        /// <p>The message for the field.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -60,6 +62,7 @@ impl ValidationExceptionField {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -71,9 +74,13 @@ impl ValidationExceptionField {
     std::hash::Hash,
 )]
 pub enum ValidationExceptionReason {
+    #[allow(missing_docs)] // documentation missing in model
     CannotParse,
+    #[allow(missing_docs)] // documentation missing in model
     FieldValidationFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Other,
+    #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -97,6 +104,7 @@ impl std::str::FromStr for ValidationExceptionReason {
     }
 }
 impl ValidationExceptionReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ValidationExceptionReason::CannotParse => "CannotParse",
@@ -106,6 +114,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CannotParse",
@@ -136,7 +145,7 @@ pub struct Site {
     /// <p>The location of the site.</p>
     pub location: std::option::Option<crate::model::Location>,
     /// <p>The date and time that the site was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The state of the site.</p>
     pub state: std::option::Option<crate::model::SiteState>,
     /// <p>The tags for the site.</p>
@@ -167,7 +176,7 @@ pub mod site {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) location: std::option::Option<crate::model::Location>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) state: std::option::Option<crate::model::SiteState>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -177,6 +186,7 @@ pub mod site {
             self.site_id = Some(input.into());
             self
         }
+        /// <p>The ID of the site.</p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.site_id = input;
             self
@@ -186,6 +196,7 @@ pub mod site {
             self.site_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the site.</p>
         pub fn set_site_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.site_arn = input;
             self
@@ -195,6 +206,7 @@ pub mod site {
             self.global_network_id = Some(input.into());
             self
         }
+        /// <p>The ID of the global network.</p>
         pub fn set_global_network_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -207,6 +219,7 @@ pub mod site {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the site.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -216,16 +229,21 @@ pub mod site {
             self.location = Some(input);
             self
         }
+        /// <p>The location of the site.</p>
         pub fn set_location(mut self, input: std::option::Option<crate::model::Location>) -> Self {
             self.location = input;
             self
         }
         /// <p>The date and time that the site was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time that the site was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -234,16 +252,23 @@ pub mod site {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the site.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::SiteState>) -> Self {
             self.state = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags for the site.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags for the site.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -308,6 +333,8 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The tag key.</p>
+        /// <p>Length Constraints: Maximum length of 128 characters.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -318,6 +345,8 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The tag value.</p>
+        /// <p>Length Constraints: Maximum length of 256 characters.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -338,6 +367,7 @@ impl Tag {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -349,9 +379,13 @@ impl Tag {
     std::hash::Hash,
 )]
 pub enum SiteState {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -375,6 +409,7 @@ impl std::str::FromStr for SiteState {
     }
 }
 impl SiteState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SiteState::Available => "AVAILABLE",
@@ -384,6 +419,7 @@ impl SiteState {
             SiteState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "PENDING", "UPDATING"]
     }
@@ -430,6 +466,7 @@ pub mod location {
             self.address = Some(input.into());
             self
         }
+        /// <p>The physical address.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address = input;
             self
@@ -439,6 +476,7 @@ pub mod location {
             self.latitude = Some(input.into());
             self
         }
+        /// <p>The latitude.</p>
         pub fn set_latitude(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.latitude = input;
             self
@@ -448,6 +486,7 @@ pub mod location {
             self.longitude = Some(input.into());
             self
         }
+        /// <p>The longitude.</p>
         pub fn set_longitude(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.longitude = input;
             self
@@ -490,7 +529,7 @@ pub struct Link {
     /// <p>The provider of the link.</p>
     pub provider: std::option::Option<std::string::String>,
     /// <p>The date and time that the link was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The state of the link.</p>
     pub state: std::option::Option<crate::model::LinkState>,
     /// <p>The tags for the link.</p>
@@ -527,7 +566,7 @@ pub mod link {
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) bandwidth: std::option::Option<crate::model::Bandwidth>,
         pub(crate) provider: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) state: std::option::Option<crate::model::LinkState>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -537,6 +576,7 @@ pub mod link {
             self.link_id = Some(input.into());
             self
         }
+        /// <p>The ID of the link.</p>
         pub fn set_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.link_id = input;
             self
@@ -546,6 +586,7 @@ pub mod link {
             self.link_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the link.</p>
         pub fn set_link_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.link_arn = input;
             self
@@ -555,6 +596,7 @@ pub mod link {
             self.global_network_id = Some(input.into());
             self
         }
+        /// <p>The ID of the global network.</p>
         pub fn set_global_network_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -567,6 +609,7 @@ pub mod link {
             self.site_id = Some(input.into());
             self
         }
+        /// <p>The ID of the site.</p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.site_id = input;
             self
@@ -576,6 +619,7 @@ pub mod link {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the link.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -585,6 +629,7 @@ pub mod link {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of the link.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -594,6 +639,7 @@ pub mod link {
             self.bandwidth = Some(input);
             self
         }
+        /// <p>The bandwidth for the link.</p>
         pub fn set_bandwidth(
             mut self,
             input: std::option::Option<crate::model::Bandwidth>,
@@ -606,16 +652,21 @@ pub mod link {
             self.provider = Some(input.into());
             self
         }
+        /// <p>The provider of the link.</p>
         pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.provider = input;
             self
         }
         /// <p>The date and time that the link was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time that the link was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -624,16 +675,23 @@ pub mod link {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the link.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::LinkState>) -> Self {
             self.state = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags for the link.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags for the link.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -666,6 +724,7 @@ impl Link {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -677,9 +736,13 @@ impl Link {
     std::hash::Hash,
 )]
 pub enum LinkState {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -703,6 +766,7 @@ impl std::str::FromStr for LinkState {
     }
 }
 impl LinkState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LinkState::Available => "AVAILABLE",
@@ -712,6 +776,7 @@ impl LinkState {
             LinkState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "PENDING", "UPDATING"]
     }
@@ -754,6 +819,7 @@ pub mod bandwidth {
             self.upload_speed = Some(input);
             self
         }
+        /// <p>Upload speed in Mbps.</p>
         pub fn set_upload_speed(mut self, input: std::option::Option<i32>) -> Self {
             self.upload_speed = input;
             self
@@ -763,6 +829,7 @@ pub mod bandwidth {
             self.download_speed = Some(input);
             self
         }
+        /// <p>Download speed in Mbps.</p>
         pub fn set_download_speed(mut self, input: std::option::Option<i32>) -> Self {
             self.download_speed = input;
             self
@@ -794,7 +861,7 @@ pub struct GlobalNetwork {
     /// <p>The description of the global network.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that the global network was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The state of the global network.</p>
     pub state: std::option::Option<crate::model::GlobalNetworkState>,
     /// <p>The tags for the global network.</p>
@@ -821,7 +888,7 @@ pub mod global_network {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
         pub(crate) global_network_arn: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) state: std::option::Option<crate::model::GlobalNetworkState>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -831,6 +898,7 @@ pub mod global_network {
             self.global_network_id = Some(input.into());
             self
         }
+        /// <p>The ID of the global network.</p>
         pub fn set_global_network_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -843,6 +911,7 @@ pub mod global_network {
             self.global_network_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the global network.</p>
         pub fn set_global_network_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -855,16 +924,21 @@ pub mod global_network {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the global network.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The date and time that the global network was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time that the global network was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -873,6 +947,7 @@ pub mod global_network {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the global network.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::GlobalNetworkState>,
@@ -880,12 +955,18 @@ pub mod global_network {
             self.state = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags for the global network.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags for the global network.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -913,6 +994,7 @@ impl GlobalNetwork {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -924,9 +1006,13 @@ impl GlobalNetwork {
     std::hash::Hash,
 )]
 pub enum GlobalNetworkState {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -950,6 +1036,7 @@ impl std::str::FromStr for GlobalNetworkState {
     }
 }
 impl GlobalNetworkState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GlobalNetworkState::Available => "AVAILABLE",
@@ -959,6 +1046,7 @@ impl GlobalNetworkState {
             GlobalNetworkState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "PENDING", "UPDATING"]
     }
@@ -996,7 +1084,7 @@ pub struct Device {
     /// <p>The site ID.</p>
     pub site_id: std::option::Option<std::string::String>,
     /// <p>The date and time that the site was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The device state.</p>
     pub state: std::option::Option<crate::model::DeviceState>,
     /// <p>The tags for the device.</p>
@@ -1039,7 +1127,7 @@ pub mod device {
         pub(crate) serial_number: std::option::Option<std::string::String>,
         pub(crate) location: std::option::Option<crate::model::Location>,
         pub(crate) site_id: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) state: std::option::Option<crate::model::DeviceState>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -1049,6 +1137,7 @@ pub mod device {
             self.device_id = Some(input.into());
             self
         }
+        /// <p>The ID of the device.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
@@ -1058,6 +1147,7 @@ pub mod device {
             self.device_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the device.</p>
         pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_arn = input;
             self
@@ -1067,6 +1157,7 @@ pub mod device {
             self.global_network_id = Some(input.into());
             self
         }
+        /// <p>The ID of the global network.</p>
         pub fn set_global_network_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1079,6 +1170,7 @@ pub mod device {
             self.aws_location = Some(input);
             self
         }
+        /// <p>The AWS location of the device.</p>
         pub fn set_aws_location(
             mut self,
             input: std::option::Option<crate::model::AwsLocation>,
@@ -1091,6 +1183,7 @@ pub mod device {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the device.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1100,6 +1193,7 @@ pub mod device {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The device type.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -1109,6 +1203,7 @@ pub mod device {
             self.vendor = Some(input.into());
             self
         }
+        /// <p>The device vendor.</p>
         pub fn set_vendor(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vendor = input;
             self
@@ -1118,6 +1213,7 @@ pub mod device {
             self.model = Some(input.into());
             self
         }
+        /// <p>The device model.</p>
         pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model = input;
             self
@@ -1127,6 +1223,7 @@ pub mod device {
             self.serial_number = Some(input.into());
             self
         }
+        /// <p>The device serial number.</p>
         pub fn set_serial_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1139,6 +1236,7 @@ pub mod device {
             self.location = Some(input);
             self
         }
+        /// <p>The site location.</p>
         pub fn set_location(mut self, input: std::option::Option<crate::model::Location>) -> Self {
             self.location = input;
             self
@@ -1148,16 +1246,21 @@ pub mod device {
             self.site_id = Some(input.into());
             self
         }
+        /// <p>The site ID.</p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.site_id = input;
             self
         }
         /// <p>The date and time that the site was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time that the site was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -1166,16 +1269,23 @@ pub mod device {
             self.state = Some(input);
             self
         }
+        /// <p>The device state.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::DeviceState>) -> Self {
             self.state = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags for the device.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags for the device.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1211,6 +1321,7 @@ impl Device {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1222,9 +1333,13 @@ impl Device {
     std::hash::Hash,
 )]
 pub enum DeviceState {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1248,6 +1363,7 @@ impl std::str::FromStr for DeviceState {
     }
 }
 impl DeviceState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeviceState::Available => "AVAILABLE",
@@ -1257,6 +1373,7 @@ impl DeviceState {
             DeviceState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "PENDING", "UPDATING"]
     }
@@ -1299,6 +1416,7 @@ pub mod aws_location {
             self.zone = Some(input.into());
             self
         }
+        /// <p>The Zone the device is located in. This can be the ID of an Availability Zone, Local Zone, Wavelength Zone, or an Outpost.</p>
         pub fn set_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.zone = input;
             self
@@ -1308,6 +1426,7 @@ pub mod aws_location {
             self.subnet_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the subnet the device is located in.</p>
         pub fn set_subnet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_arn = input;
             self
@@ -1349,7 +1468,7 @@ pub struct Connection {
     /// <p>The description of the connection.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that the connection was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The state of the connection.</p>
     pub state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The tags for the connection.</p>
@@ -1386,7 +1505,7 @@ pub mod connection {
         pub(crate) link_id: std::option::Option<std::string::String>,
         pub(crate) connected_link_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) state: std::option::Option<crate::model::ConnectionState>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -1396,6 +1515,7 @@ pub mod connection {
             self.connection_id = Some(input.into());
             self
         }
+        /// <p>The ID of the connection.</p>
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1408,6 +1528,7 @@ pub mod connection {
             self.connection_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the connection.</p>
         pub fn set_connection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1420,6 +1541,7 @@ pub mod connection {
             self.global_network_id = Some(input.into());
             self
         }
+        /// <p>The ID of the global network.</p>
         pub fn set_global_network_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1432,6 +1554,7 @@ pub mod connection {
             self.device_id = Some(input.into());
             self
         }
+        /// <p>The ID of the first device in the connection.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
@@ -1441,6 +1564,7 @@ pub mod connection {
             self.connected_device_id = Some(input.into());
             self
         }
+        /// <p>The ID of the second device in the connection.</p>
         pub fn set_connected_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1453,6 +1577,7 @@ pub mod connection {
             self.link_id = Some(input.into());
             self
         }
+        /// <p>The ID of the link for the first device in the connection.</p>
         pub fn set_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.link_id = input;
             self
@@ -1462,6 +1587,7 @@ pub mod connection {
             self.connected_link_id = Some(input.into());
             self
         }
+        /// <p>The ID of the link for the second device in the connection.</p>
         pub fn set_connected_link_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1474,16 +1600,21 @@ pub mod connection {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the connection.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The date and time that the connection was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time that the connection was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -1492,6 +1623,7 @@ pub mod connection {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the connection.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ConnectionState>,
@@ -1499,12 +1631,18 @@ pub mod connection {
             self.state = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags for the connection.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags for the connection.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1537,6 +1675,7 @@ impl Connection {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1548,9 +1687,13 @@ impl Connection {
     std::hash::Hash,
 )]
 pub enum ConnectionState {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1574,6 +1717,7 @@ impl std::str::FromStr for ConnectionState {
     }
 }
 impl ConnectionState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConnectionState::Available => "AVAILABLE",
@@ -1583,6 +1727,7 @@ impl ConnectionState {
             ConnectionState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "PENDING", "UPDATING"]
     }
@@ -1629,6 +1774,7 @@ pub mod transit_gateway_registration {
             self.global_network_id = Some(input.into());
             self
         }
+        /// <p>The ID of the global network.</p>
         pub fn set_global_network_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1641,6 +1787,7 @@ pub mod transit_gateway_registration {
             self.transit_gateway_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
         pub fn set_transit_gateway_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1653,6 +1800,7 @@ pub mod transit_gateway_registration {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the transit gateway registration.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::TransitGatewayRegistrationStateReason>,
@@ -1709,6 +1857,7 @@ pub mod transit_gateway_registration_state_reason {
             self.code = Some(input);
             self
         }
+        /// <p>The code for the state reason.</p>
         pub fn set_code(
             mut self,
             input: std::option::Option<crate::model::TransitGatewayRegistrationState>,
@@ -1721,6 +1870,7 @@ pub mod transit_gateway_registration_state_reason {
             self.message = Some(input.into());
             self
         }
+        /// <p>The message for the state reason.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1741,6 +1891,7 @@ impl TransitGatewayRegistrationStateReason {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1752,10 +1903,15 @@ impl TransitGatewayRegistrationStateReason {
     std::hash::Hash,
 )]
 pub enum TransitGatewayRegistrationState {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1780,6 +1936,7 @@ impl std::str::FromStr for TransitGatewayRegistrationState {
     }
 }
 impl TransitGatewayRegistrationState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TransitGatewayRegistrationState::Available => "AVAILABLE",
@@ -1790,6 +1947,7 @@ impl TransitGatewayRegistrationState {
             TransitGatewayRegistrationState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETED", "DELETING", "FAILED", "PENDING"]
     }
@@ -1851,6 +2009,7 @@ pub mod transit_gateway_connect_peer_association {
             self.transit_gateway_connect_peer_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
         pub fn set_transit_gateway_connect_peer_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1863,6 +2022,7 @@ pub mod transit_gateway_connect_peer_association {
             self.global_network_id = Some(input.into());
             self
         }
+        /// <p>The ID of the global network.</p>
         pub fn set_global_network_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1875,6 +2035,7 @@ pub mod transit_gateway_connect_peer_association {
             self.device_id = Some(input.into());
             self
         }
+        /// <p>The ID of the device.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
@@ -1884,6 +2045,7 @@ pub mod transit_gateway_connect_peer_association {
             self.link_id = Some(input.into());
             self
         }
+        /// <p>The ID of the link.</p>
         pub fn set_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.link_id = input;
             self
@@ -1896,6 +2058,7 @@ pub mod transit_gateway_connect_peer_association {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the association.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::TransitGatewayConnectPeerAssociationState>,
@@ -1922,6 +2085,7 @@ impl TransitGatewayConnectPeerAssociation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1933,9 +2097,13 @@ impl TransitGatewayConnectPeerAssociation {
     std::hash::Hash,
 )]
 pub enum TransitGatewayConnectPeerAssociationState {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1959,6 +2127,7 @@ impl std::str::FromStr for TransitGatewayConnectPeerAssociationState {
     }
 }
 impl TransitGatewayConnectPeerAssociationState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TransitGatewayConnectPeerAssociationState::Available => "AVAILABLE",
@@ -1968,6 +2137,7 @@ impl TransitGatewayConnectPeerAssociationState {
             TransitGatewayConnectPeerAssociationState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETED", "DELETING", "PENDING"]
     }
@@ -2018,6 +2188,7 @@ pub mod link_association {
             self.global_network_id = Some(input.into());
             self
         }
+        /// <p>The ID of the global network.</p>
         pub fn set_global_network_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2030,6 +2201,7 @@ pub mod link_association {
             self.device_id = Some(input.into());
             self
         }
+        /// <p>The device ID for the link association.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
@@ -2039,6 +2211,7 @@ pub mod link_association {
             self.link_id = Some(input.into());
             self
         }
+        /// <p>The ID of the link.</p>
         pub fn set_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.link_id = input;
             self
@@ -2048,6 +2221,7 @@ pub mod link_association {
             self.link_association_state = Some(input);
             self
         }
+        /// <p>The state of the association.</p>
         pub fn set_link_association_state(
             mut self,
             input: std::option::Option<crate::model::LinkAssociationState>,
@@ -2073,6 +2247,7 @@ impl LinkAssociation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2084,9 +2259,13 @@ impl LinkAssociation {
     std::hash::Hash,
 )]
 pub enum LinkAssociationState {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2110,6 +2289,7 @@ impl std::str::FromStr for LinkAssociationState {
     }
 }
 impl LinkAssociationState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LinkAssociationState::Available => "AVAILABLE",
@@ -2119,6 +2299,7 @@ impl LinkAssociationState {
             LinkAssociationState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETED", "DELETING", "PENDING"]
     }
@@ -2173,6 +2354,7 @@ pub mod customer_gateway_association {
             self.customer_gateway_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
         pub fn set_customer_gateway_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2185,6 +2367,7 @@ pub mod customer_gateway_association {
             self.global_network_id = Some(input.into());
             self
         }
+        /// <p>The ID of the global network.</p>
         pub fn set_global_network_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2197,6 +2380,7 @@ pub mod customer_gateway_association {
             self.device_id = Some(input.into());
             self
         }
+        /// <p>The ID of the device.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
@@ -2206,6 +2390,7 @@ pub mod customer_gateway_association {
             self.link_id = Some(input.into());
             self
         }
+        /// <p>The ID of the link.</p>
         pub fn set_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.link_id = input;
             self
@@ -2215,6 +2400,7 @@ pub mod customer_gateway_association {
             self.state = Some(input);
             self
         }
+        /// <p>The association state.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::CustomerGatewayAssociationState>,
@@ -2241,6 +2427,7 @@ impl CustomerGatewayAssociation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2252,9 +2439,13 @@ impl CustomerGatewayAssociation {
     std::hash::Hash,
 )]
 pub enum CustomerGatewayAssociationState {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2278,6 +2469,7 @@ impl std::str::FromStr for CustomerGatewayAssociationState {
     }
 }
 impl CustomerGatewayAssociationState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CustomerGatewayAssociationState::Available => "AVAILABLE",
@@ -2287,6 +2479,7 @@ impl CustomerGatewayAssociationState {
             CustomerGatewayAssociationState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETED", "DELETING", "PENDING"]
     }

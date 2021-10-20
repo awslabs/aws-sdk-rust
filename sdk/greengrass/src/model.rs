@@ -31,6 +31,7 @@ pub mod error_detail {
             self.detailed_error_code = Some(input.into());
             self
         }
+        /// A detailed error code.
         pub fn set_detailed_error_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -43,6 +44,7 @@ pub mod error_detail {
             self.detailed_error_message = Some(input.into());
             self
         }
+        /// A detailed error message.
         pub fn set_detailed_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -94,6 +96,7 @@ pub mod telemetry_configuration_update {
             self.telemetry = Some(input);
             self
         }
+        /// Configure telemetry to be on or off.
         pub fn set_telemetry(
             mut self,
             input: std::option::Option<crate::model::Telemetry>,
@@ -116,6 +119,7 @@ impl TelemetryConfigurationUpdate {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -127,7 +131,9 @@ impl TelemetryConfigurationUpdate {
     std::hash::Hash,
 )]
 pub enum Telemetry {
+    #[allow(missing_docs)] // documentation missing in model
     Off,
+    #[allow(missing_docs)] // documentation missing in model
     On,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -149,6 +155,7 @@ impl std::str::FromStr for Telemetry {
     }
 }
 impl Telemetry {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Telemetry::Off => "Off",
@@ -156,6 +163,7 @@ impl Telemetry {
             Telemetry::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Off", "On"]
     }
@@ -206,6 +214,7 @@ pub mod connectivity_info {
             self.host_address = Some(input.into());
             self
         }
+        /// The endpoint for the Greengrass core. Can be an IP address or DNS.
         pub fn set_host_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_address = input;
             self
@@ -215,6 +224,7 @@ pub mod connectivity_info {
             self.id = Some(input.into());
             self
         }
+        /// The ID of the connectivity information.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -224,6 +234,7 @@ pub mod connectivity_info {
             self.metadata = Some(input.into());
             self
         }
+        /// Metadata for this endpoint.
         pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metadata = input;
             self
@@ -233,6 +244,7 @@ pub mod connectivity_info {
             self.port_number = Some(input);
             self
         }
+        /// The port of the Greengrass core. Usually 8883.
         pub fn set_port_number(mut self, input: std::option::Option<i32>) -> Self {
             self.port_number = input;
             self
@@ -295,6 +307,7 @@ pub mod version_information {
             self.arn = Some(input.into());
             self
         }
+        /// The ARN of the version.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -304,6 +317,7 @@ pub mod version_information {
             self.creation_timestamp = Some(input.into());
             self
         }
+        /// The time, in milliseconds since the epoch, when the version was created.
         pub fn set_creation_timestamp(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -316,6 +330,7 @@ pub mod version_information {
             self.id = Some(input.into());
             self
         }
+        /// The ID of the parent definition that the version is associated with.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -325,6 +340,7 @@ pub mod version_information {
             self.version = Some(input.into());
             self
         }
+        /// The ID of the version.
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -406,6 +422,7 @@ pub mod definition_information {
             self.arn = Some(input.into());
             self
         }
+        /// The ARN of the definition.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -415,6 +432,7 @@ pub mod definition_information {
             self.creation_timestamp = Some(input.into());
             self
         }
+        /// The time, in milliseconds since the epoch, when the definition was created.
         pub fn set_creation_timestamp(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -427,6 +445,7 @@ pub mod definition_information {
             self.id = Some(input.into());
             self
         }
+        /// The ID of the definition.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -436,6 +455,7 @@ pub mod definition_information {
             self.last_updated_timestamp = Some(input.into());
             self
         }
+        /// The time, in milliseconds since the epoch, when the definition was last updated.
         pub fn set_last_updated_timestamp(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -448,6 +468,7 @@ pub mod definition_information {
             self.latest_version = Some(input.into());
             self
         }
+        /// The ID of the latest version associated with the definition.
         pub fn set_latest_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -460,6 +481,7 @@ pub mod definition_information {
             self.latest_version_arn = Some(input.into());
             self
         }
+        /// The ARN of the latest version associated with the definition.
         pub fn set_latest_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -472,10 +494,16 @@ pub mod definition_information {
             self.name = Some(input.into());
             self
         }
+        /// The name of the definition.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// Tag(s) attached to the resource arn.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -486,6 +514,7 @@ pub mod definition_information {
             self.tags = Some(hash_map);
             self
         }
+        /// Tag(s) attached to the resource arn.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -569,6 +598,7 @@ pub mod group_information {
             self.arn = Some(input.into());
             self
         }
+        /// The ARN of the group.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -578,6 +608,7 @@ pub mod group_information {
             self.creation_timestamp = Some(input.into());
             self
         }
+        /// The time, in milliseconds since the epoch, when the group was created.
         pub fn set_creation_timestamp(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -590,6 +621,7 @@ pub mod group_information {
             self.id = Some(input.into());
             self
         }
+        /// The ID of the group.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -599,6 +631,7 @@ pub mod group_information {
             self.last_updated_timestamp = Some(input.into());
             self
         }
+        /// The time, in milliseconds since the epoch, when the group was last updated.
         pub fn set_last_updated_timestamp(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -611,6 +644,7 @@ pub mod group_information {
             self.latest_version = Some(input.into());
             self
         }
+        /// The ID of the latest version associated with the group.
         pub fn set_latest_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -623,6 +657,7 @@ pub mod group_information {
             self.latest_version_arn = Some(input.into());
             self
         }
+        /// The ARN of the latest version associated with the group.
         pub fn set_latest_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -635,6 +670,7 @@ pub mod group_information {
             self.name = Some(input.into());
             self
         }
+        /// The name of the group.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -701,6 +737,7 @@ pub mod group_certificate_authority_properties {
             self.group_certificate_authority_arn = Some(input.into());
             self
         }
+        /// The ARN of the certificate authority for the group.
         pub fn set_group_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -716,6 +753,7 @@ pub mod group_certificate_authority_properties {
             self.group_certificate_authority_id = Some(input.into());
             self
         }
+        /// The ID of the certificate authority for the group.
         pub fn set_group_certificate_authority_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -783,6 +821,7 @@ pub mod deployment {
             self.created_at = Some(input.into());
             self
         }
+        /// The time, in milliseconds since the epoch, when the deployment was created.
         pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_at = input;
             self
@@ -792,6 +831,7 @@ pub mod deployment {
             self.deployment_arn = Some(input.into());
             self
         }
+        /// The ARN of the deployment.
         pub fn set_deployment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -804,6 +844,7 @@ pub mod deployment {
             self.deployment_id = Some(input.into());
             self
         }
+        /// The ID of the deployment.
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -816,6 +857,7 @@ pub mod deployment {
             self.deployment_type = Some(input);
             self
         }
+        /// The type of the deployment.
         pub fn set_deployment_type(
             mut self,
             input: std::option::Option<crate::model::DeploymentType>,
@@ -828,6 +870,7 @@ pub mod deployment {
             self.group_arn = Some(input.into());
             self
         }
+        /// The ARN of the group for this deployment.
         pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_arn = input;
             self
@@ -863,9 +906,13 @@ impl Deployment {
     std::hash::Hash,
 )]
 pub enum DeploymentType {
+    #[allow(missing_docs)] // documentation missing in model
     ForceResetDeployment,
+    #[allow(missing_docs)] // documentation missing in model
     NewDeployment,
+    #[allow(missing_docs)] // documentation missing in model
     Redeployment,
+    #[allow(missing_docs)] // documentation missing in model
     ResetDeployment,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -889,6 +936,7 @@ impl std::str::FromStr for DeploymentType {
     }
 }
 impl DeploymentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentType::ForceResetDeployment => "ForceResetDeployment",
@@ -898,6 +946,7 @@ impl DeploymentType {
             DeploymentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ForceResetDeployment",
@@ -949,6 +998,7 @@ pub mod bulk_deployment {
             self.bulk_deployment_arn = Some(input.into());
             self
         }
+        /// The ARN of the bulk deployment.
         pub fn set_bulk_deployment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -961,6 +1011,7 @@ pub mod bulk_deployment {
             self.bulk_deployment_id = Some(input.into());
             self
         }
+        /// The ID of the bulk deployment.
         pub fn set_bulk_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -973,6 +1024,7 @@ pub mod bulk_deployment {
             self.created_at = Some(input.into());
             self
         }
+        /// The time, in ISO format, when the deployment was created.
         pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_at = input;
             self
@@ -1050,6 +1102,7 @@ pub mod bulk_deployment_result {
             self.created_at = Some(input.into());
             self
         }
+        /// The time, in ISO format, when the deployment was created.
         pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_at = input;
             self
@@ -1059,6 +1112,7 @@ pub mod bulk_deployment_result {
             self.deployment_arn = Some(input.into());
             self
         }
+        /// The ARN of the group deployment.
         pub fn set_deployment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1071,6 +1125,7 @@ pub mod bulk_deployment_result {
             self.deployment_id = Some(input.into());
             self
         }
+        /// The ID of the group deployment.
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1083,6 +1138,7 @@ pub mod bulk_deployment_result {
             self.deployment_status = Some(input.into());
             self
         }
+        /// The current status of the group deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
         pub fn set_deployment_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1095,6 +1151,7 @@ pub mod bulk_deployment_result {
             self.deployment_type = Some(input);
             self
         }
+        /// The type of the deployment.
         pub fn set_deployment_type(
             mut self,
             input: std::option::Option<crate::model::DeploymentType>,
@@ -1102,12 +1159,18 @@ pub mod bulk_deployment_result {
             self.deployment_type = input;
             self
         }
+        /// Appends an item to `error_details`.
+        ///
+        /// To override the contents of this collection use [`set_error_details`](Self::set_error_details).
+        ///
+        /// Details about the error.
         pub fn error_details(mut self, input: impl Into<crate::model::ErrorDetail>) -> Self {
             let mut v = self.error_details.unwrap_or_default();
             v.push(input.into());
             self.error_details = Some(v);
             self
         }
+        /// Details about the error.
         pub fn set_error_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>,
@@ -1120,6 +1183,7 @@ pub mod bulk_deployment_result {
             self.error_message = Some(input.into());
             self
         }
+        /// The error message for a failed deployment
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1132,6 +1196,7 @@ pub mod bulk_deployment_result {
             self.group_arn = Some(input.into());
             self
         }
+        /// The ARN of the Greengrass group.
         pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_arn = input;
             self
@@ -1190,6 +1255,7 @@ pub mod runtime_configuration {
             self.telemetry_configuration = Some(input);
             self
         }
+        /// Configuration for telemetry service.
         pub fn set_telemetry_configuration(
             mut self,
             input: std::option::Option<crate::model::TelemetryConfiguration>,
@@ -1248,6 +1314,7 @@ pub mod telemetry_configuration {
             self.configuration_sync_status = Some(input);
             self
         }
+        /// Synchronization status of the device reported configuration with the desired configuration.
         pub fn set_configuration_sync_status(
             mut self,
             input: std::option::Option<crate::model::ConfigurationSyncStatus>,
@@ -1260,6 +1327,7 @@ pub mod telemetry_configuration {
             self.telemetry = Some(input);
             self
         }
+        /// Configure telemetry to be on or off.
         pub fn set_telemetry(
             mut self,
             input: std::option::Option<crate::model::Telemetry>,
@@ -1283,6 +1351,7 @@ impl TelemetryConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1294,7 +1363,9 @@ impl TelemetryConfiguration {
     std::hash::Hash,
 )]
 pub enum ConfigurationSyncStatus {
+    #[allow(missing_docs)] // documentation missing in model
     InSync,
+    #[allow(missing_docs)] // documentation missing in model
     OutOfSync,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1316,6 +1387,7 @@ impl std::str::FromStr for ConfigurationSyncStatus {
     }
 }
 impl ConfigurationSyncStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfigurationSyncStatus::InSync => "InSync",
@@ -1323,6 +1395,7 @@ impl ConfigurationSyncStatus {
             ConfigurationSyncStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["InSync", "OutOfSync"]
     }
@@ -1356,12 +1429,18 @@ pub mod subscription_definition_version {
         pub(crate) subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
     }
     impl Builder {
+        /// Appends an item to `subscriptions`.
+        ///
+        /// To override the contents of this collection use [`set_subscriptions`](Self::set_subscriptions).
+        ///
+        /// A list of subscriptions.
         pub fn subscriptions(mut self, input: impl Into<crate::model::Subscription>) -> Self {
             let mut v = self.subscriptions.unwrap_or_default();
             v.push(input.into());
             self.subscriptions = Some(v);
             self
         }
+        /// A list of subscriptions.
         pub fn set_subscriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
@@ -1424,6 +1503,7 @@ pub mod subscription {
             self.id = Some(input.into());
             self
         }
+        /// A descriptive or arbitrary ID for the subscription. This value must be unique within the subscription definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1433,6 +1513,7 @@ pub mod subscription {
             self.source = Some(input.into());
             self
         }
+        /// The source of the subscription. Can be a thing ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud), or 'GGShadowService'.
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -1442,6 +1523,7 @@ pub mod subscription {
             self.subject = Some(input.into());
             self
         }
+        /// The MQTT topic used to route the message.
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subject = input;
             self
@@ -1451,6 +1533,7 @@ pub mod subscription {
             self.target = Some(input.into());
             self
         }
+        /// Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud), or 'GGShadowService'.
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target = input;
             self
@@ -1496,12 +1579,18 @@ pub mod resource_definition_version {
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     }
     impl Builder {
+        /// Appends an item to `resources`.
+        ///
+        /// To override the contents of this collection use [`set_resources`](Self::set_resources).
+        ///
+        /// A list of resources.
         pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
             let mut v = self.resources.unwrap_or_default();
             v.push(input.into());
             self.resources = Some(v);
             self
         }
+        /// A list of resources.
         pub fn set_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -1561,6 +1650,7 @@ pub mod resource {
             self.id = Some(input.into());
             self
         }
+        /// The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1570,6 +1660,7 @@ pub mod resource {
             self.name = Some(input.into());
             self
         }
+        /// The descriptive resource name, which is displayed on the AWS IoT Greengrass console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1582,6 +1673,7 @@ pub mod resource {
             self.resource_data_container = Some(input);
             self
         }
+        /// A container of data for all resource types.
         pub fn set_resource_data_container(
             mut self,
             input: std::option::Option<crate::model::ResourceDataContainer>,
@@ -1676,6 +1768,7 @@ pub mod resource_data_container {
             self.local_device_resource_data = Some(input);
             self
         }
+        /// Attributes that define the local device resource.
         pub fn set_local_device_resource_data(
             mut self,
             input: std::option::Option<crate::model::LocalDeviceResourceData>,
@@ -1691,6 +1784,7 @@ pub mod resource_data_container {
             self.local_volume_resource_data = Some(input);
             self
         }
+        /// Attributes that define the local volume resource.
         pub fn set_local_volume_resource_data(
             mut self,
             input: std::option::Option<crate::model::LocalVolumeResourceData>,
@@ -1706,6 +1800,7 @@ pub mod resource_data_container {
             self.s3_machine_learning_model_resource_data = Some(input);
             self
         }
+        /// Attributes that define an Amazon S3 machine learning resource.
         pub fn set_s3_machine_learning_model_resource_data(
             mut self,
             input: std::option::Option<crate::model::S3MachineLearningModelResourceData>,
@@ -1721,6 +1816,7 @@ pub mod resource_data_container {
             self.sage_maker_machine_learning_model_resource_data = Some(input);
             self
         }
+        /// Attributes that define an Amazon SageMaker machine learning resource.
         pub fn set_sage_maker_machine_learning_model_resource_data(
             mut self,
             input: std::option::Option<crate::model::SageMakerMachineLearningModelResourceData>,
@@ -1736,6 +1832,7 @@ pub mod resource_data_container {
             self.secrets_manager_secret_resource_data = Some(input);
             self
         }
+        /// Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
         pub fn set_secrets_manager_secret_resource_data(
             mut self,
             input: std::option::Option<crate::model::SecretsManagerSecretResourceData>,
@@ -1801,10 +1898,16 @@ pub mod secrets_manager_secret_resource_data {
             self.arn = Some(input.into());
             self
         }
+        /// The ARN of the Secrets Manager secret to make available on the core. The value of the secret's latest version (represented by the ''AWSCURRENT'' staging label) is included by default.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
+        /// Appends an item to `additional_staging_labels_to_download`.
+        ///
+        /// To override the contents of this collection use [`set_additional_staging_labels_to_download`](Self::set_additional_staging_labels_to_download).
+        ///
+        /// Optional. The staging labels whose values you want to make available on the core, in addition to ''AWSCURRENT''.
         pub fn additional_staging_labels_to_download(
             mut self,
             input: impl Into<std::string::String>,
@@ -1816,6 +1919,7 @@ pub mod secrets_manager_secret_resource_data {
             self.additional_staging_labels_to_download = Some(v);
             self
         }
+        /// Optional. The staging labels whose values you want to make available on the core, in addition to ''AWSCURRENT''.
         pub fn set_additional_staging_labels_to_download(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1875,6 +1979,7 @@ pub mod sage_maker_machine_learning_model_resource_data {
             self.destination_path = Some(input.into());
             self
         }
+        /// The absolute local path of the resource inside the Lambda environment.
         pub fn set_destination_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1887,6 +1992,7 @@ pub mod sage_maker_machine_learning_model_resource_data {
             self.owner_setting = Some(input);
             self
         }
+        /// The owner setting for downloaded machine learning resources.
         pub fn set_owner_setting(
             mut self,
             input: std::option::Option<crate::model::ResourceDownloadOwnerSetting>,
@@ -1899,6 +2005,7 @@ pub mod sage_maker_machine_learning_model_resource_data {
             self.sage_maker_job_arn = Some(input.into());
             self
         }
+        /// The ARN of the Amazon SageMaker training job that represents the source model.
         pub fn set_sage_maker_job_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1955,6 +2062,7 @@ pub mod resource_download_owner_setting {
             self.group_owner = Some(input.into());
             self
         }
+        /// The group owner of the resource. This is the name of an existing Linux OS group on the system or a GID. The group's permissions are added to the Lambda process.
         pub fn set_group_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_owner = input;
             self
@@ -1964,6 +2072,7 @@ pub mod resource_download_owner_setting {
             self.group_permission = Some(input);
             self
         }
+        /// The permissions that the group owner has to the resource. Valid values are ''rw'' (read/write) or ''ro'' (read-only).
         pub fn set_group_permission(
             mut self,
             input: std::option::Option<crate::model::Permission>,
@@ -1999,7 +2108,9 @@ impl ResourceDownloadOwnerSetting {
     std::hash::Hash,
 )]
 pub enum Permission {
+    #[allow(missing_docs)] // documentation missing in model
     Ro,
+    #[allow(missing_docs)] // documentation missing in model
     Rw,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2021,6 +2132,7 @@ impl std::str::FromStr for Permission {
     }
 }
 impl Permission {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Permission::Ro => "ro",
@@ -2028,6 +2140,7 @@ impl Permission {
             Permission::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ro", "rw"]
     }
@@ -2074,6 +2187,7 @@ pub mod s3_machine_learning_model_resource_data {
             self.destination_path = Some(input.into());
             self
         }
+        /// The absolute local path of the resource inside the Lambda environment.
         pub fn set_destination_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2086,6 +2200,7 @@ pub mod s3_machine_learning_model_resource_data {
             self.owner_setting = Some(input);
             self
         }
+        /// The owner setting for downloaded machine learning resources.
         pub fn set_owner_setting(
             mut self,
             input: std::option::Option<crate::model::ResourceDownloadOwnerSetting>,
@@ -2098,6 +2213,7 @@ pub mod s3_machine_learning_model_resource_data {
             self.s3_uri = Some(input.into());
             self
         }
+        /// The URI of the source model in an S3 bucket. The model package must be in tar.gz or .zip format.
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
@@ -2155,6 +2271,7 @@ pub mod local_volume_resource_data {
             self.destination_path = Some(input.into());
             self
         }
+        /// The absolute local path of the resource inside the Lambda environment.
         pub fn set_destination_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2167,6 +2284,7 @@ pub mod local_volume_resource_data {
             self.group_owner_setting = Some(input);
             self
         }
+        /// Allows you to configure additional group privileges for the Lambda process. This field is optional.
         pub fn set_group_owner_setting(
             mut self,
             input: std::option::Option<crate::model::GroupOwnerSetting>,
@@ -2179,6 +2297,7 @@ pub mod local_volume_resource_data {
             self.source_path = Some(input.into());
             self
         }
+        /// The local absolute path of the volume resource on the host. The source path for a volume resource type cannot start with ''/sys''.
         pub fn set_source_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_path = input;
             self
@@ -2232,6 +2351,7 @@ pub mod group_owner_setting {
             self.auto_add_group_owner = Some(input);
             self
         }
+        /// If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the Lambda process privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
         pub fn set_auto_add_group_owner(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_add_group_owner = input;
             self
@@ -2241,6 +2361,7 @@ pub mod group_owner_setting {
             self.group_owner = Some(input.into());
             self
         }
+        /// The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional.
         pub fn set_group_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_owner = input;
             self
@@ -2293,6 +2414,7 @@ pub mod local_device_resource_data {
             self.group_owner_setting = Some(input);
             self
         }
+        /// Group/owner related settings for local resources.
         pub fn set_group_owner_setting(
             mut self,
             input: std::option::Option<crate::model::GroupOwnerSetting>,
@@ -2305,6 +2427,7 @@ pub mod local_device_resource_data {
             self.source_path = Some(input.into());
             self
         }
+        /// The local absolute path of the device resource. The source path for a device resource can refer only to a character device or block device under ''/dev''.
         pub fn set_source_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_path = input;
             self
@@ -2348,12 +2471,18 @@ pub mod logger_definition_version {
         pub(crate) loggers: std::option::Option<std::vec::Vec<crate::model::Logger>>,
     }
     impl Builder {
+        /// Appends an item to `loggers`.
+        ///
+        /// To override the contents of this collection use [`set_loggers`](Self::set_loggers).
+        ///
+        /// A list of loggers.
         pub fn loggers(mut self, input: impl Into<crate::model::Logger>) -> Self {
             let mut v = self.loggers.unwrap_or_default();
             v.push(input.into());
             self.loggers = Some(v);
             self
         }
+        /// A list of loggers.
         pub fn set_loggers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Logger>>,
@@ -2420,6 +2549,7 @@ pub mod logger {
             self.component = Some(input);
             self
         }
+        /// The component that will be subject to logging.
         pub fn set_component(
             mut self,
             input: std::option::Option<crate::model::LoggerComponent>,
@@ -2432,6 +2562,7 @@ pub mod logger {
             self.id = Some(input.into());
             self
         }
+        /// A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2441,6 +2572,7 @@ pub mod logger {
             self.level = Some(input);
             self
         }
+        /// The level of the logs.
         pub fn set_level(mut self, input: std::option::Option<crate::model::LoggerLevel>) -> Self {
             self.level = input;
             self
@@ -2450,6 +2582,7 @@ pub mod logger {
             self.space = Some(input);
             self
         }
+        /// The amount of file space, in KB, to use if the local file system is used for logging purposes.
         pub fn set_space(mut self, input: std::option::Option<i32>) -> Self {
             self.space = input;
             self
@@ -2459,6 +2592,7 @@ pub mod logger {
             self.r#type = Some(input);
             self
         }
+        /// The type of log output which will be used.
         pub fn set_type(mut self, input: std::option::Option<crate::model::LoggerType>) -> Self {
             self.r#type = input;
             self
@@ -2482,6 +2616,7 @@ impl Logger {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2493,7 +2628,9 @@ impl Logger {
     std::hash::Hash,
 )]
 pub enum LoggerType {
+    #[allow(missing_docs)] // documentation missing in model
     AwsCloudWatch,
+    #[allow(missing_docs)] // documentation missing in model
     FileSystem,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2515,6 +2652,7 @@ impl std::str::FromStr for LoggerType {
     }
 }
 impl LoggerType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LoggerType::AwsCloudWatch => "AWSCloudWatch",
@@ -2522,6 +2660,7 @@ impl LoggerType {
             LoggerType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AWSCloudWatch", "FileSystem"]
     }
@@ -2532,6 +2671,7 @@ impl AsRef<str> for LoggerType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2543,10 +2683,15 @@ impl AsRef<str> for LoggerType {
     std::hash::Hash,
 )]
 pub enum LoggerLevel {
+    #[allow(missing_docs)] // documentation missing in model
     Debug,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Fatal,
+    #[allow(missing_docs)] // documentation missing in model
     Info,
+    #[allow(missing_docs)] // documentation missing in model
     Warn,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2571,6 +2716,7 @@ impl std::str::FromStr for LoggerLevel {
     }
 }
 impl LoggerLevel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LoggerLevel::Debug => "DEBUG",
@@ -2581,6 +2727,7 @@ impl LoggerLevel {
             LoggerLevel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEBUG", "ERROR", "FATAL", "INFO", "WARN"]
     }
@@ -2591,6 +2738,7 @@ impl AsRef<str> for LoggerLevel {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2602,7 +2750,9 @@ impl AsRef<str> for LoggerLevel {
     std::hash::Hash,
 )]
 pub enum LoggerComponent {
+    #[allow(missing_docs)] // documentation missing in model
     GreengrassSystem,
+    #[allow(missing_docs)] // documentation missing in model
     Lambda,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2624,6 +2774,7 @@ impl std::str::FromStr for LoggerComponent {
     }
 }
 impl LoggerComponent {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LoggerComponent::GreengrassSystem => "GreengrassSystem",
@@ -2631,6 +2782,7 @@ impl LoggerComponent {
             LoggerComponent::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GreengrassSystem", "Lambda"]
     }
@@ -2717,6 +2869,7 @@ pub mod group_version {
             self.connector_definition_version_arn = Some(input.into());
             self
         }
+        /// The ARN of the connector definition version for this group.
         pub fn set_connector_definition_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2732,6 +2885,7 @@ pub mod group_version {
             self.core_definition_version_arn = Some(input.into());
             self
         }
+        /// The ARN of the core definition version for this group.
         pub fn set_core_definition_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2747,6 +2901,7 @@ pub mod group_version {
             self.device_definition_version_arn = Some(input.into());
             self
         }
+        /// The ARN of the device definition version for this group.
         pub fn set_device_definition_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2762,6 +2917,7 @@ pub mod group_version {
             self.function_definition_version_arn = Some(input.into());
             self
         }
+        /// The ARN of the function definition version for this group.
         pub fn set_function_definition_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2777,6 +2933,7 @@ pub mod group_version {
             self.logger_definition_version_arn = Some(input.into());
             self
         }
+        /// The ARN of the logger definition version for this group.
         pub fn set_logger_definition_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2792,6 +2949,7 @@ pub mod group_version {
             self.resource_definition_version_arn = Some(input.into());
             self
         }
+        /// The ARN of the resource definition version for this group.
         pub fn set_resource_definition_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2807,6 +2965,7 @@ pub mod group_version {
             self.subscription_definition_version_arn = Some(input.into());
             self
         }
+        /// The ARN of the subscription definition version for this group.
         pub fn set_subscription_definition_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2867,6 +3026,7 @@ pub mod function_definition_version {
             self.default_config = Some(input);
             self
         }
+        /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
         pub fn set_default_config(
             mut self,
             input: std::option::Option<crate::model::FunctionDefaultConfig>,
@@ -2874,12 +3034,18 @@ pub mod function_definition_version {
             self.default_config = input;
             self
         }
+        /// Appends an item to `functions`.
+        ///
+        /// To override the contents of this collection use [`set_functions`](Self::set_functions).
+        ///
+        /// A list of Lambda functions in this function definition version.
         pub fn functions(mut self, input: impl Into<crate::model::Function>) -> Self {
             let mut v = self.functions.unwrap_or_default();
             v.push(input.into());
             self.functions = Some(v);
             self
         }
+        /// A list of Lambda functions in this function definition version.
         pub fn set_functions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Function>>,
@@ -2939,6 +3105,7 @@ pub mod function {
             self.function_arn = Some(input.into());
             self
         }
+        /// The ARN of the Lambda function.
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.function_arn = input;
             self
@@ -2951,6 +3118,7 @@ pub mod function {
             self.function_configuration = Some(input);
             self
         }
+        /// The configuration of the Lambda function.
         pub fn set_function_configuration(
             mut self,
             input: std::option::Option<crate::model::FunctionConfiguration>,
@@ -2963,6 +3131,7 @@ pub mod function {
             self.id = Some(input.into());
             self
         }
+        /// A descriptive or arbitrary ID for the function. This value must be unique within the function definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3036,6 +3205,7 @@ pub mod function_configuration {
             self.encoding_type = Some(input);
             self
         }
+        /// The expected encoding type of the input payload for the function. The default is ''json''.
         pub fn set_encoding_type(
             mut self,
             input: std::option::Option<crate::model::EncodingType>,
@@ -3051,6 +3221,7 @@ pub mod function_configuration {
             self.environment = Some(input);
             self
         }
+        /// The environment configuration of the function.
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::FunctionConfigurationEnvironment>,
@@ -3063,6 +3234,7 @@ pub mod function_configuration {
             self.exec_args = Some(input.into());
             self
         }
+        /// The execution arguments.
         pub fn set_exec_args(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.exec_args = input;
             self
@@ -3072,6 +3244,7 @@ pub mod function_configuration {
             self.executable = Some(input.into());
             self
         }
+        /// The name of the function executable.
         pub fn set_executable(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.executable = input;
             self
@@ -3081,6 +3254,7 @@ pub mod function_configuration {
             self.memory_size = Some(input);
             self
         }
+        /// The memory size, in KB, which the function requires. This setting is not applicable and should be cleared when you run the Lambda function without containerization.
         pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
             self.memory_size = input;
             self
@@ -3090,6 +3264,7 @@ pub mod function_configuration {
             self.pinned = Some(input);
             self
         }
+        /// True if the function is pinned. Pinned means the function is long-lived and starts when the core starts.
         pub fn set_pinned(mut self, input: std::option::Option<bool>) -> Self {
             self.pinned = input;
             self
@@ -3099,6 +3274,7 @@ pub mod function_configuration {
             self.timeout = Some(input);
             self
         }
+        /// The allowed function execution time, after which Lambda should terminate the function. This timeout still applies to pinned Lambda functions for each request.
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
@@ -3169,6 +3345,7 @@ pub mod function_configuration_environment {
             self.access_sysfs = Some(input);
             self
         }
+        /// If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs to read device information from /sys. This setting applies only when you run the Lambda function in a Greengrass container.
         pub fn set_access_sysfs(mut self, input: std::option::Option<bool>) -> Self {
             self.access_sysfs = input;
             self
@@ -3178,6 +3355,7 @@ pub mod function_configuration_environment {
             self.execution = Some(input);
             self
         }
+        /// Configuration related to executing the Lambda function
         pub fn set_execution(
             mut self,
             input: std::option::Option<crate::model::FunctionExecutionConfig>,
@@ -3185,6 +3363,11 @@ pub mod function_configuration_environment {
             self.execution = input;
             self
         }
+        /// Appends an item to `resource_access_policies`.
+        ///
+        /// To override the contents of this collection use [`set_resource_access_policies`](Self::set_resource_access_policies).
+        ///
+        /// A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda function can have at most 10 resources. ResourceAccessPolicies apply only when you run the Lambda function in a Greengrass container.
         pub fn resource_access_policies(
             mut self,
             input: impl Into<crate::model::ResourceAccessPolicy>,
@@ -3194,6 +3377,7 @@ pub mod function_configuration_environment {
             self.resource_access_policies = Some(v);
             self
         }
+        /// A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda function can have at most 10 resources. ResourceAccessPolicies apply only when you run the Lambda function in a Greengrass container.
         pub fn set_resource_access_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceAccessPolicy>>,
@@ -3201,6 +3385,11 @@ pub mod function_configuration_environment {
             self.resource_access_policies = input;
             self
         }
+        /// Adds a key-value pair to `variables`.
+        ///
+        /// To override the contents of this collection use [`set_variables`](Self::set_variables).
+        ///
+        /// Environment variables for the Lambda function's configuration.
         pub fn variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -3211,6 +3400,7 @@ pub mod function_configuration_environment {
             self.variables = Some(hash_map);
             self
         }
+        /// Environment variables for the Lambda function's configuration.
         pub fn set_variables(
             mut self,
             input: std::option::Option<
@@ -3270,6 +3460,7 @@ pub mod resource_access_policy {
             self.permission = Some(input);
             self
         }
+        /// The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro'' (read-only).
         pub fn set_permission(
             mut self,
             input: std::option::Option<crate::model::Permission>,
@@ -3282,6 +3473,7 @@ pub mod resource_access_policy {
             self.resource_id = Some(input.into());
             self
         }
+        /// The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -3334,6 +3526,7 @@ pub mod function_execution_config {
             self.isolation_mode = Some(input);
             self
         }
+        /// Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
         pub fn set_isolation_mode(
             mut self,
             input: std::option::Option<crate::model::FunctionIsolationMode>,
@@ -3346,6 +3539,7 @@ pub mod function_execution_config {
             self.run_as = Some(input);
             self
         }
+        /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
         pub fn set_run_as(
             mut self,
             input: std::option::Option<crate::model::FunctionRunAsConfig>,
@@ -3401,6 +3595,7 @@ pub mod function_run_as_config {
             self.gid = Some(input);
             self
         }
+        /// The group ID whose permissions are used to run a Lambda function.
         pub fn set_gid(mut self, input: std::option::Option<i32>) -> Self {
             self.gid = input;
             self
@@ -3410,6 +3605,7 @@ pub mod function_run_as_config {
             self.uid = Some(input);
             self
         }
+        /// The user ID whose permissions are used to run a Lambda function.
         pub fn set_uid(mut self, input: std::option::Option<i32>) -> Self {
             self.uid = input;
             self
@@ -3442,7 +3638,9 @@ impl FunctionRunAsConfig {
     std::hash::Hash,
 )]
 pub enum FunctionIsolationMode {
+    #[allow(missing_docs)] // documentation missing in model
     GreengrassContainer,
+    #[allow(missing_docs)] // documentation missing in model
     NoContainer,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3464,6 +3662,7 @@ impl std::str::FromStr for FunctionIsolationMode {
     }
 }
 impl FunctionIsolationMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FunctionIsolationMode::GreengrassContainer => "GreengrassContainer",
@@ -3471,6 +3670,7 @@ impl FunctionIsolationMode {
             FunctionIsolationMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GreengrassContainer", "NoContainer"]
     }
@@ -3481,6 +3681,7 @@ impl AsRef<str> for FunctionIsolationMode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3492,7 +3693,9 @@ impl AsRef<str> for FunctionIsolationMode {
     std::hash::Hash,
 )]
 pub enum EncodingType {
+    #[allow(missing_docs)] // documentation missing in model
     Binary,
+    #[allow(missing_docs)] // documentation missing in model
     Json,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3514,6 +3717,7 @@ impl std::str::FromStr for EncodingType {
     }
 }
 impl EncodingType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncodingType::Binary => "binary",
@@ -3521,6 +3725,7 @@ impl EncodingType {
             EncodingType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["binary", "json"]
     }
@@ -3559,6 +3764,7 @@ pub mod function_default_config {
             self.execution = Some(input);
             self
         }
+        /// Configuration information that specifies how a Lambda function runs.
         pub fn set_execution(
             mut self,
             input: std::option::Option<crate::model::FunctionDefaultExecutionConfig>,
@@ -3613,6 +3819,7 @@ pub mod function_default_execution_config {
             self.isolation_mode = Some(input);
             self
         }
+        /// Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
         pub fn set_isolation_mode(
             mut self,
             input: std::option::Option<crate::model::FunctionIsolationMode>,
@@ -3625,6 +3832,7 @@ pub mod function_default_execution_config {
             self.run_as = Some(input);
             self
         }
+        /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
         pub fn set_run_as(
             mut self,
             input: std::option::Option<crate::model::FunctionRunAsConfig>,
@@ -3671,12 +3879,18 @@ pub mod device_definition_version {
         pub(crate) devices: std::option::Option<std::vec::Vec<crate::model::Device>>,
     }
     impl Builder {
+        /// Appends an item to `devices`.
+        ///
+        /// To override the contents of this collection use [`set_devices`](Self::set_devices).
+        ///
+        /// A list of devices in the definition version.
         pub fn devices(mut self, input: impl Into<crate::model::Device>) -> Self {
             let mut v = self.devices.unwrap_or_default();
             v.push(input.into());
             self.devices = Some(v);
             self
         }
+        /// A list of devices in the definition version.
         pub fn set_devices(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Device>>,
@@ -3739,6 +3953,7 @@ pub mod device {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// The ARN of the certificate associated with the device.
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3751,6 +3966,7 @@ pub mod device {
             self.id = Some(input.into());
             self
         }
+        /// A descriptive or arbitrary ID for the device. This value must be unique within the device definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3760,6 +3976,7 @@ pub mod device {
             self.sync_shadow = Some(input);
             self
         }
+        /// If true, the device's local shadow will be automatically synced with the cloud.
         pub fn set_sync_shadow(mut self, input: std::option::Option<bool>) -> Self {
             self.sync_shadow = input;
             self
@@ -3769,6 +3986,7 @@ pub mod device {
             self.thing_arn = Some(input.into());
             self
         }
+        /// The thing ARN of the device.
         pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_arn = input;
             self
@@ -3814,12 +4032,18 @@ pub mod core_definition_version {
         pub(crate) cores: std::option::Option<std::vec::Vec<crate::model::Core>>,
     }
     impl Builder {
+        /// Appends an item to `cores`.
+        ///
+        /// To override the contents of this collection use [`set_cores`](Self::set_cores).
+        ///
+        /// A list of cores in the core definition version.
         pub fn cores(mut self, input: impl Into<crate::model::Core>) -> Self {
             let mut v = self.cores.unwrap_or_default();
             v.push(input.into());
             self.cores = Some(v);
             self
         }
+        /// A list of cores in the core definition version.
         pub fn set_cores(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Core>>,
@@ -3880,6 +4104,7 @@ pub mod core {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// The ARN of the certificate associated with the core.
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3892,6 +4117,7 @@ pub mod core {
             self.id = Some(input.into());
             self
         }
+        /// A descriptive or arbitrary ID for the core. This value must be unique within the core definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3901,6 +4127,7 @@ pub mod core {
             self.sync_shadow = Some(input);
             self
         }
+        /// If true, the core's local shadow is automatically synced with the cloud.
         pub fn set_sync_shadow(mut self, input: std::option::Option<bool>) -> Self {
             self.sync_shadow = input;
             self
@@ -3910,6 +4137,7 @@ pub mod core {
             self.thing_arn = Some(input.into());
             self
         }
+        /// The ARN of the thing which is the core.
         pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_arn = input;
             self
@@ -3955,12 +4183,18 @@ pub mod connector_definition_version {
         pub(crate) connectors: std::option::Option<std::vec::Vec<crate::model::Connector>>,
     }
     impl Builder {
+        /// Appends an item to `connectors`.
+        ///
+        /// To override the contents of this collection use [`set_connectors`](Self::set_connectors).
+        ///
+        /// A list of references to connectors in this version, with their corresponding configuration settings.
         pub fn connectors(mut self, input: impl Into<crate::model::Connector>) -> Self {
             let mut v = self.connectors.unwrap_or_default();
             v.push(input.into());
             self.connectors = Some(v);
             self
         }
+        /// A list of references to connectors in this version, with their corresponding configuration settings.
         pub fn set_connectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Connector>>,
@@ -4022,6 +4256,7 @@ pub mod connector {
             self.connector_arn = Some(input.into());
             self
         }
+        /// The ARN of the connector.
         pub fn set_connector_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4034,10 +4269,16 @@ pub mod connector {
             self.id = Some(input.into());
             self
         }
+        /// A descriptive or arbitrary ID for the connector. This value must be unique within the connector definition version. Max length is 128 characters with pattern [a-zA-Z0-9:_-]+.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// The parameters or configuration that the connector uses.
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -4048,6 +4289,7 @@ pub mod connector {
             self.parameters = Some(hash_map);
             self
         }
+        /// The parameters or configuration that the connector uses.
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -4086,11 +4328,17 @@ impl Connector {
     std::hash::Hash,
 )]
 pub enum BulkDeploymentStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Initializing,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4116,6 +4364,7 @@ impl std::str::FromStr for BulkDeploymentStatus {
     }
 }
 impl BulkDeploymentStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BulkDeploymentStatus::Completed => "Completed",
@@ -4127,6 +4376,7 @@ impl BulkDeploymentStatus {
             BulkDeploymentStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Completed",
@@ -4180,6 +4430,7 @@ pub mod bulk_deployment_metrics {
             self.invalid_input_records = Some(input);
             self
         }
+        /// The total number of records that returned a non-retryable error. For example, this can occur if a group record from the input file uses an invalid format or specifies a nonexistent group version, or if the execution role doesn't grant permission to deploy a group or group version.
         pub fn set_invalid_input_records(mut self, input: std::option::Option<i32>) -> Self {
             self.invalid_input_records = input;
             self
@@ -4189,6 +4440,7 @@ pub mod bulk_deployment_metrics {
             self.records_processed = Some(input);
             self
         }
+        /// The total number of group records from the input file that have been processed so far, or attempted.
         pub fn set_records_processed(mut self, input: std::option::Option<i32>) -> Self {
             self.records_processed = input;
             self
@@ -4198,6 +4450,7 @@ pub mod bulk_deployment_metrics {
             self.retry_attempts = Some(input);
             self
         }
+        /// The total number of deployment attempts that returned a retryable error. For example, a retry is triggered if the attempt to deploy a group returns a throttling error. ''StartBulkDeployment'' retries a group deployment up to five times.
         pub fn set_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
             self.retry_attempts = input;
             self
@@ -4231,9 +4484,13 @@ impl BulkDeploymentMetrics {
     std::hash::Hash,
 )]
 pub enum UpdateTargetsOperatingSystem {
+    #[allow(missing_docs)] // documentation missing in model
     AmazonLinux,
+    #[allow(missing_docs)] // documentation missing in model
     Openwrt,
+    #[allow(missing_docs)] // documentation missing in model
     Raspbian,
+    #[allow(missing_docs)] // documentation missing in model
     Ubuntu,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4257,6 +4514,7 @@ impl std::str::FromStr for UpdateTargetsOperatingSystem {
     }
 }
 impl UpdateTargetsOperatingSystem {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UpdateTargetsOperatingSystem::AmazonLinux => "amazon_linux",
@@ -4266,6 +4524,7 @@ impl UpdateTargetsOperatingSystem {
             UpdateTargetsOperatingSystem::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["amazon_linux", "openwrt", "raspbian", "ubuntu"]
     }
@@ -4288,9 +4547,13 @@ impl AsRef<str> for UpdateTargetsOperatingSystem {
     std::hash::Hash,
 )]
 pub enum UpdateTargetsArchitecture {
+    #[allow(missing_docs)] // documentation missing in model
     Aarch64,
+    #[allow(missing_docs)] // documentation missing in model
     Armv6l,
+    #[allow(missing_docs)] // documentation missing in model
     Armv7l,
+    #[allow(missing_docs)] // documentation missing in model
     X8664,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4314,6 +4577,7 @@ impl std::str::FromStr for UpdateTargetsArchitecture {
     }
 }
 impl UpdateTargetsArchitecture {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UpdateTargetsArchitecture::Aarch64 => "aarch64",
@@ -4323,6 +4587,7 @@ impl UpdateTargetsArchitecture {
             UpdateTargetsArchitecture::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["aarch64", "armv6l", "armv7l", "x86_64"]
     }
@@ -4345,13 +4610,21 @@ impl AsRef<str> for UpdateTargetsArchitecture {
     std::hash::Hash,
 )]
 pub enum UpdateAgentLogLevel {
+    #[allow(missing_docs)] // documentation missing in model
     Debug,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Fatal,
+    #[allow(missing_docs)] // documentation missing in model
     Info,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Trace,
+    #[allow(missing_docs)] // documentation missing in model
     Verbose,
+    #[allow(missing_docs)] // documentation missing in model
     Warn,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4379,6 +4652,7 @@ impl std::str::FromStr for UpdateAgentLogLevel {
     }
 }
 impl UpdateAgentLogLevel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UpdateAgentLogLevel::Debug => "DEBUG",
@@ -4392,6 +4666,7 @@ impl UpdateAgentLogLevel {
             UpdateAgentLogLevel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DEBUG", "ERROR", "FATAL", "INFO", "NONE", "TRACE", "VERBOSE", "WARN",
@@ -4416,7 +4691,9 @@ impl AsRef<str> for UpdateAgentLogLevel {
     std::hash::Hash,
 )]
 pub enum SoftwareToUpdate {
+    #[allow(missing_docs)] // documentation missing in model
     Core,
+    #[allow(missing_docs)] // documentation missing in model
     OtaAgent,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4438,6 +4715,7 @@ impl std::str::FromStr for SoftwareToUpdate {
     }
 }
 impl SoftwareToUpdate {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SoftwareToUpdate::Core => "core",
@@ -4445,6 +4723,7 @@ impl SoftwareToUpdate {
             SoftwareToUpdate::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["core", "ota_agent"]
     }

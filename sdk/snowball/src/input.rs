@@ -15,6 +15,8 @@ pub mod cancel_cluster_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>The 39-character ID for the cluster that you want to cancel, for example
+        /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -22,8 +24,10 @@ pub mod cancel_cluster_input {
         /// Consumes the builder and constructs a [`CancelClusterInput`](crate::input::CancelClusterInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CancelClusterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CancelClusterInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CancelClusterInput {
                 cluster_id: self.cluster_id,
             })
@@ -41,16 +45,16 @@ impl CancelClusterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CancelCluster,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CancelClusterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -58,7 +62,7 @@ impl CancelClusterInput {
         fn update_http_builder(
             input: &crate::input::CancelClusterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -67,29 +71,31 @@ impl CancelClusterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CancelClusterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.CancelCluster",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_cancel_cluster(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -112,25 +118,27 @@ impl CancelClusterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CancelCluster::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CancelCluster",
-                    "snowball",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CancelCluster::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CancelCluster",
+            "snowball",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -159,6 +167,8 @@ pub mod cancel_job_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The 39-character job ID for the job that you want to cancel, for example
+        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -166,7 +176,7 @@ pub mod cancel_job_input {
         /// Consumes the builder and constructs a [`CancelJobInput`](crate::input::CancelJobInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CancelJobInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::CancelJobInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::CancelJobInput {
                 job_id: self.job_id,
@@ -185,16 +195,16 @@ impl CancelJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CancelJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CancelJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -202,7 +212,7 @@ impl CancelJobInput {
         fn update_http_builder(
             input: &crate::input::CancelJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -211,29 +221,31 @@ impl CancelJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CancelJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.CancelJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_cancel_job(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -256,13 +268,13 @@ impl CancelJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CancelJob::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::CancelJob::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "CancelJob",
                     "snowball",
                 ));
@@ -271,10 +283,10 @@ impl CancelJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -302,6 +314,7 @@ pub mod create_address_input {
             self.address = Some(input);
             self
         }
+        /// <p>The address that you want the Snow device shipped to.</p>
         pub fn set_address(mut self, input: std::option::Option<crate::model::Address>) -> Self {
             self.address = input;
             self
@@ -309,8 +322,10 @@ pub mod create_address_input {
         /// Consumes the builder and constructs a [`CreateAddressInput`](crate::input::CreateAddressInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateAddressInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateAddressInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateAddressInput {
                 address: self.address,
             })
@@ -328,16 +343,16 @@ impl CreateAddressInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateAddress,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateAddressInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -345,7 +360,7 @@ impl CreateAddressInput {
         fn update_http_builder(
             input: &crate::input::CreateAddressInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -354,29 +369,31 @@ impl CreateAddressInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateAddressInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.CreateAddress",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_address(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -399,25 +416,27 @@ impl CreateAddressInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateAddress::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateAddress",
-                    "snowball",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateAddress::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateAddress",
+            "snowball",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -455,6 +474,7 @@ pub mod create_cluster_input {
     impl Builder {
         /// <p>The type of job for this cluster. Currently, the only job type supported for clusters
         /// is <code>LOCAL_USE</code>.</p>
+        ///
         /// <p>For more information, see
         /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
         /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
@@ -464,6 +484,14 @@ pub mod create_cluster_input {
             self.job_type = Some(input);
             self
         }
+        /// <p>The type of job for this cluster. Currently, the only job type supported for clusters
+        /// is <code>LOCAL_USE</code>.</p>
+        ///
+        /// <p>For more information, see
+        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
+        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
+        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
             self.job_type = input;
             self
@@ -474,6 +502,8 @@ pub mod create_cluster_input {
             self.resources = Some(input);
             self
         }
+        /// <p>The resources associated with the cluster job. These resources include Amazon S3
+        /// buckets and optional AWS Lambda functions written in the Python language. </p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<crate::model::JobResource>,
@@ -490,6 +520,8 @@ pub mod create_cluster_input {
             self.on_device_service_configuration = Some(input);
             self
         }
+        /// <p>Specifies the service or services on the Snow Family device that your
+        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -503,6 +535,8 @@ pub mod create_cluster_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>An optional description of this specific cluster, for example <code>Environmental Data
+        /// Cluster-01</code>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -512,6 +546,7 @@ pub mod create_cluster_input {
             self.address_id = Some(input.into());
             self
         }
+        /// <p>The ID for the address that you want the cluster shipped to.</p>
         pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address_id = input;
             self
@@ -523,6 +558,9 @@ pub mod create_cluster_input {
             self.kms_key_arn = Some(input.into());
             self
         }
+        /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster.
+        /// <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS Key
+        /// Management Service (AWS KMS). </p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -534,6 +572,9 @@ pub mod create_cluster_input {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The <code>RoleARN</code> that you want to associate with this cluster.
+        /// <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
+        /// Identity and Access Management (IAM).</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -543,6 +584,7 @@ pub mod create_cluster_input {
         /// <note>
         /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
         /// </note>
+        ///
         /// <p>For more information, see
         /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
         /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
@@ -552,6 +594,17 @@ pub mod create_cluster_input {
             self.snowball_type = Some(input);
             self
         }
+        /// <p>The type of AWS Snow Family device to use for this cluster.
+        /// </p>
+        /// <note>
+        /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
+        /// </note>
+        ///
+        /// <p>For more information, see
+        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
+        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
+        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn set_snowball_type(
             mut self,
             input: std::option::Option<crate::model::SnowballType>,
@@ -582,6 +635,7 @@ pub mod create_cluster_input {
         /// two-day shipping.</p>
         /// </li>
         /// </ul>
+        ///
         /// <ul>
         /// <li>
         /// <p>In Australia, you have access to express shipping. Typically, devices shipped
@@ -604,6 +658,48 @@ pub mod create_cluster_input {
             self.shipping_option = Some(input);
             self
         }
+        /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon
+        /// you'll get each Snowball Edge device, rather it represents how quickly each device moves to
+        /// its destination while in transit. Regional shipping speeds are as follows:
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
+        /// express are delivered in about a day.</p>
+        /// </li>
+        /// <li>
+        /// <p>In the European Union (EU), you have access to express shipping. Typically,
+        /// Snow devices shipped express are delivered in about a day. In addition, most countries in the
+        /// EU have access to standard shipping, which typically takes less than a week, one
+        /// way.</p>
+        /// </li>
+        /// <li>
+        /// <p>In India, Snow devices are delivered in one to seven days.</p>
+        /// </li>
+        /// <li>
+        /// <p>In the United States of America (US), you have access to one-day shipping and
+        /// two-day shipping.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>In Australia, you have access to express shipping. Typically, devices shipped
+        /// express are delivered in about a day.</p>
+        /// </li>
+        /// <li>
+        /// <p>In the European Union (EU), you have access to express shipping. Typically,
+        /// Snow devices shipped express are delivered in about a day. In addition, most countries
+        /// in the EU have access to standard shipping, which typically takes less than a week, one
+        /// way.</p>
+        /// </li>
+        /// <li>
+        /// <p>In India, Snow devices are delivered in one to seven days.</p>
+        /// </li>
+        /// <li>
+        /// <p>In the US, you have access to one-day shipping and two-day shipping.</p>
+        /// </li>
+        /// </ul>
         pub fn set_shipping_option(
             mut self,
             input: std::option::Option<crate::model::ShippingOption>,
@@ -617,6 +713,8 @@ pub mod create_cluster_input {
             self.notification = Some(input);
             self
         }
+        /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this
+        /// cluster.</p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::Notification>,
@@ -630,6 +728,8 @@ pub mod create_cluster_input {
             self.forwarding_address_id = Some(input.into());
             self
         }
+        /// <p>The forwarding address ID for a cluster. This field is not supported in most
+        /// regions.</p>
         pub fn set_forwarding_address_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -642,6 +742,7 @@ pub mod create_cluster_input {
             self.tax_documents = Some(input);
             self
         }
+        /// <p>The tax documents required in your AWS Region.</p>
         pub fn set_tax_documents(
             mut self,
             input: std::option::Option<crate::model::TaxDocuments>,
@@ -657,6 +758,10 @@ pub mod create_cluster_input {
             self.remote_management = Some(input);
             self
         }
+        /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside
+        /// of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will
+        /// automatically be available when the device arrives at your location. Otherwise, you need to
+        /// use the Snowball Client to manage the device.</p>
         pub fn set_remote_management(
             mut self,
             input: std::option::Option<crate::model::RemoteManagement>,
@@ -667,8 +772,10 @@ pub mod create_cluster_input {
         /// Consumes the builder and constructs a [`CreateClusterInput`](crate::input::CreateClusterInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateClusterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateClusterInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateClusterInput {
                 job_type: self.job_type,
                 resources: self.resources,
@@ -698,16 +805,16 @@ impl CreateClusterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateCluster,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateClusterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -715,7 +822,7 @@ impl CreateClusterInput {
         fn update_http_builder(
             input: &crate::input::CreateClusterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -724,29 +831,31 @@ impl CreateClusterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateClusterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.CreateCluster",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_cluster(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -769,25 +878,27 @@ impl CreateClusterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateCluster::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateCluster",
-                    "snowball",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateCluster::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateCluster",
+            "snowball",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -834,13 +945,17 @@ pub mod create_job_input {
             self.job_type = Some(input);
             self
         }
+        /// <p>Defines the type of job that you're creating.
+        /// </p>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
             self.job_type = input;
             self
         }
         /// <p>Defines the Amazon S3 buckets associated with this job.</p>
+        ///
         /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred
         /// data will be imported into.</p>
+        ///
         /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred
         /// data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If
         /// you choose to export a range, you define the length of the range by providing either an
@@ -850,6 +965,16 @@ pub mod create_job_input {
             self.resources = Some(input);
             self
         }
+        /// <p>Defines the Amazon S3 buckets associated with this job.</p>
+        ///
+        /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred
+        /// data will be imported into.</p>
+        ///
+        /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred
+        /// data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If
+        /// you choose to export a range, you define the length of the range by providing either an
+        /// inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both.
+        /// Ranges are UTF-8 binary sorted.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<crate::model::JobResource>,
@@ -866,6 +991,8 @@ pub mod create_job_input {
             self.on_device_service_configuration = Some(input);
             self
         }
+        /// <p>Specifies the service or services on the Snow Family device that your
+        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -879,6 +1006,8 @@ pub mod create_job_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>Defines an optional description of this specific job, for example <code>Important
+        /// Photos 2016-08-11</code>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -888,6 +1017,7 @@ pub mod create_job_input {
             self.address_id = Some(input.into());
             self
         }
+        /// <p>The ID for the address that you want the Snow device shipped to.</p>
         pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address_id = input;
             self
@@ -899,6 +1029,9 @@ pub mod create_job_input {
             self.kms_key_arn = Some(input.into());
             self
         }
+        /// <p>The <code>KmsKeyARN</code> that you want to associate with this job.
+        /// <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> AWS Key Management
+        /// Service (KMS) API action.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -910,6 +1043,9 @@ pub mod create_job_input {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The <code>RoleARN</code> that you want to associate with this job.
+        /// <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS Identity and
+        /// Access Management (IAM) API action.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -917,6 +1053,7 @@ pub mod create_job_input {
         /// <p>If your job is being created in one of the US regions, you have the option of
         /// specifying what size Snow device you'd like for this job. In all other regions, Snowballs come
         /// with 80 TB in storage capacity.</p>
+        ///
         /// <p>For more information, see
         /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
         /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
@@ -929,6 +1066,15 @@ pub mod create_job_input {
             self.snowball_capacity_preference = Some(input);
             self
         }
+        /// <p>If your job is being created in one of the US regions, you have the option of
+        /// specifying what size Snow device you'd like for this job. In all other regions, Snowballs come
+        /// with 80 TB in storage capacity.</p>
+        ///
+        /// <p>For more information, see
+        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
+        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
+        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn set_snowball_capacity_preference(
             mut self,
             input: std::option::Option<crate::model::SnowballCapacity>,
@@ -939,6 +1085,7 @@ pub mod create_job_input {
         /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the
         /// Snow device, rather it represents how quickly the Snow device moves to its destination while in
         /// transit. Regional shipping speeds are as follows:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
@@ -961,6 +1108,28 @@ pub mod create_job_input {
             self.shipping_option = Some(input);
             self
         }
+        /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the
+        /// Snow device, rather it represents how quickly the Snow device moves to its destination while in
+        /// transit. Regional shipping speeds are as follows:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
+        /// express are delivered in about a day.</p>
+        /// </li>
+        /// <li>
+        /// <p>In the European Union (EU), you have access to express shipping. Typically,
+        /// Snow devices shipped express are delivered in about a day. In addition, most countries in the
+        /// EU have access to standard shipping, which typically takes less than a week, one
+        /// way.</p>
+        /// </li>
+        /// <li>
+        /// <p>In India, Snow devices are delivered in one to seven days.</p>
+        /// </li>
+        /// <li>
+        /// <p>In the US, you have access to one-day shipping and two-day shipping.</p>
+        /// </li>
+        /// </ul>
         pub fn set_shipping_option(
             mut self,
             input: std::option::Option<crate::model::ShippingOption>,
@@ -974,6 +1143,8 @@ pub mod create_job_input {
             self.notification = Some(input);
             self
         }
+        /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for
+        /// this job.</p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::Notification>,
@@ -988,6 +1159,9 @@ pub mod create_job_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to
+        /// provide only this <code>clusterId</code> value. The other job attributes are inherited from
+        /// the cluster.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -1001,6 +1175,7 @@ pub mod create_job_input {
         /// device type for cluster jobs is <code>EDGE</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
         /// Options</a> in the Snowball Edge Developer Guide.</p>
+        ///
         /// <p>For more information, see
         /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
         /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
@@ -1010,6 +1185,21 @@ pub mod create_job_input {
             self.snowball_type = Some(input);
             self
         }
+        /// <p>The type of AWS Snow Family device to use for this job.
+        /// </p>
+        /// <note>
+        /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
+        /// </note>
+        /// <p>The type of AWS Snow device to use for this job. Currently, the only supported
+        /// device type for cluster jobs is <code>EDGE</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
+        /// Options</a> in the Snowball Edge Developer Guide.</p>
+        ///
+        /// <p>For more information, see
+        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
+        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
+        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn set_snowball_type(
             mut self,
             input: std::option::Option<crate::model::SnowballType>,
@@ -1023,6 +1213,8 @@ pub mod create_job_input {
             self.forwarding_address_id = Some(input.into());
             self
         }
+        /// <p>The forwarding address ID for a job. This field is not supported in most
+        /// Regions.</p>
         pub fn set_forwarding_address_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1035,6 +1227,7 @@ pub mod create_job_input {
             self.tax_documents = Some(input);
             self
         }
+        /// <p>The tax documents required in your AWS Region.</p>
         pub fn set_tax_documents(
             mut self,
             input: std::option::Option<crate::model::TaxDocuments>,
@@ -1043,6 +1236,7 @@ pub mod create_job_input {
             self
         }
         /// <p>Defines the device configuration for an AWS Snowcone job.</p>
+        ///
         /// <p>For more information, see
         /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
         /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
@@ -1052,6 +1246,13 @@ pub mod create_job_input {
             self.device_configuration = Some(input);
             self
         }
+        /// <p>Defines the device configuration for an AWS Snowcone job.</p>
+        ///
+        /// <p>For more information, see
+        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
+        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
+        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn set_device_configuration(
             mut self,
             input: std::option::Option<crate::model::DeviceConfiguration>,
@@ -1067,6 +1268,10 @@ pub mod create_job_input {
             self.remote_management = Some(input);
             self
         }
+        /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your
+        /// internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will
+        /// automatically be available when the device arrives at your location. Otherwise, you need to
+        /// use the Snowball Client to manage the device.</p>
         pub fn set_remote_management(
             mut self,
             input: std::option::Option<crate::model::RemoteManagement>,
@@ -1079,6 +1284,7 @@ pub mod create_job_input {
             self.long_term_pricing_id = Some(input.into());
             self
         }
+        /// <p>The ID of the long-term pricing type for the device.</p>
         pub fn set_long_term_pricing_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1089,7 +1295,7 @@ pub mod create_job_input {
         /// Consumes the builder and constructs a [`CreateJobInput`](crate::input::CreateJobInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateJobInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::CreateJobInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::CreateJobInput {
                 job_type: self.job_type,
@@ -1124,16 +1330,16 @@ impl CreateJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1141,7 +1347,7 @@ impl CreateJobInput {
         fn update_http_builder(
             input: &crate::input::CreateJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1150,29 +1356,31 @@ impl CreateJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.CreateJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_job(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1195,13 +1403,13 @@ impl CreateJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateJob::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::CreateJob::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "CreateJob",
                     "snowball",
                 ));
@@ -1210,10 +1418,10 @@ impl CreateJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1244,6 +1452,8 @@ pub mod create_long_term_pricing_input {
             self.long_term_pricing_type = Some(input);
             self
         }
+        /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year
+        /// long-term pricing.</p>
         pub fn set_long_term_pricing_type(
             mut self,
             input: std::option::Option<crate::model::LongTermPricingType>,
@@ -1256,6 +1466,7 @@ pub mod create_long_term_pricing_input {
             self.is_long_term_pricing_auto_renew = Some(input);
             self
         }
+        /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
         pub fn set_is_long_term_pricing_auto_renew(
             mut self,
             input: std::option::Option<bool>,
@@ -1268,6 +1479,7 @@ pub mod create_long_term_pricing_input {
             self.snowball_type = Some(input);
             self
         }
+        /// <p>The type of AWS Snow Family device to use for the long-term pricing job.</p>
         pub fn set_snowball_type(
             mut self,
             input: std::option::Option<crate::model::SnowballType>,
@@ -1280,7 +1492,7 @@ pub mod create_long_term_pricing_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateLongTermPricingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateLongTermPricingInput {
                 long_term_pricing_type: self.long_term_pricing_type,
@@ -1301,16 +1513,16 @@ impl CreateLongTermPricingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateLongTermPricing,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateLongTermPricingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1318,7 +1530,7 @@ impl CreateLongTermPricingInput {
         fn update_http_builder(
             input: &crate::input::CreateLongTermPricingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1327,32 +1539,34 @@ impl CreateLongTermPricingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateLongTermPricingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.CreateLongTermPricing",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_long_term_pricing(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1375,15 +1589,15 @@ impl CreateLongTermPricingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateLongTermPricing::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateLongTermPricing",
             "snowball",
         ));
@@ -1392,10 +1606,10 @@ impl CreateLongTermPricingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1425,6 +1639,8 @@ pub mod create_return_shipping_label_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The ID for a job that you want to create the return shipping label for; for example,
+        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -1436,6 +1652,9 @@ pub mod create_return_shipping_label_input {
             self.shipping_option = Some(input);
             self
         }
+        /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to AWS.
+        /// This speed represents how quickly it moves to its
+        /// destination while in transit. Regional shipping speeds are as follows:</p>
         pub fn set_shipping_option(
             mut self,
             input: std::option::Option<crate::model::ShippingOption>,
@@ -1448,7 +1667,7 @@ pub mod create_return_shipping_label_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateReturnShippingLabelInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateReturnShippingLabelInput {
                 job_id: self.job_id,
@@ -1469,16 +1688,16 @@ impl CreateReturnShippingLabelInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateReturnShippingLabel,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateReturnShippingLabelInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1486,7 +1705,7 @@ impl CreateReturnShippingLabelInput {
         fn update_http_builder(
             input: &crate::input::CreateReturnShippingLabelInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1495,32 +1714,34 @@ impl CreateReturnShippingLabelInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateReturnShippingLabelInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.CreateReturnShippingLabel",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_return_shipping_label(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1543,15 +1764,15 @@ impl CreateReturnShippingLabelInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateReturnShippingLabel::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateReturnShippingLabel",
             "snowball",
         ));
@@ -1560,10 +1781,10 @@ impl CreateReturnShippingLabelInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1591,6 +1812,7 @@ pub mod describe_address_input {
             self.address_id = Some(input.into());
             self
         }
+        /// <p>The automatically generated ID for a specific address.</p>
         pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address_id = input;
             self
@@ -1600,7 +1822,7 @@ pub mod describe_address_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeAddressInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeAddressInput {
                 address_id: self.address_id,
@@ -1619,16 +1841,16 @@ impl DescribeAddressInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeAddress,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeAddressInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1636,7 +1858,7 @@ impl DescribeAddressInput {
         fn update_http_builder(
             input: &crate::input::DescribeAddressInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1645,32 +1867,32 @@ impl DescribeAddressInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeAddressInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.DescribeAddress",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_address(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1693,15 +1915,15 @@ impl DescribeAddressInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeAddress::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeAddress",
             "snowball",
         ));
@@ -1710,10 +1932,10 @@ impl DescribeAddressInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1742,6 +1964,7 @@ pub mod describe_addresses_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of <code>ADDRESS</code> objects to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1753,6 +1976,9 @@ pub mod describe_addresses_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
+        /// <code>ADDRESS</code> objects, you have the option of specifying a value for
+        /// <code>NextToken</code> as the starting point for your list of returned addresses.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1762,7 +1988,7 @@ pub mod describe_addresses_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeAddressesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeAddressesInput {
                 max_results: self.max_results,
@@ -1782,16 +2008,16 @@ impl DescribeAddressesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeAddresses,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeAddressesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1799,7 +2025,7 @@ impl DescribeAddressesInput {
         fn update_http_builder(
             input: &crate::input::DescribeAddressesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1808,32 +2034,32 @@ impl DescribeAddressesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeAddressesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.DescribeAddresses",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_addresses(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1856,15 +2082,15 @@ impl DescribeAddressesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeAddresses::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeAddresses",
             "snowball",
         ));
@@ -1873,10 +2099,10 @@ impl DescribeAddressesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1904,6 +2130,7 @@ pub mod describe_cluster_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>The automatically generated ID for a cluster.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -1913,7 +2140,7 @@ pub mod describe_cluster_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeClusterInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeClusterInput {
                 cluster_id: self.cluster_id,
@@ -1932,16 +2159,16 @@ impl DescribeClusterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCluster,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeClusterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1949,7 +2176,7 @@ impl DescribeClusterInput {
         fn update_http_builder(
             input: &crate::input::DescribeClusterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1958,32 +2185,32 @@ impl DescribeClusterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeClusterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.DescribeCluster",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_cluster(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2006,15 +2233,15 @@ impl DescribeClusterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCluster::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCluster",
             "snowball",
         ));
@@ -2023,10 +2250,10 @@ impl DescribeClusterInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2055,6 +2282,8 @@ pub mod describe_job_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The automatically generated ID for a job, for example
+        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -2062,8 +2291,10 @@ pub mod describe_job_input {
         /// Consumes the builder and constructs a [`DescribeJobInput`](crate::input::DescribeJobInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeJobInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeJobInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeJobInput {
                 job_id: self.job_id,
             })
@@ -2081,16 +2312,16 @@ impl DescribeJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2098,7 +2329,7 @@ impl DescribeJobInput {
         fn update_http_builder(
             input: &crate::input::DescribeJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2107,29 +2338,31 @@ impl DescribeJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.DescribeJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_job(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2152,25 +2385,27 @@ impl DescribeJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeJob::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeJob",
-                    "snowball",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeJob",
+            "snowball",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2199,6 +2434,8 @@ pub mod describe_return_shipping_label_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The automatically generated ID for a job, for example
+        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -2208,7 +2445,7 @@ pub mod describe_return_shipping_label_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeReturnShippingLabelInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeReturnShippingLabelInput {
                 job_id: self.job_id,
@@ -2228,16 +2465,16 @@ impl DescribeReturnShippingLabelInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeReturnShippingLabel,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeReturnShippingLabelInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2245,7 +2482,7 @@ impl DescribeReturnShippingLabelInput {
         fn update_http_builder(
             input: &crate::input::DescribeReturnShippingLabelInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2254,30 +2491,30 @@ impl DescribeReturnShippingLabelInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeReturnShippingLabelInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.DescribeReturnShippingLabel",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_return_shipping_label(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_return_shipping_label(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2300,15 +2537,15 @@ impl DescribeReturnShippingLabelInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeReturnShippingLabel::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeReturnShippingLabel",
             "snowball",
         ));
@@ -2317,10 +2554,10 @@ impl DescribeReturnShippingLabelInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2349,6 +2586,8 @@ pub mod get_job_manifest_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The ID for a job that you want to get the manifest file for, for example
+        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -2358,7 +2597,7 @@ pub mod get_job_manifest_input {
             self,
         ) -> std::result::Result<
             crate::input::GetJobManifestInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetJobManifestInput {
                 job_id: self.job_id,
@@ -2377,16 +2616,16 @@ impl GetJobManifestInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetJobManifest,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetJobManifestInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2394,7 +2633,7 @@ impl GetJobManifestInput {
         fn update_http_builder(
             input: &crate::input::GetJobManifestInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2403,32 +2642,32 @@ impl GetJobManifestInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetJobManifestInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.GetJobManifest",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_job_manifest(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2451,15 +2690,15 @@ impl GetJobManifestInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetJobManifest::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetJobManifest",
             "snowball",
         ));
@@ -2468,10 +2707,10 @@ impl GetJobManifestInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2500,6 +2739,8 @@ pub mod get_job_unlock_code_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for
+        /// example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -2509,7 +2750,7 @@ pub mod get_job_unlock_code_input {
             self,
         ) -> std::result::Result<
             crate::input::GetJobUnlockCodeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetJobUnlockCodeInput {
                 job_id: self.job_id,
@@ -2528,16 +2769,16 @@ impl GetJobUnlockCodeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetJobUnlockCode,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetJobUnlockCodeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2545,7 +2786,7 @@ impl GetJobUnlockCodeInput {
         fn update_http_builder(
             input: &crate::input::GetJobUnlockCodeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2554,32 +2795,32 @@ impl GetJobUnlockCodeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetJobUnlockCodeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.GetJobUnlockCode",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_job_unlock_code(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2602,15 +2843,15 @@ impl GetJobUnlockCodeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetJobUnlockCode::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetJobUnlockCode",
             "snowball",
         ));
@@ -2619,10 +2860,10 @@ impl GetJobUnlockCodeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2648,7 +2889,7 @@ pub mod get_snowball_usage_input {
             self,
         ) -> std::result::Result<
             crate::input::GetSnowballUsageInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetSnowballUsageInput {})
         }
@@ -2665,16 +2906,16 @@ impl GetSnowballUsageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetSnowballUsage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetSnowballUsageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2682,7 +2923,7 @@ impl GetSnowballUsageInput {
         fn update_http_builder(
             input: &crate::input::GetSnowballUsageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2691,32 +2932,32 @@ impl GetSnowballUsageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetSnowballUsageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.GetSnowballUsage",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_snowball_usage(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2739,15 +2980,15 @@ impl GetSnowballUsageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetSnowballUsage::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetSnowballUsage",
             "snowball",
         ));
@@ -2756,10 +2997,10 @@ impl GetSnowballUsageInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2788,6 +3029,8 @@ pub mod get_software_updates_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The ID for a job that you want to get the software update file for, for example
+        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -2797,7 +3040,7 @@ pub mod get_software_updates_input {
             self,
         ) -> std::result::Result<
             crate::input::GetSoftwareUpdatesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetSoftwareUpdatesInput {
                 job_id: self.job_id,
@@ -2816,16 +3059,16 @@ impl GetSoftwareUpdatesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetSoftwareUpdates,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetSoftwareUpdatesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2833,7 +3076,7 @@ impl GetSoftwareUpdatesInput {
         fn update_http_builder(
             input: &crate::input::GetSoftwareUpdatesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2842,30 +3085,32 @@ impl GetSoftwareUpdatesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetSoftwareUpdatesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.GetSoftwareUpdates",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_software_updates(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2888,15 +3133,15 @@ impl GetSoftwareUpdatesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetSoftwareUpdates::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetSoftwareUpdates",
             "snowball",
         ));
@@ -2905,10 +3150,10 @@ impl GetSoftwareUpdatesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2939,6 +3184,8 @@ pub mod list_cluster_jobs_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>The 39-character ID for the cluster that you want to list, for example
+        /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -2948,6 +3195,7 @@ pub mod list_cluster_jobs_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of <code>JobListEntry</code> objects to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2959,6 +3207,9 @@ pub mod list_cluster_jobs_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
+        /// <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code>
+        /// as the starting point for your returned list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2968,7 +3219,7 @@ pub mod list_cluster_jobs_input {
             self,
         ) -> std::result::Result<
             crate::input::ListClusterJobsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListClusterJobsInput {
                 cluster_id: self.cluster_id,
@@ -2989,16 +3240,16 @@ impl ListClusterJobsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListClusterJobs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListClusterJobsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3006,7 +3257,7 @@ impl ListClusterJobsInput {
         fn update_http_builder(
             input: &crate::input::ListClusterJobsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3015,32 +3266,32 @@ impl ListClusterJobsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListClusterJobsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.ListClusterJobs",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_cluster_jobs(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3063,15 +3314,15 @@ impl ListClusterJobsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListClusterJobs::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListClusterJobs",
             "snowball",
         ));
@@ -3080,10 +3331,10 @@ impl ListClusterJobsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3112,6 +3363,7 @@ pub mod list_clusters_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of <code>ClusterListEntry</code> objects to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3123,6 +3375,9 @@ pub mod list_clusters_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
+        /// <code>ClusterListEntry</code> objects, you have the option of specifying
+        /// <code>NextToken</code> as the starting point for your returned list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3130,8 +3385,10 @@ pub mod list_clusters_input {
         /// Consumes the builder and constructs a [`ListClustersInput`](crate::input::ListClustersInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListClustersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListClustersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListClustersInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -3150,16 +3407,16 @@ impl ListClustersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListClusters,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListClustersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3167,7 +3424,7 @@ impl ListClustersInput {
         fn update_http_builder(
             input: &crate::input::ListClustersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3176,31 +3433,31 @@ impl ListClustersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListClustersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.ListClusters",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_clusters(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3223,25 +3480,27 @@ impl ListClustersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListClusters::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListClusters",
-                    "snowball",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListClusters::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListClusters",
+            "snowball",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3271,6 +3530,8 @@ pub mod list_compatible_images_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball
+        /// Edge device can store 10 AMIs.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3282,6 +3543,9 @@ pub mod list_compatible_images_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
+        /// compatible images, you can specify a value for <code>NextToken</code> as the starting point
+        /// for your list of returned images.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3291,7 +3555,7 @@ pub mod list_compatible_images_input {
             self,
         ) -> std::result::Result<
             crate::input::ListCompatibleImagesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListCompatibleImagesInput {
                 max_results: self.max_results,
@@ -3311,16 +3575,16 @@ impl ListCompatibleImagesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListCompatibleImages,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListCompatibleImagesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3328,7 +3592,7 @@ impl ListCompatibleImagesInput {
         fn update_http_builder(
             input: &crate::input::ListCompatibleImagesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3337,32 +3601,32 @@ impl ListCompatibleImagesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListCompatibleImagesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.ListCompatibleImages",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_compatible_images(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3385,15 +3649,15 @@ impl ListCompatibleImagesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListCompatibleImages::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListCompatibleImages",
             "snowball",
         ));
@@ -3402,10 +3666,10 @@ impl ListCompatibleImagesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3434,6 +3698,7 @@ pub mod list_jobs_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of <code>JobListEntry</code> objects to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3445,6 +3710,9 @@ pub mod list_jobs_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
+        /// <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code>
+        /// as the starting point for your returned list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3452,7 +3720,7 @@ pub mod list_jobs_input {
         /// Consumes the builder and constructs a [`ListJobsInput`](crate::input::ListJobsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListJobsInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListJobsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListJobsInput {
                 max_results: self.max_results,
@@ -3472,16 +3740,16 @@ impl ListJobsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListJobs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListJobsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3489,7 +3757,7 @@ impl ListJobsInput {
         fn update_http_builder(
             input: &crate::input::ListJobsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3498,29 +3766,31 @@ impl ListJobsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListJobsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.ListJobs",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_jobs(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3543,23 +3813,24 @@ impl ListJobsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::ListJobs::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListJobs", "snowball",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListJobs::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "ListJobs", "snowball",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3588,6 +3859,7 @@ pub mod list_long_term_pricing_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3598,6 +3870,8 @@ pub mod list_long_term_pricing_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Because HTTP requests are stateless, this is the starting point for your next list of
+        /// <code>ListLongTermPricing</code> to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3607,7 +3881,7 @@ pub mod list_long_term_pricing_input {
             self,
         ) -> std::result::Result<
             crate::input::ListLongTermPricingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListLongTermPricingInput {
                 max_results: self.max_results,
@@ -3627,16 +3901,16 @@ impl ListLongTermPricingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListLongTermPricing,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListLongTermPricingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3644,7 +3918,7 @@ impl ListLongTermPricingInput {
         fn update_http_builder(
             input: &crate::input::ListLongTermPricingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3653,32 +3927,32 @@ impl ListLongTermPricingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListLongTermPricingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.ListLongTermPricing",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_long_term_pricing(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3701,15 +3975,15 @@ impl ListLongTermPricingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListLongTermPricing::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListLongTermPricing",
             "snowball",
         ));
@@ -3718,10 +3992,10 @@ impl ListLongTermPricingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3759,6 +4033,8 @@ pub mod update_cluster_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>The cluster ID of the cluster that you want to update, for example
+        /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -3770,6 +4046,9 @@ pub mod update_cluster_input {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster.
+        /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
+        /// Identity and Access Management (IAM).</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -3779,6 +4058,7 @@ pub mod update_cluster_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The updated description of this cluster.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3789,6 +4069,8 @@ pub mod update_cluster_input {
             self.resources = Some(input);
             self
         }
+        /// <p>The updated arrays of <a>JobResource</a> objects that can include updated
+        /// <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<crate::model::JobResource>,
@@ -3805,6 +4087,8 @@ pub mod update_cluster_input {
             self.on_device_service_configuration = Some(input);
             self
         }
+        /// <p>Specifies the service or services on the Snow Family device that your
+        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -3817,6 +4101,7 @@ pub mod update_cluster_input {
             self.address_id = Some(input.into());
             self
         }
+        /// <p>The ID of the updated <a>Address</a> object.</p>
         pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address_id = input;
             self
@@ -3827,6 +4112,8 @@ pub mod update_cluster_input {
             self.shipping_option = Some(input);
             self
         }
+        /// <p>The updated shipping option value of this cluster's <a>ShippingDetails</a>
+        /// object.</p>
         pub fn set_shipping_option(
             mut self,
             input: std::option::Option<crate::model::ShippingOption>,
@@ -3839,6 +4126,7 @@ pub mod update_cluster_input {
             self.notification = Some(input);
             self
         }
+        /// <p>The new or updated <a>Notification</a> object.</p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::Notification>,
@@ -3852,6 +4140,8 @@ pub mod update_cluster_input {
             self.forwarding_address_id = Some(input.into());
             self
         }
+        /// <p>The updated ID for the forwarding address for a cluster. This field is not
+        /// supported in most regions.</p>
         pub fn set_forwarding_address_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3862,8 +4152,10 @@ pub mod update_cluster_input {
         /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::input::UpdateClusterInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateClusterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateClusterInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateClusterInput {
                 cluster_id: self.cluster_id,
                 role_arn: self.role_arn,
@@ -3889,16 +4181,16 @@ impl UpdateClusterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateCluster,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateClusterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3906,7 +4198,7 @@ impl UpdateClusterInput {
         fn update_http_builder(
             input: &crate::input::UpdateClusterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3915,29 +4207,31 @@ impl UpdateClusterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateClusterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.UpdateCluster",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_cluster(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3960,25 +4254,27 @@ impl UpdateClusterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateCluster::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateCluster",
-                    "snowball",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateCluster::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateCluster",
+            "snowball",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4018,6 +4314,8 @@ pub mod update_job_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The job ID of the job that you want to update, for example
+        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -4029,6 +4327,9 @@ pub mod update_job_input {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To
+        /// create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS Identity and Access
+        /// Management (IAM) API action.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -4038,6 +4339,7 @@ pub mod update_job_input {
             self.notification = Some(input);
             self
         }
+        /// <p>The new or updated <a>Notification</a> object.</p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::Notification>,
@@ -4050,6 +4352,7 @@ pub mod update_job_input {
             self.resources = Some(input);
             self
         }
+        /// <p>The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object. </p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<crate::model::JobResource>,
@@ -4066,6 +4369,8 @@ pub mod update_job_input {
             self.on_device_service_configuration = Some(input);
             self
         }
+        /// <p>Specifies the service or services on the Snow Family device that your
+        /// transferred data will be exported from or imported into. AWS Snow Family supports Amazon S3 and NFS (Network File System).</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -4078,6 +4383,7 @@ pub mod update_job_input {
             self.address_id = Some(input.into());
             self
         }
+        /// <p>The ID of the updated <a>Address</a> object.</p>
         pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address_id = input;
             self
@@ -4088,6 +4394,8 @@ pub mod update_job_input {
             self.shipping_option = Some(input);
             self
         }
+        /// <p>The updated shipping option value of this job's <a>ShippingDetails</a>
+        /// object.</p>
         pub fn set_shipping_option(
             mut self,
             input: std::option::Option<crate::model::ShippingOption>,
@@ -4100,12 +4408,14 @@ pub mod update_job_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The updated description of this job's <a>JobMetadata</a> object.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
         /// regions.</p>
+        ///
         /// <p>For more information, see
         /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
         /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
@@ -4118,6 +4428,14 @@ pub mod update_job_input {
             self.snowball_capacity_preference = Some(input);
             self
         }
+        /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
+        /// regions.</p>
+        ///
+        /// <p>For more information, see
+        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
+        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
+        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn set_snowball_capacity_preference(
             mut self,
             input: std::option::Option<crate::model::SnowballCapacity>,
@@ -4131,6 +4449,8 @@ pub mod update_job_input {
             self.forwarding_address_id = Some(input.into());
             self
         }
+        /// <p>The updated ID for the forwarding address for a job. This field is not
+        /// supported in most regions.</p>
         pub fn set_forwarding_address_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4141,7 +4461,7 @@ pub mod update_job_input {
         /// Consumes the builder and constructs a [`UpdateJobInput`](crate::input::UpdateJobInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateJobInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::UpdateJobInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::UpdateJobInput {
                 job_id: self.job_id,
@@ -4169,16 +4489,16 @@ impl UpdateJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4186,7 +4506,7 @@ impl UpdateJobInput {
         fn update_http_builder(
             input: &crate::input::UpdateJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4195,29 +4515,31 @@ impl UpdateJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.UpdateJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_job(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4240,13 +4562,13 @@ impl UpdateJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateJob::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateJob::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "UpdateJob",
                     "snowball",
                 ));
@@ -4255,10 +4577,10 @@ impl UpdateJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4288,6 +4610,8 @@ pub mod update_job_shipment_state_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The job ID of the job whose shipment date you want to update, for example
+        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -4299,6 +4623,9 @@ pub mod update_job_shipment_state_input {
             self.shipment_state = Some(input);
             self
         }
+        /// <p>The state of a device when it is being shipped. </p>
+        /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
+        /// <p>Set to <code>RETURNED</code> when you have returned the device to AWS.</p>
         pub fn set_shipment_state(
             mut self,
             input: std::option::Option<crate::model::ShipmentState>,
@@ -4311,7 +4638,7 @@ pub mod update_job_shipment_state_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateJobShipmentStateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateJobShipmentStateInput {
                 job_id: self.job_id,
@@ -4331,16 +4658,16 @@ impl UpdateJobShipmentStateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateJobShipmentState,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateJobShipmentStateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4348,7 +4675,7 @@ impl UpdateJobShipmentStateInput {
         fn update_http_builder(
             input: &crate::input::UpdateJobShipmentStateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4357,32 +4684,34 @@ impl UpdateJobShipmentStateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateJobShipmentStateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.UpdateJobShipmentState",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_job_shipment_state(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4405,15 +4734,15 @@ impl UpdateJobShipmentStateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateJobShipmentState::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateJobShipmentState",
             "snowball",
         ));
@@ -4422,10 +4751,10 @@ impl UpdateJobShipmentStateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4455,6 +4784,7 @@ pub mod update_long_term_pricing_input {
             self.long_term_pricing_id = Some(input.into());
             self
         }
+        /// <p>The ID of the long-term pricing type for the device.</p>
         pub fn set_long_term_pricing_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4467,6 +4797,7 @@ pub mod update_long_term_pricing_input {
             self.replacement_job = Some(input.into());
             self
         }
+        /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
         pub fn set_replacement_job(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4480,6 +4811,8 @@ pub mod update_long_term_pricing_input {
             self.is_long_term_pricing_auto_renew = Some(input);
             self
         }
+        /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the
+        /// device should be automatically renewed before the long-term pricing contract expires.</p>
         pub fn set_is_long_term_pricing_auto_renew(
             mut self,
             input: std::option::Option<bool>,
@@ -4492,7 +4825,7 @@ pub mod update_long_term_pricing_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateLongTermPricingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateLongTermPricingInput {
                 long_term_pricing_id: self.long_term_pricing_id,
@@ -4513,16 +4846,16 @@ impl UpdateLongTermPricingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateLongTermPricing,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateLongTermPricingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4530,7 +4863,7 @@ impl UpdateLongTermPricingInput {
         fn update_http_builder(
             input: &crate::input::UpdateLongTermPricingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4539,32 +4872,34 @@ impl UpdateLongTermPricingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateLongTermPricingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSIESnowballJobManagementService.UpdateLongTermPricing",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_long_term_pricing(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4587,15 +4922,15 @@ impl UpdateLongTermPricingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateLongTermPricing::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateLongTermPricing",
             "snowball",
         ));
@@ -4604,10 +4939,10 @@ impl UpdateLongTermPricingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4621,6 +4956,7 @@ impl UpdateLongTermPricingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLongTermPricingInput {
@@ -4645,6 +4981,7 @@ impl std::fmt::Debug for UpdateLongTermPricingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJobShipmentStateInput {
@@ -4665,6 +5002,7 @@ impl std::fmt::Debug for UpdateJobShipmentStateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJobInput {
@@ -4692,6 +5030,7 @@ pub struct UpdateJobInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
     /// regions.</p>
+    ///
     /// <p>For more information, see
     /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
     /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
@@ -4725,6 +5064,7 @@ impl std::fmt::Debug for UpdateJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateClusterInput {
@@ -4774,6 +5114,7 @@ impl std::fmt::Debug for UpdateClusterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLongTermPricingInput {
@@ -4792,6 +5133,7 @@ impl std::fmt::Debug for ListLongTermPricingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsInput {
@@ -4811,6 +5153,7 @@ impl std::fmt::Debug for ListJobsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCompatibleImagesInput {
@@ -4831,6 +5174,7 @@ impl std::fmt::Debug for ListCompatibleImagesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersInput {
@@ -4850,6 +5194,7 @@ impl std::fmt::Debug for ListClustersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClusterJobsInput {
@@ -4873,6 +5218,7 @@ impl std::fmt::Debug for ListClusterJobsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSoftwareUpdatesInput {
@@ -4888,6 +5234,7 @@ impl std::fmt::Debug for GetSoftwareUpdatesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSnowballUsageInput {}
@@ -4898,6 +5245,7 @@ impl std::fmt::Debug for GetSnowballUsageInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobUnlockCodeInput {
@@ -4913,6 +5261,7 @@ impl std::fmt::Debug for GetJobUnlockCodeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobManifestInput {
@@ -4928,6 +5277,7 @@ impl std::fmt::Debug for GetJobManifestInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReturnShippingLabelInput {
@@ -4943,6 +5293,7 @@ impl std::fmt::Debug for DescribeReturnShippingLabelInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobInput {
@@ -4958,6 +5309,7 @@ impl std::fmt::Debug for DescribeJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterInput {
@@ -4972,6 +5324,7 @@ impl std::fmt::Debug for DescribeClusterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAddressesInput {
@@ -4991,6 +5344,7 @@ impl std::fmt::Debug for DescribeAddressesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAddressInput {
@@ -5005,6 +5359,7 @@ impl std::fmt::Debug for DescribeAddressInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReturnShippingLabelInput {
@@ -5025,6 +5380,7 @@ impl std::fmt::Debug for CreateReturnShippingLabelInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLongTermPricingInput {
@@ -5049,6 +5405,7 @@ impl std::fmt::Debug for CreateLongTermPricingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobInput {
@@ -5056,8 +5413,10 @@ pub struct CreateJobInput {
     /// </p>
     pub job_type: std::option::Option<crate::model::JobType>,
     /// <p>Defines the Amazon S3 buckets associated with this job.</p>
+    ///
     /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred
     /// data will be imported into.</p>
+    ///
     /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred
     /// data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If
     /// you choose to export a range, you define the length of the range by providing either an
@@ -5084,6 +5443,7 @@ pub struct CreateJobInput {
     /// <p>If your job is being created in one of the US regions, you have the option of
     /// specifying what size Snow device you'd like for this job. In all other regions, Snowballs come
     /// with 80 TB in storage capacity.</p>
+    ///
     /// <p>For more information, see
     /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
     /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
@@ -5093,6 +5453,7 @@ pub struct CreateJobInput {
     /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the
     /// Snow device, rather it represents how quickly the Snow device moves to its destination while in
     /// transit. Regional shipping speeds are as follows:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
@@ -5128,6 +5489,7 @@ pub struct CreateJobInput {
     /// device type for cluster jobs is <code>EDGE</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
     /// Options</a> in the Snowball Edge Developer Guide.</p>
+    ///
     /// <p>For more information, see
     /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
     /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
@@ -5140,6 +5502,7 @@ pub struct CreateJobInput {
     /// <p>The tax documents required in your AWS Region.</p>
     pub tax_documents: std::option::Option<crate::model::TaxDocuments>,
     /// <p>Defines the device configuration for an AWS Snowcone job.</p>
+    ///
     /// <p>For more information, see
     /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
     /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
@@ -5184,11 +5547,13 @@ impl std::fmt::Debug for CreateJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterInput {
     /// <p>The type of job for this cluster. Currently, the only job type supported for clusters
     /// is <code>LOCAL_USE</code>.</p>
+    ///
     /// <p>For more information, see
     /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
     /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
@@ -5220,6 +5585,7 @@ pub struct CreateClusterInput {
     /// <note>
     /// <p>For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
+    ///
     /// <p>For more information, see
     /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
     /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
@@ -5249,6 +5615,7 @@ pub struct CreateClusterInput {
     /// two-day shipping.</p>
     /// </li>
     /// </ul>
+    ///
     /// <ul>
     /// <li>
     /// <p>In Australia, you have access to express shipping. Typically, devices shipped
@@ -5305,6 +5672,7 @@ impl std::fmt::Debug for CreateClusterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAddressInput {
@@ -5319,6 +5687,7 @@ impl std::fmt::Debug for CreateAddressInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelJobInput {
@@ -5334,6 +5703,7 @@ impl std::fmt::Debug for CancelJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelClusterInput {

@@ -21,7 +21,7 @@ pub fn parse_create_scaling_plan_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::concurrent_update_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_concurrent_update_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateScalingPlanError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_update_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateScalingPlanError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -38,7 +38,7 @@ pub fn parse_create_scaling_plan_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateScalingPlanError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateScalingPlanError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -55,7 +55,7 @@ pub fn parse_create_scaling_plan_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateScalingPlanError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateScalingPlanError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -72,7 +72,7 @@ pub fn parse_create_scaling_plan_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateScalingPlanError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateScalingPlanError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -125,7 +125,7 @@ pub fn parse_delete_scaling_plan_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::concurrent_update_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_concurrent_update_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteScalingPlanError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_update_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteScalingPlanError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -142,7 +142,7 @@ pub fn parse_delete_scaling_plan_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteScalingPlanError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteScalingPlanError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -159,7 +159,7 @@ pub fn parse_delete_scaling_plan_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::object_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_object_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteScalingPlanError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_object_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteScalingPlanError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -176,7 +176,7 @@ pub fn parse_delete_scaling_plan_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteScalingPlanError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteScalingPlanError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -230,7 +230,7 @@ pub fn parse_describe_scaling_plan_resources_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::concurrent_update_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_concurrent_update_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPlanResourcesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_update_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPlanResourcesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -247,7 +247,7 @@ pub fn parse_describe_scaling_plan_resources_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPlanResourcesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPlanResourcesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -264,7 +264,7 @@ pub fn parse_describe_scaling_plan_resources_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPlanResourcesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPlanResourcesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -281,7 +281,7 @@ pub fn parse_describe_scaling_plan_resources_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPlanResourcesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPlanResourcesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -339,7 +339,7 @@ pub fn parse_describe_scaling_plans_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::concurrent_update_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_concurrent_update_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPlansError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_update_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPlansError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -356,7 +356,7 @@ pub fn parse_describe_scaling_plans_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPlansError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPlansError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -373,7 +373,7 @@ pub fn parse_describe_scaling_plans_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPlansError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPlansError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -390,7 +390,7 @@ pub fn parse_describe_scaling_plans_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPlansError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingPlansError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -452,7 +452,7 @@ pub fn parse_get_scaling_plan_resource_forecast_data_error(
                             let mut output =
                                 crate::error::internal_service_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetScalingPlanResourceForecastDataError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetScalingPlanResourceForecastDataError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -470,7 +470,7 @@ pub fn parse_get_scaling_plan_resource_forecast_data_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetScalingPlanResourceForecastDataError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetScalingPlanResourceForecastDataError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -522,7 +522,7 @@ pub fn parse_update_scaling_plan_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::concurrent_update_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_concurrent_update_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateScalingPlanError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_concurrent_update_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateScalingPlanError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -539,7 +539,7 @@ pub fn parse_update_scaling_plan_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateScalingPlanError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateScalingPlanError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -556,7 +556,7 @@ pub fn parse_update_scaling_plan_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::object_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_object_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateScalingPlanError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_object_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateScalingPlanError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -573,7 +573,7 @@ pub fn parse_update_scaling_plan_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateScalingPlanError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateScalingPlanError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

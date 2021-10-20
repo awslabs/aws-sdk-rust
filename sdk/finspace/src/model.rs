@@ -78,6 +78,7 @@ pub mod environment {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the FinSpace environment.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -87,6 +88,7 @@ pub mod environment {
             self.environment_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the FinSpace environment.</p>
         pub fn set_environment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -99,6 +101,7 @@ pub mod environment {
             self.aws_account_id = Some(input.into());
             self
         }
+        /// <p>The ID of the AWS account in which the FinSpace environment is created.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -111,6 +114,7 @@ pub mod environment {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of creation of the FinSpace environment.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::EnvironmentStatus>,
@@ -123,6 +127,7 @@ pub mod environment {
             self.environment_url = Some(input.into());
             self
         }
+        /// <p>The sign-in url for the web application of your FinSpace environment.</p>
         pub fn set_environment_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -135,6 +140,7 @@ pub mod environment {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the FinSpace environment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -144,6 +150,7 @@ pub mod environment {
             self.environment_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of your FinSpace environment.</p>
         pub fn set_environment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -159,6 +166,7 @@ pub mod environment {
             self.sage_maker_studio_domain_url = Some(input.into());
             self
         }
+        /// <p>The url of the integrated FinSpace notebook environment in your web application.</p>
         pub fn set_sage_maker_studio_domain_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -171,6 +179,7 @@ pub mod environment {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The KMS key id used to encrypt in the FinSpace environment.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -184,6 +193,8 @@ pub mod environment {
             self.dedicated_service_account_id = Some(input.into());
             self
         }
+        /// <p>The AWS account ID of the dedicated service account associated with your FinSpace
+        /// environment.</p>
         pub fn set_dedicated_service_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -196,6 +207,7 @@ pub mod environment {
             self.federation_mode = Some(input);
             self
         }
+        /// <p>The authentication mode for the environment.</p>
         pub fn set_federation_mode(
             mut self,
             input: std::option::Option<crate::model::FederationMode>,
@@ -208,6 +220,7 @@ pub mod environment {
             self.federation_parameters = Some(input);
             self
         }
+        /// <p>Configuration information when authentication mode is FEDERATED.</p>
         pub fn set_federation_parameters(
             mut self,
             input: std::option::Option<crate::model::FederationParameters>,
@@ -296,6 +309,7 @@ pub mod federation_parameters {
             self.saml_metadata_document = Some(input.into());
             self
         }
+        /// <p>SAML 2.0 Metadata document from identity provider (IdP).</p>
         pub fn set_saml_metadata_document(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -308,6 +322,7 @@ pub mod federation_parameters {
             self.saml_metadata_url = Some(input.into());
             self
         }
+        /// <p>Provide the metadata URL from your SAML 2.0 compliant identity provider (IdP).</p>
         pub fn set_saml_metadata_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -321,6 +336,8 @@ pub mod federation_parameters {
             self.application_call_back_url = Some(input.into());
             self
         }
+        /// <p>The redirect or sign-in URL that should be entered into the SAML 2.0 compliant identity provider configuration
+        /// (IdP).</p>
         pub fn set_application_call_back_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -333,6 +350,7 @@ pub mod federation_parameters {
             self.federation_urn = Some(input.into());
             self
         }
+        /// <p>The Uniform Resource Name (URN). Also referred as Service Provider URN or Audience URI or Service Provider Entity ID.</p>
         pub fn set_federation_urn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -345,6 +363,7 @@ pub mod federation_parameters {
             self.federation_provider_name = Some(input.into());
             self
         }
+        /// <p>Name of the identity provider (IdP).</p>
         pub fn set_federation_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -352,6 +371,14 @@ pub mod federation_parameters {
             self.federation_provider_name = input;
             self
         }
+        /// Adds a key-value pair to `attribute_map`.
+        ///
+        /// To override the contents of this collection use [`set_attribute_map`](Self::set_attribute_map).
+        ///
+        /// <p>SAML attribute name and value. The name must always be <code>Email</code> and the value should be set to
+        /// the attribute definition in which user email is set. For example, name would be <code>Email</code> and
+        /// value <code>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</code>.
+        /// Please check your SAML 2.0 compliant identity provider (IdP) documentation for details.</p>
         pub fn attribute_map(
             mut self,
             k: impl Into<std::string::String>,
@@ -362,6 +389,10 @@ pub mod federation_parameters {
             self.attribute_map = Some(hash_map);
             self
         }
+        /// <p>SAML attribute name and value. The name must always be <code>Email</code> and the value should be set to
+        /// the attribute definition in which user email is set. For example, name would be <code>Email</code> and
+        /// value <code>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</code>.
+        /// Please check your SAML 2.0 compliant identity provider (IdP) documentation for details.</p>
         pub fn set_attribute_map(
             mut self,
             input: std::option::Option<
@@ -391,6 +422,7 @@ impl FederationParameters {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -402,7 +434,9 @@ impl FederationParameters {
     std::hash::Hash,
 )]
 pub enum FederationMode {
+    #[allow(missing_docs)] // documentation missing in model
     Federated,
+    #[allow(missing_docs)] // documentation missing in model
     Local,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -424,6 +458,7 @@ impl std::str::FromStr for FederationMode {
     }
 }
 impl FederationMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FederationMode::Federated => "FEDERATED",
@@ -431,6 +466,7 @@ impl FederationMode {
             FederationMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FEDERATED", "LOCAL"]
     }
@@ -441,6 +477,7 @@ impl AsRef<str> for FederationMode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -452,15 +489,25 @@ impl AsRef<str> for FederationMode {
     std::hash::Hash,
 )]
 pub enum EnvironmentStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Created,
+    #[allow(missing_docs)] // documentation missing in model
     CreateRequested,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteRequested,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     FailedCreation,
+    #[allow(missing_docs)] // documentation missing in model
     FailedDeletion,
+    #[allow(missing_docs)] // documentation missing in model
     RetryDeletion,
+    #[allow(missing_docs)] // documentation missing in model
     Suspended,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -490,6 +537,7 @@ impl std::str::FromStr for EnvironmentStatus {
     }
 }
 impl EnvironmentStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EnvironmentStatus::Created => "CREATED",
@@ -505,6 +553,7 @@ impl EnvironmentStatus {
             EnvironmentStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATED",

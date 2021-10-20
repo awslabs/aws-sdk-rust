@@ -30,6 +30,8 @@ pub mod update_ml_model_output {
             self.ml_model_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the <code>MLModel</code> during creation.  This value should be identical to the value
+        /// of the <code>MLModelID</code> in the request.</p>
         pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ml_model_id = input;
             self
@@ -80,6 +82,8 @@ pub mod update_evaluation_output {
             self.evaluation_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the <code>Evaluation</code> during creation.  This value should be identical to the value
+        /// of the <code>Evaluation</code> in the request.</p>
         pub fn set_evaluation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -133,6 +137,8 @@ pub mod update_data_source_output {
             self.data_source_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the <code>DataSource</code> during creation.  This value should be identical to the value
+        /// of the <code>DataSourceID</code> in the request.</p>
         pub fn set_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -186,6 +192,8 @@ pub mod update_batch_prediction_output {
             self.batch_prediction_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.  This value should be identical to the value
+        /// of the <code>BatchPredictionId</code> in the request.</p>
         pub fn set_batch_prediction_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -208,10 +216,12 @@ impl UpdateBatchPredictionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictOutput {
     /// <p>The output from a <code>Predict</code> operation: </p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -257,6 +267,7 @@ pub mod predict_output {
     }
     impl Builder {
         /// <p>The output from a <code>Predict</code> operation: </p>
+        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -287,6 +298,34 @@ pub mod predict_output {
             self.prediction = Some(input);
             self
         }
+        /// <p>The output from a <code>Predict</code> operation: </p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Details</code> - Contains the following attributes:
+        /// <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code>
+        /// <code>DetailsAttributes.ALGORITHM - SGD</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code>
+        /// <code>MLModel</code> request.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PredictedScores</code> - Contains the raw classification score corresponding to each label.
+        /// </p>        
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PredictedValue</code> - Present for a <code>REGRESSION</code>
+        /// <code>MLModel</code> request.
+        /// </p>        
+        /// </li>
+        /// </ul>
         pub fn set_prediction(
             mut self,
             input: std::option::Option<crate::model::Prediction>,
@@ -321,9 +360,9 @@ pub struct GetMlModelOutput {
     /// <p>The AWS user account from which the <code>MLModel</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     pub created_by_iam_user: std::option::Option<std::string::String>,
     /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
-    pub last_updated_at: std::option::Option<smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The current status of the <code>MLModel</code>. This element can have one of the following values:</p>
@@ -427,7 +466,7 @@ pub struct GetMlModelOutput {
     /// such as <code>false</code>.</p>
     pub score_threshold: std::option::Option<f32>,
     /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
-    pub score_threshold_last_updated_at: std::option::Option<smithy_types::Instant>,
+    pub score_threshold_last_updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A link to the file that contains logs of the <code>CreateMLModel</code> operation.</p>
     pub log_uri: std::option::Option<std::string::String>,
     /// <p>A description of the most recent details about accessing the <code>MLModel</code>.</p>
@@ -435,9 +474,9 @@ pub struct GetMlModelOutput {
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>MLModel</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>MLModel</code> is in the <code>COMPLETED</code> state.</p>
     pub compute_time: std::option::Option<i64>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>MLModel</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    pub finished_at: std::option::Option<smithy_types::Instant>,
+    pub finished_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>MLModel</code> is in the <code>PENDING</code> state.</p>
-    pub started_at: std::option::Option<smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The recipe to use when training the <code>MLModel</code>. The <code>Recipe</code>
     /// provides detailed information about the observation data to use during training, and
     /// manipulations to perform on the observation data during training.</p>
@@ -488,8 +527,8 @@ pub mod get_ml_model_output {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
         pub(crate) training_data_source_id: std::option::Option<std::string::String>,
         pub(crate) created_by_iam_user: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::EntityStatus>,
         pub(crate) size_in_bytes: std::option::Option<i64>,
@@ -500,12 +539,12 @@ pub mod get_ml_model_output {
         pub(crate) input_data_location_s3: std::option::Option<std::string::String>,
         pub(crate) ml_model_type: std::option::Option<crate::model::MlModelType>,
         pub(crate) score_threshold: std::option::Option<f32>,
-        pub(crate) score_threshold_last_updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) score_threshold_last_updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) log_uri: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) compute_time: std::option::Option<i64>,
-        pub(crate) finished_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) started_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) finished_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) recipe: std::option::Option<std::string::String>,
         pub(crate) schema: std::option::Option<std::string::String>,
     }
@@ -516,6 +555,8 @@ pub mod get_ml_model_output {
             self.ml_model_id = Some(input.into());
             self
         }
+        /// <p>The MLModel ID,
+        /// which is same as the <code>MLModelId</code> in the request.</p>
         pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ml_model_id = input;
             self
@@ -525,6 +566,7 @@ pub mod get_ml_model_output {
             self.training_data_source_id = Some(input.into());
             self
         }
+        /// <p>The ID of the training <code>DataSource</code>.</p>
         pub fn set_training_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -537,6 +579,7 @@ pub mod get_ml_model_output {
             self.created_by_iam_user = Some(input.into());
             self
         }
+        /// <p>The AWS user account from which the <code>MLModel</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
         pub fn set_created_by_iam_user(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -545,22 +588,27 @@ pub mod get_ml_model_output {
             self
         }
         /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
-        pub fn last_updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_at = Some(input);
             self
         }
+        /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -570,6 +618,7 @@ pub mod get_ml_model_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -603,6 +652,31 @@ pub mod get_ml_model_output {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the <code>MLModel</code>. This element can have one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to describe a <code>MLModel</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INPROGRESS</code> - The request is processing.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code> - The request did not run to completion. The ML model isn't
+        /// usable.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COMPLETED</code> - The request completed successfully.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't
+        /// usable.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::EntityStatus>,
@@ -615,6 +689,7 @@ pub mod get_ml_model_output {
             self.size_in_bytes = Some(input);
             self
         }
+        /// <p>Long integer type that is a 64-bit signed number.</p>
         pub fn set_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.size_in_bytes = input;
             self
@@ -625,6 +700,8 @@ pub mod get_ml_model_output {
             self.endpoint_info = Some(input);
             self
         }
+        /// <p>The current endpoint of the <code>MLModel</code>
+        /// </p>
         pub fn set_endpoint_info(
             mut self,
             input: std::option::Option<crate::model::RealtimeEndpointInfo>,
@@ -632,6 +709,55 @@ pub mod get_ml_model_output {
             self.endpoint_info = input;
             self
         }
+        /// Adds a key-value pair to `training_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_training_parameters`](Self::set_training_parameters).
+        ///
+        /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as
+        /// a map of key-value pairs.</p>
+        /// <p>The following is the current set of training parameters:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the
+        /// input data, the size of the model might affect its performance.</p>
+        /// <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sgd.maxPasses</code> - The number of times that the training process traverses the
+        /// observations to build the <code>MLModel</code>. The value is an integer that
+        /// ranges from <code>1</code> to <code>10000</code>. The default value is
+        /// <code>10</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling data improves a
+        /// model's ability to find the optimal solution for a variety of data types. The
+        /// valid values are <code>auto</code> and <code>none</code>. The default value is
+        /// <code>none</code>. We strongly recommend that you shuffle your data.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls
+        /// overfitting the data by penalizing large coefficients. This tends to drive
+        /// coefficients to zero, resulting in a sparse feature set. If you use this
+        /// parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
+        /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
+        /// The default is to not use L1 normalization. This parameter can't be used when
+        /// <code>L2</code> is specified. Use this parameter sparingly.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls
+        /// overfitting the data by penalizing large coefficients. This tends to drive
+        /// coefficients to small, nonzero values. If you use this parameter, start by
+        /// specifying a small value, such as <code>1.0E-08</code>.</p>
+        /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
+        /// The default is to not use L2 normalization. This parameter can't be used when
+        /// <code>L1</code> is specified. Use this parameter sparingly.</p>
+        /// </li>
+        /// </ul>
         pub fn training_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -642,6 +768,51 @@ pub mod get_ml_model_output {
             self.training_parameters = Some(hash_map);
             self
         }
+        /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as
+        /// a map of key-value pairs.</p>
+        /// <p>The following is the current set of training parameters:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the
+        /// input data, the size of the model might affect its performance.</p>
+        /// <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sgd.maxPasses</code> - The number of times that the training process traverses the
+        /// observations to build the <code>MLModel</code>. The value is an integer that
+        /// ranges from <code>1</code> to <code>10000</code>. The default value is
+        /// <code>10</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling data improves a
+        /// model's ability to find the optimal solution for a variety of data types. The
+        /// valid values are <code>auto</code> and <code>none</code>. The default value is
+        /// <code>none</code>. We strongly recommend that you shuffle your data.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls
+        /// overfitting the data by penalizing large coefficients. This tends to drive
+        /// coefficients to zero, resulting in a sparse feature set. If you use this
+        /// parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
+        /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
+        /// The default is to not use L1 normalization. This parameter can't be used when
+        /// <code>L2</code> is specified. Use this parameter sparingly.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls
+        /// overfitting the data by penalizing large coefficients. This tends to drive
+        /// coefficients to small, nonzero values. If you use this parameter, start by
+        /// specifying a small value, such as <code>1.0E-08</code>.</p>
+        /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
+        /// The default is to not use L2 normalization. This parameter can't be used when
+        /// <code>L1</code> is specified. Use this parameter sparingly.</p>
+        /// </li>
+        /// </ul>
         pub fn set_training_parameters(
             mut self,
             input: std::option::Option<
@@ -656,6 +827,7 @@ pub mod get_ml_model_output {
             self.input_data_location_s3 = Some(input.into());
             self
         }
+        /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
         pub fn set_input_data_location_s3(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -679,6 +851,18 @@ pub mod get_ml_model_output {
             self.ml_model_type = Some(input);
             self
         }
+        /// <p>Identifies the <code>MLModel</code> category. The following are the available types: </p>
+        /// <ul>
+        /// <li>
+        /// <p>REGRESSION -- Produces a numeric result. For example, "What price should a house be listed at?"</p>
+        /// </li>
+        /// <li>
+        /// <p>BINARY -- Produces one of two possible results. For example, "Is this an e-commerce website?"</p>
+        /// </li>
+        /// <li>
+        /// <p>MULTICLASS -- Produces one of several possible results. For example, "Is this a HIGH, LOW or MEDIUM risk trade?"</p>
+        /// </li>
+        /// </ul>
         pub fn set_ml_model_type(
             mut self,
             input: std::option::Option<crate::model::MlModelType>,
@@ -696,18 +880,25 @@ pub mod get_ml_model_output {
             self.score_threshold = Some(input);
             self
         }
+        /// <p>The scoring threshold is used in binary classification <code>MLModel</code>
+        /// models. It marks the boundary between a positive prediction and a
+        /// negative prediction.</p>
+        /// <p>Output values greater than or equal to the threshold receive a positive result from the MLModel, such as
+        /// <code>true</code>. Output values less than the threshold receive a negative response from the MLModel,
+        /// such as <code>false</code>.</p>
         pub fn set_score_threshold(mut self, input: std::option::Option<f32>) -> Self {
             self.score_threshold = input;
             self
         }
         /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
-        pub fn score_threshold_last_updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn score_threshold_last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.score_threshold_last_updated_at = Some(input);
             self
         }
+        /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
         pub fn set_score_threshold_last_updated_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.score_threshold_last_updated_at = input;
             self
@@ -717,6 +908,7 @@ pub mod get_ml_model_output {
             self.log_uri = Some(input.into());
             self
         }
+        /// <p>A link to the file that contains logs of the <code>CreateMLModel</code> operation.</p>
         pub fn set_log_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_uri = input;
             self
@@ -726,6 +918,7 @@ pub mod get_ml_model_output {
             self.message = Some(input.into());
             self
         }
+        /// <p>A description of the most recent details about accessing the <code>MLModel</code>.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -735,28 +928,34 @@ pub mod get_ml_model_output {
             self.compute_time = Some(input);
             self
         }
+        /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>MLModel</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>MLModel</code> is in the <code>COMPLETED</code> state.</p>
         pub fn set_compute_time(mut self, input: std::option::Option<i64>) -> Self {
             self.compute_time = input;
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>MLModel</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-        pub fn finished_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn finished_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.finished_at = Some(input);
             self
         }
+        /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>MLModel</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
         pub fn set_finished_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.finished_at = input;
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>MLModel</code> is in the <code>PENDING</code> state.</p>
-        pub fn started_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.started_at = Some(input);
             self
         }
-        pub fn set_started_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>MLModel</code> is in the <code>PENDING</code> state.</p>
+        pub fn set_started_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.started_at = input;
             self
         }
@@ -769,6 +968,11 @@ pub mod get_ml_model_output {
             self.recipe = Some(input.into());
             self
         }
+        /// <p>The recipe to use when training the <code>MLModel</code>. The <code>Recipe</code>
+        /// provides detailed information about the observation data to use during training, and
+        /// manipulations to perform on the observation data during training.</p>
+        /// <p>
+        /// <b>Note:</b> This parameter is provided as part of the verbose format.</p>
         pub fn set_recipe(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.recipe = input;
             self
@@ -780,6 +984,9 @@ pub mod get_ml_model_output {
             self.schema = Some(input.into());
             self
         }
+        /// <p>The schema used by all of the data files referenced by the <code>DataSource</code>.</p>
+        /// <p>
+        /// <b>Note:</b> This parameter is provided as part of the verbose format.</p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema = input;
             self
@@ -834,9 +1041,9 @@ pub struct GetEvaluationOutput {
     /// <p>The AWS user account that invoked the evaluation. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     pub created_by_iam_user: std::option::Option<std::string::String>,
     /// <p>The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.</p>
-    pub last_updated_at: std::option::Option<smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A user-supplied name or description of the <code>Evaluation</code>. </p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the evaluation. This element can have one of the following values:</p>
@@ -887,9 +1094,9 @@ pub struct GetEvaluationOutput {
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>Evaluation</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>Evaluation</code> is in the <code>COMPLETED</code> state.</p>
     pub compute_time: std::option::Option<i64>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>Evaluation</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    pub finished_at: std::option::Option<smithy_types::Instant>,
+    pub finished_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>Evaluation</code> is in the <code>PENDING</code> state.</p>
-    pub started_at: std::option::Option<smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for GetEvaluationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -923,16 +1130,16 @@ pub mod get_evaluation_output {
         pub(crate) evaluation_data_source_id: std::option::Option<std::string::String>,
         pub(crate) input_data_location_s3: std::option::Option<std::string::String>,
         pub(crate) created_by_iam_user: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::EntityStatus>,
         pub(crate) performance_metrics: std::option::Option<crate::model::PerformanceMetrics>,
         pub(crate) log_uri: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) compute_time: std::option::Option<i64>,
-        pub(crate) finished_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) started_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) finished_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The evaluation ID which is same as the <code>EvaluationId</code> in the request.</p>
@@ -940,6 +1147,7 @@ pub mod get_evaluation_output {
             self.evaluation_id = Some(input.into());
             self
         }
+        /// <p>The evaluation ID which is same as the <code>EvaluationId</code> in the request.</p>
         pub fn set_evaluation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -952,6 +1160,7 @@ pub mod get_evaluation_output {
             self.ml_model_id = Some(input.into());
             self
         }
+        /// <p>The ID of the <code>MLModel</code> that was the focus of the evaluation.</p>
         pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ml_model_id = input;
             self
@@ -961,6 +1170,7 @@ pub mod get_evaluation_output {
             self.evaluation_data_source_id = Some(input.into());
             self
         }
+        /// <p>The <code>DataSource</code> used for this evaluation.</p>
         pub fn set_evaluation_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -973,6 +1183,7 @@ pub mod get_evaluation_output {
             self.input_data_location_s3 = Some(input.into());
             self
         }
+        /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
         pub fn set_input_data_location_s3(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -985,6 +1196,7 @@ pub mod get_evaluation_output {
             self.created_by_iam_user = Some(input.into());
             self
         }
+        /// <p>The AWS user account that invoked the evaluation. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
         pub fn set_created_by_iam_user(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -993,22 +1205,27 @@ pub mod get_evaluation_output {
             self
         }
         /// <p>The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.</p>
-        pub fn last_updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_at = Some(input);
             self
         }
+        /// <p>The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -1018,6 +1235,7 @@ pub mod get_evaluation_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>A user-supplied name or description of the <code>Evaluation</code>. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1049,6 +1267,29 @@ pub mod get_evaluation_output {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the evaluation. This element can have one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code> - Amazon Machine Language (Amazon ML) submitted a request to evaluate an <code>MLModel</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INPROGRESS</code> - The evaluation is underway.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is not usable.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COMPLETED</code> - The evaluation process completed successfully.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::EntityStatus>,
@@ -1076,6 +1317,22 @@ pub mod get_evaluation_output {
             self.performance_metrics = Some(input);
             self
         }
+        /// <p>Measurements of how well the <code>MLModel</code> performed using observations referenced by the <code>DataSource</code>. One of the following metric is returned based on the type of the <code>MLModel</code>:
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance. </p>
+        /// </li>
+        /// <li>
+        /// <p>RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p>
+        /// </li>
+        /// <li>
+        /// <p>MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance. </p>
+        /// </li>
+        /// </ul>
+        /// <p>
+        /// For more information about performance metrics, please see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.
+        /// </p>
         pub fn set_performance_metrics(
             mut self,
             input: std::option::Option<crate::model::PerformanceMetrics>,
@@ -1088,6 +1345,7 @@ pub mod get_evaluation_output {
             self.log_uri = Some(input.into());
             self
         }
+        /// <p>A link to the file that contains logs of the <code>CreateEvaluation</code> operation.</p>
         pub fn set_log_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_uri = input;
             self
@@ -1097,6 +1355,7 @@ pub mod get_evaluation_output {
             self.message = Some(input.into());
             self
         }
+        /// <p>A description of the most recent details about evaluating the <code>MLModel</code>.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1106,28 +1365,34 @@ pub mod get_evaluation_output {
             self.compute_time = Some(input);
             self
         }
+        /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>Evaluation</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>Evaluation</code> is in the <code>COMPLETED</code> state.</p>
         pub fn set_compute_time(mut self, input: std::option::Option<i64>) -> Self {
             self.compute_time = input;
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>Evaluation</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-        pub fn finished_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn finished_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.finished_at = Some(input);
             self
         }
+        /// <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>Evaluation</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
         pub fn set_finished_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.finished_at = input;
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>Evaluation</code> is in the <code>PENDING</code> state.</p>
-        pub fn started_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.started_at = Some(input);
             self
         }
-        pub fn set_started_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>Evaluation</code> is in the <code>PENDING</code> state.</p>
+        pub fn set_started_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.started_at = input;
             self
         }
@@ -1174,9 +1439,9 @@ pub struct GetDataSourceOutput {
     /// <p>The AWS user account from which the <code>DataSource</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     pub created_by_iam_user: std::option::Option<std::string::String>,
     /// <p>The time that the <code>DataSource</code> was created. The time is expressed in epoch time.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time of the most recent edit to the <code>DataSource</code>. The time is expressed in epoch time.</p>
-    pub last_updated_at: std::option::Option<smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The total size of observations in the data files.</p>
     pub data_size_in_bytes: std::option::Option<i64>,
     /// <p>The number of data files referenced by the <code>DataSource</code>.</p>
@@ -1224,9 +1489,9 @@ pub struct GetDataSourceOutput {
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>DataSource</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>DataSource</code> is in the <code>COMPLETED</code> state and the <code>ComputeStatistics</code> is set to true.</p>
     pub compute_time: std::option::Option<i64>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>DataSource</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    pub finished_at: std::option::Option<smithy_types::Instant>,
+    pub finished_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>DataSource</code> is in the <code>PENDING</code> state.</p>
-    pub started_at: std::option::Option<smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
     /// <p>
     /// <b>Note:</b> This parameter is provided as part of the verbose format.</p>
@@ -1268,8 +1533,8 @@ pub mod get_data_source_output {
         pub(crate) data_location_s3: std::option::Option<std::string::String>,
         pub(crate) data_rearrangement: std::option::Option<std::string::String>,
         pub(crate) created_by_iam_user: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) data_size_in_bytes: std::option::Option<i64>,
         pub(crate) number_of_files: std::option::Option<i64>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1281,8 +1546,8 @@ pub mod get_data_source_output {
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) compute_statistics: std::option::Option<bool>,
         pub(crate) compute_time: std::option::Option<i64>,
-        pub(crate) finished_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) started_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) finished_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) data_source_schema: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1291,6 +1556,7 @@ pub mod get_data_source_output {
             self.data_source_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to the <code>DataSource</code> at creation.  This value should be identical to the value of the <code>DataSourceId</code> in the request.</p>
         pub fn set_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1303,6 +1569,7 @@ pub mod get_data_source_output {
             self.data_location_s3 = Some(input.into());
             self
         }
+        /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
         pub fn set_data_location_s3(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1316,6 +1583,8 @@ pub mod get_data_source_output {
             self.data_rearrangement = Some(input.into());
             self
         }
+        /// <p>A JSON string that represents the splitting and rearrangement requirement used when this <code>DataSource</code>
+        /// was created.</p>
         pub fn set_data_rearrangement(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1328,6 +1597,7 @@ pub mod get_data_source_output {
             self.created_by_iam_user = Some(input.into());
             self
         }
+        /// <p>The AWS user account from which the <code>DataSource</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
         pub fn set_created_by_iam_user(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1336,22 +1606,27 @@ pub mod get_data_source_output {
             self
         }
         /// <p>The time that the <code>DataSource</code> was created. The time is expressed in epoch time.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the <code>DataSource</code> was created. The time is expressed in epoch time.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time of the most recent edit to the <code>DataSource</code>. The time is expressed in epoch time.</p>
-        pub fn last_updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_at = Some(input);
             self
         }
+        /// <p>The time of the most recent edit to the <code>DataSource</code>. The time is expressed in epoch time.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -1361,6 +1636,7 @@ pub mod get_data_source_output {
             self.data_size_in_bytes = Some(input);
             self
         }
+        /// <p>The total size of observations in the data files.</p>
         pub fn set_data_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.data_size_in_bytes = input;
             self
@@ -1370,6 +1646,7 @@ pub mod get_data_source_output {
             self.number_of_files = Some(input);
             self
         }
+        /// <p>The number of data files referenced by the <code>DataSource</code>.</p>
         pub fn set_number_of_files(mut self, input: std::option::Option<i64>) -> Self {
             self.number_of_files = input;
             self
@@ -1379,6 +1656,7 @@ pub mod get_data_source_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1410,6 +1688,29 @@ pub mod get_data_source_output {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the <code>DataSource</code>. This element can have one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INPROGRESS</code> - The creation process is underway.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COMPLETED</code> - The creation process completed successfully.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::EntityStatus>,
@@ -1422,6 +1723,7 @@ pub mod get_data_source_output {
             self.log_uri = Some(input.into());
             self
         }
+        /// <p>A link to the file containing logs of <code>CreateDataSourceFrom*</code> operations.</p>
         pub fn set_log_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_uri = input;
             self
@@ -1431,6 +1733,7 @@ pub mod get_data_source_output {
             self.message = Some(input.into());
             self
         }
+        /// <p>The user-supplied description of the most recent details about creating the <code>DataSource</code>.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1440,6 +1743,7 @@ pub mod get_data_source_output {
             self.redshift_metadata = Some(input);
             self
         }
+        /// <p>Describes the <code>DataSource</code> details specific to Amazon Redshift.</p>
         pub fn set_redshift_metadata(
             mut self,
             input: std::option::Option<crate::model::RedshiftMetadata>,
@@ -1452,6 +1756,7 @@ pub mod get_data_source_output {
             self.rds_metadata = Some(input);
             self
         }
+        /// <p>The datasource details that are specific to Amazon RDS.</p>
         pub fn set_rds_metadata(
             mut self,
             input: std::option::Option<crate::model::RdsMetadata>,
@@ -1464,6 +1769,7 @@ pub mod get_data_source_output {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1475,6 +1781,9 @@ pub mod get_data_source_output {
             self.compute_statistics = Some(input);
             self
         }
+        /// <p>
+        /// The parameter is <code>true</code> if statistics need to be generated from the observation data.
+        /// </p>
         pub fn set_compute_statistics(mut self, input: std::option::Option<bool>) -> Self {
             self.compute_statistics = input;
             self
@@ -1484,28 +1793,34 @@ pub mod get_data_source_output {
             self.compute_time = Some(input);
             self
         }
+        /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>DataSource</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>DataSource</code> is in the <code>COMPLETED</code> state and the <code>ComputeStatistics</code> is set to true.</p>
         pub fn set_compute_time(mut self, input: std::option::Option<i64>) -> Self {
             self.compute_time = input;
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>DataSource</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-        pub fn finished_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn finished_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.finished_at = Some(input);
             self
         }
+        /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>DataSource</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
         pub fn set_finished_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.finished_at = input;
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>DataSource</code> is in the <code>PENDING</code> state.</p>
-        pub fn started_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.started_at = Some(input);
             self
         }
-        pub fn set_started_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>DataSource</code> is in the <code>PENDING</code> state.</p>
+        pub fn set_started_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.started_at = input;
             self
         }
@@ -1516,6 +1831,9 @@ pub mod get_data_source_output {
             self.data_source_schema = Some(input.into());
             self
         }
+        /// <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
+        /// <p>
+        /// <b>Note:</b> This parameter is provided as part of the verbose format.</p>
         pub fn set_data_source_schema(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1574,9 +1892,9 @@ pub struct GetBatchPredictionOutput {
     /// <p>The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     pub created_by_iam_user: std::option::Option<std::string::String>,
     /// <p>The time when the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
-    pub last_updated_at: std::option::Option<smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of the <code>BatchPrediction</code>, which can be one of the following values:</p>
@@ -1612,9 +1930,9 @@ pub struct GetBatchPredictionOutput {
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>BatchPrediction</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>BatchPrediction</code> is in the <code>COMPLETED</code> state.</p>
     pub compute_time: std::option::Option<i64>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>BatchPrediction</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    pub finished_at: std::option::Option<smithy_types::Instant>,
+    pub finished_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>BatchPrediction</code> is in the <code>PENDING</code> state.</p>
-    pub started_at: std::option::Option<smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The number of total records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
     pub total_record_count: std::option::Option<i64>,
     /// <p>The number of invalid records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
@@ -1657,16 +1975,16 @@ pub mod get_batch_prediction_output {
         pub(crate) batch_prediction_data_source_id: std::option::Option<std::string::String>,
         pub(crate) input_data_location_s3: std::option::Option<std::string::String>,
         pub(crate) created_by_iam_user: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::EntityStatus>,
         pub(crate) output_uri: std::option::Option<std::string::String>,
         pub(crate) log_uri: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) compute_time: std::option::Option<i64>,
-        pub(crate) finished_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) started_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) finished_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) total_record_count: std::option::Option<i64>,
         pub(crate) invalid_record_count: std::option::Option<i64>,
     }
@@ -1677,6 +1995,8 @@ pub mod get_batch_prediction_output {
             self.batch_prediction_id = Some(input.into());
             self
         }
+        /// <p>An ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of the <code>BatchPredictionID</code>
+        /// in the request.</p>
         pub fn set_batch_prediction_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1689,6 +2009,7 @@ pub mod get_batch_prediction_output {
             self.ml_model_id = Some(input.into());
             self
         }
+        /// <p>The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code> request.</p>
         pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ml_model_id = input;
             self
@@ -1702,6 +2023,8 @@ pub mod get_batch_prediction_output {
             self.batch_prediction_data_source_id = Some(input.into());
             self
         }
+        /// <p>The ID of the <code>DataSource</code> that was used to create the <code>BatchPrediction</code>.
+        /// </p>
         pub fn set_batch_prediction_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1714,6 +2037,7 @@ pub mod get_batch_prediction_output {
             self.input_data_location_s3 = Some(input.into());
             self
         }
+        /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
         pub fn set_input_data_location_s3(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1726,6 +2050,7 @@ pub mod get_batch_prediction_output {
             self.created_by_iam_user = Some(input.into());
             self
         }
+        /// <p>The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
         pub fn set_created_by_iam_user(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1734,22 +2059,27 @@ pub mod get_batch_prediction_output {
             self
         }
         /// <p>The time when the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
-        pub fn last_updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_at = Some(input);
             self
         }
+        /// <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -1759,6 +2089,7 @@ pub mod get_batch_prediction_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1790,6 +2121,29 @@ pub mod get_batch_prediction_output {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the <code>BatchPrediction</code>, which can be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate batch predictions.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INPROGRESS</code> - The batch predictions are in progress.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not usable.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COMPLETED</code> - The batch prediction process completed successfully.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::EntityStatus>,
@@ -1802,6 +2156,7 @@ pub mod get_batch_prediction_output {
             self.output_uri = Some(input.into());
             self
         }
+        /// <p>The location of an Amazon S3 bucket or directory to receive the operation results.</p>
         pub fn set_output_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output_uri = input;
             self
@@ -1811,6 +2166,7 @@ pub mod get_batch_prediction_output {
             self.log_uri = Some(input.into());
             self
         }
+        /// <p>A link to the file that contains logs of the <code>CreateBatchPrediction</code> operation.</p>
         pub fn set_log_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_uri = input;
             self
@@ -1820,6 +2176,7 @@ pub mod get_batch_prediction_output {
             self.message = Some(input.into());
             self
         }
+        /// <p>A description of the most recent details about processing the batch prediction request.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1829,28 +2186,34 @@ pub mod get_batch_prediction_output {
             self.compute_time = Some(input);
             self
         }
+        /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>BatchPrediction</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>BatchPrediction</code> is in the <code>COMPLETED</code> state.</p>
         pub fn set_compute_time(mut self, input: std::option::Option<i64>) -> Self {
             self.compute_time = input;
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>BatchPrediction</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-        pub fn finished_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn finished_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.finished_at = Some(input);
             self
         }
+        /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>BatchPrediction</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
         pub fn set_finished_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.finished_at = input;
             self
         }
         /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>BatchPrediction</code> is in the <code>PENDING</code> state.</p>
-        pub fn started_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.started_at = Some(input);
             self
         }
-        pub fn set_started_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>BatchPrediction</code> is in the <code>PENDING</code> state.</p>
+        pub fn set_started_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.started_at = input;
             self
         }
@@ -1859,6 +2222,7 @@ pub mod get_batch_prediction_output {
             self.total_record_count = Some(input);
             self
         }
+        /// <p>The number of total records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
         pub fn set_total_record_count(mut self, input: std::option::Option<i64>) -> Self {
             self.total_record_count = input;
             self
@@ -1868,6 +2232,7 @@ pub mod get_batch_prediction_output {
             self.invalid_record_count = Some(input);
             self
         }
+        /// <p>The number of invalid records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
         pub fn set_invalid_record_count(mut self, input: std::option::Option<i64>) -> Self {
             self.invalid_record_count = input;
             self
@@ -1939,6 +2304,7 @@ pub mod describe_tags_output {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the tagged ML object.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -1948,6 +2314,7 @@ pub mod describe_tags_output {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The type of the tagged ML object.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::TaggableResourceType>,
@@ -1955,12 +2322,18 @@ pub mod describe_tags_output {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags associated with the ML object.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags associated with the ML object.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2012,12 +2385,18 @@ pub mod describe_ml_models_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `results`.
+        ///
+        /// To override the contents of this collection use [`set_results`](Self::set_results).
+        ///
+        /// <p>A list of <code>MLModel</code> that meet the search criteria.</p>
         pub fn results(mut self, input: impl Into<crate::model::MlModel>) -> Self {
             let mut v = self.results.unwrap_or_default();
             v.push(input.into());
             self.results = Some(v);
             self
         }
+        /// <p>A list of <code>MLModel</code> that meet the search criteria.</p>
         pub fn set_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MlModel>>,
@@ -2030,6 +2409,7 @@ pub mod describe_ml_models_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2078,12 +2458,20 @@ pub mod describe_evaluations_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `results`.
+        ///
+        /// To override the contents of this collection use [`set_results`](Self::set_results).
+        ///
+        /// <p>A list of <code>Evaluation</code> that meet the search criteria.
+        /// </p>
         pub fn results(mut self, input: impl Into<crate::model::Evaluation>) -> Self {
             let mut v = self.results.unwrap_or_default();
             v.push(input.into());
             self.results = Some(v);
             self
         }
+        /// <p>A list of <code>Evaluation</code> that meet the search criteria.
+        /// </p>
         pub fn set_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Evaluation>>,
@@ -2096,6 +2484,7 @@ pub mod describe_evaluations_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2144,12 +2533,20 @@ pub mod describe_data_sources_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `results`.
+        ///
+        /// To override the contents of this collection use [`set_results`](Self::set_results).
+        ///
+        /// <p>A list of <code>DataSource</code> that meet the search criteria.
+        /// </p>
         pub fn results(mut self, input: impl Into<crate::model::DataSource>) -> Self {
             let mut v = self.results.unwrap_or_default();
             v.push(input.into());
             self.results = Some(v);
             self
         }
+        /// <p>A list of <code>DataSource</code> that meet the search criteria.
+        /// </p>
         pub fn set_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
@@ -2162,6 +2559,7 @@ pub mod describe_data_sources_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An ID of the next page in the paginated results that indicates at least one more page follows.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2210,12 +2608,20 @@ pub mod describe_batch_predictions_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `results`.
+        ///
+        /// To override the contents of this collection use [`set_results`](Self::set_results).
+        ///
+        /// <p>A list of <code>BatchPrediction</code> objects that meet the search criteria.
+        /// </p>
         pub fn results(mut self, input: impl Into<crate::model::BatchPrediction>) -> Self {
             let mut v = self.results.unwrap_or_default();
             v.push(input.into());
             self.results = Some(v);
             self
         }
+        /// <p>A list of <code>BatchPrediction</code> objects that meet the search criteria.
+        /// </p>
         pub fn set_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchPrediction>>,
@@ -2228,6 +2634,7 @@ pub mod describe_batch_predictions_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2280,6 +2687,7 @@ pub mod delete_tags_output {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the ML object from which tags were deleted.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -2289,6 +2697,7 @@ pub mod delete_tags_output {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The type of the ML object from which tags were deleted.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::TaggableResourceType>,
@@ -2348,6 +2757,8 @@ pub mod delete_realtime_endpoint_output {
             self.ml_model_id = Some(input.into());
             self
         }
+        /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the
+        /// <code>MLModelId</code> in the request.</p>
         pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ml_model_id = input;
             self
@@ -2358,6 +2769,8 @@ pub mod delete_realtime_endpoint_output {
             self.realtime_endpoint_info = Some(input);
             self
         }
+        /// <p>The endpoint information of the <code>MLModel</code>
+        /// </p>
         pub fn set_realtime_endpoint_info(
             mut self,
             input: std::option::Option<crate::model::RealtimeEndpointInfo>,
@@ -2411,6 +2824,7 @@ pub mod delete_ml_model_output {
             self.ml_model_id = Some(input.into());
             self
         }
+        /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelID</code> in the request.</p>
         pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ml_model_id = input;
             self
@@ -2460,6 +2874,7 @@ pub mod delete_evaluation_output {
             self.evaluation_id = Some(input.into());
             self
         }
+        /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>
         pub fn set_evaluation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2510,6 +2925,7 @@ pub mod delete_data_source_output {
             self.data_source_id = Some(input.into());
             self
         }
+        /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
         pub fn set_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2562,6 +2978,7 @@ pub mod delete_batch_prediction_output {
             self.batch_prediction_id = Some(input.into());
             self
         }
+        /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value should be identical to the value of the <code>BatchPredictionID</code> in the request.</p>
         pub fn set_batch_prediction_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2622,6 +3039,8 @@ pub mod create_realtime_endpoint_output {
             self.ml_model_id = Some(input.into());
             self
         }
+        /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the
+        /// <code>MLModelId</code> in the request.</p>
         pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ml_model_id = input;
             self
@@ -2632,6 +3051,8 @@ pub mod create_realtime_endpoint_output {
             self.realtime_endpoint_info = Some(input);
             self
         }
+        /// <p>The endpoint information of the <code>MLModel</code>
+        /// </p>
         pub fn set_realtime_endpoint_info(
             mut self,
             input: std::option::Option<crate::model::RealtimeEndpointInfo>,
@@ -2690,6 +3111,9 @@ pub mod create_ml_model_output {
             self.ml_model_id = Some(input.into());
             self
         }
+        /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the
+        /// <code>MLModelId</code> in the request.
+        /// </p>
         pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ml_model_id = input;
             self
@@ -2744,6 +3168,8 @@ pub mod create_evaluation_output {
             self.evaluation_id = Some(input.into());
             self
         }
+        /// <p>The user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the
+        /// <code>EvaluationId</code> in the request.</p>
         pub fn set_evaluation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2800,6 +3226,9 @@ pub mod create_data_source_from_s3_output {
             self.data_source_id = Some(input.into());
             self
         }
+        /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the
+        /// <code>DataSourceID</code> in the request.
+        /// </p>
         pub fn set_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2856,6 +3285,9 @@ pub mod create_data_source_from_redshift_output {
             self.data_source_id = Some(input.into());
             self
         }
+        /// <p>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the
+        /// <code>DataSourceID</code> in the request.
+        /// </p>
         pub fn set_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2915,6 +3347,9 @@ pub mod create_data_source_from_rds_output {
             self.data_source_id = Some(input.into());
             self
         }
+        /// <p>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the
+        /// <code>DataSourceID</code> in the request.
+        /// </p>
         pub fn set_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2970,6 +3405,8 @@ pub mod create_batch_prediction_output {
             self.batch_prediction_id = Some(input.into());
             self
         }
+        /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value is identical to the value of the
+        /// <code>BatchPredictionId</code> in the request.</p>
         pub fn set_batch_prediction_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3024,6 +3461,7 @@ pub mod add_tags_output {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the ML object that was tagged.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -3033,6 +3471,7 @@ pub mod add_tags_output {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The type of the ML object that was tagged.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::TaggableResourceType>,

@@ -4,7 +4,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_cache_policy_i
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("CachePolicyConfig")
@@ -19,7 +19,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_cloud_front_or
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("CloudFrontOriginAccessIdentityConfig")
@@ -36,7 +36,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_distribution_i
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("DistributionConfig")
@@ -51,7 +51,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_distribution_w
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("DistributionConfigWithTags")
@@ -66,7 +66,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_field_level_en
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("FieldLevelEncryptionConfig")
@@ -81,7 +81,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_field_level_en
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("FieldLevelEncryptionProfileConfig")
@@ -95,7 +95,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_field_level_en
 
 pub fn serialize_structure_crate_input_create_function_input(
     input: &crate::input::CreateFunctionInput,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -104,7 +104,7 @@ pub fn serialize_structure_crate_input_create_function_input(
             .start_el("FunctionCode")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::base64::encode(var_1.as_ref()).as_ref());
+        inner_writer.data(aws_smithy_types::base64::encode(var_1.as_ref()).as_ref());
     }
     if let Some(var_2) = &input.function_config {
         let inner_writer = scope
@@ -127,7 +127,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_invalidation_i
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("InvalidationBatch")
@@ -142,7 +142,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_key_group_inpu
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("KeyGroupConfig")
@@ -157,7 +157,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_monitoring_sub
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("MonitoringSubscription")
@@ -172,7 +172,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_origin_request
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("OriginRequestPolicyConfig")
@@ -187,7 +187,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_public_key_inp
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("PublicKeyConfig")
@@ -199,7 +199,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_public_key_inp
 
 pub fn serialize_structure_crate_input_create_realtime_log_config_input(
     input: &crate::input::CreateRealtimeLogConfigInput,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -247,7 +247,7 @@ pub fn serialize_structure_crate_input_create_realtime_log_config_input(
             .start_el("SamplingRate")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_9).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_9).encode());
     }
     scope.finish();
 }
@@ -257,7 +257,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_streaming_dist
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("StreamingDistributionConfig")
@@ -272,7 +272,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_streaming_dist
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("StreamingDistributionConfigWithTags")
@@ -286,7 +286,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_create_streaming_dist
 
 pub fn serialize_structure_crate_input_delete_realtime_log_config_input(
     input: &crate::input::DeleteRealtimeLogConfigInput,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -309,7 +309,7 @@ pub fn serialize_structure_crate_input_delete_realtime_log_config_input(
 
 pub fn serialize_structure_crate_input_get_realtime_log_config_input(
     input: &crate::input::GetRealtimeLogConfigInput,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -332,7 +332,7 @@ pub fn serialize_structure_crate_input_get_realtime_log_config_input(
 
 pub fn serialize_structure_crate_input_list_distributions_by_realtime_log_config_input(
     input: &crate::input::ListDistributionsByRealtimeLogConfigInput,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -348,7 +348,7 @@ pub fn serialize_structure_crate_input_list_distributions_by_realtime_log_config
             .start_el("MaxItems")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_15).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_15).encode());
     }
     if let Some(var_16) = &input.realtime_log_config_arn {
         let mut inner_writer = scope
@@ -372,7 +372,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_tag_resource_input_ta
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("Tags")
@@ -384,7 +384,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_tag_resource_input_ta
 
 pub fn serialize_structure_crate_input_test_function_input(
     input: &crate::input::TestFunctionInput,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -393,7 +393,7 @@ pub fn serialize_structure_crate_input_test_function_input(
             .start_el("EventObject")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::base64::encode(var_18.as_ref()).as_ref());
+        inner_writer.data(aws_smithy_types::base64::encode(var_18.as_ref()).as_ref());
     }
     if let Some(var_19) = &input.stage {
         let mut inner_writer = scope
@@ -410,7 +410,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_untag_resource_input_
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("TagKeys")
@@ -425,7 +425,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_cache_policy_i
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("CachePolicyConfig")
@@ -440,7 +440,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_cloud_front_or
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("CloudFrontOriginAccessIdentityConfig")
@@ -457,7 +457,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_distribution_i
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("DistributionConfig")
@@ -472,7 +472,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_field_level_en
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("FieldLevelEncryptionConfig")
@@ -487,7 +487,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_field_level_en
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("FieldLevelEncryptionProfileConfig")
@@ -501,7 +501,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_field_level_en
 
 pub fn serialize_structure_crate_input_update_function_input(
     input: &crate::input::UpdateFunctionInput,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -510,7 +510,7 @@ pub fn serialize_structure_crate_input_update_function_input(
             .start_el("FunctionCode")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::base64::encode(var_20.as_ref()).as_ref());
+        inner_writer.data(aws_smithy_types::base64::encode(var_20.as_ref()).as_ref());
     }
     if let Some(var_21) = &input.function_config {
         let inner_writer = scope
@@ -526,7 +526,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_key_group_inpu
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("KeyGroupConfig")
@@ -541,7 +541,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_origin_request
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("OriginRequestPolicyConfig")
@@ -556,7 +556,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_public_key_inp
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("PublicKeyConfig")
@@ -568,7 +568,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_public_key_inp
 
 pub fn serialize_structure_crate_input_update_realtime_log_config_input(
     input: &crate::input::UpdateRealtimeLogConfigInput,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -623,7 +623,7 @@ pub fn serialize_structure_crate_input_update_realtime_log_config_input(
             .start_el("SamplingRate")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_28).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_28).encode());
     }
     scope.finish();
 }
@@ -633,7 +633,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_streaming_dist
 ) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
-        let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
+        let mut writer = aws_smithy_xml::encode::XmlWriter::new(&mut out);
         #[allow(unused_mut)]
         let mut root = writer
             .start_el("StreamingDistributionConfig")
@@ -645,7 +645,7 @@ pub fn serialize_member_com_amazonaws_cloudfront_synthetic_update_streaming_dist
 
 pub fn serialize_structure_crate_model_cache_policy_config(
     input: &crate::model::CachePolicyConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -668,21 +668,21 @@ pub fn serialize_structure_crate_model_cache_policy_config(
             .start_el("DefaultTTL")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_31).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_31).encode());
     }
     if let Some(var_32) = &input.max_ttl {
         let mut inner_writer = scope
             .start_el("MaxTTL")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_32).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_32).encode());
     }
     if let Some(var_33) = &input.min_ttl {
         let mut inner_writer = scope
             .start_el("MinTTL")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_33).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_33).encode());
     }
     if let Some(var_34) = &input.parameters_in_cache_key_and_forwarded_to_origin {
         let inner_writer = scope
@@ -695,7 +695,7 @@ pub fn serialize_structure_crate_model_cache_policy_config(
 
 pub fn serialize_structure_crate_model_cloud_front_origin_access_identity_config(
     input: &crate::model::CloudFrontOriginAccessIdentityConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -718,7 +718,7 @@ pub fn serialize_structure_crate_model_cloud_front_origin_access_identity_config
 
 pub fn serialize_structure_crate_model_distribution_config(
     input: &crate::model::DistributionConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -803,7 +803,7 @@ pub fn serialize_structure_crate_model_distribution_config(
             .start_el("Enabled")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_48).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_48).encode());
     }
     if let Some(var_49) = &input.viewer_certificate {
         let inner_writer = scope
@@ -836,14 +836,14 @@ pub fn serialize_structure_crate_model_distribution_config(
             .start_el("IsIPV6Enabled")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_53).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_53).encode());
     }
     scope.finish();
 }
 
 pub fn serialize_structure_crate_model_distribution_config_with_tags(
     input: &crate::model::DistributionConfigWithTags,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -864,7 +864,7 @@ pub fn serialize_structure_crate_model_distribution_config_with_tags(
 
 pub fn serialize_structure_crate_model_field_level_encryption_config(
     input: &crate::model::FieldLevelEncryptionConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -905,7 +905,7 @@ pub fn serialize_structure_crate_model_field_level_encryption_config(
 
 pub fn serialize_structure_crate_model_field_level_encryption_profile_config(
     input: &crate::model::FieldLevelEncryptionProfileConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -941,7 +941,7 @@ pub fn serialize_structure_crate_model_field_level_encryption_profile_config(
 
 pub fn serialize_structure_crate_model_function_config(
     input: &crate::model::FunctionConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -964,7 +964,7 @@ pub fn serialize_structure_crate_model_function_config(
 
 pub fn serialize_structure_crate_model_invalidation_batch(
     input: &crate::model::InvalidationBatch,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -986,7 +986,7 @@ pub fn serialize_structure_crate_model_invalidation_batch(
 
 pub fn serialize_structure_crate_model_key_group_config(
     input: &crate::model::KeyGroupConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1024,7 +1024,7 @@ pub fn serialize_structure_crate_model_key_group_config(
 
 pub fn serialize_structure_crate_model_monitoring_subscription(
     input: &crate::model::MonitoringSubscription,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1042,7 +1042,7 @@ pub fn serialize_structure_crate_model_monitoring_subscription(
 
 pub fn serialize_structure_crate_model_origin_request_policy_config(
     input: &crate::model::OriginRequestPolicyConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1092,7 +1092,7 @@ pub fn serialize_structure_crate_model_origin_request_policy_config(
 
 pub fn serialize_structure_crate_model_public_key_config(
     input: &crate::model::PublicKeyConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1129,7 +1129,7 @@ pub fn serialize_structure_crate_model_public_key_config(
 
 pub fn serialize_structure_crate_model_end_point(
     input: &crate::model::EndPoint,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1151,7 +1151,7 @@ pub fn serialize_structure_crate_model_end_point(
 
 pub fn serialize_structure_crate_model_streaming_distribution_config(
     input: &crate::model::StreamingDistributionConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1208,14 +1208,14 @@ pub fn serialize_structure_crate_model_streaming_distribution_config(
             .start_el("Enabled")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_91).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_91).encode());
     }
     scope.finish();
 }
 
 pub fn serialize_structure_crate_model_streaming_distribution_config_with_tags(
     input: &crate::model::StreamingDistributionConfigWithTags,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1239,7 +1239,7 @@ pub fn serialize_structure_crate_model_streaming_distribution_config_with_tags(
 
 pub fn serialize_structure_crate_model_tags(
     input: &crate::model::Tags,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1262,7 +1262,7 @@ pub fn serialize_structure_crate_model_tags(
 
 pub fn serialize_structure_crate_model_tag_keys(
     input: &crate::model::TagKeys,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1286,7 +1286,7 @@ pub fn serialize_structure_crate_model_tag_keys(
 
 pub fn serialize_structure_crate_model_parameters_in_cache_key_and_forwarded_to_origin(
     input: &crate::model::ParametersInCacheKeyAndForwardedToOrigin,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1295,14 +1295,14 @@ pub fn serialize_structure_crate_model_parameters_in_cache_key_and_forwarded_to_
             .start_el("EnableAcceptEncodingGzip")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_98).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_98).encode());
     }
     if let Some(var_99) = &input.enable_accept_encoding_brotli {
         let mut inner_writer = scope
             .start_el("EnableAcceptEncodingBrotli")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_99).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_99).encode());
     }
     if let Some(var_100) = &input.headers_config {
         let inner_writer = scope
@@ -1336,7 +1336,7 @@ pub fn serialize_structure_crate_model_parameters_in_cache_key_and_forwarded_to_
 
 pub fn serialize_structure_crate_model_aliases(
     input: &crate::model::Aliases,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1345,7 +1345,7 @@ pub fn serialize_structure_crate_model_aliases(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_103).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_103).encode());
     }
     if let Some(var_104) = &input.items {
         let mut inner_writer = scope
@@ -1367,7 +1367,7 @@ pub fn serialize_structure_crate_model_aliases(
 
 pub fn serialize_structure_crate_model_origins(
     input: &crate::model::Origins,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1376,7 +1376,7 @@ pub fn serialize_structure_crate_model_origins(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_106).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_106).encode());
     }
     if let Some(var_107) = &input.items {
         let mut inner_writer = scope
@@ -1397,7 +1397,7 @@ pub fn serialize_structure_crate_model_origins(
 
 pub fn serialize_structure_crate_model_origin_groups(
     input: &crate::model::OriginGroups,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1406,7 +1406,7 @@ pub fn serialize_structure_crate_model_origin_groups(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_109).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_109).encode());
     }
     if let Some(var_110) = &input.items {
         let mut inner_writer = scope
@@ -1430,7 +1430,7 @@ pub fn serialize_structure_crate_model_origin_groups(
 
 pub fn serialize_structure_crate_model_default_cache_behavior(
     input: &crate::model::DefaultCacheBehavior,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1471,14 +1471,14 @@ pub fn serialize_structure_crate_model_default_cache_behavior(
             .start_el("SmoothStreaming")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_117).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_117).encode());
     }
     if let Some(var_118) = &input.compress {
         let mut inner_writer = scope
             .start_el("Compress")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_118).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_118).encode());
     }
     if let Some(var_119) = &input.lambda_function_associations {
         let inner_writer = scope
@@ -1537,28 +1537,28 @@ pub fn serialize_structure_crate_model_default_cache_behavior(
             .start_el("MinTTL")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_126).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_126).encode());
     }
     if let Some(var_127) = &input.default_ttl {
         let mut inner_writer = scope
             .start_el("DefaultTTL")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_127).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_127).encode());
     }
     if let Some(var_128) = &input.max_ttl {
         let mut inner_writer = scope
             .start_el("MaxTTL")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_128).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_128).encode());
     }
     scope.finish();
 }
 
 pub fn serialize_structure_crate_model_cache_behaviors(
     input: &crate::model::CacheBehaviors,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1567,7 +1567,7 @@ pub fn serialize_structure_crate_model_cache_behaviors(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_129).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_129).encode());
     }
     if let Some(var_130) = &input.items {
         let mut inner_writer = scope
@@ -1591,7 +1591,7 @@ pub fn serialize_structure_crate_model_cache_behaviors(
 
 pub fn serialize_structure_crate_model_custom_error_responses(
     input: &crate::model::CustomErrorResponses,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1600,7 +1600,7 @@ pub fn serialize_structure_crate_model_custom_error_responses(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_132).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_132).encode());
     }
     if let Some(var_133) = &input.items {
         let mut inner_writer = scope
@@ -1624,7 +1624,7 @@ pub fn serialize_structure_crate_model_custom_error_responses(
 
 pub fn serialize_structure_crate_model_logging_config(
     input: &crate::model::LoggingConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1633,14 +1633,14 @@ pub fn serialize_structure_crate_model_logging_config(
             .start_el("Enabled")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_135).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_135).encode());
     }
     if let Some(var_136) = &input.include_cookies {
         let mut inner_writer = scope
             .start_el("IncludeCookies")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_136).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_136).encode());
     }
     if let Some(var_137) = &input.bucket {
         let mut inner_writer = scope
@@ -1661,7 +1661,7 @@ pub fn serialize_structure_crate_model_logging_config(
 
 pub fn serialize_structure_crate_model_viewer_certificate(
     input: &crate::model::ViewerCertificate,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1670,7 +1670,7 @@ pub fn serialize_structure_crate_model_viewer_certificate(
             .start_el("CloudFrontDefaultCertificate")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_139).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_139).encode());
     }
     if let Some(var_140) = &input.iam_certificate_id {
         let mut inner_writer = scope
@@ -1719,7 +1719,7 @@ pub fn serialize_structure_crate_model_viewer_certificate(
 
 pub fn serialize_structure_crate_model_restrictions(
     input: &crate::model::Restrictions,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1734,7 +1734,7 @@ pub fn serialize_structure_crate_model_restrictions(
 
 pub fn serialize_structure_crate_model_query_arg_profile_config(
     input: &crate::model::QueryArgProfileConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1743,7 +1743,7 @@ pub fn serialize_structure_crate_model_query_arg_profile_config(
             .start_el("ForwardWhenQueryArgProfileIsUnknown")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_147).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_147).encode());
     }
     if let Some(var_148) = &input.query_arg_profiles {
         let inner_writer = scope
@@ -1756,7 +1756,7 @@ pub fn serialize_structure_crate_model_query_arg_profile_config(
 
 pub fn serialize_structure_crate_model_content_type_profile_config(
     input: &crate::model::ContentTypeProfileConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1765,7 +1765,7 @@ pub fn serialize_structure_crate_model_content_type_profile_config(
             .start_el("ForwardWhenContentTypeIsUnknown")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_149).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_149).encode());
     }
     if let Some(var_150) = &input.content_type_profiles {
         let inner_writer = scope
@@ -1781,7 +1781,7 @@ pub fn serialize_structure_crate_model_content_type_profile_config(
 
 pub fn serialize_structure_crate_model_encryption_entities(
     input: &crate::model::EncryptionEntities,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1790,7 +1790,7 @@ pub fn serialize_structure_crate_model_encryption_entities(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_151).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_151).encode());
     }
     if let Some(var_152) = &input.items {
         let mut inner_writer = scope
@@ -1814,7 +1814,7 @@ pub fn serialize_structure_crate_model_encryption_entities(
 
 pub fn serialize_structure_crate_model_paths(
     input: &crate::model::Paths,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1823,7 +1823,7 @@ pub fn serialize_structure_crate_model_paths(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_154).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_154).encode());
     }
     if let Some(var_155) = &input.items {
         let mut inner_writer = scope
@@ -1845,7 +1845,7 @@ pub fn serialize_structure_crate_model_paths(
 
 pub fn serialize_structure_crate_model_realtime_metrics_subscription_config(
     input: &crate::model::RealtimeMetricsSubscriptionConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1861,7 +1861,7 @@ pub fn serialize_structure_crate_model_realtime_metrics_subscription_config(
 
 pub fn serialize_structure_crate_model_origin_request_policy_headers_config(
     input: &crate::model::OriginRequestPolicyHeadersConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1883,7 +1883,7 @@ pub fn serialize_structure_crate_model_origin_request_policy_headers_config(
 
 pub fn serialize_structure_crate_model_origin_request_policy_cookies_config(
     input: &crate::model::OriginRequestPolicyCookiesConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1905,7 +1905,7 @@ pub fn serialize_structure_crate_model_origin_request_policy_cookies_config(
 
 pub fn serialize_structure_crate_model_origin_request_policy_query_strings_config(
     input: &crate::model::OriginRequestPolicyQueryStringsConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1927,7 +1927,7 @@ pub fn serialize_structure_crate_model_origin_request_policy_query_strings_confi
 
 pub fn serialize_structure_crate_model_kinesis_stream_config(
     input: &crate::model::KinesisStreamConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1950,7 +1950,7 @@ pub fn serialize_structure_crate_model_kinesis_stream_config(
 
 pub fn serialize_structure_crate_model_s3_origin(
     input: &crate::model::S3Origin,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1973,7 +1973,7 @@ pub fn serialize_structure_crate_model_s3_origin(
 
 pub fn serialize_structure_crate_model_streaming_logging_config(
     input: &crate::model::StreamingLoggingConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -1982,7 +1982,7 @@ pub fn serialize_structure_crate_model_streaming_logging_config(
             .start_el("Enabled")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_168).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_168).encode());
     }
     if let Some(var_169) = &input.bucket {
         let mut inner_writer = scope
@@ -2003,7 +2003,7 @@ pub fn serialize_structure_crate_model_streaming_logging_config(
 
 pub fn serialize_structure_crate_model_trusted_signers(
     input: &crate::model::TrustedSigners,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2012,14 +2012,14 @@ pub fn serialize_structure_crate_model_trusted_signers(
             .start_el("Enabled")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_171).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_171).encode());
     }
     if let Some(var_172) = &input.quantity {
         let mut inner_writer = scope
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_172).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_172).encode());
     }
     if let Some(var_173) = &input.items {
         let mut inner_writer = scope
@@ -2041,7 +2041,7 @@ pub fn serialize_structure_crate_model_trusted_signers(
 
 pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2064,7 +2064,7 @@ pub fn serialize_structure_crate_model_tag(
 
 pub fn serialize_structure_crate_model_cache_policy_headers_config(
     input: &crate::model::CachePolicyHeadersConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2086,7 +2086,7 @@ pub fn serialize_structure_crate_model_cache_policy_headers_config(
 
 pub fn serialize_structure_crate_model_cache_policy_cookies_config(
     input: &crate::model::CachePolicyCookiesConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2108,7 +2108,7 @@ pub fn serialize_structure_crate_model_cache_policy_cookies_config(
 
 pub fn serialize_structure_crate_model_cache_policy_query_strings_config(
     input: &crate::model::CachePolicyQueryStringsConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2130,7 +2130,7 @@ pub fn serialize_structure_crate_model_cache_policy_query_strings_config(
 
 pub fn serialize_structure_crate_model_origin(
     input: &crate::model::Origin,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2178,14 +2178,14 @@ pub fn serialize_structure_crate_model_origin(
             .start_el("ConnectionAttempts")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_189).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_189).encode());
     }
     if let Some(var_190) = &input.connection_timeout {
         let mut inner_writer = scope
             .start_el("ConnectionTimeout")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_190).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_190).encode());
     }
     if let Some(var_191) = &input.origin_shield {
         let inner_writer = scope
@@ -2198,7 +2198,7 @@ pub fn serialize_structure_crate_model_origin(
 
 pub fn serialize_structure_crate_model_origin_group(
     input: &crate::model::OriginGroup,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2229,7 +2229,7 @@ pub fn serialize_structure_crate_model_origin_group(
 
 pub fn serialize_structure_crate_model_trusted_key_groups(
     input: &crate::model::TrustedKeyGroups,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2238,14 +2238,14 @@ pub fn serialize_structure_crate_model_trusted_key_groups(
             .start_el("Enabled")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_195).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_195).encode());
     }
     if let Some(var_196) = &input.quantity {
         let mut inner_writer = scope
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_196).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_196).encode());
     }
     if let Some(var_197) = &input.items {
         let mut inner_writer = scope
@@ -2267,7 +2267,7 @@ pub fn serialize_structure_crate_model_trusted_key_groups(
 
 pub fn serialize_structure_crate_model_allowed_methods(
     input: &crate::model::AllowedMethods,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2276,7 +2276,7 @@ pub fn serialize_structure_crate_model_allowed_methods(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_199).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_199).encode());
     }
     if let Some(var_200) = &input.items {
         let mut inner_writer = scope
@@ -2304,7 +2304,7 @@ pub fn serialize_structure_crate_model_allowed_methods(
 
 pub fn serialize_structure_crate_model_lambda_function_associations(
     input: &crate::model::LambdaFunctionAssociations,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2313,7 +2313,7 @@ pub fn serialize_structure_crate_model_lambda_function_associations(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_203).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_203).encode());
     }
     if let Some(var_204) = &input.items {
         let mut inner_writer = scope
@@ -2337,7 +2337,7 @@ pub fn serialize_structure_crate_model_lambda_function_associations(
 
 pub fn serialize_structure_crate_model_function_associations(
     input: &crate::model::FunctionAssociations,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2346,7 +2346,7 @@ pub fn serialize_structure_crate_model_function_associations(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_206).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_206).encode());
     }
     if let Some(var_207) = &input.items {
         let mut inner_writer = scope
@@ -2370,7 +2370,7 @@ pub fn serialize_structure_crate_model_function_associations(
 
 pub fn serialize_structure_crate_model_forwarded_values(
     input: &crate::model::ForwardedValues,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2379,7 +2379,7 @@ pub fn serialize_structure_crate_model_forwarded_values(
             .start_el("QueryString")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_209).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_209).encode());
     }
     if let Some(var_210) = &input.cookies {
         let inner_writer = scope
@@ -2407,7 +2407,7 @@ pub fn serialize_structure_crate_model_forwarded_values(
 
 pub fn serialize_structure_crate_model_cache_behavior(
     input: &crate::model::CacheBehavior,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2455,14 +2455,14 @@ pub fn serialize_structure_crate_model_cache_behavior(
             .start_el("SmoothStreaming")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_219).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_219).encode());
     }
     if let Some(var_220) = &input.compress {
         let mut inner_writer = scope
             .start_el("Compress")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_220).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_220).encode());
     }
     if let Some(var_221) = &input.lambda_function_associations {
         let inner_writer = scope
@@ -2521,28 +2521,28 @@ pub fn serialize_structure_crate_model_cache_behavior(
             .start_el("MinTTL")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_228).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_228).encode());
     }
     if let Some(var_229) = &input.default_ttl {
         let mut inner_writer = scope
             .start_el("DefaultTTL")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_229).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_229).encode());
     }
     if let Some(var_230) = &input.max_ttl {
         let mut inner_writer = scope
             .start_el("MaxTTL")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_230).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_230).encode());
     }
     scope.finish();
 }
 
 pub fn serialize_structure_crate_model_custom_error_response(
     input: &crate::model::CustomErrorResponse,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2551,7 +2551,7 @@ pub fn serialize_structure_crate_model_custom_error_response(
             .start_el("ErrorCode")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_231).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_231).encode());
     }
     if let Some(var_232) = &input.response_page_path {
         let mut inner_writer = scope
@@ -2572,14 +2572,14 @@ pub fn serialize_structure_crate_model_custom_error_response(
             .start_el("ErrorCachingMinTTL")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_234).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_234).encode());
     }
     scope.finish();
 }
 
 pub fn serialize_structure_crate_model_geo_restriction(
     input: &crate::model::GeoRestriction,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2595,7 +2595,7 @@ pub fn serialize_structure_crate_model_geo_restriction(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_236).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_236).encode());
     }
     if let Some(var_237) = &input.items {
         let mut inner_writer = scope
@@ -2617,7 +2617,7 @@ pub fn serialize_structure_crate_model_geo_restriction(
 
 pub fn serialize_structure_crate_model_query_arg_profiles(
     input: &crate::model::QueryArgProfiles,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2626,7 +2626,7 @@ pub fn serialize_structure_crate_model_query_arg_profiles(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_239).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_239).encode());
     }
     if let Some(var_240) = &input.items {
         let mut inner_writer = scope
@@ -2650,7 +2650,7 @@ pub fn serialize_structure_crate_model_query_arg_profiles(
 
 pub fn serialize_structure_crate_model_content_type_profiles(
     input: &crate::model::ContentTypeProfiles,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2659,7 +2659,7 @@ pub fn serialize_structure_crate_model_content_type_profiles(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_242).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_242).encode());
     }
     if let Some(var_243) = &input.items {
         let mut inner_writer = scope
@@ -2683,7 +2683,7 @@ pub fn serialize_structure_crate_model_content_type_profiles(
 
 pub fn serialize_structure_crate_model_encryption_entity(
     input: &crate::model::EncryptionEntity,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2712,7 +2712,7 @@ pub fn serialize_structure_crate_model_encryption_entity(
 
 pub fn serialize_structure_crate_model_headers(
     input: &crate::model::Headers,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2721,7 +2721,7 @@ pub fn serialize_structure_crate_model_headers(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_248).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_248).encode());
     }
     if let Some(var_249) = &input.items {
         let mut inner_writer = scope
@@ -2743,7 +2743,7 @@ pub fn serialize_structure_crate_model_headers(
 
 pub fn serialize_structure_crate_model_cookie_names(
     input: &crate::model::CookieNames,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2752,7 +2752,7 @@ pub fn serialize_structure_crate_model_cookie_names(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_251).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_251).encode());
     }
     if let Some(var_252) = &input.items {
         let mut inner_writer = scope
@@ -2774,7 +2774,7 @@ pub fn serialize_structure_crate_model_cookie_names(
 
 pub fn serialize_structure_crate_model_query_string_names(
     input: &crate::model::QueryStringNames,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2783,7 +2783,7 @@ pub fn serialize_structure_crate_model_query_string_names(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_254).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_254).encode());
     }
     if let Some(var_255) = &input.items {
         let mut inner_writer = scope
@@ -2805,7 +2805,7 @@ pub fn serialize_structure_crate_model_query_string_names(
 
 pub fn serialize_structure_crate_model_custom_headers(
     input: &crate::model::CustomHeaders,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2814,7 +2814,7 @@ pub fn serialize_structure_crate_model_custom_headers(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_257).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_257).encode());
     }
     if let Some(var_258) = &input.items {
         let mut inner_writer = scope
@@ -2838,7 +2838,7 @@ pub fn serialize_structure_crate_model_custom_headers(
 
 pub fn serialize_structure_crate_model_s3_origin_config(
     input: &crate::model::S3OriginConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2854,7 +2854,7 @@ pub fn serialize_structure_crate_model_s3_origin_config(
 
 pub fn serialize_structure_crate_model_custom_origin_config(
     input: &crate::model::CustomOriginConfig,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2863,14 +2863,14 @@ pub fn serialize_structure_crate_model_custom_origin_config(
             .start_el("HTTPPort")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_261).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_261).encode());
     }
     if let Some(var_262) = &input.https_port {
         let mut inner_writer = scope
             .start_el("HTTPSPort")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_262).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_262).encode());
     }
     if let Some(var_263) = &input.origin_protocol_policy {
         let mut inner_writer = scope
@@ -2890,21 +2890,21 @@ pub fn serialize_structure_crate_model_custom_origin_config(
             .start_el("OriginReadTimeout")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_265).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_265).encode());
     }
     if let Some(var_266) = &input.origin_keepalive_timeout {
         let mut inner_writer = scope
             .start_el("OriginKeepaliveTimeout")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_266).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_266).encode());
     }
     scope.finish();
 }
 
 pub fn serialize_structure_crate_model_origin_shield(
     input: &crate::model::OriginShield,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2913,7 +2913,7 @@ pub fn serialize_structure_crate_model_origin_shield(
             .start_el("Enabled")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_267).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_267).encode());
     }
     if let Some(var_268) = &input.origin_shield_region {
         let mut inner_writer = scope
@@ -2927,7 +2927,7 @@ pub fn serialize_structure_crate_model_origin_shield(
 
 pub fn serialize_structure_crate_model_origin_group_failover_criteria(
     input: &crate::model::OriginGroupFailoverCriteria,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2942,7 +2942,7 @@ pub fn serialize_structure_crate_model_origin_group_failover_criteria(
 
 pub fn serialize_structure_crate_model_origin_group_members(
     input: &crate::model::OriginGroupMembers,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2951,7 +2951,7 @@ pub fn serialize_structure_crate_model_origin_group_members(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_270).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_270).encode());
     }
     if let Some(var_271) = &input.items {
         let mut inner_writer = scope
@@ -2975,7 +2975,7 @@ pub fn serialize_structure_crate_model_origin_group_members(
 
 pub fn serialize_structure_crate_model_cached_methods(
     input: &crate::model::CachedMethods,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -2984,7 +2984,7 @@ pub fn serialize_structure_crate_model_cached_methods(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_273).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_273).encode());
     }
     if let Some(var_274) = &input.items {
         let mut inner_writer = scope
@@ -3006,7 +3006,7 @@ pub fn serialize_structure_crate_model_cached_methods(
 
 pub fn serialize_structure_crate_model_lambda_function_association(
     input: &crate::model::LambdaFunctionAssociation,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3029,14 +3029,14 @@ pub fn serialize_structure_crate_model_lambda_function_association(
             .start_el("IncludeBody")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_278).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_278).encode());
     }
     scope.finish();
 }
 
 pub fn serialize_structure_crate_model_function_association(
     input: &crate::model::FunctionAssociation,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3059,7 +3059,7 @@ pub fn serialize_structure_crate_model_function_association(
 
 pub fn serialize_structure_crate_model_cookie_preference(
     input: &crate::model::CookiePreference,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3081,7 +3081,7 @@ pub fn serialize_structure_crate_model_cookie_preference(
 
 pub fn serialize_structure_crate_model_query_string_cache_keys(
     input: &crate::model::QueryStringCacheKeys,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3090,7 +3090,7 @@ pub fn serialize_structure_crate_model_query_string_cache_keys(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_283).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_283).encode());
     }
     if let Some(var_284) = &input.items {
         let mut inner_writer = scope
@@ -3112,7 +3112,7 @@ pub fn serialize_structure_crate_model_query_string_cache_keys(
 
 pub fn serialize_structure_crate_model_query_arg_profile(
     input: &crate::model::QueryArgProfile,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3135,7 +3135,7 @@ pub fn serialize_structure_crate_model_query_arg_profile(
 
 pub fn serialize_structure_crate_model_content_type_profile(
     input: &crate::model::ContentTypeProfile,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3165,7 +3165,7 @@ pub fn serialize_structure_crate_model_content_type_profile(
 
 pub fn serialize_structure_crate_model_field_patterns(
     input: &crate::model::FieldPatterns,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3174,7 +3174,7 @@ pub fn serialize_structure_crate_model_field_patterns(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_291).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_291).encode());
     }
     if let Some(var_292) = &input.items {
         let mut inner_writer = scope
@@ -3196,7 +3196,7 @@ pub fn serialize_structure_crate_model_field_patterns(
 
 pub fn serialize_structure_crate_model_origin_custom_header(
     input: &crate::model::OriginCustomHeader,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3219,7 +3219,7 @@ pub fn serialize_structure_crate_model_origin_custom_header(
 
 pub fn serialize_structure_crate_model_origin_ssl_protocols(
     input: &crate::model::OriginSslProtocols,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3228,7 +3228,7 @@ pub fn serialize_structure_crate_model_origin_ssl_protocols(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_296).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_296).encode());
     }
     if let Some(var_297) = &input.items {
         let mut inner_writer = scope
@@ -3250,7 +3250,7 @@ pub fn serialize_structure_crate_model_origin_ssl_protocols(
 
 pub fn serialize_structure_crate_model_status_codes(
     input: &crate::model::StatusCodes,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
@@ -3259,7 +3259,7 @@ pub fn serialize_structure_crate_model_status_codes(
             .start_el("Quantity")
             .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_299).encode());
+        inner_writer.data(aws_smithy_types::primitive::Encoder::from(*var_299).encode());
     }
     if let Some(var_300) = &input.items {
         let mut inner_writer = scope
@@ -3272,7 +3272,8 @@ pub fn serialize_structure_crate_model_status_codes(
                     .start_el("StatusCode")
                     .write_ns("http://cloudfront.amazonaws.com/doc/2020-05-31/", None)
                     .finish();
-                inner_writer.data(smithy_types::primitive::Encoder::from(*list_item_301).encode());
+                inner_writer
+                    .data(aws_smithy_types::primitive::Encoder::from(*list_item_301).encode());
             }
         }
     }
@@ -3281,7 +3282,7 @@ pub fn serialize_structure_crate_model_status_codes(
 
 pub fn serialize_structure_crate_model_origin_group_member(
     input: &crate::model::OriginGroupMember,
-    writer: smithy_xml::encode::ElWriter,
+    writer: aws_smithy_xml::encode::ElWriter,
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();

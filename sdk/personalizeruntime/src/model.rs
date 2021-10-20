@@ -34,6 +34,7 @@ pub mod predicted_item {
             self.item_id = Some(input.into());
             self
         }
+        /// <p>The recommended item ID.</p>
         pub fn set_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.item_id = input;
             self
@@ -44,6 +45,8 @@ pub mod predicted_item {
             self.score = Some(input);
             self
         }
+        /// <p>A numeric representation of the model's certainty that the item will be the next user
+        /// selection. For more information on scoring logic, see <a>how-scores-work</a>.</p>
         pub fn set_score(mut self, input: std::option::Option<f64>) -> Self {
             self.score = input;
             self

@@ -31,6 +31,7 @@ pub mod auto_scaling_group {
             self.name = Some(input.into());
             self
         }
+        /// <p>The Auto Scaling group name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -40,6 +41,7 @@ pub mod auto_scaling_group {
             self.hook = Some(input.into());
             self
         }
+        /// <p>An Auto Scaling lifecycle event hook name.</p>
         pub fn set_hook(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hook = input;
             self
@@ -87,6 +89,13 @@ pub mod on_premises_tag_set {
             std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::TagFilter>>>,
     }
     impl Builder {
+        /// Appends an item to `on_premises_tag_set_list`.
+        ///
+        /// To override the contents of this collection use [`set_on_premises_tag_set_list`](Self::set_on_premises_tag_set_list).
+        ///
+        /// <p>A list that contains other lists of on-premises instance tag groups. For an instance
+        /// to be included in the deployment group, it must be identified by all of the tag groups
+        /// in the list.</p>
         pub fn on_premises_tag_set_list(
             mut self,
             input: impl Into<std::vec::Vec<crate::model::TagFilter>>,
@@ -96,6 +105,9 @@ pub mod on_premises_tag_set {
             self.on_premises_tag_set_list = Some(v);
             self
         }
+        /// <p>A list that contains other lists of on-premises instance tag groups. For an instance
+        /// to be included in the deployment group, it must be identified by all of the tag groups
+        /// in the list.</p>
         pub fn set_on_premises_tag_set_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::TagFilter>>>,
@@ -165,6 +177,7 @@ pub mod tag_filter {
             self.key = Some(input.into());
             self
         }
+        /// <p>The on-premises instance tag filter key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -174,6 +187,7 @@ pub mod tag_filter {
             self.value = Some(input.into());
             self
         }
+        /// <p>The on-premises instance tag filter value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -194,6 +208,18 @@ pub mod tag_filter {
             self.r#type = Some(input);
             self
         }
+        /// <p>The on-premises instance tag filter type:</p>
+        /// <ul>
+        /// <li>
+        /// <p>KEY_ONLY: Key only.</p>
+        /// </li>
+        /// <li>
+        /// <p>VALUE_ONLY: Value only.</p>
+        /// </li>
+        /// <li>
+        /// <p>KEY_AND_VALUE: Key and value.</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::TagFilterType>) -> Self {
             self.r#type = input;
             self
@@ -215,6 +241,7 @@ impl TagFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -226,8 +253,11 @@ impl TagFilter {
     std::hash::Hash,
 )]
 pub enum TagFilterType {
+    #[allow(missing_docs)] // documentation missing in model
     KeyAndValue,
+    #[allow(missing_docs)] // documentation missing in model
     KeyOnly,
+    #[allow(missing_docs)] // documentation missing in model
     ValueOnly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -250,6 +280,7 @@ impl std::str::FromStr for TagFilterType {
     }
 }
 impl TagFilterType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TagFilterType::KeyAndValue => "KEY_AND_VALUE",
@@ -258,6 +289,7 @@ impl TagFilterType {
             TagFilterType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["KEY_AND_VALUE", "KEY_ONLY", "VALUE_ONLY"]
     }
@@ -301,6 +333,7 @@ pub mod ecs_service {
             self.service_name = Some(input.into());
             self
         }
+        /// <p> The name of the target Amazon ECS service. </p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -310,6 +343,7 @@ pub mod ecs_service {
             self.cluster_name = Some(input.into());
             self
         }
+        /// <p> The name of the cluster that the Amazon ECS service is associated with. </p>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_name = input;
             self
@@ -357,6 +391,13 @@ pub mod ec2_tag_set {
             std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::Ec2TagFilter>>>,
     }
     impl Builder {
+        /// Appends an item to `ec2_tag_set_list`.
+        ///
+        /// To override the contents of this collection use [`set_ec2_tag_set_list`](Self::set_ec2_tag_set_list).
+        ///
+        /// <p>A list that contains other lists of EC2 instance tag groups. For an instance to be
+        /// included in the deployment group, it must be identified by all of the tag groups in the
+        /// list.</p>
         pub fn ec2_tag_set_list(
             mut self,
             input: impl Into<std::vec::Vec<crate::model::Ec2TagFilter>>,
@@ -366,6 +407,9 @@ pub mod ec2_tag_set {
             self.ec2_tag_set_list = Some(v);
             self
         }
+        /// <p>A list that contains other lists of EC2 instance tag groups. For an instance to be
+        /// included in the deployment group, it must be identified by all of the tag groups in the
+        /// list.</p>
         pub fn set_ec2_tag_set_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::Ec2TagFilter>>>,
@@ -438,6 +482,7 @@ pub mod ec2_tag_filter {
             self.key = Some(input.into());
             self
         }
+        /// <p>The tag filter key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -447,6 +492,7 @@ pub mod ec2_tag_filter {
             self.value = Some(input.into());
             self
         }
+        /// <p>The tag filter value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -470,6 +516,21 @@ pub mod ec2_tag_filter {
             self.r#type = Some(input);
             self
         }
+        /// <p>The tag filter type:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>KEY_ONLY</code>: Key only.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>VALUE_ONLY</code>: Value only.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KEY_AND_VALUE</code>: Key and value.</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::Ec2TagFilterType>,
@@ -494,6 +555,7 @@ impl Ec2TagFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -505,8 +567,11 @@ impl Ec2TagFilter {
     std::hash::Hash,
 )]
 pub enum Ec2TagFilterType {
+    #[allow(missing_docs)] // documentation missing in model
     KeyAndValue,
+    #[allow(missing_docs)] // documentation missing in model
     KeyOnly,
+    #[allow(missing_docs)] // documentation missing in model
     ValueOnly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -529,6 +594,7 @@ impl std::str::FromStr for Ec2TagFilterType {
     }
 }
 impl Ec2TagFilterType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Ec2TagFilterType::KeyAndValue => "KEY_AND_VALUE",
@@ -537,6 +603,7 @@ impl Ec2TagFilterType {
             Ec2TagFilterType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["KEY_AND_VALUE", "KEY_ONLY", "VALUE_ONLY"]
     }
@@ -596,12 +663,28 @@ pub mod load_balancer_info {
             std::option::Option<std::vec::Vec<crate::model::TargetGroupPairInfo>>,
     }
     impl Builder {
+        /// Appends an item to `elb_info_list`.
+        ///
+        /// To override the contents of this collection use [`set_elb_info_list`](Self::set_elb_info_list).
+        ///
+        /// <p>An array that contains information about the load balancer to use for load balancing
+        /// in a deployment. In Elastic Load Balancing, load balancers are used with Classic Load
+        /// Balancers.</p>
+        /// <note>
+        /// <p> Adding more than one load balancer to the array is not supported. </p>
+        /// </note>
         pub fn elb_info_list(mut self, input: impl Into<crate::model::ElbInfo>) -> Self {
             let mut v = self.elb_info_list.unwrap_or_default();
             v.push(input.into());
             self.elb_info_list = Some(v);
             self
         }
+        /// <p>An array that contains information about the load balancer to use for load balancing
+        /// in a deployment. In Elastic Load Balancing, load balancers are used with Classic Load
+        /// Balancers.</p>
+        /// <note>
+        /// <p> Adding more than one load balancer to the array is not supported. </p>
+        /// </note>
         pub fn set_elb_info_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ElbInfo>>,
@@ -609,6 +692,16 @@ pub mod load_balancer_info {
             self.elb_info_list = input;
             self
         }
+        /// Appends an item to `target_group_info_list`.
+        ///
+        /// To override the contents of this collection use [`set_target_group_info_list`](Self::set_target_group_info_list).
+        ///
+        /// <p>An array that contains information about the target group to use for load balancing in
+        /// a deployment. In Elastic Load Balancing, target groups are used with Application Load
+        /// Balancers.</p>
+        /// <note>
+        /// <p> Adding more than one target group to the array is not supported. </p>
+        /// </note>
         pub fn target_group_info_list(
             mut self,
             input: impl Into<crate::model::TargetGroupInfo>,
@@ -618,6 +711,12 @@ pub mod load_balancer_info {
             self.target_group_info_list = Some(v);
             self
         }
+        /// <p>An array that contains information about the target group to use for load balancing in
+        /// a deployment. In Elastic Load Balancing, target groups are used with Application Load
+        /// Balancers.</p>
+        /// <note>
+        /// <p> Adding more than one target group to the array is not supported. </p>
+        /// </note>
         pub fn set_target_group_info_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TargetGroupInfo>>,
@@ -625,6 +724,12 @@ pub mod load_balancer_info {
             self.target_group_info_list = input;
             self
         }
+        /// Appends an item to `target_group_pair_info_list`.
+        ///
+        /// To override the contents of this collection use [`set_target_group_pair_info_list`](Self::set_target_group_pair_info_list).
+        ///
+        /// <p> The target group pair information. This is an array of
+        /// <code>TargeGroupPairInfo</code> objects with a maximum size of one. </p>
         pub fn target_group_pair_info_list(
             mut self,
             input: impl Into<crate::model::TargetGroupPairInfo>,
@@ -634,6 +739,8 @@ pub mod load_balancer_info {
             self.target_group_pair_info_list = Some(v);
             self
         }
+        /// <p> The target group pair information. This is an array of
+        /// <code>TargeGroupPairInfo</code> objects with a maximum size of one. </p>
         pub fn set_target_group_pair_info_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TargetGroupPairInfo>>,
@@ -695,12 +802,22 @@ pub mod target_group_pair_info {
         pub(crate) test_traffic_route: std::option::Option<crate::model::TrafficRoute>,
     }
     impl Builder {
+        /// Appends an item to `target_groups`.
+        ///
+        /// To override the contents of this collection use [`set_target_groups`](Self::set_target_groups).
+        ///
+        /// <p> One pair of target groups. One is associated with the original task set. The second
+        /// is associated with the task set that serves traffic after the deployment is complete.
+        /// </p>
         pub fn target_groups(mut self, input: impl Into<crate::model::TargetGroupInfo>) -> Self {
             let mut v = self.target_groups.unwrap_or_default();
             v.push(input.into());
             self.target_groups = Some(v);
             self
         }
+        /// <p> One pair of target groups. One is associated with the original task set. The second
+        /// is associated with the task set that serves traffic after the deployment is complete.
+        /// </p>
         pub fn set_target_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TargetGroupInfo>>,
@@ -714,6 +831,8 @@ pub mod target_group_pair_info {
             self.prod_traffic_route = Some(input);
             self
         }
+        /// <p> The path used by a load balancer to route production traffic when an Amazon ECS
+        /// deployment is complete. </p>
         pub fn set_prod_traffic_route(
             mut self,
             input: std::option::Option<crate::model::TrafficRoute>,
@@ -728,6 +847,9 @@ pub mod target_group_pair_info {
             self.test_traffic_route = Some(input);
             self
         }
+        /// <p> An optional path used by a load balancer to route test traffic after an Amazon ECS
+        /// deployment. Validation can occur while test traffic is served during a deployment.
+        /// </p>
         pub fn set_test_traffic_route(
             mut self,
             input: std::option::Option<crate::model::TrafficRoute>,
@@ -778,12 +900,22 @@ pub mod traffic_route {
         pub(crate) listener_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `listener_arns`.
+        ///
+        /// To override the contents of this collection use [`set_listener_arns`](Self::set_listener_arns).
+        ///
+        /// <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the route
+        /// between a target group and a load balancer. This is an array of strings with a maximum
+        /// size of one. </p>
         pub fn listener_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.listener_arns.unwrap_or_default();
             v.push(input.into());
             self.listener_arns = Some(v);
             self
         }
+        /// <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the route
+        /// between a target group and a load balancer. This is an array of strings with a maximum
+        /// size of one. </p>
         pub fn set_listener_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -844,6 +976,11 @@ pub mod target_group_info {
             self.name = Some(input.into());
             self
         }
+        /// <p>For blue/green deployments, the name of the target group that instances in the
+        /// original environment are deregistered from, and instances in the replacement environment
+        /// are registered with. For in-place deployments, the name of the target group that
+        /// instances are deregistered from, so they are not serving traffic during a deployment,
+        /// and then re-registered with after the deployment is complete. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -899,6 +1036,11 @@ pub mod elb_info {
             self.name = Some(input.into());
             self
         }
+        /// <p>For blue/green deployments, the name of the load balancer that is used to route
+        /// traffic from original instances to replacement instances in a blue/green deployment. For
+        /// in-place deployments, the name of the load balancer that instances are deregistered from
+        /// so they are not serving traffic during a deployment, and then re-registered with after
+        /// the deployment is complete.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -970,6 +1112,8 @@ pub mod blue_green_deployment_configuration {
             self.terminate_blue_instances_on_deployment_success = Some(input);
             self
         }
+        /// <p>Information about whether to terminate instances in the original fleet during a
+        /// blue/green deployment.</p>
         pub fn set_terminate_blue_instances_on_deployment_success(
             mut self,
             input: std::option::Option<crate::model::BlueInstanceTerminationOption>,
@@ -986,6 +1130,8 @@ pub mod blue_green_deployment_configuration {
             self.deployment_ready_option = Some(input);
             self
         }
+        /// <p>Information about the action to take when newly provisioned instances are ready to
+        /// receive traffic in a blue/green deployment.</p>
         pub fn set_deployment_ready_option(
             mut self,
             input: std::option::Option<crate::model::DeploymentReadyOption>,
@@ -1002,6 +1148,8 @@ pub mod blue_green_deployment_configuration {
             self.green_fleet_provisioning_option = Some(input);
             self
         }
+        /// <p>Information about how instances are provisioned for a replacement environment in a
+        /// blue/green deployment.</p>
         pub fn set_green_fleet_provisioning_option(
             mut self,
             input: std::option::Option<crate::model::GreenFleetProvisioningOption>,
@@ -1080,6 +1228,19 @@ pub mod green_fleet_provisioning_option {
             self.action = Some(input);
             self
         }
+        /// <p>The method used to add instances to a replacement environment.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be
+        /// created manually.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto
+        /// Scaling group to define and create instances in a new Auto Scaling group.</p>
+        /// </li>
+        /// </ul>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::GreenFleetProvisioningAction>,
@@ -1102,6 +1263,7 @@ impl GreenFleetProvisioningOption {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1113,7 +1275,9 @@ impl GreenFleetProvisioningOption {
     std::hash::Hash,
 )]
 pub enum GreenFleetProvisioningAction {
+    #[allow(missing_docs)] // documentation missing in model
     CopyAutoScalingGroup,
+    #[allow(missing_docs)] // documentation missing in model
     DiscoverExisting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1135,6 +1299,7 @@ impl std::str::FromStr for GreenFleetProvisioningAction {
     }
 }
 impl GreenFleetProvisioningAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GreenFleetProvisioningAction::CopyAutoScalingGroup => "COPY_AUTO_SCALING_GROUP",
@@ -1142,6 +1307,7 @@ impl GreenFleetProvisioningAction {
             GreenFleetProvisioningAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COPY_AUTO_SCALING_GROUP", "DISCOVER_EXISTING"]
     }
@@ -1215,6 +1381,21 @@ pub mod deployment_ready_option {
             self.action_on_timeout = Some(input);
             self
         }
+        /// <p>Information about when to reroute traffic from an original environment to a
+        /// replacement environment in a blue/green deployment.</p>
+        /// <ul>
+        /// <li>
+        /// <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer immediately
+        /// after the new application revision is installed on the instances in the
+        /// replacement environment.</p>
+        /// </li>
+        /// <li>
+        /// <p>STOP_DEPLOYMENT: Do not register new instances with a load balancer unless
+        /// traffic rerouting is started using <a>ContinueDeployment</a>. If
+        /// traffic rerouting is not started before the end of the specified wait period,
+        /// the deployment status is changed to Stopped.</p>
+        /// </li>
+        /// </ul>
         pub fn set_action_on_timeout(
             mut self,
             input: std::option::Option<crate::model::DeploymentReadyAction>,
@@ -1229,6 +1410,9 @@ pub mod deployment_ready_option {
             self.wait_time_in_minutes = Some(input);
             self
         }
+        /// <p>The number of minutes to wait before the status of a blue/green deployment is changed
+        /// to Stopped if rerouting is not started manually. Applies only to the
+        /// <code>STOP_DEPLOYMENT</code> option for <code>actionOnTimeout</code>.</p>
         pub fn set_wait_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.wait_time_in_minutes = input;
             self
@@ -1249,6 +1433,7 @@ impl DeploymentReadyOption {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1260,7 +1445,9 @@ impl DeploymentReadyOption {
     std::hash::Hash,
 )]
 pub enum DeploymentReadyAction {
+    #[allow(missing_docs)] // documentation missing in model
     ContinueDeployment,
+    #[allow(missing_docs)] // documentation missing in model
     StopDeployment,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1282,6 +1469,7 @@ impl std::str::FromStr for DeploymentReadyAction {
     }
 }
 impl DeploymentReadyAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentReadyAction::ContinueDeployment => "CONTINUE_DEPLOYMENT",
@@ -1289,6 +1477,7 @@ impl DeploymentReadyAction {
             DeploymentReadyAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONTINUE_DEPLOYMENT", "STOP_DEPLOYMENT"]
     }
@@ -1323,9 +1512,11 @@ pub struct BlueInstanceTerminationOption {
     pub action: std::option::Option<crate::model::InstanceAction>,
     /// <p>For an Amazon EC2 deployment, the number of minutes to wait after a successful
     /// blue/green deployment before terminating instances from the original environment.</p>
+    ///
     /// <p> For an Amazon ECS deployment, the number of minutes before deleting the original
     /// (blue) task set. During an Amazon ECS deployment, CodeDeploy shifts traffic from the
     /// original (blue) task set to a replacement (green) task set. </p>
+    ///
     /// <p> The maximum setting is 2880 minutes (2 days). </p>
     pub termination_wait_time_in_minutes: i32,
 }
@@ -1369,6 +1560,21 @@ pub mod blue_instance_termination_option {
             self.action = Some(input);
             self
         }
+        /// <p>The action to take on instances in the original environment after a successful
+        /// blue/green deployment.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TERMINATE</code>: Instances are terminated after a specified wait
+        /// time.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KEEP_ALIVE</code>: Instances are left running after they are
+        /// deregistered from the load balancer and removed from the deployment
+        /// group.</p>
+        /// </li>
+        /// </ul>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::InstanceAction>,
@@ -1378,14 +1584,24 @@ pub mod blue_instance_termination_option {
         }
         /// <p>For an Amazon EC2 deployment, the number of minutes to wait after a successful
         /// blue/green deployment before terminating instances from the original environment.</p>
+        ///
         /// <p> For an Amazon ECS deployment, the number of minutes before deleting the original
         /// (blue) task set. During an Amazon ECS deployment, CodeDeploy shifts traffic from the
         /// original (blue) task set to a replacement (green) task set. </p>
+        ///
         /// <p> The maximum setting is 2880 minutes (2 days). </p>
         pub fn termination_wait_time_in_minutes(mut self, input: i32) -> Self {
             self.termination_wait_time_in_minutes = Some(input);
             self
         }
+        /// <p>For an Amazon EC2 deployment, the number of minutes to wait after a successful
+        /// blue/green deployment before terminating instances from the original environment.</p>
+        ///
+        /// <p> For an Amazon ECS deployment, the number of minutes before deleting the original
+        /// (blue) task set. During an Amazon ECS deployment, CodeDeploy shifts traffic from the
+        /// original (blue) task set to a replacement (green) task set. </p>
+        ///
+        /// <p> The maximum setting is 2880 minutes (2 days). </p>
         pub fn set_termination_wait_time_in_minutes(
             mut self,
             input: std::option::Option<i32>,
@@ -1411,6 +1627,7 @@ impl BlueInstanceTerminationOption {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1422,7 +1639,9 @@ impl BlueInstanceTerminationOption {
     std::hash::Hash,
 )]
 pub enum InstanceAction {
+    #[allow(missing_docs)] // documentation missing in model
     KeepAlive,
+    #[allow(missing_docs)] // documentation missing in model
     Terminate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1444,6 +1663,7 @@ impl std::str::FromStr for InstanceAction {
     }
 }
 impl InstanceAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InstanceAction::KeepAlive => "KEEP_ALIVE",
@@ -1451,6 +1671,7 @@ impl InstanceAction {
             InstanceAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["KEEP_ALIVE", "TERMINATE"]
     }
@@ -1494,6 +1715,7 @@ pub mod deployment_style {
             self.deployment_type = Some(input);
             self
         }
+        /// <p>Indicates whether to run an in-place deployment or a blue/green deployment.</p>
         pub fn set_deployment_type(
             mut self,
             input: std::option::Option<crate::model::DeploymentType>,
@@ -1506,6 +1728,7 @@ pub mod deployment_style {
             self.deployment_option = Some(input);
             self
         }
+        /// <p>Indicates whether to route deployment traffic behind a load balancer.</p>
         pub fn set_deployment_option(
             mut self,
             input: std::option::Option<crate::model::DeploymentOption>,
@@ -1529,6 +1752,7 @@ impl DeploymentStyle {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1540,7 +1764,9 @@ impl DeploymentStyle {
     std::hash::Hash,
 )]
 pub enum DeploymentOption {
+    #[allow(missing_docs)] // documentation missing in model
     WithoutTrafficControl,
+    #[allow(missing_docs)] // documentation missing in model
     WithTrafficControl,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1562,6 +1788,7 @@ impl std::str::FromStr for DeploymentOption {
     }
 }
 impl DeploymentOption {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentOption::WithoutTrafficControl => "WITHOUT_TRAFFIC_CONTROL",
@@ -1569,6 +1796,7 @@ impl DeploymentOption {
             DeploymentOption::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["WITHOUT_TRAFFIC_CONTROL", "WITH_TRAFFIC_CONTROL"]
     }
@@ -1579,6 +1807,7 @@ impl AsRef<str> for DeploymentOption {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1590,7 +1819,9 @@ impl AsRef<str> for DeploymentOption {
     std::hash::Hash,
 )]
 pub enum DeploymentType {
+    #[allow(missing_docs)] // documentation missing in model
     BlueGreen,
+    #[allow(missing_docs)] // documentation missing in model
     InPlace,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1612,6 +1843,7 @@ impl std::str::FromStr for DeploymentType {
     }
 }
 impl DeploymentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentType::BlueGreen => "BLUE_GREEN",
@@ -1619,6 +1851,7 @@ impl DeploymentType {
             DeploymentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BLUE_GREEN", "IN_PLACE"]
     }
@@ -1629,6 +1862,7 @@ impl AsRef<str> for DeploymentType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1640,7 +1874,9 @@ impl AsRef<str> for DeploymentType {
     std::hash::Hash,
 )]
 pub enum OutdatedInstancesStrategy {
+    #[allow(missing_docs)] // documentation missing in model
     Ignore,
+    #[allow(missing_docs)] // documentation missing in model
     Update,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1662,6 +1898,7 @@ impl std::str::FromStr for OutdatedInstancesStrategy {
     }
 }
 impl OutdatedInstancesStrategy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OutdatedInstancesStrategy::Ignore => "IGNORE",
@@ -1669,6 +1906,7 @@ impl OutdatedInstancesStrategy {
             OutdatedInstancesStrategy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["IGNORE", "UPDATE"]
     }
@@ -1714,16 +1952,24 @@ pub mod auto_rollback_configuration {
             self.enabled = Some(input);
             self
         }
+        /// <p>Indicates whether a defined automatic rollback configuration is currently
+        /// enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
         }
+        /// Appends an item to `events`.
+        ///
+        /// To override the contents of this collection use [`set_events`](Self::set_events).
+        ///
+        /// <p>The event type or types that trigger a rollback.</p>
         pub fn events(mut self, input: impl Into<crate::model::AutoRollbackEvent>) -> Self {
             let mut v = self.events.unwrap_or_default();
             v.push(input.into());
             self.events = Some(v);
             self
         }
+        /// <p>The event type or types that trigger a rollback.</p>
         pub fn set_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AutoRollbackEvent>>,
@@ -1747,6 +1993,7 @@ impl AutoRollbackConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1758,8 +2005,11 @@ impl AutoRollbackConfiguration {
     std::hash::Hash,
 )]
 pub enum AutoRollbackEvent {
+    #[allow(missing_docs)] // documentation missing in model
     DeploymentFailure,
+    #[allow(missing_docs)] // documentation missing in model
     DeploymentStopOnAlarm,
+    #[allow(missing_docs)] // documentation missing in model
     DeploymentStopOnRequest,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1782,6 +2032,7 @@ impl std::str::FromStr for AutoRollbackEvent {
     }
 }
 impl AutoRollbackEvent {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AutoRollbackEvent::DeploymentFailure => "DEPLOYMENT_FAILURE",
@@ -1790,6 +2041,7 @@ impl AutoRollbackEvent {
             AutoRollbackEvent::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DEPLOYMENT_FAILURE",
@@ -1854,6 +2106,7 @@ pub mod alarm_configuration {
             self.enabled = Some(input);
             self
         }
+        /// <p>Indicates whether the alarm configuration is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -1876,16 +2129,38 @@ pub mod alarm_configuration {
             self.ignore_poll_alarm_failure = Some(input);
             self
         }
+        /// <p>Indicates whether a deployment should continue if information about the current state
+        /// of alarms cannot be retrieved from Amazon CloudWatch. The default value is false.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>true</code>: The deployment proceeds even if alarm status information
+        /// can't be retrieved from Amazon CloudWatch.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>false</code>: The deployment stops if alarm status information can't be
+        /// retrieved from Amazon CloudWatch.</p>
+        /// </li>
+        /// </ul>
         pub fn set_ignore_poll_alarm_failure(mut self, input: std::option::Option<bool>) -> Self {
             self.ignore_poll_alarm_failure = input;
             self
         }
+        /// Appends an item to `alarms`.
+        ///
+        /// To override the contents of this collection use [`set_alarms`](Self::set_alarms).
+        ///
+        /// <p>A list of alarms configured for the deployment group. A maximum of 10 alarms can be
+        /// added to a deployment group.</p>
         pub fn alarms(mut self, input: impl Into<crate::model::Alarm>) -> Self {
             let mut v = self.alarms.unwrap_or_default();
             v.push(input.into());
             self.alarms = Some(v);
             self
         }
+        /// <p>A list of alarms configured for the deployment group. A maximum of 10 alarms can be
+        /// added to a deployment group.</p>
         pub fn set_alarms(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
@@ -1940,6 +2215,8 @@ pub mod alarm {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can be used
+        /// only once in a list of alarms.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1995,6 +2272,7 @@ pub mod trigger_config {
             self.trigger_name = Some(input.into());
             self
         }
+        /// <p>The name of the notification trigger.</p>
         pub fn set_trigger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trigger_name = input;
             self
@@ -2005,6 +2283,8 @@ pub mod trigger_config {
             self.trigger_target_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through
+        /// which notifications about deployment or instance events are sent.</p>
         pub fn set_trigger_target_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2012,12 +2292,18 @@ pub mod trigger_config {
             self.trigger_target_arn = input;
             self
         }
+        /// Appends an item to `trigger_events`.
+        ///
+        /// To override the contents of this collection use [`set_trigger_events`](Self::set_trigger_events).
+        ///
+        /// <p>The event type or types for which notifications are triggered.</p>
         pub fn trigger_events(mut self, input: impl Into<crate::model::TriggerEventType>) -> Self {
             let mut v = self.trigger_events.unwrap_or_default();
             v.push(input.into());
             self.trigger_events = Some(v);
             self
         }
+        /// <p>The event type or types for which notifications are triggered.</p>
         pub fn set_trigger_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TriggerEventType>>,
@@ -2042,6 +2328,7 @@ impl TriggerConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2053,15 +2340,25 @@ impl TriggerConfig {
     std::hash::Hash,
 )]
 pub enum TriggerEventType {
+    #[allow(missing_docs)] // documentation missing in model
     DeploymentFailure,
+    #[allow(missing_docs)] // documentation missing in model
     DeploymentReady,
+    #[allow(missing_docs)] // documentation missing in model
     DeploymentRollback,
+    #[allow(missing_docs)] // documentation missing in model
     DeploymentStart,
+    #[allow(missing_docs)] // documentation missing in model
     DeploymentStop,
+    #[allow(missing_docs)] // documentation missing in model
     DeploymentSuccess,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceFailure,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceReady,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceStart,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceSuccess,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2091,6 +2388,7 @@ impl std::str::FromStr for TriggerEventType {
     }
 }
 impl TriggerEventType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TriggerEventType::DeploymentFailure => "DeploymentFailure",
@@ -2106,6 +2404,7 @@ impl TriggerEventType {
             TriggerEventType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DeploymentFailure",
@@ -2159,6 +2458,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The tag's key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -2168,6 +2468,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The tag's value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -2188,6 +2489,7 @@ impl Tag {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2199,7 +2501,9 @@ impl Tag {
     std::hash::Hash,
 )]
 pub enum StopStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2221,6 +2525,7 @@ impl std::str::FromStr for StopStatus {
     }
 }
 impl StopStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StopStatus::Pending => "Pending",
@@ -2228,6 +2533,7 @@ impl StopStatus {
             StopStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Pending", "Succeeded"]
     }
@@ -2320,6 +2626,25 @@ pub mod revision_location {
             self.revision_type = Some(input);
             self
         }
+        /// <p>The type of application revision:</p>
+        /// <ul>
+        /// <li>
+        /// <p>S3: An application revision stored in Amazon S3.</p>
+        /// </li>
+        /// <li>
+        /// <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments
+        /// only).</p>
+        /// </li>
+        /// <li>
+        /// <p>String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments
+        /// only).</p>
+        /// </li>
+        /// <li>
+        /// <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the
+        /// contents of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The
+        /// content is formatted as JSON or YAML stored as a RawString.</p>
+        /// </li>
+        /// </ul>
         pub fn set_revision_type(
             mut self,
             input: std::option::Option<crate::model::RevisionLocationType>,
@@ -2332,6 +2657,7 @@ pub mod revision_location {
             self.s3_location = Some(input);
             self
         }
+        /// <p>Information about the location of a revision stored in Amazon S3. </p>
         pub fn set_s3_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -2344,6 +2670,7 @@ pub mod revision_location {
             self.git_hub_location = Some(input);
             self
         }
+        /// <p>Information about the location of application artifacts stored in GitHub.</p>
         pub fn set_git_hub_location(
             mut self,
             input: std::option::Option<crate::model::GitHubLocation>,
@@ -2357,6 +2684,8 @@ pub mod revision_location {
             self.string = Some(input);
             self
         }
+        /// <p>Information about the location of an AWS Lambda deployment revision stored as a
+        /// RawString.</p>
         pub fn set_string(mut self, input: std::option::Option<crate::model::RawString>) -> Self {
             self.string = input;
             self
@@ -2367,6 +2696,8 @@ pub mod revision_location {
             self.app_spec_content = Some(input);
             self
         }
+        /// <p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The
+        /// content is formatted as JSON or YAML and stored as a RawString. </p>
         pub fn set_app_spec_content(
             mut self,
             input: std::option::Option<crate::model::AppSpecContent>,
@@ -2444,6 +2775,15 @@ pub mod app_spec_content {
             self.content = Some(input.into());
             self
         }
+        /// <p> The YAML-formatted or JSON-formatted revision string. </p>
+        /// <p> For an AWS Lambda deployment, the content includes a Lambda function name, the alias
+        /// for its original version, and the alias for its replacement version. The deployment
+        /// shifts traffic from the original version of the Lambda function to the replacement
+        /// version. </p>
+        /// <p> For an Amazon ECS deployment, the content includes the task name, information about
+        /// the load balancer that serves traffic to the container, and more. </p>
+        /// <p> For both types of deployments, the content can specify Lambda functions that run at
+        /// specified hooks, such as <code>BeforeInstall</code>, during a deployment. </p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -2453,6 +2793,7 @@ pub mod app_spec_content {
             self.sha256 = Some(input.into());
             self
         }
+        /// <p> The SHA256 hash value of the revision content. </p>
         pub fn set_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sha256 = input;
             self
@@ -2510,6 +2851,9 @@ pub mod raw_string {
             self.content = Some(input.into());
             self
         }
+        /// <p>The YAML-formatted or JSON-formatted revision string. It includes information about
+        /// which Lambda function to update and optional Lambda functions that validate deployment
+        /// lifecycle events.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -2519,6 +2863,7 @@ pub mod raw_string {
             self.sha256 = Some(input.into());
             self
         }
+        /// <p>The SHA256 hash value of the revision content.</p>
         pub fn set_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sha256 = input;
             self
@@ -2576,6 +2921,9 @@ pub mod git_hub_location {
             self.repository = Some(input.into());
             self
         }
+        /// <p>The GitHub account and repository pair that stores a reference to the commit that
+        /// represents the bundled artifacts for the application revision. </p>
+        /// <p>Specified as account/repository.</p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.repository = input;
             self
@@ -2586,6 +2934,8 @@ pub mod git_hub_location {
             self.commit_id = Some(input.into());
             self
         }
+        /// <p>The SHA1 commit ID of the GitHub commit that represents the bundled artifacts for the
+        /// application revision.</p>
         pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.commit_id = input;
             self
@@ -2671,6 +3021,7 @@ pub mod s3_location {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon S3 bucket where the application revision is stored.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -2681,6 +3032,8 @@ pub mod s3_location {
             self.key = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon S3 object that represents the bundled artifacts for the
+        /// application revision.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -2704,6 +3057,21 @@ pub mod s3_location {
             self.bundle_type = Some(input);
             self
         }
+        /// <p>The file type of the application revision. Must be one of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>tar</code>: A tar archive file.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>tgz</code>: A compressed tar archive file.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zip</code>: A zip archive file.</p>
+        /// </li>
+        /// </ul>
         pub fn set_bundle_type(
             mut self,
             input: std::option::Option<crate::model::BundleType>,
@@ -2719,6 +3087,10 @@ pub mod s3_location {
             self.version = Some(input.into());
             self
         }
+        /// <p>A specific version of the Amazon S3 object that represents the bundled artifacts for
+        /// the application revision.</p>
+        /// <p>If the version is not specified, the system uses the most recent version by
+        /// default.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -2731,6 +3103,10 @@ pub mod s3_location {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The ETag of the Amazon S3 object that represents the bundled artifacts for the
+        /// application revision.</p>
+        /// <p>If the ETag is not specified as an input parameter, ETag validation of the object is
+        /// skipped.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -2754,6 +3130,7 @@ impl S3Location {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2765,10 +3142,15 @@ impl S3Location {
     std::hash::Hash,
 )]
 pub enum BundleType {
+    #[allow(missing_docs)] // documentation missing in model
     Json,
+    #[allow(missing_docs)] // documentation missing in model
     Yaml,
+    #[allow(missing_docs)] // documentation missing in model
     Tar,
+    #[allow(missing_docs)] // documentation missing in model
     TarGZip,
+    #[allow(missing_docs)] // documentation missing in model
     Zip,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2793,6 +3175,7 @@ impl std::str::FromStr for BundleType {
     }
 }
 impl BundleType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BundleType::Json => "JSON",
@@ -2803,6 +3186,7 @@ impl BundleType {
             BundleType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["JSON", "YAML", "tar", "tgz", "zip"]
     }
@@ -2813,6 +3197,7 @@ impl AsRef<str> for BundleType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2824,9 +3209,13 @@ impl AsRef<str> for BundleType {
     std::hash::Hash,
 )]
 pub enum RevisionLocationType {
+    #[allow(missing_docs)] // documentation missing in model
     AppSpecContent,
+    #[allow(missing_docs)] // documentation missing in model
     GitHub,
+    #[allow(missing_docs)] // documentation missing in model
     S3,
+    #[allow(missing_docs)] // documentation missing in model
     String,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2850,6 +3239,7 @@ impl std::str::FromStr for RevisionLocationType {
     }
 }
 impl RevisionLocationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RevisionLocationType::AppSpecContent => "AppSpecContent",
@@ -2859,6 +3249,7 @@ impl RevisionLocationType {
             RevisionLocationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AppSpecContent", "GitHub", "S3", "String"]
     }
@@ -2869,7 +3260,7 @@ impl AsRef<str> for RevisionLocationType {
     }
 }
 
-/// **NOTE:** `LifecycleEventStatus::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `LifecycleEventStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2881,12 +3272,17 @@ impl AsRef<str> for RevisionLocationType {
     std::hash::Hash,
 )]
 pub enum LifecycleEventStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Skipped,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2912,6 +3308,7 @@ impl std::str::FromStr for LifecycleEventStatus {
     }
 }
 impl LifecycleEventStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LifecycleEventStatus::Failed => "Failed",
@@ -2923,6 +3320,7 @@ impl LifecycleEventStatus {
             LifecycleEventStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Failed",
@@ -2940,6 +3338,7 @@ impl AsRef<str> for LifecycleEventStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2951,7 +3350,9 @@ impl AsRef<str> for LifecycleEventStatus {
     std::hash::Hash,
 )]
 pub enum RegistrationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Deregistered,
+    #[allow(missing_docs)] // documentation missing in model
     Registered,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2973,6 +3374,7 @@ impl std::str::FromStr for RegistrationStatus {
     }
 }
 impl RegistrationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RegistrationStatus::Deregistered => "Deregistered",
@@ -2980,6 +3382,7 @@ impl RegistrationStatus {
             RegistrationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Deregistered", "Registered"]
     }
@@ -2990,6 +3393,7 @@ impl AsRef<str> for RegistrationStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3001,7 +3405,9 @@ impl AsRef<str> for RegistrationStatus {
     std::hash::Hash,
 )]
 pub enum TargetFilterName {
+    #[allow(missing_docs)] // documentation missing in model
     ServerInstanceLabel,
+    #[allow(missing_docs)] // documentation missing in model
     TargetStatus,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3023,6 +3429,7 @@ impl std::str::FromStr for TargetFilterName {
     }
 }
 impl TargetFilterName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TargetFilterName::ServerInstanceLabel => "ServerInstanceLabel",
@@ -3030,6 +3437,7 @@ impl TargetFilterName {
             TargetFilterName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ServerInstanceLabel", "TargetStatus"]
     }
@@ -3048,12 +3456,12 @@ pub struct TimeRange {
     /// <note>
     /// <p>Specify null to leave the start time open-ended.</p>
     /// </note>
-    pub start: std::option::Option<smithy_types::Instant>,
+    pub start: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The end time of the time range.</p>
     /// <note>
     /// <p>Specify null to leave the end time open-ended.</p>
     /// </note>
-    pub end: std::option::Option<smithy_types::Instant>,
+    pub end: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for TimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3069,19 +3477,23 @@ pub mod time_range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start: std::option::Option<smithy_types::Instant>,
-        pub(crate) end: std::option::Option<smithy_types::Instant>,
+        pub(crate) start: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The start time of the time range.</p>
         /// <note>
         /// <p>Specify null to leave the start time open-ended.</p>
         /// </note>
-        pub fn start(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start = Some(input);
             self
         }
-        pub fn set_start(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The start time of the time range.</p>
+        /// <note>
+        /// <p>Specify null to leave the start time open-ended.</p>
+        /// </note>
+        pub fn set_start(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
             self.start = input;
             self
         }
@@ -3089,11 +3501,15 @@ pub mod time_range {
         /// <note>
         /// <p>Specify null to leave the end time open-ended.</p>
         /// </note>
-        pub fn end(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end = Some(input);
             self
         }
-        pub fn set_end(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The end time of the time range.</p>
+        /// <note>
+        /// <p>Specify null to leave the end time open-ended.</p>
+        /// </note>
+        pub fn set_end(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
             self.end = input;
             self
         }
@@ -3113,6 +3529,7 @@ impl TimeRange {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3124,13 +3541,21 @@ impl TimeRange {
     std::hash::Hash,
 )]
 pub enum DeploymentStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Baking,
+    #[allow(missing_docs)] // documentation missing in model
     Created,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Queued,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3158,6 +3583,7 @@ impl std::str::FromStr for DeploymentStatus {
     }
 }
 impl DeploymentStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentStatus::Baking => "Baking",
@@ -3171,6 +3597,7 @@ impl DeploymentStatus {
             DeploymentStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Baking",
@@ -3190,6 +3617,7 @@ impl AsRef<str> for DeploymentStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3201,7 +3629,9 @@ impl AsRef<str> for DeploymentStatus {
     std::hash::Hash,
 )]
 pub enum InstanceType {
+    #[allow(missing_docs)] // documentation missing in model
     Blue,
+    #[allow(missing_docs)] // documentation missing in model
     Green,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3223,6 +3653,7 @@ impl std::str::FromStr for InstanceType {
     }
 }
 impl InstanceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InstanceType::Blue => "Blue",
@@ -3230,6 +3661,7 @@ impl InstanceType {
             InstanceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Blue", "Green"]
     }
@@ -3240,7 +3672,7 @@ impl AsRef<str> for InstanceType {
     }
 }
 
-/// **NOTE:** `InstanceStatus::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `InstanceStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3252,13 +3684,19 @@ impl AsRef<str> for InstanceType {
     std::hash::Hash,
 )]
 pub enum InstanceStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
+    #[allow(missing_docs)] // documentation missing in model
     Skipped,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3285,6 +3723,7 @@ impl std::str::FromStr for InstanceStatus {
     }
 }
 impl InstanceStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InstanceStatus::Failed => "Failed",
@@ -3297,6 +3736,7 @@ impl InstanceStatus {
             InstanceStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Failed",
@@ -3315,6 +3755,7 @@ impl AsRef<str> for InstanceStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3326,8 +3767,11 @@ impl AsRef<str> for InstanceStatus {
     std::hash::Hash,
 )]
 pub enum ListStateFilterAction {
+    #[allow(missing_docs)] // documentation missing in model
     Exclude,
+    #[allow(missing_docs)] // documentation missing in model
     Ignore,
+    #[allow(missing_docs)] // documentation missing in model
     Include,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3350,6 +3794,7 @@ impl std::str::FromStr for ListStateFilterAction {
     }
 }
 impl ListStateFilterAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ListStateFilterAction::Exclude => "exclude",
@@ -3358,6 +3803,7 @@ impl ListStateFilterAction {
             ListStateFilterAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["exclude", "ignore", "include"]
     }
@@ -3368,6 +3814,7 @@ impl AsRef<str> for ListStateFilterAction {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3379,7 +3826,9 @@ impl AsRef<str> for ListStateFilterAction {
     std::hash::Hash,
 )]
 pub enum SortOrder {
+    #[allow(missing_docs)] // documentation missing in model
     Ascending,
+    #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3401,6 +3850,7 @@ impl std::str::FromStr for SortOrder {
     }
 }
 impl SortOrder {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortOrder::Ascending => "ascending",
@@ -3408,6 +3858,7 @@ impl SortOrder {
             SortOrder::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ascending", "descending"]
     }
@@ -3418,6 +3869,7 @@ impl AsRef<str> for SortOrder {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3429,8 +3881,11 @@ impl AsRef<str> for SortOrder {
     std::hash::Hash,
 )]
 pub enum ApplicationRevisionSortBy {
+    #[allow(missing_docs)] // documentation missing in model
     FirstUsedTime,
+    #[allow(missing_docs)] // documentation missing in model
     LastUsedTime,
+    #[allow(missing_docs)] // documentation missing in model
     RegisterTime,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3453,6 +3908,7 @@ impl std::str::FromStr for ApplicationRevisionSortBy {
     }
 }
 impl ApplicationRevisionSortBy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ApplicationRevisionSortBy::FirstUsedTime => "firstUsedTime",
@@ -3461,6 +3917,7 @@ impl ApplicationRevisionSortBy {
             ApplicationRevisionSortBy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["firstUsedTime", "lastUsedTime", "registerTime"]
     }
@@ -3484,10 +3941,10 @@ pub struct InstanceInfo {
     /// <p>The ARN of the on-premises instance.</p>
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>The time at which the on-premises instance was registered.</p>
-    pub register_time: std::option::Option<smithy_types::Instant>,
+    pub register_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>If the on-premises instance was deregistered, the time at which the on-premises
     /// instance was deregistered.</p>
-    pub deregister_time: std::option::Option<smithy_types::Instant>,
+    pub deregister_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The tags currently associated with the on-premises instance.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -3514,8 +3971,8 @@ pub mod instance_info {
         pub(crate) iam_session_arn: std::option::Option<std::string::String>,
         pub(crate) iam_user_arn: std::option::Option<std::string::String>,
         pub(crate) instance_arn: std::option::Option<std::string::String>,
-        pub(crate) register_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) deregister_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) register_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) deregister_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -3524,6 +3981,7 @@ pub mod instance_info {
             self.instance_name = Some(input.into());
             self
         }
+        /// <p>The name of the on-premises instance.</p>
         pub fn set_instance_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3536,6 +3994,7 @@ pub mod instance_info {
             self.iam_session_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM session associated with the on-premises instance.</p>
         pub fn set_iam_session_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3548,6 +4007,7 @@ pub mod instance_info {
             self.iam_user_arn = Some(input.into());
             self
         }
+        /// <p>The IAM user ARN associated with the on-premises instance.</p>
         pub fn set_iam_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_user_arn = input;
             self
@@ -3557,41 +4017,51 @@ pub mod instance_info {
             self.instance_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the on-premises instance.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_arn = input;
             self
         }
         /// <p>The time at which the on-premises instance was registered.</p>
-        pub fn register_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn register_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.register_time = Some(input);
             self
         }
+        /// <p>The time at which the on-premises instance was registered.</p>
         pub fn set_register_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.register_time = input;
             self
         }
         /// <p>If the on-premises instance was deregistered, the time at which the on-premises
         /// instance was deregistered.</p>
-        pub fn deregister_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn deregister_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.deregister_time = Some(input);
             self
         }
+        /// <p>If the on-premises instance was deregistered, the time at which the on-premises
+        /// instance was deregistered.</p>
         pub fn set_deregister_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.deregister_time = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags currently associated with the on-premises instance.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags currently associated with the on-premises instance.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3671,6 +4141,8 @@ pub mod deployment_target {
             self.deployment_target_type = Some(input);
             self
         }
+        /// <p>The deployment type that is specific to the deployment's compute platform or
+        /// deployments initiated by a CloudFormation stack update.</p>
         pub fn set_deployment_target_type(
             mut self,
             input: std::option::Option<crate::model::DeploymentTargetType>,
@@ -3684,6 +4156,8 @@ pub mod deployment_target {
             self.instance_target = Some(input);
             self
         }
+        /// <p> Information about the target for a deployment that uses the EC2/On-premises compute
+        /// platform. </p>
         pub fn set_instance_target(
             mut self,
             input: std::option::Option<crate::model::InstanceTarget>,
@@ -3697,6 +4171,8 @@ pub mod deployment_target {
             self.lambda_target = Some(input);
             self
         }
+        /// <p> Information about the target for a deployment that uses the AWS Lambda compute
+        /// platform. </p>
         pub fn set_lambda_target(
             mut self,
             input: std::option::Option<crate::model::LambdaTarget>,
@@ -3710,6 +4186,8 @@ pub mod deployment_target {
             self.ecs_target = Some(input);
             self
         }
+        /// <p> Information about the target for a deployment that uses the Amazon ECS compute
+        /// platform. </p>
         pub fn set_ecs_target(
             mut self,
             input: std::option::Option<crate::model::EcsTarget>,
@@ -3724,6 +4202,9 @@ pub mod deployment_target {
             self.cloud_formation_target = Some(input);
             self
         }
+        /// <p> Information about the target to be updated by an AWS CloudFormation blue/green
+        /// deployment. This target type is used for all deployments initiated by a CloudFormation
+        /// stack update.</p>
         pub fn set_cloud_formation_target(
             mut self,
             input: std::option::Option<crate::model::CloudFormationTarget>,
@@ -3763,7 +4244,7 @@ pub struct CloudFormationTarget {
     pub target_id: std::option::Option<std::string::String>,
     /// <p> The date and time when the target application was updated by an AWS CloudFormation
     /// blue/green deployment. </p>
-    pub last_updated_at: std::option::Option<smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The lifecycle events of the AWS CloudFormation blue/green deployment to this target
     /// application. </p>
     pub lifecycle_events: std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
@@ -3797,7 +4278,7 @@ pub mod cloud_formation_target {
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) target_id: std::option::Option<std::string::String>,
-        pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) lifecycle_events:
             std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
         pub(crate) status: std::option::Option<crate::model::TargetStatus>,
@@ -3810,6 +4291,7 @@ pub mod cloud_formation_target {
             self.deployment_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of an AWS CloudFormation blue/green deployment.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3823,29 +4305,41 @@ pub mod cloud_formation_target {
             self.target_id = Some(input.into());
             self
         }
+        /// <p> The unique ID of a deployment target that has a type
+        /// of <code>CloudFormationTarget</code>. </p>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_id = input;
             self
         }
         /// <p> The date and time when the target application was updated by an AWS CloudFormation
         /// blue/green deployment. </p>
-        pub fn last_updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_at = Some(input);
             self
         }
+        /// <p> The date and time when the target application was updated by an AWS CloudFormation
+        /// blue/green deployment. </p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_at = input;
             self
         }
+        /// Appends an item to `lifecycle_events`.
+        ///
+        /// To override the contents of this collection use [`set_lifecycle_events`](Self::set_lifecycle_events).
+        ///
+        /// <p> The lifecycle events of the AWS CloudFormation blue/green deployment to this target
+        /// application. </p>
         pub fn lifecycle_events(mut self, input: impl Into<crate::model::LifecycleEvent>) -> Self {
             let mut v = self.lifecycle_events.unwrap_or_default();
             v.push(input.into());
             self.lifecycle_events = Some(v);
             self
         }
+        /// <p> The lifecycle events of the AWS CloudFormation blue/green deployment to this target
+        /// application. </p>
         pub fn set_lifecycle_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
@@ -3859,6 +4353,8 @@ pub mod cloud_formation_target {
             self.status = Some(input);
             self
         }
+        /// <p> The status of an AWS CloudFormation blue/green deployment's target application.
+        /// </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TargetStatus>,
@@ -3871,6 +4367,7 @@ pub mod cloud_formation_target {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The resource type for the AWS CloudFormation blue/green deployment.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3884,6 +4381,8 @@ pub mod cloud_formation_target {
             self.target_version_weight = Some(input);
             self
         }
+        /// <p>The percentage of production traffic that the target version of an AWS CloudFormation
+        /// blue/green deployment receives.</p>
         pub fn set_target_version_weight(mut self, input: std::option::Option<f64>) -> Self {
             self.target_version_weight = input;
             self
@@ -3909,7 +4408,7 @@ impl CloudFormationTarget {
     }
 }
 
-/// **NOTE:** `TargetStatus::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `TargetStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3921,13 +4420,19 @@ impl CloudFormationTarget {
     std::hash::Hash,
 )]
 pub enum TargetStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
+    #[allow(missing_docs)] // documentation missing in model
     Skipped,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3954,6 +4459,7 @@ impl std::str::FromStr for TargetStatus {
     }
 }
 impl TargetStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TargetStatus::Failed => "Failed",
@@ -3966,6 +4472,7 @@ impl TargetStatus {
             TargetStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Failed",
@@ -3995,9 +4502,9 @@ pub struct LifecycleEvent {
     /// <p>Diagnostic information about the deployment lifecycle event.</p>
     pub diagnostics: std::option::Option<crate::model::Diagnostics>,
     /// <p>A timestamp that indicates when the deployment lifecycle event started.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A timestamp that indicates when the deployment lifecycle event ended.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The deployment lifecycle event status:</p>
     /// <ul>
     /// <li>
@@ -4040,8 +4547,8 @@ pub mod lifecycle_event {
     pub struct Builder {
         pub(crate) lifecycle_event_name: std::option::Option<std::string::String>,
         pub(crate) diagnostics: std::option::Option<crate::model::Diagnostics>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::LifecycleEventStatus>,
     }
     impl Builder {
@@ -4052,6 +4559,9 @@ pub mod lifecycle_event {
             self.lifecycle_event_name = Some(input.into());
             self
         }
+        /// <p>The deployment lifecycle event name, such as <code>ApplicationStop</code>,
+        /// <code>BeforeInstall</code>, <code>AfterInstall</code>,
+        /// <code>ApplicationStart</code>, or <code>ValidateService</code>.</p>
         pub fn set_lifecycle_event_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4064,6 +4574,7 @@ pub mod lifecycle_event {
             self.diagnostics = Some(input);
             self
         }
+        /// <p>Diagnostic information about the deployment lifecycle event.</p>
         pub fn set_diagnostics(
             mut self,
             input: std::option::Option<crate::model::Diagnostics>,
@@ -4072,20 +4583,28 @@ pub mod lifecycle_event {
             self
         }
         /// <p>A timestamp that indicates when the deployment lifecycle event started.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>A timestamp that indicates when the deployment lifecycle event started.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>A timestamp that indicates when the deployment lifecycle event ended.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>A timestamp that indicates when the deployment lifecycle event ended.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -4114,6 +4633,27 @@ pub mod lifecycle_event {
             self.status = Some(input);
             self
         }
+        /// <p>The deployment lifecycle event status:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Pending: The deployment lifecycle event is pending.</p>
+        /// </li>
+        /// <li>
+        /// <p>InProgress: The deployment lifecycle event is in progress.</p>
+        /// </li>
+        /// <li>
+        /// <p>Succeeded: The deployment lifecycle event ran successfully.</p>
+        /// </li>
+        /// <li>
+        /// <p>Failed: The deployment lifecycle event has failed.</p>
+        /// </li>
+        /// <li>
+        /// <p>Skipped: The deployment lifecycle event has been skipped.</p>
+        /// </li>
+        /// <li>
+        /// <p>Unknown: The deployment lifecycle event is unknown.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::LifecycleEventStatus>,
@@ -4227,6 +4767,30 @@ pub mod diagnostics {
             self.error_code = Some(input);
             self
         }
+        /// <p>The associated error code:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Success: The specified script ran.</p>
+        /// </li>
+        /// <li>
+        /// <p>ScriptMissing: The specified script was not found in the specified
+        /// location.</p>
+        /// </li>
+        /// <li>
+        /// <p>ScriptNotExecutable: The specified script is not a recognized executable file
+        /// type.</p>
+        /// </li>
+        /// <li>
+        /// <p>ScriptTimedOut: The specified script did not finish running in the specified
+        /// time period.</p>
+        /// </li>
+        /// <li>
+        /// <p>ScriptFailed: The specified script failed to run as expected.</p>
+        /// </li>
+        /// <li>
+        /// <p>UnknownError: The specified script did not run for an unknown reason.</p>
+        /// </li>
+        /// </ul>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::LifecycleErrorCode>,
@@ -4239,6 +4803,7 @@ pub mod diagnostics {
             self.script_name = Some(input.into());
             self
         }
+        /// <p>The name of the script.</p>
         pub fn set_script_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.script_name = input;
             self
@@ -4248,6 +4813,7 @@ pub mod diagnostics {
             self.message = Some(input.into());
             self
         }
+        /// <p>The message associated with the error.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4258,6 +4824,8 @@ pub mod diagnostics {
             self.log_tail = Some(input.into());
             self
         }
+        /// <p>The last portion of the diagnostic log.</p>
+        /// <p>If available, AWS CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
         pub fn set_log_tail(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_tail = input;
             self
@@ -4280,6 +4848,7 @@ impl Diagnostics {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4291,11 +4860,17 @@ impl Diagnostics {
     std::hash::Hash,
 )]
 pub enum LifecycleErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
     ScriptFailed,
+    #[allow(missing_docs)] // documentation missing in model
     ScriptMissing,
+    #[allow(missing_docs)] // documentation missing in model
     ScriptNotExecutable,
+    #[allow(missing_docs)] // documentation missing in model
     ScriptTimedOut,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
+    #[allow(missing_docs)] // documentation missing in model
     UnknownError,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4321,6 +4896,7 @@ impl std::str::FromStr for LifecycleErrorCode {
     }
 }
 impl LifecycleErrorCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LifecycleErrorCode::ScriptFailed => "ScriptFailed",
@@ -4332,6 +4908,7 @@ impl LifecycleErrorCode {
             LifecycleErrorCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ScriptFailed",
@@ -4362,7 +4939,7 @@ pub struct EcsTarget {
     pub target_arn: std::option::Option<std::string::String>,
     /// <p> The date and time when the target Amazon ECS application was updated by a deployment.
     /// </p>
-    pub last_updated_at: std::option::Option<smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The lifecycle events of the deployment to this target Amazon ECS application. </p>
     pub lifecycle_events: std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
     /// <p> The status an Amazon ECS deployment's target ECS application. </p>
@@ -4392,7 +4969,7 @@ pub mod ecs_target {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) target_id: std::option::Option<std::string::String>,
         pub(crate) target_arn: std::option::Option<std::string::String>,
-        pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) lifecycle_events:
             std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
         pub(crate) status: std::option::Option<crate::model::TargetStatus>,
@@ -4404,6 +4981,7 @@ pub mod ecs_target {
             self.deployment_id = Some(input.into());
             self
         }
+        /// <p> The unique ID of a deployment. </p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4417,6 +4995,8 @@ pub mod ecs_target {
             self.target_id = Some(input.into());
             self
         }
+        /// <p> The unique ID of a deployment target that has a type of <code>ecsTarget</code>.
+        /// </p>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_id = input;
             self
@@ -4426,29 +5006,38 @@ pub mod ecs_target {
             self.target_arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) of the target. </p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_arn = input;
             self
         }
         /// <p> The date and time when the target Amazon ECS application was updated by a deployment.
         /// </p>
-        pub fn last_updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_at = Some(input);
             self
         }
+        /// <p> The date and time when the target Amazon ECS application was updated by a deployment.
+        /// </p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_at = input;
             self
         }
+        /// Appends an item to `lifecycle_events`.
+        ///
+        /// To override the contents of this collection use [`set_lifecycle_events`](Self::set_lifecycle_events).
+        ///
+        /// <p> The lifecycle events of the deployment to this target Amazon ECS application. </p>
         pub fn lifecycle_events(mut self, input: impl Into<crate::model::LifecycleEvent>) -> Self {
             let mut v = self.lifecycle_events.unwrap_or_default();
             v.push(input.into());
             self.lifecycle_events = Some(v);
             self
         }
+        /// <p> The lifecycle events of the deployment to this target Amazon ECS application. </p>
         pub fn set_lifecycle_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
@@ -4461,6 +5050,7 @@ pub mod ecs_target {
             self.status = Some(input);
             self
         }
+        /// <p> The status an Amazon ECS deployment's target ECS application. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TargetStatus>,
@@ -4468,12 +5058,18 @@ pub mod ecs_target {
             self.status = input;
             self
         }
+        /// Appends an item to `task_sets_info`.
+        ///
+        /// To override the contents of this collection use [`set_task_sets_info`](Self::set_task_sets_info).
+        ///
+        /// <p> The <code>ECSTaskSet</code> objects associated with the ECS target. </p>
         pub fn task_sets_info(mut self, input: impl Into<crate::model::EcsTaskSet>) -> Self {
             let mut v = self.task_sets_info.unwrap_or_default();
             v.push(input.into());
             self.task_sets_info = Some(v);
             self
         }
+        /// <p> The <code>ECSTaskSet</code> objects associated with the ECS target. </p>
         pub fn set_task_sets_info(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EcsTaskSet>>,
@@ -4591,6 +5187,7 @@ pub mod ecs_task_set {
             self.identifer = Some(input.into());
             self
         }
+        /// <p> A unique ID of an <code>ECSTaskSet</code>. </p>
         pub fn set_identifer(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifer = input;
             self
@@ -4603,6 +5200,10 @@ pub mod ecs_task_set {
             self.desired_count = Some(input);
             self
         }
+        /// <p> The number of tasks in a task set. During a deployment that uses the Amazon ECS
+        /// compute type, CodeDeploy instructs Amazon ECS to create a new task set and uses this
+        /// value to determine how many tasks to create. After the updated task set is created,
+        /// CodeDeploy shifts traffic to the new task set. </p>
         pub fn set_desired_count(mut self, input: std::option::Option<i64>) -> Self {
             self.desired_count = input;
             self
@@ -4616,6 +5217,11 @@ pub mod ecs_task_set {
             self.pending_count = Some(input);
             self
         }
+        /// <p> The number of tasks in the task set that are in the <code>PENDING</code> status
+        /// during an Amazon ECS deployment. A task in the <code>PENDING</code> state is preparing
+        /// to enter the <code>RUNNING</code> state. A task set enters the <code>PENDING</code>
+        /// status when it launches for the first time, or when it is restarted after being in the
+        /// <code>STOPPED</code> state. </p>
         pub fn set_pending_count(mut self, input: std::option::Option<i64>) -> Self {
             self.pending_count = input;
             self
@@ -4627,6 +5233,9 @@ pub mod ecs_task_set {
             self.running_count = Some(input);
             self
         }
+        /// <p> The number of tasks in the task set that are in the <code>RUNNING</code> status
+        /// during an Amazon ECS deployment. A task in the <code>RUNNING</code> state is running and
+        /// ready for use. </p>
         pub fn set_running_count(mut self, input: std::option::Option<i64>) -> Self {
             self.running_count = input;
             self
@@ -4654,6 +5263,25 @@ pub mod ecs_task_set {
             self.status = Some(input.into());
             self
         }
+        /// <p> The status of the task set. There are three valid task set statuses: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PRIMARY</code>: Indicates the task set is serving production traffic.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ACTIVE</code>: Indicates the task set is not serving production traffic.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DRAINING</code>: Indicates the tasks in the task set are being stopped and
+        /// their corresponding targets are being deregistered from their target group.
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -4663,6 +5291,7 @@ pub mod ecs_task_set {
             self.traffic_weight = Some(input);
             self
         }
+        /// <p> The percentage of traffic served by this task set. </p>
         pub fn set_traffic_weight(mut self, input: std::option::Option<f64>) -> Self {
             self.traffic_weight = input;
             self
@@ -4673,6 +5302,8 @@ pub mod ecs_task_set {
             self.target_group = Some(input);
             self
         }
+        /// <p> The target group associated with the task set. The target group is used by AWS
+        /// CodeDeploy to manage traffic to a task set. </p>
         pub fn set_target_group(
             mut self,
             input: std::option::Option<crate::model::TargetGroupInfo>,
@@ -4686,6 +5317,8 @@ pub mod ecs_task_set {
             self.task_set_label = Some(input);
             self
         }
+        /// <p> A label that identifies whether the ECS task set is an original target
+        /// (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
         pub fn set_task_set_label(
             mut self,
             input: std::option::Option<crate::model::TargetLabel>,
@@ -4715,6 +5348,7 @@ impl EcsTaskSet {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4726,7 +5360,9 @@ impl EcsTaskSet {
     std::hash::Hash,
 )]
 pub enum TargetLabel {
+    #[allow(missing_docs)] // documentation missing in model
     Blue,
+    #[allow(missing_docs)] // documentation missing in model
     Green,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4748,6 +5384,7 @@ impl std::str::FromStr for TargetLabel {
     }
 }
 impl TargetLabel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TargetLabel::Blue => "Blue",
@@ -4755,6 +5392,7 @@ impl TargetLabel {
             TargetLabel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Blue", "Green"]
     }
@@ -4781,7 +5419,7 @@ pub struct LambdaTarget {
     pub status: std::option::Option<crate::model::TargetStatus>,
     /// <p> The date and time when the target Lambda function was updated by a deployment.
     /// </p>
-    pub last_updated_at: std::option::Option<smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The lifecycle events of the deployment to this target Lambda function. </p>
     pub lifecycle_events: std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
     /// <p> A <code>LambdaFunctionInfo</code> object that describes a target Lambda function.
@@ -4811,7 +5449,7 @@ pub mod lambda_target {
         pub(crate) target_id: std::option::Option<std::string::String>,
         pub(crate) target_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::TargetStatus>,
-        pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) lifecycle_events:
             std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
         pub(crate) lambda_function_info: std::option::Option<crate::model::LambdaFunctionInfo>,
@@ -4822,6 +5460,7 @@ pub mod lambda_target {
             self.deployment_id = Some(input.into());
             self
         }
+        /// <p> The unique ID of a deployment. </p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4835,6 +5474,8 @@ pub mod lambda_target {
             self.target_id = Some(input.into());
             self
         }
+        /// <p> The unique ID of a deployment target that has a type of <code>lambdaTarget</code>.
+        /// </p>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_id = input;
             self
@@ -4844,6 +5485,7 @@ pub mod lambda_target {
             self.target_arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) of the target. </p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_arn = input;
             self
@@ -4853,6 +5495,7 @@ pub mod lambda_target {
             self.status = Some(input);
             self
         }
+        /// <p> The status an AWS Lambda deployment's target Lambda function. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TargetStatus>,
@@ -4862,23 +5505,31 @@ pub mod lambda_target {
         }
         /// <p> The date and time when the target Lambda function was updated by a deployment.
         /// </p>
-        pub fn last_updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_at = Some(input);
             self
         }
+        /// <p> The date and time when the target Lambda function was updated by a deployment.
+        /// </p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_at = input;
             self
         }
+        /// Appends an item to `lifecycle_events`.
+        ///
+        /// To override the contents of this collection use [`set_lifecycle_events`](Self::set_lifecycle_events).
+        ///
+        /// <p> The lifecycle events of the deployment to this target Lambda function. </p>
         pub fn lifecycle_events(mut self, input: impl Into<crate::model::LifecycleEvent>) -> Self {
             let mut v = self.lifecycle_events.unwrap_or_default();
             v.push(input.into());
             self.lifecycle_events = Some(v);
             self
         }
+        /// <p> The lifecycle events of the deployment to this target Lambda function. </p>
         pub fn set_lifecycle_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
@@ -4892,6 +5543,8 @@ pub mod lambda_target {
             self.lambda_function_info = Some(input);
             self
         }
+        /// <p> A <code>LambdaFunctionInfo</code> object that describes a target Lambda function.
+        /// </p>
         pub fn set_lambda_function_info(
             mut self,
             input: std::option::Option<crate::model::LambdaFunctionInfo>,
@@ -4967,6 +5620,7 @@ pub mod lambda_function_info {
             self.function_name = Some(input.into());
             self
         }
+        /// <p> The name of a Lambda function. </p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4980,6 +5634,8 @@ pub mod lambda_function_info {
             self.function_alias = Some(input.into());
             self
         }
+        /// <p> The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS Lambda Function Aliases</a> in the
+        /// <i>AWS Lambda Developer Guide</i>.</p>
         pub fn set_function_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4992,6 +5648,7 @@ pub mod lambda_function_info {
             self.current_version = Some(input.into());
             self
         }
+        /// <p> The version of a Lambda function that production traffic points to. </p>
         pub fn set_current_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5005,6 +5662,8 @@ pub mod lambda_function_info {
             self.target_version = Some(input.into());
             self
         }
+        /// <p> The version of a Lambda function that production traffic points to after the Lambda
+        /// function is deployed. </p>
         pub fn set_target_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5018,6 +5677,8 @@ pub mod lambda_function_info {
             self.target_version_weight = Some(input);
             self
         }
+        /// <p> The percentage of production traffic that the target version of a Lambda function
+        /// receives. </p>
         pub fn set_target_version_weight(mut self, input: std::option::Option<f64>) -> Self {
             self.target_version_weight = input;
             self
@@ -5056,7 +5717,7 @@ pub struct InstanceTarget {
     /// <p> The status an EC2/On-premises deployment's target instance. </p>
     pub status: std::option::Option<crate::model::TargetStatus>,
     /// <p> The date and time when the target instance was updated by a deployment. </p>
-    pub last_updated_at: std::option::Option<smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The lifecycle events of the deployment to this target instance. </p>
     pub lifecycle_events: std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
     /// <p> A label that identifies whether the instance is an original target
@@ -5086,7 +5747,7 @@ pub mod instance_target {
         pub(crate) target_id: std::option::Option<std::string::String>,
         pub(crate) target_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::TargetStatus>,
-        pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) lifecycle_events:
             std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
         pub(crate) instance_label: std::option::Option<crate::model::TargetLabel>,
@@ -5097,6 +5758,7 @@ pub mod instance_target {
             self.deployment_id = Some(input.into());
             self
         }
+        /// <p> The unique ID of a deployment. </p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5110,6 +5772,8 @@ pub mod instance_target {
             self.target_id = Some(input.into());
             self
         }
+        /// <p> The unique ID of a deployment target that has a type of <code>instanceTarget</code>.
+        /// </p>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_id = input;
             self
@@ -5119,6 +5783,7 @@ pub mod instance_target {
             self.target_arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) of the target. </p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_arn = input;
             self
@@ -5128,6 +5793,7 @@ pub mod instance_target {
             self.status = Some(input);
             self
         }
+        /// <p> The status an EC2/On-premises deployment's target instance. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TargetStatus>,
@@ -5136,23 +5802,30 @@ pub mod instance_target {
             self
         }
         /// <p> The date and time when the target instance was updated by a deployment. </p>
-        pub fn last_updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_at = Some(input);
             self
         }
+        /// <p> The date and time when the target instance was updated by a deployment. </p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_at = input;
             self
         }
+        /// Appends an item to `lifecycle_events`.
+        ///
+        /// To override the contents of this collection use [`set_lifecycle_events`](Self::set_lifecycle_events).
+        ///
+        /// <p> The lifecycle events of the deployment to this target instance. </p>
         pub fn lifecycle_events(mut self, input: impl Into<crate::model::LifecycleEvent>) -> Self {
             let mut v = self.lifecycle_events.unwrap_or_default();
             v.push(input.into());
             self.lifecycle_events = Some(v);
             self
         }
+        /// <p> The lifecycle events of the deployment to this target instance. </p>
         pub fn set_lifecycle_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
@@ -5166,6 +5839,8 @@ pub mod instance_target {
             self.instance_label = Some(input);
             self
         }
+        /// <p> A label that identifies whether the instance is an original target
+        /// (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
         pub fn set_instance_label(
             mut self,
             input: std::option::Option<crate::model::TargetLabel>,
@@ -5194,6 +5869,7 @@ impl InstanceTarget {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5205,9 +5881,13 @@ impl InstanceTarget {
     std::hash::Hash,
 )]
 pub enum DeploymentTargetType {
+    #[allow(missing_docs)] // documentation missing in model
     CloudformationTarget,
+    #[allow(missing_docs)] // documentation missing in model
     EcsTarget,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceTarget,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaTarget,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5231,6 +5911,7 @@ impl std::str::FromStr for DeploymentTargetType {
     }
 }
 impl DeploymentTargetType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentTargetType::CloudformationTarget => "CloudFormationTarget",
@@ -5240,6 +5921,7 @@ impl DeploymentTargetType {
             DeploymentTargetType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CloudFormationTarget",
@@ -5295,7 +5977,7 @@ pub struct InstanceSummary {
     /// </ul>
     pub status: std::option::Option<crate::model::InstanceStatus>,
     /// <p>A timestamp that indicates when the instance information was last updated.</p>
-    pub last_updated_at: std::option::Option<smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A list of lifecycle events for this instance.</p>
     pub lifecycle_events: std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
     /// <p>Information about which environment an instance belongs to in a blue/green
@@ -5331,7 +6013,7 @@ pub mod instance_summary {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) instance_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::InstanceStatus>,
-        pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) lifecycle_events:
             std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
         pub(crate) instance_type: std::option::Option<crate::model::InstanceType>,
@@ -5342,6 +6024,7 @@ pub mod instance_summary {
             self.deployment_id = Some(input.into());
             self
         }
+        /// <p> The unique ID of a deployment. </p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5354,6 +6037,7 @@ pub mod instance_summary {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The instance ID.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -5392,6 +6076,36 @@ pub mod instance_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The deployment status for this instance:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Pending</code>: The deployment is pending for this instance.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>In Progress</code>: The deployment is in progress for this
+        /// instance.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Succeeded</code>: The deployment has succeeded for this instance.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Failed</code>: The deployment has failed for this instance.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Skipped</code>: The deployment has been skipped for this
+        /// instance.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Unknown</code>: The deployment status is unknown for this
+        /// instance.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::InstanceStatus>,
@@ -5400,23 +6114,30 @@ pub mod instance_summary {
             self
         }
         /// <p>A timestamp that indicates when the instance information was last updated.</p>
-        pub fn last_updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_at = Some(input);
             self
         }
+        /// <p>A timestamp that indicates when the instance information was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_at = input;
             self
         }
+        /// Appends an item to `lifecycle_events`.
+        ///
+        /// To override the contents of this collection use [`set_lifecycle_events`](Self::set_lifecycle_events).
+        ///
+        /// <p>A list of lifecycle events for this instance.</p>
         pub fn lifecycle_events(mut self, input: impl Into<crate::model::LifecycleEvent>) -> Self {
             let mut v = self.lifecycle_events.unwrap_or_default();
             v.push(input.into());
             self.lifecycle_events = Some(v);
             self
         }
+        /// <p>A list of lifecycle events for this instance.</p>
         pub fn set_lifecycle_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LifecycleEvent>>,
@@ -5438,6 +6159,16 @@ pub mod instance_summary {
             self.instance_type = Some(input);
             self
         }
+        /// <p>Information about which environment an instance belongs to in a blue/green
+        /// deployment.</p>
+        /// <ul>
+        /// <li>
+        /// <p>BLUE: The instance is part of the original environment.</p>
+        /// </li>
+        /// <li>
+        /// <p>GREEN: The instance is part of the replacement environment.</p>
+        /// </li>
+        /// </ul>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<crate::model::InstanceType>,
@@ -5625,6 +6356,7 @@ pub mod deployment_group_info {
             self.application_name = Some(input.into());
             self
         }
+        /// <p>The application name.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5637,6 +6369,7 @@ pub mod deployment_group_info {
             self.deployment_group_id = Some(input.into());
             self
         }
+        /// <p>The deployment group ID.</p>
         pub fn set_deployment_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5649,6 +6382,7 @@ pub mod deployment_group_info {
             self.deployment_group_name = Some(input.into());
             self
         }
+        /// <p>The deployment group name.</p>
         pub fn set_deployment_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5661,6 +6395,7 @@ pub mod deployment_group_info {
             self.deployment_config_name = Some(input.into());
             self
         }
+        /// <p>The deployment configuration name.</p>
         pub fn set_deployment_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5668,12 +6403,20 @@ pub mod deployment_group_info {
             self.deployment_config_name = input;
             self
         }
+        /// Appends an item to `ec2_tag_filters`.
+        ///
+        /// To override the contents of this collection use [`set_ec2_tag_filters`](Self::set_ec2_tag_filters).
+        ///
+        /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances
+        /// with any of the specified tags.</p>
         pub fn ec2_tag_filters(mut self, input: impl Into<crate::model::Ec2TagFilter>) -> Self {
             let mut v = self.ec2_tag_filters.unwrap_or_default();
             v.push(input.into());
             self.ec2_tag_filters = Some(v);
             self
         }
+        /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances
+        /// with any of the specified tags.</p>
         pub fn set_ec2_tag_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Ec2TagFilter>>,
@@ -5681,6 +6424,12 @@ pub mod deployment_group_info {
             self.ec2_tag_filters = input;
             self
         }
+        /// Appends an item to `on_premises_instance_tag_filters`.
+        ///
+        /// To override the contents of this collection use [`set_on_premises_instance_tag_filters`](Self::set_on_premises_instance_tag_filters).
+        ///
+        /// <p>The on-premises instance tags on which to filter. The deployment group includes
+        /// on-premises instances with any of the specified tags.</p>
         pub fn on_premises_instance_tag_filters(
             mut self,
             input: impl Into<crate::model::TagFilter>,
@@ -5690,6 +6439,8 @@ pub mod deployment_group_info {
             self.on_premises_instance_tag_filters = Some(v);
             self
         }
+        /// <p>The on-premises instance tags on which to filter. The deployment group includes
+        /// on-premises instances with any of the specified tags.</p>
         pub fn set_on_premises_instance_tag_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
@@ -5697,6 +6448,11 @@ pub mod deployment_group_info {
             self.on_premises_instance_tag_filters = input;
             self
         }
+        /// Appends an item to `auto_scaling_groups`.
+        ///
+        /// To override the contents of this collection use [`set_auto_scaling_groups`](Self::set_auto_scaling_groups).
+        ///
+        /// <p>A list of associated Auto Scaling groups.</p>
         pub fn auto_scaling_groups(
             mut self,
             input: impl Into<crate::model::AutoScalingGroup>,
@@ -5706,6 +6462,7 @@ pub mod deployment_group_info {
             self.auto_scaling_groups = Some(v);
             self
         }
+        /// <p>A list of associated Auto Scaling groups.</p>
         pub fn set_auto_scaling_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
@@ -5721,6 +6478,10 @@ pub mod deployment_group_info {
             self.service_role_arn = Some(input.into());
             self
         }
+        /// <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make
+        /// calls to AWS services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create a
+        /// Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User
+        /// Guide</i>.</p>
         pub fn set_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5734,6 +6495,8 @@ pub mod deployment_group_info {
             self.target_revision = Some(input);
             self
         }
+        /// <p>Information about the deployment group's target revision, including type and
+        /// location.</p>
         pub fn set_target_revision(
             mut self,
             input: std::option::Option<crate::model::RevisionLocation>,
@@ -5741,6 +6504,11 @@ pub mod deployment_group_info {
             self.target_revision = input;
             self
         }
+        /// Appends an item to `trigger_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_trigger_configurations`](Self::set_trigger_configurations).
+        ///
+        /// <p>Information about triggers associated with the deployment group.</p>
         pub fn trigger_configurations(
             mut self,
             input: impl Into<crate::model::TriggerConfig>,
@@ -5750,6 +6518,7 @@ pub mod deployment_group_info {
             self.trigger_configurations = Some(v);
             self
         }
+        /// <p>Information about triggers associated with the deployment group.</p>
         pub fn set_trigger_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TriggerConfig>>,
@@ -5762,6 +6531,7 @@ pub mod deployment_group_info {
             self.alarm_configuration = Some(input);
             self
         }
+        /// <p>A list of alarms associated with the deployment group.</p>
         pub fn set_alarm_configuration(
             mut self,
             input: std::option::Option<crate::model::AlarmConfiguration>,
@@ -5778,6 +6548,8 @@ pub mod deployment_group_info {
             self.auto_rollback_configuration = Some(input);
             self
         }
+        /// <p>Information about the automatic rollback configuration associated with the deployment
+        /// group.</p>
         pub fn set_auto_rollback_configuration(
             mut self,
             input: std::option::Option<crate::model::AutoRollbackConfiguration>,
@@ -5791,6 +6563,8 @@ pub mod deployment_group_info {
             self.deployment_style = Some(input);
             self
         }
+        /// <p>Information about the type of deployment, either in-place or blue/green, you want to
+        /// run and whether to route deployment traffic behind a load balancer.</p>
         pub fn set_deployment_style(
             mut self,
             input: std::option::Option<crate::model::DeploymentStyle>,
@@ -5813,6 +6587,14 @@ pub mod deployment_group_info {
             self.outdated_instances_strategy = Some(input);
             self
         }
+        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not
+        /// receive the deployed application revision.</p>
+        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates
+        /// one or more 'auto-update outdated instances' deployments to apply the deployed
+        /// application revision to the new EC2 instances.</p>
+        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a
+        /// deployment to update the new EC2 instances. This may result in instances having
+        /// different revisions.</p>
         pub fn set_outdated_instances_strategy(
             mut self,
             input: std::option::Option<crate::model::OutdatedInstancesStrategy>,
@@ -5828,6 +6610,7 @@ pub mod deployment_group_info {
             self.blue_green_deployment_configuration = Some(input);
             self
         }
+        /// <p>Information about blue/green deployment options for a deployment group.</p>
         pub fn set_blue_green_deployment_configuration(
             mut self,
             input: std::option::Option<crate::model::BlueGreenDeploymentConfiguration>,
@@ -5840,6 +6623,7 @@ pub mod deployment_group_info {
             self.load_balancer_info = Some(input);
             self
         }
+        /// <p>Information about the load balancer to use in a deployment.</p>
         pub fn set_load_balancer_info(
             mut self,
             input: std::option::Option<crate::model::LoadBalancerInfo>,
@@ -5856,6 +6640,8 @@ pub mod deployment_group_info {
             self.last_successful_deployment = Some(input);
             self
         }
+        /// <p>Information about the most recent successful deployment to the deployment
+        /// group.</p>
         pub fn set_last_successful_deployment(
             mut self,
             input: std::option::Option<crate::model::LastDeploymentInfo>,
@@ -5871,6 +6657,7 @@ pub mod deployment_group_info {
             self.last_attempted_deployment = Some(input);
             self
         }
+        /// <p>Information about the most recent attempted deployment to the deployment group.</p>
         pub fn set_last_attempted_deployment(
             mut self,
             input: std::option::Option<crate::model::LastDeploymentInfo>,
@@ -5885,6 +6672,9 @@ pub mod deployment_group_info {
             self.ec2_tag_set = Some(input);
             self
         }
+        /// <p>Information about groups of tags applied to an EC2 instance. The deployment group
+        /// includes only EC2 instances identified by all of the tag groups. Cannot be used in the
+        /// same call as ec2TagFilters.</p>
         pub fn set_ec2_tag_set(
             mut self,
             input: std::option::Option<crate::model::Ec2TagSet>,
@@ -5899,6 +6689,9 @@ pub mod deployment_group_info {
             self.on_premises_tag_set = Some(input);
             self
         }
+        /// <p>Information about groups of tags applied to an on-premises instance. The deployment
+        /// group includes only on-premises instances identified by all the tag groups. Cannot be
+        /// used in the same call as onPremisesInstanceTagFilters.</p>
         pub fn set_on_premises_tag_set(
             mut self,
             input: std::option::Option<crate::model::OnPremisesTagSet>,
@@ -5912,6 +6705,8 @@ pub mod deployment_group_info {
             self.compute_platform = Some(input);
             self
         }
+        /// <p>The destination platform type for the deployment (<code>Lambda</code>,
+        /// <code>Server</code>, or <code>ECS</code>).</p>
         pub fn set_compute_platform(
             mut self,
             input: std::option::Option<crate::model::ComputePlatform>,
@@ -5919,12 +6714,24 @@ pub mod deployment_group_info {
             self.compute_platform = input;
             self
         }
+        /// Appends an item to `ecs_services`.
+        ///
+        /// To override the contents of this collection use [`set_ecs_services`](Self::set_ecs_services).
+        ///
+        /// <p> The target Amazon ECS services in the deployment group. This applies only to
+        /// deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service
+        /// is specified as an Amazon ECS cluster and service name pair using the format
+        /// <code><clustername>:<servicename></code>. </p>
         pub fn ecs_services(mut self, input: impl Into<crate::model::EcsService>) -> Self {
             let mut v = self.ecs_services.unwrap_or_default();
             v.push(input.into());
             self.ecs_services = Some(v);
             self
         }
+        /// <p> The target Amazon ECS services in the deployment group. This applies only to
+        /// deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service
+        /// is specified as an Amazon ECS cluster and service name pair using the format
+        /// <code><clustername>:<servicename></code>. </p>
         pub fn set_ecs_services(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EcsService>>,
@@ -5968,6 +6775,7 @@ impl DeploymentGroupInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5979,8 +6787,11 @@ impl DeploymentGroupInfo {
     std::hash::Hash,
 )]
 pub enum ComputePlatform {
+    #[allow(missing_docs)] // documentation missing in model
     Ecs,
+    #[allow(missing_docs)] // documentation missing in model
     Lambda,
+    #[allow(missing_docs)] // documentation missing in model
     Server,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6003,6 +6814,7 @@ impl std::str::FromStr for ComputePlatform {
     }
 }
 impl ComputePlatform {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComputePlatform::Ecs => "ECS",
@@ -6011,6 +6823,7 @@ impl ComputePlatform {
             ComputePlatform::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ECS", "Lambda", "Server"]
     }
@@ -6032,10 +6845,10 @@ pub struct LastDeploymentInfo {
     pub status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>A timestamp that indicates when the most recent deployment to the deployment group was
     /// complete.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A timestamp that indicates when the most recent deployment to the deployment group
     /// started.</p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for LastDeploymentInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6055,8 +6868,8 @@ pub mod last_deployment_info {
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DeploymentStatus>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p> The unique ID of a deployment. </p>
@@ -6064,6 +6877,7 @@ pub mod last_deployment_info {
             self.deployment_id = Some(input.into());
             self
         }
+        /// <p> The unique ID of a deployment. </p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6076,6 +6890,7 @@ pub mod last_deployment_info {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the most recent deployment.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DeploymentStatus>,
@@ -6085,23 +6900,30 @@ pub mod last_deployment_info {
         }
         /// <p>A timestamp that indicates when the most recent deployment to the deployment group was
         /// complete.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>A timestamp that indicates when the most recent deployment to the deployment group was
+        /// complete.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
         /// <p>A timestamp that indicates when the most recent deployment to the deployment group
         /// started.</p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p>A timestamp that indicates when the most recent deployment to the deployment group
+        /// started.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
@@ -6135,7 +6957,7 @@ pub struct DeploymentConfigInfo {
     /// <p>Information about the number or percentage of minimum healthy instance.</p>
     pub minimum_healthy_hosts: std::option::Option<crate::model::MinimumHealthyHosts>,
     /// <p>The time at which the deployment configuration was created.</p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The destination platform type for the deployment (<code>Lambda</code>,
     /// <code>Server</code>, or <code>ECS</code>).</p>
     pub compute_platform: std::option::Option<crate::model::ComputePlatform>,
@@ -6164,7 +6986,7 @@ pub mod deployment_config_info {
         pub(crate) deployment_config_id: std::option::Option<std::string::String>,
         pub(crate) deployment_config_name: std::option::Option<std::string::String>,
         pub(crate) minimum_healthy_hosts: std::option::Option<crate::model::MinimumHealthyHosts>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) compute_platform: std::option::Option<crate::model::ComputePlatform>,
         pub(crate) traffic_routing_config: std::option::Option<crate::model::TrafficRoutingConfig>,
     }
@@ -6174,6 +6996,7 @@ pub mod deployment_config_info {
             self.deployment_config_id = Some(input.into());
             self
         }
+        /// <p>The deployment configuration ID.</p>
         pub fn set_deployment_config_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6186,6 +7009,7 @@ pub mod deployment_config_info {
             self.deployment_config_name = Some(input.into());
             self
         }
+        /// <p>The deployment configuration name.</p>
         pub fn set_deployment_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6198,6 +7022,7 @@ pub mod deployment_config_info {
             self.minimum_healthy_hosts = Some(input);
             self
         }
+        /// <p>Information about the number or percentage of minimum healthy instance.</p>
         pub fn set_minimum_healthy_hosts(
             mut self,
             input: std::option::Option<crate::model::MinimumHealthyHosts>,
@@ -6206,13 +7031,14 @@ pub mod deployment_config_info {
             self
         }
         /// <p>The time at which the deployment configuration was created.</p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p>The time at which the deployment configuration was created.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
@@ -6223,6 +7049,8 @@ pub mod deployment_config_info {
             self.compute_platform = Some(input);
             self
         }
+        /// <p>The destination platform type for the deployment (<code>Lambda</code>,
+        /// <code>Server</code>, or <code>ECS</code>).</p>
         pub fn set_compute_platform(
             mut self,
             input: std::option::Option<crate::model::ComputePlatform>,
@@ -6236,6 +7064,8 @@ pub mod deployment_config_info {
             self.traffic_routing_config = Some(input);
             self
         }
+        /// <p>The configuration that specifies how the deployment traffic is routed. Used for
+        /// deployments with a Lambda or ECS compute platform only.</p>
         pub fn set_traffic_routing_config(
             mut self,
             input: std::option::Option<crate::model::TrafficRoutingConfig>,
@@ -6308,6 +7138,8 @@ pub mod traffic_routing_config {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of traffic shifting (<code>TimeBasedCanary</code> or
+        /// <code>TimeBasedLinear</code>) used by a deployment configuration.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::TrafficRoutingType>,
@@ -6322,6 +7154,9 @@ pub mod traffic_routing_config {
             self.time_based_canary = Some(input);
             self
         }
+        /// <p>A configuration that shifts traffic from one version of a Lambda function or ECS task
+        /// set to another in two increments. The original and target Lambda function versions or
+        /// ECS task sets are specified in the deployment's AppSpec file.</p>
         pub fn set_time_based_canary(
             mut self,
             input: std::option::Option<crate::model::TimeBasedCanary>,
@@ -6337,6 +7172,10 @@ pub mod traffic_routing_config {
             self.time_based_linear = Some(input);
             self
         }
+        /// <p>A configuration that shifts traffic from one version of a Lambda function or ECS task
+        /// set to another in equal increments, with an equal number of minutes between each
+        /// increment. The original and target Lambda function versions or ECS task sets are
+        /// specified in the deployment's AppSpec file.</p>
         pub fn set_time_based_linear(
             mut self,
             input: std::option::Option<crate::model::TimeBasedLinear>,
@@ -6399,6 +7238,8 @@ pub mod time_based_linear {
             self.linear_percentage = Some(input);
             self
         }
+        /// <p>The percentage of traffic that is shifted at the start of each increment of a
+        /// <code>TimeBasedLinear</code> deployment.</p>
         pub fn set_linear_percentage(mut self, input: std::option::Option<i32>) -> Self {
             self.linear_percentage = input;
             self
@@ -6409,6 +7250,8 @@ pub mod time_based_linear {
             self.linear_interval = Some(input);
             self
         }
+        /// <p>The number of minutes between each incremental traffic shift of a
+        /// <code>TimeBasedLinear</code> deployment.</p>
         pub fn set_linear_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.linear_interval = input;
             self
@@ -6466,6 +7309,8 @@ pub mod time_based_canary {
             self.canary_percentage = Some(input);
             self
         }
+        /// <p>The percentage of traffic to shift in the first increment of a
+        /// <code>TimeBasedCanary</code> deployment.</p>
         pub fn set_canary_percentage(mut self, input: std::option::Option<i32>) -> Self {
             self.canary_percentage = input;
             self
@@ -6476,6 +7321,8 @@ pub mod time_based_canary {
             self.canary_interval = Some(input);
             self
         }
+        /// <p>The number of minutes between the first and second traffic shifts of a
+        /// <code>TimeBasedCanary</code> deployment.</p>
         pub fn set_canary_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.canary_interval = input;
             self
@@ -6496,6 +7343,7 @@ impl TimeBasedCanary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6507,8 +7355,11 @@ impl TimeBasedCanary {
     std::hash::Hash,
 )]
 pub enum TrafficRoutingType {
+    #[allow(missing_docs)] // documentation missing in model
     AllAtOnce,
+    #[allow(missing_docs)] // documentation missing in model
     TimeBasedCanary,
+    #[allow(missing_docs)] // documentation missing in model
     TimeBasedLinear,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6531,6 +7382,7 @@ impl std::str::FromStr for TrafficRoutingType {
     }
 }
 impl TrafficRoutingType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TrafficRoutingType::AllAtOnce => "AllAtOnce",
@@ -6539,6 +7391,7 @@ impl TrafficRoutingType {
             TrafficRoutingType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AllAtOnce", "TimeBasedCanary", "TimeBasedLinear"]
     }
@@ -6643,6 +7496,38 @@ pub mod minimum_healthy_hosts {
             self.r#type = Some(input);
             self
         }
+        /// <p>The minimum healthy instance type:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>HOST_COUNT</code>: The minimum number of healthy instances as an
+        /// absolute value.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a
+        /// percentage of the total number of instances in the deployment.</p>
+        /// </li>
+        /// </ul>
+        /// <p>In an example of nine instances, if a HOST_COUNT of six is specified, deploy to up to
+        /// three instances at a time. The deployment is successful if six or more instances are
+        /// deployed to successfully. Otherwise, the deployment fails. If a FLEET_PERCENT of 40 is
+        /// specified, deploy to up to five instances at a time. The deployment is successful if
+        /// four or more instances are deployed to successfully. Otherwise, the deployment
+        /// fails.</p>
+        /// <note>
+        /// <p>In a call to the <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime
+        /// returns a minimum healthy instance type of MOST_CONCURRENCY and a value of 1. This
+        /// means a deployment to only one instance at a time. (You cannot set the type to
+        /// MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with
+        /// CodeDeployDefault.OneAtATime, AWS CodeDeploy attempts to ensure that all instances
+        /// but one are kept in a healthy state during the deployment. Although this allows one
+        /// instance at a time to be taken offline for a new deployment, it also means that if
+        /// the deployment to the last instance fails, the overall deployment is still
+        /// successful.</p>
+        /// </note>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance
+        /// Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::MinimumHealthyHostsType>,
@@ -6655,6 +7540,7 @@ pub mod minimum_healthy_hosts {
             self.value = Some(input);
             self
         }
+        /// <p>The minimum healthy instance value.</p>
         pub fn set_value(mut self, input: std::option::Option<i32>) -> Self {
             self.value = input;
             self
@@ -6675,6 +7561,7 @@ impl MinimumHealthyHosts {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6686,7 +7573,9 @@ impl MinimumHealthyHosts {
     std::hash::Hash,
 )]
 pub enum MinimumHealthyHostsType {
+    #[allow(missing_docs)] // documentation missing in model
     FleetPercent,
+    #[allow(missing_docs)] // documentation missing in model
     HostCount,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6708,6 +7597,7 @@ impl std::str::FromStr for MinimumHealthyHostsType {
     }
 }
 impl MinimumHealthyHostsType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MinimumHealthyHostsType::FleetPercent => "FLEET_PERCENT",
@@ -6715,6 +7605,7 @@ impl MinimumHealthyHostsType {
             MinimumHealthyHostsType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FLEET_PERCENT", "HOST_COUNT"]
     }
@@ -6748,15 +7639,15 @@ pub struct DeploymentInfo {
     /// <p>Information about any error associated with this deployment.</p>
     pub error_information: std::option::Option<crate::model::ErrorInformation>,
     /// <p>A timestamp that indicates when the deployment was created.</p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A timestamp that indicates when the deployment was deployed to the deployment
     /// group.</p>
     /// <p>In some cases, the reported value of the start time might be later than the complete
     /// time. This is due to differences in the clock settings of backend servers that
     /// participate in the deployment process.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A timestamp that indicates when the deployment was complete.</p>
-    pub complete_time: std::option::Option<smithy_types::Instant>,
+    pub complete_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A summary of the deployment status of the instances in the deployment.</p>
     pub deployment_overview: std::option::Option<crate::model::DeploymentOverview>,
     /// <p>A comment about the deployment.</p>
@@ -6791,16 +7682,19 @@ pub struct DeploymentInfo {
     /// <code>BeforeBlockTraffic</code> fails, the deployment continues with
     /// <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment
     /// continues with <code>ApplicationStop</code>. </p>
+    ///
     /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an
     /// instance, that deployment fails. If deployment to that instance is part of an overall
     /// deployment and the number of healthy hosts is not less than the minimum number of
     /// healthy hosts, then a deployment to the next instance is attempted. </p>
+    ///
     /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for
     /// <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
     /// <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful
     /// deployment. (All other scripts are run from the AppSpec file in the current deployment.)
     /// If one of these scripts contains an error and does not run successfully, the deployment
     /// can fail. </p>
+    ///
     /// <p> If the cause of the failure is a script from the last successful deployment that will
     /// never run successfully, create a new deployment and use
     /// <code>ignoreApplicationStopFailures</code> to specify that the
@@ -6934,9 +7828,9 @@ pub mod deployment_info {
         pub(crate) revision: std::option::Option<crate::model::RevisionLocation>,
         pub(crate) status: std::option::Option<crate::model::DeploymentStatus>,
         pub(crate) error_information: std::option::Option<crate::model::ErrorInformation>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) complete_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) complete_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) deployment_overview: std::option::Option<crate::model::DeploymentOverview>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) creator: std::option::Option<crate::model::DeploymentCreator>,
@@ -6965,6 +7859,7 @@ pub mod deployment_info {
             self.application_name = Some(input.into());
             self
         }
+        /// <p>The application name.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6977,6 +7872,7 @@ pub mod deployment_info {
             self.deployment_group_name = Some(input.into());
             self
         }
+        /// <p> The deployment group name. </p>
         pub fn set_deployment_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6989,6 +7885,7 @@ pub mod deployment_info {
             self.deployment_config_name = Some(input.into());
             self
         }
+        /// <p> The deployment configuration name. </p>
         pub fn set_deployment_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7001,6 +7898,7 @@ pub mod deployment_info {
             self.deployment_id = Some(input.into());
             self
         }
+        /// <p> The unique ID of a deployment. </p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7014,6 +7912,8 @@ pub mod deployment_info {
             self.previous_revision = Some(input);
             self
         }
+        /// <p>Information about the application revision that was deployed to the deployment group
+        /// before the most recent successful deployment.</p>
         pub fn set_previous_revision(
             mut self,
             input: std::option::Option<crate::model::RevisionLocation>,
@@ -7027,6 +7927,8 @@ pub mod deployment_info {
             self.revision = Some(input);
             self
         }
+        /// <p>Information about the location of stored application artifacts and the service from
+        /// which to retrieve them.</p>
         pub fn set_revision(
             mut self,
             input: std::option::Option<crate::model::RevisionLocation>,
@@ -7039,6 +7941,7 @@ pub mod deployment_info {
             self.status = Some(input);
             self
         }
+        /// <p>The current state of the deployment as a whole.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DeploymentStatus>,
@@ -7051,6 +7954,7 @@ pub mod deployment_info {
             self.error_information = Some(input);
             self
         }
+        /// <p>Information about any error associated with this deployment.</p>
         pub fn set_error_information(
             mut self,
             input: std::option::Option<crate::model::ErrorInformation>,
@@ -7059,13 +7963,14 @@ pub mod deployment_info {
             self
         }
         /// <p>A timestamp that indicates when the deployment was created.</p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p>A timestamp that indicates when the deployment was created.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
@@ -7075,22 +7980,31 @@ pub mod deployment_info {
         /// <p>In some cases, the reported value of the start time might be later than the complete
         /// time. This is due to differences in the clock settings of backend servers that
         /// participate in the deployment process.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>A timestamp that indicates when the deployment was deployed to the deployment
+        /// group.</p>
+        /// <p>In some cases, the reported value of the start time might be later than the complete
+        /// time. This is due to differences in the clock settings of backend servers that
+        /// participate in the deployment process.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>A timestamp that indicates when the deployment was complete.</p>
-        pub fn complete_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn complete_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.complete_time = Some(input);
             self
         }
+        /// <p>A timestamp that indicates when the deployment was complete.</p>
         pub fn set_complete_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.complete_time = input;
             self
@@ -7100,6 +8014,7 @@ pub mod deployment_info {
             self.deployment_overview = Some(input);
             self
         }
+        /// <p>A summary of the deployment status of the instances in the deployment.</p>
         pub fn set_deployment_overview(
             mut self,
             input: std::option::Option<crate::model::DeploymentOverview>,
@@ -7112,6 +8027,7 @@ pub mod deployment_info {
             self.description = Some(input.into());
             self
         }
+        /// <p>A comment about the deployment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -7142,6 +8058,28 @@ pub mod deployment_info {
             self.creator = Some(input);
             self
         }
+        /// <p>The means by which the deployment was created:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>user</code>: A user created the deployment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>autoscaling</code>: Amazon EC2 Auto Scaling created the
+        /// deployment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>codeDeployRollback</code>: A rollback process created the
+        /// deployment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CodeDeployAutoUpdate</code>: An auto-update process created the
+        /// deployment when it detected outdated EC2 instances.</p>
+        /// </li>
+        /// </ul>
         pub fn set_creator(
             mut self,
             input: std::option::Option<crate::model::DeploymentCreator>,
@@ -7156,16 +8094,19 @@ pub mod deployment_info {
         /// <code>BeforeBlockTraffic</code> fails, the deployment continues with
         /// <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment
         /// continues with <code>ApplicationStop</code>. </p>
+        ///
         /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an
         /// instance, that deployment fails. If deployment to that instance is part of an overall
         /// deployment and the number of healthy hosts is not less than the minimum number of
         /// healthy hosts, then a deployment to the next instance is attempted. </p>
+        ///
         /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for
         /// <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
         /// <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful
         /// deployment. (All other scripts are run from the AppSpec file in the current deployment.)
         /// If one of these scripts contains an error and does not run successfully, the deployment
         /// can fail. </p>
+        ///
         /// <p> If the cause of the failure is a script from the last successful deployment that will
         /// never run successfully, create a new deployment and use
         /// <code>ignoreApplicationStopFailures</code> to specify that the
@@ -7175,6 +8116,31 @@ pub mod deployment_info {
             self.ignore_application_stop_failures = Some(input);
             self
         }
+        /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or
+        /// <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then
+        /// the deployment continues to the next deployment lifecycle event. For example, if
+        /// <code>ApplicationStop</code> fails, the deployment continues with DownloadBundle. If
+        /// <code>BeforeBlockTraffic</code> fails, the deployment continues with
+        /// <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment
+        /// continues with <code>ApplicationStop</code>. </p>
+        ///
+        /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an
+        /// instance, that deployment fails. If deployment to that instance is part of an overall
+        /// deployment and the number of healthy hosts is not less than the minimum number of
+        /// healthy hosts, then a deployment to the next instance is attempted. </p>
+        ///
+        /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for
+        /// <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
+        /// <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful
+        /// deployment. (All other scripts are run from the AppSpec file in the current deployment.)
+        /// If one of these scripts contains an error and does not run successfully, the deployment
+        /// can fail. </p>
+        ///
+        /// <p> If the cause of the failure is a script from the last successful deployment that will
+        /// never run successfully, create a new deployment and use
+        /// <code>ignoreApplicationStopFailures</code> to specify that the
+        /// <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
+        /// <code>AfterBlockTraffic</code> failures should be ignored. </p>
         pub fn set_ignore_application_stop_failures(
             mut self,
             input: std::option::Option<bool>,
@@ -7191,6 +8157,8 @@ pub mod deployment_info {
             self.auto_rollback_configuration = Some(input);
             self
         }
+        /// <p>Information about the automatic rollback configuration associated with the
+        /// deployment.</p>
         pub fn set_auto_rollback_configuration(
             mut self,
             input: std::option::Option<crate::model::AutoRollbackConfiguration>,
@@ -7204,6 +8172,8 @@ pub mod deployment_info {
             self.update_outdated_instances_only = Some(input);
             self
         }
+        /// <p>Indicates whether only instances that are not running the latest application revision
+        /// are to be deployed to.</p>
         pub fn set_update_outdated_instances_only(
             mut self,
             input: std::option::Option<bool>,
@@ -7216,6 +8186,7 @@ pub mod deployment_info {
             self.rollback_info = Some(input);
             self
         }
+        /// <p>Information about a deployment rollback.</p>
         pub fn set_rollback_info(
             mut self,
             input: std::option::Option<crate::model::RollbackInfo>,
@@ -7229,6 +8200,8 @@ pub mod deployment_info {
             self.deployment_style = Some(input);
             self
         }
+        /// <p>Information about the type of deployment, either in-place or blue/green, you want to
+        /// run and whether to route deployment traffic behind a load balancer.</p>
         pub fn set_deployment_style(
             mut self,
             input: std::option::Option<crate::model::DeploymentStyle>,
@@ -7242,6 +8215,8 @@ pub mod deployment_info {
             self.target_instances = Some(input);
             self
         }
+        /// <p>Information about the instances that belong to the replacement environment in a
+        /// blue/green deployment.</p>
         pub fn set_target_instances(
             mut self,
             input: std::option::Option<crate::model::TargetInstances>,
@@ -7256,6 +8231,9 @@ pub mod deployment_info {
             self.instance_termination_wait_time_started = Some(input);
             self
         }
+        /// <p>Indicates whether the wait period set for the termination of instances in the original
+        /// environment has started. Status is 'false' if the KEEP_ALIVE option is specified.
+        /// Otherwise, 'true' as soon as the termination wait period starts.</p>
         pub fn set_instance_termination_wait_time_started(
             mut self,
             input: std::option::Option<bool>,
@@ -7271,6 +8249,7 @@ pub mod deployment_info {
             self.blue_green_deployment_configuration = Some(input);
             self
         }
+        /// <p>Information about blue/green deployment options for this deployment.</p>
         pub fn set_blue_green_deployment_configuration(
             mut self,
             input: std::option::Option<crate::model::BlueGreenDeploymentConfiguration>,
@@ -7283,6 +8262,7 @@ pub mod deployment_info {
             self.load_balancer_info = Some(input);
             self
         }
+        /// <p>Information about the load balancer used in the deployment.</p>
         pub fn set_load_balancer_info(
             mut self,
             input: std::option::Option<crate::model::LoadBalancerInfo>,
@@ -7299,6 +8279,8 @@ pub mod deployment_info {
             self.additional_deployment_status_info = Some(input.into());
             self
         }
+        /// <p>Provides information about the results of a deployment, such as whether instances in
+        /// the original environment in a blue/green deployment were not terminated.</p>
         pub fn set_additional_deployment_status_info(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7329,6 +8311,25 @@ pub mod deployment_info {
             self.file_exists_behavior = Some(input);
             self
         }
+        /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment
+        /// target location but weren't part of the previous successful deployment.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DISALLOW</code>: The deployment fails. This is also the default behavior
+        /// if no option is specified.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OVERWRITE</code>: The version of the file from the application revision
+        /// currently being deployed replaces the version already on the instance.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RETAIN</code>: The version of the file already on the instance is kept
+        /// and used as part of the new deployment.</p>
+        /// </li>
+        /// </ul>
         pub fn set_file_exists_behavior(
             mut self,
             input: std::option::Option<crate::model::FileExistsBehavior>,
@@ -7336,12 +8337,18 @@ pub mod deployment_info {
             self.file_exists_behavior = input;
             self
         }
+        /// Appends an item to `deployment_status_messages`.
+        ///
+        /// To override the contents of this collection use [`set_deployment_status_messages`](Self::set_deployment_status_messages).
+        ///
+        /// <p>Messages that contain information about the status of a deployment.</p>
         pub fn deployment_status_messages(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.deployment_status_messages.unwrap_or_default();
             v.push(input.into());
             self.deployment_status_messages = Some(v);
             self
         }
+        /// <p>Messages that contain information about the status of a deployment.</p>
         pub fn set_deployment_status_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7355,6 +8362,8 @@ pub mod deployment_info {
             self.compute_platform = Some(input);
             self
         }
+        /// <p>The destination platform type for the deployment (<code>Lambda</code>,
+        /// <code>Server</code>, or <code>ECS</code>).</p>
         pub fn set_compute_platform(
             mut self,
             input: std::option::Option<crate::model::ComputePlatform>,
@@ -7368,6 +8377,8 @@ pub mod deployment_info {
             self.external_id = Some(input.into());
             self
         }
+        /// <p>The unique ID for an external resource (for example, a CloudFormation stack ID) that
+        /// is linked to this deployment.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -7377,6 +8388,7 @@ pub mod deployment_info {
             self.related_deployments = Some(input);
             self
         }
+        /// <p>Information about deployments related to the specified deployment.</p>
         pub fn set_related_deployments(
             mut self,
             input: std::option::Option<crate::model::RelatedDeployments>,
@@ -7478,6 +8490,7 @@ pub mod related_deployments {
             self.auto_update_outdated_instances_root_deployment_id = Some(input.into());
             self
         }
+        /// <p>The deployment ID of the root deployment that triggered this deployment.</p>
         pub fn set_auto_update_outdated_instances_root_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7485,6 +8498,12 @@ pub mod related_deployments {
             self.auto_update_outdated_instances_root_deployment_id = input;
             self
         }
+        /// Appends an item to `auto_update_outdated_instances_deployment_ids`.
+        ///
+        /// To override the contents of this collection use [`set_auto_update_outdated_instances_deployment_ids`](Self::set_auto_update_outdated_instances_deployment_ids).
+        ///
+        /// <p>The deployment IDs of 'auto-update outdated instances' deployments triggered by this
+        /// deployment.</p>
         pub fn auto_update_outdated_instances_deployment_ids(
             mut self,
             input: impl Into<std::string::String>,
@@ -7496,6 +8515,8 @@ pub mod related_deployments {
             self.auto_update_outdated_instances_deployment_ids = Some(v);
             self
         }
+        /// <p>The deployment IDs of 'auto-update outdated instances' deployments triggered by this
+        /// deployment.</p>
         pub fn set_auto_update_outdated_instances_deployment_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7521,6 +8542,7 @@ impl RelatedDeployments {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7532,8 +8554,11 @@ impl RelatedDeployments {
     std::hash::Hash,
 )]
 pub enum FileExistsBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     Disallow,
+    #[allow(missing_docs)] // documentation missing in model
     Overwrite,
+    #[allow(missing_docs)] // documentation missing in model
     Retain,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7556,6 +8581,7 @@ impl std::str::FromStr for FileExistsBehavior {
     }
 }
 impl FileExistsBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FileExistsBehavior::Disallow => "DISALLOW",
@@ -7564,6 +8590,7 @@ impl FileExistsBehavior {
             FileExistsBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISALLOW", "OVERWRITE", "RETAIN"]
     }
@@ -7611,12 +8638,22 @@ pub mod target_instances {
         pub(crate) ec2_tag_set: std::option::Option<crate::model::Ec2TagSet>,
     }
     impl Builder {
+        /// Appends an item to `tag_filters`.
+        ///
+        /// To override the contents of this collection use [`set_tag_filters`](Self::set_tag_filters).
+        ///
+        /// <p>The tag filter key, type, and value used to identify Amazon EC2 instances in a
+        /// replacement environment for a blue/green deployment. Cannot be used in the same call as
+        /// <code>ec2TagSet</code>.</p>
         pub fn tag_filters(mut self, input: impl Into<crate::model::Ec2TagFilter>) -> Self {
             let mut v = self.tag_filters.unwrap_or_default();
             v.push(input.into());
             self.tag_filters = Some(v);
             self
         }
+        /// <p>The tag filter key, type, and value used to identify Amazon EC2 instances in a
+        /// replacement environment for a blue/green deployment. Cannot be used in the same call as
+        /// <code>ec2TagSet</code>.</p>
         pub fn set_tag_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Ec2TagFilter>>,
@@ -7624,12 +8661,20 @@ pub mod target_instances {
             self.tag_filters = input;
             self
         }
+        /// Appends an item to `auto_scaling_groups`.
+        ///
+        /// To override the contents of this collection use [`set_auto_scaling_groups`](Self::set_auto_scaling_groups).
+        ///
+        /// <p>The names of one or more Auto Scaling groups to identify a replacement environment for
+        /// a blue/green deployment.</p>
         pub fn auto_scaling_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.auto_scaling_groups.unwrap_or_default();
             v.push(input.into());
             self.auto_scaling_groups = Some(v);
             self
         }
+        /// <p>The names of one or more Auto Scaling groups to identify a replacement environment for
+        /// a blue/green deployment.</p>
         pub fn set_auto_scaling_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7644,6 +8689,9 @@ pub mod target_instances {
             self.ec2_tag_set = Some(input);
             self
         }
+        /// <p>Information about the groups of EC2 instance tags that an instance must be identified
+        /// by in order for it to be included in the replacement environment for a blue/green
+        /// deployment. Cannot be used in the same call as <code>tagFilters</code>.</p>
         pub fn set_ec2_tag_set(
             mut self,
             input: std::option::Option<crate::model::Ec2TagSet>,
@@ -7709,6 +8757,7 @@ pub mod rollback_info {
             self.rollback_deployment_id = Some(input.into());
             self
         }
+        /// <p>The ID of the deployment rollback.</p>
         pub fn set_rollback_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7725,6 +8774,8 @@ pub mod rollback_info {
             self.rollback_triggering_deployment_id = Some(input.into());
             self
         }
+        /// <p>The deployment ID of the deployment that was underway and triggered a rollback
+        /// deployment because it failed or was stopped.</p>
         pub fn set_rollback_triggering_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7738,6 +8789,8 @@ pub mod rollback_info {
             self.rollback_message = Some(input.into());
             self
         }
+        /// <p>Information that describes the status of a deployment rollback (for example, whether
+        /// the deployment can't be rolled back, is in progress, failed, or succeeded). </p>
         pub fn set_rollback_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7762,6 +8815,7 @@ impl RollbackInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7773,12 +8827,19 @@ impl RollbackInfo {
     std::hash::Hash,
 )]
 pub enum DeploymentCreator {
+    #[allow(missing_docs)] // documentation missing in model
     CloudFormation,
+    #[allow(missing_docs)] // documentation missing in model
     CloudFormationRollback,
+    #[allow(missing_docs)] // documentation missing in model
     CodeDeploy,
+    #[allow(missing_docs)] // documentation missing in model
     CodeDeployAutoUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     Autoscaling,
+    #[allow(missing_docs)] // documentation missing in model
     CodeDeployRollback,
+    #[allow(missing_docs)] // documentation missing in model
     User,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7805,6 +8866,7 @@ impl std::str::FromStr for DeploymentCreator {
     }
 }
 impl DeploymentCreator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentCreator::CloudFormation => "CloudFormation",
@@ -7817,6 +8879,7 @@ impl DeploymentCreator {
             DeploymentCreator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CloudFormation",
@@ -7885,6 +8948,7 @@ pub mod deployment_overview {
             self.pending = Some(input);
             self
         }
+        /// <p>The number of instances in the deployment in a pending state.</p>
         pub fn set_pending(mut self, input: std::option::Option<i64>) -> Self {
             self.pending = input;
             self
@@ -7894,6 +8958,7 @@ pub mod deployment_overview {
             self.in_progress = Some(input);
             self
         }
+        /// <p>The number of instances in which the deployment is in progress.</p>
         pub fn set_in_progress(mut self, input: std::option::Option<i64>) -> Self {
             self.in_progress = input;
             self
@@ -7904,6 +8969,8 @@ pub mod deployment_overview {
             self.succeeded = Some(input);
             self
         }
+        /// <p>The number of instances in the deployment to which revisions have been successfully
+        /// deployed.</p>
         pub fn set_succeeded(mut self, input: std::option::Option<i64>) -> Self {
             self.succeeded = input;
             self
@@ -7913,6 +8980,7 @@ pub mod deployment_overview {
             self.failed = Some(input);
             self
         }
+        /// <p>The number of instances in the deployment in a failed state.</p>
         pub fn set_failed(mut self, input: std::option::Option<i64>) -> Self {
             self.failed = input;
             self
@@ -7922,6 +8990,7 @@ pub mod deployment_overview {
             self.skipped = Some(input);
             self
         }
+        /// <p>The number of instances in the deployment in a skipped state.</p>
         pub fn set_skipped(mut self, input: std::option::Option<i64>) -> Self {
             self.skipped = input;
             self
@@ -7932,6 +9001,8 @@ pub mod deployment_overview {
             self.ready = Some(input);
             self
         }
+        /// <p>The number of instances in a replacement environment ready to receive traffic in a
+        /// blue/green deployment.</p>
         pub fn set_ready(mut self, input: std::option::Option<i64>) -> Self {
             self.ready = input;
             self
@@ -8098,6 +9169,62 @@ pub mod error_information {
             self.code = Some(input);
             self
         }
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+        /// CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User Guide</a>.</p>
+        /// <p>The error code:</p>
+        /// <ul>
+        /// <li>
+        /// <p>APPLICATION_MISSING: The application was missing. This error code is most
+        /// likely raised if the application is deleted after the deployment is created, but
+        /// before it is started.</p>
+        /// </li>
+        /// <li>
+        /// <p>DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code is
+        /// most likely raised if the deployment group is deleted after the deployment is
+        /// created, but before it is started.</p>
+        /// </li>
+        /// <li>
+        /// <p>HEALTH_CONSTRAINTS: The deployment failed on too many instances to be
+        /// successfully deployed within the instance health constraints specified.</p>
+        /// </li>
+        /// <li>
+        /// <p>HEALTH_CONSTRAINTS_INVALID: The revision cannot be successfully deployed
+        /// within the instance health constraints specified.</p>
+        /// </li>
+        /// <li>
+        /// <p>IAM_ROLE_MISSING: The service role cannot be accessed.</p>
+        /// </li>
+        /// <li>
+        /// <p>IAM_ROLE_PERMISSIONS: The service role does not have the correct
+        /// permissions.</p>
+        /// </li>
+        /// <li>
+        /// <p>INTERNAL_ERROR: There was an internal error.</p>
+        /// </li>
+        /// <li>
+        /// <p>NO_EC2_SUBSCRIPTION: The calling account is not subscribed to Amazon
+        /// EC2.</p>
+        /// </li>
+        /// <li>
+        /// <p>NO_INSTANCES: No instances were specified, or no instances can be
+        /// found.</p>
+        /// </li>
+        /// <li>
+        /// <p>OVER_MAX_INSTANCES: The maximum number of instances was exceeded.</p>
+        /// </li>
+        /// <li>
+        /// <p>THROTTLED: The operation was throttled because the calling account exceeded
+        /// the throttling limits of one or more AWS services.</p>
+        /// </li>
+        /// <li>
+        /// <p>TIMEOUT: The deployment has timed out.</p>
+        /// </li>
+        /// <li>
+        /// <p>REVISION_MISSING: The revision ID was missing. This error code is most likely
+        /// raised if the revision is deleted after the deployment is created, but before it
+        /// is started.</p>
+        /// </li>
+        /// </ul>
         pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
             self.code = input;
             self
@@ -8107,6 +9234,7 @@ pub mod error_information {
             self.message = Some(input.into());
             self
         }
+        /// <p>An accompanying error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -8127,6 +9255,7 @@ impl ErrorInformation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8138,39 +9267,73 @@ impl ErrorInformation {
     std::hash::Hash,
 )]
 pub enum ErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
     AgentIssue,
+    #[allow(missing_docs)] // documentation missing in model
     AlarmActive,
+    #[allow(missing_docs)] // documentation missing in model
     ApplicationMissing,
+    #[allow(missing_docs)] // documentation missing in model
     AutoscalingValidationError,
+    #[allow(missing_docs)] // documentation missing in model
     AutoScalingConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     AutoScalingIamRolePermissions,
+    #[allow(missing_docs)] // documentation missing in model
     CloudformationStackFailure,
+    #[allow(missing_docs)] // documentation missing in model
     CodedeployResourceCannotBeFound,
+    #[allow(missing_docs)] // documentation missing in model
     CustomerApplicationUnhealthy,
+    #[allow(missing_docs)] // documentation missing in model
     DeploymentGroupMissing,
+    #[allow(missing_docs)] // documentation missing in model
     EcsUpdateError,
+    #[allow(missing_docs)] // documentation missing in model
     ElasticLoadBalancingInvalid,
+    #[allow(missing_docs)] // documentation missing in model
     ElbInvalidInstance,
+    #[allow(missing_docs)] // documentation missing in model
     HealthConstraints,
+    #[allow(missing_docs)] // documentation missing in model
     HealthConstraintsInvalid,
+    #[allow(missing_docs)] // documentation missing in model
     HookExecutionFailure,
+    #[allow(missing_docs)] // documentation missing in model
     IamRoleMissing,
+    #[allow(missing_docs)] // documentation missing in model
     IamRolePermissions,
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidEcsService,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidLambdaConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidLambdaFunction,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidRevision,
+    #[allow(missing_docs)] // documentation missing in model
     ManualStop,
+    #[allow(missing_docs)] // documentation missing in model
     MissingBlueGreenDeploymentConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     MissingElbInformation,
+    #[allow(missing_docs)] // documentation missing in model
     MissingGithubToken,
+    #[allow(missing_docs)] // documentation missing in model
     NoEc2Subscription,
+    #[allow(missing_docs)] // documentation missing in model
     NoInstances,
+    #[allow(missing_docs)] // documentation missing in model
     OverMaxInstances,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     RevisionMissing,
+    #[allow(missing_docs)] // documentation missing in model
     Throttled,
+    #[allow(missing_docs)] // documentation missing in model
     Timeout,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8226,6 +9389,7 @@ impl std::str::FromStr for ErrorCode {
     }
 }
 impl ErrorCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ErrorCode::AgentIssue => "AGENT_ISSUE",
@@ -8267,6 +9431,7 @@ impl ErrorCode {
             ErrorCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AGENT_ISSUE",
@@ -8321,11 +9486,11 @@ pub struct GenericRevisionInfo {
     /// <p>The deployment groups for which this is the current target revision.</p>
     pub deployment_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>When the revision was first used by AWS CodeDeploy.</p>
-    pub first_used_time: std::option::Option<smithy_types::Instant>,
+    pub first_used_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>When the revision was last used by AWS CodeDeploy.</p>
-    pub last_used_time: std::option::Option<smithy_types::Instant>,
+    pub last_used_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>When the revision was registered with AWS CodeDeploy.</p>
-    pub register_time: std::option::Option<smithy_types::Instant>,
+    pub register_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for GenericRevisionInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8346,9 +9511,9 @@ pub mod generic_revision_info {
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) deployment_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) first_used_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_used_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) register_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) first_used_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_used_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) register_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>A comment about the revision.</p>
@@ -8356,16 +9521,23 @@ pub mod generic_revision_info {
             self.description = Some(input.into());
             self
         }
+        /// <p>A comment about the revision.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `deployment_groups`.
+        ///
+        /// To override the contents of this collection use [`set_deployment_groups`](Self::set_deployment_groups).
+        ///
+        /// <p>The deployment groups for which this is the current target revision.</p>
         pub fn deployment_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.deployment_groups.unwrap_or_default();
             v.push(input.into());
             self.deployment_groups = Some(v);
             self
         }
+        /// <p>The deployment groups for which this is the current target revision.</p>
         pub fn set_deployment_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8374,37 +9546,40 @@ pub mod generic_revision_info {
             self
         }
         /// <p>When the revision was first used by AWS CodeDeploy.</p>
-        pub fn first_used_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn first_used_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.first_used_time = Some(input);
             self
         }
+        /// <p>When the revision was first used by AWS CodeDeploy.</p>
         pub fn set_first_used_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.first_used_time = input;
             self
         }
         /// <p>When the revision was last used by AWS CodeDeploy.</p>
-        pub fn last_used_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_used_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_used_time = Some(input);
             self
         }
+        /// <p>When the revision was last used by AWS CodeDeploy.</p>
         pub fn set_last_used_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_used_time = input;
             self
         }
         /// <p>When the revision was registered with AWS CodeDeploy.</p>
-        pub fn register_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn register_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.register_time = Some(input);
             self
         }
+        /// <p>When the revision was registered with AWS CodeDeploy.</p>
         pub fn set_register_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.register_time = input;
             self
@@ -8437,7 +9612,7 @@ pub struct ApplicationInfo {
     /// <p>The application name.</p>
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The time at which the application was created.</p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>True if the user has authenticated with GitHub for the specified application.
     /// Otherwise, false.</p>
     pub linked_to_git_hub: bool,
@@ -8467,7 +9642,7 @@ pub mod application_info {
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) application_name: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) linked_to_git_hub: std::option::Option<bool>,
         pub(crate) git_hub_account_name: std::option::Option<std::string::String>,
         pub(crate) compute_platform: std::option::Option<crate::model::ComputePlatform>,
@@ -8478,6 +9653,7 @@ pub mod application_info {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The application ID.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8490,6 +9666,7 @@ pub mod application_info {
             self.application_name = Some(input.into());
             self
         }
+        /// <p>The application name.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8498,13 +9675,14 @@ pub mod application_info {
             self
         }
         /// <p>The time at which the application was created.</p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p>The time at which the application was created.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
@@ -8515,6 +9693,8 @@ pub mod application_info {
             self.linked_to_git_hub = Some(input);
             self
         }
+        /// <p>True if the user has authenticated with GitHub for the specified application.
+        /// Otherwise, false.</p>
         pub fn set_linked_to_git_hub(mut self, input: std::option::Option<bool>) -> Self {
             self.linked_to_git_hub = input;
             self
@@ -8524,6 +9704,7 @@ pub mod application_info {
             self.git_hub_account_name = Some(input.into());
             self
         }
+        /// <p>The name for a connection to a GitHub account.</p>
         pub fn set_git_hub_account_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8537,6 +9718,8 @@ pub mod application_info {
             self.compute_platform = Some(input);
             self
         }
+        /// <p>The destination platform type for deployment of the application (<code>Lambda</code>
+        /// or <code>Server</code>).</p>
         pub fn set_compute_platform(
             mut self,
             input: std::option::Option<crate::model::ComputePlatform>,
@@ -8564,6 +9747,7 @@ impl ApplicationInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8575,7 +9759,9 @@ impl ApplicationInfo {
     std::hash::Hash,
 )]
 pub enum DeploymentWaitType {
+    #[allow(missing_docs)] // documentation missing in model
     ReadyWait,
+    #[allow(missing_docs)] // documentation missing in model
     TerminationWait,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8597,6 +9783,7 @@ impl std::str::FromStr for DeploymentWaitType {
     }
 }
 impl DeploymentWaitType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentWaitType::ReadyWait => "READY_WAIT",
@@ -8604,6 +9791,7 @@ impl DeploymentWaitType {
             DeploymentWaitType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["READY_WAIT", "TERMINATION_WAIT"]
     }
@@ -8647,6 +9835,7 @@ pub mod revision_info {
             self.revision_location = Some(input);
             self
         }
+        /// <p>Information about the location and type of an application revision.</p>
         pub fn set_revision_location(
             mut self,
             input: std::option::Option<crate::model::RevisionLocation>,
@@ -8660,6 +9849,8 @@ pub mod revision_info {
             self.generic_revision_info = Some(input);
             self
         }
+        /// <p>Information about an application revision, including usage details and associated
+        /// deployment groups.</p>
         pub fn set_generic_revision_info(
             mut self,
             input: std::option::Option<crate::model::GenericRevisionInfo>,

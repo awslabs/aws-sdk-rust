@@ -26,12 +26,18 @@ pub mod list_analyzers_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `analyzers`.
+        ///
+        /// To override the contents of this collection use [`set_analyzers`](Self::set_analyzers).
+        ///
+        /// <p>The analyzers retrieved.</p>
         pub fn analyzers(mut self, input: impl Into<crate::model::AnalyzerSummary>) -> Self {
             let mut v = self.analyzers.unwrap_or_default();
             v.push(input.into());
             self.analyzers = Some(v);
             self
         }
+        /// <p>The analyzers retrieved.</p>
         pub fn set_analyzers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AnalyzerSummary>>,
@@ -44,6 +50,7 @@ pub mod list_analyzers_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token used for pagination of results returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -92,6 +99,7 @@ pub mod create_analyzer_output {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the analyzer that was created by the request.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -109,6 +117,7 @@ impl CreateAnalyzerOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAnalyzerOutput {}
@@ -168,6 +177,8 @@ pub mod get_analyzer_output {
             self.analyzer = Some(input);
             self
         }
+        /// <p>An <code>AnalyzerSummary</code> object that contains information about the
+        /// analyzer.</p>
         pub fn set_analyzer(
             mut self,
             input: std::option::Option<crate::model::AnalyzerSummary>,
@@ -218,12 +229,18 @@ pub mod list_archive_rules_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `archive_rules`.
+        ///
+        /// To override the contents of this collection use [`set_archive_rules`](Self::set_archive_rules).
+        ///
+        /// <p>A list of archive rules created for the specified analyzer.</p>
         pub fn archive_rules(mut self, input: impl Into<crate::model::ArchiveRuleSummary>) -> Self {
             let mut v = self.archive_rules.unwrap_or_default();
             v.push(input.into());
             self.archive_rules = Some(v);
             self
         }
+        /// <p>A list of archive rules created for the specified analyzer.</p>
         pub fn set_archive_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ArchiveRuleSummary>>,
@@ -236,6 +253,7 @@ pub mod list_archive_rules_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token used for pagination of results returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -256,6 +274,7 @@ impl ListArchiveRulesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateArchiveRuleOutput {}
@@ -285,6 +304,7 @@ impl CreateArchiveRuleOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteArchiveRuleOutput {}
@@ -314,6 +334,7 @@ impl DeleteArchiveRuleOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateArchiveRuleOutput {}
@@ -371,6 +392,7 @@ pub mod get_archive_rule_output {
             self.archive_rule = Some(input);
             self
         }
+        /// <p>Contains information about an archive rule.</p>
         pub fn set_archive_rule(
             mut self,
             input: std::option::Option<crate::model::ArchiveRuleSummary>,
@@ -393,6 +415,7 @@ impl GetArchiveRuleOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidatePolicyOutput {
@@ -421,12 +444,20 @@ pub mod validate_policy_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `findings`.
+        ///
+        /// To override the contents of this collection use [`set_findings`](Self::set_findings).
+        ///
+        /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy
+        /// checks.</p>
         pub fn findings(mut self, input: impl Into<crate::model::ValidatePolicyFinding>) -> Self {
             let mut v = self.findings.unwrap_or_default();
             v.push(input.into());
             self.findings = Some(v);
             self
         }
+        /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy
+        /// checks.</p>
         pub fn set_findings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ValidatePolicyFinding>>,
@@ -439,6 +470,7 @@ pub mod validate_policy_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token used for pagination of results returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -459,6 +491,7 @@ impl ValidatePolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFindingsOutput {}
@@ -548,6 +581,7 @@ impl TagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartResourceScanOutput {}
@@ -577,6 +611,7 @@ impl StartResourceScanOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartPolicyGenerationOutput {
@@ -610,6 +645,10 @@ pub mod start_policy_generation_output {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
+        /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
+        /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
+        /// the policy generation request.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -655,6 +694,11 @@ pub mod list_tags_for_resource_output {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags that are applied to the specified resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -665,6 +709,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags that are applied to the specified resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -687,6 +732,7 @@ impl ListTagsForResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPolicyGenerationsOutput {
@@ -715,6 +761,12 @@ pub mod list_policy_generations_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `policy_generations`.
+        ///
+        /// To override the contents of this collection use [`set_policy_generations`](Self::set_policy_generations).
+        ///
+        /// <p>A <code>PolicyGeneration</code> object that contains details about the generated
+        /// policy.</p>
         pub fn policy_generations(
             mut self,
             input: impl Into<crate::model::PolicyGeneration>,
@@ -724,6 +776,8 @@ pub mod list_policy_generations_output {
             self.policy_generations = Some(v);
             self
         }
+        /// <p>A <code>PolicyGeneration</code> object that contains details about the generated
+        /// policy.</p>
         pub fn set_policy_generations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PolicyGeneration>>,
@@ -736,6 +790,7 @@ pub mod list_policy_generations_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token used for pagination of results returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -784,12 +839,20 @@ pub mod list_findings_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `findings`.
+        ///
+        /// To override the contents of this collection use [`set_findings`](Self::set_findings).
+        ///
+        /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified,
+        /// if any.</p>
         pub fn findings(mut self, input: impl Into<crate::model::FindingSummary>) -> Self {
             let mut v = self.findings.unwrap_or_default();
             v.push(input.into());
             self.findings = Some(v);
             self
         }
+        /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified,
+        /// if any.</p>
         pub fn set_findings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FindingSummary>>,
@@ -802,6 +865,7 @@ pub mod list_findings_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token used for pagination of results returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -851,6 +915,11 @@ pub mod list_analyzed_resources_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `analyzed_resources`.
+        ///
+        /// To override the contents of this collection use [`set_analyzed_resources`](Self::set_analyzed_resources).
+        ///
+        /// <p>A list of resources that were analyzed.</p>
         pub fn analyzed_resources(
             mut self,
             input: impl Into<crate::model::AnalyzedResourceSummary>,
@@ -860,6 +929,7 @@ pub mod list_analyzed_resources_output {
             self.analyzed_resources = Some(v);
             self
         }
+        /// <p>A list of resources that were analyzed.</p>
         pub fn set_analyzed_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AnalyzedResourceSummary>>,
@@ -872,6 +942,7 @@ pub mod list_analyzed_resources_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token used for pagination of results returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -892,6 +963,7 @@ impl ListAnalyzedResourcesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessPreviewsOutput {
@@ -919,6 +991,11 @@ pub mod list_access_previews_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `access_previews`.
+        ///
+        /// To override the contents of this collection use [`set_access_previews`](Self::set_access_previews).
+        ///
+        /// <p>A list of access previews retrieved for the analyzer.</p>
         pub fn access_previews(
             mut self,
             input: impl Into<crate::model::AccessPreviewSummary>,
@@ -928,6 +1005,7 @@ pub mod list_access_previews_output {
             self.access_previews = Some(v);
             self
         }
+        /// <p>A list of access previews retrieved for the analyzer.</p>
         pub fn set_access_previews(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccessPreviewSummary>>,
@@ -940,6 +1018,7 @@ pub mod list_access_previews_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token used for pagination of results returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -960,6 +1039,7 @@ impl ListAccessPreviewsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessPreviewFindingsOutput {
@@ -986,12 +1066,18 @@ pub mod list_access_preview_findings_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `findings`.
+        ///
+        /// To override the contents of this collection use [`set_findings`](Self::set_findings).
+        ///
+        /// <p>A list of access preview findings that match the specified filter criteria.</p>
         pub fn findings(mut self, input: impl Into<crate::model::AccessPreviewFinding>) -> Self {
             let mut v = self.findings.unwrap_or_default();
             v.push(input.into());
             self.findings = Some(v);
             self
         }
+        /// <p>A list of access preview findings that match the specified filter criteria.</p>
         pub fn set_findings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccessPreviewFinding>>,
@@ -1004,6 +1090,7 @@ pub mod list_access_preview_findings_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token used for pagination of results returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1024,6 +1111,7 @@ impl ListAccessPreviewFindingsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGeneratedPolicyOutput {
@@ -1059,6 +1147,8 @@ pub mod get_generated_policy_output {
             self.job_details = Some(input);
             self
         }
+        /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated
+        /// policy.</p>
         pub fn set_job_details(
             mut self,
             input: std::option::Option<crate::model::JobDetails>,
@@ -1075,6 +1165,8 @@ pub mod get_generated_policy_output {
             self.generated_policy_result = Some(input);
             self
         }
+        /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and
+        /// associated details.</p>
         pub fn set_generated_policy_result(
             mut self,
             input: std::option::Option<crate::model::GeneratedPolicyResult>,
@@ -1126,6 +1218,7 @@ pub mod get_finding_output {
             self.finding = Some(input);
             self
         }
+        /// <p>A <code>finding</code> object that contains finding details.</p>
         pub fn set_finding(mut self, input: std::option::Option<crate::model::Finding>) -> Self {
             self.finding = input;
             self
@@ -1175,6 +1268,8 @@ pub mod get_analyzed_resource_output {
             self.resource = Some(input);
             self
         }
+        /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer
+        /// found when it analyzed the resource.</p>
         pub fn set_resource(
             mut self,
             input: std::option::Option<crate::model::AnalyzedResource>,
@@ -1197,6 +1292,7 @@ impl GetAnalyzedResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPreviewOutput {
@@ -1224,6 +1320,7 @@ pub mod get_access_preview_output {
             self.access_preview = Some(input);
             self
         }
+        /// <p>An object that contains information about the access preview.</p>
         pub fn set_access_preview(
             mut self,
             input: std::option::Option<crate::model::AccessPreview>,
@@ -1246,6 +1343,7 @@ impl GetAccessPreviewOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessPreviewOutput {
@@ -1273,6 +1371,7 @@ pub mod create_access_preview_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique ID for the access preview.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1290,6 +1389,7 @@ impl CreateAccessPreviewOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelPolicyGenerationOutput {}
@@ -1319,6 +1419,7 @@ impl CancelPolicyGenerationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplyArchiveRuleOutput {}

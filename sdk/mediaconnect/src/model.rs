@@ -79,6 +79,7 @@ pub mod source {
             self.data_transfer_subscriber_fee_percent = Some(input);
             self
         }
+        /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
         pub fn set_data_transfer_subscriber_fee_percent(
             mut self,
             input: std::option::Option<i32>,
@@ -91,6 +92,7 @@ pub mod source {
             self.decryption = Some(input);
             self
         }
+        /// The type of encryption that is used on the content ingested from this source.
         pub fn set_decryption(
             mut self,
             input: std::option::Option<crate::model::Encryption>,
@@ -103,6 +105,7 @@ pub mod source {
             self.description = Some(input.into());
             self
         }
+        /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -112,6 +115,7 @@ pub mod source {
             self.entitlement_arn = Some(input.into());
             self
         }
+        /// The ARN of the entitlement that allows you to subscribe to content that comes from another AWS account. The entitlement is set by the content originator and the ARN is generated as part of the originator's flow.
         pub fn set_entitlement_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -124,6 +128,7 @@ pub mod source {
             self.ingest_ip = Some(input.into());
             self
         }
+        /// The IP address that the flow will be listening on for incoming content.
         pub fn set_ingest_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ingest_ip = input;
             self
@@ -133,10 +138,16 @@ pub mod source {
             self.ingest_port = Some(input);
             self
         }
+        /// The port that the flow will be listening on for incoming content.
         pub fn set_ingest_port(mut self, input: std::option::Option<i32>) -> Self {
             self.ingest_port = input;
             self
         }
+        /// Appends an item to `media_stream_source_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_media_stream_source_configurations`](Self::set_media_stream_source_configurations).
+        ///
+        /// The media streams that are associated with the source, and the parameters for those associations.
         pub fn media_stream_source_configurations(
             mut self,
             input: impl Into<crate::model::MediaStreamSourceConfiguration>,
@@ -146,6 +157,7 @@ pub mod source {
             self.media_stream_source_configurations = Some(v);
             self
         }
+        /// The media streams that are associated with the source, and the parameters for those associations.
         pub fn set_media_stream_source_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MediaStreamSourceConfiguration>>,
@@ -158,6 +170,7 @@ pub mod source {
             self.name = Some(input.into());
             self
         }
+        /// The name of the source.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -167,6 +180,7 @@ pub mod source {
             self.source_arn = Some(input.into());
             self
         }
+        /// The ARN of the source.
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_arn = input;
             self
@@ -176,6 +190,7 @@ pub mod source {
             self.transport = Some(input);
             self
         }
+        /// Attributes related to the transport stream that are used in the source.
         pub fn set_transport(
             mut self,
             input: std::option::Option<crate::model::Transport>,
@@ -188,6 +203,7 @@ pub mod source {
             self.vpc_interface_name = Some(input.into());
             self
         }
+        /// The name of the VPC interface that is used for this source.
         pub fn set_vpc_interface_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -200,6 +216,7 @@ pub mod source {
             self.whitelist_cidr = Some(input.into());
             self
         }
+        /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
         pub fn set_whitelist_cidr(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -290,12 +307,18 @@ pub mod transport {
         pub(crate) stream_id: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `cidr_allow_list`.
+        ///
+        /// To override the contents of this collection use [`set_cidr_allow_list`](Self::set_cidr_allow_list).
+        ///
+        /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
         pub fn cidr_allow_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cidr_allow_list.unwrap_or_default();
             v.push(input.into());
             self.cidr_allow_list = Some(v);
             self
         }
+        /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
         pub fn set_cidr_allow_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -308,6 +331,7 @@ pub mod transport {
             self.max_bitrate = Some(input);
             self
         }
+        /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
         pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
             self.max_bitrate = input;
             self
@@ -317,6 +341,7 @@ pub mod transport {
             self.max_latency = Some(input);
             self
         }
+        /// The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
         pub fn set_max_latency(mut self, input: std::option::Option<i32>) -> Self {
             self.max_latency = input;
             self
@@ -326,6 +351,7 @@ pub mod transport {
             self.max_sync_buffer = Some(input);
             self
         }
+        /// The size of the buffer (in milliseconds) to use to sync incoming source data.
         pub fn set_max_sync_buffer(mut self, input: std::option::Option<i32>) -> Self {
             self.max_sync_buffer = input;
             self
@@ -335,6 +361,7 @@ pub mod transport {
             self.min_latency = Some(input);
             self
         }
+        /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
         pub fn set_min_latency(mut self, input: std::option::Option<i32>) -> Self {
             self.min_latency = input;
             self
@@ -344,6 +371,7 @@ pub mod transport {
             self.protocol = Some(input);
             self
         }
+        /// The protocol that is used by the source or output.
         pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
             self.protocol = input;
             self
@@ -353,6 +381,7 @@ pub mod transport {
             self.remote_id = Some(input.into());
             self
         }
+        /// The remote ID for the Zixi-pull stream.
         pub fn set_remote_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.remote_id = input;
             self
@@ -362,6 +391,7 @@ pub mod transport {
             self.smoothing_latency = Some(input);
             self
         }
+        /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
         pub fn set_smoothing_latency(mut self, input: std::option::Option<i32>) -> Self {
             self.smoothing_latency = input;
             self
@@ -371,6 +401,7 @@ pub mod transport {
             self.stream_id = Some(input.into());
             self
         }
+        /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_id = input;
             self
@@ -398,6 +429,7 @@ impl Transport {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -409,13 +441,21 @@ impl Transport {
     std::hash::Hash,
 )]
 pub enum Protocol {
+    #[allow(missing_docs)] // documentation missing in model
     Cdi,
+    #[allow(missing_docs)] // documentation missing in model
     Rist,
+    #[allow(missing_docs)] // documentation missing in model
     Rtp,
+    #[allow(missing_docs)] // documentation missing in model
     RtpFec,
+    #[allow(missing_docs)] // documentation missing in model
     SrtListener,
+    #[allow(missing_docs)] // documentation missing in model
     St2110Jpegxs,
+    #[allow(missing_docs)] // documentation missing in model
     ZixiPull,
+    #[allow(missing_docs)] // documentation missing in model
     ZixiPush,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -443,6 +483,7 @@ impl std::str::FromStr for Protocol {
     }
 }
 impl Protocol {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Protocol::Cdi => "cdi",
@@ -456,6 +497,7 @@ impl Protocol {
             Protocol::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "cdi",
@@ -512,6 +554,7 @@ pub mod media_stream_source_configuration {
             self.encoding_name = Some(input);
             self
         }
+        /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
         pub fn set_encoding_name(
             mut self,
             input: std::option::Option<crate::model::EncodingName>,
@@ -519,6 +562,11 @@ pub mod media_stream_source_configuration {
             self.encoding_name = input;
             self
         }
+        /// Appends an item to `input_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_input_configurations`](Self::set_input_configurations).
+        ///
+        /// The transport parameters that are associated with an incoming media stream.
         pub fn input_configurations(
             mut self,
             input: impl Into<crate::model::InputConfiguration>,
@@ -528,6 +576,7 @@ pub mod media_stream_source_configuration {
             self.input_configurations = Some(v);
             self
         }
+        /// The transport parameters that are associated with an incoming media stream.
         pub fn set_input_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputConfiguration>>,
@@ -540,6 +589,7 @@ pub mod media_stream_source_configuration {
             self.media_stream_name = Some(input.into());
             self
         }
+        /// The name of the media stream.
         pub fn set_media_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -600,6 +650,7 @@ pub mod input_configuration {
             self.input_ip = Some(input.into());
             self
         }
+        /// The IP address that the flow listens on for incoming content for a media stream.
         pub fn set_input_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_ip = input;
             self
@@ -609,6 +660,7 @@ pub mod input_configuration {
             self.input_port = Some(input);
             self
         }
+        /// The port that the flow listens on for an incoming media stream.
         pub fn set_input_port(mut self, input: std::option::Option<i32>) -> Self {
             self.input_port = input;
             self
@@ -618,6 +670,7 @@ pub mod input_configuration {
             self.interface = Some(input);
             self
         }
+        /// The VPC interface where the media stream comes in from.
         pub fn set_interface(
             mut self,
             input: std::option::Option<crate::model::Interface>,
@@ -670,6 +723,7 @@ pub mod interface {
             self.name = Some(input.into());
             self
         }
+        /// The name of the VPC interface.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -687,6 +741,7 @@ impl Interface {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -698,9 +753,13 @@ impl Interface {
     std::hash::Hash,
 )]
 pub enum EncodingName {
+    #[allow(missing_docs)] // documentation missing in model
     Jxsv,
+    #[allow(missing_docs)] // documentation missing in model
     Pcm,
+    #[allow(missing_docs)] // documentation missing in model
     Raw,
+    #[allow(missing_docs)] // documentation missing in model
     Smpte291,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -724,6 +783,7 @@ impl std::str::FromStr for EncodingName {
     }
 }
 impl EncodingName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncodingName::Jxsv => "jxsv",
@@ -733,6 +793,7 @@ impl EncodingName {
             EncodingName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["jxsv", "pcm", "raw", "smpte291"]
     }
@@ -806,6 +867,7 @@ pub mod encryption {
             self.algorithm = Some(input);
             self
         }
+        /// The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).
         pub fn set_algorithm(
             mut self,
             input: std::option::Option<crate::model::Algorithm>,
@@ -821,6 +883,7 @@ pub mod encryption {
             self.constant_initialization_vector = Some(input.into());
             self
         }
+        /// A 128-bit, 16-byte hex value represented by a 32-character string, to be used with the key for encrypting content. This parameter is not valid for static key encryption.
         pub fn set_constant_initialization_vector(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -833,6 +896,7 @@ pub mod encryption {
             self.device_id = Some(input.into());
             self
         }
+        /// The value of one of the devices that you configured with your digital rights management (DRM) platform key provider. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
@@ -842,6 +906,7 @@ pub mod encryption {
             self.key_type = Some(input);
             self
         }
+        /// The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
         pub fn set_key_type(mut self, input: std::option::Option<crate::model::KeyType>) -> Self {
             self.key_type = input;
             self
@@ -851,6 +916,7 @@ pub mod encryption {
             self.region = Some(input.into());
             self
         }
+        /// The AWS Region that the API Gateway proxy endpoint was created in. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -860,6 +926,7 @@ pub mod encryption {
             self.resource_id = Some(input.into());
             self
         }
+        /// An identifier for the content. The service sends this value to the key server to identify the current endpoint. The resource ID is also known as the content ID. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -869,6 +936,7 @@ pub mod encryption {
             self.role_arn = Some(input.into());
             self
         }
+        /// The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -878,6 +946,7 @@ pub mod encryption {
             self.secret_arn = Some(input.into());
             self
         }
+        /// The ARN of the secret that you created in AWS Secrets Manager to store the encryption key. This parameter is required for static key encryption and is not valid for SPEKE encryption.
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -887,6 +956,7 @@ pub mod encryption {
             self.url = Some(input.into());
             self
         }
+        /// The URL from the API Gateway proxy that you set up to talk to your key server. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -914,6 +984,7 @@ impl Encryption {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -925,8 +996,11 @@ impl Encryption {
     std::hash::Hash,
 )]
 pub enum KeyType {
+    #[allow(missing_docs)] // documentation missing in model
     Speke,
+    #[allow(missing_docs)] // documentation missing in model
     SrtPassword,
+    #[allow(missing_docs)] // documentation missing in model
     StaticKey,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -949,6 +1023,7 @@ impl std::str::FromStr for KeyType {
     }
 }
 impl KeyType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             KeyType::Speke => "speke",
@@ -957,6 +1032,7 @@ impl KeyType {
             KeyType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["speke", "srt-password", "static-key"]
     }
@@ -967,6 +1043,7 @@ impl AsRef<str> for KeyType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -978,8 +1055,11 @@ impl AsRef<str> for KeyType {
     std::hash::Hash,
 )]
 pub enum Algorithm {
+    #[allow(missing_docs)] // documentation missing in model
     Aes128,
+    #[allow(missing_docs)] // documentation missing in model
     Aes192,
+    #[allow(missing_docs)] // documentation missing in model
     Aes256,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1002,6 +1082,7 @@ impl std::str::FromStr for Algorithm {
     }
 }
 impl Algorithm {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Algorithm::Aes128 => "aes128",
@@ -1010,6 +1091,7 @@ impl Algorithm {
             Algorithm::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["aes128", "aes192", "aes256"]
     }
@@ -1058,6 +1140,7 @@ pub mod media_stream_source_configuration_request {
             self.encoding_name = Some(input);
             self
         }
+        /// The format you want to use to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
         pub fn set_encoding_name(
             mut self,
             input: std::option::Option<crate::model::EncodingName>,
@@ -1065,6 +1148,11 @@ pub mod media_stream_source_configuration_request {
             self.encoding_name = input;
             self
         }
+        /// Appends an item to `input_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_input_configurations`](Self::set_input_configurations).
+        ///
+        /// The transport parameters that you want to associate with the media stream.
         pub fn input_configurations(
             mut self,
             input: impl Into<crate::model::InputConfigurationRequest>,
@@ -1074,6 +1162,7 @@ pub mod media_stream_source_configuration_request {
             self.input_configurations = Some(v);
             self
         }
+        /// The transport parameters that you want to associate with the media stream.
         pub fn set_input_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputConfigurationRequest>>,
@@ -1086,6 +1175,7 @@ pub mod media_stream_source_configuration_request {
             self.media_stream_name = Some(input.into());
             self
         }
+        /// The name of the media stream.
         pub fn set_media_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1142,6 +1232,7 @@ pub mod input_configuration_request {
             self.input_port = Some(input);
             self
         }
+        /// The port that you want the flow to listen on for an incoming media stream.
         pub fn set_input_port(mut self, input: std::option::Option<i32>) -> Self {
             self.input_port = input;
             self
@@ -1151,6 +1242,7 @@ pub mod input_configuration_request {
             self.interface = Some(input);
             self
         }
+        /// The VPC interface that you want to use for the incoming media stream.
         pub fn set_interface(
             mut self,
             input: std::option::Option<crate::model::InterfaceRequest>,
@@ -1202,6 +1294,7 @@ pub mod interface_request {
             self.name = Some(input.into());
             self
         }
+        /// The name of the VPC interface.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1282,6 +1375,7 @@ pub mod update_encryption {
             self.algorithm = Some(input);
             self
         }
+        /// The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).
         pub fn set_algorithm(
             mut self,
             input: std::option::Option<crate::model::Algorithm>,
@@ -1297,6 +1391,7 @@ pub mod update_encryption {
             self.constant_initialization_vector = Some(input.into());
             self
         }
+        /// A 128-bit, 16-byte hex value represented by a 32-character string, to be used with the key for encrypting content. This parameter is not valid for static key encryption.
         pub fn set_constant_initialization_vector(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1309,6 +1404,7 @@ pub mod update_encryption {
             self.device_id = Some(input.into());
             self
         }
+        /// The value of one of the devices that you configured with your digital rights management (DRM) platform key provider. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
@@ -1318,6 +1414,7 @@ pub mod update_encryption {
             self.key_type = Some(input);
             self
         }
+        /// The type of key that is used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
         pub fn set_key_type(mut self, input: std::option::Option<crate::model::KeyType>) -> Self {
             self.key_type = input;
             self
@@ -1327,6 +1424,7 @@ pub mod update_encryption {
             self.region = Some(input.into());
             self
         }
+        /// The AWS Region that the API Gateway proxy endpoint was created in. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -1336,6 +1434,7 @@ pub mod update_encryption {
             self.resource_id = Some(input.into());
             self
         }
+        /// An identifier for the content. The service sends this value to the key server to identify the current endpoint. The resource ID is also known as the content ID. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -1345,6 +1444,7 @@ pub mod update_encryption {
             self.role_arn = Some(input.into());
             self
         }
+        /// The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1354,6 +1454,7 @@ pub mod update_encryption {
             self.secret_arn = Some(input.into());
             self
         }
+        /// The ARN of the secret that you created in AWS Secrets Manager to store the encryption key. This parameter is required for static key encryption and is not valid for SPEKE encryption.
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -1363,6 +1464,7 @@ pub mod update_encryption {
             self.url = Some(input.into());
             self
         }
+        /// The URL from the API Gateway proxy that you set up to talk to your key server. This parameter is required for SPEKE encryption and is not valid for static key encryption.
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -1475,6 +1577,7 @@ pub mod output {
             self.data_transfer_subscriber_fee_percent = Some(input);
             self
         }
+        /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
         pub fn set_data_transfer_subscriber_fee_percent(
             mut self,
             input: std::option::Option<i32>,
@@ -1487,6 +1590,7 @@ pub mod output {
             self.description = Some(input.into());
             self
         }
+        /// A description of the output.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1496,6 +1600,7 @@ pub mod output {
             self.destination = Some(input.into());
             self
         }
+        /// The address where you want to send the output.
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.destination = input;
             self
@@ -1505,6 +1610,7 @@ pub mod output {
             self.encryption = Some(input);
             self
         }
+        /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
         pub fn set_encryption(
             mut self,
             input: std::option::Option<crate::model::Encryption>,
@@ -1517,6 +1623,7 @@ pub mod output {
             self.entitlement_arn = Some(input.into());
             self
         }
+        /// The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows.
         pub fn set_entitlement_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1529,6 +1636,7 @@ pub mod output {
             self.listener_address = Some(input.into());
             self
         }
+        /// The IP address that the receiver requires in order to establish a connection with the flow. For public networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the Zixi pull or SRT listener protocol.
         pub fn set_listener_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1541,6 +1649,7 @@ pub mod output {
             self.media_live_input_arn = Some(input.into());
             self
         }
+        /// The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added by creating a MediaLive input.
         pub fn set_media_live_input_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1548,6 +1657,11 @@ pub mod output {
             self.media_live_input_arn = input;
             self
         }
+        /// Appends an item to `media_stream_output_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_media_stream_output_configurations`](Self::set_media_stream_output_configurations).
+        ///
+        /// The configuration for each media stream that is associated with the output.
         pub fn media_stream_output_configurations(
             mut self,
             input: impl Into<crate::model::MediaStreamOutputConfiguration>,
@@ -1557,6 +1671,7 @@ pub mod output {
             self.media_stream_output_configurations = Some(v);
             self
         }
+        /// The configuration for each media stream that is associated with the output.
         pub fn set_media_stream_output_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MediaStreamOutputConfiguration>>,
@@ -1569,6 +1684,7 @@ pub mod output {
             self.name = Some(input.into());
             self
         }
+        /// The name of the output. This value must be unique within the current flow.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1578,6 +1694,7 @@ pub mod output {
             self.output_arn = Some(input.into());
             self
         }
+        /// The ARN of the output.
         pub fn set_output_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output_arn = input;
             self
@@ -1587,6 +1704,7 @@ pub mod output {
             self.port = Some(input);
             self
         }
+        /// The port to use when content is distributed to this output.
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -1596,6 +1714,7 @@ pub mod output {
             self.transport = Some(input);
             self
         }
+        /// Attributes related to the transport stream that are used in the output.
         pub fn set_transport(
             mut self,
             input: std::option::Option<crate::model::Transport>,
@@ -1611,6 +1730,7 @@ pub mod output {
             self.vpc_interface_attachment = Some(input);
             self
         }
+        /// The name of the VPC interface attachment to use for this output.
         pub fn set_vpc_interface_attachment(
             mut self,
             input: std::option::Option<crate::model::VpcInterfaceAttachment>,
@@ -1675,6 +1795,7 @@ pub mod vpc_interface_attachment {
             self.vpc_interface_name = Some(input.into());
             self
         }
+        /// The name of the VPC interface to use for this output.
         pub fn set_vpc_interface_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1737,6 +1858,11 @@ pub mod media_stream_output_configuration {
         pub(crate) media_stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `destination_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_destination_configurations`](Self::set_destination_configurations).
+        ///
+        /// The transport parameters that are associated with each outbound media stream.
         pub fn destination_configurations(
             mut self,
             input: impl Into<crate::model::DestinationConfiguration>,
@@ -1746,6 +1872,7 @@ pub mod media_stream_output_configuration {
             self.destination_configurations = Some(v);
             self
         }
+        /// The transport parameters that are associated with each outbound media stream.
         pub fn set_destination_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DestinationConfiguration>>,
@@ -1758,6 +1885,7 @@ pub mod media_stream_output_configuration {
             self.encoding_name = Some(input);
             self
         }
+        /// The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
         pub fn set_encoding_name(
             mut self,
             input: std::option::Option<crate::model::EncodingName>,
@@ -1770,6 +1898,7 @@ pub mod media_stream_output_configuration {
             self.encoding_parameters = Some(input);
             self
         }
+        /// Encoding parameters
         pub fn set_encoding_parameters(
             mut self,
             input: std::option::Option<crate::model::EncodingParameters>,
@@ -1782,6 +1911,7 @@ pub mod media_stream_output_configuration {
             self.media_stream_name = Some(input.into());
             self
         }
+        /// The name of the media stream.
         pub fn set_media_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1839,6 +1969,7 @@ pub mod encoding_parameters {
             self.compression_factor = Some(input);
             self
         }
+        /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
         pub fn set_compression_factor(mut self, input: std::option::Option<f64>) -> Self {
             self.compression_factor = input;
             self
@@ -1848,6 +1979,7 @@ pub mod encoding_parameters {
             self.encoder_profile = Some(input);
             self
         }
+        /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol.
         pub fn set_encoder_profile(
             mut self,
             input: std::option::Option<crate::model::EncoderProfile>,
@@ -1871,6 +2003,7 @@ impl EncodingParameters {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1882,7 +2015,9 @@ impl EncodingParameters {
     std::hash::Hash,
 )]
 pub enum EncoderProfile {
+    #[allow(missing_docs)] // documentation missing in model
     High,
+    #[allow(missing_docs)] // documentation missing in model
     Main,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1904,6 +2039,7 @@ impl std::str::FromStr for EncoderProfile {
     }
 }
 impl EncoderProfile {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncoderProfile::High => "high",
@@ -1911,6 +2047,7 @@ impl EncoderProfile {
             EncoderProfile::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["high", "main"]
     }
@@ -1961,6 +2098,7 @@ pub mod destination_configuration {
             self.destination_ip = Some(input.into());
             self
         }
+        /// The IP address where contents of the media stream will be sent.
         pub fn set_destination_ip(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1973,6 +2111,7 @@ pub mod destination_configuration {
             self.destination_port = Some(input);
             self
         }
+        /// The port to use when the content of the media stream is distributed to the output.
         pub fn set_destination_port(mut self, input: std::option::Option<i32>) -> Self {
             self.destination_port = input;
             self
@@ -1982,6 +2121,7 @@ pub mod destination_configuration {
             self.interface = Some(input);
             self
         }
+        /// The VPC interface that is used for the media stream associated with the output.
         pub fn set_interface(
             mut self,
             input: std::option::Option<crate::model::Interface>,
@@ -1994,6 +2134,7 @@ pub mod destination_configuration {
             self.outbound_ip = Some(input.into());
             self
         }
+        /// The IP address that the receiver requires in order to establish a connection with the flow. This value is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the CDI or ST 2110 JPEG XS protocol.
         pub fn set_outbound_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outbound_ip = input;
             self
@@ -2057,6 +2198,11 @@ pub mod media_stream_output_configuration_request {
         pub(crate) media_stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `destination_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_destination_configurations`](Self::set_destination_configurations).
+        ///
+        /// The transport parameters that you want to associate with the media stream.
         pub fn destination_configurations(
             mut self,
             input: impl Into<crate::model::DestinationConfigurationRequest>,
@@ -2066,6 +2212,7 @@ pub mod media_stream_output_configuration_request {
             self.destination_configurations = Some(v);
             self
         }
+        /// The transport parameters that you want to associate with the media stream.
         pub fn set_destination_configurations(
             mut self,
             input: std::option::Option<
@@ -2080,6 +2227,7 @@ pub mod media_stream_output_configuration_request {
             self.encoding_name = Some(input);
             self
         }
+        /// The format that will be used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.
         pub fn set_encoding_name(
             mut self,
             input: std::option::Option<crate::model::EncodingName>,
@@ -2095,6 +2243,7 @@ pub mod media_stream_output_configuration_request {
             self.encoding_parameters = Some(input);
             self
         }
+        /// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
         pub fn set_encoding_parameters(
             mut self,
             input: std::option::Option<crate::model::EncodingParametersRequest>,
@@ -2107,6 +2256,7 @@ pub mod media_stream_output_configuration_request {
             self.media_stream_name = Some(input.into());
             self
         }
+        /// The name of the media stream that is associated with the output.
         pub fn set_media_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2164,6 +2314,7 @@ pub mod encoding_parameters_request {
             self.compression_factor = Some(input);
             self
         }
+        /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
         pub fn set_compression_factor(mut self, input: std::option::Option<f64>) -> Self {
             self.compression_factor = input;
             self
@@ -2173,6 +2324,7 @@ pub mod encoding_parameters_request {
             self.encoder_profile = Some(input);
             self
         }
+        /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, if at least one source on the flow uses the CDI protocol.
         pub fn set_encoder_profile(
             mut self,
             input: std::option::Option<crate::model::EncoderProfile>,
@@ -2232,6 +2384,7 @@ pub mod destination_configuration_request {
             self.destination_ip = Some(input.into());
             self
         }
+        /// The IP address where you want MediaConnect to send contents of the media stream.
         pub fn set_destination_ip(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2244,6 +2397,7 @@ pub mod destination_configuration_request {
             self.destination_port = Some(input);
             self
         }
+        /// The port that you want MediaConnect to use when it distributes the media stream to the output.
         pub fn set_destination_port(mut self, input: std::option::Option<i32>) -> Self {
             self.destination_port = input;
             self
@@ -2253,6 +2407,7 @@ pub mod destination_configuration_request {
             self.interface = Some(input);
             self
         }
+        /// The VPC interface that you want to use for the media stream associated with the output.
         pub fn set_interface(
             mut self,
             input: std::option::Option<crate::model::InterfaceRequest>,
@@ -2333,6 +2488,7 @@ pub mod media_stream {
             self.attributes = Some(input);
             self
         }
+        /// Attributes that are related to the media stream.
         pub fn set_attributes(
             mut self,
             input: std::option::Option<crate::model::MediaStreamAttributes>,
@@ -2345,6 +2501,7 @@ pub mod media_stream {
             self.clock_rate = Some(input);
             self
         }
+        /// The sample rate for the stream. This value is measured in Hz.
         pub fn set_clock_rate(mut self, input: std::option::Option<i32>) -> Self {
             self.clock_rate = input;
             self
@@ -2354,6 +2511,7 @@ pub mod media_stream {
             self.description = Some(input.into());
             self
         }
+        /// A description that can help you quickly identify what your media stream is used for.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2363,6 +2521,7 @@ pub mod media_stream {
             self.fmt = Some(input);
             self
         }
+        /// The format type number (sometimes referred to as RTP payload type) of the media stream. MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.
         pub fn set_fmt(mut self, input: std::option::Option<i32>) -> Self {
             self.fmt = input;
             self
@@ -2372,6 +2531,7 @@ pub mod media_stream {
             self.media_stream_id = Some(input);
             self
         }
+        /// A unique identifier for the media stream.
         pub fn set_media_stream_id(mut self, input: std::option::Option<i32>) -> Self {
             self.media_stream_id = input;
             self
@@ -2381,6 +2541,7 @@ pub mod media_stream {
             self.media_stream_name = Some(input.into());
             self
         }
+        /// A name that helps you distinguish one media stream from another.
         pub fn set_media_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2393,6 +2554,7 @@ pub mod media_stream {
             self.media_stream_type = Some(input);
             self
         }
+        /// The type of media stream.
         pub fn set_media_stream_type(
             mut self,
             input: std::option::Option<crate::model::MediaStreamType>,
@@ -2405,6 +2567,7 @@ pub mod media_stream {
             self.video_format = Some(input.into());
             self
         }
+        /// The resolution of the video.
         pub fn set_video_format(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.video_format = input;
             self
@@ -2431,6 +2594,7 @@ impl MediaStream {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2442,8 +2606,11 @@ impl MediaStream {
     std::hash::Hash,
 )]
 pub enum MediaStreamType {
+    #[allow(missing_docs)] // documentation missing in model
     AncillaryData,
+    #[allow(missing_docs)] // documentation missing in model
     Audio,
+    #[allow(missing_docs)] // documentation missing in model
     Video,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2466,6 +2633,7 @@ impl std::str::FromStr for MediaStreamType {
     }
 }
 impl MediaStreamType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MediaStreamType::AncillaryData => "ancillary-data",
@@ -2474,6 +2642,7 @@ impl MediaStreamType {
             MediaStreamType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ancillary-data", "audio", "video"]
     }
@@ -2516,6 +2685,7 @@ pub mod media_stream_attributes {
             self.fmtp = Some(input);
             self
         }
+        /// A set of parameters that define the media stream.
         pub fn set_fmtp(mut self, input: std::option::Option<crate::model::Fmtp>) -> Self {
             self.fmtp = input;
             self
@@ -2525,6 +2695,7 @@ pub mod media_stream_attributes {
             self.lang = Some(input.into());
             self
         }
+        /// The audio language, in a format that is recognized by the receiver.
         pub fn set_lang(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lang = input;
             self
@@ -2597,6 +2768,7 @@ pub mod fmtp {
             self.channel_order = Some(input.into());
             self
         }
+        /// The format of the audio channel.
         pub fn set_channel_order(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2609,6 +2781,7 @@ pub mod fmtp {
             self.colorimetry = Some(input);
             self
         }
+        /// The format that is used for the representation of color.
         pub fn set_colorimetry(
             mut self,
             input: std::option::Option<crate::model::Colorimetry>,
@@ -2621,6 +2794,7 @@ pub mod fmtp {
             self.exact_framerate = Some(input.into());
             self
         }
+        /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
         pub fn set_exact_framerate(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2633,6 +2807,7 @@ pub mod fmtp {
             self.par = Some(input.into());
             self
         }
+        /// The pixel aspect ratio (PAR) of the video.
         pub fn set_par(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.par = input;
             self
@@ -2642,6 +2817,7 @@ pub mod fmtp {
             self.range = Some(input);
             self
         }
+        /// The encoding range of the video.
         pub fn set_range(mut self, input: std::option::Option<crate::model::Range>) -> Self {
             self.range = input;
             self
@@ -2651,6 +2827,7 @@ pub mod fmtp {
             self.scan_mode = Some(input);
             self
         }
+        /// The type of compression that was used to smooth the video’s appearance
         pub fn set_scan_mode(mut self, input: std::option::Option<crate::model::ScanMode>) -> Self {
             self.scan_mode = input;
             self
@@ -2660,6 +2837,7 @@ pub mod fmtp {
             self.tcs = Some(input);
             self
         }
+        /// The transfer characteristic system (TCS) that is used in the video.
         pub fn set_tcs(mut self, input: std::option::Option<crate::model::Tcs>) -> Self {
             self.tcs = input;
             self
@@ -2685,6 +2863,7 @@ impl Fmtp {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2696,14 +2875,23 @@ impl Fmtp {
     std::hash::Hash,
 )]
 pub enum Tcs {
+    #[allow(missing_docs)] // documentation missing in model
     Bt2100Linhlg,
+    #[allow(missing_docs)] // documentation missing in model
     Bt2100Linpq,
+    #[allow(missing_docs)] // documentation missing in model
     Density,
+    #[allow(missing_docs)] // documentation missing in model
     Hlg,
+    #[allow(missing_docs)] // documentation missing in model
     Linear,
+    #[allow(missing_docs)] // documentation missing in model
     Pq,
+    #[allow(missing_docs)] // documentation missing in model
     Sdr,
+    #[allow(missing_docs)] // documentation missing in model
     St20651,
+    #[allow(missing_docs)] // documentation missing in model
     St4281,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2732,6 +2920,7 @@ impl std::str::FromStr for Tcs {
     }
 }
 impl Tcs {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Tcs::Bt2100Linhlg => "BT2100LINHLG",
@@ -2746,6 +2935,7 @@ impl Tcs {
             Tcs::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BT2100LINHLG",
@@ -2766,6 +2956,7 @@ impl AsRef<str> for Tcs {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2777,8 +2968,11 @@ impl AsRef<str> for Tcs {
     std::hash::Hash,
 )]
 pub enum ScanMode {
+    #[allow(missing_docs)] // documentation missing in model
     Interlace,
+    #[allow(missing_docs)] // documentation missing in model
     Progressive,
+    #[allow(missing_docs)] // documentation missing in model
     ProgressiveSegmentedFrame,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2801,6 +2995,7 @@ impl std::str::FromStr for ScanMode {
     }
 }
 impl ScanMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScanMode::Interlace => "interlace",
@@ -2809,6 +3004,7 @@ impl ScanMode {
             ScanMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["interlace", "progressive", "progressive-segmented-frame"]
     }
@@ -2819,6 +3015,7 @@ impl AsRef<str> for ScanMode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2830,8 +3027,11 @@ impl AsRef<str> for ScanMode {
     std::hash::Hash,
 )]
 pub enum Range {
+    #[allow(missing_docs)] // documentation missing in model
     Full,
+    #[allow(missing_docs)] // documentation missing in model
     Fullprotect,
+    #[allow(missing_docs)] // documentation missing in model
     Narrow,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2854,6 +3054,7 @@ impl std::str::FromStr for Range {
     }
 }
 impl Range {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Range::Full => "FULL",
@@ -2862,6 +3063,7 @@ impl Range {
             Range::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FULL", "FULLPROTECT", "NARROW"]
     }
@@ -2872,6 +3074,7 @@ impl AsRef<str> for Range {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2883,12 +3086,19 @@ impl AsRef<str> for Range {
     std::hash::Hash,
 )]
 pub enum Colorimetry {
+    #[allow(missing_docs)] // documentation missing in model
     Bt2020,
+    #[allow(missing_docs)] // documentation missing in model
     Bt2100,
+    #[allow(missing_docs)] // documentation missing in model
     Bt601,
+    #[allow(missing_docs)] // documentation missing in model
     Bt709,
+    #[allow(missing_docs)] // documentation missing in model
     St20651,
+    #[allow(missing_docs)] // documentation missing in model
     St20653,
+    #[allow(missing_docs)] // documentation missing in model
     Xyz,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2915,6 +3125,7 @@ impl std::str::FromStr for Colorimetry {
     }
 }
 impl Colorimetry {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Colorimetry::Bt2020 => "BT2020",
@@ -2927,6 +3138,7 @@ impl Colorimetry {
             Colorimetry::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BT2020", "BT2100", "BT601", "BT709", "ST2065-1", "ST2065-3", "XYZ",
@@ -2971,6 +3183,7 @@ pub mod media_stream_attributes_request {
             self.fmtp = Some(input);
             self
         }
+        /// The settings that you want to use to define the media stream.
         pub fn set_fmtp(mut self, input: std::option::Option<crate::model::FmtpRequest>) -> Self {
             self.fmtp = input;
             self
@@ -2980,6 +3193,7 @@ pub mod media_stream_attributes_request {
             self.lang = Some(input.into());
             self
         }
+        /// The audio language, in a format that is recognized by the receiver.
         pub fn set_lang(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lang = input;
             self
@@ -3052,6 +3266,7 @@ pub mod fmtp_request {
             self.channel_order = Some(input.into());
             self
         }
+        /// The format of the audio channel.
         pub fn set_channel_order(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3064,6 +3279,7 @@ pub mod fmtp_request {
             self.colorimetry = Some(input);
             self
         }
+        /// The format that is used for the representation of color.
         pub fn set_colorimetry(
             mut self,
             input: std::option::Option<crate::model::Colorimetry>,
@@ -3076,6 +3292,7 @@ pub mod fmtp_request {
             self.exact_framerate = Some(input.into());
             self
         }
+        /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
         pub fn set_exact_framerate(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3088,6 +3305,7 @@ pub mod fmtp_request {
             self.par = Some(input.into());
             self
         }
+        /// The pixel aspect ratio (PAR) of the video.
         pub fn set_par(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.par = input;
             self
@@ -3097,6 +3315,7 @@ pub mod fmtp_request {
             self.range = Some(input);
             self
         }
+        /// The encoding range of the video.
         pub fn set_range(mut self, input: std::option::Option<crate::model::Range>) -> Self {
             self.range = input;
             self
@@ -3106,6 +3325,7 @@ pub mod fmtp_request {
             self.scan_mode = Some(input);
             self
         }
+        /// The type of compression that was used to smooth the video’s appearance.
         pub fn set_scan_mode(mut self, input: std::option::Option<crate::model::ScanMode>) -> Self {
             self.scan_mode = input;
             self
@@ -3115,6 +3335,7 @@ pub mod fmtp_request {
             self.tcs = Some(input);
             self
         }
+        /// The transfer characteristic system (TCS) that is used in the video.
         pub fn set_tcs(mut self, input: std::option::Option<crate::model::Tcs>) -> Self {
             self.tcs = input;
             self
@@ -3195,6 +3416,7 @@ pub mod entitlement {
             self.data_transfer_subscriber_fee_percent = Some(input);
             self
         }
+        /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
         pub fn set_data_transfer_subscriber_fee_percent(
             mut self,
             input: std::option::Option<i32>,
@@ -3207,6 +3429,7 @@ pub mod entitlement {
             self.description = Some(input.into());
             self
         }
+        /// A description of the entitlement.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3216,6 +3439,7 @@ pub mod entitlement {
             self.encryption = Some(input);
             self
         }
+        /// The type of encryption that will be used on the output that is associated with this entitlement.
         pub fn set_encryption(
             mut self,
             input: std::option::Option<crate::model::Encryption>,
@@ -3228,6 +3452,7 @@ pub mod entitlement {
             self.entitlement_arn = Some(input.into());
             self
         }
+        /// The ARN of the entitlement.
         pub fn set_entitlement_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3240,6 +3465,7 @@ pub mod entitlement {
             self.entitlement_status = Some(input);
             self
         }
+        /// An indication of whether the entitlement is enabled.
         pub fn set_entitlement_status(
             mut self,
             input: std::option::Option<crate::model::EntitlementStatus>,
@@ -3252,16 +3478,23 @@ pub mod entitlement {
             self.name = Some(input.into());
             self
         }
+        /// The name of the entitlement.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `subscribers`.
+        ///
+        /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
+        ///
+        /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
         pub fn subscribers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
             v.push(input.into());
             self.subscribers = Some(v);
             self
         }
+        /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
         pub fn set_subscribers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3292,6 +3525,7 @@ impl Entitlement {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3303,7 +3537,9 @@ impl Entitlement {
     std::hash::Hash,
 )]
 pub enum EntitlementStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3325,6 +3561,7 @@ impl std::str::FromStr for EntitlementStatus {
     }
 }
 impl EntitlementStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EntitlementStatus::Disabled => "DISABLED",
@@ -3332,6 +3569,7 @@ impl EntitlementStatus {
             EntitlementStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -3366,6 +3604,7 @@ pub struct Flow {
     pub source: std::option::Option<crate::model::Source>,
     /// The settings for source failover
     pub source_failover_config: std::option::Option<crate::model::FailoverConfig>,
+    #[allow(missing_docs)] // documentation missing in model
     pub sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
     /// The current status of the flow.
     pub status: std::option::Option<crate::model::Status>,
@@ -3417,6 +3656,7 @@ pub mod flow {
             self.availability_zone = Some(input.into());
             self
         }
+        /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3429,6 +3669,7 @@ pub mod flow {
             self.description = Some(input.into());
             self
         }
+        /// A description of the flow. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3438,16 +3679,23 @@ pub mod flow {
             self.egress_ip = Some(input.into());
             self
         }
+        /// The IP address from which video will be sent to output destinations.
         pub fn set_egress_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.egress_ip = input;
             self
         }
+        /// Appends an item to `entitlements`.
+        ///
+        /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
+        ///
+        /// The entitlements in this flow.
         pub fn entitlements(mut self, input: impl Into<crate::model::Entitlement>) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
             v.push(input.into());
             self.entitlements = Some(v);
             self
         }
+        /// The entitlements in this flow.
         pub fn set_entitlements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
@@ -3460,16 +3708,23 @@ pub mod flow {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
         }
+        /// Appends an item to `media_streams`.
+        ///
+        /// To override the contents of this collection use [`set_media_streams`](Self::set_media_streams).
+        ///
+        /// The media streams that are associated with the flow. After you associate a media stream with a source, you can also associate it with outputs on the flow.
         pub fn media_streams(mut self, input: impl Into<crate::model::MediaStream>) -> Self {
             let mut v = self.media_streams.unwrap_or_default();
             v.push(input.into());
             self.media_streams = Some(v);
             self
         }
+        /// The media streams that are associated with the flow. After you associate a media stream with a source, you can also associate it with outputs on the flow.
         pub fn set_media_streams(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MediaStream>>,
@@ -3482,16 +3737,23 @@ pub mod flow {
             self.name = Some(input.into());
             self
         }
+        /// The name of the flow.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `outputs`.
+        ///
+        /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
+        ///
+        /// The outputs in this flow.
         pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
             let mut v = self.outputs.unwrap_or_default();
             v.push(input.into());
             self.outputs = Some(v);
             self
         }
+        /// The outputs in this flow.
         pub fn set_outputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Output>>,
@@ -3504,6 +3766,7 @@ pub mod flow {
             self.source = Some(input);
             self
         }
+        /// The settings for the source of the flow.
         pub fn set_source(mut self, input: std::option::Option<crate::model::Source>) -> Self {
             self.source = input;
             self
@@ -3513,6 +3776,7 @@ pub mod flow {
             self.source_failover_config = Some(input);
             self
         }
+        /// The settings for source failover
         pub fn set_source_failover_config(
             mut self,
             input: std::option::Option<crate::model::FailoverConfig>,
@@ -3520,12 +3784,17 @@ pub mod flow {
             self.source_failover_config = input;
             self
         }
+        /// Appends an item to `sources`.
+        ///
+        /// To override the contents of this collection use [`set_sources`](Self::set_sources).
+        ///
         pub fn sources(mut self, input: impl Into<crate::model::Source>) -> Self {
             let mut v = self.sources.unwrap_or_default();
             v.push(input.into());
             self.sources = Some(v);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Source>>,
@@ -3538,16 +3807,23 @@ pub mod flow {
             self.status = Some(input);
             self
         }
+        /// The current status of the flow.
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
             self.status = input;
             self
         }
+        /// Appends an item to `vpc_interfaces`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_interfaces`](Self::set_vpc_interfaces).
+        ///
+        /// The VPC Interfaces for this flow.
         pub fn vpc_interfaces(mut self, input: impl Into<crate::model::VpcInterface>) -> Self {
             let mut v = self.vpc_interfaces.unwrap_or_default();
             v.push(input.into());
             self.vpc_interfaces = Some(v);
             self
         }
+        /// The VPC Interfaces for this flow.
         pub fn set_vpc_interfaces(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VpcInterface>>,
@@ -3630,16 +3906,23 @@ pub mod vpc_interface {
             self.name = Some(input.into());
             self
         }
+        /// Immutable and has to be a unique against other VpcInterfaces in this Flow
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `network_interface_ids`.
+        ///
+        /// To override the contents of this collection use [`set_network_interface_ids`](Self::set_network_interface_ids).
+        ///
+        /// IDs of the network interfaces created in customer's account by MediaConnect.
         pub fn network_interface_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.network_interface_ids.unwrap_or_default();
             v.push(input.into());
             self.network_interface_ids = Some(v);
             self
         }
+        /// IDs of the network interfaces created in customer's account by MediaConnect.
         pub fn set_network_interface_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3652,6 +3935,7 @@ pub mod vpc_interface {
             self.network_interface_type = Some(input);
             self
         }
+        /// The type of network interface.
         pub fn set_network_interface_type(
             mut self,
             input: std::option::Option<crate::model::NetworkInterfaceType>,
@@ -3664,16 +3948,23 @@ pub mod vpc_interface {
             self.role_arn = Some(input.into());
             self
         }
+        /// Role Arn MediaConnect can assumes to create ENIs in customer's account
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// Security Group IDs to be used on ENI.
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// Security Group IDs to be used on ENI.
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3686,6 +3977,7 @@ pub mod vpc_interface {
             self.subnet_id = Some(input.into());
             self
         }
+        /// Subnet must be in the AZ of the Flow
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_id = input;
             self
@@ -3710,6 +4002,7 @@ impl VpcInterface {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3721,7 +4014,9 @@ impl VpcInterface {
     std::hash::Hash,
 )]
 pub enum NetworkInterfaceType {
+    #[allow(missing_docs)] // documentation missing in model
     Efa,
+    #[allow(missing_docs)] // documentation missing in model
     Ena,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3743,6 +4038,7 @@ impl std::str::FromStr for NetworkInterfaceType {
     }
 }
 impl NetworkInterfaceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NetworkInterfaceType::Efa => "efa",
@@ -3750,6 +4046,7 @@ impl NetworkInterfaceType {
             NetworkInterfaceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["efa", "ena"]
     }
@@ -3760,6 +4057,7 @@ impl AsRef<str> for NetworkInterfaceType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3771,12 +4069,19 @@ impl AsRef<str> for NetworkInterfaceType {
     std::hash::Hash,
 )]
 pub enum Status {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Standby,
+    #[allow(missing_docs)] // documentation missing in model
     Starting,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3803,6 +4108,7 @@ impl std::str::FromStr for Status {
     }
 }
 impl Status {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Status::Active => "ACTIVE",
@@ -3815,6 +4121,7 @@ impl Status {
             Status::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE", "DELETING", "ERROR", "STANDBY", "STARTING", "STOPPING", "UPDATING",
@@ -3837,6 +4144,7 @@ pub struct FailoverConfig {
     pub recovery_window: i32,
     /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
     pub source_priority: std::option::Option<crate::model::SourcePriority>,
+    #[allow(missing_docs)] // documentation missing in model
     pub state: std::option::Option<crate::model::State>,
 }
 impl std::fmt::Debug for FailoverConfig {
@@ -3866,6 +4174,7 @@ pub mod failover_config {
             self.failover_mode = Some(input);
             self
         }
+        /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
         pub fn set_failover_mode(
             mut self,
             input: std::option::Option<crate::model::FailoverMode>,
@@ -3878,6 +4187,7 @@ pub mod failover_config {
             self.recovery_window = Some(input);
             self
         }
+        /// Search window time to look for dash-7 packets
         pub fn set_recovery_window(mut self, input: std::option::Option<i32>) -> Self {
             self.recovery_window = input;
             self
@@ -3887,6 +4197,7 @@ pub mod failover_config {
             self.source_priority = Some(input);
             self
         }
+        /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
         pub fn set_source_priority(
             mut self,
             input: std::option::Option<crate::model::SourcePriority>,
@@ -3894,10 +4205,12 @@ pub mod failover_config {
             self.source_priority = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn state(mut self, input: crate::model::State) -> Self {
             self.state = Some(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
             self.state = input;
             self
@@ -3920,6 +4233,7 @@ impl FailoverConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3931,7 +4245,9 @@ impl FailoverConfig {
     std::hash::Hash,
 )]
 pub enum State {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3953,6 +4269,7 @@ impl std::str::FromStr for State {
     }
 }
 impl State {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             State::Disabled => "DISABLED",
@@ -3960,6 +4277,7 @@ impl State {
             State::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -3998,6 +4316,7 @@ pub mod source_priority {
             self.primary_source = Some(input.into());
             self
         }
+        /// The name of the source you choose as the primary source for this flow.
         pub fn set_primary_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4020,6 +4339,7 @@ impl SourcePriority {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4031,7 +4351,9 @@ impl SourcePriority {
     std::hash::Hash,
 )]
 pub enum FailoverMode {
+    #[allow(missing_docs)] // documentation missing in model
     Failover,
+    #[allow(missing_docs)] // documentation missing in model
     Merge,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4053,6 +4375,7 @@ impl std::str::FromStr for FailoverMode {
     }
 }
 impl FailoverMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FailoverMode::Failover => "FAILOVER",
@@ -4060,6 +4383,7 @@ impl FailoverMode {
             FailoverMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILOVER", "MERGE"]
     }
@@ -4080,6 +4404,7 @@ pub struct UpdateFailoverConfig {
     pub recovery_window: i32,
     /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
     pub source_priority: std::option::Option<crate::model::SourcePriority>,
+    #[allow(missing_docs)] // documentation missing in model
     pub state: std::option::Option<crate::model::State>,
 }
 impl std::fmt::Debug for UpdateFailoverConfig {
@@ -4109,6 +4434,7 @@ pub mod update_failover_config {
             self.failover_mode = Some(input);
             self
         }
+        /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
         pub fn set_failover_mode(
             mut self,
             input: std::option::Option<crate::model::FailoverMode>,
@@ -4121,6 +4447,7 @@ pub mod update_failover_config {
             self.recovery_window = Some(input);
             self
         }
+        /// Recovery window time to look for dash-7 packets
         pub fn set_recovery_window(mut self, input: std::option::Option<i32>) -> Self {
             self.recovery_window = input;
             self
@@ -4130,6 +4457,7 @@ pub mod update_failover_config {
             self.source_priority = Some(input);
             self
         }
+        /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
         pub fn set_source_priority(
             mut self,
             input: std::option::Option<crate::model::SourcePriority>,
@@ -4137,10 +4465,12 @@ pub mod update_failover_config {
             self.source_priority = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn state(mut self, input: crate::model::State) -> Self {
             self.state = Some(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
             self.state = input;
             self
@@ -4239,6 +4569,7 @@ pub mod reservation {
             self.currency_code = Some(input.into());
             self
         }
+        /// The type of currency that is used for billing. The currencyCode used for your reservation is US dollars.
         pub fn set_currency_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4251,6 +4582,7 @@ pub mod reservation {
             self.duration = Some(input);
             self
         }
+        /// The length of time that this reservation is active. MediaConnect defines this value in the offering.
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.duration = input;
             self
@@ -4260,6 +4592,7 @@ pub mod reservation {
             self.duration_units = Some(input);
             self
         }
+        /// The unit of measurement for the duration of the reservation. MediaConnect defines this value in the offering.
         pub fn set_duration_units(
             mut self,
             input: std::option::Option<crate::model::DurationUnits>,
@@ -4272,6 +4605,7 @@ pub mod reservation {
             self.end = Some(input.into());
             self
         }
+        /// The day and time that this reservation expires. This value is calculated based on the start date and time that you set and the offering's duration.
         pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end = input;
             self
@@ -4281,6 +4615,7 @@ pub mod reservation {
             self.offering_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
         pub fn set_offering_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.offering_arn = input;
             self
@@ -4290,6 +4625,7 @@ pub mod reservation {
             self.offering_description = Some(input.into());
             self
         }
+        /// A description of the offering. MediaConnect defines this value in the offering.
         pub fn set_offering_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4302,6 +4638,7 @@ pub mod reservation {
             self.price_per_unit = Some(input.into());
             self
         }
+        /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate. MediaConnect defines this value in the offering.
         pub fn set_price_per_unit(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4314,6 +4651,7 @@ pub mod reservation {
             self.price_units = Some(input);
             self
         }
+        /// The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate. MediaConnect defines this value in the offering.
         pub fn set_price_units(
             mut self,
             input: std::option::Option<crate::model::PriceUnits>,
@@ -4326,6 +4664,7 @@ pub mod reservation {
             self.reservation_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) that MediaConnect assigns to the reservation when you purchase an offering.
         pub fn set_reservation_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4338,6 +4677,7 @@ pub mod reservation {
             self.reservation_name = Some(input.into());
             self
         }
+        /// The name that you assigned to the reservation when you purchased the offering.
         pub fn set_reservation_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4350,6 +4690,7 @@ pub mod reservation {
             self.reservation_state = Some(input);
             self
         }
+        /// The status of your reservation.
         pub fn set_reservation_state(
             mut self,
             input: std::option::Option<crate::model::ReservationState>,
@@ -4365,6 +4706,7 @@ pub mod reservation {
             self.resource_specification = Some(input);
             self
         }
+        /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering. MediaConnect defines the values that make up the resourceSpecification in the offering.
         pub fn set_resource_specification(
             mut self,
             input: std::option::Option<crate::model::ResourceSpecification>,
@@ -4377,6 +4719,7 @@ pub mod reservation {
             self.start = Some(input.into());
             self
         }
+        /// The day and time that the reservation becomes active. You set this value when you purchase the offering.
         pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start = input;
             self
@@ -4440,6 +4783,7 @@ pub mod resource_specification {
             self.reserved_bitrate = Some(input);
             self
         }
+        /// The amount of outbound bandwidth that is discounted in the offering.
         pub fn set_reserved_bitrate(mut self, input: std::option::Option<i32>) -> Self {
             self.reserved_bitrate = input;
             self
@@ -4449,6 +4793,7 @@ pub mod resource_specification {
             self.resource_type = Some(input);
             self
         }
+        /// The type of resource and the unit that is being billed for.
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -4472,6 +4817,7 @@ impl ResourceSpecification {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4483,6 +4829,7 @@ impl ResourceSpecification {
     std::hash::Hash,
 )]
 pub enum ResourceType {
+    #[allow(missing_docs)] // documentation missing in model
     MbpsOutboundBandwidth,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4503,12 +4850,14 @@ impl std::str::FromStr for ResourceType {
     }
 }
 impl ResourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::MbpsOutboundBandwidth => "Mbps_Outbound_Bandwidth",
             ResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Mbps_Outbound_Bandwidth"]
     }
@@ -4519,6 +4868,7 @@ impl AsRef<str> for ResourceType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4530,9 +4880,13 @@ impl AsRef<str> for ResourceType {
     std::hash::Hash,
 )]
 pub enum ReservationState {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Canceled,
+    #[allow(missing_docs)] // documentation missing in model
     Expired,
+    #[allow(missing_docs)] // documentation missing in model
     Processing,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4556,6 +4910,7 @@ impl std::str::FromStr for ReservationState {
     }
 }
 impl ReservationState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReservationState::Active => "ACTIVE",
@@ -4565,6 +4920,7 @@ impl ReservationState {
             ReservationState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "CANCELED", "EXPIRED", "PROCESSING"]
     }
@@ -4575,6 +4931,7 @@ impl AsRef<str> for ReservationState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4586,6 +4943,7 @@ impl AsRef<str> for ReservationState {
     std::hash::Hash,
 )]
 pub enum PriceUnits {
+    #[allow(missing_docs)] // documentation missing in model
     Hourly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4606,12 +4964,14 @@ impl std::str::FromStr for PriceUnits {
     }
 }
 impl PriceUnits {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PriceUnits::Hourly => "HOURLY",
             PriceUnits::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HOURLY"]
     }
@@ -4622,6 +4982,7 @@ impl AsRef<str> for PriceUnits {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4633,6 +4994,7 @@ impl AsRef<str> for PriceUnits {
     std::hash::Hash,
 )]
 pub enum DurationUnits {
+    #[allow(missing_docs)] // documentation missing in model
     Months,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4653,12 +5015,14 @@ impl std::str::FromStr for DurationUnits {
     }
 }
 impl DurationUnits {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DurationUnits::Months => "MONTHS",
             DurationUnits::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MONTHS"]
     }
@@ -4725,6 +5089,7 @@ pub mod offering {
             self.currency_code = Some(input.into());
             self
         }
+        /// The type of currency that is used for billing. The currencyCode used for all reservations is US dollars.
         pub fn set_currency_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4737,6 +5102,7 @@ pub mod offering {
             self.duration = Some(input);
             self
         }
+        /// The length of time that your reservation would be active.
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.duration = input;
             self
@@ -4746,6 +5112,7 @@ pub mod offering {
             self.duration_units = Some(input);
             self
         }
+        /// The unit of measurement for the duration of the offering.
         pub fn set_duration_units(
             mut self,
             input: std::option::Option<crate::model::DurationUnits>,
@@ -4758,6 +5125,7 @@ pub mod offering {
             self.offering_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) that MediaConnect assigns to the offering.
         pub fn set_offering_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.offering_arn = input;
             self
@@ -4767,6 +5135,7 @@ pub mod offering {
             self.offering_description = Some(input.into());
             self
         }
+        /// A description of the offering.
         pub fn set_offering_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4779,6 +5148,7 @@ pub mod offering {
             self.price_per_unit = Some(input.into());
             self
         }
+        /// The cost of a single unit. This value, in combination with priceUnits, makes up the rate.
         pub fn set_price_per_unit(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4791,6 +5161,7 @@ pub mod offering {
             self.price_units = Some(input);
             self
         }
+        /// The unit of measurement that is used for billing. This value, in combination with pricePerUnit, makes up the rate.
         pub fn set_price_units(
             mut self,
             input: std::option::Option<crate::model::PriceUnits>,
@@ -4806,6 +5177,7 @@ pub mod offering {
             self.resource_specification = Some(input);
             self
         }
+        /// A definition of the amount of outbound bandwidth that you would be reserving if you purchase the offering.
         pub fn set_resource_specification(
             mut self,
             input: std::option::Option<crate::model::ResourceSpecification>,
@@ -4883,6 +5255,7 @@ pub mod listed_flow {
             self.availability_zone = Some(input.into());
             self
         }
+        /// The Availability Zone that the flow was created in.
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4895,6 +5268,7 @@ pub mod listed_flow {
             self.description = Some(input.into());
             self
         }
+        /// A description of the flow.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -4904,6 +5278,7 @@ pub mod listed_flow {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The ARN of the flow.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
@@ -4913,6 +5288,7 @@ pub mod listed_flow {
             self.name = Some(input.into());
             self
         }
+        /// The name of the flow.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4922,6 +5298,7 @@ pub mod listed_flow {
             self.source_type = Some(input);
             self
         }
+        /// The type of source. This value is either owned (originated somewhere other than an AWS Elemental MediaConnect flow owned by another AWS account) or entitled (originated at an AWS Elemental MediaConnect flow owned by another AWS account).
         pub fn set_source_type(
             mut self,
             input: std::option::Option<crate::model::SourceType>,
@@ -4934,6 +5311,7 @@ pub mod listed_flow {
             self.status = Some(input);
             self
         }
+        /// The current status of the flow.
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
             self.status = input;
             self
@@ -4958,6 +5336,7 @@ impl ListedFlow {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4969,7 +5348,9 @@ impl ListedFlow {
     std::hash::Hash,
 )]
 pub enum SourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Entitled,
+    #[allow(missing_docs)] // documentation missing in model
     Owned,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4991,6 +5372,7 @@ impl std::str::FromStr for SourceType {
     }
 }
 impl SourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SourceType::Entitled => "ENTITLED",
@@ -4998,6 +5380,7 @@ impl SourceType {
             SourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ENTITLED", "OWNED"]
     }
@@ -5047,6 +5430,7 @@ pub mod listed_entitlement {
             self.data_transfer_subscriber_fee_percent = Some(input);
             self
         }
+        /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
         pub fn set_data_transfer_subscriber_fee_percent(
             mut self,
             input: std::option::Option<i32>,
@@ -5059,6 +5443,7 @@ pub mod listed_entitlement {
             self.entitlement_arn = Some(input.into());
             self
         }
+        /// The ARN of the entitlement.
         pub fn set_entitlement_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5071,6 +5456,7 @@ pub mod listed_entitlement {
             self.entitlement_name = Some(input.into());
             self
         }
+        /// The name of the entitlement.
         pub fn set_entitlement_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5148,6 +5534,7 @@ pub mod grant_entitlement_request {
             self.data_transfer_subscriber_fee_percent = Some(input);
             self
         }
+        /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
         pub fn set_data_transfer_subscriber_fee_percent(
             mut self,
             input: std::option::Option<i32>,
@@ -5160,6 +5547,7 @@ pub mod grant_entitlement_request {
             self.description = Some(input.into());
             self
         }
+        /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5169,6 +5557,7 @@ pub mod grant_entitlement_request {
             self.encryption = Some(input);
             self
         }
+        /// The type of encryption that will be used on the output that is associated with this entitlement.
         pub fn set_encryption(
             mut self,
             input: std::option::Option<crate::model::Encryption>,
@@ -5181,6 +5570,7 @@ pub mod grant_entitlement_request {
             self.entitlement_status = Some(input);
             self
         }
+        /// An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If you don’t specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED.
         pub fn set_entitlement_status(
             mut self,
             input: std::option::Option<crate::model::EntitlementStatus>,
@@ -5193,16 +5583,23 @@ pub mod grant_entitlement_request {
             self.name = Some(input.into());
             self
         }
+        /// The name of the entitlement. This value must be unique within the current flow.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `subscribers`.
+        ///
+        /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
+        ///
+        /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flows using your content as the source.
         pub fn subscribers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
             v.push(input.into());
             self.subscribers = Some(v);
             self
         }
+        /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flows using your content as the source.
         pub fn set_subscribers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5255,12 +5652,18 @@ pub mod messages {
         pub(crate) errors: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `errors`.
+        ///
+        /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+        ///
+        /// A list of errors that might have been generated from processes on this flow.
         pub fn errors(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.errors.unwrap_or_default();
             v.push(input.into());
             self.errors = Some(v);
             self
         }
+        /// A list of errors that might have been generated from processes on this flow.
         pub fn set_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5327,6 +5730,7 @@ pub mod vpc_interface_request {
             self.name = Some(input.into());
             self
         }
+        /// The name of the VPC Interface. This value must be unique within the current flow.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5336,6 +5740,7 @@ pub mod vpc_interface_request {
             self.network_interface_type = Some(input);
             self
         }
+        /// The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the networkInterfaceType.
         pub fn set_network_interface_type(
             mut self,
             input: std::option::Option<crate::model::NetworkInterfaceType>,
@@ -5348,16 +5753,23 @@ pub mod vpc_interface_request {
             self.role_arn = Some(input.into());
             self
         }
+        /// Role Arn MediaConnect can assumes to create ENIs in customer's account
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// Security Group IDs to be used on ENI.
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// Security Group IDs to be used on ENI.
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5370,6 +5782,7 @@ pub mod vpc_interface_request {
             self.subnet_id = Some(input.into());
             self
         }
+        /// Subnet must be in the AZ of the Flow
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_id = input;
             self
@@ -5478,6 +5891,7 @@ pub mod set_source_request {
             self.decryption = Some(input);
             self
         }
+        /// The type of encryption that is used on the content ingested from this source.
         pub fn set_decryption(
             mut self,
             input: std::option::Option<crate::model::Encryption>,
@@ -5490,6 +5904,7 @@ pub mod set_source_request {
             self.description = Some(input.into());
             self
         }
+        /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5499,6 +5914,7 @@ pub mod set_source_request {
             self.entitlement_arn = Some(input.into());
             self
         }
+        /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
         pub fn set_entitlement_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5511,6 +5927,7 @@ pub mod set_source_request {
             self.ingest_port = Some(input);
             self
         }
+        /// The port that the flow will be listening on for incoming content.
         pub fn set_ingest_port(mut self, input: std::option::Option<i32>) -> Self {
             self.ingest_port = input;
             self
@@ -5520,6 +5937,7 @@ pub mod set_source_request {
             self.max_bitrate = Some(input);
             self
         }
+        /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
         pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
             self.max_bitrate = input;
             self
@@ -5529,6 +5947,7 @@ pub mod set_source_request {
             self.max_latency = Some(input);
             self
         }
+        /// The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
         pub fn set_max_latency(mut self, input: std::option::Option<i32>) -> Self {
             self.max_latency = input;
             self
@@ -5538,10 +5957,16 @@ pub mod set_source_request {
             self.max_sync_buffer = Some(input);
             self
         }
+        /// The size of the buffer (in milliseconds) to use to sync incoming source data.
         pub fn set_max_sync_buffer(mut self, input: std::option::Option<i32>) -> Self {
             self.max_sync_buffer = input;
             self
         }
+        /// Appends an item to `media_stream_source_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_media_stream_source_configurations`](Self::set_media_stream_source_configurations).
+        ///
+        /// The media streams that are associated with the source, and the parameters for those associations.
         pub fn media_stream_source_configurations(
             mut self,
             input: impl Into<crate::model::MediaStreamSourceConfigurationRequest>,
@@ -5551,6 +5976,7 @@ pub mod set_source_request {
             self.media_stream_source_configurations = Some(v);
             self
         }
+        /// The media streams that are associated with the source, and the parameters for those associations.
         pub fn set_media_stream_source_configurations(
             mut self,
             input: std::option::Option<
@@ -5565,6 +5991,7 @@ pub mod set_source_request {
             self.min_latency = Some(input);
             self
         }
+        /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
         pub fn set_min_latency(mut self, input: std::option::Option<i32>) -> Self {
             self.min_latency = input;
             self
@@ -5574,6 +6001,7 @@ pub mod set_source_request {
             self.name = Some(input.into());
             self
         }
+        /// The name of the source.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5583,6 +6011,7 @@ pub mod set_source_request {
             self.protocol = Some(input);
             self
         }
+        /// The protocol that is used by the source.
         pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
             self.protocol = input;
             self
@@ -5592,6 +6021,7 @@ pub mod set_source_request {
             self.stream_id = Some(input.into());
             self
         }
+        /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_id = input;
             self
@@ -5601,6 +6031,7 @@ pub mod set_source_request {
             self.vpc_interface_name = Some(input.into());
             self
         }
+        /// The name of the VPC interface to use for this source.
         pub fn set_vpc_interface_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5613,6 +6044,7 @@ pub mod set_source_request {
             self.whitelist_cidr = Some(input.into());
             self
         }
+        /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
         pub fn set_whitelist_cidr(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5729,12 +6161,18 @@ pub mod add_output_request {
             std::option::Option<crate::model::VpcInterfaceAttachment>,
     }
     impl Builder {
+        /// Appends an item to `cidr_allow_list`.
+        ///
+        /// To override the contents of this collection use [`set_cidr_allow_list`](Self::set_cidr_allow_list).
+        ///
+        /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
         pub fn cidr_allow_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cidr_allow_list.unwrap_or_default();
             v.push(input.into());
             self.cidr_allow_list = Some(v);
             self
         }
+        /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
         pub fn set_cidr_allow_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5747,6 +6185,7 @@ pub mod add_output_request {
             self.description = Some(input.into());
             self
         }
+        /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5756,6 +6195,7 @@ pub mod add_output_request {
             self.destination = Some(input.into());
             self
         }
+        /// The IP address from which video will be sent to output destinations.
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.destination = input;
             self
@@ -5765,6 +6205,7 @@ pub mod add_output_request {
             self.encryption = Some(input);
             self
         }
+        /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
         pub fn set_encryption(
             mut self,
             input: std::option::Option<crate::model::Encryption>,
@@ -5777,10 +6218,16 @@ pub mod add_output_request {
             self.max_latency = Some(input);
             self
         }
+        /// The maximum latency in milliseconds for Zixi-based streams.
         pub fn set_max_latency(mut self, input: std::option::Option<i32>) -> Self {
             self.max_latency = input;
             self
         }
+        /// Appends an item to `media_stream_output_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_media_stream_output_configurations`](Self::set_media_stream_output_configurations).
+        ///
+        /// The media streams that are associated with the output, and the parameters for those associations.
         pub fn media_stream_output_configurations(
             mut self,
             input: impl Into<crate::model::MediaStreamOutputConfigurationRequest>,
@@ -5790,6 +6237,7 @@ pub mod add_output_request {
             self.media_stream_output_configurations = Some(v);
             self
         }
+        /// The media streams that are associated with the output, and the parameters for those associations.
         pub fn set_media_stream_output_configurations(
             mut self,
             input: std::option::Option<
@@ -5804,6 +6252,7 @@ pub mod add_output_request {
             self.min_latency = Some(input);
             self
         }
+        /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
         pub fn set_min_latency(mut self, input: std::option::Option<i32>) -> Self {
             self.min_latency = input;
             self
@@ -5813,6 +6262,7 @@ pub mod add_output_request {
             self.name = Some(input.into());
             self
         }
+        /// The name of the output. This value must be unique within the current flow.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5822,6 +6272,7 @@ pub mod add_output_request {
             self.port = Some(input);
             self
         }
+        /// The port to use when content is distributed to this output.
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -5831,6 +6282,7 @@ pub mod add_output_request {
             self.protocol = Some(input);
             self
         }
+        /// The protocol to use for the output.
         pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
             self.protocol = input;
             self
@@ -5840,6 +6292,7 @@ pub mod add_output_request {
             self.remote_id = Some(input.into());
             self
         }
+        /// The remote ID for the Zixi-pull output stream.
         pub fn set_remote_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.remote_id = input;
             self
@@ -5849,6 +6302,7 @@ pub mod add_output_request {
             self.smoothing_latency = Some(input);
             self
         }
+        /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
         pub fn set_smoothing_latency(mut self, input: std::option::Option<i32>) -> Self {
             self.smoothing_latency = input;
             self
@@ -5858,6 +6312,7 @@ pub mod add_output_request {
             self.stream_id = Some(input.into());
             self
         }
+        /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_id = input;
             self
@@ -5870,6 +6325,7 @@ pub mod add_output_request {
             self.vpc_interface_attachment = Some(input);
             self
         }
+        /// The name of the VPC interface attachment to use for this output.
         pub fn set_vpc_interface_attachment(
             mut self,
             input: std::option::Option<crate::model::VpcInterfaceAttachment>,
@@ -5957,6 +6413,7 @@ pub mod add_media_stream_request {
             self.attributes = Some(input);
             self
         }
+        /// The attributes that you want to assign to the new media stream.
         pub fn set_attributes(
             mut self,
             input: std::option::Option<crate::model::MediaStreamAttributesRequest>,
@@ -5969,6 +6426,7 @@ pub mod add_media_stream_request {
             self.clock_rate = Some(input);
             self
         }
+        /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
         pub fn set_clock_rate(mut self, input: std::option::Option<i32>) -> Self {
             self.clock_rate = input;
             self
@@ -5978,6 +6436,7 @@ pub mod add_media_stream_request {
             self.description = Some(input.into());
             self
         }
+        /// A description that can help you quickly identify what your media stream is used for.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5987,6 +6446,7 @@ pub mod add_media_stream_request {
             self.media_stream_id = Some(input);
             self
         }
+        /// A unique identifier for the media stream.
         pub fn set_media_stream_id(mut self, input: std::option::Option<i32>) -> Self {
             self.media_stream_id = input;
             self
@@ -5996,6 +6456,7 @@ pub mod add_media_stream_request {
             self.media_stream_name = Some(input.into());
             self
         }
+        /// A name that helps you distinguish one media stream from another.
         pub fn set_media_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6008,6 +6469,7 @@ pub mod add_media_stream_request {
             self.media_stream_type = Some(input);
             self
         }
+        /// The type of media stream.
         pub fn set_media_stream_type(
             mut self,
             input: std::option::Option<crate::model::MediaStreamType>,
@@ -6020,6 +6482,7 @@ pub mod add_media_stream_request {
             self.video_format = Some(input.into());
             self
         }
+        /// The resolution of the video.
         pub fn set_video_format(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.video_format = input;
             self

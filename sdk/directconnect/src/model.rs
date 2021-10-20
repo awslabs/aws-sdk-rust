@@ -31,6 +31,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -40,6 +41,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -162,6 +164,7 @@ pub mod bgp_peer {
             self.bgp_peer_id = Some(input.into());
             self
         }
+        /// <p>The ID of the BGP peer.</p>
         pub fn set_bgp_peer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bgp_peer_id = input;
             self
@@ -171,6 +174,7 @@ pub mod bgp_peer {
             self.asn = Some(input);
             self
         }
+        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
         pub fn set_asn(mut self, input: std::option::Option<i32>) -> Self {
             self.asn = input;
             self
@@ -180,6 +184,7 @@ pub mod bgp_peer {
             self.auth_key = Some(input.into());
             self
         }
+        /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
         pub fn set_auth_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_key = input;
             self
@@ -189,6 +194,7 @@ pub mod bgp_peer {
             self.address_family = Some(input);
             self
         }
+        /// <p>The address family for the BGP peer.</p>
         pub fn set_address_family(
             mut self,
             input: std::option::Option<crate::model::AddressFamily>,
@@ -201,6 +207,7 @@ pub mod bgp_peer {
             self.amazon_address = Some(input.into());
             self
         }
+        /// <p>The IP address assigned to the Amazon interface.</p>
         pub fn set_amazon_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -213,6 +220,7 @@ pub mod bgp_peer {
             self.customer_address = Some(input.into());
             self
         }
+        /// <p>The IP address assigned to the customer interface.</p>
         pub fn set_customer_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -247,6 +255,29 @@ pub mod bgp_peer {
             self.bgp_peer_state = Some(input);
             self
         }
+        /// <p>The state of the BGP peer. The following are the possible values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>verifying</code>: The BGP peering addresses or ASN require validation before the BGP peer can be created. This state applies only to public virtual interfaces.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>pending</code>: The BGP peer is created, and remains in this state until it is ready to be established.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>available</code>: The BGP peer is ready to be established.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deleting</code>:  The BGP peer is being deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deleted</code>:  The BGP peer is deleted and cannot be established.</p>
+        /// </li>
+        /// </ul>
         pub fn set_bgp_peer_state(
             mut self,
             input: std::option::Option<crate::model::BgpPeerState>,
@@ -274,6 +305,22 @@ pub mod bgp_peer {
             self.bgp_status = Some(input);
             self
         }
+        /// <p>The status of the BGP peer. The following are the possible values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>up</code>: The BGP peer is established. This state does not indicate the
+        /// state of the routing function. Ensure that you are receiving routes over the BGP session.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>down</code>: The BGP peer is down.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>unknown</code>: The BGP peer status is not available.</p>
+        /// </li>
+        /// </ul>
         pub fn set_bgp_status(
             mut self,
             input: std::option::Option<crate::model::BgpStatus>,
@@ -286,6 +333,7 @@ pub mod bgp_peer {
             self.aws_device_v2 = Some(input.into());
             self
         }
+        /// <p>The Direct Connect endpoint that terminates the BGP peer.</p>
         pub fn set_aws_device_v2(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -299,6 +347,8 @@ pub mod bgp_peer {
             self.aws_logical_device_id = Some(input.into());
             self
         }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -330,7 +380,7 @@ impl BgpPeer {
     }
 }
 
-/// **NOTE:** `BgpStatus::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `BgpStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -342,9 +392,11 @@ impl BgpPeer {
     std::hash::Hash,
 )]
 pub enum BgpStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Down,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
+    #[allow(missing_docs)] // documentation missing in model
     Up,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -367,6 +419,7 @@ impl std::str::FromStr for BgpStatus {
     }
 }
 impl BgpStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BgpStatus::Down => "down",
@@ -375,6 +428,7 @@ impl BgpStatus {
             BgpStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["down", "unknown", "up"]
     }
@@ -385,6 +439,7 @@ impl AsRef<str> for BgpStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -396,10 +451,15 @@ impl AsRef<str> for BgpStatus {
     std::hash::Hash,
 )]
 pub enum BgpPeerState {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Verifying,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -424,6 +484,7 @@ impl std::str::FromStr for BgpPeerState {
     }
 }
 impl BgpPeerState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BgpPeerState::Available => "available",
@@ -434,6 +495,7 @@ impl BgpPeerState {
             BgpPeerState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["available", "deleted", "deleting", "pending", "verifying"]
     }
@@ -444,6 +506,7 @@ impl AsRef<str> for BgpPeerState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -455,7 +518,9 @@ impl AsRef<str> for BgpPeerState {
     std::hash::Hash,
 )]
 pub enum AddressFamily {
+    #[allow(missing_docs)] // documentation missing in model
     IPv4,
+    #[allow(missing_docs)] // documentation missing in model
     IPv6,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -477,6 +542,7 @@ impl std::str::FromStr for AddressFamily {
     }
 }
 impl AddressFamily {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AddressFamily::IPv4 => "ipv4",
@@ -484,6 +550,7 @@ impl AddressFamily {
             AddressFamily::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ipv4", "ipv6"]
     }
@@ -523,6 +590,7 @@ pub mod route_filter_prefix {
             self.cidr = Some(input.into());
             self
         }
+        /// <p>The CIDR block for the advertised route. Separate multiple routes using commas. An IPv6 CIDR must use /64 or shorter.</p>
         pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cidr = input;
             self
@@ -540,7 +608,7 @@ impl RouteFilterPrefix {
     }
 }
 
-/// **NOTE:** `VirtualInterfaceState::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `VirtualInterfaceState::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -552,15 +620,23 @@ impl RouteFilterPrefix {
     std::hash::Hash,
 )]
 pub enum VirtualInterfaceState {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Confirming,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Down,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Rejected,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
+    #[allow(missing_docs)] // documentation missing in model
     Verifying,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -589,6 +665,7 @@ impl std::str::FromStr for VirtualInterfaceState {
     }
 }
 impl VirtualInterfaceState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             VirtualInterfaceState::Available => "available",
@@ -603,6 +680,7 @@ impl VirtualInterfaceState {
             VirtualInterfaceState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "available",
@@ -682,6 +760,7 @@ pub mod mac_sec_key {
             self.secret_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -691,6 +770,7 @@ pub mod mac_sec_key {
             self.ckn = Some(input.into());
             self
         }
+        /// <p>The Connection Key Name (CKN) for the MAC Security secret key.</p>
         pub fn set_ckn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ckn = input;
             self
@@ -719,6 +799,26 @@ pub mod mac_sec_key {
             self.state = Some(input.into());
             self
         }
+        /// <p>The state of the MAC Security (MACsec) secret key.</p>
+        /// <p>The possible values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p>
+        /// </li>
+        /// </ul>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -728,6 +828,7 @@ pub mod mac_sec_key {
             self.start_on = Some(input.into());
             self
         }
+        /// <p>The date that the MAC Security (MACsec) secret key takes effect. The value is displayed in UTC format.</p>
         pub fn set_start_on(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_on = input;
             self
@@ -750,7 +851,7 @@ impl MacSecKey {
     }
 }
 
-/// **NOTE:** `HasLogicalRedundancy::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `HasLogicalRedundancy::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -762,9 +863,11 @@ impl MacSecKey {
     std::hash::Hash,
 )]
 pub enum HasLogicalRedundancy {
+    #[allow(missing_docs)] // documentation missing in model
     No,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
+    #[allow(missing_docs)] // documentation missing in model
     Yes,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -787,6 +890,7 @@ impl std::str::FromStr for HasLogicalRedundancy {
     }
 }
 impl HasLogicalRedundancy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HasLogicalRedundancy::No => "no",
@@ -795,6 +899,7 @@ impl HasLogicalRedundancy {
             HasLogicalRedundancy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["no", "unknown", "yes"]
     }
@@ -866,7 +971,7 @@ pub struct Connection {
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub loa_issue_time: std::option::Option<smithy_types::Instant>,
+    pub loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
@@ -938,7 +1043,7 @@ pub mod connection {
         pub(crate) bandwidth: std::option::Option<std::string::String>,
         pub(crate) vlan: std::option::Option<i32>,
         pub(crate) partner_name: std::option::Option<std::string::String>,
-        pub(crate) loa_issue_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) lag_id: std::option::Option<std::string::String>,
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
@@ -958,6 +1063,7 @@ pub mod connection {
             self.owner_account = Some(input.into());
             self
         }
+        /// <p>The ID of the account that owns the connection.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -970,6 +1076,7 @@ pub mod connection {
             self.connection_id = Some(input.into());
             self
         }
+        /// <p>The ID of the connection.</p>
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -982,6 +1089,7 @@ pub mod connection {
             self.connection_name = Some(input.into());
             self
         }
+        /// <p>The name of the connection.</p>
         pub fn set_connection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1032,6 +1140,45 @@ pub mod connection {
             self.connection_state = Some(input);
             self
         }
+        /// <p>The state of the connection. The following are the possible values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>pending</code>: The connection has been approved and is being initialized.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>available</code>: The network link is up and the connection is ready for use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>down</code>: The network link is down.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deleting</code>: The connection is being deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deleted</code>: The connection has been deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>unknown</code>: The state of the connection is not available.</p>
+        /// </li>
+        /// </ul>
         pub fn set_connection_state(
             mut self,
             input: std::option::Option<crate::model::ConnectionState>,
@@ -1044,6 +1191,7 @@ pub mod connection {
             self.region = Some(input.into());
             self
         }
+        /// <p>The Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -1053,6 +1201,7 @@ pub mod connection {
             self.location = Some(input.into());
             self
         }
+        /// <p>The location of the connection.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -1062,6 +1211,7 @@ pub mod connection {
             self.bandwidth = Some(input.into());
             self
         }
+        /// <p>The bandwidth of the connection.</p>
         pub fn set_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bandwidth = input;
             self
@@ -1071,6 +1221,7 @@ pub mod connection {
             self.vlan = Some(input);
             self
         }
+        /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
             self.vlan = input;
             self
@@ -1080,18 +1231,20 @@ pub mod connection {
             self.partner_name = Some(input.into());
             self
         }
+        /// <p>The name of the Direct Connect service provider associated with the connection.</p>
         pub fn set_partner_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.partner_name = input;
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-        pub fn loa_issue_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn loa_issue_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
+        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.loa_issue_time = input;
             self
@@ -1101,6 +1254,7 @@ pub mod connection {
             self.lag_id = Some(input.into());
             self
         }
+        /// <p>The ID of the LAG.</p>
         pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lag_id = input;
             self
@@ -1110,6 +1264,7 @@ pub mod connection {
             self.aws_device = Some(input.into());
             self
         }
+        /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
         pub fn set_aws_device(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.aws_device = input;
             self
@@ -1119,6 +1274,7 @@ pub mod connection {
             self.jumbo_frame_capable = Some(input);
             self
         }
+        /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
             self.jumbo_frame_capable = input;
             self
@@ -1128,6 +1284,7 @@ pub mod connection {
             self.aws_device_v2 = Some(input.into());
             self
         }
+        /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn set_aws_device_v2(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1141,6 +1298,8 @@ pub mod connection {
             self.aws_logical_device_id = Some(input.into());
             self
         }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1153,6 +1312,7 @@ pub mod connection {
             self.has_logical_redundancy = Some(input);
             self
         }
+        /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
         pub fn set_has_logical_redundancy(
             mut self,
             input: std::option::Option<crate::model::HasLogicalRedundancy>,
@@ -1160,12 +1320,18 @@ pub mod connection {
             self.has_logical_redundancy = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the connection.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags associated with the connection.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1178,6 +1344,7 @@ pub mod connection {
             self.provider_name = Some(input.into());
             self
         }
+        /// <p>The name of the service provider associated with the connection.</p>
         pub fn set_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1190,6 +1357,7 @@ pub mod connection {
             self.mac_sec_capable = Some(input);
             self
         }
+        /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
         pub fn set_mac_sec_capable(mut self, input: std::option::Option<bool>) -> Self {
             self.mac_sec_capable = input;
             self
@@ -1200,6 +1368,8 @@ pub mod connection {
             self.port_encryption_status = Some(input.into());
             self
         }
+        /// <p>The MAC Security (MACsec) port link status of the connection.</p>
+        /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
         pub fn set_port_encryption_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1213,6 +1383,8 @@ pub mod connection {
             self.encryption_mode = Some(input.into());
             self
         }
+        /// <p>The MAC Security (MACsec) connection encryption mode.</p>
+        /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
         pub fn set_encryption_mode(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1220,12 +1392,18 @@ pub mod connection {
             self.encryption_mode = input;
             self
         }
+        /// Appends an item to `mac_sec_keys`.
+        ///
+        /// To override the contents of this collection use [`set_mac_sec_keys`](Self::set_mac_sec_keys).
+        ///
+        /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
         pub fn mac_sec_keys(mut self, input: impl Into<crate::model::MacSecKey>) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
             v.push(input.into());
             self.mac_sec_keys = Some(v);
             self
         }
+        /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
         pub fn set_mac_sec_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
@@ -1269,7 +1447,7 @@ impl Connection {
     }
 }
 
-/// **NOTE:** `ConnectionState::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `ConnectionState::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1281,15 +1459,23 @@ impl Connection {
     std::hash::Hash,
 )]
 pub enum ConnectionState {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Down,
+    #[allow(missing_docs)] // documentation missing in model
     Ordering,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Rejected,
+    #[allow(missing_docs)] // documentation missing in model
     Requested,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1318,6 +1504,7 @@ impl std::str::FromStr for ConnectionState {
     }
 }
 impl ConnectionState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConnectionState::Available => "available",
@@ -1332,6 +1519,7 @@ impl ConnectionState {
             ConnectionState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "available",
@@ -1352,7 +1540,7 @@ impl AsRef<str> for ConnectionState {
     }
 }
 
-/// **NOTE:** `LagState::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `LagState::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1364,13 +1552,19 @@ impl AsRef<str> for ConnectionState {
     std::hash::Hash,
 )]
 pub enum LagState {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Down,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Requested,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1397,6 +1591,7 @@ impl std::str::FromStr for LagState {
     }
 }
 impl LagState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LagState::Available => "available",
@@ -1409,6 +1604,7 @@ impl LagState {
             LagState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "available",
@@ -1521,6 +1717,7 @@ pub mod direct_connect_gateway_association {
             self.direct_connect_gateway_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Direct Connect gateway.</p>
         pub fn set_direct_connect_gateway_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1536,6 +1733,7 @@ pub mod direct_connect_gateway_association {
             self.direct_connect_gateway_owner_account = Some(input.into());
             self
         }
+        /// <p>The ID of the account that owns the associated gateway.</p>
         pub fn set_direct_connect_gateway_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1569,6 +1767,25 @@ pub mod direct_connect_gateway_association {
             self.association_state = Some(input);
             self
         }
+        /// <p>The state of the association. The following are the possible values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>associating</code>: The initial state after calling <a>CreateDirectConnectGatewayAssociation</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are successfully associated and ready to pass traffic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>disassociating</code>: The initial state after calling <a>DeleteDirectConnectGatewayAssociation</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway is stopped.</p>
+        /// </li>
+        /// </ul>
         pub fn set_association_state(
             mut self,
             input: std::option::Option<crate::model::DirectConnectGatewayAssociationState>,
@@ -1581,6 +1798,7 @@ pub mod direct_connect_gateway_association {
             self.state_change_error = Some(input.into());
             self
         }
+        /// <p>The error message if the state of an object failed to advance.</p>
         pub fn set_state_change_error(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1593,6 +1811,7 @@ pub mod direct_connect_gateway_association {
             self.associated_gateway = Some(input);
             self
         }
+        /// <p>Information about the associated gateway.</p>
         pub fn set_associated_gateway(
             mut self,
             input: std::option::Option<crate::model::AssociatedGateway>,
@@ -1605,6 +1824,7 @@ pub mod direct_connect_gateway_association {
             self.association_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Direct Connect gateway association.</p>
         pub fn set_association_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1612,6 +1832,11 @@ pub mod direct_connect_gateway_association {
             self.association_id = input;
             self
         }
+        /// Appends an item to `allowed_prefixes_to_direct_connect_gateway`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_prefixes_to_direct_connect_gateway`](Self::set_allowed_prefixes_to_direct_connect_gateway).
+        ///
+        /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
         pub fn allowed_prefixes_to_direct_connect_gateway(
             mut self,
             input: impl Into<crate::model::RouteFilterPrefix>,
@@ -1623,6 +1848,7 @@ pub mod direct_connect_gateway_association {
             self.allowed_prefixes_to_direct_connect_gateway = Some(v);
             self
         }
+        /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
         pub fn set_allowed_prefixes_to_direct_connect_gateway(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
@@ -1635,6 +1861,7 @@ pub mod direct_connect_gateway_association {
             self.virtual_gateway_id = Some(input.into());
             self
         }
+        /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
         pub fn set_virtual_gateway_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1647,6 +1874,7 @@ pub mod direct_connect_gateway_association {
             self.virtual_gateway_region = Some(input.into());
             self
         }
+        /// <p>The Region where the virtual private gateway is located.</p>
         pub fn set_virtual_gateway_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1662,6 +1890,7 @@ pub mod direct_connect_gateway_association {
             self.virtual_gateway_owner_account = Some(input.into());
             self
         }
+        /// <p>The ID of the account that owns the virtual private gateway.</p>
         pub fn set_virtual_gateway_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1734,6 +1963,7 @@ pub mod associated_gateway {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the associated gateway.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1743,6 +1973,7 @@ pub mod associated_gateway {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of associated gateway.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::GatewayType>) -> Self {
             self.r#type = input;
             self
@@ -1752,6 +1983,7 @@ pub mod associated_gateway {
             self.owner_account = Some(input.into());
             self
         }
+        /// <p>The ID of the account that owns the associated virtual private gateway or transit gateway.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1764,6 +1996,7 @@ pub mod associated_gateway {
             self.region = Some(input.into());
             self
         }
+        /// <p>The Region where the associated gateway is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -1786,6 +2019,7 @@ impl AssociatedGateway {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1797,7 +2031,9 @@ impl AssociatedGateway {
     std::hash::Hash,
 )]
 pub enum GatewayType {
+    #[allow(missing_docs)] // documentation missing in model
     TransitGateway,
+    #[allow(missing_docs)] // documentation missing in model
     VirtualPrivateGateway,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1819,6 +2055,7 @@ impl std::str::FromStr for GatewayType {
     }
 }
 impl GatewayType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GatewayType::TransitGateway => "transitGateway",
@@ -1826,6 +2063,7 @@ impl GatewayType {
             GatewayType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["transitGateway", "virtualPrivateGateway"]
     }
@@ -1836,6 +2074,7 @@ impl AsRef<str> for GatewayType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1847,10 +2086,15 @@ impl AsRef<str> for GatewayType {
     std::hash::Hash,
 )]
 pub enum DirectConnectGatewayAssociationState {
+    #[allow(missing_docs)] // documentation missing in model
     Associated,
+    #[allow(missing_docs)] // documentation missing in model
     Associating,
+    #[allow(missing_docs)] // documentation missing in model
     Disassociated,
+    #[allow(missing_docs)] // documentation missing in model
     Disassociating,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1875,6 +2119,7 @@ impl std::str::FromStr for DirectConnectGatewayAssociationState {
     }
 }
 impl DirectConnectGatewayAssociationState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DirectConnectGatewayAssociationState::Associated => "associated",
@@ -1885,6 +2130,7 @@ impl DirectConnectGatewayAssociationState {
             DirectConnectGatewayAssociationState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "associated",
@@ -1918,9 +2164,9 @@ pub struct VirtualInterfaceTestHistory {
     /// <p>The time that the virtual interface failover test ran in minutes.</p>
     pub test_duration_in_minutes: std::option::Option<i32>,
     /// <p>The time that the virtual interface moves to the DOWN state.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the virtual interface moves out of the DOWN state.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for VirtualInterfaceTestHistory {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1948,8 +2194,8 @@ pub mod virtual_interface_test_history {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) owner_account: std::option::Option<std::string::String>,
         pub(crate) test_duration_in_minutes: std::option::Option<i32>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ID of the virtual interface failover test.</p>
@@ -1957,6 +2203,7 @@ pub mod virtual_interface_test_history {
             self.test_id = Some(input.into());
             self
         }
+        /// <p>The ID of the virtual interface failover test.</p>
         pub fn set_test_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.test_id = input;
             self
@@ -1966,6 +2213,7 @@ pub mod virtual_interface_test_history {
             self.virtual_interface_id = Some(input.into());
             self
         }
+        /// <p>The ID of the tested virtual interface.</p>
         pub fn set_virtual_interface_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1973,12 +2221,18 @@ pub mod virtual_interface_test_history {
             self.virtual_interface_id = input;
             self
         }
+        /// Appends an item to `bgp_peers`.
+        ///
+        /// To override the contents of this collection use [`set_bgp_peers`](Self::set_bgp_peers).
+        ///
+        /// <p>The BGP peers that were put in the DOWN state as part of the virtual interface failover test.</p>
         pub fn bgp_peers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.bgp_peers.unwrap_or_default();
             v.push(input.into());
             self.bgp_peers = Some(v);
             self
         }
+        /// <p>The BGP peers that were put in the DOWN state as part of the virtual interface failover test.</p>
         pub fn set_bgp_peers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1991,6 +2245,7 @@ pub mod virtual_interface_test_history {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the virtual interface failover test.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -2000,6 +2255,7 @@ pub mod virtual_interface_test_history {
             self.owner_account = Some(input.into());
             self
         }
+        /// <p>The owner ID of the tested virtual interface.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2012,25 +2268,34 @@ pub mod virtual_interface_test_history {
             self.test_duration_in_minutes = Some(input);
             self
         }
+        /// <p>The time that the virtual interface failover test ran in minutes.</p>
         pub fn set_test_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.test_duration_in_minutes = input;
             self
         }
         /// <p>The time that the virtual interface moves to the DOWN state.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the virtual interface moves to the DOWN state.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time that the virtual interface moves out of the DOWN state.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the virtual interface moves out of the DOWN state.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -2222,6 +2487,7 @@ pub mod virtual_interface {
             self.owner_account = Some(input.into());
             self
         }
+        /// <p>The ID of the account that owns the virtual interface.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2234,6 +2500,7 @@ pub mod virtual_interface {
             self.virtual_interface_id = Some(input.into());
             self
         }
+        /// <p>The ID of the virtual interface.</p>
         pub fn set_virtual_interface_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2246,6 +2513,7 @@ pub mod virtual_interface {
             self.location = Some(input.into());
             self
         }
+        /// <p>The location of the connection.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -2255,6 +2523,7 @@ pub mod virtual_interface {
             self.connection_id = Some(input.into());
             self
         }
+        /// <p>The ID of the connection.</p>
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2267,6 +2536,7 @@ pub mod virtual_interface {
             self.virtual_interface_type = Some(input.into());
             self
         }
+        /// <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
         pub fn set_virtual_interface_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2279,6 +2549,7 @@ pub mod virtual_interface {
             self.virtual_interface_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
         pub fn set_virtual_interface_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2291,6 +2562,7 @@ pub mod virtual_interface {
             self.vlan = Some(input);
             self
         }
+        /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
             self.vlan = input;
             self
@@ -2301,6 +2573,8 @@ pub mod virtual_interface {
             self.asn = Some(input);
             self
         }
+        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+        /// <p>The valid values are 1-2147483647.</p>
         pub fn set_asn(mut self, input: std::option::Option<i32>) -> Self {
             self.asn = input;
             self
@@ -2310,6 +2584,7 @@ pub mod virtual_interface {
             self.amazon_side_asn = Some(input);
             self
         }
+        /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
         pub fn set_amazon_side_asn(mut self, input: std::option::Option<i64>) -> Self {
             self.amazon_side_asn = input;
             self
@@ -2319,6 +2594,7 @@ pub mod virtual_interface {
             self.auth_key = Some(input.into());
             self
         }
+        /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
         pub fn set_auth_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_key = input;
             self
@@ -2328,6 +2604,7 @@ pub mod virtual_interface {
             self.amazon_address = Some(input.into());
             self
         }
+        /// <p>The IP address assigned to the Amazon interface.</p>
         pub fn set_amazon_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2340,6 +2617,7 @@ pub mod virtual_interface {
             self.customer_address = Some(input.into());
             self
         }
+        /// <p>The IP address assigned to the customer interface.</p>
         pub fn set_customer_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2352,6 +2630,7 @@ pub mod virtual_interface {
             self.address_family = Some(input);
             self
         }
+        /// <p>The address family for the BGP peer.</p>
         pub fn set_address_family(
             mut self,
             input: std::option::Option<crate::model::AddressFamily>,
@@ -2405,6 +2684,45 @@ pub mod virtual_interface {
             self.virtual_interface_state = Some(input);
             self
         }
+        /// <p>The state of the virtual interface. The following are the possible values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>down</code>: A virtual interface that is BGP down.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
+        /// </li>
+        /// </ul>
         pub fn set_virtual_interface_state(
             mut self,
             input: std::option::Option<crate::model::VirtualInterfaceState>,
@@ -2417,6 +2735,7 @@ pub mod virtual_interface {
             self.customer_router_config = Some(input.into());
             self
         }
+        /// <p>The customer router configuration.</p>
         pub fn set_customer_router_config(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2429,6 +2748,7 @@ pub mod virtual_interface {
             self.mtu = Some(input);
             self
         }
+        /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
         pub fn set_mtu(mut self, input: std::option::Option<i32>) -> Self {
             self.mtu = input;
             self
@@ -2438,6 +2758,7 @@ pub mod virtual_interface {
             self.jumbo_frame_capable = Some(input);
             self
         }
+        /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
             self.jumbo_frame_capable = input;
             self
@@ -2447,6 +2768,7 @@ pub mod virtual_interface {
             self.virtual_gateway_id = Some(input.into());
             self
         }
+        /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
         pub fn set_virtual_gateway_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2459,6 +2781,7 @@ pub mod virtual_interface {
             self.direct_connect_gateway_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Direct Connect gateway.</p>
         pub fn set_direct_connect_gateway_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2466,6 +2789,11 @@ pub mod virtual_interface {
             self.direct_connect_gateway_id = input;
             self
         }
+        /// Appends an item to `route_filter_prefixes`.
+        ///
+        /// To override the contents of this collection use [`set_route_filter_prefixes`](Self::set_route_filter_prefixes).
+        ///
+        /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
         pub fn route_filter_prefixes(
             mut self,
             input: impl Into<crate::model::RouteFilterPrefix>,
@@ -2475,6 +2803,7 @@ pub mod virtual_interface {
             self.route_filter_prefixes = Some(v);
             self
         }
+        /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
         pub fn set_route_filter_prefixes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
@@ -2482,12 +2811,18 @@ pub mod virtual_interface {
             self.route_filter_prefixes = input;
             self
         }
+        /// Appends an item to `bgp_peers`.
+        ///
+        /// To override the contents of this collection use [`set_bgp_peers`](Self::set_bgp_peers).
+        ///
+        /// <p>The BGP peers configured on this virtual interface.</p>
         pub fn bgp_peers(mut self, input: impl Into<crate::model::BgpPeer>) -> Self {
             let mut v = self.bgp_peers.unwrap_or_default();
             v.push(input.into());
             self.bgp_peers = Some(v);
             self
         }
+        /// <p>The BGP peers configured on this virtual interface.</p>
         pub fn set_bgp_peers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BgpPeer>>,
@@ -2500,6 +2835,7 @@ pub mod virtual_interface {
             self.region = Some(input.into());
             self
         }
+        /// <p>The Region where the virtual interface is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -2509,6 +2845,7 @@ pub mod virtual_interface {
             self.aws_device_v2 = Some(input.into());
             self
         }
+        /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn set_aws_device_v2(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2522,6 +2859,8 @@ pub mod virtual_interface {
             self.aws_logical_device_id = Some(input.into());
             self
         }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2529,12 +2868,18 @@ pub mod virtual_interface {
             self.aws_logical_device_id = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the virtual interface.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags associated with the virtual interface.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2631,6 +2976,7 @@ pub mod virtual_gateway {
             self.virtual_gateway_id = Some(input.into());
             self
         }
+        /// <p>The ID of the virtual private gateway.</p>
         pub fn set_virtual_gateway_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2661,6 +3007,25 @@ pub mod virtual_gateway {
             self.virtual_gateway_state = Some(input.into());
             self
         }
+        /// <p>The state of the virtual private gateway. The following are the possible values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>pending</code>: Initial state after creating the virtual private gateway.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>available</code>: Ready for use by a private virtual interface.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deleting</code>: Initial state after deleting the virtual private gateway.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p>
+        /// </li>
+        /// </ul>
         pub fn set_virtual_gateway_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2716,16 +3081,23 @@ pub mod resource_tag {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2801,6 +3173,7 @@ pub mod location {
             self.location_code = Some(input.into());
             self
         }
+        /// <p>The code for the location.</p>
         pub fn set_location_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2813,6 +3186,7 @@ pub mod location {
             self.location_name = Some(input.into());
             self
         }
+        /// <p>The name of the location. This includes the name of the colocation partner and the physical site of the building.</p>
         pub fn set_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2825,16 +3199,23 @@ pub mod location {
             self.region = Some(input.into());
             self
         }
+        /// <p>The Region for the location.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
         }
+        /// Appends an item to `available_port_speeds`.
+        ///
+        /// To override the contents of this collection use [`set_available_port_speeds`](Self::set_available_port_speeds).
+        ///
+        /// <p>The available port speeds for the location.</p>
         pub fn available_port_speeds(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.available_port_speeds.unwrap_or_default();
             v.push(input.into());
             self.available_port_speeds = Some(v);
             self
         }
+        /// <p>The available port speeds for the location.</p>
         pub fn set_available_port_speeds(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2842,12 +3223,18 @@ pub mod location {
             self.available_port_speeds = input;
             self
         }
+        /// Appends an item to `available_providers`.
+        ///
+        /// To override the contents of this collection use [`set_available_providers`](Self::set_available_providers).
+        ///
+        /// <p>The name of the service provider for the location.</p>
         pub fn available_providers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.available_providers.unwrap_or_default();
             v.push(input.into());
             self.available_providers = Some(v);
             self
         }
+        /// <p>The name of the service provider for the location.</p>
         pub fn set_available_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2855,6 +3242,11 @@ pub mod location {
             self.available_providers = input;
             self
         }
+        /// Appends an item to `available_mac_sec_port_speeds`.
+        ///
+        /// To override the contents of this collection use [`set_available_mac_sec_port_speeds`](Self::set_available_mac_sec_port_speeds).
+        ///
+        /// <p>The available MAC Security (MACsec) port speeds for the location.</p>
         pub fn available_mac_sec_port_speeds(
             mut self,
             input: impl Into<std::string::String>,
@@ -2864,6 +3256,7 @@ pub mod location {
             self.available_mac_sec_port_speeds = Some(v);
             self
         }
+        /// <p>The available MAC Security (MACsec) port speeds for the location.</p>
         pub fn set_available_mac_sec_port_speeds(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2891,6 +3284,7 @@ impl Location {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2902,6 +3296,7 @@ impl Location {
     std::hash::Hash,
 )]
 pub enum LoaContentType {
+    #[allow(missing_docs)] // documentation missing in model
     Pdf,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2922,12 +3317,14 @@ impl std::str::FromStr for LoaContentType {
     }
 }
 impl LoaContentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LoaContentType::Pdf => "application/pdf",
             LoaContentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["application/pdf"]
     }
@@ -3081,6 +3478,8 @@ pub mod lag {
             self.connections_bandwidth = Some(input.into());
             self
         }
+        /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible
+        /// values are 1Gbps and 10Gbps. </p>
         pub fn set_connections_bandwidth(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3093,6 +3492,7 @@ pub mod lag {
             self.number_of_connections = Some(input);
             self
         }
+        /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
         pub fn set_number_of_connections(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_connections = input;
             self
@@ -3102,6 +3502,7 @@ pub mod lag {
             self.lag_id = Some(input.into());
             self
         }
+        /// <p>The ID of the LAG.</p>
         pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lag_id = input;
             self
@@ -3111,6 +3512,7 @@ pub mod lag {
             self.owner_account = Some(input.into());
             self
         }
+        /// <p>The ID of the account that owns the LAG.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3123,6 +3525,7 @@ pub mod lag {
             self.lag_name = Some(input.into());
             self
         }
+        /// <p>The name of the LAG.</p>
         pub fn set_lag_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lag_name = input;
             self
@@ -3163,6 +3566,38 @@ pub mod lag {
             self.lag_state = Some(input);
             self
         }
+        /// <p>The state of the LAG. The following are the possible values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>requested</code>: The initial state of a LAG. The LAG stays in the
+        /// requested state until the Letter of Authorization (LOA) is available.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>pending</code>: The LAG has been approved and is being initialized.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>available</code>: The network link is established and the LAG is ready for use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>down</code>: The network link is down.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deleting</code>: The LAG is being deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deleted</code>: The LAG is deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>unknown</code>: The state of the LAG is not available.</p>
+        /// </li>
+        /// </ul>
         pub fn set_lag_state(mut self, input: std::option::Option<crate::model::LagState>) -> Self {
             self.lag_state = input;
             self
@@ -3172,6 +3607,7 @@ pub mod lag {
             self.location = Some(input.into());
             self
         }
+        /// <p>The location of the LAG.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -3181,6 +3617,7 @@ pub mod lag {
             self.region = Some(input.into());
             self
         }
+        /// <p>The Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -3190,6 +3627,7 @@ pub mod lag {
             self.minimum_links = Some(input);
             self
         }
+        /// <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
         pub fn set_minimum_links(mut self, input: std::option::Option<i32>) -> Self {
             self.minimum_links = input;
             self
@@ -3199,6 +3637,7 @@ pub mod lag {
             self.aws_device = Some(input.into());
             self
         }
+        /// <p>The Direct Connect endpoint that hosts the LAG.</p>
         pub fn set_aws_device(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.aws_device = input;
             self
@@ -3208,6 +3647,7 @@ pub mod lag {
             self.aws_device_v2 = Some(input.into());
             self
         }
+        /// <p>The Direct Connect endpoint that hosts the LAG.</p>
         pub fn set_aws_device_v2(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3221,6 +3661,8 @@ pub mod lag {
             self.aws_logical_device_id = Some(input.into());
             self
         }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3228,12 +3670,18 @@ pub mod lag {
             self.aws_logical_device_id = input;
             self
         }
+        /// Appends an item to `connections`.
+        ///
+        /// To override the contents of this collection use [`set_connections`](Self::set_connections).
+        ///
+        /// <p>The connections bundled by the LAG.</p>
         pub fn connections(mut self, input: impl Into<crate::model::Connection>) -> Self {
             let mut v = self.connections.unwrap_or_default();
             v.push(input.into());
             self.connections = Some(v);
             self
         }
+        /// <p>The connections bundled by the LAG.</p>
         pub fn set_connections(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Connection>>,
@@ -3246,6 +3694,7 @@ pub mod lag {
             self.allows_hosted_connections = Some(input);
             self
         }
+        /// <p>Indicates whether the LAG can host other connections.</p>
         pub fn set_allows_hosted_connections(mut self, input: std::option::Option<bool>) -> Self {
             self.allows_hosted_connections = input;
             self
@@ -3255,6 +3704,7 @@ pub mod lag {
             self.jumbo_frame_capable = Some(input);
             self
         }
+        /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
             self.jumbo_frame_capable = input;
             self
@@ -3264,6 +3714,7 @@ pub mod lag {
             self.has_logical_redundancy = Some(input);
             self
         }
+        /// <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
         pub fn set_has_logical_redundancy(
             mut self,
             input: std::option::Option<crate::model::HasLogicalRedundancy>,
@@ -3271,12 +3722,18 @@ pub mod lag {
             self.has_logical_redundancy = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the LAG.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags associated with the LAG.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3289,6 +3746,7 @@ pub mod lag {
             self.provider_name = Some(input.into());
             self
         }
+        /// <p>The name of the service provider associated with the LAG.</p>
         pub fn set_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3301,6 +3759,7 @@ pub mod lag {
             self.mac_sec_capable = Some(input);
             self
         }
+        /// <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
         pub fn set_mac_sec_capable(mut self, input: std::option::Option<bool>) -> Self {
             self.mac_sec_capable = input;
             self
@@ -3311,6 +3770,8 @@ pub mod lag {
             self.encryption_mode = Some(input.into());
             self
         }
+        /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
+        /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
         pub fn set_encryption_mode(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3318,12 +3779,18 @@ pub mod lag {
             self.encryption_mode = input;
             self
         }
+        /// Appends an item to `mac_sec_keys`.
+        ///
+        /// To override the contents of this collection use [`set_mac_sec_keys`](Self::set_mac_sec_keys).
+        ///
+        /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
         pub fn mac_sec_keys(mut self, input: impl Into<crate::model::MacSecKey>) -> Self {
             let mut v = self.mac_sec_keys.unwrap_or_default();
             v.push(input.into());
             self.mac_sec_keys = Some(v);
             self
         }
+        /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
         pub fn set_mac_sec_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
@@ -3414,7 +3881,7 @@ pub struct Interconnect {
     /// <p>The bandwidth of the connection.</p>
     pub bandwidth: std::option::Option<std::string::String>,
     /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-    pub loa_issue_time: std::option::Option<smithy_types::Instant>,
+    pub loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
@@ -3466,7 +3933,7 @@ pub mod interconnect {
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) location: std::option::Option<std::string::String>,
         pub(crate) bandwidth: std::option::Option<std::string::String>,
-        pub(crate) loa_issue_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) lag_id: std::option::Option<std::string::String>,
         pub(crate) aws_device: std::option::Option<std::string::String>,
         pub(crate) jumbo_frame_capable: std::option::Option<bool>,
@@ -3482,6 +3949,7 @@ pub mod interconnect {
             self.interconnect_id = Some(input.into());
             self
         }
+        /// <p>The ID of the interconnect.</p>
         pub fn set_interconnect_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3494,6 +3962,7 @@ pub mod interconnect {
             self.interconnect_name = Some(input.into());
             self
         }
+        /// <p>The name of the interconnect.</p>
         pub fn set_interconnect_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3537,6 +4006,38 @@ pub mod interconnect {
             self.interconnect_state = Some(input);
             self
         }
+        /// <p>The state of the interconnect. The following are the possible values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>requested</code>: The initial state of an interconnect. The interconnect stays in the
+        /// requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>pending</code>: The interconnect is approved, and is being initialized.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>available</code>: The network link is up, and the interconnect is ready for use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>down</code>: The network link is down.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deleting</code>: The interconnect is being deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deleted</code>: The interconnect is deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>unknown</code>: The state of the interconnect is not available.</p>
+        /// </li>
+        /// </ul>
         pub fn set_interconnect_state(
             mut self,
             input: std::option::Option<crate::model::InterconnectState>,
@@ -3549,6 +4050,7 @@ pub mod interconnect {
             self.region = Some(input.into());
             self
         }
+        /// <p>The Region where the connection is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -3558,6 +4060,7 @@ pub mod interconnect {
             self.location = Some(input.into());
             self
         }
+        /// <p>The location of the connection.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -3567,18 +4070,20 @@ pub mod interconnect {
             self.bandwidth = Some(input.into());
             self
         }
+        /// <p>The bandwidth of the connection.</p>
         pub fn set_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bandwidth = input;
             self
         }
         /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
-        pub fn loa_issue_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn loa_issue_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
+        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.loa_issue_time = input;
             self
@@ -3588,6 +4093,7 @@ pub mod interconnect {
             self.lag_id = Some(input.into());
             self
         }
+        /// <p>The ID of the LAG.</p>
         pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lag_id = input;
             self
@@ -3597,6 +4103,7 @@ pub mod interconnect {
             self.aws_device = Some(input.into());
             self
         }
+        /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
         pub fn set_aws_device(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.aws_device = input;
             self
@@ -3606,6 +4113,7 @@ pub mod interconnect {
             self.jumbo_frame_capable = Some(input);
             self
         }
+        /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
         pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
             self.jumbo_frame_capable = input;
             self
@@ -3615,6 +4123,7 @@ pub mod interconnect {
             self.aws_device_v2 = Some(input.into());
             self
         }
+        /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
         pub fn set_aws_device_v2(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3628,6 +4137,8 @@ pub mod interconnect {
             self.aws_logical_device_id = Some(input.into());
             self
         }
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
+        /// different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3640,6 +4151,7 @@ pub mod interconnect {
             self.has_logical_redundancy = Some(input);
             self
         }
+        /// <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>
         pub fn set_has_logical_redundancy(
             mut self,
             input: std::option::Option<crate::model::HasLogicalRedundancy>,
@@ -3647,12 +4159,18 @@ pub mod interconnect {
             self.has_logical_redundancy = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the interconnect.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags associated with the interconnect.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3665,6 +4183,7 @@ pub mod interconnect {
             self.provider_name = Some(input.into());
             self
         }
+        /// <p>The name of the service provider associated with the interconnect.</p>
         pub fn set_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3701,7 +4220,7 @@ impl Interconnect {
     }
 }
 
-/// **NOTE:** `InterconnectState::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `InterconnectState::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3713,13 +4232,19 @@ impl Interconnect {
     std::hash::Hash,
 )]
 pub enum InterconnectState {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Down,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Requested,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3746,6 +4271,7 @@ impl std::str::FromStr for InterconnectState {
     }
 }
 impl InterconnectState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InterconnectState::Available => "available",
@@ -3758,6 +4284,7 @@ impl InterconnectState {
             InterconnectState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "available",
@@ -3781,7 +4308,7 @@ impl AsRef<str> for InterconnectState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Loa {
     /// <p>The binary contents of the LOA-CFA document.</p>
-    pub loa_content: std::option::Option<smithy_types::Blob>,
+    pub loa_content: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
     pub loa_content_type: std::option::Option<crate::model::LoaContentType>,
 }
@@ -3799,16 +4326,20 @@ pub mod loa {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) loa_content: std::option::Option<smithy_types::Blob>,
+        pub(crate) loa_content: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) loa_content_type: std::option::Option<crate::model::LoaContentType>,
     }
     impl Builder {
         /// <p>The binary contents of the LOA-CFA document.</p>
-        pub fn loa_content(mut self, input: smithy_types::Blob) -> Self {
+        pub fn loa_content(mut self, input: aws_smithy_types::Blob) -> Self {
             self.loa_content = Some(input);
             self
         }
-        pub fn set_loa_content(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The binary contents of the LOA-CFA document.</p>
+        pub fn set_loa_content(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
             self.loa_content = input;
             self
         }
@@ -3817,6 +4348,7 @@ pub mod loa {
             self.loa_content_type = Some(input);
             self
         }
+        /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
         pub fn set_loa_content_type(
             mut self,
             input: std::option::Option<crate::model::LoaContentType>,
@@ -3913,6 +4445,7 @@ pub mod direct_connect_gateway {
             self.direct_connect_gateway_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Direct Connect gateway.</p>
         pub fn set_direct_connect_gateway_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3928,6 +4461,7 @@ pub mod direct_connect_gateway {
             self.direct_connect_gateway_name = Some(input.into());
             self
         }
+        /// <p>The name of the Direct Connect gateway.</p>
         pub fn set_direct_connect_gateway_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3940,6 +4474,7 @@ pub mod direct_connect_gateway {
             self.amazon_side_asn = Some(input);
             self
         }
+        /// <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
         pub fn set_amazon_side_asn(mut self, input: std::option::Option<i64>) -> Self {
             self.amazon_side_asn = input;
             self
@@ -3949,6 +4484,7 @@ pub mod direct_connect_gateway {
             self.owner_account = Some(input.into());
             self
         }
+        /// <p>The ID of the account that owns the Direct Connect gateway.</p>
         pub fn set_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3982,6 +4518,25 @@ pub mod direct_connect_gateway {
             self.direct_connect_gateway_state = Some(input);
             self
         }
+        /// <p>The state of the Direct Connect gateway. The following are the possible values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>pending</code>: The initial state after calling <a>CreateDirectConnectGateway</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>available</code>: The Direct Connect gateway is ready for use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deleting</code>: The initial state after calling <a>DeleteDirectConnectGateway</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.</p>
+        /// </li>
+        /// </ul>
         pub fn set_direct_connect_gateway_state(
             mut self,
             input: std::option::Option<crate::model::DirectConnectGatewayState>,
@@ -3994,6 +4549,7 @@ pub mod direct_connect_gateway {
             self.state_change_error = Some(input.into());
             self
         }
+        /// <p>The error message if the state of an object failed to advance.</p>
         pub fn set_state_change_error(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4021,6 +4577,7 @@ impl DirectConnectGateway {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4032,9 +4589,13 @@ impl DirectConnectGateway {
     std::hash::Hash,
 )]
 pub enum DirectConnectGatewayState {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4058,6 +4619,7 @@ impl std::str::FromStr for DirectConnectGatewayState {
     }
 }
 impl DirectConnectGatewayState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DirectConnectGatewayState::Available => "available",
@@ -4067,6 +4629,7 @@ impl DirectConnectGatewayState {
             DirectConnectGatewayState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["available", "deleted", "deleting", "pending"]
     }
@@ -4152,6 +4715,7 @@ pub mod direct_connect_gateway_attachment {
             self.direct_connect_gateway_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Direct Connect gateway.</p>
         pub fn set_direct_connect_gateway_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4164,6 +4728,7 @@ pub mod direct_connect_gateway_attachment {
             self.virtual_interface_id = Some(input.into());
             self
         }
+        /// <p>The ID of the virtual interface.</p>
         pub fn set_virtual_interface_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4176,6 +4741,7 @@ pub mod direct_connect_gateway_attachment {
             self.virtual_interface_region = Some(input.into());
             self
         }
+        /// <p>The Region where the virtual interface is located.</p>
         pub fn set_virtual_interface_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4191,6 +4757,7 @@ pub mod direct_connect_gateway_attachment {
             self.virtual_interface_owner_account = Some(input.into());
             self
         }
+        /// <p>The ID of the account that owns the virtual interface.</p>
         pub fn set_virtual_interface_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4224,6 +4791,25 @@ pub mod direct_connect_gateway_attachment {
             self.attachment_state = Some(input);
             self
         }
+        /// <p>The state of the attachment. The following are the possible values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>attaching</code>: The initial state after a virtual interface is created using the Direct Connect gateway.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>attached</code>: The Direct Connect gateway and virtual interface are attached and ready to pass traffic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>detaching</code>: The initial state after calling <a>DeleteVirtualInterface</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>detached</code>: The virtual interface is detached from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual interface is stopped.</p>
+        /// </li>
+        /// </ul>
         pub fn set_attachment_state(
             mut self,
             input: std::option::Option<crate::model::DirectConnectGatewayAttachmentState>,
@@ -4239,6 +4825,7 @@ pub mod direct_connect_gateway_attachment {
             self.attachment_type = Some(input);
             self
         }
+        /// <p>The type of attachment.</p>
         pub fn set_attachment_type(
             mut self,
             input: std::option::Option<crate::model::DirectConnectGatewayAttachmentType>,
@@ -4251,6 +4838,7 @@ pub mod direct_connect_gateway_attachment {
             self.state_change_error = Some(input.into());
             self
         }
+        /// <p>The error message if the state of an object failed to advance.</p>
         pub fn set_state_change_error(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4279,6 +4867,7 @@ impl DirectConnectGatewayAttachment {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4290,7 +4879,9 @@ impl DirectConnectGatewayAttachment {
     std::hash::Hash,
 )]
 pub enum DirectConnectGatewayAttachmentType {
+    #[allow(missing_docs)] // documentation missing in model
     PrivateVirtualInterface,
+    #[allow(missing_docs)] // documentation missing in model
     TransitVirtualInterface,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4316,6 +4907,7 @@ impl std::str::FromStr for DirectConnectGatewayAttachmentType {
     }
 }
 impl DirectConnectGatewayAttachmentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DirectConnectGatewayAttachmentType::PrivateVirtualInterface => {
@@ -4327,6 +4919,7 @@ impl DirectConnectGatewayAttachmentType {
             DirectConnectGatewayAttachmentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PrivateVirtualInterface", "TransitVirtualInterface"]
     }
@@ -4337,6 +4930,7 @@ impl AsRef<str> for DirectConnectGatewayAttachmentType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4348,9 +4942,13 @@ impl AsRef<str> for DirectConnectGatewayAttachmentType {
     std::hash::Hash,
 )]
 pub enum DirectConnectGatewayAttachmentState {
+    #[allow(missing_docs)] // documentation missing in model
     Attached,
+    #[allow(missing_docs)] // documentation missing in model
     Attaching,
+    #[allow(missing_docs)] // documentation missing in model
     Detached,
+    #[allow(missing_docs)] // documentation missing in model
     Detaching,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4374,6 +4972,7 @@ impl std::str::FromStr for DirectConnectGatewayAttachmentState {
     }
 }
 impl DirectConnectGatewayAttachmentState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DirectConnectGatewayAttachmentState::Attached => "attached",
@@ -4383,6 +4982,7 @@ impl DirectConnectGatewayAttachmentState {
             DirectConnectGatewayAttachmentState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["attached", "attaching", "detached", "detaching"]
     }
@@ -4474,6 +5074,7 @@ pub mod direct_connect_gateway_association_proposal {
             self.proposal_id = Some(input.into());
             self
         }
+        /// <p>The ID of the association proposal.</p>
         pub fn set_proposal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.proposal_id = input;
             self
@@ -4483,6 +5084,7 @@ pub mod direct_connect_gateway_association_proposal {
             self.direct_connect_gateway_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Direct Connect gateway.</p>
         pub fn set_direct_connect_gateway_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4498,6 +5100,7 @@ pub mod direct_connect_gateway_association_proposal {
             self.direct_connect_gateway_owner_account = Some(input.into());
             self
         }
+        /// <p>The ID of the account that owns the Direct Connect gateway.</p>
         pub fn set_direct_connect_gateway_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4527,6 +5130,21 @@ pub mod direct_connect_gateway_association_proposal {
             self.proposal_state = Some(input);
             self
         }
+        /// <p>The state of the proposal. The following are possible values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>accepted</code>: The proposal has been accepted. The Direct Connect gateway association is available to use in this state.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deleted</code>: The proposal has been deleted by the owner that made the proposal.  The Direct Connect gateway association cannot be used in this state.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p>
+        /// </li>
+        /// </ul>
         pub fn set_proposal_state(
             mut self,
             input: std::option::Option<crate::model::DirectConnectGatewayAssociationProposalState>,
@@ -4539,6 +5157,7 @@ pub mod direct_connect_gateway_association_proposal {
             self.associated_gateway = Some(input);
             self
         }
+        /// <p>Information about the associated gateway.</p>
         pub fn set_associated_gateway(
             mut self,
             input: std::option::Option<crate::model::AssociatedGateway>,
@@ -4546,6 +5165,11 @@ pub mod direct_connect_gateway_association_proposal {
             self.associated_gateway = input;
             self
         }
+        /// Appends an item to `existing_allowed_prefixes_to_direct_connect_gateway`.
+        ///
+        /// To override the contents of this collection use [`set_existing_allowed_prefixes_to_direct_connect_gateway`](Self::set_existing_allowed_prefixes_to_direct_connect_gateway).
+        ///
+        /// <p>The existing Amazon VPC prefixes advertised to the Direct Connect gateway.</p>
         pub fn existing_allowed_prefixes_to_direct_connect_gateway(
             mut self,
             input: impl Into<crate::model::RouteFilterPrefix>,
@@ -4557,6 +5181,7 @@ pub mod direct_connect_gateway_association_proposal {
             self.existing_allowed_prefixes_to_direct_connect_gateway = Some(v);
             self
         }
+        /// <p>The existing Amazon VPC prefixes advertised to the Direct Connect gateway.</p>
         pub fn set_existing_allowed_prefixes_to_direct_connect_gateway(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
@@ -4564,6 +5189,11 @@ pub mod direct_connect_gateway_association_proposal {
             self.existing_allowed_prefixes_to_direct_connect_gateway = input;
             self
         }
+        /// Appends an item to `requested_allowed_prefixes_to_direct_connect_gateway`.
+        ///
+        /// To override the contents of this collection use [`set_requested_allowed_prefixes_to_direct_connect_gateway`](Self::set_requested_allowed_prefixes_to_direct_connect_gateway).
+        ///
+        /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
         pub fn requested_allowed_prefixes_to_direct_connect_gateway(
             mut self,
             input: impl Into<crate::model::RouteFilterPrefix>,
@@ -4575,6 +5205,7 @@ pub mod direct_connect_gateway_association_proposal {
             self.requested_allowed_prefixes_to_direct_connect_gateway = Some(v);
             self
         }
+        /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
         pub fn set_requested_allowed_prefixes_to_direct_connect_gateway(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
@@ -4605,6 +5236,7 @@ impl DirectConnectGatewayAssociationProposal {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4616,8 +5248,11 @@ impl DirectConnectGatewayAssociationProposal {
     std::hash::Hash,
 )]
 pub enum DirectConnectGatewayAssociationProposalState {
+    #[allow(missing_docs)] // documentation missing in model
     Accepted,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Requested,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4640,6 +5275,7 @@ impl std::str::FromStr for DirectConnectGatewayAssociationProposalState {
     }
 }
 impl DirectConnectGatewayAssociationProposalState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DirectConnectGatewayAssociationProposalState::Accepted => "accepted",
@@ -4648,6 +5284,7 @@ impl DirectConnectGatewayAssociationProposalState {
             DirectConnectGatewayAssociationProposalState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["accepted", "deleted", "requested"]
     }
@@ -4723,6 +5360,7 @@ pub mod new_transit_virtual_interface {
             self.virtual_interface_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
         pub fn set_virtual_interface_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4735,6 +5373,7 @@ pub mod new_transit_virtual_interface {
             self.vlan = Some(input);
             self
         }
+        /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
             self.vlan = input;
             self
@@ -4745,6 +5384,8 @@ pub mod new_transit_virtual_interface {
             self.asn = Some(input);
             self
         }
+        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+        /// <p>The valid values are 1-2147483647.</p>
         pub fn set_asn(mut self, input: std::option::Option<i32>) -> Self {
             self.asn = input;
             self
@@ -4754,6 +5395,7 @@ pub mod new_transit_virtual_interface {
             self.mtu = Some(input);
             self
         }
+        /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
         pub fn set_mtu(mut self, input: std::option::Option<i32>) -> Self {
             self.mtu = input;
             self
@@ -4763,6 +5405,7 @@ pub mod new_transit_virtual_interface {
             self.auth_key = Some(input.into());
             self
         }
+        /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
         pub fn set_auth_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_key = input;
             self
@@ -4772,6 +5415,7 @@ pub mod new_transit_virtual_interface {
             self.amazon_address = Some(input.into());
             self
         }
+        /// <p>The IP address assigned to the Amazon interface.</p>
         pub fn set_amazon_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4784,6 +5428,7 @@ pub mod new_transit_virtual_interface {
             self.customer_address = Some(input.into());
             self
         }
+        /// <p>The IP address assigned to the customer interface.</p>
         pub fn set_customer_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4796,6 +5441,7 @@ pub mod new_transit_virtual_interface {
             self.address_family = Some(input);
             self
         }
+        /// <p>The address family for the BGP peer.</p>
         pub fn set_address_family(
             mut self,
             input: std::option::Option<crate::model::AddressFamily>,
@@ -4808,6 +5454,7 @@ pub mod new_transit_virtual_interface {
             self.direct_connect_gateway_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Direct Connect gateway.</p>
         pub fn set_direct_connect_gateway_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4815,12 +5462,18 @@ pub mod new_transit_virtual_interface {
             self.direct_connect_gateway_id = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the transitive virtual interface.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags associated with the transitive virtual interface.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4914,6 +5567,7 @@ pub mod new_public_virtual_interface {
             self.virtual_interface_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
         pub fn set_virtual_interface_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4926,6 +5580,7 @@ pub mod new_public_virtual_interface {
             self.vlan = Some(input);
             self
         }
+        /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
             self.vlan = input;
             self
@@ -4936,6 +5591,8 @@ pub mod new_public_virtual_interface {
             self.asn = Some(input);
             self
         }
+        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+        /// <p>The valid values are 1-2147483647.</p>
         pub fn set_asn(mut self, input: std::option::Option<i32>) -> Self {
             self.asn = input;
             self
@@ -4945,6 +5602,7 @@ pub mod new_public_virtual_interface {
             self.auth_key = Some(input.into());
             self
         }
+        /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
         pub fn set_auth_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_key = input;
             self
@@ -4954,6 +5612,7 @@ pub mod new_public_virtual_interface {
             self.amazon_address = Some(input.into());
             self
         }
+        /// <p>The IP address assigned to the Amazon interface.</p>
         pub fn set_amazon_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4966,6 +5625,7 @@ pub mod new_public_virtual_interface {
             self.customer_address = Some(input.into());
             self
         }
+        /// <p>The IP address assigned to the customer interface.</p>
         pub fn set_customer_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4978,6 +5638,7 @@ pub mod new_public_virtual_interface {
             self.address_family = Some(input);
             self
         }
+        /// <p>The address family for the BGP peer.</p>
         pub fn set_address_family(
             mut self,
             input: std::option::Option<crate::model::AddressFamily>,
@@ -4985,6 +5646,11 @@ pub mod new_public_virtual_interface {
             self.address_family = input;
             self
         }
+        /// Appends an item to `route_filter_prefixes`.
+        ///
+        /// To override the contents of this collection use [`set_route_filter_prefixes`](Self::set_route_filter_prefixes).
+        ///
+        /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
         pub fn route_filter_prefixes(
             mut self,
             input: impl Into<crate::model::RouteFilterPrefix>,
@@ -4994,6 +5660,7 @@ pub mod new_public_virtual_interface {
             self.route_filter_prefixes = Some(v);
             self
         }
+        /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
         pub fn set_route_filter_prefixes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
@@ -5001,12 +5668,18 @@ pub mod new_public_virtual_interface {
             self.route_filter_prefixes = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the public virtual interface.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags associated with the public virtual interface.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5106,6 +5779,7 @@ pub mod new_private_virtual_interface {
             self.virtual_interface_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
         pub fn set_virtual_interface_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5118,6 +5792,7 @@ pub mod new_private_virtual_interface {
             self.vlan = Some(input);
             self
         }
+        /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
             self.vlan = input;
             self
@@ -5128,6 +5803,8 @@ pub mod new_private_virtual_interface {
             self.asn = Some(input);
             self
         }
+        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+        /// <p>The valid values are 1-2147483647.</p>
         pub fn set_asn(mut self, input: std::option::Option<i32>) -> Self {
             self.asn = input;
             self
@@ -5137,6 +5814,7 @@ pub mod new_private_virtual_interface {
             self.mtu = Some(input);
             self
         }
+        /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
         pub fn set_mtu(mut self, input: std::option::Option<i32>) -> Self {
             self.mtu = input;
             self
@@ -5146,6 +5824,7 @@ pub mod new_private_virtual_interface {
             self.auth_key = Some(input.into());
             self
         }
+        /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
         pub fn set_auth_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_key = input;
             self
@@ -5155,6 +5834,7 @@ pub mod new_private_virtual_interface {
             self.amazon_address = Some(input.into());
             self
         }
+        /// <p>The IP address assigned to the Amazon interface.</p>
         pub fn set_amazon_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5167,6 +5847,7 @@ pub mod new_private_virtual_interface {
             self.customer_address = Some(input.into());
             self
         }
+        /// <p>The IP address assigned to the customer interface.</p>
         pub fn set_customer_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5179,6 +5860,7 @@ pub mod new_private_virtual_interface {
             self.address_family = Some(input);
             self
         }
+        /// <p>The address family for the BGP peer.</p>
         pub fn set_address_family(
             mut self,
             input: std::option::Option<crate::model::AddressFamily>,
@@ -5191,6 +5873,7 @@ pub mod new_private_virtual_interface {
             self.virtual_gateway_id = Some(input.into());
             self
         }
+        /// <p>The ID of the virtual private gateway.</p>
         pub fn set_virtual_gateway_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5203,6 +5886,7 @@ pub mod new_private_virtual_interface {
             self.direct_connect_gateway_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Direct Connect gateway.</p>
         pub fn set_direct_connect_gateway_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5210,12 +5894,18 @@ pub mod new_private_virtual_interface {
             self.direct_connect_gateway_id = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the private virtual interface.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags associated with the private virtual interface.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5292,6 +5982,7 @@ pub mod new_bgp_peer {
             self.asn = Some(input);
             self
         }
+        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
         pub fn set_asn(mut self, input: std::option::Option<i32>) -> Self {
             self.asn = input;
             self
@@ -5301,6 +5992,7 @@ pub mod new_bgp_peer {
             self.auth_key = Some(input.into());
             self
         }
+        /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
         pub fn set_auth_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_key = input;
             self
@@ -5310,6 +6002,7 @@ pub mod new_bgp_peer {
             self.address_family = Some(input);
             self
         }
+        /// <p>The address family for the BGP peer.</p>
         pub fn set_address_family(
             mut self,
             input: std::option::Option<crate::model::AddressFamily>,
@@ -5322,6 +6015,7 @@ pub mod new_bgp_peer {
             self.amazon_address = Some(input.into());
             self
         }
+        /// <p>The IP address assigned to the Amazon interface.</p>
         pub fn set_amazon_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5334,6 +6028,7 @@ pub mod new_bgp_peer {
             self.customer_address = Some(input.into());
             self
         }
+        /// <p>The IP address assigned to the customer interface.</p>
         pub fn set_customer_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5421,6 +6116,7 @@ pub mod new_transit_virtual_interface_allocation {
             self.virtual_interface_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
         pub fn set_virtual_interface_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5433,6 +6129,7 @@ pub mod new_transit_virtual_interface_allocation {
             self.vlan = Some(input);
             self
         }
+        /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
             self.vlan = input;
             self
@@ -5443,6 +6140,8 @@ pub mod new_transit_virtual_interface_allocation {
             self.asn = Some(input);
             self
         }
+        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+        /// <p>The valid values are 1-2147483647.</p>
         pub fn set_asn(mut self, input: std::option::Option<i32>) -> Self {
             self.asn = input;
             self
@@ -5452,6 +6151,7 @@ pub mod new_transit_virtual_interface_allocation {
             self.mtu = Some(input);
             self
         }
+        /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500. </p>
         pub fn set_mtu(mut self, input: std::option::Option<i32>) -> Self {
             self.mtu = input;
             self
@@ -5461,6 +6161,7 @@ pub mod new_transit_virtual_interface_allocation {
             self.auth_key = Some(input.into());
             self
         }
+        /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
         pub fn set_auth_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_key = input;
             self
@@ -5470,6 +6171,7 @@ pub mod new_transit_virtual_interface_allocation {
             self.amazon_address = Some(input.into());
             self
         }
+        /// <p>The IP address assigned to the Amazon interface.</p>
         pub fn set_amazon_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5482,6 +6184,7 @@ pub mod new_transit_virtual_interface_allocation {
             self.customer_address = Some(input.into());
             self
         }
+        /// <p>The IP address assigned to the customer interface.</p>
         pub fn set_customer_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5494,6 +6197,7 @@ pub mod new_transit_virtual_interface_allocation {
             self.address_family = Some(input);
             self
         }
+        /// <p>The address family for the BGP peer.</p>
         pub fn set_address_family(
             mut self,
             input: std::option::Option<crate::model::AddressFamily>,
@@ -5501,12 +6205,18 @@ pub mod new_transit_virtual_interface_allocation {
             self.address_family = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the transitive virtual interface.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags associated with the transitive virtual interface.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5599,6 +6309,7 @@ pub mod new_public_virtual_interface_allocation {
             self.virtual_interface_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
         pub fn set_virtual_interface_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5611,6 +6322,7 @@ pub mod new_public_virtual_interface_allocation {
             self.vlan = Some(input);
             self
         }
+        /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
             self.vlan = input;
             self
@@ -5621,6 +6333,8 @@ pub mod new_public_virtual_interface_allocation {
             self.asn = Some(input);
             self
         }
+        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+        /// <p>The valid values are 1-2147483647.</p>
         pub fn set_asn(mut self, input: std::option::Option<i32>) -> Self {
             self.asn = input;
             self
@@ -5630,6 +6344,7 @@ pub mod new_public_virtual_interface_allocation {
             self.auth_key = Some(input.into());
             self
         }
+        /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
         pub fn set_auth_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_key = input;
             self
@@ -5639,6 +6354,7 @@ pub mod new_public_virtual_interface_allocation {
             self.amazon_address = Some(input.into());
             self
         }
+        /// <p>The IP address assigned to the Amazon interface.</p>
         pub fn set_amazon_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5651,6 +6367,7 @@ pub mod new_public_virtual_interface_allocation {
             self.customer_address = Some(input.into());
             self
         }
+        /// <p>The IP address assigned to the customer interface.</p>
         pub fn set_customer_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5663,6 +6380,7 @@ pub mod new_public_virtual_interface_allocation {
             self.address_family = Some(input);
             self
         }
+        /// <p>The address family for the BGP peer.</p>
         pub fn set_address_family(
             mut self,
             input: std::option::Option<crate::model::AddressFamily>,
@@ -5670,6 +6388,11 @@ pub mod new_public_virtual_interface_allocation {
             self.address_family = input;
             self
         }
+        /// Appends an item to `route_filter_prefixes`.
+        ///
+        /// To override the contents of this collection use [`set_route_filter_prefixes`](Self::set_route_filter_prefixes).
+        ///
+        /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
         pub fn route_filter_prefixes(
             mut self,
             input: impl Into<crate::model::RouteFilterPrefix>,
@@ -5679,6 +6402,7 @@ pub mod new_public_virtual_interface_allocation {
             self.route_filter_prefixes = Some(v);
             self
         }
+        /// <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
         pub fn set_route_filter_prefixes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RouteFilterPrefix>>,
@@ -5686,12 +6410,18 @@ pub mod new_public_virtual_interface_allocation {
             self.route_filter_prefixes = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the public virtual interface.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags associated with the public virtual interface.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5783,6 +6513,7 @@ pub mod new_private_virtual_interface_allocation {
             self.virtual_interface_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
         pub fn set_virtual_interface_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5795,6 +6526,7 @@ pub mod new_private_virtual_interface_allocation {
             self.vlan = Some(input);
             self
         }
+        /// <p>The ID of the VLAN.</p>
         pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
             self.vlan = input;
             self
@@ -5805,6 +6537,8 @@ pub mod new_private_virtual_interface_allocation {
             self.asn = Some(input);
             self
         }
+        /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+        /// <p>The valid values are 1-2147483647.</p>
         pub fn set_asn(mut self, input: std::option::Option<i32>) -> Self {
             self.asn = input;
             self
@@ -5814,6 +6548,7 @@ pub mod new_private_virtual_interface_allocation {
             self.mtu = Some(input);
             self
         }
+        /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
         pub fn set_mtu(mut self, input: std::option::Option<i32>) -> Self {
             self.mtu = input;
             self
@@ -5823,6 +6558,7 @@ pub mod new_private_virtual_interface_allocation {
             self.auth_key = Some(input.into());
             self
         }
+        /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
         pub fn set_auth_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_key = input;
             self
@@ -5832,6 +6568,7 @@ pub mod new_private_virtual_interface_allocation {
             self.amazon_address = Some(input.into());
             self
         }
+        /// <p>The IP address assigned to the Amazon interface.</p>
         pub fn set_amazon_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5844,6 +6581,7 @@ pub mod new_private_virtual_interface_allocation {
             self.address_family = Some(input);
             self
         }
+        /// <p>The address family for the BGP peer.</p>
         pub fn set_address_family(
             mut self,
             input: std::option::Option<crate::model::AddressFamily>,
@@ -5856,6 +6594,7 @@ pub mod new_private_virtual_interface_allocation {
             self.customer_address = Some(input.into());
             self
         }
+        /// <p>The IP address assigned to the customer interface.</p>
         pub fn set_customer_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5863,12 +6602,18 @@ pub mod new_private_virtual_interface_allocation {
             self.customer_address = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the private virtual interface.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags associated with the private virtual interface.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,

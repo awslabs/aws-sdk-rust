@@ -12,16 +12,16 @@ use crate::imds;
 use crate::imds::client::{ImdsError, LazyClient};
 use crate::json_credentials::{parse_json_credentials, JsonCredentials};
 use crate::provider_config::ProviderConfig;
+use aws_smithy_client::SdkError;
 use aws_types::credentials::{future, CredentialsError, ProvideCredentials};
 use aws_types::os_shim_internal::Env;
 use aws_types::{credentials, Credentials};
-use smithy_client::SdkError;
 
 use tokio::sync::OnceCell;
 
 /// IMDSv2 Credentials Provider
 ///
-/// **Note**: This credentials provider will NOT fallback to the IMDSv1 flow.
+/// _Note: This credentials provider will NOT fallback to the IMDSv1 flow._
 #[derive(Debug)]
 pub struct ImdsCredentialsProvider {
     client: LazyClient,
@@ -121,7 +121,8 @@ impl ImdsCredentialsProvider {
     /// Load an inner IMDS client from the OnceCell
     async fn client(&self) -> Result<&imds::Client, CredentialsError> {
         self.client.client().await.map_err(|build_error| {
-            CredentialsError::InvalidConfiguration(format!("{}", build_error).into())
+            // need to format the build error since we don't own it and it can't be cloned
+            CredentialsError::invalid_configuration(format!("{}", build_error))
         })
     }
 
@@ -135,24 +136,26 @@ impl ImdsCredentialsProvider {
             .await
         {
             Ok(profile) => Ok(profile),
-            Err(SdkError::ServiceError {
-                err: ImdsError::ErrorResponse { code: 404, .. },
-                ..
-            }) => {
+            Err(ImdsError::ErrorResponse { response, .. }) if response.status().as_u16() == 404 => {
                 tracing::info!(
                     "received 404 from IMDS when loading profile information. \
                 Hint: This instance may not have an IAM role associated."
                 );
-                Err(CredentialsError::CredentialsNotLoaded)
+                Err(CredentialsError::not_loaded("received 404 from IMDS"))
             }
-            Err(other) => Err(CredentialsError::ProviderError(other.into())),
+            Err(ImdsError::FailedToLoadToken(SdkError::DispatchFailure(err))) => Err(
+                CredentialsError::not_loaded(format!("could not communicate with imds: {}", err)),
+            ),
+            Err(other) => Err(CredentialsError::provider_error(other)),
         }
     }
 
     async fn credentials(&self) -> credentials::Result {
         if self.imds_disabled() {
             tracing::debug!("IMDS disabled because $AWS_EC2_METADATA_DISABLED was set to `true`");
-            return Err(CredentialsError::CredentialsNotLoaded);
+            return Err(CredentialsError::not_loaded(
+                "IMDS disabled by $AWS_ECS_METADATA_DISABLED",
+            ));
         }
         tracing::debug!("loading credentials from IMDS");
         let get_profile = self.get_profile_uncached();
@@ -166,7 +169,7 @@ impl ImdsCredentialsProvider {
                 profile
             ))
             .await
-            .map_err(|e| CredentialsError::ProviderError(e.into()))?;
+            .map_err(CredentialsError::provider_error)?;
         match parse_json_credentials(&credentials) {
             Ok(JsonCredentials::RefreshableCredentials {
                 access_key_id,
@@ -184,24 +187,20 @@ impl ImdsCredentialsProvider {
             Ok(JsonCredentials::Error { code, message })
                 if code == codes::ASSUME_ROLE_UNAUTHORIZED_ACCESS =>
             {
-                Err(CredentialsError::InvalidConfiguration(
-                    format!(
-                        "Incorrect IMDS/IAM configuration: [{}] {}. \
+                Err(CredentialsError::invalid_configuration(format!(
+                    "Incorrect IMDS/IAM configuration: [{}] {}. \
                         Hint: Does this role have a trust relationship with EC2?",
-                        code, message
-                    )
-                    .into(),
-                ))
+                    code, message
+                )))
             }
-            Ok(JsonCredentials::Error { code, message }) => Err(CredentialsError::ProviderError(
-                format!(
+            Ok(JsonCredentials::Error { code, message }) => {
+                Err(CredentialsError::provider_error(format!(
                     "Error retrieving credentials from IMDS: {} {}",
                     code, message
-                )
-                .into(),
-            )),
+                )))
+            }
             // got bad data from IMDS, should not occur during normal operation:
-            Err(invalid) => Err(CredentialsError::Unhandled(invalid.into())),
+            Err(invalid) => Err(CredentialsError::unhandled(invalid)),
         }
     }
 }

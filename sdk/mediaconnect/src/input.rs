@@ -16,10 +16,16 @@ pub mod add_flow_media_streams_input {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of the flow.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
         }
+        /// Appends an item to `media_streams`.
+        ///
+        /// To override the contents of this collection use [`set_media_streams`](Self::set_media_streams).
+        ///
+        /// The media streams that you want to add to the flow.
         pub fn media_streams(
             mut self,
             input: impl Into<crate::model::AddMediaStreamRequest>,
@@ -29,6 +35,7 @@ pub mod add_flow_media_streams_input {
             self.media_streams = Some(v);
             self
         }
+        /// The media streams that you want to add to the flow.
         pub fn set_media_streams(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AddMediaStreamRequest>>,
@@ -41,7 +48,7 @@ pub mod add_flow_media_streams_input {
             self,
         ) -> std::result::Result<
             crate::input::AddFlowMediaStreamsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AddFlowMediaStreamsInput {
                 flow_arn: self.flow_arn,
@@ -61,27 +68,27 @@ impl AddFlowMediaStreamsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AddFlowMediaStreams,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AddFlowMediaStreamsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.flow_arn;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "flow_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let flow_arn = smithy_http::label::fmt_string(input_1, false);
+            let flow_arn = aws_smithy_http::label::fmt_string(input_1, false);
             if flow_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 });
@@ -98,7 +105,7 @@ impl AddFlowMediaStreamsInput {
         fn update_http_builder(
             input: &crate::input::AddFlowMediaStreamsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -107,27 +114,27 @@ impl AddFlowMediaStreamsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AddFlowMediaStreamsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_flow_media_streams(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -150,15 +157,15 @@ impl AddFlowMediaStreamsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AddFlowMediaStreams::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AddFlowMediaStreams",
             "mediaconnect",
         ));
@@ -167,10 +174,10 @@ impl AddFlowMediaStreamsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -199,16 +206,23 @@ pub mod add_flow_outputs_input {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The flow that you want to add outputs to.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
         }
+        /// Appends an item to `outputs`.
+        ///
+        /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
+        ///
+        /// A list of outputs that you want to add.
         pub fn outputs(mut self, input: impl Into<crate::model::AddOutputRequest>) -> Self {
             let mut v = self.outputs.unwrap_or_default();
             v.push(input.into());
             self.outputs = Some(v);
             self
         }
+        /// A list of outputs that you want to add.
         pub fn set_outputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AddOutputRequest>>,
@@ -221,7 +235,7 @@ pub mod add_flow_outputs_input {
             self,
         ) -> std::result::Result<
             crate::input::AddFlowOutputsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AddFlowOutputsInput {
                 flow_arn: self.flow_arn,
@@ -241,27 +255,27 @@ impl AddFlowOutputsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AddFlowOutputs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AddFlowOutputsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_2 = &_input.flow_arn;
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "flow_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let flow_arn = smithy_http::label::fmt_string(input_2, false);
+            let flow_arn = aws_smithy_http::label::fmt_string(input_2, false);
             if flow_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 });
@@ -274,7 +288,7 @@ impl AddFlowOutputsInput {
         fn update_http_builder(
             input: &crate::input::AddFlowOutputsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -283,27 +297,27 @@ impl AddFlowOutputsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AddFlowOutputsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_flow_outputs(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -326,15 +340,15 @@ impl AddFlowOutputsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AddFlowOutputs::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AddFlowOutputs",
             "mediaconnect",
         ));
@@ -343,10 +357,10 @@ impl AddFlowOutputsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -375,16 +389,23 @@ pub mod add_flow_sources_input {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The flow that you want to mutate.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
         }
+        /// Appends an item to `sources`.
+        ///
+        /// To override the contents of this collection use [`set_sources`](Self::set_sources).
+        ///
+        /// A list of sources that you want to add.
         pub fn sources(mut self, input: impl Into<crate::model::SetSourceRequest>) -> Self {
             let mut v = self.sources.unwrap_or_default();
             v.push(input.into());
             self.sources = Some(v);
             self
         }
+        /// A list of sources that you want to add.
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SetSourceRequest>>,
@@ -397,7 +418,7 @@ pub mod add_flow_sources_input {
             self,
         ) -> std::result::Result<
             crate::input::AddFlowSourcesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AddFlowSourcesInput {
                 flow_arn: self.flow_arn,
@@ -417,27 +438,27 @@ impl AddFlowSourcesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AddFlowSources,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AddFlowSourcesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_3 = &_input.flow_arn;
             let input_3 =
                 input_3
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "flow_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let flow_arn = smithy_http::label::fmt_string(input_3, false);
+            let flow_arn = aws_smithy_http::label::fmt_string(input_3, false);
             if flow_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 });
@@ -450,7 +471,7 @@ impl AddFlowSourcesInput {
         fn update_http_builder(
             input: &crate::input::AddFlowSourcesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -459,27 +480,27 @@ impl AddFlowSourcesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AddFlowSourcesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_flow_sources(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -502,15 +523,15 @@ impl AddFlowSourcesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AddFlowSources::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AddFlowSources",
             "mediaconnect",
         ));
@@ -519,10 +540,10 @@ impl AddFlowSourcesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -552,10 +573,16 @@ pub mod add_flow_vpc_interfaces_input {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The flow that you want to mutate.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
         }
+        /// Appends an item to `vpc_interfaces`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_interfaces`](Self::set_vpc_interfaces).
+        ///
+        /// A list of VPC interfaces that you want to add.
         pub fn vpc_interfaces(
             mut self,
             input: impl Into<crate::model::VpcInterfaceRequest>,
@@ -565,6 +592,7 @@ pub mod add_flow_vpc_interfaces_input {
             self.vpc_interfaces = Some(v);
             self
         }
+        /// A list of VPC interfaces that you want to add.
         pub fn set_vpc_interfaces(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VpcInterfaceRequest>>,
@@ -577,7 +605,7 @@ pub mod add_flow_vpc_interfaces_input {
             self,
         ) -> std::result::Result<
             crate::input::AddFlowVpcInterfacesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AddFlowVpcInterfacesInput {
                 flow_arn: self.flow_arn,
@@ -597,27 +625,27 @@ impl AddFlowVpcInterfacesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AddFlowVpcInterfaces,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AddFlowVpcInterfacesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_4 = &_input.flow_arn;
             let input_4 =
                 input_4
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "flow_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let flow_arn = smithy_http::label::fmt_string(input_4, false);
+            let flow_arn = aws_smithy_http::label::fmt_string(input_4, false);
             if flow_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 });
@@ -634,7 +662,7 @@ impl AddFlowVpcInterfacesInput {
         fn update_http_builder(
             input: &crate::input::AddFlowVpcInterfacesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -643,27 +671,29 @@ impl AddFlowVpcInterfacesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AddFlowVpcInterfacesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_flow_vpc_interfaces(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -686,15 +716,15 @@ impl AddFlowVpcInterfacesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AddFlowVpcInterfaces::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AddFlowVpcInterfaces",
             "mediaconnect",
         ));
@@ -703,10 +733,10 @@ impl AddFlowVpcInterfacesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -745,6 +775,7 @@ pub mod create_flow_input {
             self.availability_zone = Some(input.into());
             self
         }
+        /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -752,6 +783,11 @@ pub mod create_flow_input {
             self.availability_zone = input;
             self
         }
+        /// Appends an item to `entitlements`.
+        ///
+        /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
+        ///
+        /// The entitlements that you want to grant on a flow.
         pub fn entitlements(
             mut self,
             input: impl Into<crate::model::GrantEntitlementRequest>,
@@ -761,6 +797,7 @@ pub mod create_flow_input {
             self.entitlements = Some(v);
             self
         }
+        /// The entitlements that you want to grant on a flow.
         pub fn set_entitlements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GrantEntitlementRequest>>,
@@ -768,6 +805,11 @@ pub mod create_flow_input {
             self.entitlements = input;
             self
         }
+        /// Appends an item to `media_streams`.
+        ///
+        /// To override the contents of this collection use [`set_media_streams`](Self::set_media_streams).
+        ///
+        /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
         pub fn media_streams(
             mut self,
             input: impl Into<crate::model::AddMediaStreamRequest>,
@@ -777,6 +819,7 @@ pub mod create_flow_input {
             self.media_streams = Some(v);
             self
         }
+        /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
         pub fn set_media_streams(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AddMediaStreamRequest>>,
@@ -789,16 +832,23 @@ pub mod create_flow_input {
             self.name = Some(input.into());
             self
         }
+        /// The name of the flow.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `outputs`.
+        ///
+        /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
+        ///
+        /// The outputs that you want to add to this flow.
         pub fn outputs(mut self, input: impl Into<crate::model::AddOutputRequest>) -> Self {
             let mut v = self.outputs.unwrap_or_default();
             v.push(input.into());
             self.outputs = Some(v);
             self
         }
+        /// The outputs that you want to add to this flow.
         pub fn set_outputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AddOutputRequest>>,
@@ -811,6 +861,7 @@ pub mod create_flow_input {
             self.source = Some(input);
             self
         }
+        /// The settings for the source of the flow.
         pub fn set_source(
             mut self,
             input: std::option::Option<crate::model::SetSourceRequest>,
@@ -823,6 +874,7 @@ pub mod create_flow_input {
             self.source_failover_config = Some(input);
             self
         }
+        /// The settings for source failover
         pub fn set_source_failover_config(
             mut self,
             input: std::option::Option<crate::model::FailoverConfig>,
@@ -830,12 +882,17 @@ pub mod create_flow_input {
             self.source_failover_config = input;
             self
         }
+        /// Appends an item to `sources`.
+        ///
+        /// To override the contents of this collection use [`set_sources`](Self::set_sources).
+        ///
         pub fn sources(mut self, input: impl Into<crate::model::SetSourceRequest>) -> Self {
             let mut v = self.sources.unwrap_or_default();
             v.push(input.into());
             self.sources = Some(v);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SetSourceRequest>>,
@@ -843,6 +900,11 @@ pub mod create_flow_input {
             self.sources = input;
             self
         }
+        /// Appends an item to `vpc_interfaces`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_interfaces`](Self::set_vpc_interfaces).
+        ///
+        /// The VPC interfaces you want on the flow.
         pub fn vpc_interfaces(
             mut self,
             input: impl Into<crate::model::VpcInterfaceRequest>,
@@ -852,6 +914,7 @@ pub mod create_flow_input {
             self.vpc_interfaces = Some(v);
             self
         }
+        /// The VPC interfaces you want on the flow.
         pub fn set_vpc_interfaces(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VpcInterfaceRequest>>,
@@ -862,8 +925,10 @@ pub mod create_flow_input {
         /// Consumes the builder and constructs a [`CreateFlowInput`](crate::input::CreateFlowInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateFlowInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateFlowInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateFlowInput {
                 availability_zone: self.availability_zone,
                 entitlements: self.entitlements,
@@ -889,16 +954,16 @@ impl CreateFlowInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateFlow,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateFlowInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v1/flows").expect("formatting should succeed");
             Ok(())
         }
@@ -906,7 +971,7 @@ impl CreateFlowInput {
         fn update_http_builder(
             input: &crate::input::CreateFlowInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -915,24 +980,26 @@ impl CreateFlowInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateFlowInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_flow(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -955,25 +1022,27 @@ impl CreateFlowInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateFlow::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateFlow",
-                    "mediaconnect",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateFlow::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateFlow",
+            "mediaconnect",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1001,6 +1070,7 @@ pub mod delete_flow_input {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The ARN of the flow that you want to delete.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
@@ -1008,8 +1078,10 @@ pub mod delete_flow_input {
         /// Consumes the builder and constructs a [`DeleteFlowInput`](crate::input::DeleteFlowInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteFlowInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteFlowInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteFlowInput {
                 flow_arn: self.flow_arn,
             })
@@ -1027,27 +1099,27 @@ impl DeleteFlowInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteFlow,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteFlowInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_5 = &_input.flow_arn;
             let input_5 =
                 input_5
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "flow_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let flow_arn = smithy_http::label::fmt_string(input_5, false);
+            let flow_arn = aws_smithy_http::label::fmt_string(input_5, false);
             if flow_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 });
@@ -1060,7 +1132,7 @@ impl DeleteFlowInput {
         fn update_http_builder(
             input: &crate::input::DeleteFlowInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1069,23 +1141,23 @@ impl DeleteFlowInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteFlowInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1108,25 +1180,27 @@ impl DeleteFlowInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteFlow::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteFlow",
-                    "mediaconnect",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteFlow::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteFlow",
+            "mediaconnect",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1154,6 +1228,7 @@ pub mod describe_flow_input {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The ARN of the flow that you want to describe.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
@@ -1161,8 +1236,10 @@ pub mod describe_flow_input {
         /// Consumes the builder and constructs a [`DescribeFlowInput`](crate::input::DescribeFlowInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeFlowInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeFlowInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeFlowInput {
                 flow_arn: self.flow_arn,
             })
@@ -1180,27 +1257,27 @@ impl DescribeFlowInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeFlow,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeFlowInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_6 = &_input.flow_arn;
             let input_6 =
                 input_6
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "flow_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let flow_arn = smithy_http::label::fmt_string(input_6, false);
+            let flow_arn = aws_smithy_http::label::fmt_string(input_6, false);
             if flow_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 });
@@ -1213,7 +1290,7 @@ impl DescribeFlowInput {
         fn update_http_builder(
             input: &crate::input::DescribeFlowInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1222,23 +1299,23 @@ impl DescribeFlowInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeFlowInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1261,25 +1338,27 @@ impl DescribeFlowInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeFlow::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeFlow",
-                    "mediaconnect",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeFlow::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeFlow",
+            "mediaconnect",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1307,6 +1386,7 @@ pub mod describe_offering_input {
             self.offering_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of the offering.
         pub fn set_offering_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.offering_arn = input;
             self
@@ -1316,7 +1396,7 @@ pub mod describe_offering_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeOfferingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeOfferingInput {
                 offering_arn: self.offering_arn,
@@ -1335,27 +1415,27 @@ impl DescribeOfferingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeOffering,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeOfferingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_7 = &_input.offering_arn;
             let input_7 =
                 input_7
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "offering_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let offering_arn = smithy_http::label::fmt_string(input_7, false);
+            let offering_arn = aws_smithy_http::label::fmt_string(input_7, false);
             if offering_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "offering_arn",
                     details: "cannot be empty or unset",
                 });
@@ -1372,7 +1452,7 @@ impl DescribeOfferingInput {
         fn update_http_builder(
             input: &crate::input::DescribeOfferingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1381,23 +1461,23 @@ impl DescribeOfferingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeOfferingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1420,15 +1500,15 @@ impl DescribeOfferingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeOffering::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeOffering",
             "mediaconnect",
         ));
@@ -1437,10 +1517,10 @@ impl DescribeOfferingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1468,6 +1548,7 @@ pub mod describe_reservation_input {
             self.reservation_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of the reservation.
         pub fn set_reservation_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1480,7 +1561,7 @@ pub mod describe_reservation_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeReservationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeReservationInput {
                 reservation_arn: self.reservation_arn,
@@ -1499,27 +1580,27 @@ impl DescribeReservationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeReservation,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeReservationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_8 = &_input.reservation_arn;
             let input_8 =
                 input_8
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "reservation_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let reservation_arn = smithy_http::label::fmt_string(input_8, false);
+            let reservation_arn = aws_smithy_http::label::fmt_string(input_8, false);
             if reservation_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "reservation_arn",
                     details: "cannot be empty or unset",
                 });
@@ -1536,7 +1617,7 @@ impl DescribeReservationInput {
         fn update_http_builder(
             input: &crate::input::DescribeReservationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1545,23 +1626,23 @@ impl DescribeReservationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeReservationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1584,15 +1665,15 @@ impl DescribeReservationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeReservation::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeReservation",
             "mediaconnect",
         ));
@@ -1601,10 +1682,10 @@ impl DescribeReservationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1629,6 +1710,11 @@ pub mod grant_flow_entitlements_input {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `entitlements`.
+        ///
+        /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
+        ///
+        /// The list of entitlements that you want to grant.
         pub fn entitlements(
             mut self,
             input: impl Into<crate::model::GrantEntitlementRequest>,
@@ -1638,6 +1724,7 @@ pub mod grant_flow_entitlements_input {
             self.entitlements = Some(v);
             self
         }
+        /// The list of entitlements that you want to grant.
         pub fn set_entitlements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GrantEntitlementRequest>>,
@@ -1650,6 +1737,7 @@ pub mod grant_flow_entitlements_input {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The flow that you want to grant entitlements on.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
@@ -1659,7 +1747,7 @@ pub mod grant_flow_entitlements_input {
             self,
         ) -> std::result::Result<
             crate::input::GrantFlowEntitlementsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GrantFlowEntitlementsInput {
                 entitlements: self.entitlements,
@@ -1679,27 +1767,27 @@ impl GrantFlowEntitlementsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GrantFlowEntitlements,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GrantFlowEntitlementsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_9 = &_input.flow_arn;
             let input_9 =
                 input_9
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "flow_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let flow_arn = smithy_http::label::fmt_string(input_9, false);
+            let flow_arn = aws_smithy_http::label::fmt_string(input_9, false);
             if flow_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 });
@@ -1716,7 +1804,7 @@ impl GrantFlowEntitlementsInput {
         fn update_http_builder(
             input: &crate::input::GrantFlowEntitlementsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1725,27 +1813,29 @@ impl GrantFlowEntitlementsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GrantFlowEntitlementsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_grant_flow_entitlements(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1768,15 +1858,15 @@ impl GrantFlowEntitlementsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GrantFlowEntitlements::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GrantFlowEntitlements",
             "mediaconnect",
         ));
@@ -1785,10 +1875,10 @@ impl GrantFlowEntitlementsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1817,6 +1907,7 @@ pub mod list_entitlements_input {
             self.max_results = Some(input);
             self
         }
+        /// The maximum number of results to return per API request. For example, you submit a ListEntitlements request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 20 results per page.
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1826,6 +1917,7 @@ pub mod list_entitlements_input {
             self.next_token = Some(input.into());
             self
         }
+        /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1835,7 +1927,7 @@ pub mod list_entitlements_input {
             self,
         ) -> std::result::Result<
             crate::input::ListEntitlementsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListEntitlementsInput {
                 max_results: self.max_results.unwrap_or_default(),
@@ -1855,36 +1947,36 @@ impl ListEntitlementsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListEntitlements,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListEntitlementsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v1/entitlements").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListEntitlementsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_10) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_10));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListEntitlementsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1894,23 +1986,23 @@ impl ListEntitlementsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListEntitlementsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1933,15 +2025,15 @@ impl ListEntitlementsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListEntitlements::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListEntitlements",
             "mediaconnect",
         ));
@@ -1950,10 +2042,10 @@ impl ListEntitlementsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1982,6 +2074,7 @@ pub mod list_flows_input {
             self.max_results = Some(input);
             self
         }
+        /// The maximum number of results to return per API request. For example, you submit a ListFlows request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1991,6 +2084,7 @@ pub mod list_flows_input {
             self.next_token = Some(input.into());
             self
         }
+        /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1998,7 +2092,7 @@ pub mod list_flows_input {
         /// Consumes the builder and constructs a [`ListFlowsInput`](crate::input::ListFlowsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListFlowsInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListFlowsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListFlowsInput {
                 max_results: self.max_results.unwrap_or_default(),
@@ -2018,36 +2112,36 @@ impl ListFlowsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListFlows,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListFlowsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v1/flows").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListFlowsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_11) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_11));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_11));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListFlowsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2057,23 +2151,23 @@ impl ListFlowsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListFlowsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2096,13 +2190,13 @@ impl ListFlowsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListFlows::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListFlows::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListFlows",
                     "mediaconnect",
                 ));
@@ -2111,10 +2205,10 @@ impl ListFlowsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2143,6 +2237,7 @@ pub mod list_offerings_input {
             self.max_results = Some(input);
             self
         }
+        /// The maximum number of results to return per API request. For example, you submit a ListOfferings request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2152,6 +2247,7 @@ pub mod list_offerings_input {
             self.next_token = Some(input.into());
             self
         }
+        /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2159,8 +2255,10 @@ pub mod list_offerings_input {
         /// Consumes the builder and constructs a [`ListOfferingsInput`](crate::input::ListOfferingsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListOfferingsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListOfferingsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListOfferingsInput {
                 max_results: self.max_results.unwrap_or_default(),
                 next_token: self.next_token,
@@ -2179,36 +2277,36 @@ impl ListOfferingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListOfferings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListOfferingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v1/offerings").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListOfferingsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_12) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_12));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_12));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListOfferingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2218,23 +2316,23 @@ impl ListOfferingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListOfferingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2257,25 +2355,27 @@ impl ListOfferingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListOfferings::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListOfferings",
-                    "mediaconnect",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListOfferings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListOfferings",
+            "mediaconnect",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2304,6 +2404,7 @@ pub mod list_reservations_input {
             self.max_results = Some(input);
             self
         }
+        /// The maximum number of results to return per API request. For example, you submit a ListReservations request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2313,6 +2414,7 @@ pub mod list_reservations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2322,7 +2424,7 @@ pub mod list_reservations_input {
             self,
         ) -> std::result::Result<
             crate::input::ListReservationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListReservationsInput {
                 max_results: self.max_results.unwrap_or_default(),
@@ -2342,36 +2444,36 @@ impl ListReservationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListReservations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListReservationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v1/reservations").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListReservationsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_13) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_13));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_13));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListReservationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2381,23 +2483,23 @@ impl ListReservationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListReservationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2420,15 +2522,15 @@ impl ListReservationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListReservations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListReservations",
             "mediaconnect",
         ));
@@ -2437,10 +2539,10 @@ impl ListReservationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2468,6 +2570,7 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list the tags.
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2477,7 +2580,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -2496,27 +2599,27 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_14 = &_input.resource_arn;
             let input_14 =
                 input_14
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_14, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_14, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -2529,7 +2632,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2538,23 +2641,23 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2577,15 +2680,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "mediaconnect",
         ));
@@ -2594,10 +2697,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2627,6 +2730,7 @@ pub mod purchase_offering_input {
             self.offering_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of the offering.
         pub fn set_offering_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.offering_arn = input;
             self
@@ -2636,6 +2740,7 @@ pub mod purchase_offering_input {
             self.reservation_name = Some(input.into());
             self
         }
+        /// The name that you want to use for the reservation.
         pub fn set_reservation_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2648,6 +2753,7 @@ pub mod purchase_offering_input {
             self.start = Some(input.into());
             self
         }
+        /// The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
         pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start = input;
             self
@@ -2657,7 +2763,7 @@ pub mod purchase_offering_input {
             self,
         ) -> std::result::Result<
             crate::input::PurchaseOfferingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PurchaseOfferingInput {
                 offering_arn: self.offering_arn,
@@ -2678,27 +2784,27 @@ impl PurchaseOfferingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PurchaseOffering,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PurchaseOfferingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_15 = &_input.offering_arn;
             let input_15 =
                 input_15
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "offering_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let offering_arn = smithy_http::label::fmt_string(input_15, false);
+            let offering_arn = aws_smithy_http::label::fmt_string(input_15, false);
             if offering_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "offering_arn",
                     details: "cannot be empty or unset",
                 });
@@ -2715,7 +2821,7 @@ impl PurchaseOfferingInput {
         fn update_http_builder(
             input: &crate::input::PurchaseOfferingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2724,27 +2830,27 @@ impl PurchaseOfferingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PurchaseOfferingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_purchase_offering(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2767,15 +2873,15 @@ impl PurchaseOfferingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PurchaseOffering::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PurchaseOffering",
             "mediaconnect",
         ));
@@ -2784,10 +2890,10 @@ impl PurchaseOfferingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2816,6 +2922,7 @@ pub mod remove_flow_media_stream_input {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of the flow.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
@@ -2825,6 +2932,7 @@ pub mod remove_flow_media_stream_input {
             self.media_stream_name = Some(input.into());
             self
         }
+        /// The name of the media stream that you want to remove.
         pub fn set_media_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2837,7 +2945,7 @@ pub mod remove_flow_media_stream_input {
             self,
         ) -> std::result::Result<
             crate::input::RemoveFlowMediaStreamInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RemoveFlowMediaStreamInput {
                 flow_arn: self.flow_arn,
@@ -2857,27 +2965,27 @@ impl RemoveFlowMediaStreamInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RemoveFlowMediaStream,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RemoveFlowMediaStreamInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_16 = &_input.flow_arn;
             let input_16 =
                 input_16
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "flow_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let flow_arn = smithy_http::label::fmt_string(input_16, false);
+            let flow_arn = aws_smithy_http::label::fmt_string(input_16, false);
             if flow_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 });
@@ -2886,13 +2994,13 @@ impl RemoveFlowMediaStreamInput {
             let input_17 =
                 input_17
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "media_stream_name",
                         details: "cannot be empty or unset",
                     })?;
-            let media_stream_name = smithy_http::label::fmt_string(input_17, false);
+            let media_stream_name = aws_smithy_http::label::fmt_string(input_17, false);
             if media_stream_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "media_stream_name",
                     details: "cannot be empty or unset",
                 });
@@ -2910,7 +3018,7 @@ impl RemoveFlowMediaStreamInput {
         fn update_http_builder(
             input: &crate::input::RemoveFlowMediaStreamInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2919,23 +3027,23 @@ impl RemoveFlowMediaStreamInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RemoveFlowMediaStreamInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2958,15 +3066,15 @@ impl RemoveFlowMediaStreamInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RemoveFlowMediaStream::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RemoveFlowMediaStream",
             "mediaconnect",
         ));
@@ -2975,10 +3083,10 @@ impl RemoveFlowMediaStreamInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3007,6 +3115,7 @@ pub mod remove_flow_output_input {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The flow that you want to remove an output from.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
@@ -3016,6 +3125,7 @@ pub mod remove_flow_output_input {
             self.output_arn = Some(input.into());
             self
         }
+        /// The ARN of the output that you want to remove.
         pub fn set_output_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output_arn = input;
             self
@@ -3025,7 +3135,7 @@ pub mod remove_flow_output_input {
             self,
         ) -> std::result::Result<
             crate::input::RemoveFlowOutputInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RemoveFlowOutputInput {
                 flow_arn: self.flow_arn,
@@ -3045,27 +3155,27 @@ impl RemoveFlowOutputInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RemoveFlowOutput,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RemoveFlowOutputInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_18 = &_input.flow_arn;
             let input_18 =
                 input_18
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "flow_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let flow_arn = smithy_http::label::fmt_string(input_18, false);
+            let flow_arn = aws_smithy_http::label::fmt_string(input_18, false);
             if flow_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 });
@@ -3074,13 +3184,13 @@ impl RemoveFlowOutputInput {
             let input_19 =
                 input_19
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "output_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let output_arn = smithy_http::label::fmt_string(input_19, false);
+            let output_arn = aws_smithy_http::label::fmt_string(input_19, false);
             if output_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "output_arn",
                     details: "cannot be empty or unset",
                 });
@@ -3098,7 +3208,7 @@ impl RemoveFlowOutputInput {
         fn update_http_builder(
             input: &crate::input::RemoveFlowOutputInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3107,23 +3217,23 @@ impl RemoveFlowOutputInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RemoveFlowOutputInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3146,15 +3256,15 @@ impl RemoveFlowOutputInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RemoveFlowOutput::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RemoveFlowOutput",
             "mediaconnect",
         ));
@@ -3163,10 +3273,10 @@ impl RemoveFlowOutputInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3195,6 +3305,7 @@ pub mod remove_flow_source_input {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The flow that you want to remove a source from.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
@@ -3204,6 +3315,7 @@ pub mod remove_flow_source_input {
             self.source_arn = Some(input.into());
             self
         }
+        /// The ARN of the source that you want to remove.
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_arn = input;
             self
@@ -3213,7 +3325,7 @@ pub mod remove_flow_source_input {
             self,
         ) -> std::result::Result<
             crate::input::RemoveFlowSourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RemoveFlowSourceInput {
                 flow_arn: self.flow_arn,
@@ -3233,27 +3345,27 @@ impl RemoveFlowSourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RemoveFlowSource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RemoveFlowSourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_20 = &_input.flow_arn;
             let input_20 =
                 input_20
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "flow_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let flow_arn = smithy_http::label::fmt_string(input_20, false);
+            let flow_arn = aws_smithy_http::label::fmt_string(input_20, false);
             if flow_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 });
@@ -3262,13 +3374,13 @@ impl RemoveFlowSourceInput {
             let input_21 =
                 input_21
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "source_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let source_arn = smithy_http::label::fmt_string(input_21, false);
+            let source_arn = aws_smithy_http::label::fmt_string(input_21, false);
             if source_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "source_arn",
                     details: "cannot be empty or unset",
                 });
@@ -3286,7 +3398,7 @@ impl RemoveFlowSourceInput {
         fn update_http_builder(
             input: &crate::input::RemoveFlowSourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3295,23 +3407,23 @@ impl RemoveFlowSourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RemoveFlowSourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3334,15 +3446,15 @@ impl RemoveFlowSourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RemoveFlowSource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RemoveFlowSource",
             "mediaconnect",
         ));
@@ -3351,10 +3463,10 @@ impl RemoveFlowSourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3383,6 +3495,7 @@ pub mod remove_flow_vpc_interface_input {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The flow that you want to remove a VPC interface from.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
@@ -3392,6 +3505,7 @@ pub mod remove_flow_vpc_interface_input {
             self.vpc_interface_name = Some(input.into());
             self
         }
+        /// The name of the VPC interface that you want to remove.
         pub fn set_vpc_interface_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3404,7 +3518,7 @@ pub mod remove_flow_vpc_interface_input {
             self,
         ) -> std::result::Result<
             crate::input::RemoveFlowVpcInterfaceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RemoveFlowVpcInterfaceInput {
                 flow_arn: self.flow_arn,
@@ -3424,27 +3538,27 @@ impl RemoveFlowVpcInterfaceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RemoveFlowVpcInterface,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RemoveFlowVpcInterfaceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_22 = &_input.flow_arn;
             let input_22 =
                 input_22
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "flow_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let flow_arn = smithy_http::label::fmt_string(input_22, false);
+            let flow_arn = aws_smithy_http::label::fmt_string(input_22, false);
             if flow_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 });
@@ -3453,13 +3567,13 @@ impl RemoveFlowVpcInterfaceInput {
             let input_23 =
                 input_23
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "vpc_interface_name",
                         details: "cannot be empty or unset",
                     })?;
-            let vpc_interface_name = smithy_http::label::fmt_string(input_23, false);
+            let vpc_interface_name = aws_smithy_http::label::fmt_string(input_23, false);
             if vpc_interface_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "vpc_interface_name",
                     details: "cannot be empty or unset",
                 });
@@ -3477,7 +3591,7 @@ impl RemoveFlowVpcInterfaceInput {
         fn update_http_builder(
             input: &crate::input::RemoveFlowVpcInterfaceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3486,23 +3600,23 @@ impl RemoveFlowVpcInterfaceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RemoveFlowVpcInterfaceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3525,15 +3639,15 @@ impl RemoveFlowVpcInterfaceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RemoveFlowVpcInterface::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RemoveFlowVpcInterface",
             "mediaconnect",
         ));
@@ -3542,10 +3656,10 @@ impl RemoveFlowVpcInterfaceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3574,6 +3688,7 @@ pub mod revoke_flow_entitlement_input {
             self.entitlement_arn = Some(input.into());
             self
         }
+        /// The ARN of the entitlement that you want to revoke.
         pub fn set_entitlement_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3586,6 +3701,7 @@ pub mod revoke_flow_entitlement_input {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The flow that you want to revoke an entitlement from.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
@@ -3595,7 +3711,7 @@ pub mod revoke_flow_entitlement_input {
             self,
         ) -> std::result::Result<
             crate::input::RevokeFlowEntitlementInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RevokeFlowEntitlementInput {
                 entitlement_arn: self.entitlement_arn,
@@ -3615,27 +3731,27 @@ impl RevokeFlowEntitlementInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RevokeFlowEntitlement,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RevokeFlowEntitlementInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_24 = &_input.flow_arn;
             let input_24 =
                 input_24
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "flow_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let flow_arn = smithy_http::label::fmt_string(input_24, false);
+            let flow_arn = aws_smithy_http::label::fmt_string(input_24, false);
             if flow_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 });
@@ -3644,13 +3760,13 @@ impl RevokeFlowEntitlementInput {
             let input_25 =
                 input_25
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "entitlement_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let entitlement_arn = smithy_http::label::fmt_string(input_25, false);
+            let entitlement_arn = aws_smithy_http::label::fmt_string(input_25, false);
             if entitlement_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "entitlement_arn",
                     details: "cannot be empty or unset",
                 });
@@ -3668,7 +3784,7 @@ impl RevokeFlowEntitlementInput {
         fn update_http_builder(
             input: &crate::input::RevokeFlowEntitlementInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3677,23 +3793,23 @@ impl RevokeFlowEntitlementInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RevokeFlowEntitlementInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3716,15 +3832,15 @@ impl RevokeFlowEntitlementInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RevokeFlowEntitlement::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RevokeFlowEntitlement",
             "mediaconnect",
         ));
@@ -3733,10 +3849,10 @@ impl RevokeFlowEntitlementInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3764,6 +3880,7 @@ pub mod start_flow_input {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The ARN of the flow that you want to start.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
@@ -3771,7 +3888,7 @@ pub mod start_flow_input {
         /// Consumes the builder and constructs a [`StartFlowInput`](crate::input::StartFlowInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::StartFlowInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::StartFlowInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::StartFlowInput {
                 flow_arn: self.flow_arn,
@@ -3790,27 +3907,27 @@ impl StartFlowInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartFlow,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartFlowInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_26 = &_input.flow_arn;
             let input_26 =
                 input_26
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "flow_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let flow_arn = smithy_http::label::fmt_string(input_26, false);
+            let flow_arn = aws_smithy_http::label::fmt_string(input_26, false);
             if flow_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 });
@@ -3823,7 +3940,7 @@ impl StartFlowInput {
         fn update_http_builder(
             input: &crate::input::StartFlowInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3832,23 +3949,23 @@ impl StartFlowInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartFlowInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3871,13 +3988,13 @@ impl StartFlowInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::StartFlow::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::StartFlow::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "StartFlow",
                     "mediaconnect",
                 ));
@@ -3886,10 +4003,10 @@ impl StartFlowInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3917,6 +4034,7 @@ pub mod stop_flow_input {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The ARN of the flow that you want to stop.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
@@ -3924,7 +4042,7 @@ pub mod stop_flow_input {
         /// Consumes the builder and constructs a [`StopFlowInput`](crate::input::StopFlowInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::StopFlowInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::StopFlowInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::StopFlowInput {
                 flow_arn: self.flow_arn,
@@ -3943,27 +4061,27 @@ impl StopFlowInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StopFlow,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StopFlowInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_27 = &_input.flow_arn;
             let input_27 =
                 input_27
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "flow_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let flow_arn = smithy_http::label::fmt_string(input_27, false);
+            let flow_arn = aws_smithy_http::label::fmt_string(input_27, false);
             if flow_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 });
@@ -3976,7 +4094,7 @@ impl StopFlowInput {
         fn update_http_builder(
             input: &crate::input::StopFlowInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3985,23 +4103,23 @@ impl StopFlowInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StopFlowInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4024,24 +4142,25 @@ impl StopFlowInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::StopFlow::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "StopFlow",
-                "mediaconnect",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::StopFlow::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "StopFlow",
+                    "mediaconnect",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4072,10 +4191,16 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource to which to add tags.
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4086,6 +4211,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
+        /// A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4098,8 +4224,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -4118,27 +4246,27 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_28 = &_input.resource_arn;
             let input_28 =
                 input_28
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_28, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_28, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -4151,7 +4279,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4160,24 +4288,26 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4200,25 +4330,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "mediaconnect",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "mediaconnect",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4247,16 +4379,23 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to delete tags.
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// The keys of the tags to be removed.
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// The keys of the tags to be removed.
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4267,8 +4406,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -4287,27 +4428,27 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_29 = &_input.resource_arn;
             let input_29 =
                 input_29
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_29, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_29, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -4317,10 +4458,10 @@ impl UntagResourceInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_30) = &_input.tag_keys {
                 for inner_31 in inner_30 {
-                    query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_31));
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_31));
                 }
             }
         }
@@ -4328,7 +4469,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4338,23 +4479,23 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4377,25 +4518,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "mediaconnect",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "mediaconnect",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4424,6 +4567,7 @@ pub mod update_flow_input {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The flow that you want to update.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
@@ -4433,6 +4577,7 @@ pub mod update_flow_input {
             self.source_failover_config = Some(input);
             self
         }
+        /// The settings for source failover
         pub fn set_source_failover_config(
             mut self,
             input: std::option::Option<crate::model::UpdateFailoverConfig>,
@@ -4443,8 +4588,10 @@ pub mod update_flow_input {
         /// Consumes the builder and constructs a [`UpdateFlowInput`](crate::input::UpdateFlowInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateFlowInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateFlowInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateFlowInput {
                 flow_arn: self.flow_arn,
                 source_failover_config: self.source_failover_config,
@@ -4463,27 +4610,27 @@ impl UpdateFlowInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateFlow,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateFlowInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_32 = &_input.flow_arn;
             let input_32 =
                 input_32
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "flow_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let flow_arn = smithy_http::label::fmt_string(input_32, false);
+            let flow_arn = aws_smithy_http::label::fmt_string(input_32, false);
             if flow_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 });
@@ -4496,7 +4643,7 @@ impl UpdateFlowInput {
         fn update_http_builder(
             input: &crate::input::UpdateFlowInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4505,24 +4652,26 @@ impl UpdateFlowInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateFlowInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_flow(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4545,25 +4694,27 @@ impl UpdateFlowInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateFlow::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateFlow",
-                    "mediaconnect",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFlow::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateFlow",
+            "mediaconnect",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4596,6 +4747,7 @@ pub mod update_flow_entitlement_input {
             self.description = Some(input.into());
             self
         }
+        /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -4605,6 +4757,7 @@ pub mod update_flow_entitlement_input {
             self.encryption = Some(input);
             self
         }
+        /// The type of encryption that will be used on the output associated with this entitlement.
         pub fn set_encryption(
             mut self,
             input: std::option::Option<crate::model::UpdateEncryption>,
@@ -4617,6 +4770,7 @@ pub mod update_flow_entitlement_input {
             self.entitlement_arn = Some(input.into());
             self
         }
+        /// The ARN of the entitlement that you want to update.
         pub fn set_entitlement_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4629,6 +4783,7 @@ pub mod update_flow_entitlement_input {
             self.entitlement_status = Some(input);
             self
         }
+        /// An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
         pub fn set_entitlement_status(
             mut self,
             input: std::option::Option<crate::model::EntitlementStatus>,
@@ -4641,16 +4796,23 @@ pub mod update_flow_entitlement_input {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The flow that is associated with the entitlement that you want to update.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
         }
+        /// Appends an item to `subscribers`.
+        ///
+        /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
+        ///
+        /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
         pub fn subscribers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
             v.push(input.into());
             self.subscribers = Some(v);
             self
         }
+        /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
         pub fn set_subscribers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4663,7 +4825,7 @@ pub mod update_flow_entitlement_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateFlowEntitlementInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateFlowEntitlementInput {
                 description: self.description,
@@ -4687,27 +4849,27 @@ impl UpdateFlowEntitlementInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateFlowEntitlement,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateFlowEntitlementInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_33 = &_input.flow_arn;
             let input_33 =
                 input_33
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "flow_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let flow_arn = smithy_http::label::fmt_string(input_33, false);
+            let flow_arn = aws_smithy_http::label::fmt_string(input_33, false);
             if flow_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 });
@@ -4716,13 +4878,13 @@ impl UpdateFlowEntitlementInput {
             let input_34 =
                 input_34
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "entitlement_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let entitlement_arn = smithy_http::label::fmt_string(input_34, false);
+            let entitlement_arn = aws_smithy_http::label::fmt_string(input_34, false);
             if entitlement_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "entitlement_arn",
                     details: "cannot be empty or unset",
                 });
@@ -4740,7 +4902,7 @@ impl UpdateFlowEntitlementInput {
         fn update_http_builder(
             input: &crate::input::UpdateFlowEntitlementInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4749,27 +4911,29 @@ impl UpdateFlowEntitlementInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateFlowEntitlementInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_flow_entitlement(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4792,15 +4956,15 @@ impl UpdateFlowEntitlementInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateFlowEntitlement::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateFlowEntitlement",
             "mediaconnect",
         ));
@@ -4809,10 +4973,10 @@ impl UpdateFlowEntitlementInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4846,6 +5010,7 @@ pub mod update_flow_media_stream_input {
             self.attributes = Some(input);
             self
         }
+        /// The attributes that you want to assign to the media stream.
         pub fn set_attributes(
             mut self,
             input: std::option::Option<crate::model::MediaStreamAttributesRequest>,
@@ -4858,6 +5023,7 @@ pub mod update_flow_media_stream_input {
             self.clock_rate = Some(input);
             self
         }
+        /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
         pub fn set_clock_rate(mut self, input: std::option::Option<i32>) -> Self {
             self.clock_rate = input;
             self
@@ -4867,6 +5033,7 @@ pub mod update_flow_media_stream_input {
             self.description = Some(input.into());
             self
         }
+        /// Description
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -4876,6 +5043,7 @@ pub mod update_flow_media_stream_input {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of the flow.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
@@ -4885,6 +5053,7 @@ pub mod update_flow_media_stream_input {
             self.media_stream_name = Some(input.into());
             self
         }
+        /// The name of the media stream that you want to update.
         pub fn set_media_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4897,6 +5066,7 @@ pub mod update_flow_media_stream_input {
             self.media_stream_type = Some(input);
             self
         }
+        /// The type of media stream.
         pub fn set_media_stream_type(
             mut self,
             input: std::option::Option<crate::model::MediaStreamType>,
@@ -4909,6 +5079,7 @@ pub mod update_flow_media_stream_input {
             self.video_format = Some(input.into());
             self
         }
+        /// The resolution of the video.
         pub fn set_video_format(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.video_format = input;
             self
@@ -4918,7 +5089,7 @@ pub mod update_flow_media_stream_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateFlowMediaStreamInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateFlowMediaStreamInput {
                 attributes: self.attributes,
@@ -4943,27 +5114,27 @@ impl UpdateFlowMediaStreamInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateFlowMediaStream,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateFlowMediaStreamInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_35 = &_input.flow_arn;
             let input_35 =
                 input_35
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "flow_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let flow_arn = smithy_http::label::fmt_string(input_35, false);
+            let flow_arn = aws_smithy_http::label::fmt_string(input_35, false);
             if flow_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 });
@@ -4972,13 +5143,13 @@ impl UpdateFlowMediaStreamInput {
             let input_36 =
                 input_36
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "media_stream_name",
                         details: "cannot be empty or unset",
                     })?;
-            let media_stream_name = smithy_http::label::fmt_string(input_36, false);
+            let media_stream_name = aws_smithy_http::label::fmt_string(input_36, false);
             if media_stream_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "media_stream_name",
                     details: "cannot be empty or unset",
                 });
@@ -4996,7 +5167,7 @@ impl UpdateFlowMediaStreamInput {
         fn update_http_builder(
             input: &crate::input::UpdateFlowMediaStreamInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5005,27 +5176,29 @@ impl UpdateFlowMediaStreamInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateFlowMediaStreamInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_flow_media_stream(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5048,15 +5221,15 @@ impl UpdateFlowMediaStreamInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateFlowMediaStream::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateFlowMediaStream",
             "mediaconnect",
         ));
@@ -5065,10 +5238,10 @@ impl UpdateFlowMediaStreamInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5107,12 +5280,18 @@ pub mod update_flow_output_input {
             std::option::Option<crate::model::VpcInterfaceAttachment>,
     }
     impl Builder {
+        /// Appends an item to `cidr_allow_list`.
+        ///
+        /// To override the contents of this collection use [`set_cidr_allow_list`](Self::set_cidr_allow_list).
+        ///
+        /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
         pub fn cidr_allow_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cidr_allow_list.unwrap_or_default();
             v.push(input.into());
             self.cidr_allow_list = Some(v);
             self
         }
+        /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
         pub fn set_cidr_allow_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5125,6 +5304,7 @@ pub mod update_flow_output_input {
             self.description = Some(input.into());
             self
         }
+        /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5134,6 +5314,7 @@ pub mod update_flow_output_input {
             self.destination = Some(input.into());
             self
         }
+        /// The IP address where you want to send the output.
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.destination = input;
             self
@@ -5143,6 +5324,7 @@ pub mod update_flow_output_input {
             self.encryption = Some(input);
             self
         }
+        /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
         pub fn set_encryption(
             mut self,
             input: std::option::Option<crate::model::UpdateEncryption>,
@@ -5155,6 +5337,7 @@ pub mod update_flow_output_input {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The flow that is associated with the output that you want to update.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
@@ -5164,10 +5347,16 @@ pub mod update_flow_output_input {
             self.max_latency = Some(input);
             self
         }
+        /// The maximum latency in milliseconds for Zixi-based streams.
         pub fn set_max_latency(mut self, input: std::option::Option<i32>) -> Self {
             self.max_latency = input;
             self
         }
+        /// Appends an item to `media_stream_output_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_media_stream_output_configurations`](Self::set_media_stream_output_configurations).
+        ///
+        /// The media streams that are associated with the output, and the parameters for those associations.
         pub fn media_stream_output_configurations(
             mut self,
             input: impl Into<crate::model::MediaStreamOutputConfigurationRequest>,
@@ -5177,6 +5366,7 @@ pub mod update_flow_output_input {
             self.media_stream_output_configurations = Some(v);
             self
         }
+        /// The media streams that are associated with the output, and the parameters for those associations.
         pub fn set_media_stream_output_configurations(
             mut self,
             input: std::option::Option<
@@ -5191,6 +5381,7 @@ pub mod update_flow_output_input {
             self.min_latency = Some(input);
             self
         }
+        /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
         pub fn set_min_latency(mut self, input: std::option::Option<i32>) -> Self {
             self.min_latency = input;
             self
@@ -5200,6 +5391,7 @@ pub mod update_flow_output_input {
             self.output_arn = Some(input.into());
             self
         }
+        /// The ARN of the output that you want to update.
         pub fn set_output_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output_arn = input;
             self
@@ -5209,6 +5401,7 @@ pub mod update_flow_output_input {
             self.port = Some(input);
             self
         }
+        /// The port to use when content is distributed to this output.
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -5218,6 +5411,7 @@ pub mod update_flow_output_input {
             self.protocol = Some(input);
             self
         }
+        /// The protocol to use for the output.
         pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
             self.protocol = input;
             self
@@ -5227,6 +5421,7 @@ pub mod update_flow_output_input {
             self.remote_id = Some(input.into());
             self
         }
+        /// The remote ID for the Zixi-pull stream.
         pub fn set_remote_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.remote_id = input;
             self
@@ -5236,6 +5431,7 @@ pub mod update_flow_output_input {
             self.smoothing_latency = Some(input);
             self
         }
+        /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
         pub fn set_smoothing_latency(mut self, input: std::option::Option<i32>) -> Self {
             self.smoothing_latency = input;
             self
@@ -5245,6 +5441,7 @@ pub mod update_flow_output_input {
             self.stream_id = Some(input.into());
             self
         }
+        /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_id = input;
             self
@@ -5257,6 +5454,7 @@ pub mod update_flow_output_input {
             self.vpc_interface_attachment = Some(input);
             self
         }
+        /// The name of the VPC interface attachment to use for this output.
         pub fn set_vpc_interface_attachment(
             mut self,
             input: std::option::Option<crate::model::VpcInterfaceAttachment>,
@@ -5269,7 +5467,7 @@ pub mod update_flow_output_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateFlowOutputInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateFlowOutputInput {
                 cidr_allow_list: self.cidr_allow_list,
@@ -5302,27 +5500,27 @@ impl UpdateFlowOutputInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateFlowOutput,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateFlowOutputInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_37 = &_input.flow_arn;
             let input_37 =
                 input_37
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "flow_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let flow_arn = smithy_http::label::fmt_string(input_37, false);
+            let flow_arn = aws_smithy_http::label::fmt_string(input_37, false);
             if flow_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 });
@@ -5331,13 +5529,13 @@ impl UpdateFlowOutputInput {
             let input_38 =
                 input_38
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "output_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let output_arn = smithy_http::label::fmt_string(input_38, false);
+            let output_arn = aws_smithy_http::label::fmt_string(input_38, false);
             if output_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "output_arn",
                     details: "cannot be empty or unset",
                 });
@@ -5355,7 +5553,7 @@ impl UpdateFlowOutputInput {
         fn update_http_builder(
             input: &crate::input::UpdateFlowOutputInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5364,27 +5562,27 @@ impl UpdateFlowOutputInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateFlowOutputInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_flow_output(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5407,15 +5605,15 @@ impl UpdateFlowOutputInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateFlowOutput::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateFlowOutput",
             "mediaconnect",
         ));
@@ -5424,10 +5622,10 @@ impl UpdateFlowOutputInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5470,6 +5668,7 @@ pub mod update_flow_source_input {
             self.decryption = Some(input);
             self
         }
+        /// The type of encryption used on the content ingested from this source.
         pub fn set_decryption(
             mut self,
             input: std::option::Option<crate::model::UpdateEncryption>,
@@ -5482,6 +5681,7 @@ pub mod update_flow_source_input {
             self.description = Some(input.into());
             self
         }
+        /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5491,6 +5691,7 @@ pub mod update_flow_source_input {
             self.entitlement_arn = Some(input.into());
             self
         }
+        /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
         pub fn set_entitlement_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5503,6 +5704,7 @@ pub mod update_flow_source_input {
             self.flow_arn = Some(input.into());
             self
         }
+        /// The flow that is associated with the source that you want to update.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_arn = input;
             self
@@ -5512,6 +5714,7 @@ pub mod update_flow_source_input {
             self.ingest_port = Some(input);
             self
         }
+        /// The port that the flow will be listening on for incoming content.
         pub fn set_ingest_port(mut self, input: std::option::Option<i32>) -> Self {
             self.ingest_port = input;
             self
@@ -5521,6 +5724,7 @@ pub mod update_flow_source_input {
             self.max_bitrate = Some(input);
             self
         }
+        /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
         pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
             self.max_bitrate = input;
             self
@@ -5530,6 +5734,7 @@ pub mod update_flow_source_input {
             self.max_latency = Some(input);
             self
         }
+        /// The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
         pub fn set_max_latency(mut self, input: std::option::Option<i32>) -> Self {
             self.max_latency = input;
             self
@@ -5539,10 +5744,16 @@ pub mod update_flow_source_input {
             self.max_sync_buffer = Some(input);
             self
         }
+        /// The size of the buffer (in milliseconds) to use to sync incoming source data.
         pub fn set_max_sync_buffer(mut self, input: std::option::Option<i32>) -> Self {
             self.max_sync_buffer = input;
             self
         }
+        /// Appends an item to `media_stream_source_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_media_stream_source_configurations`](Self::set_media_stream_source_configurations).
+        ///
+        /// The media streams that are associated with the source, and the parameters for those associations.
         pub fn media_stream_source_configurations(
             mut self,
             input: impl Into<crate::model::MediaStreamSourceConfigurationRequest>,
@@ -5552,6 +5763,7 @@ pub mod update_flow_source_input {
             self.media_stream_source_configurations = Some(v);
             self
         }
+        /// The media streams that are associated with the source, and the parameters for those associations.
         pub fn set_media_stream_source_configurations(
             mut self,
             input: std::option::Option<
@@ -5566,6 +5778,7 @@ pub mod update_flow_source_input {
             self.min_latency = Some(input);
             self
         }
+        /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
         pub fn set_min_latency(mut self, input: std::option::Option<i32>) -> Self {
             self.min_latency = input;
             self
@@ -5575,6 +5788,7 @@ pub mod update_flow_source_input {
             self.protocol = Some(input);
             self
         }
+        /// The protocol that is used by the source.
         pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
             self.protocol = input;
             self
@@ -5584,6 +5798,7 @@ pub mod update_flow_source_input {
             self.source_arn = Some(input.into());
             self
         }
+        /// The ARN of the source that you want to update.
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_arn = input;
             self
@@ -5593,6 +5808,7 @@ pub mod update_flow_source_input {
             self.stream_id = Some(input.into());
             self
         }
+        /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_id = input;
             self
@@ -5602,6 +5818,7 @@ pub mod update_flow_source_input {
             self.vpc_interface_name = Some(input.into());
             self
         }
+        /// The name of the VPC interface to use for this source.
         pub fn set_vpc_interface_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5614,6 +5831,7 @@ pub mod update_flow_source_input {
             self.whitelist_cidr = Some(input.into());
             self
         }
+        /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
         pub fn set_whitelist_cidr(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5626,7 +5844,7 @@ pub mod update_flow_source_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateFlowSourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateFlowSourceInput {
                 decryption: self.decryption,
@@ -5659,27 +5877,27 @@ impl UpdateFlowSourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateFlowSource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateFlowSourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_39 = &_input.flow_arn;
             let input_39 =
                 input_39
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "flow_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let flow_arn = smithy_http::label::fmt_string(input_39, false);
+            let flow_arn = aws_smithy_http::label::fmt_string(input_39, false);
             if flow_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "flow_arn",
                     details: "cannot be empty or unset",
                 });
@@ -5688,13 +5906,13 @@ impl UpdateFlowSourceInput {
             let input_40 =
                 input_40
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "source_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let source_arn = smithy_http::label::fmt_string(input_40, false);
+            let source_arn = aws_smithy_http::label::fmt_string(input_40, false);
             if source_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "source_arn",
                     details: "cannot be empty or unset",
                 });
@@ -5712,7 +5930,7 @@ impl UpdateFlowSourceInput {
         fn update_http_builder(
             input: &crate::input::UpdateFlowSourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5721,27 +5939,27 @@ impl UpdateFlowSourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateFlowSourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_flow_source(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5764,15 +5982,15 @@ impl UpdateFlowSourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateFlowSource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateFlowSource",
             "mediaconnect",
         ));
@@ -5781,10 +5999,10 @@ impl UpdateFlowSourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6001,6 +6219,7 @@ impl std::fmt::Debug for UpdateFlowInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -6037,6 +6256,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopFlowInput {
@@ -6051,6 +6271,7 @@ impl std::fmt::Debug for StopFlowInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFlowInput {
@@ -6065,6 +6286,7 @@ impl std::fmt::Debug for StartFlowInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeFlowEntitlementInput {
@@ -6082,6 +6304,7 @@ impl std::fmt::Debug for RevokeFlowEntitlementInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveFlowVpcInterfaceInput {
@@ -6099,6 +6322,7 @@ impl std::fmt::Debug for RemoveFlowVpcInterfaceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveFlowSourceInput {
@@ -6116,6 +6340,7 @@ impl std::fmt::Debug for RemoveFlowSourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveFlowOutputInput {
@@ -6133,6 +6358,7 @@ impl std::fmt::Debug for RemoveFlowOutputInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveFlowMediaStreamInput {
@@ -6171,6 +6397,7 @@ impl std::fmt::Debug for PurchaseOfferingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -6185,6 +6412,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReservationsInput {
@@ -6202,6 +6430,7 @@ impl std::fmt::Debug for ListReservationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOfferingsInput {
@@ -6219,6 +6448,7 @@ impl std::fmt::Debug for ListOfferingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFlowsInput {
@@ -6236,6 +6466,7 @@ impl std::fmt::Debug for ListFlowsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntitlementsInput {
@@ -6271,6 +6502,7 @@ impl std::fmt::Debug for GrantFlowEntitlementsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservationInput {
@@ -6285,6 +6517,7 @@ impl std::fmt::Debug for DescribeReservationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOfferingInput {
@@ -6299,6 +6532,7 @@ impl std::fmt::Debug for DescribeOfferingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFlowInput {
@@ -6313,6 +6547,7 @@ impl std::fmt::Debug for DescribeFlowInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFlowInput {
@@ -6345,6 +6580,7 @@ pub struct CreateFlowInput {
     pub source: std::option::Option<crate::model::SetSourceRequest>,
     /// The settings for source failover
     pub source_failover_config: std::option::Option<crate::model::FailoverConfig>,
+    #[allow(missing_docs)] // documentation missing in model
     pub sources: std::option::Option<std::vec::Vec<crate::model::SetSourceRequest>>,
     /// The VPC interfaces you want on the flow.
     pub vpc_interfaces: std::option::Option<std::vec::Vec<crate::model::VpcInterfaceRequest>>,

@@ -18,6 +18,7 @@ pub mod accept_resource_share_invitation_input {
             self.resource_share_invitation_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
         pub fn set_resource_share_invitation_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -30,6 +31,7 @@ pub mod accept_resource_share_invitation_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -39,7 +41,7 @@ pub mod accept_resource_share_invitation_input {
             self,
         ) -> std::result::Result<
             crate::input::AcceptResourceShareInvitationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AcceptResourceShareInvitationInput {
                 resource_share_invitation_arn: self.resource_share_invitation_arn,
@@ -60,16 +62,16 @@ impl AcceptResourceShareInvitationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AcceptResourceShareInvitation,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AcceptResourceShareInvitationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/acceptresourceshareinvitation").expect("formatting should succeed");
             Ok(())
         }
@@ -77,7 +79,7 @@ impl AcceptResourceShareInvitationInput {
         fn update_http_builder(
             input: &crate::input::AcceptResourceShareInvitationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -86,25 +88,25 @@ impl AcceptResourceShareInvitationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AcceptResourceShareInvitationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_accept_resource_share_invitation(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_accept_resource_share_invitation(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -127,15 +129,15 @@ impl AcceptResourceShareInvitationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AcceptResourceShareInvitation::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AcceptResourceShareInvitation",
             "ram",
         ));
@@ -144,10 +146,10 @@ impl AcceptResourceShareInvitationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -178,6 +180,7 @@ pub mod associate_resource_share_input {
             self.resource_share_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -185,12 +188,18 @@ pub mod associate_resource_share_input {
             self.resource_share_arn = input;
             self
         }
+        /// Appends an item to `resource_arns`.
+        ///
+        /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -198,12 +207,62 @@ pub mod associate_resource_share_input {
             self.resource_arns = input;
             self
         }
+        /// Appends an item to `principals`.
+        ///
+        /// To override the contents of this collection use [`set_principals`](Self::set_principals).
+        ///
+        /// <p>The principals to associate with the resource share. The possible values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>An Amazon Web Services account ID</p>
+        /// </li>
+        /// <li>
+        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an IAM role</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an IAM user</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
+        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
+        /// Guide</i>.</p>
+        /// </note>
         pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.principals.unwrap_or_default();
             v.push(input.into());
             self.principals = Some(v);
             self
         }
+        /// <p>The principals to associate with the resource share. The possible values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>An Amazon Web Services account ID</p>
+        /// </li>
+        /// <li>
+        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an IAM role</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an IAM user</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
+        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
+        /// Guide</i>.</p>
+        /// </note>
         pub fn set_principals(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -216,6 +275,7 @@ pub mod associate_resource_share_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -225,7 +285,7 @@ pub mod associate_resource_share_input {
             self,
         ) -> std::result::Result<
             crate::input::AssociateResourceShareInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AssociateResourceShareInput {
                 resource_share_arn: self.resource_share_arn,
@@ -247,16 +307,16 @@ impl AssociateResourceShareInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AssociateResourceShare,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AssociateResourceShareInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/associateresourceshare").expect("formatting should succeed");
             Ok(())
         }
@@ -264,7 +324,7 @@ impl AssociateResourceShareInput {
         fn update_http_builder(
             input: &crate::input::AssociateResourceShareInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -273,27 +333,29 @@ impl AssociateResourceShareInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AssociateResourceShareInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_resource_share(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -316,15 +378,15 @@ impl AssociateResourceShareInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AssociateResourceShare::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AssociateResourceShare",
             "ram",
         ));
@@ -333,10 +395,10 @@ impl AssociateResourceShareInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -368,6 +430,7 @@ pub mod associate_resource_share_permission_input {
             self.resource_share_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -381,6 +444,8 @@ pub mod associate_resource_share_permission_input {
             self.permission_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the
+        /// resource share.</p>
         pub fn set_permission_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -395,6 +460,9 @@ pub mod associate_resource_share_permission_input {
             self.replace = Some(input);
             self
         }
+        /// <p>Indicates whether the permission should replace the permissions that are currently
+        /// associated with the resource share. Use <code>true</code> to replace the current permissions. Use
+        /// <code>false</code> to add the permission to the current permission.</p>
         pub fn set_replace(mut self, input: std::option::Option<bool>) -> Self {
             self.replace = input;
             self
@@ -404,6 +472,7 @@ pub mod associate_resource_share_permission_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -413,6 +482,7 @@ pub mod associate_resource_share_permission_input {
             self.permission_version = Some(input);
             self
         }
+        /// <p>The version of the RAM permissions to associate with the resource share.</p>
         pub fn set_permission_version(mut self, input: std::option::Option<i32>) -> Self {
             self.permission_version = input;
             self
@@ -422,7 +492,7 @@ pub mod associate_resource_share_permission_input {
             self,
         ) -> std::result::Result<
             crate::input::AssociateResourceSharePermissionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AssociateResourceSharePermissionInput {
                 resource_share_arn: self.resource_share_arn,
@@ -446,16 +516,16 @@ impl AssociateResourceSharePermissionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AssociateResourceSharePermission,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AssociateResourceSharePermissionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/associateresourcesharepermission").expect("formatting should succeed");
             Ok(())
         }
@@ -463,7 +533,7 @@ impl AssociateResourceSharePermissionInput {
         fn update_http_builder(
             input: &crate::input::AssociateResourceSharePermissionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -472,25 +542,25 @@ impl AssociateResourceSharePermissionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AssociateResourceSharePermissionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_resource_share_permission(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_resource_share_permission(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -513,15 +583,15 @@ impl AssociateResourceSharePermissionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AssociateResourceSharePermission::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AssociateResourceSharePermission",
             "ram",
         ));
@@ -530,10 +600,10 @@ impl AssociateResourceSharePermissionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -567,16 +637,23 @@ pub mod create_resource_share_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the resource share.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `resource_arns`.
+        ///
+        /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
+        ///
+        /// <p>The ARNs of the resources to associate with the resource share.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_arns = Some(v);
             self
         }
+        /// <p>The ARNs of the resources to associate with the resource share.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -584,12 +661,62 @@ pub mod create_resource_share_input {
             self.resource_arns = input;
             self
         }
+        /// Appends an item to `principals`.
+        ///
+        /// To override the contents of this collection use [`set_principals`](Self::set_principals).
+        ///
+        /// <p>The principals to associate with the resource share. The possible values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>An Amazon Web Services account ID</p>
+        /// </li>
+        /// <li>
+        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an IAM role</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an IAM user</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
+        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
+        /// Guide</i>.</p>
+        /// </note>
         pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.principals.unwrap_or_default();
             v.push(input.into());
             self.principals = Some(v);
             self
         }
+        /// <p>The principals to associate with the resource share. The possible values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>An Amazon Web Services account ID</p>
+        /// </li>
+        /// <li>
+        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an IAM role</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an IAM user</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
+        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
+        /// Guide</i>.</p>
+        /// </note>
         pub fn set_principals(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -597,12 +724,18 @@ pub mod create_resource_share_input {
             self.principals = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>One or more tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -616,6 +749,8 @@ pub mod create_resource_share_input {
             self.allow_external_principals = Some(input);
             self
         }
+        /// <p>Indicates whether principals outside your organization in Organizations can be associated
+        /// with a resource share.</p>
         pub fn set_allow_external_principals(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_external_principals = input;
             self
@@ -625,16 +760,29 @@ pub mod create_resource_share_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
+        /// Appends an item to `permission_arns`.
+        ///
+        /// To override the contents of this collection use [`set_permission_arns`](Self::set_permission_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you
+        /// do not specify an ARN for the permission, RAM automatically attaches the default
+        /// version of the permission for each resource type. Only one permission can be associated
+        /// with each resource type in a resource share.</p>
         pub fn permission_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.permission_arns.unwrap_or_default();
             v.push(input.into());
             self.permission_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you
+        /// do not specify an ARN for the permission, RAM automatically attaches the default
+        /// version of the permission for each resource type. Only one permission can be associated
+        /// with each resource type in a resource share.</p>
         pub fn set_permission_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -647,7 +795,7 @@ pub mod create_resource_share_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateResourceShareInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateResourceShareInput {
                 name: self.name,
@@ -672,16 +820,16 @@ impl CreateResourceShareInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateResourceShare,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateResourceShareInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/createresourceshare").expect("formatting should succeed");
             Ok(())
         }
@@ -689,7 +837,7 @@ impl CreateResourceShareInput {
         fn update_http_builder(
             input: &crate::input::CreateResourceShareInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -698,27 +846,27 @@ impl CreateResourceShareInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateResourceShareInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_resource_share(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -741,15 +889,15 @@ impl CreateResourceShareInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateResourceShare::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateResourceShare",
             "ram",
         ));
@@ -758,10 +906,10 @@ impl CreateResourceShareInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -790,6 +938,7 @@ pub mod delete_resource_share_input {
             self.resource_share_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -802,6 +951,7 @@ pub mod delete_resource_share_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -811,7 +961,7 @@ pub mod delete_resource_share_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteResourceShareInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteResourceShareInput {
                 resource_share_arn: self.resource_share_arn,
@@ -831,36 +981,36 @@ impl DeleteResourceShareInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteResourceShare,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteResourceShareInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/deleteresourceshare").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::DeleteResourceShareInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_1) = &_input.resource_share_arn {
                 query.push_kv(
                     "resourceShareArn",
-                    &smithy_http::query::fmt_string(&inner_1),
+                    &aws_smithy_http::query::fmt_string(&inner_1),
                 );
             }
             if let Some(inner_2) = &_input.client_token {
-                query.push_kv("clientToken", &smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_2));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteResourceShareInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -870,23 +1020,23 @@ impl DeleteResourceShareInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteResourceShareInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -909,15 +1059,15 @@ impl DeleteResourceShareInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteResourceShare::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteResourceShare",
             "ram",
         ));
@@ -926,10 +1076,10 @@ impl DeleteResourceShareInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -960,6 +1110,7 @@ pub mod disassociate_resource_share_input {
             self.resource_share_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -967,12 +1118,18 @@ pub mod disassociate_resource_share_input {
             self.resource_share_arn = input;
             self
         }
+        /// Appends an item to `resource_arns`.
+        ///
+        /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -980,12 +1137,18 @@ pub mod disassociate_resource_share_input {
             self.resource_arns = input;
             self
         }
+        /// Appends an item to `principals`.
+        ///
+        /// To override the contents of this collection use [`set_principals`](Self::set_principals).
+        ///
+        /// <p>The principals.</p>
         pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.principals.unwrap_or_default();
             v.push(input.into());
             self.principals = Some(v);
             self
         }
+        /// <p>The principals.</p>
         pub fn set_principals(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -998,6 +1161,7 @@ pub mod disassociate_resource_share_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1007,7 +1171,7 @@ pub mod disassociate_resource_share_input {
             self,
         ) -> std::result::Result<
             crate::input::DisassociateResourceShareInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisassociateResourceShareInput {
                 resource_share_arn: self.resource_share_arn,
@@ -1030,16 +1194,16 @@ impl DisassociateResourceShareInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisassociateResourceShare,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisassociateResourceShareInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/disassociateresourceshare").expect("formatting should succeed");
             Ok(())
         }
@@ -1047,7 +1211,7 @@ impl DisassociateResourceShareInput {
         fn update_http_builder(
             input: &crate::input::DisassociateResourceShareInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1056,27 +1220,29 @@ impl DisassociateResourceShareInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisassociateResourceShareInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disassociate_resource_share(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1099,15 +1265,15 @@ impl DisassociateResourceShareInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisassociateResourceShare::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisassociateResourceShare",
             "ram",
         ));
@@ -1116,10 +1282,10 @@ impl DisassociateResourceShareInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1149,6 +1315,7 @@ pub mod disassociate_resource_share_permission_input {
             self.resource_share_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1161,6 +1328,7 @@ pub mod disassociate_resource_share_permission_input {
             self.permission_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the permission to disassociate from the resource share.</p>
         pub fn set_permission_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1173,6 +1341,7 @@ pub mod disassociate_resource_share_permission_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1182,7 +1351,7 @@ pub mod disassociate_resource_share_permission_input {
             self,
         ) -> std::result::Result<
             crate::input::DisassociateResourceSharePermissionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisassociateResourceSharePermissionInput {
                 resource_share_arn: self.resource_share_arn,
@@ -1205,16 +1374,16 @@ impl DisassociateResourceSharePermissionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisassociateResourceSharePermission,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisassociateResourceSharePermissionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/disassociateresourcesharepermission")
                 .expect("formatting should succeed");
             Ok(())
@@ -1223,7 +1392,7 @@ impl DisassociateResourceSharePermissionInput {
         fn update_http_builder(
             input: &crate::input::DisassociateResourceSharePermissionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1232,25 +1401,25 @@ impl DisassociateResourceSharePermissionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisassociateResourceSharePermissionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_resource_share_permission(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_resource_share_permission(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1273,15 +1442,15 @@ impl DisassociateResourceSharePermissionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisassociateResourceSharePermission::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisassociateResourceSharePermission",
             "ram",
         ));
@@ -1290,10 +1459,10 @@ impl DisassociateResourceSharePermissionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1319,7 +1488,7 @@ pub mod enable_sharing_with_aws_organization_input {
             self,
         ) -> std::result::Result<
             crate::input::EnableSharingWithAwsOrganizationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::EnableSharingWithAwsOrganizationInput {})
         }
@@ -1337,16 +1506,16 @@ impl EnableSharingWithAwsOrganizationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::EnableSharingWithAwsOrganization,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::EnableSharingWithAwsOrganizationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/enablesharingwithawsorganization").expect("formatting should succeed");
             Ok(())
         }
@@ -1354,7 +1523,7 @@ impl EnableSharingWithAwsOrganizationInput {
         fn update_http_builder(
             input: &crate::input::EnableSharingWithAwsOrganizationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1363,23 +1532,23 @@ impl EnableSharingWithAwsOrganizationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::EnableSharingWithAwsOrganizationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1402,15 +1571,15 @@ impl EnableSharingWithAwsOrganizationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::EnableSharingWithAwsOrganization::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "EnableSharingWithAwsOrganization",
             "ram",
         ));
@@ -1419,10 +1588,10 @@ impl EnableSharingWithAwsOrganizationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1451,6 +1620,7 @@ pub mod get_permission_input {
             self.permission_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the permission.</p>
         pub fn set_permission_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1463,6 +1633,7 @@ pub mod get_permission_input {
             self.permission_version = Some(input);
             self
         }
+        /// <p>The identifier for the version of the permission.</p>
         pub fn set_permission_version(mut self, input: std::option::Option<i32>) -> Self {
             self.permission_version = input;
             self
@@ -1470,8 +1641,10 @@ pub mod get_permission_input {
         /// Consumes the builder and constructs a [`GetPermissionInput`](crate::input::GetPermissionInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetPermissionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetPermissionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetPermissionInput {
                 permission_arn: self.permission_arn,
                 permission_version: self.permission_version,
@@ -1490,16 +1663,16 @@ impl GetPermissionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetPermission,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetPermissionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/getpermission").expect("formatting should succeed");
             Ok(())
         }
@@ -1507,7 +1680,7 @@ impl GetPermissionInput {
         fn update_http_builder(
             input: &crate::input::GetPermissionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1516,24 +1689,26 @@ impl GetPermissionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetPermissionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_permission(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1556,25 +1731,27 @@ impl GetPermissionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetPermission::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetPermission",
-                    "ram",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetPermission::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetPermission",
+            "ram",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1600,12 +1777,18 @@ pub mod get_resource_policies_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `resource_arns`.
+        ///
+        /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1618,6 +1801,7 @@ pub mod get_resource_policies_input {
             self.principal = Some(input.into());
             self
         }
+        /// <p>The principal.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
@@ -1627,6 +1811,7 @@ pub mod get_resource_policies_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1637,6 +1822,8 @@ pub mod get_resource_policies_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1646,7 +1833,7 @@ pub mod get_resource_policies_input {
             self,
         ) -> std::result::Result<
             crate::input::GetResourcePoliciesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetResourcePoliciesInput {
                 resource_arns: self.resource_arns,
@@ -1668,16 +1855,16 @@ impl GetResourcePoliciesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetResourcePolicies,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetResourcePoliciesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/getresourcepolicies").expect("formatting should succeed");
             Ok(())
         }
@@ -1685,7 +1872,7 @@ impl GetResourcePoliciesInput {
         fn update_http_builder(
             input: &crate::input::GetResourcePoliciesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1694,27 +1881,27 @@ impl GetResourcePoliciesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetResourcePoliciesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_resource_policies(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1737,15 +1924,15 @@ impl GetResourcePoliciesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetResourcePolicies::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetResourcePolicies",
             "ram",
         ));
@@ -1754,10 +1941,10 @@ impl GetResourcePoliciesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1798,6 +1985,9 @@ pub mod get_resource_share_associations_input {
             self.association_type = Some(input);
             self
         }
+        /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are
+        /// associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources
+        /// that are associated with the specified resource share.</p>
         pub fn set_association_type(
             mut self,
             input: std::option::Option<crate::model::ResourceShareAssociationType>,
@@ -1805,12 +1995,18 @@ pub mod get_resource_share_associations_input {
             self.association_type = input;
             self
         }
+        /// Appends an item to `resource_share_arns`.
+        ///
+        /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
         pub fn resource_share_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_share_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_share_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
         pub fn set_resource_share_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1824,6 +2020,8 @@ pub mod get_resource_share_associations_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if
+        /// the association type is <code>PRINCIPAL</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -1834,6 +2032,8 @@ pub mod get_resource_share_associations_input {
             self.principal = Some(input.into());
             self
         }
+        /// <p>The principal. You cannot specify this parameter if the association type is
+        /// <code>RESOURCE</code>.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
@@ -1846,6 +2046,7 @@ pub mod get_resource_share_associations_input {
             self.association_status = Some(input);
             self
         }
+        /// <p>The association status.</p>
         pub fn set_association_status(
             mut self,
             input: std::option::Option<crate::model::ResourceShareAssociationStatus>,
@@ -1858,6 +2059,7 @@ pub mod get_resource_share_associations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1868,6 +2070,8 @@ pub mod get_resource_share_associations_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1877,7 +2081,7 @@ pub mod get_resource_share_associations_input {
             self,
         ) -> std::result::Result<
             crate::input::GetResourceShareAssociationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetResourceShareAssociationsInput {
                 association_type: self.association_type,
@@ -1903,16 +2107,16 @@ impl GetResourceShareAssociationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetResourceShareAssociations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetResourceShareAssociationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/getresourceshareassociations").expect("formatting should succeed");
             Ok(())
         }
@@ -1920,7 +2124,7 @@ impl GetResourceShareAssociationsInput {
         fn update_http_builder(
             input: &crate::input::GetResourceShareAssociationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1929,25 +2133,25 @@ impl GetResourceShareAssociationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetResourceShareAssociationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_resource_share_associations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_resource_share_associations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1970,15 +2174,15 @@ impl GetResourceShareAssociationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetResourceShareAssociations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetResourceShareAssociations",
             "ram",
         ));
@@ -1987,10 +2191,10 @@ impl GetResourceShareAssociationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2017,6 +2221,11 @@ pub mod get_resource_share_invitations_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `resource_share_invitation_arns`.
+        ///
+        /// To override the contents of this collection use [`set_resource_share_invitation_arns`](Self::set_resource_share_invitation_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARN) of the invitations.</p>
         pub fn resource_share_invitation_arns(
             mut self,
             input: impl Into<std::string::String>,
@@ -2026,6 +2235,7 @@ pub mod get_resource_share_invitations_input {
             self.resource_share_invitation_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARN) of the invitations.</p>
         pub fn set_resource_share_invitation_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2033,12 +2243,18 @@ pub mod get_resource_share_invitations_input {
             self.resource_share_invitation_arns = input;
             self
         }
+        /// Appends an item to `resource_share_arns`.
+        ///
+        /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
         pub fn resource_share_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_share_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_share_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
         pub fn set_resource_share_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2051,6 +2267,7 @@ pub mod get_resource_share_invitations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2061,6 +2278,8 @@ pub mod get_resource_share_invitations_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2070,7 +2289,7 @@ pub mod get_resource_share_invitations_input {
             self,
         ) -> std::result::Result<
             crate::input::GetResourceShareInvitationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetResourceShareInvitationsInput {
                 resource_share_invitation_arns: self.resource_share_invitation_arns,
@@ -2093,16 +2312,16 @@ impl GetResourceShareInvitationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetResourceShareInvitations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetResourceShareInvitationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/getresourceshareinvitations").expect("formatting should succeed");
             Ok(())
         }
@@ -2110,7 +2329,7 @@ impl GetResourceShareInvitationsInput {
         fn update_http_builder(
             input: &crate::input::GetResourceShareInvitationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2119,25 +2338,25 @@ impl GetResourceShareInvitationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetResourceShareInvitationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_resource_share_invitations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_resource_share_invitations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2160,15 +2379,15 @@ impl GetResourceShareInvitationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetResourceShareInvitations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetResourceShareInvitations",
             "ram",
         ));
@@ -2177,10 +2396,10 @@ impl GetResourceShareInvitationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2210,12 +2429,18 @@ pub mod get_resource_shares_input {
         pub(crate) permission_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `resource_share_arns`.
+        ///
+        /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARNs) of the resource shares.</p>
         pub fn resource_share_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_share_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_share_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARNs) of the resource shares.</p>
         pub fn set_resource_share_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2228,6 +2453,7 @@ pub mod get_resource_shares_input {
             self.resource_share_status = Some(input);
             self
         }
+        /// <p>The status of the resource share.</p>
         pub fn set_resource_share_status(
             mut self,
             input: std::option::Option<crate::model::ResourceShareStatus>,
@@ -2240,6 +2466,7 @@ pub mod get_resource_shares_input {
             self.resource_owner = Some(input);
             self
         }
+        /// <p>The type of owner.</p>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<crate::model::ResourceOwner>,
@@ -2252,16 +2479,23 @@ pub mod get_resource_shares_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the resource share.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `tag_filters`.
+        ///
+        /// To override the contents of this collection use [`set_tag_filters`](Self::set_tag_filters).
+        ///
+        /// <p>One or more tag filters.</p>
         pub fn tag_filters(mut self, input: impl Into<crate::model::TagFilter>) -> Self {
             let mut v = self.tag_filters.unwrap_or_default();
             v.push(input.into());
             self.tag_filters = Some(v);
             self
         }
+        /// <p>One or more tag filters.</p>
         pub fn set_tag_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
@@ -2274,6 +2508,7 @@ pub mod get_resource_shares_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2284,6 +2519,8 @@ pub mod get_resource_shares_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2294,6 +2531,8 @@ pub mod get_resource_shares_input {
             self.permission_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the
+        /// resource share.</p>
         pub fn set_permission_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2306,7 +2545,7 @@ pub mod get_resource_shares_input {
             self,
         ) -> std::result::Result<
             crate::input::GetResourceSharesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetResourceSharesInput {
                 resource_share_arns: self.resource_share_arns,
@@ -2332,16 +2571,16 @@ impl GetResourceSharesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetResourceShares,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetResourceSharesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/getresourceshares").expect("formatting should succeed");
             Ok(())
         }
@@ -2349,7 +2588,7 @@ impl GetResourceSharesInput {
         fn update_http_builder(
             input: &crate::input::GetResourceSharesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2358,27 +2597,27 @@ impl GetResourceSharesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetResourceSharesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_resource_shares(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2401,15 +2640,15 @@ impl GetResourceSharesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetResourceShares::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetResourceShares",
             "ram",
         ));
@@ -2418,10 +2657,10 @@ impl GetResourceSharesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2454,6 +2693,7 @@ pub mod list_pending_invitation_resources_input {
             self.resource_share_invitation_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
         pub fn set_resource_share_invitation_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2466,6 +2706,7 @@ pub mod list_pending_invitation_resources_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2476,6 +2717,8 @@ pub mod list_pending_invitation_resources_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2485,7 +2728,7 @@ pub mod list_pending_invitation_resources_input {
             self,
         ) -> std::result::Result<
             crate::input::ListPendingInvitationResourcesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListPendingInvitationResourcesInput {
                 resource_share_invitation_arn: self.resource_share_invitation_arn,
@@ -2507,16 +2750,16 @@ impl ListPendingInvitationResourcesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListPendingInvitationResources,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListPendingInvitationResourcesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/listpendinginvitationresources").expect("formatting should succeed");
             Ok(())
         }
@@ -2524,7 +2767,7 @@ impl ListPendingInvitationResourcesInput {
         fn update_http_builder(
             input: &crate::input::ListPendingInvitationResourcesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2533,25 +2776,25 @@ impl ListPendingInvitationResourcesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListPendingInvitationResourcesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_pending_invitation_resources(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_pending_invitation_resources(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2574,15 +2817,15 @@ impl ListPendingInvitationResourcesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListPendingInvitationResources::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListPendingInvitationResources",
             "ram",
         ));
@@ -2591,10 +2834,10 @@ impl ListPendingInvitationResourcesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2625,6 +2868,8 @@ pub mod list_permissions_input {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>Specifies the resource type for which to list permissions. For example, to list only
+        /// permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2637,6 +2882,7 @@ pub mod list_permissions_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2647,6 +2893,8 @@ pub mod list_permissions_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2656,7 +2904,7 @@ pub mod list_permissions_input {
             self,
         ) -> std::result::Result<
             crate::input::ListPermissionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListPermissionsInput {
                 resource_type: self.resource_type,
@@ -2677,16 +2925,16 @@ impl ListPermissionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListPermissions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListPermissionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/listpermissions").expect("formatting should succeed");
             Ok(())
         }
@@ -2694,7 +2942,7 @@ impl ListPermissionsInput {
         fn update_http_builder(
             input: &crate::input::ListPermissionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2703,27 +2951,27 @@ impl ListPermissionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListPermissionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_permissions(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2746,15 +2994,15 @@ impl ListPermissionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListPermissions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListPermissions",
             "ram",
         ));
@@ -2763,10 +3011,10 @@ impl ListPermissionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2800,6 +3048,7 @@ pub mod list_principals_input {
             self.resource_owner = Some(input);
             self
         }
+        /// <p>The type of owner.</p>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<crate::model::ResourceOwner>,
@@ -2812,16 +3061,23 @@ pub mod list_principals_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `principals`.
+        ///
+        /// To override the contents of this collection use [`set_principals`](Self::set_principals).
+        ///
+        /// <p>The principals.</p>
         pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.principals.unwrap_or_default();
             v.push(input.into());
             self.principals = Some(v);
             self
         }
+        /// <p>The principals.</p>
         pub fn set_principals(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2836,6 +3092,9 @@ pub mod list_principals_input {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The resource type.</p>
+        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
+        /// </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2843,12 +3102,18 @@ pub mod list_principals_input {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `resource_share_arns`.
+        ///
+        /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
         pub fn resource_share_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_share_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_share_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
         pub fn set_resource_share_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2861,6 +3126,7 @@ pub mod list_principals_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2871,6 +3137,8 @@ pub mod list_principals_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2880,7 +3148,7 @@ pub mod list_principals_input {
             self,
         ) -> std::result::Result<
             crate::input::ListPrincipalsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListPrincipalsInput {
                 resource_owner: self.resource_owner,
@@ -2905,16 +3173,16 @@ impl ListPrincipalsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListPrincipals,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListPrincipalsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/listprincipals").expect("formatting should succeed");
             Ok(())
         }
@@ -2922,7 +3190,7 @@ impl ListPrincipalsInput {
         fn update_http_builder(
             input: &crate::input::ListPrincipalsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2931,24 +3199,26 @@ impl ListPrincipalsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListPrincipalsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_principals(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2971,15 +3241,15 @@ impl ListPrincipalsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListPrincipals::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListPrincipals",
             "ram",
         ));
@@ -2988,10 +3258,10 @@ impl ListPrincipalsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3025,6 +3295,7 @@ pub mod list_resources_input {
             self.resource_owner = Some(input);
             self
         }
+        /// <p>The type of owner.</p>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<crate::model::ResourceOwner>,
@@ -3037,6 +3308,7 @@ pub mod list_resources_input {
             self.principal = Some(input.into());
             self
         }
+        /// <p>The principal.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
@@ -3048,6 +3320,9 @@ pub mod list_resources_input {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The resource type.</p>
+        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
+        /// </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3055,12 +3330,18 @@ pub mod list_resources_input {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `resource_arns`.
+        ///
+        /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3068,12 +3349,18 @@ pub mod list_resources_input {
             self.resource_arns = input;
             self
         }
+        /// Appends an item to `resource_share_arns`.
+        ///
+        /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
         pub fn resource_share_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_share_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_share_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
         pub fn set_resource_share_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3086,6 +3373,7 @@ pub mod list_resources_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3096,6 +3384,8 @@ pub mod list_resources_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3103,8 +3393,10 @@ pub mod list_resources_input {
         /// Consumes the builder and constructs a [`ListResourcesInput`](crate::input::ListResourcesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListResourcesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListResourcesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListResourcesInput {
                 resource_owner: self.resource_owner,
                 principal: self.principal,
@@ -3128,16 +3420,16 @@ impl ListResourcesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListResources,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListResourcesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/listresources").expect("formatting should succeed");
             Ok(())
         }
@@ -3145,7 +3437,7 @@ impl ListResourcesInput {
         fn update_http_builder(
             input: &crate::input::ListResourcesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3154,24 +3446,26 @@ impl ListResourcesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListResourcesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_resources(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3194,25 +3488,27 @@ impl ListResourcesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListResources::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListResources",
-                    "ram",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListResources::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListResources",
+            "ram",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3242,6 +3538,7 @@ pub mod list_resource_share_permissions_input {
             self.resource_share_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3254,6 +3551,7 @@ pub mod list_resource_share_permissions_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3264,6 +3562,8 @@ pub mod list_resource_share_permissions_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3273,7 +3573,7 @@ pub mod list_resource_share_permissions_input {
             self,
         ) -> std::result::Result<
             crate::input::ListResourceSharePermissionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListResourceSharePermissionsInput {
                 resource_share_arn: self.resource_share_arn,
@@ -3295,16 +3595,16 @@ impl ListResourceSharePermissionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListResourceSharePermissions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListResourceSharePermissionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/listresourcesharepermissions").expect("formatting should succeed");
             Ok(())
         }
@@ -3312,7 +3612,7 @@ impl ListResourceSharePermissionsInput {
         fn update_http_builder(
             input: &crate::input::ListResourceSharePermissionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3321,25 +3621,25 @@ impl ListResourceSharePermissionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListResourceSharePermissionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_resource_share_permissions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_resource_share_permissions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3362,15 +3662,15 @@ impl ListResourceSharePermissionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListResourceSharePermissions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListResourceSharePermissions",
             "ram",
         ));
@@ -3379,10 +3679,10 @@ impl ListResourceSharePermissionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3411,6 +3711,7 @@ pub mod list_resource_types_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3421,6 +3722,8 @@ pub mod list_resource_types_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return with a single call.
+        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3430,7 +3733,7 @@ pub mod list_resource_types_input {
             self,
         ) -> std::result::Result<
             crate::input::ListResourceTypesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListResourceTypesInput {
                 next_token: self.next_token,
@@ -3450,16 +3753,16 @@ impl ListResourceTypesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListResourceTypes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListResourceTypesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/listresourcetypes").expect("formatting should succeed");
             Ok(())
         }
@@ -3467,7 +3770,7 @@ impl ListResourceTypesInput {
         fn update_http_builder(
             input: &crate::input::ListResourceTypesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3476,27 +3779,27 @@ impl ListResourceTypesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListResourceTypesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_resource_types(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3519,15 +3822,15 @@ impl ListResourceTypesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListResourceTypes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListResourceTypes",
             "ram",
         ));
@@ -3536,10 +3839,10 @@ impl ListResourceTypesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3567,6 +3870,7 @@ pub mod promote_resource_share_created_from_policy_input {
             self.resource_share_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource share to promote.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3579,7 +3883,7 @@ pub mod promote_resource_share_created_from_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::PromoteResourceShareCreatedFromPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PromoteResourceShareCreatedFromPolicyInput {
                 resource_share_arn: self.resource_share_arn,
@@ -3600,16 +3904,16 @@ impl PromoteResourceShareCreatedFromPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PromoteResourceShareCreatedFromPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PromoteResourceShareCreatedFromPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/promoteresourcesharecreatedfrompolicy")
                 .expect("formatting should succeed");
             Ok(())
@@ -3618,11 +3922,11 @@ impl PromoteResourceShareCreatedFromPolicyInput {
             _input: &crate::input::PromoteResourceShareCreatedFromPolicyInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_3) = &_input.resource_share_arn {
                 query.push_kv(
                     "resourceShareArn",
-                    &smithy_http::query::fmt_string(&inner_3),
+                    &aws_smithy_http::query::fmt_string(&inner_3),
                 );
             }
         }
@@ -3630,7 +3934,7 @@ impl PromoteResourceShareCreatedFromPolicyInput {
         fn update_http_builder(
             input: &crate::input::PromoteResourceShareCreatedFromPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3640,23 +3944,23 @@ impl PromoteResourceShareCreatedFromPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PromoteResourceShareCreatedFromPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3679,15 +3983,15 @@ impl PromoteResourceShareCreatedFromPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PromoteResourceShareCreatedFromPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PromoteResourceShareCreatedFromPolicy",
             "ram",
         ));
@@ -3696,10 +4000,10 @@ impl PromoteResourceShareCreatedFromPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3731,6 +4035,7 @@ pub mod reject_resource_share_invitation_input {
             self.resource_share_invitation_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
         pub fn set_resource_share_invitation_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3743,6 +4048,7 @@ pub mod reject_resource_share_invitation_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -3752,7 +4058,7 @@ pub mod reject_resource_share_invitation_input {
             self,
         ) -> std::result::Result<
             crate::input::RejectResourceShareInvitationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RejectResourceShareInvitationInput {
                 resource_share_invitation_arn: self.resource_share_invitation_arn,
@@ -3773,16 +4079,16 @@ impl RejectResourceShareInvitationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RejectResourceShareInvitation,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RejectResourceShareInvitationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/rejectresourceshareinvitation").expect("formatting should succeed");
             Ok(())
         }
@@ -3790,7 +4096,7 @@ impl RejectResourceShareInvitationInput {
         fn update_http_builder(
             input: &crate::input::RejectResourceShareInvitationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3799,25 +4105,25 @@ impl RejectResourceShareInvitationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RejectResourceShareInvitationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_reject_resource_share_invitation(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_reject_resource_share_invitation(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3840,15 +4146,15 @@ impl RejectResourceShareInvitationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RejectResourceShareInvitation::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RejectResourceShareInvitation",
             "ram",
         ));
@@ -3857,10 +4163,10 @@ impl RejectResourceShareInvitationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3889,6 +4195,7 @@ pub mod tag_resource_input {
             self.resource_share_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3896,12 +4203,18 @@ pub mod tag_resource_input {
             self.resource_share_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>One or more tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3912,8 +4225,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_share_arn: self.resource_share_arn,
                 tags: self.tags,
@@ -3932,16 +4247,16 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/tagresource").expect("formatting should succeed");
             Ok(())
         }
@@ -3949,7 +4264,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3958,24 +4273,26 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3998,22 +4315,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new("TagResource", "ram"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "ram",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4042,6 +4364,7 @@ pub mod untag_resource_input {
             self.resource_share_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4049,12 +4372,18 @@ pub mod untag_resource_input {
             self.resource_share_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The tag keys of the tags to remove.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>The tag keys of the tags to remove.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4065,8 +4394,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_share_arn: self.resource_share_arn,
                 tag_keys: self.tag_keys,
@@ -4085,16 +4416,16 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/untagresource").expect("formatting should succeed");
             Ok(())
         }
@@ -4102,7 +4433,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4111,24 +4442,26 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4151,25 +4484,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "ram",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "ram",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4200,6 +4535,7 @@ pub mod update_resource_share_input {
             self.resource_share_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4212,6 +4548,7 @@ pub mod update_resource_share_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the resource share.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4222,6 +4559,8 @@ pub mod update_resource_share_input {
             self.allow_external_principals = Some(input);
             self
         }
+        /// <p>Indicates whether principals outside your organization in Organizations can be associated
+        /// with a resource share.</p>
         pub fn set_allow_external_principals(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_external_principals = input;
             self
@@ -4231,6 +4570,7 @@ pub mod update_resource_share_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -4240,7 +4580,7 @@ pub mod update_resource_share_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateResourceShareInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateResourceShareInput {
                 resource_share_arn: self.resource_share_arn,
@@ -4262,16 +4602,16 @@ impl UpdateResourceShareInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateResourceShare,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateResourceShareInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/updateresourceshare").expect("formatting should succeed");
             Ok(())
         }
@@ -4279,7 +4619,7 @@ impl UpdateResourceShareInput {
         fn update_http_builder(
             input: &crate::input::UpdateResourceShareInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4288,27 +4628,27 @@ impl UpdateResourceShareInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateResourceShareInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_resource_share(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4331,15 +4671,15 @@ impl UpdateResourceShareInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateResourceShare::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateResourceShare",
             "ram",
         ));
@@ -4348,10 +4688,10 @@ impl UpdateResourceShareInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4365,6 +4705,7 @@ impl UpdateResourceShareInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceShareInput {
@@ -4389,6 +4730,7 @@ impl std::fmt::Debug for UpdateResourceShareInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -4406,6 +4748,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -4423,6 +4766,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectResourceShareInvitationInput {
@@ -4443,6 +4787,7 @@ impl std::fmt::Debug for RejectResourceShareInvitationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PromoteResourceShareCreatedFromPolicyInput {
@@ -4457,6 +4802,7 @@ impl std::fmt::Debug for PromoteResourceShareCreatedFromPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceTypesInput {
@@ -4475,6 +4821,7 @@ impl std::fmt::Debug for ListResourceTypesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceSharePermissionsInput {
@@ -4496,6 +4843,7 @@ impl std::fmt::Debug for ListResourceSharePermissionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesInput {
@@ -4531,6 +4879,7 @@ impl std::fmt::Debug for ListResourcesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPrincipalsInput {
@@ -4566,6 +4915,7 @@ impl std::fmt::Debug for ListPrincipalsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionsInput {
@@ -4588,6 +4938,7 @@ impl std::fmt::Debug for ListPermissionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPendingInvitationResourcesInput {
@@ -4612,6 +4963,7 @@ impl std::fmt::Debug for ListPendingInvitationResourcesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceSharesInput {
@@ -4649,6 +5001,7 @@ impl std::fmt::Debug for GetResourceSharesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceShareInvitationsInput {
@@ -4676,6 +5029,7 @@ impl std::fmt::Debug for GetResourceShareInvitationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceShareAssociationsInput {
@@ -4713,6 +5067,7 @@ impl std::fmt::Debug for GetResourceShareAssociationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePoliciesInput {
@@ -4737,6 +5092,7 @@ impl std::fmt::Debug for GetResourcePoliciesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPermissionInput {
@@ -4754,6 +5110,7 @@ impl std::fmt::Debug for GetPermissionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableSharingWithAwsOrganizationInput {}
@@ -4764,6 +5121,7 @@ impl std::fmt::Debug for EnableSharingWithAwsOrganizationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateResourceSharePermissionInput {
@@ -4784,6 +5142,7 @@ impl std::fmt::Debug for DisassociateResourceSharePermissionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateResourceShareInput {
@@ -4807,6 +5166,7 @@ impl std::fmt::Debug for DisassociateResourceShareInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceShareInput {
@@ -4824,6 +5184,7 @@ impl std::fmt::Debug for DeleteResourceShareInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceShareInput {
@@ -4882,6 +5243,7 @@ impl std::fmt::Debug for CreateResourceShareInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateResourceSharePermissionInput {
@@ -4911,6 +5273,7 @@ impl std::fmt::Debug for AssociateResourceSharePermissionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateResourceShareInput {
@@ -4956,6 +5319,7 @@ impl std::fmt::Debug for AssociateResourceShareInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptResourceShareInvitationInput {

@@ -6,11 +6,11 @@
 use crate::middleware::Signature;
 use aws_sigv4::event_stream::{sign_empty_message, sign_message};
 use aws_sigv4::SigningParams;
+use aws_smithy_eventstream::frame::{Message, SignMessage, SignMessageError};
+use aws_smithy_http::property_bag::{PropertyBag, SharedPropertyBag};
 use aws_types::region::SigningRegion;
 use aws_types::Credentials;
 use aws_types::SigningService;
-use smithy_eventstream::frame::{Message, SignMessage, SignMessageError};
-use smithy_http::property_bag::{PropertyBag, SharedPropertyBag};
 use std::time::SystemTime;
 
 /// Event Stream SigV4 signing implementation.
@@ -91,12 +91,12 @@ impl SignMessage for SigV4Signer {
 mod tests {
     use crate::event_stream::SigV4Signer;
     use crate::middleware::Signature;
+    use aws_smithy_eventstream::frame::{HeaderValue, Message, SignMessage};
+    use aws_smithy_http::property_bag::PropertyBag;
     use aws_types::region::Region;
     use aws_types::region::SigningRegion;
     use aws_types::Credentials;
     use aws_types::SigningService;
-    use smithy_eventstream::frame::{HeaderValue, Message, SignMessage};
-    use smithy_http::property_bag::PropertyBag;
     use std::time::{Duration, UNIX_EPOCH};
 
     #[test]

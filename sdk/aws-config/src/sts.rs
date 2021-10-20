@@ -20,22 +20,23 @@ pub(crate) mod util {
         provider_name: &'static str,
     ) -> credentials::Result {
         let sts_credentials = sts_credentials
-            .ok_or_else(|| CredentialsError::Unhandled("STS credentials must be defined".into()))?;
+            .ok_or_else(|| CredentialsError::unhandled("STS credentials must be defined"))?;
         let expiration = sts_credentials
             .expiration
-            .ok_or_else(|| CredentialsError::Unhandled("missing expiration".into()))?;
+            .ok_or_else(|| CredentialsError::unhandled("missing expiration"))?;
         let expiration = expiration.to_system_time().ok_or_else(|| {
-            CredentialsError::Unhandled(
-                format!("expiration is before unix epoch: {:?}", &expiration).into(),
-            )
+            CredentialsError::unhandled(format!(
+                "expiration is before unix epoch: {:?}",
+                &expiration
+            ))
         })?;
         Ok(AwsCredentials::new(
-            sts_credentials.access_key_id.ok_or_else(|| {
-                CredentialsError::Unhandled("access key id missing from result".into())
-            })?,
+            sts_credentials
+                .access_key_id
+                .ok_or_else(|| CredentialsError::unhandled("access key id missing from result"))?,
             sts_credentials
                 .secret_access_key
-                .ok_or_else(|| CredentialsError::Unhandled("secret access token missing".into()))?,
+                .ok_or_else(|| CredentialsError::unhandled("secret access token missing"))?,
             sts_credentials.session_token,
             Some(expiration),
             provider_name,

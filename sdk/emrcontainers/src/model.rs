@@ -28,6 +28,11 @@ pub mod configuration_overrides {
             std::option::Option<crate::model::MonitoringConfiguration>,
     }
     impl Builder {
+        /// Appends an item to `application_configuration`.
+        ///
+        /// To override the contents of this collection use [`set_application_configuration`](Self::set_application_configuration).
+        ///
+        /// <p>The configurations for the application running by the job run. </p>
         pub fn application_configuration(
             mut self,
             input: impl Into<crate::model::Configuration>,
@@ -37,6 +42,7 @@ pub mod configuration_overrides {
             self.application_configuration = Some(v);
             self
         }
+        /// <p>The configurations for the application running by the job run. </p>
         pub fn set_application_configuration(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
@@ -52,6 +58,7 @@ pub mod configuration_overrides {
             self.monitoring_configuration = Some(input);
             self
         }
+        /// <p>The configurations for monitoring.</p>
         pub fn set_monitoring_configuration(
             mut self,
             input: std::option::Option<crate::model::MonitoringConfiguration>,
@@ -120,6 +127,7 @@ pub mod monitoring_configuration {
             self.persistent_app_ui = Some(input);
             self
         }
+        /// <p>Monitoring configurations for the persistent application UI. </p>
         pub fn set_persistent_app_ui(
             mut self,
             input: std::option::Option<crate::model::PersistentAppUi>,
@@ -135,6 +143,7 @@ pub mod monitoring_configuration {
             self.cloud_watch_monitoring_configuration = Some(input);
             self
         }
+        /// <p>Monitoring configurations for CloudWatch.</p>
         pub fn set_cloud_watch_monitoring_configuration(
             mut self,
             input: std::option::Option<crate::model::CloudWatchMonitoringConfiguration>,
@@ -150,6 +159,7 @@ pub mod monitoring_configuration {
             self.s3_monitoring_configuration = Some(input);
             self
         }
+        /// <p>Amazon S3 configuration for monitoring log publishing.</p>
         pub fn set_s3_monitoring_configuration(
             mut self,
             input: std::option::Option<crate::model::S3MonitoringConfiguration>,
@@ -202,6 +212,7 @@ pub mod s3_monitoring_configuration {
             self.log_uri = Some(input.into());
             self
         }
+        /// <p>Amazon S3 destination URI for log publishing.</p>
         pub fn set_log_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_uri = input;
             self
@@ -253,6 +264,7 @@ pub mod cloud_watch_monitoring_configuration {
             self.log_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the log group for log publishing.</p>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -265,6 +277,7 @@ pub mod cloud_watch_monitoring_configuration {
             self.log_stream_name_prefix = Some(input.into());
             self
         }
+        /// <p>The specified name prefix for log streams.</p>
         pub fn set_log_stream_name_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -288,6 +301,7 @@ impl CloudWatchMonitoringConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -299,7 +313,9 @@ impl CloudWatchMonitoringConfiguration {
     std::hash::Hash,
 )]
 pub enum PersistentAppUi {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -321,6 +337,7 @@ impl std::str::FromStr for PersistentAppUi {
     }
 }
 impl PersistentAppUi {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PersistentAppUi::Disabled => "DISABLED",
@@ -328,6 +345,7 @@ impl PersistentAppUi {
             PersistentAppUi::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -377,6 +395,7 @@ pub mod configuration {
             self.classification = Some(input.into());
             self
         }
+        /// <p>The classification within a configuration.</p>
         pub fn set_classification(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -384,6 +403,11 @@ pub mod configuration {
             self.classification = input;
             self
         }
+        /// Adds a key-value pair to `properties`.
+        ///
+        /// To override the contents of this collection use [`set_properties`](Self::set_properties).
+        ///
+        /// <p>A set of properties specified within a configuration classification.</p>
         pub fn properties(
             mut self,
             k: impl Into<std::string::String>,
@@ -394,6 +418,7 @@ pub mod configuration {
             self.properties = Some(hash_map);
             self
         }
+        /// <p>A set of properties specified within a configuration classification.</p>
         pub fn set_properties(
             mut self,
             input: std::option::Option<
@@ -403,12 +428,18 @@ pub mod configuration {
             self.properties = input;
             self
         }
+        /// Appends an item to `configurations`.
+        ///
+        /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
+        ///
+        /// <p>A list of additional configurations to apply within a configuration object.</p>
         pub fn configurations(mut self, input: impl Into<crate::model::Configuration>) -> Self {
             let mut v = self.configurations.unwrap_or_default();
             v.push(input.into());
             self.configurations = Some(v);
             self
         }
+        /// <p>A list of additional configurations to apply within a configuration object.</p>
         pub fn set_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
@@ -464,6 +495,7 @@ pub mod job_driver {
             self.spark_submit_job_driver = Some(input);
             self
         }
+        /// <p>The job driver parameters specified for spark submit.</p>
         pub fn set_spark_submit_job_driver(
             mut self,
             input: std::option::Option<crate::model::SparkSubmitJobDriver>,
@@ -525,16 +557,23 @@ pub mod spark_submit_job_driver {
             self.entry_point = Some(input.into());
             self
         }
+        /// <p>The entry point of job application.</p>
         pub fn set_entry_point(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entry_point = input;
             self
         }
+        /// Appends an item to `entry_point_arguments`.
+        ///
+        /// To override the contents of this collection use [`set_entry_point_arguments`](Self::set_entry_point_arguments).
+        ///
+        /// <p>The arguments for job application.</p>
         pub fn entry_point_arguments(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.entry_point_arguments.unwrap_or_default();
             v.push(input.into());
             self.entry_point_arguments = Some(v);
             self
         }
+        /// <p>The arguments for job application.</p>
         pub fn set_entry_point_arguments(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -547,6 +586,7 @@ pub mod spark_submit_job_driver {
             self.spark_submit_parameters = Some(input.into());
             self
         }
+        /// <p>The Spark submit parameters that are used for job runs.</p>
         pub fn set_spark_submit_parameters(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -586,7 +626,7 @@ pub struct VirtualCluster {
     /// <p>The container provider of the virtual cluster.</p>
     pub container_provider: std::option::Option<crate::model::ContainerProvider>,
     /// <p>The date and time when the virtual cluster is created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The assigned tags of the virtual cluster.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -615,7 +655,7 @@ pub mod virtual_cluster {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::VirtualClusterState>,
         pub(crate) container_provider: std::option::Option<crate::model::ContainerProvider>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -626,6 +666,7 @@ pub mod virtual_cluster {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the virtual cluster.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -635,6 +676,7 @@ pub mod virtual_cluster {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual cluster.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -644,6 +686,7 @@ pub mod virtual_cluster {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the virtual cluster.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -653,6 +696,7 @@ pub mod virtual_cluster {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the virtual cluster.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::VirtualClusterState>,
@@ -665,6 +709,7 @@ pub mod virtual_cluster {
             self.container_provider = Some(input);
             self
         }
+        /// <p>The container provider of the virtual cluster.</p>
         pub fn set_container_provider(
             mut self,
             input: std::option::Option<crate::model::ContainerProvider>,
@@ -673,14 +718,23 @@ pub mod virtual_cluster {
             self
         }
         /// <p>The date and time when the virtual cluster is created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time when the virtual cluster is created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The assigned tags of the virtual cluster.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -691,6 +745,7 @@ pub mod virtual_cluster {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The assigned tags of the virtual cluster.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -757,6 +812,7 @@ pub mod container_provider {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the container provider. EKS is the only supported type as of now.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ContainerProviderType>,
@@ -769,6 +825,7 @@ pub mod container_provider {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the container cluster.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -778,6 +835,7 @@ pub mod container_provider {
             self.info = Some(input);
             self
         }
+        /// <p>The information about the container cluster.</p>
         pub fn set_info(mut self, input: std::option::Option<crate::model::ContainerInfo>) -> Self {
             self.info = input;
             self
@@ -799,6 +857,7 @@ impl ContainerProvider {
     }
 }
 
+/// <p>The information about the container used for a job run or a managed endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum ContainerInfo {
@@ -807,6 +866,8 @@ pub enum ContainerInfo {
 }
 impl ContainerInfo {
     #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into its [`ContainerInfo`](crate::model::ContainerInfo) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_eks_info(&self) -> std::result::Result<&crate::model::EksInfo, &Self> {
         if let ContainerInfo::EksInfo(val) = &self {
             Ok(&val)
@@ -814,6 +875,7 @@ impl ContainerInfo {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `ContainerInfo` variant.
     pub fn is_eks_info(&self) -> bool {
         self.as_eks_info().is_ok()
     }
@@ -847,6 +909,7 @@ pub mod eks_info {
             self.namespace = Some(input.into());
             self
         }
+        /// <p>The namespaces of the EKS cluster.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
@@ -866,6 +929,7 @@ impl EksInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -877,6 +941,7 @@ impl EksInfo {
     std::hash::Hash,
 )]
 pub enum ContainerProviderType {
+    #[allow(missing_docs)] // documentation missing in model
     Eks,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -897,12 +962,14 @@ impl std::str::FromStr for ContainerProviderType {
     }
 }
 impl ContainerProviderType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContainerProviderType::Eks => "EKS",
             ContainerProviderType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EKS"]
     }
@@ -913,6 +980,7 @@ impl AsRef<str> for ContainerProviderType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -924,9 +992,13 @@ impl AsRef<str> for ContainerProviderType {
     std::hash::Hash,
 )]
 pub enum VirtualClusterState {
+    #[allow(missing_docs)] // documentation missing in model
     Arrested,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Terminated,
+    #[allow(missing_docs)] // documentation missing in model
     Terminating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -950,6 +1022,7 @@ impl std::str::FromStr for VirtualClusterState {
     }
 }
 impl VirtualClusterState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             VirtualClusterState::Arrested => "ARRESTED",
@@ -959,6 +1032,7 @@ impl VirtualClusterState {
             VirtualClusterState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ARRESTED", "RUNNING", "TERMINATED", "TERMINATING"]
     }
@@ -996,7 +1070,7 @@ pub struct Endpoint {
     /// <p>The server URL of the endpoint.</p>
     pub server_url: std::option::Option<std::string::String>,
     /// <p>The date and time when the endpoint was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The security group configuration of the endpoint.
     /// </p>
     pub security_group: std::option::Option<std::string::String>,
@@ -1057,7 +1131,7 @@ pub mod endpoint {
         pub(crate) configuration_overrides:
             std::option::Option<crate::model::ConfigurationOverrides>,
         pub(crate) server_url: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) security_group: std::option::Option<std::string::String>,
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) state_details: std::option::Option<std::string::String>,
@@ -1072,6 +1146,7 @@ pub mod endpoint {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the endpoint.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1081,6 +1156,7 @@ pub mod endpoint {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the endpoint.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1090,6 +1166,7 @@ pub mod endpoint {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the endpoint.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1099,6 +1176,7 @@ pub mod endpoint {
             self.virtual_cluster_id = Some(input.into());
             self
         }
+        /// <p>The ID of the endpoint's virtual cluster.</p>
         pub fn set_virtual_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1111,6 +1189,7 @@ pub mod endpoint {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of the endpoint.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -1120,6 +1199,7 @@ pub mod endpoint {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the endpoint.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::EndpointState>,
@@ -1132,6 +1212,7 @@ pub mod endpoint {
             self.release_label = Some(input.into());
             self
         }
+        /// <p>The EMR release version to be used for the endpoint.</p>
         pub fn set_release_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1144,6 +1225,7 @@ pub mod endpoint {
             self.execution_role_arn = Some(input.into());
             self
         }
+        /// <p>The execution role ARN of the endpoint.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1156,6 +1238,7 @@ pub mod endpoint {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>The certificate ARN of the endpoint.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1171,6 +1254,7 @@ pub mod endpoint {
             self.configuration_overrides = Some(input);
             self
         }
+        /// <p>The configuration settings that are used to override existing configurations for endpoints.</p>
         pub fn set_configuration_overrides(
             mut self,
             input: std::option::Option<crate::model::ConfigurationOverrides>,
@@ -1183,16 +1267,21 @@ pub mod endpoint {
             self.server_url = Some(input.into());
             self
         }
+        /// <p>The server URL of the endpoint.</p>
         pub fn set_server_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_url = input;
             self
         }
         /// <p>The date and time when the endpoint was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time when the endpoint was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -1202,6 +1291,8 @@ pub mod endpoint {
             self.security_group = Some(input.into());
             self
         }
+        /// <p>The security group configuration of the endpoint.
+        /// </p>
         pub fn set_security_group(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1209,12 +1300,20 @@ pub mod endpoint {
             self.security_group = input;
             self
         }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>The subnet IDs of the endpoint.
+        /// </p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// <p>The subnet IDs of the endpoint.
+        /// </p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1229,6 +1328,9 @@ pub mod endpoint {
             self.state_details = Some(input.into());
             self
         }
+        /// <p>
+        /// Additional details of the endpoint state.
+        /// </p>
         pub fn set_state_details(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1243,6 +1345,9 @@ pub mod endpoint {
             self.failure_reason = Some(input);
             self
         }
+        /// <p>
+        /// The reasons why the endpoint has failed.
+        /// </p>
         pub fn set_failure_reason(
             mut self,
             input: std::option::Option<crate::model::FailureReason>,
@@ -1250,6 +1355,12 @@ pub mod endpoint {
             self.failure_reason = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags of the endpoint.
+        /// </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1260,6 +1371,8 @@ pub mod endpoint {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags of the endpoint.
+        /// </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1300,6 +1413,7 @@ impl Endpoint {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1311,9 +1425,13 @@ impl Endpoint {
     std::hash::Hash,
 )]
 pub enum FailureReason {
+    #[allow(missing_docs)] // documentation missing in model
     ClusterUnavailable,
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
+    #[allow(missing_docs)] // documentation missing in model
     UserError,
+    #[allow(missing_docs)] // documentation missing in model
     ValidationError,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1337,6 +1455,7 @@ impl std::str::FromStr for FailureReason {
     }
 }
 impl FailureReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FailureReason::ClusterUnavailable => "CLUSTER_UNAVAILABLE",
@@ -1346,6 +1465,7 @@ impl FailureReason {
             FailureReason::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CLUSTER_UNAVAILABLE",
@@ -1361,6 +1481,7 @@ impl AsRef<str> for FailureReason {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1372,10 +1493,15 @@ impl AsRef<str> for FailureReason {
     std::hash::Hash,
 )]
 pub enum EndpointState {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Terminated,
+    #[allow(missing_docs)] // documentation missing in model
     TerminatedWithErrors,
+    #[allow(missing_docs)] // documentation missing in model
     Terminating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1400,6 +1526,7 @@ impl std::str::FromStr for EndpointState {
     }
 }
 impl EndpointState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EndpointState::Active => "ACTIVE",
@@ -1410,6 +1537,7 @@ impl EndpointState {
             EndpointState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -1451,11 +1579,11 @@ pub struct JobRun {
     /// <p>Parameters of job driver for the job run.</p>
     pub job_driver: std::option::Option<crate::model::JobDriver>,
     /// <p>The date and time when the job run was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The user who created the job run.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The date and time when the job run has finished.</p>
-    pub finished_at: std::option::Option<smithy_types::Instant>,
+    pub finished_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Additional details of the job run state.</p>
     pub state_details: std::option::Option<std::string::String>,
     /// <p>The reasons why the job run has failed.</p>
@@ -1503,9 +1631,9 @@ pub mod job_run {
         pub(crate) configuration_overrides:
             std::option::Option<crate::model::ConfigurationOverrides>,
         pub(crate) job_driver: std::option::Option<crate::model::JobDriver>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) created_by: std::option::Option<std::string::String>,
-        pub(crate) finished_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) finished_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) state_details: std::option::Option<std::string::String>,
         pub(crate) failure_reason: std::option::Option<crate::model::FailureReason>,
         pub(crate) tags: std::option::Option<
@@ -1518,6 +1646,7 @@ pub mod job_run {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the job run.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1527,6 +1656,7 @@ pub mod job_run {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the job run.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1536,6 +1666,7 @@ pub mod job_run {
             self.virtual_cluster_id = Some(input.into());
             self
         }
+        /// <p>The ID of the job run's virtual cluster.</p>
         pub fn set_virtual_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1548,6 +1679,7 @@ pub mod job_run {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of job run.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1557,6 +1689,7 @@ pub mod job_run {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the job run. </p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::JobRunState>) -> Self {
             self.state = input;
             self
@@ -1566,6 +1699,7 @@ pub mod job_run {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>The client token used to start a job run.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1575,6 +1709,7 @@ pub mod job_run {
             self.execution_role_arn = Some(input.into());
             self
         }
+        /// <p>The execution role ARN of the job run.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1587,6 +1722,7 @@ pub mod job_run {
             self.release_label = Some(input.into());
             self
         }
+        /// <p>The release version of Amazon EMR.</p>
         pub fn set_release_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1602,6 +1738,7 @@ pub mod job_run {
             self.configuration_overrides = Some(input);
             self
         }
+        /// <p>The configuration settings that are used to override default configuration.</p>
         pub fn set_configuration_overrides(
             mut self,
             input: std::option::Option<crate::model::ConfigurationOverrides>,
@@ -1614,6 +1751,7 @@ pub mod job_run {
             self.job_driver = Some(input);
             self
         }
+        /// <p>Parameters of job driver for the job run.</p>
         pub fn set_job_driver(
             mut self,
             input: std::option::Option<crate::model::JobDriver>,
@@ -1622,11 +1760,15 @@ pub mod job_run {
             self
         }
         /// <p>The date and time when the job run was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time when the job run was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -1635,18 +1777,20 @@ pub mod job_run {
             self.created_by = Some(input.into());
             self
         }
+        /// <p>The user who created the job run.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_by = input;
             self
         }
         /// <p>The date and time when the job run has finished.</p>
-        pub fn finished_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn finished_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.finished_at = Some(input);
             self
         }
+        /// <p>The date and time when the job run has finished.</p>
         pub fn set_finished_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.finished_at = input;
             self
@@ -1656,6 +1800,7 @@ pub mod job_run {
             self.state_details = Some(input.into());
             self
         }
+        /// <p>Additional details of the job run state.</p>
         pub fn set_state_details(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1668,6 +1813,7 @@ pub mod job_run {
             self.failure_reason = Some(input);
             self
         }
+        /// <p>The reasons why the job run has failed.</p>
         pub fn set_failure_reason(
             mut self,
             input: std::option::Option<crate::model::FailureReason>,
@@ -1675,6 +1821,11 @@ pub mod job_run {
             self.failure_reason = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The assigned tags of the job run.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1685,6 +1836,7 @@ pub mod job_run {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The assigned tags of the job run.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1724,6 +1876,7 @@ impl JobRun {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1735,12 +1888,19 @@ impl JobRun {
     std::hash::Hash,
 )]
 pub enum JobRunState {
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     CancelPending,
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Submitted,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1767,6 +1927,7 @@ impl std::str::FromStr for JobRunState {
     }
 }
 impl JobRunState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobRunState::Cancelled => "CANCELLED",
@@ -1779,6 +1940,7 @@ impl JobRunState {
             JobRunState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",

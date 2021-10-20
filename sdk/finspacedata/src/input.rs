@@ -27,6 +27,8 @@ pub mod create_changeset_input {
             self.dataset_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the FinSpace dataset in which the changeset will be
+        /// created.</p>
         pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_id = input;
             self
@@ -48,6 +50,19 @@ pub mod create_changeset_input {
             self.change_type = Some(input);
             self
         }
+        /// <p>Option to indicate how a changeset will be applied to a dataset.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>REPLACE</code> - Changeset will be considered as a replacement to all prior
+        /// loaded changesets.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>APPEND</code> - Changeset will be considered as an addition to the end of all
+        /// prior loaded changesets.</p>
+        /// </li>
+        /// </ul>
         pub fn set_change_type(
             mut self,
             input: std::option::Option<crate::model::ChangeType>,
@@ -67,6 +82,14 @@ pub mod create_changeset_input {
             self.source_type = Some(input);
             self
         }
+        /// <p>Type of the data source from which the files to create the changeset will be
+        /// sourced.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>S3</code> - Amazon S3.</p>
+        /// </li>
+        /// </ul>
         pub fn set_source_type(
             mut self,
             input: std::option::Option<crate::model::SourceType>,
@@ -74,6 +97,11 @@ pub mod create_changeset_input {
             self.source_type = input;
             self
         }
+        /// Adds a key-value pair to `source_params`.
+        ///
+        /// To override the contents of this collection use [`set_source_params`](Self::set_source_params).
+        ///
+        /// <p>Source path from which the files to create the changeset will be sourced.</p>
         pub fn source_params(
             mut self,
             k: impl Into<std::string::String>,
@@ -84,6 +112,7 @@ pub mod create_changeset_input {
             self.source_params = Some(hash_map);
             self
         }
+        /// <p>Source path from which the files to create the changeset will be sourced.</p>
         pub fn set_source_params(
             mut self,
             input: std::option::Option<
@@ -98,6 +127,7 @@ pub mod create_changeset_input {
             self.format_type = Some(input);
             self
         }
+        /// <p>Format type of the input files being loaded into the changeset.</p>
         pub fn set_format_type(
             mut self,
             input: std::option::Option<crate::model::FormatType>,
@@ -105,6 +135,11 @@ pub mod create_changeset_input {
             self.format_type = input;
             self
         }
+        /// Adds a key-value pair to `format_params`.
+        ///
+        /// To override the contents of this collection use [`set_format_params`](Self::set_format_params).
+        ///
+        /// <p>Options that define the structure of the source file(s).</p>
         pub fn format_params(
             mut self,
             k: impl Into<std::string::String>,
@@ -115,6 +150,7 @@ pub mod create_changeset_input {
             self.format_params = Some(hash_map);
             self
         }
+        /// <p>Options that define the structure of the source file(s).</p>
         pub fn set_format_params(
             mut self,
             input: std::option::Option<
@@ -124,6 +160,11 @@ pub mod create_changeset_input {
             self.format_params = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Metadata tags to apply to this changeset.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -134,6 +175,7 @@ pub mod create_changeset_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Metadata tags to apply to this changeset.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -148,7 +190,7 @@ pub mod create_changeset_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateChangesetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateChangesetInput {
                 dataset_id: self.dataset_id,
@@ -173,27 +215,27 @@ impl CreateChangesetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateChangeset,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateChangesetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.dataset_id;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_id",
                         details: "cannot be empty or unset",
                     })?;
-            let dataset_id = smithy_http::label::fmt_string(input_1, false);
+            let dataset_id = aws_smithy_http::label::fmt_string(input_1, false);
             if dataset_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "dataset_id",
                     details: "cannot be empty or unset",
                 });
@@ -210,7 +252,7 @@ impl CreateChangesetInput {
         fn update_http_builder(
             input: &crate::input::CreateChangesetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -219,27 +261,27 @@ impl CreateChangesetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateChangesetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_changeset(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -262,15 +304,15 @@ impl CreateChangesetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateChangeset::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateChangeset",
             "finspacedata",
         ));
@@ -279,10 +321,10 @@ impl CreateChangesetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -311,6 +353,7 @@ pub mod get_programmatic_access_credentials_input {
             self.duration_in_minutes = Some(input);
             self
         }
+        /// <p>The time duration in which the credentials remain valid. </p>
         pub fn set_duration_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.duration_in_minutes = input;
             self
@@ -320,6 +363,7 @@ pub mod get_programmatic_access_credentials_input {
             self.environment_id = Some(input.into());
             self
         }
+        /// <p>The habanero environment identifier.</p>
         pub fn set_environment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -332,7 +376,7 @@ pub mod get_programmatic_access_credentials_input {
             self,
         ) -> std::result::Result<
             crate::input::GetProgrammaticAccessCredentialsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetProgrammaticAccessCredentialsInput {
                 duration_in_minutes: self.duration_in_minutes.unwrap_or_default(),
@@ -353,16 +397,16 @@ impl GetProgrammaticAccessCredentialsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetProgrammaticAccessCredentials,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetProgrammaticAccessCredentialsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/credentials/programmatic").expect("formatting should succeed");
             Ok(())
         }
@@ -370,22 +414,26 @@ impl GetProgrammaticAccessCredentialsInput {
             _input: &crate::input::GetProgrammaticAccessCredentialsInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.duration_in_minutes != 0 {
                 query.push_kv(
                     "durationInMinutes",
-                    &smithy_types::primitive::Encoder::from(_input.duration_in_minutes).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.duration_in_minutes)
+                        .encode(),
                 );
             }
             if let Some(inner_2) = &_input.environment_id {
-                query.push_kv("environmentId", &smithy_http::query::fmt_string(&inner_2));
+                query.push_kv(
+                    "environmentId",
+                    &aws_smithy_http::query::fmt_string(&inner_2),
+                );
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetProgrammaticAccessCredentialsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -395,23 +443,23 @@ impl GetProgrammaticAccessCredentialsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetProgrammaticAccessCredentialsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -434,15 +482,15 @@ impl GetProgrammaticAccessCredentialsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetProgrammaticAccessCredentials::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetProgrammaticAccessCredentials",
             "finspacedata",
         ));
@@ -451,10 +499,10 @@ impl GetProgrammaticAccessCredentialsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -494,6 +542,19 @@ pub mod get_working_location_input {
             self.location_type = Some(input);
             self
         }
+        /// <p>Specify the type of the working location.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when
+        /// working with FinSpace Notebooks that run on SageMaker studio.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your
+        /// data content and then use the location with the changeset creation operation.</p>
+        /// </li>
+        /// </ul>
         pub fn set_location_type(
             mut self,
             input: std::option::Option<crate::model::LocationType>,
@@ -506,7 +567,7 @@ pub mod get_working_location_input {
             self,
         ) -> std::result::Result<
             crate::input::GetWorkingLocationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetWorkingLocationInput {
                 location_type: self.location_type,
@@ -525,16 +586,16 @@ impl GetWorkingLocationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetWorkingLocation,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetWorkingLocationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/workingLocationV1").expect("formatting should succeed");
             Ok(())
         }
@@ -542,7 +603,7 @@ impl GetWorkingLocationInput {
         fn update_http_builder(
             input: &crate::input::GetWorkingLocationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -551,25 +612,27 @@ impl GetWorkingLocationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetWorkingLocationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_working_location(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -592,15 +655,15 @@ impl GetWorkingLocationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetWorkingLocation::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetWorkingLocation",
             "finspacedata",
         ));
@@ -609,10 +672,10 @@ impl GetWorkingLocationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -626,6 +689,7 @@ impl GetWorkingLocationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkingLocationInput {
@@ -652,6 +716,7 @@ impl std::fmt::Debug for GetWorkingLocationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProgrammaticAccessCredentialsInput {
@@ -669,6 +734,7 @@ impl std::fmt::Debug for GetProgrammaticAccessCredentialsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChangesetInput {

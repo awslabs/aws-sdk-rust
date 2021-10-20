@@ -12,9 +12,9 @@ pub struct AttributeGroup {
     /// <p>The description of the attribute group that the user provides.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Key-value pairs you can use to associate with the attribute group.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -42,8 +42,8 @@ pub mod attribute_group {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -54,6 +54,7 @@ pub mod attribute_group {
             self.id = Some(input.into());
             self
         }
+        /// <p>The globally unique attribute group identifier of the attribute group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -63,6 +64,7 @@ pub mod attribute_group {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -72,6 +74,7 @@ pub mod attribute_group {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the attribute group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -81,34 +84,42 @@ pub mod attribute_group {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the attribute group that the user provides.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs you can use to associate with the attribute group.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -119,6 +130,7 @@ pub mod attribute_group {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Key-value pairs you can use to associate with the attribute group.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -163,9 +175,9 @@ pub struct Application {
     /// <p>The description of the application.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Key-value pairs you can use to associate with the application.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -193,8 +205,8 @@ pub mod application {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -205,6 +217,7 @@ pub mod application {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the application.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -214,6 +227,7 @@ pub mod application {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -223,6 +237,7 @@ pub mod application {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -232,34 +247,42 @@ pub mod application {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the application.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs you can use to associate with the application.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -270,6 +293,7 @@ pub mod application {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Key-value pairs you can use to associate with the application.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -300,6 +324,7 @@ impl Application {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -311,7 +336,9 @@ impl Application {
     std::hash::Hash,
 )]
 pub enum SyncAction {
+    #[allow(missing_docs)] // documentation missing in model
     NoAction,
+    #[allow(missing_docs)] // documentation missing in model
     StartSync,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -333,6 +360,7 @@ impl std::str::FromStr for SyncAction {
     }
 }
 impl SyncAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SyncAction::NoAction => "NO_ACTION",
@@ -340,6 +368,7 @@ impl SyncAction {
             SyncAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NO_ACTION", "START_SYNC"]
     }
@@ -350,6 +379,7 @@ impl AsRef<str> for SyncAction {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -361,6 +391,7 @@ impl AsRef<str> for SyncAction {
     std::hash::Hash,
 )]
 pub enum ResourceType {
+    #[allow(missing_docs)] // documentation missing in model
     CfnStack,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -381,12 +412,14 @@ impl std::str::FromStr for ResourceType {
     }
 }
 impl ResourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::CfnStack => "CFN_STACK",
             ResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CFN_STACK"]
     }
@@ -410,9 +443,9 @@ pub struct AttributeGroupSummary {
     /// <p>The description of the attribute group that the user provides.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for AttributeGroupSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -436,8 +469,8 @@ pub mod attribute_group_summary {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The globally unique attribute group identifier of the attribute group.</p>
@@ -445,6 +478,7 @@ pub mod attribute_group_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The globally unique attribute group identifier of the attribute group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -454,6 +488,7 @@ pub mod attribute_group_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -463,6 +498,7 @@ pub mod attribute_group_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the attribute group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -472,30 +508,33 @@ pub mod attribute_group_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the attribute group that the user provides.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -552,6 +591,7 @@ pub mod resource_info {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -561,6 +601,7 @@ pub mod resource_info {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon resource name (ARN) that specifies the resource across services.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -594,9 +635,9 @@ pub struct ApplicationSummary {
     /// <p>The description of the application.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ApplicationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -620,8 +661,8 @@ pub mod application_summary {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier of the application.</p>
@@ -629,6 +670,7 @@ pub mod application_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the application.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -638,6 +680,7 @@ pub mod application_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -647,6 +690,7 @@ pub mod application_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -656,30 +700,33 @@ pub mod application_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the application.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -713,7 +760,7 @@ pub struct Resource {
     /// <p>The Amazon resource name (ARN) of the resource.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time the resource was associated with the application.</p>
-    pub association_time: std::option::Option<smithy_types::Instant>,
+    pub association_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The service integration information about the resource.
     /// </p>
     pub integrations: std::option::Option<crate::model::ResourceIntegrations>,
@@ -736,7 +783,7 @@ pub mod resource {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) association_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) association_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) integrations: std::option::Option<crate::model::ResourceIntegrations>,
     }
     impl Builder {
@@ -745,6 +792,7 @@ pub mod resource {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -754,18 +802,20 @@ pub mod resource {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon resource name (ARN) of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The time the resource was associated with the application.</p>
-        pub fn association_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn association_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.association_time = Some(input);
             self
         }
+        /// <p>The time the resource was associated with the application.</p>
         pub fn set_association_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.association_time = input;
             self
@@ -776,6 +826,8 @@ pub mod resource {
             self.integrations = Some(input);
             self
         }
+        /// <p>The service integration information about the resource.
+        /// </p>
         pub fn set_integrations(
             mut self,
             input: std::option::Option<crate::model::ResourceIntegrations>,
@@ -829,6 +881,7 @@ pub mod resource_integrations {
             self.resource_group = Some(input);
             self
         }
+        /// <p>The information about the integration of Resource Groups.</p>
         pub fn set_resource_group(
             mut self,
             input: std::option::Option<crate::model::ResourceGroup>,
@@ -911,6 +964,19 @@ pub mod resource_group {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the propagation process for the resource group. The states includes:</p>
+        /// <p>
+        /// <code>CREATING </code>if the resource group is in the process of being created.</p>
+        /// <p>
+        /// <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
+        /// <p>
+        /// <code>CREATE_FAILED</code> if the resource group failed to be created.</p>
+        /// <p>
+        /// <code>UPDATING</code> if the resource group is in the process of being updated.</p>
+        /// <p>
+        /// <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
+        /// <p>
+        /// <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ResourceGroupState>,
@@ -923,6 +989,7 @@ pub mod resource_group {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon resource name (ARN) of the resource group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -932,6 +999,7 @@ pub mod resource_group {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The error message that generates when the propagation process for the resource group fails.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -956,6 +1024,7 @@ impl ResourceGroup {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -967,11 +1036,17 @@ impl ResourceGroup {
     std::hash::Hash,
 )]
 pub enum ResourceGroupState {
+    #[allow(missing_docs)] // documentation missing in model
     CreateComplete,
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateComplete,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -997,6 +1072,7 @@ impl std::str::FromStr for ResourceGroupState {
     }
 }
 impl ResourceGroupState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceGroupState::CreateComplete => "CREATE_COMPLETE",
@@ -1008,6 +1084,7 @@ impl ResourceGroupState {
             ResourceGroupState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATE_COMPLETE",
@@ -1053,6 +1130,7 @@ pub mod integrations {
             self.resource_group = Some(input);
             self
         }
+        /// <p> The information about the resource group integration.</p>
         pub fn set_resource_group(
             mut self,
             input: std::option::Option<crate::model::ResourceGroup>,

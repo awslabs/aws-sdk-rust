@@ -7,7 +7,7 @@ pub mod create_alert_manager_definition_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
-        pub(crate) data: std::option::Option<smithy_types::Blob>,
+        pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -16,16 +16,18 @@ pub mod create_alert_manager_definition_input {
             self.workspace_id = Some(input.into());
             self
         }
+        /// The ID of the workspace in which to create the alert manager definition.
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
         }
         /// The alert manager definition data.
-        pub fn data(mut self, input: smithy_types::Blob) -> Self {
+        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
             self.data = Some(input);
             self
         }
-        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// The alert manager definition data.
+        pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.data = input;
             self
         }
@@ -34,6 +36,7 @@ pub mod create_alert_manager_definition_input {
             self.client_token = Some(input.into());
             self
         }
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -43,7 +46,7 @@ pub mod create_alert_manager_definition_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateAlertManagerDefinitionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateAlertManagerDefinitionInput {
                 workspace_id: self.workspace_id,
@@ -65,27 +68,27 @@ impl CreateAlertManagerDefinitionInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateAlertManagerDefinition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateAlertManagerDefinitionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.workspace_id;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workspace_id = smithy_http::label::fmt_string(input_1, false);
+            let workspace_id = aws_smithy_http::label::fmt_string(input_1, false);
             if workspace_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workspace_id",
                     details: "cannot be empty or unset",
                 });
@@ -102,7 +105,7 @@ impl CreateAlertManagerDefinitionInput {
         fn update_http_builder(
             input: &crate::input::CreateAlertManagerDefinitionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -111,10 +114,10 @@ impl CreateAlertManagerDefinitionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateAlertManagerDefinitionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -124,15 +127,15 @@ impl CreateAlertManagerDefinitionInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_alert_manager_definition(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_alert_manager_definition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -155,15 +158,15 @@ impl CreateAlertManagerDefinitionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateAlertManagerDefinition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateAlertManagerDefinition",
             "amp",
         ));
@@ -172,10 +175,10 @@ impl CreateAlertManagerDefinitionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -197,7 +200,7 @@ pub mod create_rule_groups_namespace_input {
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) data: std::option::Option<smithy_types::Blob>,
+        pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -209,6 +212,7 @@ pub mod create_rule_groups_namespace_input {
             self.workspace_id = Some(input.into());
             self
         }
+        /// The ID of the workspace in which to create the rule group namespace.
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -218,16 +222,18 @@ pub mod create_rule_groups_namespace_input {
             self.name = Some(input.into());
             self
         }
+        /// The rule groups namespace name.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
         /// The namespace data that define the rule groups.
-        pub fn data(mut self, input: smithy_types::Blob) -> Self {
+        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
             self.data = Some(input);
             self
         }
-        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// The namespace data that define the rule groups.
+        pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.data = input;
             self
         }
@@ -236,10 +242,16 @@ pub mod create_rule_groups_namespace_input {
             self.client_token = Some(input.into());
             self
         }
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// Optional, user-provided tags for this rule groups namespace.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -250,6 +262,7 @@ pub mod create_rule_groups_namespace_input {
             self.tags = Some(hash_map);
             self
         }
+        /// Optional, user-provided tags for this rule groups namespace.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -264,7 +277,7 @@ pub mod create_rule_groups_namespace_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateRuleGroupsNamespaceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateRuleGroupsNamespaceInput {
                 workspace_id: self.workspace_id,
@@ -288,27 +301,27 @@ impl CreateRuleGroupsNamespaceInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateRuleGroupsNamespace,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateRuleGroupsNamespaceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_2 = &_input.workspace_id;
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workspace_id = smithy_http::label::fmt_string(input_2, false);
+            let workspace_id = aws_smithy_http::label::fmt_string(input_2, false);
             if workspace_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workspace_id",
                     details: "cannot be empty or unset",
                 });
@@ -325,7 +338,7 @@ impl CreateRuleGroupsNamespaceInput {
         fn update_http_builder(
             input: &crate::input::CreateRuleGroupsNamespaceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -334,10 +347,10 @@ impl CreateRuleGroupsNamespaceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateRuleGroupsNamespaceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -347,17 +360,19 @@ impl CreateRuleGroupsNamespaceInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_rule_groups_namespace(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -380,15 +395,15 @@ impl CreateRuleGroupsNamespaceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateRuleGroupsNamespace::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateRuleGroupsNamespace",
             "amp",
         ));
@@ -397,10 +412,10 @@ impl CreateRuleGroupsNamespaceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -432,6 +447,7 @@ pub mod create_workspace_input {
             self.alias = Some(input.into());
             self
         }
+        /// An optional user-assigned alias for this workspace. This alias is for user reference and does not need to be unique.
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias = input;
             self
@@ -441,10 +457,16 @@ pub mod create_workspace_input {
             self.client_token = Some(input.into());
             self
         }
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// Optional, user-provided tags for this workspace.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -455,6 +477,7 @@ pub mod create_workspace_input {
             self.tags = Some(hash_map);
             self
         }
+        /// Optional, user-provided tags for this workspace.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -469,7 +492,7 @@ pub mod create_workspace_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateWorkspaceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateWorkspaceInput {
                 alias: self.alias,
@@ -490,16 +513,16 @@ impl CreateWorkspaceInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateWorkspace,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateWorkspaceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/workspaces").expect("formatting should succeed");
             Ok(())
         }
@@ -507,7 +530,7 @@ impl CreateWorkspaceInput {
         fn update_http_builder(
             input: &crate::input::CreateWorkspaceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -516,10 +539,10 @@ impl CreateWorkspaceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateWorkspaceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -529,17 +552,17 @@ impl CreateWorkspaceInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_workspace(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -562,15 +585,15 @@ impl CreateWorkspaceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateWorkspace::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateWorkspace",
             "amp",
         ));
@@ -579,10 +602,10 @@ impl CreateWorkspaceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -611,6 +634,7 @@ pub mod delete_alert_manager_definition_input {
             self.workspace_id = Some(input.into());
             self
         }
+        /// The ID of the workspace in which to delete the alert manager definition.
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -620,6 +644,7 @@ pub mod delete_alert_manager_definition_input {
             self.client_token = Some(input.into());
             self
         }
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -629,7 +654,7 @@ pub mod delete_alert_manager_definition_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteAlertManagerDefinitionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteAlertManagerDefinitionInput {
                 workspace_id: self.workspace_id,
@@ -650,27 +675,27 @@ impl DeleteAlertManagerDefinitionInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteAlertManagerDefinition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteAlertManagerDefinitionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_3 = &_input.workspace_id;
             let input_3 =
                 input_3
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workspace_id = smithy_http::label::fmt_string(input_3, false);
+            let workspace_id = aws_smithy_http::label::fmt_string(input_3, false);
             if workspace_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workspace_id",
                     details: "cannot be empty or unset",
                 });
@@ -687,16 +712,16 @@ impl DeleteAlertManagerDefinitionInput {
             _input: &crate::input::DeleteAlertManagerDefinitionInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_4) = &_input.client_token {
-                query.push_kv("clientToken", &smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_4));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteAlertManagerDefinitionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -706,10 +731,10 @@ impl DeleteAlertManagerDefinitionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteAlertManagerDefinitionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -719,13 +744,13 @@ impl DeleteAlertManagerDefinitionInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -748,15 +773,15 @@ impl DeleteAlertManagerDefinitionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteAlertManagerDefinition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteAlertManagerDefinition",
             "amp",
         ));
@@ -765,10 +790,10 @@ impl DeleteAlertManagerDefinitionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -798,6 +823,7 @@ pub mod delete_rule_groups_namespace_input {
             self.workspace_id = Some(input.into());
             self
         }
+        /// The ID of the workspace to delete rule group definition.
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -807,6 +833,7 @@ pub mod delete_rule_groups_namespace_input {
             self.name = Some(input.into());
             self
         }
+        /// The rule groups namespace name.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -816,6 +843,7 @@ pub mod delete_rule_groups_namespace_input {
             self.client_token = Some(input.into());
             self
         }
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -825,7 +853,7 @@ pub mod delete_rule_groups_namespace_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteRuleGroupsNamespaceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteRuleGroupsNamespaceInput {
                 workspace_id: self.workspace_id,
@@ -847,27 +875,27 @@ impl DeleteRuleGroupsNamespaceInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteRuleGroupsNamespace,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteRuleGroupsNamespaceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_5 = &_input.workspace_id;
             let input_5 =
                 input_5
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workspace_id = smithy_http::label::fmt_string(input_5, false);
+            let workspace_id = aws_smithy_http::label::fmt_string(input_5, false);
             if workspace_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workspace_id",
                     details: "cannot be empty or unset",
                 });
@@ -876,13 +904,13 @@ impl DeleteRuleGroupsNamespaceInput {
             let input_6 =
                 input_6
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_6, false);
+            let name = aws_smithy_http::label::fmt_string(input_6, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -900,16 +928,16 @@ impl DeleteRuleGroupsNamespaceInput {
             _input: &crate::input::DeleteRuleGroupsNamespaceInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_7) = &_input.client_token {
-                query.push_kv("clientToken", &smithy_http::query::fmt_string(&inner_7));
+                query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_7));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteRuleGroupsNamespaceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -919,10 +947,10 @@ impl DeleteRuleGroupsNamespaceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteRuleGroupsNamespaceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -932,13 +960,13 @@ impl DeleteRuleGroupsNamespaceInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -961,15 +989,15 @@ impl DeleteRuleGroupsNamespaceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteRuleGroupsNamespace::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteRuleGroupsNamespace",
             "amp",
         ));
@@ -978,10 +1006,10 @@ impl DeleteRuleGroupsNamespaceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1010,6 +1038,7 @@ pub mod delete_workspace_input {
             self.workspace_id = Some(input.into());
             self
         }
+        /// The ID of the workspace to delete.
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -1019,6 +1048,7 @@ pub mod delete_workspace_input {
             self.client_token = Some(input.into());
             self
         }
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1028,7 +1058,7 @@ pub mod delete_workspace_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteWorkspaceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteWorkspaceInput {
                 workspace_id: self.workspace_id,
@@ -1048,27 +1078,27 @@ impl DeleteWorkspaceInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteWorkspace,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteWorkspaceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_8 = &_input.workspace_id;
             let input_8 =
                 input_8
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workspace_id = smithy_http::label::fmt_string(input_8, false);
+            let workspace_id = aws_smithy_http::label::fmt_string(input_8, false);
             if workspace_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workspace_id",
                     details: "cannot be empty or unset",
                 });
@@ -1082,16 +1112,16 @@ impl DeleteWorkspaceInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DeleteWorkspaceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_9) = &_input.client_token {
-                query.push_kv("clientToken", &smithy_http::query::fmt_string(&inner_9));
+                query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_9));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteWorkspaceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1101,10 +1131,10 @@ impl DeleteWorkspaceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteWorkspaceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1114,13 +1144,13 @@ impl DeleteWorkspaceInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1143,15 +1173,15 @@ impl DeleteWorkspaceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteWorkspace::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteWorkspace",
             "amp",
         ));
@@ -1160,10 +1190,10 @@ impl DeleteWorkspaceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1191,6 +1221,7 @@ pub mod describe_alert_manager_definition_input {
             self.workspace_id = Some(input.into());
             self
         }
+        /// The ID of the workspace to describe.
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -1200,7 +1231,7 @@ pub mod describe_alert_manager_definition_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeAlertManagerDefinitionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeAlertManagerDefinitionInput {
                 workspace_id: self.workspace_id,
@@ -1220,27 +1251,27 @@ impl DescribeAlertManagerDefinitionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeAlertManagerDefinition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeAlertManagerDefinitionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_10 = &_input.workspace_id;
             let input_10 =
                 input_10
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workspace_id = smithy_http::label::fmt_string(input_10, false);
+            let workspace_id = aws_smithy_http::label::fmt_string(input_10, false);
             if workspace_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workspace_id",
                     details: "cannot be empty or unset",
                 });
@@ -1257,7 +1288,7 @@ impl DescribeAlertManagerDefinitionInput {
         fn update_http_builder(
             input: &crate::input::DescribeAlertManagerDefinitionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1266,23 +1297,23 @@ impl DescribeAlertManagerDefinitionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeAlertManagerDefinitionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1305,15 +1336,15 @@ impl DescribeAlertManagerDefinitionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeAlertManagerDefinition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeAlertManagerDefinition",
             "amp",
         ));
@@ -1322,10 +1353,10 @@ impl DescribeAlertManagerDefinitionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1354,6 +1385,7 @@ pub mod describe_rule_groups_namespace_input {
             self.workspace_id = Some(input.into());
             self
         }
+        /// The ID of the workspace to describe.
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -1363,6 +1395,7 @@ pub mod describe_rule_groups_namespace_input {
             self.name = Some(input.into());
             self
         }
+        /// The rule groups namespace.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1372,7 +1405,7 @@ pub mod describe_rule_groups_namespace_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeRuleGroupsNamespaceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeRuleGroupsNamespaceInput {
                 workspace_id: self.workspace_id,
@@ -1393,27 +1426,27 @@ impl DescribeRuleGroupsNamespaceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeRuleGroupsNamespace,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeRuleGroupsNamespaceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_11 = &_input.workspace_id;
             let input_11 =
                 input_11
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workspace_id = smithy_http::label::fmt_string(input_11, false);
+            let workspace_id = aws_smithy_http::label::fmt_string(input_11, false);
             if workspace_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workspace_id",
                     details: "cannot be empty or unset",
                 });
@@ -1422,13 +1455,13 @@ impl DescribeRuleGroupsNamespaceInput {
             let input_12 =
                 input_12
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_12, false);
+            let name = aws_smithy_http::label::fmt_string(input_12, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -1446,7 +1479,7 @@ impl DescribeRuleGroupsNamespaceInput {
         fn update_http_builder(
             input: &crate::input::DescribeRuleGroupsNamespaceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1455,23 +1488,23 @@ impl DescribeRuleGroupsNamespaceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeRuleGroupsNamespaceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1494,15 +1527,15 @@ impl DescribeRuleGroupsNamespaceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeRuleGroupsNamespace::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeRuleGroupsNamespace",
             "amp",
         ));
@@ -1511,10 +1544,10 @@ impl DescribeRuleGroupsNamespaceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1542,6 +1575,7 @@ pub mod describe_workspace_input {
             self.workspace_id = Some(input.into());
             self
         }
+        /// The ID of the workspace to describe.
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -1551,7 +1585,7 @@ pub mod describe_workspace_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeWorkspaceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeWorkspaceInput {
                 workspace_id: self.workspace_id,
@@ -1570,27 +1604,27 @@ impl DescribeWorkspaceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkspace,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeWorkspaceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_13 = &_input.workspace_id;
             let input_13 =
                 input_13
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workspace_id = smithy_http::label::fmt_string(input_13, false);
+            let workspace_id = aws_smithy_http::label::fmt_string(input_13, false);
             if workspace_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workspace_id",
                     details: "cannot be empty or unset",
                 });
@@ -1607,7 +1641,7 @@ impl DescribeWorkspaceInput {
         fn update_http_builder(
             input: &crate::input::DescribeWorkspaceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1616,23 +1650,23 @@ impl DescribeWorkspaceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeWorkspaceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1655,15 +1689,15 @@ impl DescribeWorkspaceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeWorkspace::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeWorkspace",
             "amp",
         ));
@@ -1672,10 +1706,10 @@ impl DescribeWorkspaceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1706,6 +1740,7 @@ pub mod list_rule_groups_namespaces_input {
             self.workspace_id = Some(input.into());
             self
         }
+        /// The ID of the workspace.
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -1715,6 +1750,7 @@ pub mod list_rule_groups_namespaces_input {
             self.name = Some(input.into());
             self
         }
+        /// Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1724,6 +1760,7 @@ pub mod list_rule_groups_namespaces_input {
             self.next_token = Some(input.into());
             self
         }
+        /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1733,6 +1770,7 @@ pub mod list_rule_groups_namespaces_input {
             self.max_results = Some(input);
             self
         }
+        /// Maximum results to return in response (default=100, maximum=1000).
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1742,7 +1780,7 @@ pub mod list_rule_groups_namespaces_input {
             self,
         ) -> std::result::Result<
             crate::input::ListRuleGroupsNamespacesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListRuleGroupsNamespacesInput {
                 workspace_id: self.workspace_id,
@@ -1765,27 +1803,27 @@ impl ListRuleGroupsNamespacesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListRuleGroupsNamespaces,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListRuleGroupsNamespacesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_14 = &_input.workspace_id;
             let input_14 =
                 input_14
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workspace_id = smithy_http::label::fmt_string(input_14, false);
+            let workspace_id = aws_smithy_http::label::fmt_string(input_14, false);
             if workspace_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workspace_id",
                     details: "cannot be empty or unset",
                 });
@@ -1802,17 +1840,17 @@ impl ListRuleGroupsNamespacesInput {
             _input: &crate::input::ListRuleGroupsNamespacesInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_15) = &_input.name {
-                query.push_kv("name", &smithy_http::query::fmt_string(&inner_15));
+                query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_15));
             }
             if let Some(inner_16) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_16));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_16));
             }
             if let Some(inner_17) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_17).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_17).encode(),
                 );
             }
         }
@@ -1820,7 +1858,7 @@ impl ListRuleGroupsNamespacesInput {
         fn update_http_builder(
             input: &crate::input::ListRuleGroupsNamespacesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1830,23 +1868,23 @@ impl ListRuleGroupsNamespacesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListRuleGroupsNamespacesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1869,15 +1907,15 @@ impl ListRuleGroupsNamespacesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListRuleGroupsNamespaces::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListRuleGroupsNamespaces",
             "amp",
         ));
@@ -1886,10 +1924,10 @@ impl ListRuleGroupsNamespacesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1917,6 +1955,7 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// The ARN of the resource.
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -1926,7 +1965,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -1945,27 +1984,27 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_18 = &_input.resource_arn;
             let input_18 =
                 input_18
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_18, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_18, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -1978,7 +2017,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1987,23 +2026,23 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2026,15 +2065,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "amp",
         ));
@@ -2043,10 +2082,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2076,6 +2115,7 @@ pub mod list_workspaces_input {
             self.next_token = Some(input.into());
             self
         }
+        /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListWorkspaces request.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2085,6 +2125,7 @@ pub mod list_workspaces_input {
             self.alias = Some(input.into());
             self
         }
+        /// Optional filter for workspace alias. Only the workspaces with aliases that begin with this value will be returned.
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias = input;
             self
@@ -2094,6 +2135,7 @@ pub mod list_workspaces_input {
             self.max_results = Some(input);
             self
         }
+        /// Maximum results to return in response (default=100, maximum=1000).
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2103,7 +2145,7 @@ pub mod list_workspaces_input {
             self,
         ) -> std::result::Result<
             crate::input::ListWorkspacesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListWorkspacesInput {
                 next_token: self.next_token,
@@ -2124,31 +2166,31 @@ impl ListWorkspacesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListWorkspaces,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListWorkspacesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/workspaces").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListWorkspacesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_19) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_19));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_19));
             }
             if let Some(inner_20) = &_input.alias {
-                query.push_kv("alias", &smithy_http::query::fmt_string(&inner_20));
+                query.push_kv("alias", &aws_smithy_http::query::fmt_string(&inner_20));
             }
             if let Some(inner_21) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_21).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_21).encode(),
                 );
             }
         }
@@ -2156,7 +2198,7 @@ impl ListWorkspacesInput {
         fn update_http_builder(
             input: &crate::input::ListWorkspacesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2166,23 +2208,23 @@ impl ListWorkspacesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListWorkspacesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2205,15 +2247,15 @@ impl ListWorkspacesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListWorkspaces::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListWorkspaces",
             "amp",
         ));
@@ -2222,10 +2264,10 @@ impl ListWorkspacesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2246,7 +2288,7 @@ pub mod put_alert_manager_definition_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
-        pub(crate) data: std::option::Option<smithy_types::Blob>,
+        pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2255,16 +2297,18 @@ pub mod put_alert_manager_definition_input {
             self.workspace_id = Some(input.into());
             self
         }
+        /// The ID of the workspace in which to update the alert manager definition.
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
         }
         /// The alert manager definition data.
-        pub fn data(mut self, input: smithy_types::Blob) -> Self {
+        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
             self.data = Some(input);
             self
         }
-        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// The alert manager definition data.
+        pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.data = input;
             self
         }
@@ -2273,6 +2317,7 @@ pub mod put_alert_manager_definition_input {
             self.client_token = Some(input.into());
             self
         }
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2282,7 +2327,7 @@ pub mod put_alert_manager_definition_input {
             self,
         ) -> std::result::Result<
             crate::input::PutAlertManagerDefinitionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutAlertManagerDefinitionInput {
                 workspace_id: self.workspace_id,
@@ -2304,27 +2349,27 @@ impl PutAlertManagerDefinitionInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutAlertManagerDefinition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutAlertManagerDefinitionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_22 = &_input.workspace_id;
             let input_22 =
                 input_22
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workspace_id = smithy_http::label::fmt_string(input_22, false);
+            let workspace_id = aws_smithy_http::label::fmt_string(input_22, false);
             if workspace_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workspace_id",
                     details: "cannot be empty or unset",
                 });
@@ -2341,7 +2386,7 @@ impl PutAlertManagerDefinitionInput {
         fn update_http_builder(
             input: &crate::input::PutAlertManagerDefinitionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2350,10 +2395,10 @@ impl PutAlertManagerDefinitionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutAlertManagerDefinitionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -2363,17 +2408,19 @@ impl PutAlertManagerDefinitionInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_alert_manager_definition(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2396,15 +2443,15 @@ impl PutAlertManagerDefinitionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutAlertManagerDefinition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutAlertManagerDefinition",
             "amp",
         ));
@@ -2413,10 +2460,10 @@ impl PutAlertManagerDefinitionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2438,7 +2485,7 @@ pub mod put_rule_groups_namespace_input {
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) data: std::option::Option<smithy_types::Blob>,
+        pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2447,6 +2494,7 @@ pub mod put_rule_groups_namespace_input {
             self.workspace_id = Some(input.into());
             self
         }
+        /// The ID of the workspace in which to update the rule group namespace.
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -2456,16 +2504,18 @@ pub mod put_rule_groups_namespace_input {
             self.name = Some(input.into());
             self
         }
+        /// The rule groups namespace name.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
         /// The namespace data that define the rule groups.
-        pub fn data(mut self, input: smithy_types::Blob) -> Self {
+        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
             self.data = Some(input);
             self
         }
-        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// The namespace data that define the rule groups.
+        pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.data = input;
             self
         }
@@ -2474,6 +2524,7 @@ pub mod put_rule_groups_namespace_input {
             self.client_token = Some(input.into());
             self
         }
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2483,7 +2534,7 @@ pub mod put_rule_groups_namespace_input {
             self,
         ) -> std::result::Result<
             crate::input::PutRuleGroupsNamespaceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutRuleGroupsNamespaceInput {
                 workspace_id: self.workspace_id,
@@ -2505,27 +2556,27 @@ impl PutRuleGroupsNamespaceInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutRuleGroupsNamespace,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutRuleGroupsNamespaceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_23 = &_input.workspace_id;
             let input_23 =
                 input_23
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workspace_id = smithy_http::label::fmt_string(input_23, false);
+            let workspace_id = aws_smithy_http::label::fmt_string(input_23, false);
             if workspace_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workspace_id",
                     details: "cannot be empty or unset",
                 });
@@ -2534,13 +2585,13 @@ impl PutRuleGroupsNamespaceInput {
             let input_24 =
                 input_24
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_24, false);
+            let name = aws_smithy_http::label::fmt_string(input_24, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -2558,7 +2609,7 @@ impl PutRuleGroupsNamespaceInput {
         fn update_http_builder(
             input: &crate::input::PutRuleGroupsNamespaceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2567,10 +2618,10 @@ impl PutRuleGroupsNamespaceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutRuleGroupsNamespaceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -2580,17 +2631,19 @@ impl PutRuleGroupsNamespaceInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_rule_groups_namespace(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2613,15 +2666,15 @@ impl PutRuleGroupsNamespaceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutRuleGroupsNamespace::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutRuleGroupsNamespace",
             "amp",
         ));
@@ -2630,10 +2683,10 @@ impl PutRuleGroupsNamespaceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2664,10 +2717,16 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// The ARN of the resource.
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// The list of tags assigned to the resource.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2678,6 +2737,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
+        /// The list of tags assigned to the resource.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2690,8 +2750,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -2710,27 +2772,27 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_25 = &_input.resource_arn;
             let input_25 =
                 input_25
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_25, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_25, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -2743,7 +2805,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2752,24 +2814,26 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2792,22 +2856,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new("TagResource", "amp"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "amp",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2836,16 +2905,23 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// The ARN of the resource.
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// One or more tag keys
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// One or more tag keys
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2856,8 +2932,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -2876,27 +2954,27 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_26 = &_input.resource_arn;
             let input_26 =
                 input_26
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_26, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_26, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -2906,10 +2984,10 @@ impl UntagResourceInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_27) = &_input.tag_keys {
                 for inner_28 in inner_27 {
-                    query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_28));
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_28));
                 }
             }
         }
@@ -2917,7 +2995,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2927,23 +3005,23 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2966,25 +3044,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "amp",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "amp",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3014,6 +3094,7 @@ pub mod update_workspace_alias_input {
             self.workspace_id = Some(input.into());
             self
         }
+        /// The ID of the workspace being updated.
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -3023,6 +3104,7 @@ pub mod update_workspace_alias_input {
             self.alias = Some(input.into());
             self
         }
+        /// The new alias of the workspace.
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias = input;
             self
@@ -3032,6 +3114,7 @@ pub mod update_workspace_alias_input {
             self.client_token = Some(input.into());
             self
         }
+        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -3041,7 +3124,7 @@ pub mod update_workspace_alias_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateWorkspaceAliasInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateWorkspaceAliasInput {
                 workspace_id: self.workspace_id,
@@ -3062,27 +3145,27 @@ impl UpdateWorkspaceAliasInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateWorkspaceAlias,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateWorkspaceAliasInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_29 = &_input.workspace_id;
             let input_29 =
                 input_29
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "workspace_id",
                         details: "cannot be empty or unset",
                     })?;
-            let workspace_id = smithy_http::label::fmt_string(input_29, false);
+            let workspace_id = aws_smithy_http::label::fmt_string(input_29, false);
             if workspace_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "workspace_id",
                     details: "cannot be empty or unset",
                 });
@@ -3099,7 +3182,7 @@ impl UpdateWorkspaceAliasInput {
         fn update_http_builder(
             input: &crate::input::UpdateWorkspaceAliasInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3108,10 +3191,10 @@ impl UpdateWorkspaceAliasInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateWorkspaceAliasInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -3121,17 +3204,17 @@ impl UpdateWorkspaceAliasInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_workspace_alias(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3154,15 +3237,15 @@ impl UpdateWorkspaceAliasInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateWorkspaceAlias::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateWorkspaceAlias",
             "amp",
         ));
@@ -3171,10 +3254,10 @@ impl UpdateWorkspaceAliasInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3318,7 +3401,7 @@ pub struct CreateRuleGroupsNamespaceInput {
     /// The rule groups namespace name.
     pub name: std::option::Option<std::string::String>,
     /// The namespace data that define the rule groups.
-    pub data: std::option::Option<smithy_types::Blob>,
+    pub data: std::option::Option<aws_smithy_types::Blob>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub client_token: std::option::Option<std::string::String>,
     /// Optional, user-provided tags for this rule groups namespace.
@@ -3367,7 +3450,7 @@ pub struct PutRuleGroupsNamespaceInput {
     /// The rule groups namespace name.
     pub name: std::option::Option<std::string::String>,
     /// The namespace data that define the rule groups.
-    pub data: std::option::Option<smithy_types::Blob>,
+    pub data: std::option::Option<aws_smithy_types::Blob>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub client_token: std::option::Option<std::string::String>,
 }
@@ -3407,7 +3490,7 @@ pub struct CreateAlertManagerDefinitionInput {
     /// The ID of the workspace in which to create the alert manager definition.
     pub workspace_id: std::option::Option<std::string::String>,
     /// The alert manager definition data.
-    pub data: std::option::Option<smithy_types::Blob>,
+    pub data: std::option::Option<aws_smithy_types::Blob>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub client_token: std::option::Option<std::string::String>,
 }
@@ -3446,7 +3529,7 @@ pub struct PutAlertManagerDefinitionInput {
     /// The ID of the workspace in which to update the alert manager definition.
     pub workspace_id: std::option::Option<std::string::String>,
     /// The alert manager definition data.
-    pub data: std::option::Option<smithy_types::Blob>,
+    pub data: std::option::Option<aws_smithy_types::Blob>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub client_token: std::option::Option<std::string::String>,
 }
@@ -3475,6 +3558,7 @@ impl std::fmt::Debug for DescribeAlertManagerDefinitionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -3492,6 +3576,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -3510,6 +3595,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {

@@ -21,7 +21,7 @@ pub fn parse_cancel_job_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::client_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CancelJobError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelJobError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -40,7 +40,7 @@ pub fn parse_cancel_job_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::server_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CancelJobError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelJobError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -95,7 +95,7 @@ pub fn parse_create_compute_environment_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::client_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateComputeEnvironmentError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateComputeEnvironmentError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -114,7 +114,7 @@ pub fn parse_create_compute_environment_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::server_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateComputeEnvironmentError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateComputeEnvironmentError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -170,7 +170,7 @@ pub fn parse_create_job_queue_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::client_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateJobQueueError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateJobQueueError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -189,7 +189,7 @@ pub fn parse_create_job_queue_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::server_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateJobQueueError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateJobQueueError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -249,7 +249,7 @@ pub fn parse_delete_compute_environment_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::client_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteComputeEnvironmentError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteComputeEnvironmentError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -268,7 +268,7 @@ pub fn parse_delete_compute_environment_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::server_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteComputeEnvironmentError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteComputeEnvironmentError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -319,7 +319,7 @@ pub fn parse_delete_job_queue_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::client_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteJobQueueError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteJobQueueError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -338,7 +338,7 @@ pub fn parse_delete_job_queue_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::server_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteJobQueueError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteJobQueueError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -393,7 +393,7 @@ pub fn parse_deregister_job_definition_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::client_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeregisterJobDefinitionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterJobDefinitionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -412,7 +412,7 @@ pub fn parse_deregister_job_definition_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::server_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeregisterJobDefinitionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeregisterJobDefinitionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -470,7 +470,7 @@ pub fn parse_describe_compute_environments_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::client_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeComputeEnvironmentsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeComputeEnvironmentsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -489,7 +489,7 @@ pub fn parse_describe_compute_environments_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::server_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeComputeEnvironmentsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeComputeEnvironmentsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -552,7 +552,7 @@ pub fn parse_describe_job_definitions_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::client_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobDefinitionsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobDefinitionsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -571,7 +571,7 @@ pub fn parse_describe_job_definitions_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::server_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobDefinitionsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobDefinitionsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -628,7 +628,7 @@ pub fn parse_describe_job_queues_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::client_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobQueuesError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobQueuesError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -647,7 +647,7 @@ pub fn parse_describe_job_queues_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::server_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobQueuesError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobQueuesError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -701,7 +701,7 @@ pub fn parse_describe_jobs_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::client_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -720,7 +720,7 @@ pub fn parse_describe_jobs_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::server_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -773,7 +773,7 @@ pub fn parse_list_jobs_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::client_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListJobsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListJobsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -792,7 +792,7 @@ pub fn parse_list_jobs_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::server_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListJobsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListJobsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -848,7 +848,7 @@ pub fn parse_list_tags_for_resource_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::client_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -867,7 +867,7 @@ pub fn parse_list_tags_for_resource_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::server_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -926,7 +926,7 @@ pub fn parse_register_job_definition_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::client_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterJobDefinitionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterJobDefinitionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -945,7 +945,7 @@ pub fn parse_register_job_definition_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::server_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterJobDefinitionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterJobDefinitionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1001,7 +1001,7 @@ pub fn parse_submit_job_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::client_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SubmitJobError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SubmitJobError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1020,7 +1020,7 @@ pub fn parse_submit_job_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::server_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SubmitJobError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SubmitJobError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1073,7 +1073,7 @@ pub fn parse_tag_resource_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::client_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1092,7 +1092,7 @@ pub fn parse_tag_resource_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::server_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1140,7 +1140,7 @@ pub fn parse_terminate_job_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::client_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TerminateJobError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TerminateJobError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1159,7 +1159,7 @@ pub fn parse_terminate_job_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::server_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TerminateJobError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TerminateJobError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1207,7 +1207,7 @@ pub fn parse_untag_resource_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::client_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1226,7 +1226,7 @@ pub fn parse_untag_resource_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::server_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1281,7 +1281,7 @@ pub fn parse_update_compute_environment_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::client_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateComputeEnvironmentError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateComputeEnvironmentError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1300,7 +1300,7 @@ pub fn parse_update_compute_environment_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::server_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateComputeEnvironmentError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateComputeEnvironmentError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1356,7 +1356,7 @@ pub fn parse_update_job_queue_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::client_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobQueueError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobQueueError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1375,7 +1375,7 @@ pub fn parse_update_job_queue_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::server_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobQueueError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobQueueError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {

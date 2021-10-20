@@ -29,7 +29,7 @@ pub fn parse_add_layer_version_permission_error(
                         let mut output =
                             crate::error::invalid_parameter_value_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -49,7 +49,7 @@ pub fn parse_add_layer_version_permission_error(
                         let mut output =
                             crate::error::policy_length_exceeded_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_policy_length_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_policy_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -68,7 +68,7 @@ pub fn parse_add_layer_version_permission_error(
                     let mut output =
                         crate::error::precondition_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -85,7 +85,7 @@ pub fn parse_add_layer_version_permission_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -102,7 +102,7 @@ pub fn parse_add_layer_version_permission_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -120,7 +120,7 @@ pub fn parse_add_layer_version_permission_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -138,7 +138,7 @@ pub fn parse_add_layer_version_permission_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_add_layer_version_permission_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::AddLayerVersionPermissionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -197,7 +197,7 @@ pub fn parse_add_permission_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -215,7 +215,7 @@ pub fn parse_add_permission_error(
                     let mut output =
                         crate::error::policy_length_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_policy_length_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_policy_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -233,7 +233,7 @@ pub fn parse_add_permission_error(
                     let mut output =
                         crate::error::precondition_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -250,7 +250,7 @@ pub fn parse_add_permission_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -267,7 +267,7 @@ pub fn parse_add_permission_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -285,7 +285,7 @@ pub fn parse_add_permission_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -303,7 +303,7 @@ pub fn parse_add_permission_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_add_permission_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::AddPermissionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -359,7 +359,7 @@ pub fn parse_create_alias_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -376,7 +376,7 @@ pub fn parse_create_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -393,7 +393,7 @@ pub fn parse_create_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -411,7 +411,7 @@ pub fn parse_create_alias_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -429,7 +429,7 @@ pub fn parse_create_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_alias_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::CreateAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -492,7 +492,7 @@ pub fn parse_create_code_signing_config_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCodeSigningConfigError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -510,7 +510,7 @@ pub fn parse_create_code_signing_config_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateCodeSigningConfigError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCodeSigningConfigError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -574,7 +574,7 @@ pub fn parse_create_event_source_mapping_error(
                         let mut output =
                             crate::error::invalid_parameter_value_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSourceMappingError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSourceMappingError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -592,7 +592,7 @@ pub fn parse_create_event_source_mapping_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSourceMappingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSourceMappingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -609,7 +609,7 @@ pub fn parse_create_event_source_mapping_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSourceMappingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSourceMappingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -627,7 +627,7 @@ pub fn parse_create_event_source_mapping_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSourceMappingError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSourceMappingError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -645,7 +645,7 @@ pub fn parse_create_event_source_mapping_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSourceMappingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSourceMappingError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_event_source_mapping_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::CreateEventSourceMappingError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -704,7 +704,7 @@ pub fn parse_create_function_error(
                     let mut output =
                         crate::error::code_signing_config_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_code_signing_config_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_code_signing_config_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -722,7 +722,7 @@ pub fn parse_create_function_error(
                     let mut output =
                         crate::error::code_storage_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_code_storage_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_code_storage_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -740,7 +740,7 @@ pub fn parse_create_function_error(
                     let mut output =
                         crate::error::code_verification_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_code_verification_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_code_verification_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -758,7 +758,7 @@ pub fn parse_create_function_error(
                     let mut output =
                         crate::error::invalid_code_signature_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_code_signature_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_code_signature_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -776,7 +776,7 @@ pub fn parse_create_function_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -793,7 +793,7 @@ pub fn parse_create_function_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -810,7 +810,7 @@ pub fn parse_create_function_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -828,7 +828,7 @@ pub fn parse_create_function_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -846,7 +846,7 @@ pub fn parse_create_function_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_function_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::CreateFunctionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -902,7 +902,7 @@ pub fn parse_delete_alias_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -919,7 +919,7 @@ pub fn parse_delete_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -937,7 +937,7 @@ pub fn parse_delete_alias_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -955,7 +955,7 @@ pub fn parse_delete_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_alias_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DeleteAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -1013,7 +1013,7 @@ pub fn parse_delete_code_signing_config_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCodeSigningConfigError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1030,7 +1030,7 @@ pub fn parse_delete_code_signing_config_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCodeSigningConfigError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1047,7 +1047,7 @@ pub fn parse_delete_code_signing_config_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCodeSigningConfigError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1065,7 +1065,7 @@ pub fn parse_delete_code_signing_config_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteCodeSigningConfigError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCodeSigningConfigError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1124,7 +1124,7 @@ pub fn parse_delete_event_source_mapping_error(
                         let mut output =
                             crate::error::invalid_parameter_value_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventSourceMappingError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventSourceMappingError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1142,7 +1142,7 @@ pub fn parse_delete_event_source_mapping_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventSourceMappingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventSourceMappingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1159,7 +1159,7 @@ pub fn parse_delete_event_source_mapping_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventSourceMappingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventSourceMappingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1177,7 +1177,7 @@ pub fn parse_delete_event_source_mapping_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventSourceMappingError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventSourceMappingError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1195,7 +1195,7 @@ pub fn parse_delete_event_source_mapping_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventSourceMappingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventSourceMappingError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_event_source_mapping_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DeleteEventSourceMappingError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -1254,7 +1254,7 @@ pub fn parse_delete_function_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1271,7 +1271,7 @@ pub fn parse_delete_function_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1288,7 +1288,7 @@ pub fn parse_delete_function_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1306,7 +1306,7 @@ pub fn parse_delete_function_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1324,7 +1324,7 @@ pub fn parse_delete_function_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_function_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DeleteFunctionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -1374,7 +1374,7 @@ pub fn parse_delete_function_code_signing_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::code_signing_config_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_code_signing_config_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_code_signing_config_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1388,7 +1388,7 @@ pub fn parse_delete_function_code_signing_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1402,7 +1402,7 @@ pub fn parse_delete_function_code_signing_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1416,7 +1416,7 @@ pub fn parse_delete_function_code_signing_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1430,7 +1430,7 @@ pub fn parse_delete_function_code_signing_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1444,7 +1444,7 @@ pub fn parse_delete_function_code_signing_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_function_code_signing_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DeleteFunctionCodeSigningConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -1507,7 +1507,7 @@ pub fn parse_delete_function_concurrency_error(
                         let mut output =
                             crate::error::invalid_parameter_value_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionConcurrencyError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionConcurrencyError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1525,7 +1525,7 @@ pub fn parse_delete_function_concurrency_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionConcurrencyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionConcurrencyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1542,7 +1542,7 @@ pub fn parse_delete_function_concurrency_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionConcurrencyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionConcurrencyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1560,7 +1560,7 @@ pub fn parse_delete_function_concurrency_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionConcurrencyError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionConcurrencyError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1578,7 +1578,7 @@ pub fn parse_delete_function_concurrency_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionConcurrencyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionConcurrencyError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_function_concurrency_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DeleteFunctionConcurrencyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -1631,7 +1631,7 @@ pub fn parse_delete_function_event_invoke_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1645,7 +1645,7 @@ pub fn parse_delete_function_event_invoke_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1659,7 +1659,7 @@ pub fn parse_delete_function_event_invoke_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1673,7 +1673,7 @@ pub fn parse_delete_function_event_invoke_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1687,7 +1687,7 @@ pub fn parse_delete_function_event_invoke_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_function_event_invoke_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DeleteFunctionEventInvokeConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -1745,7 +1745,7 @@ pub fn parse_delete_layer_version_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteLayerVersionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLayerVersionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1763,7 +1763,7 @@ pub fn parse_delete_layer_version_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteLayerVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLayerVersionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_layer_version_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DeleteLayerVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -1818,7 +1818,7 @@ pub fn parse_delete_provisioned_concurrency_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1832,7 +1832,7 @@ pub fn parse_delete_provisioned_concurrency_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1846,7 +1846,7 @@ pub fn parse_delete_provisioned_concurrency_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1860,7 +1860,7 @@ pub fn parse_delete_provisioned_concurrency_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1874,7 +1874,7 @@ pub fn parse_delete_provisioned_concurrency_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_provisioned_concurrency_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::DeleteProvisionedConcurrencyConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -1932,7 +1932,7 @@ pub fn parse_get_account_settings_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAccountSettingsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccountSettingsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1950,7 +1950,7 @@ pub fn parse_get_account_settings_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAccountSettingsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccountSettingsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_get_account_settings_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::GetAccountSettingsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -2009,7 +2009,7 @@ pub fn parse_get_alias_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2026,7 +2026,7 @@ pub fn parse_get_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2044,7 +2044,7 @@ pub fn parse_get_alias_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAliasError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAliasError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2062,7 +2062,7 @@ pub fn parse_get_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAliasError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_get_alias_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::GetAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -2121,7 +2121,7 @@ pub fn parse_get_code_signing_config_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCodeSigningConfigError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2138,7 +2138,7 @@ pub fn parse_get_code_signing_config_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCodeSigningConfigError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2156,7 +2156,7 @@ pub fn parse_get_code_signing_config_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetCodeSigningConfigError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCodeSigningConfigError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2215,7 +2215,7 @@ pub fn parse_get_event_source_mapping_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEventSourceMappingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventSourceMappingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2232,7 +2232,7 @@ pub fn parse_get_event_source_mapping_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEventSourceMappingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventSourceMappingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2250,7 +2250,7 @@ pub fn parse_get_event_source_mapping_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEventSourceMappingError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventSourceMappingError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2268,7 +2268,7 @@ pub fn parse_get_event_source_mapping_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEventSourceMappingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventSourceMappingError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_get_event_source_mapping_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::GetEventSourceMappingError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -2327,7 +2327,7 @@ pub fn parse_get_function_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2344,7 +2344,7 @@ pub fn parse_get_function_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2362,7 +2362,7 @@ pub fn parse_get_function_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2380,7 +2380,7 @@ pub fn parse_get_function_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_get_function_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::GetFunctionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -2445,7 +2445,7 @@ pub fn parse_get_function_code_signing_config_error(
                             let mut output =
                                 crate::error::invalid_parameter_value_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionCodeSigningConfigError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionCodeSigningConfigError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -2463,7 +2463,7 @@ pub fn parse_get_function_code_signing_config_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionCodeSigningConfigError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2481,7 +2481,7 @@ pub fn parse_get_function_code_signing_config_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionCodeSigningConfigError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionCodeSigningConfigError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2499,7 +2499,7 @@ pub fn parse_get_function_code_signing_config_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionCodeSigningConfigError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_get_function_code_signing_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::GetFunctionCodeSigningConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -2566,7 +2566,7 @@ pub fn parse_get_function_concurrency_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConcurrencyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConcurrencyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2583,7 +2583,7 @@ pub fn parse_get_function_concurrency_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConcurrencyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConcurrencyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2601,7 +2601,7 @@ pub fn parse_get_function_concurrency_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConcurrencyError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConcurrencyError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2619,7 +2619,7 @@ pub fn parse_get_function_concurrency_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConcurrencyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConcurrencyError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_get_function_concurrency_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::GetFunctionConcurrencyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -2686,7 +2686,7 @@ pub fn parse_get_function_configuration_error(
                         let mut output =
                             crate::error::invalid_parameter_value_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2704,7 +2704,7 @@ pub fn parse_get_function_configuration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2722,7 +2722,7 @@ pub fn parse_get_function_configuration_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2740,7 +2740,7 @@ pub fn parse_get_function_configuration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_get_function_configuration_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::GetFunctionConfigurationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -2808,7 +2808,7 @@ pub fn parse_get_function_event_invoke_config_error(
                             let mut output =
                                 crate::error::invalid_parameter_value_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionEventInvokeConfigError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionEventInvokeConfigError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -2826,7 +2826,7 @@ pub fn parse_get_function_event_invoke_config_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionEventInvokeConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionEventInvokeConfigError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2844,7 +2844,7 @@ pub fn parse_get_function_event_invoke_config_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionEventInvokeConfigError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionEventInvokeConfigError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2862,7 +2862,7 @@ pub fn parse_get_function_event_invoke_config_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionEventInvokeConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionEventInvokeConfigError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_get_function_event_invoke_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::GetFunctionEventInvokeConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -2922,7 +2922,7 @@ pub fn parse_get_layer_version_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2939,7 +2939,7 @@ pub fn parse_get_layer_version_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2957,7 +2957,7 @@ pub fn parse_get_layer_version_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2975,7 +2975,7 @@ pub fn parse_get_layer_version_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_get_layer_version_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::GetLayerVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -3034,7 +3034,7 @@ pub fn parse_get_layer_version_by_arn_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionByArnError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionByArnError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3051,7 +3051,7 @@ pub fn parse_get_layer_version_by_arn_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionByArnError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionByArnError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3069,7 +3069,7 @@ pub fn parse_get_layer_version_by_arn_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionByArnError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionByArnError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -3087,7 +3087,7 @@ pub fn parse_get_layer_version_by_arn_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionByArnError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionByArnError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_get_layer_version_by_arn_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::GetLayerVersionByArnError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -3149,7 +3149,7 @@ pub fn parse_get_layer_version_policy_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3166,7 +3166,7 @@ pub fn parse_get_layer_version_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3184,7 +3184,7 @@ pub fn parse_get_layer_version_policy_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -3202,7 +3202,7 @@ pub fn parse_get_layer_version_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_get_layer_version_policy_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::GetLayerVersionPolicyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -3261,7 +3261,7 @@ pub fn parse_get_policy_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3278,7 +3278,7 @@ pub fn parse_get_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3296,7 +3296,7 @@ pub fn parse_get_policy_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -3314,7 +3314,7 @@ pub fn parse_get_policy_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_get_policy_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::GetPolicyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -3369,7 +3369,7 @@ pub fn parse_get_provisioned_concurrency_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -3383,7 +3383,7 @@ pub fn parse_get_provisioned_concurrency_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::provisioned_concurrency_config_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_provisioned_concurrency_config_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_provisioned_concurrency_config_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -3397,7 +3397,7 @@ pub fn parse_get_provisioned_concurrency_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -3411,7 +3411,7 @@ pub fn parse_get_provisioned_concurrency_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -3425,7 +3425,7 @@ pub fn parse_get_provisioned_concurrency_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_get_provisioned_concurrency_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::GetProvisionedConcurrencyConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -3485,7 +3485,7 @@ pub fn parse_invoke_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::ec2_access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_ec2_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_ec2_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3502,7 +3502,7 @@ pub fn parse_invoke_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::ec2_throttled_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_ec2_throttled_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_ec2_throttled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3519,7 +3519,7 @@ pub fn parse_invoke_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::ec2_unexpected_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_ec2_unexpected_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_ec2_unexpected_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3528,28 +3528,25 @@ pub fn parse_invoke_error(
                 tmp
             }),
         },
-        "EFSIOException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::EfsioException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "EFSIOException" => {
+            crate::error::InvokeError {
+                meta: generic,
+                kind: crate::error::InvokeErrorKind::EfsioException({
                     #[allow(unused_mut)]
-                    let mut output = crate::error::efsio_exception::Builder::default();
-                    let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_crate_error_efsio_exceptionjson_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::InvokeError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output = crate::error::efsio_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_efsio_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "EFSMountConnectivityException" => crate::error::InvokeError {
             meta: generic,
             kind: crate::error::InvokeErrorKind::EfsMountConnectivityException({
@@ -3559,7 +3556,7 @@ pub fn parse_invoke_error(
                     let mut output =
                         crate::error::efs_mount_connectivity_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_efs_mount_connectivity_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_efs_mount_connectivity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3576,7 +3573,7 @@ pub fn parse_invoke_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::efs_mount_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_efs_mount_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_efs_mount_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3593,7 +3590,7 @@ pub fn parse_invoke_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::efs_mount_timeout_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_efs_mount_timeout_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_efs_mount_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3610,7 +3607,7 @@ pub fn parse_invoke_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::eni_limit_reached_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_eni_limit_reached_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_eni_limit_reached_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3628,7 +3625,7 @@ pub fn parse_invoke_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3646,7 +3643,7 @@ pub fn parse_invoke_error(
                     let mut output =
                         crate::error::invalid_request_content_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_content_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_content_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3663,7 +3660,7 @@ pub fn parse_invoke_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_runtime_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_runtime_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_runtime_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3681,7 +3678,7 @@ pub fn parse_invoke_error(
                     let mut output =
                         crate::error::invalid_security_group_id_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_security_group_id_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_security_group_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3698,7 +3695,7 @@ pub fn parse_invoke_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_subnet_id_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_subnet_id_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_subnet_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3715,7 +3712,7 @@ pub fn parse_invoke_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_zip_file_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_zip_file_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_zip_file_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3732,7 +3729,7 @@ pub fn parse_invoke_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_kms_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3749,7 +3746,7 @@ pub fn parse_invoke_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_disabled_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_disabled_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_kms_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3766,7 +3763,7 @@ pub fn parse_invoke_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_invalid_state_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3783,7 +3780,7 @@ pub fn parse_invoke_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_kms_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3800,7 +3797,7 @@ pub fn parse_invoke_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_too_large_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_too_large_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_request_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3817,7 +3814,7 @@ pub fn parse_invoke_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3834,7 +3831,7 @@ pub fn parse_invoke_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3851,7 +3848,7 @@ pub fn parse_invoke_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_ready_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_ready_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -3869,7 +3866,7 @@ pub fn parse_invoke_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -3887,7 +3884,7 @@ pub fn parse_invoke_error(
                     let mut tmp = {
                         #[allow(unused_mut)]let mut output = crate::error::subnet_ip_address_limit_reached_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_subnet_ip_address_limit_reached_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_subnet_ip_address_limit_reached_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -3905,7 +3902,7 @@ pub fn parse_invoke_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_invoke_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::InvokeError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -3927,7 +3924,7 @@ pub fn parse_invoke_error(
                     let mut output =
                         crate::error::unsupported_media_type_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unsupported_media_type_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_media_type_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4006,7 +4003,7 @@ pub fn parse_invoke_async_error(
                     let mut output =
                         crate::error::invalid_request_content_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_content_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_content_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4023,7 +4020,7 @@ pub fn parse_invoke_async_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_runtime_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_runtime_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_runtime_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4040,7 +4037,7 @@ pub fn parse_invoke_async_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4057,7 +4054,7 @@ pub fn parse_invoke_async_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4075,7 +4072,7 @@ pub fn parse_invoke_async_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -4124,7 +4121,7 @@ pub fn parse_list_aliases_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4141,7 +4138,7 @@ pub fn parse_list_aliases_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4159,7 +4156,7 @@ pub fn parse_list_aliases_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -4177,7 +4174,7 @@ pub fn parse_list_aliases_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_aliases_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListAliasesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -4240,7 +4237,7 @@ pub fn parse_list_code_signing_configs_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListCodeSigningConfigsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCodeSigningConfigsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4258,7 +4255,7 @@ pub fn parse_list_code_signing_configs_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListCodeSigningConfigsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCodeSigningConfigsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -4321,7 +4318,7 @@ pub fn parse_list_event_source_mappings_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListEventSourceMappingsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEventSourceMappingsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4338,7 +4335,7 @@ pub fn parse_list_event_source_mappings_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListEventSourceMappingsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEventSourceMappingsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4356,7 +4353,7 @@ pub fn parse_list_event_source_mappings_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListEventSourceMappingsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEventSourceMappingsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -4374,7 +4371,7 @@ pub fn parse_list_event_source_mappings_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListEventSourceMappingsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEventSourceMappingsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_event_source_mappings_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListEventSourceMappingsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -4432,7 +4429,7 @@ pub fn parse_list_function_event_invoke_configs_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionEventInvokeConfigsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionEventInvokeConfigsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4446,7 +4443,7 @@ pub fn parse_list_function_event_invoke_configs_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionEventInvokeConfigsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionEventInvokeConfigsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4460,7 +4457,7 @@ pub fn parse_list_function_event_invoke_configs_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionEventInvokeConfigsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionEventInvokeConfigsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4474,7 +4471,7 @@ pub fn parse_list_function_event_invoke_configs_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionEventInvokeConfigsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionEventInvokeConfigsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_function_event_invoke_configs_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListFunctionEventInvokeConfigsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -4535,7 +4532,7 @@ pub fn parse_list_functions_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4553,7 +4550,7 @@ pub fn parse_list_functions_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -4571,7 +4568,7 @@ pub fn parse_list_functions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_functions_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListFunctionsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -4628,7 +4625,7 @@ pub fn parse_list_functions_by_code_signing_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsByCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsByCodeSigningConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4642,7 +4639,7 @@ pub fn parse_list_functions_by_code_signing_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsByCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsByCodeSigningConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4656,7 +4653,7 @@ pub fn parse_list_functions_by_code_signing_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsByCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsByCodeSigningConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4708,7 +4705,7 @@ pub fn parse_list_layers_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLayersError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLayersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4726,7 +4723,7 @@ pub fn parse_list_layers_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLayersError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLayersError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -4744,7 +4741,7 @@ pub fn parse_list_layers_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLayersError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLayersError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_layers_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListLayersError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -4801,7 +4798,7 @@ pub fn parse_list_layer_versions_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLayerVersionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLayerVersionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4818,7 +4815,7 @@ pub fn parse_list_layer_versions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLayerVersionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLayerVersionsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -4836,7 +4833,7 @@ pub fn parse_list_layer_versions_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLayerVersionsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLayerVersionsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -4854,7 +4851,7 @@ pub fn parse_list_layer_versions_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListLayerVersionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLayerVersionsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_layer_versions_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListLayerVersionsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -4912,7 +4909,7 @@ pub fn parse_list_provisioned_concurrency_configs_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListProvisionedConcurrencyConfigsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProvisionedConcurrencyConfigsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4926,7 +4923,7 @@ pub fn parse_list_provisioned_concurrency_configs_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListProvisionedConcurrencyConfigsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProvisionedConcurrencyConfigsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4940,7 +4937,7 @@ pub fn parse_list_provisioned_concurrency_configs_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListProvisionedConcurrencyConfigsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProvisionedConcurrencyConfigsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -4954,7 +4951,7 @@ pub fn parse_list_provisioned_concurrency_configs_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListProvisionedConcurrencyConfigsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProvisionedConcurrencyConfigsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_provisioned_concurrency_configs_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListProvisionedConcurrencyConfigsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -5010,7 +5007,7 @@ pub fn parse_list_tags_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5027,7 +5024,7 @@ pub fn parse_list_tags_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5045,7 +5042,7 @@ pub fn parse_list_tags_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -5063,7 +5060,7 @@ pub fn parse_list_tags_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_tags_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListTagsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -5126,7 +5123,7 @@ pub fn parse_list_versions_by_function_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListVersionsByFunctionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVersionsByFunctionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5143,7 +5140,7 @@ pub fn parse_list_versions_by_function_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListVersionsByFunctionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVersionsByFunctionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5161,7 +5158,7 @@ pub fn parse_list_versions_by_function_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListVersionsByFunctionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVersionsByFunctionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -5179,7 +5176,7 @@ pub fn parse_list_versions_by_function_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListVersionsByFunctionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVersionsByFunctionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_versions_by_function_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::ListVersionsByFunctionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -5241,7 +5238,7 @@ pub fn parse_publish_layer_version_error(
                     let mut output =
                         crate::error::code_storage_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_code_storage_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PublishLayerVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_code_storage_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishLayerVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5259,7 +5256,7 @@ pub fn parse_publish_layer_version_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PublishLayerVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishLayerVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5276,7 +5273,7 @@ pub fn parse_publish_layer_version_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PublishLayerVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishLayerVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5294,7 +5291,7 @@ pub fn parse_publish_layer_version_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PublishLayerVersionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishLayerVersionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -5312,7 +5309,7 @@ pub fn parse_publish_layer_version_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PublishLayerVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishLayerVersionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_publish_layer_version_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::PublishLayerVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -5371,7 +5368,7 @@ pub fn parse_publish_version_error(
                     let mut output =
                         crate::error::code_storage_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_code_storage_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PublishVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_code_storage_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5389,7 +5386,7 @@ pub fn parse_publish_version_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PublishVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5407,7 +5404,7 @@ pub fn parse_publish_version_error(
                     let mut output =
                         crate::error::precondition_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PublishVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5424,7 +5421,7 @@ pub fn parse_publish_version_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PublishVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5441,7 +5438,7 @@ pub fn parse_publish_version_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PublishVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishVersionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5459,7 +5456,7 @@ pub fn parse_publish_version_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PublishVersionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishVersionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -5477,7 +5474,7 @@ pub fn parse_publish_version_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PublishVersionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishVersionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_publish_version_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::PublishVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -5536,7 +5533,7 @@ pub fn parse_put_function_code_signing_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::code_signing_config_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_code_signing_config_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_code_signing_config_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5550,7 +5547,7 @@ pub fn parse_put_function_code_signing_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5564,7 +5561,7 @@ pub fn parse_put_function_code_signing_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5578,7 +5575,7 @@ pub fn parse_put_function_code_signing_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5592,7 +5589,7 @@ pub fn parse_put_function_code_signing_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5606,7 +5603,7 @@ pub fn parse_put_function_code_signing_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_put_function_code_signing_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::PutFunctionCodeSigningConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -5673,7 +5670,7 @@ pub fn parse_put_function_concurrency_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionConcurrencyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionConcurrencyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5690,7 +5687,7 @@ pub fn parse_put_function_concurrency_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionConcurrencyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionConcurrencyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5707,7 +5704,7 @@ pub fn parse_put_function_concurrency_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionConcurrencyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionConcurrencyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5725,7 +5722,7 @@ pub fn parse_put_function_concurrency_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionConcurrencyError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionConcurrencyError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -5743,7 +5740,7 @@ pub fn parse_put_function_concurrency_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionConcurrencyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionConcurrencyError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_put_function_concurrency_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::PutFunctionConcurrencyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -5811,7 +5808,7 @@ pub fn parse_put_function_event_invoke_config_error(
                             let mut output =
                                 crate::error::invalid_parameter_value_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionEventInvokeConfigError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionEventInvokeConfigError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -5829,7 +5826,7 @@ pub fn parse_put_function_event_invoke_config_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionEventInvokeConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionEventInvokeConfigError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5846,7 +5843,7 @@ pub fn parse_put_function_event_invoke_config_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionEventInvokeConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionEventInvokeConfigError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5864,7 +5861,7 @@ pub fn parse_put_function_event_invoke_config_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionEventInvokeConfigError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionEventInvokeConfigError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -5882,7 +5879,7 @@ pub fn parse_put_function_event_invoke_config_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionEventInvokeConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionEventInvokeConfigError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_put_function_event_invoke_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::PutFunctionEventInvokeConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -5941,7 +5938,7 @@ pub fn parse_put_provisioned_concurrency_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5955,7 +5952,7 @@ pub fn parse_put_provisioned_concurrency_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5969,7 +5966,7 @@ pub fn parse_put_provisioned_concurrency_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5983,7 +5980,7 @@ pub fn parse_put_provisioned_concurrency_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -5997,7 +5994,7 @@ pub fn parse_put_provisioned_concurrency_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_put_provisioned_concurrency_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::PutProvisionedConcurrencyConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -6067,7 +6064,7 @@ pub fn parse_remove_layer_version_permission_error(
                             let mut output =
                                 crate::error::invalid_parameter_value_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveLayerVersionPermissionError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveLayerVersionPermissionError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -6087,7 +6084,7 @@ pub fn parse_remove_layer_version_permission_error(
                         let mut output =
                             crate::error::precondition_failed_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveLayerVersionPermissionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveLayerVersionPermissionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6105,7 +6102,7 @@ pub fn parse_remove_layer_version_permission_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveLayerVersionPermissionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveLayerVersionPermissionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6123,7 +6120,7 @@ pub fn parse_remove_layer_version_permission_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveLayerVersionPermissionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveLayerVersionPermissionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6141,7 +6138,7 @@ pub fn parse_remove_layer_version_permission_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemoveLayerVersionPermissionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveLayerVersionPermissionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_remove_layer_version_permission_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::RemoveLayerVersionPermissionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -6196,7 +6193,7 @@ pub fn parse_remove_permission_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemovePermissionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemovePermissionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6214,7 +6211,7 @@ pub fn parse_remove_permission_error(
                     let mut output =
                         crate::error::precondition_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemovePermissionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemovePermissionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6231,7 +6228,7 @@ pub fn parse_remove_permission_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemovePermissionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemovePermissionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6249,7 +6246,7 @@ pub fn parse_remove_permission_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemovePermissionError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemovePermissionError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6267,7 +6264,7 @@ pub fn parse_remove_permission_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RemovePermissionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemovePermissionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_remove_permission_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::RemovePermissionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -6319,7 +6316,7 @@ pub fn parse_tag_resource_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6336,7 +6333,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6353,7 +6350,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6371,7 +6368,7 @@ pub fn parse_tag_resource_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6389,7 +6386,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_tag_resource_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::TagResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -6440,7 +6437,7 @@ pub fn parse_untag_resource_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6457,7 +6454,7 @@ pub fn parse_untag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6474,7 +6471,7 @@ pub fn parse_untag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6492,7 +6489,7 @@ pub fn parse_untag_resource_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6510,7 +6507,7 @@ pub fn parse_untag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_untag_resource_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::UntagResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -6561,7 +6558,7 @@ pub fn parse_update_alias_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6579,7 +6576,7 @@ pub fn parse_update_alias_error(
                     let mut output =
                         crate::error::precondition_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6596,7 +6593,7 @@ pub fn parse_update_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6613,7 +6610,7 @@ pub fn parse_update_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6631,7 +6628,7 @@ pub fn parse_update_alias_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6649,7 +6646,7 @@ pub fn parse_update_alias_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_alias_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::UpdateAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -6712,7 +6709,7 @@ pub fn parse_update_code_signing_config_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCodeSigningConfigError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6729,7 +6726,7 @@ pub fn parse_update_code_signing_config_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCodeSigningConfigError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6747,7 +6744,7 @@ pub fn parse_update_code_signing_config_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateCodeSigningConfigError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCodeSigningConfigError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6811,7 +6808,7 @@ pub fn parse_update_event_source_mapping_error(
                         let mut output =
                             crate::error::invalid_parameter_value_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6829,7 +6826,7 @@ pub fn parse_update_event_source_mapping_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6846,7 +6843,7 @@ pub fn parse_update_event_source_mapping_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6863,7 +6860,7 @@ pub fn parse_update_event_source_mapping_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6881,7 +6878,7 @@ pub fn parse_update_event_source_mapping_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -6899,7 +6896,7 @@ pub fn parse_update_event_source_mapping_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_event_source_mapping_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::UpdateEventSourceMappingError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -6961,7 +6958,7 @@ pub fn parse_update_function_code_error(
                     let mut output =
                         crate::error::code_signing_config_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_code_signing_config_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_code_signing_config_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6979,7 +6976,7 @@ pub fn parse_update_function_code_error(
                     let mut output =
                         crate::error::code_storage_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_code_storage_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_code_storage_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -6997,7 +6994,7 @@ pub fn parse_update_function_code_error(
                     let mut output =
                         crate::error::code_verification_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_code_verification_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_code_verification_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7015,7 +7012,7 @@ pub fn parse_update_function_code_error(
                     let mut output =
                         crate::error::invalid_code_signature_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_code_signature_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_code_signature_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7033,7 +7030,7 @@ pub fn parse_update_function_code_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7051,7 +7048,7 @@ pub fn parse_update_function_code_error(
                     let mut output =
                         crate::error::precondition_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7068,7 +7065,7 @@ pub fn parse_update_function_code_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7085,7 +7082,7 @@ pub fn parse_update_function_code_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7103,7 +7100,7 @@ pub fn parse_update_function_code_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -7121,7 +7118,7 @@ pub fn parse_update_function_code_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_function_code_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::UpdateFunctionCodeError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -7183,7 +7180,7 @@ pub fn parse_update_function_configuration_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::code_signing_config_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_code_signing_config_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_code_signing_config_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7197,7 +7194,7 @@ pub fn parse_update_function_configuration_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::code_verification_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_code_verification_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_code_verification_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7211,7 +7208,7 @@ pub fn parse_update_function_configuration_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_code_signature_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_code_signature_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_code_signature_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7225,7 +7222,7 @@ pub fn parse_update_function_configuration_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7239,7 +7236,7 @@ pub fn parse_update_function_configuration_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::precondition_failed_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7253,7 +7250,7 @@ pub fn parse_update_function_configuration_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7267,7 +7264,7 @@ pub fn parse_update_function_configuration_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7281,7 +7278,7 @@ pub fn parse_update_function_configuration_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7295,7 +7292,7 @@ pub fn parse_update_function_configuration_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_function_configuration_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::UpdateFunctionConfigurationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
@@ -7353,7 +7350,7 @@ pub fn parse_update_function_event_invoke_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7367,7 +7364,7 @@ pub fn parse_update_function_event_invoke_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7381,7 +7378,7 @@ pub fn parse_update_function_event_invoke_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7395,7 +7392,7 @@ pub fn parse_update_function_event_invoke_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
                     output.build()
                 }
             ;
@@ -7409,7 +7406,7 @@ pub fn parse_update_function_event_invoke_config_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_function_event_invoke_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                     .map_err(|_|crate::error::UpdateFunctionEventInvokeConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?

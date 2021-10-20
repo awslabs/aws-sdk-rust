@@ -40,6 +40,7 @@ pub mod tagged_table {
             self.table = Some(input);
             self
         }
+        /// <p>A table that has tags attached to it.</p>
         pub fn set_table(
             mut self,
             input: std::option::Option<crate::model::TableResource>,
@@ -47,12 +48,18 @@ pub mod tagged_table {
             self.table = input;
             self
         }
+        /// Appends an item to `lf_tag_on_database`.
+        ///
+        /// To override the contents of this collection use [`set_lf_tag_on_database`](Self::set_lf_tag_on_database).
+        ///
+        /// <p>A list of tags attached to the database where the table resides.</p>
         pub fn lf_tag_on_database(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
             let mut v = self.lf_tag_on_database.unwrap_or_default();
             v.push(input.into());
             self.lf_tag_on_database = Some(v);
             self
         }
+        /// <p>A list of tags attached to the database where the table resides.</p>
         pub fn set_lf_tag_on_database(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
@@ -60,12 +67,18 @@ pub mod tagged_table {
             self.lf_tag_on_database = input;
             self
         }
+        /// Appends an item to `lf_tags_on_table`.
+        ///
+        /// To override the contents of this collection use [`set_lf_tags_on_table`](Self::set_lf_tags_on_table).
+        ///
+        /// <p>A list of tags attached to the table.</p>
         pub fn lf_tags_on_table(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
             let mut v = self.lf_tags_on_table.unwrap_or_default();
             v.push(input.into());
             self.lf_tags_on_table = Some(v);
             self
         }
+        /// <p>A list of tags attached to the table.</p>
         pub fn set_lf_tags_on_table(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
@@ -73,12 +86,18 @@ pub mod tagged_table {
             self.lf_tags_on_table = input;
             self
         }
+        /// Appends an item to `lf_tags_on_columns`.
+        ///
+        /// To override the contents of this collection use [`set_lf_tags_on_columns`](Self::set_lf_tags_on_columns).
+        ///
+        /// <p>A list of tags attached to columns in the table.</p>
         pub fn lf_tags_on_columns(mut self, input: impl Into<crate::model::ColumnLfTag>) -> Self {
             let mut v = self.lf_tags_on_columns.unwrap_or_default();
             v.push(input.into());
             self.lf_tags_on_columns = Some(v);
             self
         }
+        /// <p>A list of tags attached to columns in the table.</p>
         pub fn set_lf_tags_on_columns(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ColumnLfTag>>,
@@ -136,16 +155,23 @@ pub mod column_lf_tag {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of a column resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `lf_tags`.
+        ///
+        /// To override the contents of this collection use [`set_lf_tags`](Self::set_lf_tags).
+        ///
+        /// <p>The tags attached to a column resource.</p>
         pub fn lf_tags(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
             let mut v = self.lf_tags.unwrap_or_default();
             v.push(input.into());
             self.lf_tags = Some(v);
             self
         }
+        /// <p>The tags attached to a column resource.</p>
         pub fn set_lf_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
@@ -205,6 +231,7 @@ pub mod lf_tag_pair {
             self.catalog_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -214,16 +241,23 @@ pub mod lf_tag_pair {
             self.tag_key = Some(input.into());
             self
         }
+        /// <p>The key-name for the tag.</p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tag_key = input;
             self
         }
+        /// Appends an item to `tag_values`.
+        ///
+        /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
+        ///
+        /// <p>A list of possible values an attribute can take.</p>
         pub fn tag_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_values.unwrap_or_default();
             v.push(input.into());
             self.tag_values = Some(v);
             self
         }
+        /// <p>A list of possible values an attribute can take.</p>
         pub fn set_tag_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -259,6 +293,7 @@ pub struct TableResource {
     /// <p>The name of the table.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A wildcard object representing every table under a database.</p>
+    ///
     /// <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>
     pub table_wildcard: std::option::Option<crate::model::TableWildcard>,
 }
@@ -289,6 +324,7 @@ pub mod table_resource {
             self.catalog_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -298,6 +334,7 @@ pub mod table_resource {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>The name of the database for the table. Unique to a Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -310,16 +347,21 @@ pub mod table_resource {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the table.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
         /// <p>A wildcard object representing every table under a database.</p>
+        ///
         /// <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>
         pub fn table_wildcard(mut self, input: crate::model::TableWildcard) -> Self {
             self.table_wildcard = Some(input);
             self
         }
+        /// <p>A wildcard object representing every table under a database.</p>
+        ///
+        /// <p>At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code> is required.</p>
         pub fn set_table_wildcard(
             mut self,
             input: std::option::Option<crate::model::TableWildcard>,
@@ -407,16 +449,23 @@ pub mod lf_tag {
             self.tag_key = Some(input.into());
             self
         }
+        /// <p>The key-name for the tag.</p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tag_key = input;
             self
         }
+        /// Appends an item to `tag_values`.
+        ///
+        /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
+        ///
+        /// <p>A list of possible values an attribute can take.</p>
         pub fn tag_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_values.unwrap_or_default();
             v.push(input.into());
             self.tag_values = Some(v);
             self
         }
+        /// <p>A list of possible values an attribute can take.</p>
         pub fn set_tag_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -472,6 +521,7 @@ pub mod tagged_database {
             self.database = Some(input);
             self
         }
+        /// <p>A database that has tags attached to it.</p>
         pub fn set_database(
             mut self,
             input: std::option::Option<crate::model::DatabaseResource>,
@@ -479,12 +529,18 @@ pub mod tagged_database {
             self.database = input;
             self
         }
+        /// Appends an item to `lf_tags`.
+        ///
+        /// To override the contents of this collection use [`set_lf_tags`](Self::set_lf_tags).
+        ///
+        /// <p>A list of tags attached to the database.</p>
         pub fn lf_tags(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
             let mut v = self.lf_tags.unwrap_or_default();
             v.push(input.into());
             self.lf_tags = Some(v);
             self
         }
+        /// <p>A list of tags attached to the database.</p>
         pub fn set_lf_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LfTagPair>>,
@@ -540,6 +596,7 @@ pub mod database_resource {
             self.catalog_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -549,6 +606,7 @@ pub mod database_resource {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the database resource. Unique to the Data Catalog.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -569,6 +627,7 @@ impl DatabaseResource {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -580,20 +639,35 @@ impl DatabaseResource {
     std::hash::Hash,
 )]
 pub enum Permission {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Alter,
+    #[allow(missing_docs)] // documentation missing in model
     AlterTag,
+    #[allow(missing_docs)] // documentation missing in model
     AssociateTag,
+    #[allow(missing_docs)] // documentation missing in model
     CreateDatabase,
+    #[allow(missing_docs)] // documentation missing in model
     CreateTable,
+    #[allow(missing_docs)] // documentation missing in model
     CreateTag,
+    #[allow(missing_docs)] // documentation missing in model
     DataLocationAccess,
+    #[allow(missing_docs)] // documentation missing in model
     Delete,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteTag,
+    #[allow(missing_docs)] // documentation missing in model
     Describe,
+    #[allow(missing_docs)] // documentation missing in model
     DescribeTag,
+    #[allow(missing_docs)] // documentation missing in model
     Drop,
+    #[allow(missing_docs)] // documentation missing in model
     Insert,
+    #[allow(missing_docs)] // documentation missing in model
     Select,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -628,6 +702,7 @@ impl std::str::FromStr for Permission {
     }
 }
 impl Permission {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Permission::All => "ALL",
@@ -648,6 +723,7 @@ impl Permission {
             Permission::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ALL",
@@ -726,6 +802,7 @@ pub mod resource {
             self.catalog = Some(input);
             self
         }
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
         pub fn set_catalog(
             mut self,
             input: std::option::Option<crate::model::CatalogResource>,
@@ -738,6 +815,7 @@ pub mod resource {
             self.database = Some(input);
             self
         }
+        /// <p>The database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal. </p>
         pub fn set_database(
             mut self,
             input: std::option::Option<crate::model::DatabaseResource>,
@@ -750,6 +828,7 @@ pub mod resource {
             self.table = Some(input);
             self
         }
+        /// <p>The table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
         pub fn set_table(
             mut self,
             input: std::option::Option<crate::model::TableResource>,
@@ -762,6 +841,7 @@ pub mod resource {
             self.table_with_columns = Some(input);
             self
         }
+        /// <p>The table with columns for the resource. A principal with permissions to this resource can select metadata from the columns of a table in the Data Catalog and the underlying data in Amazon S3.</p>
         pub fn set_table_with_columns(
             mut self,
             input: std::option::Option<crate::model::TableWithColumnsResource>,
@@ -774,6 +854,7 @@ pub mod resource {
             self.data_location = Some(input);
             self
         }
+        /// <p>The location of an Amazon S3 path where permissions are granted or revoked. </p>
         pub fn set_data_location(
             mut self,
             input: std::option::Option<crate::model::DataLocationResource>,
@@ -786,6 +867,7 @@ pub mod resource {
             self.lf_tag = Some(input);
             self
         }
+        /// <p>The tag key and values attached to a resource.</p>
         pub fn set_lf_tag(
             mut self,
             input: std::option::Option<crate::model::LfTagKeyResource>,
@@ -798,6 +880,7 @@ pub mod resource {
             self.lf_tag_policy = Some(input);
             self
         }
+        /// <p>A list of tag conditions that define a resource's tag policy.</p>
         pub fn set_lf_tag_policy(
             mut self,
             input: std::option::Option<crate::model::LfTagPolicyResource>,
@@ -862,6 +945,7 @@ pub mod lf_tag_policy_resource {
             self.catalog_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -871,6 +955,7 @@ pub mod lf_tag_policy_resource {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The resource type for which the tag policy applies.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -878,12 +963,18 @@ pub mod lf_tag_policy_resource {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `expression`.
+        ///
+        /// To override the contents of this collection use [`set_expression`](Self::set_expression).
+        ///
+        /// <p>A list of tag conditions that apply to the resource's tag policy.</p>
         pub fn expression(mut self, input: impl Into<crate::model::LfTag>) -> Self {
             let mut v = self.expression.unwrap_or_default();
             v.push(input.into());
             self.expression = Some(v);
             self
         }
+        /// <p>A list of tag conditions that apply to the resource's tag policy.</p>
         pub fn set_expression(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LfTag>>,
@@ -908,6 +999,7 @@ impl LfTagPolicyResource {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -919,7 +1011,9 @@ impl LfTagPolicyResource {
     std::hash::Hash,
 )]
 pub enum ResourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Database,
+    #[allow(missing_docs)] // documentation missing in model
     Table,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -941,6 +1035,7 @@ impl std::str::FromStr for ResourceType {
     }
 }
 impl ResourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Database => "DATABASE",
@@ -948,6 +1043,7 @@ impl ResourceType {
             ResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DATABASE", "TABLE"]
     }
@@ -994,6 +1090,7 @@ pub mod lf_tag_key_resource {
             self.catalog_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your AWS Lake Formation environment. </p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -1003,16 +1100,23 @@ pub mod lf_tag_key_resource {
             self.tag_key = Some(input.into());
             self
         }
+        /// <p>The key-name for the tag.</p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tag_key = input;
             self
         }
+        /// Appends an item to `tag_values`.
+        ///
+        /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
+        ///
+        /// <p>A list of possible values an attribute can take.</p>
         pub fn tag_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_values.unwrap_or_default();
             v.push(input.into());
             self.tag_values = Some(v);
             self
         }
+        /// <p>A list of possible values an attribute can take.</p>
         pub fn set_tag_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1069,6 +1173,7 @@ pub mod data_location_resource {
             self.catalog_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the Data Catalog where the location is registered with AWS Lake Formation. By default, it is the account ID of the caller.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -1078,6 +1183,7 @@ pub mod data_location_resource {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -1143,6 +1249,7 @@ pub mod table_with_columns_resource {
             self.catalog_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog_id = input;
             self
@@ -1152,6 +1259,7 @@ pub mod table_with_columns_resource {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal. </p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1164,16 +1272,23 @@ pub mod table_with_columns_resource {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the table resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `column_names`.
+        ///
+        /// To override the contents of this collection use [`set_column_names`](Self::set_column_names).
+        ///
+        /// <p>The list of column names for the table. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
         pub fn column_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.column_names.unwrap_or_default();
             v.push(input.into());
             self.column_names = Some(v);
             self
         }
+        /// <p>The list of column names for the table. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
         pub fn set_column_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1186,6 +1301,7 @@ pub mod table_with_columns_resource {
             self.column_wildcard = Some(input);
             self
         }
+        /// <p>A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
         pub fn set_column_wildcard(
             mut self,
             input: std::option::Option<crate::model::ColumnWildcard>,
@@ -1235,12 +1351,18 @@ pub mod column_wildcard {
         pub(crate) excluded_column_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `excluded_column_names`.
+        ///
+        /// To override the contents of this collection use [`set_excluded_column_names`](Self::set_excluded_column_names).
+        ///
+        /// <p>Excludes column names. Any column with this name will be excluded.</p>
         pub fn excluded_column_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.excluded_column_names.unwrap_or_default();
             v.push(input.into());
             self.excluded_column_names = Some(v);
             self
         }
+        /// <p>Excludes column names. Any column with this name will be excluded.</p>
         pub fn set_excluded_column_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1327,6 +1449,7 @@ pub mod data_lake_principal {
             self.data_lake_principal_identifier = Some(input.into());
             self
         }
+        /// <p>An identifier for the AWS Lake Formation principal.</p>
         pub fn set_data_lake_principal_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1381,6 +1504,7 @@ pub mod lf_tag_error {
             self.lf_tag = Some(input);
             self
         }
+        /// <p>The key-name of the tag.</p>
         pub fn set_lf_tag(mut self, input: std::option::Option<crate::model::LfTagPair>) -> Self {
             self.lf_tag = input;
             self
@@ -1390,6 +1514,7 @@ pub mod lf_tag_error {
             self.error = Some(input);
             self
         }
+        /// <p>An error that occurred with the attachment or detachment of the tag.</p>
         pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorDetail>) -> Self {
             self.error = input;
             self
@@ -1442,6 +1567,7 @@ pub mod error_detail {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>The code associated with this error.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -1451,6 +1577,7 @@ pub mod error_detail {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>A message describing the error.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1487,6 +1614,7 @@ pub struct DataLakeSettings {
     pub create_table_default_permissions:
         std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
     /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's AWS CloudTrail log.</p>
+    ///
     /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
     pub trusted_resource_owners: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -1521,6 +1649,11 @@ pub mod data_lake_settings {
         pub(crate) trusted_resource_owners: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `data_lake_admins`.
+        ///
+        /// To override the contents of this collection use [`set_data_lake_admins`](Self::set_data_lake_admins).
+        ///
+        /// <p>A list of AWS Lake Formation principals. Supported principals are IAM users or IAM roles.</p>
         pub fn data_lake_admins(
             mut self,
             input: impl Into<crate::model::DataLakePrincipal>,
@@ -1530,6 +1663,7 @@ pub mod data_lake_settings {
             self.data_lake_admins = Some(v);
             self
         }
+        /// <p>A list of AWS Lake Formation principals. Supported principals are IAM users or IAM roles.</p>
         pub fn set_data_lake_admins(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataLakePrincipal>>,
@@ -1537,6 +1671,11 @@ pub mod data_lake_settings {
             self.data_lake_admins = input;
             self
         }
+        /// Appends an item to `create_database_default_permissions`.
+        ///
+        /// To override the contents of this collection use [`set_create_database_default_permissions`](Self::set_create_database_default_permissions).
+        ///
+        /// <p>A structure representing a list of up to three principal permissions entries for default create database permissions.</p>
         pub fn create_database_default_permissions(
             mut self,
             input: impl Into<crate::model::PrincipalPermissions>,
@@ -1546,6 +1685,7 @@ pub mod data_lake_settings {
             self.create_database_default_permissions = Some(v);
             self
         }
+        /// <p>A structure representing a list of up to three principal permissions entries for default create database permissions.</p>
         pub fn set_create_database_default_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
@@ -1553,6 +1693,11 @@ pub mod data_lake_settings {
             self.create_database_default_permissions = input;
             self
         }
+        /// Appends an item to `create_table_default_permissions`.
+        ///
+        /// To override the contents of this collection use [`set_create_table_default_permissions`](Self::set_create_table_default_permissions).
+        ///
+        /// <p>A structure representing a list of up to three principal permissions entries for default create table permissions.</p>
         pub fn create_table_default_permissions(
             mut self,
             input: impl Into<crate::model::PrincipalPermissions>,
@@ -1562,6 +1707,7 @@ pub mod data_lake_settings {
             self.create_table_default_permissions = Some(v);
             self
         }
+        /// <p>A structure representing a list of up to three principal permissions entries for default create table permissions.</p>
         pub fn set_create_table_default_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PrincipalPermissions>>,
@@ -1569,12 +1715,22 @@ pub mod data_lake_settings {
             self.create_table_default_permissions = input;
             self
         }
+        /// Appends an item to `trusted_resource_owners`.
+        ///
+        /// To override the contents of this collection use [`set_trusted_resource_owners`](Self::set_trusted_resource_owners).
+        ///
+        /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's AWS CloudTrail log.</p>
+        ///
+        /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
         pub fn trusted_resource_owners(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.trusted_resource_owners.unwrap_or_default();
             v.push(input.into());
             self.trusted_resource_owners = Some(v);
             self
         }
+        /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's AWS CloudTrail log.</p>
+        ///
+        /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company. </p>
         pub fn set_trusted_resource_owners(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1632,6 +1788,7 @@ pub mod principal_permissions {
             self.principal = Some(input);
             self
         }
+        /// <p>The principal who is granted permissions.</p>
         pub fn set_principal(
             mut self,
             input: std::option::Option<crate::model::DataLakePrincipal>,
@@ -1639,12 +1796,18 @@ pub mod principal_permissions {
             self.principal = input;
             self
         }
+        /// Appends an item to `permissions`.
+        ///
+        /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
+        ///
+        /// <p>The permissions that are granted to the principal.</p>
         pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
             let mut v = self.permissions.unwrap_or_default();
             v.push(input.into());
             self.permissions = Some(v);
             self
         }
+        /// <p>The permissions that are granted to the principal.</p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Permission>>,
@@ -1677,7 +1840,7 @@ pub struct ResourceInfo {
     /// <p>The IAM role that registered a resource.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The date and time the resource was last modified.</p>
-    pub last_modified: std::option::Option<smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ResourceInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1696,7 +1859,7 @@ pub mod resource_info {
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -1704,6 +1867,7 @@ pub mod resource_info {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -1713,18 +1877,20 @@ pub mod resource_info {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The IAM role that registered a resource.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
         /// <p>The date and time the resource was last modified.</p>
-        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified = Some(input);
             self
         }
+        /// <p>The date and time the resource was last modified.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -1782,6 +1948,7 @@ pub mod filter_condition {
             self.field = Some(input);
             self
         }
+        /// <p>The field to filter in the filter condition.</p>
         pub fn set_field(
             mut self,
             input: std::option::Option<crate::model::FieldNameString>,
@@ -1794,6 +1961,7 @@ pub mod filter_condition {
             self.comparison_operator = Some(input);
             self
         }
+        /// <p>The comparison operator used in the filter condition.</p>
         pub fn set_comparison_operator(
             mut self,
             input: std::option::Option<crate::model::ComparisonOperator>,
@@ -1801,12 +1969,18 @@ pub mod filter_condition {
             self.comparison_operator = input;
             self
         }
+        /// Appends an item to `string_value_list`.
+        ///
+        /// To override the contents of this collection use [`set_string_value_list`](Self::set_string_value_list).
+        ///
+        /// <p>A string with values used in evaluating the filter condition.</p>
         pub fn string_value_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.string_value_list.unwrap_or_default();
             v.push(input.into());
             self.string_value_list = Some(v);
             self
         }
+        /// <p>A string with values used in evaluating the filter condition.</p>
         pub fn set_string_value_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1831,6 +2005,7 @@ impl FilterCondition {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1842,16 +2017,27 @@ impl FilterCondition {
     std::hash::Hash,
 )]
 pub enum ComparisonOperator {
+    #[allow(missing_docs)] // documentation missing in model
     BeginsWith,
+    #[allow(missing_docs)] // documentation missing in model
     Between,
+    #[allow(missing_docs)] // documentation missing in model
     Contains,
+    #[allow(missing_docs)] // documentation missing in model
     Eq,
+    #[allow(missing_docs)] // documentation missing in model
     Ge,
+    #[allow(missing_docs)] // documentation missing in model
     Gt,
+    #[allow(missing_docs)] // documentation missing in model
     In,
+    #[allow(missing_docs)] // documentation missing in model
     Le,
+    #[allow(missing_docs)] // documentation missing in model
     Lt,
+    #[allow(missing_docs)] // documentation missing in model
     Ne,
+    #[allow(missing_docs)] // documentation missing in model
     NotContains,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1882,6 +2068,7 @@ impl std::str::FromStr for ComparisonOperator {
     }
 }
 impl ComparisonOperator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComparisonOperator::BeginsWith => "BEGINS_WITH",
@@ -1898,6 +2085,7 @@ impl ComparisonOperator {
             ComparisonOperator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BEGINS_WITH",
@@ -1920,6 +2108,7 @@ impl AsRef<str> for ComparisonOperator {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1931,8 +2120,11 @@ impl AsRef<str> for ComparisonOperator {
     std::hash::Hash,
 )]
 pub enum FieldNameString {
+    #[allow(missing_docs)] // documentation missing in model
     LastModified,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceArn,
+    #[allow(missing_docs)] // documentation missing in model
     RoleArn,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1955,6 +2147,7 @@ impl std::str::FromStr for FieldNameString {
     }
 }
 impl FieldNameString {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FieldNameString::LastModified => "LAST_MODIFIED",
@@ -1963,6 +2156,7 @@ impl FieldNameString {
             FieldNameString::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LAST_MODIFIED", "RESOURCE_ARN", "ROLE_ARN"]
     }
@@ -2021,6 +2215,7 @@ pub mod principal_resource_permissions {
             self.principal = Some(input);
             self
         }
+        /// <p>The Data Lake principal to be granted or revoked permissions.</p>
         pub fn set_principal(
             mut self,
             input: std::option::Option<crate::model::DataLakePrincipal>,
@@ -2033,16 +2228,23 @@ pub mod principal_resource_permissions {
             self.resource = Some(input);
             self
         }
+        /// <p>The resource where permissions are to be granted or revoked.</p>
         pub fn set_resource(mut self, input: std::option::Option<crate::model::Resource>) -> Self {
             self.resource = input;
             self
         }
+        /// Appends an item to `permissions`.
+        ///
+        /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
+        ///
+        /// <p>The permissions to be granted or revoked on the resource.</p>
         pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
             let mut v = self.permissions.unwrap_or_default();
             v.push(input.into());
             self.permissions = Some(v);
             self
         }
+        /// <p>The permissions to be granted or revoked on the resource.</p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Permission>>,
@@ -2050,6 +2252,11 @@ pub mod principal_resource_permissions {
             self.permissions = input;
             self
         }
+        /// Appends an item to `permissions_with_grant_option`.
+        ///
+        /// To override the contents of this collection use [`set_permissions_with_grant_option`](Self::set_permissions_with_grant_option).
+        ///
+        /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
         pub fn permissions_with_grant_option(
             mut self,
             input: impl Into<crate::model::Permission>,
@@ -2059,6 +2266,7 @@ pub mod principal_resource_permissions {
             self.permissions_with_grant_option = Some(v);
             self
         }
+        /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
         pub fn set_permissions_with_grant_option(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Permission>>,
@@ -2071,6 +2279,7 @@ pub mod principal_resource_permissions {
             self.additional_details = Some(input);
             self
         }
+        /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
         pub fn set_additional_details(
             mut self,
             input: std::option::Option<crate::model::DetailsMap>,
@@ -2098,6 +2307,7 @@ impl PrincipalResourcePermissions {
 }
 
 /// <p>A structure containing the additional details to be returned in the <code>AdditionalDetails</code> attribute of <code>PrincipalResourcePermissions</code>.</p>
+///
 /// <p>If a catalog resource is shared through AWS Resource Access Manager (AWS RAM), then there will exist a corresponding RAM resource share ARN.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2121,12 +2331,18 @@ pub mod details_map {
         pub(crate) resource_share: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `resource_share`.
+        ///
+        /// To override the contents of this collection use [`set_resource_share`](Self::set_resource_share).
+        ///
+        /// <p>A resource share ARN for a catalog resource shared through AWS Resource Access Manager (AWS RAM).</p>
         pub fn resource_share(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_share.unwrap_or_default();
             v.push(input.into());
             self.resource_share = Some(v);
             self
         }
+        /// <p>A resource share ARN for a catalog resource shared through AWS Resource Access Manager (AWS RAM).</p>
         pub fn set_resource_share(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2149,6 +2365,7 @@ impl DetailsMap {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2160,13 +2377,21 @@ impl DetailsMap {
     std::hash::Hash,
 )]
 pub enum DataLakeResourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Catalog,
+    #[allow(missing_docs)] // documentation missing in model
     Database,
+    #[allow(missing_docs)] // documentation missing in model
     DataLocation,
+    #[allow(missing_docs)] // documentation missing in model
     LfTag,
+    #[allow(missing_docs)] // documentation missing in model
     LfTagPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     LfTagPolicyDatabase,
+    #[allow(missing_docs)] // documentation missing in model
     LfTagPolicyTable,
+    #[allow(missing_docs)] // documentation missing in model
     Table,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2194,6 +2419,7 @@ impl std::str::FromStr for DataLakeResourceType {
     }
 }
 impl DataLakeResourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataLakeResourceType::Catalog => "CATALOG",
@@ -2207,6 +2433,7 @@ impl DataLakeResourceType {
             DataLakeResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CATALOG",
@@ -2226,6 +2453,7 @@ impl AsRef<str> for DataLakeResourceType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2237,7 +2465,9 @@ impl AsRef<str> for DataLakeResourceType {
     std::hash::Hash,
 )]
 pub enum ResourceShareType {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Foreign,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2259,6 +2489,7 @@ impl std::str::FromStr for ResourceShareType {
     }
 }
 impl ResourceShareType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceShareType::All => "ALL",
@@ -2266,6 +2497,7 @@ impl ResourceShareType {
             ResourceShareType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL", "FOREIGN"]
     }
@@ -2308,6 +2540,7 @@ pub mod batch_permissions_failure_entry {
             self.request_entry = Some(input);
             self
         }
+        /// <p>An identifier for an entry of the batch request.</p>
         pub fn set_request_entry(
             mut self,
             input: std::option::Option<crate::model::BatchPermissionsRequestEntry>,
@@ -2320,6 +2553,7 @@ pub mod batch_permissions_failure_entry {
             self.error = Some(input);
             self
         }
+        /// <p>An error message that applies to the failure of the entry.</p>
         pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorDetail>) -> Self {
             self.error = input;
             self
@@ -2388,6 +2622,7 @@ pub mod batch_permissions_request_entry {
             self.id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the batch permissions request entry.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2397,6 +2632,7 @@ pub mod batch_permissions_request_entry {
             self.principal = Some(input);
             self
         }
+        /// <p>The principal to be granted a permission.</p>
         pub fn set_principal(
             mut self,
             input: std::option::Option<crate::model::DataLakePrincipal>,
@@ -2409,16 +2645,23 @@ pub mod batch_permissions_request_entry {
             self.resource = Some(input);
             self
         }
+        /// <p>The resource to which the principal is to be granted a permission.</p>
         pub fn set_resource(mut self, input: std::option::Option<crate::model::Resource>) -> Self {
             self.resource = input;
             self
         }
+        /// Appends an item to `permissions`.
+        ///
+        /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
+        ///
+        /// <p>The permissions to be granted.</p>
         pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
             let mut v = self.permissions.unwrap_or_default();
             v.push(input.into());
             self.permissions = Some(v);
             self
         }
+        /// <p>The permissions to be granted.</p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Permission>>,
@@ -2426,6 +2669,11 @@ pub mod batch_permissions_request_entry {
             self.permissions = input;
             self
         }
+        /// Appends an item to `permissions_with_grant_option`.
+        ///
+        /// To override the contents of this collection use [`set_permissions_with_grant_option`](Self::set_permissions_with_grant_option).
+        ///
+        /// <p>Indicates if the option to pass permissions is granted.</p>
         pub fn permissions_with_grant_option(
             mut self,
             input: impl Into<crate::model::Permission>,
@@ -2435,6 +2683,7 @@ pub mod batch_permissions_request_entry {
             self.permissions_with_grant_option = Some(v);
             self
         }
+        /// <p>Indicates if the option to pass permissions is granted.</p>
         pub fn set_permissions_with_grant_option(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Permission>>,

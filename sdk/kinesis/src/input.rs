@@ -17,10 +17,16 @@ pub mod add_tags_to_stream_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A set of up to 10 key-value pairs to use to create the tags.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -31,6 +37,7 @@ pub mod add_tags_to_stream_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A set of up to 10 key-value pairs to use to create the tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -45,7 +52,7 @@ pub mod add_tags_to_stream_input {
             self,
         ) -> std::result::Result<
             crate::input::AddTagsToStreamInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AddTagsToStreamInput {
                 stream_name: self.stream_name,
@@ -65,16 +72,16 @@ impl AddTagsToStreamInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AddTagsToStream,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AddTagsToStreamInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -82,7 +89,7 @@ impl AddTagsToStreamInput {
         fn update_http_builder(
             input: &crate::input::AddTagsToStreamInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -91,32 +98,32 @@ impl AddTagsToStreamInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AddTagsToStreamInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.AddTagsToStream",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_tags_to_stream(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -139,15 +146,15 @@ impl AddTagsToStreamInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AddTagsToStream::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AddTagsToStream",
             "kinesis",
         ));
@@ -156,10 +163,10 @@ impl AddTagsToStreamInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -191,6 +198,10 @@ pub mod create_stream_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>A name to identify the stream. The stream name is scoped to the AWS account used by
+        /// the application that creates the stream. It is also scoped by AWS Region. That is, two
+        /// streams in two different AWS accounts can have the same name. Two streams in the same
+        /// AWS account but in two different Regions can also have the same name.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -202,6 +213,9 @@ pub mod create_stream_input {
             self.shard_count = Some(input);
             self
         }
+        /// <p>The number of shards that the stream will use. The throughput of the stream is a
+        /// function of the number of shards; more shards are required for greater provisioned
+        /// throughput.</p>
         pub fn set_shard_count(mut self, input: std::option::Option<i32>) -> Self {
             self.shard_count = input;
             self
@@ -209,8 +223,10 @@ pub mod create_stream_input {
         /// Consumes the builder and constructs a [`CreateStreamInput`](crate::input::CreateStreamInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateStreamInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateStreamInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateStreamInput {
                 stream_name: self.stream_name,
                 shard_count: self.shard_count,
@@ -229,16 +245,16 @@ impl CreateStreamInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateStream,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateStreamInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -246,7 +262,7 @@ impl CreateStreamInput {
         fn update_http_builder(
             input: &crate::input::CreateStreamInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -255,31 +271,31 @@ impl CreateStreamInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateStreamInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.CreateStream",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_stream(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -302,25 +318,27 @@ impl CreateStreamInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateStream::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateStream",
-                    "kinesis",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateStream::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateStream",
+            "kinesis",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -349,6 +367,7 @@ pub mod decrease_stream_retention_period_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream to modify.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -359,6 +378,8 @@ pub mod decrease_stream_retention_period_input {
             self.retention_period_hours = Some(input);
             self
         }
+        /// <p>The new retention period of the stream, in hours. Must be less than the current
+        /// retention period.</p>
         pub fn set_retention_period_hours(mut self, input: std::option::Option<i32>) -> Self {
             self.retention_period_hours = input;
             self
@@ -368,7 +389,7 @@ pub mod decrease_stream_retention_period_input {
             self,
         ) -> std::result::Result<
             crate::input::DecreaseStreamRetentionPeriodInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DecreaseStreamRetentionPeriodInput {
                 stream_name: self.stream_name,
@@ -389,16 +410,16 @@ impl DecreaseStreamRetentionPeriodInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DecreaseStreamRetentionPeriod,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DecreaseStreamRetentionPeriodInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -406,7 +427,7 @@ impl DecreaseStreamRetentionPeriodInput {
         fn update_http_builder(
             input: &crate::input::DecreaseStreamRetentionPeriodInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -415,30 +436,30 @@ impl DecreaseStreamRetentionPeriodInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DecreaseStreamRetentionPeriodInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.DecreaseStreamRetentionPeriod",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_decrease_stream_retention_period(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_decrease_stream_retention_period(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -461,15 +482,15 @@ impl DecreaseStreamRetentionPeriodInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DecreaseStreamRetentionPeriod::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DecreaseStreamRetentionPeriod",
             "kinesis",
         ));
@@ -478,10 +499,10 @@ impl DecreaseStreamRetentionPeriodInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -510,6 +531,7 @@ pub mod delete_stream_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream to delete.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -521,6 +543,9 @@ pub mod delete_stream_input {
             self.enforce_consumer_deletion = Some(input);
             self
         }
+        /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>,
+        /// and the stream has registered consumers, the call to <code>DeleteStream</code> fails
+        /// with a <code>ResourceInUseException</code>. </p>
         pub fn set_enforce_consumer_deletion(mut self, input: std::option::Option<bool>) -> Self {
             self.enforce_consumer_deletion = input;
             self
@@ -528,8 +553,10 @@ pub mod delete_stream_input {
         /// Consumes the builder and constructs a [`DeleteStreamInput`](crate::input::DeleteStreamInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteStreamInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteStreamInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteStreamInput {
                 stream_name: self.stream_name,
                 enforce_consumer_deletion: self.enforce_consumer_deletion,
@@ -548,16 +575,16 @@ impl DeleteStreamInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteStream,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteStreamInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -565,7 +592,7 @@ impl DeleteStreamInput {
         fn update_http_builder(
             input: &crate::input::DeleteStreamInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -574,31 +601,31 @@ impl DeleteStreamInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteStreamInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.DeleteStream",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_stream(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -621,25 +648,27 @@ impl DeleteStreamInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteStream::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteStream",
-                    "kinesis",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteStream::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteStream",
+            "kinesis",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -670,6 +699,8 @@ pub mod deregister_stream_consumer_input {
             self.stream_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -679,6 +710,7 @@ pub mod deregister_stream_consumer_input {
             self.consumer_name = Some(input.into());
             self
         }
+        /// <p>The name that you gave to the consumer.</p>
         pub fn set_consumer_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -695,6 +727,11 @@ pub mod deregister_stream_consumer_input {
             self.consumer_arn = Some(input.into());
             self
         }
+        /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer. If you
+        /// don't know the ARN of the consumer that you want to deregister, you can use the
+        /// ListStreamConsumers operation to get a list of the descriptions of all the consumers
+        /// that are currently registered with a given data stream. The description of a consumer
+        /// contains its ARN.</p>
         pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.consumer_arn = input;
             self
@@ -704,7 +741,7 @@ pub mod deregister_stream_consumer_input {
             self,
         ) -> std::result::Result<
             crate::input::DeregisterStreamConsumerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeregisterStreamConsumerInput {
                 stream_arn: self.stream_arn,
@@ -726,16 +763,16 @@ impl DeregisterStreamConsumerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeregisterStreamConsumer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeregisterStreamConsumerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -743,7 +780,7 @@ impl DeregisterStreamConsumerInput {
         fn update_http_builder(
             input: &crate::input::DeregisterStreamConsumerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -752,32 +789,34 @@ impl DeregisterStreamConsumerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeregisterStreamConsumerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.DeregisterStreamConsumer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deregister_stream_consumer(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -800,15 +839,15 @@ impl DeregisterStreamConsumerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeregisterStreamConsumer::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeregisterStreamConsumer",
             "kinesis",
         ));
@@ -817,10 +856,10 @@ impl DeregisterStreamConsumerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -846,7 +885,7 @@ pub mod describe_limits_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeLimitsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeLimitsInput {})
         }
@@ -863,16 +902,16 @@ impl DescribeLimitsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeLimits,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeLimitsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -880,7 +919,7 @@ impl DescribeLimitsInput {
         fn update_http_builder(
             input: &crate::input::DescribeLimitsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -889,29 +928,31 @@ impl DescribeLimitsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeLimitsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.DescribeLimits",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_limits(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -934,15 +975,15 @@ impl DescribeLimitsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeLimits::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeLimits",
             "kinesis",
         ));
@@ -951,10 +992,10 @@ impl DescribeLimitsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -984,6 +1025,7 @@ pub mod describe_stream_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream to describe.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -994,6 +1036,8 @@ pub mod describe_stream_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of shards to return in a single call. The default value is 100.
+        /// If you specify a value greater than 100, at most 100 shards are returned.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -1003,6 +1047,7 @@ pub mod describe_stream_input {
             self.exclusive_start_shard_id = Some(input.into());
             self
         }
+        /// <p>The shard ID of the shard to start with.</p>
         pub fn set_exclusive_start_shard_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1015,7 +1060,7 @@ pub mod describe_stream_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeStreamInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeStreamInput {
                 stream_name: self.stream_name,
@@ -1036,16 +1081,16 @@ impl DescribeStreamInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeStream,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeStreamInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1053,7 +1098,7 @@ impl DescribeStreamInput {
         fn update_http_builder(
             input: &crate::input::DescribeStreamInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1062,29 +1107,31 @@ impl DescribeStreamInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeStreamInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.DescribeStream",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_stream(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1107,15 +1154,15 @@ impl DescribeStreamInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeStream::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeStream",
             "kinesis",
         ));
@@ -1124,10 +1171,10 @@ impl DescribeStreamInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1158,6 +1205,8 @@ pub mod describe_stream_consumer_input {
             self.stream_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -1167,6 +1216,7 @@ pub mod describe_stream_consumer_input {
             self.consumer_name = Some(input.into());
             self
         }
+        /// <p>The name that you gave to the consumer.</p>
         pub fn set_consumer_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1179,6 +1229,7 @@ pub mod describe_stream_consumer_input {
             self.consumer_arn = Some(input.into());
             self
         }
+        /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer.</p>
         pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.consumer_arn = input;
             self
@@ -1188,7 +1239,7 @@ pub mod describe_stream_consumer_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeStreamConsumerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeStreamConsumerInput {
                 stream_arn: self.stream_arn,
@@ -1209,16 +1260,16 @@ impl DescribeStreamConsumerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeStreamConsumer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeStreamConsumerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1226,7 +1277,7 @@ impl DescribeStreamConsumerInput {
         fn update_http_builder(
             input: &crate::input::DescribeStreamConsumerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1235,32 +1286,34 @@ impl DescribeStreamConsumerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeStreamConsumerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.DescribeStreamConsumer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_stream_consumer(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1283,15 +1336,15 @@ impl DescribeStreamConsumerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeStreamConsumer::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeStreamConsumer",
             "kinesis",
         ));
@@ -1300,10 +1353,10 @@ impl DescribeStreamConsumerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1331,6 +1384,7 @@ pub mod describe_stream_summary_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream to describe.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -1340,7 +1394,7 @@ pub mod describe_stream_summary_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeStreamSummaryInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeStreamSummaryInput {
                 stream_name: self.stream_name,
@@ -1359,16 +1413,16 @@ impl DescribeStreamSummaryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeStreamSummary,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeStreamSummaryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1376,7 +1430,7 @@ impl DescribeStreamSummaryInput {
         fn update_http_builder(
             input: &crate::input::DescribeStreamSummaryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1385,32 +1439,34 @@ impl DescribeStreamSummaryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeStreamSummaryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.DescribeStreamSummary",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_stream_summary(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1433,15 +1489,15 @@ impl DescribeStreamSummaryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeStreamSummary::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeStreamSummary",
             "kinesis",
         ));
@@ -1450,10 +1506,10 @@ impl DescribeStreamSummaryInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1484,16 +1540,118 @@ pub mod disable_enhanced_monitoring_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the Kinesis data stream for which to disable enhanced
+        /// monitoring.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
         }
+        /// Appends an item to `shard_level_metrics`.
+        ///
+        /// To override the contents of this collection use [`set_shard_level_metrics`](Self::set_shard_level_metrics).
+        ///
+        /// <p>List of shard-level metrics to disable.</p>
+        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>"
+        /// disables every metric.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>IncomingBytes</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IncomingRecords</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OutgoingBytes</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OutgoingRecords</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WriteProvisionedThroughputExceeded</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ReadProvisionedThroughputExceeded</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IteratorAgeMilliseconds</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALL</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
+        /// Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon
+        /// Kinesis Data Streams Developer Guide</i>.</p>
         pub fn shard_level_metrics(mut self, input: impl Into<crate::model::MetricsName>) -> Self {
             let mut v = self.shard_level_metrics.unwrap_or_default();
             v.push(input.into());
             self.shard_level_metrics = Some(v);
             self
         }
+        /// <p>List of shard-level metrics to disable.</p>
+        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>"
+        /// disables every metric.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>IncomingBytes</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IncomingRecords</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OutgoingBytes</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OutgoingRecords</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WriteProvisionedThroughputExceeded</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ReadProvisionedThroughputExceeded</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IteratorAgeMilliseconds</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALL</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
+        /// Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon
+        /// Kinesis Data Streams Developer Guide</i>.</p>
         pub fn set_shard_level_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
@@ -1506,7 +1664,7 @@ pub mod disable_enhanced_monitoring_input {
             self,
         ) -> std::result::Result<
             crate::input::DisableEnhancedMonitoringInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisableEnhancedMonitoringInput {
                 stream_name: self.stream_name,
@@ -1527,16 +1685,16 @@ impl DisableEnhancedMonitoringInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisableEnhancedMonitoring,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisableEnhancedMonitoringInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1544,7 +1702,7 @@ impl DisableEnhancedMonitoringInput {
         fn update_http_builder(
             input: &crate::input::DisableEnhancedMonitoringInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1553,32 +1711,34 @@ impl DisableEnhancedMonitoringInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisableEnhancedMonitoringInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.DisableEnhancedMonitoring",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disable_enhanced_monitoring(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1601,15 +1761,15 @@ impl DisableEnhancedMonitoringInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisableEnhancedMonitoring::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisableEnhancedMonitoring",
             "kinesis",
         ));
@@ -1618,10 +1778,10 @@ impl DisableEnhancedMonitoringInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1651,16 +1811,117 @@ pub mod enable_enhanced_monitoring_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream for which to enable enhanced monitoring.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
         }
+        /// Appends an item to `shard_level_metrics`.
+        ///
+        /// To override the contents of this collection use [`set_shard_level_metrics`](Self::set_shard_level_metrics).
+        ///
+        /// <p>List of shard-level metrics to enable.</p>
+        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>"
+        /// enables every metric.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>IncomingBytes</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IncomingRecords</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OutgoingBytes</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OutgoingRecords</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WriteProvisionedThroughputExceeded</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ReadProvisionedThroughputExceeded</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IteratorAgeMilliseconds</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALL</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
+        /// Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon
+        /// Kinesis Data Streams Developer Guide</i>.</p>
         pub fn shard_level_metrics(mut self, input: impl Into<crate::model::MetricsName>) -> Self {
             let mut v = self.shard_level_metrics.unwrap_or_default();
             v.push(input.into());
             self.shard_level_metrics = Some(v);
             self
         }
+        /// <p>List of shard-level metrics to enable.</p>
+        /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>"
+        /// enables every metric.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>IncomingBytes</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IncomingRecords</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OutgoingBytes</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OutgoingRecords</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WriteProvisionedThroughputExceeded</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ReadProvisionedThroughputExceeded</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IteratorAgeMilliseconds</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALL</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
+        /// Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon
+        /// Kinesis Data Streams Developer Guide</i>.</p>
         pub fn set_shard_level_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
@@ -1673,7 +1934,7 @@ pub mod enable_enhanced_monitoring_input {
             self,
         ) -> std::result::Result<
             crate::input::EnableEnhancedMonitoringInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::EnableEnhancedMonitoringInput {
                 stream_name: self.stream_name,
@@ -1694,16 +1955,16 @@ impl EnableEnhancedMonitoringInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::EnableEnhancedMonitoring,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::EnableEnhancedMonitoringInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1711,7 +1972,7 @@ impl EnableEnhancedMonitoringInput {
         fn update_http_builder(
             input: &crate::input::EnableEnhancedMonitoringInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1720,32 +1981,34 @@ impl EnableEnhancedMonitoringInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::EnableEnhancedMonitoringInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.EnableEnhancedMonitoring",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_enable_enhanced_monitoring(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1768,15 +2031,15 @@ impl EnableEnhancedMonitoringInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::EnableEnhancedMonitoring::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "EnableEnhancedMonitoring",
             "kinesis",
         ));
@@ -1785,10 +2048,10 @@ impl EnableEnhancedMonitoringInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1819,6 +2082,9 @@ pub mod get_records_input {
             self.shard_iterator = Some(input.into());
             self
         }
+        /// <p>The position in the shard from which you want to start sequentially reading data
+        /// records. A shard iterator specifies this position using the sequence number of a data
+        /// record in the shard.</p>
         pub fn set_shard_iterator(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1833,6 +2099,9 @@ pub mod get_records_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of records to return. Specify a value of up to 10,000. If you
+        /// specify a value that is greater than 10,000, <a>GetRecords</a> throws
+        /// <code>InvalidArgumentException</code>. The default value is 10,000.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -1840,8 +2109,10 @@ pub mod get_records_input {
         /// Consumes the builder and constructs a [`GetRecordsInput`](crate::input::GetRecordsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetRecordsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetRecordsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetRecordsInput {
                 shard_iterator: self.shard_iterator,
                 limit: self.limit,
@@ -1860,16 +2131,16 @@ impl GetRecordsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetRecords,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetRecordsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1877,7 +2148,7 @@ impl GetRecordsInput {
         fn update_http_builder(
             input: &crate::input::GetRecordsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1886,29 +2157,31 @@ impl GetRecordsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetRecordsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.GetRecords",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_records(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1931,25 +2204,27 @@ impl GetRecordsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetRecords::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetRecords",
-                    "kinesis",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetRecords::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetRecords",
+            "kinesis",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1973,7 +2248,7 @@ pub mod get_shard_iterator_input {
         pub(crate) shard_id: std::option::Option<std::string::String>,
         pub(crate) shard_iterator_type: std::option::Option<crate::model::ShardIteratorType>,
         pub(crate) starting_sequence_number: std::option::Option<std::string::String>,
-        pub(crate) timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the Amazon Kinesis data stream.</p>
@@ -1981,6 +2256,7 @@ pub mod get_shard_iterator_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon Kinesis data stream.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -1990,6 +2266,7 @@ pub mod get_shard_iterator_input {
             self.shard_id = Some(input.into());
             self
         }
+        /// <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
         pub fn set_shard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.shard_id = input;
             self
@@ -1999,24 +2276,29 @@ pub mod get_shard_iterator_input {
         /// <p>The following are the valid Amazon Kinesis shard iterator types:</p>
         /// <ul>
         /// <li>
+        ///
         /// <p>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific
         /// sequence number, provided in the value
         /// <code>StartingSequenceNumber</code>.</p>
         /// </li>
         /// <li>
+        ///
         /// <p>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a
         /// specific sequence number, provided in the value
         /// <code>StartingSequenceNumber</code>.</p>
         /// </li>
         /// <li>
+        ///
         /// <p>AT_TIMESTAMP - Start reading from the position denoted by a specific time
         /// stamp, provided in the value <code>Timestamp</code>.</p>
         /// </li>
         /// <li>
+        ///
         /// <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in
         /// the system, which is the oldest data record in the shard.</p>
         /// </li>
         /// <li>
+        ///
         /// <p>LATEST - Start reading just after the most recent record in the shard, so
         /// that you always read the most recent data in the shard.</p>
         /// </li>
@@ -2025,6 +2307,38 @@ pub mod get_shard_iterator_input {
             self.shard_iterator_type = Some(input);
             self
         }
+        /// <p>Determines how the shard iterator is used to start reading data records from the
+        /// shard.</p>
+        /// <p>The following are the valid Amazon Kinesis shard iterator types:</p>
+        /// <ul>
+        /// <li>
+        ///
+        /// <p>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific
+        /// sequence number, provided in the value
+        /// <code>StartingSequenceNumber</code>.</p>
+        /// </li>
+        /// <li>
+        ///
+        /// <p>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a
+        /// specific sequence number, provided in the value
+        /// <code>StartingSequenceNumber</code>.</p>
+        /// </li>
+        /// <li>
+        ///
+        /// <p>AT_TIMESTAMP - Start reading from the position denoted by a specific time
+        /// stamp, provided in the value <code>Timestamp</code>.</p>
+        /// </li>
+        /// <li>
+        ///
+        /// <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in
+        /// the system, which is the oldest data record in the shard.</p>
+        /// </li>
+        /// <li>
+        ///
+        /// <p>LATEST - Start reading just after the most recent record in the shard, so
+        /// that you always read the most recent data in the shard.</p>
+        /// </li>
+        /// </ul>
         pub fn set_shard_iterator_type(
             mut self,
             input: std::option::Option<crate::model::ShardIteratorType>,
@@ -2038,6 +2352,8 @@ pub mod get_shard_iterator_input {
             self.starting_sequence_number = Some(input.into());
             self
         }
+        /// <p>The sequence number of the data record in the shard from which to start reading.
+        /// Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
         pub fn set_starting_sequence_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2052,11 +2368,21 @@ pub mod get_shard_iterator_input {
         /// the iterator returned is for the next (later) record. If the time stamp is older than
         /// the current trim horizon, the iterator returned is for the oldest untrimmed data record
         /// (TRIM_HORIZON).</p>
-        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time stamp of the data record from which to start reading. Used with shard
+        /// iterator type AT_TIMESTAMP. A time stamp is the Unix epoch date with precision in
+        /// milliseconds. For example, <code>2016-04-04T19:58:46.480-00:00</code> or
+        /// <code>1459799926.480</code>. If a record with this exact time stamp does not exist,
+        /// the iterator returned is for the next (later) record. If the time stamp is older than
+        /// the current trim horizon, the iterator returned is for the oldest untrimmed data record
+        /// (TRIM_HORIZON).</p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.timestamp = input;
             self
         }
@@ -2065,7 +2391,7 @@ pub mod get_shard_iterator_input {
             self,
         ) -> std::result::Result<
             crate::input::GetShardIteratorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetShardIteratorInput {
                 stream_name: self.stream_name,
@@ -2088,16 +2414,16 @@ impl GetShardIteratorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetShardIterator,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetShardIteratorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2105,7 +2431,7 @@ impl GetShardIteratorInput {
         fn update_http_builder(
             input: &crate::input::GetShardIteratorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2114,32 +2440,32 @@ impl GetShardIteratorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetShardIteratorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.GetShardIterator",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_shard_iterator(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2162,15 +2488,15 @@ impl GetShardIteratorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetShardIterator::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetShardIterator",
             "kinesis",
         ));
@@ -2179,10 +2505,10 @@ impl GetShardIteratorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2211,6 +2537,7 @@ pub mod increase_stream_retention_period_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream to modify.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -2221,6 +2548,8 @@ pub mod increase_stream_retention_period_input {
             self.retention_period_hours = Some(input);
             self
         }
+        /// <p>The new retention period of the stream, in hours. Must be more than the current
+        /// retention period.</p>
         pub fn set_retention_period_hours(mut self, input: std::option::Option<i32>) -> Self {
             self.retention_period_hours = input;
             self
@@ -2230,7 +2559,7 @@ pub mod increase_stream_retention_period_input {
             self,
         ) -> std::result::Result<
             crate::input::IncreaseStreamRetentionPeriodInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::IncreaseStreamRetentionPeriodInput {
                 stream_name: self.stream_name,
@@ -2251,16 +2580,16 @@ impl IncreaseStreamRetentionPeriodInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::IncreaseStreamRetentionPeriod,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::IncreaseStreamRetentionPeriodInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2268,7 +2597,7 @@ impl IncreaseStreamRetentionPeriodInput {
         fn update_http_builder(
             input: &crate::input::IncreaseStreamRetentionPeriodInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2277,30 +2606,30 @@ impl IncreaseStreamRetentionPeriodInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::IncreaseStreamRetentionPeriodInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.IncreaseStreamRetentionPeriod",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_increase_stream_retention_period(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_increase_stream_retention_period(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2323,15 +2652,15 @@ impl IncreaseStreamRetentionPeriodInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::IncreaseStreamRetentionPeriod::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "IncreaseStreamRetentionPeriod",
             "kinesis",
         ));
@@ -2340,10 +2669,10 @@ impl IncreaseStreamRetentionPeriodInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2367,7 +2696,7 @@ pub mod list_shards_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) exclusive_start_shard_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
-        pub(crate) stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) stream_creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) shard_filter: std::option::Option<crate::model::ShardFilter>,
     }
     impl Builder {
@@ -2378,6 +2707,9 @@ pub mod list_shards_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the data stream whose shards you want to list. </p>
+        /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
+        /// parameter.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -2408,6 +2740,28 @@ pub mod list_shards_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>When the number of shards in the data stream is greater than the default value for
+        /// the <code>MaxResults</code> parameter, or if you explicitly specify a value for
+        /// <code>MaxResults</code> that is less than the number of shards in the data stream,
+        /// the response includes a pagination token named <code>NextToken</code>. You can specify
+        /// this <code>NextToken</code> value in a subsequent call to <code>ListShards</code> to
+        /// list the next set of shards.</p>
+        /// <p>Don't specify <code>StreamName</code> or <code>StreamCreationTimestamp</code> if
+        /// you specify <code>NextToken</code> because the latter unambiguously identifies the
+        /// stream.</p>
+        /// <p>You can optionally specify a value for the <code>MaxResults</code> parameter when
+        /// you specify <code>NextToken</code>. If you specify a <code>MaxResults</code> value that
+        /// is less than the number of shards that the operation returns if you don't specify
+        /// <code>MaxResults</code>, the response will contain a new <code>NextToken</code>
+        /// value. You can use the new <code>NextToken</code> value in a subsequent call to the
+        /// <code>ListShards</code> operation.</p>
+        /// <important>
+        /// <p>Tokens expire after 300 seconds. When you obtain a value for
+        /// <code>NextToken</code> in the response to a call to <code>ListShards</code>, you
+        /// have 300 seconds to use that value. If you specify an expired token in a call to
+        /// <code>ListShards</code>, you get
+        /// <code>ExpiredNextTokenException</code>.</p>
+        /// </important>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2422,6 +2776,12 @@ pub mod list_shards_input {
             self.exclusive_start_shard_id = Some(input.into());
             self
         }
+        /// <p>Specify this parameter to indicate that you want to list the shards starting with
+        /// the shard whose ID immediately follows <code>ExclusiveStartShardId</code>.</p>
+        /// <p>If you don't specify this parameter, the default behavior is for
+        /// <code>ListShards</code> to list the shards starting with the first one in the
+        /// stream.</p>
+        /// <p>You cannot specify this parameter if you specify <code>NextToken</code>.</p>
         pub fn set_exclusive_start_shard_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2440,6 +2800,13 @@ pub mod list_shards_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of shards to return in a single call to <code>ListShards</code>.
+        /// The minimum value you can specify for this parameter is 1, and the maximum is 10,000,
+        /// which is also the default.</p>
+        /// <p>When the number of shards to be listed is greater than the value of
+        /// <code>MaxResults</code>, the response contains a <code>NextToken</code> value that
+        /// you can use in a subsequent call to <code>ListShards</code> to list the next set of
+        /// shards.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2450,21 +2817,29 @@ pub mod list_shards_input {
         /// which of the two streams you want to list the shards for.</p>
         /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
         /// parameter.</p>
-        pub fn stream_creation_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn stream_creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.stream_creation_timestamp = Some(input);
             self
         }
+        /// <p>Specify this input parameter to distinguish data streams that have the same name.
+        /// For example, if you create a data stream and then delete it, and you later create
+        /// another data stream with the same name, you can use this input parameter to specify
+        /// which of the two streams you want to list the shards for.</p>
+        /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
+        /// parameter.</p>
         pub fn set_stream_creation_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.stream_creation_timestamp = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn shard_filter(mut self, input: crate::model::ShardFilter) -> Self {
             self.shard_filter = Some(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_shard_filter(
             mut self,
             input: std::option::Option<crate::model::ShardFilter>,
@@ -2475,8 +2850,10 @@ pub mod list_shards_input {
         /// Consumes the builder and constructs a [`ListShardsInput`](crate::input::ListShardsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListShardsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListShardsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListShardsInput {
                 stream_name: self.stream_name,
                 next_token: self.next_token,
@@ -2499,16 +2876,16 @@ impl ListShardsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListShards,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListShardsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2516,7 +2893,7 @@ impl ListShardsInput {
         fn update_http_builder(
             input: &crate::input::ListShardsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2525,29 +2902,31 @@ impl ListShardsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListShardsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.ListShards",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_shards(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2570,25 +2949,27 @@ impl ListShardsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListShards::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListShards",
-                    "kinesis",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListShards::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListShards",
+            "kinesis",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2611,7 +2992,7 @@ pub mod list_stream_consumers_input {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
-        pub(crate) stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) stream_creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ARN of the Kinesis data stream for which you want to list the registered
@@ -2620,6 +3001,8 @@ pub mod list_stream_consumers_input {
             self.stream_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the Kinesis data stream for which you want to list the registered
+        /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -2651,6 +3034,29 @@ pub mod list_stream_consumers_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>When the number of consumers that are registered with the data stream is greater than
+        /// the default value for the <code>MaxResults</code> parameter, or if you explicitly
+        /// specify a value for <code>MaxResults</code> that is less than the number of consumers
+        /// that are registered with the data stream, the response includes a pagination token named
+        /// <code>NextToken</code>. You can specify this <code>NextToken</code> value in a
+        /// subsequent call to <code>ListStreamConsumers</code> to list the next set of registered
+        /// consumers.</p>
+        /// <p>Don't specify <code>StreamName</code> or <code>StreamCreationTimestamp</code> if you
+        /// specify <code>NextToken</code> because the latter unambiguously identifies the
+        /// stream.</p>
+        /// <p>You can optionally specify a value for the <code>MaxResults</code> parameter when you
+        /// specify <code>NextToken</code>. If you specify a <code>MaxResults</code> value that is
+        /// less than the number of consumers that the operation returns if you don't specify
+        /// <code>MaxResults</code>, the response will contain a new <code>NextToken</code>
+        /// value. You can use the new <code>NextToken</code> value in a subsequent call to the
+        /// <code>ListStreamConsumers</code> operation to list the next set of consumers.</p>
+        /// <important>
+        /// <p>Tokens expire after 300 seconds. When you obtain a value for
+        /// <code>NextToken</code> in the response to a call to
+        /// <code>ListStreamConsumers</code>, you have 300 seconds to use that value. If you
+        /// specify an expired token in a call to <code>ListStreamConsumers</code>, you get
+        /// <code>ExpiredNextTokenException</code>.</p>
+        /// </important>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2661,6 +3067,8 @@ pub mod list_stream_consumers_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of consumers that you want a single call of
+        /// <code>ListStreamConsumers</code> to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2670,13 +3078,18 @@ pub mod list_stream_consumers_input {
         /// data stream with the same name, you can use this input parameter to specify which of the
         /// two streams you want to list the consumers for. </p>
         /// <p>You can't specify this parameter if you specify the NextToken parameter. </p>
-        pub fn stream_creation_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn stream_creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.stream_creation_timestamp = Some(input);
             self
         }
+        /// <p>Specify this input parameter to distinguish data streams that have the same name. For
+        /// example, if you create a data stream and then delete it, and you later create another
+        /// data stream with the same name, you can use this input parameter to specify which of the
+        /// two streams you want to list the consumers for. </p>
+        /// <p>You can't specify this parameter if you specify the NextToken parameter. </p>
         pub fn set_stream_creation_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.stream_creation_timestamp = input;
             self
@@ -2686,7 +3099,7 @@ pub mod list_stream_consumers_input {
             self,
         ) -> std::result::Result<
             crate::input::ListStreamConsumersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListStreamConsumersInput {
                 stream_arn: self.stream_arn,
@@ -2708,16 +3121,16 @@ impl ListStreamConsumersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListStreamConsumers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListStreamConsumersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2725,7 +3138,7 @@ impl ListStreamConsumersInput {
         fn update_http_builder(
             input: &crate::input::ListStreamConsumersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2734,32 +3147,32 @@ impl ListStreamConsumersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListStreamConsumersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.ListStreamConsumers",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_stream_consumers(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2782,15 +3195,15 @@ impl ListStreamConsumersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListStreamConsumers::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListStreamConsumers",
             "kinesis",
         ));
@@ -2799,10 +3212,10 @@ impl ListStreamConsumersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2831,6 +3244,7 @@ pub mod list_streams_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of streams to list.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -2843,6 +3257,7 @@ pub mod list_streams_input {
             self.exclusive_start_stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream to start the list with.</p>
         pub fn set_exclusive_start_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2853,8 +3268,10 @@ pub mod list_streams_input {
         /// Consumes the builder and constructs a [`ListStreamsInput`](crate::input::ListStreamsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListStreamsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListStreamsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListStreamsInput {
                 limit: self.limit,
                 exclusive_start_stream_name: self.exclusive_start_stream_name,
@@ -2873,16 +3290,16 @@ impl ListStreamsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListStreams,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListStreamsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2890,7 +3307,7 @@ impl ListStreamsInput {
         fn update_http_builder(
             input: &crate::input::ListStreamsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2899,29 +3316,31 @@ impl ListStreamsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListStreamsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.ListStreams",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_streams(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2944,25 +3363,27 @@ impl ListStreamsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListStreams::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListStreams",
-                    "kinesis",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListStreams::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListStreams",
+            "kinesis",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2992,6 +3413,7 @@ pub mod list_tags_for_stream_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -3003,6 +3425,9 @@ pub mod list_tags_for_stream_input {
             self.exclusive_start_tag_key = Some(input.into());
             self
         }
+        /// <p>The key to use as the starting point for the list of tags. If this parameter is
+        /// set, <code>ListTagsForStream</code> gets all tags that occur after
+        /// <code>ExclusiveStartTagKey</code>. </p>
         pub fn set_exclusive_start_tag_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3018,6 +3443,10 @@ pub mod list_tags_for_stream_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The number of tags to return. If this number is less than the total number of tags
+        /// associated with the stream, <code>HasMoreTags</code> is set to <code>true</code>. To
+        /// list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the
+        /// response.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -3027,7 +3456,7 @@ pub mod list_tags_for_stream_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForStreamInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForStreamInput {
                 stream_name: self.stream_name,
@@ -3048,16 +3477,16 @@ impl ListTagsForStreamInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForStream,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForStreamInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3065,7 +3494,7 @@ impl ListTagsForStreamInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForStreamInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3074,30 +3503,32 @@ impl ListTagsForStreamInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForStreamInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.ListTagsForStream",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_stream(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3120,15 +3551,15 @@ impl ListTagsForStreamInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForStream::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForStream",
             "kinesis",
         ));
@@ -3137,10 +3568,10 @@ impl ListTagsForStreamInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3170,6 +3601,7 @@ pub mod merge_shards_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream for the merge.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -3180,6 +3612,8 @@ pub mod merge_shards_input {
             self.shard_to_merge = Some(input.into());
             self
         }
+        /// <p>The shard ID of the shard to combine with the adjacent shard for the
+        /// merge.</p>
         pub fn set_shard_to_merge(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3192,6 +3626,7 @@ pub mod merge_shards_input {
             self.adjacent_shard_to_merge = Some(input.into());
             self
         }
+        /// <p>The shard ID of the adjacent shard for the merge.</p>
         pub fn set_adjacent_shard_to_merge(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3202,8 +3637,10 @@ pub mod merge_shards_input {
         /// Consumes the builder and constructs a [`MergeShardsInput`](crate::input::MergeShardsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::MergeShardsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::MergeShardsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::MergeShardsInput {
                 stream_name: self.stream_name,
                 shard_to_merge: self.shard_to_merge,
@@ -3223,16 +3660,16 @@ impl MergeShardsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::MergeShards,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::MergeShardsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3240,7 +3677,7 @@ impl MergeShardsInput {
         fn update_http_builder(
             input: &crate::input::MergeShardsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3249,29 +3686,31 @@ impl MergeShardsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::MergeShardsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.MergeShards",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_merge_shards(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3294,25 +3733,27 @@ impl MergeShardsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::MergeShards::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "MergeShards",
-                    "kinesis",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::MergeShards::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "MergeShards",
+            "kinesis",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3333,7 +3774,7 @@ pub mod put_record_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
-        pub(crate) data: std::option::Option<smithy_types::Blob>,
+        pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) partition_key: std::option::Option<std::string::String>,
         pub(crate) explicit_hash_key: std::option::Option<std::string::String>,
         pub(crate) sequence_number_for_ordering: std::option::Option<std::string::String>,
@@ -3344,6 +3785,7 @@ pub mod put_record_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream to put the data record into.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -3352,11 +3794,15 @@ pub mod put_record_input {
         /// serialized. When the data blob (the payload before base64-encoding) is added to the
         /// partition key size, the total size must not exceed the maximum record size (1
         /// MiB).</p>
-        pub fn data(mut self, input: smithy_types::Blob) -> Self {
+        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
             self.data = Some(input);
             self
         }
-        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The data blob to put into the record, which is base64-encoded when the blob is
+        /// serialized. When the data blob (the payload before base64-encoding) is added to the
+        /// partition key size, the total size must not exceed the maximum record size (1
+        /// MiB).</p>
+        pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.data = input;
             self
         }
@@ -3371,6 +3817,13 @@ pub mod put_record_input {
             self.partition_key = Some(input.into());
             self
         }
+        /// <p>Determines which shard in the stream the data record is assigned to. Partition keys
+        /// are Unicode strings with a maximum length limit of 256 characters for each key. Amazon
+        /// Kinesis Data Streams uses the partition key as input to a hash function that maps the
+        /// partition key and associated data to a specific shard. Specifically, an MD5 hash
+        /// function is used to map partition keys to 128-bit integer values and to map associated
+        /// data records to shards. As a result of this hashing mechanism, all data records with the
+        /// same partition key map to the same shard within the stream.</p>
         pub fn set_partition_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3384,6 +3837,8 @@ pub mod put_record_input {
             self.explicit_hash_key = Some(input.into());
             self
         }
+        /// <p>The hash value used to explicitly determine the shard the data record is assigned
+        /// to by overriding the partition key hash.</p>
         pub fn set_explicit_hash_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3403,6 +3858,11 @@ pub mod put_record_input {
             self.sequence_number_for_ordering = Some(input.into());
             self
         }
+        /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and
+        /// to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of
+        /// record <i>n</i> to the sequence number of record <i>n-1</i>
+        /// (as returned in the result when putting record <i>n-1</i>). If this
+        /// parameter is not set, records are coarsely ordered based on arrival time.</p>
         pub fn set_sequence_number_for_ordering(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3413,7 +3873,7 @@ pub mod put_record_input {
         /// Consumes the builder and constructs a [`PutRecordInput`](crate::input::PutRecordInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::PutRecordInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::PutRecordInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::PutRecordInput {
                 stream_name: self.stream_name,
@@ -3436,16 +3896,16 @@ impl PutRecordInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutRecord,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutRecordInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3453,7 +3913,7 @@ impl PutRecordInput {
         fn update_http_builder(
             input: &crate::input::PutRecordInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3462,29 +3922,31 @@ impl PutRecordInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutRecordInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.PutRecord",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_put_record(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3507,13 +3969,13 @@ impl PutRecordInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::PutRecord::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::PutRecord::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "PutRecord",
                     "kinesis",
                 ));
@@ -3522,10 +3984,10 @@ impl PutRecordInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3550,12 +4012,18 @@ pub mod put_records_input {
         pub(crate) stream_name: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `records`.
+        ///
+        /// To override the contents of this collection use [`set_records`](Self::set_records).
+        ///
+        /// <p>The records associated with the request.</p>
         pub fn records(mut self, input: impl Into<crate::model::PutRecordsRequestEntry>) -> Self {
             let mut v = self.records.unwrap_or_default();
             v.push(input.into());
             self.records = Some(v);
             self
         }
+        /// <p>The records associated with the request.</p>
         pub fn set_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PutRecordsRequestEntry>>,
@@ -3568,6 +4036,7 @@ pub mod put_records_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The stream name associated with the request.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -3575,8 +4044,10 @@ pub mod put_records_input {
         /// Consumes the builder and constructs a [`PutRecordsInput`](crate::input::PutRecordsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::PutRecordsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutRecordsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutRecordsInput {
                 records: self.records,
                 stream_name: self.stream_name,
@@ -3595,16 +4066,16 @@ impl PutRecordsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutRecords,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutRecordsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3612,7 +4083,7 @@ impl PutRecordsInput {
         fn update_http_builder(
             input: &crate::input::PutRecordsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3621,29 +4092,31 @@ impl PutRecordsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutRecordsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.PutRecords",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_put_records(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3666,25 +4139,27 @@ impl PutRecordsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::PutRecords::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "PutRecords",
-                    "kinesis",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutRecords::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutRecords",
+            "kinesis",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3714,6 +4189,8 @@ pub mod register_stream_consumer_input {
             self.stream_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the Kinesis data stream that you want to register the consumer with. For
+        /// more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -3724,6 +4201,8 @@ pub mod register_stream_consumer_input {
             self.consumer_name = Some(input.into());
             self
         }
+        /// <p>For a given Kinesis data stream, each consumer must have a unique name. However,
+        /// consumer names don't have to be unique across data streams.</p>
         pub fn set_consumer_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3736,7 +4215,7 @@ pub mod register_stream_consumer_input {
             self,
         ) -> std::result::Result<
             crate::input::RegisterStreamConsumerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RegisterStreamConsumerInput {
                 stream_arn: self.stream_arn,
@@ -3756,16 +4235,16 @@ impl RegisterStreamConsumerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RegisterStreamConsumer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RegisterStreamConsumerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3773,7 +4252,7 @@ impl RegisterStreamConsumerInput {
         fn update_http_builder(
             input: &crate::input::RegisterStreamConsumerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3782,32 +4261,34 @@ impl RegisterStreamConsumerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RegisterStreamConsumerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.RegisterStreamConsumer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_register_stream_consumer(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3830,15 +4311,15 @@ impl RegisterStreamConsumerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RegisterStreamConsumer::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RegisterStreamConsumer",
             "kinesis",
         ));
@@ -3847,10 +4328,10 @@ impl RegisterStreamConsumerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3879,16 +4360,23 @@ pub mod remove_tags_from_stream_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3901,7 +4389,7 @@ pub mod remove_tags_from_stream_input {
             self,
         ) -> std::result::Result<
             crate::input::RemoveTagsFromStreamInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RemoveTagsFromStreamInput {
                 stream_name: self.stream_name,
@@ -3921,16 +4409,16 @@ impl RemoveTagsFromStreamInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RemoveTagsFromStream,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RemoveTagsFromStreamInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3938,7 +4426,7 @@ impl RemoveTagsFromStreamInput {
         fn update_http_builder(
             input: &crate::input::RemoveTagsFromStreamInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3947,32 +4435,34 @@ impl RemoveTagsFromStreamInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RemoveTagsFromStreamInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.RemoveTagsFromStream",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_remove_tags_from_stream(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3995,15 +4485,15 @@ impl RemoveTagsFromStreamInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RemoveTagsFromStream::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RemoveTagsFromStream",
             "kinesis",
         ));
@@ -4012,10 +4502,10 @@ impl RemoveTagsFromStreamInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4045,6 +4535,7 @@ pub mod split_shard_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream for the shard split.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -4054,6 +4545,7 @@ pub mod split_shard_input {
             self.shard_to_split = Some(input.into());
             self
         }
+        /// <p>The shard ID of the shard to split.</p>
         pub fn set_shard_to_split(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4072,6 +4564,13 @@ pub mod split_shard_input {
             self.new_starting_hash_key = Some(input.into());
             self
         }
+        /// <p>A hash key value for the starting hash key of one of the child shards created by
+        /// the split. The hash key range for a given shard constitutes a set of ordered contiguous
+        /// positive integers. The value for <code>NewStartingHashKey</code> must be in the range of
+        /// hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key
+        /// value and all higher hash key values in hash key range are distributed to one of the
+        /// child shards. All the lower hash key values in the range are distributed to the other
+        /// child shard.</p>
         pub fn set_new_starting_hash_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4082,8 +4581,10 @@ pub mod split_shard_input {
         /// Consumes the builder and constructs a [`SplitShardInput`](crate::input::SplitShardInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::SplitShardInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::SplitShardInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SplitShardInput {
                 stream_name: self.stream_name,
                 shard_to_split: self.shard_to_split,
@@ -4103,16 +4604,16 @@ impl SplitShardInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SplitShard,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SplitShardInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4120,7 +4621,7 @@ impl SplitShardInput {
         fn update_http_builder(
             input: &crate::input::SplitShardInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4129,29 +4630,31 @@ impl SplitShardInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SplitShardInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.SplitShard",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_split_shard(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4174,25 +4677,27 @@ impl SplitShardInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::SplitShard::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "SplitShard",
-                    "kinesis",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SplitShard::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SplitShard",
+            "kinesis",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4222,6 +4727,7 @@ pub mod start_stream_encryption_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream for which to start encrypting records.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -4231,6 +4737,7 @@ pub mod start_stream_encryption_input {
             self.encryption_type = Some(input);
             self
         }
+        /// <p>The encryption type to use. The only valid value is <code>KMS</code>.</p>
         pub fn set_encryption_type(
             mut self,
             input: std::option::Option<crate::model::EncryptionType>,
@@ -4273,6 +4780,37 @@ pub mod start_stream_encryption_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
+        /// be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either
+        /// an alias or a key, or an alias name prefixed by "alias/".You can also use a master key
+        /// owned by Kinesis Data Streams by specifying the alias
+        /// <code>aws/kinesis</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ARN example:
+        /// <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias ARN example:
+        /// <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Globally unique key ID example:
+        /// <code>12345678-1234-1234-1234-123456789012</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias name example: <code>alias/MyAliasName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Master key owned by Kinesis Data Streams:
+        /// <code>alias/aws/kinesis</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -4282,7 +4820,7 @@ pub mod start_stream_encryption_input {
             self,
         ) -> std::result::Result<
             crate::input::StartStreamEncryptionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartStreamEncryptionInput {
                 stream_name: self.stream_name,
@@ -4303,16 +4841,16 @@ impl StartStreamEncryptionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartStreamEncryption,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartStreamEncryptionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4320,7 +4858,7 @@ impl StartStreamEncryptionInput {
         fn update_http_builder(
             input: &crate::input::StartStreamEncryptionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4329,32 +4867,34 @@ impl StartStreamEncryptionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartStreamEncryptionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.StartStreamEncryption",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_stream_encryption(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4377,15 +4917,15 @@ impl StartStreamEncryptionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartStreamEncryption::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartStreamEncryption",
             "kinesis",
         ));
@@ -4394,10 +4934,10 @@ impl StartStreamEncryptionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4427,6 +4967,7 @@ pub mod stop_stream_encryption_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream on which to stop encrypting records.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -4436,6 +4977,7 @@ pub mod stop_stream_encryption_input {
             self.encryption_type = Some(input);
             self
         }
+        /// <p>The encryption type. The only valid value is <code>KMS</code>.</p>
         pub fn set_encryption_type(
             mut self,
             input: std::option::Option<crate::model::EncryptionType>,
@@ -4478,6 +5020,37 @@ pub mod stop_stream_encryption_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
+        /// be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either
+        /// an alias or a key, or an alias name prefixed by "alias/".You can also use a master key
+        /// owned by Kinesis Data Streams by specifying the alias
+        /// <code>aws/kinesis</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ARN example:
+        /// <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias ARN example:
+        /// <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Globally unique key ID example:
+        /// <code>12345678-1234-1234-1234-123456789012</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias name example: <code>alias/MyAliasName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Master key owned by Kinesis Data Streams:
+        /// <code>alias/aws/kinesis</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -4487,7 +5060,7 @@ pub mod stop_stream_encryption_input {
             self,
         ) -> std::result::Result<
             crate::input::StopStreamEncryptionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StopStreamEncryptionInput {
                 stream_name: self.stream_name,
@@ -4508,16 +5081,16 @@ impl StopStreamEncryptionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StopStreamEncryption,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StopStreamEncryptionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4525,7 +5098,7 @@ impl StopStreamEncryptionInput {
         fn update_http_builder(
             input: &crate::input::StopStreamEncryptionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4534,32 +5107,32 @@ impl StopStreamEncryptionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StopStreamEncryptionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.StopStreamEncryption",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_stream_encryption(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4582,15 +5155,15 @@ impl StopStreamEncryptionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StopStreamEncryption::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StopStreamEncryption",
             "kinesis",
         ));
@@ -4599,10 +5172,10 @@ impl StopStreamEncryptionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4632,6 +5205,7 @@ pub mod update_shard_count_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -4660,6 +5234,26 @@ pub mod update_shard_count_input {
             self.target_shard_count = Some(input);
             self
         }
+        /// <p>The new number of shards. This value has the following default limits. By default,
+        /// you cannot do the following: </p>
+        /// <ul>
+        /// <li>
+        /// <p>Set this value to more than double your current shard count for a
+        /// stream.</p>
+        /// </li>
+        /// <li>
+        /// <p>Set this value below half your current shard count for a stream.</p>
+        /// </li>
+        /// <li>
+        /// <p>Set this value to more than 500 shards in a stream (the default limit for
+        /// shard count per stream is 500 per account per region), unless you request a
+        /// limit increase.</p>
+        /// </li>
+        /// <li>
+        /// <p>Scale a stream with more than 500 shards down unless you set this value to
+        /// less than 500 shards.</p>
+        /// </li>
+        /// </ul>
         pub fn set_target_shard_count(mut self, input: std::option::Option<i32>) -> Self {
             self.target_shard_count = input;
             self
@@ -4669,6 +5263,7 @@ pub mod update_shard_count_input {
             self.scaling_type = Some(input);
             self
         }
+        /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
         pub fn set_scaling_type(
             mut self,
             input: std::option::Option<crate::model::ScalingType>,
@@ -4681,7 +5276,7 @@ pub mod update_shard_count_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateShardCountInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateShardCountInput {
                 stream_name: self.stream_name,
@@ -4702,16 +5297,16 @@ impl UpdateShardCountInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateShardCount,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateShardCountInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4719,7 +5314,7 @@ impl UpdateShardCountInput {
         fn update_http_builder(
             input: &crate::input::UpdateShardCountInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4728,32 +5323,32 @@ impl UpdateShardCountInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateShardCountInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Kinesis_20131202.UpdateShardCount",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_shard_count(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4776,15 +5371,15 @@ impl UpdateShardCountInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateShardCount::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateShardCount",
             "kinesis",
         ));
@@ -4793,10 +5388,10 @@ impl UpdateShardCountInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4810,6 +5405,7 @@ impl UpdateShardCountInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateShardCountInput {
@@ -4849,6 +5445,7 @@ impl std::fmt::Debug for UpdateShardCountInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopStreamEncryptionInput {
@@ -4899,6 +5496,7 @@ impl std::fmt::Debug for StopStreamEncryptionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartStreamEncryptionInput {
@@ -4994,6 +5592,7 @@ impl std::fmt::Debug for RemoveTagsFromStreamInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterStreamConsumerInput {
@@ -5041,7 +5640,7 @@ pub struct PutRecordInput {
     /// serialized. When the data blob (the payload before base64-encoding) is added to the
     /// partition key size, the total size must not exceed the maximum record size (1
     /// MiB).</p>
-    pub data: std::option::Option<smithy_types::Blob>,
+    pub data: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys
     /// are Unicode strings with a maximum length limit of 256 characters for each key. Amazon
     /// Kinesis Data Streams uses the partition key as input to a hash function that maps the
@@ -5144,6 +5743,7 @@ impl std::fmt::Debug for ListStreamsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamConsumersInput {
@@ -5182,7 +5782,7 @@ pub struct ListStreamConsumersInput {
     /// data stream with the same name, you can use this input parameter to specify which of the
     /// two streams you want to list the consumers for. </p>
     /// <p>You can't specify this parameter if you specify the NextToken parameter. </p>
-    pub stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
+    pub stream_creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ListStreamConsumersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5195,6 +5795,7 @@ impl std::fmt::Debug for ListStreamConsumersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListShardsInput {
@@ -5246,7 +5847,8 @@ pub struct ListShardsInput {
     /// which of the two streams you want to list the shards for.</p>
     /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
     /// parameter.</p>
-    pub stream_creation_timestamp: std::option::Option<smithy_types::Instant>,
+    pub stream_creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+    #[allow(missing_docs)] // documentation missing in model
     pub shard_filter: std::option::Option<crate::model::ShardFilter>,
 }
 impl std::fmt::Debug for ListShardsInput {
@@ -5294,24 +5896,29 @@ pub struct GetShardIteratorInput {
     /// <p>The following are the valid Amazon Kinesis shard iterator types:</p>
     /// <ul>
     /// <li>
+    ///
     /// <p>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific
     /// sequence number, provided in the value
     /// <code>StartingSequenceNumber</code>.</p>
     /// </li>
     /// <li>
+    ///
     /// <p>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a
     /// specific sequence number, provided in the value
     /// <code>StartingSequenceNumber</code>.</p>
     /// </li>
     /// <li>
+    ///
     /// <p>AT_TIMESTAMP - Start reading from the position denoted by a specific time
     /// stamp, provided in the value <code>Timestamp</code>.</p>
     /// </li>
     /// <li>
+    ///
     /// <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in
     /// the system, which is the oldest data record in the shard.</p>
     /// </li>
     /// <li>
+    ///
     /// <p>LATEST - Start reading just after the most recent record in the shard, so
     /// that you always read the most recent data in the shard.</p>
     /// </li>
@@ -5327,7 +5934,7 @@ pub struct GetShardIteratorInput {
     /// the iterator returned is for the next (later) record. If the time stamp is older than
     /// the current trim horizon, the iterator returned is for the oldest untrimmed data record
     /// (TRIM_HORIZON).</p>
-    pub timestamp: std::option::Option<smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for GetShardIteratorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5494,6 +6101,7 @@ impl std::fmt::Debug for DisableEnhancedMonitoringInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStreamSummaryInput {
@@ -5508,6 +6116,7 @@ impl std::fmt::Debug for DescribeStreamSummaryInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStreamConsumerInput {
@@ -5551,6 +6160,7 @@ impl std::fmt::Debug for DescribeStreamInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLimitsInput {}
@@ -5561,6 +6171,7 @@ impl std::fmt::Debug for DescribeLimitsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterStreamConsumerInput {

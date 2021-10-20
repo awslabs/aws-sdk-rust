@@ -28,7 +28,7 @@ pub struct EnvironmentMember {
     pub environment_id: std::option::Option<std::string::String>,
     /// <p>The time, expressed in epoch time format, when the environment member last opened the
     /// environment.</p>
-    pub last_access: std::option::Option<smithy_types::Instant>,
+    pub last_access: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for EnvironmentMember {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -51,7 +51,7 @@ pub mod environment_member {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) user_arn: std::option::Option<std::string::String>,
         pub(crate) environment_id: std::option::Option<std::string::String>,
-        pub(crate) last_access: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_access: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The type of environment member permissions associated with this environment member.
@@ -74,6 +74,22 @@ pub mod environment_member {
             self.permissions = Some(input);
             self
         }
+        /// <p>The type of environment member permissions associated with this environment member.
+        /// Available values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>owner</code>: Owns the environment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>read-only</code>: Has read-only access to the environment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>read-write</code>: Has read-write access to the environment.</p>
+        /// </li>
+        /// </ul>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<crate::model::Permissions>,
@@ -86,6 +102,7 @@ pub mod environment_member {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The user ID in Identity and Access Management (IAM) of the environment member.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -95,6 +112,7 @@ pub mod environment_member {
             self.user_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the environment member.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_arn = input;
             self
@@ -104,6 +122,7 @@ pub mod environment_member {
             self.environment_id = Some(input.into());
             self
         }
+        /// <p>The ID of the environment for the environment member.</p>
         pub fn set_environment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -113,13 +132,15 @@ pub mod environment_member {
         }
         /// <p>The time, expressed in epoch time format, when the environment member last opened the
         /// environment.</p>
-        pub fn last_access(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_access(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_access = Some(input);
             self
         }
+        /// <p>The time, expressed in epoch time format, when the environment member last opened the
+        /// environment.</p>
         pub fn set_last_access(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_access = input;
             self
@@ -143,6 +164,7 @@ impl EnvironmentMember {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -154,8 +176,11 @@ impl EnvironmentMember {
     std::hash::Hash,
 )]
 pub enum Permissions {
+    #[allow(missing_docs)] // documentation missing in model
     Owner,
+    #[allow(missing_docs)] // documentation missing in model
     ReadOnly,
+    #[allow(missing_docs)] // documentation missing in model
     ReadWrite,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -178,6 +203,7 @@ impl std::str::FromStr for Permissions {
     }
 }
 impl Permissions {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Permissions::Owner => "owner",
@@ -186,6 +212,7 @@ impl Permissions {
             Permissions::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["owner", "read-only", "read-write"]
     }
@@ -196,6 +223,7 @@ impl AsRef<str> for Permissions {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -207,7 +235,9 @@ impl AsRef<str> for Permissions {
     std::hash::Hash,
 )]
 pub enum MemberPermissions {
+    #[allow(missing_docs)] // documentation missing in model
     ReadOnly,
+    #[allow(missing_docs)] // documentation missing in model
     ReadWrite,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -229,6 +259,7 @@ impl std::str::FromStr for MemberPermissions {
     }
 }
 impl MemberPermissions {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MemberPermissions::ReadOnly => "read-only",
@@ -236,6 +267,7 @@ impl MemberPermissions {
             MemberPermissions::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["read-only", "read-write"]
     }
@@ -246,6 +278,7 @@ impl AsRef<str> for MemberPermissions {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -257,7 +290,9 @@ impl AsRef<str> for MemberPermissions {
     std::hash::Hash,
 )]
 pub enum ManagedCredentialsAction {
+    #[allow(missing_docs)] // documentation missing in model
     Disable,
+    #[allow(missing_docs)] // documentation missing in model
     Enable,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -279,6 +314,7 @@ impl std::str::FromStr for ManagedCredentialsAction {
     }
 }
 impl ManagedCredentialsAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ManagedCredentialsAction::Disable => "DISABLE",
@@ -286,6 +322,7 @@ impl ManagedCredentialsAction {
             ManagedCredentialsAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLE", "ENABLE"]
     }
@@ -332,6 +369,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The <b>name</b> part of a tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -341,6 +379,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The <b>value</b> part of a tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -361,6 +400,7 @@ impl Tag {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -372,12 +412,19 @@ impl Tag {
     std::hash::Hash,
 )]
 pub enum EnvironmentStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Connecting,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -404,6 +451,7 @@ impl std::str::FromStr for EnvironmentStatus {
     }
 }
 impl EnvironmentStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EnvironmentStatus::Connecting => "connecting",
@@ -416,6 +464,7 @@ impl EnvironmentStatus {
             EnvironmentStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "connecting",
@@ -562,6 +611,7 @@ pub mod environment {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the environment.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -571,6 +621,7 @@ pub mod environment {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the environment.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -580,6 +631,7 @@ pub mod environment {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for the environment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -599,6 +651,17 @@ pub mod environment {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of environment. Valid values include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ssh</code>: Your own server connects to the environment.</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::EnvironmentType>,
@@ -612,6 +675,8 @@ pub mod environment {
             self.connection_type = Some(input);
             self
         }
+        /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code>
+        /// is selected by default.</p>
         pub fn set_connection_type(
             mut self,
             input: std::option::Option<crate::model::ConnectionType>,
@@ -624,6 +689,7 @@ pub mod environment {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the environment.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -633,6 +699,7 @@ pub mod environment {
             self.owner_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the environment owner.</p>
         pub fn set_owner_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner_arn = input;
             self
@@ -642,6 +709,7 @@ pub mod environment {
             self.lifecycle = Some(input);
             self
         }
+        /// <p>The state of the environment in its creation or deletion lifecycle.</p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::EnvironmentLifecycle>,
@@ -710,6 +778,60 @@ pub mod environment {
             self.managed_credentials_status = Some(input);
             self
         }
+        /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment.
+        /// Available values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ENABLED_ON_CREATE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ENABLED_BY_OWNER</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLED_BY_DEFAULT</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLED_BY_OWNER</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLED_BY_COLLABORATOR</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PENDING_REMOVAL_BY_COLLABORATOR</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PENDING_REMOVAL_BY_OWNER</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED_REMOVAL_BY_COLLABORATOR</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ENABLED_BY_OWNER</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLED_BY_DEFAULT</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_managed_credentials_status(
             mut self,
             input: std::option::Option<crate::model::ManagedCredentialsStatus>,
@@ -740,6 +862,7 @@ impl Environment {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -751,16 +874,27 @@ impl Environment {
     std::hash::Hash,
 )]
 pub enum ManagedCredentialsStatus {
+    #[allow(missing_docs)] // documentation missing in model
     DisabledByCollaborator,
+    #[allow(missing_docs)] // documentation missing in model
     DisabledByDefault,
+    #[allow(missing_docs)] // documentation missing in model
     DisabledByOwner,
+    #[allow(missing_docs)] // documentation missing in model
     EnabledByOwner,
+    #[allow(missing_docs)] // documentation missing in model
     EnabledOnCreate,
+    #[allow(missing_docs)] // documentation missing in model
     FailedRemovalByCollaborator,
+    #[allow(missing_docs)] // documentation missing in model
     FailedRemovalByOwner,
+    #[allow(missing_docs)] // documentation missing in model
     PendingRemovalByCollaborator,
+    #[allow(missing_docs)] // documentation missing in model
     PendingRemovalByOwner,
+    #[allow(missing_docs)] // documentation missing in model
     PendingStartRemovalByCollaborator,
+    #[allow(missing_docs)] // documentation missing in model
     PendingStartRemovalByOwner,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -799,6 +933,7 @@ impl std::str::FromStr for ManagedCredentialsStatus {
     }
 }
 impl ManagedCredentialsStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ManagedCredentialsStatus::DisabledByCollaborator => "DISABLED_BY_COLLABORATOR",
@@ -823,6 +958,7 @@ impl ManagedCredentialsStatus {
             ManagedCredentialsStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DISABLED_BY_COLLABORATOR",
@@ -927,6 +1063,29 @@ pub mod environment_lifecycle {
             self.status = Some(input);
             self
         }
+        /// <p>The current creation or deletion lifecycle state of the environment.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATING</code>: The environment is in the process of being created.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATED</code>: The environment was successfully created.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_FAILED</code>: The environment failed to be created.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETING</code>: The environment is in the process of being deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_FAILED</code>: The environment failed to delete.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::EnvironmentLifecycleStatus>,
@@ -939,6 +1098,7 @@ pub mod environment_lifecycle {
             self.reason = Some(input.into());
             self
         }
+        /// <p>Any informational message about the lifecycle state of the environment.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -949,6 +1109,8 @@ pub mod environment_lifecycle {
             self.failure_resource = Some(input.into());
             self
         }
+        /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services
+        /// resource.</p>
         pub fn set_failure_resource(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -973,6 +1135,7 @@ impl EnvironmentLifecycle {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -984,10 +1147,15 @@ impl EnvironmentLifecycle {
     std::hash::Hash,
 )]
 pub enum EnvironmentLifecycleStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Created,
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1012,6 +1180,7 @@ impl std::str::FromStr for EnvironmentLifecycleStatus {
     }
 }
 impl EnvironmentLifecycleStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EnvironmentLifecycleStatus::Created => "CREATED",
@@ -1022,6 +1191,7 @@ impl EnvironmentLifecycleStatus {
             EnvironmentLifecycleStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATED",
@@ -1038,6 +1208,7 @@ impl AsRef<str> for EnvironmentLifecycleStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1049,7 +1220,9 @@ impl AsRef<str> for EnvironmentLifecycleStatus {
     std::hash::Hash,
 )]
 pub enum ConnectionType {
+    #[allow(missing_docs)] // documentation missing in model
     ConnectSsh,
+    #[allow(missing_docs)] // documentation missing in model
     ConnectSsm,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1071,6 +1244,7 @@ impl std::str::FromStr for ConnectionType {
     }
 }
 impl ConnectionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConnectionType::ConnectSsh => "CONNECT_SSH",
@@ -1078,6 +1252,7 @@ impl ConnectionType {
             ConnectionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONNECT_SSH", "CONNECT_SSM"]
     }
@@ -1088,6 +1263,7 @@ impl AsRef<str> for ConnectionType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1099,7 +1275,9 @@ impl AsRef<str> for ConnectionType {
     std::hash::Hash,
 )]
 pub enum EnvironmentType {
+    #[allow(missing_docs)] // documentation missing in model
     Ec2,
+    #[allow(missing_docs)] // documentation missing in model
     Ssh,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1121,6 +1299,7 @@ impl std::str::FromStr for EnvironmentType {
     }
 }
 impl EnvironmentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EnvironmentType::Ec2 => "ec2",
@@ -1128,6 +1307,7 @@ impl EnvironmentType {
             EnvironmentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ec2", "ssh"]
     }

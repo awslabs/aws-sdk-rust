@@ -27,6 +27,7 @@ pub mod document_service_warning {
             self.message = Some(input.into());
             self
         }
+        /// <p>The description for a warning returned by the document service.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -46,6 +47,7 @@ impl DocumentServiceWarning {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -57,7 +59,9 @@ impl DocumentServiceWarning {
     std::hash::Hash,
 )]
 pub enum ContentType {
+    #[allow(missing_docs)] // documentation missing in model
     ApplicationJson,
+    #[allow(missing_docs)] // documentation missing in model
     ApplicationXml,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -79,6 +83,7 @@ impl std::str::FromStr for ContentType {
     }
 }
 impl ContentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContentType::ApplicationJson => "application/json",
@@ -86,6 +91,7 @@ impl ContentType {
             ContentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["application/json", "application/xml"]
     }
@@ -132,6 +138,7 @@ pub mod suggest_model {
             self.query = Some(input.into());
             self
         }
+        /// <p>The query string specified in the suggest request.</p>
         pub fn set_query(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query = input;
             self
@@ -141,16 +148,23 @@ pub mod suggest_model {
             self.found = Some(input);
             self
         }
+        /// <p>The number of documents that were found to match the query string.</p>
         pub fn set_found(mut self, input: std::option::Option<i64>) -> Self {
             self.found = input;
             self
         }
+        /// Appends an item to `suggestions`.
+        ///
+        /// To override the contents of this collection use [`set_suggestions`](Self::set_suggestions).
+        ///
+        /// <p>The documents that match the query string.</p>
         pub fn suggestions(mut self, input: impl Into<crate::model::SuggestionMatch>) -> Self {
             let mut v = self.suggestions.unwrap_or_default();
             v.push(input.into());
             self.suggestions = Some(v);
             self
         }
+        /// <p>The documents that match the query string.</p>
         pub fn set_suggestions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SuggestionMatch>>,
@@ -211,6 +225,7 @@ pub mod suggestion_match {
             self.suggestion = Some(input.into());
             self
         }
+        /// <p>The string that matches the query string specified in the <code>SuggestRequest</code>. </p>
         pub fn set_suggestion(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.suggestion = input;
             self
@@ -220,6 +235,7 @@ pub mod suggestion_match {
             self.score = Some(input);
             self
         }
+        /// <p>The relevance score of a suggested match.</p>
         pub fn set_score(mut self, input: std::option::Option<i64>) -> Self {
             self.score = input;
             self
@@ -229,6 +245,7 @@ pub mod suggestion_match {
             self.id = Some(input.into());
             self
         }
+        /// <p>The document ID of the suggested document.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -282,6 +299,7 @@ pub mod suggest_status {
             self.timems = Some(input);
             self
         }
+        /// <p>How long it took to process the request, in milliseconds.</p>
         pub fn set_timems(mut self, input: std::option::Option<i64>) -> Self {
             self.timems = input;
             self
@@ -291,6 +309,7 @@ pub mod suggest_status {
             self.rid = Some(input.into());
             self
         }
+        /// <p>The encrypted resource ID for the request.</p>
         pub fn set_rid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rid = input;
             self
@@ -371,6 +390,8 @@ pub mod field_stats {
             self.min = Some(input.into());
             self
         }
+        /// <p>The minimum value found in the specified field in the result set.</p>
+        /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
         pub fn set_min(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.min = input;
             self
@@ -381,6 +402,8 @@ pub mod field_stats {
             self.max = Some(input.into());
             self
         }
+        /// <p>The maximum value found in the specified field in the result set.</p>
+        /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
         pub fn set_max(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max = input;
             self
@@ -390,6 +413,7 @@ pub mod field_stats {
             self.count = Some(input);
             self
         }
+        /// <p>The number of documents that contain a value in the specified field in the result set.</p>
         pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
             self.count = input;
             self
@@ -399,6 +423,7 @@ pub mod field_stats {
             self.missing = Some(input);
             self
         }
+        /// <p>The number of documents that do not contain a value in the specified field in the result set.</p>
         pub fn set_missing(mut self, input: std::option::Option<i64>) -> Self {
             self.missing = input;
             self
@@ -408,6 +433,7 @@ pub mod field_stats {
             self.sum = Some(input);
             self
         }
+        /// <p>The sum of the field values across the documents in the result set. <code>null</code> for date fields.</p>
         pub fn set_sum(mut self, input: std::option::Option<f64>) -> Self {
             self.sum = input;
             self
@@ -417,6 +443,7 @@ pub mod field_stats {
             self.sum_of_squares = Some(input);
             self
         }
+        /// <p>The sum of all field values in the result set squared.</p>
         pub fn set_sum_of_squares(mut self, input: std::option::Option<f64>) -> Self {
             self.sum_of_squares = input;
             self
@@ -427,6 +454,8 @@ pub mod field_stats {
             self.mean = Some(input.into());
             self
         }
+        /// <p>The average of the values found in the specified field in the result set.</p>
+        /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
         pub fn set_mean(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mean = input;
             self
@@ -436,6 +465,7 @@ pub mod field_stats {
             self.stddev = Some(input);
             self
         }
+        /// <p>The standard deviation of the values in the specified field in the result set.</p>
         pub fn set_stddev(mut self, input: std::option::Option<f64>) -> Self {
             self.stddev = input;
             self
@@ -485,12 +515,18 @@ pub mod bucket_info {
         pub(crate) buckets: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
     }
     impl Builder {
+        /// Appends an item to `buckets`.
+        ///
+        /// To override the contents of this collection use [`set_buckets`](Self::set_buckets).
+        ///
+        /// <p>A list of the calculated facet values and counts.</p>
         pub fn buckets(mut self, input: impl Into<crate::model::Bucket>) -> Self {
             let mut v = self.buckets.unwrap_or_default();
             v.push(input.into());
             self.buckets = Some(v);
             self
         }
+        /// <p>A list of the calculated facet values and counts.</p>
         pub fn set_buckets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
@@ -545,6 +581,7 @@ pub mod bucket {
             self.value = Some(input.into());
             self
         }
+        /// <p>The  facet value being counted.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -554,6 +591,7 @@ pub mod bucket {
             self.count = Some(input);
             self
         }
+        /// <p>The number of hits that contain the facet value in the specified facet field.</p>
         pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
             self.count = input;
             self
@@ -614,6 +652,7 @@ pub mod hits {
             self.found = Some(input);
             self
         }
+        /// <p>The total number of documents that match the search request.</p>
         pub fn set_found(mut self, input: std::option::Option<i64>) -> Self {
             self.found = input;
             self
@@ -623,6 +662,7 @@ pub mod hits {
             self.start = Some(input);
             self
         }
+        /// <p>The index of the first matching document.</p>
         pub fn set_start(mut self, input: std::option::Option<i64>) -> Self {
             self.start = input;
             self
@@ -632,16 +672,23 @@ pub mod hits {
             self.cursor = Some(input.into());
             self
         }
+        /// <p>A cursor that can be used to retrieve the next set of matching documents when you want to page through a large result set.</p>
         pub fn set_cursor(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cursor = input;
             self
         }
+        /// Appends an item to `hit`.
+        ///
+        /// To override the contents of this collection use [`set_hit`](Self::set_hit).
+        ///
+        /// <p>A document that matches the search request.</p>
         pub fn hit(mut self, input: impl Into<crate::model::Hit>) -> Self {
             let mut v = self.hit.unwrap_or_default();
             v.push(input.into());
             self.hit = Some(v);
             self
         }
+        /// <p>A document that matches the search request.</p>
         pub fn set_hit(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Hit>>,
@@ -717,10 +764,16 @@ pub mod hit {
             self.id = Some(input.into());
             self
         }
+        /// <p>The document ID of a document that matches the search request.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
+        /// Adds a key-value pair to `fields`.
+        ///
+        /// To override the contents of this collection use [`set_fields`](Self::set_fields).
+        ///
+        /// <p>The fields returned from a document that matches the search request.</p>
         pub fn fields(
             mut self,
             k: impl Into<std::string::String>,
@@ -731,6 +784,7 @@ pub mod hit {
             self.fields = Some(hash_map);
             self
         }
+        /// <p>The fields returned from a document that matches the search request.</p>
         pub fn set_fields(
             mut self,
             input: std::option::Option<
@@ -740,6 +794,11 @@ pub mod hit {
             self.fields = input;
             self
         }
+        /// Adds a key-value pair to `exprs`.
+        ///
+        /// To override the contents of this collection use [`set_exprs`](Self::set_exprs).
+        ///
+        /// <p>The expressions returned from a document that matches the search request.</p>
         pub fn exprs(
             mut self,
             k: impl Into<std::string::String>,
@@ -750,6 +809,7 @@ pub mod hit {
             self.exprs = Some(hash_map);
             self
         }
+        /// <p>The expressions returned from a document that matches the search request.</p>
         pub fn set_exprs(
             mut self,
             input: std::option::Option<
@@ -759,6 +819,11 @@ pub mod hit {
             self.exprs = input;
             self
         }
+        /// Adds a key-value pair to `highlights`.
+        ///
+        /// To override the contents of this collection use [`set_highlights`](Self::set_highlights).
+        ///
+        /// <p>The highlights returned from a document that matches the search request.</p>
         pub fn highlights(
             mut self,
             k: impl Into<std::string::String>,
@@ -769,6 +834,7 @@ pub mod hit {
             self.highlights = Some(hash_map);
             self
         }
+        /// <p>The highlights returned from a document that matches the search request.</p>
         pub fn set_highlights(
             mut self,
             input: std::option::Option<
@@ -828,6 +894,7 @@ pub mod search_status {
             self.timems = Some(input);
             self
         }
+        /// <p>How long it took to process the request, in milliseconds.</p>
         pub fn set_timems(mut self, input: std::option::Option<i64>) -> Self {
             self.timems = input;
             self
@@ -837,6 +904,7 @@ pub mod search_status {
             self.rid = Some(input.into());
             self
         }
+        /// <p>The encrypted resource ID for the request.</p>
         pub fn set_rid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rid = input;
             self
@@ -857,6 +925,7 @@ impl SearchStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -868,9 +937,13 @@ impl SearchStatus {
     std::hash::Hash,
 )]
 pub enum QueryParser {
+    #[allow(missing_docs)] // documentation missing in model
     Dismax,
+    #[allow(missing_docs)] // documentation missing in model
     Lucene,
+    #[allow(missing_docs)] // documentation missing in model
     Simple,
+    #[allow(missing_docs)] // documentation missing in model
     Structured,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -894,6 +967,7 @@ impl std::str::FromStr for QueryParser {
     }
 }
 impl QueryParser {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             QueryParser::Dismax => "dismax",
@@ -903,6 +977,7 @@ impl QueryParser {
             QueryParser::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["dismax", "lucene", "simple", "structured"]
     }

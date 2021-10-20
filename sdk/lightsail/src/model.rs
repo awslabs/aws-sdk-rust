@@ -11,7 +11,7 @@ pub struct Operation {
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The timestamp when the operation was initialized (e.g.,
     /// <code>1479816991.349</code>).</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The AWS Region and Availability Zone.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>A Boolean value indicating whether the operation is terminal.</p>
@@ -23,7 +23,7 @@ pub struct Operation {
     /// <p>The status of the operation. </p>
     pub status: std::option::Option<crate::model::OperationStatus>,
     /// <p>The timestamp when the status was changed (e.g., <code>1479816991.349</code>).</p>
-    pub status_changed_at: std::option::Option<smithy_types::Instant>,
+    pub status_changed_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The error code.</p>
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error details.</p>
@@ -56,13 +56,13 @@ pub mod operation {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) resource_name: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) is_terminal: std::option::Option<bool>,
         pub(crate) operation_details: std::option::Option<std::string::String>,
         pub(crate) operation_type: std::option::Option<crate::model::OperationType>,
         pub(crate) status: std::option::Option<crate::model::OperationStatus>,
-        pub(crate) status_changed_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) status_changed_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) error_details: std::option::Option<std::string::String>,
     }
@@ -72,6 +72,7 @@ pub mod operation {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the operation.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -81,6 +82,7 @@ pub mod operation {
             self.resource_name = Some(input.into());
             self
         }
+        /// <p>The resource name.</p>
         pub fn set_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -93,6 +95,7 @@ pub mod operation {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The resource type. </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -102,11 +105,16 @@ pub mod operation {
         }
         /// <p>The timestamp when the operation was initialized (e.g.,
         /// <code>1479816991.349</code>).</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the operation was initialized (e.g.,
+        /// <code>1479816991.349</code>).</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -115,6 +123,7 @@ pub mod operation {
             self.location = Some(input);
             self
         }
+        /// <p>The AWS Region and Availability Zone.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -127,6 +136,7 @@ pub mod operation {
             self.is_terminal = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether the operation is terminal.</p>
         pub fn set_is_terminal(mut self, input: std::option::Option<bool>) -> Self {
             self.is_terminal = input;
             self
@@ -136,6 +146,7 @@ pub mod operation {
             self.operation_details = Some(input.into());
             self
         }
+        /// <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
         pub fn set_operation_details(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -148,6 +159,7 @@ pub mod operation {
             self.operation_type = Some(input);
             self
         }
+        /// <p>The type of operation. </p>
         pub fn set_operation_type(
             mut self,
             input: std::option::Option<crate::model::OperationType>,
@@ -160,6 +172,7 @@ pub mod operation {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the operation. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OperationStatus>,
@@ -168,13 +181,14 @@ pub mod operation {
             self
         }
         /// <p>The timestamp when the status was changed (e.g., <code>1479816991.349</code>).</p>
-        pub fn status_changed_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn status_changed_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.status_changed_at = Some(input);
             self
         }
+        /// <p>The timestamp when the status was changed (e.g., <code>1479816991.349</code>).</p>
         pub fn set_status_changed_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.status_changed_at = input;
             self
@@ -184,6 +198,7 @@ pub mod operation {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>The error code.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -193,6 +208,7 @@ pub mod operation {
             self.error_details = Some(input.into());
             self
         }
+        /// <p>The error details.</p>
         pub fn set_error_details(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -226,6 +242,7 @@ impl Operation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -237,10 +254,15 @@ impl Operation {
     std::hash::Hash,
 )]
 pub enum OperationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     NotStarted,
+    #[allow(missing_docs)] // documentation missing in model
     Started,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -265,6 +287,7 @@ impl std::str::FromStr for OperationStatus {
     }
 }
 impl OperationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OperationStatus::Completed => "Completed",
@@ -275,6 +298,7 @@ impl OperationStatus {
             OperationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Completed", "Failed", "NotStarted", "Started", "Succeeded"]
     }
@@ -285,6 +309,7 @@ impl AsRef<str> for OperationStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -296,84 +321,163 @@ impl AsRef<str> for OperationStatus {
     std::hash::Hash,
 )]
 pub enum OperationType {
+    #[allow(missing_docs)] // documentation missing in model
     AllocateStaticIp,
+    #[allow(missing_docs)] // documentation missing in model
     AttachCertificateToDistribution,
+    #[allow(missing_docs)] // documentation missing in model
     AttachDisk,
+    #[allow(missing_docs)] // documentation missing in model
     AttachInstancesToLoadBalancer,
+    #[allow(missing_docs)] // documentation missing in model
     AttachLoadBalancerTlsCertificate,
+    #[allow(missing_docs)] // documentation missing in model
     AttachStaticIp,
+    #[allow(missing_docs)] // documentation missing in model
     CloseInstancePublicPorts,
+    #[allow(missing_docs)] // documentation missing in model
     CreateBucket,
+    #[allow(missing_docs)] // documentation missing in model
     CreateBucketAccessKey,
+    #[allow(missing_docs)] // documentation missing in model
     CreateCertificate,
+    #[allow(missing_docs)] // documentation missing in model
     CreateContactMethod,
+    #[allow(missing_docs)] // documentation missing in model
     CreateContainerService,
+    #[allow(missing_docs)] // documentation missing in model
     CreateContainerServiceDeployment,
+    #[allow(missing_docs)] // documentation missing in model
     CreateContainerServiceRegistryLogin,
+    #[allow(missing_docs)] // documentation missing in model
     CreateDisk,
+    #[allow(missing_docs)] // documentation missing in model
     CreateDiskFromSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     CreateDiskSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     CreateDistribution,
+    #[allow(missing_docs)] // documentation missing in model
     CreateDomain,
+    #[allow(missing_docs)] // documentation missing in model
     CreateInstance,
+    #[allow(missing_docs)] // documentation missing in model
     CreateInstanceSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     CreateInstancesFromSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     CreateLoadBalancer,
+    #[allow(missing_docs)] // documentation missing in model
     CreateLoadBalancerTlsCertificate,
+    #[allow(missing_docs)] // documentation missing in model
     CreateRelationalDatabase,
+    #[allow(missing_docs)] // documentation missing in model
     CreateRelationalDatabaseFromSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     CreateRelationalDatabaseSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteAlarm,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteBucket,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteBucketAccessKey,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteCertificate,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteContactMethod,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteContainerImage,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteContainerService,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteDisk,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteDiskSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteDistribution,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteDomain,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteDomainEntry,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteInstance,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteInstanceSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteKnownHostKeys,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteLoadBalancer,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteLoadBalancerTlsCertificate,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteRelationalDatabase,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteRelationalDatabaseSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     DetachCertificateFromDistribution,
+    #[allow(missing_docs)] // documentation missing in model
     DetachDisk,
+    #[allow(missing_docs)] // documentation missing in model
     DetachInstancesFromLoadBalancer,
+    #[allow(missing_docs)] // documentation missing in model
     DetachStaticIp,
+    #[allow(missing_docs)] // documentation missing in model
     DisableAddOn,
+    #[allow(missing_docs)] // documentation missing in model
     EnableAddOn,
+    #[allow(missing_docs)] // documentation missing in model
     GetAlarms,
+    #[allow(missing_docs)] // documentation missing in model
     GetContactMethods,
+    #[allow(missing_docs)] // documentation missing in model
     OpenInstancePublicPorts,
+    #[allow(missing_docs)] // documentation missing in model
     PutAlarm,
+    #[allow(missing_docs)] // documentation missing in model
     PutInstancePublicPorts,
+    #[allow(missing_docs)] // documentation missing in model
     RebootInstance,
+    #[allow(missing_docs)] // documentation missing in model
     RebootRelationalDatabase,
+    #[allow(missing_docs)] // documentation missing in model
     RegisterContainerImage,
+    #[allow(missing_docs)] // documentation missing in model
     ReleaseStaticIp,
+    #[allow(missing_docs)] // documentation missing in model
     ResetDistributionCache,
+    #[allow(missing_docs)] // documentation missing in model
     SendContactMethodVerification,
+    #[allow(missing_docs)] // documentation missing in model
     SetIpAddressType,
+    #[allow(missing_docs)] // documentation missing in model
     SetResourceAccessForBucket,
+    #[allow(missing_docs)] // documentation missing in model
     StartInstance,
+    #[allow(missing_docs)] // documentation missing in model
     StartRelationalDatabase,
+    #[allow(missing_docs)] // documentation missing in model
     StopInstance,
+    #[allow(missing_docs)] // documentation missing in model
     StopRelationalDatabase,
+    #[allow(missing_docs)] // documentation missing in model
     TestAlarm,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateBucket,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateBucketBundle,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateContainerService,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateDistribution,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateDistributionBundle,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateDomainEntry,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateLoadBalancerAttribute,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateRelationalDatabase,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateRelationalDatabaseParameters,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -478,6 +582,7 @@ impl std::str::FromStr for OperationType {
     }
 }
 impl OperationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OperationType::AllocateStaticIp => "AllocateStaticIp",
@@ -568,6 +673,7 @@ impl OperationType {
             OperationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AllocateStaticIp",
@@ -690,6 +796,7 @@ pub mod resource_location {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>The Availability Zone. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -702,6 +809,7 @@ pub mod resource_location {
             self.region_name = Some(input);
             self
         }
+        /// <p>The AWS Region name.</p>
         pub fn set_region_name(
             mut self,
             input: std::option::Option<crate::model::RegionName>,
@@ -725,6 +833,7 @@ impl ResourceLocation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -736,20 +845,35 @@ impl ResourceLocation {
     std::hash::Hash,
 )]
 pub enum RegionName {
+    #[allow(missing_docs)] // documentation missing in model
     ApNortheast1,
+    #[allow(missing_docs)] // documentation missing in model
     ApNortheast2,
+    #[allow(missing_docs)] // documentation missing in model
     ApSouth1,
+    #[allow(missing_docs)] // documentation missing in model
     ApSoutheast1,
+    #[allow(missing_docs)] // documentation missing in model
     ApSoutheast2,
+    #[allow(missing_docs)] // documentation missing in model
     CaCentral1,
+    #[allow(missing_docs)] // documentation missing in model
     EuCentral1,
+    #[allow(missing_docs)] // documentation missing in model
     EuNorth1,
+    #[allow(missing_docs)] // documentation missing in model
     EuWest1,
+    #[allow(missing_docs)] // documentation missing in model
     EuWest2,
+    #[allow(missing_docs)] // documentation missing in model
     EuWest3,
+    #[allow(missing_docs)] // documentation missing in model
     UsEast1,
+    #[allow(missing_docs)] // documentation missing in model
     UsEast2,
+    #[allow(missing_docs)] // documentation missing in model
     UsWest1,
+    #[allow(missing_docs)] // documentation missing in model
     UsWest2,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -784,6 +908,7 @@ impl std::str::FromStr for RegionName {
     }
 }
 impl RegionName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RegionName::ApNortheast1 => "ap-northeast-1",
@@ -804,6 +929,7 @@ impl RegionName {
             RegionName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ap-northeast-1",
@@ -830,6 +956,7 @@ impl AsRef<str> for RegionName {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -841,25 +968,45 @@ impl AsRef<str> for RegionName {
     std::hash::Hash,
 )]
 pub enum ResourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Alarm,
+    #[allow(missing_docs)] // documentation missing in model
     Bucket,
+    #[allow(missing_docs)] // documentation missing in model
     Certificate,
+    #[allow(missing_docs)] // documentation missing in model
     CloudFormationStackRecord,
+    #[allow(missing_docs)] // documentation missing in model
     ContactMethod,
+    #[allow(missing_docs)] // documentation missing in model
     ContainerService,
+    #[allow(missing_docs)] // documentation missing in model
     Disk,
+    #[allow(missing_docs)] // documentation missing in model
     DiskSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     Distribution,
+    #[allow(missing_docs)] // documentation missing in model
     Domain,
+    #[allow(missing_docs)] // documentation missing in model
     ExportSnapshotRecord,
+    #[allow(missing_docs)] // documentation missing in model
     Instance,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     KeyPair,
+    #[allow(missing_docs)] // documentation missing in model
     LoadBalancer,
+    #[allow(missing_docs)] // documentation missing in model
     LoadBalancerTlsCertificate,
+    #[allow(missing_docs)] // documentation missing in model
     PeeredVpc,
+    #[allow(missing_docs)] // documentation missing in model
     RelationalDatabase,
+    #[allow(missing_docs)] // documentation missing in model
     RelationalDatabaseSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     StaticIp,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -899,6 +1046,7 @@ impl std::str::FromStr for ResourceType {
     }
 }
 impl ResourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Alarm => "Alarm",
@@ -924,6 +1072,7 @@ impl ResourceType {
             ResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Alarm",
@@ -1012,6 +1161,7 @@ pub mod relational_database_parameter {
             self.allowed_values = Some(input.into());
             self
         }
+        /// <p>Specifies the valid range of values for the parameter.</p>
         pub fn set_allowed_values(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1025,6 +1175,8 @@ pub mod relational_database_parameter {
             self.apply_method = Some(input.into());
             self
         }
+        /// <p>Indicates when parameter updates are applied.</p>
+        /// <p>Can be <code>immediate</code> or <code>pending-reboot</code>.</p>
         pub fn set_apply_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.apply_method = input;
             self
@@ -1034,6 +1186,7 @@ pub mod relational_database_parameter {
             self.apply_type = Some(input.into());
             self
         }
+        /// <p>Specifies the engine-specific parameter type.</p>
         pub fn set_apply_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.apply_type = input;
             self
@@ -1043,6 +1196,7 @@ pub mod relational_database_parameter {
             self.data_type = Some(input.into());
             self
         }
+        /// <p>Specifies the valid data type for the parameter.</p>
         pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_type = input;
             self
@@ -1052,6 +1206,7 @@ pub mod relational_database_parameter {
             self.description = Some(input.into());
             self
         }
+        /// <p>Provides a description of the parameter.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1061,6 +1216,7 @@ pub mod relational_database_parameter {
             self.is_modifiable = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether the parameter can be modified.</p>
         pub fn set_is_modifiable(mut self, input: std::option::Option<bool>) -> Self {
             self.is_modifiable = input;
             self
@@ -1070,6 +1226,7 @@ pub mod relational_database_parameter {
             self.parameter_name = Some(input.into());
             self
         }
+        /// <p>Specifies the name of the parameter.</p>
         pub fn set_parameter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1082,6 +1239,7 @@ pub mod relational_database_parameter {
             self.parameter_value = Some(input.into());
             self
         }
+        /// <p>Specifies the value of the parameter.</p>
         pub fn set_parameter_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1111,6 +1269,7 @@ impl RelationalDatabaseParameter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1122,8 +1281,11 @@ impl RelationalDatabaseParameter {
     std::hash::Hash,
 )]
 pub enum LoadBalancerAttributeName {
+    #[allow(missing_docs)] // documentation missing in model
     HealthCheckPath,
+    #[allow(missing_docs)] // documentation missing in model
     SessionStickinessEnabled,
+    #[allow(missing_docs)] // documentation missing in model
     SessionStickinessLbCookieDurationSeconds,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1148,6 +1310,7 @@ impl std::str::FromStr for LoadBalancerAttributeName {
     }
 }
 impl LoadBalancerAttributeName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LoadBalancerAttributeName::HealthCheckPath => "HealthCheckPath",
@@ -1158,6 +1321,7 @@ impl LoadBalancerAttributeName {
             LoadBalancerAttributeName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "HealthCheckPath",
@@ -1282,6 +1446,7 @@ pub mod domain_entry {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the domain recordset entry.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1291,6 +1456,7 @@ pub mod domain_entry {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the domain.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1308,6 +1474,15 @@ pub mod domain_entry {
             self.target = Some(input.into());
             self
         }
+        /// <p>The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server (e.g.,
+        /// <code>ns-111.awsdns-22.com.</code>).</p>
+        /// <p>For Lightsail load balancers, the value looks like
+        /// <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. For
+        /// Lightsail distributions, the value looks like <code>exampled1182ne.cloudfront.net</code>.
+        /// For Lightsail container services, the value looks like
+        /// <code>container-service-1.example23scljs.us-west-2.cs.amazonlightsail.com</code>. Be sure to
+        /// also set <code>isAlias</code> to <code>true</code> when setting up an A record for a
+        /// Lightsail load balancer, distribution, or container service.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target = input;
             self
@@ -1319,6 +1494,9 @@ pub mod domain_entry {
             self.is_alias = Some(input);
             self
         }
+        /// <p>When <code>true</code>, specifies whether the domain entry is an alias used by the
+        /// Lightsail load balancer. You can include an alias (A type) record in your request, which
+        /// points to a load balancer DNS name and routes traffic to your load balancer.</p>
         pub fn set_is_alias(mut self, input: std::option::Option<bool>) -> Self {
             self.is_alias = input;
             self
@@ -1373,10 +1551,65 @@ pub mod domain_entry {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of domain entry, such as address for IPv4 (A), address for IPv6 (AAAA), canonical
+        /// name (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator
+        /// (SRV), or text (TXT).</p>
+        /// <p>The following domain entry types can be used:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>A</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AAAA</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CNAME</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MX</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NS</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SOA</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SRV</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TXT</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
         }
+        /// Adds a key-value pair to `options`.
+        ///
+        /// To override the contents of this collection use [`set_options`](Self::set_options).
+        ///
+        /// <p>(Deprecated) The options for the domain entry.</p>
+        /// <note>
+        /// <p>In releases prior to November 29, 2017, this parameter was not included in the API
+        /// response. It is now deprecated.</p>
+        /// </note>
         pub fn options(
             mut self,
             k: impl Into<std::string::String>,
@@ -1387,6 +1620,11 @@ pub mod domain_entry {
             self.options = Some(hash_map);
             self
         }
+        /// <p>(Deprecated) The options for the domain entry.</p>
+        /// <note>
+        /// <p>In releases prior to November 29, 2017, this parameter was not included in the API
+        /// response. It is now deprecated.</p>
+        /// </note>
         pub fn set_options(
             mut self,
             input: std::option::Option<
@@ -1561,6 +1799,51 @@ pub mod cache_behavior_per_path {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path to a directory or file to cached, or not cache. Use an asterisk symbol to specify
+        /// wildcard directories (<code>path/to/assets/*</code>), and file types (<code>*.html, *jpg,
+        /// *js</code>). Directories and file paths are case-sensitive.</p>
+        /// <p>Examples:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Specify the following to cache all files in the document root of an Apache web server
+        /// running on a Lightsail instance.</p>
+        /// <p>
+        /// <code>var/www/html/</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Specify the following file to cache only the index page in the document root of an
+        /// Apache web server.</p>
+        /// <p>
+        /// <code>var/www/html/index.html</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Specify the following to cache only the .html files in the document root of an Apache
+        /// web server.</p>
+        /// <p>
+        /// <code>var/www/html/*.html</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Specify the following to cache only the .jpg, .png, and .gif files in the images
+        /// sub-directory of the document root of an Apache web server.</p>
+        /// <p>
+        /// <code>var/www/html/images/*.jpg</code>
+        /// </p>
+        /// <p>
+        /// <code>var/www/html/images/*.png</code>
+        /// </p>
+        /// <p>
+        /// <code>var/www/html/images/*.gif</code>
+        /// </p>
+        /// <p>Specify the following to cache all files in the images sub-directory of the document
+        /// root of an Apache web server.</p>
+        /// <p>
+        /// <code>var/www/html/images/</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -1587,6 +1870,24 @@ pub mod cache_behavior_per_path {
             self.behavior = Some(input);
             self
         }
+        /// <p>The cache behavior for the specified path.</p>
+        /// <p>You can specify one of the following per-path cache behaviors:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>cache</code>
+        /// </b> - This behavior caches the
+        /// specified path. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>dont-cache</code>
+        /// </b> - This behavior doesn't cache
+        /// the specified path. </p>
+        /// </li>
+        /// </ul>
         pub fn set_behavior(
             mut self,
             input: std::option::Option<crate::model::BehaviorEnum>,
@@ -1610,6 +1911,7 @@ impl CacheBehaviorPerPath {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1621,7 +1923,9 @@ impl CacheBehaviorPerPath {
     std::hash::Hash,
 )]
 pub enum BehaviorEnum {
+    #[allow(missing_docs)] // documentation missing in model
     CacheSetting,
+    #[allow(missing_docs)] // documentation missing in model
     DontCacheSetting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1643,6 +1947,7 @@ impl std::str::FromStr for BehaviorEnum {
     }
 }
 impl BehaviorEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BehaviorEnum::CacheSetting => "cache",
@@ -1650,6 +1955,7 @@ impl BehaviorEnum {
             BehaviorEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["cache", "dont-cache"]
     }
@@ -1781,6 +2087,14 @@ pub mod cache_settings {
             self.default_ttl = Some(input);
             self
         }
+        /// <p>The default amount of time that objects stay in the distribution's cache before the
+        /// distribution forwards another request to the origin to determine whether the content has been
+        /// updated.</p>
+        /// <note>
+        /// <p>The value specified applies only when the origin does not add HTTP headers such as
+        /// <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and
+        /// <code>Expires</code> to objects.</p>
+        /// </note>
         pub fn set_default_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.default_ttl = input;
             self
@@ -1794,6 +2108,11 @@ pub mod cache_settings {
             self.minimum_ttl = Some(input);
             self
         }
+        /// <p>The minimum amount of time that objects stay in the distribution's cache before the
+        /// distribution forwards another request to the origin to determine whether the object has been
+        /// updated.</p>
+        /// <p>A value of <code>0</code> must be specified for <code>minimumTTL</code> if the
+        /// distribution is configured to forward all headers to the origin.</p>
         pub fn set_minimum_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.minimum_ttl = input;
             self
@@ -1808,6 +2127,12 @@ pub mod cache_settings {
             self.maximum_ttl = Some(input);
             self
         }
+        /// <p>The maximum amount of time that objects stay in the distribution's cache before the
+        /// distribution forwards another request to the origin to determine whether the object has been
+        /// updated.</p>
+        /// <p>The value specified applies only when the origin adds HTTP headers such as
+        /// <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and
+        /// <code>Expires</code> to objects.</p>
         pub fn set_maximum_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.maximum_ttl = input;
             self
@@ -1839,6 +2164,29 @@ pub mod cache_settings {
             self.allowed_http_methods = Some(input.into());
             self
         }
+        /// <p>The HTTP methods that are processed and forwarded to the distribution's origin.</p>
+        /// <p>You can specify the following options:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>GET,HEAD</code> - The distribution forwards the <code>GET</code> and
+        /// <code>HEAD</code> methods.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GET,HEAD,OPTIONS</code> - The distribution forwards the <code>GET</code>,
+        /// <code>HEAD</code>, and <code>OPTIONS</code> methods.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE</code> - The distribution forwards the
+        /// <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PUT</code>,
+        /// <code>PATCH</code>, <code>POST</code>, and <code>DELETE</code> methods.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you specify the third option, you might need to restrict access to your distribution's
+        /// origin so users can't perform operations that you don't want them to. For example, you might
+        /// not want users to have permission to delete objects from your origin.</p>
         pub fn set_allowed_http_methods(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1864,6 +2212,20 @@ pub mod cache_settings {
             self.cached_http_methods = Some(input.into());
             self
         }
+        /// <p>The HTTP method responses that are cached by your distribution.</p>
+        /// <p>You can specify the following options:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>GET,HEAD</code> - The distribution caches responses to the <code>GET</code> and
+        /// <code>HEAD</code> methods.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GET,HEAD,OPTIONS</code> - The distribution caches responses to the
+        /// <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> methods.</p>
+        /// </li>
+        /// </ul>
         pub fn set_cached_http_methods(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1877,6 +2239,8 @@ pub mod cache_settings {
             self.forwarded_cookies = Some(input);
             self
         }
+        /// <p>An object that describes the cookies that are forwarded to the origin. Your content is
+        /// cached based on the cookies that are forwarded.</p>
         pub fn set_forwarded_cookies(
             mut self,
             input: std::option::Option<crate::model::CookieObject>,
@@ -1890,6 +2254,8 @@ pub mod cache_settings {
             self.forwarded_headers = Some(input);
             self
         }
+        /// <p>An object that describes the headers that are forwarded to the origin. Your content is
+        /// cached based on the headers that are forwarded.</p>
         pub fn set_forwarded_headers(
             mut self,
             input: std::option::Option<crate::model::HeaderObject>,
@@ -1903,6 +2269,8 @@ pub mod cache_settings {
             self.forwarded_query_strings = Some(input);
             self
         }
+        /// <p>An object that describes the query strings that are forwarded to the origin. Your content
+        /// is cached based on the query strings that are forwarded.</p>
         pub fn set_forwarded_query_strings(
             mut self,
             input: std::option::Option<crate::model::QueryStringObject>,
@@ -1973,16 +2341,31 @@ pub mod query_string_object {
             self.option = Some(input);
             self
         }
+        /// <p>Indicates whether the distribution forwards and caches based on query strings.</p>
         pub fn set_option(mut self, input: std::option::Option<bool>) -> Self {
             self.option = input;
             self
         }
+        /// Appends an item to `query_strings_allow_list`.
+        ///
+        /// To override the contents of this collection use [`set_query_strings_allow_list`](Self::set_query_strings_allow_list).
+        ///
+        /// <p>The specific query strings that the distribution forwards to the origin.</p>
+        /// <p>Your distribution will cache content based on the specified query strings.</p>
+        /// <p>If the <code>option</code> parameter is true, then your distribution forwards all query
+        /// strings, regardless of what you specify using the <code>queryStringsAllowList</code>
+        /// parameter.</p>
         pub fn query_strings_allow_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.query_strings_allow_list.unwrap_or_default();
             v.push(input.into());
             self.query_strings_allow_list = Some(v);
             self
         }
+        /// <p>The specific query strings that the distribution forwards to the origin.</p>
+        /// <p>Your distribution will cache content based on the specified query strings.</p>
+        /// <p>If the <code>option</code> parameter is true, then your distribution forwards all query
+        /// strings, regardless of what you specify using the <code>queryStringsAllowList</code>
+        /// parameter.</p>
         pub fn set_query_strings_allow_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2096,6 +2479,32 @@ pub mod header_object {
             self.option = Some(input);
             self
         }
+        /// <p>The headers that you want your distribution to forward to your origin and base caching
+        /// on.</p>
+        /// <p>You can configure your distribution to do one of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>all</code>
+        /// </b> - Forward all headers to your
+        /// origin.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>none</code>
+        /// </b> - Forward only the default
+        /// headers.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>allow-list</code>
+        /// </b> - Forward only the headers
+        /// you specify using the <code>headersAllowList</code> parameter.</p>
+        /// </li>
+        /// </ul>
         pub fn set_option(
             mut self,
             input: std::option::Option<crate::model::ForwardValues>,
@@ -2103,12 +2512,18 @@ pub mod header_object {
             self.option = input;
             self
         }
+        /// Appends an item to `headers_allow_list`.
+        ///
+        /// To override the contents of this collection use [`set_headers_allow_list`](Self::set_headers_allow_list).
+        ///
+        /// <p>The specific headers to forward to your distribution's origin.</p>
         pub fn headers_allow_list(mut self, input: impl Into<crate::model::HeaderEnum>) -> Self {
             let mut v = self.headers_allow_list.unwrap_or_default();
             v.push(input.into());
             self.headers_allow_list = Some(v);
             self
         }
+        /// <p>The specific headers to forward to your distribution's origin.</p>
         pub fn set_headers_allow_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HeaderEnum>>,
@@ -2132,6 +2547,7 @@ impl HeaderObject {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2143,20 +2559,35 @@ impl HeaderObject {
     std::hash::Hash,
 )]
 pub enum HeaderEnum {
+    #[allow(missing_docs)] // documentation missing in model
     Accept,
+    #[allow(missing_docs)] // documentation missing in model
     AcceptCharset,
+    #[allow(missing_docs)] // documentation missing in model
     AcceptDatetime,
+    #[allow(missing_docs)] // documentation missing in model
     AcceptEncoding,
+    #[allow(missing_docs)] // documentation missing in model
     AcceptLanguage,
+    #[allow(missing_docs)] // documentation missing in model
     Authorization,
+    #[allow(missing_docs)] // documentation missing in model
     CloudFrontForwardedProto,
+    #[allow(missing_docs)] // documentation missing in model
     CloudFrontIsDesktopViewer,
+    #[allow(missing_docs)] // documentation missing in model
     CloudFrontIsMobileViewer,
+    #[allow(missing_docs)] // documentation missing in model
     CloudFrontIsSmartTvViewer,
+    #[allow(missing_docs)] // documentation missing in model
     CloudFrontIsTabletViewer,
+    #[allow(missing_docs)] // documentation missing in model
     CloudFrontViewerCountry,
+    #[allow(missing_docs)] // documentation missing in model
     Host,
+    #[allow(missing_docs)] // documentation missing in model
     Origin,
+    #[allow(missing_docs)] // documentation missing in model
     Referer,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2191,6 +2622,7 @@ impl std::str::FromStr for HeaderEnum {
     }
 }
 impl HeaderEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HeaderEnum::Accept => "Accept",
@@ -2211,6 +2643,7 @@ impl HeaderEnum {
             HeaderEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Accept",
@@ -2237,6 +2670,7 @@ impl AsRef<str> for HeaderEnum {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2248,8 +2682,11 @@ impl AsRef<str> for HeaderEnum {
     std::hash::Hash,
 )]
 pub enum ForwardValues {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     AllowList,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2272,6 +2709,7 @@ impl std::str::FromStr for ForwardValues {
     }
 }
 impl ForwardValues {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ForwardValues::All => "all",
@@ -2280,6 +2718,7 @@ impl ForwardValues {
             ForwardValues::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["all", "allow-list", "none"]
     }
@@ -2330,6 +2769,9 @@ pub mod cookie_object {
             self.option = Some(input);
             self
         }
+        /// <p>Specifies which cookies to forward to the distribution's origin for a cache behavior:
+        /// <code>all</code>, <code>none</code>, or <code>allow-list</code> to forward only the cookies
+        /// specified in the <code>cookiesAllowList</code> parameter.</p>
         pub fn set_option(
             mut self,
             input: std::option::Option<crate::model::ForwardValues>,
@@ -2337,12 +2779,18 @@ pub mod cookie_object {
             self.option = input;
             self
         }
+        /// Appends an item to `cookies_allow_list`.
+        ///
+        /// To override the contents of this collection use [`set_cookies_allow_list`](Self::set_cookies_allow_list).
+        ///
+        /// <p>The specific cookies to forward to your distribution's origin.</p>
         pub fn cookies_allow_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cookies_allow_list.unwrap_or_default();
             v.push(input.into());
             self.cookies_allow_list = Some(v);
             self
         }
+        /// <p>The specific cookies to forward to your distribution's origin.</p>
         pub fn set_cookies_allow_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2443,6 +2891,31 @@ pub mod cache_behavior {
             self.behavior = Some(input);
             self
         }
+        /// <p>The cache behavior of the distribution.</p>
+        /// <p>The following cache behaviors can be specified:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>cache</code>
+        /// </b> - This option is best for static
+        /// sites. When specified, your distribution caches and serves your entire website as static
+        /// content. This behavior is ideal for websites with static content that doesn't change
+        /// depending on who views it, or for websites that don't use cookies, headers, or query
+        /// strings to personalize content.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>dont-cache</code>
+        /// </b> - This option is best for
+        /// sites that serve a mix of static and dynamic content. When specified, your distribution
+        /// caches and serve only the content that is specified in the distribution's
+        /// <code>CacheBehaviorPerPath</code> parameter. This behavior is ideal for websites or web
+        /// applications that use cookies, headers, and query strings to personalize content for
+        /// individual users.</p>
+        /// </li>
+        /// </ul>
         pub fn set_behavior(
             mut self,
             input: std::option::Option<crate::model::BehaviorEnum>,
@@ -2506,6 +2979,7 @@ pub mod input_origin {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the origin resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2515,6 +2989,7 @@ pub mod input_origin {
             self.region_name = Some(input);
             self
         }
+        /// <p>The AWS Region name of the origin resource.</p>
         pub fn set_region_name(
             mut self,
             input: std::option::Option<crate::model::RegionName>,
@@ -2528,6 +3003,8 @@ pub mod input_origin {
             self.protocol_policy = Some(input);
             self
         }
+        /// <p>The protocol that your Amazon Lightsail distribution uses when establishing a connection
+        /// with your origin to pull content.</p>
         pub fn set_protocol_policy(
             mut self,
             input: std::option::Option<crate::model::OriginProtocolPolicyEnum>,
@@ -2552,6 +3029,7 @@ impl InputOrigin {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2563,7 +3041,9 @@ impl InputOrigin {
     std::hash::Hash,
 )]
 pub enum OriginProtocolPolicyEnum {
+    #[allow(missing_docs)] // documentation missing in model
     HttpOnly,
+    #[allow(missing_docs)] // documentation missing in model
     HttpsOnly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2585,6 +3065,7 @@ impl std::str::FromStr for OriginProtocolPolicyEnum {
     }
 }
 impl OriginProtocolPolicyEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OriginProtocolPolicyEnum::HttpOnly => "http-only",
@@ -2592,6 +3073,7 @@ impl OriginProtocolPolicyEnum {
             OriginProtocolPolicyEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["http-only", "https-only"]
     }
@@ -2611,7 +3093,7 @@ pub struct ContainerService {
     /// <p>The Amazon Resource Name (ARN) of the container service.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp when the container service was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>An object that describes the location of the container service, such as the AWS Region
     /// and Availability Zone.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
@@ -2622,6 +3104,7 @@ pub struct ContainerService {
     /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The power specification of the container service.</p>
+    ///
     /// <p>The power specifies the amount of RAM, the number of vCPUs, and the base price of the
     /// container service.</p>
     pub power: std::option::Option<crate::model::ContainerServicePowerName>,
@@ -2672,37 +3155,45 @@ pub struct ContainerService {
     /// </note>
     pub state_detail: std::option::Option<crate::model::ContainerServiceStateDetail>,
     /// <p>The scale specification of the container service.</p>
+    ///
     /// <p>The scale specifies the allocated compute nodes of the container service.</p>
     pub scale: std::option::Option<i32>,
     /// <p>An object that describes the current container deployment of the container service.</p>
     pub current_deployment: std::option::Option<crate::model::ContainerServiceDeployment>,
     /// <p>An object that describes the next deployment of the container service.</p>
+    ///
     /// <p>This value is <code>null</code> when there is no deployment in a <code>pending</code>
     /// state.</p>
     pub next_deployment: std::option::Option<crate::model::ContainerServiceDeployment>,
     /// <p>A Boolean value indicating whether the container service is disabled.</p>
     pub is_disabled: std::option::Option<bool>,
     /// <p>The principal ARN of the container service.</p>
+    ///
     /// <p>The principal ARN can be used to create a trust relationship between your standard AWS
     /// account and your Lightsail container service. This allows you to give your service
     /// permission to access resources in your standard AWS account.</p>
     pub principal_arn: std::option::Option<std::string::String>,
     /// <p>The private domain name of the container service.</p>
+    ///
     /// <p>The private domain name is accessible only by other resources within the default virtual
     /// private cloud (VPC) of your Lightsail account.</p>
     pub private_domain_name: std::option::Option<std::string::String>,
     /// <p>The public domain name of the container service, such as <code>example.com</code> and
     /// <code>www.example.com</code>.</p>
+    ///
     /// <p>You can specify up to four public domain names for a container service. The domain names
     /// that you specify are used when you create a deployment with a container configured as the
     /// public endpoint of your container service.</p>
+    ///
     /// <p>If you don't specify public domain names, then you can use the default domain of the
     /// container service.</p>
+    ///
     /// <important>
     /// <p>You must create and validate an SSL/TLS certificate before you can use public domain
     /// names with your container service. Use the <code>CreateCertificate</code> action to create a
     /// certificate for the public domain names you want to use with your container service.</p>
     /// </important>
+    ///
     /// <p>See <code>CreateContainerService</code> or <code>UpdateContainerService</code> for
     /// information about how to specify public domain names for your Lightsail container
     /// service.</p>
@@ -2710,6 +3201,7 @@ pub struct ContainerService {
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The publicly accessible URL of the container service.</p>
+    ///
     /// <p>If no public endpoint is specified in the <code>currentDeployment</code>, this URL returns
     /// a 404 response.</p>
     pub url: std::option::Option<std::string::String>,
@@ -2746,7 +3238,7 @@ pub mod container_service {
     pub struct Builder {
         pub(crate) container_service_name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2772,6 +3264,7 @@ pub mod container_service {
             self.container_service_name = Some(input.into());
             self
         }
+        /// <p>The name of the container service.</p>
         pub fn set_container_service_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2784,16 +3277,21 @@ pub mod container_service {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the container service.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The timestamp when the container service was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the container service was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -2803,6 +3301,8 @@ pub mod container_service {
             self.location = Some(input);
             self
         }
+        /// <p>An object that describes the location of the container service, such as the AWS Region
+        /// and Availability Zone.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -2816,6 +3316,8 @@ pub mod container_service {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The Lightsail resource type of the container service (i.e.,
+        /// <code>ContainerService</code>).</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -2823,12 +3325,20 @@ pub mod container_service {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2837,12 +3347,17 @@ pub mod container_service {
             self
         }
         /// <p>The power specification of the container service.</p>
+        ///
         /// <p>The power specifies the amount of RAM, the number of vCPUs, and the base price of the
         /// container service.</p>
         pub fn power(mut self, input: crate::model::ContainerServicePowerName) -> Self {
             self.power = Some(input);
             self
         }
+        /// <p>The power specification of the container service.</p>
+        ///
+        /// <p>The power specifies the amount of RAM, the number of vCPUs, and the base price of the
+        /// container service.</p>
         pub fn set_power(
             mut self,
             input: std::option::Option<crate::model::ContainerServicePowerName>,
@@ -2855,6 +3370,7 @@ pub mod container_service {
             self.power_id = Some(input.into());
             self
         }
+        /// <p>The ID of the power of the container service.</p>
         pub fn set_power_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.power_id = input;
             self
@@ -2900,6 +3416,43 @@ pub mod container_service {
             self.state = Some(input);
             self
         }
+        /// <p>The current state of the container service.</p>
+        /// <p>The following container service states are possible:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code> - The container service is being created.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>READY</code> - The container service is running but it does not have an active
+        /// container deployment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DEPLOYING</code> - The container service is launching a container
+        /// deployment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RUNNING</code> - The container service is running and it has an active container
+        /// deployment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATING</code> - The container service capacity or its custom domains are being
+        /// updated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETING</code> - The container service is being deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLED</code> - The container service is disabled, and its active deployment
+        /// and containers, if any, are shut down.</p>
+        /// </li>
+        /// </ul>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ContainerServiceState>,
@@ -2916,6 +3469,11 @@ pub mod container_service {
             self.state_detail = Some(input);
             self
         }
+        /// <p>An object that describes the current state of the container service.</p>
+        /// <note>
+        /// <p>The state detail is populated only when a container service is in a
+        /// <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code> state.</p>
+        /// </note>
         pub fn set_state_detail(
             mut self,
             input: std::option::Option<crate::model::ContainerServiceStateDetail>,
@@ -2924,11 +3482,15 @@ pub mod container_service {
             self
         }
         /// <p>The scale specification of the container service.</p>
+        ///
         /// <p>The scale specifies the allocated compute nodes of the container service.</p>
         pub fn scale(mut self, input: i32) -> Self {
             self.scale = Some(input);
             self
         }
+        /// <p>The scale specification of the container service.</p>
+        ///
+        /// <p>The scale specifies the allocated compute nodes of the container service.</p>
         pub fn set_scale(mut self, input: std::option::Option<i32>) -> Self {
             self.scale = input;
             self
@@ -2941,6 +3503,7 @@ pub mod container_service {
             self.current_deployment = Some(input);
             self
         }
+        /// <p>An object that describes the current container deployment of the container service.</p>
         pub fn set_current_deployment(
             mut self,
             input: std::option::Option<crate::model::ContainerServiceDeployment>,
@@ -2949,12 +3512,17 @@ pub mod container_service {
             self
         }
         /// <p>An object that describes the next deployment of the container service.</p>
+        ///
         /// <p>This value is <code>null</code> when there is no deployment in a <code>pending</code>
         /// state.</p>
         pub fn next_deployment(mut self, input: crate::model::ContainerServiceDeployment) -> Self {
             self.next_deployment = Some(input);
             self
         }
+        /// <p>An object that describes the next deployment of the container service.</p>
+        ///
+        /// <p>This value is <code>null</code> when there is no deployment in a <code>pending</code>
+        /// state.</p>
         pub fn set_next_deployment(
             mut self,
             input: std::option::Option<crate::model::ContainerServiceDeployment>,
@@ -2967,11 +3535,13 @@ pub mod container_service {
             self.is_disabled = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether the container service is disabled.</p>
         pub fn set_is_disabled(mut self, input: std::option::Option<bool>) -> Self {
             self.is_disabled = input;
             self
         }
         /// <p>The principal ARN of the container service.</p>
+        ///
         /// <p>The principal ARN can be used to create a trust relationship between your standard AWS
         /// account and your Lightsail container service. This allows you to give your service
         /// permission to access resources in your standard AWS account.</p>
@@ -2979,6 +3549,11 @@ pub mod container_service {
             self.principal_arn = Some(input.into());
             self
         }
+        /// <p>The principal ARN of the container service.</p>
+        ///
+        /// <p>The principal ARN can be used to create a trust relationship between your standard AWS
+        /// account and your Lightsail container service. This allows you to give your service
+        /// permission to access resources in your standard AWS account.</p>
         pub fn set_principal_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2987,12 +3562,17 @@ pub mod container_service {
             self
         }
         /// <p>The private domain name of the container service.</p>
+        ///
         /// <p>The private domain name is accessible only by other resources within the default virtual
         /// private cloud (VPC) of your Lightsail account.</p>
         pub fn private_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.private_domain_name = Some(input.into());
             self
         }
+        /// <p>The private domain name of the container service.</p>
+        ///
+        /// <p>The private domain name is accessible only by other resources within the default virtual
+        /// private cloud (VPC) of your Lightsail account.</p>
         pub fn set_private_domain_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3000,6 +3580,29 @@ pub mod container_service {
             self.private_domain_name = input;
             self
         }
+        /// Adds a key-value pair to `public_domain_names`.
+        ///
+        /// To override the contents of this collection use [`set_public_domain_names`](Self::set_public_domain_names).
+        ///
+        /// <p>The public domain name of the container service, such as <code>example.com</code> and
+        /// <code>www.example.com</code>.</p>
+        ///
+        /// <p>You can specify up to four public domain names for a container service. The domain names
+        /// that you specify are used when you create a deployment with a container configured as the
+        /// public endpoint of your container service.</p>
+        ///
+        /// <p>If you don't specify public domain names, then you can use the default domain of the
+        /// container service.</p>
+        ///
+        /// <important>
+        /// <p>You must create and validate an SSL/TLS certificate before you can use public domain
+        /// names with your container service. Use the <code>CreateCertificate</code> action to create a
+        /// certificate for the public domain names you want to use with your container service.</p>
+        /// </important>
+        ///
+        /// <p>See <code>CreateContainerService</code> or <code>UpdateContainerService</code> for
+        /// information about how to specify public domain names for your Lightsail container
+        /// service.</p>
         pub fn public_domain_names(
             mut self,
             k: impl Into<std::string::String>,
@@ -3010,6 +3613,25 @@ pub mod container_service {
             self.public_domain_names = Some(hash_map);
             self
         }
+        /// <p>The public domain name of the container service, such as <code>example.com</code> and
+        /// <code>www.example.com</code>.</p>
+        ///
+        /// <p>You can specify up to four public domain names for a container service. The domain names
+        /// that you specify are used when you create a deployment with a container configured as the
+        /// public endpoint of your container service.</p>
+        ///
+        /// <p>If you don't specify public domain names, then you can use the default domain of the
+        /// container service.</p>
+        ///
+        /// <important>
+        /// <p>You must create and validate an SSL/TLS certificate before you can use public domain
+        /// names with your container service. Use the <code>CreateCertificate</code> action to create a
+        /// certificate for the public domain names you want to use with your container service.</p>
+        /// </important>
+        ///
+        /// <p>See <code>CreateContainerService</code> or <code>UpdateContainerService</code> for
+        /// information about how to specify public domain names for your Lightsail container
+        /// service.</p>
         pub fn set_public_domain_names(
             mut self,
             input: std::option::Option<
@@ -3020,12 +3642,17 @@ pub mod container_service {
             self
         }
         /// <p>The publicly accessible URL of the container service.</p>
+        ///
         /// <p>If no public endpoint is specified in the <code>currentDeployment</code>, this URL returns
         /// a 404 response.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
         }
+        /// <p>The publicly accessible URL of the container service.</p>
+        ///
+        /// <p>If no public endpoint is specified in the <code>currentDeployment</code>, this URL returns
+        /// a 404 response.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -3064,6 +3691,7 @@ impl ContainerService {
 
 /// <p>Describes a container deployment configuration of an Amazon Lightsail container
 /// service.</p>
+///
 /// <p>A deployment specifies the settings, such as the ports and launch command, of containers
 /// that are deployed to your container service.</p>
 #[non_exhaustive]
@@ -3072,6 +3700,7 @@ pub struct ContainerServiceDeployment {
     /// <p>The version number of the deployment.</p>
     pub version: std::option::Option<i32>,
     /// <p>The state of the deployment.</p>
+    ///
     /// <p>A deployment can be in one of the following states:</p>
     /// <ul>
     /// <li>
@@ -3104,7 +3733,7 @@ pub struct ContainerServiceDeployment {
     /// <p>An object that describes the endpoint of the deployment.</p>
     pub public_endpoint: std::option::Option<crate::model::ContainerServiceEndpoint>,
     /// <p>The timestamp when the deployment was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ContainerServiceDeployment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3129,7 +3758,7 @@ pub mod container_service_deployment {
             std::collections::HashMap<std::string::String, crate::model::Container>,
         >,
         pub(crate) public_endpoint: std::option::Option<crate::model::ContainerServiceEndpoint>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The version number of the deployment.</p>
@@ -3137,11 +3766,13 @@ pub mod container_service_deployment {
             self.version = Some(input);
             self
         }
+        /// <p>The version number of the deployment.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
             self.version = input;
             self
         }
         /// <p>The state of the deployment.</p>
+        ///
         /// <p>A deployment can be in one of the following states:</p>
         /// <ul>
         /// <li>
@@ -3170,6 +3801,32 @@ pub mod container_service_deployment {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the deployment.</p>
+        ///
+        /// <p>A deployment can be in one of the following states:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Activating</code> - The deployment is being created.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Active</code> - The deployment was successfully created, and it's currently
+        /// running on the container service. The container service can have only one deployment in an
+        /// active state at a time.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Inactive</code> - The deployment was previously successfully created, but it is
+        /// not currently running on the container service.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Failed</code> - The deployment failed. Use the <code>GetContainerLog</code>
+        /// action to view the log events for the containers in the deployment to try to determine the
+        /// reason for the failure.</p>
+        /// </li>
+        /// </ul>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ContainerServiceDeploymentState>,
@@ -3177,6 +3834,11 @@ pub mod container_service_deployment {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `containers`.
+        ///
+        /// To override the contents of this collection use [`set_containers`](Self::set_containers).
+        ///
+        /// <p>An object that describes the configuration for the containers of the deployment.</p>
         pub fn containers(
             mut self,
             k: impl Into<std::string::String>,
@@ -3187,6 +3849,7 @@ pub mod container_service_deployment {
             self.containers = Some(hash_map);
             self
         }
+        /// <p>An object that describes the configuration for the containers of the deployment.</p>
         pub fn set_containers(
             mut self,
             input: std::option::Option<
@@ -3201,6 +3864,7 @@ pub mod container_service_deployment {
             self.public_endpoint = Some(input);
             self
         }
+        /// <p>An object that describes the endpoint of the deployment.</p>
         pub fn set_public_endpoint(
             mut self,
             input: std::option::Option<crate::model::ContainerServiceEndpoint>,
@@ -3209,11 +3873,15 @@ pub mod container_service_deployment {
             self
         }
         /// <p>The timestamp when the deployment was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the deployment was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -3276,6 +3944,8 @@ pub mod container_service_endpoint {
             self.container_name = Some(input.into());
             self
         }
+        /// <p>The name of the container entry of the deployment that the endpoint configuration applies
+        /// to.</p>
         pub fn set_container_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3288,6 +3958,7 @@ pub mod container_service_endpoint {
             self.container_port = Some(input);
             self
         }
+        /// <p>The port of the specified container to which traffic is forwarded to.</p>
         pub fn set_container_port(mut self, input: std::option::Option<i32>) -> Self {
             self.container_port = input;
             self
@@ -3300,6 +3971,7 @@ pub mod container_service_endpoint {
             self.health_check = Some(input);
             self
         }
+        /// <p>An object that describes the health check configuration of the container.</p>
         pub fn set_health_check(
             mut self,
             input: std::option::Option<crate::model::ContainerServiceHealthCheckConfig>,
@@ -3381,6 +4053,8 @@ pub mod container_service_health_check_config {
             self.healthy_threshold = Some(input);
             self
         }
+        /// <p>The number of consecutive health checks successes required before moving the container to
+        /// the <code>Healthy</code> state. The default value is <code>2</code>.</p>
         pub fn set_healthy_threshold(mut self, input: std::option::Option<i32>) -> Self {
             self.healthy_threshold = input;
             self
@@ -3391,6 +4065,8 @@ pub mod container_service_health_check_config {
             self.unhealthy_threshold = Some(input);
             self
         }
+        /// <p>The number of consecutive health check failures required before moving the container to
+        /// the <code>Unhealthy</code> state. The default value is <code>2</code>.</p>
         pub fn set_unhealthy_threshold(mut self, input: std::option::Option<i32>) -> Self {
             self.unhealthy_threshold = input;
             self
@@ -3401,6 +4077,8 @@ pub mod container_service_health_check_config {
             self.timeout_seconds = Some(input);
             self
         }
+        /// <p>The amount of time, in seconds, during which no response means a failed health check. You
+        /// can specify between 2 and 60 seconds. The default value is <code>2</code>.</p>
         pub fn set_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_seconds = input;
             self
@@ -3411,6 +4089,8 @@ pub mod container_service_health_check_config {
             self.interval_seconds = Some(input);
             self
         }
+        /// <p>The approximate interval, in seconds, between health checks of an individual container.
+        /// You can specify between 5 and 300 seconds. The default value is <code>5</code>.</p>
         pub fn set_interval_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.interval_seconds = input;
             self
@@ -3421,6 +4101,8 @@ pub mod container_service_health_check_config {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path on the container on which to perform the health check. The default value is
+        /// <code>/</code>.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -3433,6 +4115,10 @@ pub mod container_service_health_check_config {
             self.success_codes = Some(input.into());
             self
         }
+        /// <p>The HTTP codes to use when checking for a successful response from a container. You can
+        /// specify values between <code>200</code> and <code>499</code>. You can specify multiple values
+        /// (for example, <code>200,202</code>) or a range of values (for example,
+        /// <code>200-299</code>).</p>
         pub fn set_success_codes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3466,6 +4152,7 @@ impl ContainerServiceHealthCheckConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Container {
     /// <p>The name of the image used for the container.</p>
+    ///
     /// <p>Container images sourced from your Lightsail container service, that are registered and
     /// stored on your service, start with a colon (<code>:</code>). For example,
     /// <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a public
@@ -3509,6 +4196,7 @@ pub mod container {
     }
     impl Builder {
         /// <p>The name of the image used for the container.</p>
+        ///
         /// <p>Container images sourced from your Lightsail container service, that are registered and
         /// stored on your service, start with a colon (<code>:</code>). For example,
         /// <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a public
@@ -3518,16 +4206,29 @@ pub mod container {
             self.image = Some(input.into());
             self
         }
+        /// <p>The name of the image used for the container.</p>
+        ///
+        /// <p>Container images sourced from your Lightsail container service, that are registered and
+        /// stored on your service, start with a colon (<code>:</code>). For example,
+        /// <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a public
+        /// registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or
+        /// <code>nginx</code>.</p>
         pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image = input;
             self
         }
+        /// Appends an item to `command`.
+        ///
+        /// To override the contents of this collection use [`set_command`](Self::set_command).
+        ///
+        /// <p>The launch command for the container.</p>
         pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.command.unwrap_or_default();
             v.push(input.into());
             self.command = Some(v);
             self
         }
+        /// <p>The launch command for the container.</p>
         pub fn set_command(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3535,6 +4236,11 @@ pub mod container {
             self.command = input;
             self
         }
+        /// Adds a key-value pair to `environment`.
+        ///
+        /// To override the contents of this collection use [`set_environment`](Self::set_environment).
+        ///
+        /// <p>The environment variables of the container.</p>
         pub fn environment(
             mut self,
             k: impl Into<std::string::String>,
@@ -3545,6 +4251,7 @@ pub mod container {
             self.environment = Some(hash_map);
             self
         }
+        /// <p>The environment variables of the container.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<
@@ -3554,6 +4261,11 @@ pub mod container {
             self.environment = input;
             self
         }
+        /// Adds a key-value pair to `ports`.
+        ///
+        /// To override the contents of this collection use [`set_ports`](Self::set_ports).
+        ///
+        /// <p>The open firewall ports of the container.</p>
         pub fn ports(
             mut self,
             k: impl Into<std::string::String>,
@@ -3564,6 +4276,7 @@ pub mod container {
             self.ports = Some(hash_map);
             self
         }
+        /// <p>The open firewall ports of the container.</p>
         pub fn set_ports(
             mut self,
             input: std::option::Option<
@@ -3594,6 +4307,7 @@ impl Container {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3605,9 +4319,13 @@ impl Container {
     std::hash::Hash,
 )]
 pub enum ContainerServiceProtocol {
+    #[allow(missing_docs)] // documentation missing in model
     Http,
+    #[allow(missing_docs)] // documentation missing in model
     Https,
+    #[allow(missing_docs)] // documentation missing in model
     Tcp,
+    #[allow(missing_docs)] // documentation missing in model
     Udp,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3631,6 +4349,7 @@ impl std::str::FromStr for ContainerServiceProtocol {
     }
 }
 impl ContainerServiceProtocol {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContainerServiceProtocol::Http => "HTTP",
@@ -3640,6 +4359,7 @@ impl ContainerServiceProtocol {
             ContainerServiceProtocol::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HTTP", "HTTPS", "TCP", "UDP"]
     }
@@ -3650,6 +4370,7 @@ impl AsRef<str> for ContainerServiceProtocol {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3661,9 +4382,13 @@ impl AsRef<str> for ContainerServiceProtocol {
     std::hash::Hash,
 )]
 pub enum ContainerServiceDeploymentState {
+    #[allow(missing_docs)] // documentation missing in model
     Activating,
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3687,6 +4412,7 @@ impl std::str::FromStr for ContainerServiceDeploymentState {
     }
 }
 impl ContainerServiceDeploymentState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContainerServiceDeploymentState::Activating => "ACTIVATING",
@@ -3696,6 +4422,7 @@ impl ContainerServiceDeploymentState {
             ContainerServiceDeploymentState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVATING", "ACTIVE", "FAILED", "INACTIVE"]
     }
@@ -3862,6 +4589,67 @@ pub mod container_service_state_detail {
             self.code = Some(input);
             self
         }
+        /// <p>The state code of the container service.</p>
+        /// <p>The following state codes are possible:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The following state codes are possible if your container service is in a
+        /// <code>DEPLOYING</code> or <code>UPDATING</code> state:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATING_SYSTEM_RESOURCES</code> - The system resources for your container
+        /// service are being created.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATING_NETWORK_INFRASTRUCTURE</code> - The network infrastructure for your
+        /// container service are being created.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PROVISIONING_CERTIFICATE</code> - The SSL/TLS certificate for your container
+        /// service is being created.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PROVISIONING_SERVICE</code> - Your container service is being
+        /// provisioned.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATING_DEPLOYMENT</code> - Your deployment is being created on your
+        /// container service.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EVALUATING_HEALTH_CHECK</code> - The health of your deployment is being
+        /// evaluated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ACTIVATING_DEPLOYMENT</code> - Your deployment is being activated.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>The following state codes are possible if your container service is in a
+        /// <code>PENDING</code> state:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CERTIFICATE_LIMIT_EXCEEDED</code> - The SSL/TLS certificate required for
+        /// your container service exceeds the maximum number of certificates allowed for your
+        /// account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UNKNOWN_ERROR</code> - An error was experienced when your container service
+        /// was being created.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn set_code(
             mut self,
             input: std::option::Option<crate::model::ContainerServiceStateDetailCode>,
@@ -3878,6 +4666,11 @@ pub mod container_service_state_detail {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message that provides more information for the state code.</p>
+        /// <note>
+        /// <p>The state detail is populated only when a container service is in a
+        /// <code>PENDING</code>, <code>DEPLOYING</code>, or <code>UPDATING</code> state.</p>
+        /// </note>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3898,6 +4691,7 @@ impl ContainerServiceStateDetail {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3909,14 +4703,23 @@ impl ContainerServiceStateDetail {
     std::hash::Hash,
 )]
 pub enum ContainerServiceStateDetailCode {
+    #[allow(missing_docs)] // documentation missing in model
     ActivatingDeployment,
+    #[allow(missing_docs)] // documentation missing in model
     CertificateLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     CreatingDeployment,
+    #[allow(missing_docs)] // documentation missing in model
     CreatingNetworkInfrastructure,
+    #[allow(missing_docs)] // documentation missing in model
     CreatingSystemResources,
+    #[allow(missing_docs)] // documentation missing in model
     EvaluatingHealthCheck,
+    #[allow(missing_docs)] // documentation missing in model
     ProvisioningCertificate,
+    #[allow(missing_docs)] // documentation missing in model
     ProvisioningService,
+    #[allow(missing_docs)] // documentation missing in model
     UnknownError,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3949,6 +4752,7 @@ impl std::str::FromStr for ContainerServiceStateDetailCode {
     }
 }
 impl ContainerServiceStateDetailCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContainerServiceStateDetailCode::ActivatingDeployment => "ACTIVATING_DEPLOYMENT",
@@ -3967,6 +4771,7 @@ impl ContainerServiceStateDetailCode {
             ContainerServiceStateDetailCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVATING_DEPLOYMENT",
@@ -3987,6 +4792,7 @@ impl AsRef<str> for ContainerServiceStateDetailCode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3998,12 +4804,19 @@ impl AsRef<str> for ContainerServiceStateDetailCode {
     std::hash::Hash,
 )]
 pub enum ContainerServiceState {
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Deploying,
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4030,6 +4843,7 @@ impl std::str::FromStr for ContainerServiceState {
     }
 }
 impl ContainerServiceState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContainerServiceState::Deleting => "DELETING",
@@ -4042,6 +4856,7 @@ impl ContainerServiceState {
             ContainerServiceState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DELETING",
@@ -4060,6 +4875,7 @@ impl AsRef<str> for ContainerServiceState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4071,11 +4887,17 @@ impl AsRef<str> for ContainerServiceState {
     std::hash::Hash,
 )]
 pub enum ContainerServicePowerName {
+    #[allow(missing_docs)] // documentation missing in model
     Large,
+    #[allow(missing_docs)] // documentation missing in model
     Medium,
+    #[allow(missing_docs)] // documentation missing in model
     Micro,
+    #[allow(missing_docs)] // documentation missing in model
     Nano,
+    #[allow(missing_docs)] // documentation missing in model
     Small,
+    #[allow(missing_docs)] // documentation missing in model
     Xlarge,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4101,6 +4923,7 @@ impl std::str::FromStr for ContainerServicePowerName {
     }
 }
 impl ContainerServicePowerName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContainerServicePowerName::Large => "large",
@@ -4112,6 +4935,7 @@ impl ContainerServicePowerName {
             ContainerServicePowerName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["large", "medium", "micro", "nano", "small", "xlarge"]
     }
@@ -4161,6 +4985,9 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key of the tag.</p>
+        /// <p>Constraints: Tag keys accept a maximum of 128 letters, numbers, spaces in UTF-8, or the
+        /// following characters: + - = . _ : / @</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -4172,6 +4999,9 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the tag.</p>
+        /// <p>Constraints: Tag values accept a maximum of 256 letters, numbers, spaces in UTF-8, or the
+        /// following characters: + - = . _ : / @</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -4203,13 +5033,15 @@ pub struct Bucket {
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID of the bundle currently applied to the bucket.</p>
+    ///
     /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a
     /// bucket.</p>
+    ///
     /// <p>Use the <a>UpdateBucketBundle</a> action to change the bundle of a
     /// bucket.</p>
     pub bundle_id: std::option::Option<std::string::String>,
     /// <p>The timestamp when the distribution was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The URL of the bucket.</p>
     pub url: std::option::Option<std::string::String>,
     /// <p>Describes the resource location.</p>
@@ -4224,6 +5056,7 @@ pub struct Bucket {
     /// Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Indicates whether object versioning is enabled for the bucket.</p>
+    ///
     /// <p>The following options can be configured:</p>
     /// <ul>
     /// <li>
@@ -4243,8 +5076,10 @@ pub struct Bucket {
     pub object_versioning: std::option::Option<std::string::String>,
     /// <p>Indicates whether the bundle that is currently applied to a bucket can be changed to
     /// another bundle.</p>
+    ///
     /// <p>You can update a bucket's bundle only one time within a monthly AWS billing
     /// cycle.</p>
+    ///
     /// <p>Use the <a>UpdateBucketBundle</a> action to change a bucket's bundle.</p>
     pub able_to_update_bundle: std::option::Option<bool>,
     /// <p>An array of strings that specify the AWS account IDs that have read-only access to the
@@ -4252,6 +5087,7 @@ pub struct Bucket {
     pub readonly_access_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of objects that describe Lightsail instances that have access to the
     /// bucket.</p>
+    ///
     /// <p>Use the <a>SetResourceAccessForBucket</a> action to update the instances that
     /// have access to a bucket.</p>
     pub resources_receiving_access:
@@ -4293,7 +5129,7 @@ pub mod bucket {
         pub(crate) access_rules: std::option::Option<crate::model::AccessRules>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) bundle_id: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4313,6 +5149,7 @@ pub mod bucket {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The Lightsail resource type of the bucket (for example, <code>Bucket</code>).</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4325,6 +5162,7 @@ pub mod bucket {
             self.access_rules = Some(input);
             self
         }
+        /// <p>An object that describes the access rules of the bucket.</p>
         pub fn set_access_rules(
             mut self,
             input: std::option::Option<crate::model::AccessRules>,
@@ -4337,29 +5175,43 @@ pub mod bucket {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The ID of the bundle currently applied to the bucket.</p>
+        ///
         /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a
         /// bucket.</p>
+        ///
         /// <p>Use the <a>UpdateBucketBundle</a> action to change the bundle of a
         /// bucket.</p>
         pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bundle_id = Some(input.into());
             self
         }
+        /// <p>The ID of the bundle currently applied to the bucket.</p>
+        ///
+        /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a
+        /// bucket.</p>
+        ///
+        /// <p>Use the <a>UpdateBucketBundle</a> action to change the bundle of a
+        /// bucket.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
         }
         /// <p>The timestamp when the distribution was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the distribution was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -4368,6 +5220,7 @@ pub mod bucket {
             self.url = Some(input.into());
             self
         }
+        /// <p>The URL of the bucket.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -4377,6 +5230,7 @@ pub mod bucket {
             self.location = Some(input);
             self
         }
+        /// <p>Describes the resource location.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -4389,6 +5243,7 @@ pub mod bucket {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the bucket.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4400,16 +5255,27 @@ pub mod bucket {
             self.support_code = Some(input.into());
             self
         }
+        /// <p>The support code for a bucket. Include this code in your email to support when you have
+        /// questions about a Lightsail bucket. This code enables our support team to look up your
+        /// Lightsail information more easily.</p>
         pub fn set_support_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.support_code = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag keys and optional values for the bucket. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Tags in
+        /// Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tag keys and optional values for the bucket. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Tags in
+        /// Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4418,6 +5284,7 @@ pub mod bucket {
             self
         }
         /// <p>Indicates whether object versioning is enabled for the bucket.</p>
+        ///
         /// <p>The following options can be configured:</p>
         /// <ul>
         /// <li>
@@ -4438,6 +5305,24 @@ pub mod bucket {
             self.object_versioning = Some(input.into());
             self
         }
+        /// <p>Indicates whether object versioning is enabled for the bucket.</p>
+        ///
+        /// <p>The following options can be configured:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Enabled</code> - Object versioning is enabled.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Suspended</code> - Object versioning was previously enabled but is currently
+        /// suspended. Existing object versions are retained.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NeverEnabled</code> - Object versioning has never been enabled.</p>
+        /// </li>
+        /// </ul>
         pub fn set_object_versioning(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4447,23 +5332,40 @@ pub mod bucket {
         }
         /// <p>Indicates whether the bundle that is currently applied to a bucket can be changed to
         /// another bundle.</p>
+        ///
         /// <p>You can update a bucket's bundle only one time within a monthly AWS billing
         /// cycle.</p>
+        ///
         /// <p>Use the <a>UpdateBucketBundle</a> action to change a bucket's bundle.</p>
         pub fn able_to_update_bundle(mut self, input: bool) -> Self {
             self.able_to_update_bundle = Some(input);
             self
         }
+        /// <p>Indicates whether the bundle that is currently applied to a bucket can be changed to
+        /// another bundle.</p>
+        ///
+        /// <p>You can update a bucket's bundle only one time within a monthly AWS billing
+        /// cycle.</p>
+        ///
+        /// <p>Use the <a>UpdateBucketBundle</a> action to change a bucket's bundle.</p>
         pub fn set_able_to_update_bundle(mut self, input: std::option::Option<bool>) -> Self {
             self.able_to_update_bundle = input;
             self
         }
+        /// Appends an item to `readonly_access_accounts`.
+        ///
+        /// To override the contents of this collection use [`set_readonly_access_accounts`](Self::set_readonly_access_accounts).
+        ///
+        /// <p>An array of strings that specify the AWS account IDs that have read-only access to the
+        /// bucket.</p>
         pub fn readonly_access_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.readonly_access_accounts.unwrap_or_default();
             v.push(input.into());
             self.readonly_access_accounts = Some(v);
             self
         }
+        /// <p>An array of strings that specify the AWS account IDs that have read-only access to the
+        /// bucket.</p>
         pub fn set_readonly_access_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4471,6 +5373,15 @@ pub mod bucket {
             self.readonly_access_accounts = input;
             self
         }
+        /// Appends an item to `resources_receiving_access`.
+        ///
+        /// To override the contents of this collection use [`set_resources_receiving_access`](Self::set_resources_receiving_access).
+        ///
+        /// <p>An array of objects that describe Lightsail instances that have access to the
+        /// bucket.</p>
+        ///
+        /// <p>Use the <a>SetResourceAccessForBucket</a> action to update the instances that
+        /// have access to a bucket.</p>
         pub fn resources_receiving_access(
             mut self,
             input: impl Into<crate::model::ResourceReceivingAccess>,
@@ -4480,6 +5391,11 @@ pub mod bucket {
             self.resources_receiving_access = Some(v);
             self
         }
+        /// <p>An array of objects that describe Lightsail instances that have access to the
+        /// bucket.</p>
+        ///
+        /// <p>Use the <a>SetResourceAccessForBucket</a> action to update the instances that
+        /// have access to a bucket.</p>
         pub fn set_resources_receiving_access(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceReceivingAccess>>,
@@ -4492,6 +5408,7 @@ pub mod bucket {
             self.state = Some(input);
             self
         }
+        /// <p>An object that describes the state of the bucket.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::BucketState>) -> Self {
             self.state = input;
             self
@@ -4530,7 +5447,9 @@ impl Bucket {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketState {
     /// <p>The state code of the bucket.</p>
+    ///
     /// <p>The following codes are possible:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -4565,7 +5484,9 @@ pub mod bucket_state {
     }
     impl Builder {
         /// <p>The state code of the bucket.</p>
+        ///
         /// <p>The following codes are possible:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -4581,6 +5502,21 @@ pub mod bucket_state {
             self.code = Some(input.into());
             self
         }
+        /// <p>The state code of the bucket.</p>
+        ///
+        /// <p>The following codes are possible:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>OK</code> - The bucket is in a running state.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Unknown</code> - Creation of the bucket might have timed-out. You might want to
+        /// delete the bucket and create a new one.</p>
+        /// </li>
+        /// </ul>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
@@ -4590,6 +5526,7 @@ pub mod bucket_state {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message that describes the state of the bucket.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4642,6 +5579,7 @@ pub mod resource_receiving_access {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Lightsail instance.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4651,6 +5589,7 @@ pub mod resource_receiving_access {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The Lightsail resource type (for example, <code>Instance</code>).</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4683,12 +5622,16 @@ impl ResourceReceivingAccess {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessRules {
     /// <p>Specifies the anonymous access to all objects in a bucket.</p>
+    ///
     /// <p>The following options can be specified:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
     /// <code>public</code> - Sets all objects in the bucket to public (read-only), making
     /// them readable by anyone in the world.</p>
+    ///
+    ///
     /// <p>If the <code>getObject</code> value is set to <code>public</code>, then all objects in
     /// the bucket default to public regardless of the <code>allowPublicOverrides</code>
     /// value.</p>
@@ -4697,6 +5640,8 @@ pub struct AccessRules {
     /// <p>
     /// <code>private</code> - Sets all objects in the bucket to private, making them readable
     /// only by you or anyone you give access to.</p>
+    ///
+    ///
     /// <p>If the <code>getObject</code> value is set to <code>private</code>, and the
     /// <code>allowPublicOverrides</code> value is set to <code>true</code>, then all objects in
     /// the bucket default to private unless they are configured with a <code>public-read</code>
@@ -4708,6 +5653,7 @@ pub struct AccessRules {
     /// <p>A Boolean value that indicates whether the access control list (ACL) permissions that are
     /// applied to individual objects override the <code>getObject</code> option that is currently
     /// specified.</p>
+    ///
     /// <p>When this is true, you can use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html">PutObjectAcl</a> Amazon S3 API action to set
     /// individual objects to public (read-only) using the <code>public-read</code> ACL, or to private
     /// using the <code>private</code> ACL.</p>
@@ -4732,12 +5678,16 @@ pub mod access_rules {
     }
     impl Builder {
         /// <p>Specifies the anonymous access to all objects in a bucket.</p>
+        ///
         /// <p>The following options can be specified:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>
         /// <code>public</code> - Sets all objects in the bucket to public (read-only), making
         /// them readable by anyone in the world.</p>
+        ///
+        ///
         /// <p>If the <code>getObject</code> value is set to <code>public</code>, then all objects in
         /// the bucket default to public regardless of the <code>allowPublicOverrides</code>
         /// value.</p>
@@ -4746,6 +5696,8 @@ pub mod access_rules {
         /// <p>
         /// <code>private</code> - Sets all objects in the bucket to private, making them readable
         /// only by you or anyone you give access to.</p>
+        ///
+        ///
         /// <p>If the <code>getObject</code> value is set to <code>private</code>, and the
         /// <code>allowPublicOverrides</code> value is set to <code>true</code>, then all objects in
         /// the bucket default to private unless they are configured with a <code>public-read</code>
@@ -4757,6 +5709,34 @@ pub mod access_rules {
             self.get_object = Some(input);
             self
         }
+        /// <p>Specifies the anonymous access to all objects in a bucket.</p>
+        ///
+        /// <p>The following options can be specified:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>public</code> - Sets all objects in the bucket to public (read-only), making
+        /// them readable by anyone in the world.</p>
+        ///
+        ///
+        /// <p>If the <code>getObject</code> value is set to <code>public</code>, then all objects in
+        /// the bucket default to public regardless of the <code>allowPublicOverrides</code>
+        /// value.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>private</code> - Sets all objects in the bucket to private, making them readable
+        /// only by you or anyone you give access to.</p>
+        ///
+        ///
+        /// <p>If the <code>getObject</code> value is set to <code>private</code>, and the
+        /// <code>allowPublicOverrides</code> value is set to <code>true</code>, then all objects in
+        /// the bucket default to private unless they are configured with a <code>public-read</code>
+        /// ACL. Individual objects with a <code>public-read</code> ACL are readable by anyone in the
+        /// world.</p>
+        /// </li>
+        /// </ul>
         pub fn set_get_object(
             mut self,
             input: std::option::Option<crate::model::AccessType>,
@@ -4767,6 +5747,7 @@ pub mod access_rules {
         /// <p>A Boolean value that indicates whether the access control list (ACL) permissions that are
         /// applied to individual objects override the <code>getObject</code> option that is currently
         /// specified.</p>
+        ///
         /// <p>When this is true, you can use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html">PutObjectAcl</a> Amazon S3 API action to set
         /// individual objects to public (read-only) using the <code>public-read</code> ACL, or to private
         /// using the <code>private</code> ACL.</p>
@@ -4774,6 +5755,13 @@ pub mod access_rules {
             self.allow_public_overrides = Some(input);
             self
         }
+        /// <p>A Boolean value that indicates whether the access control list (ACL) permissions that are
+        /// applied to individual objects override the <code>getObject</code> option that is currently
+        /// specified.</p>
+        ///
+        /// <p>When this is true, you can use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html">PutObjectAcl</a> Amazon S3 API action to set
+        /// individual objects to public (read-only) using the <code>public-read</code> ACL, or to private
+        /// using the <code>private</code> ACL.</p>
         pub fn set_allow_public_overrides(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_public_overrides = input;
             self
@@ -4794,6 +5782,7 @@ impl AccessRules {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4805,7 +5794,9 @@ impl AccessRules {
     std::hash::Hash,
 )]
 pub enum AccessType {
+    #[allow(missing_docs)] // documentation missing in model
     Private,
+    #[allow(missing_docs)] // documentation missing in model
     Public,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4827,6 +5818,7 @@ impl std::str::FromStr for AccessType {
     }
 }
 impl AccessType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccessType::Private => "private",
@@ -4834,6 +5826,7 @@ impl AccessType {
             AccessType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["private", "public"]
     }
@@ -4844,6 +5837,7 @@ impl AsRef<str> for AccessType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4855,8 +5849,11 @@ impl AsRef<str> for AccessType {
     std::hash::Hash,
 )]
 pub enum AlarmState {
+    #[allow(missing_docs)] // documentation missing in model
     Alarm,
+    #[allow(missing_docs)] // documentation missing in model
     InsufficientData,
+    #[allow(missing_docs)] // documentation missing in model
     Ok,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4879,6 +5876,7 @@ impl std::str::FromStr for AlarmState {
     }
 }
 impl AlarmState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AlarmState::Alarm => "ALARM",
@@ -4887,6 +5885,7 @@ impl AlarmState {
             AlarmState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALARM", "INSUFFICIENT_DATA", "OK"]
     }
@@ -4897,6 +5896,7 @@ impl AsRef<str> for AlarmState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4908,7 +5908,9 @@ impl AsRef<str> for AlarmState {
     std::hash::Hash,
 )]
 pub enum ResourceBucketAccess {
+    #[allow(missing_docs)] // documentation missing in model
     Allow,
+    #[allow(missing_docs)] // documentation missing in model
     Deny,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4930,6 +5932,7 @@ impl std::str::FromStr for ResourceBucketAccess {
     }
 }
 impl ResourceBucketAccess {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceBucketAccess::Allow => "allow",
@@ -4937,6 +5940,7 @@ impl ResourceBucketAccess {
             ResourceBucketAccess::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["allow", "deny"]
     }
@@ -4947,6 +5951,7 @@ impl AsRef<str> for ResourceBucketAccess {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4958,7 +5963,9 @@ impl AsRef<str> for ResourceBucketAccess {
     std::hash::Hash,
 )]
 pub enum IpAddressType {
+    #[allow(missing_docs)] // documentation missing in model
     Dualstack,
+    #[allow(missing_docs)] // documentation missing in model
     Ipv4,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4980,6 +5987,7 @@ impl std::str::FromStr for IpAddressType {
     }
 }
 impl IpAddressType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IpAddressType::Dualstack => "dualstack",
@@ -4987,6 +5995,7 @@ impl IpAddressType {
             IpAddressType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["dualstack", "ipv4"]
     }
@@ -4997,6 +6006,7 @@ impl AsRef<str> for IpAddressType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5008,6 +6018,7 @@ impl AsRef<str> for IpAddressType {
     std::hash::Hash,
 )]
 pub enum ContactMethodVerificationProtocol {
+    #[allow(missing_docs)] // documentation missing in model
     Email,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5028,12 +6039,14 @@ impl std::str::FromStr for ContactMethodVerificationProtocol {
     }
 }
 impl ContactMethodVerificationProtocol {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContactMethodVerificationProtocol::Email => "Email",
             ContactMethodVerificationProtocol::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Email"]
     }
@@ -5054,7 +6067,7 @@ pub struct ContainerImage {
     /// <p>The digest of the container image.</p>
     pub digest: std::option::Option<std::string::String>,
     /// <p>The timestamp when the container image was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ContainerImage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5073,7 +6086,7 @@ pub mod container_image {
     pub struct Builder {
         pub(crate) image: std::option::Option<std::string::String>,
         pub(crate) digest: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the container image.</p>
@@ -5081,6 +6094,7 @@ pub mod container_image {
             self.image = Some(input.into());
             self
         }
+        /// <p>The name of the container image.</p>
         pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image = input;
             self
@@ -5090,16 +6104,21 @@ pub mod container_image {
             self.digest = Some(input.into());
             self
         }
+        /// <p>The digest of the container image.</p>
         pub fn set_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.digest = input;
             self
         }
         /// <p>The timestamp when the container image was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the container image was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -5286,6 +6305,25 @@ pub mod port_info {
             self.from_port = Some(input);
             self
         }
+        /// <p>The first port in a range of open ports on an instance.</p>
+        /// <p>Allowed ports:</p>
+        /// <ul>
+        /// <li>
+        /// <p>TCP and UDP - <code>0</code> to <code>65535</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>ICMP - The ICMP type for IPv4 addresses. For example, specify <code>8</code> as the
+        /// <code>fromPort</code> (ICMP type), and <code>-1</code> as the <code>toPort</code> (ICMP
+        /// code), to enable ICMP Ping. For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on <i>Wikipedia</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>ICMPv6 - The ICMP type for IPv6 addresses. For example, specify <code>128</code> as
+        /// the <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6
+        /// code). For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
+        /// Control Message Protocol for IPv6</a>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_from_port(mut self, input: std::option::Option<i32>) -> Self {
             self.from_port = input;
             self
@@ -5313,6 +6351,25 @@ pub mod port_info {
             self.to_port = Some(input);
             self
         }
+        /// <p>The last port in a range of open ports on an instance.</p>
+        /// <p>Allowed ports:</p>
+        /// <ul>
+        /// <li>
+        /// <p>TCP and UDP - <code>0</code> to <code>65535</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>ICMP - The ICMP code for IPv4 addresses. For example, specify <code>8</code> as the
+        /// <code>fromPort</code> (ICMP type), and <code>-1</code> as the <code>toPort</code> (ICMP
+        /// code), to enable ICMP Ping. For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on <i>Wikipedia</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>ICMPv6 - The ICMP code for IPv6 addresses. For example, specify <code>128</code> as
+        /// the <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6
+        /// code). For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
+        /// Control Message Protocol for IPv6</a>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_to_port(mut self, input: std::option::Option<i32>) -> Self {
             self.to_port = input;
             self
@@ -5356,6 +6413,41 @@ pub mod port_info {
             self.protocol = Some(input);
             self
         }
+        /// <p>The IP protocol name.</p>
+        /// <p>The name can be one of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>tcp</code> - Transmission Control Protocol (TCP) provides reliable, ordered, and
+        /// error-checked delivery of streamed data between applications running on hosts
+        /// communicating by an IP network. If you have an application that doesn't require reliable
+        /// data stream service, use UDP instead.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>all</code> - All transport layer protocol types. For more general information,
+        /// see <a href="https://en.wikipedia.org/wiki/Transport_layer">Transport layer</a> on
+        /// <i>Wikipedia</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>udp</code> - With User Datagram Protocol (UDP), computer applications can send
+        /// messages (or datagrams) to other hosts on an Internet Protocol (IP) network. Prior
+        /// communications are not required to set up transmission channels or data paths.
+        /// Applications that don't require reliable data stream service can use UDP, which provides a
+        /// connectionless datagram service that emphasizes reduced latency over reliability. If you
+        /// do require reliable data stream service, use TCP instead.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error
+        /// messages and operational information indicating success or failure when communicating with
+        /// an instance. For example, an error is indicated when an instance could not be reached.
+        /// When you specify <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP
+        /// type using the <code>fromPort</code> parameter, and ICMP code using the
+        /// <code>toPort</code> parameter.</p>
+        /// </li>
+        /// </ul>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::NetworkProtocol>,
@@ -5363,12 +6455,54 @@ pub mod port_info {
             self.protocol = input;
             self
         }
+        /// Appends an item to `cidrs`.
+        ///
+        /// To override the contents of this collection use [`set_cidrs`](Self::set_cidrs).
+        ///
+        /// <p>The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are allowed to
+        /// connect to an instance through the ports, and the protocol.</p>
+        /// <note>
+        /// <p>The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are allowed to
+        /// connect to an instance.</p>
+        /// </note>
+        /// <p>Examples:</p>
+        /// <ul>
+        /// <li>
+        /// <p>To allow the IP address <code>192.0.2.44</code>, specify <code>192.0.2.44</code> or
+        /// <code>192.0.2.44/32</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>To allow the IP addresses <code>192.0.2.0</code> to <code>192.0.2.255</code>, specify
+        /// <code>192.0.2.0/24</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+        /// Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
         pub fn cidrs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cidrs.unwrap_or_default();
             v.push(input.into());
             self.cidrs = Some(v);
             self
         }
+        /// <p>The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are allowed to
+        /// connect to an instance through the ports, and the protocol.</p>
+        /// <note>
+        /// <p>The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are allowed to
+        /// connect to an instance.</p>
+        /// </note>
+        /// <p>Examples:</p>
+        /// <ul>
+        /// <li>
+        /// <p>To allow the IP address <code>192.0.2.44</code>, specify <code>192.0.2.44</code> or
+        /// <code>192.0.2.44/32</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>To allow the IP addresses <code>192.0.2.0</code> to <code>192.0.2.255</code>, specify
+        /// <code>192.0.2.0/24</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+        /// Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
         pub fn set_cidrs(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5376,12 +6510,34 @@ pub mod port_info {
             self.cidrs = input;
             self
         }
+        /// Appends an item to `ipv6_cidrs`.
+        ///
+        /// To override the contents of this collection use [`set_ipv6_cidrs`](Self::set_ipv6_cidrs).
+        ///
+        /// <p>The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are allowed to
+        /// connect to an instance through the ports, and the protocol. Only devices with an IPv6 address
+        /// can connect to an instance through IPv6; otherwise, IPv4 should be used.</p>
+        /// <note>
+        /// <p>The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect to
+        /// an instance.</p>
+        /// </note>
+        /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+        /// Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
         pub fn ipv6_cidrs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ipv6_cidrs.unwrap_or_default();
             v.push(input.into());
             self.ipv6_cidrs = Some(v);
             self
         }
+        /// <p>The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are allowed to
+        /// connect to an instance through the ports, and the protocol. Only devices with an IPv6 address
+        /// can connect to an instance through IPv6; otherwise, IPv4 should be used.</p>
+        /// <note>
+        /// <p>The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect to
+        /// an instance.</p>
+        /// </note>
+        /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+        /// Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
         pub fn set_ipv6_cidrs(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5389,12 +6545,24 @@ pub mod port_info {
             self.ipv6_cidrs = input;
             self
         }
+        /// Appends an item to `cidr_list_aliases`.
+        ///
+        /// To override the contents of this collection use [`set_cidr_list_aliases`](Self::set_cidr_list_aliases).
+        ///
+        /// <p>An alias that defines access for a preconfigured range of IP addresses.</p>
+        /// <p>The only alias currently supported is <code>lightsail-connect</code>, which allows IP
+        /// addresses of the browser-based RDP/SSH client in the Lightsail console to connect to your
+        /// instance.</p>
         pub fn cidr_list_aliases(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cidr_list_aliases.unwrap_or_default();
             v.push(input.into());
             self.cidr_list_aliases = Some(v);
             self
         }
+        /// <p>An alias that defines access for a preconfigured range of IP addresses.</p>
+        /// <p>The only alias currently supported is <code>lightsail-connect</code>, which allows IP
+        /// addresses of the browser-based RDP/SSH client in the Lightsail console to connect to your
+        /// instance.</p>
         pub fn set_cidr_list_aliases(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5422,6 +6590,7 @@ impl PortInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5433,9 +6602,13 @@ impl PortInfo {
     std::hash::Hash,
 )]
 pub enum NetworkProtocol {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Icmp,
+    #[allow(missing_docs)] // documentation missing in model
     Tcp,
+    #[allow(missing_docs)] // documentation missing in model
     Udp,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5459,6 +6632,7 @@ impl std::str::FromStr for NetworkProtocol {
     }
 }
 impl NetworkProtocol {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NetworkProtocol::All => "all",
@@ -5468,6 +6642,7 @@ impl NetworkProtocol {
             NetworkProtocol::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["all", "icmp", "tcp", "udp"]
     }
@@ -5478,6 +6653,7 @@ impl AsRef<str> for NetworkProtocol {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5489,7 +6665,9 @@ impl AsRef<str> for NetworkProtocol {
     std::hash::Hash,
 )]
 pub enum ContactProtocol {
+    #[allow(missing_docs)] // documentation missing in model
     Email,
+    #[allow(missing_docs)] // documentation missing in model
     Sms,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5511,6 +6689,7 @@ impl std::str::FromStr for ContactProtocol {
     }
 }
 impl ContactProtocol {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContactProtocol::Email => "Email",
@@ -5518,6 +6697,7 @@ impl ContactProtocol {
             ContactProtocol::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Email", "SMS"]
     }
@@ -5528,6 +6708,7 @@ impl AsRef<str> for ContactProtocol {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5539,9 +6720,13 @@ impl AsRef<str> for ContactProtocol {
     std::hash::Hash,
 )]
 pub enum TreatMissingData {
+    #[allow(missing_docs)] // documentation missing in model
     Breaching,
+    #[allow(missing_docs)] // documentation missing in model
     Ignore,
+    #[allow(missing_docs)] // documentation missing in model
     Missing,
+    #[allow(missing_docs)] // documentation missing in model
     NotBreaching,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5565,6 +6750,7 @@ impl std::str::FromStr for TreatMissingData {
     }
 }
 impl TreatMissingData {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TreatMissingData::Breaching => "breaching",
@@ -5574,6 +6760,7 @@ impl TreatMissingData {
             TreatMissingData::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["breaching", "ignore", "missing", "notBreaching"]
     }
@@ -5584,6 +6771,7 @@ impl AsRef<str> for TreatMissingData {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5595,9 +6783,13 @@ impl AsRef<str> for TreatMissingData {
     std::hash::Hash,
 )]
 pub enum ComparisonOperator {
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThanOrEqualToThreshold,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThanThreshold,
+    #[allow(missing_docs)] // documentation missing in model
     LessThanOrEqualToThreshold,
+    #[allow(missing_docs)] // documentation missing in model
     LessThanThreshold,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5621,6 +6813,7 @@ impl std::str::FromStr for ComparisonOperator {
     }
 }
 impl ComparisonOperator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComparisonOperator::GreaterThanOrEqualToThreshold => "GreaterThanOrEqualToThreshold",
@@ -5630,6 +6823,7 @@ impl ComparisonOperator {
             ComparisonOperator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "GreaterThanOrEqualToThreshold",
@@ -5645,6 +6839,7 @@ impl AsRef<str> for ComparisonOperator {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5656,30 +6851,55 @@ impl AsRef<str> for ComparisonOperator {
     std::hash::Hash,
 )]
 pub enum MetricName {
+    #[allow(missing_docs)] // documentation missing in model
     BurstCapacityPercentage,
+    #[allow(missing_docs)] // documentation missing in model
     BurstCapacityTime,
+    #[allow(missing_docs)] // documentation missing in model
     CpuUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     ClientTlsNegotiationErrorCount,
+    #[allow(missing_docs)] // documentation missing in model
     DatabaseConnections,
+    #[allow(missing_docs)] // documentation missing in model
     DiskQueueDepth,
+    #[allow(missing_docs)] // documentation missing in model
     FreeStorageSpace,
+    #[allow(missing_docs)] // documentation missing in model
     HttpCodeInstance2XxCount,
+    #[allow(missing_docs)] // documentation missing in model
     HttpCodeInstance3XxCount,
+    #[allow(missing_docs)] // documentation missing in model
     HttpCodeInstance4XxCount,
+    #[allow(missing_docs)] // documentation missing in model
     HttpCodeInstance5XxCount,
+    #[allow(missing_docs)] // documentation missing in model
     HttpCodeLb4XxCount,
+    #[allow(missing_docs)] // documentation missing in model
     HttpCodeLb5XxCount,
+    #[allow(missing_docs)] // documentation missing in model
     HealthyHostCount,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceResponseTime,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkIn,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkOut,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkReceiveThroughput,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkTransmitThroughput,
+    #[allow(missing_docs)] // documentation missing in model
     RejectedConnectionCount,
+    #[allow(missing_docs)] // documentation missing in model
     RequestCount,
+    #[allow(missing_docs)] // documentation missing in model
     StatusCheckFailed,
+    #[allow(missing_docs)] // documentation missing in model
     StatusCheckFailedInstance,
+    #[allow(missing_docs)] // documentation missing in model
     StatusCheckFailedSystem,
+    #[allow(missing_docs)] // documentation missing in model
     UnhealthyHostCount,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5724,6 +6944,7 @@ impl std::str::FromStr for MetricName {
     }
 }
 impl MetricName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MetricName::BurstCapacityPercentage => "BurstCapacityPercentage",
@@ -5754,6 +6975,7 @@ impl MetricName {
             MetricName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BurstCapacityPercentage",
@@ -5804,7 +7026,7 @@ pub struct StaticIp {
     /// your Lightsail information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The region and Availability Zone where the static IP was created.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The resource type (usually <code>StaticIp</code>).</p>
@@ -5841,7 +7063,7 @@ pub mod static_ip {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) ip_address: std::option::Option<std::string::String>,
@@ -5854,6 +7076,7 @@ pub mod static_ip {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5864,6 +7087,8 @@ pub mod static_ip {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the static IP (e.g.,
+        /// <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5875,16 +7100,23 @@ pub mod static_ip {
             self.support_code = Some(input.into());
             self
         }
+        /// <p>The support code. Include this code in your email to support when you have questions about
+        /// an instance or another resource in Lightsail. This code enables our support team to look up
+        /// your Lightsail information more easily.</p>
         pub fn set_support_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.support_code = input;
             self
         }
         /// <p>The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -5893,6 +7125,7 @@ pub mod static_ip {
             self.location = Some(input);
             self
         }
+        /// <p>The region and Availability Zone where the static IP was created.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -5905,6 +7138,7 @@ pub mod static_ip {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The resource type (usually <code>StaticIp</code>).</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -5917,6 +7151,7 @@ pub mod static_ip {
             self.ip_address = Some(input.into());
             self
         }
+        /// <p>The static IP address.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_address = input;
             self
@@ -5927,6 +7162,8 @@ pub mod static_ip {
             self.attached_to = Some(input.into());
             self
         }
+        /// <p>The instance where the static IP is attached (e.g.,
+        /// <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
         pub fn set_attached_to(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.attached_to = input;
             self
@@ -5936,6 +7173,7 @@ pub mod static_ip {
             self.is_attached = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether the static IP is attached.</p>
         pub fn set_is_attached(mut self, input: std::option::Option<bool>) -> Self {
             self.is_attached = input;
             self
@@ -5976,7 +7214,7 @@ pub struct RelationalDatabaseSnapshot {
     /// support team to look up your Lightsail information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The timestamp when the database snapshot was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Region name and Availability Zone where the database snapshot is located.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The Lightsail resource type.</p>
@@ -6047,7 +7285,7 @@ pub mod relational_database_snapshot {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6066,6 +7304,7 @@ pub mod relational_database_snapshot {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the database snapshot.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6075,6 +7314,7 @@ pub mod relational_database_snapshot {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the database snapshot.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -6086,16 +7326,23 @@ pub mod relational_database_snapshot {
             self.support_code = Some(input.into());
             self
         }
+        /// <p>The support code for the database snapshot. Include this code in your email to support
+        /// when you have questions about a database snapshot in Lightsail. This code enables our
+        /// support team to look up your Lightsail information more easily.</p>
         pub fn set_support_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.support_code = input;
             self
         }
         /// <p>The timestamp when the database snapshot was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the database snapshot was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -6104,6 +7351,7 @@ pub mod relational_database_snapshot {
             self.location = Some(input);
             self
         }
+        /// <p>The Region name and Availability Zone where the database snapshot is located.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -6116,6 +7364,7 @@ pub mod relational_database_snapshot {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The Lightsail resource type.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -6123,12 +7372,20 @@ pub mod relational_database_snapshot {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6141,6 +7398,7 @@ pub mod relational_database_snapshot {
             self.engine = Some(input.into());
             self
         }
+        /// <p>The software of the database snapshot (for example, <code>MySQL</code>)</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
@@ -6151,6 +7409,8 @@ pub mod relational_database_snapshot {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The database engine version for the database snapshot (for example,
+        /// <code>5.7.23</code>).</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6164,6 +7424,8 @@ pub mod relational_database_snapshot {
             self.size_in_gb = Some(input);
             self
         }
+        /// <p>The size of the disk in GB (for example, <code>32</code>) for the database
+        /// snapshot.</p>
         pub fn set_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.size_in_gb = input;
             self
@@ -6173,6 +7435,7 @@ pub mod relational_database_snapshot {
             self.state = Some(input.into());
             self
         }
+        /// <p>The state of the database snapshot.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -6185,6 +7448,7 @@ pub mod relational_database_snapshot {
             self.from_relational_database_name = Some(input.into());
             self
         }
+        /// <p>The name of the source database from which the database snapshot was created.</p>
         pub fn set_from_relational_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6201,6 +7465,8 @@ pub mod relational_database_snapshot {
             self.from_relational_database_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the database from which the database snapshot was
+        /// created.</p>
         pub fn set_from_relational_database_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6216,6 +7482,7 @@ pub mod relational_database_snapshot {
             self.from_relational_database_bundle_id = Some(input.into());
             self
         }
+        /// <p>The bundle ID of the database from which the database snapshot was created.</p>
         pub fn set_from_relational_database_bundle_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6232,6 +7499,8 @@ pub mod relational_database_snapshot {
             self.from_relational_database_blueprint_id = Some(input.into());
             self
         }
+        /// <p>The blueprint ID of the database from which the database snapshot was created. A blueprint
+        /// describes the major engine version of a database.</p>
         pub fn set_from_relational_database_blueprint_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6281,7 +7550,7 @@ pub struct RelationalDatabase {
     /// your Lightsail information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The timestamp when the database was created. Formatted in Unix time.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Region name and Availability Zone where the database is located.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The Lightsail resource type for the database (for example,
@@ -6319,7 +7588,7 @@ pub struct RelationalDatabase {
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The latest point in time to which the database can be restored. Formatted in Unix
     /// time.</p>
-    pub latest_restorable_time: std::option::Option<smithy_types::Instant>,
+    pub latest_restorable_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The master user name of the database.</p>
     pub master_username: std::option::Option<std::string::String>,
     /// <p>The status of parameter updates for the database.</p>
@@ -6397,7 +7666,7 @@ pub mod relational_database {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6412,7 +7681,7 @@ pub mod relational_database {
             std::option::Option<crate::model::PendingModifiedRelationalDatabaseValues>,
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) engine_version: std::option::Option<std::string::String>,
-        pub(crate) latest_restorable_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) latest_restorable_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) master_username: std::option::Option<std::string::String>,
         pub(crate) parameter_apply_status: std::option::Option<std::string::String>,
         pub(crate) preferred_backup_window: std::option::Option<std::string::String>,
@@ -6429,6 +7698,7 @@ pub mod relational_database {
             self.name = Some(input.into());
             self
         }
+        /// <p>The unique name of the database resource in Lightsail.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6438,6 +7708,7 @@ pub mod relational_database {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the database.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -6449,16 +7720,23 @@ pub mod relational_database {
             self.support_code = Some(input.into());
             self
         }
+        /// <p>The support code for the database. Include this code in your email to support when you
+        /// have questions about a database in Lightsail. This code enables our support team to look up
+        /// your Lightsail information more easily.</p>
         pub fn set_support_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.support_code = input;
             self
         }
         /// <p>The timestamp when the database was created. Formatted in Unix time.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the database was created. Formatted in Unix time.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -6467,6 +7745,7 @@ pub mod relational_database {
             self.location = Some(input);
             self
         }
+        /// <p>The Region name and Availability Zone where the database is located.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -6480,6 +7759,8 @@ pub mod relational_database {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The Lightsail resource type for the database (for example,
+        /// <code>RelationalDatabase</code>).</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -6487,12 +7768,20 @@ pub mod relational_database {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6509,6 +7798,8 @@ pub mod relational_database {
             self.relational_database_blueprint_id = Some(input.into());
             self
         }
+        /// <p>The blueprint ID for the database. A blueprint describes the major engine version of a
+        /// database.</p>
         pub fn set_relational_database_blueprint_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6525,6 +7816,8 @@ pub mod relational_database {
             self.relational_database_bundle_id = Some(input.into());
             self
         }
+        /// <p>The bundle ID for the database. A bundle describes the performance specifications for your
+        /// database.</p>
         pub fn set_relational_database_bundle_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6538,6 +7831,8 @@ pub mod relational_database {
             self.master_database_name = Some(input.into());
             self
         }
+        /// <p>The name of the master database created when the Lightsail database resource is
+        /// created.</p>
         pub fn set_master_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6550,6 +7845,7 @@ pub mod relational_database {
             self.hardware = Some(input);
             self
         }
+        /// <p>Describes the hardware of the database.</p>
         pub fn set_hardware(
             mut self,
             input: std::option::Option<crate::model::RelationalDatabaseHardware>,
@@ -6562,6 +7858,7 @@ pub mod relational_database {
             self.state = Some(input.into());
             self
         }
+        /// <p>Describes the current state of the database.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -6576,6 +7873,9 @@ pub mod relational_database {
             self.secondary_availability_zone = Some(input.into());
             self
         }
+        /// <p>Describes the secondary Availability Zone of a high availability database.</p>
+        /// <p>The secondary database is used for failover support of a high availability
+        /// database.</p>
         pub fn set_secondary_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6589,6 +7889,8 @@ pub mod relational_database {
             self.backup_retention_enabled = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether automated backup retention is enabled for the
+        /// database.</p>
         pub fn set_backup_retention_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.backup_retention_enabled = input;
             self
@@ -6601,6 +7903,7 @@ pub mod relational_database {
             self.pending_modified_values = Some(input);
             self
         }
+        /// <p>Describes pending database value modifications.</p>
         pub fn set_pending_modified_values(
             mut self,
             input: std::option::Option<crate::model::PendingModifiedRelationalDatabaseValues>,
@@ -6613,6 +7916,7 @@ pub mod relational_database {
             self.engine = Some(input.into());
             self
         }
+        /// <p>The database software (for example, <code>MySQL</code>).</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
@@ -6622,6 +7926,7 @@ pub mod relational_database {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The database engine version (for example, <code>5.7.23</code>).</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6631,13 +7936,15 @@ pub mod relational_database {
         }
         /// <p>The latest point in time to which the database can be restored. Formatted in Unix
         /// time.</p>
-        pub fn latest_restorable_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn latest_restorable_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.latest_restorable_time = Some(input);
             self
         }
+        /// <p>The latest point in time to which the database can be restored. Formatted in Unix
+        /// time.</p>
         pub fn set_latest_restorable_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.latest_restorable_time = input;
             self
@@ -6647,6 +7954,7 @@ pub mod relational_database {
             self.master_username = Some(input.into());
             self
         }
+        /// <p>The master user name of the database.</p>
         pub fn set_master_username(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6659,6 +7967,7 @@ pub mod relational_database {
             self.parameter_apply_status = Some(input.into());
             self
         }
+        /// <p>The status of parameter updates for the database.</p>
         pub fn set_parameter_apply_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6672,6 +7981,8 @@ pub mod relational_database {
             self.preferred_backup_window = Some(input.into());
             self
         }
+        /// <p>The daily time range during which automated backups are created for the database (for
+        /// example, <code>16:00-16:30</code>).</p>
         pub fn set_preferred_backup_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6689,6 +8000,9 @@ pub mod relational_database {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
+        /// <p>The weekly time range during which system maintenance can occur on the database.</p>
+        /// <p>In the format <code>ddd:hh24:mi-ddd:hh24:mi</code>. For example,
+        /// <code>Tue:17:00-Tue:17:30</code>.</p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6701,6 +8015,7 @@ pub mod relational_database {
             self.publicly_accessible = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether the database is publicly accessible.</p>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
             self.publicly_accessible = input;
             self
@@ -6710,6 +8025,7 @@ pub mod relational_database {
             self.master_endpoint = Some(input);
             self
         }
+        /// <p>The master endpoint for the database.</p>
         pub fn set_master_endpoint(
             mut self,
             input: std::option::Option<crate::model::RelationalDatabaseEndpoint>,
@@ -6717,6 +8033,11 @@ pub mod relational_database {
             self.master_endpoint = input;
             self
         }
+        /// Appends an item to `pending_maintenance_actions`.
+        ///
+        /// To override the contents of this collection use [`set_pending_maintenance_actions`](Self::set_pending_maintenance_actions).
+        ///
+        /// <p>Describes the pending maintenance actions for the database.</p>
         pub fn pending_maintenance_actions(
             mut self,
             input: impl Into<crate::model::PendingMaintenanceAction>,
@@ -6726,6 +8047,7 @@ pub mod relational_database {
             self.pending_maintenance_actions = Some(v);
             self
         }
+        /// <p>Describes the pending maintenance actions for the database.</p>
         pub fn set_pending_maintenance_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PendingMaintenanceAction>>,
@@ -6738,6 +8060,7 @@ pub mod relational_database {
             self.ca_certificate_identifier = Some(input.into());
             self
         }
+        /// <p>The certificate associated with the database.</p>
         pub fn set_ca_certificate_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6794,7 +8117,7 @@ pub struct PendingMaintenanceAction {
     /// <p>Additional detail about the pending database maintenance action.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The effective date of the pending database maintenance action.</p>
-    pub current_apply_date: std::option::Option<smithy_types::Instant>,
+    pub current_apply_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for PendingMaintenanceAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6813,7 +8136,7 @@ pub mod pending_maintenance_action {
     pub struct Builder {
         pub(crate) action: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) current_apply_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) current_apply_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The type of pending database maintenance action.</p>
@@ -6821,6 +8144,7 @@ pub mod pending_maintenance_action {
             self.action = Some(input.into());
             self
         }
+        /// <p>The type of pending database maintenance action.</p>
         pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action = input;
             self
@@ -6830,18 +8154,20 @@ pub mod pending_maintenance_action {
             self.description = Some(input.into());
             self
         }
+        /// <p>Additional detail about the pending database maintenance action.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The effective date of the pending database maintenance action.</p>
-        pub fn current_apply_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn current_apply_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.current_apply_date = Some(input);
             self
         }
+        /// <p>The effective date of the pending database maintenance action.</p>
         pub fn set_current_apply_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.current_apply_date = input;
             self
@@ -6895,6 +8221,7 @@ pub mod relational_database_endpoint {
             self.port = Some(input);
             self
         }
+        /// <p>Specifies the port that the database is listening on.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -6904,6 +8231,7 @@ pub mod relational_database_endpoint {
             self.address = Some(input.into());
             self
         }
+        /// <p>Specifies the DNS address of the database.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address = input;
             self
@@ -6960,6 +8288,7 @@ pub mod pending_modified_relational_database_values {
             self.master_user_password = Some(input.into());
             self
         }
+        /// <p>The password for the master user of the database.</p>
         pub fn set_master_user_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6972,6 +8301,7 @@ pub mod pending_modified_relational_database_values {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The database engine version.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6984,6 +8314,7 @@ pub mod pending_modified_relational_database_values {
             self.backup_retention_enabled = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether automated backup retention is enabled.</p>
         pub fn set_backup_retention_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.backup_retention_enabled = input;
             self
@@ -7041,6 +8372,7 @@ pub mod relational_database_hardware {
             self.cpu_count = Some(input);
             self
         }
+        /// <p>The number of vCPUs for the database.</p>
         pub fn set_cpu_count(mut self, input: std::option::Option<i32>) -> Self {
             self.cpu_count = input;
             self
@@ -7050,6 +8382,7 @@ pub mod relational_database_hardware {
             self.disk_size_in_gb = Some(input);
             self
         }
+        /// <p>The size of the disk for the database.</p>
         pub fn set_disk_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.disk_size_in_gb = input;
             self
@@ -7059,6 +8392,7 @@ pub mod relational_database_hardware {
             self.ram_size_in_gb = Some(input);
             self
         }
+        /// <p>The amount of RAM in GB for the database.</p>
         pub fn set_ram_size_in_gb(mut self, input: std::option::Option<f32>) -> Self {
             self.ram_size_in_gb = input;
             self
@@ -7095,7 +8429,7 @@ pub struct MetricDatapoint {
     /// <p>The sum.</p>
     pub sum: std::option::Option<f64>,
     /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
-    pub timestamp: std::option::Option<smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The unit. </p>
     pub unit: std::option::Option<crate::model::MetricUnit>,
 }
@@ -7123,7 +8457,7 @@ pub mod metric_datapoint {
         pub(crate) minimum: std::option::Option<f64>,
         pub(crate) sample_count: std::option::Option<f64>,
         pub(crate) sum: std::option::Option<f64>,
-        pub(crate) timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) unit: std::option::Option<crate::model::MetricUnit>,
     }
     impl Builder {
@@ -7132,6 +8466,7 @@ pub mod metric_datapoint {
             self.average = Some(input);
             self
         }
+        /// <p>The average.</p>
         pub fn set_average(mut self, input: std::option::Option<f64>) -> Self {
             self.average = input;
             self
@@ -7141,6 +8476,7 @@ pub mod metric_datapoint {
             self.maximum = Some(input);
             self
         }
+        /// <p>The maximum.</p>
         pub fn set_maximum(mut self, input: std::option::Option<f64>) -> Self {
             self.maximum = input;
             self
@@ -7150,6 +8486,7 @@ pub mod metric_datapoint {
             self.minimum = Some(input);
             self
         }
+        /// <p>The minimum.</p>
         pub fn set_minimum(mut self, input: std::option::Option<f64>) -> Self {
             self.minimum = input;
             self
@@ -7159,6 +8496,7 @@ pub mod metric_datapoint {
             self.sample_count = Some(input);
             self
         }
+        /// <p>The sample count.</p>
         pub fn set_sample_count(mut self, input: std::option::Option<f64>) -> Self {
             self.sample_count = input;
             self
@@ -7168,16 +8506,21 @@ pub mod metric_datapoint {
             self.sum = Some(input);
             self
         }
+        /// <p>The sum.</p>
         pub fn set_sum(mut self, input: std::option::Option<f64>) -> Self {
             self.sum = input;
             self
         }
         /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
-        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.timestamp = input;
             self
         }
@@ -7186,6 +8529,7 @@ pub mod metric_datapoint {
             self.unit = Some(input);
             self
         }
+        /// <p>The unit. </p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::MetricUnit>) -> Self {
             self.unit = input;
             self
@@ -7211,6 +8555,7 @@ impl MetricDatapoint {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7222,32 +8567,59 @@ impl MetricDatapoint {
     std::hash::Hash,
 )]
 pub enum MetricUnit {
+    #[allow(missing_docs)] // documentation missing in model
     Bits,
+    #[allow(missing_docs)] // documentation missing in model
     BitsSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Bytes,
+    #[allow(missing_docs)] // documentation missing in model
     BytesSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Count,
+    #[allow(missing_docs)] // documentation missing in model
     CountSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Gigabits,
+    #[allow(missing_docs)] // documentation missing in model
     GigabitsSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Gigabytes,
+    #[allow(missing_docs)] // documentation missing in model
     GigabytesSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Kilobits,
+    #[allow(missing_docs)] // documentation missing in model
     KilobitsSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Kilobytes,
+    #[allow(missing_docs)] // documentation missing in model
     KilobytesSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Megabits,
+    #[allow(missing_docs)] // documentation missing in model
     MegabitsSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Megabytes,
+    #[allow(missing_docs)] // documentation missing in model
     MegabytesSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Microseconds,
+    #[allow(missing_docs)] // documentation missing in model
     Milliseconds,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Percent,
+    #[allow(missing_docs)] // documentation missing in model
     Seconds,
+    #[allow(missing_docs)] // documentation missing in model
     Terabits,
+    #[allow(missing_docs)] // documentation missing in model
     TerabitsSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Terabytes,
+    #[allow(missing_docs)] // documentation missing in model
     TerabytesSecond,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7294,6 +8666,7 @@ impl std::str::FromStr for MetricUnit {
     }
 }
 impl MetricUnit {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MetricUnit::Bits => "Bits",
@@ -7326,6 +8699,7 @@ impl MetricUnit {
             MetricUnit::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Bits",
@@ -7364,6 +8738,7 @@ impl AsRef<str> for MetricUnit {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7375,11 +8750,17 @@ impl AsRef<str> for MetricUnit {
     std::hash::Hash,
 )]
 pub enum RelationalDatabaseMetricName {
+    #[allow(missing_docs)] // documentation missing in model
     CpuUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     DatabaseConnections,
+    #[allow(missing_docs)] // documentation missing in model
     DiskQueueDepth,
+    #[allow(missing_docs)] // documentation missing in model
     FreeStorageSpace,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkReceiveThroughput,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkTransmitThroughput,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7405,6 +8786,7 @@ impl std::str::FromStr for RelationalDatabaseMetricName {
     }
 }
 impl RelationalDatabaseMetricName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RelationalDatabaseMetricName::CpuUtilization => "CPUUtilization",
@@ -7416,6 +8798,7 @@ impl RelationalDatabaseMetricName {
             RelationalDatabaseMetricName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CPUUtilization",
@@ -7433,6 +8816,7 @@ impl AsRef<str> for RelationalDatabaseMetricName {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7444,10 +8828,15 @@ impl AsRef<str> for RelationalDatabaseMetricName {
     std::hash::Hash,
 )]
 pub enum MetricStatistic {
+    #[allow(missing_docs)] // documentation missing in model
     Average,
+    #[allow(missing_docs)] // documentation missing in model
     Maximum,
+    #[allow(missing_docs)] // documentation missing in model
     Minimum,
+    #[allow(missing_docs)] // documentation missing in model
     SampleCount,
+    #[allow(missing_docs)] // documentation missing in model
     Sum,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7472,6 +8861,7 @@ impl std::str::FromStr for MetricStatistic {
     }
 }
 impl MetricStatistic {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MetricStatistic::Average => "Average",
@@ -7482,6 +8872,7 @@ impl MetricStatistic {
             MetricStatistic::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Average", "Maximum", "Minimum", "SampleCount", "Sum"]
     }
@@ -7492,6 +8883,7 @@ impl AsRef<str> for MetricStatistic {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7503,8 +8895,11 @@ impl AsRef<str> for MetricStatistic {
     std::hash::Hash,
 )]
 pub enum RelationalDatabasePasswordVersion {
+    #[allow(missing_docs)] // documentation missing in model
     Current,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Previous,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7527,6 +8922,7 @@ impl std::str::FromStr for RelationalDatabasePasswordVersion {
     }
 }
 impl RelationalDatabasePasswordVersion {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RelationalDatabasePasswordVersion::Current => "CURRENT",
@@ -7535,6 +8931,7 @@ impl RelationalDatabasePasswordVersion {
             RelationalDatabasePasswordVersion::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CURRENT", "PENDING", "PREVIOUS"]
     }
@@ -7550,7 +8947,7 @@ impl AsRef<str> for RelationalDatabasePasswordVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogEvent {
     /// <p>The timestamp when the database log event was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The message of the database log event.</p>
     pub message: std::option::Option<std::string::String>,
 }
@@ -7568,16 +8965,20 @@ pub mod log_event {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The timestamp when the database log event was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the database log event was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -7586,6 +8987,7 @@ pub mod log_event {
             self.message = Some(input.into());
             self
         }
+        /// <p>The message of the database log event.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -7613,7 +9015,7 @@ pub struct RelationalDatabaseEvent {
     /// <p>The database that the database event relates to.</p>
     pub resource: std::option::Option<std::string::String>,
     /// <p>The timestamp when the database event was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The message of the database event.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The category that the database event belongs to.</p>
@@ -7636,7 +9038,7 @@ pub mod relational_database_event {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -7646,16 +9048,21 @@ pub mod relational_database_event {
             self.resource = Some(input.into());
             self
         }
+        /// <p>The database that the database event relates to.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource = input;
             self
         }
         /// <p>The timestamp when the database event was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the database event was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -7664,16 +9071,23 @@ pub mod relational_database_event {
             self.message = Some(input.into());
             self
         }
+        /// <p>The message of the database event.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
+        /// Appends an item to `event_categories`.
+        ///
+        /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
+        ///
+        /// <p>The category that the database event belongs to.</p>
         pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_categories.unwrap_or_default();
             v.push(input.into());
             self.event_categories = Some(v);
             self
         }
+        /// <p>The category that the database event belongs to.</p>
         pub fn set_event_categories(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7760,6 +9174,7 @@ pub mod relational_database_bundle {
             self.bundle_id = Some(input.into());
             self
         }
+        /// <p>The ID for the database bundle.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
@@ -7769,6 +9184,7 @@ pub mod relational_database_bundle {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name for the database bundle.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7778,6 +9194,7 @@ pub mod relational_database_bundle {
             self.price = Some(input);
             self
         }
+        /// <p>The cost of the database bundle in US currency.</p>
         pub fn set_price(mut self, input: std::option::Option<f32>) -> Self {
             self.price = input;
             self
@@ -7787,6 +9204,7 @@ pub mod relational_database_bundle {
             self.ram_size_in_gb = Some(input);
             self
         }
+        /// <p>The amount of RAM in GB (for example, <code>2.0</code>) for the database bundle.</p>
         pub fn set_ram_size_in_gb(mut self, input: std::option::Option<f32>) -> Self {
             self.ram_size_in_gb = input;
             self
@@ -7796,6 +9214,7 @@ pub mod relational_database_bundle {
             self.disk_size_in_gb = Some(input);
             self
         }
+        /// <p>The size of the disk for the database bundle.</p>
         pub fn set_disk_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.disk_size_in_gb = input;
             self
@@ -7805,6 +9224,7 @@ pub mod relational_database_bundle {
             self.transfer_per_month_in_gb = Some(input);
             self
         }
+        /// <p>The data transfer rate per month in GB for the database bundle.</p>
         pub fn set_transfer_per_month_in_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.transfer_per_month_in_gb = input;
             self
@@ -7814,6 +9234,7 @@ pub mod relational_database_bundle {
             self.cpu_count = Some(input);
             self
         }
+        /// <p>The number of virtual CPUs (vCPUs) for the database bundle.</p>
         pub fn set_cpu_count(mut self, input: std::option::Option<i32>) -> Self {
             self.cpu_count = input;
             self
@@ -7823,6 +9244,7 @@ pub mod relational_database_bundle {
             self.is_encrypted = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether the database bundle is encrypted.</p>
         pub fn set_is_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.is_encrypted = input;
             self
@@ -7832,6 +9254,7 @@ pub mod relational_database_bundle {
             self.is_active = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether the database bundle is active.</p>
         pub fn set_is_active(mut self, input: std::option::Option<bool>) -> Self {
             self.is_active = input;
             self
@@ -7913,6 +9336,7 @@ pub mod relational_database_blueprint {
             self.blueprint_id = Some(input.into());
             self
         }
+        /// <p>The ID for the database blueprint.</p>
         pub fn set_blueprint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.blueprint_id = input;
             self
@@ -7922,6 +9346,7 @@ pub mod relational_database_blueprint {
             self.engine = Some(input);
             self
         }
+        /// <p>The database software of the database blueprint (for example, <code>MySQL</code>).</p>
         pub fn set_engine(
             mut self,
             input: std::option::Option<crate::model::RelationalDatabaseEngine>,
@@ -7935,6 +9360,8 @@ pub mod relational_database_blueprint {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The database engine version for the database blueprint (for example,
+        /// <code>5.7.23</code>).</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7947,6 +9374,7 @@ pub mod relational_database_blueprint {
             self.engine_description = Some(input.into());
             self
         }
+        /// <p>The description of the database engine for the database blueprint.</p>
         pub fn set_engine_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7959,6 +9387,7 @@ pub mod relational_database_blueprint {
             self.engine_version_description = Some(input.into());
             self
         }
+        /// <p>The description of the database engine version for the database blueprint.</p>
         pub fn set_engine_version_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7972,6 +9401,8 @@ pub mod relational_database_blueprint {
             self.is_engine_default = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether the engine version is the default for the database
+        /// blueprint.</p>
         pub fn set_is_engine_default(mut self, input: std::option::Option<bool>) -> Self {
             self.is_engine_default = input;
             self
@@ -7996,6 +9427,7 @@ impl RelationalDatabaseBlueprint {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8007,6 +9439,7 @@ impl RelationalDatabaseBlueprint {
     std::hash::Hash,
 )]
 pub enum RelationalDatabaseEngine {
+    #[allow(missing_docs)] // documentation missing in model
     Mysql,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8027,12 +9460,14 @@ impl std::str::FromStr for RelationalDatabaseEngine {
     }
 }
 impl RelationalDatabaseEngine {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RelationalDatabaseEngine::Mysql => "mysql",
             RelationalDatabaseEngine::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["mysql"]
     }
@@ -8100,6 +9535,7 @@ pub mod region {
             self.continent_code = Some(input.into());
             self
         }
+        /// <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
         pub fn set_continent_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8113,6 +9549,8 @@ pub mod region {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the AWS Region (e.g., <code>This region is recommended to serve users
+        /// in the eastern United States and eastern Canada</code>).</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -8122,6 +9560,7 @@ pub mod region {
             self.display_name = Some(input.into());
             self
         }
+        /// <p>The display name (e.g., <code>Ohio</code>).</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -8131,10 +9570,17 @@ pub mod region {
             self.name = Some(input);
             self
         }
+        /// <p>The region name (e.g., <code>us-east-2</code>).</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::RegionName>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
+        ///
+        /// <p>The Availability Zones. Follows the format <code>us-east-2a</code>
+        /// (case-sensitive).</p>
         pub fn availability_zones(
             mut self,
             input: impl Into<crate::model::AvailabilityZone>,
@@ -8144,6 +9590,8 @@ pub mod region {
             self.availability_zones = Some(v);
             self
         }
+        /// <p>The Availability Zones. Follows the format <code>us-east-2a</code>
+        /// (case-sensitive).</p>
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
@@ -8151,6 +9599,12 @@ pub mod region {
             self.availability_zones = input;
             self
         }
+        /// Appends an item to `relational_database_availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_relational_database_availability_zones`](Self::set_relational_database_availability_zones).
+        ///
+        /// <p>The Availability Zones for databases. Follows the format <code>us-east-2a</code>
+        /// (case-sensitive).</p>
         pub fn relational_database_availability_zones(
             mut self,
             input: impl Into<crate::model::AvailabilityZone>,
@@ -8162,6 +9616,8 @@ pub mod region {
             self.relational_database_availability_zones = Some(v);
             self
         }
+        /// <p>The Availability Zones for databases. Follows the format <code>us-east-2a</code>
+        /// (case-sensitive).</p>
         pub fn set_relational_database_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
@@ -8223,6 +9679,8 @@ pub mod availability_zone {
             self.zone_name = Some(input.into());
             self
         }
+        /// <p>The name of the Availability Zone. The format is <code>us-east-2a</code>
+        /// (case-sensitive).</p>
         pub fn set_zone_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.zone_name = input;
             self
@@ -8232,6 +9690,7 @@ pub mod availability_zone {
             self.state = Some(input.into());
             self
         }
+        /// <p>The state of the Availability Zone.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -8266,7 +9725,7 @@ pub struct LoadBalancerTlsCertificate {
     /// look up your Lightsail information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The time when you created your SSL/TLS certificate.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The AWS Region and Availability Zone where you created your certificate.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
@@ -8358,6 +9817,7 @@ pub struct LoadBalancerTlsCertificate {
         std::vec::Vec<crate::model::LoadBalancerTlsCertificateDomainValidationRecord>,
     >,
     /// <p>The validation failure reason, if any, of the certificate.</p>
+    ///
     /// <p>The following failure reasons are possible:</p>
     /// <ul>
     /// <li>
@@ -8422,15 +9882,15 @@ pub struct LoadBalancerTlsCertificate {
     /// </ul>
     pub failure_reason: std::option::Option<crate::model::LoadBalancerTlsCertificateFailureReason>,
     /// <p>The time when the SSL/TLS certificate was issued.</p>
-    pub issued_at: std::option::Option<smithy_types::Instant>,
+    pub issued_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The issuer of the certificate.</p>
     pub issuer: std::option::Option<std::string::String>,
     /// <p>The algorithm used to generate the key pair (the public and private key).</p>
     pub key_algorithm: std::option::Option<std::string::String>,
     /// <p>The timestamp when the SSL/TLS certificate expires.</p>
-    pub not_after: std::option::Option<smithy_types::Instant>,
+    pub not_after: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp when the SSL/TLS certificate is first valid.</p>
-    pub not_before: std::option::Option<smithy_types::Instant>,
+    pub not_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>An object that describes the status of the certificate renewal managed by
     /// Lightsail.</p>
     pub renewal_summary:
@@ -8441,7 +9901,7 @@ pub struct LoadBalancerTlsCertificate {
         std::option::Option<crate::model::LoadBalancerTlsCertificateRevocationReason>,
     /// <p>The timestamp when the certificate was revoked. This value is present only when the
     /// certificate status is <code>REVOKED</code>.</p>
-    pub revoked_at: std::option::Option<smithy_types::Instant>,
+    pub revoked_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The serial number of the certificate.</p>
     pub serial: std::option::Option<std::string::String>,
     /// <p>The algorithm that was used to sign the certificate.</p>
@@ -8493,7 +9953,7 @@ pub mod load_balancer_tls_certificate {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8506,16 +9966,16 @@ pub mod load_balancer_tls_certificate {
         >,
         pub(crate) failure_reason:
             std::option::Option<crate::model::LoadBalancerTlsCertificateFailureReason>,
-        pub(crate) issued_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) issued_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) issuer: std::option::Option<std::string::String>,
         pub(crate) key_algorithm: std::option::Option<std::string::String>,
-        pub(crate) not_after: std::option::Option<smithy_types::Instant>,
-        pub(crate) not_before: std::option::Option<smithy_types::Instant>,
+        pub(crate) not_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) not_before: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) renewal_summary:
             std::option::Option<crate::model::LoadBalancerTlsCertificateRenewalSummary>,
         pub(crate) revocation_reason:
             std::option::Option<crate::model::LoadBalancerTlsCertificateRevocationReason>,
-        pub(crate) revoked_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) revoked_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) serial: std::option::Option<std::string::String>,
         pub(crate) signature_algorithm: std::option::Option<std::string::String>,
         pub(crate) subject: std::option::Option<std::string::String>,
@@ -8528,6 +9988,7 @@ pub mod load_balancer_tls_certificate {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8537,6 +9998,7 @@ pub mod load_balancer_tls_certificate {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the SSL/TLS certificate.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -8548,16 +10010,23 @@ pub mod load_balancer_tls_certificate {
             self.support_code = Some(input.into());
             self
         }
+        /// <p>The support code. Include this code in your email to support when you have questions about
+        /// your Lightsail load balancer or SSL/TLS certificate. This code enables our support team to
+        /// look up your Lightsail information more easily.</p>
         pub fn set_support_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.support_code = input;
             self
         }
         /// <p>The time when you created your SSL/TLS certificate.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when you created your SSL/TLS certificate.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -8566,6 +10035,7 @@ pub mod load_balancer_tls_certificate {
             self.location = Some(input);
             self
         }
+        /// <p>The AWS Region and Availability Zone where you created your certificate.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -8647,6 +10117,76 @@ pub mod load_balancer_tls_certificate {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>Instance</code>
+        /// </b> - A Lightsail instance (a
+        /// virtual private server)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>StaticIp</code>
+        /// </b> - A static IP address</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>KeyPair</code>
+        /// </b> - The key pair used to connect
+        /// to a Lightsail instance</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>InstanceSnapshot</code>
+        /// </b> - A Lightsail
+        /// instance snapshot</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>Domain</code>
+        /// </b> - A DNS zone</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>PeeredVpc</code>
+        /// </b> - A peered VPC</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>LoadBalancer</code>
+        /// </b> - A Lightsail load
+        /// balancer</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>LoadBalancerTlsCertificate</code>
+        /// </b> - An SSL/TLS
+        /// certificate associated with a Lightsail load balancer</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>Disk</code>
+        /// </b> - A Lightsail block storage
+        /// disk</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>DiskSnapshot</code>
+        /// </b> - A block storage disk
+        /// snapshot</p>
+        /// </li>
+        /// </ul>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -8654,12 +10194,20 @@ pub mod load_balancer_tls_certificate {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8672,6 +10220,7 @@ pub mod load_balancer_tls_certificate {
             self.load_balancer_name = Some(input.into());
             self
         }
+        /// <p>The load balancer name where your SSL/TLS certificate is attached.</p>
         pub fn set_load_balancer_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8685,6 +10234,8 @@ pub mod load_balancer_tls_certificate {
             self.is_attached = Some(input);
             self
         }
+        /// <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load
+        /// balancer.</p>
         pub fn set_is_attached(mut self, input: std::option::Option<bool>) -> Self {
             self.is_attached = input;
             self
@@ -8694,6 +10245,7 @@ pub mod load_balancer_tls_certificate {
             self.status = Some(input);
             self
         }
+        /// <p>The validation status of the SSL/TLS certificate. Valid values are below.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::LoadBalancerTlsCertificateStatus>,
@@ -8706,10 +10258,17 @@ pub mod load_balancer_tls_certificate {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name for your SSL/TLS certificate.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
         }
+        /// Appends an item to `domain_validation_records`.
+        ///
+        /// To override the contents of this collection use [`set_domain_validation_records`](Self::set_domain_validation_records).
+        ///
+        /// <p>An array of LoadBalancerTlsCertificateDomainValidationRecord objects describing the
+        /// records.</p>
         pub fn domain_validation_records(
             mut self,
             input: impl Into<crate::model::LoadBalancerTlsCertificateDomainValidationRecord>,
@@ -8719,6 +10278,8 @@ pub mod load_balancer_tls_certificate {
             self.domain_validation_records = Some(v);
             self
         }
+        /// <p>An array of LoadBalancerTlsCertificateDomainValidationRecord objects describing the
+        /// records.</p>
         pub fn set_domain_validation_records(
             mut self,
             input: std::option::Option<
@@ -8729,6 +10290,7 @@ pub mod load_balancer_tls_certificate {
             self
         }
         /// <p>The validation failure reason, if any, of the certificate.</p>
+        ///
         /// <p>The following failure reasons are possible:</p>
         /// <ul>
         /// <li>
@@ -8798,6 +10360,70 @@ pub mod load_balancer_tls_certificate {
             self.failure_reason = Some(input);
             self
         }
+        /// <p>The validation failure reason, if any, of the certificate.</p>
+        ///
+        /// <p>The following failure reasons are possible:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>NO_AVAILABLE_CONTACTS</code>
+        /// </b> - This failure
+        /// applies to email validation, which is not available for Lightsail certificates.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>ADDITIONAL_VERIFICATION_REQUIRED</code>
+        /// </b> -
+        /// Lightsail requires additional information to process this certificate request. This can
+        /// happen as a fraud-protection measure, such as when the domain ranks within the Alexa top
+        /// 1000 websites. To provide the required information, use the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact
+        /// AWS Support.</p>
+        /// <note>
+        /// <p>You cannot request a certificate for Amazon-owned domain names such as those ending
+        /// in amazonaws.com, cloudfront.net, or elasticbeanstalk.com.</p>
+        /// </note>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>DOMAIN_NOT_ALLOWED</code>
+        /// </b> - One or more of the
+        /// domain names in the certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
+        /// problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain
+        /// is reported as suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for
+        /// Hacked Websites</a> to learn what you can do.</p>
+        /// <p>If you believe that the result is a false positive, notify the organization that is
+        /// reporting the domain. VirusTotal is an aggregate of several antivirus and URL scanners and
+        /// cannot remove your domain from a block list itself. After you correct the problem and the
+        /// VirusTotal registry has been updated, request a new certificate.</p>
+        /// <p>If you see this error and your domain is not included in the VirusTotal list, visit
+        /// the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>
+        /// and create a case.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>INVALID_PUBLIC_DOMAIN</code>
+        /// </b> - One or more of
+        /// the domain names in the certificate request is not valid. Typically, this is because a
+        /// domain name in the request is not a valid top-level domain. Try to request a certificate
+        /// again, correcting any spelling errors or typos that were in the failed request, and ensure
+        /// that all domain names in the request are for valid top-level domains. For example, you
+        /// cannot request a certificate for <code>example.invalidpublicdomain</code> because
+        /// <code>invalidpublicdomain</code> is not a valid top-level domain.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>OTHER</code>
+        /// </b> - Typically, this failure occurs
+        /// when there is a typographical error in one or more of the domain names in the certificate
+        /// request. Try to request a certificate again, correcting any spelling errors or typos that
+        /// were in the failed request. </p>
+        /// </li>
+        /// </ul>
         pub fn set_failure_reason(
             mut self,
             input: std::option::Option<crate::model::LoadBalancerTlsCertificateFailureReason>,
@@ -8806,11 +10432,15 @@ pub mod load_balancer_tls_certificate {
             self
         }
         /// <p>The time when the SSL/TLS certificate was issued.</p>
-        pub fn issued_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn issued_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.issued_at = Some(input);
             self
         }
-        pub fn set_issued_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when the SSL/TLS certificate was issued.</p>
+        pub fn set_issued_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.issued_at = input;
             self
         }
@@ -8819,6 +10449,7 @@ pub mod load_balancer_tls_certificate {
             self.issuer = Some(input.into());
             self
         }
+        /// <p>The issuer of the certificate.</p>
         pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.issuer = input;
             self
@@ -8828,6 +10459,7 @@ pub mod load_balancer_tls_certificate {
             self.key_algorithm = Some(input.into());
             self
         }
+        /// <p>The algorithm used to generate the key pair (the public and private key).</p>
         pub fn set_key_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8836,20 +10468,28 @@ pub mod load_balancer_tls_certificate {
             self
         }
         /// <p>The timestamp when the SSL/TLS certificate expires.</p>
-        pub fn not_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn not_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.not_after = Some(input);
             self
         }
-        pub fn set_not_after(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the SSL/TLS certificate expires.</p>
+        pub fn set_not_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.not_after = input;
             self
         }
         /// <p>The timestamp when the SSL/TLS certificate is first valid.</p>
-        pub fn not_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn not_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.not_before = Some(input);
             self
         }
-        pub fn set_not_before(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the SSL/TLS certificate is first valid.</p>
+        pub fn set_not_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.not_before = input;
             self
         }
@@ -8862,6 +10502,8 @@ pub mod load_balancer_tls_certificate {
             self.renewal_summary = Some(input);
             self
         }
+        /// <p>An object that describes the status of the certificate renewal managed by
+        /// Lightsail.</p>
         pub fn set_renewal_summary(
             mut self,
             input: std::option::Option<crate::model::LoadBalancerTlsCertificateRenewalSummary>,
@@ -8878,6 +10520,8 @@ pub mod load_balancer_tls_certificate {
             self.revocation_reason = Some(input);
             self
         }
+        /// <p>The reason the certificate was revoked. This value is present only when the certificate
+        /// status is <code>REVOKED</code>.</p>
         pub fn set_revocation_reason(
             mut self,
             input: std::option::Option<crate::model::LoadBalancerTlsCertificateRevocationReason>,
@@ -8887,11 +10531,16 @@ pub mod load_balancer_tls_certificate {
         }
         /// <p>The timestamp when the certificate was revoked. This value is present only when the
         /// certificate status is <code>REVOKED</code>.</p>
-        pub fn revoked_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn revoked_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.revoked_at = Some(input);
             self
         }
-        pub fn set_revoked_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the certificate was revoked. This value is present only when the
+        /// certificate status is <code>REVOKED</code>.</p>
+        pub fn set_revoked_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.revoked_at = input;
             self
         }
@@ -8900,6 +10549,7 @@ pub mod load_balancer_tls_certificate {
             self.serial = Some(input.into());
             self
         }
+        /// <p>The serial number of the certificate.</p>
         pub fn set_serial(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.serial = input;
             self
@@ -8909,6 +10559,7 @@ pub mod load_balancer_tls_certificate {
             self.signature_algorithm = Some(input.into());
             self
         }
+        /// <p>The algorithm that was used to sign the certificate.</p>
         pub fn set_signature_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8922,16 +10573,26 @@ pub mod load_balancer_tls_certificate {
             self.subject = Some(input.into());
             self
         }
+        /// <p>The name of the entity that is associated with the public key contained in the
+        /// certificate.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subject = input;
             self
         }
+        /// Appends an item to `subject_alternative_names`.
+        ///
+        /// To override the contents of this collection use [`set_subject_alternative_names`](Self::set_subject_alternative_names).
+        ///
+        /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>)
+        /// and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
         pub fn subject_alternative_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subject_alternative_names.unwrap_or_default();
             v.push(input.into());
             self.subject_alternative_names = Some(v);
             self
         }
+        /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>)
+        /// and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
         pub fn set_subject_alternative_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8978,6 +10639,7 @@ impl LoadBalancerTlsCertificate {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8989,15 +10651,25 @@ impl LoadBalancerTlsCertificate {
     std::hash::Hash,
 )]
 pub enum LoadBalancerTlsCertificateRevocationReason {
+    #[allow(missing_docs)] // documentation missing in model
     AffiliationChanged,
+    #[allow(missing_docs)] // documentation missing in model
     AaCompromise,
+    #[allow(missing_docs)] // documentation missing in model
     CaCompromise,
+    #[allow(missing_docs)] // documentation missing in model
     CertificateHold,
+    #[allow(missing_docs)] // documentation missing in model
     CessationOfOperation,
+    #[allow(missing_docs)] // documentation missing in model
     KeyCompromise,
+    #[allow(missing_docs)] // documentation missing in model
     PrivilegeWithdrawn,
+    #[allow(missing_docs)] // documentation missing in model
     RemoveFromCrl,
+    #[allow(missing_docs)] // documentation missing in model
     Superceded,
+    #[allow(missing_docs)] // documentation missing in model
     Unspecified,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9029,6 +10701,7 @@ impl std::str::FromStr for LoadBalancerTlsCertificateRevocationReason {
     }
 }
 impl LoadBalancerTlsCertificateRevocationReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LoadBalancerTlsCertificateRevocationReason::AffiliationChanged => "AFFILIATION_CHANGED",
@@ -9046,6 +10719,7 @@ impl LoadBalancerTlsCertificateRevocationReason {
             LoadBalancerTlsCertificateRevocationReason::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AFFILIATION_CHANGED",
@@ -9225,6 +10899,45 @@ pub mod load_balancer_tls_certificate_renewal_summary {
             self.renewal_status = Some(input);
             self
         }
+        /// <p>The renewal status of the certificate.</p>
+        /// <p>The following renewal status are possible:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>PendingAutoRenewal</code>
+        /// </b> - Lightsail is
+        /// attempting to automatically validate the domain names of the certificate. No further
+        /// action is required. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>PendingValidation</code>
+        /// </b> - Lightsail couldn't
+        /// automatically validate one or more domain names of the certificate. You must take action
+        /// to validate these domain names or the certificate won't be renewed. Check to make sure
+        /// your certificate's domain validation records exist in your domain's DNS, and that your
+        /// certificate remains in use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>Success</code>
+        /// </b> - All domain names in the
+        /// certificate are validated, and Lightsail renewed the certificate. No further action is
+        /// required. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>Failed</code>
+        /// </b> - One or more domain names were
+        /// not validated before the certificate expired, and Lightsail did not renew the
+        /// certificate. You can request a new certificate using the <code>CreateCertificate</code>
+        /// action.</p>
+        /// </li>
+        /// </ul>
         pub fn set_renewal_status(
             mut self,
             input: std::option::Option<crate::model::LoadBalancerTlsCertificateRenewalStatus>,
@@ -9232,6 +10945,13 @@ pub mod load_balancer_tls_certificate_renewal_summary {
             self.renewal_status = input;
             self
         }
+        /// Appends an item to `domain_validation_options`.
+        ///
+        /// To override the contents of this collection use [`set_domain_validation_options`](Self::set_domain_validation_options).
+        ///
+        /// <p>Contains information about the validation of each domain name in the certificate, as it
+        /// pertains to Lightsail's managed renewal. This is different from the initial validation that
+        /// occurs as a result of the RequestCertificate request.</p>
         pub fn domain_validation_options(
             mut self,
             input: impl Into<crate::model::LoadBalancerTlsCertificateDomainValidationOption>,
@@ -9241,6 +10961,9 @@ pub mod load_balancer_tls_certificate_renewal_summary {
             self.domain_validation_options = Some(v);
             self
         }
+        /// <p>Contains information about the validation of each domain name in the certificate, as it
+        /// pertains to Lightsail's managed renewal. This is different from the initial validation that
+        /// occurs as a result of the RequestCertificate request.</p>
         pub fn set_domain_validation_options(
             mut self,
             input: std::option::Option<
@@ -9301,6 +11024,7 @@ pub mod load_balancer_tls_certificate_domain_validation_option {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The fully qualified domain name in the certificate request.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -9313,6 +11037,7 @@ pub mod load_balancer_tls_certificate_domain_validation_option {
             self.validation_status = Some(input);
             self
         }
+        /// <p>The status of the domain validation. Valid values are listed below.</p>
         pub fn set_validation_status(
             mut self,
             input: std::option::Option<crate::model::LoadBalancerTlsCertificateDomainStatus>,
@@ -9337,6 +11062,7 @@ impl LoadBalancerTlsCertificateDomainValidationOption {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9348,8 +11074,11 @@ impl LoadBalancerTlsCertificateDomainValidationOption {
     std::hash::Hash,
 )]
 pub enum LoadBalancerTlsCertificateDomainStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     PendingValidation,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9372,6 +11101,7 @@ impl std::str::FromStr for LoadBalancerTlsCertificateDomainStatus {
     }
 }
 impl LoadBalancerTlsCertificateDomainStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LoadBalancerTlsCertificateDomainStatus::Failed => "FAILED",
@@ -9380,6 +11110,7 @@ impl LoadBalancerTlsCertificateDomainStatus {
             LoadBalancerTlsCertificateDomainStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "PENDING_VALIDATION", "SUCCESS"]
     }
@@ -9390,6 +11121,7 @@ impl AsRef<str> for LoadBalancerTlsCertificateDomainStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9401,9 +11133,13 @@ impl AsRef<str> for LoadBalancerTlsCertificateDomainStatus {
     std::hash::Hash,
 )]
 pub enum LoadBalancerTlsCertificateRenewalStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     PendingAutoRenewal,
+    #[allow(missing_docs)] // documentation missing in model
     PendingValidation,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9427,6 +11163,7 @@ impl std::str::FromStr for LoadBalancerTlsCertificateRenewalStatus {
     }
 }
 impl LoadBalancerTlsCertificateRenewalStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LoadBalancerTlsCertificateRenewalStatus::Failed => "FAILED",
@@ -9436,6 +11173,7 @@ impl LoadBalancerTlsCertificateRenewalStatus {
             LoadBalancerTlsCertificateRenewalStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "FAILED",
@@ -9451,6 +11189,7 @@ impl AsRef<str> for LoadBalancerTlsCertificateRenewalStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9462,10 +11201,15 @@ impl AsRef<str> for LoadBalancerTlsCertificateRenewalStatus {
     std::hash::Hash,
 )]
 pub enum LoadBalancerTlsCertificateFailureReason {
+    #[allow(missing_docs)] // documentation missing in model
     AdditionalVerificationRequired,
+    #[allow(missing_docs)] // documentation missing in model
     DomainNotAllowed,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidPublicDomain,
+    #[allow(missing_docs)] // documentation missing in model
     NoAvailableContacts,
+    #[allow(missing_docs)] // documentation missing in model
     Other,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9492,6 +11236,7 @@ impl std::str::FromStr for LoadBalancerTlsCertificateFailureReason {
     }
 }
 impl LoadBalancerTlsCertificateFailureReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LoadBalancerTlsCertificateFailureReason::AdditionalVerificationRequired => {
@@ -9504,6 +11249,7 @@ impl LoadBalancerTlsCertificateFailureReason {
             LoadBalancerTlsCertificateFailureReason::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ADDITIONAL_VERIFICATION_REQUIRED",
@@ -9569,6 +11315,8 @@ pub mod load_balancer_tls_certificate_domain_validation_record {
             self.name = Some(input.into());
             self
         }
+        /// <p>A fully qualified domain name in the certificate. For example,
+        /// <code>example.com</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9579,6 +11327,8 @@ pub mod load_balancer_tls_certificate_domain_validation_record {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of validation record. For example, <code>CNAME</code> for domain
+        /// validation.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -9588,6 +11338,7 @@ pub mod load_balancer_tls_certificate_domain_validation_record {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value for that type.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -9600,6 +11351,7 @@ pub mod load_balancer_tls_certificate_domain_validation_record {
             self.validation_status = Some(input);
             self
         }
+        /// <p>The validation status. Valid values are listed below.</p>
         pub fn set_validation_status(
             mut self,
             input: std::option::Option<crate::model::LoadBalancerTlsCertificateDomainStatus>,
@@ -9612,6 +11364,7 @@ pub mod load_balancer_tls_certificate_domain_validation_record {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name against which your SSL/TLS certificate was validated.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -9636,7 +11389,7 @@ impl LoadBalancerTlsCertificateDomainValidationRecord {
     }
 }
 
-/// **NOTE:** `LoadBalancerTlsCertificateStatus::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `LoadBalancerTlsCertificateStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9648,14 +11401,21 @@ impl LoadBalancerTlsCertificateDomainValidationRecord {
     std::hash::Hash,
 )]
 pub enum LoadBalancerTlsCertificateStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Expired,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
+    #[allow(missing_docs)] // documentation missing in model
     Issued,
+    #[allow(missing_docs)] // documentation missing in model
     PendingValidation,
+    #[allow(missing_docs)] // documentation missing in model
     Revoked,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
+    #[allow(missing_docs)] // documentation missing in model
     ValidationTimedOut,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9683,6 +11443,7 @@ impl std::str::FromStr for LoadBalancerTlsCertificateStatus {
     }
 }
 impl LoadBalancerTlsCertificateStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LoadBalancerTlsCertificateStatus::Expired => "EXPIRED",
@@ -9696,6 +11457,7 @@ impl LoadBalancerTlsCertificateStatus {
             LoadBalancerTlsCertificateStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "EXPIRED",
@@ -9728,7 +11490,7 @@ pub struct LoadBalancer {
     /// information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The date when your load balancer was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The AWS Region where your load balancer was created (e.g., <code>us-east-2a</code>).
     /// Lightsail automatically creates your load balancer across Availability Zones.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
@@ -9769,6 +11531,7 @@ pub struct LoadBalancer {
         std::collections::HashMap<crate::model::LoadBalancerAttributeName, std::string::String>,
     >,
     /// <p>The IP address type of the load balancer.</p>
+    ///
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
     /// IPv4 and IPv6.</p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
@@ -9805,7 +11568,7 @@ pub mod load_balancer {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -9830,6 +11593,7 @@ pub mod load_balancer {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the load balancer (e.g., <code>my-load-balancer</code>).</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9839,6 +11603,7 @@ pub mod load_balancer {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -9850,16 +11615,23 @@ pub mod load_balancer {
             self.support_code = Some(input.into());
             self
         }
+        /// <p>The support code. Include this code in your email to support when you have questions about
+        /// your Lightsail load balancer. This code enables our support team to look up your Lightsail
+        /// information more easily.</p>
         pub fn set_support_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.support_code = input;
             self
         }
         /// <p>The date when your load balancer was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date when your load balancer was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -9869,6 +11641,8 @@ pub mod load_balancer {
             self.location = Some(input);
             self
         }
+        /// <p>The AWS Region where your load balancer was created (e.g., <code>us-east-2a</code>).
+        /// Lightsail automatically creates your load balancer across Availability Zones.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -9881,6 +11655,7 @@ pub mod load_balancer {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The resource type (e.g., <code>LoadBalancer</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -9888,12 +11663,20 @@ pub mod load_balancer {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -9906,6 +11689,7 @@ pub mod load_balancer {
             self.dns_name = Some(input.into());
             self
         }
+        /// <p>The DNS name of your Lightsail load balancer.</p>
         pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dns_name = input;
             self
@@ -9915,6 +11699,7 @@ pub mod load_balancer {
             self.state = Some(input);
             self
         }
+        /// <p>The status of your load balancer. Valid values are below.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::LoadBalancerState>,
@@ -9929,6 +11714,9 @@ pub mod load_balancer {
             self.protocol = Some(input);
             self
         }
+        /// <p>The protocol you have enabled for your load balancer. Valid values are below.</p>
+        /// <p>You can't just have <code>HTTP_HTTPS</code>, but you can have just
+        /// <code>HTTP</code>.</p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::LoadBalancerProtocol>,
@@ -9936,12 +11724,20 @@ pub mod load_balancer {
             self.protocol = input;
             self
         }
+        /// Appends an item to `public_ports`.
+        ///
+        /// To override the contents of this collection use [`set_public_ports`](Self::set_public_ports).
+        ///
+        /// <p>An array of public port settings for your load balancer. For HTTP, use port 80. For HTTPS,
+        /// use port 443.</p>
         pub fn public_ports(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.public_ports.unwrap_or_default();
             v.push(input.into());
             self.public_ports = Some(v);
             self
         }
+        /// <p>An array of public port settings for your load balancer. For HTTP, use port 80. For HTTPS,
+        /// use port 443.</p>
         pub fn set_public_ports(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
             self.public_ports = input;
             self
@@ -9952,6 +11748,8 @@ pub mod load_balancer {
             self.health_check_path = Some(input.into());
             self
         }
+        /// <p>The path you specified to perform your health checks. If no path is specified, the load
+        /// balancer tries to make a request to the default (root) page.</p>
         pub fn set_health_check_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9965,10 +11763,18 @@ pub mod load_balancer {
             self.instance_port = Some(input);
             self
         }
+        /// <p>The port where the load balancer will direct traffic to your Lightsail instances. For
+        /// HTTP traffic, it's port 80. For HTTPS traffic, it's port 443.</p>
         pub fn set_instance_port(mut self, input: std::option::Option<i32>) -> Self {
             self.instance_port = input;
             self
         }
+        /// Appends an item to `instance_health_summary`.
+        ///
+        /// To override the contents of this collection use [`set_instance_health_summary`](Self::set_instance_health_summary).
+        ///
+        /// <p>An array of InstanceHealthSummary objects describing the health of the load
+        /// balancer.</p>
         pub fn instance_health_summary(
             mut self,
             input: impl Into<crate::model::InstanceHealthSummary>,
@@ -9978,6 +11784,8 @@ pub mod load_balancer {
             self.instance_health_summary = Some(v);
             self
         }
+        /// <p>An array of InstanceHealthSummary objects describing the health of the load
+        /// balancer.</p>
         pub fn set_instance_health_summary(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceHealthSummary>>,
@@ -9985,6 +11793,13 @@ pub mod load_balancer {
             self.instance_health_summary = input;
             self
         }
+        /// Appends an item to `tls_certificate_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_tls_certificate_summaries`](Self::set_tls_certificate_summaries).
+        ///
+        /// <p>An array of LoadBalancerTlsCertificateSummary objects that provide additional information
+        /// about the SSL/TLS certificates. For example, if <code>true</code>, the certificate is attached
+        /// to the load balancer.</p>
         pub fn tls_certificate_summaries(
             mut self,
             input: impl Into<crate::model::LoadBalancerTlsCertificateSummary>,
@@ -9994,6 +11809,9 @@ pub mod load_balancer {
             self.tls_certificate_summaries = Some(v);
             self
         }
+        /// <p>An array of LoadBalancerTlsCertificateSummary objects that provide additional information
+        /// about the SSL/TLS certificates. For example, if <code>true</code>, the certificate is attached
+        /// to the load balancer.</p>
         pub fn set_tls_certificate_summaries(
             mut self,
             input: std::option::Option<
@@ -10003,6 +11821,12 @@ pub mod load_balancer {
             self.tls_certificate_summaries = input;
             self
         }
+        /// Adds a key-value pair to `configuration_options`.
+        ///
+        /// To override the contents of this collection use [`set_configuration_options`](Self::set_configuration_options).
+        ///
+        /// <p>A string to string map of the configuration options for your load balancer. Valid values
+        /// are listed below.</p>
         pub fn configuration_options(
             mut self,
             k: impl Into<crate::model::LoadBalancerAttributeName>,
@@ -10013,6 +11837,8 @@ pub mod load_balancer {
             self.configuration_options = Some(hash_map);
             self
         }
+        /// <p>A string to string map of the configuration options for your load balancer. Valid values
+        /// are listed below.</p>
         pub fn set_configuration_options(
             mut self,
             input: std::option::Option<
@@ -10026,12 +11852,17 @@ pub mod load_balancer {
             self
         }
         /// <p>The IP address type of the load balancer.</p>
+        ///
         /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
         /// IPv4 and IPv6.</p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
             self.ip_address_type = Some(input);
             self
         }
+        /// <p>The IP address type of the load balancer.</p>
+        ///
+        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
+        /// IPv4 and IPv6.</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -10103,6 +11934,7 @@ pub mod load_balancer_tls_certificate_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the SSL/TLS certificate.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10113,6 +11945,8 @@ pub mod load_balancer_tls_certificate_summary {
             self.is_attached = Some(input);
             self
         }
+        /// <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load
+        /// balancer.</p>
         pub fn set_is_attached(mut self, input: std::option::Option<bool>) -> Self {
             self.is_attached = input;
             self
@@ -10291,6 +12125,8 @@ pub mod instance_health_summary {
             self.instance_name = Some(input.into());
             self
         }
+        /// <p>The name of the Lightsail instance for which you are requesting health check
+        /// data.</p>
         pub fn set_instance_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10303,6 +12139,7 @@ pub mod instance_health_summary {
             self.instance_health = Some(input);
             self
         }
+        /// <p>Describes the overall instance health. Valid values are below.</p>
         pub fn set_instance_health(
             mut self,
             input: std::option::Option<crate::model::InstanceHealthState>,
@@ -10435,6 +12272,127 @@ pub mod instance_health_summary {
             self.instance_health_reason = Some(input);
             self
         }
+        /// <p>More information about the instance health. If the <code>instanceHealth</code> is
+        /// <code>healthy</code>, then an <code>instanceHealthReason</code> value is not
+        /// provided.</p>
+        /// <p>If <b>
+        /// <code>instanceHealth</code>
+        /// </b> is <code>initial</code>,
+        /// the <b>
+        /// <code>instanceHealthReason</code>
+        /// </b> value can be one of the
+        /// following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>Lb.RegistrationInProgress</code>
+        /// </b> - The target
+        /// instance is in the process of being registered with the load balancer.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>Lb.InitialHealthChecking</code>
+        /// </b> - The
+        /// Lightsail load balancer is still sending the target instance the minimum number of
+        /// health checks required to determine its health status.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If <b>
+        /// <code>instanceHealth</code>
+        /// </b> is <code>unhealthy</code>,
+        /// the <b>
+        /// <code>instanceHealthReason</code>
+        /// </b> value can be one of the
+        /// following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>Instance.ResponseCodeMismatch</code>
+        /// </b> - The
+        /// health checks did not return an expected HTTP code.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>Instance.Timeout</code>
+        /// </b> - The health check
+        /// requests timed out.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>Instance.FailedHealthChecks</code>
+        /// </b> - The health
+        /// checks failed because the connection to the target instance timed out, the target instance
+        /// response was malformed, or the target instance failed the health check for an unknown
+        /// reason.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>Lb.InternalError</code>
+        /// </b> - The health checks
+        /// failed due to an internal error.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If <b>
+        /// <code>instanceHealth</code>
+        /// </b> is <code>unused</code>,
+        /// the <b>
+        /// <code>instanceHealthReason</code>
+        /// </b> value can be one of the
+        /// following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>Instance.NotRegistered</code>
+        /// </b> - The target
+        /// instance is not registered with the target group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>Instance.NotInUse</code>
+        /// </b> - The target group is
+        /// not used by any load balancer, or the target instance is in an Availability Zone that is
+        /// not enabled for its load balancer.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>Instance.IpUnusable</code>
+        /// </b> - The target IP
+        /// address is reserved for use by a Lightsail load balancer.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>Instance.InvalidState</code>
+        /// </b> - The target is in
+        /// the stopped or terminated state.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If <b>
+        /// <code>instanceHealth</code>
+        /// </b> is <code>draining</code>,
+        /// the <b>
+        /// <code>instanceHealthReason</code>
+        /// </b> value can be one of the
+        /// following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>Instance.DeregistrationInProgress</code>
+        /// </b> - The
+        /// target instance is in the process of being deregistered and the deregistration delay
+        /// period has not expired.</p>
+        /// </li>
+        /// </ul>
         pub fn set_instance_health_reason(
             mut self,
             input: std::option::Option<crate::model::InstanceHealthReason>,
@@ -10459,6 +12417,7 @@ impl InstanceHealthSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10470,16 +12429,27 @@ impl InstanceHealthSummary {
     std::hash::Hash,
 )]
 pub enum InstanceHealthReason {
+    #[allow(missing_docs)] // documentation missing in model
     InstanceDeregistrationInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceFailedHealthChecks,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceInvalidState,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceIpUnusable,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceNotInUse,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceNotRegistered,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceResponseCodeMismatch,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceTimeout,
+    #[allow(missing_docs)] // documentation missing in model
     LbInitialHealthChecking,
+    #[allow(missing_docs)] // documentation missing in model
     LbInternalError,
+    #[allow(missing_docs)] // documentation missing in model
     LbRegistrationInProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10512,6 +12482,7 @@ impl std::str::FromStr for InstanceHealthReason {
     }
 }
 impl InstanceHealthReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InstanceHealthReason::InstanceDeregistrationInProgress => {
@@ -10530,6 +12501,7 @@ impl InstanceHealthReason {
             InstanceHealthReason::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Instance.DeregistrationInProgress",
@@ -10552,6 +12524,7 @@ impl AsRef<str> for InstanceHealthReason {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10563,11 +12536,17 @@ impl AsRef<str> for InstanceHealthReason {
     std::hash::Hash,
 )]
 pub enum InstanceHealthState {
+    #[allow(missing_docs)] // documentation missing in model
     Draining,
+    #[allow(missing_docs)] // documentation missing in model
     Healthy,
+    #[allow(missing_docs)] // documentation missing in model
     Initial,
+    #[allow(missing_docs)] // documentation missing in model
     Unavailable,
+    #[allow(missing_docs)] // documentation missing in model
     Unhealthy,
+    #[allow(missing_docs)] // documentation missing in model
     Unused,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10593,6 +12572,7 @@ impl std::str::FromStr for InstanceHealthState {
     }
 }
 impl InstanceHealthState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InstanceHealthState::Draining => "draining",
@@ -10604,6 +12584,7 @@ impl InstanceHealthState {
             InstanceHealthState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "draining",
@@ -10621,6 +12602,7 @@ impl AsRef<str> for InstanceHealthState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10632,7 +12614,9 @@ impl AsRef<str> for InstanceHealthState {
     std::hash::Hash,
 )]
 pub enum LoadBalancerProtocol {
+    #[allow(missing_docs)] // documentation missing in model
     Http,
+    #[allow(missing_docs)] // documentation missing in model
     HttpHttps,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10654,6 +12638,7 @@ impl std::str::FromStr for LoadBalancerProtocol {
     }
 }
 impl LoadBalancerProtocol {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LoadBalancerProtocol::Http => "HTTP",
@@ -10661,6 +12646,7 @@ impl LoadBalancerProtocol {
             LoadBalancerProtocol::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HTTP", "HTTP_HTTPS"]
     }
@@ -10671,7 +12657,7 @@ impl AsRef<str> for LoadBalancerProtocol {
     }
 }
 
-/// **NOTE:** `LoadBalancerState::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `LoadBalancerState::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10683,11 +12669,15 @@ impl AsRef<str> for LoadBalancerProtocol {
     std::hash::Hash,
 )]
 pub enum LoadBalancerState {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     ActiveImpaired,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Provisioning,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10712,6 +12702,7 @@ impl std::str::FromStr for LoadBalancerState {
     }
 }
 impl LoadBalancerState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LoadBalancerState::Active => "active",
@@ -10722,6 +12713,7 @@ impl LoadBalancerState {
             LoadBalancerState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "active",
@@ -10738,6 +12730,7 @@ impl AsRef<str> for LoadBalancerState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10749,17 +12742,29 @@ impl AsRef<str> for LoadBalancerState {
     std::hash::Hash,
 )]
 pub enum LoadBalancerMetricName {
+    #[allow(missing_docs)] // documentation missing in model
     ClientTlsNegotiationErrorCount,
+    #[allow(missing_docs)] // documentation missing in model
     HttpCodeInstance2XxCount,
+    #[allow(missing_docs)] // documentation missing in model
     HttpCodeInstance3XxCount,
+    #[allow(missing_docs)] // documentation missing in model
     HttpCodeInstance4XxCount,
+    #[allow(missing_docs)] // documentation missing in model
     HttpCodeInstance5XxCount,
+    #[allow(missing_docs)] // documentation missing in model
     HttpCodeLb4XxCount,
+    #[allow(missing_docs)] // documentation missing in model
     HttpCodeLb5XxCount,
+    #[allow(missing_docs)] // documentation missing in model
     HealthyHostCount,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceResponseTime,
+    #[allow(missing_docs)] // documentation missing in model
     RejectedConnectionCount,
+    #[allow(missing_docs)] // documentation missing in model
     RequestCount,
+    #[allow(missing_docs)] // documentation missing in model
     UnhealthyHostCount,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10793,6 +12798,7 @@ impl std::str::FromStr for LoadBalancerMetricName {
     }
 }
 impl LoadBalancerMetricName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LoadBalancerMetricName::ClientTlsNegotiationErrorCount => {
@@ -10812,6 +12818,7 @@ impl LoadBalancerMetricName {
             LoadBalancerMetricName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ClientTLSNegotiationErrorCount",
@@ -10849,7 +12856,7 @@ pub struct KeyPair {
     /// your Lightsail information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The timestamp when the key pair was created (e.g., <code>1479816991.349</code>).</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The region name and Availability Zone where the key pair was created.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The resource type (usually <code>KeyPair</code>).</p>
@@ -10883,7 +12890,7 @@ pub mod key_pair {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -10895,6 +12902,7 @@ pub mod key_pair {
             self.name = Some(input.into());
             self
         }
+        /// <p>The friendly name of the SSH key pair.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10905,6 +12913,8 @@ pub mod key_pair {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the key pair (e.g.,
+        /// <code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -10916,16 +12926,23 @@ pub mod key_pair {
             self.support_code = Some(input.into());
             self
         }
+        /// <p>The support code. Include this code in your email to support when you have questions about
+        /// an instance or another resource in Lightsail. This code enables our support team to look up
+        /// your Lightsail information more easily.</p>
         pub fn set_support_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.support_code = input;
             self
         }
         /// <p>The timestamp when the key pair was created (e.g., <code>1479816991.349</code>).</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the key pair was created (e.g., <code>1479816991.349</code>).</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -10934,6 +12951,7 @@ pub mod key_pair {
             self.location = Some(input);
             self
         }
+        /// <p>The region name and Availability Zone where the key pair was created.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -10946,6 +12964,7 @@ pub mod key_pair {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The resource type (usually <code>KeyPair</code>).</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -10953,12 +12972,20 @@ pub mod key_pair {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -10971,6 +12998,7 @@ pub mod key_pair {
             self.fingerprint = Some(input.into());
             self
         }
+        /// <p>The RSA fingerprint of the key pair.</p>
         pub fn set_fingerprint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fingerprint = input;
             self
@@ -11029,6 +13057,7 @@ pub mod instance_state {
             self.code = Some(input);
             self
         }
+        /// <p>The status code for the instance.</p>
         pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
             self.code = input;
             self
@@ -11038,6 +13067,7 @@ pub mod instance_state {
             self.name = Some(input.into());
             self
         }
+        /// <p>The state of the instance (e.g., <code>running</code> or <code>pending</code>).</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -11072,7 +13102,7 @@ pub struct InstanceSnapshot {
     /// your Lightsail information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The region name and Availability Zone where you created the snapshot.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The type of resource (usually <code>InstanceSnapshot</code>).</p>
@@ -11138,7 +13168,7 @@ pub mod instance_snapshot {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -11158,6 +13188,7 @@ pub mod instance_snapshot {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the snapshot.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -11168,6 +13199,8 @@ pub mod instance_snapshot {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot (e.g.,
+        /// <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -11179,16 +13212,23 @@ pub mod instance_snapshot {
             self.support_code = Some(input.into());
             self
         }
+        /// <p>The support code. Include this code in your email to support when you have questions about
+        /// an instance or another resource in Lightsail. This code enables our support team to look up
+        /// your Lightsail information more easily.</p>
         pub fn set_support_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.support_code = input;
             self
         }
         /// <p>The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -11197,6 +13237,7 @@ pub mod instance_snapshot {
             self.location = Some(input);
             self
         }
+        /// <p>The region name and Availability Zone where you created the snapshot.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -11209,6 +13250,7 @@ pub mod instance_snapshot {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The type of resource (usually <code>InstanceSnapshot</code>).</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -11216,12 +13258,20 @@ pub mod instance_snapshot {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -11234,6 +13284,7 @@ pub mod instance_snapshot {
             self.state = Some(input);
             self
         }
+        /// <p>The state the snapshot is in.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::InstanceSnapshotState>,
@@ -11250,16 +13301,27 @@ pub mod instance_snapshot {
             self.progress = Some(input.into());
             self
         }
+        /// <p>The progress of the snapshot.</p>
+        /// <note>
+        /// <p>This is populated only for disk snapshots, and is <code>null</code> for instance
+        /// snapshots.</p>
+        /// </note>
         pub fn set_progress(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.progress = input;
             self
         }
+        /// Appends an item to `from_attached_disks`.
+        ///
+        /// To override the contents of this collection use [`set_from_attached_disks`](Self::set_from_attached_disks).
+        ///
+        /// <p>An array of disk objects containing information about all block storage disks.</p>
         pub fn from_attached_disks(mut self, input: impl Into<crate::model::Disk>) -> Self {
             let mut v = self.from_attached_disks.unwrap_or_default();
             v.push(input.into());
             self.from_attached_disks = Some(v);
             self
         }
+        /// <p>An array of disk objects containing information about all block storage disks.</p>
         pub fn set_from_attached_disks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Disk>>,
@@ -11272,6 +13334,7 @@ pub mod instance_snapshot {
             self.from_instance_name = Some(input.into());
             self
         }
+        /// <p>The instance from which the snapshot was created.</p>
         pub fn set_from_instance_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11285,6 +13348,8 @@ pub mod instance_snapshot {
             self.from_instance_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g.,
+        /// <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
         pub fn set_from_instance_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11299,6 +13364,9 @@ pub mod instance_snapshot {
             self.from_blueprint_id = Some(input.into());
             self
         }
+        /// <p>The blueprint ID from which you created the snapshot (e.g., <code>os_debian_8_3</code>). A
+        /// blueprint is a virtual private server (or <i>instance</i>) image used to create
+        /// instances quickly.</p>
         pub fn set_from_blueprint_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11311,6 +13379,7 @@ pub mod instance_snapshot {
             self.from_bundle_id = Some(input.into());
             self
         }
+        /// <p>The bundle ID from which you created the snapshot (e.g., <code>micro_1_0</code>).</p>
         pub fn set_from_bundle_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11324,6 +13393,8 @@ pub mod instance_snapshot {
             self.is_from_auto_snapshot = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether the snapshot was created from an automatic
+        /// snapshot.</p>
         pub fn set_is_from_auto_snapshot(mut self, input: std::option::Option<bool>) -> Self {
             self.is_from_auto_snapshot = input;
             self
@@ -11333,6 +13404,7 @@ pub mod instance_snapshot {
             self.size_in_gb = Some(input);
             self
         }
+        /// <p>The size in GB of the SSD.</p>
         pub fn set_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.size_in_gb = input;
             self
@@ -11380,7 +13452,7 @@ pub struct Disk {
     /// your Lightsail information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The date when the disk was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The AWS Region and Availability Zone where the disk is located.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The Lightsail resource type (e.g., <code>Disk</code>).</p>
@@ -11451,7 +13523,7 @@ pub mod disk {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -11472,6 +13544,7 @@ pub mod disk {
             self.name = Some(input.into());
             self
         }
+        /// <p>The unique name of the disk.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -11481,6 +13554,7 @@ pub mod disk {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the disk.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -11492,16 +13566,23 @@ pub mod disk {
             self.support_code = Some(input.into());
             self
         }
+        /// <p>The support code. Include this code in your email to support when you have questions about
+        /// an instance or another resource in Lightsail. This code enables our support team to look up
+        /// your Lightsail information more easily.</p>
         pub fn set_support_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.support_code = input;
             self
         }
         /// <p>The date when the disk was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date when the disk was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -11510,6 +13591,7 @@ pub mod disk {
             self.location = Some(input);
             self
         }
+        /// <p>The AWS Region and Availability Zone where the disk is located.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -11522,6 +13604,7 @@ pub mod disk {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The Lightsail resource type (e.g., <code>Disk</code>).</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -11529,12 +13612,20 @@ pub mod disk {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -11542,12 +13633,18 @@ pub mod disk {
             self.tags = input;
             self
         }
+        /// Appends an item to `add_ons`.
+        ///
+        /// To override the contents of this collection use [`set_add_ons`](Self::set_add_ons).
+        ///
+        /// <p>An array of objects representing the add-ons enabled on the disk.</p>
         pub fn add_ons(mut self, input: impl Into<crate::model::AddOn>) -> Self {
             let mut v = self.add_ons.unwrap_or_default();
             v.push(input.into());
             self.add_ons = Some(v);
             self
         }
+        /// <p>An array of objects representing the add-ons enabled on the disk.</p>
         pub fn set_add_ons(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AddOn>>,
@@ -11560,6 +13657,7 @@ pub mod disk {
             self.size_in_gb = Some(input);
             self
         }
+        /// <p>The size of the disk in GB.</p>
         pub fn set_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.size_in_gb = input;
             self
@@ -11570,6 +13668,8 @@ pub mod disk {
             self.is_system_disk = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether this disk is a system disk (has an operating system
+        /// loaded on it).</p>
         pub fn set_is_system_disk(mut self, input: std::option::Option<bool>) -> Self {
             self.is_system_disk = input;
             self
@@ -11579,6 +13679,7 @@ pub mod disk {
             self.iops = Some(input);
             self
         }
+        /// <p>The input/output operations per second (IOPS) of the disk.</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
             self.iops = input;
             self
@@ -11588,6 +13689,7 @@ pub mod disk {
             self.path = Some(input.into());
             self
         }
+        /// <p>The disk path.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -11597,6 +13699,7 @@ pub mod disk {
             self.state = Some(input);
             self
         }
+        /// <p>Describes the status of the disk.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::DiskState>) -> Self {
             self.state = input;
             self
@@ -11606,6 +13709,7 @@ pub mod disk {
             self.attached_to = Some(input.into());
             self
         }
+        /// <p>The resources to which the disk is attached.</p>
         pub fn set_attached_to(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.attached_to = input;
             self
@@ -11615,6 +13719,7 @@ pub mod disk {
             self.is_attached = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether the disk is attached.</p>
         pub fn set_is_attached(mut self, input: std::option::Option<bool>) -> Self {
             self.is_attached = input;
             self
@@ -11629,6 +13734,12 @@ pub mod disk {
             self.attachment_state = Some(input.into());
             self
         }
+        /// <p>(Deprecated) The attachment state of the disk.</p>
+        /// <note>
+        /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code>
+        /// for system disks in the API response. It is now deprecated, but still included in the
+        /// response. Use <code>isAttached</code> instead.</p>
+        /// </note>
         pub fn set_attachment_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11645,6 +13756,11 @@ pub mod disk {
             self.gb_in_use = Some(input);
             self
         }
+        /// <p>(Deprecated) The number of GB in use by the disk.</p>
+        /// <note>
+        /// <p>In releases prior to November 14, 2017, this parameter was not included in the API
+        /// response. It is now deprecated.</p>
+        /// </note>
         pub fn set_gb_in_use(mut self, input: std::option::Option<i32>) -> Self {
             self.gb_in_use = input;
             self
@@ -11680,7 +13796,7 @@ impl Disk {
     }
 }
 
-/// **NOTE:** `DiskState::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `DiskState::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11692,11 +13808,15 @@ impl Disk {
     std::hash::Hash,
 )]
 pub enum DiskState {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     InUse,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11721,6 +13841,7 @@ impl std::str::FromStr for DiskState {
     }
 }
 impl DiskState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DiskState::Available => "available",
@@ -11731,6 +13852,7 @@ impl DiskState {
             DiskState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["available", "error", "in-use", "pending", "unknown"]
     }
@@ -11789,6 +13911,7 @@ pub mod add_on {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the add-on.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -11798,6 +13921,7 @@ pub mod add_on {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the add-on.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -11811,6 +13935,11 @@ pub mod add_on {
             self.snapshot_time_of_day = Some(input.into());
             self
         }
+        /// <p>The daily time when an automatic snapshot is created.</p>
+        /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time
+        /// (UTC).</p>
+        /// <p>The snapshot is automatically created between the time shown and up to 45 minutes
+        /// after.</p>
         pub fn set_snapshot_time_of_day(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11827,6 +13956,11 @@ pub mod add_on {
             self.next_snapshot_time_of_day = Some(input.into());
             self
         }
+        /// <p>The next daily time an automatic snapshot will be created.</p>
+        /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time
+        /// (UTC).</p>
+        /// <p>The snapshot is automatically created between the time shown and up to 45 minutes
+        /// after.</p>
         pub fn set_next_snapshot_time_of_day(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11852,6 +13986,7 @@ impl AddOn {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11863,8 +13998,11 @@ impl AddOn {
     std::hash::Hash,
 )]
 pub enum InstanceSnapshotState {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11887,6 +14025,7 @@ impl std::str::FromStr for InstanceSnapshotState {
     }
 }
 impl InstanceSnapshotState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InstanceSnapshotState::Available => "available",
@@ -11895,6 +14034,7 @@ impl InstanceSnapshotState {
             InstanceSnapshotState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["available", "error", "pending"]
     }
@@ -11920,7 +14060,7 @@ pub struct Instance {
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in Unix
     /// time format.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The region name and Availability Zone where the instance is located.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The type of resource (usually <code>Instance</code>).</p>
@@ -11945,6 +14085,7 @@ pub struct Instance {
     /// <p>The IPv6 addresses of the instance.</p>
     pub ipv6_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IP address type of the instance.</p>
+    ///
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
     /// IPv4 and IPv6.</p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
@@ -11997,7 +14138,7 @@ pub mod instance {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -12022,6 +14163,7 @@ pub mod instance {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -12032,6 +14174,8 @@ pub mod instance {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the instance (e.g.,
+        /// <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -12043,17 +14187,25 @@ pub mod instance {
             self.support_code = Some(input.into());
             self
         }
+        /// <p>The support code. Include this code in your email to support when you have questions about
+        /// an instance or another resource in Lightsail. This code enables our support team to look up
+        /// your Lightsail information more easily.</p>
         pub fn set_support_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.support_code = input;
             self
         }
         /// <p>The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in Unix
         /// time format.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in Unix
+        /// time format.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -12062,6 +14214,7 @@ pub mod instance {
             self.location = Some(input);
             self
         }
+        /// <p>The region name and Availability Zone where the instance is located.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -12074,6 +14227,7 @@ pub mod instance {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The type of resource (usually <code>Instance</code>).</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -12081,12 +14235,20 @@ pub mod instance {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -12099,6 +14261,7 @@ pub mod instance {
             self.blueprint_id = Some(input.into());
             self
         }
+        /// <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
         pub fn set_blueprint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.blueprint_id = input;
             self
@@ -12108,6 +14271,7 @@ pub mod instance {
             self.blueprint_name = Some(input.into());
             self
         }
+        /// <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
         pub fn set_blueprint_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12120,16 +14284,23 @@ pub mod instance {
             self.bundle_id = Some(input.into());
             self
         }
+        /// <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
         }
+        /// Appends an item to `add_ons`.
+        ///
+        /// To override the contents of this collection use [`set_add_ons`](Self::set_add_ons).
+        ///
+        /// <p>An array of objects representing the add-ons enabled on the instance.</p>
         pub fn add_ons(mut self, input: impl Into<crate::model::AddOn>) -> Self {
             let mut v = self.add_ons.unwrap_or_default();
             v.push(input.into());
             self.add_ons = Some(v);
             self
         }
+        /// <p>An array of objects representing the add-ons enabled on the instance.</p>
         pub fn set_add_ons(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AddOn>>,
@@ -12142,6 +14313,7 @@ pub mod instance {
             self.is_static_ip = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether this instance has a static IP assigned to it.</p>
         pub fn set_is_static_ip(mut self, input: std::option::Option<bool>) -> Self {
             self.is_static_ip = input;
             self
@@ -12151,6 +14323,7 @@ pub mod instance {
             self.private_ip_address = Some(input.into());
             self
         }
+        /// <p>The private IP address of the instance.</p>
         pub fn set_private_ip_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12163,6 +14336,7 @@ pub mod instance {
             self.public_ip_address = Some(input.into());
             self
         }
+        /// <p>The public IP address of the instance.</p>
         pub fn set_public_ip_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12170,12 +14344,18 @@ pub mod instance {
             self.public_ip_address = input;
             self
         }
+        /// Appends an item to `ipv6_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
+        ///
+        /// <p>The IPv6 addresses of the instance.</p>
         pub fn ipv6_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ipv6_addresses.unwrap_or_default();
             v.push(input.into());
             self.ipv6_addresses = Some(v);
             self
         }
+        /// <p>The IPv6 addresses of the instance.</p>
         pub fn set_ipv6_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12184,12 +14364,17 @@ pub mod instance {
             self
         }
         /// <p>The IP address type of the instance.</p>
+        ///
         /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
         /// IPv4 and IPv6.</p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
             self.ip_address_type = Some(input);
             self
         }
+        /// <p>The IP address type of the instance.</p>
+        ///
+        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
+        /// IPv4 and IPv6.</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -12202,6 +14387,7 @@ pub mod instance {
             self.hardware = Some(input);
             self
         }
+        /// <p>The size of the vCPU and the amount of RAM for the instance.</p>
         pub fn set_hardware(
             mut self,
             input: std::option::Option<crate::model::InstanceHardware>,
@@ -12215,6 +14401,8 @@ pub mod instance {
             self.networking = Some(input);
             self
         }
+        /// <p>Information about the public ports and monthly data transfer rates for the
+        /// instance.</p>
         pub fn set_networking(
             mut self,
             input: std::option::Option<crate::model::InstanceNetworking>,
@@ -12227,6 +14415,7 @@ pub mod instance {
             self.state = Some(input);
             self
         }
+        /// <p>The status code and the state (e.g., <code>running</code>) for the instance.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::InstanceState>,
@@ -12239,6 +14428,7 @@ pub mod instance {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name for connecting to the instance (e.g., <code>ec2-user</code>).</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -12249,6 +14439,8 @@ pub mod instance {
             self.ssh_key_name = Some(input.into());
             self
         }
+        /// <p>The name of the SSH key being used to connect to the instance (e.g.,
+        /// <code>LightsailDefaultKeyPair</code>).</p>
         pub fn set_ssh_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ssh_key_name = input;
             self
@@ -12320,6 +14512,7 @@ pub mod instance_networking {
             self.monthly_transfer = Some(input);
             self
         }
+        /// <p>The amount of data in GB allocated for monthly data transfers.</p>
         pub fn set_monthly_transfer(
             mut self,
             input: std::option::Option<crate::model::MonthlyTransfer>,
@@ -12327,12 +14520,18 @@ pub mod instance_networking {
             self.monthly_transfer = input;
             self
         }
+        /// Appends an item to `ports`.
+        ///
+        /// To override the contents of this collection use [`set_ports`](Self::set_ports).
+        ///
+        /// <p>An array of key-value pairs containing information about the ports on the instance.</p>
         pub fn ports(mut self, input: impl Into<crate::model::InstancePortInfo>) -> Self {
             let mut v = self.ports.unwrap_or_default();
             v.push(input.into());
             self.ports = Some(v);
             self
         }
+        /// <p>An array of key-value pairs containing information about the ports on the instance.</p>
         pub fn set_ports(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstancePortInfo>>,
@@ -12530,6 +14729,25 @@ pub mod instance_port_info {
             self.from_port = Some(input);
             self
         }
+        /// <p>The first port in a range of open ports on an instance.</p>
+        /// <p>Allowed ports:</p>
+        /// <ul>
+        /// <li>
+        /// <p>TCP and UDP - <code>0</code> to <code>65535</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>ICMP - The ICMP type for IPv4 addresses. For example, specify <code>8</code> as the
+        /// <code>fromPort</code> (ICMP type), and <code>-1</code> as the <code>toPort</code> (ICMP
+        /// code), to enable ICMP Ping. For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on <i>Wikipedia</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>ICMPv6 - The ICMP type for IPv6 addresses. For example, specify <code>128</code> as
+        /// the <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6
+        /// code). For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
+        /// Control Message Protocol for IPv6</a>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_from_port(mut self, input: std::option::Option<i32>) -> Self {
             self.from_port = input;
             self
@@ -12557,6 +14775,25 @@ pub mod instance_port_info {
             self.to_port = Some(input);
             self
         }
+        /// <p>The last port in a range of open ports on an instance.</p>
+        /// <p>Allowed ports:</p>
+        /// <ul>
+        /// <li>
+        /// <p>TCP and UDP - <code>0</code> to <code>65535</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>ICMP - The ICMP code for IPv4 addresses. For example, specify <code>8</code> as the
+        /// <code>fromPort</code> (ICMP type), and <code>-1</code> as the <code>toPort</code> (ICMP
+        /// code), to enable ICMP Ping. For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on <i>Wikipedia</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>ICMPv6 - The ICMP code for IPv6 addresses. For example, specify <code>128</code> as
+        /// the <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6
+        /// code). For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
+        /// Control Message Protocol for IPv6</a>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_to_port(mut self, input: std::option::Option<i32>) -> Self {
             self.to_port = input;
             self
@@ -12600,6 +14837,41 @@ pub mod instance_port_info {
             self.protocol = Some(input);
             self
         }
+        /// <p>The IP protocol name.</p>
+        /// <p>The name can be one of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>tcp</code> - Transmission Control Protocol (TCP) provides reliable, ordered, and
+        /// error-checked delivery of streamed data between applications running on hosts
+        /// communicating by an IP network. If you have an application that doesn't require reliable
+        /// data stream service, use UDP instead.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>all</code> - All transport layer protocol types. For more general information,
+        /// see <a href="https://en.wikipedia.org/wiki/Transport_layer">Transport layer</a> on
+        /// <i>Wikipedia</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>udp</code> - With User Datagram Protocol (UDP), computer applications can send
+        /// messages (or datagrams) to other hosts on an Internet Protocol (IP) network. Prior
+        /// communications are not required to set up transmission channels or data paths.
+        /// Applications that don't require reliable data stream service can use UDP, which provides a
+        /// connectionless datagram service that emphasizes reduced latency over reliability. If you
+        /// do require reliable data stream service, use TCP instead.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error
+        /// messages and operational information indicating success or failure when communicating with
+        /// an instance. For example, an error is indicated when an instance could not be reached.
+        /// When you specify <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP
+        /// type using the <code>fromPort</code> parameter, and ICMP code using the
+        /// <code>toPort</code> parameter.</p>
+        /// </li>
+        /// </ul>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::NetworkProtocol>,
@@ -12613,6 +14885,8 @@ pub mod instance_port_info {
             self.access_from = Some(input.into());
             self
         }
+        /// <p>The location from which access is allowed. For example, <code>Anywhere (0.0.0.0/0)</code>,
+        /// or <code>Custom</code> if a specific IP address or range of IP addresses is allowed.</p>
         pub fn set_access_from(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_from = input;
             self
@@ -12622,6 +14896,7 @@ pub mod instance_port_info {
             self.access_type = Some(input);
             self
         }
+        /// <p>The type of access (<code>Public</code> or <code>Private</code>).</p>
         pub fn set_access_type(
             mut self,
             input: std::option::Option<crate::model::PortAccessType>,
@@ -12634,6 +14909,7 @@ pub mod instance_port_info {
             self.common_name = Some(input.into());
             self
         }
+        /// <p>The common name of the port information.</p>
         pub fn set_common_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.common_name = input;
             self
@@ -12646,6 +14922,10 @@ pub mod instance_port_info {
             self.access_direction = Some(input);
             self
         }
+        /// <p>The access direction (<code>inbound</code> or <code>outbound</code>).</p>
+        /// <note>
+        /// <p>Lightsail currently supports only <code>inbound</code> access direction.</p>
+        /// </note>
         pub fn set_access_direction(
             mut self,
             input: std::option::Option<crate::model::AccessDirection>,
@@ -12653,12 +14933,32 @@ pub mod instance_port_info {
             self.access_direction = input;
             self
         }
+        /// Appends an item to `cidrs`.
+        ///
+        /// To override the contents of this collection use [`set_cidrs`](Self::set_cidrs).
+        ///
+        /// <p>The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are allowed to
+        /// connect to an instance through the ports, and the protocol.</p>
+        /// <note>
+        /// <p>The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are allowed to
+        /// connect to an instance.</p>
+        /// </note>
+        /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+        /// Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
         pub fn cidrs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cidrs.unwrap_or_default();
             v.push(input.into());
             self.cidrs = Some(v);
             self
         }
+        /// <p>The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are allowed to
+        /// connect to an instance through the ports, and the protocol.</p>
+        /// <note>
+        /// <p>The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are allowed to
+        /// connect to an instance.</p>
+        /// </note>
+        /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+        /// Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
         pub fn set_cidrs(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12666,12 +14966,34 @@ pub mod instance_port_info {
             self.cidrs = input;
             self
         }
+        /// Appends an item to `ipv6_cidrs`.
+        ///
+        /// To override the contents of this collection use [`set_ipv6_cidrs`](Self::set_ipv6_cidrs).
+        ///
+        /// <p>The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are allowed to
+        /// connect to an instance through the ports, and the protocol. Only devices with an IPv6 address
+        /// can connect to an instance through IPv6; otherwise, IPv4 should be used.</p>
+        /// <note>
+        /// <p>The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect to
+        /// an instance.</p>
+        /// </note>
+        /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+        /// Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
         pub fn ipv6_cidrs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ipv6_cidrs.unwrap_or_default();
             v.push(input.into());
             self.ipv6_cidrs = Some(v);
             self
         }
+        /// <p>The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are allowed to
+        /// connect to an instance through the ports, and the protocol. Only devices with an IPv6 address
+        /// can connect to an instance through IPv6; otherwise, IPv4 should be used.</p>
+        /// <note>
+        /// <p>The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect to
+        /// an instance.</p>
+        /// </note>
+        /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+        /// Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
         pub fn set_ipv6_cidrs(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12679,12 +15001,24 @@ pub mod instance_port_info {
             self.ipv6_cidrs = input;
             self
         }
+        /// Appends an item to `cidr_list_aliases`.
+        ///
+        /// To override the contents of this collection use [`set_cidr_list_aliases`](Self::set_cidr_list_aliases).
+        ///
+        /// <p>An alias that defines access for a preconfigured range of IP addresses.</p>
+        /// <p>The only alias currently supported is <code>lightsail-connect</code>, which allows IP
+        /// addresses of the browser-based RDP/SSH client in the Lightsail console to connect to your
+        /// instance.</p>
         pub fn cidr_list_aliases(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cidr_list_aliases.unwrap_or_default();
             v.push(input.into());
             self.cidr_list_aliases = Some(v);
             self
         }
+        /// <p>An alias that defines access for a preconfigured range of IP addresses.</p>
+        /// <p>The only alias currently supported is <code>lightsail-connect</code>, which allows IP
+        /// addresses of the browser-based RDP/SSH client in the Lightsail console to connect to your
+        /// instance.</p>
         pub fn set_cidr_list_aliases(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12716,6 +15050,7 @@ impl InstancePortInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -12727,7 +15062,9 @@ impl InstancePortInfo {
     std::hash::Hash,
 )]
 pub enum AccessDirection {
+    #[allow(missing_docs)] // documentation missing in model
     Inbound,
+    #[allow(missing_docs)] // documentation missing in model
     Outbound,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12749,6 +15086,7 @@ impl std::str::FromStr for AccessDirection {
     }
 }
 impl AccessDirection {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccessDirection::Inbound => "inbound",
@@ -12756,6 +15094,7 @@ impl AccessDirection {
             AccessDirection::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["inbound", "outbound"]
     }
@@ -12766,6 +15105,7 @@ impl AsRef<str> for AccessDirection {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -12777,7 +15117,9 @@ impl AsRef<str> for AccessDirection {
     std::hash::Hash,
 )]
 pub enum PortAccessType {
+    #[allow(missing_docs)] // documentation missing in model
     Private,
+    #[allow(missing_docs)] // documentation missing in model
     Public,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12799,6 +15141,7 @@ impl std::str::FromStr for PortAccessType {
     }
 }
 impl PortAccessType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PortAccessType::Private => "Private",
@@ -12806,6 +15149,7 @@ impl PortAccessType {
             PortAccessType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Private", "Public"]
     }
@@ -12845,6 +15189,7 @@ pub mod monthly_transfer {
             self.gb_per_month_allocated = Some(input);
             self
         }
+        /// <p>The amount allocated per month (in GB).</p>
         pub fn set_gb_per_month_allocated(mut self, input: std::option::Option<i32>) -> Self {
             self.gb_per_month_allocated = input;
             self
@@ -12900,16 +15245,23 @@ pub mod instance_hardware {
             self.cpu_count = Some(input);
             self
         }
+        /// <p>The number of vCPUs the instance has.</p>
         pub fn set_cpu_count(mut self, input: std::option::Option<i32>) -> Self {
             self.cpu_count = input;
             self
         }
+        /// Appends an item to `disks`.
+        ///
+        /// To override the contents of this collection use [`set_disks`](Self::set_disks).
+        ///
+        /// <p>The disks attached to the instance.</p>
         pub fn disks(mut self, input: impl Into<crate::model::Disk>) -> Self {
             let mut v = self.disks.unwrap_or_default();
             v.push(input.into());
             self.disks = Some(v);
             self
         }
+        /// <p>The disks attached to the instance.</p>
         pub fn set_disks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Disk>>,
@@ -12922,6 +15274,7 @@ pub mod instance_hardware {
             self.ram_size_in_gb = Some(input);
             self
         }
+        /// <p>The amount of RAM in GB on the instance (e.g., <code>1.0</code>).</p>
         pub fn set_ram_size_in_gb(mut self, input: std::option::Option<f32>) -> Self {
             self.ram_size_in_gb = input;
             self
@@ -13105,6 +15458,25 @@ pub mod instance_port_state {
             self.from_port = Some(input);
             self
         }
+        /// <p>The first port in a range of open ports on an instance.</p>
+        /// <p>Allowed ports:</p>
+        /// <ul>
+        /// <li>
+        /// <p>TCP and UDP - <code>0</code> to <code>65535</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>ICMP - The ICMP type for IPv4 addresses. For example, specify <code>8</code> as the
+        /// <code>fromPort</code> (ICMP type), and <code>-1</code> as the <code>toPort</code> (ICMP
+        /// code), to enable ICMP Ping. For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on <i>Wikipedia</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>ICMPv6 - The ICMP type for IPv6 addresses. For example, specify <code>128</code> as
+        /// the <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6
+        /// code). For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
+        /// Control Message Protocol for IPv6</a>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_from_port(mut self, input: std::option::Option<i32>) -> Self {
             self.from_port = input;
             self
@@ -13132,6 +15504,25 @@ pub mod instance_port_state {
             self.to_port = Some(input);
             self
         }
+        /// <p>The last port in a range of open ports on an instance.</p>
+        /// <p>Allowed ports:</p>
+        /// <ul>
+        /// <li>
+        /// <p>TCP and UDP - <code>0</code> to <code>65535</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>ICMP - The ICMP code for IPv4 addresses. For example, specify <code>8</code> as the
+        /// <code>fromPort</code> (ICMP type), and <code>-1</code> as the <code>toPort</code> (ICMP
+        /// code), to enable ICMP Ping. For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on <i>Wikipedia</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>ICMPv6 - The ICMP code for IPv6 addresses. For example, specify <code>128</code> as
+        /// the <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6
+        /// code). For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
+        /// Control Message Protocol for IPv6</a>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_to_port(mut self, input: std::option::Option<i32>) -> Self {
             self.to_port = input;
             self
@@ -13175,6 +15566,41 @@ pub mod instance_port_state {
             self.protocol = Some(input);
             self
         }
+        /// <p>The IP protocol name.</p>
+        /// <p>The name can be one of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>tcp</code> - Transmission Control Protocol (TCP) provides reliable, ordered, and
+        /// error-checked delivery of streamed data between applications running on hosts
+        /// communicating by an IP network. If you have an application that doesn't require reliable
+        /// data stream service, use UDP instead.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>all</code> - All transport layer protocol types. For more general information,
+        /// see <a href="https://en.wikipedia.org/wiki/Transport_layer">Transport layer</a> on
+        /// <i>Wikipedia</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>udp</code> - With User Datagram Protocol (UDP), computer applications can send
+        /// messages (or datagrams) to other hosts on an Internet Protocol (IP) network. Prior
+        /// communications are not required to set up transmission channels or data paths.
+        /// Applications that don't require reliable data stream service can use UDP, which provides a
+        /// connectionless datagram service that emphasizes reduced latency over reliability. If you
+        /// do require reliable data stream service, use TCP instead.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error
+        /// messages and operational information indicating success or failure when communicating with
+        /// an instance. For example, an error is indicated when an instance could not be reached.
+        /// When you specify <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP
+        /// type using the <code>fromPort</code> parameter, and ICMP code using the
+        /// <code>toPort</code> parameter.</p>
+        /// </li>
+        /// </ul>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::NetworkProtocol>,
@@ -13190,16 +15616,40 @@ pub mod instance_port_state {
             self.state = Some(input);
             self
         }
+        /// <p>Specifies whether the instance port is <code>open</code> or <code>closed</code>.</p>
+        /// <note>
+        /// <p>The port state for Lightsail instances is always <code>open</code>.</p>
+        /// </note>
         pub fn set_state(mut self, input: std::option::Option<crate::model::PortState>) -> Self {
             self.state = input;
             self
         }
+        /// Appends an item to `cidrs`.
+        ///
+        /// To override the contents of this collection use [`set_cidrs`](Self::set_cidrs).
+        ///
+        /// <p>The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are allowed to
+        /// connect to an instance through the ports, and the protocol.</p>
+        /// <note>
+        /// <p>The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are allowed to
+        /// connect to an instance.</p>
+        /// </note>
+        /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+        /// Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
         pub fn cidrs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cidrs.unwrap_or_default();
             v.push(input.into());
             self.cidrs = Some(v);
             self
         }
+        /// <p>The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are allowed to
+        /// connect to an instance through the ports, and the protocol.</p>
+        /// <note>
+        /// <p>The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are allowed to
+        /// connect to an instance.</p>
+        /// </note>
+        /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+        /// Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
         pub fn set_cidrs(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13207,12 +15657,34 @@ pub mod instance_port_state {
             self.cidrs = input;
             self
         }
+        /// Appends an item to `ipv6_cidrs`.
+        ///
+        /// To override the contents of this collection use [`set_ipv6_cidrs`](Self::set_ipv6_cidrs).
+        ///
+        /// <p>The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are allowed to
+        /// connect to an instance through the ports, and the protocol. Only devices with an IPv6 address
+        /// can connect to an instance through IPv6; otherwise, IPv4 should be used.</p>
+        /// <note>
+        /// <p>The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect to
+        /// an instance.</p>
+        /// </note>
+        /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+        /// Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
         pub fn ipv6_cidrs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ipv6_cidrs.unwrap_or_default();
             v.push(input.into());
             self.ipv6_cidrs = Some(v);
             self
         }
+        /// <p>The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are allowed to
+        /// connect to an instance through the ports, and the protocol. Only devices with an IPv6 address
+        /// can connect to an instance through IPv6; otherwise, IPv4 should be used.</p>
+        /// <note>
+        /// <p>The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect to
+        /// an instance.</p>
+        /// </note>
+        /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+        /// Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
         pub fn set_ipv6_cidrs(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13220,12 +15692,24 @@ pub mod instance_port_state {
             self.ipv6_cidrs = input;
             self
         }
+        /// Appends an item to `cidr_list_aliases`.
+        ///
+        /// To override the contents of this collection use [`set_cidr_list_aliases`](Self::set_cidr_list_aliases).
+        ///
+        /// <p>An alias that defines access for a preconfigured range of IP addresses.</p>
+        /// <p>The only alias currently supported is <code>lightsail-connect</code>, which allows IP
+        /// addresses of the browser-based RDP/SSH client in the Lightsail console to connect to your
+        /// instance.</p>
         pub fn cidr_list_aliases(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cidr_list_aliases.unwrap_or_default();
             v.push(input.into());
             self.cidr_list_aliases = Some(v);
             self
         }
+        /// <p>An alias that defines access for a preconfigured range of IP addresses.</p>
+        /// <p>The only alias currently supported is <code>lightsail-connect</code>, which allows IP
+        /// addresses of the browser-based RDP/SSH client in the Lightsail console to connect to your
+        /// instance.</p>
         pub fn set_cidr_list_aliases(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13254,6 +15738,7 @@ impl InstancePortState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -13265,7 +15750,9 @@ impl InstancePortState {
     std::hash::Hash,
 )]
 pub enum PortState {
+    #[allow(missing_docs)] // documentation missing in model
     Closed,
+    #[allow(missing_docs)] // documentation missing in model
     Open,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13287,6 +15774,7 @@ impl std::str::FromStr for PortState {
     }
 }
 impl PortState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PortState::Closed => "closed",
@@ -13294,6 +15782,7 @@ impl PortState {
             PortState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["closed", "open"]
     }
@@ -13304,6 +15793,7 @@ impl AsRef<str> for PortState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -13315,13 +15805,21 @@ impl AsRef<str> for PortState {
     std::hash::Hash,
 )]
 pub enum InstanceMetricName {
+    #[allow(missing_docs)] // documentation missing in model
     BurstCapacityPercentage,
+    #[allow(missing_docs)] // documentation missing in model
     BurstCapacityTime,
+    #[allow(missing_docs)] // documentation missing in model
     CpuUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkIn,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkOut,
+    #[allow(missing_docs)] // documentation missing in model
     StatusCheckFailed,
+    #[allow(missing_docs)] // documentation missing in model
     StatusCheckFailedInstance,
+    #[allow(missing_docs)] // documentation missing in model
     StatusCheckFailedSystem,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13349,6 +15847,7 @@ impl std::str::FromStr for InstanceMetricName {
     }
 }
 impl InstanceMetricName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InstanceMetricName::BurstCapacityPercentage => "BurstCapacityPercentage",
@@ -13362,6 +15861,7 @@ impl InstanceMetricName {
             InstanceMetricName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BurstCapacityPercentage",
@@ -13390,7 +15890,7 @@ pub struct InstanceAccessDetails {
     /// (e.g., command line SSH), you should save this value to <code>tempkey-cert.pub</code>.</p>
     pub cert_key: std::option::Option<std::string::String>,
     /// <p>For SSH access, the date on which the temporary keys expire.</p>
-    pub expires_at: std::option::Option<smithy_types::Instant>,
+    pub expires_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The public IP address of the Amazon Lightsail instance.</p>
     pub ip_address: std::option::Option<std::string::String>,
     /// <p>For RDP access, the password for your Amazon Lightsail instance. Password will be an empty
@@ -13445,7 +15945,7 @@ pub mod instance_access_details {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cert_key: std::option::Option<std::string::String>,
-        pub(crate) expires_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) expires_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) ip_address: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
         pub(crate) password_data: std::option::Option<crate::model::PasswordData>,
@@ -13462,16 +15962,22 @@ pub mod instance_access_details {
             self.cert_key = Some(input.into());
             self
         }
+        /// <p>For SSH access, the public key to use when accessing your instance For OpenSSH clients
+        /// (e.g., command line SSH), you should save this value to <code>tempkey-cert.pub</code>.</p>
         pub fn set_cert_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cert_key = input;
             self
         }
         /// <p>For SSH access, the date on which the temporary keys expire.</p>
-        pub fn expires_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn expires_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.expires_at = Some(input);
             self
         }
-        pub fn set_expires_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>For SSH access, the date on which the temporary keys expire.</p>
+        pub fn set_expires_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.expires_at = input;
             self
         }
@@ -13480,6 +15986,7 @@ pub mod instance_access_details {
             self.ip_address = Some(input.into());
             self
         }
+        /// <p>The public IP address of the Amazon Lightsail instance.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_address = input;
             self
@@ -13499,6 +16006,17 @@ pub mod instance_access_details {
             self.password = Some(input.into());
             self
         }
+        /// <p>For RDP access, the password for your Amazon Lightsail instance. Password will be an empty
+        /// string if the password for your new instance is not ready yet. When you create an instance, it
+        /// can take up to 15 minutes for the instance to be ready.</p>
+        /// <note>
+        /// <p>If you create an instance using any key pair other than the default
+        /// (<code>LightsailDefaultKeyPair</code>), <code>password</code> will always be an empty
+        /// string.</p>
+        /// <p>If you change the Administrator password on the instance, Lightsail will continue to
+        /// return the original password value. When accessing the instance using RDP, you need to
+        /// manually enter the Administrator password after changing it from the default.</p>
+        /// </note>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
@@ -13511,6 +16029,10 @@ pub mod instance_access_details {
             self.password_data = Some(input);
             self
         }
+        /// <p>For a Windows Server-based instance, an object with the data you can use to retrieve your
+        /// password. This is only needed if <code>password</code> is empty and the instance is not new
+        /// (and therefore the password is not ready yet). When you create an instance, it can take up to
+        /// 15 minutes for the instance to be ready.</p>
         pub fn set_password_data(
             mut self,
             input: std::option::Option<crate::model::PasswordData>,
@@ -13524,6 +16046,8 @@ pub mod instance_access_details {
             self.private_key = Some(input.into());
             self
         }
+        /// <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command line SSH),
+        /// you should save this value to <code>tempkey</code>).</p>
         pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.private_key = input;
             self
@@ -13533,6 +16057,7 @@ pub mod instance_access_details {
             self.protocol = Some(input);
             self
         }
+        /// <p>The protocol for these Amazon Lightsail instance access details.</p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::InstanceAccessProtocol>,
@@ -13545,6 +16070,7 @@ pub mod instance_access_details {
             self.instance_name = Some(input.into());
             self
         }
+        /// <p>The name of this Amazon Lightsail instance.</p>
         pub fn set_instance_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13557,16 +16083,23 @@ pub mod instance_access_details {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name to use when logging in to the Amazon Lightsail instance.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
         }
+        /// Appends an item to `host_keys`.
+        ///
+        /// To override the contents of this collection use [`set_host_keys`](Self::set_host_keys).
+        ///
+        /// <p>Describes the public SSH host keys or the RDP certificate.</p>
         pub fn host_keys(mut self, input: impl Into<crate::model::HostKeyAttributes>) -> Self {
             let mut v = self.host_keys.unwrap_or_default();
             v.push(input.into());
             self.host_keys = Some(v);
             self
         }
+        /// <p>Describes the public SSH host keys or the RDP certificate.</p>
         pub fn set_host_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HostKeyAttributes>>,
@@ -13610,7 +16143,7 @@ pub struct HostKeyAttributes {
     /// <p>The public SSH host key or the RDP certificate.</p>
     pub public_key: std::option::Option<std::string::String>,
     /// <p>The time that the SSH host key or RDP certificate was recorded by Lightsail.</p>
-    pub witnessed_at: std::option::Option<smithy_types::Instant>,
+    pub witnessed_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The SHA-1 fingerprint of the returned SSH host key or RDP certificate.</p>
     /// <ul>
     /// <li>
@@ -13645,10 +16178,10 @@ pub struct HostKeyAttributes {
     pub fingerprint_sha256: std::option::Option<std::string::String>,
     /// <p>The returned RDP certificate is valid after this point in time.</p>
     /// <p>This value is listed only for RDP certificates.</p>
-    pub not_valid_before: std::option::Option<smithy_types::Instant>,
+    pub not_valid_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The returned RDP certificate is not valid after this point in time.</p>
     /// <p>This value is listed only for RDP certificates.</p>
-    pub not_valid_after: std::option::Option<smithy_types::Instant>,
+    pub not_valid_after: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for HostKeyAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13671,11 +16204,11 @@ pub mod host_key_attributes {
     pub struct Builder {
         pub(crate) algorithm: std::option::Option<std::string::String>,
         pub(crate) public_key: std::option::Option<std::string::String>,
-        pub(crate) witnessed_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) witnessed_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) fingerprint_sha1: std::option::Option<std::string::String>,
         pub(crate) fingerprint_sha256: std::option::Option<std::string::String>,
-        pub(crate) not_valid_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) not_valid_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) not_valid_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) not_valid_after: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The SSH host key algorithm or the RDP certificate format.</p>
@@ -13686,6 +16219,10 @@ pub mod host_key_attributes {
             self.algorithm = Some(input.into());
             self
         }
+        /// <p>The SSH host key algorithm or the RDP certificate format.</p>
+        /// <p>For SSH host keys, the algorithm may be <code>ssh-rsa</code>,
+        /// <code>ecdsa-sha2-nistp256</code>, <code>ssh-ed25519</code>, etc. For RDP certificates, the
+        /// algorithm is always <code>x509-cert</code>.</p>
         pub fn set_algorithm(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.algorithm = input;
             self
@@ -13695,18 +16232,20 @@ pub mod host_key_attributes {
             self.public_key = Some(input.into());
             self
         }
+        /// <p>The public SSH host key or the RDP certificate.</p>
         pub fn set_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.public_key = input;
             self
         }
         /// <p>The time that the SSH host key or RDP certificate was recorded by Lightsail.</p>
-        pub fn witnessed_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn witnessed_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.witnessed_at = Some(input);
             self
         }
+        /// <p>The time that the SSH host key or RDP certificate was recorded by Lightsail.</p>
         pub fn set_witnessed_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.witnessed_at = input;
             self
@@ -13730,6 +16269,21 @@ pub mod host_key_attributes {
             self.fingerprint_sha1 = Some(input.into());
             self
         }
+        /// <p>The SHA-1 fingerprint of the returned SSH host key or RDP certificate.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Example of an SHA-1 SSH fingerprint:</p>
+        /// <p>
+        /// <code>SHA1:1CHH6FaAaXjtFOsR/t83vf91SR0</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Example of an SHA-1 RDP fingerprint:</p>
+        /// <p>
+        /// <code>af:34:51:fe:09:f0:e0:da:b8:4e:56:ca:60:c2:10:ff:38:06:db:45</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_fingerprint_sha1(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13756,6 +16310,21 @@ pub mod host_key_attributes {
             self.fingerprint_sha256 = Some(input.into());
             self
         }
+        /// <p>The SHA-256 fingerprint of the returned SSH host key or RDP certificate.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Example of an SHA-256 SSH fingerprint:</p>
+        /// <p>
+        /// <code>SHA256:KTsMnRBh1IhD17HpdfsbzeGA4jOijm5tyXsMjKVbB8o</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Example of an SHA-256 RDP fingerprint:</p>
+        /// <p>
+        /// <code>03:9b:36:9f:4b:de:4e:61:70:fc:7c:c9:78:e7:d2:1a:1c:25:a8:0c:91:f6:7c:e4:d6:a0:85:c8:b4:53:99:68</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_fingerprint_sha256(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13765,26 +16334,30 @@ pub mod host_key_attributes {
         }
         /// <p>The returned RDP certificate is valid after this point in time.</p>
         /// <p>This value is listed only for RDP certificates.</p>
-        pub fn not_valid_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn not_valid_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.not_valid_before = Some(input);
             self
         }
+        /// <p>The returned RDP certificate is valid after this point in time.</p>
+        /// <p>This value is listed only for RDP certificates.</p>
         pub fn set_not_valid_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.not_valid_before = input;
             self
         }
         /// <p>The returned RDP certificate is not valid after this point in time.</p>
         /// <p>This value is listed only for RDP certificates.</p>
-        pub fn not_valid_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn not_valid_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.not_valid_after = Some(input);
             self
         }
+        /// <p>The returned RDP certificate is not valid after this point in time.</p>
+        /// <p>This value is listed only for RDP certificates.</p>
         pub fn set_not_valid_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.not_valid_after = input;
             self
@@ -13810,6 +16383,7 @@ impl HostKeyAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -13821,7 +16395,9 @@ impl HostKeyAttributes {
     std::hash::Hash,
 )]
 pub enum InstanceAccessProtocol {
+    #[allow(missing_docs)] // documentation missing in model
     Rdp,
+    #[allow(missing_docs)] // documentation missing in model
     Ssh,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13843,6 +16419,7 @@ impl std::str::FromStr for InstanceAccessProtocol {
     }
 }
 impl InstanceAccessProtocol {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InstanceAccessProtocol::Rdp => "rdp",
@@ -13850,6 +16427,7 @@ impl InstanceAccessProtocol {
             InstanceAccessProtocol::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["rdp", "ssh"]
     }
@@ -13918,6 +16496,17 @@ pub mod password_data {
             self.ciphertext = Some(input.into());
             self
         }
+        /// <p>The encrypted password. Ciphertext will be an empty string if access to your new instance
+        /// is not ready yet. When you create an instance, it can take up to 15 minutes for the instance
+        /// to be ready.</p>
+        /// <note>
+        /// <p>If you use the default key pair (<code>LightsailDefaultKeyPair</code>), the decrypted
+        /// password will be available in the password field.</p>
+        /// <p>If you are using a custom key pair, you need to use your own means of decryption.</p>
+        /// <p>If you change the Administrator password on the instance, Lightsail will continue to
+        /// return the original ciphertext value. When accessing the instance using RDP, you need to
+        /// manually enter the Administrator password after changing it from the default.</p>
+        /// </note>
         pub fn set_ciphertext(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ciphertext = input;
             self
@@ -13932,6 +16521,12 @@ pub mod password_data {
             self.key_pair_name = Some(input.into());
             self
         }
+        /// <p>The name of the key pair that you used when creating your instance. If no key pair name
+        /// was specified when creating the instance, Lightsail uses the default key pair
+        /// (<code>LightsailDefaultKeyPair</code>).</p>
+        /// <p>If you are using a custom key pair, you need to use your own means of decrypting your
+        /// password using the <code>ciphertext</code>. Lightsail creates the ciphertext by encrypting
+        /// your password with the public key part of this key pair.</p>
         pub fn set_key_pair_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13964,7 +16559,7 @@ pub struct ExportSnapshotRecord {
     /// <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date when the export snapshot record was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The AWS Region and Availability Zone where the export snapshot record is located.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
@@ -13998,7 +16593,7 @@ pub mod export_snapshot_record {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) state: std::option::Option<crate::model::RecordState>,
@@ -14011,6 +16606,7 @@ pub mod export_snapshot_record {
             self.name = Some(input.into());
             self
         }
+        /// <p>The export snapshot record name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -14020,16 +16616,21 @@ pub mod export_snapshot_record {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The date when the export snapshot record was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date when the export snapshot record was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -14038,6 +16639,7 @@ pub mod export_snapshot_record {
             self.location = Some(input);
             self
         }
+        /// <p>The AWS Region and Availability Zone where the export snapshot record is located.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -14050,6 +16652,7 @@ pub mod export_snapshot_record {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -14062,6 +16665,7 @@ pub mod export_snapshot_record {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the export snapshot record.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::RecordState>) -> Self {
             self.state = input;
             self
@@ -14071,6 +16675,7 @@ pub mod export_snapshot_record {
             self.source_info = Some(input);
             self
         }
+        /// <p>A list of objects describing the source of the export snapshot record.</p>
         pub fn set_source_info(
             mut self,
             input: std::option::Option<crate::model::ExportSnapshotRecordSourceInfo>,
@@ -14083,6 +16688,7 @@ pub mod export_snapshot_record {
             self.destination_info = Some(input);
             self
         }
+        /// <p>A list of objects describing the destination of the export snapshot record.</p>
         pub fn set_destination_info(
             mut self,
             input: std::option::Option<crate::model::DestinationInfo>,
@@ -14144,6 +16750,7 @@ pub mod destination_info {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the resource created at the destination.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -14153,6 +16760,7 @@ pub mod destination_info {
             self.service = Some(input.into());
             self
         }
+        /// <p>The destination service of the record.</p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service = input;
             self
@@ -14181,7 +16789,7 @@ pub struct ExportSnapshotRecordSourceInfo {
     /// <code>DiskSnapshot</code>).</p>
     pub resource_type: std::option::Option<crate::model::ExportSnapshotRecordSourceType>,
     /// <p>The date when the source instance or disk snapshot was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of the source instance or disk snapshot.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source instance or disk snapshot.</p>
@@ -14216,7 +16824,7 @@ pub mod export_snapshot_record_source_info {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<crate::model::ExportSnapshotRecordSourceType>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) from_resource_name: std::option::Option<std::string::String>,
@@ -14234,6 +16842,8 @@ pub mod export_snapshot_record_source_info {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or
+        /// <code>DiskSnapshot</code>).</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ExportSnapshotRecordSourceType>,
@@ -14242,11 +16852,15 @@ pub mod export_snapshot_record_source_info {
             self
         }
         /// <p>The date when the source instance or disk snapshot was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date when the source instance or disk snapshot was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -14255,6 +16869,7 @@ pub mod export_snapshot_record_source_info {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the source instance or disk snapshot.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -14264,6 +16879,7 @@ pub mod export_snapshot_record_source_info {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the source instance or disk snapshot.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -14273,6 +16889,7 @@ pub mod export_snapshot_record_source_info {
             self.from_resource_name = Some(input.into());
             self
         }
+        /// <p>The name of the snapshot's source instance or disk.</p>
         pub fn set_from_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14285,6 +16902,7 @@ pub mod export_snapshot_record_source_info {
             self.from_resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the snapshot's source instance or disk.</p>
         pub fn set_from_resource_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14297,6 +16915,7 @@ pub mod export_snapshot_record_source_info {
             self.instance_snapshot_info = Some(input);
             self
         }
+        /// <p>A list of objects describing an instance snapshot.</p>
         pub fn set_instance_snapshot_info(
             mut self,
             input: std::option::Option<crate::model::InstanceSnapshotInfo>,
@@ -14309,6 +16928,7 @@ pub mod export_snapshot_record_source_info {
             self.disk_snapshot_info = Some(input);
             self
         }
+        /// <p>A list of objects describing a disk snapshot.</p>
         pub fn set_disk_snapshot_info(
             mut self,
             input: std::option::Option<crate::model::DiskSnapshotInfo>,
@@ -14366,6 +16986,7 @@ pub mod disk_snapshot_info {
             self.size_in_gb = Some(input);
             self
         }
+        /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
         pub fn set_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.size_in_gb = input;
             self
@@ -14423,6 +17044,8 @@ pub mod instance_snapshot_info {
             self.from_bundle_id = Some(input.into());
             self
         }
+        /// <p>The bundle ID from which the source instance was created (e.g.,
+        /// <code>micro_1_0</code>).</p>
         pub fn set_from_bundle_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14435,6 +17058,7 @@ pub mod instance_snapshot_info {
             self.from_blueprint_id = Some(input.into());
             self
         }
+        /// <p>The blueprint ID from which the source instance (e.g., <code>os_debian_8_3</code>).</p>
         pub fn set_from_blueprint_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14442,12 +17066,18 @@ pub mod instance_snapshot_info {
             self.from_blueprint_id = input;
             self
         }
+        /// Appends an item to `from_disk_info`.
+        ///
+        /// To override the contents of this collection use [`set_from_disk_info`](Self::set_from_disk_info).
+        ///
+        /// <p>A list of objects describing the disks that were attached to the source instance.</p>
         pub fn from_disk_info(mut self, input: impl Into<crate::model::DiskInfo>) -> Self {
             let mut v = self.from_disk_info.unwrap_or_default();
             v.push(input.into());
             self.from_disk_info = Some(v);
             self
         }
+        /// <p>A list of objects describing the disks that were attached to the source instance.</p>
         pub fn set_from_disk_info(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DiskInfo>>,
@@ -14513,6 +17143,7 @@ pub mod disk_info {
             self.name = Some(input.into());
             self
         }
+        /// <p>The disk name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -14522,6 +17153,7 @@ pub mod disk_info {
             self.path = Some(input.into());
             self
         }
+        /// <p>The disk path.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -14531,6 +17163,7 @@ pub mod disk_info {
             self.size_in_gb = Some(input);
             self
         }
+        /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
         pub fn set_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.size_in_gb = input;
             self
@@ -14541,6 +17174,8 @@ pub mod disk_info {
             self.is_system_disk = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether this disk is a system disk (has an operating system
+        /// loaded on it).</p>
         pub fn set_is_system_disk(mut self, input: std::option::Option<bool>) -> Self {
             self.is_system_disk = input;
             self
@@ -14563,6 +17198,7 @@ impl DiskInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -14574,7 +17210,9 @@ impl DiskInfo {
     std::hash::Hash,
 )]
 pub enum ExportSnapshotRecordSourceType {
+    #[allow(missing_docs)] // documentation missing in model
     DiskSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceSnapshot,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -14596,6 +17234,7 @@ impl std::str::FromStr for ExportSnapshotRecordSourceType {
     }
 }
 impl ExportSnapshotRecordSourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExportSnapshotRecordSourceType::DiskSnapshot => "DiskSnapshot",
@@ -14603,6 +17242,7 @@ impl ExportSnapshotRecordSourceType {
             ExportSnapshotRecordSourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DiskSnapshot", "InstanceSnapshot"]
     }
@@ -14613,6 +17253,7 @@ impl AsRef<str> for ExportSnapshotRecordSourceType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -14624,8 +17265,11 @@ impl AsRef<str> for ExportSnapshotRecordSourceType {
     std::hash::Hash,
 )]
 pub enum RecordState {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Started,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -14648,6 +17292,7 @@ impl std::str::FromStr for RecordState {
     }
 }
 impl RecordState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RecordState::Failed => "Failed",
@@ -14656,6 +17301,7 @@ impl RecordState {
             RecordState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Failed", "Started", "Succeeded"]
     }
@@ -14680,7 +17326,7 @@ pub struct Domain {
     /// your Lightsail information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The date when the domain recordset was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The AWS Region and Availability Zones where the domain recordset was created.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The resource type. </p>
@@ -14714,7 +17360,7 @@ pub mod domain {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -14726,6 +17372,7 @@ pub mod domain {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the domain.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -14736,6 +17383,8 @@ pub mod domain {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the domain recordset (e.g.,
+        /// <code>arn:aws:lightsail:global:123456789101:Domain/824cede0-abc7-4f84-8dbc-12345EXAMPLE</code>).</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -14747,16 +17396,23 @@ pub mod domain {
             self.support_code = Some(input.into());
             self
         }
+        /// <p>The support code. Include this code in your email to support when you have questions about
+        /// an instance or another resource in Lightsail. This code enables our support team to look up
+        /// your Lightsail information more easily.</p>
         pub fn set_support_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.support_code = input;
             self
         }
         /// <p>The date when the domain recordset was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date when the domain recordset was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -14765,6 +17421,7 @@ pub mod domain {
             self.location = Some(input);
             self
         }
+        /// <p>The AWS Region and Availability Zones where the domain recordset was created.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -14777,6 +17434,7 @@ pub mod domain {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The resource type. </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -14784,12 +17442,20 @@ pub mod domain {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -14797,12 +17463,18 @@ pub mod domain {
             self.tags = input;
             self
         }
+        /// Appends an item to `domain_entries`.
+        ///
+        /// To override the contents of this collection use [`set_domain_entries`](Self::set_domain_entries).
+        ///
+        /// <p>An array of key-value pairs containing information about the domain entries.</p>
         pub fn domain_entries(mut self, input: impl Into<crate::model::DomainEntry>) -> Self {
             let mut v = self.domain_entries.unwrap_or_default();
             v.push(input.into());
             self.domain_entries = Some(v);
             self
         }
+        /// <p>An array of key-value pairs containing information about the domain entries.</p>
         pub fn set_domain_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainEntry>>,
@@ -14845,7 +17517,7 @@ pub struct LightsailDistribution {
     /// information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The timestamp when the distribution was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>An object that describes the location of the distribution, such as the AWS Region and
     /// Availability Zone.</p>
     /// <note>
@@ -14886,6 +17558,7 @@ pub struct LightsailDistribution {
     /// bundle.</p>
     pub able_to_update_bundle: std::option::Option<bool>,
     /// <p>The IP address type of the distribution.</p>
+    ///
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
     /// IPv4 and IPv6.</p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
@@ -14928,7 +17601,7 @@ pub mod lightsail_distribution {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) alternative_domain_names:
@@ -14954,6 +17627,7 @@ pub mod lightsail_distribution {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the distribution.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -14963,6 +17637,7 @@ pub mod lightsail_distribution {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the distribution.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -14974,16 +17649,23 @@ pub mod lightsail_distribution {
             self.support_code = Some(input.into());
             self
         }
+        /// <p>The support code. Include this code in your email to support when you have questions about
+        /// your Lightsail distribution. This code enables our support team to look up your Lightsail
+        /// information more easily.</p>
         pub fn set_support_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.support_code = input;
             self
         }
         /// <p>The timestamp when the distribution was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the distribution was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -14998,6 +17680,13 @@ pub mod lightsail_distribution {
             self.location = Some(input);
             self
         }
+        /// <p>An object that describes the location of the distribution, such as the AWS Region and
+        /// Availability Zone.</p>
+        /// <note>
+        /// <p>Lightsail distributions are global resources that can reference an origin in any AWS
+        /// Region, and distribute its content globally. However, all distributions are located in the
+        /// <code>us-east-1</code> Region.</p>
+        /// </note>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -15010,6 +17699,7 @@ pub mod lightsail_distribution {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The Lightsail resource type (e.g., <code>Distribution</code>).</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -15017,12 +17707,18 @@ pub mod lightsail_distribution {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `alternative_domain_names`.
+        ///
+        /// To override the contents of this collection use [`set_alternative_domain_names`](Self::set_alternative_domain_names).
+        ///
+        /// <p>The alternate domain names of the distribution.</p>
         pub fn alternative_domain_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.alternative_domain_names.unwrap_or_default();
             v.push(input.into());
             self.alternative_domain_names = Some(v);
             self
         }
+        /// <p>The alternate domain names of the distribution.</p>
         pub fn set_alternative_domain_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15035,6 +17731,7 @@ pub mod lightsail_distribution {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the distribution.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -15044,6 +17741,7 @@ pub mod lightsail_distribution {
             self.is_enabled = Some(input);
             self
         }
+        /// <p>Indicates whether the distribution is enabled.</p>
         pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.is_enabled = input;
             self
@@ -15053,6 +17751,7 @@ pub mod lightsail_distribution {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name of the distribution.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -15062,6 +17761,7 @@ pub mod lightsail_distribution {
             self.bundle_id = Some(input.into());
             self
         }
+        /// <p>The ID of the bundle currently applied to the distribution.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
@@ -15071,6 +17771,7 @@ pub mod lightsail_distribution {
             self.certificate_name = Some(input.into());
             self
         }
+        /// <p>The name of the SSL/TLS certificate attached to the distribution, if any.</p>
         pub fn set_certificate_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15085,6 +17786,9 @@ pub mod lightsail_distribution {
             self.origin = Some(input);
             self
         }
+        /// <p>An object that describes the origin resource of the distribution, such as a Lightsail
+        /// instance or load balancer.</p>
+        /// <p>The distribution pulls, caches, and serves content from the origin.</p>
         pub fn set_origin(mut self, input: std::option::Option<crate::model::Origin>) -> Self {
             self.origin = input;
             self
@@ -15094,6 +17798,7 @@ pub mod lightsail_distribution {
             self.origin_public_dns = Some(input.into());
             self
         }
+        /// <p>The public DNS of the origin.</p>
         pub fn set_origin_public_dns(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15106,6 +17811,7 @@ pub mod lightsail_distribution {
             self.default_cache_behavior = Some(input);
             self
         }
+        /// <p>An object that describes the default cache behavior of the distribution.</p>
         pub fn set_default_cache_behavior(
             mut self,
             input: std::option::Option<crate::model::CacheBehavior>,
@@ -15118,6 +17824,7 @@ pub mod lightsail_distribution {
             self.cache_behavior_settings = Some(input);
             self
         }
+        /// <p>An object that describes the cache behavior settings of the distribution.</p>
         pub fn set_cache_behavior_settings(
             mut self,
             input: std::option::Option<crate::model::CacheSettings>,
@@ -15125,6 +17832,11 @@ pub mod lightsail_distribution {
             self.cache_behavior_settings = input;
             self
         }
+        /// Appends an item to `cache_behaviors`.
+        ///
+        /// To override the contents of this collection use [`set_cache_behaviors`](Self::set_cache_behaviors).
+        ///
+        /// <p>An array of objects that describe the per-path cache behavior of the distribution.</p>
         pub fn cache_behaviors(
             mut self,
             input: impl Into<crate::model::CacheBehaviorPerPath>,
@@ -15134,6 +17846,7 @@ pub mod lightsail_distribution {
             self.cache_behaviors = Some(v);
             self
         }
+        /// <p>An array of objects that describe the per-path cache behavior of the distribution.</p>
         pub fn set_cache_behaviors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CacheBehaviorPerPath>>,
@@ -15149,17 +17862,26 @@ pub mod lightsail_distribution {
             self.able_to_update_bundle = Some(input);
             self
         }
+        /// <p>Indicates whether the bundle that is currently applied to your distribution, specified
+        /// using the <code>distributionName</code> parameter, can be changed to another bundle.</p>
+        /// <p>Use the <code>UpdateDistributionBundle</code> action to change your distribution's
+        /// bundle.</p>
         pub fn set_able_to_update_bundle(mut self, input: std::option::Option<bool>) -> Self {
             self.able_to_update_bundle = input;
             self
         }
         /// <p>The IP address type of the distribution.</p>
+        ///
         /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
         /// IPv4 and IPv6.</p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
             self.ip_address_type = Some(input);
             self
         }
+        /// <p>The IP address type of the distribution.</p>
+        ///
+        /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for
+        /// IPv4 and IPv6.</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -15167,12 +17889,20 @@ pub mod lightsail_distribution {
             self.ip_address_type = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -15259,6 +17989,7 @@ pub mod origin {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the origin resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -15268,6 +17999,7 @@ pub mod origin {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The resource type of the origin resource (e.g., <i>Instance</i>).</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -15280,6 +18012,7 @@ pub mod origin {
             self.region_name = Some(input);
             self
         }
+        /// <p>The AWS Region name of the origin resource.</p>
         pub fn set_region_name(
             mut self,
             input: std::option::Option<crate::model::RegionName>,
@@ -15293,6 +18026,8 @@ pub mod origin {
             self.protocol_policy = Some(input);
             self
         }
+        /// <p>The protocol that your Amazon Lightsail distribution uses when establishing a connection
+        /// with your origin to pull content.</p>
         pub fn set_protocol_policy(
             mut self,
             input: std::option::Option<crate::model::OriginProtocolPolicyEnum>,
@@ -15318,6 +18053,7 @@ impl Origin {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -15329,11 +18065,17 @@ impl Origin {
     std::hash::Hash,
 )]
 pub enum DistributionMetricName {
+    #[allow(missing_docs)] // documentation missing in model
     BytesDownloaded,
+    #[allow(missing_docs)] // documentation missing in model
     BytesUploaded,
+    #[allow(missing_docs)] // documentation missing in model
     Http4xxErrorRate,
+    #[allow(missing_docs)] // documentation missing in model
     Http5xxErrorRate,
+    #[allow(missing_docs)] // documentation missing in model
     Requests,
+    #[allow(missing_docs)] // documentation missing in model
     TotalErrorRate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -15359,6 +18101,7 @@ impl std::str::FromStr for DistributionMetricName {
     }
 }
 impl DistributionMetricName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DistributionMetricName::BytesDownloaded => "BytesDownloaded",
@@ -15370,6 +18113,7 @@ impl DistributionMetricName {
             DistributionMetricName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BytesDownloaded",
@@ -15432,6 +18176,7 @@ pub mod distribution_bundle {
             self.bundle_id = Some(input.into());
             self
         }
+        /// <p>The ID of the bundle.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
@@ -15441,6 +18186,7 @@ pub mod distribution_bundle {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the distribution bundle.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -15450,6 +18196,7 @@ pub mod distribution_bundle {
             self.price = Some(input);
             self
         }
+        /// <p>The monthly price, in US dollars, of the bundle.</p>
         pub fn set_price(mut self, input: std::option::Option<f32>) -> Self {
             self.price = input;
             self
@@ -15459,6 +18206,7 @@ pub mod distribution_bundle {
             self.transfer_per_month_in_gb = Some(input);
             self
         }
+        /// <p>The monthly network transfer quota of the bundle.</p>
         pub fn set_transfer_per_month_in_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.transfer_per_month_in_gb = input;
             self
@@ -15469,6 +18217,8 @@ pub mod distribution_bundle {
             self.is_active = Some(input);
             self
         }
+        /// <p>Indicates whether the bundle is active, and can be specified for a new or existing
+        /// distribution.</p>
         pub fn set_is_active(mut self, input: std::option::Option<bool>) -> Self {
             self.is_active = input;
             self
@@ -15505,7 +18255,7 @@ pub struct DiskSnapshot {
     /// your Lightsail information more easily.</p>
     pub support_code: std::option::Option<std::string::String>,
     /// <p>The date when the disk snapshot was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The AWS Region and Availability Zone where the disk snapshot was created.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
@@ -15564,7 +18314,7 @@ pub mod disk_snapshot {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) support_code: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -15583,6 +18333,7 @@ pub mod disk_snapshot {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -15592,6 +18343,7 @@ pub mod disk_snapshot {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the disk snapshot.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -15603,16 +18355,23 @@ pub mod disk_snapshot {
             self.support_code = Some(input.into());
             self
         }
+        /// <p>The support code. Include this code in your email to support when you have questions about
+        /// an instance or another resource in Lightsail. This code enables our support team to look up
+        /// your Lightsail information more easily.</p>
         pub fn set_support_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.support_code = input;
             self
         }
         /// <p>The date when the disk snapshot was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date when the disk snapshot was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -15621,6 +18380,7 @@ pub mod disk_snapshot {
             self.location = Some(input);
             self
         }
+        /// <p>The AWS Region and Availability Zone where the disk snapshot was created.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -15633,6 +18393,7 @@ pub mod disk_snapshot {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -15640,12 +18401,20 @@ pub mod disk_snapshot {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -15658,6 +18427,7 @@ pub mod disk_snapshot {
             self.size_in_gb = Some(input);
             self
         }
+        /// <p>The size of the disk in GB.</p>
         pub fn set_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.size_in_gb = input;
             self
@@ -15667,6 +18437,7 @@ pub mod disk_snapshot {
             self.state = Some(input);
             self
         }
+        /// <p>The status of the disk snapshot operation.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::DiskSnapshotState>,
@@ -15679,6 +18450,7 @@ pub mod disk_snapshot {
             self.progress = Some(input.into());
             self
         }
+        /// <p>The progress of the snapshot.</p>
         pub fn set_progress(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.progress = input;
             self
@@ -15688,6 +18460,7 @@ pub mod disk_snapshot {
             self.from_disk_name = Some(input.into());
             self
         }
+        /// <p>The unique name of the source disk from which the disk snapshot was created.</p>
         pub fn set_from_disk_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15701,6 +18474,8 @@ pub mod disk_snapshot {
             self.from_disk_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the source disk from which the disk snapshot was
+        /// created.</p>
         pub fn set_from_disk_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15714,6 +18489,8 @@ pub mod disk_snapshot {
             self.from_instance_name = Some(input.into());
             self
         }
+        /// <p>The unique name of the source instance from which the disk (system volume) snapshot was
+        /// created.</p>
         pub fn set_from_instance_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15727,6 +18504,8 @@ pub mod disk_snapshot {
             self.from_instance_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the source instance from which the disk (system volume)
+        /// snapshot was created.</p>
         pub fn set_from_instance_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15740,6 +18519,8 @@ pub mod disk_snapshot {
             self.is_from_auto_snapshot = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether the snapshot was created from an automatic
+        /// snapshot.</p>
         pub fn set_is_from_auto_snapshot(mut self, input: std::option::Option<bool>) -> Self {
             self.is_from_auto_snapshot = input;
             self
@@ -15773,7 +18554,7 @@ impl DiskSnapshot {
     }
 }
 
-/// **NOTE:** `DiskSnapshotState::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `DiskSnapshotState::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -15785,10 +18566,13 @@ impl DiskSnapshot {
     std::hash::Hash,
 )]
 pub enum DiskSnapshotState {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -15812,6 +18596,7 @@ impl std::str::FromStr for DiskSnapshotState {
     }
 }
 impl DiskSnapshotState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DiskSnapshotState::Completed => "completed",
@@ -15821,6 +18606,7 @@ impl DiskSnapshotState {
             DiskSnapshotState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["completed", "error", "pending", "unknown"]
     }
@@ -15833,6 +18619,7 @@ impl AsRef<str> for DiskSnapshotState {
 
 /// <p>Describes the powers that can be specified for an Amazon Lightsail container
 /// service.</p>
+///
 /// <p>The power specifies the amount of RAM, the number of vCPUs, and the base price of the
 /// container service.</p>
 #[non_exhaustive]
@@ -15883,6 +18670,7 @@ pub mod container_service_power {
             self.power_id = Some(input.into());
             self
         }
+        /// <p>The ID of the power (e.g., <code>nano-1</code>).</p>
         pub fn set_power_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.power_id = input;
             self
@@ -15892,6 +18680,7 @@ pub mod container_service_power {
             self.price = Some(input);
             self
         }
+        /// <p>The monthly price of the power in USD.</p>
         pub fn set_price(mut self, input: std::option::Option<f32>) -> Self {
             self.price = input;
             self
@@ -15901,6 +18690,7 @@ pub mod container_service_power {
             self.cpu_count = Some(input);
             self
         }
+        /// <p>The number of vCPUs included in the power.</p>
         pub fn set_cpu_count(mut self, input: std::option::Option<f32>) -> Self {
             self.cpu_count = input;
             self
@@ -15910,6 +18700,7 @@ pub mod container_service_power {
             self.ram_size_in_gb = Some(input);
             self
         }
+        /// <p>The amount of RAM (in GB) of the power.</p>
         pub fn set_ram_size_in_gb(mut self, input: std::option::Option<f32>) -> Self {
             self.ram_size_in_gb = input;
             self
@@ -15919,6 +18710,7 @@ pub mod container_service_power {
             self.name = Some(input.into());
             self
         }
+        /// <p>The friendly name of the power (e.g., <code>nano</code>).</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -15929,6 +18721,8 @@ pub mod container_service_power {
             self.is_active = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether the power is active and can be specified for container
+        /// services.</p>
         pub fn set_is_active(mut self, input: std::option::Option<bool>) -> Self {
             self.is_active = input;
             self
@@ -15953,6 +18747,7 @@ impl ContainerServicePower {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -15964,7 +18759,9 @@ impl ContainerServicePower {
     std::hash::Hash,
 )]
 pub enum ContainerServiceMetricName {
+    #[allow(missing_docs)] // documentation missing in model
     CpuUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     MemoryUtilization,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -15986,6 +18783,7 @@ impl std::str::FromStr for ContainerServiceMetricName {
     }
 }
 impl ContainerServiceMetricName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContainerServiceMetricName::CpuUtilization => "CPUUtilization",
@@ -15993,6 +18791,7 @@ impl ContainerServiceMetricName {
             ContainerServiceMetricName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CPUUtilization", "MemoryUtilization"]
     }
@@ -16008,7 +18807,7 @@ impl AsRef<str> for ContainerServiceMetricName {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerServiceLogEvent {
     /// <p>The timestamp when the container service log event was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The message of the container service log event.</p>
     pub message: std::option::Option<std::string::String>,
 }
@@ -16026,16 +18825,20 @@ pub mod container_service_log_event {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The timestamp when the container service log event was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the container service log event was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -16044,6 +18847,7 @@ pub mod container_service_log_event {
             self.message = Some(input.into());
             self
         }
+        /// <p>The message of the container service log event.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -16098,7 +18902,7 @@ pub struct ContactMethod {
     /// <p>The Amazon Resource Name (ARN) of the contact method.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp when the contact method was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Describes the resource location.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The Lightsail resource type (e.g., <code>ContactMethod</code>).</p>
@@ -16134,7 +18938,7 @@ pub mod contact_method {
         pub(crate) protocol: std::option::Option<crate::model::ContactProtocol>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) support_code: std::option::Option<std::string::String>,
@@ -16146,6 +18950,8 @@ pub mod contact_method {
             self.contact_endpoint = Some(input.into());
             self
         }
+        /// <p>The destination of the contact method, such as an email address or a mobile phone
+        /// number.</p>
         pub fn set_contact_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16175,6 +18981,24 @@ pub mod contact_method {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the contact method.</p>
+        /// <p>A contact method has the following possible status:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PendingVerification</code> - The contact method has not yet been verified, and
+        /// the verification has not yet expired.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Valid</code> - The contact method has been verified.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>InValid</code> - An attempt was made to verify the contact method, but the
+        /// verification has expired.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ContactMethodStatus>,
@@ -16187,6 +19011,7 @@ pub mod contact_method {
             self.protocol = Some(input);
             self
         }
+        /// <p>The protocol of the contact method, such as email or SMS (text messaging).</p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::ContactProtocol>,
@@ -16199,6 +19024,7 @@ pub mod contact_method {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the contact method.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -16208,16 +19034,21 @@ pub mod contact_method {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the contact method.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The timestamp when the contact method was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the contact method was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -16226,6 +19057,7 @@ pub mod contact_method {
             self.location = Some(input);
             self
         }
+        /// <p>Describes the resource location.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -16238,6 +19070,7 @@ pub mod contact_method {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The Lightsail resource type (e.g., <code>ContactMethod</code>).</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -16252,6 +19085,9 @@ pub mod contact_method {
             self.support_code = Some(input.into());
             self
         }
+        /// <p>The support code. Include this code in your email to support when you have questions about
+        /// your Lightsail contact method. This code enables our support team to look up your
+        /// Lightsail information more easily.</p>
         pub fn set_support_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.support_code = input;
             self
@@ -16279,6 +19115,7 @@ impl ContactMethod {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -16290,8 +19127,11 @@ impl ContactMethod {
     std::hash::Hash,
 )]
 pub enum ContactMethodStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Invalid,
+    #[allow(missing_docs)] // documentation missing in model
     PendingVerification,
+    #[allow(missing_docs)] // documentation missing in model
     Valid,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -16314,6 +19154,7 @@ impl std::str::FromStr for ContactMethodStatus {
     }
 }
 impl ContactMethodStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContactMethodStatus::Invalid => "Invalid",
@@ -16322,6 +19163,7 @@ impl ContactMethodStatus {
             ContactMethodStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Invalid", "PendingVerification", "Valid"]
     }
@@ -16345,7 +19187,7 @@ pub struct CloudFormationStackRecord {
     /// <p>The Amazon Resource Name (ARN) of the CloudFormation stack record.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date when the CloudFormation stack record was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A list of objects describing the Availability Zone and AWS Region of the CloudFormation
     /// stack record.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
@@ -16382,7 +19224,7 @@ pub mod cloud_formation_stack_record {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) state: std::option::Option<crate::model::RecordState>,
@@ -16397,6 +19239,8 @@ pub mod cloud_formation_stack_record {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the CloudFormation stack record. It starts with
+        /// <code>CloudFormationStackRecord</code> followed by a GUID.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -16406,16 +19250,21 @@ pub mod cloud_formation_stack_record {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the CloudFormation stack record.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The date when the CloudFormation stack record was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date when the CloudFormation stack record was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -16425,6 +19274,8 @@ pub mod cloud_formation_stack_record {
             self.location = Some(input);
             self
         }
+        /// <p>A list of objects describing the Availability Zone and AWS Region of the CloudFormation
+        /// stack record.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -16437,6 +19288,7 @@ pub mod cloud_formation_stack_record {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The Lightsail resource type (e.g., <code>CloudFormationStackRecord</code>).</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -16449,10 +19301,16 @@ pub mod cloud_formation_stack_record {
             self.state = Some(input);
             self
         }
+        /// <p>The current state of the CloudFormation stack record.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::RecordState>) -> Self {
             self.state = input;
             self
         }
+        /// Appends an item to `source_info`.
+        ///
+        /// To override the contents of this collection use [`set_source_info`](Self::set_source_info).
+        ///
+        /// <p>A list of objects describing the source of the CloudFormation stack record.</p>
         pub fn source_info(
             mut self,
             input: impl Into<crate::model::CloudFormationStackRecordSourceInfo>,
@@ -16462,6 +19320,7 @@ pub mod cloud_formation_stack_record {
             self.source_info = Some(v);
             self
         }
+        /// <p>A list of objects describing the source of the CloudFormation stack record.</p>
         pub fn set_source_info(
             mut self,
             input: std::option::Option<
@@ -16477,6 +19336,8 @@ pub mod cloud_formation_stack_record {
             self.destination_info = Some(input);
             self
         }
+        /// <p>A list of objects describing the destination service, which is AWS CloudFormation, and the Amazon
+        /// Resource Name (ARN) of the AWS CloudFormation stack.</p>
         pub fn set_destination_info(
             mut self,
             input: std::option::Option<crate::model::DestinationInfo>,
@@ -16547,6 +19408,7 @@ pub mod cloud_formation_stack_record_source_info {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::CloudFormationStackRecordSourceType>,
@@ -16559,6 +19421,7 @@ pub mod cloud_formation_stack_record_source_info {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the record.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -16568,6 +19431,7 @@ pub mod cloud_formation_stack_record_source_info {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -16589,6 +19453,7 @@ impl CloudFormationStackRecordSourceInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -16600,6 +19465,7 @@ impl CloudFormationStackRecordSourceInfo {
     std::hash::Hash,
 )]
 pub enum CloudFormationStackRecordSourceType {
+    #[allow(missing_docs)] // documentation missing in model
     ExportSnapshotRecord,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -16620,12 +19486,14 @@ impl std::str::FromStr for CloudFormationStackRecordSourceType {
     }
 }
 impl CloudFormationStackRecordSourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CloudFormationStackRecordSourceType::ExportSnapshotRecord => "ExportSnapshotRecord",
             CloudFormationStackRecordSourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ExportSnapshotRecord"]
     }
@@ -16681,6 +19549,7 @@ pub mod certificate_summary {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16693,6 +19562,7 @@ pub mod certificate_summary {
             self.certificate_name = Some(input.into());
             self
         }
+        /// <p>The name of the certificate.</p>
         pub fn set_certificate_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16705,6 +19575,7 @@ pub mod certificate_summary {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name of the certificate.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -16714,6 +19585,7 @@ pub mod certificate_summary {
             self.certificate_detail = Some(input);
             self
         }
+        /// <p>An object that describes a certificate in detail.</p>
         pub fn set_certificate_detail(
             mut self,
             input: std::option::Option<crate::model::Certificate>,
@@ -16721,12 +19593,20 @@ pub mod certificate_summary {
             self.certificate_detail = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -16848,15 +19728,15 @@ pub struct Certificate {
     /// certificate.</p>
     pub key_algorithm: std::option::Option<std::string::String>,
     /// <p>The timestamp when the certificate was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp when the certificate was issued.</p>
-    pub issued_at: std::option::Option<smithy_types::Instant>,
+    pub issued_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The certificate authority that issued the certificate.</p>
     pub issuer_ca: std::option::Option<std::string::String>,
     /// <p>The timestamp when the certificate is first valid.</p>
-    pub not_before: std::option::Option<smithy_types::Instant>,
+    pub not_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp when the certificate expires.</p>
-    pub not_after: std::option::Option<smithy_types::Instant>,
+    pub not_after: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The renewal eligibility of the certificate.</p>
     pub eligible_to_renew: std::option::Option<std::string::String>,
     /// <p>An object that describes the status of the certificate renewal managed by
@@ -16864,7 +19744,7 @@ pub struct Certificate {
     pub renewal_summary: std::option::Option<crate::model::RenewalSummary>,
     /// <p>The timestamp when the certificate was revoked. This value is present only when the
     /// certificate status is <code>REVOKED</code>.</p>
-    pub revoked_at: std::option::Option<smithy_types::Instant>,
+    pub revoked_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The reason the certificate was revoked. This value is present only when the certificate
     /// status is <code>REVOKED</code>.</p>
     pub revocation_reason: std::option::Option<std::string::String>,
@@ -16921,14 +19801,14 @@ pub mod certificate {
         pub(crate) request_failure_reason: std::option::Option<std::string::String>,
         pub(crate) in_use_resource_count: std::option::Option<i32>,
         pub(crate) key_algorithm: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) issued_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) issued_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) issuer_ca: std::option::Option<std::string::String>,
-        pub(crate) not_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) not_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) not_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) not_after: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) eligible_to_renew: std::option::Option<std::string::String>,
         pub(crate) renewal_summary: std::option::Option<crate::model::RenewalSummary>,
-        pub(crate) revoked_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) revoked_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) revocation_reason: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) support_code: std::option::Option<std::string::String>,
@@ -16939,6 +19819,7 @@ pub mod certificate {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -16948,6 +19829,7 @@ pub mod certificate {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the certificate (e.g., <code>my-certificate</code>).</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -16957,6 +19839,7 @@ pub mod certificate {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name of the certificate.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -16966,6 +19849,7 @@ pub mod certificate {
             self.status = Some(input);
             self
         }
+        /// <p>The validation status of the certificate.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::CertificateStatus>,
@@ -16978,6 +19862,7 @@ pub mod certificate {
             self.serial_number = Some(input.into());
             self
         }
+        /// <p>The serial number of the certificate.</p>
         pub fn set_serial_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16985,12 +19870,20 @@ pub mod certificate {
             self.serial_number = input;
             self
         }
+        /// Appends an item to `subject_alternative_names`.
+        ///
+        /// To override the contents of this collection use [`set_subject_alternative_names`](Self::set_subject_alternative_names).
+        ///
+        /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>)
+        /// and subdomains (e.g., <code>blog.example.com</code>) of the certificate.</p>
         pub fn subject_alternative_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subject_alternative_names.unwrap_or_default();
             v.push(input.into());
             self.subject_alternative_names = Some(v);
             self
         }
+        /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>)
+        /// and subdomains (e.g., <code>blog.example.com</code>) of the certificate.</p>
         pub fn set_subject_alternative_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16998,6 +19891,11 @@ pub mod certificate {
             self.subject_alternative_names = input;
             self
         }
+        /// Appends an item to `domain_validation_records`.
+        ///
+        /// To override the contents of this collection use [`set_domain_validation_records`](Self::set_domain_validation_records).
+        ///
+        /// <p>An array of objects that describe the domain validation records of the certificate.</p>
         pub fn domain_validation_records(
             mut self,
             input: impl Into<crate::model::DomainValidationRecord>,
@@ -17007,6 +19905,7 @@ pub mod certificate {
             self.domain_validation_records = Some(v);
             self
         }
+        /// <p>An array of objects that describe the domain validation records of the certificate.</p>
         pub fn set_domain_validation_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainValidationRecord>>,
@@ -17081,6 +19980,69 @@ pub mod certificate {
             self.request_failure_reason = Some(input.into());
             self
         }
+        /// <p>The validation failure reason, if any, of the certificate.</p>
+        /// <p>The following failure reasons are possible:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>NO_AVAILABLE_CONTACTS</code>
+        /// </b> - This failure
+        /// applies to email validation, which is not available for Lightsail certificates.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>ADDITIONAL_VERIFICATION_REQUIRED</code>
+        /// </b> -
+        /// Lightsail requires additional information to process this certificate request. This can
+        /// happen as a fraud-protection measure, such as when the domain ranks within the Alexa top
+        /// 1000 websites. To provide the required information, use the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact
+        /// AWS Support.</p>
+        /// <note>
+        /// <p>You cannot request a certificate for Amazon-owned domain names such as those ending
+        /// in amazonaws.com, cloudfront.net, or elasticbeanstalk.com.</p>
+        /// </note>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>DOMAIN_NOT_ALLOWED</code>
+        /// </b> - One or more of the
+        /// domain names in the certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
+        /// problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain
+        /// is reported as suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google Help for
+        /// Hacked Websites</a> to learn what you can do.</p>
+        /// <p>If you believe that the result is a false positive, notify the organization that is
+        /// reporting the domain. VirusTotal is an aggregate of several antivirus and URL scanners and
+        /// cannot remove your domain from a block list itself. After you correct the problem and the
+        /// VirusTotal registry has been updated, request a new certificate.</p>
+        /// <p>If you see this error and your domain is not included in the VirusTotal list, visit
+        /// the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>
+        /// and create a case.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>INVALID_PUBLIC_DOMAIN</code>
+        /// </b> - One or more of
+        /// the domain names in the certificate request is not valid. Typically, this is because a
+        /// domain name in the request is not a valid top-level domain. Try to request a certificate
+        /// again, correcting any spelling errors or typos that were in the failed request, and ensure
+        /// that all domain names in the request are for valid top-level domains. For example, you
+        /// cannot request a certificate for <code>example.invalidpublicdomain</code> because
+        /// <code>invalidpublicdomain</code> is not a valid top-level domain.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>OTHER</code>
+        /// </b> - Typically, this failure occurs
+        /// when there is a typographical error in one or more of the domain names in the certificate
+        /// request. Try to request a certificate again, correcting any spelling errors or typos that
+        /// were in the failed request. </p>
+        /// </li>
+        /// </ul>
         pub fn set_request_failure_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17093,6 +20055,7 @@ pub mod certificate {
             self.in_use_resource_count = Some(input);
             self
         }
+        /// <p>The number of Lightsail resources that the certificate is attached to.</p>
         pub fn set_in_use_resource_count(mut self, input: std::option::Option<i32>) -> Self {
             self.in_use_resource_count = input;
             self
@@ -17103,6 +20066,8 @@ pub mod certificate {
             self.key_algorithm = Some(input.into());
             self
         }
+        /// <p>The algorithm used to generate the key pair (the public and private key) of the
+        /// certificate.</p>
         pub fn set_key_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17111,20 +20076,28 @@ pub mod certificate {
             self
         }
         /// <p>The timestamp when the certificate was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the certificate was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The timestamp when the certificate was issued.</p>
-        pub fn issued_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn issued_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.issued_at = Some(input);
             self
         }
-        pub fn set_issued_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the certificate was issued.</p>
+        pub fn set_issued_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.issued_at = input;
             self
         }
@@ -17133,25 +20106,34 @@ pub mod certificate {
             self.issuer_ca = Some(input.into());
             self
         }
+        /// <p>The certificate authority that issued the certificate.</p>
         pub fn set_issuer_ca(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.issuer_ca = input;
             self
         }
         /// <p>The timestamp when the certificate is first valid.</p>
-        pub fn not_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn not_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.not_before = Some(input);
             self
         }
-        pub fn set_not_before(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the certificate is first valid.</p>
+        pub fn set_not_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.not_before = input;
             self
         }
         /// <p>The timestamp when the certificate expires.</p>
-        pub fn not_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn not_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.not_after = Some(input);
             self
         }
-        pub fn set_not_after(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the certificate expires.</p>
+        pub fn set_not_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.not_after = input;
             self
         }
@@ -17160,6 +20142,7 @@ pub mod certificate {
             self.eligible_to_renew = Some(input.into());
             self
         }
+        /// <p>The renewal eligibility of the certificate.</p>
         pub fn set_eligible_to_renew(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17173,6 +20156,8 @@ pub mod certificate {
             self.renewal_summary = Some(input);
             self
         }
+        /// <p>An object that describes the status of the certificate renewal managed by
+        /// Lightsail.</p>
         pub fn set_renewal_summary(
             mut self,
             input: std::option::Option<crate::model::RenewalSummary>,
@@ -17182,11 +20167,16 @@ pub mod certificate {
         }
         /// <p>The timestamp when the certificate was revoked. This value is present only when the
         /// certificate status is <code>REVOKED</code>.</p>
-        pub fn revoked_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn revoked_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.revoked_at = Some(input);
             self
         }
-        pub fn set_revoked_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the certificate was revoked. This value is present only when the
+        /// certificate status is <code>REVOKED</code>.</p>
+        pub fn set_revoked_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.revoked_at = input;
             self
         }
@@ -17196,6 +20186,8 @@ pub mod certificate {
             self.revocation_reason = Some(input.into());
             self
         }
+        /// <p>The reason the certificate was revoked. This value is present only when the certificate
+        /// status is <code>REVOKED</code>.</p>
         pub fn set_revocation_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17203,12 +20195,20 @@ pub mod certificate {
             self.revocation_reason = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tag keys and optional values for the resource. For more information about tags in
+        /// Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -17223,6 +20223,9 @@ pub mod certificate {
             self.support_code = Some(input.into());
             self
         }
+        /// <p>The support code. Include this code in your email to support when you have questions about
+        /// your Lightsail certificate. This code enables our support team to look up your Lightsail
+        /// information more easily.</p>
         pub fn set_support_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.support_code = input;
             self
@@ -17312,7 +20315,7 @@ pub struct RenewalSummary {
     /// <p>The reason for the renewal status of the certificate.</p>
     pub renewal_status_reason: std::option::Option<std::string::String>,
     /// <p>The timestamp when the certificate was last updated.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for RenewalSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17334,9 +20337,14 @@ pub mod renewal_summary {
             std::option::Option<std::vec::Vec<crate::model::DomainValidationRecord>>,
         pub(crate) renewal_status: std::option::Option<crate::model::RenewalStatus>,
         pub(crate) renewal_status_reason: std::option::Option<std::string::String>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
+        /// Appends an item to `domain_validation_records`.
+        ///
+        /// To override the contents of this collection use [`set_domain_validation_records`](Self::set_domain_validation_records).
+        ///
+        /// <p>An array of objects that describe the domain validation records of the certificate.</p>
         pub fn domain_validation_records(
             mut self,
             input: impl Into<crate::model::DomainValidationRecord>,
@@ -17346,6 +20354,7 @@ pub mod renewal_summary {
             self.domain_validation_records = Some(v);
             self
         }
+        /// <p>An array of objects that describe the domain validation records of the certificate.</p>
         pub fn set_domain_validation_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainValidationRecord>>,
@@ -17396,6 +20405,45 @@ pub mod renewal_summary {
             self.renewal_status = Some(input);
             self
         }
+        /// <p>The renewal status of the certificate.</p>
+        /// <p>The following renewal status are possible:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>PendingAutoRenewal</code>
+        /// </b> - Lightsail is
+        /// attempting to automatically validate the domain names of the certificate. No further
+        /// action is required. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>PendingValidation</code>
+        /// </b> - Lightsail couldn't
+        /// automatically validate one or more domain names of the certificate. You must take action
+        /// to validate these domain names or the certificate won't be renewed. Check to make sure
+        /// your certificate's domain validation records exist in your domain's DNS, and that your
+        /// certificate remains in use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>Success</code>
+        /// </b> - All domain names in the
+        /// certificate are validated, and Lightsail renewed the certificate. No further action is
+        /// required. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>Failed</code>
+        /// </b> - One or more domain names were
+        /// not validated before the certificate expired, and Lightsail did not renew the
+        /// certificate. You can request a new certificate using the <code>CreateCertificate</code>
+        /// action.</p>
+        /// </li>
+        /// </ul>
         pub fn set_renewal_status(
             mut self,
             input: std::option::Option<crate::model::RenewalStatus>,
@@ -17408,6 +20456,7 @@ pub mod renewal_summary {
             self.renewal_status_reason = Some(input.into());
             self
         }
+        /// <p>The reason for the renewal status of the certificate.</p>
         pub fn set_renewal_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17416,11 +20465,15 @@ pub mod renewal_summary {
             self
         }
         /// <p>The timestamp when the certificate was last updated.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the certificate was last updated.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
@@ -17442,6 +20495,7 @@ impl RenewalSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -17453,9 +20507,13 @@ impl RenewalSummary {
     std::hash::Hash,
 )]
 pub enum RenewalStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     PendingAutoRenewal,
+    #[allow(missing_docs)] // documentation missing in model
     PendingValidation,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -17479,6 +20537,7 @@ impl std::str::FromStr for RenewalStatus {
     }
 }
 impl RenewalStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RenewalStatus::Failed => "Failed",
@@ -17488,6 +20547,7 @@ impl RenewalStatus {
             RenewalStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Failed",
@@ -17538,6 +20598,8 @@ pub mod domain_validation_record {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name of the certificate validation record. For example,
+        /// <code>example.com</code> or <code>www.example.com</code>.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -17548,6 +20610,8 @@ pub mod domain_validation_record {
             self.resource_record = Some(input);
             self
         }
+        /// <p>An object that describes the DNS records to add to your domain's DNS to validate it for
+        /// the certificate.</p>
         pub fn set_resource_record(
             mut self,
             input: std::option::Option<crate::model::ResourceRecord>,
@@ -17608,6 +20672,7 @@ pub mod resource_record {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the record.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -17617,6 +20682,7 @@ pub mod resource_record {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The DNS record type.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -17626,6 +20692,7 @@ pub mod resource_record {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value for the DNS record.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -17647,6 +20714,7 @@ impl ResourceRecord {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -17658,12 +20726,19 @@ impl ResourceRecord {
     std::hash::Hash,
 )]
 pub enum CertificateStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Expired,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
+    #[allow(missing_docs)] // documentation missing in model
     Issued,
+    #[allow(missing_docs)] // documentation missing in model
     PendingValidation,
+    #[allow(missing_docs)] // documentation missing in model
     Revoked,
+    #[allow(missing_docs)] // documentation missing in model
     ValidationTimedOut,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -17690,6 +20765,7 @@ impl std::str::FromStr for CertificateStatus {
     }
 }
 impl CertificateStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CertificateStatus::Expired => "EXPIRED",
@@ -17702,6 +20778,7 @@ impl CertificateStatus {
             CertificateStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "EXPIRED",
@@ -17797,6 +20874,7 @@ pub mod bundle {
             self.price = Some(input);
             self
         }
+        /// <p>The price in US dollars (e.g., <code>5.0</code>) of the bundle.</p>
         pub fn set_price(mut self, input: std::option::Option<f32>) -> Self {
             self.price = input;
             self
@@ -17806,6 +20884,7 @@ pub mod bundle {
             self.cpu_count = Some(input);
             self
         }
+        /// <p>The number of vCPUs included in the bundle (e.g., <code>2</code>).</p>
         pub fn set_cpu_count(mut self, input: std::option::Option<i32>) -> Self {
             self.cpu_count = input;
             self
@@ -17815,6 +20894,7 @@ pub mod bundle {
             self.disk_size_in_gb = Some(input);
             self
         }
+        /// <p>The size of the SSD (e.g., <code>30</code>).</p>
         pub fn set_disk_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.disk_size_in_gb = input;
             self
@@ -17824,6 +20904,7 @@ pub mod bundle {
             self.bundle_id = Some(input.into());
             self
         }
+        /// <p>The bundle ID (e.g., <code>micro_1_0</code>).</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
@@ -17833,6 +20914,7 @@ pub mod bundle {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>The Amazon EC2 instance type (e.g., <code>t2.micro</code>).</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17845,6 +20927,7 @@ pub mod bundle {
             self.is_active = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether the bundle is active.</p>
         pub fn set_is_active(mut self, input: std::option::Option<bool>) -> Self {
             self.is_active = input;
             self
@@ -17854,6 +20937,7 @@ pub mod bundle {
             self.name = Some(input.into());
             self
         }
+        /// <p>A friendly name for the bundle (e.g., <code>Micro</code>).</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -17867,6 +20951,11 @@ pub mod bundle {
             self.power = Some(input);
             self
         }
+        /// <p>A numeric value that represents the power of the bundle (e.g., <code>500</code>). You can
+        /// use the bundle's power value in conjunction with a blueprint's minimum power value to
+        /// determine whether the blueprint will run on the bundle. For example, you need a bundle with a
+        /// power value of 500 or more to create an instance that uses a blueprint with a minimum power
+        /// value of 500.</p>
         pub fn set_power(mut self, input: std::option::Option<i32>) -> Self {
             self.power = input;
             self
@@ -17876,6 +20965,7 @@ pub mod bundle {
             self.ram_size_in_gb = Some(input);
             self
         }
+        /// <p>The amount of RAM in GB (e.g., <code>2.0</code>).</p>
         pub fn set_ram_size_in_gb(mut self, input: std::option::Option<f32>) -> Self {
             self.ram_size_in_gb = input;
             self
@@ -17885,10 +20975,19 @@ pub mod bundle {
             self.transfer_per_month_in_gb = Some(input);
             self
         }
+        /// <p>The data transfer rate per month in GB (e.g., <code>2000</code>).</p>
         pub fn set_transfer_per_month_in_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.transfer_per_month_in_gb = input;
             self
         }
+        /// Appends an item to `supported_platforms`.
+        ///
+        /// To override the contents of this collection use [`set_supported_platforms`](Self::set_supported_platforms).
+        ///
+        /// <p>The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle
+        /// supports. You can only launch a <code>WINDOWS</code> bundle on a blueprint that supports the
+        /// <code>WINDOWS</code> platform. <code>LINUX_UNIX</code> blueprints require a
+        /// <code>LINUX_UNIX</code> bundle.</p>
         pub fn supported_platforms(
             mut self,
             input: impl Into<crate::model::InstancePlatform>,
@@ -17898,6 +20997,10 @@ pub mod bundle {
             self.supported_platforms = Some(v);
             self
         }
+        /// <p>The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle
+        /// supports. You can only launch a <code>WINDOWS</code> bundle on a blueprint that supports the
+        /// <code>WINDOWS</code> platform. <code>LINUX_UNIX</code> blueprints require a
+        /// <code>LINUX_UNIX</code> bundle.</p>
         pub fn set_supported_platforms(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstancePlatform>>,
@@ -17930,6 +21033,7 @@ impl Bundle {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -17941,7 +21045,9 @@ impl Bundle {
     std::hash::Hash,
 )]
 pub enum InstancePlatform {
+    #[allow(missing_docs)] // documentation missing in model
     LinuxUnix,
+    #[allow(missing_docs)] // documentation missing in model
     Windows,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -17963,6 +21069,7 @@ impl std::str::FromStr for InstancePlatform {
     }
 }
 impl InstancePlatform {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InstancePlatform::LinuxUnix => "LINUX_UNIX",
@@ -17970,6 +21077,7 @@ impl InstancePlatform {
             InstancePlatform::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LINUX_UNIX", "WINDOWS"]
     }
@@ -17980,6 +21088,7 @@ impl AsRef<str> for InstancePlatform {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -17991,7 +21100,9 @@ impl AsRef<str> for InstancePlatform {
     std::hash::Hash,
 )]
 pub enum BucketMetricName {
+    #[allow(missing_docs)] // documentation missing in model
     BucketSizeBytes,
+    #[allow(missing_docs)] // documentation missing in model
     NumberOfObjects,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -18013,6 +21124,7 @@ impl std::str::FromStr for BucketMetricName {
     }
 }
 impl BucketMetricName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BucketMetricName::BucketSizeBytes => "BucketSizeBytes",
@@ -18020,6 +21132,7 @@ impl BucketMetricName {
             BucketMetricName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BucketSizeBytes", "NumberOfObjects"]
     }
@@ -18032,6 +21145,7 @@ impl AsRef<str> for BucketMetricName {
 
 /// <p>Describes the specifications of a bundle that can be applied to an Amazon Lightsail
 /// bucket.</p>
+///
 /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a
 /// bucket.</p>
 #[non_exhaustive]
@@ -18081,6 +21195,7 @@ pub mod bucket_bundle {
             self.bundle_id = Some(input.into());
             self
         }
+        /// <p>The ID of the bundle.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
@@ -18090,6 +21205,7 @@ pub mod bucket_bundle {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the bundle.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -18099,6 +21215,7 @@ pub mod bucket_bundle {
             self.price = Some(input);
             self
         }
+        /// <p>The monthly price of the bundle, in US dollars.</p>
         pub fn set_price(mut self, input: std::option::Option<f32>) -> Self {
             self.price = input;
             self
@@ -18108,6 +21225,7 @@ pub mod bucket_bundle {
             self.storage_per_month_in_gb = Some(input);
             self
         }
+        /// <p>The storage size of the bundle, in GB.</p>
         pub fn set_storage_per_month_in_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.storage_per_month_in_gb = input;
             self
@@ -18117,6 +21235,7 @@ pub mod bucket_bundle {
             self.transfer_per_month_in_gb = Some(input);
             self
         }
+        /// <p>The monthly network transfer quota of the bundle.</p>
         pub fn set_transfer_per_month_in_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.transfer_per_month_in_gb = input;
             self
@@ -18126,6 +21245,7 @@ pub mod bucket_bundle {
             self.is_active = Some(input);
             self
         }
+        /// <p>Indicates whether the bundle is active. Use for a new or existing bucket.</p>
         pub fn set_is_active(mut self, input: std::option::Option<bool>) -> Self {
             self.is_active = input;
             self
@@ -18151,10 +21271,12 @@ impl BucketBundle {
 }
 
 /// <p>Describes an access key for an Amazon Lightsail bucket.</p>
+///
 /// <p>Access keys grant full programmatic access to the specified bucket and its objects. You
 /// can have a maximum of two access keys per bucket. Use the <a>CreateBucketAccessKey</a> action to create an access key for a specific bucket. For
 /// more information about access keys, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating access keys for a bucket in Amazon Lightsail</a> in the
 /// <i>Amazon Lightsail Developer Guide</i>.</p>
+///
 /// <important>
 /// <p>The <code>secretAccessKey</code> value is returned only in response to the
 /// <code>CreateBucketAccessKey</code> action. You can get a secret access key only when you
@@ -18167,16 +21289,19 @@ pub struct AccessKey {
     /// <p>The ID of the access key.</p>
     pub access_key_id: std::option::Option<std::string::String>,
     /// <p>The secret access key used to sign requests.</p>
+    ///
     /// <p>You should store the secret access key in a safe location. We recommend that you delete
     /// the access key if the secret access key is compromised.</p>
     pub secret_access_key: std::option::Option<std::string::String>,
     /// <p>The status of the access key.</p>
+    ///
     /// <p>A status of <code>Active</code> means that the key is valid, while <code>Inactive</code>
     /// means it is not.</p>
     pub status: std::option::Option<crate::model::StatusType>,
     /// <p>The timestamp when the access key was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>An object that describes the last time the access key was used.</p>
+    ///
     /// <note>
     /// <p>This object does not include data in the response of a <a>CreateBucketAccessKey</a> action. If the access key has not been used, the
     /// <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the
@@ -18204,7 +21329,7 @@ pub mod access_key {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
         pub(crate) secret_access_key: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::StatusType>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) last_used: std::option::Option<crate::model::AccessKeyLastUsed>,
     }
     impl Builder {
@@ -18213,6 +21338,7 @@ pub mod access_key {
             self.access_key_id = Some(input.into());
             self
         }
+        /// <p>The ID of the access key.</p>
         pub fn set_access_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18221,12 +21347,17 @@ pub mod access_key {
             self
         }
         /// <p>The secret access key used to sign requests.</p>
+        ///
         /// <p>You should store the secret access key in a safe location. We recommend that you delete
         /// the access key if the secret access key is compromised.</p>
         pub fn secret_access_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_access_key = Some(input.into());
             self
         }
+        /// <p>The secret access key used to sign requests.</p>
+        ///
+        /// <p>You should store the secret access key in a safe location. We recommend that you delete
+        /// the access key if the secret access key is compromised.</p>
         pub fn set_secret_access_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18235,26 +21366,36 @@ pub mod access_key {
             self
         }
         /// <p>The status of the access key.</p>
+        ///
         /// <p>A status of <code>Active</code> means that the key is valid, while <code>Inactive</code>
         /// means it is not.</p>
         pub fn status(mut self, input: crate::model::StatusType) -> Self {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the access key.</p>
+        ///
+        /// <p>A status of <code>Active</code> means that the key is valid, while <code>Inactive</code>
+        /// means it is not.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
             self.status = input;
             self
         }
         /// <p>The timestamp when the access key was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the access key was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>An object that describes the last time the access key was used.</p>
+        ///
         /// <note>
         /// <p>This object does not include data in the response of a <a>CreateBucketAccessKey</a> action. If the access key has not been used, the
         /// <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the
@@ -18264,6 +21405,13 @@ pub mod access_key {
             self.last_used = Some(input);
             self
         }
+        /// <p>An object that describes the last time the access key was used.</p>
+        ///
+        /// <note>
+        /// <p>This object does not include data in the response of a <a>CreateBucketAccessKey</a> action. If the access key has not been used, the
+        /// <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the
+        /// <code>lastUsedDate</code> value is null.</p>
+        /// </note>
         pub fn set_last_used(
             mut self,
             input: std::option::Option<crate::model::AccessKeyLastUsed>,
@@ -18291,6 +21439,7 @@ impl AccessKey {
 }
 
 /// <p>Describes the last time an access key was used.</p>
+///
 /// <note>
 /// <p>This object does not include data in the response of a <a>CreateBucketAccessKey</a> action.</p>
 /// </note>
@@ -18299,7 +21448,7 @@ impl AccessKey {
 pub struct AccessKeyLastUsed {
     /// <p>The date and time when the access key was most recently used.</p>
     /// <p>This value is null if the access key has not been used.</p>
-    pub last_used_date: std::option::Option<smithy_types::Instant>,
+    pub last_used_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The AWS Region where this access key was most recently used.</p>
     /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
     pub region: std::option::Option<std::string::String>,
@@ -18322,20 +21471,22 @@ pub mod access_key_last_used {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) last_used_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_used_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) service_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The date and time when the access key was most recently used.</p>
         /// <p>This value is null if the access key has not been used.</p>
-        pub fn last_used_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_used_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_used_date = Some(input);
             self
         }
+        /// <p>The date and time when the access key was most recently used.</p>
+        /// <p>This value is null if the access key has not been used.</p>
         pub fn set_last_used_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_used_date = input;
             self
@@ -18346,6 +21497,8 @@ pub mod access_key_last_used {
             self.region = Some(input.into());
             self
         }
+        /// <p>The AWS Region where this access key was most recently used.</p>
+        /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -18356,6 +21509,8 @@ pub mod access_key_last_used {
             self.service_name = Some(input.into());
             self
         }
+        /// <p>The name of the AWS service with which this access key was most recently used.</p>
+        /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -18377,6 +21532,7 @@ impl AccessKeyLastUsed {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -18388,7 +21544,9 @@ impl AccessKeyLastUsed {
     std::hash::Hash,
 )]
 pub enum StatusType {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -18410,6 +21568,7 @@ impl std::str::FromStr for StatusType {
     }
 }
 impl StatusType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StatusType::Active => "Active",
@@ -18417,6 +21576,7 @@ impl StatusType {
             StatusType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Active", "Inactive"]
     }
@@ -18509,6 +21669,8 @@ pub mod blueprint {
             self.blueprint_id = Some(input.into());
             self
         }
+        /// <p>The ID for the virtual private server image (e.g., <code>app_wordpress_4_4</code> or
+        /// <code>app_lamp_7_0</code>).</p>
         pub fn set_blueprint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.blueprint_id = input;
             self
@@ -18518,6 +21680,7 @@ pub mod blueprint {
             self.name = Some(input.into());
             self
         }
+        /// <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -18527,6 +21690,7 @@ pub mod blueprint {
             self.group = Some(input.into());
             self
         }
+        /// <p>The group name of the blueprint (e.g., <code>amazon-linux</code>).</p>
         pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group = input;
             self
@@ -18536,6 +21700,7 @@ pub mod blueprint {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the blueprint (e.g., <code>os</code> or <code>app</code>).</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::BlueprintType>) -> Self {
             self.r#type = input;
             self
@@ -18545,6 +21710,7 @@ pub mod blueprint {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the blueprint.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -18557,6 +21723,10 @@ pub mod blueprint {
             self.is_active = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether the blueprint is active. Inactive blueprints are listed
+        /// to support customers with existing instances but are not necessarily available for launch of
+        /// new instances. Blueprints are marked inactive when they become outdated due to operating
+        /// system updates or new application releases.</p>
         pub fn set_is_active(mut self, input: std::option::Option<bool>) -> Self {
             self.is_active = input;
             self
@@ -18569,6 +21739,10 @@ pub mod blueprint {
             self.min_power = Some(input);
             self
         }
+        /// <p>The minimum bundle power required to run this blueprint. For example, you need a bundle
+        /// with a power value of 500 or more to create an instance that uses a blueprint with a minimum
+        /// power value of 500. <code>0</code> indicates that the blueprint runs on all instance sizes.
+        /// </p>
         pub fn set_min_power(mut self, input: std::option::Option<i32>) -> Self {
             self.min_power = input;
             self
@@ -18579,6 +21753,8 @@ pub mod blueprint {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version number of the operating system, application, or stack (e.g.,
+        /// <code>2016.03.0</code>).</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -18588,6 +21764,7 @@ pub mod blueprint {
             self.version_code = Some(input.into());
             self
         }
+        /// <p>The version code.</p>
         pub fn set_version_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_code = input;
             self
@@ -18597,6 +21774,7 @@ pub mod blueprint {
             self.product_url = Some(input.into());
             self
         }
+        /// <p>The product URL to learn more about the image or blueprint.</p>
         pub fn set_product_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_url = input;
             self
@@ -18606,6 +21784,7 @@ pub mod blueprint {
             self.license_url = Some(input.into());
             self
         }
+        /// <p>The end-user license agreement URL for the image or blueprint.</p>
         pub fn set_license_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_url = input;
             self
@@ -18616,6 +21795,8 @@ pub mod blueprint {
             self.platform = Some(input);
             self
         }
+        /// <p>The operating system platform (either Linux/Unix-based or Windows Server-based) of the
+        /// blueprint.</p>
         pub fn set_platform(
             mut self,
             input: std::option::Option<crate::model::InstancePlatform>,
@@ -18649,6 +21830,7 @@ impl Blueprint {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -18660,7 +21842,9 @@ impl Blueprint {
     std::hash::Hash,
 )]
 pub enum BlueprintType {
+    #[allow(missing_docs)] // documentation missing in model
     App,
+    #[allow(missing_docs)] // documentation missing in model
     Os,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -18682,6 +21866,7 @@ impl std::str::FromStr for BlueprintType {
     }
 }
 impl BlueprintType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BlueprintType::App => "app",
@@ -18689,6 +21874,7 @@ impl BlueprintType {
             BlueprintType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["app", "os"]
     }
@@ -18706,7 +21892,7 @@ pub struct AutoSnapshotDetails {
     /// <p>The date of the automatic snapshot in <code>YYYY-MM-DD</code> format.</p>
     pub date: std::option::Option<std::string::String>,
     /// <p>The timestamp when the automatic snapshot was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the automatic snapshot.</p>
     pub status: std::option::Option<crate::model::AutoSnapshotStatus>,
     /// <p>An array of objects that describe the block storage disks attached to the instance when
@@ -18730,7 +21916,7 @@ pub mod auto_snapshot_details {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) date: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::AutoSnapshotStatus>,
         pub(crate) from_attached_disks:
             std::option::Option<std::vec::Vec<crate::model::AttachedDisk>>,
@@ -18741,16 +21927,21 @@ pub mod auto_snapshot_details {
             self.date = Some(input.into());
             self
         }
+        /// <p>The date of the automatic snapshot in <code>YYYY-MM-DD</code> format.</p>
         pub fn set_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date = input;
             self
         }
         /// <p>The timestamp when the automatic snapshot was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the automatic snapshot was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -18759,6 +21950,7 @@ pub mod auto_snapshot_details {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the automatic snapshot.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AutoSnapshotStatus>,
@@ -18766,12 +21958,20 @@ pub mod auto_snapshot_details {
             self.status = input;
             self
         }
+        /// Appends an item to `from_attached_disks`.
+        ///
+        /// To override the contents of this collection use [`set_from_attached_disks`](Self::set_from_attached_disks).
+        ///
+        /// <p>An array of objects that describe the block storage disks attached to the instance when
+        /// the automatic snapshot was created.</p>
         pub fn from_attached_disks(mut self, input: impl Into<crate::model::AttachedDisk>) -> Self {
             let mut v = self.from_attached_disks.unwrap_or_default();
             v.push(input.into());
             self.from_attached_disks = Some(v);
             self
         }
+        /// <p>An array of objects that describe the block storage disks attached to the instance when
+        /// the automatic snapshot was created.</p>
         pub fn set_from_attached_disks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttachedDisk>>,
@@ -18830,6 +22030,7 @@ pub mod attached_disk {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path of the disk (e.g., <code>/dev/xvdf</code>).</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -18839,6 +22040,7 @@ pub mod attached_disk {
             self.size_in_gb = Some(input);
             self
         }
+        /// <p>The size of the disk in GB.</p>
         pub fn set_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.size_in_gb = input;
             self
@@ -18859,6 +22061,7 @@ impl AttachedDisk {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -18870,9 +22073,13 @@ impl AttachedDisk {
     std::hash::Hash,
 )]
 pub enum AutoSnapshotStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     NotFound,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -18896,6 +22103,7 @@ impl std::str::FromStr for AutoSnapshotStatus {
     }
 }
 impl AutoSnapshotStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AutoSnapshotStatus::Failed => "Failed",
@@ -18905,6 +22113,7 @@ impl AutoSnapshotStatus {
             AutoSnapshotStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Failed", "InProgress", "NotFound", "Success"]
     }
@@ -18926,7 +22135,7 @@ pub struct Alarm {
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp when the alarm was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>An object that lists information about the location of the alarm.</p>
     pub location: std::option::Option<crate::model::ResourceLocation>,
     /// <p>The Lightsail resource type (e.g., <code>Alarm</code>).</p>
@@ -19070,7 +22279,7 @@ pub mod alarm {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) location: std::option::Option<crate::model::ResourceLocation>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) support_code: std::option::Option<std::string::String>,
@@ -19098,6 +22307,7 @@ pub mod alarm {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the alarm.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -19107,16 +22317,21 @@ pub mod alarm {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The timestamp when the alarm was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the alarm was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -19125,6 +22340,7 @@ pub mod alarm {
             self.location = Some(input);
             self
         }
+        /// <p>An object that lists information about the location of the alarm.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::ResourceLocation>,
@@ -19137,6 +22353,7 @@ pub mod alarm {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The Lightsail resource type (e.g., <code>Alarm</code>).</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -19151,6 +22368,9 @@ pub mod alarm {
             self.support_code = Some(input.into());
             self
         }
+        /// <p>The support code. Include this code in your email to support when you have questions about
+        /// your Lightsail alarm. This code enables our support team to look up your Lightsail
+        /// information more easily.</p>
         pub fn set_support_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.support_code = input;
             self
@@ -19163,6 +22383,7 @@ pub mod alarm {
             self.monitored_resource_info = Some(input);
             self
         }
+        /// <p>An object that lists information about the resource monitored by the alarm.</p>
         pub fn set_monitored_resource_info(
             mut self,
             input: std::option::Option<crate::model::MonitoredResourceInfo>,
@@ -19175,6 +22396,7 @@ pub mod alarm {
             self.comparison_operator = Some(input);
             self
         }
+        /// <p>The arithmetic operation used when comparing the specified statistic and threshold.</p>
         pub fn set_comparison_operator(
             mut self,
             input: std::option::Option<crate::model::ComparisonOperator>,
@@ -19187,6 +22409,7 @@ pub mod alarm {
             self.evaluation_periods = Some(input);
             self
         }
+        /// <p>The number of periods over which data is compared to the specified threshold.</p>
         pub fn set_evaluation_periods(mut self, input: std::option::Option<i32>) -> Self {
             self.evaluation_periods = input;
             self
@@ -19196,6 +22419,7 @@ pub mod alarm {
             self.period = Some(input);
             self
         }
+        /// <p>The period, in seconds, over which the statistic is applied.</p>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
             self.period = input;
             self
@@ -19205,6 +22429,7 @@ pub mod alarm {
             self.threshold = Some(input);
             self
         }
+        /// <p>The value against which the specified statistic is compared.</p>
         pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
             self.threshold = input;
             self
@@ -19215,6 +22440,8 @@ pub mod alarm {
             self.datapoints_to_alarm = Some(input);
             self
         }
+        /// <p>The number of data points that must not within the specified threshold to trigger the
+        /// alarm.</p>
         pub fn set_datapoints_to_alarm(mut self, input: std::option::Option<i32>) -> Self {
             self.datapoints_to_alarm = input;
             self
@@ -19247,6 +22474,30 @@ pub mod alarm {
             self.treat_missing_data = Some(input);
             self
         }
+        /// <p>Specifies how the alarm handles missing data points.</p>
+        /// <p>An alarm can treat missing data in the following ways:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>breaching</code> - Assume the missing data is not within the threshold. Missing
+        /// data counts towards the number of times the metric is not within the threshold.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>notBreaching</code> - Assume the missing data is within the threshold. Missing
+        /// data does not count towards the number of times the metric is not within the
+        /// threshold.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ignore</code> - Ignore the missing data. Maintains the current alarm
+        /// state.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>missing</code> - Missing data is treated as missing.</p>
+        /// </li>
+        /// </ul>
         pub fn set_treat_missing_data(
             mut self,
             input: std::option::Option<crate::model::TreatMissingData>,
@@ -19289,6 +22540,37 @@ pub mod alarm {
             self.statistic = Some(input);
             self
         }
+        /// <p>The statistic for the metric associated with the alarm.</p>
+        /// <p>The following statistics are available:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Minimum</code> - The lowest value observed during the specified period. Use this
+        /// value to determine low volumes of activity for your application.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Maximum</code> - The highest value observed during the specified period. Use
+        /// this value to determine high volumes of activity for your application.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Sum</code> - All values submitted for the matching metric added together. You
+        /// can use this statistic to determine the total volume of a metric.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Average</code> - The value of Sum / SampleCount during the specified period. By
+        /// comparing this statistic with the Minimum and Maximum values, you can determine the full
+        /// scope of a metric and how close the average use is to the Minimum and Maximum values. This
+        /// comparison helps you to know when to increase or decrease your resources.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SampleCount</code> - The count, or number, of data points used for the
+        /// statistical calculation.</p>
+        /// </li>
+        /// </ul>
         pub fn set_statistic(
             mut self,
             input: std::option::Option<crate::model::MetricStatistic>,
@@ -19301,6 +22583,7 @@ pub mod alarm {
             self.metric_name = Some(input);
             self
         }
+        /// <p>The name of the metric associated with the alarm.</p>
         pub fn set_metric_name(
             mut self,
             input: std::option::Option<crate::model::MetricName>,
@@ -19330,6 +22613,24 @@ pub mod alarm {
             self.state = Some(input);
             self
         }
+        /// <p>The current state of the alarm.</p>
+        /// <p>An alarm has the following possible states:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ALARM</code> - The metric is outside of the defined threshold.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
+        /// available, or not enough data is available for the metric to determine the alarm
+        /// state.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OK</code> - The metric is within the defined threshold.</p>
+        /// </li>
+        /// </ul>
         pub fn set_state(mut self, input: std::option::Option<crate::model::AlarmState>) -> Self {
             self.state = input;
             self
@@ -19339,10 +22640,17 @@ pub mod alarm {
             self.unit = Some(input);
             self
         }
+        /// <p>The unit of the metric associated with the alarm.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::MetricUnit>) -> Self {
             self.unit = input;
             self
         }
+        /// Appends an item to `contact_protocols`.
+        ///
+        /// To override the contents of this collection use [`set_contact_protocols`](Self::set_contact_protocols).
+        ///
+        /// <p>The contact protocols for the alarm, such as <code>Email</code>, <code>SMS</code> (text
+        /// messaging), or both.</p>
         pub fn contact_protocols(
             mut self,
             input: impl Into<crate::model::ContactProtocol>,
@@ -19352,6 +22660,8 @@ pub mod alarm {
             self.contact_protocols = Some(v);
             self
         }
+        /// <p>The contact protocols for the alarm, such as <code>Email</code>, <code>SMS</code> (text
+        /// messaging), or both.</p>
         pub fn set_contact_protocols(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContactProtocol>>,
@@ -19359,12 +22669,18 @@ pub mod alarm {
             self.contact_protocols = input;
             self
         }
+        /// Appends an item to `notification_triggers`.
+        ///
+        /// To override the contents of this collection use [`set_notification_triggers`](Self::set_notification_triggers).
+        ///
+        /// <p>The alarm states that trigger a notification.</p>
         pub fn notification_triggers(mut self, input: impl Into<crate::model::AlarmState>) -> Self {
             let mut v = self.notification_triggers.unwrap_or_default();
             v.push(input.into());
             self.notification_triggers = Some(v);
             self
         }
+        /// <p>The alarm states that trigger a notification.</p>
         pub fn set_notification_triggers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AlarmState>>,
@@ -19377,6 +22693,7 @@ pub mod alarm {
             self.notification_enabled = Some(input);
             self
         }
+        /// <p>Indicates whether the alarm is enabled.</p>
         pub fn set_notification_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.notification_enabled = input;
             self
@@ -19456,6 +22773,7 @@ pub mod monitored_resource_info {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource being monitored.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -19465,6 +22783,7 @@ pub mod monitored_resource_info {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Lightsail resource being monitored.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -19476,6 +22795,9 @@ pub mod monitored_resource_info {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The Lightsail resource type of the resource being monitored.</p>
+        /// <p>Instances, load balancers, and relational databases are the only Lightsail resources
+        /// that can currently be monitored by alarms.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -19543,6 +22865,7 @@ pub mod add_on_request {
             self.add_on_type = Some(input);
             self
         }
+        /// <p>The add-on type.</p>
         pub fn set_add_on_type(
             mut self,
             input: std::option::Option<crate::model::AddOnType>,
@@ -19559,6 +22882,8 @@ pub mod add_on_request {
             self.auto_snapshot_add_on_request = Some(input);
             self
         }
+        /// <p>An object that represents additional parameters when enabling or modifying the automatic
+        /// snapshot add-on.</p>
         pub fn set_auto_snapshot_add_on_request(
             mut self,
             input: std::option::Option<crate::model::AutoSnapshotAddOnRequest>,
@@ -19668,6 +22993,20 @@ pub mod auto_snapshot_add_on_request {
             self.snapshot_time_of_day = Some(input.into());
             self
         }
+        /// <p>The daily time when an automatic snapshot will be created.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Must be in <code>HH:00</code> format, and in an hourly increment.</p>
+        /// </li>
+        /// <li>
+        /// <p>Specified in Coordinated Universal Time (UTC).</p>
+        /// </li>
+        /// <li>
+        /// <p>The snapshot will be automatically created between the time specified and up to 45
+        /// minutes after.</p>
+        /// </li>
+        /// </ul>
         pub fn set_snapshot_time_of_day(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19690,6 +23029,7 @@ impl AutoSnapshotAddOnRequest {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -19701,6 +23041,7 @@ impl AutoSnapshotAddOnRequest {
     std::hash::Hash,
 )]
 pub enum AddOnType {
+    #[allow(missing_docs)] // documentation missing in model
     AutoSnapshot,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -19721,12 +23062,14 @@ impl std::str::FromStr for AddOnType {
     }
 }
 impl AddOnType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AddOnType::AutoSnapshot => "AutoSnapshot",
             AddOnType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AutoSnapshot"]
     }
@@ -19771,6 +23114,8 @@ pub mod disk_map {
             self.original_disk_path = Some(input.into());
             self
         }
+        /// <p>The original disk path exposed to the instance (for example,
+        /// <code>/dev/sdh</code>).</p>
         pub fn set_original_disk_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19783,6 +23128,7 @@ pub mod disk_map {
             self.new_disk_name = Some(input.into());
             self
         }
+        /// <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
         pub fn set_new_disk_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19818,10 +23164,11 @@ pub struct ContainerServiceRegistryLogin {
     /// image registry of a Lightsail account</p>
     pub password: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the container image registry username and password expire.</p>
+    ///
     /// <p>The log in credentials expire 12 hours after they are created, at which point you will
     /// need to create a new set of log in credentials using the
     /// <code>CreateContainerServiceRegistryLogin</code> action.</p>
-    pub expires_at: std::option::Option<smithy_types::Instant>,
+    pub expires_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The address to use to push container images to the container image registry of a
     /// Lightsail account.</p>
     pub registry: std::option::Option<std::string::String>,
@@ -19844,7 +23191,7 @@ pub mod container_service_registry_login {
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
-        pub(crate) expires_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) expires_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) registry: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -19854,6 +23201,8 @@ pub mod container_service_registry_login {
             self.username = Some(input.into());
             self
         }
+        /// <p>The container service registry username to use to push container images to the container
+        /// image registry of a Lightsail account.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -19864,19 +23213,30 @@ pub mod container_service_registry_login {
             self.password = Some(input.into());
             self
         }
+        /// <p>The container service registry password to use to push container images to the container
+        /// image registry of a Lightsail account</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
         }
         /// <p>The timestamp of when the container image registry username and password expire.</p>
+        ///
         /// <p>The log in credentials expire 12 hours after they are created, at which point you will
         /// need to create a new set of log in credentials using the
         /// <code>CreateContainerServiceRegistryLogin</code> action.</p>
-        pub fn expires_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn expires_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.expires_at = Some(input);
             self
         }
-        pub fn set_expires_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp of when the container image registry username and password expire.</p>
+        ///
+        /// <p>The log in credentials expire 12 hours after they are created, at which point you will
+        /// need to create a new set of log in credentials using the
+        /// <code>CreateContainerServiceRegistryLogin</code> action.</p>
+        pub fn set_expires_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.expires_at = input;
             self
         }
@@ -19886,6 +23246,8 @@ pub mod container_service_registry_login {
             self.registry = Some(input.into());
             self
         }
+        /// <p>The address to use to push container images to the container image registry of a
+        /// Lightsail account.</p>
         pub fn set_registry(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry = input;
             self
@@ -19946,6 +23308,7 @@ pub mod endpoint_request {
             self.container_name = Some(input.into());
             self
         }
+        /// <p>The name of the container for the endpoint.</p>
         pub fn set_container_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19958,6 +23321,7 @@ pub mod endpoint_request {
             self.container_port = Some(input);
             self
         }
+        /// <p>The port of the container to which traffic is forwarded to.</p>
         pub fn set_container_port(mut self, input: std::option::Option<i32>) -> Self {
             self.container_port = input;
             self
@@ -19970,6 +23334,7 @@ pub mod endpoint_request {
             self.health_check = Some(input);
             self
         }
+        /// <p>An object that describes the health check configuration of the container.</p>
         pub fn set_health_check(
             mut self,
             input: std::option::Option<crate::model::ContainerServiceHealthCheckConfig>,
@@ -19996,6 +23361,7 @@ impl EndpointRequest {
 
 /// <p>Describes a container deployment configuration of an Amazon Lightsail container
 /// service.</p>
+///
 /// <p>A deployment specifies the settings, such as the ports and launch command, of containers
 /// that are deployed to your container service.</p>
 #[non_exhaustive]
@@ -20028,6 +23394,11 @@ pub mod container_service_deployment_request {
         pub(crate) public_endpoint: std::option::Option<crate::model::EndpointRequest>,
     }
     impl Builder {
+        /// Adds a key-value pair to `containers`.
+        ///
+        /// To override the contents of this collection use [`set_containers`](Self::set_containers).
+        ///
+        /// <p>An object that describes the configuration for the containers of the deployment.</p>
         pub fn containers(
             mut self,
             k: impl Into<std::string::String>,
@@ -20038,6 +23409,7 @@ pub mod container_service_deployment_request {
             self.containers = Some(hash_map);
             self
         }
+        /// <p>An object that describes the configuration for the containers of the deployment.</p>
         pub fn set_containers(
             mut self,
             input: std::option::Option<
@@ -20052,6 +23424,7 @@ pub mod container_service_deployment_request {
             self.public_endpoint = Some(input);
             self
         }
+        /// <p>An object that describes the endpoint of the deployment.</p>
         pub fn set_public_endpoint(
             mut self,
             input: std::option::Option<crate::model::EndpointRequest>,
@@ -20088,6 +23461,7 @@ pub struct InstanceEntry {
     /// <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The port configuration to use for the new Amazon EC2 instance.</p>
+    ///
     /// <p>The following configuration options are available:</p>
     /// <ul>
     /// <li>
@@ -20167,6 +23541,10 @@ pub mod instance_entry {
             self.source_name = Some(input.into());
             self
         }
+        /// <p>The name of the export snapshot record, which contains the exported Lightsail instance
+        /// snapshot that will be used as the source of the new Amazon EC2 instance.</p>
+        /// <p>Use the <code>get export snapshot records</code> operation to get a list of export
+        /// snapshot records that you can use to create a CloudFormation stack.</p>
         pub fn set_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_name = input;
             self
@@ -20176,6 +23554,7 @@ pub mod instance_entry {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20184,6 +23563,7 @@ pub mod instance_entry {
             self
         }
         /// <p>The port configuration to use for the new Amazon EC2 instance.</p>
+        ///
         /// <p>The following configuration options are available:</p>
         /// <ul>
         /// <li>
@@ -20223,6 +23603,43 @@ pub mod instance_entry {
             self.port_info_source = Some(input);
             self
         }
+        /// <p>The port configuration to use for the new Amazon EC2 instance.</p>
+        ///
+        /// <p>The following configuration options are available:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance
+        /// blueprint. If this is specified, then IPv4 and IPv6 will be configured for the new
+        /// instance that is created in Amazon EC2.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INSTANCE</code> - Use the configured firewall settings from the source
+        /// Lightsail instance. If this is specified, the new instance that is created in Amazon EC2 will
+        /// be configured to match the configuration of the source Lightsail instance. For example,
+        /// if the source instance is configured for dual-stack (IPv4 and IPv6), then IPv4 and IPv6
+        /// will be configured for the new instance that is created in Amazon EC2. If the source instance
+        /// is configured for IPv4 only, then only IPv4 will be configured for the new instance that
+        /// is created in Amazon EC2.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - Use the default Amazon EC2 security group. If this is specified, then
+        /// only IPv4 will be configured for the new instance that is created in Amazon EC2.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CLOSED</code> - All ports closed. If this is specified, then only IPv4 will be
+        /// configured for the new instance that is created in Amazon EC2.</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>If you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code> on
+        /// your instance, or if you chose to allow the Lightsail browser-based SSH or RDP clients to
+        /// connect to your instance, that configuration is not carried over to your new Amazon EC2
+        /// instance.</p>
+        /// </note>
         pub fn set_port_info_source(
             mut self,
             input: std::option::Option<crate::model::PortInfoSourceType>,
@@ -20241,6 +23658,13 @@ pub mod instance_entry {
             self.user_data = Some(input.into());
             self
         }
+        /// <p>A launch script you can create that configures a server with additional user data. For
+        /// example, you might want to run <code>apt-get -y update</code>.</p>
+        /// <note>
+        /// <p>Depending on the machine image you choose, the command to get software on your instance
+        /// varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
+        /// <code>apt-get</code>, and FreeBSD uses <code>pkg</code>.</p>
+        /// </note>
         pub fn set_user_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_data = input;
             self
@@ -20250,6 +23674,7 @@ pub mod instance_entry {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>The Availability Zone for the new Amazon EC2 instance.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20276,6 +23701,7 @@ impl InstanceEntry {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -20287,9 +23713,13 @@ impl InstanceEntry {
     std::hash::Hash,
 )]
 pub enum PortInfoSourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Closed,
+    #[allow(missing_docs)] // documentation missing in model
     Default,
+    #[allow(missing_docs)] // documentation missing in model
     Instance,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -20313,6 +23743,7 @@ impl std::str::FromStr for PortInfoSourceType {
     }
 }
 impl PortInfoSourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PortInfoSourceType::Closed => "CLOSED",
@@ -20322,6 +23753,7 @@ impl PortInfoSourceType {
             PortInfoSourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CLOSED", "DEFAULT", "INSTANCE", "NONE"]
     }

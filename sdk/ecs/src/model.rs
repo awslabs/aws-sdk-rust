@@ -60,9 +60,9 @@ pub struct TaskSet {
     /// use.</p>
     pub running_count: i32,
     /// <p>The Unix timestamp for when the task set was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Unix timestamp for when the task set was last updated.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The launch type the tasks in the task set are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
     /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub launch_type: std::option::Option<crate::model::LaunchType>,
@@ -109,7 +109,7 @@ pub struct TaskSet {
     /// <code>STABILIZING</code>.</p>
     pub stability_status: std::option::Option<crate::model::StabilityStatus>,
     /// <p>The Unix timestamp for when the task set stability status was retrieved.</p>
-    pub stability_status_at: std::option::Option<smithy_types::Instant>,
+    pub stability_status_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The metadata that you apply to the task set to help you categorize and organize them.
     /// Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -194,8 +194,8 @@ pub mod task_set {
         pub(crate) computed_desired_count: std::option::Option<i32>,
         pub(crate) pending_count: std::option::Option<i32>,
         pub(crate) running_count: std::option::Option<i32>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) launch_type: std::option::Option<crate::model::LaunchType>,
         pub(crate) capacity_provider_strategy:
             std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
@@ -206,7 +206,7 @@ pub mod task_set {
             std::option::Option<std::vec::Vec<crate::model::ServiceRegistry>>,
         pub(crate) scale: std::option::Option<crate::model::Scale>,
         pub(crate) stability_status: std::option::Option<crate::model::StabilityStatus>,
-        pub(crate) stability_status_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) stability_status_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -215,6 +215,7 @@ pub mod task_set {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the task set.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -224,6 +225,7 @@ pub mod task_set {
             self.task_set_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the task set.</p>
         pub fn set_task_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_set_arn = input;
             self
@@ -233,6 +235,7 @@ pub mod task_set {
             self.service_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the service the task set exists in.</p>
         pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_arn = input;
             self
@@ -243,6 +246,8 @@ pub mod task_set {
             self.cluster_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the cluster that the service that hosts the task set exists
+        /// in.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_arn = input;
             self
@@ -254,6 +259,9 @@ pub mod task_set {
             self.started_by = Some(input.into());
             self
         }
+        /// <p>The tag specified when a task set is started. If the task set is created by an CodeDeploy
+        /// deployment, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. For a task
+        /// set created for an external deployment, the startedBy field isn't used.</p>
         pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.started_by = input;
             self
@@ -268,6 +276,12 @@ pub mod task_set {
             self.external_id = Some(input.into());
             self
         }
+        /// <p>The external ID associated with the task set.</p>
+        /// <p>If a task set is created by an CodeDeploy deployment, the <code>externalId</code> parameter
+        /// contains the CodeDeploy deployment ID.</p>
+        /// <p>If a task set is created for an external deployment and is associated with a service
+        /// discovery registry, the <code>externalId</code> parameter contains the
+        /// <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -292,6 +306,22 @@ pub mod task_set {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the task set. The following describes each state:</p>
+        /// <dl>
+        /// <dt>PRIMARY</dt>
+        /// <dd>
+        /// <p>The task set is serving production traffic.</p>
+        /// </dd>
+        /// <dt>ACTIVE</dt>
+        /// <dd>
+        /// <p>The task set is not serving production traffic.</p>
+        /// </dd>
+        /// <dt>DRAINING</dt>
+        /// <dd>
+        /// <p>The tasks in the task set are being stopped and their corresponding
+        /// targets are being deregistered from their target group.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -301,6 +331,7 @@ pub mod task_set {
             self.task_definition = Some(input.into());
             self
         }
+        /// <p>The task definition the task set is using.</p>
         pub fn set_task_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -316,6 +347,10 @@ pub mod task_set {
             self.computed_desired_count = Some(input);
             self
         }
+        /// <p>The computed desired count for the task set. This is calculated by multiplying the
+        /// service's <code>desiredCount</code> by the task set's <code>scale</code> percentage. The
+        /// result is always rounded up. For example, if the computed desired count is 1.2, it
+        /// rounds up to 2 tasks.</p>
         pub fn set_computed_desired_count(mut self, input: std::option::Option<i32>) -> Self {
             self.computed_desired_count = input;
             self
@@ -329,6 +364,11 @@ pub mod task_set {
             self.pending_count = Some(input);
             self
         }
+        /// <p>The number of tasks in the task set that are in the <code>PENDING</code> status during
+        /// a deployment. A task in the <code>PENDING</code> state is preparing to enter the
+        /// <code>RUNNING</code> state. A task set enters the <code>PENDING</code> status when
+        /// it launches for the first time or when it is restarted after being in the
+        /// <code>STOPPED</code> state.</p>
         pub fn set_pending_count(mut self, input: std::option::Option<i32>) -> Self {
             self.pending_count = input;
             self
@@ -340,25 +380,36 @@ pub mod task_set {
             self.running_count = Some(input);
             self
         }
+        /// <p>The number of tasks in the task set that are in the <code>RUNNING</code> status during
+        /// a deployment. A task in the <code>RUNNING</code> state is running and ready for
+        /// use.</p>
         pub fn set_running_count(mut self, input: std::option::Option<i32>) -> Self {
             self.running_count = input;
             self
         }
         /// <p>The Unix timestamp for when the task set was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix timestamp for when the task set was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The Unix timestamp for when the task set was last updated.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix timestamp for when the task set was last updated.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
@@ -368,6 +419,8 @@ pub mod task_set {
             self.launch_type = Some(input);
             self
         }
+        /// <p>The launch type the tasks in the task set are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+        /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_launch_type(
             mut self,
             input: std::option::Option<crate::model::LaunchType>,
@@ -375,6 +428,11 @@ pub mod task_set {
             self.launch_type = input;
             self
         }
+        /// Appends an item to `capacity_provider_strategy`.
+        ///
+        /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
+        ///
+        /// <p>The capacity provider strategy associated with the task set.</p>
         pub fn capacity_provider_strategy(
             mut self,
             input: impl Into<crate::model::CapacityProviderStrategyItem>,
@@ -384,6 +442,7 @@ pub mod task_set {
             self.capacity_provider_strategy = Some(v);
             self
         }
+        /// <p>The capacity provider strategy associated with the task set.</p>
         pub fn set_capacity_provider_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
@@ -399,6 +458,10 @@ pub mod task_set {
             self.platform_version = Some(input.into());
             self
         }
+        /// <p>The Fargate platform version on which the tasks in the task set are running. A
+        /// platform version is only specified for tasks run on Fargate. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform
+        /// versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_platform_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -411,6 +474,7 @@ pub mod task_set {
             self.network_configuration = Some(input);
             self
         }
+        /// <p>The network configuration for the task set.</p>
         pub fn set_network_configuration(
             mut self,
             input: std::option::Option<crate::model::NetworkConfiguration>,
@@ -418,12 +482,18 @@ pub mod task_set {
             self.network_configuration = input;
             self
         }
+        /// Appends an item to `load_balancers`.
+        ///
+        /// To override the contents of this collection use [`set_load_balancers`](Self::set_load_balancers).
+        ///
+        /// <p>Details on a load balancer that is used with a task set.</p>
         pub fn load_balancers(mut self, input: impl Into<crate::model::LoadBalancer>) -> Self {
             let mut v = self.load_balancers.unwrap_or_default();
             v.push(input.into());
             self.load_balancers = Some(v);
             self
         }
+        /// <p>Details on a load balancer that is used with a task set.</p>
         pub fn set_load_balancers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
@@ -431,6 +501,13 @@ pub mod task_set {
             self.load_balancers = input;
             self
         }
+        /// Appends an item to `service_registries`.
+        ///
+        /// To override the contents of this collection use [`set_service_registries`](Self::set_service_registries).
+        ///
+        /// <p>The details of the service discovery registries to assign to this task set. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+        /// discovery</a>.</p>
         pub fn service_registries(
             mut self,
             input: impl Into<crate::model::ServiceRegistry>,
@@ -440,6 +517,9 @@ pub mod task_set {
             self.service_registries = Some(v);
             self
         }
+        /// <p>The details of the service discovery registries to assign to this task set. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+        /// discovery</a>.</p>
         pub fn set_service_registries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceRegistry>>,
@@ -453,6 +533,8 @@ pub mod task_set {
             self.scale = Some(input);
             self
         }
+        /// <p>A floating-point percentage of the desired number of tasks to place and keep running
+        /// in the task set.</p>
         pub fn set_scale(mut self, input: std::option::Option<crate::model::Scale>) -> Self {
             self.scale = input;
             self
@@ -483,6 +565,28 @@ pub mod task_set {
             self.stability_status = Some(input);
             self
         }
+        /// <p>The stability status, which indicates whether the task set has reached a steady state.
+        /// If the following conditions are met, the task set will be in
+        /// <code>STEADY_STATE</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The task <code>runningCount</code> is equal to the
+        /// <code>computedDesiredCount</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>The <code>pendingCount</code> is <code>0</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>There are no tasks running on container instances in the <code>DRAINING</code>
+        /// status.</p>
+        /// </li>
+        /// <li>
+        /// <p>All tasks are reporting a healthy status from the load balancers, service
+        /// discovery, and container health checks.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If any of those conditions are not met, the stability status returns
+        /// <code>STABILIZING</code>.</p>
         pub fn set_stability_status(
             mut self,
             input: std::option::Option<crate::model::StabilityStatus>,
@@ -491,23 +595,94 @@ pub mod task_set {
             self
         }
         /// <p>The Unix timestamp for when the task set stability status was retrieved.</p>
-        pub fn stability_status_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn stability_status_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.stability_status_at = Some(input);
             self
         }
+        /// <p>The Unix timestamp for when the task set stability status was retrieved.</p>
         pub fn set_stability_status_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.stability_status_at = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The metadata that you apply to the task set to help you categorize and organize them.
+        /// Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The metadata that you apply to the task set to help you categorize and organize them.
+        /// Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -619,6 +794,8 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label
+        /// that acts like a category for more specific tag values.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -629,6 +806,8 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as
+        /// a descriptor within a tag category (key).</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -649,6 +828,7 @@ impl Tag {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -660,7 +840,9 @@ impl Tag {
     std::hash::Hash,
 )]
 pub enum StabilityStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Stabilizing,
+    #[allow(missing_docs)] // documentation missing in model
     SteadyState,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -682,6 +864,7 @@ impl std::str::FromStr for StabilityStatus {
     }
 }
 impl StabilityStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StabilityStatus::Stabilizing => "STABILIZING",
@@ -689,6 +872,7 @@ impl StabilityStatus {
             StabilityStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["STABILIZING", "STEADY_STATE"]
     }
@@ -734,6 +918,8 @@ pub mod scale {
             self.value = Some(input);
             self
         }
+        /// <p>The value, specified as a percent total of a service's <code>desiredCount</code>, to
+        /// scale the task set. Accepted values are numbers between 0 and 100.</p>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
             self.value = input;
             self
@@ -743,6 +929,7 @@ pub mod scale {
             self.unit = Some(input);
             self
         }
+        /// <p>The unit of measure for the scale value.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::ScaleUnit>) -> Self {
             self.unit = input;
             self
@@ -763,6 +950,7 @@ impl Scale {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -774,6 +962,7 @@ impl Scale {
     std::hash::Hash,
 )]
 pub enum ScaleUnit {
+    #[allow(missing_docs)] // documentation missing in model
     Percent,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -794,12 +983,14 @@ impl std::str::FromStr for ScaleUnit {
     }
 }
 impl ScaleUnit {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScaleUnit::Percent => "PERCENT",
             ScaleUnit::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PERCENT"]
     }
@@ -868,6 +1059,8 @@ pub mod service_registry {
             self.registry_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is
+        /// Cloud Map. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
         pub fn set_registry_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_arn = input;
             self
@@ -879,6 +1072,9 @@ pub mod service_registry {
             self.port = Some(input);
             self
         }
+        /// <p>The port value used if your service discovery service specified an SRV record. This
+        /// field may be used if both the <code>awsvpc</code> network mode and SRV records are
+        /// used.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -895,6 +1091,14 @@ pub mod service_registry {
             self.container_name = Some(input.into());
             self
         }
+        /// <p>The container name value, already specified in the task definition, to be used for
+        /// your service discovery service. If the task definition that your service task specifies
+        /// uses the <code>bridge</code> or <code>host</code> network mode, you must specify a
+        /// <code>containerName</code> and <code>containerPort</code> combination from the task
+        /// definition. If the task definition that your service task specifies uses the
+        /// <code>awsvpc</code> network mode and a type SRV DNS record is used, you must specify
+        /// either a <code>containerName</code> and <code>containerPort</code> combination or a
+        /// <code>port</code> value, but not both.</p>
         pub fn set_container_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -914,6 +1118,14 @@ pub mod service_registry {
             self.container_port = Some(input);
             self
         }
+        /// <p>The port value, already specified in the task definition, to be used for your service
+        /// discovery service. If the task definition your service task specifies uses the
+        /// <code>bridge</code> or <code>host</code> network mode, you must specify a
+        /// <code>containerName</code> and <code>containerPort</code> combination from the task
+        /// definition. If the task definition your service task specifies uses the
+        /// <code>awsvpc</code> network mode and a type SRV DNS record is used, you must specify
+        /// either a <code>containerName</code> and <code>containerPort</code> combination or a
+        /// <code>port</code> value, but not both.</p>
         pub fn set_container_port(mut self, input: std::option::Option<i32>) -> Self {
             self.container_port = input;
             self
@@ -1019,6 +1231,24 @@ pub mod load_balancer {
             self.target_group_arn = Some(input.into());
             self
         }
+        /// <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group or groups associated with a service or
+        /// task set.</p>
+        /// <p>A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If you are using a
+        /// Classic Load Balancer the target group ARN should be omitted.</p>
+        /// <p>For services using the <code>ECS</code> deployment controller, you can specify one or
+        /// multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering Multiple Target Groups with a Service</a> in
+        /// the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>For services using the <code>CODE_DEPLOY</code> deployment controller, you are
+        /// required to define two target groups for the load balancer. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green Deployment with CodeDeploy</a> in the
+        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <important>
+        /// <p>If your service's task definition uses the <code>awsvpc</code> network mode (which
+        /// is required for the Fargate launch type), you must choose
+        /// <code>ip</code> as the target type, not <code>instance</code>, when creating
+        /// your target groups because tasks that use the <code>awsvpc</code> network mode are
+        /// associated with an elastic network interface, not an Amazon EC2 instance.</p>
+        /// </important>
         pub fn set_target_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1033,6 +1263,9 @@ pub mod load_balancer {
             self.load_balancer_name = Some(input.into());
             self
         }
+        /// <p>The name of the load balancer to associate with the Amazon ECS service or task set.</p>
+        /// <p>A load balancer name is only specified when using a Classic Load Balancer. If you are using an Application Load Balancer
+        /// or a Network Load Balancer the load balancer name parameter should be omitted.</p>
         pub fn set_load_balancer_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1046,6 +1279,8 @@ pub mod load_balancer {
             self.container_name = Some(input.into());
             self
         }
+        /// <p>The name of the container (as it appears in a container definition) to associate with
+        /// the load balancer.</p>
         pub fn set_container_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1062,6 +1297,11 @@ pub mod load_balancer {
             self.container_port = Some(input);
             self
         }
+        /// <p>The port on the container to associate with the load balancer. This port must
+        /// correspond to a <code>containerPort</code> in the task definition the tasks in the
+        /// service are using. For tasks that use the EC2 launch type, the container
+        /// instance they are launched on must allow ingress traffic on the <code>hostPort</code> of
+        /// the port mapping.</p>
         pub fn set_container_port(mut self, input: std::option::Option<i32>) -> Self {
             self.container_port = input;
             self
@@ -1118,6 +1358,10 @@ pub mod network_configuration {
             self.awsvpc_configuration = Some(input);
             self
         }
+        /// <p>The VPC subnets and security groups associated with a task.</p>
+        /// <note>
+        /// <p>All specified subnets and security groups must be from the same VPC.</p>
+        /// </note>
         pub fn set_awsvpc_configuration(
             mut self,
             input: std::option::Option<crate::model::AwsVpcConfiguration>,
@@ -1146,6 +1390,7 @@ impl NetworkConfiguration {
 pub struct AwsVpcConfiguration {
     /// <p>The IDs of the subnets associated with the task or service. There is a limit of 16
     /// subnets that can be specified per <code>AwsVpcConfiguration</code>.</p>
+    ///
     /// <note>
     /// <p>All specified subnets must be from the same VPC.</p>
     /// </note>
@@ -1154,6 +1399,7 @@ pub struct AwsVpcConfiguration {
     /// specify a security group, the default security group for the VPC is used. There is a
     /// limit of 5 security groups that can be specified per
     /// <code>AwsVpcConfiguration</code>.</p>
+    ///
     /// <note>
     /// <p>All specified security groups must be from the same VPC.</p>
     /// </note>
@@ -1182,12 +1428,28 @@ pub mod aws_vpc_configuration {
         pub(crate) assign_public_ip: std::option::Option<crate::model::AssignPublicIp>,
     }
     impl Builder {
+        /// Appends an item to `subnets`.
+        ///
+        /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
+        ///
+        /// <p>The IDs of the subnets associated with the task or service. There is a limit of 16
+        /// subnets that can be specified per <code>AwsVpcConfiguration</code>.</p>
+        ///
+        /// <note>
+        /// <p>All specified subnets must be from the same VPC.</p>
+        /// </note>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
             v.push(input.into());
             self.subnets = Some(v);
             self
         }
+        /// <p>The IDs of the subnets associated with the task or service. There is a limit of 16
+        /// subnets that can be specified per <code>AwsVpcConfiguration</code>.</p>
+        ///
+        /// <note>
+        /// <p>All specified subnets must be from the same VPC.</p>
+        /// </note>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1195,12 +1457,32 @@ pub mod aws_vpc_configuration {
             self.subnets = input;
             self
         }
+        /// Appends an item to `security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+        ///
+        /// <p>The IDs of the security groups associated with the task or service. If you do not
+        /// specify a security group, the default security group for the VPC is used. There is a
+        /// limit of 5 security groups that can be specified per
+        /// <code>AwsVpcConfiguration</code>.</p>
+        ///
+        /// <note>
+        /// <p>All specified security groups must be from the same VPC.</p>
+        /// </note>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
             v.push(input.into());
             self.security_groups = Some(v);
             self
         }
+        /// <p>The IDs of the security groups associated with the task or service. If you do not
+        /// specify a security group, the default security group for the VPC is used. There is a
+        /// limit of 5 security groups that can be specified per
+        /// <code>AwsVpcConfiguration</code>.</p>
+        ///
+        /// <note>
+        /// <p>All specified security groups must be from the same VPC.</p>
+        /// </note>
         pub fn set_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1214,6 +1496,8 @@ pub mod aws_vpc_configuration {
             self.assign_public_ip = Some(input);
             self
         }
+        /// <p>Whether the task's elastic network interface receives a public IP address. The default
+        /// value is <code>DISABLED</code>.</p>
         pub fn set_assign_public_ip(
             mut self,
             input: std::option::Option<crate::model::AssignPublicIp>,
@@ -1238,6 +1522,7 @@ impl AwsVpcConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1249,7 +1534,9 @@ impl AwsVpcConfiguration {
     std::hash::Hash,
 )]
 pub enum AssignPublicIp {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1271,6 +1558,7 @@ impl std::str::FromStr for AssignPublicIp {
     }
 }
 impl AssignPublicIp {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AssignPublicIp::Disabled => "DISABLED",
@@ -1278,6 +1566,7 @@ impl AssignPublicIp {
             AssignPublicIp::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -1359,6 +1648,7 @@ pub mod capacity_provider_strategy_item {
             self.capacity_provider = Some(input.into());
             self
         }
+        /// <p>The short name of the capacity provider.</p>
         pub fn set_capacity_provider(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1389,6 +1679,25 @@ pub mod capacity_provider_strategy_item {
             self.weight = Some(input);
             self
         }
+        /// <p>The <i>weight</i> value designates the relative percentage of the total
+        /// number of tasks launched that should use the specified capacity provider. The
+        /// <code>weight</code> value is taken into consideration after the <code>base</code>
+        /// value, if defined, is satisfied.</p>
+        /// <p>If no <code>weight</code> value is specified, the default value of <code>0</code> is
+        /// used. When multiple capacity providers are specified within a capacity provider
+        /// strategy, at least one of the capacity providers must have a weight value greater than
+        /// zero and any capacity providers with a weight of <code>0</code> will not be used to
+        /// place tasks. If you specify multiple capacity providers in a strategy that all have a
+        /// weight of <code>0</code>, any <code>RunTask</code> or <code>CreateService</code> actions
+        /// using the capacity provider strategy will fail.</p>
+        /// <p>An example scenario for using weights is defining a strategy that contains two
+        /// capacity providers and both have a weight of <code>1</code>, then when the
+        /// <code>base</code> is satisfied, the tasks will be split evenly across the two
+        /// capacity providers. Using that same logic, if you specify a weight of <code>1</code> for
+        /// <i>capacityProviderA</i> and a weight of <code>4</code> for
+        /// <i>capacityProviderB</i>, then for every one task that is run using
+        /// <i>capacityProviderA</i>, four tasks would use
+        /// <i>capacityProviderB</i>.</p>
         pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
             self.weight = input;
             self
@@ -1401,6 +1710,10 @@ pub mod capacity_provider_strategy_item {
             self.base = Some(input);
             self
         }
+        /// <p>The <i>base</i> value designates how many tasks, at a minimum, to run on
+        /// the specified capacity provider. Only one capacity provider in a capacity provider
+        /// strategy can have a <i>base</i> defined. If no value is specified, the
+        /// default value of <code>0</code> is used.</p>
         pub fn set_base(mut self, input: std::option::Option<i32>) -> Self {
             self.base = input;
             self
@@ -1422,6 +1735,7 @@ impl CapacityProviderStrategyItem {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1433,8 +1747,11 @@ impl CapacityProviderStrategyItem {
     std::hash::Hash,
 )]
 pub enum LaunchType {
+    #[allow(missing_docs)] // documentation missing in model
     Ec2,
+    #[allow(missing_docs)] // documentation missing in model
     External,
+    #[allow(missing_docs)] // documentation missing in model
     Fargate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1457,6 +1774,7 @@ impl std::str::FromStr for LaunchType {
     }
 }
 impl LaunchType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LaunchType::Ec2 => "EC2",
@@ -1465,6 +1783,7 @@ impl LaunchType {
             LaunchType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EC2", "EXTERNAL", "FARGATE"]
     }
@@ -1538,7 +1857,7 @@ pub struct Service {
     /// displayed.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::ServiceEvent>>,
     /// <p>The Unix timestamp for when the service was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The placement constraints for the tasks in the service.</p>
     pub placement_constraints:
         std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
@@ -1696,7 +2015,7 @@ pub mod service {
         pub(crate) deployments: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::ServiceEvent>>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) placement_constraints:
             std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
         pub(crate) placement_strategy:
@@ -1717,6 +2036,7 @@ pub mod service {
             self.service_arn = Some(input.into());
             self
         }
+        /// <p>The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the Amazon Web Services account ID of the service owner, the <code>service</code> namespace, and then the service name. For example, <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
         pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_arn = input;
             self
@@ -1728,6 +2048,9 @@ pub mod service {
             self.service_name = Some(input.into());
             self
         }
+        /// <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. Service names must be unique within
+        /// a cluster, but you can have similarly named services in multiple clusters within a
+        /// Region or across multiple Regions.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -1737,16 +2060,27 @@ pub mod service {
             self.cluster_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the cluster that hosts the service.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_arn = input;
             self
         }
+        /// Appends an item to `load_balancers`.
+        ///
+        /// To override the contents of this collection use [`set_load_balancers`](Self::set_load_balancers).
+        ///
+        /// <p>A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the
+        /// container name (as it appears in a container definition), and the container port to
+        /// access from the load balancer.</p>
         pub fn load_balancers(mut self, input: impl Into<crate::model::LoadBalancer>) -> Self {
             let mut v = self.load_balancers.unwrap_or_default();
             v.push(input.into());
             self.load_balancers = Some(v);
             self
         }
+        /// <p>A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the
+        /// container name (as it appears in a container definition), and the container port to
+        /// access from the load balancer.</p>
         pub fn set_load_balancers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
@@ -1754,6 +2088,13 @@ pub mod service {
             self.load_balancers = input;
             self
         }
+        /// Appends an item to `service_registries`.
+        ///
+        /// To override the contents of this collection use [`set_service_registries`](Self::set_service_registries).
+        ///
+        /// <p>The details of the service discovery registries to assign to this service. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+        /// Discovery</a>.</p>
         pub fn service_registries(
             mut self,
             input: impl Into<crate::model::ServiceRegistry>,
@@ -1763,6 +2104,9 @@ pub mod service {
             self.service_registries = Some(v);
             self
         }
+        /// <p>The details of the service discovery registries to assign to this service. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+        /// Discovery</a>.</p>
         pub fn set_service_registries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceRegistry>>,
@@ -1776,6 +2120,8 @@ pub mod service {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the service. The valid values are <code>ACTIVE</code>,
+        /// <code>DRAINING</code>, or <code>INACTIVE</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -1786,6 +2132,8 @@ pub mod service {
             self.desired_count = Some(input);
             self
         }
+        /// <p>The desired number of instantiations of the task definition to keep running on the
+        /// service. This value is specified when the service is created with <a>CreateService</a>, and it can be modified with <a>UpdateService</a>.</p>
         pub fn set_desired_count(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_count = input;
             self
@@ -1795,6 +2143,7 @@ pub mod service {
             self.running_count = Some(input);
             self
         }
+        /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state.</p>
         pub fn set_running_count(mut self, input: std::option::Option<i32>) -> Self {
             self.running_count = input;
             self
@@ -1804,6 +2153,7 @@ pub mod service {
             self.pending_count = Some(input);
             self
         }
+        /// <p>The number of tasks in the cluster that are in the <code>PENDING</code> state.</p>
         pub fn set_pending_count(mut self, input: std::option::Option<i32>) -> Self {
             self.pending_count = input;
             self
@@ -1814,6 +2164,8 @@ pub mod service {
             self.launch_type = Some(input);
             self
         }
+        /// <p>The launch type the service is using. When using the DescribeServices API, this field
+        /// is omitted if the service was created using a capacity provider strategy.</p>
         pub fn set_launch_type(
             mut self,
             input: std::option::Option<crate::model::LaunchType>,
@@ -1821,6 +2173,12 @@ pub mod service {
             self.launch_type = input;
             self
         }
+        /// Appends an item to `capacity_provider_strategy`.
+        ///
+        /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
+        ///
+        /// <p>The capacity provider strategy the service is using. When using the DescribeServices
+        /// API, this field is omitted if the service was created using a launch type.</p>
         pub fn capacity_provider_strategy(
             mut self,
             input: impl Into<crate::model::CapacityProviderStrategyItem>,
@@ -1830,6 +2188,8 @@ pub mod service {
             self.capacity_provider_strategy = Some(v);
             self
         }
+        /// <p>The capacity provider strategy the service is using. When using the DescribeServices
+        /// API, this field is omitted if the service was created using a launch type.</p>
         pub fn set_capacity_provider_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
@@ -1846,6 +2206,11 @@ pub mod service {
             self.platform_version = Some(input.into());
             self
         }
+        /// <p>The platform version on which to run your service. A platform version is only
+        /// specified for tasks hosted on Fargate. If one is not specified, the
+        /// <code>LATEST</code> platform version is used by default. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
+        /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_platform_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1860,6 +2225,9 @@ pub mod service {
             self.task_definition = Some(input.into());
             self
         }
+        /// <p>The task definition to use for tasks in the service. This value is specified when the
+        /// service is created with <a>CreateService</a>, and it can be modified with
+        /// <a>UpdateService</a>.</p>
         pub fn set_task_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1876,6 +2244,8 @@ pub mod service {
             self.deployment_configuration = Some(input);
             self
         }
+        /// <p>Optional deployment parameters that control how many tasks run during the deployment
+        /// and the ordering of stopping and starting tasks.</p>
         pub fn set_deployment_configuration(
             mut self,
             input: std::option::Option<crate::model::DeploymentConfiguration>,
@@ -1883,12 +2253,22 @@ pub mod service {
             self.deployment_configuration = input;
             self
         }
+        /// Appends an item to `task_sets`.
+        ///
+        /// To override the contents of this collection use [`set_task_sets`](Self::set_task_sets).
+        ///
+        /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code>
+        /// deployment. An Amazon ECS task set includes details such as the desired number of tasks, how
+        /// many tasks are running, and whether the task set serves production traffic.</p>
         pub fn task_sets(mut self, input: impl Into<crate::model::TaskSet>) -> Self {
             let mut v = self.task_sets.unwrap_or_default();
             v.push(input.into());
             self.task_sets = Some(v);
             self
         }
+        /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code>
+        /// deployment. An Amazon ECS task set includes details such as the desired number of tasks, how
+        /// many tasks are running, and whether the task set serves production traffic.</p>
         pub fn set_task_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TaskSet>>,
@@ -1896,12 +2276,18 @@ pub mod service {
             self.task_sets = input;
             self
         }
+        /// Appends an item to `deployments`.
+        ///
+        /// To override the contents of this collection use [`set_deployments`](Self::set_deployments).
+        ///
+        /// <p>The current state of deployments for the service.</p>
         pub fn deployments(mut self, input: impl Into<crate::model::Deployment>) -> Self {
             let mut v = self.deployments.unwrap_or_default();
             v.push(input.into());
             self.deployments = Some(v);
             self
         }
+        /// <p>The current state of deployments for the service.</p>
         pub fn set_deployments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
@@ -1915,16 +2301,26 @@ pub mod service {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role associated with the service that allows the Amazon ECS container
+        /// agent to register container instances with an Elastic Load Balancing load balancer.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
+        /// Appends an item to `events`.
+        ///
+        /// To override the contents of this collection use [`set_events`](Self::set_events).
+        ///
+        /// <p>The event stream for your service. A maximum of 100 of the latest events are
+        /// displayed.</p>
         pub fn events(mut self, input: impl Into<crate::model::ServiceEvent>) -> Self {
             let mut v = self.events.unwrap_or_default();
             v.push(input.into());
             self.events = Some(v);
             self
         }
+        /// <p>The event stream for your service. A maximum of 100 of the latest events are
+        /// displayed.</p>
         pub fn set_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceEvent>>,
@@ -1933,14 +2329,23 @@ pub mod service {
             self
         }
         /// <p>The Unix timestamp for when the service was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix timestamp for when the service was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
+        /// Appends an item to `placement_constraints`.
+        ///
+        /// To override the contents of this collection use [`set_placement_constraints`](Self::set_placement_constraints).
+        ///
+        /// <p>The placement constraints for the tasks in the service.</p>
         pub fn placement_constraints(
             mut self,
             input: impl Into<crate::model::PlacementConstraint>,
@@ -1950,6 +2355,7 @@ pub mod service {
             self.placement_constraints = Some(v);
             self
         }
+        /// <p>The placement constraints for the tasks in the service.</p>
         pub fn set_placement_constraints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
@@ -1957,6 +2363,11 @@ pub mod service {
             self.placement_constraints = input;
             self
         }
+        /// Appends an item to `placement_strategy`.
+        ///
+        /// To override the contents of this collection use [`set_placement_strategy`](Self::set_placement_strategy).
+        ///
+        /// <p>The placement strategy that determines how tasks for the service are placed.</p>
         pub fn placement_strategy(
             mut self,
             input: impl Into<crate::model::PlacementStrategy>,
@@ -1966,6 +2377,7 @@ pub mod service {
             self.placement_strategy = Some(v);
             self
         }
+        /// <p>The placement strategy that determines how tasks for the service are placed.</p>
         pub fn set_placement_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
@@ -1979,6 +2391,8 @@ pub mod service {
             self.network_configuration = Some(input);
             self
         }
+        /// <p>The VPC subnet and security group configuration for tasks that receive their own
+        /// elastic network interface by using the <code>awsvpc</code> networking mode.</p>
         pub fn set_network_configuration(
             mut self,
             input: std::option::Option<crate::model::NetworkConfiguration>,
@@ -1992,6 +2406,8 @@ pub mod service {
             self.health_check_grace_period_seconds = Some(input);
             self
         }
+        /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
+        /// Elastic Load Balancing target health checks after a task has first started.</p>
         pub fn set_health_check_grace_period_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -2027,6 +2443,30 @@ pub mod service {
             self.scheduling_strategy = Some(input);
             self
         }
+        /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+        /// <p>There are two service scheduler strategies available:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>REPLICA</code>-The replica scheduling strategy places and
+        /// maintains the desired number of tasks across your cluster. By default, the
+        /// service scheduler spreads tasks across Availability Zones. You can use task
+        /// placement strategies and constraints to customize task placement
+        /// decisions.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one
+        /// task on each active container instance that meets all of the task placement
+        /// constraints that you specify in your cluster. The service scheduler also
+        /// evaluates the task placement constraints for running tasks and will stop tasks
+        /// that do not meet the placement constraints.</p>
+        /// <note>
+        /// <p>Fargate tasks do not support the <code>DAEMON</code>
+        /// scheduling strategy.</p>
+        /// </note>
+        /// </li>
+        /// </ul>
         pub fn set_scheduling_strategy(
             mut self,
             input: std::option::Option<crate::model::SchedulingStrategy>,
@@ -2041,6 +2481,9 @@ pub mod service {
             self.deployment_controller = Some(input);
             self
         }
+        /// <p>The deployment controller type the service is using. When using the DescribeServices
+        /// API, this field is omitted if the service is using the <code>ECS</code> deployment
+        /// controller type.</p>
         pub fn set_deployment_controller(
             mut self,
             input: std::option::Option<crate::model::DeploymentController>,
@@ -2048,12 +2491,82 @@ pub mod service {
             self.deployment_controller = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The metadata that you apply to the service to help you categorize and organize them.
+        /// Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The metadata that you apply to the service to help you categorize and organize them.
+        /// Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2066,6 +2579,7 @@ pub mod service {
             self.created_by = Some(input.into());
             self
         }
+        /// <p>The principal that created the service.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_by = input;
             self
@@ -2077,6 +2591,9 @@ pub mod service {
             self.enable_ecs_managed_tags = Some(input);
             self
         }
+        /// <p>Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
+        /// Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_enable_ecs_managed_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_ecs_managed_tags = input;
             self
@@ -2087,6 +2604,8 @@ pub mod service {
             self.propagate_tags = Some(input);
             self
         }
+        /// <p>Specifies whether to propagate the tags from the task definition or the service to the
+        /// task. If no value is specified, the tags are not propagated.</p>
         pub fn set_propagate_tags(
             mut self,
             input: std::option::Option<crate::model::PropagateTags>,
@@ -2101,6 +2620,9 @@ pub mod service {
             self.enable_execute_command = Some(input);
             self
         }
+        /// <p>Whether or not the execute command functionality is enabled for the service. If
+        /// <code>true</code>, the execute command functionality is enabled for all containers
+        /// in tasks as part of the service.</p>
         pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_execute_command = input;
             self
@@ -2149,6 +2671,7 @@ impl Service {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2160,7 +2683,9 @@ impl Service {
     std::hash::Hash,
 )]
 pub enum PropagateTags {
+    #[allow(missing_docs)] // documentation missing in model
     Service,
+    #[allow(missing_docs)] // documentation missing in model
     TaskDefinition,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2182,6 +2707,7 @@ impl std::str::FromStr for PropagateTags {
     }
 }
 impl PropagateTags {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PropagateTags::Service => "SERVICE",
@@ -2189,6 +2715,7 @@ impl PropagateTags {
             PropagateTags::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SERVICE", "TASK_DEFINITION"]
     }
@@ -2273,6 +2800,30 @@ pub mod deployment_controller {
             self.r#type = Some(input);
             self
         }
+        /// <p>The deployment controller type to use.</p>
+        /// <p>There are three deployment controller types available:</p>
+        /// <dl>
+        /// <dt>ECS</dt>
+        /// <dd>
+        /// <p>The rolling update (<code>ECS</code>) deployment type involves replacing
+        /// the current running version of the container with the latest version. The
+        /// number of containers Amazon ECS adds or removes from the service during a rolling
+        /// update is controlled by adjusting the minimum and maximum number of healthy
+        /// tasks allowed during a service deployment, as specified in the <a>DeploymentConfiguration</a>.</p>
+        /// </dd>
+        /// <dt>CODE_DEPLOY</dt>
+        /// <dd>
+        /// <p>The blue/green (<code>CODE_DEPLOY</code>) deployment type uses the
+        /// blue/green deployment model powered by CodeDeploy, which allows you to verify a
+        /// new deployment of a service before sending production traffic to it.</p>
+        /// </dd>
+        /// <dt>EXTERNAL</dt>
+        /// <dd>
+        /// <p>The external (<code>EXTERNAL</code>) deployment type enables you to use
+        /// any third-party deployment controller for full control over the deployment
+        /// process for an Amazon ECS service.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DeploymentControllerType>,
@@ -2295,6 +2846,7 @@ impl DeploymentController {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2306,8 +2858,11 @@ impl DeploymentController {
     std::hash::Hash,
 )]
 pub enum DeploymentControllerType {
+    #[allow(missing_docs)] // documentation missing in model
     CodeDeploy,
+    #[allow(missing_docs)] // documentation missing in model
     Ecs,
+    #[allow(missing_docs)] // documentation missing in model
     External,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2330,6 +2885,7 @@ impl std::str::FromStr for DeploymentControllerType {
     }
 }
 impl DeploymentControllerType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentControllerType::CodeDeploy => "CODE_DEPLOY",
@@ -2338,6 +2894,7 @@ impl DeploymentControllerType {
             DeploymentControllerType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CODE_DEPLOY", "ECS", "EXTERNAL"]
     }
@@ -2348,6 +2905,7 @@ impl AsRef<str> for DeploymentControllerType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2359,7 +2917,9 @@ impl AsRef<str> for DeploymentControllerType {
     std::hash::Hash,
 )]
 pub enum SchedulingStrategy {
+    #[allow(missing_docs)] // documentation missing in model
     Daemon,
+    #[allow(missing_docs)] // documentation missing in model
     Replica,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2381,6 +2941,7 @@ impl std::str::FromStr for SchedulingStrategy {
     }
 }
 impl SchedulingStrategy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SchedulingStrategy::Daemon => "DAEMON",
@@ -2388,6 +2949,7 @@ impl SchedulingStrategy {
             SchedulingStrategy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DAEMON", "REPLICA"]
     }
@@ -2449,6 +3011,13 @@ pub mod placement_strategy {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of placement strategy. The <code>random</code> placement strategy randomly
+        /// places tasks on available candidates. The <code>spread</code> placement strategy spreads
+        /// placement across available candidates evenly based on the <code>field</code> parameter.
+        /// The <code>binpack</code> strategy places tasks on available candidates that have the
+        /// least available amount of the resource that is specified with the <code>field</code>
+        /// parameter. For example, if you binpack on memory, a task is placed on the instance with
+        /// the least amount of remaining memory (but still enough to run the task).</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::PlacementStrategyType>,
@@ -2467,6 +3036,13 @@ pub mod placement_strategy {
             self.field = Some(input.into());
             self
         }
+        /// <p>The field to apply the placement strategy against. For the <code>spread</code>
+        /// placement strategy, valid values are <code>instanceId</code> (or <code>host</code>,
+        /// which has the same effect), or any platform or custom attribute that is applied to a
+        /// container instance, such as <code>attribute:ecs.availability-zone</code>. For the
+        /// <code>binpack</code> placement strategy, valid values are <code>cpu</code> and
+        /// <code>memory</code>. For the <code>random</code> placement strategy, this field is
+        /// not used.</p>
         pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.field = input;
             self
@@ -2487,6 +3063,7 @@ impl PlacementStrategy {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2498,8 +3075,11 @@ impl PlacementStrategy {
     std::hash::Hash,
 )]
 pub enum PlacementStrategyType {
+    #[allow(missing_docs)] // documentation missing in model
     Binpack,
+    #[allow(missing_docs)] // documentation missing in model
     Random,
+    #[allow(missing_docs)] // documentation missing in model
     Spread,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2522,6 +3102,7 @@ impl std::str::FromStr for PlacementStrategyType {
     }
 }
 impl PlacementStrategyType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PlacementStrategyType::Binpack => "binpack",
@@ -2530,6 +3111,7 @@ impl PlacementStrategyType {
             PlacementStrategyType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["binpack", "random", "spread"]
     }
@@ -2587,6 +3169,10 @@ pub mod placement_constraint {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each task in
+        /// a particular group is running on a different container instance. Use
+        /// <code>memberOf</code> to restrict the selection to a group of valid
+        /// candidates.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::PlacementConstraintType>,
@@ -2602,6 +3188,10 @@ pub mod placement_constraint {
             self.expression = Some(input.into());
             self
         }
+        /// <p>A cluster query language expression to apply to the constraint. The expression can
+        /// have a maximum length of 2000 characters. You can't specify an expression if the
+        /// constraint type is <code>distinctInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the
+        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expression = input;
             self
@@ -2622,6 +3212,7 @@ impl PlacementConstraint {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2633,7 +3224,9 @@ impl PlacementConstraint {
     std::hash::Hash,
 )]
 pub enum PlacementConstraintType {
+    #[allow(missing_docs)] // documentation missing in model
     DistinctInstance,
+    #[allow(missing_docs)] // documentation missing in model
     MemberOf,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2655,6 +3248,7 @@ impl std::str::FromStr for PlacementConstraintType {
     }
 }
 impl PlacementConstraintType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PlacementConstraintType::DistinctInstance => "distinctInstance",
@@ -2662,6 +3256,7 @@ impl PlacementConstraintType {
             PlacementConstraintType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["distinctInstance", "memberOf"]
     }
@@ -2679,7 +3274,7 @@ pub struct ServiceEvent {
     /// <p>The ID string of the event.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for when the event was triggered.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The event message.</p>
     pub message: std::option::Option<std::string::String>,
 }
@@ -2699,7 +3294,7 @@ pub mod service_event {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2708,16 +3303,21 @@ pub mod service_event {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID string of the event.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
         /// <p>The Unix timestamp for when the event was triggered.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix timestamp for when the event was triggered.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -2726,6 +3326,7 @@ pub mod service_event {
             self.message = Some(input.into());
             self
         }
+        /// <p>The event message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2793,9 +3394,9 @@ pub struct Deployment {
     /// </note>
     pub failed_tasks: i32,
     /// <p>The Unix timestamp for when the service deployment was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Unix timestamp for when the service deployment was last updated.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The capacity provider strategy that the deployment is using.</p>
     pub capacity_provider_strategy:
         std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
@@ -2863,8 +3464,8 @@ pub mod deployment {
         pub(crate) pending_count: std::option::Option<i32>,
         pub(crate) running_count: std::option::Option<i32>,
         pub(crate) failed_tasks: std::option::Option<i32>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) capacity_provider_strategy:
             std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
         pub(crate) launch_type: std::option::Option<crate::model::LaunchType>,
@@ -2879,6 +3480,7 @@ pub mod deployment {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the deployment.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2903,6 +3505,22 @@ pub mod deployment {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the deployment. The following describes each state:</p>
+        /// <dl>
+        /// <dt>PRIMARY</dt>
+        /// <dd>
+        /// <p>The most recent deployment of a service.</p>
+        /// </dd>
+        /// <dt>ACTIVE</dt>
+        /// <dd>
+        /// <p>A service deployment that still has running tasks, but are in the process
+        /// of being replaced with a new <code>PRIMARY</code> deployment.</p>
+        /// </dd>
+        /// <dt>INACTIVE</dt>
+        /// <dd>
+        /// <p>A deployment that has been completely replaced.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -2913,6 +3531,8 @@ pub mod deployment {
             self.task_definition = Some(input.into());
             self
         }
+        /// <p>The most recent task definition that was specified for the tasks in the service to
+        /// use.</p>
         pub fn set_task_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2926,6 +3546,8 @@ pub mod deployment {
             self.desired_count = Some(input);
             self
         }
+        /// <p>The most recent desired count of tasks that was specified for the service to deploy or
+        /// maintain.</p>
         pub fn set_desired_count(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_count = input;
             self
@@ -2936,6 +3558,8 @@ pub mod deployment {
             self.pending_count = Some(input);
             self
         }
+        /// <p>The number of tasks in the deployment that are in the <code>PENDING</code>
+        /// status.</p>
         pub fn set_pending_count(mut self, input: std::option::Option<i32>) -> Self {
             self.pending_count = input;
             self
@@ -2946,6 +3570,8 @@ pub mod deployment {
             self.running_count = Some(input);
             self
         }
+        /// <p>The number of tasks in the deployment that are in the <code>RUNNING</code>
+        /// status.</p>
         pub fn set_running_count(mut self, input: std::option::Option<i32>) -> Self {
             self.running_count = input;
             self
@@ -2962,28 +3588,49 @@ pub mod deployment {
             self.failed_tasks = Some(input);
             self
         }
+        /// <p>The number of consecutively failed tasks in the deployment. A task is considered a
+        /// failure if the service scheduler can't launch the task, the task doesn't transition to a
+        /// <code>RUNNING</code> state, or if it fails any of its defined health checks and is
+        /// stopped.</p>
+        /// <note>
+        /// <p>Once a service deployment has one or more successfully running tasks, the failed
+        /// task count resets to zero and stops being evaluated.</p>
+        /// </note>
         pub fn set_failed_tasks(mut self, input: std::option::Option<i32>) -> Self {
             self.failed_tasks = input;
             self
         }
         /// <p>The Unix timestamp for when the service deployment was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix timestamp for when the service deployment was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The Unix timestamp for when the service deployment was last updated.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix timestamp for when the service deployment was last updated.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
+        /// Appends an item to `capacity_provider_strategy`.
+        ///
+        /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
+        ///
+        /// <p>The capacity provider strategy that the deployment is using.</p>
         pub fn capacity_provider_strategy(
             mut self,
             input: impl Into<crate::model::CapacityProviderStrategyItem>,
@@ -2993,6 +3640,7 @@ pub mod deployment {
             self.capacity_provider_strategy = Some(v);
             self
         }
+        /// <p>The capacity provider strategy that the deployment is using.</p>
         pub fn set_capacity_provider_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
@@ -3006,6 +3654,8 @@ pub mod deployment {
             self.launch_type = Some(input);
             self
         }
+        /// <p>The launch type the tasks in the service are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+        /// Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_launch_type(
             mut self,
             input: std::option::Option<crate::model::LaunchType>,
@@ -3022,6 +3672,11 @@ pub mod deployment {
             self.platform_version = Some(input.into());
             self
         }
+        /// <p>The platform version on which your tasks in the service are running. A platform
+        /// version is only specified for tasks using the Fargate launch type. If one
+        /// is not specified, the <code>LATEST</code> platform version is used by default. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
+        /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_platform_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3035,6 +3690,8 @@ pub mod deployment {
             self.network_configuration = Some(input);
             self
         }
+        /// <p>The VPC subnet and security group configuration for tasks that receive their own
+        /// elastic network interface by using the <code>awsvpc</code> networking mode.</p>
         pub fn set_network_configuration(
             mut self,
             input: std::option::Option<crate::model::NetworkConfiguration>,
@@ -3057,6 +3714,17 @@ pub mod deployment {
             self.rollout_state = Some(input);
             self
         }
+        /// <note>
+        /// <p>The <code>rolloutState</code> of a service is only returned for services that use
+        /// the rolling update (<code>ECS</code>) deployment type that are not behind a
+        /// Classic Load Balancer.</p>
+        /// </note>
+        /// <p>The rollout state of the deployment. When a service deployment is started, it begins
+        /// in an <code>IN_PROGRESS</code> state. When the service reaches a steady state, the
+        /// deployment will transition to a <code>COMPLETED</code> state. If the service fails to
+        /// reach a steady state and circuit breaker is enabled, the deployment will transition to a
+        /// <code>FAILED</code> state. A deployment in <code>FAILED</code> state will launch no
+        /// new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.</p>
         pub fn set_rollout_state(
             mut self,
             input: std::option::Option<crate::model::DeploymentRolloutState>,
@@ -3069,6 +3737,7 @@ pub mod deployment {
             self.rollout_state_reason = Some(input.into());
             self
         }
+        /// <p>A description of the rollout state of a deployment.</p>
         pub fn set_rollout_state_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3105,6 +3774,7 @@ impl Deployment {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3116,8 +3786,11 @@ impl Deployment {
     std::hash::Hash,
 )]
 pub enum DeploymentRolloutState {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3140,6 +3813,7 @@ impl std::str::FromStr for DeploymentRolloutState {
     }
 }
 impl DeploymentRolloutState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentRolloutState::Completed => "COMPLETED",
@@ -3148,6 +3822,7 @@ impl DeploymentRolloutState {
             DeploymentRolloutState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "IN_PROGRESS"]
     }
@@ -3257,6 +3932,15 @@ pub mod deployment_configuration {
             self.deployment_circuit_breaker = Some(input);
             self
         }
+        /// <note>
+        /// <p>The deployment circuit breaker can only be used for services using the rolling
+        /// update (<code>ECS</code>) deployment type.</p>
+        /// </note>
+        /// <p>The <b>deployment circuit breaker</b> determines whether a
+        /// service deployment will fail if the service can't reach a steady state. If deployment
+        /// circuit breaker is enabled, a service deployment will transition to a failed state and
+        /// stop launching new tasks. If rollback is enabled, when a service deployment fails, the
+        /// service is rolled back to the last deployment that completed successfully.</p>
         pub fn set_deployment_circuit_breaker(
             mut self,
             input: std::option::Option<crate::model::DeploymentCircuitBreaker>,
@@ -3287,6 +3971,25 @@ pub mod deployment_configuration {
             self.maximum_percent = Some(input);
             self
         }
+        /// <p>If a service is using the rolling update (<code>ECS</code>) deployment type, the
+        /// <b>maximum percent</b> parameter represents an upper limit
+        /// on the number of tasks in a service that are allowed in the <code>RUNNING</code> or
+        /// <code>PENDING</code> state during a deployment, as a percentage of the desired
+        /// number of tasks (rounded down to the nearest integer), and while any container instances
+        /// are in the <code>DRAINING</code> state if the service contains tasks using the
+        /// EC2 launch type. This parameter enables you to define the deployment batch
+        /// size. For example, if your service has a desired number of four tasks and a maximum
+        /// percent value of 200%, the scheduler may start four new tasks before stopping the four
+        /// older tasks (provided that the cluster resources required to do this are available). The
+        /// default value for maximum percent is 200%.</p>
+        /// <p>If a service is using the blue/green (<code>CODE_DEPLOY</code>) or
+        /// <code>EXTERNAL</code> deployment types and tasks that use the EC2
+        /// launch type, the <b>maximum percent</b> value is set to the
+        /// default value and is used to define the upper limit on the number of the tasks in the
+        /// service that remain in the <code>RUNNING</code> state while the container instances are
+        /// in the <code>DRAINING</code> state. If the tasks in the service use the
+        /// Fargate launch type, the maximum percent value is not used, although it is
+        /// returned when describing your service.</p>
         pub fn set_maximum_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_percent = input;
             self
@@ -3317,6 +4020,28 @@ pub mod deployment_configuration {
             self.minimum_healthy_percent = Some(input);
             self
         }
+        /// <p>If a service is using the rolling update (<code>ECS</code>) deployment type, the
+        /// <b>minimum healthy percent</b> represents a lower limit on
+        /// the number of tasks in a service that must remain in the <code>RUNNING</code> state
+        /// during a deployment, as a percentage of the desired number of tasks (rounded up to the
+        /// nearest integer), and while any container instances are in the <code>DRAINING</code>
+        /// state if the service contains tasks using the EC2 launch type. This
+        /// parameter enables you to deploy without using additional cluster capacity. For example,
+        /// if your service has a desired number of four tasks and a minimum healthy percent of 50%,
+        /// the scheduler may stop two existing tasks to free up cluster capacity before starting
+        /// two new tasks. Tasks for services that <i>do not</i> use a load balancer
+        /// are considered healthy if they are in the <code>RUNNING</code> state; tasks for services
+        /// that <i>do</i> use a load balancer are considered healthy if they are in
+        /// the <code>RUNNING</code> state and they are reported as healthy by the load balancer.
+        /// The default value for minimum healthy percent is 100%.</p>
+        /// <p>If a service is using the blue/green (<code>CODE_DEPLOY</code>) or
+        /// <code>EXTERNAL</code> deployment types and tasks that use the EC2
+        /// launch type, the <b>minimum healthy percent</b> value is set
+        /// to the default value and is used to define the lower limit on the number of the tasks in
+        /// the service that remain in the <code>RUNNING</code> state while the container instances
+        /// are in the <code>DRAINING</code> state. If the tasks in the service use the
+        /// Fargate launch type, the minimum healthy percent value is not used,
+        /// although it is returned when describing your service.</p>
         pub fn set_minimum_healthy_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.minimum_healthy_percent = input;
             self
@@ -3381,6 +4106,7 @@ pub mod deployment_circuit_breaker {
             self.enable = Some(input);
             self
         }
+        /// <p>Whether to enable the deployment circuit breaker logic for the service.</p>
         pub fn set_enable(mut self, input: std::option::Option<bool>) -> Self {
             self.enable = input;
             self
@@ -3392,6 +4118,9 @@ pub mod deployment_circuit_breaker {
             self.rollback = Some(input);
             self
         }
+        /// <p>Whether to enable Amazon ECS to roll back the service if a service deployment fails. If
+        /// rollback is enabled, when a service deployment fails, the service is rolled back to the
+        /// last deployment that completed successfully.</p>
         pub fn set_rollback(mut self, input: std::option::Option<bool>) -> Self {
             self.rollback = input;
             self
@@ -3449,6 +4178,7 @@ pub mod failure {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3458,6 +4188,7 @@ pub mod failure {
             self.reason = Some(input.into());
             self
         }
+        /// <p>The reason for the failure.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -3467,6 +4198,7 @@ pub mod failure {
             self.detail = Some(input.into());
             self
         }
+        /// <p>The details of the failure.</p>
         pub fn set_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detail = input;
             self
@@ -3565,7 +4297,7 @@ pub struct ContainerInstance {
     /// operation.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
     /// <p>The Unix timestamp for when the container instance was registered.</p>
-    pub registered_at: std::option::Option<smithy_types::Instant>,
+    pub registered_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The resources attached to a container instance, such as elastic network
     /// interfaces.</p>
     pub attachments: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
@@ -3648,7 +4380,7 @@ pub mod container_instance {
         pub(crate) pending_tasks_count: std::option::Option<i32>,
         pub(crate) agent_update_status: std::option::Option<crate::model::AgentUpdateStatus>,
         pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
-        pub(crate) registered_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) registered_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) attachments: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -3658,6 +4390,7 @@ pub mod container_instance {
             self.container_instance_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
         pub fn set_container_instance_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3671,6 +4404,8 @@ pub mod container_instance {
             self.ec2_instance_id = Some(input.into());
             self
         }
+        /// <p>The ID of the container instance. For Amazon EC2 instances, this value is the Amazon EC2
+        /// instance ID. For external instances, this value is the Amazon Web Services Systems Manager managed instance ID.</p>
         pub fn set_ec2_instance_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3683,6 +4418,7 @@ pub mod container_instance {
             self.capacity_provider_name = Some(input.into());
             self
         }
+        /// <p>The capacity provider associated with the container instance.</p>
         pub fn set_capacity_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3701,6 +4437,13 @@ pub mod container_instance {
             self.version = Some(input);
             self
         }
+        /// <p>The version counter for the container instance. Every time a container instance
+        /// experiences a change that triggers a CloudWatch event, the version counter is
+        /// incremented. If you are replicating your Amazon ECS container instance state with CloudWatch
+        /// Events, you can compare the version of a container instance reported by the Amazon ECS APIs
+        /// with the version reported in CloudWatch Events for the container instance (inside the
+        /// <code>detail</code> object) to verify that the version in your event stream is
+        /// current.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
             self.version = input;
             self
@@ -3711,6 +4454,8 @@ pub mod container_instance {
             self.version_info = Some(input);
             self
         }
+        /// <p>The version information for the Amazon ECS container agent and Docker daemon running on the
+        /// container instance.</p>
         pub fn set_version_info(
             mut self,
             input: std::option::Option<crate::model::VersionInfo>,
@@ -3718,12 +4463,30 @@ pub mod container_instance {
             self.version_info = input;
             self
         }
+        /// Appends an item to `remaining_resources`.
+        ///
+        /// To override the contents of this collection use [`set_remaining_resources`](Self::set_remaining_resources).
+        ///
+        /// <p>For CPU and memory resource types, this parameter describes the remaining CPU and
+        /// memory that has not already been allocated to tasks and is therefore available for new
+        /// tasks. For port resource types, this parameter describes the ports that were reserved by
+        /// the Amazon ECS container agent (at instance registration time) and any task containers that
+        /// have reserved port mappings on the host (with the <code>host</code> or
+        /// <code>bridge</code> network mode). Any port that is not specified here is available
+        /// for new tasks.</p>
         pub fn remaining_resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
             let mut v = self.remaining_resources.unwrap_or_default();
             v.push(input.into());
             self.remaining_resources = Some(v);
             self
         }
+        /// <p>For CPU and memory resource types, this parameter describes the remaining CPU and
+        /// memory that has not already been allocated to tasks and is therefore available for new
+        /// tasks. For port resource types, this parameter describes the ports that were reserved by
+        /// the Amazon ECS container agent (at instance registration time) and any task containers that
+        /// have reserved port mappings on the host (with the <code>host</code> or
+        /// <code>bridge</code> network mode). Any port that is not specified here is available
+        /// for new tasks.</p>
         pub fn set_remaining_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -3731,12 +4494,28 @@ pub mod container_instance {
             self.remaining_resources = input;
             self
         }
+        /// Appends an item to `registered_resources`.
+        ///
+        /// To override the contents of this collection use [`set_registered_resources`](Self::set_registered_resources).
+        ///
+        /// <p>For CPU and memory resource types, this parameter describes the amount of each
+        /// resource that was available on the container instance when the container agent
+        /// registered it with Amazon ECS. This value represents the total amount of CPU and memory that
+        /// can be allocated on this container instance to tasks. For port resource types, this
+        /// parameter describes the ports that were reserved by the Amazon ECS container agent when it
+        /// registered the container instance with Amazon ECS.</p>
         pub fn registered_resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
             let mut v = self.registered_resources.unwrap_or_default();
             v.push(input.into());
             self.registered_resources = Some(v);
             self
         }
+        /// <p>For CPU and memory resource types, this parameter describes the amount of each
+        /// resource that was available on the container instance when the container agent
+        /// registered it with Amazon ECS. This value represents the total amount of CPU and memory that
+        /// can be allocated on this container instance to tasks. For port resource types, this
+        /// parameter describes the ports that were reserved by the Amazon ECS container agent when it
+        /// registered the container instance with Amazon ECS.</p>
         pub fn set_registered_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -3765,6 +4544,23 @@ pub mod container_instance {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the container instance. The valid values are <code>REGISTERING</code>,
+        /// <code>REGISTRATION_FAILED</code>, <code>ACTIVE</code>, <code>INACTIVE</code>,
+        /// <code>DEREGISTERING</code>, or <code>DRAINING</code>.</p>
+        /// <p>If your account has opted in to the <code>awsvpcTrunking</code> account setting, then
+        /// any newly registered container instance will transition to a <code>REGISTERING</code>
+        /// status while the trunk elastic network interface is provisioned for the instance. If the
+        /// registration fails, the instance will transition to a <code>REGISTRATION_FAILED</code>
+        /// status. You can describe the container instance and see the reason for failure in the
+        /// <code>statusReason</code> parameter. Once the container instance is terminated, the
+        /// instance transitions to a <code>DEREGISTERING</code> status while the trunk elastic
+        /// network interface is deprovisioned. The instance then transitions to an
+        /// <code>INACTIVE</code> status.</p>
+        /// <p>The <code>ACTIVE</code> status indicates that the container instance can accept tasks.
+        /// The <code>DRAINING</code> indicates that new tasks are not placed on the container
+        /// instance and any service tasks running on the container instance are removed if
+        /// possible. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container Instance Draining</a> in the
+        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -3774,6 +4570,7 @@ pub mod container_instance {
             self.status_reason = Some(input.into());
             self
         }
+        /// <p>The reason that the container instance reached its current status.</p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3789,6 +4586,10 @@ pub mod container_instance {
             self.agent_connected = Some(input);
             self
         }
+        /// <p>This parameter returns <code>true</code> if the agent is connected to Amazon ECS.
+        /// Registered instances with an agent that may be unhealthy or stopped return
+        /// <code>false</code>. Only instances connected to an agent can accept placement
+        /// requests.</p>
         pub fn set_agent_connected(mut self, input: std::option::Option<bool>) -> Self {
             self.agent_connected = input;
             self
@@ -3799,6 +4600,8 @@ pub mod container_instance {
             self.running_tasks_count = Some(input);
             self
         }
+        /// <p>The number of tasks on the container instance that are in the <code>RUNNING</code>
+        /// status.</p>
         pub fn set_running_tasks_count(mut self, input: std::option::Option<i32>) -> Self {
             self.running_tasks_count = input;
             self
@@ -3809,6 +4612,8 @@ pub mod container_instance {
             self.pending_tasks_count = Some(input);
             self
         }
+        /// <p>The number of tasks on the container instance that are in the <code>PENDING</code>
+        /// status.</p>
         pub fn set_pending_tasks_count(mut self, input: std::option::Option<i32>) -> Self {
             self.pending_tasks_count = input;
             self
@@ -3819,6 +4624,8 @@ pub mod container_instance {
             self.agent_update_status = Some(input);
             self
         }
+        /// <p>The status of the most recent agent update. If an update has never been requested,
+        /// this value is <code>NULL</code>.</p>
         pub fn set_agent_update_status(
             mut self,
             input: std::option::Option<crate::model::AgentUpdateStatus>,
@@ -3826,12 +4633,22 @@ pub mod container_instance {
             self.agent_update_status = input;
             self
         }
+        /// Appends an item to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at
+        /// instance registration or manually with the <a>PutAttributes</a>
+        /// operation.</p>
         pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
             v.push(input.into());
             self.attributes = Some(v);
             self
         }
+        /// <p>The attributes set for the container instance, either by the Amazon ECS container agent at
+        /// instance registration or manually with the <a>PutAttributes</a>
+        /// operation.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -3840,23 +4657,32 @@ pub mod container_instance {
             self
         }
         /// <p>The Unix timestamp for when the container instance was registered.</p>
-        pub fn registered_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn registered_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.registered_at = Some(input);
             self
         }
+        /// <p>The Unix timestamp for when the container instance was registered.</p>
         pub fn set_registered_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.registered_at = input;
             self
         }
+        /// Appends an item to `attachments`.
+        ///
+        /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
+        ///
+        /// <p>The resources attached to a container instance, such as elastic network
+        /// interfaces.</p>
         pub fn attachments(mut self, input: impl Into<crate::model::Attachment>) -> Self {
             let mut v = self.attachments.unwrap_or_default();
             v.push(input.into());
             self.attachments = Some(v);
             self
         }
+        /// <p>The resources attached to a container instance, such as elastic network
+        /// interfaces.</p>
         pub fn set_attachments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
@@ -3864,12 +4690,84 @@ pub mod container_instance {
             self.attachments = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The metadata that you apply to the container instance to help you categorize and
+        /// organize them. Each tag consists of a key and an optional value, both of which you
+        /// define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The metadata that you apply to the container instance to help you categorize and
+        /// organize them. Each tag consists of a key and an optional value, both of which you
+        /// define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3951,6 +4849,7 @@ pub mod attachment {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the attachment.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3960,6 +4859,7 @@ pub mod attachment {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -3971,16 +4871,27 @@ pub mod attachment {
             self.status = Some(input.into());
             self
         }
+        /// <p> The status of the attachment. Valid values are <code>PRECREATED</code>,
+        /// <code>CREATED</code>, <code>ATTACHING</code>, <code>ATTACHED</code>,
+        /// <code>DETACHING</code>, <code>DETACHED</code>, and <code>DELETED</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
         }
+        /// Appends an item to `details`.
+        ///
+        /// To override the contents of this collection use [`set_details`](Self::set_details).
+        ///
+        /// <p>Details of the attachment. For elastic network interfaces, this includes the network
+        /// interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
         pub fn details(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
             let mut v = self.details.unwrap_or_default();
             v.push(input.into());
             self.details = Some(v);
             self
         }
+        /// <p>Details of the attachment. For elastic network interfaces, this includes the network
+        /// interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
         pub fn set_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
@@ -4041,6 +4952,8 @@ pub mod key_value_pair {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the key-value pair. For environment variables, this is the name of the
+        /// environment variable.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4051,6 +4964,8 @@ pub mod key_value_pair {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the key-value pair. For environment variables, this is the value of the
+        /// environment variable.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -4122,6 +5037,9 @@ pub mod attribute {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the attribute. The <code>name</code> must contain between 1 and 128
+        /// characters and name may contain letters (uppercase and lowercase), numbers, hyphens,
+        /// underscores, forward slashes, back slashes, or periods.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4134,6 +5052,10 @@ pub mod attribute {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the attribute. The <code>value</code> must contain between 1 and 128
+        /// characters and may contain letters (uppercase and lowercase), numbers, hyphens,
+        /// underscores, periods, at signs (@), forward slashes, back slashes, colons, or spaces.
+        /// The value cannot contain any leading or trailing whitespace.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -4144,6 +5066,8 @@ pub mod attribute {
             self.target_type = Some(input);
             self
         }
+        /// <p>The type of the target with which to attach the attribute. This parameter is required
+        /// if you use the short form ID for a resource instead of the full ARN.</p>
         pub fn set_target_type(
             mut self,
             input: std::option::Option<crate::model::TargetType>,
@@ -4157,6 +5081,8 @@ pub mod attribute {
             self.target_id = Some(input.into());
             self
         }
+        /// <p>The ID of the target. You can specify the short form ID for a resource or the full
+        /// Amazon Resource Name (ARN).</p>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_id = input;
             self
@@ -4179,6 +5105,7 @@ impl Attribute {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4190,6 +5117,7 @@ impl Attribute {
     std::hash::Hash,
 )]
 pub enum TargetType {
+    #[allow(missing_docs)] // documentation missing in model
     ContainerInstance,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4210,12 +5138,14 @@ impl std::str::FromStr for TargetType {
     }
 }
 impl TargetType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TargetType::ContainerInstance => "container-instance",
             TargetType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["container-instance"]
     }
@@ -4226,6 +5156,7 @@ impl AsRef<str> for TargetType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4237,11 +5168,17 @@ impl AsRef<str> for TargetType {
     std::hash::Hash,
 )]
 pub enum AgentUpdateStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Staged,
+    #[allow(missing_docs)] // documentation missing in model
     Staging,
+    #[allow(missing_docs)] // documentation missing in model
     Updated,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4267,6 +5204,7 @@ impl std::str::FromStr for AgentUpdateStatus {
     }
 }
 impl AgentUpdateStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AgentUpdateStatus::Failed => "FAILED",
@@ -4278,6 +5216,7 @@ impl AgentUpdateStatus {
             AgentUpdateStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "FAILED", "PENDING", "STAGED", "STAGING", "UPDATED", "UPDATING",
@@ -4345,6 +5284,8 @@ pub mod resource {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>,
+        /// <code>PORTS</code>, <code>PORTS_UDP</code>, or a user-defined resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4355,6 +5296,8 @@ pub mod resource {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of the resource, such as <code>INTEGER</code>, <code>DOUBLE</code>,
+        /// <code>LONG</code>, or <code>STRINGSET</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -4365,6 +5308,8 @@ pub mod resource {
             self.double_value = Some(input);
             self
         }
+        /// <p>When the <code>doubleValue</code> type is set, the value of the resource must be a
+        /// double precision floating-point type.</p>
         pub fn set_double_value(mut self, input: std::option::Option<f64>) -> Self {
             self.double_value = input;
             self
@@ -4375,6 +5320,8 @@ pub mod resource {
             self.long_value = Some(input);
             self
         }
+        /// <p>When the <code>longValue</code> type is set, the value of the resource must be an
+        /// extended precision floating-point type.</p>
         pub fn set_long_value(mut self, input: std::option::Option<i64>) -> Self {
             self.long_value = input;
             self
@@ -4385,16 +5332,26 @@ pub mod resource {
             self.integer_value = Some(input);
             self
         }
+        /// <p>When the <code>integerValue</code> type is set, the value of the resource must be an
+        /// integer.</p>
         pub fn set_integer_value(mut self, input: std::option::Option<i32>) -> Self {
             self.integer_value = input;
             self
         }
+        /// Appends an item to `string_set_value`.
+        ///
+        /// To override the contents of this collection use [`set_string_set_value`](Self::set_string_set_value).
+        ///
+        /// <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a
+        /// string type.</p>
         pub fn string_set_value(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.string_set_value.unwrap_or_default();
             v.push(input.into());
             self.string_set_value = Some(v);
             self
         }
+        /// <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a
+        /// string type.</p>
         pub fn set_string_set_value(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4460,6 +5417,7 @@ pub mod version_info {
             self.agent_version = Some(input.into());
             self
         }
+        /// <p>The version number of the Amazon ECS container agent.</p>
         pub fn set_agent_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4473,6 +5431,8 @@ pub mod version_info {
             self.agent_hash = Some(input.into());
             self
         }
+        /// <p>The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent
+        /// </a> GitHub repository.</p>
         pub fn set_agent_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.agent_hash = input;
             self
@@ -4482,6 +5442,7 @@ pub mod version_info {
             self.docker_version = Some(input.into());
             self
         }
+        /// <p>The Docker version running on the container instance.</p>
         pub fn set_docker_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4506,6 +5467,7 @@ impl VersionInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4517,10 +5479,15 @@ impl VersionInfo {
     std::hash::Hash,
 )]
 pub enum ContainerInstanceStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Deregistering,
+    #[allow(missing_docs)] // documentation missing in model
     Draining,
+    #[allow(missing_docs)] // documentation missing in model
     Registering,
+    #[allow(missing_docs)] // documentation missing in model
     RegistrationFailed,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4545,6 +5512,7 @@ impl std::str::FromStr for ContainerInstanceStatus {
     }
 }
 impl ContainerInstanceStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContainerInstanceStatus::Active => "ACTIVE",
@@ -4555,6 +5523,7 @@ impl ContainerInstanceStatus {
             ContainerInstanceStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -4777,6 +5746,7 @@ pub mod cluster {
             self.cluster_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster, the Amazon Web Services account ID of the cluster owner, the <code>cluster</code> namespace, and then the cluster name. For example, <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_arn = input;
             self
@@ -4786,6 +5756,7 @@ pub mod cluster {
             self.cluster_name = Some(input.into());
             self
         }
+        /// <p>A user-generated string that you use to identify your cluster.</p>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_name = input;
             self
@@ -4795,6 +5766,7 @@ pub mod cluster {
             self.configuration = Some(input);
             self
         }
+        /// <p>The execute command configuration for the cluster.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ClusterConfiguration>,
@@ -4837,6 +5809,37 @@ pub mod cluster {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the cluster. The following are the possible states that will be
+        /// returned.</p>
+        /// <dl>
+        /// <dt>ACTIVE</dt>
+        /// <dd>
+        /// <p>The cluster is ready to accept tasks and if applicable you can register
+        /// container instances with the cluster.</p>
+        /// </dd>
+        /// <dt>PROVISIONING</dt>
+        /// <dd>
+        /// <p>The cluster has capacity providers associated with it and the resources
+        /// needed for the capacity provider are being created.</p>
+        /// </dd>
+        /// <dt>DEPROVISIONING</dt>
+        /// <dd>
+        /// <p>The cluster has capacity providers associated with it and the resources
+        /// needed for the capacity provider are being deleted.</p>
+        /// </dd>
+        /// <dt>FAILED</dt>
+        /// <dd>
+        /// <p>The cluster has capacity providers associated with it and the resources
+        /// needed for the capacity provider have failed to create.</p>
+        /// </dd>
+        /// <dt>INACTIVE</dt>
+        /// <dd>
+        /// <p>The cluster has been deleted. Clusters with an <code>INACTIVE</code>
+        /// status may remain discoverable in your account for a period of time.
+        /// However, this behavior is subject to change in the future, so you should not
+        /// rely on <code>INACTIVE</code> clusters persisting.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -4847,6 +5850,8 @@ pub mod cluster {
             self.registered_container_instances_count = Some(input);
             self
         }
+        /// <p>The number of container instances registered into the cluster. This includes container
+        /// instances in both <code>ACTIVE</code> and <code>DRAINING</code> status.</p>
         pub fn set_registered_container_instances_count(
             mut self,
             input: std::option::Option<i32>,
@@ -4859,6 +5864,7 @@ pub mod cluster {
             self.running_tasks_count = Some(input);
             self
         }
+        /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state.</p>
         pub fn set_running_tasks_count(mut self, input: std::option::Option<i32>) -> Self {
             self.running_tasks_count = input;
             self
@@ -4868,6 +5874,7 @@ pub mod cluster {
             self.pending_tasks_count = Some(input);
             self
         }
+        /// <p>The number of tasks in the cluster that are in the <code>PENDING</code> state.</p>
         pub fn set_pending_tasks_count(mut self, input: std::option::Option<i32>) -> Self {
             self.pending_tasks_count = input;
             self
@@ -4878,16 +5885,78 @@ pub mod cluster {
             self.active_services_count = Some(input);
             self
         }
+        /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code>
+        /// state. You can view these services with <a>ListServices</a>.</p>
         pub fn set_active_services_count(mut self, input: std::option::Option<i32>) -> Self {
             self.active_services_count = input;
             self
         }
+        /// Appends an item to `statistics`.
+        ///
+        /// To override the contents of this collection use [`set_statistics`](Self::set_statistics).
+        ///
+        /// <p>Additional information about your clusters that are separated by launch type,
+        /// including:</p>
+        /// <ul>
+        /// <li>
+        /// <p>runningEC2TasksCount</p>
+        /// </li>
+        /// <li>
+        /// <p>RunningFargateTasksCount</p>
+        /// </li>
+        /// <li>
+        /// <p>pendingEC2TasksCount</p>
+        /// </li>
+        /// <li>
+        /// <p>pendingFargateTasksCount</p>
+        /// </li>
+        /// <li>
+        /// <p>activeEC2ServiceCount</p>
+        /// </li>
+        /// <li>
+        /// <p>activeFargateServiceCount</p>
+        /// </li>
+        /// <li>
+        /// <p>drainingEC2ServiceCount</p>
+        /// </li>
+        /// <li>
+        /// <p>drainingFargateServiceCount</p>
+        /// </li>
+        /// </ul>
         pub fn statistics(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
             let mut v = self.statistics.unwrap_or_default();
             v.push(input.into());
             self.statistics = Some(v);
             self
         }
+        /// <p>Additional information about your clusters that are separated by launch type,
+        /// including:</p>
+        /// <ul>
+        /// <li>
+        /// <p>runningEC2TasksCount</p>
+        /// </li>
+        /// <li>
+        /// <p>RunningFargateTasksCount</p>
+        /// </li>
+        /// <li>
+        /// <p>pendingEC2TasksCount</p>
+        /// </li>
+        /// <li>
+        /// <p>pendingFargateTasksCount</p>
+        /// </li>
+        /// <li>
+        /// <p>activeEC2ServiceCount</p>
+        /// </li>
+        /// <li>
+        /// <p>activeFargateServiceCount</p>
+        /// </li>
+        /// <li>
+        /// <p>drainingEC2ServiceCount</p>
+        /// </li>
+        /// <li>
+        /// <p>drainingFargateServiceCount</p>
+        /// </li>
+        /// </ul>
         pub fn set_statistics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
@@ -4895,12 +5964,82 @@ pub mod cluster {
             self.statistics = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The metadata that you apply to the cluster to help you categorize and organize them.
+        /// Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The metadata that you apply to the cluster to help you categorize and organize them.
+        /// Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4908,12 +6047,20 @@ pub mod cluster {
             self.tags = input;
             self
         }
+        /// Appends an item to `settings`.
+        ///
+        /// To override the contents of this collection use [`set_settings`](Self::set_settings).
+        ///
+        /// <p>The settings for the cluster. This parameter indicates whether CloudWatch Container Insights
+        /// is enabled or disabled for a cluster.</p>
         pub fn settings(mut self, input: impl Into<crate::model::ClusterSetting>) -> Self {
             let mut v = self.settings.unwrap_or_default();
             v.push(input.into());
             self.settings = Some(v);
             self
         }
+        /// <p>The settings for the cluster. This parameter indicates whether CloudWatch Container Insights
+        /// is enabled or disabled for a cluster.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ClusterSetting>>,
@@ -4921,12 +6068,18 @@ pub mod cluster {
             self.settings = input;
             self
         }
+        /// Appends an item to `capacity_providers`.
+        ///
+        /// To override the contents of this collection use [`set_capacity_providers`](Self::set_capacity_providers).
+        ///
+        /// <p>The capacity providers associated with the cluster.</p>
         pub fn capacity_providers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.capacity_providers.unwrap_or_default();
             v.push(input.into());
             self.capacity_providers = Some(v);
             self
         }
+        /// <p>The capacity providers associated with the cluster.</p>
         pub fn set_capacity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4934,6 +6087,13 @@ pub mod cluster {
             self.capacity_providers = input;
             self
         }
+        /// Appends an item to `default_capacity_provider_strategy`.
+        ///
+        /// To override the contents of this collection use [`set_default_capacity_provider_strategy`](Self::set_default_capacity_provider_strategy).
+        ///
+        /// <p>The default capacity provider strategy for the cluster. When services or tasks are run
+        /// in the cluster with no launch type or capacity provider strategy specified, the default
+        /// capacity provider strategy is used.</p>
         pub fn default_capacity_provider_strategy(
             mut self,
             input: impl Into<crate::model::CapacityProviderStrategyItem>,
@@ -4943,6 +6103,9 @@ pub mod cluster {
             self.default_capacity_provider_strategy = Some(v);
             self
         }
+        /// <p>The default capacity provider strategy for the cluster. When services or tasks are run
+        /// in the cluster with no launch type or capacity provider strategy specified, the default
+        /// capacity provider strategy is used.</p>
         pub fn set_default_capacity_provider_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
@@ -4950,12 +6113,20 @@ pub mod cluster {
             self.default_capacity_provider_strategy = input;
             self
         }
+        /// Appends an item to `attachments`.
+        ///
+        /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
+        ///
+        /// <p>The resources attached to a cluster. When using a capacity provider with a cluster,
+        /// the Auto Scaling plan that is created will be returned as a cluster attachment.</p>
         pub fn attachments(mut self, input: impl Into<crate::model::Attachment>) -> Self {
             let mut v = self.attachments.unwrap_or_default();
             v.push(input.into());
             self.attachments = Some(v);
             self
         }
+        /// <p>The resources attached to a cluster. When using a capacity provider with a cluster,
+        /// the Auto Scaling plan that is created will be returned as a cluster attachment.</p>
         pub fn set_attachments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
@@ -4984,6 +6155,23 @@ pub mod cluster {
             self.attachments_status = Some(input.into());
             self
         }
+        /// <p>The status of the capacity providers associated with the cluster. The following are
+        /// the states that will be returned:</p>
+        /// <dl>
+        /// <dt>UPDATE_IN_PROGRESS</dt>
+        /// <dd>
+        /// <p>The available capacity providers for the cluster are updating. This occurs
+        /// when the Auto Scaling plan is provisioning or deprovisioning.</p>
+        /// </dd>
+        /// <dt>UPDATE_COMPLETE</dt>
+        /// <dd>
+        /// <p>The capacity providers have successfully updated.</p>
+        /// </dd>
+        /// <dt>UPDATE_FAILED</dt>
+        /// <dd>
+        /// <p>The capacity provider updates failed.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_attachments_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5062,6 +6250,8 @@ pub mod cluster_setting {
             self.name = Some(input);
             self
         }
+        /// <p>The name of the cluster setting. The only supported value is
+        /// <code>containerInsights</code>.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::ClusterSettingName>,
@@ -5079,6 +6269,12 @@ pub mod cluster_setting {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value to set for the cluster setting. The supported values are
+        /// <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is
+        /// specified, CloudWatch Container Insights will be enabled for the cluster, otherwise it will be
+        /// disabled unless the <code>containerInsights</code> account setting is enabled. If a
+        /// cluster value is specified, it will override the <code>containerInsights</code> value
+        /// set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -5099,6 +6295,7 @@ impl ClusterSetting {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5110,6 +6307,7 @@ impl ClusterSetting {
     std::hash::Hash,
 )]
 pub enum ClusterSettingName {
+    #[allow(missing_docs)] // documentation missing in model
     ContainerInsights,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5130,12 +6328,14 @@ impl std::str::FromStr for ClusterSettingName {
     }
 }
 impl ClusterSettingName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ClusterSettingName::ContainerInsights => "containerInsights",
             ClusterSettingName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["containerInsights"]
     }
@@ -5182,6 +6382,7 @@ pub mod cluster_configuration {
             self.execute_command_configuration = Some(input);
             self
         }
+        /// <p>The details of the execute command configuration.</p>
         pub fn set_execute_command_configuration(
             mut self,
             input: std::option::Option<crate::model::ExecuteCommandConfiguration>,
@@ -5265,6 +6466,8 @@ pub mod execute_command_configuration {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>Specify an Key Management Service key ID to encrypt the data between the local client
+        /// and the container.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -5294,6 +6497,27 @@ pub mod execute_command_configuration {
             self.logging = Some(input);
             self
         }
+        /// <p>The log setting to use for redirecting logs for your execute command results. The
+        /// following log settings are available.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code>: The execute command session is not logged.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DEFAULT</code>: The <code>awslogs</code> configuration in the task
+        /// definition is used. If no logging parameter is specified, it defaults to this
+        /// value. If no <code>awslogs</code> log driver is configured in the task
+        /// definition, the output won't be logged.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OVERRIDE</code>: Specify the logging details as a part of
+        /// <code>logConfiguration</code>. If the <code>OVERRIDE</code> logging option
+        /// is specified, the <code>logConfiguration</code> is required.</p>
+        /// </li>
+        /// </ul>
         pub fn set_logging(
             mut self,
             input: std::option::Option<crate::model::ExecuteCommandLogging>,
@@ -5311,6 +6535,9 @@ pub mod execute_command_configuration {
             self.log_configuration = Some(input);
             self
         }
+        /// <p>The log configuration for the results of the execute command actions. The logs can be
+        /// sent to CloudWatch Logs or an Amazon S3 bucket. When <code>logging=OVERRIDE</code> is
+        /// specified, a <code>logConfiguration</code> must be provided.</p>
         pub fn set_log_configuration(
             mut self,
             input: std::option::Option<crate::model::ExecuteCommandLogConfiguration>,
@@ -5397,6 +6624,10 @@ pub mod execute_command_log_configuration {
             self.cloud_watch_log_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the CloudWatch log group to send logs to.</p>
+        /// <note>
+        /// <p>The CloudWatch log group must already be created.</p>
+        /// </note>
         pub fn set_cloud_watch_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5410,6 +6641,8 @@ pub mod execute_command_log_configuration {
             self.cloud_watch_encryption_enabled = Some(input);
             self
         }
+        /// <p>Whether or not to enable encryption on the CloudWatch logs. If not specified,
+        /// encryption will be disabled.</p>
         pub fn set_cloud_watch_encryption_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -5425,6 +6658,10 @@ pub mod execute_command_log_configuration {
             self.s3_bucket_name = Some(input.into());
             self
         }
+        /// <p>The name of the S3 bucket to send logs to.</p>
+        /// <note>
+        /// <p>The S3 bucket must already be created.</p>
+        /// </note>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5438,6 +6675,8 @@ pub mod execute_command_log_configuration {
             self.s3_encryption_enabled = Some(input);
             self
         }
+        /// <p>Whether or not to enable encryption on the CloudWatch logs. If not specified,
+        /// encryption will be disabled.</p>
         pub fn set_s3_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.s3_encryption_enabled = input;
             self
@@ -5447,6 +6686,7 @@ pub mod execute_command_log_configuration {
             self.s3_key_prefix = Some(input.into());
             self
         }
+        /// <p>An optional folder in the S3 bucket to place logs in.</p>
         pub fn set_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5475,6 +6715,7 @@ impl ExecuteCommandLogConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5486,8 +6727,11 @@ impl ExecuteCommandLogConfiguration {
     std::hash::Hash,
 )]
 pub enum ExecuteCommandLogging {
+    #[allow(missing_docs)] // documentation missing in model
     Default,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Override,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5510,6 +6754,7 @@ impl std::str::FromStr for ExecuteCommandLogging {
     }
 }
 impl ExecuteCommandLogging {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExecuteCommandLogging::Default => "DEFAULT",
@@ -5518,6 +6763,7 @@ impl ExecuteCommandLogging {
             ExecuteCommandLogging::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEFAULT", "NONE", "OVERRIDE"]
     }
@@ -5637,6 +6883,7 @@ pub mod capacity_provider {
             self.capacity_provider_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that identifies the capacity provider.</p>
         pub fn set_capacity_provider_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5649,6 +6896,7 @@ pub mod capacity_provider {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the capacity provider.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5660,6 +6908,9 @@ pub mod capacity_provider {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the capacity provider. Only capacity providers in an
+        /// <code>ACTIVE</code> state can be used in a cluster. When a capacity provider is
+        /// successfully deleted, it will have an <code>INACTIVE</code> status.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::CapacityProviderStatus>,
@@ -5675,6 +6926,7 @@ pub mod capacity_provider {
             self.auto_scaling_group_provider = Some(input);
             self
         }
+        /// <p>The Auto Scaling group settings for the capacity provider.</p>
         pub fn set_auto_scaling_group_provider(
             mut self,
             input: std::option::Option<crate::model::AutoScalingGroupProvider>,
@@ -5704,6 +6956,24 @@ pub mod capacity_provider {
             self.update_status = Some(input);
             self
         }
+        /// <p>The update status of the capacity provider. The following are the possible states that
+        /// will be returned.</p>
+        /// <dl>
+        /// <dt>DELETE_IN_PROGRESS</dt>
+        /// <dd>
+        /// <p>The capacity provider is in the process of being deleted.</p>
+        /// </dd>
+        /// <dt>DELETE_COMPLETE</dt>
+        /// <dd>
+        /// <p>The capacity provider has been successfully deleted and will have an
+        /// <code>INACTIVE</code> status.</p>
+        /// </dd>
+        /// <dt>DELETE_FAILED</dt>
+        /// <dd>
+        /// <p>The capacity provider was unable to be deleted. The update status reason
+        /// will provide further details about why the delete failed.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_update_status(
             mut self,
             input: std::option::Option<crate::model::CapacityProviderUpdateStatus>,
@@ -5717,6 +6987,8 @@ pub mod capacity_provider {
             self.update_status_reason = Some(input.into());
             self
         }
+        /// <p>The update status reason. This provides further details about the update status for
+        /// the capacity provider.</p>
         pub fn set_update_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5724,12 +6996,84 @@ pub mod capacity_provider {
             self.update_status_reason = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The metadata that you apply to the capacity provider to help you categorize and
+        /// organize it. Each tag consists of a key and an optional value, both of which you
+        /// define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The metadata that you apply to the capacity provider to help you categorize and
+        /// organize it. Each tag consists of a key and an optional value, both of which you
+        /// define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5758,6 +7102,7 @@ impl CapacityProvider {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5769,11 +7114,17 @@ impl CapacityProvider {
     std::hash::Hash,
 )]
 pub enum CapacityProviderUpdateStatus {
+    #[allow(missing_docs)] // documentation missing in model
     DeleteComplete,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateComplete,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5799,6 +7150,7 @@ impl std::str::FromStr for CapacityProviderUpdateStatus {
     }
 }
 impl CapacityProviderUpdateStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CapacityProviderUpdateStatus::DeleteComplete => "DELETE_COMPLETE",
@@ -5810,6 +7162,7 @@ impl CapacityProviderUpdateStatus {
             CapacityProviderUpdateStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DELETE_COMPLETE",
@@ -5880,6 +7233,7 @@ pub mod auto_scaling_group_provider {
             self.auto_scaling_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5892,6 +7246,7 @@ pub mod auto_scaling_group_provider {
             self.managed_scaling = Some(input);
             self
         }
+        /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
         pub fn set_managed_scaling(
             mut self,
             input: std::option::Option<crate::model::ManagedScaling>,
@@ -5919,6 +7274,19 @@ pub mod auto_scaling_group_provider {
             self.managed_termination_protection = Some(input);
             self
         }
+        /// <p>The managed termination protection setting to use for the Auto Scaling group capacity
+        /// provider. This determines whether the Auto Scaling group has managed termination
+        /// protection.</p>
+        /// <important>
+        /// <p>When using managed termination protection, managed scaling must also be used
+        /// otherwise managed termination protection will not work.</p>
+        /// </important>
+        /// <p>When managed termination protection is enabled, Amazon ECS prevents the Amazon EC2 instances in
+        /// an Auto Scaling group that contain tasks from being terminated during a scale-in action.
+        /// The Auto Scaling group and each instance in the Auto Scaling group must have instance
+        /// protection from scale-in actions enabled as well. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance Protection</a> in the <i>Auto Scaling User Guide</i>.</p>
+        /// <p>When managed termination protection is disabled, your Amazon EC2 instances are not
+        /// protected from termination when the Auto Scaling group scales in.</p>
         pub fn set_managed_termination_protection(
             mut self,
             input: std::option::Option<crate::model::ManagedTerminationProtection>,
@@ -5943,6 +7311,7 @@ impl AutoScalingGroupProvider {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5954,7 +7323,9 @@ impl AutoScalingGroupProvider {
     std::hash::Hash,
 )]
 pub enum ManagedTerminationProtection {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5976,6 +7347,7 @@ impl std::str::FromStr for ManagedTerminationProtection {
     }
 }
 impl ManagedTerminationProtection {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ManagedTerminationProtection::Disabled => "DISABLED",
@@ -5983,6 +7355,7 @@ impl ManagedTerminationProtection {
             ManagedTerminationProtection::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -6051,6 +7424,7 @@ pub mod managed_scaling {
             self.status = Some(input);
             self
         }
+        /// <p>Whether or not to enable managed scaling for the capacity provider.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ManagedScalingStatus>,
@@ -6066,6 +7440,10 @@ pub mod managed_scaling {
             self.target_capacity = Some(input);
             self
         }
+        /// <p>The target capacity value for the capacity provider. The specified value must be
+        /// greater than <code>0</code> and less than or equal to <code>100</code>. A value of
+        /// <code>100</code> will result in the Amazon EC2 instances in your Auto Scaling group being
+        /// completely utilized.</p>
         pub fn set_target_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.target_capacity = input;
             self
@@ -6076,6 +7454,8 @@ pub mod managed_scaling {
             self.minimum_scaling_step_size = Some(input);
             self
         }
+        /// <p>The minimum number of container instances that Amazon ECS will scale in or scale out at one
+        /// time. If this parameter is omitted, the default value of <code>1</code> is used.</p>
         pub fn set_minimum_scaling_step_size(mut self, input: std::option::Option<i32>) -> Self {
             self.minimum_scaling_step_size = input;
             self
@@ -6087,6 +7467,9 @@ pub mod managed_scaling {
             self.maximum_scaling_step_size = Some(input);
             self
         }
+        /// <p>The maximum number of container instances that Amazon ECS will scale in or scale out at one
+        /// time. If this parameter is omitted, the default value of <code>10000</code> is
+        /// used.</p>
         pub fn set_maximum_scaling_step_size(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_scaling_step_size = input;
             self
@@ -6098,6 +7481,9 @@ pub mod managed_scaling {
             self.instance_warmup_period = Some(input);
             self
         }
+        /// <p>The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute
+        /// to CloudWatch metrics for Auto Scaling group. If this parameter is omitted, the default value
+        /// of <code>300</code> seconds is used.</p>
         pub fn set_instance_warmup_period(mut self, input: std::option::Option<i32>) -> Self {
             self.instance_warmup_period = input;
             self
@@ -6121,6 +7507,7 @@ impl ManagedScaling {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6132,7 +7519,9 @@ impl ManagedScaling {
     std::hash::Hash,
 )]
 pub enum ManagedScalingStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6154,6 +7543,7 @@ impl std::str::FromStr for ManagedScalingStatus {
     }
 }
 impl ManagedScalingStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ManagedScalingStatus::Disabled => "DISABLED",
@@ -6161,6 +7551,7 @@ impl ManagedScalingStatus {
             ManagedScalingStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -6171,6 +7562,7 @@ impl AsRef<str> for ManagedScalingStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6182,7 +7574,9 @@ impl AsRef<str> for ManagedScalingStatus {
     std::hash::Hash,
 )]
 pub enum CapacityProviderStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6204,6 +7598,7 @@ impl std::str::FromStr for CapacityProviderStatus {
     }
 }
 impl CapacityProviderStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CapacityProviderStatus::Active => "ACTIVE",
@@ -6211,6 +7606,7 @@ impl CapacityProviderStatus {
             CapacityProviderStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
@@ -6270,6 +7666,7 @@ pub mod auto_scaling_group_provider_update {
             self.managed_scaling = Some(input);
             self
         }
+        /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
         pub fn set_managed_scaling(
             mut self,
             input: std::option::Option<crate::model::ManagedScaling>,
@@ -6297,6 +7694,19 @@ pub mod auto_scaling_group_provider_update {
             self.managed_termination_protection = Some(input);
             self
         }
+        /// <p>The managed termination protection setting to use for the Auto Scaling group capacity
+        /// provider. This determines whether the Auto Scaling group has managed termination
+        /// protection.</p>
+        /// <important>
+        /// <p>When using managed termination protection, managed scaling must also be used
+        /// otherwise managed termination protection will not work.</p>
+        /// </important>
+        /// <p>When managed termination protection is enabled, Amazon ECS prevents the Amazon EC2 instances in
+        /// an Auto Scaling group that contain tasks from being terminated during a scale-in action.
+        /// The Auto Scaling group and each instance in the Auto Scaling group must have instance
+        /// protection from scale-in actions enabled as well. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance Protection</a> in the <i>Auto Scaling User Guide</i>.</p>
+        /// <p>When managed termination protection is disabled, your Amazon EC2 instances are not
+        /// protected from termination when the Auto Scaling group scales in.</p>
         pub fn set_managed_termination_protection(
             mut self,
             input: std::option::Option<crate::model::ManagedTerminationProtection>,
@@ -6360,6 +7770,7 @@ pub mod managed_agent_state_change {
             self.container_name = Some(input.into());
             self
         }
+        /// <p>The name of the container associated with the managed agent.</p>
         pub fn set_container_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6372,6 +7783,7 @@ pub mod managed_agent_state_change {
             self.managed_agent_name = Some(input);
             self
         }
+        /// <p>The name of the managed agent.</p>
         pub fn set_managed_agent_name(
             mut self,
             input: std::option::Option<crate::model::ManagedAgentName>,
@@ -6384,6 +7796,7 @@ pub mod managed_agent_state_change {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the managed agent.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -6393,6 +7806,7 @@ pub mod managed_agent_state_change {
             self.reason = Some(input.into());
             self
         }
+        /// <p>The reason for the status of the managed agent.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -6415,6 +7829,7 @@ impl ManagedAgentStateChange {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6426,6 +7841,7 @@ impl ManagedAgentStateChange {
     std::hash::Hash,
 )]
 pub enum ManagedAgentName {
+    #[allow(missing_docs)] // documentation missing in model
     ExecuteCommandAgent,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6446,12 +7862,14 @@ impl std::str::FromStr for ManagedAgentName {
     }
 }
 impl ManagedAgentName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ManagedAgentName::ExecuteCommandAgent => "ExecuteCommandAgent",
             ManagedAgentName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ExecuteCommandAgent"]
     }
@@ -6494,6 +7912,7 @@ pub mod attachment_state_change {
             self.attachment_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the attachment.</p>
         pub fn set_attachment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6506,6 +7925,7 @@ pub mod attachment_state_change {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the attachment.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -6580,6 +8000,7 @@ pub mod container_state_change {
             self.container_name = Some(input.into());
             self
         }
+        /// <p>The name of the container.</p>
         pub fn set_container_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6592,6 +8013,7 @@ pub mod container_state_change {
             self.image_digest = Some(input.into());
             self
         }
+        /// <p>The container image SHA 256 digest.</p>
         pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_digest = input;
             self
@@ -6601,6 +8023,7 @@ pub mod container_state_change {
             self.runtime_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Docker container.</p>
         pub fn set_runtime_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.runtime_id = input;
             self
@@ -6611,16 +8034,24 @@ pub mod container_state_change {
             self.exit_code = Some(input);
             self
         }
+        /// <p>The exit code for the container, if the state change is a result of the container
+        /// exiting.</p>
         pub fn set_exit_code(mut self, input: std::option::Option<i32>) -> Self {
             self.exit_code = input;
             self
         }
+        /// Appends an item to `network_bindings`.
+        ///
+        /// To override the contents of this collection use [`set_network_bindings`](Self::set_network_bindings).
+        ///
+        /// <p>Any network bindings associated with the container.</p>
         pub fn network_bindings(mut self, input: impl Into<crate::model::NetworkBinding>) -> Self {
             let mut v = self.network_bindings.unwrap_or_default();
             v.push(input.into());
             self.network_bindings = Some(v);
             self
         }
+        /// <p>Any network bindings associated with the container.</p>
         pub fn set_network_bindings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NetworkBinding>>,
@@ -6633,6 +8064,7 @@ pub mod container_state_change {
             self.reason = Some(input.into());
             self
         }
+        /// <p>The reason for the state change.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -6642,6 +8074,7 @@ pub mod container_state_change {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the container.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -6710,6 +8143,7 @@ pub mod network_binding {
             self.bind_ip = Some(input.into());
             self
         }
+        /// <p>The IP address that the container is bound to on the container instance.</p>
         pub fn set_bind_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bind_ip = input;
             self
@@ -6719,6 +8153,7 @@ pub mod network_binding {
             self.container_port = Some(input);
             self
         }
+        /// <p>The port number on the container that is used with the network binding.</p>
         pub fn set_container_port(mut self, input: std::option::Option<i32>) -> Self {
             self.container_port = input;
             self
@@ -6728,6 +8163,7 @@ pub mod network_binding {
             self.host_port = Some(input);
             self
         }
+        /// <p>The port number on the host that is used with the network binding.</p>
         pub fn set_host_port(mut self, input: std::option::Option<i32>) -> Self {
             self.host_port = input;
             self
@@ -6737,6 +8173,7 @@ pub mod network_binding {
             self.protocol = Some(input);
             self
         }
+        /// <p>The protocol used for the network binding.</p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::TransportProtocol>,
@@ -6762,6 +8199,7 @@ impl NetworkBinding {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6773,7 +8211,9 @@ impl NetworkBinding {
     std::hash::Hash,
 )]
 pub enum TransportProtocol {
+    #[allow(missing_docs)] // documentation missing in model
     Tcp,
+    #[allow(missing_docs)] // documentation missing in model
     Udp,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6795,6 +8235,7 @@ impl std::str::FromStr for TransportProtocol {
     }
 }
 impl TransportProtocol {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TransportProtocol::Tcp => "tcp",
@@ -6802,6 +8243,7 @@ impl TransportProtocol {
             TransportProtocol::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["tcp", "udp"]
     }
@@ -6831,7 +8273,7 @@ pub struct Task {
     pub connectivity: std::option::Option<crate::model::Connectivity>,
     /// <p>The Unix timestamp for when the task last went into <code>CONNECTED</code>
     /// status.</p>
-    pub connectivity_at: std::option::Option<smithy_types::Instant>,
+    pub connectivity_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The ARN of the container instances that host the task.</p>
     pub container_instance_arn: std::option::Option<std::string::String>,
     /// <p>The containers associated with the task.</p>
@@ -6867,7 +8309,7 @@ pub struct Task {
     pub cpu: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for when the task was created (the task entered the
     /// <code>PENDING</code> state).</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The desired status of the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
     /// Lifecycle</a>.</p>
     pub desired_status: std::option::Option<std::string::String>,
@@ -6876,7 +8318,7 @@ pub struct Task {
     /// the task.</p>
     pub enable_execute_command: bool,
     /// <p>The Unix timestamp for when the task execution stopped.</p>
-    pub execution_stopped_at: std::option::Option<smithy_types::Instant>,
+    pub execution_stopped_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of the task group associated with the task.</p>
     pub group: std::option::Option<std::string::String>,
     /// <p>The health status for the task, which is determined by the health of the essential
@@ -6938,12 +8380,12 @@ pub struct Task {
     /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub platform_version: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for when the container image pull began.</p>
-    pub pull_started_at: std::option::Option<smithy_types::Instant>,
+    pub pull_started_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Unix timestamp for when the container image pull completed.</p>
-    pub pull_stopped_at: std::option::Option<smithy_types::Instant>,
+    pub pull_stopped_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Unix timestamp for when the task started (the task transitioned from the
     /// <code>PENDING</code> state to the <code>RUNNING</code> state).</p>
-    pub started_at: std::option::Option<smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The tag specified when a task is started. If the task is started by an Amazon ECS service,
     /// then the <code>startedBy</code> parameter contains the deployment ID of the service that
     /// starts it.</p>
@@ -6953,12 +8395,12 @@ pub struct Task {
     pub stop_code: std::option::Option<crate::model::TaskStopCode>,
     /// <p>The Unix timestamp for when the task was stopped (the task transitioned from the
     /// <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
-    pub stopped_at: std::option::Option<smithy_types::Instant>,
+    pub stopped_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The reason that the task was stopped.</p>
     pub stopped_reason: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for when the task stops (transitions from the <code>RUNNING</code>
     /// state to <code>STOPPED</code>).</p>
-    pub stopping_at: std::option::Option<smithy_types::Instant>,
+    pub stopping_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each
     /// tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -7060,14 +8502,14 @@ pub mod task {
         pub(crate) capacity_provider_name: std::option::Option<std::string::String>,
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) connectivity: std::option::Option<crate::model::Connectivity>,
-        pub(crate) connectivity_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) connectivity_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) container_instance_arn: std::option::Option<std::string::String>,
         pub(crate) containers: std::option::Option<std::vec::Vec<crate::model::Container>>,
         pub(crate) cpu: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) desired_status: std::option::Option<std::string::String>,
         pub(crate) enable_execute_command: std::option::Option<bool>,
-        pub(crate) execution_stopped_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) execution_stopped_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) group: std::option::Option<std::string::String>,
         pub(crate) health_status: std::option::Option<crate::model::HealthStatus>,
         pub(crate) inference_accelerators:
@@ -7077,14 +8519,14 @@ pub mod task {
         pub(crate) memory: std::option::Option<std::string::String>,
         pub(crate) overrides: std::option::Option<crate::model::TaskOverride>,
         pub(crate) platform_version: std::option::Option<std::string::String>,
-        pub(crate) pull_started_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) pull_stopped_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) started_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) pull_started_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) pull_stopped_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) started_by: std::option::Option<std::string::String>,
         pub(crate) stop_code: std::option::Option<crate::model::TaskStopCode>,
-        pub(crate) stopped_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) stopped_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) stopped_reason: std::option::Option<std::string::String>,
-        pub(crate) stopping_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) stopping_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) task_arn: std::option::Option<std::string::String>,
         pub(crate) task_definition_arn: std::option::Option<std::string::String>,
@@ -7092,12 +8534,20 @@ pub mod task {
         pub(crate) ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
     }
     impl Builder {
+        /// Appends an item to `attachments`.
+        ///
+        /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
+        ///
+        /// <p>The Elastic Network Adapter associated with the task if the task uses the
+        /// <code>awsvpc</code> network mode.</p>
         pub fn attachments(mut self, input: impl Into<crate::model::Attachment>) -> Self {
             let mut v = self.attachments.unwrap_or_default();
             v.push(input.into());
             self.attachments = Some(v);
             self
         }
+        /// <p>The Elastic Network Adapter associated with the task if the task uses the
+        /// <code>awsvpc</code> network mode.</p>
         pub fn set_attachments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
@@ -7105,12 +8555,18 @@ pub mod task {
             self.attachments = input;
             self
         }
+        /// Appends an item to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>The attributes of the task</p>
         pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
             v.push(input.into());
             self.attributes = Some(v);
             self
         }
+        /// <p>The attributes of the task</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -7123,6 +8579,7 @@ pub mod task {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>The availability zone of the task.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7135,6 +8592,7 @@ pub mod task {
             self.capacity_provider_name = Some(input.into());
             self
         }
+        /// <p>The capacity provider associated with the task.</p>
         pub fn set_capacity_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7147,6 +8605,7 @@ pub mod task {
             self.cluster_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the cluster that hosts the task.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_arn = input;
             self
@@ -7156,6 +8615,7 @@ pub mod task {
             self.connectivity = Some(input);
             self
         }
+        /// <p>The connectivity status of a task.</p>
         pub fn set_connectivity(
             mut self,
             input: std::option::Option<crate::model::Connectivity>,
@@ -7165,13 +8625,15 @@ pub mod task {
         }
         /// <p>The Unix timestamp for when the task last went into <code>CONNECTED</code>
         /// status.</p>
-        pub fn connectivity_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn connectivity_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.connectivity_at = Some(input);
             self
         }
+        /// <p>The Unix timestamp for when the task last went into <code>CONNECTED</code>
+        /// status.</p>
         pub fn set_connectivity_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.connectivity_at = input;
             self
@@ -7181,6 +8643,7 @@ pub mod task {
             self.container_instance_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the container instances that host the task.</p>
         pub fn set_container_instance_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7188,12 +8651,18 @@ pub mod task {
             self.container_instance_arn = input;
             self
         }
+        /// Appends an item to `containers`.
+        ///
+        /// To override the contents of this collection use [`set_containers`](Self::set_containers).
+        ///
+        /// <p>The containers associated with the task.</p>
         pub fn containers(mut self, input: impl Into<crate::model::Container>) -> Self {
             let mut v = self.containers.unwrap_or_default();
             v.push(input.into());
             self.containers = Some(v);
             self
         }
+        /// <p>The containers associated with the task.</p>
         pub fn set_containers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Container>>,
@@ -7233,17 +8702,50 @@ pub mod task {
             self.cpu = Some(input.into());
             self
         }
+        /// <p>The number of CPU units used by the task as expressed in a task definition. It can be
+        /// expressed as an integer using CPU units, for example <code>1024</code>. It can also be
+        /// expressed as a string using vCPUs, for example <code>1 vCPU</code> or <code>1
+        /// vcpu</code>. String values are converted to an integer indicating the CPU units when
+        /// the task definition is registered.</p>
+        /// <p>If you are using the EC2 launch type, this field is optional. Supported
+        /// values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and
+        /// <code>10240</code> CPU units (<code>10</code> vCPUs).</p>
+        /// <p>If you are using the Fargate launch type, this field is required and you
+        /// must use one of the following values, which determines your range of supported values
+        /// for the <code>memory</code> parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
+        /// </li>
+        /// <li>
+        /// <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p>
+        /// </li>
+        /// <li>
+        /// <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p>
+        /// </li>
+        /// <li>
+        /// <p>2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p>
+        /// </li>
+        /// <li>
+        /// <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p>
+        /// </li>
+        /// </ul>
         pub fn set_cpu(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cpu = input;
             self
         }
         /// <p>The Unix timestamp for when the task was created (the task entered the
         /// <code>PENDING</code> state).</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix timestamp for when the task was created (the task entered the
+        /// <code>PENDING</code> state).</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -7253,6 +8755,8 @@ pub mod task {
             self.desired_status = Some(input.into());
             self
         }
+        /// <p>The desired status of the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
+        /// Lifecycle</a>.</p>
         pub fn set_desired_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7267,18 +8771,22 @@ pub mod task {
             self.enable_execute_command = Some(input);
             self
         }
+        /// <p>Whether or not execute command functionality is enabled for this task. If
+        /// <code>true</code>, this enables execute command functionality on all containers in
+        /// the task.</p>
         pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_execute_command = input;
             self
         }
         /// <p>The Unix timestamp for when the task execution stopped.</p>
-        pub fn execution_stopped_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn execution_stopped_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.execution_stopped_at = Some(input);
             self
         }
+        /// <p>The Unix timestamp for when the task execution stopped.</p>
         pub fn set_execution_stopped_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.execution_stopped_at = input;
             self
@@ -7288,6 +8796,7 @@ pub mod task {
             self.group = Some(input.into());
             self
         }
+        /// <p>The name of the task group associated with the task.</p>
         pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group = input;
             self
@@ -7309,6 +8818,19 @@ pub mod task {
             self.health_status = Some(input);
             self
         }
+        /// <p>The health status for the task, which is determined by the health of the essential
+        /// containers in the task. If all essential containers in the task are reporting as
+        /// <code>HEALTHY</code>, then the task status also reports as <code>HEALTHY</code>. If
+        /// any essential containers in the task are reporting as <code>UNHEALTHY</code> or
+        /// <code>UNKNOWN</code>, then the task status also reports as <code>UNHEALTHY</code> or
+        /// <code>UNKNOWN</code>, accordingly.</p>
+        /// <note>
+        /// <p>The Amazon ECS container agent does not monitor or report on Docker health checks that
+        /// are embedded in a container image (such as those specified in a parent image or from
+        /// the image's Dockerfile) and not specified in the container definition. Health check
+        /// parameters that are specified in a container definition override any Docker health
+        /// checks that exist in the container image.</p>
+        /// </note>
         pub fn set_health_status(
             mut self,
             input: std::option::Option<crate::model::HealthStatus>,
@@ -7316,6 +8838,11 @@ pub mod task {
             self.health_status = input;
             self
         }
+        /// Appends an item to `inference_accelerators`.
+        ///
+        /// To override the contents of this collection use [`set_inference_accelerators`](Self::set_inference_accelerators).
+        ///
+        /// <p>The Elastic Inference accelerator associated with the task.</p>
         pub fn inference_accelerators(
             mut self,
             input: impl Into<crate::model::InferenceAccelerator>,
@@ -7325,6 +8852,7 @@ pub mod task {
             self.inference_accelerators = Some(v);
             self
         }
+        /// <p>The Elastic Inference accelerator associated with the task.</p>
         pub fn set_inference_accelerators(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InferenceAccelerator>>,
@@ -7338,6 +8866,8 @@ pub mod task {
             self.last_status = Some(input.into());
             self
         }
+        /// <p>The last known status of the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task
+        /// Lifecycle</a>.</p>
         pub fn set_last_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.last_status = input;
             self
@@ -7348,6 +8878,8 @@ pub mod task {
             self.launch_type = Some(input);
             self
         }
+        /// <p>The infrastructure on which your task is running. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+        /// launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_launch_type(
             mut self,
             input: std::option::Option<crate::model::LaunchType>,
@@ -7385,6 +8917,32 @@ pub mod task {
             self.memory = Some(input.into());
             self
         }
+        /// <p>The amount of memory (in MiB) used by the task as expressed in a task definition. It
+        /// can be expressed as an integer using MiB, for example <code>1024</code>. It can also be
+        /// expressed as a string using GB, for example <code>1GB</code> or <code>1 GB</code>.
+        /// String values are converted to an integer indicating the MiB when the task definition is
+        /// registered.</p>
+        /// <p>If you are using the EC2 launch type, this field is optional.</p>
+        /// <p>If you are using the Fargate launch type, this field is required and you
+        /// must use one of the following values, which determines your range of supported values
+        /// for the <code>cpu</code> parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p>
+        /// </li>
+        /// <li>
+        /// <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p>
+        /// </li>
+        /// <li>
+        /// <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p>
+        /// </li>
+        /// <li>
+        /// <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
+        /// </li>
+        /// <li>
+        /// <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
+        /// </li>
+        /// </ul>
         pub fn set_memory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.memory = input;
             self
@@ -7394,6 +8952,7 @@ pub mod task {
             self.overrides = Some(input);
             self
         }
+        /// <p>One or more container overrides.</p>
         pub fn set_overrides(
             mut self,
             input: std::option::Option<crate::model::TaskOverride>,
@@ -7410,6 +8969,11 @@ pub mod task {
             self.platform_version = Some(input.into());
             self
         }
+        /// <p>The platform version on which your task is running. A platform version is only
+        /// specified for tasks using the Fargate launch type. If one is not
+        /// specified, the <code>LATEST</code> platform version is used by default. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
+        /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_platform_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7418,36 +8982,43 @@ pub mod task {
             self
         }
         /// <p>The Unix timestamp for when the container image pull began.</p>
-        pub fn pull_started_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn pull_started_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.pull_started_at = Some(input);
             self
         }
+        /// <p>The Unix timestamp for when the container image pull began.</p>
         pub fn set_pull_started_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.pull_started_at = input;
             self
         }
         /// <p>The Unix timestamp for when the container image pull completed.</p>
-        pub fn pull_stopped_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn pull_stopped_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.pull_stopped_at = Some(input);
             self
         }
+        /// <p>The Unix timestamp for when the container image pull completed.</p>
         pub fn set_pull_stopped_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.pull_stopped_at = input;
             self
         }
         /// <p>The Unix timestamp for when the task started (the task transitioned from the
         /// <code>PENDING</code> state to the <code>RUNNING</code> state).</p>
-        pub fn started_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.started_at = Some(input);
             self
         }
-        pub fn set_started_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix timestamp for when the task started (the task transitioned from the
+        /// <code>PENDING</code> state to the <code>RUNNING</code> state).</p>
+        pub fn set_started_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.started_at = input;
             self
         }
@@ -7458,6 +9029,9 @@ pub mod task {
             self.started_by = Some(input.into());
             self
         }
+        /// <p>The tag specified when a task is started. If the task is started by an Amazon ECS service,
+        /// then the <code>startedBy</code> parameter contains the deployment ID of the service that
+        /// starts it.</p>
         pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.started_by = input;
             self
@@ -7468,6 +9042,8 @@ pub mod task {
             self.stop_code = Some(input);
             self
         }
+        /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> may
+        /// contain additional details.</p>
         pub fn set_stop_code(
             mut self,
             input: std::option::Option<crate::model::TaskStopCode>,
@@ -7477,11 +9053,16 @@ pub mod task {
         }
         /// <p>The Unix timestamp for when the task was stopped (the task transitioned from the
         /// <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
-        pub fn stopped_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn stopped_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.stopped_at = Some(input);
             self
         }
-        pub fn set_stopped_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix timestamp for when the task was stopped (the task transitioned from the
+        /// <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
+        pub fn set_stopped_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.stopped_at = input;
             self
         }
@@ -7490,6 +9071,7 @@ pub mod task {
             self.stopped_reason = Some(input.into());
             self
         }
+        /// <p>The reason that the task was stopped.</p>
         pub fn set_stopped_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7499,23 +9081,95 @@ pub mod task {
         }
         /// <p>The Unix timestamp for when the task stops (transitions from the <code>RUNNING</code>
         /// state to <code>STOPPED</code>).</p>
-        pub fn stopping_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn stopping_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.stopping_at = Some(input);
             self
         }
+        /// <p>The Unix timestamp for when the task stops (transitions from the <code>RUNNING</code>
+        /// state to <code>STOPPED</code>).</p>
         pub fn set_stopping_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.stopping_at = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The metadata that you apply to the task to help you categorize and organize them. Each
+        /// tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The metadata that you apply to the task to help you categorize and organize them. Each
+        /// tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only
+        /// one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources,
+        /// remember that other services may have restrictions on allowed characters.
+        /// Generally allowed characters are: letters, numbers, and spaces representable in
+        /// UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
+        /// combination of such as a prefix for either keys or values as it is reserved for
+        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
+        /// this prefix do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7528,6 +9182,7 @@ pub mod task {
             self.task_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the task.</p>
         pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_arn = input;
             self
@@ -7537,6 +9192,7 @@ pub mod task {
             self.task_definition_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the task definition that creates the task.</p>
         pub fn set_task_definition_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7554,6 +9210,12 @@ pub mod task {
             self.version = Some(input);
             self
         }
+        /// <p>The version counter for the task. Every time a task experiences a change that triggers
+        /// a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS task
+        /// state with CloudWatch Events, you can compare the version of a task reported by the Amazon ECS API
+        /// actions with the version reported in CloudWatch Events for the task (inside the
+        /// <code>detail</code> object) to verify that the version in your event stream is
+        /// current.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
             self.version = input;
             self
@@ -7563,6 +9225,7 @@ pub mod task {
             self.ephemeral_storage = Some(input);
             self
         }
+        /// <p>The ephemeral storage settings for the task.</p>
         pub fn set_ephemeral_storage(
             mut self,
             input: std::option::Option<crate::model::EphemeralStorage>,
@@ -7658,6 +9321,9 @@ pub mod ephemeral_storage {
             self.size_in_gi_b = Some(input);
             self
         }
+        /// <p>The total amount, in GiB, of ephemeral storage to set for the task. The minimum
+        /// supported value is <code>21</code> GiB and the maximum supported value is
+        /// <code>200</code> GiB.</p>
         pub fn set_size_in_gi_b(mut self, input: std::option::Option<i32>) -> Self {
             self.size_in_gi_b = input;
             self
@@ -7677,6 +9343,7 @@ impl EphemeralStorage {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7688,8 +9355,11 @@ impl EphemeralStorage {
     std::hash::Hash,
 )]
 pub enum TaskStopCode {
+    #[allow(missing_docs)] // documentation missing in model
     EssentialContainerExited,
+    #[allow(missing_docs)] // documentation missing in model
     TaskFailedToStart,
+    #[allow(missing_docs)] // documentation missing in model
     UserInitiated,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7712,6 +9382,7 @@ impl std::str::FromStr for TaskStopCode {
     }
 }
 impl TaskStopCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TaskStopCode::EssentialContainerExited => "EssentialContainerExited",
@@ -7720,6 +9391,7 @@ impl TaskStopCode {
             TaskStopCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "EssentialContainerExited",
@@ -7796,6 +9468,11 @@ pub mod task_override {
         pub(crate) ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
     }
     impl Builder {
+        /// Appends an item to `container_overrides`.
+        ///
+        /// To override the contents of this collection use [`set_container_overrides`](Self::set_container_overrides).
+        ///
+        /// <p>One or more container overrides sent to a task.</p>
         pub fn container_overrides(
             mut self,
             input: impl Into<crate::model::ContainerOverride>,
@@ -7805,6 +9482,7 @@ pub mod task_override {
             self.container_overrides = Some(v);
             self
         }
+        /// <p>One or more container overrides sent to a task.</p>
         pub fn set_container_overrides(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContainerOverride>>,
@@ -7817,10 +9495,16 @@ pub mod task_override {
             self.cpu = Some(input.into());
             self
         }
+        /// <p>The cpu override for the task.</p>
         pub fn set_cpu(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cpu = input;
             self
         }
+        /// Appends an item to `inference_accelerator_overrides`.
+        ///
+        /// To override the contents of this collection use [`set_inference_accelerator_overrides`](Self::set_inference_accelerator_overrides).
+        ///
+        /// <p>The Elastic Inference accelerator override for the task.</p>
         pub fn inference_accelerator_overrides(
             mut self,
             input: impl Into<crate::model::InferenceAcceleratorOverride>,
@@ -7830,6 +9514,7 @@ pub mod task_override {
             self.inference_accelerator_overrides = Some(v);
             self
         }
+        /// <p>The Elastic Inference accelerator override for the task.</p>
         pub fn set_inference_accelerator_overrides(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InferenceAcceleratorOverride>>,
@@ -7844,6 +9529,9 @@ pub mod task_override {
             self.execution_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the task execution IAM role override for the task. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+        /// execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7856,6 +9544,7 @@ pub mod task_override {
             self.memory = Some(input.into());
             self
         }
+        /// <p>The memory override for the task.</p>
         pub fn set_memory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.memory = input;
             self
@@ -7868,6 +9557,10 @@ pub mod task_override {
             self.task_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in
+        /// this task are granted the permissions that are specified in this role. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for Tasks</a>
+        /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_task_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7884,6 +9577,11 @@ pub mod task_override {
             self.ephemeral_storage = Some(input);
             self
         }
+        /// <p>The ephemeral storage setting override for the task.</p>
+        /// <note>
+        /// <p>This parameter is only supported for tasks hosted on Fargate using platform
+        /// version <code>1.4.0</code> or later.</p>
+        /// </note>
         pub fn set_ephemeral_storage(
             mut self,
             input: std::option::Option<crate::model::EphemeralStorage>,
@@ -7949,6 +9647,8 @@ pub mod inference_accelerator_override {
             self.device_name = Some(input.into());
             self
         }
+        /// <p>The Elastic Inference accelerator device name to override for the task. This parameter
+        /// must match a <code>deviceName</code> specified in the task definition.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_name = input;
             self
@@ -7958,6 +9658,7 @@ pub mod inference_accelerator_override {
             self.device_type = Some(input.into());
             self
         }
+        /// <p>The Elastic Inference accelerator type to use.</p>
         pub fn set_device_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_type = input;
             self
@@ -8052,16 +9753,26 @@ pub mod container_override {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the container that receives the override. This parameter is required if
+        /// any override is specified.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `command`.
+        ///
+        /// To override the contents of this collection use [`set_command`](Self::set_command).
+        ///
+        /// <p>The command to send to the container that overrides the default command from the
+        /// Docker image or the task definition. You must also specify a container name.</p>
         pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.command.unwrap_or_default();
             v.push(input.into());
             self.command = Some(v);
             self
         }
+        /// <p>The command to send to the container that overrides the default command from the
+        /// Docker image or the task definition. You must also specify a container name.</p>
         pub fn set_command(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8069,12 +9780,24 @@ pub mod container_override {
             self.command = input;
             self
         }
+        /// Appends an item to `environment`.
+        ///
+        /// To override the contents of this collection use [`set_environment`](Self::set_environment).
+        ///
+        /// <p>The environment variables to send to the container. You can add new environment
+        /// variables, which are added to the container at launch, or you can override the existing
+        /// environment variables from the Docker image or the task definition. You must also
+        /// specify a container name.</p>
         pub fn environment(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
             let mut v = self.environment.unwrap_or_default();
             v.push(input.into());
             self.environment = Some(v);
             self
         }
+        /// <p>The environment variables to send to the container. You can add new environment
+        /// variables, which are added to the container at launch, or you can override the existing
+        /// environment variables from the Docker image or the task definition. You must also
+        /// specify a container name.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
@@ -8082,6 +9805,12 @@ pub mod container_override {
             self.environment = input;
             self
         }
+        /// Appends an item to `environment_files`.
+        ///
+        /// To override the contents of this collection use [`set_environment_files`](Self::set_environment_files).
+        ///
+        /// <p>A list of files containing the environment variables to pass to a container, instead
+        /// of the value from the container definition.</p>
         pub fn environment_files(
             mut self,
             input: impl Into<crate::model::EnvironmentFile>,
@@ -8091,6 +9820,8 @@ pub mod container_override {
             self.environment_files = Some(v);
             self
         }
+        /// <p>A list of files containing the environment variables to pass to a container, instead
+        /// of the value from the container definition.</p>
         pub fn set_environment_files(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnvironmentFile>>,
@@ -8104,6 +9835,8 @@ pub mod container_override {
             self.cpu = Some(input);
             self
         }
+        /// <p>The number of <code>cpu</code> units reserved for the container, instead of the
+        /// default value from the task definition. You must also specify a container name.</p>
         pub fn set_cpu(mut self, input: std::option::Option<i32>) -> Self {
             self.cpu = input;
             self
@@ -8115,6 +9848,9 @@ pub mod container_override {
             self.memory = Some(input);
             self
         }
+        /// <p>The hard limit (in MiB) of memory to present to the container, instead of the default
+        /// value from the task definition. If your container attempts to exceed the memory
+        /// specified here, the container is killed. You must also specify a container name.</p>
         pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
             self.memory = input;
             self
@@ -8125,10 +9861,18 @@ pub mod container_override {
             self.memory_reservation = Some(input);
             self
         }
+        /// <p>The soft limit (in MiB) of memory to reserve for the container, instead of the default
+        /// value from the task definition. You must also specify a container name.</p>
         pub fn set_memory_reservation(mut self, input: std::option::Option<i32>) -> Self {
             self.memory_reservation = input;
             self
         }
+        /// Appends an item to `resource_requirements`.
+        ///
+        /// To override the contents of this collection use [`set_resource_requirements`](Self::set_resource_requirements).
+        ///
+        /// <p>The type and amount of a resource to assign to a container, instead of the default
+        /// value from the task definition. The only supported resource is a GPU.</p>
         pub fn resource_requirements(
             mut self,
             input: impl Into<crate::model::ResourceRequirement>,
@@ -8138,6 +9882,8 @@ pub mod container_override {
             self.resource_requirements = Some(v);
             self
         }
+        /// <p>The type and amount of a resource to assign to a container, instead of the default
+        /// value from the task definition. The only supported resource is a GPU.</p>
         pub fn set_resource_requirements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceRequirement>>,
@@ -8218,6 +9964,14 @@ pub mod resource_requirement {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value for the specified resource type.</p>
+        /// <p>If the <code>GPU</code> type is used, the value is the number of physical
+        /// <code>GPUs</code> the Amazon ECS container agent will reserve for the container. The
+        /// number of GPUs reserved for all containers in a task should not exceed the number of
+        /// available GPUs on the container instance the task is launched on.</p>
+        /// <p>If the <code>InferenceAccelerator</code> type is used, the <code>value</code> should
+        /// match the <code>deviceName</code> for an <a>InferenceAccelerator</a>
+        /// specified in a task definition.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -8228,6 +9982,8 @@ pub mod resource_requirement {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of resource to assign to a container. The supported values are
+        /// <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
             self.r#type = input;
             self
@@ -8248,6 +10004,7 @@ impl ResourceRequirement {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8259,7 +10016,9 @@ impl ResourceRequirement {
     std::hash::Hash,
 )]
 pub enum ResourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Gpu,
+    #[allow(missing_docs)] // documentation missing in model
     InferenceAccelerator,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8281,6 +10040,7 @@ impl std::str::FromStr for ResourceType {
     }
 }
 impl ResourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Gpu => "GPU",
@@ -8288,6 +10048,7 @@ impl ResourceType {
             ResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GPU", "InferenceAccelerator"]
     }
@@ -8346,6 +10107,8 @@ pub mod environment_file {
             self.value = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment
+        /// variable file.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -8355,6 +10118,7 @@ pub mod environment_file {
             self.r#type = Some(input);
             self
         }
+        /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::EnvironmentFileType>,
@@ -8378,6 +10142,7 @@ impl EnvironmentFile {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8389,6 +10154,7 @@ impl EnvironmentFile {
     std::hash::Hash,
 )]
 pub enum EnvironmentFileType {
+    #[allow(missing_docs)] // documentation missing in model
     S3,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8409,12 +10175,14 @@ impl std::str::FromStr for EnvironmentFileType {
     }
 }
 impl EnvironmentFileType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EnvironmentFileType::S3 => "s3",
             EnvironmentFileType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["s3"]
     }
@@ -8461,6 +10229,8 @@ pub mod inference_accelerator {
             self.device_name = Some(input.into());
             self
         }
+        /// <p>The Elastic Inference accelerator device name. The <code>deviceName</code> must also
+        /// be referenced in a container definition as a <a>ResourceRequirement</a>.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_name = input;
             self
@@ -8470,6 +10240,7 @@ pub mod inference_accelerator {
             self.device_type = Some(input.into());
             self
         }
+        /// <p>The Elastic Inference accelerator type to use.</p>
         pub fn set_device_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_type = input;
             self
@@ -8490,7 +10261,7 @@ impl InferenceAccelerator {
     }
 }
 
-/// **NOTE:** `HealthStatus::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `HealthStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8502,9 +10273,11 @@ impl InferenceAccelerator {
     std::hash::Hash,
 )]
 pub enum HealthStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Healthy,
+    #[allow(missing_docs)] // documentation missing in model
     Unhealthy,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8527,6 +10300,7 @@ impl std::str::FromStr for HealthStatus {
     }
 }
 impl HealthStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HealthStatus::Healthy => "HEALTHY",
@@ -8535,6 +10309,7 @@ impl HealthStatus {
             HealthStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HEALTHY", "UNHEALTHY", "UNKNOWN"]
     }
@@ -8648,6 +10423,7 @@ pub mod container {
             self.container_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the container.</p>
         pub fn set_container_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8660,6 +10436,7 @@ pub mod container {
             self.task_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the task.</p>
         pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_arn = input;
             self
@@ -8669,6 +10446,7 @@ pub mod container {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the container.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8678,6 +10456,7 @@ pub mod container {
             self.image = Some(input.into());
             self
         }
+        /// <p>The image used for the container.</p>
         pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image = input;
             self
@@ -8691,6 +10470,11 @@ pub mod container {
             self.image_digest = Some(input.into());
             self
         }
+        /// <p>The container image manifest digest.</p>
+        /// <note>
+        /// <p>The <code>imageDigest</code> is only returned if the container is using an image
+        /// hosted in Amazon ECR, otherwise it is omitted.</p>
+        /// </note>
         pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_digest = input;
             self
@@ -8700,6 +10484,7 @@ pub mod container {
             self.runtime_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Docker container.</p>
         pub fn set_runtime_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.runtime_id = input;
             self
@@ -8709,6 +10494,7 @@ pub mod container {
             self.last_status = Some(input.into());
             self
         }
+        /// <p>The last known status of the container.</p>
         pub fn set_last_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.last_status = input;
             self
@@ -8718,6 +10504,7 @@ pub mod container {
             self.exit_code = Some(input);
             self
         }
+        /// <p>The exit code returned from the container.</p>
         pub fn set_exit_code(mut self, input: std::option::Option<i32>) -> Self {
             self.exit_code = input;
             self
@@ -8728,16 +10515,24 @@ pub mod container {
             self.reason = Some(input.into());
             self
         }
+        /// <p>A short (255 max characters) human-readable string to provide additional details about
+        /// a running or stopped container.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
         }
+        /// Appends an item to `network_bindings`.
+        ///
+        /// To override the contents of this collection use [`set_network_bindings`](Self::set_network_bindings).
+        ///
+        /// <p>The network bindings associated with the container.</p>
         pub fn network_bindings(mut self, input: impl Into<crate::model::NetworkBinding>) -> Self {
             let mut v = self.network_bindings.unwrap_or_default();
             v.push(input.into());
             self.network_bindings = Some(v);
             self
         }
+        /// <p>The network bindings associated with the container.</p>
         pub fn set_network_bindings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NetworkBinding>>,
@@ -8745,6 +10540,11 @@ pub mod container {
             self.network_bindings = input;
             self
         }
+        /// Appends an item to `network_interfaces`.
+        ///
+        /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
+        ///
+        /// <p>The network interfaces associated with the container.</p>
         pub fn network_interfaces(
             mut self,
             input: impl Into<crate::model::NetworkInterface>,
@@ -8754,6 +10554,7 @@ pub mod container {
             self.network_interfaces = Some(v);
             self
         }
+        /// <p>The network interfaces associated with the container.</p>
         pub fn set_network_interfaces(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
@@ -8768,6 +10569,9 @@ pub mod container {
             self.health_status = Some(input);
             self
         }
+        /// <p>The health status of the container. If health checks are not configured for this
+        /// container in its task definition, then it reports the health status as
+        /// <code>UNKNOWN</code>.</p>
         pub fn set_health_status(
             mut self,
             input: std::option::Option<crate::model::HealthStatus>,
@@ -8775,12 +10579,18 @@ pub mod container {
             self.health_status = input;
             self
         }
+        /// Appends an item to `managed_agents`.
+        ///
+        /// To override the contents of this collection use [`set_managed_agents`](Self::set_managed_agents).
+        ///
+        /// <p>The details of any Amazon ECS managed agents associated with the container.</p>
         pub fn managed_agents(mut self, input: impl Into<crate::model::ManagedAgent>) -> Self {
             let mut v = self.managed_agents.unwrap_or_default();
             v.push(input.into());
             self.managed_agents = Some(v);
             self
         }
+        /// <p>The details of any Amazon ECS managed agents associated with the container.</p>
         pub fn set_managed_agents(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ManagedAgent>>,
@@ -8795,6 +10605,9 @@ pub mod container {
             self.cpu = Some(input.into());
             self
         }
+        /// <p>The number of CPU units set for the container. The value will be <code>0</code> if no
+        /// value was specified in the container definition when the task definition was
+        /// registered.</p>
         pub fn set_cpu(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cpu = input;
             self
@@ -8804,6 +10617,7 @@ pub mod container {
             self.memory = Some(input.into());
             self
         }
+        /// <p>The hard limit (in MiB) of memory set for the container.</p>
         pub fn set_memory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.memory = input;
             self
@@ -8813,6 +10627,7 @@ pub mod container {
             self.memory_reservation = Some(input.into());
             self
         }
+        /// <p>The soft limit (in MiB) of memory set for the container.</p>
         pub fn set_memory_reservation(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8820,12 +10635,18 @@ pub mod container {
             self.memory_reservation = input;
             self
         }
+        /// Appends an item to `gpu_ids`.
+        ///
+        /// To override the contents of this collection use [`set_gpu_ids`](Self::set_gpu_ids).
+        ///
+        /// <p>The IDs of each GPU assigned to the container.</p>
         pub fn gpu_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.gpu_ids.unwrap_or_default();
             v.push(input.into());
             self.gpu_ids = Some(v);
             self
         }
+        /// <p>The IDs of each GPU assigned to the container.</p>
         pub fn set_gpu_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8869,7 +10690,7 @@ impl Container {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManagedAgent {
     /// <p>The Unix timestamp for when the managed agent was last started.</p>
-    pub last_started_at: std::option::Option<smithy_types::Instant>,
+    pub last_started_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of the managed agent. When the execute command feature is enabled, the
     /// managed agent name is <code>ExecuteCommandAgent</code>.</p>
     pub name: std::option::Option<crate::model::ManagedAgentName>,
@@ -8894,20 +10715,21 @@ pub mod managed_agent {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) last_started_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_started_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) name: std::option::Option<crate::model::ManagedAgentName>,
         pub(crate) reason: std::option::Option<std::string::String>,
         pub(crate) last_status: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Unix timestamp for when the managed agent was last started.</p>
-        pub fn last_started_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_started_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_started_at = Some(input);
             self
         }
+        /// <p>The Unix timestamp for when the managed agent was last started.</p>
         pub fn set_last_started_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_started_at = input;
             self
@@ -8918,6 +10740,8 @@ pub mod managed_agent {
             self.name = Some(input);
             self
         }
+        /// <p>The name of the managed agent. When the execute command feature is enabled, the
+        /// managed agent name is <code>ExecuteCommandAgent</code>.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::ManagedAgentName>,
@@ -8930,6 +10754,7 @@ pub mod managed_agent {
             self.reason = Some(input.into());
             self
         }
+        /// <p>The reason for why the managed agent is in the state it is in.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -8939,6 +10764,7 @@ pub mod managed_agent {
             self.last_status = Some(input.into());
             self
         }
+        /// <p>The last known status of the managed agent.</p>
         pub fn set_last_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.last_status = input;
             self
@@ -8998,6 +10824,7 @@ pub mod network_interface {
             self.attachment_id = Some(input.into());
             self
         }
+        /// <p>The attachment ID for the network interface.</p>
         pub fn set_attachment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9010,6 +10837,7 @@ pub mod network_interface {
             self.private_ipv4_address = Some(input.into());
             self
         }
+        /// <p>The private IPv4 address for the network interface.</p>
         pub fn set_private_ipv4_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9022,6 +10850,7 @@ pub mod network_interface {
             self.ipv6_address = Some(input.into());
             self
         }
+        /// <p>The private IPv6 address for the network interface.</p>
         pub fn set_ipv6_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ipv6_address = input;
             self
@@ -9043,6 +10872,7 @@ impl NetworkInterface {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9054,7 +10884,9 @@ impl NetworkInterface {
     std::hash::Hash,
 )]
 pub enum Connectivity {
+    #[allow(missing_docs)] // documentation missing in model
     Connected,
+    #[allow(missing_docs)] // documentation missing in model
     Disconnected,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9076,6 +10908,7 @@ impl std::str::FromStr for Connectivity {
     }
 }
 impl Connectivity {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Connectivity::Connected => "CONNECTED",
@@ -9083,6 +10916,7 @@ impl Connectivity {
             Connectivity::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONNECTED", "DISCONNECTED"]
     }
@@ -9305,9 +11139,9 @@ pub struct TaskDefinition {
     /// container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub proxy_configuration: std::option::Option<crate::model::ProxyConfiguration>,
     /// <p>The Unix timestamp for when the task definition was registered.</p>
-    pub registered_at: std::option::Option<smithy_types::Instant>,
+    pub registered_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Unix timestamp for when the task definition was deregistered.</p>
-    pub deregistered_at: std::option::Option<smithy_types::Instant>,
+    pub deregistered_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The principal that registered the task definition.</p>
     pub registered_by: std::option::Option<std::string::String>,
     /// <p>The ephemeral storage settings to use for tasks run with the task definition.</p>
@@ -9371,8 +11205,8 @@ pub mod task_definition {
         pub(crate) pid_mode: std::option::Option<crate::model::PidMode>,
         pub(crate) ipc_mode: std::option::Option<crate::model::IpcMode>,
         pub(crate) proxy_configuration: std::option::Option<crate::model::ProxyConfiguration>,
-        pub(crate) registered_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) deregistered_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) registered_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) deregistered_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) registered_by: std::option::Option<std::string::String>,
         pub(crate) ephemeral_storage: std::option::Option<crate::model::EphemeralStorage>,
     }
@@ -9382,6 +11216,7 @@ pub mod task_definition {
             self.task_definition_arn = Some(input.into());
             self
         }
+        /// <p>The full Amazon Resource Name (ARN) of the task definition.</p>
         pub fn set_task_definition_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9389,6 +11224,14 @@ pub mod task_definition {
             self.task_definition_arn = input;
             self
         }
+        /// Appends an item to `container_definitions`.
+        ///
+        /// To override the contents of this collection use [`set_container_definitions`](Self::set_container_definitions).
+        ///
+        /// <p>A list of container definitions in JSON format that describe the different containers
+        /// that make up your task. For more information about container definition parameters and
+        /// defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
+        /// Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn container_definitions(
             mut self,
             input: impl Into<crate::model::ContainerDefinition>,
@@ -9398,6 +11241,10 @@ pub mod task_definition {
             self.container_definitions = Some(v);
             self
         }
+        /// <p>A list of container definitions in JSON format that describe the different containers
+        /// that make up your task. For more information about container definition parameters and
+        /// defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
+        /// Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_container_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContainerDefinition>>,
@@ -9414,6 +11261,11 @@ pub mod task_definition {
             self.family = Some(input.into());
             self
         }
+        /// <p>The name of a family that this task definition is registered to. Up to 255 letters
+        /// (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</p>
+        /// <p>A family groups multiple versions of a task definition. Amazon ECS gives the first task
+        /// definition that you registered to a family a revision number of 1. Amazon ECS gives
+        /// sequential revision numbers to each task definition that you add.</p>
         pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.family = input;
             self
@@ -9430,6 +11282,14 @@ pub mod task_definition {
             self.task_role_arn = Some(input.into());
             self
         }
+        /// <p>The short name or full Amazon Resource Name (ARN) of the Identity and Access Management role that grants containers in the
+        /// task permission to call Amazon Web Services APIs on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Amazon ECS
+        /// Task Role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option
+        /// is set when you launch the Amazon ECS-optimized Windows AMI. Your containers must also run some
+        /// configuration code in order to take advantage of the feature. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM roles
+        /// for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_task_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9445,6 +11305,10 @@ pub mod task_definition {
             self.execution_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent
+        /// permission to make Amazon Web Services API calls on your behalf. The task execution IAM role is required
+        /// depending on the requirements of your task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+        /// execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9484,6 +11348,34 @@ pub mod task_definition {
             self.network_mode = Some(input);
             self
         }
+        /// <p>The Docker networking mode to use for the containers in the task. The valid values are
+        /// <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>.
+        /// If no network mode is specified, the default is <code>bridge</code>.</p>
+        /// <p>For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required.
+        /// For Amazon ECS tasks on Amazon EC2 Linux instances, any network mode can be used.  For Amazon ECS tasks on Amazon EC2 Windows instances, <code><default></code> or <code>awsvpc</code> can be used. If the network
+        /// mode is set to <code>none</code>, you cannot specify port mappings in your container
+        /// definitions, and the tasks containers do not have external connectivity. The
+        /// <code>host</code> and <code>awsvpc</code> network modes offer the highest networking
+        /// performance for containers because they use the EC2 network stack instead of the
+        /// virtualized network stack provided by the <code>bridge</code> mode.</p>
+        /// <p>With the <code>host</code> and <code>awsvpc</code> network modes, exposed container
+        /// ports are mapped directly to the corresponding host port (for the <code>host</code>
+        /// network mode) or the attached elastic network interface port (for the
+        /// <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port
+        /// mappings. </p>
+        /// <important>
+        /// <p>When using the <code>host</code> network mode, you should not run
+        /// containers using the root user (UID 0). It is considered best practice
+        /// to use a non-root user.</p>
+        /// </important>
+        /// <p>If the network mode is <code>awsvpc</code>, the task is allocated an elastic network
+        /// interface, and you must specify a <a>NetworkConfiguration</a> value when you create
+        /// a service or run a task with the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
+        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>If the network mode is <code>host</code>, you cannot run multiple instantiations of the
+        /// same task on a single container instance when port mappings are used.</p>
+        /// <p>For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+        /// settings</a> in the <i>Docker run reference</i>.</p>
         pub fn set_network_mode(
             mut self,
             input: std::option::Option<crate::model::NetworkMode>,
@@ -9500,16 +11392,37 @@ pub mod task_definition {
             self.revision = Some(input);
             self
         }
+        /// <p>The revision of the task in a particular family. The revision is a version number of a
+        /// task definition in a family. When you register a task definition for the first time, the
+        /// revision is <code>1</code>. Each time that you register a new revision of a task
+        /// definition in the same family, the revision value always increases by one, even if you
+        /// have deregistered previous revisions in this family.</p>
         pub fn set_revision(mut self, input: std::option::Option<i32>) -> Self {
             self.revision = input;
             self
         }
+        /// Appends an item to `volumes`.
+        ///
+        /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
+        ///
+        /// <p>The list of data volume definitions for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data volumes in tasks</a> in the
+        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <note>
+        /// <p>The <code>host</code> and <code>sourcePath</code> parameters are not supported for
+        /// tasks run on Fargate.</p>
+        /// </note>
         pub fn volumes(mut self, input: impl Into<crate::model::Volume>) -> Self {
             let mut v = self.volumes.unwrap_or_default();
             v.push(input.into());
             self.volumes = Some(v);
             self
         }
+        /// <p>The list of data volume definitions for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data volumes in tasks</a> in the
+        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <note>
+        /// <p>The <code>host</code> and <code>sourcePath</code> parameters are not supported for
+        /// tasks run on Fargate.</p>
+        /// </note>
         pub fn set_volumes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Volume>>,
@@ -9522,6 +11435,7 @@ pub mod task_definition {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the task definition.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TaskDefinitionStatus>,
@@ -9529,12 +11443,34 @@ pub mod task_definition {
             self.status = input;
             self
         }
+        /// Appends an item to `requires_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_requires_attributes`](Self::set_requires_attributes).
+        ///
+        /// <p>The container instance attributes required by your task. When an Amazon EC2 instance is
+        /// registered to your cluster, the Amazon ECS container agent assigns some standard attributes
+        /// to the instance. You can apply custom attributes, specified as key-value pairs using the
+        /// Amazon ECS console or the <a>PutAttributes</a> API. These attributes are used when
+        /// considering task placement for tasks hosted on Amazon EC2 instances. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <note>
+        /// <p>This parameter is not supported for tasks run on Fargate.</p>
+        /// </note>
         pub fn requires_attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
             let mut v = self.requires_attributes.unwrap_or_default();
             v.push(input.into());
             self.requires_attributes = Some(v);
             self
         }
+        /// <p>The container instance attributes required by your task. When an Amazon EC2 instance is
+        /// registered to your cluster, the Amazon ECS container agent assigns some standard attributes
+        /// to the instance. You can apply custom attributes, specified as key-value pairs using the
+        /// Amazon ECS console or the <a>PutAttributes</a> API. These attributes are used when
+        /// considering task placement for tasks hosted on Amazon EC2 instances. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <note>
+        /// <p>This parameter is not supported for tasks run on Fargate.</p>
+        /// </note>
         pub fn set_requires_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -9542,6 +11478,14 @@ pub mod task_definition {
             self.requires_attributes = input;
             self
         }
+        /// Appends an item to `placement_constraints`.
+        ///
+        /// To override the contents of this collection use [`set_placement_constraints`](Self::set_placement_constraints).
+        ///
+        /// <p>An array of placement constraint objects to use for tasks.</p>
+        /// <note>
+        /// <p>This parameter is not supported for tasks run on Fargate.</p>
+        /// </note>
         pub fn placement_constraints(
             mut self,
             input: impl Into<crate::model::TaskDefinitionPlacementConstraint>,
@@ -9551,6 +11495,10 @@ pub mod task_definition {
             self.placement_constraints = Some(v);
             self
         }
+        /// <p>An array of placement constraint objects to use for tasks.</p>
+        /// <note>
+        /// <p>This parameter is not supported for tasks run on Fargate.</p>
+        /// </note>
         pub fn set_placement_constraints(
             mut self,
             input: std::option::Option<
@@ -9560,12 +11508,22 @@ pub mod task_definition {
             self.placement_constraints = input;
             self
         }
+        /// Appends an item to `compatibilities`.
+        ///
+        /// To override the contents of this collection use [`set_compatibilities`](Self::set_compatibilities).
+        ///
+        /// <p>The task launch types the task definition validated against during task definition
+        /// registration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
+        /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn compatibilities(mut self, input: impl Into<crate::model::Compatibility>) -> Self {
             let mut v = self.compatibilities.unwrap_or_default();
             v.push(input.into());
             self.compatibilities = Some(v);
             self
         }
+        /// <p>The task launch types the task definition validated against during task definition
+        /// registration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
+        /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_compatibilities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
@@ -9573,6 +11531,12 @@ pub mod task_definition {
             self.compatibilities = input;
             self
         }
+        /// Appends an item to `requires_compatibilities`.
+        ///
+        /// To override the contents of this collection use [`set_requires_compatibilities`](Self::set_requires_compatibilities).
+        ///
+        /// <p>The task launch types the task definition was validated against. To determine which
+        /// task launch types the task definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.</p>
         pub fn requires_compatibilities(
             mut self,
             input: impl Into<crate::model::Compatibility>,
@@ -9582,6 +11546,8 @@ pub mod task_definition {
             self.requires_compatibilities = Some(v);
             self
         }
+        /// <p>The task launch types the task definition was validated against. To determine which
+        /// task launch types the task definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.</p>
         pub fn set_requires_compatibilities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
@@ -9614,6 +11580,27 @@ pub mod task_definition {
             self.cpu = Some(input.into());
             self
         }
+        /// <p>The number of <code>cpu</code> units used by the task. If you are using the EC2 launch
+        /// type, this field is optional and any value can be used. If you are using the Fargate
+        /// launch type, this field is required and you must use one of the following values, which
+        /// determines your range of valid values for the <code>memory</code> parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
+        /// </li>
+        /// <li>
+        /// <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p>
+        /// </li>
+        /// <li>
+        /// <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p>
+        /// </li>
+        /// <li>
+        /// <p>2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p>
+        /// </li>
+        /// <li>
+        /// <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p>
+        /// </li>
+        /// </ul>
         pub fn set_cpu(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cpu = input;
             self
@@ -9648,10 +11635,41 @@ pub mod task_definition {
             self.memory = Some(input.into());
             self
         }
+        /// <p>The amount (in MiB) of memory used by the task.</p>
+        /// <p>If your tasks will be run on Amazon EC2 instances, you must specify either a task-level
+        /// memory value or a container-level memory value. This field is optional and any value can
+        /// be used. If a task-level memory value is specified then the container-level memory value
+        /// is optional. For more information regarding container-level memory and memory
+        /// reservation, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
+        /// <p>If your tasks will be run on Fargate, this field is required and you must use one of
+        /// the following values, which determines your range of valid values for the
+        /// <code>cpu</code> parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p>
+        /// </li>
+        /// <li>
+        /// <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p>
+        /// </li>
+        /// <li>
+        /// <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p>
+        /// </li>
+        /// <li>
+        /// <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
+        /// </li>
+        /// <li>
+        /// <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
+        /// </li>
+        /// </ul>
         pub fn set_memory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.memory = input;
             self
         }
+        /// Appends an item to `inference_accelerators`.
+        ///
+        /// To override the contents of this collection use [`set_inference_accelerators`](Self::set_inference_accelerators).
+        ///
+        /// <p>The Elastic Inference accelerator associated with the task.</p>
         pub fn inference_accelerators(
             mut self,
             input: impl Into<crate::model::InferenceAccelerator>,
@@ -9661,6 +11679,7 @@ pub mod task_definition {
             self.inference_accelerators = Some(v);
             self
         }
+        /// <p>The Elastic Inference accelerator associated with the task.</p>
         pub fn set_inference_accelerators(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InferenceAccelerator>>,
@@ -9688,6 +11707,22 @@ pub mod task_definition {
             self.pid_mode = Some(input);
             self
         }
+        /// <p>The process namespace to use for the containers in the task. The valid
+        /// values are <code>host</code> or <code>task</code>. If <code>host</code>
+        /// is specified, then all containers within the tasks that specified the
+        /// <code>host</code> PID mode on the same container instance share the
+        /// same process namespace with the host Amazon EC2 instance. If <code>task</code> is
+        /// specified, all containers within the specified task share the same
+        /// process namespace. If no value is specified, the default is a private
+        /// namespace. For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run
+        /// reference</i>.</p>
+        /// <p>If the <code>host</code> PID mode is used, be aware that there is a
+        /// heightened risk of undesired process namespace expose. For more
+        /// information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+        /// security</a>.</p>
+        /// <note>
+        /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
+        /// </note>
         pub fn set_pid_mode(mut self, input: std::option::Option<crate::model::PidMode>) -> Self {
             self.pid_mode = input;
             self
@@ -9728,6 +11763,38 @@ pub mod task_definition {
             self.ipc_mode = Some(input);
             self
         }
+        /// <p>The IPC resource namespace to use for the containers in the task. The valid values are
+        /// <code>host</code>, <code>task</code>, or <code>none</code>. If <code>host</code> is
+        /// specified, then all containers within the tasks that specified the <code>host</code> IPC
+        /// mode on the same container instance share the same IPC resources with the host Amazon EC2
+        /// instance. If <code>task</code> is specified, all containers within the specified task
+        /// share the same IPC resources. If <code>none</code> is specified, then IPC resources
+        /// within the containers of a task are private and not shared with other containers in a
+        /// task or on the container instance. If no value is specified, then the IPC resource
+        /// namespace sharing depends on the Docker daemon setting on the container instance. For
+        /// more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC
+        /// settings</a> in the <i>Docker run reference</i>.</p>
+        /// <p>If the <code>host</code> IPC mode is used, be aware that there is a heightened risk of
+        /// undesired IPC namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+        /// security</a>.</p>
+        /// <p>If you are setting namespaced kernel parameters using <code>systemControls</code> for
+        /// the containers in the task, the following will apply to your IPC resource namespace. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+        /// Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For tasks that use the <code>host</code> IPC mode, IPC namespace related
+        /// <code>systemControls</code> are not supported.</p>
+        /// </li>
+        /// <li>
+        /// <p>For tasks that use the <code>task</code> IPC mode, IPC namespace related
+        /// <code>systemControls</code> will apply to all containers within a
+        /// task.</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
+        /// </note>
         pub fn set_ipc_mode(mut self, input: std::option::Option<crate::model::IpcMode>) -> Self {
             self.ipc_mode = input;
             self
@@ -9742,6 +11809,12 @@ pub mod task_definition {
             self.proxy_configuration = Some(input);
             self
         }
+        /// <p>The configuration details for the App Mesh proxy.</p>
+        /// <p>Your Amazon ECS container instances require at least version 1.26.0 of the container agent
+        /// and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy
+        /// configuration. If your container instances are launched from the Amazon ECS-optimized AMI
+        /// version <code>20190301</code> or later, then they contain the required versions of the
+        /// container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_proxy_configuration(
             mut self,
             input: std::option::Option<crate::model::ProxyConfiguration>,
@@ -9750,25 +11823,27 @@ pub mod task_definition {
             self
         }
         /// <p>The Unix timestamp for when the task definition was registered.</p>
-        pub fn registered_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn registered_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.registered_at = Some(input);
             self
         }
+        /// <p>The Unix timestamp for when the task definition was registered.</p>
         pub fn set_registered_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.registered_at = input;
             self
         }
         /// <p>The Unix timestamp for when the task definition was deregistered.</p>
-        pub fn deregistered_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn deregistered_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.deregistered_at = Some(input);
             self
         }
+        /// <p>The Unix timestamp for when the task definition was deregistered.</p>
         pub fn set_deregistered_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.deregistered_at = input;
             self
@@ -9778,6 +11853,7 @@ pub mod task_definition {
             self.registered_by = Some(input.into());
             self
         }
+        /// <p>The principal that registered the task definition.</p>
         pub fn set_registered_by(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9790,6 +11866,7 @@ pub mod task_definition {
             self.ephemeral_storage = Some(input);
             self
         }
+        /// <p>The ephemeral storage settings to use for tasks run with the task definition.</p>
         pub fn set_ephemeral_storage(
             mut self,
             input: std::option::Option<crate::model::EphemeralStorage>,
@@ -9922,6 +11999,7 @@ pub mod proxy_configuration {
             self.r#type = Some(input);
             self
         }
+        /// <p>The proxy type. The only supported value is <code>APPMESH</code>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ProxyConfigurationType>,
@@ -9934,6 +12012,7 @@ pub mod proxy_configuration {
             self.container_name = Some(input.into());
             self
         }
+        /// <p>The name of the container that will serve as the App Mesh proxy.</p>
         pub fn set_container_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9941,12 +12020,108 @@ pub mod proxy_configuration {
             self.container_name = input;
             self
         }
+        /// Appends an item to `properties`.
+        ///
+        /// To override the contents of this collection use [`set_properties`](Self::set_properties).
+        ///
+        /// <p>The set of network configuration parameters to provide the Container Network Interface
+        /// (CNI) plugin, specified as key-value pairs.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>IgnoredUID</code> - (Required) The user ID (UID) of the proxy
+        /// container as defined by the <code>user</code> parameter in a container
+        /// definition. This is used to ensure the proxy ignores its own traffic. If
+        /// <code>IgnoredGID</code> is specified, this field can be empty.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IgnoredGID</code> - (Required) The group ID (GID) of the proxy
+        /// container as defined by the <code>user</code> parameter in a container
+        /// definition. This is used to ensure the proxy ignores its own traffic. If
+        /// <code>IgnoredUID</code> is specified, this field can be empty.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AppPorts</code> - (Required) The list of ports that the
+        /// application uses. Network traffic to these ports is forwarded to the
+        /// <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ProxyIngressPort</code> - (Required) Specifies the port that
+        /// incoming traffic to the <code>AppPorts</code> is directed to.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ProxyEgressPort</code> - (Required) Specifies the port that
+        /// outgoing traffic from the <code>AppPorts</code> is directed to.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to
+        /// the specified ports is ignored and not redirected to the
+        /// <code>ProxyEgressPort</code>. It can be an empty list.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to
+        /// the specified IP addresses is ignored and not redirected to the
+        /// <code>ProxyEgressPort</code>. It can be an empty list.</p>
+        /// </li>
+        /// </ul>
         pub fn properties(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
             let mut v = self.properties.unwrap_or_default();
             v.push(input.into());
             self.properties = Some(v);
             self
         }
+        /// <p>The set of network configuration parameters to provide the Container Network Interface
+        /// (CNI) plugin, specified as key-value pairs.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>IgnoredUID</code> - (Required) The user ID (UID) of the proxy
+        /// container as defined by the <code>user</code> parameter in a container
+        /// definition. This is used to ensure the proxy ignores its own traffic. If
+        /// <code>IgnoredGID</code> is specified, this field can be empty.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IgnoredGID</code> - (Required) The group ID (GID) of the proxy
+        /// container as defined by the <code>user</code> parameter in a container
+        /// definition. This is used to ensure the proxy ignores its own traffic. If
+        /// <code>IgnoredUID</code> is specified, this field can be empty.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AppPorts</code> - (Required) The list of ports that the
+        /// application uses. Network traffic to these ports is forwarded to the
+        /// <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ProxyIngressPort</code> - (Required) Specifies the port that
+        /// incoming traffic to the <code>AppPorts</code> is directed to.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ProxyEgressPort</code> - (Required) Specifies the port that
+        /// outgoing traffic from the <code>AppPorts</code> is directed to.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to
+        /// the specified ports is ignored and not redirected to the
+        /// <code>ProxyEgressPort</code>. It can be an empty list.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to
+        /// the specified IP addresses is ignored and not redirected to the
+        /// <code>ProxyEgressPort</code>. It can be an empty list.</p>
+        /// </li>
+        /// </ul>
         pub fn set_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
@@ -9971,6 +12146,7 @@ impl ProxyConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9982,6 +12158,7 @@ impl ProxyConfiguration {
     std::hash::Hash,
 )]
 pub enum ProxyConfigurationType {
+    #[allow(missing_docs)] // documentation missing in model
     Appmesh,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10002,12 +12179,14 @@ impl std::str::FromStr for ProxyConfigurationType {
     }
 }
 impl ProxyConfigurationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProxyConfigurationType::Appmesh => "APPMESH",
             ProxyConfigurationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["APPMESH"]
     }
@@ -10018,6 +12197,7 @@ impl AsRef<str> for ProxyConfigurationType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10029,8 +12209,11 @@ impl AsRef<str> for ProxyConfigurationType {
     std::hash::Hash,
 )]
 pub enum IpcMode {
+    #[allow(missing_docs)] // documentation missing in model
     Host,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Task,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10053,6 +12236,7 @@ impl std::str::FromStr for IpcMode {
     }
 }
 impl IpcMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IpcMode::Host => "host",
@@ -10061,6 +12245,7 @@ impl IpcMode {
             IpcMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["host", "none", "task"]
     }
@@ -10071,6 +12256,7 @@ impl AsRef<str> for IpcMode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10082,7 +12268,9 @@ impl AsRef<str> for IpcMode {
     std::hash::Hash,
 )]
 pub enum PidMode {
+    #[allow(missing_docs)] // documentation missing in model
     Host,
+    #[allow(missing_docs)] // documentation missing in model
     Task,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10104,6 +12292,7 @@ impl std::str::FromStr for PidMode {
     }
 }
 impl PidMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PidMode::Host => "host",
@@ -10111,6 +12300,7 @@ impl PidMode {
             PidMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["host", "task"]
     }
@@ -10121,6 +12311,7 @@ impl AsRef<str> for PidMode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10132,8 +12323,11 @@ impl AsRef<str> for PidMode {
     std::hash::Hash,
 )]
 pub enum Compatibility {
+    #[allow(missing_docs)] // documentation missing in model
     Ec2,
+    #[allow(missing_docs)] // documentation missing in model
     External,
+    #[allow(missing_docs)] // documentation missing in model
     Fargate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10156,6 +12350,7 @@ impl std::str::FromStr for Compatibility {
     }
 }
 impl Compatibility {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Compatibility::Ec2 => "EC2",
@@ -10164,6 +12359,7 @@ impl Compatibility {
             Compatibility::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EC2", "EXTERNAL", "FARGATE"]
     }
@@ -10218,6 +12414,8 @@ pub mod task_definition_placement_constraint {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of constraint. The <code>MemberOf</code> constraint restricts selection to be
+        /// from a group of valid candidates.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::TaskDefinitionPlacementConstraintType>,
@@ -10232,6 +12430,9 @@ pub mod task_definition_placement_constraint {
             self.expression = Some(input.into());
             self
         }
+        /// <p>A cluster query language expression to apply to the constraint. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the
+        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expression = input;
             self
@@ -10252,6 +12453,7 @@ impl TaskDefinitionPlacementConstraint {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10263,6 +12465,7 @@ impl TaskDefinitionPlacementConstraint {
     std::hash::Hash,
 )]
 pub enum TaskDefinitionPlacementConstraintType {
+    #[allow(missing_docs)] // documentation missing in model
     MemberOf,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10283,12 +12486,14 @@ impl std::str::FromStr for TaskDefinitionPlacementConstraintType {
     }
 }
 impl TaskDefinitionPlacementConstraintType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TaskDefinitionPlacementConstraintType::MemberOf => "memberOf",
             TaskDefinitionPlacementConstraintType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["memberOf"]
     }
@@ -10299,6 +12504,7 @@ impl AsRef<str> for TaskDefinitionPlacementConstraintType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10310,7 +12516,9 @@ impl AsRef<str> for TaskDefinitionPlacementConstraintType {
     std::hash::Hash,
 )]
 pub enum TaskDefinitionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10332,6 +12540,7 @@ impl std::str::FromStr for TaskDefinitionStatus {
     }
 }
 impl TaskDefinitionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TaskDefinitionStatus::Active => "ACTIVE",
@@ -10339,6 +12548,7 @@ impl TaskDefinitionStatus {
             TaskDefinitionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
@@ -10431,6 +12641,9 @@ pub mod volume {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This name is referenced in the
+        /// <code>sourceVolume</code> parameter of container definition
+        /// <code>mountPoints</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10450,6 +12663,17 @@ pub mod volume {
             self.host = Some(input);
             self
         }
+        /// <p>This parameter is specified when you are using bind mount host volumes. The contents
+        /// of the <code>host</code> parameter determine whether your bind mount host volume
+        /// persists on the host container instance and where it is stored. If the <code>host</code>
+        /// parameter is empty, then the Docker daemon assigns a host path for your data volume.
+        /// However, the data is not guaranteed to persist after the containers associated with it
+        /// stop running.</p>
+        /// <p>Windows containers can mount whole directories on the same drive as
+        /// <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
+        /// different drive, and mount point cannot be across drives. For example, you can mount
+        /// <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+        /// <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
         pub fn set_host(
             mut self,
             input: std::option::Option<crate::model::HostVolumeProperties>,
@@ -10470,6 +12694,12 @@ pub mod volume {
             self.docker_volume_configuration = Some(input);
             self
         }
+        /// <p>This parameter is specified when you are using Docker volumes.</p>
+        /// <p>Windows containers only support the use of the <code>local</code> driver. To use bind
+        /// mounts, specify the <code>host</code> parameter instead.</p>
+        /// <note>
+        /// <p>Docker volumes are not supported by tasks run on Fargate.</p>
+        /// </note>
         pub fn set_docker_volume_configuration(
             mut self,
             input: std::option::Option<crate::model::DockerVolumeConfiguration>,
@@ -10486,6 +12716,8 @@ pub mod volume {
             self.efs_volume_configuration = Some(input);
             self
         }
+        /// <p>This parameter is specified when you are using an Amazon Elastic File System file system for task
+        /// storage.</p>
         pub fn set_efs_volume_configuration(
             mut self,
             input: std::option::Option<crate::model::EfsVolumeConfiguration>,
@@ -10502,6 +12734,8 @@ pub mod volume {
             self.fsx_windows_file_server_volume_configuration = Some(input);
             self
         }
+        /// <p>This parameter is specified when you are using Amazon FSx for Windows File Server file system for task
+        /// storage.</p>
         pub fn set_fsx_windows_file_server_volume_configuration(
             mut self,
             input: std::option::Option<crate::model::FSxWindowsFileServerVolumeConfiguration>,
@@ -10571,6 +12805,7 @@ pub mod f_sx_windows_file_server_volume_configuration {
             self.file_system_id = Some(input.into());
             self
         }
+        /// <p>The Amazon FSx for Windows File Server file system ID to use.</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10584,6 +12819,8 @@ pub mod f_sx_windows_file_server_volume_configuration {
             self.root_directory = Some(input.into());
             self
         }
+        /// <p>The directory within the Amazon FSx for Windows File Server file system to mount as the root directory
+        /// inside the host.</p>
         pub fn set_root_directory(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10599,6 +12836,7 @@ pub mod f_sx_windows_file_server_volume_configuration {
             self.authorization_config = Some(input);
             self
         }
+        /// <p>The authorization configuration details for the Amazon FSx for Windows File Server file system.</p>
         pub fn set_authorization_config(
             mut self,
             input: std::option::Option<crate::model::FSxWindowsFileServerAuthorizationConfig>,
@@ -10663,6 +12901,9 @@ pub mod f_sx_windows_file_server_authorization_config {
             self.credentials_parameter = Some(input.into());
             self
         }
+        /// <p>The authorization credential option to use. The authorization credential options can
+        /// be provided using either the Amazon Resource Name (ARN) of an Secrets Manager secret or SSM
+        /// Parameter Store parameter. The ARNs refer to the stored credentials.</p>
         pub fn set_credentials_parameter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10676,6 +12917,8 @@ pub mod f_sx_windows_file_server_authorization_config {
             self.domain = Some(input.into());
             self
         }
+        /// <p>A fully qualified domain name hosted by an <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on
+        /// Amazon EC2.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -10756,6 +12999,7 @@ pub mod efs_volume_configuration {
             self.file_system_id = Some(input.into());
             self
         }
+        /// <p>The Amazon EFS file system ID to use.</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10775,6 +13019,14 @@ pub mod efs_volume_configuration {
             self.root_directory = Some(input.into());
             self
         }
+        /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the
+        /// host. If this parameter is omitted, the root of the Amazon EFS volume will be used.
+        /// Specifying <code>/</code> will have the same effect as omitting this parameter.</p>
+        /// <important>
+        /// <p>If an EFS access point is specified in the <code>authorizationConfig</code>, the
+        /// root directory parameter must either be omitted or set to <code>/</code> which will
+        /// enforce the path set on the EFS access point.</p>
+        /// </important>
         pub fn set_root_directory(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10791,6 +13043,11 @@ pub mod efs_volume_configuration {
             self.transit_encryption = Some(input);
             self
         }
+        /// <p>Whether or not to enable encryption for Amazon EFS data in transit between the Amazon ECS host
+        /// and the Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is
+        /// used. If this parameter is omitted, the default value of <code>DISABLED</code> is used.
+        /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting Data in Transit</a> in
+        /// the <i>Amazon Elastic File System User Guide</i>.</p>
         pub fn set_transit_encryption(
             mut self,
             input: std::option::Option<crate::model::EfsTransitEncryption>,
@@ -10806,6 +13063,10 @@ pub mod efs_volume_configuration {
             self.transit_encryption_port = Some(input);
             self
         }
+        /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS
+        /// server. If you do not specify a transit encryption port, it will use the port selection
+        /// strategy that the Amazon EFS mount helper uses. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS Mount
+        /// Helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
         pub fn set_transit_encryption_port(mut self, input: std::option::Option<i32>) -> Self {
             self.transit_encryption_port = input;
             self
@@ -10815,6 +13076,7 @@ pub mod efs_volume_configuration {
             self.authorization_config = Some(input);
             self
         }
+        /// <p>The authorization configuration details for the Amazon EFS file system.</p>
         pub fn set_authorization_config(
             mut self,
             input: std::option::Option<crate::model::EfsAuthorizationConfig>,
@@ -10887,6 +13149,12 @@ pub mod efs_authorization_config {
             self.access_point_id = Some(input.into());
             self
         }
+        /// <p>The Amazon EFS access point ID to use. If an access point is specified, the root directory
+        /// value specified in the <code>EFSVolumeConfiguration</code> must either be omitted or set
+        /// to <code>/</code> which will enforce the path set on the EFS access point. If an access
+        /// point is used, transit encryption must be enabled in the
+        /// <code>EFSVolumeConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon
+        /// EFS Access Points</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
         pub fn set_access_point_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10903,6 +13171,11 @@ pub mod efs_authorization_config {
             self.iam = Some(input);
             self
         }
+        /// <p>Whether or not to use the Amazon ECS task IAM role defined in a task definition when
+        /// mounting the Amazon EFS file system. If enabled, transit encryption must be enabled in the
+        /// <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value
+        /// of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
+        /// Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_iam(
             mut self,
             input: std::option::Option<crate::model::EfsAuthorizationConfigIam>,
@@ -10926,6 +13199,7 @@ impl EfsAuthorizationConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10937,7 +13211,9 @@ impl EfsAuthorizationConfig {
     std::hash::Hash,
 )]
 pub enum EfsAuthorizationConfigIam {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10959,6 +13235,7 @@ impl std::str::FromStr for EfsAuthorizationConfigIam {
     }
 }
 impl EfsAuthorizationConfigIam {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EfsAuthorizationConfigIam::Disabled => "DISABLED",
@@ -10966,6 +13243,7 @@ impl EfsAuthorizationConfigIam {
             EfsAuthorizationConfigIam::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -10976,6 +13254,7 @@ impl AsRef<str> for EfsAuthorizationConfigIam {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10987,7 +13266,9 @@ impl AsRef<str> for EfsAuthorizationConfigIam {
     std::hash::Hash,
 )]
 pub enum EfsTransitEncryption {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11009,6 +13290,7 @@ impl std::str::FromStr for EfsTransitEncryption {
     }
 }
 impl EfsTransitEncryption {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EfsTransitEncryption::Disabled => "DISABLED",
@@ -11016,6 +13298,7 @@ impl EfsTransitEncryption {
             EfsTransitEncryption::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -11103,6 +13386,10 @@ pub mod docker_volume_configuration {
             self.scope = Some(input);
             self
         }
+        /// <p>The scope for the Docker volume that determines its lifecycle. Docker volumes that are
+        /// scoped to a <code>task</code> are automatically provisioned when the task starts and
+        /// destroyed when the task stops. Docker volumes that are scoped as <code>shared</code>
+        /// persist after the task stops.</p>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -11116,6 +13403,11 @@ pub mod docker_volume_configuration {
             self.autoprovision = Some(input);
             self
         }
+        /// <p>If this value is <code>true</code>, the Docker volume is created if it does not
+        /// already exist.</p>
+        /// <note>
+        /// <p>This field is only used if the <code>scope</code> is <code>shared</code>.</p>
+        /// </note>
         pub fn set_autoprovision(mut self, input: std::option::Option<bool>) -> Self {
             self.autoprovision = input;
             self
@@ -11133,10 +13425,27 @@ pub mod docker_volume_configuration {
             self.driver = Some(input.into());
             self
         }
+        /// <p>The Docker volume driver to use. The driver value must match the driver name provided
+        /// by Docker because it is used for task placement. If the driver was installed using the
+        /// Docker plugin CLI, use <code>docker plugin ls</code> to retrieve the driver name from
+        /// your container instance. If the driver was installed using another method, use Docker
+        /// plugin discovery to retrieve the driver name. For more information, see <a href="https://docs.docker.com/engine/extend/plugin_api/#plugin-discovery">Docker
+        /// plugin discovery</a>. This parameter maps to <code>Driver</code> in the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>xxdriver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker
+        /// volume create</a>.</p>
         pub fn set_driver(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.driver = input;
             self
         }
+        /// Adds a key-value pair to `driver_opts`.
+        ///
+        /// To override the contents of this collection use [`set_driver_opts`](Self::set_driver_opts).
+        ///
+        /// <p>A map of Docker driver-specific options passed through. This parameter maps to
+        /// <code>DriverOpts</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxopt</code> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker
+        /// volume create</a>.</p>
         pub fn driver_opts(
             mut self,
             k: impl Into<std::string::String>,
@@ -11147,6 +13456,10 @@ pub mod docker_volume_configuration {
             self.driver_opts = Some(hash_map);
             self
         }
+        /// <p>A map of Docker driver-specific options passed through. This parameter maps to
+        /// <code>DriverOpts</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxopt</code> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker
+        /// volume create</a>.</p>
         pub fn set_driver_opts(
             mut self,
             input: std::option::Option<
@@ -11156,6 +13469,14 @@ pub mod docker_volume_configuration {
             self.driver_opts = input;
             self
         }
+        /// Adds a key-value pair to `labels`.
+        ///
+        /// To override the contents of this collection use [`set_labels`](Self::set_labels).
+        ///
+        /// <p>Custom metadata to add to your Docker volume. This parameter maps to
+        /// <code>Labels</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxlabel</code> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker
+        /// volume create</a>.</p>
         pub fn labels(
             mut self,
             k: impl Into<std::string::String>,
@@ -11166,6 +13487,10 @@ pub mod docker_volume_configuration {
             self.labels = Some(hash_map);
             self
         }
+        /// <p>Custom metadata to add to your Docker volume. This parameter maps to
+        /// <code>Labels</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxlabel</code> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker
+        /// volume create</a>.</p>
         pub fn set_labels(
             mut self,
             input: std::option::Option<
@@ -11194,6 +13519,7 @@ impl DockerVolumeConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11205,7 +13531,9 @@ impl DockerVolumeConfiguration {
     std::hash::Hash,
 )]
 pub enum Scope {
+    #[allow(missing_docs)] // documentation missing in model
     Shared,
+    #[allow(missing_docs)] // documentation missing in model
     Task,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11227,6 +13555,7 @@ impl std::str::FromStr for Scope {
     }
 }
 impl Scope {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Scope::Shared => "shared",
@@ -11234,6 +13563,7 @@ impl Scope {
             Scope::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["shared", "task"]
     }
@@ -11290,6 +13620,16 @@ pub mod host_volume_properties {
             self.source_path = Some(input.into());
             self
         }
+        /// <p>When the <code>host</code> parameter is used, specify a <code>sourcePath</code> to
+        /// declare the path on the host container instance that is presented to the container. If
+        /// this parameter is empty, then the Docker daemon has assigned a host path for you. If the
+        /// <code>host</code> parameter contains a <code>sourcePath</code> file location, then
+        /// the data volume persists at the specified location on the host container instance until
+        /// you delete it manually. If the <code>sourcePath</code> value does not exist on the host
+        /// container instance, the Docker daemon creates it. If the location does exist, the
+        /// contents of the source path folder are exported.</p>
+        /// <p>If you are using the Fargate launch type, the <code>sourcePath</code>
+        /// parameter is not supported.</p>
         pub fn set_source_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_path = input;
             self
@@ -11309,6 +13649,7 @@ impl HostVolumeProperties {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11320,9 +13661,13 @@ impl HostVolumeProperties {
     std::hash::Hash,
 )]
 pub enum NetworkMode {
+    #[allow(missing_docs)] // documentation missing in model
     Awsvpc,
+    #[allow(missing_docs)] // documentation missing in model
     Bridge,
+    #[allow(missing_docs)] // documentation missing in model
     Host,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11346,6 +13691,7 @@ impl std::str::FromStr for NetworkMode {
     }
 }
 impl NetworkMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NetworkMode::Awsvpc => "awsvpc",
@@ -11355,6 +13701,7 @@ impl NetworkMode {
             NetworkMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["awsvpc", "bridge", "host", "none"]
     }
@@ -12009,6 +14356,13 @@ pub mod container_definition {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of a container. If you are linking multiple containers together in a task
+        /// definition, the <code>name</code> of one container can be entered in the
+        /// <code>links</code> of another container to connect the containers.
+        /// Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This parameter maps to <code>name</code> in the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>--name</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -12056,6 +14410,45 @@ pub mod container_definition {
             self.image = Some(input.into());
             self
         }
+        /// <p>The image used to start a container. This string is passed directly to the Docker
+        /// daemon. Images in the Docker Hub registry are available by default. Other repositories
+        /// are specified with either <code>
+        /// <i>repository-url</i>/<i>image</i>:<i>tag</i>
+        /// </code> or <code>
+        /// <i>repository-url</i>/<i>image</i>@<i>digest</i>
+        /// </code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>When a new task starts, the Amazon ECS container agent pulls the latest version of
+        /// the specified image and tag for the container to use. However, subsequent
+        /// updates to a repository image are not propagated to already running
+        /// tasks.</p>
+        /// </li>
+        /// <li>
+        /// <p>Images in Amazon ECR repositories can be specified by either using the full
+        /// <code>registry/repository:tag</code> or
+        /// <code>registry/repository@digest</code>. For example,
+        /// <code>012345678910.dkr.ecr.<region-name>.amazonaws.com/<repository-name>:latest</code>
+        /// or
+        /// <code>012345678910.dkr.ecr.<region-name>.amazonaws.com/<repository-name>@sha256:94afd1f2e64d908bc90dbca0035a5b567EXAMPLE</code>.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Images in official repositories on Docker Hub use a single name (for example,
+        /// <code>ubuntu</code> or <code>mongo</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>Images in other repositories on Docker Hub are qualified with an organization
+        /// name (for example, <code>amazon/amazon-ecs-agent</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>Images in other online repositories are qualified further by a domain name
+        /// (for example, <code>quay.io/assemblyline/ubuntu</code>).</p>
+        /// </li>
+        /// </ul>
         pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image = input;
             self
@@ -12068,6 +14461,7 @@ pub mod container_definition {
             self.repository_credentials = Some(input);
             self
         }
+        /// <p>The private repository authentication credentials to use.</p>
         pub fn set_repository_credentials(
             mut self,
             input: std::option::Option<crate::model::RepositoryCredentials>,
@@ -12125,6 +14519,52 @@ pub mod container_definition {
             self.cpu = Some(input);
             self
         }
+        /// <p>The number of <code>cpu</code> units reserved for the container. This parameter maps
+        /// to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+        /// <p>This field is optional for tasks using the Fargate launch type, and the
+        /// only requirement is that the total amount of CPU reserved for all containers within a
+        /// task be lower than the task-level <code>cpu</code> value.</p>
+        /// <note>
+        /// <p>You can determine the number of CPU units that are available per EC2 instance type
+        /// by multiplying the vCPUs listed for that instance type on the <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instances</a> detail page
+        /// by 1,024.</p>
+        /// </note>
+        /// <p>Linux containers share unallocated CPU units with other containers on the container
+        /// instance with the same ratio as their allocated amount. For example, if you run a
+        /// single-container task on a single-core instance type with 512 CPU units specified for
+        /// that container, and that is the only task running on the container instance, that
+        /// container could use the full 1,024 CPU unit share at any given time. However, if you
+        /// launched another copy of the same task on that container instance, each task would be
+        /// guaranteed a minimum of 512 CPU units when needed, and each container could float to
+        /// higher CPU usage if the other container was not using it, but if both tasks were 100%
+        /// active all of the time, they would be limited to 512 CPU units.</p>
+        /// <p>On Linux container instances, the Docker daemon on the container instance uses the CPU
+        /// value to calculate the relative CPU share ratios for running containers. For more
+        /// information, see <a href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU share
+        /// constraint</a> in the Docker documentation. The minimum valid CPU share value
+        /// that the Linux kernel allows is 2. However, the CPU parameter is not required, and you
+        /// can use CPU values below 2 in your container definitions. For CPU values below 2
+        /// (including null), the behavior varies based on your Amazon ECS container agent
+        /// version:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>Agent versions less than or equal to 1.1.0:</b>
+        /// Null and zero CPU values are passed to Docker as 0, which Docker then converts
+        /// to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which the Linux
+        /// kernel converts to two CPU shares.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Agent versions greater than or equal to 1.2.0:</b>
+        /// Null, zero, and CPU values of 1 are passed to Docker as 2.</p>
+        /// </li>
+        /// </ul>
+        /// <p>On Windows container instances, the CPU limit is enforced as an absolute limit, or a
+        /// quota. Windows containers only have access to the specified amount of CPU that is
+        /// described in the task definition. A null or zero CPU value is passed to Docker as
+        /// <code>0</code>, which Windows interprets as 1% of one CPU.</p>
         pub fn set_cpu(mut self, input: std::option::Option<i32>) -> Self {
             self.cpu = input;
             self
@@ -12149,6 +14589,22 @@ pub mod container_definition {
             self.memory = Some(input);
             self
         }
+        /// <p>The amount (in MiB) of memory to present to the container. If your container attempts
+        /// to exceed the memory specified here, the container is killed. The total amount of memory
+        /// reserved for all containers within a task must be lower than the task
+        /// <code>memory</code> value, if one is specified. This parameter maps to
+        /// <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+        /// <p>If using the Fargate launch type, this parameter is optional.</p>
+        /// <p>If using the EC2 launch type, you must specify either a task-level
+        /// memory value or a container-level memory value. If you specify both a container-level
+        /// <code>memory</code> and <code>memoryReservation</code> value, <code>memory</code>
+        /// must be greater than <code>memoryReservation</code>. If you specify
+        /// <code>memoryReservation</code>, then that value is subtracted from the available
+        /// memory resources for the container instance on which the container is placed. Otherwise,
+        /// the value of <code>memory</code> is used.</p>
+        /// <p>The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should
+        /// not specify fewer than 4 MiB of memory for your containers.</p>
         pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
             self.memory = input;
             self
@@ -12179,16 +14635,80 @@ pub mod container_definition {
             self.memory_reservation = Some(input);
             self
         }
+        /// <p>The soft limit (in MiB) of memory to reserve for the container. When system memory is
+        /// under heavy contention, Docker attempts to keep the container memory to this soft limit.
+        /// However, your container can consume more memory when it needs to, up to either the hard
+        /// limit specified with the <code>memory</code> parameter (if applicable), or all of the
+        /// available memory on the container instance, whichever comes first. This parameter maps
+        /// to <code>MemoryReservation</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of
+        /// the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--memory-reservation</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+        /// <p>If a task-level memory value is not specified, you must specify a non-zero integer for
+        /// one or both of <code>memory</code> or <code>memoryReservation</code> in a container
+        /// definition. If you specify both, <code>memory</code> must be greater than
+        /// <code>memoryReservation</code>. If you specify <code>memoryReservation</code>, then
+        /// that value is subtracted from the available memory resources for the container instance
+        /// on which the container is placed. Otherwise, the value of <code>memory</code> is
+        /// used.</p>
+        /// <p>For example, if your container normally uses 128 MiB of memory, but occasionally
+        /// bursts to 256 MiB of memory for short periods of time, you can set a
+        /// <code>memoryReservation</code> of 128 MiB, and a <code>memory</code> hard limit of
+        /// 300 MiB. This configuration would allow the container to only reserve 128 MiB of memory
+        /// from the remaining resources on the container instance, but also allow the container to
+        /// consume more memory resources when needed.</p>
+        /// <p>The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should
+        /// not specify fewer than 4 MiB of memory for your containers. </p>
         pub fn set_memory_reservation(mut self, input: std::option::Option<i32>) -> Self {
             self.memory_reservation = input;
             self
         }
+        /// Appends an item to `links`.
+        ///
+        /// To override the contents of this collection use [`set_links`](Self::set_links).
+        ///
+        /// <p>The <code>links</code> parameter allows containers to communicate with each other
+        /// without the need for port mappings. This parameter is only supported if the network mode
+        /// of a task definition is <code>bridge</code>. The <code>name:internalName</code>
+        /// construct is analogous to <code>name:alias</code> in Docker links.
+        /// Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. For more information about linking Docker containers, go to
+        /// <a href="https://docs.docker.com/network/links/">Legacy container links</a>
+        /// in the Docker documentation. This parameter maps to <code>Links</code> in the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>--link</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>.</p>
+        /// <note>
+        /// <p>This parameter is not supported for Windows containers.</p>
+        /// </note>
+        /// <important>
+        /// <p>Containers that are collocated on a single container instance may be able to
+        /// communicate with each other without requiring links or host port mappings. Network
+        /// isolation is achieved on the container instance using security groups and VPC
+        /// settings.</p>
+        /// </important>
         pub fn links(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.links.unwrap_or_default();
             v.push(input.into());
             self.links = Some(v);
             self
         }
+        /// <p>The <code>links</code> parameter allows containers to communicate with each other
+        /// without the need for port mappings. This parameter is only supported if the network mode
+        /// of a task definition is <code>bridge</code>. The <code>name:internalName</code>
+        /// construct is analogous to <code>name:alias</code> in Docker links.
+        /// Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. For more information about linking Docker containers, go to
+        /// <a href="https://docs.docker.com/network/links/">Legacy container links</a>
+        /// in the Docker documentation. This parameter maps to <code>Links</code> in the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>--link</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>.</p>
+        /// <note>
+        /// <p>This parameter is not supported for Windows containers.</p>
+        /// </note>
+        /// <important>
+        /// <p>Containers that are collocated on a single container instance may be able to
+        /// communicate with each other without requiring links or host port mappings. Network
+        /// isolation is achieved on the container instance using security groups and VPC
+        /// settings.</p>
+        /// </important>
         pub fn set_links(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12196,12 +14716,62 @@ pub mod container_definition {
             self.links = input;
             self
         }
+        /// Appends an item to `port_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_port_mappings`](Self::set_port_mappings).
+        ///
+        /// <p>The list of port mappings for the container. Port mappings allow containers to access
+        /// ports on the host container instance to send or receive traffic.</p>
+        /// <p>For task definitions that use the <code>awsvpc</code> network mode, you should only
+        /// specify the <code>containerPort</code>. The <code>hostPort</code> can be left blank or
+        /// it must be the same value as the <code>containerPort</code>.</p>
+        /// <p>Port mappings on Windows use the <code>NetNAT</code> gateway address rather than
+        /// <code>localhost</code>. There is no loopback for port mappings on Windows, so you
+        /// cannot access a container's mapped port from the host itself. </p>
+        /// <p>This parameter maps to <code>PortBindings</code> in the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>--publish</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>. If the network mode of a task definition is set to <code>none</code>,
+        /// then you can't specify port mappings. If the network mode of a task definition is set to
+        /// <code>host</code>, then host ports must either be undefined or they must match the
+        /// container port in the port mapping.</p>
+        /// <note>
+        /// <p>After a task reaches the <code>RUNNING</code> status, manual and automatic host
+        /// and container port assignments are visible in the <b>Network
+        /// Bindings</b> section of a container description for a selected task in
+        /// the Amazon ECS console. The assignments are also visible in the
+        /// <code>networkBindings</code> section <a>DescribeTasks</a>
+        /// responses.</p>
+        /// </note>
         pub fn port_mappings(mut self, input: impl Into<crate::model::PortMapping>) -> Self {
             let mut v = self.port_mappings.unwrap_or_default();
             v.push(input.into());
             self.port_mappings = Some(v);
             self
         }
+        /// <p>The list of port mappings for the container. Port mappings allow containers to access
+        /// ports on the host container instance to send or receive traffic.</p>
+        /// <p>For task definitions that use the <code>awsvpc</code> network mode, you should only
+        /// specify the <code>containerPort</code>. The <code>hostPort</code> can be left blank or
+        /// it must be the same value as the <code>containerPort</code>.</p>
+        /// <p>Port mappings on Windows use the <code>NetNAT</code> gateway address rather than
+        /// <code>localhost</code>. There is no loopback for port mappings on Windows, so you
+        /// cannot access a container's mapped port from the host itself. </p>
+        /// <p>This parameter maps to <code>PortBindings</code> in the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>--publish</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>. If the network mode of a task definition is set to <code>none</code>,
+        /// then you can't specify port mappings. If the network mode of a task definition is set to
+        /// <code>host</code>, then host ports must either be undefined or they must match the
+        /// container port in the port mapping.</p>
+        /// <note>
+        /// <p>After a task reaches the <code>RUNNING</code> status, manual and automatic host
+        /// and container port assignments are visible in the <b>Network
+        /// Bindings</b> section of a container description for a selected task in
+        /// the Amazon ECS console. The assignments are also visible in the
+        /// <code>networkBindings</code> section <a>DescribeTasks</a>
+        /// responses.</p>
+        /// </note>
         pub fn set_port_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortMapping>>,
@@ -12223,16 +14793,48 @@ pub mod container_definition {
             self.essential = Some(input);
             self
         }
+        /// <p>If the <code>essential</code> parameter of a container is marked as <code>true</code>,
+        /// and that container fails or stops for any reason, all other containers that are part of
+        /// the task are stopped. If the <code>essential</code> parameter of a container is marked
+        /// as <code>false</code>, then its failure does not affect the rest of the containers in a
+        /// task. If this parameter is omitted, a container is assumed to be essential.</p>
+        /// <p>All tasks must have at least one essential container. If you have an application that
+        /// is composed of multiple containers, you should group containers that are used for a
+        /// common purpose into components, and separate the different components into multiple task
+        /// definitions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
+        /// Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_essential(mut self, input: std::option::Option<bool>) -> Self {
             self.essential = input;
             self
         }
+        /// Appends an item to `entry_point`.
+        ///
+        /// To override the contents of this collection use [`set_entry_point`](Self::set_entry_point).
+        ///
+        /// <important>
+        /// <p>Early versions of the Amazon ECS container agent do not properly handle
+        /// <code>entryPoint</code> parameters. If you have problems using
+        /// <code>entryPoint</code>, update your container agent or enter your commands and
+        /// arguments as <code>command</code> array items instead.</p>
+        /// </important>
+        /// <p>The entry point that is passed to the container. This parameter maps to
+        /// <code>Entrypoint</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--entrypoint</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#entrypoint">https://docs.docker.com/engine/reference/builder/#entrypoint</a>.</p>
         pub fn entry_point(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.entry_point.unwrap_or_default();
             v.push(input.into());
             self.entry_point = Some(v);
             self
         }
+        /// <important>
+        /// <p>Early versions of the Amazon ECS container agent do not properly handle
+        /// <code>entryPoint</code> parameters. If you have problems using
+        /// <code>entryPoint</code>, update your container agent or enter your commands and
+        /// arguments as <code>command</code> array items instead.</p>
+        /// </important>
+        /// <p>The entry point that is passed to the container. This parameter maps to
+        /// <code>Entrypoint</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--entrypoint</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#entrypoint">https://docs.docker.com/engine/reference/builder/#entrypoint</a>.</p>
         pub fn set_entry_point(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12240,12 +14842,26 @@ pub mod container_definition {
             self.entry_point = input;
             self
         }
+        /// Appends an item to `command`.
+        ///
+        /// To override the contents of this collection use [`set_command`](Self::set_command).
+        ///
+        /// <p>The command that is passed to the container. This parameter maps to <code>Cmd</code>
+        /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>COMMAND</code> parameter to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>. If there are multiple arguments, each
+        /// argument should be a separated string in the array.</p>
         pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.command.unwrap_or_default();
             v.push(input.into());
             self.command = Some(v);
             self
         }
+        /// <p>The command that is passed to the container. This parameter maps to <code>Cmd</code>
+        /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>COMMAND</code> parameter to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>. If there are multiple arguments, each
+        /// argument should be a separated string in the array.</p>
         pub fn set_command(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12253,12 +14869,30 @@ pub mod container_definition {
             self.command = input;
             self
         }
+        /// Appends an item to `environment`.
+        ///
+        /// To override the contents of this collection use [`set_environment`](Self::set_environment).
+        ///
+        /// <p>The environment variables to pass to a container. This parameter maps to
+        /// <code>Env</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+        /// <important>
+        /// <p>We do not recommend using plaintext environment variables for sensitive
+        /// information, such as credential data.</p>
+        /// </important>
         pub fn environment(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
             let mut v = self.environment.unwrap_or_default();
             v.push(input.into());
             self.environment = Some(v);
             self
         }
+        /// <p>The environment variables to pass to a container. This parameter maps to
+        /// <code>Env</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+        /// <important>
+        /// <p>We do not recommend using plaintext environment variables for sensitive
+        /// information, such as credential data.</p>
+        /// </important>
         pub fn set_environment(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
@@ -12266,6 +14900,24 @@ pub mod container_definition {
             self.environment = input;
             self
         }
+        /// Appends an item to `environment_files`.
+        ///
+        /// To override the contents of this collection use [`set_environment_files`](Self::set_environment_files).
+        ///
+        /// <p>A list of files containing the environment variables to pass to a container. This
+        /// parameter maps to the <code>--env-file</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+        /// <p>You can specify up to ten environment files. The file must have a <code>.env</code>
+        /// file extension. Each line in an environment file should contain an environment variable
+        /// in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated
+        /// as comments and are ignored. For more information on the environment variable file
+        /// syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default
+        /// environment variables in file</a>.</p>
+        /// <p>If there are environment variables specified using the <code>environment</code>
+        /// parameter in a container definition, they take precedence over the variables contained
+        /// within an environment file. If multiple environment files are specified that contain the
+        /// same variable, they are processed from the top down. It is recommended to use unique
+        /// variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying Environment
+        /// Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn environment_files(
             mut self,
             input: impl Into<crate::model::EnvironmentFile>,
@@ -12275,6 +14927,20 @@ pub mod container_definition {
             self.environment_files = Some(v);
             self
         }
+        /// <p>A list of files containing the environment variables to pass to a container. This
+        /// parameter maps to the <code>--env-file</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+        /// <p>You can specify up to ten environment files. The file must have a <code>.env</code>
+        /// file extension. Each line in an environment file should contain an environment variable
+        /// in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated
+        /// as comments and are ignored. For more information on the environment variable file
+        /// syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default
+        /// environment variables in file</a>.</p>
+        /// <p>If there are environment variables specified using the <code>environment</code>
+        /// parameter in a container definition, they take precedence over the variables contained
+        /// within an environment file. If multiple environment files are specified that contain the
+        /// same variable, they are processed from the top down. It is recommended to use unique
+        /// variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying Environment
+        /// Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_environment_files(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnvironmentFile>>,
@@ -12282,12 +14948,28 @@ pub mod container_definition {
             self.environment_files = input;
             self
         }
+        /// Appends an item to `mount_points`.
+        ///
+        /// To override the contents of this collection use [`set_mount_points`](Self::set_mount_points).
+        ///
+        /// <p>The mount points for data volumes in your container.</p>
+        /// <p>This parameter maps to <code>Volumes</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a>
+        /// section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--volume</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+        /// <p>Windows containers can mount whole directories on the same drive as
+        /// <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
+        /// different drive, and mount point cannot be across drives.</p>
         pub fn mount_points(mut self, input: impl Into<crate::model::MountPoint>) -> Self {
             let mut v = self.mount_points.unwrap_or_default();
             v.push(input.into());
             self.mount_points = Some(v);
             self
         }
+        /// <p>The mount points for data volumes in your container.</p>
+        /// <p>This parameter maps to <code>Volumes</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a>
+        /// section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--volume</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+        /// <p>Windows containers can mount whole directories on the same drive as
+        /// <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
+        /// different drive, and mount point cannot be across drives.</p>
         pub fn set_mount_points(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MountPoint>>,
@@ -12295,12 +14977,22 @@ pub mod container_definition {
             self.mount_points = input;
             self
         }
+        /// Appends an item to `volumes_from`.
+        ///
+        /// To override the contents of this collection use [`set_volumes_from`](Self::set_volumes_from).
+        ///
+        /// <p>Data volumes to mount from another container. This parameter maps to
+        /// <code>VolumesFrom</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--volumes-from</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
         pub fn volumes_from(mut self, input: impl Into<crate::model::VolumeFrom>) -> Self {
             let mut v = self.volumes_from.unwrap_or_default();
             v.push(input.into());
             self.volumes_from = Some(v);
             self
         }
+        /// <p>Data volumes to mount from another container. This parameter maps to
+        /// <code>VolumesFrom</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--volumes-from</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
         pub fn set_volumes_from(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VolumeFrom>>,
@@ -12317,6 +15009,11 @@ pub mod container_definition {
             self.linux_parameters = Some(input);
             self
         }
+        /// <p>Linux-specific modifications that are applied to the container, such as Linux kernel
+        /// capabilities. For more information see <a>KernelCapabilities</a>.</p>
+        /// <note>
+        /// <p>This parameter is not supported for Windows containers.</p>
+        /// </note>
         pub fn set_linux_parameters(
             mut self,
             input: std::option::Option<crate::model::LinuxParameters>,
@@ -12324,12 +15021,20 @@ pub mod container_definition {
             self.linux_parameters = input;
             self
         }
+        /// Appends an item to `secrets`.
+        ///
+        /// To override the contents of this collection use [`set_secrets`](Self::set_secrets).
+        ///
+        /// <p>The secrets to pass to the container. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+        /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn secrets(mut self, input: impl Into<crate::model::Secret>) -> Self {
             let mut v = self.secrets.unwrap_or_default();
             v.push(input.into());
             self.secrets = Some(v);
             self
         }
+        /// <p>The secrets to pass to the container. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+        /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_secrets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Secret>>,
@@ -12337,12 +15042,44 @@ pub mod container_definition {
             self.secrets = input;
             self
         }
+        /// Appends an item to `depends_on`.
+        ///
+        /// To override the contents of this collection use [`set_depends_on`](Self::set_depends_on).
+        ///
+        /// <p>The dependencies defined for container startup and shutdown. A container can contain
+        /// multiple dependencies. When a dependency is defined for container startup, for container
+        /// shutdown it is reversed.</p>
+        /// <p>For tasks using the EC2 launch type, the container instances require at
+        /// least version 1.26.0 of the container agent to enable container dependencies. However,
+        /// we recommend using the latest container agent version. For information about checking
+        /// your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
+        /// Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
+        /// using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the
+        /// <code>ecs-init</code> package. If your container instances are launched from version
+        /// <code>20190301</code> or later, then they contain the required versions of the
+        /// container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>For tasks using the Fargate launch type, the task or service requires
+        /// platform version <code>1.3.0</code> or later.</p>
         pub fn depends_on(mut self, input: impl Into<crate::model::ContainerDependency>) -> Self {
             let mut v = self.depends_on.unwrap_or_default();
             v.push(input.into());
             self.depends_on = Some(v);
             self
         }
+        /// <p>The dependencies defined for container startup and shutdown. A container can contain
+        /// multiple dependencies. When a dependency is defined for container startup, for container
+        /// shutdown it is reversed.</p>
+        /// <p>For tasks using the EC2 launch type, the container instances require at
+        /// least version 1.26.0 of the container agent to enable container dependencies. However,
+        /// we recommend using the latest container agent version. For information about checking
+        /// your agent version and updating to the latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
+        /// Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
+        /// using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the
+        /// <code>ecs-init</code> package. If your container instances are launched from version
+        /// <code>20190301</code> or later, then they contain the required versions of the
+        /// container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>For tasks using the Fargate launch type, the task or service requires
+        /// platform version <code>1.3.0</code> or later.</p>
         pub fn set_depends_on(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContainerDependency>>,
@@ -12377,6 +15114,29 @@ pub mod container_definition {
             self.start_timeout = Some(input);
             self
         }
+        /// <p>Time duration (in seconds) to wait before giving up on resolving dependencies for a
+        /// container. For example, you specify two containers in a task definition with containerA
+        /// having a dependency on containerB reaching a <code>COMPLETE</code>,
+        /// <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a <code>startTimeout</code>
+        /// value is specified for containerB and it does not reach the desired status within that
+        /// time then containerA will give up and not start. This results in the task transitioning
+        /// to a <code>STOPPED</code> state.</p>
+        /// <note>
+        /// <p>When the <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration
+        /// variable is used, it is enforced indendently from this start timeout value.</p>
+        /// </note>
+        /// <p>For tasks using the Fargate launch type, this parameter requires that
+        /// the task or service uses platform version 1.3.0 or later.</p>
+        /// <p>For tasks using the EC2 launch type, your container instances require at
+        /// least version <code>1.26.0</code> of the container agent to enable a container start
+        /// timeout value. However, we recommend using the latest container agent version. For
+        /// information about checking your agent version and updating to the latest version, see
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
+        /// Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
+        /// using an Amazon ECS-optimized Linux AMI, your instance needs at least version <code>1.26.0-1</code> of
+        /// the <code>ecs-init</code> package. If your container instances are launched from version
+        /// <code>20190301</code> or later, then they contain the required versions of the
+        /// container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_start_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.start_timeout = input;
             self
@@ -12405,6 +15165,26 @@ pub mod container_definition {
             self.stop_timeout = Some(input);
             self
         }
+        /// <p>Time duration (in seconds) to wait before the container is forcefully killed if it
+        /// doesn't exit normally on its own.</p>
+        /// <p>For tasks using the Fargate launch type, the task or service requires
+        /// platform version 1.3.0 or later. The max stop timeout value is 120 seconds and if the
+        /// parameter is not specified, the default value of 30 seconds is used.</p>
+        /// <p>For tasks using the EC2 launch type, if the <code>stopTimeout</code>
+        /// parameter is not specified, the value set for the Amazon ECS container agent configuration
+        /// variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used by default. If neither the
+        /// <code>stopTimeout</code> parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code>
+        /// agent configuration variable are set, then the default values of 30 seconds for Linux
+        /// containers and 30 seconds on Windows containers are used. Your container instances
+        /// require at least version 1.26.0 of the container agent to enable a container stop
+        /// timeout value. However, we recommend using the latest container agent version. For
+        /// information about checking your agent version and updating to the latest version, see
+        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
+        /// Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
+        /// using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the
+        /// <code>ecs-init</code> package. If your container instances are launched from version
+        /// <code>20190301</code> or later, then they contain the required versions of the
+        /// container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_stop_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.stop_timeout = input;
             self
@@ -12421,6 +15201,14 @@ pub mod container_definition {
             self.hostname = Some(input.into());
             self
         }
+        /// <p>The hostname to use for your container. This parameter maps to <code>Hostname</code>
+        /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>--hostname</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>.</p>
+        /// <note>
+        /// <p>The <code>hostname</code> parameter is not supported if you are using the
+        /// <code>awsvpc</code> network mode.</p>
+        /// </note>
         pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hostname = input;
             self
@@ -12475,6 +15263,52 @@ pub mod container_definition {
             self.user = Some(input.into());
             self
         }
+        /// <p>The user to use inside the container. This parameter maps to <code>User</code> in the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>.</p>
+        /// <important>
+        /// <p>When running tasks using the <code>host</code> network mode, you should not run
+        /// containers using the root user (UID 0). It is considered best practice to use a
+        /// non-root user.</p>
+        /// </important>
+        /// <p>You can specify the <code>user</code> using the following formats. If specifying a UID
+        /// or GID, you must specify it as a positive integer.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>user</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>user:group</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>uid</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>uid:gid</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>user:gid</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>uid:group</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>This parameter is not supported for Windows containers.</p>
+        /// </note>
         pub fn set_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user = input;
             self
@@ -12486,6 +15320,9 @@ pub mod container_definition {
             self.working_directory = Some(input.into());
             self
         }
+        /// <p>The working directory in which to run commands inside the container. This parameter
+        /// maps to <code>WorkingDir</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--workdir</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
         pub fn set_working_directory(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12503,6 +15340,12 @@ pub mod container_definition {
             self.disable_networking = Some(input);
             self
         }
+        /// <p>When this parameter is true, networking is disabled within the container. This
+        /// parameter maps to <code>NetworkDisabled</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a>
+        /// section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
+        /// <note>
+        /// <p>This parameter is not supported for Windows containers.</p>
+        /// </note>
         pub fn set_disable_networking(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_networking = input;
             self
@@ -12518,6 +15361,13 @@ pub mod container_definition {
             self.privileged = Some(input);
             self
         }
+        /// <p>When this parameter is true, the container is given elevated privileges on the host
+        /// container instance (similar to the <code>root</code> user). This parameter maps to
+        /// <code>Privileged</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--privileged</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+        /// <note>
+        /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
+        /// </note>
         pub fn set_privileged(mut self, input: std::option::Option<bool>) -> Self {
             self.privileged = input;
             self
@@ -12534,16 +15384,40 @@ pub mod container_definition {
             self.readonly_root_filesystem = Some(input);
             self
         }
+        /// <p>When this parameter is true, the container is given read-only access to its root file
+        /// system. This parameter maps to <code>ReadonlyRootfs</code> in the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>--read-only</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>.</p>
+        /// <note>
+        /// <p>This parameter is not supported for Windows containers.</p>
+        /// </note>
         pub fn set_readonly_root_filesystem(mut self, input: std::option::Option<bool>) -> Self {
             self.readonly_root_filesystem = input;
             self
         }
+        /// Appends an item to `dns_servers`.
+        ///
+        /// To override the contents of this collection use [`set_dns_servers`](Self::set_dns_servers).
+        ///
+        /// <p>A list of DNS servers that are presented to the container. This parameter maps to
+        /// <code>Dns</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--dns</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+        /// <note>
+        /// <p>This parameter is not supported for Windows containers.</p>
+        /// </note>
         pub fn dns_servers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dns_servers.unwrap_or_default();
             v.push(input.into());
             self.dns_servers = Some(v);
             self
         }
+        /// <p>A list of DNS servers that are presented to the container. This parameter maps to
+        /// <code>Dns</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--dns</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+        /// <note>
+        /// <p>This parameter is not supported for Windows containers.</p>
+        /// </note>
         pub fn set_dns_servers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12551,12 +15425,28 @@ pub mod container_definition {
             self.dns_servers = input;
             self
         }
+        /// Appends an item to `dns_search_domains`.
+        ///
+        /// To override the contents of this collection use [`set_dns_search_domains`](Self::set_dns_search_domains).
+        ///
+        /// <p>A list of DNS search domains that are presented to the container. This parameter maps
+        /// to <code>DnsSearch</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--dns-search</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+        /// <note>
+        /// <p>This parameter is not supported for Windows containers.</p>
+        /// </note>
         pub fn dns_search_domains(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dns_search_domains.unwrap_or_default();
             v.push(input.into());
             self.dns_search_domains = Some(v);
             self
         }
+        /// <p>A list of DNS search domains that are presented to the container. This parameter maps
+        /// to <code>DnsSearch</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--dns-search</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+        /// <note>
+        /// <p>This parameter is not supported for Windows containers.</p>
+        /// </note>
         pub fn set_dns_search_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12564,12 +15454,34 @@ pub mod container_definition {
             self.dns_search_domains = input;
             self
         }
+        /// Appends an item to `extra_hosts`.
+        ///
+        /// To override the contents of this collection use [`set_extra_hosts`](Self::set_extra_hosts).
+        ///
+        /// <p>A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code>
+        /// file on the container. This parameter maps to <code>ExtraHosts</code> in the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>--add-host</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>.</p>
+        /// <note>
+        /// <p>This parameter is not supported for Windows containers or tasks that use the
+        /// <code>awsvpc</code> network mode.</p>
+        /// </note>
         pub fn extra_hosts(mut self, input: impl Into<crate::model::HostEntry>) -> Self {
             let mut v = self.extra_hosts.unwrap_or_default();
             v.push(input.into());
             self.extra_hosts = Some(v);
             self
         }
+        /// <p>A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code>
+        /// file on the container. This parameter maps to <code>ExtraHosts</code> in the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>--add-host</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>.</p>
+        /// <note>
+        /// <p>This parameter is not supported for Windows containers or tasks that use the
+        /// <code>awsvpc</code> network mode.</p>
+        /// </note>
         pub fn set_extra_hosts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HostEntry>>,
@@ -12577,12 +15489,60 @@ pub mod container_definition {
             self.extra_hosts = input;
             self
         }
+        /// Appends an item to `docker_security_options`.
+        ///
+        /// To override the contents of this collection use [`set_docker_security_options`](Self::set_docker_security_options).
+        ///
+        /// <p>A list of strings to provide custom labels for SELinux and AppArmor multi-level
+        /// security systems. This field is not valid for containers in tasks using the
+        /// Fargate launch type.</p>
+        /// <p>With Windows containers, this parameter can be used to reference a credential spec
+        /// file when configuring a container for Active Directory authentication. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows
+        /// Containers</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>This parameter maps to <code>SecurityOpt</code> in the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>--security-opt</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>.</p>
+        /// <note>
+        /// <p>The Amazon ECS container agent running on a container instance must register with the
+        /// <code>ECS_SELINUX_CAPABLE=true</code> or <code>ECS_APPARMOR_CAPABLE=true</code>
+        /// environment variables before containers placed on that instance can use these
+        /// security options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
+        /// Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// </note>
+        /// <p>For more information about valid values, see <a href="https://docs.docker.com/engine/reference/run/#security-configuration">Docker
+        /// Run Security Configuration</a>. </p>
+        /// <p>Valid values: "no-new-privileges" | "apparmor:PROFILE" | "label:value" |
+        /// "credentialspec:CredentialSpecFilePath"</p>
         pub fn docker_security_options(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.docker_security_options.unwrap_or_default();
             v.push(input.into());
             self.docker_security_options = Some(v);
             self
         }
+        /// <p>A list of strings to provide custom labels for SELinux and AppArmor multi-level
+        /// security systems. This field is not valid for containers in tasks using the
+        /// Fargate launch type.</p>
+        /// <p>With Windows containers, this parameter can be used to reference a credential spec
+        /// file when configuring a container for Active Directory authentication. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows
+        /// Containers</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>This parameter maps to <code>SecurityOpt</code> in the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>--security-opt</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>.</p>
+        /// <note>
+        /// <p>The Amazon ECS container agent running on a container instance must register with the
+        /// <code>ECS_SELINUX_CAPABLE=true</code> or <code>ECS_APPARMOR_CAPABLE=true</code>
+        /// environment variables before containers placed on that instance can use these
+        /// security options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
+        /// Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// </note>
+        /// <p>For more information about valid values, see <a href="https://docs.docker.com/engine/reference/run/#security-configuration">Docker
+        /// Run Security Configuration</a>. </p>
+        /// <p>Valid values: "no-new-privileges" | "apparmor:PROFILE" | "label:value" |
+        /// "credentialspec:CredentialSpecFilePath"</p>
         pub fn set_docker_security_options(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12598,6 +15558,10 @@ pub mod container_definition {
             self.interactive = Some(input);
             self
         }
+        /// <p>When this parameter is <code>true</code>, this allows you to deploy containerized
+        /// applications that require <code>stdin</code> or a <code>tty</code> to be allocated. This
+        /// parameter maps to <code>OpenStdin</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a>
+        /// section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--interactive</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
         pub fn set_interactive(mut self, input: std::option::Option<bool>) -> Self {
             self.interactive = input;
             self
@@ -12609,10 +15573,21 @@ pub mod container_definition {
             self.pseudo_terminal = Some(input);
             self
         }
+        /// <p>When this parameter is <code>true</code>, a TTY is allocated. This parameter maps to
+        /// <code>Tty</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--tty</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
         pub fn set_pseudo_terminal(mut self, input: std::option::Option<bool>) -> Self {
             self.pseudo_terminal = input;
             self
         }
+        /// Adds a key-value pair to `docker_labels`.
+        ///
+        /// To override the contents of this collection use [`set_docker_labels`](Self::set_docker_labels).
+        ///
+        /// <p>A key/value map of labels to add to the container. This parameter maps to
+        /// <code>Labels</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--label</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+        /// </p>
         pub fn docker_labels(
             mut self,
             k: impl Into<std::string::String>,
@@ -12623,6 +15598,10 @@ pub mod container_definition {
             self.docker_labels = Some(hash_map);
             self
         }
+        /// <p>A key/value map of labels to add to the container. This parameter maps to
+        /// <code>Labels</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--label</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+        /// </p>
         pub fn set_docker_labels(
             mut self,
             input: std::option::Option<
@@ -12632,12 +15611,50 @@ pub mod container_definition {
             self.docker_labels = input;
             self
         }
+        /// Appends an item to `ulimits`.
+        ///
+        /// To override the contents of this collection use [`set_ulimits`](Self::set_ulimits).
+        ///
+        /// <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is specified
+        /// in a task definition, it will override the default values set by Docker. This parameter
+        /// maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming values are displayed
+        /// in the <a>Ulimit</a> data type.</p>
+        /// <p>Amazon ECS tasks hosted on Fargate use the default
+        /// resource limit values set by the operating system with the exception of
+        /// the <code>nofile</code> resource limit parameter which Fargate
+        /// overrides. The <code>nofile</code> resource limit sets a restriction on
+        /// the number of open files that a container can use. The default
+        /// <code>nofile</code> soft limit is <code>1024</code> and hard limit
+        /// is <code>4096</code>.</p>
+        /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+        /// </p>
+        /// <note>
+        /// <p>This parameter is not supported for Windows containers.</p>
+        /// </note>
         pub fn ulimits(mut self, input: impl Into<crate::model::Ulimit>) -> Self {
             let mut v = self.ulimits.unwrap_or_default();
             v.push(input.into());
             self.ulimits = Some(v);
             self
         }
+        /// <p>A list of <code>ulimits</code> to set in the container. If a ulimit value is specified
+        /// in a task definition, it will override the default values set by Docker. This parameter
+        /// maps to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming values are displayed
+        /// in the <a>Ulimit</a> data type.</p>
+        /// <p>Amazon ECS tasks hosted on Fargate use the default
+        /// resource limit values set by the operating system with the exception of
+        /// the <code>nofile</code> resource limit parameter which Fargate
+        /// overrides. The <code>nofile</code> resource limit sets a restriction on
+        /// the number of open files that a container can use. The default
+        /// <code>nofile</code> soft limit is <code>1024</code> and hard limit
+        /// is <code>4096</code>.</p>
+        /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+        /// </p>
+        /// <note>
+        /// <p>This parameter is not supported for Windows containers.</p>
+        /// </note>
         pub fn set_ulimits(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Ulimit>>,
@@ -12676,6 +15693,33 @@ pub mod container_definition {
             self.log_configuration = Some(input);
             self
         }
+        /// <p>The log configuration specification for the container.</p>
+        /// <p>This parameter maps to <code>LogConfig</code> in the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>. By default, containers use the same logging driver that the Docker
+        /// daemon uses. However the container may use a different logging driver than the Docker
+        /// daemon by specifying a log driver with this parameter in the container definition. To
+        /// use a different logging driver for a container, the log system must be configured
+        /// properly on the container instance (or on a different log server for remote logging
+        /// options). For more information on the options for different supported log drivers, see
+        /// <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure
+        /// logging drivers</a> in the Docker documentation.</p>
+        /// <note>
+        /// <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker
+        /// daemon (shown in the <a>LogConfiguration</a> data type). Additional log
+        /// drivers may be available in future releases of the Amazon ECS container agent.</p>
+        /// </note>
+        /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+        /// </p>
+        /// <note>
+        /// <p>The Amazon ECS container agent running on a container instance must register the
+        /// logging drivers available on that instance with the
+        /// <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+        /// containers placed on that instance can use these log configuration options. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
+        /// Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// </note>
         pub fn set_log_configuration(
             mut self,
             input: std::option::Option<crate::model::LogConfiguration>,
@@ -12692,6 +15736,11 @@ pub mod container_definition {
             self.health_check = Some(input);
             self
         }
+        /// <p>The container health check command and associated configuration parameters for the
+        /// container. This parameter maps to <code>HealthCheck</code> in the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>HEALTHCHECK</code> parameter of <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>.</p>
         pub fn set_health_check(
             mut self,
             input: std::option::Option<crate::model::HealthCheck>,
@@ -12699,12 +15748,40 @@ pub mod container_definition {
             self.health_check = input;
             self
         }
+        /// Appends an item to `system_controls`.
+        ///
+        /// To override the contents of this collection use [`set_system_controls`](Self::set_system_controls).
+        ///
+        /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to
+        /// <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+        /// <note>
+        /// <p>It is not recommended that you specify network-related <code>systemControls</code>
+        /// parameters for multiple containers in a single task that also uses either the
+        /// <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the
+        /// <code>awsvpc</code> network mode, the container that is started last determines
+        /// which <code>systemControls</code> parameters take effect. For tasks that use the
+        /// <code>host</code> network mode, it changes the container instance's namespaced
+        /// kernel parameters as well as the containers.</p>
+        /// </note>
         pub fn system_controls(mut self, input: impl Into<crate::model::SystemControl>) -> Self {
             let mut v = self.system_controls.unwrap_or_default();
             v.push(input.into());
             self.system_controls = Some(v);
             self
         }
+        /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to
+        /// <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+        /// <note>
+        /// <p>It is not recommended that you specify network-related <code>systemControls</code>
+        /// parameters for multiple containers in a single task that also uses either the
+        /// <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the
+        /// <code>awsvpc</code> network mode, the container that is started last determines
+        /// which <code>systemControls</code> parameters take effect. For tasks that use the
+        /// <code>host</code> network mode, it changes the container instance's namespaced
+        /// kernel parameters as well as the containers.</p>
+        /// </note>
         pub fn set_system_controls(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SystemControl>>,
@@ -12712,6 +15789,12 @@ pub mod container_definition {
             self.system_controls = input;
             self
         }
+        /// Appends an item to `resource_requirements`.
+        ///
+        /// To override the contents of this collection use [`set_resource_requirements`](Self::set_resource_requirements).
+        ///
+        /// <p>The type and amount of a resource to assign to a container. The only supported
+        /// resource is a GPU.</p>
         pub fn resource_requirements(
             mut self,
             input: impl Into<crate::model::ResourceRequirement>,
@@ -12721,6 +15804,8 @@ pub mod container_definition {
             self.resource_requirements = Some(v);
             self
         }
+        /// <p>The type and amount of a resource to assign to a container. The only supported
+        /// resource is a GPU.</p>
         pub fn set_resource_requirements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceRequirement>>,
@@ -12738,6 +15823,9 @@ pub mod container_definition {
             self.firelens_configuration = Some(input);
             self
         }
+        /// <p>The FireLens configuration for the container. This is used to specify and configure a
+        /// log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom Log Routing</a>
+        /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_firelens_configuration(
             mut self,
             input: std::option::Option<crate::model::FirelensConfiguration>,
@@ -12848,6 +15936,8 @@ pub mod firelens_configuration {
             self.r#type = Some(input);
             self
         }
+        /// <p>The log router to use. The valid values are <code>fluentd</code> or
+        /// <code>fluentbit</code>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::FirelensConfigurationType>,
@@ -12855,6 +15945,22 @@ pub mod firelens_configuration {
             self.r#type = input;
             self
         }
+        /// Adds a key-value pair to `options`.
+        ///
+        /// To override the contents of this collection use [`set_options`](Self::set_options).
+        ///
+        /// <p>The options to use when configuring the log router. This field is optional and can be
+        /// used to specify a custom configuration file or to add additional metadata, such as the
+        /// task, task definition, cluster, and container instance details to the log event. If
+        /// specified, the syntax to use is
+        /// <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
+        /// a Task Definition that Uses a FireLens Configuration</a> in the
+        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Tasks hosted on Fargate only support the <code>file</code> configuration file
+        /// type.</p>
+        /// </note>
         pub fn options(
             mut self,
             k: impl Into<std::string::String>,
@@ -12865,6 +15971,18 @@ pub mod firelens_configuration {
             self.options = Some(hash_map);
             self
         }
+        /// <p>The options to use when configuring the log router. This field is optional and can be
+        /// used to specify a custom configuration file or to add additional metadata, such as the
+        /// task, task definition, cluster, and container instance details to the log event. If
+        /// specified, the syntax to use is
+        /// <code>"options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef">Creating
+        /// a Task Definition that Uses a FireLens Configuration</a> in the
+        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <note>
+        /// <p>Tasks hosted on Fargate only support the <code>file</code> configuration file
+        /// type.</p>
+        /// </note>
         pub fn set_options(
             mut self,
             input: std::option::Option<
@@ -12890,6 +16008,7 @@ impl FirelensConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -12901,7 +16020,9 @@ impl FirelensConfiguration {
     std::hash::Hash,
 )]
 pub enum FirelensConfigurationType {
+    #[allow(missing_docs)] // documentation missing in model
     Fluentbit,
+    #[allow(missing_docs)] // documentation missing in model
     Fluentd,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12923,6 +16044,7 @@ impl std::str::FromStr for FirelensConfigurationType {
     }
 }
 impl FirelensConfigurationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FirelensConfigurationType::Fluentbit => "fluentbit",
@@ -12930,6 +16052,7 @@ impl FirelensConfigurationType {
             FirelensConfigurationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["fluentbit", "fluentd"]
     }
@@ -12994,6 +16117,7 @@ pub mod system_control {
             self.namespace = Some(input.into());
             self
         }
+        /// <p>The namespaced kernel parameter for which to set a <code>value</code>.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
@@ -13004,6 +16128,8 @@ pub mod system_control {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value for the namespaced kernel parameter specified in
+        /// <code>namespace</code>.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -13153,12 +16279,46 @@ pub mod health_check {
         pub(crate) start_period: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `command`.
+        ///
+        /// To override the contents of this collection use [`set_command`](Self::set_command).
+        ///
+        /// <p>A string array representing the command that the container runs to determine if it is
+        /// healthy. The string array must start with <code>CMD</code> to execute the command
+        /// arguments directly, or <code>CMD-SHELL</code> to run the command with the container's
+        /// default shell. </p>
+        /// <p> When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, you should enclose the list of commands in brackets, as shown below.</p>
+        /// <p>
+        /// <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code>
+        /// </p>
+        /// <p>You do not need to include the brackets when you use the Amazon Web Services Management Consoleas shown below.</p>
+        /// <p>
+        /// <code> "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code>
+        /// </p>
+        /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For
+        /// more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a>
+        /// section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
         pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.command.unwrap_or_default();
             v.push(input.into());
             self.command = Some(v);
             self
         }
+        /// <p>A string array representing the command that the container runs to determine if it is
+        /// healthy. The string array must start with <code>CMD</code> to execute the command
+        /// arguments directly, or <code>CMD-SHELL</code> to run the command with the container's
+        /// default shell. </p>
+        /// <p> When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, you should enclose the list of commands in brackets, as shown below.</p>
+        /// <p>
+        /// <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code>
+        /// </p>
+        /// <p>You do not need to include the brackets when you use the Amazon Web Services Management Consoleas shown below.</p>
+        /// <p>
+        /// <code> "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code>
+        /// </p>
+        /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For
+        /// more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a>
+        /// section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
         pub fn set_command(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13172,6 +16332,8 @@ pub mod health_check {
             self.interval = Some(input);
             self
         }
+        /// <p>The time period in seconds between each health check execution. You may specify
+        /// between 5 and 300 seconds. The default value is 30 seconds.</p>
         pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.interval = input;
             self
@@ -13183,6 +16345,9 @@ pub mod health_check {
             self.timeout = Some(input);
             self
         }
+        /// <p>The time period in seconds to wait for a health check to succeed before it is
+        /// considered a failure. You may specify between 2 and 60 seconds. The default value is
+        /// 5.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
@@ -13193,6 +16358,8 @@ pub mod health_check {
             self.retries = Some(input);
             self
         }
+        /// <p>The number of times to retry a failed health check before the container is considered
+        /// unhealthy. You may specify between 1 and 10 retries. The default value is 3.</p>
         pub fn set_retries(mut self, input: std::option::Option<i32>) -> Self {
             self.retries = input;
             self
@@ -13209,6 +16376,14 @@ pub mod health_check {
             self.start_period = Some(input);
             self
         }
+        /// <p>The optional grace period within which to provide containers time to bootstrap before
+        /// failed health checks count towards the maximum number of retries. You may specify
+        /// between 0 and 300 seconds. The <code>startPeriod</code> is disabled by default.</p>
+        /// <note>
+        /// <p>If a health check succeeds within the <code>startPeriod</code>, then the container
+        /// is considered healthy and any subsequent failures count toward the maximum number of
+        /// retries.</p>
+        /// </note>
         pub fn set_start_period(mut self, input: std::option::Option<i32>) -> Self {
             self.start_period = input;
             self
@@ -13346,6 +16521,25 @@ pub mod log_configuration {
             self.log_driver = Some(input);
             self
         }
+        /// <p>The log driver to use for the container.</p>
+        /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>,
+        /// <code>splunk</code>, and <code>awsfirelens</code>.</p>
+        /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are
+        /// <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>,
+        /// <code>json-file</code>, <code>journald</code>,
+        /// <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and
+        /// <code>awsfirelens</code>.</p>
+        /// <p>For more information about using the <code>awslogs</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
+        /// the awslogs log driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>For more information about using the <code>awsfirelens</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <note>
+        /// <p>If you have a custom driver that is not listed, you can fork the Amazon ECS container
+        /// agent project that is <a href="https://github.com/aws/amazon-ecs-agent">available
+        /// on GitHub</a> and customize it to work with that driver. We encourage you to
+        /// submit pull requests for changes that you would like to have included. However, we
+        /// do not currently provide support for running modified copies of this
+        /// software.</p>
+        /// </note>
         pub fn set_log_driver(
             mut self,
             input: std::option::Option<crate::model::LogDriver>,
@@ -13353,6 +16547,12 @@ pub mod log_configuration {
             self.log_driver = input;
             self
         }
+        /// Adds a key-value pair to `options`.
+        ///
+        /// To override the contents of this collection use [`set_options`](Self::set_options).
+        ///
+        /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+        /// </p>
         pub fn options(
             mut self,
             k: impl Into<std::string::String>,
@@ -13363,6 +16563,8 @@ pub mod log_configuration {
             self.options = Some(hash_map);
             self
         }
+        /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+        /// </p>
         pub fn set_options(
             mut self,
             input: std::option::Option<
@@ -13372,12 +16574,20 @@ pub mod log_configuration {
             self.options = input;
             self
         }
+        /// Appends an item to `secret_options`.
+        ///
+        /// To override the contents of this collection use [`set_secret_options`](Self::set_secret_options).
+        ///
+        /// <p>The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+        /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn secret_options(mut self, input: impl Into<crate::model::Secret>) -> Self {
             let mut v = self.secret_options.unwrap_or_default();
             v.push(input.into());
             self.secret_options = Some(v);
             self
         }
+        /// <p>The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+        /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_secret_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Secret>>,
@@ -13453,6 +16663,7 @@ pub mod secret {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the secret.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -13468,6 +16679,13 @@ pub mod secret {
             self.value_from = Some(input.into());
             self
         }
+        /// <p>The secret to expose to the container. The supported values are either the full ARN of
+        /// the Secrets Manager secret or the full ARN of the parameter in the SSM Parameter Store.</p>
+        /// <note>
+        /// <p>If the SSM Parameter Store parameter exists in the same Region as the task you
+        /// are launching, then you can use either the full ARN or name of the parameter. If the
+        /// parameter exists in a different Region, then the full ARN must be specified.</p>
+        /// </note>
         pub fn set_value_from(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value_from = input;
             self
@@ -13488,6 +16706,7 @@ impl Secret {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -13499,13 +16718,21 @@ impl Secret {
     std::hash::Hash,
 )]
 pub enum LogDriver {
+    #[allow(missing_docs)] // documentation missing in model
     Awsfirelens,
+    #[allow(missing_docs)] // documentation missing in model
     Awslogs,
+    #[allow(missing_docs)] // documentation missing in model
     Fluentd,
+    #[allow(missing_docs)] // documentation missing in model
     Gelf,
+    #[allow(missing_docs)] // documentation missing in model
     Journald,
+    #[allow(missing_docs)] // documentation missing in model
     JsonFile,
+    #[allow(missing_docs)] // documentation missing in model
     Splunk,
+    #[allow(missing_docs)] // documentation missing in model
     Syslog,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13533,6 +16760,7 @@ impl std::str::FromStr for LogDriver {
     }
 }
 impl LogDriver {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LogDriver::Awsfirelens => "awsfirelens",
@@ -13546,6 +16774,7 @@ impl LogDriver {
             LogDriver::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "awsfirelens",
@@ -13608,6 +16837,7 @@ pub mod ulimit {
             self.name = Some(input);
             self
         }
+        /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::UlimitName>) -> Self {
             self.name = input;
             self
@@ -13617,6 +16847,7 @@ pub mod ulimit {
             self.soft_limit = Some(input);
             self
         }
+        /// <p>The soft limit for the ulimit type.</p>
         pub fn set_soft_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.soft_limit = input;
             self
@@ -13626,6 +16857,7 @@ pub mod ulimit {
             self.hard_limit = Some(input);
             self
         }
+        /// <p>The hard limit for the ulimit type.</p>
         pub fn set_hard_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.hard_limit = input;
             self
@@ -13647,6 +16879,7 @@ impl Ulimit {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -13658,20 +16891,35 @@ impl Ulimit {
     std::hash::Hash,
 )]
 pub enum UlimitName {
+    #[allow(missing_docs)] // documentation missing in model
     Core,
+    #[allow(missing_docs)] // documentation missing in model
     Cpu,
+    #[allow(missing_docs)] // documentation missing in model
     Data,
+    #[allow(missing_docs)] // documentation missing in model
     Fsize,
+    #[allow(missing_docs)] // documentation missing in model
     Locks,
+    #[allow(missing_docs)] // documentation missing in model
     Memlock,
+    #[allow(missing_docs)] // documentation missing in model
     Msgqueue,
+    #[allow(missing_docs)] // documentation missing in model
     Nice,
+    #[allow(missing_docs)] // documentation missing in model
     Nofile,
+    #[allow(missing_docs)] // documentation missing in model
     Nproc,
+    #[allow(missing_docs)] // documentation missing in model
     Rss,
+    #[allow(missing_docs)] // documentation missing in model
     Rtprio,
+    #[allow(missing_docs)] // documentation missing in model
     Rttime,
+    #[allow(missing_docs)] // documentation missing in model
     Sigpending,
+    #[allow(missing_docs)] // documentation missing in model
     Stack,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13706,6 +16954,7 @@ impl std::str::FromStr for UlimitName {
     }
 }
 impl UlimitName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UlimitName::Core => "core",
@@ -13726,6 +16975,7 @@ impl UlimitName {
             UlimitName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "core",
@@ -13785,6 +17035,7 @@ pub mod host_entry {
             self.hostname = Some(input.into());
             self
         }
+        /// <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
         pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hostname = input;
             self
@@ -13794,6 +17045,7 @@ pub mod host_entry {
             self.ip_address = Some(input.into());
             self
         }
+        /// <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_address = input;
             self
@@ -13891,6 +17143,7 @@ pub mod container_dependency {
             self.container_name = Some(input.into());
             self
         }
+        /// <p>The name of a container.</p>
         pub fn set_container_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13933,6 +17186,37 @@ pub mod container_dependency {
             self.condition = Some(input);
             self
         }
+        /// <p>The dependency condition of the container. The following are the available conditions
+        /// and their behavior:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>START</code> - This condition emulates the behavior of links and
+        /// volumes today. It validates that a dependent container is started before
+        /// permitting other containers to start.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COMPLETE</code> - This condition validates that a dependent
+        /// container runs to completion (exits) before permitting other containers to
+        /// start. This can be useful for nonessential containers that run a script and then
+        /// exit. This condition cannot be set on an essential container.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SUCCESS</code> - This condition is the same as
+        /// <code>COMPLETE</code>, but it also requires that the container exits with a
+        /// <code>zero</code> status. This condition cannot be set on an essential
+        /// container.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>HEALTHY</code> - This condition validates that the dependent
+        /// container passes its Docker health check before permitting other containers to
+        /// start. This requires that the dependent container has health checks configured.
+        /// This condition is confirmed only at task startup.</p>
+        /// </li>
+        /// </ul>
         pub fn set_condition(
             mut self,
             input: std::option::Option<crate::model::ContainerCondition>,
@@ -13956,6 +17240,7 @@ impl ContainerDependency {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -13967,9 +17252,13 @@ impl ContainerDependency {
     std::hash::Hash,
 )]
 pub enum ContainerCondition {
+    #[allow(missing_docs)] // documentation missing in model
     Complete,
+    #[allow(missing_docs)] // documentation missing in model
     Healthy,
+    #[allow(missing_docs)] // documentation missing in model
     Start,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13993,6 +17282,7 @@ impl std::str::FromStr for ContainerCondition {
     }
 }
 impl ContainerCondition {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContainerCondition::Complete => "COMPLETE",
@@ -14002,6 +17292,7 @@ impl ContainerCondition {
             ContainerCondition::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COMPLETE", "HEALTHY", "START", "SUCCESS"]
     }
@@ -14119,6 +17410,14 @@ pub mod linux_parameters {
             self.capabilities = Some(input);
             self
         }
+        /// <p>The Linux capabilities for the container that are added to or dropped from the default
+        /// configuration provided by Docker.</p>
+        /// <note>
+        /// <p>For tasks that use the Fargate launch type,
+        /// <code>capabilities</code> is supported for all platform versions but the
+        /// <code>add</code> parameter is only supported if using platform version 1.4.0 or
+        /// later.</p>
+        /// </note>
         pub fn set_capabilities(
             mut self,
             input: std::option::Option<crate::model::KernelCapabilities>,
@@ -14126,12 +17425,30 @@ pub mod linux_parameters {
             self.capabilities = input;
             self
         }
+        /// Appends an item to `devices`.
+        ///
+        /// To override the contents of this collection use [`set_devices`](Self::set_devices).
+        ///
+        /// <p>Any host devices to expose to the container. This parameter maps to
+        /// <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+        /// <note>
+        /// <p>If you are using tasks that use the Fargate launch type, the
+        /// <code>devices</code> parameter is not supported.</p>
+        /// </note>
         pub fn devices(mut self, input: impl Into<crate::model::Device>) -> Self {
             let mut v = self.devices.unwrap_or_default();
             v.push(input.into());
             self.devices = Some(v);
             self
         }
+        /// <p>Any host devices to expose to the container. This parameter maps to
+        /// <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+        /// <note>
+        /// <p>If you are using tasks that use the Fargate launch type, the
+        /// <code>devices</code> parameter is not supported.</p>
+        /// </note>
         pub fn set_devices(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Device>>,
@@ -14146,6 +17463,9 @@ pub mod linux_parameters {
             self.init_process_enabled = Some(input);
             self
         }
+        /// <p>Run an <code>init</code> process inside the container that forwards signals and reaps
+        /// processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+        /// </p>
         pub fn set_init_process_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.init_process_enabled = input;
             self
@@ -14161,16 +17481,39 @@ pub mod linux_parameters {
             self.shared_memory_size = Some(input);
             self
         }
+        /// <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter
+        /// maps to the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>.</p>
+        /// <note>
+        /// <p>If you are using tasks that use the Fargate launch type, the
+        /// <code>sharedMemorySize</code> parameter is not supported.</p>
+        /// </note>
         pub fn set_shared_memory_size(mut self, input: std::option::Option<i32>) -> Self {
             self.shared_memory_size = input;
             self
         }
+        /// Appends an item to `tmpfs`.
+        ///
+        /// To override the contents of this collection use [`set_tmpfs`](Self::set_tmpfs).
+        ///
+        /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
+        /// parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+        /// <note>
+        /// <p>If you are using tasks that use the Fargate launch type, the
+        /// <code>tmpfs</code> parameter is not supported.</p>
+        /// </note>
         pub fn tmpfs(mut self, input: impl Into<crate::model::Tmpfs>) -> Self {
             let mut v = self.tmpfs.unwrap_or_default();
             v.push(input.into());
             self.tmpfs = Some(v);
             self
         }
+        /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
+        /// parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+        /// <note>
+        /// <p>If you are using tasks that use the Fargate launch type, the
+        /// <code>tmpfs</code> parameter is not supported.</p>
+        /// </note>
         pub fn set_tmpfs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tmpfs>>,
@@ -14194,6 +17537,18 @@ pub mod linux_parameters {
             self.max_swap = Some(input);
             self
         }
+        /// <p>The total amount of swap memory (in MiB) a container can use. This parameter will be
+        /// translated to the <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a> where the value would be the sum of
+        /// the container memory plus the <code>maxSwap</code> value.</p>
+        /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not
+        /// use swap. Accepted values are <code>0</code> or any positive integer. If the
+        /// <code>maxSwap</code> parameter is omitted, the container will use the swap
+        /// configuration for the container instance it is running on. A <code>maxSwap</code> value
+        /// must be set for the <code>swappiness</code> parameter to be used.</p>
+        /// <note>
+        /// <p>If you are using tasks that use the Fargate launch type, the
+        /// <code>maxSwap</code> parameter is not supported.</p>
+        /// </note>
         pub fn set_max_swap(mut self, input: std::option::Option<i32>) -> Self {
             self.max_swap = input;
             self
@@ -14214,6 +17569,18 @@ pub mod linux_parameters {
             self.swappiness = Some(input);
             self
         }
+        /// <p>This allows you to tune a container's memory swappiness behavior. A
+        /// <code>swappiness</code> value of <code>0</code> will cause swapping to not happen
+        /// unless absolutely necessary. A <code>swappiness</code> value of <code>100</code> will
+        /// cause pages to be swapped very aggressively. Accepted values are whole numbers between
+        /// <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not
+        /// specified, a default value of <code>60</code> is used. If a value is not specified for
+        /// <code>maxSwap</code> then this parameter is ignored. This parameter maps to the
+        /// <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
+        /// <note>
+        /// <p>If you are using tasks that use the Fargate launch type, the
+        /// <code>swappiness</code> parameter is not supported.</p>
+        /// </note>
         pub fn set_swappiness(mut self, input: std::option::Option<i32>) -> Self {
             self.swappiness = input;
             self
@@ -14282,6 +17649,7 @@ pub mod tmpfs {
             self.container_path = Some(input.into());
             self
         }
+        /// <p>The absolute file path where the tmpfs volume is to be mounted.</p>
         pub fn set_container_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14294,16 +17662,37 @@ pub mod tmpfs {
             self.size = Some(input);
             self
         }
+        /// <p>The maximum size (in MiB) of the tmpfs volume.</p>
         pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
             self.size = input;
             self
         }
+        /// Appends an item to `mount_options`.
+        ///
+        /// To override the contents of this collection use [`set_mount_options`](Self::set_mount_options).
+        ///
+        /// <p>The list of tmpfs volume mount options.</p>
+        /// <p>Valid values: <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" |
+        /// "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" |
+        /// "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" |
+        /// "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" |
+        /// "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid"
+        /// | "nr_inodes" | "nr_blocks" | "mpol"</code>
+        /// </p>
         pub fn mount_options(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.mount_options.unwrap_or_default();
             v.push(input.into());
             self.mount_options = Some(v);
             self
         }
+        /// <p>The list of tmpfs volume mount options.</p>
+        /// <p>Valid values: <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" |
+        /// "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" |
+        /// "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" |
+        /// "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" |
+        /// "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid"
+        /// | "nr_inodes" | "nr_blocks" | "mpol"</code>
+        /// </p>
         pub fn set_mount_options(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14367,6 +17756,7 @@ pub mod device {
             self.host_path = Some(input.into());
             self
         }
+        /// <p>The path for the device on the host container instance.</p>
         pub fn set_host_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_path = input;
             self
@@ -14376,6 +17766,7 @@ pub mod device {
             self.container_path = Some(input.into());
             self
         }
+        /// <p>The path inside the container at which to expose the host device.</p>
         pub fn set_container_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14383,6 +17774,13 @@ pub mod device {
             self.container_path = input;
             self
         }
+        /// Appends an item to `permissions`.
+        ///
+        /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
+        ///
+        /// <p>The explicit permissions to provide to the container for the device. By default, the
+        /// container has permissions for <code>read</code>, <code>write</code>, and
+        /// <code>mknod</code> for the device.</p>
         pub fn permissions(
             mut self,
             input: impl Into<crate::model::DeviceCgroupPermission>,
@@ -14392,6 +17790,9 @@ pub mod device {
             self.permissions = Some(v);
             self
         }
+        /// <p>The explicit permissions to provide to the container for the device. By default, the
+        /// container has permissions for <code>read</code>, <code>write</code>, and
+        /// <code>mknod</code> for the device.</p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeviceCgroupPermission>>,
@@ -14416,6 +17817,7 @@ impl Device {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -14427,8 +17829,11 @@ impl Device {
     std::hash::Hash,
 )]
 pub enum DeviceCgroupPermission {
+    #[allow(missing_docs)] // documentation missing in model
     Mknod,
+    #[allow(missing_docs)] // documentation missing in model
     Read,
+    #[allow(missing_docs)] // documentation missing in model
     Write,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -14451,6 +17856,7 @@ impl std::str::FromStr for DeviceCgroupPermission {
     }
 }
 impl DeviceCgroupPermission {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeviceCgroupPermission::Mknod => "mknod",
@@ -14459,6 +17865,7 @@ impl DeviceCgroupPermission {
             DeviceCgroupPermission::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["mknod", "read", "write"]
     }
@@ -14530,12 +17937,52 @@ pub mod kernel_capabilities {
         pub(crate) drop: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `add`.
+        ///
+        /// To override the contents of this collection use [`set_add`](Self::set_add).
+        ///
+        /// <p>The Linux capabilities for the container that have been added to the default
+        /// configuration provided by Docker. This parameter maps to <code>CapAdd</code> in the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>.</p>
+        /// <note>
+        /// <p>Tasks launched on Fargate only support adding the <code>SYS_PTRACE</code> kernel
+        /// capability.</p>
+        /// </note>
+        /// <p>Valid values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" |
+        /// "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" |
+        /// "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" |
+        /// "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP"
+        /// | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" |
+        /// "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" |
+        /// "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" |
+        /// "WAKE_ALARM"</code>
+        /// </p>
         pub fn add(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.add.unwrap_or_default();
             v.push(input.into());
             self.add = Some(v);
             self
         }
+        /// <p>The Linux capabilities for the container that have been added to the default
+        /// configuration provided by Docker. This parameter maps to <code>CapAdd</code> in the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>.</p>
+        /// <note>
+        /// <p>Tasks launched on Fargate only support adding the <code>SYS_PTRACE</code> kernel
+        /// capability.</p>
+        /// </note>
+        /// <p>Valid values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" |
+        /// "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" |
+        /// "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" |
+        /// "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP"
+        /// | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" |
+        /// "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" |
+        /// "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" |
+        /// "WAKE_ALARM"</code>
+        /// </p>
         pub fn set_add(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14543,12 +17990,44 @@ pub mod kernel_capabilities {
             self.add = input;
             self
         }
+        /// Appends an item to `drop`.
+        ///
+        /// To override the contents of this collection use [`set_drop`](Self::set_drop).
+        ///
+        /// <p>The Linux capabilities for the container that have been removed from the default
+        /// configuration provided by Docker. This parameter maps to <code>CapDrop</code> in the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>.</p>
+        /// <p>Valid values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" |
+        /// "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" |
+        /// "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" |
+        /// "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP"
+        /// | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" |
+        /// "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" |
+        /// "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" |
+        /// "WAKE_ALARM"</code>
+        /// </p>
         pub fn drop(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.drop.unwrap_or_default();
             v.push(input.into());
             self.drop = Some(v);
             self
         }
+        /// <p>The Linux capabilities for the container that have been removed from the default
+        /// configuration provided by Docker. This parameter maps to <code>CapDrop</code> in the
+        /// <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+        /// <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// run</a>.</p>
+        /// <p>Valid values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" |
+        /// "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" |
+        /// "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" |
+        /// "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP"
+        /// | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" |
+        /// "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" |
+        /// "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" |
+        /// "WAKE_ALARM"</code>
+        /// </p>
         pub fn set_drop(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14608,6 +18087,8 @@ pub mod volume_from {
             self.source_container = Some(input.into());
             self
         }
+        /// <p>The name of another container within the same task definition from which to mount
+        /// volumes.</p>
         pub fn set_source_container(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14622,6 +18103,9 @@ pub mod volume_from {
             self.read_only = Some(input);
             self
         }
+        /// <p>If this value is <code>true</code>, the container has read-only access to the volume.
+        /// If this value is <code>false</code>, then the container can write to the volume. The
+        /// default value is <code>false</code>.</p>
         pub fn set_read_only(mut self, input: std::option::Option<bool>) -> Self {
             self.read_only = input;
             self
@@ -14682,6 +18166,8 @@ pub mod mount_point {
             self.source_volume = Some(input.into());
             self
         }
+        /// <p>The name of the volume to mount. Must be a volume name referenced in the
+        /// <code>name</code> parameter of task definition <code>volume</code>.</p>
         pub fn set_source_volume(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14694,6 +18180,7 @@ pub mod mount_point {
             self.container_path = Some(input.into());
             self
         }
+        /// <p>The path on the container to mount the host volume at.</p>
         pub fn set_container_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14708,6 +18195,9 @@ pub mod mount_point {
             self.read_only = Some(input);
             self
         }
+        /// <p>If this value is <code>true</code>, the container has read-only access to the volume.
+        /// If this value is <code>false</code>, then the container can write to the volume. The
+        /// default value is <code>false</code>.</p>
         pub fn set_read_only(mut self, input: std::option::Option<bool>) -> Self {
             self.read_only = input;
             self
@@ -14824,6 +18314,16 @@ pub mod port_mapping {
             self.container_port = Some(input);
             self
         }
+        /// <p>The port number on the container that is bound to the user-specified or automatically
+        /// assigned host port.</p>
+        /// <p>If you are using containers in a task with the <code>awsvpc</code> or
+        /// <code>host</code> network mode, exposed ports should be specified using
+        /// <code>containerPort</code>.</p>
+        /// <p>If you are using containers in a task with the <code>bridge</code> network mode and
+        /// you specify a container port and not a host port, your container automatically receives
+        /// a host port in the ephemeral port range. For more information, see
+        /// <code>hostPort</code>. Port mappings that are automatically assigned in this way do not
+        /// count toward the 100 reserved ports limit of a container instance.</p>
         pub fn set_container_port(mut self, input: std::option::Option<i32>) -> Self {
             self.container_port = input;
             self
@@ -14860,6 +18360,34 @@ pub mod port_mapping {
             self.host_port = Some(input);
             self
         }
+        /// <p>The port number on the container instance to reserve for your container.</p>
+        /// <p>If you are using containers in a task with the <code>awsvpc</code> or
+        /// <code>host</code> network mode, the <code>hostPort</code> can either be left blank
+        /// or set to the same value as the <code>containerPort</code>.</p>
+        /// <p>If you are using containers in a task with the <code>bridge</code> network mode, you
+        /// can specify a non-reserved host port for your container port mapping, or you can omit
+        /// the <code>hostPort</code> (or set it to <code>0</code>) while specifying a
+        /// <code>containerPort</code> and your container automatically receives a port in the
+        /// ephemeral port range for your container instance operating system and Docker
+        /// version.</p>
+        /// <p>The default ephemeral port range for Docker version 1.6.0 and later is listed on the
+        /// instance under <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel
+        /// parameter is unavailable, the default ephemeral port range from 49153 through 65535 is
+        /// used. Do not attempt to specify a host port in the ephemeral port range as these are
+        /// reserved for automatic assignment. In general, ports below 32768 are outside of the
+        /// ephemeral port range.</p>
+        /// <note>
+        /// <p>The default ephemeral port range from 49153 through 65535 is always used for
+        /// Docker versions before 1.6.0.</p>
+        /// </note>
+        /// <p>The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the
+        /// Amazon ECS container agent ports 51678-51680. Any host port that was previously specified in
+        /// a running task is also reserved while the task is running (after a task stops, the host
+        /// port is released). The current reserved ports are displayed in the
+        /// <code>remainingResources</code> of <a>DescribeContainerInstances</a>
+        /// output. A container instance can have up to 100 reserved ports at a time, including the
+        /// default reserved ports. Automatically assigned ports don't count toward the 100 reserved
+        /// ports limit.</p>
         pub fn set_host_port(mut self, input: std::option::Option<i32>) -> Self {
             self.host_port = input;
             self
@@ -14870,6 +18398,8 @@ pub mod port_mapping {
             self.protocol = Some(input);
             self
         }
+        /// <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and
+        /// <code>udp</code>. The default is <code>tcp</code>.</p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::TransportProtocol>,
@@ -14936,6 +18466,14 @@ pub mod repository_credentials {
             self.credentials_parameter = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the secret containing the private repository
+        /// credentials.</p>
+        /// <note>
+        /// <p>When you are using the Amazon ECS API, CLI, or Amazon Web Services SDK, if the secret exists in the
+        /// same Region as the task that you are launching then you can use either the full ARN
+        /// or the name of the secret. When you are using the Amazon Web Services Management Console, you must specify the
+        /// full ARN of the secret.</p>
+        /// </note>
         pub fn set_credentials_parameter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14996,6 +18534,9 @@ pub mod platform_device {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID for the GPU(s) on the container instance. The available GPU IDs can also be
+        /// obtained on the container instance in the
+        /// <code>/var/lib/ecs/gpu/nvidia_gpu_info.json</code> file.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -15006,6 +18547,8 @@ pub mod platform_device {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of device that is available on the container instance. The only supported
+        /// value is <code>GPU</code>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::PlatformDeviceType>,
@@ -15029,6 +18572,7 @@ impl PlatformDevice {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -15040,6 +18584,7 @@ impl PlatformDevice {
     std::hash::Hash,
 )]
 pub enum PlatformDeviceType {
+    #[allow(missing_docs)] // documentation missing in model
     Gpu,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -15060,12 +18605,14 @@ impl std::str::FromStr for PlatformDeviceType {
     }
 }
 impl PlatformDeviceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PlatformDeviceType::Gpu => "GPU",
             PlatformDeviceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GPU"]
     }
@@ -15113,6 +18660,7 @@ pub mod setting {
             self.name = Some(input);
             self
         }
+        /// <p>The Amazon ECS resource name.</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::SettingName>) -> Self {
             self.name = input;
             self
@@ -15122,6 +18670,7 @@ pub mod setting {
             self.value = Some(input.into());
             self
         }
+        /// <p>Whether the account setting is enabled or disabled for the specified resource.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -15132,6 +18681,8 @@ pub mod setting {
             self.principal_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. If
+        /// this field is omitted, the authenticated user is assumed.</p>
         pub fn set_principal_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15156,6 +18707,7 @@ impl Setting {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -15167,10 +18719,15 @@ impl Setting {
     std::hash::Hash,
 )]
 pub enum SettingName {
+    #[allow(missing_docs)] // documentation missing in model
     AwsvpcTrunking,
+    #[allow(missing_docs)] // documentation missing in model
     ContainerInsights,
+    #[allow(missing_docs)] // documentation missing in model
     ContainerInstanceLongArnFormat,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceLongArnFormat,
+    #[allow(missing_docs)] // documentation missing in model
     TaskLongArnFormat,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -15195,6 +18752,7 @@ impl std::str::FromStr for SettingName {
     }
 }
 impl SettingName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SettingName::AwsvpcTrunking => "awsvpcTrunking",
@@ -15205,6 +18763,7 @@ impl SettingName {
             SettingName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "awsvpcTrunking",
@@ -15221,6 +18780,7 @@ impl AsRef<str> for SettingName {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -15232,8 +18792,11 @@ impl AsRef<str> for SettingName {
     std::hash::Hash,
 )]
 pub enum DesiredStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -15256,6 +18819,7 @@ impl std::str::FromStr for DesiredStatus {
     }
 }
 impl DesiredStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DesiredStatus::Pending => "PENDING",
@@ -15264,6 +18828,7 @@ impl DesiredStatus {
             DesiredStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PENDING", "RUNNING", "STOPPED"]
     }
@@ -15274,6 +18839,7 @@ impl AsRef<str> for DesiredStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -15285,7 +18851,9 @@ impl AsRef<str> for DesiredStatus {
     std::hash::Hash,
 )]
 pub enum SortOrder {
+    #[allow(missing_docs)] // documentation missing in model
     Asc,
+    #[allow(missing_docs)] // documentation missing in model
     Desc,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -15307,6 +18875,7 @@ impl std::str::FromStr for SortOrder {
     }
 }
 impl SortOrder {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortOrder::Asc => "ASC",
@@ -15314,6 +18883,7 @@ impl SortOrder {
             SortOrder::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ASC", "DESC"]
     }
@@ -15324,6 +18894,7 @@ impl AsRef<str> for SortOrder {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -15335,8 +18906,11 @@ impl AsRef<str> for SortOrder {
     std::hash::Hash,
 )]
 pub enum TaskDefinitionFamilyStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -15359,6 +18933,7 @@ impl std::str::FromStr for TaskDefinitionFamilyStatus {
     }
 }
 impl TaskDefinitionFamilyStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TaskDefinitionFamilyStatus::Active => "ACTIVE",
@@ -15367,6 +18942,7 @@ impl TaskDefinitionFamilyStatus {
             TaskDefinitionFamilyStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "ALL", "INACTIVE"]
     }
@@ -15415,6 +18991,7 @@ pub mod session {
             self.session_id = Some(input.into());
             self
         }
+        /// <p>The ID of the execute command session.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_id = input;
             self
@@ -15425,6 +19002,8 @@ pub mod session {
             self.stream_url = Some(input.into());
             self
         }
+        /// <p>A URL back to managed agent on the container that the SSM Session Manager client uses
+        /// to send commands and receive output from the container.</p>
         pub fn set_stream_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_url = input;
             self
@@ -15435,6 +19014,8 @@ pub mod session {
             self.token_value = Some(input.into());
             self
         }
+        /// <p>An encrypted token value containing session and caller information. Used to
+        /// authenticate the connection to the container.</p>
         pub fn set_token_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token_value = input;
             self
@@ -15456,6 +19037,7 @@ impl Session {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -15467,6 +19049,7 @@ impl Session {
     std::hash::Hash,
 )]
 pub enum TaskSetField {
+    #[allow(missing_docs)] // documentation missing in model
     Tags,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -15487,12 +19070,14 @@ impl std::str::FromStr for TaskSetField {
     }
 }
 impl TaskSetField {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TaskSetField::Tags => "TAGS",
             TaskSetField::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["TAGS"]
     }
@@ -15503,6 +19088,7 @@ impl AsRef<str> for TaskSetField {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -15514,6 +19100,7 @@ impl AsRef<str> for TaskSetField {
     std::hash::Hash,
 )]
 pub enum TaskField {
+    #[allow(missing_docs)] // documentation missing in model
     Tags,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -15534,12 +19121,14 @@ impl std::str::FromStr for TaskField {
     }
 }
 impl TaskField {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TaskField::Tags => "TAGS",
             TaskField::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["TAGS"]
     }
@@ -15550,6 +19139,7 @@ impl AsRef<str> for TaskField {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -15561,6 +19151,7 @@ impl AsRef<str> for TaskField {
     std::hash::Hash,
 )]
 pub enum TaskDefinitionField {
+    #[allow(missing_docs)] // documentation missing in model
     Tags,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -15581,12 +19172,14 @@ impl std::str::FromStr for TaskDefinitionField {
     }
 }
 impl TaskDefinitionField {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TaskDefinitionField::Tags => "TAGS",
             TaskDefinitionField::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["TAGS"]
     }
@@ -15597,6 +19190,7 @@ impl AsRef<str> for TaskDefinitionField {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -15608,6 +19202,7 @@ impl AsRef<str> for TaskDefinitionField {
     std::hash::Hash,
 )]
 pub enum ServiceField {
+    #[allow(missing_docs)] // documentation missing in model
     Tags,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -15628,12 +19223,14 @@ impl std::str::FromStr for ServiceField {
     }
 }
 impl ServiceField {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceField::Tags => "TAGS",
             ServiceField::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["TAGS"]
     }
@@ -15644,6 +19241,7 @@ impl AsRef<str> for ServiceField {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -15655,6 +19253,7 @@ impl AsRef<str> for ServiceField {
     std::hash::Hash,
 )]
 pub enum ContainerInstanceField {
+    #[allow(missing_docs)] // documentation missing in model
     Tags,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -15675,12 +19274,14 @@ impl std::str::FromStr for ContainerInstanceField {
     }
 }
 impl ContainerInstanceField {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContainerInstanceField::Tags => "TAGS",
             ContainerInstanceField::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["TAGS"]
     }
@@ -15691,6 +19292,7 @@ impl AsRef<str> for ContainerInstanceField {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -15702,10 +19304,15 @@ impl AsRef<str> for ContainerInstanceField {
     std::hash::Hash,
 )]
 pub enum ClusterField {
+    #[allow(missing_docs)] // documentation missing in model
     Attachments,
+    #[allow(missing_docs)] // documentation missing in model
     Configurations,
+    #[allow(missing_docs)] // documentation missing in model
     Settings,
+    #[allow(missing_docs)] // documentation missing in model
     Statistics,
+    #[allow(missing_docs)] // documentation missing in model
     Tags,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -15730,6 +19337,7 @@ impl std::str::FromStr for ClusterField {
     }
 }
 impl ClusterField {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ClusterField::Attachments => "ATTACHMENTS",
@@ -15740,6 +19348,7 @@ impl ClusterField {
             ClusterField::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ATTACHMENTS",
@@ -15756,6 +19365,7 @@ impl AsRef<str> for ClusterField {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -15767,6 +19377,7 @@ impl AsRef<str> for ClusterField {
     std::hash::Hash,
 )]
 pub enum CapacityProviderField {
+    #[allow(missing_docs)] // documentation missing in model
     Tags,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -15787,12 +19398,14 @@ impl std::str::FromStr for CapacityProviderField {
     }
 }
 impl CapacityProviderField {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CapacityProviderField::Tags => "TAGS",
             CapacityProviderField::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["TAGS"]
     }

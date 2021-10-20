@@ -19,9 +19,9 @@ pub struct ResourceShare {
     /// <p>The tags for the resource share.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The time when the resource share was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the resource share was last updated.</p>
-    pub last_updated_time: std::option::Option<smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Indicates how the resource share was created. Possible values include:</p>
     /// <ul>
     /// <li>
@@ -74,8 +74,8 @@ pub mod resource_share {
         pub(crate) status: std::option::Option<crate::model::ResourceShareStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) feature_set: std::option::Option<crate::model::ResourceShareFeatureSet>,
     }
     impl Builder {
@@ -84,6 +84,7 @@ pub mod resource_share {
             self.resource_share_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -96,6 +97,7 @@ pub mod resource_share {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the resource share.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -105,6 +107,7 @@ pub mod resource_share {
             self.owning_account_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon Web Services account that owns the resource share.</p>
         pub fn set_owning_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -118,6 +121,8 @@ pub mod resource_share {
             self.allow_external_principals = Some(input);
             self
         }
+        /// <p>Indicates whether principals outside your organization in Organizations can be associated
+        /// with a resource share.</p>
         pub fn set_allow_external_principals(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_external_principals = input;
             self
@@ -127,6 +132,7 @@ pub mod resource_share {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the resource share.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ResourceShareStatus>,
@@ -139,6 +145,7 @@ pub mod resource_share {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>A message about the status of the resource share.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -146,12 +153,18 @@ pub mod resource_share {
             self.status_message = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags for the resource share.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags for the resource share.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -160,25 +173,27 @@ pub mod resource_share {
             self
         }
         /// <p>The time when the resource share was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time when the resource share was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time when the resource share was last updated.</p>
-        pub fn last_updated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_time = Some(input);
             self
         }
+        /// <p>The time when the resource share was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -208,6 +223,27 @@ pub mod resource_share {
             self.feature_set = Some(input);
             self
         }
+        /// <p>Indicates how the resource share was created. Possible values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATED_FROM_POLICY</code> - Indicates that the resource share was created from an
+        /// Amazon Web Services Identity and Access Management (Amazon Web Services IAM) policy attached to a resource.
+        /// These resource shares are visible only to the Amazon Web Services account that created it. They cannot
+        /// be modified in RAM.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of being
+        /// promoted. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>STANDARD</code> - Indicates that the resource share was created in RAM using the
+        /// console or APIs. These resource shares are visible to all principals. They can
+        /// be modified in RAM.</p>
+        /// </li>
+        /// </ul>
         pub fn set_feature_set(
             mut self,
             input: std::option::Option<crate::model::ResourceShareFeatureSet>,
@@ -239,6 +275,7 @@ impl ResourceShare {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -250,8 +287,11 @@ impl ResourceShare {
     std::hash::Hash,
 )]
 pub enum ResourceShareFeatureSet {
+    #[allow(missing_docs)] // documentation missing in model
     CreatedFromPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     PromotingToStandard,
+    #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -274,6 +314,7 @@ impl std::str::FromStr for ResourceShareFeatureSet {
     }
 }
 impl ResourceShareFeatureSet {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceShareFeatureSet::CreatedFromPolicy => "CREATED_FROM_POLICY",
@@ -282,6 +323,7 @@ impl ResourceShareFeatureSet {
             ResourceShareFeatureSet::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CREATED_FROM_POLICY", "PROMOTING_TO_STANDARD", "STANDARD"]
     }
@@ -324,6 +366,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key of the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -333,6 +376,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -353,6 +397,7 @@ impl Tag {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -364,10 +409,15 @@ impl Tag {
     std::hash::Hash,
 )]
 pub enum ResourceShareStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -392,6 +442,7 @@ impl std::str::FromStr for ResourceShareStatus {
     }
 }
 impl ResourceShareStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceShareStatus::Active => "ACTIVE",
@@ -402,6 +453,7 @@ impl ResourceShareStatus {
             ResourceShareStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETED", "DELETING", "FAILED", "PENDING"]
     }
@@ -427,7 +479,7 @@ pub struct ResourceShareInvitation {
     /// <p>The ID of the Amazon Web Services account that received the invitation.</p>
     pub receiver_account_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the invitation was sent.</p>
-    pub invitation_timestamp: std::option::Option<smithy_types::Instant>,
+    pub invitation_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the invitation.</p>
     pub status: std::option::Option<crate::model::ResourceShareInvitationStatus>,
     /// <p>To view the resources associated with a pending resource share invitation, use <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
@@ -470,7 +522,7 @@ pub mod resource_share_invitation {
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
         pub(crate) sender_account_id: std::option::Option<std::string::String>,
         pub(crate) receiver_account_id: std::option::Option<std::string::String>,
-        pub(crate) invitation_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) invitation_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::ResourceShareInvitationStatus>,
         pub(crate) resource_share_associations:
             std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
@@ -485,6 +537,7 @@ pub mod resource_share_invitation {
             self.resource_share_invitation_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
         pub fn set_resource_share_invitation_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -497,6 +550,7 @@ pub mod resource_share_invitation {
             self.resource_share_name = Some(input.into());
             self
         }
+        /// <p>The name of the resource share.</p>
         pub fn set_resource_share_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -509,6 +563,7 @@ pub mod resource_share_invitation {
             self.resource_share_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -521,6 +576,7 @@ pub mod resource_share_invitation {
             self.sender_account_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon Web Services account that sent the invitation.</p>
         pub fn set_sender_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -533,6 +589,7 @@ pub mod resource_share_invitation {
             self.receiver_account_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon Web Services account that received the invitation.</p>
         pub fn set_receiver_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -541,13 +598,14 @@ pub mod resource_share_invitation {
             self
         }
         /// <p>The date and time when the invitation was sent.</p>
-        pub fn invitation_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn invitation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.invitation_timestamp = Some(input);
             self
         }
+        /// <p>The date and time when the invitation was sent.</p>
         pub fn set_invitation_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.invitation_timestamp = input;
             self
@@ -557,6 +615,7 @@ pub mod resource_share_invitation {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the invitation.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ResourceShareInvitationStatus>,
@@ -564,6 +623,12 @@ pub mod resource_share_invitation {
             self.status = input;
             self
         }
+        /// Appends an item to `resource_share_associations`.
+        ///
+        /// To override the contents of this collection use [`set_resource_share_associations`](Self::set_resource_share_associations).
+        ///
+        /// <p>To view the resources associated with a pending resource share invitation, use <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
+        /// ListPendingInvitationResources</a>.</p>
         pub fn resource_share_associations(
             mut self,
             input: impl Into<crate::model::ResourceShareAssociation>,
@@ -573,6 +638,8 @@ pub mod resource_share_invitation {
             self.resource_share_associations = Some(v);
             self
         }
+        /// <p>To view the resources associated with a pending resource share invitation, use <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html">
+        /// ListPendingInvitationResources</a>.</p>
         pub fn set_resource_share_associations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
@@ -586,6 +653,8 @@ pub mod resource_share_invitation {
             self.receiver_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM user or IAM role that received the
+        /// invitation.</p>
         pub fn set_receiver_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.receiver_arn = input;
             self
@@ -648,9 +717,9 @@ pub struct ResourceShareAssociation {
     /// <p>A message about the status of the association.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The time when the association was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the association was last updated.</p>
-    pub last_updated_time: std::option::Option<smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Indicates whether the principal belongs to the same organization in Organizations as the
     /// Amazon Web Services account that owns the resource share.</p>
     pub external: std::option::Option<bool>,
@@ -683,8 +752,8 @@ pub mod resource_share_association {
             std::option::Option<crate::model::ResourceShareAssociationType>,
         pub(crate) status: std::option::Option<crate::model::ResourceShareAssociationStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) external: std::option::Option<bool>,
     }
     impl Builder {
@@ -693,6 +762,7 @@ pub mod resource_share_association {
             self.resource_share_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -705,6 +775,7 @@ pub mod resource_share_association {
             self.resource_share_name = Some(input.into());
             self
         }
+        /// <p>The name of the resource share.</p>
         pub fn set_resource_share_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -735,6 +806,25 @@ pub mod resource_share_association {
             self.associated_entity = Some(input.into());
             self
         }
+        /// <p>The associated entity. For resource associations, this is the Amazon Resource Name
+        /// (ARN) of the resource. For principal associations, this is one of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>An Amazon Web Services account ID</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an organization in Organizations</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an IAM role</p>
+        /// </li>
+        /// <li>
+        /// <p>An ARN of an IAM user</p>
+        /// </li>
+        /// </ul>
         pub fn set_associated_entity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -750,6 +840,7 @@ pub mod resource_share_association {
             self.association_type = Some(input);
             self
         }
+        /// <p>The association type.</p>
         pub fn set_association_type(
             mut self,
             input: std::option::Option<crate::model::ResourceShareAssociationType>,
@@ -762,6 +853,7 @@ pub mod resource_share_association {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the association.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ResourceShareAssociationStatus>,
@@ -774,6 +866,7 @@ pub mod resource_share_association {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>A message about the status of the association.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -782,25 +875,27 @@ pub mod resource_share_association {
             self
         }
         /// <p>The time when the association was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time when the association was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time when the association was last updated.</p>
-        pub fn last_updated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_time = Some(input);
             self
         }
+        /// <p>The time when the association was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -811,6 +906,8 @@ pub mod resource_share_association {
             self.external = Some(input);
             self
         }
+        /// <p>Indicates whether the principal belongs to the same organization in Organizations as the
+        /// Amazon Web Services account that owns the resource share.</p>
         pub fn set_external(mut self, input: std::option::Option<bool>) -> Self {
             self.external = input;
             self
@@ -838,6 +935,7 @@ impl ResourceShareAssociation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -849,10 +947,15 @@ impl ResourceShareAssociation {
     std::hash::Hash,
 )]
 pub enum ResourceShareAssociationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Associated,
+    #[allow(missing_docs)] // documentation missing in model
     Associating,
+    #[allow(missing_docs)] // documentation missing in model
     Disassociated,
+    #[allow(missing_docs)] // documentation missing in model
     Disassociating,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -877,6 +980,7 @@ impl std::str::FromStr for ResourceShareAssociationStatus {
     }
 }
 impl ResourceShareAssociationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceShareAssociationStatus::Associated => "ASSOCIATED",
@@ -887,6 +991,7 @@ impl ResourceShareAssociationStatus {
             ResourceShareAssociationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ASSOCIATED",
@@ -903,6 +1008,7 @@ impl AsRef<str> for ResourceShareAssociationStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -914,7 +1020,9 @@ impl AsRef<str> for ResourceShareAssociationStatus {
     std::hash::Hash,
 )]
 pub enum ResourceShareAssociationType {
+    #[allow(missing_docs)] // documentation missing in model
     Principal,
+    #[allow(missing_docs)] // documentation missing in model
     Resource,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -936,6 +1044,7 @@ impl std::str::FromStr for ResourceShareAssociationType {
     }
 }
 impl ResourceShareAssociationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceShareAssociationType::Principal => "PRINCIPAL",
@@ -943,6 +1052,7 @@ impl ResourceShareAssociationType {
             ResourceShareAssociationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PRINCIPAL", "RESOURCE"]
     }
@@ -953,6 +1063,7 @@ impl AsRef<str> for ResourceShareAssociationType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -964,9 +1075,13 @@ impl AsRef<str> for ResourceShareAssociationType {
     std::hash::Hash,
 )]
 pub enum ResourceShareInvitationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Accepted,
+    #[allow(missing_docs)] // documentation missing in model
     Expired,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Rejected,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -990,6 +1105,7 @@ impl std::str::FromStr for ResourceShareInvitationStatus {
     }
 }
 impl ResourceShareInvitationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceShareInvitationStatus::Accepted => "ACCEPTED",
@@ -999,6 +1115,7 @@ impl ResourceShareInvitationStatus {
             ResourceShareInvitationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACCEPTED", "EXPIRED", "PENDING", "REJECTED"]
     }
@@ -1042,6 +1159,7 @@ pub mod service_name_and_resource_type {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The shareable resource types.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1054,6 +1172,7 @@ pub mod service_name_and_resource_type {
             self.service_name = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon Web Services services to which the resources belong.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -1092,9 +1211,9 @@ pub struct ResourceSharePermissionSummary {
     /// <p>The current status of the permission.</p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time when the permission was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time when the permission was last updated.</p>
-    pub last_updated_time: std::option::Option<smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies whether the version of the permission is set to the default version for this
     /// resource type.</p>
     pub is_resource_type_default: std::option::Option<bool>,
@@ -1126,8 +1245,8 @@ pub mod resource_share_permission_summary {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) is_resource_type_default: std::option::Option<bool>,
     }
     impl Builder {
@@ -1136,6 +1255,7 @@ pub mod resource_share_permission_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the permission.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1145,6 +1265,7 @@ pub mod resource_share_permission_summary {
             self.version = Some(input.into());
             self
         }
+        /// <p>The identifier for the version of the permission.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -1155,6 +1276,8 @@ pub mod resource_share_permission_summary {
             self.default_version = Some(input);
             self
         }
+        /// <p>Specifies whether the version of the permission is set to the default version for this
+        /// permission.</p>
         pub fn set_default_version(mut self, input: std::option::Option<bool>) -> Self {
             self.default_version = input;
             self
@@ -1164,6 +1287,7 @@ pub mod resource_share_permission_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the permission.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1173,6 +1297,7 @@ pub mod resource_share_permission_summary {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The type of resource to which the permission applies.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1185,30 +1310,33 @@ pub mod resource_share_permission_summary {
             self.status = Some(input.into());
             self
         }
+        /// <p>The current status of the permission.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
         }
         /// <p>The date and time when the permission was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The date and time when the permission was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The date and time when the permission was last updated.</p>
-        pub fn last_updated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_time = Some(input);
             self
         }
+        /// <p>The date and time when the permission was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -1219,6 +1347,8 @@ pub mod resource_share_permission_summary {
             self.is_resource_type_default = Some(input);
             self
         }
+        /// <p>Specifies whether the version of the permission is set to the default version for this
+        /// resource type.</p>
         pub fn set_is_resource_type_default(mut self, input: std::option::Option<bool>) -> Self {
             self.is_resource_type_default = input;
             self
@@ -1264,9 +1394,9 @@ pub struct Resource {
     /// <p>A message about the status of the resource.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The time when the resource was associated with the resource share.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the association was last updated.</p>
-    pub last_updated_time: std::option::Option<smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Resource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1294,8 +1424,8 @@ pub mod resource {
         pub(crate) resource_group_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ResourceStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -1303,6 +1433,7 @@ pub mod resource {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1312,6 +1443,7 @@ pub mod resource {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The resource type.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -1321,6 +1453,7 @@ pub mod resource {
             self.resource_share_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1334,6 +1467,8 @@ pub mod resource {
             self.resource_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource group. This value is returned only if
+        /// the resource is a resource group.</p>
         pub fn set_resource_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1346,6 +1481,7 @@ pub mod resource {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the resource.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ResourceStatus>,
@@ -1358,6 +1494,7 @@ pub mod resource {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>A message about the status of the resource.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1366,25 +1503,27 @@ pub mod resource {
             self
         }
         /// <p>The time when the resource was associated with the resource share.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time when the resource was associated with the resource share.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time when the association was last updated.</p>
-        pub fn last_updated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_time = Some(input);
             self
         }
+        /// <p>The time when the association was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -1411,6 +1550,7 @@ impl Resource {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1422,10 +1562,15 @@ impl Resource {
     std::hash::Hash,
 )]
 pub enum ResourceStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     LimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Unavailable,
+    #[allow(missing_docs)] // documentation missing in model
     ZonalResourceInaccessible,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1450,6 +1595,7 @@ impl std::str::FromStr for ResourceStatus {
     }
 }
 impl ResourceStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceStatus::Available => "AVAILABLE",
@@ -1460,6 +1606,7 @@ impl ResourceStatus {
             ResourceStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -1476,7 +1623,7 @@ impl AsRef<str> for ResourceStatus {
     }
 }
 
-/// **NOTE:** `ResourceOwner::Self` has been renamed to `::SelfValue`.
+/// _Note: `ResourceOwner::Self` has been renamed to `::SelfValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1488,8 +1635,9 @@ impl AsRef<str> for ResourceStatus {
     std::hash::Hash,
 )]
 pub enum ResourceOwner {
+    #[allow(missing_docs)] // documentation missing in model
     OtherAccounts,
-    /// **NOTE:** `::Self` has been renamed to `::SelfValue`.
+    /// _Note: `::Self` has been renamed to `::SelfValue`._
     SelfValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1511,6 +1659,7 @@ impl std::str::FromStr for ResourceOwner {
     }
 }
 impl ResourceOwner {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceOwner::OtherAccounts => "OTHER-ACCOUNTS",
@@ -1518,6 +1667,7 @@ impl ResourceOwner {
             ResourceOwner::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["OTHER-ACCOUNTS", "SELF"]
     }
@@ -1537,9 +1687,9 @@ pub struct Principal {
     /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
     pub resource_share_arn: std::option::Option<std::string::String>,
     /// <p>The time when the principal was associated with the resource share.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the association was last updated.</p>
-    pub last_updated_time: std::option::Option<smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Indicates whether the principal belongs to the same organization in Organizations as the
     /// Amazon Web Services account that owns the resource share.</p>
     pub external: std::option::Option<bool>,
@@ -1563,8 +1713,8 @@ pub mod principal {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) external: std::option::Option<bool>,
     }
     impl Builder {
@@ -1573,6 +1723,7 @@ pub mod principal {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the principal.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1582,6 +1733,7 @@ pub mod principal {
             self.resource_share_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1590,25 +1742,27 @@ pub mod principal {
             self
         }
         /// <p>The time when the principal was associated with the resource share.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time when the principal was associated with the resource share.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time when the association was last updated.</p>
-        pub fn last_updated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_time = Some(input);
             self
         }
+        /// <p>The time when the association was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -1619,6 +1773,8 @@ pub mod principal {
             self.external = Some(input);
             self
         }
+        /// <p>Indicates whether the principal belongs to the same organization in Organizations as the
+        /// Amazon Web Services account that owns the resource share.</p>
         pub fn set_external(mut self, input: std::option::Option<bool>) -> Self {
             self.external = input;
             self
@@ -1674,16 +1830,23 @@ pub mod tag_filter {
             self.tag_key = Some(input.into());
             self
         }
+        /// <p>The tag key.</p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tag_key = input;
             self
         }
+        /// Appends an item to `tag_values`.
+        ///
+        /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
+        ///
+        /// <p>The tag values.</p>
         pub fn tag_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_values.unwrap_or_default();
             v.push(input.into());
             self.tag_values = Some(v);
             self
         }
+        /// <p>The tag values.</p>
         pub fn set_tag_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1727,9 +1890,9 @@ pub struct ResourceSharePermissionDetail {
     /// to which the principal is granted or denied access.</p>
     pub permission: std::option::Option<std::string::String>,
     /// <p>The date and time when the permission was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time when the permission was last updated.</p>
-    pub last_updated_time: std::option::Option<smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies whether the version of the permission is set to the default version for this
     /// resource type.</p>
     pub is_resource_type_default: std::option::Option<bool>,
@@ -1761,8 +1924,8 @@ pub mod resource_share_permission_detail {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) permission: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) is_resource_type_default: std::option::Option<bool>,
     }
     impl Builder {
@@ -1771,6 +1934,7 @@ pub mod resource_share_permission_detail {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the permission.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1780,6 +1944,7 @@ pub mod resource_share_permission_detail {
             self.version = Some(input.into());
             self
         }
+        /// <p>The identifier for the version of the permission.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -1790,6 +1955,8 @@ pub mod resource_share_permission_detail {
             self.default_version = Some(input);
             self
         }
+        /// <p>Specifies whether the version of the permission is set to the default version for this
+        /// permission.</p>
         pub fn set_default_version(mut self, input: std::option::Option<bool>) -> Self {
             self.default_version = input;
             self
@@ -1799,6 +1966,7 @@ pub mod resource_share_permission_detail {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the permission.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1808,6 +1976,7 @@ pub mod resource_share_permission_detail {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The resource type to which the permission applies.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1822,30 +1991,35 @@ pub mod resource_share_permission_detail {
             self.permission = Some(input.into());
             self
         }
+        /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates
+        /// whether the actions are allowed or denied. The <code>actions</code> list the API actions
+        /// to which the principal is granted or denied access.</p>
         pub fn set_permission(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.permission = input;
             self
         }
         /// <p>The date and time when the permission was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The date and time when the permission was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The date and time when the permission was last updated.</p>
-        pub fn last_updated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_time = Some(input);
             self
         }
+        /// <p>The date and time when the permission was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -1856,6 +2030,8 @@ pub mod resource_share_permission_detail {
             self.is_resource_type_default = Some(input);
             self
         }
+        /// <p>Specifies whether the version of the permission is set to the default version for this
+        /// resource type.</p>
         pub fn set_is_resource_type_default(mut self, input: std::option::Option<bool>) -> Self {
             self.is_resource_type_default = input;
             self

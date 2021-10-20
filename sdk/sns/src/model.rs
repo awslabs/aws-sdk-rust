@@ -31,6 +31,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The required key portion of the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -40,6 +41,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The optional value portion of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -82,7 +84,7 @@ pub struct MessageAttributeValue {
     pub string_value: std::option::Option<std::string::String>,
     /// <p>Binary type attributes can store any binary data, for example, compressed data,
     /// encrypted data, or images.</p>
-    pub binary_value: std::option::Option<smithy_types::Blob>,
+    pub binary_value: std::option::Option<aws_smithy_types::Blob>,
 }
 impl std::fmt::Debug for MessageAttributeValue {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -101,7 +103,7 @@ pub mod message_attribute_value {
     pub struct Builder {
         pub(crate) data_type: std::option::Option<std::string::String>,
         pub(crate) string_value: std::option::Option<std::string::String>,
-        pub(crate) binary_value: std::option::Option<smithy_types::Blob>,
+        pub(crate) binary_value: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
         /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and
@@ -111,6 +113,9 @@ pub mod message_attribute_value {
             self.data_type = Some(input.into());
             self
         }
+        /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and
+        /// Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
+        /// Attribute Data Types</a>.</p>
         pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_type = input;
             self
@@ -121,17 +126,24 @@ pub mod message_attribute_value {
             self.string_value = Some(input.into());
             self
         }
+        /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable
+        /// Characters</a>.</p>
         pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.string_value = input;
             self
         }
         /// <p>Binary type attributes can store any binary data, for example, compressed data,
         /// encrypted data, or images.</p>
-        pub fn binary_value(mut self, input: smithy_types::Blob) -> Self {
+        pub fn binary_value(mut self, input: aws_smithy_types::Blob) -> Self {
             self.binary_value = Some(input);
             self
         }
-        pub fn set_binary_value(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>Binary type attributes can store any binary data, for example, compressed data,
+        /// encrypted data, or images.</p>
+        pub fn set_binary_value(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
             self.binary_value = input;
             self
         }
@@ -181,6 +193,7 @@ pub mod topic {
             self.topic_arn = Some(input.into());
             self
         }
+        /// <p>The topic's ARN.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -244,6 +257,7 @@ pub mod subscription {
             self.subscription_arn = Some(input.into());
             self
         }
+        /// <p>The subscription's ARN.</p>
         pub fn set_subscription_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -256,6 +270,7 @@ pub mod subscription {
             self.owner = Some(input.into());
             self
         }
+        /// <p>The subscription's owner.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -265,6 +280,7 @@ pub mod subscription {
             self.protocol = Some(input.into());
             self
         }
+        /// <p>The subscription's protocol.</p>
         pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.protocol = input;
             self
@@ -274,6 +290,7 @@ pub mod subscription {
             self.endpoint = Some(input.into());
             self
         }
+        /// <p>The subscription's endpoint (format depends on the protocol).</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint = input;
             self
@@ -283,6 +300,7 @@ pub mod subscription {
             self.topic_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the subscription's topic.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -347,6 +365,7 @@ pub mod sms_sandbox_phone_number {
             self.phone_number = Some(input.into());
             self
         }
+        /// <p>The destination phone number.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -359,6 +378,7 @@ pub mod sms_sandbox_phone_number {
             self.status = Some(input);
             self
         }
+        /// <p>The destination phone number's verification status.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::SmsSandboxPhoneNumberVerificationStatus>,
@@ -397,7 +417,9 @@ impl SmsSandboxPhoneNumber {
     std::hash::Hash,
 )]
 pub enum SmsSandboxPhoneNumberVerificationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Verified,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -419,6 +441,7 @@ impl std::str::FromStr for SmsSandboxPhoneNumberVerificationStatus {
     }
 }
 impl SmsSandboxPhoneNumberVerificationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SmsSandboxPhoneNumberVerificationStatus::Pending => "Pending",
@@ -426,6 +449,7 @@ impl SmsSandboxPhoneNumberVerificationStatus {
             SmsSandboxPhoneNumberVerificationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Pending", "Verified"]
     }
@@ -471,6 +495,7 @@ pub mod platform_application {
             self.platform_application_arn = Some(input.into());
             self
         }
+        /// <p>PlatformApplicationArn for platform application object.</p>
         pub fn set_platform_application_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -478,6 +503,11 @@ pub mod platform_application {
             self.platform_application_arn = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>Attributes for platform application object.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -488,6 +518,7 @@ pub mod platform_application {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>Attributes for platform application object.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -518,7 +549,7 @@ impl PlatformApplication {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhoneNumberInformation {
     /// <p>The date and time when the phone number was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The phone number.</p>
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The status of the phone number.</p>
@@ -548,7 +579,7 @@ pub mod phone_number_information {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) phone_number: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) iso2_country_code: std::option::Option<std::string::String>,
@@ -558,11 +589,15 @@ pub mod phone_number_information {
     }
     impl Builder {
         /// <p>The date and time when the phone number was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time when the phone number was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -571,6 +606,7 @@ pub mod phone_number_information {
             self.phone_number = Some(input.into());
             self
         }
+        /// <p>The phone number.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -580,6 +616,7 @@ pub mod phone_number_information {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the phone number.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -589,6 +626,7 @@ pub mod phone_number_information {
             self.iso2_country_code = Some(input.into());
             self
         }
+        /// <p>The two-character code for the country or region, in ISO 3166-1 alpha-2 format.</p>
         pub fn set_iso2_country_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -601,6 +639,7 @@ pub mod phone_number_information {
             self.route_type = Some(input);
             self
         }
+        /// <p>The list of supported routes.</p>
         pub fn set_route_type(
             mut self,
             input: std::option::Option<crate::model::RouteType>,
@@ -608,6 +647,11 @@ pub mod phone_number_information {
             self.route_type = input;
             self
         }
+        /// Appends an item to `number_capabilities`.
+        ///
+        /// To override the contents of this collection use [`set_number_capabilities`](Self::set_number_capabilities).
+        ///
+        /// <p>The capabilities of each phone number.</p>
         pub fn number_capabilities(
             mut self,
             input: impl Into<crate::model::NumberCapability>,
@@ -617,6 +661,7 @@ pub mod phone_number_information {
             self.number_capabilities = Some(v);
             self
         }
+        /// <p>The capabilities of each phone number.</p>
         pub fn set_number_capabilities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
@@ -656,8 +701,11 @@ impl PhoneNumberInformation {
     std::hash::Hash,
 )]
 pub enum NumberCapability {
+    #[allow(missing_docs)] // documentation missing in model
     Mms,
+    #[allow(missing_docs)] // documentation missing in model
     Sms,
+    #[allow(missing_docs)] // documentation missing in model
     Voice,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -680,6 +728,7 @@ impl std::str::FromStr for NumberCapability {
     }
 }
 impl NumberCapability {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NumberCapability::Mms => "MMS",
@@ -688,6 +737,7 @@ impl NumberCapability {
             NumberCapability::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MMS", "SMS", "VOICE"]
     }
@@ -713,8 +763,11 @@ impl AsRef<str> for NumberCapability {
     std::hash::Hash,
 )]
 pub enum RouteType {
+    #[allow(missing_docs)] // documentation missing in model
     Premium,
+    #[allow(missing_docs)] // documentation missing in model
     Promotional,
+    #[allow(missing_docs)] // documentation missing in model
     Transactional,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -737,6 +790,7 @@ impl std::str::FromStr for RouteType {
     }
 }
 impl RouteType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RouteType::Premium => "Premium",
@@ -745,6 +799,7 @@ impl RouteType {
             RouteType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Premium", "Promotional", "Transactional"]
     }
@@ -790,10 +845,16 @@ pub mod endpoint {
             self.endpoint_arn = Some(input.into());
             self
         }
+        /// <p>EndpointArn for mobile app and device.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_arn = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>Attributes for endpoint.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -804,6 +865,7 @@ pub mod endpoint {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>Attributes for endpoint.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -841,18 +903,31 @@ impl Endpoint {
     std::hash::Hash,
 )]
 pub enum LanguageCodeString {
+    #[allow(missing_docs)] // documentation missing in model
     DeDe,
+    #[allow(missing_docs)] // documentation missing in model
     EnGb,
+    #[allow(missing_docs)] // documentation missing in model
     EnUs,
+    #[allow(missing_docs)] // documentation missing in model
     Es419,
+    #[allow(missing_docs)] // documentation missing in model
     EsEs,
+    #[allow(missing_docs)] // documentation missing in model
     FrCa,
+    #[allow(missing_docs)] // documentation missing in model
     FrFr,
+    #[allow(missing_docs)] // documentation missing in model
     ItIt,
+    #[allow(missing_docs)] // documentation missing in model
     JpJp,
+    #[allow(missing_docs)] // documentation missing in model
     KrKr,
+    #[allow(missing_docs)] // documentation missing in model
     PtBr,
+    #[allow(missing_docs)] // documentation missing in model
     ZhCn,
+    #[allow(missing_docs)] // documentation missing in model
     ZhTw,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -885,6 +960,7 @@ impl std::str::FromStr for LanguageCodeString {
     }
 }
 impl LanguageCodeString {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LanguageCodeString::DeDe => "de-DE",
@@ -903,6 +979,7 @@ impl LanguageCodeString {
             LanguageCodeString::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "de-DE", "en-GB", "en-US", "es-419", "es-ES", "fr-CA", "fr-FR", "it-IT", "ja-JP",

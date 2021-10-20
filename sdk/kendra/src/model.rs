@@ -32,6 +32,7 @@ pub mod s3_path {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The name of the S3 bucket that contains the file.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -41,6 +42,7 @@ pub mod s3_path {
             self.key = Some(input.into());
             self
         }
+        /// <p>The name of the file.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -61,6 +63,7 @@ impl S3Path {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -72,7 +75,9 @@ impl S3Path {
     std::hash::Hash,
 )]
 pub enum Mode {
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
+    #[allow(missing_docs)] // documentation missing in model
     LearnOnly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -94,6 +99,7 @@ impl std::str::FromStr for Mode {
     }
 }
 impl Mode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Mode::Enabled => "ENABLED",
@@ -101,6 +107,7 @@ impl Mode {
             Mode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ENABLED", "LEARN_ONLY"]
     }
@@ -165,6 +172,10 @@ pub mod user_group_resolution_configuration {
             self.user_group_resolution_mode = Some(input);
             self
         }
+        /// <p>The identity store provider (mode) you want to use to fetch access levels of groups and
+        /// users. AWS Single Sign-On is currently the only available mode. Your users and groups
+        /// must
+        /// exist in an AWS SSO identity source in order to use this mode.</p>
         pub fn set_user_group_resolution_mode(
             mut self,
             input: std::option::Option<crate::model::UserGroupResolutionMode>,
@@ -187,6 +198,7 @@ impl UserGroupResolutionConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -198,7 +210,9 @@ impl UserGroupResolutionConfiguration {
     std::hash::Hash,
 )]
 pub enum UserGroupResolutionMode {
+    #[allow(missing_docs)] // documentation missing in model
     AwsSso,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -220,6 +234,7 @@ impl std::str::FromStr for UserGroupResolutionMode {
     }
 }
 impl UserGroupResolutionMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UserGroupResolutionMode::AwsSso => "AWS_SSO",
@@ -227,6 +242,7 @@ impl UserGroupResolutionMode {
             UserGroupResolutionMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AWS_SSO", "NONE"]
     }
@@ -237,6 +253,7 @@ impl AsRef<str> for UserGroupResolutionMode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -248,7 +265,9 @@ impl AsRef<str> for UserGroupResolutionMode {
     std::hash::Hash,
 )]
 pub enum UserContextPolicy {
+    #[allow(missing_docs)] // documentation missing in model
     AttributeFilter,
+    #[allow(missing_docs)] // documentation missing in model
     UserToken,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -270,6 +289,7 @@ impl std::str::FromStr for UserContextPolicy {
     }
 }
 impl UserContextPolicy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UserContextPolicy::AttributeFilter => "ATTRIBUTE_FILTER",
@@ -277,6 +297,7 @@ impl UserContextPolicy {
             UserContextPolicy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ATTRIBUTE_FILTER", "USER_TOKEN"]
     }
@@ -331,6 +352,7 @@ pub mod user_token_configuration {
             self.jwt_token_type_configuration = Some(input);
             self
         }
+        /// <p>Information about the JWT token type configuration.</p>
         pub fn set_jwt_token_type_configuration(
             mut self,
             input: std::option::Option<crate::model::JwtTokenTypeConfiguration>,
@@ -346,6 +368,7 @@ pub mod user_token_configuration {
             self.json_token_type_configuration = Some(input);
             self
         }
+        /// <p>Information about the JSON token type configuration.</p>
         pub fn set_json_token_type_configuration(
             mut self,
             input: std::option::Option<crate::model::JsonTokenTypeConfiguration>,
@@ -401,6 +424,7 @@ pub mod json_token_type_configuration {
             self.user_name_attribute_field = Some(input.into());
             self
         }
+        /// <p>The user name attribute field.</p>
         pub fn set_user_name_attribute_field(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -413,6 +437,7 @@ pub mod json_token_type_configuration {
             self.group_attribute_field = Some(input.into());
             self
         }
+        /// <p>The group attribute field.</p>
         pub fn set_group_attribute_field(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -488,6 +513,7 @@ pub mod jwt_token_type_configuration {
             self.key_location = Some(input);
             self
         }
+        /// <p>The location of the key.</p>
         pub fn set_key_location(
             mut self,
             input: std::option::Option<crate::model::KeyLocation>,
@@ -500,6 +526,7 @@ pub mod jwt_token_type_configuration {
             self.url = Some(input.into());
             self
         }
+        /// <p>The signing key URL.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -509,6 +536,7 @@ pub mod jwt_token_type_configuration {
             self.secret_manager_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (arn) of the secret.</p>
         pub fn set_secret_manager_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -521,6 +549,7 @@ pub mod jwt_token_type_configuration {
             self.user_name_attribute_field = Some(input.into());
             self
         }
+        /// <p>The user name attribute field.</p>
         pub fn set_user_name_attribute_field(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -533,6 +562,7 @@ pub mod jwt_token_type_configuration {
             self.group_attribute_field = Some(input.into());
             self
         }
+        /// <p>The group attribute field.</p>
         pub fn set_group_attribute_field(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -545,6 +575,7 @@ pub mod jwt_token_type_configuration {
             self.issuer = Some(input.into());
             self
         }
+        /// <p>The issuer of the token.</p>
         pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.issuer = input;
             self
@@ -554,6 +585,7 @@ pub mod jwt_token_type_configuration {
             self.claim_regex = Some(input.into());
             self
         }
+        /// <p>The regular expression that identifies the claim.</p>
         pub fn set_claim_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.claim_regex = input;
             self
@@ -579,6 +611,7 @@ impl JwtTokenTypeConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -590,7 +623,9 @@ impl JwtTokenTypeConfiguration {
     std::hash::Hash,
 )]
 pub enum KeyLocation {
+    #[allow(missing_docs)] // documentation missing in model
     SecretManager,
+    #[allow(missing_docs)] // documentation missing in model
     Url,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -612,6 +647,7 @@ impl std::str::FromStr for KeyLocation {
     }
 }
 impl KeyLocation {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             KeyLocation::SecretManager => "SECRET_MANAGER",
@@ -619,6 +655,7 @@ impl KeyLocation {
             KeyLocation::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SECRET_MANAGER", "URL"]
     }
@@ -679,6 +716,9 @@ pub mod capacity_units_configuration {
             self.storage_capacity_units = Some(input);
             self
         }
+        /// <p>The amount of extra storage capacity for an index.
+        /// A single capacity unit provides 30 GB of storage space or 100,000 documents,
+        /// whichever is reached first.</p>
         pub fn set_storage_capacity_units(mut self, input: std::option::Option<i32>) -> Self {
             self.storage_capacity_units = input;
             self
@@ -700,6 +740,19 @@ pub mod capacity_units_configuration {
             self.query_capacity_units = Some(input);
             self
         }
+        /// <p>The amount of extra query capacity for an index and
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_GetQuerySuggestions.html">GetQuerySuggestions</a>
+        /// capacity.</p>
+        /// <p>A single extra capacity unit for an index provides 0.1 queries per second or approximately
+        /// 8,000 queries per day.</p>
+        /// <p>
+        /// <code>GetQuerySuggestions</code> capacity is five times the
+        /// provisioned query capacity for an index, or the base capacity of 2.5 calls per second,
+        /// whichever is higher. For example, the base capacity for an index is 0.1 queries per
+        /// second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second.
+        /// If you add another 0.1 queries per second to total 0.2 queries per second for an index, the
+        /// <code>GetQuerySuggestions</code> capacity is 2.5 calls per second
+        /// (higher than five times 0.2 queries per second).</p>
         pub fn set_query_capacity_units(mut self, input: std::option::Option<i32>) -> Self {
             self.query_capacity_units = input;
             self
@@ -762,6 +815,7 @@ pub mod document_metadata_configuration {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the index field.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -771,6 +825,7 @@ pub mod document_metadata_configuration {
             self.r#type = Some(input);
             self
         }
+        /// <p>The data type of the index field. </p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DocumentAttributeValueType>,
@@ -784,6 +839,8 @@ pub mod document_metadata_configuration {
             self.relevance = Some(input);
             self
         }
+        /// <p>Provides manual tuning parameters to determine how the field
+        /// affects the search results.</p>
         pub fn set_relevance(
             mut self,
             input: std::option::Option<crate::model::Relevance>,
@@ -797,6 +854,8 @@ pub mod document_metadata_configuration {
             self.search = Some(input);
             self
         }
+        /// <p>Provides information about how the field is used during a
+        /// search.</p>
         pub fn set_search(mut self, input: std::option::Option<crate::model::Search>) -> Self {
             self.search = input;
             self
@@ -872,6 +931,9 @@ pub mod search {
             self.facetable = Some(input);
             self
         }
+        /// <p>Indicates that the field can be used to create search facets, a
+        /// count of results for each value in the field. The default is
+        /// <code>false</code> .</p>
         pub fn set_facetable(mut self, input: std::option::Option<bool>) -> Self {
             self.facetable = input;
             self
@@ -885,6 +947,11 @@ pub mod search {
             self.searchable = Some(input);
             self
         }
+        /// <p>Determines whether the field is used in the search. If the
+        /// <code>Searchable</code> field is <code>true</code>, you can use
+        /// relevance tuning to manually tune how Amazon Kendra weights the field in
+        /// the search. The default is <code>true</code> for string fields and
+        /// <code>false</code> for number and date fields.</p>
         pub fn set_searchable(mut self, input: std::option::Option<bool>) -> Self {
             self.searchable = input;
             self
@@ -895,6 +962,8 @@ pub mod search {
             self.displayable = Some(input);
             self
         }
+        /// <p>Determines whether the field is returned in the query response.
+        /// The default is <code>true</code>.</p>
         pub fn set_displayable(mut self, input: std::option::Option<bool>) -> Self {
             self.displayable = input;
             self
@@ -907,6 +976,10 @@ pub mod search {
             self.sortable = Some(input);
             self
         }
+        /// <p>Determines whether the field can be used to sort the results of a
+        /// query. If you specify sorting on a field that does not have
+        /// <code>Sortable</code> set to <code>true</code>, Amazon Kendra returns an
+        /// exception. The default is <code>false</code>.</p>
         pub fn set_sortable(mut self, input: std::option::Option<bool>) -> Self {
             self.sortable = input;
             self
@@ -1016,6 +1089,12 @@ pub mod relevance {
             self.freshness = Some(input);
             self
         }
+        /// <p>Indicates that this field determines how "fresh" a document is.
+        /// For example, if document 1 was created on November 5, and document 2
+        /// was created on October 31, document 1 is "fresher" than document 2.
+        /// You can only set the <code>Freshness</code> field on one
+        /// <code>DATE</code> type field. Only applies to <code>DATE</code>
+        /// fields.</p>
         pub fn set_freshness(mut self, input: std::option::Option<bool>) -> Self {
             self.freshness = input;
             self
@@ -1026,6 +1105,8 @@ pub mod relevance {
             self.importance = Some(input);
             self
         }
+        /// <p>The relative importance of the field in the search. Larger numbers
+        /// provide more of a boost than smaller numbers.</p>
         pub fn set_importance(mut self, input: std::option::Option<i32>) -> Self {
             self.importance = input;
             self
@@ -1043,6 +1124,15 @@ pub mod relevance {
             self.duration = Some(input.into());
             self
         }
+        /// <p>Specifies the time period that the boost applies to. For example,
+        /// to make the boost apply to documents with the field value within the
+        /// last month, you would use "2628000s". Once the field value is beyond
+        /// the specified range, the effect of the boost drops off. The higher
+        /// the importance, the faster the effect drops off. If you don't
+        /// specify a value, the default is 3 months. The value of the field is
+        /// a numeric string followed by the character "s", for example "86400s"
+        /// for one day, or "604800s" for one week. </p>
+        /// <p>Only applies to <code>DATE</code> fields.</p>
         pub fn set_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.duration = input;
             self
@@ -1062,10 +1152,35 @@ pub mod relevance {
             self.rank_order = Some(input);
             self
         }
+        /// <p>Determines how values should be interpreted.</p>
+        /// <p>When the <code>RankOrder</code> field is <code>ASCENDING</code>,
+        /// higher numbers are better. For example, a document with a rating
+        /// score of 10 is higher ranking than a document with a rating score of
+        /// 1.</p>
+        /// <p>When the <code>RankOrder</code> field is <code>DESCENDING</code>,
+        /// lower numbers are better. For example, in a task tracking
+        /// application, a priority 1 task is more important than a priority 5
+        /// task.</p>
+        /// <p>Only applies to <code>LONG</code> and <code>DOUBLE</code>
+        /// fields.</p>
         pub fn set_rank_order(mut self, input: std::option::Option<crate::model::Order>) -> Self {
             self.rank_order = input;
             self
         }
+        /// Adds a key-value pair to `value_importance_map`.
+        ///
+        /// To override the contents of this collection use [`set_value_importance_map`](Self::set_value_importance_map).
+        ///
+        /// <p>A list of values that should be given a different boost when they
+        /// appear in the result list. For example, if you are boosting a field
+        /// called "department," query terms that match the department field are
+        /// boosted in the result. However, you can add entries from the
+        /// department field to boost documents with those values higher. </p>
+        /// <p>For example, you can add entries to the map with names of
+        /// departments. If you add "HR",5 and "Legal",3 those departments are
+        /// given special attention when they appear in the metadata of a
+        /// document. When those terms appear they are given the specified
+        /// importance instead of the regular importance for the boost.</p>
         pub fn value_importance_map(
             mut self,
             k: impl Into<std::string::String>,
@@ -1076,6 +1191,16 @@ pub mod relevance {
             self.value_importance_map = Some(hash_map);
             self
         }
+        /// <p>A list of values that should be given a different boost when they
+        /// appear in the result list. For example, if you are boosting a field
+        /// called "department," query terms that match the department field are
+        /// boosted in the result. However, you can add entries from the
+        /// department field to boost documents with those values higher. </p>
+        /// <p>For example, you can add entries to the map with names of
+        /// departments. If you add "HR",5 and "Legal",3 those departments are
+        /// given special attention when they appear in the metadata of a
+        /// document. When those terms appear they are given the specified
+        /// importance instead of the regular importance for the boost.</p>
         pub fn set_value_importance_map(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
@@ -1102,6 +1227,7 @@ impl Relevance {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1113,7 +1239,9 @@ impl Relevance {
     std::hash::Hash,
 )]
 pub enum Order {
+    #[allow(missing_docs)] // documentation missing in model
     Ascending,
+    #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1135,6 +1263,7 @@ impl std::str::FromStr for Order {
     }
 }
 impl Order {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Order::Ascending => "ASCENDING",
@@ -1142,6 +1271,7 @@ impl Order {
             Order::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
@@ -1152,6 +1282,7 @@ impl AsRef<str> for Order {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1163,9 +1294,13 @@ impl AsRef<str> for Order {
     std::hash::Hash,
 )]
 pub enum DocumentAttributeValueType {
+    #[allow(missing_docs)] // documentation missing in model
     DateValue,
+    #[allow(missing_docs)] // documentation missing in model
     LongValue,
+    #[allow(missing_docs)] // documentation missing in model
     StringListValue,
+    #[allow(missing_docs)] // documentation missing in model
     StringValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1189,6 +1324,7 @@ impl std::str::FromStr for DocumentAttributeValueType {
     }
 }
 impl DocumentAttributeValueType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DocumentAttributeValueType::DateValue => "DATE_VALUE",
@@ -1198,6 +1334,7 @@ impl DocumentAttributeValueType {
             DocumentAttributeValueType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DATE_VALUE",
@@ -1299,6 +1436,8 @@ pub mod data_source_configuration {
             self.s3_configuration = Some(input);
             self
         }
+        /// <p>Provides information to create a data source connector for a
+        /// document repository in an Amazon S3 bucket.</p>
         pub fn set_s3_configuration(
             mut self,
             input: std::option::Option<crate::model::S3DataSourceConfiguration>,
@@ -1315,6 +1454,8 @@ pub mod data_source_configuration {
             self.share_point_configuration = Some(input);
             self
         }
+        /// <p>Provides information necessary to create a data source connector
+        /// for a Microsoft SharePoint site.</p>
         pub fn set_share_point_configuration(
             mut self,
             input: std::option::Option<crate::model::SharePointConfiguration>,
@@ -1331,6 +1472,8 @@ pub mod data_source_configuration {
             self.database_configuration = Some(input);
             self
         }
+        /// <p>Provides information necessary to create a data source connector
+        /// for a database.</p>
         pub fn set_database_configuration(
             mut self,
             input: std::option::Option<crate::model::DatabaseConfiguration>,
@@ -1347,6 +1490,8 @@ pub mod data_source_configuration {
             self.salesforce_configuration = Some(input);
             self
         }
+        /// <p>Provides configuration information for data sources that connect
+        /// to a Salesforce site.</p>
         pub fn set_salesforce_configuration(
             mut self,
             input: std::option::Option<crate::model::SalesforceConfiguration>,
@@ -1363,6 +1508,8 @@ pub mod data_source_configuration {
             self.one_drive_configuration = Some(input);
             self
         }
+        /// <p>Provides configuration for data sources that connect to Microsoft
+        /// OneDrive.</p>
         pub fn set_one_drive_configuration(
             mut self,
             input: std::option::Option<crate::model::OneDriveConfiguration>,
@@ -1379,6 +1526,8 @@ pub mod data_source_configuration {
             self.service_now_configuration = Some(input);
             self
         }
+        /// <p>Provides configuration for data sources that connect to ServiceNow
+        /// instances.</p>
         pub fn set_service_now_configuration(
             mut self,
             input: std::option::Option<crate::model::ServiceNowConfiguration>,
@@ -1395,6 +1544,8 @@ pub mod data_source_configuration {
             self.confluence_configuration = Some(input);
             self
         }
+        /// <p>Provides configuration information for connecting to a Confluence
+        /// data source.</p>
         pub fn set_confluence_configuration(
             mut self,
             input: std::option::Option<crate::model::ConfluenceConfiguration>,
@@ -1411,6 +1562,8 @@ pub mod data_source_configuration {
             self.google_drive_configuration = Some(input);
             self
         }
+        /// <p>Provides configuration for data sources that connect to Google
+        /// Drive. </p>
         pub fn set_google_drive_configuration(
             mut self,
             input: std::option::Option<crate::model::GoogleDriveConfiguration>,
@@ -1427,6 +1580,8 @@ pub mod data_source_configuration {
             self.web_crawler_configuration = Some(input);
             self
         }
+        /// <p>Provides the configuration information required for Amazon Kendra
+        /// web crawler.</p>
         pub fn set_web_crawler_configuration(
             mut self,
             input: std::option::Option<crate::model::WebCrawlerConfiguration>,
@@ -1443,6 +1598,8 @@ pub mod data_source_configuration {
             self.work_docs_configuration = Some(input);
             self
         }
+        /// <p>Provides the configuration information to connect to WorkDocs
+        /// as your data source.</p>
         pub fn set_work_docs_configuration(
             mut self,
             input: std::option::Option<crate::model::WorkDocsConfiguration>,
@@ -1570,6 +1727,15 @@ pub mod work_docs_configuration {
             self.organization_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the directory corresponding to your
+        /// Amazon WorkDocs site repository.</p>
+        /// <p>You can find the organization ID in the
+        /// <a href="https://console.aws.amazon.com/directoryservicev2/">AWS Directory Service</a> by going to
+        /// <b>Active Directory</b>, then
+        /// <b>Directories</b>. Your Amazon WorkDocs site directory has an
+        /// ID, which is the organization ID. You can also set up a new Amazon WorkDocs
+        /// directory in the AWS Directory Service console and enable a Amazon WorkDocs site
+        /// for the directory in the Amazon WorkDocs console.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1586,6 +1752,11 @@ pub mod work_docs_configuration {
             self.crawl_comments = Some(input);
             self
         }
+        /// <p>
+        /// <code>TRUE</code> to include comments on documents
+        /// in your index. Including comments in your index means each comment
+        /// is a document that can be searched on.</p>
+        /// <p>The default is set to <code>FALSE</code>.</p>
         pub fn set_crawl_comments(mut self, input: std::option::Option<bool>) -> Self {
             self.crawl_comments = input;
             self
@@ -1602,16 +1773,40 @@ pub mod work_docs_configuration {
             self.use_change_log = Some(input);
             self
         }
+        /// <p>
+        /// <code>TRUE</code> to use the change logs to update documents in your
+        /// index instead of scanning all documents.</p>
+        /// <p>If you are syncing your Amazon WorkDocs data source with your index for the
+        /// first time, all documents are scanned. After your first sync, you can
+        /// use the change logs to update your documents in your index for
+        /// future syncs.</p>
+        /// <p>The default is set to <code>FALSE</code>.</p>
         pub fn set_use_change_log(mut self, input: std::option::Option<bool>) -> Self {
             self.use_change_log = input;
             self
         }
+        /// Appends an item to `inclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_inclusion_patterns`](Self::set_inclusion_patterns).
+        ///
+        /// <p>A list of regular expression patterns to include certain files
+        /// in your Amazon WorkDocs site repository. Files that match the patterns
+        /// are included in the index. Files that don't match the patterns are
+        /// excluded from the index. If a file matches both an inclusion pattern
+        /// and an exclusion pattern, the exclusion pattern takes precedence and
+        /// the file isn’t included in the index.</p>
         pub fn inclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.inclusion_patterns.unwrap_or_default();
             v.push(input.into());
             self.inclusion_patterns = Some(v);
             self
         }
+        /// <p>A list of regular expression patterns to include certain files
+        /// in your Amazon WorkDocs site repository. Files that match the patterns
+        /// are included in the index. Files that don't match the patterns are
+        /// excluded from the index. If a file matches both an inclusion pattern
+        /// and an exclusion pattern, the exclusion pattern takes precedence and
+        /// the file isn’t included in the index.</p>
         pub fn set_inclusion_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1619,12 +1814,28 @@ pub mod work_docs_configuration {
             self.inclusion_patterns = input;
             self
         }
+        /// Appends an item to `exclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_exclusion_patterns`](Self::set_exclusion_patterns).
+        ///
+        /// <p>A list of regular expression patterns to exclude certain files
+        /// in your Amazon WorkDocs site repository. Files that match the patterns
+        /// are excluded from the index. Files that don’t match the patterns
+        /// are included in the index. If a file matches both an inclusion
+        /// pattern and an exclusion pattern, the exclusion pattern takes
+        /// precedence and the file isn’t included in the index.</p>
         pub fn exclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exclusion_patterns.unwrap_or_default();
             v.push(input.into());
             self.exclusion_patterns = Some(v);
             self
         }
+        /// <p>A list of regular expression patterns to exclude certain files
+        /// in your Amazon WorkDocs site repository. Files that match the patterns
+        /// are excluded from the index. Files that don’t match the patterns
+        /// are included in the index. If a file matches both an inclusion
+        /// pattern and an exclusion pattern, the exclusion pattern takes
+        /// precedence and the file isn’t included in the index.</p>
         pub fn set_exclusion_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1632,6 +1843,17 @@ pub mod work_docs_configuration {
             self.exclusion_patterns = input;
             self
         }
+        /// Appends an item to `field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
+        ///
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+        /// Amazon WorkDocs field names to custom index field names in Amazon Kendra. You must first
+        /// create the custom index fields using the <code>UpdateIndex</code> operation before
+        /// you map to Amazon WorkDocs fields. For more information, see
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// Data Source Fields</a>. The Amazon WorkDocs data source field names
+        /// need to exist in your Amazon WorkDocs custom metadata.</p>
         pub fn field_mappings(
             mut self,
             input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
@@ -1641,6 +1863,13 @@ pub mod work_docs_configuration {
             self.field_mappings = Some(v);
             self
         }
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+        /// Amazon WorkDocs field names to custom index field names in Amazon Kendra. You must first
+        /// create the custom index fields using the <code>UpdateIndex</code> operation before
+        /// you map to Amazon WorkDocs fields. For more information, see
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// Data Source Fields</a>. The Amazon WorkDocs data source field names
+        /// need to exist in your Amazon WorkDocs custom metadata.</p>
         pub fn set_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -1706,6 +1935,7 @@ pub mod data_source_to_index_field_mapping {
             self.data_source_field_name = Some(input.into());
             self
         }
+        /// <p>The name of the column or attribute in the data source.</p>
         pub fn set_data_source_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1718,6 +1948,7 @@ pub mod data_source_to_index_field_mapping {
             self.date_field_format = Some(input.into());
             self
         }
+        /// <p>The type of data stored in the column or attribute.</p>
         pub fn set_date_field_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1730,6 +1961,7 @@ pub mod data_source_to_index_field_mapping {
             self.index_field_name = Some(input.into());
             self
         }
+        /// <p>The name of the field in the index.</p>
         pub fn set_index_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1883,6 +2115,20 @@ pub mod web_crawler_configuration {
             self.urls = Some(input);
             self
         }
+        /// <p>Specifies the seed or starting point URLs of the
+        /// websites or the sitemap URLs of the websites you want to crawl.</p>
+        /// <p>You can include website subdomains. You can list up to 100 seed
+        /// URLs and up to three sitemap URLs.</p>
+        /// <p>You can only crawl websites that use the secure communication protocol,
+        /// Hypertext Transfer Protocol Secure (HTTPS). If you receive an error when
+        /// crawling a website, it could be that the website is blocked from crawling.</p>
+        /// <p>
+        /// <i>When selecting websites to index, you must adhere to
+        /// the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a>
+        /// and all other Amazon terms. Remember that you must only use the Amazon Kendra
+        /// web crawler to index your own webpages, or webpages that you have
+        /// authorization to index.</i>
+        /// </p>
         pub fn set_urls(mut self, input: std::option::Option<crate::model::Urls>) -> Self {
             self.urls = input;
             self
@@ -1898,6 +2144,13 @@ pub mod web_crawler_configuration {
             self.crawl_depth = Some(input);
             self
         }
+        /// <p>Specifies the number of levels in a website that you want to crawl.</p>
+        /// <p>The first level begins from the website seed or starting point URL.
+        /// For example, if a website has 3 levels – index level (i.e. seed in this
+        /// example), sections level, and subsections level – and you are only
+        /// interested in crawling information up to the sections level (i.e.
+        /// levels 0-1), you can set your depth to 1.</p>
+        /// <p>The default crawl depth is set to 2.</p>
         pub fn set_crawl_depth(mut self, input: std::option::Option<i32>) -> Self {
             self.crawl_depth = input;
             self
@@ -1911,6 +2164,11 @@ pub mod web_crawler_configuration {
             self.max_links_per_page = Some(input);
             self
         }
+        /// <p>The maximum number of URLs on a webpage to include when crawling a website.
+        /// This number is per webpage.</p>
+        /// <p>As a website’s webpages are crawled, any URLs the webpages link to are
+        /// also crawled. URLs on a webpage are crawled in order of appearance.</p>
+        /// <p>The default maximum links per page is 100.</p>
         pub fn set_max_links_per_page(mut self, input: std::option::Option<i32>) -> Self {
             self.max_links_per_page = input;
             self
@@ -1922,6 +2180,9 @@ pub mod web_crawler_configuration {
             self.max_content_size_per_page_in_mega_bytes = Some(input);
             self
         }
+        /// <p>The maximum size (in MB) of a webpage or attachment to crawl.</p>
+        /// <p>Files larger than this size (in MB) are skipped/not crawled.</p>
+        /// <p>The default maximum size of a webpage or attachment is set to 50 MB.</p>
         pub fn set_max_content_size_per_page_in_mega_bytes(
             mut self,
             input: std::option::Option<f32>,
@@ -1936,6 +2197,9 @@ pub mod web_crawler_configuration {
             self.max_urls_per_minute_crawl_rate = Some(input);
             self
         }
+        /// <p>The maximum number of URLs crawled per website host per minute.</p>
+        /// <p>A minimum of one URL is required.</p>
+        /// <p>The default maximum number of URLs crawled per website host per minute is 300.</p>
         pub fn set_max_urls_per_minute_crawl_rate(
             mut self,
             input: std::option::Option<i32>,
@@ -1943,12 +2207,22 @@ pub mod web_crawler_configuration {
             self.max_urls_per_minute_crawl_rate = input;
             self
         }
+        /// Appends an item to `url_inclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_url_inclusion_patterns`](Self::set_url_inclusion_patterns).
+        ///
+        /// <p>The regular expression pattern to include certain URLs to crawl.</p>
+        /// <p>If there is a regular expression pattern to exclude certain URLs that
+        /// conflicts with the include pattern, the exclude pattern takes precedence.</p>
         pub fn url_inclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.url_inclusion_patterns.unwrap_or_default();
             v.push(input.into());
             self.url_inclusion_patterns = Some(v);
             self
         }
+        /// <p>The regular expression pattern to include certain URLs to crawl.</p>
+        /// <p>If there is a regular expression pattern to exclude certain URLs that
+        /// conflicts with the include pattern, the exclude pattern takes precedence.</p>
         pub fn set_url_inclusion_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1956,12 +2230,22 @@ pub mod web_crawler_configuration {
             self.url_inclusion_patterns = input;
             self
         }
+        /// Appends an item to `url_exclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_url_exclusion_patterns`](Self::set_url_exclusion_patterns).
+        ///
+        /// <p>The regular expression pattern to exclude certain URLs to crawl.</p>
+        /// <p>If there is a regular expression pattern to include certain URLs that
+        /// conflicts with the exclude pattern, the exclude pattern takes precedence.</p>
         pub fn url_exclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.url_exclusion_patterns.unwrap_or_default();
             v.push(input.into());
             self.url_exclusion_patterns = Some(v);
             self
         }
+        /// <p>The regular expression pattern to exclude certain URLs to crawl.</p>
+        /// <p>If there is a regular expression pattern to include certain URLs that
+        /// conflicts with the exclude pattern, the exclude pattern takes precedence.</p>
         pub fn set_url_exclusion_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1981,6 +2265,14 @@ pub mod web_crawler_configuration {
             self.proxy_configuration = Some(input);
             self
         }
+        /// <p>Provides configuration information required to connect to your internal
+        /// websites via a web proxy.</p>
+        /// <p>You must provide the website host name and port number. For example, the
+        /// host name of https://a.example.com/page1.html is "a.example.com" and the
+        /// port is 443, the standard port for HTTPS.</p>
+        /// <p>Web proxy credentials are optional and you can use them to connect to a
+        /// web proxy server that requires basic authentication. To store web proxy
+        /// credentials, you use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS Secrets Manager</a>.</p>
         pub fn set_proxy_configuration(
             mut self,
             input: std::option::Option<crate::model::ProxyConfiguration>,
@@ -2002,6 +2294,13 @@ pub mod web_crawler_configuration {
             self.authentication_configuration = Some(input);
             self
         }
+        /// <p>Provides configuration information required to connect to websites using
+        /// authentication.</p>
+        /// <p>You can connect to websites using basic authentication of user name and password.</p>
+        /// <p>You must provide the website host name and port number. For example, the host name
+        /// of https://a.example.com/page1.html is "a.example.com" and the port is 443, the
+        /// standard port for HTTPS. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS Secrets Manager</a> to store
+        /// your authentication credentials.</p>
         pub fn set_authentication_configuration(
             mut self,
             input: std::option::Option<crate::model::AuthenticationConfiguration>,
@@ -2061,6 +2360,13 @@ pub mod authentication_configuration {
             std::option::Option<std::vec::Vec<crate::model::BasicAuthenticationConfiguration>>,
     }
     impl Builder {
+        /// Appends an item to `basic_authentication`.
+        ///
+        /// To override the contents of this collection use [`set_basic_authentication`](Self::set_basic_authentication).
+        ///
+        /// <p>The list of configuration information that's required to connect to and
+        /// crawl a website host using basic authentication credentials.</p>
+        /// <p>The list includes the name and port number of the website host.</p>
         pub fn basic_authentication(
             mut self,
             input: impl Into<crate::model::BasicAuthenticationConfiguration>,
@@ -2070,6 +2376,9 @@ pub mod authentication_configuration {
             self.basic_authentication = Some(v);
             self
         }
+        /// <p>The list of configuration information that's required to connect to and
+        /// crawl a website host using basic authentication credentials.</p>
+        /// <p>The list includes the name and port number of the website host.</p>
         pub fn set_basic_authentication(
             mut self,
             input: std::option::Option<
@@ -2143,6 +2452,10 @@ pub mod basic_authentication_configuration {
             self.host = Some(input.into());
             self
         }
+        /// <p>The name of the website host you want to connect to using
+        /// authentication credentials.</p>
+        /// <p>For example, the host name of https://a.example.com/page1.html is
+        /// "a.example.com".</p>
         pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host = input;
             self
@@ -2155,6 +2468,10 @@ pub mod basic_authentication_configuration {
             self.port = Some(input);
             self
         }
+        /// <p>The port number of the website host you want to connect to using
+        /// authentication credentials.</p>
+        /// <p>For example, the port for https://a.example.com/page1.html is 443,
+        /// the standard port for HTTPS.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -2167,6 +2484,10 @@ pub mod basic_authentication_configuration {
             self.credentials = Some(input.into());
             self
         }
+        /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS Secrets Manager</a>
+        /// </p>
+        /// <p>You use a secret if basic authentication credentials are required to connect
+        /// to a website. The secret stores your credentials of user name and password.</p>
         pub fn set_credentials(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.credentials = input;
             self
@@ -2239,6 +2560,10 @@ pub mod proxy_configuration {
             self.host = Some(input.into());
             self
         }
+        /// <p>The name of the website host you want to connect to
+        /// via a web proxy server.</p>
+        /// <p>For example, the host name of https://a.example.com/page1.html
+        /// is "a.example.com".</p>
         pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host = input;
             self
@@ -2251,6 +2576,10 @@ pub mod proxy_configuration {
             self.port = Some(input);
             self
         }
+        /// <p>The port number of the website host you want to connect
+        /// to via a web proxy server. </p>
+        /// <p>For example, the port for https://a.example.com/page1.html
+        /// is 443, the standard port for HTTPS.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -2265,6 +2594,12 @@ pub mod proxy_configuration {
             self.credentials = Some(input.into());
             self
         }
+        /// <p>Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">AWS Secrets Manager</a>
+        /// </p>
+        /// <p>The credentials are optional. You use a secret if web proxy credentials
+        /// are required to connect to a website host. Amazon Kendra currently support basic
+        /// authentication to connect to a web proxy server. The secret stores your
+        /// credentials.</p>
         pub fn set_credentials(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.credentials = input;
             self
@@ -2341,6 +2676,12 @@ pub mod urls {
             self.seed_url_configuration = Some(input);
             self
         }
+        /// <p>Provides the configuration of the seed or starting point URLs of the websites
+        /// you want to crawl.</p>
+        /// <p>You can choose to crawl only the website host names, or the website host names
+        /// with subdomains, or the website host names with subdomains and other domains
+        /// that the webpages link to.</p>
+        /// <p>You can list up to 100 seed URLs.</p>
         pub fn set_seed_url_configuration(
             mut self,
             input: std::option::Option<crate::model::SeedUrlConfiguration>,
@@ -2358,6 +2699,9 @@ pub mod urls {
             self.site_maps_configuration = Some(input);
             self
         }
+        /// <p>Provides the configuration of the sitemap URLs of the websites you want to crawl.</p>
+        /// <p>Only URLs belonging to the same website host names are crawled. You can list up to
+        /// three sitemap URLs.</p>
         pub fn set_site_maps_configuration(
             mut self,
             input: std::option::Option<crate::model::SiteMapsConfiguration>,
@@ -2413,12 +2757,22 @@ pub mod site_maps_configuration {
         pub(crate) site_maps: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `site_maps`.
+        ///
+        /// To override the contents of this collection use [`set_site_maps`](Self::set_site_maps).
+        ///
+        /// <p>The list of sitemap URLs of the websites
+        /// you want to crawl.</p>
+        /// <p>The list can include a maximum of three sitemap URLs.</p>
         pub fn site_maps(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.site_maps.unwrap_or_default();
             v.push(input.into());
             self.site_maps = Some(v);
             self
         }
+        /// <p>The list of sitemap URLs of the websites
+        /// you want to crawl.</p>
+        /// <p>The list can include a maximum of three sitemap URLs.</p>
         pub fn set_site_maps(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2497,12 +2851,22 @@ pub mod seed_url_configuration {
         pub(crate) web_crawler_mode: std::option::Option<crate::model::WebCrawlerMode>,
     }
     impl Builder {
+        /// Appends an item to `seed_urls`.
+        ///
+        /// To override the contents of this collection use [`set_seed_urls`](Self::set_seed_urls).
+        ///
+        /// <p>The list of seed or starting point URLs of the
+        /// websites you want to crawl.</p>
+        /// <p>The list can include a maximum of 100 seed URLs.</p>
         pub fn seed_urls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.seed_urls.unwrap_or_default();
             v.push(input.into());
             self.seed_urls = Some(v);
             self
         }
+        /// <p>The list of seed or starting point URLs of the
+        /// websites you want to crawl.</p>
+        /// <p>The list can include a maximum of 100 seed URLs.</p>
         pub fn set_seed_urls(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2535,6 +2899,27 @@ pub mod seed_url_configuration {
             self.web_crawler_mode = Some(input);
             self
         }
+        /// <p>You can choose one of the following modes:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>HOST_ONLY</code> – crawl only the website host names.
+        /// For example, if the seed URL is "abc.example.com",
+        /// then only URLs with host name "abc.example.com" are crawled.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SUBDOMAINS</code> – crawl the website host names with
+        /// subdomains. For example, if the seed URL is  "abc.example.com", then
+        /// "a.abc.example.com" and "b.abc.example.com" are also crawled.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EVERYTHING</code> – crawl the website host names with
+        /// subdomains and other domains that the webpages link to.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The default mode is set to <code>HOST_ONLY</code>.</p>
         pub fn set_web_crawler_mode(
             mut self,
             input: std::option::Option<crate::model::WebCrawlerMode>,
@@ -2558,6 +2943,7 @@ impl SeedUrlConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2569,8 +2955,11 @@ impl SeedUrlConfiguration {
     std::hash::Hash,
 )]
 pub enum WebCrawlerMode {
+    #[allow(missing_docs)] // documentation missing in model
     Everything,
+    #[allow(missing_docs)] // documentation missing in model
     HostOnly,
+    #[allow(missing_docs)] // documentation missing in model
     Subdomains,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2593,6 +2982,7 @@ impl std::str::FromStr for WebCrawlerMode {
     }
 }
 impl WebCrawlerMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WebCrawlerMode::Everything => "EVERYTHING",
@@ -2601,6 +2991,7 @@ impl WebCrawlerMode {
             WebCrawlerMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EVERYTHING", "HOST_ONLY", "SUBDOMAINS"]
     }
@@ -2694,16 +3085,36 @@ pub mod google_drive_configuration {
             self.secret_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of a Secrets Managersecret
+        /// that contains the credentials required to connect to Google Drive.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive data
+        /// source</a>.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
         }
+        /// Appends an item to `inclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_inclusion_patterns`](Self::set_inclusion_patterns).
+        ///
+        /// <p>A list of regular expression patterns that apply to path on Google
+        /// Drive. Items that match the pattern are included in the index from
+        /// both shared drives and users' My Drives. Items that don't match the
+        /// pattern are excluded from the index. If an item matches both an
+        /// inclusion pattern and an exclusion pattern, it is excluded from the
+        /// index.</p>
         pub fn inclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.inclusion_patterns.unwrap_or_default();
             v.push(input.into());
             self.inclusion_patterns = Some(v);
             self
         }
+        /// <p>A list of regular expression patterns that apply to path on Google
+        /// Drive. Items that match the pattern are included in the index from
+        /// both shared drives and users' My Drives. Items that don't match the
+        /// pattern are excluded from the index. If an item matches both an
+        /// inclusion pattern and an exclusion pattern, it is excluded from the
+        /// index.</p>
         pub fn set_inclusion_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2711,12 +3122,28 @@ pub mod google_drive_configuration {
             self.inclusion_patterns = input;
             self
         }
+        /// Appends an item to `exclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_exclusion_patterns`](Self::set_exclusion_patterns).
+        ///
+        /// <p>A list of regular expression patterns that apply to the path on
+        /// Google Drive. Items that match the pattern are excluded from the
+        /// index from both shared drives and users' My Drives. Items that don't
+        /// match the pattern are included in the index. If an item matches both
+        /// an exclusion pattern and an inclusion pattern, it is excluded from
+        /// the index.</p>
         pub fn exclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exclusion_patterns.unwrap_or_default();
             v.push(input.into());
             self.exclusion_patterns = Some(v);
             self
         }
+        /// <p>A list of regular expression patterns that apply to the path on
+        /// Google Drive. Items that match the pattern are excluded from the
+        /// index from both shared drives and users' My Drives. Items that don't
+        /// match the pattern are included in the index. If an item matches both
+        /// an exclusion pattern and an inclusion pattern, it is excluded from
+        /// the index.</p>
         pub fn set_exclusion_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2724,6 +3151,16 @@ pub mod google_drive_configuration {
             self.exclusion_patterns = input;
             self
         }
+        /// Appends an item to `field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
+        ///
+        /// <p>Defines mapping between a field in the Google Drive and a Amazon Kendra
+        /// index field.</p>
+        /// <p>If you are using the console, you can define index fields when
+        /// creating the mapping. If you are using the API, you must first
+        /// create the field using the <code>UpdateIndex</code>
+        /// operation.</p>
         pub fn field_mappings(
             mut self,
             input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
@@ -2733,6 +3170,12 @@ pub mod google_drive_configuration {
             self.field_mappings = Some(v);
             self
         }
+        /// <p>Defines mapping between a field in the Google Drive and a Amazon Kendra
+        /// index field.</p>
+        /// <p>If you are using the console, you can define index fields when
+        /// creating the mapping. If you are using the API, you must first
+        /// create the field using the <code>UpdateIndex</code>
+        /// operation.</p>
         pub fn set_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -2740,12 +3183,24 @@ pub mod google_drive_configuration {
             self.field_mappings = input;
             self
         }
+        /// Appends an item to `exclude_mime_types`.
+        ///
+        /// To override the contents of this collection use [`set_exclude_mime_types`](Self::set_exclude_mime_types).
+        ///
+        /// <p>A list of MIME types to exclude from the index. All documents
+        /// matching the specified MIME type are excluded. </p>
+        /// <p>For a list of MIME types, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive data
+        /// source</a>.</p>
         pub fn exclude_mime_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exclude_mime_types.unwrap_or_default();
             v.push(input.into());
             self.exclude_mime_types = Some(v);
             self
         }
+        /// <p>A list of MIME types to exclude from the index. All documents
+        /// matching the specified MIME type are excluded. </p>
+        /// <p>For a list of MIME types, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive data
+        /// source</a>.</p>
         pub fn set_exclude_mime_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2753,12 +3208,22 @@ pub mod google_drive_configuration {
             self.exclude_mime_types = input;
             self
         }
+        /// Appends an item to `exclude_user_accounts`.
+        ///
+        /// To override the contents of this collection use [`set_exclude_user_accounts`](Self::set_exclude_user_accounts).
+        ///
+        /// <p>A list of email addresses of the users. Documents owned by these
+        /// users are excluded from the index. Documents shared with excluded
+        /// users are indexed unless they are excluded in another way.</p>
         pub fn exclude_user_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exclude_user_accounts.unwrap_or_default();
             v.push(input.into());
             self.exclude_user_accounts = Some(v);
             self
         }
+        /// <p>A list of email addresses of the users. Documents owned by these
+        /// users are excluded from the index. Documents shared with excluded
+        /// users are indexed unless they are excluded in another way.</p>
         pub fn set_exclude_user_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2766,12 +3231,22 @@ pub mod google_drive_configuration {
             self.exclude_user_accounts = input;
             self
         }
+        /// Appends an item to `exclude_shared_drives`.
+        ///
+        /// To override the contents of this collection use [`set_exclude_shared_drives`](Self::set_exclude_shared_drives).
+        ///
+        /// <p>A list of identifiers or shared drives to exclude from the index.
+        /// All files and folders stored on the shared drive are
+        /// excluded.</p>
         pub fn exclude_shared_drives(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exclude_shared_drives.unwrap_or_default();
             v.push(input.into());
             self.exclude_shared_drives = Some(v);
             self
         }
+        /// <p>A list of identifiers or shared drives to exclude from the index.
+        /// All files and folders stored on the shared drive are
+        /// excluded.</p>
         pub fn set_exclude_shared_drives(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2906,6 +3381,10 @@ pub mod confluence_configuration {
             self.server_url = Some(input.into());
             self
         }
+        /// <p>The URL of your Confluence instance. Use the full URL of the
+        /// server. For example, <code>https://server.example.com:port/</code>.
+        /// You can also use an IP address, for example,
+        /// <code>https://192.168.1.113/</code>.</p>
         pub fn set_server_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_url = input;
             self
@@ -2928,6 +3407,20 @@ pub mod confluence_configuration {
             self.secret_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret
+        /// that contains the key/value pairs required to connect to your
+        /// Confluence server. The secret must contain a JSON structure with the
+        /// following keys:</p>
+        /// <ul>
+        /// <li>
+        /// <p>username - The user name or email address of a user with
+        /// administrative privileges for the Confluence server.</p>
+        /// </li>
+        /// <li>
+        /// <p>password - The password associated with the user logging
+        /// in to the Confluence server.</p>
+        /// </li>
+        /// </ul>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -2938,6 +3431,8 @@ pub mod confluence_configuration {
             self.version = Some(input);
             self
         }
+        /// <p>Specifies the version of the Confluence installation that you are
+        /// connecting to.</p>
         pub fn set_version(
             mut self,
             input: std::option::Option<crate::model::ConfluenceVersion>,
@@ -2954,6 +3449,8 @@ pub mod confluence_configuration {
             self.space_configuration = Some(input);
             self
         }
+        /// <p>Specifies configuration information for indexing Confluence
+        /// spaces.</p>
         pub fn set_space_configuration(
             mut self,
             input: std::option::Option<crate::model::ConfluenceSpaceConfiguration>,
@@ -2970,6 +3467,8 @@ pub mod confluence_configuration {
             self.page_configuration = Some(input);
             self
         }
+        /// <p>Specifies configuration information for indexing Confluence
+        /// pages.</p>
         pub fn set_page_configuration(
             mut self,
             input: std::option::Option<crate::model::ConfluencePageConfiguration>,
@@ -2986,6 +3485,8 @@ pub mod confluence_configuration {
             self.blog_configuration = Some(input);
             self
         }
+        /// <p> Specifies configuration information for indexing Confluence
+        /// blogs.</p>
         pub fn set_blog_configuration(
             mut self,
             input: std::option::Option<crate::model::ConfluenceBlogConfiguration>,
@@ -3002,6 +3503,8 @@ pub mod confluence_configuration {
             self.attachment_configuration = Some(input);
             self
         }
+        /// <p>Specifies configuration information for indexing attachments to
+        /// Confluence blogs and pages.</p>
         pub fn set_attachment_configuration(
             mut self,
             input: std::option::Option<crate::model::ConfluenceAttachmentConfiguration>,
@@ -3017,6 +3520,7 @@ pub mod confluence_configuration {
             self.vpc_configuration = Some(input);
             self
         }
+        /// <p>Specifies the information for connecting to an Amazon VPC.</p>
         pub fn set_vpc_configuration(
             mut self,
             input: std::option::Option<crate::model::DataSourceVpcConfiguration>,
@@ -3024,12 +3528,30 @@ pub mod confluence_configuration {
             self.vpc_configuration = input;
             self
         }
+        /// Appends an item to `inclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_inclusion_patterns`](Self::set_inclusion_patterns).
+        ///
+        /// <p>A list of regular expression patterns that apply to a URL on the
+        /// Confluence server. An inclusion pattern can apply to a blog post, a
+        /// page, a space, or an attachment. Items that match the patterns are
+        /// included in the index. Items that don't match the pattern are
+        /// excluded from the index. If an item matches both an inclusion
+        /// pattern and an exclusion pattern, the item isn't included in the
+        /// index.</p>
         pub fn inclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.inclusion_patterns.unwrap_or_default();
             v.push(input.into());
             self.inclusion_patterns = Some(v);
             self
         }
+        /// <p>A list of regular expression patterns that apply to a URL on the
+        /// Confluence server. An inclusion pattern can apply to a blog post, a
+        /// page, a space, or an attachment. Items that match the patterns are
+        /// included in the index. Items that don't match the pattern are
+        /// excluded from the index. If an item matches both an inclusion
+        /// pattern and an exclusion pattern, the item isn't included in the
+        /// index.</p>
         pub fn set_inclusion_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3037,12 +3559,30 @@ pub mod confluence_configuration {
             self.inclusion_patterns = input;
             self
         }
+        /// Appends an item to `exclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_exclusion_patterns`](Self::set_exclusion_patterns).
+        ///
+        /// <p>A list of regular expression patterns that apply to a URL on the
+        /// Confluence server. An exclusion pattern can apply to a blog post, a
+        /// page, a space, or an attachment. Items that match the pattern are
+        /// excluded from the index. Items that don't match the pattern are
+        /// included in the index. If a item matches both an exclusion pattern
+        /// and an inclusion pattern, the item isn't included in the
+        /// index.</p>
         pub fn exclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exclusion_patterns.unwrap_or_default();
             v.push(input.into());
             self.exclusion_patterns = Some(v);
             self
         }
+        /// <p>A list of regular expression patterns that apply to a URL on the
+        /// Confluence server. An exclusion pattern can apply to a blog post, a
+        /// page, a space, or an attachment. Items that match the pattern are
+        /// excluded from the index. Items that don't match the pattern are
+        /// included in the index. If a item matches both an exclusion pattern
+        /// and an inclusion pattern, the item isn't included in the
+        /// index.</p>
         pub fn set_exclusion_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3106,12 +3646,24 @@ pub mod data_source_vpc_configuration {
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>A list of identifiers for subnets within your Amazon VPC. The
+        /// subnets should be able to connect to each other in the VPC, and they
+        /// should have outgoing access to the Internet through a NAT
+        /// device.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// <p>A list of identifiers for subnets within your Amazon VPC. The
+        /// subnets should be able to connect to each other in the VPC, and they
+        /// should have outgoing access to the Internet through a NAT
+        /// device.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3119,12 +3671,22 @@ pub mod data_source_vpc_configuration {
             self.subnet_ids = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>A list of identifiers of security groups within your Amazon VPC.
+        /// The security groups should enable Amazon Kendra to connect to the data
+        /// source.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// <p>A list of identifiers of security groups within your Amazon VPC.
+        /// The security groups should enable Amazon Kendra to connect to the data
+        /// source.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3192,10 +3754,22 @@ pub mod confluence_attachment_configuration {
             self.crawl_attachments = Some(input);
             self
         }
+        /// <p>Indicates whether Amazon Kendra indexes attachments to the pages and blogs
+        /// in the Confluence data source. </p>
         pub fn set_crawl_attachments(mut self, input: std::option::Option<bool>) -> Self {
             self.crawl_attachments = input;
             self
         }
+        /// Appends an item to `attachment_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_attachment_field_mappings`](Self::set_attachment_field_mappings).
+        ///
+        /// <p>Defines how attachment metadata fields should be mapped to index
+        /// fields. Before you can map a field, you must first create an index
+        /// field with a matching type using the console or the
+        /// <code>UpdateIndex</code> operation.</p>
+        /// <p>If you specify the <code>AttachentFieldMappings</code> parameter,
+        /// you must specify at least one field mapping.</p>
         pub fn attachment_field_mappings(
             mut self,
             input: impl Into<crate::model::ConfluenceAttachmentToIndexFieldMapping>,
@@ -3205,6 +3779,12 @@ pub mod confluence_attachment_configuration {
             self.attachment_field_mappings = Some(v);
             self
         }
+        /// <p>Defines how attachment metadata fields should be mapped to index
+        /// fields. Before you can map a field, you must first create an index
+        /// field with a matching type using the console or the
+        /// <code>UpdateIndex</code> operation.</p>
+        /// <p>If you specify the <code>AttachentFieldMappings</code> parameter,
+        /// you must specify at least one field mapping.</p>
         pub fn set_attachment_field_mappings(
             mut self,
             input: std::option::Option<
@@ -3282,6 +3862,9 @@ pub mod confluence_attachment_to_index_field_mapping {
             self.data_source_field_name = Some(input);
             self
         }
+        /// <p>The name of the field in the data source. </p>
+        /// <p>You must first create the index field using the
+        /// <code>UpdateIndex</code> operation. </p>
         pub fn set_data_source_field_name(
             mut self,
             input: std::option::Option<crate::model::ConfluenceAttachmentFieldName>,
@@ -3297,6 +3880,10 @@ pub mod confluence_attachment_to_index_field_mapping {
             self.date_field_format = Some(input.into());
             self
         }
+        /// <p>The format for date fields in the data source. If the field
+        /// specified in <code>DataSourceFieldName</code> is a date field you
+        /// must specify the date format. If the field is not a date field, an
+        /// exception is thrown.</p>
         pub fn set_date_field_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3311,6 +3898,9 @@ pub mod confluence_attachment_to_index_field_mapping {
             self.index_field_name = Some(input.into());
             self
         }
+        /// <p>The name of the index field to map to the Confluence data source
+        /// field. The index field type must match the Confluence field
+        /// type.</p>
         pub fn set_index_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3335,6 +3925,7 @@ impl ConfluenceAttachmentToIndexFieldMapping {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3346,16 +3937,27 @@ impl ConfluenceAttachmentToIndexFieldMapping {
     std::hash::Hash,
 )]
 pub enum ConfluenceAttachmentFieldName {
+    #[allow(missing_docs)] // documentation missing in model
     Author,
+    #[allow(missing_docs)] // documentation missing in model
     ContentType,
+    #[allow(missing_docs)] // documentation missing in model
     CreatedDate,
+    #[allow(missing_docs)] // documentation missing in model
     DisplayUrl,
+    #[allow(missing_docs)] // documentation missing in model
     FileSize,
+    #[allow(missing_docs)] // documentation missing in model
     ItemType,
+    #[allow(missing_docs)] // documentation missing in model
     ParentId,
+    #[allow(missing_docs)] // documentation missing in model
     SpaceKey,
+    #[allow(missing_docs)] // documentation missing in model
     SpaceName,
+    #[allow(missing_docs)] // documentation missing in model
     Url,
+    #[allow(missing_docs)] // documentation missing in model
     Version,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3386,6 +3988,7 @@ impl std::str::FromStr for ConfluenceAttachmentFieldName {
     }
 }
 impl ConfluenceAttachmentFieldName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfluenceAttachmentFieldName::Author => "AUTHOR",
@@ -3402,6 +4005,7 @@ impl ConfluenceAttachmentFieldName {
             ConfluenceAttachmentFieldName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AUTHOR",
@@ -3457,6 +4061,16 @@ pub mod confluence_blog_configuration {
             std::option::Option<std::vec::Vec<crate::model::ConfluenceBlogToIndexFieldMapping>>,
     }
     impl Builder {
+        /// Appends an item to `blog_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_blog_field_mappings`](Self::set_blog_field_mappings).
+        ///
+        /// <p>Defines how blog metadata fields should be mapped to index fields.
+        /// Before you can map a field, you must first create an index field
+        /// with a matching type using the console or the
+        /// <code>UpdateIndex</code> operation.</p>
+        /// <p>If you specify the <code>BlogFieldMappings</code> parameter, you
+        /// must specify at least one field mapping.</p>
         pub fn blog_field_mappings(
             mut self,
             input: impl Into<crate::model::ConfluenceBlogToIndexFieldMapping>,
@@ -3466,6 +4080,12 @@ pub mod confluence_blog_configuration {
             self.blog_field_mappings = Some(v);
             self
         }
+        /// <p>Defines how blog metadata fields should be mapped to index fields.
+        /// Before you can map a field, you must first create an index field
+        /// with a matching type using the console or the
+        /// <code>UpdateIndex</code> operation.</p>
+        /// <p>If you specify the <code>BlogFieldMappings</code> parameter, you
+        /// must specify at least one field mapping.</p>
         pub fn set_blog_field_mappings(
             mut self,
             input: std::option::Option<
@@ -3538,6 +4158,7 @@ pub mod confluence_blog_to_index_field_mapping {
             self.data_source_field_name = Some(input);
             self
         }
+        /// <p>The name of the field in the data source. </p>
         pub fn set_data_source_field_name(
             mut self,
             input: std::option::Option<crate::model::ConfluenceBlogFieldName>,
@@ -3553,6 +4174,10 @@ pub mod confluence_blog_to_index_field_mapping {
             self.date_field_format = Some(input.into());
             self
         }
+        /// <p>The format for date fields in the data source. If the field
+        /// specified in <code>DataSourceFieldName</code> is a date field you
+        /// must specify the date format. If the field is not a date field, an
+        /// exception is thrown.</p>
         pub fn set_date_field_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3567,6 +4192,9 @@ pub mod confluence_blog_to_index_field_mapping {
             self.index_field_name = Some(input.into());
             self
         }
+        /// <p>The name of the index field to map to the Confluence data source
+        /// field. The index field type must match the Confluence field
+        /// type.</p>
         pub fn set_index_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3591,6 +4219,7 @@ impl ConfluenceBlogToIndexFieldMapping {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3602,14 +4231,23 @@ impl ConfluenceBlogToIndexFieldMapping {
     std::hash::Hash,
 )]
 pub enum ConfluenceBlogFieldName {
+    #[allow(missing_docs)] // documentation missing in model
     Author,
+    #[allow(missing_docs)] // documentation missing in model
     DisplayUrl,
+    #[allow(missing_docs)] // documentation missing in model
     ItemType,
+    #[allow(missing_docs)] // documentation missing in model
     Labels,
+    #[allow(missing_docs)] // documentation missing in model
     PublishDate,
+    #[allow(missing_docs)] // documentation missing in model
     SpaceKey,
+    #[allow(missing_docs)] // documentation missing in model
     SpaceName,
+    #[allow(missing_docs)] // documentation missing in model
     Url,
+    #[allow(missing_docs)] // documentation missing in model
     Version,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3638,6 +4276,7 @@ impl std::str::FromStr for ConfluenceBlogFieldName {
     }
 }
 impl ConfluenceBlogFieldName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfluenceBlogFieldName::Author => "AUTHOR",
@@ -3652,6 +4291,7 @@ impl ConfluenceBlogFieldName {
             ConfluenceBlogFieldName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AUTHOR",
@@ -3702,6 +4342,16 @@ pub mod confluence_page_configuration {
             std::option::Option<std::vec::Vec<crate::model::ConfluencePageToIndexFieldMapping>>,
     }
     impl Builder {
+        /// Appends an item to `page_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_page_field_mappings`](Self::set_page_field_mappings).
+        ///
+        /// <p>Defines how page metadata fields should be mapped to index fields.
+        /// Before you can map a field, you must first create an index field
+        /// with a matching type using the console or the
+        /// <code>UpdateIndex</code> operation.</p>
+        /// <p>If you specify the <code>PageFieldMappings</code> parameter, you
+        /// must specify at least one field mapping.</p>
         pub fn page_field_mappings(
             mut self,
             input: impl Into<crate::model::ConfluencePageToIndexFieldMapping>,
@@ -3711,6 +4361,12 @@ pub mod confluence_page_configuration {
             self.page_field_mappings = Some(v);
             self
         }
+        /// <p>Defines how page metadata fields should be mapped to index fields.
+        /// Before you can map a field, you must first create an index field
+        /// with a matching type using the console or the
+        /// <code>UpdateIndex</code> operation.</p>
+        /// <p>If you specify the <code>PageFieldMappings</code> parameter, you
+        /// must specify at least one field mapping.</p>
         pub fn set_page_field_mappings(
             mut self,
             input: std::option::Option<
@@ -3783,6 +4439,7 @@ pub mod confluence_page_to_index_field_mapping {
             self.data_source_field_name = Some(input);
             self
         }
+        /// <p>The name of the field in the data source. </p>
         pub fn set_data_source_field_name(
             mut self,
             input: std::option::Option<crate::model::ConfluencePageFieldName>,
@@ -3798,6 +4455,10 @@ pub mod confluence_page_to_index_field_mapping {
             self.date_field_format = Some(input.into());
             self
         }
+        /// <p>The format for date fields in the data source. If the field
+        /// specified in <code>DataSourceFieldName</code> is a date field you
+        /// must specify the date format. If the field is not a date field, an
+        /// exception is thrown.</p>
         pub fn set_date_field_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3812,6 +4473,9 @@ pub mod confluence_page_to_index_field_mapping {
             self.index_field_name = Some(input.into());
             self
         }
+        /// <p>The name of the index field to map to the Confluence data source
+        /// field. The index field type must match the Confluence field
+        /// type.</p>
         pub fn set_index_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3836,6 +4500,7 @@ impl ConfluencePageToIndexFieldMapping {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3847,17 +4512,29 @@ impl ConfluencePageToIndexFieldMapping {
     std::hash::Hash,
 )]
 pub enum ConfluencePageFieldName {
+    #[allow(missing_docs)] // documentation missing in model
     Author,
+    #[allow(missing_docs)] // documentation missing in model
     ContentStatus,
+    #[allow(missing_docs)] // documentation missing in model
     CreatedDate,
+    #[allow(missing_docs)] // documentation missing in model
     DisplayUrl,
+    #[allow(missing_docs)] // documentation missing in model
     ItemType,
+    #[allow(missing_docs)] // documentation missing in model
     Labels,
+    #[allow(missing_docs)] // documentation missing in model
     ModifiedDate,
+    #[allow(missing_docs)] // documentation missing in model
     ParentId,
+    #[allow(missing_docs)] // documentation missing in model
     SpaceKey,
+    #[allow(missing_docs)] // documentation missing in model
     SpaceName,
+    #[allow(missing_docs)] // documentation missing in model
     Url,
+    #[allow(missing_docs)] // documentation missing in model
     Version,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3889,6 +4566,7 @@ impl std::str::FromStr for ConfluencePageFieldName {
     }
 }
 impl ConfluencePageFieldName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfluencePageFieldName::Author => "AUTHOR",
@@ -3906,6 +4584,7 @@ impl ConfluencePageFieldName {
             ConfluencePageFieldName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AUTHOR",
@@ -3999,6 +4678,12 @@ pub mod confluence_space_configuration {
             self.crawl_personal_spaces = Some(input);
             self
         }
+        /// <p>Specifies whether Amazon Kendra should index personal spaces. Users can
+        /// add restrictions to items in personal spaces. If personal spaces are
+        /// indexed, queries without user context information may return
+        /// restricted items from a personal space in their results. For more
+        /// information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on
+        /// user context</a>.</p>
         pub fn set_crawl_personal_spaces(mut self, input: std::option::Option<bool>) -> Self {
             self.crawl_personal_spaces = input;
             self
@@ -4008,16 +4693,35 @@ pub mod confluence_space_configuration {
             self.crawl_archived_spaces = Some(input);
             self
         }
+        /// <p>Specifies whether Amazon Kendra should index archived spaces.</p>
         pub fn set_crawl_archived_spaces(mut self, input: std::option::Option<bool>) -> Self {
             self.crawl_archived_spaces = input;
             self
         }
+        /// Appends an item to `include_spaces`.
+        ///
+        /// To override the contents of this collection use [`set_include_spaces`](Self::set_include_spaces).
+        ///
+        /// <p>A list of space keys for Confluence spaces. If you include a key,
+        /// the blogs, documents, and attachments in the space are indexed.
+        /// Spaces that aren't in the list aren't indexed. A space in the list
+        /// must exist. Otherwise, Amazon Kendra logs an error when the data source is
+        /// synchronized. If a space is in both the <code>IncludeSpaces</code>
+        /// and the <code>ExcludeSpaces</code> list, the space is
+        /// excluded.</p>
         pub fn include_spaces(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.include_spaces.unwrap_or_default();
             v.push(input.into());
             self.include_spaces = Some(v);
             self
         }
+        /// <p>A list of space keys for Confluence spaces. If you include a key,
+        /// the blogs, documents, and attachments in the space are indexed.
+        /// Spaces that aren't in the list aren't indexed. A space in the list
+        /// must exist. Otherwise, Amazon Kendra logs an error when the data source is
+        /// synchronized. If a space is in both the <code>IncludeSpaces</code>
+        /// and the <code>ExcludeSpaces</code> list, the space is
+        /// excluded.</p>
         pub fn set_include_spaces(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4025,12 +4729,24 @@ pub mod confluence_space_configuration {
             self.include_spaces = input;
             self
         }
+        /// Appends an item to `exclude_spaces`.
+        ///
+        /// To override the contents of this collection use [`set_exclude_spaces`](Self::set_exclude_spaces).
+        ///
+        /// <p>A list of space keys of Confluence spaces. If you include a key,
+        /// the blogs, documents, and attachments in the space are not indexed.
+        /// If a space is in both the <code>ExcludeSpaces</code> and the
+        /// <code>IncludeSpaces</code> list, the space is excluded.</p>
         pub fn exclude_spaces(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exclude_spaces.unwrap_or_default();
             v.push(input.into());
             self.exclude_spaces = Some(v);
             self
         }
+        /// <p>A list of space keys of Confluence spaces. If you include a key,
+        /// the blogs, documents, and attachments in the space are not indexed.
+        /// If a space is in both the <code>ExcludeSpaces</code> and the
+        /// <code>IncludeSpaces</code> list, the space is excluded.</p>
         pub fn set_exclude_spaces(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4038,6 +4754,16 @@ pub mod confluence_space_configuration {
             self.exclude_spaces = input;
             self
         }
+        /// Appends an item to `space_field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_space_field_mappings`](Self::set_space_field_mappings).
+        ///
+        /// <p>Defines how space metadata fields should be mapped to index
+        /// fields. Before you can map a field, you must first create an index
+        /// field with a matching type using the console or the
+        /// <code>UpdateIndex</code> operation.</p>
+        /// <p>If you specify the <code>SpaceFieldMappings</code> parameter, you
+        /// must specify at least one field mapping.</p>
         pub fn space_field_mappings(
             mut self,
             input: impl Into<crate::model::ConfluenceSpaceToIndexFieldMapping>,
@@ -4047,6 +4773,12 @@ pub mod confluence_space_configuration {
             self.space_field_mappings = Some(v);
             self
         }
+        /// <p>Defines how space metadata fields should be mapped to index
+        /// fields. Before you can map a field, you must first create an index
+        /// field with a matching type using the console or the
+        /// <code>UpdateIndex</code> operation.</p>
+        /// <p>If you specify the <code>SpaceFieldMappings</code> parameter, you
+        /// must specify at least one field mapping.</p>
         pub fn set_space_field_mappings(
             mut self,
             input: std::option::Option<
@@ -4123,6 +4855,7 @@ pub mod confluence_space_to_index_field_mapping {
             self.data_source_field_name = Some(input);
             self
         }
+        /// <p>The name of the field in the data source. </p>
         pub fn set_data_source_field_name(
             mut self,
             input: std::option::Option<crate::model::ConfluenceSpaceFieldName>,
@@ -4138,6 +4871,10 @@ pub mod confluence_space_to_index_field_mapping {
             self.date_field_format = Some(input.into());
             self
         }
+        /// <p>The format for date fields in the data source. If the field
+        /// specified in <code>DataSourceFieldName</code> is a date field you
+        /// must specify the date format. If the field is not a date field, an
+        /// exception is thrown.</p>
         pub fn set_date_field_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4152,6 +4889,9 @@ pub mod confluence_space_to_index_field_mapping {
             self.index_field_name = Some(input.into());
             self
         }
+        /// <p>The name of the index field to map to the Confluence data source
+        /// field. The index field type must match the Confluence field
+        /// type.</p>
         pub fn set_index_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4176,6 +4916,7 @@ impl ConfluenceSpaceToIndexFieldMapping {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4187,9 +4928,13 @@ impl ConfluenceSpaceToIndexFieldMapping {
     std::hash::Hash,
 )]
 pub enum ConfluenceSpaceFieldName {
+    #[allow(missing_docs)] // documentation missing in model
     DisplayUrl,
+    #[allow(missing_docs)] // documentation missing in model
     ItemType,
+    #[allow(missing_docs)] // documentation missing in model
     SpaceKey,
+    #[allow(missing_docs)] // documentation missing in model
     Url,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4213,6 +4958,7 @@ impl std::str::FromStr for ConfluenceSpaceFieldName {
     }
 }
 impl ConfluenceSpaceFieldName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfluenceSpaceFieldName::DisplayUrl => "DISPLAY_URL",
@@ -4222,6 +4968,7 @@ impl ConfluenceSpaceFieldName {
             ConfluenceSpaceFieldName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISPLAY_URL", "ITEM_TYPE", "SPACE_KEY", "URL"]
     }
@@ -4232,6 +4979,7 @@ impl AsRef<str> for ConfluenceSpaceFieldName {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4243,7 +4991,9 @@ impl AsRef<str> for ConfluenceSpaceFieldName {
     std::hash::Hash,
 )]
 pub enum ConfluenceVersion {
+    #[allow(missing_docs)] // documentation missing in model
     Cloud,
+    #[allow(missing_docs)] // documentation missing in model
     Server,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4265,6 +5015,7 @@ impl std::str::FromStr for ConfluenceVersion {
     }
 }
 impl ConfluenceVersion {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfluenceVersion::Cloud => "CLOUD",
@@ -4272,6 +5023,7 @@ impl ConfluenceVersion {
             ConfluenceVersion::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CLOUD", "SERVER"]
     }
@@ -4366,6 +5118,10 @@ pub mod service_now_configuration {
             self.host_url = Some(input.into());
             self
         }
+        /// <p>The ServiceNow instance that the data source connects to. The host
+        /// endpoint should look like the following:
+        /// <code>{instance}.service-now.com.</code>
+        /// </p>
         pub fn set_host_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_url = input;
             self
@@ -4377,6 +5133,9 @@ pub mod service_now_configuration {
             self.secret_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret
+        /// that contains the user name and password required to connect to the
+        /// ServiceNow instance.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -4391,6 +5150,9 @@ pub mod service_now_configuration {
             self.service_now_build_version = Some(input);
             self
         }
+        /// <p>The identifier of the release that the ServiceNow host is running.
+        /// If the host is not running the <code>LONDON</code> release, use
+        /// <code>OTHERS</code>.</p>
         pub fn set_service_now_build_version(
             mut self,
             input: std::option::Option<crate::model::ServiceNowBuildVersionType>,
@@ -4407,6 +5169,8 @@ pub mod service_now_configuration {
             self.knowledge_article_configuration = Some(input);
             self
         }
+        /// <p>Provides configuration information for crawling knowledge articles
+        /// in the ServiceNow site.</p>
         pub fn set_knowledge_article_configuration(
             mut self,
             input: std::option::Option<crate::model::ServiceNowKnowledgeArticleConfiguration>,
@@ -4423,6 +5187,8 @@ pub mod service_now_configuration {
             self.service_catalog_configuration = Some(input);
             self
         }
+        /// <p>Provides configuration information for crawling service catalogs
+        /// in the ServiceNow site.</p>
         pub fn set_service_catalog_configuration(
             mut self,
             input: std::option::Option<crate::model::ServiceNowServiceCatalogConfiguration>,
@@ -4449,6 +5215,18 @@ pub mod service_now_configuration {
             self.authentication_type = Some(input);
             self
         }
+        /// <p>Determines the type of authentication used to connect to the
+        /// ServiceNow instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is
+        /// authenticated using the user name and password provided in the AWS
+        /// Secrets Manager secret in the <code>SecretArn</code> field. When you
+        /// choose <code>OAUTH2</code>, Amazon Kendra is authenticated using the OAuth
+        /// token and secret provided in the Secrets Manager secret, and the
+        /// user name and password are used to determine which information Amazon Kendra
+        /// has access to.</p>
+        /// <p>When you use <code>OAUTH2</code> authentication, you must generate
+        /// a token and a client secret using the ServiceNow console. For more
+        /// information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a
+        /// ServiceNow data source</a>.</p>
         pub fn set_authentication_type(
             mut self,
             input: std::option::Option<crate::model::ServiceNowAuthenticationType>,
@@ -4476,6 +5254,7 @@ impl ServiceNowConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4487,7 +5266,9 @@ impl ServiceNowConfiguration {
     std::hash::Hash,
 )]
 pub enum ServiceNowAuthenticationType {
+    #[allow(missing_docs)] // documentation missing in model
     HttpBasic,
+    #[allow(missing_docs)] // documentation missing in model
     Oauth2,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4509,6 +5290,7 @@ impl std::str::FromStr for ServiceNowAuthenticationType {
     }
 }
 impl ServiceNowAuthenticationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceNowAuthenticationType::HttpBasic => "HTTP_BASIC",
@@ -4516,6 +5298,7 @@ impl ServiceNowAuthenticationType {
             ServiceNowAuthenticationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HTTP_BASIC", "OAUTH2"]
     }
@@ -4600,10 +5383,22 @@ pub mod service_now_service_catalog_configuration {
             self.crawl_attachments = Some(input);
             self
         }
+        /// <p>Indicates whether Amazon Kendra should crawl attachments to the service
+        /// catalog items. </p>
         pub fn set_crawl_attachments(mut self, input: std::option::Option<bool>) -> Self {
             self.crawl_attachments = input;
             self
         }
+        /// Appends an item to `include_attachment_file_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_include_attachment_file_patterns`](Self::set_include_attachment_file_patterns).
+        ///
+        /// <p>A list of regular expression patterns. Documents that match the
+        /// patterns are included in the index. Documents that don't match the
+        /// patterns are excluded from the index. If a document matches both an
+        /// exclusion pattern and an inclusion pattern, the document is not
+        /// included in the index.</p>
+        /// <p>The regex is applied to the file name of the attachment.</p>
         pub fn include_attachment_file_patterns(
             mut self,
             input: impl Into<std::string::String>,
@@ -4613,6 +5408,12 @@ pub mod service_now_service_catalog_configuration {
             self.include_attachment_file_patterns = Some(v);
             self
         }
+        /// <p>A list of regular expression patterns. Documents that match the
+        /// patterns are included in the index. Documents that don't match the
+        /// patterns are excluded from the index. If a document matches both an
+        /// exclusion pattern and an inclusion pattern, the document is not
+        /// included in the index.</p>
+        /// <p>The regex is applied to the file name of the attachment.</p>
         pub fn set_include_attachment_file_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4620,6 +5421,16 @@ pub mod service_now_service_catalog_configuration {
             self.include_attachment_file_patterns = input;
             self
         }
+        /// Appends an item to `exclude_attachment_file_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_exclude_attachment_file_patterns`](Self::set_exclude_attachment_file_patterns).
+        ///
+        /// <p>A list of regular expression patterns. Documents that match the
+        /// patterns are excluded from the index. Documents that don't match the
+        /// patterns are included in the index. If a document matches both an
+        /// exclusion pattern and an inclusion pattern, the document is not
+        /// included in the index.</p>
+        /// <p>The regex is applied to the file name of the attachment.</p>
         pub fn exclude_attachment_file_patterns(
             mut self,
             input: impl Into<std::string::String>,
@@ -4629,6 +5440,12 @@ pub mod service_now_service_catalog_configuration {
             self.exclude_attachment_file_patterns = Some(v);
             self
         }
+        /// <p>A list of regular expression patterns. Documents that match the
+        /// patterns are excluded from the index. Documents that don't match the
+        /// patterns are included in the index. If a document matches both an
+        /// exclusion pattern and an inclusion pattern, the document is not
+        /// included in the index.</p>
+        /// <p>The regex is applied to the file name of the attachment.</p>
         pub fn set_exclude_attachment_file_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4642,6 +5459,8 @@ pub mod service_now_service_catalog_configuration {
             self.document_data_field_name = Some(input.into());
             self
         }
+        /// <p>The name of the ServiceNow field that is mapped to the index
+        /// document contents field in the Amazon Kendra index.</p>
         pub fn set_document_data_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4655,6 +5474,8 @@ pub mod service_now_service_catalog_configuration {
             self.document_title_field_name = Some(input.into());
             self
         }
+        /// <p>The name of the ServiceNow field that is mapped to the index
+        /// document title field.</p>
         pub fn set_document_title_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4662,6 +5483,12 @@ pub mod service_now_service_catalog_configuration {
             self.document_title_field_name = input;
             self
         }
+        /// Appends an item to `field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
+        ///
+        /// <p>Mapping between ServiceNow fields and Amazon Kendra index fields. You
+        /// must create the index field before you map the field.</p>
         pub fn field_mappings(
             mut self,
             input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
@@ -4671,6 +5498,8 @@ pub mod service_now_service_catalog_configuration {
             self.field_mappings = Some(v);
             self
         }
+        /// <p>Mapping between ServiceNow fields and Amazon Kendra index fields. You
+        /// must create the index field before you map the field.</p>
         pub fn set_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -4778,10 +5607,20 @@ pub mod service_now_knowledge_article_configuration {
             self.crawl_attachments = Some(input);
             self
         }
+        /// <p>Indicates whether Amazon Kendra should index attachments to knowledge
+        /// articles.</p>
         pub fn set_crawl_attachments(mut self, input: std::option::Option<bool>) -> Self {
             self.crawl_attachments = input;
             self
         }
+        /// Appends an item to `include_attachment_file_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_include_attachment_file_patterns`](Self::set_include_attachment_file_patterns).
+        ///
+        /// <p>List of regular expressions applied to knowledge articles. Items
+        /// that don't match the inclusion pattern are not indexed. The regex is
+        /// applied to the field specified in the
+        /// <code>PatternTargetField</code>.</p>
         pub fn include_attachment_file_patterns(
             mut self,
             input: impl Into<std::string::String>,
@@ -4791,6 +5630,10 @@ pub mod service_now_knowledge_article_configuration {
             self.include_attachment_file_patterns = Some(v);
             self
         }
+        /// <p>List of regular expressions applied to knowledge articles. Items
+        /// that don't match the inclusion pattern are not indexed. The regex is
+        /// applied to the field specified in the
+        /// <code>PatternTargetField</code>.</p>
         pub fn set_include_attachment_file_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4798,6 +5641,15 @@ pub mod service_now_knowledge_article_configuration {
             self.include_attachment_file_patterns = input;
             self
         }
+        /// Appends an item to `exclude_attachment_file_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_exclude_attachment_file_patterns`](Self::set_exclude_attachment_file_patterns).
+        ///
+        /// <p>List of regular expressions applied to knowledge articles. Items
+        /// that don't match the inclusion pattern are not indexed. The regex is
+        /// applied to the field specified in the
+        /// <code>PatternTargetField</code>
+        /// </p>
         pub fn exclude_attachment_file_patterns(
             mut self,
             input: impl Into<std::string::String>,
@@ -4807,6 +5659,11 @@ pub mod service_now_knowledge_article_configuration {
             self.exclude_attachment_file_patterns = Some(v);
             self
         }
+        /// <p>List of regular expressions applied to knowledge articles. Items
+        /// that don't match the inclusion pattern are not indexed. The regex is
+        /// applied to the field specified in the
+        /// <code>PatternTargetField</code>
+        /// </p>
         pub fn set_exclude_attachment_file_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4820,6 +5677,8 @@ pub mod service_now_knowledge_article_configuration {
             self.document_data_field_name = Some(input.into());
             self
         }
+        /// <p>The name of the ServiceNow field that is mapped to the index
+        /// document contents field in the Amazon Kendra index.</p>
         pub fn set_document_data_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4833,6 +5692,8 @@ pub mod service_now_knowledge_article_configuration {
             self.document_title_field_name = Some(input.into());
             self
         }
+        /// <p>The name of the ServiceNow field that is mapped to the index
+        /// document title field.</p>
         pub fn set_document_title_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4840,6 +5701,12 @@ pub mod service_now_knowledge_article_configuration {
             self.document_title_field_name = input;
             self
         }
+        /// Appends an item to `field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
+        ///
+        /// <p>Mapping between ServiceNow fields and Amazon Kendra index fields. You
+        /// must create the index field before you map the field.</p>
         pub fn field_mappings(
             mut self,
             input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
@@ -4849,6 +5716,8 @@ pub mod service_now_knowledge_article_configuration {
             self.field_mappings = Some(v);
             self
         }
+        /// <p>Mapping between ServiceNow fields and Amazon Kendra index fields. You
+        /// must create the index field before you map the field.</p>
         pub fn set_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -4866,6 +5735,12 @@ pub mod service_now_knowledge_article_configuration {
             self.filter_query = Some(input.into());
             self
         }
+        /// <p>A query that selects the knowledge articles to index. The query
+        /// can return articles from multiple knowledge bases, and the knowledge
+        /// bases can be public or private.</p>
+        /// <p>The query string must be one generated by the ServiceNow console.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/servicenow-query.html">Specifying
+        /// documents to index with a query</a>. </p>
         pub fn set_filter_query(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter_query = input;
             self
@@ -4891,6 +5766,7 @@ impl ServiceNowKnowledgeArticleConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4902,7 +5778,9 @@ impl ServiceNowKnowledgeArticleConfiguration {
     std::hash::Hash,
 )]
 pub enum ServiceNowBuildVersionType {
+    #[allow(missing_docs)] // documentation missing in model
     London,
+    #[allow(missing_docs)] // documentation missing in model
     Others,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4924,6 +5802,7 @@ impl std::str::FromStr for ServiceNowBuildVersionType {
     }
 }
 impl ServiceNowBuildVersionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceNowBuildVersionType::London => "LONDON",
@@ -4931,6 +5810,7 @@ impl ServiceNowBuildVersionType {
             ServiceNowBuildVersionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LONDON", "OTHERS"]
     }
@@ -5014,6 +5894,7 @@ pub mod one_drive_configuration {
             self.tenant_domain = Some(input.into());
             self
         }
+        /// <p>The Azure Active Directory domain of the organization. </p>
         pub fn set_tenant_domain(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5030,6 +5911,11 @@ pub mod one_drive_configuration {
             self.secret_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret
+        /// that contains the user name and password to connect to OneDrive. The
+        /// user namd should be the application ID for the OneDrive application,
+        /// and the password is the application key for the OneDrive
+        /// application.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -5039,6 +5925,7 @@ pub mod one_drive_configuration {
             self.one_drive_users = Some(input);
             self
         }
+        /// <p>A list of user accounts whose documents should be indexed.</p>
         pub fn set_one_drive_users(
             mut self,
             input: std::option::Option<crate::model::OneDriveUsers>,
@@ -5046,12 +5933,28 @@ pub mod one_drive_configuration {
             self.one_drive_users = input;
             self
         }
+        /// Appends an item to `inclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_inclusion_patterns`](Self::set_inclusion_patterns).
+        ///
+        /// <p>A list of regular expression patterns. Documents that match the
+        /// pattern are included in the index. Documents that don't match the
+        /// pattern are excluded from the index. If a document matches both an
+        /// inclusion pattern and an exclusion pattern, the document is not
+        /// included in the index. </p>
+        /// <p>The exclusion pattern is applied to the file name.</p>
         pub fn inclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.inclusion_patterns.unwrap_or_default();
             v.push(input.into());
             self.inclusion_patterns = Some(v);
             self
         }
+        /// <p>A list of regular expression patterns. Documents that match the
+        /// pattern are included in the index. Documents that don't match the
+        /// pattern are excluded from the index. If a document matches both an
+        /// inclusion pattern and an exclusion pattern, the document is not
+        /// included in the index. </p>
+        /// <p>The exclusion pattern is applied to the file name.</p>
         pub fn set_inclusion_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5059,12 +5962,26 @@ pub mod one_drive_configuration {
             self.inclusion_patterns = input;
             self
         }
+        /// Appends an item to `exclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_exclusion_patterns`](Self::set_exclusion_patterns).
+        ///
+        /// <p>List of regular expressions applied to documents. Items that match
+        /// the exclusion pattern are not indexed. If you provide both an
+        /// inclusion pattern and an exclusion pattern, any item that matches
+        /// the exclusion pattern isn't indexed. </p>
+        /// <p>The exclusion pattern is applied to the file name.</p>
         pub fn exclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exclusion_patterns.unwrap_or_default();
             v.push(input.into());
             self.exclusion_patterns = Some(v);
             self
         }
+        /// <p>List of regular expressions applied to documents. Items that match
+        /// the exclusion pattern are not indexed. If you provide both an
+        /// inclusion pattern and an exclusion pattern, any item that matches
+        /// the exclusion pattern isn't indexed. </p>
+        /// <p>The exclusion pattern is applied to the file name.</p>
         pub fn set_exclusion_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5072,6 +5989,14 @@ pub mod one_drive_configuration {
             self.exclusion_patterns = input;
             self
         }
+        /// Appends an item to `field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
+        ///
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that
+        /// map Microsoft OneDrive fields to custom fields in the Amazon Kendra
+        /// index. You must first create the index fields before you map
+        /// OneDrive fields.</p>
         pub fn field_mappings(
             mut self,
             input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
@@ -5081,6 +6006,10 @@ pub mod one_drive_configuration {
             self.field_mappings = Some(v);
             self
         }
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that
+        /// map Microsoft OneDrive fields to custom fields in the Amazon Kendra
+        /// index. You must first create the index fields before you map
+        /// OneDrive fields.</p>
         pub fn set_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -5095,6 +6024,9 @@ pub mod one_drive_configuration {
             self.disable_local_groups = Some(input);
             self
         }
+        /// <p>A Boolean value that specifies whether local
+        /// groups are disabled (<code>True</code>) or enabled (<code>False</code>).
+        /// </p>
         pub fn set_disable_local_groups(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_local_groups = input;
             self
@@ -5153,12 +6085,28 @@ pub mod one_drive_users {
         pub(crate) one_drive_user_s3_path: std::option::Option<crate::model::S3Path>,
     }
     impl Builder {
+        /// Appends an item to `one_drive_user_list`.
+        ///
+        /// To override the contents of this collection use [`set_one_drive_user_list`](Self::set_one_drive_user_list).
+        ///
+        /// <p>A list of users whose documents should be indexed. Specify the
+        /// user names in email format, for example,
+        /// <code>username@tenantdomain</code>. If you need to index the
+        /// documents of more than 100 users, use the
+        /// <code>OneDriveUserS3Path</code> field to specify the location of
+        /// a file containing a list of users.</p>
         pub fn one_drive_user_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.one_drive_user_list.unwrap_or_default();
             v.push(input.into());
             self.one_drive_user_list = Some(v);
             self
         }
+        /// <p>A list of users whose documents should be indexed. Specify the
+        /// user names in email format, for example,
+        /// <code>username@tenantdomain</code>. If you need to index the
+        /// documents of more than 100 users, use the
+        /// <code>OneDriveUserS3Path</code> field to specify the location of
+        /// a file containing a list of users.</p>
         pub fn set_one_drive_user_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5172,6 +6120,8 @@ pub mod one_drive_users {
             self.one_drive_user_s3_path = Some(input);
             self
         }
+        /// <p>The S3 bucket location of a file containing a list of users whose
+        /// documents should be indexed.</p>
         pub fn set_one_drive_user_s3_path(
             mut self,
             input: std::option::Option<crate::model::S3Path>,
@@ -5332,6 +6282,8 @@ pub mod salesforce_configuration {
             self.server_url = Some(input.into());
             self
         }
+        /// <p>The instance URL for the Salesforce site that you want to
+        /// index.</p>
         pub fn set_server_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_url = input;
             self
@@ -5370,10 +6322,46 @@ pub mod salesforce_configuration {
             self.secret_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret
+        /// that contains the key/value pairs required to connect to your
+        /// Salesforce instance. The secret must contain a JSON structure with
+        /// the following keys:</p>
+        /// <ul>
+        /// <li>
+        /// <p>authenticationUrl - The OAUTH endpoint that Amazon Kendra
+        /// connects to get an OAUTH token. </p>
+        /// </li>
+        /// <li>
+        /// <p>consumerKey - The application public key generated when
+        /// you created your Salesforce application.</p>
+        /// </li>
+        /// <li>
+        /// <p>consumerSecret - The application private key generated
+        /// when you created your Salesforce application.</p>
+        /// </li>
+        /// <li>
+        /// <p>password - The password associated with the user logging
+        /// in to the Salesforce instance.</p>
+        /// </li>
+        /// <li>
+        /// <p>securityToken - The token associated with the user account
+        /// logging in to the Salesforce instance.</p>
+        /// </li>
+        /// <li>
+        /// <p>username - The user name of the user logging in to the
+        /// Salesforce instance.</p>
+        /// </li>
+        /// </ul>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
         }
+        /// Appends an item to `standard_object_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_standard_object_configurations`](Self::set_standard_object_configurations).
+        ///
+        /// <p>Specifies the Salesforce standard objects that Amazon Kendra
+        /// indexes.</p>
         pub fn standard_object_configurations(
             mut self,
             input: impl Into<crate::model::SalesforceStandardObjectConfiguration>,
@@ -5383,6 +6371,8 @@ pub mod salesforce_configuration {
             self.standard_object_configurations = Some(v);
             self
         }
+        /// <p>Specifies the Salesforce standard objects that Amazon Kendra
+        /// indexes.</p>
         pub fn set_standard_object_configurations(
             mut self,
             input: std::option::Option<
@@ -5403,6 +6393,10 @@ pub mod salesforce_configuration {
             self.knowledge_article_configuration = Some(input);
             self
         }
+        /// <p>Specifies configuration information for the knowledge article
+        /// types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge
+        /// articles and the standard fields of knowledge articles, or the
+        /// custom fields of custom knowledge articles, but not both.</p>
         pub fn set_knowledge_article_configuration(
             mut self,
             input: std::option::Option<crate::model::SalesforceKnowledgeArticleConfiguration>,
@@ -5419,6 +6413,8 @@ pub mod salesforce_configuration {
             self.chatter_feed_configuration = Some(input);
             self
         }
+        /// <p>Specifies configuration information for Salesforce chatter
+        /// feeds.</p>
         pub fn set_chatter_feed_configuration(
             mut self,
             input: std::option::Option<crate::model::SalesforceChatterFeedConfiguration>,
@@ -5432,6 +6428,8 @@ pub mod salesforce_configuration {
             self.crawl_attachments = Some(input);
             self
         }
+        /// <p>Indicates whether Amazon Kendra should index attachments to Salesforce
+        /// objects.</p>
         pub fn set_crawl_attachments(mut self, input: std::option::Option<bool>) -> Self {
             self.crawl_attachments = input;
             self
@@ -5445,6 +6443,8 @@ pub mod salesforce_configuration {
             self.standard_object_attachment_configuration = Some(input);
             self
         }
+        /// <p>Provides configuration information for processing attachments to
+        /// Salesforce standard objects. </p>
         pub fn set_standard_object_attachment_configuration(
             mut self,
             input: std::option::Option<
@@ -5454,6 +6454,16 @@ pub mod salesforce_configuration {
             self.standard_object_attachment_configuration = input;
             self
         }
+        /// Appends an item to `include_attachment_file_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_include_attachment_file_patterns`](Self::set_include_attachment_file_patterns).
+        ///
+        /// <p>A list of regular expression patterns. Documents that match the
+        /// patterns are included in the index. Documents that don't match the
+        /// patterns are excluded from the index. If a document matches both an
+        /// inclusion pattern and an exclusion pattern, the document is not
+        /// included in the index.</p>
+        /// <p>The regex is applied to the name of the attached file.</p>
         pub fn include_attachment_file_patterns(
             mut self,
             input: impl Into<std::string::String>,
@@ -5463,6 +6473,12 @@ pub mod salesforce_configuration {
             self.include_attachment_file_patterns = Some(v);
             self
         }
+        /// <p>A list of regular expression patterns. Documents that match the
+        /// patterns are included in the index. Documents that don't match the
+        /// patterns are excluded from the index. If a document matches both an
+        /// inclusion pattern and an exclusion pattern, the document is not
+        /// included in the index.</p>
+        /// <p>The regex is applied to the name of the attached file.</p>
         pub fn set_include_attachment_file_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5470,6 +6486,16 @@ pub mod salesforce_configuration {
             self.include_attachment_file_patterns = input;
             self
         }
+        /// Appends an item to `exclude_attachment_file_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_exclude_attachment_file_patterns`](Self::set_exclude_attachment_file_patterns).
+        ///
+        /// <p>A list of regular expression patterns. Documents that match the
+        /// patterns are excluded from the index. Documents that don't match the
+        /// patterns are included in the index. If a document matches both an
+        /// exclusion pattern and an inclusion pattern, the document is not
+        /// included in the index.</p>
+        /// <p>The regex is applied to the name of the attached file.</p>
         pub fn exclude_attachment_file_patterns(
             mut self,
             input: impl Into<std::string::String>,
@@ -5479,6 +6505,12 @@ pub mod salesforce_configuration {
             self.exclude_attachment_file_patterns = Some(v);
             self
         }
+        /// <p>A list of regular expression patterns. Documents that match the
+        /// patterns are excluded from the index. Documents that don't match the
+        /// patterns are included in the index. If a document matches both an
+        /// exclusion pattern and an inclusion pattern, the document is not
+        /// included in the index.</p>
+        /// <p>The regex is applied to the name of the attached file.</p>
         pub fn set_exclude_attachment_file_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5546,6 +6578,7 @@ pub mod salesforce_standard_object_attachment_configuration {
             self.document_title_field_name = Some(input.into());
             self
         }
+        /// <p>The name of the field used for the document title.</p>
         pub fn set_document_title_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5553,6 +6586,12 @@ pub mod salesforce_standard_object_attachment_configuration {
             self.document_title_field_name = input;
             self
         }
+        /// Appends an item to `field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
+        ///
+        /// <p>One or more objects that map fields in attachments to Amazon Kendra
+        /// index fields.</p>
         pub fn field_mappings(
             mut self,
             input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
@@ -5562,6 +6601,8 @@ pub mod salesforce_standard_object_attachment_configuration {
             self.field_mappings = Some(v);
             self
         }
+        /// <p>One or more objects that map fields in attachments to Amazon Kendra
+        /// index fields.</p>
         pub fn set_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -5643,6 +6684,9 @@ pub mod salesforce_chatter_feed_configuration {
             self.document_data_field_name = Some(input.into());
             self
         }
+        /// <p>The name of the column in the Salesforce FeedItem table that
+        /// contains the content to index. Typically this is the
+        /// <code>Body</code> column.</p>
         pub fn set_document_data_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5657,6 +6701,9 @@ pub mod salesforce_chatter_feed_configuration {
             self.document_title_field_name = Some(input.into());
             self
         }
+        /// <p>The name of the column in the Salesforce FeedItem table that
+        /// contains the title of the document. This is typically the
+        /// <code>Title</code> column.</p>
         pub fn set_document_title_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5664,6 +6711,12 @@ pub mod salesforce_chatter_feed_configuration {
             self.document_title_field_name = input;
             self
         }
+        /// Appends an item to `field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
+        ///
+        /// <p>Maps fields from a Salesforce chatter feed into Amazon Kendra index
+        /// fields.</p>
         pub fn field_mappings(
             mut self,
             input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
@@ -5673,6 +6726,8 @@ pub mod salesforce_chatter_feed_configuration {
             self.field_mappings = Some(v);
             self
         }
+        /// <p>Maps fields from a Salesforce chatter feed into Amazon Kendra index
+        /// fields.</p>
         pub fn set_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -5680,6 +6735,15 @@ pub mod salesforce_chatter_feed_configuration {
             self.field_mappings = input;
             self
         }
+        /// Appends an item to `include_filter_types`.
+        ///
+        /// To override the contents of this collection use [`set_include_filter_types`](Self::set_include_filter_types).
+        ///
+        /// <p>Filters the documents in the feed based on status of the user.
+        /// When you specify <code>ACTIVE_USERS</code> only documents from users
+        /// who have an active account are indexed. When you specify
+        /// <code>STANDARD_USER</code> only documents for Salesforce
+        /// standard users are documented. You can specify both.</p>
         pub fn include_filter_types(
             mut self,
             input: impl Into<crate::model::SalesforceChatterFeedIncludeFilterType>,
@@ -5689,6 +6753,11 @@ pub mod salesforce_chatter_feed_configuration {
             self.include_filter_types = Some(v);
             self
         }
+        /// <p>Filters the documents in the feed based on status of the user.
+        /// When you specify <code>ACTIVE_USERS</code> only documents from users
+        /// who have an active account are indexed. When you specify
+        /// <code>STANDARD_USER</code> only documents for Salesforce
+        /// standard users are documented. You can specify both.</p>
         pub fn set_include_filter_types(
             mut self,
             input: std::option::Option<
@@ -5716,6 +6785,7 @@ impl SalesforceChatterFeedConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5727,7 +6797,9 @@ impl SalesforceChatterFeedConfiguration {
     std::hash::Hash,
 )]
 pub enum SalesforceChatterFeedIncludeFilterType {
+    #[allow(missing_docs)] // documentation missing in model
     ActiveUser,
+    #[allow(missing_docs)] // documentation missing in model
     StandardUser,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5749,6 +6821,7 @@ impl std::str::FromStr for SalesforceChatterFeedIncludeFilterType {
     }
 }
 impl SalesforceChatterFeedIncludeFilterType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SalesforceChatterFeedIncludeFilterType::ActiveUser => "ACTIVE_USER",
@@ -5756,6 +6829,7 @@ impl SalesforceChatterFeedIncludeFilterType {
             SalesforceChatterFeedIncludeFilterType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE_USER", "STANDARD_USER"]
     }
@@ -5818,6 +6892,13 @@ pub mod salesforce_knowledge_article_configuration {
         >,
     }
     impl Builder {
+        /// Appends an item to `included_states`.
+        ///
+        /// To override the contents of this collection use [`set_included_states`](Self::set_included_states).
+        ///
+        /// <p>Specifies the document states that should be included when
+        /// Amazon Kendra indexes knowledge articles. You must specify at least one
+        /// state.</p>
         pub fn included_states(
             mut self,
             input: impl Into<crate::model::SalesforceKnowledgeArticleState>,
@@ -5827,6 +6908,9 @@ pub mod salesforce_knowledge_article_configuration {
             self.included_states = Some(v);
             self
         }
+        /// <p>Specifies the document states that should be included when
+        /// Amazon Kendra indexes knowledge articles. You must specify at least one
+        /// state.</p>
         pub fn set_included_states(
             mut self,
             input: std::option::Option<
@@ -5845,6 +6929,8 @@ pub mod salesforce_knowledge_article_configuration {
             self.standard_knowledge_article_type_configuration = Some(input);
             self
         }
+        /// <p>Provides configuration information for standard Salesforce
+        /// knowledge articles.</p>
         pub fn set_standard_knowledge_article_type_configuration(
             mut self,
             input: std::option::Option<
@@ -5854,6 +6940,12 @@ pub mod salesforce_knowledge_article_configuration {
             self.standard_knowledge_article_type_configuration = input;
             self
         }
+        /// Appends an item to `custom_knowledge_article_type_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_custom_knowledge_article_type_configurations`](Self::set_custom_knowledge_article_type_configurations).
+        ///
+        /// <p>Provides configuration information for custom Salesforce knowledge
+        /// articles.</p>
         pub fn custom_knowledge_article_type_configurations(
             mut self,
             input: impl Into<crate::model::SalesforceCustomKnowledgeArticleTypeConfiguration>,
@@ -5865,6 +6957,8 @@ pub mod salesforce_knowledge_article_configuration {
             self.custom_knowledge_article_type_configurations = Some(v);
             self
         }
+        /// <p>Provides configuration information for custom Salesforce knowledge
+        /// articles.</p>
         pub fn set_custom_knowledge_article_type_configurations(
             mut self,
             input: std::option::Option<
@@ -5939,6 +7033,7 @@ pub mod salesforce_custom_knowledge_article_type_configuration {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5949,6 +7044,8 @@ pub mod salesforce_custom_knowledge_article_type_configuration {
             self.document_data_field_name = Some(input.into());
             self
         }
+        /// <p>The name of the field in the custom knowledge article that
+        /// contains the document data to index.</p>
         pub fn set_document_data_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5962,6 +7059,8 @@ pub mod salesforce_custom_knowledge_article_type_configuration {
             self.document_title_field_name = Some(input.into());
             self
         }
+        /// <p>The name of the field in the custom knowledge article that
+        /// contains the document title.</p>
         pub fn set_document_title_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5969,6 +7068,12 @@ pub mod salesforce_custom_knowledge_article_type_configuration {
             self.document_title_field_name = input;
             self
         }
+        /// Appends an item to `field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
+        ///
+        /// <p>One or more objects that map fields in the custom knowledge
+        /// article to fields in the Amazon Kendra index.</p>
         pub fn field_mappings(
             mut self,
             input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
@@ -5978,6 +7083,8 @@ pub mod salesforce_custom_knowledge_article_type_configuration {
             self.field_mappings = Some(v);
             self
         }
+        /// <p>One or more objects that map fields in the custom knowledge
+        /// article to fields in the Amazon Kendra index.</p>
         pub fn set_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -6047,6 +7154,8 @@ pub mod salesforce_standard_knowledge_article_type_configuration {
             self.document_data_field_name = Some(input.into());
             self
         }
+        /// <p>The name of the field that contains the document data to
+        /// index.</p>
         pub fn set_document_data_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6059,6 +7168,7 @@ pub mod salesforce_standard_knowledge_article_type_configuration {
             self.document_title_field_name = Some(input.into());
             self
         }
+        /// <p>The name of the field that contains the document title.</p>
         pub fn set_document_title_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6066,6 +7176,13 @@ pub mod salesforce_standard_knowledge_article_type_configuration {
             self.document_title_field_name = input;
             self
         }
+        /// Appends an item to `field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
+        ///
+        /// <p>One or more objects that map fields in the knowledge article to
+        /// Amazon Kendra index fields. The index field must exist before you can map
+        /// a Salesforce field to it.</p>
         pub fn field_mappings(
             mut self,
             input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
@@ -6075,6 +7192,9 @@ pub mod salesforce_standard_knowledge_article_type_configuration {
             self.field_mappings = Some(v);
             self
         }
+        /// <p>One or more objects that map fields in the knowledge article to
+        /// Amazon Kendra index fields. The index field must exist before you can map
+        /// a Salesforce field to it.</p>
         pub fn set_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -6100,6 +7220,7 @@ impl SalesforceStandardKnowledgeArticleTypeConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6111,8 +7232,11 @@ impl SalesforceStandardKnowledgeArticleTypeConfiguration {
     std::hash::Hash,
 )]
 pub enum SalesforceKnowledgeArticleState {
+    #[allow(missing_docs)] // documentation missing in model
     Archived,
+    #[allow(missing_docs)] // documentation missing in model
     Draft,
+    #[allow(missing_docs)] // documentation missing in model
     Published,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6135,6 +7259,7 @@ impl std::str::FromStr for SalesforceKnowledgeArticleState {
     }
 }
 impl SalesforceKnowledgeArticleState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SalesforceKnowledgeArticleState::Archived => "ARCHIVED",
@@ -6143,6 +7268,7 @@ impl SalesforceKnowledgeArticleState {
             SalesforceKnowledgeArticleState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ARCHIVED", "DRAFT", "PUBLISHED"]
     }
@@ -6200,6 +7326,7 @@ pub mod salesforce_standard_object_configuration {
             self.name = Some(input);
             self
         }
+        /// <p>The name of the standard object.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::SalesforceStandardObjectName>,
@@ -6213,6 +7340,8 @@ pub mod salesforce_standard_object_configuration {
             self.document_data_field_name = Some(input.into());
             self
         }
+        /// <p>The name of the field in the standard object table that contains
+        /// the document contents.</p>
         pub fn set_document_data_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6226,6 +7355,8 @@ pub mod salesforce_standard_object_configuration {
             self.document_title_field_name = Some(input.into());
             self
         }
+        /// <p>The name of the field in the standard object table that contains
+        /// the document title.</p>
         pub fn set_document_title_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6233,6 +7364,13 @@ pub mod salesforce_standard_object_configuration {
             self.document_title_field_name = input;
             self
         }
+        /// Appends an item to `field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
+        ///
+        /// <p>One or more objects that map fields in the standard object to
+        /// Amazon Kendra index fields. The index field must exist before you can map
+        /// a Salesforce field to it.</p>
         pub fn field_mappings(
             mut self,
             input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
@@ -6242,6 +7380,9 @@ pub mod salesforce_standard_object_configuration {
             self.field_mappings = Some(v);
             self
         }
+        /// <p>One or more objects that map fields in the standard object to
+        /// Amazon Kendra index fields. The index field must exist before you can map
+        /// a Salesforce field to it.</p>
         pub fn set_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -6267,6 +7408,7 @@ impl SalesforceStandardObjectConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6278,22 +7420,39 @@ impl SalesforceStandardObjectConfiguration {
     std::hash::Hash,
 )]
 pub enum SalesforceStandardObjectName {
+    #[allow(missing_docs)] // documentation missing in model
     Account,
+    #[allow(missing_docs)] // documentation missing in model
     Campaign,
+    #[allow(missing_docs)] // documentation missing in model
     Case,
+    #[allow(missing_docs)] // documentation missing in model
     Contact,
+    #[allow(missing_docs)] // documentation missing in model
     Contract,
+    #[allow(missing_docs)] // documentation missing in model
     Document,
+    #[allow(missing_docs)] // documentation missing in model
     Group,
+    #[allow(missing_docs)] // documentation missing in model
     Idea,
+    #[allow(missing_docs)] // documentation missing in model
     Lead,
+    #[allow(missing_docs)] // documentation missing in model
     Opportunity,
+    #[allow(missing_docs)] // documentation missing in model
     Partner,
+    #[allow(missing_docs)] // documentation missing in model
     Pricebook,
+    #[allow(missing_docs)] // documentation missing in model
     Product,
+    #[allow(missing_docs)] // documentation missing in model
     Profile,
+    #[allow(missing_docs)] // documentation missing in model
     Solution,
+    #[allow(missing_docs)] // documentation missing in model
     Task,
+    #[allow(missing_docs)] // documentation missing in model
     User,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6330,6 +7489,7 @@ impl std::str::FromStr for SalesforceStandardObjectName {
     }
 }
 impl SalesforceStandardObjectName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SalesforceStandardObjectName::Account => "ACCOUNT",
@@ -6352,6 +7512,7 @@ impl SalesforceStandardObjectName {
             SalesforceStandardObjectName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT",
@@ -6433,6 +7594,7 @@ pub mod database_configuration {
             self.database_engine_type = Some(input);
             self
         }
+        /// <p>The type of database engine that runs the database.</p>
         pub fn set_database_engine_type(
             mut self,
             input: std::option::Option<crate::model::DatabaseEngineType>,
@@ -6448,6 +7610,7 @@ pub mod database_configuration {
             self.connection_configuration = Some(input);
             self
         }
+        /// <p>The information necessary to connect to a database.</p>
         pub fn set_connection_configuration(
             mut self,
             input: std::option::Option<crate::model::ConnectionConfiguration>,
@@ -6463,6 +7626,7 @@ pub mod database_configuration {
             self.vpc_configuration = Some(input);
             self
         }
+        /// <p>Provides information for connecting to an Amazon VPC.</p>
         pub fn set_vpc_configuration(
             mut self,
             input: std::option::Option<crate::model::DataSourceVpcConfiguration>,
@@ -6476,6 +7640,8 @@ pub mod database_configuration {
             self.column_configuration = Some(input);
             self
         }
+        /// <p>Information about where the index should get the document
+        /// information from the database.</p>
         pub fn set_column_configuration(
             mut self,
             input: std::option::Option<crate::model::ColumnConfiguration>,
@@ -6489,6 +7655,8 @@ pub mod database_configuration {
             self.acl_configuration = Some(input);
             self
         }
+        /// <p>Information about the database column that provides information
+        /// for user context filtering.</p>
         pub fn set_acl_configuration(
             mut self,
             input: std::option::Option<crate::model::AclConfiguration>,
@@ -6502,6 +7670,8 @@ pub mod database_configuration {
             self.sql_configuration = Some(input);
             self
         }
+        /// <p>Provides information about how Amazon Kendra uses quote marks around SQL
+        /// identifiers when querying a database data source.</p>
         pub fn set_sql_configuration(
             mut self,
             input: std::option::Option<crate::model::SqlConfiguration>,
@@ -6588,6 +7758,18 @@ pub mod sql_configuration {
             self.query_identifiers_enclosing_option = Some(input);
             self
         }
+        /// <p>Determines whether Amazon Kendra encloses SQL identifiers for tables and
+        /// column names in double quotes (") when making a database
+        /// query.</p>
+        /// <p>By default, Amazon Kendra passes SQL identifiers the way that they are
+        /// entered into the data source configuration. It does not change the
+        /// case of identifiers or enclose them in quotes.</p>
+        /// <p>PostgreSQL internally converts uppercase characters to lower case
+        /// characters in identifiers unless they are quoted. Choosing this
+        /// option encloses identifiers in quotes so that PostgreSQL does not
+        /// convert the character's case.</p>
+        /// <p>For MySQL databases, you must enable the <code>ansi_quotes</code>
+        /// option when you set this field to <code>DOUBLE_QUOTES</code>.</p>
         pub fn set_query_identifiers_enclosing_option(
             mut self,
             input: std::option::Option<crate::model::QueryIdentifiersEnclosingOption>,
@@ -6610,6 +7792,7 @@ impl SqlConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6621,7 +7804,9 @@ impl SqlConfiguration {
     std::hash::Hash,
 )]
 pub enum QueryIdentifiersEnclosingOption {
+    #[allow(missing_docs)] // documentation missing in model
     DoubleQuotes,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6643,6 +7828,7 @@ impl std::str::FromStr for QueryIdentifiersEnclosingOption {
     }
 }
 impl QueryIdentifiersEnclosingOption {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             QueryIdentifiersEnclosingOption::DoubleQuotes => "DOUBLE_QUOTES",
@@ -6650,6 +7836,7 @@ impl QueryIdentifiersEnclosingOption {
             QueryIdentifiersEnclosingOption::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DOUBLE_QUOTES", "NONE"]
     }
@@ -6700,6 +7887,11 @@ pub mod acl_configuration {
             self.allowed_groups_column_name = Some(input.into());
             self
         }
+        /// <p>A list of groups, separated by semi-colons, that filters a query
+        /// response based on user context. The document is only returned to
+        /// users that are in one of the groups specified in the
+        /// <code>UserContext</code> field of the <code>Query</code>
+        /// operation.</p>
         pub fn set_allowed_groups_column_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6776,6 +7968,7 @@ pub mod column_configuration {
             self.document_id_column_name = Some(input.into());
             self
         }
+        /// <p>The column that provides the document's unique identifier.</p>
         pub fn set_document_id_column_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6788,6 +7981,7 @@ pub mod column_configuration {
             self.document_data_column_name = Some(input.into());
             self
         }
+        /// <p>The column that contains the contents of the document.</p>
         pub fn set_document_data_column_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6800,6 +7994,7 @@ pub mod column_configuration {
             self.document_title_column_name = Some(input.into());
             self
         }
+        /// <p>The column that contains the title of the document.</p>
         pub fn set_document_title_column_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6807,6 +8002,13 @@ pub mod column_configuration {
             self.document_title_column_name = input;
             self
         }
+        /// Appends an item to `field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
+        ///
+        /// <p>An array of objects that map database column names to the
+        /// corresponding fields in an index. You must first create the fields
+        /// in the index using the <code>UpdateIndex</code> operation.</p>
         pub fn field_mappings(
             mut self,
             input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
@@ -6816,6 +8018,9 @@ pub mod column_configuration {
             self.field_mappings = Some(v);
             self
         }
+        /// <p>An array of objects that map database column names to the
+        /// corresponding fields in an index. You must first create the fields
+        /// in the index using the <code>UpdateIndex</code> operation.</p>
         pub fn set_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -6823,12 +8028,20 @@ pub mod column_configuration {
             self.field_mappings = input;
             self
         }
+        /// Appends an item to `change_detecting_columns`.
+        ///
+        /// To override the contents of this collection use [`set_change_detecting_columns`](Self::set_change_detecting_columns).
+        ///
+        /// <p>One to five columns that indicate when a document in the database
+        /// has changed.</p>
         pub fn change_detecting_columns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.change_detecting_columns.unwrap_or_default();
             v.push(input.into());
             self.change_detecting_columns = Some(v);
             self
         }
+        /// <p>One to five columns that indicate when a document in the database
+        /// has changed.</p>
         pub fn set_change_detecting_columns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6908,6 +8121,8 @@ pub mod connection_configuration {
             self.database_host = Some(input.into());
             self
         }
+        /// <p>The name of the host for the database. Can be either a string
+        /// (host.subdomain.domain.tld) or an IPv4 or IPv6 address.</p>
         pub fn set_database_host(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6920,6 +8135,7 @@ pub mod connection_configuration {
             self.database_port = Some(input);
             self
         }
+        /// <p>The port that the database uses for connections.</p>
         pub fn set_database_port(mut self, input: std::option::Option<i32>) -> Self {
             self.database_port = input;
             self
@@ -6929,6 +8145,7 @@ pub mod connection_configuration {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>The name of the database containing the document data.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6941,6 +8158,7 @@ pub mod connection_configuration {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table that contains the document data.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -6956,6 +8174,13 @@ pub mod connection_configuration {
             self.secret_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager.
+        /// The credentials should be a user/password pair. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using a
+        /// Database Data Source</a>. For more information about
+        /// Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is
+        /// Secrets Manager</a> in the <i> Secrets Manager
+        /// </i> user guide.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -6979,6 +8204,7 @@ impl ConnectionConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6990,9 +8216,13 @@ impl ConnectionConfiguration {
     std::hash::Hash,
 )]
 pub enum DatabaseEngineType {
+    #[allow(missing_docs)] // documentation missing in model
     RdsAuroraMysql,
+    #[allow(missing_docs)] // documentation missing in model
     RdsAuroraPostgresql,
+    #[allow(missing_docs)] // documentation missing in model
     RdsMysql,
+    #[allow(missing_docs)] // documentation missing in model
     RdsPostgresql,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7016,6 +8246,7 @@ impl std::str::FromStr for DatabaseEngineType {
     }
 }
 impl DatabaseEngineType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DatabaseEngineType::RdsAuroraMysql => "RDS_AURORA_MYSQL",
@@ -7025,6 +8256,7 @@ impl DatabaseEngineType {
             DatabaseEngineType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "RDS_AURORA_MYSQL",
@@ -7155,6 +8387,8 @@ pub mod share_point_configuration {
             self.share_point_version = Some(input);
             self
         }
+        /// <p>The version of Microsoft SharePoint that you are using as a data
+        /// source.</p>
         pub fn set_share_point_version(
             mut self,
             input: std::option::Option<crate::model::SharePointVersion>,
@@ -7162,12 +8396,20 @@ pub mod share_point_configuration {
             self.share_point_version = input;
             self
         }
+        /// Appends an item to `urls`.
+        ///
+        /// To override the contents of this collection use [`set_urls`](Self::set_urls).
+        ///
+        /// <p>The URLs of the Microsoft SharePoint site that contains the
+        /// documents that should be indexed.</p>
         pub fn urls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.urls.unwrap_or_default();
             v.push(input.into());
             self.urls = Some(v);
             self
         }
+        /// <p>The URLs of the Microsoft SharePoint site that contains the
+        /// documents that should be indexed.</p>
         pub fn set_urls(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7188,6 +8430,15 @@ pub mod share_point_configuration {
             self.secret_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of credentials stored in
+        /// Secrets Manager. The credentials should be a user/password pair.
+        /// If you use SharePoint Server, you also need to provide the sever
+        /// domain name as part of the credentials. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a
+        /// Microsoft SharePoint Data Source</a>. For more information
+        /// about Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is
+        /// Secrets Manager</a> in the <i>Secrets Manager
+        /// </i> user guide.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -7200,6 +8451,10 @@ pub mod share_point_configuration {
             self.crawl_attachments = Some(input);
             self
         }
+        /// <p>
+        /// <code>TRUE</code> to include attachments to documents stored in
+        /// your Microsoft SharePoint site in the index; otherwise,
+        /// <code>FALSE</code>.</p>
         pub fn set_crawl_attachments(mut self, input: std::option::Option<bool>) -> Self {
             self.crawl_attachments = input;
             self
@@ -7214,16 +8469,40 @@ pub mod share_point_configuration {
             self.use_change_log = Some(input);
             self
         }
+        /// <p>Set to <code>TRUE</code> to use the Microsoft SharePoint change
+        /// log to determine the documents that need to be updated in the index.
+        /// Depending on the size of the SharePoint change log, it may take
+        /// longer for Amazon Kendra to use the change log than it takes it to
+        /// determine the changed documents using the Amazon Kendra document
+        /// crawler.</p>
         pub fn set_use_change_log(mut self, input: std::option::Option<bool>) -> Self {
             self.use_change_log = input;
             self
         }
+        /// Appends an item to `inclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_inclusion_patterns`](Self::set_inclusion_patterns).
+        ///
+        /// <p>A list of regular expression patterns. Documents that match the
+        /// patterns are included in the index. Documents that don't match the
+        /// patterns are excluded from the index. If a document matches both an
+        /// inclusion pattern and an exclusion pattern, the document is not
+        /// included in the index.</p>
+        /// <p>The regex is applied to the display URL of the SharePoint
+        /// document.</p>
         pub fn inclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.inclusion_patterns.unwrap_or_default();
             v.push(input.into());
             self.inclusion_patterns = Some(v);
             self
         }
+        /// <p>A list of regular expression patterns. Documents that match the
+        /// patterns are included in the index. Documents that don't match the
+        /// patterns are excluded from the index. If a document matches both an
+        /// inclusion pattern and an exclusion pattern, the document is not
+        /// included in the index.</p>
+        /// <p>The regex is applied to the display URL of the SharePoint
+        /// document.</p>
         pub fn set_inclusion_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7231,12 +8510,30 @@ pub mod share_point_configuration {
             self.inclusion_patterns = input;
             self
         }
+        /// Appends an item to `exclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_exclusion_patterns`](Self::set_exclusion_patterns).
+        ///
+        /// <p>A list of regular expression patterns. Documents that match the
+        /// patterns are excluded from the index. Documents that don't match the
+        /// patterns are included in the index. If a document matches both an
+        /// exclusion pattern and an inclusion pattern, the document is not
+        /// included in the index.</p>
+        /// <p>The regex is applied to the display URL of the SharePoint
+        /// document.</p>
         pub fn exclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exclusion_patterns.unwrap_or_default();
             v.push(input.into());
             self.exclusion_patterns = Some(v);
             self
         }
+        /// <p>A list of regular expression patterns. Documents that match the
+        /// patterns are excluded from the index. Documents that don't match the
+        /// patterns are included in the index. If a document matches both an
+        /// exclusion pattern and an inclusion pattern, the document is not
+        /// included in the index.</p>
+        /// <p>The regex is applied to the display URL of the SharePoint
+        /// document.</p>
         pub fn set_exclusion_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7252,6 +8549,7 @@ pub mod share_point_configuration {
             self.vpc_configuration = Some(input);
             self
         }
+        /// <p>Provides information for connecting to an Amazon VPC.</p>
         pub fn set_vpc_configuration(
             mut self,
             input: std::option::Option<crate::model::DataSourceVpcConfiguration>,
@@ -7259,6 +8557,16 @@ pub mod share_point_configuration {
             self.vpc_configuration = input;
             self
         }
+        /// Appends an item to `field_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
+        ///
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that
+        /// map Microsoft SharePoint attributes to custom fields in the Amazon Kendra
+        /// index. You must first create the index fields using the
+        /// <code>UpdateIndex</code> operation before you map SharePoint
+        /// attributes. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source
+        /// Fields</a>.</p>
         pub fn field_mappings(
             mut self,
             input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
@@ -7268,6 +8576,12 @@ pub mod share_point_configuration {
             self.field_mappings = Some(v);
             self
         }
+        /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that
+        /// map Microsoft SharePoint attributes to custom fields in the Amazon Kendra
+        /// index. You must first create the index fields using the
+        /// <code>UpdateIndex</code> operation before you map SharePoint
+        /// attributes. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source
+        /// Fields</a>.</p>
         pub fn set_field_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
@@ -7281,6 +8595,8 @@ pub mod share_point_configuration {
             self.document_title_field_name = Some(input.into());
             self
         }
+        /// <p>The Microsoft SharePoint attribute field that contains the title
+        /// of the document.</p>
         pub fn set_document_title_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7295,6 +8611,9 @@ pub mod share_point_configuration {
             self.disable_local_groups = Some(input);
             self
         }
+        /// <p>A Boolean value that specifies whether local
+        /// groups are disabled (<code>True</code>) or enabled (<code>False</code>).
+        /// </p>
         pub fn set_disable_local_groups(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_local_groups = input;
             self
@@ -7305,6 +8624,8 @@ pub mod share_point_configuration {
             self.ssl_certificate_s3_path = Some(input);
             self
         }
+        /// <p>Information required to find a specific file in an Amazon S3
+        /// bucket.</p>
         pub fn set_ssl_certificate_s3_path(
             mut self,
             input: std::option::Option<crate::model::S3Path>,
@@ -7338,6 +8659,7 @@ impl SharePointConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7349,8 +8671,11 @@ impl SharePointConfiguration {
     std::hash::Hash,
 )]
 pub enum SharePointVersion {
+    #[allow(missing_docs)] // documentation missing in model
     Sharepoint2013,
+    #[allow(missing_docs)] // documentation missing in model
     Sharepoint2016,
+    #[allow(missing_docs)] // documentation missing in model
     SharepointOnline,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7373,6 +8698,7 @@ impl std::str::FromStr for SharePointVersion {
     }
 }
 impl SharePointVersion {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SharePointVersion::Sharepoint2013 => "SHAREPOINT_2013",
@@ -7381,6 +8707,7 @@ impl SharePointVersion {
             SharePointVersion::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SHAREPOINT_2013", "SHAREPOINT_2016", "SHAREPOINT_ONLINE"]
     }
@@ -7502,16 +8829,25 @@ pub mod s3_data_source_configuration {
             self.bucket_name = Some(input.into());
             self
         }
+        /// <p>The name of the bucket that contains the documents.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
         }
+        /// Appends an item to `inclusion_prefixes`.
+        ///
+        /// To override the contents of this collection use [`set_inclusion_prefixes`](Self::set_inclusion_prefixes).
+        ///
+        /// <p>A list of S3 prefixes for the documents that should be included in
+        /// the index.</p>
         pub fn inclusion_prefixes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.inclusion_prefixes.unwrap_or_default();
             v.push(input.into());
             self.inclusion_prefixes = Some(v);
             self
         }
+        /// <p>A list of S3 prefixes for the documents that should be included in
+        /// the index.</p>
         pub fn set_inclusion_prefixes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7519,12 +8855,62 @@ pub mod s3_data_source_configuration {
             self.inclusion_prefixes = input;
             self
         }
+        /// Appends an item to `inclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_inclusion_patterns`](Self::set_inclusion_patterns).
+        ///
+        /// <p>A list of glob patterns for documents that should be indexed. If a
+        /// document that matches an inclusion pattern also matches an exclusion
+        /// pattern, the document is not indexed.</p>
+        /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+        /// are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>*.txt</i> will include all text files
+        /// in a directory (files with the extension .txt).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>**/*.txt</i> will include all text
+        /// files in a directory and its subdirectories.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>*tax*</i> will include all files in
+        /// a directory that contain 'tax' in the file name, such as 'tax',
+        /// 'taxes', 'income_tax'.</p>
+        /// </li>
+        /// </ul>
         pub fn inclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.inclusion_patterns.unwrap_or_default();
             v.push(input.into());
             self.inclusion_patterns = Some(v);
             self
         }
+        /// <p>A list of glob patterns for documents that should be indexed. If a
+        /// document that matches an inclusion pattern also matches an exclusion
+        /// pattern, the document is not indexed.</p>
+        /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+        /// are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>*.txt</i> will include all text files
+        /// in a directory (files with the extension .txt).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>**/*.txt</i> will include all text
+        /// files in a directory and its subdirectories.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>*tax*</i> will include all files in
+        /// a directory that contain 'tax' in the file name, such as 'tax',
+        /// 'taxes', 'income_tax'.</p>
+        /// </li>
+        /// </ul>
         pub fn set_inclusion_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7532,12 +8918,66 @@ pub mod s3_data_source_configuration {
             self.inclusion_patterns = input;
             self
         }
+        /// Appends an item to `exclusion_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_exclusion_patterns`](Self::set_exclusion_patterns).
+        ///
+        /// <p>A list of glob patterns for documents that should not be indexed.
+        /// If a document that matches an inclusion prefix or inclusion pattern
+        /// also matches an exclusion pattern, the document is not
+        /// indexed.</p>
+        /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+        /// are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>*.png , *.jpg</i> will exclude
+        /// all PNG and JPEG image files in a directory
+        /// (files with the extensions .png and .jpg).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>*internal*</i> will exclude all
+        /// files in a directory that contain 'internal' in the file name,
+        /// such as 'internal', 'internal_only', 'company_internal'.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>**/*internal*</i> will exclude
+        /// all internal-related files in a directory and its subdirectories.</p>
+        /// </li>
+        /// </ul>
         pub fn exclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exclusion_patterns.unwrap_or_default();
             v.push(input.into());
             self.exclusion_patterns = Some(v);
             self
         }
+        /// <p>A list of glob patterns for documents that should not be indexed.
+        /// If a document that matches an inclusion prefix or inclusion pattern
+        /// also matches an exclusion pattern, the document is not
+        /// indexed.</p>
+        /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+        /// are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>*.png , *.jpg</i> will exclude
+        /// all PNG and JPEG image files in a directory
+        /// (files with the extensions .png and .jpg).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>*internal*</i> will exclude all
+        /// files in a directory that contain 'internal' in the file name,
+        /// such as 'internal', 'internal_only', 'company_internal'.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>**/*internal*</i> will exclude
+        /// all internal-related files in a directory and its subdirectories.</p>
+        /// </li>
+        /// </ul>
         pub fn set_exclusion_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7556,6 +8996,10 @@ pub mod s3_data_source_configuration {
             self.documents_metadata_configuration = Some(input);
             self
         }
+        /// <p>Document metadata files that contain information such as the
+        /// document access control information, source URI, document author,
+        /// and custom attributes. Each metadata file contains metadata about a
+        /// single document.</p>
         pub fn set_documents_metadata_configuration(
             mut self,
             input: std::option::Option<crate::model::DocumentsMetadataConfiguration>,
@@ -7573,6 +9017,9 @@ pub mod s3_data_source_configuration {
             self.access_control_list_configuration = Some(input);
             self
         }
+        /// <p>Provides the path to the S3 bucket that contains the user context
+        /// filtering files for the data source. For the format of the file, see
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control for S3 data sources</a>.</p>
         pub fn set_access_control_list_configuration(
             mut self,
             input: std::option::Option<crate::model::AccessControlListConfiguration>,
@@ -7630,6 +9077,7 @@ pub mod access_control_list_configuration {
             self.key_path = Some(input.into());
             self
         }
+        /// <p>Path to the Amazon Web Services S3 bucket that contains the ACL files.</p>
         pub fn set_key_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_path = input;
             self
@@ -7686,6 +9134,10 @@ pub mod documents_metadata_configuration {
             self.s3_prefix = Some(input.into());
             self
         }
+        /// <p>A prefix used to filter metadata configuration files in the Amazon Web Services S3
+        /// bucket. The S3 bucket might contain multiple metadata files. Use
+        /// <code>S3Prefix</code> to include only the desired metadata
+        /// files.</p>
         pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_prefix = input;
             self
@@ -7742,6 +9194,8 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key for the tag. Keys are not case sensitive and must be unique
+        /// for the index, FAQ, or data source.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -7752,6 +9206,8 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value associated with the tag. The value may be an empty string
+        /// but it can't be null.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -7809,6 +9265,8 @@ pub mod relevance_feedback {
             self.result_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the search result that the user provided
+        /// relevance feedback for.</p>
         pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.result_id = input;
             self
@@ -7819,6 +9277,8 @@ pub mod relevance_feedback {
             self.relevance_value = Some(input);
             self
         }
+        /// <p>Whether to document was relevant or not relevant to the
+        /// search.</p>
         pub fn set_relevance_value(
             mut self,
             input: std::option::Option<crate::model::RelevanceType>,
@@ -7842,6 +9302,7 @@ impl RelevanceFeedback {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7853,7 +9314,9 @@ impl RelevanceFeedback {
     std::hash::Hash,
 )]
 pub enum RelevanceType {
+    #[allow(missing_docs)] // documentation missing in model
     NotRelevant,
+    #[allow(missing_docs)] // documentation missing in model
     Relevant,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7875,6 +9338,7 @@ impl std::str::FromStr for RelevanceType {
     }
 }
 impl RelevanceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RelevanceType::NotRelevant => "NOT_RELEVANT",
@@ -7882,6 +9346,7 @@ impl RelevanceType {
             RelevanceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NOT_RELEVANT", "RELEVANT"]
     }
@@ -7903,7 +9368,7 @@ pub struct ClickFeedback {
     pub result_id: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp of the date and time that the result was
     /// clicked.</p>
-    pub click_time: std::option::Option<smithy_types::Instant>,
+    pub click_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ClickFeedback {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7920,7 +9385,7 @@ pub mod click_feedback {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result_id: std::option::Option<std::string::String>,
-        pub(crate) click_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) click_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The unique identifier of the search result that was
@@ -7929,17 +9394,24 @@ pub mod click_feedback {
             self.result_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the search result that was
+        /// clicked.</p>
         pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.result_id = input;
             self
         }
         /// <p>The Unix timestamp of the date and time that the result was
         /// clicked.</p>
-        pub fn click_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn click_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.click_time = Some(input);
             self
         }
-        pub fn set_click_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix timestamp of the date and time that the result was
+        /// clicked.</p>
+        pub fn set_click_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.click_time = input;
             self
         }
@@ -8010,6 +9482,8 @@ pub mod facet_result {
             self.document_attribute_key = Some(input.into());
             self
         }
+        /// <p>The key for the facet values. This is the same as the
+        /// <code>DocumentAttributeKey</code> provided in the query.</p>
         pub fn set_document_attribute_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8026,6 +9500,8 @@ pub mod facet_result {
             self.document_attribute_value_type = Some(input);
             self
         }
+        /// <p>The data type of the facet value. This is the same as the type
+        /// defined for the index field when it was created.</p>
         pub fn set_document_attribute_value_type(
             mut self,
             input: std::option::Option<crate::model::DocumentAttributeValueType>,
@@ -8033,6 +9509,13 @@ pub mod facet_result {
             self.document_attribute_value_type = input;
             self
         }
+        /// Appends an item to `document_attribute_value_count_pairs`.
+        ///
+        /// To override the contents of this collection use [`set_document_attribute_value_count_pairs`](Self::set_document_attribute_value_count_pairs).
+        ///
+        /// <p>An array of key/value pairs, where the key is the value of the
+        /// attribute and the count is the number of documents that share the key
+        /// value.</p>
         pub fn document_attribute_value_count_pairs(
             mut self,
             input: impl Into<crate::model::DocumentAttributeValueCountPair>,
@@ -8044,6 +9527,9 @@ pub mod facet_result {
             self.document_attribute_value_count_pairs = Some(v);
             self
         }
+        /// <p>An array of key/value pairs, where the key is the value of the
+        /// attribute and the count is the number of documents that share the key
+        /// value.</p>
         pub fn set_document_attribute_value_count_pairs(
             mut self,
             input: std::option::Option<
@@ -8108,6 +9594,7 @@ pub mod document_attribute_value_count_pair {
             self.document_attribute_value = Some(input);
             self
         }
+        /// <p>The value of the attribute. For example, "HR."</p>
         pub fn set_document_attribute_value(
             mut self,
             input: std::option::Option<crate::model::DocumentAttributeValue>,
@@ -8121,6 +9608,8 @@ pub mod document_attribute_value_count_pair {
             self.count = Some(input);
             self
         }
+        /// <p>The number of documents in the response that have the attribute
+        /// value for the key.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
@@ -8141,6 +9630,8 @@ impl DocumentAttributeValueCountPair {
     }
 }
 
+/// <p>The value of a custom document attribute. You can only provide one
+/// value for a custom attribute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum DocumentAttributeValue {
@@ -8150,7 +9641,7 @@ pub enum DocumentAttributeValue {
     /// 20120325T123010+01:00 is the ISO 8601 date-time format
     /// for March 25th 2012 at 12:30PM (plus 10 seconds) in
     /// Central European Time.</p>
-    DateValue(smithy_types::Instant),
+    DateValue(aws_smithy_types::Instant),
     /// <p>A long integer value.</p>
     LongValue(i64),
     /// <p>A list of strings. </p>
@@ -8159,16 +9650,21 @@ pub enum DocumentAttributeValue {
     StringValue(std::string::String),
 }
 impl DocumentAttributeValue {
-    pub fn as_date_value(&self) -> std::result::Result<&smithy_types::Instant, &Self> {
+    /// Tries to convert the enum instance into its [`DocumentAttributeValue`](crate::model::DocumentAttributeValue) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
+    pub fn as_date_value(&self) -> std::result::Result<&aws_smithy_types::Instant, &Self> {
         if let DocumentAttributeValue::DateValue(val) = &self {
             Ok(&val)
         } else {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `DocumentAttributeValue` variant.
     pub fn is_date_value(&self) -> bool {
         self.as_date_value().is_ok()
     }
+    /// Tries to convert the enum instance into its [`DocumentAttributeValue`](crate::model::DocumentAttributeValue) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_long_value(&self) -> std::result::Result<&i64, &Self> {
         if let DocumentAttributeValue::LongValue(val) = &self {
             Ok(&val)
@@ -8176,9 +9672,12 @@ impl DocumentAttributeValue {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `DocumentAttributeValue` variant.
     pub fn is_long_value(&self) -> bool {
         self.as_long_value().is_ok()
     }
+    /// Tries to convert the enum instance into its [`DocumentAttributeValue`](crate::model::DocumentAttributeValue) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_string_list_value(
         &self,
     ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
@@ -8188,9 +9687,12 @@ impl DocumentAttributeValue {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `DocumentAttributeValue` variant.
     pub fn is_string_list_value(&self) -> bool {
         self.as_string_list_value().is_ok()
     }
+    /// Tries to convert the enum instance into its [`DocumentAttributeValue`](crate::model::DocumentAttributeValue) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let DocumentAttributeValue::StringValue(val) = &self {
             Ok(&val)
@@ -8198,6 +9700,7 @@ impl DocumentAttributeValue {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `DocumentAttributeValue` variant.
     pub fn is_string_value(&self) -> bool {
         self.as_string_value().is_ok()
     }
@@ -8290,6 +9793,7 @@ pub mod query_result_item {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the query result.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -8299,6 +9803,7 @@ pub mod query_result_item {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of document. </p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::QueryResultType>,
@@ -8306,6 +9811,12 @@ pub mod query_result_item {
             self.r#type = input;
             self
         }
+        /// Appends an item to `additional_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_additional_attributes`](Self::set_additional_attributes).
+        ///
+        /// <p>One or more additional attributes associated with the query
+        /// result.</p>
         pub fn additional_attributes(
             mut self,
             input: impl Into<crate::model::AdditionalResultAttribute>,
@@ -8315,6 +9826,8 @@ pub mod query_result_item {
             self.additional_attributes = Some(v);
             self
         }
+        /// <p>One or more additional attributes associated with the query
+        /// result.</p>
         pub fn set_additional_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AdditionalResultAttribute>>,
@@ -8327,6 +9840,7 @@ pub mod query_result_item {
             self.document_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the document.</p>
         pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.document_id = input;
             self
@@ -8337,6 +9851,8 @@ pub mod query_result_item {
             self.document_title = Some(input);
             self
         }
+        /// <p>The title of the document. Contains the text of the title and
+        /// information for highlighting the relevant terms in the title.</p>
         pub fn set_document_title(
             mut self,
             input: std::option::Option<crate::model::TextWithHighlights>,
@@ -8350,6 +9866,8 @@ pub mod query_result_item {
             self.document_excerpt = Some(input);
             self
         }
+        /// <p>An extract of the text in the document. Contains information about
+        /// highlighting the relevant terms in the excerpt.</p>
         pub fn set_document_excerpt(
             mut self,
             input: std::option::Option<crate::model::TextWithHighlights>,
@@ -8362,10 +9880,18 @@ pub mod query_result_item {
             self.document_uri = Some(input.into());
             self
         }
+        /// <p>The URI of the original location of the document.</p>
         pub fn set_document_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.document_uri = input;
             self
         }
+        /// Appends an item to `document_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_document_attributes`](Self::set_document_attributes).
+        ///
+        /// <p>An array of document attributes for the document that the query
+        /// result maps to. For example, the document author (Author) or the source
+        /// URI (SourceUri) of the document.</p>
         pub fn document_attributes(
             mut self,
             input: impl Into<crate::model::DocumentAttribute>,
@@ -8375,6 +9901,9 @@ pub mod query_result_item {
             self.document_attributes = Some(v);
             self
         }
+        /// <p>An array of document attributes for the document that the query
+        /// result maps to. For example, the document author (Author) or the source
+        /// URI (SourceUri) of the document.</p>
         pub fn set_document_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DocumentAttribute>>,
@@ -8395,6 +9924,15 @@ pub mod query_result_item {
             self.score_attributes = Some(input);
             self
         }
+        /// <p>Indicates the confidence that Amazon Kendra has that a result matches the
+        /// query that you provided. Each result is placed into a bin that
+        /// indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>,
+        /// <code>MEDIUM</code> and <code>LOW</code>. You can use the score to
+        /// determine if a response meets the confidence needed for your
+        /// application.</p>
+        /// <p>The field is only set to <code>LOW</code> when the <code>Type</code>
+        /// field is set to <code>DOCUMENT</code> and Amazon Kendra is not confident that
+        /// the result matches the query.</p>
         pub fn set_score_attributes(
             mut self,
             input: std::option::Option<crate::model::ScoreAttributes>,
@@ -8410,6 +9948,10 @@ pub mod query_result_item {
             self.feedback_token = Some(input.into());
             self
         }
+        /// <p>A token that identifies a particular result from a particular query.
+        /// Use this token to provide click-through feedback for the result. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html"> Submitting feedback
+        /// </a>.</p>
         pub fn set_feedback_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8472,6 +10014,8 @@ pub mod score_attributes {
             self.score_confidence = Some(input);
             self
         }
+        /// <p>A relative ranking for how well the response matches the
+        /// query.</p>
         pub fn set_score_confidence(
             mut self,
             input: std::option::Option<crate::model::ScoreConfidence>,
@@ -8506,10 +10050,15 @@ impl ScoreAttributes {
     std::hash::Hash,
 )]
 pub enum ScoreConfidence {
+    #[allow(missing_docs)] // documentation missing in model
     High,
+    #[allow(missing_docs)] // documentation missing in model
     Low,
+    #[allow(missing_docs)] // documentation missing in model
     Medium,
+    #[allow(missing_docs)] // documentation missing in model
     NotAvailable,
+    #[allow(missing_docs)] // documentation missing in model
     VeryHigh,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8534,6 +10083,7 @@ impl std::str::FromStr for ScoreConfidence {
     }
 }
 impl ScoreConfidence {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScoreConfidence::High => "HIGH",
@@ -8544,6 +10094,7 @@ impl ScoreConfidence {
             ScoreConfidence::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "MEDIUM", "NOT_AVAILABLE", "VERY_HIGH"]
     }
@@ -8586,6 +10137,7 @@ pub mod document_attribute {
             self.key = Some(input.into());
             self
         }
+        /// <p>The identifier for the attribute.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -8595,6 +10147,7 @@ pub mod document_attribute {
             self.value = Some(input);
             self
         }
+        /// <p>The value of the attribute.</p>
         pub fn set_value(
             mut self,
             input: std::option::Option<crate::model::DocumentAttributeValue>,
@@ -8652,16 +10205,25 @@ pub mod text_with_highlights {
             self.text = Some(input.into());
             self
         }
+        /// <p>The text to display to the user.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
         }
+        /// Appends an item to `highlights`.
+        ///
+        /// To override the contents of this collection use [`set_highlights`](Self::set_highlights).
+        ///
+        /// <p>The beginning and end of the text that should be
+        /// highlighted.</p>
         pub fn highlights(mut self, input: impl Into<crate::model::Highlight>) -> Self {
             let mut v = self.highlights.unwrap_or_default();
             v.push(input.into());
             self.highlights = Some(v);
             self
         }
+        /// <p>The beginning and end of the text that should be
+        /// highlighted.</p>
         pub fn set_highlights(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Highlight>>,
@@ -8731,6 +10293,8 @@ pub mod highlight {
             self.begin_offset = Some(input);
             self
         }
+        /// <p>The zero-based location in the response string where the highlight
+        /// starts.</p>
         pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.begin_offset = input;
             self
@@ -8741,6 +10305,8 @@ pub mod highlight {
             self.end_offset = Some(input);
             self
         }
+        /// <p>The zero-based location in the response string where the highlight
+        /// ends.</p>
         pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.end_offset = input;
             self
@@ -8751,6 +10317,8 @@ pub mod highlight {
             self.top_answer = Some(input);
             self
         }
+        /// <p>Indicates whether the response is the best response. True if this
+        /// is the best response; otherwise, false.</p>
         pub fn set_top_answer(mut self, input: std::option::Option<bool>) -> Self {
             self.top_answer = input;
             self
@@ -8760,6 +10328,7 @@ pub mod highlight {
             self.r#type = Some(input);
             self
         }
+        /// <p>The highlight type. </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::HighlightType>) -> Self {
             self.r#type = input;
             self
@@ -8782,6 +10351,7 @@ impl Highlight {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8793,7 +10363,9 @@ impl Highlight {
     std::hash::Hash,
 )]
 pub enum HighlightType {
+    #[allow(missing_docs)] // documentation missing in model
     Standard,
+    #[allow(missing_docs)] // documentation missing in model
     ThesaurusSynonym,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8815,6 +10387,7 @@ impl std::str::FromStr for HighlightType {
     }
 }
 impl HighlightType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HighlightType::Standard => "STANDARD",
@@ -8822,6 +10395,7 @@ impl HighlightType {
             HighlightType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["STANDARD", "THESAURUS_SYNONYM"]
     }
@@ -8869,6 +10443,7 @@ pub mod additional_result_attribute {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key that identifies the attribute.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -8881,6 +10456,7 @@ pub mod additional_result_attribute {
             self.value_type = Some(input);
             self
         }
+        /// <p>The data type of the <code>Value</code> property.</p>
         pub fn set_value_type(
             mut self,
             input: std::option::Option<crate::model::AdditionalResultAttributeValueType>,
@@ -8893,6 +10469,7 @@ pub mod additional_result_attribute {
             self.value = Some(input);
             self
         }
+        /// <p>An object that contains the attribute value.</p>
         pub fn set_value(
             mut self,
             input: std::option::Option<crate::model::AdditionalResultAttributeValue>,
@@ -8954,6 +10531,8 @@ pub mod additional_result_attribute_value {
             self.text_with_highlights_value = Some(input);
             self
         }
+        /// <p>The text associated with the attribute and information about the
+        /// highlight to apply to the text.</p>
         pub fn set_text_with_highlights_value(
             mut self,
             input: std::option::Option<crate::model::TextWithHighlights>,
@@ -8976,6 +10555,7 @@ impl AdditionalResultAttributeValue {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8987,6 +10567,7 @@ impl AdditionalResultAttributeValue {
     std::hash::Hash,
 )]
 pub enum AdditionalResultAttributeValueType {
+    #[allow(missing_docs)] // documentation missing in model
     TextWithHighlightsValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9009,6 +10590,7 @@ impl std::str::FromStr for AdditionalResultAttributeValueType {
     }
 }
 impl AdditionalResultAttributeValueType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AdditionalResultAttributeValueType::TextWithHighlightsValue => {
@@ -9017,6 +10599,7 @@ impl AdditionalResultAttributeValueType {
             AdditionalResultAttributeValueType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["TEXT_WITH_HIGHLIGHTS_VALUE"]
     }
@@ -9027,6 +10610,7 @@ impl AsRef<str> for AdditionalResultAttributeValueType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9038,8 +10622,11 @@ impl AsRef<str> for AdditionalResultAttributeValueType {
     std::hash::Hash,
 )]
 pub enum QueryResultType {
+    #[allow(missing_docs)] // documentation missing in model
     Answer,
+    #[allow(missing_docs)] // documentation missing in model
     Document,
+    #[allow(missing_docs)] // documentation missing in model
     QuestionAnswer,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9062,6 +10649,7 @@ impl std::str::FromStr for QueryResultType {
     }
 }
 impl QueryResultType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             QueryResultType::Answer => "ANSWER",
@@ -9070,6 +10658,7 @@ impl QueryResultType {
             QueryResultType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ANSWER", "DOCUMENT", "QUESTION_ANSWER"]
     }
@@ -9141,6 +10730,8 @@ pub mod user_context {
             self.token = Some(input.into());
             self
         }
+        /// <p>The user context token for filtering search results for a user. It must
+        /// be a JWT or a JSON token.</p>
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token = input;
             self
@@ -9151,16 +10742,26 @@ pub mod user_context {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the user you want to filter search results based on their
+        /// access to documents.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
         }
+        /// Appends an item to `groups`.
+        ///
+        /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+        ///
+        /// <p>The list of groups you want to filter search results based on the
+        /// groups' access to documents.</p>
         pub fn groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.groups.unwrap_or_default();
             v.push(input.into());
             self.groups = Some(v);
             self
         }
+        /// <p>The list of groups you want to filter search results based on the
+        /// groups' access to documents.</p>
         pub fn set_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9168,6 +10769,12 @@ pub mod user_context {
             self.groups = input;
             self
         }
+        /// Appends an item to `data_source_groups`.
+        ///
+        /// To override the contents of this collection use [`set_data_source_groups`](Self::set_data_source_groups).
+        ///
+        /// <p>The list of data source groups you want to filter search results
+        /// based on groups' access to documents in that data source.</p>
         pub fn data_source_groups(
             mut self,
             input: impl Into<crate::model::DataSourceGroup>,
@@ -9177,6 +10784,8 @@ pub mod user_context {
             self.data_source_groups = Some(v);
             self
         }
+        /// <p>The list of data source groups you want to filter search results
+        /// based on groups' access to documents in that data source.</p>
         pub fn set_data_source_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSourceGroup>>,
@@ -9243,6 +10852,9 @@ pub mod data_source_group {
             self.group_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the group you want to add to your list
+        /// of groups. This is for filtering search results based on the
+        /// groups' access to documents.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_id = input;
             self
@@ -9255,6 +10867,10 @@ pub mod data_source_group {
             self.data_source_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the data source group you want to add
+        /// to your list of data source groups. This is for filtering
+        /// search results based on the groups' access to documents in
+        /// that data source.</p>
         pub fn set_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9375,6 +10991,28 @@ pub mod sorting_configuration {
             self.document_attribute_key = Some(input.into());
             self
         }
+        /// <p>The name of the document attribute used to sort the response. You
+        /// can use any field that has the <code>Sortable</code> flag set to
+        /// true.</p>
+        /// <p>You can also sort by any of the following built-in
+        /// attributes:</p>
+        /// <ul>
+        /// <li>
+        /// <p>_category</p>
+        /// </li>
+        /// <li>
+        /// <p>_created_at</p>
+        /// </li>
+        /// <li>
+        /// <p>_last_updated_at</p>
+        /// </li>
+        /// <li>
+        /// <p>_version</p>
+        /// </li>
+        /// <li>
+        /// <p>_view_count</p>
+        /// </li>
+        /// </ul>
         pub fn set_document_attribute_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9389,6 +11027,9 @@ pub mod sorting_configuration {
             self.sort_order = Some(input);
             self
         }
+        /// <p>The order that the results should be returned in. In case of ties,
+        /// the relevance assigned to the result by Amazon Kendra is used as the
+        /// tie-breaker.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -9412,6 +11053,7 @@ impl SortingConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9423,7 +11065,9 @@ impl SortingConfiguration {
     std::hash::Hash,
 )]
 pub enum SortOrder {
+    #[allow(missing_docs)] // documentation missing in model
     Asc,
+    #[allow(missing_docs)] // documentation missing in model
     Desc,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9445,6 +11089,7 @@ impl std::str::FromStr for SortOrder {
     }
 }
 impl SortOrder {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortOrder::Asc => "ASC",
@@ -9452,6 +11097,7 @@ impl SortOrder {
             SortOrder::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ASC", "DESC"]
     }
@@ -9499,6 +11145,8 @@ pub mod document_relevance_configuration {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the tuning configuration to override document relevance
+        /// at the index level.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9511,6 +11159,10 @@ pub mod document_relevance_configuration {
             self.relevance = Some(input);
             self
         }
+        /// <p>Provides information for manually tuning the relevance of a field
+        /// in a search. When a query includes terms that match the field, the
+        /// results are given a boost in the response based on these tuning
+        /// parameters.</p>
         pub fn set_relevance(
             mut self,
             input: std::option::Option<crate::model::Relevance>,
@@ -9562,6 +11214,7 @@ pub mod facet {
             self.document_attribute_key = Some(input.into());
             self
         }
+        /// <p>The unique key for the document attribute.</p>
         pub fn set_document_attribute_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9687,12 +11340,20 @@ pub mod attribute_filter {
         pub(crate) less_than_or_equals: std::option::Option<crate::model::DocumentAttribute>,
     }
     impl Builder {
+        /// Appends an item to `and_all_filters`.
+        ///
+        /// To override the contents of this collection use [`set_and_all_filters`](Self::set_and_all_filters).
+        ///
+        /// <p>Performs a logical <code>AND</code> operation on all supplied
+        /// filters.</p>
         pub fn and_all_filters(mut self, input: impl Into<crate::model::AttributeFilter>) -> Self {
             let mut v = self.and_all_filters.unwrap_or_default();
             v.push(input.into());
             self.and_all_filters = Some(v);
             self
         }
+        /// <p>Performs a logical <code>AND</code> operation on all supplied
+        /// filters.</p>
         pub fn set_and_all_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeFilter>>,
@@ -9700,12 +11361,20 @@ pub mod attribute_filter {
             self.and_all_filters = input;
             self
         }
+        /// Appends an item to `or_all_filters`.
+        ///
+        /// To override the contents of this collection use [`set_or_all_filters`](Self::set_or_all_filters).
+        ///
+        /// <p>Performs a logical <code>OR</code> operation on all supplied
+        /// filters.</p>
         pub fn or_all_filters(mut self, input: impl Into<crate::model::AttributeFilter>) -> Self {
             let mut v = self.or_all_filters.unwrap_or_default();
             v.push(input.into());
             self.or_all_filters = Some(v);
             self
         }
+        /// <p>Performs a logical <code>OR</code> operation on all supplied
+        /// filters.</p>
         pub fn set_or_all_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeFilter>>,
@@ -9722,6 +11391,8 @@ pub mod attribute_filter {
             self.not_filter = Some(input.into());
             self
         }
+        /// <p>Performs a logical <code>NOT</code> operation on all supplied
+        /// filters.</p>
         pub fn set_not_filter(
             mut self,
             input: std::option::Option<std::boxed::Box<crate::model::AttributeFilter>>,
@@ -9734,6 +11405,7 @@ pub mod attribute_filter {
             self.equals_to = Some(input);
             self
         }
+        /// <p>Performs an equals operation on two document attributes.</p>
         pub fn set_equals_to(
             mut self,
             input: std::option::Option<crate::model::DocumentAttribute>,
@@ -9748,6 +11420,9 @@ pub mod attribute_filter {
             self.contains_all = Some(input);
             self
         }
+        /// <p>Returns true when a document contains all of the specified document
+        /// attributes. This filter is only applicable to
+        /// <code>StringListValue</code> metadata.</p>
         pub fn set_contains_all(
             mut self,
             input: std::option::Option<crate::model::DocumentAttribute>,
@@ -9762,6 +11437,9 @@ pub mod attribute_filter {
             self.contains_any = Some(input);
             self
         }
+        /// <p>Returns true when a document contains any of the specified document
+        /// attributes. This filter is only applicable to
+        /// <code>StringListValue</code> metadata.</p>
         pub fn set_contains_any(
             mut self,
             input: std::option::Option<crate::model::DocumentAttribute>,
@@ -9776,6 +11454,9 @@ pub mod attribute_filter {
             self.greater_than = Some(input);
             self
         }
+        /// <p>Performs a greater than operation on two document attributes. Use
+        /// with a document attribute of type <code>Date</code> or
+        /// <code>Long</code>.</p>
         pub fn set_greater_than(
             mut self,
             input: std::option::Option<crate::model::DocumentAttribute>,
@@ -9790,6 +11471,9 @@ pub mod attribute_filter {
             self.greater_than_or_equals = Some(input);
             self
         }
+        /// <p>Performs a greater or equals than operation on two document
+        /// attributes. Use with a document attribute of type <code>Date</code>
+        /// or <code>Long</code>.</p>
         pub fn set_greater_than_or_equals(
             mut self,
             input: std::option::Option<crate::model::DocumentAttribute>,
@@ -9804,6 +11488,9 @@ pub mod attribute_filter {
             self.less_than = Some(input);
             self
         }
+        /// <p>Performs a less than operation on two document attributes. Use with
+        /// a document attribute of type <code>Date</code> or
+        /// <code>Long</code>.</p>
         pub fn set_less_than(
             mut self,
             input: std::option::Option<crate::model::DocumentAttribute>,
@@ -9818,6 +11505,9 @@ pub mod attribute_filter {
             self.less_than_or_equals = Some(input);
             self
         }
+        /// <p>Performs a less than or equals operation on two document attributes.
+        /// Use with a document attribute of type <code>Date</code> or
+        /// <code>Long</code>.</p>
         pub fn set_less_than_or_equals(
             mut self,
             input: std::option::Option<crate::model::DocumentAttribute>,
@@ -9895,12 +11585,22 @@ pub mod group_members {
         pub(crate) s3_pathfor_group_members: std::option::Option<crate::model::S3Path>,
     }
     impl Builder {
+        /// Appends an item to `member_groups`.
+        ///
+        /// To override the contents of this collection use [`set_member_groups`](Self::set_member_groups).
+        ///
+        /// <p>A list of sub groups that belong to a group. For example, the sub
+        /// groups "Research", "Engineering", and "Sales and Marketing" all belong
+        /// to the group "Company".</p>
         pub fn member_groups(mut self, input: impl Into<crate::model::MemberGroup>) -> Self {
             let mut v = self.member_groups.unwrap_or_default();
             v.push(input.into());
             self.member_groups = Some(v);
             self
         }
+        /// <p>A list of sub groups that belong to a group. For example, the sub
+        /// groups "Research", "Engineering", and "Sales and Marketing" all belong
+        /// to the group "Company".</p>
         pub fn set_member_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MemberGroup>>,
@@ -9908,12 +11608,20 @@ pub mod group_members {
             self.member_groups = input;
             self
         }
+        /// Appends an item to `member_users`.
+        ///
+        /// To override the contents of this collection use [`set_member_users`](Self::set_member_users).
+        ///
+        /// <p>A list of users that belong to a group. For example, a list of interns
+        /// all belong to the "Interns" group.</p>
         pub fn member_users(mut self, input: impl Into<crate::model::MemberUser>) -> Self {
             let mut v = self.member_users.unwrap_or_default();
             v.push(input.into());
             self.member_users = Some(v);
             self
         }
+        /// <p>A list of users that belong to a group. For example, a list of interns
+        /// all belong to the "Interns" group.</p>
         pub fn set_member_users(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MemberUser>>,
@@ -9936,6 +11644,17 @@ pub mod group_members {
             self.s3_pathfor_group_members = Some(input);
             self
         }
+        /// <p>If you have more than 1000 users and/or sub groups for a single group,
+        /// you need to provide the path to the S3 file that lists your users and sub
+        /// groups for a group. Your sub groups can contain more than 1000 users, but
+        /// the list of sub groups that belong to a group (and/or users) must be no
+        /// more than 1000.</p>
+        /// <p>You can download this
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/samples/group_members.zip">example
+        /// S3 file</a> that uses the correct format for listing group members. Note,
+        /// <code>dataSourceId</code> is optional. The value of <code>type</code>
+        /// for a group is always <code>GROUP</code> and for a user it is
+        /// always <code>USER</code>.</p>
         pub fn set_s3_pathfor_group_members(
             mut self,
             input: std::option::Option<crate::model::S3Path>,
@@ -9988,6 +11707,7 @@ pub mod member_user {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the user you want to map to a group.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -10040,6 +11760,7 @@ pub mod member_group {
             self.group_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the sub group you want to map to a group.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_id = input;
             self
@@ -10050,6 +11771,8 @@ pub mod member_group {
             self.data_source_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the data source for the sub group
+        /// you want to map to a group.</p>
         pub fn set_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10084,9 +11807,9 @@ pub struct ThesaurusSummary {
     /// <p>The status of the thesaurus.</p>
     pub status: std::option::Option<crate::model::ThesaurusStatus>,
     /// <p>The Unix datetime that the thesaurus was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Unix datetime that the thesaurus was last updated.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ThesaurusSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10108,8 +11831,8 @@ pub mod thesaurus_summary {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ThesaurusStatus>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier of the thesaurus.</p>
@@ -10117,6 +11840,7 @@ pub mod thesaurus_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the thesaurus.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -10126,6 +11850,7 @@ pub mod thesaurus_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the thesaurus.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10135,6 +11860,7 @@ pub mod thesaurus_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the thesaurus.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ThesaurusStatus>,
@@ -10143,20 +11869,28 @@ pub mod thesaurus_summary {
             self
         }
         /// <p>The Unix datetime that the thesaurus was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix datetime that the thesaurus was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The Unix datetime that the thesaurus was last updated.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix datetime that the thesaurus was last updated.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
@@ -10179,6 +11913,7 @@ impl ThesaurusSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10190,11 +11925,17 @@ impl ThesaurusSummary {
     std::hash::Hash,
 )]
 pub enum ThesaurusStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     ActiveButUpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10220,6 +11961,7 @@ impl std::str::FromStr for ThesaurusStatus {
     }
 }
 impl ThesaurusStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ThesaurusStatus::Active => "ACTIVE",
@@ -10231,6 +11973,7 @@ impl ThesaurusStatus {
             ThesaurusStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -10266,9 +12009,9 @@ pub struct QuerySuggestionsBlockListSummary {
     pub status: std::option::Option<crate::model::QuerySuggestionsBlockListStatus>,
     /// <p>The date-time summary information for a query suggestions
     /// block list was last created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date-time the block list was last updated.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The number of items in the block list file.</p>
     pub item_count: std::option::Option<i32>,
 }
@@ -10293,8 +12036,8 @@ pub mod query_suggestions_block_list_summary {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::QuerySuggestionsBlockListStatus>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) item_count: std::option::Option<i32>,
     }
     impl Builder {
@@ -10303,6 +12046,7 @@ pub mod query_suggestions_block_list_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of a block list.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -10312,6 +12056,7 @@ pub mod query_suggestions_block_list_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the block list.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10321,6 +12066,7 @@ pub mod query_suggestions_block_list_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the block list.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::QuerySuggestionsBlockListStatus>,
@@ -10330,20 +12076,29 @@ pub mod query_suggestions_block_list_summary {
         }
         /// <p>The date-time summary information for a query suggestions
         /// block list was last created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date-time summary information for a query suggestions
+        /// block list was last created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The date-time the block list was last updated.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date-time the block list was last updated.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
@@ -10352,6 +12107,7 @@ pub mod query_suggestions_block_list_summary {
             self.item_count = Some(input);
             self
         }
+        /// <p>The number of items in the block list file.</p>
         pub fn set_item_count(mut self, input: std::option::Option<i32>) -> Self {
             self.item_count = input;
             self
@@ -10376,6 +12132,7 @@ impl QuerySuggestionsBlockListSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10387,11 +12144,17 @@ impl QuerySuggestionsBlockListSummary {
     std::hash::Hash,
 )]
 pub enum QuerySuggestionsBlockListStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     ActiveButUpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10417,6 +12180,7 @@ impl std::str::FromStr for QuerySuggestionsBlockListStatus {
     }
 }
 impl QuerySuggestionsBlockListStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             QuerySuggestionsBlockListStatus::Active => "ACTIVE",
@@ -10428,6 +12192,7 @@ impl QuerySuggestionsBlockListStatus {
             QuerySuggestionsBlockListStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -10460,10 +12225,10 @@ pub struct IndexConfigurationSummary {
     /// developer edition index. </p>
     pub edition: std::option::Option<crate::model::IndexEdition>,
     /// <p>The Unix timestamp when the index was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Unix timestamp when the index was last updated by the
     /// <code>UpdateIndex</code> operation.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The current status of the index. When the status is
     /// <code>ACTIVE</code>, the index is ready to search.</p>
     pub status: std::option::Option<crate::model::IndexStatus>,
@@ -10489,8 +12254,8 @@ pub mod index_configuration_summary {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) edition: std::option::Option<crate::model::IndexEdition>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::IndexStatus>,
     }
     impl Builder {
@@ -10499,6 +12264,7 @@ pub mod index_configuration_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the index.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10511,6 +12277,10 @@ pub mod index_configuration_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the index. Use this to identify the index
+        /// when you are using operations such as <code>Query</code>,
+        /// <code>DescribeIndex</code>, <code>UpdateIndex</code>, and
+        /// <code>DeleteIndex</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -10521,6 +12291,8 @@ pub mod index_configuration_summary {
             self.edition = Some(input);
             self
         }
+        /// <p>Indicates whether the index is a enterprise edition index or a
+        /// developer edition index. </p>
         pub fn set_edition(
             mut self,
             input: std::option::Option<crate::model::IndexEdition>,
@@ -10529,21 +12301,30 @@ pub mod index_configuration_summary {
             self
         }
         /// <p>The Unix timestamp when the index was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix timestamp when the index was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The Unix timestamp when the index was last updated by the
         /// <code>UpdateIndex</code> operation.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix timestamp when the index was last updated by the
+        /// <code>UpdateIndex</code> operation.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
@@ -10553,6 +12334,8 @@ pub mod index_configuration_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the index. When the status is
+        /// <code>ACTIVE</code>, the index is ready to search.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::IndexStatus>) -> Self {
             self.status = input;
             self
@@ -10577,6 +12360,7 @@ impl IndexConfigurationSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10588,11 +12372,17 @@ impl IndexConfigurationSummary {
     std::hash::Hash,
 )]
 pub enum IndexStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     SystemUpdating,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10618,6 +12408,7 @@ impl std::str::FromStr for IndexStatus {
     }
 }
 impl IndexStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IndexStatus::Active => "ACTIVE",
@@ -10629,6 +12420,7 @@ impl IndexStatus {
             IndexStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -10646,6 +12438,7 @@ impl AsRef<str> for IndexStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10657,7 +12450,9 @@ impl AsRef<str> for IndexStatus {
     std::hash::Hash,
 )]
 pub enum IndexEdition {
+    #[allow(missing_docs)] // documentation missing in model
     DeveloperEdition,
+    #[allow(missing_docs)] // documentation missing in model
     EnterpriseEdition,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10679,6 +12474,7 @@ impl std::str::FromStr for IndexEdition {
     }
 }
 impl IndexEdition {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IndexEdition::DeveloperEdition => "DEVELOPER_EDITION",
@@ -10686,6 +12482,7 @@ impl IndexEdition {
             IndexEdition::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEVELOPER_EDITION", "ENTERPRISE_EDITION"]
     }
@@ -10737,6 +12534,9 @@ pub mod group_summary {
             self.group_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The identifier of the group you want group summary information on.
+        /// </p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_id = input;
             self
@@ -10749,6 +12549,10 @@ pub mod group_summary {
             self.ordering_id = Some(input);
             self
         }
+        /// <p>
+        /// The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code>
+        /// action.
+        /// </p>
         pub fn set_ordering_id(mut self, input: std::option::Option<i64>) -> Self {
             self.ordering_id = input;
             self
@@ -10783,9 +12587,9 @@ pub struct FaqSummary {
     /// <code>ACTIVE</code> the FAQ is ready for use.</p>
     pub status: std::option::Option<crate::model::FaqStatus>,
     /// <p>The UNIX datetime that the FAQ was added to the index.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The UNIX datetime that the FAQ was last updated.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The file type used to create the FAQ. </p>
     pub file_format: std::option::Option<crate::model::FaqFileFormat>,
     /// <p>The code for a language. This shows a supported language for the FAQ document
@@ -10817,8 +12621,8 @@ pub mod faq_summary {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::FaqStatus>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) file_format: std::option::Option<crate::model::FaqFileFormat>,
         pub(crate) language_code: std::option::Option<std::string::String>,
     }
@@ -10828,6 +12632,7 @@ pub mod faq_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the FAQ.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -10838,6 +12643,8 @@ pub mod faq_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name that you assigned the FAQ when you created or updated the
+        /// FAQ.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10848,25 +12655,35 @@ pub mod faq_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the FAQ. When the status is
+        /// <code>ACTIVE</code> the FAQ is ready for use.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::FaqStatus>) -> Self {
             self.status = input;
             self
         }
         /// <p>The UNIX datetime that the FAQ was added to the index.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The UNIX datetime that the FAQ was added to the index.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The UNIX datetime that the FAQ was last updated.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The UNIX datetime that the FAQ was last updated.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
@@ -10875,6 +12692,7 @@ pub mod faq_summary {
             self.file_format = Some(input);
             self
         }
+        /// <p>The file type used to create the FAQ. </p>
         pub fn set_file_format(
             mut self,
             input: std::option::Option<crate::model::FaqFileFormat>,
@@ -10891,6 +12709,11 @@ pub mod faq_summary {
             self.language_code = Some(input.into());
             self
         }
+        /// <p>The code for a language. This shows a supported language for the FAQ document
+        /// as part of the summary information for FAQs. English is supported by default.  
+        /// For more information on supported languages, including their codes,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+        /// documents in languages other than English</a>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10919,6 +12742,7 @@ impl FaqSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10930,8 +12754,11 @@ impl FaqSummary {
     std::hash::Hash,
 )]
 pub enum FaqFileFormat {
+    #[allow(missing_docs)] // documentation missing in model
     Csv,
+    #[allow(missing_docs)] // documentation missing in model
     CsvWithHeader,
+    #[allow(missing_docs)] // documentation missing in model
     Json,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10954,6 +12781,7 @@ impl std::str::FromStr for FaqFileFormat {
     }
 }
 impl FaqFileFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FaqFileFormat::Csv => "CSV",
@@ -10962,6 +12790,7 @@ impl FaqFileFormat {
             FaqFileFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CSV", "CSV_WITH_HEADER", "JSON"]
     }
@@ -10972,6 +12801,7 @@ impl AsRef<str> for FaqFileFormat {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10983,10 +12813,15 @@ impl AsRef<str> for FaqFileFormat {
     std::hash::Hash,
 )]
 pub enum FaqStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11011,6 +12846,7 @@ impl std::str::FromStr for FaqStatus {
     }
 }
 impl FaqStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FaqStatus::Active => "ACTIVE",
@@ -11021,6 +12857,7 @@ impl FaqStatus {
             FaqStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"]
     }
@@ -11038,10 +12875,10 @@ pub struct DataSourceSyncJob {
     /// <p>A unique identifier for the synchronization job.</p>
     pub execution_id: std::option::Option<std::string::String>,
     /// <p>The UNIX datetime that the synchronization job was started.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The UNIX datetime that the synchronization job was
     /// completed.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The execution status of the synchronization job. When the
     /// <code>Status</code> field is set to <code>SUCCEEDED</code>, the
     /// synchronization job is done. If the status code is set to
@@ -11087,8 +12924,8 @@ pub mod data_source_sync_job {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_id: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::DataSourceSyncJobStatus>,
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
@@ -11101,26 +12938,36 @@ pub mod data_source_sync_job {
             self.execution_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the synchronization job.</p>
         pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.execution_id = input;
             self
         }
         /// <p>The UNIX datetime that the synchronization job was started.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The UNIX datetime that the synchronization job was started.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The UNIX datetime that the synchronization job was
         /// completed.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The UNIX datetime that the synchronization job was
+        /// completed.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -11134,6 +12981,12 @@ pub mod data_source_sync_job {
             self.status = Some(input);
             self
         }
+        /// <p>The execution status of the synchronization job. When the
+        /// <code>Status</code> field is set to <code>SUCCEEDED</code>, the
+        /// synchronization job is done. If the status code is set to
+        /// <code>FAILED</code>, the <code>ErrorCode</code> and
+        /// <code>ErrorMessage</code> fields give you the reason for the
+        /// failure.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DataSourceSyncJobStatus>,
@@ -11148,6 +13001,9 @@ pub mod data_source_sync_job {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>If the <code>Status</code> field is set to <code>ERROR</code>, the
+        /// <code>ErrorMessage</code> field contains a description of the
+        /// error that caused the synchronization to fail.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11162,6 +13018,9 @@ pub mod data_source_sync_job {
             self.error_code = Some(input);
             self
         }
+        /// <p>If the <code>Status</code> field is set to <code>FAILED</code>,
+        /// the <code>ErrorCode</code> field contains a the reason that the
+        /// synchronization failed.</p>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::ErrorCode>,
@@ -11176,6 +13035,9 @@ pub mod data_source_sync_job {
             self.data_source_error_code = Some(input.into());
             self
         }
+        /// <p>If the reason that the synchronization failed is due to an error
+        /// with the underlying data source, this field contains a code that
+        /// identifies the error.</p>
         pub fn set_data_source_error_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11190,6 +13052,9 @@ pub mod data_source_sync_job {
             self.metrics = Some(input);
             self
         }
+        /// <p>Maps a batch delete document request to a specific data source
+        /// sync job. This is optional and should only be supplied when
+        /// documents are deleted by a data source connector.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<crate::model::DataSourceSyncJobMetrics>,
@@ -11271,6 +13136,8 @@ pub mod data_source_sync_job_metrics {
             self.documents_added = Some(input.into());
             self
         }
+        /// <p>The number of documents added from the data source up to now in
+        /// the data source sync.</p>
         pub fn set_documents_added(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11284,6 +13151,8 @@ pub mod data_source_sync_job_metrics {
             self.documents_modified = Some(input.into());
             self
         }
+        /// <p>The number of documents modified in the data source up to now in
+        /// the data source sync run.</p>
         pub fn set_documents_modified(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11297,6 +13166,8 @@ pub mod data_source_sync_job_metrics {
             self.documents_deleted = Some(input.into());
             self
         }
+        /// <p>The number of documents deleted from the data source up to now in
+        /// the data source sync run.</p>
         pub fn set_documents_deleted(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11310,6 +13181,8 @@ pub mod data_source_sync_job_metrics {
             self.documents_failed = Some(input.into());
             self
         }
+        /// <p>The number of documents that failed to sync from the data source
+        /// up to now in the data source sync run.</p>
         pub fn set_documents_failed(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11323,6 +13196,8 @@ pub mod data_source_sync_job_metrics {
             self.documents_scanned = Some(input.into());
             self
         }
+        /// <p>The current number of documents crawled by the current sync job in
+        /// the data source.</p>
         pub fn set_documents_scanned(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11349,6 +13224,7 @@ impl DataSourceSyncJobMetrics {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11360,7 +13236,9 @@ impl DataSourceSyncJobMetrics {
     std::hash::Hash,
 )]
 pub enum ErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidRequest,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11382,6 +13260,7 @@ impl std::str::FromStr for ErrorCode {
     }
 }
 impl ErrorCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ErrorCode::InternalError => "InternalError",
@@ -11389,6 +13268,7 @@ impl ErrorCode {
             ErrorCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["InternalError", "InvalidRequest"]
     }
@@ -11399,6 +13279,7 @@ impl AsRef<str> for ErrorCode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11410,12 +13291,19 @@ impl AsRef<str> for ErrorCode {
     std::hash::Hash,
 )]
 pub enum DataSourceSyncJobStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Aborted,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Incomplete,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
+    #[allow(missing_docs)] // documentation missing in model
     Syncing,
+    #[allow(missing_docs)] // documentation missing in model
     SyncingIndexing,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11442,6 +13330,7 @@ impl std::str::FromStr for DataSourceSyncJobStatus {
     }
 }
 impl DataSourceSyncJobStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataSourceSyncJobStatus::Aborted => "ABORTED",
@@ -11454,6 +13343,7 @@ impl DataSourceSyncJobStatus {
             DataSourceSyncJobStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ABORTED",
@@ -11477,9 +13367,9 @@ impl AsRef<str> for DataSourceSyncJobStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeRange {
     /// <p>The UNIX datetime of the beginning of the time range.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The UNIX datetime of the end of the time range.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for TimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11495,25 +13385,33 @@ pub mod time_range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The UNIX datetime of the beginning of the time range.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The UNIX datetime of the beginning of the time range.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The UNIX datetime of the end of the time range.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The UNIX datetime of the end of the time range.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -11545,9 +13443,9 @@ pub struct DataSourceSummary {
     /// <p>The type of the data source.</p>
     pub r#type: std::option::Option<crate::model::DataSourceType>,
     /// <p>The UNIX datetime that the data source was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The UNIX datetime that the data source was lasted updated. </p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the data source. When the status is
     /// <code>ACTIVE</code> the data source is ready to use.</p>
     pub status: std::option::Option<crate::model::DataSourceStatus>,
@@ -11580,8 +13478,8 @@ pub mod data_source_summary {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::DataSourceType>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::DataSourceStatus>,
         pub(crate) language_code: std::option::Option<std::string::String>,
     }
@@ -11591,6 +13489,7 @@ pub mod data_source_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the data source.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -11600,6 +13499,7 @@ pub mod data_source_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the data source.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -11609,6 +13509,7 @@ pub mod data_source_summary {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the data source.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DataSourceType>,
@@ -11617,20 +13518,28 @@ pub mod data_source_summary {
             self
         }
         /// <p>The UNIX datetime that the data source was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The UNIX datetime that the data source was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The UNIX datetime that the data source was lasted updated. </p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The UNIX datetime that the data source was lasted updated. </p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
@@ -11640,6 +13549,8 @@ pub mod data_source_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the data source. When the status is
+        /// <code>ACTIVE</code> the data source is ready to use.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DataSourceStatus>,
@@ -11656,6 +13567,11 @@ pub mod data_source_summary {
             self.language_code = Some(input.into());
             self
         }
+        /// <p>The code for a language. This shows a supported language for all documents
+        /// in the data source. English is supported by default.  
+        /// For more information on supported languages, including their codes,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+        /// documents in languages other than English</a>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11684,6 +13600,7 @@ impl DataSourceSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11695,10 +13612,15 @@ impl DataSourceSummary {
     std::hash::Hash,
 )]
 pub enum DataSourceStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11723,6 +13645,7 @@ impl std::str::FromStr for DataSourceStatus {
     }
 }
 impl DataSourceStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataSourceStatus::Active => "ACTIVE",
@@ -11733,6 +13656,7 @@ impl DataSourceStatus {
             DataSourceStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATING"]
     }
@@ -11743,6 +13667,7 @@ impl AsRef<str> for DataSourceStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11754,16 +13679,27 @@ impl AsRef<str> for DataSourceStatus {
     std::hash::Hash,
 )]
 pub enum DataSourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Confluence,
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
+    #[allow(missing_docs)] // documentation missing in model
     Database,
+    #[allow(missing_docs)] // documentation missing in model
     Googledrive,
+    #[allow(missing_docs)] // documentation missing in model
     Onedrive,
+    #[allow(missing_docs)] // documentation missing in model
     S3,
+    #[allow(missing_docs)] // documentation missing in model
     Salesforce,
+    #[allow(missing_docs)] // documentation missing in model
     Servicenow,
+    #[allow(missing_docs)] // documentation missing in model
     Sharepoint,
+    #[allow(missing_docs)] // documentation missing in model
     Webcrawler,
+    #[allow(missing_docs)] // documentation missing in model
     Workdocs,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11794,6 +13730,7 @@ impl std::str::FromStr for DataSourceType {
     }
 }
 impl DataSourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataSourceType::Confluence => "CONFLUENCE",
@@ -11810,6 +13747,7 @@ impl DataSourceType {
             DataSourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CONFLUENCE",
@@ -11868,6 +13806,8 @@ pub mod suggestion {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique UUID (universally unique identifier) of a single
+        /// query suggestion.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -11879,6 +13819,9 @@ pub mod suggestion {
             self.value = Some(input);
             self
         }
+        /// <p>The value for the unique UUID (universally unique identifier)
+        /// of a single query suggestion.</p>
+        /// <p>The value is the text string of a suggestion.</p>
         pub fn set_value(
             mut self,
             input: std::option::Option<crate::model::SuggestionValue>,
@@ -11932,6 +13875,8 @@ pub mod suggestion_value {
             self.text = Some(input);
             self
         }
+        /// <p>The <code>SuggestionTextWithHighlights</code> structure that contains
+        /// the query suggestion text and highlights.</p>
         pub fn set_text(
             mut self,
             input: std::option::Option<crate::model::SuggestionTextWithHighlights>,
@@ -11985,16 +13930,23 @@ pub mod suggestion_text_with_highlights {
             self.text = Some(input.into());
             self
         }
+        /// <p>The query suggestion text to display to the user.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
         }
+        /// Appends an item to `highlights`.
+        ///
+        /// To override the contents of this collection use [`set_highlights`](Self::set_highlights).
+        ///
+        /// <p>The beginning and end of the query suggestion text that should be highlighted.</p>
         pub fn highlights(mut self, input: impl Into<crate::model::SuggestionHighlight>) -> Self {
             let mut v = self.highlights.unwrap_or_default();
             v.push(input.into());
             self.highlights = Some(v);
             self
         }
+        /// <p>The beginning and end of the query suggestion text that should be highlighted.</p>
         pub fn set_highlights(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SuggestionHighlight>>,
@@ -12050,6 +14002,7 @@ pub mod suggestion_highlight {
             self.begin_offset = Some(input);
             self
         }
+        /// <p>The zero-based location in the response string where the highlight starts.</p>
         pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.begin_offset = input;
             self
@@ -12059,6 +14012,7 @@ pub mod suggestion_highlight {
             self.end_offset = Some(input);
             self
         }
+        /// <p>The zero-based location in the response string where the highlight ends.</p>
         pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.end_offset = input;
             self
@@ -12079,6 +14033,7 @@ impl SuggestionHighlight {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -12090,7 +14045,9 @@ impl SuggestionHighlight {
     std::hash::Hash,
 )]
 pub enum QuerySuggestionsStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12112,6 +14069,7 @@ impl std::str::FromStr for QuerySuggestionsStatus {
     }
 }
 impl QuerySuggestionsStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             QuerySuggestionsStatus::Active => "ACTIVE",
@@ -12119,6 +14077,7 @@ impl QuerySuggestionsStatus {
             QuerySuggestionsStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "UPDATING"]
     }
@@ -12141,11 +14100,11 @@ pub struct GroupOrderingIdSummary {
     /// <p>The last date-time an action was updated. An action can be a
     /// <code>PUT</code> or <code>DELETE</code> action for mapping users
     /// to their groups.</p>
-    pub last_updated_at: std::option::Option<smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date-time an action was received by Amazon Kendra. An action can be a
     /// <code>PUT</code> or <code>DELETE</code> action for mapping users to
     /// their groups.</p>
-    pub received_at: std::option::Option<smithy_types::Instant>,
+    pub received_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The order in which actions should complete processing. An action can
     /// be a <code>PUT</code> or <code>DELETE</code> action for mapping users
     /// to their groups.</p>
@@ -12173,8 +14132,8 @@ pub mod group_ordering_id_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::PrincipalMappingStatus>,
-        pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) received_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) received_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) ordering_id: std::option::Option<i64>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
     }
@@ -12186,6 +14145,9 @@ pub mod group_ordering_id_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The current processing status of actions for mapping users to their groups.
+        /// The status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>,
+        /// <code>DELETING</code>, <code>DELETED</code>, or <code>FAILED</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::PrincipalMappingStatus>,
@@ -12196,13 +14158,16 @@ pub mod group_ordering_id_summary {
         /// <p>The last date-time an action was updated. An action can be a
         /// <code>PUT</code> or <code>DELETE</code> action for mapping users
         /// to their groups.</p>
-        pub fn last_updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_at = Some(input);
             self
         }
+        /// <p>The last date-time an action was updated. An action can be a
+        /// <code>PUT</code> or <code>DELETE</code> action for mapping users
+        /// to their groups.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -12210,13 +14175,16 @@ pub mod group_ordering_id_summary {
         /// <p>The date-time an action was received by Amazon Kendra. An action can be a
         /// <code>PUT</code> or <code>DELETE</code> action for mapping users to
         /// their groups.</p>
-        pub fn received_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn received_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.received_at = Some(input);
             self
         }
+        /// <p>The date-time an action was received by Amazon Kendra. An action can be a
+        /// <code>PUT</code> or <code>DELETE</code> action for mapping users to
+        /// their groups.</p>
         pub fn set_received_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.received_at = input;
             self
@@ -12228,6 +14196,9 @@ pub mod group_ordering_id_summary {
             self.ordering_id = Some(input);
             self
         }
+        /// <p>The order in which actions should complete processing. An action can
+        /// be a <code>PUT</code> or <code>DELETE</code> action for mapping users
+        /// to their groups.</p>
         pub fn set_ordering_id(mut self, input: std::option::Option<i64>) -> Self {
             self.ordering_id = input;
             self
@@ -12239,6 +14210,9 @@ pub mod group_ordering_id_summary {
             self.failure_reason = Some(input.into());
             self
         }
+        /// <p>The reason an action could not be processed. An action can be a
+        /// <code>PUT</code> or <code>DELETE</code> action for mapping users
+        /// to their groups.</p>
         pub fn set_failure_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12265,6 +14239,7 @@ impl GroupOrderingIdSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -12276,10 +14251,15 @@ impl GroupOrderingIdSummary {
     std::hash::Hash,
 )]
 pub enum PrincipalMappingStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Processing,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12304,6 +14284,7 @@ impl std::str::FromStr for PrincipalMappingStatus {
     }
 }
 impl PrincipalMappingStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PrincipalMappingStatus::Deleted => "DELETED",
@@ -12314,6 +14295,7 @@ impl PrincipalMappingStatus {
             PrincipalMappingStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DELETED", "DELETING", "FAILED", "PROCESSING", "SUCCEEDED"]
     }
@@ -12358,6 +14340,7 @@ pub mod index_statistics {
             self.faq_statistics = Some(input);
             self
         }
+        /// <p>The number of question and answer topics in the index.</p>
         pub fn set_faq_statistics(
             mut self,
             input: std::option::Option<crate::model::FaqStatistics>,
@@ -12373,6 +14356,7 @@ pub mod index_statistics {
             self.text_document_statistics = Some(input);
             self
         }
+        /// <p>The number of text documents indexed.</p>
         pub fn set_text_document_statistics(
             mut self,
             input: std::option::Option<crate::model::TextDocumentStatistics>,
@@ -12432,6 +14416,7 @@ pub mod text_document_statistics {
             self.indexed_text_documents_count = Some(input);
             self
         }
+        /// <p>The number of text documents indexed.</p>
         pub fn set_indexed_text_documents_count(mut self, input: std::option::Option<i32>) -> Self {
             self.indexed_text_documents_count = input;
             self
@@ -12441,6 +14426,7 @@ pub mod text_document_statistics {
             self.indexed_text_bytes = Some(input);
             self
         }
+        /// <p>The total size, in bytes, of the indexed documents.</p>
         pub fn set_indexed_text_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.indexed_text_bytes = input;
             self
@@ -12495,6 +14481,8 @@ pub mod faq_statistics {
             self.indexed_question_answers_count = Some(input);
             self
         }
+        /// <p>The total number of FAQ questions and answers contained in the
+        /// index.</p>
         pub fn set_indexed_question_answers_count(
             mut self,
             input: std::option::Option<i32>,
@@ -12551,6 +14539,8 @@ pub mod server_side_encryption_configuration {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the KMScustomer master key (CMK). Amazon Kendra
+        /// doesn't support asymmetric CMKs.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -12609,6 +14599,7 @@ pub mod batch_put_document_response_failed_document {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the document.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -12619,6 +14610,8 @@ pub mod batch_put_document_response_failed_document {
             self.error_code = Some(input);
             self
         }
+        /// <p>The type of error that caused the document to fail to be
+        /// indexed.</p>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::ErrorCode>,
@@ -12632,6 +14625,8 @@ pub mod batch_put_document_response_failed_document {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>A description of the reason why the document could not be
+        /// indexed.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12670,7 +14665,7 @@ pub struct Document {
     /// if you're using an Amazon Web Services SDK to call Amazon Kendra operations. If you are
     /// calling the Amazon Kendra endpoint directly using REST, you must base64
     /// encode the contents before sending.</p>
-    pub blob: std::option::Option<smithy_types::Blob>,
+    pub blob: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Information required to find a specific file in an Amazon S3
     /// bucket.</p>
     pub s3_path: std::option::Option<crate::model::S3Path>,
@@ -12715,7 +14710,7 @@ pub mod document {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) title: std::option::Option<std::string::String>,
-        pub(crate) blob: std::option::Option<smithy_types::Blob>,
+        pub(crate) blob: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) s3_path: std::option::Option<crate::model::S3Path>,
         pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::DocumentAttribute>>,
         pub(crate) access_control_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
@@ -12729,6 +14724,7 @@ pub mod document {
             self.id = Some(input.into());
             self
         }
+        /// <p>A unique identifier of the document in the index.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -12738,6 +14734,7 @@ pub mod document {
             self.title = Some(input.into());
             self
         }
+        /// <p>The title of the document.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -12748,11 +14745,17 @@ pub mod document {
         /// if you're using an Amazon Web Services SDK to call Amazon Kendra operations. If you are
         /// calling the Amazon Kendra endpoint directly using REST, you must base64
         /// encode the contents before sending.</p>
-        pub fn blob(mut self, input: smithy_types::Blob) -> Self {
+        pub fn blob(mut self, input: aws_smithy_types::Blob) -> Self {
             self.blob = Some(input);
             self
         }
-        pub fn set_blob(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The contents of the document. </p>
+        /// <p>Documents passed to the <code>Blob</code> parameter must be base64
+        /// encoded. Your code might not need to encode the document file bytes
+        /// if you're using an Amazon Web Services SDK to call Amazon Kendra operations. If you are
+        /// calling the Amazon Kendra endpoint directly using REST, you must base64
+        /// encode the contents before sending.</p>
+        pub fn set_blob(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.blob = input;
             self
         }
@@ -12762,16 +14765,30 @@ pub mod document {
             self.s3_path = Some(input);
             self
         }
+        /// <p>Information required to find a specific file in an Amazon S3
+        /// bucket.</p>
         pub fn set_s3_path(mut self, input: std::option::Option<crate::model::S3Path>) -> Self {
             self.s3_path = input;
             self
         }
+        /// Appends an item to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>Custom attributes to apply to the document. Use the custom
+        /// attributes to provide additional information for searching, to
+        /// provide facets for refining searches, and to provide additional
+        /// information in the query response.</p>
         pub fn attributes(mut self, input: impl Into<crate::model::DocumentAttribute>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
             v.push(input.into());
             self.attributes = Some(v);
             self
         }
+        /// <p>Custom attributes to apply to the document. Use the custom
+        /// attributes to provide additional information for searching, to
+        /// provide facets for refining searches, and to provide additional
+        /// information in the query response.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DocumentAttribute>>,
@@ -12779,12 +14796,20 @@ pub mod document {
             self.attributes = input;
             self
         }
+        /// Appends an item to `access_control_list`.
+        ///
+        /// To override the contents of this collection use [`set_access_control_list`](Self::set_access_control_list).
+        ///
+        /// <p>Information on user and group access rights, which is used for
+        /// user context filtering.</p>
         pub fn access_control_list(mut self, input: impl Into<crate::model::Principal>) -> Self {
             let mut v = self.access_control_list.unwrap_or_default();
             v.push(input.into());
             self.access_control_list = Some(v);
             self
         }
+        /// <p>Information on user and group access rights, which is used for
+        /// user context filtering.</p>
         pub fn set_access_control_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Principal>>,
@@ -12792,6 +14817,12 @@ pub mod document {
             self.access_control_list = input;
             self
         }
+        /// Appends an item to `hierarchical_access_control_list`.
+        ///
+        /// To override the contents of this collection use [`set_hierarchical_access_control_list`](Self::set_hierarchical_access_control_list).
+        ///
+        /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists
+        /// that define the hierarchy for which documents users should have access to.</p>
         pub fn hierarchical_access_control_list(
             mut self,
             input: impl Into<crate::model::HierarchicalPrincipal>,
@@ -12801,6 +14832,8 @@ pub mod document {
             self.hierarchical_access_control_list = Some(v);
             self
         }
+        /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists
+        /// that define the hierarchy for which documents users should have access to.</p>
         pub fn set_hierarchical_access_control_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HierarchicalPrincipal>>,
@@ -12814,6 +14847,8 @@ pub mod document {
             self.content_type = Some(input);
             self
         }
+        /// <p>The file type of the document in the <code>Blob</code>
+        /// field.</p>
         pub fn set_content_type(
             mut self,
             input: std::option::Option<crate::model::ContentType>,
@@ -12843,6 +14878,7 @@ impl Document {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -12854,10 +14890,15 @@ impl Document {
     std::hash::Hash,
 )]
 pub enum ContentType {
+    #[allow(missing_docs)] // documentation missing in model
     Html,
+    #[allow(missing_docs)] // documentation missing in model
     MsWord,
+    #[allow(missing_docs)] // documentation missing in model
     Pdf,
+    #[allow(missing_docs)] // documentation missing in model
     PlainText,
+    #[allow(missing_docs)] // documentation missing in model
     Ppt,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12882,6 +14923,7 @@ impl std::str::FromStr for ContentType {
     }
 }
 impl ContentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContentType::Html => "HTML",
@@ -12892,6 +14934,7 @@ impl ContentType {
             ContentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HTML", "MS_WORD", "PDF", "PLAIN_TEXT", "PPT"]
     }
@@ -12930,12 +14973,24 @@ pub mod hierarchical_principal {
         pub(crate) principal_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
     }
     impl Builder {
+        /// Appends an item to `principal_list`.
+        ///
+        /// To override the contents of this collection use [`set_principal_list`](Self::set_principal_list).
+        ///
+        /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists
+        /// that define the hierarchy for which documents users should have access to.
+        /// Each hierarchical list specifies which user or group has allow or deny
+        /// access for each document.</p>
         pub fn principal_list(mut self, input: impl Into<crate::model::Principal>) -> Self {
             let mut v = self.principal_list.unwrap_or_default();
             v.push(input.into());
             self.principal_list = Some(v);
             self
         }
+        /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists
+        /// that define the hierarchy for which documents users should have access to.
+        /// Each hierarchical list specifies which user or group has allow or deny
+        /// access for each document.</p>
         pub fn set_principal_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Principal>>,
@@ -13000,6 +15055,7 @@ pub mod principal {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the user or group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -13009,6 +15065,7 @@ pub mod principal {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of principal.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::PrincipalType>) -> Self {
             self.r#type = input;
             self
@@ -13018,6 +15075,7 @@ pub mod principal {
             self.access = Some(input);
             self
         }
+        /// <p>Whether to allow or deny access to the principal.</p>
         pub fn set_access(
             mut self,
             input: std::option::Option<crate::model::ReadAccessType>,
@@ -13031,6 +15089,8 @@ pub mod principal {
             self.data_source_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the data source the principal should
+        /// access documents from.</p>
         pub fn set_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13056,6 +15116,7 @@ impl Principal {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -13067,7 +15128,9 @@ impl Principal {
     std::hash::Hash,
 )]
 pub enum ReadAccessType {
+    #[allow(missing_docs)] // documentation missing in model
     Allow,
+    #[allow(missing_docs)] // documentation missing in model
     Deny,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13089,6 +15152,7 @@ impl std::str::FromStr for ReadAccessType {
     }
 }
 impl ReadAccessType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReadAccessType::Allow => "ALLOW",
@@ -13096,6 +15160,7 @@ impl ReadAccessType {
             ReadAccessType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALLOW", "DENY"]
     }
@@ -13106,6 +15171,7 @@ impl AsRef<str> for ReadAccessType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -13117,7 +15183,9 @@ impl AsRef<str> for ReadAccessType {
     std::hash::Hash,
 )]
 pub enum PrincipalType {
+    #[allow(missing_docs)] // documentation missing in model
     Group,
+    #[allow(missing_docs)] // documentation missing in model
     User,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13139,6 +15207,7 @@ impl std::str::FromStr for PrincipalType {
     }
 }
 impl PrincipalType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PrincipalType::Group => "GROUP",
@@ -13146,6 +15215,7 @@ impl PrincipalType {
             PrincipalType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GROUP", "USER"]
     }
@@ -13200,6 +15270,7 @@ pub mod status {
             self.document_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the document.</p>
         pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.document_id = input;
             self
@@ -13211,6 +15282,9 @@ pub mod status {
             self.document_status = Some(input);
             self
         }
+        /// <p>The current status of a document.</p>
+        /// <p>If the document was submitted for deletion, the status is
+        /// <code>NOT_FOUND</code> after the document is deleted.</p>
         pub fn set_document_status(
             mut self,
             input: std::option::Option<crate::model::DocumentStatus>,
@@ -13223,6 +15297,7 @@ pub mod status {
             self.failure_code = Some(input.into());
             self
         }
+        /// <p>Indicates the source of the error.</p>
         pub fn set_failure_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.failure_code = input;
             self
@@ -13234,6 +15309,9 @@ pub mod status {
             self.failure_reason = Some(input.into());
             self
         }
+        /// <p>Provides detailed information about why the document couldn't be
+        /// indexed. Use this information to correct the error before you
+        /// resubmit the document for indexing.</p>
         pub fn set_failure_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13259,6 +15337,7 @@ impl Status {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -13270,11 +15349,17 @@ impl Status {
     std::hash::Hash,
 )]
 pub enum DocumentStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Indexed,
+    #[allow(missing_docs)] // documentation missing in model
     NotFound,
+    #[allow(missing_docs)] // documentation missing in model
     Processing,
+    #[allow(missing_docs)] // documentation missing in model
     Updated,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13300,6 +15385,7 @@ impl std::str::FromStr for DocumentStatus {
     }
 }
 impl DocumentStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DocumentStatus::Failed => "FAILED",
@@ -13311,6 +15397,7 @@ impl DocumentStatus {
             DocumentStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "FAILED",
@@ -13365,6 +15452,7 @@ pub mod batch_get_document_status_response_error {
             self.document_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the document whose status could not be retrieved.</p>
         pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.document_id = input;
             self
@@ -13374,6 +15462,7 @@ pub mod batch_get_document_status_response_error {
             self.error_code = Some(input);
             self
         }
+        /// <p>Indicates the source of the error.</p>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::ErrorCode>,
@@ -13387,6 +15476,8 @@ pub mod batch_get_document_status_response_error {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>States that the API could not get the status of a document. This could be
+        /// because the request is not valid or there is a system error.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13477,16 +15568,89 @@ pub mod document_info {
             self.document_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the document.</p>
         pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.document_id = input;
             self
         }
+        /// Appends an item to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>Attributes that identify a specific version of a document to
+        /// check.</p>
+        /// <p>The only valid attributes are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>version</p>
+        /// </li>
+        /// <li>
+        /// <p>datasourceId</p>
+        /// </li>
+        /// <li>
+        /// <p>jobExecutionId</p>
+        /// </li>
+        /// </ul>
+        /// <p>The attributes follow these rules:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>dataSourceId</code> and <code>jobExecutionId</code>
+        /// must be used together.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>version</code> is ignored if
+        /// <code>dataSourceId</code> and
+        /// <code>jobExecutionId</code> are not provided.</p>
+        /// </li>
+        /// <li>
+        /// <p>If <code>dataSourceId</code> and
+        /// <code>jobExecutionId</code> are provided, but
+        /// <code>version</code> is not, the version defaults to
+        /// "0".</p>
+        /// </li>
+        /// </ul>
         pub fn attributes(mut self, input: impl Into<crate::model::DocumentAttribute>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
             v.push(input.into());
             self.attributes = Some(v);
             self
         }
+        /// <p>Attributes that identify a specific version of a document to
+        /// check.</p>
+        /// <p>The only valid attributes are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>version</p>
+        /// </li>
+        /// <li>
+        /// <p>datasourceId</p>
+        /// </li>
+        /// <li>
+        /// <p>jobExecutionId</p>
+        /// </li>
+        /// </ul>
+        /// <p>The attributes follow these rules:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>dataSourceId</code> and <code>jobExecutionId</code>
+        /// must be used together.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>version</code> is ignored if
+        /// <code>dataSourceId</code> and
+        /// <code>jobExecutionId</code> are not provided.</p>
+        /// </li>
+        /// <li>
+        /// <p>If <code>dataSourceId</code> and
+        /// <code>jobExecutionId</code> are provided, but
+        /// <code>version</code> is not, the version defaults to
+        /// "0".</p>
+        /// </li>
+        /// </ul>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DocumentAttribute>>,
@@ -13552,6 +15716,8 @@ pub mod batch_delete_document_response_failed_document {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the document that couldn't be removed from the
+        /// index.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -13562,6 +15728,8 @@ pub mod batch_delete_document_response_failed_document {
             self.error_code = Some(input);
             self
         }
+        /// <p>The error code for why the document couldn't be removed from the
+        /// index.</p>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::ErrorCode>,
@@ -13575,6 +15743,8 @@ pub mod batch_delete_document_response_failed_document {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>An explanation for why the document couldn't be removed from the
+        /// index.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13638,6 +15808,7 @@ pub mod data_source_sync_job_metric_target {
             self.data_source_id = Some(input.into());
             self
         }
+        /// <p>The ID of the data source that is running the sync job.</p>
         pub fn set_data_source_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13656,6 +15827,13 @@ pub mod data_source_sync_job_metric_target {
             self.data_source_sync_job_id = Some(input.into());
             self
         }
+        /// <p>The ID of the sync job that is running on the data source.</p>
+        /// <p>If the ID of a sync job is not provided and there is a sync job
+        /// running, then the ID of this sync job is used and metrics are
+        /// generated for this sync job.</p>
+        /// <p>If the ID of a sync job is not provided and there is no sync job
+        /// running, then no metrics are generated and documents are  
+        /// indexed/deleted at the index level without sync job metrics included.</p>
         pub fn set_data_source_sync_job_id(
             mut self,
             input: std::option::Option<std::string::String>,

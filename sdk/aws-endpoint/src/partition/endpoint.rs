@@ -4,8 +4,8 @@
  */
 
 use crate::{AwsEndpoint, BoxError, CredentialScope, ResolveAwsEndpoint};
+use aws_smithy_http::endpoint::Endpoint;
 use aws_types::region::Region;
-use smithy_http::endpoint::Endpoint;
 
 /// Endpoint metadata
 ///

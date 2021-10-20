@@ -18,6 +18,8 @@ pub mod create_scaling_plan_input {
             self.scaling_plan_name = Some(input.into());
             self
         }
+        /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward
+        /// slashes.</p>
         pub fn set_scaling_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -32,6 +34,9 @@ pub mod create_scaling_plan_input {
             self.application_source = Some(input);
             self
         }
+        /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application
+        /// source.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
         pub fn set_application_source(
             mut self,
             input: std::option::Option<crate::model::ApplicationSource>,
@@ -39,6 +44,12 @@ pub mod create_scaling_plan_input {
             self.application_source = input;
             self
         }
+        /// Appends an item to `scaling_instructions`.
+        ///
+        /// To override the contents of this collection use [`set_scaling_instructions`](Self::set_scaling_instructions).
+        ///
+        /// <p>The scaling instructions.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
         pub fn scaling_instructions(
             mut self,
             input: impl Into<crate::model::ScalingInstruction>,
@@ -48,6 +59,8 @@ pub mod create_scaling_plan_input {
             self.scaling_instructions = Some(v);
             self
         }
+        /// <p>The scaling instructions.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
         pub fn set_scaling_instructions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ScalingInstruction>>,
@@ -60,7 +73,7 @@ pub mod create_scaling_plan_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateScalingPlanInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateScalingPlanInput {
                 scaling_plan_name: self.scaling_plan_name,
@@ -81,16 +94,16 @@ impl CreateScalingPlanInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateScalingPlan,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateScalingPlanInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -98,7 +111,7 @@ impl CreateScalingPlanInput {
         fn update_http_builder(
             input: &crate::input::CreateScalingPlanInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -107,32 +120,32 @@ impl CreateScalingPlanInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateScalingPlanInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AnyScaleScalingPlannerFrontendService.CreateScalingPlan",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_scaling_plan(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -155,15 +168,15 @@ impl CreateScalingPlanInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateScalingPlan::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateScalingPlan",
             "autoscalingplans",
         ));
@@ -172,10 +185,10 @@ impl CreateScalingPlanInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -204,6 +217,7 @@ pub mod delete_scaling_plan_input {
             self.scaling_plan_name = Some(input.into());
             self
         }
+        /// <p>The name of the scaling plan.</p>
         pub fn set_scaling_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -217,6 +231,8 @@ pub mod delete_scaling_plan_input {
             self.scaling_plan_version = Some(input);
             self
         }
+        /// <p>The version number of the scaling plan. Currently, the only valid value is
+        /// <code>1</code>.</p>
         pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
             self.scaling_plan_version = input;
             self
@@ -226,7 +242,7 @@ pub mod delete_scaling_plan_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteScalingPlanInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteScalingPlanInput {
                 scaling_plan_name: self.scaling_plan_name,
@@ -246,16 +262,16 @@ impl DeleteScalingPlanInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteScalingPlan,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteScalingPlanInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -263,7 +279,7 @@ impl DeleteScalingPlanInput {
         fn update_http_builder(
             input: &crate::input::DeleteScalingPlanInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -272,32 +288,32 @@ impl DeleteScalingPlanInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteScalingPlanInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AnyScaleScalingPlannerFrontendService.DeleteScalingPlan",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_scaling_plan(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -320,15 +336,15 @@ impl DeleteScalingPlanInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteScalingPlan::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteScalingPlan",
             "autoscalingplans",
         ));
@@ -337,10 +353,10 @@ impl DeleteScalingPlanInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -371,6 +387,7 @@ pub mod describe_scaling_plan_resources_input {
             self.scaling_plan_name = Some(input.into());
             self
         }
+        /// <p>The name of the scaling plan.</p>
         pub fn set_scaling_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -384,6 +401,8 @@ pub mod describe_scaling_plan_resources_input {
             self.scaling_plan_version = Some(input);
             self
         }
+        /// <p>The version number of the scaling plan. Currently, the only valid value is
+        /// <code>1</code>.</p>
         pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
             self.scaling_plan_version = input;
             self
@@ -394,6 +413,8 @@ pub mod describe_scaling_plan_resources_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of scalable resources to return. The value must be between
+        /// 1 and 50. The default value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -403,6 +424,7 @@ pub mod describe_scaling_plan_resources_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -412,7 +434,7 @@ pub mod describe_scaling_plan_resources_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeScalingPlanResourcesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeScalingPlanResourcesInput {
                 scaling_plan_name: self.scaling_plan_name,
@@ -435,16 +457,16 @@ impl DescribeScalingPlanResourcesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeScalingPlanResources,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeScalingPlanResourcesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -452,7 +474,7 @@ impl DescribeScalingPlanResourcesInput {
         fn update_http_builder(
             input: &crate::input::DescribeScalingPlanResourcesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -461,30 +483,30 @@ impl DescribeScalingPlanResourcesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeScalingPlanResourcesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AnyScaleScalingPlannerFrontendService.DescribeScalingPlanResources",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_scaling_plan_resources(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_scaling_plan_resources(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -507,15 +529,15 @@ impl DescribeScalingPlanResourcesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeScalingPlanResources::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeScalingPlanResources",
             "autoscalingplans",
         ));
@@ -524,10 +546,10 @@ impl DescribeScalingPlanResourcesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -555,12 +577,20 @@ pub mod describe_scaling_plans_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `scaling_plan_names`.
+        ///
+        /// To override the contents of this collection use [`set_scaling_plan_names`](Self::set_scaling_plan_names).
+        ///
+        /// <p>The names of the scaling plans (up to 10). If you specify application sources, you
+        /// cannot specify scaling plan names.</p>
         pub fn scaling_plan_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.scaling_plan_names.unwrap_or_default();
             v.push(input.into());
             self.scaling_plan_names = Some(v);
             self
         }
+        /// <p>The names of the scaling plans (up to 10). If you specify application sources, you
+        /// cannot specify scaling plan names.</p>
         pub fn set_scaling_plan_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -578,10 +608,22 @@ pub mod describe_scaling_plans_input {
             self.scaling_plan_version = Some(input);
             self
         }
+        /// <p>The version number of the scaling plan. Currently, the only valid value is
+        /// <code>1</code>.</p>
+        /// <note>
+        /// <p>If you specify a scaling plan version, you must also specify a scaling plan
+        /// name.</p>
+        /// </note>
         pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
             self.scaling_plan_version = input;
             self
         }
+        /// Appends an item to `application_sources`.
+        ///
+        /// To override the contents of this collection use [`set_application_sources`](Self::set_application_sources).
+        ///
+        /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you
+        /// cannot specify application sources.</p>
         pub fn application_sources(
             mut self,
             input: impl Into<crate::model::ApplicationSource>,
@@ -591,6 +633,8 @@ pub mod describe_scaling_plans_input {
             self.application_sources = Some(v);
             self
         }
+        /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you
+        /// cannot specify application sources.</p>
         pub fn set_application_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ApplicationSource>>,
@@ -604,6 +648,8 @@ pub mod describe_scaling_plans_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of scalable resources to return. This value can be between
+        /// 1 and 50. The default value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -613,6 +659,7 @@ pub mod describe_scaling_plans_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -622,7 +669,7 @@ pub mod describe_scaling_plans_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeScalingPlansInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeScalingPlansInput {
                 scaling_plan_names: self.scaling_plan_names,
@@ -645,16 +692,16 @@ impl DescribeScalingPlansInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeScalingPlans,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeScalingPlansInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -662,7 +709,7 @@ impl DescribeScalingPlansInput {
         fn update_http_builder(
             input: &crate::input::DescribeScalingPlansInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -671,32 +718,32 @@ impl DescribeScalingPlansInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeScalingPlansInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AnyScaleScalingPlannerFrontendService.DescribeScalingPlans",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_scaling_plans(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -719,15 +766,15 @@ impl DescribeScalingPlansInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeScalingPlans::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeScalingPlans",
             "autoscalingplans",
         ));
@@ -736,10 +783,10 @@ impl DescribeScalingPlansInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -765,8 +812,8 @@ pub mod get_scaling_plan_resource_forecast_data_input {
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
         pub(crate) forecast_data_type: std::option::Option<crate::model::ForecastDataType>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the scaling plan.</p>
@@ -774,6 +821,7 @@ pub mod get_scaling_plan_resource_forecast_data_input {
             self.scaling_plan_name = Some(input.into());
             self
         }
+        /// <p>The name of the scaling plan.</p>
         pub fn set_scaling_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -787,6 +835,8 @@ pub mod get_scaling_plan_resource_forecast_data_input {
             self.scaling_plan_version = Some(input);
             self
         }
+        /// <p>The version number of the scaling plan. Currently, the only valid value is
+        /// <code>1</code>.</p>
         pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
             self.scaling_plan_version = input;
             self
@@ -797,6 +847,8 @@ pub mod get_scaling_plan_resource_forecast_data_input {
             self.service_namespace = Some(input);
             self
         }
+        /// <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>.
+        /// </p>
         pub fn set_service_namespace(
             mut self,
             input: std::option::Option<crate::model::ServiceNamespace>,
@@ -811,6 +863,9 @@ pub mod get_scaling_plan_resource_forecast_data_input {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>)
+        /// followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example:
+        /// <code>autoScalingGroup/my-asg</code>. </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -821,6 +876,8 @@ pub mod get_scaling_plan_resource_forecast_data_input {
             self.scalable_dimension = Some(input);
             self
         }
+        /// <p>The scalable dimension for the resource. The only valid value is
+        /// <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
         pub fn set_scalable_dimension(
             mut self,
             input: std::option::Option<crate::model::ScalableDimension>,
@@ -855,6 +912,29 @@ pub mod get_scaling_plan_resource_forecast_data_input {
             self.forecast_data_type = Some(input);
             self
         }
+        /// <p>The type of forecast data to get.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>LoadForecast</code>: The load metric forecast. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CapacityForecast</code>: The capacity forecast. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled
+        /// scaling action. This data is calculated as the larger of two values: the capacity
+        /// forecast or the minimum capacity in the scaling instruction.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled
+        /// scaling action. The calculation used is determined by the predictive scaling maximum
+        /// capacity behavior setting in the scaling instruction.</p>
+        /// </li>
+        /// </ul>
         pub fn set_forecast_data_type(
             mut self,
             input: std::option::Option<crate::model::ForecastDataType>,
@@ -864,11 +944,16 @@ pub mod get_scaling_plan_resource_forecast_data_input {
         }
         /// <p>The inclusive start time of the time range for the forecast data to get. The date and
         /// time can be at most 56 days before the current date and time. </p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The inclusive start time of the time range for the forecast data to get. The date and
+        /// time can be at most 56 days before the current date and time. </p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
@@ -877,11 +962,19 @@ pub mod get_scaling_plan_resource_forecast_data_input {
         /// <p>Although this parameter can accept a date and time that is more than two days in the
         /// future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for
         /// periods of two days in advance.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time
+        /// duration between the start and end time is seven days. </p>
+        /// <p>Although this parameter can accept a date and time that is more than two days in the
+        /// future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for
+        /// periods of two days in advance.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -890,7 +983,7 @@ pub mod get_scaling_plan_resource_forecast_data_input {
             self,
         ) -> std::result::Result<
             crate::input::GetScalingPlanResourceForecastDataInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetScalingPlanResourceForecastDataInput {
                 scaling_plan_name: self.scaling_plan_name,
@@ -917,16 +1010,16 @@ impl GetScalingPlanResourceForecastDataInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetScalingPlanResourceForecastData,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetScalingPlanResourceForecastDataInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -934,7 +1027,7 @@ impl GetScalingPlanResourceForecastDataInput {
         fn update_http_builder(
             input: &crate::input::GetScalingPlanResourceForecastDataInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -943,30 +1036,30 @@ impl GetScalingPlanResourceForecastDataInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetScalingPlanResourceForecastDataInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AnyScaleScalingPlannerFrontendService.GetScalingPlanResourceForecastData",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_scaling_plan_resource_forecast_data(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_scaling_plan_resource_forecast_data(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -989,15 +1082,15 @@ impl GetScalingPlanResourceForecastDataInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetScalingPlanResourceForecastData::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetScalingPlanResourceForecastData",
             "autoscalingplans",
         ));
@@ -1006,10 +1099,10 @@ impl GetScalingPlanResourceForecastDataInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1041,6 +1134,7 @@ pub mod update_scaling_plan_input {
             self.scaling_plan_name = Some(input.into());
             self
         }
+        /// <p>The name of the scaling plan.</p>
         pub fn set_scaling_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1054,6 +1148,8 @@ pub mod update_scaling_plan_input {
             self.scaling_plan_version = Some(input);
             self
         }
+        /// <p>The version number of the scaling plan. The only valid value is <code>1</code>.
+        /// Currently, you cannot have multiple scaling plan versions.</p>
         pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
             self.scaling_plan_version = input;
             self
@@ -1064,6 +1160,8 @@ pub mod update_scaling_plan_input {
             self.application_source = Some(input);
             self
         }
+        /// <p>A CloudFormation stack or set of tags.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
         pub fn set_application_source(
             mut self,
             input: std::option::Option<crate::model::ApplicationSource>,
@@ -1071,6 +1169,12 @@ pub mod update_scaling_plan_input {
             self.application_source = input;
             self
         }
+        /// Appends an item to `scaling_instructions`.
+        ///
+        /// To override the contents of this collection use [`set_scaling_instructions`](Self::set_scaling_instructions).
+        ///
+        /// <p>The scaling instructions.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
         pub fn scaling_instructions(
             mut self,
             input: impl Into<crate::model::ScalingInstruction>,
@@ -1080,6 +1184,8 @@ pub mod update_scaling_plan_input {
             self.scaling_instructions = Some(v);
             self
         }
+        /// <p>The scaling instructions.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
         pub fn set_scaling_instructions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ScalingInstruction>>,
@@ -1092,7 +1198,7 @@ pub mod update_scaling_plan_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateScalingPlanInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateScalingPlanInput {
                 scaling_plan_name: self.scaling_plan_name,
@@ -1114,16 +1220,16 @@ impl UpdateScalingPlanInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateScalingPlan,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateScalingPlanInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1131,7 +1237,7 @@ impl UpdateScalingPlanInput {
         fn update_http_builder(
             input: &crate::input::UpdateScalingPlanInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1140,32 +1246,32 @@ impl UpdateScalingPlanInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateScalingPlanInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AnyScaleScalingPlannerFrontendService.UpdateScalingPlan",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_scaling_plan(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1188,15 +1294,15 @@ impl UpdateScalingPlanInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateScalingPlan::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateScalingPlan",
             "autoscalingplans",
         ));
@@ -1205,10 +1311,10 @@ impl UpdateScalingPlanInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1222,6 +1328,7 @@ impl UpdateScalingPlanInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateScalingPlanInput {
@@ -1248,6 +1355,7 @@ impl std::fmt::Debug for UpdateScalingPlanInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetScalingPlanResourceForecastDataInput {
@@ -1292,13 +1400,13 @@ pub struct GetScalingPlanResourceForecastDataInput {
     pub forecast_data_type: std::option::Option<crate::model::ForecastDataType>,
     /// <p>The inclusive start time of the time range for the forecast data to get. The date and
     /// time can be at most 56 days before the current date and time. </p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time
     /// duration between the start and end time is seven days. </p>
     /// <p>Although this parameter can accept a date and time that is more than two days in the
     /// future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for
     /// periods of two days in advance.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for GetScalingPlanResourceForecastDataInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1315,6 +1423,7 @@ impl std::fmt::Debug for GetScalingPlanResourceForecastDataInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScalingPlansInput {
@@ -1349,6 +1458,7 @@ impl std::fmt::Debug for DescribeScalingPlansInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScalingPlanResourcesInput {
@@ -1374,6 +1484,7 @@ impl std::fmt::Debug for DescribeScalingPlanResourcesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteScalingPlanInput {
@@ -1392,6 +1503,7 @@ impl std::fmt::Debug for DeleteScalingPlanInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateScalingPlanInput {

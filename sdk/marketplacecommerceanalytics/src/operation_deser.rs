@@ -21,7 +21,7 @@ pub fn parse_generate_data_set_error(
                     let mut output =
                         crate::error::marketplace_commerce_analytics_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_marketplace_commerce_analytics_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataSetError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_marketplace_commerce_analytics_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataSetError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -80,7 +80,7 @@ pub fn parse_start_support_data_export_error(
                         let mut tmp = {
                             #[allow(unused_mut)]let mut output = crate::error::marketplace_commerce_analytics_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_marketplace_commerce_analytics_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartSupportDataExportError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_marketplace_commerce_analytics_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSupportDataExportError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {

@@ -15,6 +15,7 @@ pub mod accept_qualification_request_input {
             self.qualification_request_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Qualification request, as returned by the <code>GetQualificationRequests</code> operation.</p>
         pub fn set_qualification_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -30,6 +31,10 @@ pub mod accept_qualification_request_input {
             self.integer_value = Some(input);
             self
         }
+        /// <p>
+        /// The value of the Qualification. You can omit this value if you are using the
+        /// presence or absence of the Qualification as the basis for a HIT requirement.
+        /// </p>
         pub fn set_integer_value(mut self, input: std::option::Option<i32>) -> Self {
             self.integer_value = input;
             self
@@ -39,7 +44,7 @@ pub mod accept_qualification_request_input {
             self,
         ) -> std::result::Result<
             crate::input::AcceptQualificationRequestInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AcceptQualificationRequestInput {
                 qualification_request_id: self.qualification_request_id,
@@ -60,16 +65,16 @@ impl AcceptQualificationRequestInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AcceptQualificationRequest,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AcceptQualificationRequestInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -77,7 +82,7 @@ impl AcceptQualificationRequestInput {
         fn update_http_builder(
             input: &crate::input::AcceptQualificationRequestInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -86,32 +91,34 @@ impl AcceptQualificationRequestInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AcceptQualificationRequestInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.AcceptQualificationRequest",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_accept_qualification_request(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -134,15 +141,15 @@ impl AcceptQualificationRequestInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AcceptQualificationRequest::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AcceptQualificationRequest",
             "mturk",
         ));
@@ -151,10 +158,10 @@ impl AcceptQualificationRequestInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -186,6 +193,9 @@ pub mod approve_assignment_input {
             self.assignment_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the assignment. The assignment must correspond to a HIT created by the Requester.
+        /// </p>
         pub fn set_assignment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -200,6 +210,9 @@ pub mod approve_assignment_input {
             self.requester_feedback = Some(input.into());
             self
         }
+        /// <p>
+        /// A message for the Worker, which the Worker can see in the Status section of the web site.
+        /// </p>
         pub fn set_requester_feedback(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -214,6 +227,9 @@ pub mod approve_assignment_input {
             self.override_rejection = Some(input);
             self
         }
+        /// <p>
+        /// A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>.
+        /// </p>
         pub fn set_override_rejection(mut self, input: std::option::Option<bool>) -> Self {
             self.override_rejection = input;
             self
@@ -223,7 +239,7 @@ pub mod approve_assignment_input {
             self,
         ) -> std::result::Result<
             crate::input::ApproveAssignmentInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ApproveAssignmentInput {
                 assignment_id: self.assignment_id,
@@ -244,16 +260,16 @@ impl ApproveAssignmentInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ApproveAssignment,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ApproveAssignmentInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -261,7 +277,7 @@ impl ApproveAssignmentInput {
         fn update_http_builder(
             input: &crate::input::ApproveAssignmentInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -270,32 +286,32 @@ impl ApproveAssignmentInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ApproveAssignmentInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.ApproveAssignment",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_approve_assignment(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -318,15 +334,15 @@ impl ApproveAssignmentInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ApproveAssignment::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ApproveAssignment",
             "mturk",
         ));
@@ -335,10 +351,10 @@ impl ApproveAssignmentInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -369,6 +385,7 @@ pub mod associate_qualification_with_worker_input {
             self.qualification_type_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Qualification type to use for the assigned Qualification.</p>
         pub fn set_qualification_type_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -384,6 +401,10 @@ pub mod associate_qualification_with_worker_input {
             self.worker_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the Worker to whom the Qualification is being assigned.
+        /// Worker IDs are included with submitted HIT assignments and Qualification requests.
+        /// </p>
         pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.worker_id = input;
             self
@@ -393,6 +414,7 @@ pub mod associate_qualification_with_worker_input {
             self.integer_value = Some(input);
             self
         }
+        /// <p>The value of the Qualification to assign.</p>
         pub fn set_integer_value(mut self, input: std::option::Option<i32>) -> Self {
             self.integer_value = input;
             self
@@ -406,6 +428,11 @@ pub mod associate_qualification_with_worker_input {
             self.send_notification = Some(input);
             self
         }
+        /// <p>
+        /// Specifies whether to send a notification email message to the Worker
+        /// saying that the qualification was assigned to the Worker.
+        /// Note: this is true by default.
+        /// </p>
         pub fn set_send_notification(mut self, input: std::option::Option<bool>) -> Self {
             self.send_notification = input;
             self
@@ -415,7 +442,7 @@ pub mod associate_qualification_with_worker_input {
             self,
         ) -> std::result::Result<
             crate::input::AssociateQualificationWithWorkerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AssociateQualificationWithWorkerInput {
                 qualification_type_id: self.qualification_type_id,
@@ -438,16 +465,16 @@ impl AssociateQualificationWithWorkerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AssociateQualificationWithWorker,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AssociateQualificationWithWorkerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -455,7 +482,7 @@ impl AssociateQualificationWithWorkerInput {
         fn update_http_builder(
             input: &crate::input::AssociateQualificationWithWorkerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -464,30 +491,30 @@ impl AssociateQualificationWithWorkerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AssociateQualificationWithWorkerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.AssociateQualificationWithWorker",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_qualification_with_worker(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_qualification_with_worker(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -510,15 +537,15 @@ impl AssociateQualificationWithWorkerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AssociateQualificationWithWorker::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AssociateQualificationWithWorker",
             "mturk",
         ));
@@ -527,10 +554,10 @@ impl AssociateQualificationWithWorkerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -560,6 +587,7 @@ pub mod create_additional_assignments_for_hit_input {
             self.hit_id = Some(input.into());
             self
         }
+        /// <p>The ID of the HIT to extend.</p>
         pub fn set_hit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_id = input;
             self
@@ -569,6 +597,7 @@ pub mod create_additional_assignments_for_hit_input {
             self.number_of_additional_assignments = Some(input);
             self
         }
+        /// <p>The number of additional assignments to request for this HIT.</p>
         pub fn set_number_of_additional_assignments(
             mut self,
             input: std::option::Option<i32>,
@@ -588,6 +617,14 @@ pub mod create_additional_assignments_for_hit_input {
             self.unique_request_token = Some(input.into());
             self
         }
+        /// <p>
+        /// A unique identifier for this request, which allows you to retry the call on error
+        /// without extending the HIT multiple times.
+        /// This is useful in cases such as network timeouts where it is unclear whether or not
+        /// the call succeeded on the server. If the extend HIT already exists in the system
+        /// from a previous call using the same <code>UniqueRequestToken</code>,
+        /// subsequent calls will return an error with a message containing the request ID.
+        /// </p>
         pub fn set_unique_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -600,7 +637,7 @@ pub mod create_additional_assignments_for_hit_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateAdditionalAssignmentsForHitInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateAdditionalAssignmentsForHitInput {
                 hit_id: self.hit_id,
@@ -622,16 +659,16 @@ impl CreateAdditionalAssignmentsForHitInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateAdditionalAssignmentsForHIT,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateAdditionalAssignmentsForHitInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -639,7 +676,7 @@ impl CreateAdditionalAssignmentsForHitInput {
         fn update_http_builder(
             input: &crate::input::CreateAdditionalAssignmentsForHitInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -648,30 +685,30 @@ impl CreateAdditionalAssignmentsForHitInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateAdditionalAssignmentsForHitInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.CreateAdditionalAssignmentsForHIT",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_additional_assignments_for_hit(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_additional_assignments_for_hit(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -694,15 +731,15 @@ impl CreateAdditionalAssignmentsForHitInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateAdditionalAssignmentsForHIT::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateAdditionalAssignmentsForHIT",
             "mturk",
         ));
@@ -711,10 +748,10 @@ impl CreateAdditionalAssignmentsForHitInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -761,6 +798,9 @@ pub mod create_hit_input {
             self.max_assignments = Some(input);
             self
         }
+        /// <p>
+        /// The number of times the HIT can be accepted and completed before the HIT becomes unavailable.
+        /// </p>
         pub fn set_max_assignments(mut self, input: std::option::Option<i32>) -> Self {
             self.max_assignments = input;
             self
@@ -774,6 +814,11 @@ pub mod create_hit_input {
             self.auto_approval_delay_in_seconds = Some(input);
             self
         }
+        /// <p>
+        /// The number of seconds after an assignment for the HIT has been submitted,
+        /// after which the assignment is considered Approved automatically
+        /// unless the Requester explicitly rejects it.
+        /// </p>
         pub fn set_auto_approval_delay_in_seconds(
             mut self,
             input: std::option::Option<i64>,
@@ -790,6 +835,11 @@ pub mod create_hit_input {
             self.lifetime_in_seconds = Some(input);
             self
         }
+        /// <p>
+        /// An amount of time, in seconds, after which the HIT is no longer available for users to accept.
+        /// After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches,
+        /// even if not all of the assignments for the HIT have been accepted.
+        /// </p>
         pub fn set_lifetime_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.lifetime_in_seconds = input;
             self
@@ -805,6 +855,13 @@ pub mod create_hit_input {
             self.assignment_duration_in_seconds = Some(input);
             self
         }
+        /// <p>
+        /// The amount of time, in seconds, that a Worker has to complete the HIT after accepting it.
+        /// If a Worker does not complete the assignment within the specified duration,
+        /// the assignment is considered abandoned. If the HIT is still active
+        /// (that is, its lifetime has not elapsed), the assignment becomes available
+        /// for other users to find and accept.
+        /// </p>
         pub fn set_assignment_duration_in_seconds(
             mut self,
             input: std::option::Option<i64>,
@@ -819,6 +876,9 @@ pub mod create_hit_input {
             self.reward = Some(input.into());
             self
         }
+        /// <p>
+        /// The amount of money the Requester will pay a Worker for successfully completing the HIT.
+        /// </p>
         pub fn set_reward(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reward = input;
             self
@@ -832,6 +892,11 @@ pub mod create_hit_input {
             self.title = Some(input.into());
             self
         }
+        /// <p>
+        /// The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains.
+        /// On the Amazon Mechanical Turk web site, the HIT title appears in search results,
+        /// and everywhere the HIT is mentioned.
+        /// </p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -844,6 +909,10 @@ pub mod create_hit_input {
             self.keywords = Some(input.into());
             self
         }
+        /// <p>
+        /// One or more words or phrases that describe the HIT, separated by commas.
+        /// These words are used in searches to find HITs.
+        /// </p>
         pub fn set_keywords(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.keywords = input;
             self
@@ -858,6 +927,12 @@ pub mod create_hit_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>
+        /// A general description of the HIT. A description includes detailed information about the kind of task
+        /// the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded
+        /// view of search results, and in the HIT and assignment screens. A good description gives the user enough
+        /// information to evaluate the HIT before accepting it.
+        /// </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -875,6 +950,15 @@ pub mod create_hit_input {
             self.question = Some(input.into());
             self
         }
+        /// <p>
+        /// The data the person completing the HIT uses to produce the results.
+        /// </p>
+        /// <p>
+        /// Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure,
+        /// or an HTMLQuestion data structure. The XML question data must not be larger than
+        /// 64 kilobytes (65,535 bytes) in size, including whitespace.
+        /// </p>
+        /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
         pub fn set_question(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.question = input;
             self
@@ -898,6 +982,21 @@ pub mod create_hit_input {
             self.requester_annotation = Some(input.into());
             self
         }
+        /// <p>
+        /// An arbitrary data field.
+        /// The RequesterAnnotation parameter lets your application attach arbitrary data
+        /// to the HIT for tracking purposes.
+        /// For example, this parameter could be an identifier internal to the Requester's application
+        /// that corresponds with the HIT.
+        /// </p>
+        /// <p>
+        /// The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT.
+        /// It is not shown to the Worker, or any other Requester.
+        /// </p>
+        /// <p>
+        /// The RequesterAnnotation parameter may be different for each HIT you submit.
+        /// It does not affect how your HITs are grouped.
+        /// </p>
         pub fn set_requester_annotation(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -905,6 +1004,18 @@ pub mod create_hit_input {
             self.requester_annotation = input;
             self
         }
+        /// Appends an item to `qualification_requirements`.
+        ///
+        /// To override the contents of this collection use [`set_qualification_requirements`](Self::set_qualification_requirements).
+        ///
+        /// <p>
+        /// Conditions that a Worker's Qualifications must meet in order
+        /// to accept the HIT. A HIT can have between zero and ten
+        /// Qualification requirements. All requirements must be met in
+        /// order for a Worker to accept the HIT. Additionally, other
+        /// actions can be restricted using the <code>ActionsGuarded</code>
+        /// field on each <code>QualificationRequirement</code> structure.
+        /// </p>
         pub fn qualification_requirements(
             mut self,
             input: impl Into<crate::model::QualificationRequirement>,
@@ -914,6 +1025,14 @@ pub mod create_hit_input {
             self.qualification_requirements = Some(v);
             self
         }
+        /// <p>
+        /// Conditions that a Worker's Qualifications must meet in order
+        /// to accept the HIT. A HIT can have between zero and ten
+        /// Qualification requirements. All requirements must be met in
+        /// order for a Worker to accept the HIT. Additionally, other
+        /// actions can be restricted using the <code>ActionsGuarded</code>
+        /// field on each <code>QualificationRequirement</code> structure.
+        /// </p>
         pub fn set_qualification_requirements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QualificationRequirement>>,
@@ -941,6 +1060,22 @@ pub mod create_hit_input {
             self.unique_request_token = Some(input.into());
             self
         }
+        /// <p>
+        /// A unique identifier for this request which allows you to retry the call
+        /// on error without creating duplicate HITs.
+        /// This is useful in cases such as network timeouts where it is unclear whether or not
+        /// the call succeeded on the server.
+        /// If the HIT already exists in the system from a previous call using the same UniqueRequestToken,
+        /// subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error
+        /// with a message containing the HITId.
+        /// </p>
+        /// <note>
+        /// <p>
+        /// Note: It is your responsibility to ensure uniqueness of the token.
+        /// The unique token expires after 24 hours. Subsequent calls using the same
+        /// UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
+        /// </p>
+        /// </note>
         pub fn set_unique_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -956,6 +1091,10 @@ pub mod create_hit_input {
             self.assignment_review_policy = Some(input);
             self
         }
+        /// <p>
+        /// The Assignment-level Review Policy applies to the assignments under the HIT.
+        /// You can specify for Mechanical Turk to take various actions based on the policy.
+        /// </p>
         pub fn set_assignment_review_policy(
             mut self,
             input: std::option::Option<crate::model::ReviewPolicy>,
@@ -971,6 +1110,10 @@ pub mod create_hit_input {
             self.hit_review_policy = Some(input);
             self
         }
+        /// <p>
+        /// The HIT-level Review Policy applies to the HIT.
+        /// You can specify for Mechanical Turk to take various actions based on the policy.
+        /// </p>
         pub fn set_hit_review_policy(
             mut self,
             input: std::option::Option<crate::model::ReviewPolicy>,
@@ -989,6 +1132,13 @@ pub mod create_hit_input {
             self.hit_layout_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The HITLayoutId allows you to use a pre-existing HIT design with placeholder values
+        /// and create an additional HIT by providing those values as HITLayoutParameters.
+        /// </p>
+        /// <p>
+        /// Constraints: Either a Question parameter or a HITLayoutId parameter must be provided.
+        /// </p>
         pub fn set_hit_layout_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -996,6 +1146,14 @@ pub mod create_hit_input {
             self.hit_layout_id = input;
             self
         }
+        /// Appends an item to `hit_layout_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_hit_layout_parameters`](Self::set_hit_layout_parameters).
+        ///
+        /// <p>
+        /// If the HITLayoutId is provided, any placeholder values must be filled in with values
+        /// using the HITLayoutParameter structure. For more information, see HITLayout.
+        /// </p>
         pub fn hit_layout_parameters(
             mut self,
             input: impl Into<crate::model::HitLayoutParameter>,
@@ -1005,6 +1163,10 @@ pub mod create_hit_input {
             self.hit_layout_parameters = Some(v);
             self
         }
+        /// <p>
+        /// If the HITLayoutId is provided, any placeholder values must be filled in with values
+        /// using the HITLayoutParameter structure. For more information, see HITLayout.
+        /// </p>
         pub fn set_hit_layout_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HitLayoutParameter>>,
@@ -1015,7 +1177,7 @@ pub mod create_hit_input {
         /// Consumes the builder and constructs a [`CreateHitInput`](crate::input::CreateHitInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateHitInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::CreateHitInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::CreateHitInput {
                 max_assignments: self.max_assignments,
@@ -1049,16 +1211,16 @@ impl CreateHitInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateHIT,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateHitInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1066,7 +1228,7 @@ impl CreateHitInput {
         fn update_http_builder(
             input: &crate::input::CreateHitInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1075,29 +1237,31 @@ impl CreateHitInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateHitInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.CreateHIT",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_hit(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1120,22 +1284,25 @@ impl CreateHitInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateHIT::new())
-                .with_metadata(smithy_http::operation::Metadata::new("CreateHIT", "mturk"));
+            aws_smithy_http::operation::Operation::new(request, crate::operation::CreateHIT::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "CreateHIT",
+                    "mturk",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1174,6 +1341,11 @@ pub mod create_hit_type_input {
             self.auto_approval_delay_in_seconds = Some(input);
             self
         }
+        /// <p>
+        /// The number of seconds after an assignment for the HIT has been submitted,
+        /// after which the assignment is considered Approved automatically
+        /// unless the Requester explicitly rejects it.
+        /// </p>
         pub fn set_auto_approval_delay_in_seconds(
             mut self,
             input: std::option::Option<i64>,
@@ -1192,6 +1364,13 @@ pub mod create_hit_type_input {
             self.assignment_duration_in_seconds = Some(input);
             self
         }
+        /// <p>
+        /// The amount of time, in seconds, that a Worker has to complete the HIT after accepting it.
+        /// If a Worker does not complete the assignment within the specified duration,
+        /// the assignment is considered abandoned. If the HIT is still active
+        /// (that is, its lifetime has not elapsed), the assignment becomes available
+        /// for other users to find and accept.
+        /// </p>
         pub fn set_assignment_duration_in_seconds(
             mut self,
             input: std::option::Option<i64>,
@@ -1206,6 +1385,9 @@ pub mod create_hit_type_input {
             self.reward = Some(input.into());
             self
         }
+        /// <p>
+        /// The amount of money the Requester will pay a Worker for successfully completing the HIT.
+        /// </p>
         pub fn set_reward(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reward = input;
             self
@@ -1219,6 +1401,11 @@ pub mod create_hit_type_input {
             self.title = Some(input.into());
             self
         }
+        /// <p>
+        /// The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains.
+        /// On the Amazon Mechanical Turk web site, the HIT title appears in search results,
+        /// and everywhere the HIT is mentioned.
+        /// </p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -1231,6 +1418,10 @@ pub mod create_hit_type_input {
             self.keywords = Some(input.into());
             self
         }
+        /// <p>
+        /// One or more words or phrases that describe the HIT, separated by commas.
+        /// These words are used in searches to find HITs.
+        /// </p>
         pub fn set_keywords(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.keywords = input;
             self
@@ -1245,10 +1436,28 @@ pub mod create_hit_type_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>
+        /// A general description of the HIT. A description includes detailed information about the kind of task
+        /// the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded
+        /// view of search results, and in the HIT and assignment screens. A good description gives the user enough
+        /// information to evaluate the HIT before accepting it.
+        /// </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `qualification_requirements`.
+        ///
+        /// To override the contents of this collection use [`set_qualification_requirements`](Self::set_qualification_requirements).
+        ///
+        /// <p>
+        /// Conditions that a Worker's Qualifications must meet in order
+        /// to accept the HIT. A HIT can have between zero and ten
+        /// Qualification requirements. All requirements must be met in
+        /// order for a Worker to accept the HIT. Additionally, other
+        /// actions can be restricted using the <code>ActionsGuarded</code>
+        /// field on each <code>QualificationRequirement</code> structure.
+        /// </p>
         pub fn qualification_requirements(
             mut self,
             input: impl Into<crate::model::QualificationRequirement>,
@@ -1258,6 +1467,14 @@ pub mod create_hit_type_input {
             self.qualification_requirements = Some(v);
             self
         }
+        /// <p>
+        /// Conditions that a Worker's Qualifications must meet in order
+        /// to accept the HIT. A HIT can have between zero and ten
+        /// Qualification requirements. All requirements must be met in
+        /// order for a Worker to accept the HIT. Additionally, other
+        /// actions can be restricted using the <code>ActionsGuarded</code>
+        /// field on each <code>QualificationRequirement</code> structure.
+        /// </p>
         pub fn set_qualification_requirements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QualificationRequirement>>,
@@ -1268,8 +1485,10 @@ pub mod create_hit_type_input {
         /// Consumes the builder and constructs a [`CreateHitTypeInput`](crate::input::CreateHitTypeInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateHitTypeInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateHitTypeInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateHitTypeInput {
                 auto_approval_delay_in_seconds: self.auto_approval_delay_in_seconds,
                 assignment_duration_in_seconds: self.assignment_duration_in_seconds,
@@ -1293,16 +1512,16 @@ impl CreateHitTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateHITType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateHitTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1310,7 +1529,7 @@ impl CreateHitTypeInput {
         fn update_http_builder(
             input: &crate::input::CreateHitTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1319,29 +1538,31 @@ impl CreateHitTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateHitTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.CreateHITType",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_hit_type(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1364,25 +1585,27 @@ impl CreateHitTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateHITType::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateHITType",
-                    "mturk",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateHITType::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateHITType",
+            "mturk",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1420,6 +1643,7 @@ pub mod create_hit_with_hit_type_input {
             self.hit_type_id = Some(input.into());
             self
         }
+        /// <p>The HIT type ID you want to create this HIT with.</p>
         pub fn set_hit_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_type_id = input;
             self
@@ -1431,6 +1655,9 @@ pub mod create_hit_with_hit_type_input {
             self.max_assignments = Some(input);
             self
         }
+        /// <p>
+        /// The number of times the HIT can be accepted and completed before the HIT becomes unavailable.
+        /// </p>
         pub fn set_max_assignments(mut self, input: std::option::Option<i32>) -> Self {
             self.max_assignments = input;
             self
@@ -1444,6 +1671,11 @@ pub mod create_hit_with_hit_type_input {
             self.lifetime_in_seconds = Some(input);
             self
         }
+        /// <p>
+        /// An amount of time, in seconds, after which the HIT is no longer available for users to accept.
+        /// After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches,
+        /// even if not all of the assignments for the HIT have been accepted.
+        /// </p>
         pub fn set_lifetime_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.lifetime_in_seconds = input;
             self
@@ -1461,6 +1693,15 @@ pub mod create_hit_with_hit_type_input {
             self.question = Some(input.into());
             self
         }
+        /// <p>
+        /// The data the person completing the HIT uses to produce the results.
+        /// </p>
+        /// <p>
+        /// Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure,
+        /// or an HTMLQuestion data structure. The XML question data must not be larger than
+        /// 64 kilobytes (65,535 bytes) in size, including whitespace.
+        /// </p>
+        /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
         pub fn set_question(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.question = input;
             self
@@ -1484,6 +1725,21 @@ pub mod create_hit_with_hit_type_input {
             self.requester_annotation = Some(input.into());
             self
         }
+        /// <p>
+        /// An arbitrary data field.
+        /// The RequesterAnnotation parameter lets your application attach arbitrary data
+        /// to the HIT for tracking purposes.
+        /// For example, this parameter could be an identifier internal to the Requester's application
+        /// that corresponds with the HIT.
+        /// </p>
+        /// <p>
+        /// The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT.
+        /// It is not shown to the Worker, or any other Requester.
+        /// </p>
+        /// <p>
+        /// The RequesterAnnotation parameter may be different for each HIT you submit.
+        /// It does not affect how your HITs are grouped.
+        /// </p>
         pub fn set_requester_annotation(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1511,6 +1767,22 @@ pub mod create_hit_with_hit_type_input {
             self.unique_request_token = Some(input.into());
             self
         }
+        /// <p>
+        /// A unique identifier for this request which allows you to retry the call
+        /// on error without creating duplicate HITs.
+        /// This is useful in cases such as network timeouts where it is unclear whether or not
+        /// the call succeeded on the server.
+        /// If the HIT already exists in the system from a previous call using the same UniqueRequestToken,
+        /// subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error
+        /// with a message containing the HITId.
+        /// </p>
+        /// <note>
+        /// <p>
+        /// Note: It is your responsibility to ensure uniqueness of the token.
+        /// The unique token expires after 24 hours. Subsequent calls using the same
+        /// UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
+        /// </p>
+        /// </note>
         pub fn set_unique_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1526,6 +1798,10 @@ pub mod create_hit_with_hit_type_input {
             self.assignment_review_policy = Some(input);
             self
         }
+        /// <p>
+        /// The Assignment-level Review Policy applies to the assignments under the HIT.
+        /// You can specify for Mechanical Turk to take various actions based on the policy.
+        /// </p>
         pub fn set_assignment_review_policy(
             mut self,
             input: std::option::Option<crate::model::ReviewPolicy>,
@@ -1541,6 +1817,10 @@ pub mod create_hit_with_hit_type_input {
             self.hit_review_policy = Some(input);
             self
         }
+        /// <p>
+        /// The HIT-level Review Policy applies to the HIT.
+        /// You can specify for Mechanical Turk to take various actions based on the policy.
+        /// </p>
         pub fn set_hit_review_policy(
             mut self,
             input: std::option::Option<crate::model::ReviewPolicy>,
@@ -1559,6 +1839,13 @@ pub mod create_hit_with_hit_type_input {
             self.hit_layout_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The HITLayoutId allows you to use a pre-existing HIT design with placeholder values
+        /// and create an additional HIT by providing those values as HITLayoutParameters.
+        /// </p>
+        /// <p>
+        /// Constraints: Either a Question parameter or a HITLayoutId parameter must be provided.
+        /// </p>
         pub fn set_hit_layout_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1566,6 +1853,14 @@ pub mod create_hit_with_hit_type_input {
             self.hit_layout_id = input;
             self
         }
+        /// Appends an item to `hit_layout_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_hit_layout_parameters`](Self::set_hit_layout_parameters).
+        ///
+        /// <p>
+        /// If the HITLayoutId is provided, any placeholder values must be filled in with values
+        /// using the HITLayoutParameter structure. For more information, see HITLayout.
+        /// </p>
         pub fn hit_layout_parameters(
             mut self,
             input: impl Into<crate::model::HitLayoutParameter>,
@@ -1575,6 +1870,10 @@ pub mod create_hit_with_hit_type_input {
             self.hit_layout_parameters = Some(v);
             self
         }
+        /// <p>
+        /// If the HITLayoutId is provided, any placeholder values must be filled in with values
+        /// using the HITLayoutParameter structure. For more information, see HITLayout.
+        /// </p>
         pub fn set_hit_layout_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HitLayoutParameter>>,
@@ -1587,7 +1886,7 @@ pub mod create_hit_with_hit_type_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateHitWithHitTypeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateHitWithHitTypeInput {
                 hit_type_id: self.hit_type_id,
@@ -1615,16 +1914,16 @@ impl CreateHitWithHitTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateHITWithHITType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateHitWithHitTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1632,7 +1931,7 @@ impl CreateHitWithHitTypeInput {
         fn update_http_builder(
             input: &crate::input::CreateHitWithHitTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1641,32 +1940,34 @@ impl CreateHitWithHitTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateHitWithHitTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.CreateHITWithHITType",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_hit_with_hit_type(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1689,15 +1990,15 @@ impl CreateHitWithHitTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateHITWithHITType::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateHITWithHITType",
             "mturk",
         ));
@@ -1706,10 +2007,10 @@ impl CreateHitWithHitTypeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1750,6 +2051,10 @@ pub mod create_qualification_type_input {
             self.name = Some(input.into());
             self
         }
+        /// <p> The name you give to the Qualification type. The type name
+        /// is used to represent the Qualification to Workers, and to find the
+        /// type using a Qualification type search. It must be unique across all
+        /// of your Qualification types.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1761,6 +2066,9 @@ pub mod create_qualification_type_input {
             self.keywords = Some(input.into());
             self
         }
+        /// <p>One or more words or phrases that describe the Qualification
+        /// type, separated by commas. The keywords of a type make the type
+        /// easier to find during a search.</p>
         pub fn set_keywords(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.keywords = input;
             self
@@ -1772,6 +2080,9 @@ pub mod create_qualification_type_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A long description for the Qualification type. On the Amazon
+        /// Mechanical Turk website, the long description is displayed when a
+        /// Worker examines a Qualification type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1785,6 +2096,8 @@ pub mod create_qualification_type_input {
             self.qualification_type_status = Some(input);
             self
         }
+        /// <p>The initial status of the Qualification type.</p>
+        /// <p>Constraints: Valid values are: Active | Inactive</p>
         pub fn set_qualification_type_status(
             mut self,
             input: std::option::Option<crate::model::QualificationTypeStatus>,
@@ -1806,6 +2119,16 @@ pub mod create_qualification_type_input {
             self.retry_delay_in_seconds = Some(input);
             self
         }
+        /// <p>The number of seconds that a Worker must wait after
+        /// requesting a Qualification of the Qualification type before the
+        /// worker can retry the Qualification request.</p>
+        /// <p>Constraints: None. If not specified, retries are disabled and
+        /// Workers can request a Qualification of this type only once, even if
+        /// the Worker has not been granted the Qualification. It is not possible
+        /// to disable retries for a Qualification type after it has been created
+        /// with retries enabled. If you want to disable retries, you must delete
+        /// existing retry-enabled Qualification type and then create a new
+        /// Qualification type with retries disabled.</p>
         pub fn set_retry_delay_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.retry_delay_in_seconds = input;
             self
@@ -1826,6 +2149,18 @@ pub mod create_qualification_type_input {
             self.test = Some(input.into());
             self
         }
+        /// <p>
+        /// The questions for the Qualification test a Worker must answer
+        /// correctly to obtain a Qualification of this type. If this parameter
+        /// is specified,
+        /// <code>TestDurationInSeconds</code>
+        /// must also be specified.
+        /// </p>
+        /// <p>Constraints: Must not be longer than 65535 bytes. Must be a
+        /// QuestionForm data structure. This parameter cannot be specified if
+        /// AutoGranted is true.</p>
+        /// <p>Constraints: None. If not specified, the Worker may request
+        /// the Qualification without answering any questions.</p>
         pub fn set_test(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.test = input;
             self
@@ -1839,6 +2174,11 @@ pub mod create_qualification_type_input {
             self.answer_key = Some(input.into());
             self
         }
+        /// <p>The answers to the Qualification test specified in the Test
+        /// parameter, in the form of an AnswerKey data structure.</p>
+        /// <p>Constraints: Must not be longer than 65535 bytes.</p>
+        /// <p>Constraints: None. If not specified, you must process
+        /// Qualification requests manually.</p>
         pub fn set_answer_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.answer_key = input;
             self
@@ -1850,6 +2190,9 @@ pub mod create_qualification_type_input {
             self.test_duration_in_seconds = Some(input);
             self
         }
+        /// <p>The number of seconds the Worker has to complete the
+        /// Qualification test, starting from the time the Worker requests the
+        /// Qualification.</p>
         pub fn set_test_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.test_duration_in_seconds = input;
             self
@@ -1863,6 +2206,11 @@ pub mod create_qualification_type_input {
             self.auto_granted = Some(input);
             self
         }
+        /// <p>Specifies whether requests for the Qualification type are
+        /// granted immediately, without prompting the Worker with a
+        /// Qualification test.</p>
+        /// <p>Constraints: If the Test parameter is specified, this
+        /// parameter cannot be true.</p>
         pub fn set_auto_granted(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_granted = input;
             self
@@ -1874,6 +2222,9 @@ pub mod create_qualification_type_input {
             self.auto_granted_value = Some(input);
             self
         }
+        /// <p>The Qualification value to use for automatically granted
+        /// Qualifications. This parameter is used only if the AutoGranted
+        /// parameter is true.</p>
         pub fn set_auto_granted_value(mut self, input: std::option::Option<i32>) -> Self {
             self.auto_granted_value = input;
             self
@@ -1883,7 +2234,7 @@ pub mod create_qualification_type_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateQualificationTypeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateQualificationTypeInput {
                 name: self.name,
@@ -1912,16 +2263,16 @@ impl CreateQualificationTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateQualificationType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateQualificationTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1929,7 +2280,7 @@ impl CreateQualificationTypeInput {
         fn update_http_builder(
             input: &crate::input::CreateQualificationTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1938,32 +2289,34 @@ impl CreateQualificationTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateQualificationTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.CreateQualificationType",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_qualification_type(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1986,15 +2339,15 @@ impl CreateQualificationTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateQualificationType::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateQualificationType",
             "mturk",
         ));
@@ -2003,10 +2356,10 @@ impl CreateQualificationTypeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2035,6 +2388,7 @@ pub mod create_worker_block_input {
             self.worker_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Worker to block.</p>
         pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.worker_id = input;
             self
@@ -2044,6 +2398,7 @@ pub mod create_worker_block_input {
             self.reason = Some(input.into());
             self
         }
+        /// <p>A message explaining the reason for blocking the Worker. This parameter enables you to keep track of your Workers. The Worker does not see this message.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -2053,7 +2408,7 @@ pub mod create_worker_block_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateWorkerBlockInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateWorkerBlockInput {
                 worker_id: self.worker_id,
@@ -2073,16 +2428,16 @@ impl CreateWorkerBlockInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateWorkerBlock,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateWorkerBlockInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2090,7 +2445,7 @@ impl CreateWorkerBlockInput {
         fn update_http_builder(
             input: &crate::input::CreateWorkerBlockInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2099,32 +2454,32 @@ impl CreateWorkerBlockInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateWorkerBlockInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.CreateWorkerBlock",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_worker_block(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2147,15 +2502,15 @@ impl CreateWorkerBlockInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateWorkerBlock::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateWorkerBlock",
             "mturk",
         ));
@@ -2164,10 +2519,10 @@ impl CreateWorkerBlockInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2195,6 +2550,7 @@ pub mod delete_hit_input {
             self.hit_id = Some(input.into());
             self
         }
+        /// <p>The ID of the HIT to be deleted.</p>
         pub fn set_hit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_id = input;
             self
@@ -2202,7 +2558,7 @@ pub mod delete_hit_input {
         /// Consumes the builder and constructs a [`DeleteHitInput`](crate::input::DeleteHitInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteHitInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::DeleteHitInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::DeleteHitInput {
                 hit_id: self.hit_id,
@@ -2221,16 +2577,16 @@ impl DeleteHitInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteHIT,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteHitInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2238,7 +2594,7 @@ impl DeleteHitInput {
         fn update_http_builder(
             input: &crate::input::DeleteHitInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2247,29 +2603,31 @@ impl DeleteHitInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteHitInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.DeleteHIT",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_hit(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2292,22 +2650,25 @@ impl DeleteHitInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteHIT::new())
-                .with_metadata(smithy_http::operation::Metadata::new("DeleteHIT", "mturk"));
+            aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteHIT::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "DeleteHIT",
+                    "mturk",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2335,6 +2696,7 @@ pub mod delete_qualification_type_input {
             self.qualification_type_id = Some(input.into());
             self
         }
+        /// <p>The ID of the QualificationType to dispose.</p>
         pub fn set_qualification_type_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2347,7 +2709,7 @@ pub mod delete_qualification_type_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteQualificationTypeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteQualificationTypeInput {
                 qualification_type_id: self.qualification_type_id,
@@ -2367,16 +2729,16 @@ impl DeleteQualificationTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteQualificationType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteQualificationTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2384,7 +2746,7 @@ impl DeleteQualificationTypeInput {
         fn update_http_builder(
             input: &crate::input::DeleteQualificationTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2393,32 +2755,34 @@ impl DeleteQualificationTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteQualificationTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.DeleteQualificationType",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_qualification_type(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2441,15 +2805,15 @@ impl DeleteQualificationTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteQualificationType::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteQualificationType",
             "mturk",
         ));
@@ -2458,10 +2822,10 @@ impl DeleteQualificationTypeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2490,6 +2854,7 @@ pub mod delete_worker_block_input {
             self.worker_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Worker to unblock.</p>
         pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.worker_id = input;
             self
@@ -2499,6 +2864,7 @@ pub mod delete_worker_block_input {
             self.reason = Some(input.into());
             self
         }
+        /// <p>A message that explains the reason for unblocking the Worker. The Worker does not see this message.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -2508,7 +2874,7 @@ pub mod delete_worker_block_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteWorkerBlockInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteWorkerBlockInput {
                 worker_id: self.worker_id,
@@ -2528,16 +2894,16 @@ impl DeleteWorkerBlockInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteWorkerBlock,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteWorkerBlockInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2545,7 +2911,7 @@ impl DeleteWorkerBlockInput {
         fn update_http_builder(
             input: &crate::input::DeleteWorkerBlockInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2554,32 +2920,32 @@ impl DeleteWorkerBlockInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteWorkerBlockInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.DeleteWorkerBlock",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_worker_block(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2602,15 +2968,15 @@ impl DeleteWorkerBlockInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteWorkerBlock::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteWorkerBlock",
             "mturk",
         ));
@@ -2619,10 +2985,10 @@ impl DeleteWorkerBlockInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2652,6 +3018,7 @@ pub mod disassociate_qualification_from_worker_input {
             self.worker_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
         pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.worker_id = input;
             self
@@ -2661,6 +3028,7 @@ pub mod disassociate_qualification_from_worker_input {
             self.qualification_type_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Qualification type of the Qualification to be revoked.</p>
         pub fn set_qualification_type_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2673,6 +3041,7 @@ pub mod disassociate_qualification_from_worker_input {
             self.reason = Some(input.into());
             self
         }
+        /// <p>A text message that explains why the Qualification was revoked. The user who had the Qualification sees this message.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -2682,7 +3051,7 @@ pub mod disassociate_qualification_from_worker_input {
             self,
         ) -> std::result::Result<
             crate::input::DisassociateQualificationFromWorkerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisassociateQualificationFromWorkerInput {
                 worker_id: self.worker_id,
@@ -2705,16 +3074,16 @@ impl DisassociateQualificationFromWorkerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisassociateQualificationFromWorker,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisassociateQualificationFromWorkerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2722,7 +3091,7 @@ impl DisassociateQualificationFromWorkerInput {
         fn update_http_builder(
             input: &crate::input::DisassociateQualificationFromWorkerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2731,30 +3100,30 @@ impl DisassociateQualificationFromWorkerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisassociateQualificationFromWorkerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.DisassociateQualificationFromWorker",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_qualification_from_worker(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_qualification_from_worker(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2777,15 +3146,15 @@ impl DisassociateQualificationFromWorkerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisassociateQualificationFromWorker::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisassociateQualificationFromWorker",
             "mturk",
         ));
@@ -2794,10 +3163,10 @@ impl DisassociateQualificationFromWorkerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2823,7 +3192,7 @@ pub mod get_account_balance_input {
             self,
         ) -> std::result::Result<
             crate::input::GetAccountBalanceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetAccountBalanceInput {})
         }
@@ -2840,16 +3209,16 @@ impl GetAccountBalanceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAccountBalance,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAccountBalanceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2857,7 +3226,7 @@ impl GetAccountBalanceInput {
         fn update_http_builder(
             input: &crate::input::GetAccountBalanceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2866,32 +3235,32 @@ impl GetAccountBalanceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAccountBalanceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.GetAccountBalance",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_account_balance(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2914,15 +3283,15 @@ impl GetAccountBalanceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetAccountBalance::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetAccountBalance",
             "mturk",
         ));
@@ -2931,10 +3300,10 @@ impl GetAccountBalanceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2962,6 +3331,7 @@ pub mod get_assignment_input {
             self.assignment_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Assignment to be retrieved.</p>
         pub fn set_assignment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2972,8 +3342,10 @@ pub mod get_assignment_input {
         /// Consumes the builder and constructs a [`GetAssignmentInput`](crate::input::GetAssignmentInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetAssignmentInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetAssignmentInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetAssignmentInput {
                 assignment_id: self.assignment_id,
             })
@@ -2991,16 +3363,16 @@ impl GetAssignmentInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAssignment,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAssignmentInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3008,7 +3380,7 @@ impl GetAssignmentInput {
         fn update_http_builder(
             input: &crate::input::GetAssignmentInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3017,29 +3389,31 @@ impl GetAssignmentInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAssignmentInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.GetAssignment",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_assignment(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3062,25 +3436,27 @@ impl GetAssignmentInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetAssignment::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetAssignment",
-                    "mturk",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetAssignment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetAssignment",
+            "mturk",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3110,6 +3486,8 @@ pub mod get_file_upload_url_input {
             self.assignment_id = Some(input.into());
             self
         }
+        /// <p>The ID of the assignment that contains the question with a
+        /// FileUploadAnswer.</p>
         pub fn set_assignment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3123,6 +3501,8 @@ pub mod get_file_upload_url_input {
             self.question_identifier = Some(input.into());
             self
         }
+        /// <p>The identifier of the question with a FileUploadAnswer, as
+        /// specified in the QuestionForm of the HIT.</p>
         pub fn set_question_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3135,7 +3515,7 @@ pub mod get_file_upload_url_input {
             self,
         ) -> std::result::Result<
             crate::input::GetFileUploadUrlInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetFileUploadUrlInput {
                 assignment_id: self.assignment_id,
@@ -3155,16 +3535,16 @@ impl GetFileUploadUrlInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetFileUploadURL,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetFileUploadUrlInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3172,7 +3552,7 @@ impl GetFileUploadUrlInput {
         fn update_http_builder(
             input: &crate::input::GetFileUploadUrlInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3181,32 +3561,32 @@ impl GetFileUploadUrlInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetFileUploadUrlInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.GetFileUploadURL",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_file_upload_url(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3229,15 +3609,15 @@ impl GetFileUploadUrlInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetFileUploadURL::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetFileUploadURL",
             "mturk",
         ));
@@ -3246,10 +3626,10 @@ impl GetFileUploadUrlInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3277,6 +3657,7 @@ pub mod get_hit_input {
             self.hit_id = Some(input.into());
             self
         }
+        /// <p>The ID of the HIT to be retrieved.</p>
         pub fn set_hit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_id = input;
             self
@@ -3284,7 +3665,7 @@ pub mod get_hit_input {
         /// Consumes the builder and constructs a [`GetHitInput`](crate::input::GetHitInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetHitInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetHitInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetHitInput {
                 hit_id: self.hit_id,
@@ -3303,13 +3684,16 @@ impl GetHitInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::GetHIT, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetHIT,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetHitInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3317,7 +3701,7 @@ impl GetHitInput {
         fn update_http_builder(
             input: &crate::input::GetHitInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3326,29 +3710,31 @@ impl GetHitInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetHitInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.GetHIT",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_hit(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3371,21 +3757,22 @@ impl GetHitInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::GetHIT::new())
-            .with_metadata(smithy_http::operation::Metadata::new("GetHIT", "mturk"));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetHIT::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new("GetHIT", "mturk"));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3414,6 +3801,7 @@ pub mod get_qualification_score_input {
             self.qualification_type_id = Some(input.into());
             self
         }
+        /// <p>The ID of the QualificationType.</p>
         pub fn set_qualification_type_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3426,6 +3814,7 @@ pub mod get_qualification_score_input {
             self.worker_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Worker whose Qualification is being updated.</p>
         pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.worker_id = input;
             self
@@ -3435,7 +3824,7 @@ pub mod get_qualification_score_input {
             self,
         ) -> std::result::Result<
             crate::input::GetQualificationScoreInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetQualificationScoreInput {
                 qualification_type_id: self.qualification_type_id,
@@ -3455,16 +3844,16 @@ impl GetQualificationScoreInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetQualificationScore,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetQualificationScoreInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3472,7 +3861,7 @@ impl GetQualificationScoreInput {
         fn update_http_builder(
             input: &crate::input::GetQualificationScoreInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3481,32 +3870,34 @@ impl GetQualificationScoreInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetQualificationScoreInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.GetQualificationScore",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_qualification_score(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3529,15 +3920,15 @@ impl GetQualificationScoreInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetQualificationScore::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetQualificationScore",
             "mturk",
         ));
@@ -3546,10 +3937,10 @@ impl GetQualificationScoreInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3577,6 +3968,7 @@ pub mod get_qualification_type_input {
             self.qualification_type_id = Some(input.into());
             self
         }
+        /// <p>The ID of the QualificationType.</p>
         pub fn set_qualification_type_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3589,7 +3981,7 @@ pub mod get_qualification_type_input {
             self,
         ) -> std::result::Result<
             crate::input::GetQualificationTypeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetQualificationTypeInput {
                 qualification_type_id: self.qualification_type_id,
@@ -3608,16 +4000,16 @@ impl GetQualificationTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetQualificationType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetQualificationTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3625,7 +4017,7 @@ impl GetQualificationTypeInput {
         fn update_http_builder(
             input: &crate::input::GetQualificationTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3634,32 +4026,32 @@ impl GetQualificationTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetQualificationTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.GetQualificationType",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_qualification_type(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3682,15 +4074,15 @@ impl GetQualificationTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetQualificationType::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetQualificationType",
             "mturk",
         ));
@@ -3699,10 +4091,10 @@ impl GetQualificationTypeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3734,6 +4126,7 @@ pub mod list_assignments_for_hit_input {
             self.hit_id = Some(input.into());
             self
         }
+        /// <p>The ID of the HIT.</p>
         pub fn set_hit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_id = input;
             self
@@ -3743,18 +4136,27 @@ pub mod list_assignments_for_hit_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Pagination token</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `assignment_statuses`.
+        ///
+        /// To override the contents of this collection use [`set_assignment_statuses`](Self::set_assignment_statuses).
+        ///
+        /// <p>The status of the assignments to return: Submitted | Approved
+        /// | Rejected</p>
         pub fn assignment_statuses(
             mut self,
             input: impl Into<crate::model::AssignmentStatus>,
@@ -3764,6 +4166,8 @@ pub mod list_assignments_for_hit_input {
             self.assignment_statuses = Some(v);
             self
         }
+        /// <p>The status of the assignments to return: Submitted | Approved
+        /// | Rejected</p>
         pub fn set_assignment_statuses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssignmentStatus>>,
@@ -3776,7 +4180,7 @@ pub mod list_assignments_for_hit_input {
             self,
         ) -> std::result::Result<
             crate::input::ListAssignmentsForHitInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListAssignmentsForHitInput {
                 hit_id: self.hit_id,
@@ -3798,16 +4202,16 @@ impl ListAssignmentsForHitInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListAssignmentsForHIT,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListAssignmentsForHitInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3815,7 +4219,7 @@ impl ListAssignmentsForHitInput {
         fn update_http_builder(
             input: &crate::input::ListAssignmentsForHitInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3824,32 +4228,34 @@ impl ListAssignmentsForHitInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListAssignmentsForHitInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.ListAssignmentsForHIT",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_assignments_for_hit(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3872,15 +4278,15 @@ impl ListAssignmentsForHitInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListAssignmentsForHIT::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListAssignmentsForHIT",
             "mturk",
         ));
@@ -3889,10 +4295,10 @@ impl ListAssignmentsForHitInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3926,6 +4332,10 @@ pub mod list_bonus_payments_input {
             self.hit_id = Some(input.into());
             self
         }
+        /// <p>The ID of the HIT associated with the bonus payments to
+        /// retrieve. If not specified, all bonus payments for all assignments
+        /// for the given HIT are returned. Either the HITId parameter or the
+        /// AssignmentId parameter must be specified</p>
         pub fn set_hit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_id = input;
             self
@@ -3938,6 +4348,10 @@ pub mod list_bonus_payments_input {
             self.assignment_id = Some(input.into());
             self
         }
+        /// <p>The ID of the assignment associated with the bonus payments
+        /// to retrieve. If specified, only bonus payments for the given
+        /// assignment are returned. Either the HITId parameter or the
+        /// AssignmentId parameter must be specified</p>
         pub fn set_assignment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3950,14 +4364,17 @@ pub mod list_bonus_payments_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Pagination token</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3967,7 +4384,7 @@ pub mod list_bonus_payments_input {
             self,
         ) -> std::result::Result<
             crate::input::ListBonusPaymentsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListBonusPaymentsInput {
                 hit_id: self.hit_id,
@@ -3989,16 +4406,16 @@ impl ListBonusPaymentsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListBonusPayments,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListBonusPaymentsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4006,7 +4423,7 @@ impl ListBonusPaymentsInput {
         fn update_http_builder(
             input: &crate::input::ListBonusPaymentsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4015,32 +4432,32 @@ impl ListBonusPaymentsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListBonusPaymentsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.ListBonusPayments",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_bonus_payments(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4063,15 +4480,15 @@ impl ListBonusPaymentsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListBonusPayments::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListBonusPayments",
             "mturk",
         ));
@@ -4080,10 +4497,10 @@ impl ListBonusPaymentsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4112,14 +4529,17 @@ pub mod list_hi_ts_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Pagination token</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4127,7 +4547,7 @@ pub mod list_hi_ts_input {
         /// Consumes the builder and constructs a [`ListHiTsInput`](crate::input::ListHiTsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListHiTsInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListHiTsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListHiTsInput {
                 next_token: self.next_token,
@@ -4147,16 +4567,16 @@ impl ListHiTsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListHITs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListHiTsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4164,7 +4584,7 @@ impl ListHiTsInput {
         fn update_http_builder(
             input: &crate::input::ListHiTsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4173,29 +4593,31 @@ impl ListHiTsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListHiTsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.ListHITs",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_hi_ts(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4218,21 +4640,24 @@ impl ListHiTsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::ListHITs::new())
-            .with_metadata(smithy_http::operation::Metadata::new("ListHITs", "mturk"));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListHITs::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "ListHITs", "mturk",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4264,6 +4689,9 @@ pub mod list_hi_ts_for_qualification_type_input {
             self.qualification_type_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the Qualification type to use when querying HITs.
+        /// </p>
         pub fn set_qualification_type_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4276,6 +4704,7 @@ pub mod list_hi_ts_for_qualification_type_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Pagination Token</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4287,6 +4716,9 @@ pub mod list_hi_ts_for_qualification_type_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>
+        /// Limit the number of results returned.
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4296,7 +4728,7 @@ pub mod list_hi_ts_for_qualification_type_input {
             self,
         ) -> std::result::Result<
             crate::input::ListHiTsForQualificationTypeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListHiTsForQualificationTypeInput {
                 qualification_type_id: self.qualification_type_id,
@@ -4318,16 +4750,16 @@ impl ListHiTsForQualificationTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListHITsForQualificationType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListHiTsForQualificationTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4335,7 +4767,7 @@ impl ListHiTsForQualificationTypeInput {
         fn update_http_builder(
             input: &crate::input::ListHiTsForQualificationTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4344,30 +4776,30 @@ impl ListHiTsForQualificationTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListHiTsForQualificationTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.ListHITsForQualificationType",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_hi_ts_for_qualification_type(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_hi_ts_for_qualification_type(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4390,15 +4822,15 @@ impl ListHiTsForQualificationTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListHITsForQualificationType::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListHITsForQualificationType",
             "mturk",
         ));
@@ -4407,10 +4839,10 @@ impl ListHiTsForQualificationTypeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4440,6 +4872,7 @@ pub mod list_qualification_requests_input {
             self.qualification_type_id = Some(input.into());
             self
         }
+        /// <p>The ID of the QualificationType.</p>
         pub fn set_qualification_type_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4455,6 +4888,10 @@ pub mod list_qualification_requests_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
+        /// returns a pagination token in the response. You can use this pagination token
+        /// to retrieve the next set of results.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4465,6 +4902,8 @@ pub mod list_qualification_requests_input {
             self.max_results = Some(input);
             self
         }
+        /// <p> The maximum number of results to return in a single call.
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4474,7 +4913,7 @@ pub mod list_qualification_requests_input {
             self,
         ) -> std::result::Result<
             crate::input::ListQualificationRequestsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListQualificationRequestsInput {
                 qualification_type_id: self.qualification_type_id,
@@ -4496,16 +4935,16 @@ impl ListQualificationRequestsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListQualificationRequests,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListQualificationRequestsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4513,7 +4952,7 @@ impl ListQualificationRequestsInput {
         fn update_http_builder(
             input: &crate::input::ListQualificationRequestsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4522,32 +4961,34 @@ impl ListQualificationRequestsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListQualificationRequestsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.ListQualificationRequests",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_qualification_requests(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4570,15 +5011,15 @@ impl ListQualificationRequestsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListQualificationRequests::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListQualificationRequests",
             "mturk",
         ));
@@ -4587,10 +5028,10 @@ impl ListQualificationRequestsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4624,6 +5065,9 @@ pub mod list_qualification_types_input {
             self.query = Some(input.into());
             self
         }
+        /// <p> A text query against all of the searchable attributes of
+        /// Qualification types.
+        /// </p>
         pub fn set_query(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query = input;
             self
@@ -4640,6 +5084,14 @@ pub mod list_qualification_types_input {
             self.must_be_requestable = Some(input);
             self
         }
+        /// <p>Specifies that only Qualification types that a user can
+        /// request through the Amazon Mechanical Turk web site, such as by
+        /// taking a Qualification test, are returned as results of the search.
+        /// Some Qualification types, such as those assigned automatically by the
+        /// system, cannot be requested directly by users. If false, all
+        /// Qualification types, including those managed by the system, are
+        /// considered. Valid values are True | False.
+        /// </p>
         pub fn set_must_be_requestable(mut self, input: std::option::Option<bool>) -> Self {
             self.must_be_requestable = input;
             self
@@ -4652,6 +5104,10 @@ pub mod list_qualification_types_input {
             self.must_be_owned_by_caller = Some(input);
             self
         }
+        /// <p> Specifies that only Qualification types that the Requester
+        /// created are returned. If false, the operation returns all
+        /// Qualification types.
+        /// </p>
         pub fn set_must_be_owned_by_caller(mut self, input: std::option::Option<bool>) -> Self {
             self.must_be_owned_by_caller = input;
             self
@@ -4664,6 +5120,10 @@ pub mod list_qualification_types_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
+        /// returns a pagination token in the response. You can use this pagination token
+        /// to retrieve the next set of results.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4674,6 +5134,8 @@ pub mod list_qualification_types_input {
             self.max_results = Some(input);
             self
         }
+        /// <p> The maximum number of results to return in a single call.
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4683,7 +5145,7 @@ pub mod list_qualification_types_input {
             self,
         ) -> std::result::Result<
             crate::input::ListQualificationTypesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListQualificationTypesInput {
                 query: self.query,
@@ -4706,16 +5168,16 @@ impl ListQualificationTypesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListQualificationTypes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListQualificationTypesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4723,7 +5185,7 @@ impl ListQualificationTypesInput {
         fn update_http_builder(
             input: &crate::input::ListQualificationTypesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4732,32 +5194,34 @@ impl ListQualificationTypesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListQualificationTypesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.ListQualificationTypes",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_qualification_types(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4780,15 +5244,15 @@ impl ListQualificationTypesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListQualificationTypes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListQualificationTypes",
             "mturk",
         ));
@@ -4797,10 +5261,10 @@ impl ListQualificationTypesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4834,6 +5298,10 @@ pub mod list_reviewable_hi_ts_input {
             self.hit_type_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the HIT type of the HITs to consider for the query.
+        /// If not specified, all HITs for the Reviewer are considered
+        /// </p>
         pub fn set_hit_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_type_id = input;
             self
@@ -4846,6 +5314,10 @@ pub mod list_reviewable_hi_ts_input {
             self.status = Some(input);
             self
         }
+        /// <p>
+        /// Can be either <code>Reviewable</code> or <code>Reviewing</code>.
+        /// Reviewable is the default value.
+        /// </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ReviewableHitStatus>,
@@ -4858,6 +5330,7 @@ pub mod list_reviewable_hi_ts_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Pagination Token</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4869,6 +5342,9 @@ pub mod list_reviewable_hi_ts_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>
+        /// Limit the number of results returned.
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4878,7 +5354,7 @@ pub mod list_reviewable_hi_ts_input {
             self,
         ) -> std::result::Result<
             crate::input::ListReviewableHiTsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListReviewableHiTsInput {
                 hit_type_id: self.hit_type_id,
@@ -4900,16 +5376,16 @@ impl ListReviewableHiTsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListReviewableHITs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListReviewableHiTsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4917,7 +5393,7 @@ impl ListReviewableHiTsInput {
         fn update_http_builder(
             input: &crate::input::ListReviewableHiTsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4926,32 +5402,32 @@ impl ListReviewableHiTsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListReviewableHiTsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.ListReviewableHITs",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_reviewable_hi_ts(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4974,15 +5450,15 @@ impl ListReviewableHiTsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListReviewableHITs::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListReviewableHITs",
             "mturk",
         ));
@@ -4991,10 +5467,10 @@ impl ListReviewableHiTsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5028,16 +5504,31 @@ pub mod list_review_policy_results_for_hit_input {
             self.hit_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the HIT to retrieve review results for.</p>
         pub fn set_hit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_id = input;
             self
         }
+        /// Appends an item to `policy_levels`.
+        ///
+        /// To override the contents of this collection use [`set_policy_levels`](Self::set_policy_levels).
+        ///
+        /// <p>
+        /// The Policy Level(s) to retrieve review results for - HIT or Assignment.
+        /// If omitted, the default behavior is to retrieve all data for both policy levels.
+        /// For a list of all the described policies, see Review Policies.
+        /// </p>
         pub fn policy_levels(mut self, input: impl Into<crate::model::ReviewPolicyLevel>) -> Self {
             let mut v = self.policy_levels.unwrap_or_default();
             v.push(input.into());
             self.policy_levels = Some(v);
             self
         }
+        /// <p>
+        /// The Policy Level(s) to retrieve review results for - HIT or Assignment.
+        /// If omitted, the default behavior is to retrieve all data for both policy levels.
+        /// For a list of all the described policies, see Review Policies.
+        /// </p>
         pub fn set_policy_levels(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReviewPolicyLevel>>,
@@ -5053,6 +5544,10 @@ pub mod list_review_policy_results_for_hit_input {
             self.retrieve_actions = Some(input);
             self
         }
+        /// <p>
+        /// Specify if the operation should retrieve a list of the actions taken executing
+        /// the Review Policies and their outcomes.
+        /// </p>
         pub fn set_retrieve_actions(mut self, input: std::option::Option<bool>) -> Self {
             self.retrieve_actions = input;
             self
@@ -5064,6 +5559,9 @@ pub mod list_review_policy_results_for_hit_input {
             self.retrieve_results = Some(input);
             self
         }
+        /// <p>
+        /// Specify if the operation should retrieve a list of the results computed by the Review Policies.
+        /// </p>
         pub fn set_retrieve_results(mut self, input: std::option::Option<bool>) -> Self {
             self.retrieve_results = input;
             self
@@ -5073,6 +5571,7 @@ pub mod list_review_policy_results_for_hit_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Pagination token</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5082,6 +5581,7 @@ pub mod list_review_policy_results_for_hit_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Limit the number of results returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5091,7 +5591,7 @@ pub mod list_review_policy_results_for_hit_input {
             self,
         ) -> std::result::Result<
             crate::input::ListReviewPolicyResultsForHitInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListReviewPolicyResultsForHitInput {
                 hit_id: self.hit_id,
@@ -5116,16 +5616,16 @@ impl ListReviewPolicyResultsForHitInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListReviewPolicyResultsForHIT,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListReviewPolicyResultsForHitInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5133,7 +5633,7 @@ impl ListReviewPolicyResultsForHitInput {
         fn update_http_builder(
             input: &crate::input::ListReviewPolicyResultsForHitInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5142,30 +5642,30 @@ impl ListReviewPolicyResultsForHitInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListReviewPolicyResultsForHitInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.ListReviewPolicyResultsForHIT",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_review_policy_results_for_hit(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_review_policy_results_for_hit(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5188,15 +5688,15 @@ impl ListReviewPolicyResultsForHitInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListReviewPolicyResultsForHIT::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListReviewPolicyResultsForHIT",
             "mturk",
         ));
@@ -5205,10 +5705,10 @@ impl ListReviewPolicyResultsForHitInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5237,14 +5737,17 @@ pub mod list_worker_blocks_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Pagination token</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5254,7 +5757,7 @@ pub mod list_worker_blocks_input {
             self,
         ) -> std::result::Result<
             crate::input::ListWorkerBlocksInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListWorkerBlocksInput {
                 next_token: self.next_token,
@@ -5274,16 +5777,16 @@ impl ListWorkerBlocksInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListWorkerBlocks,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListWorkerBlocksInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5291,7 +5794,7 @@ impl ListWorkerBlocksInput {
         fn update_http_builder(
             input: &crate::input::ListWorkerBlocksInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5300,32 +5803,32 @@ impl ListWorkerBlocksInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListWorkerBlocksInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.ListWorkerBlocks",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_worker_blocks(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5348,15 +5851,15 @@ impl ListWorkerBlocksInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListWorkerBlocks::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListWorkerBlocks",
             "mturk",
         ));
@@ -5365,10 +5868,10 @@ impl ListWorkerBlocksInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5400,6 +5903,8 @@ pub mod list_workers_with_qualification_type_input {
             self.qualification_type_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Qualification type of the Qualifications to
+        /// return.</p>
         pub fn set_qualification_type_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5415,6 +5920,10 @@ pub mod list_workers_with_qualification_type_input {
             self.status = Some(input);
             self
         }
+        /// <p>
+        /// The status of the Qualifications to return.
+        /// Can be <code>Granted | Revoked</code>.
+        /// </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::QualificationStatus>,
@@ -5427,6 +5936,7 @@ pub mod list_workers_with_qualification_type_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Pagination Token</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5438,6 +5948,9 @@ pub mod list_workers_with_qualification_type_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>
+        /// Limit the number of results returned.
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5447,7 +5960,7 @@ pub mod list_workers_with_qualification_type_input {
             self,
         ) -> std::result::Result<
             crate::input::ListWorkersWithQualificationTypeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListWorkersWithQualificationTypeInput {
                 qualification_type_id: self.qualification_type_id,
@@ -5470,16 +5983,16 @@ impl ListWorkersWithQualificationTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListWorkersWithQualificationType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListWorkersWithQualificationTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5487,7 +6000,7 @@ impl ListWorkersWithQualificationTypeInput {
         fn update_http_builder(
             input: &crate::input::ListWorkersWithQualificationTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5496,30 +6009,30 @@ impl ListWorkersWithQualificationTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListWorkersWithQualificationTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.ListWorkersWithQualificationType",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_workers_with_qualification_type(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_workers_with_qualification_type(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5542,15 +6055,15 @@ impl ListWorkersWithQualificationTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListWorkersWithQualificationType::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListWorkersWithQualificationType",
             "mturk",
         ));
@@ -5559,10 +6072,10 @@ impl ListWorkersWithQualificationTypeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5593,6 +6106,8 @@ pub mod notify_workers_input {
             self.subject = Some(input.into());
             self
         }
+        /// <p>The subject line of the email message to send. Can include up
+        /// to 200 characters.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subject = input;
             self
@@ -5603,16 +6118,28 @@ pub mod notify_workers_input {
             self.message_text = Some(input.into());
             self
         }
+        /// <p>The text of the email message to send. Can include up to
+        /// 4,096 characters</p>
         pub fn set_message_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_text = input;
             self
         }
+        /// Appends an item to `worker_ids`.
+        ///
+        /// To override the contents of this collection use [`set_worker_ids`](Self::set_worker_ids).
+        ///
+        /// <p>A list of Worker IDs you wish to notify. You
+        /// can notify upto
+        /// 100 Workers at a time.</p>
         pub fn worker_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.worker_ids.unwrap_or_default();
             v.push(input.into());
             self.worker_ids = Some(v);
             self
         }
+        /// <p>A list of Worker IDs you wish to notify. You
+        /// can notify upto
+        /// 100 Workers at a time.</p>
         pub fn set_worker_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5623,8 +6150,10 @@ pub mod notify_workers_input {
         /// Consumes the builder and constructs a [`NotifyWorkersInput`](crate::input::NotifyWorkersInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::NotifyWorkersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::NotifyWorkersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::NotifyWorkersInput {
                 subject: self.subject,
                 message_text: self.message_text,
@@ -5644,16 +6173,16 @@ impl NotifyWorkersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::NotifyWorkers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::NotifyWorkersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5661,7 +6190,7 @@ impl NotifyWorkersInput {
         fn update_http_builder(
             input: &crate::input::NotifyWorkersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5670,29 +6199,31 @@ impl NotifyWorkersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::NotifyWorkersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.NotifyWorkers",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_notify_workers(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5715,25 +6246,27 @@ impl NotifyWorkersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::NotifyWorkers::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "NotifyWorkers",
-                    "mturk",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::NotifyWorkers::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "NotifyWorkers",
+            "mturk",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5764,6 +6297,9 @@ pub mod reject_assignment_input {
             self.assignment_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the assignment. The assignment must correspond to a HIT created by the Requester.
+        /// </p>
         pub fn set_assignment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5778,6 +6314,9 @@ pub mod reject_assignment_input {
             self.requester_feedback = Some(input.into());
             self
         }
+        /// <p>
+        /// A message for the Worker, which the Worker can see in the Status section of the web site.
+        /// </p>
         pub fn set_requester_feedback(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5790,7 +6329,7 @@ pub mod reject_assignment_input {
             self,
         ) -> std::result::Result<
             crate::input::RejectAssignmentInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RejectAssignmentInput {
                 assignment_id: self.assignment_id,
@@ -5810,16 +6349,16 @@ impl RejectAssignmentInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RejectAssignment,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RejectAssignmentInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5827,7 +6366,7 @@ impl RejectAssignmentInput {
         fn update_http_builder(
             input: &crate::input::RejectAssignmentInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5836,32 +6375,32 @@ impl RejectAssignmentInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RejectAssignmentInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.RejectAssignment",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_reject_assignment(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5884,15 +6423,15 @@ impl RejectAssignmentInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RejectAssignment::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RejectAssignment",
             "mturk",
         ));
@@ -5901,10 +6440,10 @@ impl RejectAssignmentInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5937,6 +6476,11 @@ pub mod reject_qualification_request_input {
             self.qualification_request_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the Qualification request, as returned by the
+        /// <code>ListQualificationRequests</code>
+        /// operation.
+        /// </p>
         pub fn set_qualification_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5950,6 +6494,8 @@ pub mod reject_qualification_request_input {
             self.reason = Some(input.into());
             self
         }
+        /// <p>A text message explaining why the request was rejected, to be
+        /// shown to the Worker who made the request.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -5959,7 +6505,7 @@ pub mod reject_qualification_request_input {
             self,
         ) -> std::result::Result<
             crate::input::RejectQualificationRequestInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RejectQualificationRequestInput {
                 qualification_request_id: self.qualification_request_id,
@@ -5980,16 +6526,16 @@ impl RejectQualificationRequestInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RejectQualificationRequest,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RejectQualificationRequestInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5997,7 +6543,7 @@ impl RejectQualificationRequestInput {
         fn update_http_builder(
             input: &crate::input::RejectQualificationRequestInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6006,32 +6552,34 @@ impl RejectQualificationRequestInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RejectQualificationRequestInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.RejectQualificationRequest",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_reject_qualification_request(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6054,15 +6602,15 @@ impl RejectQualificationRequestInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RejectQualificationRequest::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RejectQualificationRequest",
             "mturk",
         ));
@@ -6071,10 +6619,10 @@ impl RejectQualificationRequestInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6106,6 +6654,7 @@ pub mod send_bonus_input {
             self.worker_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Worker being paid the bonus.</p>
         pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.worker_id = input;
             self
@@ -6118,6 +6667,10 @@ pub mod send_bonus_input {
             self.bonus_amount = Some(input.into());
             self
         }
+        /// <p>
+        /// The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and
+        /// "101.42" represents $101.42 USD). Do not include currency symbols or currency codes.
+        /// </p>
         pub fn set_bonus_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bonus_amount = input;
             self
@@ -6127,6 +6680,7 @@ pub mod send_bonus_input {
             self.assignment_id = Some(input.into());
             self
         }
+        /// <p>The ID of the assignment for which this bonus is paid.</p>
         pub fn set_assignment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6140,6 +6694,8 @@ pub mod send_bonus_input {
             self.reason = Some(input.into());
             self
         }
+        /// <p>A message that explains the reason for the bonus payment. The
+        /// Worker receiving the bonus can see this message.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -6155,6 +6711,13 @@ pub mod send_bonus_input {
             self.unique_request_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier for this request, which allows you to
+        /// retry the call on error without granting multiple bonuses. This is
+        /// useful in cases such as network timeouts where it is unclear whether
+        /// or not the call succeeded on the server. If the bonus already exists
+        /// in the system from a previous call using the same UniqueRequestToken,
+        /// subsequent calls will return an error with a message containing the
+        /// request ID.</p>
         pub fn set_unique_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6165,7 +6728,7 @@ pub mod send_bonus_input {
         /// Consumes the builder and constructs a [`SendBonusInput`](crate::input::SendBonusInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::SendBonusInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::SendBonusInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::SendBonusInput {
                 worker_id: self.worker_id,
@@ -6188,16 +6751,16 @@ impl SendBonusInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SendBonus,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SendBonusInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6205,7 +6768,7 @@ impl SendBonusInput {
         fn update_http_builder(
             input: &crate::input::SendBonusInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6214,29 +6777,31 @@ impl SendBonusInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SendBonusInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.SendBonus",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_send_bonus(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6259,22 +6824,25 @@ impl SendBonusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::SendBonus::new())
-                .with_metadata(smithy_http::operation::Metadata::new("SendBonus", "mturk"));
+            aws_smithy_http::operation::Operation::new(request, crate::operation::SendBonus::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "SendBonus",
+                    "mturk",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6307,6 +6875,11 @@ pub mod send_test_event_notification_input {
             self.notification = Some(input);
             self
         }
+        /// <p>
+        /// The notification specification to test. This value is identical to the value
+        /// you would provide to the UpdateNotificationSettings operation when you establish
+        /// the notification specification for a HIT type.
+        /// </p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::NotificationSpecification>,
@@ -6324,6 +6897,12 @@ pub mod send_test_event_notification_input {
             self.test_event_type = Some(input);
             self
         }
+        /// <p>
+        /// The event to simulate to test the notification specification.
+        /// This event is included in the test message even if the notification specification
+        /// does not include the event type.
+        /// The notification specification does not filter out the test event.
+        /// </p>
         pub fn set_test_event_type(
             mut self,
             input: std::option::Option<crate::model::EventType>,
@@ -6336,7 +6915,7 @@ pub mod send_test_event_notification_input {
             self,
         ) -> std::result::Result<
             crate::input::SendTestEventNotificationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SendTestEventNotificationInput {
                 notification: self.notification,
@@ -6357,16 +6936,16 @@ impl SendTestEventNotificationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SendTestEventNotification,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SendTestEventNotificationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6374,7 +6953,7 @@ impl SendTestEventNotificationInput {
         fn update_http_builder(
             input: &crate::input::SendTestEventNotificationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6383,32 +6962,34 @@ impl SendTestEventNotificationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SendTestEventNotificationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.SendTestEventNotification",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_send_test_event_notification(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6431,15 +7012,15 @@ impl SendTestEventNotificationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SendTestEventNotification::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SendTestEventNotification",
             "mturk",
         ));
@@ -6448,10 +7029,10 @@ impl SendTestEventNotificationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6472,7 +7053,7 @@ pub mod update_expiration_for_hit_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit_id: std::option::Option<std::string::String>,
-        pub(crate) expire_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) expire_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>
@@ -6482,6 +7063,9 @@ pub mod update_expiration_for_hit_input {
             self.hit_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The HIT to update.
+        /// </p>
         pub fn set_hit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_id = input;
             self
@@ -6489,11 +7073,17 @@ pub mod update_expiration_for_hit_input {
         /// <p>
         /// The date and time at which you want the HIT to expire
         /// </p>
-        pub fn expire_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn expire_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.expire_at = Some(input);
             self
         }
-        pub fn set_expire_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The date and time at which you want the HIT to expire
+        /// </p>
+        pub fn set_expire_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.expire_at = input;
             self
         }
@@ -6502,7 +7092,7 @@ pub mod update_expiration_for_hit_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateExpirationForHitInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateExpirationForHitInput {
                 hit_id: self.hit_id,
@@ -6522,16 +7112,16 @@ impl UpdateExpirationForHitInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateExpirationForHIT,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateExpirationForHitInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6539,7 +7129,7 @@ impl UpdateExpirationForHitInput {
         fn update_http_builder(
             input: &crate::input::UpdateExpirationForHitInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6548,32 +7138,34 @@ impl UpdateExpirationForHitInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateExpirationForHitInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.UpdateExpirationForHIT",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_expiration_for_hit(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6596,15 +7188,15 @@ impl UpdateExpirationForHitInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateExpirationForHIT::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateExpirationForHIT",
             "mturk",
         ));
@@ -6613,10 +7205,10 @@ impl UpdateExpirationForHitInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6647,6 +7239,9 @@ pub mod update_hit_review_status_input {
             self.hit_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the HIT to update.
+        /// </p>
         pub fn set_hit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_id = input;
             self
@@ -6670,6 +7265,21 @@ pub mod update_hit_review_status_input {
             self.revert = Some(input);
             self
         }
+        /// <p>
+        /// Specifies how to update the HIT status. Default is <code>False</code>.
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_revert(mut self, input: std::option::Option<bool>) -> Self {
             self.revert = input;
             self
@@ -6679,7 +7289,7 @@ pub mod update_hit_review_status_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateHitReviewStatusInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateHitReviewStatusInput {
                 hit_id: self.hit_id,
@@ -6699,16 +7309,16 @@ impl UpdateHitReviewStatusInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateHITReviewStatus,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateHitReviewStatusInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6716,7 +7326,7 @@ impl UpdateHitReviewStatusInput {
         fn update_http_builder(
             input: &crate::input::UpdateHitReviewStatusInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6725,32 +7335,34 @@ impl UpdateHitReviewStatusInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateHitReviewStatusInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.UpdateHITReviewStatus",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_hit_review_status(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6773,15 +7385,15 @@ impl UpdateHitReviewStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateHITReviewStatus::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateHITReviewStatus",
             "mturk",
         ));
@@ -6790,10 +7402,10 @@ impl UpdateHitReviewStatusInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6822,6 +7434,7 @@ pub mod update_hit_type_of_hit_input {
             self.hit_id = Some(input.into());
             self
         }
+        /// <p>The HIT to update.</p>
         pub fn set_hit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_id = input;
             self
@@ -6831,6 +7444,7 @@ pub mod update_hit_type_of_hit_input {
             self.hit_type_id = Some(input.into());
             self
         }
+        /// <p>The ID of the new HIT type.</p>
         pub fn set_hit_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_type_id = input;
             self
@@ -6840,7 +7454,7 @@ pub mod update_hit_type_of_hit_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateHitTypeOfHitInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateHitTypeOfHitInput {
                 hit_id: self.hit_id,
@@ -6860,16 +7474,16 @@ impl UpdateHitTypeOfHitInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateHITTypeOfHIT,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateHitTypeOfHitInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6877,7 +7491,7 @@ impl UpdateHitTypeOfHitInput {
         fn update_http_builder(
             input: &crate::input::UpdateHitTypeOfHitInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6886,32 +7500,32 @@ impl UpdateHitTypeOfHitInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateHitTypeOfHitInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.UpdateHITTypeOfHIT",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_hit_type_of_hit(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6934,15 +7548,15 @@ impl UpdateHitTypeOfHitInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateHITTypeOfHIT::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateHITTypeOfHIT",
             "mturk",
         ));
@@ -6951,10 +7565,10 @@ impl UpdateHitTypeOfHitInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6986,6 +7600,9 @@ pub mod update_notification_settings_input {
             self.hit_type_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the HIT type whose notification specification is being updated.
+        /// </p>
         pub fn set_hit_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_type_id = input;
             self
@@ -6997,6 +7614,9 @@ pub mod update_notification_settings_input {
             self.notification = Some(input);
             self
         }
+        /// <p>
+        /// The notification specification for the HIT type.
+        /// </p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::NotificationSpecification>,
@@ -7014,6 +7634,12 @@ pub mod update_notification_settings_input {
             self.active = Some(input);
             self
         }
+        /// <p>
+        /// Specifies whether notifications are sent for HITs of this HIT type,
+        /// according to the notification specification.
+        /// You must specify either the Notification parameter or the Active parameter
+        /// for the call to UpdateNotificationSettings to succeed.
+        /// </p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
             self.active = input;
             self
@@ -7023,7 +7649,7 @@ pub mod update_notification_settings_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateNotificationSettingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateNotificationSettingsInput {
                 hit_type_id: self.hit_type_id,
@@ -7045,16 +7671,16 @@ impl UpdateNotificationSettingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateNotificationSettings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateNotificationSettingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7062,7 +7688,7 @@ impl UpdateNotificationSettingsInput {
         fn update_http_builder(
             input: &crate::input::UpdateNotificationSettingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7071,32 +7697,34 @@ impl UpdateNotificationSettingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateNotificationSettingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.UpdateNotificationSettings",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_notification_settings(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7119,15 +7747,15 @@ impl UpdateNotificationSettingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateNotificationSettings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateNotificationSettings",
             "mturk",
         ));
@@ -7136,10 +7764,10 @@ impl UpdateNotificationSettingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7176,6 +7804,7 @@ pub mod update_qualification_type_input {
             self.qualification_type_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Qualification type to update.</p>
         pub fn set_qualification_type_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7188,6 +7817,7 @@ pub mod update_qualification_type_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The new description of the Qualification type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -7200,6 +7830,7 @@ pub mod update_qualification_type_input {
             self.qualification_type_status = Some(input);
             self
         }
+        /// <p>The new status of the Qualification type - Active | Inactive</p>
         pub fn set_qualification_type_status(
             mut self,
             input: std::option::Option<crate::model::QualificationTypeStatus>,
@@ -7214,6 +7845,9 @@ pub mod update_qualification_type_input {
             self.test = Some(input.into());
             self
         }
+        /// <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p>
+        /// <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>
+        /// <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
         pub fn set_test(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.test = input;
             self
@@ -7223,6 +7857,7 @@ pub mod update_qualification_type_input {
             self.answer_key = Some(input.into());
             self
         }
+        /// <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p>
         pub fn set_answer_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.answer_key = input;
             self
@@ -7232,6 +7867,7 @@ pub mod update_qualification_type_input {
             self.test_duration_in_seconds = Some(input);
             self
         }
+        /// <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
         pub fn set_test_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.test_duration_in_seconds = input;
             self
@@ -7248,6 +7884,14 @@ pub mod update_qualification_type_input {
             self.retry_delay_in_seconds = Some(input);
             self
         }
+        /// <p>The amount of time, in seconds, that Workers must wait
+        /// after requesting a Qualification of the specified Qualification type
+        /// before they can retry the Qualification request. It is not possible to
+        /// disable retries for a Qualification type after it has been created with
+        /// retries enabled. If you want to disable retries, you must dispose of
+        /// the existing retry-enabled Qualification type using
+        /// DisposeQualificationType and then create a new Qualification type with
+        /// retries disabled using CreateQualificationType.</p>
         pub fn set_retry_delay_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.retry_delay_in_seconds = input;
             self
@@ -7258,6 +7902,8 @@ pub mod update_qualification_type_input {
             self.auto_granted = Some(input);
             self
         }
+        /// <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>
+        /// <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
         pub fn set_auto_granted(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_granted = input;
             self
@@ -7267,6 +7913,7 @@ pub mod update_qualification_type_input {
             self.auto_granted_value = Some(input);
             self
         }
+        /// <p>The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.</p>
         pub fn set_auto_granted_value(mut self, input: std::option::Option<i32>) -> Self {
             self.auto_granted_value = input;
             self
@@ -7276,7 +7923,7 @@ pub mod update_qualification_type_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateQualificationTypeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateQualificationTypeInput {
                 qualification_type_id: self.qualification_type_id,
@@ -7304,16 +7951,16 @@ impl UpdateQualificationTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateQualificationType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateQualificationTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7321,7 +7968,7 @@ impl UpdateQualificationTypeInput {
         fn update_http_builder(
             input: &crate::input::UpdateQualificationTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7330,32 +7977,34 @@ impl UpdateQualificationTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateQualificationTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "MTurkRequesterServiceV20170117.UpdateQualificationType",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_qualification_type(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7378,15 +8027,15 @@ impl UpdateQualificationTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateQualificationType::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateQualificationType",
             "mturk",
         ));
@@ -7395,10 +8044,10 @@ impl UpdateQualificationTypeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7412,6 +8061,7 @@ impl UpdateQualificationTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateQualificationTypeInput {
@@ -7460,6 +8110,7 @@ impl std::fmt::Debug for UpdateQualificationTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNotificationSettingsInput {
@@ -7489,6 +8140,7 @@ impl std::fmt::Debug for UpdateNotificationSettingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateHitTypeOfHitInput {
@@ -7506,6 +8158,7 @@ impl std::fmt::Debug for UpdateHitTypeOfHitInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateHitReviewStatusInput {
@@ -7539,6 +8192,7 @@ impl std::fmt::Debug for UpdateHitReviewStatusInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateExpirationForHitInput {
@@ -7549,7 +8203,7 @@ pub struct UpdateExpirationForHitInput {
     /// <p>
     /// The date and time at which you want the HIT to expire
     /// </p>
-    pub expire_at: std::option::Option<smithy_types::Instant>,
+    pub expire_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for UpdateExpirationForHitInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7560,6 +8214,7 @@ impl std::fmt::Debug for UpdateExpirationForHitInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendTestEventNotificationInput {
@@ -7586,6 +8241,7 @@ impl std::fmt::Debug for SendTestEventNotificationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendBonusInput {
@@ -7622,6 +8278,7 @@ impl std::fmt::Debug for SendBonusInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectQualificationRequestInput {
@@ -7644,6 +8301,7 @@ impl std::fmt::Debug for RejectQualificationRequestInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectAssignmentInput {
@@ -7665,6 +8323,7 @@ impl std::fmt::Debug for RejectAssignmentInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotifyWorkersInput {
@@ -7689,6 +8348,7 @@ impl std::fmt::Debug for NotifyWorkersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkersWithQualificationTypeInput {
@@ -7718,11 +8378,13 @@ impl std::fmt::Debug for ListWorkersWithQualificationTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkerBlocksInput {
     /// <p>Pagination token</p>
     pub next_token: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
     pub max_results: std::option::Option<i32>,
 }
 impl std::fmt::Debug for ListWorkerBlocksInput {
@@ -7734,6 +8396,7 @@ impl std::fmt::Debug for ListWorkerBlocksInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReviewPolicyResultsForHitInput {
@@ -7772,6 +8435,7 @@ impl std::fmt::Debug for ListReviewPolicyResultsForHitInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReviewableHiTsInput {
@@ -7803,6 +8467,7 @@ impl std::fmt::Debug for ListReviewableHiTsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQualificationTypesInput {
@@ -7845,6 +8510,7 @@ impl std::fmt::Debug for ListQualificationTypesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQualificationRequestsInput {
@@ -7869,6 +8535,7 @@ impl std::fmt::Debug for ListQualificationRequestsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHiTsForQualificationTypeInput {
@@ -7893,11 +8560,13 @@ impl std::fmt::Debug for ListHiTsForQualificationTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHiTsInput {
     /// <p>Pagination token</p>
     pub next_token: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
     pub max_results: std::option::Option<i32>,
 }
 impl std::fmt::Debug for ListHiTsInput {
@@ -7909,6 +8578,7 @@ impl std::fmt::Debug for ListHiTsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBonusPaymentsInput {
@@ -7924,6 +8594,7 @@ pub struct ListBonusPaymentsInput {
     pub assignment_id: std::option::Option<std::string::String>,
     /// <p>Pagination token</p>
     pub next_token: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
     pub max_results: std::option::Option<i32>,
 }
 impl std::fmt::Debug for ListBonusPaymentsInput {
@@ -7937,6 +8608,7 @@ impl std::fmt::Debug for ListBonusPaymentsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssignmentsForHitInput {
@@ -7944,6 +8616,7 @@ pub struct ListAssignmentsForHitInput {
     pub hit_id: std::option::Option<std::string::String>,
     /// <p>Pagination token</p>
     pub next_token: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
     pub max_results: std::option::Option<i32>,
     /// <p>The status of the assignments to return: Submitted | Approved
     /// | Rejected</p>
@@ -7960,6 +8633,7 @@ impl std::fmt::Debug for ListAssignmentsForHitInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQualificationTypeInput {
@@ -7974,6 +8648,7 @@ impl std::fmt::Debug for GetQualificationTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQualificationScoreInput {
@@ -7991,6 +8666,7 @@ impl std::fmt::Debug for GetQualificationScoreInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHitInput {
@@ -8005,6 +8681,7 @@ impl std::fmt::Debug for GetHitInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFileUploadUrlInput {
@@ -8024,6 +8701,7 @@ impl std::fmt::Debug for GetFileUploadUrlInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssignmentInput {
@@ -8038,6 +8716,7 @@ impl std::fmt::Debug for GetAssignmentInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountBalanceInput {}
@@ -8048,6 +8727,7 @@ impl std::fmt::Debug for GetAccountBalanceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateQualificationFromWorkerInput {
@@ -8068,6 +8748,7 @@ impl std::fmt::Debug for DisassociateQualificationFromWorkerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkerBlockInput {
@@ -8085,6 +8766,7 @@ impl std::fmt::Debug for DeleteWorkerBlockInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteQualificationTypeInput {
@@ -8099,6 +8781,7 @@ impl std::fmt::Debug for DeleteQualificationTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHitInput {
@@ -8113,6 +8796,7 @@ impl std::fmt::Debug for DeleteHitInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkerBlockInput {
@@ -8130,6 +8814,7 @@ impl std::fmt::Debug for CreateWorkerBlockInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateQualificationTypeInput {
@@ -8211,6 +8896,7 @@ impl std::fmt::Debug for CreateQualificationTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHitWithHitTypeInput {
@@ -8310,6 +8996,7 @@ impl std::fmt::Debug for CreateHitWithHitTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHitTypeInput {
@@ -8383,6 +9070,7 @@ impl std::fmt::Debug for CreateHitTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHitInput {
@@ -8541,6 +9229,7 @@ impl std::fmt::Debug for CreateHitInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAdditionalAssignmentsForHitInput {
@@ -8571,6 +9260,7 @@ impl std::fmt::Debug for CreateAdditionalAssignmentsForHitInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateQualificationWithWorkerInput {
@@ -8601,6 +9291,7 @@ impl std::fmt::Debug for AssociateQualificationWithWorkerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApproveAssignmentInput {
@@ -8627,6 +9318,7 @@ impl std::fmt::Debug for ApproveAssignmentInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptQualificationRequestInput {

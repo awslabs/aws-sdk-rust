@@ -35,6 +35,7 @@ pub mod http_package_configuration {
             self.path = Some(input.into());
             self
         }
+        /// <p>The relative path to the URL for this VOD source. This is combined with SourceLocation::HttpConfiguration::BaseUrl to form a valid URL.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -44,6 +45,7 @@ pub mod http_package_configuration {
             self.source_group = Some(input.into());
             self
         }
+        /// <p>The name of the source group. This has to match one of the Channel::Outputs::SourceGroup.</p>
         pub fn set_source_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_group = input;
             self
@@ -53,6 +55,7 @@ pub mod http_package_configuration {
             self.r#type = Some(input);
             self
         }
+        /// <p>The streaming protocol for this package configuration. Supported values are HLS and DASH.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
             self.r#type = input;
             self
@@ -74,6 +77,7 @@ impl HttpPackageConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -85,7 +89,9 @@ impl HttpPackageConfiguration {
     std::hash::Hash,
 )]
 pub enum Type {
+    #[allow(missing_docs)] // documentation missing in model
     Dash,
+    #[allow(missing_docs)] // documentation missing in model
     Hls,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -107,6 +113,7 @@ impl std::str::FromStr for Type {
     }
 }
 impl Type {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Type::Dash => "DASH",
@@ -114,6 +121,7 @@ impl Type {
             Type::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DASH", "HLS"]
     }
@@ -152,6 +160,7 @@ pub mod http_configuration {
             self.base_url = Some(input.into());
             self
         }
+        /// <p>The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>.</p>
         pub fn set_base_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.base_url = input;
             self
@@ -199,6 +208,7 @@ pub mod default_segment_delivery_configuration {
             self.base_url = Some(input.into());
             self
         }
+        /// <p>The hostname of the server that will be used to serve segments. This string must include the protocol, such as <b>https://</b>.</p>
         pub fn set_base_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.base_url = input;
             self
@@ -255,6 +265,7 @@ pub mod access_configuration {
             self.access_type = Some(input);
             self
         }
+        /// <p>The type of authentication used to access content from HttpConfiguration::BaseUrl on your source location. Accepted value: S3_SIGV4.</p> <p>S3_SIGV4 - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access. If your source location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4 (SigV4) authentication to access the bucket where your source content is stored. Your MediaTailor source location baseURL must follow the S3 virtual hosted-style request URL format. For example, https://bucket-name.s3.Region.amazonaws.com/key-name.</p> <p>Before you can use S3_SIGV4, you must meet these requirements:</p> <p>• You must allow MediaTailor to access your S3 bucket by granting mediatailor.amazonaws.com principal access in IAM. For information about configuring access in IAM, see Access management in the IAM User Guide.</p> <p>• The mediatailor.amazonaws.com service principal must have permissions to read all top level manifests referenced by the VodSource packaging configurations.</p> <p>• The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced by your MediaTailor VodSource packaging configurations.</p>
         pub fn set_access_type(
             mut self,
             input: std::option::Option<crate::model::AccessType>,
@@ -270,6 +281,7 @@ pub mod access_configuration {
             self.secrets_manager_access_token_configuration = Some(input);
             self
         }
+        /// <p>AWS Secrets Manager access token configuration parameters.</p>
         pub fn set_secrets_manager_access_token_configuration(
             mut self,
             input: std::option::Option<crate::model::SecretsManagerAccessTokenConfiguration>,
@@ -330,6 +342,7 @@ pub mod secrets_manager_access_token_configuration {
             self.header_name = Some(input.into());
             self
         }
+        /// <p>The name of the HTTP header used to supply the access token in requests to the source location.</p>
         pub fn set_header_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.header_name = input;
             self
@@ -339,6 +352,7 @@ pub mod secrets_manager_access_token_configuration {
             self.secret_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the access token.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -348,6 +362,7 @@ pub mod secrets_manager_access_token_configuration {
             self.secret_string_key = Some(input.into());
             self
         }
+        /// <p>The AWS Secrets Manager <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a> key associated with the access token. MediaTailor uses the key to look up SecretString key and value pair containing the access token.</p>
         pub fn set_secret_string_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -372,6 +387,7 @@ impl SecretsManagerAccessTokenConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -383,7 +399,9 @@ impl SecretsManagerAccessTokenConfiguration {
     std::hash::Hash,
 )]
 pub enum AccessType {
+    #[allow(missing_docs)] // documentation missing in model
     S3Sigv4,
+    #[allow(missing_docs)] // documentation missing in model
     SecretsManagerAccessToken,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -405,6 +423,7 @@ impl std::str::FromStr for AccessType {
     }
 }
 impl AccessType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccessType::S3Sigv4 => "S3_SIGV4",
@@ -412,6 +431,7 @@ impl AccessType {
             AccessType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["S3_SIGV4", "SECRETS_MANAGER_ACCESS_TOKEN"]
     }
@@ -466,6 +486,7 @@ pub mod response_output_item {
             self.dash_playlist_settings = Some(input);
             self
         }
+        /// <p>DASH manifest configuration settings.</p>
         pub fn set_dash_playlist_settings(
             mut self,
             input: std::option::Option<crate::model::DashPlaylistSettings>,
@@ -478,6 +499,7 @@ pub mod response_output_item {
             self.hls_playlist_settings = Some(input);
             self
         }
+        /// <p>HLS manifest configuration settings.</p>
         pub fn set_hls_playlist_settings(
             mut self,
             input: std::option::Option<crate::model::HlsPlaylistSettings>,
@@ -490,6 +512,7 @@ pub mod response_output_item {
             self.manifest_name = Some(input.into());
             self
         }
+        /// <p>The name of the manifest for the channel that will appear in the channel output's playback URL.</p>
         pub fn set_manifest_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -502,6 +525,7 @@ pub mod response_output_item {
             self.playback_url = Some(input.into());
             self
         }
+        /// <p>The URL used for playback by content players.</p>
         pub fn set_playback_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.playback_url = input;
             self
@@ -511,6 +535,7 @@ pub mod response_output_item {
             self.source_group = Some(input.into());
             self
         }
+        /// <p>A string used to associate a package configuration source group with a channel output.</p>
         pub fn set_source_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_group = input;
             self
@@ -562,6 +587,7 @@ pub mod hls_playlist_settings {
             self.manifest_window_seconds = Some(input);
             self
         }
+        /// <p>The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.</p>
         pub fn set_manifest_window_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.manifest_window_seconds = input;
             self
@@ -624,6 +650,7 @@ pub mod dash_playlist_settings {
             self.manifest_window_seconds = Some(input);
             self
         }
+        /// <p>The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.</p>
         pub fn set_manifest_window_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.manifest_window_seconds = input;
             self
@@ -633,6 +660,7 @@ pub mod dash_playlist_settings {
             self.min_buffer_time_seconds = Some(input);
             self
         }
+        /// <p>Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value: 2 seconds. Maximum value: 60 seconds.</p>
         pub fn set_min_buffer_time_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.min_buffer_time_seconds = input;
             self
@@ -642,6 +670,7 @@ pub mod dash_playlist_settings {
             self.min_update_period_seconds = Some(input);
             self
         }
+        /// <p>Minimum amount of time (in seconds) that the player should wait before requesting updates to the manifest. Minimum value: 2 seconds. Maximum value: 60 seconds.</p>
         pub fn set_min_update_period_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.min_update_period_seconds = input;
             self
@@ -651,6 +680,7 @@ pub mod dash_playlist_settings {
             self.suggested_presentation_delay_seconds = Some(input);
             self
         }
+        /// <p>Amount of time (in seconds) that the player should be from the live point at the end of the manifest. Minimum value: 2 seconds. Maximum value: 60 seconds.</p>
         pub fn set_suggested_presentation_delay_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -710,6 +740,7 @@ pub mod slate_source {
             self.source_location_name = Some(input.into());
             self
         }
+        /// <p>The name of the source location where the slate VOD source is stored.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -722,6 +753,7 @@ pub mod slate_source {
             self.vod_source_name = Some(input.into());
             self
         }
+        /// <p>The slate VOD source name. The VOD source must already exist in a source location before it can be used for slate.</p>
         pub fn set_vod_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -745,6 +777,7 @@ impl SlateSource {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -756,7 +789,9 @@ impl SlateSource {
     std::hash::Hash,
 )]
 pub enum ChannelState {
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -778,6 +813,7 @@ impl std::str::FromStr for ChannelState {
     }
 }
 impl ChannelState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChannelState::Running => "RUNNING",
@@ -785,6 +821,7 @@ impl ChannelState {
             ChannelState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["RUNNING", "STOPPED"]
     }
@@ -835,6 +872,7 @@ pub mod request_output_item {
             self.dash_playlist_settings = Some(input);
             self
         }
+        /// <p>DASH manifest configuration parameters.</p>
         pub fn set_dash_playlist_settings(
             mut self,
             input: std::option::Option<crate::model::DashPlaylistSettings>,
@@ -847,6 +885,7 @@ pub mod request_output_item {
             self.hls_playlist_settings = Some(input);
             self
         }
+        /// <p>HLS playlist configuration parameters.</p>
         pub fn set_hls_playlist_settings(
             mut self,
             input: std::option::Option<crate::model::HlsPlaylistSettings>,
@@ -859,6 +898,7 @@ pub mod request_output_item {
             self.manifest_name = Some(input.into());
             self
         }
+        /// <p>The name of the manifest for the channel. The name appears in the PlaybackUrl.</p>
         pub fn set_manifest_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -871,6 +911,7 @@ pub mod request_output_item {
             self.source_group = Some(input.into());
             self
         }
+        /// <p>A string used to match which HttpPackageConfiguration is used for each VodSource.</p>
         pub fn set_source_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_group = input;
             self
@@ -921,6 +962,7 @@ pub mod manifest_processing_rules {
             self.ad_marker_passthrough = Some(input);
             self
         }
+        /// <p>For HLS, when set to true, MediaTailor passes through EXT-X-CUE-IN, EXT-X-CUE-OUT, and EXT-X-SPLICEPOINT-SCTE35 ad markers from the origin manifest to the MediaTailor personalized manifest.</p> <p>No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are filled for that ad break, MediaTailor will not set the value to 0.</p>
         pub fn set_ad_marker_passthrough(
             mut self,
             input: std::option::Option<crate::model::AdMarkerPassthrough>,
@@ -971,6 +1013,7 @@ pub mod ad_marker_passthrough {
             self.enabled = Some(input);
             self
         }
+        /// <p>Enables ad marker passthrough for your configuration.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -1018,6 +1061,7 @@ pub mod log_configuration {
             self.percent_enabled = Some(input);
             self
         }
+        /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p> <p>Valid values: 0 - 100</p>
         pub fn set_percent_enabled(mut self, input: std::option::Option<i32>) -> Self {
             self.percent_enabled = input;
             self
@@ -1069,6 +1113,7 @@ pub mod live_pre_roll_configuration {
             self.ad_decision_server_url = Some(input.into());
             self
         }
+        /// <p>The URL for the ad decision server (ADS) for pre-roll ads. This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
         pub fn set_ad_decision_server_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1081,6 +1126,7 @@ pub mod live_pre_roll_configuration {
             self.max_duration_seconds = Some(input);
             self
         }
+        /// The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads to exceed this duration, regardless of the total duration of ads that the ADS returns.
         pub fn set_max_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.max_duration_seconds = input;
             self
@@ -1129,6 +1175,7 @@ pub mod hls_configuration {
             self.manifest_endpoint_prefix = Some(input.into());
             self
         }
+        /// <p>The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
         pub fn set_manifest_endpoint_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1187,6 +1234,7 @@ pub mod dash_configuration {
             self.manifest_endpoint_prefix = Some(input.into());
             self
         }
+        /// <p>The URL generated by MediaTailor to initiate a playback session. The session uses server-side reporting. This setting is ignored in PUT operations.</p>
         pub fn set_manifest_endpoint_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1199,6 +1247,7 @@ pub mod dash_configuration {
             self.mpd_location = Some(input.into());
             self
         }
+        /// <p>The setting that controls whether MediaTailor includes the Location tag in DASH manifests. MediaTailor populates the Location tag with the URL for manifest update requests, to be used by players that don't support sticky redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests, and you are either using client-side reporting or your players support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is the default value.</p>
         pub fn set_mpd_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mpd_location = input;
             self
@@ -1208,6 +1257,7 @@ pub mod dash_configuration {
             self.origin_manifest_type = Some(input);
             self
         }
+        /// <p>The setting that controls whether MediaTailor handles manifests from the origin server as multi-period manifests or single-period manifests. If your origin server produces single-period manifests, set this to SINGLE_PERIOD. The default setting is MULTI_PERIOD. For multi-period manifests, omit this setting or set it to MULTI_PERIOD.</p>
         pub fn set_origin_manifest_type(
             mut self,
             input: std::option::Option<crate::model::OriginManifestType>,
@@ -1232,6 +1282,7 @@ impl DashConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1243,7 +1294,9 @@ impl DashConfiguration {
     std::hash::Hash,
 )]
 pub enum OriginManifestType {
+    #[allow(missing_docs)] // documentation missing in model
     MultiPeriod,
+    #[allow(missing_docs)] // documentation missing in model
     SinglePeriod,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1265,6 +1318,7 @@ impl std::str::FromStr for OriginManifestType {
     }
 }
 impl OriginManifestType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OriginManifestType::MultiPeriod => "MULTI_PERIOD",
@@ -1272,6 +1326,7 @@ impl OriginManifestType {
             OriginManifestType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MULTI_PERIOD", "SINGLE_PERIOD"]
     }
@@ -1317,6 +1372,7 @@ pub mod cdn_configuration {
             self.ad_segment_url_prefix = Some(input.into());
             self
         }
+        /// <p>A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the origin ads.mediatailor.&amp;lt;region&gt;.amazonaws.com. Then specify the rule's name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.</p>
         pub fn set_ad_segment_url_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1329,6 +1385,7 @@ pub mod cdn_configuration {
             self.content_segment_url_prefix = Some(input.into());
             self
         }
+        /// <p>A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this ContentSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.</p>
         pub fn set_content_segment_url_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1384,6 +1441,7 @@ pub mod bumper {
             self.end_url = Some(input.into());
             self
         }
+        /// <p>The URL for the end bumper asset.</p>
         pub fn set_end_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end_url = input;
             self
@@ -1393,6 +1451,7 @@ pub mod bumper {
             self.start_url = Some(input.into());
             self
         }
+        /// <p>The URL for the start bumper asset.</p>
         pub fn set_start_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_url = input;
             self
@@ -1445,6 +1504,7 @@ pub mod avail_suppression {
             self.mode = Some(input);
             self
         }
+        /// <p>Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or slate. When Mode is set to BEHIND_LIVE_EDGE, ad suppression is active and MediaTailor won't fill ad breaks on or behind the ad suppression Value time in the manifest lookback window.</p>
         pub fn set_mode(mut self, input: std::option::Option<crate::model::Mode>) -> Self {
             self.mode = input;
             self
@@ -1454,6 +1514,7 @@ pub mod avail_suppression {
             self.value = Some(input.into());
             self
         }
+        /// <p>A live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or behind this time in the manifest lookback window. If Value is set to 00:00:00, it is in sync with the live edge, and MediaTailor won't fill any ad breaks on or behind the live edge. If you set a Value time, MediaTailor won't fill any ad breaks on or behind this time in the manifest lookback window. For example, if you set 00:45:00, then MediaTailor will fill ad breaks that occur within 45 minutes behind the live edge, but won't fill ad breaks on or behind 45 minutes behind the live edge.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1474,6 +1535,7 @@ impl AvailSuppression {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1485,7 +1547,9 @@ impl AvailSuppression {
     std::hash::Hash,
 )]
 pub enum Mode {
+    #[allow(missing_docs)] // documentation missing in model
     BehindLiveEdge,
+    #[allow(missing_docs)] // documentation missing in model
     Off,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1507,6 +1571,7 @@ impl std::str::FromStr for Mode {
     }
 }
 impl Mode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Mode::BehindLiveEdge => "BEHIND_LIVE_EDGE",
@@ -1514,6 +1579,7 @@ impl Mode {
             Mode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BEHIND_LIVE_EDGE", "OFF"]
     }
@@ -1556,6 +1622,7 @@ pub mod dash_configuration_for_put {
             self.mpd_location = Some(input.into());
             self
         }
+        /// <p>The setting that controls whether MediaTailor includes the Location tag in DASH manifests. MediaTailor populates the Location tag with the URL for manifest update requests, to be used by players that don't support sticky redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests, and you are either using client-side reporting or your players support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is the default value.</p>
         pub fn set_mpd_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mpd_location = input;
             self
@@ -1565,6 +1632,7 @@ pub mod dash_configuration_for_put {
             self.origin_manifest_type = Some(input);
             self
         }
+        /// <p>The setting that controls whether MediaTailor handles manifests from the origin server as multi-period manifests or single-period manifests. If your origin server produces single-period manifests, set this to SINGLE_PERIOD. The default setting is MULTI_PERIOD. For multi-period manifests, omit this setting or set it to MULTI_PERIOD.</p>
         pub fn set_origin_manifest_type(
             mut self,
             input: std::option::Option<crate::model::OriginManifestType>,
@@ -1595,12 +1663,12 @@ pub struct VodSource {
     /// <p>The ARN for the VOD source.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the VOD source was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The HTTP package configurations for the VOD source.</p>
     pub http_package_configurations:
         std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
     /// <p>The timestamp that indicates when the VOD source was last modified.</p>
-    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of the source location that the VOD source is associated with.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the VOD source.</p>
@@ -1632,10 +1700,10 @@ pub mod vod_source {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) http_package_configurations:
             std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
-        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -1648,22 +1716,29 @@ pub mod vod_source {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN for the VOD source.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The timestamp that indicates when the VOD source was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The timestamp that indicates when the VOD source was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
+        /// Appends an item to `http_package_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
+        ///
+        /// <p>The HTTP package configurations for the VOD source.</p>
         pub fn http_package_configurations(
             mut self,
             input: impl Into<crate::model::HttpPackageConfiguration>,
@@ -1673,6 +1748,7 @@ pub mod vod_source {
             self.http_package_configurations = Some(v);
             self
         }
+        /// <p>The HTTP package configurations for the VOD source.</p>
         pub fn set_http_package_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
@@ -1681,13 +1757,14 @@ pub mod vod_source {
             self
         }
         /// <p>The timestamp that indicates when the VOD source was last modified.</p>
-        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
             self
         }
+        /// <p>The timestamp that indicates when the VOD source was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -1697,6 +1774,7 @@ pub mod vod_source {
             self.source_location_name = Some(input.into());
             self
         }
+        /// <p>The name of the source location that the VOD source is associated with.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1704,6 +1782,11 @@ pub mod vod_source {
             self.source_location_name = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags assigned to the VOD source.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1714,6 +1797,7 @@ pub mod vod_source {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags assigned to the VOD source.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1728,6 +1812,7 @@ pub mod vod_source {
             self.vod_source_name = Some(input.into());
             self
         }
+        /// <p>The name of the VOD source.</p>
         pub fn set_vod_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1765,14 +1850,14 @@ pub struct SourceLocation {
     /// <p>The ARN of the SourceLocation.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The timestamp that indicates when the source location was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The default segment delivery configuration.</p>
     pub default_segment_delivery_configuration:
         std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
     /// <p>The HTTP configuration for the source location.</p>
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
     /// <p>The timestamp that indicates when the source location was last modified.</p>
-    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of the source location.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the source location.</p>
@@ -1804,11 +1889,11 @@ pub mod source_location {
     pub struct Builder {
         pub(crate) access_configuration: std::option::Option<crate::model::AccessConfiguration>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) default_segment_delivery_configuration:
             std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
         pub(crate) http_configuration: std::option::Option<crate::model::HttpConfiguration>,
-        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -1820,6 +1905,7 @@ pub mod source_location {
             self.access_configuration = Some(input);
             self
         }
+        /// <p>The access configuration for the source location.</p>
         pub fn set_access_configuration(
             mut self,
             input: std::option::Option<crate::model::AccessConfiguration>,
@@ -1832,18 +1918,20 @@ pub mod source_location {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the SourceLocation.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The timestamp that indicates when the source location was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The timestamp that indicates when the source location was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -1856,6 +1944,7 @@ pub mod source_location {
             self.default_segment_delivery_configuration = Some(input);
             self
         }
+        /// <p>The default segment delivery configuration.</p>
         pub fn set_default_segment_delivery_configuration(
             mut self,
             input: std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
@@ -1868,6 +1957,7 @@ pub mod source_location {
             self.http_configuration = Some(input);
             self
         }
+        /// <p>The HTTP configuration for the source location.</p>
         pub fn set_http_configuration(
             mut self,
             input: std::option::Option<crate::model::HttpConfiguration>,
@@ -1876,13 +1966,14 @@ pub mod source_location {
             self
         }
         /// <p>The timestamp that indicates when the source location was last modified.</p>
-        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
             self
         }
+        /// <p>The timestamp that indicates when the source location was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -1892,6 +1983,7 @@ pub mod source_location {
             self.source_location_name = Some(input.into());
             self
         }
+        /// <p>The name of the source location.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1899,6 +1991,11 @@ pub mod source_location {
             self.source_location_name = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags assigned to the source location.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1909,6 +2006,7 @@ pub mod source_location {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags assigned to the source location.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1991,6 +2089,7 @@ pub mod prefetch_schedule {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2000,6 +2099,7 @@ pub mod prefetch_schedule {
             self.consumption = Some(input);
             self
         }
+        /// <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
         pub fn set_consumption(
             mut self,
             input: std::option::Option<crate::model::PrefetchConsumption>,
@@ -2012,6 +2112,7 @@ pub mod prefetch_schedule {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2024,6 +2125,7 @@ pub mod prefetch_schedule {
             self.playback_configuration_name = Some(input.into());
             self
         }
+        /// <p>The name of the playback configuration to create the prefetch schedule for.</p>
         pub fn set_playback_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2036,6 +2138,7 @@ pub mod prefetch_schedule {
             self.retrieval = Some(input);
             self
         }
+        /// <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
         pub fn set_retrieval(
             mut self,
             input: std::option::Option<crate::model::PrefetchRetrieval>,
@@ -2048,6 +2151,7 @@ pub mod prefetch_schedule {
             self.stream_id = Some(input.into());
             self
         }
+        /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_id = input;
             self
@@ -2080,9 +2184,9 @@ pub struct PrefetchRetrieval {
     pub dynamic_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The time when prefetch retrieval ends for the ad break. Prefetching will be attempted for manifest requests that occur at or before this time.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for PrefetchRetrieval {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2102,10 +2206,15 @@ pub mod prefetch_retrieval {
         pub(crate) dynamic_variables: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
+        /// Adds a key-value pair to `dynamic_variables`.
+        ///
+        /// To override the contents of this collection use [`set_dynamic_variables`](Self::set_dynamic_variables).
+        ///
+        /// <p>The dynamic variables to use for substitution during prefetch requests to the ad decision server (ADS).</p> <p>You intially configure <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic variables</a> for the ADS URL when you set up your playback configuration. When you specify DynamicVariables for prefetch retrieval, MediaTailor includes the dynamic variables in the request to the ADS.</p>
         pub fn dynamic_variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -2116,6 +2225,7 @@ pub mod prefetch_retrieval {
             self.dynamic_variables = Some(hash_map);
             self
         }
+        /// <p>The dynamic variables to use for substitution during prefetch requests to the ad decision server (ADS).</p> <p>You intially configure <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic variables</a> for the ADS URL when you set up your playback configuration. When you specify DynamicVariables for prefetch retrieval, MediaTailor includes the dynamic variables in the request to the ADS.</p>
         pub fn set_dynamic_variables(
             mut self,
             input: std::option::Option<
@@ -2126,20 +2236,28 @@ pub mod prefetch_retrieval {
             self
         }
         /// <p>The time when prefetch retrieval ends for the ad break. Prefetching will be attempted for manifest requests that occur at or before this time.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when prefetch retrieval ends for the ad break. Prefetching will be attempted for manifest requests that occur at or before this time.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
         /// <p>The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
@@ -2168,9 +2286,9 @@ pub struct PrefetchConsumption {
     pub avail_matching_criteria:
         std::option::Option<std::vec::Vec<crate::model::AvailMatchingCriteria>>,
     /// <p>The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually delete the prefetch schedule, you can call DeletePrefetchSchedule.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when prefetched ads are considered for use in an ad break. If you don't specify StartTime, the prefetched ads are available after MediaTailor retrives them from the ad decision server.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for PrefetchConsumption {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2189,10 +2307,15 @@ pub mod prefetch_consumption {
     pub struct Builder {
         pub(crate) avail_matching_criteria:
             std::option::Option<std::vec::Vec<crate::model::AvailMatchingCriteria>>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
+        /// Appends an item to `avail_matching_criteria`.
+        ///
+        /// To override the contents of this collection use [`set_avail_matching_criteria`](Self::set_avail_matching_criteria).
+        ///
+        /// <p>If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic variables, such as scte.event_id, set the avail matching criteria.</p>
         pub fn avail_matching_criteria(
             mut self,
             input: impl Into<crate::model::AvailMatchingCriteria>,
@@ -2202,6 +2325,7 @@ pub mod prefetch_consumption {
             self.avail_matching_criteria = Some(v);
             self
         }
+        /// <p>If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic variables, such as scte.event_id, set the avail matching criteria.</p>
         pub fn set_avail_matching_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AvailMatchingCriteria>>,
@@ -2210,20 +2334,28 @@ pub mod prefetch_consumption {
             self
         }
         /// <p>The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually delete the prefetch schedule, you can call DeletePrefetchSchedule.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when MediaTailor no longer considers the prefetched ads for use in an ad break. MediaTailor automatically deletes prefetch schedules no less than seven days after the end time. If you'd like to manually delete the prefetch schedule, you can call DeletePrefetchSchedule.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
         /// <p>The time when prefetched ads are considered for use in an ad break. If you don't specify StartTime, the prefetched ads are available after MediaTailor retrives them from the ad decision server.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when prefetched ads are considered for use in an ad break. If you don't specify StartTime, the prefetched ads are available after MediaTailor retrives them from the ad decision server.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
@@ -2276,6 +2408,7 @@ pub mod avail_matching_criteria {
             self.dynamic_variable = Some(input.into());
             self
         }
+        /// <p>The dynamic variable(s) that MediaTailor should use as avail matching criteria. MediaTailor only places the prefetched ads into the avail if the avail matches the criteria defined by the dynamic variable. For information about dynamic variables, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">Using dynamic ad variables</a> in the <i>MediaTailor User Guide</i>.</p> <p>You can include up to 100 dynamic variables.</p>
         pub fn set_dynamic_variable(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2288,6 +2421,7 @@ pub mod avail_matching_criteria {
             self.operator = Some(input);
             self
         }
+        /// <p>For the DynamicVariable specified in AvailMatchingCriteria, the Operator that is used for the comparison.</p>
         pub fn set_operator(mut self, input: std::option::Option<crate::model::Operator>) -> Self {
             self.operator = input;
             self
@@ -2308,6 +2442,7 @@ impl AvailMatchingCriteria {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2319,6 +2454,7 @@ impl AvailMatchingCriteria {
     std::hash::Hash,
 )]
 pub enum Operator {
+    #[allow(missing_docs)] // documentation missing in model
     Equals,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2339,12 +2475,14 @@ impl std::str::FromStr for Operator {
     }
 }
 impl Operator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Operator::Equals => "EQUALS",
             Operator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EQUALS"]
     }
@@ -2482,6 +2620,7 @@ pub mod playback_configuration {
             self.ad_decision_server_url = Some(input.into());
             self
         }
+        /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
         pub fn set_ad_decision_server_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2494,6 +2633,7 @@ pub mod playback_configuration {
             self.avail_suppression = Some(input);
             self
         }
+        /// <p>The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.</p>
         pub fn set_avail_suppression(
             mut self,
             input: std::option::Option<crate::model::AvailSuppression>,
@@ -2506,6 +2646,7 @@ pub mod playback_configuration {
             self.bumper = Some(input);
             self
         }
+        /// <p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
         pub fn set_bumper(mut self, input: std::option::Option<crate::model::Bumper>) -> Self {
             self.bumper = input;
             self
@@ -2515,6 +2656,7 @@ pub mod playback_configuration {
             self.cdn_configuration = Some(input);
             self
         }
+        /// <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.</p>
         pub fn set_cdn_configuration(
             mut self,
             input: std::option::Option<crate::model::CdnConfiguration>,
@@ -2522,6 +2664,11 @@ pub mod playback_configuration {
             self.cdn_configuration = input;
             self
         }
+        /// Adds a key-value pair to `configuration_aliases`.
+        ///
+        /// To override the contents of this collection use [`set_configuration_aliases`](Self::set_configuration_aliases).
+        ///
+        /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
         pub fn configuration_aliases(
             mut self,
             k: impl Into<std::string::String>,
@@ -2532,6 +2679,7 @@ pub mod playback_configuration {
             self.configuration_aliases = Some(hash_map);
             self
         }
+        /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
         pub fn set_configuration_aliases(
             mut self,
             input: std::option::Option<
@@ -2549,6 +2697,7 @@ pub mod playback_configuration {
             self.dash_configuration = Some(input);
             self
         }
+        /// <p>The configuration for a DASH source.</p>
         pub fn set_dash_configuration(
             mut self,
             input: std::option::Option<crate::model::DashConfiguration>,
@@ -2561,6 +2710,7 @@ pub mod playback_configuration {
             self.hls_configuration = Some(input);
             self
         }
+        /// <p>The configuration for HLS content.</p>
         pub fn set_hls_configuration(
             mut self,
             input: std::option::Option<crate::model::HlsConfiguration>,
@@ -2576,6 +2726,7 @@ pub mod playback_configuration {
             self.live_pre_roll_configuration = Some(input);
             self
         }
+        /// <p>The configuration for pre-roll ad insertion.</p>
         pub fn set_live_pre_roll_configuration(
             mut self,
             input: std::option::Option<crate::model::LivePreRollConfiguration>,
@@ -2588,6 +2739,7 @@ pub mod playback_configuration {
             self.log_configuration = Some(input);
             self
         }
+        /// <p>The Amazon CloudWatch log settings for a playback configuration.</p>
         pub fn set_log_configuration(
             mut self,
             input: std::option::Option<crate::model::LogConfiguration>,
@@ -2603,6 +2755,7 @@ pub mod playback_configuration {
             self.manifest_processing_rules = Some(input);
             self
         }
+        /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
         pub fn set_manifest_processing_rules(
             mut self,
             input: std::option::Option<crate::model::ManifestProcessingRules>,
@@ -2615,6 +2768,7 @@ pub mod playback_configuration {
             self.name = Some(input.into());
             self
         }
+        /// <p>The identifier for the playback configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2624,6 +2778,7 @@ pub mod playback_configuration {
             self.personalization_threshold_seconds = Some(input);
             self
         }
+        /// <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
         pub fn set_personalization_threshold_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -2636,6 +2791,7 @@ pub mod playback_configuration {
             self.playback_configuration_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
         pub fn set_playback_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2648,6 +2804,7 @@ pub mod playback_configuration {
             self.playback_endpoint_prefix = Some(input.into());
             self
         }
+        /// <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor.</p>
         pub fn set_playback_endpoint_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2663,6 +2820,7 @@ pub mod playback_configuration {
             self.session_initialization_endpoint_prefix = Some(input.into());
             self
         }
+        /// <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
         pub fn set_session_initialization_endpoint_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2675,10 +2833,16 @@ pub mod playback_configuration {
             self.slate_ad_url = Some(input.into());
             self
         }
+        /// <p>The URL for a video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
         pub fn set_slate_ad_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slate_ad_url = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to assign to the playback configuration.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2689,6 +2853,7 @@ pub mod playback_configuration {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags to assign to the playback configuration.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2703,6 +2868,7 @@ pub mod playback_configuration {
             self.transcode_profile_name = Some(input.into());
             self
         }
+        /// <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
         pub fn set_transcode_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2715,6 +2881,7 @@ pub mod playback_configuration {
             self.video_content_source_url = Some(input.into());
             self
         }
+        /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
         pub fn set_video_content_source_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2768,11 +2935,11 @@ pub struct Channel {
     /// <p>Returns the state whether the channel is running or not.</p>
     pub channel_state: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the channel was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Contains information about the slate used to fill gaps between programs in the schedule. You must configure FillerSlate if your channel uses an LINEAR PlaybackMode.</p>
     pub filler_slate: std::option::Option<crate::model::SlateSource>,
     /// <p>The timestamp of when the channel was last modified.</p>
-    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The channel's output properties.</p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
     /// <p>The type of playback mode for this channel.</p> <p>LINEAR - Programs play back-to-back only once.</p> <p>LOOP - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
@@ -2805,9 +2972,9 @@ pub mod channel {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) channel_state: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) filler_slate: std::option::Option<crate::model::SlateSource>,
-        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
         pub(crate) playback_mode: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
@@ -2820,6 +2987,7 @@ pub mod channel {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the channel.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2829,6 +2997,7 @@ pub mod channel {
             self.channel_name = Some(input.into());
             self
         }
+        /// <p>The name of the channel.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self
@@ -2838,6 +3007,7 @@ pub mod channel {
             self.channel_state = Some(input.into());
             self
         }
+        /// <p>Returns the state whether the channel is running or not.</p>
         pub fn set_channel_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2846,13 +3016,14 @@ pub mod channel {
             self
         }
         /// <p>The timestamp of when the channel was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The timestamp of when the channel was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2862,6 +3033,7 @@ pub mod channel {
             self.filler_slate = Some(input);
             self
         }
+        /// <p>Contains information about the slate used to fill gaps between programs in the schedule. You must configure FillerSlate if your channel uses an LINEAR PlaybackMode.</p>
         pub fn set_filler_slate(
             mut self,
             input: std::option::Option<crate::model::SlateSource>,
@@ -2870,23 +3042,30 @@ pub mod channel {
             self
         }
         /// <p>The timestamp of when the channel was last modified.</p>
-        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
             self
         }
+        /// <p>The timestamp of when the channel was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_time = input;
             self
         }
+        /// Appends an item to `outputs`.
+        ///
+        /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
+        ///
+        /// <p>The channel's output properties.</p>
         pub fn outputs(mut self, input: impl Into<crate::model::ResponseOutputItem>) -> Self {
             let mut v = self.outputs.unwrap_or_default();
             v.push(input.into());
             self.outputs = Some(v);
             self
         }
+        /// <p>The channel's output properties.</p>
         pub fn set_outputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResponseOutputItem>>,
@@ -2899,6 +3078,7 @@ pub mod channel {
             self.playback_mode = Some(input.into());
             self
         }
+        /// <p>The type of playback mode for this channel.</p> <p>LINEAR - Programs play back-to-back only once.</p> <p>LOOP - Programs play back-to-back in an endless loop. When the last program in the schedule plays, playback loops back to the first program in the schedule.</p>
         pub fn set_playback_mode(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2906,6 +3086,11 @@ pub mod channel {
             self.playback_mode = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to assign to the channel.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2916,6 +3101,7 @@ pub mod channel {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags to assign to the channel.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2957,7 +3143,7 @@ pub struct Alert {
     /// <p>If an alert is generated for a resource, an explanation of the reason for the alert.</p>
     pub alert_message: std::option::Option<std::string::String>,
     /// <p>The timestamp when the alert was last modified.</p>
-    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Amazon Resource Names (ARNs) related to this alert.</p>
     pub related_resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -2982,7 +3168,7 @@ pub mod alert {
     pub struct Builder {
         pub(crate) alert_code: std::option::Option<std::string::String>,
         pub(crate) alert_message: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) related_resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -2992,6 +3178,7 @@ pub mod alert {
             self.alert_code = Some(input.into());
             self
         }
+        /// <p>The code for the alert. For example, NOT_PROCESSED.</p>
         pub fn set_alert_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alert_code = input;
             self
@@ -3001,6 +3188,7 @@ pub mod alert {
             self.alert_message = Some(input.into());
             self
         }
+        /// <p>If an alert is generated for a resource, an explanation of the reason for the alert.</p>
         pub fn set_alert_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3009,23 +3197,30 @@ pub mod alert {
             self
         }
         /// <p>The timestamp when the alert was last modified.</p>
-        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
             self
         }
+        /// <p>The timestamp when the alert was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_time = input;
             self
         }
+        /// Appends an item to `related_resource_arns`.
+        ///
+        /// To override the contents of this collection use [`set_related_resource_arns`](Self::set_related_resource_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARNs) related to this alert.</p>
         pub fn related_resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.related_resource_arns.unwrap_or_default();
             v.push(input.into());
             self.related_resource_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARNs) related to this alert.</p>
         pub fn set_related_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3038,6 +3233,7 @@ pub mod alert {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3068,7 +3264,7 @@ pub struct ScheduleEntry {
     /// <p>The approximate duration of this program, in seconds.</p>
     pub approximate_duration_seconds: i64,
     /// <p>The approximate time that the program will start playing.</p>
-    pub approximate_start_time: std::option::Option<smithy_types::Instant>,
+    pub approximate_start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The ARN of the program.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the channel that uses this schedule.</p>
@@ -3109,7 +3305,7 @@ pub mod schedule_entry {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approximate_duration_seconds: std::option::Option<i64>,
-        pub(crate) approximate_start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) approximate_start_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) channel_name: std::option::Option<std::string::String>,
         pub(crate) program_name: std::option::Option<std::string::String>,
@@ -3125,18 +3321,20 @@ pub mod schedule_entry {
             self.approximate_duration_seconds = Some(input);
             self
         }
+        /// <p>The approximate duration of this program, in seconds.</p>
         pub fn set_approximate_duration_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.approximate_duration_seconds = input;
             self
         }
         /// <p>The approximate time that the program will start playing.</p>
-        pub fn approximate_start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn approximate_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.approximate_start_time = Some(input);
             self
         }
+        /// <p>The approximate time that the program will start playing.</p>
         pub fn set_approximate_start_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.approximate_start_time = input;
             self
@@ -3146,6 +3344,7 @@ pub mod schedule_entry {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the program.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3155,6 +3354,7 @@ pub mod schedule_entry {
             self.channel_name = Some(input.into());
             self
         }
+        /// <p>The name of the channel that uses this schedule.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self
@@ -3164,10 +3364,16 @@ pub mod schedule_entry {
             self.program_name = Some(input.into());
             self
         }
+        /// <p>The name of the program.</p>
         pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.program_name = input;
             self
         }
+        /// Appends an item to `schedule_ad_breaks`.
+        ///
+        /// To override the contents of this collection use [`set_schedule_ad_breaks`](Self::set_schedule_ad_breaks).
+        ///
+        /// <p>The schedule's ad break properties.</p>
         pub fn schedule_ad_breaks(
             mut self,
             input: impl Into<crate::model::ScheduleAdBreak>,
@@ -3177,6 +3383,7 @@ pub mod schedule_entry {
             self.schedule_ad_breaks = Some(v);
             self
         }
+        /// <p>The schedule's ad break properties.</p>
         pub fn set_schedule_ad_breaks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ScheduleAdBreak>>,
@@ -3189,6 +3396,7 @@ pub mod schedule_entry {
             self.schedule_entry_type = Some(input);
             self
         }
+        /// <p>The type of schedule entry.</p> <p>Valid values: PROGRAM or FILLER_SLATE.</p>
         pub fn set_schedule_entry_type(
             mut self,
             input: std::option::Option<crate::model::ScheduleEntryType>,
@@ -3201,6 +3409,7 @@ pub mod schedule_entry {
             self.source_location_name = Some(input.into());
             self
         }
+        /// <p>The name of the source location.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3213,6 +3422,7 @@ pub mod schedule_entry {
             self.vod_source_name = Some(input.into());
             self
         }
+        /// <p>The name of the VOD source.</p>
         pub fn set_vod_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3243,6 +3453,7 @@ impl ScheduleEntry {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3254,7 +3465,9 @@ impl ScheduleEntry {
     std::hash::Hash,
 )]
 pub enum ScheduleEntryType {
+    #[allow(missing_docs)] // documentation missing in model
     FillerSlate,
+    #[allow(missing_docs)] // documentation missing in model
     Program,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3276,6 +3489,7 @@ impl std::str::FromStr for ScheduleEntryType {
     }
 }
 impl ScheduleEntryType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScheduleEntryType::FillerSlate => "FILLER_SLATE",
@@ -3283,6 +3497,7 @@ impl ScheduleEntryType {
             ScheduleEntryType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FILLER_SLATE", "PROGRAM"]
     }
@@ -3300,7 +3515,7 @@ pub struct ScheduleAdBreak {
     /// <p>The approximate duration of the ad break, in seconds.</p>
     pub approximate_duration_seconds: i64,
     /// <p>The approximate time that the ad will start playing.</p>
-    pub approximate_start_time: std::option::Option<smithy_types::Instant>,
+    pub approximate_start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of the source location containing the VOD source used for the ad break.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The name of the VOD source used for the ad break.</p>
@@ -3326,7 +3541,7 @@ pub mod schedule_ad_break {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approximate_duration_seconds: std::option::Option<i64>,
-        pub(crate) approximate_start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) approximate_start_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) vod_source_name: std::option::Option<std::string::String>,
     }
@@ -3336,18 +3551,20 @@ pub mod schedule_ad_break {
             self.approximate_duration_seconds = Some(input);
             self
         }
+        /// <p>The approximate duration of the ad break, in seconds.</p>
         pub fn set_approximate_duration_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.approximate_duration_seconds = input;
             self
         }
         /// <p>The approximate time that the ad will start playing.</p>
-        pub fn approximate_start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn approximate_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.approximate_start_time = Some(input);
             self
         }
+        /// <p>The approximate time that the ad will start playing.</p>
         pub fn set_approximate_start_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.approximate_start_time = input;
             self
@@ -3357,6 +3574,7 @@ pub mod schedule_ad_break {
             self.source_location_name = Some(input.into());
             self
         }
+        /// <p>The name of the source location containing the VOD source used for the ad break.</p>
         pub fn set_source_location_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3369,6 +3587,7 @@ pub mod schedule_ad_break {
             self.vod_source_name = Some(input.into());
             self
         }
+        /// <p>The name of the VOD source used for the ad break.</p>
         pub fn set_vod_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3434,6 +3653,7 @@ pub mod ad_break {
             self.message_type = Some(input);
             self
         }
+        /// <p>The SCTE-35 ad insertion type. Accepted value: SPLICE_INSERT.</p>
         pub fn set_message_type(
             mut self,
             input: std::option::Option<crate::model::MessageType>,
@@ -3446,6 +3666,7 @@ pub mod ad_break {
             self.offset_millis = Some(input);
             self
         }
+        /// <p>How long (in milliseconds) after the beginning of the program that an ad starts. This value must fall within 100ms of a segment boundary, otherwise the ad break will be skipped.</p>
         pub fn set_offset_millis(mut self, input: std::option::Option<i64>) -> Self {
             self.offset_millis = input;
             self
@@ -3455,6 +3676,7 @@ pub mod ad_break {
             self.slate = Some(input);
             self
         }
+        /// <p>Ad break slate configuration.</p>
         pub fn set_slate(mut self, input: std::option::Option<crate::model::SlateSource>) -> Self {
             self.slate = input;
             self
@@ -3464,6 +3686,7 @@ pub mod ad_break {
             self.splice_insert_message = Some(input);
             self
         }
+        /// <p>This defines the SCTE-35 splice_insert() message inserted around the ad. For information about using splice_insert(), see the SCTE-35 specficiaiton, section 9.7.3.1.</p>
         pub fn set_splice_insert_message(
             mut self,
             input: std::option::Option<crate::model::SpliceInsertMessage>,
@@ -3529,6 +3752,7 @@ pub mod splice_insert_message {
             self.avail_num = Some(input);
             self
         }
+        /// <p>This is written to splice_insert.avail_num, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is 0. Values must be between 0 and 256, inclusive.</p>
         pub fn set_avail_num(mut self, input: std::option::Option<i32>) -> Self {
             self.avail_num = input;
             self
@@ -3538,6 +3762,7 @@ pub mod splice_insert_message {
             self.avails_expected = Some(input);
             self
         }
+        /// <p>This is written to splice_insert.avails_expected, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is 0. Values must be between 0 and 256, inclusive.</p>
         pub fn set_avails_expected(mut self, input: std::option::Option<i32>) -> Self {
             self.avails_expected = input;
             self
@@ -3547,6 +3772,7 @@ pub mod splice_insert_message {
             self.splice_event_id = Some(input);
             self
         }
+        /// <p>This is written to splice_insert.splice_event_id, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is 1.</p>
         pub fn set_splice_event_id(mut self, input: std::option::Option<i32>) -> Self {
             self.splice_event_id = input;
             self
@@ -3556,6 +3782,7 @@ pub mod splice_insert_message {
             self.unique_program_id = Some(input);
             self
         }
+        /// <p>This is written to splice_insert.unique_program_id, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is 0. Values must be between 0 and 256, inclusive.</p>
         pub fn set_unique_program_id(mut self, input: std::option::Option<i32>) -> Self {
             self.unique_program_id = input;
             self
@@ -3578,6 +3805,7 @@ impl SpliceInsertMessage {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3589,6 +3817,7 @@ impl SpliceInsertMessage {
     std::hash::Hash,
 )]
 pub enum MessageType {
+    #[allow(missing_docs)] // documentation missing in model
     SpliceInsert,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3609,12 +3838,14 @@ impl std::str::FromStr for MessageType {
     }
 }
 impl MessageType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MessageType::SpliceInsert => "SPLICE_INSERT",
             MessageType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SPLICE_INSERT"]
     }
@@ -3653,6 +3884,7 @@ pub mod schedule_configuration {
             self.transition = Some(input);
             self
         }
+        /// <p>Program transition configurations.</p>
         pub fn set_transition(
             mut self,
             input: std::option::Option<crate::model::Transition>,
@@ -3718,6 +3950,7 @@ pub mod transition {
             self.relative_position = Some(input);
             self
         }
+        /// <p>The position where this program will be inserted relative to the RelativePosition.</p>
         pub fn set_relative_position(
             mut self,
             input: std::option::Option<crate::model::RelativePosition>,
@@ -3730,6 +3963,7 @@ pub mod transition {
             self.relative_program = Some(input.into());
             self
         }
+        /// <p>The name of the program that this program will be inserted next to, as defined by RelativePosition.</p>
         pub fn set_relative_program(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3742,6 +3976,7 @@ pub mod transition {
             self.scheduled_start_time_millis = Some(input);
             self
         }
+        /// <p>The date and time that the program is scheduled to start, in epoch milliseconds.</p>
         pub fn set_scheduled_start_time_millis(mut self, input: std::option::Option<i64>) -> Self {
             self.scheduled_start_time_millis = input;
             self
@@ -3751,6 +3986,7 @@ pub mod transition {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>Defines when the program plays in the schedule. You can set the value to ABSOLUTE or RELATIVE.</p> <p>ABSOLUTE - The program plays at a specific wall clock time. This setting can only be used for channels using the LINEAR PlaybackMode.</p> <p>Note the following considerations when using ABSOLUTE transitions:</p> <p>If the preceding program in the schedule has a duration that extends past the wall clock time, MediaTailor truncates the preceding program on a common segment boundary.</p> <p>If there are gaps in playback, MediaTailor plays the FillerSlate you configured for your linear channel.</p> <p>RELATIVE - The program is inserted into the schedule either before or after a program that you specify via RelativePosition.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -3773,6 +4009,7 @@ impl Transition {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3784,7 +4021,9 @@ impl Transition {
     std::hash::Hash,
 )]
 pub enum RelativePosition {
+    #[allow(missing_docs)] // documentation missing in model
     AfterProgram,
+    #[allow(missing_docs)] // documentation missing in model
     BeforeProgram,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3806,6 +4045,7 @@ impl std::str::FromStr for RelativePosition {
     }
 }
 impl RelativePosition {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RelativePosition::AfterProgram => "AFTER_PROGRAM",
@@ -3813,6 +4053,7 @@ impl RelativePosition {
             RelativePosition::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AFTER_PROGRAM", "BEFORE_PROGRAM"]
     }
@@ -3823,6 +4064,7 @@ impl AsRef<str> for RelativePosition {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3834,7 +4076,9 @@ impl AsRef<str> for RelativePosition {
     std::hash::Hash,
 )]
 pub enum PlaybackMode {
+    #[allow(missing_docs)] // documentation missing in model
     Linear,
+    #[allow(missing_docs)] // documentation missing in model
     Loop,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3856,6 +4100,7 @@ impl std::str::FromStr for PlaybackMode {
     }
 }
 impl PlaybackMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PlaybackMode::Linear => "LINEAR",
@@ -3863,6 +4108,7 @@ impl PlaybackMode {
             PlaybackMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LINEAR", "LOOP"]
     }

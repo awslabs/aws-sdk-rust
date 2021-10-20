@@ -45,6 +45,7 @@ pub mod update_meeting_room_configuration {
             self.room_utilization_metrics_enabled = Some(input);
             self
         }
+        /// <p>Whether room utilization metrics are enabled or not.</p>
         pub fn set_room_utilization_metrics_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -61,6 +62,8 @@ pub mod update_meeting_room_configuration {
             self.end_of_meeting_reminder = Some(input);
             self
         }
+        /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The
+        /// end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
         pub fn set_end_of_meeting_reminder(
             mut self,
             input: std::option::Option<crate::model::UpdateEndOfMeetingReminder>,
@@ -74,6 +77,8 @@ pub mod update_meeting_room_configuration {
             self.instant_booking = Some(input);
             self
         }
+        /// <p>Settings to automatically book an available room available for a configured duration
+        /// when joining a meeting with Alexa.</p>
         pub fn set_instant_booking(
             mut self,
             input: std::option::Option<crate::model::UpdateInstantBooking>,
@@ -86,6 +91,7 @@ pub mod update_meeting_room_configuration {
             self.require_check_in = Some(input);
             self
         }
+        /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.” </p>
         pub fn set_require_check_in(
             mut self,
             input: std::option::Option<crate::model::UpdateRequireCheckIn>,
@@ -143,6 +149,7 @@ pub mod update_require_check_in {
             self.release_after_minutes = Some(input);
             self
         }
+        /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into. </p>
         pub fn set_release_after_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.release_after_minutes = input;
             self
@@ -152,6 +159,7 @@ pub mod update_require_check_in {
             self.enabled = Some(input);
             self
         }
+        /// <p>Whether require check in is enabled or not.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -208,6 +216,8 @@ pub mod update_instant_booking {
             self.duration_in_minutes = Some(input);
             self
         }
+        /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book
+        /// an available room when a meeting is started with Alexa.</p>
         pub fn set_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.duration_in_minutes = input;
             self
@@ -217,6 +227,7 @@ pub mod update_instant_booking {
             self.enabled = Some(input);
             self
         }
+        /// <p>Whether instant booking is enabled or not.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -271,12 +282,22 @@ pub mod update_end_of_meeting_reminder {
         pub(crate) enabled: std::option::Option<bool>,
     }
     impl Builder {
+        /// Appends an item to `reminder_at_minutes`.
+        ///
+        /// To override the contents of this collection use [`set_reminder_at_minutes`](Self::set_reminder_at_minutes).
+        ///
+        /// <p>Updates settings for the end of meeting reminder feature that are applied to a room
+        /// profile. The end of meeting reminder enables Alexa to remind users when a meeting is
+        /// ending. </p>
         pub fn reminder_at_minutes(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.reminder_at_minutes.unwrap_or_default();
             v.push(input.into());
             self.reminder_at_minutes = Some(v);
             self
         }
+        /// <p>Updates settings for the end of meeting reminder feature that are applied to a room
+        /// profile. The end of meeting reminder enables Alexa to remind users when a meeting is
+        /// ending. </p>
         pub fn set_reminder_at_minutes(
             mut self,
             input: std::option::Option<std::vec::Vec<i32>>,
@@ -289,6 +310,7 @@ pub mod update_end_of_meeting_reminder {
             self.reminder_type = Some(input);
             self
         }
+        /// <p>The type of sound that users hear during the end of meeting reminder. </p>
         pub fn set_reminder_type(
             mut self,
             input: std::option::Option<crate::model::EndOfMeetingReminderType>,
@@ -301,6 +323,7 @@ pub mod update_end_of_meeting_reminder {
             self.enabled = Some(input);
             self
         }
+        /// <p>Whether an end of meeting reminder is enabled or not.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -322,6 +345,7 @@ impl UpdateEndOfMeetingReminder {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -333,9 +357,13 @@ impl UpdateEndOfMeetingReminder {
     std::hash::Hash,
 )]
 pub enum EndOfMeetingReminderType {
+    #[allow(missing_docs)] // documentation missing in model
     AnnouncementTimeCheck,
+    #[allow(missing_docs)] // documentation missing in model
     AnnouncementVariableTimeLeft,
+    #[allow(missing_docs)] // documentation missing in model
     Chime,
+    #[allow(missing_docs)] // documentation missing in model
     Knock,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -361,6 +389,7 @@ impl std::str::FromStr for EndOfMeetingReminderType {
     }
 }
 impl EndOfMeetingReminderType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EndOfMeetingReminderType::AnnouncementTimeCheck => "ANNOUNCEMENT_TIME_CHECK",
@@ -372,6 +401,7 @@ impl EndOfMeetingReminderType {
             EndOfMeetingReminderType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ANNOUNCEMENT_TIME_CHECK",
@@ -387,6 +417,7 @@ impl AsRef<str> for EndOfMeetingReminderType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -398,9 +429,13 @@ impl AsRef<str> for EndOfMeetingReminderType {
     std::hash::Hash,
 )]
 pub enum WakeWord {
+    #[allow(missing_docs)] // documentation missing in model
     Alexa,
+    #[allow(missing_docs)] // documentation missing in model
     Amazon,
+    #[allow(missing_docs)] // documentation missing in model
     Computer,
+    #[allow(missing_docs)] // documentation missing in model
     Echo,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -424,6 +459,7 @@ impl std::str::FromStr for WakeWord {
     }
 }
 impl WakeWord {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WakeWord::Alexa => "ALEXA",
@@ -433,6 +469,7 @@ impl WakeWord {
             WakeWord::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALEXA", "AMAZON", "COMPUTER", "ECHO"]
     }
@@ -443,6 +480,7 @@ impl AsRef<str> for WakeWord {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -454,7 +492,9 @@ impl AsRef<str> for WakeWord {
     std::hash::Hash,
 )]
 pub enum TemperatureUnit {
+    #[allow(missing_docs)] // documentation missing in model
     Celsius,
+    #[allow(missing_docs)] // documentation missing in model
     Fahrenheit,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -476,6 +516,7 @@ impl std::str::FromStr for TemperatureUnit {
     }
 }
 impl TemperatureUnit {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TemperatureUnit::Celsius => "CELSIUS",
@@ -483,6 +524,7 @@ impl TemperatureUnit {
             TemperatureUnit::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CELSIUS", "FAHRENHEIT"]
     }
@@ -493,6 +535,7 @@ impl AsRef<str> for TemperatureUnit {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -504,7 +547,9 @@ impl AsRef<str> for TemperatureUnit {
     std::hash::Hash,
 )]
 pub enum DistanceUnit {
+    #[allow(missing_docs)] // documentation missing in model
     Imperial,
+    #[allow(missing_docs)] // documentation missing in model
     Metric,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -526,6 +571,7 @@ impl std::str::FromStr for DistanceUnit {
     }
 }
 impl DistanceUnit {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DistanceUnit::Imperial => "IMPERIAL",
@@ -533,6 +579,7 @@ impl DistanceUnit {
             DistanceUnit::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["IMPERIAL", "METRIC"]
     }
@@ -575,6 +622,7 @@ pub mod sip_address {
             self.uri = Some(input.into());
             self
         }
+        /// <p>The URI for the SIP address.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.uri = input;
             self
@@ -584,6 +632,7 @@ pub mod sip_address {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the SIP address.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::SipType>) -> Self {
             self.r#type = input;
             self
@@ -604,6 +653,7 @@ impl SipAddress {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -615,6 +665,7 @@ impl SipAddress {
     std::hash::Hash,
 )]
 pub enum SipType {
+    #[allow(missing_docs)] // documentation missing in model
     Work,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -635,12 +686,14 @@ impl std::str::FromStr for SipType {
     }
 }
 impl SipType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SipType::Work => "WORK",
             SipType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["WORK"]
     }
@@ -683,6 +736,7 @@ pub mod phone_number {
             self.number = Some(input.into());
             self
         }
+        /// <p>The raw value of the phone number.</p>
         pub fn set_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.number = input;
             self
@@ -692,6 +746,7 @@ pub mod phone_number {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the phone number.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::PhoneNumberType>,
@@ -715,6 +770,7 @@ impl PhoneNumber {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -726,8 +782,11 @@ impl PhoneNumber {
     std::hash::Hash,
 )]
 pub enum PhoneNumberType {
+    #[allow(missing_docs)] // documentation missing in model
     Home,
+    #[allow(missing_docs)] // documentation missing in model
     Mobile,
+    #[allow(missing_docs)] // documentation missing in model
     Work,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -750,6 +809,7 @@ impl std::str::FromStr for PhoneNumberType {
     }
 }
 impl PhoneNumberType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PhoneNumberType::Home => "HOME",
@@ -758,6 +818,7 @@ impl PhoneNumberType {
             PhoneNumberType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HOME", "MOBILE", "WORK"]
     }
@@ -809,6 +870,7 @@ pub mod meeting_setting {
             self.require_pin = Some(input);
             self
         }
+        /// <p>The values that indicate whether the pin is always required.</p>
         pub fn set_require_pin(
             mut self,
             input: std::option::Option<crate::model::RequirePin>,
@@ -831,6 +893,7 @@ impl MeetingSetting {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -842,8 +905,11 @@ impl MeetingSetting {
     std::hash::Hash,
 )]
 pub enum RequirePin {
+    #[allow(missing_docs)] // documentation missing in model
     No,
+    #[allow(missing_docs)] // documentation missing in model
     Optional,
+    #[allow(missing_docs)] // documentation missing in model
     Yes,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -866,6 +932,7 @@ impl std::str::FromStr for RequirePin {
     }
 }
 impl RequirePin {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RequirePin::No => "NO",
@@ -874,6 +941,7 @@ impl RequirePin {
             RequirePin::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NO", "OPTIONAL", "YES"]
     }
@@ -924,6 +992,7 @@ pub mod pstn_dial_in {
             self.country_code = Some(input.into());
             self
         }
+        /// <p>The zip code.</p>
         pub fn set_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.country_code = input;
             self
@@ -933,6 +1002,7 @@ pub mod pstn_dial_in {
             self.phone_number = Some(input.into());
             self
         }
+        /// <p>The phone number to call to join the conference.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -942,6 +1012,7 @@ pub mod pstn_dial_in {
             self.one_click_id_delay = Some(input.into());
             self
         }
+        /// <p>The delay duration before Alexa enters the conference ID with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
         pub fn set_one_click_id_delay(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -954,6 +1025,7 @@ pub mod pstn_dial_in {
             self.one_click_pin_delay = Some(input.into());
             self
         }
+        /// <p>The delay duration before Alexa enters the conference pin with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
         pub fn set_one_click_pin_delay(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1011,6 +1083,7 @@ pub mod ip_dial_in {
             self.endpoint = Some(input.into());
             self
         }
+        /// <p>The IP address.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint = input;
             self
@@ -1020,6 +1093,7 @@ pub mod ip_dial_in {
             self.comms_protocol = Some(input);
             self
         }
+        /// <p>The protocol, including SIP, SIPS, and H323.</p>
         pub fn set_comms_protocol(
             mut self,
             input: std::option::Option<crate::model::CommsProtocol>,
@@ -1043,6 +1117,7 @@ impl IpDialIn {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1054,8 +1129,11 @@ impl IpDialIn {
     std::hash::Hash,
 )]
 pub enum CommsProtocol {
+    #[allow(missing_docs)] // documentation missing in model
     H323,
+    #[allow(missing_docs)] // documentation missing in model
     Sip,
+    #[allow(missing_docs)] // documentation missing in model
     Sips,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1078,6 +1156,7 @@ impl std::str::FromStr for CommsProtocol {
     }
 }
 impl CommsProtocol {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CommsProtocol::H323 => "H323",
@@ -1086,6 +1165,7 @@ impl CommsProtocol {
             CommsProtocol::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["H323", "SIP", "SIPS"]
     }
@@ -1096,6 +1176,7 @@ impl AsRef<str> for CommsProtocol {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1107,15 +1188,25 @@ impl AsRef<str> for CommsProtocol {
     std::hash::Hash,
 )]
 pub enum ConferenceProviderType {
+    #[allow(missing_docs)] // documentation missing in model
     Bluejeans,
+    #[allow(missing_docs)] // documentation missing in model
     Chime,
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
+    #[allow(missing_docs)] // documentation missing in model
     Fuze,
+    #[allow(missing_docs)] // documentation missing in model
     GoogleHangouts,
+    #[allow(missing_docs)] // documentation missing in model
     Polycom,
+    #[allow(missing_docs)] // documentation missing in model
     Ringcentral,
+    #[allow(missing_docs)] // documentation missing in model
     SkypeForBusiness,
+    #[allow(missing_docs)] // documentation missing in model
     Webex,
+    #[allow(missing_docs)] // documentation missing in model
     Zoom,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1145,6 +1236,7 @@ impl std::str::FromStr for ConferenceProviderType {
     }
 }
 impl ConferenceProviderType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConferenceProviderType::Bluejeans => "BLUEJEANS",
@@ -1160,6 +1252,7 @@ impl ConferenceProviderType {
             ConferenceProviderType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BLUEJEANS",
@@ -1209,6 +1302,7 @@ pub mod business_report_recurrence {
             self.start_date = Some(input.into());
             self
         }
+        /// <p>The start date.</p>
         pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_date = input;
             self
@@ -1228,6 +1322,7 @@ impl BusinessReportRecurrence {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1239,7 +1334,9 @@ impl BusinessReportRecurrence {
     std::hash::Hash,
 )]
 pub enum BusinessReportFormat {
+    #[allow(missing_docs)] // documentation missing in model
     Csv,
+    #[allow(missing_docs)] // documentation missing in model
     CsvZip,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1261,6 +1358,7 @@ impl std::str::FromStr for BusinessReportFormat {
     }
 }
 impl BusinessReportFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BusinessReportFormat::Csv => "CSV",
@@ -1268,6 +1366,7 @@ impl BusinessReportFormat {
             BusinessReportFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CSV", "CSV_ZIP"]
     }
@@ -1310,6 +1409,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key of a tag. Tag keys are case-sensitive. </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -1319,6 +1419,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of a tag. Tag values are case sensitive and can be null.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1339,6 +1440,7 @@ impl Tag {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1350,13 +1452,21 @@ impl Tag {
     std::hash::Hash,
 )]
 pub enum Feature {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Bluetooth,
+    #[allow(missing_docs)] // documentation missing in model
     Lists,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkProfile,
+    #[allow(missing_docs)] // documentation missing in model
     Notifications,
+    #[allow(missing_docs)] // documentation missing in model
     Settings,
+    #[allow(missing_docs)] // documentation missing in model
     Skills,
+    #[allow(missing_docs)] // documentation missing in model
     Volume,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1384,6 +1494,7 @@ impl std::str::FromStr for Feature {
     }
 }
 impl Feature {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Feature::All => "ALL",
@@ -1397,6 +1508,7 @@ impl Feature {
             Feature::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ALL",
@@ -1448,12 +1560,18 @@ pub mod content {
         pub(crate) audio_list: std::option::Option<std::vec::Vec<crate::model::Audio>>,
     }
     impl Builder {
+        /// Appends an item to `text_list`.
+        ///
+        /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
+        ///
+        /// <p>The list of text messages.</p>
         pub fn text_list(mut self, input: impl Into<crate::model::Text>) -> Self {
             let mut v = self.text_list.unwrap_or_default();
             v.push(input.into());
             self.text_list = Some(v);
             self
         }
+        /// <p>The list of text messages.</p>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Text>>,
@@ -1461,12 +1579,18 @@ pub mod content {
             self.text_list = input;
             self
         }
+        /// Appends an item to `ssml_list`.
+        ///
+        /// To override the contents of this collection use [`set_ssml_list`](Self::set_ssml_list).
+        ///
+        /// <p>The list of SSML messages.</p>
         pub fn ssml_list(mut self, input: impl Into<crate::model::Ssml>) -> Self {
             let mut v = self.ssml_list.unwrap_or_default();
             v.push(input.into());
             self.ssml_list = Some(v);
             self
         }
+        /// <p>The list of SSML messages.</p>
         pub fn set_ssml_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Ssml>>,
@@ -1474,12 +1598,18 @@ pub mod content {
             self.ssml_list = input;
             self
         }
+        /// Appends an item to `audio_list`.
+        ///
+        /// To override the contents of this collection use [`set_audio_list`](Self::set_audio_list).
+        ///
+        /// <p>The list of audio messages.</p>
         pub fn audio_list(mut self, input: impl Into<crate::model::Audio>) -> Self {
             let mut v = self.audio_list.unwrap_or_default();
             v.push(input.into());
             self.audio_list = Some(v);
             self
         }
+        /// <p>The list of audio messages.</p>
         pub fn set_audio_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Audio>>,
@@ -1546,6 +1676,7 @@ pub mod audio {
             self.locale = Some(input);
             self
         }
+        /// <p>The locale of the audio message. Currently, en-US is supported.</p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
             self.locale = input;
             self
@@ -1556,6 +1687,8 @@ pub mod audio {
             self.location = Some(input.into());
             self
         }
+        /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations
+        /// comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -1576,6 +1709,7 @@ impl Audio {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1587,6 +1721,7 @@ impl Audio {
     std::hash::Hash,
 )]
 pub enum Locale {
+    #[allow(missing_docs)] // documentation missing in model
     EnUs,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1607,12 +1742,14 @@ impl std::str::FromStr for Locale {
     }
 }
 impl Locale {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Locale::EnUs => "en-US",
             Locale::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["en-US"]
     }
@@ -1655,6 +1792,7 @@ pub mod ssml {
             self.locale = Some(input);
             self
         }
+        /// <p>The locale of the SSML message. Currently, en-US is supported.</p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
             self.locale = input;
             self
@@ -1664,6 +1802,7 @@ pub mod ssml {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the SSML message in the correct SSML format. The audio tag is not supported.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1716,6 +1855,7 @@ pub mod text {
             self.locale = Some(input);
             self
         }
+        /// <p>The locale of the text message. Currently, en-US is supported.</p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
             self.locale = input;
             self
@@ -1725,6 +1865,7 @@ pub mod text {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the text message.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1778,16 +1919,23 @@ pub mod filter {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key of a filter.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The values of a filter.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The values of a filter.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1859,6 +2007,7 @@ pub mod user_data {
             self.user_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of a user.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_arn = input;
             self
@@ -1868,6 +2017,7 @@ pub mod user_data {
             self.first_name = Some(input.into());
             self
         }
+        /// <p>The first name of a user.</p>
         pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.first_name = input;
             self
@@ -1877,6 +2027,7 @@ pub mod user_data {
             self.last_name = Some(input.into());
             self
         }
+        /// <p>The last name of a user.</p>
         pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.last_name = input;
             self
@@ -1886,6 +2037,7 @@ pub mod user_data {
             self.email = Some(input.into());
             self
         }
+        /// <p>The email of a user.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.email = input;
             self
@@ -1895,6 +2047,7 @@ pub mod user_data {
             self.enrollment_status = Some(input);
             self
         }
+        /// <p>The enrollment status of a user.</p>
         pub fn set_enrollment_status(
             mut self,
             input: std::option::Option<crate::model::EnrollmentStatus>,
@@ -1907,6 +2060,7 @@ pub mod user_data {
             self.enrollment_id = Some(input.into());
             self
         }
+        /// <p>The enrollment ARN of a user.</p>
         pub fn set_enrollment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1934,6 +2088,7 @@ impl UserData {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1945,10 +2100,15 @@ impl UserData {
     std::hash::Hash,
 )]
 pub enum EnrollmentStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Deregistering,
+    #[allow(missing_docs)] // documentation missing in model
     Disassociating,
+    #[allow(missing_docs)] // documentation missing in model
     Initialized,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Registered,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1973,6 +2133,7 @@ impl std::str::FromStr for EnrollmentStatus {
     }
 }
 impl EnrollmentStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EnrollmentStatus::Deregistering => "DEREGISTERING",
@@ -1983,6 +2144,7 @@ impl EnrollmentStatus {
             EnrollmentStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DEREGISTERING",
@@ -2031,6 +2193,7 @@ pub mod sort {
             self.key = Some(input.into());
             self
         }
+        /// <p>The sort key of a sort object.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -2040,6 +2203,7 @@ pub mod sort {
             self.value = Some(input);
             self
         }
+        /// <p>The sort value of a sort object.</p>
         pub fn set_value(mut self, input: std::option::Option<crate::model::SortValue>) -> Self {
             self.value = input;
             self
@@ -2060,6 +2224,7 @@ impl Sort {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2071,7 +2236,9 @@ impl Sort {
     std::hash::Hash,
 )]
 pub enum SortValue {
+    #[allow(missing_docs)] // documentation missing in model
     Asc,
+    #[allow(missing_docs)] // documentation missing in model
     Desc,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2093,6 +2260,7 @@ impl std::str::FromStr for SortValue {
     }
 }
 impl SortValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortValue::Asc => "ASC",
@@ -2100,6 +2268,7 @@ impl SortValue {
             SortValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ASC", "DESC"]
     }
@@ -2146,6 +2315,7 @@ pub mod skill_group_data {
             self.skill_group_arn = Some(input.into());
             self
         }
+        /// <p>The skill group ARN of a skill group.</p>
         pub fn set_skill_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2158,6 +2328,7 @@ pub mod skill_group_data {
             self.skill_group_name = Some(input.into());
             self
         }
+        /// <p>The skill group name of a skill group.</p>
         pub fn set_skill_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2170,6 +2341,7 @@ pub mod skill_group_data {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of a skill group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2239,6 +2411,7 @@ pub mod room_data {
             self.room_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of a room.</p>
         pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.room_arn = input;
             self
@@ -2248,6 +2421,7 @@ pub mod room_data {
             self.room_name = Some(input.into());
             self
         }
+        /// <p>The name of a room.</p>
         pub fn set_room_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.room_name = input;
             self
@@ -2257,6 +2431,7 @@ pub mod room_data {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of a room.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2266,6 +2441,7 @@ pub mod room_data {
             self.provider_calendar_id = Some(input.into());
             self
         }
+        /// <p>The provider calendar ARN of a room.</p>
         pub fn set_provider_calendar_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2278,6 +2454,7 @@ pub mod room_data {
             self.profile_arn = Some(input.into());
             self
         }
+        /// <p>The profile ARN of a room.</p>
         pub fn set_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.profile_arn = input;
             self
@@ -2287,6 +2464,7 @@ pub mod room_data {
             self.profile_name = Some(input.into());
             self
         }
+        /// <p>The profile name of a room.</p>
         pub fn set_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.profile_name = input;
             self
@@ -2372,6 +2550,7 @@ pub mod profile_data {
             self.profile_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of a room profile.</p>
         pub fn set_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.profile_arn = input;
             self
@@ -2381,6 +2560,7 @@ pub mod profile_data {
             self.profile_name = Some(input.into());
             self
         }
+        /// <p>The name of a room profile.</p>
         pub fn set_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.profile_name = input;
             self
@@ -2390,6 +2570,7 @@ pub mod profile_data {
             self.is_default = Some(input);
             self
         }
+        /// <p>Retrieves if the profile data is default or not.</p>
         pub fn set_is_default(mut self, input: std::option::Option<bool>) -> Self {
             self.is_default = input;
             self
@@ -2399,6 +2580,7 @@ pub mod profile_data {
             self.address = Some(input.into());
             self
         }
+        /// <p>The address of a room profile.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address = input;
             self
@@ -2408,6 +2590,7 @@ pub mod profile_data {
             self.timezone = Some(input.into());
             self
         }
+        /// <p>The time zone of a room profile.</p>
         pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timezone = input;
             self
@@ -2417,6 +2600,7 @@ pub mod profile_data {
             self.distance_unit = Some(input);
             self
         }
+        /// <p>The distance unit of a room profile.</p>
         pub fn set_distance_unit(
             mut self,
             input: std::option::Option<crate::model::DistanceUnit>,
@@ -2429,6 +2613,7 @@ pub mod profile_data {
             self.temperature_unit = Some(input);
             self
         }
+        /// <p>The temperature unit of a room profile.</p>
         pub fn set_temperature_unit(
             mut self,
             input: std::option::Option<crate::model::TemperatureUnit>,
@@ -2441,6 +2626,7 @@ pub mod profile_data {
             self.wake_word = Some(input);
             self
         }
+        /// <p>The wake word of a room profile.</p>
         pub fn set_wake_word(mut self, input: std::option::Option<crate::model::WakeWord>) -> Self {
             self.wake_word = input;
             self
@@ -2451,6 +2637,8 @@ pub mod profile_data {
             self.locale = Some(input.into());
             self
         }
+        /// <p>The locale of a room profile. (This is currently available only to a limited preview
+        /// audience.)</p>
         pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale = input;
             self
@@ -2533,6 +2721,7 @@ pub mod network_profile_data {
             self.network_profile_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the network profile associated with a device.</p>
         pub fn set_network_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2545,6 +2734,7 @@ pub mod network_profile_data {
             self.network_profile_name = Some(input.into());
             self
         }
+        /// <p>The name of the network profile associated with a device.</p>
         pub fn set_network_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2557,6 +2747,7 @@ pub mod network_profile_data {
             self.description = Some(input.into());
             self
         }
+        /// <p>Detailed information about a device's network profile.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2566,6 +2757,7 @@ pub mod network_profile_data {
             self.ssid = Some(input.into());
             self
         }
+        /// <p>The SSID of the Wi-Fi network.</p>
         pub fn set_ssid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ssid = input;
             self
@@ -2576,6 +2768,8 @@ pub mod network_profile_data {
             self.security_type = Some(input);
             self
         }
+        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
+        /// WEP, or OPEN.</p>
         pub fn set_security_type(
             mut self,
             input: std::option::Option<crate::model::NetworkSecurityType>,
@@ -2589,6 +2783,8 @@ pub mod network_profile_data {
             self.eap_method = Some(input);
             self
         }
+        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
+        /// supported.</p>
         pub fn set_eap_method(
             mut self,
             input: std::option::Option<crate::model::NetworkEapMethod>,
@@ -2602,6 +2798,8 @@ pub mod network_profile_data {
             self.certificate_authority_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
+        /// (ACM). This is used to issue certificates to the devices.</p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2630,6 +2828,7 @@ impl NetworkProfileData {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2641,6 +2840,7 @@ impl NetworkProfileData {
     std::hash::Hash,
 )]
 pub enum NetworkEapMethod {
+    #[allow(missing_docs)] // documentation missing in model
     EapTls,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2661,12 +2861,14 @@ impl std::str::FromStr for NetworkEapMethod {
     }
 }
 impl NetworkEapMethod {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NetworkEapMethod::EapTls => "EAP_TLS",
             NetworkEapMethod::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EAP_TLS"]
     }
@@ -2677,6 +2879,7 @@ impl AsRef<str> for NetworkEapMethod {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2688,10 +2891,15 @@ impl AsRef<str> for NetworkEapMethod {
     std::hash::Hash,
 )]
 pub enum NetworkSecurityType {
+    #[allow(missing_docs)] // documentation missing in model
     Open,
+    #[allow(missing_docs)] // documentation missing in model
     Wep,
+    #[allow(missing_docs)] // documentation missing in model
     Wpa2Enterprise,
+    #[allow(missing_docs)] // documentation missing in model
     Wpa2Psk,
+    #[allow(missing_docs)] // documentation missing in model
     WpaPsk,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2716,6 +2924,7 @@ impl std::str::FromStr for NetworkSecurityType {
     }
 }
 impl NetworkSecurityType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NetworkSecurityType::Open => "OPEN",
@@ -2726,6 +2935,7 @@ impl NetworkSecurityType {
             NetworkSecurityType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["OPEN", "WEP", "WPA2_ENTERPRISE", "WPA2_PSK", "WPA_PSK"]
     }
@@ -2765,7 +2975,7 @@ pub struct DeviceData {
     /// <p>Detailed information about a device's status.</p>
     pub device_status_info: std::option::Option<crate::model::DeviceStatusInfo>,
     /// <p>The time (in epoch) when the device data was created.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DeviceData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2804,7 +3014,7 @@ pub mod device_data {
         pub(crate) room_arn: std::option::Option<std::string::String>,
         pub(crate) room_name: std::option::Option<std::string::String>,
         pub(crate) device_status_info: std::option::Option<crate::model::DeviceStatusInfo>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ARN of a device.</p>
@@ -2812,6 +3022,7 @@ pub mod device_data {
             self.device_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of a device.</p>
         pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_arn = input;
             self
@@ -2821,6 +3032,7 @@ pub mod device_data {
             self.device_serial_number = Some(input.into());
             self
         }
+        /// <p>The serial number of a device.</p>
         pub fn set_device_serial_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2833,6 +3045,7 @@ pub mod device_data {
             self.device_type = Some(input.into());
             self
         }
+        /// <p>The type of a device.</p>
         pub fn set_device_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_type = input;
             self
@@ -2842,6 +3055,7 @@ pub mod device_data {
             self.device_name = Some(input.into());
             self
         }
+        /// <p>The name of a device.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_name = input;
             self
@@ -2851,6 +3065,7 @@ pub mod device_data {
             self.software_version = Some(input.into());
             self
         }
+        /// <p>The software version of a device.</p>
         pub fn set_software_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2863,6 +3078,7 @@ pub mod device_data {
             self.mac_address = Some(input.into());
             self
         }
+        /// <p>The MAC address of a device.</p>
         pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mac_address = input;
             self
@@ -2872,6 +3088,7 @@ pub mod device_data {
             self.device_status = Some(input);
             self
         }
+        /// <p>The status of a device.</p>
         pub fn set_device_status(
             mut self,
             input: std::option::Option<crate::model::DeviceStatus>,
@@ -2884,6 +3101,7 @@ pub mod device_data {
             self.network_profile_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the network profile associated with a device.</p>
         pub fn set_network_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2896,6 +3114,7 @@ pub mod device_data {
             self.network_profile_name = Some(input.into());
             self
         }
+        /// <p>The name of the network profile associated with a device.</p>
         pub fn set_network_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2908,6 +3127,7 @@ pub mod device_data {
             self.room_arn = Some(input.into());
             self
         }
+        /// <p>The room ARN associated with a device.</p>
         pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.room_arn = input;
             self
@@ -2917,6 +3137,7 @@ pub mod device_data {
             self.room_name = Some(input.into());
             self
         }
+        /// <p>The name of the room associated with a device.</p>
         pub fn set_room_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.room_name = input;
             self
@@ -2926,6 +3147,7 @@ pub mod device_data {
             self.device_status_info = Some(input);
             self
         }
+        /// <p>Detailed information about a device's status.</p>
         pub fn set_device_status_info(
             mut self,
             input: std::option::Option<crate::model::DeviceStatusInfo>,
@@ -2934,13 +3156,14 @@ pub mod device_data {
             self
         }
         /// <p>The time (in epoch) when the device data was created.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The time (in epoch) when the device data was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
@@ -2981,7 +3204,7 @@ pub struct DeviceStatusInfo {
     /// <p>The latest available information about the connection status of a device. </p>
     pub connection_status: std::option::Option<crate::model::ConnectionStatus>,
     /// <p>The time (in epoch) when the device connection status changed.</p>
-    pub connection_status_updated_time: std::option::Option<smithy_types::Instant>,
+    pub connection_status_updated_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DeviceStatusInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3004,9 +3227,14 @@ pub mod device_status_info {
         pub(crate) device_status_details:
             std::option::Option<std::vec::Vec<crate::model::DeviceStatusDetail>>,
         pub(crate) connection_status: std::option::Option<crate::model::ConnectionStatus>,
-        pub(crate) connection_status_updated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) connection_status_updated_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
+        /// Appends an item to `device_status_details`.
+        ///
+        /// To override the contents of this collection use [`set_device_status_details`](Self::set_device_status_details).
+        ///
+        /// <p>One or more device status detail descriptions.</p>
         pub fn device_status_details(
             mut self,
             input: impl Into<crate::model::DeviceStatusDetail>,
@@ -3016,6 +3244,7 @@ pub mod device_status_info {
             self.device_status_details = Some(v);
             self
         }
+        /// <p>One or more device status detail descriptions.</p>
         pub fn set_device_status_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeviceStatusDetail>>,
@@ -3028,6 +3257,7 @@ pub mod device_status_info {
             self.connection_status = Some(input);
             self
         }
+        /// <p>The latest available information about the connection status of a device. </p>
         pub fn set_connection_status(
             mut self,
             input: std::option::Option<crate::model::ConnectionStatus>,
@@ -3036,13 +3266,14 @@ pub mod device_status_info {
             self
         }
         /// <p>The time (in epoch) when the device connection status changed.</p>
-        pub fn connection_status_updated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn connection_status_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.connection_status_updated_time = Some(input);
             self
         }
+        /// <p>The time (in epoch) when the device connection status changed.</p>
         pub fn set_connection_status_updated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.connection_status_updated_time = input;
             self
@@ -3064,6 +3295,7 @@ impl DeviceStatusInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3075,7 +3307,9 @@ impl DeviceStatusInfo {
     std::hash::Hash,
 )]
 pub enum ConnectionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Offline,
+    #[allow(missing_docs)] // documentation missing in model
     Online,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3097,6 +3331,7 @@ impl std::str::FromStr for ConnectionStatus {
     }
 }
 impl ConnectionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConnectionStatus::Offline => "OFFLINE",
@@ -3104,6 +3339,7 @@ impl ConnectionStatus {
             ConnectionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["OFFLINE", "ONLINE"]
     }
@@ -3146,6 +3382,7 @@ pub mod device_status_detail {
             self.feature = Some(input);
             self
         }
+        /// <p>The list of available features on the device.</p>
         pub fn set_feature(mut self, input: std::option::Option<crate::model::Feature>) -> Self {
             self.feature = input;
             self
@@ -3155,6 +3392,7 @@ pub mod device_status_detail {
             self.code = Some(input);
             self
         }
+        /// <p>The device status detail code.</p>
         pub fn set_code(
             mut self,
             input: std::option::Option<crate::model::DeviceStatusDetailCode>,
@@ -3178,6 +3416,7 @@ impl DeviceStatusDetail {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3189,22 +3428,39 @@ impl DeviceStatusDetail {
     std::hash::Hash,
 )]
 pub enum DeviceStatusDetailCode {
+    #[allow(missing_docs)] // documentation missing in model
     AssociationRejection,
+    #[allow(missing_docs)] // documentation missing in model
     AuthenticationFailure,
+    #[allow(missing_docs)] // documentation missing in model
     CertificateAuthorityAccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
     CertificateIssuingLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     CredentialsAccessFailure,
+    #[allow(missing_docs)] // documentation missing in model
     DeviceSoftwareUpdateNeeded,
+    #[allow(missing_docs)] // documentation missing in model
     DeviceWasOffline,
+    #[allow(missing_docs)] // documentation missing in model
     DhcpFailure,
+    #[allow(missing_docs)] // documentation missing in model
     DnsFailure,
+    #[allow(missing_docs)] // documentation missing in model
     InternetUnavailable,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidCertificateAuthority,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidPasswordState,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkProfileNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     PasswordManagerAccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
     PasswordNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     TlsVersionMismatch,
+    #[allow(missing_docs)] // documentation missing in model
     UnknownFailure,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3245,6 +3501,7 @@ impl std::str::FromStr for DeviceStatusDetailCode {
     }
 }
 impl DeviceStatusDetailCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeviceStatusDetailCode::AssociationRejection => "ASSOCIATION_REJECTION",
@@ -3271,6 +3528,7 @@ impl DeviceStatusDetailCode {
             DeviceStatusDetailCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ASSOCIATION_REJECTION",
@@ -3299,6 +3557,7 @@ impl AsRef<str> for DeviceStatusDetailCode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3310,10 +3569,15 @@ impl AsRef<str> for DeviceStatusDetailCode {
     std::hash::Hash,
 )]
 pub enum DeviceStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Deregistered,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
+    #[allow(missing_docs)] // documentation missing in model
     WasOffline,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3338,6 +3602,7 @@ impl std::str::FromStr for DeviceStatus {
     }
 }
 impl DeviceStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeviceStatus::Deregistered => "DEREGISTERED",
@@ -3348,6 +3613,7 @@ impl DeviceStatus {
             DeviceStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEREGISTERED", "FAILED", "PENDING", "READY", "WAS_OFFLINE"]
     }
@@ -3412,6 +3678,7 @@ pub mod contact_data {
             self.contact_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the contact.</p>
         pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.contact_arn = input;
             self
@@ -3421,6 +3688,7 @@ pub mod contact_data {
             self.display_name = Some(input.into());
             self
         }
+        /// <p>The name of the contact to display on the console.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -3430,6 +3698,7 @@ pub mod contact_data {
             self.first_name = Some(input.into());
             self
         }
+        /// <p>The first name of the contact, used to call the contact on the device.</p>
         pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.first_name = input;
             self
@@ -3439,6 +3708,7 @@ pub mod contact_data {
             self.last_name = Some(input.into());
             self
         }
+        /// <p>The last name of the contact, used to call the contact on the device.</p>
         pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.last_name = input;
             self
@@ -3450,16 +3720,25 @@ pub mod contact_data {
             self.phone_number = Some(input.into());
             self
         }
+        /// <p>The phone number of the contact. The phone number type defaults to WORK. You can
+        /// specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you
+        /// specify the phone number type and multiple numbers.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
         }
+        /// Appends an item to `phone_numbers`.
+        ///
+        /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
+        ///
+        /// <p>The list of phone numbers for the contact.</p>
         pub fn phone_numbers(mut self, input: impl Into<crate::model::PhoneNumber>) -> Self {
             let mut v = self.phone_numbers.unwrap_or_default();
             v.push(input.into());
             self.phone_numbers = Some(v);
             self
         }
+        /// <p>The list of phone numbers for the contact.</p>
         pub fn set_phone_numbers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>,
@@ -3467,12 +3746,18 @@ pub mod contact_data {
             self.phone_numbers = input;
             self
         }
+        /// Appends an item to `sip_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_sip_addresses`](Self::set_sip_addresses).
+        ///
+        /// <p>The list of SIP addresses for the contact.</p>
         pub fn sip_addresses(mut self, input: impl Into<crate::model::SipAddress>) -> Self {
             let mut v = self.sip_addresses.unwrap_or_default();
             v.push(input.into());
             self.sip_addresses = Some(v);
             self
         }
+        /// <p>The list of SIP addresses for the contact.</p>
         pub fn set_sip_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SipAddress>>,
@@ -3537,6 +3822,7 @@ pub mod address_book_data {
             self.address_book_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the address book.</p>
         pub fn set_address_book_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3549,6 +3835,7 @@ pub mod address_book_data {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the address book.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3558,6 +3845,7 @@ pub mod address_book_data {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the address book.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3613,6 +3901,8 @@ pub mod room_skill_parameter {
             self.parameter_key = Some(input.into());
             self
         }
+        /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that
+        /// only takes “DEFAULT” or “SCOPE” as valid values.</p>
         pub fn set_parameter_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3625,6 +3915,7 @@ pub mod room_skill_parameter {
             self.parameter_value = Some(input.into());
             self
         }
+        /// <p>The parameter value of a room skill parameter.</p>
         pub fn set_parameter_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3683,6 +3974,7 @@ pub mod conference_preference {
             self.default_conference_provider_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the default conference provider.</p>
         pub fn set_default_conference_provider_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3742,6 +4034,7 @@ pub mod smart_home_appliance {
             self.friendly_name = Some(input.into());
             self
         }
+        /// <p>The friendly name of the smart home appliance.</p>
         pub fn set_friendly_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3754,6 +4047,7 @@ pub mod smart_home_appliance {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the smart home appliance.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3763,6 +4057,7 @@ pub mod smart_home_appliance {
             self.manufacturer_name = Some(input.into());
             self
         }
+        /// <p>The name of the manufacturer of the smart home appliance.</p>
         pub fn set_manufacturer_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3839,6 +4134,7 @@ pub mod skills_store_skill {
             self.skill_id = Some(input.into());
             self
         }
+        /// <p>The ARN of the skill.</p>
         pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.skill_id = input;
             self
@@ -3848,6 +4144,7 @@ pub mod skills_store_skill {
             self.skill_name = Some(input.into());
             self
         }
+        /// <p>The name of the skill.</p>
         pub fn set_skill_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.skill_name = input;
             self
@@ -3857,6 +4154,7 @@ pub mod skills_store_skill {
             self.short_description = Some(input.into());
             self
         }
+        /// <p>Short description about the skill.</p>
         pub fn set_short_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3869,16 +4167,23 @@ pub mod skills_store_skill {
             self.icon_url = Some(input.into());
             self
         }
+        /// <p>The URL where the skill icon resides.</p>
         pub fn set_icon_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.icon_url = input;
             self
         }
+        /// Appends an item to `sample_utterances`.
+        ///
+        /// To override the contents of this collection use [`set_sample_utterances`](Self::set_sample_utterances).
+        ///
+        /// <p>Sample utterances that interact with the skill.</p>
         pub fn sample_utterances(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.sample_utterances.unwrap_or_default();
             v.push(input.into());
             self.sample_utterances = Some(v);
             self
         }
+        /// <p>Sample utterances that interact with the skill.</p>
         pub fn set_sample_utterances(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3891,6 +4196,7 @@ pub mod skills_store_skill {
             self.skill_details = Some(input);
             self
         }
+        /// <p>Information about the skill.</p>
         pub fn set_skill_details(
             mut self,
             input: std::option::Option<crate::model::SkillDetails>,
@@ -3903,6 +4209,7 @@ pub mod skills_store_skill {
             self.supports_linking = Some(input);
             self
         }
+        /// <p>Linking support for a skill.</p>
         pub fn set_supports_linking(mut self, input: std::option::Option<bool>) -> Self {
             self.supports_linking = input;
             self
@@ -4006,6 +4313,7 @@ pub mod skill_details {
             self.product_description = Some(input.into());
             self
         }
+        /// <p>The description of the product.</p>
         pub fn set_product_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4018,6 +4326,7 @@ pub mod skill_details {
             self.invocation_phrase = Some(input.into());
             self
         }
+        /// <p>The phrase used to trigger the skill.</p>
         pub fn set_invocation_phrase(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4030,6 +4339,7 @@ pub mod skill_details {
             self.release_date = Some(input.into());
             self
         }
+        /// <p>The date when the skill was released.</p>
         pub fn set_release_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.release_date = input;
             self
@@ -4039,6 +4349,7 @@ pub mod skill_details {
             self.end_user_license_agreement = Some(input.into());
             self
         }
+        /// <p>The URL of the end user license agreement.</p>
         pub fn set_end_user_license_agreement(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4046,12 +4357,20 @@ pub mod skill_details {
             self.end_user_license_agreement = input;
             self
         }
+        /// Appends an item to `generic_keywords`.
+        ///
+        /// To override the contents of this collection use [`set_generic_keywords`](Self::set_generic_keywords).
+        ///
+        /// <p>The generic keywords associated with the skill that can be used to find a
+        /// skill.</p>
         pub fn generic_keywords(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.generic_keywords.unwrap_or_default();
             v.push(input.into());
             self.generic_keywords = Some(v);
             self
         }
+        /// <p>The generic keywords associated with the skill that can be used to find a
+        /// skill.</p>
         pub fn set_generic_keywords(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4059,12 +4378,18 @@ pub mod skill_details {
             self.generic_keywords = input;
             self
         }
+        /// Appends an item to `bullet_points`.
+        ///
+        /// To override the contents of this collection use [`set_bullet_points`](Self::set_bullet_points).
+        ///
+        /// <p>The details about what the skill supports organized as bullet points.</p>
         pub fn bullet_points(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.bullet_points.unwrap_or_default();
             v.push(input.into());
             self.bullet_points = Some(v);
             self
         }
+        /// <p>The details about what the skill supports organized as bullet points.</p>
         pub fn set_bullet_points(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4072,6 +4397,11 @@ pub mod skill_details {
             self.bullet_points = input;
             self
         }
+        /// Appends an item to `new_in_this_version_bullet_points`.
+        ///
+        /// To override the contents of this collection use [`set_new_in_this_version_bullet_points`](Self::set_new_in_this_version_bullet_points).
+        ///
+        /// <p>The updates added in bullet points.</p>
         pub fn new_in_this_version_bullet_points(
             mut self,
             input: impl Into<std::string::String>,
@@ -4081,6 +4411,7 @@ pub mod skill_details {
             self.new_in_this_version_bullet_points = Some(v);
             self
         }
+        /// <p>The updates added in bullet points.</p>
         pub fn set_new_in_this_version_bullet_points(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4088,12 +4419,18 @@ pub mod skill_details {
             self.new_in_this_version_bullet_points = input;
             self
         }
+        /// Appends an item to `skill_types`.
+        ///
+        /// To override the contents of this collection use [`set_skill_types`](Self::set_skill_types).
+        ///
+        /// <p>The types of skills.</p>
         pub fn skill_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.skill_types.unwrap_or_default();
             v.push(input.into());
             self.skill_types = Some(v);
             self
         }
+        /// <p>The types of skills.</p>
         pub fn set_skill_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4101,6 +4438,14 @@ pub mod skill_details {
             self.skill_types = input;
             self
         }
+        /// Adds a key-value pair to `reviews`.
+        ///
+        /// To override the contents of this collection use [`set_reviews`](Self::set_reviews).
+        ///
+        /// <p>
+        /// <i>This member has been deprecated.</i>
+        /// </p>
+        /// <p>The list of reviews for the skill, including Key and Value pair.</p>
         pub fn reviews(
             mut self,
             k: impl Into<std::string::String>,
@@ -4111,6 +4456,10 @@ pub mod skill_details {
             self.reviews = Some(hash_map);
             self
         }
+        /// <p>
+        /// <i>This member has been deprecated.</i>
+        /// </p>
+        /// <p>The list of reviews for the skill, including Key and Value pair.</p>
         pub fn set_reviews(
             mut self,
             input: std::option::Option<
@@ -4125,6 +4474,7 @@ pub mod skill_details {
             self.developer_info = Some(input);
             self
         }
+        /// <p>The details about the developer that published the skill.</p>
         pub fn set_developer_info(
             mut self,
             input: std::option::Option<crate::model::DeveloperInfo>,
@@ -4196,6 +4546,7 @@ pub mod developer_info {
             self.developer_name = Some(input.into());
             self
         }
+        /// <p>The name of the developer.</p>
         pub fn set_developer_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4208,6 +4559,7 @@ pub mod developer_info {
             self.privacy_policy = Some(input.into());
             self
         }
+        /// <p>The URL of the privacy policy.</p>
         pub fn set_privacy_policy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4220,6 +4572,7 @@ pub mod developer_info {
             self.email = Some(input.into());
             self
         }
+        /// <p>The email of the developer.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.email = input;
             self
@@ -4229,6 +4582,7 @@ pub mod developer_info {
             self.url = Some(input.into());
             self
         }
+        /// <p>The website of the developer.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -4284,6 +4638,7 @@ pub mod category {
             self.category_id = Some(input);
             self
         }
+        /// <p>The ID of the skill store category.</p>
         pub fn set_category_id(mut self, input: std::option::Option<i64>) -> Self {
             self.category_id = input;
             self
@@ -4293,6 +4648,7 @@ pub mod category {
             self.category_name = Some(input.into());
             self
         }
+        /// <p>The name of the skill store category.</p>
         pub fn set_category_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4361,6 +4717,7 @@ pub mod skill_summary {
             self.skill_id = Some(input.into());
             self
         }
+        /// <p>The ARN of the skill summary.</p>
         pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.skill_id = input;
             self
@@ -4370,6 +4727,7 @@ pub mod skill_summary {
             self.skill_name = Some(input.into());
             self
         }
+        /// <p>The name of the skill.</p>
         pub fn set_skill_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.skill_name = input;
             self
@@ -4379,6 +4737,7 @@ pub mod skill_summary {
             self.supports_linking = Some(input);
             self
         }
+        /// <p>Linking support for a skill.</p>
         pub fn set_supports_linking(mut self, input: std::option::Option<bool>) -> Self {
             self.supports_linking = input;
             self
@@ -4389,6 +4748,8 @@ pub mod skill_summary {
             self.enablement_type = Some(input);
             self
         }
+        /// <p>Whether the skill is enabled under the user's account, or if it requires linking to be
+        /// used.</p>
         pub fn set_enablement_type(
             mut self,
             input: std::option::Option<crate::model::EnablementType>,
@@ -4401,6 +4762,7 @@ pub mod skill_summary {
             self.skill_type = Some(input);
             self
         }
+        /// <p>Whether the skill is publicly available or is a private skill.</p>
         pub fn set_skill_type(
             mut self,
             input: std::option::Option<crate::model::SkillType>,
@@ -4427,6 +4789,7 @@ impl SkillSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4438,7 +4801,9 @@ impl SkillSummary {
     std::hash::Hash,
 )]
 pub enum SkillType {
+    #[allow(missing_docs)] // documentation missing in model
     Private,
+    #[allow(missing_docs)] // documentation missing in model
     Public,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4460,6 +4825,7 @@ impl std::str::FromStr for SkillType {
     }
 }
 impl SkillType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SkillType::Private => "PRIVATE",
@@ -4467,6 +4833,7 @@ impl SkillType {
             SkillType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PRIVATE", "PUBLIC"]
     }
@@ -4477,6 +4844,7 @@ impl AsRef<str> for SkillType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4488,7 +4856,9 @@ impl AsRef<str> for SkillType {
     std::hash::Hash,
 )]
 pub enum EnablementType {
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4510,6 +4880,7 @@ impl std::str::FromStr for EnablementType {
     }
 }
 impl EnablementType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EnablementType::Enabled => "ENABLED",
@@ -4517,6 +4888,7 @@ impl EnablementType {
             EnablementType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ENABLED", "PENDING"]
     }
@@ -4527,6 +4899,7 @@ impl AsRef<str> for EnablementType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4538,8 +4911,11 @@ impl AsRef<str> for EnablementType {
     std::hash::Hash,
 )]
 pub enum SkillTypeFilter {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Private,
+    #[allow(missing_docs)] // documentation missing in model
     Public,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4562,6 +4938,7 @@ impl std::str::FromStr for SkillTypeFilter {
     }
 }
 impl SkillTypeFilter {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SkillTypeFilter::All => "ALL",
@@ -4570,6 +4947,7 @@ impl SkillTypeFilter {
             SkillTypeFilter::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL", "PRIVATE", "PUBLIC"]
     }
@@ -4580,6 +4958,7 @@ impl AsRef<str> for SkillTypeFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4591,7 +4970,9 @@ impl AsRef<str> for SkillTypeFilter {
     std::hash::Hash,
 )]
 pub enum EnablementTypeFilter {
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4613,6 +4994,7 @@ impl std::str::FromStr for EnablementTypeFilter {
     }
 }
 impl EnablementTypeFilter {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EnablementTypeFilter::Enabled => "ENABLED",
@@ -4620,6 +5002,7 @@ impl EnablementTypeFilter {
             EnablementTypeFilter::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ENABLED", "PENDING"]
     }
@@ -4675,6 +5058,7 @@ pub mod gateway_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the gateway.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -4684,6 +5068,7 @@ pub mod gateway_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the gateway.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4693,6 +5078,7 @@ pub mod gateway_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the gateway.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -4702,6 +5088,7 @@ pub mod gateway_summary {
             self.gateway_group_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the gateway group that the gateway is associated to.</p>
         pub fn set_gateway_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4715,6 +5102,8 @@ pub mod gateway_summary {
             self.software_version = Some(input.into());
             self
         }
+        /// <p>The software version of the gateway. The gateway automatically updates its software
+        /// version during normal operation.</p>
         pub fn set_software_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4777,6 +5166,7 @@ pub mod gateway_group_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the gateway group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -4786,6 +5176,7 @@ pub mod gateway_group_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the gateway group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4795,6 +5186,7 @@ pub mod gateway_group_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the gateway group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -4825,7 +5217,7 @@ pub struct DeviceEvent {
     /// <p>The value of the event.</p>
     pub value: std::option::Option<std::string::String>,
     /// <p>The time (in epoch) when the event occurred. </p>
-    pub timestamp: std::option::Option<smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DeviceEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4844,7 +5236,7 @@ pub mod device_event {
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::DeviceEventType>,
         pub(crate) value: std::option::Option<std::string::String>,
-        pub(crate) timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The type of device event.</p>
@@ -4852,6 +5244,7 @@ pub mod device_event {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of device event.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DeviceEventType>,
@@ -4864,16 +5257,21 @@ pub mod device_event {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the event.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
         }
         /// <p>The time (in epoch) when the event occurred. </p>
-        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time (in epoch) when the event occurred. </p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.timestamp = input;
             self
         }
@@ -4894,6 +5292,7 @@ impl DeviceEvent {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4905,7 +5304,9 @@ impl DeviceEvent {
     std::hash::Hash,
 )]
 pub enum DeviceEventType {
+    #[allow(missing_docs)] // documentation missing in model
     ConnectionStatus,
+    #[allow(missing_docs)] // documentation missing in model
     DeviceStatus,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4927,6 +5328,7 @@ impl std::str::FromStr for DeviceEventType {
     }
 }
 impl DeviceEventType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeviceEventType::ConnectionStatus => "CONNECTION_STATUS",
@@ -4934,6 +5336,7 @@ impl DeviceEventType {
             DeviceEventType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONNECTION_STATUS", "DEVICE_STATUS"]
     }
@@ -4992,6 +5395,7 @@ pub mod conference_provider {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the newly created conference provider.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5001,6 +5405,7 @@ pub mod conference_provider {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the conference provider.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5010,6 +5415,7 @@ pub mod conference_provider {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of conference providers.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ConferenceProviderType>,
@@ -5022,6 +5428,7 @@ pub mod conference_provider {
             self.ip_dial_in = Some(input);
             self
         }
+        /// <p>The IP endpoint and protocol for calling.</p>
         pub fn set_ip_dial_in(
             mut self,
             input: std::option::Option<crate::model::IpDialIn>,
@@ -5034,6 +5441,7 @@ pub mod conference_provider {
             self.pstn_dial_in = Some(input);
             self
         }
+        /// <p>The information for PSTN conferencing.</p>
         pub fn set_pstn_dial_in(
             mut self,
             input: std::option::Option<crate::model::PstnDialIn>,
@@ -5046,6 +5454,7 @@ pub mod conference_provider {
             self.meeting_setting = Some(input);
             self
         }
+        /// <p>The meeting settings for the conference provider.</p>
         pub fn set_meeting_setting(
             mut self,
             input: std::option::Option<crate::model::MeetingSetting>,
@@ -5131,6 +5540,7 @@ pub mod business_report_schedule {
             self.schedule_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the business report schedule.</p>
         pub fn set_schedule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schedule_arn = input;
             self
@@ -5140,6 +5550,7 @@ pub mod business_report_schedule {
             self.schedule_name = Some(input.into());
             self
         }
+        /// <p>The name identifier of the schedule.</p>
         pub fn set_schedule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5152,6 +5563,7 @@ pub mod business_report_schedule {
             self.s3_bucket_name = Some(input.into());
             self
         }
+        /// <p>The S3 bucket name of the output reports.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5164,6 +5576,7 @@ pub mod business_report_schedule {
             self.s3_key_prefix = Some(input.into());
             self
         }
+        /// <p>The S3 key where the report is delivered.</p>
         pub fn set_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5177,6 +5590,8 @@ pub mod business_report_schedule {
             self.format = Some(input);
             self
         }
+        /// <p>The format of the generated report (individual CSV files or zipped files of
+        /// individual files).</p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::BusinessReportFormat>,
@@ -5189,6 +5604,7 @@ pub mod business_report_schedule {
             self.content_range = Some(input);
             self
         }
+        /// <p>The content range of the reports.</p>
         pub fn set_content_range(
             mut self,
             input: std::option::Option<crate::model::BusinessReportContentRange>,
@@ -5201,6 +5617,7 @@ pub mod business_report_schedule {
             self.recurrence = Some(input);
             self
         }
+        /// <p>The recurrence of the reports.</p>
         pub fn set_recurrence(
             mut self,
             input: std::option::Option<crate::model::BusinessReportRecurrence>,
@@ -5214,6 +5631,8 @@ pub mod business_report_schedule {
             self.last_business_report = Some(input);
             self
         }
+        /// <p>The details of the last business report delivery for a specified time
+        /// interval.</p>
         pub fn set_last_business_report(
             mut self,
             input: std::option::Option<crate::model::BusinessReport>,
@@ -5255,7 +5674,7 @@ pub struct BusinessReport {
     /// <p>The S3 location of the output reports.</p>
     pub s3_location: std::option::Option<crate::model::BusinessReportS3Location>,
     /// <p>The time of report delivery.</p>
-    pub delivery_time: std::option::Option<smithy_types::Instant>,
+    pub delivery_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The download link where a user can download the report.</p>
     pub download_url: std::option::Option<std::string::String>,
 }
@@ -5279,7 +5698,7 @@ pub mod business_report {
         pub(crate) status: std::option::Option<crate::model::BusinessReportStatus>,
         pub(crate) failure_code: std::option::Option<crate::model::BusinessReportFailureCode>,
         pub(crate) s3_location: std::option::Option<crate::model::BusinessReportS3Location>,
-        pub(crate) delivery_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) delivery_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) download_url: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5289,6 +5708,8 @@ pub mod business_report {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the report generation execution (RUNNING, SUCCEEDED, or
+        /// FAILED).</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::BusinessReportStatus>,
@@ -5301,6 +5722,7 @@ pub mod business_report {
             self.failure_code = Some(input);
             self
         }
+        /// <p>The failure code.</p>
         pub fn set_failure_code(
             mut self,
             input: std::option::Option<crate::model::BusinessReportFailureCode>,
@@ -5313,6 +5735,7 @@ pub mod business_report {
             self.s3_location = Some(input);
             self
         }
+        /// <p>The S3 location of the output reports.</p>
         pub fn set_s3_location(
             mut self,
             input: std::option::Option<crate::model::BusinessReportS3Location>,
@@ -5321,13 +5744,14 @@ pub mod business_report {
             self
         }
         /// <p>The time of report delivery.</p>
-        pub fn delivery_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn delivery_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.delivery_time = Some(input);
             self
         }
+        /// <p>The time of report delivery.</p>
         pub fn set_delivery_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.delivery_time = input;
             self
@@ -5337,6 +5761,7 @@ pub mod business_report {
             self.download_url = Some(input.into());
             self
         }
+        /// <p>The download link where a user can download the report.</p>
         pub fn set_download_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.download_url = input;
             self
@@ -5392,6 +5817,7 @@ pub mod business_report_s3_location {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path of the business report.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -5401,6 +5827,7 @@ pub mod business_report_s3_location {
             self.bucket_name = Some(input.into());
             self
         }
+        /// <p>The S3 bucket name of the output reports.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
@@ -5421,6 +5848,7 @@ impl BusinessReportS3Location {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5432,8 +5860,11 @@ impl BusinessReportS3Location {
     std::hash::Hash,
 )]
 pub enum BusinessReportFailureCode {
+    #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
     InternalFailure,
+    #[allow(missing_docs)] // documentation missing in model
     NoSuchBucket,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5456,6 +5887,7 @@ impl std::str::FromStr for BusinessReportFailureCode {
     }
 }
 impl BusinessReportFailureCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BusinessReportFailureCode::AccessDenied => "ACCESS_DENIED",
@@ -5464,6 +5896,7 @@ impl BusinessReportFailureCode {
             BusinessReportFailureCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACCESS_DENIED", "INTERNAL_FAILURE", "NO_SUCH_BUCKET"]
     }
@@ -5474,6 +5907,7 @@ impl AsRef<str> for BusinessReportFailureCode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5485,8 +5919,11 @@ impl AsRef<str> for BusinessReportFailureCode {
     std::hash::Hash,
 )]
 pub enum BusinessReportStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5509,6 +5946,7 @@ impl std::str::FromStr for BusinessReportStatus {
     }
 }
 impl BusinessReportStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BusinessReportStatus::Failed => "FAILED",
@@ -5517,6 +5955,7 @@ impl BusinessReportStatus {
             BusinessReportStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "RUNNING", "SUCCEEDED"]
     }
@@ -5555,6 +5994,7 @@ pub mod business_report_content_range {
             self.interval = Some(input);
             self
         }
+        /// <p>The interval of the content range.</p>
         pub fn set_interval(
             mut self,
             input: std::option::Option<crate::model::BusinessReportInterval>,
@@ -5577,6 +6017,7 @@ impl BusinessReportContentRange {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5588,8 +6029,11 @@ impl BusinessReportContentRange {
     std::hash::Hash,
 )]
 pub enum BusinessReportInterval {
+    #[allow(missing_docs)] // documentation missing in model
     OneDay,
+    #[allow(missing_docs)] // documentation missing in model
     OneWeek,
+    #[allow(missing_docs)] // documentation missing in model
     ThirtyDays,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5612,6 +6056,7 @@ impl std::str::FromStr for BusinessReportInterval {
     }
 }
 impl BusinessReportInterval {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BusinessReportInterval::OneDay => "ONE_DAY",
@@ -5620,6 +6065,7 @@ impl BusinessReportInterval {
             BusinessReportInterval::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ONE_DAY", "ONE_WEEK", "THIRTY_DAYS"]
     }
@@ -5666,6 +6112,7 @@ pub mod skill_group {
             self.skill_group_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of a skill group.</p>
         pub fn set_skill_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5678,6 +6125,7 @@ pub mod skill_group {
             self.skill_group_name = Some(input.into());
             self
         }
+        /// <p>The name of a skill group.</p>
         pub fn set_skill_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5690,6 +6138,7 @@ pub mod skill_group {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of a skill group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5755,6 +6204,7 @@ pub mod room {
             self.room_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of a room.</p>
         pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.room_arn = input;
             self
@@ -5764,6 +6214,7 @@ pub mod room {
             self.room_name = Some(input.into());
             self
         }
+        /// <p>The name of a room.</p>
         pub fn set_room_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.room_name = input;
             self
@@ -5773,6 +6224,7 @@ pub mod room {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of a room.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5782,6 +6234,7 @@ pub mod room {
             self.provider_calendar_id = Some(input.into());
             self
         }
+        /// <p>The provider calendar ARN of a room.</p>
         pub fn set_provider_calendar_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5794,6 +6247,7 @@ pub mod room {
             self.profile_arn = Some(input.into());
             self
         }
+        /// <p>The profile ARN of a room.</p>
         pub fn set_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.profile_arn = input;
             self
@@ -5906,6 +6360,7 @@ pub mod profile {
             self.profile_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of a room profile.</p>
         pub fn set_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.profile_arn = input;
             self
@@ -5915,6 +6370,7 @@ pub mod profile {
             self.profile_name = Some(input.into());
             self
         }
+        /// <p>The name of a room profile.</p>
         pub fn set_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.profile_name = input;
             self
@@ -5924,6 +6380,7 @@ pub mod profile {
             self.is_default = Some(input);
             self
         }
+        /// <p>Retrieves if the profile is default or not.</p>
         pub fn set_is_default(mut self, input: std::option::Option<bool>) -> Self {
             self.is_default = input;
             self
@@ -5933,6 +6390,7 @@ pub mod profile {
             self.address = Some(input.into());
             self
         }
+        /// <p>The address of a room profile.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address = input;
             self
@@ -5942,6 +6400,7 @@ pub mod profile {
             self.timezone = Some(input.into());
             self
         }
+        /// <p>The time zone of a room profile.</p>
         pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timezone = input;
             self
@@ -5951,6 +6410,7 @@ pub mod profile {
             self.distance_unit = Some(input);
             self
         }
+        /// <p>The distance unit of a room profile.</p>
         pub fn set_distance_unit(
             mut self,
             input: std::option::Option<crate::model::DistanceUnit>,
@@ -5963,6 +6423,7 @@ pub mod profile {
             self.temperature_unit = Some(input);
             self
         }
+        /// <p>The temperature unit of a room profile.</p>
         pub fn set_temperature_unit(
             mut self,
             input: std::option::Option<crate::model::TemperatureUnit>,
@@ -5975,6 +6436,7 @@ pub mod profile {
             self.wake_word = Some(input);
             self
         }
+        /// <p>The wake word of a room profile.</p>
         pub fn set_wake_word(mut self, input: std::option::Option<crate::model::WakeWord>) -> Self {
             self.wake_word = input;
             self
@@ -5985,6 +6447,8 @@ pub mod profile {
             self.locale = Some(input.into());
             self
         }
+        /// <p>The locale of a room profile. (This is currently available only to a limited preview
+        /// audience.)</p>
         pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale = input;
             self
@@ -5994,6 +6458,7 @@ pub mod profile {
             self.setup_mode_disabled = Some(input);
             self
         }
+        /// <p>The setup mode of a room profile.</p>
         pub fn set_setup_mode_disabled(mut self, input: std::option::Option<bool>) -> Self {
             self.setup_mode_disabled = input;
             self
@@ -6003,6 +6468,7 @@ pub mod profile {
             self.max_volume_limit = Some(input);
             self
         }
+        /// <p>The max volume limit of a room profile.</p>
         pub fn set_max_volume_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.max_volume_limit = input;
             self
@@ -6012,6 +6478,7 @@ pub mod profile {
             self.pstn_enabled = Some(input);
             self
         }
+        /// <p>The PSTN setting of a room profile.</p>
         pub fn set_pstn_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.pstn_enabled = input;
             self
@@ -6021,6 +6488,7 @@ pub mod profile {
             self.data_retention_opt_in = Some(input);
             self
         }
+        /// <p>Whether data retention of the profile is enabled.</p>
         pub fn set_data_retention_opt_in(mut self, input: std::option::Option<bool>) -> Self {
             self.data_retention_opt_in = input;
             self
@@ -6030,6 +6498,7 @@ pub mod profile {
             self.address_book_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the address book.</p>
         pub fn set_address_book_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6045,6 +6514,7 @@ pub mod profile {
             self.meeting_room_configuration = Some(input);
             self
         }
+        /// <p>Meeting room settings of a room profile.</p>
         pub fn set_meeting_room_configuration(
             mut self,
             input: std::option::Option<crate::model::MeetingRoomConfiguration>,
@@ -6129,6 +6599,7 @@ pub mod meeting_room_configuration {
             self.room_utilization_metrics_enabled = Some(input);
             self
         }
+        /// <p>Whether room utilization metrics are enabled or not.</p>
         pub fn set_room_utilization_metrics_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -6145,6 +6616,8 @@ pub mod meeting_room_configuration {
             self.end_of_meeting_reminder = Some(input);
             self
         }
+        /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The
+        /// end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
         pub fn set_end_of_meeting_reminder(
             mut self,
             input: std::option::Option<crate::model::EndOfMeetingReminder>,
@@ -6158,6 +6631,8 @@ pub mod meeting_room_configuration {
             self.instant_booking = Some(input);
             self
         }
+        /// <p>Settings to automatically book the room if available for a configured duration when
+        /// joining a meeting with Alexa. </p>
         pub fn set_instant_booking(
             mut self,
             input: std::option::Option<crate::model::InstantBooking>,
@@ -6173,6 +6648,10 @@ pub mod meeting_room_configuration {
             self.require_check_in = Some(input);
             self
         }
+        /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room
+        /// reservation if it's not checked into. This makes the room available for others. Users can
+        /// check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check
+        /// in.” </p>
         pub fn set_require_check_in(
             mut self,
             input: std::option::Option<crate::model::RequireCheckIn>,
@@ -6230,6 +6709,7 @@ pub mod require_check_in {
             self.release_after_minutes = Some(input);
             self
         }
+        /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into. </p>
         pub fn set_release_after_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.release_after_minutes = input;
             self
@@ -6239,6 +6719,7 @@ pub mod require_check_in {
             self.enabled = Some(input);
             self
         }
+        /// <p>Whether require check in is enabled or not.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -6295,6 +6776,8 @@ pub mod instant_booking {
             self.duration_in_minutes = Some(input);
             self
         }
+        /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book
+        /// an available room when a meeting is started with Alexa. </p>
         pub fn set_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.duration_in_minutes = input;
             self
@@ -6304,6 +6787,7 @@ pub mod instant_booking {
             self.enabled = Some(input);
             self
         }
+        /// <p>Whether instant booking is enabled or not.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -6356,12 +6840,18 @@ pub mod end_of_meeting_reminder {
         pub(crate) enabled: std::option::Option<bool>,
     }
     impl Builder {
+        /// Appends an item to `reminder_at_minutes`.
+        ///
+        /// To override the contents of this collection use [`set_reminder_at_minutes`](Self::set_reminder_at_minutes).
+        ///
+        /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
         pub fn reminder_at_minutes(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.reminder_at_minutes.unwrap_or_default();
             v.push(input.into());
             self.reminder_at_minutes = Some(v);
             self
         }
+        /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
         pub fn set_reminder_at_minutes(
             mut self,
             input: std::option::Option<std::vec::Vec<i32>>,
@@ -6374,6 +6864,7 @@ pub mod end_of_meeting_reminder {
             self.reminder_type = Some(input);
             self
         }
+        /// <p>The type of sound that users hear during the end of meeting reminder. </p>
         pub fn set_reminder_type(
             mut self,
             input: std::option::Option<crate::model::EndOfMeetingReminderType>,
@@ -6386,6 +6877,7 @@ pub mod end_of_meeting_reminder {
             self.enabled = Some(input);
             self
         }
+        /// <p>Whether an end of meeting reminder is enabled or not.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -6477,6 +6969,7 @@ pub mod network_profile {
             self.network_profile_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the network profile associated with a device.</p>
         pub fn set_network_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6489,6 +6982,7 @@ pub mod network_profile {
             self.network_profile_name = Some(input.into());
             self
         }
+        /// <p>The name of the network profile associated with a device.</p>
         pub fn set_network_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6501,6 +6995,7 @@ pub mod network_profile {
             self.description = Some(input.into());
             self
         }
+        /// <p>Detailed information about a device's network profile.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -6510,6 +7005,7 @@ pub mod network_profile {
             self.ssid = Some(input.into());
             self
         }
+        /// <p>The SSID of the Wi-Fi network.</p>
         pub fn set_ssid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ssid = input;
             self
@@ -6520,6 +7016,8 @@ pub mod network_profile {
             self.security_type = Some(input);
             self
         }
+        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
+        /// WEP, or OPEN.</p>
         pub fn set_security_type(
             mut self,
             input: std::option::Option<crate::model::NetworkSecurityType>,
@@ -6533,6 +7031,8 @@ pub mod network_profile {
             self.eap_method = Some(input);
             self
         }
+        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
+        /// supported. </p>
         pub fn set_eap_method(
             mut self,
             input: std::option::Option<crate::model::NetworkEapMethod>,
@@ -6545,6 +7045,7 @@ pub mod network_profile {
             self.current_password = Some(input.into());
             self
         }
+        /// <p>The current password of the Wi-Fi network.</p>
         pub fn set_current_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6559,6 +7060,9 @@ pub mod network_profile {
             self.next_password = Some(input.into());
             self
         }
+        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
+        /// transmitted to the device and is used when the password of the network changes to
+        /// NextPassword. </p>
         pub fn set_next_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6572,6 +7076,8 @@ pub mod network_profile {
             self.certificate_authority_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
+        /// (ACM). This is used to issue certificates to the devices. </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6579,12 +7085,20 @@ pub mod network_profile {
             self.certificate_authority_arn = input;
             self
         }
+        /// Appends an item to `trust_anchors`.
+        ///
+        /// To override the contents of this collection use [`set_trust_anchors`](Self::set_trust_anchors).
+        ///
+        /// <p>The root certificates of your authentication server, which is installed on your devices
+        /// and used to trust your authentication server during EAP negotiation.</p>
         pub fn trust_anchors(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.trust_anchors.unwrap_or_default();
             v.push(input.into());
             self.trust_anchors = Some(v);
             self
         }
+        /// <p>The root certificates of your authentication server, which is installed on your devices
+        /// and used to trust your authentication server during EAP negotiation.</p>
         pub fn set_trust_anchors(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6652,6 +7166,7 @@ pub mod gateway_group {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the gateway group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -6661,6 +7176,7 @@ pub mod gateway_group {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the gateway group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6670,6 +7186,7 @@ pub mod gateway_group {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the gateway group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -6736,6 +7253,7 @@ pub mod gateway {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the gateway.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -6745,6 +7263,7 @@ pub mod gateway {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the gateway.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6754,6 +7273,7 @@ pub mod gateway {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the gateway.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -6763,6 +7283,7 @@ pub mod gateway {
             self.gateway_group_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the gateway group that the gateway is associated to.</p>
         pub fn set_gateway_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6776,6 +7297,8 @@ pub mod gateway {
             self.software_version = Some(input.into());
             self
         }
+        /// <p>The software version of the gateway. The gateway automatically updates its software
+        /// version during normal operation.</p>
         pub fn set_software_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6868,6 +7391,7 @@ pub mod device {
             self.device_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of a device.</p>
         pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_arn = input;
             self
@@ -6877,6 +7401,7 @@ pub mod device {
             self.device_serial_number = Some(input.into());
             self
         }
+        /// <p>The serial number of a device.</p>
         pub fn set_device_serial_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6889,6 +7414,7 @@ pub mod device {
             self.device_type = Some(input.into());
             self
         }
+        /// <p>The type of a device.</p>
         pub fn set_device_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_type = input;
             self
@@ -6898,6 +7424,7 @@ pub mod device {
             self.device_name = Some(input.into());
             self
         }
+        /// <p>The name of a device.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_name = input;
             self
@@ -6907,6 +7434,7 @@ pub mod device {
             self.software_version = Some(input.into());
             self
         }
+        /// <p>The software version of a device.</p>
         pub fn set_software_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6919,6 +7447,7 @@ pub mod device {
             self.mac_address = Some(input.into());
             self
         }
+        /// <p>The MAC address of a device.</p>
         pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mac_address = input;
             self
@@ -6928,6 +7457,7 @@ pub mod device {
             self.room_arn = Some(input.into());
             self
         }
+        /// <p>The room ARN of a device.</p>
         pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.room_arn = input;
             self
@@ -6938,6 +7468,8 @@ pub mod device {
             self.device_status = Some(input);
             self
         }
+        /// <p>The status of a device. If the status is not READY, check the DeviceStatusInfo value
+        /// for details.</p>
         pub fn set_device_status(
             mut self,
             input: std::option::Option<crate::model::DeviceStatus>,
@@ -6950,6 +7482,7 @@ pub mod device {
             self.device_status_info = Some(input);
             self
         }
+        /// <p>Detailed information about a device's status.</p>
         pub fn set_device_status_info(
             mut self,
             input: std::option::Option<crate::model::DeviceStatusInfo>,
@@ -6965,6 +7498,7 @@ pub mod device {
             self.network_profile_info = Some(input);
             self
         }
+        /// <p>Detailed information about a device's network profile.</p>
         pub fn set_network_profile_info(
             mut self,
             input: std::option::Option<crate::model::DeviceNetworkProfileInfo>,
@@ -7005,7 +7539,7 @@ pub struct DeviceNetworkProfileInfo {
     /// <p>The ARN of the certificate associated with a device.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The time (in epoch) when the certificate expires.</p>
-    pub certificate_expiration_time: std::option::Option<smithy_types::Instant>,
+    pub certificate_expiration_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DeviceNetworkProfileInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7027,7 +7561,7 @@ pub mod device_network_profile_info {
     pub struct Builder {
         pub(crate) network_profile_arn: std::option::Option<std::string::String>,
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
-        pub(crate) certificate_expiration_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) certificate_expiration_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ARN of the network profile associated with a device.</p>
@@ -7035,6 +7569,7 @@ pub mod device_network_profile_info {
             self.network_profile_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the network profile associated with a device.</p>
         pub fn set_network_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7047,6 +7582,7 @@ pub mod device_network_profile_info {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the certificate associated with a device.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7055,13 +7591,14 @@ pub mod device_network_profile_info {
             self
         }
         /// <p>The time (in epoch) when the certificate expires.</p>
-        pub fn certificate_expiration_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn certificate_expiration_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.certificate_expiration_time = Some(input);
             self
         }
+        /// <p>The time (in epoch) when the certificate expires.</p>
         pub fn set_certificate_expiration_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.certificate_expiration_time = input;
             self
@@ -7137,6 +7674,7 @@ pub mod contact {
             self.contact_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the contact.</p>
         pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.contact_arn = input;
             self
@@ -7146,6 +7684,7 @@ pub mod contact {
             self.display_name = Some(input.into());
             self
         }
+        /// <p>The name of the contact to display on the console.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -7155,6 +7694,7 @@ pub mod contact {
             self.first_name = Some(input.into());
             self
         }
+        /// <p>The first name of the contact, used to call the contact on the device.</p>
         pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.first_name = input;
             self
@@ -7164,6 +7704,7 @@ pub mod contact {
             self.last_name = Some(input.into());
             self
         }
+        /// <p>The last name of the contact, used to call the contact on the device.</p>
         pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.last_name = input;
             self
@@ -7175,16 +7716,25 @@ pub mod contact {
             self.phone_number = Some(input.into());
             self
         }
+        /// <p>The phone number of the contact. The phone number type defaults to WORK. You can
+        /// either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which
+        /// lets you specify the phone number type and multiple numbers.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
         }
+        /// Appends an item to `phone_numbers`.
+        ///
+        /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
+        ///
+        /// <p>The list of phone numbers for the contact.</p>
         pub fn phone_numbers(mut self, input: impl Into<crate::model::PhoneNumber>) -> Self {
             let mut v = self.phone_numbers.unwrap_or_default();
             v.push(input.into());
             self.phone_numbers = Some(v);
             self
         }
+        /// <p>The list of phone numbers for the contact.</p>
         pub fn set_phone_numbers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>,
@@ -7192,12 +7742,18 @@ pub mod contact {
             self.phone_numbers = input;
             self
         }
+        /// Appends an item to `sip_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_sip_addresses`](Self::set_sip_addresses).
+        ///
+        /// <p>The list of SIP addresses for the contact.</p>
         pub fn sip_addresses(mut self, input: impl Into<crate::model::SipAddress>) -> Self {
             let mut v = self.sip_addresses.unwrap_or_default();
             v.push(input.into());
             self.sip_addresses = Some(v);
             self
         }
+        /// <p>The list of SIP addresses for the contact.</p>
         pub fn set_sip_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SipAddress>>,
@@ -7262,6 +7818,7 @@ pub mod address_book {
             self.address_book_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the address book.</p>
         pub fn set_address_book_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7274,6 +7831,7 @@ pub mod address_book {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the address book.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7283,6 +7841,7 @@ pub mod address_book {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the address book.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -7304,6 +7863,7 @@ impl AddressBook {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7315,6 +7875,7 @@ impl AddressBook {
     std::hash::Hash,
 )]
 pub enum DeviceUsageType {
+    #[allow(missing_docs)] // documentation missing in model
     Voice,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7335,12 +7896,14 @@ impl std::str::FromStr for DeviceUsageType {
     }
 }
 impl DeviceUsageType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeviceUsageType::Voice => "VOICE",
             DeviceUsageType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["VOICE"]
     }
@@ -7397,6 +7960,7 @@ pub mod create_meeting_room_configuration {
             self.room_utilization_metrics_enabled = Some(input);
             self
         }
+        /// <p>Whether room utilization metrics are enabled or not.</p>
         pub fn set_room_utilization_metrics_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -7414,6 +7978,9 @@ pub mod create_meeting_room_configuration {
             self.end_of_meeting_reminder = Some(input);
             self
         }
+        /// <p>Creates settings for the end of meeting reminder feature that are applied to a room
+        /// profile. The end of meeting reminder enables Alexa to remind users when a meeting is
+        /// ending.</p>
         pub fn set_end_of_meeting_reminder(
             mut self,
             input: std::option::Option<crate::model::CreateEndOfMeetingReminder>,
@@ -7426,6 +7993,7 @@ pub mod create_meeting_room_configuration {
             self.instant_booking = Some(input);
             self
         }
+        /// <p>Settings to automatically book a room for a configured duration if it's free when joining a meeting with Alexa.</p>
         pub fn set_instant_booking(
             mut self,
             input: std::option::Option<crate::model::CreateInstantBooking>,
@@ -7438,6 +8006,7 @@ pub mod create_meeting_room_configuration {
             self.require_check_in = Some(input);
             self
         }
+        /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.”</p>
         pub fn set_require_check_in(
             mut self,
             input: std::option::Option<crate::model::CreateRequireCheckIn>,
@@ -7495,6 +8064,7 @@ pub mod create_require_check_in {
             self.release_after_minutes = Some(input);
             self
         }
+        /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into.</p>
         pub fn set_release_after_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.release_after_minutes = input;
             self
@@ -7504,6 +8074,7 @@ pub mod create_require_check_in {
             self.enabled = Some(input);
             self
         }
+        /// <p>Whether require check in is enabled or not.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -7560,6 +8131,8 @@ pub mod create_instant_booking {
             self.duration_in_minutes = Some(input);
             self
         }
+        /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book
+        /// an available room when a meeting is started with Alexa.</p>
         pub fn set_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.duration_in_minutes = input;
             self
@@ -7569,6 +8142,7 @@ pub mod create_instant_booking {
             self.enabled = Some(input);
             self
         }
+        /// <p>Whether instant booking is enabled or not.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -7622,12 +8196,18 @@ pub mod create_end_of_meeting_reminder {
         pub(crate) enabled: std::option::Option<bool>,
     }
     impl Builder {
+        /// Appends an item to `reminder_at_minutes`.
+        ///
+        /// To override the contents of this collection use [`set_reminder_at_minutes`](Self::set_reminder_at_minutes).
+        ///
+        /// <p> A range of 3 to 15 minutes that determines when the reminder begins.</p>
         pub fn reminder_at_minutes(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.reminder_at_minutes.unwrap_or_default();
             v.push(input.into());
             self.reminder_at_minutes = Some(v);
             self
         }
+        /// <p> A range of 3 to 15 minutes that determines when the reminder begins.</p>
         pub fn set_reminder_at_minutes(
             mut self,
             input: std::option::Option<std::vec::Vec<i32>>,
@@ -7640,6 +8220,7 @@ pub mod create_end_of_meeting_reminder {
             self.reminder_type = Some(input);
             self
         }
+        /// <p>The type of sound that users hear during the end of meeting reminder. </p>
         pub fn set_reminder_type(
             mut self,
             input: std::option::Option<crate::model::EndOfMeetingReminderType>,
@@ -7652,6 +8233,7 @@ pub mod create_end_of_meeting_reminder {
             self.enabled = Some(input);
             self
         }
+        /// <p>Whether an end of meeting reminder is enabled or not.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self

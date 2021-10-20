@@ -14,6 +14,7 @@ pub mod delete_human_loop_input {
             self.human_loop_name = Some(input.into());
             self
         }
+        /// <p>The name of the human loop that you want to delete.</p>
         pub fn set_human_loop_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -26,7 +27,7 @@ pub mod delete_human_loop_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteHumanLoopInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteHumanLoopInput {
                 human_loop_name: self.human_loop_name,
@@ -45,27 +46,27 @@ impl DeleteHumanLoopInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteHumanLoop,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteHumanLoopInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.human_loop_name;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "human_loop_name",
                         details: "cannot be empty or unset",
                     })?;
-            let human_loop_name = smithy_http::label::fmt_string(input_1, false);
+            let human_loop_name = aws_smithy_http::label::fmt_string(input_1, false);
             if human_loop_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "human_loop_name",
                     details: "cannot be empty or unset",
                 });
@@ -82,7 +83,7 @@ impl DeleteHumanLoopInput {
         fn update_http_builder(
             input: &crate::input::DeleteHumanLoopInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -91,23 +92,23 @@ impl DeleteHumanLoopInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteHumanLoopInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -130,15 +131,15 @@ impl DeleteHumanLoopInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteHumanLoop::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteHumanLoop",
             "sagemakera2iruntime",
         ));
@@ -147,10 +148,10 @@ impl DeleteHumanLoopInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -178,6 +179,7 @@ pub mod describe_human_loop_input {
             self.human_loop_name = Some(input.into());
             self
         }
+        /// <p>The name of the human loop that you want information about.</p>
         pub fn set_human_loop_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -190,7 +192,7 @@ pub mod describe_human_loop_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeHumanLoopInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeHumanLoopInput {
                 human_loop_name: self.human_loop_name,
@@ -209,27 +211,27 @@ impl DescribeHumanLoopInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeHumanLoop,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeHumanLoopInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_2 = &_input.human_loop_name;
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "human_loop_name",
                         details: "cannot be empty or unset",
                     })?;
-            let human_loop_name = smithy_http::label::fmt_string(input_2, false);
+            let human_loop_name = aws_smithy_http::label::fmt_string(input_2, false);
             if human_loop_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "human_loop_name",
                     details: "cannot be empty or unset",
                 });
@@ -246,7 +248,7 @@ impl DescribeHumanLoopInput {
         fn update_http_builder(
             input: &crate::input::DescribeHumanLoopInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -255,23 +257,23 @@ impl DescribeHumanLoopInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeHumanLoopInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -294,15 +296,15 @@ impl DescribeHumanLoopInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeHumanLoop::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeHumanLoop",
             "sagemakera2iruntime",
         ));
@@ -311,10 +313,10 @@ impl DescribeHumanLoopInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -334,8 +336,8 @@ pub mod list_human_loops_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_time_after: std::option::Option<smithy_types::Instant>,
-        pub(crate) creation_time_before: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time_before: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) flow_definition_arn: std::option::Option<std::string::String>,
         pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -343,25 +345,27 @@ pub mod list_human_loops_input {
     }
     impl Builder {
         /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time_after = Some(input);
             self
         }
+        /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time_after = input;
             self
         }
         /// <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time_before = Some(input);
             self
         }
+        /// <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time_before = input;
             self
@@ -371,6 +375,7 @@ pub mod list_human_loops_input {
             self.flow_definition_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>
         pub fn set_flow_definition_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -384,6 +389,8 @@ pub mod list_human_loops_input {
             self.sort_order = Some(input);
             self
         }
+        /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and
+        /// <code>Descending</code>.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -396,6 +403,7 @@ pub mod list_human_loops_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token to display the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -407,6 +415,9 @@ pub mod list_human_loops_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The total number of items to return. If the total number of available items is more than
+        /// the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in
+        /// the output. You can use this token to display the next page of results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -416,7 +427,7 @@ pub mod list_human_loops_input {
             self,
         ) -> std::result::Result<
             crate::input::ListHumanLoopsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListHumanLoopsInput {
                 creation_time_after: self.creation_time_after,
@@ -440,55 +451,55 @@ impl ListHumanLoopsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListHumanLoops,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListHumanLoopsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/human-loops").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListHumanLoopsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_3) = &_input.creation_time_after {
                 query.push_kv(
                     "CreationTimeAfter",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_3,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
             if let Some(inner_4) = &_input.creation_time_before {
                 query.push_kv(
                     "CreationTimeBefore",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_4,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
             if let Some(inner_5) = &_input.flow_definition_arn {
                 query.push_kv(
                     "FlowDefinitionArn",
-                    &smithy_http::query::fmt_string(&inner_5),
+                    &aws_smithy_http::query::fmt_string(&inner_5),
                 );
             }
             if let Some(inner_6) = &_input.sort_order {
-                query.push_kv("SortOrder", &smithy_http::query::fmt_string(&inner_6));
+                query.push_kv("SortOrder", &aws_smithy_http::query::fmt_string(&inner_6));
             }
             if let Some(inner_7) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_7));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_7));
             }
             if let Some(inner_8) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_8).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
                 );
             }
         }
@@ -496,7 +507,7 @@ impl ListHumanLoopsInput {
         fn update_http_builder(
             input: &crate::input::ListHumanLoopsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -506,23 +517,23 @@ impl ListHumanLoopsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListHumanLoopsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -545,15 +556,15 @@ impl ListHumanLoopsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListHumanLoops::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListHumanLoops",
             "sagemakera2iruntime",
         ));
@@ -562,10 +573,10 @@ impl ListHumanLoopsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -596,6 +607,7 @@ pub mod start_human_loop_input {
             self.human_loop_name = Some(input.into());
             self
         }
+        /// <p>The name of the human loop.</p>
         pub fn set_human_loop_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -609,6 +621,8 @@ pub mod start_human_loop_input {
             self.flow_definition_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human
+        /// loop.</p>
         pub fn set_flow_definition_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -621,6 +635,7 @@ pub mod start_human_loop_input {
             self.human_loop_input = Some(input);
             self
         }
+        /// <p>An object that contains information about the human loop.</p>
         pub fn set_human_loop_input(
             mut self,
             input: std::option::Option<crate::model::HumanLoopInput>,
@@ -634,6 +649,8 @@ pub mod start_human_loop_input {
             self.data_attributes = Some(input);
             self
         }
+        /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data
+        /// is free of personally identifiable information and/or free of adult content.</p>
         pub fn set_data_attributes(
             mut self,
             input: std::option::Option<crate::model::HumanLoopDataAttributes>,
@@ -646,7 +663,7 @@ pub mod start_human_loop_input {
             self,
         ) -> std::result::Result<
             crate::input::StartHumanLoopInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartHumanLoopInput {
                 human_loop_name: self.human_loop_name,
@@ -668,16 +685,16 @@ impl StartHumanLoopInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartHumanLoop,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartHumanLoopInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/human-loops").expect("formatting should succeed");
             Ok(())
         }
@@ -685,7 +702,7 @@ impl StartHumanLoopInput {
         fn update_http_builder(
             input: &crate::input::StartHumanLoopInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -694,27 +711,27 @@ impl StartHumanLoopInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartHumanLoopInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_human_loop(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -737,15 +754,15 @@ impl StartHumanLoopInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartHumanLoop::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartHumanLoop",
             "sagemakera2iruntime",
         ));
@@ -754,10 +771,10 @@ impl StartHumanLoopInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -785,6 +802,7 @@ pub mod stop_human_loop_input {
             self.human_loop_name = Some(input.into());
             self
         }
+        /// <p>The name of the human loop that you want to stop.</p>
         pub fn set_human_loop_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -795,8 +813,10 @@ pub mod stop_human_loop_input {
         /// Consumes the builder and constructs a [`StopHumanLoopInput`](crate::input::StopHumanLoopInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::StopHumanLoopInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StopHumanLoopInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StopHumanLoopInput {
                 human_loop_name: self.human_loop_name,
             })
@@ -814,16 +834,16 @@ impl StopHumanLoopInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StopHumanLoop,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StopHumanLoopInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/human-loops/stop").expect("formatting should succeed");
             Ok(())
         }
@@ -831,7 +851,7 @@ impl StopHumanLoopInput {
         fn update_http_builder(
             input: &crate::input::StopHumanLoopInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -840,24 +860,26 @@ impl StopHumanLoopInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StopHumanLoopInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_stop_human_loop(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -880,25 +902,27 @@ impl StopHumanLoopInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::StopHumanLoop::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "StopHumanLoop",
-                    "sagemakera2iruntime",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StopHumanLoop::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StopHumanLoop",
+            "sagemakera2iruntime",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -912,6 +936,7 @@ impl StopHumanLoopInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopHumanLoopInput {
@@ -926,6 +951,7 @@ impl std::fmt::Debug for StopHumanLoopInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartHumanLoopInput {
@@ -951,13 +977,14 @@ impl std::fmt::Debug for StartHumanLoopInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHumanLoopsInput {
     /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-    pub creation_time_after: std::option::Option<smithy_types::Instant>,
+    pub creation_time_after: std::option::Option<aws_smithy_types::Instant>,
     /// <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-    pub creation_time_before: std::option::Option<smithy_types::Instant>,
+    pub creation_time_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>
     pub flow_definition_arn: std::option::Option<std::string::String>,
     /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and
@@ -983,6 +1010,7 @@ impl std::fmt::Debug for ListHumanLoopsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHumanLoopInput {
@@ -997,6 +1025,7 @@ impl std::fmt::Debug for DescribeHumanLoopInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHumanLoopInput {

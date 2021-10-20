@@ -3,15 +3,15 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-pub use smithy_client::retry::Config as RetryConfig;
+pub use aws_smithy_client::retry::Config as RetryConfig;
 
-use aws_auth::middleware::CredentialsStage;
 use aws_endpoint::AwsEndpointStage;
+use aws_http::auth::CredentialsStage;
 use aws_http::user_agent::UserAgentStage;
 use aws_sig_auth::middleware::SigV4SigningStage;
 use aws_sig_auth::signer::SigV4Signer;
-pub use smithy_http::result::{SdkError, SdkSuccess};
-use smithy_http_tower::map_request::{AsyncMapRequestLayer, MapRequestLayer};
+pub use aws_smithy_http::result::{SdkError, SdkSuccess};
+use aws_smithy_http_tower::map_request::{AsyncMapRequestLayer, MapRequestLayer};
 use std::fmt::Debug;
 use tower::layer::util::Stack;
 use tower::ServiceBuilder;
@@ -53,8 +53,8 @@ impl<S> tower::Layer<S> for AwsMiddleware {
 /// AWS Service Client
 ///
 /// Hyper-based AWS Service Client. Most customers will want to construct a client with
-/// [`Client::https`](smithy_client::Client::https). For testing & other more advanced use cases, a
-/// custom connector may be used via [`Client::new(connector)`](smithy_client::Client::new).
+/// [`Client::https`](aws_smithy_client::Client::https). For testing & other more advanced use cases, a
+/// custom connector may be used via [`Client::new(connector)`](aws_smithy_client::Client::new).
 ///
 /// The internal connector must implement the following trait bound to be used to dispatch requests:
 /// ```rust,ignore
@@ -65,19 +65,19 @@ impl<S> tower::Layer<S> for AwsMiddleware {
 ///    S::Error: Into<BoxError> + Send + Sync + 'static,
 ///    S::Future: Send + 'static,
 /// ```
-pub type Client<C> = smithy_client::Client<C, AwsMiddleware>;
+pub type Client<C> = aws_smithy_client::Client<C, AwsMiddleware>;
 
 #[doc(inline)]
-pub use smithy_client::erase::DynConnector;
+pub use aws_smithy_client::erase::DynConnector;
 pub type StandardClient = Client<DynConnector>;
 
 #[doc(inline)]
-pub use smithy_client::bounds::SmithyConnector;
+pub use aws_smithy_client::bounds::SmithyConnector;
 
 /// AWS Service Client builder.
 ///
-/// See [`smithy_client::Builder`] for details.
-pub type Builder<C> = smithy_client::Builder<C, AwsMiddleware>;
+/// See [`aws_smithy_client::Builder`] for details.
+pub type Builder<C> = aws_smithy_client::Builder<C, AwsMiddleware>;
 
 /// Construct an `https` based client
 ///
@@ -92,7 +92,7 @@ pub fn https() -> StandardClient {
     #[cfg(not(feature = "rustls"))]
     let with_https = |b: Builder<_>| b.native_tls();
 
-    with_https(smithy_client::Builder::new())
+    with_https(aws_smithy_client::Builder::new())
         .build()
         .into_dyn_connector()
 }

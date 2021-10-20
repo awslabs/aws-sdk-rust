@@ -45,6 +45,9 @@ pub mod change {
             self.change_type = Some(input.into());
             self
         }
+        /// <p>Change types are single string values that describe your intention for the change.
+        /// Each change type is unique for each <code>EntityType</code> provided in the change's
+        /// scope.</p>
         pub fn set_change_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_type = input;
             self
@@ -54,6 +57,7 @@ pub mod change {
             self.entity = Some(input);
             self
         }
+        /// <p>The entity to be changed.</p>
         pub fn set_entity(mut self, input: std::option::Option<crate::model::Entity>) -> Self {
             self.entity = input;
             self
@@ -64,6 +68,8 @@ pub mod change {
             self.details = Some(input.into());
             self
         }
+        /// <p>This object contains details specific to the change type of the requested
+        /// change.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input;
             self
@@ -73,6 +79,7 @@ pub mod change {
             self.change_name = Some(input.into());
             self
         }
+        /// <p>Optional name for the change.</p>
         pub fn set_change_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_name = input;
             self
@@ -128,6 +135,7 @@ pub mod entity {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of entity.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -137,6 +145,7 @@ pub mod entity {
             self.identifier = Some(input.into());
             self
         }
+        /// <p>The identifier for the entity.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
             self
@@ -217,6 +226,8 @@ pub mod entity_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name for the entity. This value is not unique. It is defined by the
+        /// seller.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -226,6 +237,7 @@ pub mod entity_summary {
             self.entity_type = Some(input.into());
             self
         }
+        /// <p>The type of the entity.</p>
         pub fn set_entity_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_type = input;
             self
@@ -235,6 +247,7 @@ pub mod entity_summary {
             self.entity_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the entity.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
@@ -244,6 +257,7 @@ pub mod entity_summary {
             self.entity_arn = Some(input.into());
             self
         }
+        /// <p>The ARN associated with the unique identifier for the entity.</p>
         pub fn set_entity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_arn = input;
             self
@@ -254,6 +268,8 @@ pub mod entity_summary {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The last time the entity was published, using ISO 8601 format
+        /// (2018-02-27T13:45:22Z).</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -273,6 +289,14 @@ pub mod entity_summary {
             self.visibility = Some(input.into());
             self
         }
+        /// <p>The visibility status of the entity to
+        /// buyers.
+        /// This value can be <code>Public</code> (everyone can view the entity),
+        /// <code>Limited</code> (the entity is visible to limited accounts only), or
+        /// <code>Restricted</code> (the entity was published and then unpublished and only
+        /// existing
+        /// buyers
+        /// can view it). </p>
         pub fn set_visibility(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.visibility = input;
             self
@@ -305,6 +329,7 @@ pub struct Sort {
     /// <p>For <code>ListEntities</code>, supported attributes include
     /// <code>LastModifiedDate</code> (default), <code>Visibility</code>,
     /// <code>EntityId</code>, and <code>Name</code>.</p>
+    ///
     /// <p>For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code>
     /// and <code>EndTime</code>.</p>
     pub sort_by: std::option::Option<std::string::String>,
@@ -333,12 +358,19 @@ pub mod sort {
         /// <p>For <code>ListEntities</code>, supported attributes include
         /// <code>LastModifiedDate</code> (default), <code>Visibility</code>,
         /// <code>EntityId</code>, and <code>Name</code>.</p>
+        ///
         /// <p>For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code>
         /// and <code>EndTime</code>.</p>
         pub fn sort_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.sort_by = Some(input.into());
             self
         }
+        /// <p>For <code>ListEntities</code>, supported attributes include
+        /// <code>LastModifiedDate</code> (default), <code>Visibility</code>,
+        /// <code>EntityId</code>, and <code>Name</code>.</p>
+        ///
+        /// <p>For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code>
+        /// and <code>EndTime</code>.</p>
         pub fn set_sort_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sort_by = input;
             self
@@ -349,6 +381,8 @@ pub mod sort {
             self.sort_order = Some(input);
             self
         }
+        /// <p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The
+        /// default value is <code>DESCENDING</code>.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -372,6 +406,7 @@ impl Sort {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -383,7 +418,9 @@ impl Sort {
     std::hash::Hash,
 )]
 pub enum SortOrder {
+    #[allow(missing_docs)] // documentation missing in model
     Ascending,
+    #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -405,6 +442,7 @@ impl std::str::FromStr for SortOrder {
     }
 }
 impl SortOrder {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortOrder::Ascending => "ASCENDING",
@@ -412,6 +450,7 @@ impl SortOrder {
             SortOrder::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
@@ -433,6 +472,7 @@ pub struct Filter {
     pub name: std::option::Option<std::string::String>,
     /// <p>
     /// <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p>
+    ///
     /// <p>
     /// <code>ListChangeSets</code> - The supported filter names and associated
     /// <code>ValueList</code>s is as follows:</p>
@@ -501,16 +541,111 @@ pub mod filter {
             self.name = Some(input.into());
             self
         }
+        /// <p>For <code>ListEntities</code>, the supported value for this is an
+        /// <code>EntityId</code>.</p>
+        /// <p>For <code>ListChangeSets</code>, the supported values are as follows:</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `value_list`.
+        ///
+        /// To override the contents of this collection use [`set_value_list`](Self::set_value_list).
+        ///
+        /// <p>
+        /// <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p>
+        ///
+        /// <p>
+        /// <code>ListChangeSets</code> - The supported filter names and associated
+        /// <code>ValueList</code>s is as follows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of
+        /// non-unique <code>ChangeSetName</code>s. These are defined when you call the
+        /// <code>StartChangeSet</code> action.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Status</code> - The supported <code>ValueList</code> is a list of
+        /// statuses for all change set requests.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EntityId</code> - The supported <code>ValueList</code> is a list of
+        /// unique <code>EntityId</code>s.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list
+        /// of all change sets that started before the filter value.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list
+        /// of all change sets that started after the filter value.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of
+        /// all change sets that ended before the filter value.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of
+        /// all change sets that ended after the filter value.</p>
+        /// </li>
+        /// </ul>
         pub fn value_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.value_list.unwrap_or_default();
             v.push(input.into());
             self.value_list = Some(v);
             self
         }
+        /// <p>
+        /// <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p>
+        ///
+        /// <p>
+        /// <code>ListChangeSets</code> - The supported filter names and associated
+        /// <code>ValueList</code>s is as follows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of
+        /// non-unique <code>ChangeSetName</code>s. These are defined when you call the
+        /// <code>StartChangeSet</code> action.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Status</code> - The supported <code>ValueList</code> is a list of
+        /// statuses for all change set requests.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EntityId</code> - The supported <code>ValueList</code> is a list of
+        /// unique <code>EntityId</code>s.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list
+        /// of all change sets that started before the filter value.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list
+        /// of all change sets that started after the filter value.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of
+        /// all change sets that ended before the filter value.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of
+        /// all change sets that ended after the filter value.</p>
+        /// </li>
+        /// </ul>
         pub fn set_value_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -598,6 +733,7 @@ pub mod change_set_summary_list_item {
             self.change_set_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for a change set.</p>
         pub fn set_change_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -611,6 +747,8 @@ pub mod change_set_summary_list_item {
             self.change_set_arn = Some(input.into());
             self
         }
+        /// <p>The ARN associated with the unique identifier for the change set referenced in this
+        /// request.</p>
         pub fn set_change_set_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -623,6 +761,7 @@ pub mod change_set_summary_list_item {
             self.change_set_name = Some(input.into());
             self
         }
+        /// <p>The non-unique name for the change set.</p>
         pub fn set_change_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -636,6 +775,8 @@ pub mod change_set_summary_list_item {
             self.start_time = Some(input.into());
             self
         }
+        /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was
+        /// started.</p>
         pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_time = input;
             self
@@ -646,6 +787,8 @@ pub mod change_set_summary_list_item {
             self.end_time = Some(input.into());
             self
         }
+        /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was
+        /// finished.</p>
         pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end_time = input;
             self
@@ -655,6 +798,7 @@ pub mod change_set_summary_list_item {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the change set.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ChangeStatus>,
@@ -662,12 +806,20 @@ pub mod change_set_summary_list_item {
             self.status = input;
             self
         }
+        /// Appends an item to `entity_id_list`.
+        ///
+        /// To override the contents of this collection use [`set_entity_id_list`](Self::set_entity_id_list).
+        ///
+        /// <p>This object is a list of entity IDs (string) that are a part of a change set. The
+        /// entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>
         pub fn entity_id_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.entity_id_list.unwrap_or_default();
             v.push(input.into());
             self.entity_id_list = Some(v);
             self
         }
+        /// <p>This object is a list of entity IDs (string) that are a part of a change set. The
+        /// entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>
         pub fn set_entity_id_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -683,6 +835,10 @@ pub mod change_set_summary_list_item {
             self.failure_code = Some(input);
             self
         }
+        /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either
+        /// <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the
+        /// <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>,
+        /// which means that there is a problem in the system, and you should retry your request.</p>
         pub fn set_failure_code(
             mut self,
             input: std::option::Option<crate::model::FailureCode>,
@@ -712,6 +868,7 @@ impl ChangeSetSummaryListItem {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -723,7 +880,9 @@ impl ChangeSetSummaryListItem {
     std::hash::Hash,
 )]
 pub enum FailureCode {
+    #[allow(missing_docs)] // documentation missing in model
     ClientError,
+    #[allow(missing_docs)] // documentation missing in model
     ServerFault,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -745,6 +904,7 @@ impl std::str::FromStr for FailureCode {
     }
 }
 impl FailureCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FailureCode::ClientError => "CLIENT_ERROR",
@@ -752,6 +912,7 @@ impl FailureCode {
             FailureCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CLIENT_ERROR", "SERVER_FAULT"]
     }
@@ -762,6 +923,7 @@ impl AsRef<str> for FailureCode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -773,10 +935,15 @@ impl AsRef<str> for FailureCode {
     std::hash::Hash,
 )]
 pub enum ChangeStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Applying,
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Preparing,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -801,6 +968,7 @@ impl std::str::FromStr for ChangeStatus {
     }
 }
 impl ChangeStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChangeStatus::Applying => "APPLYING",
@@ -811,6 +979,7 @@ impl ChangeStatus {
             ChangeStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["APPLYING", "CANCELLED", "FAILED", "PREPARING", "SUCCEEDED"]
     }
@@ -867,6 +1036,7 @@ pub mod change_summary {
             self.change_type = Some(input.into());
             self
         }
+        /// <p>The type of the change.</p>
         pub fn set_change_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_type = input;
             self
@@ -876,6 +1046,7 @@ pub mod change_summary {
             self.entity = Some(input);
             self
         }
+        /// <p>The entity to be changed.</p>
         pub fn set_entity(mut self, input: std::option::Option<crate::model::Entity>) -> Self {
             self.entity = input;
             self
@@ -886,16 +1057,24 @@ pub mod change_summary {
             self.details = Some(input.into());
             self
         }
+        /// <p>This object contains details specific to the change type of the requested
+        /// change.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input;
             self
         }
+        /// Appends an item to `error_detail_list`.
+        ///
+        /// To override the contents of this collection use [`set_error_detail_list`](Self::set_error_detail_list).
+        ///
+        /// <p>An array of <code>ErrorDetail</code> objects associated with the change.</p>
         pub fn error_detail_list(mut self, input: impl Into<crate::model::ErrorDetail>) -> Self {
             let mut v = self.error_detail_list.unwrap_or_default();
             v.push(input.into());
             self.error_detail_list = Some(v);
             self
         }
+        /// <p>An array of <code>ErrorDetail</code> objects associated with the change.</p>
         pub fn set_error_detail_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>,
@@ -908,6 +1087,7 @@ pub mod change_summary {
             self.change_name = Some(input.into());
             self
         }
+        /// <p>Optional name for the change.</p>
         pub fn set_change_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_name = input;
             self
@@ -963,6 +1143,7 @@ pub mod error_detail {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>The error code that identifies the type of error.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -972,6 +1153,7 @@ pub mod error_detail {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The message for the error.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,

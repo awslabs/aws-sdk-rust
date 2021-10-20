@@ -35,6 +35,7 @@ pub mod fetch_page_result {
             self.page = Some(input);
             self
         }
+        /// <p>Contains details of the fetched page.</p>
         pub fn set_page(mut self, input: std::option::Option<crate::model::Page>) -> Self {
             self.page = input;
             self
@@ -44,6 +45,7 @@ pub mod fetch_page_result {
             self.timing_information = Some(input);
             self
         }
+        /// <p>Contains server-side performance information for the command.</p>
         pub fn set_timing_information(
             mut self,
             input: std::option::Option<crate::model::TimingInformation>,
@@ -56,6 +58,7 @@ pub mod fetch_page_result {
             self.consumed_i_os = Some(input);
             self
         }
+        /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
         pub fn set_consumed_i_os(
             mut self,
             input: std::option::Option<crate::model::IoUsage>,
@@ -112,6 +115,7 @@ pub mod io_usage {
             self.read_i_os = Some(input);
             self
         }
+        /// <p>The number of read I/O requests that the command made.</p>
         pub fn set_read_i_os(mut self, input: std::option::Option<i64>) -> Self {
             self.read_i_os = input;
             self
@@ -121,6 +125,7 @@ pub mod io_usage {
             self.write_i_os = Some(input);
             self
         }
+        /// <p>The number of write I/O requests that the command made.</p>
         pub fn set_write_i_os(mut self, input: std::option::Option<i64>) -> Self {
             self.write_i_os = input;
             self
@@ -176,6 +181,8 @@ pub mod timing_information {
             self.processing_time_milliseconds = Some(input);
             self
         }
+        /// <p>The amount of time that QLDB spent on processing the command, measured in
+        /// milliseconds.</p>
         pub fn set_processing_time_milliseconds(mut self, input: std::option::Option<i64>) -> Self {
             self.processing_time_milliseconds = input;
             self
@@ -222,12 +229,18 @@ pub mod page {
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>A structure that contains values in multiple encoding formats.</p>
         pub fn values(mut self, input: impl Into<crate::model::ValueHolder>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>A structure that contains values in multiple encoding formats.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ValueHolder>>,
@@ -240,6 +253,7 @@ pub mod page {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>The token of the next page.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -268,7 +282,7 @@ impl Page {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValueHolder {
     /// <p>An Amazon Ion binary value contained in a <code>ValueHolder</code> structure.</p>
-    pub ion_binary: std::option::Option<smithy_types::Blob>,
+    pub ion_binary: std::option::Option<aws_smithy_types::Blob>,
     /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
     pub ion_text: std::option::Option<std::string::String>,
 }
@@ -286,16 +300,20 @@ pub mod value_holder {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) ion_binary: std::option::Option<smithy_types::Blob>,
+        pub(crate) ion_binary: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) ion_text: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>An Amazon Ion binary value contained in a <code>ValueHolder</code> structure.</p>
-        pub fn ion_binary(mut self, input: smithy_types::Blob) -> Self {
+        pub fn ion_binary(mut self, input: aws_smithy_types::Blob) -> Self {
             self.ion_binary = Some(input);
             self
         }
-        pub fn set_ion_binary(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>An Amazon Ion binary value contained in a <code>ValueHolder</code> structure.</p>
+        pub fn set_ion_binary(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
             self.ion_binary = input;
             self
         }
@@ -304,6 +322,7 @@ pub mod value_holder {
             self.ion_text = Some(input.into());
             self
         }
+        /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
         pub fn set_ion_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ion_text = input;
             self
@@ -360,6 +379,7 @@ pub mod execute_statement_result {
             self.first_page = Some(input);
             self
         }
+        /// <p>Contains the details of the first fetched page.</p>
         pub fn set_first_page(mut self, input: std::option::Option<crate::model::Page>) -> Self {
             self.first_page = input;
             self
@@ -369,6 +389,7 @@ pub mod execute_statement_result {
             self.timing_information = Some(input);
             self
         }
+        /// <p>Contains server-side performance information for the command.</p>
         pub fn set_timing_information(
             mut self,
             input: std::option::Option<crate::model::TimingInformation>,
@@ -381,6 +402,7 @@ pub mod execute_statement_result {
             self.consumed_i_os = Some(input);
             self
         }
+        /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
         pub fn set_consumed_i_os(
             mut self,
             input: std::option::Option<crate::model::IoUsage>,
@@ -433,6 +455,7 @@ pub mod abort_transaction_result {
             self.timing_information = Some(input);
             self
         }
+        /// <p>Contains server-side performance information for the command.</p>
         pub fn set_timing_information(
             mut self,
             input: std::option::Option<crate::model::TimingInformation>,
@@ -462,7 +485,7 @@ pub struct CommitTransactionResult {
     /// <p>The transaction ID of the committed transaction.</p>
     pub transaction_id: std::option::Option<std::string::String>,
     /// <p>The commit digest of the committed transaction.</p>
-    pub commit_digest: std::option::Option<smithy_types::Blob>,
+    pub commit_digest: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Contains server-side performance information for the command.</p>
     pub timing_information: std::option::Option<crate::model::TimingInformation>,
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
@@ -485,7 +508,7 @@ pub mod commit_transaction_result {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
-        pub(crate) commit_digest: std::option::Option<smithy_types::Blob>,
+        pub(crate) commit_digest: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) timing_information: std::option::Option<crate::model::TimingInformation>,
         pub(crate) consumed_i_os: std::option::Option<crate::model::IoUsage>,
     }
@@ -495,6 +518,7 @@ pub mod commit_transaction_result {
             self.transaction_id = Some(input.into());
             self
         }
+        /// <p>The transaction ID of the committed transaction.</p>
         pub fn set_transaction_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -503,11 +527,15 @@ pub mod commit_transaction_result {
             self
         }
         /// <p>The commit digest of the committed transaction.</p>
-        pub fn commit_digest(mut self, input: smithy_types::Blob) -> Self {
+        pub fn commit_digest(mut self, input: aws_smithy_types::Blob) -> Self {
             self.commit_digest = Some(input);
             self
         }
-        pub fn set_commit_digest(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The commit digest of the committed transaction.</p>
+        pub fn set_commit_digest(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
             self.commit_digest = input;
             self
         }
@@ -516,6 +544,7 @@ pub mod commit_transaction_result {
             self.timing_information = Some(input);
             self
         }
+        /// <p>Contains server-side performance information for the command.</p>
         pub fn set_timing_information(
             mut self,
             input: std::option::Option<crate::model::TimingInformation>,
@@ -528,6 +557,7 @@ pub mod commit_transaction_result {
             self.consumed_i_os = Some(input);
             self
         }
+        /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
         pub fn set_consumed_i_os(
             mut self,
             input: std::option::Option<crate::model::IoUsage>,
@@ -581,6 +611,7 @@ pub mod end_session_result {
             self.timing_information = Some(input);
             self
         }
+        /// <p>Contains server-side performance information for the command.</p>
         pub fn set_timing_information(
             mut self,
             input: std::option::Option<crate::model::TimingInformation>,
@@ -635,6 +666,7 @@ pub mod start_transaction_result {
             self.transaction_id = Some(input.into());
             self
         }
+        /// <p>The transaction ID of the started transaction.</p>
         pub fn set_transaction_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -647,6 +679,7 @@ pub mod start_transaction_result {
             self.timing_information = Some(input);
             self
         }
+        /// <p>Contains server-side performance information for the command.</p>
         pub fn set_timing_information(
             mut self,
             input: std::option::Option<crate::model::TimingInformation>,
@@ -704,6 +737,8 @@ pub mod start_session_result {
             self.session_token = Some(input.into());
             self
         }
+        /// <p>Session token of the started session. This <code>SessionToken</code> is required for
+        /// every subsequent command that is issued during the current session.</p>
         pub fn set_session_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -716,6 +751,7 @@ pub mod start_session_result {
             self.timing_information = Some(input);
             self
         }
+        /// <p>Contains server-side performance information for the command.</p>
         pub fn set_timing_information(
             mut self,
             input: std::option::Option<crate::model::TimingInformation>,
@@ -771,6 +807,7 @@ pub mod fetch_page_request {
             self.transaction_id = Some(input.into());
             self
         }
+        /// <p>Specifies the transaction ID of the page to be fetched.</p>
         pub fn set_transaction_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -783,6 +820,7 @@ pub mod fetch_page_request {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>Specifies the next page token of the page to be fetched.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -842,6 +880,7 @@ pub mod execute_statement_request {
             self.transaction_id = Some(input.into());
             self
         }
+        /// <p>Specifies the transaction ID of the request.</p>
         pub fn set_transaction_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -854,16 +893,23 @@ pub mod execute_statement_request {
             self.statement = Some(input.into());
             self
         }
+        /// <p>Specifies the statement of the request.</p>
         pub fn set_statement(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.statement = input;
             self
         }
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>Specifies the parameters for the parameterized statement in the request.</p>
         pub fn parameters(mut self, input: impl Into<crate::model::ValueHolder>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input.into());
             self.parameters = Some(v);
             self
         }
+        /// <p>Specifies the parameters for the parameterized statement in the request.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ValueHolder>>,
@@ -931,7 +977,7 @@ pub struct CommitTransactionRequest {
     /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits
     /// a transaction if and only if the server has processed the exact set of statements sent by
     /// the client, in the same order that client sent them, and with no duplicates.</p>
-    pub commit_digest: std::option::Option<smithy_types::Blob>,
+    pub commit_digest: std::option::Option<aws_smithy_types::Blob>,
 }
 impl std::fmt::Debug for CommitTransactionRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -948,7 +994,7 @@ pub mod commit_transaction_request {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
-        pub(crate) commit_digest: std::option::Option<smithy_types::Blob>,
+        pub(crate) commit_digest: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
         /// <p>Specifies the transaction ID of the transaction to commit.</p>
@@ -956,6 +1002,7 @@ pub mod commit_transaction_request {
             self.transaction_id = Some(input.into());
             self
         }
+        /// <p>Specifies the transaction ID of the transaction to commit.</p>
         pub fn set_transaction_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -970,11 +1017,21 @@ pub mod commit_transaction_request {
         /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits
         /// a transaction if and only if the server has processed the exact set of statements sent by
         /// the client, in the same order that client sent them, and with no duplicates.</p>
-        pub fn commit_digest(mut self, input: smithy_types::Blob) -> Self {
+        pub fn commit_digest(mut self, input: aws_smithy_types::Blob) -> Self {
             self.commit_digest = Some(input);
             self
         }
-        pub fn set_commit_digest(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>Specifies the commit digest for the transaction to commit. For every active transaction,
+        /// the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects
+        /// the commit with an error if the digest computed on the client does not match the digest
+        /// computed by QLDB.</p>
+        /// <p>The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits
+        /// a transaction if and only if the server has processed the exact set of statements sent by
+        /// the client, in the same order that client sent them, and with no duplicates.</p>
+        pub fn set_commit_digest(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
             self.commit_digest = input;
             self
         }
@@ -1082,6 +1139,7 @@ pub mod start_session_request {
             self.ledger_name = Some(input.into());
             self
         }
+        /// <p>The name of the ledger to start a new session against.</p>
         pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ledger_name = input;
             self

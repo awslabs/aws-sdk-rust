@@ -8,8 +8,9 @@ pub struct Channel {
     /// <p>Channel name.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-    /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and
-    /// <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
+    /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default:
+    /// <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code>
+    /// correspond to Ultra-low and Standard, respectively.)</p>
     pub latency_mode: std::option::Option<crate::model::ChannelLatencyMode>,
     /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
     /// exceed the allowable resolution or bitrate, the stream probably will disconnect
@@ -19,13 +20,14 @@ pub struct Channel {
     /// <p>
     /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
     /// automatically give viewers the best experience for their devices and network conditions.
-    /// Vertical resolution can be up to 1080 and bitrate can be up to 8.5 Mbps.</p>
+    /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
+    /// for renditions 360p and below; above that, audio is passed through.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-    /// video-quality choice is limited to the original input. Vertical resolution can be up to
-    /// 480 and bitrate can be up to 1.5 Mbps.</p>
+    /// video-quality choice is limited to the original input. Resolution can be up to 480p and
+    /// bitrate can be up to 1.5 Mbps.</p>
     /// </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::ChannelType>,
@@ -86,6 +88,7 @@ pub mod channel {
             self.arn = Some(input.into());
             self
         }
+        /// <p>Channel ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -95,17 +98,23 @@ pub mod channel {
             self.name = Some(input.into());
             self
         }
+        /// <p>Channel name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
         /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and
-        /// <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
+        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default:
+        /// <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code>
+        /// correspond to Ultra-low and Standard, respectively.)</p>
         pub fn latency_mode(mut self, input: crate::model::ChannelLatencyMode) -> Self {
             self.latency_mode = Some(input);
             self
         }
+        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
+        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default:
+        /// <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code>
+        /// correspond to Ultra-low and Standard, respectively.)</p>
         pub fn set_latency_mode(
             mut self,
             input: std::option::Option<crate::model::ChannelLatencyMode>,
@@ -121,19 +130,38 @@ pub mod channel {
         /// <p>
         /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
         /// automatically give viewers the best experience for their devices and network conditions.
-        /// Vertical resolution can be up to 1080 and bitrate can be up to 8.5 Mbps.</p>
+        /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
+        /// for renditions 360p and below; above that, audio is passed through.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-        /// video-quality choice is limited to the original input. Vertical resolution can be up to
-        /// 480 and bitrate can be up to 1.5 Mbps.</p>
+        /// video-quality choice is limited to the original input. Resolution can be up to 480p and
+        /// bitrate can be up to 1.5 Mbps.</p>
         /// </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
             self.r#type = Some(input);
             self
         }
+        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
+        /// exceed the allowable resolution or bitrate, the stream probably will disconnect
+        /// immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
+        /// automatically give viewers the best experience for their devices and network conditions.
+        /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
+        /// for renditions 360p and below; above that, audio is passed through.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
+        /// video-quality choice is limited to the original input. Resolution can be up to 480p and
+        /// bitrate can be up to 1.5 Mbps.</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
             self.r#type = input;
             self
@@ -147,6 +175,8 @@ pub mod channel {
             self.recording_configuration_arn = Some(input.into());
             self
         }
+        /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording
+        /// is enabled. Default: "" (empty string, recording is disabled).</p>
         pub fn set_recording_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -160,6 +190,8 @@ pub mod channel {
             self.ingest_endpoint = Some(input.into());
             self
         }
+        /// <p>Channel ingest endpoint, part of the definition of an ingest server, used when you set up
+        /// streaming software.</p>
         pub fn set_ingest_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -172,6 +204,7 @@ pub mod channel {
             self.playback_url = Some(input.into());
             self
         }
+        /// <p>Channel playback URL.</p>
         pub fn set_playback_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.playback_url = input;
             self
@@ -182,10 +215,17 @@ pub mod channel {
             self.authorized = Some(input);
             self
         }
+        /// <p>Whether the channel is private (enabled for playback authorization). Default:
+        /// <code>false</code>.</p>
         pub fn set_authorized(mut self, input: std::option::Option<bool>) -> Self {
             self.authorized = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -196,6 +236,7 @@ pub mod channel {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -228,6 +269,7 @@ impl Channel {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -239,7 +281,9 @@ impl Channel {
     std::hash::Hash,
 )]
 pub enum ChannelType {
+    #[allow(missing_docs)] // documentation missing in model
     BasicChannelType,
+    #[allow(missing_docs)] // documentation missing in model
     StandardChannelType,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -261,6 +305,7 @@ impl std::str::FromStr for ChannelType {
     }
 }
 impl ChannelType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChannelType::BasicChannelType => "BASIC",
@@ -268,6 +313,7 @@ impl ChannelType {
             ChannelType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BASIC", "STANDARD"]
     }
@@ -278,6 +324,7 @@ impl AsRef<str> for ChannelType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -289,7 +336,9 @@ impl AsRef<str> for ChannelType {
     std::hash::Hash,
 )]
 pub enum ChannelLatencyMode {
+    #[allow(missing_docs)] // documentation missing in model
     LowLatency,
+    #[allow(missing_docs)] // documentation missing in model
     NormalLatency,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -311,6 +360,7 @@ impl std::str::FromStr for ChannelLatencyMode {
     }
 }
 impl ChannelLatencyMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChannelLatencyMode::LowLatency => "LOW",
@@ -318,6 +368,7 @@ impl ChannelLatencyMode {
             ChannelLatencyMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LOW", "NORMAL"]
     }
@@ -338,11 +389,13 @@ pub struct StreamSummary {
     pub state: std::option::Option<crate::model::StreamState>,
     /// <p>The stream’s health.</p>
     pub health: std::option::Option<crate::model::StreamHealth>,
-    /// <p>Number of current viewers of the stream. A value of -1 indicates that the request timed
-    /// out; in this case, retry.</p>
+    /// <p>A count of concurrent views of the stream. Typically, a new view appears in
+    /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
+    /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
+    /// -1 indicates that the request timed out; in this case, retry.</p>
     pub viewer_count: i64,
-    /// <p>ISO-8601 formatted timestamp of the stream’s start.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for StreamSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -365,7 +418,7 @@ pub mod stream_summary {
         pub(crate) state: std::option::Option<crate::model::StreamState>,
         pub(crate) health: std::option::Option<crate::model::StreamHealth>,
         pub(crate) viewer_count: std::option::Option<i64>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Channel ARN for the stream.</p>
@@ -373,6 +426,7 @@ pub mod stream_summary {
             self.channel_arn = Some(input.into());
             self
         }
+        /// <p>Channel ARN for the stream.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_arn = input;
             self
@@ -382,6 +436,7 @@ pub mod stream_summary {
             self.state = Some(input);
             self
         }
+        /// <p>The stream’s state.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::StreamState>) -> Self {
             self.state = input;
             self
@@ -391,6 +446,7 @@ pub mod stream_summary {
             self.health = Some(input);
             self
         }
+        /// <p>The stream’s health.</p>
         pub fn set_health(
             mut self,
             input: std::option::Option<crate::model::StreamHealth>,
@@ -398,22 +454,32 @@ pub mod stream_summary {
             self.health = input;
             self
         }
-        /// <p>Number of current viewers of the stream. A value of -1 indicates that the request timed
-        /// out; in this case, retry.</p>
+        /// <p>A count of concurrent views of the stream. Typically, a new view appears in
+        /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
+        /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
+        /// -1 indicates that the request timed out; in this case, retry.</p>
         pub fn viewer_count(mut self, input: i64) -> Self {
             self.viewer_count = Some(input);
             self
         }
+        /// <p>A count of concurrent views of the stream. Typically, a new view appears in
+        /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
+        /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
+        /// -1 indicates that the request timed out; in this case, retry.</p>
         pub fn set_viewer_count(mut self, input: std::option::Option<i64>) -> Self {
             self.viewer_count = input;
             self
         }
-        /// <p>ISO-8601 formatted timestamp of the stream’s start.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
@@ -436,7 +502,7 @@ impl StreamSummary {
     }
 }
 
-/// **NOTE:** `StreamHealth::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `StreamHealth::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -448,9 +514,11 @@ impl StreamSummary {
     std::hash::Hash,
 )]
 pub enum StreamHealth {
+    #[allow(missing_docs)] // documentation missing in model
     StreamHealthy,
+    #[allow(missing_docs)] // documentation missing in model
     Starving,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -473,6 +541,7 @@ impl std::str::FromStr for StreamHealth {
     }
 }
 impl StreamHealth {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StreamHealth::StreamHealthy => "HEALTHY",
@@ -481,6 +550,7 @@ impl StreamHealth {
             StreamHealth::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HEALTHY", "STARVING", "UNKNOWN"]
     }
@@ -491,6 +561,7 @@ impl AsRef<str> for StreamHealth {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -502,7 +573,9 @@ impl AsRef<str> for StreamHealth {
     std::hash::Hash,
 )]
 pub enum StreamState {
+    #[allow(missing_docs)] // documentation missing in model
     StreamLive,
+    #[allow(missing_docs)] // documentation missing in model
     StreamOffline,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -524,6 +597,7 @@ impl std::str::FromStr for StreamState {
     }
 }
 impl StreamState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StreamState::StreamLive => "LIVE",
@@ -531,6 +605,7 @@ impl StreamState {
             StreamState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LIVE", "OFFLINE"]
     }
@@ -580,6 +655,7 @@ pub mod stream_key_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>Stream-key ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -589,10 +665,16 @@ pub mod stream_key_summary {
             self.channel_arn = Some(input.into());
             self
         }
+        /// <p>Channel ARN for the stream.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -603,6 +685,7 @@ pub mod stream_key_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -635,8 +718,7 @@ impl StreamKeySummary {
 pub struct RecordingConfigurationSummary {
     /// <p>Recording-configuration ARN.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>An arbitrary string (a nickname) assigned to a recording configuration that helps the
-    /// customer identify that resource. The value does not need to be unique.</p>
+    /// <p>Recording-configuration name. The value does not need to be unique.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about where recorded video will be stored.</p>
     pub destination_configuration: std::option::Option<crate::model::DestinationConfiguration>,
@@ -679,16 +761,17 @@ pub mod recording_configuration_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>Recording-configuration ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>An arbitrary string (a nickname) assigned to a recording configuration that helps the
-        /// customer identify that resource. The value does not need to be unique.</p>
+        /// <p>Recording-configuration name. The value does not need to be unique.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
+        /// <p>Recording-configuration name. The value does not need to be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -701,6 +784,7 @@ pub mod recording_configuration_summary {
             self.destination_configuration = Some(input);
             self
         }
+        /// <p>A complex type that contains information about where recorded video will be stored.</p>
         pub fn set_destination_configuration(
             mut self,
             input: std::option::Option<crate::model::DestinationConfiguration>,
@@ -714,6 +798,8 @@ pub mod recording_configuration_summary {
             self.state = Some(input);
             self
         }
+        /// <p>Indicates the current state of the recording configuration. When the state is
+        /// <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::RecordingConfigurationState>,
@@ -721,6 +807,11 @@ pub mod recording_configuration_summary {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -731,6 +822,7 @@ pub mod recording_configuration_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -759,6 +851,7 @@ impl RecordingConfigurationSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -770,8 +863,11 @@ impl RecordingConfigurationSummary {
     std::hash::Hash,
 )]
 pub enum RecordingConfigurationState {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -794,6 +890,7 @@ impl std::str::FromStr for RecordingConfigurationState {
     }
 }
 impl RecordingConfigurationState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RecordingConfigurationState::Active => "ACTIVE",
@@ -802,6 +899,7 @@ impl RecordingConfigurationState {
             RecordingConfigurationState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATE_FAILED", "CREATING"]
     }
@@ -842,6 +940,7 @@ pub mod destination_configuration {
             self.s3 = Some(input);
             self
         }
+        /// <p>An S3 destination configuration where recorded videos will be stored.</p>
         pub fn set_s3(
             mut self,
             input: std::option::Option<crate::model::S3DestinationConfiguration>,
@@ -890,6 +989,7 @@ pub mod s3_destination_configuration {
             self.bucket_name = Some(input.into());
             self
         }
+        /// <p>Location (S3 bucket name) where recorded videos will be stored.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
@@ -915,8 +1015,7 @@ impl S3DestinationConfiguration {
 pub struct PlaybackKeyPairSummary {
     /// <p>Key-pair ARN.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>An arbitrary string (a nickname) assigned to a playback key pair that helps the customer
-    /// identify that resource. The value does not need to be unique.</p>
+    /// <p>Playback-key-pair name. The value does not need to be unique.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
     pub tags:
@@ -949,20 +1048,26 @@ pub mod playback_key_pair_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>Key-pair ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>An arbitrary string (a nickname) assigned to a playback key pair that helps the customer
-        /// identify that resource. The value does not need to be unique.</p>
+        /// <p>Playback-key-pair name. The value does not need to be unique.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
+        /// <p>Playback-key-pair name. The value does not need to be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -973,6 +1078,7 @@ pub mod playback_key_pair_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1007,11 +1113,13 @@ pub struct ChannelSummary {
     pub arn: std::option::Option<std::string::String>,
     /// <p>Channel name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-    /// <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS
-    /// console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
+    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
+    /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default:
+    /// <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code>
+    /// correspond to Ultra-low and Standard, respectively.)</p>
     pub latency_mode: std::option::Option<crate::model::ChannelLatencyMode>,
-    /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
+    /// <p>Whether the channel is private (enabled for playback authorization). Default:
+    /// <code>false</code>.</p>
     pub authorized: bool,
     /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording
     /// is enabled. Default: "" (empty string, recording is disabled).</p>
@@ -1056,6 +1164,7 @@ pub mod channel_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>Channel ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1065,17 +1174,23 @@ pub mod channel_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>Channel name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-        /// <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS
-        /// console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
+        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
+        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default:
+        /// <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code>
+        /// correspond to Ultra-low and Standard, respectively.)</p>
         pub fn latency_mode(mut self, input: crate::model::ChannelLatencyMode) -> Self {
             self.latency_mode = Some(input);
             self
         }
+        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
+        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default:
+        /// <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code>
+        /// correspond to Ultra-low and Standard, respectively.)</p>
         pub fn set_latency_mode(
             mut self,
             input: std::option::Option<crate::model::ChannelLatencyMode>,
@@ -1083,11 +1198,14 @@ pub mod channel_summary {
             self.latency_mode = input;
             self
         }
-        /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
+        /// <p>Whether the channel is private (enabled for playback authorization). Default:
+        /// <code>false</code>.</p>
         pub fn authorized(mut self, input: bool) -> Self {
             self.authorized = Some(input);
             self
         }
+        /// <p>Whether the channel is private (enabled for playback authorization). Default:
+        /// <code>false</code>.</p>
         pub fn set_authorized(mut self, input: std::option::Option<bool>) -> Self {
             self.authorized = input;
             self
@@ -1101,6 +1219,8 @@ pub mod channel_summary {
             self.recording_configuration_arn = Some(input.into());
             self
         }
+        /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording
+        /// is enabled. Default: "" (empty string, recording is disabled).</p>
         pub fn set_recording_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1108,6 +1228,11 @@ pub mod channel_summary {
             self.recording_configuration_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1118,6 +1243,7 @@ pub mod channel_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1153,8 +1279,7 @@ impl ChannelSummary {
 pub struct PlaybackKeyPair {
     /// <p>Key-pair ARN.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>An arbitrary string (a nickname) assigned to a playback key pair that helps the customer
-    /// identify that resource. The value does not need to be unique.</p>
+    /// <p>Playback-key-pair name. The value does not need to be unique.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>Key-pair identifier.</p>
     pub fingerprint: std::option::Option<std::string::String>,
@@ -1191,16 +1316,17 @@ pub mod playback_key_pair {
             self.arn = Some(input.into());
             self
         }
+        /// <p>Key-pair ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>An arbitrary string (a nickname) assigned to a playback key pair that helps the customer
-        /// identify that resource. The value does not need to be unique.</p>
+        /// <p>Playback-key-pair name. The value does not need to be unique.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
+        /// <p>Playback-key-pair name. The value does not need to be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1210,10 +1336,16 @@ pub mod playback_key_pair {
             self.fingerprint = Some(input.into());
             self
         }
+        /// <p>Key-pair identifier.</p>
         pub fn set_fingerprint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fingerprint = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1224,6 +1356,7 @@ pub mod playback_key_pair {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1269,7 +1402,7 @@ impl std::fmt::Debug for StreamKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StreamKey");
         formatter.field("arn", &self.arn);
-        formatter.field("value", &self.value);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
         formatter.field("channel_arn", &self.channel_arn);
         formatter.field("tags", &self.tags);
         formatter.finish()
@@ -1294,6 +1427,7 @@ pub mod stream_key {
             self.arn = Some(input.into());
             self
         }
+        /// <p>Stream-key ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1303,6 +1437,7 @@ pub mod stream_key {
             self.value = Some(input.into());
             self
         }
+        /// <p>Stream-key value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1312,10 +1447,16 @@ pub mod stream_key {
             self.channel_arn = Some(input.into());
             self
         }
+        /// <p>Channel ARN for the stream.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1326,6 +1467,7 @@ pub mod stream_key {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1361,14 +1503,16 @@ pub struct Stream {
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>URL of the master playlist, required by the video player to play the HLS stream.</p>
     pub playback_url: std::option::Option<std::string::String>,
-    /// <p>ISO-8601 formatted timestamp of the stream’s start.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The stream’s state.</p>
     pub state: std::option::Option<crate::model::StreamState>,
     /// <p>The stream’s health.</p>
     pub health: std::option::Option<crate::model::StreamHealth>,
-    /// <p>Number of current viewers of the stream. A value of -1 indicates that the request timed
-    /// out; in this case, retry.</p>
+    /// <p>A count of concurrent views of the stream. Typically, a new view appears in
+    /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
+    /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
+    /// -1 indicates that the request timed out; in this case, retry.</p>
     pub viewer_count: i64,
 }
 impl std::fmt::Debug for Stream {
@@ -1391,7 +1535,7 @@ pub mod stream {
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) playback_url: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) state: std::option::Option<crate::model::StreamState>,
         pub(crate) health: std::option::Option<crate::model::StreamHealth>,
         pub(crate) viewer_count: std::option::Option<i64>,
@@ -1402,6 +1546,7 @@ pub mod stream {
             self.channel_arn = Some(input.into());
             self
         }
+        /// <p>Channel ARN for the stream.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_arn = input;
             self
@@ -1411,16 +1556,21 @@ pub mod stream {
             self.playback_url = Some(input.into());
             self
         }
+        /// <p>URL of the master playlist, required by the video player to play the HLS stream.</p>
         pub fn set_playback_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.playback_url = input;
             self
         }
-        /// <p>ISO-8601 formatted timestamp of the stream’s start.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
@@ -1429,6 +1579,7 @@ pub mod stream {
             self.state = Some(input);
             self
         }
+        /// <p>The stream’s state.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::StreamState>) -> Self {
             self.state = input;
             self
@@ -1438,6 +1589,7 @@ pub mod stream {
             self.health = Some(input);
             self
         }
+        /// <p>The stream’s health.</p>
         pub fn set_health(
             mut self,
             input: std::option::Option<crate::model::StreamHealth>,
@@ -1445,12 +1597,18 @@ pub mod stream {
             self.health = input;
             self
         }
-        /// <p>Number of current viewers of the stream. A value of -1 indicates that the request timed
-        /// out; in this case, retry.</p>
+        /// <p>A count of concurrent views of the stream. Typically, a new view appears in
+        /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
+        /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
+        /// -1 indicates that the request timed out; in this case, retry.</p>
         pub fn viewer_count(mut self, input: i64) -> Self {
             self.viewer_count = Some(input);
             self
         }
+        /// <p>A count of concurrent views of the stream. Typically, a new view appears in
+        /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
+        /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
+        /// -1 indicates that the request timed out; in this case, retry.</p>
         pub fn set_viewer_count(mut self, input: std::option::Option<i64>) -> Self {
             self.viewer_count = input;
             self
@@ -1481,8 +1639,7 @@ impl Stream {
 pub struct RecordingConfiguration {
     /// <p>Recording-configuration ARN.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>An arbitrary string (a nickname) assigned to a recording configuration that helps the
-    /// customer identify that resource. The value does not need to be unique.</p>
+    /// <p>Recording-configuration name. The value does not need to be unique.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about where recorded video will be stored.</p>
     pub destination_configuration: std::option::Option<crate::model::DestinationConfiguration>,
@@ -1525,16 +1682,17 @@ pub mod recording_configuration {
             self.arn = Some(input.into());
             self
         }
+        /// <p>Recording-configuration ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>An arbitrary string (a nickname) assigned to a recording configuration that helps the
-        /// customer identify that resource. The value does not need to be unique.</p>
+        /// <p>Recording-configuration name. The value does not need to be unique.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
+        /// <p>Recording-configuration name. The value does not need to be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1547,6 +1705,7 @@ pub mod recording_configuration {
             self.destination_configuration = Some(input);
             self
         }
+        /// <p>A complex type that contains information about where recorded video will be stored.</p>
         pub fn set_destination_configuration(
             mut self,
             input: std::option::Option<crate::model::DestinationConfiguration>,
@@ -1560,6 +1719,8 @@ pub mod recording_configuration {
             self.state = Some(input);
             self
         }
+        /// <p>Indicates the current state of the recording configuration. When the state is
+        /// <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::RecordingConfigurationState>,
@@ -1567,6 +1728,11 @@ pub mod recording_configuration {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1577,6 +1743,7 @@ pub mod recording_configuration {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1641,6 +1808,7 @@ pub mod batch_error {
             self.arn = Some(input.into());
             self
         }
+        /// <p>Channel ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1650,6 +1818,7 @@ pub mod batch_error {
             self.code = Some(input.into());
             self
         }
+        /// <p>Error code.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
@@ -1659,6 +1828,7 @@ pub mod batch_error {
             self.message = Some(input.into());
             self
         }
+        /// <p>Error message, determined by the application.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self

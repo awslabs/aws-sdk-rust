@@ -27,7 +27,7 @@ pub fn parse_create_home_region_control_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateHomeRegionControlError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHomeRegionControlError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -45,7 +45,7 @@ pub fn parse_create_home_region_control_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::dry_run_operation::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_dry_run_operationjson_err(response.body().as_ref(), output).map_err(crate::error::CreateHomeRegionControlError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_dry_run_operation_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHomeRegionControlError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -63,7 +63,7 @@ pub fn parse_create_home_region_control_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::CreateHomeRegionControlError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHomeRegionControlError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -80,7 +80,7 @@ pub fn parse_create_home_region_control_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateHomeRegionControlError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHomeRegionControlError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -98,7 +98,7 @@ pub fn parse_create_home_region_control_error(
                     let mut output =
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateHomeRegionControlError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHomeRegionControlError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -115,7 +115,7 @@ pub fn parse_create_home_region_control_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateHomeRegionControlError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHomeRegionControlError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -176,7 +176,7 @@ pub fn parse_describe_home_region_controls_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeHomeRegionControlsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHomeRegionControlsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -193,7 +193,7 @@ pub fn parse_describe_home_region_controls_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeHomeRegionControlsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHomeRegionControlsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -210,7 +210,7 @@ pub fn parse_describe_home_region_controls_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeHomeRegionControlsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHomeRegionControlsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -228,7 +228,7 @@ pub fn parse_describe_home_region_controls_error(
                     let mut output =
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeHomeRegionControlsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHomeRegionControlsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -245,7 +245,7 @@ pub fn parse_describe_home_region_controls_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeHomeRegionControlsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHomeRegionControlsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -299,7 +299,7 @@ pub fn parse_get_home_region_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetHomeRegionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetHomeRegionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -316,7 +316,7 @@ pub fn parse_get_home_region_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::GetHomeRegionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::GetHomeRegionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -333,7 +333,7 @@ pub fn parse_get_home_region_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetHomeRegionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetHomeRegionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -351,7 +351,7 @@ pub fn parse_get_home_region_error(
                     let mut output =
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetHomeRegionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetHomeRegionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -368,7 +368,7 @@ pub fn parse_get_home_region_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetHomeRegionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetHomeRegionError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

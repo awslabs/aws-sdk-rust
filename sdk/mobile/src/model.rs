@@ -24,11 +24,11 @@ pub struct ProjectDetails {
     /// <p>
     /// Date the project was created.
     /// </p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// Date of the last modification of the project.
     /// </p>
-    pub last_updated_date: std::option::Option<smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// Website URL for this project in the AWS Mobile Hub console.
     /// </p>
@@ -62,8 +62,8 @@ pub mod project_details {
         pub(crate) project_id: std::option::Option<std::string::String>,
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ProjectState>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) console_url: std::option::Option<std::string::String>,
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     }
@@ -75,6 +75,9 @@ pub mod project_details {
             self.name = Some(input.into());
             self
         }
+        /// <p>
+        /// Name of the project.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -86,6 +89,9 @@ pub mod project_details {
             self.project_id = Some(input.into());
             self
         }
+        /// <p>
+        /// Unique project identifier.
+        /// </p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_id = input;
             self
@@ -97,6 +103,9 @@ pub mod project_details {
             self.region = Some(input.into());
             self
         }
+        /// <p>
+        /// Default region to use for AWS resource creation in the AWS Mobile Hub project.
+        /// </p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -108,6 +117,9 @@ pub mod project_details {
             self.state = Some(input);
             self
         }
+        /// <p>
+        /// Synchronization state for a project.
+        /// </p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ProjectState>) -> Self {
             self.state = input;
             self
@@ -115,13 +127,16 @@ pub mod project_details {
         /// <p>
         /// Date the project was created.
         /// </p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>
+        /// Date the project was created.
+        /// </p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -129,13 +144,16 @@ pub mod project_details {
         /// <p>
         /// Date of the last modification of the project.
         /// </p>
-        pub fn last_updated_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_date = Some(input);
             self
         }
+        /// <p>
+        /// Date of the last modification of the project.
+        /// </p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_date = input;
             self
@@ -147,16 +165,29 @@ pub mod project_details {
             self.console_url = Some(input.into());
             self
         }
+        /// <p>
+        /// Website URL for this project in the AWS Mobile Hub console.
+        /// </p>
         pub fn set_console_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.console_url = input;
             self
         }
+        /// Appends an item to `resources`.
+        ///
+        /// To override the contents of this collection use [`set_resources`](Self::set_resources).
+        ///
+        /// <p>
+        /// List of AWS resources associated with a project.
+        /// </p>
         pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
             let mut v = self.resources.unwrap_or_default();
             v.push(input.into());
             self.resources = Some(v);
             self
         }
+        /// <p>
+        /// List of AWS resources associated with a project.
+        /// </p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -247,6 +278,9 @@ pub mod resource {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>
+        /// Simplified name for type of AWS resource (e.g., bucket is an Amazon S3 bucket).
+        /// </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -258,6 +292,9 @@ pub mod resource {
             self.name = Some(input.into());
             self
         }
+        /// <p>
+        /// Name of the AWS resource (e.g., for an Amazon S3 bucket this is the name of the bucket).
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -269,6 +306,9 @@ pub mod resource {
             self.arn = Some(input.into());
             self
         }
+        /// <p>
+        /// AWS resource name which uniquely identifies the resource in AWS systems.
+        /// </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -280,10 +320,20 @@ pub mod resource {
             self.feature = Some(input.into());
             self
         }
+        /// <p>
+        /// Identifies which feature in AWS Mobile Hub is associated with this AWS resource.
+        /// </p>
         pub fn set_feature(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.feature = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>
+        /// Key-value attribute pairs.
+        /// </p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -294,6 +344,9 @@ pub mod resource {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>
+        /// Key-value attribute pairs.
+        /// </p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -336,8 +389,11 @@ impl Resource {
     std::hash::Hash,
 )]
 pub enum ProjectState {
+    #[allow(missing_docs)] // documentation missing in model
     Importing,
+    #[allow(missing_docs)] // documentation missing in model
     Normal,
+    #[allow(missing_docs)] // documentation missing in model
     Syncing,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -360,6 +416,7 @@ impl std::str::FromStr for ProjectState {
     }
 }
 impl ProjectState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProjectState::Importing => "IMPORTING",
@@ -368,6 +425,7 @@ impl ProjectState {
             ProjectState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["IMPORTING", "NORMAL", "SYNCING"]
     }
@@ -418,6 +476,9 @@ pub mod project_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>
+        /// Name of the project.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -429,6 +490,9 @@ pub mod project_summary {
             self.project_id = Some(input.into());
             self
         }
+        /// <p>
+        /// Unique project identifier.
+        /// </p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_id = input;
             self
@@ -513,6 +577,9 @@ pub mod bundle_details {
             self.bundle_id = Some(input.into());
             self
         }
+        /// <p>
+        /// Unique bundle identifier.
+        /// </p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
@@ -524,6 +591,9 @@ pub mod bundle_details {
             self.title = Some(input.into());
             self
         }
+        /// <p>
+        /// Title of the download bundle.
+        /// </p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -535,6 +605,9 @@ pub mod bundle_details {
             self.version = Some(input.into());
             self
         }
+        /// <p>
+        /// Version of the download bundle.
+        /// </p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -546,6 +619,9 @@ pub mod bundle_details {
             self.description = Some(input.into());
             self
         }
+        /// <p>
+        /// Description of the download bundle.
+        /// </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -557,16 +633,29 @@ pub mod bundle_details {
             self.icon_url = Some(input.into());
             self
         }
+        /// <p>
+        /// Icon for the download bundle.
+        /// </p>
         pub fn set_icon_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.icon_url = input;
             self
         }
+        /// Appends an item to `available_platforms`.
+        ///
+        /// To override the contents of this collection use [`set_available_platforms`](Self::set_available_platforms).
+        ///
+        /// <p>
+        /// Developer desktop or mobile app or website platforms.
+        /// </p>
         pub fn available_platforms(mut self, input: impl Into<crate::model::Platform>) -> Self {
             let mut v = self.available_platforms.unwrap_or_default();
             v.push(input.into());
             self.available_platforms = Some(v);
             self
         }
+        /// <p>
+        /// Developer desktop or mobile app or website platforms.
+        /// </p>
         pub fn set_available_platforms(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Platform>>,
@@ -608,12 +697,19 @@ impl BundleDetails {
     std::hash::Hash,
 )]
 pub enum Platform {
+    #[allow(missing_docs)] // documentation missing in model
     Android,
+    #[allow(missing_docs)] // documentation missing in model
     Javascript,
+    #[allow(missing_docs)] // documentation missing in model
     Linux,
+    #[allow(missing_docs)] // documentation missing in model
     Objc,
+    #[allow(missing_docs)] // documentation missing in model
     Osx,
+    #[allow(missing_docs)] // documentation missing in model
     Swift,
+    #[allow(missing_docs)] // documentation missing in model
     Windows,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -640,6 +736,7 @@ impl std::str::FromStr for Platform {
     }
 }
 impl Platform {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Platform::Android => "ANDROID",
@@ -652,6 +749,7 @@ impl Platform {
             Platform::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ANDROID",

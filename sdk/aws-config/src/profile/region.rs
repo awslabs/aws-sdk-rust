@@ -125,7 +125,7 @@ mod test {
         ProviderConfig::empty()
             .with_fs(fs)
             .with_env(env)
-            .with_connector(no_traffic_connector())
+            .with_http_connector(no_traffic_connector())
     }
 
     #[traced_test]

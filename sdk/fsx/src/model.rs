@@ -5,7 +5,7 @@
 pub struct Volume {
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z),
     /// also known as Unix time.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The lifecycle status of the volume.</p>
@@ -79,7 +79,7 @@ pub mod volume {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) lifecycle: std::option::Option<crate::model::VolumeLifecycle>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -94,13 +94,15 @@ pub mod volume {
     impl Builder {
         /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z),
         /// also known as Unix time.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z),
+        /// also known as Unix time.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -110,6 +112,7 @@ pub mod volume {
             self.file_system_id = Some(input.into());
             self
         }
+        /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -148,6 +151,33 @@ pub mod volume {
             self.lifecycle = Some(input);
             self
         }
+        /// <p>The lifecycle status of the volume.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATED</code> - The volume is fully available for use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATING</code> - Amazon FSx is creating the new volume.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETING</code> - Amazon FSx is deleting an existing volume.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code> - Amazon FSx was unable to create the volume.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MISCONFIGURED</code> - The volume is in a failed but recoverable state.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code> - Amazon FSx has not started creating the volume.</p>
+        /// </li>
+        /// </ul>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::VolumeLifecycle>,
@@ -160,6 +190,7 @@ pub mod volume {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the volume.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -172,6 +203,7 @@ pub mod volume {
             self.ontap_configuration = Some(input);
             self
         }
+        /// <p>The configuration of an Amazon FSx for NetApp ONTAP volume</p>
         pub fn set_ontap_configuration(
             mut self,
             input: std::option::Option<crate::model::OntapVolumeConfiguration>,
@@ -187,16 +219,26 @@ pub mod volume {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services
+        /// resources. We require an ARN when you need to specify a resource unambiguously across
+        /// all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+        /// the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -209,6 +251,7 @@ pub mod volume {
             self.volume_id = Some(input.into());
             self
         }
+        /// <p>The system-generated, unique ID of the volume.</p>
         pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.volume_id = input;
             self
@@ -218,6 +261,7 @@ pub mod volume {
             self.volume_type = Some(input);
             self
         }
+        /// <p>The type of volume; <code>ONTAP</code> is the only valid volume type.</p>
         pub fn set_volume_type(
             mut self,
             input: std::option::Option<crate::model::VolumeType>,
@@ -233,6 +277,7 @@ pub mod volume {
             self.lifecycle_transition_reason = Some(input);
             self
         }
+        /// <p>Describes why the volume lifecycle state changed.</p>
         pub fn set_lifecycle_transition_reason(
             mut self,
             input: std::option::Option<crate::model::LifecycleTransitionReason>,
@@ -292,6 +337,7 @@ pub mod lifecycle_transition_reason {
             self.message = Some(input.into());
             self
         }
+        /// <p>A detailed error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -311,6 +357,7 @@ impl LifecycleTransitionReason {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -322,6 +369,7 @@ impl LifecycleTransitionReason {
     std::hash::Hash,
 )]
 pub enum VolumeType {
+    #[allow(missing_docs)] // documentation missing in model
     Ontap,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -342,12 +390,14 @@ impl std::str::FromStr for VolumeType {
     }
 }
 impl VolumeType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             VolumeType::Ontap => "ONTAP",
             VolumeType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ONTAP"]
     }
@@ -395,6 +445,8 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>A value that specifies the <code>TagKey</code>, the name of the tag. Tag keys must
+        /// be unique for the resource to which they are attached.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -407,6 +459,10 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>A value that specifies the <code>TagValue</code>, the value assigned to the
+        /// corresponding tag key. Tag values can be null and don't have to be unique in a tag set.
+        /// For example, you can have a key-value pair in a tag set of <code>finances : April</code>
+        /// and also of <code>payroll : April</code>.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -565,6 +621,23 @@ pub mod ontap_volume_configuration {
             self.flex_cache_endpoint_type = Some(input);
             self
         }
+        /// <p>Specifies the FlexCache endpoint type of the volume.
+        /// Valid values are the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> specifies that the volume doesn't have a FlexCache configuration.
+        /// <code>NONE</code> is the default.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ORIGIN</code> specifies that the volume is the origin volume for a FlexCache volume.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CACHE</code> specifies that the volume is a FlexCache volume.</p>
+        /// </li>
+        /// </ul>
         pub fn set_flex_cache_endpoint_type(
             mut self,
             input: std::option::Option<crate::model::FlexCacheEndpointType>,
@@ -580,6 +653,10 @@ pub mod ontap_volume_configuration {
             self.junction_path = Some(input.into());
             self
         }
+        /// <p>Specifies the directory that NAS clients use to mount the volume, along with the SVM DNS name or IP address.
+        /// You can create a <code>JunctionPath</code> directly below a parent volume junction or on a
+        /// directory within a volume. A <code>JunctionPath</code> for a volume named vol3 might
+        /// be /vol1/vol2/vol3, or /vol1/dir2/vol3, or even /dir1/dir2/vol3..</p>
         pub fn set_junction_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -593,6 +670,8 @@ pub mod ontap_volume_configuration {
             self.security_style = Some(input);
             self
         }
+        /// <p>The security style for the volume, which can be <code>UNIX</code>,
+        /// <code>NTFS</code>, or <code>MIXED</code>.</p>
         pub fn set_security_style(
             mut self,
             input: std::option::Option<crate::model::SecurityStyle>,
@@ -605,6 +684,7 @@ pub mod ontap_volume_configuration {
             self.size_in_megabytes = Some(input);
             self
         }
+        /// <p>The configured size of the volume, in megabytes (MBs).</p>
         pub fn set_size_in_megabytes(mut self, input: std::option::Option<i32>) -> Self {
             self.size_in_megabytes = input;
             self
@@ -614,6 +694,7 @@ pub mod ontap_volume_configuration {
             self.storage_efficiency_enabled = Some(input);
             self
         }
+        /// <p>The volume's storage efficiency setting.</p>
         pub fn set_storage_efficiency_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.storage_efficiency_enabled = input;
             self
@@ -623,6 +704,7 @@ pub mod ontap_volume_configuration {
             self.storage_virtual_machine_id = Some(input.into());
             self
         }
+        /// <p>The ID of the volume's storage virtual machine.</p>
         pub fn set_storage_virtual_machine_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -641,6 +723,13 @@ pub mod ontap_volume_configuration {
             self.storage_virtual_machine_root = Some(input);
             self
         }
+        /// <p>A boolean flag indicating whether this volume is the root volume for
+        /// its storage virtual machine (SVM). Only one volume on an SVM can be the
+        /// root volume. This value defaults to false. If this value is true, then
+        /// this is the SVM root volume.</p>
+        /// <p>This flag is useful when you're deleting an SVM, because you must
+        /// first delete all non-root volumes. This flag, when set to false, helps
+        /// you identify which volumes to delete before you can delete the SVM.</p>
         pub fn set_storage_virtual_machine_root(
             mut self,
             input: std::option::Option<bool>,
@@ -653,6 +742,7 @@ pub mod ontap_volume_configuration {
             self.tiering_policy = Some(input);
             self
         }
+        /// <p>The volume's <code>TieringPolicy</code> setting.</p>
         pub fn set_tiering_policy(
             mut self,
             input: std::option::Option<crate::model::TieringPolicy>,
@@ -665,6 +755,7 @@ pub mod ontap_volume_configuration {
             self.uuid = Some(input.into());
             self
         }
+        /// <p>The volume's UUID (universally unique identifier).</p>
         pub fn set_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.uuid = input;
             self
@@ -693,6 +784,26 @@ pub mod ontap_volume_configuration {
             self.ontap_volume_type = Some(input);
             self
         }
+        /// <p>Specifies the type of volume. Valid values are the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>RW</code> specifies a read-write volume.
+        /// <code>RW</code> is the default.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DP</code> specifies a data protection volume. You can
+        /// protect data by replicating it to data protection mirror copies and use
+        /// data protection mirror copies to recover data when a disaster occurs.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LS</code> specifies a load-sharing mirror volume.
+        /// A load-sharing mirror reduces the network traffic to a FlexVol volume
+        /// by providing additional read-only access to clients.</p>
+        /// </li>
+        /// </ul>
         pub fn set_ontap_volume_type(
             mut self,
             input: std::option::Option<crate::model::OntapVolumeType>,
@@ -724,6 +835,7 @@ impl OntapVolumeConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -735,8 +847,11 @@ impl OntapVolumeConfiguration {
     std::hash::Hash,
 )]
 pub enum OntapVolumeType {
+    #[allow(missing_docs)] // documentation missing in model
     Dp,
+    #[allow(missing_docs)] // documentation missing in model
     Ls,
+    #[allow(missing_docs)] // documentation missing in model
     Rw,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -759,6 +874,7 @@ impl std::str::FromStr for OntapVolumeType {
     }
 }
 impl OntapVolumeType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OntapVolumeType::Dp => "DP",
@@ -767,6 +883,7 @@ impl OntapVolumeType {
             OntapVolumeType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DP", "LS", "RW"]
     }
@@ -838,6 +955,10 @@ pub mod tiering_policy {
             self.cooling_period = Some(input);
             self
         }
+        /// <p>Specifies the number of days that user data in a volume must remain inactive before it is considered "cold"
+        /// and moved to the capacity pool. Used with the <code>AUTO</code> and <code>SNAPSHOT_ONLY</code> tiering policies.
+        /// Enter a whole number between 2 and 183. Default values are 31 days for <code>AUTO</code> and 2 days for
+        /// <code>SNAPSHOT_ONLY</code>.</p>
         pub fn set_cooling_period(mut self, input: std::option::Option<i32>) -> Self {
             self.cooling_period = input;
             self
@@ -868,6 +989,28 @@ pub mod tiering_policy {
             self.name = Some(input);
             self
         }
+        /// <p>Specifies the tiering policy used to transition data. Default value is <code>SNAPSHOT_ONLY</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SNAPSHOT_ONLY</code> - moves cold snapshots to the capacity pool storage tier.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage tier
+        /// based on your access patterns.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the
+        /// storage pool tier.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to
+        /// the capacity pool tier.</p>
+        /// </li>
+        /// </ul>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::TieringPolicyName>,
@@ -891,6 +1034,7 @@ impl TieringPolicy {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -902,9 +1046,13 @@ impl TieringPolicy {
     std::hash::Hash,
 )]
 pub enum TieringPolicyName {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Auto,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     SnapshotOnly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -928,6 +1076,7 @@ impl std::str::FromStr for TieringPolicyName {
     }
 }
 impl TieringPolicyName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TieringPolicyName::All => "ALL",
@@ -937,6 +1086,7 @@ impl TieringPolicyName {
             TieringPolicyName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL", "AUTO", "NONE", "SNAPSHOT_ONLY"]
     }
@@ -947,6 +1097,7 @@ impl AsRef<str> for TieringPolicyName {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -958,8 +1109,11 @@ impl AsRef<str> for TieringPolicyName {
     std::hash::Hash,
 )]
 pub enum SecurityStyle {
+    #[allow(missing_docs)] // documentation missing in model
     Mixed,
+    #[allow(missing_docs)] // documentation missing in model
     Ntfs,
+    #[allow(missing_docs)] // documentation missing in model
     Unix,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -982,6 +1136,7 @@ impl std::str::FromStr for SecurityStyle {
     }
 }
 impl SecurityStyle {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SecurityStyle::Mixed => "MIXED",
@@ -990,6 +1145,7 @@ impl SecurityStyle {
             SecurityStyle::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MIXED", "NTFS", "UNIX"]
     }
@@ -1000,6 +1156,7 @@ impl AsRef<str> for SecurityStyle {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1011,8 +1168,11 @@ impl AsRef<str> for SecurityStyle {
     std::hash::Hash,
 )]
 pub enum FlexCacheEndpointType {
+    #[allow(missing_docs)] // documentation missing in model
     Cache,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Origin,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1035,6 +1195,7 @@ impl std::str::FromStr for FlexCacheEndpointType {
     }
 }
 impl FlexCacheEndpointType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FlexCacheEndpointType::Cache => "CACHE",
@@ -1043,6 +1204,7 @@ impl FlexCacheEndpointType {
             FlexCacheEndpointType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CACHE", "NONE", "ORIGIN"]
     }
@@ -1053,6 +1215,7 @@ impl AsRef<str> for FlexCacheEndpointType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1064,11 +1227,17 @@ impl AsRef<str> for FlexCacheEndpointType {
     std::hash::Hash,
 )]
 pub enum VolumeLifecycle {
+    #[allow(missing_docs)] // documentation missing in model
     Created,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Misconfigured,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1094,6 +1263,7 @@ impl std::str::FromStr for VolumeLifecycle {
     }
 }
 impl VolumeLifecycle {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             VolumeLifecycle::Created => "CREATED",
@@ -1105,6 +1275,7 @@ impl VolumeLifecycle {
             VolumeLifecycle::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATED",
@@ -1173,6 +1344,8 @@ pub mod update_ontap_volume_configuration {
             self.junction_path = Some(input.into());
             self
         }
+        /// <p>Specifies the location in the SVM's namespace where the volume is mounted.
+        /// The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
         pub fn set_junction_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1186,6 +1359,8 @@ pub mod update_ontap_volume_configuration {
             self.security_style = Some(input);
             self
         }
+        /// <p>The security style for the volume, which can be <code>UNIX</code>.
+        /// <code>NTFS</code>, or <code>MIXED</code>.</p>
         pub fn set_security_style(
             mut self,
             input: std::option::Option<crate::model::SecurityStyle>,
@@ -1198,6 +1373,7 @@ pub mod update_ontap_volume_configuration {
             self.size_in_megabytes = Some(input);
             self
         }
+        /// <p>Specifies the size of the volume in megabytes.</p>
         pub fn set_size_in_megabytes(mut self, input: std::option::Option<i32>) -> Self {
             self.size_in_megabytes = input;
             self
@@ -1208,6 +1384,8 @@ pub mod update_ontap_volume_configuration {
             self.storage_efficiency_enabled = Some(input);
             self
         }
+        /// <p>Default is <code>false</code>. Set to true to enable the deduplication,
+        /// compression, and compaction storage efficiency features on the volume.</p>
         pub fn set_storage_efficiency_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.storage_efficiency_enabled = input;
             self
@@ -1217,6 +1395,7 @@ pub mod update_ontap_volume_configuration {
             self.tiering_policy = Some(input);
             self
         }
+        /// <p>Update the volume's data tiering policy.</p>
         pub fn set_tiering_policy(
             mut self,
             input: std::option::Option<crate::model::TieringPolicy>,
@@ -1252,7 +1431,7 @@ pub struct StorageVirtualMachine {
         std::option::Option<crate::model::SvmActiveDirectoryConfiguration>,
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z),
     /// also known as Unix time.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The endpoints  that are used to access data or to manage the SVM
     /// using the NetApp ONTAP CLI, REST API, or NetApp CloudManager. They
     /// are the <code>Iscsi</code>, <code>Management</code>, <code>Nfs</code>,
@@ -1348,7 +1527,7 @@ pub mod storage_virtual_machine {
     pub struct Builder {
         pub(crate) active_directory_configuration:
             std::option::Option<crate::model::SvmActiveDirectoryConfiguration>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) endpoints: std::option::Option<crate::model::SvmEndpoints>,
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) lifecycle: std::option::Option<crate::model::StorageVirtualMachineLifecycle>,
@@ -1372,6 +1551,7 @@ pub mod storage_virtual_machine {
             self.active_directory_configuration = Some(input);
             self
         }
+        /// <p>Describes the Microsoft Active Directory configuration to which the SVM is joined, if applicable.</p>
         pub fn set_active_directory_configuration(
             mut self,
             input: std::option::Option<crate::model::SvmActiveDirectoryConfiguration>,
@@ -1381,13 +1561,15 @@ pub mod storage_virtual_machine {
         }
         /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z),
         /// also known as Unix time.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z),
+        /// also known as Unix time.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -1400,6 +1582,10 @@ pub mod storage_virtual_machine {
             self.endpoints = Some(input);
             self
         }
+        /// <p>The endpoints  that are used to access data or to manage the SVM
+        /// using the NetApp ONTAP CLI, REST API, or NetApp CloudManager. They
+        /// are the <code>Iscsi</code>, <code>Management</code>, <code>Nfs</code>,
+        /// and <code>Smb</code> endpoints.</p>
         pub fn set_endpoints(
             mut self,
             input: std::option::Option<crate::model::SvmEndpoints>,
@@ -1412,6 +1598,7 @@ pub mod storage_virtual_machine {
             self.file_system_id = Some(input.into());
             self
         }
+        /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1450,6 +1637,33 @@ pub mod storage_virtual_machine {
             self.lifecycle = Some(input);
             self
         }
+        /// <p>Describes the SVM's lifecycle status.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATED</code> - The SVM is fully available for use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATING</code> - Amazon FSx is creating the new SVM.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETING</code> - Amazon FSx is deleting an existing SVM.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code> - Amazon FSx was unable to create the SVM.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MISCONFIGURED</code> - The SVM is in a failed but recoverable state.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code> - Amazon FSx has not started creating the SVM.</p>
+        /// </li>
+        /// </ul>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::StorageVirtualMachineLifecycle>,
@@ -1462,6 +1676,7 @@ pub mod storage_virtual_machine {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the SVM, if provisioned.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1474,6 +1689,10 @@ pub mod storage_virtual_machine {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services
+        /// resources. We require an ARN when you need to specify a resource unambiguously across
+        /// all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+        /// the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -1483,6 +1702,7 @@ pub mod storage_virtual_machine {
             self.storage_virtual_machine_id = Some(input.into());
             self
         }
+        /// <p>The SVM's system generated unique ID.</p>
         pub fn set_storage_virtual_machine_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1495,6 +1715,7 @@ pub mod storage_virtual_machine {
             self.subtype = Some(input);
             self
         }
+        /// <p>Describes the SVM's subtype.</p>
         pub fn set_subtype(
             mut self,
             input: std::option::Option<crate::model::StorageVirtualMachineSubtype>,
@@ -1507,16 +1728,23 @@ pub mod storage_virtual_machine {
             self.uuid = Some(input.into());
             self
         }
+        /// <p>The SVM's UUID (universally unique identifier).</p>
         pub fn set_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.uuid = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1532,6 +1760,7 @@ pub mod storage_virtual_machine {
             self.lifecycle_transition_reason = Some(input);
             self
         }
+        /// <p>Describes why the SVM lifecycle state changed.</p>
         pub fn set_lifecycle_transition_reason(
             mut self,
             input: std::option::Option<crate::model::LifecycleTransitionReason>,
@@ -1547,6 +1776,7 @@ pub mod storage_virtual_machine {
             self.root_volume_security_style = Some(input);
             self
         }
+        /// <p>The security style of the root volume of the SVM.</p>
         pub fn set_root_volume_security_style(
             mut self,
             input: std::option::Option<crate::model::StorageVirtualMachineRootVolumeSecurityStyle>,
@@ -1581,6 +1811,7 @@ impl StorageVirtualMachine {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1592,8 +1823,11 @@ impl StorageVirtualMachine {
     std::hash::Hash,
 )]
 pub enum StorageVirtualMachineRootVolumeSecurityStyle {
+    #[allow(missing_docs)] // documentation missing in model
     Mixed,
+    #[allow(missing_docs)] // documentation missing in model
     Ntfs,
+    #[allow(missing_docs)] // documentation missing in model
     Unix,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1616,6 +1850,7 @@ impl std::str::FromStr for StorageVirtualMachineRootVolumeSecurityStyle {
     }
 }
 impl StorageVirtualMachineRootVolumeSecurityStyle {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StorageVirtualMachineRootVolumeSecurityStyle::Mixed => "MIXED",
@@ -1624,6 +1859,7 @@ impl StorageVirtualMachineRootVolumeSecurityStyle {
             StorageVirtualMachineRootVolumeSecurityStyle::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MIXED", "NTFS", "UNIX"]
     }
@@ -1634,6 +1870,7 @@ impl AsRef<str> for StorageVirtualMachineRootVolumeSecurityStyle {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1645,9 +1882,13 @@ impl AsRef<str> for StorageVirtualMachineRootVolumeSecurityStyle {
     std::hash::Hash,
 )]
 pub enum StorageVirtualMachineSubtype {
+    #[allow(missing_docs)] // documentation missing in model
     Default,
+    #[allow(missing_docs)] // documentation missing in model
     DpDestination,
+    #[allow(missing_docs)] // documentation missing in model
     SyncDestination,
+    #[allow(missing_docs)] // documentation missing in model
     SyncSource,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1671,6 +1912,7 @@ impl std::str::FromStr for StorageVirtualMachineSubtype {
     }
 }
 impl StorageVirtualMachineSubtype {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StorageVirtualMachineSubtype::Default => "DEFAULT",
@@ -1680,6 +1922,7 @@ impl StorageVirtualMachineSubtype {
             StorageVirtualMachineSubtype::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DEFAULT",
@@ -1695,6 +1938,7 @@ impl AsRef<str> for StorageVirtualMachineSubtype {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1706,11 +1950,17 @@ impl AsRef<str> for StorageVirtualMachineSubtype {
     std::hash::Hash,
 )]
 pub enum StorageVirtualMachineLifecycle {
+    #[allow(missing_docs)] // documentation missing in model
     Created,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Misconfigured,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1736,6 +1986,7 @@ impl std::str::FromStr for StorageVirtualMachineLifecycle {
     }
 }
 impl StorageVirtualMachineLifecycle {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StorageVirtualMachineLifecycle::Created => "CREATED",
@@ -1747,6 +1998,7 @@ impl StorageVirtualMachineLifecycle {
             StorageVirtualMachineLifecycle::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATED",
@@ -1806,6 +2058,7 @@ pub mod svm_endpoints {
             self.iscsi = Some(input);
             self
         }
+        /// <p>An endpoint for connecting using the Internet Small Computer Systems Interface (iSCSI)  protocol.</p>
         pub fn set_iscsi(mut self, input: std::option::Option<crate::model::SvmEndpoint>) -> Self {
             self.iscsi = input;
             self
@@ -1815,6 +2068,7 @@ pub mod svm_endpoints {
             self.management = Some(input);
             self
         }
+        /// <p>An endpoint for managing SVMs using the NetApp ONTAP CLI, NetApp ONTAP API, or NetApp CloudManager.</p>
         pub fn set_management(
             mut self,
             input: std::option::Option<crate::model::SvmEndpoint>,
@@ -1827,6 +2081,7 @@ pub mod svm_endpoints {
             self.nfs = Some(input);
             self
         }
+        /// <p>An endpoint for connecting using the Network File System (NFS) protocol.</p>
         pub fn set_nfs(mut self, input: std::option::Option<crate::model::SvmEndpoint>) -> Self {
             self.nfs = input;
             self
@@ -1836,6 +2091,7 @@ pub mod svm_endpoints {
             self.smb = Some(input);
             self
         }
+        /// <p>An endpoint for connecting using the Server Message Block (SMB) protocol.</p>
         pub fn set_smb(mut self, input: std::option::Option<crate::model::SvmEndpoint>) -> Self {
             self.smb = input;
             self
@@ -1896,16 +2152,24 @@ pub mod svm_endpoint {
             self.dns_name = Some(input.into());
             self
         }
+        /// <p>The Domain Name Service (DNS) name for the file system. You can mount your file
+        /// system using its DNS name.</p>
         pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dns_name = input;
             self
         }
+        /// Appends an item to `ip_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
+        ///
+        /// <p>The SVM endpoint's IP addresses.</p>
         pub fn ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ip_addresses.unwrap_or_default();
             v.push(input.into());
             self.ip_addresses = Some(v);
             self
         }
+        /// <p>The SVM endpoint's IP addresses.</p>
         pub fn set_ip_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1969,6 +2233,7 @@ pub mod svm_active_directory_configuration {
             self.net_bios_name = Some(input.into());
             self
         }
+        /// <p>The NetBIOS name of the Active Directory computer object that is joined to your SVM.</p>
         pub fn set_net_bios_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1985,6 +2250,8 @@ pub mod svm_active_directory_configuration {
             self.self_managed_active_directory_configuration = Some(input);
             self
         }
+        /// <p>The configuration of the self-managed Microsoft Active Directory (AD) directory to
+        /// which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
         pub fn set_self_managed_active_directory_configuration(
             mut self,
             input: std::option::Option<crate::model::SelfManagedActiveDirectoryAttributes>,
@@ -2064,6 +2331,7 @@ pub mod self_managed_active_directory_attributes {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The fully qualified domain name of the self-managed AD directory.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -2077,6 +2345,8 @@ pub mod self_managed_active_directory_attributes {
             self.organizational_unit_distinguished_name = Some(input.into());
             self
         }
+        /// <p>The fully qualified distinguished name of the organizational unit within the
+        /// self-managed AD directory to which the Windows File Server  or ONTAP storage virtual machine (SVM) instance is joined.</p>
         pub fn set_organizational_unit_distinguished_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2093,6 +2363,8 @@ pub mod self_managed_active_directory_attributes {
             self.file_system_administrators_group = Some(input.into());
             self
         }
+        /// <p>The name of the domain group whose members have administrative privileges for the FSx
+        /// file system.</p>
         pub fn set_file_system_administrators_group(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2106,16 +2378,26 @@ pub mod self_managed_active_directory_attributes {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The user name for the service account on your self-managed AD domain that FSx uses to
+        /// join to your AD domain.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
         }
+        /// Appends an item to `dns_ips`.
+        ///
+        /// To override the contents of this collection use [`set_dns_ips`](Self::set_dns_ips).
+        ///
+        /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the
+        /// self-managed AD directory.</p>
         pub fn dns_ips(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dns_ips.unwrap_or_default();
             v.push(input.into());
             self.dns_ips = Some(v);
             self
         }
+        /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the
+        /// self-managed AD directory.</p>
         pub fn set_dns_ips(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2181,6 +2463,8 @@ pub mod update_svm_active_directory_configuration {
             self.self_managed_active_directory_configuration = Some(input);
             self
         }
+        /// <p>The configuration that Amazon FSx uses to join the Windows File Server instance to a
+        /// self-managed Microsoft Active Directory (AD) directory.</p>
         pub fn set_self_managed_active_directory_configuration(
             mut self,
             input: std::option::Option<
@@ -2251,6 +2535,10 @@ pub mod self_managed_active_directory_configuration_updates {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The user name for the service account on your self-managed AD domain that Amazon FSx will use to join to
+        /// your AD domain. This account must have the permission to join
+        /// computers to the domain in the organizational unit provided in
+        /// <code>OrganizationalUnitDistinguishedName</code>.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -2261,16 +2549,26 @@ pub mod self_managed_active_directory_configuration_updates {
             self.password = Some(input.into());
             self
         }
+        /// <p>The password for the service account on your self-managed AD domain that Amazon FSx will use to join to
+        /// your AD domain.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
         }
+        /// Appends an item to `dns_ips`.
+        ///
+        /// To override the contents of this collection use [`set_dns_ips`](Self::set_dns_ips).
+        ///
+        /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the
+        /// self-managed AD directory.</p>
         pub fn dns_ips(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dns_ips.unwrap_or_default();
             v.push(input.into());
             self.dns_ips = Some(v);
             self
         }
+        /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the
+        /// self-managed AD directory.</p>
         pub fn set_dns_ips(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2310,14 +2608,23 @@ impl SelfManagedActiveDirectoryConfigurationUpdates {
     std::hash::Hash,
 )]
 pub enum ServiceLimit {
+    #[allow(missing_docs)] // documentation missing in model
     FileSystemCount,
+    #[allow(missing_docs)] // documentation missing in model
     StorageVirtualMachinesPerFileSystem,
+    #[allow(missing_docs)] // documentation missing in model
     TotalInProgressCopyBackups,
+    #[allow(missing_docs)] // documentation missing in model
     TotalSsdIops,
+    #[allow(missing_docs)] // documentation missing in model
     TotalStorage,
+    #[allow(missing_docs)] // documentation missing in model
     TotalThroughputCapacity,
+    #[allow(missing_docs)] // documentation missing in model
     TotalUserInitiatedBackups,
+    #[allow(missing_docs)] // documentation missing in model
     TotalUserTags,
+    #[allow(missing_docs)] // documentation missing in model
     VolumesPerFileSystem,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2348,6 +2655,7 @@ impl std::str::FromStr for ServiceLimit {
     }
 }
 impl ServiceLimit {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceLimit::FileSystemCount => "FILE_SYSTEM_COUNT",
@@ -2364,6 +2672,7 @@ impl ServiceLimit {
             ServiceLimit::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "FILE_SYSTEM_COUNT",
@@ -2394,7 +2703,7 @@ pub struct FileSystem {
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z),
     /// also known as Unix time.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The system-generated, unique 17-digit ID of the file system.</p>
     pub file_system_id: std::option::Option<std::string::String>,
     /// <p>The type of Amazon FSx file system, which can be <code>LUSTRE</code>, <code>WINDOWS</code>,
@@ -2455,6 +2764,7 @@ pub struct FileSystem {
     /// the Amazon FSx file system was created in. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network
     /// Interfaces</a> in the <i>Amazon EC2 User Guide.</i>
     /// </p>
+    ///
     /// <p>For an Amazon FSx for Windows File Server file system, you can have one network
     /// interface ID. For an Amazon FSx for Lustre file system, you can have more than
     /// one.</p>
@@ -2522,7 +2832,7 @@ pub mod file_system {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_id: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) file_system_type: std::option::Option<crate::model::FileSystemType>,
         pub(crate) lifecycle: std::option::Option<crate::model::FileSystemLifecycle>,
@@ -2554,19 +2864,24 @@ pub mod file_system {
             self.owner_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account that created the file system. If the file system was created by an
+        /// Identity and Access Management (IAM) user, the Amazon Web Services account to which the
+        /// IAM user belongs is the owner.</p>
         pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner_id = input;
             self
         }
         /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z),
         /// also known as Unix time.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z),
+        /// also known as Unix time.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2576,6 +2891,7 @@ pub mod file_system {
             self.file_system_id = Some(input.into());
             self
         }
+        /// <p>The system-generated, unique 17-digit ID of the file system.</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2589,6 +2905,8 @@ pub mod file_system {
             self.file_system_type = Some(input);
             self
         }
+        /// <p>The type of Amazon FSx file system, which can be <code>LUSTRE</code>, <code>WINDOWS</code>,
+        /// or <code>ONTAP</code>.</p>
         pub fn set_file_system_type(
             mut self,
             input: std::option::Option<crate::model::FileSystemType>,
@@ -2628,6 +2946,34 @@ pub mod file_system {
             self.lifecycle = Some(input);
             self
         }
+        /// <p>The lifecycle status of the file system, following are the possible values and what they mean:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AVAILABLE</code> - The file system is in a healthy state, and is reachable and available for use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATING</code> - Amazon FSx is creating the new file system.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETING</code> - Amazon FSx is deleting an existing file system.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code> - An existing file system has experienced an unrecoverable failure.
+        /// When creating a new file system, Amazon FSx was unable to create the file system.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MISCONFIGURED</code> indicates that the file system is in a failed but recoverable state.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATING</code> indicates that the file system is undergoing a customer initiated update.</p>
+        /// </li>
+        /// </ul>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::FileSystemLifecycle>,
@@ -2641,6 +2987,8 @@ pub mod file_system {
             self.failure_details = Some(input);
             self
         }
+        /// <p>A structure providing details of any failures that occur when creating the file system
+        /// has failed.</p>
         pub fn set_failure_details(
             mut self,
             input: std::option::Option<crate::model::FileSystemFailureDetails>,
@@ -2653,6 +3001,7 @@ pub mod file_system {
             self.storage_capacity = Some(input);
             self
         }
+        /// <p>The storage capacity of the file system in gibibytes (GiB).</p>
         pub fn set_storage_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.storage_capacity = input;
             self
@@ -2666,6 +3015,11 @@ pub mod file_system {
             self.storage_type = Some(input);
             self
         }
+        /// <p>The storage type of the file system.
+        /// Valid values are <code>SSD</code> and <code>HDD</code>.
+        /// If set to <code>SSD</code>, the file system uses solid state drive storage.
+        /// If set to <code>HDD</code>, the file system uses hard disk drive storage.
+        /// </p>
         pub fn set_storage_type(
             mut self,
             input: std::option::Option<crate::model::StorageType>,
@@ -2678,16 +3032,35 @@ pub mod file_system {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>The ID of the primary VPC for the file system.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
         }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>Specifies the IDs of the subnets that the file system is accessible from. For Windows and
+        /// ONTAP <code>MULTI_AZ_1</code> file system deployment type, there are two subnet IDs, one for
+        /// the preferred file server and one for the standby file server. The preferred file server subnet
+        /// identified in the <code>PreferredSubnetID</code> property. All other file systems have only one subnet ID.</p>
+        /// <p>For Lustre file systems, and Single-AZ Windows file systems, this is the ID of
+        /// the subnet that contains the endpoint for the file system. For <code>MULTI_AZ_1</code> Windows and
+        /// ONTAP file systems, the endpoint for the file system is available in the <code>PreferredSubnetID</code>.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// <p>Specifies the IDs of the subnets that the file system is accessible from. For Windows and
+        /// ONTAP <code>MULTI_AZ_1</code> file system deployment type, there are two subnet IDs, one for
+        /// the preferred file server and one for the standby file server. The preferred file server subnet
+        /// identified in the <code>PreferredSubnetID</code> property. All other file systems have only one subnet ID.</p>
+        /// <p>For Lustre file systems, and Single-AZ Windows file systems, this is the ID of
+        /// the subnet that contains the endpoint for the file system. For <code>MULTI_AZ_1</code> Windows and
+        /// ONTAP file systems, the endpoint for the file system is available in the <code>PreferredSubnetID</code>.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2695,12 +3068,34 @@ pub mod file_system {
             self.subnet_ids = input;
             self
         }
+        /// Appends an item to `network_interface_ids`.
+        ///
+        /// To override the contents of this collection use [`set_network_interface_ids`](Self::set_network_interface_ids).
+        ///
+        /// <p>The IDs of the elastic network interface from which a specific file system is
+        /// accessible. The elastic network interface is automatically created in the same VPC that
+        /// the Amazon FSx file system was created in. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network
+        /// Interfaces</a> in the <i>Amazon EC2 User Guide.</i>
+        /// </p>
+        ///
+        /// <p>For an Amazon FSx for Windows File Server file system, you can have one network
+        /// interface ID. For an Amazon FSx for Lustre file system, you can have more than
+        /// one.</p>
         pub fn network_interface_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.network_interface_ids.unwrap_or_default();
             v.push(input.into());
             self.network_interface_ids = Some(v);
             self
         }
+        /// <p>The IDs of the elastic network interface from which a specific file system is
+        /// accessible. The elastic network interface is automatically created in the same VPC that
+        /// the Amazon FSx file system was created in. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network
+        /// Interfaces</a> in the <i>Amazon EC2 User Guide.</i>
+        /// </p>
+        ///
+        /// <p>For an Amazon FSx for Windows File Server file system, you can have one network
+        /// interface ID. For an Amazon FSx for Lustre file system, you can have more than
+        /// one.</p>
         pub fn set_network_interface_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2713,6 +3108,7 @@ pub mod file_system {
             self.dns_name = Some(input.into());
             self
         }
+        /// <p>The DNS name for the file system.</p>
         pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dns_name = input;
             self
@@ -2727,6 +3123,12 @@ pub mod file_system {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data
+        /// for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and
+        /// persistent Amazon FSx for Lustre file systems at rest. If not specified, the Amazon FSx
+        /// managed key is used. The scratch Amazon FSx for Lustre file systems are always encrypted at rest using
+        /// Amazon FSx managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
+        /// in the <i>Key Management Service API Reference</i>.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -2736,16 +3138,27 @@ pub mod file_system {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the file system resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to associate with the file system. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your
+        /// Amazon EC2 Resources</a> in the <i>Amazon EC2 User
+        /// Guide</i>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags to associate with the file system. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your
+        /// Amazon EC2 Resources</a> in the <i>Amazon EC2 User
+        /// Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2761,6 +3174,7 @@ pub mod file_system {
             self.windows_configuration = Some(input);
             self
         }
+        /// <p>The configuration for this Microsoft Windows file system.</p>
         pub fn set_windows_configuration(
             mut self,
             input: std::option::Option<crate::model::WindowsFileSystemConfiguration>,
@@ -2776,6 +3190,7 @@ pub mod file_system {
             self.lustre_configuration = Some(input);
             self
         }
+        /// <p>The configuration for the Amazon FSx for Lustre file system.</p>
         pub fn set_lustre_configuration(
             mut self,
             input: std::option::Option<crate::model::LustreFileSystemConfiguration>,
@@ -2783,6 +3198,13 @@ pub mod file_system {
             self.lustre_configuration = input;
             self
         }
+        /// Appends an item to `administrative_actions`.
+        ///
+        /// To override the contents of this collection use [`set_administrative_actions`](Self::set_administrative_actions).
+        ///
+        /// <p>A list of administrative actions for the file system that are in process or waiting to be processed.
+        /// Administrative actions describe changes to the Amazon FSx file system that you have initiated using
+        /// the <code>UpdateFileSystem</code> action.</p>
         pub fn administrative_actions(
             mut self,
             input: impl Into<crate::model::AdministrativeAction>,
@@ -2792,6 +3214,9 @@ pub mod file_system {
             self.administrative_actions = Some(v);
             self
         }
+        /// <p>A list of administrative actions for the file system that are in process or waiting to be processed.
+        /// Administrative actions describe changes to the Amazon FSx file system that you have initiated using
+        /// the <code>UpdateFileSystem</code> action.</p>
         pub fn set_administrative_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AdministrativeAction>>,
@@ -2807,6 +3232,7 @@ pub mod file_system {
             self.ontap_configuration = Some(input);
             self
         }
+        /// <p>The configuration for this FSx for NetApp ONTAP file system.</p>
         pub fn set_ontap_configuration(
             mut self,
             input: std::option::Option<crate::model::OntapFileSystemConfiguration>,
@@ -2820,6 +3246,8 @@ pub mod file_system {
             self.file_system_type_version = Some(input.into());
             self
         }
+        /// <p>The version of your Amazon FSx for Lustre file system, either
+        /// <code>2.10</code> or <code>2.12</code>.</p>
         pub fn set_file_system_type_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2954,6 +3382,8 @@ pub mod ontap_file_system_configuration {
             self.automatic_backup_retention_days = Some(input);
             self
         }
+        /// <p>The number of days to retain automatic backups. Setting this to 0 disables
+        /// automatic backups. You can retain automatic backups for a maximum of 90 days. The default is 0.</p>
         pub fn set_automatic_backup_retention_days(
             mut self,
             input: std::option::Option<i32>,
@@ -2971,6 +3401,9 @@ pub mod ontap_file_system_configuration {
             self.daily_automatic_backup_start_time = Some(input.into());
             self
         }
+        /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the
+        /// zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the
+        /// hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
         pub fn set_daily_automatic_backup_start_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2983,6 +3416,7 @@ pub mod ontap_file_system_configuration {
             self.deployment_type = Some(input);
             self
         }
+        /// <p>The ONTAP file system deployment type.</p>
         pub fn set_deployment_type(
             mut self,
             input: std::option::Option<crate::model::OntapDeploymentType>,
@@ -2996,6 +3430,8 @@ pub mod ontap_file_system_configuration {
             self.endpoint_ip_address_range = Some(input.into());
             self
         }
+        /// <p>The IP address range in which the endpoints to access your file system
+        /// are created.</p>
         pub fn set_endpoint_ip_address_range(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3010,6 +3446,9 @@ pub mod ontap_file_system_configuration {
             self.endpoints = Some(input);
             self
         }
+        /// <p>The <code>Management</code> and <code>Intercluster</code> endpoints
+        /// that are used to access data or to manage the file system using the
+        /// NetApp ONTAP CLI, REST API, or NetApp SnapMirror.</p>
         pub fn set_endpoints(
             mut self,
             input: std::option::Option<crate::model::FileSystemEndpoints>,
@@ -3026,6 +3465,8 @@ pub mod ontap_file_system_configuration {
             self.disk_iops_configuration = Some(input);
             self
         }
+        /// <p>The SSD IOPS configuration for the ONTAP file system, specifying
+        /// the number of provisioned IOPS and the provision mode.</p>
         pub fn set_disk_iops_configuration(
             mut self,
             input: std::option::Option<crate::model::DiskIopsConfiguration>,
@@ -3041,6 +3482,10 @@ pub mod ontap_file_system_configuration {
             self.preferred_subnet_id = Some(input.into());
             self
         }
+        /// <p>The ID for a subnet. A <i>subnet</i> is a range of IP addresses in
+        /// your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and Subnets</a> in the
+        /// <i>Amazon VPC User Guide.</i>
+        /// </p>
         pub fn set_preferred_subnet_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3048,12 +3493,20 @@ pub mod ontap_file_system_configuration {
             self.preferred_subnet_id = input;
             self
         }
+        /// Appends an item to `route_table_ids`.
+        ///
+        /// To override the contents of this collection use [`set_route_table_ids`](Self::set_route_table_ids).
+        ///
+        /// <p>The VPC route tables in which your file system's endpoints are
+        /// created.</p>
         pub fn route_table_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.route_table_ids.unwrap_or_default();
             v.push(input.into());
             self.route_table_ids = Some(v);
             self
         }
+        /// <p>The VPC route tables in which your file system's endpoints are
+        /// created.</p>
         pub fn set_route_table_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3066,6 +3519,7 @@ pub mod ontap_file_system_configuration {
             self.throughput_capacity = Some(input);
             self
         }
+        /// <p>Sustained throughput of an Amazon FSx file system in MBps.</p>
         pub fn set_throughput_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.throughput_capacity = input;
             self
@@ -3085,6 +3539,14 @@ pub mod ontap_file_system_configuration {
             self.weekly_maintenance_start_time = Some(input.into());
             self
         }
+        /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+        /// <p>
+        /// <code>D</code> is the day of the week, for which 1 represents Monday and 7
+        /// represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+        /// <p>
+        /// <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is
+        /// the zero-padded minute of the hour. </p>
+        /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
         pub fn set_weekly_maintenance_start_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3157,6 +3619,9 @@ pub mod disk_iops_configuration {
             self.mode = Some(input);
             self
         }
+        /// <p>Specifies whether the number of IOPS for the file system is
+        /// using the system default (<code>AUTOMATIC</code>) or was
+        /// provisioned by the customer (<code>USER_PROVISIONED</code>).</p>
         pub fn set_mode(
             mut self,
             input: std::option::Option<crate::model::DiskIopsConfigurationMode>,
@@ -3169,6 +3634,7 @@ pub mod disk_iops_configuration {
             self.iops = Some(input);
             self
         }
+        /// <p>The total number of SSD IOPS provisioned for the file system.</p>
         pub fn set_iops(mut self, input: std::option::Option<i64>) -> Self {
             self.iops = input;
             self
@@ -3189,6 +3655,7 @@ impl DiskIopsConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3200,7 +3667,9 @@ impl DiskIopsConfiguration {
     std::hash::Hash,
 )]
 pub enum DiskIopsConfigurationMode {
+    #[allow(missing_docs)] // documentation missing in model
     Automatic,
+    #[allow(missing_docs)] // documentation missing in model
     UserProvisioned,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3222,6 +3691,7 @@ impl std::str::FromStr for DiskIopsConfigurationMode {
     }
 }
 impl DiskIopsConfigurationMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DiskIopsConfigurationMode::Automatic => "AUTOMATIC",
@@ -3229,6 +3699,7 @@ impl DiskIopsConfigurationMode {
             DiskIopsConfigurationMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUTOMATIC", "USER_PROVISIONED"]
     }
@@ -3276,6 +3747,8 @@ pub mod file_system_endpoints {
             self.intercluster = Some(input);
             self
         }
+        /// <p>An endpoint for managing your file system by setting up NetApp SnapMirror
+        /// with other ONTAP systems.</p>
         pub fn set_intercluster(
             mut self,
             input: std::option::Option<crate::model::FileSystemEndpoint>,
@@ -3289,6 +3762,8 @@ pub mod file_system_endpoints {
             self.management = Some(input);
             self
         }
+        /// <p>An endpoint for managing your file system using the NetApp ONTAP CLI
+        /// and NetApp ONTAP API.</p>
         pub fn set_management(
             mut self,
             input: std::option::Option<crate::model::FileSystemEndpoint>,
@@ -3349,16 +3824,24 @@ pub mod file_system_endpoint {
             self.dns_name = Some(input.into());
             self
         }
+        /// <p>The Domain Name Service (DNS) name for the file system. You can mount your file
+        /// system using its DNS name.</p>
         pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dns_name = input;
             self
         }
+        /// Appends an item to `ip_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
+        ///
+        /// <p>IP addresses of the file system endpoint.</p>
         pub fn ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ip_addresses.unwrap_or_default();
             v.push(input.into());
             self.ip_addresses = Some(v);
             self
         }
+        /// <p>IP addresses of the file system endpoint.</p>
         pub fn set_ip_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3382,6 +3865,7 @@ impl FileSystemEndpoint {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3393,6 +3877,7 @@ impl FileSystemEndpoint {
     std::hash::Hash,
 )]
 pub enum OntapDeploymentType {
+    #[allow(missing_docs)] // documentation missing in model
     MultiAz1,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3413,12 +3898,14 @@ impl std::str::FromStr for OntapDeploymentType {
     }
 }
 impl OntapDeploymentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OntapDeploymentType::MultiAz1 => "MULTI_AZ_1",
             OntapDeploymentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MULTI_AZ_1"]
     }
@@ -3484,7 +3971,7 @@ pub struct AdministrativeAction {
     /// Does not apply to any other administrative action type.</p>
     pub progress_percent: std::option::Option<i32>,
     /// <p>Time that the administrative action request was received.</p>
-    pub request_time: std::option::Option<smithy_types::Instant>,
+    pub request_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Describes the status of the administrative action, as follows:</p>
     /// <ul>
     /// <li>
@@ -3551,7 +4038,7 @@ pub mod administrative_action {
         pub(crate) administrative_action_type:
             std::option::Option<crate::model::AdministrativeActionType>,
         pub(crate) progress_percent: std::option::Option<i32>,
-        pub(crate) request_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) request_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::Status>,
         pub(crate) target_file_system_values: std::option::Option<crate::model::FileSystem>,
         pub(crate) failure_details:
@@ -3611,6 +4098,51 @@ pub mod administrative_action {
             self.administrative_action_type = Some(input);
             self
         }
+        /// <p>Describes the type of administrative action, as follows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated by the user from the
+        /// Amazon FSx console, API (UpdateFileSystem), or CLI (update-file-system).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>STORAGE_OPTIMIZATION</code> - Once the <code>FILE_SYSTEM_UPDATE</code>
+        /// task to increase a file system's storage capacity completes successfully, a
+        /// <code>STORAGE_OPTIMIZATION</code> task starts.
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>For Windows, storage optimization is the process of migrating the file system data
+        /// to the new, larger disks.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Lustre, storage optimization consists of rebalancing the data across the existing and
+        /// newly added file servers.</p>
+        /// </li>
+        /// </ul>
+        /// <p>You can track the storage optimization progress using the
+        /// <code>ProgressPercent</code> property. When
+        /// <code>STORAGE_OPTIMIZATION</code> completes successfully, the parent
+        /// <code>FILE_SYSTEM_UPDATE</code> action status changes to
+        /// <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
+        /// storage capacity</a> in the <i>Amazon FSx for Windows File Server
+        /// User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage
+        /// and throughput capacity</a> in the <i>Amazon FSx for Lustre User
+        /// Guide</i>. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new DNS alias with the file system.
+        /// For more information, see
+        /// .</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system.
+        /// For more information, see .</p>
+        /// </li>
+        /// </ul>
         pub fn set_administrative_action_type(
             mut self,
             input: std::option::Option<crate::model::AdministrativeActionType>,
@@ -3624,18 +4156,21 @@ pub mod administrative_action {
             self.progress_percent = Some(input);
             self
         }
+        /// <p>Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code> administrative action.
+        /// Does not apply to any other administrative action type.</p>
         pub fn set_progress_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.progress_percent = input;
             self
         }
         /// <p>Time that the administrative action request was received.</p>
-        pub fn request_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn request_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.request_time = Some(input);
             self
         }
+        /// <p>Time that the administrative action request was received.</p>
         pub fn set_request_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.request_time = input;
             self
@@ -3674,6 +4209,36 @@ pub mod administrative_action {
             self.status = Some(input);
             self
         }
+        /// <p>Describes the status of the administrative action, as follows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code> - Amazon FSx failed to process the administrative action successfully.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IN_PROGRESS</code> - Amazon FSx is processing the administrative action.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code> - Amazon FSx is waiting to process the administrative action.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATED_OPTIMIZING</code> - For a storage capacity increase update, Amazon FSx has
+        /// updated the file system with the new storage capacity, and is now performing the
+        /// storage optimization process. For more information, see
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
+        /// storage capacity</a> in the <i>Amazon FSx for Windows File Server
+        /// User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage
+        /// and throughput capacity</a> in the <i>Amazon FSx for Lustre User
+        /// Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
             self.status = input;
             self
@@ -3686,6 +4251,10 @@ pub mod administrative_action {
             self.target_file_system_values = Some(input);
             self
         }
+        /// <p>Describes the target value for the administration action,  
+        /// provided in the <code>UpdateFileSystem</code> operation.  
+        /// Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
+        /// </p>
         pub fn set_target_file_system_values(
             mut self,
             input: std::option::Option<crate::model::FileSystem>,
@@ -3701,6 +4270,7 @@ pub mod administrative_action {
             self.failure_details = Some(input);
             self
         }
+        /// <p>Provides information about a failed administrative action.</p>
         pub fn set_failure_details(
             mut self,
             input: std::option::Option<crate::model::AdministrativeActionFailureDetails>,
@@ -3713,6 +4283,7 @@ pub mod administrative_action {
             self.target_volume_values = Some(input);
             self
         }
+        /// <p>Describes an Amazon FSx for NetApp ONTAP volume.</p>
         pub fn set_target_volume_values(
             mut self,
             input: std::option::Option<crate::model::Volume>,
@@ -3769,6 +4340,7 @@ pub mod administrative_action_failure_details {
             self.message = Some(input.into());
             self
         }
+        /// <p>Error message providing details about the failed administrative action.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3788,6 +4360,7 @@ impl AdministrativeActionFailureDetails {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3799,10 +4372,15 @@ impl AdministrativeActionFailureDetails {
     std::hash::Hash,
 )]
 pub enum Status {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     UpdatedOptimizing,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3827,6 +4405,7 @@ impl std::str::FromStr for Status {
     }
 }
 impl Status {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Status::Completed => "COMPLETED",
@@ -3837,6 +4416,7 @@ impl Status {
             Status::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -3909,9 +4489,13 @@ impl AsRef<str> for Status {
     std::hash::Hash,
 )]
 pub enum AdministrativeActionType {
+    #[allow(missing_docs)] // documentation missing in model
     FileSystemAliasAssociation,
+    #[allow(missing_docs)] // documentation missing in model
     FileSystemAliasDisassociation,
+    #[allow(missing_docs)] // documentation missing in model
     FileSystemUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     StorageOptimization,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3937,6 +4521,7 @@ impl std::str::FromStr for AdministrativeActionType {
     }
 }
 impl AdministrativeActionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AdministrativeActionType::FileSystemAliasAssociation => "FILE_SYSTEM_ALIAS_ASSOCIATION",
@@ -3948,6 +4533,7 @@ impl AdministrativeActionType {
             AdministrativeActionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "FILE_SYSTEM_ALIAS_ASSOCIATION",
@@ -3996,6 +4582,7 @@ pub struct LustreFileSystemConfiguration {
     /// <p>For the <code>SCRATCH_1</code> deployment type, this value is always "<code>fsx</code>".
     /// For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, this
     /// value is a string that is unique within an Amazon Web Services Region.
+    ///
     /// </p>
     pub mount_name: std::option::Option<std::string::String>,
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the
@@ -4095,6 +4682,8 @@ pub mod lustre_file_system_configuration {
             self.weekly_maintenance_start_time = Some(input.into());
             self
         }
+        /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC
+        /// time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
         pub fn set_weekly_maintenance_start_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4111,6 +4700,8 @@ pub mod lustre_file_system_configuration {
             self.data_repository_configuration = Some(input);
             self
         }
+        /// <p>The data repository configuration object for Lustre file systems returned in the response of
+        /// the <code>CreateFileSystem</code> operation.</p>
         pub fn set_data_repository_configuration(
             mut self,
             input: std::option::Option<crate::model::DataRepositoryConfiguration>,
@@ -4133,6 +4724,17 @@ pub mod lustre_file_system_configuration {
             self.deployment_type = Some(input);
             self
         }
+        /// <p>The deployment type of the FSX for Lustre file system. <i>Scratch deployment type</i> is designed for temporary storage
+        /// and shorter-term processing of data.</p>
+        /// <p>
+        /// <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment
+        /// types are best suited for when you need temporary storage and shorter-term processing of data.
+        /// The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst
+        /// throughput capacity than <code>SCRATCH_1</code>.</p>
+        /// <p>The <code>PERSISTENT_1</code> deployment type is used for longer-term storage
+        /// and workloads and encryption of data in transit. To learn more about deployment types, see
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
+        /// FSx for Lustre Deployment Options</a>. (Default = <code>SCRATCH_1</code>)</p>
         pub fn set_deployment_type(
             mut self,
             input: std::option::Option<crate::model::LustreDeploymentType>,
@@ -4149,6 +4751,11 @@ pub mod lustre_file_system_configuration {
             self.per_unit_storage_throughput = Some(input);
             self
         }
+        /// <p> Per unit storage throughput represents the megabytes per second of read or write
+        /// throughput per 1 tebibyte of storage provisioned. File system throughput capacity is
+        /// equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). This option is
+        /// only valid for <code>PERSISTENT_1</code> deployment types. </p>
+        /// <p>Valid values for SSD storage: 50, 100, 200. Valid values for HDD storage: 12, 40. </p>
         pub fn set_per_unit_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
             self.per_unit_storage_throughput = input;
             self
@@ -4157,11 +4764,18 @@ pub mod lustre_file_system_configuration {
         /// <p>For the <code>SCRATCH_1</code> deployment type, this value is always "<code>fsx</code>".
         /// For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, this
         /// value is a string that is unique within an Amazon Web Services Region.
+        ///
         /// </p>
         pub fn mount_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.mount_name = Some(input.into());
             self
         }
+        /// <p>You use the <code>MountName</code> value when mounting the file system.</p>
+        /// <p>For the <code>SCRATCH_1</code> deployment type, this value is always "<code>fsx</code>".
+        /// For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, this
+        /// value is a string that is unique within an Amazon Web Services Region.
+        ///
+        /// </p>
         pub fn set_mount_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mount_name = input;
             self
@@ -4176,6 +4790,9 @@ pub mod lustre_file_system_configuration {
             self.daily_automatic_backup_start_time = Some(input.into());
             self
         }
+        /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the
+        /// zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the
+        /// hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
         pub fn set_daily_automatic_backup_start_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4189,6 +4806,8 @@ pub mod lustre_file_system_configuration {
             self.automatic_backup_retention_days = Some(input);
             self
         }
+        /// <p>The number of days to retain automatic backups. Setting this to 0 disables
+        /// automatic backups. You can retain automatic backups for a maximum of 90 days. The default is 0.</p>
         pub fn set_automatic_backup_retention_days(
             mut self,
             input: std::option::Option<i32>,
@@ -4207,6 +4826,13 @@ pub mod lustre_file_system_configuration {
             self.copy_tags_to_backups = Some(input);
             self
         }
+        /// <p>A boolean flag indicating whether tags on the file system should be copied to backups.
+        /// If it's set to true, all tags on the file system are
+        /// copied to all automatic backups and any user-initiated backups where the user
+        /// doesn't specify any tags. If this value is true, and you specify one or more tags,
+        /// only the specified tags are copied to backups. If you specify one or more tags when
+        /// creating a user-initiated backup, no tags are copied from the file system,
+        /// regardless of this value. (Default = false)</p>
         pub fn set_copy_tags_to_backups(mut self, input: std::option::Option<bool>) -> Self {
             self.copy_tags_to_backups = input;
             self
@@ -4220,6 +4846,11 @@ pub mod lustre_file_system_configuration {
             self.drive_cache_type = Some(input);
             self
         }
+        /// <p>The type of drive cache used by PERSISTENT_1 file systems that are provisioned with
+        /// HDD storage devices. This parameter is required when storage type is HDD. Set to
+        /// <code>READ</code>, improve the performance for frequently accessed files and allows 20%
+        /// of the total storage capacity of the file system to be cached.  </p>
+        /// <p>This parameter is required when <code>StorageType</code> is set to HDD.</p>
         pub fn set_drive_cache_type(
             mut self,
             input: std::option::Option<crate::model::DriveCacheType>,
@@ -4246,6 +4877,21 @@ pub mod lustre_file_system_configuration {
             self.data_compression_type = Some(input);
             self
         }
+        /// <p>The data compression configuration for the file system. <code>DataCompressionType</code>
+        /// can have the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - Data compression is turned off for
+        /// the file system.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LZ4</code> - Data compression is turned on with the LZ4
+        /// algorithm.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.</p>
         pub fn set_data_compression_type(
             mut self,
             input: std::option::Option<crate::model::DataCompressionType>,
@@ -4277,6 +4923,7 @@ impl LustreFileSystemConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4288,7 +4935,9 @@ impl LustreFileSystemConfiguration {
     std::hash::Hash,
 )]
 pub enum DataCompressionType {
+    #[allow(missing_docs)] // documentation missing in model
     Lz4,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4310,6 +4959,7 @@ impl std::str::FromStr for DataCompressionType {
     }
 }
 impl DataCompressionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataCompressionType::Lz4 => "LZ4",
@@ -4317,6 +4967,7 @@ impl DataCompressionType {
             DataCompressionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LZ4", "NONE"]
     }
@@ -4327,6 +4978,7 @@ impl AsRef<str> for DataCompressionType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4338,7 +4990,9 @@ impl AsRef<str> for DataCompressionType {
     std::hash::Hash,
 )]
 pub enum DriveCacheType {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Read,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4360,6 +5014,7 @@ impl std::str::FromStr for DriveCacheType {
     }
 }
 impl DriveCacheType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DriveCacheType::None => "NONE",
@@ -4367,6 +5022,7 @@ impl DriveCacheType {
             DriveCacheType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "READ"]
     }
@@ -4377,6 +5033,7 @@ impl AsRef<str> for DriveCacheType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4388,8 +5045,11 @@ impl AsRef<str> for DriveCacheType {
     std::hash::Hash,
 )]
 pub enum LustreDeploymentType {
+    #[allow(missing_docs)] // documentation missing in model
     Persistent1,
+    #[allow(missing_docs)] // documentation missing in model
     Scratch1,
+    #[allow(missing_docs)] // documentation missing in model
     Scratch2,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4412,6 +5072,7 @@ impl std::str::FromStr for LustreDeploymentType {
     }
 }
 impl LustreDeploymentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LustreDeploymentType::Persistent1 => "PERSISTENT_1",
@@ -4420,6 +5081,7 @@ impl LustreDeploymentType {
             LustreDeploymentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PERSISTENT_1", "SCRATCH_1", "SCRATCH_2"]
     }
@@ -4474,6 +5136,7 @@ pub struct DataRepositoryConfiguration {
     /// maximum amount of data per file (in MiB) stored on a single physical disk. The maximum
     /// number of disks that a single file can be striped across is limited by the total number
     /// of disks that make up the file system.</p>
+    ///
     /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500
     /// GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
     pub imported_file_chunk_size: std::option::Option<i32>,
@@ -4563,6 +5226,31 @@ pub mod data_repository_configuration {
             self.lifecycle = Some(input);
             self
         }
+        /// <p>Describes the state of the file system's S3 durable data repository, if it is configured with an S3 repository.
+        /// The lifecycle can have the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATING</code> - The data repository configuration between
+        /// the FSx file system and the linked S3 data repository is being created.
+        /// The data repository is unavailable.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AVAILABLE</code> - The data repository is available for use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket
+        /// until the data repository configuration is corrected. For more information, see
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/troubleshooting.html#troubleshooting-misconfigured-data-repository">Troubleshooting a Misconfigured linked S3 bucket</a>.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATING</code> - The data repository is undergoing a customer initiated update and availability may be impacted.</p>
+        /// </li>
+        /// </ul>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::DataRepositoryLifecycle>,
@@ -4579,6 +5267,11 @@ pub mod data_repository_configuration {
             self.import_path = Some(input.into());
             self
         }
+        /// <p>The import path to the Amazon S3 bucket (and optional prefix) that you're using
+        /// as the data repository for your FSx for Lustre file system, for example
+        /// <code>s3://import-bucket/optional-prefix</code>. If a prefix is specified after the
+        /// Amazon S3 bucket name, only object keys with that prefix are loaded into the file
+        /// system.</p>
         pub fn set_import_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.import_path = input;
             self
@@ -4589,6 +5282,8 @@ pub mod data_repository_configuration {
             self.export_path = Some(input.into());
             self
         }
+        /// <p>The export path to the Amazon S3 bucket (and prefix) that you are using to store new and
+        /// changed Lustre file system files in S3.</p>
         pub fn set_export_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.export_path = input;
             self
@@ -4597,12 +5292,20 @@ pub mod data_repository_configuration {
         /// maximum amount of data per file (in MiB) stored on a single physical disk. The maximum
         /// number of disks that a single file can be striped across is limited by the total number
         /// of disks that make up the file system.</p>
+        ///
         /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500
         /// GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
         pub fn imported_file_chunk_size(mut self, input: i32) -> Self {
             self.imported_file_chunk_size = Some(input);
             self
         }
+        /// <p>For files imported from a data repository, this value determines the stripe count and
+        /// maximum amount of data per file (in MiB) stored on a single physical disk. The maximum
+        /// number of disks that a single file can be striped across is limited by the total number
+        /// of disks that make up the file system.</p>
+        ///
+        /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500
+        /// GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
         pub fn set_imported_file_chunk_size(mut self, input: std::option::Option<i32>) -> Self {
             self.imported_file_chunk_size = input;
             self
@@ -4637,6 +5340,32 @@ pub mod data_repository_configuration {
             self.auto_import_policy = Some(input);
             self
         }
+        /// <p>Describes the file system's linked S3 data repository's <code>AutoImportPolicy</code>.
+        /// The AutoImportPolicy configures how Amazon FSx keeps your file and directory listings up to date
+        /// as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - (Default) AutoImport is off. Amazon FSx only updates
+        /// file and directory listings from the linked S3 bucket
+        /// when the file system is created. FSx does not update file and directory
+        /// listings for any new or changed objects after choosing this option.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports
+        /// directory listings of any new objects added to the linked S3 bucket that
+        /// do not currently exist in the FSx file system. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports
+        /// file and directory listings of any new objects added to the S3 bucket and any
+        /// existing objects that are changed in the S3 bucket after you choose this option.
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import updates from your S3 bucket</a>.</p>
         pub fn set_auto_import_policy(
             mut self,
             input: std::option::Option<crate::model::AutoImportPolicyType>,
@@ -4653,6 +5382,8 @@ pub mod data_repository_configuration {
             self.failure_details = Some(input);
             self
         }
+        /// <p>Provides detailed information about the data respository if its <code>Lifecycle</code> is
+        /// set to <code>MISCONFIGURED</code>.</p>
         pub fn set_failure_details(
             mut self,
             input: std::option::Option<crate::model::DataRepositoryFailureDetails>,
@@ -4709,6 +5440,7 @@ pub mod data_repository_failure_details {
             self.message = Some(input.into());
             self
         }
+        /// <p>A detailed error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4728,6 +5460,7 @@ impl DataRepositoryFailureDetails {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4739,8 +5472,11 @@ impl DataRepositoryFailureDetails {
     std::hash::Hash,
 )]
 pub enum AutoImportPolicyType {
+    #[allow(missing_docs)] // documentation missing in model
     New,
+    #[allow(missing_docs)] // documentation missing in model
     NewChanged,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4763,6 +5499,7 @@ impl std::str::FromStr for AutoImportPolicyType {
     }
 }
 impl AutoImportPolicyType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AutoImportPolicyType::New => "NEW",
@@ -4771,6 +5508,7 @@ impl AutoImportPolicyType {
             AutoImportPolicyType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NEW", "NEW_CHANGED", "NONE"]
     }
@@ -4781,6 +5519,7 @@ impl AsRef<str> for AutoImportPolicyType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4792,10 +5531,15 @@ impl AsRef<str> for AutoImportPolicyType {
     std::hash::Hash,
 )]
 pub enum DataRepositoryLifecycle {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Misconfigured,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4820,6 +5564,7 @@ impl std::str::FromStr for DataRepositoryLifecycle {
     }
 }
 impl DataRepositoryLifecycle {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataRepositoryLifecycle::Available => "AVAILABLE",
@@ -4830,6 +5575,7 @@ impl DataRepositoryLifecycle {
             DataRepositoryLifecycle::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -5002,6 +5748,7 @@ pub mod windows_file_system_configuration {
             self.active_directory_id = Some(input.into());
             self
         }
+        /// <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory instance that the file system is joined to.</p>
         pub fn set_active_directory_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5018,6 +5765,8 @@ pub mod windows_file_system_configuration {
             self.self_managed_active_directory_configuration = Some(input);
             self
         }
+        /// <p>The configuration of the self-managed Microsoft Active Directory (AD) directory to
+        /// which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
         pub fn set_self_managed_active_directory_configuration(
             mut self,
             input: std::option::Option<crate::model::SelfManagedActiveDirectoryAttributes>,
@@ -5049,6 +5798,26 @@ pub mod windows_file_system_configuration {
             self.deployment_type = Some(input);
             self
         }
+        /// <p>Specifies the file system deployment type, valid values are the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>MULTI_AZ_1</code> - Specifies a high availability file system that is configured for Multi-AZ
+        /// redundancy to tolerate temporary Availability Zone (AZ) unavailability, and supports SSD and HDD storage.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for single AZ redundancy,
+        /// only supports SSD storage.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SINGLE_AZ_2</code> - Latest generation Single AZ file system.
+        /// Specifies a file system that is configured for single AZ redundancy and supports SSD and HDD storage.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">Single-AZ and Multi-AZ File Systems</a>.</p>
         pub fn set_deployment_type(
             mut self,
             input: std::option::Option<crate::model::WindowsDeploymentType>,
@@ -5067,6 +5836,10 @@ pub mod windows_file_system_configuration {
             self.remote_administration_endpoint = Some(input.into());
             self
         }
+        /// <p>For <code>MULTI_AZ_1</code> deployment types, use this endpoint when performing administrative tasks on the file system using
+        /// Amazon FSx Remote PowerShell.</p>
+        /// <p>For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this is the DNS name of the file system.</p>
+        /// <p>This endpoint is temporarily unavailable when the file system is undergoing maintenance.</p>
         pub fn set_remote_administration_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5084,6 +5857,12 @@ pub mod windows_file_system_configuration {
             self.preferred_subnet_id = Some(input.into());
             self
         }
+        /// <p>For <code>MULTI_AZ_1</code> deployment types, it specifies the ID of the subnet where the preferred file server is located.
+        /// Must be one of the two subnet IDs specified in <code>SubnetIds</code> property.
+        /// Amazon FSx serves traffic from this subnet except in the event of a failover to the secondary file server.</p>
+        /// <p>For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that for <code>SubnetIDs</code>.
+        /// For more information, see
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources">Availability and durability: Single-AZ and Multi-AZ file systems</a>.</p>
         pub fn set_preferred_subnet_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5104,6 +5883,15 @@ pub mod windows_file_system_configuration {
             self.preferred_file_server_ip = Some(input.into());
             self
         }
+        /// <p>For <code>MULTI_AZ_1</code> deployment types, the IP address of the primary, or preferred, file server.</p>
+        /// <p>Use this IP address when mounting the file system on Linux SMB clients or Windows SMB clients that
+        /// are not joined to a Microsoft Active Directory.
+        /// Applicable for all Windows file system deployment types.
+        /// This IP address is temporarily unavailable
+        /// when the file system is undergoing maintenance. For Linux and Windows
+        /// SMB clients that are joined to an Active Directory, use the file system's DNSName instead. For more information
+        /// on mapping and mounting file shares, see
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">Accessing File Shares</a>.</p>
         pub fn set_preferred_file_server_ip(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5117,10 +5905,17 @@ pub mod windows_file_system_configuration {
             self.throughput_capacity = Some(input);
             self
         }
+        /// <p>The throughput of the Amazon FSx file system, measured in megabytes per
+        /// second.</p>
         pub fn set_throughput_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.throughput_capacity = input;
             self
         }
+        /// Appends an item to `maintenance_operations_in_progress`.
+        ///
+        /// To override the contents of this collection use [`set_maintenance_operations_in_progress`](Self::set_maintenance_operations_in_progress).
+        ///
+        /// <p>The list of maintenance operations in progress for this file system.</p>
         pub fn maintenance_operations_in_progress(
             mut self,
             input: impl Into<crate::model::FileSystemMaintenanceOperation>,
@@ -5130,6 +5925,7 @@ pub mod windows_file_system_configuration {
             self.maintenance_operations_in_progress = Some(v);
             self
         }
+        /// <p>The list of maintenance operations in progress for this file system.</p>
         pub fn set_maintenance_operations_in_progress(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FileSystemMaintenanceOperation>>,
@@ -5146,6 +5942,8 @@ pub mod windows_file_system_configuration {
             self.weekly_maintenance_start_time = Some(input.into());
             self
         }
+        /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC
+        /// time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
         pub fn set_weekly_maintenance_start_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5161,6 +5959,7 @@ pub mod windows_file_system_configuration {
             self.daily_automatic_backup_start_time = Some(input.into());
             self
         }
+        /// <p>The preferred time to take daily automatic backups, in the UTC time zone.</p>
         pub fn set_daily_automatic_backup_start_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5174,6 +5973,8 @@ pub mod windows_file_system_configuration {
             self.automatic_backup_retention_days = Some(input);
             self
         }
+        /// <p>The number of days to retain automatic backups. Setting this to 0 disables automatic
+        /// backups. You can retain automatic backups for a maximum of 90 days.</p>
         pub fn set_automatic_backup_retention_days(
             mut self,
             input: std::option::Option<i32>,
@@ -5192,16 +5993,41 @@ pub mod windows_file_system_configuration {
             self.copy_tags_to_backups = Some(input);
             self
         }
+        /// <p>A boolean flag indicating whether tags on the file system should be copied to backups.
+        /// This value defaults to false. If it's set to true, all tags on the file system are
+        /// copied to all automatic backups and any user-initiated backups where the user
+        /// doesn't specify any tags. If this value is true, and you specify one or more tags,
+        /// only the specified tags are copied to backups. If you specify one or more tags when
+        /// creating a user-initiated backup, no tags are copied from the file system,
+        /// regardless of this value.</p>
         pub fn set_copy_tags_to_backups(mut self, input: std::option::Option<bool>) -> Self {
             self.copy_tags_to_backups = input;
             self
         }
+        /// Appends an item to `aliases`.
+        ///
+        /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
+        ///
+        /// <p>An array of one or more DNS aliases that are currently associated with the Amazon FSx file system.
+        /// Aliases allow you to use existing DNS names to access the data in your Amazon FSx file system.
+        /// You can associate up to 50 aliases with a file system at any time.
+        /// You can associate additional DNS aliases after you create the file system using the AssociateFileSystemAliases operation.
+        /// You can remove DNS aliases from the file system after it is created using the DisassociateFileSystemAliases operation.
+        /// You only need to specify the alias name in the request payload. For more information, see
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">DNS aliases</a>.</p>
         pub fn aliases(mut self, input: impl Into<crate::model::Alias>) -> Self {
             let mut v = self.aliases.unwrap_or_default();
             v.push(input.into());
             self.aliases = Some(v);
             self
         }
+        /// <p>An array of one or more DNS aliases that are currently associated with the Amazon FSx file system.
+        /// Aliases allow you to use existing DNS names to access the data in your Amazon FSx file system.
+        /// You can associate up to 50 aliases with a file system at any time.
+        /// You can associate additional DNS aliases after you create the file system using the AssociateFileSystemAliases operation.
+        /// You can remove DNS aliases from the file system after it is created using the DisassociateFileSystemAliases operation.
+        /// You only need to specify the alias name in the request payload. For more information, see
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">DNS aliases</a>.</p>
         pub fn set_aliases(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Alias>>,
@@ -5219,6 +6045,9 @@ pub mod windows_file_system_configuration {
             self.audit_log_configuration = Some(input);
             self
         }
+        /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log
+        /// user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server
+        /// file system.</p>
         pub fn set_audit_log_configuration(
             mut self,
             input: std::option::Option<crate::model::WindowsAuditLogConfiguration>,
@@ -5378,6 +6207,28 @@ pub mod windows_audit_log_configuration {
             self.file_access_audit_log_level = Some(input);
             self
         }
+        /// <p>Sets which attempt type is logged by Amazon FSx for file and folder accesses.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SUCCESS_ONLY</code> - only successful attempts to access files
+        /// or folders are logged.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILURE_ONLY</code> - only failed attempts to access files
+        /// or folders are logged.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SUCCESS_AND_FAILURE</code> - both successful attempts and
+        /// failed attempts to access files or folders are logged.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLED</code> - access auditing of files and folders is turned off.</p>
+        /// </li>
+        /// </ul>
         pub fn set_file_access_audit_log_level(
             mut self,
             input: std::option::Option<crate::model::WindowsAccessAuditLogLevel>,
@@ -5414,6 +6265,28 @@ pub mod windows_audit_log_configuration {
             self.file_share_access_audit_log_level = Some(input);
             self
         }
+        /// <p>Sets which attempt type is logged by Amazon FSx for file share accesses.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SUCCESS_ONLY</code> - only successful attempts to access file
+        /// shares are logged.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILURE_ONLY</code> - only failed attempts to access file
+        /// shares are logged.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SUCCESS_AND_FAILURE</code> - both successful attempts and
+        /// failed attempts to access file shares are logged.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLED</code> - access auditing of file shares is turned off.</p>
+        /// </li>
+        /// </ul>
         pub fn set_file_share_access_audit_log_level(
             mut self,
             input: std::option::Option<crate::model::WindowsAccessAuditLogLevel>,
@@ -5434,6 +6307,15 @@ pub mod windows_audit_log_configuration {
             self.audit_log_destination = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the destination of the audit logs.
+        /// The destination can be any Amazon CloudWatch Logs log group ARN or
+        /// Amazon Kinesis Data Firehose delivery stream ARN.</p>
+        /// <p>The name of the Amazon CloudWatch Logs log group must begin with
+        /// the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data
+        /// Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
+        /// <p>The destination ARN (either CloudWatch Logs log group or Kinesis
+        /// Data Firehose delivery stream) must be in the same Amazon Web Services partition,
+        /// Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p>
         pub fn set_audit_log_destination(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5458,6 +6340,7 @@ impl WindowsAuditLogConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5469,9 +6352,13 @@ impl WindowsAuditLogConfiguration {
     std::hash::Hash,
 )]
 pub enum WindowsAccessAuditLogLevel {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     FailureOnly,
+    #[allow(missing_docs)] // documentation missing in model
     SuccessAndFailure,
+    #[allow(missing_docs)] // documentation missing in model
     SuccessOnly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5495,6 +6382,7 @@ impl std::str::FromStr for WindowsAccessAuditLogLevel {
     }
 }
 impl WindowsAccessAuditLogLevel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WindowsAccessAuditLogLevel::Disabled => "DISABLED",
@@ -5504,6 +6392,7 @@ impl WindowsAccessAuditLogLevel {
             WindowsAccessAuditLogLevel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DISABLED",
@@ -5604,6 +6493,23 @@ pub mod alias {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the DNS alias. The alias name has to meet the following requirements:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example, <code>accounting.example.com</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Can contain alphanumeric characters, the underscore (_), and the hyphen (-).</p>
+        /// </li>
+        /// <li>
+        /// <p>Cannot start or end with a hyphen.</p>
+        /// </li>
+        /// <li>
+        /// <p>Can start with a numeric.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For DNS names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them:
+        /// as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5630,6 +6536,24 @@ pub mod alias {
             self.lifecycle = Some(input);
             self
         }
+        /// <p>Describes the state of the DNS alias.</p>
+        /// <ul>
+        /// <li>
+        /// <p>AVAILABLE - The DNS alias is associated with an Amazon FSx file system.</p>
+        /// </li>
+        /// <li>
+        /// <p>CREATING - Amazon FSx is creating the DNS alias and associating it with the file system.</p>
+        /// </li>
+        /// <li>
+        /// <p>CREATE_FAILED - Amazon FSx was unable to associate the DNS alias with the file system.</p>
+        /// </li>
+        /// <li>
+        /// <p>DELETING - Amazon FSx is disassociating the DNS alias from the file system and deleting it.</p>
+        /// </li>
+        /// <li>
+        /// <p>DELETE_FAILED - Amazon FSx was unable to disassociate the DNS alias from the file system.</p>
+        /// </li>
+        /// </ul>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::AliasLifecycle>,
@@ -5653,6 +6577,7 @@ impl Alias {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5664,10 +6589,15 @@ impl Alias {
     std::hash::Hash,
 )]
 pub enum AliasLifecycle {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5692,6 +6622,7 @@ impl std::str::FromStr for AliasLifecycle {
     }
 }
 impl AliasLifecycle {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AliasLifecycle::Available => "AVAILABLE",
@@ -5702,6 +6633,7 @@ impl AliasLifecycle {
             AliasLifecycle::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -5730,7 +6662,9 @@ impl AsRef<str> for AliasLifecycle {
     std::hash::Hash,
 )]
 pub enum FileSystemMaintenanceOperation {
+    #[allow(missing_docs)] // documentation missing in model
     BackingUp,
+    #[allow(missing_docs)] // documentation missing in model
     Patching,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5752,6 +6686,7 @@ impl std::str::FromStr for FileSystemMaintenanceOperation {
     }
 }
 impl FileSystemMaintenanceOperation {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FileSystemMaintenanceOperation::BackingUp => "BACKING_UP",
@@ -5759,6 +6694,7 @@ impl FileSystemMaintenanceOperation {
             FileSystemMaintenanceOperation::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BACKING_UP", "PATCHING"]
     }
@@ -5769,6 +6705,7 @@ impl AsRef<str> for FileSystemMaintenanceOperation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5780,8 +6717,11 @@ impl AsRef<str> for FileSystemMaintenanceOperation {
     std::hash::Hash,
 )]
 pub enum WindowsDeploymentType {
+    #[allow(missing_docs)] // documentation missing in model
     MultiAz1,
+    #[allow(missing_docs)] // documentation missing in model
     SingleAz1,
+    #[allow(missing_docs)] // documentation missing in model
     SingleAz2,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5804,6 +6744,7 @@ impl std::str::FromStr for WindowsDeploymentType {
     }
 }
 impl WindowsDeploymentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WindowsDeploymentType::MultiAz1 => "MULTI_AZ_1",
@@ -5812,6 +6753,7 @@ impl WindowsDeploymentType {
             WindowsDeploymentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MULTI_AZ_1", "SINGLE_AZ_1", "SINGLE_AZ_2"]
     }
@@ -5834,7 +6776,9 @@ impl AsRef<str> for WindowsDeploymentType {
     std::hash::Hash,
 )]
 pub enum StorageType {
+    #[allow(missing_docs)] // documentation missing in model
     Hdd,
+    #[allow(missing_docs)] // documentation missing in model
     Ssd,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5856,6 +6800,7 @@ impl std::str::FromStr for StorageType {
     }
 }
 impl StorageType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StorageType::Hdd => "HDD",
@@ -5863,6 +6808,7 @@ impl StorageType {
             StorageType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HDD", "SSD"]
     }
@@ -5902,6 +6848,7 @@ pub mod file_system_failure_details {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message describing any failures that occurred during file system creation.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5933,11 +6880,17 @@ impl FileSystemFailureDetails {
     std::hash::Hash,
 )]
 pub enum FileSystemLifecycle {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Misconfigured,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5963,6 +6916,7 @@ impl std::str::FromStr for FileSystemLifecycle {
     }
 }
 impl FileSystemLifecycle {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FileSystemLifecycle::Available => "AVAILABLE",
@@ -5974,6 +6928,7 @@ impl FileSystemLifecycle {
             FileSystemLifecycle::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -6003,8 +6958,11 @@ impl AsRef<str> for FileSystemLifecycle {
     std::hash::Hash,
 )]
 pub enum FileSystemType {
+    #[allow(missing_docs)] // documentation missing in model
     Lustre,
+    #[allow(missing_docs)] // documentation missing in model
     Ontap,
+    #[allow(missing_docs)] // documentation missing in model
     Windows,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6027,6 +6985,7 @@ impl std::str::FromStr for FileSystemType {
     }
 }
 impl FileSystemType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FileSystemType::Lustre => "LUSTRE",
@@ -6035,6 +6994,7 @@ impl FileSystemType {
             FileSystemType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LUSTRE", "ONTAP", "WINDOWS"]
     }
@@ -6105,6 +7065,8 @@ pub mod update_file_system_ontap_configuration {
             self.automatic_backup_retention_days = Some(input);
             self
         }
+        /// <p>The number of days to retain automatic backups. Setting this to 0 disables
+        /// automatic backups. You can retain automatic backups for a maximum of 90 days. The default is 0.</p>
         pub fn set_automatic_backup_retention_days(
             mut self,
             input: std::option::Option<i32>,
@@ -6122,6 +7084,9 @@ pub mod update_file_system_ontap_configuration {
             self.daily_automatic_backup_start_time = Some(input.into());
             self
         }
+        /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the
+        /// zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the
+        /// hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
         pub fn set_daily_automatic_backup_start_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6134,6 +7099,7 @@ pub mod update_file_system_ontap_configuration {
             self.fsx_admin_password = Some(input.into());
             self
         }
+        /// <p>The ONTAP administrative password for the <code>fsxadmin</code> user.</p>
         pub fn set_fsx_admin_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6156,6 +7122,14 @@ pub mod update_file_system_ontap_configuration {
             self.weekly_maintenance_start_time = Some(input.into());
             self
         }
+        /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+        /// <p>
+        /// <code>D</code> is the day of the week, for which 1 represents Monday and 7
+        /// represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+        /// <p>
+        /// <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is
+        /// the zero-padded minute of the hour. </p>
+        /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
         pub fn set_weekly_maintenance_start_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6285,6 +7259,8 @@ pub mod update_file_system_lustre_configuration {
             self.weekly_maintenance_start_time = Some(input.into());
             self
         }
+        /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC
+        /// time zone. d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
         pub fn set_weekly_maintenance_start_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6302,6 +7278,9 @@ pub mod update_file_system_lustre_configuration {
             self.daily_automatic_backup_start_time = Some(input.into());
             self
         }
+        /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the
+        /// zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the
+        /// hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
         pub fn set_daily_automatic_backup_start_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6315,6 +7294,8 @@ pub mod update_file_system_lustre_configuration {
             self.automatic_backup_retention_days = Some(input);
             self
         }
+        /// <p>The number of days to retain automatic backups. Setting this to 0 disables
+        /// automatic backups. You can retain automatic backups for a maximum of 90 days. The default is 0.</p>
         pub fn set_automatic_backup_retention_days(
             mut self,
             input: std::option::Option<i32>,
@@ -6353,6 +7334,33 @@ pub mod update_file_system_lustre_configuration {
             self.auto_import_policy = Some(input);
             self
         }
+        /// <p> (Optional) When you create your file system, your existing S3 objects appear as file and directory listings.
+        /// Use this property to choose how Amazon FSx keeps your file and directory listing up to date
+        /// as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can
+        /// have the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - (Default) AutoImport is off. Amazon FSx only updates
+        /// file and directory listings from the linked S3 bucket
+        /// when the file system is created. FSx does not update the file and directory
+        /// listing for any new or changed objects after choosing this option.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports
+        /// directory listings of any new objects added to the linked S3 bucket that
+        /// do not currently exist in the FSx file system. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports
+        /// file and directory listings of any new objects added to the S3 bucket and any
+        /// existing objects that are changed in the S3 bucket after you choose this option.
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import updates from your S3 bucket</a>.</p>
         pub fn set_auto_import_policy(
             mut self,
             input: std::option::Option<crate::model::AutoImportPolicyType>,
@@ -6381,6 +7389,23 @@ pub mod update_file_system_lustre_configuration {
             self.data_compression_type = Some(input);
             self
         }
+        /// <p>Sets the data compression configuration for the file system. <code>DataCompressionType</code>
+        /// can have the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - Data compression is turned off for
+        /// the file system.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LZ4</code> - Data compression is turned on with the LZ4
+        /// algorithm.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you don't use <code>DataCompressionType</code>, the file system retains
+        /// its current data compression configuration.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.</p>
         pub fn set_data_compression_type(
             mut self,
             input: std::option::Option<crate::model::DataCompressionType>,
@@ -6486,6 +7511,8 @@ pub mod update_file_system_windows_configuration {
             self.weekly_maintenance_start_time = Some(input.into());
             self
         }
+        /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC
+        /// time zone. Where d is the weekday number, from 1 through 7, with 1 = Monday and 7 = Sunday.</p>
         pub fn set_weekly_maintenance_start_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6502,6 +7529,8 @@ pub mod update_file_system_windows_configuration {
             self.daily_automatic_backup_start_time = Some(input.into());
             self
         }
+        /// <p>The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code>
+        /// </p>
         pub fn set_daily_automatic_backup_start_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6516,6 +7545,9 @@ pub mod update_file_system_windows_configuration {
             self.automatic_backup_retention_days = Some(input);
             self
         }
+        /// <p>The number of days to retain automatic daily backups. Setting this to zero (0) disables automatic daily
+        /// backups. You can retain automatic daily backups for a maximum of 90 days. For more information, see
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working with Automatic Daily Backups</a>.</p>
         pub fn set_automatic_backup_retention_days(
             mut self,
             input: std::option::Option<i32>,
@@ -6530,6 +7562,9 @@ pub mod update_file_system_windows_configuration {
             self.throughput_capacity = Some(input);
             self
         }
+        /// <p>Sets the target value for a file system's throughput capacity, in MB/s, that you are updating the file system to. Valid values are
+        /// 8, 16, 32, 64, 128, 256, 512, 1024, 2048. You cannot make a throughput capacity update request if there is an existing throughput capacity update request in progress. For more information,
+        /// see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing Throughput Capacity</a>.</p>
         pub fn set_throughput_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.throughput_capacity = input;
             self
@@ -6543,6 +7578,8 @@ pub mod update_file_system_windows_configuration {
             self.self_managed_active_directory_configuration = Some(input);
             self
         }
+        /// <p>The configuration Amazon FSx uses to join the Windows File Server instance to the
+        /// self-managed Microsoft AD directory. You cannot make a self-managed Microsoft AD update request if there is an existing self-managed Microsoft AD update request in progress.</p>
         pub fn set_self_managed_active_directory_configuration(
             mut self,
             input: std::option::Option<
@@ -6562,6 +7599,9 @@ pub mod update_file_system_windows_configuration {
             self.audit_log_configuration = Some(input);
             self
         }
+        /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log
+        /// user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server
+        /// file system..</p>
         pub fn set_audit_log_configuration(
             mut self,
             input: std::option::Option<crate::model::WindowsAuditLogCreateConfiguration>,
@@ -6730,6 +7770,28 @@ pub mod windows_audit_log_create_configuration {
             self.file_access_audit_log_level = Some(input);
             self
         }
+        /// <p>Sets which attempt type is logged by Amazon FSx for file and folder accesses.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SUCCESS_ONLY</code> - only successful attempts to access files
+        /// or folders are logged.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILURE_ONLY</code> - only failed attempts to access files
+        /// or folders are logged.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SUCCESS_AND_FAILURE</code> - both successful attempts and
+        /// failed attempts to access files or folders are logged.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLED</code> - access auditing of files and folders is turned off.</p>
+        /// </li>
+        /// </ul>
         pub fn set_file_access_audit_log_level(
             mut self,
             input: std::option::Option<crate::model::WindowsAccessAuditLogLevel>,
@@ -6766,6 +7828,28 @@ pub mod windows_audit_log_create_configuration {
             self.file_share_access_audit_log_level = Some(input);
             self
         }
+        /// <p>Sets which attempt type is logged by Amazon FSx for file share accesses.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SUCCESS_ONLY</code> - only successful attempts to access file
+        /// shares are logged.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILURE_ONLY</code> - only failed attempts to access file
+        /// shares are logged.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SUCCESS_AND_FAILURE</code> - both successful attempts and
+        /// failed attempts to access file shares are logged.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLED</code> - access auditing of file shares is turned off.</p>
+        /// </li>
+        /// </ul>
         pub fn set_file_share_access_audit_log_level(
             mut self,
             input: std::option::Option<crate::model::WindowsAccessAuditLogLevel>,
@@ -6806,6 +7890,35 @@ pub mod windows_audit_log_create_configuration {
             self.audit_log_destination = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that specifies the destination of the audit logs.</p>
+        /// <p>The destination can be any Amazon CloudWatch Logs log group ARN or Amazon Kinesis
+        /// Data Firehose delivery stream ARN, with the following requirements:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The destination ARN that you provide (either CloudWatch Logs log group
+        /// or Kinesis Data Firehose delivery stream) must be in the same Amazon Web Services partition,
+        /// Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p>
+        /// </li>
+        /// <li>
+        /// <p>The name of the Amazon CloudWatch Logs log group must begin with
+        /// the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data
+        /// Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you do not provide a destination in <code>AuditLogDestination</code>,
+        /// Amazon FSx will create and use a log stream in the CloudWatch Logs
+        /// <code>/aws/fsx/windows</code> log group.</p>
+        /// </li>
+        /// <li>
+        /// <p>If <code>AuditLogDestination</code> is provided and the resource does not
+        /// exist, the request will fail with a <code>BadRequest</code> error.</p>
+        /// </li>
+        /// <li>
+        /// <p>If <code>FileAccessAuditLogLevel</code> and <code>FileShareAccessAuditLogLevel</code>
+        /// are both set to <code>DISABLED</code>, you cannot specify a destination in
+        /// <code>AuditLogDestination</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_audit_log_destination(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6865,6 +7978,7 @@ pub mod volume_filter {
             self.name = Some(input);
             self
         }
+        /// <p>The name for this filter.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::VolumeFilterName>,
@@ -6872,12 +7986,20 @@ pub mod volume_filter {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The values of the filter. These are all the values for any of the applied
+        /// filters.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The values of the filter. These are all the values for any of the applied
+        /// filters.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6901,6 +8023,7 @@ impl VolumeFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6912,7 +8035,9 @@ impl VolumeFilter {
     std::hash::Hash,
 )]
 pub enum VolumeFilterName {
+    #[allow(missing_docs)] // documentation missing in model
     FileSystemId,
+    #[allow(missing_docs)] // documentation missing in model
     StorageVirtualMachineId,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6934,6 +8059,7 @@ impl std::str::FromStr for VolumeFilterName {
     }
 }
 impl VolumeFilterName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             VolumeFilterName::FileSystemId => "file-system-id",
@@ -6941,6 +8067,7 @@ impl VolumeFilterName {
             VolumeFilterName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["file-system-id", "storage-virtual-machine-id"]
     }
@@ -6986,6 +8113,7 @@ pub mod storage_virtual_machine_filter {
             self.name = Some(input);
             self
         }
+        /// <p>The name for this filter.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::StorageVirtualMachineFilterName>,
@@ -6993,12 +8121,20 @@ pub mod storage_virtual_machine_filter {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The values of the filter. These are all the values for any of the applied
+        /// filters.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The values of the filter. These are all the values for any of the applied
+        /// filters.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7022,6 +8158,7 @@ impl StorageVirtualMachineFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7033,6 +8170,7 @@ impl StorageVirtualMachineFilter {
     std::hash::Hash,
 )]
 pub enum StorageVirtualMachineFilterName {
+    #[allow(missing_docs)] // documentation missing in model
     FileSystemId,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7053,12 +8191,14 @@ impl std::str::FromStr for StorageVirtualMachineFilterName {
     }
 }
 impl StorageVirtualMachineFilterName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StorageVirtualMachineFilterName::FileSystemId => "file-system-id",
             StorageVirtualMachineFilterName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["file-system-id"]
     }
@@ -7116,11 +8256,11 @@ pub struct DataRepositoryTask {
     pub r#type: std::option::Option<crate::model::DataRepositoryTaskType>,
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z),
     /// also known as Unix time.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that Amazon FSx began processing the task.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that Amazon FSx completed processing the task, populated after the task is complete.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services
     /// resources. We require an ARN when you need to specify a resource unambiguously across
     /// all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
@@ -7172,9 +8312,9 @@ pub mod data_repository_task {
         pub(crate) task_id: std::option::Option<std::string::String>,
         pub(crate) lifecycle: std::option::Option<crate::model::DataRepositoryTaskLifecycle>,
         pub(crate) r#type: std::option::Option<crate::model::DataRepositoryTaskType>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) file_system_id: std::option::Option<std::string::String>,
@@ -7190,6 +8330,7 @@ pub mod data_repository_task {
             self.task_id = Some(input.into());
             self
         }
+        /// <p>The system-generated, unique 17-digit ID of the data repository task.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
@@ -7232,6 +8373,40 @@ pub mod data_repository_task {
             self.lifecycle = Some(input);
             self
         }
+        /// <p>The lifecycle status of the data repository task, as follows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code> - Amazon FSx has not started the task.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EXECUTING</code> - Amazon FSx is processing the task.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code> -  Amazon FSx was not able to complete the task. For example, there may be files the task failed to process.
+        /// The <a>DataRepositoryTaskFailureDetails</a> property provides more information about task failures.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SUCCEEDED</code> - FSx completed the task successfully.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CANCELING</code> - FSx is in process of canceling the task.</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>You cannot delete an FSx for Lustre file system if there are data
+        /// repository tasks for the file system in the <code>PENDING</code> or <code>EXECUTING</code> states.
+        /// Please retry when the data repository task is finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>).
+        /// You can use the DescribeDataRepositoryTask action to monitor the task status. Contact the FSx team if you need to delete your file system immediately.</p>
+        /// </note>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::DataRepositoryTaskLifecycle>,
@@ -7244,6 +8419,7 @@ pub mod data_repository_task {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of data repository task; EXPORT_TO_REPOSITORY is the only type currently supported.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DataRepositoryTaskType>,
@@ -7253,32 +8429,42 @@ pub mod data_repository_task {
         }
         /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z),
         /// also known as Unix time.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z),
+        /// also known as Unix time.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time that Amazon FSx began processing the task.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that Amazon FSx began processing the task.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time that Amazon FSx completed processing the task, populated after the task is complete.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that Amazon FSx completed processing the task, populated after the task is complete.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -7290,16 +8476,26 @@ pub mod data_repository_task {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services
+        /// resources. We require an ARN when you need to specify a resource unambiguously across
+        /// all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+        /// the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7312,6 +8508,7 @@ pub mod data_repository_task {
             self.file_system_id = Some(input.into());
             self
         }
+        /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7319,12 +8516,22 @@ pub mod data_repository_task {
             self.file_system_id = input;
             self
         }
+        /// Appends an item to `paths`.
+        ///
+        /// To override the contents of this collection use [`set_paths`](Self::set_paths).
+        ///
+        /// <p>An array of paths on the Amazon FSx for Lustre file system that specify the data for the data repository task to process.
+        /// For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.</p>
+        /// <p>(Default) If <code>Paths</code> is not specified, Amazon FSx uses the file system root directory.</p>
         pub fn paths(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.paths.unwrap_or_default();
             v.push(input.into());
             self.paths = Some(v);
             self
         }
+        /// <p>An array of paths on the Amazon FSx for Lustre file system that specify the data for the data repository task to process.
+        /// For example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to the linked data repository.</p>
+        /// <p>(Default) If <code>Paths</code> is not specified, Amazon FSx uses the file system root directory.</p>
         pub fn set_paths(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7340,6 +8547,7 @@ pub mod data_repository_task {
             self.failure_details = Some(input);
             self
         }
+        /// <p>Failure message describing why the task failed, it is populated only when <code>Lifecycle</code> is set to <code>FAILED</code>.</p>
         pub fn set_failure_details(
             mut self,
             input: std::option::Option<crate::model::DataRepositoryTaskFailureDetails>,
@@ -7352,6 +8560,7 @@ pub mod data_repository_task {
             self.status = Some(input);
             self
         }
+        /// <p>Provides the status of the number of files that the task has processed successfully and failed to process.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DataRepositoryTaskStatus>,
@@ -7367,6 +8576,10 @@ pub mod data_repository_task {
             self.report = Some(input);
             self
         }
+        /// <p>Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter.
+        /// FSx delivers the report to the file system's linked data repository in Amazon S3,
+        /// using the path specified in the report <code>Path</code> parameter.
+        /// You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter.</p>
         pub fn set_report(
             mut self,
             input: std::option::Option<crate::model::CompletionReport>,
@@ -7456,6 +8669,9 @@ pub mod completion_report {
             self.enabled = Some(input);
             self
         }
+        /// <p>Set <code>Enabled</code> to <code>True</code> to generate a <code>CompletionReport</code> when the task completes.
+        /// If set to <code>true</code>, then you need to provide a report <code>Scope</code>, <code>Path</code>, and <code>Format</code>.
+        /// Set <code>Enabled</code> to <code>False</code> if you do not want a <code>CompletionReport</code> generated when the task completes.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -7469,6 +8685,11 @@ pub mod completion_report {
             self.path = Some(input.into());
             self
         }
+        /// <p>Required if <code>Enabled</code> is set to <code>true</code>. Specifies the location of the report on the file system's linked S3 data repository. An absolute path that defines where the completion report will be stored in the destination location.
+        /// The <code>Path</code> you provide must be located within the file system’s ExportPath.
+        /// An example <code>Path</code> value is "s3://myBucket/myExportPath/optionalPrefix". The report provides the following information for each file in the report:
+        /// FilePath, FileStatus, and ErrorCode. To learn more about a file system's <code>ExportPath</code>, see .
+        /// </p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -7481,6 +8702,10 @@ pub mod completion_report {
             self.format = Some(input);
             self
         }
+        /// <p>Required if <code>Enabled</code> is set to <code>true</code>. Specifies the format of the <code>CompletionReport</code>. <code>REPORT_CSV_20191124</code> is the only format currently supported.
+        /// When <code>Format</code> is set to <code>REPORT_CSV_20191124</code>, the <code>CompletionReport</code> is provided in CSV format, and is delivered to
+        /// <code>{path}/task-{id}/failures.csv</code>.
+        /// </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::ReportFormat>,
@@ -7494,6 +8719,8 @@ pub mod completion_report {
             self.scope = Some(input);
             self
         }
+        /// <p>Required if <code>Enabled</code> is set to <code>true</code>. Specifies the scope of the <code>CompletionReport</code>; <code>FAILED_FILES_ONLY</code> is the only scope currently supported.
+        /// When <code>Scope</code> is set to <code>FAILED_FILES_ONLY</code>, the <code>CompletionReport</code> only contains information about files that the data repository task failed to process.</p>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::ReportScope>) -> Self {
             self.scope = input;
             self
@@ -7516,6 +8743,7 @@ impl CompletionReport {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7527,6 +8755,7 @@ impl CompletionReport {
     std::hash::Hash,
 )]
 pub enum ReportScope {
+    #[allow(missing_docs)] // documentation missing in model
     FailedFilesOnly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7547,12 +8776,14 @@ impl std::str::FromStr for ReportScope {
     }
 }
 impl ReportScope {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportScope::FailedFilesOnly => "FAILED_FILES_ONLY",
             ReportScope::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED_FILES_ONLY"]
     }
@@ -7563,6 +8794,7 @@ impl AsRef<str> for ReportScope {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7574,6 +8806,7 @@ impl AsRef<str> for ReportScope {
     std::hash::Hash,
 )]
 pub enum ReportFormat {
+    #[allow(missing_docs)] // documentation missing in model
     ReportCsv20191124,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7594,12 +8827,14 @@ impl std::str::FromStr for ReportFormat {
     }
 }
 impl ReportFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportFormat::ReportCsv20191124 => "REPORT_CSV_20191124",
             ReportFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["REPORT_CSV_20191124"]
     }
@@ -7624,7 +8859,7 @@ pub struct DataRepositoryTaskStatus {
     /// <p>A running total of the number of files that the task failed to process.</p>
     pub failed_count: std::option::Option<i64>,
     /// <p>The time at which the task status was last updated.</p>
-    pub last_updated_time: std::option::Option<smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DataRepositoryTaskStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7645,7 +8880,7 @@ pub mod data_repository_task_status {
         pub(crate) total_count: std::option::Option<i64>,
         pub(crate) succeeded_count: std::option::Option<i64>,
         pub(crate) failed_count: std::option::Option<i64>,
-        pub(crate) last_updated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The total number of files that the task will process. While a task is executing, the sum of
@@ -7655,6 +8890,9 @@ pub mod data_repository_task_status {
             self.total_count = Some(input);
             self
         }
+        /// <p>The total number of files that the task will process. While a task is executing, the sum of
+        /// <code>SucceededCount</code> plus <code>FailedCount</code> may not equal <code>TotalCount</code>. When the task is complete,
+        /// <code>TotalCount</code> equals the sum of <code>SucceededCount</code> plus <code>FailedCount</code>.</p>
         pub fn set_total_count(mut self, input: std::option::Option<i64>) -> Self {
             self.total_count = input;
             self
@@ -7664,6 +8902,7 @@ pub mod data_repository_task_status {
             self.succeeded_count = Some(input);
             self
         }
+        /// <p>A running total of the number of files that the task has successfully processed.</p>
         pub fn set_succeeded_count(mut self, input: std::option::Option<i64>) -> Self {
             self.succeeded_count = input;
             self
@@ -7673,18 +8912,20 @@ pub mod data_repository_task_status {
             self.failed_count = Some(input);
             self
         }
+        /// <p>A running total of the number of files that the task failed to process.</p>
         pub fn set_failed_count(mut self, input: std::option::Option<i64>) -> Self {
             self.failed_count = input;
             self
         }
         /// <p>The time at which the task status was last updated.</p>
-        pub fn last_updated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_time = Some(input);
             self
         }
+        /// <p>The time at which the task status was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -7735,6 +8976,7 @@ pub mod data_repository_task_failure_details {
             self.message = Some(input.into());
             self
         }
+        /// <p>A detailed error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -7754,6 +8996,7 @@ impl DataRepositoryTaskFailureDetails {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7765,6 +9008,7 @@ impl DataRepositoryTaskFailureDetails {
     std::hash::Hash,
 )]
 pub enum DataRepositoryTaskType {
+    #[allow(missing_docs)] // documentation missing in model
     Export,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7785,12 +9029,14 @@ impl std::str::FromStr for DataRepositoryTaskType {
     }
 }
 impl DataRepositoryTaskType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataRepositoryTaskType::Export => "EXPORT_TO_REPOSITORY",
             DataRepositoryTaskType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EXPORT_TO_REPOSITORY"]
     }
@@ -7801,6 +9047,7 @@ impl AsRef<str> for DataRepositoryTaskType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7812,11 +9059,17 @@ impl AsRef<str> for DataRepositoryTaskType {
     std::hash::Hash,
 )]
 pub enum DataRepositoryTaskLifecycle {
+    #[allow(missing_docs)] // documentation missing in model
     Canceled,
+    #[allow(missing_docs)] // documentation missing in model
     Canceling,
+    #[allow(missing_docs)] // documentation missing in model
     Executing,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7842,6 +9095,7 @@ impl std::str::FromStr for DataRepositoryTaskLifecycle {
     }
 }
 impl DataRepositoryTaskLifecycle {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataRepositoryTaskLifecycle::Canceled => "CANCELED",
@@ -7853,6 +9107,7 @@ impl DataRepositoryTaskLifecycle {
             DataRepositoryTaskLifecycle::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CANCELED",
@@ -7923,6 +9178,16 @@ pub mod data_repository_task_filter {
             self.name = Some(input);
             self
         }
+        /// <p>Name of the task property to use in filtering the tasks returned in the response.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Use <code>file-system-id</code> to retrieve data repository tasks for specific file systems.</p>
+        /// </li>
+        /// <li>
+        /// <p>Use <code>task-lifecycle</code> to retrieve data repository tasks with one or more specific lifecycle states,
+        /// as follows: CANCELED, EXECUTING, FAILED, PENDING, and SUCCEEDED.</p>
+        /// </li>
+        /// </ul>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::DataRepositoryTaskFilterName>,
@@ -7930,12 +9195,20 @@ pub mod data_repository_task_filter {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>Use Values to include the specific file system IDs and task
+        /// lifecycle states for the filters you are using.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>Use Values to include the specific file system IDs and task
+        /// lifecycle states for the filters you are using.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7959,6 +9232,7 @@ impl DataRepositoryTaskFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7970,7 +9244,9 @@ impl DataRepositoryTaskFilter {
     std::hash::Hash,
 )]
 pub enum DataRepositoryTaskFilterName {
+    #[allow(missing_docs)] // documentation missing in model
     FileSystemId,
+    #[allow(missing_docs)] // documentation missing in model
     TaskLifecycle,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7992,6 +9268,7 @@ impl std::str::FromStr for DataRepositoryTaskFilterName {
     }
 }
 impl DataRepositoryTaskFilterName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataRepositoryTaskFilterName::FileSystemId => "file-system-id",
@@ -7999,6 +9276,7 @@ impl DataRepositoryTaskFilterName {
             DataRepositoryTaskFilterName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["file-system-id", "task-lifecycle"]
     }
@@ -8055,7 +9333,7 @@ pub struct Backup {
     /// <p>The current percent of progress of an asynchronous task.</p>
     pub progress_percent: std::option::Option<i32>,
     /// <p>The time when a particular backup was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt the
     /// backup of the Amazon FSx file system's data at rest.
     /// </p>
@@ -8115,7 +9393,7 @@ pub mod backup {
         pub(crate) failure_details: std::option::Option<crate::model::BackupFailureDetails>,
         pub(crate) r#type: std::option::Option<crate::model::BackupType>,
         pub(crate) progress_percent: std::option::Option<i32>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8134,6 +9412,7 @@ pub mod backup {
             self.backup_id = Some(input.into());
             self
         }
+        /// <p>The ID of the backup.</p>
         pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.backup_id = input;
             self
@@ -8173,6 +9452,37 @@ pub mod backup {
             self.lifecycle = Some(input);
             self
         }
+        /// <p>The lifecycle status of the backup.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AVAILABLE</code> - The backup is fully available.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx has not started creating the backup.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATING</code> - Amazon FSx is creating the backup.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is transferring the backup to S3.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COPYING</code> - Amazon FSx is copying the backup.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code> - Amazon FSx could not complete the backup.</p>
+        /// </li>
+        /// </ul>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::BackupLifecycle>,
@@ -8185,6 +9495,7 @@ pub mod backup {
             self.failure_details = Some(input);
             self
         }
+        /// <p>Details explaining any failures that occur when creating a backup.</p>
         pub fn set_failure_details(
             mut self,
             input: std::option::Option<crate::model::BackupFailureDetails>,
@@ -8197,6 +9508,7 @@ pub mod backup {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the file system backup.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::BackupType>) -> Self {
             self.r#type = input;
             self
@@ -8206,18 +9518,20 @@ pub mod backup {
             self.progress_percent = Some(input);
             self
         }
+        /// <p>The current percent of progress of an asynchronous task.</p>
         pub fn set_progress_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.progress_percent = input;
             self
         }
         /// <p>The time when a particular backup was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time when a particular backup was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -8229,6 +9543,9 @@ pub mod backup {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the
+        /// backup of the Amazon FSx file system's data at rest.
+        /// </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -8238,16 +9555,23 @@ pub mod backup {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the backup resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags associated with a particular file system.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Tags associated with a particular file system.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8261,6 +9585,8 @@ pub mod backup {
             self.file_system = Some(input);
             self
         }
+        /// <p>Metadata of the file system associated with the backup. This metadata is persisted
+        /// even if the file system is deleted.</p>
         pub fn set_file_system(
             mut self,
             input: std::option::Option<crate::model::FileSystem>,
@@ -8276,6 +9602,7 @@ pub mod backup {
             self.directory_information = Some(input);
             self
         }
+        /// <p>The configuration of the self-managed Microsoft Active Directory (AD) to which the Windows File Server instance is joined.</p>
         pub fn set_directory_information(
             mut self,
             input: std::option::Option<crate::model::ActiveDirectoryBackupAttributes>,
@@ -8289,6 +9616,8 @@ pub mod backup {
             self.owner_id = Some(input.into());
             self
         }
+        /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon
+        /// Resource Names (ARNs) for resources.</p>
         pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner_id = input;
             self
@@ -8298,6 +9627,7 @@ pub mod backup {
             self.source_backup_id = Some(input.into());
             self
         }
+        /// <p>The ID of the source backup. Specifies the backup you are copying.</p>
         pub fn set_source_backup_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8311,6 +9641,8 @@ pub mod backup {
             self.source_backup_region = Some(input.into());
             self
         }
+        /// <p>The source Region of the backup. Specifies the Region from where this backup
+        /// is copied.</p>
         pub fn set_source_backup_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8323,6 +9655,7 @@ pub mod backup {
             self.resource_type = Some(input);
             self
         }
+        /// <p>Specifies the resource type that is backed up.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -8335,6 +9668,7 @@ pub mod backup {
             self.volume = Some(input);
             self
         }
+        /// <p>Describes an Amazon FSx for NetApp ONTAP volume.</p>
         pub fn set_volume(mut self, input: std::option::Option<crate::model::Volume>) -> Self {
             self.volume = input;
             self
@@ -8369,6 +9703,7 @@ impl Backup {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8380,7 +9715,9 @@ impl Backup {
     std::hash::Hash,
 )]
 pub enum ResourceType {
+    #[allow(missing_docs)] // documentation missing in model
     FileSystem,
+    #[allow(missing_docs)] // documentation missing in model
     Volume,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8402,6 +9739,7 @@ impl std::str::FromStr for ResourceType {
     }
 }
 impl ResourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::FileSystem => "FILE_SYSTEM",
@@ -8409,6 +9747,7 @@ impl ResourceType {
             ResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FILE_SYSTEM", "VOLUME"]
     }
@@ -8458,6 +9797,7 @@ pub mod active_directory_backup_attributes {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The fully qualified domain name of the self-managed AD directory.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -8467,6 +9807,7 @@ pub mod active_directory_backup_attributes {
             self.active_directory_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon Web Services Managed Microsoft Active Directory instance to which the file system is joined.</p>
         pub fn set_active_directory_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8482,6 +9823,10 @@ pub mod active_directory_backup_attributes {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services
+        /// resources. We require an ARN when you need to specify a resource unambiguously across
+        /// all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+        /// the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -8515,8 +9860,11 @@ impl ActiveDirectoryBackupAttributes {
     std::hash::Hash,
 )]
 pub enum BackupType {
+    #[allow(missing_docs)] // documentation missing in model
     Automatic,
+    #[allow(missing_docs)] // documentation missing in model
     AwsBackup,
+    #[allow(missing_docs)] // documentation missing in model
     UserInitiated,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8539,6 +9887,7 @@ impl std::str::FromStr for BackupType {
     }
 }
 impl BackupType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BackupType::Automatic => "AUTOMATIC",
@@ -8547,6 +9896,7 @@ impl BackupType {
             BackupType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUTOMATIC", "AWS_BACKUP", "USER_INITIATED"]
     }
@@ -8586,6 +9936,7 @@ pub mod backup_failure_details {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message describing the backup creation failure.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -8647,12 +9998,19 @@ impl BackupFailureDetails {
     std::hash::Hash,
 )]
 pub enum BackupLifecycle {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Copying,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Transferring,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8679,6 +10037,7 @@ impl std::str::FromStr for BackupLifecycle {
     }
 }
 impl BackupLifecycle {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BackupLifecycle::Available => "AVAILABLE",
@@ -8691,6 +10050,7 @@ impl BackupLifecycle {
             BackupLifecycle::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -8743,16 +10103,25 @@ pub mod filter {
             self.name = Some(input);
             self
         }
+        /// <p>The name for this filter.</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::FilterName>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The values of the filter. These are all the values for any of the applied
+        /// filters.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The values of the filter. These are all the values for any of the applied
+        /// filters.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8788,9 +10157,13 @@ impl Filter {
     std::hash::Hash,
 )]
 pub enum FilterName {
+    #[allow(missing_docs)] // documentation missing in model
     BackupType,
+    #[allow(missing_docs)] // documentation missing in model
     FileSystemId,
+    #[allow(missing_docs)] // documentation missing in model
     FileSystemType,
+    #[allow(missing_docs)] // documentation missing in model
     VolumeId,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8814,6 +10187,7 @@ impl std::str::FromStr for FilterName {
     }
 }
 impl FilterName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FilterName::BackupType => "backup-type",
@@ -8823,6 +10197,7 @@ impl FilterName {
             FilterName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "backup-type",
@@ -8871,6 +10246,7 @@ pub mod delete_volume_ontap_response {
             self.final_backup_id = Some(input.into());
             self
         }
+        /// <p>The ID of the source backup. Specifies the backup you are copying.</p>
         pub fn set_final_backup_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8878,12 +10254,18 @@ pub mod delete_volume_ontap_response {
             self.final_backup_id = input;
             self
         }
+        /// Appends an item to `final_backup_tags`.
+        ///
+        /// To override the contents of this collection use [`set_final_backup_tags`](Self::set_final_backup_tags).
+        ///
+        /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
         pub fn final_backup_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.final_backup_tags.unwrap_or_default();
             v.push(input.into());
             self.final_backup_tags = Some(v);
             self
         }
+        /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
         pub fn set_final_backup_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8941,16 +10323,24 @@ pub mod delete_volume_ontap_configuration {
             self.skip_final_backup = Some(input);
             self
         }
+        /// <p>Set to true if you want to skip taking a final backup of the volume
+        /// you are deleting.</p>
         pub fn set_skip_final_backup(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_final_backup = input;
             self
         }
+        /// Appends an item to `final_backup_tags`.
+        ///
+        /// To override the contents of this collection use [`set_final_backup_tags`](Self::set_final_backup_tags).
+        ///
+        /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
         pub fn final_backup_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.final_backup_tags.unwrap_or_default();
             v.push(input.into());
             self.final_backup_tags = Some(v);
             self
         }
+        /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
         pub fn set_final_backup_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -9007,6 +10397,7 @@ pub mod delete_file_system_lustre_response {
             self.final_backup_id = Some(input.into());
             self
         }
+        /// <p>The ID of the final backup for this file system.</p>
         pub fn set_final_backup_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9014,12 +10405,18 @@ pub mod delete_file_system_lustre_response {
             self.final_backup_id = input;
             self
         }
+        /// Appends an item to `final_backup_tags`.
+        ///
+        /// To override the contents of this collection use [`set_final_backup_tags`](Self::set_final_backup_tags).
+        ///
+        /// <p>The set of tags applied to the final backup.</p>
         pub fn final_backup_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.final_backup_tags.unwrap_or_default();
             v.push(input.into());
             self.final_backup_tags = Some(v);
             self
         }
+        /// <p>The set of tags applied to the final backup.</p>
         pub fn set_final_backup_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -9076,6 +10473,7 @@ pub mod delete_file_system_windows_response {
             self.final_backup_id = Some(input.into());
             self
         }
+        /// <p>The ID of the final backup for this file system.</p>
         pub fn set_final_backup_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9083,12 +10481,18 @@ pub mod delete_file_system_windows_response {
             self.final_backup_id = input;
             self
         }
+        /// Appends an item to `final_backup_tags`.
+        ///
+        /// To override the contents of this collection use [`set_final_backup_tags`](Self::set_final_backup_tags).
+        ///
+        /// <p>The set of tags applied to the final backup.</p>
         pub fn final_backup_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.final_backup_tags.unwrap_or_default();
             v.push(input.into());
             self.final_backup_tags = Some(v);
             self
         }
+        /// <p>The set of tags applied to the final backup.</p>
         pub fn set_final_backup_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -9152,16 +10556,31 @@ pub mod delete_file_system_lustre_configuration {
             self.skip_final_backup = Some(input);
             self
         }
+        /// <p>Set <code>SkipFinalBackup</code> to false if you want to take a final backup of the file
+        /// system you are deleting. By default, Amazon FSx will not take a final backup on your behalf when the
+        /// <code>DeleteFileSystem</code> operation is invoked. (Default = true)</p>
         pub fn set_skip_final_backup(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_final_backup = input;
             self
         }
+        /// Appends an item to `final_backup_tags`.
+        ///
+        /// To override the contents of this collection use [`set_final_backup_tags`](Self::set_final_backup_tags).
+        ///
+        /// <p>Use if <code>SkipFinalBackup</code> is set to <code>false</code>,
+        /// and you want to apply an array of tags to the final backup. If you have set the file system property
+        /// <code>CopyTagsToBackups</code> to true, and
+        /// you specify one or more <code>FinalBackupTags</code> when deleting a file system, Amazon FSx will not copy any existing file system tags to the backup.</p>
         pub fn final_backup_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.final_backup_tags.unwrap_or_default();
             v.push(input.into());
             self.final_backup_tags = Some(v);
             self
         }
+        /// <p>Use if <code>SkipFinalBackup</code> is set to <code>false</code>,
+        /// and you want to apply an array of tags to the final backup. If you have set the file system property
+        /// <code>CopyTagsToBackups</code> to true, and
+        /// you specify one or more <code>FinalBackupTags</code> when deleting a file system, Amazon FSx will not copy any existing file system tags to the backup.</p>
         pub fn set_final_backup_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -9224,16 +10643,26 @@ pub mod delete_file_system_windows_configuration {
             self.skip_final_backup = Some(input);
             self
         }
+        /// <p>By default, Amazon FSx for Windows takes a final backup on your behalf when the
+        /// <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you
+        /// from data loss, and we highly recommend taking the final backup. If you want to skip
+        /// this backup, use this flag to do so.</p>
         pub fn set_skip_final_backup(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_final_backup = input;
             self
         }
+        /// Appends an item to `final_backup_tags`.
+        ///
+        /// To override the contents of this collection use [`set_final_backup_tags`](Self::set_final_backup_tags).
+        ///
+        /// <p>A set of tags for your final backup.</p>
         pub fn final_backup_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.final_backup_tags.unwrap_or_default();
             v.push(input.into());
             self.final_backup_tags = Some(v);
             self
         }
+        /// <p>A set of tags for your final backup.</p>
         pub fn set_final_backup_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -9336,6 +10765,8 @@ pub mod create_ontap_volume_configuration {
             self.junction_path = Some(input.into());
             self
         }
+        /// <p>Specifies the location in the SVM's namespace where the volume is mounted.
+        /// The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
         pub fn set_junction_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9368,6 +10799,27 @@ pub mod create_ontap_volume_configuration {
             self.security_style = Some(input);
             self
         }
+        /// <p>The security style for the volume. Specify one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>UNIX</code> if the file system is managed by a UNIX
+        /// administrator, the majority of users are NFS clients, and an application
+        /// accessing the data uses a UNIX user as the service account.
+        /// <code>UNIX</code> is the default.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NTFS</code> if the file system is managed by a Windows
+        /// administrator, the majority of users are SMB clients, and an application
+        /// accessing the data uses a Windows user as the service account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MIXED</code> if the file system is managed by both UNIX
+        /// and Windows administrators and users consist of both NFS and SMB clients.</p>
+        /// </li>
+        /// </ul>
         pub fn set_security_style(
             mut self,
             input: std::option::Option<crate::model::SecurityStyle>,
@@ -9380,6 +10832,7 @@ pub mod create_ontap_volume_configuration {
             self.size_in_megabytes = Some(input);
             self
         }
+        /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating.</p>
         pub fn set_size_in_megabytes(mut self, input: std::option::Option<i32>) -> Self {
             self.size_in_megabytes = input;
             self
@@ -9390,6 +10843,8 @@ pub mod create_ontap_volume_configuration {
             self.storage_efficiency_enabled = Some(input);
             self
         }
+        /// <p>Set to true to enable deduplication, compression, and
+        /// compaction storage efficiency features on the volume.</p>
         pub fn set_storage_efficiency_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.storage_efficiency_enabled = input;
             self
@@ -9399,6 +10854,7 @@ pub mod create_ontap_volume_configuration {
             self.storage_virtual_machine_id = Some(input.into());
             self
         }
+        /// <p>Specifies the ONTAP SVM in which to create the volume.</p>
         pub fn set_storage_virtual_machine_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9413,6 +10869,9 @@ pub mod create_ontap_volume_configuration {
             self.tiering_policy = Some(input);
             self
         }
+        /// <p>Describes the data tiering policy for an ONTAP volume. When enabled, Amazon FSx for ONTAP's intelligent
+        /// tiering automatically transitions a volume's data between the file system's primary storage and capacity
+        /// pool storage based on your access patterns.</p>
         pub fn set_tiering_policy(
             mut self,
             input: std::option::Option<crate::model::TieringPolicy>,
@@ -9456,9 +10915,13 @@ impl CreateOntapVolumeConfiguration {
     std::hash::Hash,
 )]
 pub enum ActiveDirectoryErrorType {
+    #[allow(missing_docs)] // documentation missing in model
     DomainNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     IncompatibleDomainMode,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidDomainStage,
+    #[allow(missing_docs)] // documentation missing in model
     WrongVpc,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9482,6 +10945,7 @@ impl std::str::FromStr for ActiveDirectoryErrorType {
     }
 }
 impl ActiveDirectoryErrorType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ActiveDirectoryErrorType::DomainNotFound => "DOMAIN_NOT_FOUND",
@@ -9491,6 +10955,7 @@ impl ActiveDirectoryErrorType {
             ActiveDirectoryErrorType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DOMAIN_NOT_FOUND",
@@ -9549,6 +11014,7 @@ pub mod create_svm_active_directory_configuration {
             self.net_bios_name = Some(input.into());
             self
         }
+        /// <p>The NetBIOS name of the Active Directory computer object that will be created for your SVM.</p>
         pub fn set_net_bios_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9569,6 +11035,12 @@ pub mod create_svm_active_directory_configuration {
             self.self_managed_active_directory_configuration = Some(input);
             self
         }
+        /// <p>The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an ONTAP storage virtual machine (SVM) to
+        /// a self-managed (including on-premises) Microsoft Active Directory (AD)
+        /// directory. For more information, see
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html">
+        /// Using Amazon FSx with your self-managed Microsoft Active Directory</a> or
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing SVMs</a>.</p>
         pub fn set_self_managed_active_directory_configuration(
             mut self,
             input: std::option::Option<crate::model::SelfManagedActiveDirectoryConfiguration>,
@@ -9673,6 +11145,8 @@ pub mod self_managed_active_directory_configuration {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The fully qualified domain name of the self-managed AD directory, such as
+        /// <code>corp.example.com</code>.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -9693,6 +11167,15 @@ pub mod self_managed_active_directory_configuration {
             self.organizational_unit_distinguished_name = Some(input.into());
             self
         }
+        /// <p>(Optional) The fully qualified distinguished name of the organizational unit within
+        /// your self-managed AD directory. Amazon
+        /// FSx only accepts OU as the direct parent of the file system. An example is
+        /// <code>OU=FSx,DC=yourdomain,DC=corp,DC=com</code>. To learn more, see <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none is provided, the
+        /// FSx file system is created in the default location of your self-managed AD directory. </p>
+        /// <important>
+        /// <p>Only Organizational Unit (OU) objects can be the direct parent of the file system
+        /// that you're creating.</p>
+        /// </important>
         pub fn set_organizational_unit_distinguished_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9713,6 +11196,12 @@ pub mod self_managed_active_directory_configuration {
             self.file_system_administrators_group = Some(input.into());
             self
         }
+        /// <p>(Optional) The name of the domain group whose members are granted administrative
+        /// privileges for the file system. Administrative privileges include taking ownership of
+        /// files and folders, setting audit controls (audit ACLs) on files and folders, and             
+        /// administering the file system remotely by using the FSx Remote PowerShell.
+        /// The group that you specify must already exist in your domain. If you don't provide one,
+        /// your AD domain's Domain Admins group is used.</p>
         pub fn set_file_system_administrators_group(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9729,6 +11218,11 @@ pub mod self_managed_active_directory_configuration {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The user name for the service account on your self-managed AD domain that Amazon FSx
+        /// will use to join to your AD domain. This account must have the permission to join
+        /// computers to the domain in the organizational unit provided in
+        /// <code>OrganizationalUnitDistinguishedName</code>, or in the default location of your
+        /// AD domain.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -9739,16 +11233,26 @@ pub mod self_managed_active_directory_configuration {
             self.password = Some(input.into());
             self
         }
+        /// <p>The password for the service account on your self-managed AD domain that Amazon FSx
+        /// will use to join to your AD domain.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
         }
+        /// Appends an item to `dns_ips`.
+        ///
+        /// To override the contents of this collection use [`set_dns_ips`](Self::set_dns_ips).
+        ///
+        /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the
+        /// self-managed AD directory. </p>
         pub fn dns_ips(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dns_ips.unwrap_or_default();
             v.push(input.into());
             self.dns_ips = Some(v);
             self
         }
+        /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the
+        /// self-managed AD directory. </p>
         pub fn set_dns_ips(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9799,6 +11303,7 @@ pub struct CreateFileSystemLustreConfiguration {
     /// <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The timestamp is in
     /// UTC format, for example
     /// <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p>
+    ///
     /// <p>The Amazon S3 export bucket must be the same as the import bucket specified by
     /// <code>ImportPath</code>. If you only specify a bucket name, such as
     /// <code>s3://import-bucket</code>, you get a 1:1 mapping of file system objects to S3
@@ -9811,6 +11316,7 @@ pub struct CreateFileSystemLustreConfiguration {
     /// count and maximum amount of data per file (in MiB) stored on a single physical disk. The
     /// maximum number of disks that a single file can be striped across is limited by the total
     /// number of disks that make up the file system.</p>
+    ///
     /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500
     /// GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
     pub imported_file_chunk_size: std::option::Option<i32>,
@@ -9819,6 +11325,7 @@ pub struct CreateFileSystemLustreConfiguration {
     /// types when you need temporary storage and shorter-term processing of data.
     /// The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst
     /// throughput capacity than <code>SCRATCH_1</code>.</p>
+    ///
     /// <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage
     /// and workloads and encryption of data in transit. To learn more about deployment types, see
     /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
@@ -9836,6 +11343,7 @@ pub struct CreateFileSystemLustreConfiguration {
     /// Use this property to choose how Amazon FSx keeps your file and directory listings up to date
     /// as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can
     /// have the following values:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -9968,6 +11476,8 @@ pub mod create_file_system_lustre_configuration {
             self.weekly_maintenance_start_time = Some(input.into());
             self
         }
+        /// <p>(Optional) The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC
+        /// time zone, where d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
         pub fn set_weekly_maintenance_start_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9986,6 +11496,13 @@ pub mod create_file_system_lustre_configuration {
             self.import_path = Some(input.into());
             self
         }
+        /// <p>(Optional) The path to the Amazon S3 bucket (including the optional prefix) that
+        /// you're using as the data repository for your Amazon FSx for Lustre file system.
+        /// The root of your FSx for Lustre file system will
+        /// be mapped to the root of the Amazon S3 bucket you select. An
+        /// example is <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix
+        /// after the Amazon S3 bucket name, only object keys with that prefix are loaded into the
+        /// file system.</p>
         pub fn set_import_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.import_path = input;
             self
@@ -9997,6 +11514,7 @@ pub mod create_file_system_lustre_configuration {
         /// <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The timestamp is in
         /// UTC format, for example
         /// <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p>
+        ///
         /// <p>The Amazon S3 export bucket must be the same as the import bucket specified by
         /// <code>ImportPath</code>. If you only specify a bucket name, such as
         /// <code>s3://import-bucket</code>, you get a 1:1 mapping of file system objects to S3
@@ -10008,6 +11526,21 @@ pub mod create_file_system_lustre_configuration {
             self.export_path = Some(input.into());
             self
         }
+        /// <p>(Optional) The path in Amazon S3 where the root of your Amazon FSx file system is exported.
+        /// The path must use the same Amazon S3 bucket as specified in ImportPath. You can provide an optional prefix to which
+        /// new and changed data is to be exported from your Amazon FSx for Lustre file system. If
+        /// an <code>ExportPath</code> value is not provided, Amazon FSx sets a default export path,
+        /// <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The timestamp is in
+        /// UTC format, for example
+        /// <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p>
+        ///
+        /// <p>The Amazon S3 export bucket must be the same as the import bucket specified by
+        /// <code>ImportPath</code>. If you only specify a bucket name, such as
+        /// <code>s3://import-bucket</code>, you get a 1:1 mapping of file system objects to S3
+        /// bucket objects. This mapping means that the input data in S3 is overwritten on export.
+        /// If you provide a custom prefix in the export path, such as
+        /// <code>s3://import-bucket/[custom-optional-prefix]</code>, Amazon FSx exports the contents of your file
+        /// system to that export prefix in the Amazon S3 bucket.</p>
         pub fn set_export_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.export_path = input;
             self
@@ -10016,12 +11549,20 @@ pub mod create_file_system_lustre_configuration {
         /// count and maximum amount of data per file (in MiB) stored on a single physical disk. The
         /// maximum number of disks that a single file can be striped across is limited by the total
         /// number of disks that make up the file system.</p>
+        ///
         /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500
         /// GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
         pub fn imported_file_chunk_size(mut self, input: i32) -> Self {
             self.imported_file_chunk_size = Some(input);
             self
         }
+        /// <p>(Optional) For files imported from a data repository, this value determines the stripe
+        /// count and maximum amount of data per file (in MiB) stored on a single physical disk. The
+        /// maximum number of disks that a single file can be striped across is limited by the total
+        /// number of disks that make up the file system.</p>
+        ///
+        /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500
+        /// GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
         pub fn set_imported_file_chunk_size(mut self, input: std::option::Option<i32>) -> Self {
             self.imported_file_chunk_size = input;
             self
@@ -10031,6 +11572,7 @@ pub mod create_file_system_lustre_configuration {
         /// types when you need temporary storage and shorter-term processing of data.
         /// The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst
         /// throughput capacity than <code>SCRATCH_1</code>.</p>
+        ///
         /// <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage
         /// and workloads and encryption of data in transit. To learn more about deployment types, see
         /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
@@ -10047,6 +11589,24 @@ pub mod create_file_system_lustre_configuration {
             self.deployment_type = Some(input);
             self
         }
+        /// <p>
+        /// Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment
+        /// types when you need temporary storage and shorter-term processing of data.
+        /// The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst
+        /// throughput capacity than <code>SCRATCH_1</code>.</p>
+        ///
+        /// <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage
+        /// and workloads and encryption of data in transit. To learn more about deployment types, see
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
+        /// FSx for Lustre Deployment Options</a>.</p>
+        /// <p>Encryption of data in-transit is automatically
+        /// enabled when you access a <code>SCRATCH_2</code> or <code>PERSISTENT_1</code>
+        /// file system from Amazon EC2 instances that <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-                 protection.html">support this feature</a>.
+        /// (Default = <code>SCRATCH_1</code>)
+        /// </p>
+        /// <p>Encryption of data in-transit for <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
+        /// deployment types is supported when accessed from supported instance types in supported Amazon Web Services Regions. To learn more,
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting Data in Transit</a>.</p>
         pub fn set_deployment_type(
             mut self,
             input: std::option::Option<crate::model::LustreDeploymentType>,
@@ -10058,6 +11618,7 @@ pub mod create_file_system_lustre_configuration {
         /// Use this property to choose how Amazon FSx keeps your file and directory listings up to date
         /// as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can
         /// have the following values:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -10085,6 +11646,34 @@ pub mod create_file_system_lustre_configuration {
             self.auto_import_policy = Some(input);
             self
         }
+        /// <p> (Optional) When you create your file system, your existing S3 objects appear as file and directory listings.
+        /// Use this property to choose how Amazon FSx keeps your file and directory listings up to date
+        /// as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can
+        /// have the following values:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - (Default) AutoImport is off. Amazon FSx only updates
+        /// file and directory listings from the linked S3 bucket
+        /// when the file system is created. FSx does not update file and directory
+        /// listings for any new or changed objects after choosing this option.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports
+        /// directory listings of any new objects added to the linked S3 bucket that
+        /// do not currently exist in the FSx file system. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports
+        /// file and directory listings of any new objects added to the S3 bucket and any
+        /// existing objects that are changed in the S3 bucket after you choose this option.
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import updates from your S3 bucket</a>.</p>
         pub fn set_auto_import_policy(
             mut self,
             input: std::option::Option<crate::model::AutoImportPolicyType>,
@@ -10105,6 +11694,15 @@ pub mod create_file_system_lustre_configuration {
             self.per_unit_storage_throughput = Some(input);
             self
         }
+        /// <p>
+        /// Required for the <code>PERSISTENT_1</code> deployment type, describes the amount of read and write
+        /// throughput for each 1 tebibyte of storage, in MB/s/TiB.
+        /// File system throughput capacity is calculated by multiplying ﬁle system storage capacity (TiB) by the PerUnitStorageThroughput
+        /// (MB/s/TiB). For a 2.4 TiB ﬁle system, provisioning 50 MB/s/TiB of PerUnitStorageThroughput
+        /// yields 120 MB/s of ﬁle system throughput. You pay for the amount of throughput that you
+        /// provision.
+        /// </p>
+        /// <p>Valid values for  SSD storage: 50, 100, 200. Valid values for  HDD storage: 12, 40.</p>
         pub fn set_per_unit_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
             self.per_unit_storage_throughput = input;
             self
@@ -10119,6 +11717,9 @@ pub mod create_file_system_lustre_configuration {
             self.daily_automatic_backup_start_time = Some(input.into());
             self
         }
+        /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the
+        /// zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the
+        /// hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
         pub fn set_daily_automatic_backup_start_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10132,6 +11733,8 @@ pub mod create_file_system_lustre_configuration {
             self.automatic_backup_retention_days = Some(input);
             self
         }
+        /// <p>The number of days to retain automatic backups. Setting this to 0 disables
+        /// automatic backups. You can retain automatic backups for a maximum of 90 days. The default is 0.</p>
         pub fn set_automatic_backup_retention_days(
             mut self,
             input: std::option::Option<i32>,
@@ -10151,6 +11754,14 @@ pub mod create_file_system_lustre_configuration {
             self.copy_tags_to_backups = Some(input);
             self
         }
+        /// <p>(Optional) Not available to use with file systems that are linked to a data repository.
+        /// A boolean flag indicating whether tags for the file system should be copied to
+        /// backups. The default value is false. If it's set to true, all file system
+        /// tags are copied to all automatic and user-initiated backups when the user
+        /// doesn't specify any backup-specific tags. If this value is true, and you specify one or more backup tags, only
+        /// the specified tags are copied to backups. If you specify one or more tags when creating a
+        /// user-initiated backup, no tags are copied from the file system, regardless of this value.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working with backups</a>.</p>
         pub fn set_copy_tags_to_backups(mut self, input: std::option::Option<bool>) -> Self {
             self.copy_tags_to_backups = input;
             self
@@ -10164,6 +11775,11 @@ pub mod create_file_system_lustre_configuration {
             self.drive_cache_type = Some(input);
             self
         }
+        /// <p>The type of drive cache used by PERSISTENT_1 file systems that are provisioned with
+        /// HDD storage devices. This parameter is required when storage type is HDD. Set to
+        /// <code>READ</code>, improve the performance for frequently accessed files and allows 20%
+        /// of the total storage capacity of the file system to be cached. </p>
+        /// <p>This parameter is required when <code>StorageType</code> is set to HDD.</p>
         pub fn set_drive_cache_type(
             mut self,
             input: std::option::Option<crate::model::DriveCacheType>,
@@ -10190,6 +11806,21 @@ pub mod create_file_system_lustre_configuration {
             self.data_compression_type = Some(input);
             self
         }
+        /// <p>Sets the data compression configuration for the file system. <code>DataCompressionType</code>
+        /// can have the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - (Default) Data compression is turned off when
+        /// the file system is created.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LZ4</code> - Data compression is turned on with the LZ4
+        /// algorithm.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.</p>
         pub fn set_data_compression_type(
             mut self,
             input: std::option::Option<crate::model::DataCompressionType>,
@@ -10377,6 +12008,8 @@ pub mod create_file_system_windows_configuration {
             self.active_directory_id = Some(input.into());
             self
         }
+        /// <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory (AD) instance that the
+        /// file system should join when it's created.</p>
         pub fn set_active_directory_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10397,6 +12030,12 @@ pub mod create_file_system_windows_configuration {
             self.self_managed_active_directory_configuration = Some(input);
             self
         }
+        /// <p>The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an ONTAP storage virtual machine (SVM) to
+        /// a self-managed (including on-premises) Microsoft Active Directory (AD)
+        /// directory. For more information, see
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html">
+        /// Using Amazon FSx with your self-managed Microsoft Active Directory</a> or
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing SVMs</a>.</p>
         pub fn set_self_managed_active_directory_configuration(
             mut self,
             input: std::option::Option<crate::model::SelfManagedActiveDirectoryConfiguration>,
@@ -10430,6 +12069,28 @@ pub mod create_file_system_windows_configuration {
             self.deployment_type = Some(input);
             self
         }
+        /// <p>Specifies the file system deployment type, valid values are the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>MULTI_AZ_1</code> - Deploys a high availability file system that is configured
+        /// for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. You
+        /// can only deploy a Multi-AZ file system in Amazon Web Services Regions that have a minimum of three Availability Zones. Also
+        /// supports HDD storage type</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is configured for single AZ redundancy.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SINGLE_AZ_2</code> - The latest generation Single AZ file system.
+        /// Specifies a file system that is configured for single AZ redundancy and supports HDD storage type.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
+        /// Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
         pub fn set_deployment_type(
             mut self,
             input: std::option::Option<crate::model::WindowsDeploymentType>,
@@ -10445,6 +12106,10 @@ pub mod create_file_system_windows_configuration {
             self.preferred_subnet_id = Some(input.into());
             self
         }
+        /// <p>Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet
+        /// in which you want the preferred file server to be located. For in-Amazon Web Services applications, we recommend that you launch
+        /// your clients in the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ
+        /// data transfer costs and minimize latency. </p>
         pub fn set_preferred_subnet_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10458,6 +12123,8 @@ pub mod create_file_system_windows_configuration {
             self.throughput_capacity = Some(input);
             self
         }
+        /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second, in 2 to
+        /// the <i>n</i>th increments, between 2^3 (8) and 2^11 (2048).</p>
         pub fn set_throughput_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.throughput_capacity = input;
             self
@@ -10471,6 +12138,8 @@ pub mod create_file_system_windows_configuration {
             self.weekly_maintenance_start_time = Some(input.into());
             self
         }
+        /// <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC
+        /// time zone, where d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.</p>
         pub fn set_weekly_maintenance_start_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10487,6 +12156,8 @@ pub mod create_file_system_windows_configuration {
             self.daily_automatic_backup_start_time = Some(input.into());
             self
         }
+        /// <p>The preferred time to take daily automatic backups, formatted HH:MM in the UTC time
+        /// zone.</p>
         pub fn set_daily_automatic_backup_start_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10501,6 +12172,9 @@ pub mod create_file_system_windows_configuration {
             self.automatic_backup_retention_days = Some(input);
             self
         }
+        /// <p>The number of days to retain automatic backups. The default is to retain backups for 7
+        /// days. Setting this value to 0 disables the creation of automatic backups. The maximum
+        /// retention period for backups is 90 days.</p>
         pub fn set_automatic_backup_retention_days(
             mut self,
             input: std::option::Option<i32>,
@@ -10518,16 +12192,78 @@ pub mod create_file_system_windows_configuration {
             self.copy_tags_to_backups = Some(input);
             self
         }
+        /// <p>A boolean flag indicating whether tags for the file system should be copied to
+        /// backups. This value defaults to false. If it's set to true, all tags for the file
+        /// system are copied to all automatic and user-initiated backups where the user
+        /// doesn't specify tags. If this value is true, and you specify one or more tags, only
+        /// the specified tags are copied to backups. If you specify one or more tags when creating a
+        /// user-initiated backup, no tags are copied from the file system, regardless of this value.</p>
         pub fn set_copy_tags_to_backups(mut self, input: std::option::Option<bool>) -> Self {
             self.copy_tags_to_backups = input;
             self
         }
+        /// Appends an item to `aliases`.
+        ///
+        /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
+        ///
+        /// <p>An array of one or more DNS alias names that you want to associate with the Amazon FSx file system.
+        /// Aliases allow you to use existing DNS names to access the data in your Amazon FSx file system.
+        /// You can associate up to 50 aliases with a file system at any time.
+        /// You can associate additional DNS aliases after you create the file system using the AssociateFileSystemAliases operation.
+        /// You can remove DNS aliases from the file system after it is created using the DisassociateFileSystemAliases operation.
+        /// You only need to specify the alias name in the request payload.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a> and
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough 5: Using DNS aliases to access your file system</a>, including
+        /// additional steps you must take to be able to access your file system using a DNS alias.</p>
+        /// <p>An alias name has to meet the following requirements:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example, <code>accounting.example.com</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Can contain alphanumeric characters, the underscore (_), and the hyphen (-).</p>
+        /// </li>
+        /// <li>
+        /// <p>Cannot start or end with a hyphen.</p>
+        /// </li>
+        /// <li>
+        /// <p>Can start with a numeric.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them:
+        /// as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
         pub fn aliases(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.aliases.unwrap_or_default();
             v.push(input.into());
             self.aliases = Some(v);
             self
         }
+        /// <p>An array of one or more DNS alias names that you want to associate with the Amazon FSx file system.
+        /// Aliases allow you to use existing DNS names to access the data in your Amazon FSx file system.
+        /// You can associate up to 50 aliases with a file system at any time.
+        /// You can associate additional DNS aliases after you create the file system using the AssociateFileSystemAliases operation.
+        /// You can remove DNS aliases from the file system after it is created using the DisassociateFileSystemAliases operation.
+        /// You only need to specify the alias name in the request payload.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a> and
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough 5: Using DNS aliases to access your file system</a>, including
+        /// additional steps you must take to be able to access your file system using a DNS alias.</p>
+        /// <p>An alias name has to meet the following requirements:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example, <code>accounting.example.com</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Can contain alphanumeric characters, the underscore (_), and the hyphen (-).</p>
+        /// </li>
+        /// <li>
+        /// <p>Cannot start or end with a hyphen.</p>
+        /// </li>
+        /// <li>
+        /// <p>Can start with a numeric.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them:
+        /// as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
         pub fn set_aliases(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10545,6 +12281,9 @@ pub mod create_file_system_windows_configuration {
             self.audit_log_configuration = Some(input);
             self
         }
+        /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log
+        /// user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server
+        /// file system.</p>
         pub fn set_audit_log_configuration(
             mut self,
             input: std::option::Option<crate::model::WindowsAuditLogCreateConfiguration>,
@@ -10672,6 +12411,8 @@ pub mod create_file_system_ontap_configuration {
             self.automatic_backup_retention_days = Some(input);
             self
         }
+        /// <p>The number of days to retain automatic backups. Setting this to 0 disables
+        /// automatic backups. You can retain automatic backups for a maximum of 90 days. The default is 0.</p>
         pub fn set_automatic_backup_retention_days(
             mut self,
             input: std::option::Option<i32>,
@@ -10689,6 +12430,9 @@ pub mod create_file_system_ontap_configuration {
             self.daily_automatic_backup_start_time = Some(input.into());
             self
         }
+        /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the
+        /// zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the
+        /// hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
         pub fn set_daily_automatic_backup_start_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10701,6 +12445,7 @@ pub mod create_file_system_ontap_configuration {
             self.deployment_type = Some(input);
             self
         }
+        /// <p>Specifies the ONTAP file system deployment type to use in creating the file system.</p>
         pub fn set_deployment_type(
             mut self,
             input: std::option::Option<crate::model::OntapDeploymentType>,
@@ -10715,6 +12460,9 @@ pub mod create_file_system_ontap_configuration {
             self.endpoint_ip_address_range = Some(input.into());
             self
         }
+        /// <p>Specifies the IP address range in which the endpoints to access your file system
+        /// will be created. By default, Amazon FSx selects an unused IP address range for you
+        /// from the 198.19.* range.</p>
         pub fn set_endpoint_ip_address_range(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10728,6 +12476,8 @@ pub mod create_file_system_ontap_configuration {
             self.fsx_admin_password = Some(input.into());
             self
         }
+        /// <p>The ONTAP administrative password for the <code>fsxadmin</code> user that you can
+        /// use to administer your file system using the ONTAP CLI and REST API.</p>
         pub fn set_fsx_admin_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10743,6 +12493,7 @@ pub mod create_file_system_ontap_configuration {
             self.disk_iops_configuration = Some(input);
             self
         }
+        /// <p>The SSD IOPS configuration for the Amazon FSx for NetApp ONTAP file system.</p>
         pub fn set_disk_iops_configuration(
             mut self,
             input: std::option::Option<crate::model::DiskIopsConfiguration>,
@@ -10758,6 +12509,10 @@ pub mod create_file_system_ontap_configuration {
             self.preferred_subnet_id = Some(input.into());
             self
         }
+        /// <p>The ID for a subnet. A <i>subnet</i> is a range of IP addresses in
+        /// your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and Subnets</a> in the
+        /// <i>Amazon VPC User Guide.</i>
+        /// </p>
         pub fn set_preferred_subnet_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10765,12 +12520,24 @@ pub mod create_file_system_ontap_configuration {
             self.preferred_subnet_id = input;
             self
         }
+        /// Appends an item to `route_table_ids`.
+        ///
+        /// To override the contents of this collection use [`set_route_table_ids`](Self::set_route_table_ids).
+        ///
+        /// <p>Specifies the VPC route tables in which your file system's endpoints will be
+        /// created. You should specify all VPC route tables associated with the subnets
+        /// in which your clients are located. By default, Amazon FSx selects your VPC's
+        /// default route table.</p>
         pub fn route_table_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.route_table_ids.unwrap_or_default();
             v.push(input.into());
             self.route_table_ids = Some(v);
             self
         }
+        /// <p>Specifies the VPC route tables in which your file system's endpoints will be
+        /// created. You should specify all VPC route tables associated with the subnets
+        /// in which your clients are located. By default, Amazon FSx selects your VPC's
+        /// default route table.</p>
         pub fn set_route_table_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10783,6 +12550,7 @@ pub mod create_file_system_ontap_configuration {
             self.throughput_capacity = Some(input);
             self
         }
+        /// <p>Sustained throughput of an Amazon FSx file system in MBps.</p>
         pub fn set_throughput_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.throughput_capacity = input;
             self
@@ -10802,6 +12570,14 @@ pub mod create_file_system_ontap_configuration {
             self.weekly_maintenance_start_time = Some(input.into());
             self
         }
+        /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+        /// <p>
+        /// <code>D</code> is the day of the week, for which 1 represents Monday and 7
+        /// represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+        /// <p>
+        /// <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is
+        /// the zero-padded minute of the hour. </p>
+        /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
         pub fn set_weekly_maintenance_start_time(
             mut self,
             input: std::option::Option<std::string::String>,

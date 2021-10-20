@@ -11,7 +11,7 @@ pub struct Credentials {
     /// credentials.</p>
     pub session_token: std::option::Option<std::string::String>,
     /// <p>The date on which the current credentials expire.</p>
-    pub expiration: std::option::Option<smithy_types::Instant>,
+    pub expiration: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Credentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -32,7 +32,7 @@ pub mod credentials {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
         pub(crate) secret_access_key: std::option::Option<std::string::String>,
         pub(crate) session_token: std::option::Option<std::string::String>,
-        pub(crate) expiration: std::option::Option<smithy_types::Instant>,
+        pub(crate) expiration: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The access key ID that identifies the temporary security credentials.</p>
@@ -40,6 +40,7 @@ pub mod credentials {
             self.access_key_id = Some(input.into());
             self
         }
+        /// <p>The access key ID that identifies the temporary security credentials.</p>
         pub fn set_access_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -52,6 +53,7 @@ pub mod credentials {
             self.secret_access_key = Some(input.into());
             self
         }
+        /// <p>The secret access key that can be used to sign requests.</p>
         pub fn set_secret_access_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -65,6 +67,8 @@ pub mod credentials {
             self.session_token = Some(input.into());
             self
         }
+        /// <p>The token that users must pass to the service API to use the temporary
+        /// credentials.</p>
         pub fn set_session_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -73,11 +77,15 @@ pub mod credentials {
             self
         }
         /// <p>The date on which the current credentials expire.</p>
-        pub fn expiration(mut self, input: smithy_types::Instant) -> Self {
+        pub fn expiration(mut self, input: aws_smithy_types::Instant) -> Self {
             self.expiration = Some(input);
             self
         }
-        pub fn set_expiration(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date on which the current credentials expire.</p>
+        pub fn set_expiration(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.expiration = input;
             self
         }
@@ -135,6 +143,8 @@ pub mod federated_user {
             self.federated_user_id = Some(input.into());
             self
         }
+        /// <p>The string that identifies the federated user associated with the credentials, similar
+        /// to the unique ID of an IAM user.</p>
         pub fn set_federated_user_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -149,6 +159,9 @@ pub mod federated_user {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN that specifies the federated user that is associated with the credentials. For
+        /// more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+        /// Identifiers</a> in the <i>IAM User Guide</i>. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -213,6 +226,10 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key for a session tag.</p>
+        /// <p>You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128
+        /// characters. For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
+        /// and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -225,6 +242,10 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value for a session tag.</p>
+        /// <p>You can pass up to 50 session tags. The plain text session tag values can’t exceed 256
+        /// characters. For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
+        /// and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -278,6 +299,9 @@ pub mod policy_descriptor_type {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy
+        /// for the role. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
+        /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -332,6 +356,8 @@ pub mod assumed_role_user {
             self.assumed_role_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier that contains the role ID and the role session name of the role that
+        /// is being assumed. The role ID is generated by Amazon Web Services when the role is created.</p>
         pub fn set_assumed_role_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -346,6 +372,9 @@ pub mod assumed_role_user {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the temporary security credentials that are returned from the <a>AssumeRole</a> action. For more information about ARNs and how to use them in
+        /// policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self

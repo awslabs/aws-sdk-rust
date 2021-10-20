@@ -20,7 +20,7 @@ pub fn parse_analyze_document_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeDocumentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeDocumentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -37,7 +37,7 @@ pub fn parse_analyze_document_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_document_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bad_document_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeDocumentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_document_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeDocumentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -54,7 +54,7 @@ pub fn parse_analyze_document_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::document_too_large_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_document_too_large_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeDocumentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_document_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeDocumentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -72,7 +72,7 @@ pub fn parse_analyze_document_error(
                     let mut output =
                         crate::error::human_loop_quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_human_loop_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeDocumentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_human_loop_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeDocumentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -89,7 +89,7 @@ pub fn parse_analyze_document_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeDocumentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeDocumentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -106,7 +106,7 @@ pub fn parse_analyze_document_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeDocumentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeDocumentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -123,7 +123,7 @@ pub fn parse_analyze_document_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_s3_object_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_s3_object_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeDocumentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_s3_object_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeDocumentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -141,7 +141,7 @@ pub fn parse_analyze_document_error(
                     let mut output =
                         crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeDocumentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeDocumentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -158,7 +158,7 @@ pub fn parse_analyze_document_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeDocumentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeDocumentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -176,7 +176,7 @@ pub fn parse_analyze_document_error(
                     let mut output =
                         crate::error::unsupported_document_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unsupported_document_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeDocumentError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_document_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeDocumentError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -227,7 +227,7 @@ pub fn parse_analyze_expense_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeExpenseError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeExpenseError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -244,7 +244,7 @@ pub fn parse_analyze_expense_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_document_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bad_document_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeExpenseError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_document_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeExpenseError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -261,7 +261,7 @@ pub fn parse_analyze_expense_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::document_too_large_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_document_too_large_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeExpenseError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_document_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeExpenseError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -278,7 +278,7 @@ pub fn parse_analyze_expense_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeExpenseError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeExpenseError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -295,7 +295,7 @@ pub fn parse_analyze_expense_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeExpenseError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeExpenseError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -312,7 +312,7 @@ pub fn parse_analyze_expense_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_s3_object_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_s3_object_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeExpenseError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_s3_object_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeExpenseError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -330,7 +330,7 @@ pub fn parse_analyze_expense_error(
                     let mut output =
                         crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeExpenseError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeExpenseError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -347,7 +347,7 @@ pub fn parse_analyze_expense_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeExpenseError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeExpenseError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -365,7 +365,7 @@ pub fn parse_analyze_expense_error(
                     let mut output =
                         crate::error::unsupported_document_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unsupported_document_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeExpenseError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_document_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AnalyzeExpenseError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -419,7 +419,7 @@ pub fn parse_detect_document_text_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DetectDocumentTextError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectDocumentTextError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -436,7 +436,7 @@ pub fn parse_detect_document_text_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_document_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bad_document_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DetectDocumentTextError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_document_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectDocumentTextError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -453,7 +453,7 @@ pub fn parse_detect_document_text_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::document_too_large_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_document_too_large_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DetectDocumentTextError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_document_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectDocumentTextError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -470,7 +470,7 @@ pub fn parse_detect_document_text_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DetectDocumentTextError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DetectDocumentTextError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -487,7 +487,7 @@ pub fn parse_detect_document_text_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DetectDocumentTextError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectDocumentTextError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -504,7 +504,7 @@ pub fn parse_detect_document_text_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_s3_object_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_s3_object_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DetectDocumentTextError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_s3_object_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectDocumentTextError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -521,7 +521,7 @@ pub fn parse_detect_document_text_error(
                     let mut tmp = {
                         #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DetectDocumentTextError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectDocumentTextError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -539,7 +539,7 @@ pub fn parse_detect_document_text_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DetectDocumentTextError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectDocumentTextError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -557,7 +557,7 @@ pub fn parse_detect_document_text_error(
                     let mut output =
                         crate::error::unsupported_document_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unsupported_document_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DetectDocumentTextError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_document_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectDocumentTextError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -614,7 +614,7 @@ pub fn parse_get_document_analysis_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentAnalysisError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentAnalysisError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -631,7 +631,7 @@ pub fn parse_get_document_analysis_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentAnalysisError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentAnalysisError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -648,7 +648,7 @@ pub fn parse_get_document_analysis_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_job_id_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_job_id_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentAnalysisError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_job_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentAnalysisError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -665,7 +665,7 @@ pub fn parse_get_document_analysis_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_kms_key_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_kms_key_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentAnalysisError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_kms_key_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentAnalysisError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -682,7 +682,7 @@ pub fn parse_get_document_analysis_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentAnalysisError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentAnalysisError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -699,7 +699,7 @@ pub fn parse_get_document_analysis_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_s3_object_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_s3_object_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentAnalysisError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_s3_object_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentAnalysisError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -717,7 +717,7 @@ pub fn parse_get_document_analysis_error(
                         let mut tmp = {
                             #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentAnalysisError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentAnalysisError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -735,7 +735,7 @@ pub fn parse_get_document_analysis_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentAnalysisError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentAnalysisError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -793,7 +793,7 @@ pub fn parse_get_document_text_detection_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentTextDetectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentTextDetectionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -807,7 +807,7 @@ pub fn parse_get_document_text_detection_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentTextDetectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentTextDetectionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -821,7 +821,7 @@ pub fn parse_get_document_text_detection_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_job_id_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_job_id_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentTextDetectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_job_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentTextDetectionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -835,7 +835,7 @@ pub fn parse_get_document_text_detection_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_kms_key_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_kms_key_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentTextDetectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_kms_key_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentTextDetectionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -849,7 +849,7 @@ pub fn parse_get_document_text_detection_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentTextDetectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentTextDetectionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -863,7 +863,7 @@ pub fn parse_get_document_text_detection_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_s3_object_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_s3_object_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentTextDetectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_s3_object_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentTextDetectionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -877,7 +877,7 @@ pub fn parse_get_document_text_detection_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentTextDetectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentTextDetectionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -891,7 +891,7 @@ pub fn parse_get_document_text_detection_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentTextDetectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDocumentTextDetectionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -948,7 +948,7 @@ pub fn parse_start_document_analysis_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -965,7 +965,7 @@ pub fn parse_start_document_analysis_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_document_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bad_document_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_document_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -982,7 +982,7 @@ pub fn parse_start_document_analysis_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::document_too_large_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_document_too_large_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_document_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1000,7 +1000,7 @@ pub fn parse_start_document_analysis_error(
                         let mut tmp = {
                             #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -1018,7 +1018,7 @@ pub fn parse_start_document_analysis_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1035,7 +1035,7 @@ pub fn parse_start_document_analysis_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_kms_key_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_kms_key_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_kms_key_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1052,7 +1052,7 @@ pub fn parse_start_document_analysis_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1069,7 +1069,7 @@ pub fn parse_start_document_analysis_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_s3_object_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_s3_object_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_s3_object_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1086,7 +1086,7 @@ pub fn parse_start_document_analysis_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1104,7 +1104,7 @@ pub fn parse_start_document_analysis_error(
                         let mut tmp = {
                             #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -1122,7 +1122,7 @@ pub fn parse_start_document_analysis_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1140,7 +1140,7 @@ pub fn parse_start_document_analysis_error(
                     let mut output =
                         crate::error::unsupported_document_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unsupported_document_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_document_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentAnalysisError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1198,7 +1198,7 @@ pub fn parse_start_document_text_detection_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1212,7 +1212,7 @@ pub fn parse_start_document_text_detection_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::bad_document_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bad_document_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_document_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1226,7 +1226,7 @@ pub fn parse_start_document_text_detection_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::document_too_large_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_document_too_large_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_document_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1240,7 +1240,7 @@ pub fn parse_start_document_text_detection_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::idempotent_parameter_mismatch_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1254,7 +1254,7 @@ pub fn parse_start_document_text_detection_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_errorjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1268,7 +1268,7 @@ pub fn parse_start_document_text_detection_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_kms_key_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_kms_key_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_kms_key_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1282,7 +1282,7 @@ pub fn parse_start_document_text_detection_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1296,7 +1296,7 @@ pub fn parse_start_document_text_detection_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_s3_object_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_s3_object_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_s3_object_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1310,7 +1310,7 @@ pub fn parse_start_document_text_detection_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1324,7 +1324,7 @@ pub fn parse_start_document_text_detection_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::provisioned_throughput_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_provisioned_throughput_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1338,7 +1338,7 @@ pub fn parse_start_document_text_detection_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1352,7 +1352,7 @@ pub fn parse_start_document_text_detection_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::unsupported_document_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unsupported_document_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_document_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDocumentTextDetectionError::unhandled)?;
                     output.build()
                 }
             ;

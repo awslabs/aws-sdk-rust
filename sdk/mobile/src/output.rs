@@ -33,6 +33,9 @@ pub mod update_project_output {
             self.details = Some(input);
             self
         }
+        /// <p>
+        /// Detailed information about the updated AWS Mobile Hub project.
+        /// </p>
         pub fn set_details(
             mut self,
             input: std::option::Option<crate::model::ProjectDetails>,
@@ -90,12 +93,22 @@ pub mod list_projects_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `projects`.
+        ///
+        /// To override the contents of this collection use [`set_projects`](Self::set_projects).
+        ///
+        /// <p>
+        /// List of projects.
+        /// </p>
         pub fn projects(mut self, input: impl Into<crate::model::ProjectSummary>) -> Self {
             let mut v = self.projects.unwrap_or_default();
             v.push(input.into());
             self.projects = Some(v);
             self
         }
+        /// <p>
+        /// List of projects.
+        /// </p>
         pub fn set_projects(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
@@ -112,6 +125,11 @@ pub mod list_projects_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>
+        /// Pagination token. Set to null to start listing records from start.
+        /// If non-null pagination token is returned in a result, then pass its
+        /// value in here in another request to list more entries.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -166,12 +184,22 @@ pub mod list_bundles_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `bundle_list`.
+        ///
+        /// To override the contents of this collection use [`set_bundle_list`](Self::set_bundle_list).
+        ///
+        /// <p>
+        /// A list of bundles.
+        /// </p>
         pub fn bundle_list(mut self, input: impl Into<crate::model::BundleDetails>) -> Self {
             let mut v = self.bundle_list.unwrap_or_default();
             v.push(input.into());
             self.bundle_list = Some(v);
             self
         }
+        /// <p>
+        /// A list of bundles.
+        /// </p>
         pub fn set_bundle_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BundleDetails>>,
@@ -187,6 +215,10 @@ pub mod list_bundles_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>
+        /// Pagination token. If non-null pagination token is returned in a result,
+        /// then pass its value in another request to fetch more entries.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -259,6 +291,9 @@ pub mod export_project_output {
             self.download_url = Some(input.into());
             self
         }
+        /// <p>
+        /// URL which can be used to download the exported project configuation file(s).
+        /// </p>
         pub fn set_download_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.download_url = input;
             self
@@ -275,6 +310,14 @@ pub mod export_project_output {
             self.share_url = Some(input.into());
             self
         }
+        /// <p>
+        /// URL which can be shared to allow other AWS users to create their own project
+        /// in AWS Mobile Hub with the same configuration as the specified project. This
+        /// URL pertains to a snapshot in time of the project configuration that is created
+        /// when this API is called. If you want to share additional changes to your project
+        /// configuration, then you will need to create and share a new snapshot by calling
+        /// this method again.
+        /// </p>
         pub fn set_share_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.share_url = input;
             self
@@ -287,6 +330,10 @@ pub mod export_project_output {
             self.snapshot_id = Some(input.into());
             self
         }
+        /// <p>
+        /// Unique identifier for the exported snapshot of the project configuration. This
+        /// snapshot identifier is included in the share URL.
+        /// </p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.snapshot_id = input;
             self
@@ -348,6 +395,11 @@ pub mod export_bundle_output {
             self.download_url = Some(input.into());
             self
         }
+        /// <p>
+        /// URL which contains the custom-generated SDK and tool packages used
+        /// to integrate the client mobile app or web app with the AWS resources
+        /// created by the AWS Mobile Hub project.
+        /// </p>
         pub fn set_download_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.download_url = input;
             self
@@ -401,6 +453,9 @@ pub mod describe_project_output {
             self.details = Some(input);
             self
         }
+        /// <p>
+        /// Detailed information about an AWS Mobile Hub project.
+        /// </p>
         pub fn set_details(
             mut self,
             input: std::option::Option<crate::model::ProjectDetails>,
@@ -457,6 +512,9 @@ pub mod describe_bundle_output {
             self.details = Some(input);
             self
         }
+        /// <p>
+        /// The details of the bundle.
+        /// </p>
         pub fn set_details(
             mut self,
             input: std::option::Option<crate::model::BundleDetails>,
@@ -513,12 +571,22 @@ pub mod delete_project_output {
         pub(crate) orphaned_resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     }
     impl Builder {
+        /// Appends an item to `deleted_resources`.
+        ///
+        /// To override the contents of this collection use [`set_deleted_resources`](Self::set_deleted_resources).
+        ///
+        /// <p>
+        /// Resources which were deleted.
+        /// </p>
         pub fn deleted_resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
             let mut v = self.deleted_resources.unwrap_or_default();
             v.push(input.into());
             self.deleted_resources = Some(v);
             self
         }
+        /// <p>
+        /// Resources which were deleted.
+        /// </p>
         pub fn set_deleted_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -526,12 +594,24 @@ pub mod delete_project_output {
             self.deleted_resources = input;
             self
         }
+        /// Appends an item to `orphaned_resources`.
+        ///
+        /// To override the contents of this collection use [`set_orphaned_resources`](Self::set_orphaned_resources).
+        ///
+        /// <p>
+        /// Resources which were not deleted, due to a risk of losing potentially
+        /// important data or files.
+        /// </p>
         pub fn orphaned_resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
             let mut v = self.orphaned_resources.unwrap_or_default();
             v.push(input.into());
             self.orphaned_resources = Some(v);
             self
         }
+        /// <p>
+        /// Resources which were not deleted, due to a risk of losing potentially
+        /// important data or files.
+        /// </p>
         pub fn set_orphaned_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -589,6 +669,9 @@ pub mod create_project_output {
             self.details = Some(input);
             self
         }
+        /// <p>
+        /// Detailed information about the created AWS Mobile Hub project.
+        /// </p>
         pub fn set_details(
             mut self,
             input: std::option::Option<crate::model::ProjectDetails>,

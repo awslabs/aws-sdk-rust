@@ -37,6 +37,7 @@ pub mod email_template_content {
             self.subject = Some(input.into());
             self
         }
+        /// <p>The subject line of the email.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subject = input;
             self
@@ -47,6 +48,8 @@ pub mod email_template_content {
             self.text = Some(input.into());
             self
         }
+        /// <p>The email body that will be visible to recipients whose email clients do not display
+        /// HTML.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -56,6 +59,7 @@ pub mod email_template_content {
             self.html = Some(input.into());
             self
         }
+        /// <p>The HTML body of the email.</p>
         pub fn set_html(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.html = input;
             self
@@ -123,6 +127,7 @@ pub mod topic {
             self.topic_name = Some(input.into());
             self
         }
+        /// <p>The name of the topic.</p>
         pub fn set_topic_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_name = input;
             self
@@ -132,6 +137,7 @@ pub mod topic {
             self.display_name = Some(input.into());
             self
         }
+        /// <p>The name of the topic the contact will see.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -141,6 +147,7 @@ pub mod topic {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of what the topic is about, which the contact will see.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -154,6 +161,8 @@ pub mod topic {
             self.default_subscription_status = Some(input);
             self
         }
+        /// <p>The default subscription status to be applied to a contact if the contact has not
+        /// noted their preference for subscribing to a topic.</p>
         pub fn set_default_subscription_status(
             mut self,
             input: std::option::Option<crate::model::SubscriptionStatus>,
@@ -179,6 +188,7 @@ impl Topic {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -190,7 +200,9 @@ impl Topic {
     std::hash::Hash,
 )]
 pub enum SubscriptionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     OptIn,
+    #[allow(missing_docs)] // documentation missing in model
     OptOut,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -212,6 +224,7 @@ impl std::str::FromStr for SubscriptionStatus {
     }
 }
 impl SubscriptionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SubscriptionStatus::OptIn => "OPT_IN",
@@ -219,6 +232,7 @@ impl SubscriptionStatus {
             SubscriptionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["OPT_IN", "OPT_OUT"]
     }
@@ -262,6 +276,7 @@ pub mod topic_preference {
             self.topic_name = Some(input.into());
             self
         }
+        /// <p>The name of the topic.</p>
         pub fn set_topic_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_name = input;
             self
@@ -272,6 +287,8 @@ pub mod topic_preference {
             self.subscription_status = Some(input);
             self
         }
+        /// <p>The contact's subscription status to a topic which is either <code>OPT_IN</code> or
+        /// <code>OPT_OUT</code>.</p>
         pub fn set_subscription_status(
             mut self,
             input: std::option::Option<crate::model::SubscriptionStatus>,
@@ -367,16 +384,29 @@ pub mod event_destination_definition {
             self.enabled = Some(input);
             self
         }
+        /// <p>If <code>true</code>, the event destination is enabled. When the event destination is
+        /// enabled, the specified event types are sent to the destinations in this
+        /// <code>EventDestinationDefinition</code>.</p>
+        /// <p>If <code>false</code>, the event destination is disabled. When the event destination
+        /// is disabled, events aren't sent to the specified destinations.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
         }
+        /// Appends an item to `matching_event_types`.
+        ///
+        /// To override the contents of this collection use [`set_matching_event_types`](Self::set_matching_event_types).
+        ///
+        /// <p>An array that specifies which events the Amazon SES API v2 should send to the destinations in
+        /// this <code>EventDestinationDefinition</code>.</p>
         pub fn matching_event_types(mut self, input: impl Into<crate::model::EventType>) -> Self {
             let mut v = self.matching_event_types.unwrap_or_default();
             v.push(input.into());
             self.matching_event_types = Some(v);
             self
         }
+        /// <p>An array that specifies which events the Amazon SES API v2 should send to the destinations in
+        /// this <code>EventDestinationDefinition</code>.</p>
         pub fn set_matching_event_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventType>>,
@@ -393,6 +423,8 @@ pub mod event_destination_definition {
             self.kinesis_firehose_destination = Some(input);
             self
         }
+        /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to
+        /// stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
         pub fn set_kinesis_firehose_destination(
             mut self,
             input: std::option::Option<crate::model::KinesisFirehoseDestination>,
@@ -409,6 +441,8 @@ pub mod event_destination_definition {
             self.cloud_watch_destination = Some(input);
             self
         }
+        /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to
+        /// monitor and gain insights on your email sending metrics.</p>
         pub fn set_cloud_watch_destination(
             mut self,
             input: std::option::Option<crate::model::CloudWatchDestination>,
@@ -422,6 +456,8 @@ pub mod event_destination_definition {
             self.sns_destination = Some(input);
             self
         }
+        /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to
+        /// send notification when certain email events occur.</p>
         pub fn set_sns_destination(
             mut self,
             input: std::option::Option<crate::model::SnsDestination>,
@@ -437,6 +473,10 @@ pub mod event_destination_definition {
             self.pinpoint_destination = Some(input);
             self
         }
+        /// <p>An object that defines an Amazon Pinpoint project destination for email events. You can send
+        /// email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging
+        /// dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional
+        /// Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>.</p>
         pub fn set_pinpoint_destination(
             mut self,
             input: std::option::Option<crate::model::PinpointDestination>,
@@ -495,6 +535,7 @@ pub mod pinpoint_destination {
             self.application_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project to send email events to.</p>
         pub fn set_application_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -548,6 +589,8 @@ pub mod sns_destination {
             self.topic_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to publish email events to. For
+        /// more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -594,6 +637,12 @@ pub mod cloud_watch_destination {
             std::option::Option<std::vec::Vec<crate::model::CloudWatchDimensionConfiguration>>,
     }
     impl Builder {
+        /// Appends an item to `dimension_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_dimension_configurations`](Self::set_dimension_configurations).
+        ///
+        /// <p>An array of objects that define the dimensions to use when you send email events to
+        /// Amazon CloudWatch.</p>
         pub fn dimension_configurations(
             mut self,
             input: impl Into<crate::model::CloudWatchDimensionConfiguration>,
@@ -603,6 +652,8 @@ pub mod cloud_watch_destination {
             self.dimension_configurations = Some(v);
             self
         }
+        /// <p>An array of objects that define the dimensions to use when you send email events to
+        /// Amazon CloudWatch.</p>
         pub fn set_dimension_configurations(
             mut self,
             input: std::option::Option<
@@ -699,6 +750,17 @@ pub mod cloud_watch_dimension_configuration {
             self.dimension_name = Some(input.into());
             self
         }
+        /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name has to
+        /// meet the following criteria:</p>
+        /// <ul>
+        /// <li>
+        /// <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9),
+        /// underscores (_), or dashes (-).</p>
+        /// </li>
+        /// <li>
+        /// <p>It can contain no more than 256 characters.</p>
+        /// </li>
+        /// </ul>
         pub fn set_dimension_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -715,6 +777,11 @@ pub mod cloud_watch_dimension_configuration {
             self.dimension_value_source = Some(input);
             self
         }
+        /// <p>The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. To
+        /// use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or
+        /// a parameter to the <code>SendEmail</code> or <code>SendRawEmail</code> API, choose
+        /// <code>messageTag</code>. To use your own email headers, choose
+        /// <code>emailHeader</code>. To use link tags, choose <code>linkTags</code>.</p>
         pub fn set_dimension_value_source(
             mut self,
             input: std::option::Option<crate::model::DimensionValueSource>,
@@ -738,6 +805,18 @@ pub mod cloud_watch_dimension_configuration {
             self.default_dimension_value = Some(input.into());
             self
         }
+        /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the
+        /// value of the dimension when you send an email. This value has to meet the following
+        /// criteria:</p>
+        /// <ul>
+        /// <li>
+        /// <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9),
+        /// underscores (_), or dashes (-).</p>
+        /// </li>
+        /// <li>
+        /// <p>It can contain no more than 256 characters.</p>
+        /// </li>
+        /// </ul>
         pub fn set_default_dimension_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -778,8 +857,11 @@ impl CloudWatchDimensionConfiguration {
     std::hash::Hash,
 )]
 pub enum DimensionValueSource {
+    #[allow(missing_docs)] // documentation missing in model
     EmailHeader,
+    #[allow(missing_docs)] // documentation missing in model
     LinkTag,
+    #[allow(missing_docs)] // documentation missing in model
     MessageTag,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -802,6 +884,7 @@ impl std::str::FromStr for DimensionValueSource {
     }
 }
 impl DimensionValueSource {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DimensionValueSource::EmailHeader => "EMAIL_HEADER",
@@ -810,6 +893,7 @@ impl DimensionValueSource {
             DimensionValueSource::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EMAIL_HEADER", "LINK_TAG", "MESSAGE_TAG"]
     }
@@ -856,6 +940,8 @@ pub mod kinesis_firehose_destination {
             self.iam_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that the Amazon SES API v2 uses to send email
+        /// events to the Amazon Kinesis Data Firehose stream.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -866,6 +952,8 @@ pub mod kinesis_firehose_destination {
             self.delivery_stream_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream that the Amazon SES API v2 sends email
+        /// events to.</p>
         pub fn set_delivery_stream_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -902,15 +990,25 @@ impl KinesisFirehoseDestination {
     std::hash::Hash,
 )]
 pub enum EventType {
+    #[allow(missing_docs)] // documentation missing in model
     Bounce,
+    #[allow(missing_docs)] // documentation missing in model
     Click,
+    #[allow(missing_docs)] // documentation missing in model
     Complaint,
+    #[allow(missing_docs)] // documentation missing in model
     Delivery,
+    #[allow(missing_docs)] // documentation missing in model
     DeliveryDelay,
+    #[allow(missing_docs)] // documentation missing in model
     Open,
+    #[allow(missing_docs)] // documentation missing in model
     Reject,
+    #[allow(missing_docs)] // documentation missing in model
     RenderingFailure,
+    #[allow(missing_docs)] // documentation missing in model
     Send,
+    #[allow(missing_docs)] // documentation missing in model
     Subscription,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -940,6 +1038,7 @@ impl std::str::FromStr for EventType {
     }
 }
 impl EventType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EventType::Bounce => "BOUNCE",
@@ -955,6 +1054,7 @@ impl EventType {
             EventType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BOUNCE",
@@ -1045,6 +1145,8 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is
+        /// 128 characters. The minimum length is 1 character.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -1057,6 +1159,10 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag
+        /// value is 256 characters. The minimum length is 0 characters. If you don't want a
+        /// resource to have a specific tag value, don't specify a value for this parameter. If you
+        /// don't specify a value, Amazon SES sets the value to an empty string.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1110,6 +1216,7 @@ pub mod list_management_options {
             self.contact_list_name = Some(input.into());
             self
         }
+        /// <p>The name of the contact list.</p>
         pub fn set_contact_list_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1122,6 +1229,7 @@ pub mod list_management_options {
             self.topic_name = Some(input.into());
             self
         }
+        /// <p>The name of the topic.</p>
         pub fn set_topic_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_name = input;
             self
@@ -1206,6 +1314,17 @@ pub mod message_tag {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the message tag. The message tag name has to meet the following
+        /// criteria:</p>
+        /// <ul>
+        /// <li>
+        /// <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9),
+        /// underscores (_), or dashes (-).</p>
+        /// </li>
+        /// <li>
+        /// <p>It can contain no more than 256 characters.</p>
+        /// </li>
+        /// </ul>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1225,6 +1344,17 @@ pub mod message_tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the message tag. The message tag value has to meet the following
+        /// criteria:</p>
+        /// <ul>
+        /// <li>
+        /// <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9),
+        /// underscores (_), or dashes (-).</p>
+        /// </li>
+        /// <li>
+        /// <p>It can contain no more than 256 characters.</p>
+        /// </li>
+        /// </ul>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1314,6 +1444,7 @@ pub mod email_content {
             self.simple = Some(input);
             self
         }
+        /// <p>The simple email message. The message consists of a subject and a message body.</p>
         pub fn set_simple(mut self, input: std::option::Option<crate::model::Message>) -> Self {
             self.simple = input;
             self
@@ -1352,6 +1483,36 @@ pub mod email_content {
             self.raw = Some(input);
             self
         }
+        /// <p>The raw email message. The message has to meet the following criteria:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The message has to contain a header and a body, separated by one blank
+        /// line.</p>
+        /// </li>
+        /// <li>
+        /// <p>All of the required header fields must be present in the message.</p>
+        /// </li>
+        /// <li>
+        /// <p>Each part of a multipart MIME message must be formatted properly.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you include attachments, they must be in a file format that the Amazon SES API v2
+        /// supports.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>The entire message must be Base64 encoded.</p>
+        /// </li>
+        /// <li>
+        /// <p>If any of the MIME parts in your message contain content that is outside of
+        /// the 7-bit ASCII character range, you should encode that content to ensure that
+        /// recipients' email clients render the message properly.</p>
+        /// </li>
+        /// <li>
+        /// <p>The length of any single line of text in the message can't exceed 1,000
+        /// characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_raw(mut self, input: std::option::Option<crate::model::RawMessage>) -> Self {
             self.raw = input;
             self
@@ -1361,6 +1522,7 @@ pub mod email_content {
             self.template = Some(input);
             self
         }
+        /// <p>The template to use for the email message.</p>
         pub fn set_template(mut self, input: std::option::Option<crate::model::Template>) -> Self {
             self.template = input;
             self
@@ -1427,6 +1589,9 @@ pub mod template {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the template. You will refer to this name when you send email using the
+        /// <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.
+        /// </p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1439,6 +1604,7 @@ pub mod template {
             self.template_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the template.</p>
         pub fn set_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_arn = input;
             self
@@ -1450,6 +1616,9 @@ pub mod template {
             self.template_data = Some(input.into());
             self
         }
+        /// <p>An object that defines the values to use for message variables in the template. This
+        /// object is a set of key-value pairs. Each key defines a message variable in the template.
+        /// The corresponding value defines the value to use for that variable.</p>
         pub fn set_template_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1506,7 +1675,7 @@ pub struct RawMessage {
     /// characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
     /// </li>
     /// </ul>
-    pub data: std::option::Option<smithy_types::Blob>,
+    pub data: std::option::Option<aws_smithy_types::Blob>,
 }
 impl std::fmt::Debug for RawMessage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1521,7 +1690,7 @@ pub mod raw_message {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) data: std::option::Option<smithy_types::Blob>,
+        pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
         /// <p>The raw email message. The message has to meet the following criteria:</p>
@@ -1552,11 +1721,39 @@ pub mod raw_message {
         /// characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
         /// </li>
         /// </ul>
-        pub fn data(mut self, input: smithy_types::Blob) -> Self {
+        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
             self.data = Some(input);
             self
         }
-        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The raw email message. The message has to meet the following criteria:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The message has to contain a header and a body, separated by one blank
+        /// line.</p>
+        /// </li>
+        /// <li>
+        /// <p>All of the required header fields must be present in the message.</p>
+        /// </li>
+        /// <li>
+        /// <p>Each part of a multipart MIME message must be formatted properly.</p>
+        /// </li>
+        /// <li>
+        /// <p>Attachments must be in a file format that the Amazon SES supports.</p>
+        /// </li>
+        /// <li>
+        /// <p>The entire message must be Base64 encoded.</p>
+        /// </li>
+        /// <li>
+        /// <p>If any of the MIME parts in your message contain content that is outside of
+        /// the 7-bit ASCII character range, you should encode that content to ensure that
+        /// recipients' email clients render the message properly.</p>
+        /// </li>
+        /// <li>
+        /// <p>The length of any single line of text in the message can't exceed 1,000
+        /// characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
+        /// </li>
+        /// </ul>
+        pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.data = input;
             self
         }
@@ -1611,6 +1808,9 @@ pub mod message {
             self.subject = Some(input);
             self
         }
+        /// <p>The subject line of the email. The subject line can only contain 7-bit ASCII
+        /// characters. However, you can specify non-ASCII characters in the subject line by using
+        /// encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.</p>
         pub fn set_subject(mut self, input: std::option::Option<crate::model::Content>) -> Self {
             self.subject = input;
             self
@@ -1621,6 +1821,8 @@ pub mod message {
             self.body = Some(input);
             self
         }
+        /// <p>The body of the message. You can specify an HTML version of the message, a text-only
+        /// version of the message, or both.</p>
         pub fn set_body(mut self, input: std::option::Option<crate::model::Body>) -> Self {
             self.body = input;
             self
@@ -1679,6 +1881,9 @@ pub mod body {
             self.text = Some(input);
             self
         }
+        /// <p>An object that represents the version of the message that is displayed in email
+        /// clients that don't support HTML, or clients where the recipient has disabled HTML
+        /// rendering.</p>
         pub fn set_text(mut self, input: std::option::Option<crate::model::Content>) -> Self {
             self.text = input;
             self
@@ -1690,6 +1895,9 @@ pub mod body {
             self.html = Some(input);
             self
         }
+        /// <p>An object that represents the version of the message that is displayed in email
+        /// clients that support HTML. HTML messages can include formatted text, hyperlinks, images,
+        /// and more. </p>
         pub fn set_html(mut self, input: std::option::Option<crate::model::Content>) -> Self {
             self.html = input;
             self
@@ -1746,6 +1954,7 @@ pub mod content {
             self.data = Some(input.into());
             self
         }
+        /// <p>The content of the message itself.</p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data = input;
             self
@@ -1758,6 +1967,10 @@ pub mod content {
             self.charset = Some(input.into());
             self
         }
+        /// <p>The character set for the content. Because of the constraints of the SMTP protocol,
+        /// Amazon SES uses 7-bit ASCII by default. If the text includes characters outside of the ASCII
+        /// range, you have to specify a character set. For example, you could specify
+        /// <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.</p>
         pub fn set_charset(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.charset = input;
             self
@@ -1820,12 +2033,20 @@ pub mod destination {
         pub(crate) bcc_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `to_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_to_addresses`](Self::set_to_addresses).
+        ///
+        /// <p>An array that contains the email addresses of the "To" recipients for the
+        /// email.</p>
         pub fn to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.to_addresses.unwrap_or_default();
             v.push(input.into());
             self.to_addresses = Some(v);
             self
         }
+        /// <p>An array that contains the email addresses of the "To" recipients for the
+        /// email.</p>
         pub fn set_to_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1833,12 +2054,20 @@ pub mod destination {
             self.to_addresses = input;
             self
         }
+        /// Appends an item to `cc_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_cc_addresses`](Self::set_cc_addresses).
+        ///
+        /// <p>An array that contains the email addresses of the "CC" (carbon copy) recipients for
+        /// the email.</p>
         pub fn cc_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cc_addresses.unwrap_or_default();
             v.push(input.into());
             self.cc_addresses = Some(v);
             self
         }
+        /// <p>An array that contains the email addresses of the "CC" (carbon copy) recipients for
+        /// the email.</p>
         pub fn set_cc_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1846,12 +2075,20 @@ pub mod destination {
             self.cc_addresses = input;
             self
         }
+        /// Appends an item to `bcc_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_bcc_addresses`](Self::set_bcc_addresses).
+        ///
+        /// <p>An array that contains the email addresses of the "BCC" (blind carbon copy) recipients
+        /// for the email.</p>
         pub fn bcc_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.bcc_addresses.unwrap_or_default();
             v.push(input.into());
             self.bcc_addresses = Some(v);
             self
         }
+        /// <p>An array that contains the email addresses of the "BCC" (blind carbon copy) recipients
+        /// for the email.</p>
         pub fn set_bcc_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2035,6 +2272,67 @@ pub mod bulk_email_entry_result {
             self.status = Some(input);
             self
         }
+        /// <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code>
+        /// operation.</p>
+        /// <p>Possible values for this parameter include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>SUCCESS: Amazon SES accepted the message, and will attempt to deliver it to
+        /// the recipients.</p>
+        /// </li>
+        /// <li>
+        /// <p>MESSAGE_REJECTED: The message was rejected because it contained a
+        /// virus.</p>
+        /// </li>
+        /// <li>
+        /// <p>MAIL_FROM_DOMAIN_NOT_VERIFIED: The sender's email address or domain was not
+        /// verified.</p>
+        /// </li>
+        /// <li>
+        /// <p>CONFIGURATION_SET_DOES_NOT_EXIST: The configuration set you specified does not
+        /// exist.</p>
+        /// </li>
+        /// <li>
+        /// <p>TEMPLATE_DOES_NOT_EXIST: The template you specified does not exist.</p>
+        /// </li>
+        /// <li>
+        /// <p>ACCOUNT_SUSPENDED: Your account has been shut down because of issues related
+        /// to your email sending practices.</p>
+        /// </li>
+        /// <li>
+        /// <p>ACCOUNT_THROTTLED: The number of emails you can send has been reduced because
+        /// your account has exceeded its allocated sending limit.</p>
+        /// </li>
+        /// <li>
+        /// <p>ACCOUNT_DAILY_QUOTA_EXCEEDED: You have reached or exceeded the maximum number
+        /// of emails you can send from your account in a 24-hour period.</p>
+        /// </li>
+        /// <li>
+        /// <p>INVALID_SENDING_POOL_NAME: The configuration set you specified refers to an IP
+        /// pool that does not exist.</p>
+        /// </li>
+        /// <li>
+        /// <p>ACCOUNT_SENDING_PAUSED: Email sending for the Amazon SES account was disabled
+        /// using the <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateAccountSendingEnabled.html">UpdateAccountSendingEnabled</a> operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>CONFIGURATION_SET_SENDING_PAUSED: Email sending for this configuration set was
+        /// disabled using the <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetSendingEnabled.html">UpdateConfigurationSetSendingEnabled</a> operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>INVALID_PARAMETER_VALUE: One or more of the parameters you specified when
+        /// calling this operation was invalid. See the error message for additional
+        /// information.</p>
+        /// </li>
+        /// <li>
+        /// <p>TRANSIENT_FAILURE: Amazon SES was unable to process your request because of a
+        /// temporary issue.</p>
+        /// </li>
+        /// <li>
+        /// <p>FAILED: Amazon SES was unable to process your request. See the error message
+        /// for additional information.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::BulkEmailStatus>,
@@ -2048,6 +2346,8 @@ pub mod bulk_email_entry_result {
             self.error = Some(input.into());
             self
         }
+        /// <p>A description of an error that prevented a message being sent using the
+        /// <code>SendBulkTemplatedEmail</code> operation.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error = input;
             self
@@ -2058,6 +2358,8 @@ pub mod bulk_email_entry_result {
             self.message_id = Some(input.into());
             self
         }
+        /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code>
+        /// operation.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self
@@ -2079,6 +2381,7 @@ impl BulkEmailEntryResult {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2090,19 +2393,33 @@ impl BulkEmailEntryResult {
     std::hash::Hash,
 )]
 pub enum BulkEmailStatus {
+    #[allow(missing_docs)] // documentation missing in model
     AccountDailyQuotaExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     AccountSendingPaused,
+    #[allow(missing_docs)] // documentation missing in model
     AccountSuspended,
+    #[allow(missing_docs)] // documentation missing in model
     AccountThrottled,
+    #[allow(missing_docs)] // documentation missing in model
     ConfigurationSetNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     ConfigurationSetSendingPaused,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidParameter,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidSendingPoolName,
+    #[allow(missing_docs)] // documentation missing in model
     MailFromDomainNotVerified,
+    #[allow(missing_docs)] // documentation missing in model
     MessageRejected,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
+    #[allow(missing_docs)] // documentation missing in model
     TemplateNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     TransientFailure,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2136,6 +2453,7 @@ impl std::str::FromStr for BulkEmailStatus {
     }
 }
 impl BulkEmailStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BulkEmailStatus::AccountDailyQuotaExceeded => "ACCOUNT_DAILY_QUOTA_EXCEEDED",
@@ -2155,6 +2473,7 @@ impl BulkEmailStatus {
             BulkEmailStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT_DAILY_QUOTA_EXCEEDED",
@@ -2180,6 +2499,7 @@ impl AsRef<str> for BulkEmailStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BulkEmailEntry {
@@ -2238,6 +2558,16 @@ pub mod bulk_email_entry {
             self.destination = Some(input);
             self
         }
+        /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC:
+        /// fields.</p>
+        /// <note>
+        /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
+        /// local part of a destination email address (the part of the email address that
+        /// precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
+        /// characters</a>. If the domain part of an address (the part after the @ sign)
+        /// contains non-ASCII characters, they must be encoded using Punycode, as described in
+        /// <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
+        /// </note>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::Destination>,
@@ -2245,12 +2575,24 @@ pub mod bulk_email_entry {
             self.destination = input;
             self
         }
+        /// Appends an item to `replacement_tags`.
+        ///
+        /// To override the contents of this collection use [`set_replacement_tags`](Self::set_replacement_tags).
+        ///
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
+        /// using the <code>SendBulkTemplatedEmail</code> operation. Tags correspond to
+        /// characteristics of the email that you define, so that you can publish email sending
+        /// events.</p>
         pub fn replacement_tags(mut self, input: impl Into<crate::model::MessageTag>) -> Self {
             let mut v = self.replacement_tags.unwrap_or_default();
             v.push(input.into());
             self.replacement_tags = Some(v);
             self
         }
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
+        /// using the <code>SendBulkTemplatedEmail</code> operation. Tags correspond to
+        /// characteristics of the email that you define, so that you can publish email sending
+        /// events.</p>
         pub fn set_replacement_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
@@ -2267,6 +2609,8 @@ pub mod bulk_email_entry {
             self.replacement_email_content = Some(input);
             self
         }
+        /// <p>The <code>ReplacementEmailContent</code> associated with a
+        /// <code>BulkEmailEntry</code>.</p>
         pub fn set_replacement_email_content(
             mut self,
             input: std::option::Option<crate::model::ReplacementEmailContent>,
@@ -2323,6 +2667,8 @@ pub mod replacement_email_content {
             self.replacement_template = Some(input);
             self
         }
+        /// <p>The <code>ReplacementTemplate</code> associated with
+        /// <code>ReplacementEmailContent</code>.</p>
         pub fn set_replacement_template(
             mut self,
             input: std::option::Option<crate::model::ReplacementTemplate>,
@@ -2378,6 +2724,9 @@ pub mod replacement_template {
             self.replacement_template_data = Some(input.into());
             self
         }
+        /// <p>A list of replacement values to apply to the template. This parameter is a JSON
+        /// object, typically consisting of key-value pairs in which the keys correspond to
+        /// replacement tags in the email template.</p>
         pub fn set_replacement_template_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2429,6 +2778,7 @@ pub mod bulk_email_content {
             self.template = Some(input);
             self
         }
+        /// <p>The template to use for the bulk email message.</p>
         pub fn set_template(mut self, input: std::option::Option<crate::model::Template>) -> Self {
             self.template = input;
             self
@@ -2475,7 +2825,9 @@ impl BulkEmailContent {
     std::hash::Hash,
 )]
 pub enum SuppressionListReason {
+    #[allow(missing_docs)] // documentation missing in model
     Bounce,
+    #[allow(missing_docs)] // documentation missing in model
     Complaint,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2497,6 +2849,7 @@ impl std::str::FromStr for SuppressionListReason {
     }
 }
 impl SuppressionListReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SuppressionListReason::Bounce => "BOUNCE",
@@ -2504,6 +2857,7 @@ impl SuppressionListReason {
             SuppressionListReason::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BOUNCE", "COMPLAINT"]
     }
@@ -2534,7 +2888,9 @@ impl AsRef<str> for SuppressionListReason {
     std::hash::Hash,
 )]
 pub enum BehaviorOnMxFailure {
+    #[allow(missing_docs)] // documentation missing in model
     RejectMessage,
+    #[allow(missing_docs)] // documentation missing in model
     UseDefaultValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2556,6 +2912,7 @@ impl std::str::FromStr for BehaviorOnMxFailure {
     }
 }
 impl BehaviorOnMxFailure {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BehaviorOnMxFailure::RejectMessage => "REJECT_MESSAGE",
@@ -2563,6 +2920,7 @@ impl BehaviorOnMxFailure {
             BehaviorOnMxFailure::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["REJECT_MESSAGE", "USE_DEFAULT_VALUE"]
     }
@@ -2615,10 +2973,15 @@ impl AsRef<str> for BehaviorOnMxFailure {
     std::hash::Hash,
 )]
 pub enum DkimStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     NotStarted,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
+    #[allow(missing_docs)] // documentation missing in model
     TemporaryFailure,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2643,6 +3006,7 @@ impl std::str::FromStr for DkimStatus {
     }
 }
 impl DkimStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DkimStatus::Failed => "FAILED",
@@ -2653,6 +3017,7 @@ impl DkimStatus {
             DkimStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "FAILED",
@@ -2712,6 +3077,8 @@ pub mod dkim_signing_attributes {
             self.domain_signing_selector = Some(input.into());
             self
         }
+        /// <p>[Bring Your Own DKIM] A string that's used to identify a public key in the DNS configuration for a
+        /// domain.</p>
         pub fn set_domain_signing_selector(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2726,6 +3093,9 @@ pub mod dkim_signing_attributes {
             self.domain_signing_private_key = Some(input.into());
             self
         }
+        /// <p>[Bring Your Own DKIM] A private key that's used to generate a DKIM signature.</p>
+        /// <p>The private key must use 1024 or 2048-bit RSA encryption, and must be encoded using
+        /// base64 encoding.</p>
         pub fn set_domain_signing_private_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2741,6 +3111,7 @@ pub mod dkim_signing_attributes {
             self.next_signing_key_length = Some(input);
             self
         }
+        /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
         pub fn set_next_signing_key_length(
             mut self,
             input: std::option::Option<crate::model::DkimSigningKeyLength>,
@@ -2765,6 +3136,7 @@ impl DkimSigningAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2776,7 +3148,9 @@ impl DkimSigningAttributes {
     std::hash::Hash,
 )]
 pub enum DkimSigningKeyLength {
+    #[allow(missing_docs)] // documentation missing in model
     Rsa1024Bit,
+    #[allow(missing_docs)] // documentation missing in model
     Rsa2048Bit,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2798,6 +3172,7 @@ impl std::str::FromStr for DkimSigningKeyLength {
     }
 }
 impl DkimSigningKeyLength {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DkimSigningKeyLength::Rsa1024Bit => "RSA_1024_BIT",
@@ -2805,6 +3180,7 @@ impl DkimSigningKeyLength {
             DkimSigningKeyLength::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["RSA_1024_BIT", "RSA_2048_BIT"]
     }
@@ -2815,6 +3191,7 @@ impl AsRef<str> for DkimSigningKeyLength {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2826,7 +3203,9 @@ impl AsRef<str> for DkimSigningKeyLength {
     std::hash::Hash,
 )]
 pub enum DkimSigningAttributesOrigin {
+    #[allow(missing_docs)] // documentation missing in model
     AwsSes,
+    #[allow(missing_docs)] // documentation missing in model
     External,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2848,6 +3227,7 @@ impl std::str::FromStr for DkimSigningAttributesOrigin {
     }
 }
 impl DkimSigningAttributesOrigin {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DkimSigningAttributesOrigin::AwsSes => "AWS_SES",
@@ -2855,6 +3235,7 @@ impl DkimSigningAttributesOrigin {
             DkimSigningAttributesOrigin::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AWS_SES", "EXTERNAL"]
     }
@@ -2877,7 +3258,7 @@ pub struct DomainDeliverabilityTrackingOption {
     pub domain: std::option::Option<std::string::String>,
     /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the
     /// domain.</p>
-    pub subscription_start_date: std::option::Option<smithy_types::Instant>,
+    pub subscription_start_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>An object that contains information about the inbox placement data settings for the
     /// domain.</p>
     pub inbox_placement_tracking_option:
@@ -2902,7 +3283,7 @@ pub mod domain_deliverability_tracking_option {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
-        pub(crate) subscription_start_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) subscription_start_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) inbox_placement_tracking_option:
             std::option::Option<crate::model::InboxPlacementTrackingOption>,
     }
@@ -2913,19 +3294,23 @@ pub mod domain_deliverability_tracking_option {
             self.domain = Some(input.into());
             self
         }
+        /// <p>A verified domain that’s associated with your Amazon Web Services account and currently has an
+        /// active Deliverability dashboard subscription.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
         }
         /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the
         /// domain.</p>
-        pub fn subscription_start_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn subscription_start_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.subscription_start_date = Some(input);
             self
         }
+        /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the
+        /// domain.</p>
         pub fn set_subscription_start_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.subscription_start_date = input;
             self
@@ -2939,6 +3324,8 @@ pub mod domain_deliverability_tracking_option {
             self.inbox_placement_tracking_option = Some(input);
             self
         }
+        /// <p>An object that contains information about the inbox placement data settings for the
+        /// domain.</p>
         pub fn set_inbox_placement_tracking_option(
             mut self,
             input: std::option::Option<crate::model::InboxPlacementTrackingOption>,
@@ -2998,16 +3385,25 @@ pub mod inbox_placement_tracking_option {
             self.global = Some(input);
             self
         }
+        /// <p>Specifies whether inbox placement data is being tracked for the domain.</p>
         pub fn set_global(mut self, input: std::option::Option<bool>) -> Self {
             self.global = input;
             self
         }
+        /// Appends an item to `tracked_isps`.
+        ///
+        /// To override the contents of this collection use [`set_tracked_isps`](Self::set_tracked_isps).
+        ///
+        /// <p>An array of strings, one for each major email provider that the inbox placement data
+        /// applies to.</p>
         pub fn tracked_isps(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tracked_isps.unwrap_or_default();
             v.push(input.into());
             self.tracked_isps = Some(v);
             self
         }
+        /// <p>An array of strings, one for each major email provider that the inbox placement data
+        /// applies to.</p>
         pub fn set_tracked_isps(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3046,7 +3442,9 @@ impl InboxPlacementTrackingOption {
     std::hash::Hash,
 )]
 pub enum TlsPolicy {
+    #[allow(missing_docs)] // documentation missing in model
     Optional,
+    #[allow(missing_docs)] // documentation missing in model
     Require,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3068,6 +3466,7 @@ impl std::str::FromStr for TlsPolicy {
     }
 }
 impl TlsPolicy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TlsPolicy::Optional => "OPTIONAL",
@@ -3075,6 +3474,7 @@ impl TlsPolicy {
             TlsPolicy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["OPTIONAL", "REQUIRE"]
     }
@@ -3085,6 +3485,7 @@ impl AsRef<str> for TlsPolicy {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3096,7 +3497,9 @@ impl AsRef<str> for TlsPolicy {
     std::hash::Hash,
 )]
 pub enum ContactLanguage {
+    #[allow(missing_docs)] // documentation missing in model
     En,
+    #[allow(missing_docs)] // documentation missing in model
     Ja,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3118,6 +3521,7 @@ impl std::str::FromStr for ContactLanguage {
     }
 }
 impl ContactLanguage {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContactLanguage::En => "EN",
@@ -3125,6 +3529,7 @@ impl ContactLanguage {
             ContactLanguage::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EN", "JA"]
     }
@@ -3135,6 +3540,7 @@ impl AsRef<str> for ContactLanguage {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3146,7 +3552,9 @@ impl AsRef<str> for ContactLanguage {
     std::hash::Hash,
 )]
 pub enum MailType {
+    #[allow(missing_docs)] // documentation missing in model
     Marketing,
+    #[allow(missing_docs)] // documentation missing in model
     Transactional,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3168,6 +3576,7 @@ impl std::str::FromStr for MailType {
     }
 }
 impl MailType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MailType::Marketing => "MARKETING",
@@ -3175,6 +3584,7 @@ impl MailType {
             MailType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MARKETING", "TRANSACTIONAL"]
     }
@@ -3195,7 +3605,7 @@ pub struct SuppressedDestinationSummary {
     pub reason: std::option::Option<crate::model::SuppressionListReason>,
     /// <p>The date and time when the suppressed destination was last updated, shown in Unix time
     /// format.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for SuppressedDestinationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3214,7 +3624,7 @@ pub mod suppressed_destination_summary {
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
         pub(crate) reason: std::option::Option<crate::model::SuppressionListReason>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The email address that's on the suppression list for your account.</p>
@@ -3222,6 +3632,7 @@ pub mod suppressed_destination_summary {
             self.email_address = Some(input.into());
             self
         }
+        /// <p>The email address that's on the suppression list for your account.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3234,6 +3645,7 @@ pub mod suppressed_destination_summary {
             self.reason = Some(input);
             self
         }
+        /// <p>The reason that the address was added to the suppression list for your account.</p>
         pub fn set_reason(
             mut self,
             input: std::option::Option<crate::model::SuppressionListReason>,
@@ -3243,13 +3655,15 @@ pub mod suppressed_destination_summary {
         }
         /// <p>The date and time when the suppressed destination was last updated, shown in Unix time
         /// format.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The date and time when the suppressed destination was last updated, shown in Unix time
+        /// format.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -3283,7 +3697,7 @@ pub struct ImportJobSummary {
     /// <p>The status of the import job.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
     /// <p>The date and time when the import job was created.</p>
-    pub created_timestamp: std::option::Option<smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ImportJobSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3304,7 +3718,7 @@ pub mod import_job_summary {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) import_destination: std::option::Option<crate::model::ImportDestination>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) created_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>A string that represents the import job ID.</p>
@@ -3312,6 +3726,7 @@ pub mod import_job_summary {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>A string that represents the import job ID.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -3322,6 +3737,8 @@ pub mod import_job_summary {
             self.import_destination = Some(input);
             self
         }
+        /// <p>An object that contains details about the resource destination the import job is going
+        /// to target.</p>
         pub fn set_import_destination(
             mut self,
             input: std::option::Option<crate::model::ImportDestination>,
@@ -3334,6 +3751,7 @@ pub mod import_job_summary {
             self.job_status = Some(input);
             self
         }
+        /// <p>The status of the import job.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -3342,13 +3760,14 @@ pub mod import_job_summary {
             self
         }
         /// <p>The date and time when the import job was created.</p>
-        pub fn created_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_timestamp = Some(input);
             self
         }
+        /// <p>The date and time when the import job was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_timestamp = input;
             self
@@ -3383,9 +3802,13 @@ impl ImportJobSummary {
     std::hash::Hash,
 )]
 pub enum JobStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Created,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Processing,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3409,6 +3832,7 @@ impl std::str::FromStr for JobStatus {
     }
 }
 impl JobStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobStatus::Completed => "COMPLETED",
@@ -3418,6 +3842,7 @@ impl JobStatus {
             JobStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COMPLETED", "CREATED", "FAILED", "PROCESSING"]
     }
@@ -3469,6 +3894,7 @@ pub mod import_destination {
             self.suppression_list_destination = Some(input);
             self
         }
+        /// <p>An object that contains the action of the import job towards suppression list.</p>
         pub fn set_suppression_list_destination(
             mut self,
             input: std::option::Option<crate::model::SuppressionListDestination>,
@@ -3484,6 +3910,7 @@ pub mod import_destination {
             self.contact_list_destination = Some(input);
             self
         }
+        /// <p>An object that contains the action of the import job towards a contact list.</p>
         pub fn set_contact_list_destination(
             mut self,
             input: std::option::Option<crate::model::ContactListDestination>,
@@ -3553,6 +3980,7 @@ pub mod contact_list_destination {
             self.contact_list_name = Some(input.into());
             self
         }
+        /// <p>The name of the contact list.</p>
         pub fn set_contact_list_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3578,6 +4006,17 @@ pub mod contact_list_destination {
             self.contact_list_import_action = Some(input);
             self
         }
+        /// <p>>The type of action to perform on the addresses. The following are the
+        /// possible values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>PUT: add the addresses to the contact list. If the record already exists, it
+        /// will override it with the new value.</p>
+        /// </li>
+        /// <li>
+        /// <p>DELETE: remove the addresses from the contact list.</p>
+        /// </li>
+        /// </ul>
         pub fn set_contact_list_import_action(
             mut self,
             input: std::option::Option<crate::model::ContactListImportAction>,
@@ -3601,6 +4040,7 @@ impl ContactListDestination {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3612,7 +4052,9 @@ impl ContactListDestination {
     std::hash::Hash,
 )]
 pub enum ContactListImportAction {
+    #[allow(missing_docs)] // documentation missing in model
     Delete,
+    #[allow(missing_docs)] // documentation missing in model
     Put,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3634,6 +4076,7 @@ impl std::str::FromStr for ContactListImportAction {
     }
 }
 impl ContactListImportAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContactListImportAction::Delete => "DELETE",
@@ -3641,6 +4084,7 @@ impl ContactListImportAction {
             ContactListImportAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DELETE", "PUT"]
     }
@@ -3705,6 +4149,16 @@ pub mod suppression_list_destination {
             self.suppression_list_import_action = Some(input);
             self
         }
+        /// <p>The type of action to perform on the address. The following are possible values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>PUT: add the addresses to the suppression list. If the record already exists,
+        /// it will override it with the new value.</p>
+        /// </li>
+        /// <li>
+        /// <p>DELETE: remove the addresses from the suppression list.</p>
+        /// </li>
+        /// </ul>
         pub fn set_suppression_list_import_action(
             mut self,
             input: std::option::Option<crate::model::SuppressionListImportAction>,
@@ -3747,7 +4201,9 @@ impl SuppressionListDestination {
     std::hash::Hash,
 )]
 pub enum SuppressionListImportAction {
+    #[allow(missing_docs)] // documentation missing in model
     Delete,
+    #[allow(missing_docs)] // documentation missing in model
     Put,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3769,6 +4225,7 @@ impl std::str::FromStr for SuppressionListImportAction {
     }
 }
 impl SuppressionListImportAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SuppressionListImportAction::Delete => "DELETE",
@@ -3776,6 +4233,7 @@ impl SuppressionListImportAction {
             SuppressionListImportAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DELETE", "PUT"]
     }
@@ -3799,7 +4257,9 @@ impl AsRef<str> for SuppressionListImportAction {
     std::hash::Hash,
 )]
 pub enum ImportDestinationType {
+    #[allow(missing_docs)] // documentation missing in model
     ContactList,
+    #[allow(missing_docs)] // documentation missing in model
     SuppressionList,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3821,6 +4281,7 @@ impl std::str::FromStr for ImportDestinationType {
     }
 }
 impl ImportDestinationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImportDestinationType::ContactList => "CONTACT_LIST",
@@ -3828,6 +4289,7 @@ impl ImportDestinationType {
             ImportDestinationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONTACT_LIST", "SUPPRESSION_LIST"]
     }
@@ -3845,7 +4307,7 @@ pub struct EmailTemplateMetadata {
     /// <p>The name of the template.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The time and date the template was created.</p>
-    pub created_timestamp: std::option::Option<smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for EmailTemplateMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3862,7 +4324,7 @@ pub mod email_template_metadata {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_name: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the template.</p>
@@ -3870,6 +4332,7 @@ pub mod email_template_metadata {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3878,13 +4341,14 @@ pub mod email_template_metadata {
             self
         }
         /// <p>The time and date the template was created.</p>
-        pub fn created_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_timestamp = Some(input);
             self
         }
+        /// <p>The time and date the template was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_timestamp = input;
             self
@@ -3946,6 +4410,8 @@ pub mod identity_info {
             self.identity_type = Some(input);
             self
         }
+        /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported
+        /// for email identity types.</p>
         pub fn set_identity_type(
             mut self,
             input: std::option::Option<crate::model::IdentityType>,
@@ -3958,6 +4424,7 @@ pub mod identity_info {
             self.identity_name = Some(input.into());
             self
         }
+        /// <p>The address or domain of the identity.</p>
         pub fn set_identity_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3973,6 +4440,10 @@ pub mod identity_info {
             self.sending_enabled = Some(input);
             self
         }
+        /// <p>Indicates whether or not you can send email from the identity.</p>
+        /// <p>An <i>identity</i> is an email address or domain that you send email
+        /// from. Before you can send email from an identity, you have to demostrate that you own
+        /// the identity, and that you authorize Amazon SES to send email from that identity.</p>
         pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.sending_enabled = input;
             self
@@ -3994,6 +4465,7 @@ impl IdentityInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4005,8 +4477,11 @@ impl IdentityInfo {
     std::hash::Hash,
 )]
 pub enum IdentityType {
+    #[allow(missing_docs)] // documentation missing in model
     Domain,
+    #[allow(missing_docs)] // documentation missing in model
     EmailAddress,
+    #[allow(missing_docs)] // documentation missing in model
     ManagedDomain,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4029,6 +4504,7 @@ impl std::str::FromStr for IdentityType {
     }
 }
 impl IdentityType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IdentityType::Domain => "DOMAIN",
@@ -4037,6 +4513,7 @@ impl IdentityType {
             IdentityType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DOMAIN", "EMAIL_ADDRESS", "MANAGED_DOMAIN"]
     }
@@ -4069,11 +4546,11 @@ pub struct DomainDeliverabilityCampaign {
     /// <p>The first time, in Unix time format, when the email message was delivered to any
     /// recipient's inbox. This value can help you determine how long it took for a campaign to
     /// deliver an email message.</p>
-    pub first_seen_date_time: std::option::Option<smithy_types::Instant>,
+    pub first_seen_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time, in Unix time format, when the email message was delivered to any
     /// recipient's inbox. This value can help you determine how long it took for a campaign to
     /// deliver an email message.</p>
-    pub last_seen_date_time: std::option::Option<smithy_types::Instant>,
+    pub last_seen_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The number of email messages that were delivered to recipients’ inboxes.</p>
     pub inbox_count: std::option::Option<i64>,
     /// <p>The number of email messages that were delivered to recipients' spam or junk mail
@@ -4127,8 +4604,8 @@ pub mod domain_deliverability_campaign {
         pub(crate) subject: std::option::Option<std::string::String>,
         pub(crate) from_address: std::option::Option<std::string::String>,
         pub(crate) sending_ips: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) first_seen_date_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_seen_date_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) first_seen_date_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_seen_date_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) inbox_count: std::option::Option<i64>,
         pub(crate) spam_count: std::option::Option<i64>,
         pub(crate) read_rate: std::option::Option<f64>,
@@ -4144,6 +4621,8 @@ pub mod domain_deliverability_campaign {
             self.campaign_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates
+        /// and assigns this identifier to a campaign.</p>
         pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.campaign_id = input;
             self
@@ -4154,6 +4633,8 @@ pub mod domain_deliverability_campaign {
             self.image_url = Some(input.into());
             self
         }
+        /// <p>The URL of an image that contains a snapshot of the email message that was
+        /// sent.</p>
         pub fn set_image_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_url = input;
             self
@@ -4163,6 +4644,7 @@ pub mod domain_deliverability_campaign {
             self.subject = Some(input.into());
             self
         }
+        /// <p>The subject line, or title, of the email message.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subject = input;
             self
@@ -4172,16 +4654,23 @@ pub mod domain_deliverability_campaign {
             self.from_address = Some(input.into());
             self
         }
+        /// <p>The verified email address that the email message was sent from.</p>
         pub fn set_from_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.from_address = input;
             self
         }
+        /// Appends an item to `sending_ips`.
+        ///
+        /// To override the contents of this collection use [`set_sending_ips`](Self::set_sending_ips).
+        ///
+        /// <p>The IP addresses that were used to send the email message.</p>
         pub fn sending_ips(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.sending_ips.unwrap_or_default();
             v.push(input.into());
             self.sending_ips = Some(v);
             self
         }
+        /// <p>The IP addresses that were used to send the email message.</p>
         pub fn set_sending_ips(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4192,13 +4681,16 @@ pub mod domain_deliverability_campaign {
         /// <p>The first time, in Unix time format, when the email message was delivered to any
         /// recipient's inbox. This value can help you determine how long it took for a campaign to
         /// deliver an email message.</p>
-        pub fn first_seen_date_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn first_seen_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.first_seen_date_time = Some(input);
             self
         }
+        /// <p>The first time, in Unix time format, when the email message was delivered to any
+        /// recipient's inbox. This value can help you determine how long it took for a campaign to
+        /// deliver an email message.</p>
         pub fn set_first_seen_date_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.first_seen_date_time = input;
             self
@@ -4206,13 +4698,16 @@ pub mod domain_deliverability_campaign {
         /// <p>The last time, in Unix time format, when the email message was delivered to any
         /// recipient's inbox. This value can help you determine how long it took for a campaign to
         /// deliver an email message.</p>
-        pub fn last_seen_date_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_seen_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_seen_date_time = Some(input);
             self
         }
+        /// <p>The last time, in Unix time format, when the email message was delivered to any
+        /// recipient's inbox. This value can help you determine how long it took for a campaign to
+        /// deliver an email message.</p>
         pub fn set_last_seen_date_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_seen_date_time = input;
             self
@@ -4222,6 +4717,7 @@ pub mod domain_deliverability_campaign {
             self.inbox_count = Some(input);
             self
         }
+        /// <p>The number of email messages that were delivered to recipients’ inboxes.</p>
         pub fn set_inbox_count(mut self, input: std::option::Option<i64>) -> Self {
             self.inbox_count = input;
             self
@@ -4232,6 +4728,8 @@ pub mod domain_deliverability_campaign {
             self.spam_count = Some(input);
             self
         }
+        /// <p>The number of email messages that were delivered to recipients' spam or junk mail
+        /// folders.</p>
         pub fn set_spam_count(mut self, input: std::option::Option<i64>) -> Self {
             self.spam_count = input;
             self
@@ -4243,6 +4741,9 @@ pub mod domain_deliverability_campaign {
             self.read_rate = Some(input);
             self
         }
+        /// <p>The percentage of email messages that were opened by recipients. Due to technical
+        /// limitations, this value only includes recipients who opened the message by using an
+        /// email client that supports images.</p>
         pub fn set_read_rate(mut self, input: std::option::Option<f64>) -> Self {
             self.read_rate = input;
             self
@@ -4254,6 +4755,9 @@ pub mod domain_deliverability_campaign {
             self.delete_rate = Some(input);
             self
         }
+        /// <p>The percentage of email messages that were deleted by recipients, without being opened
+        /// first. Due to technical limitations, this value only includes recipients who opened the
+        /// message by using an email client that supports images.</p>
         pub fn set_delete_rate(mut self, input: std::option::Option<f64>) -> Self {
             self.delete_rate = input;
             self
@@ -4265,6 +4769,9 @@ pub mod domain_deliverability_campaign {
             self.read_delete_rate = Some(input);
             self
         }
+        /// <p>The percentage of email messages that were opened and then deleted by recipients. Due
+        /// to technical limitations, this value only includes recipients who opened the message by
+        /// using an email client that supports images.</p>
         pub fn set_read_delete_rate(mut self, input: std::option::Option<f64>) -> Self {
             self.read_delete_rate = input;
             self
@@ -4274,16 +4781,23 @@ pub mod domain_deliverability_campaign {
             self.projected_volume = Some(input);
             self
         }
+        /// <p>The projected number of recipients that the email message was sent to.</p>
         pub fn set_projected_volume(mut self, input: std::option::Option<i64>) -> Self {
             self.projected_volume = input;
             self
         }
+        /// Appends an item to `esps`.
+        ///
+        /// To override the contents of this collection use [`set_esps`](Self::set_esps).
+        ///
+        /// <p>The major email providers who handled the email message.</p>
         pub fn esps(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.esps.unwrap_or_default();
             v.push(input.into());
             self.esps = Some(v);
             self
         }
+        /// <p>The major email providers who handled the email message.</p>
         pub fn set_esps(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4332,7 +4846,7 @@ pub struct DeliverabilityTestReport {
     /// <p>The sender address that you specified for the predictive inbox placement test.</p>
     pub from_email_address: std::option::Option<std::string::String>,
     /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test
     /// is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the
     /// test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use
@@ -4364,7 +4878,7 @@ pub mod deliverability_test_report {
         pub(crate) report_name: std::option::Option<std::string::String>,
         pub(crate) subject: std::option::Option<std::string::String>,
         pub(crate) from_email_address: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) deliverability_test_status:
             std::option::Option<crate::model::DeliverabilityTestStatus>,
     }
@@ -4374,6 +4888,7 @@ pub mod deliverability_test_report {
             self.report_id = Some(input.into());
             self
         }
+        /// <p>A unique string that identifies the predictive inbox placement test.</p>
         pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.report_id = input;
             self
@@ -4383,6 +4898,7 @@ pub mod deliverability_test_report {
             self.report_name = Some(input.into());
             self
         }
+        /// <p>A name that helps you identify a predictive inbox placement test report.</p>
         pub fn set_report_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.report_name = input;
             self
@@ -4392,6 +4908,7 @@ pub mod deliverability_test_report {
             self.subject = Some(input.into());
             self
         }
+        /// <p>The subject line for an email that you submitted in a predictive inbox placement test.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subject = input;
             self
@@ -4401,6 +4918,7 @@ pub mod deliverability_test_report {
             self.from_email_address = Some(input.into());
             self
         }
+        /// <p>The sender address that you specified for the predictive inbox placement test.</p>
         pub fn set_from_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4409,13 +4927,14 @@ pub mod deliverability_test_report {
             self
         }
         /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
@@ -4431,6 +4950,10 @@ pub mod deliverability_test_report {
             self.deliverability_test_status = Some(input);
             self
         }
+        /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test
+        /// is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the
+        /// test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use
+        /// the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
         pub fn set_deliverability_test_status(
             mut self,
             input: std::option::Option<crate::model::DeliverabilityTestStatus>,
@@ -4474,7 +4997,9 @@ impl DeliverabilityTestReport {
     std::hash::Hash,
 )]
 pub enum DeliverabilityTestStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4496,6 +5021,7 @@ impl std::str::FromStr for DeliverabilityTestStatus {
     }
 }
 impl DeliverabilityTestStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeliverabilityTestStatus::Completed => "COMPLETED",
@@ -4503,6 +5029,7 @@ impl DeliverabilityTestStatus {
             DeliverabilityTestStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COMPLETED", "IN_PROGRESS"]
     }
@@ -4559,6 +5086,7 @@ pub mod custom_verification_email_template_metadata {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the custom verification email template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4571,6 +5099,7 @@ pub mod custom_verification_email_template_metadata {
             self.from_email_address = Some(input.into());
             self
         }
+        /// <p>The email address that the custom verification email is sent from.</p>
         pub fn set_from_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4583,6 +5112,7 @@ pub mod custom_verification_email_template_metadata {
             self.template_subject = Some(input.into());
             self
         }
+        /// <p>The subject line of the custom verification email.</p>
         pub fn set_template_subject(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4596,6 +5126,8 @@ pub mod custom_verification_email_template_metadata {
             self.success_redirection_url = Some(input.into());
             self
         }
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address
+        /// is successfully verified.</p>
         pub fn set_success_redirection_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4609,6 +5141,8 @@ pub mod custom_verification_email_template_metadata {
             self.failure_redirection_url = Some(input.into());
             self
         }
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address
+        /// is not successfully verified.</p>
         pub fn set_failure_redirection_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4650,7 +5184,7 @@ pub struct Contact {
     /// topics.</p>
     pub unsubscribe_all: bool,
     /// <p>A timestamp noting the last time the contact's information was updated.</p>
-    pub last_updated_timestamp: std::option::Option<smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Contact {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4675,7 +5209,7 @@ pub mod contact {
         pub(crate) topic_default_preferences:
             std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
         pub(crate) unsubscribe_all: std::option::Option<bool>,
-        pub(crate) last_updated_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The contact's email address.</p>
@@ -4683,6 +5217,7 @@ pub mod contact {
             self.email_address = Some(input.into());
             self
         }
+        /// <p>The contact's email address.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4690,6 +5225,11 @@ pub mod contact {
             self.email_address = input;
             self
         }
+        /// Appends an item to `topic_preferences`.
+        ///
+        /// To override the contents of this collection use [`set_topic_preferences`](Self::set_topic_preferences).
+        ///
+        /// <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
         pub fn topic_preferences(
             mut self,
             input: impl Into<crate::model::TopicPreference>,
@@ -4699,6 +5239,7 @@ pub mod contact {
             self.topic_preferences = Some(v);
             self
         }
+        /// <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
         pub fn set_topic_preferences(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
@@ -4706,6 +5247,11 @@ pub mod contact {
             self.topic_preferences = input;
             self
         }
+        /// Appends an item to `topic_default_preferences`.
+        ///
+        /// To override the contents of this collection use [`set_topic_default_preferences`](Self::set_topic_default_preferences).
+        ///
+        /// <p>The default topic preferences applied to the contact.</p>
         pub fn topic_default_preferences(
             mut self,
             input: impl Into<crate::model::TopicPreference>,
@@ -4715,6 +5261,7 @@ pub mod contact {
             self.topic_default_preferences = Some(v);
             self
         }
+        /// <p>The default topic preferences applied to the contact.</p>
         pub fn set_topic_default_preferences(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
@@ -4728,18 +5275,21 @@ pub mod contact {
             self.unsubscribe_all = Some(input);
             self
         }
+        /// <p>A boolean value status noting if the contact is unsubscribed from all contact list
+        /// topics.</p>
         pub fn set_unsubscribe_all(mut self, input: std::option::Option<bool>) -> Self {
             self.unsubscribe_all = input;
             self
         }
         /// <p>A timestamp noting the last time the contact's information was updated.</p>
-        pub fn last_updated_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
+        /// <p>A timestamp noting the last time the contact's information was updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self
@@ -4797,6 +5347,8 @@ pub mod list_contacts_filter {
             self.filtered_status = Some(input);
             self
         }
+        /// <p>The status by which you are filtering: <code>OPT_IN</code> or
+        /// <code>OPT_OUT</code>.</p>
         pub fn set_filtered_status(
             mut self,
             input: std::option::Option<crate::model::SubscriptionStatus>,
@@ -4809,6 +5361,7 @@ pub mod list_contacts_filter {
             self.topic_filter = Some(input);
             self
         }
+        /// <p>Used for filtering by a specific topic preference.</p>
         pub fn set_topic_filter(
             mut self,
             input: std::option::Option<crate::model::TopicFilter>,
@@ -4868,6 +5421,7 @@ pub mod topic_filter {
             self.topic_name = Some(input.into());
             self
         }
+        /// <p>The name of a topic on which you wish to apply the filter.</p>
         pub fn set_topic_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_name = input;
             self
@@ -4878,6 +5432,8 @@ pub mod topic_filter {
             self.use_default_if_preference_unavailable = Some(input);
             self
         }
+        /// <p>Notes that the default subscription status should be applied to a contact because the
+        /// contact has not noted their preference for subscribing to a topic.</p>
         pub fn set_use_default_if_preference_unavailable(
             mut self,
             input: std::option::Option<bool>,
@@ -4911,7 +5467,7 @@ pub struct ContactList {
     /// <p>The name of the contact list.</p>
     pub contact_list_name: std::option::Option<std::string::String>,
     /// <p>A timestamp noting the last time the contact list was updated.</p>
-    pub last_updated_timestamp: std::option::Option<smithy_types::Instant>,
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ContactList {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4928,7 +5484,7 @@ pub mod contact_list {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_list_name: std::option::Option<std::string::String>,
-        pub(crate) last_updated_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the contact list.</p>
@@ -4936,6 +5492,7 @@ pub mod contact_list {
             self.contact_list_name = Some(input.into());
             self
         }
+        /// <p>The name of the contact list.</p>
         pub fn set_contact_list_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4944,13 +5501,14 @@ pub mod contact_list {
             self
         }
         /// <p>A timestamp noting the last time the contact list was updated.</p>
-        pub fn last_updated_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_timestamp = Some(input);
             self
         }
+        /// <p>A timestamp noting the last time the contact list was updated.</p>
         pub fn set_last_updated_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_timestamp = input;
             self
@@ -4982,7 +5540,7 @@ pub struct SuppressedDestination {
     pub reason: std::option::Option<crate::model::SuppressionListReason>,
     /// <p>The date and time when the suppressed destination was last updated, shown in Unix time
     /// format.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>An optional value that can contain additional information about the reasons that the
     /// address was added to the suppression list for your account.</p>
     pub attributes: std::option::Option<crate::model::SuppressedDestinationAttributes>,
@@ -5005,7 +5563,7 @@ pub mod suppressed_destination {
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
         pub(crate) reason: std::option::Option<crate::model::SuppressionListReason>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) attributes: std::option::Option<crate::model::SuppressedDestinationAttributes>,
     }
     impl Builder {
@@ -5014,6 +5572,7 @@ pub mod suppressed_destination {
             self.email_address = Some(input.into());
             self
         }
+        /// <p>The email address that is on the suppression list for your account.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5026,6 +5585,7 @@ pub mod suppressed_destination {
             self.reason = Some(input);
             self
         }
+        /// <p>The reason that the address was added to the suppression list for your account.</p>
         pub fn set_reason(
             mut self,
             input: std::option::Option<crate::model::SuppressionListReason>,
@@ -5035,13 +5595,15 @@ pub mod suppressed_destination {
         }
         /// <p>The date and time when the suppressed destination was last updated, shown in Unix time
         /// format.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The date and time when the suppressed destination was last updated, shown in Unix time
+        /// format.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -5052,6 +5614,8 @@ pub mod suppressed_destination {
             self.attributes = Some(input);
             self
         }
+        /// <p>An optional value that can contain additional information about the reasons that the
+        /// address was added to the suppression list for your account.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<crate::model::SuppressedDestinationAttributes>,
@@ -5113,6 +5677,8 @@ pub mod suppressed_destination_attributes {
             self.message_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the email message that caused the email address to be added
+        /// to the suppression list for your account.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self
@@ -5123,6 +5689,8 @@ pub mod suppressed_destination_attributes {
             self.feedback_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier that's generated when an email address is added to the suppression
+        /// list for your account.</p>
         pub fn set_feedback_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.feedback_id = input;
             self
@@ -5177,6 +5745,8 @@ pub mod failure_info {
             self.failed_records_s3_url = Some(input.into());
             self
         }
+        /// <p>An Amazon S3 presigned URL that contains all the failed records and related
+        /// information.</p>
         pub fn set_failed_records_s3_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5189,6 +5759,7 @@ pub mod failure_info {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>A message about why the import job failed.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5246,6 +5817,8 @@ pub mod import_data_source {
             self.s3_url = Some(input.into());
             self
         }
+        /// <p>An Amazon S3 URL in the format
+        /// s3://<i><bucket_name></i>/<i><object></i>.</p>
         pub fn set_s3_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_url = input;
             self
@@ -5255,6 +5828,7 @@ pub mod import_data_source {
             self.data_format = Some(input);
             self
         }
+        /// <p>The data format of the import job's data source.</p>
         pub fn set_data_format(
             mut self,
             input: std::option::Option<crate::model::DataFormat>,
@@ -5290,7 +5864,9 @@ impl ImportDataSource {
     std::hash::Hash,
 )]
 pub enum DataFormat {
+    #[allow(missing_docs)] // documentation missing in model
     Csv,
+    #[allow(missing_docs)] // documentation missing in model
     Json,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5312,6 +5888,7 @@ impl std::str::FromStr for DataFormat {
     }
 }
 impl DataFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataFormat::Csv => "CSV",
@@ -5319,6 +5896,7 @@ impl DataFormat {
             DataFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CSV", "JSON"]
     }
@@ -5395,6 +5973,7 @@ pub mod mail_from_attributes {
             self.mail_from_domain = Some(input.into());
             self
         }
+        /// <p>The name of a domain that an email identity uses as a custom MAIL FROM domain.</p>
         pub fn set_mail_from_domain(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5432,6 +6011,29 @@ pub mod mail_from_attributes {
             self.mail_from_domain_status = Some(input);
             self
         }
+        /// <p>The status of the MAIL FROM domain. This status can have the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code> – Amazon SES hasn't started searching for the MX record
+        /// yet.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SUCCESS</code> – Amazon SES detected the required MX record for the
+        /// MAIL FROM domain.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code> – Amazon SES can't find the required MX record, or the
+        /// record no longer exists.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which
+        /// prevented Amazon SES from determining the status of the MAIL FROM domain.</p>
+        /// </li>
+        /// </ul>
         pub fn set_mail_from_domain_status(
             mut self,
             input: std::option::Option<crate::model::MailFromDomainStatus>,
@@ -5452,6 +6054,15 @@ pub mod mail_from_attributes {
             self.behavior_on_mx_failure = Some(input);
             self
         }
+        /// <p>The action to take if the required MX record can't be found when you send an email.
+        /// When you set this value to <code>UseDefaultValue</code>, the mail is sent using
+        /// <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
+        /// to <code>RejectMessage</code>, the Amazon SES API v2 returns a
+        /// <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
+        /// email.</p>
+        /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the
+        /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>
+        /// states.</p>
         pub fn set_behavior_on_mx_failure(
             mut self,
             input: std::option::Option<crate::model::BehaviorOnMxFailure>,
@@ -5510,9 +6121,13 @@ impl MailFromAttributes {
     std::hash::Hash,
 )]
 pub enum MailFromDomainStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
+    #[allow(missing_docs)] // documentation missing in model
     TemporaryFailure,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5536,6 +6151,7 @@ impl std::str::FromStr for MailFromDomainStatus {
     }
 }
 impl MailFromDomainStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MailFromDomainStatus::Failed => "FAILED",
@@ -5545,6 +6161,7 @@ impl MailFromDomainStatus {
             MailFromDomainStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "PENDING", "SUCCESS", "TEMPORARY_FAILURE"]
     }
@@ -5633,7 +6250,7 @@ pub struct DkimAttributes {
     /// <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
     pub current_signing_key_length: std::option::Option<crate::model::DkimSigningKeyLength>,
     /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
-    pub last_key_generation_timestamp: std::option::Option<smithy_types::Instant>,
+    pub last_key_generation_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DkimAttributes {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5668,7 +6285,7 @@ pub mod dkim_attributes {
         pub(crate) next_signing_key_length: std::option::Option<crate::model::DkimSigningKeyLength>,
         pub(crate) current_signing_key_length:
             std::option::Option<crate::model::DkimSigningKeyLength>,
-        pub(crate) last_key_generation_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_key_generation_timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>If the value is <code>true</code>, then the messages that you send from the identity
@@ -5678,6 +6295,9 @@ pub mod dkim_attributes {
             self.signing_enabled = Some(input);
             self
         }
+        /// <p>If the value is <code>true</code>, then the messages that you send from the identity
+        /// are signed using DKIM. If the value is <code>false</code>, then the messages that you
+        /// send from the identity aren't DKIM-signed.</p>
         pub fn set_signing_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.signing_enabled = input;
             self
@@ -5717,16 +6337,69 @@ pub mod dkim_attributes {
             self.status = Some(input);
             self
         }
+        /// <p>Describes whether or not Amazon SES has successfully located the DKIM records in the DNS
+        /// records for the domain. The status can be one of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code> – The verification process was initiated, but Amazon SES
+        /// hasn't yet detected the DKIM records in the DNS configuration for the
+        /// domain.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SUCCESS</code> – The verification process completed
+        /// successfully.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code> – The verification process failed. This typically
+        /// occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the
+        /// domain.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES
+        /// from determining the DKIM authentication status of the domain.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NOT_STARTED</code> – The DKIM verification process hasn't been
+        /// initiated for the domain.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::DkimStatus>) -> Self {
             self.status = input;
             self
         }
+        /// Appends an item to `tokens`.
+        ///
+        /// To override the contents of this collection use [`set_tokens`](Self::set_tokens).
+        ///
+        /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object
+        /// contains a set of unique strings that you use to create a set of CNAME records that you
+        /// add to the DNS configuration for your domain. When Amazon SES detects these records in the
+        /// DNS configuration for your domain, the DKIM authentication process is complete.</p>
+        /// <p>If you configured DKIM authentication for the domain by providing your own
+        /// public-private key pair, then this object contains the selector for the public
+        /// key.</p>
+        /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the
+        /// appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
         pub fn tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tokens.unwrap_or_default();
             v.push(input.into());
             self.tokens = Some(v);
             self
         }
+        /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object
+        /// contains a set of unique strings that you use to create a set of CNAME records that you
+        /// add to the DNS configuration for your domain. When Amazon SES detects these records in the
+        /// DNS configuration for your domain, the DKIM authentication process is complete.</p>
+        /// <p>If you configured DKIM authentication for the domain by providing your own
+        /// public-private key pair, then this object contains the selector for the public
+        /// key.</p>
+        /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the
+        /// appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
         pub fn set_tokens(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5755,6 +6428,20 @@ pub mod dkim_attributes {
             self.signing_attributes_origin = Some(input);
             self
         }
+        /// <p>A string that indicates how DKIM was configured for the identity. These are the
+        /// possible values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AWS_SES</code> – Indicates that DKIM was configured for the
+        /// identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EXTERNAL</code> – Indicates that DKIM was configured for the
+        /// identity by using Bring Your Own DKIM (BYODKIM).</p>
+        /// </li>
+        /// </ul>
         pub fn set_signing_attributes_origin(
             mut self,
             input: std::option::Option<crate::model::DkimSigningAttributesOrigin>,
@@ -5770,6 +6457,7 @@ pub mod dkim_attributes {
             self.next_signing_key_length = Some(input);
             self
         }
+        /// <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This can be changed at most once per day.</p>
         pub fn set_next_signing_key_length(
             mut self,
             input: std::option::Option<crate::model::DkimSigningKeyLength>,
@@ -5785,6 +6473,7 @@ pub mod dkim_attributes {
             self.current_signing_key_length = Some(input);
             self
         }
+        /// <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
         pub fn set_current_signing_key_length(
             mut self,
             input: std::option::Option<crate::model::DkimSigningKeyLength>,
@@ -5793,13 +6482,14 @@ pub mod dkim_attributes {
             self
         }
         /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
-        pub fn last_key_generation_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_key_generation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_key_generation_timestamp = Some(input);
             self
         }
+        /// <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
         pub fn set_last_key_generation_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_key_generation_timestamp = input;
             self
@@ -5831,7 +6521,7 @@ impl DkimAttributes {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DailyVolume {
     /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
-    pub start_date: std::option::Option<smithy_types::Instant>,
+    pub start_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>An object that contains inbox placement metrics for a specific day in the analysis
     /// period.</p>
     pub volume_statistics: std::option::Option<crate::model::VolumeStatistics>,
@@ -5854,18 +6544,22 @@ pub mod daily_volume {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) volume_statistics: std::option::Option<crate::model::VolumeStatistics>,
         pub(crate) domain_isp_placements:
             std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
     }
     impl Builder {
         /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
-        pub fn start_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_date = Some(input);
             self
         }
-        pub fn set_start_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
+        pub fn set_start_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_date = input;
             self
         }
@@ -5875,6 +6569,8 @@ pub mod daily_volume {
             self.volume_statistics = Some(input);
             self
         }
+        /// <p>An object that contains inbox placement metrics for a specific day in the analysis
+        /// period.</p>
         pub fn set_volume_statistics(
             mut self,
             input: std::option::Option<crate::model::VolumeStatistics>,
@@ -5882,6 +6578,12 @@ pub mod daily_volume {
             self.volume_statistics = input;
             self
         }
+        /// Appends an item to `domain_isp_placements`.
+        ///
+        /// To override the contents of this collection use [`set_domain_isp_placements`](Self::set_domain_isp_placements).
+        ///
+        /// <p>An object that contains inbox placement metrics for a specified day in the analysis
+        /// period, broken out by the recipient's email provider.</p>
         pub fn domain_isp_placements(
             mut self,
             input: impl Into<crate::model::DomainIspPlacement>,
@@ -5891,6 +6593,8 @@ pub mod daily_volume {
             self.domain_isp_placements = Some(v);
             self
         }
+        /// <p>An object that contains inbox placement metrics for a specified day in the analysis
+        /// period, broken out by the recipient's email provider.</p>
         pub fn set_domain_isp_placements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
@@ -5964,6 +6668,7 @@ pub mod domain_isp_placement {
             self.isp_name = Some(input.into());
             self
         }
+        /// <p>The name of the email provider that the inbox placement data applies to.</p>
         pub fn set_isp_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.isp_name = input;
             self
@@ -5974,6 +6679,8 @@ pub mod domain_isp_placement {
             self.inbox_raw_count = Some(input);
             self
         }
+        /// <p>The total number of messages that were sent from the selected domain to the specified
+        /// email provider that arrived in recipients' inboxes.</p>
         pub fn set_inbox_raw_count(mut self, input: std::option::Option<i64>) -> Self {
             self.inbox_raw_count = input;
             self
@@ -5984,6 +6691,8 @@ pub mod domain_isp_placement {
             self.spam_raw_count = Some(input);
             self
         }
+        /// <p>The total number of messages that were sent from the selected domain to the specified
+        /// email provider that arrived in recipients' spam or junk mail folders.</p>
         pub fn set_spam_raw_count(mut self, input: std::option::Option<i64>) -> Self {
             self.spam_raw_count = input;
             self
@@ -5994,6 +6703,8 @@ pub mod domain_isp_placement {
             self.inbox_percentage = Some(input);
             self
         }
+        /// <p>The percentage of messages that were sent from the selected domain to the specified
+        /// email provider that arrived in recipients' inboxes.</p>
         pub fn set_inbox_percentage(mut self, input: std::option::Option<f64>) -> Self {
             self.inbox_percentage = input;
             self
@@ -6004,6 +6715,8 @@ pub mod domain_isp_placement {
             self.spam_percentage = Some(input);
             self
         }
+        /// <p>The percentage of messages that were sent from the selected domain to the specified
+        /// email provider that arrived in recipients' spam or junk mail folders.</p>
         pub fn set_spam_percentage(mut self, input: std::option::Option<f64>) -> Self {
             self.spam_percentage = input;
             self
@@ -6071,6 +6784,7 @@ pub mod volume_statistics {
             self.inbox_raw_count = Some(input);
             self
         }
+        /// <p>The total number of emails that arrived in recipients' inboxes.</p>
         pub fn set_inbox_raw_count(mut self, input: std::option::Option<i64>) -> Self {
             self.inbox_raw_count = input;
             self
@@ -6081,6 +6795,8 @@ pub mod volume_statistics {
             self.spam_raw_count = Some(input);
             self
         }
+        /// <p>The total number of emails that arrived in recipients' spam or junk mail
+        /// folders.</p>
         pub fn set_spam_raw_count(mut self, input: std::option::Option<i64>) -> Self {
             self.spam_raw_count = input;
             self
@@ -6091,6 +6807,8 @@ pub mod volume_statistics {
             self.projected_inbox = Some(input);
             self
         }
+        /// <p>An estimate of the percentage of emails sent from the current domain that will arrive
+        /// in recipients' inboxes.</p>
         pub fn set_projected_inbox(mut self, input: std::option::Option<i64>) -> Self {
             self.projected_inbox = input;
             self
@@ -6101,6 +6819,8 @@ pub mod volume_statistics {
             self.projected_spam = Some(input);
             self
         }
+        /// <p>An estimate of the percentage of emails sent from the current domain that will arrive
+        /// in recipients' spam or junk mail folders.</p>
         pub fn set_projected_spam(mut self, input: std::option::Option<i64>) -> Self {
             self.projected_spam = input;
             self
@@ -6165,6 +6885,8 @@ pub mod overall_volume {
             self.volume_statistics = Some(input);
             self
         }
+        /// <p>An object that contains information about the numbers of messages that arrived in
+        /// recipients' inboxes and junk mail folders.</p>
         pub fn set_volume_statistics(
             mut self,
             input: std::option::Option<crate::model::VolumeStatistics>,
@@ -6178,10 +6900,18 @@ pub mod overall_volume {
             self.read_rate_percent = Some(input);
             self
         }
+        /// <p>The percentage of emails that were sent from the domain that were read by their
+        /// recipients.</p>
         pub fn set_read_rate_percent(mut self, input: std::option::Option<f64>) -> Self {
             self.read_rate_percent = input;
             self
         }
+        /// Appends an item to `domain_isp_placements`.
+        ///
+        /// To override the contents of this collection use [`set_domain_isp_placements`](Self::set_domain_isp_placements).
+        ///
+        /// <p>An object that contains inbox and junk mail placement metrics for individual email
+        /// providers.</p>
         pub fn domain_isp_placements(
             mut self,
             input: impl Into<crate::model::DomainIspPlacement>,
@@ -6191,6 +6921,8 @@ pub mod overall_volume {
             self.domain_isp_placements = Some(v);
             self
         }
+        /// <p>An object that contains inbox and junk mail placement metrics for individual email
+        /// providers.</p>
         pub fn set_domain_isp_placements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
@@ -6248,6 +6980,7 @@ pub mod isp_placement {
             self.isp_name = Some(input.into());
             self
         }
+        /// <p>The name of the email provider that the inbox placement data applies to.</p>
         pub fn set_isp_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.isp_name = input;
             self
@@ -6257,6 +6990,7 @@ pub mod isp_placement {
             self.placement_statistics = Some(input);
             self
         }
+        /// <p>An object that contains inbox placement metrics for a specific email provider.</p>
         pub fn set_placement_statistics(
             mut self,
             input: std::option::Option<crate::model::PlacementStatistics>,
@@ -6328,6 +7062,7 @@ pub mod placement_statistics {
             self.inbox_percentage = Some(input);
             self
         }
+        /// <p>The percentage of emails that arrived in recipients' inboxes during the predictive inbox placement test.</p>
         pub fn set_inbox_percentage(mut self, input: std::option::Option<f64>) -> Self {
             self.inbox_percentage = input;
             self
@@ -6338,6 +7073,8 @@ pub mod placement_statistics {
             self.spam_percentage = Some(input);
             self
         }
+        /// <p>The percentage of emails that arrived in recipients' spam or junk mail folders during
+        /// the predictive inbox placement test.</p>
         pub fn set_spam_percentage(mut self, input: std::option::Option<f64>) -> Self {
             self.spam_percentage = input;
             self
@@ -6348,6 +7085,8 @@ pub mod placement_statistics {
             self.missing_percentage = Some(input);
             self
         }
+        /// <p>The percentage of emails that didn't arrive in recipients' inboxes at all during the
+        /// predictive inbox placement test.</p>
         pub fn set_missing_percentage(mut self, input: std::option::Option<f64>) -> Self {
             self.missing_percentage = input;
             self
@@ -6358,6 +7097,8 @@ pub mod placement_statistics {
             self.spf_percentage = Some(input);
             self
         }
+        /// <p>The percentage of emails that were authenticated by using Sender Policy Framework
+        /// (SPF) during the predictive inbox placement test.</p>
         pub fn set_spf_percentage(mut self, input: std::option::Option<f64>) -> Self {
             self.spf_percentage = input;
             self
@@ -6368,6 +7109,8 @@ pub mod placement_statistics {
             self.dkim_percentage = Some(input);
             self
         }
+        /// <p>The percentage of emails that were authenticated by using DomainKeys Identified Mail
+        /// (DKIM) during the predictive inbox placement test.</p>
         pub fn set_dkim_percentage(mut self, input: std::option::Option<f64>) -> Self {
             self.dkim_percentage = input;
             self
@@ -6405,8 +7148,11 @@ impl PlacementStatistics {
     std::hash::Hash,
 )]
 pub enum DeliverabilityDashboardAccountStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     PendingExpiration,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6429,6 +7175,7 @@ impl std::str::FromStr for DeliverabilityDashboardAccountStatus {
     }
 }
 impl DeliverabilityDashboardAccountStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeliverabilityDashboardAccountStatus::Active => "ACTIVE",
@@ -6437,6 +7184,7 @@ impl DeliverabilityDashboardAccountStatus {
             DeliverabilityDashboardAccountStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "DISABLED", "PENDING_EXPIRATION"]
     }
@@ -6505,6 +7253,7 @@ pub mod dedicated_ip {
             self.ip = Some(input.into());
             self
         }
+        /// <p>An IPv4 address.</p>
         pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip = input;
             self
@@ -6527,6 +7276,20 @@ pub mod dedicated_ip {
             self.warmup_status = Some(input);
             self
         }
+        /// <p>The warm-up status of a dedicated IP address. The status can have one of the following
+        /// values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>IN_PROGRESS</code> – The IP address isn't ready to use because the
+        /// dedicated IP warm-up process is ongoing.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DONE</code> – The dedicated IP warm-up process is complete, and
+        /// the IP address is ready to use.</p>
+        /// </li>
+        /// </ul>
         pub fn set_warmup_status(
             mut self,
             input: std::option::Option<crate::model::WarmupStatus>,
@@ -6540,6 +7303,8 @@ pub mod dedicated_ip {
             self.warmup_percentage = Some(input);
             self
         }
+        /// <p>Indicates how complete the dedicated IP warm-up process is. When this value equals 1,
+        /// the address has completed the warm-up process and is ready for use.</p>
         pub fn set_warmup_percentage(mut self, input: std::option::Option<i32>) -> Self {
             self.warmup_percentage = input;
             self
@@ -6549,6 +7314,7 @@ pub mod dedicated_ip {
             self.pool_name = Some(input.into());
             self
         }
+        /// <p>The name of the dedicated IP pool that the IP address is associated with.</p>
         pub fn set_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pool_name = input;
             self
@@ -6583,7 +7349,9 @@ impl DedicatedIp {
     std::hash::Hash,
 )]
 pub enum WarmupStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Done,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6605,6 +7373,7 @@ impl std::str::FromStr for WarmupStatus {
     }
 }
 impl WarmupStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WarmupStatus::Done => "DONE",
@@ -6612,6 +7381,7 @@ impl WarmupStatus {
             WarmupStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DONE", "IN_PROGRESS"]
     }
@@ -6694,6 +7464,7 @@ pub mod event_destination {
             self.name = Some(input.into());
             self
         }
+        /// <p>A name that identifies the event destination.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6707,16 +7478,27 @@ pub mod event_destination {
             self.enabled = Some(input);
             self
         }
+        /// <p>If <code>true</code>, the event destination is enabled. When the event destination is
+        /// enabled, the specified event types are sent to the destinations in this
+        /// <code>EventDestinationDefinition</code>.</p>
+        /// <p>If <code>false</code>, the event destination is disabled. When the event destination
+        /// is disabled, events aren't sent to the specified destinations.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
         }
+        /// Appends an item to `matching_event_types`.
+        ///
+        /// To override the contents of this collection use [`set_matching_event_types`](Self::set_matching_event_types).
+        ///
+        /// <p>The types of events that Amazon SES sends to the specified event destinations.</p>
         pub fn matching_event_types(mut self, input: impl Into<crate::model::EventType>) -> Self {
             let mut v = self.matching_event_types.unwrap_or_default();
             v.push(input.into());
             self.matching_event_types = Some(v);
             self
         }
+        /// <p>The types of events that Amazon SES sends to the specified event destinations.</p>
         pub fn set_matching_event_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventType>>,
@@ -6733,6 +7515,8 @@ pub mod event_destination {
             self.kinesis_firehose_destination = Some(input);
             self
         }
+        /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to
+        /// stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
         pub fn set_kinesis_firehose_destination(
             mut self,
             input: std::option::Option<crate::model::KinesisFirehoseDestination>,
@@ -6749,6 +7533,8 @@ pub mod event_destination {
             self.cloud_watch_destination = Some(input);
             self
         }
+        /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to
+        /// monitor and gain insights on your email sending metrics.</p>
         pub fn set_cloud_watch_destination(
             mut self,
             input: std::option::Option<crate::model::CloudWatchDestination>,
@@ -6762,6 +7548,8 @@ pub mod event_destination {
             self.sns_destination = Some(input);
             self
         }
+        /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to
+        /// send notification when certain email events occur.</p>
         pub fn set_sns_destination(
             mut self,
             input: std::option::Option<crate::model::SnsDestination>,
@@ -6777,6 +7565,10 @@ pub mod event_destination {
             self.pinpoint_destination = Some(input);
             self
         }
+        /// <p>An object that defines an Amazon Pinpoint project destination for email events. You can send
+        /// email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging
+        /// dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional
+        /// Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>.</p>
         pub fn set_pinpoint_destination(
             mut self,
             input: std::option::Option<crate::model::PinpointDestination>,
@@ -6846,6 +7638,27 @@ pub mod suppression_options {
             std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
     }
     impl Builder {
+        /// Appends an item to `suppressed_reasons`.
+        ///
+        /// To override the contents of this collection use [`set_suppressed_reasons`](Self::set_suppressed_reasons).
+        ///
+        /// <p>A list that contains the reasons that email addresses are automatically added to the
+        /// suppression list for your account. This list can contain any or all of the
+        /// following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression
+        /// list for your account when a message sent to that address results in a
+        /// complaint.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>BOUNCE</code> – Amazon SES adds an email address to the suppression
+        /// list for your account when a message sent to that address results in a hard
+        /// bounce.</p>
+        /// </li>
+        /// </ul>
         pub fn suppressed_reasons(
             mut self,
             input: impl Into<crate::model::SuppressionListReason>,
@@ -6855,6 +7668,23 @@ pub mod suppression_options {
             self.suppressed_reasons = Some(v);
             self
         }
+        /// <p>A list that contains the reasons that email addresses are automatically added to the
+        /// suppression list for your account. This list can contain any or all of the
+        /// following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression
+        /// list for your account when a message sent to that address results in a
+        /// complaint.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>BOUNCE</code> – Amazon SES adds an email address to the suppression
+        /// list for your account when a message sent to that address results in a hard
+        /// bounce.</p>
+        /// </li>
+        /// </ul>
         pub fn set_suppressed_reasons(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
@@ -6908,6 +7738,8 @@ pub mod sending_options {
             self.sending_enabled = Some(input);
             self
         }
+        /// <p>If <code>true</code>, email sending is enabled for the configuration set. If
+        /// <code>false</code>, email sending is disabled for the configuration set.</p>
         pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.sending_enabled = input;
             self
@@ -6939,7 +7771,7 @@ pub struct ReputationOptions {
     /// <p>The date and time (in Unix time) when the reputation metrics were last given a fresh
     /// start. When your account is given a fresh start, your reputation metrics are calculated
     /// starting from the date of the fresh start.</p>
-    pub last_fresh_start: std::option::Option<smithy_types::Instant>,
+    pub last_fresh_start: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ReputationOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6959,7 +7791,7 @@ pub mod reputation_options {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reputation_metrics_enabled: std::option::Option<bool>,
-        pub(crate) last_fresh_start: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_fresh_start: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration
@@ -6969,6 +7801,9 @@ pub mod reputation_options {
             self.reputation_metrics_enabled = Some(input);
             self
         }
+        /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration
+        /// set. If <code>false</code>, tracking of reputation metrics is disabled for the
+        /// configuration set.</p>
         pub fn set_reputation_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.reputation_metrics_enabled = input;
             self
@@ -6976,13 +7811,16 @@ pub mod reputation_options {
         /// <p>The date and time (in Unix time) when the reputation metrics were last given a fresh
         /// start. When your account is given a fresh start, your reputation metrics are calculated
         /// starting from the date of the fresh start.</p>
-        pub fn last_fresh_start(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_fresh_start(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_fresh_start = Some(input);
             self
         }
+        /// <p>The date and time (in Unix time) when the reputation metrics were last given a fresh
+        /// start. When your account is given a fresh start, your reputation metrics are calculated
+        /// starting from the date of the fresh start.</p>
         pub fn set_last_fresh_start(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_fresh_start = input;
             self
@@ -7041,6 +7879,10 @@ pub mod delivery_options {
             self.tls_policy = Some(input);
             self
         }
+        /// <p>Specifies whether messages that use the configuration set are required to use
+        /// Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only
+        /// delivered if a TLS connection can be established. If the value is <code>Optional</code>,
+        /// messages can be delivered in plain text if a TLS connection can't be established.</p>
         pub fn set_tls_policy(
             mut self,
             input: std::option::Option<crate::model::TlsPolicy>,
@@ -7053,6 +7895,7 @@ pub mod delivery_options {
             self.sending_pool_name = Some(input.into());
             self
         }
+        /// <p>The name of the dedicated IP pool to associate with the configuration set.</p>
         pub fn set_sending_pool_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7110,6 +7953,7 @@ pub mod tracking_options {
             self.custom_redirect_domain = Some(input.into());
             self
         }
+        /// <p>The domain to use for tracking open and click events.</p>
         pub fn set_custom_redirect_domain(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7140,7 +7984,7 @@ pub struct BlacklistEntry {
     /// <p>The name of the blacklist that the IP address appears on.</p>
     pub rbl_name: std::option::Option<std::string::String>,
     /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
-    pub listing_time: std::option::Option<smithy_types::Instant>,
+    pub listing_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Additional information about the blacklisting event, as provided by the blacklist
     /// maintainer.</p>
     pub description: std::option::Option<std::string::String>,
@@ -7161,7 +8005,7 @@ pub mod blacklist_entry {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rbl_name: std::option::Option<std::string::String>,
-        pub(crate) listing_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) listing_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -7170,18 +8014,20 @@ pub mod blacklist_entry {
             self.rbl_name = Some(input.into());
             self
         }
+        /// <p>The name of the blacklist that the IP address appears on.</p>
         pub fn set_rbl_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rbl_name = input;
             self
         }
         /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
-        pub fn listing_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn listing_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.listing_time = Some(input);
             self
         }
+        /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
         pub fn set_listing_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.listing_time = input;
             self
@@ -7192,6 +8038,8 @@ pub mod blacklist_entry {
             self.description = Some(input.into());
             self
         }
+        /// <p>Additional information about the blacklisting event, as provided by the blacklist
+        /// maintainer.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -7294,6 +8142,20 @@ pub mod account_details {
             self.mail_type = Some(input);
             self
         }
+        /// <p>The type of email your account is sending. The mail type can be one of the
+        /// following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>MARKETING</code> – Most of your sending traffic is to keep your
+        /// customers informed of your latest offering.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TRANSACTIONAL</code> – Most of your sending traffic is to
+        /// communicate during a transaction with a customer.</p>
+        /// </li>
+        /// </ul>
         pub fn set_mail_type(mut self, input: std::option::Option<crate::model::MailType>) -> Self {
             self.mail_type = input;
             self
@@ -7304,6 +8166,8 @@ pub mod account_details {
             self.website_url = Some(input.into());
             self
         }
+        /// <p>The URL of your website. This information helps us better understand the type of
+        /// content that you plan to send.</p>
         pub fn set_website_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.website_url = input;
             self
@@ -7314,6 +8178,8 @@ pub mod account_details {
             self.contact_language = Some(input);
             self
         }
+        /// <p>The language you would prefer for the case. The contact language can be one of
+        /// <code>ENGLISH</code> or <code>JAPANESE</code>.</p>
         pub fn set_contact_language(
             mut self,
             input: std::option::Option<crate::model::ContactLanguage>,
@@ -7326,6 +8192,7 @@ pub mod account_details {
             self.use_case_description = Some(input.into());
             self
         }
+        /// <p>A description of the types of email that you plan to send.</p>
         pub fn set_use_case_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7333,6 +8200,12 @@ pub mod account_details {
             self.use_case_description = input;
             self
         }
+        /// Appends an item to `additional_contact_email_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_additional_contact_email_addresses`](Self::set_additional_contact_email_addresses).
+        ///
+        /// <p>Additional email addresses where updates are sent about your account review
+        /// process.</p>
         pub fn additional_contact_email_addresses(
             mut self,
             input: impl Into<std::string::String>,
@@ -7342,6 +8215,8 @@ pub mod account_details {
             self.additional_contact_email_addresses = Some(v);
             self
         }
+        /// <p>Additional email addresses where updates are sent about your account review
+        /// process.</p>
         pub fn set_additional_contact_email_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7354,6 +8229,7 @@ pub mod account_details {
             self.review_details = Some(input);
             self
         }
+        /// <p>Information about the review of the latest details you submitted.</p>
         pub fn set_review_details(
             mut self,
             input: std::option::Option<crate::model::ReviewDetails>,
@@ -7459,6 +8335,30 @@ pub mod review_details {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the latest review of your account. The status can be one of the
+        /// following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code> – We have received your appeal and are in the
+        /// process of reviewing it.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GRANTED</code> – Your appeal has been reviewed and your production
+        /// access has been granted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DENIED</code> – Your appeal has been reviewed and your production
+        /// access has been denied.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code> – An internal error occurred and we didn't receive
+        /// your appeal. You can submit your appeal again.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ReviewStatus>,
@@ -7471,6 +8371,7 @@ pub mod review_details {
             self.case_id = Some(input.into());
             self
         }
+        /// <p>The associated support center case ID (if any).</p>
         pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.case_id = input;
             self
@@ -7491,6 +8392,7 @@ impl ReviewDetails {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7502,9 +8404,13 @@ impl ReviewDetails {
     std::hash::Hash,
 )]
 pub enum ReviewStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Denied,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Granted,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7528,6 +8434,7 @@ impl std::str::FromStr for ReviewStatus {
     }
 }
 impl ReviewStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReviewStatus::Denied => "DENIED",
@@ -7537,6 +8444,7 @@ impl ReviewStatus {
             ReviewStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DENIED", "FAILED", "GRANTED", "PENDING"]
     }
@@ -7588,6 +8496,27 @@ pub mod suppression_attributes {
             std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
     }
     impl Builder {
+        /// Appends an item to `suppressed_reasons`.
+        ///
+        /// To override the contents of this collection use [`set_suppressed_reasons`](Self::set_suppressed_reasons).
+        ///
+        /// <p>A list that contains the reasons that email addresses will be automatically added to
+        /// the suppression list for your account. This list can contain any or all of the
+        /// following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression
+        /// list for your account when a message sent to that address results in a
+        /// complaint.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>BOUNCE</code> – Amazon SES adds an email address to the suppression
+        /// list for your account when a message sent to that address results in a hard
+        /// bounce.</p>
+        /// </li>
+        /// </ul>
         pub fn suppressed_reasons(
             mut self,
             input: impl Into<crate::model::SuppressionListReason>,
@@ -7597,6 +8526,23 @@ pub mod suppression_attributes {
             self.suppressed_reasons = Some(v);
             self
         }
+        /// <p>A list that contains the reasons that email addresses will be automatically added to
+        /// the suppression list for your account. This list can contain any or all of the
+        /// following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression
+        /// list for your account when a message sent to that address results in a
+        /// complaint.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>BOUNCE</code> – Amazon SES adds an email address to the suppression
+        /// list for your account when a message sent to that address results in a hard
+        /// bounce.</p>
+        /// </li>
+        /// </ul>
         pub fn set_suppressed_reasons(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
@@ -7663,6 +8609,9 @@ pub mod send_quota {
             self.max24_hour_send = Some(input);
             self
         }
+        /// <p>The maximum number of emails that you can send in the current Amazon Web Services Region over a
+        /// 24-hour period. This value is also called your <i>sending
+        /// quota</i>.</p>
         pub fn set_max24_hour_send(mut self, input: std::option::Option<f64>) -> Self {
             self.max24_hour_send = input;
             self
@@ -7674,6 +8623,9 @@ pub mod send_quota {
             self.max_send_rate = Some(input);
             self
         }
+        /// <p>The maximum number of emails that you can send per second in the current Amazon Web Services Region.
+        /// This value is also called your <i>maximum sending rate</i> or your
+        /// <i>maximum TPS (transactions per second) rate</i>.</p>
         pub fn set_max_send_rate(mut self, input: std::option::Option<f64>) -> Self {
             self.max_send_rate = input;
             self
@@ -7684,6 +8636,8 @@ pub mod send_quota {
             self.sent_last24_hours = Some(input);
             self
         }
+        /// <p>The number of emails sent from your Amazon SES account in the current Amazon Web Services Region over the
+        /// past 24 hours.</p>
         pub fn set_sent_last24_hours(mut self, input: std::option::Option<f64>) -> Self {
             self.sent_last24_hours = input;
             self

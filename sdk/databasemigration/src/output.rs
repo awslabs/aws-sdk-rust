@@ -27,6 +27,7 @@ pub mod test_connection_output {
             self.connection = Some(input);
             self
         }
+        /// <p>The connection tested.</p>
         pub fn set_connection(
             mut self,
             input: std::option::Option<crate::model::Connection>,
@@ -77,6 +78,7 @@ pub mod stop_replication_task_output {
             self.replication_task = Some(input);
             self
         }
+        /// <p>The replication task stopped.</p>
         pub fn set_replication_task(
             mut self,
             input: std::option::Option<crate::model::ReplicationTask>,
@@ -135,6 +137,7 @@ pub mod start_replication_task_assessment_run_output {
             self.replication_task_assessment_run = Some(input);
             self
         }
+        /// <p>The premigration assessment run that was started.</p>
         pub fn set_replication_task_assessment_run(
             mut self,
             input: std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
@@ -185,6 +188,7 @@ pub mod start_replication_task_assessment_output {
             self.replication_task = Some(input);
             self
         }
+        /// <p> The assessed replication task. </p>
         pub fn set_replication_task(
             mut self,
             input: std::option::Option<crate::model::ReplicationTask>,
@@ -235,6 +239,7 @@ pub mod start_replication_task_output {
             self.replication_task = Some(input);
             self
         }
+        /// <p>The replication task started.</p>
         pub fn set_replication_task(
             mut self,
             input: std::option::Option<crate::model::ReplicationTask>,
@@ -287,6 +292,7 @@ impl RemoveTagsFromResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReloadTablesOutput {
@@ -314,6 +320,7 @@ pub mod reload_tables_output {
             self.replication_task_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
         pub fn set_replication_task_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -364,6 +371,7 @@ pub mod refresh_schemas_output {
             self.refresh_schemas_status = Some(input);
             self
         }
+        /// <p>The status of the refreshed schema.</p>
         pub fn set_refresh_schemas_status(
             mut self,
             input: std::option::Option<crate::model::RefreshSchemasStatus>,
@@ -386,6 +394,7 @@ impl RefreshSchemasOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebootReplicationInstanceOutput {
@@ -413,6 +422,7 @@ pub mod reboot_replication_instance_output {
             self.replication_instance = Some(input);
             self
         }
+        /// <p>The replication instance that is being rebooted. </p>
         pub fn set_replication_instance(
             mut self,
             input: std::option::Option<crate::model::ReplicationInstance>,
@@ -463,6 +473,7 @@ pub mod move_replication_task_output {
             self.replication_task = Some(input);
             self
         }
+        /// <p>The replication task that was moved.</p>
         pub fn set_replication_task(
             mut self,
             input: std::option::Option<crate::model::ReplicationTask>,
@@ -513,6 +524,7 @@ pub mod modify_replication_task_output {
             self.replication_task = Some(input);
             self
         }
+        /// <p>The replication task that was modified.</p>
         pub fn set_replication_task(
             mut self,
             input: std::option::Option<crate::model::ReplicationTask>,
@@ -567,6 +579,7 @@ pub mod modify_replication_subnet_group_output {
             self.replication_subnet_group = Some(input);
             self
         }
+        /// <p>The modified replication subnet group.</p>
         pub fn set_replication_subnet_group(
             mut self,
             input: std::option::Option<crate::model::ReplicationSubnetGroup>,
@@ -617,6 +630,7 @@ pub mod modify_replication_instance_output {
             self.replication_instance = Some(input);
             self
         }
+        /// <p>The modified replication instance.</p>
         pub fn set_replication_instance(
             mut self,
             input: std::option::Option<crate::model::ReplicationInstance>,
@@ -667,6 +681,7 @@ pub mod modify_event_subscription_output {
             self.event_subscription = Some(input);
             self
         }
+        /// <p>The modified event subscription.</p>
         pub fn set_event_subscription(
             mut self,
             input: std::option::Option<crate::model::EventSubscription>,
@@ -717,6 +732,7 @@ pub mod modify_endpoint_output {
             self.endpoint = Some(input);
             self
         }
+        /// <p>The modified endpoint.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<crate::model::Endpoint>) -> Self {
             self.endpoint = input;
             self
@@ -759,12 +775,18 @@ pub mod list_tags_for_resource_output {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
+        /// Appends an item to `tag_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+        ///
+        /// <p>A list of tags for the resource.</p>
         pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
             v.push(input.into());
             self.tag_list = Some(v);
             self
         }
+        /// <p>A list of tags for the resource.</p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -787,6 +809,7 @@ impl ListTagsForResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportCertificateOutput {
@@ -814,6 +837,7 @@ pub mod import_certificate_output {
             self.certificate = Some(input);
             self
         }
+        /// <p>The certificate to be uploaded.</p>
         pub fn set_certificate(
             mut self,
             input: std::option::Option<crate::model::Certificate>,
@@ -875,6 +899,7 @@ pub mod describe_table_statistics_output {
             self.replication_task_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
         pub fn set_replication_task_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -882,12 +907,18 @@ pub mod describe_table_statistics_output {
             self.replication_task_arn = input;
             self
         }
+        /// Appends an item to `table_statistics`.
+        ///
+        /// To override the contents of this collection use [`set_table_statistics`](Self::set_table_statistics).
+        ///
+        /// <p>The table statistics.</p>
         pub fn table_statistics(mut self, input: impl Into<crate::model::TableStatistics>) -> Self {
             let mut v = self.table_statistics.unwrap_or_default();
             v.push(input.into());
             self.table_statistics = Some(v);
             self
         }
+        /// <p>The table statistics.</p>
         pub fn set_table_statistics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TableStatistics>>,
@@ -902,6 +933,9 @@ pub mod describe_table_statistics_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p> An optional pagination token provided by a previous request. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified
+        /// by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -959,16 +993,25 @@ pub mod describe_schemas_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p> An optional pagination token provided by a previous request. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified
+        /// by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
+        /// Appends an item to `schemas`.
+        ///
+        /// To override the contents of this collection use [`set_schemas`](Self::set_schemas).
+        ///
+        /// <p>The described schema.</p>
         pub fn schemas(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.schemas.unwrap_or_default();
             v.push(input.into());
             self.schemas = Some(v);
             self
         }
+        /// <p>The described schema.</p>
         pub fn set_schemas(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1029,10 +1072,18 @@ pub mod describe_replication_tasks_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p> An optional pagination token provided by a previous request. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified
+        /// by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
+        /// Appends an item to `replication_tasks`.
+        ///
+        /// To override the contents of this collection use [`set_replication_tasks`](Self::set_replication_tasks).
+        ///
+        /// <p>A description of the replication tasks.</p>
         pub fn replication_tasks(
             mut self,
             input: impl Into<crate::model::ReplicationTask>,
@@ -1042,6 +1093,7 @@ pub mod describe_replication_tasks_output {
             self.replication_tasks = Some(v);
             self
         }
+        /// <p>A description of the replication tasks.</p>
         pub fn set_replication_tasks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReplicationTask>>,
@@ -1108,10 +1160,19 @@ pub mod describe_replication_task_individual_assessments_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this
+        /// token as the <code>Marker</code> value in a subsequent request, the response includes only
+        /// records beyond the marker, up to the value specified in the request by
+        /// <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
+        /// Appends an item to `replication_task_individual_assessments`.
+        ///
+        /// To override the contents of this collection use [`set_replication_task_individual_assessments`](Self::set_replication_task_individual_assessments).
+        ///
+        /// <p>One or more individual assessments as specified by <code>Filters</code>.</p>
         pub fn replication_task_individual_assessments(
             mut self,
             input: impl Into<crate::model::ReplicationTaskIndividualAssessment>,
@@ -1123,6 +1184,7 @@ pub mod describe_replication_task_individual_assessments_output {
             self.replication_task_individual_assessments = Some(v);
             self
         }
+        /// <p>One or more individual assessments as specified by <code>Filters</code>.</p>
         pub fn set_replication_task_individual_assessments(
             mut self,
             input: std::option::Option<
@@ -1193,10 +1255,19 @@ pub mod describe_replication_task_assessment_runs_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this
+        /// token as the <code>Marker</code> value in a subsequent request, the response includes only
+        /// records beyond the marker, up to the value specified in the request by
+        /// <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
+        /// Appends an item to `replication_task_assessment_runs`.
+        ///
+        /// To override the contents of this collection use [`set_replication_task_assessment_runs`](Self::set_replication_task_assessment_runs).
+        ///
+        /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
         pub fn replication_task_assessment_runs(
             mut self,
             input: impl Into<crate::model::ReplicationTaskAssessmentRun>,
@@ -1206,6 +1277,7 @@ pub mod describe_replication_task_assessment_runs_output {
             self.replication_task_assessment_runs = Some(v);
             self
         }
+        /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
         pub fn set_replication_task_assessment_runs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReplicationTaskAssessmentRun>>,
@@ -1274,6 +1346,9 @@ pub mod describe_replication_task_assessment_results_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p> An optional pagination token provided by a previous request. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified
+        /// by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1283,10 +1358,16 @@ pub mod describe_replication_task_assessment_results_output {
             self.bucket_name = Some(input.into());
             self
         }
+        /// <p>- The Amazon S3 bucket where the task assessment report is located. </p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
         }
+        /// Appends an item to `replication_task_assessment_results`.
+        ///
+        /// To override the contents of this collection use [`set_replication_task_assessment_results`](Self::set_replication_task_assessment_results).
+        ///
+        /// <p> The task assessment report. </p>
         pub fn replication_task_assessment_results(
             mut self,
             input: impl Into<crate::model::ReplicationTaskAssessmentResult>,
@@ -1296,6 +1377,7 @@ pub mod describe_replication_task_assessment_results_output {
             self.replication_task_assessment_results = Some(v);
             self
         }
+        /// <p> The task assessment report. </p>
         pub fn set_replication_task_assessment_results(
             mut self,
             input: std::option::Option<
@@ -1361,10 +1443,18 @@ pub mod describe_replication_subnet_groups_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p> An optional pagination token provided by a previous request. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified
+        /// by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
+        /// Appends an item to `replication_subnet_groups`.
+        ///
+        /// To override the contents of this collection use [`set_replication_subnet_groups`](Self::set_replication_subnet_groups).
+        ///
+        /// <p>A description of the replication subnet groups.</p>
         pub fn replication_subnet_groups(
             mut self,
             input: impl Into<crate::model::ReplicationSubnetGroup>,
@@ -1374,6 +1464,7 @@ pub mod describe_replication_subnet_groups_output {
             self.replication_subnet_groups = Some(v);
             self
         }
+        /// <p>A description of the replication subnet groups.</p>
         pub fn set_replication_subnet_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReplicationSubnetGroup>>,
@@ -1397,6 +1488,7 @@ impl DescribeReplicationSubnetGroupsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationInstanceTaskLogsOutput {
@@ -1440,6 +1532,7 @@ pub mod describe_replication_instance_task_logs_output {
             self.replication_instance_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
         pub fn set_replication_instance_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1447,6 +1540,12 @@ pub mod describe_replication_instance_task_logs_output {
             self.replication_instance_arn = input;
             self
         }
+        /// Appends an item to `replication_instance_task_logs`.
+        ///
+        /// To override the contents of this collection use [`set_replication_instance_task_logs`](Self::set_replication_instance_task_logs).
+        ///
+        /// <p>An array of replication task log metadata. Each member of the array contains the
+        /// replication task name, ARN, and task log size (in bytes). </p>
         pub fn replication_instance_task_logs(
             mut self,
             input: impl Into<crate::model::ReplicationInstanceTaskLog>,
@@ -1456,6 +1555,8 @@ pub mod describe_replication_instance_task_logs_output {
             self.replication_instance_task_logs = Some(v);
             self
         }
+        /// <p>An array of replication task log metadata. Each member of the array contains the
+        /// replication task name, ARN, and task log size (in bytes). </p>
         pub fn set_replication_instance_task_logs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReplicationInstanceTaskLog>>,
@@ -1470,6 +1571,9 @@ pub mod describe_replication_instance_task_logs_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p> An optional pagination token provided by a previous request. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified
+        /// by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1529,10 +1633,18 @@ pub mod describe_replication_instances_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p> An optional pagination token provided by a previous request. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified
+        /// by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
+        /// Appends an item to `replication_instances`.
+        ///
+        /// To override the contents of this collection use [`set_replication_instances`](Self::set_replication_instances).
+        ///
+        /// <p>The replication instances described.</p>
         pub fn replication_instances(
             mut self,
             input: impl Into<crate::model::ReplicationInstance>,
@@ -1542,6 +1654,7 @@ pub mod describe_replication_instances_output {
             self.replication_instances = Some(v);
             self
         }
+        /// <p>The replication instances described.</p>
         pub fn set_replication_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReplicationInstance>>,
@@ -1593,6 +1706,7 @@ pub mod describe_refresh_schemas_status_output {
             self.refresh_schemas_status = Some(input);
             self
         }
+        /// <p>The status of the schema.</p>
         pub fn set_refresh_schemas_status(
             mut self,
             input: std::option::Option<crate::model::RefreshSchemasStatus>,
@@ -1649,6 +1763,11 @@ pub mod describe_pending_maintenance_actions_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `pending_maintenance_actions`.
+        ///
+        /// To override the contents of this collection use [`set_pending_maintenance_actions`](Self::set_pending_maintenance_actions).
+        ///
+        /// <p>The pending maintenance action.</p>
         pub fn pending_maintenance_actions(
             mut self,
             input: impl Into<crate::model::ResourcePendingMaintenanceActions>,
@@ -1658,6 +1777,7 @@ pub mod describe_pending_maintenance_actions_output {
             self.pending_maintenance_actions = Some(v);
             self
         }
+        /// <p>The pending maintenance action.</p>
         pub fn set_pending_maintenance_actions(
             mut self,
             input: std::option::Option<
@@ -1674,6 +1794,9 @@ pub mod describe_pending_maintenance_actions_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p> An optional pagination token provided by a previous request. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified
+        /// by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1728,6 +1851,11 @@ pub mod describe_orderable_replication_instances_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `orderable_replication_instances`.
+        ///
+        /// To override the contents of this collection use [`set_orderable_replication_instances`](Self::set_orderable_replication_instances).
+        ///
+        /// <p>The order-able replication instances available.</p>
         pub fn orderable_replication_instances(
             mut self,
             input: impl Into<crate::model::OrderableReplicationInstance>,
@@ -1737,6 +1865,7 @@ pub mod describe_orderable_replication_instances_output {
             self.orderable_replication_instances = Some(v);
             self
         }
+        /// <p>The order-able replication instances available.</p>
         pub fn set_orderable_replication_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OrderableReplicationInstance>>,
@@ -1751,6 +1880,9 @@ pub mod describe_orderable_replication_instances_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p> An optional pagination token provided by a previous request. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified
+        /// by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1809,10 +1941,18 @@ pub mod describe_event_subscriptions_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p> An optional pagination token provided by a previous request. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified
+        /// by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
+        /// Appends an item to `event_subscriptions_list`.
+        ///
+        /// To override the contents of this collection use [`set_event_subscriptions_list`](Self::set_event_subscriptions_list).
+        ///
+        /// <p>A list of event subscriptions.</p>
         pub fn event_subscriptions_list(
             mut self,
             input: impl Into<crate::model::EventSubscription>,
@@ -1822,6 +1962,7 @@ pub mod describe_event_subscriptions_output {
             self.event_subscriptions_list = Some(v);
             self
         }
+        /// <p>A list of event subscriptions.</p>
         pub fn set_event_subscriptions_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
@@ -1881,16 +2022,25 @@ pub mod describe_events_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p> An optional pagination token provided by a previous request. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified
+        /// by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
+        /// Appends an item to `events`.
+        ///
+        /// To override the contents of this collection use [`set_events`](Self::set_events).
+        ///
+        /// <p>The events described.</p>
         pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
             let mut v = self.events.unwrap_or_default();
             v.push(input.into());
             self.events = Some(v);
             self
         }
+        /// <p>The events described.</p>
         pub fn set_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Event>>,
@@ -1939,6 +2089,11 @@ pub mod describe_event_categories_output {
             std::option::Option<std::vec::Vec<crate::model::EventCategoryGroup>>,
     }
     impl Builder {
+        /// Appends an item to `event_category_group_list`.
+        ///
+        /// To override the contents of this collection use [`set_event_category_group_list`](Self::set_event_category_group_list).
+        ///
+        /// <p>A list of event categories.</p>
         pub fn event_category_group_list(
             mut self,
             input: impl Into<crate::model::EventCategoryGroup>,
@@ -1948,6 +2103,7 @@ pub mod describe_event_categories_output {
             self.event_category_group_list = Some(v);
             self
         }
+        /// <p>A list of event categories.</p>
         pub fn set_event_category_group_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventCategoryGroup>>,
@@ -2008,10 +2164,18 @@ pub mod describe_endpoint_types_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p> An optional pagination token provided by a previous request. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified
+        /// by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
+        /// Appends an item to `supported_endpoint_types`.
+        ///
+        /// To override the contents of this collection use [`set_supported_endpoint_types`](Self::set_supported_endpoint_types).
+        ///
+        /// <p>The types of endpoints that are supported.</p>
         pub fn supported_endpoint_types(
             mut self,
             input: impl Into<crate::model::SupportedEndpointType>,
@@ -2021,6 +2185,7 @@ pub mod describe_endpoint_types_output {
             self.supported_endpoint_types = Some(v);
             self
         }
+        /// <p>The types of endpoints that are supported.</p>
         pub fn set_supported_endpoint_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SupportedEndpointType>>,
@@ -2044,6 +2209,7 @@ impl DescribeEndpointTypesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointSettingsOutput {
@@ -2078,10 +2244,17 @@ pub mod describe_endpoint_settings_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified,
+        /// the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
+        /// Appends an item to `endpoint_settings`.
+        ///
+        /// To override the contents of this collection use [`set_endpoint_settings`](Self::set_endpoint_settings).
+        ///
+        /// <p>Descriptions of the endpoint settings available for your source or target database engine.</p>
         pub fn endpoint_settings(
             mut self,
             input: impl Into<crate::model::EndpointSetting>,
@@ -2091,6 +2264,7 @@ pub mod describe_endpoint_settings_output {
             self.endpoint_settings = Some(v);
             self
         }
+        /// <p>Descriptions of the endpoint settings available for your source or target database engine.</p>
         pub fn set_endpoint_settings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EndpointSetting>>,
@@ -2150,16 +2324,25 @@ pub mod describe_endpoints_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p> An optional pagination token provided by a previous request. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified
+        /// by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
+        /// Appends an item to `endpoints`.
+        ///
+        /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
+        ///
+        /// <p>Endpoint description.</p>
         pub fn endpoints(mut self, input: impl Into<crate::model::Endpoint>) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
             v.push(input.into());
             self.endpoints = Some(v);
             self
         }
+        /// <p>Endpoint description.</p>
         pub fn set_endpoints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
@@ -2219,16 +2402,25 @@ pub mod describe_connections_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p> An optional pagination token provided by a previous request. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified
+        /// by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
+        /// Appends an item to `connections`.
+        ///
+        /// To override the contents of this collection use [`set_connections`](Self::set_connections).
+        ///
+        /// <p>A description of the connections.</p>
         pub fn connections(mut self, input: impl Into<crate::model::Connection>) -> Self {
             let mut v = self.connections.unwrap_or_default();
             v.push(input.into());
             self.connections = Some(v);
             self
         }
+        /// <p>A description of the connections.</p>
         pub fn set_connections(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Connection>>,
@@ -2252,6 +2444,7 @@ impl DescribeConnectionsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificatesOutput {
@@ -2284,16 +2477,25 @@ pub mod describe_certificates_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>The pagination token.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
+        /// Appends an item to `certificates`.
+        ///
+        /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
+        ///
+        /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication
+        /// instance.</p>
         pub fn certificates(mut self, input: impl Into<crate::model::Certificate>) -> Self {
             let mut v = self.certificates.unwrap_or_default();
             v.push(input.into());
             self.certificates = Some(v);
             self
         }
+        /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication
+        /// instance.</p>
         pub fn set_certificates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
@@ -2356,6 +2558,16 @@ pub mod describe_applicable_individual_assessments_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `individual_assessment_names`.
+        ///
+        /// To override the contents of this collection use [`set_individual_assessment_names`](Self::set_individual_assessment_names).
+        ///
+        /// <p>List of names for the individual assessments supported by the premigration assessment
+        /// run that you start based on the specified request parameters. For more information on the
+        /// available individual assessments, including compatibility with different migration task
+        /// configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the
+        /// <i>Database Migration Service User Guide.</i>
+        /// </p>
         pub fn individual_assessment_names(
             mut self,
             input: impl Into<std::string::String>,
@@ -2365,6 +2577,12 @@ pub mod describe_applicable_individual_assessments_output {
             self.individual_assessment_names = Some(v);
             self
         }
+        /// <p>List of names for the individual assessments supported by the premigration assessment
+        /// run that you start based on the specified request parameters. For more information on the
+        /// available individual assessments, including compatibility with different migration task
+        /// configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the
+        /// <i>Database Migration Service User Guide.</i>
+        /// </p>
         pub fn set_individual_assessment_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2380,6 +2598,10 @@ pub mod describe_applicable_individual_assessments_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>Pagination token returned for you to pass to a subsequent request. If you pass this
+        /// token as the <code>Marker</code> value in a subsequent request, the response includes only
+        /// records beyond the marker, up to the value specified in the request by
+        /// <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2438,12 +2660,18 @@ pub mod describe_account_attributes_output {
         pub(crate) unique_account_identifier: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `account_quotas`.
+        ///
+        /// To override the contents of this collection use [`set_account_quotas`](Self::set_account_quotas).
+        ///
+        /// <p>Account quota information.</p>
         pub fn account_quotas(mut self, input: impl Into<crate::model::AccountQuota>) -> Self {
             let mut v = self.account_quotas.unwrap_or_default();
             v.push(input.into());
             self.account_quotas = Some(v);
             self
         }
+        /// <p>Account quota information.</p>
         pub fn set_account_quotas(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccountQuota>>,
@@ -2467,6 +2695,18 @@ pub mod describe_account_attributes_output {
             self.unique_account_identifier = Some(input.into());
             self
         }
+        /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this
+        /// identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to
+        /// name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket
+        /// for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket
+        /// name is the following:
+        /// <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code>
+        /// Here is an example name for this default S3 bucket:
+        /// <code>dms-111122223333-c44445555666</code>.</p>
+        /// <note>
+        /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in
+        /// versions 3.1.4 and later.</p>
+        /// </note>
         pub fn set_unique_account_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2528,6 +2768,8 @@ pub mod delete_replication_task_assessment_run_output {
             self.replication_task_assessment_run = Some(input);
             self
         }
+        /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted assessment
+        /// run.</p>
         pub fn set_replication_task_assessment_run(
             mut self,
             input: std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
@@ -2578,6 +2820,7 @@ pub mod delete_replication_task_output {
             self.replication_task = Some(input);
             self
         }
+        /// <p>The deleted replication task.</p>
         pub fn set_replication_task(
             mut self,
             input: std::option::Option<crate::model::ReplicationTask>,
@@ -2658,6 +2901,7 @@ pub mod delete_replication_instance_output {
             self.replication_instance = Some(input);
             self
         }
+        /// <p>The replication instance that was deleted.</p>
         pub fn set_replication_instance(
             mut self,
             input: std::option::Option<crate::model::ReplicationInstance>,
@@ -2708,6 +2952,7 @@ pub mod delete_event_subscription_output {
             self.event_subscription = Some(input);
             self
         }
+        /// <p>The event subscription that was deleted.</p>
         pub fn set_event_subscription(
             mut self,
             input: std::option::Option<crate::model::EventSubscription>,
@@ -2758,6 +3003,7 @@ pub mod delete_endpoint_output {
             self.endpoint = Some(input);
             self
         }
+        /// <p>The endpoint that was deleted.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<crate::model::Endpoint>) -> Self {
             self.endpoint = input;
             self
@@ -2805,6 +3051,7 @@ pub mod delete_connection_output {
             self.connection = Some(input);
             self
         }
+        /// <p>The connection that is being deleted.</p>
         pub fn set_connection(
             mut self,
             input: std::option::Option<crate::model::Connection>,
@@ -2827,6 +3074,7 @@ impl DeleteConnectionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCertificateOutput {
@@ -2854,6 +3102,7 @@ pub mod delete_certificate_output {
             self.certificate = Some(input);
             self
         }
+        /// <p>The Secure Sockets Layer (SSL) certificate.</p>
         pub fn set_certificate(
             mut self,
             input: std::option::Option<crate::model::Certificate>,
@@ -2904,6 +3153,7 @@ pub mod create_replication_task_output {
             self.replication_task = Some(input);
             self
         }
+        /// <p>The replication task that was created.</p>
         pub fn set_replication_task(
             mut self,
             input: std::option::Option<crate::model::ReplicationTask>,
@@ -2958,6 +3208,7 @@ pub mod create_replication_subnet_group_output {
             self.replication_subnet_group = Some(input);
             self
         }
+        /// <p>The replication subnet group that was created.</p>
         pub fn set_replication_subnet_group(
             mut self,
             input: std::option::Option<crate::model::ReplicationSubnetGroup>,
@@ -3008,6 +3259,7 @@ pub mod create_replication_instance_output {
             self.replication_instance = Some(input);
             self
         }
+        /// <p>The replication instance that was created.</p>
         pub fn set_replication_instance(
             mut self,
             input: std::option::Option<crate::model::ReplicationInstance>,
@@ -3058,6 +3310,7 @@ pub mod create_event_subscription_output {
             self.event_subscription = Some(input);
             self
         }
+        /// <p>The event subscription that was created.</p>
         pub fn set_event_subscription(
             mut self,
             input: std::option::Option<crate::model::EventSubscription>,
@@ -3108,6 +3361,7 @@ pub mod create_endpoint_output {
             self.endpoint = Some(input);
             self
         }
+        /// <p>The endpoint that was created.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<crate::model::Endpoint>) -> Self {
             self.endpoint = input;
             self
@@ -3165,6 +3419,8 @@ pub mod cancel_replication_task_assessment_run_output {
             self.replication_task_assessment_run = Some(input);
             self
         }
+        /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the canceled assessment
+        /// run.</p>
         pub fn set_replication_task_assessment_run(
             mut self,
             input: std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
@@ -3223,6 +3479,7 @@ pub mod apply_pending_maintenance_action_output {
             self.resource_pending_maintenance_actions = Some(input);
             self
         }
+        /// <p>The DMS resource that the pending maintenance action will be applied to.</p>
         pub fn set_resource_pending_maintenance_actions(
             mut self,
             input: std::option::Option<crate::model::ResourcePendingMaintenanceActions>,

@@ -80,6 +80,11 @@ pub mod policy_details {
             self.policy_type = Some(input);
             self
         }
+        /// <p>The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code>
+        /// to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code>
+        /// to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code>
+        /// to create an event-based policy that performs specific actions when a defined event occurs in your Amazon Web Services account.</p>
+        /// <p>The default is <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
         pub fn set_policy_type(
             mut self,
             input: std::option::Option<crate::model::PolicyTypeValues>,
@@ -87,6 +92,14 @@ pub mod policy_details {
             self.policy_type = input;
             self
         }
+        /// Appends an item to `resource_types`.
+        ///
+        /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
+        ///
+        /// <p>The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to
+        /// create snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume
+        /// snapshots from the volumes for an instance.</p>
+        /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
         pub fn resource_types(
             mut self,
             input: impl Into<crate::model::ResourceTypeValues>,
@@ -96,6 +109,10 @@ pub mod policy_details {
             self.resource_types = Some(v);
             self
         }
+        /// <p>The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME </code>to
+        /// create snapshots of individual volumes or use <code>INSTANCE</code> to create multi-volume
+        /// snapshots from the volumes for an instance.</p>
+        /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
         pub fn set_resource_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceTypeValues>>,
@@ -103,6 +120,15 @@ pub mod policy_details {
             self.resource_types = input;
             self
         }
+        /// Appends an item to `resource_locations`.
+        ///
+        /// To override the contents of this collection use [`set_resource_locations`](Self::set_resource_locations).
+        ///
+        /// <p>The location of the resources to backup. If the source resources are located in an Amazon Web Services Region,
+        /// specify <code>CLOUD</code>. If the source resources are located on an Outpost
+        /// in your account, specify <code>OUTPOST</code>. </p>
+        /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources
+        /// of the specified type with matching target tags across all of the Outposts in your account.</p>
         pub fn resource_locations(
             mut self,
             input: impl Into<crate::model::ResourceLocationValues>,
@@ -112,6 +138,11 @@ pub mod policy_details {
             self.resource_locations = Some(v);
             self
         }
+        /// <p>The location of the resources to backup. If the source resources are located in an Amazon Web Services Region,
+        /// specify <code>CLOUD</code>. If the source resources are located on an Outpost
+        /// in your account, specify <code>OUTPOST</code>. </p>
+        /// <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources
+        /// of the specified type with matching target tags across all of the Outposts in your account.</p>
         pub fn set_resource_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceLocationValues>>,
@@ -119,12 +150,20 @@ pub mod policy_details {
             self.resource_locations = input;
             self
         }
+        /// Appends an item to `target_tags`.
+        ///
+        /// To override the contents of this collection use [`set_target_tags`](Self::set_target_tags).
+        ///
+        /// <p>The single tag that identifies targeted resources for this policy.</p>
+        /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
         pub fn target_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.target_tags.unwrap_or_default();
             v.push(input.into());
             self.target_tags = Some(v);
             self
         }
+        /// <p>The single tag that identifies targeted resources for this policy.</p>
+        /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
         pub fn set_target_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -132,12 +171,22 @@ pub mod policy_details {
             self.target_tags = input;
             self
         }
+        /// Appends an item to `schedules`.
+        ///
+        /// To override the contents of this collection use [`set_schedules`](Self::set_schedules).
+        ///
+        /// <p>The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy
+        /// can have up to four schedules—one mandatory schedule and up to three optional schedules.</p>
+        /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
         pub fn schedules(mut self, input: impl Into<crate::model::Schedule>) -> Self {
             let mut v = self.schedules.unwrap_or_default();
             v.push(input.into());
             self.schedules = Some(v);
             self
         }
+        /// <p>The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy
+        /// can have up to four schedules—one mandatory schedule and up to three optional schedules.</p>
+        /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
         pub fn set_schedules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Schedule>>,
@@ -151,6 +200,8 @@ pub mod policy_details {
             self.parameters = Some(input);
             self
         }
+        /// <p>A set of optional parameters for snapshot and AMI lifecycle policies. </p>
+        /// <p>This parameter is required for snapshot and AMI policies only. If you are creating an event-based policy, omit this parameter.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<crate::model::Parameters>,
@@ -164,6 +215,8 @@ pub mod policy_details {
             self.event_source = Some(input);
             self
         }
+        /// <p>The event that triggers the event-based policy. </p>
+        /// <p>This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy, omit this parameter.</p>
         pub fn set_event_source(
             mut self,
             input: std::option::Option<crate::model::EventSource>,
@@ -171,12 +224,22 @@ pub mod policy_details {
             self.event_source = input;
             self
         }
+        /// Appends an item to `actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>The actions to be performed when the event-based policy is triggered. You can specify
+        /// only one action per policy.</p>
+        /// <p>This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy, omit this parameter.</p>
         pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
             self.actions = Some(v);
             self
         }
+        /// <p>The actions to be performed when the event-based policy is triggered. You can specify
+        /// only one action per policy.</p>
+        /// <p>This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy, omit this parameter.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Action>>,
@@ -239,10 +302,16 @@ pub mod action {
             self.name = Some(input.into());
             self
         }
+        /// <p>A descriptive name for the action.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `cross_region_copy`.
+        ///
+        /// To override the contents of this collection use [`set_cross_region_copy`](Self::set_cross_region_copy).
+        ///
+        /// <p>The rule for copying shared snapshots across Regions.</p>
         pub fn cross_region_copy(
             mut self,
             input: impl Into<crate::model::CrossRegionCopyAction>,
@@ -252,6 +321,7 @@ pub mod action {
             self.cross_region_copy = Some(v);
             self
         }
+        /// <p>The rule for copying shared snapshots across Regions.</p>
         pub fn set_cross_region_copy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CrossRegionCopyAction>>,
@@ -312,6 +382,7 @@ pub mod cross_region_copy_action {
             self.target = Some(input.into());
             self
         }
+        /// <p>The target Region.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target = input;
             self
@@ -324,6 +395,7 @@ pub mod cross_region_copy_action {
             self.encryption_configuration = Some(input);
             self
         }
+        /// <p>The encryption settings for the copied snapshot.</p>
         pub fn set_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfiguration>,
@@ -336,6 +408,7 @@ pub mod cross_region_copy_action {
             self.retain_rule = Some(input);
             self
         }
+        /// <p>Specifies the retention rule for cross-Region snapshot copies.</p>
         pub fn set_retain_rule(
             mut self,
             input: std::option::Option<crate::model::CrossRegionCopyRetainRule>,
@@ -394,6 +467,8 @@ pub mod cross_region_copy_retain_rule {
             self.interval = Some(input);
             self
         }
+        /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is
+        /// equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
         pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.interval = input;
             self
@@ -403,6 +478,7 @@ pub mod cross_region_copy_retain_rule {
             self.interval_unit = Some(input);
             self
         }
+        /// <p>The unit of time for time-based retention.</p>
         pub fn set_interval_unit(
             mut self,
             input: std::option::Option<crate::model::RetentionIntervalUnitValues>,
@@ -426,6 +502,7 @@ impl CrossRegionCopyRetainRule {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -437,9 +514,13 @@ impl CrossRegionCopyRetainRule {
     std::hash::Hash,
 )]
 pub enum RetentionIntervalUnitValues {
+    #[allow(missing_docs)] // documentation missing in model
     Days,
+    #[allow(missing_docs)] // documentation missing in model
     Months,
+    #[allow(missing_docs)] // documentation missing in model
     Weeks,
+    #[allow(missing_docs)] // documentation missing in model
     Years,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -463,6 +544,7 @@ impl std::str::FromStr for RetentionIntervalUnitValues {
     }
 }
 impl RetentionIntervalUnitValues {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RetentionIntervalUnitValues::Days => "DAYS",
@@ -472,6 +554,7 @@ impl RetentionIntervalUnitValues {
             RetentionIntervalUnitValues::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DAYS", "MONTHS", "WEEKS", "YEARS"]
     }
@@ -519,6 +602,9 @@ pub mod encryption_configuration {
             self.encrypted = Some(input);
             self
         }
+        /// <p>To encrypt a copy of an unencrypted snapshot when encryption by default is not enabled, enable
+        /// encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this
+        /// parameter is false or when encryption by default is not enabled.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.encrypted = input;
             self
@@ -529,6 +615,8 @@ pub mod encryption_configuration {
             self.cmk_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If
+        /// this parameter is not specified, the default KMS key for the account is used.</p>
         pub fn set_cmk_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cmk_arn = input;
             self
@@ -581,6 +669,7 @@ pub mod event_source {
             self.r#type = Some(input);
             self
         }
+        /// <p>The source of the event. Currently only managed CloudWatch Events rules are supported.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::EventSourceValues>,
@@ -593,6 +682,7 @@ pub mod event_source {
             self.parameters = Some(input);
             self
         }
+        /// <p>Information about the event.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<crate::model::EventParameters>,
@@ -658,6 +748,7 @@ pub mod event_parameters {
             self.event_type = Some(input);
             self
         }
+        /// <p>The type of event. Currently, only snapshot sharing events are supported.</p>
         pub fn set_event_type(
             mut self,
             input: std::option::Option<crate::model::EventTypeValues>,
@@ -665,12 +756,20 @@ pub mod event_parameters {
             self.event_type = input;
             self
         }
+        /// Appends an item to `snapshot_owner`.
+        ///
+        /// To override the contents of this collection use [`set_snapshot_owner`](Self::set_snapshot_owner).
+        ///
+        /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account.
+        /// The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
         pub fn snapshot_owner(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.snapshot_owner.unwrap_or_default();
             v.push(input.into());
             self.snapshot_owner = Some(v);
             self
         }
+        /// <p>The IDs of the Amazon Web Services accounts that can trigger policy by sharing snapshots with your account.
+        /// The policy only runs if one of the specified Amazon Web Services accounts shares a snapshot with your account.</p>
         pub fn set_snapshot_owner(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -688,6 +787,12 @@ pub mod event_parameters {
             self.description_regex = Some(input.into());
             self
         }
+        /// <p>The snapshot description that can trigger the policy. The description pattern is specified using
+        /// a regular expression. The policy runs only if a snapshot with a description that matches the
+        /// specified pattern is shared with your account.</p>
+        /// <p>For example, specifying <code>^.*Created for policy: policy-1234567890abcdef0.*$</code>  
+        /// configures the policy to run only if snapshots created by policy <code>policy-1234567890abcdef0</code>
+        /// are shared with your account.</p>
         pub fn set_description_regex(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -712,6 +817,7 @@ impl EventParameters {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -723,6 +829,7 @@ impl EventParameters {
     std::hash::Hash,
 )]
 pub enum EventTypeValues {
+    #[allow(missing_docs)] // documentation missing in model
     ShareSnapshot,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -743,12 +850,14 @@ impl std::str::FromStr for EventTypeValues {
     }
 }
 impl EventTypeValues {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EventTypeValues::ShareSnapshot => "shareSnapshot",
             EventTypeValues::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["shareSnapshot"]
     }
@@ -759,6 +868,7 @@ impl AsRef<str> for EventTypeValues {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -770,6 +880,7 @@ impl AsRef<str> for EventTypeValues {
     std::hash::Hash,
 )]
 pub enum EventSourceValues {
+    #[allow(missing_docs)] // documentation missing in model
     ManagedCwe,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -790,12 +901,14 @@ impl std::str::FromStr for EventSourceValues {
     }
 }
 impl EventSourceValues {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EventSourceValues::ManagedCwe => "MANAGED_CWE",
             EventSourceValues::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MANAGED_CWE"]
     }
@@ -846,6 +959,9 @@ pub mod parameters {
             self.exclude_boot_volume = Some(input);
             self
         }
+        /// <p>[EBS Snapshot Management – Instance policies only] Indicates whether to exclude the
+        /// root volume from snapshots created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>.
+        /// The default is false.</p>
         pub fn set_exclude_boot_volume(mut self, input: std::option::Option<bool>) -> Self {
             self.exclude_boot_volume = input;
             self
@@ -858,6 +974,10 @@ pub mod parameters {
             self.no_reboot = Some(input);
             self
         }
+        /// <p>Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted when the lifecycle
+        /// policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy
+        /// runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The
+        /// default is <code>true</code> (instances are not rebooted).</p>
         pub fn set_no_reboot(mut self, input: std::option::Option<bool>) -> Self {
             self.no_reboot = input;
             self
@@ -953,6 +1073,7 @@ pub mod schedule {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the schedule.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -963,16 +1084,26 @@ pub mod schedule {
             self.copy_tags = Some(input);
             self
         }
+        /// <p>Copy all user-defined tags on a source volume to snapshots of the volume created by
+        /// this policy.</p>
         pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.copy_tags = input;
             self
         }
+        /// Appends an item to `tags_to_add`.
+        ///
+        /// To override the contents of this collection use [`set_tags_to_add`](Self::set_tags_to_add).
+        ///
+        /// <p>The tags to apply to policy-created resources. These user-defined tags are in addition
+        /// to the Amazon Web Services-added lifecycle tags.</p>
         pub fn tags_to_add(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags_to_add.unwrap_or_default();
             v.push(input.into());
             self.tags_to_add = Some(v);
             self
         }
+        /// <p>The tags to apply to policy-created resources. These user-defined tags are in addition
+        /// to the Amazon Web Services-added lifecycle tags.</p>
         pub fn set_tags_to_add(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -980,12 +1111,24 @@ pub mod schedule {
             self.tags_to_add = input;
             self
         }
+        /// Appends an item to `variable_tags`.
+        ///
+        /// To override the contents of this collection use [`set_variable_tags`](Self::set_variable_tags).
+        ///
+        /// <p>A collection of key/value pairs with values determined dynamically when the policy is
+        /// executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two
+        /// following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable
+        /// tags are only valid for EBS Snapshot Management – Instance policies.</p>
         pub fn variable_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.variable_tags.unwrap_or_default();
             v.push(input.into());
             self.variable_tags = Some(v);
             self
         }
+        /// <p>A collection of key/value pairs with values determined dynamically when the policy is
+        /// executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the two
+        /// following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable
+        /// tags are only valid for EBS Snapshot Management – Instance policies.</p>
         pub fn set_variable_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -998,6 +1141,7 @@ pub mod schedule {
             self.create_rule = Some(input);
             self
         }
+        /// <p>The creation rule.</p>
         pub fn set_create_rule(
             mut self,
             input: std::option::Option<crate::model::CreateRule>,
@@ -1010,6 +1154,7 @@ pub mod schedule {
             self.retain_rule = Some(input);
             self
         }
+        /// <p>The retention rule.</p>
         pub fn set_retain_rule(
             mut self,
             input: std::option::Option<crate::model::RetainRule>,
@@ -1022,6 +1167,7 @@ pub mod schedule {
             self.fast_restore_rule = Some(input);
             self
         }
+        /// <p>The rule for enabling fast snapshot restore.</p>
         pub fn set_fast_restore_rule(
             mut self,
             input: std::option::Option<crate::model::FastRestoreRule>,
@@ -1029,6 +1175,15 @@ pub mod schedule {
             self.fast_restore_rule = input;
             self
         }
+        /// Appends an item to `cross_region_copy_rules`.
+        ///
+        /// To override the contents of this collection use [`set_cross_region_copy_rules`](Self::set_cross_region_copy_rules).
+        ///
+        /// <p>The rule for cross-Region snapshot copies.</p>
+        /// <p>You can only specify cross-Region copy rules for policies that create snapshots in a Region.
+        /// If the policy creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or
+        /// to an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three
+        /// Regions or Outposts.</p>
         pub fn cross_region_copy_rules(
             mut self,
             input: impl Into<crate::model::CrossRegionCopyRule>,
@@ -1038,6 +1193,11 @@ pub mod schedule {
             self.cross_region_copy_rules = Some(v);
             self
         }
+        /// <p>The rule for cross-Region snapshot copies.</p>
+        /// <p>You can only specify cross-Region copy rules for policies that create snapshots in a Region.
+        /// If the policy creates snapshots on an Outpost, then you cannot copy the snapshots to a Region or
+        /// to an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three
+        /// Regions or Outposts.</p>
         pub fn set_cross_region_copy_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CrossRegionCopyRule>>,
@@ -1045,12 +1205,18 @@ pub mod schedule {
             self.cross_region_copy_rules = input;
             self
         }
+        /// Appends an item to `share_rules`.
+        ///
+        /// To override the contents of this collection use [`set_share_rules`](Self::set_share_rules).
+        ///
+        /// <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
         pub fn share_rules(mut self, input: impl Into<crate::model::ShareRule>) -> Self {
             let mut v = self.share_rules.unwrap_or_default();
             v.push(input.into());
             self.share_rules = Some(v);
             self
         }
+        /// <p>The rule for sharing snapshots with other Amazon Web Services accounts.</p>
         pub fn set_share_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ShareRule>>,
@@ -1063,6 +1229,7 @@ pub mod schedule {
             self.deprecate_rule = Some(input);
             self
         }
+        /// <p>The AMI deprecation rule for the schedule.</p>
         pub fn set_deprecate_rule(
             mut self,
             input: std::option::Option<crate::model::DeprecateRule>,
@@ -1137,6 +1304,9 @@ pub mod deprecate_rule {
             self.count = Some(input);
             self
         }
+        /// <p>If the schedule has a count-based retention rule, this parameter specifies the number of oldest
+        /// AMIs to deprecate. The count must be less than or equal to the schedule's retention count, and it
+        /// can't be greater than 1000.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
@@ -1149,6 +1319,10 @@ pub mod deprecate_rule {
             self.interval = Some(input);
             self
         }
+        /// <p>If the schedule has an age-based retention rule, this parameter specifies the period after which
+        /// to deprecate AMIs created by the schedule. The period must be less than or equal to the schedule's
+        /// retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520
+        /// weeks, or 3650 days.</p>
         pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.interval = input;
             self
@@ -1158,6 +1332,7 @@ pub mod deprecate_rule {
             self.interval_unit = Some(input);
             self
         }
+        /// <p>The unit of time in which to measure the <b>Interval</b>.</p>
         pub fn set_interval_unit(
             mut self,
             input: std::option::Option<crate::model::RetentionIntervalUnitValues>,
@@ -1214,12 +1389,18 @@ pub mod share_rule {
             std::option::Option<crate::model::RetentionIntervalUnitValues>,
     }
     impl Builder {
+        /// Appends an item to `target_accounts`.
+        ///
+        /// To override the contents of this collection use [`set_target_accounts`](Self::set_target_accounts).
+        ///
+        /// <p>The IDs of the Amazon Web Services accounts with which to share the snapshots.</p>
         pub fn target_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_accounts.unwrap_or_default();
             v.push(input.into());
             self.target_accounts = Some(v);
             self
         }
+        /// <p>The IDs of the Amazon Web Services accounts with which to share the snapshots.</p>
         pub fn set_target_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1232,6 +1413,7 @@ pub mod share_rule {
             self.unshare_interval = Some(input);
             self
         }
+        /// <p>The period after which snapshots that are shared with other Amazon Web Services accounts are automatically unshared.</p>
         pub fn set_unshare_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.unshare_interval = input;
             self
@@ -1244,6 +1426,7 @@ pub mod share_rule {
             self.unshare_interval_unit = Some(input);
             self
         }
+        /// <p>The unit of time for the automatic unsharing interval.</p>
         pub fn set_unshare_interval_unit(
             mut self,
             input: std::option::Option<crate::model::RetentionIntervalUnitValues>,
@@ -1334,6 +1517,10 @@ pub mod cross_region_copy_rule {
             self.target_region = Some(input.into());
             self
         }
+        /// <p>Avoid using this parameter when creating new policies. Instead, use <b>Target</b>
+        /// to specify a target Region or a target Outpost for snapshot copies.</p>
+        /// <p>For policies created before the <b>Target</b> parameter
+        /// was introduced, this parameter indicates the target Region for snapshot copies.</p>
         pub fn set_target_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1349,6 +1536,10 @@ pub mod cross_region_copy_rule {
             self.target = Some(input.into());
             self
         }
+        /// <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
+        /// snapshot copies.</p>
+        /// <p>Use this parameter instead of <b>TargetRegion</b>. Do not
+        /// specify both.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target = input;
             self
@@ -1360,6 +1551,9 @@ pub mod cross_region_copy_rule {
             self.encrypted = Some(input);
             self
         }
+        /// <p>To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled,
+        /// enable encryption using this parameter. Copies of encrypted snapshots are encrypted,
+        /// even if this parameter is false or if encryption by default is not enabled.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.encrypted = input;
             self
@@ -1370,6 +1564,8 @@ pub mod cross_region_copy_rule {
             self.cmk_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this
+        /// parameter is not specified, the default KMS key for the account is used.</p>
         pub fn set_cmk_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cmk_arn = input;
             self
@@ -1380,6 +1576,8 @@ pub mod cross_region_copy_rule {
             self.copy_tags = Some(input);
             self
         }
+        /// <p>Indicates whether to copy all user-defined tags from the source snapshot to the cross-Region
+        /// snapshot copy.</p>
         pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.copy_tags = input;
             self
@@ -1390,6 +1588,8 @@ pub mod cross_region_copy_rule {
             self.retain_rule = Some(input);
             self
         }
+        /// <p>The retention rule that indicates how long snapshot copies are to be retained in the
+        /// destination Region.</p>
         pub fn set_retain_rule(
             mut self,
             input: std::option::Option<crate::model::CrossRegionCopyRetainRule>,
@@ -1402,6 +1602,7 @@ pub mod cross_region_copy_rule {
             self.deprecate_rule = Some(input);
             self
         }
+        /// <p>The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
         pub fn set_deprecate_rule(
             mut self,
             input: std::option::Option<crate::model::CrossRegionCopyDeprecateRule>,
@@ -1466,6 +1667,9 @@ pub mod cross_region_copy_deprecate_rule {
             self.interval = Some(input);
             self
         }
+        /// <p>The period after which to deprecate the cross-Region AMI copies. The period must be less than or
+        /// equal to the cross-Region AMI copy retention period, and it can't be greater than 10 years. This is
+        /// equivalent to 120 months, 520 weeks, or 3650 days.</p>
         pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.interval = input;
             self
@@ -1475,6 +1679,7 @@ pub mod cross_region_copy_deprecate_rule {
             self.interval_unit = Some(input);
             self
         }
+        /// <p>The unit of time in which to measure the <b>Interval</b>.</p>
         pub fn set_interval_unit(
             mut self,
             input: std::option::Option<crate::model::RetentionIntervalUnitValues>,
@@ -1540,6 +1745,7 @@ pub mod fast_restore_rule {
             self.count = Some(input);
             self
         }
+        /// <p>The number of snapshots to be enabled with fast snapshot restore.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
@@ -1550,6 +1756,8 @@ pub mod fast_restore_rule {
             self.interval = Some(input);
             self
         }
+        /// <p>The amount of time to enable fast snapshot restore. The maximum is 100 years. This is
+        /// equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
         pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.interval = input;
             self
@@ -1559,6 +1767,7 @@ pub mod fast_restore_rule {
             self.interval_unit = Some(input);
             self
         }
+        /// <p>The unit of time for enabling fast snapshot restore.</p>
         pub fn set_interval_unit(
             mut self,
             input: std::option::Option<crate::model::RetentionIntervalUnitValues>,
@@ -1566,12 +1775,18 @@ pub mod fast_restore_rule {
             self.interval_unit = input;
             self
         }
+        /// Appends an item to `availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
+        ///
+        /// <p>The Availability Zones in which to enable fast snapshot restore.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
+        /// <p>The Availability Zones in which to enable fast snapshot restore.</p>
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1635,6 +1850,7 @@ pub mod retain_rule {
             self.count = Some(input);
             self
         }
+        /// <p>The number of snapshots to retain for each volume, up to a maximum of 1000.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
@@ -1645,6 +1861,8 @@ pub mod retain_rule {
             self.interval = Some(input);
             self
         }
+        /// <p>The amount of time to retain each snapshot. The maximum is 100 years. This is
+        /// equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
         pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.interval = input;
             self
@@ -1654,6 +1872,7 @@ pub mod retain_rule {
             self.interval_unit = Some(input);
             self
         }
+        /// <p>The unit of time for time-based retention.</p>
         pub fn set_interval_unit(
             mut self,
             input: std::option::Option<crate::model::RetentionIntervalUnitValues>,
@@ -1743,6 +1962,14 @@ pub mod create_rule {
             self.location = Some(input);
             self
         }
+        /// <p>Specifies the destination for snapshots created by the policy. To create snapshots in the same
+        /// Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same
+        /// Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
+        /// parameter, <code>CLOUD</code> is used by default.</p>
+        /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same
+        /// Region as the source resource.</p>
+        /// <p>If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost
+        /// as the source resource, or in the Region of that Outpost.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::LocationValues>,
@@ -1756,6 +1983,8 @@ pub mod create_rule {
             self.interval = Some(input);
             self
         }
+        /// <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and
+        /// 24.</p>
         pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.interval = input;
             self
@@ -1765,6 +1994,7 @@ pub mod create_rule {
             self.interval_unit = Some(input);
             self
         }
+        /// <p>The interval unit.</p>
         pub fn set_interval_unit(
             mut self,
             input: std::option::Option<crate::model::IntervalUnitValues>,
@@ -1772,12 +2002,22 @@ pub mod create_rule {
             self.interval_unit = input;
             self
         }
+        /// Appends an item to `times`.
+        ///
+        /// To override the contents of this collection use [`set_times`](Self::set_times).
+        ///
+        /// <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
+        /// <p>The operation occurs within a one-hour window following the specified time. If you do
+        /// not specify a time, Amazon DLM selects a time within the next 24 hours.</p>
         pub fn times(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.times.unwrap_or_default();
             v.push(input.into());
             self.times = Some(v);
             self
         }
+        /// <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
+        /// <p>The operation occurs within a one-hour window following the specified time. If you do
+        /// not specify a time, Amazon DLM selects a time within the next 24 hours.</p>
         pub fn set_times(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1792,6 +2032,9 @@ pub mod create_rule {
             self.cron_expression = Some(input.into());
             self
         }
+        /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1
+        /// year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+        /// expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
         pub fn set_cron_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1818,6 +2061,7 @@ impl CreateRule {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1829,6 +2073,7 @@ impl CreateRule {
     std::hash::Hash,
 )]
 pub enum IntervalUnitValues {
+    #[allow(missing_docs)] // documentation missing in model
     Hours,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1849,12 +2094,14 @@ impl std::str::FromStr for IntervalUnitValues {
     }
 }
 impl IntervalUnitValues {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IntervalUnitValues::Hours => "HOURS",
             IntervalUnitValues::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HOURS"]
     }
@@ -1865,6 +2112,7 @@ impl AsRef<str> for IntervalUnitValues {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1876,7 +2124,9 @@ impl AsRef<str> for IntervalUnitValues {
     std::hash::Hash,
 )]
 pub enum LocationValues {
+    #[allow(missing_docs)] // documentation missing in model
     Cloud,
+    #[allow(missing_docs)] // documentation missing in model
     OutpostLocal,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1898,6 +2148,7 @@ impl std::str::FromStr for LocationValues {
     }
 }
 impl LocationValues {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LocationValues::Cloud => "CLOUD",
@@ -1905,6 +2156,7 @@ impl LocationValues {
             LocationValues::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CLOUD", "OUTPOST_LOCAL"]
     }
@@ -1947,6 +2199,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The tag key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -1956,6 +2209,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The tag value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1976,6 +2230,7 @@ impl Tag {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1987,7 +2242,9 @@ impl Tag {
     std::hash::Hash,
 )]
 pub enum ResourceLocationValues {
+    #[allow(missing_docs)] // documentation missing in model
     Cloud,
+    #[allow(missing_docs)] // documentation missing in model
     Outpost,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2009,6 +2266,7 @@ impl std::str::FromStr for ResourceLocationValues {
     }
 }
 impl ResourceLocationValues {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceLocationValues::Cloud => "CLOUD",
@@ -2016,6 +2274,7 @@ impl ResourceLocationValues {
             ResourceLocationValues::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CLOUD", "OUTPOST"]
     }
@@ -2026,6 +2285,7 @@ impl AsRef<str> for ResourceLocationValues {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2037,7 +2297,9 @@ impl AsRef<str> for ResourceLocationValues {
     std::hash::Hash,
 )]
 pub enum ResourceTypeValues {
+    #[allow(missing_docs)] // documentation missing in model
     Instance,
+    #[allow(missing_docs)] // documentation missing in model
     Volume,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2059,6 +2321,7 @@ impl std::str::FromStr for ResourceTypeValues {
     }
 }
 impl ResourceTypeValues {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceTypeValues::Instance => "INSTANCE",
@@ -2066,6 +2329,7 @@ impl ResourceTypeValues {
             ResourceTypeValues::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["INSTANCE", "VOLUME"]
     }
@@ -2076,6 +2340,7 @@ impl AsRef<str> for ResourceTypeValues {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2087,8 +2352,11 @@ impl AsRef<str> for ResourceTypeValues {
     std::hash::Hash,
 )]
 pub enum PolicyTypeValues {
+    #[allow(missing_docs)] // documentation missing in model
     EbsSnapshotManagement,
+    #[allow(missing_docs)] // documentation missing in model
     EventBasedPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     ImageManagement,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2111,6 +2379,7 @@ impl std::str::FromStr for PolicyTypeValues {
     }
 }
 impl PolicyTypeValues {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PolicyTypeValues::EbsSnapshotManagement => "EBS_SNAPSHOT_MANAGEMENT",
@@ -2119,6 +2388,7 @@ impl PolicyTypeValues {
             PolicyTypeValues::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "EBS_SNAPSHOT_MANAGEMENT",
@@ -2133,6 +2403,7 @@ impl AsRef<str> for PolicyTypeValues {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2144,7 +2415,9 @@ impl AsRef<str> for PolicyTypeValues {
     std::hash::Hash,
 )]
 pub enum SettablePolicyStateValues {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2166,6 +2439,7 @@ impl std::str::FromStr for SettablePolicyStateValues {
     }
 }
 impl SettablePolicyStateValues {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SettablePolicyStateValues::Disabled => "DISABLED",
@@ -2173,6 +2447,7 @@ impl SettablePolicyStateValues {
             SettablePolicyStateValues::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -2199,9 +2474,9 @@ pub struct LifecyclePolicy {
     /// the lifecycle policy.</p>
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The local date and time when the lifecycle policy was created.</p>
-    pub date_created: std::option::Option<smithy_types::Instant>,
+    pub date_created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The local date and time when the lifecycle policy was last modified.</p>
-    pub date_modified: std::option::Option<smithy_types::Instant>,
+    pub date_modified: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The configuration of the lifecycle policy</p>
     pub policy_details: std::option::Option<crate::model::PolicyDetails>,
     /// <p>The tags.</p>
@@ -2237,8 +2512,8 @@ pub mod lifecycle_policy {
         pub(crate) state: std::option::Option<crate::model::GettablePolicyStateValues>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) execution_role_arn: std::option::Option<std::string::String>,
-        pub(crate) date_created: std::option::Option<smithy_types::Instant>,
-        pub(crate) date_modified: std::option::Option<smithy_types::Instant>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date_modified: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) policy_details: std::option::Option<crate::model::PolicyDetails>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -2251,6 +2526,7 @@ pub mod lifecycle_policy {
             self.policy_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the lifecycle policy.</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
@@ -2260,6 +2536,7 @@ pub mod lifecycle_policy {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the lifecycle policy.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2269,6 +2546,7 @@ pub mod lifecycle_policy {
             self.state = Some(input);
             self
         }
+        /// <p>The activation state of the lifecycle policy.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::GettablePolicyStateValues>,
@@ -2281,6 +2559,7 @@ pub mod lifecycle_policy {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>The description of the status.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2294,6 +2573,8 @@ pub mod lifecycle_policy {
             self.execution_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by
+        /// the lifecycle policy.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2302,25 +2583,27 @@ pub mod lifecycle_policy {
             self
         }
         /// <p>The local date and time when the lifecycle policy was created.</p>
-        pub fn date_created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date_created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date_created = Some(input);
             self
         }
+        /// <p>The local date and time when the lifecycle policy was created.</p>
         pub fn set_date_created(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.date_created = input;
             self
         }
         /// <p>The local date and time when the lifecycle policy was last modified.</p>
-        pub fn date_modified(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date_modified(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date_modified = Some(input);
             self
         }
+        /// <p>The local date and time when the lifecycle policy was last modified.</p>
         pub fn set_date_modified(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.date_modified = input;
             self
@@ -2330,6 +2613,7 @@ pub mod lifecycle_policy {
             self.policy_details = Some(input);
             self
         }
+        /// <p>The configuration of the lifecycle policy</p>
         pub fn set_policy_details(
             mut self,
             input: std::option::Option<crate::model::PolicyDetails>,
@@ -2337,6 +2621,11 @@ pub mod lifecycle_policy {
             self.policy_details = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2347,6 +2636,7 @@ pub mod lifecycle_policy {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2361,6 +2651,7 @@ pub mod lifecycle_policy {
             self.policy_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the policy.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input;
             self
@@ -2389,6 +2680,7 @@ impl LifecyclePolicy {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2400,8 +2692,11 @@ impl LifecyclePolicy {
     std::hash::Hash,
 )]
 pub enum GettablePolicyStateValues {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2424,6 +2719,7 @@ impl std::str::FromStr for GettablePolicyStateValues {
     }
 }
 impl GettablePolicyStateValues {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GettablePolicyStateValues::Disabled => "DISABLED",
@@ -2432,6 +2728,7 @@ impl GettablePolicyStateValues {
             GettablePolicyStateValues::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED", "ERROR"]
     }
@@ -2491,6 +2788,7 @@ pub mod lifecycle_policy_summary {
             self.policy_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the lifecycle policy.</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
@@ -2500,6 +2798,7 @@ pub mod lifecycle_policy_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the lifecycle policy.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2509,6 +2808,7 @@ pub mod lifecycle_policy_summary {
             self.state = Some(input);
             self
         }
+        /// <p>The activation state of the lifecycle policy.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::GettablePolicyStateValues>,
@@ -2516,6 +2816,11 @@ pub mod lifecycle_policy_summary {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2526,6 +2831,7 @@ pub mod lifecycle_policy_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2542,6 +2848,9 @@ pub mod lifecycle_policy_summary {
             self.policy_type = Some(input);
             self
         }
+        /// <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy
+        /// manages the lifecycle of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code>
+        /// indicates that the policy manages the lifecycle of EBS-backed AMIs.</p>
         pub fn set_policy_type(
             mut self,
             input: std::option::Option<crate::model::PolicyTypeValues>,

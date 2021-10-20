@@ -15,12 +15,18 @@ pub mod batch_execute_statement_input {
         pub(crate) statement_name: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `sqls`.
+        ///
+        /// To override the contents of this collection use [`set_sqls`](Self::set_sqls).
+        ///
+        /// <p>One or more SQL statements to run. </p>
         pub fn sqls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.sqls.unwrap_or_default();
             v.push(input.into());
             self.sqls = Some(v);
             self
         }
+        /// <p>One or more SQL statements to run. </p>
         pub fn set_sqls(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -33,6 +39,7 @@ pub mod batch_execute_statement_input {
             self.cluster_identifier = Some(input.into());
             self
         }
+        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -45,6 +52,7 @@ pub mod batch_execute_statement_input {
             self.secret_arn = Some(input.into());
             self
         }
+        /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -54,6 +62,7 @@ pub mod batch_execute_statement_input {
             self.db_user = Some(input.into());
             self
         }
+        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_user = input;
             self
@@ -63,6 +72,7 @@ pub mod batch_execute_statement_input {
             self.database = Some(input.into());
             self
         }
+        /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.database = input;
             self
@@ -72,6 +82,7 @@ pub mod batch_execute_statement_input {
             self.with_event = Some(input);
             self
         }
+        /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
         pub fn set_with_event(mut self, input: std::option::Option<bool>) -> Self {
             self.with_event = input;
             self
@@ -81,6 +92,7 @@ pub mod batch_execute_statement_input {
             self.statement_name = Some(input.into());
             self
         }
+        /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
         pub fn set_statement_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -93,7 +105,7 @@ pub mod batch_execute_statement_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchExecuteStatementInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchExecuteStatementInput {
                 sqls: self.sqls,
@@ -118,16 +130,16 @@ impl BatchExecuteStatementInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchExecuteStatement,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchExecuteStatementInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -135,7 +147,7 @@ impl BatchExecuteStatementInput {
         fn update_http_builder(
             input: &crate::input::BatchExecuteStatementInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -144,32 +156,34 @@ impl BatchExecuteStatementInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchExecuteStatementInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RedshiftData.BatchExecuteStatement",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_execute_statement(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -192,15 +206,15 @@ impl BatchExecuteStatementInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchExecuteStatement::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchExecuteStatement",
             "redshiftdata",
         ));
@@ -209,10 +223,10 @@ impl BatchExecuteStatementInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -241,6 +255,8 @@ pub mod cancel_statement_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the SQL statement to cancel. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
+        /// This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -250,7 +266,7 @@ pub mod cancel_statement_input {
             self,
         ) -> std::result::Result<
             crate::input::CancelStatementInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CancelStatementInput { id: self.id })
         }
@@ -267,16 +283,16 @@ impl CancelStatementInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CancelStatement,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CancelStatementInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -284,7 +300,7 @@ impl CancelStatementInput {
         fn update_http_builder(
             input: &crate::input::CancelStatementInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -293,32 +309,32 @@ impl CancelStatementInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CancelStatementInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RedshiftData.CancelStatement",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_cancel_statement(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -341,15 +357,15 @@ impl CancelStatementInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CancelStatement::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CancelStatement",
             "redshiftdata",
         ));
@@ -358,10 +374,10 @@ impl CancelStatementInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -392,6 +408,10 @@ pub mod describe_statement_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the SQL statement to describe. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
+        /// A suffix indicates the number of the SQL statement.
+        /// For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query.
+        /// This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatement</code>, and <code>ListStatements</code>. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -401,7 +421,7 @@ pub mod describe_statement_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeStatementInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeStatementInput { id: self.id })
         }
@@ -418,16 +438,16 @@ impl DescribeStatementInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeStatement,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeStatementInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -435,7 +455,7 @@ impl DescribeStatementInput {
         fn update_http_builder(
             input: &crate::input::DescribeStatementInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -444,32 +464,32 @@ impl DescribeStatementInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeStatementInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RedshiftData.DescribeStatement",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_statement(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -492,15 +512,15 @@ impl DescribeStatementInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeStatement::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeStatement",
             "redshiftdata",
         ));
@@ -509,10 +529,10 @@ impl DescribeStatementInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -548,6 +568,7 @@ pub mod describe_table_input {
             self.cluster_identifier = Some(input.into());
             self
         }
+        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -560,6 +581,7 @@ pub mod describe_table_input {
             self.secret_arn = Some(input.into());
             self
         }
+        /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -569,6 +591,7 @@ pub mod describe_table_input {
             self.db_user = Some(input.into());
             self
         }
+        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_user = input;
             self
@@ -579,6 +602,8 @@ pub mod describe_table_input {
             self.database = Some(input.into());
             self
         }
+        /// <p>The name of the database that contains the tables to be described.  
+        /// If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.database = input;
             self
@@ -588,6 +613,7 @@ pub mod describe_table_input {
             self.connected_database = Some(input.into());
             self
         }
+        /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
         pub fn set_connected_database(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -600,6 +626,7 @@ pub mod describe_table_input {
             self.schema = Some(input.into());
             self
         }
+        /// <p>The schema that contains the table. If no schema is specified, then matching tables for all schemas are returned. </p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema = input;
             self
@@ -610,6 +637,8 @@ pub mod describe_table_input {
             self.table = Some(input.into());
             self
         }
+        /// <p>The table name. If no table is specified, then all tables for all matching schemas are returned.
+        /// If no table and no schema is specified, then all tables for all schemas in the database are returned</p>
         pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table = input;
             self
@@ -619,6 +648,7 @@ pub mod describe_table_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -629,6 +659,8 @@ pub mod describe_table_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of tables to return in the response.
+        /// If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -636,8 +668,10 @@ pub mod describe_table_input {
         /// Consumes the builder and constructs a [`DescribeTableInput`](crate::input::DescribeTableInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeTableInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeTableInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeTableInput {
                 cluster_identifier: self.cluster_identifier,
                 secret_arn: self.secret_arn,
@@ -663,16 +697,16 @@ impl DescribeTableInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeTable,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeTableInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -680,7 +714,7 @@ impl DescribeTableInput {
         fn update_http_builder(
             input: &crate::input::DescribeTableInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -689,29 +723,31 @@ impl DescribeTableInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeTableInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RedshiftData.DescribeTable",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_table(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -734,25 +770,27 @@ impl DescribeTableInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeTable::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeTable",
-                    "redshiftdata",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeTable::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeTable",
+            "redshiftdata",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -787,6 +825,7 @@ pub mod execute_statement_input {
             self.sql = Some(input.into());
             self
         }
+        /// <p>The SQL statement text to run. </p>
         pub fn set_sql(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sql = input;
             self
@@ -796,6 +835,7 @@ pub mod execute_statement_input {
             self.cluster_identifier = Some(input.into());
             self
         }
+        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -808,6 +848,7 @@ pub mod execute_statement_input {
             self.secret_arn = Some(input.into());
             self
         }
+        /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -817,6 +858,7 @@ pub mod execute_statement_input {
             self.db_user = Some(input.into());
             self
         }
+        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_user = input;
             self
@@ -826,6 +868,7 @@ pub mod execute_statement_input {
             self.database = Some(input.into());
             self
         }
+        /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.database = input;
             self
@@ -835,6 +878,7 @@ pub mod execute_statement_input {
             self.with_event = Some(input);
             self
         }
+        /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statement runs. </p>
         pub fn set_with_event(mut self, input: std::option::Option<bool>) -> Self {
             self.with_event = input;
             self
@@ -844,6 +888,7 @@ pub mod execute_statement_input {
             self.statement_name = Some(input.into());
             self
         }
+        /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query. </p>
         pub fn set_statement_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -851,12 +896,18 @@ pub mod execute_statement_input {
             self.statement_name = input;
             self
         }
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The parameters for the SQL statement.</p>
         pub fn parameters(mut self, input: impl Into<crate::model::SqlParameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input.into());
             self.parameters = Some(v);
             self
         }
+        /// <p>The parameters for the SQL statement.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>,
@@ -869,7 +920,7 @@ pub mod execute_statement_input {
             self,
         ) -> std::result::Result<
             crate::input::ExecuteStatementInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ExecuteStatementInput {
                 sql: self.sql,
@@ -895,16 +946,16 @@ impl ExecuteStatementInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExecuteStatement,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExecuteStatementInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -912,7 +963,7 @@ impl ExecuteStatementInput {
         fn update_http_builder(
             input: &crate::input::ExecuteStatementInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -921,32 +972,32 @@ impl ExecuteStatementInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExecuteStatementInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RedshiftData.ExecuteStatement",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_execute_statement(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -969,15 +1020,15 @@ impl ExecuteStatementInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ExecuteStatement::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ExecuteStatement",
             "redshiftdata",
         ));
@@ -986,10 +1037,10 @@ impl ExecuteStatementInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1021,6 +1072,10 @@ pub mod get_statement_result_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
+        /// A suffix indicates then number of the SQL statement.
+        /// For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query.
+        /// This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1030,6 +1085,7 @@ pub mod get_statement_result_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1039,7 +1095,7 @@ pub mod get_statement_result_input {
             self,
         ) -> std::result::Result<
             crate::input::GetStatementResultInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetStatementResultInput {
                 id: self.id,
@@ -1059,16 +1115,16 @@ impl GetStatementResultInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetStatementResult,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetStatementResultInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1076,7 +1132,7 @@ impl GetStatementResultInput {
         fn update_http_builder(
             input: &crate::input::GetStatementResultInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1085,30 +1141,32 @@ impl GetStatementResultInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetStatementResultInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RedshiftData.GetStatementResult",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_statement_result(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1131,15 +1189,15 @@ impl GetStatementResultInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetStatementResult::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetStatementResult",
             "redshiftdata",
         ));
@@ -1148,10 +1206,10 @@ impl GetStatementResultInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1184,6 +1242,7 @@ pub mod list_databases_input {
             self.cluster_identifier = Some(input.into());
             self
         }
+        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1196,6 +1255,7 @@ pub mod list_databases_input {
             self.database = Some(input.into());
             self
         }
+        /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.database = input;
             self
@@ -1205,6 +1265,7 @@ pub mod list_databases_input {
             self.secret_arn = Some(input.into());
             self
         }
+        /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -1214,6 +1275,7 @@ pub mod list_databases_input {
             self.db_user = Some(input.into());
             self
         }
+        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_user = input;
             self
@@ -1223,6 +1285,7 @@ pub mod list_databases_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1233,6 +1296,8 @@ pub mod list_databases_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of databases to return in the response.
+        /// If more databases exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1240,8 +1305,10 @@ pub mod list_databases_input {
         /// Consumes the builder and constructs a [`ListDatabasesInput`](crate::input::ListDatabasesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListDatabasesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListDatabasesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListDatabasesInput {
                 cluster_identifier: self.cluster_identifier,
                 database: self.database,
@@ -1264,16 +1331,16 @@ impl ListDatabasesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListDatabases,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListDatabasesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1281,7 +1348,7 @@ impl ListDatabasesInput {
         fn update_http_builder(
             input: &crate::input::ListDatabasesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1290,29 +1357,31 @@ impl ListDatabasesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListDatabasesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RedshiftData.ListDatabases",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_databases(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1335,25 +1404,27 @@ impl ListDatabasesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListDatabases::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListDatabases",
-                    "redshiftdata",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDatabases::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDatabases",
+            "redshiftdata",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1388,6 +1459,7 @@ pub mod list_schemas_input {
             self.cluster_identifier = Some(input.into());
             self
         }
+        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1400,6 +1472,7 @@ pub mod list_schemas_input {
             self.secret_arn = Some(input.into());
             self
         }
+        /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -1409,6 +1482,7 @@ pub mod list_schemas_input {
             self.db_user = Some(input.into());
             self
         }
+        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_user = input;
             self
@@ -1419,6 +1493,8 @@ pub mod list_schemas_input {
             self.database = Some(input.into());
             self
         }
+        /// <p>The name of the database that contains the schemas to list.
+        /// If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.database = input;
             self
@@ -1428,6 +1504,7 @@ pub mod list_schemas_input {
             self.connected_database = Some(input.into());
             self
         }
+        /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
         pub fn set_connected_database(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1442,6 +1519,9 @@ pub mod list_schemas_input {
             self.schema_pattern = Some(input.into());
             self
         }
+        /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any
+        /// substring of 0 or more characters and "_" means match any one character. Only schema name
+        /// entries matching the search pattern are returned. </p>
         pub fn set_schema_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1454,6 +1534,7 @@ pub mod list_schemas_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1464,6 +1545,8 @@ pub mod list_schemas_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of schemas to return in the response.
+        /// If more schemas exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1471,8 +1554,10 @@ pub mod list_schemas_input {
         /// Consumes the builder and constructs a [`ListSchemasInput`](crate::input::ListSchemasInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListSchemasInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListSchemasInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListSchemasInput {
                 cluster_identifier: self.cluster_identifier,
                 secret_arn: self.secret_arn,
@@ -1497,16 +1582,16 @@ impl ListSchemasInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListSchemas,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListSchemasInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1514,7 +1599,7 @@ impl ListSchemasInput {
         fn update_http_builder(
             input: &crate::input::ListSchemasInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1523,29 +1608,31 @@ impl ListSchemasInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListSchemasInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RedshiftData.ListSchemas",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_schemas(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1568,25 +1655,27 @@ impl ListSchemasInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListSchemas::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListSchemas",
-                    "redshiftdata",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListSchemas::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListSchemas",
+            "redshiftdata",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1618,6 +1707,7 @@ pub mod list_statements_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1628,6 +1718,8 @@ pub mod list_statements_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of SQL statements to return in the response.
+        /// If more SQL statements exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1640,6 +1732,10 @@ pub mod list_statements_input {
             self.statement_name = Some(input.into());
             self
         }
+        /// <p>The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify the query.
+        /// You can list multiple statements by providing a prefix that matches the beginning of the statement name.
+        /// For example, to list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of <code>myStatement</code>.  
+        /// Data API does a case-sensitive match of SQL statement names to the prefix value you provide. </p>
         pub fn set_statement_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1675,6 +1771,30 @@ pub mod list_statements_input {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the SQL statement to list. Status values are defined as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>ABORTED - The query run was stopped by the user. </p>
+        /// </li>
+        /// <li>
+        /// <p>ALL -  A status value that includes all query statuses. This value can be used to filter results. </p>
+        /// </li>
+        /// <li>
+        /// <p>FAILED - The query run failed. </p>
+        /// </li>
+        /// <li>
+        /// <p>FINISHED - The query has finished running. </p>
+        /// </li>
+        /// <li>
+        /// <p>PICKED - The query has been chosen to be run. </p>
+        /// </li>
+        /// <li>
+        /// <p>STARTED - The query run has started. </p>
+        /// </li>
+        /// <li>
+        /// <p>SUBMITTED - The query was submitted, but not yet processed. </p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::StatusString>,
@@ -1688,6 +1808,8 @@ pub mod list_statements_input {
             self.role_level = Some(input);
             self
         }
+        /// <p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned.
+        /// If false, only statements run by the caller's IAM role in the current IAM session are returned.  The default is true. </p>
         pub fn set_role_level(mut self, input: std::option::Option<bool>) -> Self {
             self.role_level = input;
             self
@@ -1697,7 +1819,7 @@ pub mod list_statements_input {
             self,
         ) -> std::result::Result<
             crate::input::ListStatementsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListStatementsInput {
                 next_token: self.next_token,
@@ -1720,16 +1842,16 @@ impl ListStatementsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListStatements,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListStatementsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1737,7 +1859,7 @@ impl ListStatementsInput {
         fn update_http_builder(
             input: &crate::input::ListStatementsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1746,29 +1868,31 @@ impl ListStatementsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListStatementsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RedshiftData.ListStatements",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_statements(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1791,15 +1915,15 @@ impl ListStatementsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListStatements::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListStatements",
             "redshiftdata",
         ));
@@ -1808,10 +1932,10 @@ impl ListStatementsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1847,6 +1971,7 @@ pub mod list_tables_input {
             self.cluster_identifier = Some(input.into());
             self
         }
+        /// <p>The cluster identifier. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1859,6 +1984,7 @@ pub mod list_tables_input {
             self.secret_arn = Some(input.into());
             self
         }
+        /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -1868,6 +1994,7 @@ pub mod list_tables_input {
             self.db_user = Some(input.into());
             self
         }
+        /// <p>The database user name. This parameter is required when authenticating using temporary credentials. </p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.db_user = input;
             self
@@ -1878,6 +2005,8 @@ pub mod list_tables_input {
             self.database = Some(input.into());
             self
         }
+        /// <p>The name of the database that contains the tables to list.
+        /// If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.database = input;
             self
@@ -1887,6 +2016,7 @@ pub mod list_tables_input {
             self.connected_database = Some(input.into());
             self
         }
+        /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
         pub fn set_connected_database(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1903,6 +2033,11 @@ pub mod list_tables_input {
             self.schema_pattern = Some(input.into());
             self
         }
+        /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any
+        /// substring of 0 or more characters and "_" means match any one character. Only schema name
+        /// entries matching the search pattern are returned. If <code>SchemaPattern</code> is not specified, then all tables that match
+        /// <code>TablePattern</code> are returned.
+        /// If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
         pub fn set_schema_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1919,6 +2054,11 @@ pub mod list_tables_input {
             self.table_pattern = Some(input.into());
             self
         }
+        /// <p>A pattern to filter results by table name. Within a table pattern, "%" means match any
+        /// substring of 0 or more characters and "_" means match any one character. Only table name
+        /// entries matching the search pattern are returned. If <code>TablePattern</code> is not specified, then all tables that match
+        /// <code>SchemaPattern</code>are returned.  
+        /// If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
         pub fn set_table_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1931,6 +2071,7 @@ pub mod list_tables_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1941,6 +2082,8 @@ pub mod list_tables_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of tables to return in the response.
+        /// If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1948,8 +2091,10 @@ pub mod list_tables_input {
         /// Consumes the builder and constructs a [`ListTablesInput`](crate::input::ListTablesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListTablesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListTablesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListTablesInput {
                 cluster_identifier: self.cluster_identifier,
                 secret_arn: self.secret_arn,
@@ -1975,16 +2120,16 @@ impl ListTablesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTables,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTablesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1992,7 +2137,7 @@ impl ListTablesInput {
         fn update_http_builder(
             input: &crate::input::ListTablesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2001,29 +2146,31 @@ impl ListTablesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTablesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RedshiftData.ListTables",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_tables(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2046,25 +2193,27 @@ impl ListTablesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListTables::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListTables",
-                    "redshiftdata",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTables::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTables",
+            "redshiftdata",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2078,6 +2227,7 @@ impl ListTablesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTablesInput {
@@ -2126,6 +2276,7 @@ impl std::fmt::Debug for ListTablesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStatementsInput {
@@ -2180,6 +2331,7 @@ impl std::fmt::Debug for ListStatementsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchemasInput {
@@ -2219,6 +2371,7 @@ impl std::fmt::Debug for ListSchemasInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatabasesInput {
@@ -2249,6 +2402,7 @@ impl std::fmt::Debug for ListDatabasesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStatementResultInput {
@@ -2269,6 +2423,7 @@ impl std::fmt::Debug for GetStatementResultInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteStatementInput {
@@ -2304,6 +2459,7 @@ impl std::fmt::Debug for ExecuteStatementInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTableInput {
@@ -2345,6 +2501,7 @@ impl std::fmt::Debug for DescribeTableInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStatementInput {
@@ -2362,6 +2519,7 @@ impl std::fmt::Debug for DescribeStatementInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelStatementInput {
@@ -2377,6 +2535,7 @@ impl std::fmt::Debug for CancelStatementInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchExecuteStatementInput {

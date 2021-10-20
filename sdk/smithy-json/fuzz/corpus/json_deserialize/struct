@@ -1,7 +1,0 @@
-{ "some_int": 5,
-  "some_float": 5.2,
-  "some_negative": -5,
-  "some_negative_float": -2.4,
-  "some_string": "test",
-  "some_struct": { "nested": "asdf" },
-  "some_array": ["one", "two"] }

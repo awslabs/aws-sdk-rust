@@ -19,9 +19,9 @@ pub struct ExperimentTemplate {
     pub stop_conditions:
         std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateStopCondition>>,
     /// <p>The time the experiment template was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time the experiment template was last updated.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The tags for the experiment template.</p>
@@ -59,8 +59,8 @@ pub mod experiment_template {
         >,
         pub(crate) stop_conditions:
             std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateStopCondition>>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -72,6 +72,7 @@ pub mod experiment_template {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the experiment template.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -81,10 +82,16 @@ pub mod experiment_template {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for the experiment template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `targets`.
+        ///
+        /// To override the contents of this collection use [`set_targets`](Self::set_targets).
+        ///
+        /// <p>The targets for the experiment.</p>
         pub fn targets(
             mut self,
             k: impl Into<std::string::String>,
@@ -95,6 +102,7 @@ pub mod experiment_template {
             self.targets = Some(hash_map);
             self
         }
+        /// <p>The targets for the experiment.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<
@@ -107,6 +115,11 @@ pub mod experiment_template {
             self.targets = input;
             self
         }
+        /// Adds a key-value pair to `actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>The actions for the experiment.</p>
         pub fn actions(
             mut self,
             k: impl Into<std::string::String>,
@@ -117,6 +130,7 @@ pub mod experiment_template {
             self.actions = Some(hash_map);
             self
         }
+        /// <p>The actions for the experiment.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<
@@ -129,6 +143,11 @@ pub mod experiment_template {
             self.actions = input;
             self
         }
+        /// Appends an item to `stop_conditions`.
+        ///
+        /// To override the contents of this collection use [`set_stop_conditions`](Self::set_stop_conditions).
+        ///
+        /// <p>The stop conditions for the experiment.</p>
         pub fn stop_conditions(
             mut self,
             input: impl Into<crate::model::ExperimentTemplateStopCondition>,
@@ -138,6 +157,7 @@ pub mod experiment_template {
             self.stop_conditions = Some(v);
             self
         }
+        /// <p>The stop conditions for the experiment.</p>
         pub fn set_stop_conditions(
             mut self,
             input: std::option::Option<
@@ -148,25 +168,27 @@ pub mod experiment_template {
             self
         }
         /// <p>The time the experiment template was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time the experiment template was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time the experiment template was last updated.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The time the experiment template was last updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -176,10 +198,16 @@ pub mod experiment_template {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an IAM role.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags for the experiment template.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -190,6 +218,7 @@ pub mod experiment_template {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags for the experiment template.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -254,6 +283,7 @@ pub mod experiment_template_stop_condition {
             self.source = Some(input.into());
             self
         }
+        /// <p>The source for the stop condition.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -263,6 +293,7 @@ pub mod experiment_template_stop_condition {
             self.value = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -333,6 +364,7 @@ pub mod experiment_template_action {
             self.action_id = Some(input.into());
             self
         }
+        /// <p>The ID of the action.</p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -342,10 +374,16 @@ pub mod experiment_template_action {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description for the action.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The parameters for the action.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -356,6 +394,7 @@ pub mod experiment_template_action {
             self.parameters = Some(hash_map);
             self
         }
+        /// <p>The parameters for the action.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -365,6 +404,11 @@ pub mod experiment_template_action {
             self.parameters = input;
             self
         }
+        /// Adds a key-value pair to `targets`.
+        ///
+        /// To override the contents of this collection use [`set_targets`](Self::set_targets).
+        ///
+        /// <p>The targets for the action.</p>
         pub fn targets(
             mut self,
             k: impl Into<std::string::String>,
@@ -375,6 +419,7 @@ pub mod experiment_template_action {
             self.targets = Some(hash_map);
             self
         }
+        /// <p>The targets for the action.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<
@@ -384,12 +429,18 @@ pub mod experiment_template_action {
             self.targets = input;
             self
         }
+        /// Appends an item to `start_after`.
+        ///
+        /// To override the contents of this collection use [`set_start_after`](Self::set_start_after).
+        ///
+        /// <p>The name of the action that must be completed before the current action starts.</p>
         pub fn start_after(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.start_after.unwrap_or_default();
             v.push(input.into());
             self.start_after = Some(v);
             self
         }
+        /// <p>The name of the action that must be completed before the current action starts.</p>
         pub fn set_start_after(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -464,6 +515,7 @@ pub mod experiment_template_target {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The resource type.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -471,12 +523,18 @@ pub mod experiment_template_target {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `resource_arns`.
+        ///
+        /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -484,6 +542,11 @@ pub mod experiment_template_target {
             self.resource_arns = input;
             self
         }
+        /// Adds a key-value pair to `resource_tags`.
+        ///
+        /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
+        ///
+        /// <p>The tags for the target resources.</p>
         pub fn resource_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -494,6 +557,7 @@ pub mod experiment_template_target {
             self.resource_tags = Some(hash_map);
             self
         }
+        /// <p>The tags for the target resources.</p>
         pub fn set_resource_tags(
             mut self,
             input: std::option::Option<
@@ -503,6 +567,11 @@ pub mod experiment_template_target {
             self.resource_tags = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The filters to apply to identify target resources using specific attributes.</p>
         pub fn filters(
             mut self,
             input: impl Into<crate::model::ExperimentTemplateTargetFilter>,
@@ -512,6 +581,7 @@ pub mod experiment_template_target {
             self.filters = Some(v);
             self
         }
+        /// <p>The filters to apply to identify target resources using specific attributes.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExperimentTemplateTargetFilter>>,
@@ -524,6 +594,7 @@ pub mod experiment_template_target {
             self.selection_mode = Some(input.into());
             self
         }
+        /// <p>Scopes the identified resources to a specific count or percentage.</p>
         pub fn set_selection_mode(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -582,16 +653,23 @@ pub mod experiment_template_target_filter {
             self.path = Some(input.into());
             self
         }
+        /// <p>The attribute path for the filter.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The attribute values for the filter.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The attribute values for the filter.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -665,6 +743,7 @@ pub mod update_experiment_template_action_input_item {
             self.action_id = Some(input.into());
             self
         }
+        /// <p>The ID of the action.</p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -674,10 +753,16 @@ pub mod update_experiment_template_action_input_item {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description for the action.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The parameters for the action, if applicable.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -688,6 +773,7 @@ pub mod update_experiment_template_action_input_item {
             self.parameters = Some(hash_map);
             self
         }
+        /// <p>The parameters for the action, if applicable.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -697,6 +783,11 @@ pub mod update_experiment_template_action_input_item {
             self.parameters = input;
             self
         }
+        /// Adds a key-value pair to `targets`.
+        ///
+        /// To override the contents of this collection use [`set_targets`](Self::set_targets).
+        ///
+        /// <p>The targets for the action.</p>
         pub fn targets(
             mut self,
             k: impl Into<std::string::String>,
@@ -707,6 +798,7 @@ pub mod update_experiment_template_action_input_item {
             self.targets = Some(hash_map);
             self
         }
+        /// <p>The targets for the action.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<
@@ -716,12 +808,18 @@ pub mod update_experiment_template_action_input_item {
             self.targets = input;
             self
         }
+        /// Appends an item to `start_after`.
+        ///
+        /// To override the contents of this collection use [`set_start_after`](Self::set_start_after).
+        ///
+        /// <p>The name of the action that must be completed before the current action starts. Omit this parameter to run the action at the start of the experiment.</p>
         pub fn start_after(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.start_after.unwrap_or_default();
             v.push(input.into());
             self.start_after = Some(v);
             self
         }
+        /// <p>The name of the action that must be completed before the current action starts. Omit this parameter to run the action at the start of the experiment.</p>
         pub fn set_start_after(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -797,6 +895,7 @@ pub mod update_experiment_template_target_input {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The AWS resource type. The resource type must be supported for the specified action.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -804,12 +903,18 @@ pub mod update_experiment_template_target_input {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `resource_arns`.
+        ///
+        /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -817,6 +922,11 @@ pub mod update_experiment_template_target_input {
             self.resource_arns = input;
             self
         }
+        /// Adds a key-value pair to `resource_tags`.
+        ///
+        /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
+        ///
+        /// <p>The tags for the target resources.</p>
         pub fn resource_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -827,6 +937,7 @@ pub mod update_experiment_template_target_input {
             self.resource_tags = Some(hash_map);
             self
         }
+        /// <p>The tags for the target resources.</p>
         pub fn set_resource_tags(
             mut self,
             input: std::option::Option<
@@ -836,6 +947,11 @@ pub mod update_experiment_template_target_input {
             self.resource_tags = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The filters to apply to identify target resources using specific attributes.</p>
         pub fn filters(
             mut self,
             input: impl Into<crate::model::ExperimentTemplateTargetInputFilter>,
@@ -845,6 +961,7 @@ pub mod update_experiment_template_target_input {
             self.filters = Some(v);
             self
         }
+        /// <p>The filters to apply to identify target resources using specific attributes.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -859,6 +976,7 @@ pub mod update_experiment_template_target_input {
             self.selection_mode = Some(input.into());
             self
         }
+        /// <p>Scopes the identified resources to a specific count or percentage.</p>
         pub fn set_selection_mode(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -917,16 +1035,23 @@ pub mod experiment_template_target_input_filter {
             self.path = Some(input.into());
             self
         }
+        /// <p>The attribute path for the filter.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The attribute values for the filter.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The attribute values for the filter.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -986,6 +1111,9 @@ pub mod update_experiment_template_stop_condition_input {
             self.source = Some(input.into());
             self
         }
+        /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop
+        /// condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop
+        /// condition.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -995,6 +1123,7 @@ pub mod update_experiment_template_stop_condition_input {
             self.value = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1038,11 +1167,11 @@ pub struct Experiment {
     /// <p>The stop conditions for the experiment.</p>
     pub stop_conditions: std::option::Option<std::vec::Vec<crate::model::ExperimentStopCondition>>,
     /// <p>The time the experiment was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the experiment was started.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the experiment ended.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The tags for the experiment.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1082,9 +1211,9 @@ pub mod experiment {
         >,
         pub(crate) stop_conditions:
             std::option::Option<std::vec::Vec<crate::model::ExperimentStopCondition>>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -1095,6 +1224,7 @@ pub mod experiment {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the experiment.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1104,6 +1234,7 @@ pub mod experiment {
             self.experiment_template_id = Some(input.into());
             self
         }
+        /// <p>The ID of the experiment template.</p>
         pub fn set_experiment_template_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1116,6 +1247,7 @@ pub mod experiment {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1125,6 +1257,7 @@ pub mod experiment {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the experiment.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ExperimentState>,
@@ -1132,6 +1265,11 @@ pub mod experiment {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `targets`.
+        ///
+        /// To override the contents of this collection use [`set_targets`](Self::set_targets).
+        ///
+        /// <p>The targets for the experiment.</p>
         pub fn targets(
             mut self,
             k: impl Into<std::string::String>,
@@ -1142,6 +1280,7 @@ pub mod experiment {
             self.targets = Some(hash_map);
             self
         }
+        /// <p>The targets for the experiment.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<
@@ -1151,6 +1290,11 @@ pub mod experiment {
             self.targets = input;
             self
         }
+        /// Adds a key-value pair to `actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>The actions for the experiment.</p>
         pub fn actions(
             mut self,
             k: impl Into<std::string::String>,
@@ -1161,6 +1305,7 @@ pub mod experiment {
             self.actions = Some(hash_map);
             self
         }
+        /// <p>The actions for the experiment.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<
@@ -1170,6 +1315,11 @@ pub mod experiment {
             self.actions = input;
             self
         }
+        /// Appends an item to `stop_conditions`.
+        ///
+        /// To override the contents of this collection use [`set_stop_conditions`](Self::set_stop_conditions).
+        ///
+        /// <p>The stop conditions for the experiment.</p>
         pub fn stop_conditions(
             mut self,
             input: impl Into<crate::model::ExperimentStopCondition>,
@@ -1179,6 +1329,7 @@ pub mod experiment {
             self.stop_conditions = Some(v);
             self
         }
+        /// <p>The stop conditions for the experiment.</p>
         pub fn set_stop_conditions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExperimentStopCondition>>,
@@ -1187,35 +1338,49 @@ pub mod experiment {
             self
         }
         /// <p>The time the experiment was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time the experiment was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time that the experiment was started.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the experiment was started.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time that the experiment ended.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the experiment ended.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags for the experiment.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1226,6 +1391,7 @@ pub mod experiment {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags for the experiment.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1292,6 +1458,7 @@ pub mod experiment_stop_condition {
             self.source = Some(input.into());
             self
         }
+        /// <p>The source for the stop condition.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -1301,6 +1468,7 @@ pub mod experiment_stop_condition {
             self.value = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1375,6 +1543,7 @@ pub mod experiment_action {
             self.action_id = Some(input.into());
             self
         }
+        /// <p>The ID of the action.</p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -1384,10 +1553,16 @@ pub mod experiment_action {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for the action.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The parameters for the action.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -1398,6 +1573,7 @@ pub mod experiment_action {
             self.parameters = Some(hash_map);
             self
         }
+        /// <p>The parameters for the action.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -1407,6 +1583,11 @@ pub mod experiment_action {
             self.parameters = input;
             self
         }
+        /// Adds a key-value pair to `targets`.
+        ///
+        /// To override the contents of this collection use [`set_targets`](Self::set_targets).
+        ///
+        /// <p>The targets for the action.</p>
         pub fn targets(
             mut self,
             k: impl Into<std::string::String>,
@@ -1417,6 +1598,7 @@ pub mod experiment_action {
             self.targets = Some(hash_map);
             self
         }
+        /// <p>The targets for the action.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<
@@ -1426,12 +1608,18 @@ pub mod experiment_action {
             self.targets = input;
             self
         }
+        /// Appends an item to `start_after`.
+        ///
+        /// To override the contents of this collection use [`set_start_after`](Self::set_start_after).
+        ///
+        /// <p>The name of the action that must be completed before this action starts.</p>
         pub fn start_after(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.start_after.unwrap_or_default();
             v.push(input.into());
             self.start_after = Some(v);
             self
         }
+        /// <p>The name of the action that must be completed before this action starts.</p>
         pub fn set_start_after(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1444,6 +1632,7 @@ pub mod experiment_action {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the action.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ExperimentActionState>,
@@ -1503,6 +1692,7 @@ pub mod experiment_action_state {
             self.status = Some(input);
             self
         }
+        /// <p>The state of the action.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ExperimentActionStatus>,
@@ -1515,6 +1705,7 @@ pub mod experiment_action_state {
             self.reason = Some(input.into());
             self
         }
+        /// <p>The reason for the state.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -1535,6 +1726,7 @@ impl ExperimentActionState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1546,13 +1738,21 @@ impl ExperimentActionState {
     std::hash::Hash,
 )]
 pub enum ExperimentActionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Initiating,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1580,6 +1780,7 @@ impl std::str::FromStr for ExperimentActionStatus {
     }
 }
 impl ExperimentActionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExperimentActionStatus::Cancelled => "cancelled",
@@ -1593,6 +1794,7 @@ impl ExperimentActionStatus {
             ExperimentActionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "cancelled",
@@ -1660,6 +1862,7 @@ pub mod experiment_target {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The resource type.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1667,12 +1870,18 @@ pub mod experiment_target {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `resource_arns`.
+        ///
+        /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1680,6 +1889,11 @@ pub mod experiment_target {
             self.resource_arns = input;
             self
         }
+        /// Adds a key-value pair to `resource_tags`.
+        ///
+        /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
+        ///
+        /// <p>The tags for the target resources.</p>
         pub fn resource_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1690,6 +1904,7 @@ pub mod experiment_target {
             self.resource_tags = Some(hash_map);
             self
         }
+        /// <p>The tags for the target resources.</p>
         pub fn set_resource_tags(
             mut self,
             input: std::option::Option<
@@ -1699,12 +1914,18 @@ pub mod experiment_target {
             self.resource_tags = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The filters to apply to identify target resources using specific attributes.</p>
         pub fn filters(mut self, input: impl Into<crate::model::ExperimentTargetFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>The filters to apply to identify target resources using specific attributes.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExperimentTargetFilter>>,
@@ -1717,6 +1938,7 @@ pub mod experiment_target {
             self.selection_mode = Some(input.into());
             self
         }
+        /// <p>Scopes the identified resources to a specific count or percentage.</p>
         pub fn set_selection_mode(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1775,16 +1997,23 @@ pub mod experiment_target_filter {
             self.path = Some(input.into());
             self
         }
+        /// <p>The attribute path for the filter.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The attribute values for the filter.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The attribute values for the filter.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1840,6 +2069,7 @@ pub mod experiment_state {
             self.status = Some(input);
             self
         }
+        /// <p>The state of the experiment.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ExperimentStatus>,
@@ -1852,6 +2082,7 @@ pub mod experiment_state {
             self.reason = Some(input.into());
             self
         }
+        /// <p>The reason for the state.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -1872,6 +2103,7 @@ impl ExperimentState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1883,12 +2115,19 @@ impl ExperimentState {
     std::hash::Hash,
 )]
 pub enum ExperimentStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Initiating,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1915,6 +2154,7 @@ impl std::str::FromStr for ExperimentStatus {
     }
 }
 impl ExperimentStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExperimentStatus::Completed => "completed",
@@ -1927,6 +2167,7 @@ impl ExperimentStatus {
             ExperimentStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "completed",
@@ -1954,9 +2195,9 @@ pub struct ExperimentTemplateSummary {
     /// <p>The description of the experiment template.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The time that the experiment template was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the experiment template was last updated.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The tags for the experiment template.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1980,8 +2221,8 @@ pub mod experiment_template_summary {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -1992,6 +2233,7 @@ pub mod experiment_template_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the experiment template.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2001,34 +2243,42 @@ pub mod experiment_template_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the experiment template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The time that the experiment template was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time that the experiment template was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time that the experiment template was last updated.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The time that the experiment template was last updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags for the experiment template.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2039,6 +2289,7 @@ pub mod experiment_template_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags for the experiment template.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2078,7 +2329,7 @@ pub struct ExperimentSummary {
     /// <p>The state of the experiment.</p>
     pub state: std::option::Option<crate::model::ExperimentState>,
     /// <p>The time that the experiment was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The tags for the experiment.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -2103,7 +2354,7 @@ pub mod experiment_summary {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) experiment_template_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ExperimentState>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -2114,6 +2365,7 @@ pub mod experiment_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the experiment.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2123,6 +2375,7 @@ pub mod experiment_summary {
             self.experiment_template_id = Some(input.into());
             self
         }
+        /// <p>The ID of the experiment template.</p>
         pub fn set_experiment_template_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2135,6 +2388,7 @@ pub mod experiment_summary {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the experiment.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ExperimentState>,
@@ -2143,17 +2397,23 @@ pub mod experiment_summary {
             self
         }
         /// <p>The time that the experiment was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time that the experiment was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags for the experiment.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2164,6 +2424,7 @@ pub mod experiment_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags for the experiment.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2239,6 +2500,7 @@ pub mod action_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the action.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2248,10 +2510,16 @@ pub mod action_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for the action.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `targets`.
+        ///
+        /// To override the contents of this collection use [`set_targets`](Self::set_targets).
+        ///
+        /// <p>The targets for the action.</p>
         pub fn targets(
             mut self,
             k: impl Into<std::string::String>,
@@ -2262,6 +2530,7 @@ pub mod action_summary {
             self.targets = Some(hash_map);
             self
         }
+        /// <p>The targets for the action.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<
@@ -2271,6 +2540,11 @@ pub mod action_summary {
             self.targets = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags for the action.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2281,6 +2555,7 @@ pub mod action_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags for the action.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2336,6 +2611,7 @@ pub mod action_target {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The resource type of the target.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2414,6 +2690,7 @@ pub mod action {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the action.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2423,10 +2700,16 @@ pub mod action {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for the action.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The action parameters, if applicable.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2437,6 +2720,7 @@ pub mod action {
             self.parameters = Some(hash_map);
             self
         }
+        /// <p>The action parameters, if applicable.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -2446,6 +2730,11 @@ pub mod action {
             self.parameters = input;
             self
         }
+        /// Adds a key-value pair to `targets`.
+        ///
+        /// To override the contents of this collection use [`set_targets`](Self::set_targets).
+        ///
+        /// <p>The supported targets for the action.</p>
         pub fn targets(
             mut self,
             k: impl Into<std::string::String>,
@@ -2456,6 +2745,7 @@ pub mod action {
             self.targets = Some(hash_map);
             self
         }
+        /// <p>The supported targets for the action.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<
@@ -2465,6 +2755,11 @@ pub mod action {
             self.targets = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags for the action.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2475,6 +2770,7 @@ pub mod action {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags for the action.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2535,6 +2831,7 @@ pub mod action_parameter {
             self.description = Some(input.into());
             self
         }
+        /// <p>The parameter description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2544,6 +2841,7 @@ pub mod action_parameter {
             self.required = Some(input);
             self
         }
+        /// <p>Indicates whether the parameter is required.</p>
         pub fn set_required(mut self, input: std::option::Option<bool>) -> Self {
             self.required = input;
             self
@@ -2614,6 +2912,7 @@ pub mod create_experiment_template_action_input {
             self.action_id = Some(input.into());
             self
         }
+        /// <p>The ID of the action.</p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -2623,10 +2922,16 @@ pub mod create_experiment_template_action_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description for the action.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The parameters for the action, if applicable.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2637,6 +2942,7 @@ pub mod create_experiment_template_action_input {
             self.parameters = Some(hash_map);
             self
         }
+        /// <p>The parameters for the action, if applicable.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -2646,6 +2952,11 @@ pub mod create_experiment_template_action_input {
             self.parameters = input;
             self
         }
+        /// Adds a key-value pair to `targets`.
+        ///
+        /// To override the contents of this collection use [`set_targets`](Self::set_targets).
+        ///
+        /// <p>The targets for the action.</p>
         pub fn targets(
             mut self,
             k: impl Into<std::string::String>,
@@ -2656,6 +2967,7 @@ pub mod create_experiment_template_action_input {
             self.targets = Some(hash_map);
             self
         }
+        /// <p>The targets for the action.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<
@@ -2665,12 +2977,18 @@ pub mod create_experiment_template_action_input {
             self.targets = input;
             self
         }
+        /// Appends an item to `start_after`.
+        ///
+        /// To override the contents of this collection use [`set_start_after`](Self::set_start_after).
+        ///
+        /// <p>The name of the action that must be completed before the current action starts. Omit this parameter to run the action at the start of the experiment.</p>
         pub fn start_after(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.start_after.unwrap_or_default();
             v.push(input.into());
             self.start_after = Some(v);
             self
         }
+        /// <p>The name of the action that must be completed before the current action starts. Omit this parameter to run the action at the start of the experiment.</p>
         pub fn set_start_after(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2760,6 +3078,7 @@ pub mod create_experiment_template_target_input {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The AWS resource type. The resource type must be supported for the specified action.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2767,12 +3086,18 @@ pub mod create_experiment_template_target_input {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `resource_arns`.
+        ///
+        /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2780,6 +3105,11 @@ pub mod create_experiment_template_target_input {
             self.resource_arns = input;
             self
         }
+        /// Adds a key-value pair to `resource_tags`.
+        ///
+        /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
+        ///
+        /// <p>The tags for the target resources.</p>
         pub fn resource_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2790,6 +3120,7 @@ pub mod create_experiment_template_target_input {
             self.resource_tags = Some(hash_map);
             self
         }
+        /// <p>The tags for the target resources.</p>
         pub fn set_resource_tags(
             mut self,
             input: std::option::Option<
@@ -2799,6 +3130,11 @@ pub mod create_experiment_template_target_input {
             self.resource_tags = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The filters to apply to identify target resources using specific attributes.</p>
         pub fn filters(
             mut self,
             input: impl Into<crate::model::ExperimentTemplateTargetInputFilter>,
@@ -2808,6 +3144,7 @@ pub mod create_experiment_template_target_input {
             self.filters = Some(v);
             self
         }
+        /// <p>The filters to apply to identify target resources using specific attributes.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -2835,6 +3172,20 @@ pub mod create_experiment_template_target_input {
             self.selection_mode = Some(input.into());
             self
         }
+        /// <p>Scopes the identified resources to a specific count of the resources at random, or a percentage of the resources. All identified resources are included in the target.</p>
+        /// <ul>
+        /// <li>
+        /// <p>ALL - Run the action on all identified targets. This is the default.</p>
+        /// </li>
+        /// <li>
+        /// <p>COUNT(n) - Run the action on the specified number of targets, chosen from the identified targets at random.
+        /// For example, COUNT(1) selects one of the targets.</p>
+        /// </li>
+        /// <li>
+        /// <p>PERCENT(n) - Run the action on the specified percentage of targets, chosen from the identified targets
+        /// at random. For example, PERCENT(25) selects 25% of the targets.</p>
+        /// </li>
+        /// </ul>
         pub fn set_selection_mode(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2898,6 +3249,9 @@ pub mod create_experiment_template_stop_condition_input {
             self.source = Some(input.into());
             self
         }
+        /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop
+        /// condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop
+        /// condition.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -2908,6 +3262,8 @@ pub mod create_experiment_template_stop_condition_input {
             self.value = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm. This is required if the source is
+        /// a CloudWatch alarm.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self

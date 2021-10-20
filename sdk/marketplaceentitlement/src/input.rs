@@ -23,10 +23,20 @@ pub mod get_entitlements_input {
             self.product_code = Some(input.into());
             self
         }
+        /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code
+        /// will be provided by AWS Marketplace when the product listing is created.</p>
         pub fn set_product_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_code = input;
             self
         }
+        /// Adds a key-value pair to `filter`.
+        ///
+        /// To override the contents of this collection use [`set_filter`](Self::set_filter).
+        ///
+        /// <p>Filter is used to return entitlements for a specific customer or for a specific
+        /// dimension. Filters are described as keys mapped to a lists of values. Filtered requests are
+        /// <i>unioned</i> for each value in the value list, and then
+        /// <i>intersected</i> for each filter key.</p>
         pub fn filter(
             mut self,
             k: impl Into<crate::model::GetEntitlementFilterName>,
@@ -37,6 +47,10 @@ pub mod get_entitlements_input {
             self.filter = Some(hash_map);
             self
         }
+        /// <p>Filter is used to return entitlements for a specific customer or for a specific
+        /// dimension. Filters are described as keys mapped to a lists of values. Filtered requests are
+        /// <i>unioned</i> for each value in the value list, and then
+        /// <i>intersected</i> for each filter key.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<
@@ -55,6 +69,8 @@ pub mod get_entitlements_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous
+        /// GetEntitlementsResult.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -65,6 +81,8 @@ pub mod get_entitlements_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of items to retrieve from the GetEntitlements operation. For
+        /// pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -74,7 +92,7 @@ pub mod get_entitlements_input {
             self,
         ) -> std::result::Result<
             crate::input::GetEntitlementsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetEntitlementsInput {
                 product_code: self.product_code,
@@ -96,16 +114,16 @@ impl GetEntitlementsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetEntitlements,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetEntitlementsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -113,7 +131,7 @@ impl GetEntitlementsInput {
         fn update_http_builder(
             input: &crate::input::GetEntitlementsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -122,32 +140,32 @@ impl GetEntitlementsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetEntitlementsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMPEntitlementService.GetEntitlements",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_entitlements(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -170,15 +188,15 @@ impl GetEntitlementsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetEntitlements::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetEntitlements",
             "marketplaceentitlementservice",
         ));
@@ -187,10 +205,10 @@ impl GetEntitlementsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,

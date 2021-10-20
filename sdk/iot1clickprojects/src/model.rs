@@ -35,6 +35,12 @@ pub mod placement_template {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `default_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_default_attributes`](Self::set_default_attributes).
+        ///
+        /// <p>The default attributes (key/value pairs) to be applied to all placements using this
+        /// template.</p>
         pub fn default_attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -45,6 +51,8 @@ pub mod placement_template {
             self.default_attributes = Some(hash_map);
             self
         }
+        /// <p>The default attributes (key/value pairs) to be applied to all placements using this
+        /// template.</p>
         pub fn set_default_attributes(
             mut self,
             input: std::option::Option<
@@ -54,6 +62,12 @@ pub mod placement_template {
             self.default_attributes = input;
             self
         }
+        /// Adds a key-value pair to `device_templates`.
+        ///
+        /// To override the contents of this collection use [`set_device_templates`](Self::set_device_templates).
+        ///
+        /// <p>An object specifying the <a>DeviceTemplate</a> for all placements using this
+        /// (<a>PlacementTemplate</a>) template.</p>
         pub fn device_templates(
             mut self,
             k: impl Into<std::string::String>,
@@ -64,6 +78,8 @@ pub mod placement_template {
             self.device_templates = Some(hash_map);
             self
         }
+        /// <p>An object specifying the <a>DeviceTemplate</a> for all placements using this
+        /// (<a>PlacementTemplate</a>) template.</p>
         pub fn set_device_templates(
             mut self,
             input: std::option::Option<
@@ -125,10 +141,17 @@ pub mod device_template {
             self.device_type = Some(input.into());
             self
         }
+        /// <p>The device type, which currently must be <code>"button"</code>.</p>
         pub fn set_device_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_type = input;
             self
         }
+        /// Adds a key-value pair to `callback_overrides`.
+        ///
+        /// To override the contents of this collection use [`set_callback_overrides`](Self::set_callback_overrides).
+        ///
+        /// <p>An optional Lambda function to invoke instead of the default Lambda function provided by
+        /// the placement template.</p>
         pub fn callback_overrides(
             mut self,
             k: impl Into<std::string::String>,
@@ -139,6 +162,8 @@ pub mod device_template {
             self.callback_overrides = Some(hash_map);
             self
         }
+        /// <p>An optional Lambda function to invoke instead of the default Lambda function provided by
+        /// the placement template.</p>
         pub fn set_callback_overrides(
             mut self,
             input: std::option::Option<
@@ -174,10 +199,10 @@ pub struct ProjectSummary {
     /// <p>The name of the project being summarized.</p>
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
     /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-    pub updated_date: std::option::Option<smithy_types::Instant>,
+    pub updated_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The tags (metadata key/value pairs) associated with the project.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -201,8 +226,8 @@ pub mod project_summary {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) project_name: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -213,6 +238,7 @@ pub mod project_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the project.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -222,35 +248,44 @@ pub mod project_summary {
             self.project_name = Some(input.into());
             self
         }
+        /// <p>The name of the project being summarized.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_name = input;
             self
         }
         /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
         }
         /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
         /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-        pub fn updated_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_date = Some(input);
             self
         }
+        /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
+        /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
         pub fn set_updated_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.updated_date = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags (metadata key/value pairs) associated with the project.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -261,6 +296,7 @@ pub mod project_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags (metadata key/value pairs) associated with the project.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -298,11 +334,11 @@ pub struct PlacementSummary {
     /// <p>The name of the placement being summarized.</p>
     pub placement_name: std::option::Option<std::string::String>,
     /// <p>The date when the placement was originally created, in UNIX epoch time format.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
     /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
     /// same.</p>
-    pub updated_date: std::option::Option<smithy_types::Instant>,
+    pub updated_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for PlacementSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -322,8 +358,8 @@ pub mod placement_summary {
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
         pub(crate) placement_name: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the project containing the placement.</p>
@@ -331,6 +367,7 @@ pub mod placement_summary {
             self.project_name = Some(input.into());
             self
         }
+        /// <p>The name of the project containing the placement.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_name = input;
             self
@@ -340,6 +377,7 @@ pub mod placement_summary {
             self.placement_name = Some(input.into());
             self
         }
+        /// <p>The name of the placement being summarized.</p>
         pub fn set_placement_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -348,13 +386,14 @@ pub mod placement_summary {
             self
         }
         /// <p>The date when the placement was originally created, in UNIX epoch time format.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The date when the placement was originally created, in UNIX epoch time format.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -362,13 +401,16 @@ pub mod placement_summary {
         /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
         /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
         /// same.</p>
-        pub fn updated_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_date = Some(input);
             self
         }
+        /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
+        /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
+        /// same.</p>
         pub fn set_updated_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.updated_date = input;
             self
@@ -403,10 +445,10 @@ pub struct ProjectDescription {
     /// <p>The description of the project.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
     /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-    pub updated_date: std::option::Option<smithy_types::Instant>,
+    pub updated_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>An object describing the project's placement specifications.</p>
     pub placement_template: std::option::Option<crate::model::PlacementTemplate>,
     /// <p>The tags (metadata key/value pairs) associated with the project.</p>
@@ -435,8 +477,8 @@ pub mod project_description {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) project_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) placement_template: std::option::Option<crate::model::PlacementTemplate>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -448,6 +490,7 @@ pub mod project_description {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the project.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -457,6 +500,7 @@ pub mod project_description {
             self.project_name = Some(input.into());
             self
         }
+        /// <p>The name of the project for which to obtain information from.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_name = input;
             self
@@ -466,31 +510,35 @@ pub mod project_description {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the project.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
         }
         /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
         /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-        pub fn updated_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_date = Some(input);
             self
         }
+        /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was
+        /// not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
         pub fn set_updated_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.updated_date = input;
             self
@@ -500,6 +548,7 @@ pub mod project_description {
             self.placement_template = Some(input);
             self
         }
+        /// <p>An object describing the project's placement specifications.</p>
         pub fn set_placement_template(
             mut self,
             input: std::option::Option<crate::model::PlacementTemplate>,
@@ -507,6 +556,11 @@ pub mod project_description {
             self.placement_template = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags (metadata key/value pairs) associated with the project.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -517,6 +571,7 @@ pub mod project_description {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags (metadata key/value pairs) associated with the project.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -559,11 +614,11 @@ pub struct PlacementDescription {
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date when the placement was initially created, in UNIX epoch time format.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
     /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
     /// same.</p>
-    pub updated_date: std::option::Option<smithy_types::Instant>,
+    pub updated_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for PlacementDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -587,8 +642,8 @@ pub mod placement_description {
         pub(crate) attributes: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the project containing the placement.</p>
@@ -596,6 +651,7 @@ pub mod placement_description {
             self.project_name = Some(input.into());
             self
         }
+        /// <p>The name of the project containing the placement.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_name = input;
             self
@@ -605,6 +661,7 @@ pub mod placement_description {
             self.placement_name = Some(input.into());
             self
         }
+        /// <p>The name of the placement.</p>
         pub fn set_placement_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -612,6 +669,11 @@ pub mod placement_description {
             self.placement_name = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>The user-defined attributes associated with the placement.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -622,6 +684,7 @@ pub mod placement_description {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>The user-defined attributes associated with the placement.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -632,13 +695,14 @@ pub mod placement_description {
             self
         }
         /// <p>The date when the placement was initially created, in UNIX epoch time format.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The date when the placement was initially created, in UNIX epoch time format.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -646,13 +710,16 @@ pub mod placement_description {
         /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
         /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
         /// same.</p>
-        pub fn updated_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_date = Some(input);
             self
         }
+        /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement
+        /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
+        /// same.</p>
         pub fn set_updated_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.updated_date = input;
             self

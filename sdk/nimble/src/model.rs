@@ -8,7 +8,7 @@ pub struct StudioComponent {
     /// <p>The configuration of the studio component, based on component type.</p>
     pub configuration: std::option::Option<crate::model::StudioComponentConfiguration>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The user ID of the user that created the studio component.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>A human-readable description for the studio component resource.</p>
@@ -39,7 +39,7 @@ pub struct StudioComponent {
     /// <p>The type of the studio component.</p>
     pub r#type: std::option::Option<crate::model::StudioComponentType>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The user ID of the user that most recently updated the resource.</p>
     pub updated_by: std::option::Option<std::string::String>,
 }
@@ -75,7 +75,7 @@ pub mod studio_component {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) configuration: std::option::Option<crate::model::StudioComponentConfiguration>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) created_by: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) ec2_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -93,7 +93,7 @@ pub mod studio_component {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) r#type: std::option::Option<crate::model::StudioComponentType>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) updated_by: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -102,6 +102,7 @@ pub mod studio_component {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -111,6 +112,7 @@ pub mod studio_component {
             self.configuration = Some(input);
             self
         }
+        /// <p>The configuration of the studio component, based on component type.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::StudioComponentConfiguration>,
@@ -119,11 +121,15 @@ pub mod studio_component {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -132,6 +138,7 @@ pub mod studio_component {
             self.created_by = Some(input.into());
             self
         }
+        /// <p>The user ID of the user that created the studio component.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_by = input;
             self
@@ -141,16 +148,23 @@ pub mod studio_component {
             self.description = Some(input.into());
             self
         }
+        /// <p>A human-readable description for the studio component resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `ec2_security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_ec2_security_group_ids`](Self::set_ec2_security_group_ids).
+        ///
+        /// <p>The EC2 security groups that control access to the studio component.</p>
         pub fn ec2_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ec2_security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.ec2_security_group_ids = Some(v);
             self
         }
+        /// <p>The EC2 security groups that control access to the studio component.</p>
         pub fn set_ec2_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -158,6 +172,11 @@ pub mod studio_component {
             self.ec2_security_group_ids = input;
             self
         }
+        /// Appends an item to `initialization_scripts`.
+        ///
+        /// To override the contents of this collection use [`set_initialization_scripts`](Self::set_initialization_scripts).
+        ///
+        /// <p>Initialization scripts for studio components.</p>
         pub fn initialization_scripts(
             mut self,
             input: impl Into<crate::model::StudioComponentInitializationScript>,
@@ -167,6 +186,7 @@ pub mod studio_component {
             self.initialization_scripts = Some(v);
             self
         }
+        /// <p>Initialization scripts for studio components.</p>
         pub fn set_initialization_scripts(
             mut self,
             input: std::option::Option<
@@ -181,10 +201,16 @@ pub mod studio_component {
             self.name = Some(input.into());
             self
         }
+        /// <p>A friendly name for the studio component resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `script_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_script_parameters`](Self::set_script_parameters).
+        ///
+        /// <p>Parameters for the studio component scripts.</p>
         pub fn script_parameters(
             mut self,
             input: impl Into<crate::model::ScriptParameterKeyValue>,
@@ -194,6 +220,7 @@ pub mod studio_component {
             self.script_parameters = Some(v);
             self
         }
+        /// <p>Parameters for the studio component scripts.</p>
         pub fn set_script_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ScriptParameterKeyValue>>,
@@ -206,6 +233,7 @@ pub mod studio_component {
             self.state = Some(input);
             self
         }
+        /// <p>The current state.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::StudioComponentState>,
@@ -218,6 +246,7 @@ pub mod studio_component {
             self.status_code = Some(input);
             self
         }
+        /// <p>The status code.</p>
         pub fn set_status_code(
             mut self,
             input: std::option::Option<crate::model::StudioComponentStatusCode>,
@@ -230,6 +259,7 @@ pub mod studio_component {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>The status message for the studio component.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -242,6 +272,7 @@ pub mod studio_component {
             self.studio_component_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for a studio component resource.</p>
         pub fn set_studio_component_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -254,6 +285,7 @@ pub mod studio_component {
             self.subtype = Some(input);
             self
         }
+        /// <p>The specific subtype of a studio component.</p>
         pub fn set_subtype(
             mut self,
             input: std::option::Option<crate::model::StudioComponentSubtype>,
@@ -261,6 +293,11 @@ pub mod studio_component {
             self.subtype = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -271,6 +308,7 @@ pub mod studio_component {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -285,6 +323,7 @@ pub mod studio_component {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the studio component.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::StudioComponentType>,
@@ -293,11 +332,15 @@ pub mod studio_component {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
@@ -306,6 +349,7 @@ pub mod studio_component {
             self.updated_by = Some(input.into());
             self
         }
+        /// <p>The user ID of the user that most recently updated the resource.</p>
         pub fn set_updated_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.updated_by = input;
             self
@@ -342,6 +386,7 @@ impl StudioComponent {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -353,10 +398,15 @@ impl StudioComponent {
     std::hash::Hash,
 )]
 pub enum StudioComponentType {
+    #[allow(missing_docs)] // documentation missing in model
     ActiveDirectory,
+    #[allow(missing_docs)] // documentation missing in model
     ComputeFarm,
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
+    #[allow(missing_docs)] // documentation missing in model
     LicenseService,
+    #[allow(missing_docs)] // documentation missing in model
     SharedFileSystem,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -381,6 +431,7 @@ impl std::str::FromStr for StudioComponentType {
     }
 }
 impl StudioComponentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StudioComponentType::ActiveDirectory => "ACTIVE_DIRECTORY",
@@ -391,6 +442,7 @@ impl StudioComponentType {
             StudioComponentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE_DIRECTORY",
@@ -407,6 +459,7 @@ impl AsRef<str> for StudioComponentType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -418,9 +471,13 @@ impl AsRef<str> for StudioComponentType {
     std::hash::Hash,
 )]
 pub enum StudioComponentSubtype {
+    #[allow(missing_docs)] // documentation missing in model
     AmazonFsxForLustre,
+    #[allow(missing_docs)] // documentation missing in model
     AmazonFsxForWindows,
+    #[allow(missing_docs)] // documentation missing in model
     AwsManagedMicrosoftAd,
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -444,6 +501,7 @@ impl std::str::FromStr for StudioComponentSubtype {
     }
 }
 impl StudioComponentSubtype {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StudioComponentSubtype::AmazonFsxForLustre => "AMAZON_FSX_FOR_LUSTRE",
@@ -453,6 +511,7 @@ impl StudioComponentSubtype {
             StudioComponentSubtype::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AMAZON_FSX_FOR_LUSTRE",
@@ -480,15 +539,25 @@ impl AsRef<str> for StudioComponentSubtype {
     std::hash::Hash,
 )]
 pub enum StudioComponentStatusCode {
+    #[allow(missing_docs)] // documentation missing in model
     ActiveDirectoryAlreadyExists,
+    #[allow(missing_docs)] // documentation missing in model
     EncryptionKeyAccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
     EncryptionKeyNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
+    #[allow(missing_docs)] // documentation missing in model
     StudioComponentCreated,
+    #[allow(missing_docs)] // documentation missing in model
     StudioComponentCreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     StudioComponentDeleted,
+    #[allow(missing_docs)] // documentation missing in model
     StudioComponentDeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     StudioComponentUpdated,
+    #[allow(missing_docs)] // documentation missing in model
     StudioComponentUpdateInProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -526,6 +595,7 @@ impl std::str::FromStr for StudioComponentStatusCode {
     }
 }
 impl StudioComponentStatusCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StudioComponentStatusCode::ActiveDirectoryAlreadyExists => {
@@ -549,6 +619,7 @@ impl StudioComponentStatusCode {
             StudioComponentStatusCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE_DIRECTORY_ALREADY_EXISTS",
@@ -582,13 +653,21 @@ impl AsRef<str> for StudioComponentStatusCode {
     std::hash::Hash,
 )]
 pub enum StudioComponentState {
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -616,6 +695,7 @@ impl std::str::FromStr for StudioComponentState {
     }
 }
 impl StudioComponentState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StudioComponentState::CreateFailed => "CREATE_FAILED",
@@ -629,6 +709,7 @@ impl StudioComponentState {
             StudioComponentState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -680,6 +761,7 @@ pub mod script_parameter_key_value {
             self.key = Some(input.into());
             self
         }
+        /// <p>A script parameter key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -689,6 +771,7 @@ pub mod script_parameter_key_value {
             self.value = Some(input.into());
             self
         }
+        /// <p>A script parameter value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -757,6 +840,7 @@ pub mod studio_component_initialization_script {
             self.launch_profile_protocol_version = Some(input.into());
             self
         }
+        /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
         pub fn set_launch_profile_protocol_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -769,6 +853,7 @@ pub mod studio_component_initialization_script {
             self.platform = Some(input);
             self
         }
+        /// <p>The platform of the initialization script, either WINDOWS or LINUX.</p>
         pub fn set_platform(
             mut self,
             input: std::option::Option<crate::model::LaunchProfilePlatform>,
@@ -784,6 +869,7 @@ pub mod studio_component_initialization_script {
             self.run_context = Some(input);
             self
         }
+        /// <p>The method to use when running the initialization script.</p>
         pub fn set_run_context(
             mut self,
             input: std::option::Option<crate::model::StudioComponentInitializationScriptRunContext>,
@@ -796,6 +882,7 @@ pub mod studio_component_initialization_script {
             self.script = Some(input.into());
             self
         }
+        /// <p>The initialization script.</p>
         pub fn set_script(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.script = input;
             self
@@ -818,6 +905,7 @@ impl StudioComponentInitializationScript {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -829,7 +917,9 @@ impl StudioComponentInitializationScript {
     std::hash::Hash,
 )]
 pub enum StudioComponentInitializationScriptRunContext {
+    #[allow(missing_docs)] // documentation missing in model
     SystemInitialization,
+    #[allow(missing_docs)] // documentation missing in model
     UserInitialization,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -855,6 +945,7 @@ impl std::str::FromStr for StudioComponentInitializationScriptRunContext {
     }
 }
 impl StudioComponentInitializationScriptRunContext {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StudioComponentInitializationScriptRunContext::SystemInitialization => {
@@ -866,6 +957,7 @@ impl StudioComponentInitializationScriptRunContext {
             StudioComponentInitializationScriptRunContext::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SYSTEM_INITIALIZATION", "USER_INITIALIZATION"]
     }
@@ -876,6 +968,7 @@ impl AsRef<str> for StudioComponentInitializationScriptRunContext {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -887,7 +980,9 @@ impl AsRef<str> for StudioComponentInitializationScriptRunContext {
     std::hash::Hash,
 )]
 pub enum LaunchProfilePlatform {
+    #[allow(missing_docs)] // documentation missing in model
     Linux,
+    #[allow(missing_docs)] // documentation missing in model
     Windows,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -909,6 +1004,7 @@ impl std::str::FromStr for LaunchProfilePlatform {
     }
 }
 impl LaunchProfilePlatform {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LaunchProfilePlatform::Linux => "LINUX",
@@ -916,6 +1012,7 @@ impl LaunchProfilePlatform {
             LaunchProfilePlatform::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LINUX", "WINDOWS"]
     }
@@ -988,6 +1085,7 @@ pub mod studio_component_configuration {
             self.active_directory_configuration = Some(input);
             self
         }
+        /// <p>The configuration for a Microsoft Active Directory (Microsoft AD) studio resource.</p>
         pub fn set_active_directory_configuration(
             mut self,
             input: std::option::Option<crate::model::ActiveDirectoryConfiguration>,
@@ -1003,6 +1101,7 @@ pub mod studio_component_configuration {
             self.compute_farm_configuration = Some(input);
             self
         }
+        /// <p>The configuration for a render farm that is associated with a studio resource.</p>
         pub fn set_compute_farm_configuration(
             mut self,
             input: std::option::Option<crate::model::ComputeFarmConfiguration>,
@@ -1018,6 +1117,7 @@ pub mod studio_component_configuration {
             self.license_service_configuration = Some(input);
             self
         }
+        /// <p>The configuration for a license service that is associated with a studio resource.</p>
         pub fn set_license_service_configuration(
             mut self,
             input: std::option::Option<crate::model::LicenseServiceConfiguration>,
@@ -1033,6 +1133,7 @@ pub mod studio_component_configuration {
             self.shared_file_system_configuration = Some(input);
             self
         }
+        /// <p>The configuration for a shared file storage system that is associated with a studio resource.</p>
         pub fn set_shared_file_system_configuration(
             mut self,
             input: std::option::Option<crate::model::SharedFileSystemConfiguration>,
@@ -1102,6 +1203,7 @@ pub mod shared_file_system_configuration {
             self.endpoint = Some(input.into());
             self
         }
+        /// <p>The endpoint of the shared file system that is accessed by the studio component resource.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint = input;
             self
@@ -1111,6 +1213,7 @@ pub mod shared_file_system_configuration {
             self.file_system_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for a file system.</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1123,6 +1226,7 @@ pub mod shared_file_system_configuration {
             self.linux_mount_point = Some(input.into());
             self
         }
+        /// <p>The mount location for a shared file system on a Linux virtual workstation.</p>
         pub fn set_linux_mount_point(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1135,6 +1239,7 @@ pub mod shared_file_system_configuration {
             self.share_name = Some(input.into());
             self
         }
+        /// <p>The name of the file share.</p>
         pub fn set_share_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.share_name = input;
             self
@@ -1144,6 +1249,7 @@ pub mod shared_file_system_configuration {
             self.windows_mount_drive = Some(input.into());
             self
         }
+        /// <p>The mount location for a shared file system on a Windows virtual workstation.</p>
         pub fn set_windows_mount_drive(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1198,6 +1304,7 @@ pub mod license_service_configuration {
             self.endpoint = Some(input.into());
             self
         }
+        /// <p>The endpoint of the license service that is accessed by the studio component resource.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint = input;
             self
@@ -1249,6 +1356,7 @@ pub mod compute_farm_configuration {
             self.active_directory_user = Some(input.into());
             self
         }
+        /// <p>The name of an Active Directory user that is used on ComputeFarm worker instances.</p>
         pub fn set_active_directory_user(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1261,6 +1369,7 @@ pub mod compute_farm_configuration {
             self.endpoint = Some(input.into());
             self
         }
+        /// <p>The endpoint of the ComputeFarm that is accessed by the studio component resource.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint = input;
             self
@@ -1317,6 +1426,11 @@ pub mod active_directory_configuration {
         pub(crate) organizational_unit_distinguished_name: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `computer_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_computer_attributes`](Self::set_computer_attributes).
+        ///
+        /// <p>A collection of custom attributes for an Active Directory computer.</p>
         pub fn computer_attributes(
             mut self,
             input: impl Into<crate::model::ActiveDirectoryComputerAttribute>,
@@ -1326,6 +1440,7 @@ pub mod active_directory_configuration {
             self.computer_attributes = Some(v);
             self
         }
+        /// <p>A collection of custom attributes for an Active Directory computer.</p>
         pub fn set_computer_attributes(
             mut self,
             input: std::option::Option<
@@ -1340,6 +1455,7 @@ pub mod active_directory_configuration {
             self.directory_id = Some(input.into());
             self
         }
+        /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this studio component.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -1352,6 +1468,7 @@ pub mod active_directory_configuration {
             self.organizational_unit_distinguished_name = Some(input.into());
             self
         }
+        /// <p>The distinguished name (DN) and organizational unit (OU) of an Active Directory computer.</p>
         pub fn set_organizational_unit_distinguished_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1408,6 +1525,7 @@ pub mod active_directory_computer_attribute {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name for the LDAP attribute.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1417,6 +1535,7 @@ pub mod active_directory_computer_attribute {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value for the LDAP attribute.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1437,6 +1556,7 @@ impl ActiveDirectoryComputerAttribute {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Studio {
@@ -1445,7 +1565,7 @@ pub struct Studio {
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A friendly name for the studio.</p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region where the studio resource is located.</p>
@@ -1471,7 +1591,7 @@ pub struct Studio {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The IAM role that studio users assume when logging in to the Nimble Studio portal.</p>
     pub user_role_arn: std::option::Option<std::string::String>,
 }
@@ -1508,7 +1628,7 @@ pub mod studio {
     pub struct Builder {
         pub(crate) admin_role_arn: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) home_region: std::option::Option<std::string::String>,
         pub(crate) sso_client_id: std::option::Option<std::string::String>,
@@ -1523,7 +1643,7 @@ pub mod studio {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) user_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1532,6 +1652,7 @@ pub mod studio {
             self.admin_role_arn = Some(input.into());
             self
         }
+        /// <p>The IAM role that studio admins assume when logging in to the Nimble Studio portal.</p>
         pub fn set_admin_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1544,16 +1665,21 @@ pub mod studio {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -1562,6 +1688,7 @@ pub mod studio {
             self.display_name = Some(input.into());
             self
         }
+        /// <p>A friendly name for the studio.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -1571,6 +1698,7 @@ pub mod studio {
             self.home_region = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services Region where the studio resource is located.</p>
         pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.home_region = input;
             self
@@ -1580,6 +1708,7 @@ pub mod studio {
             self.sso_client_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to Nimble portal.</p>
         pub fn set_sso_client_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1592,6 +1721,7 @@ pub mod studio {
             self.state = Some(input);
             self
         }
+        /// <p>The current state of the studio resource.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::StudioState>) -> Self {
             self.state = input;
             self
@@ -1601,6 +1731,7 @@ pub mod studio {
             self.status_code = Some(input);
             self
         }
+        /// <p>Status codes that provide additional detail on the studio state.</p>
         pub fn set_status_code(
             mut self,
             input: std::option::Option<crate::model::StudioStatusCode>,
@@ -1613,6 +1744,7 @@ pub mod studio {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>Additional detail on the studio state.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1628,6 +1760,7 @@ pub mod studio {
             self.studio_encryption_configuration = Some(input);
             self
         }
+        /// <p>Configuration of the encryption method that is used for the studio.</p>
         pub fn set_studio_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::StudioEncryptionConfiguration>,
@@ -1640,6 +1773,7 @@ pub mod studio {
             self.studio_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for a studio resource. In Nimble Studio, all other resources are contained in a studio resource.</p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -1649,6 +1783,7 @@ pub mod studio {
             self.studio_name = Some(input.into());
             self
         }
+        /// <p>The name of the studio, as included in the URL when accessing it in the Nimble Studio portal.</p>
         pub fn set_studio_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_name = input;
             self
@@ -1658,10 +1793,16 @@ pub mod studio {
             self.studio_url = Some(input.into());
             self
         }
+        /// <p>The address of the web page for the studio.</p>
         pub fn set_studio_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_url = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1672,6 +1813,7 @@ pub mod studio {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1682,11 +1824,15 @@ pub mod studio {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
@@ -1695,6 +1841,7 @@ pub mod studio {
             self.user_role_arn = Some(input.into());
             self
         }
+        /// <p>The IAM role that studio users assume when logging in to the Nimble Studio portal.</p>
         pub fn set_user_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1765,6 +1912,7 @@ pub mod studio_encryption_configuration {
             self.key_arn = Some(input.into());
             self
         }
+        /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
         pub fn set_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_arn = input;
             self
@@ -1777,6 +1925,7 @@ pub mod studio_encryption_configuration {
             self.key_type = Some(input);
             self
         }
+        /// <p>The type of KMS key that is used to encrypt studio data.</p>
         pub fn set_key_type(
             mut self,
             input: std::option::Option<crate::model::StudioEncryptionConfigurationKeyType>,
@@ -1812,7 +1961,9 @@ impl StudioEncryptionConfiguration {
     std::hash::Hash,
 )]
 pub enum StudioEncryptionConfigurationKeyType {
+    #[allow(missing_docs)] // documentation missing in model
     AwsOwnedKey,
+    #[allow(missing_docs)] // documentation missing in model
     CustomerManagedKey,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1834,6 +1985,7 @@ impl std::str::FromStr for StudioEncryptionConfigurationKeyType {
     }
 }
 impl StudioEncryptionConfigurationKeyType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StudioEncryptionConfigurationKeyType::AwsOwnedKey => "AWS_OWNED_KEY",
@@ -1841,6 +1993,7 @@ impl StudioEncryptionConfigurationKeyType {
             StudioEncryptionConfigurationKeyType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AWS_OWNED_KEY", "CUSTOMER_MANAGED_KEY"]
     }
@@ -1863,23 +2016,41 @@ impl AsRef<str> for StudioEncryptionConfigurationKeyType {
     std::hash::Hash,
 )]
 pub enum StudioStatusCode {
+    #[allow(missing_docs)] // documentation missing in model
     AwsSsoAccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
     AwsSsoConfigurationRepaired,
+    #[allow(missing_docs)] // documentation missing in model
     AwsSsoConfigurationRepairInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     AwsSsoNotEnabled,
+    #[allow(missing_docs)] // documentation missing in model
     EncryptionKeyAccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
     EncryptionKeyNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
+    #[allow(missing_docs)] // documentation missing in model
     RoleCouldNotBeAssumed,
+    #[allow(missing_docs)] // documentation missing in model
     RoleNotOwnedByStudioOwner,
+    #[allow(missing_docs)] // documentation missing in model
     StudioCreated,
+    #[allow(missing_docs)] // documentation missing in model
     StudioCreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     StudioDeleted,
+    #[allow(missing_docs)] // documentation missing in model
     StudioDeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     StudioUpdated,
+    #[allow(missing_docs)] // documentation missing in model
     StudioUpdateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     StudioWithLaunchProfilesNotDeleted,
+    #[allow(missing_docs)] // documentation missing in model
     StudioWithStreamingImagesNotDeleted,
+    #[allow(missing_docs)] // documentation missing in model
     StudioWithStudioComponentsNotDeleted,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1925,6 +2096,7 @@ impl std::str::FromStr for StudioStatusCode {
     }
 }
 impl StudioStatusCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StudioStatusCode::AwsSsoAccessDenied => "AWS_SSO_ACCESS_DENIED",
@@ -1956,6 +2128,7 @@ impl StudioStatusCode {
             StudioStatusCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AWS_SSO_ACCESS_DENIED",
@@ -1985,6 +2158,7 @@ impl AsRef<str> for StudioStatusCode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1996,13 +2170,21 @@ impl AsRef<str> for StudioStatusCode {
     std::hash::Hash,
 )]
 pub enum StudioState {
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2030,6 +2212,7 @@ impl std::str::FromStr for StudioState {
     }
 }
 impl StudioState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StudioState::CreateFailed => "CREATE_FAILED",
@@ -2043,6 +2226,7 @@ impl StudioState {
             StudioState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -2062,6 +2246,7 @@ impl AsRef<str> for StudioState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamingImage {
@@ -2142,6 +2327,7 @@ pub mod streaming_image {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2151,6 +2337,7 @@ pub mod streaming_image {
             self.description = Some(input.into());
             self
         }
+        /// <p>A human-readable description of the streaming image.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2160,6 +2347,7 @@ pub mod streaming_image {
             self.ec2_image_id = Some(input.into());
             self
         }
+        /// <p>The ID of an EC2 machine image with which to create the streaming image.</p>
         pub fn set_ec2_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ec2_image_id = input;
             self
@@ -2172,6 +2360,7 @@ pub mod streaming_image {
             self.encryption_configuration = Some(input);
             self
         }
+        /// <p>The encryption configuration.</p>
         pub fn set_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::StreamingImageEncryptionConfiguration>,
@@ -2179,12 +2368,18 @@ pub mod streaming_image {
             self.encryption_configuration = input;
             self
         }
+        /// Appends an item to `eula_ids`.
+        ///
+        /// To override the contents of this collection use [`set_eula_ids`](Self::set_eula_ids).
+        ///
+        /// <p>The list of EULAs that must be accepted before a Streaming Session can be started using this streaming image.</p>
         pub fn eula_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.eula_ids.unwrap_or_default();
             v.push(input.into());
             self.eula_ids = Some(v);
             self
         }
+        /// <p>The list of EULAs that must be accepted before a Streaming Session can be started using this streaming image.</p>
         pub fn set_eula_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2197,6 +2392,7 @@ pub mod streaming_image {
             self.name = Some(input.into());
             self
         }
+        /// <p>A friendly name for a streaming image resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2206,6 +2402,7 @@ pub mod streaming_image {
             self.owner = Some(input.into());
             self
         }
+        /// <p>The owner of the streaming image, either the studioId that contains the streaming image, or 'amazon' for images that are provided by Amazon Nimble Studio.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -2215,6 +2412,7 @@ pub mod streaming_image {
             self.platform = Some(input.into());
             self
         }
+        /// <p>The platform of the streaming image, either WINDOWS or LINUX.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform = input;
             self
@@ -2224,6 +2422,7 @@ pub mod streaming_image {
             self.state = Some(input);
             self
         }
+        /// <p>The current state.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::StreamingImageState>,
@@ -2236,6 +2435,7 @@ pub mod streaming_image {
             self.status_code = Some(input);
             self
         }
+        /// <p>The status code.</p>
         pub fn set_status_code(
             mut self,
             input: std::option::Option<crate::model::StreamingImageStatusCode>,
@@ -2248,6 +2448,7 @@ pub mod streaming_image {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>The status message for the streaming image.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2260,6 +2461,7 @@ pub mod streaming_image {
             self.streaming_image_id = Some(input.into());
             self
         }
+        /// <p>The ID of the streaming image.</p>
         pub fn set_streaming_image_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2267,6 +2469,11 @@ pub mod streaming_image {
             self.streaming_image_id = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2277,6 +2484,7 @@ pub mod streaming_image {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2325,11 +2533,17 @@ impl StreamingImage {
     std::hash::Hash,
 )]
 pub enum StreamingImageStatusCode {
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
+    #[allow(missing_docs)] // documentation missing in model
     StreamingImageCreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     StreamingImageDeleted,
+    #[allow(missing_docs)] // documentation missing in model
     StreamingImageDeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     StreamingImageReady,
+    #[allow(missing_docs)] // documentation missing in model
     StreamingImageUpdateInProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2361,6 +2575,7 @@ impl std::str::FromStr for StreamingImageStatusCode {
     }
 }
 impl StreamingImageStatusCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StreamingImageStatusCode::InternalError => "INTERNAL_ERROR",
@@ -2378,6 +2593,7 @@ impl StreamingImageStatusCode {
             StreamingImageStatusCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "INTERNAL_ERROR",
@@ -2395,6 +2611,7 @@ impl AsRef<str> for StreamingImageStatusCode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2406,13 +2623,21 @@ impl AsRef<str> for StreamingImageStatusCode {
     std::hash::Hash,
 )]
 pub enum StreamingImageState {
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2440,6 +2665,7 @@ impl std::str::FromStr for StreamingImageState {
     }
 }
 impl StreamingImageState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StreamingImageState::CreateFailed => "CREATE_FAILED",
@@ -2453,6 +2679,7 @@ impl StreamingImageState {
             StreamingImageState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -2472,6 +2699,7 @@ impl AsRef<str> for StreamingImageState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamingImageEncryptionConfiguration {
@@ -2504,6 +2732,7 @@ pub mod streaming_image_encryption_configuration {
             self.key_arn = Some(input.into());
             self
         }
+        /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
         pub fn set_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_arn = input;
             self
@@ -2516,6 +2745,7 @@ pub mod streaming_image_encryption_configuration {
             self.key_type = Some(input);
             self
         }
+        /// <p>The type of KMS key that is used to encrypt studio data.</p>
         pub fn set_key_type(
             mut self,
             input: std::option::Option<crate::model::StreamingImageEncryptionConfigurationKeyType>,
@@ -2551,6 +2781,7 @@ impl StreamingImageEncryptionConfiguration {
     std::hash::Hash,
 )]
 pub enum StreamingImageEncryptionConfigurationKeyType {
+    #[allow(missing_docs)] // documentation missing in model
     CustomerManagedKey,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2573,6 +2804,7 @@ impl std::str::FromStr for StreamingImageEncryptionConfigurationKeyType {
     }
 }
 impl StreamingImageEncryptionConfigurationKeyType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StreamingImageEncryptionConfigurationKeyType::CustomerManagedKey => {
@@ -2581,6 +2813,7 @@ impl StreamingImageEncryptionConfigurationKeyType {
             StreamingImageEncryptionConfigurationKeyType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CUSTOMER_MANAGED_KEY"]
     }
@@ -2591,6 +2824,7 @@ impl AsRef<str> for StreamingImageEncryptionConfigurationKeyType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchProfileMembership {
@@ -2626,6 +2860,7 @@ pub mod launch_profile_membership {
             self.identity_store_id = Some(input.into());
             self
         }
+        /// <p>The ID of the identity store.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2638,6 +2873,7 @@ pub mod launch_profile_membership {
             self.persona = Some(input);
             self
         }
+        /// <p>The persona.</p>
         pub fn set_persona(
             mut self,
             input: std::option::Option<crate::model::LaunchProfilePersona>,
@@ -2650,6 +2886,7 @@ pub mod launch_profile_membership {
             self.principal_id = Some(input.into());
             self
         }
+        /// <p>The principal ID.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -2671,6 +2908,7 @@ impl LaunchProfileMembership {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2682,6 +2920,7 @@ impl LaunchProfileMembership {
     std::hash::Hash,
 )]
 pub enum LaunchProfilePersona {
+    #[allow(missing_docs)] // documentation missing in model
     User,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2702,12 +2941,14 @@ impl std::str::FromStr for LaunchProfilePersona {
     }
 }
 impl LaunchProfilePersona {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LaunchProfilePersona::User => "USER",
             LaunchProfilePersona::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["USER"]
     }
@@ -2718,13 +2959,14 @@ impl AsRef<str> for LaunchProfilePersona {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchProfile {
     /// <p>The ARN of the resource.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The user ID of the user that created the launch profile.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>A human-readable description of the launch profile.</p>
@@ -2751,7 +2993,7 @@ pub struct LaunchProfile {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The user ID of the user that most recently updated the resource.</p>
     pub updated_by: std::option::Option<std::string::String>,
 }
@@ -2787,7 +3029,7 @@ pub mod launch_profile {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) created_by: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) ec2_subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2803,7 +3045,7 @@ pub mod launch_profile {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) updated_by: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2812,16 +3054,21 @@ pub mod launch_profile {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -2830,6 +3077,7 @@ pub mod launch_profile {
             self.created_by = Some(input.into());
             self
         }
+        /// <p>The user ID of the user that created the launch profile.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_by = input;
             self
@@ -2839,16 +3087,23 @@ pub mod launch_profile {
             self.description = Some(input.into());
             self
         }
+        /// <p>A human-readable description of the launch profile.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `ec2_subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_ec2_subnet_ids`](Self::set_ec2_subnet_ids).
+        ///
+        /// <p>Unique identifiers for a collection of EC2 subnets.</p>
         pub fn ec2_subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ec2_subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.ec2_subnet_ids = Some(v);
             self
         }
+        /// <p>Unique identifiers for a collection of EC2 subnets.</p>
         pub fn set_ec2_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2861,6 +3116,7 @@ pub mod launch_profile {
             self.launch_profile_id = Some(input.into());
             self
         }
+        /// <p>The launch profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2868,6 +3124,11 @@ pub mod launch_profile {
             self.launch_profile_id = input;
             self
         }
+        /// Appends an item to `launch_profile_protocol_versions`.
+        ///
+        /// To override the contents of this collection use [`set_launch_profile_protocol_versions`](Self::set_launch_profile_protocol_versions).
+        ///
+        /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
         pub fn launch_profile_protocol_versions(
             mut self,
             input: impl Into<std::string::String>,
@@ -2877,6 +3138,7 @@ pub mod launch_profile {
             self.launch_profile_protocol_versions = Some(v);
             self
         }
+        /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
         pub fn set_launch_profile_protocol_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2889,6 +3151,7 @@ pub mod launch_profile {
             self.name = Some(input.into());
             self
         }
+        /// <p>A friendly name for the launch profile.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2898,6 +3161,7 @@ pub mod launch_profile {
             self.state = Some(input);
             self
         }
+        /// <p>The current state.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::LaunchProfileState>,
@@ -2910,6 +3174,7 @@ pub mod launch_profile {
             self.status_code = Some(input);
             self
         }
+        /// <p>The status code.</p>
         pub fn set_status_code(
             mut self,
             input: std::option::Option<crate::model::LaunchProfileStatusCode>,
@@ -2922,6 +3187,7 @@ pub mod launch_profile {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>The status message for the launch profile.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2934,6 +3200,7 @@ pub mod launch_profile {
             self.stream_configuration = Some(input);
             self
         }
+        /// <p>A configuration for a streaming session.</p>
         pub fn set_stream_configuration(
             mut self,
             input: std::option::Option<crate::model::StreamConfiguration>,
@@ -2941,12 +3208,18 @@ pub mod launch_profile {
             self.stream_configuration = input;
             self
         }
+        /// Appends an item to `studio_component_ids`.
+        ///
+        /// To override the contents of this collection use [`set_studio_component_ids`](Self::set_studio_component_ids).
+        ///
+        /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
         pub fn studio_component_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.studio_component_ids.unwrap_or_default();
             v.push(input.into());
             self.studio_component_ids = Some(v);
             self
         }
+        /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
         pub fn set_studio_component_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2954,6 +3227,11 @@ pub mod launch_profile {
             self.studio_component_ids = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2964,6 +3242,7 @@ pub mod launch_profile {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2974,11 +3253,15 @@ pub mod launch_profile {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
@@ -2987,6 +3270,7 @@ pub mod launch_profile {
             self.updated_by = Some(input.into());
             self
         }
+        /// <p>The user ID of the user that most recently updated the resource.</p>
         pub fn set_updated_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.updated_by = input;
             self
@@ -3065,6 +3349,7 @@ pub mod stream_configuration {
             self.clipboard_mode = Some(input);
             self
         }
+        /// <p>Enable or disable the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
         pub fn set_clipboard_mode(
             mut self,
             input: std::option::Option<crate::model::StreamingClipboardMode>,
@@ -3072,6 +3357,11 @@ pub mod stream_configuration {
             self.clipboard_mode = input;
             self
         }
+        /// Appends an item to `ec2_instance_types`.
+        ///
+        /// To override the contents of this collection use [`set_ec2_instance_types`](Self::set_ec2_instance_types).
+        ///
+        /// <p>The EC2 instance types that users can select from when launching a streaming session with this launch profile.</p>
         pub fn ec2_instance_types(
             mut self,
             input: impl Into<crate::model::StreamingInstanceType>,
@@ -3081,6 +3371,7 @@ pub mod stream_configuration {
             self.ec2_instance_types = Some(v);
             self
         }
+        /// <p>The EC2 instance types that users can select from when launching a streaming session with this launch profile.</p>
         pub fn set_ec2_instance_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StreamingInstanceType>>,
@@ -3093,6 +3384,7 @@ pub mod stream_configuration {
             self.max_session_length_in_minutes = Some(input);
             self
         }
+        /// <p>The length of time, in minutes, that a streaming session can run. After this point, Nimble Studio automatically terminates the session.</p>
         pub fn set_max_session_length_in_minutes(
             mut self,
             input: std::option::Option<i32>,
@@ -3100,12 +3392,18 @@ pub mod stream_configuration {
             self.max_session_length_in_minutes = input;
             self
         }
+        /// Appends an item to `streaming_image_ids`.
+        ///
+        /// To override the contents of this collection use [`set_streaming_image_ids`](Self::set_streaming_image_ids).
+        ///
+        /// <p>The streaming images that users can select from when launching a streaming session with this launch profile.</p>
         pub fn streaming_image_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.streaming_image_ids.unwrap_or_default();
             v.push(input.into());
             self.streaming_image_ids = Some(v);
             self
         }
+        /// <p>The streaming images that users can select from when launching a streaming session with this launch profile.</p>
         pub fn set_streaming_image_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3133,6 +3431,7 @@ impl StreamConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3144,11 +3443,17 @@ impl StreamConfiguration {
     std::hash::Hash,
 )]
 pub enum StreamingInstanceType {
+    #[allow(missing_docs)] // documentation missing in model
     G4dn12xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     G4dn16xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     G4dn2xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     G4dn4xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     G4dn8xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     G4dnXlarge,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3174,6 +3479,7 @@ impl std::str::FromStr for StreamingInstanceType {
     }
 }
 impl StreamingInstanceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StreamingInstanceType::G4dn12xlarge => "g4dn.12xlarge",
@@ -3185,6 +3491,7 @@ impl StreamingInstanceType {
             StreamingInstanceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "g4dn.12xlarge",
@@ -3202,6 +3509,7 @@ impl AsRef<str> for StreamingInstanceType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3213,7 +3521,9 @@ impl AsRef<str> for StreamingInstanceType {
     std::hash::Hash,
 )]
 pub enum StreamingClipboardMode {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3235,6 +3545,7 @@ impl std::str::FromStr for StreamingClipboardMode {
     }
 }
 impl StreamingClipboardMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StreamingClipboardMode::Disabled => "DISABLED",
@@ -3242,6 +3553,7 @@ impl StreamingClipboardMode {
             StreamingClipboardMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -3252,6 +3564,7 @@ impl AsRef<str> for StreamingClipboardMode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3263,18 +3576,31 @@ impl AsRef<str> for StreamingClipboardMode {
     std::hash::Hash,
 )]
 pub enum LaunchProfileStatusCode {
+    #[allow(missing_docs)] // documentation missing in model
     EncryptionKeyAccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
     EncryptionKeyNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidSubnetsProvided,
+    #[allow(missing_docs)] // documentation missing in model
     LaunchProfileCreated,
+    #[allow(missing_docs)] // documentation missing in model
     LaunchProfileCreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     LaunchProfileDeleted,
+    #[allow(missing_docs)] // documentation missing in model
     LaunchProfileDeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     LaunchProfileUpdated,
+    #[allow(missing_docs)] // documentation missing in model
     LaunchProfileUpdateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     LaunchProfileWithStreamSessionsNotDeleted,
+    #[allow(missing_docs)] // documentation missing in model
     StreamingImageNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     StreamingImageNotReady,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3315,6 +3641,7 @@ impl std::str::FromStr for LaunchProfileStatusCode {
     }
 }
 impl LaunchProfileStatusCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LaunchProfileStatusCode::EncryptionKeyAccessDenied => "ENCRYPTION_KEY_ACCESS_DENIED",
@@ -3341,6 +3668,7 @@ impl LaunchProfileStatusCode {
             LaunchProfileStatusCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ENCRYPTION_KEY_ACCESS_DENIED",
@@ -3365,6 +3693,7 @@ impl AsRef<str> for LaunchProfileStatusCode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3376,13 +3705,21 @@ impl AsRef<str> for LaunchProfileStatusCode {
     std::hash::Hash,
 )]
 pub enum LaunchProfileState {
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3410,6 +3747,7 @@ impl std::str::FromStr for LaunchProfileState {
     }
 }
 impl LaunchProfileState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LaunchProfileState::CreateFailed => "CREATE_FAILED",
@@ -3423,6 +3761,7 @@ impl LaunchProfileState {
             LaunchProfileState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -3442,6 +3781,7 @@ impl AsRef<str> for LaunchProfileState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamConfigurationCreate {
@@ -3485,6 +3825,7 @@ pub mod stream_configuration_create {
             self.clipboard_mode = Some(input);
             self
         }
+        /// <p>Enable or disable the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
         pub fn set_clipboard_mode(
             mut self,
             input: std::option::Option<crate::model::StreamingClipboardMode>,
@@ -3492,6 +3833,11 @@ pub mod stream_configuration_create {
             self.clipboard_mode = input;
             self
         }
+        /// Appends an item to `ec2_instance_types`.
+        ///
+        /// To override the contents of this collection use [`set_ec2_instance_types`](Self::set_ec2_instance_types).
+        ///
+        /// <p>The EC2 instance types that users can select from when launching a streaming session with this launch profile.</p>
         pub fn ec2_instance_types(
             mut self,
             input: impl Into<crate::model::StreamingInstanceType>,
@@ -3501,6 +3847,7 @@ pub mod stream_configuration_create {
             self.ec2_instance_types = Some(v);
             self
         }
+        /// <p>The EC2 instance types that users can select from when launching a streaming session with this launch profile.</p>
         pub fn set_ec2_instance_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StreamingInstanceType>>,
@@ -3513,6 +3860,7 @@ pub mod stream_configuration_create {
             self.max_session_length_in_minutes = Some(input);
             self
         }
+        /// <p>The length of time, in minutes, that a streaming session can run. After this point, Nimble Studio automatically terminates the session.</p>
         pub fn set_max_session_length_in_minutes(
             mut self,
             input: std::option::Option<i32>,
@@ -3520,12 +3868,18 @@ pub mod stream_configuration_create {
             self.max_session_length_in_minutes = input;
             self
         }
+        /// Appends an item to `streaming_image_ids`.
+        ///
+        /// To override the contents of this collection use [`set_streaming_image_ids`](Self::set_streaming_image_ids).
+        ///
+        /// <p>The streaming images that users can select from when launching a streaming session with this launch profile.</p>
         pub fn streaming_image_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.streaming_image_ids.unwrap_or_default();
             v.push(input.into());
             self.streaming_image_ids = Some(v);
             self
         }
+        /// <p>The streaming images that users can select from when launching a streaming session with this launch profile.</p>
         pub fn set_streaming_image_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3553,6 +3907,7 @@ impl StreamConfigurationCreate {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NewStudioMember {
@@ -3584,6 +3939,7 @@ pub mod new_studio_member {
             self.persona = Some(input);
             self
         }
+        /// <p>The persona.</p>
         pub fn set_persona(
             mut self,
             input: std::option::Option<crate::model::StudioPersona>,
@@ -3596,6 +3952,7 @@ pub mod new_studio_member {
             self.principal_id = Some(input.into());
             self
         }
+        /// <p>The principal ID.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -3616,6 +3973,7 @@ impl NewStudioMember {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3627,6 +3985,7 @@ impl NewStudioMember {
     std::hash::Hash,
 )]
 pub enum StudioPersona {
+    #[allow(missing_docs)] // documentation missing in model
     Administrator,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3647,12 +4006,14 @@ impl std::str::FromStr for StudioPersona {
     }
 }
 impl StudioPersona {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StudioPersona::Administrator => "ADMINISTRATOR",
             StudioPersona::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ADMINISTRATOR"]
     }
@@ -3663,6 +4024,7 @@ impl AsRef<str> for StudioPersona {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NewLaunchProfileMember {
@@ -3694,6 +4056,7 @@ pub mod new_launch_profile_member {
             self.persona = Some(input);
             self
         }
+        /// <p>The persona.</p>
         pub fn set_persona(
             mut self,
             input: std::option::Option<crate::model::LaunchProfilePersona>,
@@ -3706,6 +4069,7 @@ pub mod new_launch_profile_member {
             self.principal_id = Some(input.into());
             self
         }
+        /// <p>The principal ID.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -3726,6 +4090,7 @@ impl NewLaunchProfileMember {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StudioMembership {
@@ -3761,6 +4126,7 @@ pub mod studio_membership {
             self.identity_store_id = Some(input.into());
             self
         }
+        /// <p>The ID of the identity store.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3773,6 +4139,7 @@ pub mod studio_membership {
             self.persona = Some(input);
             self
         }
+        /// <p>The persona.</p>
         pub fn set_persona(
             mut self,
             input: std::option::Option<crate::model::StudioPersona>,
@@ -3785,6 +4152,7 @@ pub mod studio_membership {
             self.principal_id = Some(input.into());
             self
         }
+        /// <p>The principal ID.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -3806,13 +4174,14 @@ impl StudioMembership {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamingSession {
     /// <p>The ARN of the resource.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The user ID of the user that created the streaming session.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The EC2 Instance type used for the streaming session.</p>
@@ -3835,9 +4204,9 @@ pub struct StreamingSession {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The time the streaming session will automatically terminate if not terminated by the user.</p>
-    pub terminate_at: std::option::Option<smithy_types::Instant>,
+    pub terminate_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The user ID of the user that most recently updated the resource.</p>
     pub updated_by: std::option::Option<std::string::String>,
 }
@@ -3869,7 +4238,7 @@ pub mod streaming_session {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) created_by: std::option::Option<std::string::String>,
         pub(crate) ec2_instance_type: std::option::Option<std::string::String>,
         pub(crate) launch_profile_id: std::option::Option<std::string::String>,
@@ -3882,8 +4251,8 @@ pub mod streaming_session {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) terminate_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) terminate_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) updated_by: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3892,16 +4261,21 @@ pub mod streaming_session {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -3910,6 +4284,7 @@ pub mod streaming_session {
             self.created_by = Some(input.into());
             self
         }
+        /// <p>The user ID of the user that created the streaming session.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_by = input;
             self
@@ -3919,6 +4294,7 @@ pub mod streaming_session {
             self.ec2_instance_type = Some(input.into());
             self
         }
+        /// <p>The EC2 Instance type used for the streaming session.</p>
         pub fn set_ec2_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3931,6 +4307,7 @@ pub mod streaming_session {
             self.launch_profile_id = Some(input.into());
             self
         }
+        /// <p>The ID of the launch profile used to control access from the streaming session.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3943,6 +4320,7 @@ pub mod streaming_session {
             self.owned_by = Some(input.into());
             self
         }
+        /// <p>The user ID of the user that owns the streaming session.</p>
         pub fn set_owned_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owned_by = input;
             self
@@ -3952,6 +4330,7 @@ pub mod streaming_session {
             self.session_id = Some(input.into());
             self
         }
+        /// <p>The session ID.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_id = input;
             self
@@ -3961,6 +4340,7 @@ pub mod streaming_session {
             self.state = Some(input);
             self
         }
+        /// <p>The current state.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::StreamingSessionState>,
@@ -3973,6 +4353,7 @@ pub mod streaming_session {
             self.status_code = Some(input);
             self
         }
+        /// <p>The status code.</p>
         pub fn set_status_code(
             mut self,
             input: std::option::Option<crate::model::StreamingSessionStatusCode>,
@@ -3985,6 +4366,7 @@ pub mod streaming_session {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>The status message for the streaming session.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3997,6 +4379,7 @@ pub mod streaming_session {
             self.streaming_image_id = Some(input.into());
             self
         }
+        /// <p>The ID of the streaming image.</p>
         pub fn set_streaming_image_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4004,6 +4387,11 @@ pub mod streaming_session {
             self.streaming_image_id = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4014,6 +4402,7 @@ pub mod streaming_session {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4024,23 +4413,28 @@ pub mod streaming_session {
             self
         }
         /// <p>The time the streaming session will automatically terminate if not terminated by the user.</p>
-        pub fn terminate_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn terminate_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.terminate_at = Some(input);
             self
         }
+        /// <p>The time the streaming session will automatically terminate if not terminated by the user.</p>
         pub fn set_terminate_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.terminate_at = input;
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
@@ -4049,6 +4443,7 @@ pub mod streaming_session {
             self.updated_by = Some(input.into());
             self
         }
+        /// <p>The user ID of the user that most recently updated the resource.</p>
         pub fn set_updated_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.updated_by = input;
             self
@@ -4082,6 +4477,7 @@ impl StreamingSession {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4093,16 +4489,27 @@ impl StreamingSession {
     std::hash::Hash,
 )]
 pub enum StreamingSessionStatusCode {
+    #[allow(missing_docs)] // documentation missing in model
     ActiveDirectoryDomainJoinError,
+    #[allow(missing_docs)] // documentation missing in model
     DecryptStreamingImageError,
+    #[allow(missing_docs)] // documentation missing in model
     InitializationScriptError,
+    #[allow(missing_docs)] // documentation missing in model
     InsufficientCapacity,
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkConnectionError,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkInterfaceError,
+    #[allow(missing_docs)] // documentation missing in model
     StreamingSessionCreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     StreamingSessionDeleted,
+    #[allow(missing_docs)] // documentation missing in model
     StreamingSessionDeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     StreamingSessionReady,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4141,6 +4548,7 @@ impl std::str::FromStr for StreamingSessionStatusCode {
     }
 }
 impl StreamingSessionStatusCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StreamingSessionStatusCode::ActiveDirectoryDomainJoinError => {
@@ -4165,6 +4573,7 @@ impl StreamingSessionStatusCode {
             StreamingSessionStatusCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR",
@@ -4199,11 +4608,17 @@ impl AsRef<str> for StreamingSessionStatusCode {
     std::hash::Hash,
 )]
 pub enum StreamingSessionState {
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4229,6 +4644,7 @@ impl std::str::FromStr for StreamingSessionState {
     }
 }
 impl StreamingSessionState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StreamingSessionState::CreateFailed => "CREATE_FAILED",
@@ -4240,6 +4656,7 @@ impl StreamingSessionState {
             StreamingSessionState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -4264,13 +4681,13 @@ pub struct Eula {
     /// <p>The EULA content.</p>
     pub content: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The EULA ID.</p>
     pub eula_id: std::option::Option<std::string::String>,
     /// <p>The name for the EULA.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Eula {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4290,10 +4707,10 @@ pub mod eula {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) eula_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The EULA content.</p>
@@ -4301,16 +4718,21 @@ pub mod eula {
             self.content = Some(input.into());
             self
         }
+        /// <p>The EULA content.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -4319,6 +4741,7 @@ pub mod eula {
             self.eula_id = Some(input.into());
             self
         }
+        /// <p>The EULA ID.</p>
         pub fn set_eula_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.eula_id = input;
             self
@@ -4328,16 +4751,21 @@ pub mod eula {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name for the EULA.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
@@ -4360,11 +4788,12 @@ impl Eula {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EulaAcceptance {
     /// <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
-    pub accepted_at: std::option::Option<smithy_types::Instant>,
+    pub accepted_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The ID of the person who accepted the EULA.</p>
     pub accepted_by: std::option::Option<std::string::String>,
     /// <p>The ID of the acceptee.</p>
@@ -4391,7 +4820,7 @@ pub mod eula_acceptance {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) accepted_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) accepted_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) accepted_by: std::option::Option<std::string::String>,
         pub(crate) acceptee_id: std::option::Option<std::string::String>,
         pub(crate) eula_acceptance_id: std::option::Option<std::string::String>,
@@ -4399,13 +4828,14 @@ pub mod eula_acceptance {
     }
     impl Builder {
         /// <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
-        pub fn accepted_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn accepted_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.accepted_at = Some(input);
             self
         }
+        /// <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
         pub fn set_accepted_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.accepted_at = input;
             self
@@ -4415,6 +4845,7 @@ pub mod eula_acceptance {
             self.accepted_by = Some(input.into());
             self
         }
+        /// <p>The ID of the person who accepted the EULA.</p>
         pub fn set_accepted_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.accepted_by = input;
             self
@@ -4424,6 +4855,7 @@ pub mod eula_acceptance {
             self.acceptee_id = Some(input.into());
             self
         }
+        /// <p>The ID of the acceptee.</p>
         pub fn set_acceptee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.acceptee_id = input;
             self
@@ -4433,6 +4865,7 @@ pub mod eula_acceptance {
             self.eula_acceptance_id = Some(input.into());
             self
         }
+        /// <p>The EULA acceptance ID.</p>
         pub fn set_eula_acceptance_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4445,6 +4878,7 @@ pub mod eula_acceptance {
             self.eula_id = Some(input.into());
             self
         }
+        /// <p>The EULA ID.</p>
         pub fn set_eula_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.eula_id = input;
             self
@@ -4468,15 +4902,16 @@ impl EulaAcceptance {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamingSessionStream {
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The user ID of the user that created the streaming session stream.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the resource expires.</p>
-    pub expires_at: std::option::Option<smithy_types::Instant>,
+    pub expires_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The user ID of the user that owns the streaming session.</p>
     pub owned_by: std::option::Option<std::string::String>,
     /// <p>The current state.</p>
@@ -4508,9 +4943,9 @@ pub mod streaming_session_stream {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) created_by: std::option::Option<std::string::String>,
-        pub(crate) expires_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) expires_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) owned_by: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::StreamingSessionStreamState>,
         pub(crate) status_code: std::option::Option<crate::model::StreamingSessionStreamStatusCode>,
@@ -4519,11 +4954,15 @@ pub mod streaming_session_stream {
     }
     impl Builder {
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -4532,16 +4971,21 @@ pub mod streaming_session_stream {
             self.created_by = Some(input.into());
             self
         }
+        /// <p>The user ID of the user that created the streaming session stream.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_by = input;
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource expires.</p>
-        pub fn expires_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn expires_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.expires_at = Some(input);
             self
         }
-        pub fn set_expires_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix epoch timestamp in seconds for when the resource expires.</p>
+        pub fn set_expires_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.expires_at = input;
             self
         }
@@ -4550,6 +4994,7 @@ pub mod streaming_session_stream {
             self.owned_by = Some(input.into());
             self
         }
+        /// <p>The user ID of the user that owns the streaming session.</p>
         pub fn set_owned_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owned_by = input;
             self
@@ -4559,6 +5004,7 @@ pub mod streaming_session_stream {
             self.state = Some(input);
             self
         }
+        /// <p>The current state.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::StreamingSessionStreamState>,
@@ -4574,6 +5020,7 @@ pub mod streaming_session_stream {
             self.status_code = Some(input);
             self
         }
+        /// <p>The streaming session stream status code.</p>
         pub fn set_status_code(
             mut self,
             input: std::option::Option<crate::model::StreamingSessionStreamStatusCode>,
@@ -4586,6 +5033,7 @@ pub mod streaming_session_stream {
             self.stream_id = Some(input.into());
             self
         }
+        /// <p>The stream ID.</p>
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_id = input;
             self
@@ -4595,6 +5043,7 @@ pub mod streaming_session_stream {
             self.url = Some(input.into());
             self
         }
+        /// <p>The URL to connect to this stream using the DCV client.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -4621,6 +5070,7 @@ impl StreamingSessionStream {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4632,11 +5082,17 @@ impl StreamingSessionStream {
     std::hash::Hash,
 )]
 pub enum StreamingSessionStreamStatusCode {
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkConnectionError,
+    #[allow(missing_docs)] // documentation missing in model
     StreamCreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     StreamDeleted,
+    #[allow(missing_docs)] // documentation missing in model
     StreamDeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     StreamReady,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4662,6 +5118,7 @@ impl std::str::FromStr for StreamingSessionStreamStatusCode {
     }
 }
 impl StreamingSessionStreamStatusCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StreamingSessionStreamStatusCode::InternalError => "INTERNAL_ERROR",
@@ -4673,6 +5130,7 @@ impl StreamingSessionStreamStatusCode {
             StreamingSessionStreamStatusCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "INTERNAL_ERROR",
@@ -4690,6 +5148,7 @@ impl AsRef<str> for StreamingSessionStreamStatusCode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4701,11 +5160,17 @@ impl AsRef<str> for StreamingSessionStreamStatusCode {
     std::hash::Hash,
 )]
 pub enum StreamingSessionStreamState {
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4731,6 +5196,7 @@ impl std::str::FromStr for StreamingSessionStreamState {
     }
 }
 impl StreamingSessionStreamState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StreamingSessionStreamState::CreateFailed => "CREATE_FAILED",
@@ -4742,6 +5208,7 @@ impl StreamingSessionStreamState {
             StreamingSessionStreamState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -4759,6 +5226,7 @@ impl AsRef<str> for StreamingSessionStreamState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchProfileInitialization {
@@ -4836,6 +5304,7 @@ pub mod launch_profile_initialization {
             self.active_directory = Some(input);
             self
         }
+        /// <p>A LaunchProfileInitializationActiveDirectory resource.</p>
         pub fn set_active_directory(
             mut self,
             input: std::option::Option<crate::model::LaunchProfileInitializationActiveDirectory>,
@@ -4843,12 +5312,18 @@ pub mod launch_profile_initialization {
             self.active_directory = input;
             self
         }
+        /// Appends an item to `ec2_security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_ec2_security_group_ids`](Self::set_ec2_security_group_ids).
+        ///
+        /// <p>The EC2 security groups that control access to the studio component.</p>
         pub fn ec2_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ec2_security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.ec2_security_group_ids = Some(v);
             self
         }
+        /// <p>The EC2 security groups that control access to the studio component.</p>
         pub fn set_ec2_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4861,6 +5336,7 @@ pub mod launch_profile_initialization {
             self.launch_profile_id = Some(input.into());
             self
         }
+        /// <p>The launch profile ID.</p>
         pub fn set_launch_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4876,6 +5352,7 @@ pub mod launch_profile_initialization {
             self.launch_profile_protocol_version = Some(input.into());
             self
         }
+        /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
         pub fn set_launch_profile_protocol_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4888,6 +5365,7 @@ pub mod launch_profile_initialization {
             self.launch_purpose = Some(input.into());
             self
         }
+        /// <p>The launch purpose.</p>
         pub fn set_launch_purpose(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4900,6 +5378,7 @@ pub mod launch_profile_initialization {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name for the launch profile.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4909,6 +5388,7 @@ pub mod launch_profile_initialization {
             self.platform = Some(input);
             self
         }
+        /// <p>The platform of the launch platform, either WINDOWS or LINUX.</p>
         pub fn set_platform(
             mut self,
             input: std::option::Option<crate::model::LaunchProfilePlatform>,
@@ -4916,6 +5396,11 @@ pub mod launch_profile_initialization {
             self.platform = input;
             self
         }
+        /// Appends an item to `system_initialization_scripts`.
+        ///
+        /// To override the contents of this collection use [`set_system_initialization_scripts`](Self::set_system_initialization_scripts).
+        ///
+        /// <p>The system initializtion scripts.</p>
         pub fn system_initialization_scripts(
             mut self,
             input: impl Into<crate::model::LaunchProfileInitializationScript>,
@@ -4925,6 +5410,7 @@ pub mod launch_profile_initialization {
             self.system_initialization_scripts = Some(v);
             self
         }
+        /// <p>The system initializtion scripts.</p>
         pub fn set_system_initialization_scripts(
             mut self,
             input: std::option::Option<
@@ -4934,6 +5420,11 @@ pub mod launch_profile_initialization {
             self.system_initialization_scripts = input;
             self
         }
+        /// Appends an item to `user_initialization_scripts`.
+        ///
+        /// To override the contents of this collection use [`set_user_initialization_scripts`](Self::set_user_initialization_scripts).
+        ///
+        /// <p>The user initializtion scripts.</p>
         pub fn user_initialization_scripts(
             mut self,
             input: impl Into<crate::model::LaunchProfileInitializationScript>,
@@ -4943,6 +5434,7 @@ pub mod launch_profile_initialization {
             self.user_initialization_scripts = Some(v);
             self
         }
+        /// <p>The user initializtion scripts.</p>
         pub fn set_user_initialization_scripts(
             mut self,
             input: std::option::Option<
@@ -4975,6 +5467,7 @@ impl LaunchProfileInitialization {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchProfileInitializationScript {
@@ -5010,6 +5503,7 @@ pub mod launch_profile_initialization_script {
             self.script = Some(input.into());
             self
         }
+        /// <p>The initialization script.</p>
         pub fn set_script(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.script = input;
             self
@@ -5019,6 +5513,7 @@ pub mod launch_profile_initialization_script {
             self.studio_component_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for a studio component resource.</p>
         pub fn set_studio_component_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5031,6 +5526,7 @@ pub mod launch_profile_initialization_script {
             self.studio_component_name = Some(input.into());
             self
         }
+        /// <p>The name for the studio component.</p>
         pub fn set_studio_component_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5055,6 +5551,7 @@ impl LaunchProfileInitializationScript {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchProfileInitializationActiveDirectory {
@@ -5106,6 +5603,11 @@ pub mod launch_profile_initialization_active_directory {
         pub(crate) studio_component_name: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `computer_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_computer_attributes`](Self::set_computer_attributes).
+        ///
+        /// <p>A collection of custom attributes for an Active Directory computer.</p>
         pub fn computer_attributes(
             mut self,
             input: impl Into<crate::model::ActiveDirectoryComputerAttribute>,
@@ -5115,6 +5617,7 @@ pub mod launch_profile_initialization_active_directory {
             self.computer_attributes = Some(v);
             self
         }
+        /// <p>A collection of custom attributes for an Active Directory computer.</p>
         pub fn set_computer_attributes(
             mut self,
             input: std::option::Option<
@@ -5129,6 +5632,7 @@ pub mod launch_profile_initialization_active_directory {
             self.directory_id = Some(input.into());
             self
         }
+        /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this launch profile.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -5138,6 +5642,7 @@ pub mod launch_profile_initialization_active_directory {
             self.directory_name = Some(input.into());
             self
         }
+        /// <p>The directory name.</p>
         pub fn set_directory_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5145,12 +5650,18 @@ pub mod launch_profile_initialization_active_directory {
             self.directory_name = input;
             self
         }
+        /// Appends an item to `dns_ip_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_dns_ip_addresses`](Self::set_dns_ip_addresses).
+        ///
+        /// <p>The DNS IP address.</p>
         pub fn dns_ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dns_ip_addresses.unwrap_or_default();
             v.push(input.into());
             self.dns_ip_addresses = Some(v);
             self
         }
+        /// <p>The DNS IP address.</p>
         pub fn set_dns_ip_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5166,6 +5677,7 @@ pub mod launch_profile_initialization_active_directory {
             self.organizational_unit_distinguished_name = Some(input.into());
             self
         }
+        /// <p>The name for the organizational unit distinguished name.</p>
         pub fn set_organizational_unit_distinguished_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5178,6 +5690,7 @@ pub mod launch_profile_initialization_active_directory {
             self.studio_component_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for a studio component resource.</p>
         pub fn set_studio_component_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5190,6 +5703,7 @@ pub mod launch_profile_initialization_active_directory {
             self.studio_component_name = Some(input.into());
             self
         }
+        /// <p>The name for the studio component.</p>
         pub fn set_studio_component_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5223,7 +5737,7 @@ impl LaunchProfileInitializationActiveDirectory {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StudioComponentSummary {
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The user ID of the user that created the studio component.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The description.</p>
@@ -5237,7 +5751,7 @@ pub struct StudioComponentSummary {
     /// <p>The type of the studio component.</p>
     pub r#type: std::option::Option<crate::model::StudioComponentType>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The user ID of the user that most recently updated the resource.</p>
     pub updated_by: std::option::Option<std::string::String>,
 }
@@ -5262,23 +5776,27 @@ pub mod studio_component_summary {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) created_by: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) studio_component_id: std::option::Option<std::string::String>,
         pub(crate) subtype: std::option::Option<crate::model::StudioComponentSubtype>,
         pub(crate) r#type: std::option::Option<crate::model::StudioComponentType>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) updated_by: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -5287,6 +5805,7 @@ pub mod studio_component_summary {
             self.created_by = Some(input.into());
             self
         }
+        /// <p>The user ID of the user that created the studio component.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_by = input;
             self
@@ -5296,6 +5815,7 @@ pub mod studio_component_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5305,6 +5825,7 @@ pub mod studio_component_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name for the studio component.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5314,6 +5835,7 @@ pub mod studio_component_summary {
             self.studio_component_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for a studio component resource.</p>
         pub fn set_studio_component_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5326,6 +5848,7 @@ pub mod studio_component_summary {
             self.subtype = Some(input);
             self
         }
+        /// <p>The specific subtype of a studio component.</p>
         pub fn set_subtype(
             mut self,
             input: std::option::Option<crate::model::StudioComponentSubtype>,
@@ -5338,6 +5861,7 @@ pub mod studio_component_summary {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the studio component.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::StudioComponentType>,
@@ -5346,11 +5870,15 @@ pub mod studio_component_summary {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
@@ -5359,6 +5887,7 @@ pub mod studio_component_summary {
             self.updated_by = Some(input.into());
             self
         }
+        /// <p>The user ID of the user that most recently updated the resource.</p>
         pub fn set_updated_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.updated_by = input;
             self

@@ -1,0 +1,19 @@
+[package]
+name = "aws-smithy-protocol-test"
+version = "0.27.0-alpha"
+authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
+description = "A collection of library functions to validate HTTP requests against Smithy protocol tests."
+edition = "2018"
+license = "Apache-2.0"
+repository = "https://github.com/awslabs/smithy-rs"
+
+[dependencies]
+http = "0.2.1"
+thiserror = "1"
+serde_json = "1"
+regex = "1.5"
+# Not perfect for our needs, but good for now
+assert-json-diff = "1"
+
+pretty_assertions = "1.0"
+roxmltree = "0.14.1"

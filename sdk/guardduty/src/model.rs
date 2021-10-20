@@ -32,6 +32,7 @@ pub mod destination_properties {
             self.destination_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the resource to publish to.</p>
         pub fn set_destination_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -44,6 +45,7 @@ pub mod destination_properties {
             self.kms_key_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the KMS key to use for encryption.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -95,6 +97,8 @@ pub mod organization_data_source_configurations {
             self.s3_logs = Some(input);
             self
         }
+        /// <p>Describes whether S3 data event logs are enabled for new members of the
+        /// organization.</p>
         pub fn set_s3_logs(
             mut self,
             input: std::option::Option<crate::model::OrganizationS3LogsConfiguration>,
@@ -148,6 +152,8 @@ pub mod organization_s3_logs_configuration {
             self.auto_enable = Some(input);
             self
         }
+        /// <p>A value that contains information on whether S3 data event logs will be enabled
+        /// automatically as a data source for the organization.</p>
         pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_enable = input;
             self
@@ -199,6 +205,7 @@ pub mod unprocessed_account {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The AWS account ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -208,6 +215,7 @@ pub mod unprocessed_account {
             self.result = Some(input.into());
             self
         }
+        /// <p>A reason why the account hasn't been processed.</p>
         pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.result = input;
             self
@@ -256,6 +264,7 @@ pub mod data_source_configurations {
             self.s3_logs = Some(input);
             self
         }
+        /// <p>Describes whether S3 data event logs are enabled as a data source.</p>
         pub fn set_s3_logs(
             mut self,
             input: std::option::Option<crate::model::S3LogsConfiguration>,
@@ -306,6 +315,7 @@ pub mod s3_logs_configuration {
             self.enable = Some(input);
             self
         }
+        /// <p> The status of S3 data event logs as a data source.</p>
         pub fn set_enable(mut self, input: std::option::Option<bool>) -> Self {
             self.enable = input;
             self
@@ -325,6 +335,7 @@ impl S3LogsConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -336,7 +347,9 @@ impl S3LogsConfiguration {
     std::hash::Hash,
 )]
 pub enum Feedback {
+    #[allow(missing_docs)] // documentation missing in model
     NotUseful,
+    #[allow(missing_docs)] // documentation missing in model
     Useful,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -358,6 +371,7 @@ impl std::str::FromStr for Feedback {
     }
 }
 impl Feedback {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Feedback::NotUseful => "NOT_USEFUL",
@@ -365,6 +379,7 @@ impl Feedback {
             Feedback::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NOT_USEFUL", "USEFUL"]
     }
@@ -403,6 +418,12 @@ pub mod finding_criteria {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `criterion`.
+        ///
+        /// To override the contents of this collection use [`set_criterion`](Self::set_criterion).
+        ///
+        /// <p>Represents a map of finding properties that match specified conditions and values when
+        /// querying findings.</p>
         pub fn criterion(
             mut self,
             k: impl Into<std::string::String>,
@@ -413,6 +434,8 @@ pub mod finding_criteria {
             self.criterion = Some(hash_map);
             self
         }
+        /// <p>Represents a map of finding properties that match specified conditions and values when
+        /// querying findings.</p>
         pub fn set_criterion(
             mut self,
             input: std::option::Option<
@@ -518,12 +541,20 @@ pub mod condition {
         pub(crate) less_than_or_equal: std::option::Option<i64>,
     }
     impl Builder {
+        /// Appends an item to `eq`.
+        ///
+        /// To override the contents of this collection use [`set_eq`](Self::set_eq).
+        ///
+        /// <p>Represents the <i>equal</i> condition to be applied to a single field when
+        /// querying for findings.</p>
         pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.eq.unwrap_or_default();
             v.push(input.into());
             self.eq = Some(v);
             self
         }
+        /// <p>Represents the <i>equal</i> condition to be applied to a single field when
+        /// querying for findings.</p>
         pub fn set_eq(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -531,12 +562,20 @@ pub mod condition {
             self.eq = input;
             self
         }
+        /// Appends an item to `neq`.
+        ///
+        /// To override the contents of this collection use [`set_neq`](Self::set_neq).
+        ///
+        /// <p>Represents the <i>not equal</i> condition to be applied to a single field
+        /// when querying for findings.</p>
         pub fn neq(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.neq.unwrap_or_default();
             v.push(input.into());
             self.neq = Some(v);
             self
         }
+        /// <p>Represents the <i>not equal</i> condition to be applied to a single field
+        /// when querying for findings.</p>
         pub fn set_neq(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -550,6 +589,8 @@ pub mod condition {
             self.gt = Some(input);
             self
         }
+        /// <p>Represents a <i>greater than</i> condition to be applied to a single field
+        /// when querying for findings.</p>
         pub fn set_gt(mut self, input: std::option::Option<i32>) -> Self {
             self.gt = input;
             self
@@ -560,6 +601,8 @@ pub mod condition {
             self.gte = Some(input);
             self
         }
+        /// <p>Represents a <i>greater than or equal</i> condition to be applied to a
+        /// single field when querying for findings.</p>
         pub fn set_gte(mut self, input: std::option::Option<i32>) -> Self {
             self.gte = input;
             self
@@ -570,6 +613,8 @@ pub mod condition {
             self.lt = Some(input);
             self
         }
+        /// <p>Represents a <i>less than</i> condition to be applied to a single field when
+        /// querying for findings.</p>
         pub fn set_lt(mut self, input: std::option::Option<i32>) -> Self {
             self.lt = input;
             self
@@ -580,16 +625,28 @@ pub mod condition {
             self.lte = Some(input);
             self
         }
+        /// <p>Represents a <i>less than or equal</i> condition to be applied to a single
+        /// field when querying for findings.</p>
         pub fn set_lte(mut self, input: std::option::Option<i32>) -> Self {
             self.lte = input;
             self
         }
+        /// Appends an item to `equals`.
+        ///
+        /// To override the contents of this collection use [`set_equals`](Self::set_equals).
+        ///
+        /// <p>Represents an <i>equal</i>
+        /// <b></b> condition to be applied to
+        /// a single field when querying for findings.</p>
         pub fn equals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.equals.unwrap_or_default();
             v.push(input.into());
             self.equals = Some(v);
             self
         }
+        /// <p>Represents an <i>equal</i>
+        /// <b></b> condition to be applied to
+        /// a single field when querying for findings.</p>
         pub fn set_equals(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -597,12 +654,22 @@ pub mod condition {
             self.equals = input;
             self
         }
+        /// Appends an item to `not_equals`.
+        ///
+        /// To override the contents of this collection use [`set_not_equals`](Self::set_not_equals).
+        ///
+        /// <p>Represents a <i>not equal</i>
+        /// <b></b> condition to be applied
+        /// to a single field when querying for findings.</p>
         pub fn not_equals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_equals.unwrap_or_default();
             v.push(input.into());
             self.not_equals = Some(v);
             self
         }
+        /// <p>Represents a <i>not equal</i>
+        /// <b></b> condition to be applied
+        /// to a single field when querying for findings.</p>
         pub fn set_not_equals(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -616,6 +683,8 @@ pub mod condition {
             self.greater_than = Some(input);
             self
         }
+        /// <p>Represents a <i>greater than</i> condition to be applied to a single field
+        /// when querying for findings.</p>
         pub fn set_greater_than(mut self, input: std::option::Option<i64>) -> Self {
             self.greater_than = input;
             self
@@ -626,6 +695,8 @@ pub mod condition {
             self.greater_than_or_equal = Some(input);
             self
         }
+        /// <p>Represents a <i>greater than or equal</i> condition to be applied to a
+        /// single field when querying for findings.</p>
         pub fn set_greater_than_or_equal(mut self, input: std::option::Option<i64>) -> Self {
             self.greater_than_or_equal = input;
             self
@@ -636,6 +707,8 @@ pub mod condition {
             self.less_than = Some(input);
             self
         }
+        /// <p>Represents a <i>less than</i> condition to be applied to a single field when
+        /// querying for findings.</p>
         pub fn set_less_than(mut self, input: std::option::Option<i64>) -> Self {
             self.less_than = input;
             self
@@ -646,6 +719,8 @@ pub mod condition {
             self.less_than_or_equal = Some(input);
             self
         }
+        /// <p>Represents a <i>less than or equal</i> condition to be applied to a single
+        /// field when querying for findings.</p>
         pub fn set_less_than_or_equal(mut self, input: std::option::Option<i64>) -> Self {
             self.less_than_or_equal = input;
             self
@@ -676,6 +751,7 @@ impl Condition {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -687,7 +763,9 @@ impl Condition {
     std::hash::Hash,
 )]
 pub enum FilterAction {
+    #[allow(missing_docs)] // documentation missing in model
     Archive,
+    #[allow(missing_docs)] // documentation missing in model
     Noop,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -709,6 +787,7 @@ impl std::str::FromStr for FilterAction {
     }
 }
 impl FilterAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FilterAction::Archive => "ARCHIVE",
@@ -716,6 +795,7 @@ impl FilterAction {
             FilterAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ARCHIVE", "NOOP"]
     }
@@ -726,6 +806,7 @@ impl AsRef<str> for FilterAction {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -737,8 +818,11 @@ impl AsRef<str> for FilterAction {
     std::hash::Hash,
 )]
 pub enum FindingPublishingFrequency {
+    #[allow(missing_docs)] // documentation missing in model
     FifteenMinutes,
+    #[allow(missing_docs)] // documentation missing in model
     OneHour,
+    #[allow(missing_docs)] // documentation missing in model
     SixHours,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -761,6 +845,7 @@ impl std::str::FromStr for FindingPublishingFrequency {
     }
 }
 impl FindingPublishingFrequency {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FindingPublishingFrequency::FifteenMinutes => "FIFTEEN_MINUTES",
@@ -769,6 +854,7 @@ impl FindingPublishingFrequency {
             FindingPublishingFrequency::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FIFTEEN_MINUTES", "ONE_HOUR", "SIX_HOURS"]
     }
@@ -817,6 +903,7 @@ pub mod destination {
             self.destination_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the publishing destination.</p>
         pub fn set_destination_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -830,6 +917,8 @@ pub mod destination {
             self.destination_type = Some(input);
             self
         }
+        /// <p>The type of resource used for the publishing destination. Currently, only Amazon S3
+        /// buckets are supported.</p>
         pub fn set_destination_type(
             mut self,
             input: std::option::Option<crate::model::DestinationType>,
@@ -842,6 +931,7 @@ pub mod destination {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the publishing destination.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::PublishingStatus>,
@@ -866,6 +956,7 @@ impl Destination {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -877,9 +968,13 @@ impl Destination {
     std::hash::Hash,
 )]
 pub enum PublishingStatus {
+    #[allow(missing_docs)] // documentation missing in model
     PendingVerification,
+    #[allow(missing_docs)] // documentation missing in model
     Publishing,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     UnableToPublishFixDestinationProperty,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -905,6 +1000,7 @@ impl std::str::FromStr for PublishingStatus {
     }
 }
 impl PublishingStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PublishingStatus::PendingVerification => "PENDING_VERIFICATION",
@@ -916,6 +1012,7 @@ impl PublishingStatus {
             PublishingStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "PENDING_VERIFICATION",
@@ -931,6 +1028,7 @@ impl AsRef<str> for PublishingStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -942,6 +1040,7 @@ impl AsRef<str> for PublishingStatus {
     std::hash::Hash,
 )]
 pub enum DestinationType {
+    #[allow(missing_docs)] // documentation missing in model
     S3,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -962,12 +1061,14 @@ impl std::str::FromStr for DestinationType {
     }
 }
 impl DestinationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DestinationType::S3 => "S3",
             DestinationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["S3"]
     }
@@ -1011,6 +1112,7 @@ pub mod admin_account {
             self.admin_account_id = Some(input.into());
             self
         }
+        /// <p>The AWS account ID for the account.</p>
         pub fn set_admin_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1023,6 +1125,7 @@ pub mod admin_account {
             self.admin_status = Some(input);
             self
         }
+        /// <p>Indicates whether the account is enabled as the delegated administrator.</p>
         pub fn set_admin_status(
             mut self,
             input: std::option::Option<crate::model::AdminStatus>,
@@ -1046,6 +1149,7 @@ impl AdminAccount {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1057,7 +1161,9 @@ impl AdminAccount {
     std::hash::Hash,
 )]
 pub enum AdminStatus {
+    #[allow(missing_docs)] // documentation missing in model
     DisableInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1079,6 +1185,7 @@ impl std::str::FromStr for AdminStatus {
     }
 }
 impl AdminStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AdminStatus::DisableInProgress => "DISABLE_IN_PROGRESS",
@@ -1086,6 +1193,7 @@ impl AdminStatus {
             AdminStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLE_IN_PROGRESS", "ENABLED"]
     }
@@ -1148,6 +1256,7 @@ pub mod member {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The ID of the member account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1157,6 +1266,7 @@ pub mod member {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The detector ID of the member account.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -1166,6 +1276,7 @@ pub mod member {
             self.master_id = Some(input.into());
             self
         }
+        /// <p>The administrator account ID.</p>
         pub fn set_master_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.master_id = input;
             self
@@ -1175,6 +1286,7 @@ pub mod member {
             self.email = Some(input.into());
             self
         }
+        /// <p>The email address of the member account.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.email = input;
             self
@@ -1184,6 +1296,7 @@ pub mod member {
             self.relationship_status = Some(input.into());
             self
         }
+        /// <p>The status of the relationship between the member and the administrator.</p>
         pub fn set_relationship_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1196,6 +1309,7 @@ pub mod member {
             self.invited_at = Some(input.into());
             self
         }
+        /// <p>The timestamp when the invitation was sent.</p>
         pub fn set_invited_at(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.invited_at = input;
             self
@@ -1205,6 +1319,7 @@ pub mod member {
             self.updated_at = Some(input.into());
             self
         }
+        /// <p>The last-updated timestamp of the member.</p>
         pub fn set_updated_at(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.updated_at = input;
             self
@@ -1271,6 +1386,7 @@ pub mod invitation {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The ID of the account that the invitation was sent from.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1281,6 +1397,8 @@ pub mod invitation {
             self.invitation_id = Some(input.into());
             self
         }
+        /// <p>The ID of the invitation. This value is used to validate the inviter account to the member
+        /// account.</p>
         pub fn set_invitation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1293,6 +1411,7 @@ pub mod invitation {
             self.relationship_status = Some(input.into());
             self
         }
+        /// <p>The status of the relationship between the inviter and invitee accounts.</p>
         pub fn set_relationship_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1305,6 +1424,7 @@ pub mod invitation {
             self.invited_at = Some(input.into());
             self
         }
+        /// <p>The timestamp when the invitation was sent.</p>
         pub fn set_invited_at(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.invited_at = input;
             self
@@ -1359,6 +1479,7 @@ pub mod sort_criteria {
             self.attribute_name = Some(input.into());
             self
         }
+        /// <p>Represents the finding attribute (for example, accountId) to sort findings by.</p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1371,6 +1492,7 @@ pub mod sort_criteria {
             self.order_by = Some(input);
             self
         }
+        /// <p>The order by which the sorted findings are to be displayed.</p>
         pub fn set_order_by(mut self, input: std::option::Option<crate::model::OrderBy>) -> Self {
             self.order_by = input;
             self
@@ -1391,6 +1513,7 @@ impl SortCriteria {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1402,7 +1525,9 @@ impl SortCriteria {
     std::hash::Hash,
 )]
 pub enum OrderBy {
+    #[allow(missing_docs)] // documentation missing in model
     Asc,
+    #[allow(missing_docs)] // documentation missing in model
     Desc,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1424,6 +1549,7 @@ impl std::str::FromStr for OrderBy {
     }
 }
 impl OrderBy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrderBy::Asc => "ASC",
@@ -1431,6 +1557,7 @@ impl OrderBy {
             OrderBy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ASC", "DESC"]
     }
@@ -1482,6 +1609,11 @@ pub mod usage_statistics {
             std::option::Option<std::vec::Vec<crate::model::UsageResourceResult>>,
     }
     impl Builder {
+        /// Appends an item to `sum_by_account`.
+        ///
+        /// To override the contents of this collection use [`set_sum_by_account`](Self::set_sum_by_account).
+        ///
+        /// <p>The usage statistic sum organized by account ID.</p>
         pub fn sum_by_account(
             mut self,
             input: impl Into<crate::model::UsageAccountResult>,
@@ -1491,6 +1623,7 @@ pub mod usage_statistics {
             self.sum_by_account = Some(v);
             self
         }
+        /// <p>The usage statistic sum organized by account ID.</p>
         pub fn set_sum_by_account(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UsageAccountResult>>,
@@ -1498,6 +1631,11 @@ pub mod usage_statistics {
             self.sum_by_account = input;
             self
         }
+        /// Appends an item to `sum_by_data_source`.
+        ///
+        /// To override the contents of this collection use [`set_sum_by_data_source`](Self::set_sum_by_data_source).
+        ///
+        /// <p>The usage statistic sum organized by on data source.</p>
         pub fn sum_by_data_source(
             mut self,
             input: impl Into<crate::model::UsageDataSourceResult>,
@@ -1507,6 +1645,7 @@ pub mod usage_statistics {
             self.sum_by_data_source = Some(v);
             self
         }
+        /// <p>The usage statistic sum organized by on data source.</p>
         pub fn set_sum_by_data_source(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UsageDataSourceResult>>,
@@ -1514,6 +1653,11 @@ pub mod usage_statistics {
             self.sum_by_data_source = input;
             self
         }
+        /// Appends an item to `sum_by_resource`.
+        ///
+        /// To override the contents of this collection use [`set_sum_by_resource`](Self::set_sum_by_resource).
+        ///
+        /// <p>The usage statistic sum organized by resource.</p>
         pub fn sum_by_resource(
             mut self,
             input: impl Into<crate::model::UsageResourceResult>,
@@ -1523,6 +1667,7 @@ pub mod usage_statistics {
             self.sum_by_resource = Some(v);
             self
         }
+        /// <p>The usage statistic sum organized by resource.</p>
         pub fn set_sum_by_resource(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UsageResourceResult>>,
@@ -1530,6 +1675,12 @@ pub mod usage_statistics {
             self.sum_by_resource = input;
             self
         }
+        /// Appends an item to `top_resources`.
+        ///
+        /// To override the contents of this collection use [`set_top_resources`](Self::set_top_resources).
+        ///
+        /// <p>Lists the top 50 resources that have generated the most GuardDuty usage, in order from
+        /// most to least expensive.</p>
         pub fn top_resources(
             mut self,
             input: impl Into<crate::model::UsageResourceResult>,
@@ -1539,6 +1690,8 @@ pub mod usage_statistics {
             self.top_resources = Some(v);
             self
         }
+        /// <p>Lists the top 50 resources that have generated the most GuardDuty usage, in order from
+        /// most to least expensive.</p>
         pub fn set_top_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UsageResourceResult>>,
@@ -1596,6 +1749,7 @@ pub mod usage_resource_result {
             self.resource = Some(input.into());
             self
         }
+        /// <p>The AWS resource that generated usage.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource = input;
             self
@@ -1605,6 +1759,7 @@ pub mod usage_resource_result {
             self.total = Some(input);
             self
         }
+        /// <p>Represents the sum total of usage for the specified resource type.</p>
         pub fn set_total(mut self, input: std::option::Option<crate::model::Total>) -> Self {
             self.total = input;
             self
@@ -1657,6 +1812,7 @@ pub mod total {
             self.amount = Some(input.into());
             self
         }
+        /// <p>The total usage.</p>
         pub fn set_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.amount = input;
             self
@@ -1666,6 +1822,7 @@ pub mod total {
             self.unit = Some(input.into());
             self
         }
+        /// <p>The currency unit that the amount is given in.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unit = input;
             self
@@ -1718,6 +1875,7 @@ pub mod usage_data_source_result {
             self.data_source = Some(input);
             self
         }
+        /// <p>The data source type that generated usage.</p>
         pub fn set_data_source(
             mut self,
             input: std::option::Option<crate::model::DataSource>,
@@ -1730,6 +1888,7 @@ pub mod usage_data_source_result {
             self.total = Some(input);
             self
         }
+        /// <p>Represents the total of usage for the specified data source.</p>
         pub fn set_total(mut self, input: std::option::Option<crate::model::Total>) -> Self {
             self.total = input;
             self
@@ -1750,6 +1909,7 @@ impl UsageDataSourceResult {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1761,9 +1921,13 @@ impl UsageDataSourceResult {
     std::hash::Hash,
 )]
 pub enum DataSource {
+    #[allow(missing_docs)] // documentation missing in model
     CloudTrail,
+    #[allow(missing_docs)] // documentation missing in model
     DnsLogs,
+    #[allow(missing_docs)] // documentation missing in model
     FlowLogs,
+    #[allow(missing_docs)] // documentation missing in model
     S3Logs,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1787,6 +1951,7 @@ impl std::str::FromStr for DataSource {
     }
 }
 impl DataSource {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataSource::CloudTrail => "CLOUD_TRAIL",
@@ -1796,6 +1961,7 @@ impl DataSource {
             DataSource::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CLOUD_TRAIL", "DNS_LOGS", "FLOW_LOGS", "S3_LOGS"]
     }
@@ -1838,6 +2004,7 @@ pub mod usage_account_result {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Account ID that generated usage.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1847,6 +2014,7 @@ pub mod usage_account_result {
             self.total = Some(input);
             self
         }
+        /// <p>Represents the total of usage for the Account ID.</p>
         pub fn set_total(mut self, input: std::option::Option<crate::model::Total>) -> Self {
             self.total = input;
             self
@@ -1899,12 +2067,18 @@ pub mod usage_criteria {
         pub(crate) resources: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The account IDs to aggregate usage statistics from.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>The account IDs to aggregate usage statistics from.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1912,12 +2086,18 @@ pub mod usage_criteria {
             self.account_ids = input;
             self
         }
+        /// Appends an item to `data_sources`.
+        ///
+        /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
+        ///
+        /// <p>The data sources to aggregate usage statistics from.</p>
         pub fn data_sources(mut self, input: impl Into<crate::model::DataSource>) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
             v.push(input.into());
             self.data_sources = Some(v);
             self
         }
+        /// <p>The data sources to aggregate usage statistics from.</p>
         pub fn set_data_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
@@ -1925,12 +2105,20 @@ pub mod usage_criteria {
             self.data_sources = input;
             self
         }
+        /// Appends an item to `resources`.
+        ///
+        /// To override the contents of this collection use [`set_resources`](Self::set_resources).
+        ///
+        /// <p>The resources to aggregate usage statistics from. Only accepts exact resource
+        /// names.</p>
         pub fn resources(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resources.unwrap_or_default();
             v.push(input.into());
             self.resources = Some(v);
             self
         }
+        /// <p>The resources to aggregate usage statistics from. Only accepts exact resource
+        /// names.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1955,6 +2143,7 @@ impl UsageCriteria {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1966,9 +2155,13 @@ impl UsageCriteria {
     std::hash::Hash,
 )]
 pub enum UsageStatisticType {
+    #[allow(missing_docs)] // documentation missing in model
     SumByAccount,
+    #[allow(missing_docs)] // documentation missing in model
     SumByDataSource,
+    #[allow(missing_docs)] // documentation missing in model
     SumByResource,
+    #[allow(missing_docs)] // documentation missing in model
     TopResources,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1992,6 +2185,7 @@ impl std::str::FromStr for UsageStatisticType {
     }
 }
 impl UsageStatisticType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UsageStatisticType::SumByAccount => "SUM_BY_ACCOUNT",
@@ -2001,6 +2195,7 @@ impl UsageStatisticType {
             UsageStatisticType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "SUM_BY_ACCOUNT",
@@ -2016,6 +2211,7 @@ impl AsRef<str> for UsageStatisticType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2027,12 +2223,19 @@ impl AsRef<str> for UsageStatisticType {
     std::hash::Hash,
 )]
 pub enum ThreatIntelSetStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Activating,
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Deactivating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     DeletePending,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2059,6 +2262,7 @@ impl std::str::FromStr for ThreatIntelSetStatus {
     }
 }
 impl ThreatIntelSetStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ThreatIntelSetStatus::Activating => "ACTIVATING",
@@ -2071,6 +2275,7 @@ impl ThreatIntelSetStatus {
             ThreatIntelSetStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVATING",
@@ -2089,6 +2294,7 @@ impl AsRef<str> for ThreatIntelSetStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2100,11 +2306,17 @@ impl AsRef<str> for ThreatIntelSetStatus {
     std::hash::Hash,
 )]
 pub enum ThreatIntelSetFormat {
+    #[allow(missing_docs)] // documentation missing in model
     AlienVault,
+    #[allow(missing_docs)] // documentation missing in model
     FireEye,
+    #[allow(missing_docs)] // documentation missing in model
     OtxCsv,
+    #[allow(missing_docs)] // documentation missing in model
     ProofPoint,
+    #[allow(missing_docs)] // documentation missing in model
     Stix,
+    #[allow(missing_docs)] // documentation missing in model
     Txt,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2130,6 +2342,7 @@ impl std::str::FromStr for ThreatIntelSetFormat {
     }
 }
 impl ThreatIntelSetFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ThreatIntelSetFormat::AlienVault => "ALIEN_VAULT",
@@ -2141,6 +2354,7 @@ impl ThreatIntelSetFormat {
             ThreatIntelSetFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ALIEN_VAULT",
@@ -2190,6 +2404,7 @@ pub mod member_data_source_configuration {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID for the member account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2199,6 +2414,7 @@ pub mod member_data_source_configuration {
             self.data_sources = Some(input);
             self
         }
+        /// <p>Contains information on the status of data sources for the account.</p>
         pub fn set_data_sources(
             mut self,
             input: std::option::Option<crate::model::DataSourceConfigurationsResult>,
@@ -2264,6 +2480,7 @@ pub mod data_source_configurations_result {
             self.cloud_trail = Some(input);
             self
         }
+        /// <p>An object that contains information on the status of CloudTrail as a data source.</p>
         pub fn set_cloud_trail(
             mut self,
             input: std::option::Option<crate::model::CloudTrailConfigurationResult>,
@@ -2276,6 +2493,7 @@ pub mod data_source_configurations_result {
             self.dns_logs = Some(input);
             self
         }
+        /// <p>An object that contains information on the status of DNS logs as a data source.</p>
         pub fn set_dns_logs(
             mut self,
             input: std::option::Option<crate::model::DnsLogsConfigurationResult>,
@@ -2289,6 +2507,8 @@ pub mod data_source_configurations_result {
             self.flow_logs = Some(input);
             self
         }
+        /// <p>An object that contains information on the status of VPC flow logs as a data
+        /// source.</p>
         pub fn set_flow_logs(
             mut self,
             input: std::option::Option<crate::model::FlowLogsConfigurationResult>,
@@ -2302,6 +2522,8 @@ pub mod data_source_configurations_result {
             self.s3_logs = Some(input);
             self
         }
+        /// <p>An object that contains information on the status of S3 Data event logs as a data
+        /// source.</p>
         pub fn set_s3_logs(
             mut self,
             input: std::option::Option<crate::model::S3LogsConfigurationResult>,
@@ -2357,6 +2579,8 @@ pub mod s3_logs_configuration_result {
             self.status = Some(input);
             self
         }
+        /// <p>A value that describes whether S3 data event logs are automatically enabled for new
+        /// members of the organization.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DataSourceStatus>,
@@ -2379,6 +2603,7 @@ impl S3LogsConfigurationResult {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2390,7 +2615,9 @@ impl S3LogsConfigurationResult {
     std::hash::Hash,
 )]
 pub enum DataSourceStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2412,6 +2639,7 @@ impl std::str::FromStr for DataSourceStatus {
     }
 }
 impl DataSourceStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataSourceStatus::Disabled => "DISABLED",
@@ -2419,6 +2647,7 @@ impl DataSourceStatus {
             DataSourceStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -2457,6 +2686,7 @@ pub mod flow_logs_configuration_result {
             self.status = Some(input);
             self
         }
+        /// <p>Denotes whether VPC flow logs is enabled as a data source.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DataSourceStatus>,
@@ -2507,6 +2737,7 @@ pub mod dns_logs_configuration_result {
             self.status = Some(input);
             self
         }
+        /// <p>Denotes whether DNS logs is enabled as a data source.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DataSourceStatus>,
@@ -2557,6 +2788,7 @@ pub mod cloud_trail_configuration_result {
             self.status = Some(input);
             self
         }
+        /// <p>Describes whether CloudTrail is enabled as a data source for the detector.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DataSourceStatus>,
@@ -2619,6 +2851,7 @@ pub mod master {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The ID of the account used as the administrator account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2628,6 +2861,7 @@ pub mod master {
             self.invitation_id = Some(input.into());
             self
         }
+        /// <p>The value used to validate the administrator account to the member account.</p>
         pub fn set_invitation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2640,6 +2874,7 @@ pub mod master {
             self.relationship_status = Some(input.into());
             self
         }
+        /// <p>The status of the relationship between the administrator and member accounts.</p>
         pub fn set_relationship_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2652,6 +2887,7 @@ pub mod master {
             self.invited_at = Some(input.into());
             self
         }
+        /// <p>The timestamp when the invitation was sent.</p>
         pub fn set_invited_at(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.invited_at = input;
             self
@@ -2674,6 +2910,7 @@ impl Master {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2685,12 +2922,19 @@ impl Master {
     std::hash::Hash,
 )]
 pub enum IpSetStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Activating,
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Deactivating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     DeletePending,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2717,6 +2961,7 @@ impl std::str::FromStr for IpSetStatus {
     }
 }
 impl IpSetStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IpSetStatus::Activating => "ACTIVATING",
@@ -2729,6 +2974,7 @@ impl IpSetStatus {
             IpSetStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVATING",
@@ -2747,6 +2993,7 @@ impl AsRef<str> for IpSetStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2758,11 +3005,17 @@ impl AsRef<str> for IpSetStatus {
     std::hash::Hash,
 )]
 pub enum IpSetFormat {
+    #[allow(missing_docs)] // documentation missing in model
     AlienVault,
+    #[allow(missing_docs)] // documentation missing in model
     FireEye,
+    #[allow(missing_docs)] // documentation missing in model
     OtxCsv,
+    #[allow(missing_docs)] // documentation missing in model
     ProofPoint,
+    #[allow(missing_docs)] // documentation missing in model
     Stix,
+    #[allow(missing_docs)] // documentation missing in model
     Txt,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2788,6 +3041,7 @@ impl std::str::FromStr for IpSetFormat {
     }
 }
 impl IpSetFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IpSetFormat::AlienVault => "ALIEN_VAULT",
@@ -2799,6 +3053,7 @@ impl IpSetFormat {
             IpSetFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ALIEN_VAULT",
@@ -2840,6 +3095,11 @@ pub mod finding_statistics {
             std::option::Option<std::collections::HashMap<std::string::String, i32>>,
     }
     impl Builder {
+        /// Adds a key-value pair to `count_by_severity`.
+        ///
+        /// To override the contents of this collection use [`set_count_by_severity`](Self::set_count_by_severity).
+        ///
+        /// <p>Represents a map of severity to count statistics for a set of findings.</p>
         pub fn count_by_severity(
             mut self,
             k: impl Into<std::string::String>,
@@ -2850,6 +3110,7 @@ pub mod finding_statistics {
             self.count_by_severity = Some(hash_map);
             self
         }
+        /// <p>Represents a map of severity to count statistics for a set of findings.</p>
         pub fn set_count_by_severity(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
@@ -2872,6 +3133,7 @@ impl FindingStatistics {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2883,6 +3145,7 @@ impl FindingStatistics {
     std::hash::Hash,
 )]
 pub enum FindingStatisticType {
+    #[allow(missing_docs)] // documentation missing in model
     CountBySeverity,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2903,12 +3166,14 @@ impl std::str::FromStr for FindingStatisticType {
     }
 }
 impl FindingStatisticType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FindingStatisticType::CountBySeverity => "COUNT_BY_SEVERITY",
             FindingStatisticType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COUNT_BY_SEVERITY"]
     }
@@ -3005,6 +3270,7 @@ pub mod finding {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The ID of the account in which the finding was generated.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -3014,6 +3280,7 @@ pub mod finding {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the finding.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3023,6 +3290,7 @@ pub mod finding {
             self.confidence = Some(input);
             self
         }
+        /// <p>The confidence score for the finding.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f64>) -> Self {
             self.confidence = input;
             self
@@ -3032,6 +3300,7 @@ pub mod finding {
             self.created_at = Some(input.into());
             self
         }
+        /// <p>The time and date when the finding was created.</p>
         pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_at = input;
             self
@@ -3041,6 +3310,7 @@ pub mod finding {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the finding.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3050,6 +3320,7 @@ pub mod finding {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the finding.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3059,6 +3330,7 @@ pub mod finding {
             self.partition = Some(input.into());
             self
         }
+        /// <p>The partition associated with the finding.</p>
         pub fn set_partition(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.partition = input;
             self
@@ -3068,6 +3340,7 @@ pub mod finding {
             self.region = Some(input.into());
             self
         }
+        /// <p>The Region where the finding was generated.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -3078,6 +3351,8 @@ pub mod finding {
             self.resource = Some(input);
             self
         }
+        /// <p>Contains information about the AWS resource associated with the activity that prompted
+        /// GuardDuty to generate a finding.</p>
         pub fn set_resource(mut self, input: std::option::Option<crate::model::Resource>) -> Self {
             self.resource = input;
             self
@@ -3087,6 +3362,7 @@ pub mod finding {
             self.schema_version = Some(input.into());
             self
         }
+        /// <p>The version of the schema used for the finding.</p>
         pub fn set_schema_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3099,6 +3375,7 @@ pub mod finding {
             self.service = Some(input);
             self
         }
+        /// <p>Contains additional information about the generated finding.</p>
         pub fn set_service(mut self, input: std::option::Option<crate::model::Service>) -> Self {
             self.service = input;
             self
@@ -3108,6 +3385,7 @@ pub mod finding {
             self.severity = Some(input);
             self
         }
+        /// <p>The severity of the finding.</p>
         pub fn set_severity(mut self, input: std::option::Option<f64>) -> Self {
             self.severity = input;
             self
@@ -3117,6 +3395,7 @@ pub mod finding {
             self.title = Some(input.into());
             self
         }
+        /// <p>The title of the finding.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -3126,6 +3405,7 @@ pub mod finding {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of finding.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -3135,6 +3415,7 @@ pub mod finding {
             self.updated_at = Some(input.into());
             self
         }
+        /// <p>The time and date when the finding was last updated.</p>
         pub fn set_updated_at(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.updated_at = input;
             self
@@ -3234,6 +3515,7 @@ pub mod service {
             self.action = Some(input);
             self
         }
+        /// <p>Information about the activity that is described in a finding.</p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.action = input;
             self
@@ -3243,6 +3525,7 @@ pub mod service {
             self.evidence = Some(input);
             self
         }
+        /// <p>An evidence object associated with the service.</p>
         pub fn set_evidence(mut self, input: std::option::Option<crate::model::Evidence>) -> Self {
             self.evidence = input;
             self
@@ -3252,6 +3535,7 @@ pub mod service {
             self.archived = Some(input);
             self
         }
+        /// <p>Indicates whether this finding is archived.</p>
         pub fn set_archived(mut self, input: std::option::Option<bool>) -> Self {
             self.archived = input;
             self
@@ -3261,6 +3545,7 @@ pub mod service {
             self.count = Some(input);
             self
         }
+        /// <p>The total count of the occurrences of this finding type.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
@@ -3270,6 +3555,7 @@ pub mod service {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The detector ID for the GuardDuty service.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -3280,6 +3566,8 @@ pub mod service {
             self.event_first_seen = Some(input.into());
             self
         }
+        /// <p>The first-seen timestamp of the activity that prompted GuardDuty to generate this
+        /// finding.</p>
         pub fn set_event_first_seen(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3293,6 +3581,8 @@ pub mod service {
             self.event_last_seen = Some(input.into());
             self
         }
+        /// <p>The last-seen timestamp of the activity that prompted GuardDuty to generate this
+        /// finding.</p>
         pub fn set_event_last_seen(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3305,6 +3595,7 @@ pub mod service {
             self.resource_role = Some(input.into());
             self
         }
+        /// <p>The resource role information for this finding.</p>
         pub fn set_resource_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3317,6 +3608,7 @@ pub mod service {
             self.service_name = Some(input.into());
             self
         }
+        /// <p>The name of the AWS service (GuardDuty) that generated a finding.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -3326,6 +3618,7 @@ pub mod service {
             self.user_feedback = Some(input.into());
             self
         }
+        /// <p>Feedback that was submitted about the finding.</p>
         pub fn set_user_feedback(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3385,6 +3678,11 @@ pub mod evidence {
             std::option::Option<std::vec::Vec<crate::model::ThreatIntelligenceDetail>>,
     }
     impl Builder {
+        /// Appends an item to `threat_intelligence_details`.
+        ///
+        /// To override the contents of this collection use [`set_threat_intelligence_details`](Self::set_threat_intelligence_details).
+        ///
+        /// <p>A list of threat intelligence details related to the evidence.</p>
         pub fn threat_intelligence_details(
             mut self,
             input: impl Into<crate::model::ThreatIntelligenceDetail>,
@@ -3394,6 +3692,7 @@ pub mod evidence {
             self.threat_intelligence_details = Some(v);
             self
         }
+        /// <p>A list of threat intelligence details related to the evidence.</p>
         pub fn set_threat_intelligence_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ThreatIntelligenceDetail>>,
@@ -3450,6 +3749,7 @@ pub mod threat_intelligence_detail {
             self.threat_list_name = Some(input.into());
             self
         }
+        /// <p>The name of the threat intelligence list that triggered the finding.</p>
         pub fn set_threat_list_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3457,12 +3757,20 @@ pub mod threat_intelligence_detail {
             self.threat_list_name = input;
             self
         }
+        /// Appends an item to `threat_names`.
+        ///
+        /// To override the contents of this collection use [`set_threat_names`](Self::set_threat_names).
+        ///
+        /// <p>A list of names of the threats in the threat intelligence list that triggered the
+        /// finding.</p>
         pub fn threat_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.threat_names.unwrap_or_default();
             v.push(input.into());
             self.threat_names = Some(v);
             self
         }
+        /// <p>A list of names of the threats in the threat intelligence list that triggered the
+        /// finding.</p>
         pub fn set_threat_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3531,6 +3839,7 @@ pub mod action {
             self.action_type = Some(input.into());
             self
         }
+        /// <p>The GuardDuty finding activity type.</p>
         pub fn set_action_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_type = input;
             self
@@ -3540,6 +3849,7 @@ pub mod action {
             self.aws_api_call_action = Some(input);
             self
         }
+        /// <p>Information about the AWS_API_CALL action described in this finding.</p>
         pub fn set_aws_api_call_action(
             mut self,
             input: std::option::Option<crate::model::AwsApiCallAction>,
@@ -3552,6 +3862,7 @@ pub mod action {
             self.dns_request_action = Some(input);
             self
         }
+        /// <p>Information about the DNS_REQUEST action described in this finding.</p>
         pub fn set_dns_request_action(
             mut self,
             input: std::option::Option<crate::model::DnsRequestAction>,
@@ -3567,6 +3878,7 @@ pub mod action {
             self.network_connection_action = Some(input);
             self
         }
+        /// <p>Information about the NETWORK_CONNECTION action described in this finding.</p>
         pub fn set_network_connection_action(
             mut self,
             input: std::option::Option<crate::model::NetworkConnectionAction>,
@@ -3579,6 +3891,7 @@ pub mod action {
             self.port_probe_action = Some(input);
             self
         }
+        /// <p>Information about the PORT_PROBE action described in this finding.</p>
         pub fn set_port_probe_action(
             mut self,
             input: std::option::Option<crate::model::PortProbeAction>,
@@ -3638,10 +3951,16 @@ pub mod port_probe_action {
             self.blocked = Some(input);
             self
         }
+        /// <p>Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.</p>
         pub fn set_blocked(mut self, input: std::option::Option<bool>) -> Self {
             self.blocked = input;
             self
         }
+        /// Appends an item to `port_probe_details`.
+        ///
+        /// To override the contents of this collection use [`set_port_probe_details`](Self::set_port_probe_details).
+        ///
+        /// <p>A list of objects related to port probe details.</p>
         pub fn port_probe_details(
             mut self,
             input: impl Into<crate::model::PortProbeDetail>,
@@ -3651,6 +3970,7 @@ pub mod port_probe_action {
             self.port_probe_details = Some(v);
             self
         }
+        /// <p>A list of objects related to port probe details.</p>
         pub fn set_port_probe_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortProbeDetail>>,
@@ -3710,6 +4030,7 @@ pub mod port_probe_detail {
             self.local_port_details = Some(input);
             self
         }
+        /// <p>The local port information of the connection.</p>
         pub fn set_local_port_details(
             mut self,
             input: std::option::Option<crate::model::LocalPortDetails>,
@@ -3722,6 +4043,7 @@ pub mod port_probe_detail {
             self.local_ip_details = Some(input);
             self
         }
+        /// <p>The local IP information of the connection.</p>
         pub fn set_local_ip_details(
             mut self,
             input: std::option::Option<crate::model::LocalIpDetails>,
@@ -3734,6 +4056,7 @@ pub mod port_probe_detail {
             self.remote_ip_details = Some(input);
             self
         }
+        /// <p>The remote IP information of the connection.</p>
         pub fn set_remote_ip_details(
             mut self,
             input: std::option::Option<crate::model::RemoteIpDetails>,
@@ -3802,6 +4125,7 @@ pub mod remote_ip_details {
             self.city = Some(input);
             self
         }
+        /// <p>The city information of the remote IP address.</p>
         pub fn set_city(mut self, input: std::option::Option<crate::model::City>) -> Self {
             self.city = input;
             self
@@ -3811,6 +4135,7 @@ pub mod remote_ip_details {
             self.country = Some(input);
             self
         }
+        /// <p>The country code of the remote IP address.</p>
         pub fn set_country(mut self, input: std::option::Option<crate::model::Country>) -> Self {
             self.country = input;
             self
@@ -3820,6 +4145,7 @@ pub mod remote_ip_details {
             self.geo_location = Some(input);
             self
         }
+        /// <p>The location information of the remote IP address.</p>
         pub fn set_geo_location(
             mut self,
             input: std::option::Option<crate::model::GeoLocation>,
@@ -3832,6 +4158,7 @@ pub mod remote_ip_details {
             self.ip_address_v4 = Some(input.into());
             self
         }
+        /// <p>The IPv4 remote address of the connection.</p>
         pub fn set_ip_address_v4(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3844,6 +4171,7 @@ pub mod remote_ip_details {
             self.organization = Some(input);
             self
         }
+        /// <p>The ISP organization information of the remote IP address.</p>
         pub fn set_organization(
             mut self,
             input: std::option::Option<crate::model::Organization>,
@@ -3912,6 +4240,8 @@ pub mod organization {
             self.asn = Some(input.into());
             self
         }
+        /// <p>The Autonomous System Number (ASN) of the internet provider of the remote IP
+        /// address.</p>
         pub fn set_asn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.asn = input;
             self
@@ -3921,6 +4251,7 @@ pub mod organization {
             self.asn_org = Some(input.into());
             self
         }
+        /// <p>The organization that registered this ASN.</p>
         pub fn set_asn_org(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.asn_org = input;
             self
@@ -3930,6 +4261,7 @@ pub mod organization {
             self.isp = Some(input.into());
             self
         }
+        /// <p>The ISP information for the internet provider.</p>
         pub fn set_isp(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.isp = input;
             self
@@ -3939,6 +4271,7 @@ pub mod organization {
             self.org = Some(input.into());
             self
         }
+        /// <p>The name of the internet provider.</p>
         pub fn set_org(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.org = input;
             self
@@ -3993,6 +4326,7 @@ pub mod geo_location {
             self.lat = Some(input);
             self
         }
+        /// <p>The latitude information of the remote IP address.</p>
         pub fn set_lat(mut self, input: std::option::Option<f64>) -> Self {
             self.lat = input;
             self
@@ -4002,6 +4336,7 @@ pub mod geo_location {
             self.lon = Some(input);
             self
         }
+        /// <p>The longitude information of the remote IP address.</p>
         pub fn set_lon(mut self, input: std::option::Option<f64>) -> Self {
             self.lon = input;
             self
@@ -4054,6 +4389,7 @@ pub mod country {
             self.country_code = Some(input.into());
             self
         }
+        /// <p>The country code of the remote IP address.</p>
         pub fn set_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.country_code = input;
             self
@@ -4063,6 +4399,7 @@ pub mod country {
             self.country_name = Some(input.into());
             self
         }
+        /// <p>The country name of the remote IP address.</p>
         pub fn set_country_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.country_name = input;
             self
@@ -4111,6 +4448,7 @@ pub mod city {
             self.city_name = Some(input.into());
             self
         }
+        /// <p>The city name of the remote IP address.</p>
         pub fn set_city_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.city_name = input;
             self
@@ -4158,6 +4496,7 @@ pub mod local_ip_details {
             self.ip_address_v4 = Some(input.into());
             self
         }
+        /// <p>The IPv4 local address of the connection.</p>
         pub fn set_ip_address_v4(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4212,6 +4551,7 @@ pub mod local_port_details {
             self.port = Some(input);
             self
         }
+        /// <p>The port number of the local connection.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -4221,6 +4561,7 @@ pub mod local_port_details {
             self.port_name = Some(input.into());
             self
         }
+        /// <p>The port name of the local connection.</p>
         pub fn set_port_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.port_name = input;
             self
@@ -4293,6 +4634,7 @@ pub mod network_connection_action {
             self.blocked = Some(input);
             self
         }
+        /// <p>Indicates whether EC2 blocked the network connection to your instance.</p>
         pub fn set_blocked(mut self, input: std::option::Option<bool>) -> Self {
             self.blocked = input;
             self
@@ -4302,6 +4644,7 @@ pub mod network_connection_action {
             self.connection_direction = Some(input.into());
             self
         }
+        /// <p>The network connection direction.</p>
         pub fn set_connection_direction(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4314,6 +4657,7 @@ pub mod network_connection_action {
             self.local_port_details = Some(input);
             self
         }
+        /// <p>The local port information of the connection.</p>
         pub fn set_local_port_details(
             mut self,
             input: std::option::Option<crate::model::LocalPortDetails>,
@@ -4326,6 +4670,7 @@ pub mod network_connection_action {
             self.protocol = Some(input.into());
             self
         }
+        /// <p>The network connection protocol.</p>
         pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.protocol = input;
             self
@@ -4335,6 +4680,7 @@ pub mod network_connection_action {
             self.local_ip_details = Some(input);
             self
         }
+        /// <p>The local IP information of the connection.</p>
         pub fn set_local_ip_details(
             mut self,
             input: std::option::Option<crate::model::LocalIpDetails>,
@@ -4347,6 +4693,7 @@ pub mod network_connection_action {
             self.remote_ip_details = Some(input);
             self
         }
+        /// <p>The remote IP information of the connection.</p>
         pub fn set_remote_ip_details(
             mut self,
             input: std::option::Option<crate::model::RemoteIpDetails>,
@@ -4359,6 +4706,7 @@ pub mod network_connection_action {
             self.remote_port_details = Some(input);
             self
         }
+        /// <p>The remote port information of the connection.</p>
         pub fn set_remote_port_details(
             mut self,
             input: std::option::Option<crate::model::RemotePortDetails>,
@@ -4419,6 +4767,7 @@ pub mod remote_port_details {
             self.port = Some(input);
             self
         }
+        /// <p>The port number of the remote connection.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -4428,6 +4777,7 @@ pub mod remote_port_details {
             self.port_name = Some(input.into());
             self
         }
+        /// <p>The port name of the remote connection.</p>
         pub fn set_port_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.port_name = input;
             self
@@ -4476,6 +4826,7 @@ pub mod dns_request_action {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The domain information for the API request.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -4543,6 +4894,7 @@ pub mod aws_api_call_action {
             self.api = Some(input.into());
             self
         }
+        /// <p>The AWS API name.</p>
         pub fn set_api(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api = input;
             self
@@ -4552,6 +4904,7 @@ pub mod aws_api_call_action {
             self.caller_type = Some(input.into());
             self
         }
+        /// <p>The AWS API caller type.</p>
         pub fn set_caller_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.caller_type = input;
             self
@@ -4561,6 +4914,7 @@ pub mod aws_api_call_action {
             self.domain_details = Some(input);
             self
         }
+        /// <p>The domain information for the AWS API call.</p>
         pub fn set_domain_details(
             mut self,
             input: std::option::Option<crate::model::DomainDetails>,
@@ -4573,6 +4927,7 @@ pub mod aws_api_call_action {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>The error code of the failed AWS API action.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -4582,6 +4937,7 @@ pub mod aws_api_call_action {
             self.remote_ip_details = Some(input);
             self
         }
+        /// <p>The remote IP information of the connection that initiated the AWS API call.</p>
         pub fn set_remote_ip_details(
             mut self,
             input: std::option::Option<crate::model::RemoteIpDetails>,
@@ -4594,6 +4950,7 @@ pub mod aws_api_call_action {
             self.service_name = Some(input.into());
             self
         }
+        /// <p>The AWS service name whose API was invoked.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -4646,6 +5003,7 @@ pub mod domain_details {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The domain information for the AWS API call.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -4710,6 +5068,8 @@ pub mod resource {
             self.access_key_details = Some(input);
             self
         }
+        /// <p>The IAM access key details (IAM user information) of a user that engaged in the activity
+        /// that prompted GuardDuty to generate a finding.</p>
         pub fn set_access_key_details(
             mut self,
             input: std::option::Option<crate::model::AccessKeyDetails>,
@@ -4717,12 +5077,18 @@ pub mod resource {
             self.access_key_details = input;
             self
         }
+        /// Appends an item to `s3_bucket_details`.
+        ///
+        /// To override the contents of this collection use [`set_s3_bucket_details`](Self::set_s3_bucket_details).
+        ///
+        /// <p>Contains information on the S3 bucket.</p>
         pub fn s3_bucket_details(mut self, input: impl Into<crate::model::S3BucketDetail>) -> Self {
             let mut v = self.s3_bucket_details.unwrap_or_default();
             v.push(input.into());
             self.s3_bucket_details = Some(v);
             self
         }
+        /// <p>Contains information on the S3 bucket.</p>
         pub fn set_s3_bucket_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::S3BucketDetail>>,
@@ -4736,6 +5102,8 @@ pub mod resource {
             self.instance_details = Some(input);
             self
         }
+        /// <p>The information about the EC2 instance associated with the activity that prompted
+        /// GuardDuty to generate a finding.</p>
         pub fn set_instance_details(
             mut self,
             input: std::option::Option<crate::model::InstanceDetails>,
@@ -4748,6 +5116,7 @@ pub mod resource {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The type of AWS resource.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4851,6 +5220,7 @@ pub mod instance_details {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>The Availability Zone of the EC2 instance.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4863,6 +5233,7 @@ pub mod instance_details {
             self.iam_instance_profile = Some(input);
             self
         }
+        /// <p>The profile information of the EC2 instance.</p>
         pub fn set_iam_instance_profile(
             mut self,
             input: std::option::Option<crate::model::IamInstanceProfile>,
@@ -4875,6 +5246,7 @@ pub mod instance_details {
             self.image_description = Some(input.into());
             self
         }
+        /// <p>The image description of the EC2 instance.</p>
         pub fn set_image_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4887,6 +5259,7 @@ pub mod instance_details {
             self.image_id = Some(input.into());
             self
         }
+        /// <p>The image ID of the EC2 instance.</p>
         pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_id = input;
             self
@@ -4896,6 +5269,7 @@ pub mod instance_details {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The ID of the EC2 instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -4905,6 +5279,7 @@ pub mod instance_details {
             self.instance_state = Some(input.into());
             self
         }
+        /// <p>The state of the EC2 instance.</p>
         pub fn set_instance_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4917,6 +5292,7 @@ pub mod instance_details {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>The type of the EC2 instance.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4930,6 +5306,8 @@ pub mod instance_details {
             self.outpost_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS Outposts
+        /// instances.</p>
         pub fn set_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_arn = input;
             self
@@ -4939,10 +5317,16 @@ pub mod instance_details {
             self.launch_time = Some(input.into());
             self
         }
+        /// <p>The launch time of the EC2 instance.</p>
         pub fn set_launch_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.launch_time = input;
             self
         }
+        /// Appends an item to `network_interfaces`.
+        ///
+        /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
+        ///
+        /// <p>The elastic network interface information of the EC2 instance.</p>
         pub fn network_interfaces(
             mut self,
             input: impl Into<crate::model::NetworkInterface>,
@@ -4952,6 +5336,7 @@ pub mod instance_details {
             self.network_interfaces = Some(v);
             self
         }
+        /// <p>The elastic network interface information of the EC2 instance.</p>
         pub fn set_network_interfaces(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
@@ -4964,16 +5349,23 @@ pub mod instance_details {
             self.platform = Some(input.into());
             self
         }
+        /// <p>The platform of the EC2 instance.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform = input;
             self
         }
+        /// Appends an item to `product_codes`.
+        ///
+        /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
+        ///
+        /// <p>The product code of the EC2 instance.</p>
         pub fn product_codes(mut self, input: impl Into<crate::model::ProductCode>) -> Self {
             let mut v = self.product_codes.unwrap_or_default();
             v.push(input.into());
             self.product_codes = Some(v);
             self
         }
+        /// <p>The product code of the EC2 instance.</p>
         pub fn set_product_codes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProductCode>>,
@@ -4981,12 +5373,18 @@ pub mod instance_details {
             self.product_codes = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags of the EC2 instance.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags of the EC2 instance.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5053,6 +5451,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The EC2 instance tag key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -5062,6 +5461,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The EC2 instance tag value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -5114,6 +5514,7 @@ pub mod product_code {
             self.code = Some(input.into());
             self
         }
+        /// <p>The product code information.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
@@ -5123,6 +5524,7 @@ pub mod product_code {
             self.product_type = Some(input.into());
             self
         }
+        /// <p>The product code type.</p>
         pub fn set_product_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_type = input;
             self
@@ -5204,12 +5606,18 @@ pub mod network_interface {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `ipv6_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
+        ///
+        /// <p>A list of IPv6 addresses for the EC2 instance.</p>
         pub fn ipv6_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ipv6_addresses.unwrap_or_default();
             v.push(input.into());
             self.ipv6_addresses = Some(v);
             self
         }
+        /// <p>A list of IPv6 addresses for the EC2 instance.</p>
         pub fn set_ipv6_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5222,6 +5630,7 @@ pub mod network_interface {
             self.network_interface_id = Some(input.into());
             self
         }
+        /// <p>The ID of the network interface.</p>
         pub fn set_network_interface_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5234,6 +5643,7 @@ pub mod network_interface {
             self.private_dns_name = Some(input.into());
             self
         }
+        /// <p>The private DNS name of the EC2 instance.</p>
         pub fn set_private_dns_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5246,6 +5656,7 @@ pub mod network_interface {
             self.private_ip_address = Some(input.into());
             self
         }
+        /// <p>The private IP address of the EC2 instance.</p>
         pub fn set_private_ip_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5253,6 +5664,11 @@ pub mod network_interface {
             self.private_ip_address = input;
             self
         }
+        /// Appends an item to `private_ip_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_private_ip_addresses`](Self::set_private_ip_addresses).
+        ///
+        /// <p>Other private IP address information of the EC2 instance.</p>
         pub fn private_ip_addresses(
             mut self,
             input: impl Into<crate::model::PrivateIpAddressDetails>,
@@ -5262,6 +5678,7 @@ pub mod network_interface {
             self.private_ip_addresses = Some(v);
             self
         }
+        /// <p>Other private IP address information of the EC2 instance.</p>
         pub fn set_private_ip_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PrivateIpAddressDetails>>,
@@ -5274,6 +5691,7 @@ pub mod network_interface {
             self.public_dns_name = Some(input.into());
             self
         }
+        /// <p>The public DNS name of the EC2 instance.</p>
         pub fn set_public_dns_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5286,16 +5704,23 @@ pub mod network_interface {
             self.public_ip = Some(input.into());
             self
         }
+        /// <p>The public IP address of the EC2 instance.</p>
         pub fn set_public_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.public_ip = input;
             self
         }
+        /// Appends an item to `security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+        ///
+        /// <p>The security groups associated with the EC2 instance.</p>
         pub fn security_groups(mut self, input: impl Into<crate::model::SecurityGroup>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
             v.push(input.into());
             self.security_groups = Some(v);
             self
         }
+        /// <p>The security groups associated with the EC2 instance.</p>
         pub fn set_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SecurityGroup>>,
@@ -5308,6 +5733,7 @@ pub mod network_interface {
             self.subnet_id = Some(input.into());
             self
         }
+        /// <p>The subnet ID of the EC2 instance.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_id = input;
             self
@@ -5317,6 +5743,7 @@ pub mod network_interface {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>The VPC ID of the EC2 instance.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -5377,6 +5804,7 @@ pub mod security_group {
             self.group_id = Some(input.into());
             self
         }
+        /// <p>The security group ID of the EC2 instance.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_id = input;
             self
@@ -5386,6 +5814,7 @@ pub mod security_group {
             self.group_name = Some(input.into());
             self
         }
+        /// <p>The security group name of the EC2 instance.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -5438,6 +5867,7 @@ pub mod private_ip_address_details {
             self.private_dns_name = Some(input.into());
             self
         }
+        /// <p>The private DNS name of the EC2 instance.</p>
         pub fn set_private_dns_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5450,6 +5880,7 @@ pub mod private_ip_address_details {
             self.private_ip_address = Some(input.into());
             self
         }
+        /// <p>The private IP address of the EC2 instance.</p>
         pub fn set_private_ip_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5505,6 +5936,7 @@ pub mod iam_instance_profile {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The profile ARN of the EC2 instance.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5514,6 +5946,7 @@ pub mod iam_instance_profile {
             self.id = Some(input.into());
             self
         }
+        /// <p>The profile ID of the EC2 instance.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5545,7 +5978,7 @@ pub struct S3BucketDetail {
     /// <p>Describes whether the bucket is a source or destination bucket.</p>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The date and time the bucket was created at.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The owner of the S3 bucket.</p>
     pub owner: std::option::Option<crate::model::Owner>,
     /// <p>All tags attached to the S3 bucket</p>
@@ -5582,7 +6015,7 @@ pub mod s3_bucket_detail {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) owner: std::option::Option<crate::model::Owner>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) default_server_side_encryption:
@@ -5595,6 +6028,7 @@ pub mod s3_bucket_detail {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5604,6 +6038,7 @@ pub mod s3_bucket_detail {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the S3 bucket.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5613,16 +6048,21 @@ pub mod s3_bucket_detail {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>Describes whether the bucket is a source or destination bucket.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
         }
         /// <p>The date and time the bucket was created at.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time the bucket was created at.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -5631,16 +6071,23 @@ pub mod s3_bucket_detail {
             self.owner = Some(input);
             self
         }
+        /// <p>The owner of the S3 bucket.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Owner>) -> Self {
             self.owner = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>All tags attached to the S3 bucket</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>All tags attached to the S3 bucket</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5656,6 +6103,7 @@ pub mod s3_bucket_detail {
             self.default_server_side_encryption = Some(input);
             self
         }
+        /// <p>Describes the server side encryption method used in the S3 bucket.</p>
         pub fn set_default_server_side_encryption(
             mut self,
             input: std::option::Option<crate::model::DefaultServerSideEncryption>,
@@ -5668,6 +6116,7 @@ pub mod s3_bucket_detail {
             self.public_access = Some(input);
             self
         }
+        /// <p>Describes the public access policies that apply to the S3 bucket.</p>
         pub fn set_public_access(
             mut self,
             input: std::option::Option<crate::model::PublicAccess>,
@@ -5734,6 +6183,7 @@ pub mod public_access {
             self.permission_configuration = Some(input);
             self
         }
+        /// <p>Contains information about how permissions are configured for the S3 bucket.</p>
         pub fn set_permission_configuration(
             mut self,
             input: std::option::Option<crate::model::PermissionConfiguration>,
@@ -5747,6 +6197,8 @@ pub mod public_access {
             self.effective_permission = Some(input.into());
             self
         }
+        /// <p>Describes the effective permission on this bucket after factoring all attached
+        /// policies.</p>
         pub fn set_effective_permission(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5807,6 +6259,7 @@ pub mod permission_configuration {
             self.bucket_level_permissions = Some(input);
             self
         }
+        /// <p>Contains information about the bucket level permissions for the S3 bucket.</p>
         pub fn set_bucket_level_permissions(
             mut self,
             input: std::option::Option<crate::model::BucketLevelPermissions>,
@@ -5822,6 +6275,7 @@ pub mod permission_configuration {
             self.account_level_permissions = Some(input);
             self
         }
+        /// <p>Contains information about the account level permissions on the S3 bucket.</p>
         pub fn set_account_level_permissions(
             mut self,
             input: std::option::Option<crate::model::AccountLevelPermissions>,
@@ -5873,6 +6327,7 @@ pub mod account_level_permissions {
             self.block_public_access = Some(input);
             self
         }
+        /// <p>Describes the S3 Block Public Access settings of the bucket's parent account.</p>
         pub fn set_block_public_access(
             mut self,
             input: std::option::Option<crate::model::BlockPublicAccess>,
@@ -5937,6 +6392,7 @@ pub mod block_public_access {
             self.ignore_public_acls = Some(input);
             self
         }
+        /// <p>Indicates if S3 Block Public Access is set to <code>IgnorePublicAcls</code>.</p>
         pub fn set_ignore_public_acls(mut self, input: std::option::Option<bool>) -> Self {
             self.ignore_public_acls = input;
             self
@@ -5946,6 +6402,7 @@ pub mod block_public_access {
             self.restrict_public_buckets = Some(input);
             self
         }
+        /// <p>Indicates if S3 Block Public Access is set to <code>RestrictPublicBuckets</code>.</p>
         pub fn set_restrict_public_buckets(mut self, input: std::option::Option<bool>) -> Self {
             self.restrict_public_buckets = input;
             self
@@ -5955,6 +6412,7 @@ pub mod block_public_access {
             self.block_public_acls = Some(input);
             self
         }
+        /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicAcls</code>.</p>
         pub fn set_block_public_acls(mut self, input: std::option::Option<bool>) -> Self {
             self.block_public_acls = input;
             self
@@ -5964,6 +6422,7 @@ pub mod block_public_access {
             self.block_public_policy = Some(input);
             self
         }
+        /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicPolicy</code>.</p>
         pub fn set_block_public_policy(mut self, input: std::option::Option<bool>) -> Self {
             self.block_public_policy = input;
             self
@@ -6023,6 +6482,7 @@ pub mod bucket_level_permissions {
             self.access_control_list = Some(input);
             self
         }
+        /// <p>Contains information on how Access Control Policies are applied to the bucket.</p>
         pub fn set_access_control_list(
             mut self,
             input: std::option::Option<crate::model::AccessControlList>,
@@ -6035,6 +6495,7 @@ pub mod bucket_level_permissions {
             self.bucket_policy = Some(input);
             self
         }
+        /// <p>Contains information on the bucket policies for the S3 bucket.</p>
         pub fn set_bucket_policy(
             mut self,
             input: std::option::Option<crate::model::BucketPolicy>,
@@ -6048,6 +6509,8 @@ pub mod bucket_level_permissions {
             self.block_public_access = Some(input);
             self
         }
+        /// <p>Contains information on which account level S3 Block Public Access settings are applied to
+        /// the S3 bucket.</p>
         pub fn set_block_public_access(
             mut self,
             input: std::option::Option<crate::model::BlockPublicAccess>,
@@ -6110,6 +6573,8 @@ pub mod bucket_policy {
             self.allows_public_read_access = Some(input);
             self
         }
+        /// <p>A value that indicates whether public read access for the bucket is enabled through a
+        /// bucket policy.</p>
         pub fn set_allows_public_read_access(mut self, input: std::option::Option<bool>) -> Self {
             self.allows_public_read_access = input;
             self
@@ -6120,6 +6585,8 @@ pub mod bucket_policy {
             self.allows_public_write_access = Some(input);
             self
         }
+        /// <p>A value that indicates whether public write access for the bucket is enabled through a
+        /// bucket policy.</p>
         pub fn set_allows_public_write_access(mut self, input: std::option::Option<bool>) -> Self {
             self.allows_public_write_access = input;
             self
@@ -6178,6 +6645,8 @@ pub mod access_control_list {
             self.allows_public_read_access = Some(input);
             self
         }
+        /// <p>A value that indicates whether public read access for the bucket is enabled through an
+        /// Access Control List (ACL).</p>
         pub fn set_allows_public_read_access(mut self, input: std::option::Option<bool>) -> Self {
             self.allows_public_read_access = input;
             self
@@ -6188,6 +6657,8 @@ pub mod access_control_list {
             self.allows_public_write_access = Some(input);
             self
         }
+        /// <p>A value that indicates whether public write access for the bucket is enabled through an
+        /// Access Control List (ACL).</p>
         pub fn set_allows_public_write_access(mut self, input: std::option::Option<bool>) -> Self {
             self.allows_public_write_access = input;
             self
@@ -6243,6 +6714,7 @@ pub mod default_server_side_encryption {
             self.encryption_type = Some(input.into());
             self
         }
+        /// <p>The type of encryption used for objects within the S3 bucket.</p>
         pub fn set_encryption_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6256,6 +6728,8 @@ pub mod default_server_side_encryption {
             self.kms_master_key_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Only available if the bucket
+        /// <code>EncryptionType</code> is <code>aws:kms</code>.</p>
         pub fn set_kms_master_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6313,6 +6787,10 @@ pub mod owner {
             self.id = Some(input.into());
             self
         }
+        /// <p>The canonical user ID of the bucket owner. For information about locating your canonical
+        /// user ID see <a href="https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId">Finding Your Account
+        /// Canonical User ID.</a>
+        /// </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -6370,6 +6848,7 @@ pub mod access_key_details {
             self.access_key_id = Some(input.into());
             self
         }
+        /// <p>The access key ID of the user.</p>
         pub fn set_access_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6382,6 +6861,7 @@ pub mod access_key_details {
             self.principal_id = Some(input.into());
             self
         }
+        /// <p>The principal ID of the user.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -6391,6 +6871,7 @@ pub mod access_key_details {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The name of the user.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -6400,6 +6881,7 @@ pub mod access_key_details {
             self.user_type = Some(input.into());
             self
         }
+        /// <p>The type of the user.</p>
         pub fn set_user_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_type = input;
             self
@@ -6422,6 +6904,7 @@ impl AccessKeyDetails {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6433,7 +6916,9 @@ impl AccessKeyDetails {
     std::hash::Hash,
 )]
 pub enum DetectorStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6455,6 +6940,7 @@ impl std::str::FromStr for DetectorStatus {
     }
 }
 impl DetectorStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DetectorStatus::Disabled => "DISABLED",
@@ -6462,6 +6948,7 @@ impl DetectorStatus {
             DetectorStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -6505,6 +6992,7 @@ pub mod organization_data_source_configurations_result {
             self.s3_logs = Some(input);
             self
         }
+        /// <p>Describes whether S3 data event logs are enabled as a data source.</p>
         pub fn set_s3_logs(
             mut self,
             input: std::option::Option<crate::model::OrganizationS3LogsConfigurationResult>,
@@ -6558,6 +7046,8 @@ pub mod organization_s3_logs_configuration_result {
             self.auto_enable = Some(input);
             self
         }
+        /// <p>A value that describes whether S3 data event logs are automatically enabled for new
+        /// members of the organization.</p>
         pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_enable = input;
             self
@@ -6609,6 +7099,7 @@ pub mod account_detail {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The member account ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -6618,6 +7109,7 @@ pub mod account_detail {
             self.email = Some(input.into());
             self
         }
+        /// <p>The email address of the member account.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.email = input;
             self

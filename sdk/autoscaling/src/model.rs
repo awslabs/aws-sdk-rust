@@ -40,6 +40,9 @@ pub mod mixed_instances_policy {
             self.launch_template = Some(input);
             self
         }
+        /// <p>Specifies the launch template to use and the instance types (overrides) that are used
+        /// to provision EC2 instances to fulfill On-Demand and Spot capacities. Required when
+        /// creating a mixed instances policy.</p>
         pub fn set_launch_template(
             mut self,
             input: std::option::Option<crate::model::LaunchTemplate>,
@@ -56,6 +59,8 @@ pub mod mixed_instances_policy {
             self.instances_distribution = Some(input);
             self
         }
+        /// <p>Specifies the instances distribution. If not provided, the value for each property in
+        /// <code>InstancesDistribution</code> uses a default value.</p>
         pub fn set_instances_distribution(
             mut self,
             input: std::option::Option<crate::model::InstancesDistribution>,
@@ -182,6 +187,13 @@ pub mod instances_distribution {
             self.on_demand_allocation_strategy = Some(input.into());
             self
         }
+        /// <p>Indicates how to allocate instance types to fulfill On-Demand capacity. The only valid
+        /// value is <code>prioritized</code>, which is also the default value. This strategy uses
+        /// the order of instance types in the <code>LaunchTemplateOverrides</code> to define the
+        /// launch priority of each instance type. The first instance type in the array is
+        /// prioritized higher than the last. If all your On-Demand capacity cannot be fulfilled
+        /// using your highest priority instance, then the Auto Scaling groups launches the remaining
+        /// capacity using the second priority instance type, and so on.</p>
         pub fn set_on_demand_allocation_strategy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -198,6 +210,11 @@ pub mod instances_distribution {
             self.on_demand_base_capacity = Some(input);
             self
         }
+        /// <p>The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand
+        /// Instances. This base portion is provisioned first as your group scales. Defaults to 0 if
+        /// not specified. If you specify weights for the instance types in the overrides, set the
+        /// value of <code>OnDemandBaseCapacity</code> in terms of the number of capacity units, and
+        /// not the number of instances.</p>
         pub fn set_on_demand_base_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.on_demand_base_capacity = input;
             self
@@ -210,6 +227,10 @@ pub mod instances_distribution {
             self.on_demand_percentage_above_base_capacity = Some(input);
             self
         }
+        /// <p>Controls the percentages of On-Demand Instances and Spot Instances for your additional
+        /// capacity beyond <code>OnDemandBaseCapacity</code>. Expressed as a number (for example,
+        /// 20 specifies 20% On-Demand Instances, 80% Spot Instances). Defaults to 100 if not
+        /// specified. If set to 100, only On-Demand Instances are provisioned.</p>
         pub fn set_on_demand_percentage_above_base_capacity(
             mut self,
             input: std::option::Option<i32>,
@@ -233,6 +254,18 @@ pub mod instances_distribution {
             self.spot_allocation_strategy = Some(input.into());
             self
         }
+        /// <p>Indicates how to allocate instances across Spot Instance pools. </p>
+        /// <p>If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches
+        /// instances using the Spot pools with the lowest price, and evenly allocates your
+        /// instances across the number of Spot pools that you specify. Defaults to
+        /// <code>lowest-price</code> if not specified.</p>
+        /// <p>If the allocation strategy is <code>capacity-optimized</code> (recommended), the Auto Scaling
+        /// group launches instances using Spot pools that are optimally chosen based on the
+        /// available Spot capacity. Alternatively, you can use
+        /// <code>capacity-optimized-prioritized</code> and set the order of instance types in
+        /// the list of launch template overrides from highest to lowest priority (from first to
+        /// last in the list). Amazon EC2 Auto Scaling honors the instance type priorities on a best-effort basis
+        /// but optimizes for capacity first. </p>
         pub fn set_spot_allocation_strategy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -248,6 +281,10 @@ pub mod instances_distribution {
             self.spot_instance_pools = Some(input);
             self
         }
+        /// <p>The number of Spot Instance pools across which to allocate your Spot Instances. The
+        /// Spot pools are determined from the different instance types in the overrides. Valid only
+        /// when the Spot allocation strategy is <code>lowest-price</code>. Value must be in the
+        /// range of 1 to 20. Defaults to 2 if not specified.</p>
         pub fn set_spot_instance_pools(mut self, input: std::option::Option<i32>) -> Self {
             self.spot_instance_pools = input;
             self
@@ -260,6 +297,10 @@ pub mod instances_distribution {
             self.spot_max_price = Some(input.into());
             self
         }
+        /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If
+        /// you leave the value at its default (empty), Amazon EC2 Auto Scaling uses the On-Demand price as the
+        /// maximum Spot price. To remove a value that you previously set, include the property but
+        /// specify an empty string ("") for the value.</p>
         pub fn set_spot_max_price(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -336,6 +377,7 @@ pub mod launch_template {
             self.launch_template_specification = Some(input);
             self
         }
+        /// <p>The launch template to use.</p>
         pub fn set_launch_template_specification(
             mut self,
             input: std::option::Option<crate::model::LaunchTemplateSpecification>,
@@ -343,6 +385,13 @@ pub mod launch_template {
             self.launch_template_specification = input;
             self
         }
+        /// Appends an item to `overrides`.
+        ///
+        /// To override the contents of this collection use [`set_overrides`](Self::set_overrides).
+        ///
+        /// <p>Any properties that you specify override the same properties in the launch template.
+        /// If not provided, Amazon EC2 Auto Scaling uses the instance type specified in the launch template when
+        /// it launches an instance. </p>
         pub fn overrides(
             mut self,
             input: impl Into<crate::model::LaunchTemplateOverrides>,
@@ -352,6 +401,9 @@ pub mod launch_template {
             self.overrides = Some(v);
             self
         }
+        /// <p>Any properties that you specify override the same properties in the launch template.
+        /// If not provided, Amazon EC2 Auto Scaling uses the instance type specified in the launch template when
+        /// it launches an instance. </p>
         pub fn set_overrides(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LaunchTemplateOverrides>>,
@@ -439,6 +491,10 @@ pub mod launch_template_overrides {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>The instance type, such as <code>m3.xlarge</code>. You must use an instance type that
+        /// is supported in your requested Region and Availability Zones. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -459,6 +515,15 @@ pub mod launch_template_overrides {
             self.weighted_capacity = Some(input.into());
             self
         }
+        /// <p>The number of capacity units provided by the specified instance type in terms of
+        /// virtual CPUs, memory, storage, throughput, or other relative performance characteristic.
+        /// When a Spot or On-Demand Instance is provisioned, the capacity units count toward the
+        /// desired capacity. Amazon EC2 Auto Scaling provisions instances until the desired capacity is totally
+        /// fulfilled, even if this results in an overage. For example, if there are 2 units
+        /// remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only provision an instance with a
+        /// <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the
+        /// desired capacity is exceeded by 3 units. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// Value must be in the range of 1 to 999.</p>
         pub fn set_weighted_capacity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -479,6 +544,12 @@ pub mod launch_template_overrides {
             self.launch_template_specification = Some(input);
             self
         }
+        /// <p>Provides the launch template to be used when launching the instance type. For example,
+        /// some instance types might require a launch template with a different AMI. If not
+        /// provided, Amazon EC2 Auto Scaling uses the launch template that's defined for your mixed instances
+        /// policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html">Specifying a
+        /// different launch template for an instance type</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
         pub fn set_launch_template_specification(
             mut self,
             input: std::option::Option<crate::model::LaunchTemplateSpecification>,
@@ -555,6 +626,10 @@ pub mod launch_template_specification {
             self.launch_template_id = Some(input.into());
             self
         }
+        /// <p>The ID of the launch template. To get the template ID, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a> API operation. New launch templates can be created
+        /// using the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a> API. </p>
+        /// <p>Conditional: You must specify either a <code>LaunchTemplateId</code> or a
+        /// <code>LaunchTemplateName</code>.</p>
         pub fn set_launch_template_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -570,6 +645,10 @@ pub mod launch_template_specification {
             self.launch_template_name = Some(input.into());
             self
         }
+        /// <p>The name of the launch template. To get the template name, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html">DescribeLaunchTemplates</a> API operation. New launch templates can be created
+        /// using the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">CreateLaunchTemplate</a> API. </p>
+        /// <p>Conditional: You must specify either a <code>LaunchTemplateId</code> or a
+        /// <code>LaunchTemplateName</code>.</p>
         pub fn set_launch_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -587,6 +666,12 @@ pub mod launch_template_specification {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version number, <code>$Latest</code>, or <code>$Default</code>. To get the version
+        /// number, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplateVersions.html">DescribeLaunchTemplateVersions</a> API operation. New launch template versions
+        /// can be created using the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplateVersion.html">CreateLaunchTemplateVersion</a> API. If the value is <code>$Latest</code>,
+        /// Amazon EC2 Auto Scaling selects the latest version of the launch template when launching instances. If
+        /// the value is <code>$Default</code>, Amazon EC2 Auto Scaling selects the default version of the launch
+        /// template when launching instances. The default value is <code>$Default</code>.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -622,9 +707,9 @@ pub struct Activity {
     /// <p>The reason the activity began.</p>
     pub cause: std::option::Option<std::string::String>,
     /// <p>The start time of the activity.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The end time of the activity.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The current status of the activity.</p>
     pub status_code: std::option::Option<crate::model::ScalingActivityStatusCode>,
     /// <p>A friendly, more verbose description of the activity status.</p>
@@ -667,8 +752,8 @@ pub mod activity {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status_code: std::option::Option<crate::model::ScalingActivityStatusCode>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) progress: std::option::Option<i32>,
@@ -682,6 +767,7 @@ pub mod activity {
             self.activity_id = Some(input.into());
             self
         }
+        /// <p>The ID of the activity.</p>
         pub fn set_activity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.activity_id = input;
             self
@@ -691,6 +777,7 @@ pub mod activity {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -703,6 +790,7 @@ pub mod activity {
             self.description = Some(input.into());
             self
         }
+        /// <p>A friendly, more verbose description of the activity.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -712,25 +800,34 @@ pub mod activity {
             self.cause = Some(input.into());
             self
         }
+        /// <p>The reason the activity began.</p>
         pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cause = input;
             self
         }
         /// <p>The start time of the activity.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The start time of the activity.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The end time of the activity.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The end time of the activity.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -739,6 +836,7 @@ pub mod activity {
             self.status_code = Some(input);
             self
         }
+        /// <p>The current status of the activity.</p>
         pub fn set_status_code(
             mut self,
             input: std::option::Option<crate::model::ScalingActivityStatusCode>,
@@ -751,6 +849,7 @@ pub mod activity {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>A friendly, more verbose description of the activity status.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -763,6 +862,7 @@ pub mod activity {
             self.progress = Some(input);
             self
         }
+        /// <p>A value between 0 and 100 that indicates the progress of the activity.</p>
         pub fn set_progress(mut self, input: std::option::Option<i32>) -> Self {
             self.progress = input;
             self
@@ -772,6 +872,7 @@ pub mod activity {
             self.details = Some(input.into());
             self
         }
+        /// <p>The details about the activity.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input;
             self
@@ -782,6 +883,8 @@ pub mod activity {
             self.auto_scaling_group_state = Some(input.into());
             self
         }
+        /// <p>The state of the Auto Scaling group, which is either <code>InService</code> or
+        /// <code>Deleted</code>.</p>
         pub fn set_auto_scaling_group_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -794,6 +897,7 @@ pub mod activity {
             self.auto_scaling_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -827,6 +931,7 @@ impl Activity {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -838,17 +943,29 @@ impl Activity {
     std::hash::Hash,
 )]
 pub enum ScalingActivityStatusCode {
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     MidLifecycleAction,
+    #[allow(missing_docs)] // documentation missing in model
     PendingSpotBidPlacement,
+    #[allow(missing_docs)] // documentation missing in model
     PreInService,
+    #[allow(missing_docs)] // documentation missing in model
     Successful,
+    #[allow(missing_docs)] // documentation missing in model
     WaitingForElbConnectionDraining,
+    #[allow(missing_docs)] // documentation missing in model
     WaitingForInstanceId,
+    #[allow(missing_docs)] // documentation missing in model
     WaitingForInstanceWarmup,
+    #[allow(missing_docs)] // documentation missing in model
     WaitingForSpotInstanceId,
+    #[allow(missing_docs)] // documentation missing in model
     WaitingForSpotInstanceRequestId,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -884,6 +1001,7 @@ impl std::str::FromStr for ScalingActivityStatusCode {
     }
 }
 impl ScalingActivityStatusCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScalingActivityStatusCode::Cancelled => "Cancelled",
@@ -905,6 +1023,7 @@ impl ScalingActivityStatusCode {
             ScalingActivityStatusCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Cancelled",
@@ -1000,6 +1119,13 @@ pub mod refresh_preferences {
             self.min_healthy_percentage = Some(input);
             self
         }
+        /// <p>The amount of capacity in the Auto Scaling group that must remain healthy during an instance
+        /// refresh to allow the operation to continue. The value is expressed as a percentage of
+        /// the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default
+        /// is <code>90</code>.</p>
+        /// <p>Setting the minimum healthy percentage to 100 percent limits the rate of replacement
+        /// to one instance at a time. In contrast, setting it to 0 percent has the effect of
+        /// replacing all instances at the same time. </p>
         pub fn set_min_healthy_percentage(mut self, input: std::option::Option<i32>) -> Self {
             self.min_healthy_percentage = input;
             self
@@ -1012,16 +1138,36 @@ pub mod refresh_preferences {
             self.instance_warmup = Some(input);
             self
         }
+        /// <p>The number of seconds until a newly launched instance is configured and ready to use.
+        /// During this time, Amazon EC2 Auto Scaling does not immediately move on to the next replacement. The
+        /// default is to use the value for the health check grace period defined for the
+        /// group.</p>
         pub fn set_instance_warmup(mut self, input: std::option::Option<i32>) -> Self {
             self.instance_warmup = input;
             self
         }
+        /// Appends an item to `checkpoint_percentages`.
+        ///
+        /// To override the contents of this collection use [`set_checkpoint_percentages`](Self::set_checkpoint_percentages).
+        ///
+        /// <p>Threshold values for each checkpoint in ascending order. Each number must be unique.
+        /// To replace all instances in the Auto Scaling group, the last number in the array must be
+        /// <code>100</code>.</p>
+        /// <p>For usage examples, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-adding-checkpoints-instance-refresh.html">Adding
+        /// checkpoints to an instance refresh</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn checkpoint_percentages(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.checkpoint_percentages.unwrap_or_default();
             v.push(input.into());
             self.checkpoint_percentages = Some(v);
             self
         }
+        /// <p>Threshold values for each checkpoint in ascending order. Each number must be unique.
+        /// To replace all instances in the Auto Scaling group, the last number in the array must be
+        /// <code>100</code>.</p>
+        /// <p>For usage examples, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-adding-checkpoints-instance-refresh.html">Adding
+        /// checkpoints to an instance refresh</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_checkpoint_percentages(
             mut self,
             input: std::option::Option<std::vec::Vec<i32>>,
@@ -1038,6 +1184,11 @@ pub mod refresh_preferences {
             self.checkpoint_delay = Some(input);
             self
         }
+        /// <p>The amount of time, in seconds, to wait after a checkpoint before continuing. This
+        /// property is optional, but if you specify a value for it, you must also specify a value
+        /// for <code>CheckpointPercentages</code>. If you specify a value for
+        /// <code>CheckpointPercentages</code> and not for <code>CheckpointDelay</code>, the
+        /// <code>CheckpointDelay</code> defaults to <code>3600</code> (1 hour). </p>
         pub fn set_checkpoint_delay(mut self, input: std::option::Option<i32>) -> Self {
             self.checkpoint_delay = input;
             self
@@ -1051,6 +1202,11 @@ pub mod refresh_preferences {
             self.skip_matching = Some(input);
             self
         }
+        /// <p>A boolean value that indicates whether skip matching is enabled. If true, then
+        /// Amazon EC2 Auto Scaling skips replacing instances that match the desired configuration. If no desired
+        /// configuration is specified, then it skips replacing instances that have the same
+        /// configuration that is already set on the group. The default is
+        /// <code>false</code>.</p>
         pub fn set_skip_matching(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_matching = input;
             self
@@ -1116,6 +1272,9 @@ pub mod desired_configuration {
             self.launch_template = Some(input);
             self
         }
+        /// <p>Describes the launch template and the version of the launch template that Amazon EC2 Auto Scaling
+        /// uses to launch Amazon EC2 instances. For more information about launch templates, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchTemplates.html">Launch
+        /// templates</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_launch_template(
             mut self,
             input: std::option::Option<crate::model::LaunchTemplateSpecification>,
@@ -1132,6 +1291,11 @@ pub mod desired_configuration {
             self.mixed_instances_policy = Some(input);
             self
         }
+        /// <p>Describes a mixed instances policy. A mixed instances policy contains the instance
+        /// types Amazon EC2 Auto Scaling can launch, and other information Amazon EC2 Auto Scaling can use to launch instances to
+        /// help you optimize your costs. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with multiple
+        /// instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
+        /// Guide</i>.</p>
         pub fn set_mixed_instances_policy(
             mut self,
             input: std::option::Option<crate::model::MixedInstancesPolicy>,
@@ -1155,6 +1319,7 @@ impl DesiredConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1166,6 +1331,7 @@ impl DesiredConfiguration {
     std::hash::Hash,
 )]
 pub enum RefreshStrategy {
+    #[allow(missing_docs)] // documentation missing in model
     Rolling,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1186,12 +1352,14 @@ impl std::str::FromStr for RefreshStrategy {
     }
 }
 impl RefreshStrategy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RefreshStrategy::Rolling => "Rolling",
             RefreshStrategy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Rolling"]
     }
@@ -1202,6 +1370,7 @@ impl AsRef<str> for RefreshStrategy {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1213,7 +1382,9 @@ impl AsRef<str> for RefreshStrategy {
     std::hash::Hash,
 )]
 pub enum WarmPoolState {
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1235,6 +1406,7 @@ impl std::str::FromStr for WarmPoolState {
     }
 }
 impl WarmPoolState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WarmPoolState::Running => "Running",
@@ -1242,6 +1414,7 @@ impl WarmPoolState {
             WarmPoolState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Running", "Stopped"]
     }
@@ -1284,6 +1457,7 @@ pub mod alarm {
             self.alarm_name = Some(input.into());
             self
         }
+        /// <p>The name of the alarm.</p>
         pub fn set_alarm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alarm_name = input;
             self
@@ -1293,6 +1467,7 @@ pub mod alarm {
             self.alarm_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
         pub fn set_alarm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alarm_arn = input;
             self
@@ -1396,6 +1571,15 @@ pub mod predictive_scaling_configuration {
         pub(crate) max_capacity_buffer: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `metric_specifications`.
+        ///
+        /// To override the contents of this collection use [`set_metric_specifications`](Self::set_metric_specifications).
+        ///
+        /// <p>This structure includes the metrics and target utilization to use for predictive
+        /// scaling. </p>
+        /// <p>This is an array, but we currently only support a single metric specification. That
+        /// is, you can specify a target value and a single metric pair, or a target value and one
+        /// scaling metric and one load metric.</p>
         pub fn metric_specifications(
             mut self,
             input: impl Into<crate::model::PredictiveScalingMetricSpecification>,
@@ -1405,6 +1589,11 @@ pub mod predictive_scaling_configuration {
             self.metric_specifications = Some(v);
             self
         }
+        /// <p>This structure includes the metrics and target utilization to use for predictive
+        /// scaling. </p>
+        /// <p>This is an array, but we currently only support a single metric specification. That
+        /// is, you can specify a target value and a single metric pair, or a target value and one
+        /// scaling metric and one load metric.</p>
         pub fn set_metric_specifications(
             mut self,
             input: std::option::Option<
@@ -1420,6 +1609,8 @@ pub mod predictive_scaling_configuration {
             self.mode = Some(input);
             self
         }
+        /// <p>The predictive scaling mode. Defaults to <code>ForecastOnly</code> if not
+        /// specified.</p>
         pub fn set_mode(
             mut self,
             input: std::option::Option<crate::model::PredictiveScalingMode>,
@@ -1439,6 +1630,14 @@ pub mod predictive_scaling_configuration {
             self.scheduling_buffer_time = Some(input);
             self
         }
+        /// <p>The amount of time, in seconds, by which the instance launch time can be advanced. For
+        /// example, the forecast says to add capacity at 10:00 AM, and you choose to pre-launch
+        /// instances by 5 minutes. In that case, the instances will be launched at 9:55 AM. The
+        /// intention is to give resources time to be provisioned. It can take a few minutes to
+        /// launch an EC2 instance. The actual amount of time required depends on several factors,
+        /// such as the size of the instance and whether there are startup scripts to complete. </p>
+        /// <p>The value must be less than the forecast interval duration of 3600 seconds (60
+        /// minutes). Defaults to 300 seconds if not specified. </p>
         pub fn set_scheduling_buffer_time(mut self, input: std::option::Option<i32>) -> Self {
             self.scheduling_buffer_time = input;
             self
@@ -1468,6 +1667,24 @@ pub mod predictive_scaling_configuration {
             self.max_capacity_breach_behavior = Some(input);
             self
         }
+        /// <p>Defines the behavior that should be applied if the forecast capacity approaches or
+        /// exceeds the maximum capacity of the Auto Scaling group. Defaults to
+        /// <code>HonorMaxCapacity</code> if not specified.</p>
+        /// <p>The following are possible values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>HonorMaxCapacity</code> - Amazon EC2 Auto Scaling cannot scale out capacity higher than
+        /// the maximum capacity. The maximum capacity is enforced as a hard limit. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IncreaseMaxCapacity</code> - Amazon EC2 Auto Scaling can scale out capacity higher than
+        /// the maximum capacity when the forecast capacity is close to or exceeds the
+        /// maximum capacity. The upper limit is determined by the forecasted capacity and
+        /// the value for <code>MaxCapacityBuffer</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_max_capacity_breach_behavior(
             mut self,
             input: std::option::Option<crate::model::PredictiveScalingMaxCapacityBreachBehavior>,
@@ -1488,6 +1705,15 @@ pub mod predictive_scaling_configuration {
             self.max_capacity_buffer = Some(input);
             self
         }
+        /// <p>The size of the capacity buffer to use when the forecast capacity is close to or
+        /// exceeds the maximum capacity. The value is specified as a percentage relative to the
+        /// forecast capacity. For example, if the buffer is 10, this means a 10 percent buffer,
+        /// such that if the forecast capacity is 50, and the maximum capacity is 40, then the
+        /// effective maximum capacity is 55.</p>
+        /// <p>If set to 0, Amazon EC2 Auto Scaling may scale capacity higher than the maximum capacity to equal but
+        /// not exceed forecast capacity. </p>
+        /// <p>Required if the <code>MaxCapacityBreachBehavior</code> property is set to
+        /// <code>IncreaseMaxCapacity</code>, and cannot be used otherwise.</p>
         pub fn set_max_capacity_buffer(mut self, input: std::option::Option<i32>) -> Self {
             self.max_capacity_buffer = input;
             self
@@ -1511,6 +1737,7 @@ impl PredictiveScalingConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1522,7 +1749,9 @@ impl PredictiveScalingConfiguration {
     std::hash::Hash,
 )]
 pub enum PredictiveScalingMaxCapacityBreachBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     HonorMaxCapacity,
+    #[allow(missing_docs)] // documentation missing in model
     IncreaseMaxCapacity,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1546,6 +1775,7 @@ impl std::str::FromStr for PredictiveScalingMaxCapacityBreachBehavior {
     }
 }
 impl PredictiveScalingMaxCapacityBreachBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PredictiveScalingMaxCapacityBreachBehavior::HonorMaxCapacity => "HonorMaxCapacity",
@@ -1555,6 +1785,7 @@ impl PredictiveScalingMaxCapacityBreachBehavior {
             PredictiveScalingMaxCapacityBreachBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HonorMaxCapacity", "IncreaseMaxCapacity"]
     }
@@ -1565,6 +1796,7 @@ impl AsRef<str> for PredictiveScalingMaxCapacityBreachBehavior {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1576,7 +1808,9 @@ impl AsRef<str> for PredictiveScalingMaxCapacityBreachBehavior {
     std::hash::Hash,
 )]
 pub enum PredictiveScalingMode {
+    #[allow(missing_docs)] // documentation missing in model
     ForecastAndScale,
+    #[allow(missing_docs)] // documentation missing in model
     ForecastOnly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1598,6 +1832,7 @@ impl std::str::FromStr for PredictiveScalingMode {
     }
 }
 impl PredictiveScalingMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PredictiveScalingMode::ForecastAndScale => "ForecastAndScale",
@@ -1605,6 +1840,7 @@ impl PredictiveScalingMode {
             PredictiveScalingMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ForecastAndScale", "ForecastOnly"]
     }
@@ -1712,6 +1948,7 @@ pub mod predictive_scaling_metric_specification {
             self.target_value = Some(input);
             self
         }
+        /// <p>Specifies the target utilization.</p>
         pub fn set_target_value(mut self, input: std::option::Option<f64>) -> Self {
             self.target_value = input;
             self
@@ -1725,6 +1962,8 @@ pub mod predictive_scaling_metric_specification {
             self.predefined_metric_pair_specification = Some(input);
             self
         }
+        /// <p>The metric pair specification from which Amazon EC2 Auto Scaling determines the appropriate scaling
+        /// metric and load metric to use.</p>
         pub fn set_predefined_metric_pair_specification(
             mut self,
             input: std::option::Option<crate::model::PredictiveScalingPredefinedMetricPair>,
@@ -1740,6 +1979,7 @@ pub mod predictive_scaling_metric_specification {
             self.predefined_scaling_metric_specification = Some(input);
             self
         }
+        /// <p>The scaling metric specification.</p>
         pub fn set_predefined_scaling_metric_specification(
             mut self,
             input: std::option::Option<crate::model::PredictiveScalingPredefinedScalingMetric>,
@@ -1755,6 +1995,7 @@ pub mod predictive_scaling_metric_specification {
             self.predefined_load_metric_specification = Some(input);
             self
         }
+        /// <p>The load metric specification.</p>
         pub fn set_predefined_load_metric_specification(
             mut self,
             input: std::option::Option<crate::model::PredictiveScalingPredefinedLoadMetric>,
@@ -1840,6 +2081,7 @@ pub mod predictive_scaling_predefined_load_metric {
             self.predefined_metric_type = Some(input);
             self
         }
+        /// <p>The metric type.</p>
         pub fn set_predefined_metric_type(
             mut self,
             input: std::option::Option<crate::model::PredefinedLoadMetricType>,
@@ -1872,6 +2114,27 @@ pub mod predictive_scaling_predefined_load_metric {
             self.resource_label = Some(input.into());
             self
         }
+        /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine
+        /// the request count served by your Auto Scaling group. You can't specify a resource label
+        /// unless the target group is attached to the Auto Scaling group.</p>
+        /// <p>You create the resource label by appending the final portion of the load balancer ARN
+        /// and the final portion of the target group ARN into a single value, separated by a forward
+        /// slash (/). The format of the resource label is:</p>
+        /// <p>
+        /// <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
+        /// <p>Where:</p>
+        /// <ul>
+        /// <li>
+        /// <p>app/<load-balancer-name>/<load-balancer-id> is the final portion of
+        /// the load balancer ARN</p>
+        /// </li>
+        /// <li>
+        /// <p>targetgroup/<target-group-name>/<target-group-id> is the final portion
+        /// of the target group ARN.</p>
+        /// </li>
+        /// </ul>
+        /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use
+        /// the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
         pub fn set_resource_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1895,6 +2158,7 @@ impl PredictiveScalingPredefinedLoadMetric {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1906,9 +2170,13 @@ impl PredictiveScalingPredefinedLoadMetric {
     std::hash::Hash,
 )]
 pub enum PredefinedLoadMetricType {
+    #[allow(missing_docs)] // documentation missing in model
     AlbTargetGroupRequestCount,
+    #[allow(missing_docs)] // documentation missing in model
     AsgTotalCpuUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     AsgTotalNetworkIn,
+    #[allow(missing_docs)] // documentation missing in model
     AsgTotalNetworkOut,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1932,6 +2200,7 @@ impl std::str::FromStr for PredefinedLoadMetricType {
     }
 }
 impl PredefinedLoadMetricType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PredefinedLoadMetricType::AlbTargetGroupRequestCount => "ALBTargetGroupRequestCount",
@@ -1941,6 +2210,7 @@ impl PredefinedLoadMetricType {
             PredefinedLoadMetricType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ALBTargetGroupRequestCount",
@@ -2015,6 +2285,7 @@ pub mod predictive_scaling_predefined_scaling_metric {
             self.predefined_metric_type = Some(input);
             self
         }
+        /// <p>The metric type.</p>
         pub fn set_predefined_metric_type(
             mut self,
             input: std::option::Option<crate::model::PredefinedScalingMetricType>,
@@ -2047,6 +2318,27 @@ pub mod predictive_scaling_predefined_scaling_metric {
             self.resource_label = Some(input.into());
             self
         }
+        /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine
+        /// the average request count served by your Auto Scaling group. You can't specify a resource
+        /// label unless the target group is attached to the Auto Scaling group.</p>
+        /// <p>You create the resource label by appending the final portion of the load balancer ARN
+        /// and the final portion of the target group ARN into a single value, separated by a forward
+        /// slash (/). The format of the resource label is:</p>
+        /// <p>
+        /// <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
+        /// <p>Where:</p>
+        /// <ul>
+        /// <li>
+        /// <p>app/<load-balancer-name>/<load-balancer-id> is the final portion of
+        /// the load balancer ARN</p>
+        /// </li>
+        /// <li>
+        /// <p>targetgroup/<target-group-name>/<target-group-id> is the final portion
+        /// of the target group ARN.</p>
+        /// </li>
+        /// </ul>
+        /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use
+        /// the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
         pub fn set_resource_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2070,6 +2362,7 @@ impl PredictiveScalingPredefinedScalingMetric {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2081,9 +2374,13 @@ impl PredictiveScalingPredefinedScalingMetric {
     std::hash::Hash,
 )]
 pub enum PredefinedScalingMetricType {
+    #[allow(missing_docs)] // documentation missing in model
     AlbRequestCountPerTarget,
+    #[allow(missing_docs)] // documentation missing in model
     AsgAverageCpuUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     AsgAverageNetworkIn,
+    #[allow(missing_docs)] // documentation missing in model
     AsgAverageNetworkOut,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2107,6 +2404,7 @@ impl std::str::FromStr for PredefinedScalingMetricType {
     }
 }
 impl PredefinedScalingMetricType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PredefinedScalingMetricType::AlbRequestCountPerTarget => "ALBRequestCountPerTarget",
@@ -2116,6 +2414,7 @@ impl PredefinedScalingMetricType {
             PredefinedScalingMetricType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ALBRequestCountPerTarget",
@@ -2193,6 +2492,10 @@ pub mod predictive_scaling_predefined_metric_pair {
             self.predefined_metric_type = Some(input);
             self
         }
+        /// <p>Indicates which metrics to use. There are two different types of metrics for each
+        /// metric type: one is a load metric and one is a scaling metric. For example, if the
+        /// metric type is <code>ASGCPUUtilization</code>, the Auto Scaling group's total CPU metric is used
+        /// as the load metric, and the average CPU metric is used for the scaling metric.</p>
         pub fn set_predefined_metric_type(
             mut self,
             input: std::option::Option<crate::model::PredefinedMetricPairType>,
@@ -2225,6 +2528,27 @@ pub mod predictive_scaling_predefined_metric_pair {
             self.resource_label = Some(input.into());
             self
         }
+        /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine
+        /// the total and average request count served by your Auto Scaling group. You can't specify a
+        /// resource label unless the target group is attached to the Auto Scaling group.</p>
+        /// <p>You create the resource label by appending the final portion of the load balancer ARN
+        /// and the final portion of the target group ARN into a single value, separated by a forward
+        /// slash (/). The format of the resource label is:</p>
+        /// <p>
+        /// <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
+        /// <p>Where:</p>
+        /// <ul>
+        /// <li>
+        /// <p>app/<load-balancer-name>/<load-balancer-id> is the final portion of
+        /// the load balancer ARN</p>
+        /// </li>
+        /// <li>
+        /// <p>targetgroup/<target-group-name>/<target-group-id> is the final portion
+        /// of the target group ARN.</p>
+        /// </li>
+        /// </ul>
+        /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use
+        /// the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
         pub fn set_resource_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2248,6 +2572,7 @@ impl PredictiveScalingPredefinedMetricPair {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2259,9 +2584,13 @@ impl PredictiveScalingPredefinedMetricPair {
     std::hash::Hash,
 )]
 pub enum PredefinedMetricPairType {
+    #[allow(missing_docs)] // documentation missing in model
     AlbRequestCount,
+    #[allow(missing_docs)] // documentation missing in model
     AsgcpuUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     AsgNetworkIn,
+    #[allow(missing_docs)] // documentation missing in model
     AsgNetworkOut,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2285,6 +2614,7 @@ impl std::str::FromStr for PredefinedMetricPairType {
     }
 }
 impl PredefinedMetricPairType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PredefinedMetricPairType::AlbRequestCount => "ALBRequestCount",
@@ -2294,6 +2624,7 @@ impl PredefinedMetricPairType {
             PredefinedMetricPairType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ALBRequestCount",
@@ -2368,6 +2699,8 @@ pub mod target_tracking_configuration {
             self.predefined_metric_specification = Some(input);
             self
         }
+        /// <p>A predefined metric. You must specify either a predefined metric or a customized
+        /// metric.</p>
         pub fn set_predefined_metric_specification(
             mut self,
             input: std::option::Option<crate::model::PredefinedMetricSpecification>,
@@ -2384,6 +2717,8 @@ pub mod target_tracking_configuration {
             self.customized_metric_specification = Some(input);
             self
         }
+        /// <p>A customized metric. You must specify either a predefined metric or a customized
+        /// metric.</p>
         pub fn set_customized_metric_specification(
             mut self,
             input: std::option::Option<crate::model::CustomizedMetricSpecification>,
@@ -2396,6 +2731,7 @@ pub mod target_tracking_configuration {
             self.target_value = Some(input);
             self
         }
+        /// <p>The target value for the metric.</p>
         pub fn set_target_value(mut self, input: std::option::Option<f64>) -> Self {
             self.target_value = input;
             self
@@ -2408,6 +2744,10 @@ pub mod target_tracking_configuration {
             self.disable_scale_in = Some(input);
             self
         }
+        /// <p>Indicates whether scaling in by the target tracking scaling policy is disabled. If
+        /// scaling in is disabled, the target tracking scaling policy doesn't remove instances from
+        /// the Auto Scaling group. Otherwise, the target tracking scaling policy can remove instances from
+        /// the Auto Scaling group. The default is <code>false</code>.</p>
         pub fn set_disable_scale_in(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_scale_in = input;
             self
@@ -2495,6 +2835,7 @@ pub mod customized_metric_specification {
             self.metric_name = Some(input.into());
             self
         }
+        /// <p>The name of the metric.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -2504,16 +2845,27 @@ pub mod customized_metric_specification {
             self.namespace = Some(input.into());
             self
         }
+        /// <p>The namespace of the metric.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
         }
+        /// Appends an item to `dimensions`.
+        ///
+        /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
+        ///
+        /// <p>The dimensions of the metric.</p>
+        /// <p>Conditional: If you published your metric with dimensions, you must specify the same
+        /// dimensions in your scaling policy.</p>
         pub fn dimensions(mut self, input: impl Into<crate::model::MetricDimension>) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
             v.push(input.into());
             self.dimensions = Some(v);
             self
         }
+        /// <p>The dimensions of the metric.</p>
+        /// <p>Conditional: If you published your metric with dimensions, you must specify the same
+        /// dimensions in your scaling policy.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricDimension>>,
@@ -2526,6 +2878,7 @@ pub mod customized_metric_specification {
             self.statistic = Some(input);
             self
         }
+        /// <p>The statistic of the metric.</p>
         pub fn set_statistic(
             mut self,
             input: std::option::Option<crate::model::MetricStatistic>,
@@ -2538,6 +2891,7 @@ pub mod customized_metric_specification {
             self.unit = Some(input.into());
             self
         }
+        /// <p>The unit of the metric.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unit = input;
             self
@@ -2561,6 +2915,7 @@ impl CustomizedMetricSpecification {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2572,10 +2927,15 @@ impl CustomizedMetricSpecification {
     std::hash::Hash,
 )]
 pub enum MetricStatistic {
+    #[allow(missing_docs)] // documentation missing in model
     Average,
+    #[allow(missing_docs)] // documentation missing in model
     Maximum,
+    #[allow(missing_docs)] // documentation missing in model
     Minimum,
+    #[allow(missing_docs)] // documentation missing in model
     SampleCount,
+    #[allow(missing_docs)] // documentation missing in model
     Sum,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2600,6 +2960,7 @@ impl std::str::FromStr for MetricStatistic {
     }
 }
 impl MetricStatistic {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MetricStatistic::Average => "Average",
@@ -2610,6 +2971,7 @@ impl MetricStatistic {
             MetricStatistic::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Average", "Maximum", "Minimum", "SampleCount", "Sum"]
     }
@@ -2652,6 +3014,7 @@ pub mod metric_dimension {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the dimension.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2661,6 +3024,7 @@ pub mod metric_dimension {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the dimension.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -2778,6 +3142,29 @@ pub mod predefined_metric_specification {
             self.predefined_metric_type = Some(input);
             self
         }
+        /// <p>The metric type. The following predefined metrics are available:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling
+        /// group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ASGAverageNetworkIn</code> - Average number of bytes received on all
+        /// network interfaces by the Auto Scaling group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all
+        /// network interfaces by the Auto Scaling group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALBRequestCountPerTarget</code> - Number of requests completed per
+        /// target in an Application Load Balancer target group.</p>
+        /// </li>
+        /// </ul>
         pub fn set_predefined_metric_type(
             mut self,
             input: std::option::Option<crate::model::MetricType>,
@@ -2810,6 +3197,27 @@ pub mod predefined_metric_specification {
             self.resource_label = Some(input.into());
             self
         }
+        /// <p>A label that uniquely identifies a specific Application Load Balancer target group
+        /// from which to determine the average request count served by your Auto Scaling group. You can't
+        /// specify a resource label unless the target group is attached to the Auto Scaling group.</p>
+        /// <p>You create the resource label by appending the final portion of the load balancer ARN
+        /// and the final portion of the target group ARN into a single value, separated by a forward
+        /// slash (/). The format of the resource label is:</p>
+        /// <p>
+        /// <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
+        /// <p>Where:</p>
+        /// <ul>
+        /// <li>
+        /// <p>app/<load-balancer-name>/<load-balancer-id> is the final portion of
+        /// the load balancer ARN</p>
+        /// </li>
+        /// <li>
+        /// <p>targetgroup/<target-group-name>/<target-group-id> is the final portion
+        /// of the target group ARN.</p>
+        /// </li>
+        /// </ul>
+        /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use
+        /// the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
         pub fn set_resource_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2833,6 +3241,7 @@ impl PredefinedMetricSpecification {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2844,9 +3253,13 @@ impl PredefinedMetricSpecification {
     std::hash::Hash,
 )]
 pub enum MetricType {
+    #[allow(missing_docs)] // documentation missing in model
     AlbRequestCountPerTarget,
+    #[allow(missing_docs)] // documentation missing in model
     AsgAverageCpuUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     AsgAverageNetworkIn,
+    #[allow(missing_docs)] // documentation missing in model
     AsgAverageNetworkOut,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2870,6 +3283,7 @@ impl std::str::FromStr for MetricType {
     }
 }
 impl MetricType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MetricType::AlbRequestCountPerTarget => "ALBRequestCountPerTarget",
@@ -2879,6 +3293,7 @@ impl MetricType {
             MetricType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ALBRequestCountPerTarget",
@@ -2985,6 +3400,11 @@ pub mod step_adjustment {
             self.metric_interval_lower_bound = Some(input);
             self
         }
+        /// <p>The lower bound for the difference between the alarm threshold and the CloudWatch metric. If
+        /// the metric value is above the breach threshold, the lower bound is inclusive (the metric
+        /// must be greater than or equal to the threshold plus the lower bound). Otherwise, it is
+        /// exclusive (the metric must be greater than the threshold plus the lower bound). A null
+        /// value indicates negative infinity.</p>
         pub fn set_metric_interval_lower_bound(mut self, input: std::option::Option<f64>) -> Self {
             self.metric_interval_lower_bound = input;
             self
@@ -2999,6 +3419,12 @@ pub mod step_adjustment {
             self.metric_interval_upper_bound = Some(input);
             self
         }
+        /// <p>The upper bound for the difference between the alarm threshold and the CloudWatch metric. If
+        /// the metric value is above the breach threshold, the upper bound is exclusive (the metric
+        /// must be less than the threshold plus the upper bound). Otherwise, it is inclusive (the
+        /// metric must be less than or equal to the threshold plus the upper bound). A null value
+        /// indicates positive infinity.</p>
+        /// <p>The upper bound must be greater than the lower bound.</p>
         pub fn set_metric_interval_upper_bound(mut self, input: std::option::Option<f64>) -> Self {
             self.metric_interval_upper_bound = input;
             self
@@ -3010,6 +3436,9 @@ pub mod step_adjustment {
             self.scaling_adjustment = Some(input);
             self
         }
+        /// <p>The amount by which to scale, based on the specified adjustment type. A positive value
+        /// adds to the current capacity while a negative number removes from the current
+        /// capacity.</p>
         pub fn set_scaling_adjustment(mut self, input: std::option::Option<i32>) -> Self {
             self.scaling_adjustment = input;
             self
@@ -3038,7 +3467,7 @@ impl StepAdjustment {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CapacityForecast {
     /// <p>The time stamps for the data points, in UTC format.</p>
-    pub timestamps: std::option::Option<std::vec::Vec<smithy_types::Instant>>,
+    pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
     /// <p>The values of the data points.</p>
     pub values: std::option::Option<std::vec::Vec<f64>>,
 }
@@ -3056,29 +3485,41 @@ pub mod capacity_forecast {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamps: std::option::Option<std::vec::Vec<smithy_types::Instant>>,
+        pub(crate) timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
         pub(crate) values: std::option::Option<std::vec::Vec<f64>>,
     }
     impl Builder {
-        pub fn timestamps(mut self, input: impl Into<smithy_types::Instant>) -> Self {
+        /// Appends an item to `timestamps`.
+        ///
+        /// To override the contents of this collection use [`set_timestamps`](Self::set_timestamps).
+        ///
+        /// <p>The time stamps for the data points, in UTC format.</p>
+        pub fn timestamps(mut self, input: impl Into<aws_smithy_types::Instant>) -> Self {
             let mut v = self.timestamps.unwrap_or_default();
             v.push(input.into());
             self.timestamps = Some(v);
             self
         }
+        /// <p>The time stamps for the data points, in UTC format.</p>
         pub fn set_timestamps(
             mut self,
-            input: std::option::Option<std::vec::Vec<smithy_types::Instant>>,
+            input: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
         ) -> Self {
             self.timestamps = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The values of the data points.</p>
         pub fn values(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The values of the data points.</p>
         pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.values = input;
             self
@@ -3107,7 +3548,7 @@ impl CapacityForecast {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoadForecast {
     /// <p>The time stamps for the data points, in UTC format.</p>
-    pub timestamps: std::option::Option<std::vec::Vec<smithy_types::Instant>>,
+    pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
     /// <p>The values of the data points.</p>
     pub values: std::option::Option<std::vec::Vec<f64>>,
     /// <p>The metric specification for the load forecast.</p>
@@ -3129,31 +3570,43 @@ pub mod load_forecast {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamps: std::option::Option<std::vec::Vec<smithy_types::Instant>>,
+        pub(crate) timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
         pub(crate) values: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) metric_specification:
             std::option::Option<crate::model::PredictiveScalingMetricSpecification>,
     }
     impl Builder {
-        pub fn timestamps(mut self, input: impl Into<smithy_types::Instant>) -> Self {
+        /// Appends an item to `timestamps`.
+        ///
+        /// To override the contents of this collection use [`set_timestamps`](Self::set_timestamps).
+        ///
+        /// <p>The time stamps for the data points, in UTC format.</p>
+        pub fn timestamps(mut self, input: impl Into<aws_smithy_types::Instant>) -> Self {
             let mut v = self.timestamps.unwrap_or_default();
             v.push(input.into());
             self.timestamps = Some(v);
             self
         }
+        /// <p>The time stamps for the data points, in UTC format.</p>
         pub fn set_timestamps(
             mut self,
-            input: std::option::Option<std::vec::Vec<smithy_types::Instant>>,
+            input: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
         ) -> Self {
             self.timestamps = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The values of the data points.</p>
         pub fn values(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The values of the data points.</p>
         pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.values = input;
             self
@@ -3166,6 +3619,7 @@ pub mod load_forecast {
             self.metric_specification = Some(input);
             self
         }
+        /// <p>The metric specification for the load forecast.</p>
         pub fn set_metric_specification(
             mut self,
             input: std::option::Option<crate::model::PredictiveScalingMetricSpecification>,
@@ -3257,6 +3711,7 @@ pub mod instance {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The ID of the instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -3266,6 +3721,7 @@ pub mod instance {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>The instance type of the EC2 instance.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3278,6 +3734,7 @@ pub mod instance {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>The Availability Zone in which the instance is running.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3292,6 +3749,9 @@ pub mod instance {
             self.lifecycle_state = Some(input);
             self
         }
+        /// <p>A description of the current lifecycle state. The <code>Quarantined</code> state is
+        /// not used. For information about lifecycle states, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+        /// lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
         pub fn set_lifecycle_state(
             mut self,
             input: std::option::Option<crate::model::LifecycleState>,
@@ -3306,6 +3766,9 @@ pub mod instance {
             self.health_status = Some(input.into());
             self
         }
+        /// <p>The last reported health status of the instance. "Healthy" means that the instance is
+        /// healthy and should remain in service. "Unhealthy" means that the instance is unhealthy
+        /// and that Amazon EC2 Auto Scaling should terminate and replace it.</p>
         pub fn set_health_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3318,6 +3781,7 @@ pub mod instance {
             self.launch_configuration_name = Some(input.into());
             self
         }
+        /// <p>The launch configuration associated with the instance.</p>
         pub fn set_launch_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3330,6 +3794,7 @@ pub mod instance {
             self.launch_template = Some(input);
             self
         }
+        /// <p>The launch template for the instance.</p>
         pub fn set_launch_template(
             mut self,
             input: std::option::Option<crate::model::LaunchTemplateSpecification>,
@@ -3343,6 +3808,8 @@ pub mod instance {
             self.protected_from_scale_in = Some(input);
             self
         }
+        /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling
+        /// in.</p>
         pub fn set_protected_from_scale_in(mut self, input: std::option::Option<bool>) -> Self {
             self.protected_from_scale_in = input;
             self
@@ -3354,6 +3821,9 @@ pub mod instance {
             self.weighted_capacity = Some(input.into());
             self
         }
+        /// <p>The number of capacity units contributed by the instance based on its instance
+        /// type.</p>
+        /// <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
         pub fn set_weighted_capacity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3384,6 +3854,7 @@ impl Instance {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3395,27 +3866,49 @@ impl Instance {
     std::hash::Hash,
 )]
 pub enum LifecycleState {
+    #[allow(missing_docs)] // documentation missing in model
     Detached,
+    #[allow(missing_docs)] // documentation missing in model
     Detaching,
+    #[allow(missing_docs)] // documentation missing in model
     EnteringStandby,
+    #[allow(missing_docs)] // documentation missing in model
     InService,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     PendingProceed,
+    #[allow(missing_docs)] // documentation missing in model
     PendingWait,
+    #[allow(missing_docs)] // documentation missing in model
     Quarantined,
+    #[allow(missing_docs)] // documentation missing in model
     Standby,
+    #[allow(missing_docs)] // documentation missing in model
     Terminated,
+    #[allow(missing_docs)] // documentation missing in model
     Terminating,
+    #[allow(missing_docs)] // documentation missing in model
     TerminatingProceed,
+    #[allow(missing_docs)] // documentation missing in model
     TerminatingWait,
+    #[allow(missing_docs)] // documentation missing in model
     WarmedPending,
+    #[allow(missing_docs)] // documentation missing in model
     WarmedPendingProceed,
+    #[allow(missing_docs)] // documentation missing in model
     WarmedPendingWait,
+    #[allow(missing_docs)] // documentation missing in model
     WarmedRunning,
+    #[allow(missing_docs)] // documentation missing in model
     WarmedStopped,
+    #[allow(missing_docs)] // documentation missing in model
     WarmedTerminated,
+    #[allow(missing_docs)] // documentation missing in model
     WarmedTerminating,
+    #[allow(missing_docs)] // documentation missing in model
     WarmedTerminatingProceed,
+    #[allow(missing_docs)] // documentation missing in model
     WarmedTerminatingWait,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3457,6 +3950,7 @@ impl std::str::FromStr for LifecycleState {
     }
 }
 impl LifecycleState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LifecycleState::Detached => "Detached",
@@ -3484,6 +3978,7 @@ impl LifecycleState {
             LifecycleState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Detached",
@@ -3562,6 +4057,8 @@ pub mod warm_pool_configuration {
             self.max_group_prepared_capacity = Some(input);
             self
         }
+        /// <p>The maximum number of instances that are allowed to be in the warm pool or in any
+        /// state except <code>Terminated</code> for the Auto Scaling group.</p>
         pub fn set_max_group_prepared_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.max_group_prepared_capacity = input;
             self
@@ -3571,6 +4068,7 @@ pub mod warm_pool_configuration {
             self.min_size = Some(input);
             self
         }
+        /// <p>The minimum number of instances to maintain in the warm pool.</p>
         pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
             self.min_size = input;
             self
@@ -3580,6 +4078,7 @@ pub mod warm_pool_configuration {
             self.pool_state = Some(input);
             self
         }
+        /// <p>The instance state to transition to after the lifecycle actions are complete.</p>
         pub fn set_pool_state(
             mut self,
             input: std::option::Option<crate::model::WarmPoolState>,
@@ -3592,6 +4091,7 @@ pub mod warm_pool_configuration {
             self.status = Some(input);
             self
         }
+        /// <p>The status of a warm pool that is marked for deletion.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::WarmPoolStatus>,
@@ -3617,6 +4117,7 @@ impl WarmPoolConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3628,6 +4129,7 @@ impl WarmPoolConfiguration {
     std::hash::Hash,
 )]
 pub enum WarmPoolStatus {
+    #[allow(missing_docs)] // documentation missing in model
     PendingDelete,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3648,12 +4150,14 @@ impl std::str::FromStr for WarmPoolStatus {
     }
 }
 impl WarmPoolStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WarmPoolStatus::PendingDelete => "PendingDelete",
             WarmPoolStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PendingDelete"]
     }
@@ -3710,6 +4214,7 @@ pub mod tag_description {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The name of the group.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -3720,6 +4225,8 @@ pub mod tag_description {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The type of resource. The only supported value is
+        /// <code>auto-scaling-group</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3732,6 +4239,7 @@ pub mod tag_description {
             self.key = Some(input.into());
             self
         }
+        /// <p>The tag key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -3741,6 +4249,7 @@ pub mod tag_description {
             self.value = Some(input.into());
             self
         }
+        /// <p>The tag value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -3751,6 +4260,8 @@ pub mod tag_description {
             self.propagate_at_launch = Some(input);
             self
         }
+        /// <p>Determines whether the tag is added to new instances as they are launched in the
+        /// group.</p>
         pub fn set_propagate_at_launch(mut self, input: std::option::Option<bool>) -> Self {
             self.propagate_at_launch = input;
             self
@@ -3922,16 +4433,86 @@ pub mod filter {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the filter.</p>
+        /// <p>The valid values for <code>Name</code> depend on the API operation that you are
+        /// including the filter in, <a>DescribeAutoScalingGroups</a> or <a>DescribeTags</a>.</p>
+        /// <p>
+        /// <b>DescribeAutoScalingGroups</b>
+        /// </p>
+        /// <p>Valid values for <code>Name</code> include the following: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>tag-key</code> - Accepts tag keys. The results will only include
+        /// information about the Auto Scaling groups associated with these tag keys. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>tag-value</code> - Accepts tag values. The results will only include
+        /// information about the Auto Scaling groups associated with these tag values. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>tag:<key></code> - Accepts the key/value combination of the tag.
+        /// Use the tag key in the filter name and the tag value as the filter value. The
+        /// results will only include information about the Auto Scaling groups associated with the
+        /// specified key/value combination. </p>
+        /// </li>
+        /// </ul>
+        /// <p>
+        /// <b>DescribeTags</b>
+        /// </p>
+        /// <p>Valid values for <code>Name</code> include the following: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>auto-scaling-group</code> - Accepts the names of Auto Scaling groups. The
+        /// results will only include information about the tags associated with these Auto Scaling
+        /// groups. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>key</code> - Accepts tag keys. The results will only include information
+        /// about the tags associated with these tag keys. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>value</code> - Accepts tag values. The results will only include
+        /// information about the tags associated with these tag values. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>propagate-at-launch</code> - Accepts a boolean value, which specifies
+        /// whether tags propagate to instances at launch. The results will only include
+        /// information about the tags associated with the specified boolean value. </p>
+        /// </li>
+        /// </ul>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>One or more filter values. Filter values are case-sensitive. </p>
+        /// <p>If you specify multiple values for a filter, the values are joined with an
+        /// <code>OR</code>, and the request returns all results that match any of the specified
+        /// values. For example, specify "tag:environment" for the filter name and
+        /// "production,development" for the filter values to find Auto Scaling groups with the tag
+        /// "environment=production" or "environment=development".</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>One or more filter values. Filter values are case-sensitive. </p>
+        /// <p>If you specify multiple values for a filter, the values are joined with an
+        /// <code>OR</code>, and the request returns all results that match any of the specified
+        /// values. For example, specify "tag:environment" for the filter name and
+        /// "production,development" for the filter values to find Auto Scaling groups with the tag
+        /// "environment=production" or "environment=development".</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3967,15 +4548,15 @@ pub struct ScheduledUpdateGroupAction {
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
     pub scheduled_action_arn: std::option::Option<std::string::String>,
     /// <p>This parameter is no longer used.</p>
-    pub time: std::option::Option<smithy_types::Instant>,
+    pub time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time in UTC for this action to start. For example,
     /// <code>"2019-06-01T00:00:00Z"</code>.
     /// </p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time in UTC for the recurring schedule to end. For example,
     /// <code>"2019-06-01T00:00:00Z"</code>.
     /// </p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The recurring schedule for the action, in Unix cron syntax format.</p>
     /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
     /// <code>Recurrence</code>, they form the boundaries of when the recurring action
@@ -4017,9 +4598,9 @@ pub mod scheduled_update_group_action {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) scheduled_action_name: std::option::Option<std::string::String>,
         pub(crate) scheduled_action_arn: std::option::Option<std::string::String>,
-        pub(crate) time: std::option::Option<smithy_types::Instant>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) recurrence: std::option::Option<std::string::String>,
         pub(crate) min_size: std::option::Option<i32>,
         pub(crate) max_size: std::option::Option<i32>,
@@ -4032,6 +4613,7 @@ pub mod scheduled_update_group_action {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4044,6 +4626,7 @@ pub mod scheduled_update_group_action {
             self.scheduled_action_name = Some(input.into());
             self
         }
+        /// <p>The name of the scheduled action.</p>
         pub fn set_scheduled_action_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4056,6 +4639,7 @@ pub mod scheduled_update_group_action {
             self.scheduled_action_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
         pub fn set_scheduled_action_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4064,33 +4648,46 @@ pub mod scheduled_update_group_action {
             self
         }
         /// <p>This parameter is no longer used.</p>
-        pub fn time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.time = Some(input);
             self
         }
-        pub fn set_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>This parameter is no longer used.</p>
+        pub fn set_time(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
             self.time = input;
             self
         }
         /// <p>The date and time in UTC for this action to start. For example,
         /// <code>"2019-06-01T00:00:00Z"</code>.
         /// </p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time in UTC for this action to start. For example,
+        /// <code>"2019-06-01T00:00:00Z"</code>.
+        /// </p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The date and time in UTC for the recurring schedule to end. For example,
         /// <code>"2019-06-01T00:00:00Z"</code>.
         /// </p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time in UTC for the recurring schedule to end. For example,
+        /// <code>"2019-06-01T00:00:00Z"</code>.
+        /// </p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -4102,6 +4699,10 @@ pub mod scheduled_update_group_action {
             self.recurrence = Some(input.into());
             self
         }
+        /// <p>The recurring schedule for the action, in Unix cron syntax format.</p>
+        /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
+        /// <code>Recurrence</code>, they form the boundaries of when the recurring action
+        /// starts and stops.</p>
         pub fn set_recurrence(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.recurrence = input;
             self
@@ -4111,6 +4712,7 @@ pub mod scheduled_update_group_action {
             self.min_size = Some(input);
             self
         }
+        /// <p>The minimum size of the Auto Scaling group.</p>
         pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
             self.min_size = input;
             self
@@ -4120,6 +4722,7 @@ pub mod scheduled_update_group_action {
             self.max_size = Some(input);
             self
         }
+        /// <p>The maximum size of the Auto Scaling group.</p>
         pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
             self.max_size = input;
             self
@@ -4130,6 +4733,8 @@ pub mod scheduled_update_group_action {
             self.desired_capacity = Some(input);
             self
         }
+        /// <p>The desired capacity is the initial capacity of the Auto Scaling group after the scheduled
+        /// action runs and the capacity it attempts to maintain.</p>
         pub fn set_desired_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_capacity = input;
             self
@@ -4139,6 +4744,7 @@ pub mod scheduled_update_group_action {
             self.time_zone = Some(input.into());
             self
         }
+        /// <p>The time zone for the cron expression.</p>
         pub fn set_time_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.time_zone = input;
             self
@@ -4291,6 +4897,54 @@ pub mod process_type {
             self.process_name = Some(input.into());
             self
         }
+        /// <p>One of the following processes:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Launch</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Terminate</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AddToLoadBalancer</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AlarmNotification</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AZRebalance</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>HealthCheck</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>InstanceRefresh</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ReplaceUnhealthy</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ScheduledActions</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_process_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.process_name = input;
             self
@@ -4443,6 +5097,7 @@ pub mod scaling_policy {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4455,6 +5110,7 @@ pub mod scaling_policy {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The name of the scaling policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
@@ -4464,6 +5120,7 @@ pub mod scaling_policy {
             self.policy_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the policy.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input;
             self
@@ -4497,6 +5154,31 @@ pub mod scaling_policy {
             self.policy_type = Some(input.into());
             self
         }
+        /// <p>One of the following policy types: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TargetTrackingScaling</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>StepScaling</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SimpleScaling</code> (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PredictiveScaling</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking
+        /// scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling
+        /// policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_policy_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_type = input;
             self
@@ -4508,6 +5190,9 @@ pub mod scaling_policy {
             self.adjustment_type = Some(input.into());
             self
         }
+        /// <p>Specifies how the scaling adjustment is interpreted (for example, an absolute number
+        /// or a percentage). The valid values are <code>ChangeInCapacity</code>,
+        /// <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
         pub fn set_adjustment_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4521,6 +5206,8 @@ pub mod scaling_policy {
             self.min_adjustment_step = Some(input);
             self
         }
+        /// <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code>
+        /// instead.</p>
         pub fn set_min_adjustment_step(mut self, input: std::option::Option<i32>) -> Self {
             self.min_adjustment_step = input;
             self
@@ -4531,6 +5218,8 @@ pub mod scaling_policy {
             self.min_adjustment_magnitude = Some(input);
             self
         }
+        /// <p>The minimum value to scale by when the adjustment type is
+        /// <code>PercentChangeInCapacity</code>. </p>
         pub fn set_min_adjustment_magnitude(mut self, input: std::option::Option<i32>) -> Self {
             self.min_adjustment_magnitude = input;
             self
@@ -4542,6 +5231,9 @@ pub mod scaling_policy {
             self.scaling_adjustment = Some(input);
             self
         }
+        /// <p>The amount by which to scale, based on the specified adjustment type. A positive value
+        /// adds to the current capacity while a negative number removes from the current
+        /// capacity.</p>
         pub fn set_scaling_adjustment(mut self, input: std::option::Option<i32>) -> Self {
             self.scaling_adjustment = input;
             self
@@ -4551,16 +5243,25 @@ pub mod scaling_policy {
             self.cooldown = Some(input);
             self
         }
+        /// <p>The duration of the policy's cooldown period, in seconds.</p>
         pub fn set_cooldown(mut self, input: std::option::Option<i32>) -> Self {
             self.cooldown = input;
             self
         }
+        /// Appends an item to `step_adjustments`.
+        ///
+        /// To override the contents of this collection use [`set_step_adjustments`](Self::set_step_adjustments).
+        ///
+        /// <p>A set of adjustments that enable you to scale based on the size of the alarm
+        /// breach.</p>
         pub fn step_adjustments(mut self, input: impl Into<crate::model::StepAdjustment>) -> Self {
             let mut v = self.step_adjustments.unwrap_or_default();
             v.push(input.into());
             self.step_adjustments = Some(v);
             self
         }
+        /// <p>A set of adjustments that enable you to scale based on the size of the alarm
+        /// breach.</p>
         pub fn set_step_adjustments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StepAdjustment>>,
@@ -4574,6 +5275,8 @@ pub mod scaling_policy {
             self.metric_aggregation_type = Some(input.into());
             self
         }
+        /// <p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>,
+        /// <code>Maximum</code>, and <code>Average</code>.</p>
         pub fn set_metric_aggregation_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4587,16 +5290,24 @@ pub mod scaling_policy {
             self.estimated_instance_warmup = Some(input);
             self
         }
+        /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the
+        /// CloudWatch metrics.</p>
         pub fn set_estimated_instance_warmup(mut self, input: std::option::Option<i32>) -> Self {
             self.estimated_instance_warmup = input;
             self
         }
+        /// Appends an item to `alarms`.
+        ///
+        /// To override the contents of this collection use [`set_alarms`](Self::set_alarms).
+        ///
+        /// <p>The CloudWatch alarms related to the policy.</p>
         pub fn alarms(mut self, input: impl Into<crate::model::Alarm>) -> Self {
             let mut v = self.alarms.unwrap_or_default();
             v.push(input.into());
             self.alarms = Some(v);
             self
         }
+        /// <p>The CloudWatch alarms related to the policy.</p>
         pub fn set_alarms(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
@@ -4612,6 +5323,7 @@ pub mod scaling_policy {
             self.target_tracking_configuration = Some(input);
             self
         }
+        /// <p>A target tracking scaling policy.</p>
         pub fn set_target_tracking_configuration(
             mut self,
             input: std::option::Option<crate::model::TargetTrackingConfiguration>,
@@ -4625,6 +5337,8 @@ pub mod scaling_policy {
             self.enabled = Some(input);
             self
         }
+        /// <p>Indicates whether the policy is enabled (<code>true</code>) or disabled
+        /// (<code>false</code>).</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -4637,6 +5351,7 @@ pub mod scaling_policy {
             self.predictive_scaling_configuration = Some(input);
             self
         }
+        /// <p>A predictive scaling policy.</p>
         pub fn set_predictive_scaling_configuration(
             mut self,
             input: std::option::Option<crate::model::PredictiveScalingConfiguration>,
@@ -4738,6 +5453,7 @@ pub mod notification_configuration {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4751,6 +5467,8 @@ pub mod notification_configuration {
             self.topic_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)
+        /// topic.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -4787,6 +5505,34 @@ pub mod notification_configuration {
             self.notification_type = Some(input.into());
             self
         }
+        /// <p>One of the following event notification types:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>autoscaling:EC2_INSTANCE_LAUNCH</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>autoscaling:EC2_INSTANCE_TERMINATE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>autoscaling:TEST_NOTIFICATION</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_notification_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4839,6 +5585,7 @@ pub mod metric_granularity_type {
             self.granularity = Some(input.into());
             self
         }
+        /// <p>The granularity. The only valid value is <code>1Minute</code>.</p>
         pub fn set_granularity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.granularity = input;
             self
@@ -5090,6 +5837,109 @@ pub mod metric_collection_type {
             self.metric = Some(input.into());
             self
         }
+        /// <p>One of the following metrics:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>GroupMinSize</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupMaxSize</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupDesiredCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupInServiceInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupPendingInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupStandbyInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTerminatingInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTotalInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupInServiceCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupPendingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupStandbyCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTerminatingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTotalCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolDesiredCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolWarmedCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolPendingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolTerminatingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolTotalCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupAndWarmPoolDesiredCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupAndWarmPoolTotalCapacity</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric = input;
             self
@@ -5175,6 +6025,7 @@ pub mod load_balancer_target_group_state {
             self.load_balancer_target_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the target group.</p>
         pub fn set_load_balancer_target_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5215,6 +6066,35 @@ pub mod load_balancer_target_group_state {
             self.state = Some(input.into());
             self
         }
+        /// <p>The state of the target group.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Adding</code> - The Auto Scaling instances are being registered with the target
+        /// group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Added</code> - All Auto Scaling instances are registered with the target
+        /// group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code>
+        /// health check.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Removing</code> - The Auto Scaling instances are being deregistered from the
+        /// target group. If connection draining is enabled, Elastic Load Balancing waits for in-flight
+        /// requests to complete before deregistering the instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Removed</code> - All Auto Scaling instances are deregistered from the target
+        /// group.</p>
+        /// </li>
+        /// </ul>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -5295,6 +6175,7 @@ pub mod load_balancer_state {
             self.load_balancer_name = Some(input.into());
             self
         }
+        /// <p>The name of the load balancer.</p>
         pub fn set_load_balancer_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5335,6 +6216,35 @@ pub mod load_balancer_state {
             self.state = Some(input.into());
             self
         }
+        /// <p>One of the following load balancer states:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Adding</code> - The Auto Scaling instances are being registered with the load
+        /// balancer.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Added</code> - All Auto Scaling instances are registered with the load
+        /// balancer.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code>
+        /// health check.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Removing</code> - The Auto Scaling instances are being deregistered from the
+        /// load balancer. If connection draining is enabled, Elastic Load Balancing waits for in-flight
+        /// requests to complete before deregistering the instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Removed</code> - All Auto Scaling instances are deregistered from the load
+        /// balancer.</p>
+        /// </li>
+        /// </ul>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -5437,6 +6347,7 @@ pub mod lifecycle_hook {
             self.lifecycle_hook_name = Some(input.into());
             self
         }
+        /// <p>The name of the lifecycle hook.</p>
         pub fn set_lifecycle_hook_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5449,6 +6360,7 @@ pub mod lifecycle_hook {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group for the lifecycle hook.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5470,6 +6382,16 @@ pub mod lifecycle_hook {
             self.lifecycle_transition = Some(input.into());
             self
         }
+        /// <p>The state of the EC2 instance to which to attach the lifecycle hook. The following are
+        /// possible values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>autoscaling:EC2_INSTANCE_LAUNCHING</p>
+        /// </li>
+        /// <li>
+        /// <p>autoscaling:EC2_INSTANCE_TERMINATING</p>
+        /// </li>
+        /// </ul>
         pub fn set_lifecycle_transition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5484,6 +6406,9 @@ pub mod lifecycle_hook {
             self.notification_target_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to when an instance is in the
+        /// transition state for the lifecycle hook. The notification target can be either an SQS
+        /// queue or an SNS topic.</p>
         pub fn set_notification_target_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5497,6 +6422,8 @@ pub mod lifecycle_hook {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified
+        /// notification target.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -5507,6 +6434,8 @@ pub mod lifecycle_hook {
             self.notification_metadata = Some(input.into());
             self
         }
+        /// <p>Additional information that is included any time Amazon EC2 Auto Scaling sends a message to the
+        /// notification target.</p>
         pub fn set_notification_metadata(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5521,6 +6450,9 @@ pub mod lifecycle_hook {
             self.heartbeat_timeout = Some(input);
             self
         }
+        /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. If
+        /// the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the
+        /// <code>DefaultResult</code> parameter.</p>
         pub fn set_heartbeat_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.heartbeat_timeout = input;
             self
@@ -5533,6 +6465,10 @@ pub mod lifecycle_hook {
             self.global_timeout = Some(input);
             self
         }
+        /// <p>The maximum time, in seconds, that an instance can remain in a
+        /// <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The maximum is
+        /// 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever is
+        /// smaller.</p>
         pub fn set_global_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.global_timeout = input;
             self
@@ -5544,6 +6480,9 @@ pub mod lifecycle_hook {
             self.default_result = Some(input.into());
             self
         }
+        /// <p>Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses
+        /// or if an unexpected failure occurs. The possible values are <code>CONTINUE</code> and
+        /// <code>ABANDON</code>.</p>
         pub fn set_default_result(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5641,7 +6580,7 @@ pub struct LaunchConfiguration {
     /// on Amazon EC2 instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub iam_instance_profile: std::option::Option<std::string::String>,
     /// <p>The creation date and time for the launch configuration.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies whether the launch configuration is optimized for EBS I/O
     /// (<code>true</code>) or not (<code>false</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
     /// EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
@@ -5716,7 +6655,7 @@ pub mod launch_configuration {
         pub(crate) instance_monitoring: std::option::Option<crate::model::InstanceMonitoring>,
         pub(crate) spot_price: std::option::Option<std::string::String>,
         pub(crate) iam_instance_profile: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) ebs_optimized: std::option::Option<bool>,
         pub(crate) associate_public_ip_address: std::option::Option<bool>,
         pub(crate) placement_tenancy: std::option::Option<std::string::String>,
@@ -5728,6 +6667,7 @@ pub mod launch_configuration {
             self.launch_configuration_name = Some(input.into());
             self
         }
+        /// <p>The name of the launch configuration.</p>
         pub fn set_launch_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5740,6 +6680,7 @@ pub mod launch_configuration {
             self.launch_configuration_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the launch configuration.</p>
         pub fn set_launch_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5754,6 +6695,9 @@ pub mod launch_configuration {
             self.image_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
+        /// <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_id = input;
             self
@@ -5765,16 +6709,31 @@ pub mod launch_configuration {
             self.key_name = Some(input.into());
             self
         }
+        /// <p>The name of the key pair.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in the
+        /// <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_name = input;
             self
         }
+        /// Appends an item to `security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+        ///
+        /// <p>A list that contains the security groups to assign to the instances in the Auto Scaling group.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your
+        /// VPC</a> in the <i>Amazon Virtual Private Cloud User
+        /// Guide</i>.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
             v.push(input.into());
             self.security_groups = Some(v);
             self
         }
+        /// <p>A list that contains the security groups to assign to the instances in the Auto Scaling group.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your
+        /// VPC</a> in the <i>Amazon Virtual Private Cloud User
+        /// Guide</i>.</p>
         pub fn set_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5790,6 +6749,10 @@ pub mod launch_configuration {
             self.classic_link_vpc_id = Some(input.into());
             self
         }
+        /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
+        /// <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+        /// instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_classic_link_vpc_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5797,6 +6760,15 @@ pub mod launch_configuration {
             self.classic_link_vpc_id = input;
             self
         }
+        /// Appends an item to `classic_link_vpc_security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_classic_link_vpc_security_groups`](Self::set_classic_link_vpc_security_groups).
+        ///
+        /// <p>The IDs of one or more security groups for the VPC specified in
+        /// <code>ClassicLinkVPCId</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
+        /// <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+        /// instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn classic_link_vpc_security_groups(
             mut self,
             input: impl Into<std::string::String>,
@@ -5806,6 +6778,11 @@ pub mod launch_configuration {
             self.classic_link_vpc_security_groups = Some(v);
             self
         }
+        /// <p>The IDs of one or more security groups for the VPC specified in
+        /// <code>ClassicLinkVPCId</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
+        /// <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+        /// instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_classic_link_vpc_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5822,6 +6799,11 @@ pub mod launch_configuration {
             self.user_data = Some(input.into());
             self
         }
+        /// <p>The user data to make available to the launched EC2 instances. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata and
+        /// user data</a> (Windows). If you are using a command line tool, base64-encoding
+        /// is performed for you, and you can load the text from a file. Otherwise, you must provide
+        /// base64-encoded text. User data is limited to 16 KB.</p>
         pub fn set_user_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_data = input;
             self
@@ -5833,6 +6815,9 @@ pub mod launch_configuration {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>The instance type for the instances.</p>
+        /// <p>For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+        /// Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5845,6 +6830,7 @@ pub mod launch_configuration {
             self.kernel_id = Some(input.into());
             self
         }
+        /// <p>The ID of the kernel associated with the AMI.</p>
         pub fn set_kernel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kernel_id = input;
             self
@@ -5854,10 +6840,18 @@ pub mod launch_configuration {
             self.ramdisk_id = Some(input.into());
             self
         }
+        /// <p>The ID of the RAM disk associated with the AMI.</p>
         pub fn set_ramdisk_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ramdisk_id = input;
             self
         }
+        /// Appends an item to `block_device_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
+        ///
+        /// <p>A block device mapping, which specifies the block devices for the instance. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
+        /// Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn block_device_mappings(
             mut self,
             input: impl Into<crate::model::BlockDeviceMapping>,
@@ -5867,6 +6861,9 @@ pub mod launch_configuration {
             self.block_device_mappings = Some(v);
             self
         }
+        /// <p>A block device mapping, which specifies the block devices for the instance. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
+        /// Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn set_block_device_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BlockDeviceMapping>>,
@@ -5883,6 +6880,11 @@ pub mod launch_configuration {
             self.instance_monitoring = Some(input);
             self
         }
+        /// <p>Controls whether instances in this group are launched with detailed
+        /// (<code>true</code>) or basic (<code>false</code>) monitoring.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
+        /// Monitoring for Auto Scaling Instances</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_instance_monitoring(
             mut self,
             input: std::option::Option<crate::model::InstanceMonitoring>,
@@ -5898,6 +6900,10 @@ pub mod launch_configuration {
             self.spot_price = Some(input.into());
             self
         }
+        /// <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill the
+        /// request. Spot Instances are launched when the price you specify exceeds the current Spot
+        /// price. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Requesting Spot
+        /// Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_spot_price(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.spot_price = input;
             self
@@ -5910,6 +6916,10 @@ pub mod launch_configuration {
             self.iam_instance_profile = Some(input.into());
             self
         }
+        /// <p>The name or the Amazon Resource Name (ARN) of the instance profile associated with the
+        /// IAM role for the instance. The instance profile contains the IAM role. For more
+        /// information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM role for applications that run
+        /// on Amazon EC2 instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_iam_instance_profile(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5918,13 +6928,14 @@ pub mod launch_configuration {
             self
         }
         /// <p>The creation date and time for the launch configuration.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The creation date and time for the launch configuration.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
@@ -5936,6 +6947,9 @@ pub mod launch_configuration {
             self.ebs_optimized = Some(input);
             self
         }
+        /// <p>Specifies whether the launch configuration is optimized for EBS I/O
+        /// (<code>true</code>) or not (<code>false</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
+        /// EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn set_ebs_optimized(mut self, input: std::option::Option<bool>) -> Self {
             self.ebs_optimized = input;
             self
@@ -5947,6 +6961,9 @@ pub mod launch_configuration {
             self.associate_public_ip_address = Some(input);
             self
         }
+        /// <p>For Auto Scaling groups that are running in a VPC, specifies whether to assign a public IP
+        /// address to the group's instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in a
+        /// VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_associate_public_ip_address(mut self, input: std::option::Option<bool>) -> Self {
             self.associate_public_ip_address = input;
             self
@@ -5961,6 +6978,12 @@ pub mod launch_configuration {
             self.placement_tenancy = Some(input.into());
             self
         }
+        /// <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An
+        /// instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware
+        /// and can only be launched into a VPC.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring
+        /// instance tenancy with Amazon EC2 Auto Scaling</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_placement_tenancy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5974,6 +6997,8 @@ pub mod launch_configuration {
             self.metadata_options = Some(input);
             self
         }
+        /// <p>The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring the Instance Metadata Options</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_metadata_options(
             mut self,
             input: std::option::Option<crate::model::InstanceMetadataOptions>,
@@ -6082,6 +7107,17 @@ pub mod instance_metadata_options {
             self.http_tokens = Some(input);
             self
         }
+        /// <p>The state of token usage for your instance metadata requests. If the parameter is not
+        /// specified in the request, the default state is <code>optional</code>.</p>
+        /// <p>If the state is <code>optional</code>, you can choose to retrieve instance metadata
+        /// with or without a signed token header on your request. If you retrieve the IAM role
+        /// credentials without a token, the version 1.0 role credentials are returned. If you
+        /// retrieve the IAM role credentials using a valid signed token, the version 2.0 role
+        /// credentials are returned.</p>
+        /// <p>If the state is <code>required</code>, you must send a signed token header with any
+        /// instance metadata retrieval requests. In this state, retrieving the IAM role credentials
+        /// always returns the version 2.0 credentials; the version 1.0 credentials are not
+        /// available.</p>
         pub fn set_http_tokens(
             mut self,
             input: std::option::Option<crate::model::InstanceMetadataHttpTokensState>,
@@ -6096,6 +7132,9 @@ pub mod instance_metadata_options {
             self.http_put_response_hop_limit = Some(input);
             self
         }
+        /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the
+        /// number, the further instance metadata requests can travel.</p>
+        /// <p>Default: 1</p>
         pub fn set_http_put_response_hop_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.http_put_response_hop_limit = input;
             self
@@ -6110,6 +7149,12 @@ pub mod instance_metadata_options {
             self.http_endpoint = Some(input);
             self
         }
+        /// <p>This parameter enables or disables the HTTP metadata endpoint on your instances. If
+        /// the parameter is not specified, the default state is <code>enabled</code>.</p>
+        /// <note>
+        /// <p>If you specify a value of <code>disabled</code>, you will not be able to access
+        /// your instance metadata. </p>
+        /// </note>
         pub fn set_http_endpoint(
             mut self,
             input: std::option::Option<crate::model::InstanceMetadataEndpointState>,
@@ -6134,6 +7179,7 @@ impl InstanceMetadataOptions {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6145,7 +7191,9 @@ impl InstanceMetadataOptions {
     std::hash::Hash,
 )]
 pub enum InstanceMetadataEndpointState {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6167,6 +7215,7 @@ impl std::str::FromStr for InstanceMetadataEndpointState {
     }
 }
 impl InstanceMetadataEndpointState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InstanceMetadataEndpointState::Disabled => "disabled",
@@ -6174,6 +7223,7 @@ impl InstanceMetadataEndpointState {
             InstanceMetadataEndpointState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["disabled", "enabled"]
     }
@@ -6184,6 +7234,7 @@ impl AsRef<str> for InstanceMetadataEndpointState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6195,7 +7246,9 @@ impl AsRef<str> for InstanceMetadataEndpointState {
     std::hash::Hash,
 )]
 pub enum InstanceMetadataHttpTokensState {
+    #[allow(missing_docs)] // documentation missing in model
     Optional,
+    #[allow(missing_docs)] // documentation missing in model
     Required,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6217,6 +7270,7 @@ impl std::str::FromStr for InstanceMetadataHttpTokensState {
     }
 }
 impl InstanceMetadataHttpTokensState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InstanceMetadataHttpTokensState::Optional => "optional",
@@ -6224,6 +7278,7 @@ impl InstanceMetadataHttpTokensState {
             InstanceMetadataHttpTokensState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["optional", "required"]
     }
@@ -6264,6 +7319,8 @@ pub mod instance_monitoring {
             self.enabled = Some(input);
             self
         }
+        /// <p>If <code>true</code>, detailed monitoring is enabled. Otherwise, basic monitoring is
+        /// enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -6336,6 +7393,9 @@ pub mod block_device_mapping {
             self.virtual_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
+        /// <p>You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not
+        /// both.</p>
         pub fn set_virtual_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.virtual_name = input;
             self
@@ -6347,6 +7407,9 @@ pub mod block_device_mapping {
             self.device_name = Some(input.into());
             self
         }
+        /// <p>The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or
+        /// <code>xvdh</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming on Linux
+        /// Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_name = input;
             self
@@ -6359,6 +7422,10 @@ pub mod block_device_mapping {
             self.ebs = Some(input);
             self
         }
+        /// <p>Parameters used to automatically set up EBS volumes when an instance is
+        /// launched.</p>
+        /// <p>You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not
+        /// both.</p>
         pub fn set_ebs(mut self, input: std::option::Option<crate::model::Ebs>) -> Self {
             self.ebs = input;
             self
@@ -6372,6 +7439,11 @@ pub mod block_device_mapping {
             self.no_device = Some(input);
             self
         }
+        /// <p>Setting this value to <code>true</code> suppresses the specified device included in
+        /// the block device mapping of the AMI.</p>
+        /// <p>If <code>NoDevice</code> is <code>true</code> for the root device, instances might
+        /// fail the EC2 health check. In that case, Amazon EC2 Auto Scaling launches replacement instances.</p>
+        /// <p>If you specify <code>NoDevice</code>, you cannot specify <code>Ebs</code>.</p>
         pub fn set_no_device(mut self, input: std::option::Option<bool>) -> Self {
             self.no_device = input;
             self
@@ -6451,6 +7523,7 @@ pub struct Ebs {
     /// <code>io1</code>: 100-64,000 IOPS</p>
     /// </li>
     /// </ul>
+    ///
     /// <p>For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
     /// built on the Nitro System</a>. Other instance families guarantee performance up
     /// to 32,000 IOPS. </p>
@@ -6511,6 +7584,8 @@ pub mod ebs {
             self.snapshot_id = Some(input.into());
             self
         }
+        /// <p>The snapshot ID of the volume to use.</p>
+        /// <p>You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.snapshot_id = input;
             self
@@ -6542,6 +7617,29 @@ pub mod ebs {
             self.volume_size = Some(input);
             self
         }
+        /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each
+        /// volume type: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>gp2</code> and <code>gp3</code>: 1-16,384</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>io1</code>: 4-16,384</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>st1</code> and <code>sc1</code>: 125-16,384</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>standard</code>: 1-1,024</p>
+        /// </li>
+        /// </ul>
+        /// <p>You must specify either a <code>SnapshotId</code> or a <code>VolumeSize</code>. If you
+        /// specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must
+        /// be equal or greater than the size of the snapshot.</p>
         pub fn set_volume_size(mut self, input: std::option::Option<i32>) -> Self {
             self.volume_size = input;
             self
@@ -6555,6 +7653,11 @@ pub mod ebs {
             self.volume_type = Some(input.into());
             self
         }
+        /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
+        /// <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> |
+        /// <code>st1</code> | <code>sc1</code> | <code>gp3</code>
+        /// </p>
         pub fn set_volume_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.volume_type = input;
             self
@@ -6565,6 +7668,8 @@ pub mod ebs {
             self.delete_on_termination = Some(input);
             self
         }
+        /// <p>Indicates whether the volume is deleted on instance termination. For Amazon EC2 Auto Scaling, the
+        /// default value is <code>true</code>.</p>
         pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_on_termination = input;
             self
@@ -6585,6 +7690,7 @@ pub mod ebs {
         /// <code>io1</code>: 100-64,000 IOPS</p>
         /// </li>
         /// </ul>
+        ///
         /// <p>For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
         /// built on the Nitro System</a>. Other instance families guarantee performance up
         /// to 32,000 IOPS. </p>
@@ -6597,6 +7703,31 @@ pub mod ebs {
             self.iops = Some(input);
             self
         }
+        /// <p>The number of input/output (I/O) operations per second (IOPS) to provision for the
+        /// volume. For <code>gp3</code> and <code>io1</code> volumes, this represents the number of
+        /// IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents
+        /// the baseline performance of the volume and the rate at which the volume accumulates I/O
+        /// credits for bursting. </p>
+        /// <p>The following are the supported values for each volume type: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>gp3</code>: 3,000-16,000 IOPS</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>io1</code>: 100-64,000 IOPS</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+        /// built on the Nitro System</a>. Other instance families guarantee performance up
+        /// to 32,000 IOPS. </p>
+        /// <p>
+        /// <code>Iops</code> is supported when the volume type is <code>gp3</code> or
+        /// <code>io1</code> and required only when the volume type is <code>io1</code>. (Not
+        /// used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code>
+        /// volumes.) </p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
             self.iops = input;
             self
@@ -6618,6 +7749,19 @@ pub mod ebs {
             self.encrypted = Some(input);
             self
         }
+        /// <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes can only be
+        /// attached to instances that support Amazon EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>. If your AMI uses encrypted volumes, you can also
+        /// only launch it on supported instance types.</p>
+        /// <note>
+        /// <p>If you are creating a volume from a snapshot, you cannot create an unencrypted
+        /// volume from an encrypted snapshot. Also, you cannot specify a KMS key ID when using
+        /// a launch configuration.</p>
+        /// <p>If you enable encryption by default, the EBS volumes that you create are always
+        /// encrypted, either using the Amazon Web Services managed KMS key or a customer-managed KMS key,
+        /// regardless of whether the snapshot was encrypted. </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Using Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// </note>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.encrypted = input;
             self
@@ -6627,6 +7771,7 @@ pub mod ebs {
             self.throughput = Some(input);
             self
         }
+        /// <p>The throughput (MiBps) to provision for a <code>gp3</code> volume.</p>
         pub fn set_throughput(mut self, input: std::option::Option<i32>) -> Self {
             self.throughput = input;
             self
@@ -6695,9 +7840,9 @@ pub struct InstanceRefresh {
     /// <p>Provides more details about the current status of the instance refresh. </p>
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The date and time at which the instance refresh began.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time at which the instance refresh ended.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The percentage of the instance refresh that is complete. For each instance
     /// replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the
     /// instance's health status changes to healthy and the specified warm-up time passes, the
@@ -6740,8 +7885,8 @@ pub mod instance_refresh {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::InstanceRefreshStatus>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) percentage_complete: std::option::Option<i32>,
         pub(crate) instances_to_update: std::option::Option<i32>,
         pub(crate) progress_details:
@@ -6755,6 +7900,7 @@ pub mod instance_refresh {
             self.instance_refresh_id = Some(input.into());
             self
         }
+        /// <p>The instance refresh ID.</p>
         pub fn set_instance_refresh_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6767,6 +7913,7 @@ pub mod instance_refresh {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6809,6 +7956,37 @@ pub mod instance_refresh {
             self.status = Some(input);
             self
         }
+        /// <p>The current status for the instance refresh operation:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Pending</code> - The request was created, but the operation has not
+        /// started.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>InProgress</code> - The operation is in progress.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Successful</code> - The operation completed successfully.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Failed</code> - The operation failed to complete. You can troubleshoot
+        /// using the status reason and the scaling activities. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Cancelling</code> - An ongoing operation is being cancelled.
+        /// Cancellation does not roll back any replacements that have already been
+        /// completed, but it prevents new replacements from being started. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Cancelled</code> - The operation is cancelled. </p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::InstanceRefreshStatus>,
@@ -6821,6 +7999,7 @@ pub mod instance_refresh {
             self.status_reason = Some(input.into());
             self
         }
+        /// <p>Provides more details about the current status of the instance refresh. </p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6829,20 +8008,28 @@ pub mod instance_refresh {
             self
         }
         /// <p>The date and time at which the instance refresh began.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time at which the instance refresh began.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The date and time at which the instance refresh ended.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time at which the instance refresh ended.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -6854,6 +8041,10 @@ pub mod instance_refresh {
             self.percentage_complete = Some(input);
             self
         }
+        /// <p>The percentage of the instance refresh that is complete. For each instance
+        /// replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the
+        /// instance's health status changes to healthy and the specified warm-up time passes, the
+        /// instance is considered updated and is added to the percentage complete.</p>
         pub fn set_percentage_complete(mut self, input: std::option::Option<i32>) -> Self {
             self.percentage_complete = input;
             self
@@ -6864,6 +8055,8 @@ pub mod instance_refresh {
             self.instances_to_update = Some(input);
             self
         }
+        /// <p>The number of instances remaining to update before the instance refresh is
+        /// complete.</p>
         pub fn set_instances_to_update(mut self, input: std::option::Option<i32>) -> Self {
             self.instances_to_update = input;
             self
@@ -6876,6 +8069,7 @@ pub mod instance_refresh {
             self.progress_details = Some(input);
             self
         }
+        /// <p>Additional progress details for an Auto Scaling group that has a warm pool.</p>
         pub fn set_progress_details(
             mut self,
             input: std::option::Option<crate::model::InstanceRefreshProgressDetails>,
@@ -6888,6 +8082,7 @@ pub mod instance_refresh {
             self.preferences = Some(input);
             self
         }
+        /// <p>Describes the preferences for an instance refresh.</p>
         pub fn set_preferences(
             mut self,
             input: std::option::Option<crate::model::RefreshPreferences>,
@@ -6900,6 +8095,7 @@ pub mod instance_refresh {
             self.desired_configuration = Some(input);
             self
         }
+        /// <p>Describes the specific update you want to deploy.</p>
         pub fn set_desired_configuration(
             mut self,
             input: std::option::Option<crate::model::DesiredConfiguration>,
@@ -6974,6 +8170,8 @@ pub mod instance_refresh_progress_details {
             self.live_pool_progress = Some(input);
             self
         }
+        /// <p>Indicates the progress of an instance refresh on instances that are in the Auto Scaling
+        /// group.</p>
         pub fn set_live_pool_progress(
             mut self,
             input: std::option::Option<crate::model::InstanceRefreshLivePoolProgress>,
@@ -6990,6 +8188,8 @@ pub mod instance_refresh_progress_details {
             self.warm_pool_progress = Some(input);
             self
         }
+        /// <p>Indicates the progress of an instance refresh on instances that are in the warm
+        /// pool.</p>
         pub fn set_warm_pool_progress(
             mut self,
             input: std::option::Option<crate::model::InstanceRefreshWarmPoolProgress>,
@@ -7054,6 +8254,11 @@ pub mod instance_refresh_warm_pool_progress {
             self.percentage_complete = Some(input);
             self
         }
+        /// <p>The percentage of instances in the warm pool that have been replaced. For each
+        /// instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time.
+        /// When the instance's health status changes to healthy and the specified warm-up time
+        /// passes, the instance is considered updated and is added to the percentage
+        /// complete.</p>
         pub fn set_percentage_complete(mut self, input: std::option::Option<i32>) -> Self {
             self.percentage_complete = input;
             self
@@ -7063,6 +8268,7 @@ pub mod instance_refresh_warm_pool_progress {
             self.instances_to_update = Some(input);
             self
         }
+        /// <p>The number of instances remaining to update.</p>
         pub fn set_instances_to_update(mut self, input: std::option::Option<i32>) -> Self {
             self.instances_to_update = input;
             self
@@ -7124,6 +8330,11 @@ pub mod instance_refresh_live_pool_progress {
             self.percentage_complete = Some(input);
             self
         }
+        /// <p>The percentage of instances in the Auto Scaling group that have been replaced. For each
+        /// instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time.
+        /// When the instance's health status changes to healthy and the specified warm-up time
+        /// passes, the instance is considered updated and is added to the percentage
+        /// complete.</p>
         pub fn set_percentage_complete(mut self, input: std::option::Option<i32>) -> Self {
             self.percentage_complete = input;
             self
@@ -7133,6 +8344,7 @@ pub mod instance_refresh_live_pool_progress {
             self.instances_to_update = Some(input);
             self
         }
+        /// <p>The number of instances remaining to update.</p>
         pub fn set_instances_to_update(mut self, input: std::option::Option<i32>) -> Self {
             self.instances_to_update = input;
             self
@@ -7153,6 +8365,7 @@ impl InstanceRefreshLivePoolProgress {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7164,11 +8377,17 @@ impl InstanceRefreshLivePoolProgress {
     std::hash::Hash,
 )]
 pub enum InstanceRefreshStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Cancelling,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Successful,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7194,6 +8413,7 @@ impl std::str::FromStr for InstanceRefreshStatus {
     }
 }
 impl InstanceRefreshStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InstanceRefreshStatus::Cancelled => "Cancelled",
@@ -7205,6 +8425,7 @@ impl InstanceRefreshStatus {
             InstanceRefreshStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Cancelled",
@@ -7305,6 +8526,7 @@ pub mod auto_scaling_instance_details {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The ID of the instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -7314,6 +8536,7 @@ pub mod auto_scaling_instance_details {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>The instance type of the EC2 instance.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7326,6 +8549,7 @@ pub mod auto_scaling_instance_details {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group for the instance.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7338,6 +8562,7 @@ pub mod auto_scaling_instance_details {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>The Availability Zone for the instance.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7363,6 +8588,20 @@ pub mod auto_scaling_instance_details {
             self.lifecycle_state = Some(input.into());
             self
         }
+        /// <p>The lifecycle state for the instance. The <code>Quarantined</code> state is not used.
+        /// For information about lifecycle states, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+        /// lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
+        /// <p>Valid Values: <code>Pending</code> | <code>Pending:Wait</code> |
+        /// <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code> |
+        /// <code>Terminating</code> | <code>Terminating:Wait</code> |
+        /// <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code>
+        /// | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> |
+        /// <code>Warmed:Pending</code> | <code>Warmed:Pending:Wait</code> |
+        /// <code>Warmed:Pending:Proceed</code> | <code>Warmed:Terminating</code> |
+        /// <code>Warmed:Terminating:Wait</code> | <code>Warmed:Terminating:Proceed</code> |
+        /// <code>Warmed:Terminated</code> | <code>Warmed:Stopped</code> |
+        /// <code>Warmed:Running</code>
+        /// </p>
         pub fn set_lifecycle_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7377,6 +8616,9 @@ pub mod auto_scaling_instance_details {
             self.health_status = Some(input.into());
             self
         }
+        /// <p>The last reported health status of this instance. "Healthy" means that the instance is
+        /// healthy and should remain in service. "Unhealthy" means that the instance is unhealthy
+        /// and Amazon EC2 Auto Scaling should terminate and replace it.</p>
         pub fn set_health_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7390,6 +8632,8 @@ pub mod auto_scaling_instance_details {
             self.launch_configuration_name = Some(input.into());
             self
         }
+        /// <p>The launch configuration used to launch the instance. This value is not available if
+        /// you attached the instance to the Auto Scaling group.</p>
         pub fn set_launch_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7402,6 +8646,7 @@ pub mod auto_scaling_instance_details {
             self.launch_template = Some(input);
             self
         }
+        /// <p>The launch template for the instance.</p>
         pub fn set_launch_template(
             mut self,
             input: std::option::Option<crate::model::LaunchTemplateSpecification>,
@@ -7415,6 +8660,8 @@ pub mod auto_scaling_instance_details {
             self.protected_from_scale_in = Some(input);
             self
         }
+        /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling
+        /// in.</p>
         pub fn set_protected_from_scale_in(mut self, input: std::option::Option<bool>) -> Self {
             self.protected_from_scale_in = input;
             self
@@ -7426,6 +8673,9 @@ pub mod auto_scaling_instance_details {
             self.weighted_capacity = Some(input.into());
             self
         }
+        /// <p>The number of capacity units contributed by the instance based on its instance
+        /// type.</p>
+        /// <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
         pub fn set_weighted_capacity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7498,7 +8748,7 @@ pub struct AutoScalingGroup {
     /// <p>The EC2 instances associated with the group.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     /// <p>The date and time the group was created.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The suspended processes associated with the group.</p>
     pub suspended_processes: std::option::Option<std::vec::Vec<crate::model::SuspendedProcess>>,
     /// <p>The name of the placement group into which to launch your instances, if any.</p>
@@ -7594,7 +8844,7 @@ pub mod auto_scaling_group {
         pub(crate) health_check_type: std::option::Option<std::string::String>,
         pub(crate) health_check_grace_period: std::option::Option<i32>,
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) suspended_processes:
             std::option::Option<std::vec::Vec<crate::model::SuspendedProcess>>,
         pub(crate) placement_group: std::option::Option<std::string::String>,
@@ -7618,6 +8868,7 @@ pub mod auto_scaling_group {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7630,6 +8881,7 @@ pub mod auto_scaling_group {
             self.auto_scaling_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7642,6 +8894,7 @@ pub mod auto_scaling_group {
             self.launch_configuration_name = Some(input.into());
             self
         }
+        /// <p>The name of the associated launch configuration.</p>
         pub fn set_launch_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7654,6 +8907,7 @@ pub mod auto_scaling_group {
             self.launch_template = Some(input);
             self
         }
+        /// <p>The launch template for the group.</p>
         pub fn set_launch_template(
             mut self,
             input: std::option::Option<crate::model::LaunchTemplateSpecification>,
@@ -7666,6 +8920,7 @@ pub mod auto_scaling_group {
             self.mixed_instances_policy = Some(input);
             self
         }
+        /// <p>The mixed instances policy for the group.</p>
         pub fn set_mixed_instances_policy(
             mut self,
             input: std::option::Option<crate::model::MixedInstancesPolicy>,
@@ -7678,6 +8933,7 @@ pub mod auto_scaling_group {
             self.min_size = Some(input);
             self
         }
+        /// <p>The minimum size of the group.</p>
         pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
             self.min_size = input;
             self
@@ -7687,6 +8943,7 @@ pub mod auto_scaling_group {
             self.max_size = Some(input);
             self
         }
+        /// <p>The maximum size of the group.</p>
         pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
             self.max_size = input;
             self
@@ -7696,6 +8953,7 @@ pub mod auto_scaling_group {
             self.desired_capacity = Some(input);
             self
         }
+        /// <p>The desired size of the group.</p>
         pub fn set_desired_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_capacity = input;
             self
@@ -7705,6 +8963,7 @@ pub mod auto_scaling_group {
             self.predicted_capacity = Some(input);
             self
         }
+        /// <p>The predicted capacity of the group when it has a predictive scaling policy.</p>
         pub fn set_predicted_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.predicted_capacity = input;
             self
@@ -7714,16 +8973,23 @@ pub mod auto_scaling_group {
             self.default_cooldown = Some(input);
             self
         }
+        /// <p>The duration of the default cooldown period, in seconds.</p>
         pub fn set_default_cooldown(mut self, input: std::option::Option<i32>) -> Self {
             self.default_cooldown = input;
             self
         }
+        /// Appends an item to `availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
+        ///
+        /// <p>One or more Availability Zones for the group.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
+        /// <p>One or more Availability Zones for the group.</p>
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7731,12 +8997,18 @@ pub mod auto_scaling_group {
             self.availability_zones = input;
             self
         }
+        /// Appends an item to `load_balancer_names`.
+        ///
+        /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
+        ///
+        /// <p>One or more load balancers associated with the group.</p>
         pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.load_balancer_names.unwrap_or_default();
             v.push(input.into());
             self.load_balancer_names = Some(v);
             self
         }
+        /// <p>One or more load balancers associated with the group.</p>
         pub fn set_load_balancer_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7744,12 +9016,18 @@ pub mod auto_scaling_group {
             self.load_balancer_names = input;
             self
         }
+        /// Appends an item to `target_group_ar_ns`.
+        ///
+        /// To override the contents of this collection use [`set_target_group_ar_ns`](Self::set_target_group_ar_ns).
+        ///
+        /// <p>The Amazon Resource Names (ARN) of the target groups for your load balancer.</p>
         pub fn target_group_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_group_ar_ns.unwrap_or_default();
             v.push(input.into());
             self.target_group_ar_ns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARN) of the target groups for your load balancer.</p>
         pub fn set_target_group_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7765,6 +9043,10 @@ pub mod auto_scaling_group {
             self.health_check_type = Some(input.into());
             self
         }
+        /// <p>The service to use for the health checks. The valid values are <code>EC2</code> and
+        /// <code>ELB</code>. If you configure an Auto Scaling group to use <code>ELB</code> health
+        /// checks, it considers the instance unhealthy if it fails either the EC2 status checks or
+        /// the load balancer health checks.</p>
         pub fn set_health_check_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7778,16 +9060,24 @@ pub mod auto_scaling_group {
             self.health_check_grace_period = Some(input);
             self
         }
+        /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
+        /// of an EC2 instance that has come into service.</p>
         pub fn set_health_check_grace_period(mut self, input: std::option::Option<i32>) -> Self {
             self.health_check_grace_period = input;
             self
         }
+        /// Appends an item to `instances`.
+        ///
+        /// To override the contents of this collection use [`set_instances`](Self::set_instances).
+        ///
+        /// <p>The EC2 instances associated with the group.</p>
         pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
             let mut v = self.instances.unwrap_or_default();
             v.push(input.into());
             self.instances = Some(v);
             self
         }
+        /// <p>The EC2 instances associated with the group.</p>
         pub fn set_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Instance>>,
@@ -7796,17 +9086,23 @@ pub mod auto_scaling_group {
             self
         }
         /// <p>The date and time the group was created.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The date and time the group was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
         }
+        /// Appends an item to `suspended_processes`.
+        ///
+        /// To override the contents of this collection use [`set_suspended_processes`](Self::set_suspended_processes).
+        ///
+        /// <p>The suspended processes associated with the group.</p>
         pub fn suspended_processes(
             mut self,
             input: impl Into<crate::model::SuspendedProcess>,
@@ -7816,6 +9112,7 @@ pub mod auto_scaling_group {
             self.suspended_processes = Some(v);
             self
         }
+        /// <p>The suspended processes associated with the group.</p>
         pub fn set_suspended_processes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SuspendedProcess>>,
@@ -7828,6 +9125,7 @@ pub mod auto_scaling_group {
             self.placement_group = Some(input.into());
             self
         }
+        /// <p>The name of the placement group into which to launch your instances, if any.</p>
         pub fn set_placement_group(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7840,6 +9138,7 @@ pub mod auto_scaling_group {
             self.vpc_zone_identifier = Some(input.into());
             self
         }
+        /// <p>One or more subnet IDs, if applicable, separated by commas.</p>
         pub fn set_vpc_zone_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7847,12 +9146,18 @@ pub mod auto_scaling_group {
             self.vpc_zone_identifier = input;
             self
         }
+        /// Appends an item to `enabled_metrics`.
+        ///
+        /// To override the contents of this collection use [`set_enabled_metrics`](Self::set_enabled_metrics).
+        ///
+        /// <p>The metrics enabled for the group.</p>
         pub fn enabled_metrics(mut self, input: impl Into<crate::model::EnabledMetric>) -> Self {
             let mut v = self.enabled_metrics.unwrap_or_default();
             v.push(input.into());
             self.enabled_metrics = Some(v);
             self
         }
+        /// <p>The metrics enabled for the group.</p>
         pub fn set_enabled_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnabledMetric>>,
@@ -7866,16 +9171,24 @@ pub mod auto_scaling_group {
             self.status = Some(input.into());
             self
         }
+        /// <p>The current state of the group when the <a>DeleteAutoScalingGroup</a>
+        /// operation is in progress.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags for the group.</p>
         pub fn tags(mut self, input: impl Into<crate::model::TagDescription>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags for the group.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
@@ -7883,12 +9196,18 @@ pub mod auto_scaling_group {
             self.tags = input;
             self
         }
+        /// Appends an item to `termination_policies`.
+        ///
+        /// To override the contents of this collection use [`set_termination_policies`](Self::set_termination_policies).
+        ///
+        /// <p>The termination policies for the group.</p>
         pub fn termination_policies(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.termination_policies.unwrap_or_default();
             v.push(input.into());
             self.termination_policies = Some(v);
             self
         }
+        /// <p>The termination policies for the group.</p>
         pub fn set_termination_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7902,6 +9221,8 @@ pub mod auto_scaling_group {
             self.new_instances_protected_from_scale_in = Some(input);
             self
         }
+        /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling
+        /// when scaling in.</p>
         pub fn set_new_instances_protected_from_scale_in(
             mut self,
             input: std::option::Option<bool>,
@@ -7915,6 +9236,8 @@ pub mod auto_scaling_group {
             self.service_linked_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to
+        /// call other Amazon Web Services on your behalf.</p>
         pub fn set_service_linked_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7928,6 +9251,8 @@ pub mod auto_scaling_group {
             self.max_instance_lifetime = Some(input);
             self
         }
+        /// <p>The maximum amount of time, in seconds, that an instance can be in service.</p>
+        /// <p>Valid Range: Minimum value of 0.</p>
         pub fn set_max_instance_lifetime(mut self, input: std::option::Option<i32>) -> Self {
             self.max_instance_lifetime = input;
             self
@@ -7937,6 +9262,7 @@ pub mod auto_scaling_group {
             self.capacity_rebalance = Some(input);
             self
         }
+        /// <p>Indicates whether Capacity Rebalancing is enabled.</p>
         pub fn set_capacity_rebalance(mut self, input: std::option::Option<bool>) -> Self {
             self.capacity_rebalance = input;
             self
@@ -7949,6 +9275,7 @@ pub mod auto_scaling_group {
             self.warm_pool_configuration = Some(input);
             self
         }
+        /// <p>The warm pool for the group.</p>
         pub fn set_warm_pool_configuration(
             mut self,
             input: std::option::Option<crate::model::WarmPoolConfiguration>,
@@ -7961,6 +9288,7 @@ pub mod auto_scaling_group {
             self.warm_pool_size = Some(input);
             self
         }
+        /// <p>The current size of the warm pool.</p>
         pub fn set_warm_pool_size(mut self, input: std::option::Option<i32>) -> Self {
             self.warm_pool_size = input;
             self
@@ -7970,6 +9298,7 @@ pub mod auto_scaling_group {
             self.context = Some(input.into());
             self
         }
+        /// <p>Reserved.</p>
         pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.context = input;
             self
@@ -8255,6 +9584,109 @@ pub mod enabled_metric {
             self.metric = Some(input.into());
             self
         }
+        /// <p>One of the following metrics:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>GroupMinSize</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupMaxSize</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupDesiredCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupInServiceInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupPendingInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupStandbyInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTerminatingInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTotalInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupInServiceCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupPendingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupStandbyCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTerminatingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTotalCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolDesiredCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolWarmedCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolPendingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolTerminatingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolTotalCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupAndWarmPoolDesiredCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupAndWarmPoolTotalCapacity</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric = input;
             self
@@ -8264,6 +9696,7 @@ pub mod enabled_metric {
             self.granularity = Some(input.into());
             self
         }
+        /// <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
         pub fn set_granularity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.granularity = input;
             self
@@ -8317,6 +9750,7 @@ pub mod suspended_process {
             self.process_name = Some(input.into());
             self
         }
+        /// <p>The name of the suspended process.</p>
         pub fn set_process_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.process_name = input;
             self
@@ -8326,6 +9760,7 @@ pub mod suspended_process {
             self.suspension_reason = Some(input.into());
             self
         }
+        /// <p>The reason that the process was suspended.</p>
         pub fn set_suspension_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8379,6 +9814,8 @@ pub mod adjustment_type {
             self.adjustment_type = Some(input.into());
             self
         }
+        /// <p>The policy adjustment type. The valid values are <code>ChangeInCapacity</code>,
+        /// <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
         pub fn set_adjustment_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8447,6 +9884,7 @@ pub mod tag {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -8457,6 +9895,8 @@ pub mod tag {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The type of resource. The only supported value is
+        /// <code>auto-scaling-group</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8469,6 +9909,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The tag key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -8478,6 +9919,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The tag value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -8488,6 +9930,8 @@ pub mod tag {
             self.propagate_at_launch = Some(input);
             self
         }
+        /// <p>Determines whether the tag is added to new instances as they are launched in the
+        /// group.</p>
         pub fn set_propagate_at_launch(mut self, input: std::option::Option<bool>) -> Self {
             self.propagate_at_launch = input;
             self
@@ -8616,6 +10060,7 @@ pub mod lifecycle_hook_specification {
             self.lifecycle_hook_name = Some(input.into());
             self
         }
+        /// <p>The name of the lifecycle hook.</p>
         pub fn set_lifecycle_hook_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8637,6 +10082,16 @@ pub mod lifecycle_hook_specification {
             self.lifecycle_transition = Some(input.into());
             self
         }
+        /// <p>The state of the EC2 instance to which you want to attach the lifecycle hook. The
+        /// valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>autoscaling:EC2_INSTANCE_LAUNCHING</p>
+        /// </li>
+        /// <li>
+        /// <p>autoscaling:EC2_INSTANCE_TERMINATING</p>
+        /// </li>
+        /// </ul>
         pub fn set_lifecycle_transition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8650,6 +10105,8 @@ pub mod lifecycle_hook_specification {
             self.notification_metadata = Some(input.into());
             self
         }
+        /// <p>Additional information that you want to include any time Amazon EC2 Auto Scaling sends a message to
+        /// the notification target.</p>
         pub fn set_notification_metadata(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8666,6 +10123,11 @@ pub mod lifecycle_hook_specification {
             self.heartbeat_timeout = Some(input);
             self
         }
+        /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times
+        /// out.</p>
+        /// <p>If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in
+        /// the <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing
+        /// out by calling <a>RecordLifecycleActionHeartbeat</a>.</p>
         pub fn set_heartbeat_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.heartbeat_timeout = input;
             self
@@ -8677,6 +10139,9 @@ pub mod lifecycle_hook_specification {
             self.default_result = Some(input.into());
             self
         }
+        /// <p>Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses
+        /// or if an unexpected failure occurs. The valid values are <code>CONTINUE</code> and
+        /// <code>ABANDON</code>. The default value is <code>ABANDON</code>.</p>
         pub fn set_default_result(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8691,6 +10156,9 @@ pub mod lifecycle_hook_specification {
             self.notification_target_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to when an instance is in the
+        /// transition state for the lifecycle hook. The notification target can be either an SQS
+        /// queue or an SNS topic.</p>
         pub fn set_notification_target_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8704,6 +10172,8 @@ pub mod lifecycle_hook_specification {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified
+        /// notification target, for example, an Amazon SNS topic or an Amazon SQS queue.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -8765,6 +10235,7 @@ pub mod failed_scheduled_update_group_action_request {
             self.scheduled_action_name = Some(input.into());
             self
         }
+        /// <p>The name of the scheduled action.</p>
         pub fn set_scheduled_action_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8777,6 +10248,7 @@ pub mod failed_scheduled_update_group_action_request {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>The error code.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -8786,6 +10258,7 @@ pub mod failed_scheduled_update_group_action_request {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The error message accompanying the error code.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8823,9 +10296,9 @@ pub struct ScheduledUpdateGroupActionRequest {
     /// recurrence.</p>
     /// <p>If you try to schedule the action in the past, Amazon EC2 Auto Scaling returns an error
     /// message.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time for the recurring schedule to end, in UTC.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The recurring schedule for the action, in Unix cron syntax format. This format
     /// consists of five fields separated by white spaces: [Minute] [Hour] [Day_of_Month]
     /// [Month_of_Year] [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1
@@ -8870,8 +10343,8 @@ pub mod scheduled_update_group_action_request {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_action_name: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) recurrence: std::option::Option<std::string::String>,
         pub(crate) min_size: std::option::Option<i32>,
         pub(crate) max_size: std::option::Option<i32>,
@@ -8884,6 +10357,7 @@ pub mod scheduled_update_group_action_request {
             self.scheduled_action_name = Some(input.into());
             self
         }
+        /// <p>The name of the scaling action.</p>
         pub fn set_scheduled_action_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8898,20 +10372,34 @@ pub mod scheduled_update_group_action_request {
         /// recurrence.</p>
         /// <p>If you try to schedule the action in the past, Amazon EC2 Auto Scaling returns an error
         /// message.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time for the action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT
+        /// only and in quotes (for example, <code>"2019-06-01T00:00:00Z"</code>).</p>
+        /// <p>If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling performs
+        /// the action at this time, and then performs the action based on the specified
+        /// recurrence.</p>
+        /// <p>If you try to schedule the action in the past, Amazon EC2 Auto Scaling returns an error
+        /// message.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The date and time for the recurring schedule to end, in UTC.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time for the recurring schedule to end, in UTC.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -8927,6 +10415,14 @@ pub mod scheduled_update_group_action_request {
             self.recurrence = Some(input.into());
             self
         }
+        /// <p>The recurring schedule for the action, in Unix cron syntax format. This format
+        /// consists of five fields separated by white spaces: [Minute] [Hour] [Day_of_Month]
+        /// [Month_of_Year] [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1
+        /// 1,6,12 *"</code>). For more information about this format, see <a href="http://crontab.org">Crontab</a>.</p>
+        /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
+        /// <code>Recurrence</code>, they form the boundaries of when the recurring action
+        /// starts and stops.</p>
+        /// <p>Cron expressions use Universal Coordinated Time (UTC) by default.</p>
         pub fn set_recurrence(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.recurrence = input;
             self
@@ -8936,6 +10432,7 @@ pub mod scheduled_update_group_action_request {
             self.min_size = Some(input);
             self
         }
+        /// <p>The minimum size of the Auto Scaling group.</p>
         pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
             self.min_size = input;
             self
@@ -8945,6 +10442,7 @@ pub mod scheduled_update_group_action_request {
             self.max_size = Some(input);
             self
         }
+        /// <p>The maximum size of the Auto Scaling group.</p>
         pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
             self.max_size = input;
             self
@@ -8955,6 +10453,8 @@ pub mod scheduled_update_group_action_request {
             self.desired_capacity = Some(input);
             self
         }
+        /// <p>The desired capacity is the initial capacity of the Auto Scaling group after the scheduled
+        /// action runs and the capacity it attempts to maintain.</p>
         pub fn set_desired_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_capacity = input;
             self
@@ -8968,6 +10468,11 @@ pub mod scheduled_update_group_action_request {
             self.time_zone = Some(input.into());
             self
         }
+        /// <p>Specifies the time zone for a cron expression. If a time zone is not provided, UTC is
+        /// used by default. </p>
+        /// <p>Valid values are the canonical names of the IANA time zones, derived from the IANA
+        /// Time Zone Database (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For
+        /// more information, see <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
         pub fn set_time_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.time_zone = input;
             self

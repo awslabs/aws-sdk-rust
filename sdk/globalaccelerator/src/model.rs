@@ -105,6 +105,7 @@ pub mod byoip_cidr {
             self.cidr = Some(input.into());
             self
         }
+        /// <p>The address range, in CIDR notation.</p>
         pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cidr = input;
             self
@@ -114,6 +115,7 @@ pub mod byoip_cidr {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the address pool.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ByoipCidrState>,
@@ -121,12 +123,20 @@ pub mod byoip_cidr {
             self.state = input;
             self
         }
+        /// Appends an item to `events`.
+        ///
+        /// To override the contents of this collection use [`set_events`](Self::set_events).
+        ///
+        /// <p>A history of status changes for an IP address range that you bring to AWS Global Accelerator
+        /// through bring your own IP address (BYOIP).</p>
         pub fn events(mut self, input: impl Into<crate::model::ByoipCidrEvent>) -> Self {
             let mut v = self.events.unwrap_or_default();
             v.push(input.into());
             self.events = Some(v);
             self
         }
+        /// <p>A history of status changes for an IP address range that you bring to AWS Global Accelerator
+        /// through bring your own IP address (BYOIP).</p>
         pub fn set_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ByoipCidrEvent>>,
@@ -162,7 +172,7 @@ pub struct ByoipCidrEvent {
     pub message: std::option::Option<std::string::String>,
     /// <p>A timestamp when you make a status change for an IP address range that you bring to AWS Global Accelerator through
     /// bring your own IP address (BYOIP).</p>
-    pub timestamp: std::option::Option<smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ByoipCidrEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -179,7 +189,7 @@ pub mod byoip_cidr_event {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>A string that contains an <code>Event</code> message describing changes that you make in the status
@@ -188,17 +198,24 @@ pub mod byoip_cidr_event {
             self.message = Some(input.into());
             self
         }
+        /// <p>A string that contains an <code>Event</code> message describing changes that you make in the status
+        /// of an IP address range that you bring to AWS Global Accelerator through bring your own IP address (BYOIP).</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
         /// <p>A timestamp when you make a status change for an IP address range that you bring to AWS Global Accelerator through
         /// bring your own IP address (BYOIP).</p>
-        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>A timestamp when you make a status change for an IP address range that you bring to AWS Global Accelerator through
+        /// bring your own IP address (BYOIP).</p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.timestamp = input;
             self
         }
@@ -218,6 +235,7 @@ impl ByoipCidrEvent {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -229,16 +247,27 @@ impl ByoipCidrEvent {
     std::hash::Hash,
 )]
 pub enum ByoipCidrState {
+    #[allow(missing_docs)] // documentation missing in model
     Advertising,
+    #[allow(missing_docs)] // documentation missing in model
     Deprovisioned,
+    #[allow(missing_docs)] // documentation missing in model
     FailedAdvertising,
+    #[allow(missing_docs)] // documentation missing in model
     FailedDeprovision,
+    #[allow(missing_docs)] // documentation missing in model
     FailedProvision,
+    #[allow(missing_docs)] // documentation missing in model
     FailedWithdraw,
+    #[allow(missing_docs)] // documentation missing in model
     PendingAdvertising,
+    #[allow(missing_docs)] // documentation missing in model
     PendingDeprovisioning,
+    #[allow(missing_docs)] // documentation missing in model
     PendingProvisioning,
+    #[allow(missing_docs)] // documentation missing in model
     PendingWithdrawing,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -269,6 +298,7 @@ impl std::str::FromStr for ByoipCidrState {
     }
 }
 impl ByoipCidrState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ByoipCidrState::Advertising => "ADVERTISING",
@@ -285,6 +315,7 @@ impl ByoipCidrState {
             ByoipCidrState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ADVERTISING",
@@ -358,16 +389,23 @@ pub mod listener {
             self.listener_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the listener.</p>
         pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.listener_arn = input;
             self
         }
+        /// Appends an item to `port_ranges`.
+        ///
+        /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
+        ///
+        /// <p>The list of port ranges for the connections from clients to the accelerator.</p>
         pub fn port_ranges(mut self, input: impl Into<crate::model::PortRange>) -> Self {
             let mut v = self.port_ranges.unwrap_or_default();
             v.push(input.into());
             self.port_ranges = Some(v);
             self
         }
+        /// <p>The list of port ranges for the connections from clients to the accelerator.</p>
         pub fn set_port_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
@@ -380,6 +418,7 @@ pub mod listener {
             self.protocol = Some(input);
             self
         }
+        /// <p>The protocol for the connections from clients to the accelerator.</p>
         pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
             self.protocol = input;
             self
@@ -400,6 +439,18 @@ pub mod listener {
             self.client_affinity = Some(input);
             self
         }
+        /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications,
+        /// regardless of the port and protocol of the client request. Client affinity gives you control over whether to always
+        /// route each client to the same specific endpoint.</p>
+        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client
+        /// affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port,
+        /// destination IP address, destination port, and protocol—to select the hash value, and then chooses the best
+        /// endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not
+        /// be always routed to the same endpoint because the hash value changes. </p>
+        /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code>
+        /// instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
+        /// source (client) IP address and destination IP address—to select the hash value.</p>
+        /// <p>The default value is <code>NONE</code>.</p>
         pub fn set_client_affinity(
             mut self,
             input: std::option::Option<crate::model::ClientAffinity>,
@@ -425,6 +476,7 @@ impl Listener {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -436,7 +488,9 @@ impl Listener {
     std::hash::Hash,
 )]
 pub enum ClientAffinity {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     SourceIp,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -458,6 +512,7 @@ impl std::str::FromStr for ClientAffinity {
     }
 }
 impl ClientAffinity {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ClientAffinity::None => "NONE",
@@ -465,6 +520,7 @@ impl ClientAffinity {
             ClientAffinity::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "SOURCE_IP"]
     }
@@ -475,6 +531,7 @@ impl AsRef<str> for ClientAffinity {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -486,7 +543,9 @@ impl AsRef<str> for ClientAffinity {
     std::hash::Hash,
 )]
 pub enum Protocol {
+    #[allow(missing_docs)] // documentation missing in model
     Tcp,
+    #[allow(missing_docs)] // documentation missing in model
     Udp,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -508,6 +567,7 @@ impl std::str::FromStr for Protocol {
     }
 }
 impl Protocol {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Protocol::Tcp => "TCP",
@@ -515,6 +575,7 @@ impl Protocol {
             Protocol::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["TCP", "UDP"]
     }
@@ -557,6 +618,7 @@ pub mod port_range {
             self.from_port = Some(input);
             self
         }
+        /// <p>The first port in the range of ports, inclusive.</p>
         pub fn set_from_port(mut self, input: std::option::Option<i32>) -> Self {
             self.from_port = input;
             self
@@ -566,6 +628,7 @@ pub mod port_range {
             self.to_port = Some(input);
             self
         }
+        /// <p>The last port in the range of ports, inclusive.</p>
         pub fn set_to_port(mut self, input: std::option::Option<i32>) -> Self {
             self.to_port = input;
             self
@@ -605,6 +668,7 @@ pub struct EndpointGroup {
     /// <p>The default value is 100.</p>
     pub traffic_dial_percentage: std::option::Option<f32>,
     /// <p>The port that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group. </p>
+    ///
     /// <p>The default port is the port for the listener that this endpoint group is associated with. If the listener port is a
     /// list, Global Accelerator uses the first specified port in the list of ports.</p>
     pub health_check_port: std::option::Option<i32>,
@@ -668,6 +732,7 @@ pub mod endpoint_group {
             self.endpoint_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
         pub fn set_endpoint_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -680,6 +745,7 @@ pub mod endpoint_group {
             self.endpoint_group_region = Some(input.into());
             self
         }
+        /// <p>The AWS Region where the endpoint group is located.</p>
         pub fn set_endpoint_group_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -687,6 +753,11 @@ pub mod endpoint_group {
             self.endpoint_group_region = input;
             self
         }
+        /// Appends an item to `endpoint_descriptions`.
+        ///
+        /// To override the contents of this collection use [`set_endpoint_descriptions`](Self::set_endpoint_descriptions).
+        ///
+        /// <p>The list of endpoint objects.</p>
         pub fn endpoint_descriptions(
             mut self,
             input: impl Into<crate::model::EndpointDescription>,
@@ -696,6 +767,7 @@ pub mod endpoint_group {
             self.endpoint_descriptions = Some(v);
             self
         }
+        /// <p>The list of endpoint objects.</p>
         pub fn set_endpoint_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EndpointDescription>>,
@@ -712,17 +784,27 @@ pub mod endpoint_group {
             self.traffic_dial_percentage = Some(input);
             self
         }
+        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for
+        /// this listener. </p>
+        /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is
+        /// applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
+        /// <p>The default value is 100.</p>
         pub fn set_traffic_dial_percentage(mut self, input: std::option::Option<f32>) -> Self {
             self.traffic_dial_percentage = input;
             self
         }
         /// <p>The port that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group. </p>
+        ///
         /// <p>The default port is the port for the listener that this endpoint group is associated with. If the listener port is a
         /// list, Global Accelerator uses the first specified port in the list of ports.</p>
         pub fn health_check_port(mut self, input: i32) -> Self {
             self.health_check_port = Some(input);
             self
         }
+        /// <p>The port that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group. </p>
+        ///
+        /// <p>The default port is the port for the listener that this endpoint group is associated with. If the listener port is a
+        /// list, Global Accelerator uses the first specified port in the list of ports.</p>
         pub fn set_health_check_port(mut self, input: std::option::Option<i32>) -> Self {
             self.health_check_port = input;
             self
@@ -733,6 +815,8 @@ pub mod endpoint_group {
             self.health_check_protocol = Some(input);
             self
         }
+        /// <p>The protocol that Global Accelerator uses to perform health checks on endpoints that are part of this endpoint group. The default
+        /// value is TCP.</p>
         pub fn set_health_check_protocol(
             mut self,
             input: std::option::Option<crate::model::HealthCheckProtocol>,
@@ -746,6 +830,8 @@ pub mod endpoint_group {
             self.health_check_path = Some(input.into());
             self
         }
+        /// <p>If the protocol is HTTP/S, then this value provides the ping path that Global Accelerator uses for the destination on the
+        /// endpoints for health checks. The default is slash (/).</p>
         pub fn set_health_check_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -758,6 +844,7 @@ pub mod endpoint_group {
             self.health_check_interval_seconds = Some(input);
             self
         }
+        /// <p>The time—10 seconds or 30 seconds—between health checks for each endpoint. The default value is 30.</p>
         pub fn set_health_check_interval_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -771,16 +858,30 @@ pub mod endpoint_group {
             self.threshold_count = Some(input);
             self
         }
+        /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
+        /// unhealthy endpoint to healthy. The default value is 3.</p>
         pub fn set_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
             self.threshold_count = input;
             self
         }
+        /// Appends an item to `port_overrides`.
+        ///
+        /// To override the contents of this collection use [`set_port_overrides`](Self::set_port_overrides).
+        ///
+        /// <p>Allows you to override the destination ports used to route traffic to an endpoint.
+        /// Using a port override lets you to map a list of external destination ports (that your
+        /// users send traffic to) to a list of internal destination ports that you want an application
+        /// endpoint to receive traffic on. </p>
         pub fn port_overrides(mut self, input: impl Into<crate::model::PortOverride>) -> Self {
             let mut v = self.port_overrides.unwrap_or_default();
             v.push(input.into());
             self.port_overrides = Some(v);
             self
         }
+        /// <p>Allows you to override the destination ports used to route traffic to an endpoint.
+        /// Using a port override lets you to map a list of external destination ports (that your
+        /// users send traffic to) to a list of internal destination ports that you want an application
+        /// endpoint to receive traffic on. </p>
         pub fn set_port_overrides(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortOverride>>,
@@ -852,6 +953,8 @@ pub mod port_override {
             self.listener_port = Some(input);
             self
         }
+        /// <p>The listener port that you want to map to a specific endpoint port. This is the port that user traffic
+        /// arrives to the Global Accelerator on.</p>
         pub fn set_listener_port(mut self, input: std::option::Option<i32>) -> Self {
             self.listener_port = input;
             self
@@ -862,6 +965,8 @@ pub mod port_override {
             self.endpoint_port = Some(input);
             self
         }
+        /// <p>The endpoint port that you want a listener port to be mapped to. This is the port on the endpoint,
+        /// such as the Application Load Balancer or Amazon EC2 instance.</p>
         pub fn set_endpoint_port(mut self, input: std::option::Option<i32>) -> Self {
             self.endpoint_port = input;
             self
@@ -882,6 +987,7 @@ impl PortOverride {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -893,8 +999,11 @@ impl PortOverride {
     std::hash::Hash,
 )]
 pub enum HealthCheckProtocol {
+    #[allow(missing_docs)] // documentation missing in model
     Http,
+    #[allow(missing_docs)] // documentation missing in model
     Https,
+    #[allow(missing_docs)] // documentation missing in model
     Tcp,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -917,6 +1026,7 @@ impl std::str::FromStr for HealthCheckProtocol {
     }
 }
 impl HealthCheckProtocol {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HealthCheckProtocol::Http => "HTTP",
@@ -925,6 +1035,7 @@ impl HealthCheckProtocol {
             HealthCheckProtocol::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HTTP", "HTTPS", "TCP"]
     }
@@ -998,6 +1109,10 @@ pub mod endpoint_description {
             self.endpoint_id = Some(input.into());
             self
         }
+        /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon
+        /// Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address
+        /// allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. </p>
+        /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
         pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_id = input;
             self
@@ -1011,6 +1126,11 @@ pub mod endpoint_description {
             self.weight = Some(input);
             self
         }
+        /// <p>The weight associated with the endpoint. When you add weights to endpoints, you configure AWS Global Accelerator to route traffic
+        /// based on proportions that you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6 (sum=20). The
+        /// result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is routed both to the second
+        /// and third endpoints, and 6/20 is routed to the last endpoint. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint Weights</a> in the
+        /// <i>AWS Global Accelerator Developer Guide</i>. </p>
         pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
             self.weight = input;
             self
@@ -1020,6 +1140,7 @@ pub mod endpoint_description {
             self.health_state = Some(input);
             self
         }
+        /// <p>The health status of the endpoint.</p>
         pub fn set_health_state(
             mut self,
             input: std::option::Option<crate::model::HealthState>,
@@ -1032,6 +1153,7 @@ pub mod endpoint_description {
             self.health_reason = Some(input.into());
             self
         }
+        /// <p>Returns a null result.</p>
         pub fn set_health_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1049,6 +1171,12 @@ pub mod endpoint_description {
             self.client_ip_preservation_enabled = Some(input);
             self
         }
+        /// <p>Indicates whether client IP address preservation is enabled for an Application Load Balancer endpoint.
+        /// The value is true or false. The default value is true for new accelerators. </p>
+        /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as
+        /// traffic travels to applications on the Application Load Balancer endpoint fronted by the accelerator.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html">
+        /// Viewing Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_client_ip_preservation_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -1075,6 +1203,7 @@ impl EndpointDescription {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1086,8 +1215,11 @@ impl EndpointDescription {
     std::hash::Hash,
 )]
 pub enum HealthState {
+    #[allow(missing_docs)] // documentation missing in model
     Healthy,
+    #[allow(missing_docs)] // documentation missing in model
     Initial,
+    #[allow(missing_docs)] // documentation missing in model
     Unhealthy,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1110,6 +1242,7 @@ impl std::str::FromStr for HealthState {
     }
 }
 impl HealthState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HealthState::Healthy => "HEALTHY",
@@ -1118,6 +1251,7 @@ impl HealthState {
             HealthState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HEALTHY", "INITIAL", "UNHEALTHY"]
     }
@@ -1184,6 +1318,11 @@ pub mod endpoint_configuration {
             self.endpoint_id = Some(input.into());
             self
         }
+        /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon
+        /// Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address
+        /// allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A resource must be valid and active
+        /// when you add it as an endpoint.</p>
+        /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
         pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_id = input;
             self
@@ -1197,6 +1336,11 @@ pub mod endpoint_configuration {
             self.weight = Some(input);
             self
         }
+        /// <p>The weight associated with the endpoint. When you add weights to endpoints, you configure AWS Global Accelerator to route traffic
+        /// based on proportions that you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6 (sum=20). The
+        /// result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is routed both to the second
+        /// and third endpoints, and 6/20 is routed to the last endpoint. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint Weights</a> in the
+        /// <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
             self.weight = input;
             self
@@ -1211,6 +1355,12 @@ pub mod endpoint_configuration {
             self.client_ip_preservation_enabled = Some(input);
             self
         }
+        /// <p>Indicates whether client IP address preservation is enabled for an Application Load Balancer endpoint.
+        /// The value is true or false. The default value is true for new accelerators. </p>
+        /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as
+        /// traffic travels to applications on the Application Load Balancer endpoint fronted by the accelerator.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html">
+        /// Preserve Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_client_ip_preservation_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -1269,16 +1419,27 @@ pub mod custom_routing_listener {
             self.listener_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the listener.</p>
         pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.listener_arn = input;
             self
         }
+        /// Appends an item to `port_ranges`.
+        ///
+        /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
+        ///
+        /// <p>The port range to support for connections from clients to your accelerator.</p>
+        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
+        /// endpoints for custom routing accelerators</a>.</p>
         pub fn port_ranges(mut self, input: impl Into<crate::model::PortRange>) -> Self {
             let mut v = self.port_ranges.unwrap_or_default();
             v.push(input.into());
             self.port_ranges = Some(v);
             self
         }
+        /// <p>The port range to support for connections from clients to your accelerator.</p>
+        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
+        /// endpoints for custom routing accelerators</a>.</p>
         pub fn set_port_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
@@ -1350,6 +1511,10 @@ pub mod custom_routing_accelerator_attributes {
             self.flow_logs_enabled = Some(input);
             self
         }
+        /// <p>Indicates whether flow logs are enabled. The default value is false. If the value is true,
+        /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
+        /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_flow_logs_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.flow_logs_enabled = input;
             self
@@ -1361,6 +1526,9 @@ pub mod custom_routing_accelerator_attributes {
             self.flow_logs_s3_bucket = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
+        /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
+        /// bucket.</p>
         pub fn set_flow_logs_s3_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1377,6 +1545,11 @@ pub mod custom_routing_accelerator_attributes {
             self.flow_logs_s3_prefix = Some(input.into());
             self
         }
+        /// <p>The prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+        /// <code>FlowLogsEnabled</code> is <code>true</code>.</p>
+        /// <p>If you don’t specify a prefix, the flow logs are stored in the
+        /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+        /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
         pub fn set_flow_logs_s3_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1427,9 +1600,9 @@ pub struct CustomRoutingAccelerator {
     /// <p>Describes the deployment status of the accelerator.</p>
     pub status: std::option::Option<crate::model::CustomRoutingAcceleratorStatus>,
     /// <p>The date and time that the accelerator was created.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that the accelerator was last modified.</p>
-    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for CustomRoutingAccelerator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1459,8 +1632,8 @@ pub mod custom_routing_accelerator {
         pub(crate) ip_sets: std::option::Option<std::vec::Vec<crate::model::IpSet>>,
         pub(crate) dns_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::CustomRoutingAcceleratorStatus>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator.</p>
@@ -1468,6 +1641,7 @@ pub mod custom_routing_accelerator {
             self.accelerator_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator.</p>
         pub fn set_accelerator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1481,6 +1655,8 @@ pub mod custom_routing_accelerator {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the accelerator. The name must contain only alphanumeric characters or
+        /// hyphens (-), and must not begin or end with a hyphen.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1490,6 +1666,7 @@ pub mod custom_routing_accelerator {
             self.ip_address_type = Some(input);
             self
         }
+        /// <p>The value for the address type must be IPv4.</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -1503,16 +1680,24 @@ pub mod custom_routing_accelerator {
             self.enabled = Some(input);
             self
         }
+        /// <p>Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p>
+        /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
         }
+        /// Appends an item to `ip_sets`.
+        ///
+        /// To override the contents of this collection use [`set_ip_sets`](Self::set_ip_sets).
+        ///
+        /// <p>The static IP addresses that Global Accelerator associates with the accelerator.</p>
         pub fn ip_sets(mut self, input: impl Into<crate::model::IpSet>) -> Self {
             let mut v = self.ip_sets.unwrap_or_default();
             v.push(input.into());
             self.ip_sets = Some(v);
             self
         }
+        /// <p>The static IP addresses that Global Accelerator associates with the accelerator.</p>
         pub fn set_ip_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IpSet>>,
@@ -1530,6 +1715,12 @@ pub mod custom_routing_accelerator {
             self.dns_name = Some(input.into());
             self
         }
+        /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to your accelerator's static IP addresses. </p>
+        /// <p>The naming convention for the DNS name is the following: A lowercase letter a,
+        /// followed by a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example:
+        /// a1234567890abcdef.awsglobalaccelerator.com.</p>
+        /// <p>For more information about the default DNS name, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
+        /// Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dns_name = input;
             self
@@ -1539,6 +1730,7 @@ pub mod custom_routing_accelerator {
             self.status = Some(input);
             self
         }
+        /// <p>Describes the deployment status of the accelerator.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::CustomRoutingAcceleratorStatus>,
@@ -1547,25 +1739,27 @@ pub mod custom_routing_accelerator {
             self
         }
         /// <p>The date and time that the accelerator was created.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The date and time that the accelerator was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
         }
         /// <p>The date and time that the accelerator was last modified.</p>
-        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
             self
         }
+        /// <p>The date and time that the accelerator was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -1593,6 +1787,7 @@ impl CustomRoutingAccelerator {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1604,7 +1799,9 @@ impl CustomRoutingAccelerator {
     std::hash::Hash,
 )]
 pub enum CustomRoutingAcceleratorStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Deployed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1626,6 +1823,7 @@ impl std::str::FromStr for CustomRoutingAcceleratorStatus {
     }
 }
 impl CustomRoutingAcceleratorStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CustomRoutingAcceleratorStatus::Deployed => "DEPLOYED",
@@ -1633,6 +1831,7 @@ impl CustomRoutingAcceleratorStatus {
             CustomRoutingAcceleratorStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEPLOYED", "IN_PROGRESS"]
     }
@@ -1675,16 +1874,23 @@ pub mod ip_set {
             self.ip_family = Some(input.into());
             self
         }
+        /// <p>The types of IP addresses included in this IP set.</p>
         pub fn set_ip_family(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_family = input;
             self
         }
+        /// Appends an item to `ip_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
+        ///
+        /// <p>The array of IP addresses in the IP address set. An IP address set can have a maximum of two IP addresses.</p>
         pub fn ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ip_addresses.unwrap_or_default();
             v.push(input.into());
             self.ip_addresses = Some(v);
             self
         }
+        /// <p>The array of IP addresses in the IP address set. An IP address set can have a maximum of two IP addresses.</p>
         pub fn set_ip_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1708,6 +1914,7 @@ impl IpSet {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1719,6 +1926,7 @@ impl IpSet {
     std::hash::Hash,
 )]
 pub enum IpAddressType {
+    #[allow(missing_docs)] // documentation missing in model
     Ipv4,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1739,12 +1947,14 @@ impl std::str::FromStr for IpAddressType {
     }
 }
 impl IpAddressType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IpAddressType::Ipv4 => "IPV4",
             IpAddressType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["IPV4"]
     }
@@ -1803,6 +2013,10 @@ pub mod accelerator_attributes {
             self.flow_logs_enabled = Some(input);
             self
         }
+        /// <p>Indicates whether flow logs are enabled. The default value is false. If the value is true,
+        /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
+        /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_flow_logs_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.flow_logs_enabled = input;
             self
@@ -1814,6 +2028,9 @@ pub mod accelerator_attributes {
             self.flow_logs_s3_bucket = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
+        /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
+        /// bucket.</p>
         pub fn set_flow_logs_s3_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1830,6 +2047,11 @@ pub mod accelerator_attributes {
             self.flow_logs_s3_prefix = Some(input.into());
             self
         }
+        /// <p>The prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+        /// <code>FlowLogsEnabled</code> is <code>true</code>.</p>
+        /// <p>If you don’t specify a prefix, the flow logs are stored in the
+        /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+        /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
         pub fn set_flow_logs_s3_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1882,9 +2104,9 @@ pub struct Accelerator {
     /// <p>Describes the deployment status of the accelerator.</p>
     pub status: std::option::Option<crate::model::AcceleratorStatus>,
     /// <p>The date and time that the accelerator was created.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that the accelerator was last modified.</p>
-    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Accelerator {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1914,8 +2136,8 @@ pub mod accelerator {
         pub(crate) ip_sets: std::option::Option<std::vec::Vec<crate::model::IpSet>>,
         pub(crate) dns_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::AcceleratorStatus>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the accelerator.</p>
@@ -1923,6 +2145,7 @@ pub mod accelerator {
             self.accelerator_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the accelerator.</p>
         pub fn set_accelerator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1936,6 +2159,8 @@ pub mod accelerator {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the accelerator. The name must contain only alphanumeric characters or
+        /// hyphens (-), and must not begin or end with a hyphen.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1946,6 +2171,8 @@ pub mod accelerator {
             self.ip_address_type = Some(input);
             self
         }
+        /// <p>The value for the address type must be IPv4.
+        /// </p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -1959,16 +2186,24 @@ pub mod accelerator {
             self.enabled = Some(input);
             self
         }
+        /// <p>Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p>
+        /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
         }
+        /// Appends an item to `ip_sets`.
+        ///
+        /// To override the contents of this collection use [`set_ip_sets`](Self::set_ip_sets).
+        ///
+        /// <p>The static IP addresses that Global Accelerator associates with the accelerator.</p>
         pub fn ip_sets(mut self, input: impl Into<crate::model::IpSet>) -> Self {
             let mut v = self.ip_sets.unwrap_or_default();
             v.push(input.into());
             self.ip_sets = Some(v);
             self
         }
+        /// <p>The static IP addresses that Global Accelerator associates with the accelerator.</p>
         pub fn set_ip_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IpSet>>,
@@ -1986,6 +2221,12 @@ pub mod accelerator {
             self.dns_name = Some(input.into());
             self
         }
+        /// <p>The Domain Name System (DNS) name that Global Accelerator creates that points to your accelerator's static IP addresses. </p>
+        /// <p>The naming convention for the DNS name is the following: A lowercase letter a,
+        /// followed by a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example:
+        /// a1234567890abcdef.awsglobalaccelerator.com.</p>
+        /// <p>For more information about the default DNS name, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
+        /// Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dns_name = input;
             self
@@ -1995,6 +2236,7 @@ pub mod accelerator {
             self.status = Some(input);
             self
         }
+        /// <p>Describes the deployment status of the accelerator.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AcceleratorStatus>,
@@ -2003,25 +2245,27 @@ pub mod accelerator {
             self
         }
         /// <p>The date and time that the accelerator was created.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The date and time that the accelerator was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
         }
         /// <p>The date and time that the accelerator was last modified.</p>
-        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
             self
         }
+        /// <p>The date and time that the accelerator was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -2049,6 +2293,7 @@ impl Accelerator {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2060,7 +2305,9 @@ impl Accelerator {
     std::hash::Hash,
 )]
 pub enum AcceleratorStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Deployed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2082,6 +2329,7 @@ impl std::str::FromStr for AcceleratorStatus {
     }
 }
 impl AcceleratorStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AcceleratorStatus::Deployed => "DEPLOYED",
@@ -2089,6 +2337,7 @@ impl AcceleratorStatus {
             AcceleratorStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEPLOYED", "IN_PROGRESS"]
     }
@@ -2131,6 +2380,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>A string that contains a <code>Tag</code> key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -2140,6 +2390,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>A string that contains a <code>Tag</code> value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -2195,6 +2446,7 @@ pub mod cidr_authorization_context {
             self.message = Some(input.into());
             self
         }
+        /// <p>The plain-text authorization message for the prefix and account.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2204,6 +2456,7 @@ pub mod cidr_authorization_context {
             self.signature = Some(input.into());
             self
         }
+        /// <p>The signed authorization message for the prefix and account.</p>
         pub fn set_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.signature = input;
             self
@@ -2294,6 +2547,8 @@ pub mod destination_port_mapping {
             self.accelerator_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator
+        /// that you have port mappings for.</p>
         pub fn set_accelerator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2301,6 +2556,12 @@ pub mod destination_port_mapping {
             self.accelerator_arn = input;
             self
         }
+        /// Appends an item to `accelerator_socket_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_accelerator_socket_addresses`](Self::set_accelerator_socket_addresses).
+        ///
+        /// <p>The IP address/port combinations (sockets) that map to a given destination socket
+        /// address.</p>
         pub fn accelerator_socket_addresses(
             mut self,
             input: impl Into<crate::model::SocketAddress>,
@@ -2310,6 +2571,8 @@ pub mod destination_port_mapping {
             self.accelerator_socket_addresses = Some(v);
             self
         }
+        /// <p>The IP address/port combinations (sockets) that map to a given destination socket
+        /// address.</p>
         pub fn set_accelerator_socket_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SocketAddress>>,
@@ -2322,6 +2585,7 @@ pub mod destination_port_mapping {
             self.endpoint_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
         pub fn set_endpoint_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2334,6 +2598,7 @@ pub mod destination_port_mapping {
             self.endpoint_id = Some(input.into());
             self
         }
+        /// <p>The ID for the virtual private cloud (VPC) subnet.</p>
         pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_id = input;
             self
@@ -2343,6 +2608,7 @@ pub mod destination_port_mapping {
             self.endpoint_group_region = Some(input.into());
             self
         }
+        /// <p>The AWS Region for the endpoint group.</p>
         pub fn set_endpoint_group_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2355,6 +2621,7 @@ pub mod destination_port_mapping {
             self.destination_socket_address = Some(input);
             self
         }
+        /// <p>The endpoint IP address/port combination for traffic received on the accelerator socket address.</p>
         pub fn set_destination_socket_address(
             mut self,
             input: std::option::Option<crate::model::SocketAddress>,
@@ -2367,6 +2634,7 @@ pub mod destination_port_mapping {
             self.ip_address_type = Some(input);
             self
         }
+        /// <p>The IP address type, which must be IPv4.</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -2383,6 +2651,8 @@ pub mod destination_port_mapping {
             self.destination_traffic_state = Some(input);
             self
         }
+        /// <p>Indicates whether or not a port mapping destination can receive traffic. The value is either ALLOW, if
+        /// traffic is allowed to the destination, or DENY, if traffic is not allowed to the destination.</p>
         pub fn set_destination_traffic_state(
             mut self,
             input: std::option::Option<crate::model::CustomRoutingDestinationTrafficState>,
@@ -2412,6 +2682,7 @@ impl DestinationPortMapping {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2423,7 +2694,9 @@ impl DestinationPortMapping {
     std::hash::Hash,
 )]
 pub enum CustomRoutingDestinationTrafficState {
+    #[allow(missing_docs)] // documentation missing in model
     Allow,
+    #[allow(missing_docs)] // documentation missing in model
     Deny,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2445,6 +2718,7 @@ impl std::str::FromStr for CustomRoutingDestinationTrafficState {
     }
 }
 impl CustomRoutingDestinationTrafficState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CustomRoutingDestinationTrafficState::Allow => "ALLOW",
@@ -2452,6 +2726,7 @@ impl CustomRoutingDestinationTrafficState {
             CustomRoutingDestinationTrafficState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALLOW", "DENY"]
     }
@@ -2494,6 +2769,7 @@ pub mod socket_address {
             self.ip_address = Some(input.into());
             self
         }
+        /// <p>The IP address for the socket address.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_address = input;
             self
@@ -2503,6 +2779,7 @@ pub mod socket_address {
             self.port = Some(input);
             self
         }
+        /// <p>The port for the socket address.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -2581,6 +2858,7 @@ pub mod port_mapping {
             self.accelerator_port = Some(input);
             self
         }
+        /// <p>The accelerator port.</p>
         pub fn set_accelerator_port(mut self, input: std::option::Option<i32>) -> Self {
             self.accelerator_port = input;
             self
@@ -2590,6 +2868,7 @@ pub mod port_mapping {
             self.endpoint_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
         pub fn set_endpoint_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2602,6 +2881,7 @@ pub mod port_mapping {
             self.endpoint_id = Some(input.into());
             self
         }
+        /// <p>The IP address of the VPC subnet (the subnet ID).</p>
         pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_id = input;
             self
@@ -2611,6 +2891,7 @@ pub mod port_mapping {
             self.destination_socket_address = Some(input);
             self
         }
+        /// <p>The EC2 instance IP address and port number in the virtual private cloud (VPC) subnet.</p>
         pub fn set_destination_socket_address(
             mut self,
             input: std::option::Option<crate::model::SocketAddress>,
@@ -2618,12 +2899,18 @@ pub mod port_mapping {
             self.destination_socket_address = input;
             self
         }
+        /// Appends an item to `protocols`.
+        ///
+        /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
+        ///
+        /// <p>The protocols supported by the endpoint group.</p>
         pub fn protocols(mut self, input: impl Into<crate::model::CustomRoutingProtocol>) -> Self {
             let mut v = self.protocols.unwrap_or_default();
             v.push(input.into());
             self.protocols = Some(v);
             self
         }
+        /// <p>The protocols supported by the endpoint group.</p>
         pub fn set_protocols(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CustomRoutingProtocol>>,
@@ -2640,6 +2927,8 @@ pub mod port_mapping {
             self.destination_traffic_state = Some(input);
             self
         }
+        /// <p>Indicates whether or not a port mapping destination can receive traffic. The value is either ALLOW, if
+        /// traffic is allowed to the destination, or DENY, if traffic is not allowed to the destination.</p>
         pub fn set_destination_traffic_state(
             mut self,
             input: std::option::Option<crate::model::CustomRoutingDestinationTrafficState>,
@@ -2667,6 +2956,7 @@ impl PortMapping {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2678,7 +2968,9 @@ impl PortMapping {
     std::hash::Hash,
 )]
 pub enum CustomRoutingProtocol {
+    #[allow(missing_docs)] // documentation missing in model
     Tcp,
+    #[allow(missing_docs)] // documentation missing in model
     Udp,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2700,6 +2992,7 @@ impl std::str::FromStr for CustomRoutingProtocol {
     }
 }
 impl CustomRoutingProtocol {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CustomRoutingProtocol::Tcp => "TCP",
@@ -2707,6 +3000,7 @@ impl CustomRoutingProtocol {
             CustomRoutingProtocol::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["TCP", "UDP"]
     }
@@ -2764,6 +3058,7 @@ pub mod custom_routing_endpoint_group {
             self.endpoint_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
         pub fn set_endpoint_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2776,6 +3071,7 @@ pub mod custom_routing_endpoint_group {
             self.endpoint_group_region = Some(input.into());
             self
         }
+        /// <p>The AWS Region where the endpoint group is located.</p>
         pub fn set_endpoint_group_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2783,6 +3079,12 @@ pub mod custom_routing_endpoint_group {
             self.endpoint_group_region = input;
             self
         }
+        /// Appends an item to `destination_descriptions`.
+        ///
+        /// To override the contents of this collection use [`set_destination_descriptions`](Self::set_destination_descriptions).
+        ///
+        /// <p>For a custom routing accelerator, describes the port range and protocol for all endpoints
+        /// (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
         pub fn destination_descriptions(
             mut self,
             input: impl Into<crate::model::CustomRoutingDestinationDescription>,
@@ -2792,6 +3094,8 @@ pub mod custom_routing_endpoint_group {
             self.destination_descriptions = Some(v);
             self
         }
+        /// <p>For a custom routing accelerator, describes the port range and protocol for all endpoints
+        /// (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
         pub fn set_destination_descriptions(
             mut self,
             input: std::option::Option<
@@ -2801,6 +3105,12 @@ pub mod custom_routing_endpoint_group {
             self.destination_descriptions = input;
             self
         }
+        /// Appends an item to `endpoint_descriptions`.
+        ///
+        /// To override the contents of this collection use [`set_endpoint_descriptions`](Self::set_endpoint_descriptions).
+        ///
+        /// <p>For a custom routing accelerator, describes the endpoints (virtual private cloud subnets) in an
+        /// endpoint group to accept client traffic on.</p>
         pub fn endpoint_descriptions(
             mut self,
             input: impl Into<crate::model::CustomRoutingEndpointDescription>,
@@ -2810,6 +3120,8 @@ pub mod custom_routing_endpoint_group {
             self.endpoint_descriptions = Some(v);
             self
         }
+        /// <p>For a custom routing accelerator, describes the endpoints (virtual private cloud subnets) in an
+        /// endpoint group to accept client traffic on.</p>
         pub fn set_endpoint_descriptions(
             mut self,
             input: std::option::Option<
@@ -2868,6 +3180,8 @@ pub mod custom_routing_endpoint_description {
             self.endpoint_id = Some(input.into());
             self
         }
+        /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC)
+        /// subnet ID. </p>
         pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_id = input;
             self
@@ -2924,6 +3238,7 @@ pub mod custom_routing_destination_description {
             self.from_port = Some(input);
             self
         }
+        /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
         pub fn set_from_port(mut self, input: std::option::Option<i32>) -> Self {
             self.from_port = input;
             self
@@ -2933,16 +3248,23 @@ pub mod custom_routing_destination_description {
             self.to_port = Some(input);
             self
         }
+        /// <p>The last port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
         pub fn set_to_port(mut self, input: std::option::Option<i32>) -> Self {
             self.to_port = input;
             self
         }
+        /// Appends an item to `protocols`.
+        ///
+        /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
+        ///
+        /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
         pub fn protocols(mut self, input: impl Into<crate::model::Protocol>) -> Self {
             let mut v = self.protocols.unwrap_or_default();
             v.push(input.into());
             self.protocols = Some(v);
             self
         }
+        /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
         pub fn set_protocols(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
@@ -3005,6 +3327,7 @@ pub mod custom_routing_destination_configuration {
             self.from_port = Some(input);
             self
         }
+        /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
         pub fn set_from_port(mut self, input: std::option::Option<i32>) -> Self {
             self.from_port = input;
             self
@@ -3014,16 +3337,23 @@ pub mod custom_routing_destination_configuration {
             self.to_port = Some(input);
             self
         }
+        /// <p>The last port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
         pub fn set_to_port(mut self, input: std::option::Option<i32>) -> Self {
             self.to_port = input;
             self
         }
+        /// Appends an item to `protocols`.
+        ///
+        /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
+        ///
+        /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
         pub fn protocols(mut self, input: impl Into<crate::model::CustomRoutingProtocol>) -> Self {
             let mut v = self.protocols.unwrap_or_default();
             v.push(input.into());
             self.protocols = Some(v);
             self
         }
+        /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
         pub fn set_protocols(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CustomRoutingProtocol>>,
@@ -3078,6 +3408,8 @@ pub mod custom_routing_endpoint_configuration {
             self.endpoint_id = Some(input.into());
             self
         }
+        /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC)
+        /// subnet ID. </p>
         pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_id = input;
             self

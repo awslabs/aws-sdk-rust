@@ -10,6 +10,11 @@ pub mod batch_acknowledge_alarm_input {
             std::option::Option<std::vec::Vec<crate::model::AcknowledgeAlarmActionRequest>>,
     }
     impl Builder {
+        /// Appends an item to `acknowledge_action_requests`.
+        ///
+        /// To override the contents of this collection use [`set_acknowledge_action_requests`](Self::set_acknowledge_action_requests).
+        ///
+        /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
         pub fn acknowledge_action_requests(
             mut self,
             input: impl Into<crate::model::AcknowledgeAlarmActionRequest>,
@@ -19,6 +24,7 @@ pub mod batch_acknowledge_alarm_input {
             self.acknowledge_action_requests = Some(v);
             self
         }
+        /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
         pub fn set_acknowledge_action_requests(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AcknowledgeAlarmActionRequest>>,
@@ -31,7 +37,7 @@ pub mod batch_acknowledge_alarm_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchAcknowledgeAlarmInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchAcknowledgeAlarmInput {
                 acknowledge_action_requests: self.acknowledge_action_requests,
@@ -50,16 +56,16 @@ impl BatchAcknowledgeAlarmInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchAcknowledgeAlarm,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchAcknowledgeAlarmInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/alarms/acknowledge").expect("formatting should succeed");
             Ok(())
         }
@@ -67,7 +73,7 @@ impl BatchAcknowledgeAlarmInput {
         fn update_http_builder(
             input: &crate::input::BatchAcknowledgeAlarmInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -76,27 +82,29 @@ impl BatchAcknowledgeAlarmInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchAcknowledgeAlarmInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_acknowledge_alarm(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -119,15 +127,15 @@ impl BatchAcknowledgeAlarmInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchAcknowledgeAlarm::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchAcknowledgeAlarm",
             "ioteventsdata",
         ));
@@ -136,10 +144,10 @@ impl BatchAcknowledgeAlarmInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -163,6 +171,11 @@ pub mod batch_disable_alarm_input {
             std::option::Option<std::vec::Vec<crate::model::DisableAlarmActionRequest>>,
     }
     impl Builder {
+        /// Appends an item to `disable_action_requests`.
+        ///
+        /// To override the contents of this collection use [`set_disable_action_requests`](Self::set_disable_action_requests).
+        ///
+        /// <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
         pub fn disable_action_requests(
             mut self,
             input: impl Into<crate::model::DisableAlarmActionRequest>,
@@ -172,6 +185,7 @@ pub mod batch_disable_alarm_input {
             self.disable_action_requests = Some(v);
             self
         }
+        /// <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
         pub fn set_disable_action_requests(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DisableAlarmActionRequest>>,
@@ -184,7 +198,7 @@ pub mod batch_disable_alarm_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchDisableAlarmInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchDisableAlarmInput {
                 disable_action_requests: self.disable_action_requests,
@@ -203,16 +217,16 @@ impl BatchDisableAlarmInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchDisableAlarm,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchDisableAlarmInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/alarms/disable").expect("formatting should succeed");
             Ok(())
         }
@@ -220,7 +234,7 @@ impl BatchDisableAlarmInput {
         fn update_http_builder(
             input: &crate::input::BatchDisableAlarmInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -229,27 +243,27 @@ impl BatchDisableAlarmInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchDisableAlarmInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_disable_alarm(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -272,15 +286,15 @@ impl BatchDisableAlarmInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchDisableAlarm::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchDisableAlarm",
             "ioteventsdata",
         ));
@@ -289,10 +303,10 @@ impl BatchDisableAlarmInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -316,6 +330,11 @@ pub mod batch_enable_alarm_input {
             std::option::Option<std::vec::Vec<crate::model::EnableAlarmActionRequest>>,
     }
     impl Builder {
+        /// Appends an item to `enable_action_requests`.
+        ///
+        /// To override the contents of this collection use [`set_enable_action_requests`](Self::set_enable_action_requests).
+        ///
+        /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
         pub fn enable_action_requests(
             mut self,
             input: impl Into<crate::model::EnableAlarmActionRequest>,
@@ -325,6 +344,7 @@ pub mod batch_enable_alarm_input {
             self.enable_action_requests = Some(v);
             self
         }
+        /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
         pub fn set_enable_action_requests(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnableAlarmActionRequest>>,
@@ -337,7 +357,7 @@ pub mod batch_enable_alarm_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchEnableAlarmInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchEnableAlarmInput {
                 enable_action_requests: self.enable_action_requests,
@@ -356,16 +376,16 @@ impl BatchEnableAlarmInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchEnableAlarm,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchEnableAlarmInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/alarms/enable").expect("formatting should succeed");
             Ok(())
         }
@@ -373,7 +393,7 @@ impl BatchEnableAlarmInput {
         fn update_http_builder(
             input: &crate::input::BatchEnableAlarmInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -382,27 +402,27 @@ impl BatchEnableAlarmInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchEnableAlarmInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_enable_alarm(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -425,15 +445,15 @@ impl BatchEnableAlarmInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchEnableAlarm::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchEnableAlarm",
             "ioteventsdata",
         ));
@@ -442,10 +462,10 @@ impl BatchEnableAlarmInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -468,12 +488,22 @@ pub mod batch_put_message_input {
         pub(crate) messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
     }
     impl Builder {
+        /// Appends an item to `messages`.
+        ///
+        /// To override the contents of this collection use [`set_messages`](Self::set_messages).
+        ///
+        /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId":
+        /// "string", "inputName": "string", "payload": "string"}'</code>
+        /// </p>
         pub fn messages(mut self, input: impl Into<crate::model::Message>) -> Self {
             let mut v = self.messages.unwrap_or_default();
             v.push(input.into());
             self.messages = Some(v);
             self
         }
+        /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId":
+        /// "string", "inputName": "string", "payload": "string"}'</code>
+        /// </p>
         pub fn set_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Message>>,
@@ -486,7 +516,7 @@ pub mod batch_put_message_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchPutMessageInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchPutMessageInput {
                 messages: self.messages,
@@ -505,16 +535,16 @@ impl BatchPutMessageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchPutMessage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchPutMessageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/inputs/messages").expect("formatting should succeed");
             Ok(())
         }
@@ -522,7 +552,7 @@ impl BatchPutMessageInput {
         fn update_http_builder(
             input: &crate::input::BatchPutMessageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -531,27 +561,27 @@ impl BatchPutMessageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchPutMessageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_put_message(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -574,15 +604,15 @@ impl BatchPutMessageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchPutMessage::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchPutMessage",
             "ioteventsdata",
         ));
@@ -591,10 +621,10 @@ impl BatchPutMessageInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -618,6 +648,11 @@ pub mod batch_reset_alarm_input {
             std::option::Option<std::vec::Vec<crate::model::ResetAlarmActionRequest>>,
     }
     impl Builder {
+        /// Appends an item to `reset_action_requests`.
+        ///
+        /// To override the contents of this collection use [`set_reset_action_requests`](Self::set_reset_action_requests).
+        ///
+        /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
         pub fn reset_action_requests(
             mut self,
             input: impl Into<crate::model::ResetAlarmActionRequest>,
@@ -627,6 +662,7 @@ pub mod batch_reset_alarm_input {
             self.reset_action_requests = Some(v);
             self
         }
+        /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
         pub fn set_reset_action_requests(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResetAlarmActionRequest>>,
@@ -639,7 +675,7 @@ pub mod batch_reset_alarm_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchResetAlarmInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchResetAlarmInput {
                 reset_action_requests: self.reset_action_requests,
@@ -658,16 +694,16 @@ impl BatchResetAlarmInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchResetAlarm,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchResetAlarmInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/alarms/reset").expect("formatting should succeed");
             Ok(())
         }
@@ -675,7 +711,7 @@ impl BatchResetAlarmInput {
         fn update_http_builder(
             input: &crate::input::BatchResetAlarmInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -684,27 +720,27 @@ impl BatchResetAlarmInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchResetAlarmInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_reset_alarm(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -727,15 +763,15 @@ impl BatchResetAlarmInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchResetAlarm::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchResetAlarm",
             "ioteventsdata",
         ));
@@ -744,10 +780,10 @@ impl BatchResetAlarmInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -771,6 +807,11 @@ pub mod batch_snooze_alarm_input {
             std::option::Option<std::vec::Vec<crate::model::SnoozeAlarmActionRequest>>,
     }
     impl Builder {
+        /// Appends an item to `snooze_action_requests`.
+        ///
+        /// To override the contents of this collection use [`set_snooze_action_requests`](Self::set_snooze_action_requests).
+        ///
+        /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
         pub fn snooze_action_requests(
             mut self,
             input: impl Into<crate::model::SnoozeAlarmActionRequest>,
@@ -780,6 +821,7 @@ pub mod batch_snooze_alarm_input {
             self.snooze_action_requests = Some(v);
             self
         }
+        /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
         pub fn set_snooze_action_requests(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SnoozeAlarmActionRequest>>,
@@ -792,7 +834,7 @@ pub mod batch_snooze_alarm_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchSnoozeAlarmInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchSnoozeAlarmInput {
                 snooze_action_requests: self.snooze_action_requests,
@@ -811,16 +853,16 @@ impl BatchSnoozeAlarmInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchSnoozeAlarm,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchSnoozeAlarmInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/alarms/snooze").expect("formatting should succeed");
             Ok(())
         }
@@ -828,7 +870,7 @@ impl BatchSnoozeAlarmInput {
         fn update_http_builder(
             input: &crate::input::BatchSnoozeAlarmInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -837,27 +879,27 @@ impl BatchSnoozeAlarmInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchSnoozeAlarmInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_snooze_alarm(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -880,15 +922,15 @@ impl BatchSnoozeAlarmInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchSnoozeAlarm::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchSnoozeAlarm",
             "ioteventsdata",
         ));
@@ -897,10 +939,10 @@ impl BatchSnoozeAlarmInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -924,12 +966,18 @@ pub mod batch_update_detector_input {
             std::option::Option<std::vec::Vec<crate::model::UpdateDetectorRequest>>,
     }
     impl Builder {
+        /// Appends an item to `detectors`.
+        ///
+        /// To override the contents of this collection use [`set_detectors`](Self::set_detectors).
+        ///
+        /// <p>The list of detectors (instances) to update, along with the values to update.</p>
         pub fn detectors(mut self, input: impl Into<crate::model::UpdateDetectorRequest>) -> Self {
             let mut v = self.detectors.unwrap_or_default();
             v.push(input.into());
             self.detectors = Some(v);
             self
         }
+        /// <p>The list of detectors (instances) to update, along with the values to update.</p>
         pub fn set_detectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpdateDetectorRequest>>,
@@ -942,7 +990,7 @@ pub mod batch_update_detector_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchUpdateDetectorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchUpdateDetectorInput {
                 detectors: self.detectors,
@@ -961,16 +1009,16 @@ impl BatchUpdateDetectorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchUpdateDetector,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchUpdateDetectorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/detectors").expect("formatting should succeed");
             Ok(())
         }
@@ -978,7 +1026,7 @@ impl BatchUpdateDetectorInput {
         fn update_http_builder(
             input: &crate::input::BatchUpdateDetectorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -987,27 +1035,27 @@ impl BatchUpdateDetectorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchUpdateDetectorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_update_detector(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1030,15 +1078,15 @@ impl BatchUpdateDetectorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchUpdateDetector::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchUpdateDetector",
             "ioteventsdata",
         ));
@@ -1047,10 +1095,10 @@ impl BatchUpdateDetectorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1079,6 +1127,7 @@ pub mod describe_alarm_input {
             self.alarm_model_name = Some(input.into());
             self
         }
+        /// <p>The name of the alarm model.</p>
         pub fn set_alarm_model_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1092,6 +1141,8 @@ pub mod describe_alarm_input {
             self.key_value = Some(input.into());
             self
         }
+        /// <p>The value of the key used as a filter to select only the alarms associated with the
+        /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_value = input;
             self
@@ -1099,8 +1150,10 @@ pub mod describe_alarm_input {
         /// Consumes the builder and constructs a [`DescribeAlarmInput`](crate::input::DescribeAlarmInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeAlarmInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeAlarmInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeAlarmInput {
                 alarm_model_name: self.alarm_model_name,
                 key_value: self.key_value,
@@ -1119,27 +1172,27 @@ impl DescribeAlarmInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeAlarm,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeAlarmInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.alarm_model_name;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "alarm_model_name",
                         details: "cannot be empty or unset",
                     })?;
-            let alarm_model_name = smithy_http::label::fmt_string(input_1, false);
+            let alarm_model_name = aws_smithy_http::label::fmt_string(input_1, false);
             if alarm_model_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "alarm_model_name",
                     details: "cannot be empty or unset",
                 });
@@ -1153,16 +1206,16 @@ impl DescribeAlarmInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DescribeAlarmInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_2) = &_input.key_value {
-                query.push_kv("keyValue", &smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("keyValue", &aws_smithy_http::query::fmt_string(&inner_2));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeAlarmInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1172,23 +1225,23 @@ impl DescribeAlarmInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeAlarmInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1211,25 +1264,27 @@ impl DescribeAlarmInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeAlarm::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeAlarm",
-                    "ioteventsdata",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeAlarm::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeAlarm",
+            "ioteventsdata",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1259,6 +1314,8 @@ pub mod describe_detector_input {
             self.detector_model_name = Some(input.into());
             self
         }
+        /// <p>The name of the detector model whose detectors (instances) you want information
+        /// about.</p>
         pub fn set_detector_model_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1272,6 +1329,8 @@ pub mod describe_detector_input {
             self.key_value = Some(input.into());
             self
         }
+        /// <p>A filter used to limit results to detectors (instances) created because of the given key
+        /// ID.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_value = input;
             self
@@ -1281,7 +1340,7 @@ pub mod describe_detector_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeDetectorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeDetectorInput {
                 detector_model_name: self.detector_model_name,
@@ -1301,27 +1360,27 @@ impl DescribeDetectorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeDetector,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeDetectorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_3 = &_input.detector_model_name;
             let input_3 =
                 input_3
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_model_name",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_model_name = smithy_http::label::fmt_string(input_3, false);
+            let detector_model_name = aws_smithy_http::label::fmt_string(input_3, false);
             if detector_model_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_model_name",
                     details: "cannot be empty or unset",
                 });
@@ -1335,16 +1394,16 @@ impl DescribeDetectorInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DescribeDetectorInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_4) = &_input.key_value {
-                query.push_kv("keyValue", &smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("keyValue", &aws_smithy_http::query::fmt_string(&inner_4));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeDetectorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1354,23 +1413,23 @@ impl DescribeDetectorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeDetectorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1393,15 +1452,15 @@ impl DescribeDetectorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeDetector::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeDetector",
             "ioteventsdata",
         ));
@@ -1410,10 +1469,10 @@ impl DescribeDetectorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1443,6 +1502,7 @@ pub mod list_alarms_input {
             self.alarm_model_name = Some(input.into());
             self
         }
+        /// <p>The name of the alarm model.</p>
         pub fn set_alarm_model_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1455,6 +1515,7 @@ pub mod list_alarms_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token that you can use to return the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1464,6 +1525,7 @@ pub mod list_alarms_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to be returned per request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1471,8 +1533,10 @@ pub mod list_alarms_input {
         /// Consumes the builder and constructs a [`ListAlarmsInput`](crate::input::ListAlarmsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListAlarmsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListAlarmsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListAlarmsInput {
                 alarm_model_name: self.alarm_model_name,
                 next_token: self.next_token,
@@ -1492,27 +1556,27 @@ impl ListAlarmsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListAlarms,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListAlarmsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_5 = &_input.alarm_model_name;
             let input_5 =
                 input_5
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "alarm_model_name",
                         details: "cannot be empty or unset",
                     })?;
-            let alarm_model_name = smithy_http::label::fmt_string(input_5, false);
+            let alarm_model_name = aws_smithy_http::label::fmt_string(input_5, false);
             if alarm_model_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "alarm_model_name",
                     details: "cannot be empty or unset",
                 });
@@ -1526,14 +1590,14 @@ impl ListAlarmsInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListAlarmsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_6) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_6));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_6));
             }
             if let Some(inner_7) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_7).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_7).encode(),
                 );
             }
         }
@@ -1541,7 +1605,7 @@ impl ListAlarmsInput {
         fn update_http_builder(
             input: &crate::input::ListAlarmsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1551,23 +1615,23 @@ impl ListAlarmsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListAlarmsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1590,25 +1654,27 @@ impl ListAlarmsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListAlarms::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListAlarms",
-                    "ioteventsdata",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAlarms::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAlarms",
+            "ioteventsdata",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1639,6 +1705,7 @@ pub mod list_detectors_input {
             self.detector_model_name = Some(input.into());
             self
         }
+        /// <p>The name of the detector model whose detectors (instances) are listed.</p>
         pub fn set_detector_model_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1651,6 +1718,7 @@ pub mod list_detectors_input {
             self.state_name = Some(input.into());
             self
         }
+        /// <p>A filter that limits results to those detectors (instances) in the given state.</p>
         pub fn set_state_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state_name = input;
             self
@@ -1660,6 +1728,7 @@ pub mod list_detectors_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token that you can use to return the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1669,6 +1738,7 @@ pub mod list_detectors_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to be returned per request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1676,8 +1746,10 @@ pub mod list_detectors_input {
         /// Consumes the builder and constructs a [`ListDetectorsInput`](crate::input::ListDetectorsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListDetectorsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListDetectorsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListDetectorsInput {
                 detector_model_name: self.detector_model_name,
                 state_name: self.state_name,
@@ -1698,27 +1770,27 @@ impl ListDetectorsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListDetectors,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListDetectorsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_8 = &_input.detector_model_name;
             let input_8 =
                 input_8
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_model_name",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_model_name = smithy_http::label::fmt_string(input_8, false);
+            let detector_model_name = aws_smithy_http::label::fmt_string(input_8, false);
             if detector_model_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_model_name",
                     details: "cannot be empty or unset",
                 });
@@ -1732,17 +1804,17 @@ impl ListDetectorsInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListDetectorsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_9) = &_input.state_name {
-                query.push_kv("stateName", &smithy_http::query::fmt_string(&inner_9));
+                query.push_kv("stateName", &aws_smithy_http::query::fmt_string(&inner_9));
             }
             if let Some(inner_10) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_10));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_10));
             }
             if let Some(inner_11) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_11).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_11).encode(),
                 );
             }
         }
@@ -1750,7 +1822,7 @@ impl ListDetectorsInput {
         fn update_http_builder(
             input: &crate::input::ListDetectorsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1760,23 +1832,23 @@ impl ListDetectorsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListDetectorsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1799,25 +1871,27 @@ impl ListDetectorsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListDetectors::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListDetectors",
-                    "ioteventsdata",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDetectors::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDetectors",
+            "ioteventsdata",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1831,6 +1905,7 @@ impl ListDetectorsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDetectorsInput {
@@ -1854,6 +1929,7 @@ impl std::fmt::Debug for ListDetectorsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAlarmsInput {
@@ -1874,6 +1950,7 @@ impl std::fmt::Debug for ListAlarmsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDetectorInput {
@@ -1893,6 +1970,7 @@ impl std::fmt::Debug for DescribeDetectorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAlarmInput {
@@ -1911,6 +1989,7 @@ impl std::fmt::Debug for DescribeAlarmInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateDetectorInput {
@@ -1925,6 +2004,7 @@ impl std::fmt::Debug for BatchUpdateDetectorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchSnoozeAlarmInput {
@@ -1940,6 +2020,7 @@ impl std::fmt::Debug for BatchSnoozeAlarmInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchResetAlarmInput {
@@ -1955,6 +2036,7 @@ impl std::fmt::Debug for BatchResetAlarmInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutMessageInput {
@@ -1971,6 +2053,7 @@ impl std::fmt::Debug for BatchPutMessageInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchEnableAlarmInput {
@@ -1986,6 +2069,7 @@ impl std::fmt::Debug for BatchEnableAlarmInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDisableAlarmInput {
@@ -2001,6 +2085,7 @@ impl std::fmt::Debug for BatchDisableAlarmInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchAcknowledgeAlarmInput {

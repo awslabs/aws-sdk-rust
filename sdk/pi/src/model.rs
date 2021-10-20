@@ -32,6 +32,7 @@ pub mod metric_key_data_points {
             self.key = Some(input);
             self
         }
+        /// <p>The dimension(s) to which the data points apply.</p>
         pub fn set_key(
             mut self,
             input: std::option::Option<crate::model::ResponseResourceMetricKey>,
@@ -39,12 +40,18 @@ pub mod metric_key_data_points {
             self.key = input;
             self
         }
+        /// Appends an item to `data_points`.
+        ///
+        /// To override the contents of this collection use [`set_data_points`](Self::set_data_points).
+        ///
+        /// <p>An array of timestamp-value pairs, representing measurements over a period of time.</p>
         pub fn data_points(mut self, input: impl Into<crate::model::DataPoint>) -> Self {
             let mut v = self.data_points.unwrap_or_default();
             v.push(input.into());
             self.data_points = Some(v);
             self
         }
+        /// <p>An array of timestamp-value pairs, representing measurements over a period of time.</p>
         pub fn set_data_points(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataPoint>>,
@@ -73,7 +80,7 @@ impl MetricKeyDataPoints {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataPoint {
     /// <p>The time, in epoch format, associated with a particular <code>Value</code>.</p>
-    pub timestamp: std::option::Option<smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The actual value associated with a particular <code>Timestamp</code>.</p>
     pub value: std::option::Option<f64>,
 }
@@ -91,16 +98,20 @@ pub mod data_point {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) value: std::option::Option<f64>,
     }
     impl Builder {
         /// <p>The time, in epoch format, associated with a particular <code>Value</code>.</p>
-        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time, in epoch format, associated with a particular <code>Value</code>.</p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.timestamp = input;
             self
         }
@@ -109,6 +120,7 @@ pub mod data_point {
             self.value = Some(input);
             self
         }
+        /// <p>The actual value associated with a particular <code>Timestamp</code>.</p>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
             self.value = input;
             self
@@ -135,6 +147,7 @@ impl DataPoint {
 pub struct ResponseResourceMetricKey {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -178,6 +191,7 @@ pub mod response_resource_metric_key {
     impl Builder {
         /// <p>The name of a Performance Insights metric to be measured.</p>
         /// <p>Valid values for <code>Metric</code> are:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -198,10 +212,34 @@ pub mod response_resource_metric_key {
             self.metric = Some(input.into());
             self
         }
+        /// <p>The name of a Performance Insights metric to be measured.</p>
+        /// <p>Valid values for <code>Metric</code> are:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>db.load.avg</code> - a scaled representation of the number of active sessions
+        /// for the database engine.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.sampledload.avg</code> - the raw number of active sessions for the
+        /// database engine.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code>
+        /// are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code>
+        /// showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>.
+        /// For most use cases, you can query <code>db.load.avg</code> only. </p>
         pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric = input;
             self
         }
+        /// Adds a key-value pair to `dimensions`.
+        ///
+        /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
+        ///
+        /// <p>The valid dimensions for the metric.</p>
         pub fn dimensions(
             mut self,
             k: impl Into<std::string::String>,
@@ -212,6 +250,7 @@ pub mod response_resource_metric_key {
             self.dimensions = Some(hash_map);
             self
         }
+        /// <p>The valid dimensions for the metric.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<
@@ -246,6 +285,7 @@ impl ResponseResourceMetricKey {
 pub struct MetricQuery {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -304,6 +344,7 @@ pub mod metric_query {
     impl Builder {
         /// <p>The name of a Performance Insights metric to be measured.</p>
         /// <p>Valid values for <code>Metric</code> are:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -324,6 +365,25 @@ pub mod metric_query {
             self.metric = Some(input.into());
             self
         }
+        /// <p>The name of a Performance Insights metric to be measured.</p>
+        /// <p>Valid values for <code>Metric</code> are:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>db.load.avg</code> - a scaled representation of the number of active sessions
+        /// for the database engine.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.sampledload.avg</code> - the raw number of active sessions for the
+        /// database engine.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code>
+        /// are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code>
+        /// showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>.
+        /// For most use cases, you can query <code>db.load.avg</code> only. </p>
         pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric = input;
             self
@@ -336,6 +396,10 @@ pub mod metric_query {
             self.group_by = Some(input);
             self
         }
+        /// <p>A specification for how to aggregate the data points from a query result. You must
+        /// specify a valid dimension group.  Performance Insights will return all of the dimensions within that group,
+        /// unless you provide the names of specific dimensions within that group. You can also request
+        /// that Performance Insights return a limited number of values for a dimension.</p>
         pub fn set_group_by(
             mut self,
             input: std::option::Option<crate::model::DimensionGroup>,
@@ -343,6 +407,19 @@ pub mod metric_query {
             self.group_by = input;
             self
         }
+        /// Adds a key-value pair to `filter`.
+        ///
+        /// To override the contents of this collection use [`set_filter`](Self::set_filter).
+        ///
+        /// <p>One or more filters to apply in the request.  Restrictions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p>
+        /// </li>
+        /// <li>
+        /// <p>A single filter for any other dimension in this dimension group.</p>
+        /// </li>
+        /// </ul>
         pub fn filter(
             mut self,
             k: impl Into<std::string::String>,
@@ -353,6 +430,15 @@ pub mod metric_query {
             self.filter = Some(hash_map);
             self
         }
+        /// <p>One or more filters to apply in the request.  Restrictions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p>
+        /// </li>
+        /// <li>
+        /// <p>A single filter for any other dimension in this dimension group.</p>
+        /// </li>
+        /// </ul>
         pub fn set_filter(
             mut self,
             input: std::option::Option<
@@ -391,6 +477,7 @@ impl MetricQuery {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DimensionGroup {
     /// <p>The name of the dimension group.  Valid values are:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -436,6 +523,7 @@ pub struct DimensionGroup {
     /// then it signifies that all of the dimensions in the group were requested, or are present in
     /// the response.</p>
     /// <p>Valid values for elements in the <code>Dimensions</code> array are:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -535,6 +623,7 @@ pub mod dimension_group {
     }
     impl Builder {
         /// <p>The name of the dimension group.  Valid values are:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -579,16 +668,220 @@ pub mod dimension_group {
             self.group = Some(input.into());
             self
         }
+        /// <p>The name of the dimension group.  Valid values are:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>db</code> - The name of the database to which the client is connected (only Aurora PostgreSQL, RDS
+        /// PostgreSQL, Aurora MySQL, RDS MySQL, and MariaDB)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.application</code> - The name of the application that is connected to the database (only Aurora
+        /// PostgreSQL and RDS PostgreSQL)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.host</code> - The host name of the connected client (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.session_type</code> - The type of the current session (only Aurora PostgreSQL and RDS PostgreSQL)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.sql</code> - The SQL that is currently executing (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.sql_tokenized</code> - The SQL digest (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.wait_event</code> - The event for which the database backend is waiting  (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.wait_event_type</code> - The type of event for which the database backend is waiting (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.user</code> - The user logged in to the database (all engines)</p>
+        /// </li>
+        /// </ul>
         pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group = input;
             self
         }
+        /// Appends an item to `dimensions`.
+        ///
+        /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
+        ///
+        /// <p>A list of specific dimensions from a dimension group. If this parameter is not present,
+        /// then it signifies that all of the dimensions in the group were requested, or are present in
+        /// the response.</p>
+        /// <p>Valid values for elements in the <code>Dimensions</code> array are:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>db.application.name</code> - The name of the application that is connected to the database (only
+        /// Aurora PostgreSQL and RDS PostgreSQL)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.host.id</code> - The host ID of the connected client (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.host.name</code> - The host name of the connected client (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.name</code> - The name of the database to which the client is connected (only Aurora
+        /// PostgreSQL, RDS PostgreSQL, Aurora MySQL, RDS MySQL, and MariaDB)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.session_type.name</code> - The type of the current session (only Aurora PostgreSQL and RDS PostgreSQL)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.sql.id</code> - The SQL ID generated by Performance Insights (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.sql.db_id</code> - The SQL ID generated by the database (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.sql.statement</code> - The SQL text that is being executed (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.sql.tokenized_id</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.sql_tokenized.id</code> - The SQL digest ID generated by Performance Insights (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.sql_tokenized.db_id</code> - SQL digest ID generated by the database (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.sql_tokenized.statement</code> - The SQL digest text (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.user.id</code> - The ID of the user logged in to the database (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.user.name</code> - The name of the user logged in to the database (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.wait_event.name</code> - The event for which the backend is waiting (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.wait_event.type</code> - The type of event for which the backend is waiting (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.wait_event_type.name</code> - The name of the event type for which the backend is waiting (all
+        /// engines)</p>
+        /// </li>
+        /// </ul>
         pub fn dimensions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
             v.push(input.into());
             self.dimensions = Some(v);
             self
         }
+        /// <p>A list of specific dimensions from a dimension group. If this parameter is not present,
+        /// then it signifies that all of the dimensions in the group were requested, or are present in
+        /// the response.</p>
+        /// <p>Valid values for elements in the <code>Dimensions</code> array are:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>db.application.name</code> - The name of the application that is connected to the database (only
+        /// Aurora PostgreSQL and RDS PostgreSQL)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.host.id</code> - The host ID of the connected client (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.host.name</code> - The host name of the connected client (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.name</code> - The name of the database to which the client is connected (only Aurora
+        /// PostgreSQL, RDS PostgreSQL, Aurora MySQL, RDS MySQL, and MariaDB)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.session_type.name</code> - The type of the current session (only Aurora PostgreSQL and RDS PostgreSQL)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.sql.id</code> - The SQL ID generated by Performance Insights (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.sql.db_id</code> - The SQL ID generated by the database (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.sql.statement</code> - The SQL text that is being executed (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.sql.tokenized_id</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.sql_tokenized.id</code> - The SQL digest ID generated by Performance Insights (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.sql_tokenized.db_id</code> - SQL digest ID generated by the database (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.sql_tokenized.statement</code> - The SQL digest text (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.user.id</code> - The ID of the user logged in to the database (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.user.name</code> - The name of the user logged in to the database (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.wait_event.name</code> - The event for which the backend is waiting (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.wait_event.type</code> - The type of event for which the backend is waiting (all engines)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.wait_event_type.name</code> - The name of the event type for which the backend is waiting (all
+        /// engines)</p>
+        /// </li>
+        /// </ul>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -601,6 +894,7 @@ pub mod dimension_group {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of items to fetch for this dimension group.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -622,6 +916,7 @@ impl DimensionGroup {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -633,6 +928,7 @@ impl DimensionGroup {
     std::hash::Hash,
 )]
 pub enum ServiceType {
+    #[allow(missing_docs)] // documentation missing in model
     Rds,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -653,12 +949,14 @@ impl std::str::FromStr for ServiceType {
     }
 }
 impl ServiceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceType::Rds => "RDS",
             ServiceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["RDS"]
     }
@@ -724,6 +1022,8 @@ pub mod dimension_key_detail {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the dimension detail data. For the <code>db.sql.statement</code> dimension, this value is either the
+        /// full or truncated SQL query, depending on the return status.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -734,6 +1034,8 @@ pub mod dimension_key_detail {
             self.dimension = Some(input.into());
             self
         }
+        /// <p>The full name of the dimension. The full name includes the group name and key name. The only valid value is
+        /// <code>db.sql.statement</code>. </p>
         pub fn set_dimension(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dimension = input;
             self
@@ -759,6 +1061,23 @@ pub mod dimension_key_detail {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the dimension detail data. Possible values include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AVAILABLE</code> - The dimension detail data is ready to be retrieved.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because more processing time is
+        /// required. If the requested detail data for <code>db.sql.statement</code> has the status <code>PROCESSING</code>,
+        /// Performance Insights returns the truncated query.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UNAVAILABLE</code> - The dimension detail data could not be collected successfully.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DetailStatus>,
@@ -783,6 +1102,7 @@ impl DimensionKeyDetail {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -794,8 +1114,11 @@ impl DimensionKeyDetail {
     std::hash::Hash,
 )]
 pub enum DetailStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Processing,
+    #[allow(missing_docs)] // documentation missing in model
     Unavailable,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -818,6 +1141,7 @@ impl std::str::FromStr for DetailStatus {
     }
 }
 impl DetailStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DetailStatus::Available => "AVAILABLE",
@@ -826,6 +1150,7 @@ impl DetailStatus {
             DetailStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "PROCESSING", "UNAVAILABLE"]
     }
@@ -871,6 +1196,11 @@ pub mod dimension_key_description {
         pub(crate) partitions: std::option::Option<std::vec::Vec<f64>>,
     }
     impl Builder {
+        /// Adds a key-value pair to `dimensions`.
+        ///
+        /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
+        ///
+        /// <p>A map of name-value pairs for the dimensions in the group.</p>
         pub fn dimensions(
             mut self,
             k: impl Into<std::string::String>,
@@ -881,6 +1211,7 @@ pub mod dimension_key_description {
             self.dimensions = Some(hash_map);
             self
         }
+        /// <p>A map of name-value pairs for the dimensions in the group.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<
@@ -895,16 +1226,23 @@ pub mod dimension_key_description {
             self.total = Some(input);
             self
         }
+        /// <p>The aggregated metric value for the dimension(s), over the requested time range.</p>
         pub fn set_total(mut self, input: std::option::Option<f64>) -> Self {
             self.total = input;
             self
         }
+        /// Appends an item to `partitions`.
+        ///
+        /// To override the contents of this collection use [`set_partitions`](Self::set_partitions).
+        ///
+        /// <p>If <code>PartitionBy</code> was specified, <code>PartitionKeys</code> contains the dimensions that were.</p>
         pub fn partitions(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.partitions.unwrap_or_default();
             v.push(input.into());
             self.partitions = Some(v);
             self
         }
+        /// <p>If <code>PartitionBy</code> was specified, <code>PartitionKeys</code> contains the dimensions that were.</p>
         pub fn set_partitions(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.partitions = input;
             self
@@ -954,6 +1292,11 @@ pub mod response_partition_key {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `dimensions`.
+        ///
+        /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
+        ///
+        /// <p>A dimension map that contains the dimension(s) for this partition.</p>
         pub fn dimensions(
             mut self,
             k: impl Into<std::string::String>,
@@ -964,6 +1307,7 @@ pub mod response_partition_key {
             self.dimensions = Some(hash_map);
             self
         }
+        /// <p>A dimension map that contains the dimension(s) for this partition.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<

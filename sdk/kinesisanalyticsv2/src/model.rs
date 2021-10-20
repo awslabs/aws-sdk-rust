@@ -42,6 +42,7 @@ pub mod application_maintenance_configuration_description {
             self.application_maintenance_window_start_time = Some(input.into());
             self
         }
+        /// <p>The start time for the maintenance window.</p>
         pub fn set_application_maintenance_window_start_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -57,6 +58,7 @@ pub mod application_maintenance_configuration_description {
             self.application_maintenance_window_end_time = Some(input.into());
             self
         }
+        /// <p>The end time for the maintenance window.</p>
         pub fn set_application_maintenance_window_end_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -117,6 +119,7 @@ pub mod application_maintenance_configuration_update {
             self.application_maintenance_window_start_time_update = Some(input.into());
             self
         }
+        /// <p>The updated start time for the maintenance window.</p>
         pub fn set_application_maintenance_window_start_time_update(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -161,9 +164,9 @@ pub struct ApplicationDetail {
     /// <code>ApplicationVersionId</code> each time you update the application.</p>
     pub application_version_id: std::option::Option<i64>,
     /// <p>The current timestamp when the application was created.</p>
-    pub create_timestamp: std::option::Option<smithy_types::Instant>,
+    pub create_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The current timestamp when the application was last updated.</p>
-    pub last_update_timestamp: std::option::Option<smithy_types::Instant>,
+    pub last_update_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Describes details about the application code and starting parameters for a Kinesis Data Analytics application.</p>
     pub application_configuration_description:
         std::option::Option<crate::model::ApplicationConfigurationDescription>,
@@ -240,8 +243,8 @@ pub mod application_detail {
         pub(crate) service_execution_role: std::option::Option<std::string::String>,
         pub(crate) application_status: std::option::Option<crate::model::ApplicationStatus>,
         pub(crate) application_version_id: std::option::Option<i64>,
-        pub(crate) create_timestamp: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) application_configuration_description:
             std::option::Option<crate::model::ApplicationConfigurationDescription>,
         pub(crate) cloud_watch_logging_option_descriptions:
@@ -260,6 +263,7 @@ pub mod application_detail {
             self.application_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the application.</p>
         pub fn set_application_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -272,6 +276,7 @@ pub mod application_detail {
             self.application_description = Some(input.into());
             self
         }
+        /// <p>The description of the application.</p>
         pub fn set_application_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -284,6 +289,7 @@ pub mod application_detail {
             self.application_name = Some(input.into());
             self
         }
+        /// <p>The name of the application.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -296,6 +302,7 @@ pub mod application_detail {
             self.runtime_environment = Some(input);
             self
         }
+        /// <p>The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
         pub fn set_runtime_environment(
             mut self,
             input: std::option::Option<crate::model::RuntimeEnvironment>,
@@ -308,6 +315,7 @@ pub mod application_detail {
             self.service_execution_role = Some(input.into());
             self
         }
+        /// <p>Specifies the IAM role that the application uses to access external resources.</p>
         pub fn set_service_execution_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -320,6 +328,7 @@ pub mod application_detail {
             self.application_status = Some(input);
             self
         }
+        /// <p>The status of the application.</p>
         pub fn set_application_status(
             mut self,
             input: std::option::Option<crate::model::ApplicationStatus>,
@@ -333,30 +342,34 @@ pub mod application_detail {
             self.application_version_id = Some(input);
             self
         }
+        /// <p>Provides the current application version. Kinesis Data Analytics updates the
+        /// <code>ApplicationVersionId</code> each time you update the application.</p>
         pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
             self.application_version_id = input;
             self
         }
         /// <p>The current timestamp when the application was created.</p>
-        pub fn create_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_timestamp = Some(input);
             self
         }
+        /// <p>The current timestamp when the application was created.</p>
         pub fn set_create_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_timestamp = input;
             self
         }
         /// <p>The current timestamp when the application was last updated.</p>
-        pub fn last_update_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_timestamp = Some(input);
             self
         }
+        /// <p>The current timestamp when the application was last updated.</p>
         pub fn set_last_update_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_timestamp = input;
             self
@@ -369,6 +382,7 @@ pub mod application_detail {
             self.application_configuration_description = Some(input);
             self
         }
+        /// <p>Describes details about the application code and starting parameters for a Kinesis Data Analytics application.</p>
         pub fn set_application_configuration_description(
             mut self,
             input: std::option::Option<crate::model::ApplicationConfigurationDescription>,
@@ -376,6 +390,11 @@ pub mod application_detail {
             self.application_configuration_description = input;
             self
         }
+        /// Appends an item to `cloud_watch_logging_option_descriptions`.
+        ///
+        /// To override the contents of this collection use [`set_cloud_watch_logging_option_descriptions`](Self::set_cloud_watch_logging_option_descriptions).
+        ///
+        /// <p>Describes the application Amazon CloudWatch logging options.</p>
         pub fn cloud_watch_logging_option_descriptions(
             mut self,
             input: impl Into<crate::model::CloudWatchLoggingOptionDescription>,
@@ -387,6 +406,7 @@ pub mod application_detail {
             self.cloud_watch_logging_option_descriptions = Some(v);
             self
         }
+        /// <p>Describes the application Amazon CloudWatch logging options.</p>
         pub fn set_cloud_watch_logging_option_descriptions(
             mut self,
             input: std::option::Option<
@@ -404,6 +424,7 @@ pub mod application_detail {
             self.application_maintenance_configuration_description = Some(input);
             self
         }
+        /// <p>The details of the maintenance configuration for the application.</p>
         pub fn set_application_maintenance_configuration_description(
             mut self,
             input: std::option::Option<
@@ -419,6 +440,8 @@ pub mod application_detail {
             self.application_version_updated_from = Some(input);
             self
         }
+        /// <p>The previous application version before the latest application update. <a>RollbackApplication</a>
+        /// reverts the application to this version.</p>
         pub fn set_application_version_updated_from(
             mut self,
             input: std::option::Option<i64>,
@@ -432,6 +455,8 @@ pub mod application_detail {
             self.application_version_rolled_back_from = Some(input);
             self
         }
+        /// <p>If you reverted the application using <a>RollbackApplication</a>,
+        /// the application version when <code>RollbackApplication</code> was called.</p>
         pub fn set_application_version_rolled_back_from(
             mut self,
             input: std::option::Option<i64>,
@@ -444,6 +469,7 @@ pub mod application_detail {
             self.conditional_token = Some(input.into());
             self
         }
+        /// <p>A value you use to implement strong concurrency for application updates.</p>
         pub fn set_conditional_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -456,6 +482,7 @@ pub mod application_detail {
             self.application_version_rolled_back_to = Some(input);
             self
         }
+        /// <p>The version to which you want to roll back the application.</p>
         pub fn set_application_version_rolled_back_to(
             mut self,
             input: std::option::Option<i64>,
@@ -468,6 +495,7 @@ pub mod application_detail {
             self.application_mode = Some(input);
             self
         }
+        /// <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.</p>
         pub fn set_application_mode(
             mut self,
             input: std::option::Option<crate::model::ApplicationMode>,
@@ -508,6 +536,7 @@ impl ApplicationDetail {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -519,7 +548,9 @@ impl ApplicationDetail {
     std::hash::Hash,
 )]
 pub enum ApplicationMode {
+    #[allow(missing_docs)] // documentation missing in model
     Interactive,
+    #[allow(missing_docs)] // documentation missing in model
     Streaming,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -541,6 +572,7 @@ impl std::str::FromStr for ApplicationMode {
     }
 }
 impl ApplicationMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ApplicationMode::Interactive => "INTERACTIVE",
@@ -548,6 +580,7 @@ impl ApplicationMode {
             ApplicationMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["INTERACTIVE", "STREAMING"]
     }
@@ -605,6 +638,7 @@ pub mod cloud_watch_logging_option_description {
             self.cloud_watch_logging_option_id = Some(input.into());
             self
         }
+        /// <p>The ID of the CloudWatch logging option description.</p>
         pub fn set_cloud_watch_logging_option_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -618,6 +652,8 @@ pub mod cloud_watch_logging_option_description {
             self.log_stream_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application
+        /// messages.</p>
         pub fn set_log_stream_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -634,6 +670,11 @@ pub mod cloud_watch_logging_option_description {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The IAM ARN of the role to use to send application messages. </p>
+        /// <note>
+        /// <p>Provided for backward compatibility. Applications created with the current API version have an
+        /// application-level service execution role rather than a resource-level role.</p>
+        /// </note>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -754,6 +795,7 @@ pub mod application_configuration_description {
             self.sql_application_configuration_description = Some(input);
             self
         }
+        /// <p>The details about inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.</p>
         pub fn set_sql_application_configuration_description(
             mut self,
             input: std::option::Option<crate::model::SqlApplicationConfigurationDescription>,
@@ -769,6 +811,7 @@ pub mod application_configuration_description {
             self.application_code_configuration_description = Some(input);
             self
         }
+        /// <p>The details about the application code for a Flink-based Kinesis Data Analytics application.</p>
         pub fn set_application_code_configuration_description(
             mut self,
             input: std::option::Option<crate::model::ApplicationCodeConfigurationDescription>,
@@ -784,6 +827,7 @@ pub mod application_configuration_description {
             self.run_configuration_description = Some(input);
             self
         }
+        /// <p>The details about the starting properties for a Kinesis Data Analytics application.</p>
         pub fn set_run_configuration_description(
             mut self,
             input: std::option::Option<crate::model::RunConfigurationDescription>,
@@ -799,6 +843,7 @@ pub mod application_configuration_description {
             self.flink_application_configuration_description = Some(input);
             self
         }
+        /// <p>The details about a Flink-based Kinesis Data Analytics application.</p>
         pub fn set_flink_application_configuration_description(
             mut self,
             input: std::option::Option<crate::model::FlinkApplicationConfigurationDescription>,
@@ -814,6 +859,7 @@ pub mod application_configuration_description {
             self.environment_property_descriptions = Some(input);
             self
         }
+        /// <p>Describes execution properties for a Flink-based Kinesis Data Analytics application.</p>
         pub fn set_environment_property_descriptions(
             mut self,
             input: std::option::Option<crate::model::EnvironmentPropertyDescriptions>,
@@ -829,6 +875,7 @@ pub mod application_configuration_description {
             self.application_snapshot_configuration_description = Some(input);
             self
         }
+        /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
         pub fn set_application_snapshot_configuration_description(
             mut self,
             input: std::option::Option<crate::model::ApplicationSnapshotConfigurationDescription>,
@@ -836,6 +883,11 @@ pub mod application_configuration_description {
             self.application_snapshot_configuration_description = input;
             self
         }
+        /// Appends an item to `vpc_configuration_descriptions`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_configuration_descriptions`](Self::set_vpc_configuration_descriptions).
+        ///
+        /// <p>The array of descriptions of VPC configurations available to the application.</p>
         pub fn vpc_configuration_descriptions(
             mut self,
             input: impl Into<crate::model::VpcConfigurationDescription>,
@@ -845,6 +897,7 @@ pub mod application_configuration_description {
             self.vpc_configuration_descriptions = Some(v);
             self
         }
+        /// <p>The array of descriptions of VPC configurations available to the application.</p>
         pub fn set_vpc_configuration_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VpcConfigurationDescription>>,
@@ -860,6 +913,7 @@ pub mod application_configuration_description {
             self.zeppelin_application_configuration_description = Some(input);
             self
         }
+        /// <p>The configuration parameters for a Kinesis Data Analytics Studio notebook.</p>
         pub fn set_zeppelin_application_configuration_description(
             mut self,
             input: std::option::Option<crate::model::ZeppelinApplicationConfigurationDescription>,
@@ -958,6 +1012,7 @@ pub mod zeppelin_application_configuration_description {
             self.monitoring_configuration_description = Some(input);
             self
         }
+        /// <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
         pub fn set_monitoring_configuration_description(
             mut self,
             input: std::option::Option<crate::model::ZeppelinMonitoringConfigurationDescription>,
@@ -973,6 +1028,7 @@ pub mod zeppelin_application_configuration_description {
             self.catalog_configuration_description = Some(input);
             self
         }
+        /// <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
         pub fn set_catalog_configuration_description(
             mut self,
             input: std::option::Option<crate::model::CatalogConfigurationDescription>,
@@ -988,6 +1044,7 @@ pub mod zeppelin_application_configuration_description {
             self.deploy_as_application_configuration_description = Some(input);
             self
         }
+        /// <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.</p>
         pub fn set_deploy_as_application_configuration_description(
             mut self,
             input: std::option::Option<crate::model::DeployAsApplicationConfigurationDescription>,
@@ -995,6 +1052,11 @@ pub mod zeppelin_application_configuration_description {
             self.deploy_as_application_configuration_description = input;
             self
         }
+        /// Appends an item to `custom_artifacts_configuration_description`.
+        ///
+        /// To override the contents of this collection use [`set_custom_artifacts_configuration_description`](Self::set_custom_artifacts_configuration_description).
+        ///
+        /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
         pub fn custom_artifacts_configuration_description(
             mut self,
             input: impl Into<crate::model::CustomArtifactConfigurationDescription>,
@@ -1006,6 +1068,7 @@ pub mod zeppelin_application_configuration_description {
             self.custom_artifacts_configuration_description = Some(v);
             self
         }
+        /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
         pub fn set_custom_artifacts_configuration_description(
             mut self,
             input: std::option::Option<
@@ -1083,6 +1146,8 @@ pub mod custom_artifact_configuration_description {
             self.artifact_type = Some(input);
             self
         }
+        /// <p>
+        /// <code>UDF</code> stands for user-defined functions. This type of artifact must be in an S3 bucket. A <code>DEPENDENCY_JAR</code> can be in either Maven or an S3 bucket.</p>
         pub fn set_artifact_type(
             mut self,
             input: std::option::Option<crate::model::ArtifactType>,
@@ -1101,6 +1166,10 @@ pub mod custom_artifact_configuration_description {
             self.s3_content_location_description = Some(input);
             self
         }
+        /// <p>For a Kinesis Data Analytics application provides a
+        /// description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket,
+        /// the name of the Amazon S3 object that contains the data, and the version number of the Amazon
+        /// S3 object that contains the data. </p>
         pub fn set_s3_content_location_description(
             mut self,
             input: std::option::Option<crate::model::S3ContentLocation>,
@@ -1113,6 +1182,7 @@ pub mod custom_artifact_configuration_description {
             self.maven_reference_description = Some(input);
             self
         }
+        /// <p>The parameters that are required to specify a Maven dependency.</p>
         pub fn set_maven_reference_description(
             mut self,
             input: std::option::Option<crate::model::MavenReference>,
@@ -1173,6 +1243,7 @@ pub mod maven_reference {
             self.group_id = Some(input.into());
             self
         }
+        /// <p>The group ID of the Maven reference.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_id = input;
             self
@@ -1182,6 +1253,7 @@ pub mod maven_reference {
             self.artifact_id = Some(input.into());
             self
         }
+        /// <p>The artifact ID of the Maven reference.</p>
         pub fn set_artifact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.artifact_id = input;
             self
@@ -1191,6 +1263,7 @@ pub mod maven_reference {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version of the Maven reference.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -1251,6 +1324,7 @@ pub mod s3_content_location {
             self.bucket_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
         pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_arn = input;
             self
@@ -1260,6 +1334,7 @@ pub mod s3_content_location {
             self.file_key = Some(input.into());
             self
         }
+        /// <p>The file key for the object containing the application code.</p>
         pub fn set_file_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_key = input;
             self
@@ -1269,6 +1344,7 @@ pub mod s3_content_location {
             self.object_version = Some(input.into());
             self
         }
+        /// <p>The version of the object containing the application code.</p>
         pub fn set_object_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1293,6 +1369,7 @@ impl S3ContentLocation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1304,7 +1381,9 @@ impl S3ContentLocation {
     std::hash::Hash,
 )]
 pub enum ArtifactType {
+    #[allow(missing_docs)] // documentation missing in model
     DependencyJar,
+    #[allow(missing_docs)] // documentation missing in model
     Udf,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1326,6 +1405,7 @@ impl std::str::FromStr for ArtifactType {
     }
 }
 impl ArtifactType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ArtifactType::DependencyJar => "DEPENDENCY_JAR",
@@ -1333,6 +1413,7 @@ impl ArtifactType {
             ArtifactType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEPENDENCY_JAR", "UDF"]
     }
@@ -1379,6 +1460,7 @@ pub mod deploy_as_application_configuration_description {
             self.s3_content_location_description = Some(input);
             self
         }
+        /// <p>The location that holds the data required to specify an Amazon Data Analytics application.</p>
         pub fn set_s3_content_location_description(
             mut self,
             input: std::option::Option<crate::model::S3ContentBaseLocationDescription>,
@@ -1433,6 +1515,7 @@ pub mod s3_content_base_location_description {
             self.bucket_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
         pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_arn = input;
             self
@@ -1442,6 +1525,7 @@ pub mod s3_content_base_location_description {
             self.base_path = Some(input.into());
             self
         }
+        /// <p>The base path for the S3 bucket.</p>
         pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.base_path = input;
             self
@@ -1498,6 +1582,7 @@ pub mod catalog_configuration_description {
             self.glue_data_catalog_configuration_description = Some(input);
             self
         }
+        /// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
         pub fn set_glue_data_catalog_configuration_description(
             mut self,
             input: std::option::Option<crate::model::GlueDataCatalogConfigurationDescription>,
@@ -1549,6 +1634,7 @@ pub mod glue_data_catalog_configuration_description {
             self.database_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the database.</p>
         pub fn set_database_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.database_arn = input;
             self
@@ -1596,6 +1682,7 @@ pub mod zeppelin_monitoring_configuration_description {
             self.log_level = Some(input);
             self
         }
+        /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
             self.log_level = input;
             self
@@ -1615,6 +1702,7 @@ impl ZeppelinMonitoringConfigurationDescription {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1626,9 +1714,13 @@ impl ZeppelinMonitoringConfigurationDescription {
     std::hash::Hash,
 )]
 pub enum LogLevel {
+    #[allow(missing_docs)] // documentation missing in model
     Debug,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Info,
+    #[allow(missing_docs)] // documentation missing in model
     Warn,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1652,6 +1744,7 @@ impl std::str::FromStr for LogLevel {
     }
 }
 impl LogLevel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LogLevel::Debug => "DEBUG",
@@ -1661,6 +1754,7 @@ impl LogLevel {
             LogLevel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEBUG", "ERROR", "INFO", "WARN"]
     }
@@ -1713,6 +1807,7 @@ pub mod vpc_configuration_description {
             self.vpc_configuration_id = Some(input.into());
             self
         }
+        /// <p>The ID of the VPC configuration.</p>
         pub fn set_vpc_configuration_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1725,16 +1820,25 @@ pub mod vpc_configuration_description {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>The ID of the associated VPC.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
         }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a>
+        /// IDs used by the VPC configuration.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a>
+        /// IDs used by the VPC configuration.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1742,12 +1846,20 @@ pub mod vpc_configuration_description {
             self.subnet_ids = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a>
+        /// IDs used by the VPC configuration.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a>
+        /// IDs used by the VPC configuration.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1801,6 +1913,7 @@ pub mod application_snapshot_configuration_description {
             self.snapshots_enabled = Some(input);
             self
         }
+        /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
         pub fn set_snapshots_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.snapshots_enabled = input;
             self
@@ -1848,6 +1961,11 @@ pub mod environment_property_descriptions {
             std::option::Option<std::vec::Vec<crate::model::PropertyGroup>>,
     }
     impl Builder {
+        /// Appends an item to `property_group_descriptions`.
+        ///
+        /// To override the contents of this collection use [`set_property_group_descriptions`](Self::set_property_group_descriptions).
+        ///
+        /// <p>Describes the execution property groups.</p>
         pub fn property_group_descriptions(
             mut self,
             input: impl Into<crate::model::PropertyGroup>,
@@ -1857,6 +1975,7 @@ pub mod environment_property_descriptions {
             self.property_group_descriptions = Some(v);
             self
         }
+        /// <p>Describes the execution property groups.</p>
         pub fn set_property_group_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PropertyGroup>>,
@@ -1914,6 +2033,7 @@ pub mod property_group {
             self.property_group_id = Some(input.into());
             self
         }
+        /// <p>Describes the key of an application execution property key-value pair.</p>
         pub fn set_property_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1921,6 +2041,11 @@ pub mod property_group {
             self.property_group_id = input;
             self
         }
+        /// Adds a key-value pair to `property_map`.
+        ///
+        /// To override the contents of this collection use [`set_property_map`](Self::set_property_map).
+        ///
+        /// <p>Describes the value of an application execution property key-value pair.</p>
         pub fn property_map(
             mut self,
             k: impl Into<std::string::String>,
@@ -1931,6 +2056,7 @@ pub mod property_group {
             self.property_map = Some(hash_map);
             self
         }
+        /// <p>Describes the value of an application execution property key-value pair.</p>
         pub fn set_property_map(
             mut self,
             input: std::option::Option<
@@ -2018,6 +2144,8 @@ pub mod flink_application_configuration_description {
             self.checkpoint_configuration_description = Some(input);
             self
         }
+        /// <p>Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state
+        /// for fault tolerance.</p>
         pub fn set_checkpoint_configuration_description(
             mut self,
             input: std::option::Option<crate::model::CheckpointConfigurationDescription>,
@@ -2034,6 +2162,8 @@ pub mod flink_application_configuration_description {
             self.monitoring_configuration_description = Some(input);
             self
         }
+        /// <p>Describes configuration parameters for Amazon CloudWatch logging for an
+        /// application.</p>
         pub fn set_monitoring_configuration_description(
             mut self,
             input: std::option::Option<crate::model::MonitoringConfigurationDescription>,
@@ -2049,6 +2179,7 @@ pub mod flink_application_configuration_description {
             self.parallelism_configuration_description = Some(input);
             self
         }
+        /// <p>Describes parameters for how an application executes multiple tasks simultaneously.</p>
         pub fn set_parallelism_configuration_description(
             mut self,
             input: std::option::Option<crate::model::ParallelismConfigurationDescription>,
@@ -2062,6 +2193,8 @@ pub mod flink_application_configuration_description {
             self.job_plan_description = Some(input.into());
             self
         }
+        /// <p>The job plan for an application. For more information about the job plan, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/internals/job_scheduling.html">Jobs and Scheduling</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
+        /// Documentation</a>. To retrieve the job plan for the application, use the <a>DescribeApplicationRequest$IncludeAdditionalDetails</a> parameter of the <a>DescribeApplication</a> operation.</p>
         pub fn set_job_plan_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2141,6 +2274,7 @@ pub mod parallelism_configuration_description {
             self.configuration_type = Some(input);
             self
         }
+        /// <p>Describes whether the application uses the default parallelism for the Kinesis Data Analytics service. </p>
         pub fn set_configuration_type(
             mut self,
             input: std::option::Option<crate::model::ConfigurationType>,
@@ -2157,6 +2291,11 @@ pub mod parallelism_configuration_description {
             self.parallelism = Some(input);
             self
         }
+        /// <p>Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform.
+        /// If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the <code>CurrentParallelism</code> value in response to application
+        /// load. The service can increase <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application.
+        /// The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service can
+        /// reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.</p>
         pub fn set_parallelism(mut self, input: std::option::Option<i32>) -> Self {
             self.parallelism = input;
             self
@@ -2167,6 +2306,8 @@ pub mod parallelism_configuration_description {
             self.parallelism_per_kpu = Some(input);
             self
         }
+        /// <p>Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per
+        /// Kinesis Processing Unit (KPU) used by the application.</p>
         pub fn set_parallelism_per_kpu(mut self, input: std::option::Option<i32>) -> Self {
             self.parallelism_per_kpu = input;
             self
@@ -2180,6 +2321,11 @@ pub mod parallelism_configuration_description {
             self.current_parallelism = Some(input);
             self
         }
+        /// <p>Describes the current number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform.
+        /// If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics can increase this value in response to application
+        /// load. The service can increase this value up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application.
+        /// The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service can reduce
+        /// the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.</p>
         pub fn set_current_parallelism(mut self, input: std::option::Option<i32>) -> Self {
             self.current_parallelism = input;
             self
@@ -2189,6 +2335,7 @@ pub mod parallelism_configuration_description {
             self.auto_scaling_enabled = Some(input);
             self
         }
+        /// <p>Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in response to increased throughput.</p>
         pub fn set_auto_scaling_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_scaling_enabled = input;
             self
@@ -2212,6 +2359,7 @@ impl ParallelismConfigurationDescription {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2223,7 +2371,9 @@ impl ParallelismConfigurationDescription {
     std::hash::Hash,
 )]
 pub enum ConfigurationType {
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
+    #[allow(missing_docs)] // documentation missing in model
     Default,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2245,6 +2395,7 @@ impl std::str::FromStr for ConfigurationType {
     }
 }
 impl ConfigurationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfigurationType::Custom => "CUSTOM",
@@ -2252,6 +2403,7 @@ impl ConfigurationType {
             ConfigurationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CUSTOM", "DEFAULT"]
     }
@@ -2298,6 +2450,7 @@ pub mod monitoring_configuration_description {
             self.configuration_type = Some(input);
             self
         }
+        /// <p>Describes whether to use the default CloudWatch logging configuration for an application.</p>
         pub fn set_configuration_type(
             mut self,
             input: std::option::Option<crate::model::ConfigurationType>,
@@ -2310,6 +2463,7 @@ pub mod monitoring_configuration_description {
             self.metrics_level = Some(input);
             self
         }
+        /// <p>Describes the granularity of the CloudWatch Logs for an application.</p>
         pub fn set_metrics_level(
             mut self,
             input: std::option::Option<crate::model::MetricsLevel>,
@@ -2322,6 +2476,7 @@ pub mod monitoring_configuration_description {
             self.log_level = Some(input);
             self
         }
+        /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
             self.log_level = input;
             self
@@ -2343,6 +2498,7 @@ impl MonitoringConfigurationDescription {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2354,9 +2510,13 @@ impl MonitoringConfigurationDescription {
     std::hash::Hash,
 )]
 pub enum MetricsLevel {
+    #[allow(missing_docs)] // documentation missing in model
     Application,
+    #[allow(missing_docs)] // documentation missing in model
     Operator,
+    #[allow(missing_docs)] // documentation missing in model
     Parallelism,
+    #[allow(missing_docs)] // documentation missing in model
     Task,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2380,6 +2540,7 @@ impl std::str::FromStr for MetricsLevel {
     }
 }
 impl MetricsLevel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MetricsLevel::Application => "APPLICATION",
@@ -2389,6 +2550,7 @@ impl MetricsLevel {
             MetricsLevel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["APPLICATION", "OPERATOR", "PARALLELISM", "TASK"]
     }
@@ -2496,6 +2658,26 @@ pub mod checkpoint_configuration_description {
             self.configuration_type = Some(input);
             self
         }
+        /// <p>Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics. </p>
+        /// <note>
+        /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values,
+        /// even if they are set to other values using APIs or
+        /// application code:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>CheckpointingEnabled:</b> true</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>CheckpointInterval:</b> 60000</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>MinPauseBetweenCheckpoints:</b> 5000</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn set_configuration_type(
             mut self,
             input: std::option::Option<crate::model::ConfigurationType>,
@@ -2513,6 +2695,12 @@ pub mod checkpoint_configuration_description {
             self.checkpointing_enabled = Some(input);
             self
         }
+        /// <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p>
+        /// <note>
+        /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+        /// the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to
+        /// another value using this API or in application code.</p>
+        /// </note>
         pub fn set_checkpointing_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.checkpointing_enabled = input;
             self
@@ -2527,6 +2715,12 @@ pub mod checkpoint_configuration_description {
             self.checkpoint_interval = Some(input);
             self
         }
+        /// <p>Describes the interval in milliseconds between checkpoint operations. </p>
+        /// <note>
+        /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+        /// the application will use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value
+        /// using this API or in application code.</p>
+        /// </note>
         pub fn set_checkpoint_interval(mut self, input: std::option::Option<i64>) -> Self {
             self.checkpoint_interval = input;
             self
@@ -2542,6 +2736,13 @@ pub mod checkpoint_configuration_description {
             self.min_pause_between_checkpoints = Some(input);
             self
         }
+        /// <p>Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation
+        /// can start. </p>
+        /// <note>
+        /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+        /// the application will use a <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this
+        /// API or in application code.</p>
+        /// </note>
         pub fn set_min_pause_between_checkpoints(
             mut self,
             input: std::option::Option<i64>,
@@ -2612,6 +2813,7 @@ pub mod run_configuration_description {
             self.application_restore_configuration_description = Some(input);
             self
         }
+        /// <p>Describes the restore behavior of a restarting application.</p>
         pub fn set_application_restore_configuration_description(
             mut self,
             input: std::option::Option<crate::model::ApplicationRestoreConfiguration>,
@@ -2627,6 +2829,7 @@ pub mod run_configuration_description {
             self.flink_run_configuration_description = Some(input);
             self
         }
+        /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
         pub fn set_flink_run_configuration_description(
             mut self,
             input: std::option::Option<crate::model::FlinkRunConfiguration>,
@@ -2703,6 +2906,19 @@ pub mod flink_run_configuration {
             self.allow_non_restored_state = Some(input);
             self
         }
+        /// <p>When restoring from a snapshot, specifies whether the runtime is allowed to skip a state that cannot
+        /// be mapped to the new program.
+        /// This will happen if the program is updated between snapshots to remove stateful parameters, and
+        /// state data in the snapshot no longer
+        /// corresponds to valid application data. For more information, see
+        /// <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/savepoints.html#allowing-non-restored-state">
+        /// Allowing Non-Restored State</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
+        /// documentation</a>.</p>
+        /// <note>
+        /// <p>This value defaults to <code>false</code>. If you update your application without
+        /// specifying this parameter, <code>AllowNonRestoredState</code> will be set to <code>false</code>,
+        /// even if it was previously set to <code>true</code>.</p>
+        /// </note>
         pub fn set_allow_non_restored_state(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_non_restored_state = input;
             self
@@ -2760,6 +2976,7 @@ pub mod application_restore_configuration {
             self.application_restore_type = Some(input);
             self
         }
+        /// <p>Specifies how the application should be restored.</p>
         pub fn set_application_restore_type(
             mut self,
             input: std::option::Option<crate::model::ApplicationRestoreType>,
@@ -2774,6 +2991,9 @@ pub mod application_restore_configuration {
             self.snapshot_name = Some(input.into());
             self
         }
+        /// <p>The identifier of an existing snapshot of application state to use to restart an application.
+        /// The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the
+        /// <code>ApplicationRestoreType</code>.</p>
         pub fn set_snapshot_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2797,6 +3017,7 @@ impl ApplicationRestoreConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2808,8 +3029,11 @@ impl ApplicationRestoreConfiguration {
     std::hash::Hash,
 )]
 pub enum ApplicationRestoreType {
+    #[allow(missing_docs)] // documentation missing in model
     RestoreFromCustomSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     RestoreFromLatestSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     SkipRestoreFromSnapshot,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2832,6 +3056,7 @@ impl std::str::FromStr for ApplicationRestoreType {
     }
 }
 impl ApplicationRestoreType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ApplicationRestoreType::RestoreFromCustomSnapshot => "RESTORE_FROM_CUSTOM_SNAPSHOT",
@@ -2840,6 +3065,7 @@ impl ApplicationRestoreType {
             ApplicationRestoreType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "RESTORE_FROM_CUSTOM_SNAPSHOT",
@@ -2887,6 +3113,7 @@ pub mod application_code_configuration_description {
             self.code_content_type = Some(input);
             self
         }
+        /// <p>Specifies whether the code content is in text or zip format.</p>
         pub fn set_code_content_type(
             mut self,
             input: std::option::Option<crate::model::CodeContentType>,
@@ -2902,6 +3129,7 @@ pub mod application_code_configuration_description {
             self.code_content_description = Some(input);
             self
         }
+        /// <p>Describes details about the location and format of the application code.</p>
         pub fn set_code_content_description(
             mut self,
             input: std::option::Option<crate::model::CodeContentDescription>,
@@ -2971,6 +3199,7 @@ pub mod code_content_description {
             self.text_content = Some(input.into());
             self
         }
+        /// <p>The text-format code</p>
         pub fn set_text_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text_content = input;
             self
@@ -2980,6 +3209,7 @@ pub mod code_content_description {
             self.code_md5 = Some(input.into());
             self
         }
+        /// <p>The checksum that can be used to validate zip-format code.</p>
         pub fn set_code_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code_md5 = input;
             self
@@ -2989,6 +3219,7 @@ pub mod code_content_description {
             self.code_size = Some(input);
             self
         }
+        /// <p>The size in bytes of the application code. Can be used to validate zip-format code.</p>
         pub fn set_code_size(mut self, input: std::option::Option<i64>) -> Self {
             self.code_size = input;
             self
@@ -3002,6 +3233,8 @@ pub mod code_content_description {
             self.s3_application_code_location_description = Some(input);
             self
         }
+        /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the application
+        /// code stored in Amazon S3.</p>
         pub fn set_s3_application_code_location_description(
             mut self,
             input: std::option::Option<crate::model::S3ApplicationCodeLocationDescription>,
@@ -3064,6 +3297,7 @@ pub mod s3_application_code_location_description {
             self.bucket_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
         pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_arn = input;
             self
@@ -3073,6 +3307,7 @@ pub mod s3_application_code_location_description {
             self.file_key = Some(input.into());
             self
         }
+        /// <p>The file key for the object containing the application code.</p>
         pub fn set_file_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_key = input;
             self
@@ -3082,6 +3317,7 @@ pub mod s3_application_code_location_description {
             self.object_version = Some(input.into());
             self
         }
+        /// <p>The version of the object containing the application code.</p>
         pub fn set_object_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3106,6 +3342,7 @@ impl S3ApplicationCodeLocationDescription {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3117,7 +3354,9 @@ impl S3ApplicationCodeLocationDescription {
     std::hash::Hash,
 )]
 pub enum CodeContentType {
+    #[allow(missing_docs)] // documentation missing in model
     Plaintext,
+    #[allow(missing_docs)] // documentation missing in model
     Zipfile,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3139,6 +3378,7 @@ impl std::str::FromStr for CodeContentType {
     }
 }
 impl CodeContentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CodeContentType::Plaintext => "PLAINTEXT",
@@ -3146,6 +3386,7 @@ impl CodeContentType {
             CodeContentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PLAINTEXT", "ZIPFILE"]
     }
@@ -3197,6 +3438,12 @@ pub mod sql_application_configuration_description {
             std::option::Option<std::vec::Vec<crate::model::ReferenceDataSourceDescription>>,
     }
     impl Builder {
+        /// Appends an item to `input_descriptions`.
+        ///
+        /// To override the contents of this collection use [`set_input_descriptions`](Self::set_input_descriptions).
+        ///
+        /// <p>The array of <a>InputDescription</a> objects describing the input streams used
+        /// by the application.</p>
         pub fn input_descriptions(
             mut self,
             input: impl Into<crate::model::InputDescription>,
@@ -3206,6 +3453,8 @@ pub mod sql_application_configuration_description {
             self.input_descriptions = Some(v);
             self
         }
+        /// <p>The array of <a>InputDescription</a> objects describing the input streams used
+        /// by the application.</p>
         pub fn set_input_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputDescription>>,
@@ -3213,6 +3462,12 @@ pub mod sql_application_configuration_description {
             self.input_descriptions = input;
             self
         }
+        /// Appends an item to `output_descriptions`.
+        ///
+        /// To override the contents of this collection use [`set_output_descriptions`](Self::set_output_descriptions).
+        ///
+        /// <p>The array of <a>OutputDescription</a> objects describing the destination
+        /// streams used by the application.</p>
         pub fn output_descriptions(
             mut self,
             input: impl Into<crate::model::OutputDescription>,
@@ -3222,6 +3477,8 @@ pub mod sql_application_configuration_description {
             self.output_descriptions = Some(v);
             self
         }
+        /// <p>The array of <a>OutputDescription</a> objects describing the destination
+        /// streams used by the application.</p>
         pub fn set_output_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputDescription>>,
@@ -3229,6 +3486,12 @@ pub mod sql_application_configuration_description {
             self.output_descriptions = input;
             self
         }
+        /// Appends an item to `reference_data_source_descriptions`.
+        ///
+        /// To override the contents of this collection use [`set_reference_data_source_descriptions`](Self::set_reference_data_source_descriptions).
+        ///
+        /// <p>The array of <a>ReferenceDataSourceDescription</a> objects describing the
+        /// reference data sources used by the application.</p>
         pub fn reference_data_source_descriptions(
             mut self,
             input: impl Into<crate::model::ReferenceDataSourceDescription>,
@@ -3238,6 +3501,8 @@ pub mod sql_application_configuration_description {
             self.reference_data_source_descriptions = Some(v);
             self
         }
+        /// <p>The array of <a>ReferenceDataSourceDescription</a> objects describing the
+        /// reference data sources used by the application.</p>
         pub fn set_reference_data_source_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReferenceDataSourceDescription>>,
@@ -3310,6 +3575,8 @@ pub mod reference_data_source_description {
             self.reference_id = Some(input.into());
             self
         }
+        /// <p>The ID of the reference data source. This is the ID that Kinesis Data Analytics assigns
+        /// when you add the reference data source to your application using the <a>CreateApplication</a> or <a>UpdateApplication</a> operation.</p>
         pub fn set_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reference_id = input;
             self
@@ -3319,6 +3586,7 @@ pub mod reference_data_source_description {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The in-application table name created by the specific reference data source configuration.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -3331,6 +3599,7 @@ pub mod reference_data_source_description {
             self.s3_reference_data_source_description = Some(input);
             self
         }
+        /// <p>Provides the Amazon S3 bucket name, the object key name that contains the reference data. </p>
         pub fn set_s3_reference_data_source_description(
             mut self,
             input: std::option::Option<crate::model::S3ReferenceDataSourceDescription>,
@@ -3343,6 +3612,7 @@ pub mod reference_data_source_description {
             self.reference_schema = Some(input);
             self
         }
+        /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
         pub fn set_reference_schema(
             mut self,
             input: std::option::Option<crate::model::SourceSchema>,
@@ -3406,6 +3676,7 @@ pub mod source_schema {
             self.record_format = Some(input);
             self
         }
+        /// <p>Specifies the format of the records on the streaming source.</p>
         pub fn set_record_format(
             mut self,
             input: std::option::Option<crate::model::RecordFormat>,
@@ -3418,6 +3689,7 @@ pub mod source_schema {
             self.record_encoding = Some(input.into());
             self
         }
+        /// <p>Specifies the encoding of the records in the streaming source. For example, UTF-8.</p>
         pub fn set_record_encoding(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3425,12 +3697,18 @@ pub mod source_schema {
             self.record_encoding = input;
             self
         }
+        /// Appends an item to `record_columns`.
+        ///
+        /// To override the contents of this collection use [`set_record_columns`](Self::set_record_columns).
+        ///
+        /// <p>A list of <code>RecordColumn</code> objects. </p>
         pub fn record_columns(mut self, input: impl Into<crate::model::RecordColumn>) -> Self {
             let mut v = self.record_columns.unwrap_or_default();
             v.push(input.into());
             self.record_columns = Some(v);
             self
         }
+        /// <p>A list of <code>RecordColumn</code> objects. </p>
         pub fn set_record_columns(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecordColumn>>,
@@ -3497,6 +3775,8 @@ pub mod record_column {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the column that is created in the in-application input stream or reference
+        /// table.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3507,6 +3787,8 @@ pub mod record_column {
             self.mapping = Some(input.into());
             self
         }
+        /// <p>A reference to the data element in the streaming input or the reference data
+        /// source.</p>
         pub fn set_mapping(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mapping = input;
             self
@@ -3516,6 +3798,7 @@ pub mod record_column {
             self.sql_type = Some(input.into());
             self
         }
+        /// <p>The type of column created in the in-application input stream or reference table.</p>
         pub fn set_sql_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sql_type = input;
             self
@@ -3573,6 +3856,7 @@ pub mod record_format {
             self.record_format_type = Some(input);
             self
         }
+        /// <p>The type of record format.</p>
         pub fn set_record_format_type(
             mut self,
             input: std::option::Option<crate::model::RecordFormatType>,
@@ -3587,6 +3871,9 @@ pub mod record_format {
             self.mapping_parameters = Some(input);
             self
         }
+        /// <p>When you configure application input at the time of creating or updating an application,
+        /// provides additional mapping information specific to the record format (such as JSON, CSV, or
+        /// record fields delimited by some delimiter) on the streaming source.</p>
         pub fn set_mapping_parameters(
             mut self,
             input: std::option::Option<crate::model::MappingParameters>,
@@ -3650,6 +3937,7 @@ pub mod mapping_parameters {
             self.json_mapping_parameters = Some(input);
             self
         }
+        /// <p>Provides additional mapping information when JSON is the record format on the streaming source.</p>
         pub fn set_json_mapping_parameters(
             mut self,
             input: std::option::Option<crate::model::JsonMappingParameters>,
@@ -3663,6 +3951,8 @@ pub mod mapping_parameters {
             self.csv_mapping_parameters = Some(input);
             self
         }
+        /// <p>Provides additional mapping information when the record format uses delimiters
+        /// (for example, CSV).</p>
         pub fn set_csv_mapping_parameters(
             mut self,
             input: std::option::Option<crate::model::CsvMappingParameters>,
@@ -3690,6 +3980,7 @@ impl MappingParameters {
 /// format uses delimiters, such as CSV. For example, the following sample records use CSV format,
 /// where the records use the <i>'\n'</i> as the row delimiter and a comma (",") as
 /// the column delimiter: </p>
+///
 /// <p>
 /// <code>"name1", "address1"</code>
 /// </p>
@@ -3730,6 +4021,8 @@ pub mod csv_mapping_parameters {
             self.record_row_delimiter = Some(input.into());
             self
         }
+        /// <p>The row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical
+        /// row delimiter.</p>
         pub fn set_record_row_delimiter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3743,6 +4036,8 @@ pub mod csv_mapping_parameters {
             self.record_column_delimiter = Some(input.into());
             self
         }
+        /// <p>The column delimiter. For example, in a CSV format, a comma (",") is the typical column
+        /// delimiter.</p>
         pub fn set_record_column_delimiter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3795,6 +4090,7 @@ pub mod json_mapping_parameters {
             self.record_row_path = Some(input.into());
             self
         }
+        /// <p>The path to the top-level parent that contains the records.</p>
         pub fn set_record_row_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3817,6 +4113,7 @@ impl JsonMappingParameters {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3828,7 +4125,9 @@ impl JsonMappingParameters {
     std::hash::Hash,
 )]
 pub enum RecordFormatType {
+    #[allow(missing_docs)] // documentation missing in model
     Csv,
+    #[allow(missing_docs)] // documentation missing in model
     Json,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3850,6 +4149,7 @@ impl std::str::FromStr for RecordFormatType {
     }
 }
 impl RecordFormatType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RecordFormatType::Csv => "CSV",
@@ -3857,6 +4157,7 @@ impl RecordFormatType {
             RecordFormatType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CSV", "JSON"]
     }
@@ -3910,6 +4211,7 @@ pub mod s3_reference_data_source_description {
             self.bucket_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
         pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_arn = input;
             self
@@ -3919,6 +4221,7 @@ pub mod s3_reference_data_source_description {
             self.file_key = Some(input.into());
             self
         }
+        /// <p>Amazon S3 object key name.</p>
         pub fn set_file_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_key = input;
             self
@@ -3934,6 +4237,13 @@ pub mod s3_reference_data_source_description {
             self.reference_role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the Amazon S3
+        /// object on your behalf to populate the in-application reference table. </p>
+        /// <note>
+        /// <p>Provided for backward compatibility. Applications that are created with the current API
+        /// version have an application-level service execution role rather than a resource-level
+        /// role.</p>
+        /// </note>
         pub fn set_reference_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4023,6 +4333,7 @@ pub mod output_description {
             self.output_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the output configuration.</p>
         pub fn set_output_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output_id = input;
             self
@@ -4032,6 +4343,7 @@ pub mod output_description {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the in-application stream that is configured as output.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4045,6 +4357,8 @@ pub mod output_description {
             self.kinesis_streams_output_description = Some(input);
             self
         }
+        /// <p>Describes the Kinesis data stream that is configured as the destination where output is
+        /// written.</p>
         pub fn set_kinesis_streams_output_description(
             mut self,
             input: std::option::Option<crate::model::KinesisStreamsOutputDescription>,
@@ -4061,6 +4375,8 @@ pub mod output_description {
             self.kinesis_firehose_output_description = Some(input);
             self
         }
+        /// <p>Describes the Kinesis Data Firehose delivery stream that is configured as the destination
+        /// where output is written.</p>
         pub fn set_kinesis_firehose_output_description(
             mut self,
             input: std::option::Option<crate::model::KinesisFirehoseOutputDescription>,
@@ -4077,6 +4393,8 @@ pub mod output_description {
             self.lambda_output_description = Some(input);
             self
         }
+        /// <p>Describes the Lambda function that is configured as the destination where output is
+        /// written.</p>
         pub fn set_lambda_output_description(
             mut self,
             input: std::option::Option<crate::model::LambdaOutputDescription>,
@@ -4089,6 +4407,7 @@ pub mod output_description {
             self.destination_schema = Some(input);
             self
         }
+        /// <p>The data format used for writing data to the destination.</p>
         pub fn set_destination_schema(
             mut self,
             input: std::option::Option<crate::model::DestinationSchema>,
@@ -4144,6 +4463,7 @@ pub mod destination_schema {
             self.record_format_type = Some(input);
             self
         }
+        /// <p>Specifies the format of the records on the output stream.</p>
         pub fn set_record_format_type(
             mut self,
             input: std::option::Option<crate::model::RecordFormatType>,
@@ -4205,6 +4525,7 @@ pub mod lambda_output_description {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the destination Lambda function.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4220,6 +4541,13 @@ pub mod lambda_output_description {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination
+        /// function.</p>
+        /// <note>
+        /// <p>Provided for backward compatibility. Applications that are created with the current API
+        /// version have an application-level service execution role rather than a resource-level
+        /// role.</p>
+        /// </note>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -4279,6 +4607,7 @@ pub mod kinesis_firehose_output_description {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4294,6 +4623,13 @@ pub mod kinesis_firehose_output_description {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the
+        /// stream.</p>
+        /// <note>
+        /// <p>Provided for backward compatibility. Applications that are created with the current API
+        /// version have an application-level service execution role rather than a resource-level
+        /// role.</p>
+        /// </note>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -4353,6 +4689,7 @@ pub mod kinesis_streams_output_description {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4368,6 +4705,13 @@ pub mod kinesis_streams_output_description {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the
+        /// stream.</p>
+        /// <note>
+        /// <p>Provided for backward compatibility. Applications that are created with the current API
+        /// version have an application-level service execution role rather than a resource-level
+        /// role.</p>
+        /// </note>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -4472,6 +4816,8 @@ pub mod input_description {
             self.input_id = Some(input.into());
             self
         }
+        /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to each input
+        /// configuration that you add to your application. </p>
         pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_id = input;
             self
@@ -4481,16 +4827,23 @@ pub mod input_description {
             self.name_prefix = Some(input.into());
             self
         }
+        /// <p>The in-application name prefix.</p>
         pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name_prefix = input;
             self
         }
+        /// Appends an item to `in_app_stream_names`.
+        ///
+        /// To override the contents of this collection use [`set_in_app_stream_names`](Self::set_in_app_stream_names).
+        ///
+        /// <p>Returns the in-application stream names that are mapped to the stream source. </p>
         pub fn in_app_stream_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.in_app_stream_names.unwrap_or_default();
             v.push(input.into());
             self.in_app_stream_names = Some(v);
             self
         }
+        /// <p>Returns the in-application stream names that are mapped to the stream source. </p>
         pub fn set_in_app_stream_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4506,6 +4859,7 @@ pub mod input_description {
             self.input_processing_configuration_description = Some(input);
             self
         }
+        /// <p>The description of the preprocessor that executes on records in this input before the application's code is run. </p>
         pub fn set_input_processing_configuration_description(
             mut self,
             input: std::option::Option<crate::model::InputProcessingConfigurationDescription>,
@@ -4522,6 +4876,8 @@ pub mod input_description {
             self.kinesis_streams_input_description = Some(input);
             self
         }
+        /// <p>If a Kinesis data stream is configured as a streaming source, provides the Kinesis data
+        /// stream's Amazon Resource Name (ARN). </p>
         pub fn set_kinesis_streams_input_description(
             mut self,
             input: std::option::Option<crate::model::KinesisStreamsInputDescription>,
@@ -4537,6 +4893,7 @@ pub mod input_description {
             self.kinesis_firehose_input_description = Some(input);
             self
         }
+        /// <p>If a Kinesis Data Firehose delivery stream is configured as a streaming source, provides the delivery stream's ARN. </p>
         pub fn set_kinesis_firehose_input_description(
             mut self,
             input: std::option::Option<crate::model::KinesisFirehoseInputDescription>,
@@ -4550,6 +4907,8 @@ pub mod input_description {
             self.input_schema = Some(input);
             self
         }
+        /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+        /// in the in-application stream that is being created. </p>
         pub fn set_input_schema(
             mut self,
             input: std::option::Option<crate::model::SourceSchema>,
@@ -4562,6 +4921,7 @@ pub mod input_description {
             self.input_parallelism = Some(input);
             self
         }
+        /// <p>Describes the configured parallelism (number of in-application streams mapped to the streaming source). </p>
         pub fn set_input_parallelism(
             mut self,
             input: std::option::Option<crate::model::InputParallelism>,
@@ -4577,6 +4937,7 @@ pub mod input_description {
             self.input_starting_position_configuration = Some(input);
             self
         }
+        /// <p>The point at which the application is configured to read from the input stream.</p>
         pub fn set_input_starting_position_configuration(
             mut self,
             input: std::option::Option<crate::model::InputStartingPositionConfiguration>,
@@ -4619,6 +4980,8 @@ pub struct InputStartingPositionConfiguration {
     /// <p>
     /// <code>NOW</code> - Start reading just after the most recent record in the stream, and
     /// start at the request timestamp that the customer issued.</p>
+    ///
+    ///
     /// </li>
     /// <li>
     /// <p>
@@ -4656,6 +5019,8 @@ pub mod input_starting_position_configuration {
         /// <p>
         /// <code>NOW</code> - Start reading just after the most recent record in the stream, and
         /// start at the request timestamp that the customer issued.</p>
+        ///
+        ///
         /// </li>
         /// <li>
         /// <p>
@@ -4675,6 +5040,26 @@ pub mod input_starting_position_configuration {
             self.input_starting_position = Some(input);
             self
         }
+        /// <p>The starting position on the stream.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>NOW</code> - Start reading just after the most recent record in the stream, and
+        /// start at the request timestamp that the customer issued.</p>
+        ///
+        ///
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TRIM_HORIZON</code> - Start reading at the last untrimmed record in the stream,
+        /// which is the oldest record available in the stream. This option is not available
+        /// for an Amazon Kinesis Data Firehose delivery stream.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p>
+        /// </li>
+        /// </ul>
         pub fn set_input_starting_position(
             mut self,
             input: std::option::Option<crate::model::InputStartingPosition>,
@@ -4697,6 +5082,7 @@ impl InputStartingPositionConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4708,8 +5094,11 @@ impl InputStartingPositionConfiguration {
     std::hash::Hash,
 )]
 pub enum InputStartingPosition {
+    #[allow(missing_docs)] // documentation missing in model
     LastStoppedPoint,
+    #[allow(missing_docs)] // documentation missing in model
     Now,
+    #[allow(missing_docs)] // documentation missing in model
     TrimHorizon,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4732,6 +5121,7 @@ impl std::str::FromStr for InputStartingPosition {
     }
 }
 impl InputStartingPosition {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputStartingPosition::LastStoppedPoint => "LAST_STOPPED_POINT",
@@ -4740,6 +5130,7 @@ impl InputStartingPosition {
             InputStartingPosition::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LAST_STOPPED_POINT", "NOW", "TRIM_HORIZON"]
     }
@@ -4779,6 +5170,7 @@ pub mod input_parallelism {
             self.count = Some(input);
             self
         }
+        /// <p>The number of in-application streams to create.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
@@ -4834,6 +5226,7 @@ pub mod kinesis_firehose_input_description {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4848,6 +5241,12 @@ pub mod kinesis_firehose_input_description {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role that Kinesis Data Analytics assumes to access the stream.</p>
+        /// <note>
+        /// <p>Provided for backward compatibility. Applications that are created with the current API
+        /// version have an application-level service execution role rather than a resource-level
+        /// role.</p>
+        /// </note>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -4907,6 +5306,7 @@ pub mod kinesis_streams_input_description {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4922,6 +5322,13 @@ pub mod kinesis_streams_input_description {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the
+        /// stream.</p>
+        /// <note>
+        /// <p>Provided for backward compatibility. Applications that are created with the current API
+        /// version have an application-level service execution role rather than a resource-level
+        /// role.</p>
+        /// </note>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -4981,6 +5388,8 @@ pub mod input_processing_configuration_description {
             self.input_lambda_processor_description = Some(input);
             self
         }
+        /// <p>Provides configuration information about the associated <a>InputLambdaProcessorDescription</a>
+        /// </p>
         pub fn set_input_lambda_processor_description(
             mut self,
             input: std::option::Option<crate::model::InputLambdaProcessorDescription>,
@@ -5052,6 +5461,12 @@ pub mod input_lambda_processor_description {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the Amazon Lambda function that is used to preprocess the records in the
+        /// stream.</p>
+        /// <note>
+        /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a>
+        /// </p>
+        /// </note>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -5066,6 +5481,12 @@ pub mod input_lambda_processor_description {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role that is used to access the Amazon Lambda function.</p>
+        /// <note>
+        /// <p>Provided for backward compatibility. Applications that are created with the current API
+        /// version have an application-level service execution role rather than a resource-level
+        /// role.</p>
+        /// </note>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -5086,6 +5507,7 @@ impl InputLambdaProcessorDescription {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5097,16 +5519,27 @@ impl InputLambdaProcessorDescription {
     std::hash::Hash,
 )]
 pub enum ApplicationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Autoscaling,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     ForceStopping,
+    #[allow(missing_docs)] // documentation missing in model
     Maintenance,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
+    #[allow(missing_docs)] // documentation missing in model
     RolledBack,
+    #[allow(missing_docs)] // documentation missing in model
     RollingBack,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Starting,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5137,6 +5570,7 @@ impl std::str::FromStr for ApplicationStatus {
     }
 }
 impl ApplicationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ApplicationStatus::Autoscaling => "AUTOSCALING",
@@ -5153,6 +5587,7 @@ impl ApplicationStatus {
             ApplicationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AUTOSCALING",
@@ -5175,6 +5610,7 @@ impl AsRef<str> for ApplicationStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5186,12 +5622,19 @@ impl AsRef<str> for ApplicationStatus {
     std::hash::Hash,
 )]
 pub enum RuntimeEnvironment {
+    #[allow(missing_docs)] // documentation missing in model
     Flink111,
+    #[allow(missing_docs)] // documentation missing in model
     Flink113,
+    #[allow(missing_docs)] // documentation missing in model
     Flink16,
+    #[allow(missing_docs)] // documentation missing in model
     Flink18,
+    #[allow(missing_docs)] // documentation missing in model
     Sql10,
+    #[allow(missing_docs)] // documentation missing in model
     ZeppelinFlink10,
+    #[allow(missing_docs)] // documentation missing in model
     ZeppelinFlink20,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5218,6 +5661,7 @@ impl std::str::FromStr for RuntimeEnvironment {
     }
 }
 impl RuntimeEnvironment {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RuntimeEnvironment::Flink111 => "FLINK-1_11",
@@ -5230,6 +5674,7 @@ impl RuntimeEnvironment {
             RuntimeEnvironment::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "FLINK-1_11",
@@ -5287,6 +5732,7 @@ pub mod cloud_watch_logging_option_update {
             self.cloud_watch_logging_option_id = Some(input.into());
             self
         }
+        /// <p>The ID of the CloudWatch logging option to update</p>
         pub fn set_cloud_watch_logging_option_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5300,6 +5746,8 @@ pub mod cloud_watch_logging_option_update {
             self.log_stream_arn_update = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application
+        /// messages.</p>
         pub fn set_log_stream_arn_update(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5364,6 +5812,7 @@ pub mod run_configuration_update {
             self.flink_run_configuration = Some(input);
             self
         }
+        /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
         pub fn set_flink_run_configuration(
             mut self,
             input: std::option::Option<crate::model::FlinkRunConfiguration>,
@@ -5379,6 +5828,7 @@ pub mod run_configuration_update {
             self.application_restore_configuration = Some(input);
             self
         }
+        /// <p>Describes updates to the restore behavior of a restarting application.</p>
         pub fn set_application_restore_configuration(
             mut self,
             input: std::option::Option<crate::model::ApplicationRestoreConfiguration>,
@@ -5491,6 +5941,8 @@ pub mod application_configuration_update {
             self.sql_application_configuration_update = Some(input);
             self
         }
+        /// <p>Describes updates to a SQL-based Kinesis Data Analytics application's
+        /// configuration.</p>
         pub fn set_sql_application_configuration_update(
             mut self,
             input: std::option::Option<crate::model::SqlApplicationConfigurationUpdate>,
@@ -5507,6 +5959,8 @@ pub mod application_configuration_update {
             self.application_code_configuration_update = Some(input);
             self
         }
+        /// <p>Describes updates to an application's code
+        /// configuration.</p>
         pub fn set_application_code_configuration_update(
             mut self,
             input: std::option::Option<crate::model::ApplicationCodeConfigurationUpdate>,
@@ -5522,6 +5976,7 @@ pub mod application_configuration_update {
             self.flink_application_configuration_update = Some(input);
             self
         }
+        /// <p>Describes updates to a Flink-based Kinesis Data Analytics application's configuration.</p>
         pub fn set_flink_application_configuration_update(
             mut self,
             input: std::option::Option<crate::model::FlinkApplicationConfigurationUpdate>,
@@ -5537,6 +5992,7 @@ pub mod application_configuration_update {
             self.environment_property_updates = Some(input);
             self
         }
+        /// <p>Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.</p>
         pub fn set_environment_property_updates(
             mut self,
             input: std::option::Option<crate::model::EnvironmentPropertyUpdates>,
@@ -5552,6 +6008,7 @@ pub mod application_configuration_update {
             self.application_snapshot_configuration_update = Some(input);
             self
         }
+        /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
         pub fn set_application_snapshot_configuration_update(
             mut self,
             input: std::option::Option<crate::model::ApplicationSnapshotConfigurationUpdate>,
@@ -5559,6 +6016,11 @@ pub mod application_configuration_update {
             self.application_snapshot_configuration_update = input;
             self
         }
+        /// Appends an item to `vpc_configuration_updates`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_configuration_updates`](Self::set_vpc_configuration_updates).
+        ///
+        /// <p>Updates to the array of descriptions of VPC configurations available to the application.</p>
         pub fn vpc_configuration_updates(
             mut self,
             input: impl Into<crate::model::VpcConfigurationUpdate>,
@@ -5568,6 +6030,7 @@ pub mod application_configuration_update {
             self.vpc_configuration_updates = Some(v);
             self
         }
+        /// <p>Updates to the array of descriptions of VPC configurations available to the application.</p>
         pub fn set_vpc_configuration_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VpcConfigurationUpdate>>,
@@ -5583,6 +6046,7 @@ pub mod application_configuration_update {
             self.zeppelin_application_configuration_update = Some(input);
             self
         }
+        /// <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
         pub fn set_zeppelin_application_configuration_update(
             mut self,
             input: std::option::Option<crate::model::ZeppelinApplicationConfigurationUpdate>,
@@ -5675,6 +6139,7 @@ pub mod zeppelin_application_configuration_update {
             self.monitoring_configuration_update = Some(input);
             self
         }
+        /// <p>Updates to the monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
         pub fn set_monitoring_configuration_update(
             mut self,
             input: std::option::Option<crate::model::ZeppelinMonitoringConfigurationUpdate>,
@@ -5690,6 +6155,7 @@ pub mod zeppelin_application_configuration_update {
             self.catalog_configuration_update = Some(input);
             self
         }
+        /// <p>Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
         pub fn set_catalog_configuration_update(
             mut self,
             input: std::option::Option<crate::model::CatalogConfigurationUpdate>,
@@ -5705,6 +6171,7 @@ pub mod zeppelin_application_configuration_update {
             self.deploy_as_application_configuration_update = Some(input);
             self
         }
+        /// <p>Updates to the configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state.</p>
         pub fn set_deploy_as_application_configuration_update(
             mut self,
             input: std::option::Option<crate::model::DeployAsApplicationConfigurationUpdate>,
@@ -5712,6 +6179,11 @@ pub mod zeppelin_application_configuration_update {
             self.deploy_as_application_configuration_update = input;
             self
         }
+        /// Appends an item to `custom_artifacts_configuration_update`.
+        ///
+        /// To override the contents of this collection use [`set_custom_artifacts_configuration_update`](Self::set_custom_artifacts_configuration_update).
+        ///
+        /// <p>Updates to the customer artifacts. Custom artifacts are dependency JAR files and user-defined functions (UDF).</p>
         pub fn custom_artifacts_configuration_update(
             mut self,
             input: impl Into<crate::model::CustomArtifactConfiguration>,
@@ -5723,6 +6195,7 @@ pub mod zeppelin_application_configuration_update {
             self.custom_artifacts_configuration_update = Some(v);
             self
         }
+        /// <p>Updates to the customer artifacts. Custom artifacts are dependency JAR files and user-defined functions (UDF).</p>
         pub fn set_custom_artifacts_configuration_update(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CustomArtifactConfiguration>>,
@@ -5790,6 +6263,8 @@ pub mod custom_artifact_configuration {
             self.artifact_type = Some(input);
             self
         }
+        /// <p>
+        /// <code>UDF</code> stands for user-defined functions. This type of artifact must be in an S3 bucket. A <code>DEPENDENCY_JAR</code> can be in either Maven or an S3 bucket.</p>
         pub fn set_artifact_type(
             mut self,
             input: std::option::Option<crate::model::ArtifactType>,
@@ -5805,6 +6280,10 @@ pub mod custom_artifact_configuration {
             self.s3_content_location = Some(input);
             self
         }
+        /// <p>For a Kinesis Data Analytics application provides a
+        /// description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket,
+        /// the name of the Amazon S3 object that contains the data, and the version number of the Amazon
+        /// S3 object that contains the data. </p>
         pub fn set_s3_content_location(
             mut self,
             input: std::option::Option<crate::model::S3ContentLocation>,
@@ -5817,6 +6296,7 @@ pub mod custom_artifact_configuration {
             self.maven_reference = Some(input);
             self
         }
+        /// <p>The parameters required to fully specify a Maven reference.</p>
         pub fn set_maven_reference(
             mut self,
             input: std::option::Option<crate::model::MavenReference>,
@@ -5876,6 +6356,7 @@ pub mod deploy_as_application_configuration_update {
             self.s3_content_location_update = Some(input);
             self
         }
+        /// <p>Updates to the location that holds the data required to specify an Amazon Data Analytics application.</p>
         pub fn set_s3_content_location_update(
             mut self,
             input: std::option::Option<crate::model::S3ContentBaseLocationUpdate>,
@@ -5930,6 +6411,7 @@ pub mod s3_content_base_location_update {
             self.bucket_arn_update = Some(input.into());
             self
         }
+        /// <p>The updated Amazon Resource Name (ARN) of the S3 bucket.</p>
         pub fn set_bucket_arn_update(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5942,6 +6424,7 @@ pub mod s3_content_base_location_update {
             self.base_path_update = Some(input.into());
             self
         }
+        /// <p>The updated S3 bucket path.</p>
         pub fn set_base_path_update(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6001,6 +6484,7 @@ pub mod catalog_configuration_update {
             self.glue_data_catalog_configuration_update = Some(input);
             self
         }
+        /// <p>Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
         pub fn set_glue_data_catalog_configuration_update(
             mut self,
             input: std::option::Option<crate::model::GlueDataCatalogConfigurationUpdate>,
@@ -6051,6 +6535,7 @@ pub mod glue_data_catalog_configuration_update {
             self.database_arn_update = Some(input.into());
             self
         }
+        /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
         pub fn set_database_arn_update(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6101,6 +6586,7 @@ pub mod zeppelin_monitoring_configuration_update {
             self.log_level_update = Some(input);
             self
         }
+        /// <p>Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
         pub fn set_log_level_update(
             mut self,
             input: std::option::Option<crate::model::LogLevel>,
@@ -6163,6 +6649,7 @@ pub mod vpc_configuration_update {
             self.vpc_configuration_id = Some(input.into());
             self
         }
+        /// <p>Describes an update to the ID of the VPC configuration.</p>
         pub fn set_vpc_configuration_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6170,12 +6657,22 @@ pub mod vpc_configuration_update {
             self.vpc_configuration_id = input;
             self
         }
+        /// Appends an item to `subnet_id_updates`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_id_updates`](Self::set_subnet_id_updates).
+        ///
+        /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a>
+        /// IDs
+        /// used by the VPC configuration.</p>
         pub fn subnet_id_updates(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_id_updates.unwrap_or_default();
             v.push(input.into());
             self.subnet_id_updates = Some(v);
             self
         }
+        /// <p>Describes updates to the array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a>
+        /// IDs
+        /// used by the VPC configuration.</p>
         pub fn set_subnet_id_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6183,12 +6680,20 @@ pub mod vpc_configuration_update {
             self.subnet_id_updates = input;
             self
         }
+        /// Appends an item to `security_group_id_updates`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_id_updates`](Self::set_security_group_id_updates).
+        ///
+        /// <p>Describes updates to the array of
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
         pub fn security_group_id_updates(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_id_updates.unwrap_or_default();
             v.push(input.into());
             self.security_group_id_updates = Some(v);
             self
         }
+        /// <p>Describes updates to the array of
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
         pub fn set_security_group_id_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6241,6 +6746,7 @@ pub mod application_snapshot_configuration_update {
             self.snapshots_enabled_update = Some(input);
             self
         }
+        /// <p>Describes updates to whether snapshots are enabled for an application.</p>
         pub fn set_snapshots_enabled_update(mut self, input: std::option::Option<bool>) -> Self {
             self.snapshots_enabled_update = input;
             self
@@ -6283,12 +6789,18 @@ pub mod environment_property_updates {
         pub(crate) property_groups: std::option::Option<std::vec::Vec<crate::model::PropertyGroup>>,
     }
     impl Builder {
+        /// Appends an item to `property_groups`.
+        ///
+        /// To override the contents of this collection use [`set_property_groups`](Self::set_property_groups).
+        ///
+        /// <p>Describes updates to the execution property groups.</p>
         pub fn property_groups(mut self, input: impl Into<crate::model::PropertyGroup>) -> Self {
             let mut v = self.property_groups.unwrap_or_default();
             v.push(input.into());
             self.property_groups = Some(v);
             self
         }
+        /// <p>Describes updates to the execution property groups.</p>
         pub fn set_property_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PropertyGroup>>,
@@ -6368,6 +6880,8 @@ pub mod flink_application_configuration_update {
             self.checkpoint_configuration_update = Some(input);
             self
         }
+        /// <p>Describes updates to an application's checkpointing configuration. Checkpointing is the process of persisting
+        /// application state for fault tolerance.</p>
         pub fn set_checkpoint_configuration_update(
             mut self,
             input: std::option::Option<crate::model::CheckpointConfigurationUpdate>,
@@ -6384,6 +6898,8 @@ pub mod flink_application_configuration_update {
             self.monitoring_configuration_update = Some(input);
             self
         }
+        /// <p>Describes updates to the configuration parameters for Amazon CloudWatch logging for an
+        /// application.</p>
         pub fn set_monitoring_configuration_update(
             mut self,
             input: std::option::Option<crate::model::MonitoringConfigurationUpdate>,
@@ -6399,6 +6915,7 @@ pub mod flink_application_configuration_update {
             self.parallelism_configuration_update = Some(input);
             self
         }
+        /// <p>Describes updates to the parameters for how an application executes multiple tasks simultaneously.</p>
         pub fn set_parallelism_configuration_update(
             mut self,
             input: std::option::Option<crate::model::ParallelismConfigurationUpdate>,
@@ -6477,6 +6994,9 @@ pub mod parallelism_configuration_update {
             self.configuration_type_update = Some(input);
             self
         }
+        /// <p>Describes updates to whether the application uses the default parallelism for the Kinesis Data Analytics service, or if a custom parallelism is used.
+        /// You must set this property to <code>CUSTOM</code>
+        /// in order to change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code> properties.</p>
         pub fn set_configuration_type_update(
             mut self,
             input: std::option::Option<crate::model::ConfigurationType>,
@@ -6493,6 +7013,11 @@ pub mod parallelism_configuration_update {
             self.parallelism_update = Some(input);
             self
         }
+        /// <p>Describes updates to the initial number of parallel tasks an application can perform. If <code>AutoScalingEnabled</code> is set to True, then
+        /// Kinesis Data Analytics can increase the <code>CurrentParallelism</code> value in response to application
+        /// load. The service can increase <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application.
+        /// The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service will
+        /// reduce <code>CurrentParallelism</code> down to the <code>Parallelism</code> setting.</p>
         pub fn set_parallelism_update(mut self, input: std::option::Option<i32>) -> Self {
             self.parallelism_update = input;
             self
@@ -6502,6 +7027,7 @@ pub mod parallelism_configuration_update {
             self.parallelism_per_kpu_update = Some(input);
             self
         }
+        /// <p>Describes updates to the number of parallel tasks an application can perform per Kinesis Processing Unit (KPU) used by the application.</p>
         pub fn set_parallelism_per_kpu_update(mut self, input: std::option::Option<i32>) -> Self {
             self.parallelism_per_kpu_update = input;
             self
@@ -6511,6 +7037,7 @@ pub mod parallelism_configuration_update {
             self.auto_scaling_enabled_update = Some(input);
             self
         }
+        /// <p>Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of a Flink-based Kinesis Data Analytics application in response to increased throughput.</p>
         pub fn set_auto_scaling_enabled_update(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_scaling_enabled_update = input;
             self
@@ -6574,6 +7101,9 @@ pub mod monitoring_configuration_update {
             self.configuration_type_update = Some(input);
             self
         }
+        /// <p>Describes updates to whether to use the default CloudWatch logging configuration for
+        /// an application. You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or
+        /// <code>MetricsLevel</code> parameters.</p>
         pub fn set_configuration_type_update(
             mut self,
             input: std::option::Option<crate::model::ConfigurationType>,
@@ -6587,6 +7117,8 @@ pub mod monitoring_configuration_update {
             self.metrics_level_update = Some(input);
             self
         }
+        /// <p>Describes updates to the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code>
+        /// level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
         pub fn set_metrics_level_update(
             mut self,
             input: std::option::Option<crate::model::MetricsLevel>,
@@ -6599,6 +7131,7 @@ pub mod monitoring_configuration_update {
             self.log_level_update = Some(input);
             self
         }
+        /// <p>Describes updates to the verbosity of the CloudWatch Logs for an application.</p>
         pub fn set_log_level_update(
             mut self,
             input: std::option::Option<crate::model::LogLevel>,
@@ -6732,6 +7265,29 @@ pub mod checkpoint_configuration_update {
             self.configuration_type_update = Some(input);
             self
         }
+        /// <p>Describes updates to whether the application uses the default checkpointing behavior of
+        /// Kinesis Data Analytics. You must set this property to <code>CUSTOM</code> in order to set the
+        /// <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.
+        /// </p>
+        /// <note>
+        /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are
+        /// set to other values using APIs or
+        /// application code:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>CheckpointingEnabled:</b> true</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>CheckpointInterval:</b> 60000</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>MinPauseBetweenCheckpoints:</b> 5000</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn set_configuration_type_update(
             mut self,
             input: std::option::Option<crate::model::ConfigurationType>,
@@ -6749,6 +7305,12 @@ pub mod checkpoint_configuration_update {
             self.checkpointing_enabled_update = Some(input);
             self
         }
+        /// <p>Describes updates to whether checkpointing is enabled for an application.</p>
+        /// <note>
+        /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+        /// the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to
+        /// another value using this API or in application code.</p>
+        /// </note>
         pub fn set_checkpointing_enabled_update(
             mut self,
             input: std::option::Option<bool>,
@@ -6766,6 +7328,12 @@ pub mod checkpoint_configuration_update {
             self.checkpoint_interval_update = Some(input);
             self
         }
+        /// <p>Describes updates to the interval in milliseconds between checkpoint operations.</p>
+        /// <note>
+        /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+        /// the application will use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value
+        /// using this API or in application code.</p>
+        /// </note>
         pub fn set_checkpoint_interval_update(mut self, input: std::option::Option<i64>) -> Self {
             self.checkpoint_interval_update = input;
             self
@@ -6781,6 +7349,13 @@ pub mod checkpoint_configuration_update {
             self.min_pause_between_checkpoints_update = Some(input);
             self
         }
+        /// <p>Describes updates to the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation
+        /// can start.</p>
+        /// <note>
+        /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+        /// the application will use a <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this API or
+        /// in application code.</p>
+        /// </note>
         pub fn set_min_pause_between_checkpoints_update(
             mut self,
             input: std::option::Option<i64>,
@@ -6838,6 +7413,7 @@ pub mod application_code_configuration_update {
             self.code_content_type_update = Some(input);
             self
         }
+        /// <p>Describes updates to the code content type.</p>
         pub fn set_code_content_type_update(
             mut self,
             input: std::option::Option<crate::model::CodeContentType>,
@@ -6850,6 +7426,7 @@ pub mod application_code_configuration_update {
             self.code_content_update = Some(input);
             self
         }
+        /// <p>Describes updates to the code content of an application.</p>
         pub fn set_code_content_update(
             mut self,
             input: std::option::Option<crate::model::CodeContentUpdate>,
@@ -6880,7 +7457,7 @@ pub struct CodeContentUpdate {
     /// <p>Describes an update to the text code for an application.</p>
     pub text_content_update: std::option::Option<std::string::String>,
     /// <p>Describes an update to the zipped code for an application.</p>
-    pub zip_file_content_update: std::option::Option<smithy_types::Blob>,
+    pub zip_file_content_update: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Describes an update to the location of code for an application.</p>
     pub s3_content_location_update: std::option::Option<crate::model::S3ContentLocationUpdate>,
 }
@@ -6903,7 +7480,7 @@ pub mod code_content_update {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text_content_update: std::option::Option<std::string::String>,
-        pub(crate) zip_file_content_update: std::option::Option<smithy_types::Blob>,
+        pub(crate) zip_file_content_update: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) s3_content_location_update:
             std::option::Option<crate::model::S3ContentLocationUpdate>,
     }
@@ -6913,6 +7490,7 @@ pub mod code_content_update {
             self.text_content_update = Some(input.into());
             self
         }
+        /// <p>Describes an update to the text code for an application.</p>
         pub fn set_text_content_update(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6921,13 +7499,14 @@ pub mod code_content_update {
             self
         }
         /// <p>Describes an update to the zipped code for an application.</p>
-        pub fn zip_file_content_update(mut self, input: smithy_types::Blob) -> Self {
+        pub fn zip_file_content_update(mut self, input: aws_smithy_types::Blob) -> Self {
             self.zip_file_content_update = Some(input);
             self
         }
+        /// <p>Describes an update to the zipped code for an application.</p>
         pub fn set_zip_file_content_update(
             mut self,
-            input: std::option::Option<smithy_types::Blob>,
+            input: std::option::Option<aws_smithy_types::Blob>,
         ) -> Self {
             self.zip_file_content_update = input;
             self
@@ -6940,6 +7519,7 @@ pub mod code_content_update {
             self.s3_content_location_update = Some(input);
             self
         }
+        /// <p>Describes an update to the location of code for an application.</p>
         pub fn set_s3_content_location_update(
             mut self,
             input: std::option::Option<crate::model::S3ContentLocationUpdate>,
@@ -7000,6 +7580,7 @@ pub mod s3_content_location_update {
             self.bucket_arn_update = Some(input.into());
             self
         }
+        /// <p>The new Amazon Resource Name (ARN) for the S3 bucket containing the application code.</p>
         pub fn set_bucket_arn_update(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7012,6 +7593,7 @@ pub mod s3_content_location_update {
             self.file_key_update = Some(input.into());
             self
         }
+        /// <p>The new file key for the object containing the application code.</p>
         pub fn set_file_key_update(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7024,6 +7606,7 @@ pub mod s3_content_location_update {
             self.object_version_update = Some(input.into());
             self
         }
+        /// <p>The new version of the object containing the application code.</p>
         pub fn set_object_version_update(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7088,12 +7671,20 @@ pub mod sql_application_configuration_update {
             std::option::Option<std::vec::Vec<crate::model::ReferenceDataSourceUpdate>>,
     }
     impl Builder {
+        /// Appends an item to `input_updates`.
+        ///
+        /// To override the contents of this collection use [`set_input_updates`](Self::set_input_updates).
+        ///
+        /// <p>The array of <a>InputUpdate</a> objects describing the new input streams used
+        /// by the application.</p>
         pub fn input_updates(mut self, input: impl Into<crate::model::InputUpdate>) -> Self {
             let mut v = self.input_updates.unwrap_or_default();
             v.push(input.into());
             self.input_updates = Some(v);
             self
         }
+        /// <p>The array of <a>InputUpdate</a> objects describing the new input streams used
+        /// by the application.</p>
         pub fn set_input_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputUpdate>>,
@@ -7101,12 +7692,20 @@ pub mod sql_application_configuration_update {
             self.input_updates = input;
             self
         }
+        /// Appends an item to `output_updates`.
+        ///
+        /// To override the contents of this collection use [`set_output_updates`](Self::set_output_updates).
+        ///
+        /// <p>The array of <a>OutputUpdate</a> objects describing the new destination streams
+        /// used by the application.</p>
         pub fn output_updates(mut self, input: impl Into<crate::model::OutputUpdate>) -> Self {
             let mut v = self.output_updates.unwrap_or_default();
             v.push(input.into());
             self.output_updates = Some(v);
             self
         }
+        /// <p>The array of <a>OutputUpdate</a> objects describing the new destination streams
+        /// used by the application.</p>
         pub fn set_output_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputUpdate>>,
@@ -7114,6 +7713,12 @@ pub mod sql_application_configuration_update {
             self.output_updates = input;
             self
         }
+        /// Appends an item to `reference_data_source_updates`.
+        ///
+        /// To override the contents of this collection use [`set_reference_data_source_updates`](Self::set_reference_data_source_updates).
+        ///
+        /// <p>The array of <a>ReferenceDataSourceUpdate</a> objects describing the new
+        /// reference data sources used by the application.</p>
         pub fn reference_data_source_updates(
             mut self,
             input: impl Into<crate::model::ReferenceDataSourceUpdate>,
@@ -7123,6 +7728,8 @@ pub mod sql_application_configuration_update {
             self.reference_data_source_updates = Some(v);
             self
         }
+        /// <p>The array of <a>ReferenceDataSourceUpdate</a> objects describing the new
+        /// reference data sources used by the application.</p>
         pub fn set_reference_data_source_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReferenceDataSourceUpdate>>,
@@ -7198,6 +7805,7 @@ pub mod reference_data_source_update {
             self.reference_id = Some(input.into());
             self
         }
+        /// <p>The ID of the reference data source that is being updated. You can use the <a>DescribeApplication</a> operation to get this value.</p>
         pub fn set_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reference_id = input;
             self
@@ -7207,6 +7815,7 @@ pub mod reference_data_source_update {
             self.table_name_update = Some(input.into());
             self
         }
+        /// <p>The in-application table name that is created by this update.</p>
         pub fn set_table_name_update(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7223,6 +7832,8 @@ pub mod reference_data_source_update {
             self.s3_reference_data_source_update = Some(input);
             self
         }
+        /// <p>Describes the S3 bucket name, object key name, and IAM role that Kinesis Data Analytics can assume to read the
+        /// Amazon S3 object on your behalf and populate the in-application reference table.</p>
         pub fn set_s3_reference_data_source_update(
             mut self,
             input: std::option::Option<crate::model::S3ReferenceDataSourceUpdate>,
@@ -7236,6 +7847,8 @@ pub mod reference_data_source_update {
             self.reference_schema_update = Some(input);
             self
         }
+        /// <p>Describes the format of the data in the streaming source, and how each data element maps to
+        /// corresponding columns created in the in-application stream. </p>
         pub fn set_reference_schema_update(
             mut self,
             input: std::option::Option<crate::model::SourceSchema>,
@@ -7294,6 +7907,7 @@ pub mod s3_reference_data_source_update {
             self.bucket_arn_update = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
         pub fn set_bucket_arn_update(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7306,6 +7920,7 @@ pub mod s3_reference_data_source_update {
             self.file_key_update = Some(input.into());
             self
         }
+        /// <p>The object key name.</p>
         pub fn set_file_key_update(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7392,6 +8007,7 @@ pub mod output_update {
             self.output_id = Some(input.into());
             self
         }
+        /// <p>Identifies the specific output configuration that you want to update.</p>
         pub fn set_output_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output_id = input;
             self
@@ -7403,6 +8019,9 @@ pub mod output_update {
             self.name_update = Some(input.into());
             self
         }
+        /// <p>If you want to specify a different in-application stream
+        /// for this output configuration, use this field to
+        /// specify the new in-application stream name.</p>
         pub fn set_name_update(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name_update = input;
             self
@@ -7415,6 +8034,7 @@ pub mod output_update {
             self.kinesis_streams_output_update = Some(input);
             self
         }
+        /// <p>Describes a Kinesis data stream as the destination for the output.</p>
         pub fn set_kinesis_streams_output_update(
             mut self,
             input: std::option::Option<crate::model::KinesisStreamsOutputUpdate>,
@@ -7431,6 +8051,8 @@ pub mod output_update {
             self.kinesis_firehose_output_update = Some(input);
             self
         }
+        /// <p>Describes a Kinesis Data Firehose delivery stream as the destination for the
+        /// output.</p>
         pub fn set_kinesis_firehose_output_update(
             mut self,
             input: std::option::Option<crate::model::KinesisFirehoseOutputUpdate>,
@@ -7443,6 +8065,7 @@ pub mod output_update {
             self.lambda_output_update = Some(input);
             self
         }
+        /// <p>Describes an Amazon Lambda function as the destination for the output.</p>
         pub fn set_lambda_output_update(
             mut self,
             input: std::option::Option<crate::model::LambdaOutputUpdate>,
@@ -7456,6 +8079,8 @@ pub mod output_update {
             self.destination_schema_update = Some(input);
             self
         }
+        /// <p>Describes the data format when records are written to the destination.
+        /// </p>
         pub fn set_destination_schema_update(
             mut self,
             input: std::option::Option<crate::model::DestinationSchema>,
@@ -7521,6 +8146,11 @@ pub mod lambda_output_update {
             self.resource_arn_update = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p>
+        /// <note>
+        /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a>
+        /// </p>
+        /// </note>
         pub fn set_resource_arn_update(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7573,6 +8203,7 @@ pub mod kinesis_firehose_output_update {
             self.resource_arn_update = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the delivery stream to write to. </p>
         pub fn set_resource_arn_update(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7627,6 +8258,8 @@ pub mod kinesis_streams_output_update {
             self.resource_arn_update = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you want to write the
+        /// output.</p>
         pub fn set_resource_arn_update(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7721,6 +8354,7 @@ pub mod input_update {
             self.input_id = Some(input.into());
             self
         }
+        /// <p>The input ID of the application input to be updated.</p>
         pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_id = input;
             self
@@ -7731,6 +8365,8 @@ pub mod input_update {
             self.name_prefix_update = Some(input.into());
             self
         }
+        /// <p>The name prefix for in-application streams that Kinesis Data Analytics creates for the
+        /// specific streaming source.</p>
         pub fn set_name_prefix_update(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7746,6 +8382,7 @@ pub mod input_update {
             self.input_processing_configuration_update = Some(input);
             self
         }
+        /// <p>Describes updates to an <a>InputProcessingConfiguration</a>.</p>
         pub fn set_input_processing_configuration_update(
             mut self,
             input: std::option::Option<crate::model::InputProcessingConfigurationUpdate>,
@@ -7762,6 +8399,8 @@ pub mod input_update {
             self.kinesis_streams_input_update = Some(input);
             self
         }
+        /// <p>If a Kinesis data stream is the streaming source to be updated, provides an
+        /// updated stream Amazon Resource Name (ARN).</p>
         pub fn set_kinesis_streams_input_update(
             mut self,
             input: std::option::Option<crate::model::KinesisStreamsInputUpdate>,
@@ -7778,6 +8417,8 @@ pub mod input_update {
             self.kinesis_firehose_input_update = Some(input);
             self
         }
+        /// <p>If a Kinesis Data Firehose delivery stream is the streaming source to be
+        /// updated, provides an updated stream ARN.</p>
         pub fn set_kinesis_firehose_input_update(
             mut self,
             input: std::option::Option<crate::model::KinesisFirehoseInputUpdate>,
@@ -7791,6 +8432,8 @@ pub mod input_update {
             self.input_schema_update = Some(input);
             self
         }
+        /// <p>Describes the data format on the streaming source, and
+        /// how record elements on the streaming source map to columns of the in-application stream that is created.</p>
         pub fn set_input_schema_update(
             mut self,
             input: std::option::Option<crate::model::InputSchemaUpdate>,
@@ -7806,6 +8449,7 @@ pub mod input_update {
             self.input_parallelism_update = Some(input);
             self
         }
+        /// <p>Describes the parallelism updates (the number of in-application streams Kinesis Data Analytics creates for the specific streaming source).</p>
         pub fn set_input_parallelism_update(
             mut self,
             input: std::option::Option<crate::model::InputParallelismUpdate>,
@@ -7863,6 +8507,7 @@ pub mod input_parallelism_update {
             self.count_update = Some(input);
             self
         }
+        /// <p>The number of in-application streams to create for the specified streaming source.</p>
         pub fn set_count_update(mut self, input: std::option::Option<i32>) -> Self {
             self.count_update = input;
             self
@@ -7921,6 +8566,7 @@ pub mod input_schema_update {
             self.record_format_update = Some(input);
             self
         }
+        /// <p>Specifies the format of the records on the streaming source.</p>
         pub fn set_record_format_update(
             mut self,
             input: std::option::Option<crate::model::RecordFormat>,
@@ -7933,6 +8579,7 @@ pub mod input_schema_update {
             self.record_encoding_update = Some(input.into());
             self
         }
+        /// <p>Specifies the encoding of the records in the streaming source; for example, UTF-8.</p>
         pub fn set_record_encoding_update(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7940,6 +8587,12 @@ pub mod input_schema_update {
             self.record_encoding_update = input;
             self
         }
+        /// Appends an item to `record_column_updates`.
+        ///
+        /// To override the contents of this collection use [`set_record_column_updates`](Self::set_record_column_updates).
+        ///
+        /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping
+        /// of the streaming source element to the corresponding column in the in-application stream.</p>
         pub fn record_column_updates(
             mut self,
             input: impl Into<crate::model::RecordColumn>,
@@ -7949,6 +8602,8 @@ pub mod input_schema_update {
             self.record_column_updates = Some(v);
             self
         }
+        /// <p>A list of <code>RecordColumn</code> objects. Each object describes the mapping
+        /// of the streaming source element to the corresponding column in the in-application stream.</p>
         pub fn set_record_column_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecordColumn>>,
@@ -8003,6 +8658,7 @@ pub mod kinesis_firehose_input_update {
             self.resource_arn_update = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the input delivery stream to read.</p>
         pub fn set_resource_arn_update(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8055,6 +8711,7 @@ pub mod kinesis_streams_input_update {
             self.resource_arn_update = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
         pub fn set_resource_arn_update(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8113,6 +8770,7 @@ pub mod input_processing_configuration_update {
             self.input_lambda_processor_update = Some(input);
             self
         }
+        /// <p>Provides update information for an <a>InputLambdaProcessor</a>.</p>
         pub fn set_input_lambda_processor_update(
             mut self,
             input: std::option::Option<crate::model::InputLambdaProcessorUpdate>,
@@ -8175,6 +8833,12 @@ pub mod input_lambda_processor_update {
             self.resource_arn_update = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the new Amazon Lambda function that is used to preprocess
+        /// the records in the stream.</p>
+        /// <note>
+        /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a>
+        /// </p>
+        /// </note>
         pub fn set_resource_arn_update(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8235,6 +8899,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key of the key-value tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -8244,6 +8909,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the key-value tag. The value is optional.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -8312,6 +8978,7 @@ pub mod run_configuration {
             self.flink_run_configuration = Some(input);
             self
         }
+        /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
         pub fn set_flink_run_configuration(
             mut self,
             input: std::option::Option<crate::model::FlinkRunConfiguration>,
@@ -8319,6 +8986,12 @@ pub mod run_configuration {
             self.flink_run_configuration = input;
             self
         }
+        /// Appends an item to `sql_run_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_sql_run_configurations`](Self::set_sql_run_configurations).
+        ///
+        /// <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics application
+        /// application.</p>
         pub fn sql_run_configurations(
             mut self,
             input: impl Into<crate::model::SqlRunConfiguration>,
@@ -8328,6 +9001,8 @@ pub mod run_configuration {
             self.sql_run_configurations = Some(v);
             self
         }
+        /// <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics application
+        /// application.</p>
         pub fn set_sql_run_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SqlRunConfiguration>>,
@@ -8343,6 +9018,7 @@ pub mod run_configuration {
             self.application_restore_configuration = Some(input);
             self
         }
+        /// <p>Describes the restore behavior of a restarting application.</p>
         pub fn set_application_restore_configuration(
             mut self,
             input: std::option::Option<crate::model::ApplicationRestoreConfiguration>,
@@ -8405,6 +9081,7 @@ pub mod sql_run_configuration {
             self.input_id = Some(input.into());
             self
         }
+        /// <p>The input source ID. You can get this ID by calling the <a>DescribeApplication</a> operation. </p>
         pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_id = input;
             self
@@ -8418,6 +9095,8 @@ pub mod sql_run_configuration {
             self.input_starting_position_configuration = Some(input);
             self
         }
+        /// <p>The point at which you want the application to start processing records from the streaming
+        /// source. </p>
         pub fn set_input_starting_position_configuration(
             mut self,
             input: std::option::Option<crate::model::InputStartingPositionConfiguration>,
@@ -8473,6 +9152,7 @@ pub mod application_version_summary {
             self.application_version_id = Some(input);
             self
         }
+        /// <p>The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
         pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
             self.application_version_id = input;
             self
@@ -8482,6 +9162,7 @@ pub mod application_version_summary {
             self.application_status = Some(input);
             self
         }
+        /// <p>The status of the application.</p>
         pub fn set_application_status(
             mut self,
             input: std::option::Option<crate::model::ApplicationStatus>,
@@ -8516,7 +9197,7 @@ pub struct SnapshotDetails {
     /// <p>The current application version ID when the snapshot was created.</p>
     pub application_version_id: std::option::Option<i64>,
     /// <p>The timestamp of the application snapshot.</p>
-    pub snapshot_creation_timestamp: std::option::Option<smithy_types::Instant>,
+    pub snapshot_creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for SnapshotDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8540,7 +9221,7 @@ pub mod snapshot_details {
         pub(crate) snapshot_name: std::option::Option<std::string::String>,
         pub(crate) snapshot_status: std::option::Option<crate::model::SnapshotStatus>,
         pub(crate) application_version_id: std::option::Option<i64>,
-        pub(crate) snapshot_creation_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) snapshot_creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier for the application snapshot.</p>
@@ -8548,6 +9229,7 @@ pub mod snapshot_details {
             self.snapshot_name = Some(input.into());
             self
         }
+        /// <p>The identifier for the application snapshot.</p>
         pub fn set_snapshot_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8560,6 +9242,7 @@ pub mod snapshot_details {
             self.snapshot_status = Some(input);
             self
         }
+        /// <p>The status of the application snapshot.</p>
         pub fn set_snapshot_status(
             mut self,
             input: std::option::Option<crate::model::SnapshotStatus>,
@@ -8572,18 +9255,20 @@ pub mod snapshot_details {
             self.application_version_id = Some(input);
             self
         }
+        /// <p>The current application version ID when the snapshot was created.</p>
         pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
             self.application_version_id = input;
             self
         }
         /// <p>The timestamp of the application snapshot.</p>
-        pub fn snapshot_creation_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn snapshot_creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.snapshot_creation_timestamp = Some(input);
             self
         }
+        /// <p>The timestamp of the application snapshot.</p>
         pub fn set_snapshot_creation_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.snapshot_creation_timestamp = input;
             self
@@ -8606,6 +9291,7 @@ impl SnapshotDetails {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8617,9 +9303,13 @@ impl SnapshotDetails {
     std::hash::Hash,
 )]
 pub enum SnapshotStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8643,6 +9333,7 @@ impl std::str::FromStr for SnapshotStatus {
     }
 }
 impl SnapshotStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SnapshotStatus::Creating => "CREATING",
@@ -8652,6 +9343,7 @@ impl SnapshotStatus {
             SnapshotStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CREATING", "DELETING", "FAILED", "READY"]
     }
@@ -8710,6 +9402,7 @@ pub mod application_summary {
             self.application_name = Some(input.into());
             self
         }
+        /// <p>The name of the application.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8722,6 +9415,7 @@ pub mod application_summary {
             self.application_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the application.</p>
         pub fn set_application_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8734,6 +9428,7 @@ pub mod application_summary {
             self.application_status = Some(input);
             self
         }
+        /// <p>The status of the application.</p>
         pub fn set_application_status(
             mut self,
             input: std::option::Option<crate::model::ApplicationStatus>,
@@ -8746,6 +9441,7 @@ pub mod application_summary {
             self.application_version_id = Some(input);
             self
         }
+        /// <p>Provides the current application version.</p>
         pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
             self.application_version_id = input;
             self
@@ -8755,6 +9451,7 @@ pub mod application_summary {
             self.runtime_environment = Some(input);
             self
         }
+        /// <p>The runtime environment for the application.</p>
         pub fn set_runtime_environment(
             mut self,
             input: std::option::Option<crate::model::RuntimeEnvironment>,
@@ -8767,6 +9464,7 @@ pub mod application_summary {
             self.application_mode = Some(input);
             self
         }
+        /// <p>For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.</p>
         pub fn set_application_mode(
             mut self,
             input: std::option::Option<crate::model::ApplicationMode>,
@@ -8826,6 +9524,8 @@ pub mod input_processing_configuration {
             self.input_lambda_processor = Some(input);
             self
         }
+        /// <p>The <a>InputLambdaProcessor</a> that is used to preprocess the records
+        /// in the stream before being processed by your application code.</p>
         pub fn set_input_lambda_processor(
             mut self,
             input: std::option::Option<crate::model::InputLambdaProcessor>,
@@ -8885,6 +9585,11 @@ pub mod input_lambda_processor {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the Amazon Lambda function that operates on records in the stream.</p>
+        /// <note>
+        /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a>
+        /// </p>
+        /// </note>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -8938,6 +9643,7 @@ pub mod s3_configuration {
             self.bucket_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the S3 bucket that contains the data.</p>
         pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_arn = input;
             self
@@ -8947,6 +9653,7 @@ pub mod s3_configuration {
             self.file_key = Some(input.into());
             self
         }
+        /// <p>The name of the object that contains the data.</p>
         pub fn set_file_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_key = input;
             self
@@ -8967,6 +9674,7 @@ impl S3Configuration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8978,7 +9686,9 @@ impl S3Configuration {
     std::hash::Hash,
 )]
 pub enum UrlType {
+    #[allow(missing_docs)] // documentation missing in model
     FlinkDashboardUrl,
+    #[allow(missing_docs)] // documentation missing in model
     ZeppelinUiUrl,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9000,6 +9710,7 @@ impl std::str::FromStr for UrlType {
     }
 }
 impl UrlType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UrlType::FlinkDashboardUrl => "FLINK_DASHBOARD_URL",
@@ -9007,6 +9718,7 @@ impl UrlType {
             UrlType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FLINK_DASHBOARD_URL", "ZEPPELIN_UI_URL"]
     }
@@ -9046,6 +9758,7 @@ pub mod cloud_watch_logging_option {
             self.log_stream_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the CloudWatch log to receive application messages.</p>
         pub fn set_log_stream_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9149,6 +9862,7 @@ pub mod application_configuration {
             self.sql_application_configuration = Some(input);
             self
         }
+        /// <p>The creation and update parameters for a SQL-based Kinesis Data Analytics application.</p>
         pub fn set_sql_application_configuration(
             mut self,
             input: std::option::Option<crate::model::SqlApplicationConfiguration>,
@@ -9164,6 +9878,7 @@ pub mod application_configuration {
             self.flink_application_configuration = Some(input);
             self
         }
+        /// <p>The creation and update parameters for a Flink-based Kinesis Data Analytics application.</p>
         pub fn set_flink_application_configuration(
             mut self,
             input: std::option::Option<crate::model::FlinkApplicationConfiguration>,
@@ -9179,6 +9894,7 @@ pub mod application_configuration {
             self.environment_properties = Some(input);
             self
         }
+        /// <p>Describes execution properties for a Flink-based Kinesis Data Analytics application.</p>
         pub fn set_environment_properties(
             mut self,
             input: std::option::Option<crate::model::EnvironmentProperties>,
@@ -9194,6 +9910,7 @@ pub mod application_configuration {
             self.application_code_configuration = Some(input);
             self
         }
+        /// <p>The code location and type parameters for a Flink-based Kinesis Data Analytics application.</p>
         pub fn set_application_code_configuration(
             mut self,
             input: std::option::Option<crate::model::ApplicationCodeConfiguration>,
@@ -9209,6 +9926,7 @@ pub mod application_configuration {
             self.application_snapshot_configuration = Some(input);
             self
         }
+        /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
         pub fn set_application_snapshot_configuration(
             mut self,
             input: std::option::Option<crate::model::ApplicationSnapshotConfiguration>,
@@ -9216,6 +9934,11 @@ pub mod application_configuration {
             self.application_snapshot_configuration = input;
             self
         }
+        /// Appends an item to `vpc_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_configurations`](Self::set_vpc_configurations).
+        ///
+        /// <p>The array of descriptions of VPC configurations available to the application.</p>
         pub fn vpc_configurations(
             mut self,
             input: impl Into<crate::model::VpcConfiguration>,
@@ -9225,6 +9948,7 @@ pub mod application_configuration {
             self.vpc_configurations = Some(v);
             self
         }
+        /// <p>The array of descriptions of VPC configurations available to the application.</p>
         pub fn set_vpc_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VpcConfiguration>>,
@@ -9240,6 +9964,7 @@ pub mod application_configuration {
             self.zeppelin_application_configuration = Some(input);
             self
         }
+        /// <p>The configuration parameters for a Kinesis Data Analytics Studio notebook.</p>
         pub fn set_zeppelin_application_configuration(
             mut self,
             input: std::option::Option<crate::model::ZeppelinApplicationConfiguration>,
@@ -9323,6 +10048,7 @@ pub mod zeppelin_application_configuration {
             self.monitoring_configuration = Some(input);
             self
         }
+        /// <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
         pub fn set_monitoring_configuration(
             mut self,
             input: std::option::Option<crate::model::ZeppelinMonitoringConfiguration>,
@@ -9335,6 +10061,7 @@ pub mod zeppelin_application_configuration {
             self.catalog_configuration = Some(input);
             self
         }
+        /// <p>The Amazon Glue Data Catalog that you use in queries in a Kinesis Data Analytics Studio notebook.</p>
         pub fn set_catalog_configuration(
             mut self,
             input: std::option::Option<crate::model::CatalogConfiguration>,
@@ -9350,6 +10077,7 @@ pub mod zeppelin_application_configuration {
             self.deploy_as_application_configuration = Some(input);
             self
         }
+        /// <p>The information required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.</p>
         pub fn set_deploy_as_application_configuration(
             mut self,
             input: std::option::Option<crate::model::DeployAsApplicationConfiguration>,
@@ -9357,6 +10085,11 @@ pub mod zeppelin_application_configuration {
             self.deploy_as_application_configuration = input;
             self
         }
+        /// Appends an item to `custom_artifacts_configuration`.
+        ///
+        /// To override the contents of this collection use [`set_custom_artifacts_configuration`](Self::set_custom_artifacts_configuration).
+        ///
+        /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
         pub fn custom_artifacts_configuration(
             mut self,
             input: impl Into<crate::model::CustomArtifactConfiguration>,
@@ -9366,6 +10099,7 @@ pub mod zeppelin_application_configuration {
             self.custom_artifacts_configuration = Some(v);
             self
         }
+        /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
         pub fn set_custom_artifacts_configuration(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CustomArtifactConfiguration>>,
@@ -9421,6 +10155,8 @@ pub mod deploy_as_application_configuration {
             self.s3_content_location = Some(input);
             self
         }
+        /// <p>The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.    
+        /// </p>
         pub fn set_s3_content_location(
             mut self,
             input: std::option::Option<crate::model::S3ContentBaseLocation>,
@@ -9475,6 +10211,7 @@ pub mod s3_content_base_location {
             self.bucket_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
         pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_arn = input;
             self
@@ -9484,6 +10221,7 @@ pub mod s3_content_base_location {
             self.base_path = Some(input.into());
             self
         }
+        /// <p>The base path for the S3 bucket.</p>
         pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.base_path = input;
             self
@@ -9540,6 +10278,7 @@ pub mod catalog_configuration {
             self.glue_data_catalog_configuration = Some(input);
             self
         }
+        /// <p>The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.</p>
         pub fn set_glue_data_catalog_configuration(
             mut self,
             input: std::option::Option<crate::model::GlueDataCatalogConfiguration>,
@@ -9590,6 +10329,7 @@ pub mod glue_data_catalog_configuration {
             self.database_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the database.</p>
         pub fn set_database_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.database_arn = input;
             self
@@ -9637,6 +10377,7 @@ pub mod zeppelin_monitoring_configuration {
             self.log_level = Some(input);
             self
         }
+        /// <p>The verbosity of the CloudWatch Logs for an application.</p>
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
             self.log_level = input;
             self
@@ -9685,12 +10426,20 @@ pub mod vpc_configuration {
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs
+        /// used by the VPC configuration.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs
+        /// used by the VPC configuration.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9698,12 +10447,20 @@ pub mod vpc_configuration {
             self.subnet_ids = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a>
+        /// IDs used by the VPC configuration.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a>
+        /// IDs used by the VPC configuration.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9755,6 +10512,7 @@ pub mod application_snapshot_configuration {
             self.snapshots_enabled = Some(input);
             self
         }
+        /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
         pub fn set_snapshots_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.snapshots_enabled = input;
             self
@@ -9806,6 +10564,7 @@ pub mod application_code_configuration {
             self.code_content = Some(input);
             self
         }
+        /// <p>The location and type of the application code.</p>
         pub fn set_code_content(
             mut self,
             input: std::option::Option<crate::model::CodeContent>,
@@ -9818,6 +10577,7 @@ pub mod application_code_configuration {
             self.code_content_type = Some(input);
             self
         }
+        /// <p>Specifies whether the code content is in text or zip format.</p>
         pub fn set_code_content_type(
             mut self,
             input: std::option::Option<crate::model::CodeContentType>,
@@ -9849,7 +10609,7 @@ pub struct CodeContent {
     /// <p>The text-format code for a Flink-based Kinesis Data Analytics application.</p>
     pub text_content: std::option::Option<std::string::String>,
     /// <p>The zip-format code for a Flink-based Kinesis Data Analytics application.</p>
-    pub zip_file_content: std::option::Option<smithy_types::Blob>,
+    pub zip_file_content: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Information about the Amazon S3 bucket that contains the application code.</p>
     pub s3_content_location: std::option::Option<crate::model::S3ContentLocation>,
 }
@@ -9869,7 +10629,7 @@ pub mod code_content {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text_content: std::option::Option<std::string::String>,
-        pub(crate) zip_file_content: std::option::Option<smithy_types::Blob>,
+        pub(crate) zip_file_content: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) s3_content_location: std::option::Option<crate::model::S3ContentLocation>,
     }
     impl Builder {
@@ -9878,18 +10638,20 @@ pub mod code_content {
             self.text_content = Some(input.into());
             self
         }
+        /// <p>The text-format code for a Flink-based Kinesis Data Analytics application.</p>
         pub fn set_text_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text_content = input;
             self
         }
         /// <p>The zip-format code for a Flink-based Kinesis Data Analytics application.</p>
-        pub fn zip_file_content(mut self, input: smithy_types::Blob) -> Self {
+        pub fn zip_file_content(mut self, input: aws_smithy_types::Blob) -> Self {
             self.zip_file_content = Some(input);
             self
         }
+        /// <p>The zip-format code for a Flink-based Kinesis Data Analytics application.</p>
         pub fn set_zip_file_content(
             mut self,
-            input: std::option::Option<smithy_types::Blob>,
+            input: std::option::Option<aws_smithy_types::Blob>,
         ) -> Self {
             self.zip_file_content = input;
             self
@@ -9899,6 +10661,7 @@ pub mod code_content {
             self.s3_content_location = Some(input);
             self
         }
+        /// <p>Information about the Amazon S3 bucket that contains the application code.</p>
         pub fn set_s3_content_location(
             mut self,
             input: std::option::Option<crate::model::S3ContentLocation>,
@@ -9946,12 +10709,18 @@ pub mod environment_properties {
         pub(crate) property_groups: std::option::Option<std::vec::Vec<crate::model::PropertyGroup>>,
     }
     impl Builder {
+        /// Appends an item to `property_groups`.
+        ///
+        /// To override the contents of this collection use [`set_property_groups`](Self::set_property_groups).
+        ///
+        /// <p>Describes the execution property groups.</p>
         pub fn property_groups(mut self, input: impl Into<crate::model::PropertyGroup>) -> Self {
             let mut v = self.property_groups.unwrap_or_default();
             v.push(input.into());
             self.property_groups = Some(v);
             self
         }
+        /// <p>Describes the execution property groups.</p>
         pub fn set_property_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PropertyGroup>>,
@@ -10027,6 +10796,12 @@ pub mod flink_application_configuration {
             self.checkpoint_configuration = Some(input);
             self
         }
+        /// <p>Describes an application's checkpointing configuration. Checkpointing is the
+        /// process of persisting application state for fault tolerance.
+        /// For more information, see
+        /// <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance">
+        /// Checkpoints for Fault Tolerance</a> in the
+        /// <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>. </p>
         pub fn set_checkpoint_configuration(
             mut self,
             input: std::option::Option<crate::model::CheckpointConfiguration>,
@@ -10043,6 +10818,8 @@ pub mod flink_application_configuration {
             self.monitoring_configuration = Some(input);
             self
         }
+        /// <p>Describes configuration parameters for Amazon CloudWatch logging for an
+        /// application.</p>
         pub fn set_monitoring_configuration(
             mut self,
             input: std::option::Option<crate::model::MonitoringConfiguration>,
@@ -10058,6 +10835,7 @@ pub mod flink_application_configuration {
             self.parallelism_configuration = Some(input);
             self
         }
+        /// <p>Describes parameters for how an application executes multiple tasks simultaneously.</p>
         pub fn set_parallelism_configuration(
             mut self,
             input: std::option::Option<crate::model::ParallelismConfiguration>,
@@ -10135,6 +10913,8 @@ pub mod parallelism_configuration {
             self.configuration_type = Some(input);
             self
         }
+        /// <p>Describes whether the application uses the default parallelism for the Kinesis Data Analytics service. You must set this property to <code>CUSTOM</code>
+        /// in order to change your application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or <code>ParallelismPerKPU</code> properties.</p>
         pub fn set_configuration_type(
             mut self,
             input: std::option::Option<crate::model::ConfigurationType>,
@@ -10153,6 +10933,13 @@ pub mod parallelism_configuration {
             self.parallelism = Some(input);
             self
         }
+        /// <p>Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform. If <code>AutoScalingEnabled</code>
+        /// is set to True, Kinesis Data Analytics increases the <code>CurrentParallelism</code> value in response to application
+        /// load. The service can increase the <code>CurrentParallelism</code> value up to the maximum parallelism, which is
+        /// <code>ParalellismPerKPU</code> times the maximum KPUs for the application.
+        /// The maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If
+        /// application load is reduced, the service can
+        /// reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.</p>
         pub fn set_parallelism(mut self, input: std::option::Option<i32>) -> Self {
             self.parallelism = input;
             self
@@ -10164,6 +10951,9 @@ pub mod parallelism_configuration {
             self.parallelism_per_kpu = Some(input);
             self
         }
+        /// <p>Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per Kinesis Processing Unit
+        /// (KPU) used by the application. For more
+        /// information about KPUs, see <a href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data Analytics Pricing</a>.</p>
         pub fn set_parallelism_per_kpu(mut self, input: std::option::Option<i32>) -> Self {
             self.parallelism_per_kpu = input;
             self
@@ -10173,6 +10963,7 @@ pub mod parallelism_configuration {
             self.auto_scaling_enabled = Some(input);
             self
         }
+        /// <p>Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in response to increased throughput.</p>
         pub fn set_auto_scaling_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_scaling_enabled = input;
             self
@@ -10236,6 +11027,9 @@ pub mod monitoring_configuration {
             self.configuration_type = Some(input);
             self
         }
+        /// <p>Describes whether to use the default CloudWatch logging configuration for an application.
+        /// You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or
+        /// <code>MetricsLevel</code> parameters.</p>
         pub fn set_configuration_type(
             mut self,
             input: std::option::Option<crate::model::ConfigurationType>,
@@ -10249,6 +11043,8 @@ pub mod monitoring_configuration {
             self.metrics_level = Some(input);
             self
         }
+        /// <p>Describes the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code>
+        /// level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
         pub fn set_metrics_level(
             mut self,
             input: std::option::Option<crate::model::MetricsLevel>,
@@ -10261,6 +11057,7 @@ pub mod monitoring_configuration {
             self.log_level = Some(input);
             self
         }
+        /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
             self.log_level = input;
             self
@@ -10389,6 +11186,27 @@ pub mod checkpoint_configuration {
             self.configuration_type = Some(input);
             self
         }
+        /// <p>Describes whether the application uses Kinesis Data Analytics' default checkpointing behavior.
+        /// You must set this property to <code>CUSTOM</code> in order to set the
+        /// <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p>
+        /// <note>
+        /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or
+        /// application code:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>CheckpointingEnabled:</b> true</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>CheckpointInterval:</b> 60000</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>MinPauseBetweenCheckpoints:</b> 5000</p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn set_configuration_type(
             mut self,
             input: std::option::Option<crate::model::ConfigurationType>,
@@ -10406,6 +11224,12 @@ pub mod checkpoint_configuration {
             self.checkpointing_enabled = Some(input);
             self
         }
+        /// <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p>
+        /// <note>
+        /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+        /// the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value
+        /// is set to another value using this API or in application code.</p>
+        /// </note>
         pub fn set_checkpointing_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.checkpointing_enabled = input;
             self
@@ -10420,6 +11244,12 @@ pub mod checkpoint_configuration {
             self.checkpoint_interval = Some(input);
             self
         }
+        /// <p>Describes the interval in milliseconds between checkpoint operations. </p>
+        /// <note>
+        /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+        /// the application will use a <code>CheckpointInterval</code> value of 60000, even if this value is set
+        /// to another value using this API or in application code.</p>
+        /// </note>
         pub fn set_checkpoint_interval(mut self, input: std::option::Option<i64>) -> Self {
             self.checkpoint_interval = input;
             self
@@ -10438,6 +11268,16 @@ pub mod checkpoint_configuration {
             self.min_pause_between_checkpoints = Some(input);
             self
         }
+        /// <p>Describes the minimum time in milliseconds after a checkpoint operation completes that a
+        /// new checkpoint operation can start. If a checkpoint operation takes longer than the
+        /// <code>CheckpointInterval</code>, the application otherwise performs continual checkpoint
+        /// operations. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/large_state_tuning.html#tuning-checkpointing"> Tuning Checkpointing</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
+        /// Documentation</a>.</p>
+        /// <note>
+        /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+        /// the application will use a <code>MinPauseBetweenCheckpoints</code> value of 5000, even if this value is set using this
+        /// API or in application code.</p>
+        /// </note>
         pub fn set_min_pause_between_checkpoints(
             mut self,
             input: std::option::Option<i64>,
@@ -10499,12 +11339,20 @@ pub mod sql_application_configuration {
             std::option::Option<std::vec::Vec<crate::model::ReferenceDataSource>>,
     }
     impl Builder {
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>The array of <a>Input</a> objects describing the input streams used by the
+        /// application.</p>
         pub fn inputs(mut self, input: impl Into<crate::model::Input>) -> Self {
             let mut v = self.inputs.unwrap_or_default();
             v.push(input.into());
             self.inputs = Some(v);
             self
         }
+        /// <p>The array of <a>Input</a> objects describing the input streams used by the
+        /// application.</p>
         pub fn set_inputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Input>>,
@@ -10512,12 +11360,20 @@ pub mod sql_application_configuration {
             self.inputs = input;
             self
         }
+        /// Appends an item to `outputs`.
+        ///
+        /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
+        ///
+        /// <p>The array of <a>Output</a> objects describing the destination streams used by
+        /// the application.</p>
         pub fn outputs(mut self, input: impl Into<crate::model::Output>) -> Self {
             let mut v = self.outputs.unwrap_or_default();
             v.push(input.into());
             self.outputs = Some(v);
             self
         }
+        /// <p>The array of <a>Output</a> objects describing the destination streams used by
+        /// the application.</p>
         pub fn set_outputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Output>>,
@@ -10525,6 +11381,12 @@ pub mod sql_application_configuration {
             self.outputs = input;
             self
         }
+        /// Appends an item to `reference_data_sources`.
+        ///
+        /// To override the contents of this collection use [`set_reference_data_sources`](Self::set_reference_data_sources).
+        ///
+        /// <p>The array of <a>ReferenceDataSource</a> objects describing the reference data
+        /// sources used by the application.</p>
         pub fn reference_data_sources(
             mut self,
             input: impl Into<crate::model::ReferenceDataSource>,
@@ -10534,6 +11396,8 @@ pub mod sql_application_configuration {
             self.reference_data_sources = Some(v);
             self
         }
+        /// <p>The array of <a>ReferenceDataSource</a> objects describing the reference data
+        /// sources used by the application.</p>
         pub fn set_reference_data_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReferenceDataSource>>,
@@ -10568,6 +11432,7 @@ pub struct ReferenceDataSource {
     /// <p>The name of the in-application table to create.</p>
     pub table_name: std::option::Option<std::string::String>,
     /// <p>Identifies the S3 bucket and object that contains the reference data.
+    ///
     /// A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data into your application. </p>
     pub s3_reference_data_source: std::option::Option<crate::model::S3ReferenceDataSource>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
@@ -10599,11 +11464,13 @@ pub mod reference_data_source {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the in-application table to create.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
         }
         /// <p>Identifies the S3 bucket and object that contains the reference data.
+        ///
         /// A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data into your application. </p>
         pub fn s3_reference_data_source(
             mut self,
@@ -10612,6 +11479,9 @@ pub mod reference_data_source {
             self.s3_reference_data_source = Some(input);
             self
         }
+        /// <p>Identifies the S3 bucket and object that contains the reference data.
+        ///
+        /// A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data into your application. </p>
         pub fn set_s3_reference_data_source(
             mut self,
             input: std::option::Option<crate::model::S3ReferenceDataSource>,
@@ -10624,6 +11494,7 @@ pub mod reference_data_source {
             self.reference_schema = Some(input);
             self
         }
+        /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
         pub fn set_reference_schema(
             mut self,
             input: std::option::Option<crate::model::SourceSchema>,
@@ -10650,6 +11521,7 @@ impl ReferenceDataSource {
 
 /// <p>For a SQL-based Kinesis Data Analytics application, identifies the Amazon S3
 /// bucket and object that contains the reference data.</p>
+///
 /// <p>A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <a>UpdateApplication</a>
 /// operation to trigger reloading of data into your application. </p>
 #[non_exhaustive]
@@ -10683,6 +11555,7 @@ pub mod s3_reference_data_source {
             self.bucket_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
         pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_arn = input;
             self
@@ -10692,6 +11565,7 @@ pub mod s3_reference_data_source {
             self.file_key = Some(input.into());
             self
         }
+        /// <p>The object key name containing the reference data.</p>
         pub fn set_file_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_key = input;
             self
@@ -10716,6 +11590,7 @@ impl S3ReferenceDataSource {
 /// in which you identify an in-application stream and a destination where you want the
 /// in-application stream data to be written. The destination can be a Kinesis data stream or a
 /// Kinesis Data Firehose delivery stream. </p>
+///
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -10763,6 +11638,7 @@ pub mod output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the in-application stream.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10773,6 +11649,8 @@ pub mod output {
             self.kinesis_streams_output = Some(input);
             self
         }
+        /// <p>Identifies a Kinesis data stream
+        /// as the destination.</p>
         pub fn set_kinesis_streams_output(
             mut self,
             input: std::option::Option<crate::model::KinesisStreamsOutput>,
@@ -10788,6 +11666,7 @@ pub mod output {
             self.kinesis_firehose_output = Some(input);
             self
         }
+        /// <p>Identifies a Kinesis Data Firehose delivery stream as the destination.</p>
         pub fn set_kinesis_firehose_output(
             mut self,
             input: std::option::Option<crate::model::KinesisFirehoseOutput>,
@@ -10800,6 +11679,7 @@ pub mod output {
             self.lambda_output = Some(input);
             self
         }
+        /// <p>Identifies an Amazon Lambda function as the destination.</p>
         pub fn set_lambda_output(
             mut self,
             input: std::option::Option<crate::model::LambdaOutput>,
@@ -10813,6 +11693,8 @@ pub mod output {
             self.destination_schema = Some(input);
             self
         }
+        /// <p>Describes the data format when records are written to the destination.
+        /// </p>
         pub fn set_destination_schema(
             mut self,
             input: std::option::Option<crate::model::DestinationSchema>,
@@ -10877,6 +11759,11 @@ pub mod lambda_output {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the destination Lambda function to write to.</p>
+        /// <note>
+        /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a>
+        /// </p>
+        /// </note>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -10926,6 +11813,7 @@ pub mod kinesis_firehose_output {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the destination delivery stream to write to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -10975,6 +11863,7 @@ pub mod kinesis_streams_output {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the destination Kinesis data stream to write to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -11061,6 +11950,11 @@ pub mod input {
             self.name_prefix = Some(input.into());
             self
         }
+        /// <p>The name prefix to use when creating an in-application stream. Suppose that you specify a
+        /// prefix "<code>MyInApplicationStream</code>." Kinesis Data Analytics then creates one or more
+        /// (as per the <code>InputParallelism</code> count you specified) in-application streams with the
+        /// names "<code>MyInApplicationStream_001</code>," "<code>MyInApplicationStream_002</code>," and
+        /// so on. </p>
         pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name_prefix = input;
             self
@@ -11075,6 +11969,9 @@ pub mod input {
             self.input_processing_configuration = Some(input);
             self
         }
+        /// <p>The <a>InputProcessingConfiguration</a> for the input. An input processor transforms records as they are received
+        /// from the stream, before the application's SQL code executes. Currently, the only input processing configuration available is
+        /// <a>InputLambdaProcessor</a>. </p>
         pub fn set_input_processing_configuration(
             mut self,
             input: std::option::Option<crate::model::InputProcessingConfiguration>,
@@ -11087,6 +11984,7 @@ pub mod input {
             self.kinesis_streams_input = Some(input);
             self
         }
+        /// <p>If the streaming source is an Amazon Kinesis data stream, identifies the stream's Amazon Resource Name (ARN). </p>
         pub fn set_kinesis_streams_input(
             mut self,
             input: std::option::Option<crate::model::KinesisStreamsInput>,
@@ -11099,6 +11997,7 @@ pub mod input {
             self.kinesis_firehose_input = Some(input);
             self
         }
+        /// <p>If the streaming source is an Amazon Kinesis Data Firehose delivery stream, identifies the delivery stream's ARN.</p>
         pub fn set_kinesis_firehose_input(
             mut self,
             input: std::option::Option<crate::model::KinesisFirehoseInput>,
@@ -11111,6 +12010,7 @@ pub mod input {
             self.input_parallelism = Some(input);
             self
         }
+        /// <p>Describes the number of in-application streams to create. </p>
         pub fn set_input_parallelism(
             mut self,
             input: std::option::Option<crate::model::InputParallelism>,
@@ -11125,6 +12025,9 @@ pub mod input {
             self.input_schema = Some(input);
             self
         }
+        /// <p>Describes the format of the data in the streaming source, and how each data element maps
+        /// to corresponding columns in the in-application stream that is being created.</p>
+        /// <p>Also used to describe the format of the reference data source.</p>
         pub fn set_input_schema(
             mut self,
             input: std::option::Option<crate::model::SourceSchema>,
@@ -11182,6 +12085,7 @@ pub mod kinesis_firehose_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -11230,6 +12134,7 @@ pub mod kinesis_streams_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the input Kinesis data stream to read.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self

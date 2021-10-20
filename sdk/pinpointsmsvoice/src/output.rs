@@ -57,6 +57,7 @@ pub mod send_voice_message_output {
             self.message_id = Some(input.into());
             self
         }
+        /// A unique identifier for the voice message.
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self
@@ -103,12 +104,18 @@ pub mod list_configuration_sets_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `configuration_sets`.
+        ///
+        /// To override the contents of this collection use [`set_configuration_sets`](Self::set_configuration_sets).
+        ///
+        /// An object that contains a list of configuration sets for your account in the current region.
         pub fn configuration_sets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.configuration_sets.unwrap_or_default();
             v.push(input.into());
             self.configuration_sets = Some(v);
             self
         }
+        /// An object that contains a list of configuration sets for your account in the current region.
         pub fn set_configuration_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -121,6 +128,7 @@ pub mod list_configuration_sets_output {
             self.next_token = Some(input.into());
             self
         }
+        /// A token returned from a previous call to ListConfigurationSets to indicate the position in the list of configuration sets.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -165,6 +173,11 @@ pub mod get_configuration_set_event_destinations_output {
             std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
     }
     impl Builder {
+        /// Appends an item to `event_destinations`.
+        ///
+        /// To override the contents of this collection use [`set_event_destinations`](Self::set_event_destinations).
+        ///
+        /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
         pub fn event_destinations(
             mut self,
             input: impl Into<crate::model::EventDestination>,
@@ -174,6 +187,7 @@ pub mod get_configuration_set_event_destinations_output {
             self.event_destinations = Some(v);
             self
         }
+        /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
         pub fn set_event_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventDestination>>,

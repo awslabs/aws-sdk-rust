@@ -29,6 +29,7 @@ impl VerifySmsSandboxPhoneNumberOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
@@ -58,6 +59,7 @@ impl UntagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsubscribeOutput {}
@@ -87,6 +89,7 @@ impl UnsubscribeOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {}
@@ -150,6 +153,10 @@ pub mod subscribe_output {
             self.subscription_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the subscription if it is confirmed, or the string "pending confirmation"
+        /// if the subscription requires confirmation. However, if the API request parameter
+        /// <code>ReturnSubscriptionArn</code> is true, then the value is always the
+        /// subscription ARN, even if the subscription requires confirmation.</p>
         pub fn set_subscription_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -172,6 +179,7 @@ impl SubscribeOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetTopicAttributesOutput {}
@@ -201,6 +209,7 @@ impl SetTopicAttributesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetSubscriptionAttributesOutput {}
@@ -260,6 +269,7 @@ impl SetSmsAttributesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetPlatformApplicationAttributesOutput {}
@@ -289,6 +299,7 @@ impl SetPlatformApplicationAttributesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetEndpointAttributesOutput {}
@@ -318,6 +329,7 @@ impl SetEndpointAttributesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemovePermissionOutput {}
@@ -385,6 +397,8 @@ pub mod publish_output {
             self.message_id = Some(input.into());
             self
         }
+        /// <p>Unique identifier assigned to the published message.</p>
+        /// <p>Length Constraint: Maximum 100 characters</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self
@@ -398,6 +412,11 @@ pub mod publish_output {
             self.sequence_number = Some(input.into());
             self
         }
+        /// <p>This response element applies only to FIFO (first-in-first-out) topics. </p>
+        /// <p>The sequence number is a large, non-consecutive number that Amazon SNS assigns to each
+        /// message. The length of <code>SequenceNumber</code> is 128 bits.
+        /// <code>SequenceNumber</code> continues to increase for each
+        /// <code>MessageGroupId</code>.</p>
         pub fn set_sequence_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -479,12 +498,18 @@ pub mod list_topics_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `topics`.
+        ///
+        /// To override the contents of this collection use [`set_topics`](Self::set_topics).
+        ///
+        /// <p>A list of topic ARNs.</p>
         pub fn topics(mut self, input: impl Into<crate::model::Topic>) -> Self {
             let mut v = self.topics.unwrap_or_default();
             v.push(input.into());
             self.topics = Some(v);
             self
         }
+        /// <p>A list of topic ARNs.</p>
         pub fn set_topics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Topic>>,
@@ -498,6 +523,8 @@ pub mod list_topics_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token to pass along to the next <code>ListTopics</code> request. This element is
+        /// returned if there are additional topics to retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -518,6 +545,7 @@ impl ListTopicsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
@@ -540,12 +568,18 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the specified topic.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags associated with the specified topic.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -594,12 +628,18 @@ pub mod list_subscriptions_by_topic_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `subscriptions`.
+        ///
+        /// To override the contents of this collection use [`set_subscriptions`](Self::set_subscriptions).
+        ///
+        /// <p>A list of subscriptions.</p>
         pub fn subscriptions(mut self, input: impl Into<crate::model::Subscription>) -> Self {
             let mut v = self.subscriptions.unwrap_or_default();
             v.push(input.into());
             self.subscriptions = Some(v);
             self
         }
+        /// <p>A list of subscriptions.</p>
         pub fn set_subscriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
@@ -613,6 +653,8 @@ pub mod list_subscriptions_by_topic_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This
+        /// element is returned if there are more subscriptions to retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -661,12 +703,18 @@ pub mod list_subscriptions_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `subscriptions`.
+        ///
+        /// To override the contents of this collection use [`set_subscriptions`](Self::set_subscriptions).
+        ///
+        /// <p>A list of subscriptions.</p>
         pub fn subscriptions(mut self, input: impl Into<crate::model::Subscription>) -> Self {
             let mut v = self.subscriptions.unwrap_or_default();
             v.push(input.into());
             self.subscriptions = Some(v);
             self
         }
+        /// <p>A list of subscriptions.</p>
         pub fn set_subscriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
@@ -680,6 +728,8 @@ pub mod list_subscriptions_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token to pass along to the next <code>ListSubscriptions</code> request. This element
+        /// is returned if there are more subscriptions to retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -700,6 +750,7 @@ impl ListSubscriptionsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSmsSandboxPhoneNumbersOutput {
@@ -729,6 +780,11 @@ pub mod list_sms_sandbox_phone_numbers_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `phone_numbers`.
+        ///
+        /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
+        ///
+        /// <p>A list of the calling account's pending and verified phone numbers.</p>
         pub fn phone_numbers(
             mut self,
             input: impl Into<crate::model::SmsSandboxPhoneNumber>,
@@ -738,6 +794,7 @@ pub mod list_sms_sandbox_phone_numbers_output {
             self.phone_numbers = Some(v);
             self
         }
+        /// <p>A list of the calling account's pending and verified phone numbers.</p>
         pub fn set_phone_numbers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SmsSandboxPhoneNumber>>,
@@ -752,6 +809,9 @@ pub mod list_sms_sandbox_phone_numbers_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A <code>NextToken</code> string is returned when you call the
+        /// <code>ListSMSSandboxPhoneNumbersInput</code> operation if additional pages of
+        /// records are available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -802,6 +862,11 @@ pub mod list_platform_applications_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `platform_applications`.
+        ///
+        /// To override the contents of this collection use [`set_platform_applications`](Self::set_platform_applications).
+        ///
+        /// <p>Platform applications returned when calling ListPlatformApplications action.</p>
         pub fn platform_applications(
             mut self,
             input: impl Into<crate::model::PlatformApplication>,
@@ -811,6 +876,7 @@ pub mod list_platform_applications_output {
             self.platform_applications = Some(v);
             self
         }
+        /// <p>Platform applications returned when calling ListPlatformApplications action.</p>
         pub fn set_platform_applications(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlatformApplication>>,
@@ -824,6 +890,8 @@ pub mod list_platform_applications_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>NextToken string is returned when calling ListPlatformApplications action if
+        /// additional records are available after the first page results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -874,12 +942,20 @@ pub mod list_phone_numbers_opted_out_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `phone_numbers`.
+        ///
+        /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
+        ///
+        /// <p>A list of phone numbers that are opted out of receiving SMS messages. The list is
+        /// paginated, and each page can contain up to 100 phone numbers.</p>
         pub fn phone_numbers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.phone_numbers.unwrap_or_default();
             v.push(input.into());
             self.phone_numbers = Some(v);
             self
         }
+        /// <p>A list of phone numbers that are opted out of receiving SMS messages. The list is
+        /// paginated, and each page can contain up to 100 phone numbers.</p>
         pub fn set_phone_numbers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -894,6 +970,9 @@ pub mod list_phone_numbers_opted_out_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A <code>NextToken</code> string is returned when you call the
+        /// <code>ListPhoneNumbersOptedOut</code> action if additional records are available
+        /// after the first page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -914,6 +993,7 @@ impl ListPhoneNumbersOptedOutOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOriginationNumbersOutput {
@@ -950,10 +1030,18 @@ pub mod list_origination_numbers_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A <code>NextToken</code> string is returned when you call the
+        /// <code>ListOriginationNumbers</code> operation if additional pages of records are
+        /// available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `phone_numbers`.
+        ///
+        /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
+        ///
+        /// <p>A list of the calling account's verified and pending origination numbers.</p>
         pub fn phone_numbers(
             mut self,
             input: impl Into<crate::model::PhoneNumberInformation>,
@@ -963,6 +1051,7 @@ pub mod list_origination_numbers_output {
             self.phone_numbers = Some(v);
             self
         }
+        /// <p>A list of the calling account's verified and pending origination numbers.</p>
         pub fn set_phone_numbers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberInformation>>,
@@ -1014,12 +1103,18 @@ pub mod list_endpoints_by_platform_application_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `endpoints`.
+        ///
+        /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
+        ///
+        /// <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
         pub fn endpoints(mut self, input: impl Into<crate::model::Endpoint>) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
             v.push(input.into());
             self.endpoints = Some(v);
             self
         }
+        /// <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
         pub fn set_endpoints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
@@ -1033,6 +1128,8 @@ pub mod list_endpoints_by_platform_application_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if
+        /// additional records are available after the first page results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1104,6 +1201,7 @@ pub struct GetTopicAttributesOutput {
     /// effective delivery policy, taking system defaults into account.</p>
     /// </li>
     /// </ul>
+    ///
     /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
     /// <ul>
     /// <li>
@@ -1114,6 +1212,8 @@ pub struct GetTopicAttributesOutput {
     /// Reference</i>.</p>
     /// </li>
     /// </ul>
+    ///
+    ///
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
     /// <ul>
     /// <li>
@@ -1125,6 +1225,7 @@ pub struct GetTopicAttributesOutput {
     /// <p>
     /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
     /// FIFO topics.</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>.
@@ -1164,6 +1265,100 @@ pub mod get_topic_attributes_output {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>A map of the topic's attributes. Attributes in this map include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DeliveryPolicy</code> – The JSON serialization of the topic's
+        /// delivery policy.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DisplayName</code> – The human-readable name used in the
+        /// <code>From</code> field for notifications to <code>email</code> and
+        /// <code>email-json</code> endpoints.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Owner</code> – The account ID of the topic's owner.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Policy</code> – The JSON serialization of the topic's access
+        /// control policy.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SubscriptionsConfirmed</code> – The number of confirmed
+        /// subscriptions for the topic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SubscriptionsDeleted</code> – The number of deleted subscriptions
+        /// for the topic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SubscriptionsPending</code> – The number of subscriptions pending
+        /// confirmation for the topic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TopicArn</code> – The topic's ARN.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the
+        /// effective delivery policy, taking system defaults into account.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>KmsMasterKeyId</code> - The ID of an Amazon Web Services managed customer master key
+        /// (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+        /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API
+        /// Reference</i>.</p>
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO
+        /// topic is created.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
+        /// FIFO topics.</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>.
+        /// If you create a FIFO topic and this attribute is <code>false</code>, you must
+        /// specify a value for the <code>MessageDeduplicationId</code> parameter for the
+        /// <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p>
+        /// </li>
+        /// <li>
+        /// <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>,
+        /// Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
+        /// the body of the message (but not the attributes of the message).</p>
+        /// <p>(Optional) To override the generated value, you can specify a value
+        /// for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code>
+        /// action.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -1174,6 +1369,96 @@ pub mod get_topic_attributes_output {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>A map of the topic's attributes. Attributes in this map include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DeliveryPolicy</code> – The JSON serialization of the topic's
+        /// delivery policy.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DisplayName</code> – The human-readable name used in the
+        /// <code>From</code> field for notifications to <code>email</code> and
+        /// <code>email-json</code> endpoints.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Owner</code> – The account ID of the topic's owner.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Policy</code> – The JSON serialization of the topic's access
+        /// control policy.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SubscriptionsConfirmed</code> – The number of confirmed
+        /// subscriptions for the topic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SubscriptionsDeleted</code> – The number of deleted subscriptions
+        /// for the topic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SubscriptionsPending</code> – The number of subscriptions pending
+        /// confirmation for the topic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TopicArn</code> – The topic's ARN.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the
+        /// effective delivery policy, taking system defaults into account.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>KmsMasterKeyId</code> - The ID of an Amazon Web Services managed customer master key
+        /// (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+        /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API
+        /// Reference</i>.</p>
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO
+        /// topic is created.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
+        /// FIFO topics.</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>.
+        /// If you create a FIFO topic and this attribute is <code>false</code>, you must
+        /// specify a value for the <code>MessageDeduplicationId</code> parameter for the
+        /// <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p>
+        /// </li>
+        /// <li>
+        /// <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>,
+        /// Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
+        /// the body of the message (but not the attributes of the message).</p>
+        /// <p>(Optional) To override the generated value, you can specify a value
+        /// for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code>
+        /// action.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -1261,6 +1546,7 @@ pub struct GetSubscriptionAttributesOutput {
     /// with.</p>
     /// </li>
     /// </ul>
+    ///
     /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
     /// <ul>
     /// <li>
@@ -1300,6 +1586,88 @@ pub mod get_subscription_attributes_output {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>A map of the subscription's attributes. Attributes in this map include the
+        /// following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ConfirmationWasAuthenticated</code> – <code>true</code> if the
+        /// subscription confirmation request was authenticated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DeliveryPolicy</code> – The JSON serialization of the
+        /// subscription's delivery policy.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the
+        /// effective delivery policy that takes into account the topic delivery policy and
+        /// account system defaults.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FilterPolicy</code> – The filter policy JSON that is assigned to
+        /// the subscription. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon SNS Message
+        /// Filtering</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Owner</code> – The account ID of the subscription's
+        /// owner.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PendingConfirmation</code> – <code>true</code> if the subscription
+        /// hasn't been confirmed. To confirm a pending subscription, call the
+        /// <code>ConfirmSubscription</code> action with a confirmation token.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RawMessageDelivery</code> – <code>true</code> if raw message
+        /// delivery is enabled for the subscription. Raw messages are free of JSON
+        /// formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue.
+        /// Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable)
+        /// or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held
+        /// in the dead-letter queue for further analysis or reprocessing.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SubscriptionArn</code> – The subscription's ARN.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TopicArn</code> – The topic ARN that the subscription is associated
+        /// with.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon SNS listed as a trusted entity</p>
+        /// </li>
+        /// </ul>
+        /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions.
+        /// For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+        /// to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -1310,6 +1678,84 @@ pub mod get_subscription_attributes_output {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>A map of the subscription's attributes. Attributes in this map include the
+        /// following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ConfirmationWasAuthenticated</code> – <code>true</code> if the
+        /// subscription confirmation request was authenticated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DeliveryPolicy</code> – The JSON serialization of the
+        /// subscription's delivery policy.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the
+        /// effective delivery policy that takes into account the topic delivery policy and
+        /// account system defaults.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FilterPolicy</code> – The filter policy JSON that is assigned to
+        /// the subscription. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon SNS Message
+        /// Filtering</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Owner</code> – The account ID of the subscription's
+        /// owner.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PendingConfirmation</code> – <code>true</code> if the subscription
+        /// hasn't been confirmed. To confirm a pending subscription, call the
+        /// <code>ConfirmSubscription</code> action with a confirmation token.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RawMessageDelivery</code> – <code>true</code> if raw message
+        /// delivery is enabled for the subscription. Raw messages are free of JSON
+        /// formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue.
+        /// Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable)
+        /// or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held
+        /// in the dead-letter queue for further analysis or reprocessing.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SubscriptionArn</code> – The subscription's ARN.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TopicArn</code> – The topic ARN that the subscription is associated
+        /// with.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon SNS listed as a trusted entity</p>
+        /// </li>
+        /// </ul>
+        /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions.
+        /// For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+        /// to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -1334,6 +1780,7 @@ impl GetSubscriptionAttributesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSmsSandboxAccountStatusOutput {
@@ -1361,6 +1808,7 @@ pub mod get_sms_sandbox_account_status_output {
             self.is_in_sandbox = Some(input);
             self
         }
+        /// <p>Indicates whether the calling account is in the SMS sandbox.</p>
         pub fn set_is_in_sandbox(mut self, input: std::option::Option<bool>) -> Self {
             self.is_in_sandbox = input;
             self
@@ -1406,6 +1854,11 @@ pub mod get_sms_attributes_output {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>The SMS attribute names and their values.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -1416,6 +1869,7 @@ pub mod get_sms_attributes_output {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>The SMS attribute names and their values.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -1489,6 +1943,34 @@ pub mod get_platform_application_attributes_output {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>Attributes include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated
+        /// event notifications should be sent.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted
+        /// event notifications should be sent.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate
+        /// event notifications should be sent.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure
+        /// event notifications should be sent upon Direct Publish delivery failure
+        /// (permanent) to one of the application's endpoints.</p>
+        /// </li>
+        /// </ul>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -1499,6 +1981,30 @@ pub mod get_platform_application_attributes_output {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>Attributes include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated
+        /// event notifications should be sent.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted
+        /// event notifications should be sent.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate
+        /// event notifications should be sent.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure
+        /// event notifications should be sent upon Direct Publish delivery failure
+        /// (permanent) to one of the application's endpoints.</p>
+        /// </li>
+        /// </ul>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -1574,6 +2080,36 @@ pub mod get_endpoint_attributes_output {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>Attributes include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CustomUserData</code> – arbitrary user data to associate with the
+        /// endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and
+        /// less than 2KB.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Enabled</code> – flag that enables/disables delivery to the
+        /// endpoint. Amazon SNS will set this to false when a notification service indicates to
+        /// Amazon SNS that the endpoint is invalid. Users can set it back to true, typically
+        /// after updating Token.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Token</code> – device token, also referred to as a registration id,
+        /// for an app and mobile device. This is returned from the notification service
+        /// when an app and mobile device are registered with the notification
+        /// service.</p>
+        /// <note>
+        /// <p>The device token for the iOS platform is returned in lowercase.</p>
+        /// </note>
+        /// </li>
+        /// </ul>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -1584,6 +2120,32 @@ pub mod get_endpoint_attributes_output {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>Attributes include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CustomUserData</code> – arbitrary user data to associate with the
+        /// endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and
+        /// less than 2KB.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Enabled</code> – flag that enables/disables delivery to the
+        /// endpoint. Amazon SNS will set this to false when a notification service indicates to
+        /// Amazon SNS that the endpoint is invalid. Users can set it back to true, typically
+        /// after updating Token.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Token</code> – device token, also referred to as a registration id,
+        /// for an app and mobile device. This is returned from the notification service
+        /// when an app and mobile device are registered with the notification
+        /// service.</p>
+        /// <note>
+        /// <p>The device token for the iOS platform is returned in lowercase.</p>
+        /// </note>
+        /// </li>
+        /// </ul>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -1608,6 +2170,7 @@ impl GetEndpointAttributesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTopicOutput {}
@@ -1637,6 +2200,7 @@ impl DeleteTopicOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSmsSandboxPhoneNumberOutput {}
@@ -1666,6 +2230,7 @@ impl DeleteSmsSandboxPhoneNumberOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePlatformApplicationOutput {}
@@ -1695,6 +2260,7 @@ impl DeletePlatformApplicationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEndpointOutput {}
@@ -1752,6 +2318,7 @@ pub mod create_topic_output {
             self.topic_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -1771,6 +2338,7 @@ impl CreateTopicOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSmsSandboxPhoneNumberOutput {}
@@ -1828,6 +2396,7 @@ pub mod create_platform_endpoint_output {
             self.endpoint_arn = Some(input.into());
             self
         }
+        /// <p>EndpointArn returned from CreateEndpoint action.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_arn = input;
             self
@@ -1875,6 +2444,7 @@ pub mod create_platform_application_output {
             self.platform_application_arn = Some(input.into());
             self
         }
+        /// <p>PlatformApplicationArn is returned.</p>
         pub fn set_platform_application_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1925,6 +2495,7 @@ pub mod confirm_subscription_output {
             self.subscription_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the created subscription.</p>
         pub fn set_subscription_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1999,6 +2570,19 @@ pub mod check_if_phone_number_is_opted_out_output {
             self.is_opted_out = Some(input);
             self
         }
+        /// <p>Indicates whether the phone number is opted out:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>true</code> – The phone number is opted out, meaning you cannot publish
+        /// SMS messages to it.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>false</code> – The phone number is opted in, meaning you can publish SMS
+        /// messages to it.</p>
+        /// </li>
+        /// </ul>
         pub fn set_is_opted_out(mut self, input: std::option::Option<bool>) -> Self {
             self.is_opted_out = input;
             self
@@ -2018,6 +2602,7 @@ impl CheckIfPhoneNumberIsOptedOutOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddPermissionOutput {}

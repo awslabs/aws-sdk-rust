@@ -17,16 +17,26 @@ pub mod accept_match_input {
             self.ticket_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this
+        /// request will fail.</p>
         pub fn set_ticket_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ticket_id = input;
             self
         }
+        /// Appends an item to `player_ids`.
+        ///
+        /// To override the contents of this collection use [`set_player_ids`](Self::set_player_ids).
+        ///
+        /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple
+        /// player IDs.</p>
         pub fn player_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.player_ids.unwrap_or_default();
             v.push(input.into());
             self.player_ids = Some(v);
             self
         }
+        /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple
+        /// player IDs.</p>
         pub fn set_player_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -39,6 +49,7 @@ pub mod accept_match_input {
             self.acceptance_type = Some(input);
             self
         }
+        /// <p>Player response to the proposed match.</p>
         pub fn set_acceptance_type(
             mut self,
             input: std::option::Option<crate::model::AcceptanceType>,
@@ -49,8 +60,10 @@ pub mod accept_match_input {
         /// Consumes the builder and constructs a [`AcceptMatchInput`](crate::input::AcceptMatchInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::AcceptMatchInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::AcceptMatchInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::AcceptMatchInput {
                 ticket_id: self.ticket_id,
                 player_ids: self.player_ids,
@@ -70,16 +83,16 @@ impl AcceptMatchInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AcceptMatch,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AcceptMatchInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -87,7 +100,7 @@ impl AcceptMatchInput {
         fn update_http_builder(
             input: &crate::input::AcceptMatchInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -96,29 +109,31 @@ impl AcceptMatchInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AcceptMatchInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.AcceptMatch",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_accept_match(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -141,25 +156,27 @@ impl AcceptMatchInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::AcceptMatch::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "AcceptMatch",
-                    "gamelift",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AcceptMatch::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AcceptMatch",
+            "gamelift",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -191,6 +208,9 @@ pub mod claim_game_server_input {
             self.game_server_group_name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the game server group where the game server is running.
+        /// Use either the <a>GameServerGroup</a> name or ARN value. If you are not specifying a game server to claim, this value identifies
+        /// where you want GameLift FleetIQ to look for an available game server to claim. </p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -205,6 +225,9 @@ pub mod claim_game_server_input {
             self.game_server_id = Some(input.into());
             self
         }
+        /// <p>A custom string that uniquely identifies the game server to claim. If this parameter
+        /// is left empty, GameLift FleetIQ searches for an available game server in the specified game
+        /// server group.</p>
         pub fn set_game_server_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -219,6 +242,9 @@ pub mod claim_game_server_input {
             self.game_server_data = Some(input.into());
             self
         }
+        /// <p>A set of custom game server properties, formatted as a single string value. This data
+        /// is passed to a game client or service when it requests information on game servers using
+        /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
         pub fn set_game_server_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -231,7 +257,7 @@ pub mod claim_game_server_input {
             self,
         ) -> std::result::Result<
             crate::input::ClaimGameServerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ClaimGameServerInput {
                 game_server_group_name: self.game_server_group_name,
@@ -252,16 +278,16 @@ impl ClaimGameServerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ClaimGameServer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ClaimGameServerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -269,7 +295,7 @@ impl ClaimGameServerInput {
         fn update_http_builder(
             input: &crate::input::ClaimGameServerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -278,32 +304,32 @@ impl ClaimGameServerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ClaimGameServerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.ClaimGameServer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_claim_game_server(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -326,15 +352,15 @@ impl ClaimGameServerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ClaimGameServer::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ClaimGameServer",
             "gamelift",
         ));
@@ -343,10 +369,10 @@ impl ClaimGameServerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -377,6 +403,7 @@ pub mod create_alias_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -386,6 +413,7 @@ pub mod create_alias_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A human-readable description of the alias.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -395,6 +423,7 @@ pub mod create_alias_input {
             self.routing_strategy = Some(input);
             self
         }
+        /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
         pub fn set_routing_strategy(
             mut self,
             input: std::option::Option<crate::model::RoutingStrategy>,
@@ -402,12 +431,34 @@ pub mod create_alias_input {
             self.routing_strategy = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined
+        /// key-value pairs. Tagging
+        /// AWS resources are useful for resource management, access management and cost allocation.
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
+        /// <i>AWS General Reference</i>. Once the resource is created, you can
+        /// use <a>TagResource</a>, <a>UntagResource</a>, and
+        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
+        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
+        /// tagging limits.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined
+        /// key-value pairs. Tagging
+        /// AWS resources are useful for resource management, access management and cost allocation.
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
+        /// <i>AWS General Reference</i>. Once the resource is created, you can
+        /// use <a>TagResource</a>, <a>UntagResource</a>, and
+        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
+        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
+        /// tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -418,8 +469,10 @@ pub mod create_alias_input {
         /// Consumes the builder and constructs a [`CreateAliasInput`](crate::input::CreateAliasInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateAliasInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateAliasInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateAliasInput {
                 name: self.name,
                 description: self.description,
@@ -440,16 +493,16 @@ impl CreateAliasInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateAlias,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateAliasInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -457,7 +510,7 @@ impl CreateAliasInput {
         fn update_http_builder(
             input: &crate::input::CreateAliasInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -466,29 +519,31 @@ impl CreateAliasInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateAliasInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.CreateAlias",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_alias(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -511,25 +566,27 @@ impl CreateAliasInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateAlias::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateAlias",
-                    "gamelift",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateAlias::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateAlias",
+            "gamelift",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -562,6 +619,8 @@ pub mod create_build_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. You can use <a>UpdateBuild</a> to change this value later.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -572,6 +631,8 @@ pub mod create_build_input {
             self.version = Some(input.into());
             self
         }
+        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <a>UpdateBuild</a> to change this value later.
+        /// </p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -585,6 +646,11 @@ pub mod create_build_input {
             self.storage_location = Some(input);
             self
         }
+        /// <p>Information indicating where your game build files are stored. Use this parameter only
+        /// when creating a build with files stored in an Amazon S3 bucket that you own. The storage
+        /// location must specify an Amazon S3 bucket name and key. The location must also specify a role
+        /// ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your
+        /// new build must be in the same Region.</p>
         pub fn set_storage_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -601,6 +667,11 @@ pub mod create_build_input {
             self.operating_system = Some(input);
             self
         }
+        /// <p>The operating system that the game server binaries are built to run on. This value
+        /// determines the type of fleet resources that you can use for this build. If your game
+        /// build contains multiple executables, they all must run on the same operating system. If
+        /// an operating system is not specified when creating a build, Amazon GameLift uses the
+        /// default value (WINDOWS_2012). This value cannot be changed later.</p>
         pub fn set_operating_system(
             mut self,
             input: std::option::Option<crate::model::OperatingSystem>,
@@ -608,12 +679,34 @@ pub mod create_build_input {
             self.operating_system = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of labels to assign to the new build resource. Tags are developer-defined
+        /// key-value pairs. Tagging
+        /// AWS resources are useful for resource management, access management and cost allocation.
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
+        /// <i>AWS General Reference</i>. Once the resource is created, you can
+        /// use <a>TagResource</a>, <a>UntagResource</a>, and
+        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
+        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
+        /// tagging limits.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of labels to assign to the new build resource. Tags are developer-defined
+        /// key-value pairs. Tagging
+        /// AWS resources are useful for resource management, access management and cost allocation.
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
+        /// <i>AWS General Reference</i>. Once the resource is created, you can
+        /// use <a>TagResource</a>, <a>UntagResource</a>, and
+        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
+        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
+        /// tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -624,8 +717,10 @@ pub mod create_build_input {
         /// Consumes the builder and constructs a [`CreateBuildInput`](crate::input::CreateBuildInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateBuildInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateBuildInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateBuildInput {
                 name: self.name,
                 version: self.version,
@@ -647,16 +742,16 @@ impl CreateBuildInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateBuild,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateBuildInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -664,7 +759,7 @@ impl CreateBuildInput {
         fn update_http_builder(
             input: &crate::input::CreateBuildInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -673,29 +768,31 @@ impl CreateBuildInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateBuildInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.CreateBuild",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_build(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -718,25 +815,27 @@ impl CreateBuildInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateBuild::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateBuild",
-                    "gamelift",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateBuild::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateBuild",
+            "gamelift",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -788,6 +887,7 @@ pub mod create_fleet_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -797,6 +897,7 @@ pub mod create_fleet_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A human-readable description of the fleet.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -808,6 +909,9 @@ pub mod create_fleet_input {
             self.build_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for a custom game server build to be deployed on fleet
+        /// instances. You can use either the build ID or ARN. The build must be uploaded to GameLift
+        /// and in <code>READY</code> status. This fleet property cannot be changed later.</p>
         pub fn set_build_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.build_id = input;
             self
@@ -819,6 +923,9 @@ pub mod create_fleet_input {
             self.script_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet
+        /// instances. You can use either the script ID or ARN. Scripts must be uploaded to GameLift
+        /// prior to creating the fleet. This fleet property cannot be changed later.</p>
         pub fn set_script_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.script_id = input;
             self
@@ -831,6 +938,10 @@ pub mod create_fleet_input {
             self.server_launch_path = Some(input.into());
             self
         }
+        /// <p>
+        /// <b>This parameter is no longer used.</b> Specify a server
+        /// launch path using the <code>RuntimeConfiguration</code> parameter. Requests that use
+        /// this parameter instead continue to be valid.</p>
         pub fn set_server_launch_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -846,6 +957,10 @@ pub mod create_fleet_input {
             self.server_launch_parameters = Some(input.into());
             self
         }
+        /// <p>
+        /// <b>This parameter is no longer used.</b> Specify server
+        /// launch parameters using the <code>RuntimeConfiguration</code> parameter. Requests that
+        /// use this parameter instead continue to be valid.</p>
         pub fn set_server_launch_parameters(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -853,12 +968,26 @@ pub mod create_fleet_input {
             self.server_launch_parameters = input;
             self
         }
+        /// Appends an item to `log_paths`.
+        ///
+        /// To override the contents of this collection use [`set_log_paths`](Self::set_log_paths).
+        ///
+        /// <p>
+        /// <b>This parameter is no longer used.</b> To specify where
+        /// GameLift should store log files once a server process shuts down, use the GameLift server
+        /// API <code>ProcessReady()</code> and specify one or more directory paths in
+        /// <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
         pub fn log_paths(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.log_paths.unwrap_or_default();
             v.push(input.into());
             self.log_paths = Some(v);
             self
         }
+        /// <p>
+        /// <b>This parameter is no longer used.</b> To specify where
+        /// GameLift should store log files once a server process shuts down, use the GameLift server
+        /// API <code>ProcessReady()</code> and specify one or more directory paths in
+        /// <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
         pub fn set_log_paths(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -874,6 +1003,10 @@ pub mod create_fleet_input {
             self.ec2_instance_type = Some(input);
             self
         }
+        /// <p>The GameLift-supported EC2 instance type to use for all fleet instances. Instance
+        /// type determines the computing resources that will be used to host your game servers,
+        /// including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions
+        /// of EC2 instance types.</p>
         pub fn set_ec2_instance_type(
             mut self,
             input: std::option::Option<crate::model::Ec2InstanceType>,
@@ -881,6 +1014,14 @@ pub mod create_fleet_input {
             self.ec2_instance_type = input;
             self
         }
+        /// Appends an item to `ec2_inbound_permissions`.
+        ///
+        /// To override the contents of this collection use [`set_ec2_inbound_permissions`](Self::set_ec2_inbound_permissions).
+        ///
+        /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access
+        /// game sessions on this fleet. If the fleet is hosting a custom game build, this property
+        /// must be set before players can connect to game sessions. For Realtime Servers fleets, GameLift
+        /// automatically sets TCP and UDP ranges. </p>
         pub fn ec2_inbound_permissions(
             mut self,
             input: impl Into<crate::model::IpPermission>,
@@ -890,6 +1031,10 @@ pub mod create_fleet_input {
             self.ec2_inbound_permissions = Some(v);
             self
         }
+        /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access
+        /// game sessions on this fleet. If the fleet is hosting a custom game build, this property
+        /// must be set before players can connect to game sessions. For Realtime Servers fleets, GameLift
+        /// automatically sets TCP and UDP ranges. </p>
         pub fn set_ec2_inbound_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
@@ -920,6 +1065,22 @@ pub mod create_fleet_input {
             self.new_game_session_protection_policy = Some(input);
             self
         }
+        /// <p>The status of termination protection for active game sessions on the fleet. By
+        /// default, this property is set to <code>NoProtection</code>. You can also set game
+        /// session protection for an individual game session by calling <a>UpdateGameSession</a>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>NoProtection</b> - Game sessions can be terminated
+        /// during active gameplay as a result of a scale-down event. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>FullProtection</b> - Game sessions in
+        /// <code>ACTIVE</code> status cannot be terminated during a scale-down
+        /// event.</p>
+        /// </li>
+        /// </ul>
         pub fn set_new_game_session_protection_policy(
             mut self,
             input: std::option::Option<crate::model::ProtectionPolicy>,
@@ -941,6 +1102,16 @@ pub mod create_fleet_input {
             self.runtime_configuration = Some(input);
             self
         }
+        /// <p>Instructions for how to launch and maintain server processes on instances in the
+        /// fleet. The runtime configuration defines one or more server process configurations, each
+        /// identifying a build executable or Realtime script file and the number of processes of
+        /// that type to run concurrently. </p>
+        /// <note>
+        /// <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is
+        /// being configured using the older parameters <code>ServerLaunchPath</code> and
+        /// <code>ServerLaunchParameters</code>, which are still supported for backward
+        /// compatibility.</p>
+        /// </note>
         pub fn set_runtime_configuration(
             mut self,
             input: std::option::Option<crate::model::RuntimeConfiguration>,
@@ -957,6 +1128,8 @@ pub mod create_fleet_input {
             self.resource_creation_limit_policy = Some(input);
             self
         }
+        /// <p>A policy that limits the number of game sessions that an individual player can create
+        /// on instances in this fleet within a specified span of time.</p>
         pub fn set_resource_creation_limit_policy(
             mut self,
             input: std::option::Option<crate::model::ResourceCreationLimitPolicy>,
@@ -964,12 +1137,24 @@ pub mod create_fleet_input {
             self.resource_creation_limit_policy = input;
             self
         }
+        /// Appends an item to `metric_groups`.
+        ///
+        /// To override the contents of this collection use [`set_metric_groups`](Self::set_metric_groups).
+        ///
+        /// <p>The name of an AWS CloudWatch metric group to add this fleet to. A metric group is
+        /// used to aggregate the metrics for multiple fleets. You can specify an existing metric
+        /// group name or set a new name to create a new metric group. A fleet can be included in
+        /// only one metric group at a time. </p>
         pub fn metric_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.metric_groups.unwrap_or_default();
             v.push(input.into());
             self.metric_groups = Some(v);
             self
         }
+        /// <p>The name of an AWS CloudWatch metric group to add this fleet to. A metric group is
+        /// used to aggregate the metrics for multiple fleets. You can specify an existing metric
+        /// group name or set a new name to create a new metric group. A fleet can be included in
+        /// only one metric group at a time. </p>
         pub fn set_metric_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -984,6 +1169,9 @@ pub mod create_fleet_input {
             self.peer_vpc_aws_account_id = Some(input.into());
             self
         }
+        /// <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the AWS
+        /// account that owns the VPC. You can find your account ID in the AWS Management Console under account
+        /// settings. </p>
         pub fn set_peer_vpc_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -999,6 +1187,10 @@ pub mod create_fleet_input {
             self.peer_vpc_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
+        /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
+        /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
+        /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>. </p>
         pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.peer_vpc_id = input;
             self
@@ -1010,6 +1202,9 @@ pub mod create_fleet_input {
             self.fleet_type = Some(input);
             self
         }
+        /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this
+        /// property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the
+        /// fleet is created.</p>
         pub fn set_fleet_type(
             mut self,
             input: std::option::Option<crate::model::FleetType>,
@@ -1028,6 +1223,13 @@ pub mod create_fleet_input {
             self.instance_role_arn = Some(input.into());
             self
         }
+        /// <p>A unique identifier for an AWS IAM role that manages access to your AWS services.
+        /// With an instance role ARN set, any application that runs on an instance in this fleet can assume the role,
+        /// including install scripts, server processes, and daemons (background processes). Create a role or look up a role's
+        /// ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console.
+        /// Learn more about using on-box credentials for your game servers at
+        /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+        /// Access external resources from a game server</a>.  This property cannot be changed after the fleet is created.</p>
         pub fn set_instance_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1051,6 +1253,15 @@ pub mod create_fleet_input {
             self.certificate_configuration = Some(input);
             self
         }
+        /// <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are
+        /// used for encrypting traffic between game clients and the game servers that are running
+        /// on GameLift. By default, the <code>CertificateConfiguration</code> is set to
+        /// <code>DISABLED</code>. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security">Securing Client/Server Communication</a>. This property cannot be changed after
+        /// the fleet is created. </p>
+        /// <p>Note: This feature requires the AWS Certificate Manager (ACM) service, which is not
+        /// available in all AWS regions. When working in a region that does not support this
+        /// feature, a fleet creation request with certificate generation fails with a 4xx
+        /// error.</p>
         pub fn set_certificate_configuration(
             mut self,
             input: std::option::Option<crate::model::CertificateConfiguration>,
@@ -1058,12 +1269,26 @@ pub mod create_fleet_input {
             self.certificate_configuration = input;
             self
         }
+        /// Appends an item to `locations`.
+        ///
+        /// To override the contents of this collection use [`set_locations`](Self::set_locations).
+        ///
+        /// <p>A set of remote locations to deploy additional instances to and manage as part of the
+        /// fleet. This parameter can only be used when creating fleets in AWS Regions that support
+        /// multiple locations. You can add any GameLift-supported AWS Region as a remote location,
+        /// in the form of an AWS Region code such as <code>us-west-2</code>. To create a fleet with
+        /// instances in the home Region only, omit this parameter. </p>
         pub fn locations(mut self, input: impl Into<crate::model::LocationConfiguration>) -> Self {
             let mut v = self.locations.unwrap_or_default();
             v.push(input.into());
             self.locations = Some(v);
             self
         }
+        /// <p>A set of remote locations to deploy additional instances to and manage as part of the
+        /// fleet. This parameter can only be used when creating fleets in AWS Regions that support
+        /// multiple locations. You can add any GameLift-supported AWS Region as a remote location,
+        /// in the form of an AWS Region code such as <code>us-west-2</code>. To create a fleet with
+        /// instances in the home Region only, omit this parameter. </p>
         pub fn set_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LocationConfiguration>>,
@@ -1071,12 +1296,30 @@ pub mod create_fleet_input {
             self.locations = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined
+        /// key-value pairs. Tagging AWS resources are useful for resource management, access
+        /// management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
+        /// <i>AWS General Reference</i>. Once the fleet is created, you can use
+        /// <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+        /// may be lower than stated. See the <i>AWS General Reference</i> for actual
+        /// tagging limits.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined
+        /// key-value pairs. Tagging AWS resources are useful for resource management, access
+        /// management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
+        /// <i>AWS General Reference</i>. Once the fleet is created, you can use
+        /// <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+        /// may be lower than stated. See the <i>AWS General Reference</i> for actual
+        /// tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1087,8 +1330,10 @@ pub mod create_fleet_input {
         /// Consumes the builder and constructs a [`CreateFleetInput`](crate::input::CreateFleetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateFleetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateFleetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateFleetInput {
                 name: self.name,
                 description: self.description,
@@ -1125,16 +1370,16 @@ impl CreateFleetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateFleet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateFleetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1142,7 +1387,7 @@ impl CreateFleetInput {
         fn update_http_builder(
             input: &crate::input::CreateFleetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1151,29 +1396,31 @@ impl CreateFleetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateFleetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.CreateFleet",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_fleet(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1196,25 +1443,27 @@ impl CreateFleetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateFleet::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateFleet",
-                    "gamelift",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateFleet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateFleet",
+            "gamelift",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1244,16 +1493,27 @@ pub mod create_fleet_locations_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to add locations to. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
         }
+        /// Appends an item to `locations`.
+        ///
+        /// To override the contents of this collection use [`set_locations`](Self::set_locations).
+        ///
+        /// <p>A list of locations to deploy additional instances to and manage as part of the fleet.
+        /// You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS
+        /// Region code such as <code>us-west-2</code>. </p>
         pub fn locations(mut self, input: impl Into<crate::model::LocationConfiguration>) -> Self {
             let mut v = self.locations.unwrap_or_default();
             v.push(input.into());
             self.locations = Some(v);
             self
         }
+        /// <p>A list of locations to deploy additional instances to and manage as part of the fleet.
+        /// You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS
+        /// Region code such as <code>us-west-2</code>. </p>
         pub fn set_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LocationConfiguration>>,
@@ -1266,7 +1526,7 @@ pub mod create_fleet_locations_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateFleetLocationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateFleetLocationsInput {
                 fleet_id: self.fleet_id,
@@ -1286,16 +1546,16 @@ impl CreateFleetLocationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateFleetLocations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateFleetLocationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1303,7 +1563,7 @@ impl CreateFleetLocationsInput {
         fn update_http_builder(
             input: &crate::input::CreateFleetLocationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1312,32 +1572,32 @@ impl CreateFleetLocationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateFleetLocationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.CreateFleetLocations",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_fleet_locations(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1360,15 +1620,15 @@ impl CreateFleetLocationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateFleetLocations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateFleetLocations",
             "gamelift",
         ));
@@ -1377,10 +1637,10 @@ impl CreateFleetLocationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1423,6 +1683,9 @@ pub mod create_game_server_group_input {
             self.game_server_group_name = Some(input.into());
             self
         }
+        /// <p>An identifier for the new game server group. This value is used to generate unique ARN
+        /// identifiers for the EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name
+        /// must be unique per Region per AWS account.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1436,6 +1699,8 @@ pub mod create_game_server_group_input {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
+        /// allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1449,6 +1714,11 @@ pub mod create_game_server_group_input {
             self.min_size = Some(input);
             self
         }
+        /// <p>The minimum number of instances allowed in the EC2 Auto Scaling group. During
+        /// automatic scaling events, GameLift FleetIQ and EC2 do not scale down the group below this
+        /// minimum. In production, this value should be set to at least 1. After the Auto Scaling
+        /// group is created, update this value directly in the Auto Scaling group using the AWS
+        /// console or APIs.</p>
         pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
             self.min_size = input;
             self
@@ -1461,6 +1731,10 @@ pub mod create_game_server_group_input {
             self.max_size = Some(input);
             self
         }
+        /// <p>The maximum number of instances allowed in the EC2 Auto Scaling group. During
+        /// automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum.
+        /// After the Auto Scaling group is created, update this value directly in the Auto Scaling
+        /// group using the AWS console or APIs.</p>
         pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
             self.max_size = input;
             self
@@ -1482,6 +1756,19 @@ pub mod create_game_server_group_input {
             self.launch_template = Some(input);
             self
         }
+        /// <p>The EC2 launch template that contains configuration settings and game server code to
+        /// be deployed to all instances in the game server group. You can specify the template
+        /// using either the template name or ID. For help with creating a launch template, see
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch
+        /// Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
+        /// User Guide</i>. After the Auto Scaling group is created, update this value
+        /// directly in the Auto Scaling group using the AWS console or APIs.</p>
+        /// <note>
+        /// <p>If you specify network interfaces in your launch template, you must explicitly set
+        /// the property <code>AssociatePublicIpAddress</code> to "true". If no network
+        /// interface is specified in the launch template,  GameLift FleetIQ uses your account's default
+        /// VPC.</p>
+        /// </note>
         pub fn set_launch_template(
             mut self,
             input: std::option::Option<crate::model::LaunchTemplateSpecification>,
@@ -1489,6 +1776,18 @@ pub mod create_game_server_group_input {
             self.launch_template = input;
             self
         }
+        /// Appends an item to `instance_definitions`.
+        ///
+        /// To override the contents of this collection use [`set_instance_definitions`](Self::set_instance_definitions).
+        ///
+        /// <p>The EC2 instance types and sizes to use in the Auto Scaling group. The instance
+        /// definitions must specify at least two different instance types that are supported by
+        /// GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the
+        /// <i>Amazon EC2 User Guide</i>. You can optionally specify capacity
+        /// weighting for each instance type. If no weight value is specified for an instance type,
+        /// it is set to the default value "1". For more information about capacity weighting, see
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
+        /// Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
         pub fn instance_definitions(
             mut self,
             input: impl Into<crate::model::InstanceDefinition>,
@@ -1498,6 +1797,14 @@ pub mod create_game_server_group_input {
             self.instance_definitions = Some(v);
             self
         }
+        /// <p>The EC2 instance types and sizes to use in the Auto Scaling group. The instance
+        /// definitions must specify at least two different instance types that are supported by
+        /// GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the
+        /// <i>Amazon EC2 User Guide</i>. You can optionally specify capacity
+        /// weighting for each instance type. If no weight value is specified for an instance type,
+        /// it is set to the default value "1". For more information about capacity weighting, see
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
+        /// Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
         pub fn set_instance_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceDefinition>>,
@@ -1518,6 +1825,12 @@ pub mod create_game_server_group_input {
             self.auto_scaling_policy = Some(input);
             self
         }
+        /// <p>Configuration settings to define a scaling policy for the Auto Scaling group that is
+        /// optimized for game hosting. The scaling policy uses the metric
+        /// <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers
+        /// that can immediately accommodate new games and players. After the Auto Scaling group is
+        /// created, update this value directly in the Auto Scaling group using the AWS console or
+        /// APIs.</p>
         pub fn set_auto_scaling_policy(
             mut self,
             input: std::option::Option<crate::model::GameServerGroupAutoScalingPolicy>,
@@ -1555,6 +1868,32 @@ pub mod create_game_server_group_input {
             self.balancing_strategy = Some(input);
             self
         }
+        /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the
+        /// game server group. Method options include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot
+        /// Instances are unavailable or not viable for game hosting, the game server group
+        /// provides no hosting capacity until Spot Instances can again be used. Until then,
+        /// no new instances are started, and the existing nonviable Spot Instances are
+        /// terminated (after current gameplay ends) and are not replaced.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in
+        /// the game server group. If Spot Instances are unavailable, the game server group
+        /// continues to provide hosting capacity by falling back to On-Demand Instances.
+        /// Existing nonviable Spot Instances are terminated (after current gameplay ends)
+        /// and are replaced with new On-Demand Instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game
+        /// server group. No Spot Instances are used, even when available, while this
+        /// balancing strategy is in force.</p>
+        /// </li>
+        /// </ul>
         pub fn set_balancing_strategy(
             mut self,
             input: std::option::Option<crate::model::BalancingStrategy>,
@@ -1575,6 +1914,12 @@ pub mod create_game_server_group_input {
             self.game_server_protection_policy = Some(input);
             self
         }
+        /// <p>A flag that indicates whether instances in the game server group are protected
+        /// from early termination. Unprotected instances that have active game servers running might
+        /// be terminated during a scale-down event, causing players to be dropped from the game.
+        /// Protected instances cannot be terminated while there are active game servers running except
+        /// in the event of a forced game server group deletion (see ). An exception to this is with Spot
+        /// Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
         pub fn set_game_server_protection_policy(
             mut self,
             input: std::option::Option<crate::model::GameServerProtectionPolicy>,
@@ -1582,12 +1927,28 @@ pub mod create_game_server_group_input {
             self.game_server_protection_policy = input;
             self
         }
+        /// Appends an item to `vpc_subnets`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_subnets`](Self::set_vpc_subnets).
+        ///
+        /// <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server
+        /// group. By default, all GameLift FleetIQ-supported Availability Zones are used. You can use this
+        /// parameter to specify VPCs that you've set up. This property cannot be updated after the
+        /// game server group is created, and the corresponding Auto Scaling group will always use
+        /// the property value that is set with this request, even if the Auto Scaling group is
+        /// updated directly.</p>
         pub fn vpc_subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_subnets.unwrap_or_default();
             v.push(input.into());
             self.vpc_subnets = Some(v);
             self
         }
+        /// <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server
+        /// group. By default, all GameLift FleetIQ-supported Availability Zones are used. You can use this
+        /// parameter to specify VPCs that you've set up. This property cannot be updated after the
+        /// game server group is created, and the corresponding Auto Scaling group will always use
+        /// the property value that is set with this request, even if the Auto Scaling group is
+        /// updated directly.</p>
         pub fn set_vpc_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1595,12 +1956,30 @@ pub mod create_game_server_group_input {
             self.vpc_subnets = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of labels to assign to the new game server group resource. Tags are
+        /// developer-defined key-value pairs. Tagging AWS resources is useful for resource
+        /// management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
+        /// Resources</a> in the <i>AWS General Reference</i>. Once the
+        /// resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove,
+        /// and view tags, respectively. The maximum tag limit may be lower than stated. See the
+        /// AWS General Reference for actual tagging limits.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of labels to assign to the new game server group resource. Tags are
+        /// developer-defined key-value pairs. Tagging AWS resources is useful for resource
+        /// management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
+        /// Resources</a> in the <i>AWS General Reference</i>. Once the
+        /// resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove,
+        /// and view tags, respectively. The maximum tag limit may be lower than stated. See the
+        /// AWS General Reference for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1613,7 +1992,7 @@ pub mod create_game_server_group_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateGameServerGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateGameServerGroupInput {
                 game_server_group_name: self.game_server_group_name,
@@ -1642,16 +2021,16 @@ impl CreateGameServerGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateGameServerGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateGameServerGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1659,7 +2038,7 @@ impl CreateGameServerGroupInput {
         fn update_http_builder(
             input: &crate::input::CreateGameServerGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1668,32 +2047,34 @@ impl CreateGameServerGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateGameServerGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.CreateGameServerGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_game_server_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1716,15 +2097,15 @@ impl CreateGameServerGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateGameServerGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateGameServerGroup",
             "gamelift",
         ));
@@ -1733,10 +2114,10 @@ impl CreateGameServerGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1774,6 +2155,8 @@ pub mod create_game_session_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each
+        /// request must reference either a fleet ID or alias ID, but not both.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -1785,6 +2168,9 @@ pub mod create_game_session_input {
             self.alias_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the
+        /// alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but
+        /// not both.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_id = input;
             self
@@ -1794,6 +2180,7 @@ pub mod create_game_session_input {
             self.maximum_player_session_count = Some(input);
             self
         }
+        /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
         pub fn set_maximum_player_session_count(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_player_session_count = input;
             self
@@ -1803,16 +2190,25 @@ pub mod create_game_session_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `game_properties`.
+        ///
+        /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
+        ///
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
+        /// <a>GameSession</a> object with a request to start a new game session.</p>
         pub fn game_properties(mut self, input: impl Into<crate::model::GameProperty>) -> Self {
             let mut v = self.game_properties.unwrap_or_default();
             v.push(input.into());
             self.game_properties = Some(v);
             self
         }
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
+        /// <a>GameSession</a> object with a request to start a new game session.</p>
         pub fn set_game_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
@@ -1829,6 +2225,11 @@ pub mod create_game_session_input {
             self.creator_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for a player or entity creating the game session. This parameter is required when
+        /// requesting a new game session on a fleet with a resource creation limit policy. This
+        /// type of policy limits the number of concurrent active game sessions that one player can
+        /// create within a certain time span. GameLift uses the CreatorId to evaluate the new
+        /// request against the policy.</p>
         pub fn set_creator_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.creator_id = input;
             self
@@ -1842,6 +2243,11 @@ pub mod create_game_session_input {
             self.game_session_id = Some(input.into());
             self
         }
+        /// <p>
+        /// <i>This parameter is no longer preferred. Please use
+        /// <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
+        /// identifies a request for a new game session. Maximum token length is 48 characters. If
+        /// provided, this string is included in the new game session's ID.</p>
         pub fn set_game_session_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1861,6 +2267,14 @@ pub mod create_game_session_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>Custom string that uniquely identifies the new game session request.  This is useful
+        /// for ensuring that game session requests with the same idempotency token are processed
+        /// only once. Subsequent requests with the same string return the original
+        /// <code>GameSession</code> object, with an updated status. Maximum token length is 48
+        /// characters. If provided, this string is included in the new game session's ID.
+        /// A game session ARN has the following format:
+        /// <code>arn:aws:gamelift:<region>::gamesession/<fleet ID>/<custom ID string or idempotency token></code>. Idempotency tokens remain in use for 30 days after a game session has ended;
+        /// game session objects are retained for this time period and then deleted.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1874,6 +2288,8 @@ pub mod create_game_session_input {
             self.game_session_data = Some(input.into());
             self
         }
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
+        /// <a>GameSession</a> object with a request to start a new game session.</p>
         pub fn set_game_session_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1888,6 +2304,9 @@ pub mod create_game_session_input {
             self.location = Some(input.into());
             self
         }
+        /// <p>A fleet's remote location to place the new game session in. If this parameter is not
+        /// set, the new game session is placed in the fleet's home Region. Specify a remote
+        /// location with an AWS Region code such as <code>us-west-2</code>.  </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -1897,7 +2316,7 @@ pub mod create_game_session_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateGameSessionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateGameSessionInput {
                 fleet_id: self.fleet_id,
@@ -1925,16 +2344,16 @@ impl CreateGameSessionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateGameSession,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateGameSessionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1942,7 +2361,7 @@ impl CreateGameSessionInput {
         fn update_http_builder(
             input: &crate::input::CreateGameSessionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1951,32 +2370,32 @@ impl CreateGameSessionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateGameSessionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.CreateGameSession",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_game_session(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1999,15 +2418,15 @@ impl CreateGameSessionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateGameSession::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateGameSession",
             "gamelift",
         ));
@@ -2016,10 +2435,10 @@ impl CreateGameSessionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2057,6 +2476,7 @@ pub mod create_game_session_queue_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2066,10 +2486,20 @@ pub mod create_game_session_queue_input {
             self.timeout_in_seconds = Some(input);
             self
         }
+        /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.</p>
         pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_in_seconds = input;
             self
         }
+        /// Appends an item to `player_latency_policies`.
+        ///
+        /// To override the contents of this collection use [`set_player_latency_policies`](Self::set_player_latency_policies).
+        ///
+        /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to
+        /// deliver low latency for most players in a game session. These policies ensure that no
+        /// individual player can be placed into a game with unreasonably high latency. Use multiple
+        /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
+        /// maximum allowed latency, starting with the lowest value.</p>
         pub fn player_latency_policies(
             mut self,
             input: impl Into<crate::model::PlayerLatencyPolicy>,
@@ -2079,6 +2509,11 @@ pub mod create_game_session_queue_input {
             self.player_latency_policies = Some(v);
             self
         }
+        /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to
+        /// deliver low latency for most players in a game session. These policies ensure that no
+        /// individual player can be placed into a game with unreasonably high latency. Use multiple
+        /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
+        /// maximum allowed latency, starting with the lowest value.</p>
         pub fn set_player_latency_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlayerLatencyPolicy>>,
@@ -2086,6 +2521,12 @@ pub mod create_game_session_queue_input {
             self.player_latency_policies = input;
             self
         }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
+        /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
         pub fn destinations(
             mut self,
             input: impl Into<crate::model::GameSessionQueueDestination>,
@@ -2095,6 +2536,8 @@ pub mod create_game_session_queue_input {
             self.destinations = Some(v);
             self
         }
+        /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
+        /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameSessionQueueDestination>>,
@@ -2109,6 +2552,9 @@ pub mod create_game_session_queue_input {
             self.filter_configuration = Some(input);
             self
         }
+        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations
+        /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is
+        /// not set, game sessions can be placed in any queue location. </p>
         pub fn set_filter_configuration(
             mut self,
             input: std::option::Option<crate::model::FilterConfiguration>,
@@ -2126,6 +2572,9 @@ pub mod create_game_session_queue_input {
             self.priority_configuration = Some(input);
             self
         }
+        /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This
+        /// configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
+        /// named will be automatically applied at the end of the prioritization process. </p>
         pub fn set_priority_configuration(
             mut self,
             input: std::option::Option<crate::model::PriorityConfiguration>,
@@ -2140,6 +2589,9 @@ pub mod create_game_session_queue_input {
             self.custom_event_data = Some(input.into());
             self
         }
+        /// <p>
+        /// Information to be added to all events that are related to this game session queue.
+        /// </p>
         pub fn set_custom_event_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2153,6 +2605,8 @@ pub mod create_game_session_queue_input {
             self.notification_target = Some(input.into());
             self
         }
+        /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
+        /// Setting up notifications for game session placement</a>.</p>
         pub fn set_notification_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2160,12 +2614,34 @@ pub mod create_game_session_queue_input {
             self.notification_target = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined
+        /// key-value pairs. Tagging
+        /// AWS resources are useful for resource management, access management and cost allocation.
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
+        /// <i>AWS General Reference</i>. Once the resource is created, you can
+        /// use <a>TagResource</a>, <a>UntagResource</a>, and
+        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
+        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
+        /// tagging limits.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined
+        /// key-value pairs. Tagging
+        /// AWS resources are useful for resource management, access management and cost allocation.
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
+        /// <i>AWS General Reference</i>. Once the resource is created, you can
+        /// use <a>TagResource</a>, <a>UntagResource</a>, and
+        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
+        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
+        /// tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2178,7 +2654,7 @@ pub mod create_game_session_queue_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateGameSessionQueueInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateGameSessionQueueInput {
                 name: self.name,
@@ -2205,16 +2681,16 @@ impl CreateGameSessionQueueInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateGameSessionQueue,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateGameSessionQueueInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2222,7 +2698,7 @@ impl CreateGameSessionQueueInput {
         fn update_http_builder(
             input: &crate::input::CreateGameSessionQueueInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2231,32 +2707,34 @@ impl CreateGameSessionQueueInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateGameSessionQueueInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.CreateGameSessionQueue",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_game_session_queue(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2279,15 +2757,15 @@ impl CreateGameSessionQueueInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateGameSessionQueue::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateGameSessionQueue",
             "gamelift",
         ));
@@ -2296,10 +2774,10 @@ impl CreateGameSessionQueueInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2342,6 +2820,8 @@ pub mod create_matchmaking_configuration_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a
+        /// matchmaking request or ticket.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2351,16 +2831,29 @@ pub mod create_matchmaking_configuration_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A human-readable description of the matchmaking configuration. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `game_session_queue_arns`.
+        ///
+        /// To override the contents of this collection use [`set_game_session_queue_arns`](Self::set_game_session_queue_arns).
+        ///
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::gamesessionqueue/<queue name></code>. Queues can be located in any Region. Queues are used to start new
+        /// GameLift-hosted game sessions for matches that are created with this matchmaking
+        /// configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not
+        /// set this parameter.  </p>
         pub fn game_session_queue_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.game_session_queue_arns.unwrap_or_default();
             v.push(input.into());
             self.game_session_queue_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::gamesessionqueue/<queue name></code>. Queues can be located in any Region. Queues are used to start new
+        /// GameLift-hosted game sessions for matches that are created with this matchmaking
+        /// configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not
+        /// set this parameter.  </p>
         pub fn set_game_session_queue_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2375,6 +2868,9 @@ pub mod create_matchmaking_configuration_input {
             self.request_timeout_seconds = Some(input);
             self
         }
+        /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process
+        /// before timing out. Requests that fail due to timing out can be resubmitted as
+        /// needed.</p>
         pub fn set_request_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.request_timeout_seconds = input;
             self
@@ -2385,6 +2881,8 @@ pub mod create_matchmaking_configuration_input {
             self.acceptance_timeout_seconds = Some(input);
             self
         }
+        /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if
+        /// acceptance is required. </p>
         pub fn set_acceptance_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.acceptance_timeout_seconds = input;
             self
@@ -2398,6 +2896,11 @@ pub mod create_matchmaking_configuration_input {
             self.acceptance_required = Some(input);
             self
         }
+        /// <p>A flag that determines whether a match that was created with this configuration must
+        /// be accepted by the matched players. To require acceptance, set to <code>TRUE</code>.
+        /// With this option enabled, matchmaking tickets use the status
+        /// <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is
+        /// waiting for player acceptance. </p>
         pub fn set_acceptance_required(mut self, input: std::option::Option<bool>) -> Self {
             self.acceptance_required = input;
             self
@@ -2409,6 +2912,9 @@ pub mod create_matchmaking_configuration_input {
             self.rule_set_name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN
+        /// value. A matchmaking configuration can only use rule sets that are defined in the same
+        /// Region.</p>
         pub fn set_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2422,6 +2928,8 @@ pub mod create_matchmaking_configuration_input {
             self.notification_target = Some(input.into());
             self
         }
+        /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
+        /// Setting up notifications for matchmaking</a> for more information.</p>
         pub fn set_notification_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2436,6 +2944,9 @@ pub mod create_matchmaking_configuration_input {
             self.additional_player_count = Some(input);
             self
         }
+        /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies
+        /// a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
+        /// <code>STANDALONE</code>.</p>
         pub fn set_additional_player_count(mut self, input: std::option::Option<i32>) -> Self {
             self.additional_player_count = input;
             self
@@ -2446,6 +2957,8 @@ pub mod create_matchmaking_configuration_input {
             self.custom_event_data = Some(input.into());
             self
         }
+        /// <p>Information to be added to all events related to this matchmaking configuration.
+        /// </p>
         pub fn set_custom_event_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2453,12 +2966,24 @@ pub mod create_matchmaking_configuration_input {
             self.custom_event_data = input;
             self
         }
+        /// Appends an item to `game_properties`.
+        ///
+        /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
+        ///
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
+        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
+        /// object that is created for a successful match. This parameter is not used if
+        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn game_properties(mut self, input: impl Into<crate::model::GameProperty>) -> Self {
             let mut v = self.game_properties.unwrap_or_default();
             v.push(input.into());
             self.game_properties = Some(v);
             self
         }
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
+        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
+        /// object that is created for a successful match. This parameter is not used if
+        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_game_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
@@ -2474,6 +2999,10 @@ pub mod create_matchmaking_configuration_input {
             self.game_session_data = Some(input.into());
             self
         }
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
+        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a> object
+        /// that is created for a successful match. This parameter is not used if
+        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_game_session_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2492,6 +3021,13 @@ pub mod create_matchmaking_configuration_input {
             self.backfill_mode = Some(input);
             self
         }
+        /// <p>The method used to backfill game sessions that are created with this matchmaking
+        /// configuration. Specify <code>MANUAL</code> when your game manages backfill requests
+        /// manually or does not use the match backfill feature. Specify <code>AUTOMATIC</code> to
+        /// have GameLift create a <a>StartMatchBackfill</a> request whenever a game
+        /// session has one or more open slots. Learn more about manual and automatic backfill in
+        /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games with FlexMatch</a>. Automatic backfill is not
+        /// available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_backfill_mode(
             mut self,
             input: std::option::Option<crate::model::BackfillMode>,
@@ -2519,6 +3055,22 @@ pub mod create_matchmaking_configuration_input {
             self.flex_match_mode = Some(input);
             self
         }
+        /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or
+        /// as a standalone matchmaking solution. </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>STANDALONE</b> - FlexMatch forms matches and returns
+        /// match information, including players and team assignments, in a
+        /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded">
+        /// MatchmakingSucceeded</a> event.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to
+        /// start a game session for the match. </p>
+        /// </li>
+        /// </ul>
         pub fn set_flex_match_mode(
             mut self,
             input: std::option::Option<crate::model::FlexMatchMode>,
@@ -2526,12 +3078,34 @@ pub mod create_matchmaking_configuration_input {
             self.flex_match_mode = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined
+        /// key-value pairs. Tagging
+        /// AWS resources are useful for resource management, access management and cost allocation.
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
+        /// <i>AWS General Reference</i>. Once the resource is created, you can
+        /// use <a>TagResource</a>, <a>UntagResource</a>, and
+        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
+        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
+        /// tagging limits.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined
+        /// key-value pairs. Tagging
+        /// AWS resources are useful for resource management, access management and cost allocation.
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
+        /// <i>AWS General Reference</i>. Once the resource is created, you can
+        /// use <a>TagResource</a>, <a>UntagResource</a>, and
+        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
+        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
+        /// tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2544,7 +3118,7 @@ pub mod create_matchmaking_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateMatchmakingConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateMatchmakingConfigurationInput {
                 name: self.name,
@@ -2578,16 +3152,16 @@ impl CreateMatchmakingConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateMatchmakingConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateMatchmakingConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2595,7 +3169,7 @@ impl CreateMatchmakingConfigurationInput {
         fn update_http_builder(
             input: &crate::input::CreateMatchmakingConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2604,30 +3178,30 @@ impl CreateMatchmakingConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateMatchmakingConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.CreateMatchmakingConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_matchmaking_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_matchmaking_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2650,15 +3224,15 @@ impl CreateMatchmakingConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateMatchmakingConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateMatchmakingConfiguration",
             "gamelift",
         ));
@@ -2667,10 +3241,10 @@ impl CreateMatchmakingConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2702,6 +3276,9 @@ pub mod create_matchmaking_rule_set_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this name
+        /// value. Note that the rule set name is different from the optional <code>name</code>
+        /// field in the rule set body.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2712,6 +3289,8 @@ pub mod create_matchmaking_rule_set_input {
             self.rule_set_body = Some(input.into());
             self
         }
+        /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not
+        /// allowed in JSON, but most elements support a description field.</p>
         pub fn set_rule_set_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2719,12 +3298,34 @@ pub mod create_matchmaking_rule_set_input {
             self.rule_set_body = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined
+        /// key-value pairs. Tagging
+        /// AWS resources are useful for resource management, access management and cost allocation.
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
+        /// <i>AWS General Reference</i>. Once the resource is created, you can
+        /// use <a>TagResource</a>, <a>UntagResource</a>, and
+        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
+        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
+        /// tagging limits.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined
+        /// key-value pairs. Tagging
+        /// AWS resources are useful for resource management, access management and cost allocation.
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
+        /// <i>AWS General Reference</i>. Once the resource is created, you can
+        /// use <a>TagResource</a>, <a>UntagResource</a>, and
+        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
+        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
+        /// tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2737,7 +3338,7 @@ pub mod create_matchmaking_rule_set_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateMatchmakingRuleSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateMatchmakingRuleSetInput {
                 name: self.name,
@@ -2759,16 +3360,16 @@ impl CreateMatchmakingRuleSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateMatchmakingRuleSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateMatchmakingRuleSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2776,7 +3377,7 @@ impl CreateMatchmakingRuleSetInput {
         fn update_http_builder(
             input: &crate::input::CreateMatchmakingRuleSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2785,32 +3386,34 @@ impl CreateMatchmakingRuleSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateMatchmakingRuleSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.CreateMatchmakingRuleSet",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_matchmaking_rule_set(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2833,15 +3436,15 @@ impl CreateMatchmakingRuleSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateMatchmakingRuleSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateMatchmakingRuleSet",
             "gamelift",
         ));
@@ -2850,10 +3453,10 @@ impl CreateMatchmakingRuleSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2883,6 +3486,7 @@ pub mod create_player_session_input {
             self.game_session_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the game session to add a player to.</p>
         pub fn set_game_session_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2895,6 +3499,7 @@ pub mod create_player_session_input {
             self.player_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for a player. Player IDs are developer-defined.</p>
         pub fn set_player_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.player_id = input;
             self
@@ -2904,6 +3509,7 @@ pub mod create_player_session_input {
             self.player_data = Some(input.into());
             self
         }
+        /// <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
         pub fn set_player_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.player_data = input;
             self
@@ -2913,7 +3519,7 @@ pub mod create_player_session_input {
             self,
         ) -> std::result::Result<
             crate::input::CreatePlayerSessionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreatePlayerSessionInput {
                 game_session_id: self.game_session_id,
@@ -2934,16 +3540,16 @@ impl CreatePlayerSessionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreatePlayerSession,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreatePlayerSessionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2951,7 +3557,7 @@ impl CreatePlayerSessionInput {
         fn update_http_builder(
             input: &crate::input::CreatePlayerSessionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2960,32 +3566,32 @@ impl CreatePlayerSessionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreatePlayerSessionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.CreatePlayerSession",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_player_session(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3008,15 +3614,15 @@ impl CreatePlayerSessionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreatePlayerSession::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreatePlayerSession",
             "gamelift",
         ));
@@ -3025,10 +3631,10 @@ impl CreatePlayerSessionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3060,6 +3666,7 @@ pub mod create_player_sessions_input {
             self.game_session_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the game session to add players to.</p>
         pub fn set_game_session_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3067,12 +3674,18 @@ pub mod create_player_sessions_input {
             self.game_session_id = input;
             self
         }
+        /// Appends an item to `player_ids`.
+        ///
+        /// To override the contents of this collection use [`set_player_ids`](Self::set_player_ids).
+        ///
+        /// <p>List of unique identifiers for the players to be added.</p>
         pub fn player_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.player_ids.unwrap_or_default();
             v.push(input.into());
             self.player_ids = Some(v);
             self
         }
+        /// <p>List of unique identifiers for the players to be added.</p>
         pub fn set_player_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3080,6 +3693,14 @@ pub mod create_player_sessions_input {
             self.player_ids = input;
             self
         }
+        /// Adds a key-value pair to `player_data_map`.
+        ///
+        /// To override the contents of this collection use [`set_player_data_map`](Self::set_player_data_map).
+        ///
+        /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined
+        /// information related to the player. Amazon GameLift does not use this data, so it can be formatted
+        /// as needed for use in the game. Any player data strings for player IDs that are not
+        /// included in the <code>PlayerIds</code> parameter are ignored. </p>
         pub fn player_data_map(
             mut self,
             k: impl Into<std::string::String>,
@@ -3090,6 +3711,10 @@ pub mod create_player_sessions_input {
             self.player_data_map = Some(hash_map);
             self
         }
+        /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined
+        /// information related to the player. Amazon GameLift does not use this data, so it can be formatted
+        /// as needed for use in the game. Any player data strings for player IDs that are not
+        /// included in the <code>PlayerIds</code> parameter are ignored. </p>
         pub fn set_player_data_map(
             mut self,
             input: std::option::Option<
@@ -3104,7 +3729,7 @@ pub mod create_player_sessions_input {
             self,
         ) -> std::result::Result<
             crate::input::CreatePlayerSessionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreatePlayerSessionsInput {
                 game_session_id: self.game_session_id,
@@ -3125,16 +3750,16 @@ impl CreatePlayerSessionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreatePlayerSessions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreatePlayerSessionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3142,7 +3767,7 @@ impl CreatePlayerSessionsInput {
         fn update_http_builder(
             input: &crate::input::CreatePlayerSessionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3151,32 +3776,32 @@ impl CreatePlayerSessionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreatePlayerSessionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.CreatePlayerSessions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_player_sessions(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3199,15 +3824,15 @@ impl CreatePlayerSessionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreatePlayerSessions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreatePlayerSessions",
             "gamelift",
         ));
@@ -3216,10 +3841,10 @@ impl CreatePlayerSessionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3242,7 +3867,7 @@ pub mod create_script_input {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) storage_location: std::option::Option<crate::model::S3Location>,
-        pub(crate) zip_file: std::option::Option<smithy_types::Blob>,
+        pub(crate) zip_file: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -3252,6 +3877,8 @@ pub mod create_script_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A descriptive label that is associated with a script. Script names do not need to be unique. You can use <a>UpdateScript</a> to change this value later.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3262,6 +3889,8 @@ pub mod create_script_input {
             self.version = Some(input.into());
             self
         }
+        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <a>UpdateScript</a> to change this value later.
+        /// </p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -3277,6 +3906,13 @@ pub mod create_script_input {
             self.storage_location = Some(input);
             self
         }
+        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is
+        /// stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the
+        /// "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3
+        /// bucket must be in the same Region where you want to create a new script. By default,
+        /// Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning
+        /// turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier
+        /// version. </p>
         pub fn set_storage_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -3288,20 +3924,46 @@ pub mod create_script_input {
         /// file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
         /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the
         /// string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
-        pub fn zip_file(mut self, input: smithy_types::Blob) -> Self {
+        pub fn zip_file(mut self, input: aws_smithy_types::Blob) -> Self {
             self.zip_file = Some(input);
             self
         }
-        pub fn set_zip_file(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip
+        /// file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
+        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the
+        /// string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
+        pub fn set_zip_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.zip_file = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of labels to assign to the new script resource. Tags are developer-defined
+        /// key-value pairs. Tagging
+        /// AWS resources are useful for resource management, access management and cost allocation.
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
+        /// <i>AWS General Reference</i>. Once the resource is created, you can
+        /// use <a>TagResource</a>, <a>UntagResource</a>, and
+        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
+        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
+        /// tagging limits.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of labels to assign to the new script resource. Tags are developer-defined
+        /// key-value pairs. Tagging
+        /// AWS resources are useful for resource management, access management and cost allocation.
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
+        /// <i>AWS General Reference</i>. Once the resource is created, you can
+        /// use <a>TagResource</a>, <a>UntagResource</a>, and
+        /// <a>ListTagsForResource</a> to add, remove, and view tags. The
+        /// maximum tag limit may be lower than stated. See the AWS General Reference for actual
+        /// tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3312,8 +3974,10 @@ pub mod create_script_input {
         /// Consumes the builder and constructs a [`CreateScriptInput`](crate::input::CreateScriptInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateScriptInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateScriptInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateScriptInput {
                 name: self.name,
                 version: self.version,
@@ -3335,16 +3999,16 @@ impl CreateScriptInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateScript,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateScriptInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3352,7 +4016,7 @@ impl CreateScriptInput {
         fn update_http_builder(
             input: &crate::input::CreateScriptInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3361,31 +4025,31 @@ impl CreateScriptInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateScriptInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.CreateScript",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_script(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3408,25 +4072,27 @@ impl CreateScriptInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateScript::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateScript",
-                    "gamelift",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateScript::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateScript",
+            "gamelift",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3456,6 +4122,8 @@ pub mod create_vpc_peering_authorization_input {
             self.game_lift_aws_account_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet.
+        /// You can find your Account ID in the AWS Management Console under account settings.</p>
         pub fn set_game_lift_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3471,6 +4139,10 @@ pub mod create_vpc_peering_authorization_input {
             self.peer_vpc_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
+        /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
+        /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
+        /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.peer_vpc_id = input;
             self
@@ -3480,7 +4152,7 @@ pub mod create_vpc_peering_authorization_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateVpcPeeringAuthorizationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateVpcPeeringAuthorizationInput {
                 game_lift_aws_account_id: self.game_lift_aws_account_id,
@@ -3501,16 +4173,16 @@ impl CreateVpcPeeringAuthorizationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateVpcPeeringAuthorization,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateVpcPeeringAuthorizationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3518,7 +4190,7 @@ impl CreateVpcPeeringAuthorizationInput {
         fn update_http_builder(
             input: &crate::input::CreateVpcPeeringAuthorizationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3527,30 +4199,30 @@ impl CreateVpcPeeringAuthorizationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateVpcPeeringAuthorizationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.CreateVpcPeeringAuthorization",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_vpc_peering_authorization(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_vpc_peering_authorization(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3573,15 +4245,15 @@ impl CreateVpcPeeringAuthorizationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateVpcPeeringAuthorization::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateVpcPeeringAuthorization",
             "gamelift",
         ));
@@ -3590,10 +4262,10 @@ impl CreateVpcPeeringAuthorizationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3624,6 +4296,8 @@ pub mod create_vpc_peering_connection_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift
+        /// VPC to peer with. </p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -3635,6 +4309,9 @@ pub mod create_vpc_peering_connection_input {
             self.peer_vpc_aws_account_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the AWS account with the VPC that you want to peer your
+        /// Amazon GameLift fleet with. You can find your Account ID in the AWS Management Console under account
+        /// settings.</p>
         pub fn set_peer_vpc_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3650,6 +4327,10 @@ pub mod create_vpc_peering_connection_input {
             self.peer_vpc_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
+        /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
+        /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
+        /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.peer_vpc_id = input;
             self
@@ -3659,7 +4340,7 @@ pub mod create_vpc_peering_connection_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateVpcPeeringConnectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateVpcPeeringConnectionInput {
                 fleet_id: self.fleet_id,
@@ -3681,16 +4362,16 @@ impl CreateVpcPeeringConnectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateVpcPeeringConnection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateVpcPeeringConnectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3698,7 +4379,7 @@ impl CreateVpcPeeringConnectionInput {
         fn update_http_builder(
             input: &crate::input::CreateVpcPeeringConnectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3707,30 +4388,30 @@ impl CreateVpcPeeringConnectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateVpcPeeringConnectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.CreateVpcPeeringConnection",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_vpc_peering_connection(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_vpc_peering_connection(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3753,15 +4434,15 @@ impl CreateVpcPeeringConnectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateVpcPeeringConnection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateVpcPeeringConnection",
             "gamelift",
         ));
@@ -3770,10 +4451,10 @@ impl CreateVpcPeeringConnectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3802,6 +4483,8 @@ pub mod delete_alias_input {
             self.alias_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier of the alias that you want to delete. You can use either the alias
+        /// ID or ARN value.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_id = input;
             self
@@ -3809,8 +4492,10 @@ pub mod delete_alias_input {
         /// Consumes the builder and constructs a [`DeleteAliasInput`](crate::input::DeleteAliasInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteAliasInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteAliasInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteAliasInput {
                 alias_id: self.alias_id,
             })
@@ -3828,16 +4513,16 @@ impl DeleteAliasInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteAlias,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteAliasInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3845,7 +4530,7 @@ impl DeleteAliasInput {
         fn update_http_builder(
             input: &crate::input::DeleteAliasInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3854,29 +4539,31 @@ impl DeleteAliasInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteAliasInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DeleteAlias",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_alias(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3899,25 +4586,27 @@ impl DeleteAliasInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteAlias::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteAlias",
-                    "gamelift",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteAlias::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteAlias",
+            "gamelift",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3945,6 +4634,7 @@ pub mod delete_build_input {
             self.build_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the build to delete. You can use either the build ID or ARN value. </p>
         pub fn set_build_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.build_id = input;
             self
@@ -3952,8 +4642,10 @@ pub mod delete_build_input {
         /// Consumes the builder and constructs a [`DeleteBuildInput`](crate::input::DeleteBuildInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteBuildInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteBuildInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteBuildInput {
                 build_id: self.build_id,
             })
@@ -3971,16 +4663,16 @@ impl DeleteBuildInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteBuild,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteBuildInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3988,7 +4680,7 @@ impl DeleteBuildInput {
         fn update_http_builder(
             input: &crate::input::DeleteBuildInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3997,29 +4689,31 @@ impl DeleteBuildInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteBuildInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DeleteBuild",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_build(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4042,25 +4736,27 @@ impl DeleteBuildInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteBuild::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteBuild",
-                    "gamelift",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteBuild::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteBuild",
+            "gamelift",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4088,6 +4784,7 @@ pub mod delete_fleet_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -4095,8 +4792,10 @@ pub mod delete_fleet_input {
         /// Consumes the builder and constructs a [`DeleteFleetInput`](crate::input::DeleteFleetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteFleetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteFleetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteFleetInput {
                 fleet_id: self.fleet_id,
             })
@@ -4114,16 +4813,16 @@ impl DeleteFleetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteFleet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteFleetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4131,7 +4830,7 @@ impl DeleteFleetInput {
         fn update_http_builder(
             input: &crate::input::DeleteFleetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4140,29 +4839,31 @@ impl DeleteFleetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteFleetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DeleteFleet",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_fleet(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4185,25 +4886,27 @@ impl DeleteFleetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteFleet::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteFleet",
-                    "gamelift",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteFleet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteFleet",
+            "gamelift",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4233,16 +4936,26 @@ pub mod delete_fleet_locations_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to delete locations for.
+        /// You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
         }
+        /// Appends an item to `locations`.
+        ///
+        /// To override the contents of this collection use [`set_locations`](Self::set_locations).
+        ///
+        /// <p>The list of fleet locations to delete. Specify locations in the form of an AWS Region code, such as
+        /// <code>us-west-2</code>.</p>
         pub fn locations(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.locations.unwrap_or_default();
             v.push(input.into());
             self.locations = Some(v);
             self
         }
+        /// <p>The list of fleet locations to delete. Specify locations in the form of an AWS Region code, such as
+        /// <code>us-west-2</code>.</p>
         pub fn set_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4255,7 +4968,7 @@ pub mod delete_fleet_locations_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteFleetLocationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteFleetLocationsInput {
                 fleet_id: self.fleet_id,
@@ -4275,16 +4988,16 @@ impl DeleteFleetLocationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteFleetLocations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteFleetLocationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4292,7 +5005,7 @@ impl DeleteFleetLocationsInput {
         fn update_http_builder(
             input: &crate::input::DeleteFleetLocationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4301,32 +5014,32 @@ impl DeleteFleetLocationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteFleetLocationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DeleteFleetLocations",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_fleet_locations(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4349,15 +5062,15 @@ impl DeleteFleetLocationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteFleetLocations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteFleetLocations",
             "gamelift",
         ));
@@ -4366,10 +5079,10 @@ impl DeleteFleetLocationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4398,6 +5111,7 @@ pub mod delete_game_server_group_input {
             self.game_server_group_name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4429,6 +5143,26 @@ pub mod delete_game_server_group_input {
             self.delete_option = Some(input);
             self
         }
+        /// <p>The type of delete to perform. Options include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SAFE_DELETE</code> – (default) Terminates the game server group and
+        /// EC2 Auto Scaling group only when it has no game servers that are in
+        /// <code>UTILIZED</code> status.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FORCE_DELETE</code> – Terminates the game server group, including all
+        /// active game servers regardless of their utilization status, and the EC2 Auto
+        /// Scaling group. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RETAIN</code> – Does a safe delete of the game server group but retains
+        /// the EC2 Auto Scaling group as is.</p>
+        /// </li>
+        /// </ul>
         pub fn set_delete_option(
             mut self,
             input: std::option::Option<crate::model::GameServerGroupDeleteOption>,
@@ -4441,7 +5175,7 @@ pub mod delete_game_server_group_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteGameServerGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteGameServerGroupInput {
                 game_server_group_name: self.game_server_group_name,
@@ -4461,16 +5195,16 @@ impl DeleteGameServerGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteGameServerGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteGameServerGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4478,7 +5212,7 @@ impl DeleteGameServerGroupInput {
         fn update_http_builder(
             input: &crate::input::DeleteGameServerGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4487,32 +5221,34 @@ impl DeleteGameServerGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteGameServerGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DeleteGameServerGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_game_server_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4535,15 +5271,15 @@ impl DeleteGameServerGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteGameServerGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteGameServerGroup",
             "gamelift",
         ));
@@ -4552,10 +5288,10 @@ impl DeleteGameServerGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4583,6 +5319,7 @@ pub mod delete_game_session_queue_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4592,7 +5329,7 @@ pub mod delete_game_session_queue_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteGameSessionQueueInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteGameSessionQueueInput { name: self.name })
         }
@@ -4609,16 +5346,16 @@ impl DeleteGameSessionQueueInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteGameSessionQueue,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteGameSessionQueueInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4626,7 +5363,7 @@ impl DeleteGameSessionQueueInput {
         fn update_http_builder(
             input: &crate::input::DeleteGameSessionQueueInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4635,32 +5372,34 @@ impl DeleteGameSessionQueueInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteGameSessionQueueInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DeleteGameSessionQueue",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_game_session_queue(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4683,15 +5422,15 @@ impl DeleteGameSessionQueueInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteGameSessionQueue::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteGameSessionQueue",
             "gamelift",
         ));
@@ -4700,10 +5439,10 @@ impl DeleteGameSessionQueueInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4731,6 +5470,7 @@ pub mod delete_matchmaking_configuration_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the matchmaking configuration.  You can use either the configuration name or ARN value.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4740,7 +5480,7 @@ pub mod delete_matchmaking_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteMatchmakingConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteMatchmakingConfigurationInput { name: self.name })
         }
@@ -4758,16 +5498,16 @@ impl DeleteMatchmakingConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteMatchmakingConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteMatchmakingConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4775,7 +5515,7 @@ impl DeleteMatchmakingConfigurationInput {
         fn update_http_builder(
             input: &crate::input::DeleteMatchmakingConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4784,30 +5524,30 @@ impl DeleteMatchmakingConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteMatchmakingConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DeleteMatchmakingConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_matchmaking_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_matchmaking_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4830,15 +5570,15 @@ impl DeleteMatchmakingConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteMatchmakingConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteMatchmakingConfiguration",
             "gamelift",
         ));
@@ -4847,10 +5587,10 @@ impl DeleteMatchmakingConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4879,6 +5619,8 @@ pub mod delete_matchmaking_rule_set_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name"
+        /// field in the rule set body.)  You can use either the rule set name or ARN value.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4888,7 +5630,7 @@ pub mod delete_matchmaking_rule_set_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteMatchmakingRuleSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteMatchmakingRuleSetInput { name: self.name })
         }
@@ -4906,16 +5648,16 @@ impl DeleteMatchmakingRuleSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteMatchmakingRuleSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteMatchmakingRuleSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4923,7 +5665,7 @@ impl DeleteMatchmakingRuleSetInput {
         fn update_http_builder(
             input: &crate::input::DeleteMatchmakingRuleSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4932,32 +5674,34 @@ impl DeleteMatchmakingRuleSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteMatchmakingRuleSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DeleteMatchmakingRuleSet",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_matchmaking_rule_set(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4980,15 +5724,15 @@ impl DeleteMatchmakingRuleSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteMatchmakingRuleSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteMatchmakingRuleSet",
             "gamelift",
         ));
@@ -4997,10 +5741,10 @@ impl DeleteMatchmakingRuleSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5029,6 +5773,7 @@ pub mod delete_scaling_policy_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5038,6 +5783,7 @@ pub mod delete_scaling_policy_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -5047,7 +5793,7 @@ pub mod delete_scaling_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteScalingPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteScalingPolicyInput {
                 name: self.name,
@@ -5067,16 +5813,16 @@ impl DeleteScalingPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteScalingPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteScalingPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5084,7 +5830,7 @@ impl DeleteScalingPolicyInput {
         fn update_http_builder(
             input: &crate::input::DeleteScalingPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5093,32 +5839,32 @@ impl DeleteScalingPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteScalingPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DeleteScalingPolicy",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_scaling_policy(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5141,15 +5887,15 @@ impl DeleteScalingPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteScalingPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteScalingPolicy",
             "gamelift",
         ));
@@ -5158,10 +5904,10 @@ impl DeleteScalingPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5189,6 +5935,7 @@ pub mod delete_script_input {
             self.script_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the Realtime script to delete. You can use either the script ID or ARN value.</p>
         pub fn set_script_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.script_id = input;
             self
@@ -5196,8 +5943,10 @@ pub mod delete_script_input {
         /// Consumes the builder and constructs a [`DeleteScriptInput`](crate::input::DeleteScriptInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteScriptInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteScriptInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteScriptInput {
                 script_id: self.script_id,
             })
@@ -5215,16 +5964,16 @@ impl DeleteScriptInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteScript,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteScriptInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5232,7 +5981,7 @@ impl DeleteScriptInput {
         fn update_http_builder(
             input: &crate::input::DeleteScriptInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5241,31 +5990,31 @@ impl DeleteScriptInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteScriptInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DeleteScript",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_script(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5288,25 +6037,27 @@ impl DeleteScriptInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteScript::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteScript",
-                    "gamelift",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteScript::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteScript",
+            "gamelift",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5336,6 +6087,8 @@ pub mod delete_vpc_peering_authorization_input {
             self.game_lift_aws_account_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the AWS account that you use to manage your GameLift fleet.
+        /// You can find your Account ID in the AWS Management Console under account settings.</p>
         pub fn set_game_lift_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5351,6 +6104,10 @@ pub mod delete_vpc_peering_authorization_input {
             self.peer_vpc_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The
+        /// VPC must be in the same Region as your fleet. To look up a VPC ID, use the
+        /// <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console.
+        /// Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
         pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.peer_vpc_id = input;
             self
@@ -5360,7 +6117,7 @@ pub mod delete_vpc_peering_authorization_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteVpcPeeringAuthorizationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteVpcPeeringAuthorizationInput {
                 game_lift_aws_account_id: self.game_lift_aws_account_id,
@@ -5381,16 +6138,16 @@ impl DeleteVpcPeeringAuthorizationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteVpcPeeringAuthorization,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteVpcPeeringAuthorizationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5398,7 +6155,7 @@ impl DeleteVpcPeeringAuthorizationInput {
         fn update_http_builder(
             input: &crate::input::DeleteVpcPeeringAuthorizationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5407,30 +6164,30 @@ impl DeleteVpcPeeringAuthorizationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteVpcPeeringAuthorizationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DeleteVpcPeeringAuthorization",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_vpc_peering_authorization(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_vpc_peering_authorization(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5453,15 +6210,15 @@ impl DeleteVpcPeeringAuthorizationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteVpcPeeringAuthorization::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteVpcPeeringAuthorization",
             "gamelift",
         ));
@@ -5470,10 +6227,10 @@ impl DeleteVpcPeeringAuthorizationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5503,6 +6260,8 @@ pub mod delete_vpc_peering_connection_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering
+        /// connection record. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -5512,6 +6271,7 @@ pub mod delete_vpc_peering_connection_input {
             self.vpc_peering_connection_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a> object, which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.</p>
         pub fn set_vpc_peering_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5524,7 +6284,7 @@ pub mod delete_vpc_peering_connection_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteVpcPeeringConnectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteVpcPeeringConnectionInput {
                 fleet_id: self.fleet_id,
@@ -5545,16 +6305,16 @@ impl DeleteVpcPeeringConnectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteVpcPeeringConnection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteVpcPeeringConnectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5562,7 +6322,7 @@ impl DeleteVpcPeeringConnectionInput {
         fn update_http_builder(
             input: &crate::input::DeleteVpcPeeringConnectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5571,30 +6331,30 @@ impl DeleteVpcPeeringConnectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteVpcPeeringConnectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DeleteVpcPeeringConnection",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_vpc_peering_connection(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_vpc_peering_connection(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5617,15 +6377,15 @@ impl DeleteVpcPeeringConnectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteVpcPeeringConnection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteVpcPeeringConnection",
             "gamelift",
         ));
@@ -5634,10 +6394,10 @@ impl DeleteVpcPeeringConnectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5667,6 +6427,8 @@ pub mod deregister_game_server_input {
             self.game_server_group_name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the game server group where the game server is running.
+        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5679,6 +6441,7 @@ pub mod deregister_game_server_input {
             self.game_server_id = Some(input.into());
             self
         }
+        /// <p>A custom string that uniquely identifies the game server to deregister.</p>
         pub fn set_game_server_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5691,7 +6454,7 @@ pub mod deregister_game_server_input {
             self,
         ) -> std::result::Result<
             crate::input::DeregisterGameServerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeregisterGameServerInput {
                 game_server_group_name: self.game_server_group_name,
@@ -5711,16 +6474,16 @@ impl DeregisterGameServerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeregisterGameServer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeregisterGameServerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5728,7 +6491,7 @@ impl DeregisterGameServerInput {
         fn update_http_builder(
             input: &crate::input::DeregisterGameServerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5737,32 +6500,32 @@ impl DeregisterGameServerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeregisterGameServerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DeregisterGameServer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deregister_game_server(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5785,15 +6548,15 @@ impl DeregisterGameServerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeregisterGameServer::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeregisterGameServer",
             "gamelift",
         ));
@@ -5802,10 +6565,10 @@ impl DeregisterGameServerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5834,6 +6597,8 @@ pub mod describe_alias_input {
             self.alias_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use
+        /// either the alias ID or ARN value. </p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_id = input;
             self
@@ -5841,8 +6606,10 @@ pub mod describe_alias_input {
         /// Consumes the builder and constructs a [`DescribeAliasInput`](crate::input::DescribeAliasInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeAliasInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeAliasInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeAliasInput {
                 alias_id: self.alias_id,
             })
@@ -5860,16 +6627,16 @@ impl DescribeAliasInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeAlias,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeAliasInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5877,7 +6644,7 @@ impl DescribeAliasInput {
         fn update_http_builder(
             input: &crate::input::DescribeAliasInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5886,29 +6653,31 @@ impl DescribeAliasInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeAliasInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeAlias",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_alias(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5931,25 +6700,27 @@ impl DescribeAliasInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeAlias::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeAlias",
-                    "gamelift",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeAlias::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeAlias",
+            "gamelift",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5977,6 +6748,7 @@ pub mod describe_build_input {
             self.build_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value. </p>
         pub fn set_build_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.build_id = input;
             self
@@ -5984,8 +6756,10 @@ pub mod describe_build_input {
         /// Consumes the builder and constructs a [`DescribeBuildInput`](crate::input::DescribeBuildInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeBuildInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeBuildInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeBuildInput {
                 build_id: self.build_id,
             })
@@ -6003,16 +6777,16 @@ impl DescribeBuildInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeBuild,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeBuildInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6020,7 +6794,7 @@ impl DescribeBuildInput {
         fn update_http_builder(
             input: &crate::input::DescribeBuildInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6029,29 +6803,31 @@ impl DescribeBuildInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeBuildInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeBuild",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_build(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6074,25 +6850,27 @@ impl DescribeBuildInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeBuild::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeBuild",
-                    "gamelift",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeBuild::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeBuild",
+            "gamelift",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6124,6 +6902,10 @@ pub mod describe_ec2_instance_limits_input {
             self.ec2_instance_type = Some(input);
             self
         }
+        /// <p>Name of an EC2 instance type that is supported in GameLift. A fleet instance type
+        /// determines the computing resources of each instance in the fleet, including CPU, memory,
+        /// storage, and networking capacity. Do not specify a value for this parameter to retrieve
+        /// limits for all instance types.</p>
         pub fn set_ec2_instance_type(
             mut self,
             input: std::option::Option<crate::model::Ec2InstanceType>,
@@ -6137,6 +6919,8 @@ pub mod describe_ec2_instance_limits_input {
             self.location = Some(input.into());
             self
         }
+        /// <p>The name of a remote location to request instance limits for, in the form of an AWS
+        /// Region code such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -6146,7 +6930,7 @@ pub mod describe_ec2_instance_limits_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeEc2InstanceLimitsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeEc2InstanceLimitsInput {
                 ec2_instance_type: self.ec2_instance_type,
@@ -6167,16 +6951,16 @@ impl DescribeEc2InstanceLimitsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeEC2InstanceLimits,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeEc2InstanceLimitsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6184,7 +6968,7 @@ impl DescribeEc2InstanceLimitsInput {
         fn update_http_builder(
             input: &crate::input::DescribeEc2InstanceLimitsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6193,32 +6977,34 @@ impl DescribeEc2InstanceLimitsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeEc2InstanceLimitsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeEC2InstanceLimits",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_ec2_instance_limits(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6241,15 +7027,15 @@ impl DescribeEc2InstanceLimitsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeEC2InstanceLimits::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeEC2InstanceLimits",
             "gamelift",
         ));
@@ -6258,10 +7044,10 @@ impl DescribeEc2InstanceLimitsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6286,12 +7072,22 @@ pub mod describe_fleet_attributes_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `fleet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_fleet_ids`](Self::set_fleet_ids).
+        ///
+        /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the
+        /// fleet ID or ARN value. To retrieve attributes for all current fleets, do not include
+        /// this parameter. </p>
         pub fn fleet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.fleet_ids.unwrap_or_default();
             v.push(input.into());
             self.fleet_ids = Some(v);
             self
         }
+        /// <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the
+        /// fleet ID or ARN value. To retrieve attributes for all current fleets, do not include
+        /// this parameter. </p>
         pub fn set_fleet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6305,6 +7101,8 @@ pub mod describe_fleet_attributes_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
+        /// IDs.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -6315,6 +7113,8 @@ pub mod describe_fleet_attributes_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
+        /// IDs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6324,7 +7124,7 @@ pub mod describe_fleet_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeFleetAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeFleetAttributesInput {
                 fleet_ids: self.fleet_ids,
@@ -6346,16 +7146,16 @@ impl DescribeFleetAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeFleetAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6363,7 +7163,7 @@ impl DescribeFleetAttributesInput {
         fn update_http_builder(
             input: &crate::input::DescribeFleetAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6372,32 +7172,34 @@ impl DescribeFleetAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeFleetAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeFleetAttributes",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_fleet_attributes(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6420,15 +7222,15 @@ impl DescribeFleetAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeFleetAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeFleetAttributes",
             "gamelift",
         ));
@@ -6437,10 +7239,10 @@ impl DescribeFleetAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6465,12 +7267,22 @@ pub mod describe_fleet_capacity_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `fleet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_fleet_ids`](Self::set_fleet_ids).
+        ///
+        /// <p>A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
+        /// value. Leave this parameter empty to retrieve capacity information for all
+        /// fleets.</p>
         pub fn fleet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.fleet_ids.unwrap_or_default();
             v.push(input.into());
             self.fleet_ids = Some(v);
             self
         }
+        /// <p>A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
+        /// value. Leave this parameter empty to retrieve capacity information for all
+        /// fleets.</p>
         pub fn set_fleet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6484,6 +7296,8 @@ pub mod describe_fleet_capacity_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
+        /// IDs.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -6494,6 +7308,8 @@ pub mod describe_fleet_capacity_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
+        /// IDs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6503,7 +7319,7 @@ pub mod describe_fleet_capacity_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeFleetCapacityInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeFleetCapacityInput {
                 fleet_ids: self.fleet_ids,
@@ -6524,16 +7340,16 @@ impl DescribeFleetCapacityInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetCapacity,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeFleetCapacityInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6541,7 +7357,7 @@ impl DescribeFleetCapacityInput {
         fn update_http_builder(
             input: &crate::input::DescribeFleetCapacityInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6550,32 +7366,34 @@ impl DescribeFleetCapacityInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeFleetCapacityInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeFleetCapacity",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_fleet_capacity(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6598,15 +7416,15 @@ impl DescribeFleetCapacityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeFleetCapacity::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeFleetCapacity",
             "gamelift",
         ));
@@ -6615,10 +7433,10 @@ impl DescribeFleetCapacityInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6639,8 +7457,8 @@ pub mod describe_fleet_events_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) limit: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
@@ -6650,6 +7468,7 @@ pub mod describe_fleet_events_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to get event logs for.  You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -6657,22 +7476,34 @@ pub mod describe_fleet_events_input {
         /// <p>The earliest date to retrieve event logs for. If no start time is specified, this call
         /// returns entries starting from when the fleet was created to the specified end time.
         /// Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The earliest date to retrieve event logs for. If no start time is specified, this call
+        /// returns entries starting from when the fleet was created to the specified end time.
+        /// Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The most recent date to retrieve event logs for. If no end time is specified, this
         /// call returns entries from the specified start time up to the present. Format is a number
         /// expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The most recent date to retrieve event logs for. If no end time is specified, this
+        /// call returns entries from the specified start time up to the present. Format is a number
+        /// expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -6681,6 +7512,7 @@ pub mod describe_fleet_events_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -6690,6 +7522,7 @@ pub mod describe_fleet_events_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6699,7 +7532,7 @@ pub mod describe_fleet_events_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeFleetEventsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeFleetEventsInput {
                 fleet_id: self.fleet_id,
@@ -6722,16 +7555,16 @@ impl DescribeFleetEventsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetEvents,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeFleetEventsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6739,7 +7572,7 @@ impl DescribeFleetEventsInput {
         fn update_http_builder(
             input: &crate::input::DescribeFleetEventsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6748,32 +7581,32 @@ impl DescribeFleetEventsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeFleetEventsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeFleetEvents",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_fleet_events(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6796,15 +7629,15 @@ impl DescribeFleetEventsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeFleetEvents::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeFleetEvents",
             "gamelift",
         ));
@@ -6813,10 +7646,10 @@ impl DescribeFleetEventsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6848,16 +7681,26 @@ pub mod describe_fleet_location_attributes_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to retrieve remote locations for. You can use either the fleet ID or ARN
+        /// value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
         }
+        /// Appends an item to `locations`.
+        ///
+        /// To override the contents of this collection use [`set_locations`](Self::set_locations).
+        ///
+        /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an AWS Region code, such as
+        /// <code>us-west-2</code>.</p>
         pub fn locations(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.locations.unwrap_or_default();
             v.push(input.into());
             self.locations = Some(v);
             self
         }
+        /// <p>A list of fleet locations to retrieve information for. Specify locations in the form of an AWS Region code, such as
+        /// <code>us-west-2</code>.</p>
         pub fn set_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6870,6 +7713,7 @@ pub mod describe_fleet_location_attributes_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This limit is not currently enforced. </p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -6879,6 +7723,7 @@ pub mod describe_fleet_location_attributes_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6888,7 +7733,7 @@ pub mod describe_fleet_location_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeFleetLocationAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeFleetLocationAttributesInput {
                 fleet_id: self.fleet_id,
@@ -6911,16 +7756,16 @@ impl DescribeFleetLocationAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetLocationAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeFleetLocationAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6928,7 +7773,7 @@ impl DescribeFleetLocationAttributesInput {
         fn update_http_builder(
             input: &crate::input::DescribeFleetLocationAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6937,30 +7782,30 @@ impl DescribeFleetLocationAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeFleetLocationAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeFleetLocationAttributes",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_fleet_location_attributes(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_fleet_location_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6983,15 +7828,15 @@ impl DescribeFleetLocationAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeFleetLocationAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeFleetLocationAttributes",
             "gamelift",
         ));
@@ -7000,10 +7845,10 @@ impl DescribeFleetLocationAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7033,6 +7878,8 @@ pub mod describe_fleet_location_capacity_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to request location capacity for.
+        /// You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -7043,6 +7890,8 @@ pub mod describe_fleet_location_capacity_input {
             self.location = Some(input.into());
             self
         }
+        /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an AWS Region code, such as
+        /// <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -7052,7 +7901,7 @@ pub mod describe_fleet_location_capacity_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeFleetLocationCapacityInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeFleetLocationCapacityInput {
                 fleet_id: self.fleet_id,
@@ -7073,16 +7922,16 @@ impl DescribeFleetLocationCapacityInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetLocationCapacity,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeFleetLocationCapacityInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7090,7 +7939,7 @@ impl DescribeFleetLocationCapacityInput {
         fn update_http_builder(
             input: &crate::input::DescribeFleetLocationCapacityInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7099,30 +7948,30 @@ impl DescribeFleetLocationCapacityInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeFleetLocationCapacityInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeFleetLocationCapacity",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_fleet_location_capacity(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_fleet_location_capacity(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7145,15 +7994,15 @@ impl DescribeFleetLocationCapacityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeFleetLocationCapacity::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeFleetLocationCapacity",
             "gamelift",
         ));
@@ -7162,10 +8011,10 @@ impl DescribeFleetLocationCapacityInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7195,6 +8044,8 @@ pub mod describe_fleet_location_utilization_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to request location utilization for.
+        /// You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -7205,6 +8056,8 @@ pub mod describe_fleet_location_utilization_input {
             self.location = Some(input.into());
             self
         }
+        /// <p>The fleet location to retrieve utilization information for. Specify a location in the form of an AWS Region code, such as
+        /// <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -7214,7 +8067,7 @@ pub mod describe_fleet_location_utilization_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeFleetLocationUtilizationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeFleetLocationUtilizationInput {
                 fleet_id: self.fleet_id,
@@ -7235,16 +8088,16 @@ impl DescribeFleetLocationUtilizationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetLocationUtilization,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeFleetLocationUtilizationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7252,7 +8105,7 @@ impl DescribeFleetLocationUtilizationInput {
         fn update_http_builder(
             input: &crate::input::DescribeFleetLocationUtilizationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7261,30 +8114,30 @@ impl DescribeFleetLocationUtilizationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeFleetLocationUtilizationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeFleetLocationUtilization",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_fleet_location_utilization(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_fleet_location_utilization(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7307,15 +8160,15 @@ impl DescribeFleetLocationUtilizationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeFleetLocationUtilization::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeFleetLocationUtilization",
             "gamelift",
         ));
@@ -7324,10 +8177,10 @@ impl DescribeFleetLocationUtilizationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7357,6 +8210,8 @@ pub mod describe_fleet_port_settings_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN
+        /// value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -7367,6 +8222,8 @@ pub mod describe_fleet_port_settings_input {
             self.location = Some(input.into());
             self
         }
+        /// <p>A remote location to check for status of port setting updates. Use the AWS Region code
+        /// format, such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -7376,7 +8233,7 @@ pub mod describe_fleet_port_settings_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeFleetPortSettingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeFleetPortSettingsInput {
                 fleet_id: self.fleet_id,
@@ -7397,16 +8254,16 @@ impl DescribeFleetPortSettingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetPortSettings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeFleetPortSettingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7414,7 +8271,7 @@ impl DescribeFleetPortSettingsInput {
         fn update_http_builder(
             input: &crate::input::DescribeFleetPortSettingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7423,32 +8280,34 @@ impl DescribeFleetPortSettingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeFleetPortSettingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeFleetPortSettings",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_fleet_port_settings(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7471,15 +8330,15 @@ impl DescribeFleetPortSettingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeFleetPortSettings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeFleetPortSettings",
             "gamelift",
         ));
@@ -7488,10 +8347,10 @@ impl DescribeFleetPortSettingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7516,12 +8375,20 @@ pub mod describe_fleet_utilization_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `fleet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_fleet_ids`](Self::set_fleet_ids).
+        ///
+        /// <p>A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN
+        /// value. To retrieve attributes for all current fleets, do not include this parameter. </p>
         pub fn fleet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.fleet_ids.unwrap_or_default();
             v.push(input.into());
             self.fleet_ids = Some(v);
             self
         }
+        /// <p>A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN
+        /// value. To retrieve attributes for all current fleets, do not include this parameter. </p>
         pub fn set_fleet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7535,6 +8402,8 @@ pub mod describe_fleet_utilization_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
+        /// IDs.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -7545,6 +8414,8 @@ pub mod describe_fleet_utilization_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet
+        /// IDs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7554,7 +8425,7 @@ pub mod describe_fleet_utilization_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeFleetUtilizationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeFleetUtilizationInput {
                 fleet_ids: self.fleet_ids,
@@ -7576,16 +8447,16 @@ impl DescribeFleetUtilizationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetUtilization,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeFleetUtilizationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7593,7 +8464,7 @@ impl DescribeFleetUtilizationInput {
         fn update_http_builder(
             input: &crate::input::DescribeFleetUtilizationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7602,32 +8473,34 @@ impl DescribeFleetUtilizationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeFleetUtilizationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeFleetUtilization",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_fleet_utilization(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7650,15 +8523,15 @@ impl DescribeFleetUtilizationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeFleetUtilization::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeFleetUtilization",
             "gamelift",
         ));
@@ -7667,10 +8540,10 @@ impl DescribeFleetUtilizationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7700,6 +8573,8 @@ pub mod describe_game_server_input {
             self.game_server_group_name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the game server group where the game server is running.
+        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7712,6 +8587,7 @@ pub mod describe_game_server_input {
             self.game_server_id = Some(input.into());
             self
         }
+        /// <p>A custom string that uniquely identifies the game server information to be retrieved.</p>
         pub fn set_game_server_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7724,7 +8600,7 @@ pub mod describe_game_server_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeGameServerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeGameServerInput {
                 game_server_group_name: self.game_server_group_name,
@@ -7744,16 +8620,16 @@ impl DescribeGameServerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeGameServer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeGameServerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7761,7 +8637,7 @@ impl DescribeGameServerInput {
         fn update_http_builder(
             input: &crate::input::DescribeGameServerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7770,30 +8646,32 @@ impl DescribeGameServerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeGameServerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeGameServer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_game_server(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7816,15 +8694,15 @@ impl DescribeGameServerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeGameServer::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeGameServer",
             "gamelift",
         ));
@@ -7833,10 +8711,10 @@ impl DescribeGameServerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7864,6 +8742,7 @@ pub mod describe_game_server_group_input {
             self.game_server_group_name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7876,7 +8755,7 @@ pub mod describe_game_server_group_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeGameServerGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeGameServerGroupInput {
                 game_server_group_name: self.game_server_group_name,
@@ -7896,16 +8775,16 @@ impl DescribeGameServerGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeGameServerGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeGameServerGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7913,7 +8792,7 @@ impl DescribeGameServerGroupInput {
         fn update_http_builder(
             input: &crate::input::DescribeGameServerGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7922,32 +8801,34 @@ impl DescribeGameServerGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeGameServerGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeGameServerGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_game_server_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7970,15 +8851,15 @@ impl DescribeGameServerGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeGameServerGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeGameServerGroup",
             "gamelift",
         ));
@@ -7987,10 +8868,10 @@ impl DescribeGameServerGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8021,6 +8902,7 @@ pub mod describe_game_server_instances_input {
             self.game_server_group_name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8028,12 +8910,22 @@ pub mod describe_game_server_instances_input {
             self.game_server_group_name = input;
             self
         }
+        /// Appends an item to `instance_ids`.
+        ///
+        /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
+        ///
+        /// <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs use a
+        /// 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all
+        /// instances in the game server group, leave this parameter empty. </p>
         pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
             v.push(input.into());
             self.instance_ids = Some(v);
             self
         }
+        /// <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs use a
+        /// 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all
+        /// instances in the game server group, leave this parameter empty. </p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8048,6 +8940,9 @@ pub mod describe_game_server_instances_input {
             self.limit = Some(input);
             self
         }
+        /// <p>
+        /// The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.
+        /// </p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -8059,6 +8954,9 @@ pub mod describe_game_server_instances_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>
+        /// A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8068,7 +8966,7 @@ pub mod describe_game_server_instances_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeGameServerInstancesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeGameServerInstancesInput {
                 game_server_group_name: self.game_server_group_name,
@@ -8091,16 +8989,16 @@ impl DescribeGameServerInstancesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeGameServerInstances,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeGameServerInstancesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8108,7 +9006,7 @@ impl DescribeGameServerInstancesInput {
         fn update_http_builder(
             input: &crate::input::DescribeGameServerInstancesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8117,30 +9015,30 @@ impl DescribeGameServerInstancesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeGameServerInstancesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeGameServerInstances",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_game_server_instances(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_game_server_instances(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8163,15 +9061,15 @@ impl DescribeGameServerInstancesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeGameServerInstances::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeGameServerInstances",
             "gamelift",
         ));
@@ -8180,10 +9078,10 @@ impl DescribeGameServerInstancesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8218,6 +9116,8 @@ pub mod describe_game_session_details_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet
+        /// ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -8227,6 +9127,7 @@ pub mod describe_game_session_details_input {
             self.game_session_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the game session to retrieve. </p>
         pub fn set_game_session_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8240,6 +9141,8 @@ pub mod describe_game_session_details_input {
             self.alias_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the alias associated with the fleet to retrieve all game sessions for. You can use either
+        /// the alias ID or ARN value.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_id = input;
             self
@@ -8250,6 +9153,8 @@ pub mod describe_game_session_details_input {
             self.location = Some(input.into());
             self
         }
+        /// <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a
+        /// remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -8261,6 +9166,9 @@ pub mod describe_game_session_details_input {
             self.status_filter = Some(input.into());
             self
         }
+        /// <p>Game session status to filter results on. Possible game session statuses include
+        /// <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and
+        /// <code>TERMINATING</code> (the last two are transitory). </p>
         pub fn set_status_filter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8273,6 +9181,7 @@ pub mod describe_game_session_details_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -8282,6 +9191,7 @@ pub mod describe_game_session_details_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8291,7 +9201,7 @@ pub mod describe_game_session_details_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeGameSessionDetailsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeGameSessionDetailsInput {
                 fleet_id: self.fleet_id,
@@ -8317,16 +9227,16 @@ impl DescribeGameSessionDetailsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeGameSessionDetails,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeGameSessionDetailsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8334,7 +9244,7 @@ impl DescribeGameSessionDetailsInput {
         fn update_http_builder(
             input: &crate::input::DescribeGameSessionDetailsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8343,30 +9253,30 @@ impl DescribeGameSessionDetailsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeGameSessionDetailsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeGameSessionDetails",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_game_session_details(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_game_session_details(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8389,15 +9299,15 @@ impl DescribeGameSessionDetailsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeGameSessionDetails::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeGameSessionDetails",
             "gamelift",
         ));
@@ -8406,10 +9316,10 @@ impl DescribeGameSessionDetailsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8437,6 +9347,7 @@ pub mod describe_game_session_placement_input {
             self.placement_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for a game session placement to retrieve.</p>
         pub fn set_placement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.placement_id = input;
             self
@@ -8446,7 +9357,7 @@ pub mod describe_game_session_placement_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeGameSessionPlacementInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeGameSessionPlacementInput {
                 placement_id: self.placement_id,
@@ -8466,16 +9377,16 @@ impl DescribeGameSessionPlacementInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeGameSessionPlacement,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeGameSessionPlacementInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8483,7 +9394,7 @@ impl DescribeGameSessionPlacementInput {
         fn update_http_builder(
             input: &crate::input::DescribeGameSessionPlacementInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8492,30 +9403,30 @@ impl DescribeGameSessionPlacementInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeGameSessionPlacementInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeGameSessionPlacement",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_game_session_placement(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_game_session_placement(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8538,15 +9449,15 @@ impl DescribeGameSessionPlacementInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeGameSessionPlacement::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeGameSessionPlacement",
             "gamelift",
         ));
@@ -8555,10 +9466,10 @@ impl DescribeGameSessionPlacementInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8583,12 +9494,20 @@ pub mod describe_game_session_queues_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `names`.
+        ///
+        /// To override the contents of this collection use [`set_names`](Self::set_names).
+        ///
+        /// <p>A list of queue names to retrieve information for. You can use either the queue ID or
+        /// ARN value. To request settings for all queues, leave this parameter empty. </p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
             v.push(input.into());
             self.names = Some(v);
             self
         }
+        /// <p>A list of queue names to retrieve information for. You can use either the queue ID or
+        /// ARN value. To request settings for all queues, leave this parameter empty. </p>
         pub fn set_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8601,6 +9520,7 @@ pub mod describe_game_session_queues_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. You can request up to 50 results.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -8610,6 +9530,7 @@ pub mod describe_game_session_queues_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8619,7 +9540,7 @@ pub mod describe_game_session_queues_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeGameSessionQueuesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeGameSessionQueuesInput {
                 names: self.names,
@@ -8641,16 +9562,16 @@ impl DescribeGameSessionQueuesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeGameSessionQueues,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeGameSessionQueuesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8658,7 +9579,7 @@ impl DescribeGameSessionQueuesInput {
         fn update_http_builder(
             input: &crate::input::DescribeGameSessionQueuesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8667,32 +9588,34 @@ impl DescribeGameSessionQueuesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeGameSessionQueuesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeGameSessionQueues",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_game_session_queues(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8715,15 +9638,15 @@ impl DescribeGameSessionQueuesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeGameSessionQueues::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeGameSessionQueues",
             "gamelift",
         ));
@@ -8732,10 +9655,10 @@ impl DescribeGameSessionQueuesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8769,6 +9692,7 @@ pub mod describe_game_sessions_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to retrieve game sessions for. You can use either the fleet ID or ARN value. </p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -8778,6 +9702,7 @@ pub mod describe_game_sessions_input {
             self.game_session_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the game session to retrieve. </p>
         pub fn set_game_session_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8791,6 +9716,8 @@ pub mod describe_game_sessions_input {
             self.alias_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the alias associated with the fleet to retrieve game sessions for. You can use either the
+        /// alias ID or ARN value.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_id = input;
             self
@@ -8802,6 +9729,9 @@ pub mod describe_game_sessions_input {
             self.location = Some(input.into());
             self
         }
+        /// <p>A fleet location to get game session details for. You can specify a fleet's home
+        /// Region or a remote location. Use the AWS Region code format, such as
+        /// <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -8814,6 +9744,10 @@ pub mod describe_game_sessions_input {
             self.status_filter = Some(input.into());
             self
         }
+        /// <p>Game session status to filter results on. You can filter on the following states:
+        /// <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and
+        /// <code>TERMINATING</code>. The last two are transitory and used for only very brief
+        /// periods of time. </p>
         pub fn set_status_filter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8826,6 +9760,7 @@ pub mod describe_game_sessions_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -8835,6 +9770,7 @@ pub mod describe_game_sessions_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8844,7 +9780,7 @@ pub mod describe_game_sessions_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeGameSessionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeGameSessionsInput {
                 fleet_id: self.fleet_id,
@@ -8869,16 +9805,16 @@ impl DescribeGameSessionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeGameSessions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeGameSessionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8886,7 +9822,7 @@ impl DescribeGameSessionsInput {
         fn update_http_builder(
             input: &crate::input::DescribeGameSessionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8895,32 +9831,32 @@ impl DescribeGameSessionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeGameSessionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeGameSessions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_game_sessions(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8943,15 +9879,15 @@ impl DescribeGameSessionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeGameSessions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeGameSessions",
             "gamelift",
         ));
@@ -8960,10 +9896,10 @@ impl DescribeGameSessionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8996,6 +9932,8 @@ pub mod describe_instances_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to retrieve instance information for.  You can use either the fleet ID or ARN
+        /// value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -9006,6 +9944,8 @@ pub mod describe_instances_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for an instance to retrieve. Specify an instance ID or leave
+        /// blank to retrieve all instances in the fleet.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -9015,6 +9955,7 @@ pub mod describe_instances_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -9024,6 +9965,7 @@ pub mod describe_instances_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9034,6 +9976,8 @@ pub mod describe_instances_input {
             self.location = Some(input.into());
             self
         }
+        /// <p>The name of a location to retrieve instance information for, in the form of an AWS
+        /// Region code such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -9043,7 +9987,7 @@ pub mod describe_instances_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeInstancesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeInstancesInput {
                 fleet_id: self.fleet_id,
@@ -9066,16 +10010,16 @@ impl DescribeInstancesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeInstances,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeInstancesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9083,7 +10027,7 @@ impl DescribeInstancesInput {
         fn update_http_builder(
             input: &crate::input::DescribeInstancesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9092,32 +10036,32 @@ impl DescribeInstancesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeInstancesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeInstances",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_instances(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9140,15 +10084,15 @@ impl DescribeInstancesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeInstances::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeInstances",
             "gamelift",
         ));
@@ -9157,10 +10101,10 @@ impl DescribeInstancesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9183,12 +10127,18 @@ pub mod describe_matchmaking_input {
         pub(crate) ticket_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `ticket_ids`.
+        ///
+        /// To override the contents of this collection use [`set_ticket_ids`](Self::set_ticket_ids).
+        ///
+        /// <p>A unique identifier for a matchmaking ticket. You can include up to 10 ID values. </p>
         pub fn ticket_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ticket_ids.unwrap_or_default();
             v.push(input.into());
             self.ticket_ids = Some(v);
             self
         }
+        /// <p>A unique identifier for a matchmaking ticket. You can include up to 10 ID values. </p>
         pub fn set_ticket_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9201,7 +10151,7 @@ pub mod describe_matchmaking_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeMatchmakingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeMatchmakingInput {
                 ticket_ids: self.ticket_ids,
@@ -9220,16 +10170,16 @@ impl DescribeMatchmakingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeMatchmaking,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeMatchmakingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9237,7 +10187,7 @@ impl DescribeMatchmakingInput {
         fn update_http_builder(
             input: &crate::input::DescribeMatchmakingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9246,30 +10196,32 @@ impl DescribeMatchmakingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeMatchmakingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeMatchmaking",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_matchmaking(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9292,15 +10244,15 @@ impl DescribeMatchmakingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeMatchmaking::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeMatchmaking",
             "gamelift",
         ));
@@ -9309,10 +10261,10 @@ impl DescribeMatchmakingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9338,12 +10290,20 @@ pub mod describe_matchmaking_configurations_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `names`.
+        ///
+        /// To override the contents of this collection use [`set_names`](Self::set_names).
+        ///
+        /// <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To
+        /// request all existing configurations, leave this parameter empty.</p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
             v.push(input.into());
             self.names = Some(v);
             self
         }
+        /// <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To
+        /// request all existing configurations, leave this parameter empty.</p>
         pub fn set_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9357,6 +10317,8 @@ pub mod describe_matchmaking_configurations_input {
             self.rule_set_name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this parameter to
+        /// retrieve all matchmaking configurations that use this rule set.</p>
         pub fn set_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9369,6 +10331,7 @@ pub mod describe_matchmaking_configurations_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is limited to 10.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -9378,6 +10341,7 @@ pub mod describe_matchmaking_configurations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9387,7 +10351,7 @@ pub mod describe_matchmaking_configurations_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeMatchmakingConfigurationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeMatchmakingConfigurationsInput {
                 names: self.names,
@@ -9410,16 +10374,16 @@ impl DescribeMatchmakingConfigurationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeMatchmakingConfigurations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeMatchmakingConfigurationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9427,7 +10391,7 @@ impl DescribeMatchmakingConfigurationsInput {
         fn update_http_builder(
             input: &crate::input::DescribeMatchmakingConfigurationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9436,30 +10400,30 @@ impl DescribeMatchmakingConfigurationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeMatchmakingConfigurationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeMatchmakingConfigurations",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_matchmaking_configurations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_matchmaking_configurations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9482,15 +10446,15 @@ impl DescribeMatchmakingConfigurationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeMatchmakingConfigurations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeMatchmakingConfigurations",
             "gamelift",
         ));
@@ -9499,10 +10463,10 @@ impl DescribeMatchmakingConfigurationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9527,12 +10491,22 @@ pub mod describe_matchmaking_rule_sets_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `names`.
+        ///
+        /// To override the contents of this collection use [`set_names`](Self::set_names).
+        ///
+        /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The
+        /// rule set name is different from the optional "name" field in the rule set body.) You can
+        /// use either the rule set name or ARN value. </p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
             v.push(input.into());
             self.names = Some(v);
             self
         }
+        /// <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The
+        /// rule set name is different from the optional "name" field in the rule set body.) You can
+        /// use either the rule set name or ARN value. </p>
         pub fn set_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9545,6 +10519,7 @@ pub mod describe_matchmaking_rule_sets_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -9554,6 +10529,7 @@ pub mod describe_matchmaking_rule_sets_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9563,7 +10539,7 @@ pub mod describe_matchmaking_rule_sets_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeMatchmakingRuleSetsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeMatchmakingRuleSetsInput {
                 names: self.names,
@@ -9585,16 +10561,16 @@ impl DescribeMatchmakingRuleSetsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeMatchmakingRuleSets,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeMatchmakingRuleSetsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9602,7 +10578,7 @@ impl DescribeMatchmakingRuleSetsInput {
         fn update_http_builder(
             input: &crate::input::DescribeMatchmakingRuleSetsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9611,30 +10587,30 @@ impl DescribeMatchmakingRuleSetsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeMatchmakingRuleSetsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeMatchmakingRuleSets",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_matchmaking_rule_sets(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_matchmaking_rule_sets(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9657,15 +10633,15 @@ impl DescribeMatchmakingRuleSetsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeMatchmakingRuleSets::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeMatchmakingRuleSets",
             "gamelift",
         ));
@@ -9674,10 +10650,10 @@ impl DescribeMatchmakingRuleSetsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9710,6 +10686,7 @@ pub mod describe_player_sessions_input {
             self.game_session_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the game session to retrieve player sessions for.</p>
         pub fn set_game_session_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9722,6 +10699,7 @@ pub mod describe_player_sessions_input {
             self.player_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for a player to retrieve player sessions for.</p>
         pub fn set_player_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.player_id = input;
             self
@@ -9731,6 +10709,7 @@ pub mod describe_player_sessions_input {
             self.player_session_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for a player session to retrieve.</p>
         pub fn set_player_session_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9771,6 +10750,32 @@ pub mod describe_player_sessions_input {
             self.player_session_status_filter = Some(input.into());
             self
         }
+        /// <p>Player session status to filter results on.</p>
+        /// <p>Possible player session statuses include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>RESERVED</b> -- The player session request has been
+        /// received, but the player has not yet connected to the server process and/or been
+        /// validated. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>ACTIVE</b> -- The player has been validated by the
+        /// server process and is currently connected.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>COMPLETED</b> -- The player connection has been
+        /// dropped.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>TIMEDOUT</b> -- A player session request was
+        /// received, but the player did not connect and/or was not validated within the
+        /// timeout limit (60 seconds).</p>
+        /// </li>
+        /// </ul>
         pub fn set_player_session_status_filter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9783,6 +10788,7 @@ pub mod describe_player_sessions_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. If a player session ID is specified, this parameter is ignored.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -9792,6 +10798,7 @@ pub mod describe_player_sessions_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. If a player session ID is specified, this parameter is ignored.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9801,7 +10808,7 @@ pub mod describe_player_sessions_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribePlayerSessionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribePlayerSessionsInput {
                 game_session_id: self.game_session_id,
@@ -9825,16 +10832,16 @@ impl DescribePlayerSessionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribePlayerSessions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribePlayerSessionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9842,7 +10849,7 @@ impl DescribePlayerSessionsInput {
         fn update_http_builder(
             input: &crate::input::DescribePlayerSessionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9851,32 +10858,34 @@ impl DescribePlayerSessionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribePlayerSessionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribePlayerSessions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_player_sessions(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9899,15 +10908,15 @@ impl DescribePlayerSessionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribePlayerSessions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribePlayerSessions",
             "gamelift",
         ));
@@ -9916,10 +10925,10 @@ impl DescribePlayerSessionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9948,6 +10957,8 @@ pub mod describe_runtime_configuration_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN
+        /// value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -9957,7 +10968,7 @@ pub mod describe_runtime_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeRuntimeConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeRuntimeConfigurationInput {
                 fleet_id: self.fleet_id,
@@ -9977,16 +10988,16 @@ impl DescribeRuntimeConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeRuntimeConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeRuntimeConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9994,7 +11005,7 @@ impl DescribeRuntimeConfigurationInput {
         fn update_http_builder(
             input: &crate::input::DescribeRuntimeConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10003,30 +11014,30 @@ impl DescribeRuntimeConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeRuntimeConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeRuntimeConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_runtime_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_runtime_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10049,15 +11060,15 @@ impl DescribeRuntimeConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeRuntimeConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeRuntimeConfiguration",
             "gamelift",
         ));
@@ -10066,10 +11077,10 @@ impl DescribeRuntimeConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10102,6 +11113,8 @@ pub mod describe_scaling_policies_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN
+        /// value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -10149,6 +11162,45 @@ pub mod describe_scaling_policies_input {
             self.status_filter = Some(input);
             self
         }
+        /// <p>Scaling policy status to filter results on. A scaling policy is only in force when
+        /// in an <code>ACTIVE</code> status.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>ACTIVE</b> -- The scaling policy is currently in
+        /// force.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>UPDATEREQUESTED</b> -- A request to update the
+        /// scaling policy has been received.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>UPDATING</b> -- A change is being made to the
+        /// scaling policy.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>DELETEREQUESTED</b> -- A request to delete the
+        /// scaling policy has been received.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>DELETING</b> -- The scaling policy is being
+        /// deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>DELETED</b> -- The scaling policy has been
+        /// deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>ERROR</b> -- An error occurred in creating the
+        /// policy. It should be removed and recreated.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status_filter(
             mut self,
             input: std::option::Option<crate::model::ScalingStatusType>,
@@ -10161,6 +11213,7 @@ pub mod describe_scaling_policies_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -10170,6 +11223,7 @@ pub mod describe_scaling_policies_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10181,6 +11235,9 @@ pub mod describe_scaling_policies_input {
             self.location = Some(input.into());
             self
         }
+        /// <p>
+        /// CONTENT TODO
+        /// </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -10190,7 +11247,7 @@ pub mod describe_scaling_policies_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeScalingPoliciesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeScalingPoliciesInput {
                 fleet_id: self.fleet_id,
@@ -10214,16 +11271,16 @@ impl DescribeScalingPoliciesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeScalingPolicies,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeScalingPoliciesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10231,7 +11288,7 @@ impl DescribeScalingPoliciesInput {
         fn update_http_builder(
             input: &crate::input::DescribeScalingPoliciesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10240,32 +11297,34 @@ impl DescribeScalingPoliciesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeScalingPoliciesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeScalingPolicies",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_scaling_policies(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10288,15 +11347,15 @@ impl DescribeScalingPoliciesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeScalingPolicies::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeScalingPolicies",
             "gamelift",
         ));
@@ -10305,10 +11364,10 @@ impl DescribeScalingPoliciesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10337,6 +11396,8 @@ pub mod describe_script_input {
             self.script_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN
+        /// value.</p>
         pub fn set_script_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.script_id = input;
             self
@@ -10346,7 +11407,7 @@ pub mod describe_script_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeScriptInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeScriptInput {
                 script_id: self.script_id,
@@ -10365,16 +11426,16 @@ impl DescribeScriptInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeScript,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeScriptInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10382,7 +11443,7 @@ impl DescribeScriptInput {
         fn update_http_builder(
             input: &crate::input::DescribeScriptInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10391,29 +11452,31 @@ impl DescribeScriptInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeScriptInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeScript",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_script(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10436,15 +11499,15 @@ impl DescribeScriptInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeScript::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeScript",
             "gamelift",
         ));
@@ -10453,10 +11516,10 @@ impl DescribeScriptInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10482,7 +11545,7 @@ pub mod describe_vpc_peering_authorizations_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeVpcPeeringAuthorizationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeVpcPeeringAuthorizationsInput {})
         }
@@ -10500,16 +11563,16 @@ impl DescribeVpcPeeringAuthorizationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeVpcPeeringAuthorizations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeVpcPeeringAuthorizationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10517,7 +11580,7 @@ impl DescribeVpcPeeringAuthorizationsInput {
         fn update_http_builder(
             input: &crate::input::DescribeVpcPeeringAuthorizationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10526,30 +11589,30 @@ impl DescribeVpcPeeringAuthorizationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeVpcPeeringAuthorizationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeVpcPeeringAuthorizations",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_vpc_peering_authorizations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_vpc_peering_authorizations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10572,15 +11635,15 @@ impl DescribeVpcPeeringAuthorizationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeVpcPeeringAuthorizations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeVpcPeeringAuthorizations",
             "gamelift",
         ));
@@ -10589,10 +11652,10 @@ impl DescribeVpcPeeringAuthorizationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10620,6 +11683,7 @@ pub mod describe_vpc_peering_connections_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -10629,7 +11693,7 @@ pub mod describe_vpc_peering_connections_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeVpcPeeringConnectionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeVpcPeeringConnectionsInput {
                 fleet_id: self.fleet_id,
@@ -10649,16 +11713,16 @@ impl DescribeVpcPeeringConnectionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeVpcPeeringConnections,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeVpcPeeringConnectionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10666,7 +11730,7 @@ impl DescribeVpcPeeringConnectionsInput {
         fn update_http_builder(
             input: &crate::input::DescribeVpcPeeringConnectionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10675,30 +11739,30 @@ impl DescribeVpcPeeringConnectionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeVpcPeeringConnectionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.DescribeVpcPeeringConnections",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_vpc_peering_connections(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_vpc_peering_connections(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10721,15 +11785,15 @@ impl DescribeVpcPeeringConnectionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeVpcPeeringConnections::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeVpcPeeringConnections",
             "gamelift",
         ));
@@ -10738,10 +11802,10 @@ impl DescribeVpcPeeringConnectionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10769,6 +11833,7 @@ pub mod get_game_session_log_url_input {
             self.game_session_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the game session to get logs for. </p>
         pub fn set_game_session_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10781,7 +11846,7 @@ pub mod get_game_session_log_url_input {
             self,
         ) -> std::result::Result<
             crate::input::GetGameSessionLogUrlInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetGameSessionLogUrlInput {
                 game_session_id: self.game_session_id,
@@ -10800,16 +11865,16 @@ impl GetGameSessionLogUrlInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetGameSessionLogUrl,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetGameSessionLogUrlInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10817,7 +11882,7 @@ impl GetGameSessionLogUrlInput {
         fn update_http_builder(
             input: &crate::input::GetGameSessionLogUrlInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10826,32 +11891,34 @@ impl GetGameSessionLogUrlInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetGameSessionLogUrlInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.GetGameSessionLogUrl",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_game_session_log_url(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10874,15 +11941,15 @@ impl GetGameSessionLogUrlInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetGameSessionLogUrl::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetGameSessionLogUrl",
             "gamelift",
         ));
@@ -10891,10 +11958,10 @@ impl GetGameSessionLogUrlInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10927,6 +11994,11 @@ pub mod get_instance_access_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID
+        /// or ARN value. The fleet can be in any of the following statuses:
+        /// <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an
+        /// <code>ERROR</code> status may be accessible for a short time before they are
+        /// deleted.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -10937,6 +12009,8 @@ pub mod get_instance_access_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the instance you want to get access to. You can access an instance in any
+        /// status.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -10946,7 +12020,7 @@ pub mod get_instance_access_input {
             self,
         ) -> std::result::Result<
             crate::input::GetInstanceAccessInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetInstanceAccessInput {
                 fleet_id: self.fleet_id,
@@ -10966,16 +12040,16 @@ impl GetInstanceAccessInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetInstanceAccess,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetInstanceAccessInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10983,7 +12057,7 @@ impl GetInstanceAccessInput {
         fn update_http_builder(
             input: &crate::input::GetInstanceAccessInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10992,32 +12066,32 @@ impl GetInstanceAccessInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetInstanceAccessInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.GetInstanceAccess",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_instance_access(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11040,15 +12114,15 @@ impl GetInstanceAccessInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetInstanceAccess::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetInstanceAccess",
             "gamelift",
         ));
@@ -11057,10 +12131,10 @@ impl GetInstanceAccessInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11106,6 +12180,22 @@ pub mod list_aliases_input {
             self.routing_strategy_type = Some(input);
             self
         }
+        /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases
+        /// with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
+        /// <p>Possible routing types include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>SIMPLE</b> -- The alias resolves to one specific
+        /// fleet. Use this type when routing to active fleets.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>TERMINAL</b> -- The alias does not resolve to a
+        /// fleet but instead can be used to display a message to the user. A terminal alias
+        /// throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.</p>
+        /// </li>
+        /// </ul>
         pub fn set_routing_strategy_type(
             mut self,
             input: std::option::Option<crate::model::RoutingStrategyType>,
@@ -11118,6 +12208,7 @@ pub mod list_aliases_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -11127,6 +12218,7 @@ pub mod list_aliases_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -11136,6 +12228,7 @@ pub mod list_aliases_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11143,8 +12236,10 @@ pub mod list_aliases_input {
         /// Consumes the builder and constructs a [`ListAliasesInput`](crate::input::ListAliasesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListAliasesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListAliasesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListAliasesInput {
                 routing_strategy_type: self.routing_strategy_type,
                 name: self.name,
@@ -11165,16 +12260,16 @@ impl ListAliasesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListAliases,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListAliasesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11182,7 +12277,7 @@ impl ListAliasesInput {
         fn update_http_builder(
             input: &crate::input::ListAliasesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11191,29 +12286,31 @@ impl ListAliasesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListAliasesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.ListAliases",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_aliases(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11236,25 +12333,27 @@ impl ListAliasesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListAliases::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListAliases",
-                    "gamelift",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAliases::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAliases",
+            "gamelift",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11305,6 +12404,28 @@ pub mod list_builds_input {
             self.status = Some(input);
             self
         }
+        /// <p>Build status to filter results by. To retrieve all builds, leave this parameter
+        /// empty.</p>
+        /// <p>Possible build statuses include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>INITIALIZED</b> -- A new build has been defined,
+        /// but no files have been uploaded. You cannot create fleets for builds that are in
+        /// this status. When a build is successfully created, the build status is set to
+        /// this value. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>READY</b> -- The game build has been successfully
+        /// uploaded. You can now create new fleets for this build.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>FAILED</b> -- The game build upload failed. You
+        /// cannot create new fleets for this build. </p>
+        /// </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::BuildStatus>) -> Self {
             self.status = input;
             self
@@ -11314,6 +12435,7 @@ pub mod list_builds_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -11323,6 +12445,7 @@ pub mod list_builds_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11330,8 +12453,10 @@ pub mod list_builds_input {
         /// Consumes the builder and constructs a [`ListBuildsInput`](crate::input::ListBuildsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListBuildsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListBuildsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListBuildsInput {
                 status: self.status,
                 limit: self.limit,
@@ -11351,16 +12476,16 @@ impl ListBuildsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListBuilds,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListBuildsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11368,7 +12493,7 @@ impl ListBuildsInput {
         fn update_http_builder(
             input: &crate::input::ListBuildsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11377,29 +12502,31 @@ impl ListBuildsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListBuildsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.ListBuilds",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_builds(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11422,25 +12549,27 @@ impl ListBuildsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListBuilds::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListBuilds",
-                    "gamelift",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListBuilds::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListBuilds",
+            "gamelift",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11472,6 +12601,8 @@ pub mod list_fleets_input {
             self.build_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a
+        /// specified build. Use either the build ID or ARN value.</p>
         pub fn set_build_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.build_id = input;
             self
@@ -11482,6 +12613,8 @@ pub mod list_fleets_input {
             self.script_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a
+        /// specified script. Use either the script ID or ARN value.</p>
         pub fn set_script_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.script_id = input;
             self
@@ -11491,6 +12624,7 @@ pub mod list_fleets_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -11500,6 +12634,7 @@ pub mod list_fleets_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11507,8 +12642,10 @@ pub mod list_fleets_input {
         /// Consumes the builder and constructs a [`ListFleetsInput`](crate::input::ListFleetsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListFleetsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListFleetsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListFleetsInput {
                 build_id: self.build_id,
                 script_id: self.script_id,
@@ -11529,16 +12666,16 @@ impl ListFleetsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListFleets,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListFleetsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11546,7 +12683,7 @@ impl ListFleetsInput {
         fn update_http_builder(
             input: &crate::input::ListFleetsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11555,29 +12692,31 @@ impl ListFleetsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListFleetsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.ListFleets",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_fleets(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11600,25 +12739,27 @@ impl ListFleetsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListFleets::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListFleets",
-                    "gamelift",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListFleets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListFleets",
+            "gamelift",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11647,6 +12788,7 @@ pub mod list_game_server_groups_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -11656,6 +12798,7 @@ pub mod list_game_server_groups_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11665,7 +12808,7 @@ pub mod list_game_server_groups_input {
             self,
         ) -> std::result::Result<
             crate::input::ListGameServerGroupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListGameServerGroupsInput {
                 limit: self.limit,
@@ -11685,16 +12828,16 @@ impl ListGameServerGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListGameServerGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListGameServerGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11702,7 +12845,7 @@ impl ListGameServerGroupsInput {
         fn update_http_builder(
             input: &crate::input::ListGameServerGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11711,32 +12854,34 @@ impl ListGameServerGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListGameServerGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.ListGameServerGroups",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_game_server_groups(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11759,15 +12904,15 @@ impl ListGameServerGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListGameServerGroups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListGameServerGroups",
             "gamelift",
         ));
@@ -11776,10 +12921,10 @@ impl ListGameServerGroupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11811,6 +12956,8 @@ pub mod list_game_servers_input {
             self.game_server_group_name = Some(input.into());
             self
         }
+        /// <p>An identifier for the game server group to retrieve a list of game servers from.
+        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11826,6 +12973,10 @@ pub mod list_game_servers_input {
             self.sort_order = Some(input);
             self
         }
+        /// <p>Indicates how to sort the returned data based on game server registration timestamp.
+        /// Use <code>ASCENDING</code> to retrieve oldest game servers first, or use
+        /// <code>DESCENDING</code> to retrieve newest game servers first. If this parameter is
+        /// left empty, game servers are returned in no particular order.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -11838,6 +12989,7 @@ pub mod list_game_servers_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -11847,6 +12999,7 @@ pub mod list_game_servers_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11856,7 +13009,7 @@ pub mod list_game_servers_input {
             self,
         ) -> std::result::Result<
             crate::input::ListGameServersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListGameServersInput {
                 game_server_group_name: self.game_server_group_name,
@@ -11878,16 +13031,16 @@ impl ListGameServersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListGameServers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListGameServersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11895,7 +13048,7 @@ impl ListGameServersInput {
         fn update_http_builder(
             input: &crate::input::ListGameServersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11904,32 +13057,32 @@ impl ListGameServersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListGameServersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.ListGameServers",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_game_servers(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11952,15 +13105,15 @@ impl ListGameServersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListGameServers::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListGameServers",
             "gamelift",
         ));
@@ -11969,10 +13122,10 @@ impl ListGameServersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12001,6 +13154,7 @@ pub mod list_scripts_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -12010,6 +13164,7 @@ pub mod list_scripts_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -12017,8 +13172,10 @@ pub mod list_scripts_input {
         /// Consumes the builder and constructs a [`ListScriptsInput`](crate::input::ListScriptsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListScriptsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListScriptsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListScriptsInput {
                 limit: self.limit,
                 next_token: self.next_token,
@@ -12037,16 +13194,16 @@ impl ListScriptsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListScripts,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListScriptsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12054,7 +13211,7 @@ impl ListScriptsInput {
         fn update_http_builder(
             input: &crate::input::ListScriptsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12063,29 +13220,31 @@ impl ListScriptsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListScriptsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.ListScripts",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_scripts(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12108,25 +13267,27 @@ impl ListScriptsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListScripts::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListScripts",
-                    "gamelift",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListScripts::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListScripts",
+            "gamelift",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12159,6 +13320,12 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The Amazon Resource Name
+        /// (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+        /// that is assigned to and uniquely identifies the GameLift resource that you want to retrieve
+        /// tags for. GameLift resource ARNs are included in the data object for the resource, which
+        /// can be retrieved by calling a List or Describe operation for the resource type. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -12168,7 +13335,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -12187,16 +13354,16 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12204,7 +13371,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12213,32 +13380,32 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.ListTagsForResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12261,15 +13428,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "gamelift",
         ));
@@ -12278,10 +13445,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12319,6 +13486,7 @@ pub mod put_scaling_policy_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique. A fleet can have only one scaling policy with the same name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -12329,6 +13497,8 @@ pub mod put_scaling_policy_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet
+        /// cannot be in any of the following statuses: ERROR or DELETING.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -12338,6 +13508,7 @@ pub mod put_scaling_policy_input {
             self.scaling_adjustment = Some(input);
             self
         }
+        /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
         pub fn set_scaling_adjustment(mut self, input: std::option::Option<i32>) -> Self {
             self.scaling_adjustment = input;
             self
@@ -12370,6 +13541,27 @@ pub mod put_scaling_policy_input {
             self.scaling_adjustment_type = Some(input);
             self
         }
+        /// <p>The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>ChangeInCapacity</b> -- add (or subtract) the
+        /// scaling adjustment value from the current instance count. Positive values scale
+        /// up while negative values scale down.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>ExactCapacity</b> -- set the instance count to the
+        /// scaling adjustment value.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>PercentChangeInCapacity</b> -- increase or reduce
+        /// the current instance count by the scaling adjustment, read as a percentage.
+        /// Positive values scale up while negative values scale down; for example, a value
+        /// of "-10" scales the fleet down by 10%.</p>
+        /// </li>
+        /// </ul>
         pub fn set_scaling_adjustment_type(
             mut self,
             input: std::option::Option<crate::model::ScalingAdjustmentType>,
@@ -12382,6 +13574,7 @@ pub mod put_scaling_policy_input {
             self.threshold = Some(input);
             self
         }
+        /// <p>Metric value used to trigger a scaling event.</p>
         pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
             self.threshold = input;
             self
@@ -12392,6 +13585,8 @@ pub mod put_scaling_policy_input {
             self.comparison_operator = Some(input);
             self
         }
+        /// <p>Comparison operator to use when measuring the metric against the threshold
+        /// value.</p>
         pub fn set_comparison_operator(
             mut self,
             input: std::option::Option<crate::model::ComparisonOperatorType>,
@@ -12405,6 +13600,8 @@ pub mod put_scaling_policy_input {
             self.evaluation_periods = Some(input);
             self
         }
+        /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a
+        /// scaling event is triggered.</p>
         pub fn set_evaluation_periods(mut self, input: std::option::Option<i32>) -> Self {
             self.evaluation_periods = input;
             self
@@ -12480,6 +13677,73 @@ pub mod put_scaling_policy_input {
             self.metric_name = Some(input);
             self
         }
+        /// <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For
+        /// detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift
+        /// with Amazon CloudWatch</a>. </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>ActivatingGameSessions</b> -- Game sessions in
+        /// the process of being created.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>ActiveGameSessions</b> -- Game sessions that
+        /// are currently running.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>ActiveInstances</b> -- Fleet instances that
+        /// are currently running at least one game session.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>AvailableGameSessions</b> -- Additional game
+        /// sessions that fleet could host simultaneously, given current capacity.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>AvailablePlayerSessions</b> -- Empty player
+        /// slots in currently active game sessions. This includes game sessions that are
+        /// not currently accepting players. Reserved player slots are not
+        /// included.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>CurrentPlayerSessions</b> -- Player slots in
+        /// active game sessions that are being used by a player or are reserved for a
+        /// player. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>IdleInstances</b> -- Active instances that are
+        /// currently hosting zero game sessions. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>PercentAvailableGameSessions</b> -- Unused
+        /// percentage of the total number of game sessions that a fleet could host
+        /// simultaneously, given current capacity. Use this metric for a target-based
+        /// scaling policy.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>PercentIdleInstances</b> -- Percentage of the
+        /// total number of active instances that are hosting zero game sessions.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>QueueDepth</b> -- Pending game session
+        /// placement requests, in any queue, where the current fleet is the top-priority
+        /// destination.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>WaitTime</b> -- Current wait time for pending
+        /// game session placement requests, in any queue, where the current fleet is the
+        /// top-priority destination. </p>
+        /// </li>
+        /// </ul>
         pub fn set_metric_name(
             mut self,
             input: std::option::Option<crate::model::MetricName>,
@@ -12498,6 +13762,13 @@ pub mod put_scaling_policy_input {
             self.policy_type = Some(input);
             self
         }
+        /// <p>The type of scaling policy to create. For a target-based policy, set the parameter
+        /// <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a
+        /// <i>TargetConfiguration</i>. For a rule-based policy set the following
+        /// parameters: <i>MetricName</i>, <i>ComparisonOperator</i>,
+        /// <i>Threshold</i>, <i>EvaluationPeriods</i>,
+        /// <i>ScalingAdjustmentType</i>, and
+        /// <i>ScalingAdjustment</i>.</p>
         pub fn set_policy_type(
             mut self,
             input: std::option::Option<crate::model::PolicyType>,
@@ -12510,6 +13781,7 @@ pub mod put_scaling_policy_input {
             self.target_configuration = Some(input);
             self
         }
+        /// <p>An object that contains settings for a target-based scaling policy.</p>
         pub fn set_target_configuration(
             mut self,
             input: std::option::Option<crate::model::TargetConfiguration>,
@@ -12522,7 +13794,7 @@ pub mod put_scaling_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::PutScalingPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutScalingPolicyInput {
                 name: self.name,
@@ -12550,16 +13822,16 @@ impl PutScalingPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutScalingPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutScalingPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12567,7 +13839,7 @@ impl PutScalingPolicyInput {
         fn update_http_builder(
             input: &crate::input::PutScalingPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12576,32 +13848,32 @@ impl PutScalingPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutScalingPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.PutScalingPolicy",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_scaling_policy(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12624,15 +13896,15 @@ impl PutScalingPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutScalingPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutScalingPolicy",
             "gamelift",
         ));
@@ -12641,10 +13913,10 @@ impl PutScalingPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12677,6 +13949,8 @@ pub mod register_game_server_input {
             self.game_server_group_name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the game server group where the game server is running.
+        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12690,6 +13964,8 @@ pub mod register_game_server_input {
             self.game_server_id = Some(input.into());
             self
         }
+        /// <p>A custom string that uniquely identifies the game server to register.  
+        /// Game server IDs are developer-defined and must be unique across all game server groups in your AWS account.</p>
         pub fn set_game_server_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12704,6 +13980,9 @@ pub mod register_game_server_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the instance where the game server is running. This ID is
+        /// available in the instance metadata. EC2 instance IDs
+        /// use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -12714,6 +13993,8 @@ pub mod register_game_server_input {
             self.connection_info = Some(input.into());
             self
         }
+        /// <p>Information that is needed to make inbound client connections to the game server. This
+        /// might include the IP address and port, DNS name, and other information.</p>
         pub fn set_connection_info(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12728,6 +14009,9 @@ pub mod register_game_server_input {
             self.game_server_data = Some(input.into());
             self
         }
+        /// <p>A set of custom game server properties, formatted as a single string value. This data
+        /// is passed to a game client or service when it requests information on game servers using
+        /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
         pub fn set_game_server_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12740,7 +14024,7 @@ pub mod register_game_server_input {
             self,
         ) -> std::result::Result<
             crate::input::RegisterGameServerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RegisterGameServerInput {
                 game_server_group_name: self.game_server_group_name,
@@ -12763,16 +14047,16 @@ impl RegisterGameServerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RegisterGameServer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RegisterGameServerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12780,7 +14064,7 @@ impl RegisterGameServerInput {
         fn update_http_builder(
             input: &crate::input::RegisterGameServerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12789,30 +14073,32 @@ impl RegisterGameServerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RegisterGameServerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.RegisterGameServer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_register_game_server(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12835,15 +14121,15 @@ impl RegisterGameServerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RegisterGameServer::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RegisterGameServer",
             "gamelift",
         ));
@@ -12852,10 +14138,10 @@ impl RegisterGameServerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12883,6 +14169,7 @@ pub mod request_upload_credentials_input {
             self.build_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value. </p>
         pub fn set_build_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.build_id = input;
             self
@@ -12892,7 +14179,7 @@ pub mod request_upload_credentials_input {
             self,
         ) -> std::result::Result<
             crate::input::RequestUploadCredentialsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RequestUploadCredentialsInput {
                 build_id: self.build_id,
@@ -12912,16 +14199,16 @@ impl RequestUploadCredentialsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RequestUploadCredentials,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RequestUploadCredentialsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12929,7 +14216,7 @@ impl RequestUploadCredentialsInput {
         fn update_http_builder(
             input: &crate::input::RequestUploadCredentialsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12938,32 +14225,34 @@ impl RequestUploadCredentialsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RequestUploadCredentialsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.RequestUploadCredentials",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_request_upload_credentials(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12986,15 +14275,15 @@ impl RequestUploadCredentialsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RequestUploadCredentials::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RequestUploadCredentials",
             "gamelift",
         ));
@@ -13003,10 +14292,10 @@ impl RequestUploadCredentialsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13035,6 +14324,8 @@ pub mod resolve_alias_input {
             self.alias_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can
+        /// use either the alias ID or ARN value.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_id = input;
             self
@@ -13042,8 +14333,10 @@ pub mod resolve_alias_input {
         /// Consumes the builder and constructs a [`ResolveAliasInput`](crate::input::ResolveAliasInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ResolveAliasInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ResolveAliasInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ResolveAliasInput {
                 alias_id: self.alias_id,
             })
@@ -13061,16 +14354,16 @@ impl ResolveAliasInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ResolveAlias,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ResolveAliasInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13078,7 +14371,7 @@ impl ResolveAliasInput {
         fn update_http_builder(
             input: &crate::input::ResolveAliasInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13087,31 +14380,31 @@ impl ResolveAliasInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ResolveAliasInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.ResolveAlias",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_resolve_alias(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13134,25 +14427,27 @@ impl ResolveAliasInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ResolveAlias::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ResolveAlias",
-                    "gamelift",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ResolveAlias::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ResolveAlias",
+            "gamelift",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13182,6 +14477,7 @@ pub mod resume_game_server_group_input {
             self.game_server_group_name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13189,6 +14485,11 @@ pub mod resume_game_server_group_input {
             self.game_server_group_name = input;
             self
         }
+        /// Appends an item to `resume_actions`.
+        ///
+        /// To override the contents of this collection use [`set_resume_actions`](Self::set_resume_actions).
+        ///
+        /// <p>The activity to resume for this game server group.</p>
         pub fn resume_actions(
             mut self,
             input: impl Into<crate::model::GameServerGroupAction>,
@@ -13198,6 +14499,7 @@ pub mod resume_game_server_group_input {
             self.resume_actions = Some(v);
             self
         }
+        /// <p>The activity to resume for this game server group.</p>
         pub fn set_resume_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameServerGroupAction>>,
@@ -13210,7 +14512,7 @@ pub mod resume_game_server_group_input {
             self,
         ) -> std::result::Result<
             crate::input::ResumeGameServerGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ResumeGameServerGroupInput {
                 game_server_group_name: self.game_server_group_name,
@@ -13230,16 +14532,16 @@ impl ResumeGameServerGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ResumeGameServerGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ResumeGameServerGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13247,7 +14549,7 @@ impl ResumeGameServerGroupInput {
         fn update_http_builder(
             input: &crate::input::ResumeGameServerGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13256,32 +14558,34 @@ impl ResumeGameServerGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ResumeGameServerGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.ResumeGameServerGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_resume_game_server_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13304,15 +14608,15 @@ impl ResumeGameServerGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ResumeGameServerGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ResumeGameServerGroup",
             "gamelift",
         ));
@@ -13321,10 +14625,10 @@ impl ResumeGameServerGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13359,6 +14663,8 @@ pub mod search_game_sessions_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to search for active game sessions. You can use either the fleet ID or ARN
+        /// value. Each request must reference either a fleet ID or alias ID, but not both.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -13370,6 +14676,9 @@ pub mod search_game_sessions_input {
             self.alias_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the alias associated with the fleet to search for active game sessions. You can use either
+        /// the alias ID or ARN value. Each request must reference either a fleet ID or alias ID,
+        /// but not both.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_id = input;
             self
@@ -13381,6 +14690,9 @@ pub mod search_game_sessions_input {
             self.location = Some(input.into());
             self
         }
+        /// <p>A fleet location to search for game sessions. You can specify a fleet's home Region or
+        /// a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+        /// <p> </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -13450,6 +14762,67 @@ pub mod search_game_sessions_input {
             self.filter_expression = Some(input.into());
             self
         }
+        /// <p>String containing the search criteria for the session search. If no filter
+        /// expression is included, the request returns results for all game sessions in the fleet
+        /// that are in <code>ACTIVE</code> status.</p>
+        /// <p>A filter expression can contain one or multiple conditions. Each condition consists
+        /// of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>Operand</b> -- Name of a game session
+        /// attribute. Valid values are <code>gameSessionName</code>,
+        /// <code>gameSessionId</code>, <code>gameSessionProperties</code>,
+        /// <code>maximumSessions</code>, <code>creationTimeMillis</code>,
+        /// <code>playerSessionCount</code>,
+        /// <code>hasAvailablePlayerSessions</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Comparator</b> -- Valid comparators are:
+        /// <code>=</code>, <code><></code>, <code><</code>, <code>></code>,
+        /// <code><=</code>, <code>>=</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Value</b> -- Value to be searched for. Values
+        /// may be numbers, boolean values (true/false) or strings depending on the operand.
+        /// String values are case sensitive and must be enclosed in single quotes. Special
+        /// characters must be escaped. Boolean and string values can only be used with the
+        /// comparators <code>=</code> and <code><></code>. For example, the following
+        /// filter expression searches on <code>gameSessionName</code>:
+        /// "<code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game
+        /// 1'"</code>. </p>
+        /// </li>
+        /// </ul>
+        /// <p>To chain multiple conditions in a single expression, use the logical keywords
+        /// <code>AND</code>, <code>OR</code>, and <code>NOT</code> and parentheses as needed.
+        /// For example: <code>x AND y AND NOT z</code>, <code>NOT (x OR y)</code>.</p>
+        /// <p>Session search evaluates conditions from left to right using the following
+        /// precedence rules:</p>
+        /// <ol>
+        /// <li>
+        /// <p>
+        /// <code>=</code>, <code><></code>, <code><</code>, <code>></code>,
+        /// <code><=</code>, <code>>=</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Parentheses</p>
+        /// </li>
+        /// <li>
+        /// <p>NOT</p>
+        /// </li>
+        /// <li>
+        /// <p>AND</p>
+        /// </li>
+        /// <li>
+        /// <p>OR</p>
+        /// </li>
+        /// </ol>
+        /// <p>For example, this filter expression retrieves game sessions hosting at least ten
+        /// players that have an open player slot: <code>"maximumSessions>=10 AND
+        /// hasAvailablePlayerSessions=true"</code>. </p>
         pub fn set_filter_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13482,6 +14855,27 @@ pub mod search_game_sessions_input {
             self.sort_expression = Some(input.into());
             self
         }
+        /// <p>Instructions on how to sort the search results. If no sort expression is included,
+        /// the request returns results in random order. A sort expression consists of the following
+        /// elements:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>Operand</b> -- Name of a game session attribute.
+        /// Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>,
+        /// <code>gameSessionProperties</code>, <code>maximumSessions</code>,
+        /// <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
+        /// <code>hasAvailablePlayerSessions</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Order</b> -- Valid sort orders are <code>ASC</code>
+        /// (ascending) and <code>DESC</code> (descending).</p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, this sort expression returns the oldest active sessions first:
+        /// <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null value
+        /// for the sort operand are returned at the end of the list.</p>
         pub fn set_sort_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13495,6 +14889,8 @@ pub mod search_game_sessions_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. The maximum number of results returned is 20, even if this value is not set
+        /// or is set higher than 20. </p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -13504,6 +14900,7 @@ pub mod search_game_sessions_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -13513,7 +14910,7 @@ pub mod search_game_sessions_input {
             self,
         ) -> std::result::Result<
             crate::input::SearchGameSessionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SearchGameSessionsInput {
                 fleet_id: self.fleet_id,
@@ -13538,16 +14935,16 @@ impl SearchGameSessionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SearchGameSessions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SearchGameSessionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13555,7 +14952,7 @@ impl SearchGameSessionsInput {
         fn update_http_builder(
             input: &crate::input::SearchGameSessionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13564,30 +14961,32 @@ impl SearchGameSessionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SearchGameSessionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.SearchGameSessions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_search_game_sessions(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13610,15 +15009,15 @@ impl SearchGameSessionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SearchGameSessions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SearchGameSessions",
             "gamelift",
         ));
@@ -13627,10 +15026,10 @@ impl SearchGameSessionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13660,16 +15059,23 @@ pub mod start_fleet_actions_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to restart actions on.  You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
         }
+        /// Appends an item to `actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>List of actions to restart on the fleet.</p>
         pub fn actions(mut self, input: impl Into<crate::model::FleetAction>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
             self.actions = Some(v);
             self
         }
+        /// <p>List of actions to restart on the fleet.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FleetAction>>,
@@ -13683,6 +15089,8 @@ pub mod start_fleet_actions_input {
             self.location = Some(input.into());
             self
         }
+        /// <p>The fleet location to restart fleet actions for. Specify a location in the form of
+        /// an AWS Region code, such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -13692,7 +15100,7 @@ pub mod start_fleet_actions_input {
             self,
         ) -> std::result::Result<
             crate::input::StartFleetActionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartFleetActionsInput {
                 fleet_id: self.fleet_id,
@@ -13713,16 +15121,16 @@ impl StartFleetActionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartFleetActions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartFleetActionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13730,7 +15138,7 @@ impl StartFleetActionsInput {
         fn update_http_builder(
             input: &crate::input::StartFleetActionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13739,32 +15147,32 @@ impl StartFleetActionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartFleetActionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.StartFleetActions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_fleet_actions(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13787,15 +15195,15 @@ impl StartFleetActionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartFleetActions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartFleetActions",
             "gamelift",
         ));
@@ -13804,10 +15212,10 @@ impl StartFleetActionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13846,6 +15254,9 @@ pub mod start_game_session_placement_input {
             self.placement_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier to assign to the new game session placement. This value is
+        /// developer-defined. The value must be unique across all Regions and cannot be reused
+        /// unless you are resubmitting a canceled or timed-out placement request.</p>
         pub fn set_placement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.placement_id = input;
             self
@@ -13856,6 +15267,8 @@ pub mod start_game_session_placement_input {
             self.game_session_queue_name = Some(input.into());
             self
         }
+        /// <p>Name of the queue to use to place the new game session. You can use either the queue name
+        /// or ARN value. </p>
         pub fn set_game_session_queue_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13863,12 +15276,20 @@ pub mod start_game_session_placement_input {
             self.game_session_queue_name = input;
             self
         }
+        /// Appends an item to `game_properties`.
+        ///
+        /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
+        ///
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
+        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
         pub fn game_properties(mut self, input: impl Into<crate::model::GameProperty>) -> Self {
             let mut v = self.game_properties.unwrap_or_default();
             v.push(input.into());
             self.game_properties = Some(v);
             self
         }
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
+        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
         pub fn set_game_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
@@ -13881,6 +15302,7 @@ pub mod start_game_session_placement_input {
             self.maximum_player_session_count = Some(input);
             self
         }
+        /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
         pub fn set_maximum_player_session_count(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_player_session_count = input;
             self
@@ -13890,6 +15312,7 @@ pub mod start_game_session_placement_input {
             self.game_session_name = Some(input.into());
             self
         }
+        /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
         pub fn set_game_session_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13897,12 +15320,20 @@ pub mod start_game_session_placement_input {
             self.game_session_name = input;
             self
         }
+        /// Appends an item to `player_latencies`.
+        ///
+        /// To override the contents of this collection use [`set_player_latencies`](Self::set_player_latencies).
+        ///
+        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. This information is used to try to place the new game session where
+        /// it can offer the best possible gameplay experience for the players. </p>
         pub fn player_latencies(mut self, input: impl Into<crate::model::PlayerLatency>) -> Self {
             let mut v = self.player_latencies.unwrap_or_default();
             v.push(input.into());
             self.player_latencies = Some(v);
             self
         }
+        /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. This information is used to try to place the new game session where
+        /// it can offer the best possible gameplay experience for the players. </p>
         pub fn set_player_latencies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlayerLatency>>,
@@ -13910,6 +15341,11 @@ pub mod start_game_session_placement_input {
             self.player_latencies = input;
             self
         }
+        /// Appends an item to `desired_player_sessions`.
+        ///
+        /// To override the contents of this collection use [`set_desired_player_sessions`](Self::set_desired_player_sessions).
+        ///
+        /// <p>Set of information on each player to create a player session for.</p>
         pub fn desired_player_sessions(
             mut self,
             input: impl Into<crate::model::DesiredPlayerSession>,
@@ -13919,6 +15355,7 @@ pub mod start_game_session_placement_input {
             self.desired_player_sessions = Some(v);
             self
         }
+        /// <p>Set of information on each player to create a player session for.</p>
         pub fn set_desired_player_sessions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DesiredPlayerSession>>,
@@ -13932,6 +15369,8 @@ pub mod start_game_session_placement_input {
             self.game_session_data = Some(input.into());
             self
         }
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
+        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
         pub fn set_game_session_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13944,7 +15383,7 @@ pub mod start_game_session_placement_input {
             self,
         ) -> std::result::Result<
             crate::input::StartGameSessionPlacementInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartGameSessionPlacementInput {
                 placement_id: self.placement_id,
@@ -13971,16 +15410,16 @@ impl StartGameSessionPlacementInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartGameSessionPlacement,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartGameSessionPlacementInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13988,7 +15427,7 @@ impl StartGameSessionPlacementInput {
         fn update_http_builder(
             input: &crate::input::StartGameSessionPlacementInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13997,32 +15436,34 @@ impl StartGameSessionPlacementInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartGameSessionPlacementInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.StartGameSessionPlacement",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_game_session_placement(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14045,15 +15486,15 @@ impl StartGameSessionPlacementInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartGameSessionPlacement::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartGameSessionPlacement",
             "gamelift",
         ));
@@ -14062,10 +15503,10 @@ impl StartGameSessionPlacementInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14098,6 +15539,9 @@ pub mod start_match_backfill_input {
             self.ticket_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of
+        /// a UUID. Use this identifier to track the match backfill ticket status and retrieve match
+        /// results.</p>
         pub fn set_ticket_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ticket_id = input;
             self
@@ -14110,6 +15554,10 @@ pub mod start_match_backfill_input {
             self.configuration_name = Some(input.into());
             self
         }
+        /// <p>Name of the matchmaker to use for this request. You can use either the configuration
+        /// name or ARN value. The ARN of the matchmaker that was used with the original game
+        /// session is listed in the <a>GameSession</a> object,
+        /// <code>MatchmakerData</code> property.</p>
         pub fn set_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14123,6 +15571,8 @@ pub mod start_match_backfill_input {
             self.game_session_arn = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking
+        /// solution, this parameter is not needed. </p>
         pub fn set_game_session_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14130,12 +15580,50 @@ pub mod start_match_backfill_input {
             self.game_session_arn = input;
             self
         }
+        /// Appends an item to `players`.
+        ///
+        /// To override the contents of this collection use [`set_players`](Self::set_players).
+        ///
+        /// <p>Match information on all players that are currently assigned to the game session.
+        /// This information is used by the matchmaker to find new players and add them to the
+        /// existing game.</p>
+        /// <ul>
+        /// <li>
+        /// <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the
+        /// <a>GameSession</a> object, <code>MatchmakerData</code> property,
+        /// for all players who are currently assigned to the game session. The matchmaker
+        /// data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
+        /// Match Data</a>. </p>
+        /// </li>
+        /// <li>
+        /// <p>LatencyInMs -- If the matchmaker uses player latency, include a latency
+        /// value, in milliseconds, for the Region that the game session is currently in. Do
+        /// not include latency values for any other Region.</p>
+        /// </li>
+        /// </ul>
         pub fn players(mut self, input: impl Into<crate::model::Player>) -> Self {
             let mut v = self.players.unwrap_or_default();
             v.push(input.into());
             self.players = Some(v);
             self
         }
+        /// <p>Match information on all players that are currently assigned to the game session.
+        /// This information is used by the matchmaker to find new players and add them to the
+        /// existing game.</p>
+        /// <ul>
+        /// <li>
+        /// <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the
+        /// <a>GameSession</a> object, <code>MatchmakerData</code> property,
+        /// for all players who are currently assigned to the game session. The matchmaker
+        /// data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
+        /// Match Data</a>. </p>
+        /// </li>
+        /// <li>
+        /// <p>LatencyInMs -- If the matchmaker uses player latency, include a latency
+        /// value, in milliseconds, for the Region that the game session is currently in. Do
+        /// not include latency values for any other Region.</p>
+        /// </li>
+        /// </ul>
         pub fn set_players(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Player>>,
@@ -14148,7 +15636,7 @@ pub mod start_match_backfill_input {
             self,
         ) -> std::result::Result<
             crate::input::StartMatchBackfillInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartMatchBackfillInput {
                 ticket_id: self.ticket_id,
@@ -14170,16 +15658,16 @@ impl StartMatchBackfillInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartMatchBackfill,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartMatchBackfillInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -14187,7 +15675,7 @@ impl StartMatchBackfillInput {
         fn update_http_builder(
             input: &crate::input::StartMatchBackfillInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14196,30 +15684,32 @@ impl StartMatchBackfillInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartMatchBackfillInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.StartMatchBackfill",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_match_backfill(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14242,15 +15732,15 @@ impl StartMatchBackfillInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartMatchBackfill::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartMatchBackfill",
             "gamelift",
         ));
@@ -14259,10 +15749,10 @@ impl StartMatchBackfillInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14294,6 +15784,9 @@ pub mod start_matchmaking_input {
             self.ticket_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of
+        /// a UUID. Use this identifier to track the matchmaking ticket status and retrieve match
+        /// results.</p>
         pub fn set_ticket_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ticket_id = input;
             self
@@ -14305,6 +15798,9 @@ pub mod start_matchmaking_input {
             self.configuration_name = Some(input.into());
             self
         }
+        /// <p>Name of the matchmaking configuration to use for this request. Matchmaking
+        /// configurations must exist in the same Region as this request. You can use either the
+        /// configuration name or ARN value.</p>
         pub fn set_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14312,12 +15808,24 @@ pub mod start_matchmaking_input {
             self.configuration_name = input;
             self
         }
+        /// Appends an item to `players`.
+        ///
+        /// To override the contents of this collection use [`set_players`](Self::set_players).
+        ///
+        /// <p>Information on each player to be matched. This information must include a player
+        /// ID, and may contain player attributes and latency data to be used in the matchmaking
+        /// process. After a successful match, <code>Player</code> objects contain the name of the
+        /// team the player is assigned to.</p>
         pub fn players(mut self, input: impl Into<crate::model::Player>) -> Self {
             let mut v = self.players.unwrap_or_default();
             v.push(input.into());
             self.players = Some(v);
             self
         }
+        /// <p>Information on each player to be matched. This information must include a player
+        /// ID, and may contain player attributes and latency data to be used in the matchmaking
+        /// process. After a successful match, <code>Player</code> objects contain the name of the
+        /// team the player is assigned to.</p>
         pub fn set_players(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Player>>,
@@ -14330,7 +15838,7 @@ pub mod start_matchmaking_input {
             self,
         ) -> std::result::Result<
             crate::input::StartMatchmakingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartMatchmakingInput {
                 ticket_id: self.ticket_id,
@@ -14351,16 +15859,16 @@ impl StartMatchmakingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartMatchmaking,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartMatchmakingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -14368,7 +15876,7 @@ impl StartMatchmakingInput {
         fn update_http_builder(
             input: &crate::input::StartMatchmakingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14377,32 +15885,32 @@ impl StartMatchmakingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartMatchmakingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.StartMatchmaking",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_matchmaking(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14425,15 +15933,15 @@ impl StartMatchmakingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartMatchmaking::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartMatchmaking",
             "gamelift",
         ));
@@ -14442,10 +15950,10 @@ impl StartMatchmakingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14475,16 +15983,23 @@ pub mod stop_fleet_actions_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to stop actions on.  You can use either the fleet ID or ARN value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
         }
+        /// Appends an item to `actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>List of actions to suspend on the fleet. </p>
         pub fn actions(mut self, input: impl Into<crate::model::FleetAction>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
             self.actions = Some(v);
             self
         }
+        /// <p>List of actions to suspend on the fleet. </p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FleetAction>>,
@@ -14498,6 +16013,8 @@ pub mod stop_fleet_actions_input {
             self.location = Some(input.into());
             self
         }
+        /// <p>The fleet location to stop fleet actions for. Specify a location in the form of an AWS Region code, such as
+        /// <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -14507,7 +16024,7 @@ pub mod stop_fleet_actions_input {
             self,
         ) -> std::result::Result<
             crate::input::StopFleetActionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StopFleetActionsInput {
                 fleet_id: self.fleet_id,
@@ -14528,16 +16045,16 @@ impl StopFleetActionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StopFleetActions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StopFleetActionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -14545,7 +16062,7 @@ impl StopFleetActionsInput {
         fn update_http_builder(
             input: &crate::input::StopFleetActionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14554,32 +16071,32 @@ impl StopFleetActionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StopFleetActionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.StopFleetActions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_fleet_actions(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14602,15 +16119,15 @@ impl StopFleetActionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StopFleetActions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StopFleetActions",
             "gamelift",
         ));
@@ -14619,10 +16136,10 @@ impl StopFleetActionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14650,6 +16167,7 @@ pub mod stop_game_session_placement_input {
             self.placement_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for a game session placement to cancel.</p>
         pub fn set_placement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.placement_id = input;
             self
@@ -14659,7 +16177,7 @@ pub mod stop_game_session_placement_input {
             self,
         ) -> std::result::Result<
             crate::input::StopGameSessionPlacementInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StopGameSessionPlacementInput {
                 placement_id: self.placement_id,
@@ -14679,16 +16197,16 @@ impl StopGameSessionPlacementInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StopGameSessionPlacement,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StopGameSessionPlacementInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -14696,7 +16214,7 @@ impl StopGameSessionPlacementInput {
         fn update_http_builder(
             input: &crate::input::StopGameSessionPlacementInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14705,32 +16223,34 @@ impl StopGameSessionPlacementInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StopGameSessionPlacementInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.StopGameSessionPlacement",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_game_session_placement(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14753,15 +16273,15 @@ impl StopGameSessionPlacementInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StopGameSessionPlacement::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StopGameSessionPlacement",
             "gamelift",
         ));
@@ -14770,10 +16290,10 @@ impl StopGameSessionPlacementInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14801,6 +16321,7 @@ pub mod stop_matchmaking_input {
             self.ticket_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for a matchmaking ticket.</p>
         pub fn set_ticket_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ticket_id = input;
             self
@@ -14810,7 +16331,7 @@ pub mod stop_matchmaking_input {
             self,
         ) -> std::result::Result<
             crate::input::StopMatchmakingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StopMatchmakingInput {
                 ticket_id: self.ticket_id,
@@ -14829,16 +16350,16 @@ impl StopMatchmakingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StopMatchmaking,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StopMatchmakingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -14846,7 +16367,7 @@ impl StopMatchmakingInput {
         fn update_http_builder(
             input: &crate::input::StopMatchmakingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14855,32 +16376,32 @@ impl StopMatchmakingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StopMatchmakingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.StopMatchmaking",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_matchmaking(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14903,15 +16424,15 @@ impl StopMatchmakingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StopMatchmaking::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StopMatchmaking",
             "gamelift",
         ));
@@ -14920,10 +16441,10 @@ impl StopMatchmakingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14953,6 +16474,7 @@ pub mod suspend_game_server_group_input {
             self.game_server_group_name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14960,6 +16482,11 @@ pub mod suspend_game_server_group_input {
             self.game_server_group_name = input;
             self
         }
+        /// Appends an item to `suspend_actions`.
+        ///
+        /// To override the contents of this collection use [`set_suspend_actions`](Self::set_suspend_actions).
+        ///
+        /// <p>The activity to suspend for this game server group.</p>
         pub fn suspend_actions(
             mut self,
             input: impl Into<crate::model::GameServerGroupAction>,
@@ -14969,6 +16496,7 @@ pub mod suspend_game_server_group_input {
             self.suspend_actions = Some(v);
             self
         }
+        /// <p>The activity to suspend for this game server group.</p>
         pub fn set_suspend_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameServerGroupAction>>,
@@ -14981,7 +16509,7 @@ pub mod suspend_game_server_group_input {
             self,
         ) -> std::result::Result<
             crate::input::SuspendGameServerGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SuspendGameServerGroupInput {
                 game_server_group_name: self.game_server_group_name,
@@ -15001,16 +16529,16 @@ impl SuspendGameServerGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SuspendGameServerGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SuspendGameServerGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -15018,7 +16546,7 @@ impl SuspendGameServerGroupInput {
         fn update_http_builder(
             input: &crate::input::SuspendGameServerGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -15027,32 +16555,34 @@ impl SuspendGameServerGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SuspendGameServerGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.SuspendGameServerGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_suspend_game_server_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -15075,15 +16605,15 @@ impl SuspendGameServerGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SuspendGameServerGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SuspendGameServerGroup",
             "gamelift",
         ));
@@ -15092,10 +16622,10 @@ impl SuspendGameServerGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -15129,16 +16659,34 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The Amazon Resource Name
+        /// (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+        /// that is assigned to and uniquely identifies the GameLift resource that you want to assign
+        /// tags to. GameLift resource ARNs are included in the data object for the resource, which
+        /// can be retrieved by calling a List or Describe operation for the resource type. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of one or more tags to assign to the specified GameLift resource.
+        /// Tags are developer-defined and structured as key-value pairs.
+        /// The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a>
+        /// for actual tagging limits.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of one or more tags to assign to the specified GameLift resource.
+        /// Tags are developer-defined and structured as key-value pairs.
+        /// The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a>
+        /// for actual tagging limits.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -15149,8 +16697,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -15169,16 +16719,16 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -15186,7 +16736,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -15195,29 +16745,31 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.TagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -15240,25 +16792,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "gamelift",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "gamelift",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -15290,16 +16844,30 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and
+        /// uniquely identifies the GameLift resource that you want to remove tags from. GameLift
+        /// resource ARNs are included in the data object for the resource, which can be retrieved
+        /// by calling a List or Describe operation for the resource type. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>A list of one or more tag keys to remove from the specified GameLift resource. An
+        /// AWS resource can have only one tag with a specific tag key, so specifying the tag key
+        /// identifies which tag to remove. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>A list of one or more tag keys to remove from the specified GameLift resource. An
+        /// AWS resource can have only one tag with a specific tag key, so specifying the tag key
+        /// identifies which tag to remove. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15310,8 +16878,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -15330,16 +16900,16 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -15347,7 +16917,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -15356,29 +16926,31 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.UntagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -15401,25 +16973,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "gamelift",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "gamelift",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -15451,6 +17025,8 @@ pub mod update_alias_input {
             self.alias_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the alias that you want to update. You can use either the
+        /// alias ID or ARN value.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_id = input;
             self
@@ -15460,6 +17036,7 @@ pub mod update_alias_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -15469,6 +17046,7 @@ pub mod update_alias_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A human-readable description of the alias.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -15479,6 +17057,8 @@ pub mod update_alias_input {
             self.routing_strategy = Some(input);
             self
         }
+        /// <p>The routing configuration, including routing type and fleet target, for the
+        /// alias.</p>
         pub fn set_routing_strategy(
             mut self,
             input: std::option::Option<crate::model::RoutingStrategy>,
@@ -15489,8 +17069,10 @@ pub mod update_alias_input {
         /// Consumes the builder and constructs a [`UpdateAliasInput`](crate::input::UpdateAliasInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateAliasInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateAliasInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateAliasInput {
                 alias_id: self.alias_id,
                 name: self.name,
@@ -15511,16 +17093,16 @@ impl UpdateAliasInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateAlias,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateAliasInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -15528,7 +17110,7 @@ impl UpdateAliasInput {
         fn update_http_builder(
             input: &crate::input::UpdateAliasInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -15537,29 +17119,31 @@ impl UpdateAliasInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateAliasInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.UpdateAlias",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_alias(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -15582,25 +17166,27 @@ impl UpdateAliasInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateAlias::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateAlias",
-                    "gamelift",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateAlias::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateAlias",
+            "gamelift",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -15630,6 +17216,7 @@ pub mod update_build_input {
             self.build_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the build to update. You can use either the build ID or ARN value.  </p>
         pub fn set_build_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.build_id = input;
             self
@@ -15639,6 +17226,7 @@ pub mod update_build_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A descriptive label that is associated with a build. Build names do not need to be unique. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -15648,6 +17236,7 @@ pub mod update_build_input {
             self.version = Some(input.into());
             self
         }
+        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -15655,8 +17244,10 @@ pub mod update_build_input {
         /// Consumes the builder and constructs a [`UpdateBuildInput`](crate::input::UpdateBuildInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateBuildInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateBuildInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateBuildInput {
                 build_id: self.build_id,
                 name: self.name,
@@ -15676,16 +17267,16 @@ impl UpdateBuildInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateBuild,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateBuildInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -15693,7 +17284,7 @@ impl UpdateBuildInput {
         fn update_http_builder(
             input: &crate::input::UpdateBuildInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -15702,29 +17293,31 @@ impl UpdateBuildInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateBuildInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.UpdateBuild",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_build(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -15747,25 +17340,27 @@ impl UpdateBuildInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateBuild::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateBuild",
-                    "gamelift",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateBuild::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateBuild",
+            "gamelift",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -15801,6 +17396,8 @@ pub mod update_fleet_attributes_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN
+        /// value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -15810,6 +17407,7 @@ pub mod update_fleet_attributes_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -15819,6 +17417,7 @@ pub mod update_fleet_attributes_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A human-readable description of a fleet.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -15846,6 +17445,22 @@ pub mod update_fleet_attributes_input {
             self.new_game_session_protection_policy = Some(input);
             self
         }
+        /// <p>The game session protection policy to apply to all new instances created in this
+        /// fleet. Instances that already exist are not affected. You can set protection for
+        /// individual instances using <a>UpdateGameSession</a>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>NoProtection</b> -- The game session can be
+        /// terminated during a scale-down event.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>FullProtection</b> -- If the game session is in an
+        /// <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+        /// event.</p>
+        /// </li>
+        /// </ul>
         pub fn set_new_game_session_protection_policy(
             mut self,
             input: std::option::Option<crate::model::ProtectionPolicy>,
@@ -15862,6 +17477,8 @@ pub mod update_fleet_attributes_input {
             self.resource_creation_limit_policy = Some(input);
             self
         }
+        /// <p>Policy settings that limit the number of game sessions an individual player can create
+        /// over a span of time. </p>
         pub fn set_resource_creation_limit_policy(
             mut self,
             input: std::option::Option<crate::model::ResourceCreationLimitPolicy>,
@@ -15869,12 +17486,24 @@ pub mod update_fleet_attributes_input {
             self.resource_creation_limit_policy = input;
             self
         }
+        /// Appends an item to `metric_groups`.
+        ///
+        /// To override the contents of this collection use [`set_metric_groups`](Self::set_metric_groups).
+        ///
+        /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon
+        /// CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric
+        /// group name, or create a new metric group by providing a new name. A fleet can only be in
+        /// one metric group at a time.</p>
         pub fn metric_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.metric_groups.unwrap_or_default();
             v.push(input.into());
             self.metric_groups = Some(v);
             self
         }
+        /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon
+        /// CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric
+        /// group name, or create a new metric group by providing a new name. A fleet can only be in
+        /// one metric group at a time.</p>
         pub fn set_metric_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15887,7 +17516,7 @@ pub mod update_fleet_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateFleetAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateFleetAttributesInput {
                 fleet_id: self.fleet_id,
@@ -15911,16 +17540,16 @@ impl UpdateFleetAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateFleetAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateFleetAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -15928,7 +17557,7 @@ impl UpdateFleetAttributesInput {
         fn update_http_builder(
             input: &crate::input::UpdateFleetAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -15937,32 +17566,34 @@ impl UpdateFleetAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateFleetAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.UpdateFleetAttributes",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_fleet_attributes(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -15985,15 +17616,15 @@ impl UpdateFleetAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateFleetAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateFleetAttributes",
             "gamelift",
         ));
@@ -16002,10 +17633,10 @@ impl UpdateFleetAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -16038,6 +17669,8 @@ pub mod update_fleet_capacity_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN
+        /// value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -16048,6 +17681,8 @@ pub mod update_fleet_capacity_input {
             self.desired_instances = Some(input);
             self
         }
+        /// <p>The number of EC2 instances you want to maintain in the specified fleet location.
+        /// This value must fall between the minimum and maximum size limits.</p>
         pub fn set_desired_instances(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_instances = input;
             self
@@ -16058,6 +17693,8 @@ pub mod update_fleet_capacity_input {
             self.min_size = Some(input);
             self
         }
+        /// <p>The minimum number of instances that are allowed in the specified fleet location. If
+        /// this parameter is not set, the default is 0.</p>
         pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
             self.min_size = input;
             self
@@ -16068,6 +17705,8 @@ pub mod update_fleet_capacity_input {
             self.max_size = Some(input);
             self
         }
+        /// <p>The maximum number of instances that are allowed in the specified fleet location. If
+        /// this parameter is not set, the default is 1.</p>
         pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
             self.max_size = input;
             self
@@ -16078,6 +17717,8 @@ pub mod update_fleet_capacity_input {
             self.location = Some(input.into());
             self
         }
+        /// <p>The name of a remote location to update fleet capacity settings for, in the form of an
+        /// AWS Region code such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -16087,7 +17728,7 @@ pub mod update_fleet_capacity_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateFleetCapacityInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateFleetCapacityInput {
                 fleet_id: self.fleet_id,
@@ -16110,16 +17751,16 @@ impl UpdateFleetCapacityInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateFleetCapacity,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateFleetCapacityInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -16127,7 +17768,7 @@ impl UpdateFleetCapacityInput {
         fn update_http_builder(
             input: &crate::input::UpdateFleetCapacityInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -16136,32 +17777,32 @@ impl UpdateFleetCapacityInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateFleetCapacityInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.UpdateFleetCapacity",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_fleet_capacity(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -16184,15 +17825,15 @@ impl UpdateFleetCapacityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateFleetCapacity::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateFleetCapacity",
             "gamelift",
         ));
@@ -16201,10 +17842,10 @@ impl UpdateFleetCapacityInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -16237,10 +17878,17 @@ pub mod update_fleet_port_settings_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN
+        /// value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
         }
+        /// Appends an item to `inbound_permission_authorizations`.
+        ///
+        /// To override the contents of this collection use [`set_inbound_permission_authorizations`](Self::set_inbound_permission_authorizations).
+        ///
+        /// <p>A collection of port settings to be added to the fleet resource.</p>
         pub fn inbound_permission_authorizations(
             mut self,
             input: impl Into<crate::model::IpPermission>,
@@ -16250,6 +17898,7 @@ pub mod update_fleet_port_settings_input {
             self.inbound_permission_authorizations = Some(v);
             self
         }
+        /// <p>A collection of port settings to be added to the fleet resource.</p>
         pub fn set_inbound_permission_authorizations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
@@ -16257,6 +17906,11 @@ pub mod update_fleet_port_settings_input {
             self.inbound_permission_authorizations = input;
             self
         }
+        /// Appends an item to `inbound_permission_revocations`.
+        ///
+        /// To override the contents of this collection use [`set_inbound_permission_revocations`](Self::set_inbound_permission_revocations).
+        ///
+        /// <p>A collection of port settings to be removed from the fleet resource.</p>
         pub fn inbound_permission_revocations(
             mut self,
             input: impl Into<crate::model::IpPermission>,
@@ -16266,6 +17920,7 @@ pub mod update_fleet_port_settings_input {
             self.inbound_permission_revocations = Some(v);
             self
         }
+        /// <p>A collection of port settings to be removed from the fleet resource.</p>
         pub fn set_inbound_permission_revocations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
@@ -16278,7 +17933,7 @@ pub mod update_fleet_port_settings_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateFleetPortSettingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateFleetPortSettingsInput {
                 fleet_id: self.fleet_id,
@@ -16300,16 +17955,16 @@ impl UpdateFleetPortSettingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateFleetPortSettings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateFleetPortSettingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -16317,7 +17972,7 @@ impl UpdateFleetPortSettingsInput {
         fn update_http_builder(
             input: &crate::input::UpdateFleetPortSettingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -16326,32 +17981,34 @@ impl UpdateFleetPortSettingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateFleetPortSettingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.UpdateFleetPortSettings",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_fleet_port_settings(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -16374,15 +18031,15 @@ impl UpdateFleetPortSettingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateFleetPortSettings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateFleetPortSettings",
             "gamelift",
         ));
@@ -16391,10 +18048,10 @@ impl UpdateFleetPortSettingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -16428,6 +18085,8 @@ pub mod update_game_server_input {
             self.game_server_group_name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the game server group where the game server is running.
+        /// Use either the <a>GameServerGroup</a> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16440,6 +18099,7 @@ pub mod update_game_server_input {
             self.game_server_id = Some(input.into());
             self
         }
+        /// <p>A custom string that uniquely identifies the game server to update.</p>
         pub fn set_game_server_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16454,6 +18114,9 @@ pub mod update_game_server_input {
             self.game_server_data = Some(input.into());
             self
         }
+        /// <p>A set of custom game server properties, formatted as a single string value. This data
+        /// is passed to a game client or service when it requests information on game servers using
+        /// <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
         pub fn set_game_server_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16470,6 +18133,8 @@ pub mod update_game_server_input {
             self.utilization_status = Some(input);
             self
         }
+        /// <p>Indicates whether the game server is available or is currently hosting
+        /// gameplay.</p>
         pub fn set_utilization_status(
             mut self,
             input: std::option::Option<crate::model::GameServerUtilizationStatus>,
@@ -16483,6 +18148,8 @@ pub mod update_game_server_input {
             self.health_check = Some(input);
             self
         }
+        /// <p>Indicates health status of the game server. A request that includes this parameter
+        /// updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
         pub fn set_health_check(
             mut self,
             input: std::option::Option<crate::model::GameServerHealthCheck>,
@@ -16495,7 +18162,7 @@ pub mod update_game_server_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateGameServerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateGameServerInput {
                 game_server_group_name: self.game_server_group_name,
@@ -16518,16 +18185,16 @@ impl UpdateGameServerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateGameServer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateGameServerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -16535,7 +18202,7 @@ impl UpdateGameServerInput {
         fn update_http_builder(
             input: &crate::input::UpdateGameServerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -16544,32 +18211,32 @@ impl UpdateGameServerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateGameServerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.UpdateGameServer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_game_server(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -16592,15 +18259,15 @@ impl UpdateGameServerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateGameServer::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateGameServer",
             "gamelift",
         ));
@@ -16609,10 +18276,10 @@ impl UpdateGameServerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -16646,6 +18313,7 @@ pub mod update_game_server_group_input {
             self.game_server_group_name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.</p>
         pub fn set_game_server_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16659,10 +18327,25 @@ pub mod update_game_server_group_input {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
+        /// allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
+        /// Appends an item to `instance_definitions`.
+        ///
+        /// To override the contents of this collection use [`set_instance_definitions`](Self::set_instance_definitions).
+        ///
+        /// <p>An updated list of EC2 instance types to use in the Auto Scaling group. The instance
+        /// definitions must specify at least two different instance types that are supported by
+        /// GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for
+        /// the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance
+        /// Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
+        /// specify capacity weighting for each instance type. If no weight value is specified for
+        /// an instance type, it is set to the default value "1". For more information about
+        /// capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
+        /// Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
         pub fn instance_definitions(
             mut self,
             input: impl Into<crate::model::InstanceDefinition>,
@@ -16672,6 +18355,15 @@ pub mod update_game_server_group_input {
             self.instance_definitions = Some(v);
             self
         }
+        /// <p>An updated list of EC2 instance types to use in the Auto Scaling group. The instance
+        /// definitions must specify at least two different instance types that are supported by
+        /// GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for
+        /// the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance
+        /// Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
+        /// specify capacity weighting for each instance type. If no weight value is specified for
+        /// an instance type, it is set to the default value "1". For more information about
+        /// capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
+        /// Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
         pub fn set_instance_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceDefinition>>,
@@ -16692,6 +18384,12 @@ pub mod update_game_server_group_input {
             self.game_server_protection_policy = Some(input);
             self
         }
+        /// <p>A flag that indicates whether instances in the game server group are protected
+        /// from early termination. Unprotected instances that have active game servers running might
+        /// be terminated during a scale-down event, causing players to be dropped from the game.
+        /// Protected instances cannot be terminated while there are active game servers running except
+        /// in the event of a forced game server group deletion (see ). An exception to this is with Spot
+        /// Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
         pub fn set_game_server_protection_policy(
             mut self,
             input: std::option::Option<crate::model::GameServerProtectionPolicy>,
@@ -16729,6 +18427,32 @@ pub mod update_game_server_group_input {
             self.balancing_strategy = Some(input);
             self
         }
+        /// <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the
+        /// game server group. Method options include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot
+        /// Instances are unavailable or not viable for game hosting, the game server group
+        /// provides no hosting capacity until Spot Instances can again be used. Until then,
+        /// no new instances are started, and the existing nonviable Spot Instances are
+        /// terminated (after current gameplay ends) and are not replaced.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in
+        /// the game server group. If Spot Instances are unavailable, the game server group
+        /// continues to provide hosting capacity by falling back to On-Demand Instances.
+        /// Existing nonviable Spot Instances are terminated (after current gameplay ends)
+        /// and are replaced with new On-Demand Instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game
+        /// server group. No Spot Instances are used, even when available, while this
+        /// balancing strategy is in force.</p>
+        /// </li>
+        /// </ul>
         pub fn set_balancing_strategy(
             mut self,
             input: std::option::Option<crate::model::BalancingStrategy>,
@@ -16741,7 +18465,7 @@ pub mod update_game_server_group_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateGameServerGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateGameServerGroupInput {
                 game_server_group_name: self.game_server_group_name,
@@ -16764,16 +18488,16 @@ impl UpdateGameServerGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateGameServerGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateGameServerGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -16781,7 +18505,7 @@ impl UpdateGameServerGroupInput {
         fn update_http_builder(
             input: &crate::input::UpdateGameServerGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -16790,32 +18514,34 @@ impl UpdateGameServerGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateGameServerGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.UpdateGameServerGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_game_server_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -16838,15 +18564,15 @@ impl UpdateGameServerGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateGameServerGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateGameServerGroup",
             "gamelift",
         ));
@@ -16855,10 +18581,10 @@ impl UpdateGameServerGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -16891,6 +18617,7 @@ pub mod update_game_session_input {
             self.game_session_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the game session to update. </p>
         pub fn set_game_session_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16903,6 +18630,7 @@ pub mod update_game_session_input {
             self.maximum_player_session_count = Some(input);
             self
         }
+        /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
         pub fn set_maximum_player_session_count(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_player_session_count = input;
             self
@@ -16912,6 +18640,7 @@ pub mod update_game_session_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -16924,6 +18653,7 @@ pub mod update_game_session_input {
             self.player_session_creation_policy = Some(input);
             self
         }
+        /// <p>A policy that determines whether the game session is accepting new players.</p>
         pub fn set_player_session_creation_policy(
             mut self,
             input: std::option::Option<crate::model::PlayerSessionCreationPolicy>,
@@ -16949,6 +18679,20 @@ pub mod update_game_session_input {
             self.protection_policy = Some(input);
             self
         }
+        /// <p>Game session protection policy to apply to this game session only.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>NoProtection</b> -- The game session can be
+        /// terminated during a scale-down event.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>FullProtection</b> -- If the game session is in an
+        /// <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+        /// event.</p>
+        /// </li>
+        /// </ul>
         pub fn set_protection_policy(
             mut self,
             input: std::option::Option<crate::model::ProtectionPolicy>,
@@ -16961,7 +18705,7 @@ pub mod update_game_session_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateGameSessionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateGameSessionInput {
                 game_session_id: self.game_session_id,
@@ -16984,16 +18728,16 @@ impl UpdateGameSessionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateGameSession,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateGameSessionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -17001,7 +18745,7 @@ impl UpdateGameSessionInput {
         fn update_http_builder(
             input: &crate::input::UpdateGameSessionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -17010,32 +18754,32 @@ impl UpdateGameSessionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateGameSessionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.UpdateGameSession",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_game_session(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -17058,15 +18802,15 @@ impl UpdateGameSessionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateGameSession::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateGameSession",
             "gamelift",
         ));
@@ -17075,10 +18819,10 @@ impl UpdateGameSessionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -17115,6 +18859,7 @@ pub mod update_game_session_queue_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -17124,10 +18869,21 @@ pub mod update_game_session_queue_input {
             self.timeout_in_seconds = Some(input);
             self
         }
+        /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.</p>
         pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_in_seconds = input;
             self
         }
+        /// Appends an item to `player_latency_policies`.
+        ///
+        /// To override the contents of this collection use [`set_player_latency_policies`](Self::set_player_latency_policies).
+        ///
+        /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to
+        /// deliver low latency for most players in a game session. These policies ensure that no
+        /// individual player can be placed into a game with unreasonably high latency. Use multiple
+        /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
+        /// maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of
+        /// policies.</p>
         pub fn player_latency_policies(
             mut self,
             input: impl Into<crate::model::PlayerLatencyPolicy>,
@@ -17137,6 +18893,12 @@ pub mod update_game_session_queue_input {
             self.player_latency_policies = Some(v);
             self
         }
+        /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to
+        /// deliver low latency for most players in a game session. These policies ensure that no
+        /// individual player can be placed into a game with unreasonably high latency. Use multiple
+        /// policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their
+        /// maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of
+        /// policies.</p>
         pub fn set_player_latency_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlayerLatencyPolicy>>,
@@ -17144,6 +18906,12 @@ pub mod update_game_session_queue_input {
             self.player_latency_policies = input;
             self
         }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
+        /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
         pub fn destinations(
             mut self,
             input: impl Into<crate::model::GameSessionQueueDestination>,
@@ -17153,6 +18921,8 @@ pub mod update_game_session_queue_input {
             self.destinations = Some(v);
             self
         }
+        /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
+        /// Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameSessionQueueDestination>>,
@@ -17167,6 +18937,9 @@ pub mod update_game_session_queue_input {
             self.filter_configuration = Some(input);
             self
         }
+        /// <p>A list of locations where a queue is allowed to place new game sessions. Locations
+        /// are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is
+        /// not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
         pub fn set_filter_configuration(
             mut self,
             input: std::option::Option<crate::model::FilterConfiguration>,
@@ -17184,6 +18957,9 @@ pub mod update_game_session_queue_input {
             self.priority_configuration = Some(input);
             self
         }
+        /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This
+        /// configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
+        /// named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
         pub fn set_priority_configuration(
             mut self,
             input: std::option::Option<crate::model::PriorityConfiguration>,
@@ -17198,6 +18974,9 @@ pub mod update_game_session_queue_input {
             self.custom_event_data = Some(input.into());
             self
         }
+        /// <p>
+        /// Information to be added to all events that are related to this game session queue.
+        /// </p>
         pub fn set_custom_event_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17211,6 +18990,8 @@ pub mod update_game_session_queue_input {
             self.notification_target = Some(input.into());
             self
         }
+        /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
+        /// Setting up notifications for game session placement</a>.</p>
         pub fn set_notification_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17223,7 +19004,7 @@ pub mod update_game_session_queue_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateGameSessionQueueInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateGameSessionQueueInput {
                 name: self.name,
@@ -17249,16 +19030,16 @@ impl UpdateGameSessionQueueInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateGameSessionQueue,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateGameSessionQueueInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -17266,7 +19047,7 @@ impl UpdateGameSessionQueueInput {
         fn update_http_builder(
             input: &crate::input::UpdateGameSessionQueueInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -17275,32 +19056,34 @@ impl UpdateGameSessionQueueInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateGameSessionQueueInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.UpdateGameSessionQueue",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_game_session_queue(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -17323,15 +19106,15 @@ impl UpdateGameSessionQueueInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateGameSessionQueue::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateGameSessionQueue",
             "gamelift",
         ));
@@ -17340,10 +19123,10 @@ impl UpdateGameSessionQueueInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -17384,6 +19167,7 @@ pub mod update_matchmaking_configuration_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the matchmaking configuration to update. You can use either the configuration name or ARN value. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -17393,16 +19177,29 @@ pub mod update_matchmaking_configuration_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A descriptive label that is associated with matchmaking configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `game_session_queue_arns`.
+        ///
+        /// To override the contents of this collection use [`set_game_session_queue_arns`](Self::set_game_session_queue_arns).
+        ///
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::gamesessionqueue/<queue name></code>. Queues can be located in any Region. Queues are used to start new
+        /// GameLift-hosted game sessions for matches that are created with this matchmaking
+        /// configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not
+        /// set this parameter.</p>
         pub fn game_session_queue_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.game_session_queue_arns.unwrap_or_default();
             v.push(input.into());
             self.game_session_queue_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::gamesessionqueue/<queue name></code>. Queues can be located in any Region. Queues are used to start new
+        /// GameLift-hosted game sessions for matches that are created with this matchmaking
+        /// configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not
+        /// set this parameter.</p>
         pub fn set_game_session_queue_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -17417,6 +19214,9 @@ pub mod update_matchmaking_configuration_input {
             self.request_timeout_seconds = Some(input);
             self
         }
+        /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process
+        /// before timing out. Requests that fail due to timing out can be resubmitted as
+        /// needed.</p>
         pub fn set_request_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.request_timeout_seconds = input;
             self
@@ -17427,6 +19227,8 @@ pub mod update_matchmaking_configuration_input {
             self.acceptance_timeout_seconds = Some(input);
             self
         }
+        /// <p>The length of time (in seconds) to wait for players to accept a proposed match, if
+        /// acceptance is required.</p>
         pub fn set_acceptance_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.acceptance_timeout_seconds = input;
             self
@@ -17439,6 +19241,10 @@ pub mod update_matchmaking_configuration_input {
             self.acceptance_required = Some(input);
             self
         }
+        /// <p>A flag that indicates whether a match that was created with this configuration must be
+        /// accepted by the matched players. To require acceptance, set to TRUE. With this option
+        /// enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate
+        /// when a completed potential match is waiting for player acceptance. </p>
         pub fn set_acceptance_required(mut self, input: std::option::Option<bool>) -> Self {
             self.acceptance_required = input;
             self
@@ -17450,6 +19256,9 @@ pub mod update_matchmaking_configuration_input {
             self.rule_set_name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN
+        /// value. A matchmaking configuration can only use rule sets that are defined in the same
+        /// Region.</p>
         pub fn set_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17463,6 +19272,8 @@ pub mod update_matchmaking_configuration_input {
             self.notification_target = Some(input.into());
             self
         }
+        /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html">
+        /// Setting up notifications for matchmaking</a> for more information.</p>
         pub fn set_notification_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17477,6 +19288,9 @@ pub mod update_matchmaking_configuration_input {
             self.additional_player_count = Some(input);
             self
         }
+        /// <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies
+        /// a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
+        /// <code>STANDALONE</code>.</p>
         pub fn set_additional_player_count(mut self, input: std::option::Option<i32>) -> Self {
             self.additional_player_count = input;
             self
@@ -17486,6 +19300,7 @@ pub mod update_matchmaking_configuration_input {
             self.custom_event_data = Some(input.into());
             self
         }
+        /// <p>Information to add to all events related to the matchmaking configuration. </p>
         pub fn set_custom_event_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17493,12 +19308,24 @@ pub mod update_matchmaking_configuration_input {
             self.custom_event_data = input;
             self
         }
+        /// Appends an item to `game_properties`.
+        ///
+        /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
+        ///
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
+        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
+        /// object that is created for a successful match.  This parameter is not used if
+        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn game_properties(mut self, input: impl Into<crate::model::GameProperty>) -> Self {
             let mut v = self.game_properties.unwrap_or_default();
             v.push(input.into());
             self.game_properties = Some(v);
             self
         }
+        /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the
+        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a>
+        /// object that is created for a successful match.  This parameter is not used if
+        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_game_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameProperty>>,
@@ -17514,6 +19341,10 @@ pub mod update_matchmaking_configuration_input {
             self.game_session_data = Some(input.into());
             self
         }
+        /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the
+        /// <a>GameSession</a> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <a>GameSession</a> object
+        /// that is created for a successful match.  This parameter is not used if
+        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_game_session_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17531,6 +19362,12 @@ pub mod update_matchmaking_configuration_input {
             self.backfill_mode = Some(input);
             self
         }
+        /// <p>The method that is used to backfill game sessions created with this matchmaking
+        /// configuration. Specify MANUAL when your game manages backfill requests manually or does
+        /// not use the match backfill feature. Specify AUTOMATIC to have GameLift create a <a>StartMatchBackfill</a> request whenever a game session has one or more open
+        /// slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing Games
+        /// with FlexMatch</a>. Automatic backfill is not available when
+        /// <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
         pub fn set_backfill_mode(
             mut self,
             input: std::option::Option<crate::model::BackfillMode>,
@@ -17558,6 +19395,22 @@ pub mod update_matchmaking_configuration_input {
             self.flex_match_mode = Some(input);
             self
         }
+        /// <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or
+        /// as a standalone matchmaking solution. </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>STANDALONE</b> - FlexMatch forms matches and returns
+        /// match information, including players and team assignments, in a
+        /// <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded">
+        /// MatchmakingSucceeded</a> event.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to
+        /// start a game session for the match. </p>
+        /// </li>
+        /// </ul>
         pub fn set_flex_match_mode(
             mut self,
             input: std::option::Option<crate::model::FlexMatchMode>,
@@ -17570,7 +19423,7 @@ pub mod update_matchmaking_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateMatchmakingConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateMatchmakingConfigurationInput {
                 name: self.name,
@@ -17603,16 +19456,16 @@ impl UpdateMatchmakingConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateMatchmakingConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateMatchmakingConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -17620,7 +19473,7 @@ impl UpdateMatchmakingConfigurationInput {
         fn update_http_builder(
             input: &crate::input::UpdateMatchmakingConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -17629,30 +19482,30 @@ impl UpdateMatchmakingConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateMatchmakingConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.UpdateMatchmakingConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_matchmaking_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_matchmaking_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -17675,15 +19528,15 @@ impl UpdateMatchmakingConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateMatchmakingConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateMatchmakingConfiguration",
             "gamelift",
         ));
@@ -17692,10 +19545,10 @@ impl UpdateMatchmakingConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -17725,6 +19578,8 @@ pub mod update_runtime_configuration_input {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN
+        /// value.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -17737,6 +19592,10 @@ pub mod update_runtime_configuration_input {
             self.runtime_configuration = Some(input);
             self
         }
+        /// <p>Instructions for launching server processes on each instance in the fleet. Server
+        /// processes run either a custom game build executable or a Realtime Servers script. The runtime
+        /// configuration lists the types of server processes to run on an instance, how to launch
+        /// them, and the number of processes to run concurrently.</p>
         pub fn set_runtime_configuration(
             mut self,
             input: std::option::Option<crate::model::RuntimeConfiguration>,
@@ -17749,7 +19608,7 @@ pub mod update_runtime_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateRuntimeConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateRuntimeConfigurationInput {
                 fleet_id: self.fleet_id,
@@ -17770,16 +19629,16 @@ impl UpdateRuntimeConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateRuntimeConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateRuntimeConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -17787,7 +19646,7 @@ impl UpdateRuntimeConfigurationInput {
         fn update_http_builder(
             input: &crate::input::UpdateRuntimeConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -17796,32 +19655,34 @@ impl UpdateRuntimeConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateRuntimeConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.UpdateRuntimeConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_runtime_configuration(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -17844,15 +19705,15 @@ impl UpdateRuntimeConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateRuntimeConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateRuntimeConfiguration",
             "gamelift",
         ));
@@ -17861,10 +19722,10 @@ impl UpdateRuntimeConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -17888,7 +19749,7 @@ pub mod update_script_input {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) storage_location: std::option::Option<crate::model::S3Location>,
-        pub(crate) zip_file: std::option::Option<smithy_types::Blob>,
+        pub(crate) zip_file: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
         /// <p>A unique identifier for the Realtime script to update. You can use either the script ID or ARN value.</p>
@@ -17896,6 +19757,7 @@ pub mod update_script_input {
             self.script_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the Realtime script to update. You can use either the script ID or ARN value.</p>
         pub fn set_script_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.script_id = input;
             self
@@ -17905,6 +19767,7 @@ pub mod update_script_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A descriptive label that is associated with a script. Script names do not need to be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -17914,6 +19777,7 @@ pub mod update_script_input {
             self.version = Some(input.into());
             self
         }
+        /// <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -17929,6 +19793,13 @@ pub mod update_script_input {
             self.storage_location = Some(input);
             self
         }
+        /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is
+        /// stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the
+        /// "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3
+        /// bucket must be in the same Region where you want to create a new script. By default,
+        /// Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning
+        /// turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier
+        /// version. </p>
         pub fn set_storage_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -17942,19 +19813,27 @@ pub mod update_script_input {
         /// name. It must be prepended with the string "fileb://" to indicate that the file data is
         /// a binary object. For example: <code>--zip-file
         /// fileb://myRealtimeScript.zip</code>.</p>
-        pub fn zip_file(mut self, input: smithy_types::Blob) -> Self {
+        pub fn zip_file(mut self, input: aws_smithy_types::Blob) -> Self {
             self.zip_file = Some(input);
             self
         }
-        pub fn set_zip_file(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip
+        /// file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
+        /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file
+        /// name. It must be prepended with the string "fileb://" to indicate that the file data is
+        /// a binary object. For example: <code>--zip-file
+        /// fileb://myRealtimeScript.zip</code>.</p>
+        pub fn set_zip_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.zip_file = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateScriptInput`](crate::input::UpdateScriptInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateScriptInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateScriptInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateScriptInput {
                 script_id: self.script_id,
                 name: self.name,
@@ -17976,16 +19855,16 @@ impl UpdateScriptInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateScript,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateScriptInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -17993,7 +19872,7 @@ impl UpdateScriptInput {
         fn update_http_builder(
             input: &crate::input::UpdateScriptInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -18002,31 +19881,31 @@ impl UpdateScriptInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateScriptInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.UpdateScript",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_script(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -18049,25 +19928,27 @@ impl UpdateScriptInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateScript::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateScript",
-                    "gamelift",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateScript::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateScript",
+            "gamelift",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -18095,6 +19976,7 @@ pub mod validate_matchmaking_rule_set_input {
             self.rule_set_body = Some(input.into());
             self
         }
+        /// <p>A collection of matchmaking rules to validate, formatted as a JSON string.</p>
         pub fn set_rule_set_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18107,7 +19989,7 @@ pub mod validate_matchmaking_rule_set_input {
             self,
         ) -> std::result::Result<
             crate::input::ValidateMatchmakingRuleSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ValidateMatchmakingRuleSetInput {
                 rule_set_body: self.rule_set_body,
@@ -18127,16 +20009,16 @@ impl ValidateMatchmakingRuleSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ValidateMatchmakingRuleSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ValidateMatchmakingRuleSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -18144,7 +20026,7 @@ impl ValidateMatchmakingRuleSetInput {
         fn update_http_builder(
             input: &crate::input::ValidateMatchmakingRuleSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -18153,30 +20035,30 @@ impl ValidateMatchmakingRuleSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ValidateMatchmakingRuleSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GameLift.ValidateMatchmakingRuleSet",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_validate_matchmaking_rule_set(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_validate_matchmaking_rule_set(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -18199,15 +20081,15 @@ impl ValidateMatchmakingRuleSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ValidateMatchmakingRuleSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ValidateMatchmakingRuleSet",
             "gamelift",
         ));
@@ -18216,10 +20098,10 @@ impl ValidateMatchmakingRuleSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -18248,6 +20130,7 @@ impl std::fmt::Debug for ValidateMatchmakingRuleSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateScriptInput {
@@ -18271,7 +20154,7 @@ pub struct UpdateScriptInput {
     /// name. It must be prepended with the string "fileb://" to indicate that the file data is
     /// a binary object. For example: <code>--zip-file
     /// fileb://myRealtimeScript.zip</code>.</p>
-    pub zip_file: std::option::Option<smithy_types::Blob>,
+    pub zip_file: std::option::Option<aws_smithy_types::Blob>,
 }
 impl std::fmt::Debug for UpdateScriptInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18501,6 +20384,7 @@ impl std::fmt::Debug for UpdateGameSessionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGameServerGroupInput {
@@ -18570,6 +20454,7 @@ impl std::fmt::Debug for UpdateGameServerGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGameServerInput {
@@ -18767,6 +20652,7 @@ impl std::fmt::Debug for UpdateAliasInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -18789,6 +20675,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -18814,6 +20701,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuspendGameServerGroupInput {
@@ -19144,6 +21032,7 @@ impl std::fmt::Debug for SearchGameSessionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResumeGameServerGroupInput {
@@ -19192,6 +21081,7 @@ impl std::fmt::Debug for RequestUploadCredentialsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterGameServerInput {
@@ -19362,6 +21252,7 @@ impl std::fmt::Debug for PutScalingPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -19381,6 +21272,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListScriptsInput {
@@ -19398,6 +21290,7 @@ impl std::fmt::Debug for ListScriptsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGameServersInput {
@@ -19425,6 +21318,7 @@ impl std::fmt::Debug for ListGameServersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGameServerGroupsInput {
@@ -19602,6 +21496,7 @@ impl std::fmt::Debug for DescribeVpcPeeringConnectionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVpcPeeringAuthorizationsInput {}
@@ -19612,6 +21507,7 @@ impl std::fmt::Debug for DescribeVpcPeeringAuthorizationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScriptInput {
@@ -19977,6 +21873,7 @@ impl std::fmt::Debug for DescribeGameSessionDetailsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGameServerInstancesInput {
@@ -20006,6 +21903,7 @@ impl std::fmt::Debug for DescribeGameServerInstancesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGameServerGroupInput {
@@ -20020,6 +21918,7 @@ impl std::fmt::Debug for DescribeGameServerGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGameServerInput {
@@ -20157,11 +22056,11 @@ pub struct DescribeFleetEventsInput {
     /// <p>The earliest date to retrieve event logs for. If no start time is specified, this call
     /// returns entries starting from when the fleet was created to the specified end time.
     /// Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The most recent date to retrieve event logs for. If no end time is specified, this
     /// call returns entries from the specified start time up to the present. Format is a number
     /// expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub limit: std::option::Option<i32>,
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
@@ -20282,6 +22181,7 @@ impl std::fmt::Debug for DescribeAliasInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterGameServerInput {
@@ -20341,6 +22241,7 @@ impl std::fmt::Debug for DeleteVpcPeeringAuthorizationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteScriptInput {
@@ -20419,6 +22320,7 @@ impl std::fmt::Debug for DeleteGameSessionQueueInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGameServerGroupInput {
@@ -20570,6 +22472,7 @@ impl std::fmt::Debug for CreateVpcPeeringAuthorizationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateScriptInput {
@@ -20591,7 +22494,7 @@ pub struct CreateScriptInput {
     /// file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>
     /// <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the
     /// string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
-    pub zip_file: std::option::Option<smithy_types::Blob>,
+    pub zip_file: std::option::Option<aws_smithy_types::Blob>,
     /// <p>A list of labels to assign to the new script resource. Tags are developer-defined
     /// key-value pairs. Tagging
     /// AWS resources are useful for resource management, access management and cost allocation.
@@ -20932,6 +22835,7 @@ impl std::fmt::Debug for CreateGameSessionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGameServerGroupInput {
@@ -21310,6 +23214,7 @@ impl std::fmt::Debug for CreateAliasInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClaimGameServerInput {

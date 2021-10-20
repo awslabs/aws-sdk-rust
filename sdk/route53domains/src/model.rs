@@ -14,7 +14,7 @@ pub struct BillingRecord {
     /// <p>The ID of the invoice that is associated with the billing record.</p>
     pub invoice_id: std::option::Option<std::string::String>,
     /// <p>The date that the operation was billed, in Unix format.</p>
-    pub bill_date: std::option::Option<smithy_types::Instant>,
+    pub bill_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The price that you were charged for the operation, in US dollars.</p>
     /// <p>Example value: 12.0</p>
     pub price: f64,
@@ -39,7 +39,7 @@ pub mod billing_record {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) operation: std::option::Option<crate::model::OperationType>,
         pub(crate) invoice_id: std::option::Option<std::string::String>,
-        pub(crate) bill_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) bill_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) price: std::option::Option<f64>,
     }
     impl Builder {
@@ -52,6 +52,11 @@ pub mod billing_record {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain that the billing record applies to. If the domain name contains characters
+        /// other than a-z, 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode.
+        /// For more information, see
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a>
+        /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -61,6 +66,7 @@ pub mod billing_record {
             self.operation = Some(input);
             self
         }
+        /// <p>The operation that you were charged for.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::OperationType>,
@@ -73,16 +79,21 @@ pub mod billing_record {
             self.invoice_id = Some(input.into());
             self
         }
+        /// <p>The ID of the invoice that is associated with the billing record.</p>
         pub fn set_invoice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.invoice_id = input;
             self
         }
         /// <p>The date that the operation was billed, in Unix format.</p>
-        pub fn bill_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn bill_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.bill_date = Some(input);
             self
         }
-        pub fn set_bill_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date that the operation was billed, in Unix format.</p>
+        pub fn set_bill_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.bill_date = input;
             self
         }
@@ -92,6 +103,8 @@ pub mod billing_record {
             self.price = Some(input);
             self
         }
+        /// <p>The price that you were charged for the operation, in US dollars.</p>
+        /// <p>Example value: 12.0</p>
         pub fn set_price(mut self, input: std::option::Option<f64>) -> Self {
             self.price = input;
             self
@@ -115,6 +128,7 @@ impl BillingRecord {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -126,23 +140,41 @@ impl BillingRecord {
     std::hash::Hash,
 )]
 pub enum OperationType {
+    #[allow(missing_docs)] // documentation missing in model
     AddDnssec,
+    #[allow(missing_docs)] // documentation missing in model
     ChangeDomainOwner,
+    #[allow(missing_docs)] // documentation missing in model
     ChangePrivacyProtection,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteDomain,
+    #[allow(missing_docs)] // documentation missing in model
     DisableAutorenew,
+    #[allow(missing_docs)] // documentation missing in model
     DomainLock,
+    #[allow(missing_docs)] // documentation missing in model
     EnableAutorenew,
+    #[allow(missing_docs)] // documentation missing in model
     ExpireDomain,
+    #[allow(missing_docs)] // documentation missing in model
     InternalTransferInDomain,
+    #[allow(missing_docs)] // documentation missing in model
     InternalTransferOutDomain,
+    #[allow(missing_docs)] // documentation missing in model
     PushDomain,
+    #[allow(missing_docs)] // documentation missing in model
     RegisterDomain,
+    #[allow(missing_docs)] // documentation missing in model
     RemoveDnssec,
+    #[allow(missing_docs)] // documentation missing in model
     RenewDomain,
+    #[allow(missing_docs)] // documentation missing in model
     TransferInDomain,
+    #[allow(missing_docs)] // documentation missing in model
     TransferOutDomain,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateDomainContact,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateNameserver,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -180,6 +212,7 @@ impl std::str::FromStr for OperationType {
     }
 }
 impl OperationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OperationType::AddDnssec => "ADD_DNSSEC",
@@ -203,6 +236,7 @@ impl OperationType {
             OperationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ADD_DNSSEC",
@@ -270,6 +304,9 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key (name) of a tag.</p>
+        /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
+        /// <p>Constraints: Each key can be 1-128 characters long.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -281,6 +318,9 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of a tag.</p>
+        /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
+        /// <p>Constraints: Each value can be 0-256 characters long.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -338,16 +378,30 @@ pub mod nameserver {
             self.name = Some(input.into());
             self
         }
+        /// <p>The fully qualified host name of the name server.</p>
+        /// <p>Constraint: Maximum 255 characters</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `glue_ips`.
+        ///
+        /// To override the contents of this collection use [`set_glue_ips`](Self::set_glue_ips).
+        ///
+        /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server
+        /// is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is
+        /// ns.example.com, you need to specify the IP address for ns.example.com.</p>
+        /// <p>Constraints: The list can contain only one IPv4 and one IPv6 address.</p>
         pub fn glue_ips(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.glue_ips.unwrap_or_default();
             v.push(input.into());
             self.glue_ips = Some(v);
             self
         }
+        /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server
+        /// is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is
+        /// ns.example.com, you need to specify the IP address for ns.example.com.</p>
+        /// <p>Constraints: The list can contain only one IPv4 and one IPv6 address.</p>
         pub fn set_glue_ips(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -472,6 +526,7 @@ pub mod contact_detail {
             self.first_name = Some(input.into());
             self
         }
+        /// <p>First name of contact.</p>
         pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.first_name = input;
             self
@@ -481,6 +536,7 @@ pub mod contact_detail {
             self.last_name = Some(input.into());
             self
         }
+        /// <p>Last name of contact.</p>
         pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.last_name = input;
             self
@@ -507,6 +563,24 @@ pub mod contact_detail {
             self.contact_type = Some(input);
             self
         }
+        /// <p>Indicates whether the contact is a person, company, association, or public organization. Note the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for
+        /// <code>OrganizationName</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For some TLDs, the privacy protection available depends on the value that you specify for
+        /// <code>Contact Type</code>. For the privacy protection settings for your TLD, see
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can
+        /// Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>For .es domains, if you specify <code>PERSON</code>, you must specify <code>INDIVIDUAL</code>
+        /// for the value of <code>ES_LEGAL_FORM</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_contact_type(
             mut self,
             input: std::option::Option<crate::model::ContactType>,
@@ -519,6 +593,7 @@ pub mod contact_detail {
             self.organization_name = Some(input.into());
             self
         }
+        /// <p>Name of the organization for contact types other than <code>PERSON</code>.</p>
         pub fn set_organization_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -531,6 +606,7 @@ pub mod contact_detail {
             self.address_line1 = Some(input.into());
             self
         }
+        /// <p>First line of the contact's address.</p>
         pub fn set_address_line1(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -543,6 +619,7 @@ pub mod contact_detail {
             self.address_line2 = Some(input.into());
             self
         }
+        /// <p>Second line of contact's address, if any.</p>
         pub fn set_address_line2(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -555,6 +632,7 @@ pub mod contact_detail {
             self.city = Some(input.into());
             self
         }
+        /// <p>The city of the contact's address.</p>
         pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.city = input;
             self
@@ -564,6 +642,7 @@ pub mod contact_detail {
             self.state = Some(input.into());
             self
         }
+        /// <p>The state or province of the contact's city.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -573,6 +652,7 @@ pub mod contact_detail {
             self.country_code = Some(input);
             self
         }
+        /// <p>Code for the country of the contact's address.</p>
         pub fn set_country_code(
             mut self,
             input: std::option::Option<crate::model::CountryCode>,
@@ -585,6 +665,7 @@ pub mod contact_detail {
             self.zip_code = Some(input.into());
             self
         }
+        /// <p>The zip or postal code of the contact's address.</p>
         pub fn set_zip_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.zip_code = input;
             self
@@ -596,6 +677,9 @@ pub mod contact_detail {
             self.phone_number = Some(input.into());
             self
         }
+        /// <p>The phone number of the contact.</p>
+        /// <p>Constraints: Phone number must be specified in the format "+[country  dialing code].[number including any area code>]".
+        /// For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -605,6 +689,7 @@ pub mod contact_detail {
             self.email = Some(input.into());
             self
         }
+        /// <p>Email address of the contact.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.email = input;
             self
@@ -616,16 +701,25 @@ pub mod contact_detail {
             self.fax = Some(input.into());
             self
         }
+        /// <p>Fax number of the contact.</p>
+        /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]".
+        /// For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
         pub fn set_fax(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fax = input;
             self
         }
+        /// Appends an item to `extra_params`.
+        ///
+        /// To override the contents of this collection use [`set_extra_params`](Self::set_extra_params).
+        ///
+        /// <p>A list of name-value pairs for parameters required by certain top-level domains.</p>
         pub fn extra_params(mut self, input: impl Into<crate::model::ExtraParam>) -> Self {
             let mut v = self.extra_params.unwrap_or_default();
             v.push(input.into());
             self.extra_params = Some(v);
             self
         }
+        /// <p>A list of name-value pairs for parameters required by certain top-level domains.</p>
         pub fn set_extra_params(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExtraParam>>,
@@ -667,6 +761,7 @@ impl ContactDetail {
 pub struct ExtraParam {
     /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require
     /// additional parameters and the names of the parameters that they require:</p>
+    ///
     /// <dl>
     /// <dt>.com.au and .net.au</dt>
     /// <dd>
@@ -833,6 +928,7 @@ pub struct ExtraParam {
     /// <code>RES</code> (Permanent resident of Canada)</p>
     /// </li>
     /// </ul>
+    ///
     /// <p>When <code>ContactType</code> is a value other than <code>PERSON</code>, valid values include the following:</p>
     /// <ul>
     /// <li>
@@ -892,6 +988,7 @@ pub struct ExtraParam {
     /// <code>TRS</code> (Trust established in Canada)</p>
     /// </li>
     /// </ul>
+    ///
     /// </li>
     /// </ul>
     /// </dd>
@@ -1135,6 +1232,7 @@ pub struct ExtraParam {
     /// </p>
     /// </li>
     /// </ul>
+    ///
     /// </li>
     /// </ul>
     /// </dd>
@@ -1425,6 +1523,7 @@ pub struct ExtraParam {
     /// </ul>
     /// </dd>
     /// </dl>
+    ///
     /// <p>In addition, many TLDs require a <code>VAT_NUMBER</code>.</p>
     pub name: std::option::Option<crate::model::ExtraParamName>,
     /// <p>The value that corresponds with the name of an extra parameter.</p>
@@ -1450,6 +1549,7 @@ pub mod extra_param {
     impl Builder {
         /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require
         /// additional parameters and the names of the parameters that they require:</p>
+        ///
         /// <dl>
         /// <dt>.com.au and .net.au</dt>
         /// <dd>
@@ -1616,6 +1716,7 @@ pub mod extra_param {
         /// <code>RES</code> (Permanent resident of Canada)</p>
         /// </li>
         /// </ul>
+        ///
         /// <p>When <code>ContactType</code> is a value other than <code>PERSON</code>, valid values include the following:</p>
         /// <ul>
         /// <li>
@@ -1675,6 +1776,7 @@ pub mod extra_param {
         /// <code>TRS</code> (Trust established in Canada)</p>
         /// </li>
         /// </ul>
+        ///
         /// </li>
         /// </ul>
         /// </dd>
@@ -1918,6 +2020,7 @@ pub mod extra_param {
         /// </p>
         /// </li>
         /// </ul>
+        ///
         /// </li>
         /// </ul>
         /// </dd>
@@ -2208,11 +2311,778 @@ pub mod extra_param {
         /// </ul>
         /// </dd>
         /// </dl>
+        ///
         /// <p>In addition, many TLDs require a <code>VAT_NUMBER</code>.</p>
         pub fn name(mut self, input: crate::model::ExtraParamName) -> Self {
             self.name = Some(input);
             self
         }
+        /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require
+        /// additional parameters and the names of the parameters that they require:</p>
+        ///
+        /// <dl>
+        /// <dt>.com.au and .net.au</dt>
+        /// <dd>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AU_ID_NUMBER</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AU_ID_TYPE</code>
+        /// </p>
+        /// <p>Valid values include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ABN</code> (Australian business number)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ACN</code> (Australian company number)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TM</code> (Trademark number)</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// </dd>
+        /// <dt>.ca</dt>
+        /// <dd>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>BRAND_NUMBER</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CA_BUSINESS_ENTITY_TYPE</code>
+        /// </p>
+        /// <p>Valid values include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>BANK</code> (Bank)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COMMERCIAL_COMPANY</code> (Commercial company)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COMPANY</code> (Company)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COOPERATION</code> (Cooperation)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COOPERATIVE</code> (Cooperative)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COOPRIX</code> (Cooprix)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CORP</code> (Corporation)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREDIT_UNION</code> (Credit union)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FOMIA</code> (Federation of mutual insurance associations)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INC</code> (Incorporated)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LTD</code> (Limited)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LTEE</code> (Limitée)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LLC</code> (Limited liability corporation)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LLP</code> (Limited liability partnership)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LTE</code> (Lte.)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MBA</code> (Mutual benefit association)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MIC</code> (Mutual insurance company)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NFP</code> (Not-for-profit corporation)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SA</code> (S.A.)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SAVINGS_COMPANY</code> (Savings company)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SAVINGS_UNION</code> (Savings union)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SARL</code> (Société à responsabilité limitée)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TRUST</code> (Trust)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ULC</code> (Unlimited liability corporation)</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CA_LEGAL_TYPE</code>
+        /// </p>
+        /// <p>When <code>ContactType</code> is <code>PERSON</code>, valid values include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ABO</code> (Aboriginal Peoples indigenous to Canada)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CCT</code> (Canadian citizen)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LGR</code> (Legal Representative of a Canadian Citizen or Permanent Resident)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RES</code> (Permanent resident of Canada)</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>When <code>ContactType</code> is a value other than <code>PERSON</code>, valid values include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ASS</code> (Canadian unincorporated association)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CCO</code> (Canadian corporation)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EDU</code> (Canadian educational institution)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GOV</code> (Government or government entity in Canada)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>HOP</code> (Canadian Hospital)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INB</code> (Indian Band recognized by the Indian Act of Canada)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LAM</code> (Canadian Library, Archive, or Museum)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MAJ</code> (Her/His Majesty the Queen/King)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OMK</code> (Official mark registered in Canada)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PLT</code> (Canadian Political Party)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PRT</code> (Partnership Registered in Canada)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TDM</code> (Trademark registered in Canada)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TRD</code> (Canadian Trade Union)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TRS</code> (Trust established in Canada)</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// </li>
+        /// </ul>
+        /// </dd>
+        /// <dt>.es</dt>
+        /// <dd>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ES_IDENTIFICATION</code>
+        /// </p>
+        /// <p>Specify the applicable value:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>For contacts inside Spain:</b> Enter your passport ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>For contacts outside of Spain:</b> Enter the VAT identification number
+        /// for the company.</p>
+        /// <note>
+        /// <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code>.</p>
+        /// </note>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ES_IDENTIFICATION_TYPE</code>
+        /// </p>
+        /// <p>Valid values include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DNI_AND_NIF</code> (For Spanish contacts)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NIE</code> (For foreigners with legal residence)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OTHER</code> (For contacts outside of Spain)</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ES_LEGAL_FORM</code>
+        /// </p>
+        /// <p>Valid values include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ASSOCIATION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CENTRAL_GOVERNMENT_BODY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CIVIL_SOCIETY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COMMUNITY_OF_OWNERS</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COMMUNITY_PROPERTY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CONSULATE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COOPERATIVE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DESIGNATION_OF_ORIGIN_SUPERVISORY_COUNCIL</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ECONOMIC_INTEREST_GROUP</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EMBASSY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ENTITY_MANAGING_NATURAL_AREAS</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FARM_PARTNERSHIP</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FOUNDATION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GENERAL_AND_LIMITED_PARTNERSHIP</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GENERAL_PARTNERSHIP</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INDIVIDUAL</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LIMITED_COMPANY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LOCAL_AUTHORITY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LOCAL_PUBLIC_ENTITY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MUTUAL_INSURANCE_COMPANY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NATIONAL_PUBLIC_ENTITY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ORDER_OR_RELIGIOUS_INSTITUTION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OTHERS (Only for contacts outside of Spain)</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>POLITICAL_PARTY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PROFESSIONAL_ASSOCIATION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PUBLIC_LAW_ASSOCIATION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PUBLIC_LIMITED_COMPANY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REGIONAL_GOVERNMENT_BODY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REGIONAL_PUBLIC_ENTITY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SAVINGS_BANK</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SPANISH_OFFICE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SPORTS_ASSOCIATION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SPORTS_FEDERATION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SPORTS_LIMITED_COMPANY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TRADE_UNION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WORKER_OWNED_COMPANY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WORKER_OWNED_LIMITED_COMPANY</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// </li>
+        /// </ul>
+        /// </dd>
+        /// <dt>.fi</dt>
+        /// <dd>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FI_BUSINESS_NUMBER</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FI_ID_NUMBER</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FI_NATIONALITY</code>
+        /// </p>
+        /// <p>Valid values include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>FINNISH</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NOT_FINNISH</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FI_ORGANIZATION_TYPE</code>
+        /// </p>
+        /// <p>Valid values include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>COMPANY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CORPORATION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GOVERNMENT</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INSTITUTION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>POLITICAL_PARTY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PUBLIC_COMMUNITY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TOWNSHIP</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// </dd>
+        /// <dt>.fr</dt>
+        /// <dd>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>BIRTH_CITY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>BIRTH_COUNTRY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was born.
+        /// If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>. For more information,
+        /// including a list of departments and the corresponding INSEE numbers, see the Wikipedia entry
+        /// <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>BRAND_NUMBER</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </dd>
+        /// <dt>.it</dt>
+        /// <dd>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>IT_NATIONALITY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IT_PIN</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IT_REGISTRANT_ENTITY_TYPE</code>
+        /// </p>
+        /// <p>Valid values include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>FOREIGNERS</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FREELANCE_WORKERS</code> (Freelance workers and professionals)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ITALIAN_COMPANIES</code> (Italian companies and one-person companies)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NON_PROFIT_ORGANIZATIONS</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OTHER_SUBJECTS</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PUBLIC_ORGANIZATIONS</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// </dd>
+        /// <dt>.ru</dt>
+        /// <dd>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RU_PASSPORT_DATA</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </dd>
+        /// <dt>.se</dt>
+        /// <dd>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>BIRTH_COUNTRY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SE_ID_NUMBER</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </dd>
+        /// <dt>.sg</dt>
+        /// <dd>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SG_ID_NUMBER</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </dd>
+        /// <dt>.co.uk, .me.uk, and .org.uk</dt>
+        /// <dd>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>UK_CONTACT_TYPE</code>
+        /// </p>
+        /// <p>Valid values include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CRC</code> (UK Corporation by Royal Charter)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FCORP</code> (Non-UK Corporation)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FIND</code> (Non-UK Individual, representing self)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FOTHER</code> (Non-UK Entity that does not fit into any other category)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GOV</code> (UK Government Body)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IND</code> (UK Individual (representing self))</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IP</code> (UK Industrial/Provident Registered Company)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LLP</code> (UK Limited Liability Partnership)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LTD</code> (UK Limited Company)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OTHER</code> (UK Entity that does not fit into any other category)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PLC</code> (UK Public Limited Company)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PTNR</code> (UK Partnership)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RCHAR</code> (UK Registered Charity)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SCH</code> (UK School)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>STAT</code> (UK Statutory Body)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>STRA</code> (UK Sole Trader)</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UK_COMPANY_NUMBER</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </dd>
+        /// </dl>
+        ///
+        /// <p>In addition, many TLDs require a <code>VAT_NUMBER</code>.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::ExtraParamName>,
@@ -2225,6 +3095,7 @@ pub mod extra_param {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value that corresponds with the name of an extra parameter.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -2245,6 +3116,7 @@ impl ExtraParam {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2256,34 +3128,63 @@ impl ExtraParam {
     std::hash::Hash,
 )]
 pub enum ExtraParamName {
+    #[allow(missing_docs)] // documentation missing in model
     AuIdNumber,
+    #[allow(missing_docs)] // documentation missing in model
     AuIdType,
+    #[allow(missing_docs)] // documentation missing in model
     BirthCity,
+    #[allow(missing_docs)] // documentation missing in model
     BirthCountry,
+    #[allow(missing_docs)] // documentation missing in model
     BirthDateInYyyyMmDd,
+    #[allow(missing_docs)] // documentation missing in model
     BirthDepartment,
+    #[allow(missing_docs)] // documentation missing in model
     BrandNumber,
+    #[allow(missing_docs)] // documentation missing in model
     CaBusinessEntityType,
+    #[allow(missing_docs)] // documentation missing in model
     CaLegalRepresentative,
+    #[allow(missing_docs)] // documentation missing in model
     CaLegalRepresentativeCapacity,
+    #[allow(missing_docs)] // documentation missing in model
     CaLegalType,
+    #[allow(missing_docs)] // documentation missing in model
     DocumentNumber,
+    #[allow(missing_docs)] // documentation missing in model
     DunsNumber,
+    #[allow(missing_docs)] // documentation missing in model
     EsIdentification,
+    #[allow(missing_docs)] // documentation missing in model
     EsIdentificationType,
+    #[allow(missing_docs)] // documentation missing in model
     EsLegalForm,
+    #[allow(missing_docs)] // documentation missing in model
     FiBusinessNumber,
+    #[allow(missing_docs)] // documentation missing in model
     OnwerFiIdNumber,
+    #[allow(missing_docs)] // documentation missing in model
     FiNationality,
+    #[allow(missing_docs)] // documentation missing in model
     FiOrganizationType,
+    #[allow(missing_docs)] // documentation missing in model
     ItNationality,
+    #[allow(missing_docs)] // documentation missing in model
     ItPin,
+    #[allow(missing_docs)] // documentation missing in model
     ItRegistrantEntityType,
+    #[allow(missing_docs)] // documentation missing in model
     RuPassportData,
+    #[allow(missing_docs)] // documentation missing in model
     SeIdNumber,
+    #[allow(missing_docs)] // documentation missing in model
     SgIdNumber,
+    #[allow(missing_docs)] // documentation missing in model
     UkCompanyNumber,
+    #[allow(missing_docs)] // documentation missing in model
     UkContactType,
+    #[allow(missing_docs)] // documentation missing in model
     VatNumber,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2332,6 +3233,7 @@ impl std::str::FromStr for ExtraParamName {
     }
 }
 impl ExtraParamName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExtraParamName::AuIdNumber => "AU_ID_NUMBER",
@@ -2366,6 +3268,7 @@ impl ExtraParamName {
             ExtraParamName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AU_ID_NUMBER",
@@ -2406,6 +3309,7 @@ impl AsRef<str> for ExtraParamName {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2417,234 +3321,463 @@ impl AsRef<str> for ExtraParamName {
     std::hash::Hash,
 )]
 pub enum CountryCode {
+    #[allow(missing_docs)] // documentation missing in model
     Ad,
+    #[allow(missing_docs)] // documentation missing in model
     Ae,
+    #[allow(missing_docs)] // documentation missing in model
     Af,
+    #[allow(missing_docs)] // documentation missing in model
     Ag,
+    #[allow(missing_docs)] // documentation missing in model
     Ai,
+    #[allow(missing_docs)] // documentation missing in model
     Al,
+    #[allow(missing_docs)] // documentation missing in model
     Am,
+    #[allow(missing_docs)] // documentation missing in model
     An,
+    #[allow(missing_docs)] // documentation missing in model
     Ao,
+    #[allow(missing_docs)] // documentation missing in model
     Aq,
+    #[allow(missing_docs)] // documentation missing in model
     Ar,
+    #[allow(missing_docs)] // documentation missing in model
     As,
+    #[allow(missing_docs)] // documentation missing in model
     At,
+    #[allow(missing_docs)] // documentation missing in model
     Au,
+    #[allow(missing_docs)] // documentation missing in model
     Aw,
+    #[allow(missing_docs)] // documentation missing in model
     Az,
+    #[allow(missing_docs)] // documentation missing in model
     Ba,
+    #[allow(missing_docs)] // documentation missing in model
     Bb,
+    #[allow(missing_docs)] // documentation missing in model
     Bd,
+    #[allow(missing_docs)] // documentation missing in model
     Be,
+    #[allow(missing_docs)] // documentation missing in model
     Bf,
+    #[allow(missing_docs)] // documentation missing in model
     Bg,
+    #[allow(missing_docs)] // documentation missing in model
     Bh,
+    #[allow(missing_docs)] // documentation missing in model
     Bi,
+    #[allow(missing_docs)] // documentation missing in model
     Bj,
+    #[allow(missing_docs)] // documentation missing in model
     Bl,
+    #[allow(missing_docs)] // documentation missing in model
     Bm,
+    #[allow(missing_docs)] // documentation missing in model
     Bn,
+    #[allow(missing_docs)] // documentation missing in model
     Bo,
+    #[allow(missing_docs)] // documentation missing in model
     Br,
+    #[allow(missing_docs)] // documentation missing in model
     Bs,
+    #[allow(missing_docs)] // documentation missing in model
     Bt,
+    #[allow(missing_docs)] // documentation missing in model
     Bw,
+    #[allow(missing_docs)] // documentation missing in model
     By,
+    #[allow(missing_docs)] // documentation missing in model
     Bz,
+    #[allow(missing_docs)] // documentation missing in model
     Ca,
+    #[allow(missing_docs)] // documentation missing in model
     Cc,
+    #[allow(missing_docs)] // documentation missing in model
     Cd,
+    #[allow(missing_docs)] // documentation missing in model
     Cf,
+    #[allow(missing_docs)] // documentation missing in model
     Cg,
+    #[allow(missing_docs)] // documentation missing in model
     Ch,
+    #[allow(missing_docs)] // documentation missing in model
     Ci,
+    #[allow(missing_docs)] // documentation missing in model
     Ck,
+    #[allow(missing_docs)] // documentation missing in model
     Cl,
+    #[allow(missing_docs)] // documentation missing in model
     Cm,
+    #[allow(missing_docs)] // documentation missing in model
     Cn,
+    #[allow(missing_docs)] // documentation missing in model
     Co,
+    #[allow(missing_docs)] // documentation missing in model
     Cr,
+    #[allow(missing_docs)] // documentation missing in model
     Cu,
+    #[allow(missing_docs)] // documentation missing in model
     Cv,
+    #[allow(missing_docs)] // documentation missing in model
     Cx,
+    #[allow(missing_docs)] // documentation missing in model
     Cy,
+    #[allow(missing_docs)] // documentation missing in model
     Cz,
+    #[allow(missing_docs)] // documentation missing in model
     De,
+    #[allow(missing_docs)] // documentation missing in model
     Dj,
+    #[allow(missing_docs)] // documentation missing in model
     Dk,
+    #[allow(missing_docs)] // documentation missing in model
     Dm,
+    #[allow(missing_docs)] // documentation missing in model
     Do,
+    #[allow(missing_docs)] // documentation missing in model
     Dz,
+    #[allow(missing_docs)] // documentation missing in model
     Ec,
+    #[allow(missing_docs)] // documentation missing in model
     Ee,
+    #[allow(missing_docs)] // documentation missing in model
     Eg,
+    #[allow(missing_docs)] // documentation missing in model
     Er,
+    #[allow(missing_docs)] // documentation missing in model
     Es,
+    #[allow(missing_docs)] // documentation missing in model
     Et,
+    #[allow(missing_docs)] // documentation missing in model
     Fi,
+    #[allow(missing_docs)] // documentation missing in model
     Fj,
+    #[allow(missing_docs)] // documentation missing in model
     Fk,
+    #[allow(missing_docs)] // documentation missing in model
     Fm,
+    #[allow(missing_docs)] // documentation missing in model
     Fo,
+    #[allow(missing_docs)] // documentation missing in model
     Fr,
+    #[allow(missing_docs)] // documentation missing in model
     Ga,
+    #[allow(missing_docs)] // documentation missing in model
     Gb,
+    #[allow(missing_docs)] // documentation missing in model
     Gd,
+    #[allow(missing_docs)] // documentation missing in model
     Ge,
+    #[allow(missing_docs)] // documentation missing in model
     Gh,
+    #[allow(missing_docs)] // documentation missing in model
     Gi,
+    #[allow(missing_docs)] // documentation missing in model
     Gl,
+    #[allow(missing_docs)] // documentation missing in model
     Gm,
+    #[allow(missing_docs)] // documentation missing in model
     Gn,
+    #[allow(missing_docs)] // documentation missing in model
     Gq,
+    #[allow(missing_docs)] // documentation missing in model
     Gr,
+    #[allow(missing_docs)] // documentation missing in model
     Gt,
+    #[allow(missing_docs)] // documentation missing in model
     Gu,
+    #[allow(missing_docs)] // documentation missing in model
     Gw,
+    #[allow(missing_docs)] // documentation missing in model
     Gy,
+    #[allow(missing_docs)] // documentation missing in model
     Hk,
+    #[allow(missing_docs)] // documentation missing in model
     Hn,
+    #[allow(missing_docs)] // documentation missing in model
     Hr,
+    #[allow(missing_docs)] // documentation missing in model
     Ht,
+    #[allow(missing_docs)] // documentation missing in model
     Hu,
+    #[allow(missing_docs)] // documentation missing in model
     Id,
+    #[allow(missing_docs)] // documentation missing in model
     Ie,
+    #[allow(missing_docs)] // documentation missing in model
     Il,
+    #[allow(missing_docs)] // documentation missing in model
     Im,
+    #[allow(missing_docs)] // documentation missing in model
     In,
+    #[allow(missing_docs)] // documentation missing in model
     Iq,
+    #[allow(missing_docs)] // documentation missing in model
     Ir,
+    #[allow(missing_docs)] // documentation missing in model
     Is,
+    #[allow(missing_docs)] // documentation missing in model
     It,
+    #[allow(missing_docs)] // documentation missing in model
     Jm,
+    #[allow(missing_docs)] // documentation missing in model
     Jo,
+    #[allow(missing_docs)] // documentation missing in model
     Jp,
+    #[allow(missing_docs)] // documentation missing in model
     Ke,
+    #[allow(missing_docs)] // documentation missing in model
     Kg,
+    #[allow(missing_docs)] // documentation missing in model
     Kh,
+    #[allow(missing_docs)] // documentation missing in model
     Ki,
+    #[allow(missing_docs)] // documentation missing in model
     Km,
+    #[allow(missing_docs)] // documentation missing in model
     Kn,
+    #[allow(missing_docs)] // documentation missing in model
     Kp,
+    #[allow(missing_docs)] // documentation missing in model
     Kr,
+    #[allow(missing_docs)] // documentation missing in model
     Kw,
+    #[allow(missing_docs)] // documentation missing in model
     Ky,
+    #[allow(missing_docs)] // documentation missing in model
     Kz,
+    #[allow(missing_docs)] // documentation missing in model
     La,
+    #[allow(missing_docs)] // documentation missing in model
     Lb,
+    #[allow(missing_docs)] // documentation missing in model
     Lc,
+    #[allow(missing_docs)] // documentation missing in model
     Li,
+    #[allow(missing_docs)] // documentation missing in model
     Lk,
+    #[allow(missing_docs)] // documentation missing in model
     Lr,
+    #[allow(missing_docs)] // documentation missing in model
     Ls,
+    #[allow(missing_docs)] // documentation missing in model
     Lt,
+    #[allow(missing_docs)] // documentation missing in model
     Lu,
+    #[allow(missing_docs)] // documentation missing in model
     Lv,
+    #[allow(missing_docs)] // documentation missing in model
     Ly,
+    #[allow(missing_docs)] // documentation missing in model
     Ma,
+    #[allow(missing_docs)] // documentation missing in model
     Mc,
+    #[allow(missing_docs)] // documentation missing in model
     Md,
+    #[allow(missing_docs)] // documentation missing in model
     Me,
+    #[allow(missing_docs)] // documentation missing in model
     Mf,
+    #[allow(missing_docs)] // documentation missing in model
     Mg,
+    #[allow(missing_docs)] // documentation missing in model
     Mh,
+    #[allow(missing_docs)] // documentation missing in model
     Mk,
+    #[allow(missing_docs)] // documentation missing in model
     Ml,
+    #[allow(missing_docs)] // documentation missing in model
     Mm,
+    #[allow(missing_docs)] // documentation missing in model
     Mn,
+    #[allow(missing_docs)] // documentation missing in model
     Mo,
+    #[allow(missing_docs)] // documentation missing in model
     Mp,
+    #[allow(missing_docs)] // documentation missing in model
     Mr,
+    #[allow(missing_docs)] // documentation missing in model
     Ms,
+    #[allow(missing_docs)] // documentation missing in model
     Mt,
+    #[allow(missing_docs)] // documentation missing in model
     Mu,
+    #[allow(missing_docs)] // documentation missing in model
     Mv,
+    #[allow(missing_docs)] // documentation missing in model
     Mw,
+    #[allow(missing_docs)] // documentation missing in model
     Mx,
+    #[allow(missing_docs)] // documentation missing in model
     My,
+    #[allow(missing_docs)] // documentation missing in model
     Mz,
+    #[allow(missing_docs)] // documentation missing in model
     Na,
+    #[allow(missing_docs)] // documentation missing in model
     Nc,
+    #[allow(missing_docs)] // documentation missing in model
     Ne,
+    #[allow(missing_docs)] // documentation missing in model
     Ng,
+    #[allow(missing_docs)] // documentation missing in model
     Ni,
+    #[allow(missing_docs)] // documentation missing in model
     Nl,
+    #[allow(missing_docs)] // documentation missing in model
     No,
+    #[allow(missing_docs)] // documentation missing in model
     Np,
+    #[allow(missing_docs)] // documentation missing in model
     Nr,
+    #[allow(missing_docs)] // documentation missing in model
     Nu,
+    #[allow(missing_docs)] // documentation missing in model
     Nz,
+    #[allow(missing_docs)] // documentation missing in model
     Om,
+    #[allow(missing_docs)] // documentation missing in model
     Pa,
+    #[allow(missing_docs)] // documentation missing in model
     Pe,
+    #[allow(missing_docs)] // documentation missing in model
     Pf,
+    #[allow(missing_docs)] // documentation missing in model
     Pg,
+    #[allow(missing_docs)] // documentation missing in model
     Ph,
+    #[allow(missing_docs)] // documentation missing in model
     Pk,
+    #[allow(missing_docs)] // documentation missing in model
     Pl,
+    #[allow(missing_docs)] // documentation missing in model
     Pm,
+    #[allow(missing_docs)] // documentation missing in model
     Pn,
+    #[allow(missing_docs)] // documentation missing in model
     Pr,
+    #[allow(missing_docs)] // documentation missing in model
     Pt,
+    #[allow(missing_docs)] // documentation missing in model
     Pw,
+    #[allow(missing_docs)] // documentation missing in model
     Py,
+    #[allow(missing_docs)] // documentation missing in model
     Qa,
+    #[allow(missing_docs)] // documentation missing in model
     Ro,
+    #[allow(missing_docs)] // documentation missing in model
     Rs,
+    #[allow(missing_docs)] // documentation missing in model
     Ru,
+    #[allow(missing_docs)] // documentation missing in model
     Rw,
+    #[allow(missing_docs)] // documentation missing in model
     Sa,
+    #[allow(missing_docs)] // documentation missing in model
     Sb,
+    #[allow(missing_docs)] // documentation missing in model
     Sc,
+    #[allow(missing_docs)] // documentation missing in model
     Sd,
+    #[allow(missing_docs)] // documentation missing in model
     Se,
+    #[allow(missing_docs)] // documentation missing in model
     Sg,
+    #[allow(missing_docs)] // documentation missing in model
     Sh,
+    #[allow(missing_docs)] // documentation missing in model
     Si,
+    #[allow(missing_docs)] // documentation missing in model
     Sk,
+    #[allow(missing_docs)] // documentation missing in model
     Sl,
+    #[allow(missing_docs)] // documentation missing in model
     Sm,
+    #[allow(missing_docs)] // documentation missing in model
     Sn,
+    #[allow(missing_docs)] // documentation missing in model
     So,
+    #[allow(missing_docs)] // documentation missing in model
     Sr,
+    #[allow(missing_docs)] // documentation missing in model
     St,
+    #[allow(missing_docs)] // documentation missing in model
     Sv,
+    #[allow(missing_docs)] // documentation missing in model
     Sy,
+    #[allow(missing_docs)] // documentation missing in model
     Sz,
+    #[allow(missing_docs)] // documentation missing in model
     Tc,
+    #[allow(missing_docs)] // documentation missing in model
     Td,
+    #[allow(missing_docs)] // documentation missing in model
     Tg,
+    #[allow(missing_docs)] // documentation missing in model
     Th,
+    #[allow(missing_docs)] // documentation missing in model
     Tj,
+    #[allow(missing_docs)] // documentation missing in model
     Tk,
+    #[allow(missing_docs)] // documentation missing in model
     Tl,
+    #[allow(missing_docs)] // documentation missing in model
     Tm,
+    #[allow(missing_docs)] // documentation missing in model
     Tn,
+    #[allow(missing_docs)] // documentation missing in model
     To,
+    #[allow(missing_docs)] // documentation missing in model
     Tr,
+    #[allow(missing_docs)] // documentation missing in model
     Tt,
+    #[allow(missing_docs)] // documentation missing in model
     Tv,
+    #[allow(missing_docs)] // documentation missing in model
     Tw,
+    #[allow(missing_docs)] // documentation missing in model
     Tz,
+    #[allow(missing_docs)] // documentation missing in model
     Ua,
+    #[allow(missing_docs)] // documentation missing in model
     Ug,
+    #[allow(missing_docs)] // documentation missing in model
     Us,
+    #[allow(missing_docs)] // documentation missing in model
     Uy,
+    #[allow(missing_docs)] // documentation missing in model
     Uz,
+    #[allow(missing_docs)] // documentation missing in model
     Va,
+    #[allow(missing_docs)] // documentation missing in model
     Vc,
+    #[allow(missing_docs)] // documentation missing in model
     Ve,
+    #[allow(missing_docs)] // documentation missing in model
     Vg,
+    #[allow(missing_docs)] // documentation missing in model
     Vi,
+    #[allow(missing_docs)] // documentation missing in model
     Vn,
+    #[allow(missing_docs)] // documentation missing in model
     Vu,
+    #[allow(missing_docs)] // documentation missing in model
     Wf,
+    #[allow(missing_docs)] // documentation missing in model
     Ws,
+    #[allow(missing_docs)] // documentation missing in model
     Ye,
+    #[allow(missing_docs)] // documentation missing in model
     Yt,
+    #[allow(missing_docs)] // documentation missing in model
     Za,
+    #[allow(missing_docs)] // documentation missing in model
     Zm,
+    #[allow(missing_docs)] // documentation missing in model
     Zw,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2893,6 +4026,7 @@ impl std::str::FromStr for CountryCode {
     }
 }
 impl CountryCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CountryCode::Ad => "AD",
@@ -3127,6 +4261,7 @@ impl CountryCode {
             CountryCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AN", "AO", "AQ", "AR", "AS", "AT", "AU",
@@ -3155,6 +4290,7 @@ impl AsRef<str> for CountryCode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3166,10 +4302,15 @@ impl AsRef<str> for CountryCode {
     std::hash::Hash,
 )]
 pub enum ContactType {
+    #[allow(missing_docs)] // documentation missing in model
     Association,
+    #[allow(missing_docs)] // documentation missing in model
     Company,
+    #[allow(missing_docs)] // documentation missing in model
     Person,
+    #[allow(missing_docs)] // documentation missing in model
     PublicBody,
+    #[allow(missing_docs)] // documentation missing in model
     Reseller,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3194,6 +4335,7 @@ impl std::str::FromStr for ContactType {
     }
 }
 impl ContactType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContactType::Association => "ASSOCIATION",
@@ -3204,6 +4346,7 @@ impl ContactType {
             ContactType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ASSOCIATION",
@@ -3231,7 +4374,7 @@ pub struct OperationSummary {
     /// <p>Type of the action requested.</p>
     pub r#type: std::option::Option<crate::model::OperationType>,
     /// <p>The date when the request was submitted.</p>
-    pub submitted_date: std::option::Option<smithy_types::Instant>,
+    pub submitted_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for OperationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3252,7 +4395,7 @@ pub mod operation_summary {
         pub(crate) operation_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::OperationStatus>,
         pub(crate) r#type: std::option::Option<crate::model::OperationType>,
-        pub(crate) submitted_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) submitted_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Identifier returned to track the requested action.</p>
@@ -3260,6 +4403,7 @@ pub mod operation_summary {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>Identifier returned to track the requested action.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -3269,6 +4413,7 @@ pub mod operation_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the requested operation in the system.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OperationStatus>,
@@ -3281,18 +4426,20 @@ pub mod operation_summary {
             self.r#type = Some(input);
             self
         }
+        /// <p>Type of the action requested.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::OperationType>) -> Self {
             self.r#type = input;
             self
         }
         /// <p>The date when the request was submitted.</p>
-        pub fn submitted_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submitted_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submitted_date = Some(input);
             self
         }
+        /// <p>The date when the request was submitted.</p>
         pub fn set_submitted_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submitted_date = input;
             self
@@ -3315,6 +4462,7 @@ impl OperationSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3326,10 +4474,15 @@ impl OperationSummary {
     std::hash::Hash,
 )]
 pub enum OperationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Submitted,
+    #[allow(missing_docs)] // documentation missing in model
     Successful,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3354,6 +4507,7 @@ impl std::str::FromStr for OperationStatus {
     }
 }
 impl OperationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OperationStatus::Error => "ERROR",
@@ -3364,6 +4518,7 @@ impl OperationStatus {
             OperationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ERROR", "FAILED", "IN_PROGRESS", "SUBMITTED", "SUCCESSFUL"]
     }
@@ -3385,7 +4540,7 @@ pub struct DomainSummary {
     /// <p>Indicates whether a domain is locked from unauthorized transfer to another party.</p>
     pub transfer_lock: std::option::Option<bool>,
     /// <p>Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub expiry: std::option::Option<smithy_types::Instant>,
+    pub expiry: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DomainSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3406,7 +4561,7 @@ pub mod domain_summary {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) auto_renew: std::option::Option<bool>,
         pub(crate) transfer_lock: std::option::Option<bool>,
-        pub(crate) expiry: std::option::Option<smithy_types::Instant>,
+        pub(crate) expiry: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the domain that the summary information applies to.</p>
@@ -3414,6 +4569,7 @@ pub mod domain_summary {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain that the summary information applies to.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -3423,6 +4579,7 @@ pub mod domain_summary {
             self.auto_renew = Some(input);
             self
         }
+        /// <p>Indicates whether the domain is automatically renewed upon expiration.</p>
         pub fn set_auto_renew(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_renew = input;
             self
@@ -3432,16 +4589,18 @@ pub mod domain_summary {
             self.transfer_lock = Some(input);
             self
         }
+        /// <p>Indicates whether a domain is locked from unauthorized transfer to another party.</p>
         pub fn set_transfer_lock(mut self, input: std::option::Option<bool>) -> Self {
             self.transfer_lock = input;
             self
         }
         /// <p>Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).</p>
-        pub fn expiry(mut self, input: smithy_types::Instant) -> Self {
+        pub fn expiry(mut self, input: aws_smithy_types::Instant) -> Self {
             self.expiry = Some(input);
             self
         }
-        pub fn set_expiry(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).</p>
+        pub fn set_expiry(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
             self.expiry = input;
             self
         }
@@ -3540,6 +4699,7 @@ pub mod domain_suggestion {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>A suggested domain name.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -3594,6 +4754,52 @@ pub mod domain_suggestion {
             self.availability = Some(input.into());
             self
         }
+        /// <p>Whether the domain name is available for registering.</p>
+        /// <note>
+        /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
+        /// </note>
+        /// <p>Valid values:</p>
+        /// <dl>
+        /// <dt>AVAILABLE</dt>
+        /// <dd>
+        /// <p>The domain name is available.</p>
+        /// </dd>
+        /// <dt>AVAILABLE_RESERVED</dt>
+        /// <dd>
+        /// <p>The domain name is reserved under specific conditions.</p>
+        /// </dd>
+        /// <dt>AVAILABLE_PREORDER</dt>
+        /// <dd>
+        /// <p>The domain name is available and can be preordered.</p>
+        /// </dd>
+        /// <dt>DONT_KNOW</dt>
+        /// <dd>
+        /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name is available.
+        /// Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance.
+        /// Try again later.</p>
+        /// </dd>
+        /// <dt>PENDING</dt>
+        /// <dd>
+        /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed,
+        /// it usually takes just a few extra seconds. You can resubmit the request immediately.</p>
+        /// </dd>
+        /// <dt>RESERVED</dt>
+        /// <dd>
+        /// <p>The domain name has been reserved for another person or organization.</p>
+        /// </dd>
+        /// <dt>UNAVAILABLE</dt>
+        /// <dd>
+        /// <p>The domain name is not available.</p>
+        /// </dd>
+        /// <dt>UNAVAILABLE_PREMIUM</dt>
+        /// <dd>
+        /// <p>The domain name is not available.</p>
+        /// </dd>
+        /// <dt>UNAVAILABLE_RESTRICTED</dt>
+        /// <dd>
+        /// <p>The domain name is forbidden.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_availability(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.availability = input;
             self
@@ -3614,6 +4820,7 @@ impl DomainSuggestion {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3625,8 +4832,11 @@ impl DomainSuggestion {
     std::hash::Hash,
 )]
 pub enum ReachabilityStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Done,
+    #[allow(missing_docs)] // documentation missing in model
     Expired,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3649,6 +4859,7 @@ impl std::str::FromStr for ReachabilityStatus {
     }
 }
 impl ReachabilityStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReachabilityStatus::Done => "DONE",
@@ -3657,6 +4868,7 @@ impl ReachabilityStatus {
             ReachabilityStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DONE", "EXPIRED", "PENDING"]
     }
@@ -3675,6 +4887,7 @@ pub struct DomainTransferability {
     /// <note>
     /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.</p>
     /// </note>
+    ///
     /// <p>Valid values:</p>
     /// <dl>
     /// <dt>TRANSFERABLE</dt>
@@ -3712,6 +4925,7 @@ pub mod domain_transferability {
         /// <note>
         /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.</p>
         /// </note>
+        ///
         /// <p>Valid values:</p>
         /// <dl>
         /// <dt>TRANSFERABLE</dt>
@@ -3731,6 +4945,26 @@ pub mod domain_transferability {
             self.transferable = Some(input);
             self
         }
+        /// <p>Whether the domain name can be transferred to Route 53.</p>
+        /// <note>
+        /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.</p>
+        /// </note>
+        ///
+        /// <p>Valid values:</p>
+        /// <dl>
+        /// <dt>TRANSFERABLE</dt>
+        /// <dd>
+        /// <p>The domain name can be transferred to Route 53.</p>
+        /// </dd>
+        /// <dt>UNTRANSFERRABLE</dt>
+        /// <dd>
+        /// <p>The domain name can't be transferred to Route 53.</p>
+        /// </dd>
+        /// <dt>DONT_KNOW</dt>
+        /// <dd>
+        /// <p>Reserved for future use.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_transferable(
             mut self,
             input: std::option::Option<crate::model::Transferable>,
@@ -3757,6 +4991,7 @@ impl DomainTransferability {
 /// <note>
 /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.</p>
 /// </note>
+///
 /// <p>Valid values:</p>
 /// <dl>
 /// <dt>TRANSFERABLE</dt>
@@ -3783,8 +5018,11 @@ impl DomainTransferability {
     std::hash::Hash,
 )]
 pub enum Transferable {
+    #[allow(missing_docs)] // documentation missing in model
     DontKnow,
+    #[allow(missing_docs)] // documentation missing in model
     Transferable,
+    #[allow(missing_docs)] // documentation missing in model
     Untransferable,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3807,6 +5045,7 @@ impl std::str::FromStr for Transferable {
     }
 }
 impl Transferable {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Transferable::DontKnow => "DONT_KNOW",
@@ -3815,6 +5054,7 @@ impl Transferable {
             Transferable::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DONT_KNOW", "TRANSFERABLE", "UNTRANSFERABLE"]
     }
@@ -3825,6 +5065,7 @@ impl AsRef<str> for Transferable {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3836,13 +5077,21 @@ impl AsRef<str> for Transferable {
     std::hash::Hash,
 )]
 pub enum DomainAvailability {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     AvailablePreorder,
+    #[allow(missing_docs)] // documentation missing in model
     AvailableReserved,
+    #[allow(missing_docs)] // documentation missing in model
     DontKnow,
+    #[allow(missing_docs)] // documentation missing in model
     Reserved,
+    #[allow(missing_docs)] // documentation missing in model
     Unavailable,
+    #[allow(missing_docs)] // documentation missing in model
     UnavailablePremium,
+    #[allow(missing_docs)] // documentation missing in model
     UnavailableRestricted,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3870,6 +5119,7 @@ impl std::str::FromStr for DomainAvailability {
     }
 }
 impl DomainAvailability {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DomainAvailability::Available => "AVAILABLE",
@@ -3883,6 +5133,7 @@ impl DomainAvailability {
             DomainAvailability::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",

@@ -19,6 +19,7 @@ pub mod associate_repository_input {
             self.repository = Some(input);
             self
         }
+        /// <p>The repository to associate.</p>
         pub fn set_repository(
             mut self,
             input: std::option::Option<crate::model::Repository>,
@@ -32,6 +33,8 @@ pub mod associate_repository_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository
+        /// associations if there are failures and retries. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -39,6 +42,26 @@ pub mod associate_repository_input {
             self.client_request_token = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>
+        /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
+        /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
+        /// keys are case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>An optional field known as a <i>tag value</i> (for example,
+        /// <code>111122223333</code>, <code>Production</code>, or a team name).
+        /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
+        /// values are case sensitive.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -49,6 +72,22 @@ pub mod associate_repository_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>
+        /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
+        /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
+        /// keys are case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>An optional field known as a <i>tag value</i> (for example,
+        /// <code>111122223333</code>, <code>Production</code>, or a team name).
+        /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
+        /// values are case sensitive.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -73,6 +112,17 @@ pub mod associate_repository_input {
             self.kms_key_details = Some(input);
             self
         }
+        /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The encryption option for this repository association. It is either owned by Amazon Web Services
+        /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>The ID of the Amazon Web Services KMS key that
+        /// is associated with this respository association.</p>
+        /// </li>
+        /// </ul>
         pub fn set_kms_key_details(
             mut self,
             input: std::option::Option<crate::model::KmsKeyDetails>,
@@ -85,7 +135,7 @@ pub mod associate_repository_input {
             self,
         ) -> std::result::Result<
             crate::input::AssociateRepositoryInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AssociateRepositoryInput {
                 repository: self.repository,
@@ -107,16 +157,16 @@ impl AssociateRepositoryInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AssociateRepository,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AssociateRepositoryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/associations").expect("formatting should succeed");
             Ok(())
         }
@@ -124,7 +174,7 @@ impl AssociateRepositoryInput {
         fn update_http_builder(
             input: &crate::input::AssociateRepositoryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -133,10 +183,10 @@ impl AssociateRepositoryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AssociateRepositoryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -146,15 +196,17 @@ impl AssociateRepositoryInput {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_repository(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -177,15 +229,15 @@ impl AssociateRepositoryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AssociateRepository::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AssociateRepository",
             "codegurureviewer",
         ));
@@ -194,10 +246,10 @@ impl AssociateRepositoryInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -230,6 +282,9 @@ pub mod create_code_review_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the code review. The name of each code review in your Amazon Web Services account must be unique.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -252,6 +307,20 @@ pub mod create_code_review_input {
             self.repository_association_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the  
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+        /// <code>RepositoryAssociation</code>
+        /// </a> object.
+        /// You can retrieve this ARN by calling
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+        /// <code>ListRepositoryAssociations</code>
+        /// </a>.
+        /// </p>
+        /// <p>
+        /// A code review can only be created on an associated repository. This is the ARN of the
+        /// associated repository.
+        /// </p>
         pub fn set_repository_association_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -270,6 +339,13 @@ pub mod create_code_review_input {
             self.r#type = Some(input);
             self
         }
+        /// <p>
+        /// The type of code review to create. This is specified using a
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
+        /// <code>CodeReviewType</code>
+        /// </a>
+        /// object. You can create a code review only of type <code>RepositoryAnalysis</code>.
+        /// </p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::CodeReviewType>,
@@ -285,6 +361,10 @@ pub mod create_code_review_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>
+        /// Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate code
+        /// reviews if there are failures and retries.
+        /// </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -297,7 +377,7 @@ pub mod create_code_review_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateCodeReviewInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateCodeReviewInput {
                 name: self.name,
@@ -319,16 +399,16 @@ impl CreateCodeReviewInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateCodeReview,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateCodeReviewInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/codereviews").expect("formatting should succeed");
             Ok(())
         }
@@ -336,7 +416,7 @@ impl CreateCodeReviewInput {
         fn update_http_builder(
             input: &crate::input::CreateCodeReviewInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -345,10 +425,10 @@ impl CreateCodeReviewInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateCodeReviewInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -358,17 +438,17 @@ impl CreateCodeReviewInput {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_code_review(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -391,15 +471,15 @@ impl CreateCodeReviewInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateCodeReview::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateCodeReview",
             "codegurureviewer",
         ));
@@ -408,10 +488,10 @@ impl CreateCodeReviewInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -442,6 +522,10 @@ pub mod describe_code_review_input {
             self.code_review_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+        /// <code>CodeReview</code>
+        /// </a> object.
+        /// </p>
         pub fn set_code_review_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -454,7 +538,7 @@ pub mod describe_code_review_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeCodeReviewInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeCodeReviewInput {
                 code_review_arn: self.code_review_arn,
@@ -473,27 +557,27 @@ impl DescribeCodeReviewInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCodeReview,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeCodeReviewInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.code_review_arn;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "code_review_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let code_review_arn = smithy_http::label::fmt_string(input_1, false);
+            let code_review_arn = aws_smithy_http::label::fmt_string(input_1, false);
             if code_review_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "code_review_arn",
                     details: "cannot be empty or unset",
                 });
@@ -510,7 +594,7 @@ impl DescribeCodeReviewInput {
         fn update_http_builder(
             input: &crate::input::DescribeCodeReviewInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -519,23 +603,23 @@ impl DescribeCodeReviewInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeCodeReviewInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -558,15 +642,15 @@ impl DescribeCodeReviewInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCodeReview::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCodeReview",
             "codegurureviewer",
         ));
@@ -575,10 +659,10 @@ impl DescribeCodeReviewInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -611,6 +695,10 @@ pub mod describe_recommendation_feedback_input {
             self.code_review_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+        /// <code>CodeReview</code>
+        /// </a> object.
+        /// </p>
         pub fn set_code_review_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -625,6 +713,9 @@ pub mod describe_recommendation_feedback_input {
             self.recommendation_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
+        /// </p>
         pub fn set_recommendation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -644,6 +735,14 @@ pub mod describe_recommendation_feedback_input {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>
+        /// Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.
+        /// </p>
+        /// <p>
+        /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
+        /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
+        /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
+        /// </p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -653,7 +752,7 @@ pub mod describe_recommendation_feedback_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeRecommendationFeedbackInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeRecommendationFeedbackInput {
                 code_review_arn: self.code_review_arn,
@@ -675,27 +774,27 @@ impl DescribeRecommendationFeedbackInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeRecommendationFeedback,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeRecommendationFeedbackInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_2 = &_input.code_review_arn;
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "code_review_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let code_review_arn = smithy_http::label::fmt_string(input_2, false);
+            let code_review_arn = aws_smithy_http::label::fmt_string(input_2, false);
             if code_review_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "code_review_arn",
                     details: "cannot be empty or unset",
                 });
@@ -712,22 +811,22 @@ impl DescribeRecommendationFeedbackInput {
             _input: &crate::input::DescribeRecommendationFeedbackInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_3) = &_input.recommendation_id {
                 query.push_kv(
                     "RecommendationId",
-                    &smithy_http::query::fmt_string(&inner_3),
+                    &aws_smithy_http::query::fmt_string(&inner_3),
                 );
             }
             if let Some(inner_4) = &_input.user_id {
-                query.push_kv("UserId", &smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("UserId", &aws_smithy_http::query::fmt_string(&inner_4));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeRecommendationFeedbackInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -737,23 +836,23 @@ impl DescribeRecommendationFeedbackInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeRecommendationFeedbackInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -776,15 +875,15 @@ impl DescribeRecommendationFeedbackInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeRecommendationFeedback::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeRecommendationFeedback",
             "codegurureviewer",
         ));
@@ -793,10 +892,10 @@ impl DescribeRecommendationFeedbackInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -833,6 +932,16 @@ pub mod describe_repository_association_input {
             self.association_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the  
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+        /// <code>RepositoryAssociation</code>
+        /// </a> object.
+        /// You can retrieve this ARN by calling
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+        /// <code>ListRepositoryAssociations</code>
+        /// </a>.
+        /// </p>
         pub fn set_association_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -845,7 +954,7 @@ pub mod describe_repository_association_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeRepositoryAssociationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeRepositoryAssociationInput {
                 association_arn: self.association_arn,
@@ -865,27 +974,27 @@ impl DescribeRepositoryAssociationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeRepositoryAssociation,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeRepositoryAssociationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_5 = &_input.association_arn;
             let input_5 =
                 input_5
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "association_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let association_arn = smithy_http::label::fmt_string(input_5, false);
+            let association_arn = aws_smithy_http::label::fmt_string(input_5, false);
             if association_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "association_arn",
                     details: "cannot be empty or unset",
                 });
@@ -902,7 +1011,7 @@ impl DescribeRepositoryAssociationInput {
         fn update_http_builder(
             input: &crate::input::DescribeRepositoryAssociationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -911,23 +1020,23 @@ impl DescribeRepositoryAssociationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeRepositoryAssociationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -950,15 +1059,15 @@ impl DescribeRepositoryAssociationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeRepositoryAssociation::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeRepositoryAssociation",
             "codegurureviewer",
         ));
@@ -967,10 +1076,10 @@ impl DescribeRepositoryAssociationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1007,6 +1116,16 @@ pub mod disassociate_repository_input {
             self.association_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the  
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+        /// <code>RepositoryAssociation</code>
+        /// </a> object.
+        /// You can retrieve this ARN by calling
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+        /// <code>ListRepositoryAssociations</code>
+        /// </a>.
+        /// </p>
         pub fn set_association_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1019,7 +1138,7 @@ pub mod disassociate_repository_input {
             self,
         ) -> std::result::Result<
             crate::input::DisassociateRepositoryInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisassociateRepositoryInput {
                 association_arn: self.association_arn,
@@ -1038,27 +1157,27 @@ impl DisassociateRepositoryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisassociateRepository,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisassociateRepositoryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_6 = &_input.association_arn;
             let input_6 =
                 input_6
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "association_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let association_arn = smithy_http::label::fmt_string(input_6, false);
+            let association_arn = aws_smithy_http::label::fmt_string(input_6, false);
             if association_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "association_arn",
                     details: "cannot be empty or unset",
                 });
@@ -1075,7 +1194,7 @@ impl DisassociateRepositoryInput {
         fn update_http_builder(
             input: &crate::input::DisassociateRepositoryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1084,23 +1203,23 @@ impl DisassociateRepositoryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisassociateRepositoryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1123,15 +1242,15 @@ impl DisassociateRepositoryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisassociateRepository::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisassociateRepository",
             "codegurureviewer",
         ));
@@ -1140,10 +1259,10 @@ impl DisassociateRepositoryInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1171,12 +1290,22 @@ pub mod list_code_reviews_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `provider_types`.
+        ///
+        /// To override the contents of this collection use [`set_provider_types`](Self::set_provider_types).
+        ///
+        /// <p>
+        /// List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code>  lists code reviews from GitHub.
+        /// </p>
         pub fn provider_types(mut self, input: impl Into<crate::model::ProviderType>) -> Self {
             let mut v = self.provider_types.unwrap_or_default();
             v.push(input.into());
             self.provider_types = Some(v);
             self
         }
+        /// <p>
+        /// List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code>  lists code reviews from GitHub.
+        /// </p>
         pub fn set_provider_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProviderType>>,
@@ -1184,12 +1313,68 @@ pub mod list_code_reviews_input {
             self.provider_types = input;
             self
         }
+        /// Appends an item to `states`.
+        ///
+        /// To override the contents of this collection use [`set_states`](Self::set_states).
+        ///
+        /// <p>
+        /// List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.
+        /// </p>
+        /// <p>The valid code review states are:</p>
+        /// <ul>
+        /// <li>            
+        /// <p>
+        /// <code>Completed</code>: The code review is complete.
+        /// </p>            
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Pending</code>: The code review started and has not completed or failed.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Failed</code>: The code review failed.
+        /// </p>            
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Deleting</code>: The code review is being deleted.
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn states(mut self, input: impl Into<crate::model::JobState>) -> Self {
             let mut v = self.states.unwrap_or_default();
             v.push(input.into());
             self.states = Some(v);
             self
         }
+        /// <p>
+        /// List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.
+        /// </p>
+        /// <p>The valid code review states are:</p>
+        /// <ul>
+        /// <li>            
+        /// <p>
+        /// <code>Completed</code>: The code review is complete.
+        /// </p>            
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Pending</code>: The code review started and has not completed or failed.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Failed</code>: The code review failed.
+        /// </p>            
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Deleting</code>: The code review is being deleted.
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_states(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::JobState>>,
@@ -1197,12 +1382,22 @@ pub mod list_code_reviews_input {
             self.states = input;
             self
         }
+        /// Appends an item to `repository_names`.
+        ///
+        /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
+        ///
+        /// <p>
+        /// List of repository names for filtering that needs to be applied before displaying the result.
+        /// </p>
         pub fn repository_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.repository_names.unwrap_or_default();
             v.push(input.into());
             self.repository_names = Some(v);
             self
         }
+        /// <p>
+        /// List of repository names for filtering that needs to be applied before displaying the result.
+        /// </p>
         pub fn set_repository_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1217,6 +1412,9 @@ pub mod list_code_reviews_input {
             self.r#type = Some(input);
             self
         }
+        /// <p>
+        /// The type of code reviews to list in the response.
+        /// </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
             self.r#type = input;
             self
@@ -1228,6 +1426,9 @@ pub mod list_code_reviews_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>
+        /// The maximum number of results that are returned per call. The default is 100.
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1240,6 +1441,10 @@ pub mod list_code_reviews_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>
+        /// If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page.
+        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1249,7 +1454,7 @@ pub mod list_code_reviews_input {
             self,
         ) -> std::result::Result<
             crate::input::ListCodeReviewsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListCodeReviewsInput {
                 provider_types: self.provider_types,
@@ -1273,57 +1478,60 @@ impl ListCodeReviewsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListCodeReviews,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListCodeReviewsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/codereviews").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListCodeReviewsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_7) = &_input.provider_types {
                 for inner_8 in inner_7 {
-                    query.push_kv("ProviderTypes", &smithy_http::query::fmt_string(&inner_8));
+                    query.push_kv(
+                        "ProviderTypes",
+                        &aws_smithy_http::query::fmt_string(&inner_8),
+                    );
                 }
             }
             if let Some(inner_9) = &_input.states {
                 for inner_10 in inner_9 {
-                    query.push_kv("States", &smithy_http::query::fmt_string(&inner_10));
+                    query.push_kv("States", &aws_smithy_http::query::fmt_string(&inner_10));
                 }
             }
             if let Some(inner_11) = &_input.repository_names {
                 for inner_12 in inner_11 {
                     query.push_kv(
                         "RepositoryNames",
-                        &smithy_http::query::fmt_string(&inner_12),
+                        &aws_smithy_http::query::fmt_string(&inner_12),
                     );
                 }
             }
             if let Some(inner_13) = &_input.r#type {
-                query.push_kv("Type", &smithy_http::query::fmt_string(&inner_13));
+                query.push_kv("Type", &aws_smithy_http::query::fmt_string(&inner_13));
             }
             if let Some(inner_14) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_14).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
                 );
             }
             if let Some(inner_15) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_15));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_15));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListCodeReviewsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1333,23 +1541,23 @@ impl ListCodeReviewsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListCodeReviewsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1372,15 +1580,15 @@ impl ListCodeReviewsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListCodeReviews::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListCodeReviews",
             "codegurureviewer",
         ));
@@ -1389,10 +1597,10 @@ impl ListCodeReviewsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1427,6 +1635,10 @@ pub mod list_recommendation_feedback_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>
+        /// If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page.
+        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1438,6 +1650,9 @@ pub mod list_recommendation_feedback_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>
+        /// The maximum number of results that are returned per call. The default is 100.
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1450,6 +1665,10 @@ pub mod list_recommendation_feedback_input {
             self.code_review_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+        /// <code>CodeReview</code>
+        /// </a> object.
+        /// </p>
         pub fn set_code_review_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1457,12 +1676,32 @@ pub mod list_recommendation_feedback_input {
             self.code_review_arn = input;
             self
         }
+        /// Appends an item to `user_ids`.
+        ///
+        /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
+        ///
+        /// <p>
+        /// An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.
+        /// </p>
+        /// <p>
+        /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
+        /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
+        /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
+        /// </p>
         pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_ids.unwrap_or_default();
             v.push(input.into());
             self.user_ids = Some(v);
             self
         }
+        /// <p>
+        /// An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.
+        /// </p>
+        /// <p>
+        /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
+        /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
+        /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
+        /// </p>
         pub fn set_user_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1470,12 +1709,22 @@ pub mod list_recommendation_feedback_input {
             self.user_ids = input;
             self
         }
+        /// Appends an item to `recommendation_ids`.
+        ///
+        /// To override the contents of this collection use [`set_recommendation_ids`](Self::set_recommendation_ids).
+        ///
+        /// <p>
+        /// Used to query the recommendation feedback for a given recommendation.
+        /// </p>
         pub fn recommendation_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.recommendation_ids.unwrap_or_default();
             v.push(input.into());
             self.recommendation_ids = Some(v);
             self
         }
+        /// <p>
+        /// Used to query the recommendation feedback for a given recommendation.
+        /// </p>
         pub fn set_recommendation_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1488,7 +1737,7 @@ pub mod list_recommendation_feedback_input {
             self,
         ) -> std::result::Result<
             crate::input::ListRecommendationFeedbackInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListRecommendationFeedbackInput {
                 next_token: self.next_token,
@@ -1512,27 +1761,27 @@ impl ListRecommendationFeedbackInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListRecommendationFeedback,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListRecommendationFeedbackInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_16 = &_input.code_review_arn;
             let input_16 =
                 input_16
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "code_review_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let code_review_arn = smithy_http::label::fmt_string(input_16, false);
+            let code_review_arn = aws_smithy_http::label::fmt_string(input_16, false);
             if code_review_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "code_review_arn",
                     details: "cannot be empty or unset",
                 });
@@ -1549,26 +1798,26 @@ impl ListRecommendationFeedbackInput {
             _input: &crate::input::ListRecommendationFeedbackInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_17) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_17));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_17));
             }
             if let Some(inner_18) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_18).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_18).encode(),
                 );
             }
             if let Some(inner_19) = &_input.user_ids {
                 for inner_20 in inner_19 {
-                    query.push_kv("UserIds", &smithy_http::query::fmt_string(&inner_20));
+                    query.push_kv("UserIds", &aws_smithy_http::query::fmt_string(&inner_20));
                 }
             }
             if let Some(inner_21) = &_input.recommendation_ids {
                 for inner_22 in inner_21 {
                     query.push_kv(
                         "RecommendationIds",
-                        &smithy_http::query::fmt_string(&inner_22),
+                        &aws_smithy_http::query::fmt_string(&inner_22),
                     );
                 }
             }
@@ -1577,7 +1826,7 @@ impl ListRecommendationFeedbackInput {
         fn update_http_builder(
             input: &crate::input::ListRecommendationFeedbackInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1587,23 +1836,23 @@ impl ListRecommendationFeedbackInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListRecommendationFeedbackInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1626,15 +1875,15 @@ impl ListRecommendationFeedbackInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListRecommendationFeedback::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListRecommendationFeedback",
             "codegurureviewer",
         ));
@@ -1643,10 +1892,10 @@ impl ListRecommendationFeedbackInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1678,6 +1927,9 @@ pub mod list_recommendations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>
+        /// Pagination token.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1689,6 +1941,9 @@ pub mod list_recommendations_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>
+        /// The maximum number of results that are returned per call. The default is 100.
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1701,6 +1956,10 @@ pub mod list_recommendations_input {
             self.code_review_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+        /// <code>CodeReview</code>
+        /// </a> object.
+        /// </p>
         pub fn set_code_review_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1713,7 +1972,7 @@ pub mod list_recommendations_input {
             self,
         ) -> std::result::Result<
             crate::input::ListRecommendationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListRecommendationsInput {
                 next_token: self.next_token,
@@ -1734,27 +1993,27 @@ impl ListRecommendationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListRecommendations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListRecommendationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_23 = &_input.code_review_arn;
             let input_23 =
                 input_23
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "code_review_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let code_review_arn = smithy_http::label::fmt_string(input_23, false);
+            let code_review_arn = aws_smithy_http::label::fmt_string(input_23, false);
             if code_review_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "code_review_arn",
                     details: "cannot be empty or unset",
                 });
@@ -1768,14 +2027,14 @@ impl ListRecommendationsInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListRecommendationsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_24) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_24));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_24));
             }
             if let Some(inner_25) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_25).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_25).encode(),
                 );
             }
         }
@@ -1783,7 +2042,7 @@ impl ListRecommendationsInput {
         fn update_http_builder(
             input: &crate::input::ListRecommendationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1793,23 +2052,23 @@ impl ListRecommendationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListRecommendationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1832,15 +2091,15 @@ impl ListRecommendationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListRecommendations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListRecommendations",
             "codegurureviewer",
         ));
@@ -1849,10 +2108,10 @@ impl ListRecommendationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1881,12 +2140,18 @@ pub mod list_repository_associations_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `provider_types`.
+        ///
+        /// To override the contents of this collection use [`set_provider_types`](Self::set_provider_types).
+        ///
+        /// <p>List of provider types to use as a filter.</p>
         pub fn provider_types(mut self, input: impl Into<crate::model::ProviderType>) -> Self {
             let mut v = self.provider_types.unwrap_or_default();
             v.push(input.into());
             self.provider_types = Some(v);
             self
         }
+        /// <p>List of provider types to use as a filter.</p>
         pub fn set_provider_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProviderType>>,
@@ -1894,6 +2159,65 @@ pub mod list_repository_associations_input {
             self.provider_types = input;
             self
         }
+        /// Appends an item to `states`.
+        ///
+        /// To override the contents of this collection use [`set_states`](Self::set_states).
+        ///
+        /// <p>List of repository association states to use as a filter.</p>
+        /// <p>The valid repository association states are:</p>
+        /// <ul>
+        /// <li>            
+        /// <p>
+        /// <b>Associated</b>: The repository
+        /// association is complete.
+        /// </p>            
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Associating</b>: CodeGuru Reviewer is:               
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// Setting up pull request notifications. This is required
+        /// for pull requests to trigger a CodeGuru Reviewer review.
+        /// </p>
+        /// <note>
+        /// <p>
+        /// If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>,
+        /// CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks,
+        /// reviews of code in your repository cannot be triggered.
+        /// </p>
+        /// </note>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// Setting up source code access. This is required for CodeGuru Reviewer to securely
+        /// clone code in your repository.
+        /// </p>
+        /// </li>
+        /// </ul>            
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Failed</b>: The repository failed to associate or disassociate.
+        /// </p>            
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
+        /// source code access.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association
+        /// with this repository if you want to review source code in it later. You can control access to code reviews created in an
+        /// associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to
+        /// associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn states(
             mut self,
             input: impl Into<crate::model::RepositoryAssociationState>,
@@ -1903,6 +2227,61 @@ pub mod list_repository_associations_input {
             self.states = Some(v);
             self
         }
+        /// <p>List of repository association states to use as a filter.</p>
+        /// <p>The valid repository association states are:</p>
+        /// <ul>
+        /// <li>            
+        /// <p>
+        /// <b>Associated</b>: The repository
+        /// association is complete.
+        /// </p>            
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Associating</b>: CodeGuru Reviewer is:               
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// Setting up pull request notifications. This is required
+        /// for pull requests to trigger a CodeGuru Reviewer review.
+        /// </p>
+        /// <note>
+        /// <p>
+        /// If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>,
+        /// CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks,
+        /// reviews of code in your repository cannot be triggered.
+        /// </p>
+        /// </note>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// Setting up source code access. This is required for CodeGuru Reviewer to securely
+        /// clone code in your repository.
+        /// </p>
+        /// </li>
+        /// </ul>            
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Failed</b>: The repository failed to associate or disassociate.
+        /// </p>            
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
+        /// source code access.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association
+        /// with this repository if you want to review source code in it later. You can control access to code reviews created in an
+        /// associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to
+        /// associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_states(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RepositoryAssociationState>>,
@@ -1910,12 +2289,18 @@ pub mod list_repository_associations_input {
             self.states = input;
             self
         }
+        /// Appends an item to `names`.
+        ///
+        /// To override the contents of this collection use [`set_names`](Self::set_names).
+        ///
+        /// <p>List of repository names to use as a filter.</p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
             v.push(input.into());
             self.names = Some(v);
             self
         }
+        /// <p>List of repository names to use as a filter.</p>
         pub fn set_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1923,12 +2308,24 @@ pub mod list_repository_associations_input {
             self.names = input;
             self
         }
+        /// Appends an item to `owners`.
+        ///
+        /// To override the contents of this collection use [`set_owners`](Self::set_owners).
+        ///
+        /// <p>List of owners to use as a filter.
+        /// For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was
+        /// used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account
+        /// that was used to associate the repository. </p>
         pub fn owners(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.owners.unwrap_or_default();
             v.push(input.into());
             self.owners = Some(v);
             self
         }
+        /// <p>List of owners to use as a filter.
+        /// For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was
+        /// used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account
+        /// that was used to associate the repository. </p>
         pub fn set_owners(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1948,6 +2345,14 @@ pub mod list_repository_associations_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of repository association results returned by <code>ListRepositoryAssociations</code>
+        /// in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns
+        /// <code>maxResults</code> results in a single page with a <code>nextToken</code> response
+        /// element. The remaining results of the initial request
+        /// can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned
+        /// <code>nextToken</code> value.
+        /// This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code>
+        /// returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1965,6 +2370,15 @@ pub mod list_repository_associations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated
+        /// <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results
+        /// exceeded the value of that parameter. Pagination continues from the end of the previous results
+        /// that returned the <code>nextToken</code> value.
+        /// </p>
+        /// <note>
+        /// <p>Treat this token as an opaque identifier that is only used to retrieve
+        /// the next items in a list and not for other programmatic purposes.</p>
+        /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1974,7 +2388,7 @@ pub mod list_repository_associations_input {
             self,
         ) -> std::result::Result<
             crate::input::ListRepositoryAssociationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListRepositoryAssociationsInput {
                 provider_types: self.provider_types,
@@ -1999,16 +2413,16 @@ impl ListRepositoryAssociationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListRepositoryAssociations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListRepositoryAssociationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/associations").expect("formatting should succeed");
             Ok(())
         }
@@ -2016,42 +2430,45 @@ impl ListRepositoryAssociationsInput {
             _input: &crate::input::ListRepositoryAssociationsInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_26) = &_input.provider_types {
                 for inner_27 in inner_26 {
-                    query.push_kv("ProviderType", &smithy_http::query::fmt_string(&inner_27));
+                    query.push_kv(
+                        "ProviderType",
+                        &aws_smithy_http::query::fmt_string(&inner_27),
+                    );
                 }
             }
             if let Some(inner_28) = &_input.states {
                 for inner_29 in inner_28 {
-                    query.push_kv("State", &smithy_http::query::fmt_string(&inner_29));
+                    query.push_kv("State", &aws_smithy_http::query::fmt_string(&inner_29));
                 }
             }
             if let Some(inner_30) = &_input.names {
                 for inner_31 in inner_30 {
-                    query.push_kv("Name", &smithy_http::query::fmt_string(&inner_31));
+                    query.push_kv("Name", &aws_smithy_http::query::fmt_string(&inner_31));
                 }
             }
             if let Some(inner_32) = &_input.owners {
                 for inner_33 in inner_32 {
-                    query.push_kv("Owner", &smithy_http::query::fmt_string(&inner_33));
+                    query.push_kv("Owner", &aws_smithy_http::query::fmt_string(&inner_33));
                 }
             }
             if let Some(inner_34) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_34).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_34).encode(),
                 );
             }
             if let Some(inner_35) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_35));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_35));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListRepositoryAssociationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2061,23 +2478,23 @@ impl ListRepositoryAssociationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListRepositoryAssociationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2100,15 +2517,15 @@ impl ListRepositoryAssociationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListRepositoryAssociations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListRepositoryAssociations",
             "codegurureviewer",
         ));
@@ -2117,10 +2534,10 @@ impl ListRepositoryAssociationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2157,6 +2574,16 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the  
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+        /// <code>RepositoryAssociation</code>
+        /// </a> object.
+        /// You can retrieve this ARN by calling
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+        /// <code>ListRepositoryAssociations</code>
+        /// </a>.
+        /// </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2166,7 +2593,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -2185,27 +2612,27 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_36 = &_input.resource_arn;
             let input_36 =
                 input_36
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_36, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_36, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -2218,7 +2645,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2227,23 +2654,23 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2266,15 +2693,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "codegurureviewer",
         ));
@@ -2283,10 +2710,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2319,6 +2746,10 @@ pub mod put_recommendation_feedback_input {
             self.code_review_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+        /// <code>CodeReview</code>
+        /// </a> object.
+        /// </p>
         pub fn set_code_review_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2333,6 +2764,9 @@ pub mod put_recommendation_feedback_input {
             self.recommendation_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
+        /// </p>
         pub fn set_recommendation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2340,12 +2774,22 @@ pub mod put_recommendation_feedback_input {
             self.recommendation_id = input;
             self
         }
+        /// Appends an item to `reactions`.
+        ///
+        /// To override the contents of this collection use [`set_reactions`](Self::set_reactions).
+        ///
+        /// <p>
+        /// List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback.
+        /// </p>
         pub fn reactions(mut self, input: impl Into<crate::model::Reaction>) -> Self {
             let mut v = self.reactions.unwrap_or_default();
             v.push(input.into());
             self.reactions = Some(v);
             self
         }
+        /// <p>
+        /// List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback.
+        /// </p>
         pub fn set_reactions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Reaction>>,
@@ -2358,7 +2802,7 @@ pub mod put_recommendation_feedback_input {
             self,
         ) -> std::result::Result<
             crate::input::PutRecommendationFeedbackInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutRecommendationFeedbackInput {
                 code_review_arn: self.code_review_arn,
@@ -2380,16 +2824,16 @@ impl PutRecommendationFeedbackInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutRecommendationFeedback,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutRecommendationFeedbackInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/feedback").expect("formatting should succeed");
             Ok(())
         }
@@ -2397,7 +2841,7 @@ impl PutRecommendationFeedbackInput {
         fn update_http_builder(
             input: &crate::input::PutRecommendationFeedbackInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2406,27 +2850,29 @@ impl PutRecommendationFeedbackInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutRecommendationFeedbackInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_recommendation_feedback(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2449,15 +2895,15 @@ impl PutRecommendationFeedbackInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutRecommendationFeedback::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutRecommendationFeedback",
             "codegurureviewer",
         ));
@@ -2466,10 +2912,10 @@ impl PutRecommendationFeedbackInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2509,10 +2955,40 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the  
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+        /// <code>RepositoryAssociation</code>
+        /// </a> object.
+        /// You can retrieve this ARN by calling
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+        /// <code>ListRepositoryAssociations</code>
+        /// </a>.
+        /// </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>
+        /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
+        /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
+        /// keys are case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>An optional field known as a <i>tag value</i> (for example,
+        /// <code>111122223333</code>, <code>Production</code>, or a team name).
+        /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
+        /// values are case sensitive.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2523,6 +2999,22 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>
+        /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
+        /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
+        /// keys are case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>An optional field known as a <i>tag value</i> (for example,
+        /// <code>111122223333</code>, <code>Production</code>, or a team name).
+        /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
+        /// values are case sensitive.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2535,8 +3027,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -2555,27 +3049,27 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_37 = &_input.resource_arn;
             let input_37 =
                 input_37
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_37, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_37, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -2588,7 +3082,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2597,24 +3091,26 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2637,25 +3133,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "codegurureviewer",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "codegurureviewer",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2693,16 +3191,32 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the  
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+        /// <code>RepositoryAssociation</code>
+        /// </a> object.
+        /// You can retrieve this ARN by calling
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+        /// <code>ListRepositoryAssociations</code>
+        /// </a>.
+        /// </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>A list of the keys for each tag you want to remove from an associated repository.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>A list of the keys for each tag you want to remove from an associated repository.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2713,8 +3227,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -2733,27 +3249,27 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_38 = &_input.resource_arn;
             let input_38 =
                 input_38
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_38, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_38, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -2763,10 +3279,10 @@ impl UntagResourceInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_39) = &_input.tag_keys {
                 for inner_40 in inner_39 {
-                    query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_40));
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_40));
                 }
             }
         }
@@ -2774,7 +3290,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2784,23 +3300,23 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2823,25 +3339,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "codegurureviewer",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "codegurureviewer",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2855,6 +3373,7 @@ impl UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -2881,6 +3400,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -2923,6 +3443,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRecommendationFeedbackInput {
@@ -2950,6 +3471,7 @@ impl std::fmt::Debug for PutRecommendationFeedbackInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -2973,6 +3495,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRepositoryAssociationsInput {
@@ -3074,6 +3597,7 @@ impl std::fmt::Debug for ListRepositoryAssociationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecommendationsInput {
@@ -3101,6 +3625,7 @@ impl std::fmt::Debug for ListRecommendationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecommendationFeedbackInput {
@@ -3144,6 +3669,7 @@ impl std::fmt::Debug for ListRecommendationFeedbackInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCodeReviewsInput {
@@ -3209,6 +3735,7 @@ impl std::fmt::Debug for ListCodeReviewsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateRepositoryInput {
@@ -3232,6 +3759,7 @@ impl std::fmt::Debug for DisassociateRepositoryInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRepositoryAssociationInput {
@@ -3255,6 +3783,7 @@ impl std::fmt::Debug for DescribeRepositoryAssociationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecommendationFeedbackInput {
@@ -3287,6 +3816,7 @@ impl std::fmt::Debug for DescribeRecommendationFeedbackInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCodeReviewInput {
@@ -3304,6 +3834,7 @@ impl std::fmt::Debug for DescribeCodeReviewInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCodeReviewInput {
@@ -3354,6 +3885,7 @@ impl std::fmt::Debug for CreateCodeReviewInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateRepositoryInput {

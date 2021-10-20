@@ -5,8 +5,8 @@
 
 use std::str::FromStr;
 
+use aws_smithy_types::retry::{RetryConfigBuilder, RetryConfigErr, RetryMode};
 use aws_types::os_shim_internal::Env;
-use smithy_types::retry::{RetryConfigBuilder, RetryConfigErr, RetryMode};
 
 const ENV_VAR_MAX_ATTEMPTS: &str = "AWS_MAX_ATTEMPTS";
 const ENV_VAR_RETRY_MODE: &str = "AWS_RETRY_MODE";
@@ -79,8 +79,8 @@ impl EnvironmentVariableRetryConfigProvider {
 
 #[cfg(test)]
 mod test {
+    use aws_smithy_types::retry::{RetryConfig, RetryConfigErr, RetryMode};
     use aws_types::os_shim_internal::Env;
-    use smithy_types::retry::{RetryConfig, RetryConfigErr, RetryMode};
 
     use super::{EnvironmentVariableRetryConfigProvider, ENV_VAR_MAX_ATTEMPTS, ENV_VAR_RETRY_MODE};
 
@@ -89,11 +89,11 @@ mod test {
     }
 
     #[test]
-    fn no_retry_config() {
-        let builder = test_provider(&[]).retry_config_builder().unwrap();
+    fn defaults() {
+        let built = test_provider(&[]).retry_config_builder().unwrap().build();
 
-        assert_eq!(builder.mode, None);
-        assert_eq!(builder.max_attempts, None);
+        assert_eq!(built.mode(), RetryMode::Standard);
+        assert_eq!(built.max_attempts(), 3);
     }
 
     #[test]

@@ -23,7 +23,7 @@ pub fn parse_get_device_registration_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetDeviceRegistrationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeviceRegistrationError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -77,7 +77,7 @@ pub fn parse_send_heartbeat_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendHeartbeatError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendHeartbeatError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

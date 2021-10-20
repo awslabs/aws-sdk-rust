@@ -24,12 +24,20 @@ pub mod update_records_output {
         pub(crate) records: std::option::Option<std::vec::Vec<crate::model::Record>>,
     }
     impl Builder {
+        /// Appends an item to `records`.
+        ///
+        /// To override the contents of this collection use [`set_records`](Self::set_records).
+        ///
+        /// A list of records that have been
+        /// updated.
         pub fn records(mut self, input: impl Into<crate::model::Record>) -> Self {
             let mut v = self.records.unwrap_or_default();
             v.push(input.into());
             self.records = Some(v);
             self
         }
+        /// A list of records that have been
+        /// updated.
         pub fn set_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Record>>,
@@ -150,6 +158,8 @@ pub mod set_identity_pool_configuration_output {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
+        /// Amazon Cognito.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -162,6 +172,7 @@ pub mod set_identity_pool_configuration_output {
             self.push_sync = Some(input);
             self
         }
+        /// <p>Options to apply to this identity pool for push synchronization.</p>
         pub fn set_push_sync(mut self, input: std::option::Option<crate::model::PushSync>) -> Self {
             self.push_sync = input;
             self
@@ -171,6 +182,7 @@ pub mod set_identity_pool_configuration_output {
             self.cognito_streams = Some(input);
             self
         }
+        /// Options to apply to this identity pool for Amazon Cognito streams.
         pub fn set_cognito_streams(
             mut self,
             input: std::option::Option<crate::model::CognitoStreams>,
@@ -195,6 +207,7 @@ impl SetIdentityPoolConfigurationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetCognitoEventsOutput {}
@@ -252,6 +265,7 @@ pub mod register_device_output {
             self.device_id = Some(input.into());
             self
         }
+        /// <p>The unique ID generated for this device by Cognito.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
@@ -337,12 +351,18 @@ pub mod list_records_output {
         pub(crate) sync_session_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `records`.
+        ///
+        /// To override the contents of this collection use [`set_records`](Self::set_records).
+        ///
+        /// A list of all records.
         pub fn records(mut self, input: impl Into<crate::model::Record>) -> Self {
             let mut v = self.records.unwrap_or_default();
             v.push(input.into());
             self.records = Some(v);
             self
         }
+        /// A list of all records.
         pub fn set_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Record>>,
@@ -356,6 +376,8 @@ pub mod list_records_output {
             self.next_token = Some(input.into());
             self
         }
+        /// A pagination token for obtaining the next
+        /// page of results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -365,6 +387,7 @@ pub mod list_records_output {
             self.count = Some(input);
             self
         }
+        /// Total number of records.
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
@@ -375,6 +398,8 @@ pub mod list_records_output {
             self.dataset_sync_count = Some(input);
             self
         }
+        /// Server sync count for this
+        /// dataset.
         pub fn set_dataset_sync_count(mut self, input: std::option::Option<i64>) -> Self {
             self.dataset_sync_count = input;
             self
@@ -385,6 +410,8 @@ pub mod list_records_output {
             self.last_modified_by = Some(input.into());
             self
         }
+        /// The user/device that made the last
+        /// change to this record.
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -392,12 +419,20 @@ pub mod list_records_output {
             self.last_modified_by = input;
             self
         }
+        /// Appends an item to `merged_dataset_names`.
+        ///
+        /// To override the contents of this collection use [`set_merged_dataset_names`](Self::set_merged_dataset_names).
+        ///
+        /// Names of merged
+        /// datasets.
         pub fn merged_dataset_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.merged_dataset_names.unwrap_or_default();
             v.push(input.into());
             self.merged_dataset_names = Some(v);
             self
         }
+        /// Names of merged
+        /// datasets.
         pub fn set_merged_dataset_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -411,6 +446,8 @@ pub mod list_records_output {
             self.dataset_exists = Some(input);
             self
         }
+        /// Indicates whether the dataset
+        /// exists.
         pub fn set_dataset_exists(mut self, input: std::option::Option<bool>) -> Self {
             self.dataset_exists = input;
             self
@@ -421,6 +458,8 @@ pub mod list_records_output {
             self.dataset_deleted_after_requested_sync_count = Some(input);
             self
         }
+        /// A boolean value
+        /// specifying whether to delete the dataset locally.
         pub fn set_dataset_deleted_after_requested_sync_count(
             mut self,
             input: std::option::Option<bool>,
@@ -434,6 +473,8 @@ pub mod list_records_output {
             self.sync_session_token = Some(input.into());
             self
         }
+        /// A token containing a session ID,
+        /// identity ID, and expiration.
         pub fn set_sync_session_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -507,6 +548,12 @@ pub mod list_identity_pool_usage_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `identity_pool_usages`.
+        ///
+        /// To override the contents of this collection use [`set_identity_pool_usages`](Self::set_identity_pool_usages).
+        ///
+        /// Usage information for
+        /// the identity pools.
         pub fn identity_pool_usages(
             mut self,
             input: impl Into<crate::model::IdentityPoolUsage>,
@@ -516,6 +563,8 @@ pub mod list_identity_pool_usage_output {
             self.identity_pool_usages = Some(v);
             self
         }
+        /// Usage information for
+        /// the identity pools.
         pub fn set_identity_pool_usages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IdentityPoolUsage>>,
@@ -529,6 +578,8 @@ pub mod list_identity_pool_usage_output {
             self.max_results = Some(input);
             self
         }
+        /// The maximum number of results to
+        /// be returned.
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -539,6 +590,8 @@ pub mod list_identity_pool_usage_output {
             self.count = Some(input);
             self
         }
+        /// Total number of identities for the
+        /// identity pool.
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
@@ -549,6 +602,8 @@ pub mod list_identity_pool_usage_output {
             self.next_token = Some(input.into());
             self
         }
+        /// A pagination token for obtaining
+        /// the next page of results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -604,12 +659,18 @@ pub mod list_datasets_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `datasets`.
+        ///
+        /// To override the contents of this collection use [`set_datasets`](Self::set_datasets).
+        ///
+        /// A set of datasets.
         pub fn datasets(mut self, input: impl Into<crate::model::Dataset>) -> Self {
             let mut v = self.datasets.unwrap_or_default();
             v.push(input.into());
             self.datasets = Some(v);
             self
         }
+        /// A set of datasets.
         pub fn set_datasets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Dataset>>,
@@ -622,6 +683,7 @@ pub mod list_datasets_output {
             self.count = Some(input);
             self
         }
+        /// Number of datasets returned.
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
@@ -632,6 +694,8 @@ pub mod list_datasets_output {
             self.next_token = Some(input.into());
             self
         }
+        /// A pagination token for obtaining the next
+        /// page of results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -691,6 +755,8 @@ pub mod get_identity_pool_configuration_output {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by
+        /// Amazon Cognito.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -703,6 +769,7 @@ pub mod get_identity_pool_configuration_output {
             self.push_sync = Some(input);
             self
         }
+        /// <p>Options to apply to this identity pool for push synchronization.</p>
         pub fn set_push_sync(mut self, input: std::option::Option<crate::model::PushSync>) -> Self {
             self.push_sync = input;
             self
@@ -712,6 +779,7 @@ pub mod get_identity_pool_configuration_output {
             self.cognito_streams = Some(input);
             self
         }
+        /// Options to apply to this identity pool for Amazon Cognito streams.
         pub fn set_cognito_streams(
             mut self,
             input: std::option::Option<crate::model::CognitoStreams>,
@@ -762,6 +830,11 @@ pub mod get_cognito_events_output {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `events`.
+        ///
+        /// To override the contents of this collection use [`set_events`](Self::set_events).
+        ///
+        /// <p>The Cognito Events returned from the GetCognitoEvents request</p>
         pub fn events(
             mut self,
             k: impl Into<std::string::String>,
@@ -772,6 +845,7 @@ pub mod get_cognito_events_output {
             self.events = Some(hash_map);
             self
         }
+        /// <p>The Cognito Events returned from the GetCognitoEvents request</p>
         pub fn set_events(
             mut self,
             input: std::option::Option<
@@ -805,9 +879,9 @@ pub struct GetBulkPublishDetailsOutput {
     /// unique within a region.
     pub identity_pool_id: std::option::Option<std::string::String>,
     /// The date/time at which the last bulk publish was initiated.
-    pub bulk_publish_start_time: std::option::Option<smithy_types::Instant>,
+    pub bulk_publish_start_time: std::option::Option<aws_smithy_types::Instant>,
     /// If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
-    pub bulk_publish_complete_time: std::option::Option<smithy_types::Instant>,
+    pub bulk_publish_complete_time: std::option::Option<aws_smithy_types::Instant>,
     /// Status of the last bulk publish operation, valid values are:
     /// <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p>
     /// <p>IN_PROGRESS - Data is being published to the configured stream</p>
@@ -838,8 +912,8 @@ pub mod get_bulk_publish_details_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
-        pub(crate) bulk_publish_start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) bulk_publish_complete_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) bulk_publish_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) bulk_publish_complete_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) bulk_publish_status: std::option::Option<crate::model::BulkPublishStatus>,
         pub(crate) failure_message: std::option::Option<std::string::String>,
     }
@@ -851,6 +925,9 @@ pub mod get_bulk_publish_details_output {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// A name-spaced GUID (for example,
+        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+        /// unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -859,25 +936,27 @@ pub mod get_bulk_publish_details_output {
             self
         }
         /// The date/time at which the last bulk publish was initiated.
-        pub fn bulk_publish_start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn bulk_publish_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.bulk_publish_start_time = Some(input);
             self
         }
+        /// The date/time at which the last bulk publish was initiated.
         pub fn set_bulk_publish_start_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.bulk_publish_start_time = input;
             self
         }
         /// If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
-        pub fn bulk_publish_complete_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn bulk_publish_complete_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.bulk_publish_complete_time = Some(input);
             self
         }
+        /// If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
         pub fn set_bulk_publish_complete_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.bulk_publish_complete_time = input;
             self
@@ -891,6 +970,11 @@ pub mod get_bulk_publish_details_output {
             self.bulk_publish_status = Some(input);
             self
         }
+        /// Status of the last bulk publish operation, valid values are:
+        /// <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p>
+        /// <p>IN_PROGRESS - Data is being published to the configured stream</p>
+        /// <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p>
+        /// <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>
         pub fn set_bulk_publish_status(
             mut self,
             input: std::option::Option<crate::model::BulkPublishStatus>,
@@ -903,6 +987,7 @@ pub mod get_bulk_publish_details_output {
             self.failure_message = Some(input.into());
             self
         }
+        /// If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
         pub fn set_failure_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -960,6 +1045,8 @@ pub mod describe_identity_usage_output {
             self.identity_usage = Some(input);
             self
         }
+        /// Usage information for the
+        /// identity.
         pub fn set_identity_usage(
             mut self,
             input: std::option::Option<crate::model::IdentityUsage>,
@@ -1013,6 +1100,8 @@ pub mod describe_identity_pool_usage_output {
             self.identity_pool_usage = Some(input);
             self
         }
+        /// Information about the
+        /// usage of the identity pool.
         pub fn set_identity_pool_usage(
             mut self,
             input: std::option::Option<crate::model::IdentityPoolUsage>,
@@ -1072,6 +1161,11 @@ pub mod describe_dataset_output {
             self.dataset = Some(input);
             self
         }
+        /// Meta data for a collection of data for an
+        /// identity. An identity can have multiple datasets. A dataset can be general or associated with
+        /// a particular entity in an application (like a saved game). Datasets are automatically created
+        /// if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value
+        /// pairs.
         pub fn set_dataset(mut self, input: std::option::Option<crate::model::Dataset>) -> Self {
             self.dataset = input;
             self
@@ -1128,6 +1222,11 @@ pub mod delete_dataset_output {
             self.dataset = Some(input);
             self
         }
+        /// A collection of data for an identity pool.
+        /// An identity pool can have multiple datasets. A dataset is per identity and can be general or
+        /// associated with a particular entity in an application (like a saved game). Datasets are
+        /// automatically created if they don't exist. Data is synced by dataset, and a dataset can hold
+        /// up to 1MB of key-value pairs.
         pub fn set_dataset(mut self, input: std::option::Option<crate::model::Dataset>) -> Self {
             self.dataset = input;
             self
@@ -1179,6 +1278,9 @@ pub mod bulk_publish_output {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// A name-spaced GUID (for example,
+        /// us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is
+        /// unique within a region.
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,

@@ -10,12 +10,22 @@ pub mod batch_execute_statement_input {
             std::option::Option<std::vec::Vec<crate::model::BatchStatementRequest>>,
     }
     impl Builder {
+        /// Appends an item to `statements`.
+        ///
+        /// To override the contents of this collection use [`set_statements`](Self::set_statements).
+        ///
+        /// <p>
+        /// The list of PartiQL statements representing the batch to run.
+        /// </p>
         pub fn statements(mut self, input: impl Into<crate::model::BatchStatementRequest>) -> Self {
             let mut v = self.statements.unwrap_or_default();
             v.push(input.into());
             self.statements = Some(v);
             self
         }
+        /// <p>
+        /// The list of PartiQL statements representing the batch to run.
+        /// </p>
         pub fn set_statements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchStatementRequest>>,
@@ -28,7 +38,7 @@ pub mod batch_execute_statement_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchExecuteStatementInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchExecuteStatementInput {
                 statements: self.statements,
@@ -47,16 +57,16 @@ impl BatchExecuteStatementInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchExecuteStatement,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchExecuteStatementInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -64,7 +74,7 @@ impl BatchExecuteStatementInput {
         fn update_http_builder(
             input: &crate::input::BatchExecuteStatementInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -73,32 +83,34 @@ impl BatchExecuteStatementInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchExecuteStatementInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.BatchExecuteStatement",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_execute_statement(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -121,15 +133,15 @@ impl BatchExecuteStatementInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchExecuteStatement::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchExecuteStatement",
             "dynamodb",
         ));
@@ -138,10 +150,10 @@ impl BatchExecuteStatementInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -168,6 +180,90 @@ pub mod batch_get_item_input {
             std::option::Option<crate::model::ReturnConsumedCapacity>,
     }
     impl Builder {
+        /// Adds a key-value pair to `request_items`.
+        ///
+        /// To override the contents of this collection use [`set_request_items`](Self::set_request_items).
+        ///
+        /// <p>A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <code>BatchGetItem</code> request.</p>
+        /// <p>Each element in the map of items to retrieve consists of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read is used; if
+        /// <code>false</code> (the default), an eventually consistent read is used.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ExpressionAttributeNames</code> - One or more substitution tokens for attribute names in the <code>ProjectionExpression</code> parameter. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p>
+        /// </li>
+        /// <li>
+        /// <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p>
+        /// </li>
+        /// <li>
+        /// <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Percentile</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>{"#P":"Percentile"}</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>You could then use this substitution in an expression, as in this example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>#P = :val</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+        /// </note>
+        /// <p>For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB
+        /// Developer Guide</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Keys</code> - An array of primary key attribute values that define specific items in the
+        /// table. For each primary key, you must provide <i>all</i> of the key attributes. For
+        /// example, with a simple primary key, you only need to provide the partition key value. For a
+        /// composite key, you must provide <i>both</i> the partition key value and the sort key value.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ProjectionExpression</code> - A string that identifies one or more
+        /// attributes to retrieve from the table. These attributes can include scalars,
+        /// sets, or elements of a JSON document. The attributes in the expression must be
+        /// separated by commas.</p>
+        /// <p>If no attribute names are specified, then all attributes are returned. If any
+        /// of the requested attributes are not found, they do not appear in the
+        /// result.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AttributesToGet</code> - This is a legacy parameter.  Use <code>ProjectionExpression</code> instead.  For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        ///
+        /// </p>
+        ///
+        /// </li>
+        /// </ul>
         pub fn request_items(
             mut self,
             k: impl Into<std::string::String>,
@@ -178,6 +274,86 @@ pub mod batch_get_item_input {
             self.request_items = Some(hash_map);
             self
         }
+        /// <p>A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <code>BatchGetItem</code> request.</p>
+        /// <p>Each element in the map of items to retrieve consists of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read is used; if
+        /// <code>false</code> (the default), an eventually consistent read is used.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ExpressionAttributeNames</code> - One or more substitution tokens for attribute names in the <code>ProjectionExpression</code> parameter. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p>
+        /// </li>
+        /// <li>
+        /// <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p>
+        /// </li>
+        /// <li>
+        /// <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Percentile</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>{"#P":"Percentile"}</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>You could then use this substitution in an expression, as in this example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>#P = :val</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+        /// </note>
+        /// <p>For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB
+        /// Developer Guide</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Keys</code> - An array of primary key attribute values that define specific items in the
+        /// table. For each primary key, you must provide <i>all</i> of the key attributes. For
+        /// example, with a simple primary key, you only need to provide the partition key value. For a
+        /// composite key, you must provide <i>both</i> the partition key value and the sort key value.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ProjectionExpression</code> - A string that identifies one or more
+        /// attributes to retrieve from the table. These attributes can include scalars,
+        /// sets, or elements of a JSON document. The attributes in the expression must be
+        /// separated by commas.</p>
+        /// <p>If no attribute names are specified, then all attributes are returned. If any
+        /// of the requested attributes are not found, they do not appear in the
+        /// result.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AttributesToGet</code> - This is a legacy parameter.  Use <code>ProjectionExpression</code> instead.  For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        ///
+        /// </p>
+        ///
+        /// </li>
+        /// </ul>
         pub fn set_request_items(
             mut self,
             input: std::option::Option<
@@ -210,6 +386,22 @@ pub mod batch_get_item_input {
             self.return_consumed_capacity = Some(input);
             self
         }
+        /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p>
+        /// <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all.  In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p>
+        /// </li>
+        /// </ul>
         pub fn set_return_consumed_capacity(
             mut self,
             input: std::option::Option<crate::model::ReturnConsumedCapacity>,
@@ -220,8 +412,10 @@ pub mod batch_get_item_input {
         /// Consumes the builder and constructs a [`BatchGetItemInput`](crate::input::BatchGetItemInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::BatchGetItemInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::BatchGetItemInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::BatchGetItemInput {
                 request_items: self.request_items,
                 return_consumed_capacity: self.return_consumed_capacity,
@@ -240,16 +434,16 @@ impl BatchGetItemInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchGetItem,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchGetItemInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -257,7 +451,7 @@ impl BatchGetItemInput {
         fn update_http_builder(
             input: &crate::input::BatchGetItemInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -266,29 +460,31 @@ impl BatchGetItemInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchGetItemInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.BatchGetItem",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_batch_get_item(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -311,25 +507,27 @@ impl BatchGetItemInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::BatchGetItem::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "BatchGetItem",
-                    "dynamodb",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchGetItem::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "BatchGetItem",
+            "dynamodb",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -361,6 +559,47 @@ pub mod batch_write_item_input {
             std::option::Option<crate::model::ReturnItemCollectionMetrics>,
     }
     impl Builder {
+        /// Adds a key-value pair to `request_items`.
+        ///
+        /// To override the contents of this collection use [`set_request_items`](Self::set_request_items).
+        ///
+        /// <p>A map of one or more table names and, for each table, a list of operations to be performed
+        /// (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the
+        /// following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The
+        /// item to be deleted is identified by a <code>Key</code> subelement:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Key</code> - A map of primary key attribute values that uniquely identify the item.
+        /// Each entry in this map consists of an attribute name and an attribute value. For each
+        /// primary key, you must provide <i>all</i> of the key attributes. For example, with a
+        /// simple primary key, you only need to provide a value for the partition key. For a
+        /// composite primary key, you must provide values for <i>both</i> the partition key and the sort key.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to
+        /// be put is identified by an <code>Item</code> subelement:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Item</code> - A map of attributes and their values. Each entry in
+        /// this map consists of an attribute name and an attribute value. Attribute
+        /// values must not be null; string and binary type attributes must have
+        /// lengths greater than zero; and set type attributes must not be empty.
+        /// Requests that contain empty values are rejected with a
+        /// <code>ValidationException</code> exception.</p>
+        /// <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn request_items(
             mut self,
             k: impl Into<std::string::String>,
@@ -371,6 +610,43 @@ pub mod batch_write_item_input {
             self.request_items = Some(hash_map);
             self
         }
+        /// <p>A map of one or more table names and, for each table, a list of operations to be performed
+        /// (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the
+        /// following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified item. The
+        /// item to be deleted is identified by a <code>Key</code> subelement:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Key</code> - A map of primary key attribute values that uniquely identify the item.
+        /// Each entry in this map consists of an attribute name and an attribute value. For each
+        /// primary key, you must provide <i>all</i> of the key attributes. For example, with a
+        /// simple primary key, you only need to provide a value for the partition key. For a
+        /// composite primary key, you must provide values for <i>both</i> the partition key and the sort key.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified item. The item to
+        /// be put is identified by an <code>Item</code> subelement:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Item</code> - A map of attributes and their values. Each entry in
+        /// this map consists of an attribute name and an attribute value. Attribute
+        /// values must not be null; string and binary type attributes must have
+        /// lengths greater than zero; and set type attributes must not be empty.
+        /// Requests that contain empty values are rejected with a
+        /// <code>ValidationException</code> exception.</p>
+        /// <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn set_request_items(
             mut self,
             input: std::option::Option<
@@ -406,6 +682,22 @@ pub mod batch_write_item_input {
             self.return_consumed_capacity = Some(input);
             self
         }
+        /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p>
+        /// <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all.  In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p>
+        /// </li>
+        /// </ul>
         pub fn set_return_consumed_capacity(
             mut self,
             input: std::option::Option<crate::model::ReturnConsumedCapacity>,
@@ -422,6 +714,8 @@ pub mod batch_write_item_input {
             self.return_item_collection_metrics = Some(input);
             self
         }
+        /// <p>Determines whether item collection metrics are returned.  If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during
+        /// the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
         pub fn set_return_item_collection_metrics(
             mut self,
             input: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
@@ -434,7 +728,7 @@ pub mod batch_write_item_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchWriteItemInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchWriteItemInput {
                 request_items: self.request_items,
@@ -455,16 +749,16 @@ impl BatchWriteItemInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchWriteItem,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchWriteItemInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -472,7 +766,7 @@ impl BatchWriteItemInput {
         fn update_http_builder(
             input: &crate::input::BatchWriteItemInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -481,32 +775,32 @@ impl BatchWriteItemInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchWriteItemInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.BatchWriteItem",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_write_item(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -529,15 +823,15 @@ impl BatchWriteItemInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchWriteItem::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchWriteItem",
             "dynamodb",
         ));
@@ -546,10 +840,10 @@ impl BatchWriteItemInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -578,6 +872,7 @@ pub mod create_backup_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -587,6 +882,7 @@ pub mod create_backup_input {
             self.backup_name = Some(input.into());
             self
         }
+        /// <p>Specified name for the backup.</p>
         pub fn set_backup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.backup_name = input;
             self
@@ -594,8 +890,10 @@ pub mod create_backup_input {
         /// Consumes the builder and constructs a [`CreateBackupInput`](crate::input::CreateBackupInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateBackupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateBackupInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateBackupInput {
                 table_name: self.table_name,
                 backup_name: self.backup_name,
@@ -614,16 +912,16 @@ impl CreateBackupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateBackup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateBackupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -631,7 +929,7 @@ impl CreateBackupInput {
         fn update_http_builder(
             input: &crate::input::CreateBackupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -640,31 +938,31 @@ impl CreateBackupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateBackupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.CreateBackup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_backup(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -687,25 +985,27 @@ impl CreateBackupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateBackup::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateBackup",
-                    "dynamodb",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateBackup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateBackup",
+            "dynamodb",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -734,6 +1034,7 @@ pub mod create_global_table_input {
             self.global_table_name = Some(input.into());
             self
         }
+        /// <p>The global table name.</p>
         pub fn set_global_table_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -741,12 +1042,18 @@ pub mod create_global_table_input {
             self.global_table_name = input;
             self
         }
+        /// Appends an item to `replication_group`.
+        ///
+        /// To override the contents of this collection use [`set_replication_group`](Self::set_replication_group).
+        ///
+        /// <p>The Regions where the global table needs to be created.</p>
         pub fn replication_group(mut self, input: impl Into<crate::model::Replica>) -> Self {
             let mut v = self.replication_group.unwrap_or_default();
             v.push(input.into());
             self.replication_group = Some(v);
             self
         }
+        /// <p>The Regions where the global table needs to be created.</p>
         pub fn set_replication_group(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Replica>>,
@@ -759,7 +1066,7 @@ pub mod create_global_table_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateGlobalTableInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateGlobalTableInput {
                 global_table_name: self.global_table_name,
@@ -779,16 +1086,16 @@ impl CreateGlobalTableInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateGlobalTable,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateGlobalTableInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -796,7 +1103,7 @@ impl CreateGlobalTableInput {
         fn update_http_builder(
             input: &crate::input::CreateGlobalTableInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -805,32 +1112,32 @@ impl CreateGlobalTableInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateGlobalTableInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.CreateGlobalTable",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_global_table(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -853,15 +1160,15 @@ impl CreateGlobalTableInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateGlobalTable::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateGlobalTable",
             "dynamodb",
         ));
@@ -870,10 +1177,10 @@ impl CreateGlobalTableInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -908,6 +1215,11 @@ pub mod create_table_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
+        /// Appends an item to `attribute_definitions`.
+        ///
+        /// To override the contents of this collection use [`set_attribute_definitions`](Self::set_attribute_definitions).
+        ///
+        /// <p>An array of attributes that describe the key schema for the table and indexes.</p>
         pub fn attribute_definitions(
             mut self,
             input: impl Into<crate::model::AttributeDefinition>,
@@ -917,6 +1229,7 @@ pub mod create_table_input {
             self.attribute_definitions = Some(v);
             self
         }
+        /// <p>An array of attributes that describe the key schema for the table and indexes.</p>
         pub fn set_attribute_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
@@ -929,16 +1242,105 @@ pub mod create_table_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table to create.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
         }
+        /// Appends an item to `key_schema`.
+        ///
+        /// To override the contents of this collection use [`set_key_schema`](Self::set_key_schema).
+        ///
+        /// <p>Specifies the attributes that make up the primary key for a table or an index. The attributes
+        /// in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more
+        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the
+        /// <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>Each <code>KeySchemaElement</code> in the array is composed of:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AttributeName</code> - The name of this key attribute.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KeyType</code> - The role that the key attribute will assume:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>HASH</code> - partition key</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RANGE</code> - sort key</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>The partition key of an item is also known as its <i>hash
+        /// attribute</i>. The term "hash attribute" derives from the DynamoDB usage of
+        /// an internal hash function to evenly distribute data items across partitions, based
+        /// on their partition key values.</p>
+        /// <p>The sort key of an item is also known as its <i>range attribute</i>.
+        /// The term "range attribute" derives from the way DynamoDB stores items with the same
+        /// partition key physically close together, in sorted order by the sort key value.</p>
+        /// </note>
+        ///
+        /// <p>For a simple primary key (partition key), you must provide
+        /// exactly one element with a <code>KeyType</code> of <code>HASH</code>.</p>
+        /// <p>For a composite primary key (partition key and sort key), you must provide exactly two
+        /// elements, in this order: The first element must have a <code>KeyType</code> of <code>HASH</code>,
+        /// and the second element must have a <code>KeyType</code> of <code>RANGE</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
             v.push(input.into());
             self.key_schema = Some(v);
             self
         }
+        /// <p>Specifies the attributes that make up the primary key for a table or an index. The attributes
+        /// in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more
+        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the
+        /// <i>Amazon DynamoDB Developer Guide</i>.</p>
+        /// <p>Each <code>KeySchemaElement</code> in the array is composed of:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AttributeName</code> - The name of this key attribute.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KeyType</code> - The role that the key attribute will assume:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>HASH</code> - partition key</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RANGE</code> - sort key</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>The partition key of an item is also known as its <i>hash
+        /// attribute</i>. The term "hash attribute" derives from the DynamoDB usage of
+        /// an internal hash function to evenly distribute data items across partitions, based
+        /// on their partition key values.</p>
+        /// <p>The sort key of an item is also known as its <i>range attribute</i>.
+        /// The term "range attribute" derives from the way DynamoDB stores items with the same
+        /// partition key physically close together, in sorted order by the sort key value.</p>
+        /// </note>
+        ///
+        /// <p>For a simple primary key (partition key), you must provide
+        /// exactly one element with a <code>KeyType</code> of <code>HASH</code>.</p>
+        /// <p>For a composite primary key (partition key and sort key), you must provide exactly two
+        /// elements, in this order: The first element must have a <code>KeyType</code> of <code>HASH</code>,
+        /// and the second element must have a <code>KeyType</code> of <code>RANGE</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_key_schema(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
@@ -946,6 +1348,66 @@ pub mod create_table_input {
             self.key_schema = input;
             self
         }
+        /// Appends an item to `local_secondary_indexes`.
+        ///
+        /// To override the contents of this collection use [`set_local_secondary_indexes`](Self::set_local_secondary_indexes).
+        ///
+        /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local secondary index is unconstrained.</p>
+        /// <p>Each local secondary index in the array includes the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>IndexName</code> - The name of the local secondary index. Must be unique only for this table.</p>
+        /// <p></p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KeySchema</code> - Specifies the key schema for the local secondary index. The key schema must begin with
+        /// the same partition key as the table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Projection</code> - Specifies
+        /// attributes that are copied (projected) from the table into the index. These are in
+        /// addition to the primary key attributes and index key
+        /// attributes, which are automatically projected. Each
+        /// attribute specification is composed of:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ProjectionType</code> - One
+        /// of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
+        /// index.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INCLUDE</code> - Only the specified table attributes are
+        /// projected into the index. The list of projected attributes is in
+        /// <code>NonKeyAttributes</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALL</code> - All of the table attributes are projected into the
+        /// index.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NonKeyAttributes</code> - A list of one or more non-key
+        /// attribute names that are projected into the secondary index. The total
+        /// count of attributes provided in <code>NonKeyAttributes</code>,
+        /// summed across all of the secondary indexes, must not exceed 100. If you
+        /// project the same attribute into two different indexes, this counts as
+        /// two distinct attributes when determining the total.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn local_secondary_indexes(
             mut self,
             input: impl Into<crate::model::LocalSecondaryIndex>,
@@ -955,6 +1417,62 @@ pub mod create_table_input {
             self.local_secondary_indexes = Some(v);
             self
         }
+        /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local secondary index is unconstrained.</p>
+        /// <p>Each local secondary index in the array includes the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>IndexName</code> - The name of the local secondary index. Must be unique only for this table.</p>
+        /// <p></p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KeySchema</code> - Specifies the key schema for the local secondary index. The key schema must begin with
+        /// the same partition key as the table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Projection</code> - Specifies
+        /// attributes that are copied (projected) from the table into the index. These are in
+        /// addition to the primary key attributes and index key
+        /// attributes, which are automatically projected. Each
+        /// attribute specification is composed of:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ProjectionType</code> - One
+        /// of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
+        /// index.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INCLUDE</code> - Only the specified table attributes are
+        /// projected into the index. The list of projected attributes is in
+        /// <code>NonKeyAttributes</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALL</code> - All of the table attributes are projected into the
+        /// index.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NonKeyAttributes</code> - A list of one or more non-key
+        /// attribute names that are projected into the secondary index. The total
+        /// count of attributes provided in <code>NonKeyAttributes</code>,
+        /// summed across all of the secondary indexes, must not exceed 100. If you
+        /// project the same attribute into two different indexes, this counts as
+        /// two distinct attributes when determining the total.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn set_local_secondary_indexes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
@@ -962,6 +1480,65 @@ pub mod create_table_input {
             self.local_secondary_indexes = input;
             self
         }
+        /// Appends an item to `global_secondary_indexes`.
+        ///
+        /// To override the contents of this collection use [`set_global_secondary_indexes`](Self::set_global_secondary_indexes).
+        ///
+        /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index in the array includes the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p>
+        /// <p></p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KeySchema</code> - Specifies the key schema for the global secondary index.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Projection</code> - Specifies
+        /// attributes that are copied (projected) from the table into the index. These are in
+        /// addition to the primary key attributes and index key
+        /// attributes, which are automatically projected. Each
+        /// attribute specification is composed of:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ProjectionType</code> - One
+        /// of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
+        /// index.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INCLUDE</code> - Only the specified table attributes are
+        /// projected into the index. The list of projected attributes is in
+        /// <code>NonKeyAttributes</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALL</code> - All of the table attributes are projected into the
+        /// index.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are
+        /// projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index,
+        /// consisting of read and write capacity units.</p>
+        /// </li>
+        /// </ul>
         pub fn global_secondary_indexes(
             mut self,
             input: impl Into<crate::model::GlobalSecondaryIndex>,
@@ -971,6 +1548,61 @@ pub mod create_table_input {
             self.global_secondary_indexes = Some(v);
             self
         }
+        /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index in the array includes the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p>
+        /// <p></p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KeySchema</code> - Specifies the key schema for the global secondary index.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Projection</code> - Specifies
+        /// attributes that are copied (projected) from the table into the index. These are in
+        /// addition to the primary key attributes and index key
+        /// attributes, which are automatically projected. Each
+        /// attribute specification is composed of:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ProjectionType</code> - One
+        /// of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
+        /// index.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INCLUDE</code> - Only the specified table attributes are
+        /// projected into the index. The list of projected attributes is in
+        /// <code>NonKeyAttributes</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALL</code> - All of the table attributes are projected into the
+        /// index.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are
+        /// projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index,
+        /// consisting of read and write capacity units.</p>
+        /// </li>
+        /// </ul>
         pub fn set_global_secondary_indexes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
@@ -994,6 +1626,18 @@ pub mod create_table_input {
             self.billing_mode = Some(input);
             self
         }
+        /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>.
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_billing_mode(
             mut self,
             input: std::option::Option<crate::model::BillingMode>,
@@ -1016,6 +1660,14 @@ pub mod create_table_input {
             self.provisioned_throughput = Some(input);
             self
         }
+        /// <p>Represents the provisioned throughput settings for a specified table or index. The
+        /// settings can be modified using the <code>UpdateTable</code> operation.</p>
+        /// <p> If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you
+        /// set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this
+        /// property.</p>
+        /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+        /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_provisioned_throughput(
             mut self,
             input: std::option::Option<crate::model::ProvisionedThroughput>,
@@ -1063,6 +1715,42 @@ pub mod create_table_input {
             self.stream_specification = Some(input);
             self
         }
+        /// <p>The settings for DynamoDB Streams on the table. These settings consist of:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled
+        /// (true) or disabled (false).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>StreamViewType</code> - When an item in the table is modified, <code>StreamViewType</code>
+        /// determines what information is written to the table's stream. Valid values for
+        /// <code>StreamViewType</code> are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the
+        /// stream.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written
+        /// to the stream.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is
+        /// written to the stream.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are
+        /// written to the stream.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn set_stream_specification(
             mut self,
             input: std::option::Option<crate::model::StreamSpecification>,
@@ -1075,6 +1763,7 @@ pub mod create_table_input {
             self.sse_specification = Some(input);
             self
         }
+        /// <p>Represents the settings used to enable server-side encryption.</p>
         pub fn set_sse_specification(
             mut self,
             input: std::option::Option<crate::model::SseSpecification>,
@@ -1082,12 +1771,18 @@ pub mod create_table_input {
             self.sse_specification = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of key-value pairs to label the table. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of key-value pairs to label the table. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1098,8 +1793,10 @@ pub mod create_table_input {
         /// Consumes the builder and constructs a [`CreateTableInput`](crate::input::CreateTableInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateTableInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateTableInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateTableInput {
                 attribute_definitions: self.attribute_definitions,
                 table_name: self.table_name,
@@ -1126,16 +1823,16 @@ impl CreateTableInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateTable,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateTableInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1143,7 +1840,7 @@ impl CreateTableInput {
         fn update_http_builder(
             input: &crate::input::CreateTableInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1152,29 +1849,31 @@ impl CreateTableInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateTableInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.CreateTable",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_table(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1197,25 +1896,27 @@ impl CreateTableInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateTable::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateTable",
-                    "dynamodb",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateTable::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateTable",
+            "dynamodb",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1243,6 +1944,7 @@ pub mod delete_backup_input {
             self.backup_arn = Some(input.into());
             self
         }
+        /// <p>The ARN associated with the backup.</p>
         pub fn set_backup_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.backup_arn = input;
             self
@@ -1250,8 +1952,10 @@ pub mod delete_backup_input {
         /// Consumes the builder and constructs a [`DeleteBackupInput`](crate::input::DeleteBackupInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteBackupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteBackupInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteBackupInput {
                 backup_arn: self.backup_arn,
             })
@@ -1269,16 +1973,16 @@ impl DeleteBackupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteBackup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteBackupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1286,7 +1990,7 @@ impl DeleteBackupInput {
         fn update_http_builder(
             input: &crate::input::DeleteBackupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1295,31 +1999,31 @@ impl DeleteBackupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteBackupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.DeleteBackup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_backup(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1342,25 +2046,27 @@ impl DeleteBackupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteBackup::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteBackup",
-                    "dynamodb",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteBackup::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteBackup",
+            "dynamodb",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1407,10 +2113,18 @@ pub mod delete_item_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table from which to delete the item.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
         }
+        /// Adds a key-value pair to `key`.
+        ///
+        /// To override the contents of this collection use [`set_key`](Self::set_key).
+        ///
+        /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of
+        /// the item to delete.</p>
+        /// <p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
         pub fn key(
             mut self,
             k: impl Into<std::string::String>,
@@ -1421,6 +2135,9 @@ pub mod delete_item_input {
             self.key = Some(hash_map);
             self
         }
+        /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of
+        /// the item to delete.</p>
+        /// <p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
         pub fn set_key(
             mut self,
             input: std::option::Option<
@@ -1430,6 +2147,12 @@ pub mod delete_item_input {
             self.key = input;
             self
         }
+        /// Adds a key-value pair to `expected`.
+        ///
+        /// To override the contents of this collection use [`set_expected`](Self::set_expected).
+        ///
+        /// <p>This is a legacy parameter.  Use <code>ConditionExpression</code> instead.  For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn expected(
             mut self,
             k: impl Into<std::string::String>,
@@ -1440,6 +2163,8 @@ pub mod delete_item_input {
             self.expected = Some(hash_map);
             self
         }
+        /// <p>This is a legacy parameter.  Use <code>ConditionExpression</code> instead.  For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_expected(
             mut self,
             input: std::option::Option<
@@ -1458,6 +2183,8 @@ pub mod delete_item_input {
             self.conditional_operator = Some(input);
             self
         }
+        /// <p>This is a legacy parameter.  Use <code>ConditionExpression</code> instead.  For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_conditional_operator(
             mut self,
             input: std::option::Option<crate::model::ConditionalOperator>,
@@ -1488,6 +2215,25 @@ pub mod delete_item_input {
             self.return_values = Some(input);
             self
         }
+        /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared before they
+        /// were deleted. For <code>DeleteItem</code>, the valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is
+        /// <code>NONE</code>, then nothing is returned. (This setting is the default for
+        /// <code>ReturnValues</code>.)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALL_OLD</code> - The content of the old item is returned.</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however,
+        /// <code>DeleteItem</code> does not recognize any values other than <code>NONE</code> or
+        /// <code>ALL_OLD</code>.</p>
+        /// </note>
         pub fn set_return_values(
             mut self,
             input: std::option::Option<crate::model::ReturnValue>,
@@ -1518,6 +2264,22 @@ pub mod delete_item_input {
             self.return_consumed_capacity = Some(input);
             self
         }
+        /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p>
+        /// <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all.  In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p>
+        /// </li>
+        /// </ul>
         pub fn set_return_consumed_capacity(
             mut self,
             input: std::option::Option<crate::model::ReturnConsumedCapacity>,
@@ -1534,6 +2296,8 @@ pub mod delete_item_input {
             self.return_item_collection_metrics = Some(input);
             self
         }
+        /// <p>Determines whether item collection metrics are returned.  If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during
+        /// the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
         pub fn set_return_item_collection_metrics(
             mut self,
             input: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
@@ -1567,6 +2331,28 @@ pub mod delete_item_input {
             self.condition_expression = Some(input.into());
             self
         }
+        /// <p>A condition that must be satisfied in order for a conditional <code>DeleteItem</code> to
+        /// succeed.</p>
+        /// <p>An expression can contain any of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type | contains | begins_with | size</code>
+        /// </p>
+        /// <p>These function names are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Comparison operators: <code>= | <> |
+        /// < | > | <= | >= |
+        /// BETWEEN | IN </code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p> Logical operators: <code>AND | OR | NOT</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_condition_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1574,6 +2360,51 @@ pub mod delete_item_input {
             self.condition_expression = input;
             self
         }
+        /// Adds a key-value pair to `expression_attribute_names`.
+        ///
+        /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).
+        ///
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p>
+        /// </li>
+        /// <li>
+        /// <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p>
+        /// </li>
+        /// <li>
+        /// <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Percentile</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>{"#P":"Percentile"}</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>You could then use this substitution in an expression, as in this example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>#P = :val</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+        /// </note>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn expression_attribute_names(
             mut self,
             k: impl Into<std::string::String>,
@@ -1584,6 +2415,47 @@ pub mod delete_item_input {
             self.expression_attribute_names = Some(hash_map);
             self
         }
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p>
+        /// </li>
+        /// <li>
+        /// <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p>
+        /// </li>
+        /// <li>
+        /// <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Percentile</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>{"#P":"Percentile"}</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>You could then use this substitution in an expression, as in this example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>#P = :val</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+        /// </note>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_expression_attribute_names(
             mut self,
             input: std::option::Option<
@@ -1593,6 +2465,25 @@ pub mod delete_item_input {
             self.expression_attribute_names = input;
             self
         }
+        /// Adds a key-value pair to `expression_attribute_values`.
+        ///
+        /// To override the contents of this collection use [`set_expression_attribute_values`](Self::set_expression_attribute_values).
+        ///
+        /// <p>One or more values that can be substituted in an expression.</p>
+        /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following: </p>
+        /// <p>
+        /// <code>Available | Backordered | Discontinued</code>
+        /// </p>
+        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+        /// <p>
+        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+        /// </p>
+        /// <p>You could then use these values in an expression, such as this:</p>
+        /// <p>
+        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
+        /// </p>
+        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn expression_attribute_values(
             mut self,
             k: impl Into<std::string::String>,
@@ -1603,6 +2494,21 @@ pub mod delete_item_input {
             self.expression_attribute_values = Some(hash_map);
             self
         }
+        /// <p>One or more values that can be substituted in an expression.</p>
+        /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following: </p>
+        /// <p>
+        /// <code>Available | Backordered | Discontinued</code>
+        /// </p>
+        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+        /// <p>
+        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+        /// </p>
+        /// <p>You could then use these values in an expression, such as this:</p>
+        /// <p>
+        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
+        /// </p>
+        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_expression_attribute_values(
             mut self,
             input: std::option::Option<
@@ -1615,8 +2521,10 @@ pub mod delete_item_input {
         /// Consumes the builder and constructs a [`DeleteItemInput`](crate::input::DeleteItemInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteItemInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteItemInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteItemInput {
                 table_name: self.table_name,
                 key: self.key,
@@ -1643,16 +2551,16 @@ impl DeleteItemInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteItem,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteItemInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1660,7 +2568,7 @@ impl DeleteItemInput {
         fn update_http_builder(
             input: &crate::input::DeleteItemInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1669,29 +2577,31 @@ impl DeleteItemInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteItemInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.DeleteItem",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_item(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1714,25 +2624,27 @@ impl DeleteItemInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteItem::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteItem",
-                    "dynamodb",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteItem::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteItem",
+            "dynamodb",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1760,6 +2672,7 @@ pub mod delete_table_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table to delete.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -1767,8 +2680,10 @@ pub mod delete_table_input {
         /// Consumes the builder and constructs a [`DeleteTableInput`](crate::input::DeleteTableInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteTableInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteTableInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteTableInput {
                 table_name: self.table_name,
             })
@@ -1786,16 +2701,16 @@ impl DeleteTableInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteTable,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteTableInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1803,7 +2718,7 @@ impl DeleteTableInput {
         fn update_http_builder(
             input: &crate::input::DeleteTableInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1812,29 +2727,31 @@ impl DeleteTableInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteTableInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.DeleteTable",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_table(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1857,25 +2774,27 @@ impl DeleteTableInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteTable::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteTable",
-                    "dynamodb",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteTable::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteTable",
+            "dynamodb",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1903,6 +2822,7 @@ pub mod describe_backup_input {
             self.backup_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
         pub fn set_backup_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.backup_arn = input;
             self
@@ -1912,7 +2832,7 @@ pub mod describe_backup_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeBackupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeBackupInput {
                 backup_arn: self.backup_arn,
@@ -1931,16 +2851,16 @@ impl DescribeBackupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeBackup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeBackupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1948,7 +2868,7 @@ impl DescribeBackupInput {
         fn update_http_builder(
             input: &crate::input::DescribeBackupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1957,29 +2877,31 @@ impl DescribeBackupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeBackupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.DescribeBackup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_backup(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2002,15 +2924,15 @@ impl DescribeBackupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeBackup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeBackup",
             "dynamodb",
         ));
@@ -2019,10 +2941,10 @@ impl DescribeBackupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2050,6 +2972,7 @@ pub mod describe_continuous_backups_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>Name of the table for which the customer wants to check the continuous backups and point in time recovery settings.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -2059,7 +2982,7 @@ pub mod describe_continuous_backups_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeContinuousBackupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeContinuousBackupsInput {
                 table_name: self.table_name,
@@ -2079,16 +3002,16 @@ impl DescribeContinuousBackupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeContinuousBackups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeContinuousBackupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2096,7 +3019,7 @@ impl DescribeContinuousBackupsInput {
         fn update_http_builder(
             input: &crate::input::DescribeContinuousBackupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2105,32 +3028,34 @@ impl DescribeContinuousBackupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeContinuousBackupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.DescribeContinuousBackups",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_continuous_backups(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2153,15 +3078,15 @@ impl DescribeContinuousBackupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeContinuousBackups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeContinuousBackups",
             "dynamodb",
         ));
@@ -2170,10 +3095,10 @@ impl DescribeContinuousBackupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2202,6 +3127,7 @@ pub mod describe_contributor_insights_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table to describe.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -2211,6 +3137,7 @@ pub mod describe_contributor_insights_input {
             self.index_name = Some(input.into());
             self
         }
+        /// <p>The name of the global secondary index to describe, if applicable.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_name = input;
             self
@@ -2220,7 +3147,7 @@ pub mod describe_contributor_insights_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeContributorInsightsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeContributorInsightsInput {
                 table_name: self.table_name,
@@ -2241,16 +3168,16 @@ impl DescribeContributorInsightsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeContributorInsights,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeContributorInsightsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2258,7 +3185,7 @@ impl DescribeContributorInsightsInput {
         fn update_http_builder(
             input: &crate::input::DescribeContributorInsightsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2267,30 +3194,30 @@ impl DescribeContributorInsightsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeContributorInsightsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.DescribeContributorInsights",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_contributor_insights(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_contributor_insights(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2313,15 +3240,15 @@ impl DescribeContributorInsightsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeContributorInsights::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeContributorInsights",
             "dynamodb",
         ));
@@ -2330,10 +3257,10 @@ impl DescribeContributorInsightsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2359,7 +3286,7 @@ pub mod describe_endpoints_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeEndpointsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeEndpointsInput {})
         }
@@ -2376,16 +3303,16 @@ impl DescribeEndpointsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeEndpoints,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeEndpointsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2393,7 +3320,7 @@ impl DescribeEndpointsInput {
         fn update_http_builder(
             input: &crate::input::DescribeEndpointsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2402,32 +3329,32 @@ impl DescribeEndpointsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeEndpointsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.DescribeEndpoints",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_endpoints(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2450,15 +3377,15 @@ impl DescribeEndpointsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeEndpoints::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeEndpoints",
             "dynamodb",
         ));
@@ -2467,10 +3394,10 @@ impl DescribeEndpointsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2498,6 +3425,7 @@ pub mod describe_export_input {
             self.export_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) associated with the export.</p>
         pub fn set_export_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.export_arn = input;
             self
@@ -2507,7 +3435,7 @@ pub mod describe_export_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeExportInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeExportInput {
                 export_arn: self.export_arn,
@@ -2526,16 +3454,16 @@ impl DescribeExportInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeExport,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeExportInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2543,7 +3471,7 @@ impl DescribeExportInput {
         fn update_http_builder(
             input: &crate::input::DescribeExportInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2552,29 +3480,31 @@ impl DescribeExportInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeExportInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.DescribeExport",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_export(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2597,15 +3527,15 @@ impl DescribeExportInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeExport::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeExport",
             "dynamodb",
         ));
@@ -2614,10 +3544,10 @@ impl DescribeExportInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2645,6 +3575,7 @@ pub mod describe_global_table_input {
             self.global_table_name = Some(input.into());
             self
         }
+        /// <p>The name of the global table.</p>
         pub fn set_global_table_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2657,7 +3588,7 @@ pub mod describe_global_table_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeGlobalTableInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeGlobalTableInput {
                 global_table_name: self.global_table_name,
@@ -2676,16 +3607,16 @@ impl DescribeGlobalTableInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeGlobalTable,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeGlobalTableInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2693,7 +3624,7 @@ impl DescribeGlobalTableInput {
         fn update_http_builder(
             input: &crate::input::DescribeGlobalTableInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2702,32 +3633,32 @@ impl DescribeGlobalTableInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeGlobalTableInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.DescribeGlobalTable",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_global_table(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2750,15 +3681,15 @@ impl DescribeGlobalTableInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeGlobalTable::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeGlobalTable",
             "dynamodb",
         ));
@@ -2767,10 +3698,10 @@ impl DescribeGlobalTableInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2798,6 +3729,7 @@ pub mod describe_global_table_settings_input {
             self.global_table_name = Some(input.into());
             self
         }
+        /// <p>The name of the global table to describe.</p>
         pub fn set_global_table_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2810,7 +3742,7 @@ pub mod describe_global_table_settings_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeGlobalTableSettingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeGlobalTableSettingsInput {
                 global_table_name: self.global_table_name,
@@ -2830,16 +3762,16 @@ impl DescribeGlobalTableSettingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeGlobalTableSettings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeGlobalTableSettingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2847,7 +3779,7 @@ impl DescribeGlobalTableSettingsInput {
         fn update_http_builder(
             input: &crate::input::DescribeGlobalTableSettingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2856,30 +3788,30 @@ impl DescribeGlobalTableSettingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeGlobalTableSettingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.DescribeGlobalTableSettings",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_global_table_settings(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_global_table_settings(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2902,15 +3834,15 @@ impl DescribeGlobalTableSettingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeGlobalTableSettings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeGlobalTableSettings",
             "dynamodb",
         ));
@@ -2919,10 +3851,10 @@ impl DescribeGlobalTableSettingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2950,6 +3882,7 @@ pub mod describe_kinesis_streaming_destination_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table being described.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -2959,7 +3892,7 @@ pub mod describe_kinesis_streaming_destination_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeKinesisStreamingDestinationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeKinesisStreamingDestinationInput {
                 table_name: self.table_name,
@@ -2980,16 +3913,16 @@ impl DescribeKinesisStreamingDestinationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeKinesisStreamingDestination,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeKinesisStreamingDestinationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2997,7 +3930,7 @@ impl DescribeKinesisStreamingDestinationInput {
         fn update_http_builder(
             input: &crate::input::DescribeKinesisStreamingDestinationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3006,30 +3939,30 @@ impl DescribeKinesisStreamingDestinationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeKinesisStreamingDestinationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.DescribeKinesisStreamingDestination",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_kinesis_streaming_destination(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_kinesis_streaming_destination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3052,15 +3985,15 @@ impl DescribeKinesisStreamingDestinationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeKinesisStreamingDestination::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeKinesisStreamingDestination",
             "dynamodb",
         ));
@@ -3069,10 +4002,10 @@ impl DescribeKinesisStreamingDestinationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3098,7 +4031,7 @@ pub mod describe_limits_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeLimitsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeLimitsInput {})
         }
@@ -3115,16 +4048,16 @@ impl DescribeLimitsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeLimits,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeLimitsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3132,7 +4065,7 @@ impl DescribeLimitsInput {
         fn update_http_builder(
             input: &crate::input::DescribeLimitsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3141,29 +4074,31 @@ impl DescribeLimitsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeLimitsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.DescribeLimits",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_limits(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3186,15 +4121,15 @@ impl DescribeLimitsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeLimits::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeLimits",
             "dynamodb",
         ));
@@ -3203,10 +4138,10 @@ impl DescribeLimitsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3234,6 +4169,7 @@ pub mod describe_table_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table to describe.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -3241,8 +4177,10 @@ pub mod describe_table_input {
         /// Consumes the builder and constructs a [`DescribeTableInput`](crate::input::DescribeTableInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeTableInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeTableInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeTableInput {
                 table_name: self.table_name,
             })
@@ -3260,16 +4198,16 @@ impl DescribeTableInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeTable,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeTableInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3277,7 +4215,7 @@ impl DescribeTableInput {
         fn update_http_builder(
             input: &crate::input::DescribeTableInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3286,29 +4224,31 @@ impl DescribeTableInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeTableInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.DescribeTable",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_table(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3331,25 +4271,27 @@ impl DescribeTableInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeTable::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeTable",
-                    "dynamodb",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeTable::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeTable",
+            "dynamodb",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3377,6 +4319,7 @@ pub mod describe_table_replica_auto_scaling_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -3386,7 +4329,7 @@ pub mod describe_table_replica_auto_scaling_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeTableReplicaAutoScalingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeTableReplicaAutoScalingInput {
                 table_name: self.table_name,
@@ -3406,16 +4349,16 @@ impl DescribeTableReplicaAutoScalingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeTableReplicaAutoScaling,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeTableReplicaAutoScalingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3423,7 +4366,7 @@ impl DescribeTableReplicaAutoScalingInput {
         fn update_http_builder(
             input: &crate::input::DescribeTableReplicaAutoScalingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3432,30 +4375,30 @@ impl DescribeTableReplicaAutoScalingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeTableReplicaAutoScalingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.DescribeTableReplicaAutoScaling",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_table_replica_auto_scaling(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_table_replica_auto_scaling(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3478,15 +4421,15 @@ impl DescribeTableReplicaAutoScalingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeTableReplicaAutoScaling::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeTableReplicaAutoScaling",
             "dynamodb",
         ));
@@ -3495,10 +4438,10 @@ impl DescribeTableReplicaAutoScalingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3526,6 +4469,7 @@ pub mod describe_time_to_live_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table to be described.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -3535,7 +4479,7 @@ pub mod describe_time_to_live_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeTimeToLiveInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeTimeToLiveInput {
                 table_name: self.table_name,
@@ -3554,16 +4498,16 @@ impl DescribeTimeToLiveInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeTimeToLive,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeTimeToLiveInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3571,7 +4515,7 @@ impl DescribeTimeToLiveInput {
         fn update_http_builder(
             input: &crate::input::DescribeTimeToLiveInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3580,32 +4524,32 @@ impl DescribeTimeToLiveInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeTimeToLiveInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.DescribeTimeToLive",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_time_to_live(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3628,15 +4572,15 @@ impl DescribeTimeToLiveInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeTimeToLive::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeTimeToLive",
             "dynamodb",
         ));
@@ -3645,10 +4589,10 @@ impl DescribeTimeToLiveInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3677,6 +4621,7 @@ pub mod disable_kinesis_streaming_destination_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the DynamoDB table.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -3686,6 +4631,7 @@ pub mod disable_kinesis_streaming_destination_input {
             self.stream_arn = Some(input.into());
             self
         }
+        /// <p>The ARN for a Kinesis data stream.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -3695,7 +4641,7 @@ pub mod disable_kinesis_streaming_destination_input {
             self,
         ) -> std::result::Result<
             crate::input::DisableKinesisStreamingDestinationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisableKinesisStreamingDestinationInput {
                 table_name: self.table_name,
@@ -3716,16 +4662,16 @@ impl DisableKinesisStreamingDestinationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisableKinesisStreamingDestination,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisableKinesisStreamingDestinationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3733,7 +4679,7 @@ impl DisableKinesisStreamingDestinationInput {
         fn update_http_builder(
             input: &crate::input::DisableKinesisStreamingDestinationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3742,30 +4688,30 @@ impl DisableKinesisStreamingDestinationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisableKinesisStreamingDestinationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.DisableKinesisStreamingDestination",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disable_kinesis_streaming_destination(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disable_kinesis_streaming_destination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3788,15 +4734,15 @@ impl DisableKinesisStreamingDestinationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisableKinesisStreamingDestination::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisableKinesisStreamingDestination",
             "dynamodb",
         ));
@@ -3805,10 +4751,10 @@ impl DisableKinesisStreamingDestinationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3837,6 +4783,7 @@ pub mod enable_kinesis_streaming_destination_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the DynamoDB table.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -3846,6 +4793,7 @@ pub mod enable_kinesis_streaming_destination_input {
             self.stream_arn = Some(input.into());
             self
         }
+        /// <p>The ARN for a Kinesis data stream.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -3855,7 +4803,7 @@ pub mod enable_kinesis_streaming_destination_input {
             self,
         ) -> std::result::Result<
             crate::input::EnableKinesisStreamingDestinationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::EnableKinesisStreamingDestinationInput {
                 table_name: self.table_name,
@@ -3876,16 +4824,16 @@ impl EnableKinesisStreamingDestinationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::EnableKinesisStreamingDestination,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::EnableKinesisStreamingDestinationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3893,7 +4841,7 @@ impl EnableKinesisStreamingDestinationInput {
         fn update_http_builder(
             input: &crate::input::EnableKinesisStreamingDestinationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3902,30 +4850,30 @@ impl EnableKinesisStreamingDestinationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::EnableKinesisStreamingDestinationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.EnableKinesisStreamingDestination",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_enable_kinesis_streaming_destination(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_enable_kinesis_streaming_destination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3948,15 +4896,15 @@ impl EnableKinesisStreamingDestinationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::EnableKinesisStreamingDestination::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "EnableKinesisStreamingDestination",
             "dynamodb",
         ));
@@ -3965,10 +4913,10 @@ impl EnableKinesisStreamingDestinationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4001,16 +4949,29 @@ pub mod execute_statement_input {
             self.statement = Some(input.into());
             self
         }
+        /// <p>
+        /// The PartiQL statement representing the operation to run.
+        /// </p>
         pub fn set_statement(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.statement = input;
             self
         }
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>
+        /// The parameters for the PartiQL statement, if any.
+        /// </p>
         pub fn parameters(mut self, input: impl Into<crate::model::AttributeValue>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input.into());
             self.parameters = Some(v);
             self
         }
+        /// <p>
+        /// The parameters for the PartiQL statement, if any.
+        /// </p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
@@ -4025,6 +4986,9 @@ pub mod execute_statement_input {
             self.consistent_read = Some(input);
             self
         }
+        /// <p>
+        /// The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.
+        /// </p>
         pub fn set_consistent_read(mut self, input: std::option::Option<bool>) -> Self {
             self.consistent_read = input;
             self
@@ -4036,6 +5000,9 @@ pub mod execute_statement_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>
+        /// Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4045,7 +5012,7 @@ pub mod execute_statement_input {
             self,
         ) -> std::result::Result<
             crate::input::ExecuteStatementInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ExecuteStatementInput {
                 statement: self.statement,
@@ -4067,16 +5034,16 @@ impl ExecuteStatementInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExecuteStatement,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExecuteStatementInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4084,7 +5051,7 @@ impl ExecuteStatementInput {
         fn update_http_builder(
             input: &crate::input::ExecuteStatementInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4093,32 +5060,32 @@ impl ExecuteStatementInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExecuteStatementInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.ExecuteStatement",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_execute_statement(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4141,15 +5108,15 @@ impl ExecuteStatementInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ExecuteStatement::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ExecuteStatement",
             "dynamodb",
         ));
@@ -4158,10 +5125,10 @@ impl ExecuteStatementInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4186,6 +5153,13 @@ pub mod execute_transaction_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `transact_statements`.
+        ///
+        /// To override the contents of this collection use [`set_transact_statements`](Self::set_transact_statements).
+        ///
+        /// <p>
+        /// The list of PartiQL statements representing the transaction to run.
+        /// </p>
         pub fn transact_statements(
             mut self,
             input: impl Into<crate::model::ParameterizedStatement>,
@@ -4195,6 +5169,9 @@ pub mod execute_transaction_input {
             self.transact_statements = Some(v);
             self
         }
+        /// <p>
+        /// The list of PartiQL statements representing the transaction to run.
+        /// </p>
         pub fn set_transact_statements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ParameterizedStatement>>,
@@ -4209,6 +5186,9 @@ pub mod execute_transaction_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>
+        /// Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.
+        /// </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4221,7 +5201,7 @@ pub mod execute_transaction_input {
             self,
         ) -> std::result::Result<
             crate::input::ExecuteTransactionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ExecuteTransactionInput {
                 transact_statements: self.transact_statements,
@@ -4241,16 +5221,16 @@ impl ExecuteTransactionInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExecuteTransaction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExecuteTransactionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4258,7 +5238,7 @@ impl ExecuteTransactionInput {
         fn update_http_builder(
             input: &crate::input::ExecuteTransactionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4267,15 +5247,15 @@ impl ExecuteTransactionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExecuteTransactionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.ExecuteTransaction",
@@ -4285,17 +5265,17 @@ impl ExecuteTransactionInput {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_execute_transaction(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4318,15 +5298,15 @@ impl ExecuteTransactionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ExecuteTransaction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ExecuteTransaction",
             "dynamodb",
         ));
@@ -4335,10 +5315,10 @@ impl ExecuteTransactionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4359,7 +5339,7 @@ pub mod export_table_to_point_in_time_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_arn: std::option::Option<std::string::String>,
-        pub(crate) export_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) export_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
         pub(crate) s3_bucket_owner: std::option::Option<std::string::String>,
@@ -4374,19 +5354,22 @@ pub mod export_table_to_point_in_time_input {
             self.table_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) associated with the table to export.</p>
         pub fn set_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_arn = input;
             self
         }
         /// <p>Time in the past from which to export table data. The table export will be a snapshot
         /// of the table's state at this point in time.</p>
-        pub fn export_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn export_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.export_time = Some(input);
             self
         }
+        /// <p>Time in the past from which to export table data. The table export will be a snapshot
+        /// of the table's state at this point in time.</p>
         pub fn set_export_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.export_time = input;
             self
@@ -4405,6 +5388,16 @@ pub mod export_table_to_point_in_time_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Providing a <code>ClientToken</code> makes the call to
+        /// <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple
+        /// identical calls have the same effect as one single call.</p>
+        /// <p>A client token is valid for 8 hours after the first request that uses it is
+        /// completed. After 8 hours, any request with the same client token is treated as a new
+        /// request. Do not resubmit the same request with the same client token for more than 8
+        /// hours, or the result might not be idempotent.</p>
+        /// <p>If you submit a request with the same client token but a change in other parameters
+        /// within the 8-hour idempotency window, DynamoDB returns an
+        /// <code>IdempotentParameterMismatch</code> exception.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -4414,6 +5407,7 @@ pub mod export_table_to_point_in_time_input {
             self.s3_bucket = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon S3 bucket to export the snapshot to.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_bucket = input;
             self
@@ -4423,6 +5417,7 @@ pub mod export_table_to_point_in_time_input {
             self.s3_bucket_owner = Some(input.into());
             self
         }
+        /// <p>The ID of the AWS account that owns the bucket the export will be stored in.</p>
         pub fn set_s3_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4436,6 +5431,8 @@ pub mod export_table_to_point_in_time_input {
             self.s3_prefix = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported
+        /// snapshot.</p>
         pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_prefix = input;
             self
@@ -4456,6 +5453,18 @@ pub mod export_table_to_point_in_time_input {
             self.s3_sse_algorithm = Some(input);
             self
         }
+        /// <p>Type of encryption used on the bucket where export data will be stored. Valid values
+        /// for <code>S3SseAlgorithm</code> are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KMS</code> - server-side encryption with AWS KMS managed keys</p>
+        /// </li>
+        /// </ul>
         pub fn set_s3_sse_algorithm(
             mut self,
             input: std::option::Option<crate::model::S3SseAlgorithm>,
@@ -4469,6 +5478,8 @@ pub mod export_table_to_point_in_time_input {
             self.s3_sse_kms_key_id = Some(input.into());
             self
         }
+        /// <p>The ID of the AWS KMS managed key used to encrypt the S3 bucket where export data will
+        /// be stored (if applicable).</p>
         pub fn set_s3_sse_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4482,6 +5493,8 @@ pub mod export_table_to_point_in_time_input {
             self.export_format = Some(input);
             self
         }
+        /// <p>The format for the exported data. Valid values for <code>ExportFormat</code> are
+        /// <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
         pub fn set_export_format(
             mut self,
             input: std::option::Option<crate::model::ExportFormat>,
@@ -4494,7 +5507,7 @@ pub mod export_table_to_point_in_time_input {
             self,
         ) -> std::result::Result<
             crate::input::ExportTableToPointInTimeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ExportTableToPointInTimeInput {
                 table_arn: self.table_arn,
@@ -4522,16 +5535,16 @@ impl ExportTableToPointInTimeInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExportTableToPointInTime,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExportTableToPointInTimeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4539,7 +5552,7 @@ impl ExportTableToPointInTimeInput {
         fn update_http_builder(
             input: &crate::input::ExportTableToPointInTimeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4548,15 +5561,15 @@ impl ExportTableToPointInTimeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExportTableToPointInTimeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.ExportTableToPointInTime",
@@ -4566,15 +5579,15 @@ impl ExportTableToPointInTimeInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_export_table_to_point_in_time(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_export_table_to_point_in_time(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4597,15 +5610,15 @@ impl ExportTableToPointInTimeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ExportTableToPointInTime::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ExportTableToPointInTime",
             "dynamodb",
         ));
@@ -4614,10 +5627,10 @@ impl ExportTableToPointInTimeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4656,10 +5669,18 @@ pub mod get_item_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table containing the requested item.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
         }
+        /// Adds a key-value pair to `key`.
+        ///
+        /// To override the contents of this collection use [`set_key`](Self::set_key).
+        ///
+        /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of
+        /// the item to retrieve.</p>
+        /// <p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
         pub fn key(
             mut self,
             k: impl Into<std::string::String>,
@@ -4670,6 +5691,9 @@ pub mod get_item_input {
             self.key = Some(hash_map);
             self
         }
+        /// <p>A map of attribute names to <code>AttributeValue</code> objects, representing the primary key of
+        /// the item to retrieve.</p>
+        /// <p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
         pub fn set_key(
             mut self,
             input: std::option::Option<
@@ -4679,12 +5703,20 @@ pub mod get_item_input {
             self.key = input;
             self
         }
+        /// Appends an item to `attributes_to_get`.
+        ///
+        /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
+        ///
+        /// <p>This is a legacy parameter.  Use <code>ProjectionExpression</code> instead.  For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn attributes_to_get(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attributes_to_get.unwrap_or_default();
             v.push(input.into());
             self.attributes_to_get = Some(v);
             self
         }
+        /// <p>This is a legacy parameter.  Use <code>ProjectionExpression</code> instead.  For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_attributes_to_get(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4697,6 +5729,7 @@ pub mod get_item_input {
             self.consistent_read = Some(input);
             self
         }
+        /// <p>Determines the read consistency model:  If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</p>
         pub fn set_consistent_read(mut self, input: std::option::Option<bool>) -> Self {
             self.consistent_read = input;
             self
@@ -4724,6 +5757,22 @@ pub mod get_item_input {
             self.return_consumed_capacity = Some(input);
             self
         }
+        /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p>
+        /// <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all.  In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p>
+        /// </li>
+        /// </ul>
         pub fn set_return_consumed_capacity(
             mut self,
             input: std::option::Option<crate::model::ReturnConsumedCapacity>,
@@ -4740,6 +5789,11 @@ pub mod get_item_input {
             self.projection_expression = Some(input.into());
             self
         }
+        /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
+        /// <p>If no attribute names are specified, then all attributes are returned. If any of the
+        /// requested attributes are not found, they do not appear in the result.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_projection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4747,6 +5801,51 @@ pub mod get_item_input {
             self.projection_expression = input;
             self
         }
+        /// Adds a key-value pair to `expression_attribute_names`.
+        ///
+        /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).
+        ///
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p>
+        /// </li>
+        /// <li>
+        /// <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p>
+        /// </li>
+        /// <li>
+        /// <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Percentile</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>{"#P":"Percentile"}</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>You could then use this substitution in an expression, as in this example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>#P = :val</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+        /// </note>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn expression_attribute_names(
             mut self,
             k: impl Into<std::string::String>,
@@ -4757,6 +5856,47 @@ pub mod get_item_input {
             self.expression_attribute_names = Some(hash_map);
             self
         }
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p>
+        /// </li>
+        /// <li>
+        /// <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p>
+        /// </li>
+        /// <li>
+        /// <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Percentile</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>{"#P":"Percentile"}</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>You could then use this substitution in an expression, as in this example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>#P = :val</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+        /// </note>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_expression_attribute_names(
             mut self,
             input: std::option::Option<
@@ -4769,7 +5909,7 @@ pub mod get_item_input {
         /// Consumes the builder and constructs a [`GetItemInput`](crate::input::GetItemInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetItemInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetItemInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetItemInput {
                 table_name: self.table_name,
@@ -4794,13 +5934,16 @@ impl GetItemInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::GetItem, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetItem,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetItemInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4808,7 +5951,7 @@ impl GetItemInput {
         fn update_http_builder(
             input: &crate::input::GetItemInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4817,29 +5960,31 @@ impl GetItemInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetItemInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.GetItem",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_item(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4862,21 +6007,24 @@ impl GetItemInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::GetItem::new())
-            .with_metadata(smithy_http::operation::Metadata::new("GetItem", "dynamodb"));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetItem::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetItem", "dynamodb",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4898,8 +6046,8 @@ pub mod list_backups_input {
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) limit: std::option::Option<i32>,
-        pub(crate) time_range_lower_bound: std::option::Option<smithy_types::Instant>,
-        pub(crate) time_range_upper_bound: std::option::Option<smithy_types::Instant>,
+        pub(crate) time_range_lower_bound: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) time_range_upper_bound: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) exclusive_start_backup_arn: std::option::Option<std::string::String>,
         pub(crate) backup_type: std::option::Option<crate::model::BackupTypeFilter>,
     }
@@ -4909,6 +6057,7 @@ pub mod list_backups_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The backups from the table specified by <code>TableName</code> are listed. </p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -4918,30 +6067,33 @@ pub mod list_backups_input {
             self.limit = Some(input);
             self
         }
+        /// <p>Maximum number of backups to return at once.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
         /// <p>Only backups created after this time are listed. <code>TimeRangeLowerBound</code> is inclusive.</p>
-        pub fn time_range_lower_bound(mut self, input: smithy_types::Instant) -> Self {
+        pub fn time_range_lower_bound(mut self, input: aws_smithy_types::Instant) -> Self {
             self.time_range_lower_bound = Some(input);
             self
         }
+        /// <p>Only backups created after this time are listed. <code>TimeRangeLowerBound</code> is inclusive.</p>
         pub fn set_time_range_lower_bound(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.time_range_lower_bound = input;
             self
         }
         /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is exclusive. </p>
-        pub fn time_range_upper_bound(mut self, input: smithy_types::Instant) -> Self {
+        pub fn time_range_upper_bound(mut self, input: aws_smithy_types::Instant) -> Self {
             self.time_range_upper_bound = Some(input);
             self
         }
+        /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is exclusive. </p>
         pub fn set_time_range_upper_bound(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.time_range_upper_bound = input;
             self
@@ -4955,6 +6107,11 @@ pub mod list_backups_input {
             self.exclusive_start_backup_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last
+        /// evaluated when the current page of results was returned, inclusive of the current page
+        /// of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a
+        /// new <code>ListBackups</code> operation in order to fetch the next page of results. </p>
         pub fn set_exclusive_start_backup_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4983,6 +6140,23 @@ pub mod list_backups_input {
             self.backup_type = Some(input);
             self
         }
+        /// <p>The backups from the table specified by <code>BackupType</code> are listed.</p>
+        /// <p>Where <code>BackupType</code> can be:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>USER</code> - On-demand backup created by you.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SYSTEM</code> - On-demand backup automatically created by
+        /// DynamoDB.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p>
+        /// </li>
+        /// </ul>
         pub fn set_backup_type(
             mut self,
             input: std::option::Option<crate::model::BackupTypeFilter>,
@@ -4993,8 +6167,10 @@ pub mod list_backups_input {
         /// Consumes the builder and constructs a [`ListBackupsInput`](crate::input::ListBackupsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListBackupsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListBackupsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListBackupsInput {
                 table_name: self.table_name,
                 limit: self.limit,
@@ -5017,16 +6193,16 @@ impl ListBackupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListBackups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListBackupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5034,7 +6210,7 @@ impl ListBackupsInput {
         fn update_http_builder(
             input: &crate::input::ListBackupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5043,29 +6219,31 @@ impl ListBackupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListBackupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.ListBackups",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_backups(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5088,25 +6266,27 @@ impl ListBackupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListBackups::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListBackups",
-                    "dynamodb",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListBackups::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListBackups",
+            "dynamodb",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5136,6 +6316,7 @@ pub mod list_contributor_insights_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -5145,6 +6326,7 @@ pub mod list_contributor_insights_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token to for the desired page, if there is one.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5154,6 +6336,7 @@ pub mod list_contributor_insights_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return per page.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5163,7 +6346,7 @@ pub mod list_contributor_insights_input {
             self,
         ) -> std::result::Result<
             crate::input::ListContributorInsightsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListContributorInsightsInput {
                 table_name: self.table_name,
@@ -5185,16 +6368,16 @@ impl ListContributorInsightsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListContributorInsights,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListContributorInsightsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5202,7 +6385,7 @@ impl ListContributorInsightsInput {
         fn update_http_builder(
             input: &crate::input::ListContributorInsightsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5211,32 +6394,34 @@ impl ListContributorInsightsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListContributorInsightsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.ListContributorInsights",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_contributor_insights(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5259,15 +6444,15 @@ impl ListContributorInsightsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListContributorInsights::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListContributorInsights",
             "dynamodb",
         ));
@@ -5276,10 +6461,10 @@ impl ListContributorInsightsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5309,6 +6494,7 @@ pub mod list_exports_input {
             self.table_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) associated with the exported table.</p>
         pub fn set_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_arn = input;
             self
@@ -5318,6 +6504,7 @@ pub mod list_exports_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return per page.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5329,6 +6516,9 @@ pub mod list_exports_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An optional string that, if supplied, must be copied from the output of a previous
+        /// call to <code>ListExports</code>. When provided in this manner, the API fetches the next
+        /// page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5336,8 +6526,10 @@ pub mod list_exports_input {
         /// Consumes the builder and constructs a [`ListExportsInput`](crate::input::ListExportsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListExportsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListExportsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListExportsInput {
                 table_arn: self.table_arn,
                 max_results: self.max_results,
@@ -5357,16 +6549,16 @@ impl ListExportsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListExports,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListExportsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5374,7 +6566,7 @@ impl ListExportsInput {
         fn update_http_builder(
             input: &crate::input::ListExportsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5383,29 +6575,31 @@ impl ListExportsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListExportsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.ListExports",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_exports(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5428,25 +6622,27 @@ impl ListExportsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListExports::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListExports",
-                    "dynamodb",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListExports::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListExports",
+            "dynamodb",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5479,6 +6675,7 @@ pub mod list_global_tables_input {
             self.exclusive_start_global_table_name = Some(input.into());
             self
         }
+        /// <p>The first global table name that this operation will evaluate.</p>
         pub fn set_exclusive_start_global_table_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5493,6 +6690,9 @@ pub mod list_global_tables_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to 100.</p>
+        /// <p>If the number of global tables DynamoDB finds reaches this limit, it stops the operation and returns the table names collected up to that point,
+        /// with a table name in the <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to the <code>ExclusiveStartGlobalTableName</code> parameter.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5502,6 +6702,7 @@ pub mod list_global_tables_input {
             self.region_name = Some(input.into());
             self
         }
+        /// <p>Lists the global tables in a specific Region.</p>
         pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region_name = input;
             self
@@ -5511,7 +6712,7 @@ pub mod list_global_tables_input {
             self,
         ) -> std::result::Result<
             crate::input::ListGlobalTablesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListGlobalTablesInput {
                 exclusive_start_global_table_name: self.exclusive_start_global_table_name,
@@ -5532,16 +6733,16 @@ impl ListGlobalTablesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListGlobalTables,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListGlobalTablesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5549,7 +6750,7 @@ impl ListGlobalTablesInput {
         fn update_http_builder(
             input: &crate::input::ListGlobalTablesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5558,32 +6759,32 @@ impl ListGlobalTablesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListGlobalTablesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.ListGlobalTables",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_global_tables(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5606,15 +6807,15 @@ impl ListGlobalTablesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListGlobalTables::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListGlobalTables",
             "dynamodb",
         ));
@@ -5623,10 +6824,10 @@ impl ListGlobalTablesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5657,6 +6858,9 @@ pub mod list_tables_input {
             self.exclusive_start_table_name = Some(input.into());
             self
         }
+        /// <p>The first table name that this operation will evaluate. Use the value that was returned for
+        /// <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page
+        /// of results.</p>
         pub fn set_exclusive_start_table_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5669,6 +6873,7 @@ pub mod list_tables_input {
             self.limit = Some(input);
             self
         }
+        /// <p>A maximum number of table names to return. If this parameter is not specified, the limit is 100.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5676,8 +6881,10 @@ pub mod list_tables_input {
         /// Consumes the builder and constructs a [`ListTablesInput`](crate::input::ListTablesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListTablesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListTablesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListTablesInput {
                 exclusive_start_table_name: self.exclusive_start_table_name,
                 limit: self.limit,
@@ -5696,16 +6903,16 @@ impl ListTablesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTables,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTablesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5713,7 +6920,7 @@ impl ListTablesInput {
         fn update_http_builder(
             input: &crate::input::ListTablesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5722,29 +6929,31 @@ impl ListTablesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTablesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.ListTables",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_tables(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5767,25 +6976,27 @@ impl ListTablesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListTables::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListTables",
-                    "dynamodb",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTables::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTables",
+            "dynamodb",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5814,6 +7025,7 @@ pub mod list_tags_of_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource Name (ARN).</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -5824,6 +7036,8 @@ pub mod list_tags_of_resource_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An optional string that, if supplied, must be copied from the output of a previous
+        /// call to ListTagOfResource. When provided in this manner, this API fetches the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5833,7 +7047,7 @@ pub mod list_tags_of_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsOfResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsOfResourceInput {
                 resource_arn: self.resource_arn,
@@ -5853,16 +7067,16 @@ impl ListTagsOfResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsOfResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsOfResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5870,7 +7084,7 @@ impl ListTagsOfResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsOfResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5879,32 +7093,32 @@ impl ListTagsOfResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsOfResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.ListTagsOfResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_of_resource(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5927,15 +7141,15 @@ impl ListTagsOfResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsOfResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsOfResource",
             "dynamodb",
         ));
@@ -5944,10 +7158,10 @@ impl ListTagsOfResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5994,10 +7208,23 @@ pub mod put_item_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table to contain the item.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
         }
+        /// Adds a key-value pair to `item`.
+        ///
+        /// To override the contents of this collection use [`set_item`](Self::set_item).
+        ///
+        /// <p>A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item.</p>
+        /// <p>You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key.</p>
+        /// <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p>
+        /// <p>Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index.</p>
+        ///
+        /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
+        /// <p>Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
         pub fn item(
             mut self,
             k: impl Into<std::string::String>,
@@ -6008,6 +7235,14 @@ pub mod put_item_input {
             self.item = Some(hash_map);
             self
         }
+        /// <p>A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item.</p>
+        /// <p>You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key.</p>
+        /// <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p>
+        /// <p>Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index.</p>
+        ///
+        /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
+        /// <p>Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
         pub fn set_item(
             mut self,
             input: std::option::Option<
@@ -6017,6 +7252,12 @@ pub mod put_item_input {
             self.item = input;
             self
         }
+        /// Adds a key-value pair to `expected`.
+        ///
+        /// To override the contents of this collection use [`set_expected`](Self::set_expected).
+        ///
+        /// <p>This is a legacy parameter.  Use <code>ConditionExpression</code> instead.  For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn expected(
             mut self,
             k: impl Into<std::string::String>,
@@ -6027,6 +7268,8 @@ pub mod put_item_input {
             self.expected = Some(hash_map);
             self
         }
+        /// <p>This is a legacy parameter.  Use <code>ConditionExpression</code> instead.  For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_expected(
             mut self,
             input: std::option::Option<
@@ -6063,6 +7306,26 @@ pub mod put_item_input {
             self.return_values = Some(input);
             self
         }
+        /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared before they
+        /// were updated with the <code>PutItem</code> request. For <code>PutItem</code>, the valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is
+        /// <code>NONE</code>, then nothing is returned. (This setting is the default for
+        /// <code>ReturnValues</code>.)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALL_OLD</code> - If <code>PutItem</code> overwrote an attribute name-value pair, then the
+        /// content of the old item is returned.</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>The <code>ReturnValues</code> parameter is used by several DynamoDB operations; however,
+        /// <code>PutItem</code> does not recognize any values other than <code>NONE</code> or
+        /// <code>ALL_OLD</code>.</p>
+        /// </note>
         pub fn set_return_values(
             mut self,
             input: std::option::Option<crate::model::ReturnValue>,
@@ -6093,6 +7356,22 @@ pub mod put_item_input {
             self.return_consumed_capacity = Some(input);
             self
         }
+        /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p>
+        /// <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all.  In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p>
+        /// </li>
+        /// </ul>
         pub fn set_return_consumed_capacity(
             mut self,
             input: std::option::Option<crate::model::ReturnConsumedCapacity>,
@@ -6109,6 +7388,8 @@ pub mod put_item_input {
             self.return_item_collection_metrics = Some(input);
             self
         }
+        /// <p>Determines whether item collection metrics are returned.  If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during
+        /// the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
         pub fn set_return_item_collection_metrics(
             mut self,
             input: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
@@ -6122,6 +7403,8 @@ pub mod put_item_input {
             self.conditional_operator = Some(input);
             self
         }
+        /// <p>This is a legacy parameter.  Use <code>ConditionExpression</code> instead.  For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_conditional_operator(
             mut self,
             input: std::option::Option<crate::model::ConditionalOperator>,
@@ -6155,6 +7438,28 @@ pub mod put_item_input {
             self.condition_expression = Some(input.into());
             self
         }
+        /// <p>A condition that must be satisfied in order for a conditional <code>PutItem</code> operation to
+        /// succeed.</p>
+        /// <p>An expression can contain any of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type | contains | begins_with | size</code>
+        /// </p>
+        /// <p>These function names are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Comparison operators: <code>= | <> |
+        /// < | > | <= | >= |
+        /// BETWEEN | IN </code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p> Logical operators: <code>AND | OR | NOT</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information on condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_condition_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6162,6 +7467,51 @@ pub mod put_item_input {
             self.condition_expression = input;
             self
         }
+        /// Adds a key-value pair to `expression_attribute_names`.
+        ///
+        /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).
+        ///
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p>
+        /// </li>
+        /// <li>
+        /// <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p>
+        /// </li>
+        /// <li>
+        /// <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Percentile</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>{"#P":"Percentile"}</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>You could then use this substitution in an expression, as in this example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>#P = :val</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+        /// </note>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn expression_attribute_names(
             mut self,
             k: impl Into<std::string::String>,
@@ -6172,6 +7522,47 @@ pub mod put_item_input {
             self.expression_attribute_names = Some(hash_map);
             self
         }
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p>
+        /// </li>
+        /// <li>
+        /// <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p>
+        /// </li>
+        /// <li>
+        /// <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Percentile</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>{"#P":"Percentile"}</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>You could then use this substitution in an expression, as in this example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>#P = :val</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+        /// </note>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_expression_attribute_names(
             mut self,
             input: std::option::Option<
@@ -6181,6 +7572,25 @@ pub mod put_item_input {
             self.expression_attribute_names = input;
             self
         }
+        /// Adds a key-value pair to `expression_attribute_values`.
+        ///
+        /// To override the contents of this collection use [`set_expression_attribute_values`](Self::set_expression_attribute_values).
+        ///
+        /// <p>One or more values that can be substituted in an expression.</p>
+        /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following: </p>
+        /// <p>
+        /// <code>Available | Backordered | Discontinued</code>
+        /// </p>
+        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+        /// <p>
+        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+        /// </p>
+        /// <p>You could then use these values in an expression, such as this:</p>
+        /// <p>
+        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
+        /// </p>
+        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn expression_attribute_values(
             mut self,
             k: impl Into<std::string::String>,
@@ -6191,6 +7601,21 @@ pub mod put_item_input {
             self.expression_attribute_values = Some(hash_map);
             self
         }
+        /// <p>One or more values that can be substituted in an expression.</p>
+        /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following: </p>
+        /// <p>
+        /// <code>Available | Backordered | Discontinued</code>
+        /// </p>
+        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+        /// <p>
+        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+        /// </p>
+        /// <p>You could then use these values in an expression, such as this:</p>
+        /// <p>
+        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
+        /// </p>
+        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_expression_attribute_values(
             mut self,
             input: std::option::Option<
@@ -6203,7 +7628,7 @@ pub mod put_item_input {
         /// Consumes the builder and constructs a [`PutItemInput`](crate::input::PutItemInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::PutItemInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::PutItemInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::PutItemInput {
                 table_name: self.table_name,
@@ -6231,13 +7656,16 @@ impl PutItemInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::PutItem, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutItem,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutItemInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6245,7 +7673,7 @@ impl PutItemInput {
         fn update_http_builder(
             input: &crate::input::PutItemInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6254,29 +7682,31 @@ impl PutItemInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutItemInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.PutItem",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_put_item(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6299,21 +7729,24 @@ impl PutItemInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::PutItem::new())
-            .with_metadata(smithy_http::operation::Metadata::new("PutItem", "dynamodb"));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::PutItem::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "PutItem", "dynamodb",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6368,6 +7801,7 @@ pub mod query_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table containing the requested items.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -6379,6 +7813,9 @@ pub mod query_input {
             self.index_name = Some(input.into());
             self
         }
+        /// <p>The name of an index to query. This index can be any local secondary index or global secondary index on the table. Note that
+        /// if you use the <code>IndexName</code> parameter, you must also provide <code>TableName.</code>
+        /// </p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_name = input;
             self
@@ -6443,16 +7880,80 @@ pub mod query_input {
             self.select = Some(input);
             self
         }
+        /// <p>The attributes to be returned in the
+        /// result. You can retrieve all item attributes, specific item attributes, the count of
+        /// matching items, or in the case of an index, some or all of the attributes projected into
+        /// the index.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the
+        /// specified table or index. If you query a local secondary index, then for each
+        /// matching item in the index, DynamoDB fetches the entire item from the parent
+        /// table. If the index is configured to project all item attributes, then all of
+        /// the data can be obtained from the local secondary index, and no fetching is
+        /// required.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an index.
+        /// Retrieves all attributes that have been projected into the index. If the
+        /// index is configured to project all attributes, this return value is
+        /// equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COUNT</code> - Returns the number of matching items, rather than the
+        /// matching items themselves.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
+        /// <code>AttributesToGet</code>. This return value is equivalent to
+        /// specifying <code>AttributesToGet</code> without specifying any value
+        /// for <code>Select</code>.</p>
+        /// <p>If you query or scan a local secondary index and request only attributes that
+        /// are projected into that index, the operation will read only the index and not
+        /// the table. If any of the requested attributes are not projected into the local
+        /// secondary index, DynamoDB fetches each of these attributes from the parent
+        /// table. This extra fetching incurs additional throughput cost and latency.</p>
+        /// <p>If you query or scan a global secondary index, you can only request
+        /// attributes that are projected into the index. Global secondary index queries
+        /// cannot fetch attributes from the parent table.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If neither <code>Select</code> nor <code>AttributesToGet</code>
+        /// are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
+        /// table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot
+        /// use both <code>Select</code> and <code>AttributesToGet</code>
+        /// together in a single request, unless the value for <code>Select</code> is
+        /// <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
+        /// <code>AttributesToGet</code> without any value for
+        /// <code>Select</code>.)</p>
+        /// <note>
+        /// <p>If you use the <code>ProjectionExpression</code> parameter, then
+        /// the value for <code>Select</code> can only be
+        /// <code>SPECIFIC_ATTRIBUTES</code>. Any other value for
+        /// <code>Select</code> will return an error.</p>
+        /// </note>
         pub fn set_select(mut self, input: std::option::Option<crate::model::Select>) -> Self {
             self.select = input;
             self
         }
+        /// Appends an item to `attributes_to_get`.
+        ///
+        /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
+        ///
+        /// <p>This is a legacy parameter.  Use <code>ProjectionExpression</code> instead.  For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn attributes_to_get(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attributes_to_get.unwrap_or_default();
             v.push(input.into());
             self.attributes_to_get = Some(v);
             self
         }
+        /// <p>This is a legacy parameter.  Use <code>ProjectionExpression</code> instead.  For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_attributes_to_get(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6473,6 +7974,15 @@ pub mod query_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of items to evaluate (not necessarily the number of matching items).
+        /// If DynamoDB processes the number of items up to the limit while processing the results,
+        /// it stops the operation and returns the matching values up to that point, and a key in
+        /// <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can
+        /// pick up where you left off. Also, if the processed dataset size exceeds 1 MB before
+        /// DynamoDB reaches this limit, it stops the operation and returns the matching values up
+        /// to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent
+        /// operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -6485,10 +7995,20 @@ pub mod query_input {
             self.consistent_read = Some(input);
             self
         }
+        /// <p>Determines the read consistency model:  If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</p>
+        /// <p>Strongly consistent reads
+        /// are not supported on global secondary indexes. If you query a global secondary index with <code>ConsistentRead</code> set to
+        /// <code>true</code>, you will receive a <code>ValidationException</code>.</p>
         pub fn set_consistent_read(mut self, input: std::option::Option<bool>) -> Self {
             self.consistent_read = input;
             self
         }
+        /// Adds a key-value pair to `key_conditions`.
+        ///
+        /// To override the contents of this collection use [`set_key_conditions`](Self::set_key_conditions).
+        ///
+        /// <p>This is a legacy parameter.  Use <code>KeyConditionExpression</code> instead.   For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn key_conditions(
             mut self,
             k: impl Into<std::string::String>,
@@ -6499,6 +8019,8 @@ pub mod query_input {
             self.key_conditions = Some(hash_map);
             self
         }
+        /// <p>This is a legacy parameter.  Use <code>KeyConditionExpression</code> instead.   For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_key_conditions(
             mut self,
             input: std::option::Option<
@@ -6508,6 +8030,12 @@ pub mod query_input {
             self.key_conditions = input;
             self
         }
+        /// Adds a key-value pair to `query_filter`.
+        ///
+        /// To override the contents of this collection use [`set_query_filter`](Self::set_query_filter).
+        ///
+        /// <p>This is a legacy parameter.  Use <code>FilterExpression</code> instead.   For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn query_filter(
             mut self,
             k: impl Into<std::string::String>,
@@ -6518,6 +8046,8 @@ pub mod query_input {
             self.query_filter = Some(hash_map);
             self
         }
+        /// <p>This is a legacy parameter.  Use <code>FilterExpression</code> instead.   For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_query_filter(
             mut self,
             input: std::option::Option<
@@ -6533,6 +8063,8 @@ pub mod query_input {
             self.conditional_operator = Some(input);
             self
         }
+        /// <p>This is a legacy parameter.  Use <code>FilterExpression</code> instead.  For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_conditional_operator(
             mut self,
             input: std::option::Option<crate::model::ConditionalOperator>,
@@ -6547,10 +8079,20 @@ pub mod query_input {
             self.scan_index_forward = Some(input);
             self
         }
+        /// <p>Specifies the order for index traversal: If <code>true</code> (default), the traversal is performed in ascending order; if <code>false</code>, the traversal is performed in descending order. </p>
+        /// <p>Items with the same partition key value are stored in sorted order by sort key. If the sort key data type is Number, the results are stored in numeric order. For type String, the results are stored in order of UTF-8 bytes. For type Binary, DynamoDB treats each byte of the binary data as unsigned.</p>
+        /// <p>If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which they are stored (by sort key value). This is the default behavior. If <code>ScanIndexForward</code> is <code>false</code>, DynamoDB reads the results in reverse order by sort key value, and then returns the results to the client.</p>
         pub fn set_scan_index_forward(mut self, input: std::option::Option<bool>) -> Self {
             self.scan_index_forward = input;
             self
         }
+        /// Adds a key-value pair to `exclusive_start_key`.
+        ///
+        /// To override the contents of this collection use [`set_exclusive_start_key`](Self::set_exclusive_start_key).
+        ///
+        /// <p>The primary key of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
+        /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number, or Binary. No
+        /// set data types are allowed.</p>
         pub fn exclusive_start_key(
             mut self,
             k: impl Into<std::string::String>,
@@ -6561,6 +8103,9 @@ pub mod query_input {
             self.exclusive_start_key = Some(hash_map);
             self
         }
+        /// <p>The primary key of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
+        /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number, or Binary. No
+        /// set data types are allowed.</p>
         pub fn set_exclusive_start_key(
             mut self,
             input: std::option::Option<
@@ -6593,6 +8138,22 @@ pub mod query_input {
             self.return_consumed_capacity = Some(input);
             self
         }
+        /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p>
+        /// <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all.  In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p>
+        /// </li>
+        /// </ul>
         pub fn set_return_consumed_capacity(
             mut self,
             input: std::option::Option<crate::model::ReturnConsumedCapacity>,
@@ -6608,6 +8169,10 @@ pub mod query_input {
             self.projection_expression = Some(input.into());
             self
         }
+        /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
+        /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_projection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6629,6 +8194,16 @@ pub mod query_input {
             self.filter_expression = Some(input.into());
             self
         }
+        /// <p>A string that contains conditions that DynamoDB applies after the <code>Query</code> operation, but
+        /// before the data is returned to you. Items that do not satisfy the <code>FilterExpression</code>
+        /// criteria are not returned.</p>
+        /// <p>A <code>FilterExpression</code> does not allow key attributes.  You cannot define a filter expression based on a partition key or a sort key.</p>
+        /// <note>
+        /// <p>A <code>FilterExpression</code> is applied after the items have already been read; the process of
+        /// filtering does not consume any additional read capacity units.</p>
+        /// </note>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+        /// Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_filter_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6638,19 +8213,24 @@ pub mod query_input {
         }
         /// <p>The condition that specifies the key values for items to be retrieved by the
         /// <code>Query</code> action.</p>
+        ///
         /// <p>The condition must perform an equality test on a single partition key value.</p>
         /// <p>The condition can optionally perform one of several comparison tests on a single
         /// sort key value. This allows <code>Query</code> to retrieve one item with a given
         /// partition key value and sort key value, or several items that have the same partition
         /// key value but different sort key values.</p>
+        ///
         /// <p>The partition key equality test is required, and must be specified in the following format:</p>
+        ///
         /// <p>
         /// <code>partitionKeyName</code>
         /// <i>=</i>
         /// <code>:partitionkeyval</code>
         /// </p>
+        ///
         /// <p>If you also want to provide a condition for the sort key, it must be combined using <code>AND</code> with the condition
         /// for the sort key. Following is an example, using the <b>=</b> comparison operator for the sort key:</p>
+        ///
         /// <p>
         /// <code>partitionKeyName</code>
         /// <code>=</code>
@@ -6710,10 +8290,13 @@ pub mod query_input {
         /// <code>)</code> -
         /// true if the sort key value begins with a particular operand. (You cannot use this function with a sort key that is of type Number.)  Note that the function name
         /// <code>begins_with</code> is case-sensitive.</p>
+        ///
         /// </li>
         /// </ul>
+        ///
         /// <p>Use the <code>ExpressionAttributeValues</code> parameter to replace tokens such as
         /// <code>:partitionval</code> and <code>:sortval</code> with actual values at runtime.</p>
+        ///
         /// <p>You can optionally use the <code>ExpressionAttributeNames</code> parameter to replace the names of
         /// the partition key and sort key with placeholder tokens. This option might be necessary if an attribute
         /// name conflicts with a DynamoDB reserved word. For example, the following
@@ -6737,6 +8320,7 @@ pub mod query_input {
         /// </ul>
         /// <p>For a list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
         /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        ///
         /// <p>For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>,
         /// see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using Placeholders for Attribute
         /// Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -6744,6 +8328,119 @@ pub mod query_input {
             self.key_condition_expression = Some(input.into());
             self
         }
+        /// <p>The condition that specifies the key values for items to be retrieved by the
+        /// <code>Query</code> action.</p>
+        ///
+        /// <p>The condition must perform an equality test on a single partition key value.</p>
+        /// <p>The condition can optionally perform one of several comparison tests on a single
+        /// sort key value. This allows <code>Query</code> to retrieve one item with a given
+        /// partition key value and sort key value, or several items that have the same partition
+        /// key value but different sort key values.</p>
+        ///
+        /// <p>The partition key equality test is required, and must be specified in the following format:</p>
+        ///
+        /// <p>
+        /// <code>partitionKeyName</code>
+        /// <i>=</i>
+        /// <code>:partitionkeyval</code>
+        /// </p>
+        ///
+        /// <p>If you also want to provide a condition for the sort key, it must be combined using <code>AND</code> with the condition
+        /// for the sort key. Following is an example, using the <b>=</b> comparison operator for the sort key:</p>
+        ///
+        /// <p>
+        /// <code>partitionKeyName</code>
+        /// <code>=</code>
+        /// <code>:partitionkeyval</code>
+        /// <code>AND</code>
+        /// <code>sortKeyName</code>
+        /// <code>=</code>
+        /// <code>:sortkeyval</code>
+        /// </p>
+        /// <p>Valid comparisons for the sort key condition are as follows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>sortKeyName</code>
+        /// <code>=</code>
+        /// <code>:sortkeyval</code> - true if the sort key value is equal to <code>:sortkeyval</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sortKeyName</code>
+        /// <code><</code>
+        /// <code>:sortkeyval</code> - true if the sort key value is less than <code>:sortkeyval</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sortKeyName</code>
+        /// <code><=</code>
+        /// <code>:sortkeyval</code> - true if the sort key value is less than or equal to
+        /// <code>:sortkeyval</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sortKeyName</code>
+        /// <code>></code>
+        /// <code>:sortkeyval</code> - true if the sort key value is greater than <code>:sortkeyval</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sortKeyName</code>
+        /// <code>>= </code>
+        /// <code>:sortkeyval</code> - true if the sort key value is greater than
+        /// or equal to <code>:sortkeyval</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sortKeyName</code>
+        /// <code>BETWEEN</code>
+        /// <code>:sortkeyval1</code>
+        /// <code>AND</code>
+        /// <code>:sortkeyval2</code> - true if the sort key value is greater than or equal to
+        /// <code>:sortkeyval1</code>, and less than or equal to <code>:sortkeyval2</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>begins_with (</code>
+        /// <code>sortKeyName</code>, <code>:sortkeyval</code>
+        /// <code>)</code> -
+        /// true if the sort key value begins with a particular operand. (You cannot use this function with a sort key that is of type Number.)  Note that the function name
+        /// <code>begins_with</code> is case-sensitive.</p>
+        ///
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Use the <code>ExpressionAttributeValues</code> parameter to replace tokens such as
+        /// <code>:partitionval</code> and <code>:sortval</code> with actual values at runtime.</p>
+        ///
+        /// <p>You can optionally use the <code>ExpressionAttributeNames</code> parameter to replace the names of
+        /// the partition key and sort key with placeholder tokens. This option might be necessary if an attribute
+        /// name conflicts with a DynamoDB reserved word. For example, the following
+        /// <code>KeyConditionExpression</code> parameter causes an error because <i>Size</i> is a reserved
+        /// word:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Size = :myval</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>To work around this, define a placeholder (such a <code>#S</code>) to represent the attribute
+        /// name <i>Size</i>. <code>KeyConditionExpression</code> then is as follows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>#S = :myval</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For a list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+        /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+        ///
+        /// <p>For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>,
+        /// see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using Placeholders for Attribute
+        /// Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_key_condition_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6751,6 +8448,52 @@ pub mod query_input {
             self.key_condition_expression = input;
             self
         }
+        /// Adds a key-value pair to `expression_attribute_names`.
+        ///
+        /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).
+        ///
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p>
+        /// </li>
+        /// <li>
+        /// <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p>
+        /// </li>
+        /// <li>
+        /// <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Percentile</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
+        /// <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>{"#P":"Percentile"}</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>You could then use this substitution in an expression, as in this example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>#P = :val</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+        /// </note>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn expression_attribute_names(
             mut self,
             k: impl Into<std::string::String>,
@@ -6761,6 +8504,48 @@ pub mod query_input {
             self.expression_attribute_names = Some(hash_map);
             self
         }
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p>
+        /// </li>
+        /// <li>
+        /// <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p>
+        /// </li>
+        /// <li>
+        /// <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Percentile</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
+        /// <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>{"#P":"Percentile"}</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>You could then use this substitution in an expression, as in this example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>#P = :val</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+        /// </note>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_expression_attribute_names(
             mut self,
             input: std::option::Option<
@@ -6770,6 +8555,25 @@ pub mod query_input {
             self.expression_attribute_names = input;
             self
         }
+        /// Adds a key-value pair to `expression_attribute_values`.
+        ///
+        /// To override the contents of this collection use [`set_expression_attribute_values`](Self::set_expression_attribute_values).
+        ///
+        /// <p>One or more values that can be substituted in an expression.</p>
+        /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the
+        /// <i>ProductStatus</i> attribute was one of the following: </p>
+        /// <p>
+        /// <code>Available | Backordered | Discontinued</code>
+        /// </p>
+        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+        /// <p>
+        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+        /// </p>
+        /// <p>You could then use these values in an expression, such as this:</p>
+        /// <p>
+        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
+        /// </p>
+        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn expression_attribute_values(
             mut self,
             k: impl Into<std::string::String>,
@@ -6780,6 +8584,21 @@ pub mod query_input {
             self.expression_attribute_values = Some(hash_map);
             self
         }
+        /// <p>One or more values that can be substituted in an expression.</p>
+        /// <p>Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the
+        /// <i>ProductStatus</i> attribute was one of the following: </p>
+        /// <p>
+        /// <code>Available | Backordered | Discontinued</code>
+        /// </p>
+        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+        /// <p>
+        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+        /// </p>
+        /// <p>You could then use these values in an expression, such as this:</p>
+        /// <p>
+        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
+        /// </p>
+        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_expression_attribute_values(
             mut self,
             input: std::option::Option<
@@ -6792,7 +8611,7 @@ pub mod query_input {
         /// Consumes the builder and constructs a [`QueryInput`](crate::input::QueryInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::QueryInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::QueryInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::QueryInput {
                 table_name: self.table_name,
@@ -6827,13 +8646,16 @@ impl QueryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::Query, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::Query,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::QueryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6841,7 +8663,7 @@ impl QueryInput {
         fn update_http_builder(
             input: &crate::input::QueryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6850,29 +8672,30 @@ impl QueryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::QueryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.Query",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_query(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_query(&self).map_err(
+            |err| aws_smithy_http::operation::BuildError::SerializationError(err.into()),
+        )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6895,21 +8718,24 @@ impl QueryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::Query::new())
-            .with_metadata(smithy_http::operation::Metadata::new("Query", "dynamodb"));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::Query::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "Query", "dynamodb",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6946,6 +8772,7 @@ pub mod restore_table_from_backup_input {
             self.target_table_name = Some(input.into());
             self
         }
+        /// <p>The name of the new table to which the backup must be restored.</p>
         pub fn set_target_table_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6958,6 +8785,7 @@ pub mod restore_table_from_backup_input {
             self.backup_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
         pub fn set_backup_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.backup_arn = input;
             self
@@ -6967,6 +8795,7 @@ pub mod restore_table_from_backup_input {
             self.billing_mode_override = Some(input);
             self
         }
+        /// <p>The billing mode of the restored table.</p>
         pub fn set_billing_mode_override(
             mut self,
             input: std::option::Option<crate::model::BillingMode>,
@@ -6974,6 +8803,13 @@ pub mod restore_table_from_backup_input {
             self.billing_mode_override = input;
             self
         }
+        /// Appends an item to `global_secondary_index_override`.
+        ///
+        /// To override the contents of this collection use [`set_global_secondary_index_override`](Self::set_global_secondary_index_override).
+        ///
+        /// <p>List of global secondary indexes for the restored table. The indexes
+        /// provided should match existing secondary indexes. You can choose to exclude
+        /// some or all of the indexes at the time of restore.</p>
         pub fn global_secondary_index_override(
             mut self,
             input: impl Into<crate::model::GlobalSecondaryIndex>,
@@ -6983,6 +8819,9 @@ pub mod restore_table_from_backup_input {
             self.global_secondary_index_override = Some(v);
             self
         }
+        /// <p>List of global secondary indexes for the restored table. The indexes
+        /// provided should match existing secondary indexes. You can choose to exclude
+        /// some or all of the indexes at the time of restore.</p>
         pub fn set_global_secondary_index_override(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
@@ -6990,6 +8829,13 @@ pub mod restore_table_from_backup_input {
             self.global_secondary_index_override = input;
             self
         }
+        /// Appends an item to `local_secondary_index_override`.
+        ///
+        /// To override the contents of this collection use [`set_local_secondary_index_override`](Self::set_local_secondary_index_override).
+        ///
+        /// <p>List of local secondary indexes for the restored table. The indexes
+        /// provided should match existing secondary indexes. You can choose to exclude
+        /// some or all of the indexes at the time of restore.</p>
         pub fn local_secondary_index_override(
             mut self,
             input: impl Into<crate::model::LocalSecondaryIndex>,
@@ -6999,6 +8845,9 @@ pub mod restore_table_from_backup_input {
             self.local_secondary_index_override = Some(v);
             self
         }
+        /// <p>List of local secondary indexes for the restored table. The indexes
+        /// provided should match existing secondary indexes. You can choose to exclude
+        /// some or all of the indexes at the time of restore.</p>
         pub fn set_local_secondary_index_override(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
@@ -7014,6 +8863,7 @@ pub mod restore_table_from_backup_input {
             self.provisioned_throughput_override = Some(input);
             self
         }
+        /// <p>Provisioned throughput settings for the restored table.</p>
         pub fn set_provisioned_throughput_override(
             mut self,
             input: std::option::Option<crate::model::ProvisionedThroughput>,
@@ -7026,6 +8876,7 @@ pub mod restore_table_from_backup_input {
             self.sse_specification_override = Some(input);
             self
         }
+        /// <p>The new server-side encryption settings for the restored table.</p>
         pub fn set_sse_specification_override(
             mut self,
             input: std::option::Option<crate::model::SseSpecification>,
@@ -7038,7 +8889,7 @@ pub mod restore_table_from_backup_input {
             self,
         ) -> std::result::Result<
             crate::input::RestoreTableFromBackupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RestoreTableFromBackupInput {
                 target_table_name: self.target_table_name,
@@ -7063,16 +8914,16 @@ impl RestoreTableFromBackupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RestoreTableFromBackup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RestoreTableFromBackupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7080,7 +8931,7 @@ impl RestoreTableFromBackupInput {
         fn update_http_builder(
             input: &crate::input::RestoreTableFromBackupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7089,32 +8940,34 @@ impl RestoreTableFromBackupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RestoreTableFromBackupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.RestoreTableFromBackup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_restore_table_from_backup(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7137,15 +8990,15 @@ impl RestoreTableFromBackupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RestoreTableFromBackup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RestoreTableFromBackup",
             "dynamodb",
         ));
@@ -7154,10 +9007,10 @@ impl RestoreTableFromBackupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7181,7 +9034,7 @@ pub mod restore_table_to_point_in_time_input {
         pub(crate) source_table_name: std::option::Option<std::string::String>,
         pub(crate) target_table_name: std::option::Option<std::string::String>,
         pub(crate) use_latest_restorable_time: std::option::Option<bool>,
-        pub(crate) restore_date_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) restore_date_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) billing_mode_override: std::option::Option<crate::model::BillingMode>,
         pub(crate) global_secondary_index_override:
             std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
@@ -7198,6 +9051,8 @@ pub mod restore_table_to_point_in_time_input {
             self.source_table_arn = Some(input.into());
             self
         }
+        /// <p>The DynamoDB table that will be restored. This value is an Amazon
+        /// Resource Name (ARN).</p>
         pub fn set_source_table_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7210,6 +9065,7 @@ pub mod restore_table_to_point_in_time_input {
             self.source_table_name = Some(input.into());
             self
         }
+        /// <p>Name of the source table that is being restored.</p>
         pub fn set_source_table_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7222,6 +9078,7 @@ pub mod restore_table_to_point_in_time_input {
             self.target_table_name = Some(input.into());
             self
         }
+        /// <p>The name of the new table to which it must be restored to.</p>
         pub fn set_target_table_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7235,18 +9092,21 @@ pub mod restore_table_to_point_in_time_input {
             self.use_latest_restorable_time = Some(input);
             self
         }
+        /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code>
+        /// is typically 5 minutes before the current time. </p>
         pub fn set_use_latest_restorable_time(mut self, input: std::option::Option<bool>) -> Self {
             self.use_latest_restorable_time = input;
             self
         }
         /// <p>Time in the past to restore the table to.</p>
-        pub fn restore_date_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn restore_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.restore_date_time = Some(input);
             self
         }
+        /// <p>Time in the past to restore the table to.</p>
         pub fn set_restore_date_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.restore_date_time = input;
             self
@@ -7256,6 +9116,7 @@ pub mod restore_table_to_point_in_time_input {
             self.billing_mode_override = Some(input);
             self
         }
+        /// <p>The billing mode of the restored table.</p>
         pub fn set_billing_mode_override(
             mut self,
             input: std::option::Option<crate::model::BillingMode>,
@@ -7263,6 +9124,13 @@ pub mod restore_table_to_point_in_time_input {
             self.billing_mode_override = input;
             self
         }
+        /// Appends an item to `global_secondary_index_override`.
+        ///
+        /// To override the contents of this collection use [`set_global_secondary_index_override`](Self::set_global_secondary_index_override).
+        ///
+        /// <p>List of global secondary indexes for the restored table. The indexes
+        /// provided should match existing secondary indexes. You can choose to exclude
+        /// some or all of the indexes at the time of restore.</p>
         pub fn global_secondary_index_override(
             mut self,
             input: impl Into<crate::model::GlobalSecondaryIndex>,
@@ -7272,6 +9140,9 @@ pub mod restore_table_to_point_in_time_input {
             self.global_secondary_index_override = Some(v);
             self
         }
+        /// <p>List of global secondary indexes for the restored table. The indexes
+        /// provided should match existing secondary indexes. You can choose to exclude
+        /// some or all of the indexes at the time of restore.</p>
         pub fn set_global_secondary_index_override(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
@@ -7279,6 +9150,13 @@ pub mod restore_table_to_point_in_time_input {
             self.global_secondary_index_override = input;
             self
         }
+        /// Appends an item to `local_secondary_index_override`.
+        ///
+        /// To override the contents of this collection use [`set_local_secondary_index_override`](Self::set_local_secondary_index_override).
+        ///
+        /// <p>List of local secondary indexes for the restored table. The indexes
+        /// provided should match existing secondary indexes. You can choose to exclude
+        /// some or all of the indexes at the time of restore.</p>
         pub fn local_secondary_index_override(
             mut self,
             input: impl Into<crate::model::LocalSecondaryIndex>,
@@ -7288,6 +9166,9 @@ pub mod restore_table_to_point_in_time_input {
             self.local_secondary_index_override = Some(v);
             self
         }
+        /// <p>List of local secondary indexes for the restored table. The indexes
+        /// provided should match existing secondary indexes. You can choose to exclude
+        /// some or all of the indexes at the time of restore.</p>
         pub fn set_local_secondary_index_override(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
@@ -7303,6 +9184,7 @@ pub mod restore_table_to_point_in_time_input {
             self.provisioned_throughput_override = Some(input);
             self
         }
+        /// <p>Provisioned throughput settings for the restored table.</p>
         pub fn set_provisioned_throughput_override(
             mut self,
             input: std::option::Option<crate::model::ProvisionedThroughput>,
@@ -7315,6 +9197,7 @@ pub mod restore_table_to_point_in_time_input {
             self.sse_specification_override = Some(input);
             self
         }
+        /// <p>The new server-side encryption settings for the restored table.</p>
         pub fn set_sse_specification_override(
             mut self,
             input: std::option::Option<crate::model::SseSpecification>,
@@ -7327,7 +9210,7 @@ pub mod restore_table_to_point_in_time_input {
             self,
         ) -> std::result::Result<
             crate::input::RestoreTableToPointInTimeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RestoreTableToPointInTimeInput {
                 source_table_arn: self.source_table_arn,
@@ -7356,16 +9239,16 @@ impl RestoreTableToPointInTimeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RestoreTableToPointInTime,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RestoreTableToPointInTimeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7373,7 +9256,7 @@ impl RestoreTableToPointInTimeInput {
         fn update_http_builder(
             input: &crate::input::RestoreTableToPointInTimeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7382,30 +9265,30 @@ impl RestoreTableToPointInTimeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RestoreTableToPointInTimeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.RestoreTableToPointInTime",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_restore_table_to_point_in_time(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_restore_table_to_point_in_time(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7428,15 +9311,15 @@ impl RestoreTableToPointInTimeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RestoreTableToPointInTime::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RestoreTableToPointInTime",
             "dynamodb",
         ));
@@ -7445,10 +9328,10 @@ impl RestoreTableToPointInTimeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7501,6 +9384,8 @@ pub mod scan_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table containing the requested items; or, if you provide
+        /// <code>IndexName</code>, the name of the table to which that index belongs.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -7510,16 +9395,25 @@ pub mod scan_input {
             self.index_name = Some(input.into());
             self
         }
+        /// <p>The name of a secondary index to scan. This index can be any local secondary index or global secondary index.  Note that if you use the <code>IndexName</code> parameter, you must also provide <code>TableName</code>.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_name = input;
             self
         }
+        /// Appends an item to `attributes_to_get`.
+        ///
+        /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
+        ///
+        /// <p>This is a legacy parameter.  Use <code>ProjectionExpression</code> instead.  For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn attributes_to_get(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attributes_to_get.unwrap_or_default();
             v.push(input.into());
             self.attributes_to_get = Some(v);
             self
         }
+        /// <p>This is a legacy parameter.  Use <code>ProjectionExpression</code> instead.  For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_attributes_to_get(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7540,6 +9434,15 @@ pub mod scan_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of items to evaluate (not necessarily the number of matching items).
+        /// If DynamoDB processes the number of items up to the limit while processing the results,
+        /// it stops the operation and returns the matching values up to that point, and a key in
+        /// <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can
+        /// pick up where you left off. Also, if the processed dataset size exceeds 1 MB before
+        /// DynamoDB reaches this limit, it stops the operation and returns the matching values up
+        /// to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent
+        /// operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working with Queries</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -7604,10 +9507,72 @@ pub mod scan_input {
             self.select = Some(input);
             self
         }
+        /// <p>The attributes to be returned in the
+        /// result. You can retrieve all item attributes, specific item attributes, the count of
+        /// matching items, or in the case of an index, some or all of the attributes projected into
+        /// the index.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the
+        /// specified table or index. If you query a local secondary index, then for each
+        /// matching item in the index, DynamoDB fetches the entire item from the parent
+        /// table. If the index is configured to project all item attributes, then all of
+        /// the data can be obtained from the local secondary index, and no fetching is
+        /// required.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an index.
+        /// Retrieves all attributes that have been projected into the index. If the
+        /// index is configured to project all attributes, this return value is
+        /// equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>COUNT</code> - Returns the number of matching items, rather than the
+        /// matching items themselves.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
+        /// <code>AttributesToGet</code>. This return value is equivalent to
+        /// specifying <code>AttributesToGet</code> without specifying any value
+        /// for <code>Select</code>.</p>
+        /// <p>If you query or scan a local secondary index and request only attributes that
+        /// are projected into that index, the operation reads only the index and not the
+        /// table. If any of the requested attributes are not projected into the local
+        /// secondary index, DynamoDB fetches each of these attributes from the parent
+        /// table. This extra fetching incurs additional throughput cost and latency.</p>
+        /// <p>If you query or scan a global secondary index, you can only request
+        /// attributes that are projected into the index. Global secondary index queries
+        /// cannot fetch attributes from the parent table.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If neither <code>Select</code> nor <code>AttributesToGet</code>
+        /// are specified, DynamoDB defaults to <code>ALL_ATTRIBUTES</code> when accessing a
+        /// table, and <code>ALL_PROJECTED_ATTRIBUTES</code> when accessing an index. You cannot
+        /// use both <code>Select</code> and <code>AttributesToGet</code>
+        /// together in a single request, unless the value for <code>Select</code> is
+        /// <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
+        /// <code>AttributesToGet</code> without any value for
+        /// <code>Select</code>.)</p>
+        /// <note>
+        /// <p>If you use the <code>ProjectionExpression</code> parameter, then
+        /// the value for <code>Select</code> can only be
+        /// <code>SPECIFIC_ATTRIBUTES</code>. Any other value for
+        /// <code>Select</code> will return an error.</p>
+        /// </note>
         pub fn set_select(mut self, input: std::option::Option<crate::model::Select>) -> Self {
             self.select = input;
             self
         }
+        /// Adds a key-value pair to `scan_filter`.
+        ///
+        /// To override the contents of this collection use [`set_scan_filter`](Self::set_scan_filter).
+        ///
+        /// <p>This is a legacy parameter.  Use <code>FilterExpression</code> instead.   For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html">ScanFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn scan_filter(
             mut self,
             k: impl Into<std::string::String>,
@@ -7618,6 +9583,8 @@ pub mod scan_input {
             self.scan_filter = Some(hash_map);
             self
         }
+        /// <p>This is a legacy parameter.  Use <code>FilterExpression</code> instead.   For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html">ScanFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_scan_filter(
             mut self,
             input: std::option::Option<
@@ -7633,6 +9600,8 @@ pub mod scan_input {
             self.conditional_operator = Some(input);
             self
         }
+        /// <p>This is a legacy parameter.  Use <code>FilterExpression</code> instead.   For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_conditional_operator(
             mut self,
             input: std::option::Option<crate::model::ConditionalOperator>,
@@ -7640,6 +9609,15 @@ pub mod scan_input {
             self.conditional_operator = input;
             self
         }
+        /// Adds a key-value pair to `exclusive_start_key`.
+        ///
+        /// To override the contents of this collection use [`set_exclusive_start_key`](Self::set_exclusive_start_key).
+        ///
+        /// <p>The primary key of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
+        /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number or Binary. No set data types are allowed.</p>
+        /// <p>In a parallel scan, a
+        /// <code>Scan</code> request that includes <code>ExclusiveStartKey</code> must specify the same segment
+        /// whose previous <code>Scan</code> returned the corresponding value of <code>LastEvaluatedKey</code>.</p>
         pub fn exclusive_start_key(
             mut self,
             k: impl Into<std::string::String>,
@@ -7650,6 +9628,11 @@ pub mod scan_input {
             self.exclusive_start_key = Some(hash_map);
             self
         }
+        /// <p>The primary key of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedKey</code> in the previous operation.</p>
+        /// <p>The data type for <code>ExclusiveStartKey</code> must be String, Number or Binary. No set data types are allowed.</p>
+        /// <p>In a parallel scan, a
+        /// <code>Scan</code> request that includes <code>ExclusiveStartKey</code> must specify the same segment
+        /// whose previous <code>Scan</code> returned the corresponding value of <code>LastEvaluatedKey</code>.</p>
         pub fn set_exclusive_start_key(
             mut self,
             input: std::option::Option<
@@ -7682,6 +9665,22 @@ pub mod scan_input {
             self.return_consumed_capacity = Some(input);
             self
         }
+        /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p>
+        /// <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all.  In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p>
+        /// </li>
+        /// </ul>
         pub fn set_return_consumed_capacity(
             mut self,
             input: std::option::Option<crate::model::ReturnConsumedCapacity>,
@@ -7702,6 +9701,15 @@ pub mod scan_input {
             self.total_segments = Some(input);
             self
         }
+        /// <p>For a parallel <code>Scan</code> request, <code>TotalSegments</code> represents the total number of
+        /// segments into which the <code>Scan</code> operation will be divided. The value of
+        /// <code>TotalSegments</code> corresponds to the number of application workers that will perform the
+        /// parallel scan. For example, if you want to use four application threads to scan a table or an index,
+        /// specify a <code>TotalSegments</code> value of 4.</p>
+        /// <p>The value for <code>TotalSegments</code> must be greater than or equal to 1, and less than or equal
+        /// to 1000000. If you specify a <code>TotalSegments</code> value of 1, the <code>Scan</code> operation will
+        /// be sequential rather than parallel.</p>
+        /// <p>If you specify <code>TotalSegments</code>, you must also specify <code>Segment</code>.</p>
         pub fn set_total_segments(mut self, input: std::option::Option<i32>) -> Self {
             self.total_segments = input;
             self
@@ -7721,6 +9729,17 @@ pub mod scan_input {
             self.segment = Some(input);
             self
         }
+        /// <p>For a parallel <code>Scan</code> request, <code>Segment</code> identifies an individual segment to be
+        /// scanned by an application worker.</p>
+        /// <p>Segment IDs are zero-based, so the first segment is always 0. For example, if you want to
+        /// use four application threads to scan a table or an index, then the first thread specifies a <code>Segment</code> value
+        /// of 0, the second thread specifies 1, and so on.</p>
+        /// <p>The value of <code>LastEvaluatedKey</code> returned from a parallel <code>Scan</code> request must be
+        /// used as <code>ExclusiveStartKey</code> with the same segment ID in a subsequent <code>Scan</code>
+        /// operation.</p>
+        /// <p>The value for <code>Segment</code> must be greater than or equal to 0, and less than the value
+        /// provided for <code>TotalSegments</code>.</p>
+        /// <p>If you provide <code>Segment</code>, you must also provide <code>TotalSegments</code>.</p>
         pub fn set_segment(mut self, input: std::option::Option<i32>) -> Self {
             self.segment = input;
             self
@@ -7733,6 +9752,10 @@ pub mod scan_input {
             self.projection_expression = Some(input.into());
             self
         }
+        /// <p>A string that identifies one or more attributes to retrieve from the specified table or index. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
+        /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_projection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7753,6 +9776,15 @@ pub mod scan_input {
             self.filter_expression = Some(input.into());
             self
         }
+        /// <p>A string that contains conditions that DynamoDB applies after the <code>Scan</code> operation, but
+        /// before the data is returned to you. Items that do not satisfy the <code>FilterExpression</code>
+        /// criteria are not returned.</p>
+        /// <note>
+        /// <p>A <code>FilterExpression</code> is applied after the items have already been read; the process of
+        /// filtering does not consume any additional read capacity units.</p>
+        /// </note>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_filter_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7760,6 +9792,51 @@ pub mod scan_input {
             self.filter_expression = input;
             self
         }
+        /// Adds a key-value pair to `expression_attribute_names`.
+        ///
+        /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).
+        ///
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p>
+        /// </li>
+        /// <li>
+        /// <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p>
+        /// </li>
+        /// <li>
+        /// <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Percentile</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>{"#P":"Percentile"}</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>You could then use this substitution in an expression, as in this example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>#P = :val</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+        /// </note>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn expression_attribute_names(
             mut self,
             k: impl Into<std::string::String>,
@@ -7770,6 +9847,47 @@ pub mod scan_input {
             self.expression_attribute_names = Some(hash_map);
             self
         }
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p>
+        /// </li>
+        /// <li>
+        /// <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p>
+        /// </li>
+        /// <li>
+        /// <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Percentile</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>{"#P":"Percentile"}</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>You could then use this substitution in an expression, as in this example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>#P = :val</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+        /// </note>
+        /// <p>For more information on expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_expression_attribute_names(
             mut self,
             input: std::option::Option<
@@ -7779,6 +9897,27 @@ pub mod scan_input {
             self.expression_attribute_names = input;
             self
         }
+        /// Adds a key-value pair to `expression_attribute_values`.
+        ///
+        /// To override the contents of this collection use [`set_expression_attribute_values`](Self::set_expression_attribute_values).
+        ///
+        /// <p>One or more values that can be substituted in an expression.</p>
+        /// <p>Use the <b>:</b> (colon) character in an expression to
+        /// dereference an attribute value. For example, suppose that you wanted to check whether
+        /// the value of the <code>ProductStatus</code> attribute was one of the following: </p>
+        /// <p>
+        /// <code>Available | Backordered | Discontinued</code>
+        /// </p>
+        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+        /// <p>
+        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+        /// </p>
+        /// <p>You could then use these values in an expression, such as this:</p>
+        /// <p>
+        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
+        /// </p>
+        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn expression_attribute_values(
             mut self,
             k: impl Into<std::string::String>,
@@ -7789,6 +9928,23 @@ pub mod scan_input {
             self.expression_attribute_values = Some(hash_map);
             self
         }
+        /// <p>One or more values that can be substituted in an expression.</p>
+        /// <p>Use the <b>:</b> (colon) character in an expression to
+        /// dereference an attribute value. For example, suppose that you wanted to check whether
+        /// the value of the <code>ProductStatus</code> attribute was one of the following: </p>
+        /// <p>
+        /// <code>Available | Backordered | Discontinued</code>
+        /// </p>
+        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+        /// <p>
+        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+        /// </p>
+        /// <p>You could then use these values in an expression, such as this:</p>
+        /// <p>
+        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
+        /// </p>
+        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_expression_attribute_values(
             mut self,
             input: std::option::Option<
@@ -7816,6 +9972,20 @@ pub mod scan_input {
             self.consistent_read = Some(input);
             self
         }
+        /// <p>A Boolean value that determines the read consistency model during the scan:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If <code>ConsistentRead</code> is <code>false</code>, then the data returned from
+        /// <code>Scan</code> might not contain the results from other recently
+        /// completed write operations (<code>PutItem</code>, <code>UpdateItem</code>, or
+        /// <code>DeleteItem</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>If <code>ConsistentRead</code> is <code>true</code>, then all of the write operations that completed before the <code>Scan</code> began are guaranteed to be contained in the <code>Scan</code> response.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The default setting for <code>ConsistentRead</code> is <code>false</code>.</p>
+        /// <p>The <code>ConsistentRead</code> parameter is not supported on global secondary indexes. If you scan a global secondary index with <code>ConsistentRead</code> set to true, you will receive a <code>ValidationException</code>.</p>
         pub fn set_consistent_read(mut self, input: std::option::Option<bool>) -> Self {
             self.consistent_read = input;
             self
@@ -7823,7 +9993,7 @@ pub mod scan_input {
         /// Consumes the builder and constructs a [`ScanInput`](crate::input::ScanInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ScanInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ScanInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ScanInput {
                 table_name: self.table_name,
@@ -7857,13 +10027,16 @@ impl ScanInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::Scan, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::Scan,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ScanInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7871,7 +10044,7 @@ impl ScanInput {
         fn update_http_builder(
             input: &crate::input::ScanInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7880,29 +10053,30 @@ impl ScanInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ScanInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.Scan",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_scan(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_scan(&self).map_err(
+            |err| aws_smithy_http::operation::BuildError::SerializationError(err.into()),
+        )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7925,21 +10099,23 @@ impl ScanInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::Scan::new())
-            .with_metadata(smithy_http::operation::Metadata::new("Scan", "dynamodb"));
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::Scan::new())
+            .with_metadata(aws_smithy_http::operation::Metadata::new(
+                "Scan", "dynamodb",
+            ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7968,16 +10144,23 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>Identifies the Amazon DynamoDB resource to which tags should be added. This value is an Amazon Resource Name (ARN).</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to be assigned to the Amazon DynamoDB resource.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags to be assigned to the Amazon DynamoDB resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7988,8 +10171,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -8008,16 +10193,16 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8025,7 +10210,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8034,29 +10219,31 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.TagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8079,25 +10266,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "dynamodb",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "dynamodb",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8123,12 +10312,20 @@ pub mod transact_get_items_input {
             std::option::Option<crate::model::ReturnConsumedCapacity>,
     }
     impl Builder {
+        /// Appends an item to `transact_items`.
+        ///
+        /// To override the contents of this collection use [`set_transact_items`](Self::set_transact_items).
+        ///
+        /// <p>An ordered array of up to 25 <code>TransactGetItem</code> objects,
+        /// each of which contains a <code>Get</code> structure.</p>
         pub fn transact_items(mut self, input: impl Into<crate::model::TransactGetItem>) -> Self {
             let mut v = self.transact_items.unwrap_or_default();
             v.push(input.into());
             self.transact_items = Some(v);
             self
         }
+        /// <p>An ordered array of up to 25 <code>TransactGetItem</code> objects,
+        /// each of which contains a <code>Get</code> structure.</p>
         pub fn set_transact_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TransactGetItem>>,
@@ -8146,6 +10343,9 @@ pub mod transact_get_items_input {
             self.return_consumed_capacity = Some(input);
             self
         }
+        /// <p>A value of <code>TOTAL</code> causes consumed capacity information
+        /// to be returned, and a value of <code>NONE</code> prevents that information
+        /// from being returned. No other value is valid.</p>
         pub fn set_return_consumed_capacity(
             mut self,
             input: std::option::Option<crate::model::ReturnConsumedCapacity>,
@@ -8158,7 +10358,7 @@ pub mod transact_get_items_input {
             self,
         ) -> std::result::Result<
             crate::input::TransactGetItemsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::TransactGetItemsInput {
                 transact_items: self.transact_items,
@@ -8178,16 +10378,16 @@ impl TransactGetItemsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TransactGetItems,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TransactGetItemsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8195,7 +10395,7 @@ impl TransactGetItemsInput {
         fn update_http_builder(
             input: &crate::input::TransactGetItemsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8204,32 +10404,32 @@ impl TransactGetItemsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TransactGetItemsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.TransactGetItems",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_transact_get_items(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8252,15 +10452,15 @@ impl TransactGetItemsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::TransactGetItems::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "TransactGetItems",
             "dynamodb",
         ));
@@ -8269,10 +10469,10 @@ impl TransactGetItemsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8301,12 +10501,26 @@ pub mod transact_write_items_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `transact_items`.
+        ///
+        /// To override the contents of this collection use [`set_transact_items`](Self::set_transact_items).
+        ///
+        /// <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which
+        /// contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or
+        /// <code>Delete</code> object. These can operate on items in different tables, but the
+        /// tables must reside in the same AWS account and Region, and no two of them can operate on
+        /// the same item. </p>
         pub fn transact_items(mut self, input: impl Into<crate::model::TransactWriteItem>) -> Self {
             let mut v = self.transact_items.unwrap_or_default();
             v.push(input.into());
             self.transact_items = Some(v);
             self
         }
+        /// <p>An ordered array of up to 25 <code>TransactWriteItem</code> objects, each of which
+        /// contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or
+        /// <code>Delete</code> object. These can operate on items in different tables, but the
+        /// tables must reside in the same AWS account and Region, and no two of them can operate on
+        /// the same item. </p>
         pub fn set_transact_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TransactWriteItem>>,
@@ -8337,6 +10551,22 @@ pub mod transact_write_items_input {
             self.return_consumed_capacity = Some(input);
             self
         }
+        /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p>
+        /// <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all.  In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p>
+        /// </li>
+        /// </ul>
         pub fn set_return_consumed_capacity(
             mut self,
             input: std::option::Option<crate::model::ReturnConsumedCapacity>,
@@ -8356,6 +10586,11 @@ pub mod transact_write_items_input {
             self.return_item_collection_metrics = Some(input);
             self
         }
+        /// <p>Determines whether item collection metrics are returned. If set to
+        /// <code>SIZE</code>, the response includes statistics about item collections (if any), that
+        /// were modified during the operation and are returned in the response.
+        /// If set to <code>NONE</code> (the default), no statistics are returned.
+        /// </p>
         pub fn set_return_item_collection_metrics(
             mut self,
             input: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
@@ -8383,6 +10618,22 @@ pub mod transact_write_items_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>Providing a <code>ClientRequestToken</code> makes the call to <code>TransactWriteItems</code>
+        /// idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
+        /// <p>Although multiple identical calls using the same client request token produce the same
+        /// result on the server (no side effects), the responses to the calls might not be the
+        /// same. If the <code>ReturnConsumedCapacity></code> parameter is set, then the initial
+        /// <code>TransactWriteItems</code> call returns the amount of write capacity units
+        /// consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls with
+        /// the same client token return the number of read capacity units consumed in reading the
+        /// item.</p>
+        /// <p>A client request token is valid for 10 minutes after the first request that uses it is
+        /// completed. After 10 minutes, any request with the same client token is treated as a new
+        /// request. Do not resubmit the same request with the same client token for more than 10
+        /// minutes, or the result might not be idempotent.</p>
+        /// <p>If you submit a request with the same client token but a change in other parameters
+        /// within the 10-minute idempotency window, DynamoDB returns an
+        /// <code>IdempotentParameterMismatch</code> exception.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8395,7 +10646,7 @@ pub mod transact_write_items_input {
             self,
         ) -> std::result::Result<
             crate::input::TransactWriteItemsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::TransactWriteItemsInput {
                 transact_items: self.transact_items,
@@ -8417,16 +10668,16 @@ impl TransactWriteItemsInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TransactWriteItems,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TransactWriteItemsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8434,7 +10685,7 @@ impl TransactWriteItemsInput {
         fn update_http_builder(
             input: &crate::input::TransactWriteItemsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8443,15 +10694,15 @@ impl TransactWriteItemsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TransactWriteItemsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.TransactWriteItems",
@@ -8461,15 +10712,17 @@ impl TransactWriteItemsInput {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_transact_write_items(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8492,15 +10745,15 @@ impl TransactWriteItemsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::TransactWriteItems::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "TransactWriteItems",
             "dynamodb",
         ));
@@ -8509,10 +10762,10 @@ impl TransactWriteItemsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8542,16 +10795,26 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The DynamoDB resource that the tags will be removed from. This value is an Amazon
+        /// Resource Name (ARN).</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list
+        /// will be removed from the DynamoDB resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list
+        /// will be removed from the DynamoDB resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8562,8 +10825,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -8582,16 +10847,16 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8599,7 +10864,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8608,29 +10873,31 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.UntagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8653,25 +10920,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "dynamodb",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "dynamodb",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8701,6 +10970,7 @@ pub mod update_continuous_backups_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -8713,6 +10983,7 @@ pub mod update_continuous_backups_input {
             self.point_in_time_recovery_specification = Some(input);
             self
         }
+        /// <p>Represents the settings used to enable point in time recovery.</p>
         pub fn set_point_in_time_recovery_specification(
             mut self,
             input: std::option::Option<crate::model::PointInTimeRecoverySpecification>,
@@ -8725,7 +10996,7 @@ pub mod update_continuous_backups_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateContinuousBackupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateContinuousBackupsInput {
                 table_name: self.table_name,
@@ -8746,16 +11017,16 @@ impl UpdateContinuousBackupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateContinuousBackups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateContinuousBackupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8763,7 +11034,7 @@ impl UpdateContinuousBackupsInput {
         fn update_http_builder(
             input: &crate::input::UpdateContinuousBackupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8772,32 +11043,34 @@ impl UpdateContinuousBackupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateContinuousBackupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.UpdateContinuousBackups",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_continuous_backups(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8820,15 +11093,15 @@ impl UpdateContinuousBackupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateContinuousBackups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateContinuousBackups",
             "dynamodb",
         ));
@@ -8837,10 +11110,10 @@ impl UpdateContinuousBackupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8871,6 +11144,7 @@ pub mod update_contributor_insights_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -8880,6 +11154,7 @@ pub mod update_contributor_insights_input {
             self.index_name = Some(input.into());
             self
         }
+        /// <p>The global secondary index name, if applicable.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_name = input;
             self
@@ -8892,6 +11167,7 @@ pub mod update_contributor_insights_input {
             self.contributor_insights_action = Some(input);
             self
         }
+        /// <p>Represents the contributor insights action.</p>
         pub fn set_contributor_insights_action(
             mut self,
             input: std::option::Option<crate::model::ContributorInsightsAction>,
@@ -8904,7 +11180,7 @@ pub mod update_contributor_insights_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateContributorInsightsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateContributorInsightsInput {
                 table_name: self.table_name,
@@ -8926,16 +11202,16 @@ impl UpdateContributorInsightsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateContributorInsights,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateContributorInsightsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8943,7 +11219,7 @@ impl UpdateContributorInsightsInput {
         fn update_http_builder(
             input: &crate::input::UpdateContributorInsightsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8952,32 +11228,34 @@ impl UpdateContributorInsightsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateContributorInsightsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.UpdateContributorInsights",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_contributor_insights(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9000,15 +11278,15 @@ impl UpdateContributorInsightsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateContributorInsights::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateContributorInsights",
             "dynamodb",
         ));
@@ -9017,10 +11295,10 @@ impl UpdateContributorInsightsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9049,6 +11327,7 @@ pub mod update_global_table_input {
             self.global_table_name = Some(input.into());
             self
         }
+        /// <p>The global table name.</p>
         pub fn set_global_table_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9056,12 +11335,18 @@ pub mod update_global_table_input {
             self.global_table_name = input;
             self
         }
+        /// Appends an item to `replica_updates`.
+        ///
+        /// To override the contents of this collection use [`set_replica_updates`](Self::set_replica_updates).
+        ///
+        /// <p>A list of Regions that should be added or removed from the global table.</p>
         pub fn replica_updates(mut self, input: impl Into<crate::model::ReplicaUpdate>) -> Self {
             let mut v = self.replica_updates.unwrap_or_default();
             v.push(input.into());
             self.replica_updates = Some(v);
             self
         }
+        /// <p>A list of Regions that should be added or removed from the global table.</p>
         pub fn set_replica_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReplicaUpdate>>,
@@ -9074,7 +11359,7 @@ pub mod update_global_table_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateGlobalTableInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateGlobalTableInput {
                 global_table_name: self.global_table_name,
@@ -9094,16 +11379,16 @@ impl UpdateGlobalTableInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateGlobalTable,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateGlobalTableInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9111,7 +11396,7 @@ impl UpdateGlobalTableInput {
         fn update_http_builder(
             input: &crate::input::UpdateGlobalTableInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9120,32 +11405,32 @@ impl UpdateGlobalTableInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateGlobalTableInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.UpdateGlobalTable",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_global_table(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9168,15 +11453,15 @@ impl UpdateGlobalTableInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateGlobalTable::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateGlobalTable",
             "dynamodb",
         ));
@@ -9185,10 +11470,10 @@ impl UpdateGlobalTableInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9225,6 +11510,7 @@ pub mod update_global_table_settings_input {
             self.global_table_name = Some(input.into());
             self
         }
+        /// <p>The name of the global table</p>
         pub fn set_global_table_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9248,6 +11534,18 @@ pub mod update_global_table_settings_input {
             self.global_table_billing_mode = Some(input);
             self
         }
+        /// <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code> is not specified, the global table defaults to <code>PROVISIONED</code> capacity billing mode.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>.
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_global_table_billing_mode(
             mut self,
             input: std::option::Option<crate::model::BillingMode>,
@@ -9261,6 +11559,8 @@ pub mod update_global_table_settings_input {
             self.global_table_provisioned_write_capacity_units = Some(input);
             self
         }
+        /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code>
+        /// </p>
         pub fn set_global_table_provisioned_write_capacity_units(
             mut self,
             input: std::option::Option<i64>,
@@ -9277,6 +11577,8 @@ pub mod update_global_table_settings_input {
             self.global_table_provisioned_write_capacity_auto_scaling_settings_update = Some(input);
             self
         }
+        /// <p>Auto scaling settings for managing provisioned write capacity for the global
+        /// table.</p>
         pub fn set_global_table_provisioned_write_capacity_auto_scaling_settings_update(
             mut self,
             input: std::option::Option<crate::model::AutoScalingSettingsUpdate>,
@@ -9284,6 +11586,11 @@ pub mod update_global_table_settings_input {
             self.global_table_provisioned_write_capacity_auto_scaling_settings_update = input;
             self
         }
+        /// Appends an item to `global_table_global_secondary_index_settings_update`.
+        ///
+        /// To override the contents of this collection use [`set_global_table_global_secondary_index_settings_update`](Self::set_global_table_global_secondary_index_settings_update).
+        ///
+        /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
         pub fn global_table_global_secondary_index_settings_update(
             mut self,
             input: impl Into<crate::model::GlobalTableGlobalSecondaryIndexSettingsUpdate>,
@@ -9295,6 +11602,7 @@ pub mod update_global_table_settings_input {
             self.global_table_global_secondary_index_settings_update = Some(v);
             self
         }
+        /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
         pub fn set_global_table_global_secondary_index_settings_update(
             mut self,
             input: std::option::Option<
@@ -9304,6 +11612,11 @@ pub mod update_global_table_settings_input {
             self.global_table_global_secondary_index_settings_update = input;
             self
         }
+        /// Appends an item to `replica_settings_update`.
+        ///
+        /// To override the contents of this collection use [`set_replica_settings_update`](Self::set_replica_settings_update).
+        ///
+        /// <p>Represents the settings for a global table in a Region that will be modified.</p>
         pub fn replica_settings_update(
             mut self,
             input: impl Into<crate::model::ReplicaSettingsUpdate>,
@@ -9313,6 +11626,7 @@ pub mod update_global_table_settings_input {
             self.replica_settings_update = Some(v);
             self
         }
+        /// <p>Represents the settings for a global table in a Region that will be modified.</p>
         pub fn set_replica_settings_update(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsUpdate>>,
@@ -9325,7 +11639,7 @@ pub mod update_global_table_settings_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateGlobalTableSettingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateGlobalTableSettingsInput {
                 global_table_name: self.global_table_name,
@@ -9353,16 +11667,16 @@ impl UpdateGlobalTableSettingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateGlobalTableSettings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateGlobalTableSettingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9370,7 +11684,7 @@ impl UpdateGlobalTableSettingsInput {
         fn update_http_builder(
             input: &crate::input::UpdateGlobalTableSettingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9379,32 +11693,34 @@ impl UpdateGlobalTableSettingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateGlobalTableSettingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.UpdateGlobalTableSettings",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_global_table_settings(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9427,15 +11743,15 @@ impl UpdateGlobalTableSettingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateGlobalTableSettings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateGlobalTableSettings",
             "dynamodb",
         ));
@@ -9444,10 +11760,10 @@ impl UpdateGlobalTableSettingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9498,10 +11814,17 @@ pub mod update_item_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table containing the item to update.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
         }
+        /// Adds a key-value pair to `key`.
+        ///
+        /// To override the contents of this collection use [`set_key`](Self::set_key).
+        ///
+        /// <p>The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute.</p>
+        /// <p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
         pub fn key(
             mut self,
             k: impl Into<std::string::String>,
@@ -9512,6 +11835,8 @@ pub mod update_item_input {
             self.key = Some(hash_map);
             self
         }
+        /// <p>The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute.</p>
+        /// <p>For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</p>
         pub fn set_key(
             mut self,
             input: std::option::Option<
@@ -9521,6 +11846,12 @@ pub mod update_item_input {
             self.key = input;
             self
         }
+        /// Adds a key-value pair to `attribute_updates`.
+        ///
+        /// To override the contents of this collection use [`set_attribute_updates`](Self::set_attribute_updates).
+        ///
+        /// <p>This is a legacy parameter.  Use <code>UpdateExpression</code> instead.   For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn attribute_updates(
             mut self,
             k: impl Into<std::string::String>,
@@ -9531,6 +11862,8 @@ pub mod update_item_input {
             self.attribute_updates = Some(hash_map);
             self
         }
+        /// <p>This is a legacy parameter.  Use <code>UpdateExpression</code> instead.   For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_attribute_updates(
             mut self,
             input: std::option::Option<
@@ -9540,6 +11873,12 @@ pub mod update_item_input {
             self.attribute_updates = input;
             self
         }
+        /// Adds a key-value pair to `expected`.
+        ///
+        /// To override the contents of this collection use [`set_expected`](Self::set_expected).
+        ///
+        /// <p>This is a legacy parameter.  Use <code>ConditionExpression</code> instead.   For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn expected(
             mut self,
             k: impl Into<std::string::String>,
@@ -9550,6 +11889,8 @@ pub mod update_item_input {
             self.expected = Some(hash_map);
             self
         }
+        /// <p>This is a legacy parameter.  Use <code>ConditionExpression</code> instead.   For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_expected(
             mut self,
             input: std::option::Option<
@@ -9568,6 +11909,8 @@ pub mod update_item_input {
             self.conditional_operator = Some(input);
             self
         }
+        /// <p>This is a legacy parameter.  Use <code>ConditionExpression</code> instead.   For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_conditional_operator(
             mut self,
             input: std::option::Option<crate::model::ConditionalOperator>,
@@ -9610,6 +11953,37 @@ pub mod update_item_input {
             self.return_values = Some(input);
             self
         }
+        /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appear
+        /// before or after they are updated. For <code>UpdateItem</code>, the valid values
+        /// are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is
+        /// <code>NONE</code>, then nothing is returned. (This setting is the default for
+        /// <code>ReturnValues</code>.)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation.</p>
+        /// </li>
+        /// </ul>
+        /// <p>There is no additional cost associated with requesting a return value aside from the
+        /// small network and processing overhead of receiving a larger response. No read capacity
+        /// units are consumed.</p>
+        /// <p>The values returned are strongly consistent.</p>
         pub fn set_return_values(
             mut self,
             input: std::option::Option<crate::model::ReturnValue>,
@@ -9640,6 +12014,22 @@ pub mod update_item_input {
             self.return_consumed_capacity = Some(input);
             self
         }
+        /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p>
+        /// <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all.  In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p>
+        /// </li>
+        /// </ul>
         pub fn set_return_consumed_capacity(
             mut self,
             input: std::option::Option<crate::model::ReturnConsumedCapacity>,
@@ -9656,6 +12046,8 @@ pub mod update_item_input {
             self.return_item_collection_metrics = Some(input);
             self
         }
+        /// <p>Determines whether item collection metrics are returned.  If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during
+        /// the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
         pub fn set_return_item_collection_metrics(
             mut self,
             input: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
@@ -9745,6 +12137,7 @@ pub mod update_item_input {
         /// <p>The <code>DELETE</code> action only supports set data types. In addition,
         /// <code>DELETE</code> can only be used on top-level attributes, not nested attributes.</p>
         /// </important>
+        ///
         /// </li>
         /// </ul>
         /// <p>You can have many actions in a single expression, such as the following: <code>SET a=:value1,
@@ -9755,6 +12148,95 @@ pub mod update_item_input {
             self.update_expression = Some(input.into());
             self
         }
+        /// <p>An expression that defines one or more attributes to be updated, the action to be
+        /// performed on them, and new values for them.</p>
+        /// <p>The following action values are available for <code>UpdateExpression</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SET</code> - Adds one or more attributes and values to an item. If any of
+        /// these attributes already exist, they are replaced by the new values. You can
+        /// also use <code>SET</code> to add or subtract from an attribute that is of type
+        /// Number. For example: <code>SET myNum = myNum + :val</code>
+        /// </p>
+        /// <p>
+        /// <code>SET</code> supports the following functions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>if_not_exists (path, operand)</code> - if the item does not contain an attribute at the specified path, then <code>if_not_exists</code> evaluates to operand; otherwise, it evaluates to path. You can use this function to avoid overwriting an attribute that may already be present in the item.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>list_append (operand, operand)</code> - evaluates to a list with a new element added to it. You can append the new element to the start or the end of the list by reversing the order of the operands.</p>
+        /// </li>
+        /// </ul>
+        /// <p>These function names are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REMOVE</code> - Removes one or more attributes from an item.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ADD</code> - Adds the specified value to the item, if the attribute does not already exist. If the attribute does exist, then the behavior of
+        /// <code>ADD</code> depends on the data type of the attribute:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If the existing attribute is a number, and if <code>Value</code> is also a number, then
+        /// <code>Value</code> is mathematically added to the existing attribute. If <code>Value</code> is a
+        /// negative number, then it is subtracted from the existing attribute.</p>
+        /// <note>
+        /// <p>If you use <code>ADD</code> to increment or decrement a number value for an item
+        /// that doesn't exist before the update, DynamoDB uses <code>0</code> as the initial
+        /// value.</p>
+        /// <p>Similarly, if you use <code>ADD</code> for an existing item to increment
+        /// or decrement an attribute value that doesn't exist before the
+        /// update, DynamoDB uses <code>0</code> as the initial value. For
+        /// example, suppose that the item you want to update doesn't have an
+        /// attribute named <code>itemcount</code>, but you decide to
+        /// <code>ADD</code> the number <code>3</code> to this attribute
+        /// anyway. DynamoDB will create the <code>itemcount</code> attribute,
+        /// set its initial value to <code>0</code>, and finally add
+        /// <code>3</code> to it. The result will be a new
+        /// <code>itemcount</code> attribute in the item, with a value of
+        /// <code>3</code>.</p>
+        /// </note>
+        /// </li>
+        /// <li>
+        /// <p>If the existing data type is a set and if <code>Value</code> is also a set, then
+        /// <code>Value</code> is added to the existing set. For example, if the attribute value is the set
+        /// <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then
+        /// the final attribute value is <code>[1,2,3]</code>. An error occurs if an <code>ADD</code>
+        /// action is specified for a set attribute and the attribute type specified does not
+        /// match the existing set type. </p>
+        /// <p>Both sets must have the same primitive data type. For example, if the existing data
+        /// type is a set of strings, the <code>Value</code> must also be a set of strings.</p>
+        /// </li>
+        /// </ul>
+        /// <important>
+        /// <p>The <code>ADD</code> action only supports Number and set data types. In addition,
+        /// <code>ADD</code> can only be used on top-level attributes, not nested attributes.</p>
+        /// </important>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE</code> - Deletes an element from a set.</p>
+        /// <p>If a set of values is specified, then those values are subtracted from the old
+        /// set. For example, if the attribute value was the set <code>[a,b,c]</code> and the
+        /// <code>DELETE</code> action specifies <code>[a,c]</code>, then the final attribute value
+        /// is <code>[b]</code>. Specifying an empty set is an error.</p>
+        /// <important>
+        /// <p>The <code>DELETE</code> action only supports set data types. In addition,
+        /// <code>DELETE</code> can only be used on top-level attributes, not nested attributes.</p>
+        /// </important>
+        ///
+        /// </li>
+        /// </ul>
+        /// <p>You can have many actions in a single expression, such as the following: <code>SET a=:value1,
+        /// b=:value2 DELETE :value3, :value4, :value5</code>
+        /// </p>
+        /// <p>For more information on update expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
         pub fn set_update_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9787,6 +12269,27 @@ pub mod update_item_input {
             self.condition_expression = Some(input.into());
             self
         }
+        /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
+        /// <p>An expression can contain any of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Functions: <code>attribute_exists | attribute_not_exists | attribute_type | contains | begins_with | size</code>
+        /// </p>
+        /// <p>These function names are case-sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Comparison operators: <code>= | <> |
+        /// < | > | <= | >= |
+        /// BETWEEN | IN </code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p> Logical operators: <code>AND | OR | NOT</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_condition_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9794,6 +12297,54 @@ pub mod update_item_input {
             self.condition_expression = input;
             self
         }
+        /// Adds a key-value pair to `expression_attribute_names`.
+        ///
+        /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).
+        ///
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p>
+        /// </li>
+        /// <li>
+        /// <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p>
+        /// </li>
+        /// <li>
+        /// <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Percentile</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly
+        /// in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.) To work around this, you could specify the following for
+        /// <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>{"#P":"Percentile"}</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>You could then use this substitution in an expression, as in this example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>#P = :val</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+        /// </note>
+        /// <p>For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn expression_attribute_names(
             mut self,
             k: impl Into<std::string::String>,
@@ -9804,6 +12355,50 @@ pub mod update_item_input {
             self.expression_attribute_names = Some(hash_map);
             self
         }
+        /// <p>One or more substitution tokens for attribute names in an expression. The following are some use cases for using <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>To access an attribute whose name conflicts with a DynamoDB reserved word.</p>
+        /// </li>
+        /// <li>
+        /// <p>To create a placeholder for repeating occurrences of an attribute name in an expression.</p>
+        /// </li>
+        /// <li>
+        /// <p>To prevent special characters in an attribute name from being misinterpreted in an expression.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Percentile</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The name of this attribute conflicts with a reserved word, so it cannot be used directly
+        /// in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.) To work around this, you could specify the following for
+        /// <code>ExpressionAttributeNames</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>{"#P":"Percentile"}</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>You could then use this substitution in an expression, as in this example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>#P = :val</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime.</p>
+        /// </note>
+        /// <p>For more information about expression attribute names, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_expression_attribute_names(
             mut self,
             input: std::option::Option<
@@ -9813,6 +12408,27 @@ pub mod update_item_input {
             self.expression_attribute_names = input;
             self
         }
+        /// Adds a key-value pair to `expression_attribute_values`.
+        ///
+        /// To override the contents of this collection use [`set_expression_attribute_values`](Self::set_expression_attribute_values).
+        ///
+        /// <p>One or more values that can be substituted in an expression.</p>
+        /// <p>Use the <b>:</b> (colon) character in an expression to
+        /// dereference an attribute value. For example, suppose that you wanted to check whether
+        /// the value of the <code>ProductStatus</code> attribute was one of the following: </p>
+        /// <p>
+        /// <code>Available | Backordered | Discontinued</code>
+        /// </p>
+        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+        /// <p>
+        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+        /// </p>
+        /// <p>You could then use these values in an expression, such as this:</p>
+        /// <p>
+        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
+        /// </p>
+        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn expression_attribute_values(
             mut self,
             k: impl Into<std::string::String>,
@@ -9823,6 +12439,23 @@ pub mod update_item_input {
             self.expression_attribute_values = Some(hash_map);
             self
         }
+        /// <p>One or more values that can be substituted in an expression.</p>
+        /// <p>Use the <b>:</b> (colon) character in an expression to
+        /// dereference an attribute value. For example, suppose that you wanted to check whether
+        /// the value of the <code>ProductStatus</code> attribute was one of the following: </p>
+        /// <p>
+        /// <code>Available | Backordered | Discontinued</code>
+        /// </p>
+        /// <p>You would first need to specify <code>ExpressionAttributeValues</code> as follows:</p>
+        /// <p>
+        /// <code>{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }</code>
+        /// </p>
+        /// <p>You could then use these values in an expression, such as this:</p>
+        /// <p>
+        /// <code>ProductStatus IN (:avail, :back, :disc)</code>
+        /// </p>
+        /// <p>For more information on expression attribute values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
+        /// Guide</i>.</p>
         pub fn set_expression_attribute_values(
             mut self,
             input: std::option::Option<
@@ -9835,8 +12468,10 @@ pub mod update_item_input {
         /// Consumes the builder and constructs a [`UpdateItemInput`](crate::input::UpdateItemInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateItemInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateItemInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateItemInput {
                 table_name: self.table_name,
                 key: self.key,
@@ -9865,16 +12500,16 @@ impl UpdateItemInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateItem,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateItemInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9882,7 +12517,7 @@ impl UpdateItemInput {
         fn update_http_builder(
             input: &crate::input::UpdateItemInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9891,29 +12526,31 @@ impl UpdateItemInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateItemInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.UpdateItem",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_item(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9936,25 +12573,27 @@ impl UpdateItemInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateItem::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateItem",
-                    "dynamodb",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateItem::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateItem",
+            "dynamodb",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9987,6 +12626,11 @@ pub mod update_table_input {
             std::option::Option<std::vec::Vec<crate::model::ReplicationGroupUpdate>>,
     }
     impl Builder {
+        /// Appends an item to `attribute_definitions`.
+        ///
+        /// To override the contents of this collection use [`set_attribute_definitions`](Self::set_attribute_definitions).
+        ///
+        /// <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.</p>
         pub fn attribute_definitions(
             mut self,
             input: impl Into<crate::model::AttributeDefinition>,
@@ -9996,6 +12640,7 @@ pub mod update_table_input {
             self.attribute_definitions = Some(v);
             self
         }
+        /// <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.</p>
         pub fn set_attribute_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
@@ -10008,6 +12653,7 @@ pub mod update_table_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table to be updated.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -10031,6 +12677,21 @@ pub mod update_table_input {
             self.billing_mode = Some(input);
             self
         }
+        /// <p>Controls how you are charged for read and write throughput and how you manage capacity.
+        /// When switching from pay-per-request to provisioned capacity, initial provisioned capacity values must be set. The initial
+        /// provisioned capacity values are estimated based on the consumed read and write capacity of your table and global secondary indexes
+        /// over the past 30 minutes.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>.
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_billing_mode(
             mut self,
             input: std::option::Option<crate::model::BillingMode>,
@@ -10046,6 +12707,7 @@ pub mod update_table_input {
             self.provisioned_throughput = Some(input);
             self
         }
+        /// <p>The new provisioned throughput settings for the specified table or index.</p>
         pub fn set_provisioned_throughput(
             mut self,
             input: std::option::Option<crate::model::ProvisionedThroughput>,
@@ -10053,6 +12715,28 @@ pub mod update_table_input {
             self.provisioned_throughput = input;
             self
         }
+        /// Appends an item to `global_secondary_index_updates`.
+        ///
+        /// To override the contents of this collection use [`set_global_secondary_index_updates`](Self::set_global_secondary_index_updates).
+        ///
+        /// <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Create</code> - add a new global secondary index to the table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Update</code> - modify the provisioned throughput settings of an existing global secondary index.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Delete</code> - remove a global secondary index from the table.</p>
+        /// </li>
+        /// </ul>
+        /// <p>You can create or delete only one global secondary index per <code>UpdateTable</code> operation.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary
+        /// Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
         pub fn global_secondary_index_updates(
             mut self,
             input: impl Into<crate::model::GlobalSecondaryIndexUpdate>,
@@ -10062,6 +12746,24 @@ pub mod update_table_input {
             self.global_secondary_index_updates = Some(v);
             self
         }
+        /// <p>An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Create</code> - add a new global secondary index to the table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Update</code> - modify the provisioned throughput settings of an existing global secondary index.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Delete</code> - remove a global secondary index from the table.</p>
+        /// </li>
+        /// </ul>
+        /// <p>You can create or delete only one global secondary index per <code>UpdateTable</code> operation.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary
+        /// Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
         pub fn set_global_secondary_index_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndexUpdate>>,
@@ -10079,6 +12781,12 @@ pub mod update_table_input {
             self.stream_specification = Some(input);
             self
         }
+        /// <p>Represents the DynamoDB Streams configuration for the table.</p>
+        /// <note>
+        /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on a
+        /// table that already has a stream, or if you try to disable a stream on a table that
+        /// doesn't have a stream.</p>
+        /// </note>
         pub fn set_stream_specification(
             mut self,
             input: std::option::Option<crate::model::StreamSpecification>,
@@ -10091,6 +12799,7 @@ pub mod update_table_input {
             self.sse_specification = Some(input);
             self
         }
+        /// <p>The new server-side encryption settings for the specified table.</p>
         pub fn set_sse_specification(
             mut self,
             input: std::option::Option<crate::model::SseSpecification>,
@@ -10098,6 +12807,14 @@ pub mod update_table_input {
             self.sse_specification = input;
             self
         }
+        /// Appends an item to `replica_updates`.
+        ///
+        /// To override the contents of this collection use [`set_replica_updates`](Self::set_replica_updates).
+        ///
+        /// <p>A list of replica update actions (create, delete, or update) for the table.</p>
+        /// <note>
+        /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21</a> of global tables.</p>
+        /// </note>
         pub fn replica_updates(
             mut self,
             input: impl Into<crate::model::ReplicationGroupUpdate>,
@@ -10107,6 +12824,10 @@ pub mod update_table_input {
             self.replica_updates = Some(v);
             self
         }
+        /// <p>A list of replica update actions (create, delete, or update) for the table.</p>
+        /// <note>
+        /// <p>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21</a> of global tables.</p>
+        /// </note>
         pub fn set_replica_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReplicationGroupUpdate>>,
@@ -10117,8 +12838,10 @@ pub mod update_table_input {
         /// Consumes the builder and constructs a [`UpdateTableInput`](crate::input::UpdateTableInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateTableInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateTableInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateTableInput {
                 attribute_definitions: self.attribute_definitions,
                 table_name: self.table_name,
@@ -10143,16 +12866,16 @@ impl UpdateTableInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateTable,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateTableInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10160,7 +12883,7 @@ impl UpdateTableInput {
         fn update_http_builder(
             input: &crate::input::UpdateTableInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10169,29 +12892,31 @@ impl UpdateTableInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateTableInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.UpdateTable",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_table(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10214,25 +12939,27 @@ impl UpdateTableInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateTable::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateTable",
-                    "dynamodb",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateTable::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateTable",
+            "dynamodb",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10261,6 +12988,12 @@ pub mod update_table_replica_auto_scaling_input {
             std::option::Option<std::vec::Vec<crate::model::ReplicaAutoScalingUpdate>>,
     }
     impl Builder {
+        /// Appends an item to `global_secondary_index_updates`.
+        ///
+        /// To override the contents of this collection use [`set_global_secondary_index_updates`](Self::set_global_secondary_index_updates).
+        ///
+        /// <p>Represents the auto scaling settings of the global secondary indexes of the replica
+        /// to be updated.</p>
         pub fn global_secondary_index_updates(
             mut self,
             input: impl Into<crate::model::GlobalSecondaryIndexAutoScalingUpdate>,
@@ -10270,6 +13003,8 @@ pub mod update_table_replica_auto_scaling_input {
             self.global_secondary_index_updates = Some(v);
             self
         }
+        /// <p>Represents the auto scaling settings of the global secondary indexes of the replica
+        /// to be updated.</p>
         pub fn set_global_secondary_index_updates(
             mut self,
             input: std::option::Option<
@@ -10284,6 +13019,7 @@ pub mod update_table_replica_auto_scaling_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the global table to be updated.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -10297,6 +13033,8 @@ pub mod update_table_replica_auto_scaling_input {
             self.provisioned_write_capacity_auto_scaling_update = Some(input);
             self
         }
+        /// <p>Represents the auto scaling settings to be modified for a global table or global
+        /// secondary index.</p>
         pub fn set_provisioned_write_capacity_auto_scaling_update(
             mut self,
             input: std::option::Option<crate::model::AutoScalingSettingsUpdate>,
@@ -10304,6 +13042,12 @@ pub mod update_table_replica_auto_scaling_input {
             self.provisioned_write_capacity_auto_scaling_update = input;
             self
         }
+        /// Appends an item to `replica_updates`.
+        ///
+        /// To override the contents of this collection use [`set_replica_updates`](Self::set_replica_updates).
+        ///
+        /// <p>Represents the auto scaling settings of replicas of the table that will be
+        /// modified.</p>
         pub fn replica_updates(
             mut self,
             input: impl Into<crate::model::ReplicaAutoScalingUpdate>,
@@ -10313,6 +13057,8 @@ pub mod update_table_replica_auto_scaling_input {
             self.replica_updates = Some(v);
             self
         }
+        /// <p>Represents the auto scaling settings of replicas of the table that will be
+        /// modified.</p>
         pub fn set_replica_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReplicaAutoScalingUpdate>>,
@@ -10325,7 +13071,7 @@ pub mod update_table_replica_auto_scaling_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateTableReplicaAutoScalingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateTableReplicaAutoScalingInput {
                 global_secondary_index_updates: self.global_secondary_index_updates,
@@ -10349,16 +13095,16 @@ impl UpdateTableReplicaAutoScalingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateTableReplicaAutoScaling,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateTableReplicaAutoScalingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10366,7 +13112,7 @@ impl UpdateTableReplicaAutoScalingInput {
         fn update_http_builder(
             input: &crate::input::UpdateTableReplicaAutoScalingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10375,30 +13121,30 @@ impl UpdateTableReplicaAutoScalingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateTableReplicaAutoScalingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.UpdateTableReplicaAutoScaling",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_table_replica_auto_scaling(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_table_replica_auto_scaling(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10421,15 +13167,15 @@ impl UpdateTableReplicaAutoScalingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateTableReplicaAutoScaling::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateTableReplicaAutoScaling",
             "dynamodb",
         ));
@@ -10438,10 +13184,10 @@ impl UpdateTableReplicaAutoScalingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10471,6 +13217,7 @@ pub mod update_time_to_live_input {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table to be configured.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -10483,6 +13230,7 @@ pub mod update_time_to_live_input {
             self.time_to_live_specification = Some(input);
             self
         }
+        /// <p>Represents the settings used to enable or disable Time to Live for the specified table.</p>
         pub fn set_time_to_live_specification(
             mut self,
             input: std::option::Option<crate::model::TimeToLiveSpecification>,
@@ -10495,7 +13243,7 @@ pub mod update_time_to_live_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateTimeToLiveInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateTimeToLiveInput {
                 table_name: self.table_name,
@@ -10515,16 +13263,16 @@ impl UpdateTimeToLiveInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateTimeToLive,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateTimeToLiveInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10532,7 +13280,7 @@ impl UpdateTimeToLiveInput {
         fn update_http_builder(
             input: &crate::input::UpdateTimeToLiveInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10541,32 +13289,32 @@ impl UpdateTimeToLiveInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateTimeToLiveInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.UpdateTimeToLive",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_time_to_live(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10589,15 +13337,15 @@ impl UpdateTimeToLiveInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateTimeToLive::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateTimeToLive",
             "dynamodb",
         ));
@@ -10606,10 +13354,10 @@ impl UpdateTimeToLiveInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10644,6 +13392,7 @@ impl std::fmt::Debug for UpdateTimeToLiveInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTableReplicaAutoScalingInput {
@@ -10917,6 +13666,7 @@ pub struct UpdateItemInput {
     /// <p>The <code>DELETE</code> action only supports set data types. In addition,
     /// <code>DELETE</code> can only be used on top-level attributes, not nested attributes.</p>
     /// </important>
+    ///
     /// </li>
     /// </ul>
     /// <p>You can have many actions in a single expression, such as the following: <code>SET a=:value1,
@@ -11041,6 +13791,7 @@ impl std::fmt::Debug for UpdateItemInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGlobalTableSettingsInput {
@@ -11096,6 +13847,7 @@ impl std::fmt::Debug for UpdateGlobalTableSettingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGlobalTableInput {
@@ -11113,6 +13865,7 @@ impl std::fmt::Debug for UpdateGlobalTableInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContributorInsightsInput {
@@ -11136,6 +13889,7 @@ impl std::fmt::Debug for UpdateContributorInsightsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContinuousBackupsInput {
@@ -11157,6 +13911,7 @@ impl std::fmt::Debug for UpdateContinuousBackupsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -11176,6 +13931,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactWriteItemsInput {
@@ -11241,6 +13997,7 @@ impl std::fmt::Debug for TransactWriteItemsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactGetItemsInput {
@@ -11261,6 +14018,7 @@ impl std::fmt::Debug for TransactGetItemsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -11535,6 +14293,7 @@ impl std::fmt::Debug for ScanInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreTableToPointInTimeInput {
@@ -11549,7 +14308,7 @@ pub struct RestoreTableToPointInTimeInput {
     /// is typically 5 minutes before the current time. </p>
     pub use_latest_restorable_time: std::option::Option<bool>,
     /// <p>Time in the past to restore the table to.</p>
-    pub restore_date_time: std::option::Option<smithy_types::Instant>,
+    pub restore_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The billing mode of the restored table.</p>
     pub billing_mode_override: std::option::Option<crate::model::BillingMode>,
     /// <p>List of global secondary indexes for the restored table. The indexes
@@ -11599,6 +14358,7 @@ impl std::fmt::Debug for RestoreTableToPointInTimeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreTableFromBackupInput {
@@ -11792,19 +14552,24 @@ pub struct QueryInput {
     pub filter_expression: std::option::Option<std::string::String>,
     /// <p>The condition that specifies the key values for items to be retrieved by the
     /// <code>Query</code> action.</p>
+    ///
     /// <p>The condition must perform an equality test on a single partition key value.</p>
     /// <p>The condition can optionally perform one of several comparison tests on a single
     /// sort key value. This allows <code>Query</code> to retrieve one item with a given
     /// partition key value and sort key value, or several items that have the same partition
     /// key value but different sort key values.</p>
+    ///
     /// <p>The partition key equality test is required, and must be specified in the following format:</p>
+    ///
     /// <p>
     /// <code>partitionKeyName</code>
     /// <i>=</i>
     /// <code>:partitionkeyval</code>
     /// </p>
+    ///
     /// <p>If you also want to provide a condition for the sort key, it must be combined using <code>AND</code> with the condition
     /// for the sort key. Following is an example, using the <b>=</b> comparison operator for the sort key:</p>
+    ///
     /// <p>
     /// <code>partitionKeyName</code>
     /// <code>=</code>
@@ -11864,10 +14629,13 @@ pub struct QueryInput {
     /// <code>)</code> -
     /// true if the sort key value begins with a particular operand. (You cannot use this function with a sort key that is of type Number.)  Note that the function name
     /// <code>begins_with</code> is case-sensitive.</p>
+    ///
     /// </li>
     /// </ul>
+    ///
     /// <p>Use the <code>ExpressionAttributeValues</code> parameter to replace tokens such as
     /// <code>:partitionval</code> and <code>:sortval</code> with actual values at runtime.</p>
+    ///
     /// <p>You can optionally use the <code>ExpressionAttributeNames</code> parameter to replace the names of
     /// the partition key and sort key with placeholder tokens. This option might be necessary if an attribute
     /// name conflicts with a DynamoDB reserved word. For example, the following
@@ -11891,6 +14659,7 @@ pub struct QueryInput {
     /// </ul>
     /// <p>For a list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
     /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    ///
     /// <p>For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>,
     /// see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using Placeholders for Attribute
     /// Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -11998,6 +14767,7 @@ pub struct PutItemInput {
     /// <p>You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key.</p>
     /// <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p>
     /// <p>Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index.</p>
+    ///
     /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer
     /// Guide</i>.</p>
     /// <p>Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
@@ -12165,6 +14935,7 @@ impl std::fmt::Debug for PutItemInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsOfResourceInput {
@@ -12206,6 +14977,7 @@ impl std::fmt::Debug for ListTablesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGlobalTablesInput {
@@ -12231,6 +15003,7 @@ impl std::fmt::Debug for ListGlobalTablesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExportsInput {
@@ -12253,6 +15026,7 @@ impl std::fmt::Debug for ListExportsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContributorInsightsInput {
@@ -12273,6 +15047,7 @@ impl std::fmt::Debug for ListContributorInsightsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackupsInput {
@@ -12281,9 +15056,9 @@ pub struct ListBackupsInput {
     /// <p>Maximum number of backups to return at once.</p>
     pub limit: std::option::Option<i32>,
     /// <p>Only backups created after this time are listed. <code>TimeRangeLowerBound</code> is inclusive.</p>
-    pub time_range_lower_bound: std::option::Option<smithy_types::Instant>,
+    pub time_range_lower_bound: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is exclusive. </p>
-    pub time_range_upper_bound: std::option::Option<smithy_types::Instant>,
+    pub time_range_upper_bound: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// <code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup last
     /// evaluated when the current page of results was returned, inclusive of the current page
@@ -12426,6 +15201,7 @@ impl std::fmt::Debug for GetItemInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportTableToPointInTimeInput {
@@ -12433,7 +15209,7 @@ pub struct ExportTableToPointInTimeInput {
     pub table_arn: std::option::Option<std::string::String>,
     /// <p>Time in the past from which to export table data. The table export will be a snapshot
     /// of the table's state at this point in time.</p>
-    pub export_time: std::option::Option<smithy_types::Instant>,
+    pub export_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Providing a <code>ClientToken</code> makes the call to
     /// <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple
     /// identical calls have the same effect as one single call.</p>
@@ -12488,6 +15264,7 @@ impl std::fmt::Debug for ExportTableToPointInTimeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteTransactionInput {
@@ -12510,6 +15287,7 @@ impl std::fmt::Debug for ExecuteTransactionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteStatementInput {
@@ -12541,6 +15319,7 @@ impl std::fmt::Debug for ExecuteStatementInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableKinesisStreamingDestinationInput {
@@ -12558,6 +15337,7 @@ impl std::fmt::Debug for EnableKinesisStreamingDestinationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableKinesisStreamingDestinationInput {
@@ -12575,6 +15355,7 @@ impl std::fmt::Debug for DisableKinesisStreamingDestinationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTimeToLiveInput {
@@ -12589,6 +15370,7 @@ impl std::fmt::Debug for DescribeTimeToLiveInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTableReplicaAutoScalingInput {
@@ -12629,6 +15411,7 @@ impl std::fmt::Debug for DescribeLimitsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeKinesisStreamingDestinationInput {
@@ -12643,6 +15426,7 @@ impl std::fmt::Debug for DescribeKinesisStreamingDestinationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGlobalTableSettingsInput {
@@ -12657,6 +15441,7 @@ impl std::fmt::Debug for DescribeGlobalTableSettingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGlobalTableInput {
@@ -12671,6 +15456,7 @@ impl std::fmt::Debug for DescribeGlobalTableInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExportInput {
@@ -12685,6 +15471,7 @@ impl std::fmt::Debug for DescribeExportInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointsInput {}
@@ -12695,6 +15482,7 @@ impl std::fmt::Debug for DescribeEndpointsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContributorInsightsInput {
@@ -12712,6 +15500,7 @@ impl std::fmt::Debug for DescribeContributorInsightsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeContinuousBackupsInput {
@@ -12726,6 +15515,7 @@ impl std::fmt::Debug for DescribeContinuousBackupsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBackupInput {
@@ -12927,6 +15717,7 @@ impl std::fmt::Debug for DeleteItemInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackupInput {
@@ -12984,6 +15775,7 @@ pub struct CreateTableInput {
     /// The term "range attribute" derives from the way DynamoDB stores items with the same
     /// partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
+    ///
     /// <p>For a simple primary key (partition key), you must provide
     /// exactly one element with a <code>KeyType</code> of <code>HASH</code>.</p>
     /// <p>For a composite primary key (partition key and sort key), you must provide exactly two
@@ -13188,6 +15980,7 @@ impl std::fmt::Debug for CreateTableInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGlobalTableInput {
@@ -13205,6 +15998,7 @@ impl std::fmt::Debug for CreateGlobalTableInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackupInput {
@@ -13380,7 +16174,9 @@ pub struct BatchGetItemInput {
     /// <p>
     /// <code>AttributesToGet</code> - This is a legacy parameter.  Use <code>ProjectionExpression</code> instead.  For more information, see
     /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+    ///
     /// </p>
+    ///
     /// </li>
     /// </ul>
     pub request_items: std::option::Option<
@@ -13413,6 +16209,7 @@ impl std::fmt::Debug for BatchGetItemInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchExecuteStatementInput {

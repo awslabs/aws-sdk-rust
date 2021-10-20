@@ -7,12 +7,12 @@ use crate::signer::{
     OperationSigningConfig, RequestConfig, SigV4Signer, SigningError, SigningRequirements,
 };
 use aws_sigv4::http_request::SignableBody;
+use aws_smithy_http::middleware::MapRequest;
+use aws_smithy_http::operation::Request;
+use aws_smithy_http::property_bag::PropertyBag;
 use aws_types::region::SigningRegion;
 use aws_types::Credentials;
 use aws_types::SigningService;
-use smithy_http::middleware::MapRequest;
-use smithy_http::operation::Request;
-use smithy_http::property_bag::PropertyBag;
 use std::time::SystemTime;
 use thiserror::Error;
 
@@ -75,7 +75,7 @@ pub enum SigningStageError {
     SigningFailure(#[from] SigningError),
 }
 
-/// Extract a signing config from a [`PropertyBag`](smithy_http::property_bag::PropertyBag)
+/// Extract a signing config from a [`PropertyBag`](aws_smithy_http::property_bag::PropertyBag)
 fn signing_config(
     config: &PropertyBag,
 ) -> Result<(&OperationSigningConfig, RequestConfig, Credentials), SigningStageError> {
@@ -139,13 +139,13 @@ mod test {
     use crate::signer::{OperationSigningConfig, SigV4Signer};
     use aws_endpoint::partition::endpoint::{Protocol, SignatureVersion};
     use aws_endpoint::{set_endpoint_resolver, AwsEndpointStage};
+    use aws_smithy_http::body::SdkBody;
+    use aws_smithy_http::middleware::MapRequest;
+    use aws_smithy_http::operation;
     use aws_types::region::{Region, SigningRegion};
     use aws_types::Credentials;
     use aws_types::SigningService;
     use http::header::AUTHORIZATION;
-    use smithy_http::body::SdkBody;
-    use smithy_http::middleware::MapRequest;
-    use smithy_http::operation;
     use std::convert::Infallible;
     use std::sync::Arc;
     use std::time::{Duration, UNIX_EPOCH};

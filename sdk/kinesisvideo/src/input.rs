@@ -19,6 +19,8 @@ pub mod create_signaling_channel_input {
             self.channel_name = Some(input.into());
             self
         }
+        /// <p>A name for the signaling channel that you are creating. It must be unique for each AWS
+        /// account and AWS Region.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self
@@ -29,6 +31,8 @@ pub mod create_signaling_channel_input {
             self.channel_type = Some(input);
             self
         }
+        /// <p>A type of the signaling channel that you are creating. Currently,
+        /// <code>SINGLE_MASTER</code> is the only supported channel type. </p>
         pub fn set_channel_type(
             mut self,
             input: std::option::Option<crate::model::ChannelType>,
@@ -45,6 +49,8 @@ pub mod create_signaling_channel_input {
             self.single_master_configuration = Some(input);
             self
         }
+        /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel
+        /// type. </p>
         pub fn set_single_master_configuration(
             mut self,
             input: std::option::Option<crate::model::SingleMasterConfiguration>,
@@ -52,12 +58,18 @@ pub mod create_signaling_channel_input {
             self.single_master_configuration = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -70,7 +82,7 @@ pub mod create_signaling_channel_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateSignalingChannelInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateSignalingChannelInput {
                 channel_name: self.channel_name,
@@ -92,16 +104,16 @@ impl CreateSignalingChannelInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateSignalingChannel,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateSignalingChannelInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/createSignalingChannel").expect("formatting should succeed");
             Ok(())
         }
@@ -109,7 +121,7 @@ impl CreateSignalingChannelInput {
         fn update_http_builder(
             input: &crate::input::CreateSignalingChannelInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -118,27 +130,29 @@ impl CreateSignalingChannelInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateSignalingChannelInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_signaling_channel(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -161,15 +175,15 @@ impl CreateSignalingChannelInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateSignalingChannel::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateSignalingChannel",
             "kinesisvideo",
         ));
@@ -178,10 +192,10 @@ impl CreateSignalingChannelInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -220,6 +234,11 @@ pub mod create_stream_input {
             self.device_name = Some(input.into());
             self
         }
+        /// <p>The name of the device that is writing to the stream. </p>
+        /// <note>
+        /// <p>In the current implementation, Kinesis Video Streams does not use this
+        /// name.</p>
+        /// </note>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_name = input;
             self
@@ -231,6 +250,9 @@ pub mod create_stream_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>A name for the stream that you are creating.</p>
+        /// <p>The stream name is an identifier for the stream, and must be unique for each
+        /// account and region.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -239,6 +261,7 @@ pub mod create_stream_input {
         /// processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
         /// Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
         /// for guidelines.</p>
+        ///
         /// <p>Example valid values include "video/h264" and "video/h264,audio/aac".</p>
         /// <p>This parameter is optional; the default value is <code>null</code> (or empty in
         /// JSON).</p>
@@ -246,6 +269,14 @@ pub mod create_stream_input {
             self.media_type = Some(input.into());
             self
         }
+        /// <p>The media type of the stream. Consumers of the stream can use this information when
+        /// processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
+        /// Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
+        /// for guidelines.</p>
+        ///
+        /// <p>Example valid values include "video/h264" and "video/h264,audio/aac".</p>
+        /// <p>This parameter is optional; the default value is <code>null</code> (or empty in
+        /// JSON).</p>
         pub fn set_media_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.media_type = input;
             self
@@ -259,6 +290,11 @@ pub mod create_stream_input {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video
+        /// Streams to use to encrypt stream data.</p>
+        /// <p>If no key ID is specified, the default, Kinesis Video-managed key
+        /// (<code>aws/kinesisvideo</code>) is used.</p>
+        /// <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -274,10 +310,23 @@ pub mod create_stream_input {
             self.data_retention_in_hours = Some(input);
             self
         }
+        /// <p>The number of hours that you want to retain the data in the stream. Kinesis Video
+        /// Streams retains the data in a data store that is associated with the stream.</p>
+        /// <p>The default value is 0, indicating that the stream does not persist data.</p>
+        /// <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume
+        /// the fragments that remain in the service host buffer, which has a retention time limit
+        /// of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the
+        /// buffer when either limit is reached.</p>
         pub fn set_data_retention_in_hours(mut self, input: std::option::Option<i32>) -> Self {
             self.data_retention_in_hours = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair
+        /// (the value is optional).</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -288,6 +337,8 @@ pub mod create_stream_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair
+        /// (the value is optional).</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -300,8 +351,10 @@ pub mod create_stream_input {
         /// Consumes the builder and constructs a [`CreateStreamInput`](crate::input::CreateStreamInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateStreamInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateStreamInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateStreamInput {
                 device_name: self.device_name,
                 stream_name: self.stream_name,
@@ -324,16 +377,16 @@ impl CreateStreamInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateStream,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateStreamInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/createStream").expect("formatting should succeed");
             Ok(())
         }
@@ -341,7 +394,7 @@ impl CreateStreamInput {
         fn update_http_builder(
             input: &crate::input::CreateStreamInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -350,26 +403,26 @@ impl CreateStreamInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateStreamInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_stream(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -392,25 +445,27 @@ impl CreateStreamInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateStream::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateStream",
-                    "kinesisvideo",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateStream::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateStream",
+            "kinesisvideo",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -440,6 +495,8 @@ pub mod delete_signaling_channel_input {
             self.channel_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
+        /// delete.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_arn = input;
             self
@@ -451,6 +508,9 @@ pub mod delete_signaling_channel_input {
             self.current_version = Some(input.into());
             self
         }
+        /// <p>The current version of the signaling channel that you want to delete. You can obtain
+        /// the current version by invoking the <code>DescribeSignalingChannel</code> or
+        /// <code>ListSignalingChannels</code> API operations.</p>
         pub fn set_current_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -463,7 +523,7 @@ pub mod delete_signaling_channel_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteSignalingChannelInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteSignalingChannelInput {
                 channel_arn: self.channel_arn,
@@ -483,16 +543,16 @@ impl DeleteSignalingChannelInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteSignalingChannel,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteSignalingChannelInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/deleteSignalingChannel").expect("formatting should succeed");
             Ok(())
         }
@@ -500,7 +560,7 @@ impl DeleteSignalingChannelInput {
         fn update_http_builder(
             input: &crate::input::DeleteSignalingChannelInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -509,27 +569,29 @@ impl DeleteSignalingChannelInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteSignalingChannelInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_signaling_channel(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -552,15 +614,15 @@ impl DeleteSignalingChannelInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteSignalingChannel::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteSignalingChannel",
             "kinesisvideo",
         ));
@@ -569,10 +631,10 @@ impl DeleteSignalingChannelInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -601,6 +663,7 @@ pub mod delete_stream_input {
             self.stream_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -614,6 +677,11 @@ pub mod delete_stream_input {
             self.current_version = Some(input.into());
             self
         }
+        /// <p>Optional: The version of the stream that you want to delete. </p>
+        /// <p>Specify the version as a safeguard to ensure that your are deleting the correct
+        /// stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
+        /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the
+        /// stream.</p>
         pub fn set_current_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -624,8 +692,10 @@ pub mod delete_stream_input {
         /// Consumes the builder and constructs a [`DeleteStreamInput`](crate::input::DeleteStreamInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteStreamInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteStreamInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteStreamInput {
                 stream_arn: self.stream_arn,
                 current_version: self.current_version,
@@ -644,16 +714,16 @@ impl DeleteStreamInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteStream,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteStreamInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/deleteStream").expect("formatting should succeed");
             Ok(())
         }
@@ -661,7 +731,7 @@ impl DeleteStreamInput {
         fn update_http_builder(
             input: &crate::input::DeleteStreamInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -670,26 +740,26 @@ impl DeleteStreamInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteStreamInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_stream(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -712,25 +782,27 @@ impl DeleteStreamInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteStream::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteStream",
-                    "kinesisvideo",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteStream::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteStream",
+            "kinesisvideo",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -759,6 +831,7 @@ pub mod describe_signaling_channel_input {
             self.channel_name = Some(input.into());
             self
         }
+        /// <p>The name of the signaling channel that you want to describe.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self
@@ -768,6 +841,7 @@ pub mod describe_signaling_channel_input {
             self.channel_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the signaling channel that you want to describe.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_arn = input;
             self
@@ -777,7 +851,7 @@ pub mod describe_signaling_channel_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeSignalingChannelInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeSignalingChannelInput {
                 channel_name: self.channel_name,
@@ -798,16 +872,16 @@ impl DescribeSignalingChannelInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeSignalingChannel,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeSignalingChannelInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/describeSignalingChannel").expect("formatting should succeed");
             Ok(())
         }
@@ -815,7 +889,7 @@ impl DescribeSignalingChannelInput {
         fn update_http_builder(
             input: &crate::input::DescribeSignalingChannelInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -824,27 +898,29 @@ impl DescribeSignalingChannelInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeSignalingChannelInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_signaling_channel(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -867,15 +943,15 @@ impl DescribeSignalingChannelInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeSignalingChannel::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeSignalingChannel",
             "kinesisvideo",
         ));
@@ -884,10 +960,10 @@ impl DescribeSignalingChannelInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -916,6 +992,7 @@ pub mod describe_stream_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -925,6 +1002,7 @@ pub mod describe_stream_input {
             self.stream_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the stream.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -934,7 +1012,7 @@ pub mod describe_stream_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeStreamInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeStreamInput {
                 stream_name: self.stream_name,
@@ -954,16 +1032,16 @@ impl DescribeStreamInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeStream,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeStreamInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/describeStream").expect("formatting should succeed");
             Ok(())
         }
@@ -971,7 +1049,7 @@ impl DescribeStreamInput {
         fn update_http_builder(
             input: &crate::input::DescribeStreamInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -980,24 +1058,26 @@ impl DescribeStreamInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeStreamInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_stream(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1020,15 +1100,15 @@ impl DescribeStreamInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeStream::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeStream",
             "kinesisvideo",
         ));
@@ -1037,10 +1117,10 @@ impl DescribeStreamInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1071,6 +1151,8 @@ pub mod get_data_endpoint_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream that you want to get the endpoint for. You must specify
+        /// either this parameter or a <code>StreamARN</code> in the request.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -1082,6 +1164,9 @@ pub mod get_data_endpoint_input {
             self.stream_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for.
+        /// You must specify either this parameter or a <code>StreamName</code> in the request.
+        /// </p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -1091,6 +1176,7 @@ pub mod get_data_endpoint_input {
             self.api_name = Some(input);
             self
         }
+        /// <p>The name of the API action for which to get an endpoint.</p>
         pub fn set_api_name(mut self, input: std::option::Option<crate::model::ApiName>) -> Self {
             self.api_name = input;
             self
@@ -1100,7 +1186,7 @@ pub mod get_data_endpoint_input {
             self,
         ) -> std::result::Result<
             crate::input::GetDataEndpointInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetDataEndpointInput {
                 stream_name: self.stream_name,
@@ -1121,16 +1207,16 @@ impl GetDataEndpointInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetDataEndpoint,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetDataEndpointInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/getDataEndpoint").expect("formatting should succeed");
             Ok(())
         }
@@ -1138,7 +1224,7 @@ impl GetDataEndpointInput {
         fn update_http_builder(
             input: &crate::input::GetDataEndpointInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1147,27 +1233,27 @@ impl GetDataEndpointInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetDataEndpointInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_data_endpoint(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1190,15 +1276,15 @@ impl GetDataEndpointInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetDataEndpoint::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetDataEndpoint",
             "kinesisvideo",
         ));
@@ -1207,10 +1293,10 @@ impl GetDataEndpointInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1241,6 +1327,8 @@ pub mod get_signaling_channel_endpoint_input {
             self.channel_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an
+        /// endpoint.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_arn = input;
             self
@@ -1254,6 +1342,8 @@ pub mod get_signaling_channel_endpoint_input {
             self.single_master_channel_endpoint_configuration = Some(input);
             self
         }
+        /// <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code>
+        /// channel type.</p>
         pub fn set_single_master_channel_endpoint_configuration(
             mut self,
             input: std::option::Option<crate::model::SingleMasterChannelEndpointConfiguration>,
@@ -1266,7 +1356,7 @@ pub mod get_signaling_channel_endpoint_input {
             self,
         ) -> std::result::Result<
             crate::input::GetSignalingChannelEndpointInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetSignalingChannelEndpointInput {
                 channel_arn: self.channel_arn,
@@ -1288,16 +1378,16 @@ impl GetSignalingChannelEndpointInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetSignalingChannelEndpoint,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetSignalingChannelEndpointInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/getSignalingChannelEndpoint").expect("formatting should succeed");
             Ok(())
         }
@@ -1305,7 +1395,7 @@ impl GetSignalingChannelEndpointInput {
         fn update_http_builder(
             input: &crate::input::GetSignalingChannelEndpointInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1314,25 +1404,25 @@ impl GetSignalingChannelEndpointInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetSignalingChannelEndpointInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_signaling_channel_endpoint(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_signaling_channel_endpoint(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1355,15 +1445,15 @@ impl GetSignalingChannelEndpointInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetSignalingChannelEndpoint::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetSignalingChannelEndpoint",
             "kinesisvideo",
         ));
@@ -1372,10 +1462,10 @@ impl GetSignalingChannelEndpointInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1405,6 +1495,7 @@ pub mod list_signaling_channels_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of channels to return in the response. The default is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1416,6 +1507,9 @@ pub mod list_signaling_channels_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code>
+        /// operation is truncated, the call returns the <code>NextToken</code> in the response. To
+        /// get another batch of channels, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1425,6 +1519,7 @@ pub mod list_signaling_channels_input {
             self.channel_name_condition = Some(input);
             self
         }
+        /// <p>Optional: Returns only the channels that satisfy a specific condition.</p>
         pub fn set_channel_name_condition(
             mut self,
             input: std::option::Option<crate::model::ChannelNameCondition>,
@@ -1437,7 +1532,7 @@ pub mod list_signaling_channels_input {
             self,
         ) -> std::result::Result<
             crate::input::ListSignalingChannelsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListSignalingChannelsInput {
                 max_results: self.max_results,
@@ -1458,16 +1553,16 @@ impl ListSignalingChannelsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListSignalingChannels,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListSignalingChannelsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/listSignalingChannels").expect("formatting should succeed");
             Ok(())
         }
@@ -1475,7 +1570,7 @@ impl ListSignalingChannelsInput {
         fn update_http_builder(
             input: &crate::input::ListSignalingChannelsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1484,27 +1579,29 @@ impl ListSignalingChannelsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListSignalingChannelsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_signaling_channels(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1527,15 +1624,15 @@ impl ListSignalingChannelsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListSignalingChannels::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListSignalingChannels",
             "kinesisvideo",
         ));
@@ -1544,10 +1641,10 @@ impl ListSignalingChannelsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1578,6 +1675,8 @@ pub mod list_streams_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of streams to return in the response. The default is
+        /// 10,000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1589,6 +1688,9 @@ pub mod list_streams_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If you specify this parameter, when the result of a <code>ListStreams</code>
+        /// operation is truncated, the call returns the <code>NextToken</code> in the response. To
+        /// get another batch of streams, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1599,6 +1701,8 @@ pub mod list_streams_input {
             self.stream_name_condition = Some(input);
             self
         }
+        /// <p>Optional: Returns only streams that satisfy a specific condition. Currently, you
+        /// can specify only the prefix of a stream name as a condition. </p>
         pub fn set_stream_name_condition(
             mut self,
             input: std::option::Option<crate::model::StreamNameCondition>,
@@ -1609,8 +1713,10 @@ pub mod list_streams_input {
         /// Consumes the builder and constructs a [`ListStreamsInput`](crate::input::ListStreamsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListStreamsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListStreamsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListStreamsInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -1630,16 +1736,16 @@ impl ListStreamsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListStreams,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListStreamsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/listStreams").expect("formatting should succeed");
             Ok(())
         }
@@ -1647,7 +1753,7 @@ impl ListStreamsInput {
         fn update_http_builder(
             input: &crate::input::ListStreamsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1656,24 +1762,26 @@ impl ListStreamsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListStreamsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_streams(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1696,25 +1804,27 @@ impl ListStreamsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListStreams::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListStreams",
-                    "kinesisvideo",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListStreams::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListStreams",
+            "kinesisvideo",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1745,6 +1855,9 @@ pub mod list_tags_for_resource_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If you specify this parameter and the result of a <code>ListTagsForResource</code>
+        /// call is truncated, the response includes a token that you can use in the next request to
+        /// fetch the next batch of tags. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1755,6 +1868,8 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel for which you want to list
+        /// tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -1764,7 +1879,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 next_token: self.next_token,
@@ -1784,16 +1899,16 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/ListTagsForResource").expect("formatting should succeed");
             Ok(())
         }
@@ -1801,7 +1916,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1810,27 +1925,27 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1853,15 +1968,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "kinesisvideo",
         ));
@@ -1870,10 +1985,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1905,6 +2020,9 @@ pub mod list_tags_for_stream_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If you specify this parameter and the result of a <code>ListTagsForStream</code>
+        /// call is truncated, the response includes a token that you can use in the next request to
+        /// fetch the next batch of tags.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1915,6 +2033,8 @@ pub mod list_tags_for_stream_input {
             self.stream_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the stream that you want to list tags
+        /// for.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -1924,6 +2044,7 @@ pub mod list_tags_for_stream_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream that you want to list tags for.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -1933,7 +2054,7 @@ pub mod list_tags_for_stream_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForStreamInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForStreamInput {
                 next_token: self.next_token,
@@ -1954,16 +2075,16 @@ impl ListTagsForStreamInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForStream,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForStreamInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/listTagsForStream").expect("formatting should succeed");
             Ok(())
         }
@@ -1971,7 +2092,7 @@ impl ListTagsForStreamInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForStreamInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1980,25 +2101,27 @@ impl ListTagsForStreamInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForStreamInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_stream(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2021,15 +2144,15 @@ impl ListTagsForStreamInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForStream::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForStream",
             "kinesisvideo",
         ));
@@ -2038,10 +2161,10 @@ impl ListTagsForStreamInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2071,16 +2194,26 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel to which you want to add
+        /// tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to associate with the specified signaling channel. Each tag is a
+        /// key-value pair.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags to associate with the specified signaling channel. Each tag is a
+        /// key-value pair.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2091,8 +2224,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -2111,16 +2246,16 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/TagResource").expect("formatting should succeed");
             Ok(())
         }
@@ -2128,7 +2263,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2137,24 +2272,26 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2177,25 +2314,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "kinesisvideo",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "kinesisvideo",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2228,6 +2367,8 @@ pub mod tag_stream_input {
             self.stream_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags
+        /// to.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -2237,10 +2378,17 @@ pub mod tag_stream_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream that you want to add the tag or tags to.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair
+        /// (the value is optional).</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2251,6 +2399,8 @@ pub mod tag_stream_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair
+        /// (the value is optional).</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2263,7 +2413,7 @@ pub mod tag_stream_input {
         /// Consumes the builder and constructs a [`TagStreamInput`](crate::input::TagStreamInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagStreamInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::TagStreamInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::TagStreamInput {
                 stream_arn: self.stream_arn,
@@ -2284,16 +2434,16 @@ impl TagStreamInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagStream,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagStreamInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/tagStream").expect("formatting should succeed");
             Ok(())
         }
@@ -2301,7 +2451,7 @@ impl TagStreamInput {
         fn update_http_builder(
             input: &crate::input::TagStreamInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2310,24 +2460,26 @@ impl TagStreamInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagStreamInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_stream(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2350,13 +2502,13 @@ impl TagStreamInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagStream::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::TagStream::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "TagStream",
                     "kinesisvideo",
                 ));
@@ -2365,10 +2517,10 @@ impl TagStreamInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2398,16 +2550,24 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel from which you want to remove
+        /// tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_key_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_key_list`](Self::set_tag_key_list).
+        ///
+        /// <p>A list of the keys of the tags that you want to remove.</p>
         pub fn tag_key_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_key_list.unwrap_or_default();
             v.push(input.into());
             self.tag_key_list = Some(v);
             self
         }
+        /// <p>A list of the keys of the tags that you want to remove.</p>
         pub fn set_tag_key_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2418,8 +2578,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_key_list: self.tag_key_list,
@@ -2438,16 +2600,16 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/UntagResource").expect("formatting should succeed");
             Ok(())
         }
@@ -2455,7 +2617,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2464,24 +2626,26 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2504,25 +2668,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "kinesisvideo",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "kinesisvideo",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2553,6 +2719,8 @@ pub mod untag_stream_input {
             self.stream_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags
+        /// from.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -2562,16 +2730,23 @@ pub mod untag_stream_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream that you want to remove tags from.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
         }
+        /// Appends an item to `tag_key_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_key_list`](Self::set_tag_key_list).
+        ///
+        /// <p>A list of the keys of the tags that you want to remove.</p>
         pub fn tag_key_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_key_list.unwrap_or_default();
             v.push(input.into());
             self.tag_key_list = Some(v);
             self
         }
+        /// <p>A list of the keys of the tags that you want to remove.</p>
         pub fn set_tag_key_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2582,8 +2757,10 @@ pub mod untag_stream_input {
         /// Consumes the builder and constructs a [`UntagStreamInput`](crate::input::UntagStreamInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagStreamInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagStreamInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagStreamInput {
                 stream_arn: self.stream_arn,
                 stream_name: self.stream_name,
@@ -2603,16 +2780,16 @@ impl UntagStreamInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagStream,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagStreamInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/untagStream").expect("formatting should succeed");
             Ok(())
         }
@@ -2620,7 +2797,7 @@ impl UntagStreamInput {
         fn update_http_builder(
             input: &crate::input::UntagStreamInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2629,24 +2806,26 @@ impl UntagStreamInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagStreamInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_stream(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2669,25 +2848,27 @@ impl UntagStreamInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagStream::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagStream",
-                    "kinesisvideo",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagStream::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagStream",
+            "kinesisvideo",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2719,6 +2900,7 @@ pub mod update_data_retention_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream whose retention period you want to change.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -2729,6 +2911,8 @@ pub mod update_data_retention_input {
             self.stream_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to
+        /// change.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -2740,6 +2924,9 @@ pub mod update_data_retention_input {
             self.current_version = Some(input.into());
             self
         }
+        /// <p>The version of the stream whose retention period you want to change. To get the
+        /// version, call either the <code>DescribeStream</code> or the <code>ListStreams</code>
+        /// API.</p>
         pub fn set_current_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2752,6 +2939,7 @@ pub mod update_data_retention_input {
             self.operation = Some(input);
             self
         }
+        /// <p>Indicates whether you want to increase or decrease the retention period.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::UpdateDataRetentionOperation>,
@@ -2765,6 +2953,8 @@ pub mod update_data_retention_input {
             self.data_retention_change_in_hours = Some(input);
             self
         }
+        /// <p>The retention period, in hours. The value you specify replaces the current value.
+        /// The maximum value for this parameter is 87600 (ten years).</p>
         pub fn set_data_retention_change_in_hours(
             mut self,
             input: std::option::Option<i32>,
@@ -2777,7 +2967,7 @@ pub mod update_data_retention_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateDataRetentionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateDataRetentionInput {
                 stream_name: self.stream_name,
@@ -2800,16 +2990,16 @@ impl UpdateDataRetentionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateDataRetention,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateDataRetentionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/updateDataRetention").expect("formatting should succeed");
             Ok(())
         }
@@ -2817,7 +3007,7 @@ impl UpdateDataRetentionInput {
         fn update_http_builder(
             input: &crate::input::UpdateDataRetentionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2826,27 +3016,27 @@ impl UpdateDataRetentionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateDataRetentionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_data_retention(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2869,15 +3059,15 @@ impl UpdateDataRetentionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateDataRetention::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateDataRetention",
             "kinesisvideo",
         ));
@@ -2886,10 +3076,10 @@ impl UpdateDataRetentionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2921,6 +3111,8 @@ pub mod update_signaling_channel_input {
             self.channel_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
+        /// update.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_arn = input;
             self
@@ -2930,6 +3122,7 @@ pub mod update_signaling_channel_input {
             self.current_version = Some(input.into());
             self
         }
+        /// <p>The current version of the signaling channel that you want to update.</p>
         pub fn set_current_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2946,6 +3139,8 @@ pub mod update_signaling_channel_input {
             self.single_master_configuration = Some(input);
             self
         }
+        /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of
+        /// the signaling channel that you want to update. </p>
         pub fn set_single_master_configuration(
             mut self,
             input: std::option::Option<crate::model::SingleMasterConfiguration>,
@@ -2958,7 +3153,7 @@ pub mod update_signaling_channel_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateSignalingChannelInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateSignalingChannelInput {
                 channel_arn: self.channel_arn,
@@ -2979,16 +3174,16 @@ impl UpdateSignalingChannelInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateSignalingChannel,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateSignalingChannelInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/updateSignalingChannel").expect("formatting should succeed");
             Ok(())
         }
@@ -2996,7 +3191,7 @@ impl UpdateSignalingChannelInput {
         fn update_http_builder(
             input: &crate::input::UpdateSignalingChannelInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3005,27 +3200,29 @@ impl UpdateSignalingChannelInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateSignalingChannelInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_signaling_channel(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3048,15 +3245,15 @@ impl UpdateSignalingChannelInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateSignalingChannel::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateSignalingChannel",
             "kinesisvideo",
         ));
@@ -3065,10 +3262,10 @@ impl UpdateSignalingChannelInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3102,6 +3299,9 @@ pub mod update_stream_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream whose metadata you want to update.</p>
+        /// <p>The stream name is an identifier for the stream, and must be unique for each
+        /// account and region.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -3111,6 +3311,7 @@ pub mod update_stream_input {
             self.stream_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the stream whose metadata you want to update.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -3120,6 +3321,7 @@ pub mod update_stream_input {
             self.current_version = Some(input.into());
             self
         }
+        /// <p>The version of the stream whose metadata you want to update.</p>
         pub fn set_current_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3136,6 +3338,11 @@ pub mod update_stream_input {
             self.device_name = Some(input.into());
             self
         }
+        /// <p>The name of the device that is writing to the stream. </p>
+        /// <note>
+        /// <p> In the current implementation, Kinesis Video Streams does not use this name.
+        /// </p>
+        /// </note>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_name = input;
             self
@@ -3152,6 +3359,14 @@ pub mod update_stream_input {
             self.media_type = Some(input.into());
             self
         }
+        /// <p>The stream's media type. Use <code>MediaType</code> to specify the type of content
+        /// that the stream contains to the consumers of the stream. For more information about
+        /// media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
+        /// Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
+        /// Requirements</a>.</p>
+        /// <p>To play video on the console, you must specify the correct video type. For example,
+        /// if the video in the stream is H.264, specify <code>video/h264</code> as the
+        /// <code>MediaType</code>.</p>
         pub fn set_media_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.media_type = input;
             self
@@ -3159,8 +3374,10 @@ pub mod update_stream_input {
         /// Consumes the builder and constructs a [`UpdateStreamInput`](crate::input::UpdateStreamInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateStreamInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateStreamInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateStreamInput {
                 stream_name: self.stream_name,
                 stream_arn: self.stream_arn,
@@ -3182,16 +3399,16 @@ impl UpdateStreamInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateStream,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateStreamInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/updateStream").expect("formatting should succeed");
             Ok(())
         }
@@ -3199,7 +3416,7 @@ impl UpdateStreamInput {
         fn update_http_builder(
             input: &crate::input::UpdateStreamInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3208,26 +3425,26 @@ impl UpdateStreamInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateStreamInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_stream(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3250,25 +3467,27 @@ impl UpdateStreamInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateStream::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateStream",
-                    "kinesisvideo",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateStream::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateStream",
+            "kinesisvideo",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3282,6 +3501,7 @@ impl UpdateStreamInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStreamInput {
@@ -3321,6 +3541,7 @@ impl std::fmt::Debug for UpdateStreamInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSignalingChannelInput {
@@ -3346,6 +3567,7 @@ impl std::fmt::Debug for UpdateSignalingChannelInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDataRetentionInput {
@@ -3379,6 +3601,7 @@ impl std::fmt::Debug for UpdateDataRetentionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagStreamInput {
@@ -3400,6 +3623,7 @@ impl std::fmt::Debug for UntagStreamInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -3418,6 +3642,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagStreamInput {
@@ -3441,6 +3666,7 @@ impl std::fmt::Debug for TagStreamInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -3460,6 +3686,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForStreamInput {
@@ -3483,6 +3710,7 @@ impl std::fmt::Debug for ListTagsForStreamInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -3503,6 +3731,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamsInput {
@@ -3527,6 +3756,7 @@ impl std::fmt::Debug for ListStreamsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSignalingChannelsInput {
@@ -3549,6 +3779,7 @@ impl std::fmt::Debug for ListSignalingChannelsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSignalingChannelEndpointInput {
@@ -3572,6 +3803,7 @@ impl std::fmt::Debug for GetSignalingChannelEndpointInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDataEndpointInput {
@@ -3595,6 +3827,7 @@ impl std::fmt::Debug for GetDataEndpointInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStreamInput {
@@ -3612,6 +3845,7 @@ impl std::fmt::Debug for DescribeStreamInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSignalingChannelInput {
@@ -3629,6 +3863,7 @@ impl std::fmt::Debug for DescribeSignalingChannelInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStreamInput {
@@ -3650,6 +3885,7 @@ impl std::fmt::Debug for DeleteStreamInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSignalingChannelInput {
@@ -3670,6 +3906,7 @@ impl std::fmt::Debug for DeleteSignalingChannelInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamInput {
@@ -3687,6 +3924,7 @@ pub struct CreateStreamInput {
     /// processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
     /// Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
     /// for guidelines.</p>
+    ///
     /// <p>Example valid values include "video/h264" and "video/h264,audio/aac".</p>
     /// <p>This parameter is optional; the default value is <code>null</code> (or empty in
     /// JSON).</p>
@@ -3723,6 +3961,7 @@ impl std::fmt::Debug for CreateStreamInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSignalingChannelInput {

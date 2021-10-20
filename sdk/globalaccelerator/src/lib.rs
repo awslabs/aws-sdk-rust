@@ -6,10 +6,12 @@
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(rustdoc::bare_urls)]
+#![warn(missing_docs)]
 //! <fullname>AWS Global Accelerator</fullname>
 //! <p>This is the <i>AWS Global Accelerator API Reference</i>. This guide is for developers who need detailed information about
 //! AWS Global Accelerator API actions, data types, and errors. For more information about Global Accelerator features, see the
 //! <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/Welcome.html">AWS Global Accelerator Developer Guide</a>.</p>
+//!
 //! <p>AWS Global Accelerator is a service in which you create <i>accelerators</i> to improve the performance
 //! of your applications for local and global users. Depending on the type of accelerator you choose, you can
 //! gain additional benefits. </p>
@@ -37,6 +39,7 @@
 //! Amazon EC2 instances, or Elastic IP addresses that are located in one AWS Region or multiple Regions. For custom routing
 //! accelerators, you map traffic that arrives to the static IP addresses to specific Amazon EC2 servers in endpoints that
 //! are virtual private cloud (VPC) subnets.</p>
+//!
 //! <important>
 //! <p>The static IP addresses remain assigned to your accelerator for as long as it exists, even if you
 //! disable the accelerator and it no longer accepts or routes traffic. However, when you
@@ -49,9 +52,11 @@
 //! on health, client location, and policies that you configure. The service reacts instantly to
 //! changes in health or configuration to ensure that internet traffic from clients is always
 //! directed to healthy endpoints.</p>
+//!
 //! <p>For a list of the AWS Regions where Global Accelerator and other services are currently supported, see the
 //! <a href="https://docs.aws.amazon.com/about-aws/global-infrastructure/regional-product-services/">AWS
 //! Region Table</a>.</p>
+//!
 //! <p>AWS Global Accelerator includes the following components:</p>
 //! <dl>
 //! <dt>Static IP addresses</dt>
@@ -157,31 +162,39 @@ pub use error_meta::Error;
 pub use config::Config;
 
 mod aws_endpoint;
+/// Client and fluent builders for calling the service.
 #[cfg(feature = "client")]
 pub mod client;
+/// Configuration for the service.
 pub mod config;
+/// Errors that can occur when calling the service.
 pub mod error;
 mod error_meta;
 mod idempotency_token;
+/// Input structures for operations.
 pub mod input;
 mod json_deser;
 mod json_errors;
 mod json_ser;
+/// Data structures used by operation inputs/outputs.
 pub mod model;
 mod no_credentials;
+/// All operations that this crate can perform.
 pub mod operation;
 mod operation_deser;
 mod operation_ser;
+/// Output structures for operations.
 pub mod output;
+/// Crate version number.
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
-pub use smithy_http::byte_stream::ByteStream;
-pub use smithy_http::result::SdkError;
-pub use smithy_types::Blob;
+pub use aws_smithy_http::byte_stream::ByteStream;
+pub use aws_smithy_http::result::SdkError;
+pub use aws_smithy_types::Blob;
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("globalaccelerator", PKG_VERSION);
+pub use aws_smithy_http::endpoint::Endpoint;
+pub use aws_smithy_types::retry::RetryConfig;
 pub use aws_types::region::Region;
 pub use aws_types::Credentials;
 #[cfg(feature = "client")]
 pub use client::Client;
-pub use smithy_http::endpoint::Endpoint;
-pub use smithy_types::retry::RetryConfig;

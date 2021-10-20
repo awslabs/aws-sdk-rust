@@ -28,6 +28,7 @@ pub mod upload_ssh_public_key_output {
             self.ssh_public_key = Some(input);
             self
         }
+        /// <p>Contains information about the SSH public key.</p>
         pub fn set_ssh_public_key(
             mut self,
             input: std::option::Option<crate::model::SshPublicKey>,
@@ -79,6 +80,7 @@ pub mod upload_signing_certificate_output {
             self.certificate = Some(input);
             self
         }
+        /// <p>Information about the certificate.</p>
         pub fn set_certificate(
             mut self,
             input: std::option::Option<crate::model::SigningCertificate>,
@@ -145,6 +147,8 @@ pub mod upload_server_certificate_output {
             self.server_certificate_metadata = Some(input);
             self
         }
+        /// <p>The meta information of the uploaded server certificate without its certificate body,
+        /// certificate chain, and private key.</p>
         pub fn set_server_certificate_metadata(
             mut self,
             input: std::option::Option<crate::model::ServerCertificateMetadata>,
@@ -152,12 +156,22 @@ pub mod upload_server_certificate_output {
             self.server_certificate_metadata = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags that are attached to the new IAM server certificate. The returned list of tags is sorted by tag key.
+        /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags that are attached to the new IAM server certificate. The returned list of tags is sorted by tag key.
+        /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -181,6 +195,7 @@ impl UploadServerCertificateOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserOutput {}
@@ -210,6 +225,7 @@ impl UpdateUserOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSshPublicKeyOutput {}
@@ -239,6 +255,7 @@ impl UpdateSshPublicKeyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSigningCertificateOutput {}
@@ -268,6 +285,7 @@ impl UpdateSigningCertificateOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceSpecificCredentialOutput {}
@@ -297,6 +315,7 @@ impl UpdateServiceSpecificCredentialOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServerCertificateOutput {}
@@ -355,6 +374,7 @@ pub mod update_saml_provider_output {
             self.saml_provider_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
         pub fn set_saml_provider_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -377,6 +397,7 @@ impl UpdateSamlProviderOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRoleDescriptionOutput {
@@ -404,6 +425,7 @@ pub mod update_role_description_output {
             self.role = Some(input);
             self
         }
+        /// <p>A structure that contains details about the modified role.</p>
         pub fn set_role(mut self, input: std::option::Option<crate::model::Role>) -> Self {
             self.role = input;
             self
@@ -421,6 +443,7 @@ impl UpdateRoleDescriptionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRoleOutput {}
@@ -450,6 +473,7 @@ impl UpdateRoleOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOpenIdConnectProviderThumbprintOutput {}
@@ -479,6 +503,7 @@ impl UpdateOpenIdConnectProviderThumbprintOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLoginProfileOutput {}
@@ -508,6 +533,7 @@ impl UpdateLoginProfileOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGroupOutput {}
@@ -537,6 +563,7 @@ impl UpdateGroupOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssumeRolePolicyOutput {}
@@ -566,6 +593,7 @@ impl UpdateAssumeRolePolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountPasswordPolicyOutput {}
@@ -595,6 +623,7 @@ impl UpdateAccountPasswordPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccessKeyOutput {}
@@ -624,6 +653,7 @@ impl UpdateAccessKeyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagUserOutput {}
@@ -653,6 +683,7 @@ impl UntagUserOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagServerCertificateOutput {}
@@ -682,6 +713,7 @@ impl UntagServerCertificateOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagSamlProviderOutput {}
@@ -711,6 +743,7 @@ impl UntagSamlProviderOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagRoleOutput {}
@@ -740,6 +773,7 @@ impl UntagRoleOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagPolicyOutput {}
@@ -769,6 +803,7 @@ impl UntagPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagOpenIdConnectProviderOutput {}
@@ -798,6 +833,7 @@ impl UntagOpenIdConnectProviderOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagMfaDeviceOutput {}
@@ -827,6 +863,7 @@ impl UntagMfaDeviceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagInstanceProfileOutput {}
@@ -856,6 +893,7 @@ impl UntagInstanceProfileOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagUserOutput {}
@@ -885,6 +923,7 @@ impl TagUserOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagServerCertificateOutput {}
@@ -914,6 +953,7 @@ impl TagServerCertificateOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagSamlProviderOutput {}
@@ -943,6 +983,7 @@ impl TagSamlProviderOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagRoleOutput {}
@@ -972,6 +1013,7 @@ impl TagRoleOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagPolicyOutput {}
@@ -1001,6 +1043,7 @@ impl TagPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagOpenIdConnectProviderOutput {}
@@ -1030,6 +1073,7 @@ impl TagOpenIdConnectProviderOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagMfaDeviceOutput {}
@@ -1059,6 +1103,7 @@ impl TagMfaDeviceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagInstanceProfileOutput {}
@@ -1128,6 +1173,11 @@ pub mod simulate_principal_policy_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `evaluation_results`.
+        ///
+        /// To override the contents of this collection use [`set_evaluation_results`](Self::set_evaluation_results).
+        ///
+        /// <p>The results of the simulation.</p>
         pub fn evaluation_results(
             mut self,
             input: impl Into<crate::model::EvaluationResult>,
@@ -1137,6 +1187,7 @@ pub mod simulate_principal_policy_output {
             self.evaluation_results = Some(v);
             self
         }
+        /// <p>The results of the simulation.</p>
         pub fn set_evaluation_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
@@ -1154,6 +1205,12 @@ pub mod simulate_principal_policy_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -1165,6 +1222,9 @@ pub mod simulate_principal_policy_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1226,6 +1286,11 @@ pub mod simulate_custom_policy_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `evaluation_results`.
+        ///
+        /// To override the contents of this collection use [`set_evaluation_results`](Self::set_evaluation_results).
+        ///
+        /// <p>The results of the simulation.</p>
         pub fn evaluation_results(
             mut self,
             input: impl Into<crate::model::EvaluationResult>,
@@ -1235,6 +1300,7 @@ pub mod simulate_custom_policy_output {
             self.evaluation_results = Some(v);
             self
         }
+        /// <p>The results of the simulation.</p>
         pub fn set_evaluation_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
@@ -1252,6 +1318,12 @@ pub mod simulate_custom_policy_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -1263,6 +1335,9 @@ pub mod simulate_custom_policy_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1284,6 +1359,7 @@ impl SimulateCustomPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetSecurityTokenServicePreferencesOutput {}
@@ -1313,6 +1389,7 @@ impl SetSecurityTokenServicePreferencesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetDefaultPolicyVersionOutput {}
@@ -1342,6 +1419,7 @@ impl SetDefaultPolicyVersionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResyncMfaDeviceOutput {}
@@ -1371,6 +1449,7 @@ impl ResyncMfaDeviceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetServiceSpecificCredentialOutput {
@@ -1415,6 +1494,12 @@ pub mod reset_service_specific_credential_output {
             self.service_specific_credential = Some(input);
             self
         }
+        /// <p>A structure with details about the updated service-specific credential, including the
+        /// new password.</p>
+        /// <important>
+        /// <p>This is the <b>only</b> time that you can access the
+        /// password. You cannot recover the password later, but you can reset it again.</p>
+        /// </important>
         pub fn set_service_specific_credential(
             mut self,
             input: std::option::Option<crate::model::ServiceSpecificCredential>,
@@ -1437,6 +1522,7 @@ impl ResetServiceSpecificCredentialOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveUserFromGroupOutput {}
@@ -1466,6 +1552,7 @@ impl RemoveUserFromGroupOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveRoleFromInstanceProfileOutput {}
@@ -1495,6 +1582,7 @@ impl RemoveRoleFromInstanceProfileOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveClientIdFromOpenIdConnectProviderOutput {}
@@ -1525,6 +1613,7 @@ impl RemoveClientIdFromOpenIdConnectProviderOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutUserPolicyOutput {}
@@ -1554,6 +1643,7 @@ impl PutUserPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutUserPermissionsBoundaryOutput {}
@@ -1583,6 +1673,7 @@ impl PutUserPermissionsBoundaryOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRolePolicyOutput {}
@@ -1612,6 +1703,7 @@ impl PutRolePolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRolePermissionsBoundaryOutput {}
@@ -1641,6 +1733,7 @@ impl PutRolePermissionsBoundaryOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutGroupPolicyOutput {}
@@ -1711,6 +1804,12 @@ pub mod list_virtual_mfa_devices_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `virtual_mfa_devices`.
+        ///
+        /// To override the contents of this collection use [`set_virtual_mfa_devices`](Self::set_virtual_mfa_devices).
+        ///
+        /// <p> The list of virtual MFA devices in the current account that match the
+        /// <code>AssignmentStatus</code> value that was passed in the request.</p>
         pub fn virtual_mfa_devices(
             mut self,
             input: impl Into<crate::model::VirtualMfaDevice>,
@@ -1720,6 +1819,8 @@ pub mod list_virtual_mfa_devices_output {
             self.virtual_mfa_devices = Some(v);
             self
         }
+        /// <p> The list of virtual MFA devices in the current account that match the
+        /// <code>AssignmentStatus</code> value that was passed in the request.</p>
         pub fn set_virtual_mfa_devices(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VirtualMfaDevice>>,
@@ -1737,6 +1838,12 @@ pub mod list_virtual_mfa_devices_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -1748,6 +1855,9 @@ pub mod list_virtual_mfa_devices_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and
+        /// contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1769,6 +1879,7 @@ impl ListVirtualMfaDevicesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUserTagsOutput {
@@ -1806,12 +1917,18 @@ pub mod list_user_tags_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of tags that are currently attached to the user. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The list of tags that are currently attached to the user. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1829,6 +1946,12 @@ pub mod list_user_tags_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -1840,6 +1963,9 @@ pub mod list_user_tags_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1899,12 +2025,18 @@ pub mod list_users_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `users`.
+        ///
+        /// To override the contents of this collection use [`set_users`](Self::set_users).
+        ///
+        /// <p>A list of users.</p>
         pub fn users(mut self, input: impl Into<crate::model::User>) -> Self {
             let mut v = self.users.unwrap_or_default();
             v.push(input.into());
             self.users = Some(v);
             self
         }
+        /// <p>A list of users.</p>
         pub fn set_users(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::User>>,
@@ -1922,6 +2054,12 @@ pub mod list_users_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -1933,6 +2071,9 @@ pub mod list_users_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1993,12 +2134,18 @@ pub mod list_user_policies_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `policy_names`.
+        ///
+        /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
+        ///
+        /// <p>A list of policy names.</p>
         pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_names.unwrap_or_default();
             v.push(input.into());
             self.policy_names = Some(v);
             self
         }
+        /// <p>A list of policy names.</p>
         pub fn set_policy_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2016,6 +2163,12 @@ pub mod list_user_policies_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -2027,6 +2180,9 @@ pub mod list_user_policies_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2088,6 +2244,11 @@ pub mod list_ssh_public_keys_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `ssh_public_keys`.
+        ///
+        /// To override the contents of this collection use [`set_ssh_public_keys`](Self::set_ssh_public_keys).
+        ///
+        /// <p>A list of the SSH public keys assigned to IAM user.</p>
         pub fn ssh_public_keys(
             mut self,
             input: impl Into<crate::model::SshPublicKeyMetadata>,
@@ -2097,6 +2258,7 @@ pub mod list_ssh_public_keys_output {
             self.ssh_public_keys = Some(v);
             self
         }
+        /// <p>A list of the SSH public keys assigned to IAM user.</p>
         pub fn set_ssh_public_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SshPublicKeyMetadata>>,
@@ -2114,6 +2276,12 @@ pub mod list_ssh_public_keys_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -2125,6 +2293,9 @@ pub mod list_ssh_public_keys_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2186,12 +2357,18 @@ pub mod list_signing_certificates_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `certificates`.
+        ///
+        /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
+        ///
+        /// <p>A list of the user's signing certificate information.</p>
         pub fn certificates(mut self, input: impl Into<crate::model::SigningCertificate>) -> Self {
             let mut v = self.certificates.unwrap_or_default();
             v.push(input.into());
             self.certificates = Some(v);
             self
         }
+        /// <p>A list of the user's signing certificate information.</p>
         pub fn set_certificates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SigningCertificate>>,
@@ -2209,6 +2386,12 @@ pub mod list_signing_certificates_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -2220,6 +2403,9 @@ pub mod list_signing_certificates_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2241,6 +2427,7 @@ impl ListSigningCertificatesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceSpecificCredentialsOutput {
@@ -2269,6 +2456,12 @@ pub mod list_service_specific_credentials_output {
             std::option::Option<std::vec::Vec<crate::model::ServiceSpecificCredentialMetadata>>,
     }
     impl Builder {
+        /// Appends an item to `service_specific_credentials`.
+        ///
+        /// To override the contents of this collection use [`set_service_specific_credentials`](Self::set_service_specific_credentials).
+        ///
+        /// <p>A list of structures that each contain details about a service-specific
+        /// credential.</p>
         pub fn service_specific_credentials(
             mut self,
             input: impl Into<crate::model::ServiceSpecificCredentialMetadata>,
@@ -2278,6 +2471,8 @@ pub mod list_service_specific_credentials_output {
             self.service_specific_credentials = Some(v);
             self
         }
+        /// <p>A list of structures that each contain details about a service-specific
+        /// credential.</p>
         pub fn set_service_specific_credentials(
             mut self,
             input: std::option::Option<
@@ -2302,6 +2497,7 @@ impl ListServiceSpecificCredentialsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServerCertificateTagsOutput {
@@ -2340,12 +2536,20 @@ pub mod list_server_certificate_tags_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of tags that are currently attached to the IAM server certificate.
+        /// Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The list of tags that are currently attached to the IAM server certificate.
+        /// Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2363,6 +2567,12 @@ pub mod list_server_certificate_tags_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -2374,6 +2584,9 @@ pub mod list_server_certificate_tags_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2439,6 +2652,11 @@ pub mod list_server_certificates_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `server_certificate_metadata_list`.
+        ///
+        /// To override the contents of this collection use [`set_server_certificate_metadata_list`](Self::set_server_certificate_metadata_list).
+        ///
+        /// <p>A list of server certificates.</p>
         pub fn server_certificate_metadata_list(
             mut self,
             input: impl Into<crate::model::ServerCertificateMetadata>,
@@ -2448,6 +2666,7 @@ pub mod list_server_certificates_output {
             self.server_certificate_metadata_list = Some(v);
             self
         }
+        /// <p>A list of server certificates.</p>
         pub fn set_server_certificate_metadata_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServerCertificateMetadata>>,
@@ -2465,6 +2684,12 @@ pub mod list_server_certificates_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -2476,6 +2701,9 @@ pub mod list_server_certificates_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2497,6 +2725,7 @@ impl ListServerCertificatesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSamlProviderTagsOutput {
@@ -2535,12 +2764,20 @@ pub mod list_saml_provider_tags_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of tags that are currently attached to the Security Assertion Markup Language
+        /// (SAML) identity provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The list of tags that are currently attached to the Security Assertion Markup Language
+        /// (SAML) identity provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2558,6 +2795,12 @@ pub mod list_saml_provider_tags_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -2569,6 +2812,9 @@ pub mod list_saml_provider_tags_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2616,6 +2862,12 @@ pub mod list_saml_providers_output {
             std::option::Option<std::vec::Vec<crate::model::SamlProviderListEntry>>,
     }
     impl Builder {
+        /// Appends an item to `saml_provider_list`.
+        ///
+        /// To override the contents of this collection use [`set_saml_provider_list`](Self::set_saml_provider_list).
+        ///
+        /// <p>The list of SAML provider resource objects defined in IAM for this Amazon Web Services
+        /// account.</p>
         pub fn saml_provider_list(
             mut self,
             input: impl Into<crate::model::SamlProviderListEntry>,
@@ -2625,6 +2877,8 @@ pub mod list_saml_providers_output {
             self.saml_provider_list = Some(v);
             self
         }
+        /// <p>The list of SAML provider resource objects defined in IAM for this Amazon Web Services
+        /// account.</p>
         pub fn set_saml_provider_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SamlProviderListEntry>>,
@@ -2647,6 +2901,7 @@ impl ListSamlProvidersOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRoleTagsOutput {
@@ -2684,12 +2939,18 @@ pub mod list_role_tags_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of tags that are currently attached to the role. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The list of tags that are currently attached to the role. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2707,6 +2968,12 @@ pub mod list_role_tags_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -2718,6 +2985,9 @@ pub mod list_role_tags_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2777,12 +3047,18 @@ pub mod list_roles_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `roles`.
+        ///
+        /// To override the contents of this collection use [`set_roles`](Self::set_roles).
+        ///
+        /// <p>A list of roles.</p>
         pub fn roles(mut self, input: impl Into<crate::model::Role>) -> Self {
             let mut v = self.roles.unwrap_or_default();
             v.push(input.into());
             self.roles = Some(v);
             self
         }
+        /// <p>A list of roles.</p>
         pub fn set_roles(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Role>>,
@@ -2800,6 +3076,12 @@ pub mod list_roles_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -2811,6 +3093,9 @@ pub mod list_roles_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2871,12 +3156,18 @@ pub mod list_role_policies_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `policy_names`.
+        ///
+        /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
+        ///
+        /// <p>A list of policy names.</p>
         pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_names.unwrap_or_default();
             v.push(input.into());
             self.policy_names = Some(v);
             self
         }
+        /// <p>A list of policy names.</p>
         pub fn set_policy_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2894,6 +3185,12 @@ pub mod list_role_policies_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -2905,6 +3202,9 @@ pub mod list_role_policies_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2967,12 +3267,22 @@ pub mod list_policy_versions_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `versions`.
+        ///
+        /// To override the contents of this collection use [`set_versions`](Self::set_versions).
+        ///
+        /// <p>A list of policy versions.</p>
+        /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+        /// policies</a> in the <i>IAM User Guide</i>.</p>
         pub fn versions(mut self, input: impl Into<crate::model::PolicyVersion>) -> Self {
             let mut v = self.versions.unwrap_or_default();
             v.push(input.into());
             self.versions = Some(v);
             self
         }
+        /// <p>A list of policy versions.</p>
+        /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+        /// policies</a> in the <i>IAM User Guide</i>.</p>
         pub fn set_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PolicyVersion>>,
@@ -2990,6 +3300,12 @@ pub mod list_policy_versions_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -3001,6 +3317,9 @@ pub mod list_policy_versions_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3022,6 +3341,7 @@ impl ListPolicyVersionsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPolicyTagsOutput {
@@ -3060,12 +3380,20 @@ pub mod list_policy_tags_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of tags that are currently attached to the IAM customer managed policy.
+        /// Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The list of tags that are currently attached to the IAM customer managed policy.
+        /// Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3083,6 +3411,12 @@ pub mod list_policy_tags_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -3094,6 +3428,9 @@ pub mod list_policy_tags_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3115,6 +3452,7 @@ impl ListPolicyTagsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPoliciesGrantingServiceAccessOutput {
@@ -3159,6 +3497,13 @@ pub mod list_policies_granting_service_access_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `policies_granting_service_access`.
+        ///
+        /// To override the contents of this collection use [`set_policies_granting_service_access`](Self::set_policies_granting_service_access).
+        ///
+        /// <p>A <code>ListPoliciesGrantingServiceAccess</code> object that contains details about
+        /// the permissions policies attached to the specified identity (user, group, or
+        /// role).</p>
         pub fn policies_granting_service_access(
             mut self,
             input: impl Into<crate::model::ListPoliciesGrantingServiceAccessEntry>,
@@ -3168,6 +3513,9 @@ pub mod list_policies_granting_service_access_output {
             self.policies_granting_service_access = Some(v);
             self
         }
+        /// <p>A <code>ListPoliciesGrantingServiceAccess</code> object that contains details about
+        /// the permissions policies attached to the specified identity (user, group, or
+        /// role).</p>
         pub fn set_policies_granting_service_access(
             mut self,
             input: std::option::Option<
@@ -3186,6 +3534,11 @@ pub mod list_policies_granting_service_access_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your results were
+        /// truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. We recommend that you check
+        /// <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -3197,6 +3550,9 @@ pub mod list_policies_granting_service_access_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3257,12 +3613,18 @@ pub mod list_policies_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `policies`.
+        ///
+        /// To override the contents of this collection use [`set_policies`](Self::set_policies).
+        ///
+        /// <p>A list of policies.</p>
         pub fn policies(mut self, input: impl Into<crate::model::Policy>) -> Self {
             let mut v = self.policies.unwrap_or_default();
             v.push(input.into());
             self.policies = Some(v);
             self
         }
+        /// <p>A list of policies.</p>
         pub fn set_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Policy>>,
@@ -3280,6 +3642,12 @@ pub mod list_policies_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -3291,6 +3659,9 @@ pub mod list_policies_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3312,6 +3683,7 @@ impl ListPoliciesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOpenIdConnectProviderTagsOutput {
@@ -3350,12 +3722,20 @@ pub mod list_open_id_connect_provider_tags_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of tags that are currently attached to the OpenID Connect (OIDC) identity
+        /// provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The list of tags that are currently attached to the OpenID Connect (OIDC) identity
+        /// provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3373,6 +3753,12 @@ pub mod list_open_id_connect_provider_tags_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -3384,6 +3770,9 @@ pub mod list_open_id_connect_provider_tags_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3434,6 +3823,11 @@ pub mod list_open_id_connect_providers_output {
             std::option::Option<std::vec::Vec<crate::model::OpenIdConnectProviderListEntry>>,
     }
     impl Builder {
+        /// Appends an item to `open_id_connect_provider_list`.
+        ///
+        /// To override the contents of this collection use [`set_open_id_connect_provider_list`](Self::set_open_id_connect_provider_list).
+        ///
+        /// <p>The list of IAM OIDC provider resource objects defined in the Amazon Web Services account.</p>
         pub fn open_id_connect_provider_list(
             mut self,
             input: impl Into<crate::model::OpenIdConnectProviderListEntry>,
@@ -3443,6 +3837,7 @@ pub mod list_open_id_connect_providers_output {
             self.open_id_connect_provider_list = Some(v);
             self
         }
+        /// <p>The list of IAM OIDC provider resource objects defined in the Amazon Web Services account.</p>
         pub fn set_open_id_connect_provider_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OpenIdConnectProviderListEntry>>,
@@ -3465,6 +3860,7 @@ impl ListOpenIdConnectProvidersOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMfaDeviceTagsOutput {
@@ -3502,12 +3898,18 @@ pub mod list_mfa_device_tags_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of tags that are currently attached to the virtual MFA device. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The list of tags that are currently attached to the virtual MFA device. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3525,6 +3927,12 @@ pub mod list_mfa_device_tags_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -3536,6 +3944,9 @@ pub mod list_mfa_device_tags_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3596,12 +4007,18 @@ pub mod list_mfa_devices_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `mfa_devices`.
+        ///
+        /// To override the contents of this collection use [`set_mfa_devices`](Self::set_mfa_devices).
+        ///
+        /// <p>A list of MFA devices.</p>
         pub fn mfa_devices(mut self, input: impl Into<crate::model::MfaDevice>) -> Self {
             let mut v = self.mfa_devices.unwrap_or_default();
             v.push(input.into());
             self.mfa_devices = Some(v);
             self
         }
+        /// <p>A list of MFA devices.</p>
         pub fn set_mfa_devices(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MfaDevice>>,
@@ -3619,6 +4036,12 @@ pub mod list_mfa_devices_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -3630,6 +4053,9 @@ pub mod list_mfa_devices_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3651,6 +4077,7 @@ impl ListMfaDevicesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstanceProfileTagsOutput {
@@ -3688,12 +4115,18 @@ pub mod list_instance_profile_tags_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of tags that are currently attached to the IAM instance profile. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The list of tags that are currently attached to the IAM instance profile. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3711,6 +4144,12 @@ pub mod list_instance_profile_tags_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -3722,6 +4161,9 @@ pub mod list_instance_profile_tags_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3783,6 +4225,11 @@ pub mod list_instance_profiles_for_role_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `instance_profiles`.
+        ///
+        /// To override the contents of this collection use [`set_instance_profiles`](Self::set_instance_profiles).
+        ///
+        /// <p>A list of instance profiles.</p>
         pub fn instance_profiles(
             mut self,
             input: impl Into<crate::model::InstanceProfile>,
@@ -3792,6 +4239,7 @@ pub mod list_instance_profiles_for_role_output {
             self.instance_profiles = Some(v);
             self
         }
+        /// <p>A list of instance profiles.</p>
         pub fn set_instance_profiles(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
@@ -3809,6 +4257,12 @@ pub mod list_instance_profiles_for_role_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -3820,6 +4274,9 @@ pub mod list_instance_profiles_for_role_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3881,6 +4338,11 @@ pub mod list_instance_profiles_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `instance_profiles`.
+        ///
+        /// To override the contents of this collection use [`set_instance_profiles`](Self::set_instance_profiles).
+        ///
+        /// <p>A list of instance profiles.</p>
         pub fn instance_profiles(
             mut self,
             input: impl Into<crate::model::InstanceProfile>,
@@ -3890,6 +4352,7 @@ pub mod list_instance_profiles_output {
             self.instance_profiles = Some(v);
             self
         }
+        /// <p>A list of instance profiles.</p>
         pub fn set_instance_profiles(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
@@ -3907,6 +4370,12 @@ pub mod list_instance_profiles_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -3918,6 +4387,9 @@ pub mod list_instance_profiles_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3978,12 +4450,18 @@ pub mod list_groups_for_user_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `groups`.
+        ///
+        /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+        ///
+        /// <p>A list of groups.</p>
         pub fn groups(mut self, input: impl Into<crate::model::Group>) -> Self {
             let mut v = self.groups.unwrap_or_default();
             v.push(input.into());
             self.groups = Some(v);
             self
         }
+        /// <p>A list of groups.</p>
         pub fn set_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Group>>,
@@ -4001,6 +4479,12 @@ pub mod list_groups_for_user_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -4012,6 +4496,9 @@ pub mod list_groups_for_user_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4071,12 +4558,18 @@ pub mod list_groups_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `groups`.
+        ///
+        /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+        ///
+        /// <p>A list of groups.</p>
         pub fn groups(mut self, input: impl Into<crate::model::Group>) -> Self {
             let mut v = self.groups.unwrap_or_default();
             v.push(input.into());
             self.groups = Some(v);
             self
         }
+        /// <p>A list of groups.</p>
         pub fn set_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Group>>,
@@ -4094,6 +4587,12 @@ pub mod list_groups_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -4105,6 +4604,9 @@ pub mod list_groups_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4167,12 +4669,22 @@ pub mod list_group_policies_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `policy_names`.
+        ///
+        /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
+        ///
+        /// <p>A list of policy names.</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_names.unwrap_or_default();
             v.push(input.into());
             self.policy_names = Some(v);
             self
         }
+        /// <p>A list of policy names.</p>
+        /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn set_policy_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4190,6 +4702,12 @@ pub mod list_group_policies_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -4201,6 +4719,9 @@ pub mod list_group_policies_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4269,12 +4790,18 @@ pub mod list_entities_for_policy_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `policy_groups`.
+        ///
+        /// To override the contents of this collection use [`set_policy_groups`](Self::set_policy_groups).
+        ///
+        /// <p>A list of IAM groups that the policy is attached to.</p>
         pub fn policy_groups(mut self, input: impl Into<crate::model::PolicyGroup>) -> Self {
             let mut v = self.policy_groups.unwrap_or_default();
             v.push(input.into());
             self.policy_groups = Some(v);
             self
         }
+        /// <p>A list of IAM groups that the policy is attached to.</p>
         pub fn set_policy_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PolicyGroup>>,
@@ -4282,12 +4809,18 @@ pub mod list_entities_for_policy_output {
             self.policy_groups = input;
             self
         }
+        /// Appends an item to `policy_users`.
+        ///
+        /// To override the contents of this collection use [`set_policy_users`](Self::set_policy_users).
+        ///
+        /// <p>A list of IAM users that the policy is attached to.</p>
         pub fn policy_users(mut self, input: impl Into<crate::model::PolicyUser>) -> Self {
             let mut v = self.policy_users.unwrap_or_default();
             v.push(input.into());
             self.policy_users = Some(v);
             self
         }
+        /// <p>A list of IAM users that the policy is attached to.</p>
         pub fn set_policy_users(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PolicyUser>>,
@@ -4295,12 +4828,18 @@ pub mod list_entities_for_policy_output {
             self.policy_users = input;
             self
         }
+        /// Appends an item to `policy_roles`.
+        ///
+        /// To override the contents of this collection use [`set_policy_roles`](Self::set_policy_roles).
+        ///
+        /// <p>A list of IAM roles that the policy is attached to.</p>
         pub fn policy_roles(mut self, input: impl Into<crate::model::PolicyRole>) -> Self {
             let mut v = self.policy_roles.unwrap_or_default();
             v.push(input.into());
             self.policy_roles = Some(v);
             self
         }
+        /// <p>A list of IAM roles that the policy is attached to.</p>
         pub fn set_policy_roles(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PolicyRole>>,
@@ -4318,6 +4857,12 @@ pub mod list_entities_for_policy_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -4329,6 +4874,9 @@ pub mod list_entities_for_policy_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4392,12 +4940,18 @@ pub mod list_attached_user_policies_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `attached_policies`.
+        ///
+        /// To override the contents of this collection use [`set_attached_policies`](Self::set_attached_policies).
+        ///
+        /// <p>A list of the attached policies.</p>
         pub fn attached_policies(mut self, input: impl Into<crate::model::AttachedPolicy>) -> Self {
             let mut v = self.attached_policies.unwrap_or_default();
             v.push(input.into());
             self.attached_policies = Some(v);
             self
         }
+        /// <p>A list of the attached policies.</p>
         pub fn set_attached_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
@@ -4415,6 +4969,12 @@ pub mod list_attached_user_policies_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -4426,6 +4986,9 @@ pub mod list_attached_user_policies_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4487,12 +5050,18 @@ pub mod list_attached_role_policies_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `attached_policies`.
+        ///
+        /// To override the contents of this collection use [`set_attached_policies`](Self::set_attached_policies).
+        ///
+        /// <p>A list of the attached policies.</p>
         pub fn attached_policies(mut self, input: impl Into<crate::model::AttachedPolicy>) -> Self {
             let mut v = self.attached_policies.unwrap_or_default();
             v.push(input.into());
             self.attached_policies = Some(v);
             self
         }
+        /// <p>A list of the attached policies.</p>
         pub fn set_attached_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
@@ -4510,6 +5079,12 @@ pub mod list_attached_role_policies_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -4521,6 +5096,9 @@ pub mod list_attached_role_policies_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4582,12 +5160,18 @@ pub mod list_attached_group_policies_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `attached_policies`.
+        ///
+        /// To override the contents of this collection use [`set_attached_policies`](Self::set_attached_policies).
+        ///
+        /// <p>A list of the attached policies.</p>
         pub fn attached_policies(mut self, input: impl Into<crate::model::AttachedPolicy>) -> Self {
             let mut v = self.attached_policies.unwrap_or_default();
             v.push(input.into());
             self.attached_policies = Some(v);
             self
         }
+        /// <p>A list of the attached policies.</p>
         pub fn set_attached_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
@@ -4605,6 +5189,12 @@ pub mod list_attached_group_policies_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -4616,6 +5206,9 @@ pub mod list_attached_group_policies_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4677,12 +5270,20 @@ pub mod list_account_aliases_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `account_aliases`.
+        ///
+        /// To override the contents of this collection use [`set_account_aliases`](Self::set_account_aliases).
+        ///
+        /// <p>A list of aliases associated with the account. Amazon Web Services supports only one alias per
+        /// account.</p>
         pub fn account_aliases(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_aliases.unwrap_or_default();
             v.push(input.into());
             self.account_aliases = Some(v);
             self
         }
+        /// <p>A list of aliases associated with the account. Amazon Web Services supports only one alias per
+        /// account.</p>
         pub fn set_account_aliases(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4700,6 +5301,12 @@ pub mod list_account_aliases_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -4711,6 +5318,9 @@ pub mod list_account_aliases_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4772,6 +5382,11 @@ pub mod list_access_keys_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `access_key_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_access_key_metadata`](Self::set_access_key_metadata).
+        ///
+        /// <p>A list of objects containing metadata about the access keys.</p>
         pub fn access_key_metadata(
             mut self,
             input: impl Into<crate::model::AccessKeyMetadata>,
@@ -4781,6 +5396,7 @@ pub mod list_access_keys_output {
             self.access_key_metadata = Some(v);
             self
         }
+        /// <p>A list of objects containing metadata about the access keys.</p>
         pub fn set_access_key_metadata(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccessKeyMetadata>>,
@@ -4798,6 +5414,12 @@ pub mod list_access_keys_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -4809,6 +5431,9 @@ pub mod list_access_keys_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4840,6 +5465,7 @@ pub struct GetUserPolicyOutput {
     /// <p>The name of the policy.</p>
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The policy document.</p>
+    ///
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts
     /// a YAML policy to JSON format before submitting it to IAM.</p>
     pub policy_document: std::option::Option<std::string::String>,
@@ -4869,6 +5495,7 @@ pub mod get_user_policy_output {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The user the policy is associated with.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -4878,17 +5505,23 @@ pub mod get_user_policy_output {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The name of the policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
         }
         /// <p>The policy document.</p>
+        ///
         /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts
         /// a YAML policy to JSON format before submitting it to IAM.</p>
         pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_document = Some(input.into());
             self
         }
+        /// <p>The policy document.</p>
+        ///
+        /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts
+        /// a YAML policy to JSON format before submitting it to IAM.</p>
         pub fn set_policy_document(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4971,6 +5604,22 @@ pub mod get_user_output {
             self.user = Some(input);
             self
         }
+        /// <p>A structure containing details about the IAM user.</p>
+        /// <important>
+        /// <p>Due to a service issue, password last used data does not include password use from
+        /// May 3, 2018 22:50 PDT to May 23, 2018 14:08 PDT. This affects <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a> dates shown in the IAM console and password last used
+        /// dates in the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential
+        /// report</a>, and returned by this operation. If users signed in during the
+        /// affected time, the password last used date that is returned is the date the user
+        /// last signed in before May 3, 2018. For users that signed in after May 23, 2018 14:08
+        /// PDT, the returned password last used date is accurate.</p>
+        /// <p>You can use password last used information to identify unused credentials for
+        /// deletion. For example, you might delete users who did not sign in to Amazon Web Services in the last
+        /// 90 days. In cases like this, we recommend that you adjust your evaluation window to
+        /// include dates after May 23, 2018. Alternatively, if your users use access keys to
+        /// access Amazon Web Services programmatically you can refer to access key last used information
+        /// because it is accurate for all dates. </p>
+        /// </important>
         pub fn set_user(mut self, input: std::option::Option<crate::model::User>) -> Self {
             self.user = input;
             self
@@ -5017,6 +5666,7 @@ pub mod get_ssh_public_key_output {
             self.ssh_public_key = Some(input);
             self
         }
+        /// <p>A structure containing details about the SSH public key.</p>
         pub fn set_ssh_public_key(
             mut self,
             input: std::option::Option<crate::model::SshPublicKey>,
@@ -5039,6 +5689,7 @@ impl GetSshPublicKeyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceLinkedRoleDeletionStatusOutput {
@@ -5070,6 +5721,7 @@ pub mod get_service_linked_role_deletion_status_output {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the deletion.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DeletionTaskStatusType>,
@@ -5082,6 +5734,7 @@ pub mod get_service_linked_role_deletion_status_output {
             self.reason = Some(input);
             self
         }
+        /// <p>An object that contains details about the reason the deletion failed.</p>
         pub fn set_reason(
             mut self,
             input: std::option::Option<crate::model::DeletionTaskFailureReasonType>,
@@ -5105,6 +5758,7 @@ impl GetServiceLinkedRoleDeletionStatusOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceLastAccessedDetailsWithEntitiesOutput {
@@ -5112,12 +5766,12 @@ pub struct GetServiceLastAccessedDetailsWithEntitiesOutput {
     pub job_status: std::option::Option<crate::model::JobStatusType>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the report job was created.</p>
-    pub job_creation_date: std::option::Option<smithy_types::Instant>,
+    pub job_creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value
     /// of <code>IN_PROGRESS</code>.</p>
-    pub job_completion_date: std::option::Option<smithy_types::Instant>,
+    pub job_completion_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>An <code>EntityDetailsList</code> object that contains details about when an IAM
     /// entity (user or role) used group or policy permissions in an attempt to access the
     /// specified Amazon Web Services service.</p>
@@ -5156,8 +5810,8 @@ pub mod get_service_last_accessed_details_with_entities_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_status: std::option::Option<crate::model::JobStatusType>,
-        pub(crate) job_creation_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) job_completion_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) job_creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) job_completion_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) entity_details_list:
             std::option::Option<std::vec::Vec<crate::model::EntityDetails>>,
         pub(crate) is_truncated: std::option::Option<bool>,
@@ -5170,6 +5824,7 @@ pub mod get_service_last_accessed_details_with_entities_output {
             self.job_status = Some(input);
             self
         }
+        /// <p>The status of the job.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatusType>,
@@ -5179,13 +5834,15 @@ pub mod get_service_last_accessed_details_with_entities_output {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the report job was created.</p>
-        pub fn job_creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn job_creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.job_creation_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the report job was created.</p>
         pub fn set_job_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.job_creation_date = input;
             self
@@ -5194,17 +5851,28 @@ pub mod get_service_last_accessed_details_with_entities_output {
         /// format</a>, when the generated report job was completed or failed.</p>
         /// <p>This field is null if the job is still in progress, as indicated by a job status value
         /// of <code>IN_PROGRESS</code>.</p>
-        pub fn job_completion_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn job_completion_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.job_completion_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the generated report job was completed or failed.</p>
+        /// <p>This field is null if the job is still in progress, as indicated by a job status value
+        /// of <code>IN_PROGRESS</code>.</p>
         pub fn set_job_completion_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.job_completion_date = input;
             self
         }
+        /// Appends an item to `entity_details_list`.
+        ///
+        /// To override the contents of this collection use [`set_entity_details_list`](Self::set_entity_details_list).
+        ///
+        /// <p>An <code>EntityDetailsList</code> object that contains details about when an IAM
+        /// entity (user or role) used group or policy permissions in an attempt to access the
+        /// specified Amazon Web Services service.</p>
         pub fn entity_details_list(
             mut self,
             input: impl Into<crate::model::EntityDetails>,
@@ -5214,6 +5882,9 @@ pub mod get_service_last_accessed_details_with_entities_output {
             self.entity_details_list = Some(v);
             self
         }
+        /// <p>An <code>EntityDetailsList</code> object that contains details about when an IAM
+        /// entity (user or role) used group or policy permissions in an attempt to access the
+        /// specified Amazon Web Services service.</p>
         pub fn set_entity_details_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EntityDetails>>,
@@ -5231,6 +5902,12 @@ pub mod get_service_last_accessed_details_with_entities_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -5242,6 +5919,9 @@ pub mod get_service_last_accessed_details_with_entities_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5251,6 +5931,7 @@ pub mod get_service_last_accessed_details_with_entities_output {
             self.error = Some(input);
             self
         }
+        /// <p>An object that contains details about the reason the operation failed.</p>
         pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorDetails>) -> Self {
             self.error = input;
             self
@@ -5277,6 +5958,7 @@ impl GetServiceLastAccessedDetailsWithEntitiesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceLastAccessedDetailsOutput {
@@ -5288,7 +5970,7 @@ pub struct GetServiceLastAccessedDetailsOutput {
     pub job_type: std::option::Option<crate::model::AccessAdvisorUsageGranularityType>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the report job was created.</p>
-    pub job_creation_date: std::option::Option<smithy_types::Instant>,
+    pub job_creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p> A <code>ServiceLastAccessed</code> object that contains details about the most recent
     /// attempt to access the service.</p>
     pub services_last_accessed:
@@ -5297,7 +5979,7 @@ pub struct GetServiceLastAccessedDetailsOutput {
     /// format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value
     /// of <code>IN_PROGRESS</code>.</p>
-    pub job_completion_date: std::option::Option<smithy_types::Instant>,
+    pub job_completion_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A flag that indicates whether there are more items to return. If your
     /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
     /// request parameter to retrieve more items. Note that IAM might return fewer than the
@@ -5334,10 +6016,10 @@ pub mod get_service_last_accessed_details_output {
     pub struct Builder {
         pub(crate) job_status: std::option::Option<crate::model::JobStatusType>,
         pub(crate) job_type: std::option::Option<crate::model::AccessAdvisorUsageGranularityType>,
-        pub(crate) job_creation_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) job_creation_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) services_last_accessed:
             std::option::Option<std::vec::Vec<crate::model::ServiceLastAccessed>>,
-        pub(crate) job_completion_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) job_completion_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) is_truncated: std::option::Option<bool>,
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<crate::model::ErrorDetails>,
@@ -5348,6 +6030,7 @@ pub mod get_service_last_accessed_details_output {
             self.job_status = Some(input);
             self
         }
+        /// <p>The status of the job.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatusType>,
@@ -5362,6 +6045,9 @@ pub mod get_service_last_accessed_details_output {
             self.job_type = Some(input);
             self
         }
+        /// <p>The type of job. Service jobs return information about when each service was last
+        /// accessed. Action jobs also include information about when tracked actions within the
+        /// service were last accessed.</p>
         pub fn set_job_type(
             mut self,
             input: std::option::Option<crate::model::AccessAdvisorUsageGranularityType>,
@@ -5371,17 +6057,25 @@ pub mod get_service_last_accessed_details_output {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the report job was created.</p>
-        pub fn job_creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn job_creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.job_creation_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the report job was created.</p>
         pub fn set_job_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.job_creation_date = input;
             self
         }
+        /// Appends an item to `services_last_accessed`.
+        ///
+        /// To override the contents of this collection use [`set_services_last_accessed`](Self::set_services_last_accessed).
+        ///
+        /// <p> A <code>ServiceLastAccessed</code> object that contains details about the most recent
+        /// attempt to access the service.</p>
         pub fn services_last_accessed(
             mut self,
             input: impl Into<crate::model::ServiceLastAccessed>,
@@ -5391,6 +6085,8 @@ pub mod get_service_last_accessed_details_output {
             self.services_last_accessed = Some(v);
             self
         }
+        /// <p> A <code>ServiceLastAccessed</code> object that contains details about the most recent
+        /// attempt to access the service.</p>
         pub fn set_services_last_accessed(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceLastAccessed>>,
@@ -5402,13 +6098,17 @@ pub mod get_service_last_accessed_details_output {
         /// format</a>, when the generated report job was completed or failed.</p>
         /// <p>This field is null if the job is still in progress, as indicated by a job status value
         /// of <code>IN_PROGRESS</code>.</p>
-        pub fn job_completion_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn job_completion_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.job_completion_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the generated report job was completed or failed.</p>
+        /// <p>This field is null if the job is still in progress, as indicated by a job status value
+        /// of <code>IN_PROGRESS</code>.</p>
         pub fn set_job_completion_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.job_completion_date = input;
             self
@@ -5423,6 +6123,12 @@ pub mod get_service_last_accessed_details_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -5434,6 +6140,9 @@ pub mod get_service_last_accessed_details_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5443,6 +6152,7 @@ pub mod get_service_last_accessed_details_output {
             self.error = Some(input);
             self
         }
+        /// <p>An object that contains details about the reason the operation failed.</p>
         pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorDetails>) -> Self {
             self.error = input;
             self
@@ -5498,6 +6208,7 @@ pub mod get_server_certificate_output {
             self.server_certificate = Some(input);
             self
         }
+        /// <p>A structure containing details about the server certificate.</p>
         pub fn set_server_certificate(
             mut self,
             input: std::option::Option<crate::model::ServerCertificate>,
@@ -5528,9 +6239,9 @@ pub struct GetSamlProviderOutput {
     /// <p>The XML metadata document that includes information about an identity provider.</p>
     pub saml_metadata_document: std::option::Option<std::string::String>,
     /// <p>The date and time when the SAML provider was created.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The expiration date and time for the SAML provider.</p>
-    pub valid_until: std::option::Option<smithy_types::Instant>,
+    pub valid_until: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A list of tags that are attached to the specified IAM SAML provider. The returned list of tags is sorted by tag key.
     /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
     /// <i>IAM User Guide</i>.</p>
@@ -5553,8 +6264,8 @@ pub mod get_saml_provider_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) saml_metadata_document: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) valid_until: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) valid_until: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -5563,6 +6274,7 @@ pub mod get_saml_provider_output {
             self.saml_metadata_document = Some(input.into());
             self
         }
+        /// <p>The XML metadata document that includes information about an identity provider.</p>
         pub fn set_saml_metadata_document(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5571,35 +6283,47 @@ pub mod get_saml_provider_output {
             self
         }
         /// <p>The date and time when the SAML provider was created.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date and time when the SAML provider was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
         }
         /// <p>The expiration date and time for the SAML provider.</p>
-        pub fn valid_until(mut self, input: smithy_types::Instant) -> Self {
+        pub fn valid_until(mut self, input: aws_smithy_types::Instant) -> Self {
             self.valid_until = Some(input);
             self
         }
+        /// <p>The expiration date and time for the SAML provider.</p>
         pub fn set_valid_until(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.valid_until = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags that are attached to the specified IAM SAML provider. The returned list of tags is sorted by tag key.
+        /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags that are attached to the specified IAM SAML provider. The returned list of tags is sorted by tag key.
+        /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5664,6 +6388,7 @@ pub mod get_role_policy_output {
             self.role_name = Some(input.into());
             self
         }
+        /// <p>The role the policy is associated with.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_name = input;
             self
@@ -5673,6 +6398,7 @@ pub mod get_role_policy_output {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The name of the policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
@@ -5684,6 +6410,9 @@ pub mod get_role_policy_output {
             self.policy_document = Some(input.into());
             self
         }
+        /// <p>The policy document.</p>
+        /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts
+        /// a YAML policy to JSON format before submitting it to IAM.</p>
         pub fn set_policy_document(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5736,6 +6465,7 @@ pub mod get_role_output {
             self.role = Some(input);
             self
         }
+        /// <p>A structure containing details about the IAM role.</p>
         pub fn set_role(mut self, input: std::option::Option<crate::model::Role>) -> Self {
             self.role = input;
             self
@@ -5782,6 +6512,7 @@ pub mod get_policy_version_output {
             self.policy_version = Some(input);
             self
         }
+        /// <p>A structure containing details about the policy version.</p>
         pub fn set_policy_version(
             mut self,
             input: std::option::Option<crate::model::PolicyVersion>,
@@ -5832,6 +6563,7 @@ pub mod get_policy_output {
             self.policy = Some(input);
             self
         }
+        /// <p>A structure containing details about the policy.</p>
         pub fn set_policy(mut self, input: std::option::Option<crate::model::Policy>) -> Self {
             self.policy = input;
             self
@@ -5851,6 +6583,7 @@ impl GetPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOrganizationsAccessReportOutput {
@@ -5858,12 +6591,12 @@ pub struct GetOrganizationsAccessReportOutput {
     pub job_status: std::option::Option<crate::model::JobStatusType>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the report job was created.</p>
-    pub job_creation_date: std::option::Option<smithy_types::Instant>,
+    pub job_creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the generated report job was completed or failed.</p>
     /// <p>This field is null if the job is still in progress, as indicated by a job status value
     /// of <code>IN_PROGRESS</code>.</p>
-    pub job_completion_date: std::option::Option<smithy_types::Instant>,
+    pub job_completion_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The number of services that the applicable SCPs allow account principals to
     /// access.</p>
     pub number_of_services_accessible: std::option::Option<i32>,
@@ -5916,8 +6649,8 @@ pub mod get_organizations_access_report_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_status: std::option::Option<crate::model::JobStatusType>,
-        pub(crate) job_creation_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) job_completion_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) job_creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) job_completion_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) number_of_services_accessible: std::option::Option<i32>,
         pub(crate) number_of_services_not_accessed: std::option::Option<i32>,
         pub(crate) access_details: std::option::Option<std::vec::Vec<crate::model::AccessDetail>>,
@@ -5931,6 +6664,7 @@ pub mod get_organizations_access_report_output {
             self.job_status = Some(input);
             self
         }
+        /// <p>The status of the job.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatusType>,
@@ -5940,13 +6674,15 @@ pub mod get_organizations_access_report_output {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the report job was created.</p>
-        pub fn job_creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn job_creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.job_creation_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the report job was created.</p>
         pub fn set_job_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.job_creation_date = input;
             self
@@ -5955,13 +6691,17 @@ pub mod get_organizations_access_report_output {
         /// format</a>, when the generated report job was completed or failed.</p>
         /// <p>This field is null if the job is still in progress, as indicated by a job status value
         /// of <code>IN_PROGRESS</code>.</p>
-        pub fn job_completion_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn job_completion_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.job_completion_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the generated report job was completed or failed.</p>
+        /// <p>This field is null if the job is still in progress, as indicated by a job status value
+        /// of <code>IN_PROGRESS</code>.</p>
         pub fn set_job_completion_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.job_completion_date = input;
             self
@@ -5972,6 +6712,8 @@ pub mod get_organizations_access_report_output {
             self.number_of_services_accessible = Some(input);
             self
         }
+        /// <p>The number of services that the applicable SCPs allow account principals to
+        /// access.</p>
         pub fn set_number_of_services_accessible(
             mut self,
             input: std::option::Option<i32>,
@@ -5985,6 +6727,8 @@ pub mod get_organizations_access_report_output {
             self.number_of_services_not_accessed = Some(input);
             self
         }
+        /// <p>The number of services that account principals are allowed but did not attempt to
+        /// access.</p>
         pub fn set_number_of_services_not_accessed(
             mut self,
             input: std::option::Option<i32>,
@@ -5992,12 +6736,20 @@ pub mod get_organizations_access_report_output {
             self.number_of_services_not_accessed = input;
             self
         }
+        /// Appends an item to `access_details`.
+        ///
+        /// To override the contents of this collection use [`set_access_details`](Self::set_access_details).
+        ///
+        /// <p>An object that contains details about the most recent attempt to access the
+        /// service.</p>
         pub fn access_details(mut self, input: impl Into<crate::model::AccessDetail>) -> Self {
             let mut v = self.access_details.unwrap_or_default();
             v.push(input.into());
             self.access_details = Some(v);
             self
         }
+        /// <p>An object that contains details about the most recent attempt to access the
+        /// service.</p>
         pub fn set_access_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccessDetail>>,
@@ -6015,6 +6767,12 @@ pub mod get_organizations_access_report_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -6026,6 +6784,9 @@ pub mod get_organizations_access_report_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6036,6 +6797,8 @@ pub mod get_organizations_access_report_output {
             self.error_details = Some(input);
             self
         }
+        /// <p>Contains information about the reason that the operation failed.</p>
+        /// <p>This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a> operations.</p>
         pub fn set_error_details(
             mut self,
             input: std::option::Option<crate::model::ErrorDetails>,
@@ -6082,7 +6845,7 @@ pub struct GetOpenIdConnectProviderOutput {
     pub thumbprint_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date and time when the IAM OIDC provider resource object was created in the
     /// Amazon Web Services account.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key.
     /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
     /// <i>IAM User Guide</i>.</p>
@@ -6108,7 +6871,7 @@ pub mod get_open_id_connect_provider_output {
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) client_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) thumbprint_list: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -6118,16 +6881,26 @@ pub mod get_open_id_connect_provider_output {
             self.url = Some(input.into());
             self
         }
+        /// <p>The URL that the IAM OIDC provider resource object is associated with. For more
+        /// information, see <a>CreateOpenIDConnectProvider</a>.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
         }
+        /// Appends an item to `client_id_list`.
+        ///
+        /// To override the contents of this collection use [`set_client_id_list`](Self::set_client_id_list).
+        ///
+        /// <p>A list of client IDs (also known as audiences) that are associated with the specified
+        /// IAM OIDC provider resource object. For more information, see <a>CreateOpenIDConnectProvider</a>.</p>
         pub fn client_id_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.client_id_list.unwrap_or_default();
             v.push(input.into());
             self.client_id_list = Some(v);
             self
         }
+        /// <p>A list of client IDs (also known as audiences) that are associated with the specified
+        /// IAM OIDC provider resource object. For more information, see <a>CreateOpenIDConnectProvider</a>.</p>
         pub fn set_client_id_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6135,12 +6908,20 @@ pub mod get_open_id_connect_provider_output {
             self.client_id_list = input;
             self
         }
+        /// Appends an item to `thumbprint_list`.
+        ///
+        /// To override the contents of this collection use [`set_thumbprint_list`](Self::set_thumbprint_list).
+        ///
+        /// <p>A list of certificate thumbprints that are associated with the specified IAM OIDC
+        /// provider resource object. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
         pub fn thumbprint_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.thumbprint_list.unwrap_or_default();
             v.push(input.into());
             self.thumbprint_list = Some(v);
             self
         }
+        /// <p>A list of certificate thumbprints that are associated with the specified IAM OIDC
+        /// provider resource object. For more information, see <a>CreateOpenIDConnectProvider</a>. </p>
         pub fn set_thumbprint_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6150,23 +6931,35 @@ pub mod get_open_id_connect_provider_output {
         }
         /// <p>The date and time when the IAM OIDC provider resource object was created in the
         /// Amazon Web Services account.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date and time when the IAM OIDC provider resource object was created in the
+        /// Amazon Web Services account.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key.
+        /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key.
+        /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6224,6 +7017,8 @@ pub mod get_login_profile_output {
             self.login_profile = Some(input);
             self
         }
+        /// <p>A structure containing the user name and the profile creation date for the
+        /// user.</p>
         pub fn set_login_profile(
             mut self,
             input: std::option::Option<crate::model::LoginProfile>,
@@ -6275,6 +7070,7 @@ pub mod get_instance_profile_output {
             self.instance_profile = Some(input);
             self
         }
+        /// <p>A structure containing details about the instance profile.</p>
         pub fn set_instance_profile(
             mut self,
             input: std::option::Option<crate::model::InstanceProfile>,
@@ -6307,6 +7103,7 @@ pub struct GetGroupPolicyOutput {
     /// <p>The name of the policy.</p>
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The policy document.</p>
+    ///
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts
     /// a YAML policy to JSON format before submitting it to IAM.</p>
     pub policy_document: std::option::Option<std::string::String>,
@@ -6336,6 +7133,7 @@ pub mod get_group_policy_output {
             self.group_name = Some(input.into());
             self
         }
+        /// <p>The group the policy is associated with.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -6345,17 +7143,23 @@ pub mod get_group_policy_output {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The name of the policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
         }
         /// <p>The policy document.</p>
+        ///
         /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts
         /// a YAML policy to JSON format before submitting it to IAM.</p>
         pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_document = Some(input.into());
             self
         }
+        /// <p>The policy document.</p>
+        ///
+        /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts
+        /// a YAML policy to JSON format before submitting it to IAM.</p>
         pub fn set_policy_document(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6427,16 +7231,23 @@ pub mod get_group_output {
             self.group = Some(input);
             self
         }
+        /// <p>A structure that contains details about the group.</p>
         pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
             self.group = input;
             self
         }
+        /// Appends an item to `users`.
+        ///
+        /// To override the contents of this collection use [`set_users`](Self::set_users).
+        ///
+        /// <p>A list of users in the group.</p>
         pub fn users(mut self, input: impl Into<crate::model::User>) -> Self {
             let mut v = self.users.unwrap_or_default();
             v.push(input.into());
             self.users = Some(v);
             self
         }
+        /// <p>A list of users in the group.</p>
         pub fn set_users(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::User>>,
@@ -6454,6 +7265,12 @@ pub mod get_group_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -6465,6 +7282,9 @@ pub mod get_group_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6493,11 +7313,11 @@ impl GetGroupOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCredentialReportOutput {
     /// <p>Contains the credential report. The report is Base64-encoded.</p>
-    pub content: std::option::Option<smithy_types::Blob>,
+    pub content: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The format (MIME type) of the credential report.</p>
     pub report_format: std::option::Option<crate::model::ReportFormatType>,
     /// <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
-    pub generated_time: std::option::Option<smithy_types::Instant>,
+    pub generated_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for GetCredentialReportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6514,17 +7334,18 @@ pub mod get_credential_report_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) content: std::option::Option<smithy_types::Blob>,
+        pub(crate) content: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) report_format: std::option::Option<crate::model::ReportFormatType>,
-        pub(crate) generated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) generated_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Contains the credential report. The report is Base64-encoded.</p>
-        pub fn content(mut self, input: smithy_types::Blob) -> Self {
+        pub fn content(mut self, input: aws_smithy_types::Blob) -> Self {
             self.content = Some(input);
             self
         }
-        pub fn set_content(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>Contains the credential report. The report is Base64-encoded.</p>
+        pub fn set_content(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.content = input;
             self
         }
@@ -6533,6 +7354,7 @@ pub mod get_credential_report_output {
             self.report_format = Some(input);
             self
         }
+        /// <p>The format (MIME type) of the credential report.</p>
         pub fn set_report_format(
             mut self,
             input: std::option::Option<crate::model::ReportFormatType>,
@@ -6541,13 +7363,14 @@ pub mod get_credential_report_output {
             self
         }
         /// <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
-        pub fn generated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn generated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.generated_time = Some(input);
             self
         }
+        /// <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
         pub fn set_generated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.generated_time = input;
             self
@@ -6592,12 +7415,18 @@ pub mod get_context_keys_for_principal_policy_output {
         pub(crate) context_key_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `context_key_names`.
+        ///
+        /// To override the contents of this collection use [`set_context_key_names`](Self::set_context_key_names).
+        ///
+        /// <p>The list of context keys that are referenced in the input policies.</p>
         pub fn context_key_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.context_key_names.unwrap_or_default();
             v.push(input.into());
             self.context_key_names = Some(v);
             self
         }
+        /// <p>The list of context keys that are referenced in the input policies.</p>
         pub fn set_context_key_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6643,12 +7472,18 @@ pub mod get_context_keys_for_custom_policy_output {
         pub(crate) context_key_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `context_key_names`.
+        ///
+        /// To override the contents of this collection use [`set_context_key_names`](Self::set_context_key_names).
+        ///
+        /// <p>The list of context keys that are referenced in the input policies.</p>
         pub fn context_key_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.context_key_names.unwrap_or_default();
             v.push(input.into());
             self.context_key_names = Some(v);
             self
         }
+        /// <p>The list of context keys that are referenced in the input policies.</p>
         pub fn set_context_key_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6698,6 +7533,12 @@ pub mod get_account_summary_output {
             std::option::Option<std::collections::HashMap<crate::model::SummaryKeyType, i32>>,
     }
     impl Builder {
+        /// Adds a key-value pair to `summary_map`.
+        ///
+        /// To override the contents of this collection use [`set_summary_map`](Self::set_summary_map).
+        ///
+        /// <p>A set of key–value pairs containing information about IAM entity usage and
+        /// IAM quotas.</p>
         pub fn summary_map(
             mut self,
             k: impl Into<crate::model::SummaryKeyType>,
@@ -6708,6 +7549,8 @@ pub mod get_account_summary_output {
             self.summary_map = Some(hash_map);
             self
         }
+        /// <p>A set of key–value pairs containing information about IAM entity usage and
+        /// IAM quotas.</p>
         pub fn set_summary_map(
             mut self,
             input: std::option::Option<
@@ -6761,6 +7604,7 @@ pub mod get_account_password_policy_output {
             self.password_policy = Some(input);
             self
         }
+        /// <p>A structure that contains details about the account's password policy.</p>
         pub fn set_password_policy(
             mut self,
             input: std::option::Option<crate::model::PasswordPolicy>,
@@ -6834,12 +7678,18 @@ pub mod get_account_authorization_details_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `user_detail_list`.
+        ///
+        /// To override the contents of this collection use [`set_user_detail_list`](Self::set_user_detail_list).
+        ///
+        /// <p>A list containing information about IAM users.</p>
         pub fn user_detail_list(mut self, input: impl Into<crate::model::UserDetail>) -> Self {
             let mut v = self.user_detail_list.unwrap_or_default();
             v.push(input.into());
             self.user_detail_list = Some(v);
             self
         }
+        /// <p>A list containing information about IAM users.</p>
         pub fn set_user_detail_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UserDetail>>,
@@ -6847,12 +7697,18 @@ pub mod get_account_authorization_details_output {
             self.user_detail_list = input;
             self
         }
+        /// Appends an item to `group_detail_list`.
+        ///
+        /// To override the contents of this collection use [`set_group_detail_list`](Self::set_group_detail_list).
+        ///
+        /// <p>A list containing information about IAM groups.</p>
         pub fn group_detail_list(mut self, input: impl Into<crate::model::GroupDetail>) -> Self {
             let mut v = self.group_detail_list.unwrap_or_default();
             v.push(input.into());
             self.group_detail_list = Some(v);
             self
         }
+        /// <p>A list containing information about IAM groups.</p>
         pub fn set_group_detail_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GroupDetail>>,
@@ -6860,12 +7716,18 @@ pub mod get_account_authorization_details_output {
             self.group_detail_list = input;
             self
         }
+        /// Appends an item to `role_detail_list`.
+        ///
+        /// To override the contents of this collection use [`set_role_detail_list`](Self::set_role_detail_list).
+        ///
+        /// <p>A list containing information about IAM roles.</p>
         pub fn role_detail_list(mut self, input: impl Into<crate::model::RoleDetail>) -> Self {
             let mut v = self.role_detail_list.unwrap_or_default();
             v.push(input.into());
             self.role_detail_list = Some(v);
             self
         }
+        /// <p>A list containing information about IAM roles.</p>
         pub fn set_role_detail_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RoleDetail>>,
@@ -6873,12 +7735,18 @@ pub mod get_account_authorization_details_output {
             self.role_detail_list = input;
             self
         }
+        /// Appends an item to `policies`.
+        ///
+        /// To override the contents of this collection use [`set_policies`](Self::set_policies).
+        ///
+        /// <p>A list containing information about managed policies.</p>
         pub fn policies(mut self, input: impl Into<crate::model::ManagedPolicyDetail>) -> Self {
             let mut v = self.policies.unwrap_or_default();
             v.push(input.into());
             self.policies = Some(v);
             self
         }
+        /// <p>A list containing information about managed policies.</p>
         pub fn set_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ManagedPolicyDetail>>,
@@ -6896,6 +7764,12 @@ pub mod get_account_authorization_details_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more items to return. If your
+        /// results were truncated, you can make a subsequent pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more items. Note that IAM might return fewer than the
+        /// <code>MaxItems</code> number of results even when there are more results available. We recommend
+        /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
+        /// results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -6907,6 +7781,9 @@ pub mod get_account_authorization_details_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
+        /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
+        /// pagination request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6967,6 +7844,8 @@ pub mod get_access_key_last_used_output {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The name of the IAM user that owns this access key.</p>
+        /// <p></p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -6976,6 +7855,7 @@ pub mod get_access_key_last_used_output {
             self.access_key_last_used = Some(input);
             self
         }
+        /// <p>Contains information about the last time the access key was used.</p>
         pub fn set_access_key_last_used(
             mut self,
             input: std::option::Option<crate::model::AccessKeyLastUsed>,
@@ -6999,6 +7879,7 @@ impl GetAccessKeyLastUsedOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateServiceLastAccessedDetailsOutput {
@@ -7032,6 +7913,10 @@ pub mod generate_service_last_accessed_details_output {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The <code>JobId</code> that you can use in the <a>GetServiceLastAccessedDetails</a> or <a>GetServiceLastAccessedDetailsWithEntities</a> operations. The
+        /// <code>JobId</code> returned by <code>GenerateServiceLastAccessedDetail</code> must
+        /// be used by the same role within a session, or by the same user when used to call
+        /// <code>GetServiceLastAccessedDetail</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -7051,6 +7936,7 @@ impl GenerateServiceLastAccessedDetailsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateOrganizationsAccessReportOutput {
@@ -7078,6 +7964,7 @@ pub mod generate_organizations_access_report_output {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The job identifier that you can use in the <a>GetOrganizationsAccessReport</a> operation.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -7130,6 +8017,7 @@ pub mod generate_credential_report_output {
             self.state = Some(input);
             self
         }
+        /// <p>Information about the state of the credential report.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ReportStateType>,
@@ -7142,6 +8030,7 @@ pub mod generate_credential_report_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>Information about the credential report.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -7162,6 +8051,7 @@ impl GenerateCredentialReportOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableMfaDeviceOutput {}
@@ -7191,6 +8081,7 @@ impl EnableMfaDeviceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachUserPolicyOutput {}
@@ -7220,6 +8111,7 @@ impl DetachUserPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachRolePolicyOutput {}
@@ -7249,6 +8141,7 @@ impl DetachRolePolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachGroupPolicyOutput {}
@@ -7278,6 +8171,7 @@ impl DetachGroupPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVirtualMfaDeviceOutput {}
@@ -7307,6 +8201,7 @@ impl DeleteVirtualMfaDeviceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserPolicyOutput {}
@@ -7336,6 +8231,7 @@ impl DeleteUserPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserPermissionsBoundaryOutput {}
@@ -7365,6 +8261,7 @@ impl DeleteUserPermissionsBoundaryOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserOutput {}
@@ -7394,6 +8291,7 @@ impl DeleteUserOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSshPublicKeyOutput {}
@@ -7423,6 +8321,7 @@ impl DeleteSshPublicKeyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSigningCertificateOutput {}
@@ -7452,6 +8351,7 @@ impl DeleteSigningCertificateOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServiceSpecificCredentialOutput {}
@@ -7481,6 +8381,7 @@ impl DeleteServiceSpecificCredentialOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServiceLinkedRoleOutput {
@@ -7512,6 +8413,9 @@ pub mod delete_service_linked_role_output {
             self.deletion_task_id = Some(input.into());
             self
         }
+        /// <p>The deletion task identifier that you can use to check the status of the deletion.
+        /// This identifier is returned in the format
+        /// <code>task/aws-service-role/<service-principal-name>/<role-name>/<task-uuid></code>.</p>
         pub fn set_deletion_task_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7534,6 +8438,7 @@ impl DeleteServiceLinkedRoleOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServerCertificateOutput {}
@@ -7563,6 +8468,7 @@ impl DeleteServerCertificateOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSamlProviderOutput {}
@@ -7592,6 +8498,7 @@ impl DeleteSamlProviderOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRolePolicyOutput {}
@@ -7621,6 +8528,7 @@ impl DeleteRolePolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRolePermissionsBoundaryOutput {}
@@ -7650,6 +8558,7 @@ impl DeleteRolePermissionsBoundaryOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRoleOutput {}
@@ -7679,6 +8588,7 @@ impl DeleteRoleOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePolicyVersionOutput {}
@@ -7708,6 +8618,7 @@ impl DeletePolicyVersionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePolicyOutput {}
@@ -7737,6 +8648,7 @@ impl DeletePolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOpenIdConnectProviderOutput {}
@@ -7766,6 +8678,7 @@ impl DeleteOpenIdConnectProviderOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLoginProfileOutput {}
@@ -7795,6 +8708,7 @@ impl DeleteLoginProfileOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInstanceProfileOutput {}
@@ -7824,6 +8738,7 @@ impl DeleteInstanceProfileOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGroupPolicyOutput {}
@@ -7853,6 +8768,7 @@ impl DeleteGroupPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGroupOutput {}
@@ -7882,6 +8798,7 @@ impl DeleteGroupOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccountPasswordPolicyOutput {}
@@ -7911,6 +8828,7 @@ impl DeleteAccountPasswordPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccountAliasOutput {}
@@ -7940,6 +8858,7 @@ impl DeleteAccountAliasOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccessKeyOutput {}
@@ -7969,6 +8888,7 @@ impl DeleteAccessKeyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeactivateMfaDeviceOutput {}
@@ -8027,6 +8947,7 @@ pub mod create_virtual_mfa_device_output {
             self.virtual_mfa_device = Some(input);
             self
         }
+        /// <p>A structure containing details about the new virtual MFA device.</p>
         pub fn set_virtual_mfa_device(
             mut self,
             input: std::option::Option<crate::model::VirtualMfaDevice>,
@@ -8077,6 +8998,7 @@ pub mod create_user_output {
             self.user = Some(input);
             self
         }
+        /// <p>A structure with details about the new IAM user.</p>
         pub fn set_user(mut self, input: std::option::Option<crate::model::User>) -> Self {
             self.user = input;
             self
@@ -8094,6 +9016,7 @@ impl CreateUserOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceSpecificCredentialOutput {
@@ -8138,6 +9061,12 @@ pub mod create_service_specific_credential_output {
             self.service_specific_credential = Some(input);
             self
         }
+        /// <p>A structure that contains information about the newly created service-specific
+        /// credential.</p>
+        /// <important>
+        /// <p>This is the only time that the password for this credential set is available. It
+        /// cannot be recovered later. Instead, you must reset the password with <a>ResetServiceSpecificCredential</a>.</p>
+        /// </important>
         pub fn set_service_specific_credential(
             mut self,
             input: std::option::Option<crate::model::ServiceSpecificCredential>,
@@ -8160,6 +9089,7 @@ impl CreateServiceSpecificCredentialOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceLinkedRoleOutput {
@@ -8189,6 +9119,8 @@ pub mod create_service_linked_role_output {
             self.role = Some(input);
             self
         }
+        /// <p>A <a>Role</a> object that contains details about the newly created
+        /// role.</p>
         pub fn set_role(mut self, input: std::option::Option<crate::model::Role>) -> Self {
             self.role = input;
             self
@@ -8241,6 +9173,7 @@ pub mod create_saml_provider_output {
             self.saml_provider_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
         pub fn set_saml_provider_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8248,12 +9181,22 @@ pub mod create_saml_provider_output {
             self.saml_provider_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags that are attached to the new IAM SAML provider. The returned list of tags is sorted by tag key.
+        /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags that are attached to the new IAM SAML provider. The returned list of tags is sorted by tag key.
+        /// For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8305,6 +9248,7 @@ pub mod create_role_output {
             self.role = Some(input);
             self
         }
+        /// <p>A structure containing details about the new role.</p>
         pub fn set_role(mut self, input: std::option::Option<crate::model::Role>) -> Self {
             self.role = input;
             self
@@ -8351,6 +9295,7 @@ pub mod create_policy_version_output {
             self.policy_version = Some(input);
             self
         }
+        /// <p>A structure containing details about the new policy version.</p>
         pub fn set_policy_version(
             mut self,
             input: std::option::Option<crate::model::PolicyVersion>,
@@ -8402,6 +9347,7 @@ pub mod create_policy_output {
             self.policy = Some(input);
             self
         }
+        /// <p>A structure containing details about the new policy.</p>
         pub fn set_policy(mut self, input: std::option::Option<crate::model::Policy>) -> Self {
             self.policy = input;
             self
@@ -8466,6 +9412,9 @@ pub mod create_open_id_connect_provider_output {
             self.open_id_connect_provider_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is
+        /// created. For more information, see <a>OpenIDConnectProviderListEntry</a>.
+        /// </p>
         pub fn set_open_id_connect_provider_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8473,12 +9422,22 @@ pub mod create_open_id_connect_provider_output {
             self.open_id_connect_provider_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags that are attached to the new IAM OIDC provider. The returned list of
+        /// tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags that are attached to the new IAM OIDC provider. The returned list of
+        /// tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8531,6 +9490,7 @@ pub mod create_login_profile_output {
             self.login_profile = Some(input);
             self
         }
+        /// <p>A structure containing the user name and password create date.</p>
         pub fn set_login_profile(
             mut self,
             input: std::option::Option<crate::model::LoginProfile>,
@@ -8582,6 +9542,7 @@ pub mod create_instance_profile_output {
             self.instance_profile = Some(input);
             self
         }
+        /// <p>A structure containing details about the new instance profile.</p>
         pub fn set_instance_profile(
             mut self,
             input: std::option::Option<crate::model::InstanceProfile>,
@@ -8632,6 +9593,7 @@ pub mod create_group_output {
             self.group = Some(input);
             self
         }
+        /// <p>A structure containing details about the new group.</p>
         pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
             self.group = input;
             self
@@ -8649,6 +9611,7 @@ impl CreateGroupOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccountAliasOutput {}
@@ -8707,6 +9670,7 @@ pub mod create_access_key_output {
             self.access_key = Some(input);
             self
         }
+        /// <p>A structure with details about the access key.</p>
         pub fn set_access_key(
             mut self,
             input: std::option::Option<crate::model::AccessKey>,
@@ -8729,6 +9693,7 @@ impl CreateAccessKeyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangePasswordOutput {}
@@ -8758,6 +9723,7 @@ impl ChangePasswordOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachUserPolicyOutput {}
@@ -8787,6 +9753,7 @@ impl AttachUserPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachRolePolicyOutput {}
@@ -8816,6 +9783,7 @@ impl AttachRolePolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachGroupPolicyOutput {}
@@ -8845,6 +9813,7 @@ impl AttachGroupPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddUserToGroupOutput {}
@@ -8874,6 +9843,7 @@ impl AddUserToGroupOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddRoleToInstanceProfileOutput {}
@@ -8903,6 +9873,7 @@ impl AddRoleToInstanceProfileOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddClientIdToOpenIdConnectProviderOutput {}

@@ -18,6 +18,7 @@ pub mod create_endpoint_input {
             self.outpost_id = Some(input.into());
             self
         }
+        /// <p>The ID of the AWS Outposts. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_id = input;
             self
@@ -28,6 +29,8 @@ pub mod create_endpoint_input {
             self.subnet_id = Some(input.into());
             self
         }
+        /// <p>The ID of the subnet in the selected VPC. The endpoint subnet
+        /// must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_id = input;
             self
@@ -37,6 +40,7 @@ pub mod create_endpoint_input {
             self.security_group_id = Some(input.into());
             self
         }
+        /// <p>The ID of the security group to use with the endpoint.</p>
         pub fn set_security_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -51,6 +55,9 @@ pub mod create_endpoint_input {
             self.access_type = Some(input);
             self
         }
+        /// <p>The type of access for the on-premise network connectivity for the
+        /// Outpost endpoint. To access the endpoint from an on-premises network, you must
+        /// specify the access type and provide the customer owned IPv4 pool.</p>
         pub fn set_access_type(
             mut self,
             input: std::option::Option<crate::model::EndpointAccessType>,
@@ -64,6 +71,8 @@ pub mod create_endpoint_input {
             self.customer_owned_ipv4_pool = Some(input.into());
             self
         }
+        /// <p>The ID of the customer-owned IPv4 pool for the endpoint.
+        /// IP addresses will be allocated from this pool for the endpoint.</p>
         pub fn set_customer_owned_ipv4_pool(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -76,7 +85,7 @@ pub mod create_endpoint_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateEndpointInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateEndpointInput {
                 outpost_id: self.outpost_id,
@@ -99,16 +108,16 @@ impl CreateEndpointInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateEndpoint,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateEndpointInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/S3Outposts/CreateEndpoint").expect("formatting should succeed");
             Ok(())
         }
@@ -116,7 +125,7 @@ impl CreateEndpointInput {
         fn update_http_builder(
             input: &crate::input::CreateEndpointInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -125,24 +134,26 @@ impl CreateEndpointInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateEndpointInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_endpoint(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -165,15 +176,15 @@ impl CreateEndpointInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateEndpoint::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateEndpoint",
             "s3outposts",
         ));
@@ -182,10 +193,10 @@ impl CreateEndpointInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -214,6 +225,7 @@ pub mod delete_endpoint_input {
             self.endpoint_id = Some(input.into());
             self
         }
+        /// <p>The ID of the endpoint.</p>
         pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_id = input;
             self
@@ -223,6 +235,7 @@ pub mod delete_endpoint_input {
             self.outpost_id = Some(input.into());
             self
         }
+        /// <p>The ID of the AWS Outposts. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_id = input;
             self
@@ -232,7 +245,7 @@ pub mod delete_endpoint_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteEndpointInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteEndpointInput {
                 endpoint_id: self.endpoint_id,
@@ -252,33 +265,33 @@ impl DeleteEndpointInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteEndpoint,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteEndpointInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/S3Outposts/DeleteEndpoint").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::DeleteEndpointInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_1) = &_input.endpoint_id {
-                query.push_kv("endpointId", &smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("endpointId", &aws_smithy_http::query::fmt_string(&inner_1));
             }
             if let Some(inner_2) = &_input.outpost_id {
-                query.push_kv("outpostId", &smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("outpostId", &aws_smithy_http::query::fmt_string(&inner_2));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteEndpointInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -288,23 +301,23 @@ impl DeleteEndpointInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteEndpointInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -327,15 +340,15 @@ impl DeleteEndpointInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteEndpoint::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteEndpoint",
             "s3outposts",
         ));
@@ -344,10 +357,10 @@ impl DeleteEndpointInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -376,6 +389,7 @@ pub mod list_endpoints_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next endpoint requested in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -385,6 +399,7 @@ pub mod list_endpoints_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The max number of endpoints that can be returned on the request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -392,8 +407,10 @@ pub mod list_endpoints_input {
         /// Consumes the builder and constructs a [`ListEndpointsInput`](crate::input::ListEndpointsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListEndpointsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListEndpointsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListEndpointsInput {
                 next_token: self.next_token,
                 max_results: self.max_results.unwrap_or_default(),
@@ -412,28 +429,28 @@ impl ListEndpointsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListEndpoints,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListEndpointsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/S3Outposts/ListEndpoints").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListEndpointsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_3) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_3));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
         }
@@ -441,7 +458,7 @@ impl ListEndpointsInput {
         fn update_http_builder(
             input: &crate::input::ListEndpointsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -451,23 +468,23 @@ impl ListEndpointsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListEndpointsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -490,25 +507,27 @@ impl ListEndpointsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListEndpoints::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListEndpoints",
-                    "s3outposts",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListEndpoints::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListEndpoints",
+            "s3outposts",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -522,6 +541,7 @@ impl ListEndpointsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEndpointsInput {
@@ -539,6 +559,7 @@ impl std::fmt::Debug for ListEndpointsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEndpointInput {
@@ -556,6 +577,7 @@ impl std::fmt::Debug for DeleteEndpointInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEndpointInput {

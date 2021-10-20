@@ -30,6 +30,7 @@ impl VerifyUserAttributeOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifySoftwareTokenOutput {
@@ -62,6 +63,7 @@ pub mod verify_software_token_output {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the verify software token.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::VerifySoftwareTokenResponseType>,
@@ -75,6 +77,8 @@ pub mod verify_software_token_output {
             self.session = Some(input.into());
             self
         }
+        /// <p>The session which should be passed both ways in challenge-response calls to the
+        /// service.</p>
         pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session = input;
             self
@@ -125,6 +129,8 @@ pub mod update_user_pool_domain_output {
             self.cloud_front_domain = Some(input.into());
             self
         }
+        /// <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the custom
+        /// domain to your user pool.</p>
         pub fn set_cloud_front_domain(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -178,6 +184,8 @@ pub mod update_user_pool_client_output {
             self.user_pool_client = Some(input);
             self
         }
+        /// <p>The user pool client value from the response from the server when an update user pool
+        /// client request is made.</p>
         pub fn set_user_pool_client(
             mut self,
             input: std::option::Option<crate::model::UserPoolClientType>,
@@ -261,6 +269,12 @@ pub mod update_user_attributes_output {
             std::option::Option<std::vec::Vec<crate::model::CodeDeliveryDetailsType>>,
     }
     impl Builder {
+        /// Appends an item to `code_delivery_details_list`.
+        ///
+        /// To override the contents of this collection use [`set_code_delivery_details_list`](Self::set_code_delivery_details_list).
+        ///
+        /// <p>The code delivery details list from the server for the request to update user
+        /// attributes.</p>
         pub fn code_delivery_details_list(
             mut self,
             input: impl Into<crate::model::CodeDeliveryDetailsType>,
@@ -270,6 +284,8 @@ pub mod update_user_attributes_output {
             self.code_delivery_details_list = Some(v);
             self
         }
+        /// <p>The code delivery details list from the server for the request to update user
+        /// attributes.</p>
         pub fn set_code_delivery_details_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CodeDeliveryDetailsType>>,
@@ -292,6 +308,7 @@ impl UpdateUserAttributesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceServerOutput {
@@ -319,6 +336,7 @@ pub mod update_resource_server_output {
             self.resource_server = Some(input);
             self
         }
+        /// <p>The resource server.</p>
         pub fn set_resource_server(
             mut self,
             input: std::option::Option<crate::model::ResourceServerType>,
@@ -341,6 +359,7 @@ impl UpdateResourceServerOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIdentityProviderOutput {
@@ -368,6 +387,7 @@ pub mod update_identity_provider_output {
             self.identity_provider = Some(input);
             self
         }
+        /// <p>The identity provider object.</p>
         pub fn set_identity_provider(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderType>,
@@ -390,6 +410,7 @@ impl UpdateIdentityProviderOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGroupOutput {
@@ -417,6 +438,7 @@ pub mod update_group_output {
             self.group = Some(input);
             self
         }
+        /// <p>The group object for the group.</p>
         pub fn set_group(mut self, input: std::option::Option<crate::model::GroupType>) -> Self {
             self.group = input;
             self
@@ -464,6 +486,7 @@ impl UpdateDeviceStatusOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAuthEventFeedbackOutput {}
@@ -493,6 +516,7 @@ impl UpdateAuthEventFeedbackOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
@@ -522,6 +546,7 @@ impl UntagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {}
@@ -580,6 +605,7 @@ pub mod stop_user_import_job_output {
             self.user_import_job = Some(input);
             self
         }
+        /// <p>The job object that represents the user import job.</p>
         pub fn set_user_import_job(
             mut self,
             input: std::option::Option<crate::model::UserImportJobType>,
@@ -631,6 +657,7 @@ pub mod start_user_import_job_output {
             self.user_import_job = Some(input);
             self
         }
+        /// <p>The job object that represents the user import job.</p>
         pub fn set_user_import_job(
             mut self,
             input: std::option::Option<crate::model::UserImportJobType>,
@@ -694,6 +721,8 @@ pub mod sign_up_output {
             self.user_confirmed = Some(input);
             self
         }
+        /// <p>A response from the server indicating that a user registration has been
+        /// confirmed.</p>
         pub fn set_user_confirmed(mut self, input: std::option::Option<bool>) -> Self {
             self.user_confirmed = input;
             self
@@ -707,6 +736,8 @@ pub mod sign_up_output {
             self.code_delivery_details = Some(input);
             self
         }
+        /// <p>The code delivery details returned by the server response to the user registration
+        /// request.</p>
         pub fn set_code_delivery_details(
             mut self,
             input: std::option::Option<crate::model::CodeDeliveryDetailsType>,
@@ -720,6 +751,8 @@ pub mod sign_up_output {
             self.user_sub = Some(input.into());
             self
         }
+        /// <p>The UUID of the authenticated user. This is not the same as
+        /// <code>username</code>.</p>
         pub fn set_user_sub(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_sub = input;
             self
@@ -771,6 +804,7 @@ impl SetUserSettingsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetUserPoolMfaConfigOutput {
@@ -826,6 +860,7 @@ pub mod set_user_pool_mfa_config_output {
             self.sms_mfa_configuration = Some(input);
             self
         }
+        /// <p>The SMS text message MFA configuration.</p>
         pub fn set_sms_mfa_configuration(
             mut self,
             input: std::option::Option<crate::model::SmsMfaConfigType>,
@@ -841,6 +876,7 @@ pub mod set_user_pool_mfa_config_output {
             self.software_token_mfa_configuration = Some(input);
             self
         }
+        /// <p>The software token MFA configuration.</p>
         pub fn set_software_token_mfa_configuration(
             mut self,
             input: std::option::Option<crate::model::SoftwareTokenMfaConfigType>,
@@ -868,6 +904,22 @@ pub mod set_user_pool_mfa_config_output {
             self.mfa_configuration = Some(input);
             self
         }
+        /// <p>The MFA configuration. Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>OFF</code> MFA will not be used for any users.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ON</code> MFA is required for all users to sign in.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIONAL</code> MFA will be required only for individual users who have
+        /// an MFA factor enabled.</p>
+        /// </li>
+        /// </ul>
         pub fn set_mfa_configuration(
             mut self,
             input: std::option::Option<crate::model::UserPoolMfaType>,
@@ -892,6 +944,7 @@ impl SetUserPoolMfaConfigOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetUserMfaPreferenceOutput {}
@@ -921,6 +974,7 @@ impl SetUserMfaPreferenceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetUiCustomizationOutput {
@@ -948,6 +1002,7 @@ pub mod set_ui_customization_output {
             self.ui_customization = Some(input);
             self
         }
+        /// <p>The UI customization information.</p>
         pub fn set_ui_customization(
             mut self,
             input: std::option::Option<crate::model::UiCustomizationType>,
@@ -970,6 +1025,7 @@ impl SetUiCustomizationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetRiskConfigurationOutput {
@@ -997,6 +1053,7 @@ pub mod set_risk_configuration_output {
             self.risk_configuration = Some(input);
             self
         }
+        /// <p>The risk configuration.</p>
         pub fn set_risk_configuration(
             mut self,
             input: std::option::Option<crate::model::RiskConfigurationType>,
@@ -1019,6 +1076,7 @@ impl SetRiskConfigurationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeTokenOutput {}
@@ -1096,6 +1154,7 @@ pub mod respond_to_auth_challenge_output {
             self.challenge_name = Some(input);
             self
         }
+        /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
         pub fn set_challenge_name(
             mut self,
             input: std::option::Option<crate::model::ChallengeNameType>,
@@ -1111,10 +1170,19 @@ pub mod respond_to_auth_challenge_output {
             self.session = Some(input.into());
             self
         }
+        /// <p>The session which should be passed both ways in challenge-response calls to the
+        /// service. If the caller needs to go through another challenge, they return a session with
+        /// other challenge parameters. This session should be passed as it is to the next
+        /// <code>RespondToAuthChallenge</code> API call.</p>
         pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session = input;
             self
         }
+        /// Adds a key-value pair to `challenge_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_challenge_parameters`](Self::set_challenge_parameters).
+        ///
+        /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
         pub fn challenge_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -1125,6 +1193,7 @@ pub mod respond_to_auth_challenge_output {
             self.challenge_parameters = Some(hash_map);
             self
         }
+        /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
         pub fn set_challenge_parameters(
             mut self,
             input: std::option::Option<
@@ -1143,6 +1212,8 @@ pub mod respond_to_auth_challenge_output {
             self.authentication_result = Some(input);
             self
         }
+        /// <p>The result returned by the server in response to the request to respond to the
+        /// authentication challenge.</p>
         pub fn set_authentication_result(
             mut self,
             input: std::option::Option<crate::model::AuthenticationResultType>,
@@ -1203,6 +1274,8 @@ pub mod resend_confirmation_code_output {
             self.code_delivery_details = Some(input);
             self
         }
+        /// <p>The code delivery details returned by the server in response to the request to resend
+        /// the confirmation code.</p>
         pub fn set_code_delivery_details(
             mut self,
             input: std::option::Option<crate::model::CodeDeliveryDetailsType>,
@@ -1225,6 +1298,7 @@ impl ResendConfirmationCodeOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersInGroupOutput {
@@ -1252,12 +1326,18 @@ pub mod list_users_in_group_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `users`.
+        ///
+        /// To override the contents of this collection use [`set_users`](Self::set_users).
+        ///
+        /// <p>The users returned in the request to list users.</p>
         pub fn users(mut self, input: impl Into<crate::model::UserType>) -> Self {
             let mut v = self.users.unwrap_or_default();
             v.push(input.into());
             self.users = Some(v);
             self
         }
+        /// <p>The users returned in the request to list users.</p>
         pub fn set_users(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UserType>>,
@@ -1271,6 +1351,8 @@ pub mod list_users_in_group_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An identifier that was returned from the previous call to this operation, which can be
+        /// used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1319,12 +1401,18 @@ pub mod list_users_output {
         pub(crate) pagination_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `users`.
+        ///
+        /// To override the contents of this collection use [`set_users`](Self::set_users).
+        ///
+        /// <p>The users returned in the request to list users.</p>
         pub fn users(mut self, input: impl Into<crate::model::UserType>) -> Self {
             let mut v = self.users.unwrap_or_default();
             v.push(input.into());
             self.users = Some(v);
             self
         }
+        /// <p>The users returned in the request to list users.</p>
         pub fn set_users(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UserType>>,
@@ -1338,6 +1426,8 @@ pub mod list_users_output {
             self.pagination_token = Some(input.into());
             self
         }
+        /// <p>An identifier that was returned from the previous call to this operation, which can be
+        /// used to return the next set of items in the list.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1390,6 +1480,11 @@ pub mod list_user_pools_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `user_pools`.
+        ///
+        /// To override the contents of this collection use [`set_user_pools`](Self::set_user_pools).
+        ///
+        /// <p>The user pools from the response to list users.</p>
         pub fn user_pools(
             mut self,
             input: impl Into<crate::model::UserPoolDescriptionType>,
@@ -1399,6 +1494,7 @@ pub mod list_user_pools_output {
             self.user_pools = Some(v);
             self
         }
+        /// <p>The user pools from the response to list users.</p>
         pub fn set_user_pools(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UserPoolDescriptionType>>,
@@ -1412,6 +1508,8 @@ pub mod list_user_pools_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An identifier that was returned from the previous call to this operation, which can be
+        /// used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1462,6 +1560,11 @@ pub mod list_user_pool_clients_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `user_pool_clients`.
+        ///
+        /// To override the contents of this collection use [`set_user_pool_clients`](Self::set_user_pool_clients).
+        ///
+        /// <p>The user pool clients in the response that lists user pool clients.</p>
         pub fn user_pool_clients(
             mut self,
             input: impl Into<crate::model::UserPoolClientDescription>,
@@ -1471,6 +1574,7 @@ pub mod list_user_pool_clients_output {
             self.user_pool_clients = Some(v);
             self
         }
+        /// <p>The user pool clients in the response that lists user pool clients.</p>
         pub fn set_user_pool_clients(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UserPoolClientDescription>>,
@@ -1484,6 +1588,8 @@ pub mod list_user_pool_clients_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An identifier that was returned from the previous call to this operation, which can be
+        /// used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1534,6 +1640,11 @@ pub mod list_user_import_jobs_output {
         pub(crate) pagination_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `user_import_jobs`.
+        ///
+        /// To override the contents of this collection use [`set_user_import_jobs`](Self::set_user_import_jobs).
+        ///
+        /// <p>The user import jobs.</p>
         pub fn user_import_jobs(
             mut self,
             input: impl Into<crate::model::UserImportJobType>,
@@ -1543,6 +1654,7 @@ pub mod list_user_import_jobs_output {
             self.user_import_jobs = Some(v);
             self
         }
+        /// <p>The user import jobs.</p>
         pub fn set_user_import_jobs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UserImportJobType>>,
@@ -1556,6 +1668,8 @@ pub mod list_user_import_jobs_output {
             self.pagination_token = Some(input.into());
             self
         }
+        /// <p>An identifier that can be used to return the next set of user import jobs in the
+        /// list.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1579,6 +1693,7 @@ impl ListUserImportJobsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
@@ -1604,6 +1719,11 @@ pub mod list_tags_for_resource_output {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags that are assigned to the user pool.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1614,6 +1734,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags that are assigned to the user pool.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1636,6 +1757,7 @@ impl ListTagsForResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceServersOutput {
@@ -1663,6 +1785,11 @@ pub mod list_resource_servers_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `resource_servers`.
+        ///
+        /// To override the contents of this collection use [`set_resource_servers`](Self::set_resource_servers).
+        ///
+        /// <p>The resource servers.</p>
         pub fn resource_servers(
             mut self,
             input: impl Into<crate::model::ResourceServerType>,
@@ -1672,6 +1799,7 @@ pub mod list_resource_servers_output {
             self.resource_servers = Some(v);
             self
         }
+        /// <p>The resource servers.</p>
         pub fn set_resource_servers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceServerType>>,
@@ -1684,6 +1812,7 @@ pub mod list_resource_servers_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1704,6 +1833,7 @@ impl ListResourceServersOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIdentityProvidersOutput {
@@ -1730,12 +1860,18 @@ pub mod list_identity_providers_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `providers`.
+        ///
+        /// To override the contents of this collection use [`set_providers`](Self::set_providers).
+        ///
+        /// <p>A list of identity provider objects.</p>
         pub fn providers(mut self, input: impl Into<crate::model::ProviderDescription>) -> Self {
             let mut v = self.providers.unwrap_or_default();
             v.push(input.into());
             self.providers = Some(v);
             self
         }
+        /// <p>A list of identity provider objects.</p>
         pub fn set_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProviderDescription>>,
@@ -1748,6 +1884,7 @@ pub mod list_identity_providers_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1768,6 +1905,7 @@ impl ListIdentityProvidersOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsOutput {
@@ -1795,12 +1933,18 @@ pub mod list_groups_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `groups`.
+        ///
+        /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+        ///
+        /// <p>The group objects for the groups.</p>
         pub fn groups(mut self, input: impl Into<crate::model::GroupType>) -> Self {
             let mut v = self.groups.unwrap_or_default();
             v.push(input.into());
             self.groups = Some(v);
             self
         }
+        /// <p>The group objects for the groups.</p>
         pub fn set_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GroupType>>,
@@ -1814,6 +1958,8 @@ pub mod list_groups_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An identifier that was returned from the previous call to this operation, which can be
+        /// used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1861,12 +2007,18 @@ pub mod list_devices_output {
         pub(crate) pagination_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `devices`.
+        ///
+        /// To override the contents of this collection use [`set_devices`](Self::set_devices).
+        ///
+        /// <p>The devices returned in the list devices response.</p>
         pub fn devices(mut self, input: impl Into<crate::model::DeviceType>) -> Self {
             let mut v = self.devices.unwrap_or_default();
             v.push(input.into());
             self.devices = Some(v);
             self
         }
+        /// <p>The devices returned in the list devices response.</p>
         pub fn set_devices(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeviceType>>,
@@ -1879,6 +2031,7 @@ pub mod list_devices_output {
             self.pagination_token = Some(input.into());
             self
         }
+        /// <p>The pagination token for the list device response.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2068,6 +2221,63 @@ pub mod initiate_auth_output {
             self.challenge_name = Some(input);
             self
         }
+        /// <p>The name of the challenge which you are responding to with this call. This is returned
+        /// to you in the <code>AdminInitiateAuth</code> response if you need to pass another
+        /// challenge.</p>
+        /// <p>Valid values include the following. Note that all of these challenges require
+        /// <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the
+        /// parameters.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SMS_MFA</code>: Next challenge is to supply an
+        /// <code>SMS_MFA_CODE</code>, delivered via SMS.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
+        /// <code>PASSWORD_CLAIM_SIGNATURE</code>,
+        /// <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after
+        /// the client-side SRP calculations.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication
+        /// flow determines that the user should pass another challenge before tokens are
+        /// issued.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool
+        /// and the previous challenges were passed, this challenge is returned so that
+        /// Amazon Cognito can start tracking this device.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to
+        /// <code>PASSWORD_VERIFIER</code>, but for devices only.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their
+        /// passwords after successful first login. This challenge should be passed with
+        /// <code>NEW_PASSWORD</code> and any other required attributes.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MFA_SETUP</code>: For users who are required to setup an MFA factor
+        /// before they can sign-in. The MFA types enabled for the user pool will be listed
+        /// in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p>
+        /// <p> To setup software token MFA, use the session returned here from
+        /// <code>InitiateAuth</code> as an input to
+        /// <code>AssociateSoftwareToken</code>, and use the session returned by
+        /// <code>VerifySoftwareToken</code> as an input to
+        /// <code>RespondToAuthChallenge</code> with challenge name
+        /// <code>MFA_SETUP</code> to complete sign-in. To setup SMS MFA, users will
+        /// need help from an administrator to add a phone number to their account and then
+        /// call <code>InitiateAuth</code> again to restart sign-in.</p>
+        /// </li>
+        /// </ul>
         pub fn set_challenge_name(
             mut self,
             input: std::option::Option<crate::model::ChallengeNameType>,
@@ -2083,10 +2293,23 @@ pub mod initiate_auth_output {
             self.session = Some(input.into());
             self
         }
+        /// <p>The session which should be passed both ways in challenge-response calls to the
+        /// service. If the caller needs to go through another challenge, they return a session with
+        /// other challenge parameters. This session should be passed as it is to the next
+        /// <code>RespondToAuthChallenge</code> API call.</p>
         pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session = input;
             self
         }
+        /// Adds a key-value pair to `challenge_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_challenge_parameters`](Self::set_challenge_parameters).
+        ///
+        /// <p>The challenge parameters. These are returned to you in the <code>InitiateAuth</code>
+        /// response if you need to pass another challenge. The responses in this parameter should
+        /// be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>). </p>
+        /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if
+        /// applicable).</p>
         pub fn challenge_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2097,6 +2320,11 @@ pub mod initiate_auth_output {
             self.challenge_parameters = Some(hash_map);
             self
         }
+        /// <p>The challenge parameters. These are returned to you in the <code>InitiateAuth</code>
+        /// response if you need to pass another challenge. The responses in this parameter should
+        /// be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>). </p>
+        /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if
+        /// applicable).</p>
         pub fn set_challenge_parameters(
             mut self,
             input: std::option::Option<
@@ -2117,6 +2345,10 @@ pub mod initiate_auth_output {
             self.authentication_result = Some(input);
             self
         }
+        /// <p>The result of the authentication response. This is only returned if the caller does
+        /// not need to pass another challenge. If the caller does need to pass another challenge
+        /// before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and
+        /// <code>Session</code> are returned.</p>
         pub fn set_authentication_result(
             mut self,
             input: std::option::Option<crate::model::AuthenticationResultType>,
@@ -2172,6 +2404,7 @@ impl GlobalSignOutOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserPoolMfaConfigOutput {
@@ -2227,6 +2460,7 @@ pub mod get_user_pool_mfa_config_output {
             self.sms_mfa_configuration = Some(input);
             self
         }
+        /// <p>The SMS text message multi-factor (MFA) configuration.</p>
         pub fn set_sms_mfa_configuration(
             mut self,
             input: std::option::Option<crate::model::SmsMfaConfigType>,
@@ -2242,6 +2476,7 @@ pub mod get_user_pool_mfa_config_output {
             self.software_token_mfa_configuration = Some(input);
             self
         }
+        /// <p>The software token multi-factor (MFA) configuration.</p>
         pub fn set_software_token_mfa_configuration(
             mut self,
             input: std::option::Option<crate::model::SoftwareTokenMfaConfigType>,
@@ -2269,6 +2504,22 @@ pub mod get_user_pool_mfa_config_output {
             self.mfa_configuration = Some(input);
             self
         }
+        /// <p>The multi-factor (MFA) configuration. Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>OFF</code> MFA will not be used for any users.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ON</code> MFA is required for all users to sign in.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPTIONAL</code> MFA will be required only for individual users who have
+        /// an MFA factor enabled.</p>
+        /// </li>
+        /// </ul>
         pub fn set_mfa_configuration(
             mut self,
             input: std::option::Option<crate::model::UserPoolMfaType>,
@@ -2328,6 +2579,8 @@ pub mod get_user_attribute_verification_code_output {
             self.code_delivery_details = Some(input);
             self
         }
+        /// <p>The code delivery details returned by the server in response to the request to get the
+        /// user attribute verification code.</p>
         pub fn set_code_delivery_details(
             mut self,
             input: std::option::Option<crate::model::CodeDeliveryDetailsType>,
@@ -2402,16 +2655,27 @@ pub mod get_user_output {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name of the user you wish to retrieve from the get user request.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
         }
+        /// Appends an item to `user_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
+        ///
+        /// <p>An array of name-value pairs representing user attributes.</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
+        /// attribute name.</p>
         pub fn user_attributes(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
             v.push(input.into());
             self.user_attributes = Some(v);
             self
         }
+        /// <p>An array of name-value pairs representing user attributes.</p>
+        /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the
+        /// attribute name.</p>
         pub fn set_user_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
@@ -2419,12 +2683,26 @@ pub mod get_user_output {
             self.user_attributes = input;
             self
         }
+        /// Appends an item to `mfa_options`.
+        ///
+        /// To override the contents of this collection use [`set_mfa_options`](Self::set_mfa_options).
+        ///
+        /// <p>
+        /// <i>This response parameter is no longer supported.</i> It provides
+        /// information only about SMS MFA configurations. It doesn't provide information about TOTP
+        /// software token MFA configurations. To look up information about either type of MFA
+        /// configuration, use UserMFASettingList instead.</p>
         pub fn mfa_options(mut self, input: impl Into<crate::model::MfaOptionType>) -> Self {
             let mut v = self.mfa_options.unwrap_or_default();
             v.push(input.into());
             self.mfa_options = Some(v);
             self
         }
+        /// <p>
+        /// <i>This response parameter is no longer supported.</i> It provides
+        /// information only about SMS MFA configurations. It doesn't provide information about TOTP
+        /// software token MFA configurations. To look up information about either type of MFA
+        /// configuration, use UserMFASettingList instead.</p>
         pub fn set_mfa_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
@@ -2437,6 +2715,7 @@ pub mod get_user_output {
             self.preferred_mfa_setting = Some(input.into());
             self
         }
+        /// <p>The user's preferred MFA setting.</p>
         pub fn set_preferred_mfa_setting(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2444,12 +2723,20 @@ pub mod get_user_output {
             self.preferred_mfa_setting = input;
             self
         }
+        /// Appends an item to `user_mfa_setting_list`.
+        ///
+        /// To override the contents of this collection use [`set_user_mfa_setting_list`](Self::set_user_mfa_setting_list).
+        ///
+        /// <p>The MFA options that are enabled for the user. The possible values in this list are
+        /// <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
         pub fn user_mfa_setting_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_mfa_setting_list.unwrap_or_default();
             v.push(input.into());
             self.user_mfa_setting_list = Some(v);
             self
         }
+        /// <p>The MFA options that are enabled for the user. The possible values in this list are
+        /// <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
         pub fn set_user_mfa_setting_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2476,6 +2763,7 @@ impl GetUserOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUiCustomizationOutput {
@@ -2503,6 +2791,7 @@ pub mod get_ui_customization_output {
             self.ui_customization = Some(input);
             self
         }
+        /// <p>The UI customization information.</p>
         pub fn set_ui_customization(
             mut self,
             input: std::option::Option<crate::model::UiCustomizationType>,
@@ -2553,6 +2842,7 @@ pub mod get_signing_certificate_output {
             self.certificate = Some(input.into());
             self
         }
+        /// <p>The signing certificate.</p>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.certificate = input;
             self
@@ -2572,6 +2862,7 @@ impl GetSigningCertificateOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityProviderByIdentifierOutput {
@@ -2599,6 +2890,7 @@ pub mod get_identity_provider_by_identifier_output {
             self.identity_provider = Some(input);
             self
         }
+        /// <p>The identity provider object.</p>
         pub fn set_identity_provider(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderType>,
@@ -2621,6 +2913,7 @@ impl GetIdentityProviderByIdentifierOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGroupOutput {
@@ -2648,6 +2941,7 @@ pub mod get_group_output {
             self.group = Some(input);
             self
         }
+        /// <p>The group object for the group.</p>
         pub fn set_group(mut self, input: std::option::Option<crate::model::GroupType>) -> Self {
             self.group = input;
             self
@@ -2693,6 +2987,7 @@ pub mod get_device_output {
             self.device = Some(input);
             self
         }
+        /// <p>The device.</p>
         pub fn set_device(mut self, input: std::option::Option<crate::model::DeviceType>) -> Self {
             self.device = input;
             self
@@ -2745,16 +3040,23 @@ pub mod get_csv_header_output {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID for the user pool that the users are to be imported into.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
         }
+        /// Appends an item to `csv_header`.
+        ///
+        /// To override the contents of this collection use [`set_csv_header`](Self::set_csv_header).
+        ///
+        /// <p>The header information for the .csv file for the user import job.</p>
         pub fn csv_header(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.csv_header.unwrap_or_default();
             v.push(input.into());
             self.csv_header = Some(v);
             self
         }
+        /// <p>The header information for the .csv file for the user import job.</p>
         pub fn set_csv_header(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2813,6 +3115,8 @@ pub mod forgot_password_output {
             self.code_delivery_details = Some(input);
             self
         }
+        /// <p>The code delivery details returned by the server in response to the request to reset a
+        /// password.</p>
         pub fn set_code_delivery_details(
             mut self,
             input: std::option::Option<crate::model::CodeDeliveryDetailsType>,
@@ -2835,6 +3139,7 @@ impl ForgotPasswordOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForgetDeviceOutput {}
@@ -2864,6 +3169,7 @@ impl ForgetDeviceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserPoolDomainOutput {
@@ -2891,6 +3197,7 @@ pub mod describe_user_pool_domain_output {
             self.domain_description = Some(input);
             self
         }
+        /// <p>A domain description object containing information about the domain.</p>
         pub fn set_domain_description(
             mut self,
             input: std::option::Option<crate::model::DomainDescriptionType>,
@@ -2942,6 +3249,7 @@ pub mod describe_user_pool_client_output {
             self.user_pool_client = Some(input);
             self
         }
+        /// <p>The user pool client from a server response to describe the user pool client.</p>
         pub fn set_user_pool_client(
             mut self,
             input: std::option::Option<crate::model::UserPoolClientType>,
@@ -2992,6 +3300,7 @@ pub mod describe_user_pool_output {
             self.user_pool = Some(input);
             self
         }
+        /// <p>The container of metadata returned by the server to describe the pool.</p>
         pub fn set_user_pool(
             mut self,
             input: std::option::Option<crate::model::UserPoolType>,
@@ -3043,6 +3352,7 @@ pub mod describe_user_import_job_output {
             self.user_import_job = Some(input);
             self
         }
+        /// <p>The job object that represents the user import job.</p>
         pub fn set_user_import_job(
             mut self,
             input: std::option::Option<crate::model::UserImportJobType>,
@@ -3065,6 +3375,7 @@ impl DescribeUserImportJobOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRiskConfigurationOutput {
@@ -3092,6 +3403,7 @@ pub mod describe_risk_configuration_output {
             self.risk_configuration = Some(input);
             self
         }
+        /// <p>The risk configuration.</p>
         pub fn set_risk_configuration(
             mut self,
             input: std::option::Option<crate::model::RiskConfigurationType>,
@@ -3114,6 +3426,7 @@ impl DescribeRiskConfigurationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourceServerOutput {
@@ -3141,6 +3454,7 @@ pub mod describe_resource_server_output {
             self.resource_server = Some(input);
             self
         }
+        /// <p>The resource server.</p>
         pub fn set_resource_server(
             mut self,
             input: std::option::Option<crate::model::ResourceServerType>,
@@ -3163,6 +3477,7 @@ impl DescribeResourceServerOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIdentityProviderOutput {
@@ -3190,6 +3505,7 @@ pub mod describe_identity_provider_output {
             self.identity_provider = Some(input);
             self
         }
+        /// <p>The identity provider that was deleted.</p>
         pub fn set_identity_provider(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderType>,
@@ -3212,6 +3528,7 @@ impl DescribeIdentityProviderOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserPoolDomainOutput {}
@@ -3241,6 +3558,7 @@ impl DeleteUserPoolDomainOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserPoolClientOutput {}
@@ -3270,6 +3588,7 @@ impl DeleteUserPoolClientOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserPoolOutput {}
@@ -3329,6 +3648,7 @@ impl DeleteUserAttributesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserOutput {}
@@ -3358,6 +3678,7 @@ impl DeleteUserOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceServerOutput {}
@@ -3387,6 +3708,7 @@ impl DeleteResourceServerOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIdentityProviderOutput {}
@@ -3416,6 +3738,7 @@ impl DeleteIdentityProviderOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGroupOutput {}
@@ -3445,6 +3768,7 @@ impl DeleteGroupOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserPoolDomainOutput {
@@ -3474,6 +3798,8 @@ pub mod create_user_pool_domain_output {
             self.cloud_front_domain = Some(input.into());
             self
         }
+        /// <p>The Amazon CloudFront endpoint that you use as the target of the alias that you set up
+        /// with your Domain Name Service (DNS) provider.</p>
         pub fn set_cloud_front_domain(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3524,6 +3850,7 @@ pub mod create_user_pool_client_output {
             self.user_pool_client = Some(input);
             self
         }
+        /// <p>The user pool client that was just created.</p>
         pub fn set_user_pool_client(
             mut self,
             input: std::option::Option<crate::model::UserPoolClientType>,
@@ -3574,6 +3901,7 @@ pub mod create_user_pool_output {
             self.user_pool = Some(input);
             self
         }
+        /// <p>A container for the user pool details.</p>
         pub fn set_user_pool(
             mut self,
             input: std::option::Option<crate::model::UserPoolType>,
@@ -3625,6 +3953,7 @@ pub mod create_user_import_job_output {
             self.user_import_job = Some(input);
             self
         }
+        /// <p>The job object that represents the user import job.</p>
         pub fn set_user_import_job(
             mut self,
             input: std::option::Option<crate::model::UserImportJobType>,
@@ -3647,6 +3976,7 @@ impl CreateUserImportJobOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceServerOutput {
@@ -3674,6 +4004,7 @@ pub mod create_resource_server_output {
             self.resource_server = Some(input);
             self
         }
+        /// <p>The newly created resource server.</p>
         pub fn set_resource_server(
             mut self,
             input: std::option::Option<crate::model::ResourceServerType>,
@@ -3696,6 +4027,7 @@ impl CreateResourceServerOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIdentityProviderOutput {
@@ -3723,6 +4055,7 @@ pub mod create_identity_provider_output {
             self.identity_provider = Some(input);
             self
         }
+        /// <p>The newly created identity provider object.</p>
         pub fn set_identity_provider(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderType>,
@@ -3745,6 +4078,7 @@ impl CreateIdentityProviderOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGroupOutput {
@@ -3772,6 +4106,7 @@ pub mod create_group_output {
             self.group = Some(input);
             self
         }
+        /// <p>The group object for the group.</p>
         pub fn set_group(mut self, input: std::option::Option<crate::model::GroupType>) -> Self {
             self.group = input;
             self
@@ -3883,6 +4218,8 @@ pub mod confirm_device_output {
             self.user_confirmation_necessary = Some(input);
             self
         }
+        /// <p>Indicates whether the user confirmation is necessary to confirm the device
+        /// response.</p>
         pub fn set_user_confirmation_necessary(mut self, input: std::option::Option<bool>) -> Self {
             self.user_confirmation_necessary = input;
             self
@@ -3932,6 +4269,7 @@ impl ChangePasswordOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateSoftwareTokenOutput {
@@ -3966,6 +4304,8 @@ pub mod associate_software_token_output {
             self.secret_code = Some(input.into());
             self
         }
+        /// <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a
+        /// one time code.</p>
         pub fn set_secret_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_code = input;
             self
@@ -3976,6 +4316,8 @@ pub mod associate_software_token_output {
             self.session = Some(input.into());
             self
         }
+        /// <p>The session which should be passed both ways in challenge-response calls to the
+        /// service. This allows authentication of the user as part of the MFA setup process.</p>
         pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session = input;
             self
@@ -4087,6 +4429,7 @@ impl AdminUpdateDeviceStatusOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminUpdateAuthEventFeedbackOutput {}
@@ -4147,6 +4490,7 @@ impl AdminSetUserSettingsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminSetUserPasswordOutput {}
@@ -4176,6 +4520,7 @@ impl AdminSetUserPasswordOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminSetUserMfaPreferenceOutput {}
@@ -4252,6 +4597,7 @@ pub mod admin_respond_to_auth_challenge_output {
             self.challenge_name = Some(input);
             self
         }
+        /// <p>The name of the challenge. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
         pub fn set_challenge_name(
             mut self,
             input: std::option::Option<crate::model::ChallengeNameType>,
@@ -4267,10 +4613,19 @@ pub mod admin_respond_to_auth_challenge_output {
             self.session = Some(input.into());
             self
         }
+        /// <p>The session which should be passed both ways in challenge-response calls to the
+        /// service. If the caller needs to go through another challenge, they return a session with
+        /// other challenge parameters. This session should be passed as it is to the next
+        /// <code>RespondToAuthChallenge</code> API call.</p>
         pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session = input;
             self
         }
+        /// Adds a key-value pair to `challenge_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_challenge_parameters`](Self::set_challenge_parameters).
+        ///
+        /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
         pub fn challenge_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -4281,6 +4636,7 @@ pub mod admin_respond_to_auth_challenge_output {
             self.challenge_parameters = Some(hash_map);
             self
         }
+        /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
         pub fn set_challenge_parameters(
             mut self,
             input: std::option::Option<
@@ -4298,6 +4654,7 @@ pub mod admin_respond_to_auth_challenge_output {
             self.authentication_result = Some(input);
             self
         }
+        /// <p>The result returned by the server in response to the authentication request.</p>
         pub fn set_authentication_result(
             mut self,
             input: std::option::Option<crate::model::AuthenticationResultType>,
@@ -4354,6 +4711,7 @@ impl AdminResetUserPasswordOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminRemoveUserFromGroupOutput {}
@@ -4383,6 +4741,7 @@ impl AdminRemoveUserFromGroupOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminListUserAuthEventsOutput {
@@ -4411,12 +4770,22 @@ pub mod admin_list_user_auth_events_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `auth_events`.
+        ///
+        /// To override the contents of this collection use [`set_auth_events`](Self::set_auth_events).
+        ///
+        /// <p>The response object. It includes the <code>EventID</code>, <code>EventType</code>,
+        /// <code>CreationDate</code>, <code>EventRisk</code>, and
+        /// <code>EventResponse</code>.</p>
         pub fn auth_events(mut self, input: impl Into<crate::model::AuthEventType>) -> Self {
             let mut v = self.auth_events.unwrap_or_default();
             v.push(input.into());
             self.auth_events = Some(v);
             self
         }
+        /// <p>The response object. It includes the <code>EventID</code>, <code>EventType</code>,
+        /// <code>CreationDate</code>, <code>EventRisk</code>, and
+        /// <code>EventResponse</code>.</p>
         pub fn set_auth_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AuthEventType>>,
@@ -4429,6 +4798,7 @@ pub mod admin_list_user_auth_events_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4449,6 +4819,7 @@ impl AdminListUserAuthEventsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminListGroupsForUserOutput {
@@ -4476,12 +4847,18 @@ pub mod admin_list_groups_for_user_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `groups`.
+        ///
+        /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+        ///
+        /// <p>The groups that the user belongs to.</p>
         pub fn groups(mut self, input: impl Into<crate::model::GroupType>) -> Self {
             let mut v = self.groups.unwrap_or_default();
             v.push(input.into());
             self.groups = Some(v);
             self
         }
+        /// <p>The groups that the user belongs to.</p>
         pub fn set_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GroupType>>,
@@ -4495,6 +4872,8 @@ pub mod admin_list_groups_for_user_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An identifier that was returned from the previous call to this operation, which can be
+        /// used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4542,12 +4921,18 @@ pub mod admin_list_devices_output {
         pub(crate) pagination_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `devices`.
+        ///
+        /// To override the contents of this collection use [`set_devices`](Self::set_devices).
+        ///
+        /// <p>The devices in the list of devices response.</p>
         pub fn devices(mut self, input: impl Into<crate::model::DeviceType>) -> Self {
             let mut v = self.devices.unwrap_or_default();
             v.push(input.into());
             self.devices = Some(v);
             self
         }
+        /// <p>The devices in the list of devices response.</p>
         pub fn set_devices(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeviceType>>,
@@ -4560,6 +4945,7 @@ pub mod admin_list_devices_output {
             self.pagination_token = Some(input.into());
             self
         }
+        /// <p>The pagination token.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4583,6 +4969,7 @@ impl AdminListDevicesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminLinkProviderForUserOutput {}
@@ -4817,6 +5204,79 @@ pub mod admin_initiate_auth_output {
             self.challenge_name = Some(input);
             self
         }
+        /// <p>The name of the challenge which you are responding to with this call. This is returned
+        /// to you in the <code>AdminInitiateAuth</code> response if you need to pass another
+        /// challenge.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one
+        /// of the MFA methods set up are presented with an <code>MFA_SETUP</code>
+        /// challenge. The user must set up at least one MFA type to continue to
+        /// authenticate.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are
+        /// <code>SMS_MFA</code> for text SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code>
+        /// for TOTP software token MFA.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SMS_MFA</code>: Next challenge is to supply an
+        /// <code>SMS_MFA_CODE</code>, delivered via SMS.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
+        /// <code>PASSWORD_CLAIM_SIGNATURE</code>,
+        /// <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after
+        /// the client-side SRP calculations.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication
+        /// flow determines that the user should pass another challenge before tokens are
+        /// issued.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool
+        /// and the previous challenges were passed, this challenge is returned so that
+        /// Amazon Cognito can start tracking this device.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to
+        /// <code>PASSWORD_VERIFIER</code>, but for devices only.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate
+        /// with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client
+        /// must be enabled to use this flow.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their
+        /// passwords after successful first login. This challenge should be passed with
+        /// <code>NEW_PASSWORD</code> and any other required attributes.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MFA_SETUP</code>: For users who are required to setup an MFA factor
+        /// before they can sign-in. The MFA types enabled for the user pool will be listed
+        /// in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p>
+        /// <p> To setup software token MFA, use the session returned here from
+        /// <code>InitiateAuth</code> as an input to
+        /// <code>AssociateSoftwareToken</code>, and use the session returned by
+        /// <code>VerifySoftwareToken</code> as an input to
+        /// <code>RespondToAuthChallenge</code> with challenge name
+        /// <code>MFA_SETUP</code> to complete sign-in. To setup SMS MFA, users will
+        /// need help from an administrator to add a phone number to their account and then
+        /// call <code>InitiateAuth</code> again to restart sign-in.</p>
+        /// </li>
+        /// </ul>
         pub fn set_challenge_name(
             mut self,
             input: std::option::Option<crate::model::ChallengeNameType>,
@@ -4833,10 +5293,30 @@ pub mod admin_initiate_auth_output {
             self.session = Some(input.into());
             self
         }
+        /// <p>The session which should be passed both ways in challenge-response calls to the
+        /// service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code>
+        /// API call determines that the caller needs to go through another challenge, they return a
+        /// session with other challenge parameters. This session should be passed as it is to the
+        /// next <code>AdminRespondToAuthChallenge</code> API call.</p>
         pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session = input;
             self
         }
+        /// Adds a key-value pair to `challenge_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_challenge_parameters`](Self::set_challenge_parameters).
+        ///
+        /// <p>The challenge parameters. These are returned to you in the
+        /// <code>AdminInitiateAuth</code> response if you need to pass another challenge. The
+        /// responses in this parameter should be used to compute inputs to the next call
+        /// (<code>AdminRespondToAuthChallenge</code>).</p>
+        /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if
+        /// applicable).</p>
+        /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual
+        /// username, not an alias (such as email address or phone number), even if you specified an
+        /// alias in your call to <code>AdminInitiateAuth</code>. This is because, in the
+        /// <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the
+        /// <code>USERNAME</code> attribute cannot be an alias.</p>
         pub fn challenge_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -4847,6 +5327,17 @@ pub mod admin_initiate_auth_output {
             self.challenge_parameters = Some(hash_map);
             self
         }
+        /// <p>The challenge parameters. These are returned to you in the
+        /// <code>AdminInitiateAuth</code> response if you need to pass another challenge. The
+        /// responses in this parameter should be used to compute inputs to the next call
+        /// (<code>AdminRespondToAuthChallenge</code>).</p>
+        /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if
+        /// applicable).</p>
+        /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual
+        /// username, not an alias (such as email address or phone number), even if you specified an
+        /// alias in your call to <code>AdminInitiateAuth</code>. This is because, in the
+        /// <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the
+        /// <code>USERNAME</code> attribute cannot be an alias.</p>
         pub fn set_challenge_parameters(
             mut self,
             input: std::option::Option<
@@ -4867,6 +5358,10 @@ pub mod admin_initiate_auth_output {
             self.authentication_result = Some(input);
             self
         }
+        /// <p>The result of the authentication response. This is only returned if the caller does
+        /// not need to pass another challenge. If the caller does need to pass another challenge
+        /// before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and
+        /// <code>Session</code> are returned.</p>
         pub fn set_authentication_result(
             mut self,
             input: std::option::Option<crate::model::AuthenticationResultType>,
@@ -4902,9 +5397,9 @@ pub struct AdminGetUserOutput {
     /// <p>An array of name-value pairs representing user attributes.</p>
     pub user_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
     /// <p>The date the user was created.</p>
-    pub user_create_date: std::option::Option<smithy_types::Instant>,
+    pub user_create_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date the user was last modified.</p>
-    pub user_last_modified_date: std::option::Option<smithy_types::Instant>,
+    pub user_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Indicates that the status is enabled.</p>
     pub enabled: bool,
     /// <p>The user status. Can be one of the following:</p>
@@ -4970,8 +5465,8 @@ pub mod admin_get_user_output {
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) user_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
-        pub(crate) user_create_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) user_last_modified_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) user_create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) user_last_modified_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) user_status: std::option::Option<crate::model::UserStatusType>,
         pub(crate) mfa_options: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
@@ -4984,16 +5479,23 @@ pub mod admin_get_user_output {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name of the user about whom you are receiving information.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
         }
+        /// Appends an item to `user_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
+        ///
+        /// <p>An array of name-value pairs representing user attributes.</p>
         pub fn user_attributes(mut self, input: impl Into<crate::model::AttributeType>) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
             v.push(input.into());
             self.user_attributes = Some(v);
             self
         }
+        /// <p>An array of name-value pairs representing user attributes.</p>
         pub fn set_user_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
@@ -5002,25 +5504,27 @@ pub mod admin_get_user_output {
             self
         }
         /// <p>The date the user was created.</p>
-        pub fn user_create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn user_create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.user_create_date = Some(input);
             self
         }
+        /// <p>The date the user was created.</p>
         pub fn set_user_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.user_create_date = input;
             self
         }
         /// <p>The date the user was last modified.</p>
-        pub fn user_last_modified_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn user_last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.user_last_modified_date = Some(input);
             self
         }
+        /// <p>The date the user was last modified.</p>
         pub fn set_user_last_modified_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.user_last_modified_date = input;
             self
@@ -5030,6 +5534,7 @@ pub mod admin_get_user_output {
             self.enabled = Some(input);
             self
         }
+        /// <p>Indicates that the status is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -5065,6 +5570,33 @@ pub mod admin_get_user_output {
             self.user_status = Some(input);
             self
         }
+        /// <p>The user status. Can be one of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>UNCONFIRMED - User has been created but not confirmed.</p>
+        /// </li>
+        /// <li>
+        /// <p>CONFIRMED - User has been confirmed.</p>
+        /// </li>
+        /// <li>
+        /// <p>ARCHIVED - User is no longer active.</p>
+        /// </li>
+        /// <li>
+        /// <p>COMPROMISED - User is disabled due to a potential security threat.</p>
+        /// </li>
+        /// <li>
+        /// <p>UNKNOWN - User status is not known.</p>
+        /// </li>
+        /// <li>
+        /// <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset
+        /// his or her password before he or she can sign in.</p>
+        /// </li>
+        /// <li>
+        /// <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a
+        /// temporary password, but on first sign-in, the user must change his or her
+        /// password to a new value before doing anything else. </p>
+        /// </li>
+        /// </ul>
         pub fn set_user_status(
             mut self,
             input: std::option::Option<crate::model::UserStatusType>,
@@ -5072,12 +5604,26 @@ pub mod admin_get_user_output {
             self.user_status = input;
             self
         }
+        /// Appends an item to `mfa_options`.
+        ///
+        /// To override the contents of this collection use [`set_mfa_options`](Self::set_mfa_options).
+        ///
+        /// <p>
+        /// <i>This response parameter is no longer supported.</i> It provides
+        /// information only about SMS MFA configurations. It doesn't provide information about TOTP
+        /// software token MFA configurations. To look up information about either type of MFA
+        /// configuration, use UserMFASettingList instead.</p>
         pub fn mfa_options(mut self, input: impl Into<crate::model::MfaOptionType>) -> Self {
             let mut v = self.mfa_options.unwrap_or_default();
             v.push(input.into());
             self.mfa_options = Some(v);
             self
         }
+        /// <p>
+        /// <i>This response parameter is no longer supported.</i> It provides
+        /// information only about SMS MFA configurations. It doesn't provide information about TOTP
+        /// software token MFA configurations. To look up information about either type of MFA
+        /// configuration, use UserMFASettingList instead.</p>
         pub fn set_mfa_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MfaOptionType>>,
@@ -5090,6 +5636,7 @@ pub mod admin_get_user_output {
             self.preferred_mfa_setting = Some(input.into());
             self
         }
+        /// <p>The user's preferred MFA setting.</p>
         pub fn set_preferred_mfa_setting(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5097,12 +5644,20 @@ pub mod admin_get_user_output {
             self.preferred_mfa_setting = input;
             self
         }
+        /// Appends an item to `user_mfa_setting_list`.
+        ///
+        /// To override the contents of this collection use [`set_user_mfa_setting_list`](Self::set_user_mfa_setting_list).
+        ///
+        /// <p>The MFA options that are enabled for the user. The possible values in this list are
+        /// <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
         pub fn user_mfa_setting_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_mfa_setting_list.unwrap_or_default();
             v.push(input.into());
             self.user_mfa_setting_list = Some(v);
             self
         }
+        /// <p>The MFA options that are enabled for the user. The possible values in this list are
+        /// <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
         pub fn set_user_mfa_setting_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5161,6 +5716,7 @@ pub mod admin_get_device_output {
             self.device = Some(input);
             self
         }
+        /// <p>The device.</p>
         pub fn set_device(mut self, input: std::option::Option<crate::model::DeviceType>) -> Self {
             self.device = input;
             self
@@ -5180,6 +5736,7 @@ impl AdminGetDeviceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminForgetDeviceOutput {}
@@ -5271,6 +5828,7 @@ impl AdminDisableUserOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminDisableProviderForUserOutput {}
@@ -5331,6 +5889,7 @@ impl AdminDeleteUserAttributesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminDeleteUserOutput {}
@@ -5388,6 +5947,7 @@ pub mod admin_create_user_output {
             self.user = Some(input);
             self
         }
+        /// <p>The newly created user.</p>
         pub fn set_user(mut self, input: std::option::Option<crate::model::UserType>) -> Self {
             self.user = input;
             self
@@ -5436,6 +5996,7 @@ impl AdminConfirmSignUpOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminAddUserToGroupOutput {}

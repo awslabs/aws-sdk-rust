@@ -32,6 +32,12 @@ pub mod create_canary_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name for this canary. Be sure to give it a descriptive name
+        /// that distinguishes it from other canaries in your account.</p>
+        /// <p>Do not include secrets or proprietary information in your canary names. The canary name
+        /// makes up part of the canary ARN, and the ARN is included in outbound calls over the
+        /// internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security
+        /// Considerations for Synthetics Canaries</a>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -44,6 +50,10 @@ pub mod create_canary_input {
             self.code = Some(input);
             self
         }
+        /// <p>A structure that includes the entry point from which the canary should start
+        /// running your script. If the script is stored in
+        /// an S3 bucket, the bucket name, key, and version are also included.
+        /// </p>
         pub fn set_code(
             mut self,
             input: std::option::Option<crate::model::CanaryCodeInput>,
@@ -58,6 +68,9 @@ pub mod create_canary_input {
             self.artifact_s3_location = Some(input.into());
             self
         }
+        /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this
+        /// canary. Artifacts include the log file, screenshots, and HAR files.  The name of the
+        /// S3 bucket can't include a period (.).</p>
         pub fn set_artifact_s3_location(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -109,6 +122,46 @@ pub mod create_canary_input {
             self.execution_role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist,
+        /// and must include <code>lambda.amazonaws.com</code> as a principal in the trust
+        /// policy. The role must also have the following permissions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>s3:PutObject</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>s3:GetBucketLocation</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>s3:ListAllMyBuckets</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>cloudwatch:PutMetricData</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>logs:CreateLogGroup</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>logs:CreateLogStream</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>logs:PutLogEvents</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -122,6 +175,8 @@ pub mod create_canary_input {
             self.schedule = Some(input);
             self
         }
+        /// <p>A structure that contains information about how often the canary is to run and when
+        /// these test runs are to stop.</p>
         pub fn set_schedule(
             mut self,
             input: std::option::Option<crate::model::CanaryScheduleInput>,
@@ -135,6 +190,8 @@ pub mod create_canary_input {
             self.run_config = Some(input);
             self
         }
+        /// <p>A structure that contains the configuration for individual canary runs,
+        /// such as timeout value.</p>
         pub fn set_run_config(
             mut self,
             input: std::option::Option<crate::model::CanaryRunConfigInput>,
@@ -148,6 +205,8 @@ pub mod create_canary_input {
             self.success_retention_period_in_days = Some(input);
             self
         }
+        /// <p>The number of days to retain data about successful runs of this canary. If you omit
+        /// this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
         pub fn set_success_retention_period_in_days(
             mut self,
             input: std::option::Option<i32>,
@@ -161,6 +220,8 @@ pub mod create_canary_input {
             self.failure_retention_period_in_days = Some(input);
             self
         }
+        /// <p>The number of days to retain data about failed runs of this canary. If you omit
+        /// this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
         pub fn set_failure_retention_period_in_days(
             mut self,
             input: std::option::Option<i32>,
@@ -176,6 +237,10 @@ pub mod create_canary_input {
             self.runtime_version = Some(input.into());
             self
         }
+        /// <p>Specifies the runtime version to use for the canary. For a list of valid
+        /// runtime versions and more information about
+        /// runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
+        /// Canary Runtime Versions</a>.</p>
         pub fn set_runtime_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -191,6 +256,10 @@ pub mod create_canary_input {
             self.vpc_config = Some(input);
             self
         }
+        /// <p>If this canary is to test an endpoint in a VPC, this structure contains
+        /// information about the subnet and security groups of the VPC endpoint.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html">
+        /// Running a Canary in a VPC</a>.</p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfigInput>,
@@ -198,6 +267,16 @@ pub mod create_canary_input {
             self.vpc_config = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of key-value pairs to associate with the canary.
+        /// You can associate as many as 50 tags with a canary.</p>
+        /// <p>Tags can help you organize and categorize your
+        /// resources. You can also use them to scope user permissions, by
+        /// granting a user permission to access or change only the resources that have
+        /// certain tag values.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -208,6 +287,12 @@ pub mod create_canary_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A list of key-value pairs to associate with the canary.
+        /// You can associate as many as 50 tags with a canary.</p>
+        /// <p>Tags can help you organize and categorize your
+        /// resources. You can also use them to scope user permissions, by
+        /// granting a user permission to access or change only the resources that have
+        /// certain tag values.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -223,6 +308,8 @@ pub mod create_canary_input {
             self.artifact_config = Some(input);
             self
         }
+        /// <p>A structure that contains the configuration for canary artifacts, including
+        /// the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
         pub fn set_artifact_config(
             mut self,
             input: std::option::Option<crate::model::ArtifactConfigInput>,
@@ -233,8 +320,10 @@ pub mod create_canary_input {
         /// Consumes the builder and constructs a [`CreateCanaryInput`](crate::input::CreateCanaryInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateCanaryInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateCanaryInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateCanaryInput {
                 name: self.name,
                 code: self.code,
@@ -263,16 +352,16 @@ impl CreateCanaryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateCanary,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateCanaryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/canary").expect("formatting should succeed");
             Ok(())
         }
@@ -280,7 +369,7 @@ impl CreateCanaryInput {
         fn update_http_builder(
             input: &crate::input::CreateCanaryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -289,26 +378,26 @@ impl CreateCanaryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateCanaryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_canary(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -331,25 +420,27 @@ impl CreateCanaryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateCanary::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateCanary",
-                    "synthetics",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateCanary::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateCanary",
+            "synthetics",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -377,6 +468,7 @@ pub mod delete_canary_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the canary that you want to delete. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -384,8 +476,10 @@ pub mod delete_canary_input {
         /// Consumes the builder and constructs a [`DeleteCanaryInput`](crate::input::DeleteCanaryInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteCanaryInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteCanaryInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteCanaryInput { name: self.name })
         }
     }
@@ -401,27 +495,27 @@ impl DeleteCanaryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteCanary,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteCanaryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.name;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_1, false);
+            let name = aws_smithy_http::label::fmt_string(input_1, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -433,7 +527,7 @@ impl DeleteCanaryInput {
         fn update_http_builder(
             input: &crate::input::DeleteCanaryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -442,23 +536,23 @@ impl DeleteCanaryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteCanaryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -481,25 +575,27 @@ impl DeleteCanaryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteCanary::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteCanary",
-                    "synthetics",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteCanary::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteCanary",
+            "synthetics",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -530,6 +626,9 @@ pub mod describe_canaries_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates that there is more data
+        /// available. You can use this token in a subsequent operation to retrieve the next
+        /// set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -540,6 +639,8 @@ pub mod describe_canaries_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Specify this parameter to limit how many canaries are returned each time you use
+        /// the <code>DescribeCanaries</code> operation. If you omit this parameter, the default of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -549,7 +650,7 @@ pub mod describe_canaries_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeCanariesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeCanariesInput {
                 next_token: self.next_token,
@@ -569,16 +670,16 @@ impl DescribeCanariesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCanaries,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeCanariesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/canaries").expect("formatting should succeed");
             Ok(())
         }
@@ -586,7 +687,7 @@ impl DescribeCanariesInput {
         fn update_http_builder(
             input: &crate::input::DescribeCanariesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -595,27 +696,27 @@ impl DescribeCanariesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeCanariesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_canaries(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -638,15 +739,15 @@ impl DescribeCanariesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCanaries::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCanaries",
             "synthetics",
         ));
@@ -655,10 +756,10 @@ impl DescribeCanariesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -689,6 +790,9 @@ pub mod describe_canaries_last_run_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates that there is more data
+        /// available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next
+        /// set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -699,6 +803,8 @@ pub mod describe_canaries_last_run_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Specify this parameter to limit how many runs are returned each time you use
+        /// the <code>DescribeLastRun</code> operation. If you omit this parameter, the default of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -708,7 +814,7 @@ pub mod describe_canaries_last_run_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeCanariesLastRunInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeCanariesLastRunInput {
                 next_token: self.next_token,
@@ -729,16 +835,16 @@ impl DescribeCanariesLastRunInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCanariesLastRun,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeCanariesLastRunInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/canaries/last-run").expect("formatting should succeed");
             Ok(())
         }
@@ -746,7 +852,7 @@ impl DescribeCanariesLastRunInput {
         fn update_http_builder(
             input: &crate::input::DescribeCanariesLastRunInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -755,27 +861,29 @@ impl DescribeCanariesLastRunInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeCanariesLastRunInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_canaries_last_run(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -798,15 +906,15 @@ impl DescribeCanariesLastRunInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCanariesLastRun::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCanariesLastRun",
             "synthetics",
         ));
@@ -815,10 +923,10 @@ impl DescribeCanariesLastRunInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -849,6 +957,9 @@ pub mod describe_runtime_versions_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates that there is more data
+        /// available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next
+        /// set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -859,6 +970,8 @@ pub mod describe_runtime_versions_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Specify this parameter to limit how many runs are returned each time you use
+        /// the <code>DescribeRuntimeVersions</code> operation. If you omit this parameter, the default of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -868,7 +981,7 @@ pub mod describe_runtime_versions_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeRuntimeVersionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeRuntimeVersionsInput {
                 next_token: self.next_token,
@@ -889,16 +1002,16 @@ impl DescribeRuntimeVersionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeRuntimeVersions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeRuntimeVersionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/runtime-versions").expect("formatting should succeed");
             Ok(())
         }
@@ -906,7 +1019,7 @@ impl DescribeRuntimeVersionsInput {
         fn update_http_builder(
             input: &crate::input::DescribeRuntimeVersionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -915,27 +1028,29 @@ impl DescribeRuntimeVersionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeRuntimeVersionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_runtime_versions(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -958,15 +1073,15 @@ impl DescribeRuntimeVersionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeRuntimeVersions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeRuntimeVersions",
             "synthetics",
         ));
@@ -975,10 +1090,10 @@ impl DescribeRuntimeVersionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1006,6 +1121,7 @@ pub mod get_canary_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the canary that you want details for.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1013,7 +1129,7 @@ pub mod get_canary_input {
         /// Consumes the builder and constructs a [`GetCanaryInput`](crate::input::GetCanaryInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetCanaryInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetCanaryInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetCanaryInput { name: self.name })
         }
@@ -1030,27 +1146,27 @@ impl GetCanaryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetCanary,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetCanaryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_2 = &_input.name;
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_2, false);
+            let name = aws_smithy_http::label::fmt_string(input_2, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -1062,7 +1178,7 @@ impl GetCanaryInput {
         fn update_http_builder(
             input: &crate::input::GetCanaryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1071,23 +1187,23 @@ impl GetCanaryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetCanaryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1110,13 +1226,13 @@ impl GetCanaryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetCanary::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetCanary::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetCanary",
                     "synthetics",
                 ));
@@ -1125,10 +1241,10 @@ impl GetCanaryInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1158,6 +1274,7 @@ pub mod get_canary_runs_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the canary that you want to see runs for.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1169,6 +1286,9 @@ pub mod get_canary_runs_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates that there is more data
+        /// available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next
+        /// set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1179,6 +1299,8 @@ pub mod get_canary_runs_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Specify this parameter to limit how many runs are returned each time you use
+        /// the <code>GetCanaryRuns</code> operation. If you omit this parameter, the default of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1186,8 +1308,10 @@ pub mod get_canary_runs_input {
         /// Consumes the builder and constructs a [`GetCanaryRunsInput`](crate::input::GetCanaryRunsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetCanaryRunsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetCanaryRunsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetCanaryRunsInput {
                 name: self.name,
                 next_token: self.next_token,
@@ -1207,27 +1331,27 @@ impl GetCanaryRunsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetCanaryRuns,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetCanaryRunsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_3 = &_input.name;
             let input_3 =
                 input_3
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_3, false);
+            let name = aws_smithy_http::label::fmt_string(input_3, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -1239,7 +1363,7 @@ impl GetCanaryRunsInput {
         fn update_http_builder(
             input: &crate::input::GetCanaryRunsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1248,24 +1372,26 @@ impl GetCanaryRunsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetCanaryRunsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_canary_runs(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1288,25 +1414,27 @@ impl GetCanaryRunsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetCanaryRuns::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetCanaryRuns",
-                    "synthetics",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetCanaryRuns::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetCanaryRuns",
+            "synthetics",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1337,6 +1465,10 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the canary that you want to view tags for.</p>
+        /// <p>The ARN format of a canary is
+        /// <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
+        /// </code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -1346,7 +1478,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -1365,27 +1497,27 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_4 = &_input.resource_arn;
             let input_4 =
                 input_4
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_4, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_4, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -1398,7 +1530,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1407,23 +1539,23 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1446,15 +1578,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "synthetics",
         ));
@@ -1463,10 +1595,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1495,6 +1627,8 @@ pub mod start_canary_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the canary that you want to run. To find
+        /// canary names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1502,8 +1636,10 @@ pub mod start_canary_input {
         /// Consumes the builder and constructs a [`StartCanaryInput`](crate::input::StartCanaryInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::StartCanaryInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StartCanaryInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StartCanaryInput { name: self.name })
         }
     }
@@ -1519,27 +1655,27 @@ impl StartCanaryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartCanary,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartCanaryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_5 = &_input.name;
             let input_5 =
                 input_5
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_5, false);
+            let name = aws_smithy_http::label::fmt_string(input_5, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -1551,7 +1687,7 @@ impl StartCanaryInput {
         fn update_http_builder(
             input: &crate::input::StartCanaryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1560,23 +1696,23 @@ impl StartCanaryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartCanaryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1599,25 +1735,27 @@ impl StartCanaryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::StartCanary::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "StartCanary",
-                    "synthetics",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartCanary::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartCanary",
+            "synthetics",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1646,6 +1784,8 @@ pub mod stop_canary_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the canary that you want to stop. To find the names of your
+        /// canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1653,8 +1793,10 @@ pub mod stop_canary_input {
         /// Consumes the builder and constructs a [`StopCanaryInput`](crate::input::StopCanaryInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::StopCanaryInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StopCanaryInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StopCanaryInput { name: self.name })
         }
     }
@@ -1670,27 +1812,27 @@ impl StopCanaryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StopCanary,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StopCanaryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_6 = &_input.name;
             let input_6 =
                 input_6
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_6, false);
+            let name = aws_smithy_http::label::fmt_string(input_6, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -1702,7 +1844,7 @@ impl StopCanaryInput {
         fn update_http_builder(
             input: &crate::input::StopCanaryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1711,23 +1853,23 @@ impl StopCanaryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StopCanaryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1750,25 +1892,27 @@ impl StopCanaryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::StopCanary::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "StopCanary",
-                    "synthetics",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StopCanary::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StopCanary",
+            "synthetics",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1802,10 +1946,19 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the canary that you're adding tags to.</p>
+        /// <p>The ARN format of a canary is
+        /// <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
+        /// </code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of key-value pairs to associate with the canary.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1816,6 +1969,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The list of key-value pairs to associate with the canary.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1828,8 +1982,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -1848,27 +2004,27 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_7 = &_input.resource_arn;
             let input_7 =
                 input_7
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_7, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_7, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -1881,7 +2037,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1890,24 +2046,26 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1930,25 +2088,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "synthetics",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "synthetics",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1980,16 +2140,26 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the canary that you're removing tags from.</p>
+        /// <p>The ARN format of a canary is
+        /// <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
+        /// </code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The list of tag keys to remove from the resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>The list of tag keys to remove from the resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2000,8 +2170,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -2020,27 +2192,27 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_8 = &_input.resource_arn;
             let input_8 =
                 input_8
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_8, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_8, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -2050,10 +2222,10 @@ impl UntagResourceInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_9) = &_input.tag_keys {
                 for inner_10 in inner_9 {
-                    query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_10));
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_10));
                 }
             }
         }
@@ -2061,7 +2233,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2071,23 +2243,23 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2110,25 +2282,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "synthetics",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "synthetics",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2169,6 +2343,9 @@ pub mod update_canary_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the canary that you want to update. To find the names of your
+        /// canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
+        /// <p>You cannot change the name of a canary that has already been created.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2181,6 +2358,10 @@ pub mod update_canary_input {
             self.code = Some(input);
             self
         }
+        /// <p>A structure that includes the entry point from which the canary should start
+        /// running your script. If the script is stored in
+        /// an S3 bucket, the bucket name, key, and version are also included.
+        /// </p>
         pub fn set_code(
             mut self,
             input: std::option::Option<crate::model::CanaryCodeInput>,
@@ -2232,6 +2413,46 @@ pub mod update_canary_input {
             self.execution_role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist,
+        /// and must include <code>lambda.amazonaws.com</code> as a principal in the trust
+        /// policy. The role must also have the following permissions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>s3:PutObject</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>s3:GetBucketLocation</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>s3:ListAllMyBuckets</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>cloudwatch:PutMetricData</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>logs:CreateLogGroup</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>logs:CreateLogStream</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>logs:CreateLogStream</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2247,6 +2468,10 @@ pub mod update_canary_input {
             self.runtime_version = Some(input.into());
             self
         }
+        /// <p>Specifies the runtime version to use for the canary.  
+        /// For a list of valid runtime versions and for more information about
+        /// runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
+        /// Canary Runtime Versions</a>.</p>
         pub fn set_runtime_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2260,6 +2485,8 @@ pub mod update_canary_input {
             self.schedule = Some(input);
             self
         }
+        /// <p>A structure that contains information about how often the canary is to run, and when
+        /// these runs are to stop.</p>
         pub fn set_schedule(
             mut self,
             input: std::option::Option<crate::model::CanaryScheduleInput>,
@@ -2273,6 +2500,8 @@ pub mod update_canary_input {
             self.run_config = Some(input);
             self
         }
+        /// <p>A structure that contains the timeout value that is used for each individual run of the
+        /// canary.</p>
         pub fn set_run_config(
             mut self,
             input: std::option::Option<crate::model::CanaryRunConfigInput>,
@@ -2285,6 +2514,7 @@ pub mod update_canary_input {
             self.success_retention_period_in_days = Some(input);
             self
         }
+        /// <p>The number of days to retain data about successful runs of this canary.</p>
         pub fn set_success_retention_period_in_days(
             mut self,
             input: std::option::Option<i32>,
@@ -2297,6 +2527,7 @@ pub mod update_canary_input {
             self.failure_retention_period_in_days = Some(input);
             self
         }
+        /// <p>The number of days to retain data about failed runs of this canary.</p>
         pub fn set_failure_retention_period_in_days(
             mut self,
             input: std::option::Option<i32>,
@@ -2312,6 +2543,10 @@ pub mod update_canary_input {
             self.vpc_config = Some(input);
             self
         }
+        /// <p>If this canary is to test an endpoint in a VPC, this structure contains
+        /// information about the subnet and security groups of the VPC endpoint.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html">
+        /// Running a Canary in a VPC</a>.</p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfigInput>,
@@ -2330,6 +2565,13 @@ pub mod update_canary_input {
             self.visual_reference = Some(input);
             self
         }
+        /// <p>Defines the screenshots to use as the baseline for comparisons during visual monitoring comparisons during future runs of this canary. If you omit this
+        /// parameter, no changes are made to any baseline screenshots that the canary might be using already.</p>
+        /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b>
+        /// runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html">
+        /// Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html">
+        /// Visual monitoring blueprint</a>
+        /// </p>
         pub fn set_visual_reference(
             mut self,
             input: std::option::Option<crate::model::VisualReferenceInput>,
@@ -2344,6 +2586,9 @@ pub mod update_canary_input {
             self.artifact_s3_location = Some(input.into());
             self
         }
+        /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary.
+        /// Artifacts include the log file, screenshots, and HAR files. The name of the
+        /// S3 bucket can't include a period (.).</p>
         pub fn set_artifact_s3_location(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2358,6 +2603,9 @@ pub mod update_canary_input {
             self.artifact_config = Some(input);
             self
         }
+        /// <p>A structure that contains the configuration for canary artifacts,
+        /// including the encryption-at-rest settings for artifacts that
+        /// the canary uploads to Amazon S3.</p>
         pub fn set_artifact_config(
             mut self,
             input: std::option::Option<crate::model::ArtifactConfigInput>,
@@ -2368,8 +2616,10 @@ pub mod update_canary_input {
         /// Consumes the builder and constructs a [`UpdateCanaryInput`](crate::input::UpdateCanaryInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateCanaryInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateCanaryInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateCanaryInput {
                 name: self.name,
                 code: self.code,
@@ -2398,27 +2648,27 @@ impl UpdateCanaryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateCanary,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateCanaryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_11 = &_input.name;
             let input_11 =
                 input_11
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_11, false);
+            let name = aws_smithy_http::label::fmt_string(input_11, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -2430,7 +2680,7 @@ impl UpdateCanaryInput {
         fn update_http_builder(
             input: &crate::input::UpdateCanaryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2439,26 +2689,26 @@ impl UpdateCanaryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateCanaryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_canary(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2481,25 +2731,27 @@ impl UpdateCanaryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateCanary::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateCanary",
-                    "synthetics",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateCanary::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateCanary",
+            "synthetics",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2513,6 +2765,7 @@ impl UpdateCanaryInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCanaryInput {
@@ -2628,6 +2881,7 @@ impl std::fmt::Debug for UpdateCanaryInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -2648,6 +2902,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -2669,6 +2924,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopCanaryInput {
@@ -2684,6 +2940,7 @@ impl std::fmt::Debug for StopCanaryInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartCanaryInput {
@@ -2699,6 +2956,7 @@ impl std::fmt::Debug for StartCanaryInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -2716,6 +2974,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCanaryRunsInput {
@@ -2739,6 +2998,7 @@ impl std::fmt::Debug for GetCanaryRunsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCanaryInput {
@@ -2753,6 +3013,7 @@ impl std::fmt::Debug for GetCanaryInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRuntimeVersionsInput {
@@ -2773,6 +3034,7 @@ impl std::fmt::Debug for DescribeRuntimeVersionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCanariesLastRunInput {
@@ -2793,6 +3055,7 @@ impl std::fmt::Debug for DescribeCanariesLastRunInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCanariesInput {
@@ -2813,6 +3076,7 @@ impl std::fmt::Debug for DescribeCanariesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCanaryInput {
@@ -2827,6 +3091,7 @@ impl std::fmt::Debug for DeleteCanaryInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCanaryInput {

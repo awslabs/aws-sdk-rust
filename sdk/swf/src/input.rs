@@ -20,6 +20,7 @@ pub mod count_closed_workflow_executions_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain containing the workflow executions to count.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -35,6 +36,13 @@ pub mod count_closed_workflow_executions_input {
             self.start_time_filter = Some(input);
             self
         }
+        /// <p>If specified, only workflow executions that meet the start time criteria of the filter
+        /// are counted.</p>
+        /// <note>
+        /// <p>
+        /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
+        /// must specify one of these in a request but not both.</p>
+        /// </note>
         pub fn set_start_time_filter(
             mut self,
             input: std::option::Option<crate::model::ExecutionTimeFilter>,
@@ -53,6 +61,13 @@ pub mod count_closed_workflow_executions_input {
             self.close_time_filter = Some(input);
             self
         }
+        /// <p>If specified, only workflow executions that meet the close time criteria of the filter
+        /// are counted.</p>
+        /// <note>
+        /// <p>
+        /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
+        /// must specify one of these in a request but not both.</p>
+        /// </note>
         pub fn set_close_time_filter(
             mut self,
             input: std::option::Option<crate::model::ExecutionTimeFilter>,
@@ -72,6 +87,14 @@ pub mod count_closed_workflow_executions_input {
             self.execution_filter = Some(input);
             self
         }
+        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the
+        /// filter are counted.</p>
+        /// <note>
+        /// <p>
+        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
+        /// request.</p>
+        /// </note>
         pub fn set_execution_filter(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecutionFilter>,
@@ -90,6 +113,13 @@ pub mod count_closed_workflow_executions_input {
             self.type_filter = Some(input);
             self
         }
+        /// <p>If specified, indicates the type of the workflow executions to be counted.</p>
+        /// <note>
+        /// <p>
+        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
+        /// request.</p>
+        /// </note>
         pub fn set_type_filter(
             mut self,
             input: std::option::Option<crate::model::WorkflowTypeFilter>,
@@ -109,6 +139,14 @@ pub mod count_closed_workflow_executions_input {
             self.tag_filter = Some(input);
             self
         }
+        /// <p>If specified, only executions that have a tag that matches the filter are
+        /// counted.</p>
+        /// <note>
+        /// <p>
+        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
+        /// request.</p>
+        /// </note>
         pub fn set_tag_filter(
             mut self,
             input: std::option::Option<crate::model::TagFilter>,
@@ -129,6 +167,15 @@ pub mod count_closed_workflow_executions_input {
             self.close_status_filter = Some(input);
             self
         }
+        /// <p>If specified, only workflow executions that match this close status are counted. This
+        /// filter has an affect only if <code>executionStatus</code> is specified as
+        /// <code>CLOSED</code>.</p>
+        /// <note>
+        /// <p>
+        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
+        /// request.</p>
+        /// </note>
         pub fn set_close_status_filter(
             mut self,
             input: std::option::Option<crate::model::CloseStatusFilter>,
@@ -141,7 +188,7 @@ pub mod count_closed_workflow_executions_input {
             self,
         ) -> std::result::Result<
             crate::input::CountClosedWorkflowExecutionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CountClosedWorkflowExecutionsInput {
                 domain: self.domain,
@@ -167,16 +214,16 @@ impl CountClosedWorkflowExecutionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CountClosedWorkflowExecutions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CountClosedWorkflowExecutionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -184,7 +231,7 @@ impl CountClosedWorkflowExecutionsInput {
         fn update_http_builder(
             input: &crate::input::CountClosedWorkflowExecutionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -193,30 +240,30 @@ impl CountClosedWorkflowExecutionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CountClosedWorkflowExecutionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.CountClosedWorkflowExecutions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_count_closed_workflow_executions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_count_closed_workflow_executions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -239,15 +286,15 @@ impl CountClosedWorkflowExecutionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CountClosedWorkflowExecutions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CountClosedWorkflowExecutions",
             "swf",
         ));
@@ -256,10 +303,10 @@ impl CountClosedWorkflowExecutionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -291,6 +338,7 @@ pub mod count_open_workflow_executions_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain containing the workflow executions to count.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -301,6 +349,8 @@ pub mod count_open_workflow_executions_input {
             self.start_time_filter = Some(input);
             self
         }
+        /// <p>Specifies the start time criteria that workflow executions must meet in order to be
+        /// counted.</p>
         pub fn set_start_time_filter(
             mut self,
             input: std::option::Option<crate::model::ExecutionTimeFilter>,
@@ -318,6 +368,12 @@ pub mod count_open_workflow_executions_input {
             self.type_filter = Some(input);
             self
         }
+        /// <p>Specifies the type of the workflow executions to be counted.</p>
+        /// <note>
+        /// <p>
+        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
+        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// </note>
         pub fn set_type_filter(
             mut self,
             input: std::option::Option<crate::model::WorkflowTypeFilter>,
@@ -336,6 +392,13 @@ pub mod count_open_workflow_executions_input {
             self.tag_filter = Some(input);
             self
         }
+        /// <p>If specified, only executions that have a tag that matches the filter are
+        /// counted.</p>
+        /// <note>
+        /// <p>
+        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
+        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// </note>
         pub fn set_tag_filter(
             mut self,
             input: std::option::Option<crate::model::TagFilter>,
@@ -354,6 +417,13 @@ pub mod count_open_workflow_executions_input {
             self.execution_filter = Some(input);
             self
         }
+        /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the
+        /// filter are counted.</p>
+        /// <note>
+        /// <p>
+        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
+        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// </note>
         pub fn set_execution_filter(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecutionFilter>,
@@ -366,7 +436,7 @@ pub mod count_open_workflow_executions_input {
             self,
         ) -> std::result::Result<
             crate::input::CountOpenWorkflowExecutionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CountOpenWorkflowExecutionsInput {
                 domain: self.domain,
@@ -390,16 +460,16 @@ impl CountOpenWorkflowExecutionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CountOpenWorkflowExecutions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CountOpenWorkflowExecutionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -407,7 +477,7 @@ impl CountOpenWorkflowExecutionsInput {
         fn update_http_builder(
             input: &crate::input::CountOpenWorkflowExecutionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -416,30 +486,30 @@ impl CountOpenWorkflowExecutionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CountOpenWorkflowExecutionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.CountOpenWorkflowExecutions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_count_open_workflow_executions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_count_open_workflow_executions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -462,15 +532,15 @@ impl CountOpenWorkflowExecutionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CountOpenWorkflowExecutions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CountOpenWorkflowExecutions",
             "swf",
         ));
@@ -479,10 +549,10 @@ impl CountOpenWorkflowExecutionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -511,6 +581,7 @@ pub mod count_pending_activity_tasks_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain that contains the task list.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -520,6 +591,7 @@ pub mod count_pending_activity_tasks_input {
             self.task_list = Some(input);
             self
         }
+        /// <p>The name of the task list.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
             self.task_list = input;
             self
@@ -529,7 +601,7 @@ pub mod count_pending_activity_tasks_input {
             self,
         ) -> std::result::Result<
             crate::input::CountPendingActivityTasksInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CountPendingActivityTasksInput {
                 domain: self.domain,
@@ -550,16 +622,16 @@ impl CountPendingActivityTasksInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CountPendingActivityTasks,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CountPendingActivityTasksInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -567,7 +639,7 @@ impl CountPendingActivityTasksInput {
         fn update_http_builder(
             input: &crate::input::CountPendingActivityTasksInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -576,32 +648,34 @@ impl CountPendingActivityTasksInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CountPendingActivityTasksInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.CountPendingActivityTasks",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_count_pending_activity_tasks(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -624,15 +698,15 @@ impl CountPendingActivityTasksInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CountPendingActivityTasks::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CountPendingActivityTasks",
             "swf",
         ));
@@ -641,10 +715,10 @@ impl CountPendingActivityTasksInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -673,6 +747,7 @@ pub mod count_pending_decision_tasks_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain that contains the task list.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -682,6 +757,7 @@ pub mod count_pending_decision_tasks_input {
             self.task_list = Some(input);
             self
         }
+        /// <p>The name of the task list.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
             self.task_list = input;
             self
@@ -691,7 +767,7 @@ pub mod count_pending_decision_tasks_input {
             self,
         ) -> std::result::Result<
             crate::input::CountPendingDecisionTasksInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CountPendingDecisionTasksInput {
                 domain: self.domain,
@@ -712,16 +788,16 @@ impl CountPendingDecisionTasksInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CountPendingDecisionTasks,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CountPendingDecisionTasksInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -729,7 +805,7 @@ impl CountPendingDecisionTasksInput {
         fn update_http_builder(
             input: &crate::input::CountPendingDecisionTasksInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -738,32 +814,34 @@ impl CountPendingDecisionTasksInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CountPendingDecisionTasksInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.CountPendingDecisionTasks",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_count_pending_decision_tasks(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -786,15 +864,15 @@ impl CountPendingDecisionTasksInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CountPendingDecisionTasks::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CountPendingDecisionTasks",
             "swf",
         ));
@@ -803,10 +881,10 @@ impl CountPendingDecisionTasksInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -835,6 +913,7 @@ pub mod deprecate_activity_type_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain in which the activity type is registered.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -844,6 +923,7 @@ pub mod deprecate_activity_type_input {
             self.activity_type = Some(input);
             self
         }
+        /// <p>The activity type to deprecate.</p>
         pub fn set_activity_type(
             mut self,
             input: std::option::Option<crate::model::ActivityType>,
@@ -856,7 +936,7 @@ pub mod deprecate_activity_type_input {
             self,
         ) -> std::result::Result<
             crate::input::DeprecateActivityTypeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeprecateActivityTypeInput {
                 domain: self.domain,
@@ -876,16 +956,16 @@ impl DeprecateActivityTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeprecateActivityType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeprecateActivityTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -893,7 +973,7 @@ impl DeprecateActivityTypeInput {
         fn update_http_builder(
             input: &crate::input::DeprecateActivityTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -902,32 +982,34 @@ impl DeprecateActivityTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeprecateActivityTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.DeprecateActivityType",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deprecate_activity_type(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -950,15 +1032,15 @@ impl DeprecateActivityTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeprecateActivityType::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeprecateActivityType",
             "swf",
         ));
@@ -967,10 +1049,10 @@ impl DeprecateActivityTypeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -998,6 +1080,7 @@ pub mod deprecate_domain_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the domain to deprecate.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1007,7 +1090,7 @@ pub mod deprecate_domain_input {
             self,
         ) -> std::result::Result<
             crate::input::DeprecateDomainInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeprecateDomainInput { name: self.name })
         }
@@ -1024,16 +1107,16 @@ impl DeprecateDomainInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeprecateDomain,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeprecateDomainInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1041,7 +1124,7 @@ impl DeprecateDomainInput {
         fn update_http_builder(
             input: &crate::input::DeprecateDomainInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1050,32 +1133,32 @@ impl DeprecateDomainInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeprecateDomainInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.DeprecateDomain",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deprecate_domain(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1098,15 +1181,15 @@ impl DeprecateDomainInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeprecateDomain::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeprecateDomain",
             "swf",
         ));
@@ -1115,10 +1198,10 @@ impl DeprecateDomainInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1147,6 +1230,7 @@ pub mod deprecate_workflow_type_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain in which the workflow type is registered.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -1156,6 +1240,7 @@ pub mod deprecate_workflow_type_input {
             self.workflow_type = Some(input);
             self
         }
+        /// <p>The workflow type to deprecate.</p>
         pub fn set_workflow_type(
             mut self,
             input: std::option::Option<crate::model::WorkflowType>,
@@ -1168,7 +1253,7 @@ pub mod deprecate_workflow_type_input {
             self,
         ) -> std::result::Result<
             crate::input::DeprecateWorkflowTypeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeprecateWorkflowTypeInput {
                 domain: self.domain,
@@ -1188,16 +1273,16 @@ impl DeprecateWorkflowTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeprecateWorkflowType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeprecateWorkflowTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1205,7 +1290,7 @@ impl DeprecateWorkflowTypeInput {
         fn update_http_builder(
             input: &crate::input::DeprecateWorkflowTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1214,32 +1299,34 @@ impl DeprecateWorkflowTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeprecateWorkflowTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.DeprecateWorkflowType",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deprecate_workflow_type(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1262,15 +1349,15 @@ impl DeprecateWorkflowTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeprecateWorkflowType::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeprecateWorkflowType",
             "swf",
         ));
@@ -1279,10 +1366,10 @@ impl DeprecateWorkflowTypeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1311,6 +1398,7 @@ pub mod describe_activity_type_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain in which the activity type is registered.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -1322,6 +1410,9 @@ pub mod describe_activity_type_input {
             self.activity_type = Some(input);
             self
         }
+        /// <p>The activity type to get information about. Activity types are identified by the
+        /// <code>name</code> and <code>version</code> that were supplied when the activity was
+        /// registered.</p>
         pub fn set_activity_type(
             mut self,
             input: std::option::Option<crate::model::ActivityType>,
@@ -1334,7 +1425,7 @@ pub mod describe_activity_type_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeActivityTypeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeActivityTypeInput {
                 domain: self.domain,
@@ -1354,16 +1445,16 @@ impl DescribeActivityTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeActivityType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeActivityTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1371,7 +1462,7 @@ impl DescribeActivityTypeInput {
         fn update_http_builder(
             input: &crate::input::DescribeActivityTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1380,32 +1471,32 @@ impl DescribeActivityTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeActivityTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.DescribeActivityType",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_activity_type(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1428,15 +1519,15 @@ impl DescribeActivityTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeActivityType::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeActivityType",
             "swf",
         ));
@@ -1445,10 +1536,10 @@ impl DescribeActivityTypeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1476,6 +1567,7 @@ pub mod describe_domain_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the domain to describe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1485,7 +1577,7 @@ pub mod describe_domain_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeDomainInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeDomainInput { name: self.name })
         }
@@ -1502,16 +1594,16 @@ impl DescribeDomainInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeDomain,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeDomainInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1519,7 +1611,7 @@ impl DescribeDomainInput {
         fn update_http_builder(
             input: &crate::input::DescribeDomainInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1528,29 +1620,31 @@ impl DescribeDomainInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeDomainInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.DescribeDomain",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_domain(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1573,15 +1667,15 @@ impl DescribeDomainInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeDomain::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeDomain",
             "swf",
         ));
@@ -1590,10 +1684,10 @@ impl DescribeDomainInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1622,6 +1716,7 @@ pub mod describe_workflow_execution_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain containing the workflow execution.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -1631,6 +1726,7 @@ pub mod describe_workflow_execution_input {
             self.execution = Some(input);
             self
         }
+        /// <p>The workflow execution to describe.</p>
         pub fn set_execution(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecution>,
@@ -1643,7 +1739,7 @@ pub mod describe_workflow_execution_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeWorkflowExecutionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeWorkflowExecutionInput {
                 domain: self.domain,
@@ -1664,16 +1760,16 @@ impl DescribeWorkflowExecutionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkflowExecution,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeWorkflowExecutionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1681,7 +1777,7 @@ impl DescribeWorkflowExecutionInput {
         fn update_http_builder(
             input: &crate::input::DescribeWorkflowExecutionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1690,32 +1786,34 @@ impl DescribeWorkflowExecutionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeWorkflowExecutionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.DescribeWorkflowExecution",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_workflow_execution(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1738,15 +1836,15 @@ impl DescribeWorkflowExecutionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeWorkflowExecution::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeWorkflowExecution",
             "swf",
         ));
@@ -1755,10 +1853,10 @@ impl DescribeWorkflowExecutionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1787,6 +1885,7 @@ pub mod describe_workflow_type_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain in which this workflow type is registered.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -1796,6 +1895,7 @@ pub mod describe_workflow_type_input {
             self.workflow_type = Some(input);
             self
         }
+        /// <p>The workflow type to describe.</p>
         pub fn set_workflow_type(
             mut self,
             input: std::option::Option<crate::model::WorkflowType>,
@@ -1808,7 +1908,7 @@ pub mod describe_workflow_type_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeWorkflowTypeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeWorkflowTypeInput {
                 domain: self.domain,
@@ -1828,16 +1928,16 @@ impl DescribeWorkflowTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkflowType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeWorkflowTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1845,7 +1945,7 @@ impl DescribeWorkflowTypeInput {
         fn update_http_builder(
             input: &crate::input::DescribeWorkflowTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1854,32 +1954,32 @@ impl DescribeWorkflowTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeWorkflowTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.DescribeWorkflowType",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_workflow_type(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1902,15 +2002,15 @@ impl DescribeWorkflowTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeWorkflowType::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeWorkflowType",
             "swf",
         ));
@@ -1919,10 +2019,10 @@ impl DescribeWorkflowTypeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1954,6 +2054,7 @@ pub mod get_workflow_execution_history_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain containing the workflow execution.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -1963,6 +2064,7 @@ pub mod get_workflow_execution_history_input {
             self.execution = Some(input);
             self
         }
+        /// <p>Specifies the workflow execution for which to return the history.</p>
         pub fn set_execution(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecution>,
@@ -1975,12 +2077,21 @@ pub mod get_workflow_execution_history_input {
         /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
         /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
         /// exceeded its maximum lifetime</code>". </p>
+        ///
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
         /// in a single call. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>If <code>NextPageToken</code> is returned there are more results
+        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
+        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
+        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
+        /// exceeded its maximum lifetime</code>". </p>
+        ///
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
+        /// in a single call. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1994,6 +2105,8 @@ pub mod get_workflow_execution_history_input {
             self.maximum_page_size = Some(input);
             self
         }
+        /// <p>The maximum number of results that are returned per call.
+        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_page_size = input;
             self
@@ -2005,6 +2118,9 @@ pub mod get_workflow_execution_history_input {
             self.reverse_order = Some(input);
             self
         }
+        /// <p>When set to <code>true</code>, returns the events in reverse order. By default the
+        /// results are returned in ascending order of the <code>eventTimeStamp</code> of the
+        /// events.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.reverse_order = input;
             self
@@ -2014,7 +2130,7 @@ pub mod get_workflow_execution_history_input {
             self,
         ) -> std::result::Result<
             crate::input::GetWorkflowExecutionHistoryInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetWorkflowExecutionHistoryInput {
                 domain: self.domain,
@@ -2038,16 +2154,16 @@ impl GetWorkflowExecutionHistoryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetWorkflowExecutionHistory,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetWorkflowExecutionHistoryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2055,7 +2171,7 @@ impl GetWorkflowExecutionHistoryInput {
         fn update_http_builder(
             input: &crate::input::GetWorkflowExecutionHistoryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2064,30 +2180,30 @@ impl GetWorkflowExecutionHistoryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetWorkflowExecutionHistoryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.GetWorkflowExecutionHistory",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_workflow_execution_history(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_workflow_execution_history(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2110,15 +2226,15 @@ impl GetWorkflowExecutionHistoryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetWorkflowExecutionHistory::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetWorkflowExecutionHistory",
             "swf",
         ));
@@ -2127,10 +2243,10 @@ impl GetWorkflowExecutionHistoryInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2163,6 +2279,7 @@ pub mod list_activity_types_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain in which the activity types have been registered.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -2172,6 +2289,7 @@ pub mod list_activity_types_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>If specified, only lists the activity types that have this name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2181,6 +2299,7 @@ pub mod list_activity_types_input {
             self.registration_status = Some(input);
             self
         }
+        /// <p>Specifies the registration status of the activity types to list.</p>
         pub fn set_registration_status(
             mut self,
             input: std::option::Option<crate::model::RegistrationStatus>,
@@ -2193,12 +2312,21 @@ pub mod list_activity_types_input {
         /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
         /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
         /// exceeded its maximum lifetime</code>". </p>
+        ///
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
         /// in a single call. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>If <code>NextPageToken</code> is returned there are more results
+        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
+        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
+        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
+        /// exceeded its maximum lifetime</code>". </p>
+        ///
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
+        /// in a single call. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2212,6 +2340,8 @@ pub mod list_activity_types_input {
             self.maximum_page_size = Some(input);
             self
         }
+        /// <p>The maximum number of results that are returned per call.
+        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_page_size = input;
             self
@@ -2223,6 +2353,9 @@ pub mod list_activity_types_input {
             self.reverse_order = Some(input);
             self
         }
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the
+        /// results are returned in ascending alphabetical order by <code>name</code> of the activity
+        /// types.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.reverse_order = input;
             self
@@ -2232,7 +2365,7 @@ pub mod list_activity_types_input {
             self,
         ) -> std::result::Result<
             crate::input::ListActivityTypesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListActivityTypesInput {
                 domain: self.domain,
@@ -2256,16 +2389,16 @@ impl ListActivityTypesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListActivityTypes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListActivityTypesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2273,7 +2406,7 @@ impl ListActivityTypesInput {
         fn update_http_builder(
             input: &crate::input::ListActivityTypesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2282,32 +2415,32 @@ impl ListActivityTypesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListActivityTypesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.ListActivityTypes",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_activity_types(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2330,15 +2463,15 @@ impl ListActivityTypesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListActivityTypes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListActivityTypes",
             "swf",
         ));
@@ -2347,10 +2480,10 @@ impl ListActivityTypesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2387,6 +2520,7 @@ pub mod list_closed_workflow_executions_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain that contains the workflow executions to list.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -2403,6 +2537,14 @@ pub mod list_closed_workflow_executions_input {
             self.start_time_filter = Some(input);
             self
         }
+        /// <p>If specified, the workflow executions are included in the returned results based on
+        /// whether their start times are within the range specified by this filter. Also, if this
+        /// parameter is specified, the returned results are ordered by their start times.</p>
+        /// <note>
+        /// <p>
+        /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
+        /// must specify one of these in a request but not both.</p>
+        /// </note>
         pub fn set_start_time_filter(
             mut self,
             input: std::option::Option<crate::model::ExecutionTimeFilter>,
@@ -2422,6 +2564,14 @@ pub mod list_closed_workflow_executions_input {
             self.close_time_filter = Some(input);
             self
         }
+        /// <p>If specified, the workflow executions are included in the returned results based on
+        /// whether their close times are within the range specified by this filter. Also, if this
+        /// parameter is specified, the returned results are ordered by their close times.</p>
+        /// <note>
+        /// <p>
+        /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
+        /// must specify one of these in a request but not both.</p>
+        /// </note>
         pub fn set_close_time_filter(
             mut self,
             input: std::option::Option<crate::model::ExecutionTimeFilter>,
@@ -2441,6 +2591,14 @@ pub mod list_closed_workflow_executions_input {
             self.execution_filter = Some(input);
             self
         }
+        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter
+        /// are returned.</p>
+        /// <note>
+        /// <p>
+        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
+        /// request.</p>
+        /// </note>
         pub fn set_execution_filter(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecutionFilter>,
@@ -2461,6 +2619,15 @@ pub mod list_closed_workflow_executions_input {
             self.close_status_filter = Some(input);
             self
         }
+        /// <p>If specified, only workflow executions that match this <i>close
+        /// status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED
+        /// workflow executions are listed.</p>
+        /// <note>
+        /// <p>
+        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
+        /// request.</p>
+        /// </note>
         pub fn set_close_status_filter(
             mut self,
             input: std::option::Option<crate::model::CloseStatusFilter>,
@@ -2480,6 +2647,14 @@ pub mod list_closed_workflow_executions_input {
             self.type_filter = Some(input);
             self
         }
+        /// <p>If specified, only executions of the type specified in the filter are
+        /// returned.</p>
+        /// <note>
+        /// <p>
+        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
+        /// request.</p>
+        /// </note>
         pub fn set_type_filter(
             mut self,
             input: std::option::Option<crate::model::WorkflowTypeFilter>,
@@ -2498,6 +2673,13 @@ pub mod list_closed_workflow_executions_input {
             self.tag_filter = Some(input);
             self
         }
+        /// <p>If specified, only executions that have the matching tag are listed.</p>
+        /// <note>
+        /// <p>
+        /// <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+        /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
+        /// request.</p>
+        /// </note>
         pub fn set_tag_filter(
             mut self,
             input: std::option::Option<crate::model::TagFilter>,
@@ -2510,12 +2692,21 @@ pub mod list_closed_workflow_executions_input {
         /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
         /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
         /// exceeded its maximum lifetime</code>". </p>
+        ///
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
         /// in a single call. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>If <code>NextPageToken</code> is returned there are more results
+        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
+        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
+        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
+        /// exceeded its maximum lifetime</code>". </p>
+        ///
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
+        /// in a single call. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2529,6 +2720,8 @@ pub mod list_closed_workflow_executions_input {
             self.maximum_page_size = Some(input);
             self
         }
+        /// <p>The maximum number of results that are returned per call.
+        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_page_size = input;
             self
@@ -2540,6 +2733,9 @@ pub mod list_closed_workflow_executions_input {
             self.reverse_order = Some(input);
             self
         }
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
+        /// results are returned in descending order of the start or the close time of the
+        /// executions.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.reverse_order = input;
             self
@@ -2549,7 +2745,7 @@ pub mod list_closed_workflow_executions_input {
             self,
         ) -> std::result::Result<
             crate::input::ListClosedWorkflowExecutionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListClosedWorkflowExecutionsInput {
                 domain: self.domain,
@@ -2578,16 +2774,16 @@ impl ListClosedWorkflowExecutionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListClosedWorkflowExecutions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListClosedWorkflowExecutionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2595,7 +2791,7 @@ impl ListClosedWorkflowExecutionsInput {
         fn update_http_builder(
             input: &crate::input::ListClosedWorkflowExecutionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2604,30 +2800,30 @@ impl ListClosedWorkflowExecutionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListClosedWorkflowExecutionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.ListClosedWorkflowExecutions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_closed_workflow_executions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_closed_workflow_executions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2650,15 +2846,15 @@ impl ListClosedWorkflowExecutionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListClosedWorkflowExecutions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListClosedWorkflowExecutions",
             "swf",
         ));
@@ -2667,10 +2863,10 @@ impl ListClosedWorkflowExecutionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2701,12 +2897,21 @@ pub mod list_domains_input {
         /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
         /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
         /// exceeded its maximum lifetime</code>". </p>
+        ///
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
         /// in a single call. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>If <code>NextPageToken</code> is returned there are more results
+        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
+        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
+        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
+        /// exceeded its maximum lifetime</code>". </p>
+        ///
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
+        /// in a single call. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2719,6 +2924,7 @@ pub mod list_domains_input {
             self.registration_status = Some(input);
             self
         }
+        /// <p>Specifies the registration status of the domains to list.</p>
         pub fn set_registration_status(
             mut self,
             input: std::option::Option<crate::model::RegistrationStatus>,
@@ -2732,6 +2938,8 @@ pub mod list_domains_input {
             self.maximum_page_size = Some(input);
             self
         }
+        /// <p>The maximum number of results that are returned per call.
+        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_page_size = input;
             self
@@ -2743,6 +2951,9 @@ pub mod list_domains_input {
             self.reverse_order = Some(input);
             self
         }
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the
+        /// results are returned in ascending alphabetical order by <code>name</code> of the
+        /// domains.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.reverse_order = input;
             self
@@ -2750,8 +2961,10 @@ pub mod list_domains_input {
         /// Consumes the builder and constructs a [`ListDomainsInput`](crate::input::ListDomainsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListDomainsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListDomainsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListDomainsInput {
                 next_page_token: self.next_page_token,
                 registration_status: self.registration_status,
@@ -2772,16 +2985,16 @@ impl ListDomainsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListDomains,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListDomainsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2789,7 +3002,7 @@ impl ListDomainsInput {
         fn update_http_builder(
             input: &crate::input::ListDomainsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2798,29 +3011,31 @@ impl ListDomainsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListDomainsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.ListDomains",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_domains(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2843,22 +3058,27 @@ impl ListDomainsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListDomains::new())
-                .with_metadata(smithy_http::operation::Metadata::new("ListDomains", "swf"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDomains::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDomains",
+            "swf",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2893,6 +3113,7 @@ pub mod list_open_workflow_executions_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain that contains the workflow executions to list.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -2903,6 +3124,8 @@ pub mod list_open_workflow_executions_input {
             self.start_time_filter = Some(input);
             self
         }
+        /// <p>Workflow executions are included in the returned results based on whether their start
+        /// times are within the range specified by this filter.</p>
         pub fn set_start_time_filter(
             mut self,
             input: std::option::Option<crate::model::ExecutionTimeFilter>,
@@ -2921,6 +3144,13 @@ pub mod list_open_workflow_executions_input {
             self.type_filter = Some(input);
             self
         }
+        /// <p>If specified, only executions of the type specified in the filter are
+        /// returned.</p>
+        /// <note>
+        /// <p>
+        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
+        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// </note>
         pub fn set_type_filter(
             mut self,
             input: std::option::Option<crate::model::WorkflowTypeFilter>,
@@ -2938,6 +3168,12 @@ pub mod list_open_workflow_executions_input {
             self.tag_filter = Some(input);
             self
         }
+        /// <p>If specified, only executions that have the matching tag are listed.</p>
+        /// <note>
+        /// <p>
+        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
+        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// </note>
         pub fn set_tag_filter(
             mut self,
             input: std::option::Option<crate::model::TagFilter>,
@@ -2950,12 +3186,21 @@ pub mod list_open_workflow_executions_input {
         /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
         /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
         /// exceeded its maximum lifetime</code>". </p>
+        ///
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
         /// in a single call. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>If <code>NextPageToken</code> is returned there are more results
+        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
+        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
+        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
+        /// exceeded its maximum lifetime</code>". </p>
+        ///
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
+        /// in a single call. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2969,6 +3214,8 @@ pub mod list_open_workflow_executions_input {
             self.maximum_page_size = Some(input);
             self
         }
+        /// <p>The maximum number of results that are returned per call.
+        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_page_size = input;
             self
@@ -2979,6 +3226,8 @@ pub mod list_open_workflow_executions_input {
             self.reverse_order = Some(input);
             self
         }
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
+        /// results are returned in descending order of the start time of the executions.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.reverse_order = input;
             self
@@ -2994,6 +3243,13 @@ pub mod list_open_workflow_executions_input {
             self.execution_filter = Some(input);
             self
         }
+        /// <p>If specified, only workflow executions matching the workflow ID specified in the filter
+        /// are returned.</p>
+        /// <note>
+        /// <p>
+        /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
+        /// mutually exclusive. You can specify at most one of these in a request.</p>
+        /// </note>
         pub fn set_execution_filter(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecutionFilter>,
@@ -3006,7 +3262,7 @@ pub mod list_open_workflow_executions_input {
             self,
         ) -> std::result::Result<
             crate::input::ListOpenWorkflowExecutionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListOpenWorkflowExecutionsInput {
                 domain: self.domain,
@@ -3033,16 +3289,16 @@ impl ListOpenWorkflowExecutionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListOpenWorkflowExecutions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListOpenWorkflowExecutionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3050,7 +3306,7 @@ impl ListOpenWorkflowExecutionsInput {
         fn update_http_builder(
             input: &crate::input::ListOpenWorkflowExecutionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3059,30 +3315,30 @@ impl ListOpenWorkflowExecutionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListOpenWorkflowExecutionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.ListOpenWorkflowExecutions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_open_workflow_executions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_open_workflow_executions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3105,15 +3361,15 @@ impl ListOpenWorkflowExecutionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListOpenWorkflowExecutions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListOpenWorkflowExecutions",
             "swf",
         ));
@@ -3122,10 +3378,10 @@ impl ListOpenWorkflowExecutionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3153,6 +3409,7 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3162,7 +3419,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -3181,16 +3438,16 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3198,7 +3455,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3207,32 +3464,32 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.ListTagsForResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3255,15 +3512,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "swf",
         ));
@@ -3272,10 +3529,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3308,6 +3565,7 @@ pub mod list_workflow_types_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain in which the workflow types have been registered.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -3317,6 +3575,7 @@ pub mod list_workflow_types_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>If specified, lists the workflow type with this name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3326,6 +3585,7 @@ pub mod list_workflow_types_input {
             self.registration_status = Some(input);
             self
         }
+        /// <p>Specifies the registration status of the workflow types to list.</p>
         pub fn set_registration_status(
             mut self,
             input: std::option::Option<crate::model::RegistrationStatus>,
@@ -3338,12 +3598,21 @@ pub mod list_workflow_types_input {
         /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
         /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
         /// exceeded its maximum lifetime</code>". </p>
+        ///
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
         /// in a single call. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>If <code>NextPageToken</code> is returned there are more results
+        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
+        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
+        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
+        /// exceeded its maximum lifetime</code>". </p>
+        ///
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
+        /// in a single call. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3357,6 +3626,8 @@ pub mod list_workflow_types_input {
             self.maximum_page_size = Some(input);
             self
         }
+        /// <p>The maximum number of results that are returned per call.
+        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_page_size = input;
             self
@@ -3368,6 +3639,9 @@ pub mod list_workflow_types_input {
             self.reverse_order = Some(input);
             self
         }
+        /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
+        /// results are returned in ascending alphabetical order of the <code>name</code> of the workflow
+        /// types.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.reverse_order = input;
             self
@@ -3377,7 +3651,7 @@ pub mod list_workflow_types_input {
             self,
         ) -> std::result::Result<
             crate::input::ListWorkflowTypesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListWorkflowTypesInput {
                 domain: self.domain,
@@ -3401,16 +3675,16 @@ impl ListWorkflowTypesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListWorkflowTypes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListWorkflowTypesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3418,7 +3692,7 @@ impl ListWorkflowTypesInput {
         fn update_http_builder(
             input: &crate::input::ListWorkflowTypesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3427,32 +3701,32 @@ impl ListWorkflowTypesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListWorkflowTypesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.ListWorkflowTypes",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_workflow_types(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3475,15 +3749,15 @@ impl ListWorkflowTypesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListWorkflowTypes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListWorkflowTypes",
             "swf",
         ));
@@ -3492,10 +3766,10 @@ impl ListWorkflowTypesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3525,11 +3799,13 @@ pub mod poll_for_activity_task_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain that contains the task lists being polled.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
         }
         /// <p>Specifies the task list to poll for activity tasks.</p>
+        ///
         /// <p>The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
         /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
@@ -3538,6 +3814,12 @@ pub mod poll_for_activity_task_input {
             self.task_list = Some(input);
             self
         }
+        /// <p>Specifies the task list to poll for activity tasks.</p>
+        ///
+        /// <p>The specified string must not start or end with whitespace. It must not contain a
+        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+        /// not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
             self.task_list = input;
             self
@@ -3549,6 +3831,9 @@ pub mod poll_for_activity_task_input {
             self.identity = Some(input.into());
             self
         }
+        /// <p>Identity of the worker making the request, recorded in the
+        /// <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic
+        /// tracing when problems arise. The form of this identity is user defined.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
@@ -3558,7 +3843,7 @@ pub mod poll_for_activity_task_input {
             self,
         ) -> std::result::Result<
             crate::input::PollForActivityTaskInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PollForActivityTaskInput {
                 domain: self.domain,
@@ -3579,16 +3864,16 @@ impl PollForActivityTaskInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PollForActivityTask,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PollForActivityTaskInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3596,7 +3881,7 @@ impl PollForActivityTaskInput {
         fn update_http_builder(
             input: &crate::input::PollForActivityTaskInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3605,32 +3890,32 @@ impl PollForActivityTaskInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PollForActivityTaskInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.PollForActivityTask",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_poll_for_activity_task(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3653,15 +3938,15 @@ impl PollForActivityTaskInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PollForActivityTask::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PollForActivityTask",
             "swf",
         ));
@@ -3670,10 +3955,10 @@ impl PollForActivityTaskInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3706,11 +3991,13 @@ pub mod poll_for_decision_task_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain containing the task lists to poll.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
         }
         /// <p>Specifies the task list to poll for decision tasks.</p>
+        ///
         /// <p>The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
         /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
@@ -3719,6 +4006,12 @@ pub mod poll_for_decision_task_input {
             self.task_list = Some(input);
             self
         }
+        /// <p>Specifies the task list to poll for decision tasks.</p>
+        ///
+        /// <p>The specified string must not start or end with whitespace. It must not contain a
+        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+        /// not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
             self.task_list = input;
             self
@@ -3730,6 +4023,9 @@ pub mod poll_for_decision_task_input {
             self.identity = Some(input.into());
             self
         }
+        /// <p>Identity of the decider making the request, which is recorded in the
+        /// DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when
+        /// problems arise. The form of this identity is user defined.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
@@ -3739,6 +4035,7 @@ pub mod poll_for_decision_task_input {
         /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
         /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
         /// exceeded its maximum lifetime</code>". </p>
+        ///
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
         /// in a single call. </p>
         /// <note>
@@ -3750,6 +4047,19 @@ pub mod poll_for_decision_task_input {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>If <code>NextPageToken</code> is returned there are more results
+        /// available.  The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using
+        /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
+        /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
+        /// exceeded its maximum lifetime</code>". </p>
+        ///
+        /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
+        /// in a single call. </p>
+        /// <note>
+        /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a> to get the next page. You must call <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to retrieve
+        /// the next page of history records. Calling <a>PollForDecisionTask</a> with a
+        /// <code>nextPageToken</code> doesn't return a new decision task.</p>
+        /// </note>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3766,6 +4076,11 @@ pub mod poll_for_decision_task_input {
             self.maximum_page_size = Some(input);
             self
         }
+        /// <p>The maximum number of results that are returned per call.
+        /// Use <code>nextPageToken</code> to obtain further pages of results. </p>  
+        /// <p>This
+        /// is an upper limit only; the actual number of results returned per call may be fewer than the
+        /// specified maximum.</p>
         pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_page_size = input;
             self
@@ -3777,6 +4092,9 @@ pub mod poll_for_decision_task_input {
             self.reverse_order = Some(input);
             self
         }
+        /// <p>When set to <code>true</code>, returns the events in reverse order. By default the
+        /// results are returned in ascending order of the <code>eventTimestamp</code> of the
+        /// events.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.reverse_order = input;
             self
@@ -3786,7 +4104,7 @@ pub mod poll_for_decision_task_input {
             self,
         ) -> std::result::Result<
             crate::input::PollForDecisionTaskInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PollForDecisionTaskInput {
                 domain: self.domain,
@@ -3810,16 +4128,16 @@ impl PollForDecisionTaskInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PollForDecisionTask,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PollForDecisionTaskInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3827,7 +4145,7 @@ impl PollForDecisionTaskInput {
         fn update_http_builder(
             input: &crate::input::PollForDecisionTaskInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3836,32 +4154,32 @@ impl PollForDecisionTaskInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PollForDecisionTaskInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.PollForDecisionTask",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_poll_for_decision_task(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3884,15 +4202,15 @@ impl PollForDecisionTaskInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PollForDecisionTask::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PollForDecisionTask",
             "swf",
         ));
@@ -3901,10 +4219,10 @@ impl PollForDecisionTaskInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3939,6 +4257,13 @@ pub mod record_activity_task_heartbeat_input {
             self.task_token = Some(input.into());
             self
         }
+        /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
+        /// <important>
+        /// <p>
+        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
+        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
+        /// This enables it to provide its progress and respond with results. </p>
+        /// </important>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_token = input;
             self
@@ -3948,6 +4273,7 @@ pub mod record_activity_task_heartbeat_input {
             self.details = Some(input.into());
             self
         }
+        /// <p>If specified, contains details about the progress of the task.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input;
             self
@@ -3957,7 +4283,7 @@ pub mod record_activity_task_heartbeat_input {
             self,
         ) -> std::result::Result<
             crate::input::RecordActivityTaskHeartbeatInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RecordActivityTaskHeartbeatInput {
                 task_token: self.task_token,
@@ -3978,16 +4304,16 @@ impl RecordActivityTaskHeartbeatInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RecordActivityTaskHeartbeat,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RecordActivityTaskHeartbeatInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3995,7 +4321,7 @@ impl RecordActivityTaskHeartbeatInput {
         fn update_http_builder(
             input: &crate::input::RecordActivityTaskHeartbeatInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4004,30 +4330,30 @@ impl RecordActivityTaskHeartbeatInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RecordActivityTaskHeartbeatInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.RecordActivityTaskHeartbeat",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_record_activity_task_heartbeat(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_record_activity_task_heartbeat(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4050,15 +4376,15 @@ impl RecordActivityTaskHeartbeatInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RecordActivityTaskHeartbeat::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RecordActivityTaskHeartbeat",
             "swf",
         ));
@@ -4067,10 +4393,10 @@ impl RecordActivityTaskHeartbeatInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4107,11 +4433,13 @@ pub mod register_activity_type_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain in which this activity is to be registered.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
         }
         /// <p>The name of the activity type within the domain.</p>
+        ///
         /// <p>The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
         /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
@@ -4120,6 +4448,12 @@ pub mod register_activity_type_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the activity type within the domain.</p>
+        ///
+        /// <p>The specified string must not start or end with whitespace. It must not contain a
+        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+        /// not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4129,6 +4463,7 @@ pub mod register_activity_type_input {
         /// <p>The activity type consists of the name and version, the combination of which must be
         /// unique within the domain.</p>
         /// </note>
+        ///
         /// <p>The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
         /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
@@ -4137,6 +4472,16 @@ pub mod register_activity_type_input {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version of the activity type.</p>
+        /// <note>
+        /// <p>The activity type consists of the name and version, the combination of which must be
+        /// unique within the domain.</p>
+        /// </note>
+        ///
+        /// <p>The specified string must not start or end with whitespace. It must not contain a
+        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+        /// not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -4146,6 +4491,7 @@ pub mod register_activity_type_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A textual description of the activity type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -4163,6 +4509,12 @@ pub mod register_activity_type_input {
             self.default_task_start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>If set, specifies the default maximum duration that a worker can take to process tasks
+        /// of this activity type. This default can be overridden when scheduling an activity task using
+        /// the <code>ScheduleActivityTask</code>
+        /// <a>Decision</a>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to
+        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_default_task_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4187,6 +4539,16 @@ pub mod register_activity_type_input {
             self.default_task_heartbeat_timeout = Some(input.into());
             self
         }
+        /// <p>If set, specifies the default maximum time before which a worker processing a task of
+        /// this type must report progress by calling <a>RecordActivityTaskHeartbeat</a>. If
+        /// the timeout is exceeded, the activity task is automatically timed out. This default can be
+        /// overridden when scheduling an activity task using the <code>ScheduleActivityTask</code>
+        /// <a>Decision</a>. If the activity worker subsequently attempts to record a heartbeat
+        /// or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In
+        /// this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should
+        /// clean up the activity task.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to
+        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_default_task_heartbeat_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4202,6 +4564,10 @@ pub mod register_activity_type_input {
             self.default_task_list = Some(input);
             self
         }
+        /// <p>If set, specifies the default task list to use for scheduling tasks of this activity
+        /// type. This default task list is used if a task list isn't provided when a task is scheduled
+        /// through the <code>ScheduleActivityTask</code>
+        /// <a>Decision</a>.</p>
         pub fn set_default_task_list(
             mut self,
             input: std::option::Option<crate::model::TaskList>,
@@ -4220,6 +4586,13 @@ pub mod register_activity_type_input {
             self.default_task_priority = Some(input.into());
             self
         }
+        /// <p>The default task priority to assign to the activity type. If not assigned, then
+        /// <code>0</code> is used. Valid values are integers that range from Java's
+        /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
+        /// Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+        /// Priority</a> in the <i>in the
+        /// <i>Amazon SWF Developer Guide</i>.</i>.</p>
         pub fn set_default_task_priority(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4240,6 +4613,12 @@ pub mod register_activity_type_input {
             self.default_task_schedule_to_start_timeout = Some(input.into());
             self
         }
+        /// <p>If set, specifies the default maximum duration that a task of this activity type can
+        /// wait before being assigned to a worker. This default can be overridden when scheduling an
+        /// activity task using the <code>ScheduleActivityTask</code>
+        /// <a>Decision</a>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to
+        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_default_task_schedule_to_start_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4260,6 +4639,12 @@ pub mod register_activity_type_input {
             self.default_task_schedule_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>If set, specifies the default maximum duration for a task of this activity type. This
+        /// default can be overridden when scheduling an activity task using the
+        /// <code>ScheduleActivityTask</code>
+        /// <a>Decision</a>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to
+        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_default_task_schedule_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4272,7 +4657,7 @@ pub mod register_activity_type_input {
             self,
         ) -> std::result::Result<
             crate::input::RegisterActivityTypeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RegisterActivityTypeInput {
                 domain: self.domain,
@@ -4300,16 +4685,16 @@ impl RegisterActivityTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RegisterActivityType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RegisterActivityTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4317,7 +4702,7 @@ impl RegisterActivityTypeInput {
         fn update_http_builder(
             input: &crate::input::RegisterActivityTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4326,32 +4711,32 @@ impl RegisterActivityTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RegisterActivityTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.RegisterActivityType",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_register_activity_type(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4374,15 +4759,15 @@ impl RegisterActivityTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RegisterActivityType::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RegisterActivityType",
             "swf",
         ));
@@ -4391,10 +4776,10 @@ impl RegisterActivityTypeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4423,6 +4808,7 @@ pub mod register_domain_input {
     impl Builder {
         /// <p>Name of the domain to register. The name must be unique in the region that the domain
         /// is registered in.</p>
+        ///
         /// <p>The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
         /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
@@ -4431,6 +4817,13 @@ pub mod register_domain_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name of the domain to register. The name must be unique in the region that the domain
+        /// is registered in.</p>
+        ///
+        /// <p>The specified string must not start or end with whitespace. It must not contain a
+        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+        /// not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4440,6 +4833,7 @@ pub mod register_domain_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A text description of the domain.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -4460,6 +4854,15 @@ pub mod register_domain_input {
             self.workflow_execution_retention_period_in_days = Some(input.into());
             self
         }
+        /// <p>The duration (in days) that records and histories of workflow executions on the domain
+        /// should be kept by the service. After the retention period, the workflow execution isn't
+        /// available in the results of visibility calls.</p>
+        /// <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow
+        /// execution history isn't retained. As soon as the workflow execution completes, the execution
+        /// record and its history are deleted.</p>
+        /// <p>The maximum workflow execution retention period is 90 days. For more information about
+        /// Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the
+        /// <i>Amazon SWF Developer Guide</i>.</p>
         pub fn set_workflow_execution_retention_period_in_days(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4467,12 +4870,20 @@ pub mod register_domain_input {
             self.workflow_execution_retention_period_in_days = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags to be added when registering a domain.</p>
+        /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Tags to be added when registering a domain.</p>
+        /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
@@ -4485,7 +4896,7 @@ pub mod register_domain_input {
             self,
         ) -> std::result::Result<
             crate::input::RegisterDomainInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RegisterDomainInput {
                 name: self.name,
@@ -4508,16 +4919,16 @@ impl RegisterDomainInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RegisterDomain,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RegisterDomainInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4525,7 +4936,7 @@ impl RegisterDomainInput {
         fn update_http_builder(
             input: &crate::input::RegisterDomainInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4534,29 +4945,31 @@ impl RegisterDomainInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RegisterDomainInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.RegisterDomain",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_register_domain(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4579,15 +4992,15 @@ impl RegisterDomainInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RegisterDomain::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RegisterDomain",
             "swf",
         ));
@@ -4596,10 +5009,10 @@ impl RegisterDomainInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4637,11 +5050,13 @@ pub mod register_workflow_type_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain in which to register the workflow type.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
         }
         /// <p>The name of the workflow type.</p>
+        ///
         /// <p>The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
         /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
@@ -4650,6 +5065,12 @@ pub mod register_workflow_type_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the workflow type.</p>
+        ///
+        /// <p>The specified string must not start or end with whitespace. It must not contain a
+        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+        /// not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4660,6 +5081,7 @@ pub mod register_workflow_type_input {
         /// unique within the domain. To get a list of all currently registered workflow types, use the
         /// <a>ListWorkflowTypes</a> action.</p>
         /// </note>
+        ///
         /// <p>The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
         /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
@@ -4668,6 +5090,17 @@ pub mod register_workflow_type_input {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version of the workflow type.</p>
+        /// <note>
+        /// <p>The workflow type consists of the name and version, the combination of which must be
+        /// unique within the domain. To get a list of all currently registered workflow types, use the
+        /// <a>ListWorkflowTypes</a> action.</p>
+        /// </note>
+        ///
+        /// <p>The specified string must not start or end with whitespace. It must not contain a
+        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+        /// not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -4677,6 +5110,7 @@ pub mod register_workflow_type_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>Textual description of the workflow type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -4693,6 +5127,11 @@ pub mod register_workflow_type_input {
             self.default_task_start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>If set, specifies the default maximum duration of decision tasks for this workflow
+        /// type. This default can be overridden when starting a workflow execution using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
+        /// <a>Decision</a>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to
+        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_default_task_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4703,6 +5142,7 @@ pub mod register_workflow_type_input {
         /// <p>If set, specifies the default maximum duration for executions of this workflow type.
         /// You can override this default when starting an execution through the <a>StartWorkflowExecution</a> Action or <code>StartChildWorkflowExecution</code>
         /// <a>Decision</a>.</p>
+        ///
         /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike
         /// some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for
         /// <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time
@@ -4715,6 +5155,15 @@ pub mod register_workflow_type_input {
             self.default_execution_start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>If set, specifies the default maximum duration for executions of this workflow type.
+        /// You can override this default when starting an execution through the <a>StartWorkflowExecution</a> Action or <code>StartChildWorkflowExecution</code>
+        /// <a>Decision</a>.</p>
+        ///
+        /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike
+        /// some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for
+        /// <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time
+        /// that a workflow execution can run. Exceeding this limit always causes the workflow execution
+        /// to time out.</p>
         pub fn set_default_execution_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4731,6 +5180,11 @@ pub mod register_workflow_type_input {
             self.default_task_list = Some(input);
             self
         }
+        /// <p>If set, specifies the default task list to use for scheduling decision tasks for
+        /// executions of this workflow type. This default is used only if a task list isn't provided when
+        /// starting the execution through the <a>StartWorkflowExecution</a> Action or
+        /// <code>StartChildWorkflowExecution</code>
+        /// <a>Decision</a>.</p>
         pub fn set_default_task_list(
             mut self,
             input: std::option::Option<crate::model::TaskList>,
@@ -4748,6 +5202,12 @@ pub mod register_workflow_type_input {
             self.default_task_priority = Some(input.into());
             self
         }
+        /// <p>The default task priority to assign to the workflow type. If not assigned, then
+        /// <code>0</code> is used. Valid values are integers that range from Java's
+        /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
+        /// Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+        /// Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn set_default_task_priority(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4782,6 +5242,29 @@ pub mod register_workflow_type_input {
             self.default_child_policy = Some(input);
             self
         }
+        /// <p>If set, specifies the default policy to use for the child workflow executions when a
+        /// workflow execution of this type is terminated, by calling the <a>TerminateWorkflowExecution</a> action explicitly or due to an expired timeout. This
+        /// default can be overridden when starting a workflow execution using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
+        /// <a>Decision</a>.</p>
+        /// <p>The supported child policies are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TERMINATE</code> – The child executions are terminated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
+        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
+        /// history. It is up to the decider to take appropriate actions when it receives an execution
+        /// history with this event.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ABANDON</code> – No action is taken. The child executions continue to
+        /// run.</p>
+        /// </li>
+        /// </ul>
         pub fn set_default_child_policy(
             mut self,
             input: std::option::Option<crate::model::ChildPolicy>,
@@ -4800,6 +5283,13 @@ pub mod register_workflow_type_input {
             self.default_lambda_role = Some(input.into());
             self
         }
+        /// <p>The default IAM role attached to this workflow type.</p>
+        /// <note>
+        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you
+        /// don't specify an IAM role when you start this workflow type, the default Lambda role is
+        /// attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the
+        /// <i>Amazon SWF Developer Guide</i>.</p>
+        /// </note>
         pub fn set_default_lambda_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4812,7 +5302,7 @@ pub mod register_workflow_type_input {
             self,
         ) -> std::result::Result<
             crate::input::RegisterWorkflowTypeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RegisterWorkflowTypeInput {
                 domain: self.domain,
@@ -4841,16 +5331,16 @@ impl RegisterWorkflowTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RegisterWorkflowType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RegisterWorkflowTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4858,7 +5348,7 @@ impl RegisterWorkflowTypeInput {
         fn update_http_builder(
             input: &crate::input::RegisterWorkflowTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4867,32 +5357,32 @@ impl RegisterWorkflowTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RegisterWorkflowTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.RegisterWorkflowType",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_register_workflow_type(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4915,15 +5405,15 @@ impl RegisterWorkflowTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RegisterWorkflowType::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RegisterWorkflowType",
             "swf",
         ));
@@ -4932,10 +5422,10 @@ impl RegisterWorkflowTypeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4965,6 +5455,7 @@ pub mod request_cancel_workflow_execution_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain containing the workflow execution to cancel.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -4974,6 +5465,7 @@ pub mod request_cancel_workflow_execution_input {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>The workflowId of the workflow execution to cancel.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -4983,6 +5475,7 @@ pub mod request_cancel_workflow_execution_input {
             self.run_id = Some(input.into());
             self
         }
+        /// <p>The runId of the workflow execution to cancel.</p>
         pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.run_id = input;
             self
@@ -4992,7 +5485,7 @@ pub mod request_cancel_workflow_execution_input {
             self,
         ) -> std::result::Result<
             crate::input::RequestCancelWorkflowExecutionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RequestCancelWorkflowExecutionInput {
                 domain: self.domain,
@@ -5014,16 +5507,16 @@ impl RequestCancelWorkflowExecutionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RequestCancelWorkflowExecution,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RequestCancelWorkflowExecutionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5031,7 +5524,7 @@ impl RequestCancelWorkflowExecutionInput {
         fn update_http_builder(
             input: &crate::input::RequestCancelWorkflowExecutionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5040,30 +5533,30 @@ impl RequestCancelWorkflowExecutionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RequestCancelWorkflowExecutionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.RequestCancelWorkflowExecution",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_request_cancel_workflow_execution(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_request_cancel_workflow_execution(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5086,15 +5579,15 @@ impl RequestCancelWorkflowExecutionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RequestCancelWorkflowExecution::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RequestCancelWorkflowExecution",
             "swf",
         ));
@@ -5103,10 +5596,10 @@ impl RequestCancelWorkflowExecutionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5141,6 +5634,13 @@ pub mod respond_activity_task_canceled_input {
             self.task_token = Some(input.into());
             self
         }
+        /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
+        /// <important>
+        /// <p>
+        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
+        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
+        /// This enables it to provide its progress and respond with results.</p>
+        /// </important>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_token = input;
             self
@@ -5150,6 +5650,7 @@ pub mod respond_activity_task_canceled_input {
             self.details = Some(input.into());
             self
         }
+        /// <p> Information about the cancellation.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input;
             self
@@ -5159,7 +5660,7 @@ pub mod respond_activity_task_canceled_input {
             self,
         ) -> std::result::Result<
             crate::input::RespondActivityTaskCanceledInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RespondActivityTaskCanceledInput {
                 task_token: self.task_token,
@@ -5180,16 +5681,16 @@ impl RespondActivityTaskCanceledInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RespondActivityTaskCanceled,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RespondActivityTaskCanceledInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5197,7 +5698,7 @@ impl RespondActivityTaskCanceledInput {
         fn update_http_builder(
             input: &crate::input::RespondActivityTaskCanceledInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5206,30 +5707,30 @@ impl RespondActivityTaskCanceledInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RespondActivityTaskCanceledInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.RespondActivityTaskCanceled",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_respond_activity_task_canceled(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_respond_activity_task_canceled(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5252,15 +5753,15 @@ impl RespondActivityTaskCanceledInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RespondActivityTaskCanceled::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RespondActivityTaskCanceled",
             "swf",
         ));
@@ -5269,10 +5770,10 @@ impl RespondActivityTaskCanceledInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5307,6 +5808,13 @@ pub mod respond_activity_task_completed_input {
             self.task_token = Some(input.into());
             self
         }
+        /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
+        /// <important>
+        /// <p>
+        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
+        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
+        /// This enables it to provide its progress and respond with results.</p>
+        /// </important>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_token = input;
             self
@@ -5317,6 +5825,8 @@ pub mod respond_activity_task_completed_input {
             self.result = Some(input.into());
             self
         }
+        /// <p>The result of the activity task. It is a free form string that is implementation
+        /// specific.</p>
         pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.result = input;
             self
@@ -5326,7 +5836,7 @@ pub mod respond_activity_task_completed_input {
             self,
         ) -> std::result::Result<
             crate::input::RespondActivityTaskCompletedInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RespondActivityTaskCompletedInput {
                 task_token: self.task_token,
@@ -5347,16 +5857,16 @@ impl RespondActivityTaskCompletedInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RespondActivityTaskCompleted,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RespondActivityTaskCompletedInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5364,7 +5874,7 @@ impl RespondActivityTaskCompletedInput {
         fn update_http_builder(
             input: &crate::input::RespondActivityTaskCompletedInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5373,30 +5883,30 @@ impl RespondActivityTaskCompletedInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RespondActivityTaskCompletedInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.RespondActivityTaskCompleted",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_respond_activity_task_completed(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_respond_activity_task_completed(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5419,15 +5929,15 @@ impl RespondActivityTaskCompletedInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RespondActivityTaskCompleted::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RespondActivityTaskCompleted",
             "swf",
         ));
@@ -5436,10 +5946,10 @@ impl RespondActivityTaskCompletedInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5465,6 +5975,7 @@ pub mod respond_activity_task_failed_input {
     }
     impl Builder {
         /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
+        ///
         /// <important>
         /// <p>
         /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
@@ -5475,6 +5986,14 @@ pub mod respond_activity_task_failed_input {
             self.task_token = Some(input.into());
             self
         }
+        /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
+        ///
+        /// <important>
+        /// <p>
+        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
+        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
+        /// This enables it to provide its progress and respond with results.</p>
+        /// </important>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_token = input;
             self
@@ -5484,6 +6003,7 @@ pub mod respond_activity_task_failed_input {
             self.reason = Some(input.into());
             self
         }
+        /// <p>Description of the error that may assist in diagnostics.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -5493,6 +6013,7 @@ pub mod respond_activity_task_failed_input {
             self.details = Some(input.into());
             self
         }
+        /// <p> Detailed information about the failure.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input;
             self
@@ -5502,7 +6023,7 @@ pub mod respond_activity_task_failed_input {
             self,
         ) -> std::result::Result<
             crate::input::RespondActivityTaskFailedInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RespondActivityTaskFailedInput {
                 task_token: self.task_token,
@@ -5524,16 +6045,16 @@ impl RespondActivityTaskFailedInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RespondActivityTaskFailed,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RespondActivityTaskFailedInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5541,7 +6062,7 @@ impl RespondActivityTaskFailedInput {
         fn update_http_builder(
             input: &crate::input::RespondActivityTaskFailedInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5550,32 +6071,34 @@ impl RespondActivityTaskFailedInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RespondActivityTaskFailedInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.RespondActivityTaskFailed",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_respond_activity_task_failed(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5598,15 +6121,15 @@ impl RespondActivityTaskFailedInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RespondActivityTaskFailed::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RespondActivityTaskFailed",
             "swf",
         ));
@@ -5615,10 +6138,10 @@ impl RespondActivityTaskFailedInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5654,16 +6177,33 @@ pub mod respond_decision_task_completed_input {
             self.task_token = Some(input.into());
             self
         }
+        /// <p>The <code>taskToken</code> from the <a>DecisionTask</a>.</p>
+        /// <important>
+        /// <p>
+        /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
+        /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
+        /// This enables it to provide its progress and respond with results.</p>
+        /// </important>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_token = input;
             self
         }
+        /// Appends an item to `decisions`.
+        ///
+        /// To override the contents of this collection use [`set_decisions`](Self::set_decisions).
+        ///
+        /// <p>The list of decisions (possibly empty) made by the decider while processing this
+        /// decision task. See the docs for the <a>Decision</a> structure for
+        /// details.</p>
         pub fn decisions(mut self, input: impl Into<crate::model::Decision>) -> Self {
             let mut v = self.decisions.unwrap_or_default();
             v.push(input.into());
             self.decisions = Some(v);
             self
         }
+        /// <p>The list of decisions (possibly empty) made by the decider while processing this
+        /// decision task. See the docs for the <a>Decision</a> structure for
+        /// details.</p>
         pub fn set_decisions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Decision>>,
@@ -5676,6 +6216,7 @@ pub mod respond_decision_task_completed_input {
             self.execution_context = Some(input.into());
             self
         }
+        /// <p>User defined context to add to workflow execution.</p>
         pub fn set_execution_context(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5688,7 +6229,7 @@ pub mod respond_decision_task_completed_input {
             self,
         ) -> std::result::Result<
             crate::input::RespondDecisionTaskCompletedInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RespondDecisionTaskCompletedInput {
                 task_token: self.task_token,
@@ -5710,16 +6251,16 @@ impl RespondDecisionTaskCompletedInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RespondDecisionTaskCompleted,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RespondDecisionTaskCompletedInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5727,7 +6268,7 @@ impl RespondDecisionTaskCompletedInput {
         fn update_http_builder(
             input: &crate::input::RespondDecisionTaskCompletedInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5736,30 +6277,30 @@ impl RespondDecisionTaskCompletedInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RespondDecisionTaskCompletedInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.RespondDecisionTaskCompleted",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_respond_decision_task_completed(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_respond_decision_task_completed(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5782,15 +6323,15 @@ impl RespondDecisionTaskCompletedInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RespondDecisionTaskCompleted::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RespondDecisionTaskCompleted",
             "swf",
         ));
@@ -5799,10 +6340,10 @@ impl RespondDecisionTaskCompletedInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5834,6 +6375,7 @@ pub mod signal_workflow_execution_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain containing the workflow execution to signal.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -5843,6 +6385,7 @@ pub mod signal_workflow_execution_input {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>The workflowId of the workflow execution to signal.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -5852,6 +6395,7 @@ pub mod signal_workflow_execution_input {
             self.run_id = Some(input.into());
             self
         }
+        /// <p>The runId of the workflow execution to signal.</p>
         pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.run_id = input;
             self
@@ -5861,6 +6405,7 @@ pub mod signal_workflow_execution_input {
             self.signal_name = Some(input.into());
             self
         }
+        /// <p>The name of the signal. This name must be meaningful to the target workflow.</p>
         pub fn set_signal_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.signal_name = input;
             self
@@ -5871,6 +6416,8 @@ pub mod signal_workflow_execution_input {
             self.input = Some(input.into());
             self
         }
+        /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target
+        /// workflow execution's history.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input;
             self
@@ -5880,7 +6427,7 @@ pub mod signal_workflow_execution_input {
             self,
         ) -> std::result::Result<
             crate::input::SignalWorkflowExecutionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SignalWorkflowExecutionInput {
                 domain: self.domain,
@@ -5904,16 +6451,16 @@ impl SignalWorkflowExecutionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SignalWorkflowExecution,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SignalWorkflowExecutionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5921,7 +6468,7 @@ impl SignalWorkflowExecutionInput {
         fn update_http_builder(
             input: &crate::input::SignalWorkflowExecutionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5930,32 +6477,34 @@ impl SignalWorkflowExecutionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SignalWorkflowExecutionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.SignalWorkflowExecution",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_signal_workflow_execution(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5978,15 +6527,15 @@ impl SignalWorkflowExecutionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SignalWorkflowExecution::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SignalWorkflowExecution",
             "swf",
         ));
@@ -5995,10 +6544,10 @@ impl SignalWorkflowExecutionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6036,6 +6585,7 @@ pub mod start_workflow_execution_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain in which the workflow execution is created.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -6045,6 +6595,7 @@ pub mod start_workflow_execution_input {
         /// if a workflow execution is logically a <i>restart</i> of a previous execution.
         /// You cannot have two open workflow executions with the same <code>workflowId</code> at the same
         /// time within the same domain.</p>
+        ///
         /// <p>The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
         /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
@@ -6053,6 +6604,16 @@ pub mod start_workflow_execution_input {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>The user defined identifier associated with the workflow execution. You can use this to
+        /// associate a custom identifier with the workflow execution. You may specify the same identifier
+        /// if a workflow execution is logically a <i>restart</i> of a previous execution.
+        /// You cannot have two open workflow executions with the same <code>workflowId</code> at the same
+        /// time within the same domain.</p>
+        ///
+        /// <p>The specified string must not start or end with whitespace. It must not contain a
+        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+        /// not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -6062,6 +6623,7 @@ pub mod start_workflow_execution_input {
             self.workflow_type = Some(input);
             self
         }
+        /// <p>The type of the workflow to start.</p>
         pub fn set_workflow_type(
             mut self,
             input: std::option::Option<crate::model::WorkflowType>,
@@ -6077,6 +6639,7 @@ pub mod start_workflow_execution_input {
         /// workflow type or through this parameter. If neither this parameter is set nor a default task
         /// list was specified at registration time then a fault is returned.</p>
         /// </note>
+        ///
         /// <p>The specified string must not start or end with whitespace. It must not contain a
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
         /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
@@ -6085,6 +6648,19 @@ pub mod start_workflow_execution_input {
             self.task_list = Some(input);
             self
         }
+        /// <p>The task list to use for the decision tasks generated for this workflow execution. This
+        /// overrides the <code>defaultTaskList</code> specified when registering the workflow
+        /// type.</p>
+        /// <note>
+        /// <p>A task list for this workflow execution must be specified either as a default for the
+        /// workflow type or through this parameter. If neither this parameter is set nor a default task
+        /// list was specified at registration time then a fault is returned.</p>
+        /// </note>
+        ///
+        /// <p>The specified string must not start or end with whitespace. It must not contain a
+        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
+        /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+        /// not <i>be</i> the literal string <code>arn</code>.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
             self.task_list = input;
             self
@@ -6100,6 +6676,13 @@ pub mod start_workflow_execution_input {
             self.task_priority = Some(input.into());
             self
         }
+        /// <p>The task priority to use for this workflow execution. This overrides any default
+        /// priority that was assigned when the workflow type was registered. If not set, then the default
+        /// task priority for the workflow type is used. Valid values are integers that range from Java's
+        /// <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
+        /// Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+        /// Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn set_task_priority(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6114,17 +6697,22 @@ pub mod start_workflow_execution_input {
             self.input = Some(input.into());
             self
         }
+        /// <p>The input for the workflow execution. This is a free form string which should be
+        /// meaningful to the workflow you are starting. This <code>input</code> is made available to the
+        /// new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input;
             self
         }
         /// <p>The total duration for this workflow execution. This overrides the
         /// defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
+        ///
         /// <p>The duration is specified in seconds; an integer greater than or equal to
         /// <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some
         /// of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this
         /// timeout; there is a one-year max limit on the time that a workflow execution can
         /// run.</p>
+        ///
         /// <note>
         /// <p>An execution start-to-close timeout must be specified either through this parameter
         /// or as a default when the workflow type is registered. If neither this parameter nor a
@@ -6137,6 +6725,20 @@ pub mod start_workflow_execution_input {
             self.execution_start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>The total duration for this workflow execution. This overrides the
+        /// defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
+        ///
+        /// <p>The duration is specified in seconds; an integer greater than or equal to
+        /// <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some
+        /// of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this
+        /// timeout; there is a one-year max limit on the time that a workflow execution can
+        /// run.</p>
+        ///
+        /// <note>
+        /// <p>An execution start-to-close timeout must be specified either through this parameter
+        /// or as a default when the workflow type is registered. If neither this parameter nor a
+        /// default execution start-to-close timeout is specified, a fault is returned.</p>
+        /// </note>
         pub fn set_execution_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6144,12 +6746,22 @@ pub mod start_workflow_execution_input {
             self.execution_start_to_close_timeout = input;
             self
         }
+        /// Appends an item to `tag_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+        ///
+        /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of
+        /// 5 tags. You can list workflow executions with a specific tag by calling <a>ListOpenWorkflowExecutions</a> or <a>ListClosedWorkflowExecutions</a> and
+        /// specifying a <a>TagFilter</a>.</p>
         pub fn tag_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
             v.push(input.into());
             self.tag_list = Some(v);
             self
         }
+        /// <p>The list of tags to associate with the workflow execution. You can specify a maximum of
+        /// 5 tags. You can list workflow executions with a specific tag by calling <a>ListOpenWorkflowExecutions</a> or <a>ListClosedWorkflowExecutions</a> and
+        /// specifying a <a>TagFilter</a>.</p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6175,6 +6787,17 @@ pub mod start_workflow_execution_input {
             self.task_start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This
+        /// parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering
+        /// the workflow type using <a>RegisterWorkflowType</a>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to
+        /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <note>
+        /// <p>A task start-to-close timeout for this workflow execution must be specified either as
+        /// a default for the workflow type or through this parameter. If neither this parameter is set
+        /// nor a default task start-to-close timeout was specified at registration time then a fault is
+        /// returned.</p>
+        /// </note>
         pub fn set_task_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6214,6 +6837,34 @@ pub mod start_workflow_execution_input {
             self.child_policy = Some(input);
             self
         }
+        /// <p>If set, specifies the policy to use for the child workflow executions of this workflow
+        /// execution if it is terminated, by calling the <a>TerminateWorkflowExecution</a>
+        /// action explicitly or due to an expired timeout. This policy overrides the default child policy
+        /// specified when registering the workflow type using <a>RegisterWorkflowType</a>.</p>
+        /// <p>The supported child policies are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TERMINATE</code> – The child executions are terminated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
+        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
+        /// history. It is up to the decider to take appropriate actions when it receives an execution
+        /// history with this event.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ABANDON</code> – No action is taken. The child executions continue to
+        /// run.</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>A child policy for this workflow execution must be specified either as a default for
+        /// the workflow type or through this parameter. If neither this parameter is set nor a default
+        /// child policy was specified at registration time then a fault is returned.</p>
+        /// </note>
         pub fn set_child_policy(
             mut self,
             input: std::option::Option<crate::model::ChildPolicy>,
@@ -6232,6 +6883,13 @@ pub mod start_workflow_execution_input {
             self.lambda_role = Some(input.into());
             self
         }
+        /// <p>The IAM role to attach to this workflow execution.</p>
+        /// <note>
+        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you
+        /// don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a
+        /// <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the
+        /// <i>Amazon SWF Developer Guide</i>.</p>
+        /// </note>
         pub fn set_lambda_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lambda_role = input;
             self
@@ -6241,7 +6899,7 @@ pub mod start_workflow_execution_input {
             self,
         ) -> std::result::Result<
             crate::input::StartWorkflowExecutionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartWorkflowExecutionInput {
                 domain: self.domain,
@@ -6270,16 +6928,16 @@ impl StartWorkflowExecutionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartWorkflowExecution,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartWorkflowExecutionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6287,7 +6945,7 @@ impl StartWorkflowExecutionInput {
         fn update_http_builder(
             input: &crate::input::StartWorkflowExecutionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6296,32 +6954,34 @@ impl StartWorkflowExecutionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartWorkflowExecutionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.StartWorkflowExecution",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_workflow_execution(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6344,15 +7004,15 @@ impl StartWorkflowExecutionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartWorkflowExecution::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartWorkflowExecution",
             "swf",
         ));
@@ -6361,10 +7021,10 @@ impl StartWorkflowExecutionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6393,16 +7053,25 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of tags to add to a domain. </p>
+        /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The list of tags to add to a domain. </p>
+        /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
@@ -6413,8 +7082,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -6433,16 +7104,16 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6450,7 +7121,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6459,29 +7130,31 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.TagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6504,22 +7177,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new("TagResource", "swf"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "swf",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6552,6 +7230,7 @@ pub mod terminate_workflow_execution_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The domain of the workflow execution to terminate.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -6561,6 +7240,7 @@ pub mod terminate_workflow_execution_input {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>The workflowId of the workflow execution to terminate.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -6570,6 +7250,7 @@ pub mod terminate_workflow_execution_input {
             self.run_id = Some(input.into());
             self
         }
+        /// <p>The runId of the workflow execution to terminate.</p>
         pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.run_id = input;
             self
@@ -6579,6 +7260,7 @@ pub mod terminate_workflow_execution_input {
             self.reason = Some(input.into());
             self
         }
+        /// <p> A descriptive reason for terminating the workflow execution.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -6588,6 +7270,7 @@ pub mod terminate_workflow_execution_input {
             self.details = Some(input.into());
             self
         }
+        /// <p> Details for terminating the workflow execution.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input;
             self
@@ -6623,6 +7306,33 @@ pub mod terminate_workflow_execution_input {
             self.child_policy = Some(input);
             self
         }
+        /// <p>If set, specifies the policy to use for the child workflow executions of the workflow
+        /// execution being terminated. This policy overrides the child policy specified for the workflow
+        /// execution at registration time or when starting the execution.</p>
+        /// <p>The supported child policies are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TERMINATE</code> – The child executions are terminated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
+        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its
+        /// history. It is up to the decider to take appropriate actions when it receives an execution
+        /// history with this event.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ABANDON</code> – No action is taken. The child executions continue to
+        /// run.</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>A child policy for this workflow execution must be specified either as a default for
+        /// the workflow type or through this parameter. If neither this parameter is set nor a default
+        /// child policy was specified at registration time then a fault is returned.</p>
+        /// </note>
         pub fn set_child_policy(
             mut self,
             input: std::option::Option<crate::model::ChildPolicy>,
@@ -6635,7 +7345,7 @@ pub mod terminate_workflow_execution_input {
             self,
         ) -> std::result::Result<
             crate::input::TerminateWorkflowExecutionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::TerminateWorkflowExecutionInput {
                 domain: self.domain,
@@ -6660,16 +7370,16 @@ impl TerminateWorkflowExecutionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TerminateWorkflowExecution,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TerminateWorkflowExecutionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6677,7 +7387,7 @@ impl TerminateWorkflowExecutionInput {
         fn update_http_builder(
             input: &crate::input::TerminateWorkflowExecutionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6686,32 +7396,34 @@ impl TerminateWorkflowExecutionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TerminateWorkflowExecutionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.TerminateWorkflowExecution",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_terminate_workflow_execution(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6734,15 +7446,15 @@ impl TerminateWorkflowExecutionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::TerminateWorkflowExecution::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "TerminateWorkflowExecution",
             "swf",
         ));
@@ -6751,10 +7463,10 @@ impl TerminateWorkflowExecutionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6783,6 +7495,7 @@ pub mod undeprecate_activity_type_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain of the deprecated activity type.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -6792,6 +7505,7 @@ pub mod undeprecate_activity_type_input {
             self.activity_type = Some(input);
             self
         }
+        /// <p>The activity type to undeprecate.</p>
         pub fn set_activity_type(
             mut self,
             input: std::option::Option<crate::model::ActivityType>,
@@ -6804,7 +7518,7 @@ pub mod undeprecate_activity_type_input {
             self,
         ) -> std::result::Result<
             crate::input::UndeprecateActivityTypeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UndeprecateActivityTypeInput {
                 domain: self.domain,
@@ -6825,16 +7539,16 @@ impl UndeprecateActivityTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UndeprecateActivityType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UndeprecateActivityTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6842,7 +7556,7 @@ impl UndeprecateActivityTypeInput {
         fn update_http_builder(
             input: &crate::input::UndeprecateActivityTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6851,32 +7565,34 @@ impl UndeprecateActivityTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UndeprecateActivityTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.UndeprecateActivityType",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_undeprecate_activity_type(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6899,15 +7615,15 @@ impl UndeprecateActivityTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UndeprecateActivityType::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UndeprecateActivityType",
             "swf",
         ));
@@ -6916,10 +7632,10 @@ impl UndeprecateActivityTypeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6947,6 +7663,7 @@ pub mod undeprecate_domain_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the domain of the deprecated workflow type.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6956,7 +7673,7 @@ pub mod undeprecate_domain_input {
             self,
         ) -> std::result::Result<
             crate::input::UndeprecateDomainInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UndeprecateDomainInput { name: self.name })
         }
@@ -6973,16 +7690,16 @@ impl UndeprecateDomainInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UndeprecateDomain,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UndeprecateDomainInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6990,7 +7707,7 @@ impl UndeprecateDomainInput {
         fn update_http_builder(
             input: &crate::input::UndeprecateDomainInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6999,32 +7716,32 @@ impl UndeprecateDomainInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UndeprecateDomainInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.UndeprecateDomain",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_undeprecate_domain(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7047,15 +7764,15 @@ impl UndeprecateDomainInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UndeprecateDomain::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UndeprecateDomain",
             "swf",
         ));
@@ -7064,10 +7781,10 @@ impl UndeprecateDomainInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7096,6 +7813,7 @@ pub mod undeprecate_workflow_type_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain of the deprecated workflow type.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -7105,6 +7823,7 @@ pub mod undeprecate_workflow_type_input {
             self.workflow_type = Some(input);
             self
         }
+        /// <p>The name of the domain of the deprecated workflow type.</p>
         pub fn set_workflow_type(
             mut self,
             input: std::option::Option<crate::model::WorkflowType>,
@@ -7117,7 +7836,7 @@ pub mod undeprecate_workflow_type_input {
             self,
         ) -> std::result::Result<
             crate::input::UndeprecateWorkflowTypeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UndeprecateWorkflowTypeInput {
                 domain: self.domain,
@@ -7138,16 +7857,16 @@ impl UndeprecateWorkflowTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UndeprecateWorkflowType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UndeprecateWorkflowTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7155,7 +7874,7 @@ impl UndeprecateWorkflowTypeInput {
         fn update_http_builder(
             input: &crate::input::UndeprecateWorkflowTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7164,32 +7883,34 @@ impl UndeprecateWorkflowTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UndeprecateWorkflowTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.UndeprecateWorkflowType",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_undeprecate_workflow_type(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7212,15 +7933,15 @@ impl UndeprecateWorkflowTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UndeprecateWorkflowType::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UndeprecateWorkflowType",
             "swf",
         ));
@@ -7229,10 +7950,10 @@ impl UndeprecateWorkflowTypeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7261,16 +7982,23 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The list of tags to remove from the Amazon SWF domain.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>The list of tags to remove from the Amazon SWF domain.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7281,8 +8009,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -7301,16 +8031,16 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7318,7 +8048,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7327,29 +8057,31 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "SimpleWorkflowService.UntagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7372,25 +8104,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "swf",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "swf",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7404,6 +8138,7 @@ impl UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -7421,6 +8156,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UndeprecateWorkflowTypeInput {
@@ -7438,6 +8174,7 @@ impl std::fmt::Debug for UndeprecateWorkflowTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UndeprecateDomainInput {
@@ -7452,6 +8189,7 @@ impl std::fmt::Debug for UndeprecateDomainInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UndeprecateActivityTypeInput {
@@ -7469,6 +8207,7 @@ impl std::fmt::Debug for UndeprecateActivityTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateWorkflowExecutionInput {
@@ -7524,6 +8263,7 @@ impl std::fmt::Debug for TerminateWorkflowExecutionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -7542,6 +8282,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartWorkflowExecutionInput {
@@ -7552,6 +8293,7 @@ pub struct StartWorkflowExecutionInput {
     /// if a workflow execution is logically a <i>restart</i> of a previous execution.
     /// You cannot have two open workflow executions with the same <code>workflowId</code> at the same
     /// time within the same domain.</p>
+    ///
     /// <p>The specified string must not start or end with whitespace. It must not contain a
     /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
     /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
@@ -7567,6 +8309,7 @@ pub struct StartWorkflowExecutionInput {
     /// workflow type or through this parameter. If neither this parameter is set nor a default task
     /// list was specified at registration time then a fault is returned.</p>
     /// </note>
+    ///
     /// <p>The specified string must not start or end with whitespace. It must not contain a
     /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
     /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
@@ -7586,11 +8329,13 @@ pub struct StartWorkflowExecutionInput {
     pub input: std::option::Option<std::string::String>,
     /// <p>The total duration for this workflow execution. This overrides the
     /// defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
+    ///
     /// <p>The duration is specified in seconds; an integer greater than or equal to
     /// <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some
     /// of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this
     /// timeout; there is a one-year max limit on the time that a workflow execution can
     /// run.</p>
+    ///
     /// <note>
     /// <p>An execution start-to-close timeout must be specified either through this parameter
     /// or as a default when the workflow type is registered. If neither this parameter nor a
@@ -7675,6 +8420,7 @@ impl std::fmt::Debug for StartWorkflowExecutionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SignalWorkflowExecutionInput {
@@ -7731,10 +8477,12 @@ impl std::fmt::Debug for RespondDecisionTaskCompletedInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RespondActivityTaskFailedInput {
     /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
+    ///
     /// <important>
     /// <p>
     /// <code>taskToken</code> is generated by the service and should be treated as an opaque value.
@@ -7757,6 +8505,7 @@ impl std::fmt::Debug for RespondActivityTaskFailedInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RespondActivityTaskCompletedInput {
@@ -7781,6 +8530,7 @@ impl std::fmt::Debug for RespondActivityTaskCompletedInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RespondActivityTaskCanceledInput {
@@ -7804,6 +8554,7 @@ impl std::fmt::Debug for RespondActivityTaskCanceledInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestCancelWorkflowExecutionInput {
@@ -7824,12 +8575,14 @@ impl std::fmt::Debug for RequestCancelWorkflowExecutionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterWorkflowTypeInput {
     /// <p>The name of the domain in which to register the workflow type.</p>
     pub domain: std::option::Option<std::string::String>,
     /// <p>The name of the workflow type.</p>
+    ///
     /// <p>The specified string must not start or end with whitespace. It must not contain a
     /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
     /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
@@ -7841,6 +8594,7 @@ pub struct RegisterWorkflowTypeInput {
     /// unique within the domain. To get a list of all currently registered workflow types, use the
     /// <a>ListWorkflowTypes</a> action.</p>
     /// </note>
+    ///
     /// <p>The specified string must not start or end with whitespace. It must not contain a
     /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
     /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
@@ -7857,6 +8611,7 @@ pub struct RegisterWorkflowTypeInput {
     /// <p>If set, specifies the default maximum duration for executions of this workflow type.
     /// You can override this default when starting an execution through the <a>StartWorkflowExecution</a> Action or <code>StartChildWorkflowExecution</code>
     /// <a>Decision</a>.</p>
+    ///
     /// <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike
     /// some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for
     /// <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time
@@ -7932,11 +8687,13 @@ impl std::fmt::Debug for RegisterWorkflowTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterDomainInput {
     /// <p>Name of the domain to register. The name must be unique in the region that the domain
     /// is registered in.</p>
+    ///
     /// <p>The specified string must not start or end with whitespace. It must not contain a
     /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
     /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
@@ -7972,12 +8729,14 @@ impl std::fmt::Debug for RegisterDomainInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterActivityTypeInput {
     /// <p>The name of the domain in which this activity is to be registered.</p>
     pub domain: std::option::Option<std::string::String>,
     /// <p>The name of the activity type within the domain.</p>
+    ///
     /// <p>The specified string must not start or end with whitespace. It must not contain a
     /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
     /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
@@ -7988,6 +8747,7 @@ pub struct RegisterActivityTypeInput {
     /// <p>The activity type consists of the name and version, the combination of which must be
     /// unique within the domain.</p>
     /// </note>
+    ///
     /// <p>The specified string must not start or end with whitespace. It must not contain a
     /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
     /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
@@ -8070,6 +8830,7 @@ impl std::fmt::Debug for RegisterActivityTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecordActivityTaskHeartbeatInput {
@@ -8093,12 +8854,14 @@ impl std::fmt::Debug for RecordActivityTaskHeartbeatInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PollForDecisionTaskInput {
     /// <p>The name of the domain containing the task lists to poll.</p>
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specifies the task list to poll for decision tasks.</p>
+    ///
     /// <p>The specified string must not start or end with whitespace. It must not contain a
     /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
     /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
@@ -8113,6 +8876,7 @@ pub struct PollForDecisionTaskInput {
     /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
     /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
     /// exceeded its maximum lifetime</code>". </p>
+    ///
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
     /// in a single call. </p>
     /// <note>
@@ -8145,12 +8909,14 @@ impl std::fmt::Debug for PollForDecisionTaskInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PollForActivityTaskInput {
     /// <p>The name of the domain that contains the task lists being polled.</p>
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specifies the task list to poll for activity tasks.</p>
+    ///
     /// <p>The specified string must not start or end with whitespace. It must not contain a
     /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
     /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
@@ -8171,6 +8937,7 @@ impl std::fmt::Debug for PollForActivityTaskInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkflowTypesInput {
@@ -8185,6 +8952,7 @@ pub struct ListWorkflowTypesInput {
     /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
     /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
     /// exceeded its maximum lifetime</code>". </p>
+    ///
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
     /// in a single call. </p>
     pub next_page_token: std::option::Option<std::string::String>,
@@ -8209,6 +8977,7 @@ impl std::fmt::Debug for ListWorkflowTypesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -8223,6 +8992,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOpenWorkflowExecutionsInput {
@@ -8251,6 +9021,7 @@ pub struct ListOpenWorkflowExecutionsInput {
     /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
     /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
     /// exceeded its maximum lifetime</code>". </p>
+    ///
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
     /// in a single call. </p>
     pub next_page_token: std::option::Option<std::string::String>,
@@ -8284,6 +9055,7 @@ impl std::fmt::Debug for ListOpenWorkflowExecutionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsInput {
@@ -8292,6 +9064,7 @@ pub struct ListDomainsInput {
     /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
     /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
     /// exceeded its maximum lifetime</code>". </p>
+    ///
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
     /// in a single call. </p>
     pub next_page_token: std::option::Option<std::string::String>,
@@ -8316,6 +9089,7 @@ impl std::fmt::Debug for ListDomainsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClosedWorkflowExecutionsInput {
@@ -8380,6 +9154,7 @@ pub struct ListClosedWorkflowExecutionsInput {
     /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
     /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
     /// exceeded its maximum lifetime</code>". </p>
+    ///
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
     /// in a single call. </p>
     pub next_page_token: std::option::Option<std::string::String>,
@@ -8408,6 +9183,7 @@ impl std::fmt::Debug for ListClosedWorkflowExecutionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListActivityTypesInput {
@@ -8422,6 +9198,7 @@ pub struct ListActivityTypesInput {
     /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
     /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
     /// exceeded its maximum lifetime</code>". </p>
+    ///
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
     /// in a single call. </p>
     pub next_page_token: std::option::Option<std::string::String>,
@@ -8446,6 +9223,7 @@ impl std::fmt::Debug for ListActivityTypesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWorkflowExecutionHistoryInput {
@@ -8458,6 +9236,7 @@ pub struct GetWorkflowExecutionHistoryInput {
     /// the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires
     /// after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has
     /// exceeded its maximum lifetime</code>". </p>
+    ///
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
     /// in a single call. </p>
     pub next_page_token: std::option::Option<std::string::String>,
@@ -8481,6 +9260,7 @@ impl std::fmt::Debug for GetWorkflowExecutionHistoryInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkflowTypeInput {
@@ -8498,6 +9278,7 @@ impl std::fmt::Debug for DescribeWorkflowTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkflowExecutionInput {
@@ -8515,6 +9296,7 @@ impl std::fmt::Debug for DescribeWorkflowExecutionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainInput {
@@ -8529,6 +9311,7 @@ impl std::fmt::Debug for DescribeDomainInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeActivityTypeInput {
@@ -8548,6 +9331,7 @@ impl std::fmt::Debug for DescribeActivityTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeprecateWorkflowTypeInput {
@@ -8565,6 +9349,7 @@ impl std::fmt::Debug for DeprecateWorkflowTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeprecateDomainInput {
@@ -8579,6 +9364,7 @@ impl std::fmt::Debug for DeprecateDomainInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeprecateActivityTypeInput {
@@ -8596,6 +9382,7 @@ impl std::fmt::Debug for DeprecateActivityTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CountPendingDecisionTasksInput {
@@ -8613,6 +9400,7 @@ impl std::fmt::Debug for CountPendingDecisionTasksInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CountPendingActivityTasksInput {
@@ -8630,6 +9418,7 @@ impl std::fmt::Debug for CountPendingActivityTasksInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CountOpenWorkflowExecutionsInput {
@@ -8674,6 +9463,7 @@ impl std::fmt::Debug for CountOpenWorkflowExecutionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CountClosedWorkflowExecutionsInput {

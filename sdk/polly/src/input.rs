@@ -15,6 +15,8 @@ pub mod delete_lexicon_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the lexicon to delete. Must be an existing lexicon in
+        /// the region.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -22,8 +24,10 @@ pub mod delete_lexicon_input {
         /// Consumes the builder and constructs a [`DeleteLexiconInput`](crate::input::DeleteLexiconInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteLexiconInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteLexiconInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteLexiconInput { name: self.name })
         }
     }
@@ -39,27 +43,27 @@ impl DeleteLexiconInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteLexicon,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteLexiconInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.name;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_1, false);
+            let name = aws_smithy_http::label::fmt_string(input_1, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -71,7 +75,7 @@ impl DeleteLexiconInput {
         fn update_http_builder(
             input: &crate::input::DeleteLexiconInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -80,23 +84,23 @@ impl DeleteLexiconInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteLexiconInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -119,25 +123,27 @@ impl DeleteLexiconInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteLexicon::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteLexicon",
-                    "polly",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteLexicon::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteLexicon",
+            "polly",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -169,6 +175,8 @@ pub mod describe_voices_input {
             self.engine = Some(input);
             self
         }
+        /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>)
+        /// used by Amazon Polly when processing input text for speech synthesis. </p>
         pub fn set_engine(mut self, input: std::option::Option<crate::model::Engine>) -> Self {
             self.engine = input;
             self
@@ -181,6 +189,10 @@ pub mod describe_voices_input {
             self.language_code = Some(input);
             self
         }
+        /// <p> The language identification tag (ISO 639 code for the language
+        /// name-ISO 3166 country code) for filtering the list of voices returned. If
+        /// you don't specify this optional parameter, all available voices are
+        /// returned. </p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -198,6 +210,12 @@ pub mod describe_voices_input {
             self.include_additional_language_codes = Some(input);
             self
         }
+        /// <p>Boolean value indicating whether to return any bilingual voices that
+        /// use the specified language as an additional language. For instance, if you
+        /// request all languages that use US English (es-US), and there is an Italian
+        /// voice that speaks both Italian (it-IT) and US English, that voice will be
+        /// included if you specify <code>yes</code> but not if you specify
+        /// <code>no</code>.</p>
         pub fn set_include_additional_language_codes(
             mut self,
             input: std::option::Option<bool>,
@@ -212,6 +230,9 @@ pub mod describe_voices_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An opaque pagination token returned from the previous
+        /// <code>DescribeVoices</code> operation. If present, this indicates where
+        /// to continue the listing.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -221,7 +242,7 @@ pub mod describe_voices_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeVoicesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeVoicesInput {
                 engine: self.engine,
@@ -245,45 +266,48 @@ impl DescribeVoicesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeVoices,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeVoicesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v1/voices").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::DescribeVoicesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_2) = &_input.engine {
-                query.push_kv("Engine", &smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("Engine", &aws_smithy_http::query::fmt_string(&inner_2));
             }
             if let Some(inner_3) = &_input.language_code {
-                query.push_kv("LanguageCode", &smithy_http::query::fmt_string(&inner_3));
+                query.push_kv(
+                    "LanguageCode",
+                    &aws_smithy_http::query::fmt_string(&inner_3),
+                );
             }
             if _input.include_additional_language_codes {
                 query.push_kv(
                     "IncludeAdditionalLanguageCodes",
-                    &smithy_types::primitive::Encoder::from(
+                    &aws_smithy_types::primitive::Encoder::from(
                         _input.include_additional_language_codes,
                     )
                     .encode(),
                 );
             }
             if let Some(inner_4) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_4));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeVoicesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -293,23 +317,23 @@ impl DescribeVoicesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeVoicesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -332,15 +356,15 @@ impl DescribeVoicesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeVoices::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeVoices",
             "polly",
         ));
@@ -349,10 +373,10 @@ impl DescribeVoicesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -380,6 +404,7 @@ pub mod get_lexicon_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name of the lexicon.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -387,8 +412,10 @@ pub mod get_lexicon_input {
         /// Consumes the builder and constructs a [`GetLexiconInput`](crate::input::GetLexiconInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetLexiconInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetLexiconInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetLexiconInput { name: self.name })
         }
     }
@@ -404,27 +431,27 @@ impl GetLexiconInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetLexicon,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetLexiconInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_5 = &_input.name;
             let input_5 =
                 input_5
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_5, false);
+            let name = aws_smithy_http::label::fmt_string(input_5, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -436,7 +463,7 @@ impl GetLexiconInput {
         fn update_http_builder(
             input: &crate::input::GetLexiconInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -445,23 +472,23 @@ impl GetLexiconInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetLexiconInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -484,22 +511,27 @@ impl GetLexiconInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetLexicon::new())
-                .with_metadata(smithy_http::operation::Metadata::new("GetLexicon", "polly"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetLexicon::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetLexicon",
+            "polly",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -527,6 +559,7 @@ pub mod get_speech_synthesis_task_input {
             self.task_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
@@ -536,7 +569,7 @@ pub mod get_speech_synthesis_task_input {
             self,
         ) -> std::result::Result<
             crate::input::GetSpeechSynthesisTaskInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetSpeechSynthesisTaskInput {
                 task_id: self.task_id,
@@ -555,27 +588,27 @@ impl GetSpeechSynthesisTaskInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetSpeechSynthesisTask,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetSpeechSynthesisTaskInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_6 = &_input.task_id;
             let input_6 =
                 input_6
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "task_id",
                         details: "cannot be empty or unset",
                     })?;
-            let task_id = smithy_http::label::fmt_string(input_6, false);
+            let task_id = aws_smithy_http::label::fmt_string(input_6, false);
             if task_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "task_id",
                     details: "cannot be empty or unset",
                 });
@@ -588,7 +621,7 @@ impl GetSpeechSynthesisTaskInput {
         fn update_http_builder(
             input: &crate::input::GetSpeechSynthesisTaskInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -597,23 +630,23 @@ impl GetSpeechSynthesisTaskInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetSpeechSynthesisTaskInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -636,15 +669,15 @@ impl GetSpeechSynthesisTaskInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetSpeechSynthesisTask::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetSpeechSynthesisTask",
             "polly",
         ));
@@ -653,10 +686,10 @@ impl GetSpeechSynthesisTaskInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -686,6 +719,9 @@ pub mod list_lexicons_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An opaque pagination token returned from previous
+        /// <code>ListLexicons</code> operation. If present, indicates where to
+        /// continue the list of lexicons.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -693,8 +729,10 @@ pub mod list_lexicons_input {
         /// Consumes the builder and constructs a [`ListLexiconsInput`](crate::input::ListLexiconsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListLexiconsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListLexiconsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListLexiconsInput {
                 next_token: self.next_token,
             })
@@ -712,30 +750,30 @@ impl ListLexiconsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListLexicons,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListLexiconsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v1/lexicons").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListLexiconsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_7) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_7));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_7));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListLexiconsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -745,23 +783,23 @@ impl ListLexiconsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListLexiconsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -784,25 +822,27 @@ impl ListLexiconsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListLexicons::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListLexicons",
-                    "polly",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListLexicons::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListLexicons",
+            "polly",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -833,6 +873,8 @@ pub mod list_speech_synthesis_tasks_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of speech synthesis tasks returned in a List
+        /// operation.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -843,6 +885,8 @@ pub mod list_speech_synthesis_tasks_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The pagination token to use in the next request to continue the
+        /// listing of speech synthesis tasks. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -853,6 +897,8 @@ pub mod list_speech_synthesis_tasks_input {
             self.status = Some(input);
             self
         }
+        /// <p>Status of the speech synthesis tasks returned in a List
+        /// operation</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::TaskStatus>) -> Self {
             self.status = input;
             self
@@ -862,7 +908,7 @@ pub mod list_speech_synthesis_tasks_input {
             self,
         ) -> std::result::Result<
             crate::input::ListSpeechSynthesisTasksInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListSpeechSynthesisTasksInput {
                 max_results: self.max_results,
@@ -884,16 +930,16 @@ impl ListSpeechSynthesisTasksInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListSpeechSynthesisTasks,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListSpeechSynthesisTasksInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v1/synthesisTasks").expect("formatting should succeed");
             Ok(())
         }
@@ -901,25 +947,25 @@ impl ListSpeechSynthesisTasksInput {
             _input: &crate::input::ListSpeechSynthesisTasksInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_8) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_8).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
                 );
             }
             if let Some(inner_9) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_9));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_9));
             }
             if let Some(inner_10) = &_input.status {
-                query.push_kv("Status", &smithy_http::query::fmt_string(&inner_10));
+                query.push_kv("Status", &aws_smithy_http::query::fmt_string(&inner_10));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListSpeechSynthesisTasksInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -929,23 +975,23 @@ impl ListSpeechSynthesisTasksInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListSpeechSynthesisTasksInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -968,15 +1014,15 @@ impl ListSpeechSynthesisTasksInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListSpeechSynthesisTasks::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListSpeechSynthesisTasks",
             "polly",
         ));
@@ -985,10 +1031,10 @@ impl ListSpeechSynthesisTasksInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1019,6 +1065,9 @@ pub mod put_lexicon_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name of the lexicon. The name must follow the regular express
+        /// format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive
+        /// alphanumeric string up to 20 characters long. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1028,6 +1077,7 @@ pub mod put_lexicon_input {
             self.content = Some(input.into());
             self
         }
+        /// <p>Content of the PLS lexicon as string data.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -1035,8 +1085,10 @@ pub mod put_lexicon_input {
         /// Consumes the builder and constructs a [`PutLexiconInput`](crate::input::PutLexiconInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::PutLexiconInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutLexiconInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutLexiconInput {
                 name: self.name,
                 content: self.content,
@@ -1055,27 +1107,27 @@ impl PutLexiconInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutLexicon,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutLexiconInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_11 = &_input.name;
             let input_11 =
                 input_11
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_11, false);
+            let name = aws_smithy_http::label::fmt_string(input_11, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -1087,7 +1139,7 @@ impl PutLexiconInput {
         fn update_http_builder(
             input: &crate::input::PutLexiconInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1096,24 +1148,26 @@ impl PutLexiconInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutLexiconInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_put_lexicon(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1136,22 +1190,27 @@ impl PutLexiconInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::PutLexicon::new())
-                .with_metadata(smithy_http::operation::Metadata::new("PutLexicon", "polly"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutLexicon::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutLexicon",
+            "polly",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1194,6 +1253,10 @@ pub mod start_speech_synthesis_task_input {
             self.engine = Some(input);
             self
         }
+        /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>)
+        /// for Amazon Polly to use when processing input text for speech synthesis. Using a
+        /// voice that is not supported for the engine selected will result in an
+        /// error.</p>
         pub fn set_engine(mut self, input: std::option::Option<crate::model::Engine>) -> Self {
             self.engine = input;
             self
@@ -1210,6 +1273,14 @@ pub mod start_speech_synthesis_task_input {
             self.language_code = Some(input);
             self
         }
+        /// <p>Optional language code for the Speech Synthesis request. This is only
+        /// necessary if using a bilingual voice, such as Aditi, which can be used for
+        /// either Indian English (en-IN) or Hindi (hi-IN). </p>
+        /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly
+        /// uses the default language of the bilingual voice. The default language for
+        /// any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code>
+        /// parameter. For example, if no language code is specified, Aditi will use
+        /// Indian English rather than Hindi.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -1217,12 +1288,22 @@ pub mod start_speech_synthesis_task_input {
             self.language_code = input;
             self
         }
+        /// Appends an item to `lexicon_names`.
+        ///
+        /// To override the contents of this collection use [`set_lexicon_names`](Self::set_lexicon_names).
+        ///
+        /// <p>List of one or more pronunciation lexicon names you want the service
+        /// to apply during synthesis. Lexicons are applied only if the language of
+        /// the lexicon is the same as the language of the voice. </p>
         pub fn lexicon_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.lexicon_names.unwrap_or_default();
             v.push(input.into());
             self.lexicon_names = Some(v);
             self
         }
+        /// <p>List of one or more pronunciation lexicon names you want the service
+        /// to apply during synthesis. Lexicons are applied only if the language of
+        /// the lexicon is the same as the language of the voice. </p>
         pub fn set_lexicon_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1237,6 +1318,9 @@ pub mod start_speech_synthesis_task_input {
             self.output_format = Some(input);
             self
         }
+        /// <p>The format in which the returned output will be encoded. For audio
+        /// stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will
+        /// be json. </p>
         pub fn set_output_format(
             mut self,
             input: std::option::Option<crate::model::OutputFormat>,
@@ -1249,6 +1333,7 @@ pub mod start_speech_synthesis_task_input {
             self.output_s3_bucket_name = Some(input.into());
             self
         }
+        /// <p>Amazon S3 bucket name to which the output file will be saved.</p>
         pub fn set_output_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1261,6 +1346,7 @@ pub mod start_speech_synthesis_task_input {
             self.output_s3_key_prefix = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 key prefix for the output speech file.</p>
         pub fn set_output_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1278,6 +1364,12 @@ pub mod start_speech_synthesis_task_input {
             self.sample_rate = Some(input.into());
             self
         }
+        /// <p>The audio frequency specified in Hz.</p>
+        /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050",
+        /// and "24000". The default value for standard voices is "22050". The default
+        /// value for neural voices is "24000".</p>
+        /// <p>Valid values for pcm are "8000" and "16000" The default value is
+        /// "16000". </p>
         pub fn set_sample_rate(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sample_rate = input;
             self
@@ -1288,6 +1380,8 @@ pub mod start_speech_synthesis_task_input {
             self.sns_topic_arn = Some(input.into());
             self
         }
+        /// <p>ARN for the SNS topic optionally used for providing status
+        /// notification for a speech synthesis task.</p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1295,12 +1389,18 @@ pub mod start_speech_synthesis_task_input {
             self.sns_topic_arn = input;
             self
         }
+        /// Appends an item to `speech_mark_types`.
+        ///
+        /// To override the contents of this collection use [`set_speech_mark_types`](Self::set_speech_mark_types).
+        ///
+        /// <p>The type of speech marks returned for the input text.</p>
         pub fn speech_mark_types(mut self, input: impl Into<crate::model::SpeechMarkType>) -> Self {
             let mut v = self.speech_mark_types.unwrap_or_default();
             v.push(input.into());
             self.speech_mark_types = Some(v);
             self
         }
+        /// <p>The type of speech marks returned for the input text.</p>
         pub fn set_speech_mark_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
@@ -1314,6 +1414,8 @@ pub mod start_speech_synthesis_task_input {
             self.text = Some(input.into());
             self
         }
+        /// <p>The input text to synthesize. If you specify ssml as the TextType,
+        /// follow the SSML format for the input text. </p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -1324,6 +1426,8 @@ pub mod start_speech_synthesis_task_input {
             self.text_type = Some(input);
             self
         }
+        /// <p>Specifies whether the input text is plain text or SSML. The default
+        /// value is plain text. </p>
         pub fn set_text_type(mut self, input: std::option::Option<crate::model::TextType>) -> Self {
             self.text_type = input;
             self
@@ -1333,6 +1437,7 @@ pub mod start_speech_synthesis_task_input {
             self.voice_id = Some(input);
             self
         }
+        /// <p>Voice ID to use for the synthesis. </p>
         pub fn set_voice_id(mut self, input: std::option::Option<crate::model::VoiceId>) -> Self {
             self.voice_id = input;
             self
@@ -1342,7 +1447,7 @@ pub mod start_speech_synthesis_task_input {
             self,
         ) -> std::result::Result<
             crate::input::StartSpeechSynthesisTaskInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartSpeechSynthesisTaskInput {
                 engine: self.engine,
@@ -1373,16 +1478,16 @@ impl StartSpeechSynthesisTaskInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartSpeechSynthesisTask,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartSpeechSynthesisTaskInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v1/synthesisTasks").expect("formatting should succeed");
             Ok(())
         }
@@ -1390,7 +1495,7 @@ impl StartSpeechSynthesisTaskInput {
         fn update_http_builder(
             input: &crate::input::StartSpeechSynthesisTaskInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1399,27 +1504,29 @@ impl StartSpeechSynthesisTaskInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartSpeechSynthesisTaskInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_speech_synthesis_task(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1442,15 +1549,15 @@ impl StartSpeechSynthesisTaskInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartSpeechSynthesisTask::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartSpeechSynthesisTask",
             "polly",
         ));
@@ -1459,10 +1566,10 @@ impl StartSpeechSynthesisTaskInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1509,6 +1616,7 @@ pub mod synthesize_speech_input {
         /// <p>Valid Values: <code>standard</code> | <code>neural</code>
         /// </p>
         /// <p>Required: Yes</p>
+        ///
         /// <p>
         /// <b>Standard voices</b>
         /// </p>
@@ -1520,6 +1628,29 @@ pub mod synthesize_speech_input {
             self.engine = Some(input);
             self
         }
+        /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>)
+        /// for Amazon Polly to use when processing input text for speech synthesis. For
+        /// information on Amazon Polly voices and which voices are available in
+        /// standard-only, NTTS-only, and both standard and NTTS formats, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a>.</p>
+        /// <p>
+        /// <b>NTTS-only voices</b>
+        /// </p>
+        /// <p>When using NTTS-only voices such as Kevin (en-US), this parameter is
+        /// required and must be set to <code>neural</code>. If the engine is not
+        /// specified, or is set to <code>standard</code>, this will result in an
+        /// error. </p>
+        /// <p>Type: String</p>
+        /// <p>Valid Values: <code>standard</code> | <code>neural</code>
+        /// </p>
+        /// <p>Required: Yes</p>
+        ///
+        /// <p>
+        /// <b>Standard voices</b>
+        /// </p>
+        /// <p>For standard voices, this is not required; the engine parameter
+        /// defaults to <code>standard</code>. If the engine is not specified, or is
+        /// set to <code>standard</code> and an NTTS-only voice is selected, this will
+        /// result in an error. </p>
         pub fn set_engine(mut self, input: std::option::Option<crate::model::Engine>) -> Self {
             self.engine = input;
             self
@@ -1536,6 +1667,14 @@ pub mod synthesize_speech_input {
             self.language_code = Some(input);
             self
         }
+        /// <p>Optional language code for the Synthesize Speech request. This is only
+        /// necessary if using a bilingual voice, such as Aditi, which can be used for
+        /// either Indian English (en-IN) or Hindi (hi-IN). </p>
+        /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly
+        /// uses the default language of the bilingual voice. The default language for
+        /// any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code>
+        /// parameter. For example, if no language code is specified, Aditi will use
+        /// Indian English rather than Hindi.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -1543,12 +1682,24 @@ pub mod synthesize_speech_input {
             self.language_code = input;
             self
         }
+        /// Appends an item to `lexicon_names`.
+        ///
+        /// To override the contents of this collection use [`set_lexicon_names`](Self::set_lexicon_names).
+        ///
+        /// <p>List of one or more pronunciation lexicon names you want the
+        /// service to apply during synthesis. Lexicons are applied only if the
+        /// language of the lexicon is the same as the language of the voice. For
+        /// information about storing lexicons, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.</p>
         pub fn lexicon_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.lexicon_names.unwrap_or_default();
             v.push(input.into());
             self.lexicon_names = Some(v);
             self
         }
+        /// <p>List of one or more pronunciation lexicon names you want the
+        /// service to apply during synthesis. Lexicons are applied only if the
+        /// language of the lexicon is the same as the language of the voice. For
+        /// information about storing lexicons, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.</p>
         pub fn set_lexicon_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1565,6 +1716,11 @@ pub mod synthesize_speech_input {
             self.output_format = Some(input);
             self
         }
+        /// <p> The format in which the returned output will be encoded. For audio
+        /// stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will
+        /// be json. </p>
+        /// <p>When pcm is used, the content returned is audio/pcm in a signed
+        /// 16-bit, 1 channel (mono), little-endian format. </p>
         pub fn set_output_format(
             mut self,
             input: std::option::Option<crate::model::OutputFormat>,
@@ -1582,16 +1738,28 @@ pub mod synthesize_speech_input {
             self.sample_rate = Some(input.into());
             self
         }
+        /// <p>The audio frequency specified in Hz.</p>
+        /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050",
+        /// and "24000". The default value for standard voices is "22050". The default
+        /// value for neural voices is "24000".</p>
+        /// <p>Valid values for pcm are "8000" and "16000" The default value is
+        /// "16000". </p>
         pub fn set_sample_rate(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sample_rate = input;
             self
         }
+        /// Appends an item to `speech_mark_types`.
+        ///
+        /// To override the contents of this collection use [`set_speech_mark_types`](Self::set_speech_mark_types).
+        ///
+        /// <p>The type of speech marks returned for the input text.</p>
         pub fn speech_mark_types(mut self, input: impl Into<crate::model::SpeechMarkType>) -> Self {
             let mut v = self.speech_mark_types.unwrap_or_default();
             v.push(input.into());
             self.speech_mark_types = Some(v);
             self
         }
+        /// <p>The type of speech marks returned for the input text.</p>
         pub fn set_speech_mark_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
@@ -1606,6 +1774,9 @@ pub mod synthesize_speech_input {
             self.text = Some(input.into());
             self
         }
+        /// <p> Input text to synthesize. If you specify <code>ssml</code> as the
+        /// <code>TextType</code>, follow the SSML format for the input text.
+        /// </p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -1617,6 +1788,9 @@ pub mod synthesize_speech_input {
             self.text_type = Some(input);
             self
         }
+        /// <p> Specifies whether the input text is plain text or SSML. The
+        /// default value is plain text. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/ssml.html">Using
+        /// SSML</a>.</p>
         pub fn set_text_type(mut self, input: std::option::Option<crate::model::TextType>) -> Self {
             self.text_type = input;
             self
@@ -1627,6 +1801,8 @@ pub mod synthesize_speech_input {
             self.voice_id = Some(input);
             self
         }
+        /// <p> Voice ID to use for the synthesis. You can get a list of available
+        /// voice IDs by calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation. </p>
         pub fn set_voice_id(mut self, input: std::option::Option<crate::model::VoiceId>) -> Self {
             self.voice_id = input;
             self
@@ -1636,7 +1812,7 @@ pub mod synthesize_speech_input {
             self,
         ) -> std::result::Result<
             crate::input::SynthesizeSpeechInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SynthesizeSpeechInput {
                 engine: self.engine,
@@ -1663,61 +1839,70 @@ impl SynthesizeSpeechInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SynthesizeSpeech,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SynthesizeSpeechInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v1/speech").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::SynthesizeSpeechInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_12) = &_input.engine {
-                query.push_kv("Engine", &smithy_http::query::fmt_string(&inner_12));
+                query.push_kv("Engine", &aws_smithy_http::query::fmt_string(&inner_12));
             }
             if let Some(inner_13) = &_input.language_code {
-                query.push_kv("LanguageCode", &smithy_http::query::fmt_string(&inner_13));
+                query.push_kv(
+                    "LanguageCode",
+                    &aws_smithy_http::query::fmt_string(&inner_13),
+                );
             }
             if let Some(inner_14) = &_input.lexicon_names {
                 for inner_15 in inner_14 {
-                    query.push_kv("LexiconNames", &smithy_http::query::fmt_string(&inner_15));
+                    query.push_kv(
+                        "LexiconNames",
+                        &aws_smithy_http::query::fmt_string(&inner_15),
+                    );
                 }
             }
             if let Some(inner_16) = &_input.output_format {
-                query.push_kv("OutputFormat", &smithy_http::query::fmt_string(&inner_16));
+                query.push_kv(
+                    "OutputFormat",
+                    &aws_smithy_http::query::fmt_string(&inner_16),
+                );
             }
             if let Some(inner_17) = &_input.sample_rate {
-                query.push_kv("SampleRate", &smithy_http::query::fmt_string(&inner_17));
+                query.push_kv("SampleRate", &aws_smithy_http::query::fmt_string(&inner_17));
             }
             if let Some(inner_18) = &_input.speech_mark_types {
                 for inner_19 in inner_18 {
                     query.push_kv(
                         "SpeechMarkTypes",
-                        &smithy_http::query::fmt_string(&inner_19),
+                        &aws_smithy_http::query::fmt_string(&inner_19),
                     );
                 }
             }
             if let Some(inner_20) = &_input.text {
-                query.push_kv("Text", &smithy_http::query::fmt_string(&inner_20));
+                query.push_kv("Text", &aws_smithy_http::query::fmt_string(&inner_20));
             }
             if let Some(inner_21) = &_input.text_type {
-                query.push_kv("TextType", &smithy_http::query::fmt_string(&inner_21));
+                query.push_kv("TextType", &aws_smithy_http::query::fmt_string(&inner_21));
             }
             if let Some(inner_22) = &_input.voice_id {
-                query.push_kv("VoiceId", &smithy_http::query::fmt_string(&inner_22));
+                query.push_kv("VoiceId", &aws_smithy_http::query::fmt_string(&inner_22));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::SynthesizeSpeechInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1727,23 +1912,23 @@ impl SynthesizeSpeechInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SynthesizeSpeechInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1766,28 +1951,31 @@ impl SynthesizeSpeechInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SynthesizeSpeech::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SynthesizeSpeech",
             "polly",
         ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
-    /// Creates a presigned request for this operation. The credentials provider from the `config`
-    /// will be used to generate the request's signature, and the `presigning_config` provides additional
-    /// presigning-specific config values, such as the amount of time the request should be valid for after
-    /// creation.
+    ///
+    /// Creates a presigned request for this operation.
+    ///
+    /// The credentials provider from the `config` will be used to generate the request's signature.
+    /// The `presigning_config` provides additional presigning-specific config values, such as the
+    /// amount of time the request should be valid for after creation.
     ///
     /// Presigned requests can be given to other users or applications to access a resource or perform
     /// an operation without having access to the AWS security credentials.
+    ///
     #[cfg(feature = "client")]
     pub async fn presigned(
         self,
@@ -1795,11 +1983,11 @@ impl SynthesizeSpeechInput {
         presigning_config: crate::presigning::config::PresigningConfig,
     ) -> Result<
         crate::presigning::request::PresignedRequest,
-        smithy_http::result::SdkError<crate::error::SynthesizeSpeechError>,
+        aws_smithy_http::result::SdkError<crate::error::SynthesizeSpeechError>,
     > {
         let (mut request, _) = self
             ._make_presigned_operation(config)
-            .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+            .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
             .into_request_response();
         {
             // Change signature type to query params and wire up presigning config
@@ -1826,16 +2014,16 @@ impl SynthesizeSpeechInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SynthesizeSpeech,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SynthesizeSpeechInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v1/speech").expect("formatting should succeed");
             Ok(())
         }
@@ -1843,7 +2031,7 @@ impl SynthesizeSpeechInput {
         fn update_http_builder(
             input: &crate::input::SynthesizeSpeechInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1852,27 +2040,27 @@ impl SynthesizeSpeechInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SynthesizeSpeechInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_synthesize_speech(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1895,15 +2083,15 @@ impl SynthesizeSpeechInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SynthesizeSpeech::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SynthesizeSpeech",
             "polly",
         ));
@@ -1912,10 +2100,10 @@ impl SynthesizeSpeechInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1929,6 +2117,7 @@ impl SynthesizeSpeechInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SynthesizeSpeechInput {
@@ -1947,6 +2136,7 @@ pub struct SynthesizeSpeechInput {
     /// <p>Valid Values: <code>standard</code> | <code>neural</code>
     /// </p>
     /// <p>Required: Yes</p>
+    ///
     /// <p>
     /// <b>Standard voices</b>
     /// </p>
@@ -2012,6 +2202,7 @@ impl std::fmt::Debug for SynthesizeSpeechInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSpeechSynthesisTaskInput {
@@ -2081,6 +2272,7 @@ impl std::fmt::Debug for StartSpeechSynthesisTaskInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLexiconInput {
@@ -2100,6 +2292,7 @@ impl std::fmt::Debug for PutLexiconInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSpeechSynthesisTasksInput {
@@ -2123,6 +2316,7 @@ impl std::fmt::Debug for ListSpeechSynthesisTasksInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLexiconsInput {
@@ -2139,6 +2333,7 @@ impl std::fmt::Debug for ListLexiconsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSpeechSynthesisTaskInput {
@@ -2153,6 +2348,7 @@ impl std::fmt::Debug for GetSpeechSynthesisTaskInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLexiconInput {
@@ -2167,6 +2363,7 @@ impl std::fmt::Debug for GetLexiconInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVoicesInput {
@@ -2204,6 +2401,7 @@ impl std::fmt::Debug for DescribeVoicesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLexiconInput {

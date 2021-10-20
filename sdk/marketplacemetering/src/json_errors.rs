@@ -4,12 +4,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+use aws_smithy_json::deserialize::token::skip_value;
+use aws_smithy_json::deserialize::{json_token_iter, Error as DeserializeError, Token};
+use aws_smithy_types::Error as SmithyError;
 use bytes::Bytes;
 use http::header::ToStrError;
 use http::{HeaderMap, HeaderValue};
-use smithy_json::deserialize::token::skip_value;
-use smithy_json::deserialize::{json_token_iter, Error as DeserializeError, Token};
-use smithy_types::Error as SmithyError;
 use std::borrow::Cow;
 
 // currently only used by AwsJson
@@ -115,8 +115,8 @@ pub fn parse_generic_error(
 #[cfg(test)]
 mod test {
     use crate::json_errors::{parse_error_body, parse_generic_error, sanitize_error_code};
+    use aws_smithy_types::Error;
     use bytes::Bytes;
-    use smithy_types::Error;
     use std::borrow::Cow;
 
     #[test]

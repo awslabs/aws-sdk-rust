@@ -14,9 +14,9 @@ pub struct Webhook {
     /// <p> The description for a webhook. </p>
     pub description: std::option::Option<std::string::String>,
     /// <p> The create date and time for a webhook. </p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> Updates the date and time for a webhook. </p>
-    pub update_time: std::option::Option<smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Webhook {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -42,8 +42,8 @@ pub mod webhook {
         pub(crate) webhook_url: std::option::Option<std::string::String>,
         pub(crate) branch_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) for the webhook. </p>
@@ -51,6 +51,7 @@ pub mod webhook {
             self.webhook_arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) for the webhook. </p>
         pub fn set_webhook_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.webhook_arn = input;
             self
@@ -60,6 +61,7 @@ pub mod webhook {
             self.webhook_id = Some(input.into());
             self
         }
+        /// <p> The ID of the webhook. </p>
         pub fn set_webhook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.webhook_id = input;
             self
@@ -69,6 +71,7 @@ pub mod webhook {
             self.webhook_url = Some(input.into());
             self
         }
+        /// <p> The URL of the webhook. </p>
         pub fn set_webhook_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.webhook_url = input;
             self
@@ -78,6 +81,7 @@ pub mod webhook {
             self.branch_name = Some(input.into());
             self
         }
+        /// <p> The name for a branch that is part of an Amplify app. </p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.branch_name = input;
             self
@@ -87,30 +91,33 @@ pub mod webhook {
             self.description = Some(input.into());
             self
         }
+        /// <p> The description for a webhook. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p> The create date and time for a webhook. </p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p> The create date and time for a webhook. </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p> Updates the date and time for a webhook. </p>
-        pub fn update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_time = Some(input);
             self
         }
+        /// <p> Updates the date and time for a webhook. </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_time = input;
             self
@@ -205,6 +212,7 @@ pub mod domain_association {
             self.domain_association_arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) for the domain association. </p>
         pub fn set_domain_association_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -217,6 +225,7 @@ pub mod domain_association {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p> The name of the domain. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -226,10 +235,16 @@ pub mod domain_association {
             self.enable_auto_sub_domain = Some(input);
             self
         }
+        /// <p> Enables the automated creation of subdomains for branches. </p>
         pub fn set_enable_auto_sub_domain(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_auto_sub_domain = input;
             self
         }
+        /// Appends an item to `auto_sub_domain_creation_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_auto_sub_domain_creation_patterns`](Self::set_auto_sub_domain_creation_patterns).
+        ///
+        /// <p> Sets branch patterns for automatic subdomain creation. </p>
         pub fn auto_sub_domain_creation_patterns(
             mut self,
             input: impl Into<std::string::String>,
@@ -239,6 +254,7 @@ pub mod domain_association {
             self.auto_sub_domain_creation_patterns = Some(v);
             self
         }
+        /// <p> Sets branch patterns for automatic subdomain creation. </p>
         pub fn set_auto_sub_domain_creation_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -252,6 +268,8 @@ pub mod domain_association {
             self.auto_sub_domain_iam_role = Some(input.into());
             self
         }
+        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
+        /// Resource Name (ARN) for automatically creating subdomains. </p>
         pub fn set_auto_sub_domain_iam_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -264,6 +282,7 @@ pub mod domain_association {
             self.domain_status = Some(input);
             self
         }
+        /// <p> The current status of the domain association. </p>
         pub fn set_domain_status(
             mut self,
             input: std::option::Option<crate::model::DomainStatus>,
@@ -276,6 +295,7 @@ pub mod domain_association {
             self.status_reason = Some(input.into());
             self
         }
+        /// <p> The reason for the current status of the domain association. </p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -291,6 +311,7 @@ pub mod domain_association {
             self.certificate_verification_dns_record = Some(input.into());
             self
         }
+        /// <p> The DNS record for certificate verification. </p>
         pub fn set_certificate_verification_dns_record(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -298,12 +319,18 @@ pub mod domain_association {
             self.certificate_verification_dns_record = input;
             self
         }
+        /// Appends an item to `sub_domains`.
+        ///
+        /// To override the contents of this collection use [`set_sub_domains`](Self::set_sub_domains).
+        ///
+        /// <p> The subdomains for the domain association. </p>
         pub fn sub_domains(mut self, input: impl Into<crate::model::SubDomain>) -> Self {
             let mut v = self.sub_domains.unwrap_or_default();
             v.push(input.into());
             self.sub_domains = Some(v);
             self
         }
+        /// <p> The subdomains for the domain association. </p>
         pub fn set_sub_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SubDomain>>,
@@ -370,6 +397,7 @@ pub mod sub_domain {
             self.sub_domain_setting = Some(input);
             self
         }
+        /// <p> Describes the settings for the subdomain. </p>
         pub fn set_sub_domain_setting(
             mut self,
             input: std::option::Option<crate::model::SubDomainSetting>,
@@ -382,6 +410,7 @@ pub mod sub_domain {
             self.verified = Some(input);
             self
         }
+        /// <p> The verified status of the subdomain </p>
         pub fn set_verified(mut self, input: std::option::Option<bool>) -> Self {
             self.verified = input;
             self
@@ -391,6 +420,7 @@ pub mod sub_domain {
             self.dns_record = Some(input.into());
             self
         }
+        /// <p> The DNS record for the subdomain. </p>
         pub fn set_dns_record(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dns_record = input;
             self
@@ -444,6 +474,7 @@ pub mod sub_domain_setting {
             self.prefix = Some(input.into());
             self
         }
+        /// <p> The prefix setting for the subdomain. </p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -453,6 +484,7 @@ pub mod sub_domain_setting {
             self.branch_name = Some(input.into());
             self
         }
+        /// <p> The branch name setting for the subdomain. </p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.branch_name = input;
             self
@@ -473,6 +505,7 @@ impl SubDomainSetting {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -484,13 +517,21 @@ impl SubDomainSetting {
     std::hash::Hash,
 )]
 pub enum DomainStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     PendingDeployment,
+    #[allow(missing_docs)] // documentation missing in model
     PendingVerification,
+    #[allow(missing_docs)] // documentation missing in model
     RequestingCertificate,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -518,6 +559,7 @@ impl std::str::FromStr for DomainStatus {
     }
 }
 impl DomainStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DomainStatus::Available => "AVAILABLE",
@@ -531,6 +573,7 @@ impl DomainStatus {
             DomainStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -570,9 +613,9 @@ pub struct Branch {
     /// <p> Enables notifications for a branch that is part of an Amplify app. </p>
     pub enable_notification: std::option::Option<bool>,
     /// <p> The creation date and time for a branch that is part of an Amplify app. </p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The last updated date and time for a branch that is part of an Amplify app. </p>
-    pub update_time: std::option::Option<smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The environment variables specific to a branch of an Amplify app. </p>
     pub environment_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -668,8 +711,8 @@ pub mod branch {
         pub(crate) stage: std::option::Option<crate::model::Stage>,
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) enable_notification: std::option::Option<bool>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) environment_variables: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -697,6 +740,7 @@ pub mod branch {
             self.branch_arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) for a branch that is part of an Amplify app. </p>
         pub fn set_branch_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.branch_arn = input;
             self
@@ -706,6 +750,7 @@ pub mod branch {
             self.branch_name = Some(input.into());
             self
         }
+        /// <p> The name for the branch that is part of an Amplify app. </p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.branch_name = input;
             self
@@ -715,10 +760,16 @@ pub mod branch {
             self.description = Some(input.into());
             self
         }
+        /// <p> The description for the branch that is part of an Amplify app. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p> The tag for the branch of an Amplify app. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -729,6 +780,7 @@ pub mod branch {
             self.tags = Some(hash_map);
             self
         }
+        /// <p> The tag for the branch of an Amplify app. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -743,6 +795,7 @@ pub mod branch {
             self.stage = Some(input);
             self
         }
+        /// <p> The current stage for the branch that is part of an Amplify app. </p>
         pub fn set_stage(mut self, input: std::option::Option<crate::model::Stage>) -> Self {
             self.stage = input;
             self
@@ -752,6 +805,7 @@ pub mod branch {
             self.display_name = Some(input.into());
             self
         }
+        /// <p> The display name for the branch. This is used as the default domain prefix. </p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -761,34 +815,42 @@ pub mod branch {
             self.enable_notification = Some(input);
             self
         }
+        /// <p> Enables notifications for a branch that is part of an Amplify app. </p>
         pub fn set_enable_notification(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_notification = input;
             self
         }
         /// <p> The creation date and time for a branch that is part of an Amplify app. </p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p> The creation date and time for a branch that is part of an Amplify app. </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p> The last updated date and time for a branch that is part of an Amplify app. </p>
-        pub fn update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_time = Some(input);
             self
         }
+        /// <p> The last updated date and time for a branch that is part of an Amplify app. </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_time = input;
             self
         }
+        /// Adds a key-value pair to `environment_variables`.
+        ///
+        /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
+        ///
+        /// <p> The environment variables specific to a branch of an Amplify app. </p>
         pub fn environment_variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -799,6 +861,7 @@ pub mod branch {
             self.environment_variables = Some(hash_map);
             self
         }
+        /// <p> The environment variables specific to a branch of an Amplify app. </p>
         pub fn set_environment_variables(
             mut self,
             input: std::option::Option<
@@ -813,16 +876,23 @@ pub mod branch {
             self.enable_auto_build = Some(input);
             self
         }
+        /// <p> Enables auto-building on push for a branch of an Amplify app. </p>
         pub fn set_enable_auto_build(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_auto_build = input;
             self
         }
+        /// Appends an item to `custom_domains`.
+        ///
+        /// To override the contents of this collection use [`set_custom_domains`](Self::set_custom_domains).
+        ///
+        /// <p> The custom domains for a branch of an Amplify app. </p>
         pub fn custom_domains(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.custom_domains.unwrap_or_default();
             v.push(input.into());
             self.custom_domains = Some(v);
             self
         }
+        /// <p> The custom domains for a branch of an Amplify app. </p>
         pub fn set_custom_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -835,6 +905,7 @@ pub mod branch {
             self.framework = Some(input.into());
             self
         }
+        /// <p> The framework for a branch of an Amplify app. </p>
         pub fn set_framework(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.framework = input;
             self
@@ -844,6 +915,7 @@ pub mod branch {
             self.active_job_id = Some(input.into());
             self
         }
+        /// <p> The ID of the active job for a branch of an Amplify app. </p>
         pub fn set_active_job_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -856,6 +928,7 @@ pub mod branch {
             self.total_number_of_jobs = Some(input.into());
             self
         }
+        /// <p> The total number of jobs that are part of an Amplify app. </p>
         pub fn set_total_number_of_jobs(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -868,6 +941,7 @@ pub mod branch {
             self.enable_basic_auth = Some(input);
             self
         }
+        /// <p> Enables basic authorization for a branch of an Amplify app. </p>
         pub fn set_enable_basic_auth(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_basic_auth = input;
             self
@@ -878,6 +952,8 @@ pub mod branch {
             self.enable_performance_mode = Some(input);
             self
         }
+        /// <p>Enables performance mode for the branch.</p>
+        /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
         pub fn set_enable_performance_mode(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_performance_mode = input;
             self
@@ -887,6 +963,7 @@ pub mod branch {
             self.thumbnail_url = Some(input.into());
             self
         }
+        /// <p> The thumbnail URL for the branch of an Amplify app. </p>
         pub fn set_thumbnail_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -899,6 +976,7 @@ pub mod branch {
             self.basic_auth_credentials = Some(input.into());
             self
         }
+        /// <p> The basic authorization credentials for a branch of an Amplify app. </p>
         pub fn set_basic_auth_credentials(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -912,6 +990,8 @@ pub mod branch {
             self.build_spec = Some(input.into());
             self
         }
+        /// <p> The build specification (build spec) content for the branch of an Amplify app.
+        /// </p>
         pub fn set_build_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.build_spec = input;
             self
@@ -921,16 +1001,23 @@ pub mod branch {
             self.ttl = Some(input.into());
             self
         }
+        /// <p> The content Time to Live (TTL) for the website in seconds. </p>
         pub fn set_ttl(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ttl = input;
             self
         }
+        /// Appends an item to `associated_resources`.
+        ///
+        /// To override the contents of this collection use [`set_associated_resources`](Self::set_associated_resources).
+        ///
+        /// <p> A list of custom resources that are linked to this branch. </p>
         pub fn associated_resources(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.associated_resources.unwrap_or_default();
             v.push(input.into());
             self.associated_resources = Some(v);
             self
         }
+        /// <p> A list of custom resources that are linked to this branch. </p>
         pub fn set_associated_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -943,6 +1030,7 @@ pub mod branch {
             self.enable_pull_request_preview = Some(input);
             self
         }
+        /// <p> Enables pull request previews for the branch. </p>
         pub fn set_enable_pull_request_preview(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_pull_request_preview = input;
             self
@@ -955,6 +1043,7 @@ pub mod branch {
             self.pull_request_environment_name = Some(input.into());
             self
         }
+        /// <p> The Amplify environment name for the pull request. </p>
         pub fn set_pull_request_environment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -967,6 +1056,7 @@ pub mod branch {
             self.destination_branch = Some(input.into());
             self
         }
+        /// <p> The destination branch if the branch is a pull request branch. </p>
         pub fn set_destination_branch(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -979,6 +1069,7 @@ pub mod branch {
             self.source_branch = Some(input.into());
             self
         }
+        /// <p> The source branch if the branch is a pull request branch. </p>
         pub fn set_source_branch(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -992,6 +1083,8 @@ pub mod branch {
             self.backend_environment_arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
+        /// app. </p>
         pub fn set_backend_environment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1040,6 +1133,7 @@ impl Branch {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1051,10 +1145,15 @@ impl Branch {
     std::hash::Hash,
 )]
 pub enum Stage {
+    #[allow(missing_docs)] // documentation missing in model
     Beta,
+    #[allow(missing_docs)] // documentation missing in model
     Development,
+    #[allow(missing_docs)] // documentation missing in model
     Experimental,
+    #[allow(missing_docs)] // documentation missing in model
     Production,
+    #[allow(missing_docs)] // documentation missing in model
     PullRequest,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1079,6 +1178,7 @@ impl std::str::FromStr for Stage {
     }
 }
 impl Stage {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Stage::Beta => "BETA",
@@ -1089,6 +1189,7 @@ impl Stage {
             Stage::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BETA",
@@ -1126,9 +1227,9 @@ pub struct App {
     /// <p> The platform for the Amplify app. </p>
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p> Creates a date and time for the Amplify app. </p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> Updates the date and time for the Amplify app. </p>
-    pub update_time: std::option::Option<smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The AWS Identity and Access Management (IAM) service role for the Amazon Resource
     /// Name (ARN) of the Amplify app. </p>
     pub iam_service_role_arn: std::option::Option<std::string::String>,
@@ -1218,8 +1319,8 @@ pub mod app {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) repository: std::option::Option<std::string::String>,
         pub(crate) platform: std::option::Option<crate::model::Platform>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) iam_service_role_arn: std::option::Option<std::string::String>,
         pub(crate) environment_variables: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -1245,6 +1346,7 @@ pub mod app {
             self.app_id = Some(input.into());
             self
         }
+        /// <p> The unique ID of the Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_id = input;
             self
@@ -1254,6 +1356,7 @@ pub mod app {
             self.app_arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) of the Amplify app. </p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -1263,10 +1366,16 @@ pub mod app {
             self.name = Some(input.into());
             self
         }
+        /// <p> The name for the Amplify app. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p> The tag for the Amplify app. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1277,6 +1386,7 @@ pub mod app {
             self.tags = Some(hash_map);
             self
         }
+        /// <p> The tag for the Amplify app. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1291,6 +1401,7 @@ pub mod app {
             self.description = Some(input.into());
             self
         }
+        /// <p> The description for the Amplify app. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1300,6 +1411,7 @@ pub mod app {
             self.repository = Some(input.into());
             self
         }
+        /// <p> The repository for the Amplify app. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.repository = input;
             self
@@ -1309,30 +1421,33 @@ pub mod app {
             self.platform = Some(input);
             self
         }
+        /// <p> The platform for the Amplify app. </p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
         }
         /// <p> Creates a date and time for the Amplify app. </p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p> Creates a date and time for the Amplify app. </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p> Updates the date and time for the Amplify app. </p>
-        pub fn update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_time = Some(input);
             self
         }
+        /// <p> Updates the date and time for the Amplify app. </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_time = input;
             self
@@ -1343,6 +1458,8 @@ pub mod app {
             self.iam_service_role_arn = Some(input.into());
             self
         }
+        /// <p> The AWS Identity and Access Management (IAM) service role for the Amazon Resource
+        /// Name (ARN) of the Amplify app. </p>
         pub fn set_iam_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1350,6 +1467,11 @@ pub mod app {
             self.iam_service_role_arn = input;
             self
         }
+        /// Adds a key-value pair to `environment_variables`.
+        ///
+        /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
+        ///
+        /// <p> The environment variables for the Amplify app. </p>
         pub fn environment_variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -1360,6 +1482,7 @@ pub mod app {
             self.environment_variables = Some(hash_map);
             self
         }
+        /// <p> The environment variables for the Amplify app. </p>
         pub fn set_environment_variables(
             mut self,
             input: std::option::Option<
@@ -1374,6 +1497,7 @@ pub mod app {
             self.default_domain = Some(input.into());
             self
         }
+        /// <p> The default domain for the Amplify app. </p>
         pub fn set_default_domain(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1386,6 +1510,7 @@ pub mod app {
             self.enable_branch_auto_build = Some(input);
             self
         }
+        /// <p> Enables the auto-building of branches for the Amplify app. </p>
         pub fn set_enable_branch_auto_build(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_branch_auto_build = input;
             self
@@ -1396,6 +1521,8 @@ pub mod app {
             self.enable_branch_auto_deletion = Some(input);
             self
         }
+        /// <p> Automatically disconnect a branch in the Amplify Console when you delete a branch
+        /// from your Git repository. </p>
         pub fn set_enable_branch_auto_deletion(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_branch_auto_deletion = input;
             self
@@ -1405,6 +1532,7 @@ pub mod app {
             self.enable_basic_auth = Some(input);
             self
         }
+        /// <p> Enables basic authorization for the Amplify app's branches. </p>
         pub fn set_enable_basic_auth(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_basic_auth = input;
             self
@@ -1414,6 +1542,7 @@ pub mod app {
             self.basic_auth_credentials = Some(input.into());
             self
         }
+        /// <p> The basic authorization credentials for branches for the Amplify app. </p>
         pub fn set_basic_auth_credentials(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1421,12 +1550,18 @@ pub mod app {
             self.basic_auth_credentials = input;
             self
         }
+        /// Appends an item to `custom_rules`.
+        ///
+        /// To override the contents of this collection use [`set_custom_rules`](Self::set_custom_rules).
+        ///
+        /// <p> Describes the custom redirect and rewrite rules for the Amplify app. </p>
         pub fn custom_rules(mut self, input: impl Into<crate::model::CustomRule>) -> Self {
             let mut v = self.custom_rules.unwrap_or_default();
             v.push(input.into());
             self.custom_rules = Some(v);
             self
         }
+        /// <p> Describes the custom redirect and rewrite rules for the Amplify app. </p>
         pub fn set_custom_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CustomRule>>,
@@ -1439,6 +1574,7 @@ pub mod app {
             self.production_branch = Some(input);
             self
         }
+        /// <p> Describes the information about a production branch of the Amplify app. </p>
         pub fn set_production_branch(
             mut self,
             input: std::option::Option<crate::model::ProductionBranch>,
@@ -1452,6 +1588,8 @@ pub mod app {
             self.build_spec = Some(input.into());
             self
         }
+        /// <p> Describes the content of the build specification (build spec) for the Amplify app.
+        /// </p>
         pub fn set_build_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.build_spec = input;
             self
@@ -1461,6 +1599,7 @@ pub mod app {
             self.custom_headers = Some(input.into());
             self
         }
+        /// <p>Describes the custom HTTP headers for the Amplify app.</p>
         pub fn set_custom_headers(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1473,10 +1612,16 @@ pub mod app {
             self.enable_auto_branch_creation = Some(input);
             self
         }
+        /// <p> Enables automated branch creation for the Amplify app. </p>
         pub fn set_enable_auto_branch_creation(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_auto_branch_creation = input;
             self
         }
+        /// Appends an item to `auto_branch_creation_patterns`.
+        ///
+        /// To override the contents of this collection use [`set_auto_branch_creation_patterns`](Self::set_auto_branch_creation_patterns).
+        ///
+        /// <p> Describes the automated branch creation glob patterns for the Amplify app. </p>
         pub fn auto_branch_creation_patterns(
             mut self,
             input: impl Into<std::string::String>,
@@ -1486,6 +1631,7 @@ pub mod app {
             self.auto_branch_creation_patterns = Some(v);
             self
         }
+        /// <p> Describes the automated branch creation glob patterns for the Amplify app. </p>
         pub fn set_auto_branch_creation_patterns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1501,6 +1647,7 @@ pub mod app {
             self.auto_branch_creation_config = Some(input);
             self
         }
+        /// <p> Describes the automated branch creation configuration for the Amplify app. </p>
         pub fn set_auto_branch_creation_config(
             mut self,
             input: std::option::Option<crate::model::AutoBranchCreationConfig>,
@@ -1619,6 +1766,7 @@ pub mod auto_branch_creation_config {
             self.stage = Some(input);
             self
         }
+        /// <p> Describes the current stage for the autocreated branch. </p>
         pub fn set_stage(mut self, input: std::option::Option<crate::model::Stage>) -> Self {
             self.stage = input;
             self
@@ -1628,6 +1776,7 @@ pub mod auto_branch_creation_config {
             self.framework = Some(input.into());
             self
         }
+        /// <p> The framework for the autocreated branch. </p>
         pub fn set_framework(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.framework = input;
             self
@@ -1637,10 +1786,16 @@ pub mod auto_branch_creation_config {
             self.enable_auto_build = Some(input);
             self
         }
+        /// <p> Enables auto building for the autocreated branch. </p>
         pub fn set_enable_auto_build(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_auto_build = input;
             self
         }
+        /// Adds a key-value pair to `environment_variables`.
+        ///
+        /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
+        ///
+        /// <p> The environment variables for the autocreated branch. </p>
         pub fn environment_variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -1651,6 +1806,7 @@ pub mod auto_branch_creation_config {
             self.environment_variables = Some(hash_map);
             self
         }
+        /// <p> The environment variables for the autocreated branch. </p>
         pub fn set_environment_variables(
             mut self,
             input: std::option::Option<
@@ -1665,6 +1821,7 @@ pub mod auto_branch_creation_config {
             self.basic_auth_credentials = Some(input.into());
             self
         }
+        /// <p> The basic authorization credentials for the autocreated branch. </p>
         pub fn set_basic_auth_credentials(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1677,6 +1834,7 @@ pub mod auto_branch_creation_config {
             self.enable_basic_auth = Some(input);
             self
         }
+        /// <p> Enables basic authorization for the autocreated branch. </p>
         pub fn set_enable_basic_auth(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_basic_auth = input;
             self
@@ -1687,6 +1845,8 @@ pub mod auto_branch_creation_config {
             self.enable_performance_mode = Some(input);
             self
         }
+        /// <p>Enables performance mode for the branch.</p>
+        /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
         pub fn set_enable_performance_mode(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_performance_mode = input;
             self
@@ -1696,6 +1856,7 @@ pub mod auto_branch_creation_config {
             self.build_spec = Some(input.into());
             self
         }
+        /// <p> The build specification (build spec) for the autocreated branch. </p>
         pub fn set_build_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.build_spec = input;
             self
@@ -1705,6 +1866,7 @@ pub mod auto_branch_creation_config {
             self.enable_pull_request_preview = Some(input);
             self
         }
+        /// <p> Enables pull request previews for the autocreated branch. </p>
         pub fn set_enable_pull_request_preview(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_pull_request_preview = input;
             self
@@ -1717,6 +1879,7 @@ pub mod auto_branch_creation_config {
             self.pull_request_environment_name = Some(input.into());
             self
         }
+        /// <p> The Amplify environment name for the pull request. </p>
         pub fn set_pull_request_environment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1753,7 +1916,7 @@ impl AutoBranchCreationConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProductionBranch {
     /// <p> The last deploy time of the production branch. </p>
-    pub last_deploy_time: std::option::Option<smithy_types::Instant>,
+    pub last_deploy_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The status of the production branch. </p>
     pub status: std::option::Option<std::string::String>,
     /// <p> The thumbnail URL for the production branch. </p>
@@ -1777,20 +1940,21 @@ pub mod production_branch {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) last_deploy_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_deploy_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) thumbnail_url: std::option::Option<std::string::String>,
         pub(crate) branch_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p> The last deploy time of the production branch. </p>
-        pub fn last_deploy_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_deploy_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_deploy_time = Some(input);
             self
         }
+        /// <p> The last deploy time of the production branch. </p>
         pub fn set_last_deploy_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_deploy_time = input;
             self
@@ -1800,6 +1964,7 @@ pub mod production_branch {
             self.status = Some(input.into());
             self
         }
+        /// <p> The status of the production branch. </p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -1809,6 +1974,7 @@ pub mod production_branch {
             self.thumbnail_url = Some(input.into());
             self
         }
+        /// <p> The thumbnail URL for the production branch. </p>
         pub fn set_thumbnail_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1821,6 +1987,7 @@ pub mod production_branch {
             self.branch_name = Some(input.into());
             self
         }
+        /// <p> The branch name for the production branch. </p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.branch_name = input;
             self
@@ -1852,6 +2019,7 @@ pub struct CustomRule {
     /// <p> The target pattern for a URL rewrite or redirect rule. </p>
     pub target: std::option::Option<std::string::String>,
     /// <p> The status code for a URL rewrite or redirect rule. </p>
+    ///
     /// <dl>
     /// <dt>200</dt>
     /// <dd>
@@ -1905,6 +2073,7 @@ pub mod custom_rule {
             self.source = Some(input.into());
             self
         }
+        /// <p> The source pattern for a URL rewrite or redirect rule. </p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -1914,11 +2083,13 @@ pub mod custom_rule {
             self.target = Some(input.into());
             self
         }
+        /// <p> The target pattern for a URL rewrite or redirect rule. </p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target = input;
             self
         }
         /// <p> The status code for a URL rewrite or redirect rule. </p>
+        ///
         /// <dl>
         /// <dt>200</dt>
         /// <dd>
@@ -1945,6 +2116,30 @@ pub mod custom_rule {
             self.status = Some(input.into());
             self
         }
+        /// <p> The status code for a URL rewrite or redirect rule. </p>
+        ///
+        /// <dl>
+        /// <dt>200</dt>
+        /// <dd>
+        /// <p>Represents a 200 rewrite rule.</p>
+        /// </dd>
+        /// <dt>301</dt>
+        /// <dd>
+        /// <p>Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target URL. </p>
+        /// </dd>
+        /// <dt>302</dt>
+        /// <dd>
+        /// <p>Represents a 302 temporary redirect rule.</p>
+        /// </dd>
+        /// <dt>404</dt>
+        /// <dd>
+        /// <p>Represents a 404 redirect rule.</p>
+        /// </dd>
+        /// <dt>404-200</dt>
+        /// <dd>
+        /// <p>Represents a 404 rewrite rule.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -1954,6 +2149,7 @@ pub mod custom_rule {
             self.condition = Some(input.into());
             self
         }
+        /// <p> The condition for a URL rewrite or redirect rule, such as a country code. </p>
         pub fn set_condition(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.condition = input;
             self
@@ -1976,6 +2172,7 @@ impl CustomRule {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1987,6 +2184,7 @@ impl CustomRule {
     std::hash::Hash,
 )]
 pub enum Platform {
+    #[allow(missing_docs)] // documentation missing in model
     Web,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2007,12 +2205,14 @@ impl std::str::FromStr for Platform {
     }
 }
 impl Platform {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Platform::Web => "WEB",
             Platform::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["WEB"]
     }
@@ -2036,13 +2236,13 @@ pub struct JobSummary {
     /// <p> The commit message from a third-party repository provider for the job. </p>
     pub commit_message: std::option::Option<std::string::String>,
     /// <p> The commit date and time for the job. </p>
-    pub commit_time: std::option::Option<smithy_types::Instant>,
+    pub commit_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The start date and time for the job. </p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The current status for the job. </p>
     pub status: std::option::Option<crate::model::JobStatus>,
     /// <p> The end date and time for the job. </p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The type for the job. If the value is <code>RELEASE</code>, the job was manually
     /// released from its source by using the <code>StartJob</code> API. If the value is
     /// <code>RETRY</code>, the job was manually retried using the <code>StartJob</code>
@@ -2075,10 +2275,10 @@ pub mod job_summary {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) commit_id: std::option::Option<std::string::String>,
         pub(crate) commit_message: std::option::Option<std::string::String>,
-        pub(crate) commit_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) commit_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) job_type: std::option::Option<crate::model::JobType>,
     }
     impl Builder {
@@ -2087,6 +2287,7 @@ pub mod job_summary {
             self.job_arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) for the job. </p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_arn = input;
             self
@@ -2096,6 +2297,7 @@ pub mod job_summary {
             self.job_id = Some(input.into());
             self
         }
+        /// <p> The unique ID for the job. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -2105,6 +2307,7 @@ pub mod job_summary {
             self.commit_id = Some(input.into());
             self
         }
+        /// <p> The commit ID from a third-party repository provider for the job. </p>
         pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.commit_id = input;
             self
@@ -2114,6 +2317,7 @@ pub mod job_summary {
             self.commit_message = Some(input.into());
             self
         }
+        /// <p> The commit message from a third-party repository provider for the job. </p>
         pub fn set_commit_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2122,23 +2326,28 @@ pub mod job_summary {
             self
         }
         /// <p> The commit date and time for the job. </p>
-        pub fn commit_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn commit_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.commit_time = Some(input);
             self
         }
+        /// <p> The commit date and time for the job. </p>
         pub fn set_commit_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.commit_time = input;
             self
         }
         /// <p> The start date and time for the job. </p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p> The start date and time for the job. </p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
@@ -2147,16 +2356,21 @@ pub mod job_summary {
             self.status = Some(input);
             self
         }
+        /// <p> The current status for the job. </p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.status = input;
             self
         }
         /// <p> The end date and time for the job. </p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p> The end date and time for the job. </p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -2169,6 +2383,11 @@ pub mod job_summary {
             self.job_type = Some(input);
             self
         }
+        /// <p> The type for the job. If the value is <code>RELEASE</code>, the job was manually
+        /// released from its source by using the <code>StartJob</code> API. If the value is
+        /// <code>RETRY</code>, the job was manually retried using the <code>StartJob</code>
+        /// API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by
+        /// webhooks. </p>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
             self.job_type = input;
             self
@@ -2196,6 +2415,7 @@ impl JobSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2207,9 +2427,13 @@ impl JobSummary {
     std::hash::Hash,
 )]
 pub enum JobType {
+    #[allow(missing_docs)] // documentation missing in model
     Manual,
+    #[allow(missing_docs)] // documentation missing in model
     Release,
+    #[allow(missing_docs)] // documentation missing in model
     Retry,
+    #[allow(missing_docs)] // documentation missing in model
     WebHook,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2233,6 +2457,7 @@ impl std::str::FromStr for JobType {
     }
 }
 impl JobType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobType::Manual => "MANUAL",
@@ -2242,6 +2467,7 @@ impl JobType {
             JobType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MANUAL", "RELEASE", "RETRY", "WEB_HOOK"]
     }
@@ -2252,6 +2478,7 @@ impl AsRef<str> for JobType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2263,12 +2490,19 @@ impl AsRef<str> for JobType {
     std::hash::Hash,
 )]
 pub enum JobStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Cancelling,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Provisioning,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Succeed,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2295,6 +2529,7 @@ impl std::str::FromStr for JobStatus {
     }
 }
 impl JobStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobStatus::Cancelled => "CANCELLED",
@@ -2307,6 +2542,7 @@ impl JobStatus {
             JobStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
@@ -2340,10 +2576,10 @@ pub struct BackendEnvironment {
     pub deployment_artifacts: std::option::Option<std::string::String>,
     /// <p> The creation date and time for a backend environment that is part of an Amplify app.
     /// </p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The last updated date and time for a backend environment that is part of an Amplify
     /// app. </p>
-    pub update_time: std::option::Option<smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for BackendEnvironment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2367,8 +2603,8 @@ pub mod backend_environment {
         pub(crate) environment_name: std::option::Option<std::string::String>,
         pub(crate) stack_name: std::option::Option<std::string::String>,
         pub(crate) deployment_artifacts: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
@@ -2377,6 +2613,8 @@ pub mod backend_environment {
             self.backend_environment_arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
+        /// app. </p>
         pub fn set_backend_environment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2389,6 +2627,7 @@ pub mod backend_environment {
             self.environment_name = Some(input.into());
             self
         }
+        /// <p> The name for a backend environment that is part of an Amplify app. </p>
         pub fn set_environment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2401,6 +2640,7 @@ pub mod backend_environment {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p> The AWS CloudFormation stack name of a backend environment. </p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -2410,6 +2650,7 @@ pub mod backend_environment {
             self.deployment_artifacts = Some(input.into());
             self
         }
+        /// <p> The name of deployment artifacts. </p>
         pub fn set_deployment_artifacts(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2419,26 +2660,30 @@ pub mod backend_environment {
         }
         /// <p> The creation date and time for a backend environment that is part of an Amplify app.
         /// </p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p> The creation date and time for a backend environment that is part of an Amplify app.
+        /// </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p> The last updated date and time for a backend environment that is part of an Amplify
         /// app. </p>
-        pub fn update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_time = Some(input);
             self
         }
+        /// <p> The last updated date and time for a backend environment that is part of an Amplify
+        /// app. </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_time = input;
             self
@@ -2495,6 +2740,7 @@ pub mod artifact {
             self.artifact_file_name = Some(input.into());
             self
         }
+        /// <p> The file name for the artifact. </p>
         pub fn set_artifact_file_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2507,6 +2753,7 @@ pub mod artifact {
             self.artifact_id = Some(input.into());
             self
         }
+        /// <p> The unique ID for the artifact. </p>
         pub fn set_artifact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.artifact_id = input;
             self
@@ -2559,16 +2806,23 @@ pub mod job {
             self.summary = Some(input);
             self
         }
+        /// <p> Describes the summary for an execution job for an Amplify app. </p>
         pub fn set_summary(mut self, input: std::option::Option<crate::model::JobSummary>) -> Self {
             self.summary = input;
             self
         }
+        /// Appends an item to `steps`.
+        ///
+        /// To override the contents of this collection use [`set_steps`](Self::set_steps).
+        ///
+        /// <p> The execution steps for an execution job, for an Amplify app. </p>
         pub fn steps(mut self, input: impl Into<crate::model::Step>) -> Self {
             let mut v = self.steps.unwrap_or_default();
             v.push(input.into());
             self.steps = Some(v);
             self
         }
+        /// <p> The execution steps for an execution job, for an Amplify app. </p>
         pub fn set_steps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Step>>,
@@ -2599,11 +2853,11 @@ pub struct Step {
     /// <p> The name of the execution step. </p>
     pub step_name: std::option::Option<std::string::String>,
     /// <p> The start date and time of the execution step. </p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The status of the execution step. </p>
     pub status: std::option::Option<crate::model::JobStatus>,
     /// <p> The end date and time of the execution step. </p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The URL to the logs for the execution step. </p>
     pub log_url: std::option::Option<std::string::String>,
     /// <p> The URL to the artifact for the execution step. </p>
@@ -2645,9 +2899,9 @@ pub mod step {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) step_name: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) log_url: std::option::Option<std::string::String>,
         pub(crate) artifacts_url: std::option::Option<std::string::String>,
         pub(crate) test_artifacts_url: std::option::Option<std::string::String>,
@@ -2664,16 +2918,21 @@ pub mod step {
             self.step_name = Some(input.into());
             self
         }
+        /// <p> The name of the execution step. </p>
         pub fn set_step_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.step_name = input;
             self
         }
         /// <p> The start date and time of the execution step. </p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p> The start date and time of the execution step. </p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
@@ -2682,16 +2941,21 @@ pub mod step {
             self.status = Some(input);
             self
         }
+        /// <p> The status of the execution step. </p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.status = input;
             self
         }
         /// <p> The end date and time of the execution step. </p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p> The end date and time of the execution step. </p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -2700,6 +2964,7 @@ pub mod step {
             self.log_url = Some(input.into());
             self
         }
+        /// <p> The URL to the logs for the execution step. </p>
         pub fn set_log_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_url = input;
             self
@@ -2709,6 +2974,7 @@ pub mod step {
             self.artifacts_url = Some(input.into());
             self
         }
+        /// <p> The URL to the artifact for the execution step. </p>
         pub fn set_artifacts_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2721,6 +2987,7 @@ pub mod step {
             self.test_artifacts_url = Some(input.into());
             self
         }
+        /// <p> The URL to the test artifact for the execution step. </p>
         pub fn set_test_artifacts_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2733,6 +3000,7 @@ pub mod step {
             self.test_config_url = Some(input.into());
             self
         }
+        /// <p> The URL to the test configuration for the execution step. </p>
         pub fn set_test_config_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2740,6 +3008,11 @@ pub mod step {
             self.test_config_url = input;
             self
         }
+        /// Adds a key-value pair to `screenshots`.
+        ///
+        /// To override the contents of this collection use [`set_screenshots`](Self::set_screenshots).
+        ///
+        /// <p> The list of screenshot URLs for the execution step, if relevant. </p>
         pub fn screenshots(
             mut self,
             k: impl Into<std::string::String>,
@@ -2750,6 +3023,7 @@ pub mod step {
             self.screenshots = Some(hash_map);
             self
         }
+        /// <p> The list of screenshot URLs for the execution step, if relevant. </p>
         pub fn set_screenshots(
             mut self,
             input: std::option::Option<
@@ -2764,6 +3038,7 @@ pub mod step {
             self.status_reason = Some(input.into());
             self
         }
+        /// <p> The reason for the current step status. </p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2777,6 +3052,8 @@ pub mod step {
             self.context = Some(input.into());
             self
         }
+        /// <p> The context for the current step. Includes a build image if the step is build.
+        /// </p>
         pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.context = input;
             self

@@ -10,6 +10,7 @@ pub mod cancel_key_deletion_input {
     }
     impl Builder {
         /// <p>Identifies the KMS key whose deletion is being canceled.</p>
+        ///
         /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -27,6 +28,21 @@ pub mod cancel_key_deletion_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Identifies the KMS key whose deletion is being canceled.</p>
+        ///
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -36,7 +52,7 @@ pub mod cancel_key_deletion_input {
             self,
         ) -> std::result::Result<
             crate::input::CancelKeyDeletionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CancelKeyDeletionInput {
                 key_id: self.key_id,
@@ -55,16 +71,16 @@ impl CancelKeyDeletionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CancelKeyDeletion,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CancelKeyDeletionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -72,7 +88,7 @@ impl CancelKeyDeletionInput {
         fn update_http_builder(
             input: &crate::input::CancelKeyDeletionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -81,32 +97,32 @@ impl CancelKeyDeletionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CancelKeyDeletionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.CancelKeyDeletion",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_cancel_key_deletion(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -129,15 +145,15 @@ impl CancelKeyDeletionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CancelKeyDeletion::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CancelKeyDeletion",
             "kms",
         ));
@@ -146,10 +162,10 @@ impl CancelKeyDeletionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -178,6 +194,8 @@ pub mod connect_custom_key_store_input {
             self.custom_key_store_id = Some(input.into());
             self
         }
+        /// <p>Enter the key store ID of the custom key store that you want to connect.
+        /// To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
         pub fn set_custom_key_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -190,7 +208,7 @@ pub mod connect_custom_key_store_input {
             self,
         ) -> std::result::Result<
             crate::input::ConnectCustomKeyStoreInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ConnectCustomKeyStoreInput {
                 custom_key_store_id: self.custom_key_store_id,
@@ -209,16 +227,16 @@ impl ConnectCustomKeyStoreInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ConnectCustomKeyStore,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ConnectCustomKeyStoreInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -226,7 +244,7 @@ impl ConnectCustomKeyStoreInput {
         fn update_http_builder(
             input: &crate::input::ConnectCustomKeyStoreInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -235,32 +253,34 @@ impl ConnectCustomKeyStoreInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ConnectCustomKeyStoreInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.ConnectCustomKeyStore",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_connect_custom_key_store(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -283,15 +303,15 @@ impl ConnectCustomKeyStoreInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ConnectCustomKeyStore::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ConnectCustomKeyStore",
             "kms",
         ));
@@ -300,10 +320,10 @@ impl ConnectCustomKeyStoreInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -338,6 +358,13 @@ pub mod create_alias_input {
             self.alias_name = Some(input.into());
             self
         }
+        /// <p>Specifies the alias name. This value must begin with <code>alias/</code> followed by a
+        /// name, such as <code>alias/ExampleAlias</code>. </p>
+        /// <p>The <code>AliasName</code> value must be string of 1-256 characters. It can contain only
+        /// alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name
+        /// cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed
+        /// keys</a>.</p>
         pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_name = input;
             self
@@ -367,6 +394,27 @@ pub mod create_alias_input {
             self.target_key_id = Some(input.into());
             self
         }
+        /// <p>Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a>. The KMS key must
+        /// be in the same Amazon Web Services Region. </p>
+        /// <p>A valid key ID is required. If you supply a null or empty string value, this operation
+        /// returns an error.</p>
+        /// <p>For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding the Key ID and
+        /// ARN</a> in the <i>
+        /// <i>Key Management Service Developer Guide</i>
+        /// </i>.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_target_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -377,8 +425,10 @@ pub mod create_alias_input {
         /// Consumes the builder and constructs a [`CreateAliasInput`](crate::input::CreateAliasInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateAliasInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateAliasInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateAliasInput {
                 alias_name: self.alias_name,
                 target_key_id: self.target_key_id,
@@ -397,16 +447,16 @@ impl CreateAliasInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateAlias,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateAliasInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -414,7 +464,7 @@ impl CreateAliasInput {
         fn update_http_builder(
             input: &crate::input::CreateAliasInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -423,29 +473,31 @@ impl CreateAliasInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateAliasInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.CreateAlias",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_alias(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -468,22 +520,27 @@ impl CreateAliasInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateAlias::new())
-                .with_metadata(smithy_http::operation::Metadata::new("CreateAlias", "kms"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateAlias::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateAlias",
+            "kms",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -515,6 +572,8 @@ pub mod create_custom_key_store_input {
             self.custom_key_store_name = Some(input.into());
             self
         }
+        /// <p>Specifies a friendly name for the custom key store. The name must be unique in your
+        /// Amazon Web Services account.</p>
         pub fn set_custom_key_store_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -529,6 +588,9 @@ pub mod create_custom_key_store_input {
             self.cloud_hsm_cluster_id = Some(input.into());
             self
         }
+        /// <p>Identifies the CloudHSM cluster for the custom key store. Enter the cluster ID of any active
+        /// CloudHSM cluster that is not already associated with a custom key store. To find the cluster ID,
+        /// use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
         pub fn set_cloud_hsm_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -542,6 +604,8 @@ pub mod create_custom_key_store_input {
             self.trust_anchor_certificate = Some(input.into());
             self
         }
+        /// <p>Enter the content of the trust anchor certificate for the cluster. This is the content of
+        /// the <code>customerCA.crt</code> file that you created when you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized the cluster</a>.</p>
         pub fn set_trust_anchor_certificate(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -560,6 +624,13 @@ pub mod create_custom_key_store_input {
             self.key_store_password = Some(input.into());
             self
         }
+        /// <p>Enter the password of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+        /// <code>kmsuser</code> crypto user
+        /// (CU) account</a> in the specified CloudHSM cluster. KMS logs into the cluster as this
+        /// user to manage key material on your behalf.</p>
+        /// <p>The password must be a string of 7 to 32 characters. Its value is case sensitive.</p>
+        /// <p>This parameter tells KMS the <code>kmsuser</code> account password; it does not change
+        /// the password in the CloudHSM cluster.</p>
         pub fn set_key_store_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -572,7 +643,7 @@ pub mod create_custom_key_store_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateCustomKeyStoreInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateCustomKeyStoreInput {
                 custom_key_store_name: self.custom_key_store_name,
@@ -594,16 +665,16 @@ impl CreateCustomKeyStoreInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateCustomKeyStore,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateCustomKeyStoreInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -611,7 +682,7 @@ impl CreateCustomKeyStoreInput {
         fn update_http_builder(
             input: &crate::input::CreateCustomKeyStoreInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -620,32 +691,34 @@ impl CreateCustomKeyStoreInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateCustomKeyStoreInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.CreateCustomKeyStore",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_custom_key_store(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -668,15 +741,15 @@ impl CreateCustomKeyStoreInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateCustomKeyStore::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateCustomKeyStore",
             "kms",
         ));
@@ -685,10 +758,10 @@ impl CreateCustomKeyStoreInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -737,6 +810,22 @@ pub mod create_grant_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Identifies the KMS key for the grant. The grant gives principals permission to use this
+        /// KMS key.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a
+        /// different Amazon Web Services account, you must use the key ARN.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -752,6 +841,13 @@ pub mod create_grant_input {
             self.grantee_principal = Some(input.into());
             self
         }
+        /// <p>The identity that gets the permissions specified in the grant.</p>
+        /// <p>To specify the principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an
+        /// Amazon Web Services principal. Valid Amazon Web Services principals include Amazon Web Services accounts (root), IAM users, IAM roles,
+        /// federated users, and assumed role users. For examples of the ARN syntax to use for specifying
+        /// a principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access
+        /// Management (IAM)</a> in the Example ARNs section of the <i>Amazon Web Services General
+        /// Reference</i>.</p>
         pub fn set_grantee_principal(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -775,6 +871,18 @@ pub mod create_grant_input {
             self.retiring_principal = Some(input.into());
             self
         }
+        /// <p>The principal that has permission to use the <a>RetireGrant</a> operation to
+        /// retire the grant. </p>
+        /// <p>To specify the principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an
+        /// Amazon Web Services principal. Valid Amazon Web Services principals include Amazon Web Services accounts (root), IAM users, federated
+        /// users, and assumed role users. For examples of the ARN syntax to use for specifying a
+        /// principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access
+        /// Management (IAM)</a> in the Example ARNs section of the <i>Amazon Web Services General
+        /// Reference</i>.</p>
+        /// <p>The grant determines the retiring principal. Other principals might have permission to
+        /// retire the grant or revoke the grant. For details, see <a>RevokeGrant</a> and
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring and
+        /// revoking grants</a> in the <i>Key Management Service Developer Guide</i>. </p>
         pub fn set_retiring_principal(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -782,12 +890,28 @@ pub mod create_grant_input {
             self.retiring_principal = input;
             self
         }
+        /// Appends an item to `operations`.
+        ///
+        /// To override the contents of this collection use [`set_operations`](Self::set_operations).
+        ///
+        /// <p>A list of operations that the grant permits. </p>
+        /// <p>The operation must be supported on the KMS key. For example, you cannot create a grant for
+        /// a symmetric KMS key that allows the <a>Sign</a> operation, or a grant for an
+        /// asymmetric KMS key that allows the <a>GenerateDataKey</a> operation. If you try,
+        /// KMS returns a <code>ValidationError</code> exception. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">Grant
+        /// operations</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn operations(mut self, input: impl Into<crate::model::GrantOperation>) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input.into());
             self.operations = Some(v);
             self
         }
+        /// <p>A list of operations that the grant permits. </p>
+        /// <p>The operation must be supported on the KMS key. For example, you cannot create a grant for
+        /// a symmetric KMS key that allows the <a>Sign</a> operation, or a grant for an
+        /// asymmetric KMS key that allows the <a>GenerateDataKey</a> operation. If you try,
+        /// KMS returns a <code>ValidationError</code> exception. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">Grant
+        /// operations</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GrantOperation>>,
@@ -816,6 +940,23 @@ pub mod create_grant_input {
             self.constraints = Some(input);
             self
         }
+        /// <p>Specifies a grant constraint. </p>
+        /// <p>KMS supports the <code>EncryptionContextEquals</code> and
+        /// <code>EncryptionContextSubset</code> grant constraints. Each constraint value can include up
+        /// to 8 encryption context pairs. The encryption context value in each constraint cannot exceed
+        /// 384 characters.</p>
+        /// <p>These grant constraints allow the permissions in the grant only when the encryption
+        /// context in the request matches (<code>EncryptionContextEquals</code>) or includes
+        /// (<code>EncryptionContextSubset</code>) the encryption context specified in this structure.
+        /// For information about grant constraints, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using grant
+        /// constraints</a> in the <i>Key Management Service Developer Guide</i>. For more information about encryption context,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// Context</a> in the <i>
+        /// <i>Key Management Service Developer Guide</i>
+        /// </i>. </p>
+        /// <p>The encryption context grant constraints are supported only on operations that include an
+        /// encryption context. You cannot use an encryption context grant constraint for cryptographic
+        /// operations with asymmetric KMS keys or for management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
         pub fn set_constraints(
             mut self,
             input: std::option::Option<crate::model::GrantConstraints>,
@@ -823,12 +964,22 @@ pub mod create_grant_input {
             self.constraints = input;
             self
         }
+        /// Appends an item to `grant_tokens`.
+        ///
+        /// To override the contents of this collection use [`set_grant_tokens`](Self::set_grant_tokens).
+        ///
+        /// <p>A list of grant tokens. </p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
             v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
+        /// <p>A list of grant tokens. </p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_grant_tokens(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -850,6 +1001,16 @@ pub mod create_grant_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A friendly name for the grant. Use this value to prevent the unintended creation of
+        /// duplicate grants when retrying this request.</p>
+        /// <p>When this value is absent, all <code>CreateGrant</code> requests result in a new grant
+        /// with a unique <code>GrantId</code> even if all the supplied parameters are identical. This can
+        /// result in unintended duplicates when you retry the <code>CreateGrant</code> request.</p>
+        /// <p>When this value is present, you can retry a <code>CreateGrant</code> request with
+        /// identical parameters; if the grant already exists, the original <code>GrantId</code> is
+        /// returned without creating a new grant. Note that the returned grant token is unique with every
+        /// <code>CreateGrant</code> request, even when a duplicate <code>GrantId</code> is returned.
+        /// All grant tokens for the same grant ID can be used interchangeably.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -857,8 +1018,10 @@ pub mod create_grant_input {
         /// Consumes the builder and constructs a [`CreateGrantInput`](crate::input::CreateGrantInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateGrantInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateGrantInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateGrantInput {
                 key_id: self.key_id,
                 grantee_principal: self.grantee_principal,
@@ -882,16 +1045,16 @@ impl CreateGrantInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateGrant,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateGrantInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -899,7 +1062,7 @@ impl CreateGrantInput {
         fn update_http_builder(
             input: &crate::input::CreateGrantInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -908,29 +1071,31 @@ impl CreateGrantInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateGrantInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.CreateGrant",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_grant(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -953,22 +1118,27 @@ impl CreateGrantInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateGrant::new())
-                .with_metadata(smithy_http::operation::Metadata::new("CreateGrant", "kms"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateGrant::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateGrant",
+            "kms",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1033,6 +1203,34 @@ pub mod create_key_input {
             self.policy = Some(input.into());
             self
         }
+        /// <p>The key policy to attach to the KMS key.</p>
+        /// <p>If you provide a key policy, it must meet the following criteria:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy
+        /// must allow the principal that is making the <code>CreateKey</code> request to make a
+        /// subsequent <a>PutKeyPolicy</a> request on the KMS key. This reduces the risk
+        /// that the KMS key becomes unmanageable. For more information, refer to the scenario in the
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>
+        /// <i>Key Management Service Developer Guide</i>
+        /// </i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Each statement in the key policy must contain one or more principals. The principals
+        /// in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services
+        /// principal (for example, an IAM user or role), you might need to enforce a delay before
+        /// including the new principal in a key policy because the new principal might not be
+        /// immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services
+        /// Identity and Access Management User Guide</i>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you do not provide a key policy, KMS attaches a default key policy to the KMS key.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default Key Policy</a> in the
+        /// <i>Key Management Service Developer Guide</i>. </p>
+        /// <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
+        /// <p>For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i>
+        /// <i>Identity and Access Management User Guide</i>
+        /// </i>.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -1045,6 +1243,10 @@ pub mod create_key_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the KMS key.</p>
+        /// <p>Use a description that helps you decide whether the KMS key is appropriate for a task. The
+        /// default value is an empty string (no description).</p>
+        /// <p>To set or change the description after the key is created, use <a>UpdateKeyDescription</a>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1071,6 +1273,24 @@ pub mod create_key_input {
             self.key_usage = Some(input);
             self
         }
+        /// <p>Determines the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key. The default value is
+        /// <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric KMS keys. You
+        /// can't change the <code>KeyUsage</code> value after the KMS key is created.</p>
+        /// <p>Select only one valid value.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For symmetric KMS keys, omit the parameter or specify
+        /// <code>ENCRYPT_DECRYPT</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For asymmetric KMS keys with RSA key material, specify <code>ENCRYPT_DECRYPT</code> or
+        /// <code>SIGN_VERIFY</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For asymmetric KMS keys with ECC key material, specify
+        /// <code>SIGN_VERIFY</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_key_usage(
             mut self,
             input: std::option::Option<crate::model::KeyUsageType>,
@@ -1089,6 +1309,10 @@ pub mod create_key_input {
             self.customer_master_key_spec = Some(input);
             self
         }
+        /// <p>Instead, use the <code>KeySpec</code> parameter.</p>
+        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> parameters work the same
+        /// way. Only the names differ. We recommend that you use <code>KeySpec</code> parameter in your
+        /// code. However, to avoid breaking changes, KMS will support both parameters.</p>
         pub fn set_customer_master_key_spec(
             mut self,
             input: std::option::Option<crate::model::CustomerMasterKeySpec>,
@@ -1180,6 +1404,86 @@ pub mod create_key_input {
             self.key_spec = Some(input);
             self
         }
+        /// <p>Specifies the type of KMS key to create. The default value,
+        /// <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit symmetric key for encryption
+        /// and decryption. For help choosing a key spec for your KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-choose.html">How to Choose Your KMS key
+        /// Configuration</a> in the <i>
+        /// <i>Key Management Service Developer Guide</i>
+        /// </i>.</p>
+        /// <p>The <code>KeySpec</code> determines whether the KMS key contains a symmetric key or an
+        /// asymmetric key pair. It also determines the encryption algorithms or signing algorithms that
+        /// the KMS key supports. You can't change the <code>KeySpec</code> after the KMS key is created.
+        /// To further restrict the algorithms that can be used with the KMS key, use a condition key in
+        /// its key policy or IAM policy. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing Algorithm</a> in the <i>
+        /// <i>Key Management Service Developer Guide</i>
+        /// </i>.</p>
+        /// <important>
+        /// <p>
+        /// <a href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">Amazon Web Services services that
+        /// are integrated with KMS</a> use symmetric KMS keys to protect your data. These
+        /// services do not support asymmetric KMS keys. For help determining whether a KMS key is
+        /// symmetric or asymmetric, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying Symmetric and Asymmetric
+        /// KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// </important>
+        /// <p>KMS supports the following key specs for KMS keys:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Symmetric key (default)</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Asymmetric RSA key pairs</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>RSA_2048</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RSA_3072</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RSA_4096</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Asymmetric NIST-recommended elliptic curve key pairs</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ECC_NIST_P256</code> (secp256r1)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ECC_NIST_P384</code> (secp384r1)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ECC_NIST_P521</code> (secp521r1)</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Other asymmetric elliptic curve key pairs</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
+        /// cryptocurrencies.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn set_key_spec(mut self, input: std::option::Option<crate::model::KeySpec>) -> Self {
             self.key_spec = input;
             self
@@ -1200,6 +1504,18 @@ pub mod create_key_input {
             self.origin = Some(input);
             self
         }
+        /// <p>The source of the key material for the KMS key. You cannot change the origin after you
+        /// create the KMS key. The default is <code>AWS_KMS</code>, which means that KMS creates the
+        /// key material.</p>
+        /// <p>To create a KMS key with no key material (for imported key material), set the value to
+        /// <code>EXTERNAL</code>. For more information about importing key material into KMS, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key
+        /// Material</a> in the <i>Key Management Service Developer Guide</i>. This value is valid only for symmetric KMS
+        /// keys.</p>
+        /// <p>To create a KMS key in an KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> and create its key material in the
+        /// associated CloudHSM cluster, set this value to <code>AWS_CLOUDHSM</code>. You must also use the
+        /// <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value is
+        /// valid only for symmetric KMS keys.</p>
         pub fn set_origin(mut self, input: std::option::Option<crate::model::OriginType>) -> Self {
             self.origin = input;
             self
@@ -1220,6 +1536,18 @@ pub mod create_key_input {
             self.custom_key_store_id = Some(input.into());
             self
         }
+        /// <p>Creates the KMS key in the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> and the key material in its
+        /// associated CloudHSM cluster. To create a KMS key in a custom key store, you must also specify the
+        /// <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The CloudHSM cluster
+        /// that is associated with the custom key store must have at least two active HSMs, each in a
+        /// different Availability Zone in the Region.</p>
+        /// <p>This parameter is valid only for symmetric KMS keys and regional KMS keys. You cannot
+        /// create an asymmetric KMS key or a multi-Region key in a custom key store.</p>
+        /// <p>To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
+        /// <p>The response includes the custom key store ID and the ID of the CloudHSM cluster.</p>
+        /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom Key Store feature</a> feature in KMS, which
+        /// combines the convenience and extensive integration of KMS with the isolation and control of a
+        /// single-tenant key store.</p>
         pub fn set_custom_key_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1242,6 +1570,17 @@ pub mod create_key_input {
             self.bypass_policy_lockout_safety_check = Some(input);
             self
         }
+        /// <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
+        /// <important>
+        /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do
+        /// not set this value to true indiscriminately.</p>
+        /// <p>For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>
+        /// <i>Key Management Service Developer Guide</i>
+        /// </i>.</p>
+        /// </important>
+        /// <p>Use this parameter only when you include a policy in the request and you intend to prevent
+        /// the principal that is making the request from making a subsequent <a>PutKeyPolicy</a> request on the KMS key.</p>
+        /// <p>The default value is false.</p>
         pub fn set_bypass_policy_lockout_safety_check(
             mut self,
             input: std::option::Option<bool>,
@@ -1249,12 +1588,42 @@ pub mod create_key_input {
             self.bypass_policy_lockout_safety_check = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when it is
+        /// created. To tag an existing KMS key, use the <a>TagResource</a> operation.</p>
+        /// <note>
+        /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// </note>
+        /// <p>To use this parameter, you must have <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a> permission in an IAM policy.</p>
+        /// <p>Each tag consists of a tag key and a tag value. Both the tag key and the tag value are
+        /// required, but the tag value can be an empty (null) string. You cannot have more than one tag
+        /// on a KMS key with the same tag key. If you specify an existing tag key with a different tag
+        /// value, KMS replaces the current tag value with the specified one.</p>
+        /// <p>When you add tags to an Amazon Web Services resource, Amazon Web Services generates a cost allocation
+        /// report with usage and costs aggregated by tags. Tags can also be used to control access to a KMS key. For details,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when it is
+        /// created. To tag an existing KMS key, use the <a>TagResource</a> operation.</p>
+        /// <note>
+        /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// </note>
+        /// <p>To use this parameter, you must have <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a> permission in an IAM policy.</p>
+        /// <p>Each tag consists of a tag key and a tag value. Both the tag key and the tag value are
+        /// required, but the tag value can be an empty (null) string. You cannot have more than one tag
+        /// on a KMS key with the same tag key. If you specify an existing tag key with a different tag
+        /// value, KMS replaces the current tag value with the specified one.</p>
+        /// <p>When you add tags to an Amazon Web Services resource, Amazon Web Services generates a cost allocation
+        /// report with usage and costs aggregated by tags. Tags can also be used to control access to a KMS key. For details,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1280,6 +1649,20 @@ pub mod create_key_input {
             self.multi_region = Some(input);
             self
         }
+        /// <p>Creates a multi-Region primary key that you can replicate into other Amazon Web Services Regions. You
+        /// cannot change this value after you create the KMS key. </p>
+        /// <p>For a multi-Region key, set this parameter to <code>True</code>. For a single-Region KMS
+        /// key, omit this parameter or set it to <code>False</code>. The default value is
+        /// <code>False</code>.</p>
+        /// <p>This operation supports <i>multi-Region keys</i>, an KMS feature that lets you create multiple
+        /// interoperable KMS keys in different Amazon Web Services Regions. Because these KMS keys have the same key ID, key
+        /// material, and other metadata, you can use them interchangeably to encrypt data in one Amazon Web Services Region and decrypt
+        /// it in a different Amazon Web Services Region without re-encrypting the data or making a cross-Region call. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>This value creates a <i>primary key</i>, not a replica. To create a
+        /// <i>replica key</i>, use the <a>ReplicateKey</a> operation. </p>
+        /// <p>You can create a symmetric or asymmetric multi-Region key, and you can create a
+        /// multi-Region key with imported key material. However, you cannot create a multi-Region key in
+        /// a custom key store.</p>
         pub fn set_multi_region(mut self, input: std::option::Option<bool>) -> Self {
             self.multi_region = input;
             self
@@ -1287,7 +1670,7 @@ pub mod create_key_input {
         /// Consumes the builder and constructs a [`CreateKeyInput`](crate::input::CreateKeyInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateKeyInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::CreateKeyInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::CreateKeyInput {
                 policy: self.policy,
@@ -1317,16 +1700,16 @@ impl CreateKeyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateKey,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateKeyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1334,7 +1717,7 @@ impl CreateKeyInput {
         fn update_http_builder(
             input: &crate::input::CreateKeyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1343,29 +1726,31 @@ impl CreateKeyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateKeyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.CreateKey",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_key(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1388,22 +1773,25 @@ impl CreateKeyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateKey::new())
-                .with_metadata(smithy_http::operation::Metadata::new("CreateKey", "kms"));
+            aws_smithy_http::operation::Operation::new(request, crate::operation::CreateKey::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "CreateKey",
+                    "kms",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1423,7 +1811,7 @@ pub mod decrypt_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) ciphertext_blob: std::option::Option<smithy_types::Blob>,
+        pub(crate) ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) encryption_context: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -1433,17 +1821,28 @@ pub mod decrypt_input {
     }
     impl Builder {
         /// <p>Ciphertext to be decrypted. The blob includes metadata.</p>
-        pub fn ciphertext_blob(mut self, input: smithy_types::Blob) -> Self {
+        pub fn ciphertext_blob(mut self, input: aws_smithy_types::Blob) -> Self {
             self.ciphertext_blob = Some(input);
             self
         }
+        /// <p>Ciphertext to be decrypted. The blob includes metadata.</p>
         pub fn set_ciphertext_blob(
             mut self,
-            input: std::option::Option<smithy_types::Blob>,
+            input: std::option::Option<aws_smithy_types::Blob>,
         ) -> Self {
             self.ciphertext_blob = input;
             self
         }
+        /// Adds a key-value pair to `encryption_context`.
+        ///
+        /// To override the contents of this collection use [`set_encryption_context`](Self::set_encryption_context).
+        ///
+        /// <p>Specifies the encryption context to use when decrypting the data.
+        /// An encryption context is valid only for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> with a symmetric KMS key. The standard asymmetric encryption algorithms that KMS uses do not support an encryption context.</p>
+        /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn encryption_context(
             mut self,
             k: impl Into<std::string::String>,
@@ -1454,6 +1853,12 @@ pub mod decrypt_input {
             self.encryption_context = Some(hash_map);
             self
         }
+        /// <p>Specifies the encryption context to use when decrypting the data.
+        /// An encryption context is valid only for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> with a symmetric KMS key. The standard asymmetric encryption algorithms that KMS uses do not support an encryption context.</p>
+        /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_encryption_context(
             mut self,
             input: std::option::Option<
@@ -1463,12 +1868,22 @@ pub mod decrypt_input {
             self.encryption_context = input;
             self
         }
+        /// Appends an item to `grant_tokens`.
+        ///
+        /// To override the contents of this collection use [`set_grant_tokens`](Self::set_grant_tokens).
+        ///
+        /// <p>A list of grant tokens. </p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
             v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
+        /// <p>A list of grant tokens. </p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_grant_tokens(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1478,10 +1893,12 @@ pub mod decrypt_input {
         }
         /// <p>Specifies the KMS key that KMS uses to decrypt the ciphertext. Enter a key ID of the KMS
         /// key that was used to encrypt the ciphertext. </p>
+        ///
         /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS
         /// key. If you used a symmetric KMS key, KMS can get the KMS key from metadata that it adds to
         /// the symmetric ciphertext blob. However, it is always recommended as a best practice. This
         /// practice ensures that you use the KMS key that you intend.</p>
+        ///
         /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -1507,6 +1924,35 @@ pub mod decrypt_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Specifies the KMS key that KMS uses to decrypt the ciphertext. Enter a key ID of the KMS
+        /// key that was used to encrypt the ciphertext. </p>
+        ///
+        /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS
+        /// key. If you used a symmetric KMS key, KMS can get the KMS key from metadata that it adds to
+        /// the symmetric ciphertext blob. However, it is always recommended as a best practice. This
+        /// practice ensures that you use the KMS key that you intend.</p>
+        ///
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// <li>
+        /// <p>Alias name: <code>alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -1524,6 +1970,12 @@ pub mod decrypt_input {
             self.encryption_algorithm = Some(input);
             self
         }
+        /// <p>Specifies the encryption algorithm that will be used to decrypt the ciphertext. Specify
+        /// the same algorithm that was used to encrypt the data. If you specify a different algorithm,
+        /// the <code>Decrypt</code> operation fails.</p>
+        /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS
+        /// key. The default value, <code>SYMMETRIC_DEFAULT</code>, represents the only supported
+        /// algorithm that is valid for symmetric KMS keys.</p>
         pub fn set_encryption_algorithm(
             mut self,
             input: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
@@ -1534,7 +1986,7 @@ pub mod decrypt_input {
         /// Consumes the builder and constructs a [`DecryptInput`](crate::input::DecryptInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DecryptInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::DecryptInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::DecryptInput {
                 ciphertext_blob: self.ciphertext_blob,
@@ -1557,13 +2009,16 @@ impl DecryptInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::Decrypt, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::Decrypt,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DecryptInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1571,7 +2026,7 @@ impl DecryptInput {
         fn update_http_builder(
             input: &crate::input::DecryptInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1580,29 +2035,31 @@ impl DecryptInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DecryptInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.Decrypt",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_decrypt(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1625,21 +2082,22 @@ impl DecryptInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::Decrypt::new())
-            .with_metadata(smithy_http::operation::Metadata::new("Decrypt", "kms"));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::Decrypt::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new("Decrypt", "kms"));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1668,6 +2126,8 @@ pub mod delete_alias_input {
             self.alias_name = Some(input.into());
             self
         }
+        /// <p>The alias to be deleted. The alias name must begin with <code>alias/</code> followed by
+        /// the alias name, such as <code>alias/ExampleAlias</code>.</p>
         pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_name = input;
             self
@@ -1675,8 +2135,10 @@ pub mod delete_alias_input {
         /// Consumes the builder and constructs a [`DeleteAliasInput`](crate::input::DeleteAliasInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteAliasInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteAliasInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteAliasInput {
                 alias_name: self.alias_name,
             })
@@ -1694,16 +2156,16 @@ impl DeleteAliasInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteAlias,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteAliasInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1711,7 +2173,7 @@ impl DeleteAliasInput {
         fn update_http_builder(
             input: &crate::input::DeleteAliasInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1720,29 +2182,31 @@ impl DeleteAliasInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteAliasInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.DeleteAlias",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_alias(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1765,22 +2229,27 @@ impl DeleteAliasInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteAlias::new())
-                .with_metadata(smithy_http::operation::Metadata::new("DeleteAlias", "kms"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteAlias::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteAlias",
+            "kms",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1808,6 +2277,7 @@ pub mod delete_custom_key_store_input {
             self.custom_key_store_id = Some(input.into());
             self
         }
+        /// <p>Enter the ID of the custom key store you want to delete. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
         pub fn set_custom_key_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1820,7 +2290,7 @@ pub mod delete_custom_key_store_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteCustomKeyStoreInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteCustomKeyStoreInput {
                 custom_key_store_id: self.custom_key_store_id,
@@ -1839,16 +2309,16 @@ impl DeleteCustomKeyStoreInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteCustomKeyStore,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteCustomKeyStoreInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1856,7 +2326,7 @@ impl DeleteCustomKeyStoreInput {
         fn update_http_builder(
             input: &crate::input::DeleteCustomKeyStoreInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1865,32 +2335,34 @@ impl DeleteCustomKeyStoreInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteCustomKeyStoreInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.DeleteCustomKeyStore",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_custom_key_store(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1913,15 +2385,15 @@ impl DeleteCustomKeyStoreInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteCustomKeyStore::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteCustomKeyStore",
             "kms",
         ));
@@ -1930,10 +2402,10 @@ impl DeleteCustomKeyStoreInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1958,6 +2430,7 @@ pub mod delete_imported_key_material_input {
     impl Builder {
         /// <p>Identifies the KMS key from which you are deleting imported key material. The
         /// <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
+        ///
         /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -1975,6 +2448,22 @@ pub mod delete_imported_key_material_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Identifies the KMS key from which you are deleting imported key material. The
+        /// <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
+        ///
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -1984,7 +2473,7 @@ pub mod delete_imported_key_material_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteImportedKeyMaterialInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteImportedKeyMaterialInput {
                 key_id: self.key_id,
@@ -2004,16 +2493,16 @@ impl DeleteImportedKeyMaterialInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteImportedKeyMaterial,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteImportedKeyMaterialInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2021,7 +2510,7 @@ impl DeleteImportedKeyMaterialInput {
         fn update_http_builder(
             input: &crate::input::DeleteImportedKeyMaterialInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2030,32 +2519,34 @@ impl DeleteImportedKeyMaterialInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteImportedKeyMaterialInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.DeleteImportedKeyMaterial",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_imported_key_material(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2078,15 +2569,15 @@ impl DeleteImportedKeyMaterialInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteImportedKeyMaterial::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteImportedKeyMaterial",
             "kms",
         ));
@@ -2095,10 +2586,10 @@ impl DeleteImportedKeyMaterialInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2133,6 +2624,11 @@ pub mod describe_custom_key_stores_input {
             self.custom_key_store_id = Some(input.into());
             self
         }
+        /// <p>Gets only information about the specified custom key store. Enter the key store ID.</p>
+        /// <p>By default, this operation gets information about all custom key stores in the account and
+        /// Region. To limit the output to a particular custom key store, you can use either the
+        /// <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not
+        /// both.</p>
         pub fn set_custom_key_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2150,6 +2646,12 @@ pub mod describe_custom_key_stores_input {
             self.custom_key_store_name = Some(input.into());
             self
         }
+        /// <p>Gets only information about the specified custom key store. Enter the friendly name of the
+        /// custom key store.</p>
+        /// <p>By default, this operation gets information about all custom key stores in the account and
+        /// Region. To limit the output to a particular custom key store, you can use either the
+        /// <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not
+        /// both.</p>
         pub fn set_custom_key_store_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2164,6 +2666,9 @@ pub mod describe_custom_key_stores_input {
             self.limit = Some(input);
             self
         }
+        /// <p>Use this parameter to specify the maximum number of items to return. When this
+        /// value is present, KMS does not return more than the specified number of items, but it might
+        /// return fewer.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -2175,6 +2680,9 @@ pub mod describe_custom_key_stores_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>Use this parameter in a subsequent request after you receive a response with
+        /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
+        /// you just received.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2184,7 +2692,7 @@ pub mod describe_custom_key_stores_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeCustomKeyStoresInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeCustomKeyStoresInput {
                 custom_key_store_id: self.custom_key_store_id,
@@ -2207,16 +2715,16 @@ impl DescribeCustomKeyStoresInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCustomKeyStores,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeCustomKeyStoresInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2224,7 +2732,7 @@ impl DescribeCustomKeyStoresInput {
         fn update_http_builder(
             input: &crate::input::DescribeCustomKeyStoresInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2233,32 +2741,34 @@ impl DescribeCustomKeyStoresInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeCustomKeyStoresInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.DescribeCustomKeyStores",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_custom_key_stores(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2281,15 +2791,15 @@ impl DescribeCustomKeyStoresInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCustomKeyStores::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCustomKeyStores",
             "kms",
         ));
@@ -2298,10 +2808,10 @@ impl DescribeCustomKeyStoresInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2329,6 +2839,7 @@ pub mod describe_key_input {
         /// <p>If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), KMS associates
         /// the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html##aws-managed-cmk">Amazon Web Services managed key</a> and returns its
         /// <code>KeyId</code> and <code>Arn</code> in the response.</p>
+        ///
         /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -2354,16 +2865,52 @@ pub mod describe_key_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Describes the specified KMS key. </p>
+        /// <p>If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), KMS associates
+        /// the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html##aws-managed-cmk">Amazon Web Services managed key</a> and returns its
+        /// <code>KeyId</code> and <code>Arn</code> in the response.</p>
+        ///
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// <li>
+        /// <p>Alias name: <code>alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
         }
+        /// Appends an item to `grant_tokens`.
+        ///
+        /// To override the contents of this collection use [`set_grant_tokens`](Self::set_grant_tokens).
+        ///
+        /// <p>A list of grant tokens.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
             v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
+        /// <p>A list of grant tokens.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_grant_tokens(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2374,8 +2921,10 @@ pub mod describe_key_input {
         /// Consumes the builder and constructs a [`DescribeKeyInput`](crate::input::DescribeKeyInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeKeyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeKeyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeKeyInput {
                 key_id: self.key_id,
                 grant_tokens: self.grant_tokens,
@@ -2394,16 +2943,16 @@ impl DescribeKeyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeKey,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeKeyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2411,7 +2960,7 @@ impl DescribeKeyInput {
         fn update_http_builder(
             input: &crate::input::DescribeKeyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2420,29 +2969,31 @@ impl DescribeKeyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeKeyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.DescribeKey",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_key(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2465,22 +3016,27 @@ impl DescribeKeyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeKey::new())
-                .with_metadata(smithy_http::operation::Metadata::new("DescribeKey", "kms"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeKey::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeKey",
+            "kms",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2521,6 +3077,20 @@ pub mod disable_key_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Identifies the KMS key to disable.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -2528,8 +3098,10 @@ pub mod disable_key_input {
         /// Consumes the builder and constructs a [`DisableKeyInput`](crate::input::DisableKeyInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DisableKeyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DisableKeyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DisableKeyInput {
                 key_id: self.key_id,
             })
@@ -2547,16 +3119,16 @@ impl DisableKeyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisableKey,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisableKeyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2564,7 +3136,7 @@ impl DisableKeyInput {
         fn update_http_builder(
             input: &crate::input::DisableKeyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2573,29 +3145,31 @@ impl DisableKeyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisableKeyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.DisableKey",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_disable_key(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2618,22 +3192,27 @@ impl DisableKeyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DisableKey::new())
-                .with_metadata(smithy_http::operation::Metadata::new("DisableKey", "kms"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisableKey::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DisableKey",
+            "kms",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2676,6 +3255,22 @@ pub mod disable_key_rotation_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Identifies a symmetric KMS key. You cannot enable or disable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
+        /// KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or KMS keys in a
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -2685,7 +3280,7 @@ pub mod disable_key_rotation_input {
             self,
         ) -> std::result::Result<
             crate::input::DisableKeyRotationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisableKeyRotationInput {
                 key_id: self.key_id,
@@ -2704,16 +3299,16 @@ impl DisableKeyRotationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisableKeyRotation,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisableKeyRotationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2721,7 +3316,7 @@ impl DisableKeyRotationInput {
         fn update_http_builder(
             input: &crate::input::DisableKeyRotationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2730,30 +3325,32 @@ impl DisableKeyRotationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisableKeyRotationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.DisableKeyRotation",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disable_key_rotation(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2776,15 +3373,15 @@ impl DisableKeyRotationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisableKeyRotation::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisableKeyRotation",
             "kms",
         ));
@@ -2793,10 +3390,10 @@ impl DisableKeyRotationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2824,6 +3421,7 @@ pub mod disconnect_custom_key_store_input {
             self.custom_key_store_id = Some(input.into());
             self
         }
+        /// <p>Enter the ID of the custom key store you want to disconnect. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
         pub fn set_custom_key_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2836,7 +3434,7 @@ pub mod disconnect_custom_key_store_input {
             self,
         ) -> std::result::Result<
             crate::input::DisconnectCustomKeyStoreInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisconnectCustomKeyStoreInput {
                 custom_key_store_id: self.custom_key_store_id,
@@ -2856,16 +3454,16 @@ impl DisconnectCustomKeyStoreInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisconnectCustomKeyStore,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisconnectCustomKeyStoreInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2873,7 +3471,7 @@ impl DisconnectCustomKeyStoreInput {
         fn update_http_builder(
             input: &crate::input::DisconnectCustomKeyStoreInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2882,32 +3480,34 @@ impl DisconnectCustomKeyStoreInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisconnectCustomKeyStoreInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.DisconnectCustomKeyStore",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disconnect_custom_key_store(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2930,15 +3530,15 @@ impl DisconnectCustomKeyStoreInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisconnectCustomKeyStore::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisconnectCustomKeyStore",
             "kms",
         ));
@@ -2947,10 +3547,10 @@ impl DisconnectCustomKeyStoreInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2991,6 +3591,20 @@ pub mod enable_key_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Identifies the KMS key to enable.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -2998,7 +3612,7 @@ pub mod enable_key_input {
         /// Consumes the builder and constructs a [`EnableKeyInput`](crate::input::EnableKeyInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::EnableKeyInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::EnableKeyInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::EnableKeyInput {
                 key_id: self.key_id,
@@ -3017,16 +3631,16 @@ impl EnableKeyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::EnableKey,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::EnableKeyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3034,7 +3648,7 @@ impl EnableKeyInput {
         fn update_http_builder(
             input: &crate::input::EnableKeyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3043,29 +3657,31 @@ impl EnableKeyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::EnableKeyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.EnableKey",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_enable_key(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3088,22 +3704,25 @@ impl EnableKeyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::EnableKey::new())
-                .with_metadata(smithy_http::operation::Metadata::new("EnableKey", "kms"));
+            aws_smithy_http::operation::Operation::new(request, crate::operation::EnableKey::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "EnableKey",
+                    "kms",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3144,6 +3763,20 @@ pub mod enable_key_rotation_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Identifies a symmetric KMS key. You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#asymmetric-cmks">asymmetric KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html#mrk-replica-key">multi-Region keys</a>, set the property on the primary key.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -3153,7 +3786,7 @@ pub mod enable_key_rotation_input {
             self,
         ) -> std::result::Result<
             crate::input::EnableKeyRotationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::EnableKeyRotationInput {
                 key_id: self.key_id,
@@ -3172,16 +3805,16 @@ impl EnableKeyRotationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::EnableKeyRotation,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::EnableKeyRotationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3189,7 +3822,7 @@ impl EnableKeyRotationInput {
         fn update_http_builder(
             input: &crate::input::EnableKeyRotationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3198,32 +3831,32 @@ impl EnableKeyRotationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::EnableKeyRotationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.EnableKeyRotation",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_enable_key_rotation(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3246,15 +3879,15 @@ impl EnableKeyRotationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::EnableKeyRotation::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "EnableKeyRotation",
             "kms",
         ));
@@ -3263,10 +3896,10 @@ impl EnableKeyRotationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3287,7 +3920,7 @@ pub mod encrypt_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
-        pub(crate) plaintext: std::option::Option<smithy_types::Blob>,
+        pub(crate) plaintext: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) encryption_context: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -3296,6 +3929,7 @@ pub mod encrypt_input {
     }
     impl Builder {
         /// <p>Identifies the KMS key to use in the encryption operation.</p>
+        ///
         /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -3321,19 +3955,53 @@ pub mod encrypt_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Identifies the KMS key to use in the encryption operation.</p>
+        ///
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// <li>
+        /// <p>Alias name: <code>alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
         }
         /// <p>Data to be encrypted.</p>
-        pub fn plaintext(mut self, input: smithy_types::Blob) -> Self {
+        pub fn plaintext(mut self, input: aws_smithy_types::Blob) -> Self {
             self.plaintext = Some(input);
             self
         }
-        pub fn set_plaintext(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>Data to be encrypted.</p>
+        pub fn set_plaintext(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.plaintext = input;
             self
         }
+        /// Adds a key-value pair to `encryption_context`.
+        ///
+        /// To override the contents of this collection use [`set_encryption_context`](Self::set_encryption_context).
+        ///
+        /// <p>Specifies the encryption context that will be used to encrypt the data.
+        /// An encryption context is valid only for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> with a symmetric KMS key. The standard asymmetric encryption algorithms that KMS uses do not support an encryption context. </p>
+        /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn encryption_context(
             mut self,
             k: impl Into<std::string::String>,
@@ -3344,6 +4012,12 @@ pub mod encrypt_input {
             self.encryption_context = Some(hash_map);
             self
         }
+        /// <p>Specifies the encryption context that will be used to encrypt the data.
+        /// An encryption context is valid only for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> with a symmetric KMS key. The standard asymmetric encryption algorithms that KMS uses do not support an encryption context. </p>
+        /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_encryption_context(
             mut self,
             input: std::option::Option<
@@ -3353,12 +4027,22 @@ pub mod encrypt_input {
             self.encryption_context = input;
             self
         }
+        /// Appends an item to `grant_tokens`.
+        ///
+        /// To override the contents of this collection use [`set_grant_tokens`](Self::set_grant_tokens).
+        ///
+        /// <p>A list of grant tokens.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
             v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
+        /// <p>A list of grant tokens.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_grant_tokens(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3378,6 +4062,11 @@ pub mod encrypt_input {
             self.encryption_algorithm = Some(input);
             self
         }
+        /// <p>Specifies the encryption algorithm that KMS will use to encrypt the plaintext message.
+        /// The algorithm must be compatible with the KMS key that you specify.</p>
+        /// <p>This parameter is required only for asymmetric KMS keys. The default value,
+        /// <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric KMS keys. If you are
+        /// using an asymmetric KMS key, we recommend RSAES_OAEP_SHA_256.</p>
         pub fn set_encryption_algorithm(
             mut self,
             input: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
@@ -3388,7 +4077,7 @@ pub mod encrypt_input {
         /// Consumes the builder and constructs a [`EncryptInput`](crate::input::EncryptInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::EncryptInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::EncryptInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::EncryptInput {
                 key_id: self.key_id,
@@ -3411,13 +4100,16 @@ impl EncryptInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::Encrypt, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::Encrypt,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::EncryptInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3425,7 +4117,7 @@ impl EncryptInput {
         fn update_http_builder(
             input: &crate::input::EncryptInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3434,29 +4126,31 @@ impl EncryptInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::EncryptInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.Encrypt",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_encrypt(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3479,21 +4173,22 @@ impl EncryptInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::Encrypt::new())
-            .with_metadata(smithy_http::operation::Metadata::new("Encrypt", "kms"));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::Encrypt::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new("Encrypt", "kms"));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3523,6 +4218,7 @@ pub mod generate_data_key_input {
     }
     impl Builder {
         /// <p>Identifies the symmetric KMS key that encrypts the data key.</p>
+        ///
         /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -3548,10 +4244,42 @@ pub mod generate_data_key_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Identifies the symmetric KMS key that encrypts the data key.</p>
+        ///
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// <li>
+        /// <p>Alias name: <code>alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
         }
+        /// Adds a key-value pair to `encryption_context`.
+        ///
+        /// To override the contents of this collection use [`set_encryption_context`](Self::set_encryption_context).
+        ///
+        /// <p>Specifies the encryption context that will be used when encrypting the data key.</p>
+        /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn encryption_context(
             mut self,
             k: impl Into<std::string::String>,
@@ -3562,6 +4290,11 @@ pub mod generate_data_key_input {
             self.encryption_context = Some(hash_map);
             self
         }
+        /// <p>Specifies the encryption context that will be used when encrypting the data key.</p>
+        /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_encryption_context(
             mut self,
             input: std::option::Option<
@@ -3580,6 +4313,11 @@ pub mod generate_data_key_input {
             self.number_of_bytes = Some(input);
             self
         }
+        /// <p>Specifies the length of the data key in bytes. For example, use the value 64 to generate a
+        /// 512-bit data key (64 bytes is 512 bits). For 128-bit (16-byte) and 256-bit (32-byte) data
+        /// keys, use the <code>KeySpec</code> parameter.</p>
+        /// <p>You must specify either the <code>KeySpec</code> or the <code>NumberOfBytes</code>
+        /// parameter (but not both) in every <code>GenerateDataKey</code> request.</p>
         pub fn set_number_of_bytes(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_bytes = input;
             self
@@ -3592,6 +4330,10 @@ pub mod generate_data_key_input {
             self.key_spec = Some(input);
             self
         }
+        /// <p>Specifies the length of the data key. Use <code>AES_128</code> to generate a 128-bit
+        /// symmetric key, or <code>AES_256</code> to generate a 256-bit symmetric key.</p>
+        /// <p>You must specify either the <code>KeySpec</code> or the <code>NumberOfBytes</code>
+        /// parameter (but not both) in every <code>GenerateDataKey</code> request.</p>
         pub fn set_key_spec(
             mut self,
             input: std::option::Option<crate::model::DataKeySpec>,
@@ -3599,12 +4341,22 @@ pub mod generate_data_key_input {
             self.key_spec = input;
             self
         }
+        /// Appends an item to `grant_tokens`.
+        ///
+        /// To override the contents of this collection use [`set_grant_tokens`](Self::set_grant_tokens).
+        ///
+        /// <p>A list of grant tokens.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
             v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
+        /// <p>A list of grant tokens.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_grant_tokens(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3617,7 +4369,7 @@ pub mod generate_data_key_input {
             self,
         ) -> std::result::Result<
             crate::input::GenerateDataKeyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GenerateDataKeyInput {
                 key_id: self.key_id,
@@ -3640,16 +4392,16 @@ impl GenerateDataKeyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GenerateDataKey,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GenerateDataKeyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3657,7 +4409,7 @@ impl GenerateDataKeyInput {
         fn update_http_builder(
             input: &crate::input::GenerateDataKeyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3666,32 +4418,32 @@ impl GenerateDataKeyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GenerateDataKeyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.GenerateDataKey",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_generate_data_key(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3714,15 +4466,15 @@ impl GenerateDataKeyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GenerateDataKey::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GenerateDataKey",
             "kms",
         ));
@@ -3731,10 +4483,10 @@ impl GenerateDataKeyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3762,6 +4514,16 @@ pub mod generate_data_key_pair_input {
         pub(crate) grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Adds a key-value pair to `encryption_context`.
+        ///
+        /// To override the contents of this collection use [`set_encryption_context`](Self::set_encryption_context).
+        ///
+        /// <p>Specifies the encryption context that will be used when encrypting the private key in the
+        /// data key pair.</p>
+        /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn encryption_context(
             mut self,
             k: impl Into<std::string::String>,
@@ -3772,6 +4534,12 @@ pub mod generate_data_key_pair_input {
             self.encryption_context = Some(hash_map);
             self
         }
+        /// <p>Specifies the encryption context that will be used when encrypting the private key in the
+        /// data key pair.</p>
+        /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_encryption_context(
             mut self,
             input: std::option::Option<
@@ -3784,6 +4552,7 @@ pub mod generate_data_key_pair_input {
         /// <p>Specifies the symmetric KMS key that encrypts the private key in the data key pair. You
         /// cannot specify an asymmetric KMS key or a KMS key in a custom key store. To get the type and
         /// origin of your KMS key, use the <a>DescribeKey</a> operation.</p>
+        ///
         /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -3809,6 +4578,31 @@ pub mod generate_data_key_pair_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Specifies the symmetric KMS key that encrypts the private key in the data key pair. You
+        /// cannot specify an asymmetric KMS key or a KMS key in a custom key store. To get the type and
+        /// origin of your KMS key, use the <a>DescribeKey</a> operation.</p>
+        ///
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// <li>
+        /// <p>Alias name: <code>alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -3819,6 +4613,8 @@ pub mod generate_data_key_pair_input {
             self.key_pair_spec = Some(input);
             self
         }
+        /// <p>Determines the type of data key pair that is generated. </p>
+        /// <p>The KMS rule that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS.</p>
         pub fn set_key_pair_spec(
             mut self,
             input: std::option::Option<crate::model::DataKeyPairSpec>,
@@ -3826,12 +4622,22 @@ pub mod generate_data_key_pair_input {
             self.key_pair_spec = input;
             self
         }
+        /// Appends an item to `grant_tokens`.
+        ///
+        /// To override the contents of this collection use [`set_grant_tokens`](Self::set_grant_tokens).
+        ///
+        /// <p>A list of grant tokens.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
             v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
+        /// <p>A list of grant tokens.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_grant_tokens(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3844,7 +4650,7 @@ pub mod generate_data_key_pair_input {
             self,
         ) -> std::result::Result<
             crate::input::GenerateDataKeyPairInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GenerateDataKeyPairInput {
                 encryption_context: self.encryption_context,
@@ -3866,16 +4672,16 @@ impl GenerateDataKeyPairInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GenerateDataKeyPair,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GenerateDataKeyPairInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3883,7 +4689,7 @@ impl GenerateDataKeyPairInput {
         fn update_http_builder(
             input: &crate::input::GenerateDataKeyPairInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3892,32 +4698,32 @@ impl GenerateDataKeyPairInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GenerateDataKeyPairInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.GenerateDataKeyPair",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_generate_data_key_pair(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3940,15 +4746,15 @@ impl GenerateDataKeyPairInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GenerateDataKeyPair::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GenerateDataKeyPair",
             "kms",
         ));
@@ -3957,10 +4763,10 @@ impl GenerateDataKeyPairInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3988,6 +4794,16 @@ pub mod generate_data_key_pair_without_plaintext_input {
         pub(crate) grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Adds a key-value pair to `encryption_context`.
+        ///
+        /// To override the contents of this collection use [`set_encryption_context`](Self::set_encryption_context).
+        ///
+        /// <p>Specifies the encryption context that will be used when encrypting the private key in the
+        /// data key pair.</p>
+        /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn encryption_context(
             mut self,
             k: impl Into<std::string::String>,
@@ -3998,6 +4814,12 @@ pub mod generate_data_key_pair_without_plaintext_input {
             self.encryption_context = Some(hash_map);
             self
         }
+        /// <p>Specifies the encryption context that will be used when encrypting the private key in the
+        /// data key pair.</p>
+        /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_encryption_context(
             mut self,
             input: std::option::Option<
@@ -4036,6 +4858,31 @@ pub mod generate_data_key_pair_without_plaintext_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Specifies the KMS key that encrypts the private key in the data key pair. You must specify
+        /// a symmetric KMS key. You cannot use an asymmetric KMS key or a KMS key in a custom key store.
+        /// To get the type and origin of your KMS key, use the <a>DescribeKey</a> operation.
+        /// </p>
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// <li>
+        /// <p>Alias name: <code>alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -4046,6 +4893,8 @@ pub mod generate_data_key_pair_without_plaintext_input {
             self.key_pair_spec = Some(input);
             self
         }
+        /// <p>Determines the type of data key pair that is generated.</p>
+        /// <p>The KMS rule that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS.</p>
         pub fn set_key_pair_spec(
             mut self,
             input: std::option::Option<crate::model::DataKeyPairSpec>,
@@ -4053,12 +4902,22 @@ pub mod generate_data_key_pair_without_plaintext_input {
             self.key_pair_spec = input;
             self
         }
+        /// Appends an item to `grant_tokens`.
+        ///
+        /// To override the contents of this collection use [`set_grant_tokens`](Self::set_grant_tokens).
+        ///
+        /// <p>A list of grant tokens.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
             v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
+        /// <p>A list of grant tokens.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_grant_tokens(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4071,7 +4930,7 @@ pub mod generate_data_key_pair_without_plaintext_input {
             self,
         ) -> std::result::Result<
             crate::input::GenerateDataKeyPairWithoutPlaintextInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GenerateDataKeyPairWithoutPlaintextInput {
                 encryption_context: self.encryption_context,
@@ -4095,16 +4954,16 @@ impl GenerateDataKeyPairWithoutPlaintextInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GenerateDataKeyPairWithoutPlaintext,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GenerateDataKeyPairWithoutPlaintextInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4112,7 +4971,7 @@ impl GenerateDataKeyPairWithoutPlaintextInput {
         fn update_http_builder(
             input: &crate::input::GenerateDataKeyPairWithoutPlaintextInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4121,30 +4980,30 @@ impl GenerateDataKeyPairWithoutPlaintextInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GenerateDataKeyPairWithoutPlaintextInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.GenerateDataKeyPairWithoutPlaintext",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_generate_data_key_pair_without_plaintext(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_generate_data_key_pair_without_plaintext(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4167,15 +5026,15 @@ impl GenerateDataKeyPairWithoutPlaintextInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GenerateDataKeyPairWithoutPlaintext::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GenerateDataKeyPairWithoutPlaintext",
             "kms",
         ));
@@ -4184,10 +5043,10 @@ impl GenerateDataKeyPairWithoutPlaintextInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4217,6 +5076,7 @@ pub mod generate_data_key_without_plaintext_input {
     }
     impl Builder {
         /// <p>The identifier of the symmetric KMS key that encrypts the data key.</p>
+        ///
         /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -4242,10 +5102,42 @@ pub mod generate_data_key_without_plaintext_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the symmetric KMS key that encrypts the data key.</p>
+        ///
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// <li>
+        /// <p>Alias name: <code>alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
         }
+        /// Adds a key-value pair to `encryption_context`.
+        ///
+        /// To override the contents of this collection use [`set_encryption_context`](Self::set_encryption_context).
+        ///
+        /// <p>Specifies the encryption context that will be used when encrypting the data key.</p>
+        /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn encryption_context(
             mut self,
             k: impl Into<std::string::String>,
@@ -4256,6 +5148,11 @@ pub mod generate_data_key_without_plaintext_input {
             self.encryption_context = Some(hash_map);
             self
         }
+        /// <p>Specifies the encryption context that will be used when encrypting the data key.</p>
+        /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_encryption_context(
             mut self,
             input: std::option::Option<
@@ -4271,6 +5168,8 @@ pub mod generate_data_key_without_plaintext_input {
             self.key_spec = Some(input);
             self
         }
+        /// <p>The length of the data key. Use <code>AES_128</code> to generate a 128-bit symmetric key,
+        /// or <code>AES_256</code> to generate a 256-bit symmetric key.</p>
         pub fn set_key_spec(
             mut self,
             input: std::option::Option<crate::model::DataKeySpec>,
@@ -4285,16 +5184,29 @@ pub mod generate_data_key_without_plaintext_input {
             self.number_of_bytes = Some(input);
             self
         }
+        /// <p>The length of the data key in bytes. For example, use the value 64 to generate a 512-bit
+        /// data key (64 bytes is 512 bits). For common key lengths (128-bit and 256-bit symmetric keys),
+        /// we recommend that you use the <code>KeySpec</code> field instead of this one.</p>
         pub fn set_number_of_bytes(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_bytes = input;
             self
         }
+        /// Appends an item to `grant_tokens`.
+        ///
+        /// To override the contents of this collection use [`set_grant_tokens`](Self::set_grant_tokens).
+        ///
+        /// <p>A list of grant tokens.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
             v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
+        /// <p>A list of grant tokens.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_grant_tokens(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4307,7 +5219,7 @@ pub mod generate_data_key_without_plaintext_input {
             self,
         ) -> std::result::Result<
             crate::input::GenerateDataKeyWithoutPlaintextInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GenerateDataKeyWithoutPlaintextInput {
                 key_id: self.key_id,
@@ -4331,16 +5243,16 @@ impl GenerateDataKeyWithoutPlaintextInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GenerateDataKeyWithoutPlaintext,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GenerateDataKeyWithoutPlaintextInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4348,7 +5260,7 @@ impl GenerateDataKeyWithoutPlaintextInput {
         fn update_http_builder(
             input: &crate::input::GenerateDataKeyWithoutPlaintextInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4357,30 +5269,30 @@ impl GenerateDataKeyWithoutPlaintextInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GenerateDataKeyWithoutPlaintextInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.GenerateDataKeyWithoutPlaintext",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_generate_data_key_without_plaintext(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_generate_data_key_without_plaintext(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4403,15 +5315,15 @@ impl GenerateDataKeyWithoutPlaintextInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GenerateDataKeyWithoutPlaintext::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GenerateDataKeyWithoutPlaintext",
             "kms",
         ));
@@ -4420,10 +5332,10 @@ impl GenerateDataKeyWithoutPlaintextInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4452,6 +5364,7 @@ pub mod generate_random_input {
             self.number_of_bytes = Some(input);
             self
         }
+        /// <p>The length of the byte string.</p>
         pub fn set_number_of_bytes(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_bytes = input;
             self
@@ -4462,6 +5375,8 @@ pub mod generate_random_input {
             self.custom_key_store_id = Some(input.into());
             self
         }
+        /// <p>Generates the random byte string in the CloudHSM cluster that is associated with the
+        /// specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
         pub fn set_custom_key_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4474,7 +5389,7 @@ pub mod generate_random_input {
             self,
         ) -> std::result::Result<
             crate::input::GenerateRandomInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GenerateRandomInput {
                 number_of_bytes: self.number_of_bytes,
@@ -4494,16 +5409,16 @@ impl GenerateRandomInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GenerateRandom,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GenerateRandomInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4511,7 +5426,7 @@ impl GenerateRandomInput {
         fn update_http_builder(
             input: &crate::input::GenerateRandomInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4520,29 +5435,31 @@ impl GenerateRandomInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GenerateRandomInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.GenerateRandom",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_generate_random(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4565,15 +5482,15 @@ impl GenerateRandomInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GenerateRandom::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GenerateRandom",
             "kms",
         ));
@@ -4582,10 +5499,10 @@ impl GenerateRandomInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4627,6 +5544,20 @@ pub mod get_key_policy_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Gets the key policy for the specified KMS key.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -4637,6 +5568,8 @@ pub mod get_key_policy_input {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>Specifies the name of the key policy. The only valid name is <code>default</code>. To get
+        /// the names of key policies, use <a>ListKeyPolicies</a>.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
@@ -4644,8 +5577,10 @@ pub mod get_key_policy_input {
         /// Consumes the builder and constructs a [`GetKeyPolicyInput`](crate::input::GetKeyPolicyInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetKeyPolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetKeyPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetKeyPolicyInput {
                 key_id: self.key_id,
                 policy_name: self.policy_name,
@@ -4664,16 +5599,16 @@ impl GetKeyPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetKeyPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetKeyPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4681,7 +5616,7 @@ impl GetKeyPolicyInput {
         fn update_http_builder(
             input: &crate::input::GetKeyPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4690,29 +5625,31 @@ impl GetKeyPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetKeyPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.GetKeyPolicy",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_key_policy(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4735,22 +5672,27 @@ impl GetKeyPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetKeyPolicy::new())
-                .with_metadata(smithy_http::operation::Metadata::new("GetKeyPolicy", "kms"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetKeyPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetKeyPolicy",
+            "kms",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4774,6 +5716,7 @@ pub mod get_key_rotation_status_input {
     }
     impl Builder {
         /// <p>Gets the rotation status for the specified KMS key.</p>
+        ///
         /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a
         /// different Amazon Web Services account, you must use the key ARN.</p>
         /// <p>For example:</p>
@@ -4792,6 +5735,22 @@ pub mod get_key_rotation_status_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Gets the rotation status for the specified KMS key.</p>
+        ///
+        /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a
+        /// different Amazon Web Services account, you must use the key ARN.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -4801,7 +5760,7 @@ pub mod get_key_rotation_status_input {
             self,
         ) -> std::result::Result<
             crate::input::GetKeyRotationStatusInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetKeyRotationStatusInput {
                 key_id: self.key_id,
@@ -4820,16 +5779,16 @@ impl GetKeyRotationStatusInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetKeyRotationStatus,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetKeyRotationStatusInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4837,7 +5796,7 @@ impl GetKeyRotationStatusInput {
         fn update_http_builder(
             input: &crate::input::GetKeyRotationStatusInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4846,32 +5805,34 @@ impl GetKeyRotationStatusInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetKeyRotationStatusInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.GetKeyRotationStatus",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_key_rotation_status(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4894,15 +5855,15 @@ impl GetKeyRotationStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetKeyRotationStatus::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetKeyRotationStatus",
             "kms",
         ));
@@ -4911,10 +5872,10 @@ impl GetKeyRotationStatusInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4941,6 +5902,7 @@ pub mod get_parameters_for_import_input {
     impl Builder {
         /// <p>The identifier of the symmetric KMS key into which you will import key material. The
         /// <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
+        ///
         /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -4958,6 +5920,22 @@ pub mod get_parameters_for_import_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the symmetric KMS key into which you will import key material. The
+        /// <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
+        ///
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -4968,6 +5946,8 @@ pub mod get_parameters_for_import_input {
             self.wrapping_algorithm = Some(input);
             self
         }
+        /// <p>The algorithm you will use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the Key Material</a>
+        /// in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_wrapping_algorithm(
             mut self,
             input: std::option::Option<crate::model::AlgorithmSpec>,
@@ -4981,6 +5961,8 @@ pub mod get_parameters_for_import_input {
             self.wrapping_key_spec = Some(input);
             self
         }
+        /// <p>The type of wrapping key (public key) to return in the response. Only 2048-bit RSA public
+        /// keys are supported.</p>
         pub fn set_wrapping_key_spec(
             mut self,
             input: std::option::Option<crate::model::WrappingKeySpec>,
@@ -4993,7 +5975,7 @@ pub mod get_parameters_for_import_input {
             self,
         ) -> std::result::Result<
             crate::input::GetParametersForImportInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetParametersForImportInput {
                 key_id: self.key_id,
@@ -5014,16 +5996,16 @@ impl GetParametersForImportInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetParametersForImport,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetParametersForImportInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5031,7 +6013,7 @@ impl GetParametersForImportInput {
         fn update_http_builder(
             input: &crate::input::GetParametersForImportInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5040,32 +6022,34 @@ impl GetParametersForImportInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetParametersForImportInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.GetParametersForImport",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_parameters_for_import(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5088,15 +6072,15 @@ impl GetParametersForImportInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetParametersForImport::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetParametersForImport",
             "kms",
         ));
@@ -5105,10 +6089,10 @@ impl GetParametersForImportInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5133,6 +6117,7 @@ pub mod get_public_key_input {
     }
     impl Builder {
         /// <p>Identifies the asymmetric KMS key that includes the public key.</p>
+        ///
         /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -5158,16 +6143,49 @@ pub mod get_public_key_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Identifies the asymmetric KMS key that includes the public key.</p>
+        ///
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// <li>
+        /// <p>Alias name: <code>alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
         }
+        /// Appends an item to `grant_tokens`.
+        ///
+        /// To override the contents of this collection use [`set_grant_tokens`](Self::set_grant_tokens).
+        ///
+        /// <p>A list of grant tokens.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
             v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
+        /// <p>A list of grant tokens.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_grant_tokens(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5178,8 +6196,10 @@ pub mod get_public_key_input {
         /// Consumes the builder and constructs a [`GetPublicKeyInput`](crate::input::GetPublicKeyInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetPublicKeyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetPublicKeyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetPublicKeyInput {
                 key_id: self.key_id,
                 grant_tokens: self.grant_tokens,
@@ -5198,16 +6218,16 @@ impl GetPublicKeyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetPublicKey,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetPublicKeyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5215,7 +6235,7 @@ impl GetPublicKeyInput {
         fn update_http_builder(
             input: &crate::input::GetPublicKeyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5224,29 +6244,31 @@ impl GetPublicKeyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetPublicKeyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.GetPublicKey",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_public_key(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5269,22 +6291,27 @@ impl GetPublicKeyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetPublicKey::new())
-                .with_metadata(smithy_http::operation::Metadata::new("GetPublicKey", "kms"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetPublicKey::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetPublicKey",
+            "kms",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5305,9 +6332,9 @@ pub mod import_key_material_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
-        pub(crate) import_token: std::option::Option<smithy_types::Blob>,
-        pub(crate) encrypted_key_material: std::option::Option<smithy_types::Blob>,
-        pub(crate) valid_to: std::option::Option<smithy_types::Instant>,
+        pub(crate) import_token: std::option::Option<aws_smithy_types::Blob>,
+        pub(crate) encrypted_key_material: std::option::Option<aws_smithy_types::Blob>,
+        pub(crate) valid_to: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) expiration_model: std::option::Option<crate::model::ExpirationModelType>,
     }
     impl Builder {
@@ -5331,30 +6358,54 @@ pub mod import_key_material_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the symmetric KMS key that receives the imported key material. The KMS
+        /// key's <code>Origin</code> must be <code>EXTERNAL</code>. This must be the same KMS key
+        /// specified in the <code>KeyID</code> parameter of the corresponding <a>GetParametersForImport</a> request.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
         }
         /// <p>The import token that you received in the response to a previous <a>GetParametersForImport</a> request. It must be from the same response that contained
         /// the public key that you used to encrypt the key material.</p>
-        pub fn import_token(mut self, input: smithy_types::Blob) -> Self {
+        pub fn import_token(mut self, input: aws_smithy_types::Blob) -> Self {
             self.import_token = Some(input);
             self
         }
-        pub fn set_import_token(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The import token that you received in the response to a previous <a>GetParametersForImport</a> request. It must be from the same response that contained
+        /// the public key that you used to encrypt the key material.</p>
+        pub fn set_import_token(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
             self.import_token = input;
             self
         }
         /// <p>The encrypted key material to import. The key material must be encrypted with the public
         /// wrapping key that <a>GetParametersForImport</a> returned, using the wrapping
         /// algorithm that you specified in the same <code>GetParametersForImport</code> request.</p>
-        pub fn encrypted_key_material(mut self, input: smithy_types::Blob) -> Self {
+        pub fn encrypted_key_material(mut self, input: aws_smithy_types::Blob) -> Self {
             self.encrypted_key_material = Some(input);
             self
         }
+        /// <p>The encrypted key material to import. The key material must be encrypted with the public
+        /// wrapping key that <a>GetParametersForImport</a> returned, using the wrapping
+        /// algorithm that you specified in the same <code>GetParametersForImport</code> request.</p>
         pub fn set_encrypted_key_material(
             mut self,
-            input: std::option::Option<smithy_types::Blob>,
+            input: std::option::Option<aws_smithy_types::Blob>,
         ) -> Self {
             self.encrypted_key_material = input;
             self
@@ -5363,11 +6414,18 @@ pub mod import_key_material_input {
         /// deletes the key material and the KMS key becomes unusable. You must omit this parameter when
         /// the <code>ExpirationModel</code> parameter is set to
         /// <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.</p>
-        pub fn valid_to(mut self, input: smithy_types::Instant) -> Self {
+        pub fn valid_to(mut self, input: aws_smithy_types::Instant) -> Self {
             self.valid_to = Some(input);
             self
         }
-        pub fn set_valid_to(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time at which the imported key material expires. When the key material expires, KMS
+        /// deletes the key material and the KMS key becomes unusable. You must omit this parameter when
+        /// the <code>ExpirationModel</code> parameter is set to
+        /// <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.</p>
+        pub fn set_valid_to(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.valid_to = input;
             self
         }
@@ -5379,6 +6437,10 @@ pub mod import_key_material_input {
             self.expiration_model = Some(input);
             self
         }
+        /// <p>Specifies whether the key material expires. The default is
+        /// <code>KEY_MATERIAL_EXPIRES</code>, in which case you must include the <code>ValidTo</code>
+        /// parameter. When this parameter is set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must
+        /// omit the <code>ValidTo</code> parameter.</p>
         pub fn set_expiration_model(
             mut self,
             input: std::option::Option<crate::model::ExpirationModelType>,
@@ -5391,7 +6453,7 @@ pub mod import_key_material_input {
             self,
         ) -> std::result::Result<
             crate::input::ImportKeyMaterialInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ImportKeyMaterialInput {
                 key_id: self.key_id,
@@ -5414,16 +6476,16 @@ impl ImportKeyMaterialInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ImportKeyMaterial,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ImportKeyMaterialInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5431,7 +6493,7 @@ impl ImportKeyMaterialInput {
         fn update_http_builder(
             input: &crate::input::ImportKeyMaterialInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5440,32 +6502,32 @@ impl ImportKeyMaterialInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ImportKeyMaterialInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.ImportKeyMaterial",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_import_key_material(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5488,15 +6550,15 @@ impl ImportKeyMaterialInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ImportKeyMaterial::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ImportKeyMaterial",
             "kms",
         ));
@@ -5505,10 +6567,10 @@ impl ImportKeyMaterialInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5554,6 +6616,23 @@ pub mod list_aliases_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Lists only aliases that are associated with the specified KMS key. Enter a KMS key in your
+        /// Amazon Web Services account. </p>
+        /// <p>This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases
+        /// in the account and Region.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -5567,6 +6646,11 @@ pub mod list_aliases_input {
             self.limit = Some(input);
             self
         }
+        /// <p>Use this parameter to specify the maximum number of items to return. When this
+        /// value is present, KMS does not return more than the specified number of items, but it might
+        /// return fewer.</p>
+        /// <p>This value is optional. If you include a value, it must be between 1
+        /// and 100, inclusive. If you do not include a value, it defaults to 50.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5578,6 +6662,9 @@ pub mod list_aliases_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>Use this parameter in a subsequent request after you receive a response with
+        /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
+        /// you just received.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5585,8 +6672,10 @@ pub mod list_aliases_input {
         /// Consumes the builder and constructs a [`ListAliasesInput`](crate::input::ListAliasesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListAliasesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListAliasesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListAliasesInput {
                 key_id: self.key_id,
                 limit: self.limit,
@@ -5606,16 +6695,16 @@ impl ListAliasesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListAliases,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListAliasesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5623,7 +6712,7 @@ impl ListAliasesInput {
         fn update_http_builder(
             input: &crate::input::ListAliasesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5632,29 +6721,31 @@ impl ListAliasesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListAliasesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.ListAliases",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_aliases(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5677,22 +6768,27 @@ impl ListAliasesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListAliases::new())
-                .with_metadata(smithy_http::operation::Metadata::new("ListAliases", "kms"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAliases::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAliases",
+            "kms",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5728,6 +6824,11 @@ pub mod list_grants_input {
             self.limit = Some(input);
             self
         }
+        /// <p>Use this parameter to specify the maximum number of items to return. When this
+        /// value is present, KMS does not return more than the specified number of items, but it might
+        /// return fewer.</p>
+        /// <p>This value is optional. If you include a value, it must be between 1
+        /// and 100, inclusive. If you do not include a value, it defaults to 50.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5739,11 +6840,15 @@ pub mod list_grants_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>Use this parameter in a subsequent request after you receive a response with
+        /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
+        /// you just received.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
         /// <p>Returns only grants for the specified KMS key. This parameter is required.</p>
+        ///
         /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a
         /// different Amazon Web Services account, you must use the key ARN.</p>
         /// <p>For example:</p>
@@ -5762,6 +6867,22 @@ pub mod list_grants_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Returns only grants for the specified KMS key. This parameter is required.</p>
+        ///
+        /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a
+        /// different Amazon Web Services account, you must use the key ARN.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -5772,6 +6893,8 @@ pub mod list_grants_input {
             self.grant_id = Some(input.into());
             self
         }
+        /// <p>Returns only the grant with the specified grant ID. The grant ID uniquely identifies the
+        /// grant. </p>
         pub fn set_grant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_id = input;
             self
@@ -5782,6 +6905,8 @@ pub mod list_grants_input {
             self.grantee_principal = Some(input.into());
             self
         }
+        /// <p>Returns only grants where the specified principal is the grantee principal for the
+        /// grant.</p>
         pub fn set_grantee_principal(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5792,8 +6917,10 @@ pub mod list_grants_input {
         /// Consumes the builder and constructs a [`ListGrantsInput`](crate::input::ListGrantsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListGrantsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListGrantsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListGrantsInput {
                 limit: self.limit,
                 marker: self.marker,
@@ -5815,16 +6942,16 @@ impl ListGrantsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListGrants,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListGrantsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5832,7 +6959,7 @@ impl ListGrantsInput {
         fn update_http_builder(
             input: &crate::input::ListGrantsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5841,29 +6968,31 @@ impl ListGrantsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListGrantsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.ListGrants",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_grants(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5886,22 +7015,27 @@ impl ListGrantsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListGrants::new())
-                .with_metadata(smithy_http::operation::Metadata::new("ListGrants", "kms"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListGrants::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListGrants",
+            "kms",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5944,6 +7078,20 @@ pub mod list_key_policies_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Gets the names of key policies for the specified KMS key.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -5958,6 +7106,12 @@ pub mod list_key_policies_input {
             self.limit = Some(input);
             self
         }
+        /// <p>Use this parameter to specify the maximum number of items to return. When this
+        /// value is present, KMS does not return more than the specified number of items, but it might
+        /// return fewer.</p>
+        /// <p>This value is optional. If you include a value, it must be between
+        /// 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
+        /// <p>Only one policy can be attached to a key.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5969,6 +7123,9 @@ pub mod list_key_policies_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>Use this parameter in a subsequent request after you receive a response with
+        /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
+        /// you just received.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5978,7 +7135,7 @@ pub mod list_key_policies_input {
             self,
         ) -> std::result::Result<
             crate::input::ListKeyPoliciesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListKeyPoliciesInput {
                 key_id: self.key_id,
@@ -5999,16 +7156,16 @@ impl ListKeyPoliciesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListKeyPolicies,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListKeyPoliciesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6016,7 +7173,7 @@ impl ListKeyPoliciesInput {
         fn update_http_builder(
             input: &crate::input::ListKeyPoliciesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6025,32 +7182,32 @@ impl ListKeyPoliciesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListKeyPoliciesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.ListKeyPolicies",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_key_policies(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6073,15 +7230,15 @@ impl ListKeyPoliciesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListKeyPolicies::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListKeyPolicies",
             "kms",
         ));
@@ -6090,10 +7247,10 @@ impl ListKeyPoliciesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6126,6 +7283,11 @@ pub mod list_keys_input {
             self.limit = Some(input);
             self
         }
+        /// <p>Use this parameter to specify the maximum number of items to return. When this
+        /// value is present, KMS does not return more than the specified number of items, but it might
+        /// return fewer.</p>
+        /// <p>This value is optional. If you include a value, it must be between
+        /// 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -6137,6 +7299,9 @@ pub mod list_keys_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>Use this parameter in a subsequent request after you receive a response with
+        /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
+        /// you just received.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6144,7 +7309,7 @@ pub mod list_keys_input {
         /// Consumes the builder and constructs a [`ListKeysInput`](crate::input::ListKeysInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListKeysInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListKeysInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListKeysInput {
                 limit: self.limit,
@@ -6164,16 +7329,16 @@ impl ListKeysInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListKeys,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListKeysInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6181,7 +7346,7 @@ impl ListKeysInput {
         fn update_http_builder(
             input: &crate::input::ListKeysInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6190,29 +7355,31 @@ impl ListKeysInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListKeysInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.ListKeys",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_keys(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6235,21 +7402,22 @@ impl ListKeysInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::ListKeys::new())
-            .with_metadata(smithy_http::operation::Metadata::new("ListKeys", "kms"));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListKeys::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new("ListKeys", "kms"));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6292,6 +7460,20 @@ pub mod list_resource_tags_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Gets tags on the specified KMS key.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -6305,6 +7487,11 @@ pub mod list_resource_tags_input {
             self.limit = Some(input);
             self
         }
+        /// <p>Use this parameter to specify the maximum number of items to return. When this
+        /// value is present, KMS does not return more than the specified number of items, but it might
+        /// return fewer.</p>
+        /// <p>This value is optional. If you include a value, it must be between 1 and 50, inclusive. If
+        /// you do not include a value, it defaults to 50.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -6318,6 +7505,11 @@ pub mod list_resource_tags_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>Use this parameter in a subsequent request after you receive a response with
+        /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
+        /// you just received.</p>
+        /// <p>Do not attempt to construct this value. Use only the value of <code>NextMarker</code> from
+        /// the truncated response you just received.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6327,7 +7519,7 @@ pub mod list_resource_tags_input {
             self,
         ) -> std::result::Result<
             crate::input::ListResourceTagsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListResourceTagsInput {
                 key_id: self.key_id,
@@ -6348,16 +7540,16 @@ impl ListResourceTagsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListResourceTags,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListResourceTagsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6365,7 +7557,7 @@ impl ListResourceTagsInput {
         fn update_http_builder(
             input: &crate::input::ListResourceTagsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6374,32 +7566,32 @@ impl ListResourceTagsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListResourceTagsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.ListResourceTags",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_resource_tags(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6422,15 +7614,15 @@ impl ListResourceTagsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListResourceTags::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListResourceTags",
             "kms",
         ));
@@ -6439,10 +7631,10 @@ impl ListResourceTagsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6476,6 +7668,11 @@ pub mod list_retirable_grants_input {
             self.limit = Some(input);
             self
         }
+        /// <p>Use this parameter to specify the maximum number of items to return. When this
+        /// value is present, KMS does not return more than the specified number of items, but it might
+        /// return fewer.</p>
+        /// <p>This value is optional. If you include a value, it must be between 1
+        /// and 100, inclusive. If you do not include a value, it defaults to 50.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -6487,6 +7684,9 @@ pub mod list_retirable_grants_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>Use this parameter in a subsequent request after you receive a response with
+        /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
+        /// you just received.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6502,6 +7702,13 @@ pub mod list_retirable_grants_input {
             self.retiring_principal = Some(input.into());
             self
         }
+        /// <p>The retiring principal for which to list grants. Enter a principal in your
+        /// Amazon Web Services account.</p>
+        /// <p>To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an
+        /// Amazon Web Services principal. Valid Amazon Web Services principals include Amazon Web Services accounts (root), IAM users, federated
+        /// users, and assumed role users. For examples of the ARN syntax for specifying a principal, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM)</a> in the Example ARNs section of the
+        /// <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_retiring_principal(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6514,7 +7721,7 @@ pub mod list_retirable_grants_input {
             self,
         ) -> std::result::Result<
             crate::input::ListRetirableGrantsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListRetirableGrantsInput {
                 limit: self.limit,
@@ -6535,16 +7742,16 @@ impl ListRetirableGrantsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListRetirableGrants,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListRetirableGrantsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6552,7 +7759,7 @@ impl ListRetirableGrantsInput {
         fn update_http_builder(
             input: &crate::input::ListRetirableGrantsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6561,32 +7768,32 @@ impl ListRetirableGrantsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListRetirableGrantsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.ListRetirableGrants",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_retirable_grants(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6609,15 +7816,15 @@ impl ListRetirableGrantsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListRetirableGrants::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListRetirableGrants",
             "kms",
         ));
@@ -6626,10 +7833,10 @@ impl ListRetirableGrantsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6673,6 +7880,20 @@ pub mod put_key_policy_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Sets the key policy on the specified KMS key.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -6682,6 +7903,7 @@ pub mod put_key_policy_input {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The name of the key policy. The only valid value is <code>default</code>.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
@@ -6711,6 +7933,27 @@ pub mod put_key_policy_input {
             self.policy = Some(input.into());
             self
         }
+        /// <p>The key policy to attach to the KMS key.</p>
+        /// <p>The key policy must meet the following criteria:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy
+        /// must allow the principal that is making the <code>PutKeyPolicy</code> request to make a
+        /// subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that
+        /// the KMS key becomes unmanageable. For more information, refer to the scenario in the
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>Key Management Service Developer Guide</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Each statement in the key policy must contain one or more principals. The principals
+        /// in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services
+        /// principal (for example, an IAM user or role), you might need to enforce a delay before
+        /// including the new principal in a key policy because the new principal might not be
+        /// immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services
+        /// Identity and Access Management User Guide</i>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The key policy cannot exceed 32 kilobytes (32768 bytes). For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource Quotas</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -6728,6 +7971,15 @@ pub mod put_key_policy_input {
             self.bypass_policy_lockout_safety_check = Some(input);
             self
         }
+        /// <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
+        /// <important>
+        /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do
+        /// not set this value to true indiscriminately.</p>
+        /// <p>For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>Key Management Service Developer Guide</i>.</p>
+        /// </important>
+        /// <p>Use this parameter only when you intend to prevent the principal that is making the
+        /// request from making a subsequent <code>PutKeyPolicy</code> request on the KMS key.</p>
+        /// <p>The default value is false.</p>
         pub fn set_bypass_policy_lockout_safety_check(
             mut self,
             input: std::option::Option<bool>,
@@ -6738,8 +7990,10 @@ pub mod put_key_policy_input {
         /// Consumes the builder and constructs a [`PutKeyPolicyInput`](crate::input::PutKeyPolicyInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::PutKeyPolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutKeyPolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutKeyPolicyInput {
                 key_id: self.key_id,
                 policy_name: self.policy_name,
@@ -6762,16 +8016,16 @@ impl PutKeyPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutKeyPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutKeyPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6779,7 +8033,7 @@ impl PutKeyPolicyInput {
         fn update_http_builder(
             input: &crate::input::PutKeyPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6788,29 +8042,31 @@ impl PutKeyPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutKeyPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.PutKeyPolicy",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_put_key_policy(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6833,22 +8089,27 @@ impl PutKeyPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::PutKeyPolicy::new())
-                .with_metadata(smithy_http::operation::Metadata::new("PutKeyPolicy", "kms"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutKeyPolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutKeyPolicy",
+            "kms",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6868,7 +8129,7 @@ pub mod re_encrypt_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) ciphertext_blob: std::option::Option<smithy_types::Blob>,
+        pub(crate) ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) source_encryption_context: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -6885,17 +8146,28 @@ pub mod re_encrypt_input {
     }
     impl Builder {
         /// <p>Ciphertext of the data to reencrypt.</p>
-        pub fn ciphertext_blob(mut self, input: smithy_types::Blob) -> Self {
+        pub fn ciphertext_blob(mut self, input: aws_smithy_types::Blob) -> Self {
             self.ciphertext_blob = Some(input);
             self
         }
+        /// <p>Ciphertext of the data to reencrypt.</p>
         pub fn set_ciphertext_blob(
             mut self,
-            input: std::option::Option<smithy_types::Blob>,
+            input: std::option::Option<aws_smithy_types::Blob>,
         ) -> Self {
             self.ciphertext_blob = input;
             self
         }
+        /// Adds a key-value pair to `source_encryption_context`.
+        ///
+        /// To override the contents of this collection use [`set_source_encryption_context`](Self::set_source_encryption_context).
+        ///
+        /// <p>Specifies the encryption context to use to decrypt the ciphertext. Enter the same
+        /// encryption context that was used to encrypt the ciphertext.</p>
+        /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn source_encryption_context(
             mut self,
             k: impl Into<std::string::String>,
@@ -6906,6 +8178,12 @@ pub mod re_encrypt_input {
             self.source_encryption_context = Some(hash_map);
             self
         }
+        /// <p>Specifies the encryption context to use to decrypt the ciphertext. Enter the same
+        /// encryption context that was used to encrypt the ciphertext.</p>
+        /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_source_encryption_context(
             mut self,
             input: std::option::Option<
@@ -6921,6 +8199,7 @@ pub mod re_encrypt_input {
         /// key. If you used a symmetric KMS key, KMS can get the KMS key from metadata that it adds to
         /// the symmetric ciphertext blob. However, it is always recommended as a best practice. This
         /// practice ensures that you use the KMS key that you intend.</p>
+        ///
         /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -6946,6 +8225,34 @@ pub mod re_encrypt_input {
             self.source_key_id = Some(input.into());
             self
         }
+        /// <p>Specifies the KMS key that KMS will use to decrypt the ciphertext before it is
+        /// re-encrypted. Enter a key ID of the KMS key that was used to encrypt the ciphertext.</p>
+        /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS
+        /// key. If you used a symmetric KMS key, KMS can get the KMS key from metadata that it adds to
+        /// the symmetric ciphertext blob. However, it is always recommended as a best practice. This
+        /// practice ensures that you use the KMS key that you intend.</p>
+        ///
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// <li>
+        /// <p>Alias name: <code>alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn set_source_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6982,6 +8289,31 @@ pub mod re_encrypt_input {
             self.destination_key_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the KMS key that is used to reencrypt the data. Specify a
+        /// symmetric or asymmetric KMS key with a <code>KeyUsage</code> value of
+        /// <code>ENCRYPT_DECRYPT</code>. To find the <code>KeyUsage</code> value of a KMS key, use the
+        /// <a>DescribeKey</a> operation.</p>
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// <li>
+        /// <p>Alias name: <code>alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn set_destination_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6989,6 +8321,18 @@ pub mod re_encrypt_input {
             self.destination_key_id = input;
             self
         }
+        /// Adds a key-value pair to `destination_encryption_context`.
+        ///
+        /// To override the contents of this collection use [`set_destination_encryption_context`](Self::set_destination_encryption_context).
+        ///
+        /// <p>Specifies that encryption context to use when the reencrypting the data.</p>
+        /// <p>A destination encryption context is valid only when the destination KMS key is a symmetric
+        /// KMS key. The standard ciphertext format for asymmetric KMS keys does not include fields for
+        /// metadata.</p>
+        /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn destination_encryption_context(
             mut self,
             k: impl Into<std::string::String>,
@@ -6999,6 +8343,14 @@ pub mod re_encrypt_input {
             self.destination_encryption_context = Some(hash_map);
             self
         }
+        /// <p>Specifies that encryption context to use when the reencrypting the data.</p>
+        /// <p>A destination encryption context is valid only when the destination KMS key is a symmetric
+        /// KMS key. The standard ciphertext format for asymmetric KMS keys does not include fields for
+        /// metadata.</p>
+        /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_destination_encryption_context(
             mut self,
             input: std::option::Option<
@@ -7022,6 +8374,13 @@ pub mod re_encrypt_input {
             self.source_encryption_algorithm = Some(input);
             self
         }
+        /// <p>Specifies the encryption algorithm that KMS will use to decrypt the ciphertext before it
+        /// is reencrypted. The default value, <code>SYMMETRIC_DEFAULT</code>, represents the algorithm
+        /// used for symmetric KMS keys.</p>
+        /// <p>Specify the same algorithm that was used to encrypt the ciphertext. If you specify a
+        /// different algorithm, the decrypt attempt fails.</p>
+        /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS
+        /// key.</p>
         pub fn set_source_encryption_algorithm(
             mut self,
             input: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
@@ -7041,6 +8400,11 @@ pub mod re_encrypt_input {
             self.destination_encryption_algorithm = Some(input);
             self
         }
+        /// <p>Specifies the encryption algorithm that KMS will use to reecrypt the data after it has
+        /// decrypted it. The default value, <code>SYMMETRIC_DEFAULT</code>, represents the encryption
+        /// algorithm used for symmetric KMS keys.</p>
+        /// <p>This parameter is required only when the destination KMS key is an asymmetric KMS
+        /// key.</p>
         pub fn set_destination_encryption_algorithm(
             mut self,
             input: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
@@ -7048,12 +8412,22 @@ pub mod re_encrypt_input {
             self.destination_encryption_algorithm = input;
             self
         }
+        /// Appends an item to `grant_tokens`.
+        ///
+        /// To override the contents of this collection use [`set_grant_tokens`](Self::set_grant_tokens).
+        ///
+        /// <p>A list of grant tokens.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
             v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
+        /// <p>A list of grant tokens.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_grant_tokens(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7064,7 +8438,7 @@ pub mod re_encrypt_input {
         /// Consumes the builder and constructs a [`ReEncryptInput`](crate::input::ReEncryptInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ReEncryptInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ReEncryptInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ReEncryptInput {
                 ciphertext_blob: self.ciphertext_blob,
@@ -7090,16 +8464,16 @@ impl ReEncryptInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ReEncrypt,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ReEncryptInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7107,7 +8481,7 @@ impl ReEncryptInput {
         fn update_http_builder(
             input: &crate::input::ReEncryptInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7116,29 +8490,31 @@ impl ReEncryptInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ReEncryptInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.ReEncrypt",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_re_encrypt(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7161,22 +8537,25 @@ impl ReEncryptInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ReEncrypt::new())
-                .with_metadata(smithy_http::operation::Metadata::new("ReEncrypt", "kms"));
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ReEncrypt::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "ReEncrypt",
+                    "kms",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7207,6 +8586,7 @@ pub mod replicate_key_input {
         /// <p>Identifies the multi-Region primary key that is being replicated. To determine whether a
         /// KMS key is a multi-Region primary key, use the <a>DescribeKey</a> operation to
         /// check the value of the <code>MultiRegionKeyType</code> property.</p>
+        ///
         /// <p>Specify the key ID or key ARN of a multi-Region primary key.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -7224,6 +8604,23 @@ pub mod replicate_key_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Identifies the multi-Region primary key that is being replicated. To determine whether a
+        /// KMS key is a multi-Region primary key, use the <a>DescribeKey</a> operation to
+        /// check the value of the <code>MultiRegionKeyType</code> property.</p>
+        ///
+        /// <p>Specify the key ID or key ARN of a multi-Region primary key.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>mrk-1234abcd12ab34cd56ef1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/mrk-1234abcd12ab34cd56ef1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -7244,6 +8641,18 @@ pub mod replicate_key_input {
             self.replica_region = Some(input.into());
             self
         }
+        /// <p>The Region ID of the Amazon Web Services Region for this replica key. </p>
+        /// <p>Enter the Region ID, such as <code>us-east-1</code> or <code>ap-southeast-2</code>. For a
+        /// list of Amazon Web Services Regions in which KMS is supported, see <a href="https://docs.aws.amazon.com/general/latest/gr/kms.html#kms_region">KMS service endpoints</a> in the
+        /// <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The replica must be in a different Amazon Web Services Region than its primary key and other replicas of
+        /// that primary key, but in the same Amazon Web Services partition. KMS must be available in the replica
+        /// Region. If the Region is not enabled by default, the Amazon Web Services account must be enabled in the
+        /// Region. </p>
+        /// <p>For information about Amazon Web Services partitions, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) in the
+        /// <i>Amazon Web Services General Reference</i>.</a> For information about enabling and disabling Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Enabling a
+        /// Region</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-disable">Disabling a Region</a> in the
+        /// <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_replica_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7285,6 +8694,36 @@ pub mod replicate_key_input {
             self.policy = Some(input.into());
             self
         }
+        /// <p>The key policy to attach to the KMS key. This parameter is optional. If you do not provide
+        /// a key policy, KMS attaches the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">default key policy</a> to the
+        /// KMS key.</p>
+        /// <p>The key policy is not a shared property of multi-Region keys. You can specify the same key
+        /// policy or a different key policy for each key in a set of related multi-Region keys. KMS
+        /// does not synchronize this property.</p>
+        /// <p>If you provide a key policy, it must meet the following criteria:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy
+        /// must give the caller <code>kms:PutKeyPolicy</code> permission on the replica key. This
+        /// reduces the risk that the KMS key becomes unmanageable. For more information, refer to the
+        /// scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>
+        /// <i>Key Management Service Developer Guide</i>
+        /// </i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Each statement in the key policy must contain one or more principals. The principals
+        /// in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services
+        /// principal (for example, an IAM user or role), you might need to enforce a delay before
+        /// including the new principal in a key policy because the new principal might not be
+        /// immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the
+        /// <i>
+        /// <i>Identity and Access Management User Guide</i>
+        /// </i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
+        /// </li>
+        /// </ul>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -7302,6 +8741,15 @@ pub mod replicate_key_input {
             self.bypass_policy_lockout_safety_check = Some(input);
             self
         }
+        /// <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
+        /// <important>
+        /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do
+        /// not set this value to true indiscriminately.</p>
+        /// <p>For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>Key Management Service Developer Guide</i>.</p>
+        /// </important>
+        /// <p>Use this parameter only when you intend to prevent the principal that is making the
+        /// request from making a subsequent <code>PutKeyPolicy</code> request on the KMS key.</p>
+        /// <p>The default value is false.</p>
         pub fn set_bypass_policy_lockout_safety_check(
             mut self,
             input: std::option::Option<bool>,
@@ -7318,16 +8766,59 @@ pub mod replicate_key_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the KMS key. The default value is an empty string (no
+        /// description).</p>
+        /// <p>The description is not a shared property of multi-Region keys. You can specify the same
+        /// description or a different description for each key in a set of related multi-Region keys.
+        /// KMS does not synchronize this property.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Assigns one or more tags to the replica key. Use this parameter to tag the KMS key when it
+        /// is created. To tag an existing KMS key, use the <a>TagResource</a>
+        /// operation.</p>
+        /// <note>
+        /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// </note>
+        /// <p>To use this parameter, you must have <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a> permission in an IAM policy.</p>
+        /// <p>Tags are not a shared property of multi-Region keys. You can specify the same tags or
+        /// different tags for each key in a set of related multi-Region keys. KMS does not synchronize
+        /// this property.</p>
+        /// <p>Each tag consists of a tag key and a tag value. Both the tag key and the tag value are
+        /// required, but the tag value can be an empty (null) string. You cannot have more than one tag
+        /// on a KMS key with the same tag key. If you specify an existing tag key with a different tag
+        /// value, KMS replaces the current tag value with the specified one.</p>
+        /// <p>When you add tags to an Amazon Web Services resource, Amazon Web Services generates a cost allocation
+        /// report with usage and costs aggregated by tags. Tags can also be used to control access to a KMS key. For details,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Assigns one or more tags to the replica key. Use this parameter to tag the KMS key when it
+        /// is created. To tag an existing KMS key, use the <a>TagResource</a>
+        /// operation.</p>
+        /// <note>
+        /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// </note>
+        /// <p>To use this parameter, you must have <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a> permission in an IAM policy.</p>
+        /// <p>Tags are not a shared property of multi-Region keys. You can specify the same tags or
+        /// different tags for each key in a set of related multi-Region keys. KMS does not synchronize
+        /// this property.</p>
+        /// <p>Each tag consists of a tag key and a tag value. Both the tag key and the tag value are
+        /// required, but the tag value can be an empty (null) string. You cannot have more than one tag
+        /// on a KMS key with the same tag key. If you specify an existing tag key with a different tag
+        /// value, KMS replaces the current tag value with the specified one.</p>
+        /// <p>When you add tags to an Amazon Web Services resource, Amazon Web Services generates a cost allocation
+        /// report with usage and costs aggregated by tags. Tags can also be used to control access to a KMS key. For details,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7338,8 +8829,10 @@ pub mod replicate_key_input {
         /// Consumes the builder and constructs a [`ReplicateKeyInput`](crate::input::ReplicateKeyInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ReplicateKeyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ReplicateKeyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ReplicateKeyInput {
                 key_id: self.key_id,
                 replica_region: self.replica_region,
@@ -7364,16 +8857,16 @@ impl ReplicateKeyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ReplicateKey,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ReplicateKeyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7381,7 +8874,7 @@ impl ReplicateKeyInput {
         fn update_http_builder(
             input: &crate::input::ReplicateKeyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7390,31 +8883,31 @@ impl ReplicateKeyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ReplicateKeyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.ReplicateKey",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_replicate_key(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7437,22 +8930,27 @@ impl ReplicateKeyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ReplicateKey::new())
-                .with_metadata(smithy_http::operation::Metadata::new("ReplicateKey", "kms"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ReplicateKey::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ReplicateKey",
+            "kms",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7486,6 +8984,11 @@ pub mod retire_grant_input {
             self.grant_token = Some(input.into());
             self
         }
+        /// <p>Identifies the grant to be retired. You can use a grant token to identify a new grant even
+        /// before it has achieved eventual consistency.</p>
+        /// <p>Only the <a>CreateGrant</a> operation returns a grant token. For details, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a>
+        /// and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_grant_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_token = input;
             self
@@ -7497,6 +9000,9 @@ pub mod retire_grant_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>The key ARN KMS key associated with the grant. To find the key ARN, use the <a>ListKeys</a> operation.</p>
+        /// <p>For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -7513,6 +9019,14 @@ pub mod retire_grant_input {
             self.grant_id = Some(input.into());
             self
         }
+        /// <p>Identifies the grant to retire. To get the grant ID, use <a>CreateGrant</a>,
+        /// <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Grant ID Example -
+        /// 0123456789012345678901234567890123456789012345678901234567890123</p>
+        /// </li>
+        /// </ul>
         pub fn set_grant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_id = input;
             self
@@ -7520,8 +9034,10 @@ pub mod retire_grant_input {
         /// Consumes the builder and constructs a [`RetireGrantInput`](crate::input::RetireGrantInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::RetireGrantInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RetireGrantInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RetireGrantInput {
                 grant_token: self.grant_token,
                 key_id: self.key_id,
@@ -7541,16 +9057,16 @@ impl RetireGrantInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RetireGrant,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RetireGrantInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7558,7 +9074,7 @@ impl RetireGrantInput {
         fn update_http_builder(
             input: &crate::input::RetireGrantInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7567,29 +9083,31 @@ impl RetireGrantInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RetireGrantInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.RetireGrant",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_retire_grant(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7612,22 +9130,27 @@ impl RetireGrantInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::RetireGrant::new())
-                .with_metadata(smithy_http::operation::Metadata::new("RetireGrant", "kms"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RetireGrant::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RetireGrant",
+            "kms",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7653,6 +9176,7 @@ pub mod revoke_grant_input {
     impl Builder {
         /// <p>A unique identifier for the KMS key associated with the grant. To get the key ID and key
         /// ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        ///
         /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a
         /// different Amazon Web Services account, you must use the key ARN.</p>
         /// <p>For example:</p>
@@ -7671,6 +9195,23 @@ pub mod revoke_grant_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the KMS key associated with the grant. To get the key ID and key
+        /// ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        ///
+        /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a
+        /// different Amazon Web Services account, you must use the key ARN.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -7681,6 +9222,8 @@ pub mod revoke_grant_input {
             self.grant_id = Some(input.into());
             self
         }
+        /// <p>Identifies the grant to revoke. To get the grant ID, use <a>CreateGrant</a>,
+        /// <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</p>
         pub fn set_grant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_id = input;
             self
@@ -7688,8 +9231,10 @@ pub mod revoke_grant_input {
         /// Consumes the builder and constructs a [`RevokeGrantInput`](crate::input::RevokeGrantInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::RevokeGrantInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RevokeGrantInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RevokeGrantInput {
                 key_id: self.key_id,
                 grant_id: self.grant_id,
@@ -7708,16 +9253,16 @@ impl RevokeGrantInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RevokeGrant,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RevokeGrantInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7725,7 +9270,7 @@ impl RevokeGrantInput {
         fn update_http_builder(
             input: &crate::input::RevokeGrantInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7734,29 +9279,31 @@ impl RevokeGrantInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RevokeGrantInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.RevokeGrant",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_revoke_grant(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7779,22 +9326,27 @@ impl RevokeGrantInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::RevokeGrant::new())
-                .with_metadata(smithy_http::operation::Metadata::new("RevokeGrant", "kms"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RevokeGrant::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RevokeGrant",
+            "kms",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7836,6 +9388,20 @@ pub mod schedule_key_deletion_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the KMS key to delete.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -7851,6 +9417,13 @@ pub mod schedule_key_deletion_input {
             self.pending_window_in_days = Some(input);
             self
         }
+        /// <p>The waiting period, specified in number of days. After the waiting period ends, KMS
+        /// deletes the KMS key.</p>
+        /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when
+        /// the last of its replica keys is deleted. Otherwise, the waiting period begins
+        /// immediately.</p>
+        /// <p>This value is optional. If you include a value, it must be between 7 and 30, inclusive. If
+        /// you do not include a value, it defaults to 30.</p>
         pub fn set_pending_window_in_days(mut self, input: std::option::Option<i32>) -> Self {
             self.pending_window_in_days = input;
             self
@@ -7860,7 +9433,7 @@ pub mod schedule_key_deletion_input {
             self,
         ) -> std::result::Result<
             crate::input::ScheduleKeyDeletionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ScheduleKeyDeletionInput {
                 key_id: self.key_id,
@@ -7880,16 +9453,16 @@ impl ScheduleKeyDeletionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ScheduleKeyDeletion,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ScheduleKeyDeletionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7897,7 +9470,7 @@ impl ScheduleKeyDeletionInput {
         fn update_http_builder(
             input: &crate::input::ScheduleKeyDeletionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7906,32 +9479,32 @@ impl ScheduleKeyDeletionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ScheduleKeyDeletionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.ScheduleKeyDeletion",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_schedule_key_deletion(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7954,15 +9527,15 @@ impl ScheduleKeyDeletionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ScheduleKeyDeletion::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ScheduleKeyDeletion",
             "kms",
         ));
@@ -7971,10 +9544,10 @@ impl ScheduleKeyDeletionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7995,7 +9568,7 @@ pub mod sign_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
-        pub(crate) message: std::option::Option<smithy_types::Blob>,
+        pub(crate) message: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) message_type: std::option::Option<crate::model::MessageType>,
         pub(crate) grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
@@ -8029,6 +9602,30 @@ pub mod sign_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Identifies an asymmetric KMS key. KMS uses the private key in the asymmetric KMS key to
+        /// sign the message. The <code>KeyUsage</code> type of the KMS key must be
+        /// <code>SIGN_VERIFY</code>. To find the <code>KeyUsage</code> of a KMS key, use the <a>DescribeKey</a> operation.</p>
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// <li>
+        /// <p>Alias name: <code>alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -8037,11 +9634,15 @@ pub mod sign_input {
         /// larger message, provide the message digest.</p>
         /// <p>If you provide a message, KMS generates a hash digest of the message and then signs
         /// it.</p>
-        pub fn message(mut self, input: smithy_types::Blob) -> Self {
+        pub fn message(mut self, input: aws_smithy_types::Blob) -> Self {
             self.message = Some(input);
             self
         }
-        pub fn set_message(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>Specifies the message or message digest to sign. Messages can be 0-4096 bytes. To sign a
+        /// larger message, provide the message digest.</p>
+        /// <p>If you provide a message, KMS generates a hash digest of the message and then signs
+        /// it.</p>
+        pub fn set_message(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.message = input;
             self
         }
@@ -8052,6 +9653,9 @@ pub mod sign_input {
             self.message_type = Some(input);
             self
         }
+        /// <p>Tells KMS whether the value of the <code>Message</code> parameter is a message or
+        /// message digest. The default value, RAW, indicates a message. To indicate a message digest,
+        /// enter <code>DIGEST</code>.</p>
         pub fn set_message_type(
             mut self,
             input: std::option::Option<crate::model::MessageType>,
@@ -8059,12 +9663,22 @@ pub mod sign_input {
             self.message_type = input;
             self
         }
+        /// Appends an item to `grant_tokens`.
+        ///
+        /// To override the contents of this collection use [`set_grant_tokens`](Self::set_grant_tokens).
+        ///
+        /// <p>A list of grant tokens.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
             v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
+        /// <p>A list of grant tokens.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_grant_tokens(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8079,6 +9693,9 @@ pub mod sign_input {
             self.signing_algorithm = Some(input);
             self
         }
+        /// <p>Specifies the signing algorithm to use when signing the message. </p>
+        /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric
+        /// KMS key.</p>
         pub fn set_signing_algorithm(
             mut self,
             input: std::option::Option<crate::model::SigningAlgorithmSpec>,
@@ -8089,7 +9706,7 @@ pub mod sign_input {
         /// Consumes the builder and constructs a [`SignInput`](crate::input::SignInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::SignInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::SignInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::SignInput {
                 key_id: self.key_id,
@@ -8112,13 +9729,16 @@ impl SignInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::Sign, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::Sign,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SignInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8126,7 +9746,7 @@ impl SignInput {
         fn update_http_builder(
             input: &crate::input::SignInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8135,29 +9755,30 @@ impl SignInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SignInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.Sign",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = crate::operation_ser::serialize_operation_crate_operation_sign(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_sign(&self).map_err(
+            |err| aws_smithy_http::operation::BuildError::SerializationError(err.into()),
+        )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8180,21 +9801,21 @@ impl SignInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::Sign::new())
-            .with_metadata(smithy_http::operation::Metadata::new("Sign", "kms"));
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::Sign::new())
+            .with_metadata(aws_smithy_http::operation::Metadata::new("Sign", "kms"));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8219,6 +9840,7 @@ pub mod tag_resource_input {
     }
     impl Builder {
         /// <p>Identifies a customer managed key in the account and Region.</p>
+        ///
         /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -8236,16 +9858,47 @@ pub mod tag_resource_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Identifies a customer managed key in the account and Region.</p>
+        ///
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags. </p>
+        /// <p>Each tag consists of a tag key and a tag value. The tag value can be an empty (null)
+        /// string. </p>
+        /// <p>You cannot have more than one tag on a KMS key with the same tag key. If you specify an
+        /// existing tag key with a different tag value, KMS replaces the current tag value with the
+        /// specified one.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>One or more tags. </p>
+        /// <p>Each tag consists of a tag key and a tag value. The tag value can be an empty (null)
+        /// string. </p>
+        /// <p>You cannot have more than one tag on a KMS key with the same tag key. If you specify an
+        /// existing tag key with a different tag value, KMS replaces the current tag value with the
+        /// specified one.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8256,8 +9909,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 key_id: self.key_id,
                 tags: self.tags,
@@ -8276,16 +9931,16 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8293,7 +9948,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8302,29 +9957,31 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.TagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8347,22 +10004,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new("TagResource", "kms"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "kms",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8387,6 +10049,7 @@ pub mod untag_resource_input {
     }
     impl Builder {
         /// <p>Identifies the KMS key from which you are removing tags.</p>
+        ///
         /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -8404,16 +10067,37 @@ pub mod untag_resource_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Identifies the KMS key from which you are removing tags.</p>
+        ///
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8424,8 +10108,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 key_id: self.key_id,
                 tag_keys: self.tag_keys,
@@ -8444,16 +10130,16 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8461,7 +10147,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8470,29 +10156,31 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.UntagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8515,25 +10203,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "kms",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "kms",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8564,6 +10254,9 @@ pub mod update_alias_input {
             self.alias_name = Some(input.into());
             self
         }
+        /// <p>Identifies the alias that is changing its KMS key. This value must begin with
+        /// <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You
+        /// cannot use UpdateAlias to change the alias name.</p>
         pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_name = input;
             self
@@ -8592,6 +10285,26 @@ pub mod update_alias_input {
             self.target_key_id = Some(input.into());
             self
         }
+        /// <p>Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> to associate with the alias. You don't have permission to
+        /// associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>.</p>
+        /// <p>The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new
+        /// target KMS key must be the same type as the current target KMS key (both symmetric or both
+        /// asymmetric) and they must have the same key usage. </p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To
+        /// verify that the alias is mapped to the correct KMS key, use <a>ListAliases</a>.</p>
         pub fn set_target_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8602,8 +10315,10 @@ pub mod update_alias_input {
         /// Consumes the builder and constructs a [`UpdateAliasInput`](crate::input::UpdateAliasInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateAliasInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateAliasInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateAliasInput {
                 alias_name: self.alias_name,
                 target_key_id: self.target_key_id,
@@ -8622,16 +10337,16 @@ impl UpdateAliasInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateAlias,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateAliasInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8639,7 +10354,7 @@ impl UpdateAliasInput {
         fn update_http_builder(
             input: &crate::input::UpdateAliasInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8648,29 +10363,31 @@ impl UpdateAliasInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateAliasInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.UpdateAlias",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_alias(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8693,22 +10410,27 @@ impl UpdateAliasInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateAlias::new())
-                .with_metadata(smithy_http::operation::Metadata::new("UpdateAlias", "kms"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateAlias::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateAlias",
+            "kms",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8740,6 +10462,8 @@ pub mod update_custom_key_store_input {
             self.custom_key_store_id = Some(input.into());
             self
         }
+        /// <p>Identifies the custom key store that you want to update. Enter the ID of the custom key
+        /// store. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
         pub fn set_custom_key_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8753,6 +10477,8 @@ pub mod update_custom_key_store_input {
             self.new_custom_key_store_name = Some(input.into());
             self
         }
+        /// <p>Changes the friendly name of the custom key store to the value that you specify. The
+        /// custom key store name must be unique in the Amazon Web Services account.</p>
         pub fn set_new_custom_key_store_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8768,6 +10494,10 @@ pub mod update_custom_key_store_input {
             self.key_store_password = Some(input.into());
             self
         }
+        /// <p>Enter the current password of the <code>kmsuser</code> crypto user (CU) in the CloudHSM
+        /// cluster that is associated with the custom key store.</p>
+        /// <p>This parameter tells KMS the current password of the <code>kmsuser</code> crypto user
+        /// (CU). It does not set or change the password of any users in the CloudHSM cluster.</p>
         pub fn set_key_store_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8786,6 +10516,13 @@ pub mod update_custom_key_store_input {
             self.cloud_hsm_cluster_id = Some(input.into());
             self
         }
+        /// <p>Associates the custom key store with a related CloudHSM cluster. </p>
+        /// <p>Enter the cluster ID of the cluster that you used to create the custom key store or a
+        /// cluster that shares a backup history and has the same cluster certificate as the original
+        /// cluster. You cannot use this parameter to associate a custom key store with an unrelated
+        /// cluster. In addition, the replacement cluster must <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">fulfill the requirements</a> for
+        /// a cluster associated with a custom key store. To view the cluster certificate of a cluster,
+        /// use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
         pub fn set_cloud_hsm_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8798,7 +10535,7 @@ pub mod update_custom_key_store_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateCustomKeyStoreInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateCustomKeyStoreInput {
                 custom_key_store_id: self.custom_key_store_id,
@@ -8820,16 +10557,16 @@ impl UpdateCustomKeyStoreInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateCustomKeyStore,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateCustomKeyStoreInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8837,7 +10574,7 @@ impl UpdateCustomKeyStoreInput {
         fn update_http_builder(
             input: &crate::input::UpdateCustomKeyStoreInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8846,32 +10583,34 @@ impl UpdateCustomKeyStoreInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateCustomKeyStoreInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.UpdateCustomKeyStore",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_custom_key_store(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8894,15 +10633,15 @@ impl UpdateCustomKeyStoreInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateCustomKeyStore::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateCustomKeyStore",
             "kms",
         ));
@@ -8911,10 +10650,10 @@ impl UpdateCustomKeyStoreInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8939,6 +10678,7 @@ pub mod update_key_description_input {
     }
     impl Builder {
         /// <p>Updates the description of the specified KMS key.</p>
+        ///
         /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
@@ -8956,6 +10696,21 @@ pub mod update_key_description_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Updates the description of the specified KMS key.</p>
+        ///
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -8965,6 +10720,7 @@ pub mod update_key_description_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>New description for the KMS key.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -8974,7 +10730,7 @@ pub mod update_key_description_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateKeyDescriptionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateKeyDescriptionInput {
                 key_id: self.key_id,
@@ -8994,16 +10750,16 @@ impl UpdateKeyDescriptionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateKeyDescription,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateKeyDescriptionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9011,7 +10767,7 @@ impl UpdateKeyDescriptionInput {
         fn update_http_builder(
             input: &crate::input::UpdateKeyDescriptionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9020,32 +10776,32 @@ impl UpdateKeyDescriptionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateKeyDescriptionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.UpdateKeyDescription",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_key_description(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9068,15 +10824,15 @@ impl UpdateKeyDescriptionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateKeyDescription::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateKeyDescription",
             "kms",
         ));
@@ -9085,10 +10841,10 @@ impl UpdateKeyDescriptionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9131,6 +10887,21 @@ pub mod update_primary_region_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Identifies the current primary key. When the operation completes, this KMS key will be a
+        /// replica key.</p>
+        /// <p>Specify the key ID or key ARN of a multi-Region primary key.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>mrk-1234abcd12ab34cd56ef1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/mrk-1234abcd12ab34cd56ef1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -9144,6 +10915,11 @@ pub mod update_primary_region_input {
             self.primary_region = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services Region of the new primary key. Enter the Region ID, such as
+        /// <code>us-east-1</code> or <code>ap-southeast-2</code>. There must be an existing replica key
+        /// in this Region. </p>
+        /// <p>When the operation completes, the multi-Region key in this Region will be the primary
+        /// key.</p>
         pub fn set_primary_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9156,7 +10932,7 @@ pub mod update_primary_region_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdatePrimaryRegionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdatePrimaryRegionInput {
                 key_id: self.key_id,
@@ -9176,16 +10952,16 @@ impl UpdatePrimaryRegionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdatePrimaryRegion,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdatePrimaryRegionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9193,7 +10969,7 @@ impl UpdatePrimaryRegionInput {
         fn update_http_builder(
             input: &crate::input::UpdatePrimaryRegionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9202,32 +10978,32 @@ impl UpdatePrimaryRegionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdatePrimaryRegionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.UpdatePrimaryRegion",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_primary_region(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9250,15 +11026,15 @@ impl UpdatePrimaryRegionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdatePrimaryRegion::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdatePrimaryRegion",
             "kms",
         ));
@@ -9267,10 +11043,10 @@ impl UpdatePrimaryRegionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9291,9 +11067,9 @@ pub mod verify_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
-        pub(crate) message: std::option::Option<smithy_types::Blob>,
+        pub(crate) message: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) message_type: std::option::Option<crate::model::MessageType>,
-        pub(crate) signature: std::option::Option<smithy_types::Blob>,
+        pub(crate) signature: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
         pub(crate) grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -9326,6 +11102,30 @@ pub mod verify_input {
             self.key_id = Some(input.into());
             self
         }
+        /// <p>Identifies the asymmetric KMS key that will be used to verify the signature. This must be
+        /// the same KMS key that was used to generate the signature. If you specify a different KMS key,
+        /// the signature verification fails.</p>
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>    
+        /// </li>
+        /// <li>
+        /// <p>Alias name: <code>alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -9336,11 +11136,17 @@ pub mod verify_input {
         /// <p>If the message specified here is different from the message that was signed, the signature
         /// verification fails. A message and its hash digest are considered to be the same
         /// message.</p>
-        pub fn message(mut self, input: smithy_types::Blob) -> Self {
+        pub fn message(mut self, input: aws_smithy_types::Blob) -> Self {
             self.message = Some(input);
             self
         }
-        pub fn set_message(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>Specifies the message that was signed. You can submit a raw message of up to 4096 bytes,
+        /// or a hash digest of the message. If you submit a digest, use the <code>MessageType</code>
+        /// parameter with a value of <code>DIGEST</code>.</p>
+        /// <p>If the message specified here is different from the message that was signed, the signature
+        /// verification fails. A message and its hash digest are considered to be the same
+        /// message.</p>
+        pub fn set_message(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.message = input;
             self
         }
@@ -9356,6 +11162,14 @@ pub mod verify_input {
             self.message_type = Some(input);
             self
         }
+        /// <p>Tells KMS whether the value of the <code>Message</code> parameter is a message or
+        /// message digest. The default value, RAW, indicates a message. To indicate a message digest,
+        /// enter <code>DIGEST</code>.</p>
+        /// <important>
+        /// <p>Use the <code>DIGEST</code> value only when the value of the <code>Message</code>
+        /// parameter is a message digest. If you use the <code>DIGEST</code> value with a raw message,
+        /// the security of the verification operation can be compromised.</p>
+        /// </important>
         pub fn set_message_type(
             mut self,
             input: std::option::Option<crate::model::MessageType>,
@@ -9364,11 +11178,12 @@ pub mod verify_input {
             self
         }
         /// <p>The signature that the <code>Sign</code> operation generated.</p>
-        pub fn signature(mut self, input: smithy_types::Blob) -> Self {
+        pub fn signature(mut self, input: aws_smithy_types::Blob) -> Self {
             self.signature = Some(input);
             self
         }
-        pub fn set_signature(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The signature that the <code>Sign</code> operation generated.</p>
+        pub fn set_signature(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.signature = input;
             self
         }
@@ -9378,6 +11193,8 @@ pub mod verify_input {
             self.signing_algorithm = Some(input);
             self
         }
+        /// <p>The signing algorithm that was used to sign the message. If you submit a different
+        /// algorithm, the signature verification fails.</p>
         pub fn set_signing_algorithm(
             mut self,
             input: std::option::Option<crate::model::SigningAlgorithmSpec>,
@@ -9385,12 +11202,22 @@ pub mod verify_input {
             self.signing_algorithm = input;
             self
         }
+        /// Appends an item to `grant_tokens`.
+        ///
+        /// To override the contents of this collection use [`set_grant_tokens`](Self::set_grant_tokens).
+        ///
+        /// <p>A list of grant tokens.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn grant_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_tokens.unwrap_or_default();
             v.push(input.into());
             self.grant_tokens = Some(v);
             self
         }
+        /// <p>A list of grant tokens.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_grant_tokens(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9401,7 +11228,7 @@ pub mod verify_input {
         /// Consumes the builder and constructs a [`VerifyInput`](crate::input::VerifyInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::VerifyInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::VerifyInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::VerifyInput {
                 key_id: self.key_id,
@@ -9425,13 +11252,16 @@ impl VerifyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::Verify, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::Verify,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::VerifyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9439,7 +11269,7 @@ impl VerifyInput {
         fn update_http_builder(
             input: &crate::input::VerifyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9448,29 +11278,31 @@ impl VerifyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::VerifyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TrentService.Verify",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_verify(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9493,21 +11325,22 @@ impl VerifyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::Verify::new())
-            .with_metadata(smithy_http::operation::Metadata::new("Verify", "kms"));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::Verify::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new("Verify", "kms"));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9521,6 +11354,7 @@ impl VerifyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifyInput {
@@ -9555,7 +11389,7 @@ pub struct VerifyInput {
     /// <p>If the message specified here is different from the message that was signed, the signature
     /// verification fails. A message and its hash digest are considered to be the same
     /// message.</p>
-    pub message: std::option::Option<smithy_types::Blob>,
+    pub message: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Tells KMS whether the value of the <code>Message</code> parameter is a message or
     /// message digest. The default value, RAW, indicates a message. To indicate a message digest,
     /// enter <code>DIGEST</code>.</p>
@@ -9566,7 +11400,7 @@ pub struct VerifyInput {
     /// </important>
     pub message_type: std::option::Option<crate::model::MessageType>,
     /// <p>The signature that the <code>Sign</code> operation generated.</p>
-    pub signature: std::option::Option<smithy_types::Blob>,
+    pub signature: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The signing algorithm that was used to sign the message. If you submit a different
     /// algorithm, the signature verification fails.</p>
     pub signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
@@ -9588,6 +11422,7 @@ impl std::fmt::Debug for VerifyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePrimaryRegionInput {
@@ -9623,10 +11458,12 @@ impl std::fmt::Debug for UpdatePrimaryRegionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateKeyDescriptionInput {
     /// <p>Updates the description of the specified KMS key.</p>
+    ///
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -9653,6 +11490,7 @@ impl std::fmt::Debug for UpdateKeyDescriptionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCustomKeyStoreInput {
@@ -9687,6 +11525,7 @@ impl std::fmt::Debug for UpdateCustomKeyStoreInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAliasInput {
@@ -9725,10 +11564,12 @@ impl std::fmt::Debug for UpdateAliasInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>Identifies the KMS key from which you are removing tags.</p>
+    ///
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -9755,10 +11596,12 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>Identifies a customer managed key in the account and Region.</p>
+    ///
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -9790,6 +11633,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SignInput {
@@ -9822,7 +11666,7 @@ pub struct SignInput {
     /// larger message, provide the message digest.</p>
     /// <p>If you provide a message, KMS generates a hash digest of the message and then signs
     /// it.</p>
-    pub message: std::option::Option<smithy_types::Blob>,
+    pub message: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Tells KMS whether the value of the <code>Message</code> parameter is a message or
     /// message digest. The default value, RAW, indicates a message. To indicate a message digest,
     /// enter <code>DIGEST</code>.</p>
@@ -9848,6 +11692,7 @@ impl std::fmt::Debug for SignInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduleKeyDeletionInput {
@@ -9884,11 +11729,13 @@ impl std::fmt::Debug for ScheduleKeyDeletionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeGrantInput {
     /// <p>A unique identifier for the KMS key associated with the grant. To get the key ID and key
     /// ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    ///
     /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a
     /// different Amazon Web Services account, you must use the key ARN.</p>
     /// <p>For example:</p>
@@ -9917,6 +11764,7 @@ impl std::fmt::Debug for RevokeGrantInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetireGrantInput {
@@ -9950,12 +11798,14 @@ impl std::fmt::Debug for RetireGrantInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicateKeyInput {
     /// <p>Identifies the multi-Region primary key that is being replicated. To determine whether a
     /// KMS key is a multi-Region primary key, use the <a>DescribeKey</a> operation to
     /// check the value of the <code>MultiRegionKeyType</code> property.</p>
+    ///
     /// <p>Specify the key ID or key ARN of a multi-Region primary key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -10065,11 +11915,12 @@ impl std::fmt::Debug for ReplicateKeyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReEncryptInput {
     /// <p>Ciphertext of the data to reencrypt.</p>
-    pub ciphertext_blob: std::option::Option<smithy_types::Blob>,
+    pub ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Specifies the encryption context to use to decrypt the ciphertext. Enter the same
     /// encryption context that was used to encrypt the ciphertext.</p>
     /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
@@ -10084,6 +11935,7 @@ pub struct ReEncryptInput {
     /// key. If you used a symmetric KMS key, KMS can get the KMS key from metadata that it adds to
     /// the symmetric ciphertext blob. However, it is always recommended as a best practice. This
     /// practice ensures that you use the KMS key that you intend.</p>
+    ///
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -10186,6 +12038,7 @@ impl std::fmt::Debug for ReEncryptInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutKeyPolicyInput {
@@ -10253,6 +12106,7 @@ impl std::fmt::Debug for PutKeyPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRetirableGrantsInput {
@@ -10285,6 +12139,7 @@ impl std::fmt::Debug for ListRetirableGrantsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceTagsInput {
@@ -10326,6 +12181,7 @@ impl std::fmt::Debug for ListResourceTagsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKeysInput {
@@ -10349,6 +12205,7 @@ impl std::fmt::Debug for ListKeysInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKeyPoliciesInput {
@@ -10389,6 +12246,7 @@ impl std::fmt::Debug for ListKeyPoliciesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGrantsInput {
@@ -10403,6 +12261,7 @@ pub struct ListGrantsInput {
     /// you just received.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>Returns only grants for the specified KMS key. This parameter is required.</p>
+    ///
     /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a
     /// different Amazon Web Services account, you must use the key ARN.</p>
     /// <p>For example:</p>
@@ -10437,6 +12296,7 @@ impl std::fmt::Debug for ListGrantsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAliasesInput {
@@ -10479,6 +12339,7 @@ impl std::fmt::Debug for ListAliasesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportKeyMaterialInput {
@@ -10501,16 +12362,16 @@ pub struct ImportKeyMaterialInput {
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The import token that you received in the response to a previous <a>GetParametersForImport</a> request. It must be from the same response that contained
     /// the public key that you used to encrypt the key material.</p>
-    pub import_token: std::option::Option<smithy_types::Blob>,
+    pub import_token: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The encrypted key material to import. The key material must be encrypted with the public
     /// wrapping key that <a>GetParametersForImport</a> returned, using the wrapping
     /// algorithm that you specified in the same <code>GetParametersForImport</code> request.</p>
-    pub encrypted_key_material: std::option::Option<smithy_types::Blob>,
+    pub encrypted_key_material: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The time at which the imported key material expires. When the key material expires, KMS
     /// deletes the key material and the KMS key becomes unusable. You must omit this parameter when
     /// the <code>ExpirationModel</code> parameter is set to
     /// <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.</p>
-    pub valid_to: std::option::Option<smithy_types::Instant>,
+    pub valid_to: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies whether the key material expires. The default is
     /// <code>KEY_MATERIAL_EXPIRES</code>, in which case you must include the <code>ValidTo</code>
     /// parameter. When this parameter is set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must
@@ -10529,10 +12390,12 @@ impl std::fmt::Debug for ImportKeyMaterialInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPublicKeyInput {
     /// <p>Identifies the asymmetric KMS key that includes the public key.</p>
+    ///
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -10569,11 +12432,13 @@ impl std::fmt::Debug for GetPublicKeyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetParametersForImportInput {
     /// <p>The identifier of the symmetric KMS key into which you will import key material. The
     /// <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
+    ///
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -10605,10 +12470,12 @@ impl std::fmt::Debug for GetParametersForImportInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKeyRotationStatusInput {
     /// <p>Gets the rotation status for the specified KMS key.</p>
+    ///
     /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a
     /// different Amazon Web Services account, you must use the key ARN.</p>
     /// <p>For example:</p>
@@ -10633,6 +12500,7 @@ impl std::fmt::Debug for GetKeyRotationStatusInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKeyPolicyInput {
@@ -10664,6 +12532,7 @@ impl std::fmt::Debug for GetKeyPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateRandomInput {
@@ -10682,10 +12551,12 @@ impl std::fmt::Debug for GenerateRandomInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateDataKeyWithoutPlaintextInput {
     /// <p>The identifier of the symmetric KMS key that encrypts the data key.</p>
+    ///
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -10739,6 +12610,7 @@ impl std::fmt::Debug for GenerateDataKeyWithoutPlaintextInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateDataKeyPairWithoutPlaintextInput {
@@ -10795,6 +12667,7 @@ impl std::fmt::Debug for GenerateDataKeyPairWithoutPlaintextInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateDataKeyPairInput {
@@ -10809,6 +12682,7 @@ pub struct GenerateDataKeyPairInput {
     /// <p>Specifies the symmetric KMS key that encrypts the private key in the data key pair. You
     /// cannot specify an asymmetric KMS key or a KMS key in a custom key store. To get the type and
     /// origin of your KMS key, use the <a>DescribeKey</a> operation.</p>
+    ///
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -10850,10 +12724,12 @@ impl std::fmt::Debug for GenerateDataKeyPairInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateDataKeyInput {
     /// <p>Identifies the symmetric KMS key that encrypts the data key.</p>
+    ///
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -10911,10 +12787,12 @@ impl std::fmt::Debug for GenerateDataKeyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptInput {
     /// <p>Identifies the KMS key to use in the encryption operation.</p>
+    ///
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -10938,7 +12816,7 @@ pub struct EncryptInput {
     /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Data to be encrypted.</p>
-    pub plaintext: std::option::Option<smithy_types::Blob>,
+    pub plaintext: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Specifies the encryption context that will be used to encrypt the data.
     /// An encryption context is valid only for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> with a symmetric KMS key. The standard asymmetric encryption algorithms that KMS uses do not support an encryption context. </p>
     /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
@@ -10970,6 +12848,7 @@ impl std::fmt::Debug for EncryptInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableKeyRotationInput {
@@ -10997,6 +12876,7 @@ impl std::fmt::Debug for EnableKeyRotationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableKeyInput {
@@ -11024,6 +12904,7 @@ impl std::fmt::Debug for EnableKeyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisconnectCustomKeyStoreInput {
@@ -11038,6 +12919,7 @@ impl std::fmt::Debug for DisconnectCustomKeyStoreInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableKeyRotationInput {
@@ -11067,6 +12949,7 @@ impl std::fmt::Debug for DisableKeyRotationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableKeyInput {
@@ -11094,6 +12977,7 @@ impl std::fmt::Debug for DisableKeyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeKeyInput {
@@ -11101,6 +12985,7 @@ pub struct DescribeKeyInput {
     /// <p>If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), KMS associates
     /// the alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html##aws-managed-cmk">Amazon Web Services managed key</a> and returns its
     /// <code>KeyId</code> and <code>Arn</code> in the response.</p>
+    ///
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -11137,6 +13022,7 @@ impl std::fmt::Debug for DescribeKeyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCustomKeyStoresInput {
@@ -11173,11 +13059,13 @@ impl std::fmt::Debug for DescribeCustomKeyStoresInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteImportedKeyMaterialInput {
     /// <p>Identifies the KMS key from which you are deleting imported key material. The
     /// <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
+    ///
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -11201,6 +13089,7 @@ impl std::fmt::Debug for DeleteImportedKeyMaterialInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCustomKeyStoreInput {
@@ -11215,6 +13104,7 @@ impl std::fmt::Debug for DeleteCustomKeyStoreInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAliasInput {
@@ -11230,11 +13120,12 @@ impl std::fmt::Debug for DeleteAliasInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecryptInput {
     /// <p>Ciphertext to be decrypted. The blob includes metadata.</p>
-    pub ciphertext_blob: std::option::Option<smithy_types::Blob>,
+    pub ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Specifies the encryption context to use when decrypting the data.
     /// An encryption context is valid only for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> with a symmetric KMS key. The standard asymmetric encryption algorithms that KMS uses do not support an encryption context.</p>
     /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
@@ -11249,10 +13140,12 @@ pub struct DecryptInput {
     pub grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the KMS key that KMS uses to decrypt the ciphertext. Enter a key ID of the KMS
     /// key that was used to encrypt the ciphertext. </p>
+    ///
     /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS
     /// key. If you used a symmetric KMS key, KMS can get the KMS key from metadata that it adds to
     /// the symmetric ciphertext blob. However, it is always recommended as a best practice. This
     /// practice ensures that you use the KMS key that you intend.</p>
+    ///
     /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -11295,6 +13188,7 @@ impl std::fmt::Debug for DecryptInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateKeyInput {
@@ -11525,6 +13419,7 @@ impl std::fmt::Debug for CreateKeyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGrantInput {
@@ -11621,6 +13516,7 @@ impl std::fmt::Debug for CreateGrantInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomKeyStoreInput {
@@ -11654,6 +13550,7 @@ impl std::fmt::Debug for CreateCustomKeyStoreInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAliasInput {
@@ -11697,6 +13594,7 @@ impl std::fmt::Debug for CreateAliasInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectCustomKeyStoreInput {
@@ -11712,10 +13610,12 @@ impl std::fmt::Debug for ConnectCustomKeyStoreInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelKeyDeletionInput {
     /// <p>Identifies the KMS key whose deletion is being canceled.</p>
+    ///
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>

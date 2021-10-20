@@ -19,6 +19,7 @@ pub mod create_access_point_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -28,6 +29,7 @@ pub mod create_access_point_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name you want to assign to this access point.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -39,6 +41,9 @@ pub mod create_access_point_input {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The name of the bucket that you want to associate this access point with.</p>
+        /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -52,6 +57,11 @@ pub mod create_access_point_input {
             self.vpc_configuration = Some(input);
             self
         }
+        /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the
+        /// specified virtual private cloud (VPC).</p>
+        /// <note>
+        /// <p>This is required for creating an access point for Amazon S3 on Outposts buckets.</p>
+        /// </note>
         pub fn set_vpc_configuration(
             mut self,
             input: std::option::Option<crate::model::VpcConfiguration>,
@@ -69,6 +79,9 @@ pub mod create_access_point_input {
             self.public_access_block_configuration = Some(input);
             self
         }
+        /// <p>
+        /// The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.
+        /// </p>
         pub fn set_public_access_block_configuration(
             mut self,
             input: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
@@ -81,7 +94,7 @@ pub mod create_access_point_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateAccessPointInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateAccessPointInput {
                 account_id: self.account_id,
@@ -104,27 +117,27 @@ impl CreateAccessPointInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateAccessPoint,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateAccessPointInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.name;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_1, false);
+            let name = aws_smithy_http::label::fmt_string(input_1, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -136,7 +149,7 @@ impl CreateAccessPointInput {
         fn add_headers(
             _input: &crate::input::CreateAccessPointInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_2) = &_input.account_id {
                 let formatted_3 = AsRef::<str>::as_ref(inner_2);
@@ -144,7 +157,7 @@ impl CreateAccessPointInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_3;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -160,7 +173,7 @@ impl CreateAccessPointInput {
         fn update_http_builder(
             input: &crate::input::CreateAccessPointInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -170,35 +183,35 @@ impl CreateAccessPointInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateAccessPointInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_access_point(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -208,7 +221,7 @@ impl CreateAccessPointInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -233,15 +246,15 @@ impl CreateAccessPointInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateAccessPoint::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateAccessPoint",
             "s3control",
         ));
@@ -250,10 +263,10 @@ impl CreateAccessPointInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -283,6 +296,7 @@ pub mod create_access_point_for_object_lambda_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID for owner of the specified Object Lambda Access Point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -292,6 +306,7 @@ pub mod create_access_point_for_object_lambda_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name you want to assign to this Object Lambda Access Point.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -301,6 +316,7 @@ pub mod create_access_point_for_object_lambda_input {
             self.configuration = Some(input);
             self
         }
+        /// <p>Object Lambda Access Point configuration as a JSON document.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ObjectLambdaConfiguration>,
@@ -313,7 +329,7 @@ pub mod create_access_point_for_object_lambda_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateAccessPointForObjectLambdaInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateAccessPointForObjectLambdaInput {
                 account_id: self.account_id,
@@ -335,27 +351,27 @@ impl CreateAccessPointForObjectLambdaInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateAccessPointForObjectLambda,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateAccessPointForObjectLambdaInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_4 = &_input.name;
             let input_4 =
                 input_4
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_4, false);
+            let name = aws_smithy_http::label::fmt_string(input_4, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -371,7 +387,7 @@ impl CreateAccessPointForObjectLambdaInput {
         fn add_headers(
             _input: &crate::input::CreateAccessPointForObjectLambdaInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_5) = &_input.account_id {
                 let formatted_6 = AsRef::<str>::as_ref(inner_5);
@@ -379,7 +395,7 @@ impl CreateAccessPointForObjectLambdaInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_6;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -395,7 +411,7 @@ impl CreateAccessPointForObjectLambdaInput {
         fn update_http_builder(
             input: &crate::input::CreateAccessPointForObjectLambdaInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -405,33 +421,33 @@ impl CreateAccessPointForObjectLambdaInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateAccessPointForObjectLambdaInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_access_point_for_object_lambda(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_access_point_for_object_lambda(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -441,7 +457,7 @@ impl CreateAccessPointForObjectLambdaInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -466,15 +482,15 @@ impl CreateAccessPointForObjectLambdaInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateAccessPointForObjectLambda::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateAccessPointForObjectLambda",
             "s3control",
         ));
@@ -483,10 +499,10 @@ impl CreateAccessPointForObjectLambdaInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -527,6 +543,10 @@ pub mod create_bucket_input {
             self.acl = Some(input);
             self
         }
+        /// <p>The canned ACL to apply to the bucket.</p>
+        /// <note>
+        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+        /// </note>
         pub fn set_acl(
             mut self,
             input: std::option::Option<crate::model::BucketCannedAcl>,
@@ -539,6 +559,7 @@ pub mod create_bucket_input {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The name of the bucket.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -551,6 +572,10 @@ pub mod create_bucket_input {
             self.grant_full_control = Some(input.into());
             self
         }
+        /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
+        /// <note>
+        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+        /// </note>
         pub fn set_grant_full_control(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -566,6 +591,10 @@ pub mod create_bucket_input {
             self.grant_read = Some(input.into());
             self
         }
+        /// <p>Allows grantee to list the objects in the bucket.</p>
+        /// <note>
+        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+        /// </note>
         pub fn set_grant_read(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_read = input;
             self
@@ -578,6 +607,10 @@ pub mod create_bucket_input {
             self.grant_read_acp = Some(input.into());
             self
         }
+        /// <p>Allows grantee to read the bucket ACL.</p>
+        /// <note>
+        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+        /// </note>
         pub fn set_grant_read_acp(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -593,6 +626,10 @@ pub mod create_bucket_input {
             self.grant_write = Some(input.into());
             self
         }
+        /// <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+        /// <note>
+        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+        /// </note>
         pub fn set_grant_write(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_write = input;
             self
@@ -605,6 +642,10 @@ pub mod create_bucket_input {
             self.grant_write_acp = Some(input.into());
             self
         }
+        /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
+        /// <note>
+        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+        /// </note>
         pub fn set_grant_write_acp(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -620,6 +661,10 @@ pub mod create_bucket_input {
             self.object_lock_enabled_for_bucket = Some(input);
             self
         }
+        /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p>
+        /// <note>
+        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+        /// </note>
         pub fn set_object_lock_enabled_for_bucket(
             mut self,
             input: std::option::Option<bool>,
@@ -635,6 +680,10 @@ pub mod create_bucket_input {
             self.outpost_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Outposts where the bucket is being created.</p>
+        /// <note>
+        /// <p>This is required by Amazon S3 on Outposts buckets.</p>
+        /// </note>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_id = input;
             self
@@ -650,6 +699,10 @@ pub mod create_bucket_input {
             self.create_bucket_configuration = Some(input);
             self
         }
+        /// <p>The configuration information for the bucket.</p>
+        /// <note>
+        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+        /// </note>
         pub fn set_create_bucket_configuration(
             mut self,
             input: std::option::Option<crate::model::CreateBucketConfiguration>,
@@ -660,8 +713,10 @@ pub mod create_bucket_input {
         /// Consumes the builder and constructs a [`CreateBucketInput`](crate::input::CreateBucketInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateBucketInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateBucketInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateBucketInput {
                 acl: self.acl,
                 bucket: self.bucket,
@@ -690,27 +745,27 @@ impl CreateBucketInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateBucket,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateBucketInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_7 = &_input.bucket;
             let input_7 =
                 input_7
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = smithy_http::label::fmt_string(input_7, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_7, false);
             if bucket.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
@@ -722,7 +777,7 @@ impl CreateBucketInput {
         fn add_headers(
             _input: &crate::input::CreateBucketInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_8) = &_input.acl {
                 let formatted_9 = AsRef::<str>::as_ref(inner_8);
@@ -730,7 +785,7 @@ impl CreateBucketInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_9;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "acl",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -746,7 +801,7 @@ impl CreateBucketInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_11;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "grant_full_control",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -762,7 +817,7 @@ impl CreateBucketInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_13;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "grant_read",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -778,7 +833,7 @@ impl CreateBucketInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_15;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "grant_read_acp",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -794,7 +849,7 @@ impl CreateBucketInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_17;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "grant_write",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -810,7 +865,7 @@ impl CreateBucketInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_19;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "grant_write_acp",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -821,14 +876,15 @@ impl CreateBucketInput {
                 }
             }
             if _input.object_lock_enabled_for_bucket {
-                let mut encoder =
-                    smithy_types::primitive::Encoder::from(_input.object_lock_enabled_for_bucket);
+                let mut encoder = aws_smithy_types::primitive::Encoder::from(
+                    _input.object_lock_enabled_for_bucket,
+                );
                 let formatted_20 = encoder.encode();
                 if !formatted_20.is_empty() {
                     use std::convert::TryFrom;
                     let header_value = formatted_20;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "object_lock_enabled_for_bucket",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -844,7 +900,7 @@ impl CreateBucketInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_22;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "outpost_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -860,7 +916,7 @@ impl CreateBucketInput {
         fn update_http_builder(
             input: &crate::input::CreateBucketInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -870,41 +926,41 @@ impl CreateBucketInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateBucketInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::ser_payload_create_bucket_input(
             &self.create_bucket_configuration,
         )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request = request.augment(|mut req, _| {
             let data = req.body().bytes().ok_or_else(|| {
-                smithy_http::operation::BuildError::SerializationError(
+                aws_smithy_http::operation::BuildError::SerializationError(
                     "checksum can only be computed for non-streaming operations".into(),
                 )
             })?;
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
-                smithy_types::base64::encode(&checksum[..])
+                aws_smithy_types::base64::encode(&checksum[..])
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -926,25 +982,27 @@ impl CreateBucketInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateBucket::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateBucket",
-                    "s3control",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateBucket::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateBucket",
+            "s3control",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -981,6 +1039,7 @@ pub mod create_job_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID that creates the job.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -990,6 +1049,7 @@ pub mod create_job_input {
             self.confirmation_required = Some(input);
             self
         }
+        /// <p>Indicates whether confirmation is required before Amazon S3 runs the job. Confirmation is only required for jobs created through the Amazon S3 console.</p>
         pub fn set_confirmation_required(mut self, input: std::option::Option<bool>) -> Self {
             self.confirmation_required = input;
             self
@@ -1001,6 +1061,9 @@ pub mod create_job_input {
             self.operation = Some(input);
             self
         }
+        /// <p>The action that you want this job to perform on every object listed in the manifest.
+        /// For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the
+        /// <i>Amazon S3 User Guide</i>.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::JobOperation>,
@@ -1013,6 +1076,7 @@ pub mod create_job_input {
             self.report = Some(input);
             self
         }
+        /// <p>Configuration parameters for the optional job-completion report.</p>
         pub fn set_report(mut self, input: std::option::Option<crate::model::JobReport>) -> Self {
             self.report = input;
             self
@@ -1022,6 +1086,7 @@ pub mod create_job_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>An idempotency token to ensure that you don't accidentally submit the same request twice. You can use any string up to the maximum length.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1034,6 +1099,7 @@ pub mod create_job_input {
             self.manifest = Some(input);
             self
         }
+        /// <p>Configuration parameters for the manifest.</p>
         pub fn set_manifest(
             mut self,
             input: std::option::Option<crate::model::JobManifest>,
@@ -1046,6 +1112,7 @@ pub mod create_job_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description for this job. You can use any string within the permitted length. Descriptions don't need to be unique and can be used for multiple jobs.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1055,6 +1122,7 @@ pub mod create_job_input {
             self.priority = Some(input);
             self
         }
+        /// <p>The numerical priority for this job. Higher numbers indicate higher priority.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
@@ -1066,16 +1134,25 @@ pub mod create_job_input {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role
+        /// that Batch Operations will use to run this job's action on every object in the
+        /// manifest.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter. </p>
         pub fn tags(mut self, input: impl Into<crate::model::S3Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
@@ -1086,7 +1163,7 @@ pub mod create_job_input {
         /// Consumes the builder and constructs a [`CreateJobInput`](crate::input::CreateJobInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateJobInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::CreateJobInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::CreateJobInput {
                 account_id: self.account_id,
@@ -1114,23 +1191,23 @@ impl CreateJobInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v20180820/jobs").expect("formatting should succeed");
             Ok(())
         }
         fn add_headers(
             _input: &crate::input::CreateJobInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_23) = &_input.account_id {
                 let formatted_24 = AsRef::<str>::as_ref(inner_23);
@@ -1138,7 +1215,7 @@ impl CreateJobInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_24;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -1154,7 +1231,7 @@ impl CreateJobInput {
         fn update_http_builder(
             input: &crate::input::CreateJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1164,10 +1241,10 @@ impl CreateJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -1177,22 +1254,24 @@ impl CreateJobInput {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_job(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -1202,7 +1281,7 @@ impl CreateJobInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -1227,13 +1306,13 @@ impl CreateJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateJob::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::CreateJob::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "CreateJob",
                     "s3control",
                 ));
@@ -1242,10 +1321,10 @@ impl CreateJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1276,6 +1355,8 @@ pub mod create_multi_region_access_point_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own
+        /// the underlying buckets.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1286,6 +1367,8 @@ pub mod create_multi_region_access_point_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>An idempotency token used to identify the request and guarantee that requests are
+        /// unique.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1295,6 +1378,7 @@ pub mod create_multi_region_access_point_input {
             self.details = Some(input);
             self
         }
+        /// <p>A container element containing details about the Multi-Region Access Point.</p>
         pub fn set_details(
             mut self,
             input: std::option::Option<crate::model::CreateMultiRegionAccessPointInput>,
@@ -1307,7 +1391,7 @@ pub mod create_multi_region_access_point_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateMultiRegionAccessPointInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateMultiRegionAccessPointInput {
                 account_id: self.account_id,
@@ -1329,16 +1413,16 @@ impl CreateMultiRegionAccessPointInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateMultiRegionAccessPoint,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateMultiRegionAccessPointInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v20180820/async-requests/mrap/create")
                 .expect("formatting should succeed");
             Ok(())
@@ -1346,7 +1430,7 @@ impl CreateMultiRegionAccessPointInput {
         fn add_headers(
             _input: &crate::input::CreateMultiRegionAccessPointInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_25) = &_input.account_id {
                 let formatted_26 = AsRef::<str>::as_ref(inner_25);
@@ -1354,7 +1438,7 @@ impl CreateMultiRegionAccessPointInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_26;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -1370,7 +1454,7 @@ impl CreateMultiRegionAccessPointInput {
         fn update_http_builder(
             input: &crate::input::CreateMultiRegionAccessPointInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1380,10 +1464,10 @@ impl CreateMultiRegionAccessPointInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateMultiRegionAccessPointInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -1393,23 +1477,23 @@ impl CreateMultiRegionAccessPointInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_multi_region_access_point(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_multi_region_access_point(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -1419,25 +1503,25 @@ impl CreateMultiRegionAccessPointInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
         }
         request = request.augment(|mut req, _| {
             let data = req.body().bytes().ok_or_else(|| {
-                smithy_http::operation::BuildError::SerializationError(
+                aws_smithy_http::operation::BuildError::SerializationError(
                     "checksum can only be computed for non-streaming operations".into(),
                 )
             })?;
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
-                smithy_types::base64::encode(&checksum[..])
+                aws_smithy_types::base64::encode(&checksum[..])
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -1459,15 +1543,15 @@ impl CreateMultiRegionAccessPointInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateMultiRegionAccessPoint::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateMultiRegionAccessPoint",
             "s3control",
         ));
@@ -1476,10 +1560,10 @@ impl CreateMultiRegionAccessPointInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1508,6 +1592,7 @@ pub mod delete_access_point_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID for the account that owns the specified access point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1519,6 +1604,9 @@ pub mod delete_access_point_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the access point you want to delete.</p>
+        /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1528,7 +1616,7 @@ pub mod delete_access_point_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteAccessPointInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteAccessPointInput {
                 account_id: self.account_id,
@@ -1548,27 +1636,27 @@ impl DeleteAccessPointInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccessPoint,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteAccessPointInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_27 = &_input.name;
             let input_27 =
                 input_27
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_27, false);
+            let name = aws_smithy_http::label::fmt_string(input_27, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -1580,7 +1668,7 @@ impl DeleteAccessPointInput {
         fn add_headers(
             _input: &crate::input::DeleteAccessPointInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_28) = &_input.account_id {
                 let formatted_29 = AsRef::<str>::as_ref(inner_28);
@@ -1588,7 +1676,7 @@ impl DeleteAccessPointInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_29;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -1604,7 +1692,7 @@ impl DeleteAccessPointInput {
         fn update_http_builder(
             input: &crate::input::DeleteAccessPointInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1614,31 +1702,31 @@ impl DeleteAccessPointInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteAccessPointInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -1648,7 +1736,7 @@ impl DeleteAccessPointInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -1673,15 +1761,15 @@ impl DeleteAccessPointInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteAccessPoint::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteAccessPoint",
             "s3control",
         ));
@@ -1690,10 +1778,10 @@ impl DeleteAccessPointInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1722,6 +1810,7 @@ pub mod delete_access_point_for_object_lambda_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1731,6 +1820,7 @@ pub mod delete_access_point_for_object_lambda_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the access point you want to delete.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1740,7 +1830,7 @@ pub mod delete_access_point_for_object_lambda_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteAccessPointForObjectLambdaInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteAccessPointForObjectLambdaInput {
                 account_id: self.account_id,
@@ -1761,27 +1851,27 @@ impl DeleteAccessPointForObjectLambdaInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccessPointForObjectLambda,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteAccessPointForObjectLambdaInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_30 = &_input.name;
             let input_30 =
                 input_30
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_30, false);
+            let name = aws_smithy_http::label::fmt_string(input_30, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -1797,7 +1887,7 @@ impl DeleteAccessPointForObjectLambdaInput {
         fn add_headers(
             _input: &crate::input::DeleteAccessPointForObjectLambdaInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_31) = &_input.account_id {
                 let formatted_32 = AsRef::<str>::as_ref(inner_31);
@@ -1805,7 +1895,7 @@ impl DeleteAccessPointForObjectLambdaInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_32;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -1821,7 +1911,7 @@ impl DeleteAccessPointForObjectLambdaInput {
         fn update_http_builder(
             input: &crate::input::DeleteAccessPointForObjectLambdaInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1831,31 +1921,31 @@ impl DeleteAccessPointForObjectLambdaInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteAccessPointForObjectLambdaInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -1865,7 +1955,7 @@ impl DeleteAccessPointForObjectLambdaInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -1890,15 +1980,15 @@ impl DeleteAccessPointForObjectLambdaInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteAccessPointForObjectLambda::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteAccessPointForObjectLambda",
             "s3control",
         ));
@@ -1907,10 +1997,10 @@ impl DeleteAccessPointForObjectLambdaInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1939,6 +2029,7 @@ pub mod delete_access_point_policy_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID for the account that owns the specified access point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1950,6 +2041,9 @@ pub mod delete_access_point_policy_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the access point whose policy you want to delete.</p>
+        /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1959,7 +2053,7 @@ pub mod delete_access_point_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteAccessPointPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteAccessPointPolicyInput {
                 account_id: self.account_id,
@@ -1980,27 +2074,27 @@ impl DeleteAccessPointPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccessPointPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteAccessPointPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_33 = &_input.name;
             let input_33 =
                 input_33
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_33, false);
+            let name = aws_smithy_http::label::fmt_string(input_33, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -2012,7 +2106,7 @@ impl DeleteAccessPointPolicyInput {
         fn add_headers(
             _input: &crate::input::DeleteAccessPointPolicyInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_34) = &_input.account_id {
                 let formatted_35 = AsRef::<str>::as_ref(inner_34);
@@ -2020,7 +2114,7 @@ impl DeleteAccessPointPolicyInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_35;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -2036,7 +2130,7 @@ impl DeleteAccessPointPolicyInput {
         fn update_http_builder(
             input: &crate::input::DeleteAccessPointPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2046,31 +2140,31 @@ impl DeleteAccessPointPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteAccessPointPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -2080,7 +2174,7 @@ impl DeleteAccessPointPolicyInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -2105,15 +2199,15 @@ impl DeleteAccessPointPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteAccessPointPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteAccessPointPolicy",
             "s3control",
         ));
@@ -2122,10 +2216,10 @@ impl DeleteAccessPointPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2154,6 +2248,7 @@ pub mod delete_access_point_policy_for_object_lambda_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2163,6 +2258,7 @@ pub mod delete_access_point_policy_for_object_lambda_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Object Lambda Access Point you want to delete the policy for.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2172,7 +2268,7 @@ pub mod delete_access_point_policy_for_object_lambda_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteAccessPointPolicyForObjectLambdaInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteAccessPointPolicyForObjectLambdaInput {
                 account_id: self.account_id,
@@ -2194,27 +2290,27 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccessPointPolicyForObjectLambda,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteAccessPointPolicyForObjectLambdaInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_36 = &_input.name;
             let input_36 =
                 input_36
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_36, false);
+            let name = aws_smithy_http::label::fmt_string(input_36, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -2230,7 +2326,7 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
         fn add_headers(
             _input: &crate::input::DeleteAccessPointPolicyForObjectLambdaInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_37) = &_input.account_id {
                 let formatted_38 = AsRef::<str>::as_ref(inner_37);
@@ -2238,7 +2334,7 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_38;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -2254,7 +2350,7 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
         fn update_http_builder(
             input: &crate::input::DeleteAccessPointPolicyForObjectLambdaInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2264,31 +2360,31 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteAccessPointPolicyForObjectLambdaInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -2298,7 +2394,7 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -2323,15 +2419,15 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteAccessPointPolicyForObjectLambda::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteAccessPointPolicyForObjectLambda",
             "s3control",
         ));
@@ -2340,10 +2436,10 @@ impl DeleteAccessPointPolicyForObjectLambdaInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2372,6 +2468,7 @@ pub mod delete_bucket_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID that owns the Outposts bucket.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2383,6 +2480,9 @@ pub mod delete_bucket_input {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>Specifies the bucket being deleted.</p>
+        /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -2390,8 +2490,10 @@ pub mod delete_bucket_input {
         /// Consumes the builder and constructs a [`DeleteBucketInput`](crate::input::DeleteBucketInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteBucketInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteBucketInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteBucketInput {
                 account_id: self.account_id,
                 bucket: self.bucket,
@@ -2410,27 +2512,27 @@ impl DeleteBucketInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteBucket,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteBucketInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_39 = &_input.bucket;
             let input_39 =
                 input_39
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = smithy_http::label::fmt_string(input_39, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_39, false);
             if bucket.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
@@ -2442,7 +2544,7 @@ impl DeleteBucketInput {
         fn add_headers(
             _input: &crate::input::DeleteBucketInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_40) = &_input.account_id {
                 let formatted_41 = AsRef::<str>::as_ref(inner_40);
@@ -2450,7 +2552,7 @@ impl DeleteBucketInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_41;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -2466,7 +2568,7 @@ impl DeleteBucketInput {
         fn update_http_builder(
             input: &crate::input::DeleteBucketInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2476,31 +2578,31 @@ impl DeleteBucketInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteBucketInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -2510,7 +2612,7 @@ impl DeleteBucketInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -2535,25 +2637,27 @@ impl DeleteBucketInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteBucket::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteBucket",
-                    "s3control",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteBucket::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteBucket",
+            "s3control",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2582,6 +2686,7 @@ pub mod delete_bucket_lifecycle_configuration_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the lifecycle configuration to delete.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2593,6 +2698,9 @@ pub mod delete_bucket_lifecycle_configuration_input {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>Specifies the bucket.</p>
+        /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -2602,7 +2710,7 @@ pub mod delete_bucket_lifecycle_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteBucketLifecycleConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBucketLifecycleConfigurationInput {
                 account_id: self.account_id,
@@ -2623,27 +2731,27 @@ impl DeleteBucketLifecycleConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteBucketLifecycleConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteBucketLifecycleConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_42 = &_input.bucket;
             let input_42 =
                 input_42
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = smithy_http::label::fmt_string(input_42, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_42, false);
             if bucket.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
@@ -2659,7 +2767,7 @@ impl DeleteBucketLifecycleConfigurationInput {
         fn add_headers(
             _input: &crate::input::DeleteBucketLifecycleConfigurationInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_43) = &_input.account_id {
                 let formatted_44 = AsRef::<str>::as_ref(inner_43);
@@ -2667,7 +2775,7 @@ impl DeleteBucketLifecycleConfigurationInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_44;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -2683,7 +2791,7 @@ impl DeleteBucketLifecycleConfigurationInput {
         fn update_http_builder(
             input: &crate::input::DeleteBucketLifecycleConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2693,31 +2801,31 @@ impl DeleteBucketLifecycleConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteBucketLifecycleConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -2727,7 +2835,7 @@ impl DeleteBucketLifecycleConfigurationInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -2752,15 +2860,15 @@ impl DeleteBucketLifecycleConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteBucketLifecycleConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteBucketLifecycleConfiguration",
             "s3control",
         ));
@@ -2769,10 +2877,10 @@ impl DeleteBucketLifecycleConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2801,6 +2909,7 @@ pub mod delete_bucket_policy_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the Outposts bucket.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2812,6 +2921,9 @@ pub mod delete_bucket_policy_input {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>Specifies the bucket.</p>
+        /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -2821,7 +2933,7 @@ pub mod delete_bucket_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteBucketPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBucketPolicyInput {
                 account_id: self.account_id,
@@ -2841,27 +2953,27 @@ impl DeleteBucketPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteBucketPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteBucketPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_45 = &_input.bucket;
             let input_45 =
                 input_45
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = smithy_http::label::fmt_string(input_45, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_45, false);
             if bucket.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
@@ -2873,7 +2985,7 @@ impl DeleteBucketPolicyInput {
         fn add_headers(
             _input: &crate::input::DeleteBucketPolicyInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_46) = &_input.account_id {
                 let formatted_47 = AsRef::<str>::as_ref(inner_46);
@@ -2881,7 +2993,7 @@ impl DeleteBucketPolicyInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_47;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -2897,7 +3009,7 @@ impl DeleteBucketPolicyInput {
         fn update_http_builder(
             input: &crate::input::DeleteBucketPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2907,31 +3019,31 @@ impl DeleteBucketPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteBucketPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -2941,7 +3053,7 @@ impl DeleteBucketPolicyInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -2966,15 +3078,15 @@ impl DeleteBucketPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteBucketPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteBucketPolicy",
             "s3control",
         ));
@@ -2983,10 +3095,10 @@ impl DeleteBucketPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3015,6 +3127,7 @@ pub mod delete_bucket_tagging_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID of the Outposts bucket tag set to be removed.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -3026,6 +3139,9 @@ pub mod delete_bucket_tagging_input {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The bucket ARN that has the tag set to be removed.</p>
+        /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -3035,7 +3151,7 @@ pub mod delete_bucket_tagging_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteBucketTaggingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBucketTaggingInput {
                 account_id: self.account_id,
@@ -3055,27 +3171,27 @@ impl DeleteBucketTaggingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteBucketTagging,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteBucketTaggingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_48 = &_input.bucket;
             let input_48 =
                 input_48
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = smithy_http::label::fmt_string(input_48, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_48, false);
             if bucket.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
@@ -3091,7 +3207,7 @@ impl DeleteBucketTaggingInput {
         fn add_headers(
             _input: &crate::input::DeleteBucketTaggingInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_49) = &_input.account_id {
                 let formatted_50 = AsRef::<str>::as_ref(inner_49);
@@ -3099,7 +3215,7 @@ impl DeleteBucketTaggingInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_50;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -3115,7 +3231,7 @@ impl DeleteBucketTaggingInput {
         fn update_http_builder(
             input: &crate::input::DeleteBucketTaggingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3125,31 +3241,31 @@ impl DeleteBucketTaggingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteBucketTaggingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -3159,7 +3275,7 @@ impl DeleteBucketTaggingInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -3184,15 +3300,15 @@ impl DeleteBucketTaggingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteBucketTagging::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteBucketTagging",
             "s3control",
         ));
@@ -3201,10 +3317,10 @@ impl DeleteBucketTaggingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3233,6 +3349,7 @@ pub mod delete_job_tagging_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -3242,6 +3359,7 @@ pub mod delete_job_tagging_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The ID for the S3 Batch Operations job whose tags you want to delete.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -3251,7 +3369,7 @@ pub mod delete_job_tagging_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteJobTaggingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteJobTaggingInput {
                 account_id: self.account_id,
@@ -3271,27 +3389,27 @@ impl DeleteJobTaggingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteJobTagging,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteJobTaggingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_51 = &_input.job_id;
             let input_51 =
                 input_51
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     })?;
-            let job_id = smithy_http::label::fmt_string(input_51, false);
+            let job_id = aws_smithy_http::label::fmt_string(input_51, false);
             if job_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 });
@@ -3303,7 +3421,7 @@ impl DeleteJobTaggingInput {
         fn add_headers(
             _input: &crate::input::DeleteJobTaggingInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_52) = &_input.account_id {
                 let formatted_53 = AsRef::<str>::as_ref(inner_52);
@@ -3311,7 +3429,7 @@ impl DeleteJobTaggingInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_53;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -3327,7 +3445,7 @@ impl DeleteJobTaggingInput {
         fn update_http_builder(
             input: &crate::input::DeleteJobTaggingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3337,31 +3455,31 @@ impl DeleteJobTaggingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteJobTaggingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -3371,7 +3489,7 @@ impl DeleteJobTaggingInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -3396,15 +3514,15 @@ impl DeleteJobTaggingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteJobTagging::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteJobTagging",
             "s3control",
         ));
@@ -3413,10 +3531,10 @@ impl DeleteJobTaggingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3446,6 +3564,7 @@ pub mod delete_multi_region_access_point_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -3456,6 +3575,8 @@ pub mod delete_multi_region_access_point_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>An idempotency token used to identify the request and guarantee that requests are
+        /// unique.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -3465,6 +3586,7 @@ pub mod delete_multi_region_access_point_input {
             self.details = Some(input);
             self
         }
+        /// <p>A container element containing details about the Multi-Region Access Point.</p>
         pub fn set_details(
             mut self,
             input: std::option::Option<crate::model::DeleteMultiRegionAccessPointInput>,
@@ -3477,7 +3599,7 @@ pub mod delete_multi_region_access_point_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteMultiRegionAccessPointInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteMultiRegionAccessPointInput {
                 account_id: self.account_id,
@@ -3499,16 +3621,16 @@ impl DeleteMultiRegionAccessPointInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteMultiRegionAccessPoint,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteMultiRegionAccessPointInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v20180820/async-requests/mrap/delete")
                 .expect("formatting should succeed");
             Ok(())
@@ -3516,7 +3638,7 @@ impl DeleteMultiRegionAccessPointInput {
         fn add_headers(
             _input: &crate::input::DeleteMultiRegionAccessPointInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_54) = &_input.account_id {
                 let formatted_55 = AsRef::<str>::as_ref(inner_54);
@@ -3524,7 +3646,7 @@ impl DeleteMultiRegionAccessPointInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_55;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -3540,7 +3662,7 @@ impl DeleteMultiRegionAccessPointInput {
         fn update_http_builder(
             input: &crate::input::DeleteMultiRegionAccessPointInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3550,10 +3672,10 @@ impl DeleteMultiRegionAccessPointInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteMultiRegionAccessPointInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -3563,23 +3685,23 @@ impl DeleteMultiRegionAccessPointInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_multi_region_access_point(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_multi_region_access_point(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -3589,25 +3711,25 @@ impl DeleteMultiRegionAccessPointInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
         }
         request = request.augment(|mut req, _| {
             let data = req.body().bytes().ok_or_else(|| {
-                smithy_http::operation::BuildError::SerializationError(
+                aws_smithy_http::operation::BuildError::SerializationError(
                     "checksum can only be computed for non-streaming operations".into(),
                 )
             })?;
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
-                smithy_types::base64::encode(&checksum[..])
+                aws_smithy_types::base64::encode(&checksum[..])
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -3629,15 +3751,15 @@ impl DeleteMultiRegionAccessPointInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteMultiRegionAccessPoint::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteMultiRegionAccessPoint",
             "s3control",
         ));
@@ -3646,10 +3768,10 @@ impl DeleteMultiRegionAccessPointInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3678,6 +3800,8 @@ pub mod delete_public_access_block_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
+        /// to remove.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -3687,7 +3811,7 @@ pub mod delete_public_access_block_input {
             self,
         ) -> std::result::Result<
             crate::input::DeletePublicAccessBlockInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeletePublicAccessBlockInput {
                 account_id: self.account_id,
@@ -3707,16 +3831,16 @@ impl DeletePublicAccessBlockInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeletePublicAccessBlock,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeletePublicAccessBlockInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v20180820/configuration/publicAccessBlock")
                 .expect("formatting should succeed");
             Ok(())
@@ -3724,7 +3848,7 @@ impl DeletePublicAccessBlockInput {
         fn add_headers(
             _input: &crate::input::DeletePublicAccessBlockInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_56) = &_input.account_id {
                 let formatted_57 = AsRef::<str>::as_ref(inner_56);
@@ -3732,7 +3856,7 @@ impl DeletePublicAccessBlockInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_57;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -3748,7 +3872,7 @@ impl DeletePublicAccessBlockInput {
         fn update_http_builder(
             input: &crate::input::DeletePublicAccessBlockInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3758,31 +3882,31 @@ impl DeletePublicAccessBlockInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeletePublicAccessBlockInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -3792,7 +3916,7 @@ impl DeletePublicAccessBlockInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -3817,15 +3941,15 @@ impl DeletePublicAccessBlockInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeletePublicAccessBlock::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeletePublicAccessBlock",
             "s3control",
         ));
@@ -3834,10 +3958,10 @@ impl DeletePublicAccessBlockInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3866,6 +3990,7 @@ pub mod delete_storage_lens_configuration_input {
             self.config_id = Some(input.into());
             self
         }
+        /// <p>The ID of the S3 Storage Lens configuration.</p>
         pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.config_id = input;
             self
@@ -3875,6 +4000,7 @@ pub mod delete_storage_lens_configuration_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the requester.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -3884,7 +4010,7 @@ pub mod delete_storage_lens_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteStorageLensConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteStorageLensConfigurationInput {
                 config_id: self.config_id,
@@ -3905,27 +4031,27 @@ impl DeleteStorageLensConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteStorageLensConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteStorageLensConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_58 = &_input.config_id;
             let input_58 =
                 input_58
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "config_id",
                         details: "cannot be empty or unset",
                     })?;
-            let config_id = smithy_http::label::fmt_string(input_58, false);
+            let config_id = aws_smithy_http::label::fmt_string(input_58, false);
             if config_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "config_id",
                     details: "cannot be empty or unset",
                 });
@@ -3941,7 +4067,7 @@ impl DeleteStorageLensConfigurationInput {
         fn add_headers(
             _input: &crate::input::DeleteStorageLensConfigurationInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_59) = &_input.account_id {
                 let formatted_60 = AsRef::<str>::as_ref(inner_59);
@@ -3949,7 +4075,7 @@ impl DeleteStorageLensConfigurationInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_60;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -3965,7 +4091,7 @@ impl DeleteStorageLensConfigurationInput {
         fn update_http_builder(
             input: &crate::input::DeleteStorageLensConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3975,31 +4101,31 @@ impl DeleteStorageLensConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteStorageLensConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -4009,7 +4135,7 @@ impl DeleteStorageLensConfigurationInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -4034,15 +4160,15 @@ impl DeleteStorageLensConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteStorageLensConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteStorageLensConfiguration",
             "s3control",
         ));
@@ -4051,10 +4177,10 @@ impl DeleteStorageLensConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4083,6 +4209,7 @@ pub mod delete_storage_lens_configuration_tagging_input {
             self.config_id = Some(input.into());
             self
         }
+        /// <p>The ID of the S3 Storage Lens configuration.</p>
         pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.config_id = input;
             self
@@ -4092,6 +4219,7 @@ pub mod delete_storage_lens_configuration_tagging_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the requester.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -4101,7 +4229,7 @@ pub mod delete_storage_lens_configuration_tagging_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteStorageLensConfigurationTaggingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteStorageLensConfigurationTaggingInput {
                 config_id: self.config_id,
@@ -4123,27 +4251,27 @@ impl DeleteStorageLensConfigurationTaggingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteStorageLensConfigurationTagging,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteStorageLensConfigurationTaggingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_61 = &_input.config_id;
             let input_61 =
                 input_61
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "config_id",
                         details: "cannot be empty or unset",
                     })?;
-            let config_id = smithy_http::label::fmt_string(input_61, false);
+            let config_id = aws_smithy_http::label::fmt_string(input_61, false);
             if config_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "config_id",
                     details: "cannot be empty or unset",
                 });
@@ -4159,7 +4287,7 @@ impl DeleteStorageLensConfigurationTaggingInput {
         fn add_headers(
             _input: &crate::input::DeleteStorageLensConfigurationTaggingInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_62) = &_input.account_id {
                 let formatted_63 = AsRef::<str>::as_ref(inner_62);
@@ -4167,7 +4295,7 @@ impl DeleteStorageLensConfigurationTaggingInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_63;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -4183,7 +4311,7 @@ impl DeleteStorageLensConfigurationTaggingInput {
         fn update_http_builder(
             input: &crate::input::DeleteStorageLensConfigurationTaggingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4193,31 +4321,31 @@ impl DeleteStorageLensConfigurationTaggingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteStorageLensConfigurationTaggingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -4227,7 +4355,7 @@ impl DeleteStorageLensConfigurationTaggingInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -4252,15 +4380,15 @@ impl DeleteStorageLensConfigurationTaggingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteStorageLensConfigurationTagging::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteStorageLensConfigurationTagging",
             "s3control",
         ));
@@ -4269,10 +4397,10 @@ impl DeleteStorageLensConfigurationTaggingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4301,6 +4429,7 @@ pub mod describe_job_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -4310,6 +4439,7 @@ pub mod describe_job_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The ID for the job whose information you want to retrieve.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -4317,8 +4447,10 @@ pub mod describe_job_input {
         /// Consumes the builder and constructs a [`DescribeJobInput`](crate::input::DescribeJobInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeJobInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeJobInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeJobInput {
                 account_id: self.account_id,
                 job_id: self.job_id,
@@ -4337,27 +4469,27 @@ impl DescribeJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_64 = &_input.job_id;
             let input_64 =
                 input_64
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     })?;
-            let job_id = smithy_http::label::fmt_string(input_64, false);
+            let job_id = aws_smithy_http::label::fmt_string(input_64, false);
             if job_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 });
@@ -4369,7 +4501,7 @@ impl DescribeJobInput {
         fn add_headers(
             _input: &crate::input::DescribeJobInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_65) = &_input.account_id {
                 let formatted_66 = AsRef::<str>::as_ref(inner_65);
@@ -4377,7 +4509,7 @@ impl DescribeJobInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_66;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -4393,7 +4525,7 @@ impl DescribeJobInput {
         fn update_http_builder(
             input: &crate::input::DescribeJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4403,31 +4535,31 @@ impl DescribeJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -4437,7 +4569,7 @@ impl DescribeJobInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -4462,25 +4594,27 @@ impl DescribeJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeJob::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeJob",
-                    "s3control",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeJob",
+            "s3control",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4509,6 +4643,7 @@ pub mod describe_multi_region_access_point_operation_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -4520,6 +4655,9 @@ pub mod describe_multi_region_access_point_operation_input {
             self.request_token_arn = Some(input.into());
             self
         }
+        /// <p>The request token associated with the request you want to know about. This request token
+        /// is returned as part of the response when you make an asynchronous request. You provide
+        /// this token to query about the status of the asynchronous action.</p>
         pub fn set_request_token_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4532,7 +4670,7 @@ pub mod describe_multi_region_access_point_operation_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeMultiRegionAccessPointOperationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeMultiRegionAccessPointOperationInput {
                 account_id: self.account_id,
@@ -4554,27 +4692,27 @@ impl DescribeMultiRegionAccessPointOperationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeMultiRegionAccessPointOperation,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeMultiRegionAccessPointOperationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_67 = &_input.request_token_arn;
             let input_67 =
                 input_67
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "request_token_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let request_token_arn = smithy_http::label::fmt_string(input_67, true);
+            let request_token_arn = aws_smithy_http::label::fmt_string(input_67, true);
             if request_token_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "request_token_arn",
                     details: "cannot be empty or unset",
                 });
@@ -4590,7 +4728,7 @@ impl DescribeMultiRegionAccessPointOperationInput {
         fn add_headers(
             _input: &crate::input::DescribeMultiRegionAccessPointOperationInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_68) = &_input.account_id {
                 let formatted_69 = AsRef::<str>::as_ref(inner_68);
@@ -4598,7 +4736,7 @@ impl DescribeMultiRegionAccessPointOperationInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_69;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -4614,7 +4752,7 @@ impl DescribeMultiRegionAccessPointOperationInput {
         fn update_http_builder(
             input: &crate::input::DescribeMultiRegionAccessPointOperationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4624,31 +4762,31 @@ impl DescribeMultiRegionAccessPointOperationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeMultiRegionAccessPointOperationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -4658,25 +4796,25 @@ impl DescribeMultiRegionAccessPointOperationInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
         }
         request = request.augment(|mut req, _| {
             let data = req.body().bytes().ok_or_else(|| {
-                smithy_http::operation::BuildError::SerializationError(
+                aws_smithy_http::operation::BuildError::SerializationError(
                     "checksum can only be computed for non-streaming operations".into(),
                 )
             })?;
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
-                smithy_types::base64::encode(&checksum[..])
+                aws_smithy_types::base64::encode(&checksum[..])
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -4698,15 +4836,15 @@ impl DescribeMultiRegionAccessPointOperationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeMultiRegionAccessPointOperation::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeMultiRegionAccessPointOperation",
             "s3control",
         ));
@@ -4715,10 +4853,10 @@ impl DescribeMultiRegionAccessPointOperationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4747,6 +4885,7 @@ pub mod get_access_point_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID for the account that owns the specified access point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -4758,6 +4897,9 @@ pub mod get_access_point_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the access point whose configuration information you want to retrieve.</p>
+        /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4767,7 +4909,7 @@ pub mod get_access_point_input {
             self,
         ) -> std::result::Result<
             crate::input::GetAccessPointInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetAccessPointInput {
                 account_id: self.account_id,
@@ -4787,27 +4929,27 @@ impl GetAccessPointInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPoint,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAccessPointInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_70 = &_input.name;
             let input_70 =
                 input_70
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_70, false);
+            let name = aws_smithy_http::label::fmt_string(input_70, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -4819,7 +4961,7 @@ impl GetAccessPointInput {
         fn add_headers(
             _input: &crate::input::GetAccessPointInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_71) = &_input.account_id {
                 let formatted_72 = AsRef::<str>::as_ref(inner_71);
@@ -4827,7 +4969,7 @@ impl GetAccessPointInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_72;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -4843,7 +4985,7 @@ impl GetAccessPointInput {
         fn update_http_builder(
             input: &crate::input::GetAccessPointInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4853,31 +4995,31 @@ impl GetAccessPointInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAccessPointInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -4887,7 +5029,7 @@ impl GetAccessPointInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -4912,15 +5054,15 @@ impl GetAccessPointInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetAccessPoint::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetAccessPoint",
             "s3control",
         ));
@@ -4929,10 +5071,10 @@ impl GetAccessPointInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4961,6 +5103,7 @@ pub mod get_access_point_configuration_for_object_lambda_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -4970,6 +5113,7 @@ pub mod get_access_point_configuration_for_object_lambda_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Object Lambda Access Point you want to return the configuration for.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4979,7 +5123,7 @@ pub mod get_access_point_configuration_for_object_lambda_input {
             self,
         ) -> std::result::Result<
             crate::input::GetAccessPointConfigurationForObjectLambdaInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::GetAccessPointConfigurationForObjectLambdaInput {
@@ -5003,27 +5147,27 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPointConfigurationForObjectLambda,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAccessPointConfigurationForObjectLambdaInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_73 = &_input.name;
             let input_73 =
                 input_73
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_73, false);
+            let name = aws_smithy_http::label::fmt_string(input_73, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -5039,7 +5183,7 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
         fn add_headers(
             _input: &crate::input::GetAccessPointConfigurationForObjectLambdaInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_74) = &_input.account_id {
                 let formatted_75 = AsRef::<str>::as_ref(inner_74);
@@ -5047,7 +5191,7 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_75;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -5063,7 +5207,7 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
         fn update_http_builder(
             input: &crate::input::GetAccessPointConfigurationForObjectLambdaInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5073,31 +5217,31 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAccessPointConfigurationForObjectLambdaInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -5107,7 +5251,7 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -5132,15 +5276,15 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetAccessPointConfigurationForObjectLambda::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetAccessPointConfigurationForObjectLambda",
             "s3control",
         ));
@@ -5149,10 +5293,10 @@ impl GetAccessPointConfigurationForObjectLambdaInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5182,6 +5326,7 @@ pub mod get_access_point_for_object_lambda_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -5191,6 +5336,7 @@ pub mod get_access_point_for_object_lambda_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Object Lambda Access Point.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5200,7 +5346,7 @@ pub mod get_access_point_for_object_lambda_input {
             self,
         ) -> std::result::Result<
             crate::input::GetAccessPointForObjectLambdaInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetAccessPointForObjectLambdaInput {
                 account_id: self.account_id,
@@ -5221,27 +5367,27 @@ impl GetAccessPointForObjectLambdaInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPointForObjectLambda,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAccessPointForObjectLambdaInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_76 = &_input.name;
             let input_76 =
                 input_76
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_76, false);
+            let name = aws_smithy_http::label::fmt_string(input_76, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -5257,7 +5403,7 @@ impl GetAccessPointForObjectLambdaInput {
         fn add_headers(
             _input: &crate::input::GetAccessPointForObjectLambdaInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_77) = &_input.account_id {
                 let formatted_78 = AsRef::<str>::as_ref(inner_77);
@@ -5265,7 +5411,7 @@ impl GetAccessPointForObjectLambdaInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_78;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -5281,7 +5427,7 @@ impl GetAccessPointForObjectLambdaInput {
         fn update_http_builder(
             input: &crate::input::GetAccessPointForObjectLambdaInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5291,31 +5437,31 @@ impl GetAccessPointForObjectLambdaInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAccessPointForObjectLambdaInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -5325,7 +5471,7 @@ impl GetAccessPointForObjectLambdaInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -5350,15 +5496,15 @@ impl GetAccessPointForObjectLambdaInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetAccessPointForObjectLambda::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetAccessPointForObjectLambda",
             "s3control",
         ));
@@ -5367,10 +5513,10 @@ impl GetAccessPointForObjectLambdaInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5399,6 +5545,7 @@ pub mod get_access_point_policy_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID for the account that owns the specified access point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -5410,6 +5557,9 @@ pub mod get_access_point_policy_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the access point whose policy you want to retrieve.</p>
+        /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5419,7 +5569,7 @@ pub mod get_access_point_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::GetAccessPointPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetAccessPointPolicyInput {
                 account_id: self.account_id,
@@ -5439,27 +5589,27 @@ impl GetAccessPointPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPointPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAccessPointPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_79 = &_input.name;
             let input_79 =
                 input_79
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_79, false);
+            let name = aws_smithy_http::label::fmt_string(input_79, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -5471,7 +5621,7 @@ impl GetAccessPointPolicyInput {
         fn add_headers(
             _input: &crate::input::GetAccessPointPolicyInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_80) = &_input.account_id {
                 let formatted_81 = AsRef::<str>::as_ref(inner_80);
@@ -5479,7 +5629,7 @@ impl GetAccessPointPolicyInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_81;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -5495,7 +5645,7 @@ impl GetAccessPointPolicyInput {
         fn update_http_builder(
             input: &crate::input::GetAccessPointPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5505,31 +5655,31 @@ impl GetAccessPointPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAccessPointPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -5539,7 +5689,7 @@ impl GetAccessPointPolicyInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -5564,15 +5714,15 @@ impl GetAccessPointPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetAccessPointPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetAccessPointPolicy",
             "s3control",
         ));
@@ -5581,10 +5731,10 @@ impl GetAccessPointPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5613,6 +5763,7 @@ pub mod get_access_point_policy_for_object_lambda_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -5622,6 +5773,7 @@ pub mod get_access_point_policy_for_object_lambda_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Object Lambda Access Point.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5631,7 +5783,7 @@ pub mod get_access_point_policy_for_object_lambda_input {
             self,
         ) -> std::result::Result<
             crate::input::GetAccessPointPolicyForObjectLambdaInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetAccessPointPolicyForObjectLambdaInput {
                 account_id: self.account_id,
@@ -5653,27 +5805,27 @@ impl GetAccessPointPolicyForObjectLambdaInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPointPolicyForObjectLambda,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAccessPointPolicyForObjectLambdaInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_82 = &_input.name;
             let input_82 =
                 input_82
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_82, false);
+            let name = aws_smithy_http::label::fmt_string(input_82, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -5689,7 +5841,7 @@ impl GetAccessPointPolicyForObjectLambdaInput {
         fn add_headers(
             _input: &crate::input::GetAccessPointPolicyForObjectLambdaInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_83) = &_input.account_id {
                 let formatted_84 = AsRef::<str>::as_ref(inner_83);
@@ -5697,7 +5849,7 @@ impl GetAccessPointPolicyForObjectLambdaInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_84;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -5713,7 +5865,7 @@ impl GetAccessPointPolicyForObjectLambdaInput {
         fn update_http_builder(
             input: &crate::input::GetAccessPointPolicyForObjectLambdaInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5723,31 +5875,31 @@ impl GetAccessPointPolicyForObjectLambdaInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAccessPointPolicyForObjectLambdaInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -5757,7 +5909,7 @@ impl GetAccessPointPolicyForObjectLambdaInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -5782,15 +5934,15 @@ impl GetAccessPointPolicyForObjectLambdaInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetAccessPointPolicyForObjectLambda::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetAccessPointPolicyForObjectLambda",
             "s3control",
         ));
@@ -5799,10 +5951,10 @@ impl GetAccessPointPolicyForObjectLambdaInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5831,6 +5983,7 @@ pub mod get_access_point_policy_status_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID for the account that owns the specified access point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -5840,6 +5993,7 @@ pub mod get_access_point_policy_status_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the access point whose policy status you want to retrieve.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5849,7 +6003,7 @@ pub mod get_access_point_policy_status_input {
             self,
         ) -> std::result::Result<
             crate::input::GetAccessPointPolicyStatusInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetAccessPointPolicyStatusInput {
                 account_id: self.account_id,
@@ -5870,27 +6024,27 @@ impl GetAccessPointPolicyStatusInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPointPolicyStatus,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAccessPointPolicyStatusInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_85 = &_input.name;
             let input_85 =
                 input_85
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_85, false);
+            let name = aws_smithy_http::label::fmt_string(input_85, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -5906,7 +6060,7 @@ impl GetAccessPointPolicyStatusInput {
         fn add_headers(
             _input: &crate::input::GetAccessPointPolicyStatusInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_86) = &_input.account_id {
                 let formatted_87 = AsRef::<str>::as_ref(inner_86);
@@ -5914,7 +6068,7 @@ impl GetAccessPointPolicyStatusInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_87;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -5930,7 +6084,7 @@ impl GetAccessPointPolicyStatusInput {
         fn update_http_builder(
             input: &crate::input::GetAccessPointPolicyStatusInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5940,31 +6094,31 @@ impl GetAccessPointPolicyStatusInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAccessPointPolicyStatusInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -5974,7 +6128,7 @@ impl GetAccessPointPolicyStatusInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -5999,15 +6153,15 @@ impl GetAccessPointPolicyStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetAccessPointPolicyStatus::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetAccessPointPolicyStatus",
             "s3control",
         ));
@@ -6016,10 +6170,10 @@ impl GetAccessPointPolicyStatusInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6048,6 +6202,7 @@ pub mod get_access_point_policy_status_for_object_lambda_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -6057,6 +6212,7 @@ pub mod get_access_point_policy_status_for_object_lambda_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Object Lambda Access Point.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6066,7 +6222,7 @@ pub mod get_access_point_policy_status_for_object_lambda_input {
             self,
         ) -> std::result::Result<
             crate::input::GetAccessPointPolicyStatusForObjectLambdaInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::GetAccessPointPolicyStatusForObjectLambdaInput {
@@ -6090,27 +6246,27 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAccessPointPolicyStatusForObjectLambda,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAccessPointPolicyStatusForObjectLambdaInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_88 = &_input.name;
             let input_88 =
                 input_88
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_88, false);
+            let name = aws_smithy_http::label::fmt_string(input_88, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -6126,7 +6282,7 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
         fn add_headers(
             _input: &crate::input::GetAccessPointPolicyStatusForObjectLambdaInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_89) = &_input.account_id {
                 let formatted_90 = AsRef::<str>::as_ref(inner_89);
@@ -6134,7 +6290,7 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_90;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -6150,7 +6306,7 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
         fn update_http_builder(
             input: &crate::input::GetAccessPointPolicyStatusForObjectLambdaInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6160,31 +6316,31 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAccessPointPolicyStatusForObjectLambdaInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -6194,7 +6350,7 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -6219,15 +6375,15 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetAccessPointPolicyStatusForObjectLambda::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetAccessPointPolicyStatusForObjectLambda",
             "s3control",
         ));
@@ -6236,10 +6392,10 @@ impl GetAccessPointPolicyStatusForObjectLambdaInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6269,6 +6425,7 @@ pub mod get_bucket_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -6280,6 +6437,9 @@ pub mod get_bucket_input {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>Specifies the bucket.</p>
+        /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -6287,7 +6447,7 @@ pub mod get_bucket_input {
         /// Consumes the builder and constructs a [`GetBucketInput`](crate::input::GetBucketInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetBucketInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetBucketInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetBucketInput {
                 account_id: self.account_id,
@@ -6307,27 +6467,27 @@ impl GetBucketInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetBucket,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetBucketInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_91 = &_input.bucket;
             let input_91 =
                 input_91
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = smithy_http::label::fmt_string(input_91, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_91, false);
             if bucket.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
@@ -6339,7 +6499,7 @@ impl GetBucketInput {
         fn add_headers(
             _input: &crate::input::GetBucketInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_92) = &_input.account_id {
                 let formatted_93 = AsRef::<str>::as_ref(inner_92);
@@ -6347,7 +6507,7 @@ impl GetBucketInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_93;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -6363,7 +6523,7 @@ impl GetBucketInput {
         fn update_http_builder(
             input: &crate::input::GetBucketInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6373,31 +6533,31 @@ impl GetBucketInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetBucketInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -6407,7 +6567,7 @@ impl GetBucketInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -6432,13 +6592,13 @@ impl GetBucketInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetBucket::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetBucket::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetBucket",
                     "s3control",
                 ));
@@ -6447,10 +6607,10 @@ impl GetBucketInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6479,6 +6639,7 @@ pub mod get_bucket_lifecycle_configuration_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -6490,6 +6651,9 @@ pub mod get_bucket_lifecycle_configuration_input {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
+        /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -6499,7 +6663,7 @@ pub mod get_bucket_lifecycle_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::GetBucketLifecycleConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBucketLifecycleConfigurationInput {
                 account_id: self.account_id,
@@ -6520,27 +6684,27 @@ impl GetBucketLifecycleConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetBucketLifecycleConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetBucketLifecycleConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_94 = &_input.bucket;
             let input_94 =
                 input_94
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = smithy_http::label::fmt_string(input_94, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_94, false);
             if bucket.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
@@ -6556,7 +6720,7 @@ impl GetBucketLifecycleConfigurationInput {
         fn add_headers(
             _input: &crate::input::GetBucketLifecycleConfigurationInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_95) = &_input.account_id {
                 let formatted_96 = AsRef::<str>::as_ref(inner_95);
@@ -6564,7 +6728,7 @@ impl GetBucketLifecycleConfigurationInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_96;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -6580,7 +6744,7 @@ impl GetBucketLifecycleConfigurationInput {
         fn update_http_builder(
             input: &crate::input::GetBucketLifecycleConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6590,31 +6754,31 @@ impl GetBucketLifecycleConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetBucketLifecycleConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -6624,7 +6788,7 @@ impl GetBucketLifecycleConfigurationInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -6649,15 +6813,15 @@ impl GetBucketLifecycleConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetBucketLifecycleConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetBucketLifecycleConfiguration",
             "s3control",
         ));
@@ -6666,10 +6830,10 @@ impl GetBucketLifecycleConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6698,6 +6862,7 @@ pub mod get_bucket_policy_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -6709,6 +6874,9 @@ pub mod get_bucket_policy_input {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>Specifies the bucket.</p>
+        /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -6718,7 +6886,7 @@ pub mod get_bucket_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::GetBucketPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBucketPolicyInput {
                 account_id: self.account_id,
@@ -6738,27 +6906,27 @@ impl GetBucketPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetBucketPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetBucketPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_97 = &_input.bucket;
             let input_97 =
                 input_97
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = smithy_http::label::fmt_string(input_97, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_97, false);
             if bucket.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
@@ -6770,7 +6938,7 @@ impl GetBucketPolicyInput {
         fn add_headers(
             _input: &crate::input::GetBucketPolicyInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_98) = &_input.account_id {
                 let formatted_99 = AsRef::<str>::as_ref(inner_98);
@@ -6778,7 +6946,7 @@ impl GetBucketPolicyInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_99;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -6794,7 +6962,7 @@ impl GetBucketPolicyInput {
         fn update_http_builder(
             input: &crate::input::GetBucketPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6804,31 +6972,31 @@ impl GetBucketPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetBucketPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -6838,7 +7006,7 @@ impl GetBucketPolicyInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -6863,15 +7031,15 @@ impl GetBucketPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetBucketPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetBucketPolicy",
             "s3control",
         ));
@@ -6880,10 +7048,10 @@ impl GetBucketPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6912,6 +7080,7 @@ pub mod get_bucket_tagging_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -6923,6 +7092,9 @@ pub mod get_bucket_tagging_input {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>Specifies the bucket.</p>
+        /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -6932,7 +7104,7 @@ pub mod get_bucket_tagging_input {
             self,
         ) -> std::result::Result<
             crate::input::GetBucketTaggingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBucketTaggingInput {
                 account_id: self.account_id,
@@ -6952,27 +7124,27 @@ impl GetBucketTaggingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetBucketTagging,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetBucketTaggingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_100 = &_input.bucket;
             let input_100 =
                 input_100
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = smithy_http::label::fmt_string(input_100, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_100, false);
             if bucket.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
@@ -6988,7 +7160,7 @@ impl GetBucketTaggingInput {
         fn add_headers(
             _input: &crate::input::GetBucketTaggingInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_101) = &_input.account_id {
                 let formatted_102 = AsRef::<str>::as_ref(inner_101);
@@ -6996,7 +7168,7 @@ impl GetBucketTaggingInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_102;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -7012,7 +7184,7 @@ impl GetBucketTaggingInput {
         fn update_http_builder(
             input: &crate::input::GetBucketTaggingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7022,31 +7194,31 @@ impl GetBucketTaggingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetBucketTaggingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -7056,7 +7228,7 @@ impl GetBucketTaggingInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -7081,15 +7253,15 @@ impl GetBucketTaggingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetBucketTagging::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetBucketTagging",
             "s3control",
         ));
@@ -7098,10 +7270,10 @@ impl GetBucketTaggingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7130,6 +7302,7 @@ pub mod get_job_tagging_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -7139,6 +7312,7 @@ pub mod get_job_tagging_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The ID for the S3 Batch Operations job whose tags you want to retrieve.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -7146,8 +7320,10 @@ pub mod get_job_tagging_input {
         /// Consumes the builder and constructs a [`GetJobTaggingInput`](crate::input::GetJobTaggingInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetJobTaggingInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetJobTaggingInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetJobTaggingInput {
                 account_id: self.account_id,
                 job_id: self.job_id,
@@ -7166,27 +7342,27 @@ impl GetJobTaggingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetJobTagging,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetJobTaggingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_103 = &_input.job_id;
             let input_103 =
                 input_103
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     })?;
-            let job_id = smithy_http::label::fmt_string(input_103, false);
+            let job_id = aws_smithy_http::label::fmt_string(input_103, false);
             if job_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 });
@@ -7198,7 +7374,7 @@ impl GetJobTaggingInput {
         fn add_headers(
             _input: &crate::input::GetJobTaggingInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_104) = &_input.account_id {
                 let formatted_105 = AsRef::<str>::as_ref(inner_104);
@@ -7206,7 +7382,7 @@ impl GetJobTaggingInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_105;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -7222,7 +7398,7 @@ impl GetJobTaggingInput {
         fn update_http_builder(
             input: &crate::input::GetJobTaggingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7232,31 +7408,31 @@ impl GetJobTaggingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetJobTaggingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -7266,7 +7442,7 @@ impl GetJobTaggingInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -7291,25 +7467,27 @@ impl GetJobTaggingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetJobTagging::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetJobTagging",
-                    "s3control",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetJobTagging::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetJobTagging",
+            "s3control",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7338,6 +7516,7 @@ pub mod get_multi_region_access_point_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -7350,6 +7529,10 @@ pub mod get_multi_region_access_point_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Multi-Region Access Point whose configuration information you want to receive. The name of
+        /// the Multi-Region Access Point is different from the alias. For more information about the distinction
+        /// between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
+        /// <i>Amazon S3 User Guide</i>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7359,7 +7542,7 @@ pub mod get_multi_region_access_point_input {
             self,
         ) -> std::result::Result<
             crate::input::GetMultiRegionAccessPointInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetMultiRegionAccessPointInput {
                 account_id: self.account_id,
@@ -7380,27 +7563,27 @@ impl GetMultiRegionAccessPointInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetMultiRegionAccessPoint,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetMultiRegionAccessPointInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_106 = &_input.name;
             let input_106 =
                 input_106
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_106, false);
+            let name = aws_smithy_http::label::fmt_string(input_106, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -7412,7 +7595,7 @@ impl GetMultiRegionAccessPointInput {
         fn add_headers(
             _input: &crate::input::GetMultiRegionAccessPointInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_107) = &_input.account_id {
                 let formatted_108 = AsRef::<str>::as_ref(inner_107);
@@ -7420,7 +7603,7 @@ impl GetMultiRegionAccessPointInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_108;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -7436,7 +7619,7 @@ impl GetMultiRegionAccessPointInput {
         fn update_http_builder(
             input: &crate::input::GetMultiRegionAccessPointInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7446,31 +7629,31 @@ impl GetMultiRegionAccessPointInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetMultiRegionAccessPointInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -7480,25 +7663,25 @@ impl GetMultiRegionAccessPointInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
         }
         request = request.augment(|mut req, _| {
             let data = req.body().bytes().ok_or_else(|| {
-                smithy_http::operation::BuildError::SerializationError(
+                aws_smithy_http::operation::BuildError::SerializationError(
                     "checksum can only be computed for non-streaming operations".into(),
                 )
             })?;
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
-                smithy_types::base64::encode(&checksum[..])
+                aws_smithy_types::base64::encode(&checksum[..])
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -7520,15 +7703,15 @@ impl GetMultiRegionAccessPointInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetMultiRegionAccessPoint::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetMultiRegionAccessPoint",
             "s3control",
         ));
@@ -7537,10 +7720,10 @@ impl GetMultiRegionAccessPointInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7569,6 +7752,7 @@ pub mod get_multi_region_access_point_policy_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -7581,6 +7765,10 @@ pub mod get_multi_region_access_point_policy_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more
+        /// information about the distinction between the name and the alias of an Multi-Region Access Point, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
+        /// <i>Amazon S3 User Guide</i>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7590,7 +7778,7 @@ pub mod get_multi_region_access_point_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::GetMultiRegionAccessPointPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetMultiRegionAccessPointPolicyInput {
                 account_id: self.account_id,
@@ -7611,27 +7799,27 @@ impl GetMultiRegionAccessPointPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetMultiRegionAccessPointPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetMultiRegionAccessPointPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_109 = &_input.name;
             let input_109 =
                 input_109
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_109, false);
+            let name = aws_smithy_http::label::fmt_string(input_109, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -7647,7 +7835,7 @@ impl GetMultiRegionAccessPointPolicyInput {
         fn add_headers(
             _input: &crate::input::GetMultiRegionAccessPointPolicyInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_110) = &_input.account_id {
                 let formatted_111 = AsRef::<str>::as_ref(inner_110);
@@ -7655,7 +7843,7 @@ impl GetMultiRegionAccessPointPolicyInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_111;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -7671,7 +7859,7 @@ impl GetMultiRegionAccessPointPolicyInput {
         fn update_http_builder(
             input: &crate::input::GetMultiRegionAccessPointPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7681,31 +7869,31 @@ impl GetMultiRegionAccessPointPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetMultiRegionAccessPointPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -7715,25 +7903,25 @@ impl GetMultiRegionAccessPointPolicyInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
         }
         request = request.augment(|mut req, _| {
             let data = req.body().bytes().ok_or_else(|| {
-                smithy_http::operation::BuildError::SerializationError(
+                aws_smithy_http::operation::BuildError::SerializationError(
                     "checksum can only be computed for non-streaming operations".into(),
                 )
             })?;
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
-                smithy_types::base64::encode(&checksum[..])
+                aws_smithy_types::base64::encode(&checksum[..])
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -7755,15 +7943,15 @@ impl GetMultiRegionAccessPointPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetMultiRegionAccessPointPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetMultiRegionAccessPointPolicy",
             "s3control",
         ));
@@ -7772,10 +7960,10 @@ impl GetMultiRegionAccessPointPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7804,6 +7992,7 @@ pub mod get_multi_region_access_point_policy_status_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -7816,6 +8005,10 @@ pub mod get_multi_region_access_point_policy_status_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more
+        /// information about the distinction between the name and the alias of an Multi-Region Access Point, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
+        /// <i>Amazon S3 User Guide</i>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7825,7 +8018,7 @@ pub mod get_multi_region_access_point_policy_status_input {
             self,
         ) -> std::result::Result<
             crate::input::GetMultiRegionAccessPointPolicyStatusInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetMultiRegionAccessPointPolicyStatusInput {
                 account_id: self.account_id,
@@ -7847,27 +8040,27 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetMultiRegionAccessPointPolicyStatus,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetMultiRegionAccessPointPolicyStatusInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_112 = &_input.name;
             let input_112 =
                 input_112
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_112, false);
+            let name = aws_smithy_http::label::fmt_string(input_112, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -7883,7 +8076,7 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
         fn add_headers(
             _input: &crate::input::GetMultiRegionAccessPointPolicyStatusInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_113) = &_input.account_id {
                 let formatted_114 = AsRef::<str>::as_ref(inner_113);
@@ -7891,7 +8084,7 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_114;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -7907,7 +8100,7 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
         fn update_http_builder(
             input: &crate::input::GetMultiRegionAccessPointPolicyStatusInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7917,31 +8110,31 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetMultiRegionAccessPointPolicyStatusInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -7951,25 +8144,25 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
         }
         request = request.augment(|mut req, _| {
             let data = req.body().bytes().ok_or_else(|| {
-                smithy_http::operation::BuildError::SerializationError(
+                aws_smithy_http::operation::BuildError::SerializationError(
                     "checksum can only be computed for non-streaming operations".into(),
                 )
             })?;
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
-                smithy_types::base64::encode(&checksum[..])
+                aws_smithy_types::base64::encode(&checksum[..])
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -7991,15 +8184,15 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetMultiRegionAccessPointPolicyStatus::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetMultiRegionAccessPointPolicyStatus",
             "s3control",
         ));
@@ -8008,10 +8201,10 @@ impl GetMultiRegionAccessPointPolicyStatusInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8040,6 +8233,8 @@ pub mod get_public_access_block_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
+        /// to retrieve.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -8049,7 +8244,7 @@ pub mod get_public_access_block_input {
             self,
         ) -> std::result::Result<
             crate::input::GetPublicAccessBlockInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetPublicAccessBlockInput {
                 account_id: self.account_id,
@@ -8068,16 +8263,16 @@ impl GetPublicAccessBlockInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetPublicAccessBlock,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetPublicAccessBlockInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v20180820/configuration/publicAccessBlock")
                 .expect("formatting should succeed");
             Ok(())
@@ -8085,7 +8280,7 @@ impl GetPublicAccessBlockInput {
         fn add_headers(
             _input: &crate::input::GetPublicAccessBlockInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_115) = &_input.account_id {
                 let formatted_116 = AsRef::<str>::as_ref(inner_115);
@@ -8093,7 +8288,7 @@ impl GetPublicAccessBlockInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_116;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -8109,7 +8304,7 @@ impl GetPublicAccessBlockInput {
         fn update_http_builder(
             input: &crate::input::GetPublicAccessBlockInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8119,31 +8314,31 @@ impl GetPublicAccessBlockInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetPublicAccessBlockInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -8153,7 +8348,7 @@ impl GetPublicAccessBlockInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -8178,15 +8373,15 @@ impl GetPublicAccessBlockInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetPublicAccessBlock::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetPublicAccessBlock",
             "s3control",
         ));
@@ -8195,10 +8390,10 @@ impl GetPublicAccessBlockInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8227,6 +8422,7 @@ pub mod get_storage_lens_configuration_input {
             self.config_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon S3 Storage Lens configuration.</p>
         pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.config_id = input;
             self
@@ -8236,6 +8432,7 @@ pub mod get_storage_lens_configuration_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the requester.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -8245,7 +8442,7 @@ pub mod get_storage_lens_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::GetStorageLensConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetStorageLensConfigurationInput {
                 config_id: self.config_id,
@@ -8266,27 +8463,27 @@ impl GetStorageLensConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetStorageLensConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetStorageLensConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_117 = &_input.config_id;
             let input_117 =
                 input_117
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "config_id",
                         details: "cannot be empty or unset",
                     })?;
-            let config_id = smithy_http::label::fmt_string(input_117, false);
+            let config_id = aws_smithy_http::label::fmt_string(input_117, false);
             if config_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "config_id",
                     details: "cannot be empty or unset",
                 });
@@ -8302,7 +8499,7 @@ impl GetStorageLensConfigurationInput {
         fn add_headers(
             _input: &crate::input::GetStorageLensConfigurationInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_118) = &_input.account_id {
                 let formatted_119 = AsRef::<str>::as_ref(inner_118);
@@ -8310,7 +8507,7 @@ impl GetStorageLensConfigurationInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_119;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -8326,7 +8523,7 @@ impl GetStorageLensConfigurationInput {
         fn update_http_builder(
             input: &crate::input::GetStorageLensConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8336,31 +8533,31 @@ impl GetStorageLensConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetStorageLensConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -8370,7 +8567,7 @@ impl GetStorageLensConfigurationInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -8395,15 +8592,15 @@ impl GetStorageLensConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetStorageLensConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetStorageLensConfiguration",
             "s3control",
         ));
@@ -8412,10 +8609,10 @@ impl GetStorageLensConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8444,6 +8641,7 @@ pub mod get_storage_lens_configuration_tagging_input {
             self.config_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon S3 Storage Lens configuration.</p>
         pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.config_id = input;
             self
@@ -8453,6 +8651,7 @@ pub mod get_storage_lens_configuration_tagging_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the requester.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -8462,7 +8661,7 @@ pub mod get_storage_lens_configuration_tagging_input {
             self,
         ) -> std::result::Result<
             crate::input::GetStorageLensConfigurationTaggingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetStorageLensConfigurationTaggingInput {
                 config_id: self.config_id,
@@ -8483,27 +8682,27 @@ impl GetStorageLensConfigurationTaggingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetStorageLensConfigurationTagging,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetStorageLensConfigurationTaggingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_120 = &_input.config_id;
             let input_120 =
                 input_120
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "config_id",
                         details: "cannot be empty or unset",
                     })?;
-            let config_id = smithy_http::label::fmt_string(input_120, false);
+            let config_id = aws_smithy_http::label::fmt_string(input_120, false);
             if config_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "config_id",
                     details: "cannot be empty or unset",
                 });
@@ -8519,7 +8718,7 @@ impl GetStorageLensConfigurationTaggingInput {
         fn add_headers(
             _input: &crate::input::GetStorageLensConfigurationTaggingInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_121) = &_input.account_id {
                 let formatted_122 = AsRef::<str>::as_ref(inner_121);
@@ -8527,7 +8726,7 @@ impl GetStorageLensConfigurationTaggingInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_122;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -8543,7 +8742,7 @@ impl GetStorageLensConfigurationTaggingInput {
         fn update_http_builder(
             input: &crate::input::GetStorageLensConfigurationTaggingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8553,31 +8752,31 @@ impl GetStorageLensConfigurationTaggingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetStorageLensConfigurationTaggingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -8587,7 +8786,7 @@ impl GetStorageLensConfigurationTaggingInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -8612,15 +8811,15 @@ impl GetStorageLensConfigurationTaggingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetStorageLensConfigurationTagging::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetStorageLensConfigurationTagging",
             "s3control",
         ));
@@ -8629,10 +8828,10 @@ impl GetStorageLensConfigurationTaggingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8663,6 +8862,7 @@ pub mod list_access_points_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID for owner of the bucket whose access points you want to list.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -8674,6 +8874,9 @@ pub mod list_access_points_input {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The name of the bucket whose associated access points you want to list.</p>
+        /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -8683,6 +8886,7 @@ pub mod list_access_points_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A continuation token. If a previous call to <code>ListAccessPoints</code> returned a continuation token in the <code>NextToken</code> field, then providing that value here causes Amazon S3 to retrieve the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8695,6 +8899,10 @@ pub mod list_access_points_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of access points that you want to include in the list. If the specified
+        /// bucket has more than this number of access points, then the response will include a
+        /// continuation token in the <code>NextToken</code> field that you can use to retrieve the
+        /// next page of access points.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8704,7 +8912,7 @@ pub mod list_access_points_input {
             self,
         ) -> std::result::Result<
             crate::input::ListAccessPointsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListAccessPointsInput {
                 account_id: self.account_id,
@@ -8726,23 +8934,23 @@ impl ListAccessPointsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListAccessPoints,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListAccessPointsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v20180820/accesspoint").expect("formatting should succeed");
             Ok(())
         }
         fn add_headers(
             _input: &crate::input::ListAccessPointsInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_123) = &_input.account_id {
                 let formatted_124 = AsRef::<str>::as_ref(inner_123);
@@ -8750,7 +8958,7 @@ impl ListAccessPointsInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_124;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -8763,17 +8971,17 @@ impl ListAccessPointsInput {
             Ok(builder)
         }
         fn uri_query(_input: &crate::input::ListAccessPointsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_125) = &_input.bucket {
-                query.push_kv("bucket", &smithy_http::query::fmt_string(&inner_125));
+                query.push_kv("bucket", &aws_smithy_http::query::fmt_string(&inner_125));
             }
             if let Some(inner_126) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_126));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_126));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
         }
@@ -8781,7 +8989,7 @@ impl ListAccessPointsInput {
         fn update_http_builder(
             input: &crate::input::ListAccessPointsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8792,31 +9000,31 @@ impl ListAccessPointsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListAccessPointsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -8826,7 +9034,7 @@ impl ListAccessPointsInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -8851,15 +9059,15 @@ impl ListAccessPointsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListAccessPoints::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListAccessPoints",
             "s3control",
         ));
@@ -8868,10 +9076,10 @@ impl ListAccessPointsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8901,6 +9109,7 @@ pub mod list_access_points_for_object_lambda_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -8912,6 +9121,9 @@ pub mod list_access_points_for_object_lambda_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the list has more access points than can be returned in one call to this
+        /// API, this field contains a continuation token that you can provide in subsequent calls to
+        /// this API to retrieve additional access points.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8921,6 +9133,7 @@ pub mod list_access_points_for_object_lambda_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of access points that you want to include in the list. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8930,7 +9143,7 @@ pub mod list_access_points_for_object_lambda_input {
             self,
         ) -> std::result::Result<
             crate::input::ListAccessPointsForObjectLambdaInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListAccessPointsForObjectLambdaInput {
                 account_id: self.account_id,
@@ -8952,16 +9165,16 @@ impl ListAccessPointsForObjectLambdaInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListAccessPointsForObjectLambda,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListAccessPointsForObjectLambdaInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v20180820/accesspointforobjectlambda")
                 .expect("formatting should succeed");
             Ok(())
@@ -8969,7 +9182,7 @@ impl ListAccessPointsForObjectLambdaInput {
         fn add_headers(
             _input: &crate::input::ListAccessPointsForObjectLambdaInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_127) = &_input.account_id {
                 let formatted_128 = AsRef::<str>::as_ref(inner_127);
@@ -8977,7 +9190,7 @@ impl ListAccessPointsForObjectLambdaInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_128;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -8993,14 +9206,14 @@ impl ListAccessPointsForObjectLambdaInput {
             _input: &crate::input::ListAccessPointsForObjectLambdaInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_129) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_129));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_129));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
         }
@@ -9008,7 +9221,7 @@ impl ListAccessPointsForObjectLambdaInput {
         fn update_http_builder(
             input: &crate::input::ListAccessPointsForObjectLambdaInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9019,31 +9232,31 @@ impl ListAccessPointsForObjectLambdaInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListAccessPointsForObjectLambdaInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -9053,7 +9266,7 @@ impl ListAccessPointsForObjectLambdaInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -9078,15 +9291,15 @@ impl ListAccessPointsForObjectLambdaInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListAccessPointsForObjectLambda::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListAccessPointsForObjectLambda",
             "s3control",
         ));
@@ -9095,10 +9308,10 @@ impl ListAccessPointsForObjectLambdaInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9129,16 +9342,23 @@ pub mod list_jobs_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
         }
+        /// Appends an item to `job_statuses`.
+        ///
+        /// To override the contents of this collection use [`set_job_statuses`](Self::set_job_statuses).
+        ///
+        /// <p>The <code>List Jobs</code> request returns jobs that match the statuses listed in this element.</p>
         pub fn job_statuses(mut self, input: impl Into<crate::model::JobStatus>) -> Self {
             let mut v = self.job_statuses.unwrap_or_default();
             v.push(input.into());
             self.job_statuses = Some(v);
             self
         }
+        /// <p>The <code>List Jobs</code> request returns jobs that match the statuses listed in this element.</p>
         pub fn set_job_statuses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::JobStatus>>,
@@ -9151,6 +9371,7 @@ pub mod list_jobs_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A pagination token to request the next page of results. Use the token that Amazon S3 returned in the <code>NextToken</code> element of the <code>ListJobsResult</code> from the previous <code>List Jobs</code> request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9160,6 +9381,7 @@ pub mod list_jobs_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of jobs that Amazon S3 will include in the <code>List Jobs</code> response. If there are more jobs than this number, the response will include a pagination token in the <code>NextToken</code> field to enable you to retrieve the next page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -9167,7 +9389,7 @@ pub mod list_jobs_input {
         /// Consumes the builder and constructs a [`ListJobsInput`](crate::input::ListJobsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListJobsInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListJobsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListJobsInput {
                 account_id: self.account_id,
@@ -9189,23 +9411,23 @@ impl ListJobsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListJobs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListJobsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v20180820/jobs").expect("formatting should succeed");
             Ok(())
         }
         fn add_headers(
             _input: &crate::input::ListJobsInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_130) = &_input.account_id {
                 let formatted_131 = AsRef::<str>::as_ref(inner_130);
@@ -9213,7 +9435,7 @@ impl ListJobsInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_131;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -9226,19 +9448,22 @@ impl ListJobsInput {
             Ok(builder)
         }
         fn uri_query(_input: &crate::input::ListJobsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_132) = &_input.job_statuses {
                 for inner_133 in inner_132 {
-                    query.push_kv("jobStatuses", &smithy_http::query::fmt_string(&inner_133));
+                    query.push_kv(
+                        "jobStatuses",
+                        &aws_smithy_http::query::fmt_string(&inner_133),
+                    );
                 }
             }
             if let Some(inner_134) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_134));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_134));
             }
             if let Some(inner_135) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_135).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_135).encode(),
                 );
             }
         }
@@ -9246,7 +9471,7 @@ impl ListJobsInput {
         fn update_http_builder(
             input: &crate::input::ListJobsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9257,31 +9482,31 @@ impl ListJobsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListJobsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -9291,7 +9516,7 @@ impl ListJobsInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -9316,24 +9541,25 @@ impl ListJobsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::ListJobs::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListJobs",
-                "s3control",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListJobs::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "ListJobs",
+                    "s3control",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9363,6 +9589,7 @@ pub mod list_multi_region_access_points_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -9372,6 +9599,7 @@ pub mod list_multi_region_access_points_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Not currently used. Do not use this parameter.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9381,6 +9609,7 @@ pub mod list_multi_region_access_points_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Not currently used. Do not use this parameter.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -9390,7 +9619,7 @@ pub mod list_multi_region_access_points_input {
             self,
         ) -> std::result::Result<
             crate::input::ListMultiRegionAccessPointsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListMultiRegionAccessPointsInput {
                 account_id: self.account_id,
@@ -9412,23 +9641,23 @@ impl ListMultiRegionAccessPointsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListMultiRegionAccessPoints,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListMultiRegionAccessPointsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v20180820/mrap/instances").expect("formatting should succeed");
             Ok(())
         }
         fn add_headers(
             _input: &crate::input::ListMultiRegionAccessPointsInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_136) = &_input.account_id {
                 let formatted_137 = AsRef::<str>::as_ref(inner_136);
@@ -9436,7 +9665,7 @@ impl ListMultiRegionAccessPointsInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_137;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -9452,14 +9681,14 @@ impl ListMultiRegionAccessPointsInput {
             _input: &crate::input::ListMultiRegionAccessPointsInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_138) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_138));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_138));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
         }
@@ -9467,7 +9696,7 @@ impl ListMultiRegionAccessPointsInput {
         fn update_http_builder(
             input: &crate::input::ListMultiRegionAccessPointsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9478,31 +9707,31 @@ impl ListMultiRegionAccessPointsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListMultiRegionAccessPointsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -9512,25 +9741,25 @@ impl ListMultiRegionAccessPointsInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
         }
         request = request.augment(|mut req, _| {
             let data = req.body().bytes().ok_or_else(|| {
-                smithy_http::operation::BuildError::SerializationError(
+                aws_smithy_http::operation::BuildError::SerializationError(
                     "checksum can only be computed for non-streaming operations".into(),
                 )
             })?;
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
-                smithy_types::base64::encode(&checksum[..])
+                aws_smithy_types::base64::encode(&checksum[..])
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -9552,15 +9781,15 @@ impl ListMultiRegionAccessPointsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListMultiRegionAccessPoints::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListMultiRegionAccessPoints",
             "s3control",
         ));
@@ -9569,10 +9798,10 @@ impl ListMultiRegionAccessPointsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9603,6 +9832,7 @@ pub mod list_regional_buckets_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -9612,6 +9842,7 @@ pub mod list_regional_buckets_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p></p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9621,6 +9852,7 @@ pub mod list_regional_buckets_input {
             self.max_results = Some(input);
             self
         }
+        /// <p></p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -9633,6 +9865,10 @@ pub mod list_regional_buckets_input {
             self.outpost_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Outposts.</p>
+        /// <note>
+        /// <p>This is required by Amazon S3 on Outposts buckets.</p>
+        /// </note>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_id = input;
             self
@@ -9642,7 +9878,7 @@ pub mod list_regional_buckets_input {
             self,
         ) -> std::result::Result<
             crate::input::ListRegionalBucketsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListRegionalBucketsInput {
                 account_id: self.account_id,
@@ -9664,23 +9900,23 @@ impl ListRegionalBucketsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListRegionalBuckets,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListRegionalBucketsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v20180820/bucket").expect("formatting should succeed");
             Ok(())
         }
         fn add_headers(
             _input: &crate::input::ListRegionalBucketsInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_139) = &_input.account_id {
                 let formatted_140 = AsRef::<str>::as_ref(inner_139);
@@ -9688,7 +9924,7 @@ impl ListRegionalBucketsInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_140;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -9704,7 +9940,7 @@ impl ListRegionalBucketsInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_142;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "outpost_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -9717,14 +9953,14 @@ impl ListRegionalBucketsInput {
             Ok(builder)
         }
         fn uri_query(_input: &crate::input::ListRegionalBucketsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_143) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_143));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_143));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
         }
@@ -9732,7 +9968,7 @@ impl ListRegionalBucketsInput {
         fn update_http_builder(
             input: &crate::input::ListRegionalBucketsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9743,31 +9979,31 @@ impl ListRegionalBucketsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListRegionalBucketsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -9777,7 +10013,7 @@ impl ListRegionalBucketsInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -9802,15 +10038,15 @@ impl ListRegionalBucketsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListRegionalBuckets::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListRegionalBuckets",
             "s3control",
         ));
@@ -9819,10 +10055,10 @@ impl ListRegionalBucketsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9851,6 +10087,7 @@ pub mod list_storage_lens_configurations_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the requester.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -9860,6 +10097,7 @@ pub mod list_storage_lens_configurations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A pagination token to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9869,7 +10107,7 @@ pub mod list_storage_lens_configurations_input {
             self,
         ) -> std::result::Result<
             crate::input::ListStorageLensConfigurationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListStorageLensConfigurationsInput {
                 account_id: self.account_id,
@@ -9890,23 +10128,23 @@ impl ListStorageLensConfigurationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListStorageLensConfigurations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListStorageLensConfigurationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v20180820/storagelens").expect("formatting should succeed");
             Ok(())
         }
         fn add_headers(
             _input: &crate::input::ListStorageLensConfigurationsInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_144) = &_input.account_id {
                 let formatted_145 = AsRef::<str>::as_ref(inner_144);
@@ -9914,7 +10152,7 @@ impl ListStorageLensConfigurationsInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_145;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -9930,16 +10168,16 @@ impl ListStorageLensConfigurationsInput {
             _input: &crate::input::ListStorageLensConfigurationsInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_146) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_146));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_146));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListStorageLensConfigurationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9950,31 +10188,31 @@ impl ListStorageLensConfigurationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListStorageLensConfigurationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -9984,7 +10222,7 @@ impl ListStorageLensConfigurationsInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -10009,15 +10247,15 @@ impl ListStorageLensConfigurationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListStorageLensConfigurations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListStorageLensConfigurations",
             "s3control",
         ));
@@ -10026,10 +10264,10 @@ impl ListStorageLensConfigurationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10059,6 +10297,7 @@ pub mod put_access_point_configuration_for_object_lambda_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -10068,6 +10307,7 @@ pub mod put_access_point_configuration_for_object_lambda_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Object Lambda Access Point.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10077,6 +10317,7 @@ pub mod put_access_point_configuration_for_object_lambda_input {
             self.configuration = Some(input);
             self
         }
+        /// <p>Object Lambda Access Point configuration document.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ObjectLambdaConfiguration>,
@@ -10089,7 +10330,7 @@ pub mod put_access_point_configuration_for_object_lambda_input {
             self,
         ) -> std::result::Result<
             crate::input::PutAccessPointConfigurationForObjectLambdaInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::PutAccessPointConfigurationForObjectLambdaInput {
@@ -10114,27 +10355,27 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutAccessPointConfigurationForObjectLambda,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutAccessPointConfigurationForObjectLambdaInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_147 = &_input.name;
             let input_147 =
                 input_147
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_147, false);
+            let name = aws_smithy_http::label::fmt_string(input_147, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -10150,7 +10391,7 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
         fn add_headers(
             _input: &crate::input::PutAccessPointConfigurationForObjectLambdaInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_148) = &_input.account_id {
                 let formatted_149 = AsRef::<str>::as_ref(inner_148);
@@ -10158,7 +10399,7 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_149;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -10174,7 +10415,7 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
         fn update_http_builder(
             input: &crate::input::PutAccessPointConfigurationForObjectLambdaInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10184,33 +10425,33 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutAccessPointConfigurationForObjectLambdaInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_access_point_configuration_for_object_lambda(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_access_point_configuration_for_object_lambda(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -10220,7 +10461,7 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -10245,15 +10486,15 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutAccessPointConfigurationForObjectLambda::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutAccessPointConfigurationForObjectLambda",
             "s3control",
         ));
@@ -10262,10 +10503,10 @@ impl PutAccessPointConfigurationForObjectLambdaInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10296,6 +10537,7 @@ pub mod put_access_point_policy_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID for owner of the bucket associated with the specified access point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -10307,6 +10549,9 @@ pub mod put_access_point_policy_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the access point that you want to associate with the specified policy.</p>
+        /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10316,6 +10561,7 @@ pub mod put_access_point_policy_input {
             self.policy = Some(input.into());
             self
         }
+        /// <p>The policy that you want to apply to the specified access point. For more information about access point policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -10325,7 +10571,7 @@ pub mod put_access_point_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::PutAccessPointPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutAccessPointPolicyInput {
                 account_id: self.account_id,
@@ -10346,27 +10592,27 @@ impl PutAccessPointPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutAccessPointPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutAccessPointPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_150 = &_input.name;
             let input_150 =
                 input_150
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_150, false);
+            let name = aws_smithy_http::label::fmt_string(input_150, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -10378,7 +10624,7 @@ impl PutAccessPointPolicyInput {
         fn add_headers(
             _input: &crate::input::PutAccessPointPolicyInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_151) = &_input.account_id {
                 let formatted_152 = AsRef::<str>::as_ref(inner_151);
@@ -10386,7 +10632,7 @@ impl PutAccessPointPolicyInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_152;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -10402,7 +10648,7 @@ impl PutAccessPointPolicyInput {
         fn update_http_builder(
             input: &crate::input::PutAccessPointPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10412,35 +10658,37 @@ impl PutAccessPointPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutAccessPointPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_access_point_policy(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -10450,7 +10698,7 @@ impl PutAccessPointPolicyInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -10475,15 +10723,15 @@ impl PutAccessPointPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutAccessPointPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutAccessPointPolicy",
             "s3control",
         ));
@@ -10492,10 +10740,10 @@ impl PutAccessPointPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10525,6 +10773,7 @@ pub mod put_access_point_policy_for_object_lambda_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -10534,6 +10783,7 @@ pub mod put_access_point_policy_for_object_lambda_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Object Lambda Access Point.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10543,6 +10793,7 @@ pub mod put_access_point_policy_for_object_lambda_input {
             self.policy = Some(input.into());
             self
         }
+        /// <p>Object Lambda Access Point resource policy document.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -10552,7 +10803,7 @@ pub mod put_access_point_policy_for_object_lambda_input {
             self,
         ) -> std::result::Result<
             crate::input::PutAccessPointPolicyForObjectLambdaInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutAccessPointPolicyForObjectLambdaInput {
                 account_id: self.account_id,
@@ -10575,27 +10826,27 @@ impl PutAccessPointPolicyForObjectLambdaInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutAccessPointPolicyForObjectLambda,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutAccessPointPolicyForObjectLambdaInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_153 = &_input.name;
             let input_153 =
                 input_153
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_153, false);
+            let name = aws_smithy_http::label::fmt_string(input_153, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -10611,7 +10862,7 @@ impl PutAccessPointPolicyForObjectLambdaInput {
         fn add_headers(
             _input: &crate::input::PutAccessPointPolicyForObjectLambdaInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_154) = &_input.account_id {
                 let formatted_155 = AsRef::<str>::as_ref(inner_154);
@@ -10619,7 +10870,7 @@ impl PutAccessPointPolicyForObjectLambdaInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_155;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -10635,7 +10886,7 @@ impl PutAccessPointPolicyForObjectLambdaInput {
         fn update_http_builder(
             input: &crate::input::PutAccessPointPolicyForObjectLambdaInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10645,33 +10896,33 @@ impl PutAccessPointPolicyForObjectLambdaInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutAccessPointPolicyForObjectLambdaInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_access_point_policy_for_object_lambda(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_access_point_policy_for_object_lambda(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -10681,7 +10932,7 @@ impl PutAccessPointPolicyForObjectLambdaInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -10706,15 +10957,15 @@ impl PutAccessPointPolicyForObjectLambdaInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutAccessPointPolicyForObjectLambda::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutAccessPointPolicyForObjectLambda",
             "s3control",
         ));
@@ -10723,10 +10974,10 @@ impl PutAccessPointPolicyForObjectLambdaInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10757,6 +11008,7 @@ pub mod put_bucket_lifecycle_configuration_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -10766,6 +11018,7 @@ pub mod put_bucket_lifecycle_configuration_input {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The name of the bucket for which to set the configuration.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -10778,6 +11031,7 @@ pub mod put_bucket_lifecycle_configuration_input {
             self.lifecycle_configuration = Some(input);
             self
         }
+        /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
         pub fn set_lifecycle_configuration(
             mut self,
             input: std::option::Option<crate::model::LifecycleConfiguration>,
@@ -10790,7 +11044,7 @@ pub mod put_bucket_lifecycle_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::PutBucketLifecycleConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBucketLifecycleConfigurationInput {
                 account_id: self.account_id,
@@ -10812,27 +11066,27 @@ impl PutBucketLifecycleConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutBucketLifecycleConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutBucketLifecycleConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_156 = &_input.bucket;
             let input_156 =
                 input_156
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = smithy_http::label::fmt_string(input_156, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_156, false);
             if bucket.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
@@ -10848,7 +11102,7 @@ impl PutBucketLifecycleConfigurationInput {
         fn add_headers(
             _input: &crate::input::PutBucketLifecycleConfigurationInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_157) = &_input.account_id {
                 let formatted_158 = AsRef::<str>::as_ref(inner_157);
@@ -10856,7 +11110,7 @@ impl PutBucketLifecycleConfigurationInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_158;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -10872,7 +11126,7 @@ impl PutBucketLifecycleConfigurationInput {
         fn update_http_builder(
             input: &crate::input::PutBucketLifecycleConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10882,33 +11136,33 @@ impl PutBucketLifecycleConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutBucketLifecycleConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::ser_payload_put_bucket_lifecycle_configuration_input(
             &self.lifecycle_configuration,
         )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -10918,25 +11172,25 @@ impl PutBucketLifecycleConfigurationInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
         }
         request = request.augment(|mut req, _| {
             let data = req.body().bytes().ok_or_else(|| {
-                smithy_http::operation::BuildError::SerializationError(
+                aws_smithy_http::operation::BuildError::SerializationError(
                     "checksum can only be computed for non-streaming operations".into(),
                 )
             })?;
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
-                smithy_types::base64::encode(&checksum[..])
+                aws_smithy_types::base64::encode(&checksum[..])
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -10958,15 +11212,15 @@ impl PutBucketLifecycleConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutBucketLifecycleConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutBucketLifecycleConfiguration",
             "s3control",
         ));
@@ -10975,10 +11229,10 @@ impl PutBucketLifecycleConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11009,6 +11263,7 @@ pub mod put_bucket_policy_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -11020,6 +11275,9 @@ pub mod put_bucket_policy_input {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>Specifies the bucket.</p>
+        /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -11032,6 +11290,10 @@ pub mod put_bucket_policy_input {
             self.confirm_remove_self_bucket_access = Some(input);
             self
         }
+        /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p>
+        /// <note>
+        /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+        /// </note>
         pub fn set_confirm_remove_self_bucket_access(
             mut self,
             input: std::option::Option<bool>,
@@ -11044,6 +11306,7 @@ pub mod put_bucket_policy_input {
             self.policy = Some(input.into());
             self
         }
+        /// <p>The bucket policy as a JSON document.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -11053,7 +11316,7 @@ pub mod put_bucket_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::PutBucketPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBucketPolicyInput {
                 account_id: self.account_id,
@@ -11077,27 +11340,27 @@ impl PutBucketPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutBucketPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutBucketPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_159 = &_input.bucket;
             let input_159 =
                 input_159
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = smithy_http::label::fmt_string(input_159, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_159, false);
             if bucket.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
@@ -11109,7 +11372,7 @@ impl PutBucketPolicyInput {
         fn add_headers(
             _input: &crate::input::PutBucketPolicyInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_160) = &_input.account_id {
                 let formatted_161 = AsRef::<str>::as_ref(inner_160);
@@ -11117,7 +11380,7 @@ impl PutBucketPolicyInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_161;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -11128,7 +11391,7 @@ impl PutBucketPolicyInput {
                 }
             }
             if _input.confirm_remove_self_bucket_access {
-                let mut encoder = smithy_types::primitive::Encoder::from(
+                let mut encoder = aws_smithy_types::primitive::Encoder::from(
                     _input.confirm_remove_self_bucket_access,
                 );
                 let formatted_162 = encoder.encode();
@@ -11136,7 +11399,7 @@ impl PutBucketPolicyInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_162;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "confirm_remove_self_bucket_access",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -11153,7 +11416,7 @@ impl PutBucketPolicyInput {
         fn update_http_builder(
             input: &crate::input::PutBucketPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11163,35 +11426,35 @@ impl PutBucketPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutBucketPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_bucket_policy(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -11201,25 +11464,25 @@ impl PutBucketPolicyInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
         }
         request = request.augment(|mut req, _| {
             let data = req.body().bytes().ok_or_else(|| {
-                smithy_http::operation::BuildError::SerializationError(
+                aws_smithy_http::operation::BuildError::SerializationError(
                     "checksum can only be computed for non-streaming operations".into(),
                 )
             })?;
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
-                smithy_types::base64::encode(&checksum[..])
+                aws_smithy_types::base64::encode(&checksum[..])
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -11241,15 +11504,15 @@ impl PutBucketPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutBucketPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutBucketPolicy",
             "s3control",
         ));
@@ -11258,10 +11521,10 @@ impl PutBucketPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11291,6 +11554,7 @@ pub mod put_bucket_tagging_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -11302,6 +11566,9 @@ pub mod put_bucket_tagging_input {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
+        /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -11311,6 +11578,7 @@ pub mod put_bucket_tagging_input {
             self.tagging = Some(input);
             self
         }
+        /// <p></p>
         pub fn set_tagging(mut self, input: std::option::Option<crate::model::Tagging>) -> Self {
             self.tagging = input;
             self
@@ -11320,7 +11588,7 @@ pub mod put_bucket_tagging_input {
             self,
         ) -> std::result::Result<
             crate::input::PutBucketTaggingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBucketTaggingInput {
                 account_id: self.account_id,
@@ -11341,27 +11609,27 @@ impl PutBucketTaggingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutBucketTagging,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutBucketTaggingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_163 = &_input.bucket;
             let input_163 =
                 input_163
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = smithy_http::label::fmt_string(input_163, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_163, false);
             if bucket.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
@@ -11377,7 +11645,7 @@ impl PutBucketTaggingInput {
         fn add_headers(
             _input: &crate::input::PutBucketTaggingInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_164) = &_input.account_id {
                 let formatted_165 = AsRef::<str>::as_ref(inner_164);
@@ -11385,7 +11653,7 @@ impl PutBucketTaggingInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_165;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -11401,7 +11669,7 @@ impl PutBucketTaggingInput {
         fn update_http_builder(
             input: &crate::input::PutBucketTaggingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11411,31 +11679,31 @@ impl PutBucketTaggingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutBucketTaggingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::ser_payload_put_bucket_tagging_input(&self.tagging)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -11445,25 +11713,25 @@ impl PutBucketTaggingInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
         }
         request = request.augment(|mut req, _| {
             let data = req.body().bytes().ok_or_else(|| {
-                smithy_http::operation::BuildError::SerializationError(
+                aws_smithy_http::operation::BuildError::SerializationError(
                     "checksum can only be computed for non-streaming operations".into(),
                 )
             })?;
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
-                smithy_types::base64::encode(&checksum[..])
+                aws_smithy_types::base64::encode(&checksum[..])
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -11485,15 +11753,15 @@ impl PutBucketTaggingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutBucketTagging::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutBucketTagging",
             "s3control",
         ));
@@ -11502,10 +11770,10 @@ impl PutBucketTaggingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11535,6 +11803,7 @@ pub mod put_job_tagging_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -11544,16 +11813,23 @@ pub mod put_job_tagging_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The ID for the S3 Batch Operations job whose tags you want to replace.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The set of tags to associate with the S3 Batch Operations job.</p>
         pub fn tags(mut self, input: impl Into<crate::model::S3Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The set of tags to associate with the S3 Batch Operations job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
@@ -11564,8 +11840,10 @@ pub mod put_job_tagging_input {
         /// Consumes the builder and constructs a [`PutJobTaggingInput`](crate::input::PutJobTaggingInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::PutJobTaggingInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutJobTaggingInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutJobTaggingInput {
                 account_id: self.account_id,
                 job_id: self.job_id,
@@ -11585,27 +11863,27 @@ impl PutJobTaggingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutJobTagging,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutJobTaggingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_166 = &_input.job_id;
             let input_166 =
                 input_166
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     })?;
-            let job_id = smithy_http::label::fmt_string(input_166, false);
+            let job_id = aws_smithy_http::label::fmt_string(input_166, false);
             if job_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 });
@@ -11617,7 +11895,7 @@ impl PutJobTaggingInput {
         fn add_headers(
             _input: &crate::input::PutJobTaggingInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_167) = &_input.account_id {
                 let formatted_168 = AsRef::<str>::as_ref(inner_167);
@@ -11625,7 +11903,7 @@ impl PutJobTaggingInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_168;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -11641,7 +11919,7 @@ impl PutJobTaggingInput {
         fn update_http_builder(
             input: &crate::input::PutJobTaggingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11651,32 +11929,34 @@ impl PutJobTaggingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutJobTaggingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_put_job_tagging(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -11686,7 +11966,7 @@ impl PutJobTaggingInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -11711,25 +11991,27 @@ impl PutJobTaggingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::PutJobTagging::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "PutJobTagging",
-                    "s3control",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutJobTagging::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutJobTagging",
+            "s3control",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11759,6 +12041,7 @@ pub mod put_multi_region_access_point_policy_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -11769,6 +12052,8 @@ pub mod put_multi_region_access_point_policy_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>An idempotency token used to identify the request and guarantee that requests are
+        /// unique.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -11781,6 +12066,7 @@ pub mod put_multi_region_access_point_policy_input {
             self.details = Some(input);
             self
         }
+        /// <p>A container element containing the details of the policy for the Multi-Region Access Point.</p>
         pub fn set_details(
             mut self,
             input: std::option::Option<crate::model::PutMultiRegionAccessPointPolicyInput>,
@@ -11793,7 +12079,7 @@ pub mod put_multi_region_access_point_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::PutMultiRegionAccessPointPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutMultiRegionAccessPointPolicyInput {
                 account_id: self.account_id,
@@ -11815,16 +12101,16 @@ impl PutMultiRegionAccessPointPolicyInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutMultiRegionAccessPointPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutMultiRegionAccessPointPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v20180820/async-requests/mrap/put-policy")
                 .expect("formatting should succeed");
             Ok(())
@@ -11832,7 +12118,7 @@ impl PutMultiRegionAccessPointPolicyInput {
         fn add_headers(
             _input: &crate::input::PutMultiRegionAccessPointPolicyInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_169) = &_input.account_id {
                 let formatted_170 = AsRef::<str>::as_ref(inner_169);
@@ -11840,7 +12126,7 @@ impl PutMultiRegionAccessPointPolicyInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_170;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -11856,7 +12142,7 @@ impl PutMultiRegionAccessPointPolicyInput {
         fn update_http_builder(
             input: &crate::input::PutMultiRegionAccessPointPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11866,10 +12152,10 @@ impl PutMultiRegionAccessPointPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutMultiRegionAccessPointPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -11879,23 +12165,23 @@ impl PutMultiRegionAccessPointPolicyInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_multi_region_access_point_policy(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_multi_region_access_point_policy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -11905,25 +12191,25 @@ impl PutMultiRegionAccessPointPolicyInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
         }
         request = request.augment(|mut req, _| {
             let data = req.body().bytes().ok_or_else(|| {
-                smithy_http::operation::BuildError::SerializationError(
+                aws_smithy_http::operation::BuildError::SerializationError(
                     "checksum can only be computed for non-streaming operations".into(),
                 )
             })?;
             let checksum = md5::compute(data);
             req.headers_mut().insert(
                 http::header::HeaderName::from_static("content-md5"),
-                smithy_types::base64::encode(&checksum[..])
+                aws_smithy_types::base64::encode(&checksum[..])
                     .parse()
                     .expect("checksum is valid header value"),
             );
-            Result::<_, smithy_http::operation::BuildError>::Ok(req)
+            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
         })?;
         request
             .properties_mut()
@@ -11945,15 +12231,15 @@ impl PutMultiRegionAccessPointPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutMultiRegionAccessPointPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutMultiRegionAccessPointPolicy",
             "s3control",
         ));
@@ -11962,10 +12248,10 @@ impl PutMultiRegionAccessPointPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11996,6 +12282,8 @@ pub mod put_public_access_block_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
+        /// to set.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -12008,6 +12296,7 @@ pub mod put_public_access_block_input {
             self.public_access_block_configuration = Some(input);
             self
         }
+        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
         pub fn set_public_access_block_configuration(
             mut self,
             input: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
@@ -12020,7 +12309,7 @@ pub mod put_public_access_block_input {
             self,
         ) -> std::result::Result<
             crate::input::PutPublicAccessBlockInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutPublicAccessBlockInput {
                 account_id: self.account_id,
@@ -12040,16 +12329,16 @@ impl PutPublicAccessBlockInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutPublicAccessBlock,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutPublicAccessBlockInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v20180820/configuration/publicAccessBlock")
                 .expect("formatting should succeed");
             Ok(())
@@ -12057,7 +12346,7 @@ impl PutPublicAccessBlockInput {
         fn add_headers(
             _input: &crate::input::PutPublicAccessBlockInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_171) = &_input.account_id {
                 let formatted_172 = AsRef::<str>::as_ref(inner_171);
@@ -12065,7 +12354,7 @@ impl PutPublicAccessBlockInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_172;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -12081,7 +12370,7 @@ impl PutPublicAccessBlockInput {
         fn update_http_builder(
             input: &crate::input::PutPublicAccessBlockInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12091,33 +12380,33 @@ impl PutPublicAccessBlockInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutPublicAccessBlockInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::ser_payload_put_public_access_block_input(
             &self.public_access_block_configuration,
         )?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -12127,7 +12416,7 @@ impl PutPublicAccessBlockInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -12152,15 +12441,15 @@ impl PutPublicAccessBlockInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutPublicAccessBlock::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutPublicAccessBlock",
             "s3control",
         ));
@@ -12169,10 +12458,10 @@ impl PutPublicAccessBlockInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12204,6 +12493,7 @@ pub mod put_storage_lens_configuration_input {
             self.config_id = Some(input.into());
             self
         }
+        /// <p>The ID of the S3 Storage Lens configuration.</p>
         pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.config_id = input;
             self
@@ -12213,6 +12503,7 @@ pub mod put_storage_lens_configuration_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the requester.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -12225,6 +12516,7 @@ pub mod put_storage_lens_configuration_input {
             self.storage_lens_configuration = Some(input);
             self
         }
+        /// <p>The S3 Storage Lens configuration.</p>
         pub fn set_storage_lens_configuration(
             mut self,
             input: std::option::Option<crate::model::StorageLensConfiguration>,
@@ -12232,12 +12524,24 @@ pub mod put_storage_lens_configuration_input {
             self.storage_lens_configuration = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag set of the S3 Storage Lens configuration.</p>
+        /// <note>
+        /// <p>You can set up to a maximum of 50 tags.</p>
+        /// </note>
         pub fn tags(mut self, input: impl Into<crate::model::StorageLensTag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tag set of the S3 Storage Lens configuration.</p>
+        /// <note>
+        /// <p>You can set up to a maximum of 50 tags.</p>
+        /// </note>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StorageLensTag>>,
@@ -12250,7 +12554,7 @@ pub mod put_storage_lens_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::PutStorageLensConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutStorageLensConfigurationInput {
                 config_id: self.config_id,
@@ -12273,27 +12577,27 @@ impl PutStorageLensConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutStorageLensConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutStorageLensConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_173 = &_input.config_id;
             let input_173 =
                 input_173
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "config_id",
                         details: "cannot be empty or unset",
                     })?;
-            let config_id = smithy_http::label::fmt_string(input_173, false);
+            let config_id = aws_smithy_http::label::fmt_string(input_173, false);
             if config_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "config_id",
                     details: "cannot be empty or unset",
                 });
@@ -12309,7 +12613,7 @@ impl PutStorageLensConfigurationInput {
         fn add_headers(
             _input: &crate::input::PutStorageLensConfigurationInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_174) = &_input.account_id {
                 let formatted_175 = AsRef::<str>::as_ref(inner_174);
@@ -12317,7 +12621,7 @@ impl PutStorageLensConfigurationInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_175;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -12333,7 +12637,7 @@ impl PutStorageLensConfigurationInput {
         fn update_http_builder(
             input: &crate::input::PutStorageLensConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12343,33 +12647,33 @@ impl PutStorageLensConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutStorageLensConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_storage_lens_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_storage_lens_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -12379,7 +12683,7 @@ impl PutStorageLensConfigurationInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -12404,15 +12708,15 @@ impl PutStorageLensConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutStorageLensConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutStorageLensConfiguration",
             "s3control",
         ));
@@ -12421,10 +12725,10 @@ impl PutStorageLensConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12454,6 +12758,7 @@ pub mod put_storage_lens_configuration_tagging_input {
             self.config_id = Some(input.into());
             self
         }
+        /// <p>The ID of the S3 Storage Lens configuration.</p>
         pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.config_id = input;
             self
@@ -12463,16 +12768,29 @@ pub mod put_storage_lens_configuration_tagging_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the requester.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tag set of the S3 Storage Lens configuration.</p>
+        /// <note>
+        /// <p>You can set up to a maximum of 50 tags.</p>
+        /// </note>
         pub fn tags(mut self, input: impl Into<crate::model::StorageLensTag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tag set of the S3 Storage Lens configuration.</p>
+        /// <note>
+        /// <p>You can set up to a maximum of 50 tags.</p>
+        /// </note>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StorageLensTag>>,
@@ -12485,7 +12803,7 @@ pub mod put_storage_lens_configuration_tagging_input {
             self,
         ) -> std::result::Result<
             crate::input::PutStorageLensConfigurationTaggingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutStorageLensConfigurationTaggingInput {
                 config_id: self.config_id,
@@ -12507,27 +12825,27 @@ impl PutStorageLensConfigurationTaggingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutStorageLensConfigurationTagging,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutStorageLensConfigurationTaggingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_176 = &_input.config_id;
             let input_176 =
                 input_176
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "config_id",
                         details: "cannot be empty or unset",
                     })?;
-            let config_id = smithy_http::label::fmt_string(input_176, false);
+            let config_id = aws_smithy_http::label::fmt_string(input_176, false);
             if config_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "config_id",
                     details: "cannot be empty or unset",
                 });
@@ -12543,7 +12861,7 @@ impl PutStorageLensConfigurationTaggingInput {
         fn add_headers(
             _input: &crate::input::PutStorageLensConfigurationTaggingInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_177) = &_input.account_id {
                 let formatted_178 = AsRef::<str>::as_ref(inner_177);
@@ -12551,7 +12869,7 @@ impl PutStorageLensConfigurationTaggingInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_178;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -12567,7 +12885,7 @@ impl PutStorageLensConfigurationTaggingInput {
         fn update_http_builder(
             input: &crate::input::PutStorageLensConfigurationTaggingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12577,33 +12895,33 @@ impl PutStorageLensConfigurationTaggingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutStorageLensConfigurationTaggingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_storage_lens_configuration_tagging(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_storage_lens_configuration_tagging(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -12613,7 +12931,7 @@ impl PutStorageLensConfigurationTaggingInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -12638,15 +12956,15 @@ impl PutStorageLensConfigurationTaggingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutStorageLensConfigurationTagging::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutStorageLensConfigurationTagging",
             "s3control",
         ));
@@ -12655,10 +12973,10 @@ impl PutStorageLensConfigurationTaggingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12688,6 +13006,7 @@ pub mod update_job_priority_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -12697,6 +13016,7 @@ pub mod update_job_priority_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The ID for the job whose priority you want to update.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -12706,6 +13026,7 @@ pub mod update_job_priority_input {
             self.priority = Some(input);
             self
         }
+        /// <p>The priority you want to assign to this job.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
@@ -12715,7 +13036,7 @@ pub mod update_job_priority_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateJobPriorityInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateJobPriorityInput {
                 account_id: self.account_id,
@@ -12736,27 +13057,27 @@ impl UpdateJobPriorityInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateJobPriority,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateJobPriorityInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_179 = &_input.job_id;
             let input_179 =
                 input_179
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     })?;
-            let job_id = smithy_http::label::fmt_string(input_179, false);
+            let job_id = aws_smithy_http::label::fmt_string(input_179, false);
             if job_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 });
@@ -12768,7 +13089,7 @@ impl UpdateJobPriorityInput {
         fn add_headers(
             _input: &crate::input::UpdateJobPriorityInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_180) = &_input.account_id {
                 let formatted_181 = AsRef::<str>::as_ref(inner_180);
@@ -12776,7 +13097,7 @@ impl UpdateJobPriorityInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_181;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -12789,11 +13110,11 @@ impl UpdateJobPriorityInput {
             Ok(builder)
         }
         fn uri_query(_input: &crate::input::UpdateJobPriorityInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.priority != 0 {
                 query.push_kv(
                     "priority",
-                    &smithy_types::primitive::Encoder::from(_input.priority).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.priority).encode(),
                 );
             }
         }
@@ -12801,7 +13122,7 @@ impl UpdateJobPriorityInput {
         fn update_http_builder(
             input: &crate::input::UpdateJobPriorityInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12812,31 +13133,31 @@ impl UpdateJobPriorityInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateJobPriorityInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -12846,7 +13167,7 @@ impl UpdateJobPriorityInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -12871,15 +13192,15 @@ impl UpdateJobPriorityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateJobPriority::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateJobPriority",
             "s3control",
         ));
@@ -12888,10 +13209,10 @@ impl UpdateJobPriorityInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12922,6 +13243,7 @@ pub mod update_job_status_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -12931,6 +13253,7 @@ pub mod update_job_status_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The ID of the job whose status you want to update.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -12940,6 +13263,7 @@ pub mod update_job_status_input {
             self.requested_job_status = Some(input);
             self
         }
+        /// <p>The status that you want to move the specified job to.</p>
         pub fn set_requested_job_status(
             mut self,
             input: std::option::Option<crate::model::RequestedJobStatus>,
@@ -12952,6 +13276,7 @@ pub mod update_job_status_input {
             self.status_update_reason = Some(input.into());
             self
         }
+        /// <p>A description of the reason why you want to change the specified job's status. This field can be any string up to the maximum length.</p>
         pub fn set_status_update_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12964,7 +13289,7 @@ pub mod update_job_status_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateJobStatusInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateJobStatusInput {
                 account_id: self.account_id,
@@ -12986,27 +13311,27 @@ impl UpdateJobStatusInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateJobStatus,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateJobStatusInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_182 = &_input.job_id;
             let input_182 =
                 input_182
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     })?;
-            let job_id = smithy_http::label::fmt_string(input_182, false);
+            let job_id = aws_smithy_http::label::fmt_string(input_182, false);
             if job_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
                     details: "cannot be empty or unset",
                 });
@@ -13018,7 +13343,7 @@ impl UpdateJobStatusInput {
         fn add_headers(
             _input: &crate::input::UpdateJobStatusInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_183) = &_input.account_id {
                 let formatted_184 = AsRef::<str>::as_ref(inner_183);
@@ -13026,7 +13351,7 @@ impl UpdateJobStatusInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_184;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "account_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -13039,17 +13364,17 @@ impl UpdateJobStatusInput {
             Ok(builder)
         }
         fn uri_query(_input: &crate::input::UpdateJobStatusInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_185) = &_input.requested_job_status {
                 query.push_kv(
                     "requestedJobStatus",
-                    &smithy_http::query::fmt_string(&inner_185),
+                    &aws_smithy_http::query::fmt_string(&inner_185),
                 );
             }
             if let Some(inner_186) = &_input.status_update_reason {
                 query.push_kv(
                     "statusUpdateReason",
-                    &smithy_http::query::fmt_string(&inner_186),
+                    &aws_smithy_http::query::fmt_string(&inner_186),
                 );
             }
         }
@@ -13057,7 +13382,7 @@ impl UpdateJobStatusInput {
         fn update_http_builder(
             input: &crate::input::UpdateJobStatusInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13068,31 +13393,31 @@ impl UpdateJobStatusInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateJobStatusInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         let endpoint_prefix = {
             let account_id = self.account_id.as_deref().unwrap_or_default();
             if account_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
+                return Err(aws_smithy_http::operation::BuildError::InvalidField { field: "account_id", details: "account_id was unset or empty but must be set as part of the endpoint prefix".to_string() });
             }
-            smithy_http::endpoint::EndpointPrefix::new(format!(
+            aws_smithy_http::endpoint::EndpointPrefix::new(format!(
                 "{AccountId}.",
                 AccountId = account_id
             ))
@@ -13102,7 +13427,7 @@ impl UpdateJobStatusInput {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -13127,15 +13452,15 @@ impl UpdateJobStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateJobStatus::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateJobStatus",
             "s3control",
         ));
@@ -13144,10 +13469,10 @@ impl UpdateJobStatusInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13161,6 +13486,7 @@ impl UpdateJobStatusInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJobStatusInput {
@@ -13184,6 +13510,7 @@ impl std::fmt::Debug for UpdateJobStatusInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJobPriorityInput {
@@ -13204,6 +13531,7 @@ impl std::fmt::Debug for UpdateJobPriorityInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutStorageLensConfigurationTaggingInput {
@@ -13227,6 +13555,7 @@ impl std::fmt::Debug for PutStorageLensConfigurationTaggingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutStorageLensConfigurationInput {
@@ -13256,6 +13585,7 @@ impl std::fmt::Debug for PutStorageLensConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPublicAccessBlockInput {
@@ -13278,6 +13608,7 @@ impl std::fmt::Debug for PutPublicAccessBlockInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMultiRegionAccessPointPolicyInput {
@@ -13299,6 +13630,7 @@ impl std::fmt::Debug for PutMultiRegionAccessPointPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutJobTaggingInput {
@@ -13319,6 +13651,7 @@ impl std::fmt::Debug for PutJobTaggingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketTaggingInput {
@@ -13341,6 +13674,7 @@ impl std::fmt::Debug for PutBucketTaggingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketPolicyInput {
@@ -13372,6 +13706,7 @@ impl std::fmt::Debug for PutBucketPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketLifecycleConfigurationInput {
@@ -13392,6 +13727,7 @@ impl std::fmt::Debug for PutBucketLifecycleConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccessPointPolicyForObjectLambdaInput {
@@ -13412,6 +13748,7 @@ impl std::fmt::Debug for PutAccessPointPolicyForObjectLambdaInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccessPointPolicyInput {
@@ -13434,6 +13771,7 @@ impl std::fmt::Debug for PutAccessPointPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccessPointConfigurationForObjectLambdaInput {
@@ -13454,6 +13792,7 @@ impl std::fmt::Debug for PutAccessPointConfigurationForObjectLambdaInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStorageLensConfigurationsInput {
@@ -13471,6 +13810,7 @@ impl std::fmt::Debug for ListStorageLensConfigurationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRegionalBucketsInput {
@@ -13497,6 +13837,7 @@ impl std::fmt::Debug for ListRegionalBucketsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMultiRegionAccessPointsInput {
@@ -13517,6 +13858,7 @@ impl std::fmt::Debug for ListMultiRegionAccessPointsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsInput {
@@ -13540,6 +13882,7 @@ impl std::fmt::Debug for ListJobsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessPointsForObjectLambdaInput {
@@ -13562,6 +13905,7 @@ impl std::fmt::Debug for ListAccessPointsForObjectLambdaInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessPointsInput {
@@ -13590,6 +13934,7 @@ impl std::fmt::Debug for ListAccessPointsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStorageLensConfigurationTaggingInput {
@@ -13607,6 +13952,7 @@ impl std::fmt::Debug for GetStorageLensConfigurationTaggingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStorageLensConfigurationInput {
@@ -13624,6 +13970,7 @@ impl std::fmt::Debug for GetStorageLensConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPublicAccessBlockInput {
@@ -13639,6 +13986,7 @@ impl std::fmt::Debug for GetPublicAccessBlockInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMultiRegionAccessPointPolicyStatusInput {
@@ -13659,6 +14007,7 @@ impl std::fmt::Debug for GetMultiRegionAccessPointPolicyStatusInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMultiRegionAccessPointPolicyInput {
@@ -13679,6 +14028,7 @@ impl std::fmt::Debug for GetMultiRegionAccessPointPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMultiRegionAccessPointInput {
@@ -13699,6 +14049,7 @@ impl std::fmt::Debug for GetMultiRegionAccessPointInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobTaggingInput {
@@ -13716,6 +14067,7 @@ impl std::fmt::Debug for GetJobTaggingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketTaggingInput {
@@ -13735,6 +14087,7 @@ impl std::fmt::Debug for GetBucketTaggingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketPolicyInput {
@@ -13754,6 +14107,7 @@ impl std::fmt::Debug for GetBucketPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketLifecycleConfigurationInput {
@@ -13773,6 +14127,7 @@ impl std::fmt::Debug for GetBucketLifecycleConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketInput {
@@ -13792,6 +14147,7 @@ impl std::fmt::Debug for GetBucketInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointPolicyStatusForObjectLambdaInput {
@@ -13809,6 +14165,7 @@ impl std::fmt::Debug for GetAccessPointPolicyStatusForObjectLambdaInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointPolicyStatusInput {
@@ -13826,6 +14183,7 @@ impl std::fmt::Debug for GetAccessPointPolicyStatusInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointPolicyForObjectLambdaInput {
@@ -13843,6 +14201,7 @@ impl std::fmt::Debug for GetAccessPointPolicyForObjectLambdaInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointPolicyInput {
@@ -13862,6 +14221,7 @@ impl std::fmt::Debug for GetAccessPointPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointForObjectLambdaInput {
@@ -13879,6 +14239,7 @@ impl std::fmt::Debug for GetAccessPointForObjectLambdaInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointConfigurationForObjectLambdaInput {
@@ -13896,6 +14257,7 @@ impl std::fmt::Debug for GetAccessPointConfigurationForObjectLambdaInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessPointInput {
@@ -13915,6 +14277,7 @@ impl std::fmt::Debug for GetAccessPointInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMultiRegionAccessPointOperationInput {
@@ -13934,6 +14297,7 @@ impl std::fmt::Debug for DescribeMultiRegionAccessPointOperationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobInput {
@@ -13951,6 +14315,7 @@ impl std::fmt::Debug for DescribeJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStorageLensConfigurationTaggingInput {
@@ -13968,6 +14333,7 @@ impl std::fmt::Debug for DeleteStorageLensConfigurationTaggingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStorageLensConfigurationInput {
@@ -13985,6 +14351,7 @@ impl std::fmt::Debug for DeleteStorageLensConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePublicAccessBlockInput {
@@ -14000,6 +14367,7 @@ impl std::fmt::Debug for DeletePublicAccessBlockInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMultiRegionAccessPointInput {
@@ -14021,6 +14389,7 @@ impl std::fmt::Debug for DeleteMultiRegionAccessPointInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteJobTaggingInput {
@@ -14038,6 +14407,7 @@ impl std::fmt::Debug for DeleteJobTaggingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketTaggingInput {
@@ -14057,6 +14427,7 @@ impl std::fmt::Debug for DeleteBucketTaggingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketPolicyInput {
@@ -14076,6 +14447,7 @@ impl std::fmt::Debug for DeleteBucketPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketLifecycleConfigurationInput {
@@ -14095,6 +14467,7 @@ impl std::fmt::Debug for DeleteBucketLifecycleConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketInput {
@@ -14114,6 +14487,7 @@ impl std::fmt::Debug for DeleteBucketInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccessPointPolicyForObjectLambdaInput {
@@ -14131,6 +14505,7 @@ impl std::fmt::Debug for DeleteAccessPointPolicyForObjectLambdaInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccessPointPolicyInput {
@@ -14150,6 +14525,7 @@ impl std::fmt::Debug for DeleteAccessPointPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccessPointForObjectLambdaInput {
@@ -14167,6 +14543,7 @@ impl std::fmt::Debug for DeleteAccessPointForObjectLambdaInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccessPointInput {
@@ -14186,6 +14563,7 @@ impl std::fmt::Debug for DeleteAccessPointInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMultiRegionAccessPointInput {
@@ -14208,6 +14586,7 @@ impl std::fmt::Debug for CreateMultiRegionAccessPointInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobInput {
@@ -14253,6 +14632,7 @@ impl std::fmt::Debug for CreateJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBucketInput {
@@ -14327,6 +14707,7 @@ impl std::fmt::Debug for CreateBucketInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessPointForObjectLambdaInput {
@@ -14347,6 +14728,7 @@ impl std::fmt::Debug for CreateAccessPointForObjectLambdaInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessPointInput {

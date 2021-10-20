@@ -31,12 +31,18 @@ pub mod list_streams_output {
         pub(crate) last_evaluated_stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `streams`.
+        ///
+        /// To override the contents of this collection use [`set_streams`](Self::set_streams).
+        ///
+        /// <p>A list of stream descriptors associated with the current account and endpoint.</p>
         pub fn streams(mut self, input: impl Into<crate::model::Stream>) -> Self {
             let mut v = self.streams.unwrap_or_default();
             v.push(input.into());
             self.streams = Some(v);
             self
         }
+        /// <p>A list of stream descriptors associated with the current account and endpoint.</p>
         pub fn set_streams(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Stream>>,
@@ -54,6 +60,12 @@ pub mod list_streams_output {
             self.last_evaluated_stream_arn = Some(input.into());
             self
         }
+        /// <p>The stream ARN of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
+        /// <p>If <code>LastEvaluatedStreamArn</code> is empty, then the "last page" of results has been
+        /// processed and there is no more data to be retrieved.</p>
+        /// <p>If <code>LastEvaluatedStreamArn</code> is not empty, it does not necessarily mean that there
+        /// is more data in the result set. The only way to know when you have reached the end of the
+        /// result set is when <code>LastEvaluatedStreamArn</code> is empty.</p>
         pub fn set_last_evaluated_stream_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -105,6 +117,7 @@ pub mod get_shard_iterator_output {
             self.shard_iterator = Some(input.into());
             self
         }
+        /// <p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>
         pub fn set_shard_iterator(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -156,12 +169,18 @@ pub mod get_records_output {
         pub(crate) next_shard_iterator: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `records`.
+        ///
+        /// To override the contents of this collection use [`set_records`](Self::set_records).
+        ///
+        /// <p>The stream records from the shard, which were retrieved using the shard iterator.</p>
         pub fn records(mut self, input: impl Into<crate::model::Record>) -> Self {
             let mut v = self.records.unwrap_or_default();
             v.push(input.into());
             self.records = Some(v);
             self
         }
+        /// <p>The stream records from the shard, which were retrieved using the shard iterator.</p>
         pub fn set_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Record>>,
@@ -176,6 +195,9 @@ pub mod get_records_output {
             self.next_shard_iterator = Some(input.into());
             self
         }
+        /// <p>The next position in the shard from which to start sequentially reading stream records. If
+        /// set to <code>null</code>, the shard has been closed and the requested iterator will not return
+        /// any more data.</p>
         pub fn set_next_shard_iterator(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -227,6 +249,7 @@ pub mod describe_stream_output {
             self.stream_description = Some(input);
             self
         }
+        /// <p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>
         pub fn set_stream_description(
             mut self,
             input: std::option::Option<crate::model::StreamDescription>,

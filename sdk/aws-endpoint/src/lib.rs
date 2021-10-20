@@ -11,12 +11,12 @@ pub use partition::Partition;
 #[doc(hidden)]
 pub use partition::PartitionResolver;
 
+use aws_smithy_http::endpoint::{Endpoint, EndpointPrefix};
+use aws_smithy_http::middleware::MapRequest;
+use aws_smithy_http::operation::Request;
+use aws_smithy_http::property_bag::PropertyBag;
 use aws_types::region::{Region, SigningRegion};
 use aws_types::SigningService;
-use smithy_http::endpoint::{Endpoint, EndpointPrefix};
-use smithy_http::middleware::MapRequest;
-use smithy_http::operation::Request;
-use smithy_http::property_bag::PropertyBag;
 use std::error::Error;
 use std::fmt;
 use std::fmt::{Debug, Display, Formatter};
@@ -28,7 +28,7 @@ use std::sync::Arc;
 /// - The URI of the endpoint (needed to actually send the request)
 /// - The name of the service (needed downstream for signing)
 /// - The signing region (which may differ from the actual region)
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct AwsEndpoint {
     endpoint: Endpoint,
     credential_scope: CredentialScope,
@@ -44,7 +44,7 @@ pub type BoxError = Box<dyn Error + Send + Sync + 'static>;
 
 /// Resolve the AWS Endpoint for a given region
 ///
-/// To provide a static endpoint, [`Endpoint`](smithy_http::endpoint::Endpoint) implements this trait.
+/// To provide a static endpoint, [`Endpoint`](aws_smithy_http::endpoint::Endpoint) implements this trait.
 /// Example usage:
 /// ```rust
 /// # mod dynamodb {
@@ -62,7 +62,7 @@ pub type BoxError = Box<dyn Error + Send + Sync + 'static>;
 /// #     }
 /// # }
 /// # }
-/// use smithy_http::endpoint::Endpoint;
+/// use aws_smithy_http::endpoint::Endpoint;
 /// use http::Uri;
 /// let config = dynamodb::Config::builder()
 ///     .endpoint(
@@ -150,7 +150,7 @@ pub fn set_endpoint_resolver(properties: &mut PropertyBag, provider: AwsEndpoint
 
 /// Middleware Stage to Add an Endpoint to a Request
 ///
-/// AwsEndpointStage implements [`MapRequest`](smithy_http::middleware::MapRequest). It will:
+/// AwsEndpointStage implements [`MapRequest`](aws_smithy_http::middleware::MapRequest). It will:
 /// 1. Load an endpoint provider from the property bag.
 /// 2. Load an endpoint given the [`Region`](aws_types::region::Region) in the property bag.
 /// 3. Apply the endpoint to the URI in the request
@@ -186,6 +186,7 @@ impl MapRequest for AwsEndpointStage {
             let endpoint = provider
                 .resolve_endpoint(region)
                 .map_err(AwsEndpointStageError::EndpointResolutionError)?;
+            tracing::debug!(endpoint = ?endpoint, base_region = ?region, "resolved endpoint");
             let signing_region = endpoint
                 .credential_scope
                 .region
@@ -209,11 +210,11 @@ mod test {
     use http::header::HOST;
     use http::Uri;
 
+    use aws_smithy_http::body::SdkBody;
+    use aws_smithy_http::middleware::MapRequest;
+    use aws_smithy_http::operation;
     use aws_types::region::{Region, SigningRegion};
     use aws_types::SigningService;
-    use smithy_http::body::SdkBody;
-    use smithy_http::middleware::MapRequest;
-    use smithy_http::operation;
 
     use crate::partition::endpoint::{Metadata, Protocol, SignatureVersion};
     use crate::{set_endpoint_resolver, AwsEndpointStage, CredentialScope};

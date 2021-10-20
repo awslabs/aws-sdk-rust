@@ -39,6 +39,24 @@ pub mod forecast {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `predictions`.
+        ///
+        /// To override the contents of this collection use [`set_predictions`](Self::set_predictions).
+        ///
+        /// <p>The forecast.</p>
+        /// <p>The <i>string</i> of the string-to-array map is one of the following
+        /// values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>p10</p>
+        /// </li>
+        /// <li>
+        /// <p>p50</p>
+        /// </li>
+        /// <li>
+        /// <p>p90</p>
+        /// </li>
+        /// </ul>
         pub fn predictions(
             mut self,
             k: impl Into<std::string::String>,
@@ -49,6 +67,20 @@ pub mod forecast {
             self.predictions = Some(hash_map);
             self
         }
+        /// <p>The forecast.</p>
+        /// <p>The <i>string</i> of the string-to-array map is one of the following
+        /// values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>p10</p>
+        /// </li>
+        /// <li>
+        /// <p>p50</p>
+        /// </li>
+        /// <li>
+        /// <p>p90</p>
+        /// </li>
+        /// </ul>
         pub fn set_predictions(
             mut self,
             input: std::option::Option<
@@ -109,6 +141,7 @@ pub mod data_point {
             self.timestamp = Some(input.into());
             self
         }
+        /// <p>The timestamp of the specific forecast.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timestamp = input;
             self
@@ -118,6 +151,7 @@ pub mod data_point {
             self.value = Some(input);
             self
         }
+        /// <p>The forecast value.</p>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
             self.value = input;
             self

@@ -27,6 +27,7 @@ pub mod validate_matchmaking_rule_set_output {
             self.valid = Some(input);
             self
         }
+        /// <p>A response indicating whether the rule set is valid.</p>
         pub fn set_valid(mut self, input: std::option::Option<bool>) -> Self {
             self.valid = input;
             self
@@ -44,6 +45,7 @@ impl ValidateMatchmakingRuleSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateScriptOutput {
@@ -81,6 +83,12 @@ pub mod update_script_output {
             self.script = Some(input);
             self
         }
+        /// <p>The newly created script record with a unique script ID. The new script's storage
+        /// location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket
+        /// under your account, the storage location reflects the information that was provided in
+        /// the <i>CreateScript</i> request; (2) If the script file was uploaded from
+        /// a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift
+        /// service.</p>
         pub fn set_script(mut self, input: std::option::Option<crate::model::Script>) -> Self {
             self.script = input;
             self
@@ -130,6 +138,8 @@ pub mod update_runtime_configuration_output {
             self.runtime_configuration = Some(input);
             self
         }
+        /// <p>The runtime configuration currently in use by all instances in the fleet. If the
+        /// update was successful, all property changes are shown. </p>
         pub fn set_runtime_configuration(
             mut self,
             input: std::option::Option<crate::model::RuntimeConfiguration>,
@@ -180,6 +190,7 @@ pub mod update_matchmaking_configuration_output {
             self.configuration = Some(input);
             self
         }
+        /// <p>The updated matchmaking configuration.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::MatchmakingConfiguration>,
@@ -230,6 +241,7 @@ pub mod update_game_session_queue_output {
             self.game_session_queue = Some(input);
             self
         }
+        /// <p>An object that describes the newly updated game session queue.</p>
         pub fn set_game_session_queue(
             mut self,
             input: std::option::Option<crate::model::GameSessionQueue>,
@@ -280,6 +292,7 @@ pub mod update_game_session_output {
             self.game_session = Some(input);
             self
         }
+        /// <p>The updated game session properties.</p>
         pub fn set_game_session(
             mut self,
             input: std::option::Option<crate::model::GameSession>,
@@ -302,6 +315,7 @@ impl UpdateGameSessionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGameServerGroupOutput {
@@ -329,6 +343,7 @@ pub mod update_game_server_group_output {
             self.game_server_group = Some(input);
             self
         }
+        /// <p>An object that describes the game server group resource with updated properties. </p>
         pub fn set_game_server_group(
             mut self,
             input: std::option::Option<crate::model::GameServerGroup>,
@@ -351,6 +366,7 @@ impl UpdateGameServerGroupOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGameServerOutput {
@@ -378,6 +394,7 @@ pub mod update_game_server_output {
             self.game_server = Some(input);
             self
         }
+        /// <p>Object that describes the newly updated game server.</p>
         pub fn set_game_server(
             mut self,
             input: std::option::Option<crate::model::GameServer>,
@@ -428,6 +445,7 @@ pub mod update_fleet_port_settings_output {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet that was updated.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -484,6 +502,7 @@ pub mod update_fleet_capacity_output {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet that was updated.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -493,6 +512,7 @@ pub mod update_fleet_capacity_output {
             self.fleet_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. </p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_arn = input;
             self
@@ -503,6 +523,8 @@ pub mod update_fleet_capacity_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>The remote location being updated, expressed as an AWS Region code,
+        /// such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -552,6 +574,7 @@ pub mod update_fleet_attributes_output {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet that was updated.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -599,6 +622,7 @@ pub mod update_build_output {
             self.build_value = Some(input);
             self
         }
+        /// <p>The updated build resource.</p>
         pub fn set_build(mut self, input: std::option::Option<crate::model::Build>) -> Self {
             self.build_value = input;
             self
@@ -646,6 +670,7 @@ pub mod update_alias_output {
             self.alias = Some(input);
             self
         }
+        /// <p>The updated alias resource.</p>
         pub fn set_alias(mut self, input: std::option::Option<crate::model::Alias>) -> Self {
             self.alias = input;
             self
@@ -663,6 +688,7 @@ impl UpdateAliasOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
@@ -692,6 +718,7 @@ impl UntagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {}
@@ -721,6 +748,7 @@ impl TagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuspendGameServerGroupOutput {
@@ -752,6 +780,9 @@ pub mod suspend_game_server_group_output {
             self.game_server_group = Some(input);
             self
         }
+        /// <p>An object that describes the game server group resource, with the
+        /// <code>SuspendedActions</code> property updated to reflect the suspended
+        /// activity.</p>
         pub fn set_game_server_group(
             mut self,
             input: std::option::Option<crate::model::GameServerGroup>,
@@ -774,6 +805,7 @@ impl SuspendGameServerGroupOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopMatchmakingOutput {}
@@ -833,6 +865,8 @@ pub mod stop_game_session_placement_output {
             self.game_session_placement = Some(input);
             self
         }
+        /// <p>Object that describes the canceled game session placement, with
+        /// <code>CANCELLED</code> status and an end time stamp. </p>
         pub fn set_game_session_placement(
             mut self,
             input: std::option::Option<crate::model::GameSessionPlacement>,
@@ -887,6 +921,7 @@ pub mod stop_fleet_actions_output {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to stop actions on.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -896,6 +931,7 @@ pub mod stop_fleet_actions_output {
             self.fleet_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_arn = input;
             self
@@ -948,6 +984,9 @@ pub mod start_matchmaking_output {
             self.matchmaking_ticket = Some(input);
             self
         }
+        /// <p>Ticket representing the matchmaking request. This object include the information
+        /// included in the request, ticket status, and match results as generated during the
+        /// matchmaking process.</p>
         pub fn set_matchmaking_ticket(
             mut self,
             input: std::option::Option<crate::model::MatchmakingTicket>,
@@ -1002,6 +1041,9 @@ pub mod start_match_backfill_output {
             self.matchmaking_ticket = Some(input);
             self
         }
+        /// <p>Ticket representing the backfill matchmaking request. This object includes the
+        /// information in the request, ticket status, and match results as generated during the
+        /// matchmaking process.</p>
         pub fn set_matchmaking_ticket(
             mut self,
             input: std::option::Option<crate::model::MatchmakingTicket>,
@@ -1056,6 +1098,9 @@ pub mod start_game_session_placement_output {
             self.game_session_placement = Some(input);
             self
         }
+        /// <p>Object that describes the newly created game session placement. This object
+        /// includes all the information provided in the request, as well as start/end time stamps
+        /// and placement status. </p>
         pub fn set_game_session_placement(
             mut self,
             input: std::option::Option<crate::model::GameSessionPlacement>,
@@ -1110,6 +1155,7 @@ pub mod start_fleet_actions_output {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet to restart actions on.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -1119,6 +1165,7 @@ pub mod start_fleet_actions_output {
             self.fleet_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_arn = input;
             self
@@ -1167,12 +1214,20 @@ pub mod search_game_sessions_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `game_sessions`.
+        ///
+        /// To override the contents of this collection use [`set_game_sessions`](Self::set_game_sessions).
+        ///
+        /// <p>A collection of objects containing game session properties for each session that
+        /// matches the request.</p>
         pub fn game_sessions(mut self, input: impl Into<crate::model::GameSession>) -> Self {
             let mut v = self.game_sessions.unwrap_or_default();
             v.push(input.into());
             self.game_sessions = Some(v);
             self
         }
+        /// <p>A collection of objects containing game session properties for each session that
+        /// matches the request.</p>
         pub fn set_game_sessions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameSession>>,
@@ -1185,6 +1240,7 @@ pub mod search_game_sessions_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1205,6 +1261,7 @@ impl SearchGameSessionsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResumeGameServerGroupOutput {
@@ -1236,6 +1293,9 @@ pub mod resume_game_server_group_output {
             self.game_server_group = Some(input);
             self
         }
+        /// <p>An object that describes the game server group resource, with the
+        /// <code>SuspendedActions</code> property updated to reflect the resumed
+        /// activity.</p>
         pub fn set_game_server_group(
             mut self,
             input: std::option::Option<crate::model::GameServerGroup>,
@@ -1292,6 +1352,7 @@ pub mod resolve_alias_output {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>The fleet identifier that the alias is pointing to.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -1303,6 +1364,9 @@ pub mod resolve_alias_output {
             self.fleet_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource that this alias points to.
+        /// </p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_arn = input;
             self
@@ -1360,6 +1424,9 @@ pub mod request_upload_credentials_output {
             self.upload_credentials = Some(input);
             self
         }
+        /// <p>AWS credentials required when uploading a game build to the storage location.
+        /// These credentials have a limited lifespan and are valid only for the build they were
+        /// issued for.</p>
         pub fn set_upload_credentials(
             mut self,
             input: std::option::Option<crate::model::AwsCredentials>,
@@ -1373,6 +1440,8 @@ pub mod request_upload_credentials_output {
             self.storage_location = Some(input);
             self
         }
+        /// <p>Amazon S3 path and key, identifying where the game build files are
+        /// stored.</p>
         pub fn set_storage_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -1396,6 +1465,7 @@ impl RequestUploadCredentialsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterGameServerOutput {
@@ -1423,6 +1493,7 @@ pub mod register_game_server_output {
             self.game_server = Some(input);
             self
         }
+        /// <p>Object that describes the newly registered game server.</p>
         pub fn set_game_server(
             mut self,
             input: std::option::Option<crate::model::GameServer>,
@@ -1473,6 +1544,7 @@ pub mod put_scaling_policy_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1490,6 +1562,7 @@ impl PutScalingPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
@@ -1514,12 +1587,22 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>
+        /// The collection of tags that have been assigned to the specified resource.
+        /// </p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>
+        /// The collection of tags that have been assigned to the specified resource.
+        /// </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1540,6 +1623,7 @@ impl ListTagsForResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListScriptsOutput {
@@ -1566,12 +1650,18 @@ pub mod list_scripts_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `scripts`.
+        ///
+        /// To override the contents of this collection use [`set_scripts`](Self::set_scripts).
+        ///
+        /// <p>A set of properties describing the requested script.</p>
         pub fn scripts(mut self, input: impl Into<crate::model::Script>) -> Self {
             let mut v = self.scripts.unwrap_or_default();
             v.push(input.into());
             self.scripts = Some(v);
             self
         }
+        /// <p>A set of properties describing the requested script.</p>
         pub fn set_scripts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Script>>,
@@ -1584,6 +1674,7 @@ pub mod list_scripts_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1604,6 +1695,7 @@ impl ListScriptsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGameServersOutput {
@@ -1630,12 +1722,18 @@ pub mod list_game_servers_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `game_servers`.
+        ///
+        /// To override the contents of this collection use [`set_game_servers`](Self::set_game_servers).
+        ///
+        /// <p>A collection of game server objects that match the request.</p>
         pub fn game_servers(mut self, input: impl Into<crate::model::GameServer>) -> Self {
             let mut v = self.game_servers.unwrap_or_default();
             v.push(input.into());
             self.game_servers = Some(v);
             self
         }
+        /// <p>A collection of game server objects that match the request.</p>
         pub fn set_game_servers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameServer>>,
@@ -1648,6 +1746,7 @@ pub mod list_game_servers_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1668,6 +1767,7 @@ impl ListGameServersOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGameServerGroupsOutput {
@@ -1695,6 +1795,11 @@ pub mod list_game_server_groups_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `game_server_groups`.
+        ///
+        /// To override the contents of this collection use [`set_game_server_groups`](Self::set_game_server_groups).
+        ///
+        /// <p>A collection of game server group objects that match the request.</p>
         pub fn game_server_groups(
             mut self,
             input: impl Into<crate::model::GameServerGroup>,
@@ -1704,6 +1809,7 @@ pub mod list_game_server_groups_output {
             self.game_server_groups = Some(v);
             self
         }
+        /// <p>A collection of game server group objects that match the request.</p>
         pub fn set_game_server_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameServerGroup>>,
@@ -1716,6 +1822,7 @@ pub mod list_game_server_groups_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1766,12 +1873,24 @@ pub mod list_fleets_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `fleet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_fleet_ids`](Self::set_fleet_ids).
+        ///
+        /// <p>A set of fleet IDs that match the list request.
+        /// You can retrieve additional information about all
+        /// returned fleets by passing this result set to a <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
+        /// <a>DescribeFleetUtilization</a> call.</p>
         pub fn fleet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.fleet_ids.unwrap_or_default();
             v.push(input.into());
             self.fleet_ids = Some(v);
             self
         }
+        /// <p>A set of fleet IDs that match the list request.
+        /// You can retrieve additional information about all
+        /// returned fleets by passing this result set to a <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
+        /// <a>DescribeFleetUtilization</a> call.</p>
         pub fn set_fleet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1784,6 +1903,7 @@ pub mod list_fleets_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1831,12 +1951,18 @@ pub mod list_builds_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `builds`.
+        ///
+        /// To override the contents of this collection use [`set_builds`](Self::set_builds).
+        ///
+        /// <p>A collection of build resources that match the request.</p>
         pub fn builds(mut self, input: impl Into<crate::model::Build>) -> Self {
             let mut v = self.builds.unwrap_or_default();
             v.push(input.into());
             self.builds = Some(v);
             self
         }
+        /// <p>A collection of build resources that match the request.</p>
         pub fn set_builds(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Build>>,
@@ -1849,6 +1975,7 @@ pub mod list_builds_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1896,12 +2023,18 @@ pub mod list_aliases_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `aliases`.
+        ///
+        /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
+        ///
+        /// <p>A collection of alias resources that match the request parameters.</p>
         pub fn aliases(mut self, input: impl Into<crate::model::Alias>) -> Self {
             let mut v = self.aliases.unwrap_or_default();
             v.push(input.into());
             self.aliases = Some(v);
             self
         }
+        /// <p>A collection of alias resources that match the request parameters.</p>
         pub fn set_aliases(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Alias>>,
@@ -1914,6 +2047,7 @@ pub mod list_aliases_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1964,6 +2098,8 @@ pub mod get_instance_access_output {
             self.instance_access = Some(input);
             self
         }
+        /// <p>The connection information for a fleet instance, including IP
+        /// address and access credentials.</p>
         pub fn set_instance_access(
             mut self,
             input: std::option::Option<crate::model::InstanceAccess>,
@@ -2020,6 +2156,10 @@ pub mod get_game_session_log_url_output {
             self.pre_signed_url = Some(input.into());
             self
         }
+        /// <p>Location of the requested game session logs, available for download. This URL is
+        /// valid for 15 minutes, after which S3 will reject any download request using this URL.
+        /// You can request a new URL any time within the 14-day period that the logs are
+        /// retained.</p>
         pub fn set_pre_signed_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2067,6 +2207,11 @@ pub mod describe_vpc_peering_connections_output {
             std::option::Option<std::vec::Vec<crate::model::VpcPeeringConnection>>,
     }
     impl Builder {
+        /// Appends an item to `vpc_peering_connections`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_peering_connections`](Self::set_vpc_peering_connections).
+        ///
+        /// <p>A collection of VPC peering connection records that match the request.</p>
         pub fn vpc_peering_connections(
             mut self,
             input: impl Into<crate::model::VpcPeeringConnection>,
@@ -2076,6 +2221,7 @@ pub mod describe_vpc_peering_connections_output {
             self.vpc_peering_connections = Some(v);
             self
         }
+        /// <p>A collection of VPC peering connection records that match the request.</p>
         pub fn set_vpc_peering_connections(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VpcPeeringConnection>>,
@@ -2098,6 +2244,7 @@ impl DescribeVpcPeeringConnectionsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVpcPeeringAuthorizationsOutput {
@@ -2126,6 +2273,12 @@ pub mod describe_vpc_peering_authorizations_output {
             std::option::Option<std::vec::Vec<crate::model::VpcPeeringAuthorization>>,
     }
     impl Builder {
+        /// Appends an item to `vpc_peering_authorizations`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_peering_authorizations`](Self::set_vpc_peering_authorizations).
+        ///
+        /// <p>A collection of objects that describe all valid VPC peering operations for the
+        /// current AWS account.</p>
         pub fn vpc_peering_authorizations(
             mut self,
             input: impl Into<crate::model::VpcPeeringAuthorization>,
@@ -2135,6 +2288,8 @@ pub mod describe_vpc_peering_authorizations_output {
             self.vpc_peering_authorizations = Some(v);
             self
         }
+        /// <p>A collection of objects that describe all valid VPC peering operations for the
+        /// current AWS account.</p>
         pub fn set_vpc_peering_authorizations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VpcPeeringAuthorization>>,
@@ -2157,6 +2312,7 @@ impl DescribeVpcPeeringAuthorizationsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScriptOutput {
@@ -2184,6 +2340,7 @@ pub mod describe_script_output {
             self.script = Some(input);
             self
         }
+        /// <p>A set of properties describing the requested script.</p>
         pub fn set_script(mut self, input: std::option::Option<crate::model::Script>) -> Self {
             self.script = input;
             self
@@ -2232,12 +2389,20 @@ pub mod describe_scaling_policies_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `scaling_policies`.
+        ///
+        /// To override the contents of this collection use [`set_scaling_policies`](Self::set_scaling_policies).
+        ///
+        /// <p>A collection of objects containing the scaling policies matching the
+        /// request.</p>
         pub fn scaling_policies(mut self, input: impl Into<crate::model::ScalingPolicy>) -> Self {
             let mut v = self.scaling_policies.unwrap_or_default();
             v.push(input.into());
             self.scaling_policies = Some(v);
             self
         }
+        /// <p>A collection of objects containing the scaling policies matching the
+        /// request.</p>
         pub fn set_scaling_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>,
@@ -2250,6 +2415,7 @@ pub mod describe_scaling_policies_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2300,6 +2466,8 @@ pub mod describe_runtime_configuration_output {
             self.runtime_configuration = Some(input);
             self
         }
+        /// <p>Instructions that describe how server processes should be launched and maintained on
+        /// each instance in the fleet.</p>
         pub fn set_runtime_configuration(
             mut self,
             input: std::option::Option<crate::model::RuntimeConfiguration>,
@@ -2350,12 +2518,20 @@ pub mod describe_player_sessions_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `player_sessions`.
+        ///
+        /// To override the contents of this collection use [`set_player_sessions`](Self::set_player_sessions).
+        ///
+        /// <p>A collection of objects containing properties for each player session that matches
+        /// the request.</p>
         pub fn player_sessions(mut self, input: impl Into<crate::model::PlayerSession>) -> Self {
             let mut v = self.player_sessions.unwrap_or_default();
             v.push(input.into());
             self.player_sessions = Some(v);
             self
         }
+        /// <p>A collection of objects containing properties for each player session that matches
+        /// the request.</p>
         pub fn set_player_sessions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlayerSession>>,
@@ -2368,6 +2544,7 @@ pub mod describe_player_sessions_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2415,12 +2592,18 @@ pub mod describe_matchmaking_rule_sets_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `rule_sets`.
+        ///
+        /// To override the contents of this collection use [`set_rule_sets`](Self::set_rule_sets).
+        ///
+        /// <p>A collection of requested matchmaking rule set objects. </p>
         pub fn rule_sets(mut self, input: impl Into<crate::model::MatchmakingRuleSet>) -> Self {
             let mut v = self.rule_sets.unwrap_or_default();
             v.push(input.into());
             self.rule_sets = Some(v);
             self
         }
+        /// <p>A collection of requested matchmaking rule set objects. </p>
         pub fn set_rule_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MatchmakingRuleSet>>,
@@ -2433,6 +2616,7 @@ pub mod describe_matchmaking_rule_sets_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2481,6 +2665,11 @@ pub mod describe_matchmaking_configurations_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `configurations`.
+        ///
+        /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
+        ///
+        /// <p>A collection of requested matchmaking configurations.</p>
         pub fn configurations(
             mut self,
             input: impl Into<crate::model::MatchmakingConfiguration>,
@@ -2490,6 +2679,7 @@ pub mod describe_matchmaking_configurations_output {
             self.configurations = Some(v);
             self
         }
+        /// <p>A collection of requested matchmaking configurations.</p>
         pub fn set_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MatchmakingConfiguration>>,
@@ -2502,6 +2692,7 @@ pub mod describe_matchmaking_configurations_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2545,12 +2736,18 @@ pub mod describe_matchmaking_output {
         pub(crate) ticket_list: std::option::Option<std::vec::Vec<crate::model::MatchmakingTicket>>,
     }
     impl Builder {
+        /// Appends an item to `ticket_list`.
+        ///
+        /// To override the contents of this collection use [`set_ticket_list`](Self::set_ticket_list).
+        ///
+        /// <p>A collection of existing matchmaking ticket objects matching the request.</p>
         pub fn ticket_list(mut self, input: impl Into<crate::model::MatchmakingTicket>) -> Self {
             let mut v = self.ticket_list.unwrap_or_default();
             v.push(input.into());
             self.ticket_list = Some(v);
             self
         }
+        /// <p>A collection of existing matchmaking ticket objects matching the request.</p>
         pub fn set_ticket_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MatchmakingTicket>>,
@@ -2600,12 +2797,18 @@ pub mod describe_instances_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `instances`.
+        ///
+        /// To override the contents of this collection use [`set_instances`](Self::set_instances).
+        ///
+        /// <p>A collection of objects containing properties for each instance returned.</p>
         pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
             let mut v = self.instances.unwrap_or_default();
             v.push(input.into());
             self.instances = Some(v);
             self
         }
+        /// <p>A collection of objects containing properties for each instance returned.</p>
         pub fn set_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Instance>>,
@@ -2618,6 +2821,7 @@ pub mod describe_instances_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2665,12 +2869,18 @@ pub mod describe_game_sessions_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `game_sessions`.
+        ///
+        /// To override the contents of this collection use [`set_game_sessions`](Self::set_game_sessions).
+        ///
+        /// <p>A collection of properties for each game session that matches the request.</p>
         pub fn game_sessions(mut self, input: impl Into<crate::model::GameSession>) -> Self {
             let mut v = self.game_sessions.unwrap_or_default();
             v.push(input.into());
             self.game_sessions = Some(v);
             self
         }
+        /// <p>A collection of properties for each game session that matches the request.</p>
         pub fn set_game_sessions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameSession>>,
@@ -2683,6 +2893,7 @@ pub mod describe_game_sessions_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2731,6 +2942,11 @@ pub mod describe_game_session_queues_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `game_session_queues`.
+        ///
+        /// To override the contents of this collection use [`set_game_session_queues`](Self::set_game_session_queues).
+        ///
+        /// <p>A collection of objects that describe the requested game session queues.</p>
         pub fn game_session_queues(
             mut self,
             input: impl Into<crate::model::GameSessionQueue>,
@@ -2740,6 +2956,7 @@ pub mod describe_game_session_queues_output {
             self.game_session_queues = Some(v);
             self
         }
+        /// <p>A collection of objects that describe the requested game session queues.</p>
         pub fn set_game_session_queues(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameSessionQueue>>,
@@ -2752,6 +2969,7 @@ pub mod describe_game_session_queues_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2800,6 +3018,7 @@ pub mod describe_game_session_placement_output {
             self.game_session_placement = Some(input);
             self
         }
+        /// <p>Object that describes the requested game session placement.</p>
         pub fn set_game_session_placement(
             mut self,
             input: std::option::Option<crate::model::GameSessionPlacement>,
@@ -2850,6 +3069,11 @@ pub mod describe_game_session_details_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `game_session_details`.
+        ///
+        /// To override the contents of this collection use [`set_game_session_details`](Self::set_game_session_details).
+        ///
+        /// <p>A collection of properties for each game session that matches the request.</p>
         pub fn game_session_details(
             mut self,
             input: impl Into<crate::model::GameSessionDetail>,
@@ -2859,6 +3083,7 @@ pub mod describe_game_session_details_output {
             self.game_session_details = Some(v);
             self
         }
+        /// <p>A collection of properties for each game session that matches the request.</p>
         pub fn set_game_session_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameSessionDetail>>,
@@ -2871,6 +3096,7 @@ pub mod describe_game_session_details_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2891,6 +3117,7 @@ impl DescribeGameSessionDetailsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGameServerInstancesOutput {
@@ -2922,6 +3149,13 @@ pub mod describe_game_server_instances_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `game_server_instances`.
+        ///
+        /// To override the contents of this collection use [`set_game_server_instances`](Self::set_game_server_instances).
+        ///
+        /// <p>
+        /// The collection of requested game server instances.
+        /// </p>
         pub fn game_server_instances(
             mut self,
             input: impl Into<crate::model::GameServerInstance>,
@@ -2931,6 +3165,9 @@ pub mod describe_game_server_instances_output {
             self.game_server_instances = Some(v);
             self
         }
+        /// <p>
+        /// The collection of requested game server instances.
+        /// </p>
         pub fn set_game_server_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GameServerInstance>>,
@@ -2945,6 +3182,9 @@ pub mod describe_game_server_instances_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>
+        /// A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2965,6 +3205,7 @@ impl DescribeGameServerInstancesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGameServerGroupOutput {
@@ -2992,6 +3233,7 @@ pub mod describe_game_server_group_output {
             self.game_server_group = Some(input);
             self
         }
+        /// <p>An object with the property settings for the requested game server group resource. </p>
         pub fn set_game_server_group(
             mut self,
             input: std::option::Option<crate::model::GameServerGroup>,
@@ -3014,6 +3256,7 @@ impl DescribeGameServerGroupOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGameServerOutput {
@@ -3041,6 +3284,7 @@ pub mod describe_game_server_output {
             self.game_server = Some(input);
             self
         }
+        /// <p>Object that describes the requested game server.</p>
         pub fn set_game_server(
             mut self,
             input: std::option::Option<crate::model::GameServer>,
@@ -3092,6 +3336,12 @@ pub mod describe_fleet_utilization_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `fleet_utilization`.
+        ///
+        /// To override the contents of this collection use [`set_fleet_utilization`](Self::set_fleet_utilization).
+        ///
+        /// <p>A collection of objects containing utilization information for each requested fleet
+        /// ID. Utilization objects are returned only for fleets that currently exist.</p>
         pub fn fleet_utilization(
             mut self,
             input: impl Into<crate::model::FleetUtilization>,
@@ -3101,6 +3351,8 @@ pub mod describe_fleet_utilization_output {
             self.fleet_utilization = Some(v);
             self
         }
+        /// <p>A collection of objects containing utilization information for each requested fleet
+        /// ID. Utilization objects are returned only for fleets that currently exist.</p>
         pub fn set_fleet_utilization(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FleetUtilization>>,
@@ -3113,6 +3365,7 @@ pub mod describe_fleet_utilization_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3181,6 +3434,7 @@ pub mod describe_fleet_port_settings_output {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet that was requested. </p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -3190,16 +3444,23 @@ pub mod describe_fleet_port_settings_output {
             self.fleet_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_arn = input;
             self
         }
+        /// Appends an item to `inbound_permissions`.
+        ///
+        /// To override the contents of this collection use [`set_inbound_permissions`](Self::set_inbound_permissions).
+        ///
+        /// <p>The port settings for the requested fleet ID.</p>
         pub fn inbound_permissions(mut self, input: impl Into<crate::model::IpPermission>) -> Self {
             let mut v = self.inbound_permissions.unwrap_or_default();
             v.push(input.into());
             self.inbound_permissions = Some(v);
             self
         }
+        /// <p>The port settings for the requested fleet ID.</p>
         pub fn set_inbound_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
@@ -3214,6 +3475,9 @@ pub mod describe_fleet_port_settings_output {
             self.update_status = Some(input);
             self
         }
+        /// <p>The current status of updates to the fleet's port settings in the requested fleet
+        /// location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested
+        /// for the fleet but has not yet been completed for the location.</p>
         pub fn set_update_status(
             mut self,
             input: std::option::Option<crate::model::LocationUpdateStatus>,
@@ -3227,6 +3491,8 @@ pub mod describe_fleet_port_settings_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>The requested fleet location, expressed as an AWS Region code,
+        /// such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -3280,6 +3546,8 @@ pub mod describe_fleet_location_utilization_output {
             self.fleet_utilization = Some(input);
             self
         }
+        /// <p>Utilization information for the requested fleet location. Utilization objects are
+        /// returned only for fleets and locations that currently exist.</p>
         pub fn set_fleet_utilization(
             mut self,
             input: std::option::Option<crate::model::FleetUtilization>,
@@ -3332,6 +3600,8 @@ pub mod describe_fleet_location_capacity_output {
             self.fleet_capacity = Some(input);
             self
         }
+        /// <p>Resource capacity information for the requested fleet location. Capacity objects are
+        /// returned only for fleets and locations that currently exist.</p>
         pub fn set_fleet_capacity(
             mut self,
             input: std::option::Option<crate::model::FleetCapacity>,
@@ -3395,6 +3665,7 @@ pub mod describe_fleet_location_attributes_output {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet that location attributes were requested for.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -3404,10 +3675,16 @@ pub mod describe_fleet_location_attributes_output {
             self.fleet_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. </p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_arn = input;
             self
         }
+        /// Appends an item to `location_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_location_attributes`](Self::set_location_attributes).
+        ///
+        /// <p> Location-specific information on the requested fleet's remote locations. </p>
         pub fn location_attributes(
             mut self,
             input: impl Into<crate::model::LocationAttributes>,
@@ -3417,6 +3694,7 @@ pub mod describe_fleet_location_attributes_output {
             self.location_attributes = Some(v);
             self
         }
+        /// <p> Location-specific information on the requested fleet's remote locations. </p>
         pub fn set_location_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LocationAttributes>>,
@@ -3429,6 +3707,7 @@ pub mod describe_fleet_location_attributes_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3479,12 +3758,20 @@ pub mod describe_fleet_events_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `events`.
+        ///
+        /// To override the contents of this collection use [`set_events`](Self::set_events).
+        ///
+        /// <p>A collection of objects containing event log entries for the specified
+        /// fleet.</p>
         pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
             let mut v = self.events.unwrap_or_default();
             v.push(input.into());
             self.events = Some(v);
             self
         }
+        /// <p>A collection of objects containing event log entries for the specified
+        /// fleet.</p>
         pub fn set_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Event>>,
@@ -3497,6 +3784,7 @@ pub mod describe_fleet_events_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3545,12 +3833,20 @@ pub mod describe_fleet_capacity_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `fleet_capacity`.
+        ///
+        /// To override the contents of this collection use [`set_fleet_capacity`](Self::set_fleet_capacity).
+        ///
+        /// <p>A collection of objects that contains capacity information for each requested fleet
+        /// ID. Capacity objects are returned only for fleets that currently exist.</p>
         pub fn fleet_capacity(mut self, input: impl Into<crate::model::FleetCapacity>) -> Self {
             let mut v = self.fleet_capacity.unwrap_or_default();
             v.push(input.into());
             self.fleet_capacity = Some(v);
             self
         }
+        /// <p>A collection of objects that contains capacity information for each requested fleet
+        /// ID. Capacity objects are returned only for fleets that currently exist.</p>
         pub fn set_fleet_capacity(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FleetCapacity>>,
@@ -3563,6 +3859,7 @@ pub mod describe_fleet_capacity_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3612,12 +3909,20 @@ pub mod describe_fleet_attributes_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `fleet_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_fleet_attributes`](Self::set_fleet_attributes).
+        ///
+        /// <p>A collection of objects containing attribute metadata for each requested fleet ID.
+        /// Attribute objects are returned only for fleets that currently exist.</p>
         pub fn fleet_attributes(mut self, input: impl Into<crate::model::FleetAttributes>) -> Self {
             let mut v = self.fleet_attributes.unwrap_or_default();
             v.push(input.into());
             self.fleet_attributes = Some(v);
             self
         }
+        /// <p>A collection of objects containing attribute metadata for each requested fleet ID.
+        /// Attribute objects are returned only for fleets that currently exist.</p>
         pub fn set_fleet_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FleetAttributes>>,
@@ -3630,6 +3935,7 @@ pub mod describe_fleet_attributes_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3675,6 +3981,12 @@ pub mod describe_ec2_instance_limits_output {
             std::option::Option<std::vec::Vec<crate::model::Ec2InstanceLimit>>,
     }
     impl Builder {
+        /// Appends an item to `ec2_instance_limits`.
+        ///
+        /// To override the contents of this collection use [`set_ec2_instance_limits`](Self::set_ec2_instance_limits).
+        ///
+        /// <p>The maximum number of instances for the specified instance
+        /// type.</p>
         pub fn ec2_instance_limits(
             mut self,
             input: impl Into<crate::model::Ec2InstanceLimit>,
@@ -3684,6 +3996,8 @@ pub mod describe_ec2_instance_limits_output {
             self.ec2_instance_limits = Some(v);
             self
         }
+        /// <p>The maximum number of instances for the specified instance
+        /// type.</p>
         pub fn set_ec2_instance_limits(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Ec2InstanceLimit>>,
@@ -3734,6 +4048,7 @@ pub mod describe_build_output {
             self.build_value = Some(input);
             self
         }
+        /// <p>Set of properties describing the requested build.</p>
         pub fn set_build(mut self, input: std::option::Option<crate::model::Build>) -> Self {
             self.build_value = input;
             self
@@ -3781,6 +4096,7 @@ pub mod describe_alias_output {
             self.alias = Some(input);
             self
         }
+        /// <p>The requested alias resource.</p>
         pub fn set_alias(mut self, input: std::option::Option<crate::model::Alias>) -> Self {
             self.alias = input;
             self
@@ -3798,6 +4114,7 @@ impl DescribeAliasOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterGameServerOutput {}
@@ -3827,6 +4144,7 @@ impl DeregisterGameServerOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpcPeeringConnectionOutput {}
@@ -3856,6 +4174,7 @@ impl DeleteVpcPeeringConnectionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpcPeeringAuthorizationOutput {}
@@ -3885,6 +4204,7 @@ impl DeleteVpcPeeringAuthorizationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteScriptOutput {}
@@ -3914,6 +4234,7 @@ impl DeleteScriptOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteScalingPolicyOutput {}
@@ -3973,6 +4294,7 @@ impl DeleteMatchmakingRuleSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMatchmakingConfigurationOutput {}
@@ -4002,6 +4324,7 @@ impl DeleteMatchmakingConfigurationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGameSessionQueueOutput {}
@@ -4031,6 +4354,7 @@ impl DeleteGameSessionQueueOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGameServerGroupOutput {
@@ -4060,6 +4384,8 @@ pub mod delete_game_server_group_output {
             self.game_server_group = Some(input);
             self
         }
+        /// <p>An object that describes the deleted game server group resource, with status updated
+        /// to <code>DELETE_SCHEDULED</code>. </p>
         pub fn set_game_server_group(
             mut self,
             input: std::option::Option<crate::model::GameServerGroup>,
@@ -4119,6 +4445,7 @@ pub mod delete_fleet_locations_output {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet that location attributes are being deleted for.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -4128,16 +4455,25 @@ pub mod delete_fleet_locations_output {
             self.fleet_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_arn = input;
             self
         }
+        /// Appends an item to `location_states`.
+        ///
+        /// To override the contents of this collection use [`set_location_states`](Self::set_location_states).
+        ///
+        /// <p>The remote locations that are being deleted, with each location status set to
+        /// <code>DELETING</code>.</p>
         pub fn location_states(mut self, input: impl Into<crate::model::LocationState>) -> Self {
             let mut v = self.location_states.unwrap_or_default();
             v.push(input.into());
             self.location_states = Some(v);
             self
         }
+        /// <p>The remote locations that are being deleted, with each location status set to
+        /// <code>DELETING</code>.</p>
         pub fn set_location_states(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LocationState>>,
@@ -4162,6 +4498,7 @@ impl DeleteFleetLocationsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFleetOutput {}
@@ -4191,6 +4528,7 @@ impl DeleteFleetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBuildOutput {}
@@ -4220,6 +4558,7 @@ impl DeleteBuildOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAliasOutput {}
@@ -4249,6 +4588,7 @@ impl DeleteAliasOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpcPeeringConnectionOutput {}
@@ -4310,6 +4650,7 @@ pub mod create_vpc_peering_authorization_output {
             self.vpc_peering_authorization = Some(input);
             self
         }
+        /// <p>Details on the requested VPC peering authorization, including expiration.</p>
         pub fn set_vpc_peering_authorization(
             mut self,
             input: std::option::Option<crate::model::VpcPeeringAuthorization>,
@@ -4332,6 +4673,7 @@ impl CreateVpcPeeringAuthorizationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateScriptOutput {
@@ -4369,6 +4711,12 @@ pub mod create_script_output {
             self.script = Some(input);
             self
         }
+        /// <p>The newly created script record with a unique script ID and ARN. The new script's
+        /// storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3
+        /// bucket under your account, the storage location reflects the information that was
+        /// provided in the <i>CreateScript</i> request; (2) If the script file was
+        /// uploaded from a local zip file, the storage location reflects an S3 location controls by
+        /// the Amazon GameLift service.</p>
         pub fn set_script(mut self, input: std::option::Option<crate::model::Script>) -> Self {
             self.script = input;
             self
@@ -4411,12 +4759,18 @@ pub mod create_player_sessions_output {
         pub(crate) player_sessions: std::option::Option<std::vec::Vec<crate::model::PlayerSession>>,
     }
     impl Builder {
+        /// Appends an item to `player_sessions`.
+        ///
+        /// To override the contents of this collection use [`set_player_sessions`](Self::set_player_sessions).
+        ///
+        /// <p>A collection of player session objects created for the added players.</p>
         pub fn player_sessions(mut self, input: impl Into<crate::model::PlayerSession>) -> Self {
             let mut v = self.player_sessions.unwrap_or_default();
             v.push(input.into());
             self.player_sessions = Some(v);
             self
         }
+        /// <p>A collection of player session objects created for the added players.</p>
         pub fn set_player_sessions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlayerSession>>,
@@ -4467,6 +4821,7 @@ pub mod create_player_session_output {
             self.player_session = Some(input);
             self
         }
+        /// <p>Object that describes the newly created player session record.</p>
         pub fn set_player_session(
             mut self,
             input: std::option::Option<crate::model::PlayerSession>,
@@ -4517,6 +4872,7 @@ pub mod create_matchmaking_rule_set_output {
             self.rule_set = Some(input);
             self
         }
+        /// <p>The newly created matchmaking rule set.</p>
         pub fn set_rule_set(
             mut self,
             input: std::option::Option<crate::model::MatchmakingRuleSet>,
@@ -4567,6 +4923,7 @@ pub mod create_matchmaking_configuration_output {
             self.configuration = Some(input);
             self
         }
+        /// <p>Object that describes the newly created matchmaking configuration.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::MatchmakingConfiguration>,
@@ -4617,6 +4974,7 @@ pub mod create_game_session_queue_output {
             self.game_session_queue = Some(input);
             self
         }
+        /// <p>An object that describes the newly created game session queue.</p>
         pub fn set_game_session_queue(
             mut self,
             input: std::option::Option<crate::model::GameSessionQueue>,
@@ -4667,6 +5025,7 @@ pub mod create_game_session_output {
             self.game_session = Some(input);
             self
         }
+        /// <p>Object that describes the newly created game session record.</p>
         pub fn set_game_session(
             mut self,
             input: std::option::Option<crate::model::GameSession>,
@@ -4689,6 +5048,7 @@ impl CreateGameSessionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGameServerGroupOutput {
@@ -4722,6 +5082,10 @@ pub mod create_game_server_group_output {
             self.game_server_group = Some(input);
             self
         }
+        /// <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ
+        /// game server group and the object's status. The EC2 Auto Scaling group ARN is initially
+        /// null, since the group has not yet been created. This value is added once the game server
+        /// group status reaches <code>ACTIVE</code>. </p>
         pub fn set_game_server_group(
             mut self,
             input: std::option::Option<crate::model::GameServerGroup>,
@@ -4785,6 +5149,7 @@ pub mod create_fleet_locations_output {
             self.fleet_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the fleet that was updated with new locations.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_id = input;
             self
@@ -4794,16 +5159,33 @@ pub mod create_fleet_locations_output {
             self.fleet_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. </p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fleet_arn = input;
             self
         }
+        /// Appends an item to `location_states`.
+        ///
+        /// To override the contents of this collection use [`set_location_states`](Self::set_location_states).
+        ///
+        /// <p>The remote locations that are being added to the fleet, and the life-cycle status of each location.
+        /// For new locations, the status is set to <code>NEW</code>.
+        /// During location creation, GameLift updates each location's status as instances
+        /// are deployed there and prepared for game hosting.
+        /// This list does not include the fleet home Region or any remote locations that were already
+        /// added to the fleet.</p>
         pub fn location_states(mut self, input: impl Into<crate::model::LocationState>) -> Self {
             let mut v = self.location_states.unwrap_or_default();
             v.push(input.into());
             self.location_states = Some(v);
             self
         }
+        /// <p>The remote locations that are being added to the fleet, and the life-cycle status of each location.
+        /// For new locations, the status is set to <code>NEW</code>.
+        /// During location creation, GameLift updates each location's status as instances
+        /// are deployed there and prepared for game hosting.
+        /// This list does not include the fleet home Region or any remote locations that were already
+        /// added to the fleet.</p>
         pub fn set_location_states(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LocationState>>,
@@ -4866,6 +5248,8 @@ pub mod create_fleet_output {
             self.fleet_attributes = Some(input);
             self
         }
+        /// <p>The properties for the new fleet, including the current status. All fleets are placed
+        /// in <code>NEW</code> status on creation. </p>
         pub fn set_fleet_attributes(
             mut self,
             input: std::option::Option<crate::model::FleetAttributes>,
@@ -4873,12 +5257,26 @@ pub mod create_fleet_output {
             self.fleet_attributes = input;
             self
         }
+        /// Appends an item to `location_states`.
+        ///
+        /// To override the contents of this collection use [`set_location_states`](Self::set_location_states).
+        ///
+        /// <p>The fleet's locations and life-cycle status of each location. For new fleets, the
+        /// status of all locations is set to <code>NEW</code>. During fleet creation, GameLift
+        /// updates each location status as instances are deployed there and prepared for game
+        /// hosting. This list includes an entry for the fleet's home Region. For fleets with no
+        /// remote locations, only one entry, representing the home Region, is returned.</p>
         pub fn location_states(mut self, input: impl Into<crate::model::LocationState>) -> Self {
             let mut v = self.location_states.unwrap_or_default();
             v.push(input.into());
             self.location_states = Some(v);
             self
         }
+        /// <p>The fleet's locations and life-cycle status of each location. For new fleets, the
+        /// status of all locations is set to <code>NEW</code>. During fleet creation, GameLift
+        /// updates each location status as instances are deployed there and prepared for game
+        /// hosting. This list includes an entry for the fleet's home Region. For fleets with no
+        /// remote locations, only one entry, representing the home Region, is returned.</p>
         pub fn set_location_states(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LocationState>>,
@@ -4942,6 +5340,7 @@ pub mod create_build_output {
             self.build_value = Some(input);
             self
         }
+        /// <p>The newly created build resource, including a unique build IDs and status. </p>
         pub fn set_build(mut self, input: std::option::Option<crate::model::Build>) -> Self {
             self.build_value = input;
             self
@@ -4954,6 +5353,10 @@ pub mod create_build_output {
             self.upload_credentials = Some(input);
             self
         }
+        /// <p>This element is returned only when the operation is called without a storage
+        /// location. It contains credentials to use when you are uploading a build file to an Amazon S3
+        /// bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these
+        /// credentials, call <a>RequestUploadCredentials</a>. </p>
         pub fn set_upload_credentials(
             mut self,
             input: std::option::Option<crate::model::AwsCredentials>,
@@ -4967,6 +5370,8 @@ pub mod create_build_output {
             self.storage_location = Some(input);
             self
         }
+        /// <p>Amazon S3 location for your game build file, including bucket name and
+        /// key.</p>
         pub fn set_storage_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -5019,6 +5424,7 @@ pub mod create_alias_output {
             self.alias = Some(input);
             self
         }
+        /// <p>The newly created alias resource.</p>
         pub fn set_alias(mut self, input: std::option::Option<crate::model::Alias>) -> Self {
             self.alias = input;
             self
@@ -5036,6 +5442,7 @@ impl CreateAliasOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClaimGameServerOutput {
@@ -5063,6 +5470,7 @@ pub mod claim_game_server_output {
             self.game_server = Some(input);
             self
         }
+        /// <p>Object that describes the newly claimed game server.</p>
         pub fn set_game_server(
             mut self,
             input: std::option::Option<crate::model::GameServer>,
@@ -5085,6 +5493,7 @@ impl ClaimGameServerOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptMatchOutput {}

@@ -28,6 +28,7 @@ pub mod update_pipeline_status_output {
             self.pipeline = Some(input);
             self
         }
+        /// <p>A section of the response body that provides information about the pipeline.</p>
         pub fn set_pipeline(mut self, input: std::option::Option<crate::model::Pipeline>) -> Self {
             self.pipeline = input;
             self
@@ -77,6 +78,8 @@ pub mod update_pipeline_notifications_output {
             self.pipeline = Some(input);
             self
         }
+        /// <p>A section of the response body that provides information about the pipeline associated
+        /// with this notification.</p>
         pub fn set_pipeline(mut self, input: std::option::Option<crate::model::Pipeline>) -> Self {
             self.pipeline = input;
             self
@@ -131,16 +134,29 @@ pub mod update_pipeline_output {
             self.pipeline = Some(input);
             self
         }
+        /// <p>The pipeline updated by this <code>UpdatePipelineResponse</code> call.</p>
         pub fn set_pipeline(mut self, input: std::option::Option<crate::model::Pipeline>) -> Self {
             self.pipeline = input;
             self
         }
+        /// Appends an item to `warnings`.
+        ///
+        /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
+        ///
+        /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the
+        /// pipeline.</p>
+        /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and
+        /// AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
         pub fn warnings(mut self, input: impl Into<crate::model::Warning>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
             v.push(input.into());
             self.warnings = Some(v);
             self
         }
+        /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the
+        /// pipeline.</p>
+        /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and
+        /// AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
         pub fn set_warnings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Warning>>,
@@ -199,16 +215,26 @@ pub mod test_role_output {
             self.success = Some(input.into());
             self
         }
+        /// <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is
+        /// <code>false</code>.</p>
         pub fn set_success(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.success = input;
             self
         }
+        /// Appends an item to `messages`.
+        ///
+        /// To override the contents of this collection use [`set_messages`](Self::set_messages).
+        ///
+        /// <p>If the <code>Success</code> element contains <code>false</code>, this value is an array
+        /// of one or more error messages that were generated during the test process.</p>
         pub fn messages(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.messages.unwrap_or_default();
             v.push(input.into());
             self.messages = Some(v);
             self
         }
+        /// <p>If the <code>Success</code> element contains <code>false</code>, this value is an array
+        /// of one or more error messages that were generated during the test process.</p>
         pub fn set_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -260,6 +286,7 @@ pub mod read_preset_output {
             self.preset = Some(input);
             self
         }
+        /// <p>A section of the response body that provides information about the preset.</p>
         pub fn set_preset(mut self, input: std::option::Option<crate::model::Preset>) -> Self {
             self.preset = input;
             self
@@ -314,16 +341,29 @@ pub mod read_pipeline_output {
             self.pipeline = Some(input);
             self
         }
+        /// <p>A section of the response body that provides information about the pipeline.</p>
         pub fn set_pipeline(mut self, input: std::option::Option<crate::model::Pipeline>) -> Self {
             self.pipeline = input;
             self
         }
+        /// Appends an item to `warnings`.
+        ///
+        /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
+        ///
+        /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region
+        /// as the pipeline.</p>
+        /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics,
+        /// and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
         pub fn warnings(mut self, input: impl Into<crate::model::Warning>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
             v.push(input.into());
             self.warnings = Some(v);
             self
         }
+        /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region
+        /// as the pipeline.</p>
+        /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics,
+        /// and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
         pub fn set_warnings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Warning>>,
@@ -375,6 +415,7 @@ pub mod read_job_output {
             self.job = Some(input);
             self
         }
+        /// <p>A section of the response body that provides information about the job.</p>
         pub fn set_job(mut self, input: std::option::Option<crate::model::Job>) -> Self {
             self.job = input;
             self
@@ -421,12 +462,18 @@ pub mod list_presets_output {
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `presets`.
+        ///
+        /// To override the contents of this collection use [`set_presets`](Self::set_presets).
+        ///
+        /// <p>An array of <code>Preset</code> objects.</p>
         pub fn presets(mut self, input: impl Into<crate::model::Preset>) -> Self {
             let mut v = self.presets.unwrap_or_default();
             v.push(input.into());
             self.presets = Some(v);
             self
         }
+        /// <p>An array of <code>Preset</code> objects.</p>
         pub fn set_presets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Preset>>,
@@ -441,6 +488,9 @@ pub mod list_presets_output {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>A value that you use to access the second and subsequent pages of results, if any. When
+        /// the presets fit on one page or when you've reached the last page
+        /// of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -493,12 +543,18 @@ pub mod list_pipelines_output {
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `pipelines`.
+        ///
+        /// To override the contents of this collection use [`set_pipelines`](Self::set_pipelines).
+        ///
+        /// <p>An array of <code>Pipeline</code> objects.</p>
         pub fn pipelines(mut self, input: impl Into<crate::model::Pipeline>) -> Self {
             let mut v = self.pipelines.unwrap_or_default();
             v.push(input.into());
             self.pipelines = Some(v);
             self
         }
+        /// <p>An array of <code>Pipeline</code> objects.</p>
         pub fn set_pipelines(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Pipeline>>,
@@ -513,6 +569,9 @@ pub mod list_pipelines_output {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>A value that you use to access the second and subsequent pages of results, if any. When
+        /// the pipelines fit on one page or when you've reached the last page
+        /// of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -567,12 +626,18 @@ pub mod list_jobs_by_status_output {
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `jobs`.
+        ///
+        /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
+        ///
+        /// <p>An array of <code>Job</code> objects that have the specified status.</p>
         pub fn jobs(mut self, input: impl Into<crate::model::Job>) -> Self {
             let mut v = self.jobs.unwrap_or_default();
             v.push(input.into());
             self.jobs = Some(v);
             self
         }
+        /// <p>An array of <code>Job</code> objects that have the specified status.</p>
         pub fn set_jobs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Job>>,
@@ -587,6 +652,9 @@ pub mod list_jobs_by_status_output {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p> A value that you use to access the second and subsequent pages of results, if any. When
+        /// the jobs in the specified pipeline fit on one page or when you've reached the last page
+        /// of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -639,12 +707,18 @@ pub mod list_jobs_by_pipeline_output {
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `jobs`.
+        ///
+        /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
+        ///
+        /// <p>An array of <code>Job</code> objects that are in the specified pipeline.</p>
         pub fn jobs(mut self, input: impl Into<crate::model::Job>) -> Self {
             let mut v = self.jobs.unwrap_or_default();
             v.push(input.into());
             self.jobs = Some(v);
             self
         }
+        /// <p>An array of <code>Job</code> objects that are in the specified pipeline.</p>
         pub fn set_jobs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Job>>,
@@ -659,6 +733,9 @@ pub mod list_jobs_by_pipeline_output {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p> A value that you use to access the second and subsequent pages of results, if any. When
+        /// the jobs in the specified pipeline fit on one page or when you've reached the last page
+        /// of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -777,6 +854,7 @@ pub mod create_preset_output {
             self.preset = Some(input);
             self
         }
+        /// <p>A section of the response body that provides information about the preset that is created.</p>
         pub fn set_preset(mut self, input: std::option::Option<crate::model::Preset>) -> Self {
             self.preset = input;
             self
@@ -789,6 +867,10 @@ pub mod create_preset_output {
             self.warning = Some(input.into());
             self
         }
+        /// <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder
+        /// created the preset, this message explains the reason the preset settings don't meet the
+        /// standard. Elastic Transcoder created the preset because the settings might produce
+        /// acceptable output.</p>
         pub fn set_warning(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.warning = input;
             self
@@ -844,16 +926,29 @@ pub mod create_pipeline_output {
             self.pipeline = Some(input);
             self
         }
+        /// <p>A section of the response body that provides information about the pipeline that is created.</p>
         pub fn set_pipeline(mut self, input: std::option::Option<crate::model::Pipeline>) -> Self {
             self.pipeline = input;
             self
         }
+        /// Appends an item to `warnings`.
+        ///
+        /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
+        ///
+        /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as
+        /// the pipeline.</p>
+        /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and
+        /// AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
         pub fn warnings(mut self, input: impl Into<crate::model::Warning>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
             v.push(input.into());
             self.warnings = Some(v);
             self
         }
+        /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as
+        /// the pipeline.</p>
+        /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and
+        /// AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
         pub fn set_warnings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Warning>>,
@@ -905,6 +1000,7 @@ pub mod create_job_output {
             self.job = Some(input);
             self
         }
+        /// <p>A section of the response body that provides information about the job that is created.</p>
         pub fn set_job(mut self, input: std::option::Option<crate::model::Job>) -> Self {
             self.job = input;
             self

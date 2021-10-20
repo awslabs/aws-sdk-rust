@@ -24,7 +24,7 @@ pub fn parse_get_routing_control_state_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRoutingControlStateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRoutingControlStateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -38,7 +38,7 @@ pub fn parse_get_routing_control_state_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::endpoint_temporarily_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_endpoint_temporarily_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRoutingControlStateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_endpoint_temporarily_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRoutingControlStateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -52,7 +52,7 @@ pub fn parse_get_routing_control_state_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRoutingControlStateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRoutingControlStateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -66,7 +66,7 @@ pub fn parse_get_routing_control_state_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRoutingControlStateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRoutingControlStateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -80,7 +80,7 @@ pub fn parse_get_routing_control_state_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRoutingControlStateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRoutingControlStateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -94,7 +94,7 @@ pub fn parse_get_routing_control_state_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRoutingControlStateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRoutingControlStateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -152,7 +152,7 @@ pub fn parse_update_routing_control_state_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -166,7 +166,7 @@ pub fn parse_update_routing_control_state_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -180,7 +180,7 @@ pub fn parse_update_routing_control_state_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::endpoint_temporarily_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_endpoint_temporarily_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_endpoint_temporarily_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -194,7 +194,7 @@ pub fn parse_update_routing_control_state_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -208,7 +208,7 @@ pub fn parse_update_routing_control_state_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -222,7 +222,7 @@ pub fn parse_update_routing_control_state_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -236,7 +236,7 @@ pub fn parse_update_routing_control_state_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -289,7 +289,7 @@ pub fn parse_update_routing_control_states_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStatesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStatesError::unhandled)?;
                     output.build()
                 }
             ;
@@ -303,7 +303,7 @@ pub fn parse_update_routing_control_states_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStatesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStatesError::unhandled)?;
                     output.build()
                 }
             ;
@@ -317,7 +317,7 @@ pub fn parse_update_routing_control_states_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::endpoint_temporarily_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_endpoint_temporarily_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStatesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_endpoint_temporarily_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStatesError::unhandled)?;
                     output.build()
                 }
             ;
@@ -331,7 +331,7 @@ pub fn parse_update_routing_control_states_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStatesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStatesError::unhandled)?;
                     output.build()
                 }
             ;
@@ -345,7 +345,7 @@ pub fn parse_update_routing_control_states_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStatesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStatesError::unhandled)?;
                     output.build()
                 }
             ;
@@ -359,7 +359,7 @@ pub fn parse_update_routing_control_states_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStatesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStatesError::unhandled)?;
                     output.build()
                 }
             ;
@@ -373,7 +373,7 @@ pub fn parse_update_routing_control_states_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_validation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStatesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoutingControlStatesError::unhandled)?;
                     output.build()
                 }
             ;

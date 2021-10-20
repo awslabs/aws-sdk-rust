@@ -55,6 +55,7 @@ pub mod gating_rule {
             self.control_panel_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
         pub fn set_control_panel_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -62,12 +63,18 @@ pub mod gating_rule {
             self.control_panel_arn = input;
             self
         }
+        /// Appends an item to `gating_controls`.
+        ///
+        /// To override the contents of this collection use [`set_gating_controls`](Self::set_gating_controls).
+        ///
+        /// <p>The gating controls for the gating rule. That is, routing controls that are evaluated by the rule configuration that you specify.</p>
         pub fn gating_controls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.gating_controls.unwrap_or_default();
             v.push(input.into());
             self.gating_controls = Some(v);
             self
         }
+        /// <p>The gating controls for the gating rule. That is, routing controls that are evaluated by the rule configuration that you specify.</p>
         pub fn set_gating_controls(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -80,6 +87,7 @@ pub mod gating_rule {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name for the gating rule.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -89,6 +97,7 @@ pub mod gating_rule {
             self.rule_config = Some(input);
             self
         }
+        /// <p>The criteria that you set for specific gating controls (routing controls) that designates how many controls must be enabled to allow you to change (set or unset) the target controls.</p>
         pub fn set_rule_config(
             mut self,
             input: std::option::Option<crate::model::RuleConfig>,
@@ -101,6 +110,7 @@ pub mod gating_rule {
             self.safety_rule_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the gating rule.</p>
         pub fn set_safety_rule_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -113,16 +123,23 @@ pub mod gating_rule {
             self.status = Some(input);
             self
         }
+        /// <p>The deployment status of a gating rule. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
             self.status = input;
             self
         }
+        /// Appends an item to `target_controls`.
+        ///
+        /// To override the contents of this collection use [`set_target_controls`](Self::set_target_controls).
+        ///
+        /// <p>Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only change (set or unset) the routing controls that you have specified as TargetControls if that rule evaluates to true.</p> <p>In other words, your ability to change the routing controls that you have specified as TargetControls is gated by the rule that you set for the routing controls in GatingControls.</p>
         pub fn target_controls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_controls.unwrap_or_default();
             v.push(input.into());
             self.target_controls = Some(v);
             self
         }
+        /// <p>Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only change (set or unset) the routing controls that you have specified as TargetControls if that rule evaluates to true.</p> <p>In other words, your ability to change the routing controls that you have specified as TargetControls is gated by the rule that you set for the routing controls in GatingControls.</p>
         pub fn set_target_controls(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -135,6 +152,7 @@ pub mod gating_rule {
             self.wait_period_ms = Some(input);
             self
         }
+        /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
         pub fn set_wait_period_ms(mut self, input: std::option::Option<i32>) -> Self {
             self.wait_period_ms = input;
             self
@@ -173,8 +191,11 @@ impl GatingRule {
     std::hash::Hash,
 )]
 pub enum Status {
+    #[allow(missing_docs)] // documentation missing in model
     Deployed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     PendingDeletion,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -197,6 +218,7 @@ impl std::str::FromStr for Status {
     }
 }
 impl Status {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Status::Deployed => "DEPLOYED",
@@ -205,6 +227,7 @@ impl Status {
             Status::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEPLOYED", "PENDING", "PENDING_DELETION"]
     }
@@ -251,6 +274,7 @@ pub mod rule_config {
             self.inverted = Some(input);
             self
         }
+        /// <p>Logical negation of the rule. If the rule would usually evaluate true, it's evaluated as false, and vice versa.</p>
         pub fn set_inverted(mut self, input: std::option::Option<bool>) -> Self {
             self.inverted = input;
             self
@@ -260,6 +284,7 @@ pub mod rule_config {
             self.threshold = Some(input);
             self
         }
+        /// <p>The value of N, when you specify an ATLEAST rule type. That is, Threshold is the number of controls that must be set when you specify an ATLEAST type.</p>
         pub fn set_threshold(mut self, input: std::option::Option<i32>) -> Self {
             self.threshold = input;
             self
@@ -269,6 +294,7 @@ pub mod rule_config {
             self.r#type = Some(input);
             self
         }
+        /// <p>A rule can be one of the following: ATLEAST, AND, or OR.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RuleType>) -> Self {
             self.r#type = input;
             self
@@ -302,8 +328,11 @@ impl RuleConfig {
     std::hash::Hash,
 )]
 pub enum RuleType {
+    #[allow(missing_docs)] // documentation missing in model
     And,
+    #[allow(missing_docs)] // documentation missing in model
     Atleast,
+    #[allow(missing_docs)] // documentation missing in model
     Or,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -326,6 +355,7 @@ impl std::str::FromStr for RuleType {
     }
 }
 impl RuleType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RuleType::And => "AND",
@@ -334,6 +364,7 @@ impl RuleType {
             RuleType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AND", "ATLEAST", "OR"]
     }
@@ -391,12 +422,18 @@ pub mod assertion_rule {
         pub(crate) wait_period_ms: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `asserted_controls`.
+        ///
+        /// To override the contents of this collection use [`set_asserted_controls`](Self::set_asserted_controls).
+        ///
+        /// <p>The routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed. For example, you might include three routing controls, one for each of three Amazon Web Services Regions.</p>
         pub fn asserted_controls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.asserted_controls.unwrap_or_default();
             v.push(input.into());
             self.asserted_controls = Some(v);
             self
         }
+        /// <p>The routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed. For example, you might include three routing controls, one for each of three Amazon Web Services Regions.</p>
         pub fn set_asserted_controls(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -409,6 +446,7 @@ pub mod assertion_rule {
             self.control_panel_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
         pub fn set_control_panel_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -421,6 +459,7 @@ pub mod assertion_rule {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name of the assertion rule. You can use any non-white space character in the name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -430,6 +469,7 @@ pub mod assertion_rule {
             self.rule_config = Some(input);
             self
         }
+        /// <p>The criteria that you set for specific assertion controls (routing controls) that designate how many controls must be enabled as the result of a transaction. For example, if you have three assertion controls, you might specify atleast 2 for your rule configuration. This means that at least two assertion controls must be enabled, so that at least two Amazon Web Services Regions are enabled.</p>
         pub fn set_rule_config(
             mut self,
             input: std::option::Option<crate::model::RuleConfig>,
@@ -442,6 +482,7 @@ pub mod assertion_rule {
             self.safety_rule_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
         pub fn set_safety_rule_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -454,6 +495,7 @@ pub mod assertion_rule {
             self.status = Some(input);
             self
         }
+        /// <p>The deployment status of an assertion rule. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
             self.status = input;
             self
@@ -463,6 +505,7 @@ pub mod assertion_rule {
             self.wait_period_ms = Some(input);
             self
         }
+        /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
         pub fn set_wait_period_ms(mut self, input: std::option::Option<i32>) -> Self {
             self.wait_period_ms = input;
             self
@@ -524,6 +567,7 @@ pub mod gating_rule_update {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name for the gating rule.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -533,6 +577,7 @@ pub mod gating_rule_update {
             self.safety_rule_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the gating rule.</p>
         pub fn set_safety_rule_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -545,6 +590,7 @@ pub mod gating_rule_update {
             self.wait_period_ms = Some(input);
             self
         }
+        /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
         pub fn set_wait_period_ms(mut self, input: std::option::Option<i32>) -> Self {
             self.wait_period_ms = input;
             self
@@ -602,6 +648,7 @@ pub mod assertion_rule_update {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the assertion rule. You can use any non-white space character in the name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -611,6 +658,7 @@ pub mod assertion_rule_update {
             self.safety_rule_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
         pub fn set_safety_rule_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -623,6 +671,7 @@ pub mod assertion_rule_update {
             self.wait_period_ms = Some(input);
             self
         }
+        /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
         pub fn set_wait_period_ms(mut self, input: std::option::Option<i32>) -> Self {
             self.wait_period_ms = input;
             self
@@ -684,6 +733,7 @@ pub mod routing_control {
             self.control_panel_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
         pub fn set_control_panel_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -696,6 +746,7 @@ pub mod routing_control {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the routing control.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -705,6 +756,7 @@ pub mod routing_control {
             self.routing_control_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
         pub fn set_routing_control_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -717,6 +769,7 @@ pub mod routing_control {
             self.status = Some(input);
             self
         }
+        /// <p>The deployment status of a routing control. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
             self.status = input;
             self
@@ -787,6 +840,7 @@ pub mod control_panel {
             self.cluster_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the cluster that includes the control panel.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_arn = input;
             self
@@ -796,6 +850,7 @@ pub mod control_panel {
             self.control_panel_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
         pub fn set_control_panel_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -808,6 +863,7 @@ pub mod control_panel {
             self.default_control_panel = Some(input);
             self
         }
+        /// <p>A flag that Amazon Route 53 Application Recovery Controller sets to true to designate the default control panel for a cluster. When you create a cluster, Amazon Route 53 Application Recovery Controller creates a control panel, and sets this flag for that control panel. If you create a control panel yourself, this flag is set to false.</p>
         pub fn set_default_control_panel(mut self, input: std::option::Option<bool>) -> Self {
             self.default_control_panel = input;
             self
@@ -817,6 +873,7 @@ pub mod control_panel {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the control panel. You can use any non-white space character in the name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -826,6 +883,7 @@ pub mod control_panel {
             self.routing_control_count = Some(input);
             self
         }
+        /// <p>The number of routing controls in the control panel.</p>
         pub fn set_routing_control_count(mut self, input: std::option::Option<i32>) -> Self {
             self.routing_control_count = input;
             self
@@ -835,6 +893,7 @@ pub mod control_panel {
             self.status = Some(input);
             self
         }
+        /// <p>The deployment status of control panel. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
             self.status = input;
             self
@@ -891,6 +950,7 @@ pub mod rule {
             self.assertion = Some(input);
             self
         }
+        /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control is not accepted.</p>
         pub fn set_assertion(
             mut self,
             input: std::option::Option<crate::model::AssertionRule>,
@@ -903,6 +963,7 @@ pub mod rule {
             self.gating = Some(input);
             self
         }
+        /// <p>A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
         pub fn set_gating(mut self, input: std::option::Option<crate::model::GatingRule>) -> Self {
             self.gating = input;
             self
@@ -964,10 +1025,16 @@ pub mod cluster {
             self.cluster_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_arn = input;
             self
         }
+        /// Appends an item to `cluster_endpoints`.
+        ///
+        /// To override the contents of this collection use [`set_cluster_endpoints`](Self::set_cluster_endpoints).
+        ///
+        /// <p>Endpoints for a cluster. Specify one of these endpoints when you want to set or retrieve a routing control state in the cluster.</p> <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Cluster (Data Plane) Actions.</p>
         pub fn cluster_endpoints(
             mut self,
             input: impl Into<crate::model::ClusterEndpoint>,
@@ -977,6 +1044,7 @@ pub mod cluster {
             self.cluster_endpoints = Some(v);
             self
         }
+        /// <p>Endpoints for a cluster. Specify one of these endpoints when you want to set or retrieve a routing control state in the cluster.</p> <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Cluster (Data Plane) Actions.</p>
         pub fn set_cluster_endpoints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ClusterEndpoint>>,
@@ -989,6 +1057,7 @@ pub mod cluster {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the cluster.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -998,6 +1067,7 @@ pub mod cluster {
             self.status = Some(input);
             self
         }
+        /// <p>Deployment status of a resource. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
             self.status = input;
             self
@@ -1052,6 +1122,7 @@ pub mod cluster_endpoint {
             self.endpoint = Some(input.into());
             self
         }
+        /// <p>A cluster endpoint. Specify an endpoint and Amazon Web Services Region when you want to set or retrieve a routing control state in the cluster.</p> <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Cluster (Data Plane) Actions.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint = input;
             self
@@ -1061,6 +1132,7 @@ pub mod cluster_endpoint {
             self.region = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services Region for a cluster endpoint.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -1129,6 +1201,7 @@ pub mod new_gating_rule {
             self.control_panel_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
         pub fn set_control_panel_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1136,12 +1209,18 @@ pub mod new_gating_rule {
             self.control_panel_arn = input;
             self
         }
+        /// Appends an item to `gating_controls`.
+        ///
+        /// To override the contents of this collection use [`set_gating_controls`](Self::set_gating_controls).
+        ///
+        /// <p>The gating controls for the new gating rule. That is, routing controls that are evaluated by the rule configuration that you specify.</p>
         pub fn gating_controls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.gating_controls.unwrap_or_default();
             v.push(input.into());
             self.gating_controls = Some(v);
             self
         }
+        /// <p>The gating controls for the new gating rule. That is, routing controls that are evaluated by the rule configuration that you specify.</p>
         pub fn set_gating_controls(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1154,6 +1233,7 @@ pub mod new_gating_rule {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name for the new gating rule.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1163,6 +1243,7 @@ pub mod new_gating_rule {
             self.rule_config = Some(input);
             self
         }
+        /// <p>The criteria that you set for specific gating controls (routing controls) that designates how many controls must be enabled to allow you to change (set or unset) the target controls.</p>
         pub fn set_rule_config(
             mut self,
             input: std::option::Option<crate::model::RuleConfig>,
@@ -1170,12 +1251,18 @@ pub mod new_gating_rule {
             self.rule_config = input;
             self
         }
+        /// Appends an item to `target_controls`.
+        ///
+        /// To override the contents of this collection use [`set_target_controls`](Self::set_target_controls).
+        ///
+        /// <p>Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services Regions. Now you specify AtLeast 2 as your RuleConfig. With these settings, you can only change (set or unset) the routing controls that you have specified as TargetControls if that rule evaluates to true.</p> <p>In other words, your ability to change the routing controls that you have specified as TargetControls is gated by the rule that you set for the routing controls in GatingControls.</p>
         pub fn target_controls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_controls.unwrap_or_default();
             v.push(input.into());
             self.target_controls = Some(v);
             self
         }
+        /// <p>Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services Regions. Now you specify AtLeast 2 as your RuleConfig. With these settings, you can only change (set or unset) the routing controls that you have specified as TargetControls if that rule evaluates to true.</p> <p>In other words, your ability to change the routing controls that you have specified as TargetControls is gated by the rule that you set for the routing controls in GatingControls.</p>
         pub fn set_target_controls(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1188,6 +1275,7 @@ pub mod new_gating_rule {
             self.wait_period_ms = Some(input);
             self
         }
+        /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
         pub fn set_wait_period_ms(mut self, input: std::option::Option<i32>) -> Self {
             self.wait_period_ms = input;
             self
@@ -1251,12 +1339,18 @@ pub mod new_assertion_rule {
         pub(crate) wait_period_ms: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `asserted_controls`.
+        ///
+        /// To override the contents of this collection use [`set_asserted_controls`](Self::set_asserted_controls).
+        ///
+        /// <p>The routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed. For example, you might include three routing controls, one for each of three Amazon Web Services Regions.</p>
         pub fn asserted_controls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.asserted_controls.unwrap_or_default();
             v.push(input.into());
             self.asserted_controls = Some(v);
             self
         }
+        /// <p>The routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed. For example, you might include three routing controls, one for each of three Amazon Web Services Regions.</p>
         pub fn set_asserted_controls(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1269,6 +1363,7 @@ pub mod new_assertion_rule {
             self.control_panel_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the control panel.</p>
         pub fn set_control_panel_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1281,6 +1376,7 @@ pub mod new_assertion_rule {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the assertion rule. You can use any non-white space character in the name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1290,6 +1386,7 @@ pub mod new_assertion_rule {
             self.rule_config = Some(input);
             self
         }
+        /// <p>The criteria that you set for specific assertion controls (routing controls) that designate how many controls must be enabled as the result of a transaction. For example, if you have three assertion controls, you might specify atleast 2 for your rule configuration. This means that at least two assertion controls must be enabled, so that at least two Amazon Web Services Regions are enabled.</p>
         pub fn set_rule_config(
             mut self,
             input: std::option::Option<crate::model::RuleConfig>,
@@ -1302,6 +1399,7 @@ pub mod new_assertion_rule {
             self.wait_period_ms = Some(input);
             self
         }
+        /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
         pub fn set_wait_period_ms(mut self, input: std::option::Option<i32>) -> Self {
             self.wait_period_ms = input;
             self

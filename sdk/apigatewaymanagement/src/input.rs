@@ -9,10 +9,12 @@ pub mod delete_connection_input {
         pub(crate) connection_id: std::option::Option<std::string::String>,
     }
     impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_id = Some(input.into());
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25,7 +27,7 @@ pub mod delete_connection_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteConnectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteConnectionInput {
                 connection_id: self.connection_id,
@@ -44,27 +46,27 @@ impl DeleteConnectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteConnection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteConnectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.connection_id;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "connection_id",
                         details: "cannot be empty or unset",
                     })?;
-            let connection_id = smithy_http::label::fmt_string(input_1, false);
+            let connection_id = aws_smithy_http::label::fmt_string(input_1, false);
             if connection_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "connection_id",
                     details: "cannot be empty or unset",
                 });
@@ -81,7 +83,7 @@ impl DeleteConnectionInput {
         fn update_http_builder(
             input: &crate::input::DeleteConnectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -90,23 +92,23 @@ impl DeleteConnectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteConnectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -129,15 +131,15 @@ impl DeleteConnectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteConnection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteConnection",
             "apigatewaymanagementapi",
         ));
@@ -146,10 +148,10 @@ impl DeleteConnectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -172,10 +174,12 @@ pub mod get_connection_input {
         pub(crate) connection_id: std::option::Option<std::string::String>,
     }
     impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_id = Some(input.into());
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -186,8 +190,10 @@ pub mod get_connection_input {
         /// Consumes the builder and constructs a [`GetConnectionInput`](crate::input::GetConnectionInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetConnectionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetConnectionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetConnectionInput {
                 connection_id: self.connection_id,
             })
@@ -205,27 +211,27 @@ impl GetConnectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetConnection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetConnectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_2 = &_input.connection_id;
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "connection_id",
                         details: "cannot be empty or unset",
                     })?;
-            let connection_id = smithy_http::label::fmt_string(input_2, false);
+            let connection_id = aws_smithy_http::label::fmt_string(input_2, false);
             if connection_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "connection_id",
                     details: "cannot be empty or unset",
                 });
@@ -242,7 +248,7 @@ impl GetConnectionInput {
         fn update_http_builder(
             input: &crate::input::GetConnectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -251,23 +257,23 @@ impl GetConnectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetConnectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -290,25 +296,27 @@ impl GetConnectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetConnection::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetConnection",
-                    "apigatewaymanagementapi",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetConnection::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetConnection",
+            "apigatewaymanagementapi",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -328,16 +336,17 @@ pub mod post_to_connection_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) data: std::option::Option<smithy_types::Blob>,
+        pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) connection_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The data to be sent to the client specified by its connection id.</p>
-        pub fn data(mut self, input: smithy_types::Blob) -> Self {
+        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
             self.data = Some(input);
             self
         }
-        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The data to be sent to the client specified by its connection id.</p>
+        pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.data = input;
             self
         }
@@ -346,6 +355,7 @@ pub mod post_to_connection_input {
             self.connection_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the connection that a specific client is using.</p>
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -358,7 +368,7 @@ pub mod post_to_connection_input {
             self,
         ) -> std::result::Result<
             crate::input::PostToConnectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PostToConnectionInput {
                 data: self.data,
@@ -378,27 +388,27 @@ impl PostToConnectionInput {
         self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PostToConnection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PostToConnectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_3 = &_input.connection_id;
             let input_3 =
                 input_3
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "connection_id",
                         details: "cannot be empty or unset",
                     })?;
-            let connection_id = smithy_http::label::fmt_string(input_3, false);
+            let connection_id = aws_smithy_http::label::fmt_string(input_3, false);
             if connection_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "connection_id",
                     details: "cannot be empty or unset",
                 });
@@ -415,7 +425,7 @@ impl PostToConnectionInput {
         fn update_http_builder(
             input: &crate::input::PostToConnectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -424,23 +434,23 @@ impl PostToConnectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PostToConnectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/octet-stream",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::ser_payload_post_to_connection_input(self.data)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -463,15 +473,15 @@ impl PostToConnectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PostToConnection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PostToConnection",
             "apigatewaymanagementapi",
         ));
@@ -480,10 +490,10 @@ impl PostToConnectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -497,11 +507,12 @@ impl PostToConnectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PostToConnectionInput {
     /// <p>The data to be sent to the client specified by its connection id.</p>
-    pub data: std::option::Option<smithy_types::Blob>,
+    pub data: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The identifier of the connection that a specific client is using.</p>
     pub connection_id: std::option::Option<std::string::String>,
 }
@@ -514,9 +525,11 @@ impl std::fmt::Debug for PostToConnectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectionInput {
+    #[allow(missing_docs)] // documentation missing in model
     pub connection_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetConnectionInput {
@@ -527,9 +540,11 @@ impl std::fmt::Debug for GetConnectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectionInput {
+    #[allow(missing_docs)] // documentation missing in model
     pub connection_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteConnectionInput {

@@ -17,6 +17,10 @@ pub mod cancel_rotate_secret_input {
             self.secret_id = Some(input.into());
             self
         }
+        /// <p>Specifies the secret to cancel a rotation request. You can specify either the Amazon
+        /// Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -26,7 +30,7 @@ pub mod cancel_rotate_secret_input {
             self,
         ) -> std::result::Result<
             crate::input::CancelRotateSecretInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CancelRotateSecretInput {
                 secret_id: self.secret_id,
@@ -45,16 +49,16 @@ impl CancelRotateSecretInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CancelRotateSecret,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CancelRotateSecretInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -62,7 +66,7 @@ impl CancelRotateSecretInput {
         fn update_http_builder(
             input: &crate::input::CancelRotateSecretInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -71,30 +75,32 @@ impl CancelRotateSecretInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CancelRotateSecretInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.CancelRotateSecret",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_cancel_rotate_secret(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -117,15 +123,15 @@ impl CancelRotateSecretInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CancelRotateSecret::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CancelRotateSecret",
             "secretsmanager",
         ));
@@ -134,10 +140,10 @@ impl CancelRotateSecretInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -161,7 +167,7 @@ pub mod create_secret_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
-        pub(crate) secret_binary: std::option::Option<smithy_types::Blob>,
+        pub(crate) secret_binary: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) secret_string: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) add_replica_regions:
@@ -181,6 +187,14 @@ pub mod create_secret_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>Specifies the friendly name of the new secret.</p>
+        /// <p>The secret name must be ASCII letters, digits, or the following characters :
+        /// /_+=.@-</p>
+        /// <note>
+        /// <p>Do not end your secret name with a hyphen followed by six characters. If you do so, you
+        /// risk confusion and unexpected results when searching for a secret by partial ARN. Secrets Manager
+        /// automatically adds a hyphen and six random characters at the end of the ARN.</p>
+        /// </note>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -222,6 +236,39 @@ pub mod create_secret_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>(Optional) If you include <code>SecretString</code> or <code>SecretBinary</code>, then an
+        /// initial version is created as part of the secret, and this parameter specifies a unique
+        /// identifier for the new version. </p>
+        /// <note>
+        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
+        /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it
+        /// as the value for this parameter in the request. If you don't use the SDK and instead
+        /// generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
+        /// <code>ClientRequestToken</code> yourself for the new version and include the value in the
+        /// request.</p>
+        /// </note>
+        /// <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental
+        /// creation of duplicate versions if there are failures and retries during a rotation. We
+        /// recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to
+        /// ensure uniqueness of your versions within the specified secret. </p>
+        /// <ul>
+        /// <li>
+        /// <p>If the <code>ClientRequestToken</code> value isn't already associated with a version
+        /// of the secret then a new version of the secret is created. </p>
+        /// </li>
+        /// <li>
+        /// <p>If a version with this value already exists and the version <code>SecretString</code>
+        /// and <code>SecretBinary</code> values are the same as those in the request, then the
+        /// request is ignored.</p>
+        /// </li>
+        /// <li>
+        /// <p>If a version with this value already exists and that version's
+        /// <code>SecretString</code> and <code>SecretBinary</code> values are different from those
+        /// in the request, then the request fails because you cannot modify an existing version.
+        /// Instead, use <a>PutSecretValue</a> to create a new version.</p>
+        /// </li>
+        /// </ul>
+        /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -234,6 +281,7 @@ pub mod create_secret_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>(Optional) Specifies a user-provided description of the secret.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -257,6 +305,21 @@ pub mod create_secret_input {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>(Optional) Specifies the ARN, Key ID, or alias of the Amazon Web Services KMS customer master key (CMK) to
+        /// be used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values in the
+        /// versions stored in this secret.</p>
+        /// <p>You can specify any of the supported ways to identify a Amazon Web Services KMS key ID. If you need to
+        /// reference a CMK in a different account, you can use only the key ARN or the alias ARN.</p>
+        /// <p>If you don't specify this value, then Secrets Manager defaults to using the Amazon Web Services account's
+        /// default CMK (the one named <code>aws/secretsmanager</code>). If a Amazon Web Services KMS CMK with that name doesn't yet
+        /// exist, then Secrets Manager creates it for you automatically the first time it needs to encrypt a
+        /// version's <code>SecretString</code> or <code>SecretBinary</code> fields.</p>
+        /// <important>
+        /// <p>You can use the account default CMK to encrypt and decrypt only if you call this
+        /// operation using credentials from the same account that owns the secret. If the secret
+        /// resides in a different account, then you must create a custom CMK and specify the ARN in
+        /// this field. </p>
+        /// </important>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -269,11 +332,22 @@ pub mod create_secret_input {
         /// both. They cannot both be empty.</p>
         /// <p>This parameter is not available using the Secrets Manager console. It can be accessed only by
         /// using the Amazon Web Services CLI or one of the Amazon Web Services SDKs.</p>
-        pub fn secret_binary(mut self, input: smithy_types::Blob) -> Self {
+        pub fn secret_binary(mut self, input: aws_smithy_types::Blob) -> Self {
             self.secret_binary = Some(input);
             self
         }
-        pub fn set_secret_binary(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of
+        /// the secret. To use this parameter in the command-line tools, we recommend that you store your
+        /// binary data in a file and then use the appropriate technique for your tool to pass the
+        /// contents of the file as a parameter.</p>
+        /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not
+        /// both. They cannot both be empty.</p>
+        /// <p>This parameter is not available using the Secrets Manager console. It can be accessed only by
+        /// using the Amazon Web Services CLI or one of the Amazon Web Services SDKs.</p>
+        pub fn set_secret_binary(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
             self.secret_binary = input;
             self
         }
@@ -292,6 +366,17 @@ pub mod create_secret_input {
             self.secret_string = Some(input.into());
             self
         }
+        /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of
+        /// the secret.</p>
+        /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not
+        /// both. They cannot both be empty.</p>
+        /// <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected
+        /// secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the
+        /// information as a JSON structure of key/value pairs that the Lambda rotation function knows how
+        /// to parse.</p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text
+        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
+        /// in the Amazon Web Services CLI User Guide.</p>
         pub fn set_secret_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -299,12 +384,120 @@ pub mod create_secret_input {
             self.secret_string = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>(Optional) Specifies a list of user-defined tags that are attached to the secret. Each tag
+        /// is a "Key" and "Value" pair of strings. This operation only appends tags to the existing list
+        /// of tags. To remove tags, you must use <a>UntagResource</a>.</p>
+        /// <important>
+        /// <ul>
+        /// <li>
+        /// <p>Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag
+        /// from one with key "abc".</p>
+        /// </li>
+        /// <li>
+        /// <p>If you check tags in IAM policy <code>Condition</code> elements as part of your
+        /// security strategy, then adding or removing a tag can change permissions. If the
+        /// successful completion of this operation would result in you losing your permissions for
+        /// this secret, then this operation is blocked and returns an <code>Access Denied</code>
+        /// error.</p>
+        /// </li>
+        /// </ul>
+        /// </important>
+        /// <p>This parameter requires a JSON text string argument. For information on how to format a
+        /// JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+        /// Parameters</a> in the <i>CLI User Guide</i>. For example:</p>
+        /// <p>
+        /// <code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code>
+        /// </p>
+        /// <p>If your command-line tool or SDK requires quotation marks around the parameter, you should
+        /// use single quotes to avoid confusion with the double quotes required in the JSON text. </p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per secret—50</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length—127 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length—255 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it
+        /// for Amazon Web Services use. You can't edit or delete tag names or values with this
+        /// prefix. Tags with this prefix do not count against your tags per secret limit.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you use your tagging schema across multiple services and resources,
+        /// remember other services might have restrictions on allowed characters. Generally
+        /// allowed characters: letters, spaces, and numbers representable in UTF-8, plus the
+        /// following special characters: + - = . _ : / @.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>(Optional) Specifies a list of user-defined tags that are attached to the secret. Each tag
+        /// is a "Key" and "Value" pair of strings. This operation only appends tags to the existing list
+        /// of tags. To remove tags, you must use <a>UntagResource</a>.</p>
+        /// <important>
+        /// <ul>
+        /// <li>
+        /// <p>Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag
+        /// from one with key "abc".</p>
+        /// </li>
+        /// <li>
+        /// <p>If you check tags in IAM policy <code>Condition</code> elements as part of your
+        /// security strategy, then adding or removing a tag can change permissions. If the
+        /// successful completion of this operation would result in you losing your permissions for
+        /// this secret, then this operation is blocked and returns an <code>Access Denied</code>
+        /// error.</p>
+        /// </li>
+        /// </ul>
+        /// </important>
+        /// <p>This parameter requires a JSON text string argument. For information on how to format a
+        /// JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+        /// Parameters</a> in the <i>CLI User Guide</i>. For example:</p>
+        /// <p>
+        /// <code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code>
+        /// </p>
+        /// <p>If your command-line tool or SDK requires quotation marks around the parameter, you should
+        /// use single quotes to avoid confusion with the double quotes required in the JSON text. </p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per secret—50</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length—127 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length—255 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it
+        /// for Amazon Web Services use. You can't edit or delete tag names or values with this
+        /// prefix. Tags with this prefix do not count against your tags per secret limit.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you use your tagging schema across multiple services and resources,
+        /// remember other services might have restrictions on allowed characters. Generally
+        /// allowed characters: letters, spaces, and numbers representable in UTF-8, plus the
+        /// following special characters: + - = . _ : / @.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -312,6 +505,12 @@ pub mod create_secret_input {
             self.tags = input;
             self
         }
+        /// Appends an item to `add_replica_regions`.
+        ///
+        /// To override the contents of this collection use [`set_add_replica_regions`](Self::set_add_replica_regions).
+        ///
+        /// <p>(Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the list of regions specified in
+        /// the parameter.</p>
         pub fn add_replica_regions(
             mut self,
             input: impl Into<crate::model::ReplicaRegionType>,
@@ -321,6 +520,8 @@ pub mod create_secret_input {
             self.add_replica_regions = Some(v);
             self
         }
+        /// <p>(Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the list of regions specified in
+        /// the parameter.</p>
         pub fn set_add_replica_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReplicaRegionType>>,
@@ -334,6 +535,8 @@ pub mod create_secret_input {
             self.force_overwrite_replica_secret = Some(input);
             self
         }
+        /// <p>(Optional) If set, the replication overwrites a secret with the same name in the
+        /// destination region.</p>
         pub fn set_force_overwrite_replica_secret(
             mut self,
             input: std::option::Option<bool>,
@@ -344,8 +547,10 @@ pub mod create_secret_input {
         /// Consumes the builder and constructs a [`CreateSecretInput`](crate::input::CreateSecretInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateSecretInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateSecretInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateSecretInput {
                 name: self.name,
                 client_request_token: self.client_request_token,
@@ -373,16 +578,16 @@ impl CreateSecretInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateSecret,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateSecretInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -390,7 +595,7 @@ impl CreateSecretInput {
         fn update_http_builder(
             input: &crate::input::CreateSecretInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -399,15 +604,15 @@ impl CreateSecretInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateSecretInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.CreateSecret",
@@ -417,16 +622,16 @@ impl CreateSecretInput {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_secret(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -449,25 +654,27 @@ impl CreateSecretInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateSecret::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateSecret",
-                    "secretsmanager",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateSecret::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateSecret",
+            "secretsmanager",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -498,6 +705,10 @@ pub mod delete_resource_policy_input {
             self.secret_id = Some(input.into());
             self
         }
+        /// <p>Specifies the secret that you want to delete the attached resource-based policy for. You
+        /// can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -507,7 +718,7 @@ pub mod delete_resource_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteResourcePolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteResourcePolicyInput {
                 secret_id: self.secret_id,
@@ -526,16 +737,16 @@ impl DeleteResourcePolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteResourcePolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteResourcePolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -543,7 +754,7 @@ impl DeleteResourcePolicyInput {
         fn update_http_builder(
             input: &crate::input::DeleteResourcePolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -552,32 +763,32 @@ impl DeleteResourcePolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteResourcePolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.DeleteResourcePolicy",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_resource_policy(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -600,15 +811,15 @@ impl DeleteResourcePolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteResourcePolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteResourcePolicy",
             "secretsmanager",
         ));
@@ -617,10 +828,10 @@ impl DeleteResourcePolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -653,6 +864,10 @@ pub mod delete_secret_input {
             self.secret_id = Some(input.into());
             self
         }
+        /// <p>Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or
+        /// the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -665,6 +880,10 @@ pub mod delete_secret_input {
             self.recovery_window_in_days = Some(input);
             self
         }
+        /// <p>(Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the
+        /// secret. You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code>
+        /// parameter in the same API call.</p>
+        /// <p>This value can range from 7 to 30 days with a default value of 30.</p>
         pub fn set_recovery_window_in_days(mut self, input: std::option::Option<i64>) -> Self {
             self.recovery_window_in_days = input;
             self
@@ -692,6 +911,25 @@ pub mod delete_secret_input {
             self.force_delete_without_recovery = Some(input);
             self
         }
+        /// <p>(Optional) Specifies that the secret is to be deleted without any recovery window. You
+        /// can't use both this parameter and the <code>RecoveryWindowInDays</code> parameter in the same
+        /// API call.</p>
+        /// <p>An asynchronous background process performs the actual deletion, so there can be a short
+        /// delay before the operation completes. If you write code to delete and then immediately
+        /// recreate a secret with the same name, ensure that your code includes appropriate back off and
+        /// retry logic.</p>
+        /// <important>
+        /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal
+        /// waiting period before the permanent deletion that Amazon Web Services would normally impose with the
+        /// <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the
+        /// <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover
+        /// the secret. You lose the secret permanently.</p>
+        /// </important>
+        /// <important>
+        /// <p>If you use this parameter and include a previously deleted or nonexistent secret, the
+        /// operation does not return the error <code>ResourceNotFoundException</code> in order to
+        /// correctly handle retries.</p>
+        /// </important>
         pub fn set_force_delete_without_recovery(
             mut self,
             input: std::option::Option<bool>,
@@ -702,8 +940,10 @@ pub mod delete_secret_input {
         /// Consumes the builder and constructs a [`DeleteSecretInput`](crate::input::DeleteSecretInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteSecretInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteSecretInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteSecretInput {
                 secret_id: self.secret_id,
                 recovery_window_in_days: self.recovery_window_in_days,
@@ -723,16 +963,16 @@ impl DeleteSecretInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteSecret,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteSecretInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -740,7 +980,7 @@ impl DeleteSecretInput {
         fn update_http_builder(
             input: &crate::input::DeleteSecretInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -749,31 +989,31 @@ impl DeleteSecretInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteSecretInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.DeleteSecret",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_secret(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -796,25 +1036,27 @@ impl DeleteSecretInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteSecret::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteSecret",
-                    "secretsmanager",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteSecret::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteSecret",
+            "secretsmanager",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -845,6 +1087,10 @@ pub mod describe_secret_input {
             self.secret_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the secret whose details you want to retrieve. You can specify either
+        /// the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -854,7 +1100,7 @@ pub mod describe_secret_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeSecretInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeSecretInput {
                 secret_id: self.secret_id,
@@ -873,16 +1119,16 @@ impl DescribeSecretInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeSecret,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeSecretInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -890,7 +1136,7 @@ impl DescribeSecretInput {
         fn update_http_builder(
             input: &crate::input::DescribeSecretInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -899,29 +1145,31 @@ impl DescribeSecretInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeSecretInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.DescribeSecret",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_secret(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -944,15 +1192,15 @@ impl DescribeSecretInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeSecret::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeSecret",
             "secretsmanager",
         ));
@@ -961,10 +1209,10 @@ impl DescribeSecretInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1000,6 +1248,8 @@ pub mod get_random_password_input {
             self.password_length = Some(input);
             self
         }
+        /// <p>The desired length of the generated password. The default value if you do not include this
+        /// parameter is 32 characters.</p>
         pub fn set_password_length(mut self, input: std::option::Option<i64>) -> Self {
             self.password_length = input;
             self
@@ -1010,6 +1260,8 @@ pub mod get_random_password_input {
             self.exclude_characters = Some(input.into());
             self
         }
+        /// <p>A string that includes characters that should not be included in the generated password.
+        /// The default is that all characters from the included sets can be used.</p>
         pub fn set_exclude_characters(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1023,6 +1275,8 @@ pub mod get_random_password_input {
             self.exclude_numbers = Some(input);
             self
         }
+        /// <p>Specifies that the generated password should not include digits. The default if you do not
+        /// include this switch parameter is that digits can be included.</p>
         pub fn set_exclude_numbers(mut self, input: std::option::Option<bool>) -> Self {
             self.exclude_numbers = input;
             self
@@ -1041,6 +1295,16 @@ pub mod get_random_password_input {
             self.exclude_punctuation = Some(input);
             self
         }
+        /// <p>Specifies that the generated password should not include punctuation characters. The
+        /// default if you do not include this switch parameter is that punctuation characters can be
+        /// included.</p>
+        /// <p>The following are the punctuation characters that <i>can</i> be included in
+        /// the generated password if you don't explicitly exclude them with
+        /// <code>ExcludeCharacters</code> or <code>ExcludePunctuation</code>:</p>
+        /// <p>
+        /// <code>! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | }
+        /// ~</code>
+        /// </p>
         pub fn set_exclude_punctuation(mut self, input: std::option::Option<bool>) -> Self {
             self.exclude_punctuation = input;
             self
@@ -1051,6 +1315,8 @@ pub mod get_random_password_input {
             self.exclude_uppercase = Some(input);
             self
         }
+        /// <p>Specifies that the generated password should not include uppercase letters. The default if
+        /// you do not include this switch parameter is that uppercase letters can be included.</p>
         pub fn set_exclude_uppercase(mut self, input: std::option::Option<bool>) -> Self {
             self.exclude_uppercase = input;
             self
@@ -1061,6 +1327,8 @@ pub mod get_random_password_input {
             self.exclude_lowercase = Some(input);
             self
         }
+        /// <p>Specifies that the generated password should not include lowercase letters. The default if
+        /// you do not include this switch parameter is that lowercase letters can be included.</p>
         pub fn set_exclude_lowercase(mut self, input: std::option::Option<bool>) -> Self {
             self.exclude_lowercase = input;
             self
@@ -1071,6 +1339,8 @@ pub mod get_random_password_input {
             self.include_space = Some(input);
             self
         }
+        /// <p>Specifies that the generated password can include the space character. The default if you
+        /// do not include this switch parameter is that the space character is not included.</p>
         pub fn set_include_space(mut self, input: std::option::Option<bool>) -> Self {
             self.include_space = input;
             self
@@ -1082,6 +1352,9 @@ pub mod get_random_password_input {
             self.require_each_included_type = Some(input);
             self
         }
+        /// <p>A boolean value that specifies whether the generated password must include at least one of
+        /// every allowed character type. The default value is <code>True</code> and the operation
+        /// requires at least one of every character type.</p>
         pub fn set_require_each_included_type(mut self, input: std::option::Option<bool>) -> Self {
             self.require_each_included_type = input;
             self
@@ -1091,7 +1364,7 @@ pub mod get_random_password_input {
             self,
         ) -> std::result::Result<
             crate::input::GetRandomPasswordInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetRandomPasswordInput {
                 password_length: self.password_length,
@@ -1117,16 +1390,16 @@ impl GetRandomPasswordInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetRandomPassword,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetRandomPasswordInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1134,7 +1407,7 @@ impl GetRandomPasswordInput {
         fn update_http_builder(
             input: &crate::input::GetRandomPasswordInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1143,32 +1416,32 @@ impl GetRandomPasswordInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetRandomPasswordInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.GetRandomPassword",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_random_password(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1191,15 +1464,15 @@ impl GetRandomPasswordInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetRandomPassword::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetRandomPassword",
             "secretsmanager",
         ));
@@ -1208,10 +1481,10 @@ impl GetRandomPasswordInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1242,6 +1515,10 @@ pub mod get_resource_policy_input {
             self.secret_id = Some(input.into());
             self
         }
+        /// <p>Specifies the secret that you want to retrieve the attached resource-based policy for. You
+        /// can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -1251,7 +1528,7 @@ pub mod get_resource_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::GetResourcePolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetResourcePolicyInput {
                 secret_id: self.secret_id,
@@ -1270,16 +1547,16 @@ impl GetResourcePolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetResourcePolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetResourcePolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1287,7 +1564,7 @@ impl GetResourcePolicyInput {
         fn update_http_builder(
             input: &crate::input::GetResourcePolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1296,32 +1573,32 @@ impl GetResourcePolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetResourcePolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.GetResourcePolicy",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_resource_policy(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1344,15 +1621,15 @@ impl GetResourcePolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetResourcePolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetResourcePolicy",
             "secretsmanager",
         ));
@@ -1361,10 +1638,10 @@ impl GetResourcePolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1397,6 +1674,10 @@ pub mod get_secret_value_input {
             self.secret_id = Some(input.into());
             self
         }
+        /// <p>Specifies the secret containing the version that you want to retrieve. You can specify
+        /// either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -1412,6 +1693,13 @@ pub mod get_secret_value_input {
             self.version_id = Some(input.into());
             self
         }
+        /// <p>Specifies the unique identifier of the version of the secret that you want to retrieve. If
+        /// you specify both this parameter and <code>VersionStage</code>,  the two parameters must refer
+        /// to the same secret version. If you don't specify either a <code>VersionStage</code> or
+        /// <code>VersionId</code> then the default is to perform the operation on the version with the
+        /// <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
+        /// <p>This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value with
+        /// 32 hexadecimal digits.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -1427,6 +1715,13 @@ pub mod get_secret_value_input {
             self.version_stage = Some(input.into());
             self
         }
+        /// <p>Specifies the secret version that you want to retrieve by the staging label attached to
+        /// the version.</p>
+        /// <p>Staging labels are used to keep track of different versions during the rotation process.
+        /// If you specify both this parameter and <code>VersionId</code>,  the two parameters must refer
+        /// to the same secret version . If you don't specify either a <code>VersionStage</code> or
+        /// <code>VersionId</code>, then the default is to perform the operation on the version with the
+        /// <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
         pub fn set_version_stage(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1439,7 +1734,7 @@ pub mod get_secret_value_input {
             self,
         ) -> std::result::Result<
             crate::input::GetSecretValueInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetSecretValueInput {
                 secret_id: self.secret_id,
@@ -1460,16 +1755,16 @@ impl GetSecretValueInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetSecretValue,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetSecretValueInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1477,7 +1772,7 @@ impl GetSecretValueInput {
         fn update_http_builder(
             input: &crate::input::GetSecretValueInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1486,32 +1781,32 @@ impl GetSecretValueInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetSecretValueInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.GetSecretValue",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_secret_value(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1534,15 +1829,15 @@ impl GetSecretValueInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetSecretValue::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetSecretValue",
             "secretsmanager",
         ));
@@ -1551,10 +1846,10 @@ impl GetSecretValueInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1592,6 +1887,14 @@ pub mod list_secrets_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>(Optional) Limits the number of results you want to include in
+        /// the response. If you don't include this parameter, it defaults to a value that's
+        /// specific to the operation. If additional items exist beyond the maximum you specify, the
+        /// <code>NextToken</code> response element is present and has a value (isn't null). Include
+        /// that value as the <code>NextToken</code> request parameter in the next call to the operation to
+        /// get the next part of the results. Note that Secrets Manager might return fewer results than the maximum
+        /// even when there are more results available. You should check <code>NextToken</code> after every
+        /// operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1604,16 +1907,26 @@ pub mod list_secrets_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>(Optional) Use this parameter in a request if you receive a
+        /// <code>NextToken</code> response in a previous request indicating there's more
+        /// output available. In a subsequent call, set it to the value of the previous call
+        /// <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Lists the secret request filters.</p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Lists the secret request filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -1626,6 +1939,7 @@ pub mod list_secrets_input {
             self.sort_order = Some(input);
             self
         }
+        /// <p>Lists secrets in the requested order. </p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrderType>,
@@ -1636,8 +1950,10 @@ pub mod list_secrets_input {
         /// Consumes the builder and constructs a [`ListSecretsInput`](crate::input::ListSecretsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListSecretsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListSecretsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListSecretsInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -1658,16 +1974,16 @@ impl ListSecretsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListSecrets,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListSecretsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1675,7 +1991,7 @@ impl ListSecretsInput {
         fn update_http_builder(
             input: &crate::input::ListSecretsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1684,29 +2000,31 @@ impl ListSecretsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListSecretsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.ListSecrets",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_secrets(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1729,25 +2047,27 @@ impl ListSecretsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListSecrets::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListSecrets",
-                    "secretsmanager",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListSecrets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListSecrets",
+            "secretsmanager",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1781,6 +2101,10 @@ pub mod list_secret_version_ids_input {
             self.secret_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the secret containing the versions you want to list. You can specify
+        /// either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -1797,6 +2121,14 @@ pub mod list_secret_version_ids_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>(Optional) Limits the number of results you want to include in
+        /// the response. If you don't include this parameter, it defaults to a value that's
+        /// specific to the operation. If additional items exist beyond the maximum you specify, the
+        /// <code>NextToken</code> response element is present and has a value (isn't null). Include
+        /// that value as the <code>NextToken</code> request parameter in the next call to the operation to
+        /// get the next part of the results. Note that Secrets Manager might return fewer results than the maximum
+        /// even when there are more results available. You should check <code>NextToken</code> after every
+        /// operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1809,6 +2141,10 @@ pub mod list_secret_version_ids_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>(Optional) Use this parameter in a request if you receive a
+        /// <code>NextToken</code> response in a previous request indicating there's more
+        /// output available. In a subsequent call, set it to the value of the previous call
+        /// <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1820,6 +2156,9 @@ pub mod list_secret_version_ids_input {
             self.include_deprecated = Some(input);
             self
         }
+        /// <p>(Optional) Specifies that you want the results to include versions that do not have any
+        /// staging labels attached to them. Such versions are considered deprecated and are subject to
+        /// deletion by Secrets Manager as needed.</p>
         pub fn set_include_deprecated(mut self, input: std::option::Option<bool>) -> Self {
             self.include_deprecated = input;
             self
@@ -1829,7 +2168,7 @@ pub mod list_secret_version_ids_input {
             self,
         ) -> std::result::Result<
             crate::input::ListSecretVersionIdsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListSecretVersionIdsInput {
                 secret_id: self.secret_id,
@@ -1851,16 +2190,16 @@ impl ListSecretVersionIdsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListSecretVersionIds,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListSecretVersionIdsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1868,7 +2207,7 @@ impl ListSecretVersionIdsInput {
         fn update_http_builder(
             input: &crate::input::ListSecretVersionIdsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1877,32 +2216,34 @@ impl ListSecretVersionIdsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListSecretVersionIdsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.ListSecretVersionIds",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_secret_version_ids(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1925,15 +2266,15 @@ impl ListSecretVersionIdsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListSecretVersionIds::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListSecretVersionIds",
             "secretsmanager",
         ));
@@ -1942,10 +2283,10 @@ impl ListSecretVersionIdsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1978,6 +2319,10 @@ pub mod put_resource_policy_input {
             self.secret_id = Some(input.into());
             self
         }
+        /// <p>Specifies the secret that you want to attach the resource-based policy. You can specify
+        /// either the ARN or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -1991,6 +2336,11 @@ pub mod put_resource_policy_input {
             self.resource_policy = Some(input.into());
             self
         }
+        /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services
+        /// resource-based policy. The policy in the string identifies who can access or manage this
+        /// secret and its versions. For information on how to format a JSON parameter for the various
+        /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+        /// JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
         pub fn set_resource_policy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2004,6 +2354,8 @@ pub mod put_resource_policy_input {
             self.block_public_policy = Some(input);
             self
         }
+        /// <p>(Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you
+        /// block resource-based policies that allow broad access to the secret.</p>
         pub fn set_block_public_policy(mut self, input: std::option::Option<bool>) -> Self {
             self.block_public_policy = input;
             self
@@ -2013,7 +2365,7 @@ pub mod put_resource_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::PutResourcePolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutResourcePolicyInput {
                 secret_id: self.secret_id,
@@ -2034,16 +2386,16 @@ impl PutResourcePolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutResourcePolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutResourcePolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2051,7 +2403,7 @@ impl PutResourcePolicyInput {
         fn update_http_builder(
             input: &crate::input::PutResourcePolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2060,32 +2412,32 @@ impl PutResourcePolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutResourcePolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.PutResourcePolicy",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_resource_policy(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2108,15 +2460,15 @@ impl PutResourcePolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutResourcePolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutResourcePolicy",
             "secretsmanager",
         ));
@@ -2125,10 +2477,10 @@ impl PutResourcePolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2150,7 +2502,7 @@ pub mod put_secret_value_input {
     pub struct Builder {
         pub(crate) secret_id: std::option::Option<std::string::String>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
-        pub(crate) secret_binary: std::option::Option<smithy_types::Blob>,
+        pub(crate) secret_binary: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) secret_string: std::option::Option<std::string::String>,
         pub(crate) version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -2164,6 +2516,11 @@ pub mod put_secret_value_input {
             self.secret_id = Some(input.into());
             self
         }
+        /// <p>Specifies the secret to which you want to add a new version. You can specify either the
+        /// Amazon Resource Name (ARN) or the friendly name of the secret. The secret must already
+        /// exist.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -2202,6 +2559,36 @@ pub mod put_secret_value_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>(Optional) Specifies a unique identifier for the new version of the secret. </p>
+        /// <note>
+        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
+        /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
+        /// in the request. If you don't use the SDK and instead generate a raw HTTP request to the
+        /// Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself
+        /// for new versions and include that value in the request. </p>
+        /// </note>
+        /// <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental
+        /// creation of duplicate versions if there are failures and retries during the Lambda rotation
+        /// function's processing. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to
+        /// ensure uniqueness within the specified secret. </p>
+        /// <ul>
+        /// <li>
+        /// <p>If the <code>ClientRequestToken</code> value isn't already associated with a version
+        /// of the secret then a new version of the secret is created. </p>
+        /// </li>
+        /// <li>
+        /// <p>If a version with this value already exists and that version's
+        /// <code>SecretString</code> or <code>SecretBinary</code> values are the same as those in
+        /// the request then the request is ignored (the operation is idempotent). </p>
+        /// </li>
+        /// <li>
+        /// <p>If a version with this value already exists and the version of the
+        /// <code>SecretString</code> and <code>SecretBinary</code> values are different from those
+        /// in the request then the request fails because you cannot modify an existing secret
+        /// version. You can only create new versions to store new secret values.</p>
+        /// </li>
+        /// </ul>
+        /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2214,19 +2601,32 @@ pub mod put_secret_value_input {
         /// binary data in a file and then use the appropriate technique for your tool to pass the
         /// contents of the file as a parameter. Either <code>SecretBinary</code> or
         /// <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
+        ///
         /// <p>This parameter is not accessible if the secret using the Secrets Manager console.</p>
         /// <p></p>
-        pub fn secret_binary(mut self, input: smithy_types::Blob) -> Self {
+        pub fn secret_binary(mut self, input: aws_smithy_types::Blob) -> Self {
             self.secret_binary = Some(input);
             self
         }
-        pub fn set_secret_binary(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of
+        /// the secret. To use this parameter in the command-line tools, we recommend that you store your
+        /// binary data in a file and then use the appropriate technique for your tool to pass the
+        /// contents of the file as a parameter. Either <code>SecretBinary</code> or
+        /// <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
+        ///
+        /// <p>This parameter is not accessible if the secret using the Secrets Manager console.</p>
+        /// <p></p>
+        pub fn set_secret_binary(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
             self.secret_binary = input;
             self
         }
         /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of
         /// the secret. Either <code>SecretString</code> or <code>SecretBinary</code> must have a value,
         /// but not both. They cannot both be empty.</p>
+        ///
         /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the
         /// protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console
         /// stores the information as a JSON structure of key/value pairs that the default Lambda rotation
@@ -2238,6 +2638,17 @@ pub mod put_secret_value_input {
             self.secret_string = Some(input.into());
             self
         }
+        /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of
+        /// the secret. Either <code>SecretString</code> or <code>SecretBinary</code> must have a value,
+        /// but not both. They cannot both be empty.</p>
+        ///
+        /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the
+        /// protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console
+        /// stores the information as a JSON structure of key/value pairs that the default Lambda rotation
+        /// function knows how to parse.</p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text
+        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
+        /// in the Amazon Web Services CLI User Guide.</p>
         pub fn set_secret_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2245,12 +2656,32 @@ pub mod put_secret_value_input {
             self.secret_string = input;
             self
         }
+        /// Appends an item to `version_stages`.
+        ///
+        /// To override the contents of this collection use [`set_version_stages`](Self::set_version_stages).
+        ///
+        /// <p>(Optional) Specifies a list of staging labels that are attached to this version of the
+        /// secret. These staging labels are used to track the versions through the rotation process by
+        /// the Lambda rotation function.</p>
+        /// <p>A staging label must be unique to a single version of the secret. If you specify a staging
+        /// label that's already associated with a different version of the same secret then that staging
+        /// label is automatically removed from the other version and attached to this version.</p>
+        /// <p>If you do not specify a value for <code>VersionStages</code> then Secrets Manager automatically
+        /// moves the staging label <code>AWSCURRENT</code> to this new version.</p>
         pub fn version_stages(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.version_stages.unwrap_or_default();
             v.push(input.into());
             self.version_stages = Some(v);
             self
         }
+        /// <p>(Optional) Specifies a list of staging labels that are attached to this version of the
+        /// secret. These staging labels are used to track the versions through the rotation process by
+        /// the Lambda rotation function.</p>
+        /// <p>A staging label must be unique to a single version of the secret. If you specify a staging
+        /// label that's already associated with a different version of the same secret then that staging
+        /// label is automatically removed from the other version and attached to this version.</p>
+        /// <p>If you do not specify a value for <code>VersionStages</code> then Secrets Manager automatically
+        /// moves the staging label <code>AWSCURRENT</code> to this new version.</p>
         pub fn set_version_stages(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2263,7 +2694,7 @@ pub mod put_secret_value_input {
             self,
         ) -> std::result::Result<
             crate::input::PutSecretValueInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutSecretValueInput {
                 secret_id: self.secret_id,
@@ -2286,16 +2717,16 @@ impl PutSecretValueInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutSecretValue,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutSecretValueInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2303,7 +2734,7 @@ impl PutSecretValueInput {
         fn update_http_builder(
             input: &crate::input::PutSecretValueInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2312,15 +2743,15 @@ impl PutSecretValueInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutSecretValueInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.PutSecretValue",
@@ -2330,17 +2761,17 @@ impl PutSecretValueInput {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_secret_value(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2363,15 +2794,15 @@ impl PutSecretValueInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutSecretValue::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutSecretValue",
             "secretsmanager",
         ));
@@ -2380,10 +2811,10 @@ impl PutSecretValueInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2412,16 +2843,23 @@ pub mod remove_regions_from_replication_input {
             self.secret_id = Some(input.into());
             self
         }
+        /// <p>Remove a secret by <code>SecretId</code> from replica Regions.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
         }
+        /// Appends an item to `remove_replica_regions`.
+        ///
+        /// To override the contents of this collection use [`set_remove_replica_regions`](Self::set_remove_replica_regions).
+        ///
+        /// <p>Remove replication from specific Regions.</p>
         pub fn remove_replica_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.remove_replica_regions.unwrap_or_default();
             v.push(input.into());
             self.remove_replica_regions = Some(v);
             self
         }
+        /// <p>Remove replication from specific Regions.</p>
         pub fn set_remove_replica_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2434,7 +2872,7 @@ pub mod remove_regions_from_replication_input {
             self,
         ) -> std::result::Result<
             crate::input::RemoveRegionsFromReplicationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RemoveRegionsFromReplicationInput {
                 secret_id: self.secret_id,
@@ -2455,16 +2893,16 @@ impl RemoveRegionsFromReplicationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RemoveRegionsFromReplication,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RemoveRegionsFromReplicationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2472,7 +2910,7 @@ impl RemoveRegionsFromReplicationInput {
         fn update_http_builder(
             input: &crate::input::RemoveRegionsFromReplicationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2481,30 +2919,30 @@ impl RemoveRegionsFromReplicationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RemoveRegionsFromReplicationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.RemoveRegionsFromReplication",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_regions_from_replication(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_remove_regions_from_replication(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2527,15 +2965,15 @@ impl RemoveRegionsFromReplicationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RemoveRegionsFromReplication::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RemoveRegionsFromReplication",
             "secretsmanager",
         ));
@@ -2544,10 +2982,10 @@ impl RemoveRegionsFromReplicationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2578,10 +3016,16 @@ pub mod replicate_secret_to_regions_input {
             self.secret_id = Some(input.into());
             self
         }
+        /// <p>Use the <code>Secret Id</code> to replicate a secret to regions.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
         }
+        /// Appends an item to `add_replica_regions`.
+        ///
+        /// To override the contents of this collection use [`set_add_replica_regions`](Self::set_add_replica_regions).
+        ///
+        /// <p>Add Regions to replicate the secret.</p>
         pub fn add_replica_regions(
             mut self,
             input: impl Into<crate::model::ReplicaRegionType>,
@@ -2591,6 +3035,7 @@ pub mod replicate_secret_to_regions_input {
             self.add_replica_regions = Some(v);
             self
         }
+        /// <p>Add Regions to replicate the secret.</p>
         pub fn set_add_replica_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReplicaRegionType>>,
@@ -2604,6 +3049,8 @@ pub mod replicate_secret_to_regions_input {
             self.force_overwrite_replica_secret = Some(input);
             self
         }
+        /// <p>(Optional) If set, Secrets Manager replication overwrites a secret with the same name in the
+        /// destination region.</p>
         pub fn set_force_overwrite_replica_secret(
             mut self,
             input: std::option::Option<bool>,
@@ -2616,7 +3063,7 @@ pub mod replicate_secret_to_regions_input {
             self,
         ) -> std::result::Result<
             crate::input::ReplicateSecretToRegionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ReplicateSecretToRegionsInput {
                 secret_id: self.secret_id,
@@ -2640,16 +3087,16 @@ impl ReplicateSecretToRegionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ReplicateSecretToRegions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ReplicateSecretToRegionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2657,7 +3104,7 @@ impl ReplicateSecretToRegionsInput {
         fn update_http_builder(
             input: &crate::input::ReplicateSecretToRegionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2666,32 +3113,34 @@ impl ReplicateSecretToRegionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ReplicateSecretToRegionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.ReplicateSecretToRegions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_replicate_secret_to_regions(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2714,15 +3163,15 @@ impl ReplicateSecretToRegionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ReplicateSecretToRegions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ReplicateSecretToRegions",
             "secretsmanager",
         ));
@@ -2731,10 +3180,10 @@ impl ReplicateSecretToRegionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2765,6 +3214,10 @@ pub mod restore_secret_input {
             self.secret_id = Some(input.into());
             self
         }
+        /// <p>Specifies the secret that you want to restore from a previously scheduled deletion. You
+        /// can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -2772,8 +3225,10 @@ pub mod restore_secret_input {
         /// Consumes the builder and constructs a [`RestoreSecretInput`](crate::input::RestoreSecretInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::RestoreSecretInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RestoreSecretInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RestoreSecretInput {
                 secret_id: self.secret_id,
             })
@@ -2791,16 +3246,16 @@ impl RestoreSecretInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RestoreSecret,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RestoreSecretInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2808,7 +3263,7 @@ impl RestoreSecretInput {
         fn update_http_builder(
             input: &crate::input::RestoreSecretInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2817,29 +3272,31 @@ impl RestoreSecretInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RestoreSecretInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.RestoreSecret",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_restore_secret(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2862,25 +3319,27 @@ impl RestoreSecretInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::RestoreSecret::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "RestoreSecret",
-                    "secretsmanager",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RestoreSecret::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RestoreSecret",
+            "secretsmanager",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2914,6 +3373,10 @@ pub mod rotate_secret_input {
             self.secret_id = Some(input.into());
             self
         }
+        /// <p>Specifies the secret that you want to rotate. You can specify either the Amazon Resource
+        /// Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -2936,6 +3399,20 @@ pub mod rotate_secret_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>(Optional) Specifies a unique identifier for the new version of the secret that helps
+        /// ensure idempotency. </p>
+        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
+        /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
+        /// in the request for this parameter. If you don't use the SDK and instead generate a raw HTTP
+        /// request to the Secrets Manager service endpoint, then you must generate a
+        /// <code>ClientRequestToken</code> yourself for new versions and include that value in the
+        /// request.</p>
+        /// <p>You only need to specify your own value if you implement your own retry logic and want to
+        /// ensure that a given secret is not created twice. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to
+        /// ensure uniqueness within the specified secret. </p>
+        /// <p>Secrets Manager uses this value to prevent the accidental creation of duplicate versions if
+        /// there are failures and retries during the function's processing. This value becomes the
+        /// <code>VersionId</code> of the new version.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2948,6 +3425,7 @@ pub mod rotate_secret_input {
             self.rotation_lambda_arn = Some(input.into());
             self
         }
+        /// <p>(Optional) Specifies the ARN of the Lambda function that can rotate the secret.</p>
         pub fn set_rotation_lambda_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2960,6 +3438,7 @@ pub mod rotate_secret_input {
             self.rotation_rules = Some(input);
             self
         }
+        /// <p>A structure that defines the rotation configuration for this secret.</p>
         pub fn set_rotation_rules(
             mut self,
             input: std::option::Option<crate::model::RotationRulesType>,
@@ -2970,8 +3449,10 @@ pub mod rotate_secret_input {
         /// Consumes the builder and constructs a [`RotateSecretInput`](crate::input::RotateSecretInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::RotateSecretInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RotateSecretInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RotateSecretInput {
                 secret_id: self.secret_id,
                 client_request_token: self.client_request_token,
@@ -2992,16 +3473,16 @@ impl RotateSecretInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RotateSecret,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RotateSecretInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3009,7 +3490,7 @@ impl RotateSecretInput {
         fn update_http_builder(
             input: &crate::input::RotateSecretInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3018,15 +3499,15 @@ impl RotateSecretInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RotateSecretInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.RotateSecret",
@@ -3036,16 +3517,16 @@ impl RotateSecretInput {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_rotate_secret(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3068,25 +3549,27 @@ impl RotateSecretInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::RotateSecret::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "RotateSecret",
-                    "secretsmanager",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RotateSecret::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RotateSecret",
+            "secretsmanager",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3114,6 +3597,7 @@ pub mod stop_replication_to_replica_input {
             self.secret_id = Some(input.into());
             self
         }
+        /// <p>Response to <code>StopReplicationToReplica</code> of a secret, based on the <code>SecretId</code>.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -3123,7 +3607,7 @@ pub mod stop_replication_to_replica_input {
             self,
         ) -> std::result::Result<
             crate::input::StopReplicationToReplicaInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StopReplicationToReplicaInput {
                 secret_id: self.secret_id,
@@ -3143,16 +3627,16 @@ impl StopReplicationToReplicaInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StopReplicationToReplica,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StopReplicationToReplicaInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3160,7 +3644,7 @@ impl StopReplicationToReplicaInput {
         fn update_http_builder(
             input: &crate::input::StopReplicationToReplicaInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3169,32 +3653,34 @@ impl StopReplicationToReplicaInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StopReplicationToReplicaInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.StopReplicationToReplica",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_replication_to_replica(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3217,15 +3703,15 @@ impl StopReplicationToReplicaInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StopReplicationToReplica::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StopReplicationToReplica",
             "secretsmanager",
         ));
@@ -3234,10 +3720,10 @@ impl StopReplicationToReplicaInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3269,16 +3755,36 @@ pub mod tag_resource_input {
             self.secret_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the secret that you want to attach tags to. You can specify either the
+        /// Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to attach to the secret. Each element in the list consists of a <code>Key</code>
+        /// and a <code>Value</code>.</p>
+        /// <p>This parameter to the API requires a JSON text string argument.</p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text
+        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
+        /// in the Amazon Web Services CLI User Guide.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags to attach to the secret. Each element in the list consists of a <code>Key</code>
+        /// and a <code>Value</code>.</p>
+        /// <p>This parameter to the API requires a JSON text string argument.</p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text
+        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
+        /// in the Amazon Web Services CLI User Guide.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3289,8 +3795,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 secret_id: self.secret_id,
                 tags: self.tags,
@@ -3309,16 +3817,16 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3326,7 +3834,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3335,29 +3843,31 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.TagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3380,25 +3890,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "secretsmanager",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "secretsmanager",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3430,16 +3942,36 @@ pub mod untag_resource_input {
             self.secret_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the secret that you want to remove tags from. You can specify either
+        /// the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>A list of tag key names to remove from the secret. You don't specify the value. Both the
+        /// key and its associated value are removed.</p>
+        /// <p>This parameter to the API requires a JSON text string argument.</p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text
+        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
+        /// in the Amazon Web Services CLI User Guide.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>A list of tag key names to remove from the secret. You don't specify the value. Both the
+        /// key and its associated value are removed.</p>
+        /// <p>This parameter to the API requires a JSON text string argument.</p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text
+        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
+        /// in the Amazon Web Services CLI User Guide.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3450,8 +3982,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 secret_id: self.secret_id,
                 tag_keys: self.tag_keys,
@@ -3470,16 +4004,16 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3487,7 +4021,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3496,29 +4030,31 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.UntagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3541,25 +4077,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "secretsmanager",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "secretsmanager",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3583,7 +4121,7 @@ pub mod update_secret_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
-        pub(crate) secret_binary: std::option::Option<smithy_types::Blob>,
+        pub(crate) secret_binary: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) secret_string: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3596,6 +4134,11 @@ pub mod update_secret_input {
             self.secret_id = Some(input.into());
             self
         }
+        /// <p>Specifies the secret that you want to modify or to which you want to add a new version.
+        /// You can specify either the Amazon Resource Name (ARN) or the friendly name of the
+        /// secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -3634,6 +4177,36 @@ pub mod update_secret_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>(Optional) If you want to add a new version to the secret, this parameter specifies a
+        /// unique identifier for the new version that helps ensure idempotency. </p>
+        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
+        /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
+        /// in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
+        /// service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new
+        /// versions and include that value in the request.</p>
+        /// <p>You typically only need to interact with this value if you implement your own retry logic
+        /// and want to ensure that a given secret is not created twice. We recommend that you generate a
+        /// <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
+        /// value to ensure uniqueness within the specified secret. </p>
+        /// <p>Secrets Manager uses this value to prevent the accidental creation of duplicate versions if
+        /// there are failures and retries during the Lambda rotation function's processing.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If the <code>ClientRequestToken</code> value isn't already associated with a version
+        /// of the secret then a new version of the secret is created. </p>
+        /// </li>
+        /// <li>
+        /// <p>If a version with this value already exists and that version's
+        /// <code>SecretString</code> and <code>SecretBinary</code> values are the same as those in
+        /// the request then the request is ignored (the operation is idempotent). </p>
+        /// </li>
+        /// <li>
+        /// <p>If a version with this value already exists and that version's
+        /// <code>SecretString</code> and <code>SecretBinary</code> values are different from the
+        /// request then an error occurs because you cannot modify an existing secret value.</p>
+        /// </li>
+        /// </ul>
+        /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3646,6 +4219,7 @@ pub mod update_secret_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>(Optional) Specifies an updated user-provided description of the secret.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3664,6 +4238,16 @@ pub mod update_secret_input {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS customer master key (CMK) that Secrets Manager
+        /// uses to encrypt the protected text in new versions of this secret as well as any existing versions of this secret that have the staging labels AWSCURRENT, AWSPENDING, or AWSPREVIOUS. For more information about staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/terms-concepts.html#term_staging-label">Staging
+        /// Labels</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
+        /// <important>
+        /// <p>You can only use the account's default CMK to encrypt and decrypt if you call this
+        /// operation using credentials from the same account that owns the secret. If the secret is in
+        /// a different account, then you must create a custom CMK and provide the ARN of that CMK in
+        /// this field. The user making the call must have permissions to both the secret and the CMK in
+        /// their respective accounts.</p>
+        /// </important>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -3674,11 +4258,20 @@ pub mod update_secret_input {
         /// the contents of the file as a parameter. Either <code>SecretBinary</code> or
         /// <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
         /// <p>This parameter is not accessible using the Secrets Manager console.</p>
-        pub fn secret_binary(mut self, input: smithy_types::Blob) -> Self {
+        pub fn secret_binary(mut self, input: aws_smithy_types::Blob) -> Self {
             self.secret_binary = Some(input);
             self
         }
-        pub fn set_secret_binary(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>(Optional) Specifies updated binary data that you want to encrypt and store in the new
+        /// version of the secret. To use this parameter in the command-line tools, we recommend that you
+        /// store your binary data in a file and then use the appropriate technique for your tool to pass
+        /// the contents of the file as a parameter. Either <code>SecretBinary</code> or
+        /// <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
+        /// <p>This parameter is not accessible using the Secrets Manager console.</p>
+        pub fn set_secret_binary(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
             self.secret_binary = input;
             self
         }
@@ -3696,6 +4289,16 @@ pub mod update_secret_input {
             self.secret_string = Some(input.into());
             self
         }
+        /// <p>(Optional) Specifies updated text data that you want to encrypt and store in this new
+        /// version of the secret. Either <code>SecretBinary</code> or <code>SecretString</code> must have
+        /// a value, but not both. They cannot both be empty.</p>
+        /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the
+        /// protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console
+        /// stores the information as a JSON structure of key/value pairs that the default Lambda rotation
+        /// function knows how to parse.</p>
+        /// <p>For storing multiple values, we recommend that you use a JSON text
+        /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
+        /// in the Amazon Web Services CLI User Guide.</p>
         pub fn set_secret_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3706,8 +4309,10 @@ pub mod update_secret_input {
         /// Consumes the builder and constructs a [`UpdateSecretInput`](crate::input::UpdateSecretInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateSecretInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateSecretInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateSecretInput {
                 secret_id: self.secret_id,
                 client_request_token: self.client_request_token,
@@ -3730,16 +4335,16 @@ impl UpdateSecretInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateSecret,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateSecretInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3747,7 +4352,7 @@ impl UpdateSecretInput {
         fn update_http_builder(
             input: &crate::input::UpdateSecretInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3756,15 +4361,15 @@ impl UpdateSecretInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateSecretInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.UpdateSecret",
@@ -3774,16 +4379,16 @@ impl UpdateSecretInput {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_secret(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3806,25 +4411,27 @@ impl UpdateSecretInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateSecret::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateSecret",
-                    "secretsmanager",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateSecret::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateSecret",
+            "secretsmanager",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3859,6 +4466,11 @@ pub mod update_secret_version_stage_input {
             self.secret_id = Some(input.into());
             self
         }
+        /// <p>Specifies the secret with the version with the list of staging labels you want to modify.
+        /// You can specify either the Amazon Resource Name (ARN) or the friendly name of the
+        /// secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -3868,6 +4480,7 @@ pub mod update_secret_version_stage_input {
             self.version_stage = Some(input.into());
             self
         }
+        /// <p>The staging label to add to this version.</p>
         pub fn set_version_stage(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3884,6 +4497,11 @@ pub mod update_secret_version_stage_input {
             self.remove_from_version_id = Some(input.into());
             self
         }
+        /// <p>Specifies the secret version ID of the version that the staging label is to be removed
+        /// from. If the staging label you are trying to attach to one version is already attached to a
+        /// different version, then you must include this parameter and specify the version that the label
+        /// is to be removed from. If the label is attached and you either do not specify this parameter,
+        /// or the version ID does not match, then the operation fails.</p>
         pub fn set_remove_from_version_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3899,6 +4517,10 @@ pub mod update_secret_version_stage_input {
             self.move_to_version_id = Some(input.into());
             self
         }
+        /// <p>(Optional) The secret version ID that you want to add the staging label. If you want to
+        /// remove a label from a version, then do not specify this parameter.</p>
+        /// <p>If the staging label is already attached to a different version of the secret, then you
+        /// must also specify the <code>RemoveFromVersionId</code> parameter. </p>
         pub fn set_move_to_version_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3911,7 +4533,7 @@ pub mod update_secret_version_stage_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateSecretVersionStageInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateSecretVersionStageInput {
                 secret_id: self.secret_id,
@@ -3934,16 +4556,16 @@ impl UpdateSecretVersionStageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateSecretVersionStage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateSecretVersionStageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3951,7 +4573,7 @@ impl UpdateSecretVersionStageInput {
         fn update_http_builder(
             input: &crate::input::UpdateSecretVersionStageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3960,32 +4582,34 @@ impl UpdateSecretVersionStageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateSecretVersionStageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.UpdateSecretVersionStage",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_secret_version_stage(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4008,15 +4632,15 @@ impl UpdateSecretVersionStageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateSecretVersionStage::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateSecretVersionStage",
             "secretsmanager",
         ));
@@ -4025,10 +4649,10 @@ impl UpdateSecretVersionStageInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4061,6 +4685,11 @@ pub mod validate_resource_policy_input {
             self.secret_id = Some(input.into());
             self
         }
+        /// <p> (Optional) The identifier of the secret with the resource-based policy you want to
+        /// validate. You can specify either the Amazon Resource Name (ARN) or the friendly name of the
+        /// secret.</p>
+        /// <p>For an ARN, we recommend that you specify a complete ARN rather
+        /// than a partial ARN.</p>
         pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_id = input;
             self
@@ -4074,6 +4703,11 @@ pub mod validate_resource_policy_input {
             self.resource_policy = Some(input.into());
             self
         }
+        /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services
+        /// resource-based policy. The policy in the string identifies who can access or manage this
+        /// secret and its versions. For information on how to format a JSON parameter for the various
+        /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+        /// JSON for Parameters</a> in the <i>CLI User Guide</i>.publi</p>
         pub fn set_resource_policy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4086,7 +4720,7 @@ pub mod validate_resource_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::ValidateResourcePolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ValidateResourcePolicyInput {
                 secret_id: self.secret_id,
@@ -4106,16 +4740,16 @@ impl ValidateResourcePolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ValidateResourcePolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ValidateResourcePolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4123,7 +4757,7 @@ impl ValidateResourcePolicyInput {
         fn update_http_builder(
             input: &crate::input::ValidateResourcePolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4132,32 +4766,34 @@ impl ValidateResourcePolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ValidateResourcePolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "secretsmanager.ValidateResourcePolicy",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_validate_resource_policy(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4180,15 +4816,15 @@ impl ValidateResourcePolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ValidateResourcePolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ValidateResourcePolicy",
             "secretsmanager",
         ));
@@ -4197,10 +4833,10 @@ impl ValidateResourcePolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4214,6 +4850,7 @@ impl ValidateResourcePolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidateResourcePolicyInput {
@@ -4239,6 +4876,7 @@ impl std::fmt::Debug for ValidateResourcePolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSecretVersionStageInput {
@@ -4273,6 +4911,7 @@ impl std::fmt::Debug for UpdateSecretVersionStageInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSecretInput {
@@ -4332,7 +4971,7 @@ pub struct UpdateSecretInput {
     /// the contents of the file as a parameter. Either <code>SecretBinary</code> or
     /// <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
     /// <p>This parameter is not accessible using the Secrets Manager console.</p>
-    pub secret_binary: std::option::Option<smithy_types::Blob>,
+    pub secret_binary: std::option::Option<aws_smithy_types::Blob>,
     /// <p>(Optional) Specifies updated text data that you want to encrypt and store in this new
     /// version of the secret. Either <code>SecretBinary</code> or <code>SecretString</code> must have
     /// a value, but not both. They cannot both be empty.</p>
@@ -4358,6 +4997,7 @@ impl std::fmt::Debug for UpdateSecretInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -4383,6 +5023,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -4408,6 +5049,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopReplicationToReplicaInput {
@@ -4422,6 +5064,7 @@ impl std::fmt::Debug for StopReplicationToReplicaInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RotateSecretInput {
@@ -4461,6 +5104,7 @@ impl std::fmt::Debug for RotateSecretInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreSecretInput {
@@ -4478,6 +5122,7 @@ impl std::fmt::Debug for RestoreSecretInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicateSecretToRegionsInput {
@@ -4502,6 +5147,7 @@ impl std::fmt::Debug for ReplicateSecretToRegionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveRegionsFromReplicationInput {
@@ -4519,6 +5165,7 @@ impl std::fmt::Debug for RemoveRegionsFromReplicationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSecretValueInput {
@@ -4564,12 +5211,14 @@ pub struct PutSecretValueInput {
     /// binary data in a file and then use the appropriate technique for your tool to pass the
     /// contents of the file as a parameter. Either <code>SecretBinary</code> or
     /// <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
+    ///
     /// <p>This parameter is not accessible if the secret using the Secrets Manager console.</p>
     /// <p></p>
-    pub secret_binary: std::option::Option<smithy_types::Blob>,
+    pub secret_binary: std::option::Option<aws_smithy_types::Blob>,
     /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of
     /// the secret. Either <code>SecretString</code> or <code>SecretBinary</code> must have a value,
     /// but not both. They cannot both be empty.</p>
+    ///
     /// <p>If you create this secret by using the Secrets Manager console then Secrets Manager puts the
     /// protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console
     /// stores the information as a JSON structure of key/value pairs that the default Lambda rotation
@@ -4600,6 +5249,7 @@ impl std::fmt::Debug for PutSecretValueInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyInput {
@@ -4628,6 +5278,7 @@ impl std::fmt::Debug for PutResourcePolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecretVersionIdsInput {
@@ -4666,6 +5317,7 @@ impl std::fmt::Debug for ListSecretVersionIdsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecretsInput {
@@ -4699,6 +5351,7 @@ impl std::fmt::Debug for ListSecretsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSecretValueInput {
@@ -4734,6 +5387,7 @@ impl std::fmt::Debug for GetSecretValueInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePolicyInput {
@@ -4751,6 +5405,7 @@ impl std::fmt::Debug for GetResourcePolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRandomPasswordInput {
@@ -4806,6 +5461,7 @@ impl std::fmt::Debug for GetRandomPasswordInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSecretInput {
@@ -4823,6 +5479,7 @@ impl std::fmt::Debug for DescribeSecretInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSecretInput {
@@ -4870,6 +5527,7 @@ impl std::fmt::Debug for DeleteSecretInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourcePolicyInput {
@@ -4887,6 +5545,7 @@ impl std::fmt::Debug for DeleteResourcePolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSecretInput {
@@ -4959,7 +5618,7 @@ pub struct CreateSecretInput {
     /// both. They cannot both be empty.</p>
     /// <p>This parameter is not available using the Secrets Manager console. It can be accessed only by
     /// using the Amazon Web Services CLI or one of the Amazon Web Services SDKs.</p>
-    pub secret_binary: std::option::Option<smithy_types::Blob>,
+    pub secret_binary: std::option::Option<aws_smithy_types::Blob>,
     /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of
     /// the secret.</p>
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not
@@ -5051,6 +5710,7 @@ impl std::fmt::Debug for CreateSecretInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelRotateSecretInput {

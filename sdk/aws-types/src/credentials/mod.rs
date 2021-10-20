@@ -50,8 +50,8 @@
 //! /// Parse access key and secret from the first two lines of a string
 //! fn parse_credentials(creds: &str) -> credentials::Result {
 //!     let mut lines = creds.lines();
-//!     let akid = lines.next().ok_or(CredentialsError::ProviderError("invalid credentials".into()))?;
-//!     let secret = lines.next().ok_or(CredentialsError::ProviderError("invalid credentials".into()))?;
+//!     let akid = lines.next().ok_or(CredentialsError::provider_error("invalid credentials"))?;
+//!     let secret = lines.next().ok_or(CredentialsError::provider_error("invalid credentials"))?;
 //!     Ok(Credentials::new(akid, secret, None, None, "CustomCommand"))
 //! }
 //!

@@ -43,6 +43,7 @@ pub mod tag_option_detail {
             self.key = Some(input.into());
             self
         }
+        /// <p>The TagOption key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -52,6 +53,7 @@ pub mod tag_option_detail {
             self.value = Some(input.into());
             self
         }
+        /// <p>The TagOption value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -61,6 +63,7 @@ pub mod tag_option_detail {
             self.active = Some(input);
             self
         }
+        /// <p>The TagOption active state.</p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
             self.active = input;
             self
@@ -70,6 +73,7 @@ pub mod tag_option_detail {
             self.id = Some(input.into());
             self
         }
+        /// <p>The TagOption identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -79,6 +83,7 @@ pub mod tag_option_detail {
             self.owner = Some(input.into());
             self
         }
+        /// <p>The AWS account Id of the owner account that created the TagOption.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -141,6 +146,7 @@ pub mod service_action_detail {
             self.service_action_summary = Some(input);
             self
         }
+        /// <p>Summary information about the self-service action.</p>
         pub fn set_service_action_summary(
             mut self,
             input: std::option::Option<crate::model::ServiceActionSummary>,
@@ -148,6 +154,11 @@ pub mod service_action_detail {
             self.service_action_summary = input;
             self
         }
+        /// Adds a key-value pair to `definition`.
+        ///
+        /// To override the contents of this collection use [`set_definition`](Self::set_definition).
+        ///
+        /// <p>A map that defines the self-service action.</p>
         pub fn definition(
             mut self,
             k: impl Into<crate::model::ServiceActionDefinitionKey>,
@@ -158,6 +169,7 @@ pub mod service_action_detail {
             self.definition = Some(hash_map);
             self
         }
+        /// <p>A map that defines the self-service action.</p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<
@@ -186,6 +198,7 @@ impl ServiceActionDetail {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -197,9 +210,13 @@ impl ServiceActionDetail {
     std::hash::Hash,
 )]
 pub enum ServiceActionDefinitionKey {
+    #[allow(missing_docs)] // documentation missing in model
     AssumeRole,
+    #[allow(missing_docs)] // documentation missing in model
     Name,
+    #[allow(missing_docs)] // documentation missing in model
     Parameters,
+    #[allow(missing_docs)] // documentation missing in model
     Version,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -223,6 +240,7 @@ impl std::str::FromStr for ServiceActionDefinitionKey {
     }
 }
 impl ServiceActionDefinitionKey {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceActionDefinitionKey::AssumeRole => "AssumeRole",
@@ -232,6 +250,7 @@ impl ServiceActionDefinitionKey {
             ServiceActionDefinitionKey::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AssumeRole", "Name", "Parameters", "Version"]
     }
@@ -282,6 +301,7 @@ pub mod service_action_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The self-service action identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -291,6 +311,7 @@ pub mod service_action_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The self-service action name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -300,6 +321,7 @@ pub mod service_action_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>The self-service action description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -309,6 +331,7 @@ pub mod service_action_summary {
             self.definition_type = Some(input);
             self
         }
+        /// <p>The self-service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
         pub fn set_definition_type(
             mut self,
             input: std::option::Option<crate::model::ServiceActionDefinitionType>,
@@ -334,6 +357,7 @@ impl ServiceActionSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -345,6 +369,7 @@ impl ServiceActionSummary {
     std::hash::Hash,
 )]
 pub enum ServiceActionDefinitionType {
+    #[allow(missing_docs)] // documentation missing in model
     SsmAutomation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -365,12 +390,14 @@ impl std::str::FromStr for ServiceActionDefinitionType {
     }
 }
 impl ServiceActionDefinitionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceActionDefinitionType::SsmAutomation => "SSM_AUTOMATION",
             ServiceActionDefinitionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SSM_AUTOMATION"]
     }
@@ -381,6 +408,7 @@ impl AsRef<str> for ServiceActionDefinitionType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -392,8 +420,11 @@ impl AsRef<str> for ServiceActionDefinitionType {
     std::hash::Hash,
 )]
 pub enum Status {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -416,6 +447,7 @@ impl std::str::FromStr for Status {
     }
 }
 impl Status {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Status::Available => "AVAILABLE",
@@ -424,6 +456,7 @@ impl Status {
             Status::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "CREATING", "FAILED"]
     }
@@ -461,7 +494,7 @@ pub struct ProvisioningArtifactDetail {
     /// </ul>
     pub r#type: std::option::Option<crate::model::ProvisioningArtifactType>,
     /// <p>The UTC time stamp of the creation time.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Indicates whether the product version is active.</p>
     pub active: std::option::Option<bool>,
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
@@ -490,7 +523,7 @@ pub mod provisioning_artifact_detail {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::ProvisioningArtifactType>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) active: std::option::Option<bool>,
         pub(crate) guidance: std::option::Option<crate::model::ProvisioningArtifactGuidance>,
     }
@@ -500,6 +533,7 @@ pub mod provisioning_artifact_detail {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioning artifact.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -509,6 +543,7 @@ pub mod provisioning_artifact_detail {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the provisioning artifact.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -518,6 +553,7 @@ pub mod provisioning_artifact_detail {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the provisioning artifact.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -541,6 +577,21 @@ pub mod provisioning_artifact_detail {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of provisioning artifact.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ProvisioningArtifactType>,
@@ -549,13 +600,14 @@ pub mod provisioning_artifact_detail {
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The UTC time stamp of the creation time.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
@@ -565,6 +617,7 @@ pub mod provisioning_artifact_detail {
             self.active = Some(input);
             self
         }
+        /// <p>Indicates whether the product version is active.</p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
             self.active = input;
             self
@@ -574,6 +627,7 @@ pub mod provisioning_artifact_detail {
             self.guidance = Some(input);
             self
         }
+        /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
         pub fn set_guidance(
             mut self,
             input: std::option::Option<crate::model::ProvisioningArtifactGuidance>,
@@ -602,6 +656,7 @@ impl ProvisioningArtifactDetail {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -613,7 +668,9 @@ impl ProvisioningArtifactDetail {
     std::hash::Hash,
 )]
 pub enum ProvisioningArtifactGuidance {
+    #[allow(missing_docs)] // documentation missing in model
     Default,
+    #[allow(missing_docs)] // documentation missing in model
     Deprecated,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -635,6 +692,7 @@ impl std::str::FromStr for ProvisioningArtifactGuidance {
     }
 }
 impl ProvisioningArtifactGuidance {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProvisioningArtifactGuidance::Default => "DEFAULT",
@@ -642,6 +700,7 @@ impl ProvisioningArtifactGuidance {
             ProvisioningArtifactGuidance::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEFAULT", "DEPRECATED"]
     }
@@ -652,6 +711,7 @@ impl AsRef<str> for ProvisioningArtifactGuidance {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -663,8 +723,11 @@ impl AsRef<str> for ProvisioningArtifactGuidance {
     std::hash::Hash,
 )]
 pub enum ProvisioningArtifactType {
+    #[allow(missing_docs)] // documentation missing in model
     CloudFormationTemplate,
+    #[allow(missing_docs)] // documentation missing in model
     MarketplaceAmi,
+    #[allow(missing_docs)] // documentation missing in model
     MarketplaceCar,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -687,6 +750,7 @@ impl std::str::FromStr for ProvisioningArtifactType {
     }
 }
 impl ProvisioningArtifactType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProvisioningArtifactType::CloudFormationTemplate => "CLOUD_FORMATION_TEMPLATE",
@@ -695,6 +759,7 @@ impl ProvisioningArtifactType {
             ProvisioningArtifactType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CLOUD_FORMATION_TEMPLATE",
@@ -709,6 +774,7 @@ impl AsRef<str> for ProvisioningArtifactType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -720,10 +786,15 @@ impl AsRef<str> for ProvisioningArtifactType {
     std::hash::Hash,
 )]
 pub enum RecordStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Created,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     InProgressInError,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -748,6 +819,7 @@ impl std::str::FromStr for RecordStatus {
     }
 }
 impl RecordStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RecordStatus::Created => "CREATED",
@@ -758,6 +830,7 @@ impl RecordStatus {
             RecordStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATED",
@@ -774,6 +847,7 @@ impl AsRef<str> for RecordStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -785,7 +859,9 @@ impl AsRef<str> for RecordStatus {
     std::hash::Hash,
 )]
 pub enum PropertyKey {
+    #[allow(missing_docs)] // documentation missing in model
     LaunchRole,
+    #[allow(missing_docs)] // documentation missing in model
     Owner,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -807,6 +883,7 @@ impl std::str::FromStr for PropertyKey {
     }
 }
 impl PropertyKey {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PropertyKey::LaunchRole => "LAUNCH_ROLE",
@@ -814,6 +891,7 @@ impl PropertyKey {
             PropertyKey::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LAUNCH_ROLE", "OWNER"]
     }
@@ -859,9 +937,9 @@ pub struct RecordDetail {
     /// </ul>
     pub status: std::option::Option<crate::model::RecordStatus>,
     /// <p>The UTC time stamp of the creation time.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the record was last updated.</p>
-    pub updated_time: std::option::Option<smithy_types::Instant>,
+    pub updated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
     pub provisioned_product_type: std::option::Option<std::string::String>,
     /// <p>The record type.</p>
@@ -927,8 +1005,8 @@ pub mod record_detail {
         pub(crate) record_id: std::option::Option<std::string::String>,
         pub(crate) provisioned_product_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RecordStatus>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) provisioned_product_type: std::option::Option<std::string::String>,
         pub(crate) record_type: std::option::Option<std::string::String>,
         pub(crate) provisioned_product_id: std::option::Option<std::string::String>,
@@ -945,6 +1023,7 @@ pub mod record_detail {
             self.record_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the record.</p>
         pub fn set_record_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.record_id = input;
             self
@@ -954,6 +1033,7 @@ pub mod record_detail {
             self.provisioned_product_name = Some(input.into());
             self
         }
+        /// <p>The user-friendly name of the provisioned product.</p>
         pub fn set_provisioned_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -990,6 +1070,31 @@ pub mod record_detail {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the provisioned product.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATED</code> - The request was created but the operation has not started.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IN_PROGRESS</code> - The requested operation is in progress.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the
+        /// requested operation failed and some remediation is occurring. For example, a rollback.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SUCCEEDED</code> - The requested operation has successfully completed.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code> - The requested operation has unsuccessfully completed.
+        /// Investigate using the error messages returned.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::RecordStatus>,
@@ -998,25 +1103,27 @@ pub mod record_detail {
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The UTC time stamp of the creation time.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
         }
         /// <p>The time when the record was last updated.</p>
-        pub fn updated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_time = Some(input);
             self
         }
+        /// <p>The time when the record was last updated.</p>
         pub fn set_updated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.updated_time = input;
             self
@@ -1026,6 +1133,7 @@ pub mod record_detail {
             self.provisioned_product_type = Some(input.into());
             self
         }
+        /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
         pub fn set_provisioned_product_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1055,6 +1163,24 @@ pub mod record_detail {
             self.record_type = Some(input.into());
             self
         }
+        /// <p>The record type.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PROVISION_PRODUCT</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATE_PROVISIONED_PRODUCT</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TERMINATE_PROVISIONED_PRODUCT</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_record_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.record_type = input;
             self
@@ -1064,6 +1190,7 @@ pub mod record_detail {
             self.provisioned_product_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioned product.</p>
         pub fn set_provisioned_product_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1076,6 +1203,7 @@ pub mod record_detail {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -1085,6 +1213,7 @@ pub mod record_detail {
             self.provisioning_artifact_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioning artifact.</p>
         pub fn set_provisioning_artifact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1097,16 +1226,23 @@ pub mod record_detail {
             self.path_id = Some(input.into());
             self
         }
+        /// <p>The path identifier.</p>
         pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path_id = input;
             self
         }
+        /// Appends an item to `record_errors`.
+        ///
+        /// To override the contents of this collection use [`set_record_errors`](Self::set_record_errors).
+        ///
+        /// <p>The errors that occurred.</p>
         pub fn record_errors(mut self, input: impl Into<crate::model::RecordError>) -> Self {
             let mut v = self.record_errors.unwrap_or_default();
             v.push(input.into());
             self.record_errors = Some(v);
             self
         }
+        /// <p>The errors that occurred.</p>
         pub fn set_record_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecordError>>,
@@ -1114,12 +1250,18 @@ pub mod record_detail {
             self.record_errors = input;
             self
         }
+        /// Appends an item to `record_tags`.
+        ///
+        /// To override the contents of this collection use [`set_record_tags`](Self::set_record_tags).
+        ///
+        /// <p>One or more tags.</p>
         pub fn record_tags(mut self, input: impl Into<crate::model::RecordTag>) -> Self {
             let mut v = self.record_tags.unwrap_or_default();
             v.push(input.into());
             self.record_tags = Some(v);
             self
         }
+        /// <p>One or more tags.</p>
         pub fn set_record_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecordTag>>,
@@ -1132,6 +1274,7 @@ pub mod record_detail {
             self.launch_role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the launch role associated with the provisioned product.</p>
         pub fn set_launch_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1199,6 +1342,7 @@ pub mod record_tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key for this tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -1208,6 +1352,7 @@ pub mod record_tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value for this tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1260,6 +1405,7 @@ pub mod record_error {
             self.code = Some(input.into());
             self
         }
+        /// <p>The numeric value of the error.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
@@ -1269,6 +1415,7 @@ pub mod record_error {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the error.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1322,6 +1469,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The tag key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -1331,6 +1479,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value for this key.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1445,12 +1594,24 @@ pub mod update_provisioning_preferences {
             std::option::Option<crate::model::StackSetOperationType>,
     }
     impl Builder {
+        /// Appends an item to `stack_set_accounts`.
+        ///
+        /// To override the contents of this collection use [`set_stack_set_accounts`](Self::set_stack_set_accounts).
+        ///
+        /// <p>One or more AWS accounts that will have access to the provisioned product.</p>
+        /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+        /// <p>The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+        /// <p>If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.</p>
         pub fn stack_set_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stack_set_accounts.unwrap_or_default();
             v.push(input.into());
             self.stack_set_accounts = Some(v);
             self
         }
+        /// <p>One or more AWS accounts that will have access to the provisioned product.</p>
+        /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+        /// <p>The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+        /// <p>If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.</p>
         pub fn set_stack_set_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1458,12 +1619,24 @@ pub mod update_provisioning_preferences {
             self.stack_set_accounts = input;
             self
         }
+        /// Appends an item to `stack_set_regions`.
+        ///
+        /// To override the contents of this collection use [`set_stack_set_regions`](Self::set_stack_set_regions).
+        ///
+        /// <p>One or more AWS Regions where the provisioned product will be available.</p>
+        /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+        /// <p>The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+        /// <p>If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.</p>
         pub fn stack_set_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stack_set_regions.unwrap_or_default();
             v.push(input.into());
             self.stack_set_regions = Some(v);
             self
         }
+        /// <p>One or more AWS Regions where the provisioned product will be available.</p>
+        /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+        /// <p>The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+        /// <p>If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.</p>
         pub fn set_stack_set_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1479,6 +1652,10 @@ pub mod update_provisioning_preferences {
             self.stack_set_failure_tolerance_count = Some(input);
             self
         }
+        /// <p>The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
+        /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+        /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
+        /// <p>The default value is <code>0</code> if no value is specified.</p>
         pub fn set_stack_set_failure_tolerance_count(
             mut self,
             input: std::option::Option<i32>,
@@ -1494,6 +1671,10 @@ pub mod update_provisioning_preferences {
             self.stack_set_failure_tolerance_percentage = Some(input);
             self
         }
+        /// <p>The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
+        /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number.</p>
+        /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+        /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
         pub fn set_stack_set_failure_tolerance_percentage(
             mut self,
             input: std::option::Option<i32>,
@@ -1509,6 +1690,10 @@ pub mod update_provisioning_preferences {
             self.stack_set_max_concurrency_count = Some(input);
             self
         }
+        /// <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>StackSetFailureToleranceCount</code>. <code>StackSetMaxConcurrentCount</code> is at most one more than the <code>StackSetFailureToleranceCount</code>.</p>
+        /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
+        /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+        /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
         pub fn set_stack_set_max_concurrency_count(
             mut self,
             input: std::option::Option<i32>,
@@ -1525,6 +1710,11 @@ pub mod update_provisioning_preferences {
             self.stack_set_max_concurrency_percentage = Some(input);
             self
         }
+        /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
+        /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS Service Catalog sets the number as <code>1</code> instead.</p>
+        /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
+        /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+        /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
         pub fn set_stack_set_max_concurrency_percentage(
             mut self,
             input: std::option::Option<i32>,
@@ -1555,6 +1745,22 @@ pub mod update_provisioning_preferences {
             self.stack_set_operation_type = Some(input);
             self
         }
+        /// <p>Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
+        /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+        /// <dl>
+        /// <dt>CREATE</dt>
+        /// <dd>
+        /// <p>Creates a new stack instance in the stack set represented by the provisioned product. In this case, only new stack instances are created based on accounts and regions; if new ProductId or ProvisioningArtifactID are passed, they will be ignored.</p>
+        /// </dd>
+        /// <dt>UPDATE</dt>
+        /// <dd>
+        /// <p>Updates the stack set represented by the provisioned product and also its stack instances.</p>
+        /// </dd>
+        /// <dt>DELETE</dt>
+        /// <dd>
+        /// <p>Deletes a stack instance in the stack set represented by the provisioned product.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_stack_set_operation_type(
             mut self,
             input: std::option::Option<crate::model::StackSetOperationType>,
@@ -1583,6 +1789,7 @@ impl UpdateProvisioningPreferences {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1594,8 +1801,11 @@ impl UpdateProvisioningPreferences {
     std::hash::Hash,
 )]
 pub enum StackSetOperationType {
+    #[allow(missing_docs)] // documentation missing in model
     Create,
+    #[allow(missing_docs)] // documentation missing in model
     Delete,
+    #[allow(missing_docs)] // documentation missing in model
     Update,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1618,6 +1828,7 @@ impl std::str::FromStr for StackSetOperationType {
     }
 }
 impl StackSetOperationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StackSetOperationType::Create => "CREATE",
@@ -1626,6 +1837,7 @@ impl StackSetOperationType {
             StackSetOperationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CREATE", "DELETE", "UPDATE"]
     }
@@ -1672,6 +1884,7 @@ pub mod update_provisioning_parameter {
             self.key = Some(input.into());
             self
         }
+        /// <p>The parameter key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -1681,6 +1894,7 @@ pub mod update_provisioning_parameter {
             self.value = Some(input.into());
             self
         }
+        /// <p>The parameter value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1690,6 +1904,7 @@ pub mod update_provisioning_parameter {
             self.use_previous_value = Some(input);
             self
         }
+        /// <p>If set to true, <code>Value</code> is ignored and the previous parameter value is kept.</p>
         pub fn set_use_previous_value(mut self, input: std::option::Option<bool>) -> Self {
             self.use_previous_value = input;
             self
@@ -1736,7 +1951,7 @@ pub struct ProductViewDetail {
     /// <p>The ARN of the product.</p>
     pub product_arn: std::option::Option<std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ProductViewDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1757,7 +1972,7 @@ pub mod product_view_detail {
         pub(crate) product_view_summary: std::option::Option<crate::model::ProductViewSummary>,
         pub(crate) status: std::option::Option<crate::model::Status>,
         pub(crate) product_arn: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Summary information about the product view.</p>
@@ -1765,6 +1980,7 @@ pub mod product_view_detail {
             self.product_view_summary = Some(input);
             self
         }
+        /// <p>Summary information about the product view.</p>
         pub fn set_product_view_summary(
             mut self,
             input: std::option::Option<crate::model::ProductViewSummary>,
@@ -1791,6 +2007,21 @@ pub mod product_view_detail {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the product.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AVAILABLE</code> - The product is ready for use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATING</code> - Product creation has started; the product is not ready for use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code> - An action failed.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
             self.status = input;
             self
@@ -1800,18 +2031,20 @@ pub mod product_view_detail {
             self.product_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the product.</p>
         pub fn set_product_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_arn = input;
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The UTC time stamp of the creation time.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
@@ -1910,6 +2143,7 @@ pub mod product_view_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The product view identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1919,6 +2153,7 @@ pub mod product_view_summary {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -1928,6 +2163,7 @@ pub mod product_view_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the product.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1938,6 +2174,8 @@ pub mod product_view_summary {
             self.owner = Some(input.into());
             self
         }
+        /// <p>The owner of the product. Contact the product administrator for the significance of
+        /// this value.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -1947,6 +2185,7 @@ pub mod product_view_summary {
             self.short_description = Some(input.into());
             self
         }
+        /// <p>Short description of the product.</p>
         pub fn set_short_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1961,6 +2200,9 @@ pub mod product_view_summary {
             self.r#type = Some(input);
             self
         }
+        /// <p>The product type. Contact the product administrator for the significance of this
+        /// value. If this value is <code>MARKETPLACE</code>, the product was created by AWS
+        /// Marketplace.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ProductType>) -> Self {
             self.r#type = input;
             self
@@ -1971,6 +2213,8 @@ pub mod product_view_summary {
             self.distributor = Some(input.into());
             self
         }
+        /// <p>The distributor of the product. Contact the product administrator for the
+        /// significance of this value.</p>
         pub fn set_distributor(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.distributor = input;
             self
@@ -1984,6 +2228,11 @@ pub mod product_view_summary {
             self.has_default_path = Some(input);
             self
         }
+        /// <p>Indicates whether the product has a default path.
+        /// If the product does not have a default path, call <a>ListLaunchPaths</a>
+        /// to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not
+        /// required, and the output of <a>ProductViewSummary</a> can be used directly with
+        /// <a>DescribeProvisioningParameters</a>.</p>
         pub fn set_has_default_path(mut self, input: std::option::Option<bool>) -> Self {
             self.has_default_path = input;
             self
@@ -1993,6 +2242,7 @@ pub mod product_view_summary {
             self.support_email = Some(input.into());
             self
         }
+        /// <p>The email contact information to obtain support for this Product.</p>
         pub fn set_support_email(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2005,6 +2255,7 @@ pub mod product_view_summary {
             self.support_description = Some(input.into());
             self
         }
+        /// <p>The description of the support for this Product.</p>
         pub fn set_support_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2017,6 +2268,7 @@ pub mod product_view_summary {
             self.support_url = Some(input.into());
             self
         }
+        /// <p>The URL information to obtain support for this Product.</p>
         pub fn set_support_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.support_url = input;
             self
@@ -2046,6 +2298,7 @@ impl ProductViewSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2057,7 +2310,9 @@ impl ProductViewSummary {
     std::hash::Hash,
 )]
 pub enum ProductType {
+    #[allow(missing_docs)] // documentation missing in model
     CloudFormationTemplate,
+    #[allow(missing_docs)] // documentation missing in model
     Marketplace,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2079,6 +2334,7 @@ impl std::str::FromStr for ProductType {
     }
 }
 impl ProductType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProductType::CloudFormationTemplate => "CLOUD_FORMATION_TEMPLATE",
@@ -2086,6 +2342,7 @@ impl ProductType {
             ProductType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CLOUD_FORMATION_TEMPLATE", "MARKETPLACE"]
     }
@@ -2096,6 +2353,7 @@ impl AsRef<str> for ProductType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2107,10 +2365,15 @@ impl AsRef<str> for ProductType {
     std::hash::Hash,
 )]
 pub enum ShareStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     CompletedWithErrors,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     NotStarted,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2135,6 +2398,7 @@ impl std::str::FromStr for ShareStatus {
     }
 }
 impl ShareStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ShareStatus::Completed => "COMPLETED",
@@ -2145,6 +2409,7 @@ impl ShareStatus {
             ShareStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -2193,6 +2458,7 @@ pub mod organization_node {
             self.r#type = Some(input);
             self
         }
+        /// <p>The organization node type.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::OrganizationNodeType>,
@@ -2205,6 +2471,7 @@ pub mod organization_node {
             self.value = Some(input.into());
             self
         }
+        /// <p>The identifier of the organization node.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -2225,6 +2492,7 @@ impl OrganizationNode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2236,8 +2504,11 @@ impl OrganizationNode {
     std::hash::Hash,
 )]
 pub enum OrganizationNodeType {
+    #[allow(missing_docs)] // documentation missing in model
     Account,
+    #[allow(missing_docs)] // documentation missing in model
     Organization,
+    #[allow(missing_docs)] // documentation missing in model
     OrganizationalUnit,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2260,6 +2531,7 @@ impl std::str::FromStr for OrganizationNodeType {
     }
 }
 impl OrganizationNodeType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrganizationNodeType::Account => "ACCOUNT",
@@ -2268,6 +2540,7 @@ impl OrganizationNodeType {
             OrganizationNodeType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACCOUNT", "ORGANIZATION", "ORGANIZATIONAL_UNIT"]
     }
@@ -2291,7 +2564,7 @@ pub struct PortfolioDetail {
     /// <p>The description of the portfolio.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of the portfolio provider.</p>
     pub provider_name: std::option::Option<std::string::String>,
 }
@@ -2317,7 +2590,7 @@ pub mod portfolio_detail {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) provider_name: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2326,6 +2599,7 @@ pub mod portfolio_detail {
             self.id = Some(input.into());
             self
         }
+        /// <p>The portfolio identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2335,6 +2609,7 @@ pub mod portfolio_detail {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN assigned to the portfolio.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2344,6 +2619,7 @@ pub mod portfolio_detail {
             self.display_name = Some(input.into());
             self
         }
+        /// <p>The name to use for display purposes.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -2353,18 +2629,20 @@ pub mod portfolio_detail {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the portfolio.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The UTC time stamp of the creation time.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
@@ -2374,6 +2652,7 @@ pub mod portfolio_detail {
             self.provider_name = Some(input.into());
             self
         }
+        /// <p>The name of the portfolio provider.</p>
         pub fn set_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2469,6 +2748,7 @@ pub mod constraint_detail {
             self.constraint_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the constraint.</p>
         pub fn set_constraint_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2501,6 +2781,27 @@ pub mod constraint_detail {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of constraint.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>LAUNCH</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NOTIFICATION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>STACKSET</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TEMPLATE</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -2510,6 +2811,7 @@ pub mod constraint_detail {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the constraint.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2519,6 +2821,7 @@ pub mod constraint_detail {
             self.owner = Some(input.into());
             self
         }
+        /// <p>The owner of the constraint.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -2528,6 +2831,7 @@ pub mod constraint_detail {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the product the constraint applies to. Note that a constraint applies to a specific instance of a product within a certain portfolio.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -2537,6 +2841,7 @@ pub mod constraint_detail {
             self.portfolio_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the portfolio the product resides in. The constraint applies only to the instance of the product that lives within this portfolio.</p>
         pub fn set_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.portfolio_id = input;
             self
@@ -2606,7 +2911,7 @@ pub struct ProvisionedProductAttribute {
     /// <p>The current status message of the provisioned product.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
     /// the same response is returned for each repeated request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
@@ -2723,7 +3028,7 @@ pub mod provisioned_product_attribute {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ProvisionedProductStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) idempotency_token: std::option::Option<std::string::String>,
         pub(crate) last_record_id: std::option::Option<std::string::String>,
         pub(crate) last_provisioning_record_id: std::option::Option<std::string::String>,
@@ -2743,6 +3048,7 @@ pub mod provisioned_product_attribute {
             self.name = Some(input.into());
             self
         }
+        /// <p>The user-friendly name of the provisioned product.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2752,6 +3058,7 @@ pub mod provisioned_product_attribute {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the provisioned product.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2761,6 +3068,7 @@ pub mod provisioned_product_attribute {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -2770,6 +3078,7 @@ pub mod provisioned_product_attribute {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioned product.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2807,6 +3116,35 @@ pub mod provisioned_product_attribute {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the provisioned product.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most
+        /// recent operation succeeded and completed.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results.
+        /// Wait for an <code>AVAILABLE</code> status before performing operations.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has
+        /// completed the requested operation but is not exactly what was requested. For example, a
+        /// request to update to a new version failed and the stack rolled back to the current version.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
+        /// For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
+        /// but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ProvisionedProductStatus>,
@@ -2819,6 +3157,7 @@ pub mod provisioned_product_attribute {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>The current status message of the provisioned product.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2827,13 +3166,14 @@ pub mod provisioned_product_attribute {
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The UTC time stamp of the creation time.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
@@ -2844,6 +3184,8 @@ pub mod provisioned_product_attribute {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+        /// the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2856,6 +3198,7 @@ pub mod provisioned_product_attribute {
             self.last_record_id = Some(input.into());
             self
         }
+        /// <p>The record identifier of the last request performed on this provisioned product.</p>
         pub fn set_last_record_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2893,6 +3236,29 @@ pub mod provisioned_product_attribute {
             self.last_provisioning_record_id = Some(input.into());
             self
         }
+        /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// ProvisionedProduct
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// UpdateProvisionedProduct
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// ExecuteProvisionedProductPlan
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// TerminateProvisionedProduct
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_last_provisioning_record_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2930,6 +3296,29 @@ pub mod provisioned_product_attribute {
             self.last_successful_provisioning_record_id = Some(input.into());
             self
         }
+        /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// ProvisionedProduct
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// UpdateProvisionedProduct
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// ExecuteProvisionedProductPlan
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// TerminateProvisionedProduct
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_last_successful_provisioning_record_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2937,12 +3326,18 @@ pub mod provisioned_product_attribute {
             self.last_successful_provisioning_record_id = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>One or more tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2955,6 +3350,7 @@ pub mod provisioned_product_attribute {
             self.physical_id = Some(input.into());
             self
         }
+        /// <p>The assigned identifier for the resource, such as an EC2 instance ID or an S3 bucket name.</p>
         pub fn set_physical_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.physical_id = input;
             self
@@ -2964,6 +3360,7 @@ pub mod provisioned_product_attribute {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -2973,6 +3370,7 @@ pub mod provisioned_product_attribute {
             self.product_name = Some(input.into());
             self
         }
+        /// <p>The name of the product.</p>
         pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_name = input;
             self
@@ -2982,6 +3380,7 @@ pub mod provisioned_product_attribute {
             self.provisioning_artifact_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioning artifact.</p>
         pub fn set_provisioning_artifact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2994,6 +3393,7 @@ pub mod provisioned_product_attribute {
             self.provisioning_artifact_name = Some(input.into());
             self
         }
+        /// <p>The name of the provisioning artifact.</p>
         pub fn set_provisioning_artifact_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3006,6 +3406,7 @@ pub mod provisioned_product_attribute {
             self.user_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM user.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_arn = input;
             self
@@ -3015,6 +3416,7 @@ pub mod provisioned_product_attribute {
             self.user_arn_session = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM user in the session. This ARN might contain a session ID.</p>
         pub fn set_user_arn_session(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3055,6 +3457,7 @@ impl ProvisionedProductAttribute {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3066,10 +3469,15 @@ impl ProvisionedProductAttribute {
     std::hash::Hash,
 )]
 pub enum ProvisionedProductStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     PlanInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Tainted,
+    #[allow(missing_docs)] // documentation missing in model
     UnderChange,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3094,6 +3502,7 @@ impl std::str::FromStr for ProvisionedProductStatus {
     }
 }
 impl ProvisionedProductStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProvisionedProductStatus::Available => "AVAILABLE",
@@ -3104,6 +3513,7 @@ impl ProvisionedProductStatus {
             ProvisionedProductStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -3120,6 +3530,7 @@ impl AsRef<str> for ProvisionedProductStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3131,7 +3542,9 @@ impl AsRef<str> for ProvisionedProductStatus {
     std::hash::Hash,
 )]
 pub enum SortOrder {
+    #[allow(missing_docs)] // documentation missing in model
     Ascending,
+    #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3153,6 +3566,7 @@ impl std::str::FromStr for SortOrder {
     }
 }
 impl SortOrder {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortOrder::Ascending => "ASCENDING",
@@ -3160,6 +3574,7 @@ impl SortOrder {
             SortOrder::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
@@ -3170,6 +3585,7 @@ impl AsRef<str> for SortOrder {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3181,6 +3597,7 @@ impl AsRef<str> for SortOrder {
     std::hash::Hash,
 )]
 pub enum ProvisionedProductViewFilterBy {
+    #[allow(missing_docs)] // documentation missing in model
     SearchQuery,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3201,12 +3618,14 @@ impl std::str::FromStr for ProvisionedProductViewFilterBy {
     }
 }
 impl ProvisionedProductViewFilterBy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProvisionedProductViewFilterBy::SearchQuery => "SearchQuery",
             ProvisionedProductViewFilterBy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SearchQuery"]
     }
@@ -3277,6 +3696,21 @@ pub mod access_level_filter {
             self.key = Some(input);
             self
         }
+        /// <p>The access level.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Account</code> - Filter results based on the account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Role</code> - Filter results based on the federated role of the specified user.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>User</code> - Filter results based on the specified user.</p>
+        /// </li>
+        /// </ul>
         pub fn set_key(
             mut self,
             input: std::option::Option<crate::model::AccessLevelFilterKey>,
@@ -3289,6 +3723,7 @@ pub mod access_level_filter {
             self.value = Some(input.into());
             self
         }
+        /// <p>The user to which the access level applies. The only supported value is <code>Self</code>.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -3309,6 +3744,7 @@ impl AccessLevelFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3320,8 +3756,11 @@ impl AccessLevelFilter {
     std::hash::Hash,
 )]
 pub enum AccessLevelFilterKey {
+    #[allow(missing_docs)] // documentation missing in model
     Account,
+    #[allow(missing_docs)] // documentation missing in model
     Role,
+    #[allow(missing_docs)] // documentation missing in model
     User,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3344,6 +3783,7 @@ impl std::str::FromStr for AccessLevelFilterKey {
     }
 }
 impl AccessLevelFilterKey {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccessLevelFilterKey::Account => "Account",
@@ -3352,6 +3792,7 @@ impl AccessLevelFilterKey {
             AccessLevelFilterKey::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Account", "Role", "User"]
     }
@@ -3362,6 +3803,7 @@ impl AsRef<str> for AccessLevelFilterKey {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3373,6 +3815,7 @@ impl AsRef<str> for AccessLevelFilterKey {
     std::hash::Hash,
 )]
 pub enum ProductSource {
+    #[allow(missing_docs)] // documentation missing in model
     Account,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3393,12 +3836,14 @@ impl std::str::FromStr for ProductSource {
     }
 }
 impl ProductSource {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProductSource::Account => "ACCOUNT",
             ProductSource::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACCOUNT"]
     }
@@ -3409,6 +3854,7 @@ impl AsRef<str> for ProductSource {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3420,8 +3866,11 @@ impl AsRef<str> for ProductSource {
     std::hash::Hash,
 )]
 pub enum ProductViewSortBy {
+    #[allow(missing_docs)] // documentation missing in model
     CreationDate,
+    #[allow(missing_docs)] // documentation missing in model
     Title,
+    #[allow(missing_docs)] // documentation missing in model
     VersionCount,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3444,6 +3893,7 @@ impl std::str::FromStr for ProductViewSortBy {
     }
 }
 impl ProductViewSortBy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProductViewSortBy::CreationDate => "CreationDate",
@@ -3452,6 +3902,7 @@ impl ProductViewSortBy {
             ProductViewSortBy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CreationDate", "Title", "VersionCount"]
     }
@@ -3462,6 +3913,7 @@ impl AsRef<str> for ProductViewSortBy {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3473,9 +3925,13 @@ impl AsRef<str> for ProductViewSortBy {
     std::hash::Hash,
 )]
 pub enum ProductViewFilterBy {
+    #[allow(missing_docs)] // documentation missing in model
     FullTextSearch,
+    #[allow(missing_docs)] // documentation missing in model
     Owner,
+    #[allow(missing_docs)] // documentation missing in model
     ProductType,
+    #[allow(missing_docs)] // documentation missing in model
     SourceProductId,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3499,6 +3955,7 @@ impl std::str::FromStr for ProductViewFilterBy {
     }
 }
 impl ProductViewFilterBy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProductViewFilterBy::FullTextSearch => "FullTextSearch",
@@ -3508,6 +3965,7 @@ impl ProductViewFilterBy {
             ProductViewFilterBy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FullTextSearch", "Owner", "ProductType", "SourceProductId"]
     }
@@ -3551,6 +4009,7 @@ pub mod product_view_aggregation_value {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the product view aggregation.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -3560,6 +4019,7 @@ pub mod product_view_aggregation_value {
             self.approximate_count = Some(input);
             self
         }
+        /// <p>An approximate count of the products that match the value.</p>
         pub fn set_approximate_count(mut self, input: std::option::Option<i32>) -> Self {
             self.approximate_count = input;
             self
@@ -3625,7 +4085,7 @@ pub struct ProvisionedProductDetail {
     /// <p>The current status message of the provisioned product.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
     /// the same response is returned for each repeated request.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
@@ -3724,7 +4184,7 @@ pub mod provisioned_product_detail {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ProvisionedProductStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) idempotency_token: std::option::Option<std::string::String>,
         pub(crate) last_record_id: std::option::Option<std::string::String>,
         pub(crate) last_provisioning_record_id: std::option::Option<std::string::String>,
@@ -3739,6 +4199,7 @@ pub mod provisioned_product_detail {
             self.name = Some(input.into());
             self
         }
+        /// <p>The user-friendly name of the provisioned product.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3748,6 +4209,7 @@ pub mod provisioned_product_detail {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the provisioned product.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3757,6 +4219,7 @@ pub mod provisioned_product_detail {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -3766,6 +4229,7 @@ pub mod provisioned_product_detail {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioned product.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3803,6 +4267,35 @@ pub mod provisioned_product_detail {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the provisioned product.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most
+        /// recent operation succeeded and completed.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results.
+        /// Wait for an <code>AVAILABLE</code> status before performing operations.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has
+        /// completed the requested operation but is not exactly what was requested. For example, a
+        /// request to update to a new version failed and the stack rolled back to the current version.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
+        /// For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
+        /// but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ProvisionedProductStatus>,
@@ -3815,6 +4308,7 @@ pub mod provisioned_product_detail {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>The current status message of the provisioned product.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3823,13 +4317,14 @@ pub mod provisioned_product_detail {
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The UTC time stamp of the creation time.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
@@ -3840,6 +4335,8 @@ pub mod provisioned_product_detail {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token,
+        /// the same response is returned for each repeated request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3852,6 +4349,7 @@ pub mod provisioned_product_detail {
             self.last_record_id = Some(input.into());
             self
         }
+        /// <p>The record identifier of the last request performed on this provisioned product.</p>
         pub fn set_last_record_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3889,6 +4387,29 @@ pub mod provisioned_product_detail {
             self.last_provisioning_record_id = Some(input.into());
             self
         }
+        /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// ProvisionedProduct
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// UpdateProvisionedProduct
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// ExecuteProvisionedProductPlan
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// TerminateProvisionedProduct
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_last_provisioning_record_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3926,6 +4447,29 @@ pub mod provisioned_product_detail {
             self.last_successful_provisioning_record_id = Some(input.into());
             self
         }
+        /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// ProvisionedProduct
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// UpdateProvisionedProduct
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// ExecuteProvisionedProductPlan
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// TerminateProvisionedProduct
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_last_successful_provisioning_record_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3938,6 +4482,7 @@ pub mod provisioned_product_detail {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -3947,6 +4492,7 @@ pub mod provisioned_product_detail {
             self.provisioning_artifact_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
         pub fn set_provisioning_artifact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3959,6 +4505,7 @@ pub mod provisioned_product_detail {
             self.launch_role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the launch role associated with the provisioned product.</p>
         pub fn set_launch_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3994,6 +4541,7 @@ impl ProvisionedProductDetail {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4005,8 +4553,11 @@ impl ProvisionedProductDetail {
     std::hash::Hash,
 )]
 pub enum PortfolioShareType {
+    #[allow(missing_docs)] // documentation missing in model
     AwsOrganizations,
+    #[allow(missing_docs)] // documentation missing in model
     AwsServicecatalog,
+    #[allow(missing_docs)] // documentation missing in model
     Imported,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4029,6 +4580,7 @@ impl std::str::FromStr for PortfolioShareType {
     }
 }
 impl PortfolioShareType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PortfolioShareType::AwsOrganizations => "AWS_ORGANIZATIONS",
@@ -4037,6 +4589,7 @@ impl PortfolioShareType {
             PortfolioShareType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AWS_ORGANIZATIONS", "AWS_SERVICECATALOG", "IMPORTED"]
     }
@@ -4130,12 +4683,24 @@ pub mod provisioning_preferences {
         pub(crate) stack_set_max_concurrency_percentage: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `stack_set_accounts`.
+        ///
+        /// To override the contents of this collection use [`set_stack_set_accounts`](Self::set_stack_set_accounts).
+        ///
+        /// <p>One or more AWS accounts where the provisioned product will be available.</p>
+        /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+        /// <p>The specified accounts should be within the list of accounts from the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+        /// <p>If no values are specified, the default value is all acounts from the <code>STACKSET</code> constraint.</p>
         pub fn stack_set_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stack_set_accounts.unwrap_or_default();
             v.push(input.into());
             self.stack_set_accounts = Some(v);
             self
         }
+        /// <p>One or more AWS accounts where the provisioned product will be available.</p>
+        /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+        /// <p>The specified accounts should be within the list of accounts from the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+        /// <p>If no values are specified, the default value is all acounts from the <code>STACKSET</code> constraint.</p>
         pub fn set_stack_set_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4143,12 +4708,24 @@ pub mod provisioning_preferences {
             self.stack_set_accounts = input;
             self
         }
+        /// Appends an item to `stack_set_regions`.
+        ///
+        /// To override the contents of this collection use [`set_stack_set_regions`](Self::set_stack_set_regions).
+        ///
+        /// <p>One or more AWS Regions where the provisioned product will be available.</p>
+        /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+        /// <p>The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+        /// <p>If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.</p>
         pub fn stack_set_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stack_set_regions.unwrap_or_default();
             v.push(input.into());
             self.stack_set_regions = Some(v);
             self
         }
+        /// <p>One or more AWS Regions where the provisioned product will be available.</p>
+        /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+        /// <p>The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
+        /// <p>If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.</p>
         pub fn set_stack_set_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4164,6 +4741,10 @@ pub mod provisioning_preferences {
             self.stack_set_failure_tolerance_count = Some(input);
             self
         }
+        /// <p>The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
+        /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+        /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
+        /// <p>The default value is <code>0</code> if no value is specified.</p>
         pub fn set_stack_set_failure_tolerance_count(
             mut self,
             input: std::option::Option<i32>,
@@ -4179,6 +4760,10 @@ pub mod provisioning_preferences {
             self.stack_set_failure_tolerance_percentage = Some(input);
             self
         }
+        /// <p>The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>
+        /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number.</p>
+        /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+        /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
         pub fn set_stack_set_failure_tolerance_percentage(
             mut self,
             input: std::option::Option<i32>,
@@ -4194,6 +4779,10 @@ pub mod provisioning_preferences {
             self.stack_set_max_concurrency_count = Some(input);
             self
         }
+        /// <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>StackSetFailureToleranceCount</code>. <code>StackSetMaxConcurrentCount</code> is at most one more than the <code>StackSetFailureToleranceCount</code>.</p>
+        /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
+        /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+        /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
         pub fn set_stack_set_max_concurrency_count(
             mut self,
             input: std::option::Option<i32>,
@@ -4210,6 +4799,11 @@ pub mod provisioning_preferences {
             self.stack_set_max_concurrency_percentage = Some(input);
             self
         }
+        /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
+        /// <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS Service Catalog sets the number as <code>1</code> instead.</p>
+        /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
+        /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+        /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
         pub fn set_stack_set_max_concurrency_percentage(
             mut self,
             input: std::option::Option<i32>,
@@ -4269,6 +4863,7 @@ pub mod provisioning_parameter {
             self.key = Some(input.into());
             self
         }
+        /// <p>The parameter key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -4278,6 +4873,7 @@ pub mod provisioning_parameter {
             self.value = Some(input.into());
             self
         }
+        /// <p>The parameter value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -4334,6 +4930,7 @@ pub mod list_tag_options_filters {
             self.key = Some(input.into());
             self
         }
+        /// <p>The TagOption key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -4343,6 +4940,7 @@ pub mod list_tag_options_filters {
             self.value = Some(input.into());
             self
         }
+        /// <p>The TagOption value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -4352,6 +4950,7 @@ pub mod list_tag_options_filters {
             self.active = Some(input);
             self
         }
+        /// <p>The active state.</p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
             self.active = input;
             self
@@ -4425,6 +5024,7 @@ pub mod stack_instance {
             self.account = Some(input.into());
             self
         }
+        /// <p>The name of the AWS account that the stack instance is associated with.</p>
         pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account = input;
             self
@@ -4434,6 +5034,7 @@ pub mod stack_instance {
             self.region = Some(input.into());
             self
         }
+        /// <p>The name of the AWS region that the stack instance is associated with.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -4459,6 +5060,23 @@ pub mod stack_instance {
             self.stack_instance_status = Some(input);
             self
         }
+        /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set. </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to true, to delete the stack instance, and then delete the stack manually. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because either            
+        /// the associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation,           
+        /// or the stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
+        /// </li>
+        /// </ul>
         pub fn set_stack_instance_status(
             mut self,
             input: std::option::Option<crate::model::StackInstanceStatus>,
@@ -4483,6 +5101,7 @@ impl StackInstance {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4494,8 +5113,11 @@ impl StackInstance {
     std::hash::Hash,
 )]
 pub enum StackInstanceStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Current,
+    #[allow(missing_docs)] // documentation missing in model
     Inoperable,
+    #[allow(missing_docs)] // documentation missing in model
     Outdated,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4518,6 +5140,7 @@ impl std::str::FromStr for StackInstanceStatus {
     }
 }
 impl StackInstanceStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StackInstanceStatus::Current => "CURRENT",
@@ -4526,6 +5149,7 @@ impl StackInstanceStatus {
             StackInstanceStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CURRENT", "INOPERABLE", "OUTDATED"]
     }
@@ -4549,7 +5173,7 @@ pub struct ResourceDetail {
     /// <p>The description of the resource.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The creation time of the resource.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ResourceDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4572,7 +5196,7 @@ pub mod resource_detail {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier of the resource.</p>
@@ -4580,6 +5204,7 @@ pub mod resource_detail {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4589,6 +5214,7 @@ pub mod resource_detail {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -4598,6 +5224,7 @@ pub mod resource_detail {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4607,18 +5234,20 @@ pub mod resource_detail {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The creation time of the resource.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The creation time of the resource.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
@@ -4694,6 +5323,17 @@ pub mod list_record_history_search_filter {
             self.key = Some(input.into());
             self
         }
+        /// <p>The filter key.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>product</code> - Filter results based on the specified product identifier.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p>
+        /// </li>
+        /// </ul>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -4703,6 +5343,7 @@ pub mod list_record_history_search_filter {
             self.value = Some(input.into());
             self
         }
+        /// <p>The filter value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -4755,6 +5396,7 @@ pub mod provisioning_artifact_view {
             self.product_view_summary = Some(input);
             self
         }
+        /// <p>Summary information about a product view.</p>
         pub fn set_product_view_summary(
             mut self,
             input: std::option::Option<crate::model::ProductViewSummary>,
@@ -4767,6 +5409,7 @@ pub mod provisioning_artifact_view {
             self.provisioning_artifact = Some(input);
             self
         }
+        /// <p>Information about a provisioning artifact. A provisioning artifact is also known as a product version.</p>
         pub fn set_provisioning_artifact(
             mut self,
             input: std::option::Option<crate::model::ProvisioningArtifact>,
@@ -4801,7 +5444,7 @@ pub struct ProvisioningArtifact {
     /// <p>The description of the provisioning artifact.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     pub guidance: std::option::Option<crate::model::ProvisioningArtifactGuidance>,
 }
@@ -4825,7 +5468,7 @@ pub mod provisioning_artifact {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) guidance: std::option::Option<crate::model::ProvisioningArtifactGuidance>,
     }
     impl Builder {
@@ -4834,6 +5477,7 @@ pub mod provisioning_artifact {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioning artifact.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4843,6 +5487,7 @@ pub mod provisioning_artifact {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the provisioning artifact.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4852,18 +5497,20 @@ pub mod provisioning_artifact {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the provisioning artifact.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The UTC time stamp of the creation time.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
@@ -4873,6 +5520,7 @@ pub mod provisioning_artifact {
             self.guidance = Some(input);
             self
         }
+        /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
         pub fn set_guidance(
             mut self,
             input: std::option::Option<crate::model::ProvisioningArtifactGuidance>,
@@ -4947,6 +5595,7 @@ pub mod provisioned_product_plan_summary {
             self.plan_name = Some(input.into());
             self
         }
+        /// <p>The name of the plan.</p>
         pub fn set_plan_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.plan_name = input;
             self
@@ -4956,6 +5605,7 @@ pub mod provisioned_product_plan_summary {
             self.plan_id = Some(input.into());
             self
         }
+        /// <p>The plan identifier.</p>
         pub fn set_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.plan_id = input;
             self
@@ -4965,6 +5615,7 @@ pub mod provisioned_product_plan_summary {
             self.provision_product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_provision_product_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4977,6 +5628,7 @@ pub mod provisioned_product_plan_summary {
             self.provision_product_name = Some(input.into());
             self
         }
+        /// <p>The user-friendly name of the provisioned product.</p>
         pub fn set_provision_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4989,6 +5641,7 @@ pub mod provisioned_product_plan_summary {
             self.plan_type = Some(input);
             self
         }
+        /// <p>The plan type.</p>
         pub fn set_plan_type(
             mut self,
             input: std::option::Option<crate::model::ProvisionedProductPlanType>,
@@ -5001,6 +5654,7 @@ pub mod provisioned_product_plan_summary {
             self.provisioning_artifact_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioning artifact.</p>
         pub fn set_provisioning_artifact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5028,6 +5682,7 @@ impl ProvisionedProductPlanSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5039,6 +5694,7 @@ impl ProvisionedProductPlanSummary {
     std::hash::Hash,
 )]
 pub enum ProvisionedProductPlanType {
+    #[allow(missing_docs)] // documentation missing in model
     Cloudformation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5059,12 +5715,14 @@ impl std::str::FromStr for ProvisionedProductPlanType {
     }
 }
 impl ProvisionedProductPlanType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProvisionedProductPlanType::Cloudformation => "CLOUDFORMATION",
             ProvisionedProductPlanType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CLOUDFORMATION"]
     }
@@ -5107,6 +5765,7 @@ pub mod principal {
             self.principal_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the principal (IAM user, role, or group).</p>
         pub fn set_principal_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5119,6 +5778,7 @@ pub mod principal {
             self.principal_type = Some(input);
             self
         }
+        /// <p>The principal type. The supported value is <code>IAM</code>.</p>
         pub fn set_principal_type(
             mut self,
             input: std::option::Option<crate::model::PrincipalType>,
@@ -5142,6 +5802,7 @@ impl Principal {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5153,6 +5814,7 @@ impl Principal {
     std::hash::Hash,
 )]
 pub enum PrincipalType {
+    #[allow(missing_docs)] // documentation missing in model
     Iam,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5173,12 +5835,14 @@ impl std::str::FromStr for PrincipalType {
     }
 }
 impl PrincipalType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PrincipalType::Iam => "IAM",
             PrincipalType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["IAM"]
     }
@@ -5230,10 +5894,16 @@ pub mod launch_path_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the product path.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
+        /// Appends an item to `constraint_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_constraint_summaries`](Self::set_constraint_summaries).
+        ///
+        /// <p>The constraints on the portfolio-product relationship.</p>
         pub fn constraint_summaries(
             mut self,
             input: impl Into<crate::model::ConstraintSummary>,
@@ -5243,6 +5913,7 @@ pub mod launch_path_summary {
             self.constraint_summaries = Some(v);
             self
         }
+        /// <p>The constraints on the portfolio-product relationship.</p>
         pub fn set_constraint_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConstraintSummary>>,
@@ -5250,12 +5921,18 @@ pub mod launch_path_summary {
             self.constraint_summaries = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with this product path.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags associated with this product path.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5268,6 +5945,7 @@ pub mod launch_path_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the portfolio to which the user was assigned.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5362,6 +6040,27 @@ pub mod constraint_summary {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of constraint.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>LAUNCH</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NOTIFICATION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>STACKSET</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TEMPLATE</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -5371,6 +6070,7 @@ pub mod constraint_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the constraint.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5419,6 +6119,7 @@ pub mod budget_detail {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p>Name of the associated budget.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -5475,6 +6176,7 @@ pub mod record_output {
             self.output_key = Some(input.into());
             self
         }
+        /// <p>The output key.</p>
         pub fn set_output_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output_key = input;
             self
@@ -5484,6 +6186,7 @@ pub mod record_output {
             self.output_value = Some(input.into());
             self
         }
+        /// <p>The output value.</p>
         pub fn set_output_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output_value = input;
             self
@@ -5493,6 +6196,7 @@ pub mod record_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the output.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5514,6 +6218,7 @@ impl RecordOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5525,8 +6230,11 @@ impl RecordOutput {
     std::hash::Hash,
 )]
 pub enum AccessStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
+    #[allow(missing_docs)] // documentation missing in model
     UnderChange,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5549,6 +6257,7 @@ impl std::str::FromStr for AccessStatus {
     }
 }
 impl AccessStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccessStatus::Disabled => "DISABLED",
@@ -5557,6 +6266,7 @@ impl AccessStatus {
             AccessStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED", "UNDER_CHANGE"]
     }
@@ -5603,6 +6313,7 @@ pub mod execution_parameter {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the execution parameter.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5612,16 +6323,23 @@ pub mod execution_parameter {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The execution parameter type.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
         }
+        /// Appends an item to `default_values`.
+        ///
+        /// To override the contents of this collection use [`set_default_values`](Self::set_default_values).
+        ///
+        /// <p>The default values for the execution parameter.</p>
         pub fn default_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.default_values.unwrap_or_default();
             v.push(input.into());
             self.default_values = Some(v);
             self
         }
+        /// <p>The default values for the execution parameter.</p>
         pub fn set_default_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5678,6 +6396,7 @@ pub mod provisioning_artifact_output {
             self.key = Some(input.into());
             self
         }
+        /// <p>The provisioning artifact output key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -5687,6 +6406,7 @@ pub mod provisioning_artifact_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>Description of the provisioning artifact output key.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5737,12 +6457,20 @@ pub mod provisioning_artifact_preferences {
         pub(crate) stack_set_regions: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `stack_set_accounts`.
+        ///
+        /// To override the contents of this collection use [`set_stack_set_accounts`](Self::set_stack_set_accounts).
+        ///
+        /// <p>One or more AWS accounts where stack instances are deployed from the stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
+        /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         pub fn stack_set_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stack_set_accounts.unwrap_or_default();
             v.push(input.into());
             self.stack_set_accounts = Some(v);
             self
         }
+        /// <p>One or more AWS accounts where stack instances are deployed from the stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>
+        /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         pub fn set_stack_set_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5750,12 +6478,20 @@ pub mod provisioning_artifact_preferences {
             self.stack_set_accounts = input;
             self
         }
+        /// Appends an item to `stack_set_regions`.
+        ///
+        /// To override the contents of this collection use [`set_stack_set_regions`](Self::set_stack_set_regions).
+        ///
+        /// <p>One or more AWS Regions where stack instances are deployed from the stack set. These regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
+        /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         pub fn stack_set_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stack_set_regions.unwrap_or_default();
             v.push(input.into());
             self.stack_set_regions = Some(v);
             self
         }
+        /// <p>One or more AWS Regions where stack instances are deployed from the stack set. These regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>
+        /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
         pub fn set_stack_set_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5811,16 +6547,23 @@ pub mod tag_option_summary {
             self.key = Some(input.into());
             self
         }
+        /// <p>The TagOption key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The TagOption value.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The TagOption value.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5876,6 +6619,7 @@ pub mod usage_instruction {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The usage instruction type for the value.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -5885,6 +6629,7 @@ pub mod usage_instruction {
             self.value = Some(input.into());
             self
         }
+        /// <p>The usage instruction value for this type.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -5954,6 +6699,7 @@ pub mod provisioning_artifact_parameter {
             self.parameter_key = Some(input.into());
             self
         }
+        /// <p>The parameter key.</p>
         pub fn set_parameter_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5966,6 +6712,7 @@ pub mod provisioning_artifact_parameter {
             self.default_value = Some(input.into());
             self
         }
+        /// <p>The default value.</p>
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5978,6 +6725,7 @@ pub mod provisioning_artifact_parameter {
             self.parameter_type = Some(input.into());
             self
         }
+        /// <p>The parameter type.</p>
         pub fn set_parameter_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5991,6 +6739,8 @@ pub mod provisioning_artifact_parameter {
             self.is_no_echo = Some(input);
             self
         }
+        /// <p>If this value is true, the value for this parameter is obfuscated from view when the
+        /// parameter is retrieved. This parameter is used to hide sensitive information.</p>
         pub fn set_is_no_echo(mut self, input: std::option::Option<bool>) -> Self {
             self.is_no_echo = input;
             self
@@ -6000,6 +6750,7 @@ pub mod provisioning_artifact_parameter {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the parameter.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -6009,6 +6760,7 @@ pub mod provisioning_artifact_parameter {
             self.parameter_constraints = Some(input);
             self
         }
+        /// <p>Constraints that the administrator has put on a parameter.</p>
         pub fn set_parameter_constraints(
             mut self,
             input: std::option::Option<crate::model::ParameterConstraints>,
@@ -6045,10 +6797,13 @@ pub struct ParameterConstraints {
     /// <p>A regular expression that represents the patterns that allow for <code>String</code> types. The pattern must match the entire parameter value provided.</p>
     pub allowed_pattern: std::option::Option<std::string::String>,
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
+    ///
     /// <p>
     /// <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code>
     /// </p>
+    ///
     /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
+    ///
     /// <p>
     /// <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code>
     /// </p>
@@ -6090,12 +6845,18 @@ pub mod parameter_constraints {
         pub(crate) min_value: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `allowed_values`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_values`](Self::set_allowed_values).
+        ///
+        /// <p>The values that the administrator has allowed for the parameter.</p>
         pub fn allowed_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_values.unwrap_or_default();
             v.push(input.into());
             self.allowed_values = Some(v);
             self
         }
+        /// <p>The values that the administrator has allowed for the parameter.</p>
         pub fn set_allowed_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6108,6 +6869,7 @@ pub mod parameter_constraints {
             self.allowed_pattern = Some(input.into());
             self
         }
+        /// <p>A regular expression that represents the patterns that allow for <code>String</code> types. The pattern must match the entire parameter value provided.</p>
         pub fn set_allowed_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6116,10 +6878,13 @@ pub mod parameter_constraints {
             self
         }
         /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
+        ///
         /// <p>
         /// <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code>
         /// </p>
+        ///
         /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
+        ///
         /// <p>
         /// <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code>
         /// </p>
@@ -6127,6 +6892,17 @@ pub mod parameter_constraints {
             self.constraint_description = Some(input.into());
             self
         }
+        /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>
+        ///
+        /// <p>
+        /// <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code>
+        /// </p>
+        ///
+        /// <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>
+        ///
+        /// <p>
+        /// <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code>
+        /// </p>
         pub fn set_constraint_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6139,6 +6915,7 @@ pub mod parameter_constraints {
             self.max_length = Some(input.into());
             self
         }
+        /// <p>An integer value that determines the largest number of characters you want to allow for <code>String</code> types. </p>
         pub fn set_max_length(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max_length = input;
             self
@@ -6148,6 +6925,7 @@ pub mod parameter_constraints {
             self.min_length = Some(input.into());
             self
         }
+        /// <p>An integer value that determines the smallest number of characters you want to allow for <code>String</code> types.</p>
         pub fn set_min_length(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.min_length = input;
             self
@@ -6157,6 +6935,7 @@ pub mod parameter_constraints {
             self.max_value = Some(input.into());
             self
         }
+        /// <p>A numeric value that determines the largest numeric value you want to allow for <code>Number</code> types.</p>
         pub fn set_max_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max_value = input;
             self
@@ -6166,6 +6945,7 @@ pub mod parameter_constraints {
             self.min_value = Some(input.into());
             self
         }
+        /// <p>A numeric value that determines the smallest numeric value you want to allow for <code>Number</code> types. </p>
         pub fn set_min_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.min_value = input;
             self
@@ -6244,6 +7024,7 @@ pub mod resource_change {
             self.action = Some(input);
             self
         }
+        /// <p>The change action.</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::ChangeAction>,
@@ -6256,6 +7037,7 @@ pub mod resource_change {
             self.logical_resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the resource, as defined in the CloudFormation template.</p>
         pub fn set_logical_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6268,6 +7050,7 @@ pub mod resource_change {
             self.physical_resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the resource, if it was already created.</p>
         pub fn set_physical_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6280,6 +7063,7 @@ pub mod resource_change {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The type of resource.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6293,6 +7077,8 @@ pub mod resource_change {
             self.replacement = Some(input);
             self
         }
+        /// <p>If the change type is <code>Modify</code>, indicates whether the existing resource
+        /// is deleted and replaced with a new one.</p>
         pub fn set_replacement(
             mut self,
             input: std::option::Option<crate::model::Replacement>,
@@ -6300,12 +7086,18 @@ pub mod resource_change {
             self.replacement = input;
             self
         }
+        /// Appends an item to `scope`.
+        ///
+        /// To override the contents of this collection use [`set_scope`](Self::set_scope).
+        ///
+        /// <p>The change scope.</p>
         pub fn scope(mut self, input: impl Into<crate::model::ResourceAttribute>) -> Self {
             let mut v = self.scope.unwrap_or_default();
             v.push(input.into());
             self.scope = Some(v);
             self
         }
+        /// <p>The change scope.</p>
         pub fn set_scope(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceAttribute>>,
@@ -6313,12 +7105,18 @@ pub mod resource_change {
             self.scope = input;
             self
         }
+        /// Appends an item to `details`.
+        ///
+        /// To override the contents of this collection use [`set_details`](Self::set_details).
+        ///
+        /// <p>Information about the resource changes.</p>
         pub fn details(mut self, input: impl Into<crate::model::ResourceChangeDetail>) -> Self {
             let mut v = self.details.unwrap_or_default();
             v.push(input.into());
             self.details = Some(v);
             self
         }
+        /// <p>Information about the resource changes.</p>
         pub fn set_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceChangeDetail>>,
@@ -6384,6 +7182,7 @@ pub mod resource_change_detail {
             self.target = Some(input);
             self
         }
+        /// <p>Information about the resource attribute to be modified.</p>
         pub fn set_target(
             mut self,
             input: std::option::Option<crate::model::ResourceTargetDefinition>,
@@ -6397,6 +7196,8 @@ pub mod resource_change_detail {
             self.evaluation = Some(input);
             self
         }
+        /// <p>For static evaluations, the value of the resource attribute will change and the new value is known.
+        /// For dynamic evaluations, the value might change, and any new value will be determined when the plan is updated.</p>
         pub fn set_evaluation(
             mut self,
             input: std::option::Option<crate::model::EvaluationType>,
@@ -6409,6 +7210,7 @@ pub mod resource_change_detail {
             self.causing_entity = Some(input.into());
             self
         }
+        /// <p>The ID of the entity that caused the change.</p>
         pub fn set_causing_entity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6433,6 +7235,7 @@ impl ResourceChangeDetail {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6444,7 +7247,9 @@ impl ResourceChangeDetail {
     std::hash::Hash,
 )]
 pub enum EvaluationType {
+    #[allow(missing_docs)] // documentation missing in model
     Dynamic,
+    #[allow(missing_docs)] // documentation missing in model
     Static,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6466,6 +7271,7 @@ impl std::str::FromStr for EvaluationType {
     }
 }
 impl EvaluationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EvaluationType::Dynamic => "DYNAMIC",
@@ -6473,6 +7279,7 @@ impl EvaluationType {
             EvaluationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DYNAMIC", "STATIC"]
     }
@@ -6521,6 +7328,7 @@ pub mod resource_target_definition {
             self.attribute = Some(input);
             self
         }
+        /// <p>The attribute to be changed.</p>
         pub fn set_attribute(
             mut self,
             input: std::option::Option<crate::model::ResourceAttribute>,
@@ -6534,6 +7342,8 @@ pub mod resource_target_definition {
             self.name = Some(input.into());
             self
         }
+        /// <p>If the attribute is <code>Properties</code>, the value is the name of the property.
+        /// Otherwise, the value is null.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6544,6 +7354,8 @@ pub mod resource_target_definition {
             self.requires_recreation = Some(input);
             self
         }
+        /// <p>If the attribute is <code>Properties</code>, indicates whether a change to this property
+        /// causes the resource to be re-created.</p>
         pub fn set_requires_recreation(
             mut self,
             input: std::option::Option<crate::model::RequiresRecreation>,
@@ -6568,6 +7380,7 @@ impl ResourceTargetDefinition {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6579,8 +7392,11 @@ impl ResourceTargetDefinition {
     std::hash::Hash,
 )]
 pub enum RequiresRecreation {
+    #[allow(missing_docs)] // documentation missing in model
     Always,
+    #[allow(missing_docs)] // documentation missing in model
     Conditionally,
+    #[allow(missing_docs)] // documentation missing in model
     Never,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6603,6 +7419,7 @@ impl std::str::FromStr for RequiresRecreation {
     }
 }
 impl RequiresRecreation {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RequiresRecreation::Always => "ALWAYS",
@@ -6611,6 +7428,7 @@ impl RequiresRecreation {
             RequiresRecreation::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALWAYS", "CONDITIONALLY", "NEVER"]
     }
@@ -6621,6 +7439,7 @@ impl AsRef<str> for RequiresRecreation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6632,11 +7451,17 @@ impl AsRef<str> for RequiresRecreation {
     std::hash::Hash,
 )]
 pub enum ResourceAttribute {
+    #[allow(missing_docs)] // documentation missing in model
     Creationpolicy,
+    #[allow(missing_docs)] // documentation missing in model
     Deletionpolicy,
+    #[allow(missing_docs)] // documentation missing in model
     Metadata,
+    #[allow(missing_docs)] // documentation missing in model
     Properties,
+    #[allow(missing_docs)] // documentation missing in model
     Tags,
+    #[allow(missing_docs)] // documentation missing in model
     Updatepolicy,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6662,6 +7487,7 @@ impl std::str::FromStr for ResourceAttribute {
     }
 }
 impl ResourceAttribute {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceAttribute::Creationpolicy => "CREATIONPOLICY",
@@ -6673,6 +7499,7 @@ impl ResourceAttribute {
             ResourceAttribute::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATIONPOLICY",
@@ -6690,6 +7517,7 @@ impl AsRef<str> for ResourceAttribute {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6701,8 +7529,11 @@ impl AsRef<str> for ResourceAttribute {
     std::hash::Hash,
 )]
 pub enum Replacement {
+    #[allow(missing_docs)] // documentation missing in model
     Conditional,
+    #[allow(missing_docs)] // documentation missing in model
     False,
+    #[allow(missing_docs)] // documentation missing in model
     True,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6725,6 +7556,7 @@ impl std::str::FromStr for Replacement {
     }
 }
 impl Replacement {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Replacement::Conditional => "CONDITIONAL",
@@ -6733,6 +7565,7 @@ impl Replacement {
             Replacement::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONDITIONAL", "FALSE", "TRUE"]
     }
@@ -6743,6 +7576,7 @@ impl AsRef<str> for Replacement {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6754,8 +7588,11 @@ impl AsRef<str> for Replacement {
     std::hash::Hash,
 )]
 pub enum ChangeAction {
+    #[allow(missing_docs)] // documentation missing in model
     Add,
+    #[allow(missing_docs)] // documentation missing in model
     Modify,
+    #[allow(missing_docs)] // documentation missing in model
     Remove,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6778,6 +7615,7 @@ impl std::str::FromStr for ChangeAction {
     }
 }
 impl ChangeAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChangeAction::Add => "ADD",
@@ -6786,6 +7624,7 @@ impl ChangeAction {
             ChangeAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ADD", "MODIFY", "REMOVE"]
     }
@@ -6801,7 +7640,7 @@ impl AsRef<str> for ChangeAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedProductPlanDetails {
     /// <p>The UTC time stamp of the creation time.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The path identifier of the product. This value is optional if the product
     /// has a default path, and required if the product has more than one path.
     /// To list the paths for a product, use <a>ListLaunchPaths</a>.</p>
@@ -6823,7 +7662,7 @@ pub struct ProvisionedProductPlanDetails {
     /// <p>The status.</p>
     pub status: std::option::Option<crate::model::ProvisionedProductPlanStatus>,
     /// <p>The time when the plan was last updated.</p>
-    pub updated_time: std::option::Option<smithy_types::Instant>,
+    pub updated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
     /// events.</p>
     pub notification_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6863,7 +7702,7 @@ pub mod provisioned_product_plan_details {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) path_id: std::option::Option<std::string::String>,
         pub(crate) product_id: std::option::Option<std::string::String>,
         pub(crate) plan_name: std::option::Option<std::string::String>,
@@ -6873,7 +7712,7 @@ pub mod provisioned_product_plan_details {
         pub(crate) plan_type: std::option::Option<crate::model::ProvisionedProductPlanType>,
         pub(crate) provisioning_artifact_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ProvisionedProductPlanStatus>,
-        pub(crate) updated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) updated_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) notification_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) provisioning_parameters:
             std::option::Option<std::vec::Vec<crate::model::UpdateProvisioningParameter>>,
@@ -6882,13 +7721,14 @@ pub mod provisioned_product_plan_details {
     }
     impl Builder {
         /// <p>The UTC time stamp of the creation time.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The UTC time stamp of the creation time.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
@@ -6900,6 +7740,9 @@ pub mod provisioned_product_plan_details {
             self.path_id = Some(input.into());
             self
         }
+        /// <p>The path identifier of the product. This value is optional if the product
+        /// has a default path, and required if the product has more than one path.
+        /// To list the paths for a product, use <a>ListLaunchPaths</a>.</p>
         pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path_id = input;
             self
@@ -6909,6 +7752,7 @@ pub mod provisioned_product_plan_details {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -6918,6 +7762,7 @@ pub mod provisioned_product_plan_details {
             self.plan_name = Some(input.into());
             self
         }
+        /// <p>The name of the plan.</p>
         pub fn set_plan_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.plan_name = input;
             self
@@ -6927,6 +7772,7 @@ pub mod provisioned_product_plan_details {
             self.plan_id = Some(input.into());
             self
         }
+        /// <p>The plan identifier.</p>
         pub fn set_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.plan_id = input;
             self
@@ -6936,6 +7782,7 @@ pub mod provisioned_product_plan_details {
             self.provision_product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier.</p>
         pub fn set_provision_product_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6948,6 +7795,7 @@ pub mod provisioned_product_plan_details {
             self.provision_product_name = Some(input.into());
             self
         }
+        /// <p>The user-friendly name of the provisioned product.</p>
         pub fn set_provision_product_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6960,6 +7808,7 @@ pub mod provisioned_product_plan_details {
             self.plan_type = Some(input);
             self
         }
+        /// <p>The plan type.</p>
         pub fn set_plan_type(
             mut self,
             input: std::option::Option<crate::model::ProvisionedProductPlanType>,
@@ -6972,6 +7821,7 @@ pub mod provisioned_product_plan_details {
             self.provisioning_artifact_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioning artifact.</p>
         pub fn set_provisioning_artifact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6984,6 +7834,7 @@ pub mod provisioned_product_plan_details {
             self.status = Some(input);
             self
         }
+        /// <p>The status.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ProvisionedProductPlanStatus>,
@@ -6992,23 +7843,32 @@ pub mod provisioned_product_plan_details {
             self
         }
         /// <p>The time when the plan was last updated.</p>
-        pub fn updated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_time = Some(input);
             self
         }
+        /// <p>The time when the plan was last updated.</p>
         pub fn set_updated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.updated_time = input;
             self
         }
+        /// Appends an item to `notification_arns`.
+        ///
+        /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
+        ///
+        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
+        /// events.</p>
         pub fn notification_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.notification_arns.unwrap_or_default();
             v.push(input.into());
             self.notification_arns = Some(v);
             self
         }
+        /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related
+        /// events.</p>
         pub fn set_notification_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7016,6 +7876,12 @@ pub mod provisioned_product_plan_details {
             self.notification_arns = input;
             self
         }
+        /// Appends an item to `provisioning_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_provisioning_parameters`](Self::set_provisioning_parameters).
+        ///
+        /// <p>Parameters specified by the administrator that are required for provisioning the
+        /// product.</p>
         pub fn provisioning_parameters(
             mut self,
             input: impl Into<crate::model::UpdateProvisioningParameter>,
@@ -7025,6 +7891,8 @@ pub mod provisioned_product_plan_details {
             self.provisioning_parameters = Some(v);
             self
         }
+        /// <p>Parameters specified by the administrator that are required for provisioning the
+        /// product.</p>
         pub fn set_provisioning_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpdateProvisioningParameter>>,
@@ -7032,12 +7900,18 @@ pub mod provisioned_product_plan_details {
             self.provisioning_parameters = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>One or more tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7050,6 +7924,7 @@ pub mod provisioned_product_plan_details {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>The status message.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7086,6 +7961,7 @@ impl ProvisionedProductPlanDetails {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7097,11 +7973,17 @@ impl ProvisionedProductPlanDetails {
     std::hash::Hash,
 )]
 pub enum ProvisionedProductPlanStatus {
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     CreateSuccess,
+    #[allow(missing_docs)] // documentation missing in model
     ExecuteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     ExecuteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     ExecuteSuccess,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7127,6 +8009,7 @@ impl std::str::FromStr for ProvisionedProductPlanStatus {
     }
 }
 impl ProvisionedProductPlanStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProvisionedProductPlanStatus::CreateFailed => "CREATE_FAILED",
@@ -7138,6 +8021,7 @@ impl ProvisionedProductPlanStatus {
             ProvisionedProductPlanStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -7183,6 +8067,7 @@ pub mod cloud_watch_dashboard {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the CloudWatch dashboard.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7211,7 +8096,7 @@ pub struct ProvisioningArtifactSummary {
     /// <p>The description of the provisioning artifact.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The metadata for the provisioning artifact. This is used with AWS Marketplace products.</p>
     pub provisioning_artifact_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -7239,7 +8124,7 @@ pub mod provisioning_artifact_summary {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) provisioning_artifact_metadata: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -7250,6 +8135,7 @@ pub mod provisioning_artifact_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioning artifact.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -7259,6 +8145,7 @@ pub mod provisioning_artifact_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the provisioning artifact.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7268,22 +8155,29 @@ pub mod provisioning_artifact_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the provisioning artifact.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The UTC time stamp of the creation time.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The UTC time stamp of the creation time.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
         }
+        /// Adds a key-value pair to `provisioning_artifact_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_provisioning_artifact_metadata`](Self::set_provisioning_artifact_metadata).
+        ///
+        /// <p>The metadata for the provisioning artifact. This is used with AWS Marketplace products.</p>
         pub fn provisioning_artifact_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -7294,6 +8188,7 @@ pub mod provisioning_artifact_summary {
             self.provisioning_artifact_metadata = Some(hash_map);
             self
         }
+        /// <p>The metadata for the provisioning artifact. This is used with AWS Marketplace products.</p>
         pub fn set_provisioning_artifact_metadata(
             mut self,
             input: std::option::Option<
@@ -7354,6 +8249,7 @@ pub mod launch_path {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the launch path.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -7363,6 +8259,7 @@ pub mod launch_path {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the launch path.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7410,12 +8307,18 @@ pub mod share_details {
         pub(crate) share_errors: std::option::Option<std::vec::Vec<crate::model::ShareError>>,
     }
     impl Builder {
+        /// Appends an item to `successful_shares`.
+        ///
+        /// To override the contents of this collection use [`set_successful_shares`](Self::set_successful_shares).
+        ///
+        /// <p>List of accounts for whom the operation succeeded.</p>
         pub fn successful_shares(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.successful_shares.unwrap_or_default();
             v.push(input.into());
             self.successful_shares = Some(v);
             self
         }
+        /// <p>List of accounts for whom the operation succeeded.</p>
         pub fn set_successful_shares(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7423,12 +8326,18 @@ pub mod share_details {
             self.successful_shares = input;
             self
         }
+        /// Appends an item to `share_errors`.
+        ///
+        /// To override the contents of this collection use [`set_share_errors`](Self::set_share_errors).
+        ///
+        /// <p>List of errors.</p>
         pub fn share_errors(mut self, input: impl Into<crate::model::ShareError>) -> Self {
             let mut v = self.share_errors.unwrap_or_default();
             v.push(input.into());
             self.share_errors = Some(v);
             self
         }
+        /// <p>List of errors.</p>
         pub fn set_share_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ShareError>>,
@@ -7483,12 +8392,18 @@ pub mod share_error {
         pub(crate) error: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `accounts`.
+        ///
+        /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
+        ///
+        /// <p>List of accounts impacted by the error.</p>
         pub fn accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.accounts.unwrap_or_default();
             v.push(input.into());
             self.accounts = Some(v);
             self
         }
+        /// <p>List of accounts impacted by the error.</p>
         pub fn set_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7501,6 +8416,7 @@ pub mod share_error {
             self.message = Some(input.into());
             self
         }
+        /// <p>Information about the error.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -7510,6 +8426,7 @@ pub mod share_error {
             self.error = Some(input.into());
             self
         }
+        /// <p>Error type that happened when processing the operation.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error = input;
             self
@@ -7583,6 +8500,13 @@ pub mod portfolio_share_detail {
             self.principal_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the recipient entity that received the portfolio share.
+        /// The recipient entities can be one of the following:
+        /// </p>
+        /// <p>1. An external account.</p>
+        /// <p>2. An organziation member account.</p>
+        /// <p>3. An organzational unit (OU).</p>
+        /// <p>4. The organization itself. (This shares with every account in the organization).</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -7592,6 +8516,7 @@ pub mod portfolio_share_detail {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the portfolio share.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DescribePortfolioShareType>,
@@ -7604,6 +8529,7 @@ pub mod portfolio_share_detail {
             self.accepted = Some(input);
             self
         }
+        /// <p>Indicates whether the shared portfolio is imported by the recipient account. If the recipient is in an organization node, the share is automatically imported, and the field is always set to true.</p>
         pub fn set_accepted(mut self, input: std::option::Option<bool>) -> Self {
             self.accepted = input;
             self
@@ -7613,6 +8539,7 @@ pub mod portfolio_share_detail {
             self.share_tag_options = Some(input);
             self
         }
+        /// <p>Indicates whether TagOptions sharing is enabled or disabled for the portfolio share.</p>
         pub fn set_share_tag_options(mut self, input: std::option::Option<bool>) -> Self {
             self.share_tag_options = input;
             self
@@ -7635,6 +8562,7 @@ impl PortfolioShareDetail {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7646,9 +8574,13 @@ impl PortfolioShareDetail {
     std::hash::Hash,
 )]
 pub enum DescribePortfolioShareType {
+    #[allow(missing_docs)] // documentation missing in model
     Account,
+    #[allow(missing_docs)] // documentation missing in model
     Organization,
+    #[allow(missing_docs)] // documentation missing in model
     OrganizationalUnit,
+    #[allow(missing_docs)] // documentation missing in model
     OrganizationMemberAccount,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7672,6 +8604,7 @@ impl std::str::FromStr for DescribePortfolioShareType {
     }
 }
 impl DescribePortfolioShareType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DescribePortfolioShareType::Account => "ACCOUNT",
@@ -7681,6 +8614,7 @@ impl DescribePortfolioShareType {
             DescribePortfolioShareType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT",
@@ -7696,6 +8630,7 @@ impl AsRef<str> for DescribePortfolioShareType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7707,8 +8642,11 @@ impl AsRef<str> for DescribePortfolioShareType {
     std::hash::Hash,
 )]
 pub enum CopyProductStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7731,6 +8669,7 @@ impl std::str::FromStr for CopyProductStatus {
     }
 }
 impl CopyProductStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CopyProductStatus::Failed => "FAILED",
@@ -7739,6 +8678,7 @@ impl CopyProductStatus {
             CopyProductStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
@@ -7823,6 +8763,7 @@ pub mod provisioning_artifact_properties {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7832,10 +8773,26 @@ pub mod provisioning_artifact_properties {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the provisioning artifact, including how it differs from the previous provisioning artifact.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `info`.
+        ///
+        /// To override the contents of this collection use [`set_info`](Self::set_info).
+        ///
+        /// <p>Specify the template source with one of the following options, but not both.
+        /// Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
+        /// <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p>
+        /// <p>
+        /// <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
+        /// </p>
+        /// <p>
+        /// <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the
+        /// template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON
+        /// format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
+        /// </p>
         pub fn info(
             mut self,
             k: impl Into<std::string::String>,
@@ -7846,6 +8803,17 @@ pub mod provisioning_artifact_properties {
             self.info = Some(hash_map);
             self
         }
+        /// <p>Specify the template source with one of the following options, but not both.
+        /// Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
+        /// <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p>
+        /// <p>
+        /// <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
+        /// </p>
+        /// <p>
+        /// <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the
+        /// template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON
+        /// format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
+        /// </p>
         pub fn set_info(
             mut self,
             input: std::option::Option<
@@ -7874,6 +8842,21 @@ pub mod provisioning_artifact_properties {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of provisioning artifact.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ProvisioningArtifactType>,
@@ -7886,6 +8869,7 @@ pub mod provisioning_artifact_properties {
             self.disable_template_validation = Some(input);
             self
         }
+        /// <p>If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
         pub fn set_disable_template_validation(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_template_validation = input;
             self
@@ -7909,6 +8893,7 @@ impl ProvisioningArtifactProperties {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7920,6 +8905,7 @@ impl ProvisioningArtifactProperties {
     std::hash::Hash,
 )]
 pub enum CopyOption {
+    #[allow(missing_docs)] // documentation missing in model
     CopyTags,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7940,12 +8926,14 @@ impl std::str::FromStr for CopyOption {
     }
 }
 impl CopyOption {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CopyOption::CopyTags => "CopyTags",
             CopyOption::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CopyTags"]
     }
@@ -7956,6 +8944,7 @@ impl AsRef<str> for CopyOption {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7967,6 +8956,7 @@ impl AsRef<str> for CopyOption {
     std::hash::Hash,
 )]
 pub enum ProvisioningArtifactPropertyName {
+    #[allow(missing_docs)] // documentation missing in model
     Id,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7987,12 +8977,14 @@ impl std::str::FromStr for ProvisioningArtifactPropertyName {
     }
 }
 impl ProvisioningArtifactPropertyName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProvisioningArtifactPropertyName::Id => "Id",
             ProvisioningArtifactPropertyName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Id"]
     }
@@ -8047,6 +9039,7 @@ pub mod failed_service_action_association {
             self.service_action_id = Some(input.into());
             self
         }
+        /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
         pub fn set_service_action_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8059,6 +9052,7 @@ pub mod failed_service_action_association {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -8068,6 +9062,7 @@ pub mod failed_service_action_association {
             self.provisioning_artifact_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
         pub fn set_provisioning_artifact_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8083,6 +9078,7 @@ pub mod failed_service_action_association {
             self.error_code = Some(input);
             self
         }
+        /// <p>The error code. Valid values are listed below.</p>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::ServiceActionAssociationErrorCode>,
@@ -8095,6 +9091,7 @@ pub mod failed_service_action_association {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>A text description of the error.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8121,6 +9118,7 @@ impl FailedServiceActionAssociation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8132,10 +9130,15 @@ impl FailedServiceActionAssociation {
     std::hash::Hash,
 )]
 pub enum ServiceActionAssociationErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
     DuplicateResourceException,
+    #[allow(missing_docs)] // documentation missing in model
     InternalFailure,
+    #[allow(missing_docs)] // documentation missing in model
     LimitExceededException,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceNotFoundException,
+    #[allow(missing_docs)] // documentation missing in model
     ThrottlingException,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8160,6 +9163,7 @@ impl std::str::FromStr for ServiceActionAssociationErrorCode {
     }
 }
 impl ServiceActionAssociationErrorCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceActionAssociationErrorCode::DuplicateResourceException => "DUPLICATE_RESOURCE",
@@ -8170,6 +9174,7 @@ impl ServiceActionAssociationErrorCode {
             ServiceActionAssociationErrorCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DUPLICATE_RESOURCE",
@@ -8222,6 +9227,7 @@ pub mod service_action_association {
             self.service_action_id = Some(input.into());
             self
         }
+        /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
         pub fn set_service_action_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8234,6 +9240,7 @@ pub mod service_action_association {
             self.product_id = Some(input.into());
             self
         }
+        /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
         pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_id = input;
             self
@@ -8243,6 +9250,7 @@ pub mod service_action_association {
             self.provisioning_artifact_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
         pub fn set_provisioning_artifact_id(
             mut self,
             input: std::option::Option<std::string::String>,

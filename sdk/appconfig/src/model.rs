@@ -31,6 +31,7 @@ pub mod monitor {
             self.alarm_arn = Some(input.into());
             self
         }
+        /// <p>ARN of the Amazon CloudWatch alarm.</p>
         pub fn set_alarm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alarm_arn = input;
             self
@@ -40,6 +41,7 @@ pub mod monitor {
             self.alarm_role_arn = Some(input.into());
             self
         }
+        /// <p>ARN of an IAM role for AppConfig to monitor <code>AlarmArn</code>.</p>
         pub fn set_alarm_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -63,6 +65,7 @@ impl Monitor {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -74,9 +77,13 @@ impl Monitor {
     std::hash::Hash,
 )]
 pub enum EnvironmentState {
+    #[allow(missing_docs)] // documentation missing in model
     Deploying,
+    #[allow(missing_docs)] // documentation missing in model
     ReadyForDeployment,
+    #[allow(missing_docs)] // documentation missing in model
     RolledBack,
+    #[allow(missing_docs)] // documentation missing in model
     RollingBack,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -100,6 +107,7 @@ impl std::str::FromStr for EnvironmentState {
     }
 }
 impl EnvironmentState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EnvironmentState::Deploying => "DEPLOYING",
@@ -109,6 +117,7 @@ impl EnvironmentState {
             EnvironmentState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DEPLOYING",
@@ -124,6 +133,7 @@ impl AsRef<str> for EnvironmentState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -135,7 +145,9 @@ impl AsRef<str> for EnvironmentState {
     std::hash::Hash,
 )]
 pub enum ReplicateTo {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     SsmDocument,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -157,6 +169,7 @@ impl std::str::FromStr for ReplicateTo {
     }
 }
 impl ReplicateTo {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReplicateTo::None => "NONE",
@@ -164,6 +177,7 @@ impl ReplicateTo {
             ReplicateTo::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "SSM_DOCUMENT"]
     }
@@ -174,6 +188,7 @@ impl AsRef<str> for ReplicateTo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -185,7 +200,9 @@ impl AsRef<str> for ReplicateTo {
     std::hash::Hash,
 )]
 pub enum GrowthType {
+    #[allow(missing_docs)] // documentation missing in model
     Exponential,
+    #[allow(missing_docs)] // documentation missing in model
     Linear,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -207,6 +224,7 @@ impl std::str::FromStr for GrowthType {
     }
 }
 impl GrowthType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GrowthType::Exponential => "EXPONENTIAL",
@@ -214,6 +232,7 @@ impl GrowthType {
             GrowthType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EXPONENTIAL", "LINEAR"]
     }
@@ -265,6 +284,9 @@ pub mod validator {
             self.r#type = Some(input);
             self
         }
+        /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and
+        /// <code>LAMBDA</code>
+        /// </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ValidatorType>) -> Self {
             self.r#type = input;
             self
@@ -275,6 +297,8 @@ pub mod validator {
             self.content = Some(input.into());
             self
         }
+        /// <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS Lambda
+        /// function.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -295,6 +319,7 @@ impl Validator {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -306,7 +331,9 @@ impl Validator {
     std::hash::Hash,
 )]
 pub enum ValidatorType {
+    #[allow(missing_docs)] // documentation missing in model
     JsonSchema,
+    #[allow(missing_docs)] // documentation missing in model
     Lambda,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -328,6 +355,7 @@ impl std::str::FromStr for ValidatorType {
     }
 }
 impl ValidatorType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ValidatorType::JsonSchema => "JSON_SCHEMA",
@@ -335,6 +363,7 @@ impl ValidatorType {
             ValidatorType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["JSON_SCHEMA", "LAMBDA"]
     }
@@ -362,7 +391,7 @@ pub struct DeploymentEvent {
     /// attempt a new deployment.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time the event occurred.</p>
-    pub occurred_at: std::option::Option<smithy_types::Instant>,
+    pub occurred_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DeploymentEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -383,7 +412,7 @@ pub mod deployment_event {
         pub(crate) event_type: std::option::Option<crate::model::DeploymentEventType>,
         pub(crate) triggered_by: std::option::Option<crate::model::TriggeredBy>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) occurred_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) occurred_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The type of deployment event. Deployment event types include the start, stop, or
@@ -393,6 +422,9 @@ pub mod deployment_event {
             self.event_type = Some(input);
             self
         }
+        /// <p>The type of deployment event. Deployment event types include the start, stop, or
+        /// completion of a deployment; a percentage update; the start or stop of a bake period; the
+        /// start or completion of a rollback.</p>
         pub fn set_event_type(
             mut self,
             input: std::option::Option<crate::model::DeploymentEventType>,
@@ -406,6 +438,8 @@ pub mod deployment_event {
             self.triggered_by = Some(input);
             self
         }
+        /// <p>The entity that triggered the deployment event. Events can be triggered by a user, AWS
+        /// AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
         pub fn set_triggered_by(
             mut self,
             input: std::option::Option<crate::model::TriggeredBy>,
@@ -421,18 +455,23 @@ pub mod deployment_event {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the deployment event. Descriptions include, but are not limited to, the
+        /// user account or the CloudWatch alarm ARN that initiated a rollback, the percentage of hosts
+        /// that received the deployment, or in the case of an internal error, a recommendation to
+        /// attempt a new deployment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The date and time the event occurred.</p>
-        pub fn occurred_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn occurred_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.occurred_at = Some(input);
             self
         }
+        /// <p>The date and time the event occurred.</p>
         pub fn set_occurred_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.occurred_at = input;
             self
@@ -455,6 +494,7 @@ impl DeploymentEvent {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -466,9 +506,13 @@ impl DeploymentEvent {
     std::hash::Hash,
 )]
 pub enum TriggeredBy {
+    #[allow(missing_docs)] // documentation missing in model
     Appconfig,
+    #[allow(missing_docs)] // documentation missing in model
     CloudwatchAlarm,
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
+    #[allow(missing_docs)] // documentation missing in model
     User,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -492,6 +536,7 @@ impl std::str::FromStr for TriggeredBy {
     }
 }
 impl TriggeredBy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TriggeredBy::Appconfig => "APPCONFIG",
@@ -501,6 +546,7 @@ impl TriggeredBy {
             TriggeredBy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["APPCONFIG", "CLOUDWATCH_ALARM", "INTERNAL_ERROR", "USER"]
     }
@@ -511,6 +557,7 @@ impl AsRef<str> for TriggeredBy {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -522,11 +569,17 @@ impl AsRef<str> for TriggeredBy {
     std::hash::Hash,
 )]
 pub enum DeploymentEventType {
+    #[allow(missing_docs)] // documentation missing in model
     BakeTimeStarted,
+    #[allow(missing_docs)] // documentation missing in model
     DeploymentCompleted,
+    #[allow(missing_docs)] // documentation missing in model
     DeploymentStarted,
+    #[allow(missing_docs)] // documentation missing in model
     PercentageUpdated,
+    #[allow(missing_docs)] // documentation missing in model
     RollbackCompleted,
+    #[allow(missing_docs)] // documentation missing in model
     RollbackStarted,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -552,6 +605,7 @@ impl std::str::FromStr for DeploymentEventType {
     }
 }
 impl DeploymentEventType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentEventType::BakeTimeStarted => "BAKE_TIME_STARTED",
@@ -563,6 +617,7 @@ impl DeploymentEventType {
             DeploymentEventType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BAKE_TIME_STARTED",
@@ -580,6 +635,7 @@ impl AsRef<str> for DeploymentEventType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -591,11 +647,17 @@ impl AsRef<str> for DeploymentEventType {
     std::hash::Hash,
 )]
 pub enum DeploymentState {
+    #[allow(missing_docs)] // documentation missing in model
     Baking,
+    #[allow(missing_docs)] // documentation missing in model
     Complete,
+    #[allow(missing_docs)] // documentation missing in model
     Deploying,
+    #[allow(missing_docs)] // documentation missing in model
     RolledBack,
+    #[allow(missing_docs)] // documentation missing in model
     RollingBack,
+    #[allow(missing_docs)] // documentation missing in model
     Validating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -621,6 +683,7 @@ impl std::str::FromStr for DeploymentState {
     }
 }
 impl DeploymentState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentState::Baking => "BAKING",
@@ -632,6 +695,7 @@ impl DeploymentState {
             DeploymentState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BAKING",
@@ -694,6 +758,7 @@ pub mod hosted_configuration_version_summary {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The application ID.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -706,6 +771,7 @@ pub mod hosted_configuration_version_summary {
             self.configuration_profile_id = Some(input.into());
             self
         }
+        /// <p>The configuration profile ID.</p>
         pub fn set_configuration_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -718,6 +784,7 @@ pub mod hosted_configuration_version_summary {
             self.version_number = Some(input);
             self
         }
+        /// <p>The configuration version.</p>
         pub fn set_version_number(mut self, input: std::option::Option<i32>) -> Self {
             self.version_number = input;
             self
@@ -727,6 +794,7 @@ pub mod hosted_configuration_version_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -737,6 +805,8 @@ pub mod hosted_configuration_version_summary {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>A standard MIME type describing the format of the configuration content. For more
+        /// information, see <a href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -760,6 +830,7 @@ impl HostedConfigurationVersionSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Environment {
@@ -810,6 +881,7 @@ pub mod environment {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The application ID.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -822,6 +894,7 @@ pub mod environment {
             self.id = Some(input.into());
             self
         }
+        /// <p>The environment ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -831,6 +904,7 @@ pub mod environment {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the environment.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -840,6 +914,7 @@ pub mod environment {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the environment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -852,6 +927,10 @@ pub mod environment {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the environment. An environment can be in one of the following states:
+        /// <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or
+        /// <code>ROLLED_BACK</code>
+        /// </p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::EnvironmentState>,
@@ -859,12 +938,18 @@ pub mod environment {
             self.state = input;
             self
         }
+        /// Appends an item to `monitors`.
+        ///
+        /// To override the contents of this collection use [`set_monitors`](Self::set_monitors).
+        ///
+        /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
         pub fn monitors(mut self, input: impl Into<crate::model::Monitor>) -> Self {
             let mut v = self.monitors.unwrap_or_default();
             v.push(input.into());
             self.monitors = Some(v);
             self
         }
+        /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
         pub fn set_monitors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Monitor>>,
@@ -892,6 +977,7 @@ impl Environment {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentStrategy {
@@ -955,6 +1041,7 @@ pub mod deployment_strategy {
             self.id = Some(input.into());
             self
         }
+        /// <p>The deployment strategy ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -964,6 +1051,7 @@ pub mod deployment_strategy {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the deployment strategy.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -973,6 +1061,7 @@ pub mod deployment_strategy {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the deployment strategy.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -982,6 +1071,7 @@ pub mod deployment_strategy {
             self.deployment_duration_in_minutes = Some(input);
             self
         }
+        /// <p>Total amount of time the deployment lasted.</p>
         pub fn set_deployment_duration_in_minutes(
             mut self,
             input: std::option::Option<i32>,
@@ -994,6 +1084,7 @@ pub mod deployment_strategy {
             self.growth_type = Some(input);
             self
         }
+        /// <p>The algorithm used to define how percentage grew over time.</p>
         pub fn set_growth_type(
             mut self,
             input: std::option::Option<crate::model::GrowthType>,
@@ -1007,6 +1098,8 @@ pub mod deployment_strategy {
             self.growth_factor = Some(input);
             self
         }
+        /// <p>The percentage of targets that received a deployed configuration during each
+        /// interval.</p>
         pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
             self.growth_factor = input;
             self
@@ -1017,6 +1110,8 @@ pub mod deployment_strategy {
             self.final_bake_time_in_minutes = Some(input);
             self
         }
+        /// <p>The amount of time AppConfig monitored for alarms before considering the deployment to be
+        /// complete and no longer eligible for automatic roll back.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.final_bake_time_in_minutes = input;
             self
@@ -1026,6 +1121,7 @@ pub mod deployment_strategy {
             self.replicate_to = Some(input);
             self
         }
+        /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
         pub fn set_replicate_to(
             mut self,
             input: std::option::Option<crate::model::ReplicateTo>,
@@ -1082,9 +1178,9 @@ pub struct DeploymentSummary {
     /// <p>The percentage of targets for which the deployment is available.</p>
     pub percentage_complete: f32,
     /// <p>Time the deployment started.</p>
-    pub started_at: std::option::Option<smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Time the deployment completed.</p>
-    pub completed_at: std::option::Option<smithy_types::Instant>,
+    pub completed_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DeploymentSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1124,8 +1220,8 @@ pub mod deployment_summary {
         pub(crate) final_bake_time_in_minutes: std::option::Option<i32>,
         pub(crate) state: std::option::Option<crate::model::DeploymentState>,
         pub(crate) percentage_complete: std::option::Option<f32>,
-        pub(crate) started_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) completed_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) completed_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The sequence number of the deployment.</p>
@@ -1133,6 +1229,7 @@ pub mod deployment_summary {
             self.deployment_number = Some(input);
             self
         }
+        /// <p>The sequence number of the deployment.</p>
         pub fn set_deployment_number(mut self, input: std::option::Option<i32>) -> Self {
             self.deployment_number = input;
             self
@@ -1142,6 +1239,7 @@ pub mod deployment_summary {
             self.configuration_name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration.</p>
         pub fn set_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1154,6 +1252,7 @@ pub mod deployment_summary {
             self.configuration_version = Some(input.into());
             self
         }
+        /// <p>The version of the configuration.</p>
         pub fn set_configuration_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1166,6 +1265,7 @@ pub mod deployment_summary {
             self.deployment_duration_in_minutes = Some(input);
             self
         }
+        /// <p>Total amount of time the deployment lasted.</p>
         pub fn set_deployment_duration_in_minutes(
             mut self,
             input: std::option::Option<i32>,
@@ -1178,6 +1278,7 @@ pub mod deployment_summary {
             self.growth_type = Some(input);
             self
         }
+        /// <p>The algorithm used to define how percentage grows over time.</p>
         pub fn set_growth_type(
             mut self,
             input: std::option::Option<crate::model::GrowthType>,
@@ -1191,6 +1292,8 @@ pub mod deployment_summary {
             self.growth_factor = Some(input);
             self
         }
+        /// <p>The percentage of targets to receive a deployed configuration during each
+        /// interval.</p>
         pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
             self.growth_factor = input;
             self
@@ -1201,6 +1304,8 @@ pub mod deployment_summary {
             self.final_bake_time_in_minutes = Some(input);
             self
         }
+        /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be
+        /// complete and no longer eligible for automatic roll back.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.final_bake_time_in_minutes = input;
             self
@@ -1210,6 +1315,7 @@ pub mod deployment_summary {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the deployment.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::DeploymentState>,
@@ -1222,27 +1328,33 @@ pub mod deployment_summary {
             self.percentage_complete = Some(input);
             self
         }
+        /// <p>The percentage of targets for which the deployment is available.</p>
         pub fn set_percentage_complete(mut self, input: std::option::Option<f32>) -> Self {
             self.percentage_complete = input;
             self
         }
         /// <p>Time the deployment started.</p>
-        pub fn started_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.started_at = Some(input);
             self
         }
-        pub fn set_started_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>Time the deployment started.</p>
+        pub fn set_started_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.started_at = input;
             self
         }
         /// <p>Time the deployment completed.</p>
-        pub fn completed_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn completed_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.completed_at = Some(input);
             self
         }
+        /// <p>Time the deployment completed.</p>
         pub fn set_completed_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.completed_at = input;
             self
@@ -1318,6 +1430,7 @@ pub mod configuration_profile_summary {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The application ID.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1330,6 +1443,7 @@ pub mod configuration_profile_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the configuration profile.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1339,6 +1453,7 @@ pub mod configuration_profile_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration profile.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1348,16 +1463,23 @@ pub mod configuration_profile_summary {
             self.location_uri = Some(input.into());
             self
         }
+        /// <p>The URI location of the configuration.</p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_uri = input;
             self
         }
+        /// Appends an item to `validator_types`.
+        ///
+        /// To override the contents of this collection use [`set_validator_types`](Self::set_validator_types).
+        ///
+        /// <p>The types of validators in the configuration profile.</p>
         pub fn validator_types(mut self, input: impl Into<crate::model::ValidatorType>) -> Self {
             let mut v = self.validator_types.unwrap_or_default();
             v.push(input.into());
             self.validator_types = Some(v);
             self
         }
+        /// <p>The types of validators in the configuration profile.</p>
         pub fn set_validator_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ValidatorType>>,
@@ -1384,6 +1506,7 @@ impl ConfigurationProfileSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Application {
@@ -1419,6 +1542,7 @@ pub mod application {
             self.id = Some(input.into());
             self
         }
+        /// <p>The application ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1428,6 +1552,7 @@ pub mod application {
             self.name = Some(input.into());
             self
         }
+        /// <p>The application name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1437,6 +1562,7 @@ pub mod application {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the application.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1458,6 +1584,7 @@ impl Application {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1469,6 +1596,7 @@ impl Application {
     std::hash::Hash,
 )]
 pub enum BytesMeasure {
+    #[allow(missing_docs)] // documentation missing in model
     Kilobytes,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1489,12 +1617,14 @@ impl std::str::FromStr for BytesMeasure {
     }
 }
 impl BytesMeasure {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BytesMeasure::Kilobytes => "KILOBYTES",
             BytesMeasure::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["KILOBYTES"]
     }

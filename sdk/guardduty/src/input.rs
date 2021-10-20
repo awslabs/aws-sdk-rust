@@ -16,6 +16,7 @@ pub mod accept_invitation_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector of the GuardDuty member account.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -25,6 +26,7 @@ pub mod accept_invitation_input {
             self.master_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
         pub fn set_master_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.master_id = input;
             self
@@ -34,6 +36,7 @@ pub mod accept_invitation_input {
             self.invitation_id = Some(input.into());
             self
         }
+        /// <p>The value that is used to validate the administrator account to the member account.</p>
         pub fn set_invitation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -46,7 +49,7 @@ pub mod accept_invitation_input {
             self,
         ) -> std::result::Result<
             crate::input::AcceptInvitationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AcceptInvitationInput {
                 detector_id: self.detector_id,
@@ -67,27 +70,27 @@ impl AcceptInvitationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AcceptInvitation,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AcceptInvitationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.detector_id;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_1, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_1, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -104,7 +107,7 @@ impl AcceptInvitationInput {
         fn update_http_builder(
             input: &crate::input::AcceptInvitationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -113,27 +116,27 @@ impl AcceptInvitationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AcceptInvitationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_accept_invitation(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -156,15 +159,15 @@ impl AcceptInvitationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AcceptInvitation::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AcceptInvitation",
             "guardduty",
         ));
@@ -173,10 +176,10 @@ impl AcceptInvitationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -206,16 +209,24 @@ pub mod archive_findings_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
+        /// archive.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
         }
+        /// Appends an item to `finding_ids`.
+        ///
+        /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
+        ///
+        /// <p>The IDs of the findings that you want to archive.</p>
         pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.finding_ids.unwrap_or_default();
             v.push(input.into());
             self.finding_ids = Some(v);
             self
         }
+        /// <p>The IDs of the findings that you want to archive.</p>
         pub fn set_finding_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -228,7 +239,7 @@ pub mod archive_findings_input {
             self,
         ) -> std::result::Result<
             crate::input::ArchiveFindingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ArchiveFindingsInput {
                 detector_id: self.detector_id,
@@ -248,27 +259,27 @@ impl ArchiveFindingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ArchiveFindings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ArchiveFindingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_2 = &_input.detector_id;
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_2, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_2, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -285,7 +296,7 @@ impl ArchiveFindingsInput {
         fn update_http_builder(
             input: &crate::input::ArchiveFindingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -294,27 +305,27 @@ impl ArchiveFindingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ArchiveFindingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_archive_findings(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -337,15 +348,15 @@ impl ArchiveFindingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ArchiveFindings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ArchiveFindings",
             "guardduty",
         ));
@@ -354,10 +365,10 @@ impl ArchiveFindingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -392,6 +403,7 @@ pub mod create_detector_input {
             self.enable = Some(input);
             self
         }
+        /// <p>A Boolean value that specifies whether the detector is to be enabled.</p>
         pub fn set_enable(mut self, input: std::option::Option<bool>) -> Self {
             self.enable = input;
             self
@@ -401,6 +413,7 @@ pub mod create_detector_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>The idempotency token for the create request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -413,6 +426,7 @@ pub mod create_detector_input {
             self.finding_publishing_frequency = Some(input);
             self
         }
+        /// <p>A value that specifies how frequently updated findings are exported.</p>
         pub fn set_finding_publishing_frequency(
             mut self,
             input: std::option::Option<crate::model::FindingPublishingFrequency>,
@@ -425,6 +439,7 @@ pub mod create_detector_input {
             self.data_sources = Some(input);
             self
         }
+        /// <p>Describes which data sources will be enabled for the detector.</p>
         pub fn set_data_sources(
             mut self,
             input: std::option::Option<crate::model::DataSourceConfigurations>,
@@ -432,6 +447,11 @@ pub mod create_detector_input {
             self.data_sources = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to be added to a new detector resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -442,6 +462,7 @@ pub mod create_detector_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags to be added to a new detector resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -456,7 +477,7 @@ pub mod create_detector_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateDetectorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateDetectorInput {
                 enable: self.enable.unwrap_or_default(),
@@ -479,16 +500,16 @@ impl CreateDetectorInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateDetector,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateDetectorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/detector").expect("formatting should succeed");
             Ok(())
         }
@@ -496,7 +517,7 @@ impl CreateDetectorInput {
         fn update_http_builder(
             input: &crate::input::CreateDetectorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -505,10 +526,10 @@ impl CreateDetectorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateDetectorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -518,14 +539,16 @@ impl CreateDetectorInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_detector(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -548,15 +571,15 @@ impl CreateDetectorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateDetector::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateDetector",
             "guardduty",
         ));
@@ -565,10 +588,10 @@ impl CreateDetectorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -606,6 +629,8 @@ pub mod create_filter_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter
+        /// for.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -615,6 +640,7 @@ pub mod create_filter_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -624,6 +650,7 @@ pub mod create_filter_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the filter.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -633,6 +660,7 @@ pub mod create_filter_input {
             self.action = Some(input);
             self
         }
+        /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::FilterAction>,
@@ -646,6 +674,8 @@ pub mod create_filter_input {
             self.rank = Some(input);
             self
         }
+        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
+        /// order in which this filter is applied to the findings.</p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
             self.rank = input;
             self
@@ -816,6 +846,168 @@ pub mod create_filter_input {
             self.finding_criteria = Some(input);
             self
         }
+        /// <p>Represents the criteria to be used in the filter for querying findings.</p>
+        /// <p>You can only use the following attributes to query findings:</p>
+        /// <ul>
+        /// <li>
+        /// <p>accountId</p>
+        /// </li>
+        /// <li>
+        /// <p>region</p>
+        /// </li>
+        /// <li>
+        /// <p>confidence</p>
+        /// </li>
+        /// <li>
+        /// <p>id</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.accessKeyDetails.accessKeyId</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.accessKeyDetails.principalId</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.accessKeyDetails.userName</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.accessKeyDetails.userType</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.iamInstanceProfile.id</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.imageId</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.instanceId</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.outpostArn</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.networkInterfaces.publicIp</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.networkInterfaces.subnetId</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.networkInterfaces.vpcId</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.tags.key</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.tags.value</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.resourceType</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.actionType</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.awsApiCallAction.api</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.awsApiCallAction.callerType</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.awsApiCallAction.errorCode</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.awsApiCallAction.serviceName</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.dnsRequestAction.domain</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.networkConnectionAction.blocked</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.networkConnectionAction.connectionDirection</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.networkConnectionAction.localPortDetails.port</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.networkConnectionAction.protocol</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.networkConnectionAction.remotePortDetails.port</p>
+        /// </li>
+        /// <li>
+        /// <p>service.additionalInfo.threatListName</p>
+        /// </li>
+        /// <li>
+        /// <p>service.archived</p>
+        /// <p>When this attribute is set to TRUE, only archived findings are listed. When it's set
+        /// to FALSE, only unarchived findings are listed. When this attribute is not set, all
+        /// existing findings are listed.</p>
+        /// </li>
+        /// <li>
+        /// <p>service.resourceRole</p>
+        /// </li>
+        /// <li>
+        /// <p>severity</p>
+        /// </li>
+        /// <li>
+        /// <p>type</p>
+        /// </li>
+        /// <li>
+        /// <p>updatedAt</p>
+        /// <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ
+        /// depending on whether the value contains milliseconds.</p>
+        /// </li>
+        /// </ul>
         pub fn set_finding_criteria(
             mut self,
             input: std::option::Option<crate::model::FindingCriteria>,
@@ -828,10 +1020,16 @@ pub mod create_filter_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>The idempotency token for the create request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to be added to a new filter resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -842,6 +1040,7 @@ pub mod create_filter_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags to be added to a new filter resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -854,8 +1053,10 @@ pub mod create_filter_input {
         /// Consumes the builder and constructs a [`CreateFilterInput`](crate::input::CreateFilterInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateFilterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateFilterInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateFilterInput {
                 detector_id: self.detector_id,
                 name: self.name,
@@ -880,27 +1081,27 @@ impl CreateFilterInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateFilter,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateFilterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_3 = &_input.detector_id;
             let input_3 =
                 input_3
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_3, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_3, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -917,7 +1118,7 @@ impl CreateFilterInput {
         fn update_http_builder(
             input: &crate::input::CreateFilterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -926,10 +1127,10 @@ impl CreateFilterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateFilterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -939,16 +1140,16 @@ impl CreateFilterInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_filter(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -971,25 +1172,27 @@ impl CreateFilterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateFilter::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateFilter",
-                    "guardduty",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateFilter::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateFilter",
+            "guardduty",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1026,6 +1229,8 @@ pub mod create_ip_set_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet
+        /// for.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -1036,6 +1241,8 @@ pub mod create_ip_set_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The user-friendly name to identify the IPSet.</p>
+        /// <p> Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1045,6 +1252,7 @@ pub mod create_ip_set_input {
             self.format = Some(input);
             self
         }
+        /// <p>The format of the file that contains the IPSet.</p>
         pub fn set_format(mut self, input: std::option::Option<crate::model::IpSetFormat>) -> Self {
             self.format = input;
             self
@@ -1055,6 +1263,8 @@ pub mod create_ip_set_input {
             self.location = Some(input.into());
             self
         }
+        /// <p>The URI of the file that contains the IPSet. For example:
+        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -1065,6 +1275,8 @@ pub mod create_ip_set_input {
             self.activate = Some(input);
             self
         }
+        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
+        /// IPSet.</p>
         pub fn set_activate(mut self, input: std::option::Option<bool>) -> Self {
             self.activate = input;
             self
@@ -1074,10 +1286,16 @@ pub mod create_ip_set_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>The idempotency token for the create request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to be added to a new IP set resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1088,6 +1306,7 @@ pub mod create_ip_set_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags to be added to a new IP set resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1100,8 +1319,10 @@ pub mod create_ip_set_input {
         /// Consumes the builder and constructs a [`CreateIpSetInput`](crate::input::CreateIpSetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateIpSetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateIpSetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateIpSetInput {
                 detector_id: self.detector_id,
                 name: self.name,
@@ -1125,27 +1346,27 @@ impl CreateIpSetInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateIPSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateIpSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_4 = &_input.detector_id;
             let input_4 =
                 input_4
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_4, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_4, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -1162,7 +1383,7 @@ impl CreateIpSetInput {
         fn update_http_builder(
             input: &crate::input::CreateIpSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1171,10 +1392,10 @@ impl CreateIpSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateIpSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1184,16 +1405,16 @@ impl CreateIpSetInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_ip_set(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1216,25 +1437,27 @@ impl CreateIpSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateIPSet::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateIPSet",
-                    "guardduty",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateIPSet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateIPSet",
+            "guardduty",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1264,16 +1487,26 @@ pub mod create_members_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member
+        /// accounts with.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
         }
+        /// Appends an item to `account_details`.
+        ///
+        /// To override the contents of this collection use [`set_account_details`](Self::set_account_details).
+        ///
+        /// <p>A list of account ID and email address pairs of the accounts that you want to associate
+        /// with the GuardDuty administrator account.</p>
         pub fn account_details(mut self, input: impl Into<crate::model::AccountDetail>) -> Self {
             let mut v = self.account_details.unwrap_or_default();
             v.push(input.into());
             self.account_details = Some(v);
             self
         }
+        /// <p>A list of account ID and email address pairs of the accounts that you want to associate
+        /// with the GuardDuty administrator account.</p>
         pub fn set_account_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccountDetail>>,
@@ -1284,8 +1517,10 @@ pub mod create_members_input {
         /// Consumes the builder and constructs a [`CreateMembersInput`](crate::input::CreateMembersInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateMembersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateMembersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateMembersInput {
                 detector_id: self.detector_id,
                 account_details: self.account_details,
@@ -1304,27 +1539,27 @@ impl CreateMembersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateMembers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateMembersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_5 = &_input.detector_id;
             let input_5 =
                 input_5
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_5, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_5, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -1341,7 +1576,7 @@ impl CreateMembersInput {
         fn update_http_builder(
             input: &crate::input::CreateMembersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1350,24 +1585,26 @@ impl CreateMembersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateMembersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_members(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1390,25 +1627,27 @@ impl CreateMembersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateMembers::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateMembers",
-                    "guardduty",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateMembers::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateMembers",
+            "guardduty",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1439,6 +1678,7 @@ pub mod create_publishing_destination_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The ID of the GuardDuty detector associated with the publishing destination.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -1449,6 +1689,8 @@ pub mod create_publishing_destination_input {
             self.destination_type = Some(input);
             self
         }
+        /// <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are
+        /// supported.</p>
         pub fn set_destination_type(
             mut self,
             input: std::option::Option<crate::model::DestinationType>,
@@ -1465,6 +1707,8 @@ pub mod create_publishing_destination_input {
             self.destination_properties = Some(input);
             self
         }
+        /// <p>The properties of the publishing destination, including the ARNs for the destination and
+        /// the KMS key used for encryption.</p>
         pub fn set_destination_properties(
             mut self,
             input: std::option::Option<crate::model::DestinationProperties>,
@@ -1477,6 +1721,7 @@ pub mod create_publishing_destination_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>The idempotency token for the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1486,7 +1731,7 @@ pub mod create_publishing_destination_input {
             self,
         ) -> std::result::Result<
             crate::input::CreatePublishingDestinationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreatePublishingDestinationInput {
                 detector_id: self.detector_id,
@@ -1509,27 +1754,27 @@ impl CreatePublishingDestinationInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreatePublishingDestination,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreatePublishingDestinationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_6 = &_input.detector_id;
             let input_6 =
                 input_6
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_6, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_6, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -1546,7 +1791,7 @@ impl CreatePublishingDestinationInput {
         fn update_http_builder(
             input: &crate::input::CreatePublishingDestinationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1555,10 +1800,10 @@ impl CreatePublishingDestinationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreatePublishingDestinationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1568,15 +1813,15 @@ impl CreatePublishingDestinationInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_publishing_destination(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_publishing_destination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1599,15 +1844,15 @@ impl CreatePublishingDestinationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreatePublishingDestination::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreatePublishingDestination",
             "guardduty",
         ));
@@ -1616,10 +1861,10 @@ impl CreatePublishingDestinationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1648,16 +1893,23 @@ pub mod create_sample_findings_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The ID of the detector to create sample findings for.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
         }
+        /// Appends an item to `finding_types`.
+        ///
+        /// To override the contents of this collection use [`set_finding_types`](Self::set_finding_types).
+        ///
+        /// <p>The types of sample findings to generate.</p>
         pub fn finding_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.finding_types.unwrap_or_default();
             v.push(input.into());
             self.finding_types = Some(v);
             self
         }
+        /// <p>The types of sample findings to generate.</p>
         pub fn set_finding_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1670,7 +1922,7 @@ pub mod create_sample_findings_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateSampleFindingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateSampleFindingsInput {
                 detector_id: self.detector_id,
@@ -1690,27 +1942,27 @@ impl CreateSampleFindingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateSampleFindings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateSampleFindingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_7 = &_input.detector_id;
             let input_7 =
                 input_7
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_7, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_7, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -1727,7 +1979,7 @@ impl CreateSampleFindingsInput {
         fn update_http_builder(
             input: &crate::input::CreateSampleFindingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1736,27 +1988,27 @@ impl CreateSampleFindingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateSampleFindingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_sample_findings(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1779,15 +2031,15 @@ impl CreateSampleFindingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateSampleFindings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateSampleFindings",
             "guardduty",
         ));
@@ -1796,10 +2048,10 @@ impl CreateSampleFindingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1836,6 +2088,8 @@ pub mod create_threat_intel_set_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to create a
+        /// threatIntelSet for.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -1846,6 +2100,8 @@ pub mod create_threat_intel_set_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by
+        /// activity that involves IP addresses included in this ThreatIntelSet.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1855,6 +2111,7 @@ pub mod create_threat_intel_set_input {
             self.format = Some(input);
             self
         }
+        /// <p>The format of the file that contains the ThreatIntelSet.</p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::ThreatIntelSetFormat>,
@@ -1868,6 +2125,8 @@ pub mod create_threat_intel_set_input {
             self.location = Some(input.into());
             self
         }
+        /// <p>The URI of the file that contains the ThreatIntelSet. For example:
+        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -1878,6 +2137,8 @@ pub mod create_threat_intel_set_input {
             self.activate = Some(input);
             self
         }
+        /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded
+        /// ThreatIntelSet.</p>
         pub fn set_activate(mut self, input: std::option::Option<bool>) -> Self {
             self.activate = input;
             self
@@ -1887,10 +2148,16 @@ pub mod create_threat_intel_set_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>The idempotency token for the create request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to be added to a new threat list resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1901,6 +2168,7 @@ pub mod create_threat_intel_set_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags to be added to a new threat list resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1915,7 +2183,7 @@ pub mod create_threat_intel_set_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateThreatIntelSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateThreatIntelSetInput {
                 detector_id: self.detector_id,
@@ -1940,27 +2208,27 @@ impl CreateThreatIntelSetInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateThreatIntelSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateThreatIntelSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_8 = &_input.detector_id;
             let input_8 =
                 input_8
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_8, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_8, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -1977,7 +2245,7 @@ impl CreateThreatIntelSetInput {
         fn update_http_builder(
             input: &crate::input::CreateThreatIntelSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1986,10 +2254,10 @@ impl CreateThreatIntelSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateThreatIntelSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1999,17 +2267,19 @@ impl CreateThreatIntelSetInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_threat_intel_set(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2032,15 +2302,15 @@ impl CreateThreatIntelSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateThreatIntelSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateThreatIntelSet",
             "guardduty",
         ));
@@ -2049,10 +2319,10 @@ impl CreateThreatIntelSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2075,12 +2345,20 @@ pub mod decline_invitations_input {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
+        /// account that you want to decline invitations from.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
+        /// account that you want to decline invitations from.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2093,7 +2371,7 @@ pub mod decline_invitations_input {
             self,
         ) -> std::result::Result<
             crate::input::DeclineInvitationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeclineInvitationsInput {
                 account_ids: self.account_ids,
@@ -2112,16 +2390,16 @@ impl DeclineInvitationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeclineInvitations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeclineInvitationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/invitation/decline").expect("formatting should succeed");
             Ok(())
         }
@@ -2129,7 +2407,7 @@ impl DeclineInvitationsInput {
         fn update_http_builder(
             input: &crate::input::DeclineInvitationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2138,27 +2416,27 @@ impl DeclineInvitationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeclineInvitationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_decline_invitations(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2181,15 +2459,15 @@ impl DeclineInvitationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeclineInvitations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeclineInvitations",
             "guardduty",
         ));
@@ -2198,10 +2476,10 @@ impl DeclineInvitationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2229,6 +2507,7 @@ pub mod delete_detector_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector that you want to delete.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -2238,7 +2517,7 @@ pub mod delete_detector_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteDetectorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteDetectorInput {
                 detector_id: self.detector_id,
@@ -2257,27 +2536,27 @@ impl DeleteDetectorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteDetector,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteDetectorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_9 = &_input.detector_id;
             let input_9 =
                 input_9
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_9, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_9, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -2290,7 +2569,7 @@ impl DeleteDetectorInput {
         fn update_http_builder(
             input: &crate::input::DeleteDetectorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2299,23 +2578,23 @@ impl DeleteDetectorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteDetectorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2338,15 +2617,15 @@ impl DeleteDetectorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteDetector::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteDetector",
             "guardduty",
         ));
@@ -2355,10 +2634,10 @@ impl DeleteDetectorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2387,6 +2666,7 @@ pub mod delete_filter_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector that the filter is associated with.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -2396,6 +2676,7 @@ pub mod delete_filter_input {
             self.filter_name = Some(input.into());
             self
         }
+        /// <p>The name of the filter that you want to delete.</p>
         pub fn set_filter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter_name = input;
             self
@@ -2403,8 +2684,10 @@ pub mod delete_filter_input {
         /// Consumes the builder and constructs a [`DeleteFilterInput`](crate::input::DeleteFilterInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteFilterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteFilterInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteFilterInput {
                 detector_id: self.detector_id,
                 filter_name: self.filter_name,
@@ -2423,27 +2706,27 @@ impl DeleteFilterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteFilter,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteFilterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_10 = &_input.detector_id;
             let input_10 =
                 input_10
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_10, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_10, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -2452,13 +2735,13 @@ impl DeleteFilterInput {
             let input_11 =
                 input_11
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "filter_name",
                         details: "cannot be empty or unset",
                     })?;
-            let filter_name = smithy_http::label::fmt_string(input_11, false);
+            let filter_name = aws_smithy_http::label::fmt_string(input_11, false);
             if filter_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "filter_name",
                     details: "cannot be empty or unset",
                 });
@@ -2476,7 +2759,7 @@ impl DeleteFilterInput {
         fn update_http_builder(
             input: &crate::input::DeleteFilterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2485,23 +2768,23 @@ impl DeleteFilterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteFilterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2524,25 +2807,27 @@ impl DeleteFilterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteFilter::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteFilter",
-                    "guardduty",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteFilter::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteFilter",
+            "guardduty",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2565,12 +2850,20 @@ pub mod delete_invitations_input {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
+        /// account that you want to delete invitations from.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member
+        /// account that you want to delete invitations from.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2583,7 +2876,7 @@ pub mod delete_invitations_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteInvitationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteInvitationsInput {
                 account_ids: self.account_ids,
@@ -2602,16 +2895,16 @@ impl DeleteInvitationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteInvitations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteInvitationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/invitation/delete").expect("formatting should succeed");
             Ok(())
         }
@@ -2619,7 +2912,7 @@ impl DeleteInvitationsInput {
         fn update_http_builder(
             input: &crate::input::DeleteInvitationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2628,27 +2921,27 @@ impl DeleteInvitationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteInvitationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_invitations(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2671,15 +2964,15 @@ impl DeleteInvitationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteInvitations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteInvitations",
             "guardduty",
         ));
@@ -2688,10 +2981,10 @@ impl DeleteInvitationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2720,6 +3013,7 @@ pub mod delete_ip_set_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector associated with the IPSet.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -2729,6 +3023,7 @@ pub mod delete_ip_set_input {
             self.ip_set_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the IPSet to delete.</p>
         pub fn set_ip_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_set_id = input;
             self
@@ -2736,8 +3031,10 @@ pub mod delete_ip_set_input {
         /// Consumes the builder and constructs a [`DeleteIpSetInput`](crate::input::DeleteIpSetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteIpSetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteIpSetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteIpSetInput {
                 detector_id: self.detector_id,
                 ip_set_id: self.ip_set_id,
@@ -2756,27 +3053,27 @@ impl DeleteIpSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteIPSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteIpSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_12 = &_input.detector_id;
             let input_12 =
                 input_12
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_12, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_12, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -2785,13 +3082,13 @@ impl DeleteIpSetInput {
             let input_13 =
                 input_13
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "ip_set_id",
                         details: "cannot be empty or unset",
                     })?;
-            let ip_set_id = smithy_http::label::fmt_string(input_13, false);
+            let ip_set_id = aws_smithy_http::label::fmt_string(input_13, false);
             if ip_set_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "ip_set_id",
                     details: "cannot be empty or unset",
                 });
@@ -2809,7 +3106,7 @@ impl DeleteIpSetInput {
         fn update_http_builder(
             input: &crate::input::DeleteIpSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2818,23 +3115,23 @@ impl DeleteIpSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteIpSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2857,25 +3154,27 @@ impl DeleteIpSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteIPSet::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteIPSet",
-                    "guardduty",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteIPSet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteIPSet",
+            "guardduty",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2905,16 +3204,24 @@ pub mod delete_members_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
+        /// delete.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
         }
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>A list of account IDs of the GuardDuty member accounts that you want to delete.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>A list of account IDs of the GuardDuty member accounts that you want to delete.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2925,8 +3232,10 @@ pub mod delete_members_input {
         /// Consumes the builder and constructs a [`DeleteMembersInput`](crate::input::DeleteMembersInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteMembersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteMembersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteMembersInput {
                 detector_id: self.detector_id,
                 account_ids: self.account_ids,
@@ -2945,27 +3254,27 @@ impl DeleteMembersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteMembers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteMembersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_14 = &_input.detector_id;
             let input_14 =
                 input_14
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_14, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_14, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -2982,7 +3291,7 @@ impl DeleteMembersInput {
         fn update_http_builder(
             input: &crate::input::DeleteMembersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2991,24 +3300,26 @@ impl DeleteMembersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteMembersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_members(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3031,25 +3342,27 @@ impl DeleteMembersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteMembers::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteMembers",
-                    "guardduty",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteMembers::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteMembers",
+            "guardduty",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3078,6 +3391,7 @@ pub mod delete_publishing_destination_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector associated with the publishing destination to delete.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -3087,6 +3401,7 @@ pub mod delete_publishing_destination_input {
             self.destination_id = Some(input.into());
             self
         }
+        /// <p>The ID of the publishing destination to delete.</p>
         pub fn set_destination_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3099,7 +3414,7 @@ pub mod delete_publishing_destination_input {
             self,
         ) -> std::result::Result<
             crate::input::DeletePublishingDestinationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeletePublishingDestinationInput {
                 detector_id: self.detector_id,
@@ -3120,27 +3435,27 @@ impl DeletePublishingDestinationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeletePublishingDestination,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeletePublishingDestinationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_15 = &_input.detector_id;
             let input_15 =
                 input_15
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_15, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_15, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -3149,13 +3464,13 @@ impl DeletePublishingDestinationInput {
             let input_16 =
                 input_16
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "destination_id",
                         details: "cannot be empty or unset",
                     })?;
-            let destination_id = smithy_http::label::fmt_string(input_16, false);
+            let destination_id = aws_smithy_http::label::fmt_string(input_16, false);
             if destination_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "destination_id",
                     details: "cannot be empty or unset",
                 });
@@ -3173,7 +3488,7 @@ impl DeletePublishingDestinationInput {
         fn update_http_builder(
             input: &crate::input::DeletePublishingDestinationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3182,23 +3497,23 @@ impl DeletePublishingDestinationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeletePublishingDestinationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3221,15 +3536,15 @@ impl DeletePublishingDestinationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeletePublishingDestination::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeletePublishingDestination",
             "guardduty",
         ));
@@ -3238,10 +3553,10 @@ impl DeletePublishingDestinationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3270,6 +3585,7 @@ pub mod delete_threat_intel_set_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -3279,6 +3595,7 @@ pub mod delete_threat_intel_set_input {
             self.threat_intel_set_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the threatIntelSet that you want to delete.</p>
         pub fn set_threat_intel_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3291,7 +3608,7 @@ pub mod delete_threat_intel_set_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteThreatIntelSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteThreatIntelSetInput {
                 detector_id: self.detector_id,
@@ -3311,27 +3628,27 @@ impl DeleteThreatIntelSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteThreatIntelSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteThreatIntelSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_17 = &_input.detector_id;
             let input_17 =
                 input_17
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_17, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_17, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -3340,13 +3657,13 @@ impl DeleteThreatIntelSetInput {
             let input_18 =
                 input_18
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "threat_intel_set_id",
                         details: "cannot be empty or unset",
                     })?;
-            let threat_intel_set_id = smithy_http::label::fmt_string(input_18, false);
+            let threat_intel_set_id = aws_smithy_http::label::fmt_string(input_18, false);
             if threat_intel_set_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "threat_intel_set_id",
                     details: "cannot be empty or unset",
                 });
@@ -3364,7 +3681,7 @@ impl DeleteThreatIntelSetInput {
         fn update_http_builder(
             input: &crate::input::DeleteThreatIntelSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3373,23 +3690,23 @@ impl DeleteThreatIntelSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteThreatIntelSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3412,15 +3729,15 @@ impl DeleteThreatIntelSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteThreatIntelSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteThreatIntelSet",
             "guardduty",
         ));
@@ -3429,10 +3746,10 @@ impl DeleteThreatIntelSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3461,6 +3778,8 @@ pub mod describe_organization_configuration_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The ID of the detector to retrieve information about the delegated administrator
+        /// from.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -3470,7 +3789,7 @@ pub mod describe_organization_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeOrganizationConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeOrganizationConfigurationInput {
                 detector_id: self.detector_id,
@@ -3490,27 +3809,27 @@ impl DescribeOrganizationConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeOrganizationConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeOrganizationConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_19 = &_input.detector_id;
             let input_19 =
                 input_19
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_19, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_19, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -3527,7 +3846,7 @@ impl DescribeOrganizationConfigurationInput {
         fn update_http_builder(
             input: &crate::input::DescribeOrganizationConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3536,23 +3855,23 @@ impl DescribeOrganizationConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeOrganizationConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3575,15 +3894,15 @@ impl DescribeOrganizationConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeOrganizationConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeOrganizationConfiguration",
             "guardduty",
         ));
@@ -3592,10 +3911,10 @@ impl DescribeOrganizationConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3625,6 +3944,8 @@ pub mod describe_publishing_destination_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector associated with the publishing destination to
+        /// retrieve.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -3634,6 +3955,7 @@ pub mod describe_publishing_destination_input {
             self.destination_id = Some(input.into());
             self
         }
+        /// <p>The ID of the publishing destination to retrieve.</p>
         pub fn set_destination_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3646,7 +3968,7 @@ pub mod describe_publishing_destination_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribePublishingDestinationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribePublishingDestinationInput {
                 detector_id: self.detector_id,
@@ -3667,27 +3989,27 @@ impl DescribePublishingDestinationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribePublishingDestination,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribePublishingDestinationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_20 = &_input.detector_id;
             let input_20 =
                 input_20
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_20, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_20, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -3696,13 +4018,13 @@ impl DescribePublishingDestinationInput {
             let input_21 =
                 input_21
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "destination_id",
                         details: "cannot be empty or unset",
                     })?;
-            let destination_id = smithy_http::label::fmt_string(input_21, false);
+            let destination_id = aws_smithy_http::label::fmt_string(input_21, false);
             if destination_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "destination_id",
                     details: "cannot be empty or unset",
                 });
@@ -3720,7 +4042,7 @@ impl DescribePublishingDestinationInput {
         fn update_http_builder(
             input: &crate::input::DescribePublishingDestinationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3729,23 +4051,23 @@ impl DescribePublishingDestinationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribePublishingDestinationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3768,15 +4090,15 @@ impl DescribePublishingDestinationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribePublishingDestination::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribePublishingDestination",
             "guardduty",
         ));
@@ -3785,10 +4107,10 @@ impl DescribePublishingDestinationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3817,6 +4139,8 @@ pub mod disable_organization_admin_account_input {
             self.admin_account_id = Some(input.into());
             self
         }
+        /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated
+        /// administrator.</p>
         pub fn set_admin_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3829,7 +4153,7 @@ pub mod disable_organization_admin_account_input {
             self,
         ) -> std::result::Result<
             crate::input::DisableOrganizationAdminAccountInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisableOrganizationAdminAccountInput {
                 admin_account_id: self.admin_account_id,
@@ -3849,16 +4173,16 @@ impl DisableOrganizationAdminAccountInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisableOrganizationAdminAccount,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisableOrganizationAdminAccountInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/admin/disable").expect("formatting should succeed");
             Ok(())
         }
@@ -3866,7 +4190,7 @@ impl DisableOrganizationAdminAccountInput {
         fn update_http_builder(
             input: &crate::input::DisableOrganizationAdminAccountInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3875,25 +4199,25 @@ impl DisableOrganizationAdminAccountInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisableOrganizationAdminAccountInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disable_organization_admin_account(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disable_organization_admin_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3916,15 +4240,15 @@ impl DisableOrganizationAdminAccountInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisableOrganizationAdminAccount::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisableOrganizationAdminAccount",
             "guardduty",
         ));
@@ -3933,10 +4257,10 @@ impl DisableOrganizationAdminAccountInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3964,6 +4288,7 @@ pub mod disassociate_from_master_account_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector of the GuardDuty member account.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -3973,7 +4298,7 @@ pub mod disassociate_from_master_account_input {
             self,
         ) -> std::result::Result<
             crate::input::DisassociateFromMasterAccountInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisassociateFromMasterAccountInput {
                 detector_id: self.detector_id,
@@ -3993,27 +4318,27 @@ impl DisassociateFromMasterAccountInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisassociateFromMasterAccount,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisassociateFromMasterAccountInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_22 = &_input.detector_id;
             let input_22 =
                 input_22
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_22, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_22, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -4030,7 +4355,7 @@ impl DisassociateFromMasterAccountInput {
         fn update_http_builder(
             input: &crate::input::DisassociateFromMasterAccountInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4039,23 +4364,23 @@ impl DisassociateFromMasterAccountInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisassociateFromMasterAccountInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4078,15 +4403,15 @@ impl DisassociateFromMasterAccountInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisassociateFromMasterAccount::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisassociateFromMasterAccount",
             "guardduty",
         ));
@@ -4095,10 +4420,10 @@ impl DisassociateFromMasterAccountInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4128,16 +4453,26 @@ pub mod disassociate_members_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
+        /// disassociate from the administrator account.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
         }
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from
+        /// the administrator account.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from
+        /// the administrator account.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4150,7 +4485,7 @@ pub mod disassociate_members_input {
             self,
         ) -> std::result::Result<
             crate::input::DisassociateMembersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisassociateMembersInput {
                 detector_id: self.detector_id,
@@ -4170,27 +4505,27 @@ impl DisassociateMembersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisassociateMembers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisassociateMembersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_23 = &_input.detector_id;
             let input_23 =
                 input_23
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_23, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_23, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -4207,7 +4542,7 @@ impl DisassociateMembersInput {
         fn update_http_builder(
             input: &crate::input::DisassociateMembersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4216,25 +4551,27 @@ impl DisassociateMembersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisassociateMembersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disassociate_members(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4257,15 +4594,15 @@ impl DisassociateMembersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisassociateMembers::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisassociateMembers",
             "guardduty",
         ));
@@ -4274,10 +4611,10 @@ impl DisassociateMembersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4306,6 +4643,8 @@ pub mod enable_organization_admin_account_input {
             self.admin_account_id = Some(input.into());
             self
         }
+        /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated
+        /// administrator.</p>
         pub fn set_admin_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4318,7 +4657,7 @@ pub mod enable_organization_admin_account_input {
             self,
         ) -> std::result::Result<
             crate::input::EnableOrganizationAdminAccountInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::EnableOrganizationAdminAccountInput {
                 admin_account_id: self.admin_account_id,
@@ -4338,16 +4677,16 @@ impl EnableOrganizationAdminAccountInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::EnableOrganizationAdminAccount,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::EnableOrganizationAdminAccountInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/admin/enable").expect("formatting should succeed");
             Ok(())
         }
@@ -4355,7 +4694,7 @@ impl EnableOrganizationAdminAccountInput {
         fn update_http_builder(
             input: &crate::input::EnableOrganizationAdminAccountInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4364,25 +4703,25 @@ impl EnableOrganizationAdminAccountInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::EnableOrganizationAdminAccountInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_enable_organization_admin_account(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_enable_organization_admin_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4405,15 +4744,15 @@ impl EnableOrganizationAdminAccountInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::EnableOrganizationAdminAccount::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "EnableOrganizationAdminAccount",
             "guardduty",
         ));
@@ -4422,10 +4761,10 @@ impl EnableOrganizationAdminAccountInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4453,6 +4792,7 @@ pub mod get_detector_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector that you want to get.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -4460,8 +4800,10 @@ pub mod get_detector_input {
         /// Consumes the builder and constructs a [`GetDetectorInput`](crate::input::GetDetectorInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetDetectorInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetDetectorInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetDetectorInput {
                 detector_id: self.detector_id,
             })
@@ -4479,27 +4821,27 @@ impl GetDetectorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetDetector,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetDetectorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_24 = &_input.detector_id;
             let input_24 =
                 input_24
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_24, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_24, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -4512,7 +4854,7 @@ impl GetDetectorInput {
         fn update_http_builder(
             input: &crate::input::GetDetectorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4521,23 +4863,23 @@ impl GetDetectorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetDetectorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4560,25 +4902,27 @@ impl GetDetectorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetDetector::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetDetector",
-                    "guardduty",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetDetector::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetDetector",
+            "guardduty",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4607,6 +4951,7 @@ pub mod get_filter_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector that the filter is associated with.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -4616,6 +4961,7 @@ pub mod get_filter_input {
             self.filter_name = Some(input.into());
             self
         }
+        /// <p>The name of the filter you want to get.</p>
         pub fn set_filter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter_name = input;
             self
@@ -4623,7 +4969,7 @@ pub mod get_filter_input {
         /// Consumes the builder and constructs a [`GetFilterInput`](crate::input::GetFilterInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetFilterInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetFilterInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetFilterInput {
                 detector_id: self.detector_id,
@@ -4643,27 +4989,27 @@ impl GetFilterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetFilter,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetFilterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_25 = &_input.detector_id;
             let input_25 =
                 input_25
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_25, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_25, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -4672,13 +5018,13 @@ impl GetFilterInput {
             let input_26 =
                 input_26
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "filter_name",
                         details: "cannot be empty or unset",
                     })?;
-            let filter_name = smithy_http::label::fmt_string(input_26, false);
+            let filter_name = aws_smithy_http::label::fmt_string(input_26, false);
             if filter_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "filter_name",
                     details: "cannot be empty or unset",
                 });
@@ -4696,7 +5042,7 @@ impl GetFilterInput {
         fn update_http_builder(
             input: &crate::input::GetFilterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4705,23 +5051,23 @@ impl GetFilterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetFilterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4744,13 +5090,13 @@ impl GetFilterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetFilter::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetFilter::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetFilter",
                     "guardduty",
                 ));
@@ -4759,10 +5105,10 @@ impl GetFilterInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4793,16 +5139,24 @@ pub mod get_findings_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
+        /// retrieve.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
         }
+        /// Appends an item to `finding_ids`.
+        ///
+        /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
+        ///
+        /// <p>The IDs of the findings that you want to retrieve.</p>
         pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.finding_ids.unwrap_or_default();
             v.push(input.into());
             self.finding_ids = Some(v);
             self
         }
+        /// <p>The IDs of the findings that you want to retrieve.</p>
         pub fn set_finding_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4815,6 +5169,7 @@ pub mod get_findings_input {
             self.sort_criteria = Some(input);
             self
         }
+        /// <p>Represents the criteria used for sorting findings.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<crate::model::SortCriteria>,
@@ -4825,8 +5180,10 @@ pub mod get_findings_input {
         /// Consumes the builder and constructs a [`GetFindingsInput`](crate::input::GetFindingsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetFindingsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetFindingsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetFindingsInput {
                 detector_id: self.detector_id,
                 finding_ids: self.finding_ids,
@@ -4846,27 +5203,27 @@ impl GetFindingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetFindings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetFindingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_27 = &_input.detector_id;
             let input_27 =
                 input_27
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_27, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_27, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -4883,7 +5240,7 @@ impl GetFindingsInput {
         fn update_http_builder(
             input: &crate::input::GetFindingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4892,24 +5249,26 @@ impl GetFindingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetFindingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_findings(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4932,25 +5291,27 @@ impl GetFindingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetFindings::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetFindings",
-                    "guardduty",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetFindings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetFindings",
+            "guardduty",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4982,10 +5343,17 @@ pub mod get_findings_statistics_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you
+        /// want to retrieve.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
         }
+        /// Appends an item to `finding_statistic_types`.
+        ///
+        /// To override the contents of this collection use [`set_finding_statistic_types`](Self::set_finding_statistic_types).
+        ///
+        /// <p>The types of finding statistics to retrieve.</p>
         pub fn finding_statistic_types(
             mut self,
             input: impl Into<crate::model::FindingStatisticType>,
@@ -4995,6 +5363,7 @@ pub mod get_findings_statistics_input {
             self.finding_statistic_types = Some(v);
             self
         }
+        /// <p>The types of finding statistics to retrieve.</p>
         pub fn set_finding_statistic_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FindingStatisticType>>,
@@ -5007,6 +5376,7 @@ pub mod get_findings_statistics_input {
             self.finding_criteria = Some(input);
             self
         }
+        /// <p>Represents the criteria that is used for querying findings.</p>
         pub fn set_finding_criteria(
             mut self,
             input: std::option::Option<crate::model::FindingCriteria>,
@@ -5019,7 +5389,7 @@ pub mod get_findings_statistics_input {
             self,
         ) -> std::result::Result<
             crate::input::GetFindingsStatisticsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetFindingsStatisticsInput {
                 detector_id: self.detector_id,
@@ -5040,27 +5410,27 @@ impl GetFindingsStatisticsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetFindingsStatistics,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetFindingsStatisticsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_28 = &_input.detector_id;
             let input_28 =
                 input_28
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_28, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_28, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -5077,7 +5447,7 @@ impl GetFindingsStatisticsInput {
         fn update_http_builder(
             input: &crate::input::GetFindingsStatisticsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5086,27 +5456,29 @@ impl GetFindingsStatisticsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetFindingsStatisticsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_findings_statistics(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5129,15 +5501,15 @@ impl GetFindingsStatisticsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetFindingsStatistics::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetFindingsStatistics",
             "guardduty",
         ));
@@ -5146,10 +5518,10 @@ impl GetFindingsStatisticsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5175,7 +5547,7 @@ pub mod get_invitations_count_input {
             self,
         ) -> std::result::Result<
             crate::input::GetInvitationsCountInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetInvitationsCountInput {})
         }
@@ -5192,16 +5564,16 @@ impl GetInvitationsCountInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetInvitationsCount,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetInvitationsCountInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/invitation/count").expect("formatting should succeed");
             Ok(())
         }
@@ -5209,7 +5581,7 @@ impl GetInvitationsCountInput {
         fn update_http_builder(
             input: &crate::input::GetInvitationsCountInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5218,23 +5590,23 @@ impl GetInvitationsCountInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetInvitationsCountInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5257,15 +5629,15 @@ impl GetInvitationsCountInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetInvitationsCount::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetInvitationsCount",
             "guardduty",
         ));
@@ -5274,10 +5646,10 @@ impl GetInvitationsCountInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5306,6 +5678,7 @@ pub mod get_ip_set_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector that the IPSet is associated with.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -5315,6 +5688,7 @@ pub mod get_ip_set_input {
             self.ip_set_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the IPSet to retrieve.</p>
         pub fn set_ip_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_set_id = input;
             self
@@ -5322,7 +5696,7 @@ pub mod get_ip_set_input {
         /// Consumes the builder and constructs a [`GetIpSetInput`](crate::input::GetIpSetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetIpSetInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetIpSetInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetIpSetInput {
                 detector_id: self.detector_id,
@@ -5342,27 +5716,27 @@ impl GetIpSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetIPSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetIpSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_29 = &_input.detector_id;
             let input_29 =
                 input_29
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_29, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_29, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -5371,13 +5745,13 @@ impl GetIpSetInput {
             let input_30 =
                 input_30
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "ip_set_id",
                         details: "cannot be empty or unset",
                     })?;
-            let ip_set_id = smithy_http::label::fmt_string(input_30, false);
+            let ip_set_id = aws_smithy_http::label::fmt_string(input_30, false);
             if ip_set_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "ip_set_id",
                     details: "cannot be empty or unset",
                 });
@@ -5395,7 +5769,7 @@ impl GetIpSetInput {
         fn update_http_builder(
             input: &crate::input::GetIpSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5404,23 +5778,23 @@ impl GetIpSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetIpSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5443,24 +5817,25 @@ impl GetIpSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::GetIPSet::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetIPSet",
-                "guardduty",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetIPSet::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetIPSet",
+                    "guardduty",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5488,6 +5863,7 @@ pub mod get_master_account_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector of the GuardDuty member account.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -5497,7 +5873,7 @@ pub mod get_master_account_input {
             self,
         ) -> std::result::Result<
             crate::input::GetMasterAccountInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetMasterAccountInput {
                 detector_id: self.detector_id,
@@ -5516,27 +5892,27 @@ impl GetMasterAccountInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetMasterAccount,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetMasterAccountInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_31 = &_input.detector_id;
             let input_31 =
                 input_31
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_31, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_31, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -5553,7 +5929,7 @@ impl GetMasterAccountInput {
         fn update_http_builder(
             input: &crate::input::GetMasterAccountInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5562,23 +5938,23 @@ impl GetMasterAccountInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetMasterAccountInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5601,15 +5977,15 @@ impl GetMasterAccountInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetMasterAccount::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetMasterAccount",
             "guardduty",
         ));
@@ -5618,10 +5994,10 @@ impl GetMasterAccountInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5650,16 +6026,23 @@ pub mod get_member_detectors_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The detector ID for the administrator account.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
         }
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The account ID of the member account.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>The account ID of the member account.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5672,7 +6055,7 @@ pub mod get_member_detectors_input {
             self,
         ) -> std::result::Result<
             crate::input::GetMemberDetectorsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetMemberDetectorsInput {
                 detector_id: self.detector_id,
@@ -5692,27 +6075,27 @@ impl GetMemberDetectorsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetMemberDetectors,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetMemberDetectorsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_32 = &_input.detector_id;
             let input_32 =
                 input_32
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_32, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_32, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -5729,7 +6112,7 @@ impl GetMemberDetectorsInput {
         fn update_http_builder(
             input: &crate::input::GetMemberDetectorsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5738,25 +6121,27 @@ impl GetMemberDetectorsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetMemberDetectorsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_member_detectors(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5779,15 +6164,15 @@ impl GetMemberDetectorsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetMemberDetectors::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetMemberDetectors",
             "guardduty",
         ));
@@ -5796,10 +6181,10 @@ impl GetMemberDetectorsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5829,16 +6214,24 @@ pub mod get_members_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector of the GuardDuty account whose members you want to
+        /// retrieve.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
         }
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>A list of account IDs of the GuardDuty member accounts that you want to describe.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>A list of account IDs of the GuardDuty member accounts that you want to describe.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5849,8 +6242,10 @@ pub mod get_members_input {
         /// Consumes the builder and constructs a [`GetMembersInput`](crate::input::GetMembersInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetMembersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetMembersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetMembersInput {
                 detector_id: self.detector_id,
                 account_ids: self.account_ids,
@@ -5869,27 +6264,27 @@ impl GetMembersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetMembers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetMembersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_33 = &_input.detector_id;
             let input_33 =
                 input_33
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_33, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_33, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -5906,7 +6301,7 @@ impl GetMembersInput {
         fn update_http_builder(
             input: &crate::input::GetMembersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5915,24 +6310,26 @@ impl GetMembersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetMembersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_members(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5955,25 +6352,27 @@ impl GetMembersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetMembers::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetMembers",
-                    "guardduty",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetMembers::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetMembers",
+            "guardduty",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6002,6 +6401,7 @@ pub mod get_threat_intel_set_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -6011,6 +6411,7 @@ pub mod get_threat_intel_set_input {
             self.threat_intel_set_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the threatIntelSet that you want to get.</p>
         pub fn set_threat_intel_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6023,7 +6424,7 @@ pub mod get_threat_intel_set_input {
             self,
         ) -> std::result::Result<
             crate::input::GetThreatIntelSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetThreatIntelSetInput {
                 detector_id: self.detector_id,
@@ -6043,27 +6444,27 @@ impl GetThreatIntelSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetThreatIntelSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetThreatIntelSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_34 = &_input.detector_id;
             let input_34 =
                 input_34
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_34, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_34, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -6072,13 +6473,13 @@ impl GetThreatIntelSetInput {
             let input_35 =
                 input_35
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "threat_intel_set_id",
                         details: "cannot be empty or unset",
                     })?;
-            let threat_intel_set_id = smithy_http::label::fmt_string(input_35, false);
+            let threat_intel_set_id = aws_smithy_http::label::fmt_string(input_35, false);
             if threat_intel_set_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "threat_intel_set_id",
                     details: "cannot be empty or unset",
                 });
@@ -6096,7 +6497,7 @@ impl GetThreatIntelSetInput {
         fn update_http_builder(
             input: &crate::input::GetThreatIntelSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6105,23 +6506,23 @@ impl GetThreatIntelSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetThreatIntelSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6144,15 +6545,15 @@ impl GetThreatIntelSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetThreatIntelSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetThreatIntelSet",
             "guardduty",
         ));
@@ -6161,10 +6562,10 @@ impl GetThreatIntelSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6198,6 +6599,8 @@ pub mod get_usage_statistics_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you
+        /// want to retrieve.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -6207,6 +6610,7 @@ pub mod get_usage_statistics_input {
             self.usage_statistic_type = Some(input);
             self
         }
+        /// <p>The type of usage statistics to retrieve.</p>
         pub fn set_usage_statistic_type(
             mut self,
             input: std::option::Option<crate::model::UsageStatisticType>,
@@ -6219,6 +6623,7 @@ pub mod get_usage_statistics_input {
             self.usage_criteria = Some(input);
             self
         }
+        /// <p>Represents the criteria used for querying usage.</p>
         pub fn set_usage_criteria(
             mut self,
             input: std::option::Option<crate::model::UsageCriteria>,
@@ -6232,6 +6637,8 @@ pub mod get_usage_statistics_input {
             self.unit = Some(input.into());
             self
         }
+        /// <p>The currency unit you would like to view your usage statistics in. Current valid values
+        /// are USD.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unit = input;
             self
@@ -6241,6 +6648,7 @@ pub mod get_usage_statistics_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6253,6 +6661,10 @@ pub mod get_usage_statistics_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of
+        /// this parameter to null for the first request to a list action. For subsequent calls, use the
+        /// NextToken value returned from the previous request to continue listing results after the first
+        /// page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6262,7 +6674,7 @@ pub mod get_usage_statistics_input {
             self,
         ) -> std::result::Result<
             crate::input::GetUsageStatisticsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetUsageStatisticsInput {
                 detector_id: self.detector_id,
@@ -6286,27 +6698,27 @@ impl GetUsageStatisticsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetUsageStatistics,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetUsageStatisticsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_36 = &_input.detector_id;
             let input_36 =
                 input_36
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_36, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_36, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -6323,7 +6735,7 @@ impl GetUsageStatisticsInput {
         fn update_http_builder(
             input: &crate::input::GetUsageStatisticsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6332,25 +6744,27 @@ impl GetUsageStatisticsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetUsageStatisticsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_usage_statistics(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6373,15 +6787,15 @@ impl GetUsageStatisticsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetUsageStatistics::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetUsageStatistics",
             "guardduty",
         ));
@@ -6390,10 +6804,10 @@ impl GetUsageStatisticsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6425,16 +6839,26 @@ pub mod invite_members_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members
+        /// with.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
         }
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
+        /// members.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as
+        /// members.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6447,6 +6871,7 @@ pub mod invite_members_input {
             self.disable_email_notification = Some(input);
             self
         }
+        /// <p>A Boolean value that specifies whether you want to disable email notification to the accounts that you are inviting to GuardDuty as members.</p>
         pub fn set_disable_email_notification(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_email_notification = input;
             self
@@ -6457,6 +6882,8 @@ pub mod invite_members_input {
             self.message = Some(input.into());
             self
         }
+        /// <p>The invitation message that you want to send to the accounts that you're inviting to
+        /// GuardDuty as members.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -6464,8 +6891,10 @@ pub mod invite_members_input {
         /// Consumes the builder and constructs a [`InviteMembersInput`](crate::input::InviteMembersInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::InviteMembersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::InviteMembersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::InviteMembersInput {
                 detector_id: self.detector_id,
                 account_ids: self.account_ids,
@@ -6486,27 +6915,27 @@ impl InviteMembersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::InviteMembers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::InviteMembersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_37 = &_input.detector_id;
             let input_37 =
                 input_37
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_37, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_37, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -6523,7 +6952,7 @@ impl InviteMembersInput {
         fn update_http_builder(
             input: &crate::input::InviteMembersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6532,24 +6961,26 @@ impl InviteMembersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::InviteMembersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_invite_members(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6572,25 +7003,27 @@ impl InviteMembersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::InviteMembers::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "InviteMembers",
-                    "guardduty",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::InviteMembers::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "InviteMembers",
+            "guardduty",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6620,6 +7053,8 @@ pub mod list_detectors_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
+        /// response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6632,6 +7067,10 @@ pub mod list_detectors_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
+        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
+        /// in the request with the value of NextToken from the previous response to continue listing
+        /// data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6639,8 +7078,10 @@ pub mod list_detectors_input {
         /// Consumes the builder and constructs a [`ListDetectorsInput`](crate::input::ListDetectorsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListDetectorsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListDetectorsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListDetectorsInput {
                 max_results: self.max_results.unwrap_or_default(),
                 next_token: self.next_token,
@@ -6659,36 +7100,36 @@ impl ListDetectorsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListDetectors,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListDetectorsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/detector").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListDetectorsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_38) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_38));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_38));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListDetectorsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6698,23 +7139,23 @@ impl ListDetectorsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListDetectorsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6737,25 +7178,27 @@ impl ListDetectorsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListDetectors::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListDetectors",
-                    "guardduty",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDetectors::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDetectors",
+            "guardduty",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6785,6 +7228,7 @@ pub mod list_filters_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector that the filter is associated with.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -6795,6 +7239,8 @@ pub mod list_filters_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
+        /// response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6807,6 +7253,10 @@ pub mod list_filters_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
+        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
+        /// in the request with the value of NextToken from the previous response to continue listing
+        /// data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6814,8 +7264,10 @@ pub mod list_filters_input {
         /// Consumes the builder and constructs a [`ListFiltersInput`](crate::input::ListFiltersInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListFiltersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListFiltersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListFiltersInput {
                 detector_id: self.detector_id,
                 max_results: self.max_results.unwrap_or_default(),
@@ -6835,27 +7287,27 @@ impl ListFiltersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListFilters,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListFiltersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_39 = &_input.detector_id;
             let input_39 =
                 input_39
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_39, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_39, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -6869,22 +7321,22 @@ impl ListFiltersInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListFiltersInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_40) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_40));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListFiltersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6894,23 +7346,23 @@ impl ListFiltersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListFiltersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6933,25 +7385,27 @@ impl ListFiltersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListFilters::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListFilters",
-                    "guardduty",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListFilters::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListFilters",
+            "guardduty",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6984,6 +7438,8 @@ pub mod list_findings_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to
+        /// list.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -7146,6 +7602,160 @@ pub mod list_findings_input {
             self.finding_criteria = Some(input);
             self
         }
+        /// <p>Represents the criteria used for querying findings. Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>JSON field name</p>
+        /// </li>
+        /// <li>
+        /// <p>accountId</p>
+        /// </li>
+        /// <li>
+        /// <p>region</p>
+        /// </li>
+        /// <li>
+        /// <p>confidence</p>
+        /// </li>
+        /// <li>
+        /// <p>id</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.accessKeyDetails.accessKeyId</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.accessKeyDetails.principalId</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.accessKeyDetails.userName</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.accessKeyDetails.userType</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.iamInstanceProfile.id</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.imageId</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.instanceId</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.networkInterfaces.publicDnsName</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.networkInterfaces.publicIp</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.networkInterfaces.subnetId</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.networkInterfaces.vpcId</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.tags.key</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.instanceDetails.tags.value</p>
+        /// </li>
+        /// <li>
+        /// <p>resource.resourceType</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.actionType</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.awsApiCallAction.api</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.awsApiCallAction.callerType</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.awsApiCallAction.serviceName</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.dnsRequestAction.domain</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.networkConnectionAction.blocked</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.networkConnectionAction.connectionDirection</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.networkConnectionAction.localPortDetails.port</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.networkConnectionAction.protocol</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p>
+        /// </li>
+        /// <li>
+        /// <p>service.action.networkConnectionAction.remotePortDetails.port</p>
+        /// </li>
+        /// <li>
+        /// <p>service.additionalInfo.threatListName</p>
+        /// </li>
+        /// <li>
+        /// <p>service.archived</p>
+        /// <p>When this attribute is set to 'true', only archived findings are listed. When it's set
+        /// to 'false', only unarchived findings are listed. When this attribute is not set, all
+        /// existing findings are listed.</p>
+        /// </li>
+        /// <li>
+        /// <p>service.resourceRole</p>
+        /// </li>
+        /// <li>
+        /// <p>severity</p>
+        /// </li>
+        /// <li>
+        /// <p>type</p>
+        /// </li>
+        /// <li>
+        /// <p>updatedAt</p>
+        /// <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p>
+        /// </li>
+        /// </ul>
         pub fn set_finding_criteria(
             mut self,
             input: std::option::Option<crate::model::FindingCriteria>,
@@ -7158,6 +7768,7 @@ pub mod list_findings_input {
             self.sort_criteria = Some(input);
             self
         }
+        /// <p>Represents the criteria used for sorting findings.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<crate::model::SortCriteria>,
@@ -7171,6 +7782,8 @@ pub mod list_findings_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the
+        /// response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7183,6 +7796,10 @@ pub mod list_findings_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
+        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
+        /// in the request with the value of NextToken from the previous response to continue listing
+        /// data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7190,8 +7807,10 @@ pub mod list_findings_input {
         /// Consumes the builder and constructs a [`ListFindingsInput`](crate::input::ListFindingsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListFindingsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListFindingsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListFindingsInput {
                 detector_id: self.detector_id,
                 finding_criteria: self.finding_criteria,
@@ -7213,27 +7832,27 @@ impl ListFindingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListFindings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListFindingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_41 = &_input.detector_id;
             let input_41 =
                 input_41
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_41, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_41, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -7250,7 +7869,7 @@ impl ListFindingsInput {
         fn update_http_builder(
             input: &crate::input::ListFindingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7259,26 +7878,26 @@ impl ListFindingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListFindingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_findings(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7301,25 +7920,27 @@ impl ListFindingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListFindings::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListFindings",
-                    "guardduty",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListFindings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListFindings",
+            "guardduty",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7349,6 +7970,8 @@ pub mod list_invitations_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
+        /// response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7361,6 +7984,10 @@ pub mod list_invitations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
+        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
+        /// in the request with the value of NextToken from the previous response to continue listing
+        /// data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7370,7 +7997,7 @@ pub mod list_invitations_input {
             self,
         ) -> std::result::Result<
             crate::input::ListInvitationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListInvitationsInput {
                 max_results: self.max_results.unwrap_or_default(),
@@ -7390,36 +8017,36 @@ impl ListInvitationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListInvitations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListInvitationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/invitation").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListInvitationsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_42) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_42));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_42));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListInvitationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7429,23 +8056,23 @@ impl ListInvitationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListInvitationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7468,15 +8095,15 @@ impl ListInvitationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListInvitations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListInvitations",
             "guardduty",
         ));
@@ -7485,10 +8112,10 @@ impl ListInvitationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7518,6 +8145,7 @@ pub mod list_ip_sets_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector that the IPSet is associated with.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -7528,6 +8156,8 @@ pub mod list_ip_sets_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the
+        /// response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7540,6 +8170,10 @@ pub mod list_ip_sets_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
+        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
+        /// in the request with the value of NextToken from the previous response to continue listing
+        /// data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7547,8 +8181,10 @@ pub mod list_ip_sets_input {
         /// Consumes the builder and constructs a [`ListIpSetsInput`](crate::input::ListIpSetsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListIpSetsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListIpSetsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListIpSetsInput {
                 detector_id: self.detector_id,
                 max_results: self.max_results.unwrap_or_default(),
@@ -7568,27 +8204,27 @@ impl ListIpSetsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListIPSets,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListIpSetsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_43 = &_input.detector_id;
             let input_43 =
                 input_43
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_43, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_43, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -7602,22 +8238,22 @@ impl ListIpSetsInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListIpSetsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_44) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_44));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_44));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListIpSetsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7627,23 +8263,23 @@ impl ListIpSetsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListIpSetsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7666,25 +8302,27 @@ impl ListIpSetsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListIPSets::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListIPSets",
-                    "guardduty",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListIPSets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListIPSets",
+            "guardduty",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7715,6 +8353,7 @@ pub mod list_members_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector the member is associated with.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -7725,6 +8364,8 @@ pub mod list_members_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the
+        /// response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7737,6 +8378,10 @@ pub mod list_members_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to
+        /// null on your first call to the list action. For subsequent calls to the action, fill nextToken
+        /// in the request with the value of NextToken from the previous response to continue listing
+        /// data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7747,6 +8392,8 @@ pub mod list_members_input {
             self.only_associated = Some(input.into());
             self
         }
+        /// <p>Specifies whether to only return associated members or to return all members (including
+        /// members who haven't been invited yet or have been disassociated).</p>
         pub fn set_only_associated(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7757,8 +8404,10 @@ pub mod list_members_input {
         /// Consumes the builder and constructs a [`ListMembersInput`](crate::input::ListMembersInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListMembersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListMembersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListMembersInput {
                 detector_id: self.detector_id,
                 max_results: self.max_results.unwrap_or_default(),
@@ -7779,27 +8428,27 @@ impl ListMembersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListMembers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListMembersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_45 = &_input.detector_id;
             let input_45 =
                 input_45
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_45, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_45, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -7813,25 +8462,28 @@ impl ListMembersInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListMembersInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_46) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_46));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_46));
             }
             if let Some(inner_47) = &_input.only_associated {
-                query.push_kv("onlyAssociated", &smithy_http::query::fmt_string(&inner_47));
+                query.push_kv(
+                    "onlyAssociated",
+                    &aws_smithy_http::query::fmt_string(&inner_47),
+                );
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListMembersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7841,23 +8493,23 @@ impl ListMembersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListMembersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7880,25 +8532,27 @@ impl ListMembersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListMembers::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListMembers",
-                    "guardduty",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListMembers::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListMembers",
+            "guardduty",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7927,6 +8581,7 @@ pub mod list_organization_admin_accounts_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7939,6 +8594,10 @@ pub mod list_organization_admin_accounts_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of
+        /// this parameter to null for the first request to a list action. For subsequent calls, use the
+        /// <code>NextToken</code> value returned from the previous request to continue listing results
+        /// after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7948,7 +8607,7 @@ pub mod list_organization_admin_accounts_input {
             self,
         ) -> std::result::Result<
             crate::input::ListOrganizationAdminAccountsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListOrganizationAdminAccountsInput {
                 max_results: self.max_results.unwrap_or_default(),
@@ -7969,16 +8628,16 @@ impl ListOrganizationAdminAccountsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListOrganizationAdminAccounts,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListOrganizationAdminAccountsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/admin").expect("formatting should succeed");
             Ok(())
         }
@@ -7986,22 +8645,22 @@ impl ListOrganizationAdminAccountsInput {
             _input: &crate::input::ListOrganizationAdminAccountsInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_48) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_48));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_48));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListOrganizationAdminAccountsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8011,23 +8670,23 @@ impl ListOrganizationAdminAccountsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListOrganizationAdminAccountsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8050,15 +8709,15 @@ impl ListOrganizationAdminAccountsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListOrganizationAdminAccounts::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListOrganizationAdminAccounts",
             "guardduty",
         ));
@@ -8067,10 +8726,10 @@ impl ListOrganizationAdminAccountsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8100,6 +8759,7 @@ pub mod list_publishing_destinations_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The ID of the detector to retrieve publishing destinations for.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -8109,6 +8769,7 @@ pub mod list_publishing_destinations_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8121,6 +8782,10 @@ pub mod list_publishing_destinations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of
+        /// this parameter to null for the first request to a list action. For subsequent calls, use the
+        /// <code>NextToken</code> value returned from the previous request to continue listing results
+        /// after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8130,7 +8795,7 @@ pub mod list_publishing_destinations_input {
             self,
         ) -> std::result::Result<
             crate::input::ListPublishingDestinationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListPublishingDestinationsInput {
                 detector_id: self.detector_id,
@@ -8152,27 +8817,27 @@ impl ListPublishingDestinationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListPublishingDestinations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListPublishingDestinationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_49 = &_input.detector_id;
             let input_49 =
                 input_49
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_49, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_49, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -8189,22 +8854,22 @@ impl ListPublishingDestinationsInput {
             _input: &crate::input::ListPublishingDestinationsInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_50) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_50));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_50));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListPublishingDestinationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8214,23 +8879,23 @@ impl ListPublishingDestinationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListPublishingDestinationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8253,15 +8918,15 @@ impl ListPublishingDestinationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListPublishingDestinations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListPublishingDestinations",
             "guardduty",
         ));
@@ -8270,10 +8935,10 @@ impl ListPublishingDestinationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8301,6 +8966,7 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the given GuardDuty resource. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -8310,7 +8976,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -8329,27 +8995,27 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_51 = &_input.resource_arn;
             let input_51 =
                 input_51
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_51, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_51, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -8362,7 +9028,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8371,23 +9037,23 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8410,15 +9076,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "guardduty",
         ));
@@ -8427,10 +9093,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8460,6 +9126,7 @@ pub mod list_threat_intel_sets_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -8470,6 +9137,8 @@ pub mod list_threat_intel_sets_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the
+        /// response. The default value is 50. The maximum value is 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8482,6 +9151,10 @@ pub mod list_threat_intel_sets_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>You can use this parameter to paginate results in the response. Set the value of this
+        /// parameter to null on your first call to the list action. For subsequent calls to the action,
+        /// fill nextToken in the request with the value of NextToken from the previous response to
+        /// continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8491,7 +9164,7 @@ pub mod list_threat_intel_sets_input {
             self,
         ) -> std::result::Result<
             crate::input::ListThreatIntelSetsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListThreatIntelSetsInput {
                 detector_id: self.detector_id,
@@ -8512,27 +9185,27 @@ impl ListThreatIntelSetsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListThreatIntelSets,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListThreatIntelSetsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_52 = &_input.detector_id;
             let input_52 =
                 input_52
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_52, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_52, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -8546,22 +9219,22 @@ impl ListThreatIntelSetsInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListThreatIntelSetsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_53) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_53));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_53));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListThreatIntelSetsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8571,23 +9244,23 @@ impl ListThreatIntelSetsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListThreatIntelSetsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8610,15 +9283,15 @@ impl ListThreatIntelSetsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListThreatIntelSets::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListThreatIntelSets",
             "guardduty",
         ));
@@ -8627,10 +9300,10 @@ impl ListThreatIntelSetsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8660,16 +9333,24 @@ pub mod start_monitoring_members_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector of the GuardDuty administrator account associated with the member
+        /// accounts to monitor.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
         }
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>A list of account IDs of the GuardDuty member accounts to start monitoring.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>A list of account IDs of the GuardDuty member accounts to start monitoring.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8682,7 +9363,7 @@ pub mod start_monitoring_members_input {
             self,
         ) -> std::result::Result<
             crate::input::StartMonitoringMembersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartMonitoringMembersInput {
                 detector_id: self.detector_id,
@@ -8702,27 +9383,27 @@ impl StartMonitoringMembersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartMonitoringMembers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartMonitoringMembersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_54 = &_input.detector_id;
             let input_54 =
                 input_54
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_54, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_54, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -8739,7 +9420,7 @@ impl StartMonitoringMembersInput {
         fn update_http_builder(
             input: &crate::input::StartMonitoringMembersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8748,27 +9429,29 @@ impl StartMonitoringMembersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartMonitoringMembersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_monitoring_members(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8791,15 +9474,15 @@ impl StartMonitoringMembersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartMonitoringMembers::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartMonitoringMembers",
             "guardduty",
         ));
@@ -8808,10 +9491,10 @@ impl StartMonitoringMembersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8841,16 +9524,24 @@ pub mod stop_monitoring_members_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is
+        /// monitoring member accounts.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
         }
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>A list of account IDs for the member accounts to stop monitoring.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>A list of account IDs for the member accounts to stop monitoring.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8863,7 +9554,7 @@ pub mod stop_monitoring_members_input {
             self,
         ) -> std::result::Result<
             crate::input::StopMonitoringMembersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StopMonitoringMembersInput {
                 detector_id: self.detector_id,
@@ -8883,27 +9574,27 @@ impl StopMonitoringMembersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StopMonitoringMembers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StopMonitoringMembersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_55 = &_input.detector_id;
             let input_55 =
                 input_55
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_55, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_55, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -8920,7 +9611,7 @@ impl StopMonitoringMembersInput {
         fn update_http_builder(
             input: &crate::input::StopMonitoringMembersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8929,27 +9620,29 @@ impl StopMonitoringMembersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StopMonitoringMembersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_monitoring_members(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8972,15 +9665,15 @@ impl StopMonitoringMembersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StopMonitoringMembers::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StopMonitoringMembers",
             "guardduty",
         ));
@@ -8989,10 +9682,10 @@ impl StopMonitoringMembersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9023,10 +9716,16 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the GuardDuty resource to apply a tag to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to be added to a resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -9037,6 +9736,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags to be added to a resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -9049,8 +9749,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -9069,27 +9771,27 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_56 = &_input.resource_arn;
             let input_56 =
                 input_56
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_56, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_56, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -9102,7 +9804,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9111,24 +9813,26 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9151,25 +9855,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "guardduty",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "guardduty",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9198,16 +9904,23 @@ pub mod unarchive_findings_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The ID of the detector associated with the findings to unarchive.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
         }
+        /// Appends an item to `finding_ids`.
+        ///
+        /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
+        ///
+        /// <p>The IDs of the findings to unarchive.</p>
         pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.finding_ids.unwrap_or_default();
             v.push(input.into());
             self.finding_ids = Some(v);
             self
         }
+        /// <p>The IDs of the findings to unarchive.</p>
         pub fn set_finding_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9220,7 +9933,7 @@ pub mod unarchive_findings_input {
             self,
         ) -> std::result::Result<
             crate::input::UnarchiveFindingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UnarchiveFindingsInput {
                 detector_id: self.detector_id,
@@ -9240,27 +9953,27 @@ impl UnarchiveFindingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UnarchiveFindings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UnarchiveFindingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_57 = &_input.detector_id;
             let input_57 =
                 input_57
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_57, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_57, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -9277,7 +9990,7 @@ impl UnarchiveFindingsInput {
         fn update_http_builder(
             input: &crate::input::UnarchiveFindingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9286,27 +9999,27 @@ impl UnarchiveFindingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UnarchiveFindingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_unarchive_findings(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9329,15 +10042,15 @@ impl UnarchiveFindingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UnarchiveFindings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UnarchiveFindings",
             "guardduty",
         ));
@@ -9346,10 +10059,10 @@ impl UnarchiveFindingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9378,16 +10091,23 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the resource to remove tags from.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The tag keys to remove from the resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>The tag keys to remove from the resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9398,8 +10118,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -9418,27 +10140,27 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_58 = &_input.resource_arn;
             let input_58 =
                 input_58
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_58, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_58, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -9448,10 +10170,10 @@ impl UntagResourceInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_59) = &_input.tag_keys {
                 for inner_60 in inner_59 {
-                    query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_60));
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_60));
                 }
             }
         }
@@ -9459,7 +10181,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9469,23 +10191,23 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9508,25 +10230,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "guardduty",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "guardduty",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9558,6 +10282,7 @@ pub mod update_detector_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector to update.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -9567,6 +10292,7 @@ pub mod update_detector_input {
             self.enable = Some(input);
             self
         }
+        /// <p>Specifies whether the detector is enabled or not enabled.</p>
         pub fn set_enable(mut self, input: std::option::Option<bool>) -> Self {
             self.enable = input;
             self
@@ -9580,6 +10306,8 @@ pub mod update_detector_input {
             self.finding_publishing_frequency = Some(input);
             self
         }
+        /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch
+        /// Events.</p>
         pub fn set_finding_publishing_frequency(
             mut self,
             input: std::option::Option<crate::model::FindingPublishingFrequency>,
@@ -9592,6 +10320,7 @@ pub mod update_detector_input {
             self.data_sources = Some(input);
             self
         }
+        /// <p>Describes which data sources will be updated.</p>
         pub fn set_data_sources(
             mut self,
             input: std::option::Option<crate::model::DataSourceConfigurations>,
@@ -9604,7 +10333,7 @@ pub mod update_detector_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateDetectorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateDetectorInput {
                 detector_id: self.detector_id,
@@ -9626,27 +10355,27 @@ impl UpdateDetectorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateDetector,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateDetectorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_61 = &_input.detector_id;
             let input_61 =
                 input_61
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_61, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_61, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -9659,7 +10388,7 @@ impl UpdateDetectorInput {
         fn update_http_builder(
             input: &crate::input::UpdateDetectorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9668,24 +10397,26 @@ impl UpdateDetectorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateDetectorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_detector(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9708,15 +10439,15 @@ impl UpdateDetectorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateDetector::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateDetector",
             "guardduty",
         ));
@@ -9725,10 +10456,10 @@ impl UpdateDetectorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9762,6 +10493,8 @@ pub mod update_filter_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to
+        /// update a filter.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -9771,6 +10504,7 @@ pub mod update_filter_input {
             self.filter_name = Some(input.into());
             self
         }
+        /// <p>The name of the filter.</p>
         pub fn set_filter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter_name = input;
             self
@@ -9780,6 +10514,7 @@ pub mod update_filter_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the filter.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -9789,6 +10524,7 @@ pub mod update_filter_input {
             self.action = Some(input);
             self
         }
+        /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::FilterAction>,
@@ -9802,6 +10538,8 @@ pub mod update_filter_input {
             self.rank = Some(input);
             self
         }
+        /// <p>Specifies the position of the filter in the list of current filters. Also specifies the
+        /// order in which this filter is applied to the findings.</p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
             self.rank = input;
             self
@@ -9811,6 +10549,7 @@ pub mod update_filter_input {
             self.finding_criteria = Some(input);
             self
         }
+        /// <p>Represents the criteria to be used in the filter for querying findings.</p>
         pub fn set_finding_criteria(
             mut self,
             input: std::option::Option<crate::model::FindingCriteria>,
@@ -9821,8 +10560,10 @@ pub mod update_filter_input {
         /// Consumes the builder and constructs a [`UpdateFilterInput`](crate::input::UpdateFilterInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateFilterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateFilterInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateFilterInput {
                 detector_id: self.detector_id,
                 filter_name: self.filter_name,
@@ -9845,27 +10586,27 @@ impl UpdateFilterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateFilter,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateFilterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_62 = &_input.detector_id;
             let input_62 =
                 input_62
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_62, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_62, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -9874,13 +10615,13 @@ impl UpdateFilterInput {
             let input_63 =
                 input_63
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "filter_name",
                         details: "cannot be empty or unset",
                     })?;
-            let filter_name = smithy_http::label::fmt_string(input_63, false);
+            let filter_name = aws_smithy_http::label::fmt_string(input_63, false);
             if filter_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "filter_name",
                     details: "cannot be empty or unset",
                 });
@@ -9898,7 +10639,7 @@ impl UpdateFilterInput {
         fn update_http_builder(
             input: &crate::input::UpdateFilterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9907,26 +10648,26 @@ impl UpdateFilterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateFilterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_filter(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9949,25 +10690,27 @@ impl UpdateFilterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateFilter::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateFilter",
-                    "guardduty",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateFilter::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateFilter",
+            "guardduty",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9998,16 +10741,23 @@ pub mod update_findings_feedback_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The ID of the detector associated with the findings to update feedback for.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
         }
+        /// Appends an item to `finding_ids`.
+        ///
+        /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
+        ///
+        /// <p>The IDs of the findings that you want to mark as useful or not useful.</p>
         pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.finding_ids.unwrap_or_default();
             v.push(input.into());
             self.finding_ids = Some(v);
             self
         }
+        /// <p>The IDs of the findings that you want to mark as useful or not useful.</p>
         pub fn set_finding_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10020,6 +10770,7 @@ pub mod update_findings_feedback_input {
             self.feedback = Some(input);
             self
         }
+        /// <p>The feedback for the finding.</p>
         pub fn set_feedback(mut self, input: std::option::Option<crate::model::Feedback>) -> Self {
             self.feedback = input;
             self
@@ -10029,6 +10780,7 @@ pub mod update_findings_feedback_input {
             self.comments = Some(input.into());
             self
         }
+        /// <p>Additional feedback about the GuardDuty findings.</p>
         pub fn set_comments(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comments = input;
             self
@@ -10038,7 +10790,7 @@ pub mod update_findings_feedback_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateFindingsFeedbackInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateFindingsFeedbackInput {
                 detector_id: self.detector_id,
@@ -10060,27 +10812,27 @@ impl UpdateFindingsFeedbackInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateFindingsFeedback,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateFindingsFeedbackInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_64 = &_input.detector_id;
             let input_64 =
                 input_64
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_64, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_64, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -10097,7 +10849,7 @@ impl UpdateFindingsFeedbackInput {
         fn update_http_builder(
             input: &crate::input::UpdateFindingsFeedbackInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10106,27 +10858,29 @@ impl UpdateFindingsFeedbackInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateFindingsFeedbackInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_findings_feedback(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10149,15 +10903,15 @@ impl UpdateFindingsFeedbackInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateFindingsFeedback::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateFindingsFeedback",
             "guardduty",
         ));
@@ -10166,10 +10920,10 @@ impl UpdateFindingsFeedbackInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10201,6 +10955,7 @@ pub mod update_ip_set_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The detectorID that specifies the GuardDuty service whose IPSet you want to update.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -10210,6 +10965,7 @@ pub mod update_ip_set_input {
             self.ip_set_id = Some(input.into());
             self
         }
+        /// <p>The unique ID that specifies the IPSet that you want to update.</p>
         pub fn set_ip_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_set_id = input;
             self
@@ -10219,6 +10975,7 @@ pub mod update_ip_set_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The unique ID that specifies the IPSet that you want to update.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10229,6 +10986,8 @@ pub mod update_ip_set_input {
             self.location = Some(input.into());
             self
         }
+        /// <p>The updated URI of the file that contains the IPSet. For example:
+        /// https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -10238,6 +10997,7 @@ pub mod update_ip_set_input {
             self.activate = Some(input);
             self
         }
+        /// <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
         pub fn set_activate(mut self, input: std::option::Option<bool>) -> Self {
             self.activate = input;
             self
@@ -10245,8 +11005,10 @@ pub mod update_ip_set_input {
         /// Consumes the builder and constructs a [`UpdateIpSetInput`](crate::input::UpdateIpSetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateIpSetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateIpSetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateIpSetInput {
                 detector_id: self.detector_id,
                 ip_set_id: self.ip_set_id,
@@ -10268,27 +11030,27 @@ impl UpdateIpSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateIPSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateIpSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_65 = &_input.detector_id;
             let input_65 =
                 input_65
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_65, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_65, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -10297,13 +11059,13 @@ impl UpdateIpSetInput {
             let input_66 =
                 input_66
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "ip_set_id",
                         details: "cannot be empty or unset",
                     })?;
-            let ip_set_id = smithy_http::label::fmt_string(input_66, false);
+            let ip_set_id = aws_smithy_http::label::fmt_string(input_66, false);
             if ip_set_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "ip_set_id",
                     details: "cannot be empty or unset",
                 });
@@ -10321,7 +11083,7 @@ impl UpdateIpSetInput {
         fn update_http_builder(
             input: &crate::input::UpdateIpSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10330,26 +11092,26 @@ impl UpdateIpSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateIpSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_ip_set(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10372,25 +11134,27 @@ impl UpdateIpSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateIPSet::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateIPSet",
-                    "guardduty",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateIPSet::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateIPSet",
+            "guardduty",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10420,16 +11184,23 @@ pub mod update_member_detectors_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The detector ID of the administrator account.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
         }
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>A list of member account IDs to be updated.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>A list of member account IDs to be updated.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10442,6 +11213,7 @@ pub mod update_member_detectors_input {
             self.data_sources = Some(input);
             self
         }
+        /// <p>Describes which data sources will be updated.</p>
         pub fn set_data_sources(
             mut self,
             input: std::option::Option<crate::model::DataSourceConfigurations>,
@@ -10454,7 +11226,7 @@ pub mod update_member_detectors_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateMemberDetectorsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateMemberDetectorsInput {
                 detector_id: self.detector_id,
@@ -10475,27 +11247,27 @@ impl UpdateMemberDetectorsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateMemberDetectors,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateMemberDetectorsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_67 = &_input.detector_id;
             let input_67 =
                 input_67
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_67, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_67, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -10512,7 +11284,7 @@ impl UpdateMemberDetectorsInput {
         fn update_http_builder(
             input: &crate::input::UpdateMemberDetectorsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10521,27 +11293,29 @@ impl UpdateMemberDetectorsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateMemberDetectorsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_member_detectors(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10564,15 +11338,15 @@ impl UpdateMemberDetectorsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateMemberDetectors::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateMemberDetectors",
             "guardduty",
         ));
@@ -10581,10 +11355,10 @@ impl UpdateMemberDetectorsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10615,6 +11389,7 @@ pub mod update_organization_configuration_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The ID of the detector to update the delegated administrator for.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -10624,6 +11399,7 @@ pub mod update_organization_configuration_input {
             self.auto_enable = Some(input);
             self
         }
+        /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
         pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_enable = input;
             self
@@ -10636,6 +11412,7 @@ pub mod update_organization_configuration_input {
             self.data_sources = Some(input);
             self
         }
+        /// <p>Describes which data sources will be updated.</p>
         pub fn set_data_sources(
             mut self,
             input: std::option::Option<crate::model::OrganizationDataSourceConfigurations>,
@@ -10648,7 +11425,7 @@ pub mod update_organization_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateOrganizationConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateOrganizationConfigurationInput {
                 detector_id: self.detector_id,
@@ -10670,27 +11447,27 @@ impl UpdateOrganizationConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateOrganizationConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateOrganizationConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_68 = &_input.detector_id;
             let input_68 =
                 input_68
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_68, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_68, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -10707,7 +11484,7 @@ impl UpdateOrganizationConfigurationInput {
         fn update_http_builder(
             input: &crate::input::UpdateOrganizationConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10716,25 +11493,25 @@ impl UpdateOrganizationConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateOrganizationConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_organization_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_organization_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10757,15 +11534,15 @@ impl UpdateOrganizationConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateOrganizationConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateOrganizationConfiguration",
             "guardduty",
         ));
@@ -10774,10 +11551,10 @@ impl UpdateOrganizationConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10807,6 +11584,7 @@ pub mod update_publishing_destination_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The ID of the detector associated with the publishing destinations to update.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -10816,6 +11594,7 @@ pub mod update_publishing_destination_input {
             self.destination_id = Some(input.into());
             self
         }
+        /// <p>The ID of the publishing destination to update.</p>
         pub fn set_destination_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10832,6 +11611,8 @@ pub mod update_publishing_destination_input {
             self.destination_properties = Some(input);
             self
         }
+        /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code>
+        /// and <code>KmsKeyArn</code> of the publishing destination.</p>
         pub fn set_destination_properties(
             mut self,
             input: std::option::Option<crate::model::DestinationProperties>,
@@ -10844,7 +11625,7 @@ pub mod update_publishing_destination_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdatePublishingDestinationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdatePublishingDestinationInput {
                 detector_id: self.detector_id,
@@ -10866,27 +11647,27 @@ impl UpdatePublishingDestinationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdatePublishingDestination,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdatePublishingDestinationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_69 = &_input.detector_id;
             let input_69 =
                 input_69
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_69, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_69, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -10895,13 +11676,13 @@ impl UpdatePublishingDestinationInput {
             let input_70 =
                 input_70
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "destination_id",
                         details: "cannot be empty or unset",
                     })?;
-            let destination_id = smithy_http::label::fmt_string(input_70, false);
+            let destination_id = aws_smithy_http::label::fmt_string(input_70, false);
             if destination_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "destination_id",
                     details: "cannot be empty or unset",
                 });
@@ -10919,7 +11700,7 @@ impl UpdatePublishingDestinationInput {
         fn update_http_builder(
             input: &crate::input::UpdatePublishingDestinationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10928,25 +11709,25 @@ impl UpdatePublishingDestinationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdatePublishingDestinationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_publishing_destination(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_publishing_destination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10969,15 +11750,15 @@ impl UpdatePublishingDestinationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdatePublishingDestination::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdatePublishingDestination",
             "guardduty",
         ));
@@ -10986,10 +11767,10 @@ impl UpdatePublishingDestinationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11022,6 +11803,8 @@ pub mod update_threat_intel_set_input {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to
+        /// update.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -11031,6 +11814,7 @@ pub mod update_threat_intel_set_input {
             self.threat_intel_set_id = Some(input.into());
             self
         }
+        /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
         pub fn set_threat_intel_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11043,6 +11827,7 @@ pub mod update_threat_intel_set_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -11052,6 +11837,7 @@ pub mod update_threat_intel_set_input {
             self.location = Some(input.into());
             self
         }
+        /// <p>The updated URI of the file that contains the ThreateIntelSet.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -11062,6 +11848,8 @@ pub mod update_threat_intel_set_input {
             self.activate = Some(input);
             self
         }
+        /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or
+        /// not.</p>
         pub fn set_activate(mut self, input: std::option::Option<bool>) -> Self {
             self.activate = input;
             self
@@ -11071,7 +11859,7 @@ pub mod update_threat_intel_set_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateThreatIntelSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateThreatIntelSetInput {
                 detector_id: self.detector_id,
@@ -11094,27 +11882,27 @@ impl UpdateThreatIntelSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateThreatIntelSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateThreatIntelSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_71 = &_input.detector_id;
             let input_71 =
                 input_71
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let detector_id = smithy_http::label::fmt_string(input_71, false);
+            let detector_id = aws_smithy_http::label::fmt_string(input_71, false);
             if detector_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "detector_id",
                     details: "cannot be empty or unset",
                 });
@@ -11123,13 +11911,13 @@ impl UpdateThreatIntelSetInput {
             let input_72 =
                 input_72
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "threat_intel_set_id",
                         details: "cannot be empty or unset",
                     })?;
-            let threat_intel_set_id = smithy_http::label::fmt_string(input_72, false);
+            let threat_intel_set_id = aws_smithy_http::label::fmt_string(input_72, false);
             if threat_intel_set_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "threat_intel_set_id",
                     details: "cannot be empty or unset",
                 });
@@ -11147,7 +11935,7 @@ impl UpdateThreatIntelSetInput {
         fn update_http_builder(
             input: &crate::input::UpdateThreatIntelSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11156,27 +11944,29 @@ impl UpdateThreatIntelSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateThreatIntelSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_threat_intel_set(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11199,15 +11989,15 @@ impl UpdateThreatIntelSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateThreatIntelSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateThreatIntelSet",
             "guardduty",
         ));
@@ -11216,10 +12006,10 @@ impl UpdateThreatIntelSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11233,6 +12023,7 @@ impl UpdateThreatIntelSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThreatIntelSetInput {
@@ -11261,6 +12052,7 @@ impl std::fmt::Debug for UpdateThreatIntelSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePublishingDestinationInput {
@@ -11282,6 +12074,7 @@ impl std::fmt::Debug for UpdatePublishingDestinationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOrganizationConfigurationInput {
@@ -11302,6 +12095,7 @@ impl std::fmt::Debug for UpdateOrganizationConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMemberDetectorsInput {
@@ -11322,6 +12116,7 @@ impl std::fmt::Debug for UpdateMemberDetectorsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIpSetInput {
@@ -11349,6 +12144,7 @@ impl std::fmt::Debug for UpdateIpSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFindingsFeedbackInput {
@@ -11372,6 +12168,7 @@ impl std::fmt::Debug for UpdateFindingsFeedbackInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFilterInput {
@@ -11403,6 +12200,7 @@ impl std::fmt::Debug for UpdateFilterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDetectorInput {
@@ -11430,6 +12228,7 @@ impl std::fmt::Debug for UpdateDetectorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -11447,6 +12246,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnarchiveFindingsInput {
@@ -11464,6 +12264,7 @@ impl std::fmt::Debug for UnarchiveFindingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -11482,6 +12283,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopMonitoringMembersInput {
@@ -11500,6 +12302,7 @@ impl std::fmt::Debug for StopMonitoringMembersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMonitoringMembersInput {
@@ -11518,6 +12321,7 @@ impl std::fmt::Debug for StartMonitoringMembersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThreatIntelSetsInput {
@@ -11542,6 +12346,7 @@ impl std::fmt::Debug for ListThreatIntelSetsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -11556,6 +12361,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPublishingDestinationsInput {
@@ -11579,6 +12385,7 @@ impl std::fmt::Debug for ListPublishingDestinationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationAdminAccountsInput {
@@ -11599,6 +12406,7 @@ impl std::fmt::Debug for ListOrganizationAdminAccountsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMembersInput {
@@ -11627,6 +12435,7 @@ impl std::fmt::Debug for ListMembersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIpSetsInput {
@@ -11651,6 +12460,7 @@ impl std::fmt::Debug for ListIpSetsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInvitationsInput {
@@ -11672,6 +12482,7 @@ impl std::fmt::Debug for ListInvitationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFindingsInput {
@@ -11856,6 +12667,7 @@ impl std::fmt::Debug for ListFindingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFiltersInput {
@@ -11880,6 +12692,7 @@ impl std::fmt::Debug for ListFiltersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDetectorsInput {
@@ -11901,6 +12714,7 @@ impl std::fmt::Debug for ListDetectorsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InviteMembersInput {
@@ -11930,6 +12744,7 @@ impl std::fmt::Debug for InviteMembersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsageStatisticsInput {
@@ -11964,6 +12779,7 @@ impl std::fmt::Debug for GetUsageStatisticsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetThreatIntelSetInput {
@@ -11981,6 +12797,7 @@ impl std::fmt::Debug for GetThreatIntelSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMembersInput {
@@ -11999,6 +12816,7 @@ impl std::fmt::Debug for GetMembersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMemberDetectorsInput {
@@ -12016,6 +12834,7 @@ impl std::fmt::Debug for GetMemberDetectorsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMasterAccountInput {
@@ -12030,6 +12849,7 @@ impl std::fmt::Debug for GetMasterAccountInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIpSetInput {
@@ -12047,6 +12867,7 @@ impl std::fmt::Debug for GetIpSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInvitationsCountInput {}
@@ -12057,6 +12878,7 @@ impl std::fmt::Debug for GetInvitationsCountInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingsStatisticsInput {
@@ -12079,6 +12901,7 @@ impl std::fmt::Debug for GetFindingsStatisticsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingsInput {
@@ -12100,6 +12923,7 @@ impl std::fmt::Debug for GetFindingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFilterInput {
@@ -12117,6 +12941,7 @@ impl std::fmt::Debug for GetFilterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDetectorInput {
@@ -12131,6 +12956,7 @@ impl std::fmt::Debug for GetDetectorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableOrganizationAdminAccountInput {
@@ -12146,6 +12972,7 @@ impl std::fmt::Debug for EnableOrganizationAdminAccountInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateMembersInput {
@@ -12165,6 +12992,7 @@ impl std::fmt::Debug for DisassociateMembersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateFromMasterAccountInput {
@@ -12179,6 +13007,7 @@ impl std::fmt::Debug for DisassociateFromMasterAccountInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableOrganizationAdminAccountInput {
@@ -12194,6 +13023,7 @@ impl std::fmt::Debug for DisableOrganizationAdminAccountInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePublishingDestinationInput {
@@ -12212,6 +13042,7 @@ impl std::fmt::Debug for DescribePublishingDestinationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationConfigurationInput {
@@ -12227,6 +13058,7 @@ impl std::fmt::Debug for DescribeOrganizationConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteThreatIntelSetInput {
@@ -12244,6 +13076,7 @@ impl std::fmt::Debug for DeleteThreatIntelSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePublishingDestinationInput {
@@ -12261,6 +13094,7 @@ impl std::fmt::Debug for DeletePublishingDestinationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMembersInput {
@@ -12279,6 +13113,7 @@ impl std::fmt::Debug for DeleteMembersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIpSetInput {
@@ -12296,6 +13131,7 @@ impl std::fmt::Debug for DeleteIpSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInvitationsInput {
@@ -12311,6 +13147,7 @@ impl std::fmt::Debug for DeleteInvitationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFilterInput {
@@ -12328,6 +13165,7 @@ impl std::fmt::Debug for DeleteFilterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDetectorInput {
@@ -12342,6 +13180,7 @@ impl std::fmt::Debug for DeleteDetectorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeclineInvitationsInput {
@@ -12357,6 +13196,7 @@ impl std::fmt::Debug for DeclineInvitationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateThreatIntelSetInput {
@@ -12394,6 +13234,7 @@ impl std::fmt::Debug for CreateThreatIntelSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSampleFindingsInput {
@@ -12411,6 +13252,7 @@ impl std::fmt::Debug for CreateSampleFindingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePublishingDestinationInput {
@@ -12436,6 +13278,7 @@ impl std::fmt::Debug for CreatePublishingDestinationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMembersInput {
@@ -12455,6 +13298,7 @@ impl std::fmt::Debug for CreateMembersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIpSetInput {
@@ -12492,6 +13336,7 @@ impl std::fmt::Debug for CreateIpSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFilterInput {
@@ -12691,6 +13536,7 @@ impl std::fmt::Debug for CreateFilterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDetectorInput {
@@ -12721,6 +13567,7 @@ impl std::fmt::Debug for CreateDetectorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ArchiveFindingsInput {
@@ -12739,6 +13586,7 @@ impl std::fmt::Debug for ArchiveFindingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptInvitationInput {

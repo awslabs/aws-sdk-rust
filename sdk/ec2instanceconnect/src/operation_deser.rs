@@ -24,7 +24,7 @@ pub fn parse_send_serial_console_ssh_public_key_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::auth_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_auth_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_auth_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSerialConsoleSSHPublicKeyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -38,7 +38,7 @@ pub fn parse_send_serial_console_ssh_public_key_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::ec2_instance_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_ec2_instance_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_ec2_instance_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSerialConsoleSSHPublicKeyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -52,7 +52,7 @@ pub fn parse_send_serial_console_ssh_public_key_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::ec2_instance_type_invalid_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_ec2_instance_type_invalid_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_ec2_instance_type_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSerialConsoleSSHPublicKeyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -66,7 +66,7 @@ pub fn parse_send_serial_console_ssh_public_key_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_args_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_args_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_args_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSerialConsoleSSHPublicKeyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -80,7 +80,7 @@ pub fn parse_send_serial_console_ssh_public_key_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::serial_console_access_disabled_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_serial_console_access_disabled_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_serial_console_access_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSerialConsoleSSHPublicKeyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -94,7 +94,7 @@ pub fn parse_send_serial_console_ssh_public_key_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::serial_console_session_limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_serial_console_session_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_serial_console_session_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSerialConsoleSSHPublicKeyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -108,7 +108,7 @@ pub fn parse_send_serial_console_ssh_public_key_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::serial_console_session_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_serial_console_session_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_serial_console_session_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSerialConsoleSSHPublicKeyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -122,7 +122,7 @@ pub fn parse_send_serial_console_ssh_public_key_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSerialConsoleSSHPublicKeyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -136,7 +136,7 @@ pub fn parse_send_serial_console_ssh_public_key_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSerialConsoleSSHPublicKeyError::unhandled)?;
                     output.build()
                 }
             ;
@@ -193,11 +193,12 @@ pub fn parse_send_ssh_public_key_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::auth_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_auth_exceptionjson_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SendSSHPublicKeyError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_auth_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::SendSSHPublicKeyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -215,7 +216,7 @@ pub fn parse_send_ssh_public_key_error(
                     let mut output =
                         crate::error::ec2_instance_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_ec2_instance_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendSSHPublicKeyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_ec2_instance_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSSHPublicKeyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -232,7 +233,7 @@ pub fn parse_send_ssh_public_key_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_args_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_args_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendSSHPublicKeyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_args_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSSHPublicKeyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -250,7 +251,7 @@ pub fn parse_send_ssh_public_key_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendSSHPublicKeyError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSSHPublicKeyError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -268,7 +269,7 @@ pub fn parse_send_ssh_public_key_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SendSSHPublicKeyError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSSHPublicKeyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

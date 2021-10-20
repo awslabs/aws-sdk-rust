@@ -43,12 +43,18 @@ pub mod validate_template_output {
         pub(crate) declared_transforms: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>A list of <code>TemplateParameter</code> structures.</p>
         pub fn parameters(mut self, input: impl Into<crate::model::TemplateParameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input.into());
             self.parameters = Some(v);
             self
         }
+        /// <p>A list of <code>TemplateParameter</code> structures.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TemplateParameter>>,
@@ -61,16 +67,31 @@ pub mod validate_template_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description found within the template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `capabilities`.
+        ///
+        /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
+        ///
+        /// <p>The capabilities found within the template. If your template contains IAM resources,
+        /// you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when
+        /// you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with
+        /// your template; otherwise, those actions return an InsufficientCapabilities error.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
         pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
             v.push(input.into());
             self.capabilities = Some(v);
             self
         }
+        /// <p>The capabilities found within the template. If your template contains IAM resources,
+        /// you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when
+        /// you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with
+        /// your template; otherwise, those actions return an InsufficientCapabilities error.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
         pub fn set_capabilities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
@@ -84,6 +105,8 @@ pub mod validate_template_output {
             self.capabilities_reason = Some(input.into());
             self
         }
+        /// <p>The list of resources that generated the values in the <code>Capabilities</code>
+        /// response element.</p>
         pub fn set_capabilities_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -91,12 +114,18 @@ pub mod validate_template_output {
             self.capabilities_reason = input;
             self
         }
+        /// Appends an item to `declared_transforms`.
+        ///
+        /// To override the contents of this collection use [`set_declared_transforms`](Self::set_declared_transforms).
+        ///
+        /// <p>A list of the transforms that are declared in the template.</p>
         pub fn declared_transforms(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.declared_transforms.unwrap_or_default();
             v.push(input.into());
             self.declared_transforms = Some(v);
             self
         }
+        /// <p>A list of the transforms that are declared in the template.</p>
         pub fn set_declared_transforms(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -123,6 +152,7 @@ impl ValidateTemplateOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTerminationProtectionOutput {
@@ -150,6 +180,7 @@ pub mod update_termination_protection_output {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -169,6 +200,7 @@ impl UpdateTerminationProtectionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStackSetOutput {
@@ -196,6 +228,7 @@ pub mod update_stack_set_output {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>The unique ID for this stack set operation.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -215,6 +248,7 @@ impl UpdateStackSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStackInstancesOutput {
@@ -242,6 +276,7 @@ pub mod update_stack_instances_output {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for this stack set operation. </p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -289,6 +324,7 @@ pub mod update_stack_output {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>Unique identifier of the stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -308,6 +344,7 @@ impl UpdateStackOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestTypeOutput {
@@ -335,6 +372,7 @@ pub mod test_type_output {
             self.type_version_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Number (ARN) of the extension.</p>
         pub fn set_type_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -357,6 +395,7 @@ impl TestTypeOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopStackSetOperationOutput {}
@@ -386,6 +425,7 @@ impl StopStackSetOperationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SignalResourceOutput {}
@@ -415,6 +455,7 @@ impl SignalResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetTypeDefaultVersionOutput {}
@@ -444,6 +485,7 @@ impl SetTypeDefaultVersionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetTypeConfigurationOutput {
@@ -477,6 +519,10 @@ pub mod set_type_configuration_output {
             self.configuration_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the configuration data, in this account and
+        /// region.</p>
+        /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and
+        /// <code>TypeName</code>.</p>
         pub fn set_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -499,6 +545,7 @@ impl SetTypeConfigurationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetStackPolicyOutput {}
@@ -528,6 +575,7 @@ impl SetStackPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RollbackStackOutput {
@@ -555,6 +603,7 @@ pub mod rollback_stack_output {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>Unique identifier of the stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -574,6 +623,7 @@ impl RollbackStackOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterTypeOutput {
@@ -609,6 +659,11 @@ pub mod register_type_output {
             self.registration_token = Some(input.into());
             self
         }
+        /// <p>The identifier for this registration request.</p>
+        /// <p>Use this registration token when calling <code>
+        /// <a>DescribeTypeRegistration</a>
+        /// </code>, which returns information about the status and IDs of the extension
+        /// registration. </p>
         pub fn set_registration_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -631,6 +686,7 @@ impl RegisterTypeOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterPublisherOutput {
@@ -658,6 +714,7 @@ pub mod register_publisher_output {
             self.publisher_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned this account by CloudFormation for publishing extensions.</p>
         pub fn set_publisher_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.publisher_id = input;
             self
@@ -677,6 +734,7 @@ impl RegisterPublisherOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecordHandlerProgressOutput {}
@@ -706,6 +764,7 @@ impl RecordHandlerProgressOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishTypeOutput {
@@ -735,6 +794,8 @@ pub mod publish_type_output {
             self.public_type_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Number (ARN) assigned to the public extension upon
+        /// publication.</p>
         pub fn set_public_type_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -757,6 +818,7 @@ impl PublishTypeOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTypeVersionsOutput {
@@ -789,6 +851,12 @@ pub mod list_type_versions_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `type_version_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_type_version_summaries`](Self::set_type_version_summaries).
+        ///
+        /// <p>A list of <code>TypeVersionSummary</code> structures that contain information about the
+        /// specified extension's versions.</p>
         pub fn type_version_summaries(
             mut self,
             input: impl Into<crate::model::TypeVersionSummary>,
@@ -798,6 +866,8 @@ pub mod list_type_versions_output {
             self.type_version_summaries = Some(v);
             self
         }
+        /// <p>A list of <code>TypeVersionSummary</code> structures that contain information about the
+        /// specified extension's versions.</p>
         pub fn set_type_version_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TypeVersionSummary>>,
@@ -813,6 +883,10 @@ pub mod list_type_versions_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
+        /// set to a token. To retrieve the next set of results, call this action again and assign that
+        /// token to the request object's <code>NextToken</code> parameter. If the request returns all
+        /// results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -833,6 +907,7 @@ impl ListTypeVersionsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTypesOutput {
@@ -863,12 +938,20 @@ pub mod list_types_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `type_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_type_summaries`](Self::set_type_summaries).
+        ///
+        /// <p>A list of <code>TypeSummary</code> structures that contain information about the
+        /// specified extensions.</p>
         pub fn type_summaries(mut self, input: impl Into<crate::model::TypeSummary>) -> Self {
             let mut v = self.type_summaries.unwrap_or_default();
             v.push(input.into());
             self.type_summaries = Some(v);
             self
         }
+        /// <p>A list of <code>TypeSummary</code> structures that contain information about the
+        /// specified extensions.</p>
         pub fn set_type_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TypeSummary>>,
@@ -884,6 +967,10 @@ pub mod list_types_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
+        /// set to a token. To retrieve the next set of results, call this action again and assign that
+        /// token to the request object's <code>NextToken</code> parameter. If the request returns all
+        /// results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -904,6 +991,7 @@ impl ListTypesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTypeRegistrationsOutput {
@@ -937,12 +1025,26 @@ pub mod list_type_registrations_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `registration_token_list`.
+        ///
+        /// To override the contents of this collection use [`set_registration_token_list`](Self::set_registration_token_list).
+        ///
+        /// <p> A list of extension registration tokens.</p>
+        /// <p>Use <code>
+        /// <a>DescribeTypeRegistration</a>
+        /// </code> to return detailed
+        /// information about a type registration request.</p>
         pub fn registration_token_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.registration_token_list.unwrap_or_default();
             v.push(input.into());
             self.registration_token_list = Some(v);
             self
         }
+        /// <p> A list of extension registration tokens.</p>
+        /// <p>Use <code>
+        /// <a>DescribeTypeRegistration</a>
+        /// </code> to return detailed
+        /// information about a type registration request.</p>
         pub fn set_registration_token_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -958,6 +1060,10 @@ pub mod list_type_registrations_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
+        /// set to a token. To retrieve the next set of results, call this action again and assign that
+        /// token to the request object's <code>NextToken</code> parameter. If the request returns all
+        /// results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -978,6 +1084,7 @@ impl ListTypeRegistrationsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStackSetsOutput {
@@ -1009,12 +1116,20 @@ pub mod list_stack_sets_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `summaries`.
+        ///
+        /// To override the contents of this collection use [`set_summaries`](Self::set_summaries).
+        ///
+        /// <p>A list of <code>StackSetSummary</code> structures that contain information about the
+        /// user's stack sets.</p>
         pub fn summaries(mut self, input: impl Into<crate::model::StackSetSummary>) -> Self {
             let mut v = self.summaries.unwrap_or_default();
             v.push(input.into());
             self.summaries = Some(v);
             self
         }
+        /// <p>A list of <code>StackSetSummary</code> structures that contain information about the
+        /// user's stack sets.</p>
         pub fn set_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StackSetSummary>>,
@@ -1031,6 +1146,11 @@ pub mod list_stack_sets_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
+        /// set to a token. To retrieve the next set of results, call <code>ListStackInstances</code>
+        /// again and assign that token to the request object's <code>NextToken</code> parameter. If
+        /// the request returns all results, <code>NextToken</code> is set to
+        /// <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1051,6 +1171,7 @@ impl ListStackSetsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStackSetOperationsOutput {
@@ -1082,6 +1203,12 @@ pub mod list_stack_set_operations_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `summaries`.
+        ///
+        /// To override the contents of this collection use [`set_summaries`](Self::set_summaries).
+        ///
+        /// <p>A list of <code>StackSetOperationSummary</code> structures that contain summary
+        /// information about operations for the specified stack set.</p>
         pub fn summaries(
             mut self,
             input: impl Into<crate::model::StackSetOperationSummary>,
@@ -1091,6 +1218,8 @@ pub mod list_stack_set_operations_output {
             self.summaries = Some(v);
             self
         }
+        /// <p>A list of <code>StackSetOperationSummary</code> structures that contain summary
+        /// information about operations for the specified stack set.</p>
         pub fn set_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StackSetOperationSummary>>,
@@ -1106,6 +1235,10 @@ pub mod list_stack_set_operations_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token.
+        /// To retrieve the next set of results, call <code>ListOperationResults</code> again and
+        /// assign that token to the request object's <code>NextToken</code> parameter. If there are no
+        /// remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1126,6 +1259,7 @@ impl ListStackSetOperationsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStackSetOperationResultsOutput {
@@ -1158,6 +1292,13 @@ pub mod list_stack_set_operation_results_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `summaries`.
+        ///
+        /// To override the contents of this collection use [`set_summaries`](Self::set_summaries).
+        ///
+        /// <p>A list of <code>StackSetOperationResultSummary</code> structures that contain
+        /// information about the specified operation results, for accounts and Regions that are
+        /// included in the operation.</p>
         pub fn summaries(
             mut self,
             input: impl Into<crate::model::StackSetOperationResultSummary>,
@@ -1167,6 +1308,9 @@ pub mod list_stack_set_operation_results_output {
             self.summaries = Some(v);
             self
         }
+        /// <p>A list of <code>StackSetOperationResultSummary</code> structures that contain
+        /// information about the specified operation results, for accounts and Regions that are
+        /// included in the operation.</p>
         pub fn set_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StackSetOperationResultSummary>>,
@@ -1182,6 +1326,10 @@ pub mod list_stack_set_operation_results_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the request doesn't return all results, <code>NextToken</code> is set to a token.
+        /// To retrieve the next set of results, call <code>ListOperationResults</code> again and
+        /// assign that token to the request object's <code>NextToken</code> parameter. If there are no
+        /// remaining results, <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1231,12 +1379,20 @@ pub mod list_stacks_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `stack_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_stack_summaries`](Self::set_stack_summaries).
+        ///
+        /// <p>A list of <code>StackSummary</code> structures containing information about the
+        /// specified stacks.</p>
         pub fn stack_summaries(mut self, input: impl Into<crate::model::StackSummary>) -> Self {
             let mut v = self.stack_summaries.unwrap_or_default();
             v.push(input.into());
             self.stack_summaries = Some(v);
             self
         }
+        /// <p>A list of <code>StackSummary</code> structures containing information about the
+        /// specified stacks.</p>
         pub fn set_stack_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StackSummary>>,
@@ -1250,6 +1406,8 @@ pub mod list_stacks_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks.
+        /// If no additional page exists, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1300,6 +1458,11 @@ pub mod list_stack_resources_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `stack_resource_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_stack_resource_summaries`](Self::set_stack_resource_summaries).
+        ///
+        /// <p>A list of <code>StackResourceSummary</code> structures.</p>
         pub fn stack_resource_summaries(
             mut self,
             input: impl Into<crate::model::StackResourceSummary>,
@@ -1309,6 +1472,7 @@ pub mod list_stack_resources_output {
             self.stack_resource_summaries = Some(v);
             self
         }
+        /// <p>A list of <code>StackResourceSummary</code> structures.</p>
         pub fn set_stack_resource_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StackResourceSummary>>,
@@ -1322,6 +1486,8 @@ pub mod list_stack_resources_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack
+        /// resources. If no additional page exists, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1342,6 +1508,7 @@ impl ListStackResourcesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStackInstancesOutput {
@@ -1374,12 +1541,20 @@ pub mod list_stack_instances_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `summaries`.
+        ///
+        /// To override the contents of this collection use [`set_summaries`](Self::set_summaries).
+        ///
+        /// <p>A list of <code>StackInstanceSummary</code> structures that contain information about
+        /// the specified stack instances.</p>
         pub fn summaries(mut self, input: impl Into<crate::model::StackInstanceSummary>) -> Self {
             let mut v = self.summaries.unwrap_or_default();
             v.push(input.into());
             self.summaries = Some(v);
             self
         }
+        /// <p>A list of <code>StackInstanceSummary</code> structures that contain information about
+        /// the specified stack instances.</p>
         pub fn set_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StackInstanceSummary>>,
@@ -1396,6 +1571,11 @@ pub mod list_stack_instances_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
+        /// set to a token. To retrieve the next set of results, call <code>ListStackInstances</code>
+        /// again and assign that token to the request object's <code>NextToken</code> parameter. If
+        /// the request returns all results, <code>NextToken</code> is set to
+        /// <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1416,6 +1596,7 @@ impl ListStackInstancesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImportsOutput {
@@ -1443,12 +1624,18 @@ pub mod list_imports_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `imports`.
+        ///
+        /// To override the contents of this collection use [`set_imports`](Self::set_imports).
+        ///
+        /// <p>A list of stack names that are importing the specified exported output value.</p>
         pub fn imports(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.imports.unwrap_or_default();
             v.push(input.into());
             self.imports = Some(v);
             self
         }
+        /// <p>A list of stack names that are importing the specified exported output value.</p>
         pub fn set_imports(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1462,6 +1649,8 @@ pub mod list_imports_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A string that identifies the next page of exports. If there is no additional page,
+        /// this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1482,6 +1671,7 @@ impl ListImportsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExportsOutput {
@@ -1509,12 +1699,18 @@ pub mod list_exports_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `exports`.
+        ///
+        /// To override the contents of this collection use [`set_exports`](Self::set_exports).
+        ///
+        /// <p>The output for the <a>ListExports</a> action.</p>
         pub fn exports(mut self, input: impl Into<crate::model::Export>) -> Self {
             let mut v = self.exports.unwrap_or_default();
             v.push(input.into());
             self.exports = Some(v);
             self
         }
+        /// <p>The output for the <a>ListExports</a> action.</p>
         pub fn set_exports(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Export>>,
@@ -1528,6 +1724,8 @@ pub mod list_exports_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the output exceeds 100 exported output values, a string that identifies the next
+        /// page of exports. If there is no additional page, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1577,12 +1775,20 @@ pub mod list_change_sets_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `summaries`.
+        ///
+        /// To override the contents of this collection use [`set_summaries`](Self::set_summaries).
+        ///
+        /// <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of
+        /// each change set for the specified stack.</p>
         pub fn summaries(mut self, input: impl Into<crate::model::ChangeSetSummary>) -> Self {
             let mut v = self.summaries.unwrap_or_default();
             v.push(input.into());
             self.summaries = Some(v);
             self
         }
+        /// <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of
+        /// each change set for the specified stack.</p>
         pub fn set_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ChangeSetSummary>>,
@@ -1596,6 +1802,8 @@ pub mod list_change_sets_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the output exceeds 1 MB, a string that identifies the next page of change sets. If
+        /// there is no additional page, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1616,6 +1824,7 @@ impl ListChangeSetsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportStacksToStackSetOutput {
@@ -1643,6 +1852,7 @@ pub mod import_stacks_to_stack_set_output {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the stack set operation.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -1737,12 +1947,20 @@ pub mod get_template_summary_output {
             std::option::Option<std::vec::Vec<crate::model::ResourceIdentifierSummary>>,
     }
     impl Builder {
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>A list of parameter declarations that describe various properties for each
+        /// parameter.</p>
         pub fn parameters(mut self, input: impl Into<crate::model::ParameterDeclaration>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input.into());
             self.parameters = Some(v);
             self
         }
+        /// <p>A list of parameter declarations that describe various properties for each
+        /// parameter.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ParameterDeclaration>>,
@@ -1756,16 +1974,32 @@ pub mod get_template_summary_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The value that is defined in the <code>Description</code> property of the
+        /// template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `capabilities`.
+        ///
+        /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
+        ///
+        /// <p>The capabilities found within the template. If your template contains IAM resources,
+        /// you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when
+        /// you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with
+        /// your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
         pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
             v.push(input.into());
             self.capabilities = Some(v);
             self
         }
+        /// <p>The capabilities found within the template. If your template contains IAM resources,
+        /// you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when
+        /// you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with
+        /// your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
         pub fn set_capabilities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
@@ -1779,6 +2013,8 @@ pub mod get_template_summary_output {
             self.capabilities_reason = Some(input.into());
             self
         }
+        /// <p>The list of resources that generated the values in the <code>Capabilities</code>
+        /// response element.</p>
         pub fn set_capabilities_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1786,12 +2022,22 @@ pub mod get_template_summary_output {
             self.capabilities_reason = input;
             self
         }
+        /// Appends an item to `resource_types`.
+        ///
+        /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
+        ///
+        /// <p>A list of all the template resource types that are defined in the template, such as
+        /// <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and
+        /// <code>Custom::MyCustomInstance</code>.</p>
         pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
             v.push(input.into());
             self.resource_types = Some(v);
             self
         }
+        /// <p>A list of all the template resource types that are defined in the template, such as
+        /// <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and
+        /// <code>Custom::MyCustomInstance</code>.</p>
         pub fn set_resource_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1805,6 +2051,8 @@ pub mod get_template_summary_output {
             self.version = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services template format version, which identifies the capabilities of the
+        /// template.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -1815,16 +2063,24 @@ pub mod get_template_summary_output {
             self.metadata = Some(input.into());
             self
         }
+        /// <p>The value that is defined for the <code>Metadata</code> property of the
+        /// template.</p>
         pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metadata = input;
             self
         }
+        /// Appends an item to `declared_transforms`.
+        ///
+        /// To override the contents of this collection use [`set_declared_transforms`](Self::set_declared_transforms).
+        ///
+        /// <p>A list of the transforms that are declared in the template.</p>
         pub fn declared_transforms(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.declared_transforms.unwrap_or_default();
             v.push(input.into());
             self.declared_transforms = Some(v);
             self
         }
+        /// <p>A list of the transforms that are declared in the template.</p>
         pub fn set_declared_transforms(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1832,6 +2088,14 @@ pub mod get_template_summary_output {
             self.declared_transforms = input;
             self
         }
+        /// Appends an item to `resource_identifier_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_resource_identifier_summaries`](Self::set_resource_identifier_summaries).
+        ///
+        /// <p>A list of resource identifier summaries that describe the target resources of an import
+        /// operation and the properties you can provide during the import to identify the target
+        /// resources. For example, <code>BucketName</code> is a possible identifier property for an
+        /// <code>AWS::S3::Bucket</code> resource.</p>
         pub fn resource_identifier_summaries(
             mut self,
             input: impl Into<crate::model::ResourceIdentifierSummary>,
@@ -1841,6 +2105,10 @@ pub mod get_template_summary_output {
             self.resource_identifier_summaries = Some(v);
             self
         }
+        /// <p>A list of resource identifier summaries that describe the target resources of an import
+        /// operation and the properties you can provide during the import to identify the target
+        /// resources. For example, <code>BucketName</code> is a possible identifier property for an
+        /// <code>AWS::S3::Bucket</code> resource.</p>
         pub fn set_resource_identifier_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceIdentifierSummary>>,
@@ -1912,6 +2180,9 @@ pub mod get_template_output {
             self.template_body = Some(input.into());
             self
         }
+        /// <p>Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p>
+        /// <p>CloudFormation returns the same template that was used when the stack was
+        /// created.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1919,12 +2190,26 @@ pub mod get_template_output {
             self.template_body = input;
             self
         }
+        /// Appends an item to `stages_available`.
+        ///
+        /// To override the contents of this collection use [`set_stages_available`](Self::set_stages_available).
+        ///
+        /// <p>The stage of the template that you can retrieve. For stacks, the
+        /// <code>Original</code> and <code>Processed</code> templates are always available. For
+        /// change sets, the <code>Original</code> template is always available. After
+        /// CloudFormation finishes creating the change set, the <code>Processed</code> template
+        /// becomes available.</p>
         pub fn stages_available(mut self, input: impl Into<crate::model::TemplateStage>) -> Self {
             let mut v = self.stages_available.unwrap_or_default();
             v.push(input.into());
             self.stages_available = Some(v);
             self
         }
+        /// <p>The stage of the template that you can retrieve. For stacks, the
+        /// <code>Original</code> and <code>Processed</code> templates are always available. For
+        /// change sets, the <code>Original</code> template is always available. After
+        /// CloudFormation finishes creating the change set, the <code>Processed</code> template
+        /// becomes available.</p>
         pub fn set_stages_available(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TemplateStage>>,
@@ -1978,6 +2263,8 @@ pub mod get_stack_policy_output {
             self.stack_policy_body = Some(input.into());
             self
         }
+        /// <p>Structure containing the stack policy body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
+        /// to Stack Resources</a> in the CloudFormation User Guide.)</p>
         pub fn set_stack_policy_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2060,6 +2347,8 @@ pub mod estimate_template_cost_output {
             self.url = Some(input.into());
             self
         }
+        /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that describes the resources
+        /// required to run the template.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -2077,6 +2366,7 @@ impl EstimateTemplateCostOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectStackSetDriftOutput {
@@ -2110,6 +2400,10 @@ pub mod detect_stack_set_drift_output {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>The ID of the drift detection stack set operation. </p>
+        /// <p>you can use this operation id with <code>
+        /// <a>DescribeStackSetOperation</a>
+        /// </code> to monitor the progress of the drift detection operation. </p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -2129,6 +2423,7 @@ impl DetectStackSetDriftOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectStackResourceDriftOutput {
@@ -2160,6 +2455,9 @@ pub mod detect_stack_resource_drift_output {
             self.stack_resource_drift = Some(input);
             self
         }
+        /// <p>Information about whether the resource's actual configuration has drifted from its
+        /// expected template configuration, including actual and expected property values and any
+        /// differences detected.</p>
         pub fn set_stack_resource_drift(
             mut self,
             input: std::option::Option<crate::model::StackResourceDrift>,
@@ -2182,6 +2480,7 @@ impl DetectStackResourceDriftOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectStackDriftOutput {
@@ -2215,6 +2514,10 @@ pub mod detect_stack_drift_output {
             self.stack_drift_detection_id = Some(input.into());
             self
         }
+        /// <p>The ID of the drift detection results of this operation.</p>
+        /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is
+        /// run. However, the number of drift results CloudFormation retains for any given stack, and for how
+        /// long, may vary.</p>
         pub fn set_stack_drift_detection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2237,6 +2540,7 @@ impl DetectStackDriftOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTypeRegistrationOutput {
@@ -2281,6 +2585,7 @@ pub mod describe_type_registration_output {
             self.progress_status = Some(input);
             self
         }
+        /// <p>The current status of the extension registration request.</p>
         pub fn set_progress_status(
             mut self,
             input: std::option::Option<crate::model::RegistrationStatus>,
@@ -2293,6 +2598,7 @@ pub mod describe_type_registration_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the extension registration request.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2304,6 +2610,9 @@ pub mod describe_type_registration_output {
             self.type_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the extension being registered.</p>
+        /// <p>For registration requests with a <code>ProgressStatus</code> of other than
+        /// <code>COMPLETE</code>, this will be <code>null</code>.</p>
         pub fn set_type_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.type_arn = input;
             self
@@ -2316,6 +2625,10 @@ pub mod describe_type_registration_output {
             self.type_version_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of this specific version of the extension being
+        /// registered.</p>
+        /// <p>For registration requests with a <code>ProgressStatus</code> of other than
+        /// <code>COMPLETE</code>, this will be <code>null</code>.</p>
         pub fn set_type_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2341,6 +2654,7 @@ impl DescribeTypeRegistrationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTypeOutput {
@@ -2513,10 +2827,10 @@ pub struct DescribeTypeOutput {
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
     /// </li>
     /// </ul>
-    pub last_updated: std::option::Option<smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
     /// <p>When the specified private extension version was registered or activated in your
     /// account. </p>
-    pub time_created: std::option::Option<smithy_types::Instant>,
+    pub time_created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A JSON string that represent the current configuration data for the extension in this
     /// account and region.</p>
     /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation
@@ -2617,8 +2931,8 @@ pub mod describe_type_output {
         pub(crate) visibility: std::option::Option<crate::model::Visibility>,
         pub(crate) source_url: std::option::Option<std::string::String>,
         pub(crate) documentation_url: std::option::Option<std::string::String>,
-        pub(crate) last_updated: std::option::Option<smithy_types::Instant>,
-        pub(crate) time_created: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) time_created: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) configuration_schema: std::option::Option<std::string::String>,
         pub(crate) publisher_id: std::option::Option<std::string::String>,
         pub(crate) original_type_name: std::option::Option<std::string::String>,
@@ -2634,6 +2948,7 @@ pub mod describe_type_output {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the extension.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2643,6 +2958,7 @@ pub mod describe_type_output {
             self.r#type = Some(input);
             self
         }
+        /// <p>The kind of extension. </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
             self.r#type = input;
             self
@@ -2654,6 +2970,9 @@ pub mod describe_type_output {
             self.type_name = Some(input.into());
             self
         }
+        /// <p>The name of the extension.</p>
+        /// <p>If the extension is a public third-party type you have activated with a type name alias,
+        /// CloudFormation returns the type name alias. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
         pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.type_name = input;
             self
@@ -2670,6 +2989,14 @@ pub mod describe_type_output {
             self.default_version_id = Some(input.into());
             self
         }
+        /// <p>The ID of the default version of the extension. The default version is used when the
+        /// extension version is not specified.</p>
+        /// <p>This applies only to private extensions you have registered in your account. For public
+        /// extensions, both those provided by Amazon and published by third parties, CloudFormation
+        /// returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+        /// <p>To set the default version of an extension, use <code>
+        /// <a>SetTypeDefaultVersion</a>
+        /// </code>. </p>
         pub fn set_default_version_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2685,6 +3012,10 @@ pub mod describe_type_output {
             self.is_default_version = Some(input);
             self
         }
+        /// <p>Whether the specified extension version is set as the default version.</p>
+        /// <p>This applies only to private extensions you have registered in your account, and
+        /// extensions published by Amazon. For public third-party extensions, whether or not they are
+        /// activated in your account, CloudFormation returns <code>null</code>.</p>
         pub fn set_is_default_version(mut self, input: std::option::Option<bool>) -> Self {
             self.is_default_version = input;
             self
@@ -2722,6 +3053,35 @@ pub mod describe_type_output {
             self.type_tests_status = Some(input);
             self
         }
+        /// <p>The contract test status of the registered extension version. To return the extension
+        /// test status of a specifc extension version, you must specify <code>VersionId</code>. </p>
+        /// <p>This applies only to registered private extension versions. CloudFormation does not
+        /// return this information for public extensions, whether or not they are activated in your
+        /// account.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PASSED</code>: The extension has passed all its contract tests.</p>
+        /// <p>An extension must have a test status of <code>PASSED</code> before it can be
+        /// published. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing extensions to make them available for public
+        /// use</a> in the <i>CloudFormation Command Line Interface User
+        /// Guide</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code>: The extension has failed one or more contract tests.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IN_PROGRESS</code>: Contract tests are currently being performed on the
+        /// extension.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NOT_TESTED</code>: Contract tests have not been performed on the
+        /// extension.</p>
+        /// </li>
+        /// </ul>
         pub fn set_type_tests_status(
             mut self,
             input: std::option::Option<crate::model::TypeTestsStatus>,
@@ -2741,6 +3101,11 @@ pub mod describe_type_output {
             self.type_tests_status_description = Some(input.into());
             self
         }
+        /// <p>The description of the test status. To return the extension test status of a specifc
+        /// extension version, you must specify <code>VersionId</code>. </p>
+        /// <p>This applies only to registered private extension versions. CloudFormation does not
+        /// return this information for public extensions, whether or not they are activated in your
+        /// account.</p>
         pub fn set_type_tests_status_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2753,6 +3118,7 @@ pub mod describe_type_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the extension.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2765,6 +3131,10 @@ pub mod describe_type_output {
             self.schema = Some(input.into());
             self
         }
+        /// <p>The schema that defines the extension.</p>
+        /// <p>For more information on extension schemas, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource Provider
+        /// Schema</a> in the <i>CloudFormation CLI User
+        /// Guide</i>.</p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema = input;
             self
@@ -2806,6 +3176,39 @@ pub mod describe_type_output {
             self.provisioning_type = Some(input);
             self
         }
+        /// <p>For resource type extensions, the provisioning behavior of the resource type. CloudFormation
+        /// determines the provisioning type during registration, based on the types of handlers in the
+        /// schema handler package submitted.</p>
+        /// <p>Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>FULLY_MUTABLE</code>: The resource type includes an update handler to
+        /// process updates to the type during stack update operations.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IMMUTABLE</code>: The resource type does not include an update handler, so
+        /// the type cannot be updated and must instead be replaced during stack update
+        /// operations.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NON_PROVISIONABLE</code>: The resource type does not include all of the
+        /// following handlers, and therefore cannot actually be provisioned.</p>
+        /// <ul>
+        /// <li>
+        /// <p>create</p>
+        /// </li>
+        /// <li>
+        /// <p>read</p>
+        /// </li>
+        /// <li>
+        /// <p>delete</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn set_provisioning_type(
             mut self,
             input: std::option::Option<crate::model::ProvisioningType>,
@@ -2833,6 +3236,22 @@ pub mod describe_type_output {
             self.deprecated_status = Some(input);
             self
         }
+        /// <p>The deprecation status of the extension version.</p>
+        /// <p>Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>LIVE</code>: The extension is activated or registered and can be used in
+        /// CloudFormation operations, dependent on its provisioning behavior and
+        /// visibility scope.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DEPRECATED</code>: The extension has been deactivated or deregistered and
+        /// can no longer be used in CloudFormation operations. </p>
+        /// </li>
+        /// </ul>
+        /// <p>For public third-party extensions, CloudFormation returns <code>null</code>.</p>
         pub fn set_deprecated_status(
             mut self,
             input: std::option::Option<crate::model::DeprecatedStatus>,
@@ -2848,6 +3267,10 @@ pub mod describe_type_output {
             self.logging_config = Some(input);
             self
         }
+        /// <p>Contains logging configuration information for private extensions. This applies only to
+        /// private extensions you have registered in your account. For public extensions, both those
+        /// provided by Amazon and published by third parties, CloudFormation returns
+        /// <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
         pub fn set_logging_config(
             mut self,
             input: std::option::Option<crate::model::LoggingConfig>,
@@ -2855,6 +3278,12 @@ pub mod describe_type_output {
             self.logging_config = input;
             self
         }
+        /// Appends an item to `required_activated_types`.
+        ///
+        /// To override the contents of this collection use [`set_required_activated_types`](Self::set_required_activated_types).
+        ///
+        /// <p>For extensions that are modules, the public third-party extensions that must be
+        /// activated in your account in order for the module itself to be activated.</p>
         pub fn required_activated_types(
             mut self,
             input: impl Into<crate::model::RequiredActivatedType>,
@@ -2864,6 +3293,8 @@ pub mod describe_type_output {
             self.required_activated_types = Some(v);
             self
         }
+        /// <p>For extensions that are modules, the public third-party extensions that must be
+        /// activated in your account in order for the module itself to be activated.</p>
         pub fn set_required_activated_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RequiredActivatedType>>,
@@ -2886,6 +3317,17 @@ pub mod describe_type_output {
             self.execution_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to register the extension.
+        /// This applies only to private extensions you have registered in your account. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+        /// <p></p>
+        /// <p>If the registered extension calls any Amazon Web Services APIs, you must create an
+        /// <i>
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// execution role</a>
+        /// </i> that includes the necessary permissions to call
+        /// those Amazon Web Services APIs, and provision that execution role in your account. CloudFormation then assumes that execution role to provide your extension with the
+        /// appropriate credentials.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2913,6 +3355,22 @@ pub mod describe_type_output {
             self.visibility = Some(input);
             self
         }
+        /// <p>The scope at which the extension is visible and usable in CloudFormation
+        /// operations.</p>
+        /// <p>Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PRIVATE</code>: The extension is only visible and usable within the account
+        /// in which it is registered. CloudFormation marks any extensions you register as
+        /// <code>PRIVATE</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PUBLIC</code>: The extension is publically visible and usable within any
+        /// Amazon account.</p>
+        /// </li>
+        /// </ul>
         pub fn set_visibility(
             mut self,
             input: std::option::Option<crate::model::Visibility>,
@@ -2925,6 +3383,7 @@ pub mod describe_type_output {
             self.source_url = Some(input.into());
             self
         }
+        /// <p>The URL of the source code for the extension.</p>
         pub fn set_source_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_url = input;
             self
@@ -2934,6 +3393,7 @@ pub mod describe_type_output {
             self.documentation_url = Some(input.into());
             self
         }
+        /// <p>The URL of a page providing detailed documentation for this extension.</p>
         pub fn set_documentation_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2952,26 +3412,39 @@ pub mod describe_type_output {
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
         /// </li>
         /// </ul>
-        pub fn last_updated(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated = Some(input);
             self
         }
+        /// <p>When the specified extension version was registered. This applies only to:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Private extensions you have registered in your account. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Public extensions you have activated in your account with auto-update specified.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated = input;
             self
         }
         /// <p>When the specified private extension version was registered or activated in your
         /// account. </p>
-        pub fn time_created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn time_created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.time_created = Some(input);
             self
         }
+        /// <p>When the specified private extension version was registered or activated in your
+        /// account. </p>
         pub fn set_time_created(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.time_created = input;
             self
@@ -2984,6 +3457,10 @@ pub mod describe_type_output {
             self.configuration_schema = Some(input.into());
             self
         }
+        /// <p>A JSON string that represent the current configuration data for the extension in this
+        /// account and region.</p>
+        /// <p>To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation
+        /// User Guide</i>.</p>
         pub fn set_configuration_schema(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2998,6 +3475,9 @@ pub mod describe_type_output {
             self.publisher_id = Some(input.into());
             self
         }
+        /// <p>The publisher ID of the extension publisher.</p>
+        /// <p>This applies only to public third-party extensions. For private registered extensions,
+        /// and extensions provided by Amazon, CloudFormation returns <code>null</code>.</p>
         pub fn set_publisher_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.publisher_id = input;
             self
@@ -3013,6 +3493,13 @@ pub mod describe_type_output {
             self.original_type_name = Some(input.into());
             self
         }
+        /// <p>For public extensions that have been activated for this account and region, the type
+        /// name of the public extension.</p>
+        /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this
+        /// account and region, CloudFormation treats that alias as the extension's type name within
+        /// the account and region, not the type name of the public extension. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the
+        /// <i>CloudFormation User Guide</i>.</p>
         pub fn set_original_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3026,6 +3513,8 @@ pub mod describe_type_output {
             self.original_type_arn = Some(input.into());
             self
         }
+        /// <p>For public extensions that have been activated for this account and region, the Amazon
+        /// Resource Name (ARN) of the public extension.</p>
         pub fn set_original_type_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3041,6 +3530,10 @@ pub mod describe_type_output {
             self.public_version_number = Some(input.into());
             self
         }
+        /// <p>The version number of a public third-party extension.</p>
+        /// <p>This applies only if you specify a public extension you have activated in your account,
+        /// or specify a public extension without specifying a version. For all other extensions,
+        /// CloudFormation returns <code>null</code>.</p>
         pub fn set_public_version_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3056,6 +3549,10 @@ pub mod describe_type_output {
             self.latest_public_version = Some(input.into());
             self
         }
+        /// <p>The latest version of a public extension <i>that is available</i> for
+        /// use.</p>
+        /// <p>This only applies if you specify a public extension, and you do not specify a version.
+        /// For all other requests, CloudFormation returns <code>null</code>.</p>
         pub fn set_latest_public_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3070,6 +3567,9 @@ pub mod describe_type_output {
             self.is_activated = Some(input);
             self
         }
+        /// <p>Whether or not the extension is activated in the account and region.</p>
+        /// <p>This only applies to public third-party extensions. For all other extensions,
+        /// CloudFormation returns <code>null</code>.</p>
         pub fn set_is_activated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_activated = input;
             self
@@ -3082,6 +3582,10 @@ pub mod describe_type_output {
             self.auto_update = Some(input);
             self
         }
+        /// <p>Whether CloudFormation automatically updates the extension in this account and region
+        /// when a new <i>minor</i> version is published by the extension publisher.
+        /// Major versions released by the publisher must be manually updated. For more information,
+        /// see <a href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.</p>
         pub fn set_auto_update(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_update = input;
             self
@@ -3127,6 +3631,7 @@ impl DescribeTypeOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStackSetOperationOutput {
@@ -3154,6 +3659,7 @@ pub mod describe_stack_set_operation_output {
             self.stack_set_operation = Some(input);
             self
         }
+        /// <p>The specified stack set operation.</p>
         pub fn set_stack_set_operation(
             mut self,
             input: std::option::Option<crate::model::StackSetOperation>,
@@ -3176,6 +3682,7 @@ impl DescribeStackSetOperationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStackSetOutput {
@@ -3203,6 +3710,7 @@ pub mod describe_stack_set_output {
             self.stack_set = Some(input);
             self
         }
+        /// <p>The specified stack set.</p>
         pub fn set_stack_set(mut self, input: std::option::Option<crate::model::StackSet>) -> Self {
             self.stack_set = input;
             self
@@ -3250,12 +3758,18 @@ pub mod describe_stacks_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `stacks`.
+        ///
+        /// To override the contents of this collection use [`set_stacks`](Self::set_stacks).
+        ///
+        /// <p>A list of stack structures.</p>
         pub fn stacks(mut self, input: impl Into<crate::model::Stack>) -> Self {
             let mut v = self.stacks.unwrap_or_default();
             v.push(input.into());
             self.stacks = Some(v);
             self
         }
+        /// <p>A list of stack structures.</p>
         pub fn set_stacks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Stack>>,
@@ -3269,6 +3783,8 @@ pub mod describe_stacks_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks.
+        /// If no additional page exists, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3312,12 +3828,18 @@ pub mod describe_stack_resources_output {
         pub(crate) stack_resources: std::option::Option<std::vec::Vec<crate::model::StackResource>>,
     }
     impl Builder {
+        /// Appends an item to `stack_resources`.
+        ///
+        /// To override the contents of this collection use [`set_stack_resources`](Self::set_stack_resources).
+        ///
+        /// <p>A list of <code>StackResource</code> structures.</p>
         pub fn stack_resources(mut self, input: impl Into<crate::model::StackResource>) -> Self {
             let mut v = self.stack_resources.unwrap_or_default();
             v.push(input.into());
             self.stack_resources = Some(v);
             self
         }
+        /// <p>A list of <code>StackResource</code> structures.</p>
         pub fn set_stack_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StackResource>>,
@@ -3340,6 +3862,7 @@ impl DescribeStackResourcesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStackResourceDriftsOutput {
@@ -3378,6 +3901,18 @@ pub mod describe_stack_resource_drifts_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `stack_resource_drifts`.
+        ///
+        /// To override the contents of this collection use [`set_stack_resource_drifts`](Self::set_stack_resource_drifts).
+        ///
+        /// <p>Drift information for the resources that have been checked for drift in the specified
+        /// stack. This includes actual and expected configuration values for resources where CloudFormation
+        /// detects drift.</p>
+        /// <p>For a given stack, there will be one <code>StackResourceDrift</code> for each stack
+        /// resource that has been checked for drift. Resources that have not yet been checked for
+        /// drift are not included. Resources that do not currently support drift detection are not
+        /// checked, and so not included. For a list of resources that support drift detection, see
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p>
         pub fn stack_resource_drifts(
             mut self,
             input: impl Into<crate::model::StackResourceDrift>,
@@ -3387,6 +3922,14 @@ pub mod describe_stack_resource_drifts_output {
             self.stack_resource_drifts = Some(v);
             self
         }
+        /// <p>Drift information for the resources that have been checked for drift in the specified
+        /// stack. This includes actual and expected configuration values for resources where CloudFormation
+        /// detects drift.</p>
+        /// <p>For a given stack, there will be one <code>StackResourceDrift</code> for each stack
+        /// resource that has been checked for drift. Resources that have not yet been checked for
+        /// drift are not included. Resources that do not currently support drift detection are not
+        /// checked, and so not included. For a list of resources that support drift detection, see
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p>
         pub fn set_stack_resource_drifts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StackResourceDrift>>,
@@ -3403,6 +3946,11 @@ pub mod describe_stack_resource_drifts_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is
+        /// set to a token. To retrieve the next set of results, call
+        /// <code>DescribeStackResourceDrifts</code> again and assign that token to the request
+        /// object's <code>NextToken</code> parameter. If the request returns all results,
+        /// <code>NextToken</code> is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3453,6 +4001,8 @@ pub mod describe_stack_resource_output {
             self.stack_resource_detail = Some(input);
             self
         }
+        /// <p>A <code>StackResourceDetail</code> structure containing the description of the
+        /// specified resource in the specified stack.</p>
         pub fn set_stack_resource_detail(
             mut self,
             input: std::option::Option<crate::model::StackResourceDetail>,
@@ -3475,6 +4025,7 @@ impl DescribeStackResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStackInstanceOutput {
@@ -3502,6 +4053,7 @@ pub mod describe_stack_instance_output {
             self.stack_instance = Some(input);
             self
         }
+        /// <p>The stack instance that matches the specified request parameters.</p>
         pub fn set_stack_instance(
             mut self,
             input: std::option::Option<crate::model::StackInstance>,
@@ -3552,12 +4104,18 @@ pub mod describe_stack_events_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `stack_events`.
+        ///
+        /// To override the contents of this collection use [`set_stack_events`](Self::set_stack_events).
+        ///
+        /// <p>A list of <code>StackEvents</code> structures.</p>
         pub fn stack_events(mut self, input: impl Into<crate::model::StackEvent>) -> Self {
             let mut v = self.stack_events.unwrap_or_default();
             v.push(input.into());
             self.stack_events = Some(v);
             self
         }
+        /// <p>A list of <code>StackEvents</code> structures.</p>
         pub fn set_stack_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StackEvent>>,
@@ -3571,6 +4129,8 @@ pub mod describe_stack_events_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of events.
+        /// If no additional page exists, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3591,6 +4151,7 @@ impl DescribeStackEventsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStackDriftDetectionStatusOutput {
@@ -3657,7 +4218,7 @@ pub struct DescribeStackDriftDetectionStatusOutput {
     /// 0 for stacks whose drift status is <code>IN_SYNC</code>.</p>
     pub drifted_stack_resource_count: std::option::Option<i32>,
     /// <p>Time at which the stack drift detection operation was initiated.</p>
-    pub timestamp: std::option::Option<smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DescribeStackDriftDetectionStatusOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3687,7 +4248,7 @@ pub mod describe_stack_drift_detection_status_output {
         pub(crate) detection_status: std::option::Option<crate::model::StackDriftDetectionStatus>,
         pub(crate) detection_status_reason: std::option::Option<std::string::String>,
         pub(crate) drifted_stack_resource_count: std::option::Option<i32>,
-        pub(crate) timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ID of the stack.</p>
@@ -3695,6 +4256,7 @@ pub mod describe_stack_drift_detection_status_output {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The ID of the stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -3707,6 +4269,10 @@ pub mod describe_stack_drift_detection_status_output {
             self.stack_drift_detection_id = Some(input.into());
             self
         }
+        /// <p>The ID of the drift detection results of this operation.</p>
+        /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation
+        /// is run. However, the number of reports CloudFormation retains for any given stack, and for how long,
+        /// may vary.</p>
         pub fn set_stack_drift_detection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3742,6 +4308,30 @@ pub mod describe_stack_drift_detection_status_output {
             self.stack_drift_status = Some(input);
             self
         }
+        /// <p>Status of the stack's actual configuration compared to its expected
+        /// configuration.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DRIFTED</code>: The stack differs from its expected template
+        /// configuration. A stack is considered to have drifted if one or more of its resources
+        /// have drifted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NOT_CHECKED</code>: CloudFormation has not checked if the stack differs from its
+        /// expected template configuration.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IN_SYNC</code>: The stack's actual configuration matches its expected
+        /// template configuration.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UNKNOWN</code>: This value is reserved for future use.</p>
+        /// </li>
+        /// </ul>
         pub fn set_stack_drift_status(
             mut self,
             input: std::option::Option<crate::model::StackDriftStatus>,
@@ -3776,6 +4366,29 @@ pub mod describe_stack_drift_detection_status_output {
             self.detection_status = Some(input);
             self
         }
+        /// <p>The status of the stack drift detection operation.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DETECTION_COMPLETE</code>: The stack drift detection operation has
+        /// successfully completed for all resources in the stack that support drift detection.
+        /// (Resources that do not currently support stack detection remain unchecked.)</p>
+        /// <p>If you specified logical resource IDs for CloudFormation to use as a filter for the
+        /// stack drift detection operation, only the resources with those logical IDs are
+        /// checked for drift.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DETECTION_FAILED</code>: The stack drift detection operation has failed
+        /// for at least one resource in the stack. Results will be available for resources on
+        /// which CloudFormation successfully completed drift detection.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is
+        /// currently in progress.</p>
+        /// </li>
+        /// </ul>
         pub fn set_detection_status(
             mut self,
             input: std::option::Option<crate::model::StackDriftDetectionStatus>,
@@ -3788,6 +4401,7 @@ pub mod describe_stack_drift_detection_status_output {
             self.detection_status_reason = Some(input.into());
             self
         }
+        /// <p>The reason the stack drift detection operation has its current status.</p>
         pub fn set_detection_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3802,16 +4416,23 @@ pub mod describe_stack_drift_detection_status_output {
             self.drifted_stack_resource_count = Some(input);
             self
         }
+        /// <p>Total number of stack resources that have drifted. This is NULL until the drift
+        /// detection operation reaches a status of <code>DETECTION_COMPLETE</code>. This value will be
+        /// 0 for stacks whose drift status is <code>IN_SYNC</code>.</p>
         pub fn set_drifted_stack_resource_count(mut self, input: std::option::Option<i32>) -> Self {
             self.drifted_stack_resource_count = input;
             self
         }
         /// <p>Time at which the stack drift detection operation was initiated.</p>
-        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>Time at which the stack drift detection operation was initiated.</p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.timestamp = input;
             self
         }
@@ -3836,6 +4457,7 @@ impl DescribeStackDriftDetectionStatusOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePublisherOutput {
@@ -3877,6 +4499,7 @@ pub mod describe_publisher_output {
             self.publisher_id = Some(input.into());
             self
         }
+        /// <p>The ID of the extension publisher.</p>
         pub fn set_publisher_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.publisher_id = input;
             self
@@ -3887,6 +4510,8 @@ pub mod describe_publisher_output {
             self.publisher_status = Some(input);
             self
         }
+        /// <p>Whether the publisher is verified. Currently, all registered publishers are
+        /// verified.</p>
         pub fn set_publisher_status(
             mut self,
             input: std::option::Option<crate::model::PublisherStatus>,
@@ -3900,6 +4525,8 @@ pub mod describe_publisher_output {
             self.identity_provider = Some(input);
             self
         }
+        /// <p>The type of account used as the identity provider when registering this publisher with
+        /// CloudFormation.</p>
         pub fn set_identity_provider(
             mut self,
             input: std::option::Option<crate::model::IdentityProvider>,
@@ -3912,6 +4539,7 @@ pub mod describe_publisher_output {
             self.publisher_profile = Some(input.into());
             self
         }
+        /// <p>The URL to the publisher's profile with the identity provider.</p>
         pub fn set_publisher_profile(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3955,7 +4583,7 @@ pub struct DescribeChangeSetOutput {
     /// their values used to create the change set. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>The start time when the change set was created, in UTC.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the
     /// change set. If you can’t execute the change set, the status indicates why. For example, a
     /// change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is
@@ -4032,7 +4660,7 @@ pub mod describe_change_set_output {
         pub(crate) stack_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) execution_status: std::option::Option<crate::model::ExecutionStatus>,
         pub(crate) status: std::option::Option<crate::model::ChangeSetStatus>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
@@ -4052,6 +4680,7 @@ pub mod describe_change_set_output {
             self.change_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the change set.</p>
         pub fn set_change_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4064,6 +4693,7 @@ pub mod describe_change_set_output {
             self.change_set_id = Some(input.into());
             self
         }
+        /// <p>The ARN of the change set.</p>
         pub fn set_change_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4076,6 +4706,7 @@ pub mod describe_change_set_output {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The ARN of the stack that is associated with the change set.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -4085,6 +4716,7 @@ pub mod describe_change_set_output {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name of the stack that is associated with the change set.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -4094,16 +4726,25 @@ pub mod describe_change_set_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>Information about the change set.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>A list of <code>Parameter</code> structures that describes the input parameters and
+        /// their values used to create the change set. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
         pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input.into());
             self.parameters = Some(v);
             self
         }
+        /// <p>A list of <code>Parameter</code> structures that describes the input parameters and
+        /// their values used to create the change set. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -4112,13 +4753,14 @@ pub mod describe_change_set_output {
             self
         }
         /// <p>The start time when the change set was created, in UTC.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The start time when the change set was created, in UTC.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -4132,6 +4774,11 @@ pub mod describe_change_set_output {
             self.execution_status = Some(input);
             self
         }
+        /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the
+        /// change set. If you can’t execute the change set, the status indicates why. For example, a
+        /// change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is
+        /// still creating it or in an <code>OBSOLETE</code> state because the stack was already
+        /// updated.</p>
         pub fn set_execution_status(
             mut self,
             input: std::option::Option<crate::model::ExecutionStatus>,
@@ -4145,6 +4792,8 @@ pub mod describe_change_set_output {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the change set, such as <code>CREATE_IN_PROGRESS</code>,
+        /// <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ChangeSetStatus>,
@@ -4158,6 +4807,8 @@ pub mod describe_change_set_output {
             self.status_reason = Some(input.into());
             self
         }
+        /// <p>A description of the change set's status. For example, if your attempt to create a
+        /// change set failed, CloudFormation shows the error message.</p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4165,12 +4816,20 @@ pub mod describe_change_set_output {
             self.status_reason = input;
             self
         }
+        /// Appends an item to `notification_ar_ns`.
+        ///
+        /// To override the contents of this collection use [`set_notification_ar_ns`](Self::set_notification_ar_ns).
+        ///
+        /// <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that will be
+        /// associated with the stack if you execute the change set.</p>
         pub fn notification_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.notification_ar_ns.unwrap_or_default();
             v.push(input.into());
             self.notification_ar_ns = Some(v);
             self
         }
+        /// <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that will be
+        /// associated with the stack if you execute the change set.</p>
         pub fn set_notification_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4187,6 +4846,8 @@ pub mod describe_change_set_output {
             self.rollback_configuration = Some(input);
             self
         }
+        /// <p>The rollback triggers for CloudFormation to monitor during stack creation and
+        /// updating operations, and for the specified monitoring period afterwards.</p>
         pub fn set_rollback_configuration(
             mut self,
             input: std::option::Option<crate::model::RollbackConfiguration>,
@@ -4194,12 +4855,20 @@ pub mod describe_change_set_output {
             self.rollback_configuration = input;
             self
         }
+        /// Appends an item to `capabilities`.
+        ///
+        /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
+        ///
+        /// <p>If you execute the change set, the list of capabilities that were explicitly
+        /// acknowledged when the change set was created.</p>
         pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
             v.push(input.into());
             self.capabilities = Some(v);
             self
         }
+        /// <p>If you execute the change set, the list of capabilities that were explicitly
+        /// acknowledged when the change set was created.</p>
         pub fn set_capabilities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
@@ -4207,12 +4876,20 @@ pub mod describe_change_set_output {
             self.capabilities = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>If you execute the change set, the tags that will be associated with the
+        /// stack.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>If you execute the change set, the tags that will be associated with the
+        /// stack.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4220,12 +4897,20 @@ pub mod describe_change_set_output {
             self.tags = input;
             self
         }
+        /// Appends an item to `changes`.
+        ///
+        /// To override the contents of this collection use [`set_changes`](Self::set_changes).
+        ///
+        /// <p>A list of <code>Change</code> structures that describes the resources
+        /// CloudFormation changes if you execute the change set.</p>
         pub fn changes(mut self, input: impl Into<crate::model::Change>) -> Self {
             let mut v = self.changes.unwrap_or_default();
             v.push(input.into());
             self.changes = Some(v);
             self
         }
+        /// <p>A list of <code>Change</code> structures that describes the resources
+        /// CloudFormation changes if you execute the change set.</p>
         pub fn set_changes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Change>>,
@@ -4239,6 +4924,8 @@ pub mod describe_change_set_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the output exceeds 1 MB, a string that identifies the next page of changes. If
+        /// there is no additional page, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4248,6 +4935,7 @@ pub mod describe_change_set_output {
             self.include_nested_stacks = Some(input);
             self
         }
+        /// <p>Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.</p>
         pub fn set_include_nested_stacks(mut self, input: std::option::Option<bool>) -> Self {
             self.include_nested_stacks = input;
             self
@@ -4258,6 +4946,8 @@ pub mod describe_change_set_output {
             self.parent_change_set_id = Some(input.into());
             self
         }
+        /// <p>Specifies the change set ID of the parent change set in the current nested change set
+        /// hierarchy.</p>
         pub fn set_parent_change_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4271,6 +4961,8 @@ pub mod describe_change_set_output {
             self.root_change_set_id = Some(input.into());
             self
         }
+        /// <p>Specifies the change set ID of the root change set in the current nested change set
+        /// hierarchy.</p>
         pub fn set_root_change_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4340,12 +5032,20 @@ pub mod describe_account_limits_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `account_limits`.
+        ///
+        /// To override the contents of this collection use [`set_account_limits`](Self::set_account_limits).
+        ///
+        /// <p>An account limit structure that contain a list of CloudFormation account limits
+        /// and their values.</p>
         pub fn account_limits(mut self, input: impl Into<crate::model::AccountLimit>) -> Self {
             let mut v = self.account_limits.unwrap_or_default();
             v.push(input.into());
             self.account_limits = Some(v);
             self
         }
+        /// <p>An account limit structure that contain a list of CloudFormation account limits
+        /// and their values.</p>
         pub fn set_account_limits(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccountLimit>>,
@@ -4359,6 +5059,8 @@ pub mod describe_account_limits_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits.
+        /// If no additional page exists, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4379,6 +5081,7 @@ impl DescribeAccountLimitsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterTypeOutput {}
@@ -4408,6 +5111,7 @@ impl DeregisterTypeOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStackSetOutput {}
@@ -4437,6 +5141,7 @@ impl DeleteStackSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStackInstancesOutput {
@@ -4464,6 +5169,7 @@ pub mod delete_stack_instances_output {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for this stack set operation.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -4483,6 +5189,7 @@ impl DeleteStackInstancesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStackOutput {}
@@ -4542,6 +5249,7 @@ impl DeleteChangeSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeactivateTypeOutput {}
@@ -4571,6 +5279,7 @@ impl DeactivateTypeOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStackSetOutput {
@@ -4598,6 +5307,7 @@ pub mod create_stack_set_output {
             self.stack_set_id = Some(input.into());
             self
         }
+        /// <p>The ID of the stack set that you're creating.</p>
         pub fn set_stack_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_set_id = input;
             self
@@ -4617,6 +5327,7 @@ impl CreateStackSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStackInstancesOutput {
@@ -4644,6 +5355,7 @@ pub mod create_stack_instances_output {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for this stack set operation.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -4691,6 +5403,7 @@ pub mod create_stack_output {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>Unique identifier of the stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -4742,6 +5455,7 @@ pub mod create_change_set_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the change set.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4751,6 +5465,7 @@ pub mod create_change_set_output {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -4801,6 +5516,7 @@ impl ContinueUpdateRollbackOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelUpdateStackOutput {}
@@ -4830,6 +5546,7 @@ impl CancelUpdateStackOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDescribeTypeConfigurationsOutput {
@@ -4872,6 +5589,12 @@ pub mod batch_describe_type_configurations_output {
             std::option::Option<std::vec::Vec<crate::model::TypeConfigurationDetails>>,
     }
     impl Builder {
+        /// Appends an item to `errors`.
+        ///
+        /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+        ///
+        /// <p>A list of information concerning any errors generated during the setting of the
+        /// specified configurations.</p>
         pub fn errors(
             mut self,
             input: impl Into<crate::model::BatchDescribeTypeConfigurationsError>,
@@ -4881,6 +5604,8 @@ pub mod batch_describe_type_configurations_output {
             self.errors = Some(v);
             self
         }
+        /// <p>A list of information concerning any errors generated during the setting of the
+        /// specified configurations.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<
@@ -4890,6 +5615,12 @@ pub mod batch_describe_type_configurations_output {
             self.errors = input;
             self
         }
+        /// Appends an item to `unprocessed_type_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_unprocessed_type_configurations`](Self::set_unprocessed_type_configurations).
+        ///
+        /// <p>A list of any of the specified extension configurations that CloudFormation could not
+        /// process for any reason.</p>
         pub fn unprocessed_type_configurations(
             mut self,
             input: impl Into<crate::model::TypeConfigurationIdentifier>,
@@ -4899,6 +5630,8 @@ pub mod batch_describe_type_configurations_output {
             self.unprocessed_type_configurations = Some(v);
             self
         }
+        /// <p>A list of any of the specified extension configurations that CloudFormation could not
+        /// process for any reason.</p>
         pub fn set_unprocessed_type_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TypeConfigurationIdentifier>>,
@@ -4906,6 +5639,12 @@ pub mod batch_describe_type_configurations_output {
             self.unprocessed_type_configurations = input;
             self
         }
+        /// Appends an item to `type_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_type_configurations`](Self::set_type_configurations).
+        ///
+        /// <p>A list of any of the specified extension configurations from the CloudFormation
+        /// registry.</p>
         pub fn type_configurations(
             mut self,
             input: impl Into<crate::model::TypeConfigurationDetails>,
@@ -4915,6 +5654,8 @@ pub mod batch_describe_type_configurations_output {
             self.type_configurations = Some(v);
             self
         }
+        /// <p>A list of any of the specified extension configurations from the CloudFormation
+        /// registry.</p>
         pub fn set_type_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TypeConfigurationDetails>>,
@@ -4939,6 +5680,7 @@ impl BatchDescribeTypeConfigurationsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivateTypeOutput {
@@ -4968,6 +5710,8 @@ pub mod activate_type_output {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Number (ARN) of the activated extension, in this account and
+        /// region.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self

@@ -22,6 +22,12 @@ pub mod compare_faces_input {
             self.source_image = Some(input);
             self
         }
+        /// <p>The input image as base64-encoded bytes or an S3 object.
+        /// If you use the AWS CLI to call Amazon Rekognition operations,
+        /// passing base64-encoded image bytes is not supported. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+        /// passed using the <code>Bytes</code> field.
+        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn set_source_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.source_image = input;
             self
@@ -36,6 +42,12 @@ pub mod compare_faces_input {
             self.target_image = Some(input);
             self
         }
+        /// <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to
+        /// call Amazon Rekognition operations, passing base64-encoded image bytes is not supported.
+        /// </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+        /// passed using the <code>Bytes</code> field.
+        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn set_target_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.target_image = input;
             self
@@ -46,6 +58,8 @@ pub mod compare_faces_input {
             self.similarity_threshold = Some(input);
             self
         }
+        /// <p>The minimum level of confidence in the face matches that a match must meet to be
+        /// included in the <code>FaceMatches</code> array.</p>
         pub fn set_similarity_threshold(mut self, input: std::option::Option<f32>) -> Self {
             self.similarity_threshold = input;
             self
@@ -55,6 +69,7 @@ pub mod compare_faces_input {
         /// If you specify <code>LOW</code>,
         /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
         /// don’t meet the chosen quality bar.
+        ///
         /// The quality bar is based on a variety of common use cases. Low-quality
         /// detections can occur for a number of reasons. Some examples are an object that's misidentified
         /// as a face, a face that's too blurry, or a face with a
@@ -66,6 +81,19 @@ pub mod compare_faces_input {
             self.quality_filter = Some(input);
             self
         }
+        /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces.
+        /// Filtered faces aren't compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar.
+        /// If you specify <code>LOW</code>,
+        /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
+        /// don’t meet the chosen quality bar.
+        ///
+        /// The quality bar is based on a variety of common use cases. Low-quality
+        /// detections can occur for a number of reasons. Some examples are an object that's misidentified
+        /// as a face, a face that's too blurry, or a face with a
+        /// pose that's too extreme to use. If you specify <code>NONE</code>, no
+        /// filtering is performed. The default value is <code>NONE</code>.
+        /// </p>
+        /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
         pub fn set_quality_filter(
             mut self,
             input: std::option::Option<crate::model::QualityFilter>,
@@ -76,8 +104,10 @@ pub mod compare_faces_input {
         /// Consumes the builder and constructs a [`CompareFacesInput`](crate::input::CompareFacesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CompareFacesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CompareFacesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CompareFacesInput {
                 source_image: self.source_image,
                 target_image: self.target_image,
@@ -98,16 +128,16 @@ impl CompareFacesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CompareFaces,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CompareFacesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -115,7 +145,7 @@ impl CompareFacesInput {
         fn update_http_builder(
             input: &crate::input::CompareFacesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -124,31 +154,31 @@ impl CompareFacesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CompareFacesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.CompareFaces",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_compare_faces(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -171,25 +201,27 @@ impl CompareFacesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CompareFaces::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CompareFaces",
-                    "rekognition",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CompareFaces::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CompareFaces",
+            "rekognition",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -220,6 +252,7 @@ pub mod create_collection_input {
             self.collection_id = Some(input.into());
             self
         }
+        /// <p>ID for the collection that you are creating.</p>
         pub fn set_collection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -227,6 +260,13 @@ pub mod create_collection_input {
             self.collection_id = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>
+        /// A set of tags (key-value pairs) that you want to attach to the collection.
+        /// </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -237,6 +277,9 @@ pub mod create_collection_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>
+        /// A set of tags (key-value pairs) that you want to attach to the collection.
+        /// </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -251,7 +294,7 @@ pub mod create_collection_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateCollectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateCollectionInput {
                 collection_id: self.collection_id,
@@ -271,16 +314,16 @@ impl CreateCollectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateCollection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateCollectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -288,7 +331,7 @@ impl CreateCollectionInput {
         fn update_http_builder(
             input: &crate::input::CreateCollectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -297,32 +340,32 @@ impl CreateCollectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateCollectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.CreateCollection",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_collection(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -345,15 +388,15 @@ impl CreateCollectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateCollection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateCollection",
             "rekognition",
         ));
@@ -362,10 +405,10 @@ impl CreateCollectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -393,6 +436,7 @@ pub mod create_project_input {
             self.project_name = Some(input.into());
             self
         }
+        /// <p>The name of the project to create.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_name = input;
             self
@@ -400,8 +444,10 @@ pub mod create_project_input {
         /// Consumes the builder and constructs a [`CreateProjectInput`](crate::input::CreateProjectInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateProjectInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateProjectInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateProjectInput {
                 project_name: self.project_name,
             })
@@ -419,16 +465,16 @@ impl CreateProjectInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateProject,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateProjectInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -436,7 +482,7 @@ impl CreateProjectInput {
         fn update_http_builder(
             input: &crate::input::CreateProjectInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -445,29 +491,31 @@ impl CreateProjectInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateProjectInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.CreateProject",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_project(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -490,25 +538,27 @@ impl CreateProjectInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateProject::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateProject",
-                    "rekognition",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateProject::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateProject",
+            "rekognition",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -545,6 +595,8 @@ pub mod create_project_version_input {
             self.project_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the Amazon Rekognition Custom Labels project that
+        /// manages the model that you want to train.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_arn = input;
             self
@@ -554,6 +606,7 @@ pub mod create_project_version_input {
             self.version_name = Some(input.into());
             self
         }
+        /// <p>A name for the version of the model. This value must be unique.</p>
         pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_name = input;
             self
@@ -565,6 +618,9 @@ pub mod create_project_version_input {
             self.output_config = Some(input);
             self
         }
+        /// <p>The Amazon S3 bucket location to store the results of training.
+        /// The S3 bucket can be in any AWS account as long as the caller has
+        /// <code>s3:PutObject</code> permissions on the S3 bucket.</p>
         pub fn set_output_config(
             mut self,
             input: std::option::Option<crate::model::OutputConfig>,
@@ -577,6 +633,7 @@ pub mod create_project_version_input {
             self.training_data = Some(input);
             self
         }
+        /// <p>The dataset to use for training. </p>
         pub fn set_training_data(
             mut self,
             input: std::option::Option<crate::model::TrainingData>,
@@ -589,6 +646,7 @@ pub mod create_project_version_input {
             self.testing_data = Some(input);
             self
         }
+        /// <p>The dataset to use for testing.</p>
         pub fn set_testing_data(
             mut self,
             input: std::option::Option<crate::model::TestingData>,
@@ -596,6 +654,13 @@ pub mod create_project_version_input {
             self.testing_data = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>
+        /// A set of tags (key-value pairs) that you want to attach to the model.
+        /// </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -606,6 +671,9 @@ pub mod create_project_version_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>
+        /// A set of tags (key-value pairs) that you want to attach to the model.
+        /// </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -642,6 +710,29 @@ pub mod create_project_version_input {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK).
+        /// You can supply the Amazon Resource Name (ARN) of your CMK, the ID of your CMK,
+        /// an alias for your CMK, or an alias ARN.
+        /// The key is used to encrypt training and test images copied into the service for model training.
+        /// Your source images are unaffected. The key is also used to encrypt training results
+        /// and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
+        /// <p>If you choose to use your own CMK, you need the following permissions on the CMK.</p>
+        /// <ul>
+        /// <li>
+        /// <p>kms:CreateGrant</p>
+        /// </li>
+        /// <li>
+        /// <p>kms:DescribeKey</p>
+        /// </li>
+        /// <li>
+        /// <p>kms:GenerateDataKey</p>
+        /// </li>
+        /// <li>
+        /// <p>kms:Decrypt</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted
+        /// using a key that AWS owns and manages.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -651,7 +742,7 @@ pub mod create_project_version_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateProjectVersionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateProjectVersionInput {
                 project_arn: self.project_arn,
@@ -676,16 +767,16 @@ impl CreateProjectVersionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateProjectVersion,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateProjectVersionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -693,7 +784,7 @@ impl CreateProjectVersionInput {
         fn update_http_builder(
             input: &crate::input::CreateProjectVersionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -702,32 +793,32 @@ impl CreateProjectVersionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateProjectVersionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.CreateProjectVersion",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_project_version(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -750,15 +841,15 @@ impl CreateProjectVersionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateProjectVersion::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateProjectVersion",
             "rekognition",
         ));
@@ -767,10 +858,10 @@ impl CreateProjectVersionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -805,6 +896,7 @@ pub mod create_stream_processor_input {
             self.input = Some(input);
             self
         }
+        /// <p>Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the parameter name is <code>StreamProcessorInput</code>.</p>
         pub fn set_input(
             mut self,
             input: std::option::Option<crate::model::StreamProcessorInput>,
@@ -817,6 +909,7 @@ pub mod create_stream_processor_input {
             self.output = Some(input);
             self
         }
+        /// <p>Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.</p>
         pub fn set_output(
             mut self,
             input: std::option::Option<crate::model::StreamProcessorOutput>,
@@ -832,6 +925,10 @@ pub mod create_stream_processor_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>An identifier you assign to the stream processor. You can use <code>Name</code> to
+        /// manage the stream processor. For example, you can get the current status of the stream processor by calling <a>DescribeStreamProcessor</a>.
+        /// <code>Name</code> is idempotent.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -842,6 +939,8 @@ pub mod create_stream_processor_input {
             self.settings = Some(input);
             self
         }
+        /// <p>Face recognition input parameters to be used by the stream processor. Includes the collection to use for face recognition and the face
+        /// attributes to detect.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<crate::model::StreamProcessorSettings>,
@@ -854,10 +953,18 @@ pub mod create_stream_processor_input {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>ARN of the IAM role that allows access to the stream processor.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>
+        /// A set of tags (key-value pairs) that you want to attach to the stream processor.
+        /// </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -868,6 +975,9 @@ pub mod create_stream_processor_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>
+        /// A set of tags (key-value pairs) that you want to attach to the stream processor.
+        /// </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -882,7 +992,7 @@ pub mod create_stream_processor_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateStreamProcessorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateStreamProcessorInput {
                 input: self.input,
@@ -906,16 +1016,16 @@ impl CreateStreamProcessorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateStreamProcessor,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateStreamProcessorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -923,7 +1033,7 @@ impl CreateStreamProcessorInput {
         fn update_http_builder(
             input: &crate::input::CreateStreamProcessorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -932,32 +1042,34 @@ impl CreateStreamProcessorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateStreamProcessorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.CreateStreamProcessor",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_stream_processor(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -980,15 +1092,15 @@ impl CreateStreamProcessorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateStreamProcessor::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateStreamProcessor",
             "rekognition",
         ));
@@ -997,10 +1109,10 @@ impl CreateStreamProcessorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1028,6 +1140,7 @@ pub mod delete_collection_input {
             self.collection_id = Some(input.into());
             self
         }
+        /// <p>ID of the collection to delete.</p>
         pub fn set_collection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1040,7 +1153,7 @@ pub mod delete_collection_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteCollectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteCollectionInput {
                 collection_id: self.collection_id,
@@ -1059,16 +1172,16 @@ impl DeleteCollectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteCollection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteCollectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1076,7 +1189,7 @@ impl DeleteCollectionInput {
         fn update_http_builder(
             input: &crate::input::DeleteCollectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1085,32 +1198,32 @@ impl DeleteCollectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteCollectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DeleteCollection",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_collection(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1133,15 +1246,15 @@ impl DeleteCollectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteCollection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteCollection",
             "rekognition",
         ));
@@ -1150,10 +1263,10 @@ impl DeleteCollectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1182,6 +1295,7 @@ pub mod delete_faces_input {
             self.collection_id = Some(input.into());
             self
         }
+        /// <p>Collection from which to remove the specific faces.</p>
         pub fn set_collection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1189,12 +1303,18 @@ pub mod delete_faces_input {
             self.collection_id = input;
             self
         }
+        /// Appends an item to `face_ids`.
+        ///
+        /// To override the contents of this collection use [`set_face_ids`](Self::set_face_ids).
+        ///
+        /// <p>An array of face IDs to delete.</p>
         pub fn face_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.face_ids.unwrap_or_default();
             v.push(input.into());
             self.face_ids = Some(v);
             self
         }
+        /// <p>An array of face IDs to delete.</p>
         pub fn set_face_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1205,8 +1325,10 @@ pub mod delete_faces_input {
         /// Consumes the builder and constructs a [`DeleteFacesInput`](crate::input::DeleteFacesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteFacesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteFacesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteFacesInput {
                 collection_id: self.collection_id,
                 face_ids: self.face_ids,
@@ -1225,16 +1347,16 @@ impl DeleteFacesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteFaces,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteFacesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1242,7 +1364,7 @@ impl DeleteFacesInput {
         fn update_http_builder(
             input: &crate::input::DeleteFacesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1251,29 +1373,31 @@ impl DeleteFacesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteFacesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DeleteFaces",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_faces(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1296,25 +1420,27 @@ impl DeleteFacesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteFaces::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteFaces",
-                    "rekognition",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteFaces::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteFaces",
+            "rekognition",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1342,6 +1468,7 @@ pub mod delete_project_input {
             self.project_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_arn = input;
             self
@@ -1349,8 +1476,10 @@ pub mod delete_project_input {
         /// Consumes the builder and constructs a [`DeleteProjectInput`](crate::input::DeleteProjectInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteProjectInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteProjectInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteProjectInput {
                 project_arn: self.project_arn,
             })
@@ -1368,16 +1497,16 @@ impl DeleteProjectInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteProject,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteProjectInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1385,7 +1514,7 @@ impl DeleteProjectInput {
         fn update_http_builder(
             input: &crate::input::DeleteProjectInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1394,29 +1523,31 @@ impl DeleteProjectInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteProjectInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DeleteProject",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_project(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1439,25 +1570,27 @@ impl DeleteProjectInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteProject::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteProject",
-                    "rekognition",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteProject::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteProject",
+            "rekognition",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1485,6 +1618,7 @@ pub mod delete_project_version_input {
             self.project_version_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
         pub fn set_project_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1497,7 +1631,7 @@ pub mod delete_project_version_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteProjectVersionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteProjectVersionInput {
                 project_version_arn: self.project_version_arn,
@@ -1516,16 +1650,16 @@ impl DeleteProjectVersionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteProjectVersion,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteProjectVersionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1533,7 +1667,7 @@ impl DeleteProjectVersionInput {
         fn update_http_builder(
             input: &crate::input::DeleteProjectVersionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1542,32 +1676,32 @@ impl DeleteProjectVersionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteProjectVersionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DeleteProjectVersion",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_project_version(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1590,15 +1724,15 @@ impl DeleteProjectVersionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteProjectVersion::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteProjectVersion",
             "rekognition",
         ));
@@ -1607,10 +1741,10 @@ impl DeleteProjectVersionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1638,6 +1772,7 @@ pub mod delete_stream_processor_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the stream processor you want to delete.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1647,7 +1782,7 @@ pub mod delete_stream_processor_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteStreamProcessorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteStreamProcessorInput { name: self.name })
         }
@@ -1664,16 +1799,16 @@ impl DeleteStreamProcessorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteStreamProcessor,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteStreamProcessorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1681,7 +1816,7 @@ impl DeleteStreamProcessorInput {
         fn update_http_builder(
             input: &crate::input::DeleteStreamProcessorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1690,32 +1825,34 @@ impl DeleteStreamProcessorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteStreamProcessorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DeleteStreamProcessor",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_stream_processor(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1738,15 +1875,15 @@ impl DeleteStreamProcessorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteStreamProcessor::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteStreamProcessor",
             "rekognition",
         ));
@@ -1755,10 +1892,10 @@ impl DeleteStreamProcessorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1786,6 +1923,7 @@ pub mod describe_collection_input {
             self.collection_id = Some(input.into());
             self
         }
+        /// <p>The ID of the collection to describe.</p>
         pub fn set_collection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1798,7 +1936,7 @@ pub mod describe_collection_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeCollectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeCollectionInput {
                 collection_id: self.collection_id,
@@ -1817,16 +1955,16 @@ impl DescribeCollectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCollection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeCollectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1834,7 +1972,7 @@ impl DescribeCollectionInput {
         fn update_http_builder(
             input: &crate::input::DescribeCollectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1843,32 +1981,32 @@ impl DescribeCollectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeCollectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DescribeCollection",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_collection(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1891,15 +2029,15 @@ impl DescribeCollectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCollection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCollection",
             "rekognition",
         ));
@@ -1908,10 +2046,10 @@ impl DescribeCollectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1942,6 +2080,9 @@ pub mod describe_projects_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous response was incomplete (because there is more
+        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1953,6 +2094,9 @@ pub mod describe_projects_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100.
+        /// If you specify a value greater than 100, a ValidationException
+        /// error occurs. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1962,7 +2106,7 @@ pub mod describe_projects_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeProjectsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeProjectsInput {
                 next_token: self.next_token,
@@ -1982,16 +2126,16 @@ impl DescribeProjectsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeProjects,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeProjectsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1999,7 +2143,7 @@ impl DescribeProjectsInput {
         fn update_http_builder(
             input: &crate::input::DescribeProjectsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2008,32 +2152,32 @@ impl DescribeProjectsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeProjectsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DescribeProjects",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_projects(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2056,15 +2200,15 @@ impl DescribeProjectsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeProjects::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeProjects",
             "rekognition",
         ));
@@ -2073,10 +2217,10 @@ impl DescribeProjectsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2107,16 +2251,29 @@ pub mod describe_project_versions_input {
             self.project_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the project that contains the models you want to describe.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_arn = input;
             self
         }
+        /// Appends an item to `version_names`.
+        ///
+        /// To override the contents of this collection use [`set_version_names`](Self::set_version_names).
+        ///
+        /// <p>A list of model version names that you want to describe. You can add up to 10 model version names
+        /// to the list. If you don't specify a value, all model descriptions are returned.  A version name is part of a
+        /// model (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN.
+        /// <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
         pub fn version_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.version_names.unwrap_or_default();
             v.push(input.into());
             self.version_names = Some(v);
             self
         }
+        /// <p>A list of model version names that you want to describe. You can add up to 10 model version names
+        /// to the list. If you don't specify a value, all model descriptions are returned.  A version name is part of a
+        /// model (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN.
+        /// <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
         pub fn set_version_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2131,6 +2288,9 @@ pub mod describe_project_versions_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous response was incomplete (because there is more
+        /// results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response.
+        /// You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2142,6 +2302,9 @@ pub mod describe_project_versions_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return per paginated call.
+        /// The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException
+        /// error occurs. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2151,7 +2314,7 @@ pub mod describe_project_versions_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeProjectVersionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeProjectVersionsInput {
                 project_arn: self.project_arn,
@@ -2174,16 +2337,16 @@ impl DescribeProjectVersionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeProjectVersions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeProjectVersionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2191,7 +2354,7 @@ impl DescribeProjectVersionsInput {
         fn update_http_builder(
             input: &crate::input::DescribeProjectVersionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2200,32 +2363,34 @@ impl DescribeProjectVersionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeProjectVersionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DescribeProjectVersions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_project_versions(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2248,15 +2413,15 @@ impl DescribeProjectVersionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeProjectVersions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeProjectVersions",
             "rekognition",
         ));
@@ -2265,10 +2430,10 @@ impl DescribeProjectVersionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2296,6 +2461,7 @@ pub mod describe_stream_processor_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name of the stream processor for which you want information.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2305,7 +2471,7 @@ pub mod describe_stream_processor_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeStreamProcessorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeStreamProcessorInput { name: self.name })
         }
@@ -2323,16 +2489,16 @@ impl DescribeStreamProcessorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeStreamProcessor,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeStreamProcessorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2340,7 +2506,7 @@ impl DescribeStreamProcessorInput {
         fn update_http_builder(
             input: &crate::input::DescribeStreamProcessorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2349,32 +2515,34 @@ impl DescribeStreamProcessorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeStreamProcessorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DescribeStreamProcessor",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_stream_processor(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2397,15 +2565,15 @@ impl DescribeStreamProcessorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeStreamProcessor::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeStreamProcessor",
             "rekognition",
         ));
@@ -2414,10 +2582,10 @@ impl DescribeStreamProcessorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2448,6 +2616,7 @@ pub mod detect_custom_labels_input {
             self.project_version_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the model version that you want to use.</p>
         pub fn set_project_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2461,6 +2630,7 @@ pub mod detect_custom_labels_input {
         /// from a local file system. Image bytes passed by using the <code>Bytes</code> property must be
         /// base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to
         /// call Amazon Rekognition API operations. </p>
+        ///
         /// <p>For more information, see Analyzing an Image Loaded from a Local File System
         /// in the Amazon Rekognition Developer Guide.</p>
         /// <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the
@@ -2473,6 +2643,7 @@ pub mod detect_custom_labels_input {
         /// CLI to call Amazon Rekognition operations, passing image bytes using the Bytes
         /// property is not supported. You must first upload the image to an Amazon S3 bucket and then
         /// call the operation using the S3Object property.</p>
+        ///
         /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3
         /// object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide.
         /// </p>
@@ -2480,6 +2651,29 @@ pub mod detect_custom_labels_input {
             self.image = Some(input);
             self
         }
+        /// <p>Provides the input image either as bytes or an S3 object.</p>
+        /// <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code>
+        /// property. For example, you would use the <code>Bytes</code> property to pass an image loaded
+        /// from a local file system. Image bytes passed by using the <code>Bytes</code> property must be
+        /// base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to
+        /// call Amazon Rekognition API operations. </p>
+        ///
+        /// <p>For more information, see Analyzing an Image Loaded from a Local File System
+        /// in the Amazon Rekognition Developer Guide.</p>
+        /// <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the
+        /// <code>S3Object</code> property. Images stored in an S3 bucket do not need to be
+        /// base64-encoded.</p>
+        /// <p>The region for the S3 bucket containing the S3 object must match the region you use for
+        /// Amazon Rekognition operations.</p>
+        /// <p>If you use the
+        /// AWS
+        /// CLI to call Amazon Rekognition operations, passing image bytes using the Bytes
+        /// property is not supported. You must first upload the image to an Amazon S3 bucket and then
+        /// call the operation using the S3Object property.</p>
+        ///
+        /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3
+        /// object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide.
+        /// </p>
         pub fn set_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.image = input;
             self
@@ -2491,6 +2685,9 @@ pub mod detect_custom_labels_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results you want the service to return in the response.
+        /// The service returns the specified number of highest confidence labels ranked from highest confidence
+        /// to lowest.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2506,6 +2703,13 @@ pub mod detect_custom_labels_input {
             self.min_confidence = Some(input);
             self
         }
+        /// <p>Specifies the minimum confidence level for the labels to return.
+        /// <code>DetectCustomLabels</code> doesn't return any labels with a confidence value that's lower than
+        /// this specified value. If you specify a
+        /// value of 0, <code>DetectCustomLabels</code> returns all labels, regardless of the assumed
+        /// threshold applied to each label.
+        /// If you don't specify a value for <code>MinConfidence</code>,  <code>DetectCustomLabels</code>
+        /// returns labels based on the assumed threshold of each label.</p>
         pub fn set_min_confidence(mut self, input: std::option::Option<f32>) -> Self {
             self.min_confidence = input;
             self
@@ -2515,7 +2719,7 @@ pub mod detect_custom_labels_input {
             self,
         ) -> std::result::Result<
             crate::input::DetectCustomLabelsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DetectCustomLabelsInput {
                 project_version_arn: self.project_version_arn,
@@ -2537,16 +2741,16 @@ impl DetectCustomLabelsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DetectCustomLabels,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DetectCustomLabelsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2554,7 +2758,7 @@ impl DetectCustomLabelsInput {
         fn update_http_builder(
             input: &crate::input::DetectCustomLabelsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2563,30 +2767,32 @@ impl DetectCustomLabelsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DetectCustomLabelsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DetectCustomLabels",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_detect_custom_labels(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2609,15 +2815,15 @@ impl DetectCustomLabelsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DetectCustomLabels::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DetectCustomLabels",
             "rekognition",
         ));
@@ -2626,10 +2832,10 @@ impl DetectCustomLabelsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2662,16 +2868,41 @@ pub mod detect_faces_input {
             self.image = Some(input);
             self
         }
+        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
+        /// Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+        /// passed using the <code>Bytes</code> field.
+        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn set_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.image = input;
             self
         }
+        /// Appends an item to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>An array of facial attributes you want to be returned. This can be the default list of
+        /// attributes or all attributes. If you don't specify a value for <code>Attributes</code> or if
+        /// you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial
+        /// attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>,
+        /// <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
+        /// facial attributes are returned, but the operation takes longer to complete.</p>
+        /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND
+        /// operator to determine which attributes to return (in this case, all attributes). </p>
         pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
             v.push(input.into());
             self.attributes = Some(v);
             self
         }
+        /// <p>An array of facial attributes you want to be returned. This can be the default list of
+        /// attributes or all attributes. If you don't specify a value for <code>Attributes</code> or if
+        /// you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial
+        /// attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>,
+        /// <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
+        /// facial attributes are returned, but the operation takes longer to complete.</p>
+        /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND
+        /// operator to determine which attributes to return (in this case, all attributes). </p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -2682,8 +2913,10 @@ pub mod detect_faces_input {
         /// Consumes the builder and constructs a [`DetectFacesInput`](crate::input::DetectFacesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DetectFacesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DetectFacesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DetectFacesInput {
                 image: self.image,
                 attributes: self.attributes,
@@ -2702,16 +2935,16 @@ impl DetectFacesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DetectFaces,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DetectFacesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2719,7 +2952,7 @@ impl DetectFacesInput {
         fn update_http_builder(
             input: &crate::input::DetectFacesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2728,29 +2961,31 @@ impl DetectFacesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DetectFacesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DetectFaces",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_detect_faces(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2773,25 +3008,27 @@ impl DetectFacesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DetectFaces::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DetectFaces",
-                    "rekognition",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DetectFaces::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DetectFaces",
+            "rekognition",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2826,6 +3063,12 @@ pub mod detect_labels_input {
             self.image = Some(input);
             self
         }
+        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
+        /// Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do
+        /// not need to be base64-encoded.</p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+        /// passed using the <code>Bytes</code> field.
+        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn set_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.image = input;
             self
@@ -2836,6 +3079,8 @@ pub mod detect_labels_input {
             self.max_labels = Some(input);
             self
         }
+        /// <p>Maximum number of labels you want the service to return in the response. The service
+        /// returns the specified number of highest confidence labels. </p>
         pub fn set_max_labels(mut self, input: std::option::Option<i32>) -> Self {
             self.max_labels = input;
             self
@@ -2848,6 +3093,10 @@ pub mod detect_labels_input {
             self.min_confidence = Some(input);
             self
         }
+        /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't
+        /// return any labels with confidence lower than this specified value.</p>
+        /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a
+        /// confidence values greater than or equal to 55 percent.</p>
         pub fn set_min_confidence(mut self, input: std::option::Option<f32>) -> Self {
             self.min_confidence = input;
             self
@@ -2855,8 +3104,10 @@ pub mod detect_labels_input {
         /// Consumes the builder and constructs a [`DetectLabelsInput`](crate::input::DetectLabelsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DetectLabelsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DetectLabelsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DetectLabelsInput {
                 image: self.image,
                 max_labels: self.max_labels,
@@ -2876,16 +3127,16 @@ impl DetectLabelsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DetectLabels,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DetectLabelsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2893,7 +3144,7 @@ impl DetectLabelsInput {
         fn update_http_builder(
             input: &crate::input::DetectLabelsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2902,31 +3153,31 @@ impl DetectLabelsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DetectLabelsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DetectLabels",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_detect_labels(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2949,25 +3200,27 @@ impl DetectLabelsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DetectLabels::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DetectLabels",
-                    "rekognition",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DetectLabels::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DetectLabels",
+            "rekognition",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3002,6 +3255,12 @@ pub mod detect_moderation_labels_input {
             self.image = Some(input);
             self
         }
+        /// <p>The input image as base64-encoded bytes or an S3 object.
+        /// If you use the AWS CLI to call Amazon Rekognition operations,
+        /// passing base64-encoded image bytes is not supported. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+        /// passed using the <code>Bytes</code> field.
+        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn set_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.image = input;
             self
@@ -3014,6 +3273,10 @@ pub mod detect_moderation_labels_input {
             self.min_confidence = Some(input);
             self
         }
+        /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't
+        /// return any labels with a confidence level lower than this specified value.</p>
+        /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with
+        /// confidence values greater than or equal to 50 percent.</p>
         pub fn set_min_confidence(mut self, input: std::option::Option<f32>) -> Self {
             self.min_confidence = input;
             self
@@ -3024,6 +3287,8 @@ pub mod detect_moderation_labels_input {
             self.human_loop_config = Some(input);
             self
         }
+        /// <p>Sets up the configuration for human evaluation, including the FlowDefinition
+        /// the image will be sent to.</p>
         pub fn set_human_loop_config(
             mut self,
             input: std::option::Option<crate::model::HumanLoopConfig>,
@@ -3036,7 +3301,7 @@ pub mod detect_moderation_labels_input {
             self,
         ) -> std::result::Result<
             crate::input::DetectModerationLabelsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DetectModerationLabelsInput {
                 image: self.image,
@@ -3057,16 +3322,16 @@ impl DetectModerationLabelsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DetectModerationLabels,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DetectModerationLabelsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3074,7 +3339,7 @@ impl DetectModerationLabelsInput {
         fn update_http_builder(
             input: &crate::input::DetectModerationLabelsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3083,32 +3348,34 @@ impl DetectModerationLabelsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DetectModerationLabelsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DetectModerationLabels",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_detect_moderation_labels(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3131,15 +3398,15 @@ impl DetectModerationLabelsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DetectModerationLabels::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DetectModerationLabels",
             "rekognition",
         ));
@@ -3148,10 +3415,10 @@ impl DetectModerationLabelsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3182,6 +3449,8 @@ pub mod detect_protective_equipment_input {
             self.image = Some(input);
             self
         }
+        /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can
+        /// reference an image stored in an Amazon S3 bucket. </p>
         pub fn set_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.image = input;
             self
@@ -3194,6 +3463,7 @@ pub mod detect_protective_equipment_input {
             self.summarization_attributes = Some(input);
             self
         }
+        /// <p>An array of PPE types that you want to summarize.</p>
         pub fn set_summarization_attributes(
             mut self,
             input: std::option::Option<crate::model::ProtectiveEquipmentSummarizationAttributes>,
@@ -3206,7 +3476,7 @@ pub mod detect_protective_equipment_input {
             self,
         ) -> std::result::Result<
             crate::input::DetectProtectiveEquipmentInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DetectProtectiveEquipmentInput {
                 image: self.image,
@@ -3227,16 +3497,16 @@ impl DetectProtectiveEquipmentInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DetectProtectiveEquipment,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DetectProtectiveEquipmentInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3244,7 +3514,7 @@ impl DetectProtectiveEquipmentInput {
         fn update_http_builder(
             input: &crate::input::DetectProtectiveEquipmentInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3253,32 +3523,34 @@ impl DetectProtectiveEquipmentInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DetectProtectiveEquipmentInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DetectProtectiveEquipment",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_detect_protective_equipment(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3301,15 +3573,15 @@ impl DetectProtectiveEquipmentInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DetectProtectiveEquipment::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DetectProtectiveEquipment",
             "rekognition",
         ));
@@ -3318,10 +3590,10 @@ impl DetectProtectiveEquipmentInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3354,6 +3626,11 @@ pub mod detect_text_input {
             self.image = Some(input);
             self
         }
+        /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI
+        /// to call Amazon Rekognition operations, you can't pass image bytes. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+        /// passed using the <code>Bytes</code> field.
+        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn set_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.image = input;
             self
@@ -3363,6 +3640,7 @@ pub mod detect_text_input {
             self.filters = Some(input);
             self
         }
+        /// <p>Optional parameters that let you set the criteria that the text must meet to be included in your response.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::DetectTextFilters>,
@@ -3373,8 +3651,10 @@ pub mod detect_text_input {
         /// Consumes the builder and constructs a [`DetectTextInput`](crate::input::DetectTextInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DetectTextInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DetectTextInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DetectTextInput {
                 image: self.image,
                 filters: self.filters,
@@ -3393,16 +3673,16 @@ impl DetectTextInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DetectText,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DetectTextInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3410,7 +3690,7 @@ impl DetectTextInput {
         fn update_http_builder(
             input: &crate::input::DetectTextInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3419,29 +3699,31 @@ impl DetectTextInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DetectTextInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DetectText",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_detect_text(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3464,25 +3746,27 @@ impl DetectTextInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DetectText::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DetectText",
-                    "rekognition",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DetectText::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DetectText",
+            "rekognition",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3511,6 +3795,8 @@ pub mod get_celebrity_info_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <a>RecognizeCelebrities</a> operation,
+        /// which recognizes celebrities in an image. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3520,7 +3806,7 @@ pub mod get_celebrity_info_input {
             self,
         ) -> std::result::Result<
             crate::input::GetCelebrityInfoInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetCelebrityInfoInput { id: self.id })
         }
@@ -3537,16 +3823,16 @@ impl GetCelebrityInfoInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetCelebrityInfo,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetCelebrityInfoInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3554,7 +3840,7 @@ impl GetCelebrityInfoInput {
         fn update_http_builder(
             input: &crate::input::GetCelebrityInfoInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3563,32 +3849,32 @@ impl GetCelebrityInfoInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetCelebrityInfoInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.GetCelebrityInfo",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_celebrity_info(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3611,15 +3897,15 @@ impl GetCelebrityInfoInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetCelebrityInfo::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetCelebrityInfo",
             "rekognition",
         ));
@@ -3628,10 +3914,10 @@ impl GetCelebrityInfoInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3663,6 +3949,8 @@ pub mod get_celebrity_recognition_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>Job identifier for the required celebrity recognition analysis. You can get the job identifer from
+        /// a call to <code>StartCelebrityRecognition</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -3674,6 +3962,9 @@ pub mod get_celebrity_recognition_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
+        /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
+        /// The default value is 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3684,6 +3975,8 @@ pub mod get_celebrity_recognition_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon Rekognition Video returns a pagination
+        /// token in the response. You can use this pagination token to retrieve the next set of celebrities. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3694,6 +3987,8 @@ pub mod get_celebrity_recognition_input {
             self.sort_by = Some(input);
             self
         }
+        /// <p>Sort to use for celebrities returned in <code>Celebrities</code> field. Specify <code>ID</code> to sort by the celebrity identifier,
+        /// specify <code>TIMESTAMP</code> to sort by the time the celebrity was recognized.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::CelebrityRecognitionSortBy>,
@@ -3706,7 +4001,7 @@ pub mod get_celebrity_recognition_input {
             self,
         ) -> std::result::Result<
             crate::input::GetCelebrityRecognitionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetCelebrityRecognitionInput {
                 job_id: self.job_id,
@@ -3729,16 +4024,16 @@ impl GetCelebrityRecognitionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetCelebrityRecognition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetCelebrityRecognitionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3746,7 +4041,7 @@ impl GetCelebrityRecognitionInput {
         fn update_http_builder(
             input: &crate::input::GetCelebrityRecognitionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3755,32 +4050,34 @@ impl GetCelebrityRecognitionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetCelebrityRecognitionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.GetCelebrityRecognition",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_celebrity_recognition(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3803,15 +4100,15 @@ impl GetCelebrityRecognitionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetCelebrityRecognition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetCelebrityRecognition",
             "rekognition",
         ));
@@ -3820,10 +4117,10 @@ impl GetCelebrityRecognitionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3855,6 +4152,8 @@ pub mod get_content_moderation_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in
+        /// a subsequent call to <code>GetContentModeration</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -3866,6 +4165,9 @@ pub mod get_content_moderation_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
+        /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
+        /// The default value is 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3877,6 +4179,9 @@ pub mod get_content_moderation_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition
+        /// returns a pagination token in the response. You can use this pagination token
+        /// to retrieve the next set of content moderation labels.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3890,6 +4195,11 @@ pub mod get_content_moderation_input {
             self.sort_by = Some(input);
             self
         }
+        /// <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array.
+        /// Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected.
+        /// Use <code>NAME</code> to alphabetically group elements for a label together.
+        /// Within each label group, the array element are sorted by detection confidence.
+        /// The default sort is by <code>TIMESTAMP</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::ContentModerationSortBy>,
@@ -3902,7 +4212,7 @@ pub mod get_content_moderation_input {
             self,
         ) -> std::result::Result<
             crate::input::GetContentModerationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetContentModerationInput {
                 job_id: self.job_id,
@@ -3924,16 +4234,16 @@ impl GetContentModerationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetContentModeration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetContentModerationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3941,7 +4251,7 @@ impl GetContentModerationInput {
         fn update_http_builder(
             input: &crate::input::GetContentModerationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3950,32 +4260,32 @@ impl GetContentModerationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetContentModerationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.GetContentModeration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_content_moderation(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3998,15 +4308,15 @@ impl GetContentModerationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetContentModeration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetContentModeration",
             "rekognition",
         ));
@@ -4015,10 +4325,10 @@ impl GetContentModerationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4048,6 +4358,7 @@ pub mod get_face_detection_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>Unique identifier for the face detection job. The <code>JobId</code> is returned from <code>StartFaceDetection</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -4059,6 +4370,9 @@ pub mod get_face_detection_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
+        /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
+        /// The default value is 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4069,6 +4383,8 @@ pub mod get_face_detection_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous response was incomplete (because there are more faces to retrieve), Amazon Rekognition Video returns a pagination
+        /// token in the response. You can use this pagination token to retrieve the next set of faces.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4078,7 +4394,7 @@ pub mod get_face_detection_input {
             self,
         ) -> std::result::Result<
             crate::input::GetFaceDetectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetFaceDetectionInput {
                 job_id: self.job_id,
@@ -4099,16 +4415,16 @@ impl GetFaceDetectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetFaceDetection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetFaceDetectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4116,7 +4432,7 @@ impl GetFaceDetectionInput {
         fn update_http_builder(
             input: &crate::input::GetFaceDetectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4125,32 +4441,32 @@ impl GetFaceDetectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetFaceDetectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.GetFaceDetection",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_face_detection(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4173,15 +4489,15 @@ impl GetFaceDetectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetFaceDetection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetFaceDetection",
             "rekognition",
         ));
@@ -4190,10 +4506,10 @@ impl GetFaceDetectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4224,6 +4540,7 @@ pub mod get_face_search_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The job identifer for the search request. You get the job identifier from an initial call to <code>StartFaceSearch</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -4235,6 +4552,9 @@ pub mod get_face_search_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
+        /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
+        /// The default value is 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4245,6 +4565,8 @@ pub mod get_face_search_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous response was incomplete (because there is more search results to retrieve), Amazon Rekognition Video returns a pagination
+        /// token in the response. You can use this pagination token to retrieve the next set of search results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4255,6 +4577,8 @@ pub mod get_face_search_input {
             self.sort_by = Some(input);
             self
         }
+        /// <p>Sort to use for grouping faces in the response. Use <code>TIMESTAMP</code> to group faces by the time
+        /// that they are recognized. Use <code>INDEX</code> to sort by recognized faces. </p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::FaceSearchSortBy>,
@@ -4265,8 +4589,10 @@ pub mod get_face_search_input {
         /// Consumes the builder and constructs a [`GetFaceSearchInput`](crate::input::GetFaceSearchInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetFaceSearchInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetFaceSearchInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetFaceSearchInput {
                 job_id: self.job_id,
                 max_results: self.max_results,
@@ -4287,16 +4613,16 @@ impl GetFaceSearchInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetFaceSearch,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetFaceSearchInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4304,7 +4630,7 @@ impl GetFaceSearchInput {
         fn update_http_builder(
             input: &crate::input::GetFaceSearchInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4313,29 +4639,31 @@ impl GetFaceSearchInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetFaceSearchInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.GetFaceSearch",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_face_search(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4358,25 +4686,27 @@ impl GetFaceSearchInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetFaceSearch::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetFaceSearch",
-                    "rekognition",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetFaceSearch::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetFaceSearch",
+            "rekognition",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4408,6 +4738,8 @@ pub mod get_label_detection_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from
+        /// an initial call to <code>StartlabelDetection</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -4419,6 +4751,9 @@ pub mod get_label_detection_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
+        /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
+        /// The default value is 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4429,6 +4764,8 @@ pub mod get_label_detection_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination
+        /// token in the response. You can use this pagination token to retrieve the next set of labels. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4442,6 +4779,11 @@ pub mod get_label_detection_input {
             self.sort_by = Some(input);
             self
         }
+        /// <p>Sort to use for elements in the <code>Labels</code> array.
+        /// Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected.
+        /// Use <code>NAME</code> to alphabetically group elements for a label together.
+        /// Within each label group, the array element are sorted by detection confidence.
+        /// The default sort is by <code>TIMESTAMP</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::LabelDetectionSortBy>,
@@ -4454,7 +4796,7 @@ pub mod get_label_detection_input {
             self,
         ) -> std::result::Result<
             crate::input::GetLabelDetectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetLabelDetectionInput {
                 job_id: self.job_id,
@@ -4476,16 +4818,16 @@ impl GetLabelDetectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetLabelDetection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetLabelDetectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4493,7 +4835,7 @@ impl GetLabelDetectionInput {
         fn update_http_builder(
             input: &crate::input::GetLabelDetectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4502,32 +4844,32 @@ impl GetLabelDetectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetLabelDetectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.GetLabelDetection",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_label_detection(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4550,15 +4892,15 @@ impl GetLabelDetectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetLabelDetection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetLabelDetection",
             "rekognition",
         ));
@@ -4567,10 +4909,10 @@ impl GetLabelDetectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4602,6 +4944,8 @@ pub mod get_person_tracking_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The identifier for a job that tracks persons in a video. You get the <code>JobId</code> from a call to <code>StartPersonTracking</code>.
+        /// </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -4613,6 +4957,9 @@ pub mod get_person_tracking_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.
+        /// If you specify a value greater than 1000, a maximum of 1000 results is returned.
+        /// The default value is 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4623,6 +4970,8 @@ pub mod get_person_tracking_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video returns a pagination
+        /// token in the response. You can use this pagination token to retrieve the next set of persons. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4635,6 +4984,10 @@ pub mod get_person_tracking_input {
             self.sort_by = Some(input);
             self
         }
+        /// <p>Sort to use for elements in the <code>Persons</code> array. Use <code>TIMESTAMP</code> to sort array elements
+        /// by the time persons are detected. Use <code>INDEX</code> to sort by the tracked persons.
+        /// If you sort by <code>INDEX</code>, the array elements for each person are sorted by detection confidence.
+        /// The default sort is by <code>TIMESTAMP</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::PersonTrackingSortBy>,
@@ -4647,7 +5000,7 @@ pub mod get_person_tracking_input {
             self,
         ) -> std::result::Result<
             crate::input::GetPersonTrackingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetPersonTrackingInput {
                 job_id: self.job_id,
@@ -4669,16 +5022,16 @@ impl GetPersonTrackingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetPersonTracking,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetPersonTrackingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4686,7 +5039,7 @@ impl GetPersonTrackingInput {
         fn update_http_builder(
             input: &crate::input::GetPersonTrackingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4695,32 +5048,32 @@ impl GetPersonTrackingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetPersonTrackingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.GetPersonTracking",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_person_tracking(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4743,15 +5096,15 @@ impl GetPersonTrackingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetPersonTracking::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetPersonTracking",
             "rekognition",
         ));
@@ -4760,10 +5113,10 @@ impl GetPersonTrackingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4794,6 +5147,8 @@ pub mod get_segment_detection_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>Job identifier for the text detection operation for which you want results returned.
+        /// You get the job identifer from an initial call to <code>StartSegmentDetection</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -4803,6 +5158,7 @@ pub mod get_segment_detection_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4813,6 +5169,8 @@ pub mod get_segment_detection_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+        /// request to retrieve the next set of text.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4822,7 +5180,7 @@ pub mod get_segment_detection_input {
             self,
         ) -> std::result::Result<
             crate::input::GetSegmentDetectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetSegmentDetectionInput {
                 job_id: self.job_id,
@@ -4843,16 +5201,16 @@ impl GetSegmentDetectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetSegmentDetection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetSegmentDetectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4860,7 +5218,7 @@ impl GetSegmentDetectionInput {
         fn update_http_builder(
             input: &crate::input::GetSegmentDetectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4869,32 +5227,32 @@ impl GetSegmentDetectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetSegmentDetectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.GetSegmentDetection",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_segment_detection(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4917,15 +5275,15 @@ impl GetSegmentDetectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetSegmentDetection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetSegmentDetection",
             "rekognition",
         ));
@@ -4934,10 +5292,10 @@ impl GetSegmentDetectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4968,6 +5326,8 @@ pub mod get_text_detection_input {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>Job identifier for the text detection operation for which you want results returned.
+        /// You get the job identifer from an initial call to <code>StartTextDetection</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -4977,6 +5337,7 @@ pub mod get_text_detection_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4987,6 +5348,8 @@ pub mod get_text_detection_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns
+        /// a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4996,7 +5359,7 @@ pub mod get_text_detection_input {
             self,
         ) -> std::result::Result<
             crate::input::GetTextDetectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetTextDetectionInput {
                 job_id: self.job_id,
@@ -5017,16 +5380,16 @@ impl GetTextDetectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetTextDetection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetTextDetectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5034,7 +5397,7 @@ impl GetTextDetectionInput {
         fn update_http_builder(
             input: &crate::input::GetTextDetectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5043,32 +5406,32 @@ impl GetTextDetectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetTextDetectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.GetTextDetection",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_text_detection(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5091,15 +5454,15 @@ impl GetTextDetectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetTextDetection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetTextDetection",
             "rekognition",
         ));
@@ -5108,10 +5471,10 @@ impl GetTextDetectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5146,6 +5509,8 @@ pub mod index_faces_input {
             self.collection_id = Some(input.into());
             self
         }
+        /// <p>The ID of an existing collection to which you want to add the faces that are detected
+        /// in the input images.</p>
         pub fn set_collection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5162,6 +5527,11 @@ pub mod index_faces_input {
             self.image = Some(input);
             self
         }
+        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
+        /// Amazon Rekognition operations, passing base64-encoded image bytes isn't supported. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+        /// passed using the <code>Bytes</code> field.
+        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn set_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.image = input;
             self
@@ -5171,6 +5541,7 @@ pub mod index_faces_input {
             self.external_image_id = Some(input.into());
             self
         }
+        /// <p>The ID you want to assign to all the faces detected in the image.</p>
         pub fn set_external_image_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5178,12 +5549,32 @@ pub mod index_faces_input {
             self.external_image_id = input;
             self
         }
+        /// Appends an item to `detection_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_detection_attributes`](Self::set_detection_attributes).
+        ///
+        /// <p>An array of facial attributes that you want to be returned. This can be the default
+        /// list of attributes or all attributes. If you don't specify a value for <code>Attributes</code>
+        /// or if you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial
+        /// attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>,
+        /// <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
+        /// facial attributes are returned, but the operation takes longer to complete.</p>
+        /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND
+        /// operator to determine which attributes to return (in this case, all attributes). </p>
         pub fn detection_attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
             let mut v = self.detection_attributes.unwrap_or_default();
             v.push(input.into());
             self.detection_attributes = Some(v);
             self
         }
+        /// <p>An array of facial attributes that you want to be returned. This can be the default
+        /// list of attributes or all attributes. If you don't specify a value for <code>Attributes</code>
+        /// or if you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial
+        /// attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>,
+        /// <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
+        /// facial attributes are returned, but the operation takes longer to complete.</p>
+        /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND
+        /// operator to determine which attributes to return (in this case, all attributes). </p>
         pub fn set_detection_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -5208,6 +5599,19 @@ pub mod index_faces_input {
             self.max_faces = Some(input);
             self
         }
+        /// <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater
+        /// than or equal to 1. <code>IndexFaces</code> returns no more than 100 detected faces in an
+        /// image, even if you specify a larger value for <code>MaxFaces</code>.</p>
+        /// <p>If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the
+        /// faces with the lowest quality are filtered out first. If there are still more faces than the
+        /// value of <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out
+        /// (up to the number that's needed to satisfy the value of <code>MaxFaces</code>). Information
+        /// about the unindexed faces is available in the <code>UnindexedFaces</code> array. </p>
+        /// <p>The faces that are returned by <code>IndexFaces</code> are sorted by the largest face
+        /// bounding box size to the smallest size, in descending order.</p>
+        /// <p>
+        /// <code>MaxFaces</code> can be used with a collection associated with any version of
+        /// the face model.</p>
         pub fn set_max_faces(mut self, input: std::option::Option<i32>) -> Self {
             self.max_faces = input;
             self
@@ -5217,6 +5621,7 @@ pub mod index_faces_input {
         /// If you specify <code>LOW</code>,
         /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
         /// don’t meet the chosen quality bar.  The default value is <code>AUTO</code>.
+        ///
         /// The quality bar is based on a variety of common use cases. Low-quality
         /// detections can occur for a number of reasons. Some examples are an object that's misidentified
         /// as a face, a face that's too blurry, or a face with a
@@ -5228,6 +5633,19 @@ pub mod index_faces_input {
             self.quality_filter = Some(input);
             self
         }
+        /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces.
+        /// Filtered faces aren't indexed. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar.
+        /// If you specify <code>LOW</code>,
+        /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
+        /// don’t meet the chosen quality bar.  The default value is <code>AUTO</code>.
+        ///
+        /// The quality bar is based on a variety of common use cases. Low-quality
+        /// detections can occur for a number of reasons. Some examples are an object that's misidentified
+        /// as a face, a face that's too blurry, or a face with a
+        /// pose that's too extreme to use. If you specify <code>NONE</code>, no
+        /// filtering is performed.
+        /// </p>
+        /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
         pub fn set_quality_filter(
             mut self,
             input: std::option::Option<crate::model::QualityFilter>,
@@ -5238,8 +5656,10 @@ pub mod index_faces_input {
         /// Consumes the builder and constructs a [`IndexFacesInput`](crate::input::IndexFacesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::IndexFacesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::IndexFacesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::IndexFacesInput {
                 collection_id: self.collection_id,
                 image: self.image,
@@ -5262,16 +5682,16 @@ impl IndexFacesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::IndexFaces,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::IndexFacesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5279,7 +5699,7 @@ impl IndexFacesInput {
         fn update_http_builder(
             input: &crate::input::IndexFacesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5288,29 +5708,31 @@ impl IndexFacesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::IndexFacesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.IndexFaces",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_index_faces(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5333,25 +5755,27 @@ impl IndexFacesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::IndexFaces::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "IndexFaces",
-                    "rekognition",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::IndexFaces::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "IndexFaces",
+            "rekognition",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5380,6 +5804,7 @@ pub mod list_collections_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Pagination token from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5389,6 +5814,7 @@ pub mod list_collections_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of collection IDs to return. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5398,7 +5824,7 @@ pub mod list_collections_input {
             self,
         ) -> std::result::Result<
             crate::input::ListCollectionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListCollectionsInput {
                 next_token: self.next_token,
@@ -5418,16 +5844,16 @@ impl ListCollectionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListCollections,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListCollectionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5435,7 +5861,7 @@ impl ListCollectionsInput {
         fn update_http_builder(
             input: &crate::input::ListCollectionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5444,32 +5870,32 @@ impl ListCollectionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListCollectionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.ListCollections",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_collections(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5492,15 +5918,15 @@ impl ListCollectionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListCollections::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListCollections",
             "rekognition",
         ));
@@ -5509,10 +5935,10 @@ impl ListCollectionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5542,6 +5968,7 @@ pub mod list_faces_input {
             self.collection_id = Some(input.into());
             self
         }
+        /// <p>ID of the collection from which to list the faces.</p>
         pub fn set_collection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5556,6 +5983,9 @@ pub mod list_faces_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous response was incomplete (because there is more data to retrieve),
+        /// Amazon Rekognition returns a pagination token in the response. You can use this pagination token to
+        /// retrieve the next set of faces.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5565,6 +5995,7 @@ pub mod list_faces_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of faces to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5572,7 +6003,7 @@ pub mod list_faces_input {
         /// Consumes the builder and constructs a [`ListFacesInput`](crate::input::ListFacesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListFacesInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListFacesInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListFacesInput {
                 collection_id: self.collection_id,
@@ -5593,16 +6024,16 @@ impl ListFacesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListFaces,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListFacesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5610,7 +6041,7 @@ impl ListFacesInput {
         fn update_http_builder(
             input: &crate::input::ListFacesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5619,29 +6050,31 @@ impl ListFacesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListFacesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.ListFaces",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_faces(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5664,13 +6097,13 @@ impl ListFacesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListFaces::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListFaces::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListFaces",
                     "rekognition",
                 ));
@@ -5679,10 +6112,10 @@ impl ListFacesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5712,6 +6145,8 @@ pub mod list_stream_processors_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous response was incomplete (because there are more stream processors to retrieve), Amazon Rekognition Video
+        /// returns a pagination token in the response. You can use this pagination token to retrieve the next set of stream processors. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5721,6 +6156,7 @@ pub mod list_stream_processors_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of stream processors you want Amazon Rekognition Video to return in the response. The default is 1000. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5730,7 +6166,7 @@ pub mod list_stream_processors_input {
             self,
         ) -> std::result::Result<
             crate::input::ListStreamProcessorsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListStreamProcessorsInput {
                 next_token: self.next_token,
@@ -5750,16 +6186,16 @@ impl ListStreamProcessorsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListStreamProcessors,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListStreamProcessorsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5767,7 +6203,7 @@ impl ListStreamProcessorsInput {
         fn update_http_builder(
             input: &crate::input::ListStreamProcessorsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5776,32 +6212,32 @@ impl ListStreamProcessorsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListStreamProcessorsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.ListStreamProcessors",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_stream_processors(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5824,15 +6260,15 @@ impl ListStreamProcessorsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListStreamProcessors::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListStreamProcessors",
             "rekognition",
         ));
@@ -5841,10 +6277,10 @@ impl ListStreamProcessorsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5874,6 +6310,9 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of.
+        /// </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -5883,7 +6322,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -5902,16 +6341,16 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5919,7 +6358,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5928,32 +6367,32 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.ListTagsForResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5976,15 +6415,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "rekognition",
         ));
@@ -5993,10 +6432,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6028,6 +6467,11 @@ pub mod recognize_celebrities_input {
             self.image = Some(input);
             self
         }
+        /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call
+        /// Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to
+        /// base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see
+        /// Images in the Amazon Rekognition developer guide.</p>
         pub fn set_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.image = input;
             self
@@ -6037,7 +6481,7 @@ pub mod recognize_celebrities_input {
             self,
         ) -> std::result::Result<
             crate::input::RecognizeCelebritiesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RecognizeCelebritiesInput { image: self.image })
         }
@@ -6054,16 +6498,16 @@ impl RecognizeCelebritiesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RecognizeCelebrities,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RecognizeCelebritiesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6071,7 +6515,7 @@ impl RecognizeCelebritiesInput {
         fn update_http_builder(
             input: &crate::input::RecognizeCelebritiesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6080,32 +6524,32 @@ impl RecognizeCelebritiesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RecognizeCelebritiesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.RecognizeCelebrities",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_recognize_celebrities(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6128,15 +6572,15 @@ impl RecognizeCelebritiesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RecognizeCelebrities::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RecognizeCelebrities",
             "rekognition",
         ));
@@ -6145,10 +6589,10 @@ impl RecognizeCelebritiesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6179,6 +6623,7 @@ pub mod search_faces_input {
             self.collection_id = Some(input.into());
             self
         }
+        /// <p>ID of the collection the face belongs to.</p>
         pub fn set_collection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6191,6 +6636,7 @@ pub mod search_faces_input {
             self.face_id = Some(input.into());
             self
         }
+        /// <p>ID of a face to find matches for in the collection.</p>
         pub fn set_face_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.face_id = input;
             self
@@ -6201,6 +6647,8 @@ pub mod search_faces_input {
             self.max_faces = Some(input);
             self
         }
+        /// <p>Maximum number of faces to return. The operation returns the maximum number of faces
+        /// with the highest confidence in the match.</p>
         pub fn set_max_faces(mut self, input: std::option::Option<i32>) -> Self {
             self.max_faces = input;
             self
@@ -6213,6 +6661,10 @@ pub mod search_faces_input {
             self.face_match_threshold = Some(input);
             self
         }
+        /// <p>Optional value specifying the minimum confidence in the face match to return. For
+        /// example, don't return any matches where confidence in matches is less than 70%.
+        /// The default value is 80%.
+        /// </p>
         pub fn set_face_match_threshold(mut self, input: std::option::Option<f32>) -> Self {
             self.face_match_threshold = input;
             self
@@ -6220,8 +6672,10 @@ pub mod search_faces_input {
         /// Consumes the builder and constructs a [`SearchFacesInput`](crate::input::SearchFacesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::SearchFacesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::SearchFacesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SearchFacesInput {
                 collection_id: self.collection_id,
                 face_id: self.face_id,
@@ -6242,16 +6696,16 @@ impl SearchFacesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SearchFaces,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SearchFacesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6259,7 +6713,7 @@ impl SearchFacesInput {
         fn update_http_builder(
             input: &crate::input::SearchFacesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6268,29 +6722,31 @@ impl SearchFacesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SearchFacesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.SearchFaces",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_search_faces(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6313,25 +6769,27 @@ impl SearchFacesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::SearchFaces::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "SearchFaces",
-                    "rekognition",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SearchFaces::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SearchFaces",
+            "rekognition",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6363,6 +6821,7 @@ pub mod search_faces_by_image_input {
             self.collection_id = Some(input.into());
             self
         }
+        /// <p>ID of the collection to search.</p>
         pub fn set_collection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6380,6 +6839,12 @@ pub mod search_faces_by_image_input {
             self.image = Some(input);
             self
         }
+        /// <p>The input image as base64-encoded bytes or an S3 object.
+        /// If you use the AWS CLI to call Amazon Rekognition operations,
+        /// passing base64-encoded image bytes is not supported. </p>
+        /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+        /// passed using the <code>Bytes</code> field.
+        /// For more information, see Images in the Amazon Rekognition developer guide.</p>
         pub fn set_image(mut self, input: std::option::Option<crate::model::Image>) -> Self {
             self.image = input;
             self
@@ -6390,6 +6855,8 @@ pub mod search_faces_by_image_input {
             self.max_faces = Some(input);
             self
         }
+        /// <p>Maximum number of faces to return. The operation returns the maximum number of faces
+        /// with the highest confidence in the match.</p>
         pub fn set_max_faces(mut self, input: std::option::Option<i32>) -> Self {
             self.max_faces = input;
             self
@@ -6401,6 +6868,9 @@ pub mod search_faces_by_image_input {
             self.face_match_threshold = Some(input);
             self
         }
+        /// <p>(Optional) Specifies the minimum confidence in the face match to return. For example,
+        /// don't return any matches where confidence in matches is less than 70%.
+        /// The default value is 80%.</p>
         pub fn set_face_match_threshold(mut self, input: std::option::Option<f32>) -> Self {
             self.face_match_threshold = input;
             self
@@ -6410,6 +6880,7 @@ pub mod search_faces_by_image_input {
         /// chooses the quality bar.  If you specify <code>LOW</code>,
         /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
         /// don’t meet the chosen quality bar.  
+        ///
         /// The quality bar is based on a variety of common use cases. Low-quality
         /// detections can occur for a number of reasons. Some examples are an object that's misidentified
         /// as a face, a face that's too blurry, or a face with a
@@ -6421,6 +6892,19 @@ pub mod search_faces_by_image_input {
             self.quality_filter = Some(input);
             self
         }
+        /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces.
+        /// Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition
+        /// chooses the quality bar.  If you specify <code>LOW</code>,
+        /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
+        /// don’t meet the chosen quality bar.  
+        ///
+        /// The quality bar is based on a variety of common use cases. Low-quality
+        /// detections can occur for a number of reasons. Some examples are an object that's misidentified
+        /// as a face, a face that's too blurry, or a face with a
+        /// pose that's too extreme to use. If you specify <code>NONE</code>, no
+        /// filtering is performed.  The default value is <code>NONE</code>.
+        /// </p>
+        /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
         pub fn set_quality_filter(
             mut self,
             input: std::option::Option<crate::model::QualityFilter>,
@@ -6433,7 +6917,7 @@ pub mod search_faces_by_image_input {
             self,
         ) -> std::result::Result<
             crate::input::SearchFacesByImageInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SearchFacesByImageInput {
                 collection_id: self.collection_id,
@@ -6456,16 +6940,16 @@ impl SearchFacesByImageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SearchFacesByImage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SearchFacesByImageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6473,7 +6957,7 @@ impl SearchFacesByImageInput {
         fn update_http_builder(
             input: &crate::input::SearchFacesByImageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6482,32 +6966,32 @@ impl SearchFacesByImageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SearchFacesByImageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.SearchFacesByImage",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_search_faces_by_image(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6530,15 +7014,15 @@ impl SearchFacesByImageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SearchFacesByImage::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SearchFacesByImage",
             "rekognition",
         ));
@@ -6547,10 +7031,10 @@ impl SearchFacesByImageInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6582,6 +7066,8 @@ pub mod start_celebrity_recognition_input {
             self.video = Some(input);
             self
         }
+        /// <p>The video in which you want to recognize celebrities. The video must be stored
+        /// in an Amazon S3 bucket.</p>
         pub fn set_video(mut self, input: std::option::Option<crate::model::Video>) -> Self {
             self.video = input;
             self
@@ -6593,6 +7079,9 @@ pub mod start_celebrity_recognition_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
+        /// <code>StartCelebrityRecognition</code> requests, the same <code>JobId</code> is returned. Use
+        /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6606,6 +7095,8 @@ pub mod start_celebrity_recognition_input {
             self.notification_channel = Some(input);
             self
         }
+        /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
+        /// celebrity recognition analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
         pub fn set_notification_channel(
             mut self,
             input: std::option::Option<crate::model::NotificationChannel>,
@@ -6619,6 +7110,8 @@ pub mod start_celebrity_recognition_input {
             self.job_tag = Some(input.into());
             self
         }
+        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
+        /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_tag = input;
             self
@@ -6628,7 +7121,7 @@ pub mod start_celebrity_recognition_input {
             self,
         ) -> std::result::Result<
             crate::input::StartCelebrityRecognitionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartCelebrityRecognitionInput {
                 video: self.video,
@@ -6651,16 +7144,16 @@ impl StartCelebrityRecognitionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartCelebrityRecognition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartCelebrityRecognitionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6668,7 +7161,7 @@ impl StartCelebrityRecognitionInput {
         fn update_http_builder(
             input: &crate::input::StartCelebrityRecognitionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6677,32 +7170,34 @@ impl StartCelebrityRecognitionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartCelebrityRecognitionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StartCelebrityRecognition",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_celebrity_recognition(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6725,15 +7220,15 @@ impl StartCelebrityRecognitionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartCelebrityRecognition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartCelebrityRecognition",
             "rekognition",
         ));
@@ -6742,10 +7237,10 @@ impl StartCelebrityRecognitionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6778,6 +7273,8 @@ pub mod start_content_moderation_input {
             self.video = Some(input);
             self
         }
+        /// <p>The video in which you want to detect inappropriate, unwanted, or offensive content. The video must be stored
+        /// in an Amazon S3 bucket.</p>
         pub fn set_video(mut self, input: std::option::Option<crate::model::Video>) -> Self {
             self.video = input;
             self
@@ -6791,6 +7288,11 @@ pub mod start_content_moderation_input {
             self.min_confidence = Some(input);
             self
         }
+        /// <p>Specifies the minimum confidence that Amazon Rekognition must have in order to return a moderated content label. Confidence
+        /// represents how certain Amazon Rekognition is that the moderated content is correctly identified. 0 is the lowest confidence.
+        /// 100 is the highest confidence.  Amazon Rekognition doesn't return any moderated content labels with a confidence level
+        /// lower than this specified value. If you don't specify <code>MinConfidence</code>, <code>GetContentModeration</code>
+        /// returns labels with confidence values greater than or equal to 50 percent.</p>
         pub fn set_min_confidence(mut self, input: std::option::Option<f32>) -> Self {
             self.min_confidence = input;
             self
@@ -6802,6 +7304,9 @@ pub mod start_content_moderation_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
+        /// <code>StartContentModeration</code> requests, the same <code>JobId</code> is returned. Use
+        /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6815,6 +7320,8 @@ pub mod start_content_moderation_input {
             self.notification_channel = Some(input);
             self
         }
+        /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
+        /// content analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
         pub fn set_notification_channel(
             mut self,
             input: std::option::Option<crate::model::NotificationChannel>,
@@ -6828,6 +7335,8 @@ pub mod start_content_moderation_input {
             self.job_tag = Some(input.into());
             self
         }
+        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
+        /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_tag = input;
             self
@@ -6837,7 +7346,7 @@ pub mod start_content_moderation_input {
             self,
         ) -> std::result::Result<
             crate::input::StartContentModerationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartContentModerationInput {
                 video: self.video,
@@ -6860,16 +7369,16 @@ impl StartContentModerationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartContentModeration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartContentModerationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6877,7 +7386,7 @@ impl StartContentModerationInput {
         fn update_http_builder(
             input: &crate::input::StartContentModerationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6886,32 +7395,34 @@ impl StartContentModerationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartContentModerationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StartContentModeration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_content_moderation(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6934,15 +7445,15 @@ impl StartContentModerationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartContentModeration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartContentModeration",
             "rekognition",
         ));
@@ -6951,10 +7462,10 @@ impl StartContentModerationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6987,6 +7498,8 @@ pub mod start_face_detection_input {
             self.video = Some(input);
             self
         }
+        /// <p>The video in which you want to detect faces. The video must be stored
+        /// in an Amazon S3 bucket.</p>
         pub fn set_video(mut self, input: std::option::Option<crate::model::Video>) -> Self {
             self.video = input;
             self
@@ -6998,6 +7511,9 @@ pub mod start_face_detection_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
+        /// <code>StartFaceDetection</code> requests, the same <code>JobId</code> is returned. Use
+        /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7011,6 +7527,8 @@ pub mod start_face_detection_input {
             self.notification_channel = Some(input);
             self
         }
+        /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the
+        /// face detection operation. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
         pub fn set_notification_channel(
             mut self,
             input: std::option::Option<crate::model::NotificationChannel>,
@@ -7027,6 +7545,11 @@ pub mod start_face_detection_input {
             self.face_attributes = Some(input);
             self
         }
+        /// <p>The face attributes you want returned.</p>
+        /// <p>
+        /// <code>DEFAULT</code> - The following subset of facial attributes are returned: BoundingBox, Confidence, Pose, Quality and Landmarks. </p>
+        /// <p>
+        /// <code>ALL</code> - All facial attributes are returned.</p>
         pub fn set_face_attributes(
             mut self,
             input: std::option::Option<crate::model::FaceAttributes>,
@@ -7040,6 +7563,8 @@ pub mod start_face_detection_input {
             self.job_tag = Some(input.into());
             self
         }
+        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
+        /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_tag = input;
             self
@@ -7049,7 +7574,7 @@ pub mod start_face_detection_input {
             self,
         ) -> std::result::Result<
             crate::input::StartFaceDetectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartFaceDetectionInput {
                 video: self.video,
@@ -7072,16 +7597,16 @@ impl StartFaceDetectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartFaceDetection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartFaceDetectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7089,7 +7614,7 @@ impl StartFaceDetectionInput {
         fn update_http_builder(
             input: &crate::input::StartFaceDetectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7098,30 +7623,32 @@ impl StartFaceDetectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartFaceDetectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StartFaceDetection",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_face_detection(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7144,15 +7671,15 @@ impl StartFaceDetectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartFaceDetection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartFaceDetection",
             "rekognition",
         ));
@@ -7161,10 +7688,10 @@ impl StartFaceDetectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7197,6 +7724,7 @@ pub mod start_face_search_input {
             self.video = Some(input);
             self
         }
+        /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket. </p>
         pub fn set_video(mut self, input: std::option::Option<crate::model::Video>) -> Self {
             self.video = input;
             self
@@ -7208,6 +7736,9 @@ pub mod start_face_search_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
+        /// <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use
+        /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7221,6 +7752,8 @@ pub mod start_face_search_input {
             self.face_match_threshold = Some(input);
             self
         }
+        /// <p>The minimum confidence in the person match to return. For example, don't return any matches where confidence in matches is less than 70%.
+        /// The default value is 80%.</p>
         pub fn set_face_match_threshold(mut self, input: std::option::Option<f32>) -> Self {
             self.face_match_threshold = input;
             self
@@ -7230,6 +7763,7 @@ pub mod start_face_search_input {
             self.collection_id = Some(input.into());
             self
         }
+        /// <p>ID of the collection that contains the faces you want to search for.</p>
         pub fn set_collection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7242,6 +7776,7 @@ pub mod start_face_search_input {
             self.notification_channel = Some(input);
             self
         }
+        /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the search. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
         pub fn set_notification_channel(
             mut self,
             input: std::option::Option<crate::model::NotificationChannel>,
@@ -7255,6 +7790,8 @@ pub mod start_face_search_input {
             self.job_tag = Some(input.into());
             self
         }
+        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
+        /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_tag = input;
             self
@@ -7264,7 +7801,7 @@ pub mod start_face_search_input {
             self,
         ) -> std::result::Result<
             crate::input::StartFaceSearchInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartFaceSearchInput {
                 video: self.video,
@@ -7288,16 +7825,16 @@ impl StartFaceSearchInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartFaceSearch,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartFaceSearchInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7305,7 +7842,7 @@ impl StartFaceSearchInput {
         fn update_http_builder(
             input: &crate::input::StartFaceSearchInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7314,32 +7851,32 @@ impl StartFaceSearchInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartFaceSearchInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StartFaceSearch",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_face_search(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7362,15 +7899,15 @@ impl StartFaceSearchInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartFaceSearch::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartFaceSearch",
             "rekognition",
         ));
@@ -7379,10 +7916,10 @@ impl StartFaceSearchInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7415,6 +7952,8 @@ pub mod start_label_detection_input {
             self.video = Some(input);
             self
         }
+        /// <p>The video in which you want to detect labels. The video must be stored
+        /// in an Amazon S3 bucket.</p>
         pub fn set_video(mut self, input: std::option::Option<crate::model::Video>) -> Self {
             self.video = input;
             self
@@ -7426,6 +7965,9 @@ pub mod start_label_detection_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
+        /// <code>StartLabelDetection</code> requests, the same <code>JobId</code> is returned. Use
+        /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7443,6 +7985,12 @@ pub mod start_label_detection_input {
             self.min_confidence = Some(input);
             self
         }
+        /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence
+        /// represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence.
+        /// 100 is the highest confidence.  Amazon Rekognition Video doesn't return any labels with a confidence level
+        /// lower than this specified value.</p>
+        /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence
+        /// values greater than or equal to 50 percent.</p>
         pub fn set_min_confidence(mut self, input: std::option::Option<f32>) -> Self {
             self.min_confidence = input;
             self
@@ -7453,6 +8001,8 @@ pub mod start_label_detection_input {
             self.notification_channel = Some(input);
             self
         }
+        /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection
+        /// operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
         pub fn set_notification_channel(
             mut self,
             input: std::option::Option<crate::model::NotificationChannel>,
@@ -7466,6 +8016,8 @@ pub mod start_label_detection_input {
             self.job_tag = Some(input.into());
             self
         }
+        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
+        /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_tag = input;
             self
@@ -7475,7 +8027,7 @@ pub mod start_label_detection_input {
             self,
         ) -> std::result::Result<
             crate::input::StartLabelDetectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartLabelDetectionInput {
                 video: self.video,
@@ -7498,16 +8050,16 @@ impl StartLabelDetectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartLabelDetection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartLabelDetectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7515,7 +8067,7 @@ impl StartLabelDetectionInput {
         fn update_http_builder(
             input: &crate::input::StartLabelDetectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7524,32 +8076,32 @@ impl StartLabelDetectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartLabelDetectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StartLabelDetection",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_label_detection(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7572,15 +8124,15 @@ impl StartLabelDetectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartLabelDetection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartLabelDetection",
             "rekognition",
         ));
@@ -7589,10 +8141,10 @@ impl StartLabelDetectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7624,6 +8176,8 @@ pub mod start_person_tracking_input {
             self.video = Some(input);
             self
         }
+        /// <p>The video in which you want to detect people. The video must be stored
+        /// in an Amazon S3 bucket.</p>
         pub fn set_video(mut self, input: std::option::Option<crate::model::Video>) -> Self {
             self.video = input;
             self
@@ -7635,6 +8189,9 @@ pub mod start_person_tracking_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
+        /// <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use
+        /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7648,6 +8205,8 @@ pub mod start_person_tracking_input {
             self.notification_channel = Some(input);
             self
         }
+        /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the people detection
+        /// operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
         pub fn set_notification_channel(
             mut self,
             input: std::option::Option<crate::model::NotificationChannel>,
@@ -7661,6 +8220,8 @@ pub mod start_person_tracking_input {
             self.job_tag = Some(input.into());
             self
         }
+        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
+        /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_tag = input;
             self
@@ -7670,7 +8231,7 @@ pub mod start_person_tracking_input {
             self,
         ) -> std::result::Result<
             crate::input::StartPersonTrackingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartPersonTrackingInput {
                 video: self.video,
@@ -7692,16 +8253,16 @@ impl StartPersonTrackingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartPersonTracking,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartPersonTrackingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7709,7 +8270,7 @@ impl StartPersonTrackingInput {
         fn update_http_builder(
             input: &crate::input::StartPersonTrackingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7718,32 +8279,32 @@ impl StartPersonTrackingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartPersonTrackingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StartPersonTracking",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_person_tracking(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7766,15 +8327,15 @@ impl StartPersonTrackingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartPersonTracking::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartPersonTracking",
             "rekognition",
         ));
@@ -7783,10 +8344,10 @@ impl StartPersonTrackingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7815,6 +8376,7 @@ pub mod start_project_version_input {
             self.project_version_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
         pub fn set_project_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7831,6 +8393,11 @@ pub mod start_project_version_input {
             self.min_inference_units = Some(input);
             self
         }
+        /// <p>The minimum number of inference units to use. A single
+        /// inference unit represents 1 hour of processing and can support up to 5 Transaction Pers Second (TPS).
+        /// Use a higher number to increase the TPS throughput of your model. You are charged for the number
+        /// of inference units that you use.
+        /// </p>
         pub fn set_min_inference_units(mut self, input: std::option::Option<i32>) -> Self {
             self.min_inference_units = input;
             self
@@ -7840,7 +8407,7 @@ pub mod start_project_version_input {
             self,
         ) -> std::result::Result<
             crate::input::StartProjectVersionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartProjectVersionInput {
                 project_version_arn: self.project_version_arn,
@@ -7860,16 +8427,16 @@ impl StartProjectVersionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartProjectVersion,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartProjectVersionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7877,7 +8444,7 @@ impl StartProjectVersionInput {
         fn update_http_builder(
             input: &crate::input::StartProjectVersionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7886,32 +8453,32 @@ impl StartProjectVersionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartProjectVersionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StartProjectVersion",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_project_version(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7934,15 +8501,15 @@ impl StartProjectVersionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartProjectVersion::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartProjectVersion",
             "rekognition",
         ));
@@ -7951,10 +8518,10 @@ impl StartProjectVersionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7988,6 +8555,8 @@ pub mod start_segment_detection_input {
             self.video = Some(input);
             self
         }
+        /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to
+        /// specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
         pub fn set_video(mut self, input: std::option::Option<crate::model::Video>) -> Self {
             self.video = input;
             self
@@ -7999,6 +8568,9 @@ pub mod start_segment_detection_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple
+        /// <code>StartSegmentDetection</code> requests, the same <code>JobId</code> is returned. Use
+        /// <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8012,6 +8584,8 @@ pub mod start_segment_detection_input {
             self.notification_channel = Some(input);
             self
         }
+        /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the
+        /// segment detection operation. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
         pub fn set_notification_channel(
             mut self,
             input: std::option::Option<crate::model::NotificationChannel>,
@@ -8025,6 +8599,8 @@ pub mod start_segment_detection_input {
             self.job_tag = Some(input.into());
             self
         }
+        /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic.
+        /// For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
         pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_tag = input;
             self
@@ -8034,6 +8610,7 @@ pub mod start_segment_detection_input {
             self.filters = Some(input);
             self
         }
+        /// <p>Filters for technical cue or shot detection.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::StartSegmentDetectionFilters>,
@@ -8041,12 +8618,18 @@ pub mod start_segment_detection_input {
             self.filters = input;
             self
         }
+        /// Appends an item to `segment_types`.
+        ///
+        /// To override the contents of this collection use [`set_segment_types`](Self::set_segment_types).
+        ///
+        /// <p>An array of segment types to detect in the video. Valid values are TECHNICAL_CUE and SHOT.</p>
         pub fn segment_types(mut self, input: impl Into<crate::model::SegmentType>) -> Self {
             let mut v = self.segment_types.unwrap_or_default();
             v.push(input.into());
             self.segment_types = Some(v);
             self
         }
+        /// <p>An array of segment types to detect in the video. Valid values are TECHNICAL_CUE and SHOT.</p>
         pub fn set_segment_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SegmentType>>,
@@ -8059,7 +8642,7 @@ pub mod start_segment_detection_input {
             self,
         ) -> std::result::Result<
             crate::input::StartSegmentDetectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartSegmentDetectionInput {
                 video: self.video,
@@ -8083,16 +8666,16 @@ impl StartSegmentDetectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartSegmentDetection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartSegmentDetectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8100,7 +8683,7 @@ impl StartSegmentDetectionInput {
         fn update_http_builder(
             input: &crate::input::StartSegmentDetectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8109,32 +8692,34 @@ impl StartSegmentDetectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartSegmentDetectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StartSegmentDetection",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_segment_detection(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8157,15 +8742,15 @@ impl StartSegmentDetectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartSegmentDetection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartSegmentDetection",
             "rekognition",
         ));
@@ -8174,10 +8759,10 @@ impl StartSegmentDetectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8205,6 +8790,7 @@ pub mod start_stream_processor_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the stream processor to start processing.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8214,7 +8800,7 @@ pub mod start_stream_processor_input {
             self,
         ) -> std::result::Result<
             crate::input::StartStreamProcessorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartStreamProcessorInput { name: self.name })
         }
@@ -8231,16 +8817,16 @@ impl StartStreamProcessorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartStreamProcessor,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartStreamProcessorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8248,7 +8834,7 @@ impl StartStreamProcessorInput {
         fn update_http_builder(
             input: &crate::input::StartStreamProcessorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8257,32 +8843,32 @@ impl StartStreamProcessorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartStreamProcessorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StartStreamProcessor",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_stream_processor(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8305,15 +8891,15 @@ impl StartStreamProcessorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartStreamProcessor::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartStreamProcessor",
             "rekognition",
         ));
@@ -8322,10 +8908,10 @@ impl StartStreamProcessorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8358,6 +8944,8 @@ pub mod start_text_detection_input {
             self.video = Some(input);
             self
         }
+        /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to
+        /// specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
         pub fn set_video(mut self, input: std::option::Option<crate::model::Video>) -> Self {
             self.video = input;
             self
@@ -8369,6 +8957,9 @@ pub mod start_text_detection_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartTextDetection</code>
+        /// requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job
+        /// from being accidentaly started more than once.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8383,6 +8974,9 @@ pub mod start_text_detection_input {
             self.notification_channel = Some(input);
             self
         }
+        /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see
+        /// <a>api-video</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.
+        /// For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
         pub fn set_notification_channel(
             mut self,
             input: std::option::Option<crate::model::NotificationChannel>,
@@ -8396,6 +8990,8 @@ pub mod start_text_detection_input {
             self.job_tag = Some(input.into());
             self
         }
+        /// <p>An identifier returned in the completion status published by your Amazon Simple Notification Service topic.  For example, you can use <code>JobTag</code> to group related jobs
+        /// and identify them in the completion notification.</p>
         pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_tag = input;
             self
@@ -8405,6 +9001,7 @@ pub mod start_text_detection_input {
             self.filters = Some(input);
             self
         }
+        /// <p>Optional parameters that let you set criteria the text must meet to be included in your response.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::StartTextDetectionFilters>,
@@ -8417,7 +9014,7 @@ pub mod start_text_detection_input {
             self,
         ) -> std::result::Result<
             crate::input::StartTextDetectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartTextDetectionInput {
                 video: self.video,
@@ -8440,16 +9037,16 @@ impl StartTextDetectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartTextDetection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartTextDetectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8457,7 +9054,7 @@ impl StartTextDetectionInput {
         fn update_http_builder(
             input: &crate::input::StartTextDetectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8466,30 +9063,32 @@ impl StartTextDetectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartTextDetectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StartTextDetection",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_text_detection(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8512,15 +9111,15 @@ impl StartTextDetectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartTextDetection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartTextDetection",
             "rekognition",
         ));
@@ -8529,10 +9128,10 @@ impl StartTextDetectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8561,6 +9160,8 @@ pub mod stop_project_version_input {
             self.project_version_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+        /// <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
         pub fn set_project_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8573,7 +9174,7 @@ pub mod stop_project_version_input {
             self,
         ) -> std::result::Result<
             crate::input::StopProjectVersionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StopProjectVersionInput {
                 project_version_arn: self.project_version_arn,
@@ -8592,16 +9193,16 @@ impl StopProjectVersionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StopProjectVersion,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StopProjectVersionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8609,7 +9210,7 @@ impl StopProjectVersionInput {
         fn update_http_builder(
             input: &crate::input::StopProjectVersionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8618,30 +9219,32 @@ impl StopProjectVersionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StopProjectVersionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StopProjectVersion",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_project_version(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8664,15 +9267,15 @@ impl StopProjectVersionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StopProjectVersion::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StopProjectVersion",
             "rekognition",
         ));
@@ -8681,10 +9284,10 @@ impl StopProjectVersionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8712,6 +9315,7 @@ pub mod stop_stream_processor_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of a stream processor created by <a>CreateStreamProcessor</a>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8721,7 +9325,7 @@ pub mod stop_stream_processor_input {
             self,
         ) -> std::result::Result<
             crate::input::StopStreamProcessorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StopStreamProcessorInput { name: self.name })
         }
@@ -8738,16 +9342,16 @@ impl StopStreamProcessorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StopStreamProcessor,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StopStreamProcessorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8755,7 +9359,7 @@ impl StopStreamProcessorInput {
         fn update_http_builder(
             input: &crate::input::StopStreamProcessorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8764,32 +9368,32 @@ impl StopStreamProcessorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StopStreamProcessorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StopStreamProcessor",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_stream_processor(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8812,15 +9416,15 @@ impl StopStreamProcessorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StopStreamProcessor::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StopStreamProcessor",
             "rekognition",
         ));
@@ -8829,10 +9433,10 @@ impl StopStreamProcessorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8865,10 +9469,20 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to.
+        /// </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>
+        /// The key-value tags to assign to the resource.
+        /// </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -8879,6 +9493,9 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>
+        /// The key-value tags to assign to the resource.
+        /// </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -8891,8 +9508,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -8911,16 +9530,16 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8928,7 +9547,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8937,29 +9556,31 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.TagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8982,25 +9603,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "rekognition",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "rekognition",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9031,16 +9654,29 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to remove the tags from.
+        /// </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>
+        /// A list of the tags that you want to remove.
+        /// </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>
+        /// A list of the tags that you want to remove.
+        /// </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9051,8 +9687,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -9071,16 +9709,16 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9088,7 +9726,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9097,29 +9735,31 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.UntagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9142,25 +9782,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "rekognition",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "rekognition",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9174,6 +9816,7 @@ impl UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -9195,6 +9838,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -9217,6 +9861,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopStreamProcessorInput {
@@ -9231,6 +9876,7 @@ impl std::fmt::Debug for StopStreamProcessorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopProjectVersionInput {
@@ -9246,6 +9892,7 @@ impl std::fmt::Debug for StopProjectVersionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTextDetectionInput {
@@ -9278,6 +9925,7 @@ impl std::fmt::Debug for StartTextDetectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartStreamProcessorInput {
@@ -9292,6 +9940,7 @@ impl std::fmt::Debug for StartStreamProcessorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSegmentDetectionInput {
@@ -9326,6 +9975,7 @@ impl std::fmt::Debug for StartSegmentDetectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartProjectVersionInput {
@@ -9347,6 +9997,7 @@ impl std::fmt::Debug for StartProjectVersionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartPersonTrackingInput {
@@ -9375,6 +10026,7 @@ impl std::fmt::Debug for StartPersonTrackingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartLabelDetectionInput {
@@ -9411,6 +10063,7 @@ impl std::fmt::Debug for StartLabelDetectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFaceSearchInput {
@@ -9444,6 +10097,7 @@ impl std::fmt::Debug for StartFaceSearchInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFaceDetectionInput {
@@ -9479,6 +10133,7 @@ impl std::fmt::Debug for StartFaceDetectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartContentModerationInput {
@@ -9514,6 +10169,7 @@ impl std::fmt::Debug for StartContentModerationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartCelebrityRecognitionInput {
@@ -9542,6 +10198,7 @@ impl std::fmt::Debug for StartCelebrityRecognitionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchFacesByImageInput {
@@ -9566,6 +10223,7 @@ pub struct SearchFacesByImageInput {
     /// chooses the quality bar.  If you specify <code>LOW</code>,
     /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
     /// don’t meet the chosen quality bar.  
+    ///
     /// The quality bar is based on a variety of common use cases. Low-quality
     /// detections can occur for a number of reasons. Some examples are an object that's misidentified
     /// as a face, a face that's too blurry, or a face with a
@@ -9587,6 +10245,7 @@ impl std::fmt::Debug for SearchFacesByImageInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchFacesInput {
@@ -9614,6 +10273,7 @@ impl std::fmt::Debug for SearchFacesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecognizeCelebritiesInput {
@@ -9632,6 +10292,7 @@ impl std::fmt::Debug for RecognizeCelebritiesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -9648,6 +10309,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamProcessorsInput {
@@ -9666,6 +10328,7 @@ impl std::fmt::Debug for ListStreamProcessorsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFacesInput {
@@ -9688,6 +10351,7 @@ impl std::fmt::Debug for ListFacesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCollectionsInput {
@@ -9705,6 +10369,7 @@ impl std::fmt::Debug for ListCollectionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndexFacesInput {
@@ -9747,6 +10412,7 @@ pub struct IndexFacesInput {
     /// If you specify <code>LOW</code>,
     /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
     /// don’t meet the chosen quality bar.  The default value is <code>AUTO</code>.
+    ///
     /// The quality bar is based on a variety of common use cases. Low-quality
     /// detections can occur for a number of reasons. Some examples are an object that's misidentified
     /// as a face, a face that's too blurry, or a face with a
@@ -9769,6 +10435,7 @@ impl std::fmt::Debug for IndexFacesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTextDetectionInput {
@@ -9791,6 +10458,7 @@ impl std::fmt::Debug for GetTextDetectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSegmentDetectionInput {
@@ -9813,6 +10481,7 @@ impl std::fmt::Debug for GetSegmentDetectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPersonTrackingInput {
@@ -9843,6 +10512,7 @@ impl std::fmt::Debug for GetPersonTrackingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLabelDetectionInput {
@@ -9874,6 +10544,7 @@ impl std::fmt::Debug for GetLabelDetectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFaceSearchInput {
@@ -9901,6 +10572,7 @@ impl std::fmt::Debug for GetFaceSearchInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFaceDetectionInput {
@@ -9924,6 +10596,7 @@ impl std::fmt::Debug for GetFaceDetectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContentModerationInput {
@@ -9956,6 +10629,7 @@ impl std::fmt::Debug for GetContentModerationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCelebrityRecognitionInput {
@@ -9984,6 +10658,7 @@ impl std::fmt::Debug for GetCelebrityRecognitionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCelebrityInfoInput {
@@ -9999,6 +10674,7 @@ impl std::fmt::Debug for GetCelebrityInfoInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectTextInput {
@@ -10020,6 +10696,7 @@ impl std::fmt::Debug for DetectTextInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectProtectiveEquipmentInput {
@@ -10039,6 +10716,7 @@ impl std::fmt::Debug for DetectProtectiveEquipmentInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectModerationLabelsInput {
@@ -10068,6 +10746,7 @@ impl std::fmt::Debug for DetectModerationLabelsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectLabelsInput {
@@ -10097,6 +10776,7 @@ impl std::fmt::Debug for DetectLabelsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectFacesInput {
@@ -10125,6 +10805,7 @@ impl std::fmt::Debug for DetectFacesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectCustomLabelsInput {
@@ -10136,6 +10817,7 @@ pub struct DetectCustomLabelsInput {
     /// from a local file system. Image bytes passed by using the <code>Bytes</code> property must be
     /// base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to
     /// call Amazon Rekognition API operations. </p>
+    ///
     /// <p>For more information, see Analyzing an Image Loaded from a Local File System
     /// in the Amazon Rekognition Developer Guide.</p>
     /// <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the
@@ -10148,6 +10830,7 @@ pub struct DetectCustomLabelsInput {
     /// CLI to call Amazon Rekognition operations, passing image bytes using the Bytes
     /// property is not supported. You must first upload the image to an Amazon S3 bucket and then
     /// call the operation using the S3Object property.</p>
+    ///
     /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3
     /// object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide.
     /// </p>
@@ -10176,6 +10859,7 @@ impl std::fmt::Debug for DetectCustomLabelsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStreamProcessorInput {
@@ -10190,6 +10874,7 @@ impl std::fmt::Debug for DescribeStreamProcessorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectVersionsInput {
@@ -10220,6 +10905,7 @@ impl std::fmt::Debug for DescribeProjectVersionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProjectsInput {
@@ -10241,6 +10927,7 @@ impl std::fmt::Debug for DescribeProjectsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCollectionInput {
@@ -10255,6 +10942,7 @@ impl std::fmt::Debug for DescribeCollectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStreamProcessorInput {
@@ -10269,6 +10957,7 @@ impl std::fmt::Debug for DeleteStreamProcessorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectVersionInput {
@@ -10283,6 +10972,7 @@ impl std::fmt::Debug for DeleteProjectVersionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectInput {
@@ -10297,6 +10987,7 @@ impl std::fmt::Debug for DeleteProjectInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFacesInput {
@@ -10314,6 +11005,7 @@ impl std::fmt::Debug for DeleteFacesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCollectionInput {
@@ -10328,6 +11020,7 @@ impl std::fmt::Debug for DeleteCollectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamProcessorInput {
@@ -10364,6 +11057,7 @@ impl std::fmt::Debug for CreateStreamProcessorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectVersionInput {
@@ -10424,6 +11118,7 @@ impl std::fmt::Debug for CreateProjectVersionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProjectInput {
@@ -10438,6 +11133,7 @@ impl std::fmt::Debug for CreateProjectInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCollectionInput {
@@ -10458,6 +11154,7 @@ impl std::fmt::Debug for CreateCollectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompareFacesInput {
@@ -10483,6 +11180,7 @@ pub struct CompareFacesInput {
     /// If you specify <code>LOW</code>,
     /// <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that
     /// don’t meet the chosen quality bar.
+    ///
     /// The quality bar is based on a variety of common use cases. Low-quality
     /// detections can occur for a number of reasons. Some examples are an object that's misidentified
     /// as a face, a face that's too blurry, or a face with a

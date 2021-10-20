@@ -1,0 +1,54 @@
+[package]
+name = "aws-smithy-eventstream-fuzz"
+version = "0.1.0"
+authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "John DiSanti <jdisanti@amazon.com>"]
+publish = false
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+arbitrary = { version = "1", features = ["derive"] }
+aws-smithy-types = { path = "../../aws-smithy-types" }
+bytes = "1"
+crc32fast = "1"
+libfuzzer-sys = "0.4"
+
+[dependencies.aws-smithy-eventstream]
+features = ["derive-arbitrary"]
+path = ".."
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "raw_bytes"
+path = "fuzz_targets/raw_bytes.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "round_trip"
+path = "fuzz_targets/round_trip.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "corrected_prelude_crc"
+path = "fuzz_targets/corrected_prelude_crc.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "mutated_headers"
+path = "fuzz_targets/mutated_headers.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "prelude"
+path = "fuzz_targets/prelude.rs"
+test = false
+doc = false

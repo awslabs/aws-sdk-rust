@@ -27,6 +27,19 @@ pub mod clone_receipt_rule_set_input {
             self.rule_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the rule set to create. The name must:</p>
+        /// <ul>
+        /// <li>
+        /// <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
+        /// underscores (_), or dashes (-).</p>
+        /// </li>
+        /// <li>
+        /// <p>Start and end with a letter or number.</p>
+        /// </li>
+        /// <li>
+        /// <p>Contain less than 64 characters.</p>
+        /// </li>
+        /// </ul>
         pub fn set_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -39,6 +52,7 @@ pub mod clone_receipt_rule_set_input {
             self.original_rule_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the rule set to clone.</p>
         pub fn set_original_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -51,7 +65,7 @@ pub mod clone_receipt_rule_set_input {
             self,
         ) -> std::result::Result<
             crate::input::CloneReceiptRuleSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CloneReceiptRuleSetInput {
                 rule_set_name: self.rule_set_name,
@@ -71,16 +85,16 @@ impl CloneReceiptRuleSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CloneReceiptRuleSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CloneReceiptRuleSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -88,7 +102,7 @@ impl CloneReceiptRuleSetInput {
         fn update_http_builder(
             input: &crate::input::CloneReceiptRuleSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -97,27 +111,27 @@ impl CloneReceiptRuleSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CloneReceiptRuleSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_clone_receipt_rule_set(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -140,15 +154,15 @@ impl CloneReceiptRuleSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CloneReceiptRuleSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CloneReceiptRuleSet",
             "ses",
         ));
@@ -157,10 +171,10 @@ impl CloneReceiptRuleSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -188,6 +202,7 @@ pub mod create_configuration_set_input {
             self.configuration_set = Some(input);
             self
         }
+        /// <p>A data structure that contains the name of the configuration set.</p>
         pub fn set_configuration_set(
             mut self,
             input: std::option::Option<crate::model::ConfigurationSet>,
@@ -200,7 +215,7 @@ pub mod create_configuration_set_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateConfigurationSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateConfigurationSetInput {
                 configuration_set: self.configuration_set,
@@ -219,16 +234,16 @@ impl CreateConfigurationSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateConfigurationSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateConfigurationSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -236,7 +251,7 @@ impl CreateConfigurationSetInput {
         fn update_http_builder(
             input: &crate::input::CreateConfigurationSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -245,27 +260,29 @@ impl CreateConfigurationSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateConfigurationSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_configuration_set(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -288,15 +305,15 @@ impl CreateConfigurationSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateConfigurationSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateConfigurationSet",
             "ses",
         ));
@@ -305,10 +322,10 @@ impl CreateConfigurationSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -338,6 +355,8 @@ pub mod create_configuration_set_event_destination_input {
             self.configuration_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration set that the event destination should be associated
+        /// with.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -351,6 +370,8 @@ pub mod create_configuration_set_event_destination_input {
             self.event_destination = Some(input);
             self
         }
+        /// <p>An object that describes the AWS service that email sending event information will
+        /// be published to.</p>
         pub fn set_event_destination(
             mut self,
             input: std::option::Option<crate::model::EventDestination>,
@@ -363,7 +384,7 @@ pub mod create_configuration_set_event_destination_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateConfigurationSetEventDestinationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateConfigurationSetEventDestinationInput {
                 configuration_set_name: self.configuration_set_name,
@@ -385,16 +406,16 @@ impl CreateConfigurationSetEventDestinationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateConfigurationSetEventDestination,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateConfigurationSetEventDestinationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -402,7 +423,7 @@ impl CreateConfigurationSetEventDestinationInput {
         fn update_http_builder(
             input: &crate::input::CreateConfigurationSetEventDestinationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -411,25 +432,25 @@ impl CreateConfigurationSetEventDestinationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateConfigurationSetEventDestinationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_configuration_set_event_destination(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_configuration_set_event_destination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -452,15 +473,15 @@ impl CreateConfigurationSetEventDestinationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateConfigurationSetEventDestination::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateConfigurationSetEventDestination",
             "ses",
         ));
@@ -469,10 +490,10 @@ impl CreateConfigurationSetEventDestinationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -502,6 +523,8 @@ pub mod create_configuration_set_tracking_options_input {
             self.configuration_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration set that the tracking options should be associated
+        /// with.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -518,6 +541,11 @@ pub mod create_configuration_set_tracking_options_input {
             self.tracking_options = Some(input);
             self
         }
+        /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This
+        /// domain captures open and click events generated by Amazon SES emails.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+        /// Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES
+        /// Developer Guide</i>.</p>
         pub fn set_tracking_options(
             mut self,
             input: std::option::Option<crate::model::TrackingOptions>,
@@ -530,7 +558,7 @@ pub mod create_configuration_set_tracking_options_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateConfigurationSetTrackingOptionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateConfigurationSetTrackingOptionsInput {
                 configuration_set_name: self.configuration_set_name,
@@ -552,16 +580,16 @@ impl CreateConfigurationSetTrackingOptionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateConfigurationSetTrackingOptions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateConfigurationSetTrackingOptionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -569,7 +597,7 @@ impl CreateConfigurationSetTrackingOptionsInput {
         fn update_http_builder(
             input: &crate::input::CreateConfigurationSetTrackingOptionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -578,25 +606,25 @@ impl CreateConfigurationSetTrackingOptionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateConfigurationSetTrackingOptionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_configuration_set_tracking_options(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_configuration_set_tracking_options(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -619,15 +647,15 @@ impl CreateConfigurationSetTrackingOptionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateConfigurationSetTrackingOptions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateConfigurationSetTrackingOptions",
             "ses",
         ));
@@ -636,10 +664,10 @@ impl CreateConfigurationSetTrackingOptionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -672,6 +700,7 @@ pub mod create_custom_verification_email_template_input {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the custom verification email template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -684,6 +713,7 @@ pub mod create_custom_verification_email_template_input {
             self.from_email_address = Some(input.into());
             self
         }
+        /// <p>The email address that the custom verification email is sent from.</p>
         pub fn set_from_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -696,6 +726,7 @@ pub mod create_custom_verification_email_template_input {
             self.template_subject = Some(input.into());
             self
         }
+        /// <p>The subject line of the custom verification email.</p>
         pub fn set_template_subject(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -711,6 +742,10 @@ pub mod create_custom_verification_email_template_input {
             self.template_content = Some(input.into());
             self
         }
+        /// <p>The content of the custom verification email. The total size of the email must be less
+        /// than 10 MB. The message body may contain HTML, with some limitations. For more
+        /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
+        /// Developer Guide</i>.</p>
         pub fn set_template_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -724,6 +759,8 @@ pub mod create_custom_verification_email_template_input {
             self.success_redirection_url = Some(input.into());
             self
         }
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address
+        /// is successfully verified.</p>
         pub fn set_success_redirection_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -737,6 +774,8 @@ pub mod create_custom_verification_email_template_input {
             self.failure_redirection_url = Some(input.into());
             self
         }
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address
+        /// is not successfully verified.</p>
         pub fn set_failure_redirection_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -749,7 +788,7 @@ pub mod create_custom_verification_email_template_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateCustomVerificationEmailTemplateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateCustomVerificationEmailTemplateInput {
                 template_name: self.template_name,
@@ -775,16 +814,16 @@ impl CreateCustomVerificationEmailTemplateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateCustomVerificationEmailTemplate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateCustomVerificationEmailTemplateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -792,7 +831,7 @@ impl CreateCustomVerificationEmailTemplateInput {
         fn update_http_builder(
             input: &crate::input::CreateCustomVerificationEmailTemplateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -801,25 +840,25 @@ impl CreateCustomVerificationEmailTemplateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateCustomVerificationEmailTemplateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_custom_verification_email_template(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_custom_verification_email_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -842,15 +881,15 @@ impl CreateCustomVerificationEmailTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateCustomVerificationEmailTemplate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateCustomVerificationEmailTemplate",
             "ses",
         ));
@@ -859,10 +898,10 @@ impl CreateCustomVerificationEmailTemplateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -891,6 +930,8 @@ pub mod create_receipt_filter_input {
             self.filter = Some(input);
             self
         }
+        /// <p>A data structure that describes the IP address filter to create, which consists of a
+        /// name, an IP address range, and whether to allow or block mail from it.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::ReceiptFilter>,
@@ -903,7 +944,7 @@ pub mod create_receipt_filter_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateReceiptFilterInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateReceiptFilterInput {
                 filter: self.filter,
@@ -922,16 +963,16 @@ impl CreateReceiptFilterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateReceiptFilter,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateReceiptFilterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -939,7 +980,7 @@ impl CreateReceiptFilterInput {
         fn update_http_builder(
             input: &crate::input::CreateReceiptFilterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -948,27 +989,27 @@ impl CreateReceiptFilterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateReceiptFilterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_receipt_filter(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -991,15 +1032,15 @@ impl CreateReceiptFilterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateReceiptFilter::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateReceiptFilter",
             "ses",
         ));
@@ -1008,10 +1049,10 @@ impl CreateReceiptFilterInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1041,6 +1082,7 @@ pub mod create_receipt_rule_input {
             self.rule_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the rule set that the receipt rule will be added to.</p>
         pub fn set_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1055,6 +1097,9 @@ pub mod create_receipt_rule_input {
             self.after = Some(input.into());
             self
         }
+        /// <p>The name of an existing rule after which the new rule will be placed. If this
+        /// parameter is null, the new rule will be inserted at the beginning of the rule
+        /// list.</p>
         pub fn set_after(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.after = input;
             self
@@ -1065,6 +1110,8 @@ pub mod create_receipt_rule_input {
             self.rule = Some(input);
             self
         }
+        /// <p>A data structure that contains the specified rule's name, actions, recipients,
+        /// domains, enabled status, scan status, and TLS policy.</p>
         pub fn set_rule(mut self, input: std::option::Option<crate::model::ReceiptRule>) -> Self {
             self.rule = input;
             self
@@ -1074,7 +1121,7 @@ pub mod create_receipt_rule_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateReceiptRuleInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateReceiptRuleInput {
                 rule_set_name: self.rule_set_name,
@@ -1095,16 +1142,16 @@ impl CreateReceiptRuleInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateReceiptRule,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateReceiptRuleInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1112,7 +1159,7 @@ impl CreateReceiptRuleInput {
         fn update_http_builder(
             input: &crate::input::CreateReceiptRuleInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1121,27 +1168,27 @@ impl CreateReceiptRuleInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateReceiptRuleInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_receipt_rule(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1164,15 +1211,15 @@ impl CreateReceiptRuleInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateReceiptRule::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateReceiptRule",
             "ses",
         ));
@@ -1181,10 +1228,10 @@ impl CreateReceiptRuleInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1224,6 +1271,19 @@ pub mod create_receipt_rule_set_input {
             self.rule_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the rule set to create. The name must:</p>
+        /// <ul>
+        /// <li>
+        /// <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
+        /// underscores (_), or dashes (-).</p>
+        /// </li>
+        /// <li>
+        /// <p>Start and end with a letter or number.</p>
+        /// </li>
+        /// <li>
+        /// <p>Contain less than 64 characters.</p>
+        /// </li>
+        /// </ul>
         pub fn set_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1236,7 +1296,7 @@ pub mod create_receipt_rule_set_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateReceiptRuleSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateReceiptRuleSetInput {
                 rule_set_name: self.rule_set_name,
@@ -1255,16 +1315,16 @@ impl CreateReceiptRuleSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateReceiptRuleSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateReceiptRuleSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1272,7 +1332,7 @@ impl CreateReceiptRuleSetInput {
         fn update_http_builder(
             input: &crate::input::CreateReceiptRuleSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1281,27 +1341,29 @@ impl CreateReceiptRuleSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateReceiptRuleSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_receipt_rule_set(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1324,15 +1386,15 @@ impl CreateReceiptRuleSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateReceiptRuleSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateReceiptRuleSet",
             "ses",
         ));
@@ -1341,10 +1403,10 @@ impl CreateReceiptRuleSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1373,6 +1435,8 @@ pub mod create_template_input {
             self.template = Some(input);
             self
         }
+        /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
+        /// part.</p>
         pub fn set_template(mut self, input: std::option::Option<crate::model::Template>) -> Self {
             self.template = input;
             self
@@ -1382,7 +1446,7 @@ pub mod create_template_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateTemplateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateTemplateInput {
                 template: self.template,
@@ -1401,16 +1465,16 @@ impl CreateTemplateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateTemplate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateTemplateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1418,7 +1482,7 @@ impl CreateTemplateInput {
         fn update_http_builder(
             input: &crate::input::CreateTemplateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1427,24 +1491,26 @@ impl CreateTemplateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateTemplateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_template(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1467,15 +1533,15 @@ impl CreateTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateTemplate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateTemplate",
             "ses",
         ));
@@ -1484,10 +1550,10 @@ impl CreateTemplateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1515,6 +1581,7 @@ pub mod delete_configuration_set_input {
             self.configuration_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration set to delete.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1527,7 +1594,7 @@ pub mod delete_configuration_set_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteConfigurationSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteConfigurationSetInput {
                 configuration_set_name: self.configuration_set_name,
@@ -1546,16 +1613,16 @@ impl DeleteConfigurationSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteConfigurationSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteConfigurationSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1563,7 +1630,7 @@ impl DeleteConfigurationSetInput {
         fn update_http_builder(
             input: &crate::input::DeleteConfigurationSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1572,27 +1639,29 @@ impl DeleteConfigurationSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteConfigurationSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_configuration_set(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1615,15 +1684,15 @@ impl DeleteConfigurationSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteConfigurationSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteConfigurationSet",
             "ses",
         ));
@@ -1632,10 +1701,10 @@ impl DeleteConfigurationSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1664,6 +1733,7 @@ pub mod delete_configuration_set_event_destination_input {
             self.configuration_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration set from which to delete the event destination.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1676,6 +1746,7 @@ pub mod delete_configuration_set_event_destination_input {
             self.event_destination_name = Some(input.into());
             self
         }
+        /// <p>The name of the event destination to delete.</p>
         pub fn set_event_destination_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1688,7 +1759,7 @@ pub mod delete_configuration_set_event_destination_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteConfigurationSetEventDestinationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteConfigurationSetEventDestinationInput {
                 configuration_set_name: self.configuration_set_name,
@@ -1710,16 +1781,16 @@ impl DeleteConfigurationSetEventDestinationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteConfigurationSetEventDestination,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteConfigurationSetEventDestinationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1727,7 +1798,7 @@ impl DeleteConfigurationSetEventDestinationInput {
         fn update_http_builder(
             input: &crate::input::DeleteConfigurationSetEventDestinationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1736,25 +1807,25 @@ impl DeleteConfigurationSetEventDestinationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteConfigurationSetEventDestinationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_configuration_set_event_destination(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_configuration_set_event_destination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1777,15 +1848,15 @@ impl DeleteConfigurationSetEventDestinationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteConfigurationSetEventDestination::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteConfigurationSetEventDestination",
             "ses",
         ));
@@ -1794,10 +1865,10 @@ impl DeleteConfigurationSetEventDestinationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1826,6 +1897,8 @@ pub mod delete_configuration_set_tracking_options_input {
             self.configuration_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration set from which you want to delete the tracking
+        /// options.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1838,7 +1911,7 @@ pub mod delete_configuration_set_tracking_options_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteConfigurationSetTrackingOptionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteConfigurationSetTrackingOptionsInput {
                 configuration_set_name: self.configuration_set_name,
@@ -1859,16 +1932,16 @@ impl DeleteConfigurationSetTrackingOptionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteConfigurationSetTrackingOptions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteConfigurationSetTrackingOptionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1876,7 +1949,7 @@ impl DeleteConfigurationSetTrackingOptionsInput {
         fn update_http_builder(
             input: &crate::input::DeleteConfigurationSetTrackingOptionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1885,25 +1958,25 @@ impl DeleteConfigurationSetTrackingOptionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteConfigurationSetTrackingOptionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_configuration_set_tracking_options(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_configuration_set_tracking_options(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1926,15 +1999,15 @@ impl DeleteConfigurationSetTrackingOptionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteConfigurationSetTrackingOptions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteConfigurationSetTrackingOptions",
             "ses",
         ));
@@ -1943,10 +2016,10 @@ impl DeleteConfigurationSetTrackingOptionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1974,6 +2047,7 @@ pub mod delete_custom_verification_email_template_input {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the custom verification email template that you want to delete.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1986,7 +2060,7 @@ pub mod delete_custom_verification_email_template_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteCustomVerificationEmailTemplateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteCustomVerificationEmailTemplateInput {
                 template_name: self.template_name,
@@ -2007,16 +2081,16 @@ impl DeleteCustomVerificationEmailTemplateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteCustomVerificationEmailTemplate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteCustomVerificationEmailTemplateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2024,7 +2098,7 @@ impl DeleteCustomVerificationEmailTemplateInput {
         fn update_http_builder(
             input: &crate::input::DeleteCustomVerificationEmailTemplateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2033,25 +2107,25 @@ impl DeleteCustomVerificationEmailTemplateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteCustomVerificationEmailTemplateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_custom_verification_email_template(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_custom_verification_email_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2074,15 +2148,15 @@ impl DeleteCustomVerificationEmailTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteCustomVerificationEmailTemplate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteCustomVerificationEmailTemplate",
             "ses",
         ));
@@ -2091,10 +2165,10 @@ impl DeleteCustomVerificationEmailTemplateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2122,6 +2196,7 @@ pub mod delete_identity_input {
             self.identity = Some(input.into());
             self
         }
+        /// <p>The identity to be removed from the list of identities for the AWS Account.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
@@ -2131,7 +2206,7 @@ pub mod delete_identity_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteIdentityInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteIdentityInput {
                 identity: self.identity,
@@ -2150,16 +2225,16 @@ impl DeleteIdentityInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteIdentity,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteIdentityInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2167,7 +2242,7 @@ impl DeleteIdentityInput {
         fn update_http_builder(
             input: &crate::input::DeleteIdentityInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2176,24 +2251,26 @@ impl DeleteIdentityInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteIdentityInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_identity(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2216,15 +2293,15 @@ impl DeleteIdentityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteIdentity::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteIdentity",
             "ses",
         ));
@@ -2233,10 +2310,10 @@ impl DeleteIdentityInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2269,6 +2346,11 @@ pub mod delete_identity_policy_input {
             self.identity = Some(input.into());
             self
         }
+        /// <p>The identity that is associated with the policy that you want to delete. You can
+        /// specify the identity by using its name or by using its Amazon Resource Name (ARN).
+        /// Examples: <code>user@example.com</code>, <code>example.com</code>,
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+        /// <p>To successfully call this API, you must own the identity.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
@@ -2278,6 +2360,7 @@ pub mod delete_identity_policy_input {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The name of the policy to be deleted.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
@@ -2287,7 +2370,7 @@ pub mod delete_identity_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteIdentityPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteIdentityPolicyInput {
                 identity: self.identity,
@@ -2307,16 +2390,16 @@ impl DeleteIdentityPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteIdentityPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteIdentityPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2324,7 +2407,7 @@ impl DeleteIdentityPolicyInput {
         fn update_http_builder(
             input: &crate::input::DeleteIdentityPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2333,27 +2416,27 @@ impl DeleteIdentityPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteIdentityPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_identity_policy(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2376,15 +2459,15 @@ impl DeleteIdentityPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteIdentityPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteIdentityPolicy",
             "ses",
         ));
@@ -2393,10 +2476,10 @@ impl DeleteIdentityPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2424,6 +2507,7 @@ pub mod delete_receipt_filter_input {
             self.filter_name = Some(input.into());
             self
         }
+        /// <p>The name of the IP address filter to delete.</p>
         pub fn set_filter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter_name = input;
             self
@@ -2433,7 +2517,7 @@ pub mod delete_receipt_filter_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteReceiptFilterInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteReceiptFilterInput {
                 filter_name: self.filter_name,
@@ -2452,16 +2536,16 @@ impl DeleteReceiptFilterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteReceiptFilter,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteReceiptFilterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2469,7 +2553,7 @@ impl DeleteReceiptFilterInput {
         fn update_http_builder(
             input: &crate::input::DeleteReceiptFilterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2478,27 +2562,27 @@ impl DeleteReceiptFilterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteReceiptFilterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_receipt_filter(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2521,15 +2605,15 @@ impl DeleteReceiptFilterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteReceiptFilter::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteReceiptFilter",
             "ses",
         ));
@@ -2538,10 +2622,10 @@ impl DeleteReceiptFilterInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2570,6 +2654,7 @@ pub mod delete_receipt_rule_input {
             self.rule_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the receipt rule set that contains the receipt rule to delete.</p>
         pub fn set_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2582,6 +2667,7 @@ pub mod delete_receipt_rule_input {
             self.rule_name = Some(input.into());
             self
         }
+        /// <p>The name of the receipt rule to delete.</p>
         pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_name = input;
             self
@@ -2591,7 +2677,7 @@ pub mod delete_receipt_rule_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteReceiptRuleInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteReceiptRuleInput {
                 rule_set_name: self.rule_set_name,
@@ -2611,16 +2697,16 @@ impl DeleteReceiptRuleInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteReceiptRule,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteReceiptRuleInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2628,7 +2714,7 @@ impl DeleteReceiptRuleInput {
         fn update_http_builder(
             input: &crate::input::DeleteReceiptRuleInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2637,27 +2723,27 @@ impl DeleteReceiptRuleInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteReceiptRuleInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_receipt_rule(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2680,15 +2766,15 @@ impl DeleteReceiptRuleInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteReceiptRule::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteReceiptRule",
             "ses",
         ));
@@ -2697,10 +2783,10 @@ impl DeleteReceiptRuleInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2728,6 +2814,7 @@ pub mod delete_receipt_rule_set_input {
             self.rule_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the receipt rule set to delete.</p>
         pub fn set_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2740,7 +2827,7 @@ pub mod delete_receipt_rule_set_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteReceiptRuleSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteReceiptRuleSetInput {
                 rule_set_name: self.rule_set_name,
@@ -2759,16 +2846,16 @@ impl DeleteReceiptRuleSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteReceiptRuleSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteReceiptRuleSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2776,7 +2863,7 @@ impl DeleteReceiptRuleSetInput {
         fn update_http_builder(
             input: &crate::input::DeleteReceiptRuleSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2785,27 +2872,29 @@ impl DeleteReceiptRuleSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteReceiptRuleSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_receipt_rule_set(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2828,15 +2917,15 @@ impl DeleteReceiptRuleSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteReceiptRuleSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteReceiptRuleSet",
             "ses",
         ));
@@ -2845,10 +2934,10 @@ impl DeleteReceiptRuleSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2876,6 +2965,7 @@ pub mod delete_template_input {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the template to be deleted.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2888,7 +2978,7 @@ pub mod delete_template_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteTemplateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteTemplateInput {
                 template_name: self.template_name,
@@ -2907,16 +2997,16 @@ impl DeleteTemplateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteTemplate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteTemplateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2924,7 +3014,7 @@ impl DeleteTemplateInput {
         fn update_http_builder(
             input: &crate::input::DeleteTemplateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2933,24 +3023,26 @@ impl DeleteTemplateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteTemplateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_template(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2973,15 +3065,15 @@ impl DeleteTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteTemplate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteTemplate",
             "ses",
         ));
@@ -2990,10 +3082,10 @@ impl DeleteTemplateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3021,6 +3113,7 @@ pub mod delete_verified_email_address_input {
             self.email_address = Some(input.into());
             self
         }
+        /// <p>An email address to be removed from the list of verified addresses.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3033,7 +3126,7 @@ pub mod delete_verified_email_address_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteVerifiedEmailAddressInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteVerifiedEmailAddressInput {
                 email_address: self.email_address,
@@ -3053,16 +3146,16 @@ impl DeleteVerifiedEmailAddressInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteVerifiedEmailAddress,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteVerifiedEmailAddressInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3070,7 +3163,7 @@ impl DeleteVerifiedEmailAddressInput {
         fn update_http_builder(
             input: &crate::input::DeleteVerifiedEmailAddressInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3079,25 +3172,25 @@ impl DeleteVerifiedEmailAddressInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteVerifiedEmailAddressInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_verified_email_address(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_verified_email_address(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3120,15 +3213,15 @@ impl DeleteVerifiedEmailAddressInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteVerifiedEmailAddress::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteVerifiedEmailAddress",
             "ses",
         ));
@@ -3137,10 +3230,10 @@ impl DeleteVerifiedEmailAddressInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3166,7 +3259,7 @@ pub mod describe_active_receipt_rule_set_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeActiveReceiptRuleSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeActiveReceiptRuleSetInput {})
         }
@@ -3184,16 +3277,16 @@ impl DescribeActiveReceiptRuleSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeActiveReceiptRuleSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeActiveReceiptRuleSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3201,7 +3294,7 @@ impl DescribeActiveReceiptRuleSetInput {
         fn update_http_builder(
             input: &crate::input::DescribeActiveReceiptRuleSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3210,25 +3303,25 @@ impl DescribeActiveReceiptRuleSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeActiveReceiptRuleSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_active_receipt_rule_set(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_active_receipt_rule_set(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3251,15 +3344,15 @@ impl DescribeActiveReceiptRuleSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeActiveReceiptRuleSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeActiveReceiptRuleSet",
             "ses",
         ));
@@ -3268,10 +3361,10 @@ impl DescribeActiveReceiptRuleSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3301,6 +3394,7 @@ pub mod describe_configuration_set_input {
             self.configuration_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration set to describe.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3308,6 +3402,11 @@ pub mod describe_configuration_set_input {
             self.configuration_set_name = input;
             self
         }
+        /// Appends an item to `configuration_set_attribute_names`.
+        ///
+        /// To override the contents of this collection use [`set_configuration_set_attribute_names`](Self::set_configuration_set_attribute_names).
+        ///
+        /// <p>A list of configuration set attributes to return.</p>
         pub fn configuration_set_attribute_names(
             mut self,
             input: impl Into<crate::model::ConfigurationSetAttribute>,
@@ -3317,6 +3416,7 @@ pub mod describe_configuration_set_input {
             self.configuration_set_attribute_names = Some(v);
             self
         }
+        /// <p>A list of configuration set attributes to return.</p>
         pub fn set_configuration_set_attribute_names(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConfigurationSetAttribute>>,
@@ -3329,7 +3429,7 @@ pub mod describe_configuration_set_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeConfigurationSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeConfigurationSetInput {
                 configuration_set_name: self.configuration_set_name,
@@ -3350,16 +3450,16 @@ impl DescribeConfigurationSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigurationSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeConfigurationSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3367,7 +3467,7 @@ impl DescribeConfigurationSetInput {
         fn update_http_builder(
             input: &crate::input::DescribeConfigurationSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3376,27 +3476,29 @@ impl DescribeConfigurationSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeConfigurationSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_configuration_set(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3419,15 +3521,15 @@ impl DescribeConfigurationSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeConfigurationSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeConfigurationSet",
             "ses",
         ));
@@ -3436,10 +3538,10 @@ impl DescribeConfigurationSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3468,6 +3570,7 @@ pub mod describe_receipt_rule_input {
             self.rule_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
         pub fn set_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3480,6 +3583,7 @@ pub mod describe_receipt_rule_input {
             self.rule_name = Some(input.into());
             self
         }
+        /// <p>The name of the receipt rule.</p>
         pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_name = input;
             self
@@ -3489,7 +3593,7 @@ pub mod describe_receipt_rule_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeReceiptRuleInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeReceiptRuleInput {
                 rule_set_name: self.rule_set_name,
@@ -3509,16 +3613,16 @@ impl DescribeReceiptRuleInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeReceiptRule,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeReceiptRuleInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3526,7 +3630,7 @@ impl DescribeReceiptRuleInput {
         fn update_http_builder(
             input: &crate::input::DescribeReceiptRuleInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3535,27 +3639,27 @@ impl DescribeReceiptRuleInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeReceiptRuleInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_receipt_rule(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3578,15 +3682,15 @@ impl DescribeReceiptRuleInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeReceiptRule::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeReceiptRule",
             "ses",
         ));
@@ -3595,10 +3699,10 @@ impl DescribeReceiptRuleInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3626,6 +3730,7 @@ pub mod describe_receipt_rule_set_input {
             self.rule_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the receipt rule set to describe.</p>
         pub fn set_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3638,7 +3743,7 @@ pub mod describe_receipt_rule_set_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeReceiptRuleSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeReceiptRuleSetInput {
                 rule_set_name: self.rule_set_name,
@@ -3657,16 +3762,16 @@ impl DescribeReceiptRuleSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeReceiptRuleSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeReceiptRuleSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3674,7 +3779,7 @@ impl DescribeReceiptRuleSetInput {
         fn update_http_builder(
             input: &crate::input::DescribeReceiptRuleSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3683,27 +3788,29 @@ impl DescribeReceiptRuleSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeReceiptRuleSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_receipt_rule_set(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3726,15 +3833,15 @@ impl DescribeReceiptRuleSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeReceiptRuleSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeReceiptRuleSet",
             "ses",
         ));
@@ -3743,10 +3850,10 @@ impl DescribeReceiptRuleSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3772,7 +3879,7 @@ pub mod get_account_sending_enabled_input {
             self,
         ) -> std::result::Result<
             crate::input::GetAccountSendingEnabledInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetAccountSendingEnabledInput {})
         }
@@ -3790,16 +3897,16 @@ impl GetAccountSendingEnabledInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAccountSendingEnabled,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAccountSendingEnabledInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3807,7 +3914,7 @@ impl GetAccountSendingEnabledInput {
         fn update_http_builder(
             input: &crate::input::GetAccountSendingEnabledInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3816,27 +3923,29 @@ impl GetAccountSendingEnabledInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAccountSendingEnabledInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_account_sending_enabled(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3859,15 +3968,15 @@ impl GetAccountSendingEnabledInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetAccountSendingEnabled::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetAccountSendingEnabled",
             "ses",
         ));
@@ -3876,10 +3985,10 @@ impl GetAccountSendingEnabledInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3907,6 +4016,7 @@ pub mod get_custom_verification_email_template_input {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the custom verification email template that you want to retrieve.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3919,7 +4029,7 @@ pub mod get_custom_verification_email_template_input {
             self,
         ) -> std::result::Result<
             crate::input::GetCustomVerificationEmailTemplateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetCustomVerificationEmailTemplateInput {
                 template_name: self.template_name,
@@ -3939,16 +4049,16 @@ impl GetCustomVerificationEmailTemplateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetCustomVerificationEmailTemplate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetCustomVerificationEmailTemplateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3956,7 +4066,7 @@ impl GetCustomVerificationEmailTemplateInput {
         fn update_http_builder(
             input: &crate::input::GetCustomVerificationEmailTemplateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3965,25 +4075,25 @@ impl GetCustomVerificationEmailTemplateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetCustomVerificationEmailTemplateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_custom_verification_email_template(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_custom_verification_email_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4006,15 +4116,15 @@ impl GetCustomVerificationEmailTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetCustomVerificationEmailTemplate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetCustomVerificationEmailTemplate",
             "ses",
         ));
@@ -4023,10 +4133,10 @@ impl GetCustomVerificationEmailTemplateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4049,12 +4159,18 @@ pub mod get_identity_dkim_attributes_input {
         pub(crate) identities: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `identities`.
+        ///
+        /// To override the contents of this collection use [`set_identities`](Self::set_identities).
+        ///
+        /// <p>A list of one or more verified identities - email addresses, domains, or both.</p>
         pub fn identities(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.identities.unwrap_or_default();
             v.push(input.into());
             self.identities = Some(v);
             self
         }
+        /// <p>A list of one or more verified identities - email addresses, domains, or both.</p>
         pub fn set_identities(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4067,7 +4183,7 @@ pub mod get_identity_dkim_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::GetIdentityDkimAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetIdentityDkimAttributesInput {
                 identities: self.identities,
@@ -4087,16 +4203,16 @@ impl GetIdentityDkimAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityDkimAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetIdentityDkimAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4104,7 +4220,7 @@ impl GetIdentityDkimAttributesInput {
         fn update_http_builder(
             input: &crate::input::GetIdentityDkimAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4113,27 +4229,29 @@ impl GetIdentityDkimAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetIdentityDkimAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_identity_dkim_attributes(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4156,15 +4274,15 @@ impl GetIdentityDkimAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetIdentityDkimAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetIdentityDkimAttributes",
             "ses",
         ));
@@ -4173,10 +4291,10 @@ impl GetIdentityDkimAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4199,12 +4317,18 @@ pub mod get_identity_mail_from_domain_attributes_input {
         pub(crate) identities: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `identities`.
+        ///
+        /// To override the contents of this collection use [`set_identities`](Self::set_identities).
+        ///
+        /// <p>A list of one or more identities.</p>
         pub fn identities(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.identities.unwrap_or_default();
             v.push(input.into());
             self.identities = Some(v);
             self
         }
+        /// <p>A list of one or more identities.</p>
         pub fn set_identities(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4217,7 +4341,7 @@ pub mod get_identity_mail_from_domain_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::GetIdentityMailFromDomainAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetIdentityMailFromDomainAttributesInput {
                 identities: self.identities,
@@ -4238,16 +4362,16 @@ impl GetIdentityMailFromDomainAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityMailFromDomainAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetIdentityMailFromDomainAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4255,7 +4379,7 @@ impl GetIdentityMailFromDomainAttributesInput {
         fn update_http_builder(
             input: &crate::input::GetIdentityMailFromDomainAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4264,25 +4388,25 @@ impl GetIdentityMailFromDomainAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetIdentityMailFromDomainAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_identity_mail_from_domain_attributes(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_identity_mail_from_domain_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4305,15 +4429,15 @@ impl GetIdentityMailFromDomainAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetIdentityMailFromDomainAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetIdentityMailFromDomainAttributes",
             "ses",
         ));
@@ -4322,10 +4446,10 @@ impl GetIdentityMailFromDomainAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4348,12 +4472,24 @@ pub mod get_identity_notification_attributes_input {
         pub(crate) identities: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `identities`.
+        ///
+        /// To override the contents of this collection use [`set_identities`](Self::set_identities).
+        ///
+        /// <p>A list of one or more identities. You can specify an identity by using its name or by
+        /// using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>,
+        /// <code>example.com</code>,
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
         pub fn identities(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.identities.unwrap_or_default();
             v.push(input.into());
             self.identities = Some(v);
             self
         }
+        /// <p>A list of one or more identities. You can specify an identity by using its name or by
+        /// using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>,
+        /// <code>example.com</code>,
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
         pub fn set_identities(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4366,7 +4502,7 @@ pub mod get_identity_notification_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::GetIdentityNotificationAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetIdentityNotificationAttributesInput {
                 identities: self.identities,
@@ -4386,16 +4522,16 @@ impl GetIdentityNotificationAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityNotificationAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetIdentityNotificationAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4403,7 +4539,7 @@ impl GetIdentityNotificationAttributesInput {
         fn update_http_builder(
             input: &crate::input::GetIdentityNotificationAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4412,25 +4548,25 @@ impl GetIdentityNotificationAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetIdentityNotificationAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_identity_notification_attributes(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_identity_notification_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4453,15 +4589,15 @@ impl GetIdentityNotificationAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetIdentityNotificationAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetIdentityNotificationAttributes",
             "ses",
         ));
@@ -4470,10 +4606,10 @@ impl GetIdentityNotificationAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4506,16 +4642,31 @@ pub mod get_identity_policies_input {
             self.identity = Some(input.into());
             self
         }
+        /// <p>The identity for which the policies will be retrieved. You can specify an identity by
+        /// using its name or by using its Amazon Resource Name (ARN). Examples:
+        /// <code>user@example.com</code>, <code>example.com</code>,
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+        /// <p>To successfully call this API, you must own the identity.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
         }
+        /// Appends an item to `policy_names`.
+        ///
+        /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
+        ///
+        /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20
+        /// policies at a time. If you do not know the names of the policies that are attached to
+        /// the identity, you can use <code>ListIdentityPolicies</code>.</p>
         pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_names.unwrap_or_default();
             v.push(input.into());
             self.policy_names = Some(v);
             self
         }
+        /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20
+        /// policies at a time. If you do not know the names of the policies that are attached to
+        /// the identity, you can use <code>ListIdentityPolicies</code>.</p>
         pub fn set_policy_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4528,7 +4679,7 @@ pub mod get_identity_policies_input {
             self,
         ) -> std::result::Result<
             crate::input::GetIdentityPoliciesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetIdentityPoliciesInput {
                 identity: self.identity,
@@ -4548,16 +4699,16 @@ impl GetIdentityPoliciesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityPolicies,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetIdentityPoliciesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4565,7 +4716,7 @@ impl GetIdentityPoliciesInput {
         fn update_http_builder(
             input: &crate::input::GetIdentityPoliciesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4574,27 +4725,27 @@ impl GetIdentityPoliciesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetIdentityPoliciesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_identity_policies(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4617,15 +4768,15 @@ impl GetIdentityPoliciesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetIdentityPolicies::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetIdentityPolicies",
             "ses",
         ));
@@ -4634,10 +4785,10 @@ impl GetIdentityPoliciesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4660,12 +4811,18 @@ pub mod get_identity_verification_attributes_input {
         pub(crate) identities: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `identities`.
+        ///
+        /// To override the contents of this collection use [`set_identities`](Self::set_identities).
+        ///
+        /// <p>A list of identities.</p>
         pub fn identities(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.identities.unwrap_or_default();
             v.push(input.into());
             self.identities = Some(v);
             self
         }
+        /// <p>A list of identities.</p>
         pub fn set_identities(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4678,7 +4835,7 @@ pub mod get_identity_verification_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::GetIdentityVerificationAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetIdentityVerificationAttributesInput {
                 identities: self.identities,
@@ -4698,16 +4855,16 @@ impl GetIdentityVerificationAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityVerificationAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetIdentityVerificationAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4715,7 +4872,7 @@ impl GetIdentityVerificationAttributesInput {
         fn update_http_builder(
             input: &crate::input::GetIdentityVerificationAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4724,25 +4881,25 @@ impl GetIdentityVerificationAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetIdentityVerificationAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_identity_verification_attributes(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_identity_verification_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4765,15 +4922,15 @@ impl GetIdentityVerificationAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetIdentityVerificationAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetIdentityVerificationAttributes",
             "ses",
         ));
@@ -4782,10 +4939,10 @@ impl GetIdentityVerificationAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4809,8 +4966,10 @@ pub mod get_send_quota_input {
         /// Consumes the builder and constructs a [`GetSendQuotaInput`](crate::input::GetSendQuotaInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetSendQuotaInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetSendQuotaInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetSendQuotaInput {})
         }
     }
@@ -4826,16 +4985,16 @@ impl GetSendQuotaInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetSendQuota,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetSendQuotaInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4843,7 +5002,7 @@ impl GetSendQuotaInput {
         fn update_http_builder(
             input: &crate::input::GetSendQuotaInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4852,24 +5011,26 @@ impl GetSendQuotaInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetSendQuotaInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_send_quota(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4892,22 +5053,27 @@ impl GetSendQuotaInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetSendQuota::new())
-                .with_metadata(smithy_http::operation::Metadata::new("GetSendQuota", "ses"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetSendQuota::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetSendQuota",
+            "ses",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4933,7 +5099,7 @@ pub mod get_send_statistics_input {
             self,
         ) -> std::result::Result<
             crate::input::GetSendStatisticsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetSendStatisticsInput {})
         }
@@ -4950,16 +5116,16 @@ impl GetSendStatisticsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetSendStatistics,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetSendStatisticsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4967,7 +5133,7 @@ impl GetSendStatisticsInput {
         fn update_http_builder(
             input: &crate::input::GetSendStatisticsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4976,27 +5142,27 @@ impl GetSendStatisticsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetSendStatisticsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_send_statistics(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5019,15 +5185,15 @@ impl GetSendStatisticsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetSendStatistics::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetSendStatistics",
             "ses",
         ));
@@ -5036,10 +5202,10 @@ impl GetSendStatisticsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5067,6 +5233,7 @@ pub mod get_template_input {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the template you want to retrieve.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5077,8 +5244,10 @@ pub mod get_template_input {
         /// Consumes the builder and constructs a [`GetTemplateInput`](crate::input::GetTemplateInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetTemplateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetTemplateInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetTemplateInput {
                 template_name: self.template_name,
             })
@@ -5096,16 +5265,16 @@ impl GetTemplateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetTemplate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetTemplateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5113,7 +5282,7 @@ impl GetTemplateInput {
         fn update_http_builder(
             input: &crate::input::GetTemplateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5122,24 +5291,26 @@ impl GetTemplateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetTemplateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_template(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5162,22 +5333,27 @@ impl GetTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetTemplate::new())
-                .with_metadata(smithy_http::operation::Metadata::new("GetTemplate", "ses"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetTemplate::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetTemplate",
+            "ses",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5207,6 +5383,8 @@ pub mod list_configuration_sets_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to
+        /// indicate the position of the configuration set in the configuration set list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5216,6 +5394,7 @@ pub mod list_configuration_sets_input {
             self.max_items = Some(input);
             self
         }
+        /// <p>The number of configuration sets to return.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -5225,7 +5404,7 @@ pub mod list_configuration_sets_input {
             self,
         ) -> std::result::Result<
             crate::input::ListConfigurationSetsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListConfigurationSetsInput {
                 next_token: self.next_token,
@@ -5245,16 +5424,16 @@ impl ListConfigurationSetsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListConfigurationSets,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListConfigurationSetsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5262,7 +5441,7 @@ impl ListConfigurationSetsInput {
         fn update_http_builder(
             input: &crate::input::ListConfigurationSetsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5271,27 +5450,29 @@ impl ListConfigurationSetsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListConfigurationSetsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_configuration_sets(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5314,15 +5495,15 @@ impl ListConfigurationSetsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListConfigurationSets::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListConfigurationSets",
             "ses",
         ));
@@ -5331,10 +5512,10 @@ impl ListConfigurationSetsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5364,6 +5545,8 @@ pub mod list_custom_verification_email_templates_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES
+        /// account.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5376,6 +5559,10 @@ pub mod list_custom_verification_email_templates_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of custom verification email templates to return. This value must
+        /// be at least 1 and less than or equal to 50. If you do not specify a value, or if you
+        /// specify a value less than 1 or greater than 50, the operation will return up to 50
+        /// results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5385,7 +5572,7 @@ pub mod list_custom_verification_email_templates_input {
             self,
         ) -> std::result::Result<
             crate::input::ListCustomVerificationEmailTemplatesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListCustomVerificationEmailTemplatesInput {
                 next_token: self.next_token,
@@ -5407,16 +5594,16 @@ impl ListCustomVerificationEmailTemplatesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListCustomVerificationEmailTemplates,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListCustomVerificationEmailTemplatesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5424,7 +5611,7 @@ impl ListCustomVerificationEmailTemplatesInput {
         fn update_http_builder(
             input: &crate::input::ListCustomVerificationEmailTemplatesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5433,25 +5620,25 @@ impl ListCustomVerificationEmailTemplatesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListCustomVerificationEmailTemplatesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_custom_verification_email_templates(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_custom_verification_email_templates(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5474,15 +5661,15 @@ impl ListCustomVerificationEmailTemplatesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListCustomVerificationEmailTemplates::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListCustomVerificationEmailTemplates",
             "ses",
         ));
@@ -5491,10 +5678,10 @@ impl ListCustomVerificationEmailTemplatesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5525,6 +5712,8 @@ pub mod list_identities_input {
             self.identity_type = Some(input);
             self
         }
+        /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain".
+        /// If this parameter is omitted, then all identities will be listed.</p>
         pub fn set_identity_type(
             mut self,
             input: std::option::Option<crate::model::IdentityType>,
@@ -5537,6 +5726,7 @@ pub mod list_identities_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to use for pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5547,6 +5737,8 @@ pub mod list_identities_input {
             self.max_items = Some(input);
             self
         }
+        /// <p>The maximum number of identities per page. Possible values are 1-1000
+        /// inclusive.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -5556,7 +5748,7 @@ pub mod list_identities_input {
             self,
         ) -> std::result::Result<
             crate::input::ListIdentitiesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListIdentitiesInput {
                 identity_type: self.identity_type,
@@ -5577,16 +5769,16 @@ impl ListIdentitiesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListIdentities,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListIdentitiesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5594,7 +5786,7 @@ impl ListIdentitiesInput {
         fn update_http_builder(
             input: &crate::input::ListIdentitiesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5603,24 +5795,26 @@ impl ListIdentitiesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListIdentitiesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_identities(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5643,15 +5837,15 @@ impl ListIdentitiesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListIdentities::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListIdentities",
             "ses",
         ));
@@ -5660,10 +5854,10 @@ impl ListIdentitiesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5695,6 +5889,11 @@ pub mod list_identity_policies_input {
             self.identity = Some(input.into());
             self
         }
+        /// <p>The identity that is associated with the policy for which the policies will be listed.
+        /// You can specify an identity by using its name or by using its Amazon Resource Name
+        /// (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+        /// <p>To successfully call this API, you must own the identity.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
@@ -5704,7 +5903,7 @@ pub mod list_identity_policies_input {
             self,
         ) -> std::result::Result<
             crate::input::ListIdentityPoliciesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListIdentityPoliciesInput {
                 identity: self.identity,
@@ -5723,16 +5922,16 @@ impl ListIdentityPoliciesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListIdentityPolicies,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListIdentityPoliciesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5740,7 +5939,7 @@ impl ListIdentityPoliciesInput {
         fn update_http_builder(
             input: &crate::input::ListIdentityPoliciesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5749,27 +5948,27 @@ impl ListIdentityPoliciesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListIdentityPoliciesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_identity_policies(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5792,15 +5991,15 @@ impl ListIdentityPoliciesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListIdentityPolicies::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListIdentityPolicies",
             "ses",
         ));
@@ -5809,10 +6008,10 @@ impl ListIdentityPoliciesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5838,7 +6037,7 @@ pub mod list_receipt_filters_input {
             self,
         ) -> std::result::Result<
             crate::input::ListReceiptFiltersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListReceiptFiltersInput {})
         }
@@ -5855,16 +6054,16 @@ impl ListReceiptFiltersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListReceiptFilters,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListReceiptFiltersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5872,7 +6071,7 @@ impl ListReceiptFiltersInput {
         fn update_http_builder(
             input: &crate::input::ListReceiptFiltersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5881,25 +6080,27 @@ impl ListReceiptFiltersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListReceiptFiltersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_receipt_filters(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5922,15 +6123,15 @@ impl ListReceiptFiltersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListReceiptFilters::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListReceiptFilters",
             "ses",
         ));
@@ -5939,10 +6140,10 @@ impl ListReceiptFiltersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5971,6 +6172,8 @@ pub mod list_receipt_rule_sets_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to indicate
+        /// the position in the receipt rule set list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5980,7 +6183,7 @@ pub mod list_receipt_rule_sets_input {
             self,
         ) -> std::result::Result<
             crate::input::ListReceiptRuleSetsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListReceiptRuleSetsInput {
                 next_token: self.next_token,
@@ -5999,16 +6202,16 @@ impl ListReceiptRuleSetsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListReceiptRuleSets,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListReceiptRuleSetsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6016,7 +6219,7 @@ impl ListReceiptRuleSetsInput {
         fn update_http_builder(
             input: &crate::input::ListReceiptRuleSetsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6025,27 +6228,27 @@ impl ListReceiptRuleSetsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListReceiptRuleSetsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_receipt_rule_sets(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6068,15 +6271,15 @@ impl ListReceiptRuleSetsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListReceiptRuleSets::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListReceiptRuleSets",
             "ses",
         ));
@@ -6085,10 +6288,10 @@ impl ListReceiptRuleSetsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6118,6 +6321,8 @@ pub mod list_templates_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token returned from a previous call to <code>ListTemplates</code> to indicate the
+        /// position in the list of email templates.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6129,6 +6334,9 @@ pub mod list_templates_input {
             self.max_items = Some(input);
             self
         }
+        /// <p>The maximum number of templates to return. This value must be at least 1 and less than
+        /// or equal to 10. If you do not specify a value, or if you specify a value less than 1 or
+        /// greater than 10, the operation will return up to 10 results.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -6136,8 +6344,10 @@ pub mod list_templates_input {
         /// Consumes the builder and constructs a [`ListTemplatesInput`](crate::input::ListTemplatesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListTemplatesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListTemplatesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListTemplatesInput {
                 next_token: self.next_token,
                 max_items: self.max_items,
@@ -6156,16 +6366,16 @@ impl ListTemplatesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTemplates,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTemplatesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6173,7 +6383,7 @@ impl ListTemplatesInput {
         fn update_http_builder(
             input: &crate::input::ListTemplatesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6182,24 +6392,26 @@ impl ListTemplatesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTemplatesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_templates(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6222,25 +6434,27 @@ impl ListTemplatesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListTemplates::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListTemplates",
-                    "ses",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTemplates::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTemplates",
+            "ses",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6266,7 +6480,7 @@ pub mod list_verified_email_addresses_input {
             self,
         ) -> std::result::Result<
             crate::input::ListVerifiedEmailAddressesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListVerifiedEmailAddressesInput {})
         }
@@ -6284,16 +6498,16 @@ impl ListVerifiedEmailAddressesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListVerifiedEmailAddresses,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListVerifiedEmailAddressesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6301,7 +6515,7 @@ impl ListVerifiedEmailAddressesInput {
         fn update_http_builder(
             input: &crate::input::ListVerifiedEmailAddressesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6310,25 +6524,25 @@ impl ListVerifiedEmailAddressesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListVerifiedEmailAddressesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_verified_email_addresses(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_verified_email_addresses(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6351,15 +6565,15 @@ impl ListVerifiedEmailAddressesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListVerifiedEmailAddresses::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListVerifiedEmailAddresses",
             "ses",
         ));
@@ -6368,10 +6582,10 @@ impl ListVerifiedEmailAddressesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6401,6 +6615,8 @@ pub mod put_configuration_set_delivery_options_input {
             self.configuration_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration set that you want to specify the delivery options
+        /// for.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6414,6 +6630,8 @@ pub mod put_configuration_set_delivery_options_input {
             self.delivery_options = Some(input);
             self
         }
+        /// <p>Specifies whether messages that use the configuration set are required to use
+        /// Transport Layer Security (TLS).</p>
         pub fn set_delivery_options(
             mut self,
             input: std::option::Option<crate::model::DeliveryOptions>,
@@ -6426,7 +6644,7 @@ pub mod put_configuration_set_delivery_options_input {
             self,
         ) -> std::result::Result<
             crate::input::PutConfigurationSetDeliveryOptionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutConfigurationSetDeliveryOptionsInput {
                 configuration_set_name: self.configuration_set_name,
@@ -6447,16 +6665,16 @@ impl PutConfigurationSetDeliveryOptionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutConfigurationSetDeliveryOptions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutConfigurationSetDeliveryOptionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6464,7 +6682,7 @@ impl PutConfigurationSetDeliveryOptionsInput {
         fn update_http_builder(
             input: &crate::input::PutConfigurationSetDeliveryOptionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6473,25 +6691,25 @@ impl PutConfigurationSetDeliveryOptionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutConfigurationSetDeliveryOptionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_configuration_set_delivery_options(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_configuration_set_delivery_options(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6514,15 +6732,15 @@ impl PutConfigurationSetDeliveryOptionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutConfigurationSetDeliveryOptions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutConfigurationSetDeliveryOptions",
             "ses",
         ));
@@ -6531,10 +6749,10 @@ impl PutConfigurationSetDeliveryOptionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6568,6 +6786,11 @@ pub mod put_identity_policy_input {
             self.identity = Some(input.into());
             self
         }
+        /// <p>The identity that the policy will apply to. You can specify an identity by using its
+        /// name or by using its Amazon Resource Name (ARN). Examples:
+        /// <code>user@example.com</code>, <code>example.com</code>,
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+        /// <p>To successfully call this API, you must own the identity.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
@@ -6579,6 +6802,9 @@ pub mod put_identity_policy_input {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The name of the policy.</p>
+        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
+        /// characters, dashes, and underscores.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
@@ -6590,6 +6816,9 @@ pub mod put_identity_policy_input {
             self.policy = Some(input.into());
             self
         }
+        /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
+        /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
+        /// Guide</a>. </p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -6599,7 +6828,7 @@ pub mod put_identity_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::PutIdentityPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutIdentityPolicyInput {
                 identity: self.identity,
@@ -6620,16 +6849,16 @@ impl PutIdentityPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutIdentityPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutIdentityPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6637,7 +6866,7 @@ impl PutIdentityPolicyInput {
         fn update_http_builder(
             input: &crate::input::PutIdentityPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6646,27 +6875,27 @@ impl PutIdentityPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutIdentityPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_identity_policy(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6689,15 +6918,15 @@ impl PutIdentityPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutIdentityPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutIdentityPolicy",
             "ses",
         ));
@@ -6706,10 +6935,10 @@ impl PutIdentityPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6738,6 +6967,7 @@ pub mod reorder_receipt_rule_set_input {
             self.rule_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the receipt rule set to reorder.</p>
         pub fn set_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6745,12 +6975,20 @@ pub mod reorder_receipt_rule_set_input {
             self.rule_set_name = input;
             self
         }
+        /// Appends an item to `rule_names`.
+        ///
+        /// To override the contents of this collection use [`set_rule_names`](Self::set_rule_names).
+        ///
+        /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to
+        /// put them.</p>
         pub fn rule_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.rule_names.unwrap_or_default();
             v.push(input.into());
             self.rule_names = Some(v);
             self
         }
+        /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to
+        /// put them.</p>
         pub fn set_rule_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6763,7 +7001,7 @@ pub mod reorder_receipt_rule_set_input {
             self,
         ) -> std::result::Result<
             crate::input::ReorderReceiptRuleSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ReorderReceiptRuleSetInput {
                 rule_set_name: self.rule_set_name,
@@ -6783,16 +7021,16 @@ impl ReorderReceiptRuleSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ReorderReceiptRuleSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ReorderReceiptRuleSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6800,7 +7038,7 @@ impl ReorderReceiptRuleSetInput {
         fn update_http_builder(
             input: &crate::input::ReorderReceiptRuleSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6809,27 +7047,29 @@ impl ReorderReceiptRuleSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ReorderReceiptRuleSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_reorder_receipt_rule_set(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6852,15 +7092,15 @@ impl ReorderReceiptRuleSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ReorderReceiptRuleSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ReorderReceiptRuleSet",
             "ses",
         ));
@@ -6869,10 +7109,10 @@ impl ReorderReceiptRuleSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6906,6 +7146,7 @@ pub mod send_bounce_input {
             self.original_message_id = Some(input.into());
             self
         }
+        /// <p>The message ID of the message to be bounced.</p>
         pub fn set_original_message_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6919,6 +7160,8 @@ pub mod send_bounce_input {
             self.bounce_sender = Some(input.into());
             self
         }
+        /// <p>The address to use in the "From" header of the bounce message. This must be an
+        /// identity that you have verified with Amazon SES.</p>
         pub fn set_bounce_sender(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6932,6 +7175,8 @@ pub mod send_bounce_input {
             self.explanation = Some(input.into());
             self
         }
+        /// <p>Human-readable text for the bounce message to explain the failure. If not specified,
+        /// the text will be auto-generated based on the bounced recipient information.</p>
         pub fn set_explanation(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.explanation = input;
             self
@@ -6941,6 +7186,7 @@ pub mod send_bounce_input {
             self.message_dsn = Some(input);
             self
         }
+        /// <p>Message-related DSN fields. If not specified, Amazon SES will choose the values.</p>
         pub fn set_message_dsn(
             mut self,
             input: std::option::Option<crate::model::MessageDsn>,
@@ -6948,6 +7194,13 @@ pub mod send_bounce_input {
             self.message_dsn = input;
             self
         }
+        /// Appends an item to `bounced_recipient_info_list`.
+        ///
+        /// To override the contents of this collection use [`set_bounced_recipient_info_list`](Self::set_bounced_recipient_info_list).
+        ///
+        /// <p>A list of recipients of the bounced message, including the information required to
+        /// create the Delivery Status Notifications (DSNs) for the recipients. You must specify at
+        /// least one <code>BouncedRecipientInfo</code> in the list.</p>
         pub fn bounced_recipient_info_list(
             mut self,
             input: impl Into<crate::model::BouncedRecipientInfo>,
@@ -6957,6 +7210,9 @@ pub mod send_bounce_input {
             self.bounced_recipient_info_list = Some(v);
             self
         }
+        /// <p>A list of recipients of the bounced message, including the information required to
+        /// create the Delivery Status Notifications (DSNs) for the recipients. You must specify at
+        /// least one <code>BouncedRecipientInfo</code> in the list.</p>
         pub fn set_bounced_recipient_info_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BouncedRecipientInfo>>,
@@ -6973,6 +7229,11 @@ pub mod send_bounce_input {
             self.bounce_sender_arn = Some(input.into());
             self
         }
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
+        /// that is associated with the sending authorization policy that permits you to use the
+        /// address in the "From" header of the bounce. For more information about sending
+        /// authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+        /// Guide</a>.</p>
         pub fn set_bounce_sender_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6983,8 +7244,10 @@ pub mod send_bounce_input {
         /// Consumes the builder and constructs a [`SendBounceInput`](crate::input::SendBounceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::SendBounceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::SendBounceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SendBounceInput {
                 original_message_id: self.original_message_id,
                 bounce_sender: self.bounce_sender,
@@ -7007,16 +7270,16 @@ impl SendBounceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SendBounce,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SendBounceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7024,7 +7287,7 @@ impl SendBounceInput {
         fn update_http_builder(
             input: &crate::input::SendBounceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7033,24 +7296,26 @@ impl SendBounceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SendBounceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_send_bounce(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7073,22 +7338,27 @@ impl SendBounceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::SendBounce::new())
-                .with_metadata(smithy_http::operation::Metadata::new("SendBounce", "ses"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SendBounce::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SendBounce",
+            "ses",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7145,6 +7415,25 @@ pub mod send_bulk_templated_email_input {
             self.source = Some(input.into());
             self
         }
+        /// <p>The email address that is sending the email. This email address must be either
+        /// individually verified with Amazon SES, or from a domain that has been verified with Amazon SES.
+        /// For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer
+        /// Guide</a>.</p>
+        /// <p>If you are sending on behalf of another user and have been permitted to do so by a
+        /// sending authorization policy, then you must also specify the <code>SourceArn</code>
+        /// parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+        /// <note>
+        /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
+        /// <i>local part</i> of a source email address (the part of the email
+        /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
+        /// characters</a>. If the <i>domain part</i> of an address (the
+        /// part after the @ sign) contains non-ASCII characters, they must be encoded using
+        /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
+        /// name</i>) may contain non-ASCII characters. These characters must be
+        /// encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
+        /// syntax uses the following form:
+        /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+        /// </note>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -7164,16 +7453,35 @@ pub mod send_bulk_templated_email_input {
             self.source_arn = Some(input.into());
             self
         }
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
+        /// that is associated with the sending authorization policy that permits you to send for
+        /// the email address specified in the <code>Source</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
+        /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
+        /// would specify the <code>SourceArn</code> to be
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
+        /// <code>Source</code> to be <code>user@example.com</code>.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+        /// Guide</a>.</p>
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_arn = input;
             self
         }
+        /// Appends an item to `reply_to_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_reply_to_addresses`](Self::set_reply_to_addresses).
+        ///
+        /// <p>The reply-to email address(es) for the message. If the recipient replies to the
+        /// message, each reply-to address will receive the reply.</p>
         pub fn reply_to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.reply_to_addresses.unwrap_or_default();
             v.push(input.into());
             self.reply_to_addresses = Some(v);
             self
         }
+        /// <p>The reply-to email address(es) for the message. If the recipient replies to the
+        /// message, each reply-to address will receive the reply.</p>
         pub fn set_reply_to_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7192,6 +7500,13 @@ pub mod send_bulk_templated_email_input {
             self.return_path = Some(input.into());
             self
         }
+        /// <p>The email address that bounces and complaints will be forwarded to when feedback
+        /// forwarding is enabled. If the message cannot be delivered to the recipient, then an
+        /// error message will be returned from the recipient's ISP; this message will then be
+        /// forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
+        /// <code>ReturnPath</code> parameter is never overwritten. This email address must be
+        /// either individually verified with Amazon SES, or from a domain that has been verified with
+        /// Amazon SES. </p>
         pub fn set_return_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.return_path = input;
             self
@@ -7211,6 +7526,17 @@ pub mod send_bulk_templated_email_input {
             self.return_path_arn = Some(input.into());
             self
         }
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
+        /// that is associated with the sending authorization policy that permits you to use the
+        /// email address specified in the <code>ReturnPath</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
+        /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
+        /// would specify the <code>ReturnPathArn</code> to be
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
+        /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+        /// Guide</a>.</p>
         pub fn set_return_path_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7224,6 +7550,8 @@ pub mod send_bulk_templated_email_input {
             self.configuration_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration set to use when you send an email using
+        /// <code>SendBulkTemplatedEmail</code>.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7231,12 +7559,20 @@ pub mod send_bulk_templated_email_input {
             self.configuration_set_name = input;
             self
         }
+        /// Appends an item to `default_tags`.
+        ///
+        /// To override the contents of this collection use [`set_default_tags`](Self::set_default_tags).
+        ///
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send to
+        /// a destination using <code>SendBulkTemplatedEmail</code>.</p>
         pub fn default_tags(mut self, input: impl Into<crate::model::MessageTag>) -> Self {
             let mut v = self.default_tags.unwrap_or_default();
             v.push(input.into());
             self.default_tags = Some(v);
             self
         }
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send to
+        /// a destination using <code>SendBulkTemplatedEmail</code>.</p>
         pub fn set_default_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
@@ -7249,6 +7585,7 @@ pub mod send_bulk_templated_email_input {
             self.template = Some(input.into());
             self
         }
+        /// <p>The template to use when sending this email.</p>
         pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template = input;
             self
@@ -7258,6 +7595,7 @@ pub mod send_bulk_templated_email_input {
             self.template_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the template to use when sending this email.</p>
         pub fn set_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_arn = input;
             self
@@ -7271,6 +7609,11 @@ pub mod send_bulk_templated_email_input {
             self.default_template_data = Some(input.into());
             self
         }
+        /// <p>A list of replacement values to apply to the template when replacement data is not
+        /// specified in a Destination object. These values act as a default or fallback option when
+        /// no other data is available.</p>
+        /// <p>The template data is a JSON object, typically consisting of key-value pairs in which
+        /// the keys correspond to replacement tags in the email template.</p>
         pub fn set_default_template_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7278,6 +7621,14 @@ pub mod send_bulk_templated_email_input {
             self.default_template_data = input;
             self
         }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// <p>One or more <code>Destination</code> objects. All of the recipients in a
+        /// <code>Destination</code> will receive the same version of the email. You can specify
+        /// up to 50 <code>Destination</code> objects within a <code>Destinations</code>
+        /// array.</p>
         pub fn destinations(
             mut self,
             input: impl Into<crate::model::BulkEmailDestination>,
@@ -7287,6 +7638,10 @@ pub mod send_bulk_templated_email_input {
             self.destinations = Some(v);
             self
         }
+        /// <p>One or more <code>Destination</code> objects. All of the recipients in a
+        /// <code>Destination</code> will receive the same version of the email. You can specify
+        /// up to 50 <code>Destination</code> objects within a <code>Destinations</code>
+        /// array.</p>
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BulkEmailDestination>>,
@@ -7299,7 +7654,7 @@ pub mod send_bulk_templated_email_input {
             self,
         ) -> std::result::Result<
             crate::input::SendBulkTemplatedEmailInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SendBulkTemplatedEmailInput {
                 source: self.source,
@@ -7328,16 +7683,16 @@ impl SendBulkTemplatedEmailInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SendBulkTemplatedEmail,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SendBulkTemplatedEmailInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7345,7 +7700,7 @@ impl SendBulkTemplatedEmailInput {
         fn update_http_builder(
             input: &crate::input::SendBulkTemplatedEmailInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7354,27 +7709,29 @@ impl SendBulkTemplatedEmailInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SendBulkTemplatedEmailInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_send_bulk_templated_email(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7397,15 +7754,15 @@ impl SendBulkTemplatedEmailInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SendBulkTemplatedEmail::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SendBulkTemplatedEmail",
             "ses",
         ));
@@ -7414,10 +7771,10 @@ impl SendBulkTemplatedEmailInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7447,6 +7804,7 @@ pub mod send_custom_verification_email_input {
             self.email_address = Some(input.into());
             self
         }
+        /// <p>The email address to verify.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7460,6 +7818,8 @@ pub mod send_custom_verification_email_input {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the custom verification email template to use when sending the
+        /// verification email.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7472,6 +7832,7 @@ pub mod send_custom_verification_email_input {
             self.configuration_set_name = Some(input.into());
             self
         }
+        /// <p>Name of a configuration set to use when sending the verification email.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7484,7 +7845,7 @@ pub mod send_custom_verification_email_input {
             self,
         ) -> std::result::Result<
             crate::input::SendCustomVerificationEmailInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SendCustomVerificationEmailInput {
                 email_address: self.email_address,
@@ -7506,16 +7867,16 @@ impl SendCustomVerificationEmailInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SendCustomVerificationEmail,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SendCustomVerificationEmailInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7523,7 +7884,7 @@ impl SendCustomVerificationEmailInput {
         fn update_http_builder(
             input: &crate::input::SendCustomVerificationEmailInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7532,25 +7893,25 @@ impl SendCustomVerificationEmailInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SendCustomVerificationEmailInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_send_custom_verification_email(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_send_custom_verification_email(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7573,15 +7934,15 @@ impl SendCustomVerificationEmailInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SendCustomVerificationEmail::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SendCustomVerificationEmail",
             "ses",
         ));
@@ -7590,10 +7951,10 @@ impl SendCustomVerificationEmailInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7647,6 +8008,25 @@ pub mod send_email_input {
             self.source = Some(input.into());
             self
         }
+        /// <p>The email address that is sending the email. This email address must be either
+        /// individually verified with Amazon SES, or from a domain that has been verified with Amazon SES.
+        /// For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer
+        /// Guide</a>.</p>
+        /// <p>If you are sending on behalf of another user and have been permitted to do so by a
+        /// sending authorization policy, then you must also specify the <code>SourceArn</code>
+        /// parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+        /// <note>
+        /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
+        /// <i>local part</i> of a source email address (the part of the email
+        /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
+        /// characters</a>. If the <i>domain part</i> of an address (the
+        /// part after the @ sign) contains non-ASCII characters, they must be encoded using
+        /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
+        /// name</i>) may contain non-ASCII characters. These characters must be
+        /// encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
+        /// syntax uses the following form:
+        /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+        /// </note>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -7656,6 +8036,7 @@ pub mod send_email_input {
             self.destination = Some(input);
             self
         }
+        /// <p>The destination for this email, composed of To:, CC:, and BCC: fields.</p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::Destination>,
@@ -7668,16 +8049,25 @@ pub mod send_email_input {
             self.message = Some(input);
             self
         }
+        /// <p>The message to be sent.</p>
         pub fn set_message(mut self, input: std::option::Option<crate::model::Message>) -> Self {
             self.message = input;
             self
         }
+        /// Appends an item to `reply_to_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_reply_to_addresses`](Self::set_reply_to_addresses).
+        ///
+        /// <p>The reply-to email address(es) for the message. If the recipient replies to the
+        /// message, each reply-to address will receive the reply.</p>
         pub fn reply_to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.reply_to_addresses.unwrap_or_default();
             v.push(input.into());
             self.reply_to_addresses = Some(v);
             self
         }
+        /// <p>The reply-to email address(es) for the message. If the recipient replies to the
+        /// message, each reply-to address will receive the reply.</p>
         pub fn set_reply_to_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7696,6 +8086,13 @@ pub mod send_email_input {
             self.return_path = Some(input.into());
             self
         }
+        /// <p>The email address that bounces and complaints will be forwarded to when feedback
+        /// forwarding is enabled. If the message cannot be delivered to the recipient, then an
+        /// error message will be returned from the recipient's ISP; this message will then be
+        /// forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
+        /// <code>ReturnPath</code> parameter is never overwritten. This email address must be
+        /// either individually verified with Amazon SES, or from a domain that has been verified with
+        /// Amazon SES. </p>
         pub fn set_return_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.return_path = input;
             self
@@ -7715,6 +8112,17 @@ pub mod send_email_input {
             self.source_arn = Some(input.into());
             self
         }
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
+        /// that is associated with the sending authorization policy that permits you to send for
+        /// the email address specified in the <code>Source</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
+        /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
+        /// would specify the <code>SourceArn</code> to be
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
+        /// <code>Source</code> to be <code>user@example.com</code>.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+        /// Guide</a>.</p>
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_arn = input;
             self
@@ -7734,6 +8142,17 @@ pub mod send_email_input {
             self.return_path_arn = Some(input.into());
             self
         }
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
+        /// that is associated with the sending authorization policy that permits you to use the
+        /// email address specified in the <code>ReturnPath</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
+        /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
+        /// would specify the <code>ReturnPathArn</code> to be
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
+        /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+        /// Guide</a>.</p>
         pub fn set_return_path_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7741,12 +8160,22 @@ pub mod send_email_input {
             self.return_path_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
+        /// using <code>SendEmail</code>. Tags correspond to characteristics of the email that you
+        /// define, so that you can publish email sending events.</p>
         pub fn tags(mut self, input: impl Into<crate::model::MessageTag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
+        /// using <code>SendEmail</code>. Tags correspond to characteristics of the email that you
+        /// define, so that you can publish email sending events.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
@@ -7760,6 +8189,8 @@ pub mod send_email_input {
             self.configuration_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration set to use when you send an email using
+        /// <code>SendEmail</code>.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7770,7 +8201,7 @@ pub mod send_email_input {
         /// Consumes the builder and constructs a [`SendEmailInput`](crate::input::SendEmailInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::SendEmailInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::SendEmailInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::SendEmailInput {
                 source: self.source,
@@ -7797,16 +8228,16 @@ impl SendEmailInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SendEmail,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SendEmailInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7814,7 +8245,7 @@ impl SendEmailInput {
         fn update_http_builder(
             input: &crate::input::SendEmailInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7823,24 +8254,26 @@ impl SendEmailInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SendEmailInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_send_email(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7863,22 +8296,25 @@ impl SendEmailInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::SendEmail::new())
-                .with_metadata(smithy_http::operation::Metadata::new("SendEmail", "ses"));
+            aws_smithy_http::operation::Operation::new(request, crate::operation::SendEmail::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "SendEmail",
+                    "ses",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7923,6 +8359,7 @@ pub mod send_raw_email_input {
         /// syntax uses the following form:
         /// <code>=?charset?encoding?encoded-text?=</code>.</p>
         /// </note>
+        ///
         /// <p>If you specify the <code>Source</code> parameter and have feedback forwarding enabled,
         /// then bounces and complaints will be sent to this email address. This takes precedence
         /// over any Return-Path header that you might include in the raw text of the
@@ -7931,16 +8368,44 @@ pub mod send_raw_email_input {
             self.source = Some(input.into());
             self
         }
+        /// <p>The identity's email address. If you do not provide a value for this parameter, you
+        /// must specify a "From" address in the raw text of the message. (You can also specify
+        /// both.)</p>
+        /// <note>
+        /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in<a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
+        /// <i>local part</i> of a source email address (the part of the email
+        /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
+        /// characters</a>. If the <i>domain part</i> of an address (the
+        /// part after the @ sign) contains non-ASCII characters, they must be encoded using
+        /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
+        /// name</i>) may contain non-ASCII characters. These characters must be
+        /// encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
+        /// syntax uses the following form:
+        /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+        /// </note>
+        ///
+        /// <p>If you specify the <code>Source</code> parameter and have feedback forwarding enabled,
+        /// then bounces and complaints will be sent to this email address. This takes precedence
+        /// over any Return-Path header that you might include in the raw text of the
+        /// message.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
         }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC:
+        /// addresses.</p>
         pub fn destinations(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input.into());
             self.destinations = Some(v);
             self
         }
+        /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC:
+        /// addresses.</p>
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7984,6 +8449,38 @@ pub mod send_raw_email_input {
             self.raw_message = Some(input);
             self
         }
+        /// <p>The raw email message itself. The message has to meet the following criteria:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The message has to contain a header and a body, separated by a blank
+        /// line.</p>
+        /// </li>
+        /// <li>
+        /// <p>All of the required header fields must be present in the message.</p>
+        /// </li>
+        /// <li>
+        /// <p>Each part of a multipart MIME message must be formatted properly.</p>
+        /// </li>
+        /// <li>
+        /// <p>Attachments must be of a content type that Amazon SES supports. For a list on
+        /// unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment
+        /// Types</a> in the <i>Amazon SES Developer Guide</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>The entire message must be base64-encoded.</p>
+        /// </li>
+        /// <li>
+        /// <p>If any of the MIME parts in your message contain content that is outside of
+        /// the 7-bit ASCII character range, we highly recommend that you encode that
+        /// content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer
+        /// Guide</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC
+        /// 5321</a>, the maximum length of each line of text, including the
+        /// <CRLF>, must not exceed 1,000 characters.</p>
+        /// </li>
+        /// </ul>
         pub fn set_raw_message(
             mut self,
             input: std::option::Option<crate::model::RawMessage>,
@@ -8006,6 +8503,17 @@ pub mod send_raw_email_input {
             self.from_arn = Some(input.into());
             self
         }
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
+        /// that is associated with the sending authorization policy that permits you to specify a
+        /// particular "From" address in the header of the raw email.</p>
+        /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-FROM-ARN</code>
+        /// in the raw message of the email. If you use both the <code>FromArn</code> parameter and
+        /// the corresponding X-header, Amazon SES uses the value of the <code>FromArn</code>
+        /// parameter.</p>
+        /// <note>
+        /// <p>For information about when to use this parameter, see the description of
+        /// <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
+        /// </note>
         pub fn set_from_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.from_arn = input;
             self
@@ -8031,6 +8539,23 @@ pub mod send_raw_email_input {
             self.source_arn = Some(input.into());
             self
         }
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
+        /// that is associated with the sending authorization policy that permits you to send for
+        /// the email address specified in the <code>Source</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
+        /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
+        /// would specify the <code>SourceArn</code> to be
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
+        /// <code>Source</code> to be <code>user@example.com</code>.</p>
+        /// <p>Instead of using this parameter, you can use the X-header
+        /// <code>X-SES-SOURCE-ARN</code> in the raw message of the email. If you use both the
+        /// <code>SourceArn</code> parameter and the corresponding X-header, Amazon SES uses the
+        /// value of the <code>SourceArn</code> parameter.</p>
+        /// <note>
+        /// <p>For information about when to use this parameter, see the description of
+        /// <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
+        /// </note>
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_arn = input;
             self
@@ -8056,6 +8581,23 @@ pub mod send_raw_email_input {
             self.return_path_arn = Some(input.into());
             self
         }
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
+        /// that is associated with the sending authorization policy that permits you to use the
+        /// email address specified in the <code>ReturnPath</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
+        /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
+        /// would specify the <code>ReturnPathArn</code> to be
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
+        /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+        /// <p>Instead of using this parameter, you can use the X-header
+        /// <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use both
+        /// the <code>ReturnPathArn</code> parameter and the corresponding X-header, Amazon SES uses the
+        /// value of the <code>ReturnPathArn</code> parameter.</p>
+        /// <note>
+        /// <p>For information about when to use this parameter, see the description of
+        /// <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
+        /// </note>
         pub fn set_return_path_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8063,12 +8605,22 @@ pub mod send_raw_email_input {
             self.return_path_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
+        /// using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that
+        /// you define, so that you can publish email sending events.</p>
         pub fn tags(mut self, input: impl Into<crate::model::MessageTag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
+        /// using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that
+        /// you define, so that you can publish email sending events.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
@@ -8082,6 +8634,8 @@ pub mod send_raw_email_input {
             self.configuration_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration set to use when you send an email using
+        /// <code>SendRawEmail</code>.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8092,8 +8646,10 @@ pub mod send_raw_email_input {
         /// Consumes the builder and constructs a [`SendRawEmailInput`](crate::input::SendRawEmailInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::SendRawEmailInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::SendRawEmailInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SendRawEmailInput {
                 source: self.source,
                 destinations: self.destinations,
@@ -8118,16 +8674,16 @@ impl SendRawEmailInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SendRawEmail,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SendRawEmailInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8135,7 +8691,7 @@ impl SendRawEmailInput {
         fn update_http_builder(
             input: &crate::input::SendRawEmailInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8144,24 +8700,26 @@ impl SendRawEmailInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SendRawEmailInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_send_raw_email(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8184,22 +8742,27 @@ impl SendRawEmailInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::SendRawEmail::new())
-                .with_metadata(smithy_http::operation::Metadata::new("SendRawEmail", "ses"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SendRawEmail::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SendRawEmail",
+            "ses",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8255,6 +8818,25 @@ pub mod send_templated_email_input {
             self.source = Some(input.into());
             self
         }
+        /// <p>The email address that is sending the email. This email address must be either
+        /// individually verified with Amazon SES, or from a domain that has been verified with Amazon SES.
+        /// For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer
+        /// Guide</a>.</p>
+        /// <p>If you are sending on behalf of another user and have been permitted to do so by a
+        /// sending authorization policy, then you must also specify the <code>SourceArn</code>
+        /// parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+        /// <note>
+        /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
+        /// <i>local part</i> of a source email address (the part of the email
+        /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
+        /// characters</a>. If the <i>domain part</i> of an address (the
+        /// part after the @ sign) contains non-ASCII characters, they must be encoded using
+        /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
+        /// name</i>) may contain non-ASCII characters. These characters must be
+        /// encoded using MIME encoded-word syntax, as described in<a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
+        /// syntax uses the following form:
+        /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+        /// </note>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -8265,6 +8847,8 @@ pub mod send_templated_email_input {
             self.destination = Some(input);
             self
         }
+        /// <p>The destination for this email, composed of To:, CC:, and BCC: fields. A Destination
+        /// can include up to 50 recipients across these three fields.</p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::Destination>,
@@ -8272,12 +8856,20 @@ pub mod send_templated_email_input {
             self.destination = input;
             self
         }
+        /// Appends an item to `reply_to_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_reply_to_addresses`](Self::set_reply_to_addresses).
+        ///
+        /// <p>The reply-to email address(es) for the message. If the recipient replies to the
+        /// message, each reply-to address will receive the reply.</p>
         pub fn reply_to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.reply_to_addresses.unwrap_or_default();
             v.push(input.into());
             self.reply_to_addresses = Some(v);
             self
         }
+        /// <p>The reply-to email address(es) for the message. If the recipient replies to the
+        /// message, each reply-to address will receive the reply.</p>
         pub fn set_reply_to_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8296,6 +8888,13 @@ pub mod send_templated_email_input {
             self.return_path = Some(input.into());
             self
         }
+        /// <p>The email address that bounces and complaints will be forwarded to when feedback
+        /// forwarding is enabled. If the message cannot be delivered to the recipient, then an
+        /// error message will be returned from the recipient's ISP; this message will then be
+        /// forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
+        /// <code>ReturnPath</code> parameter is never overwritten. This email address must be
+        /// either individually verified with Amazon SES, or from a domain that has been verified with
+        /// Amazon SES. </p>
         pub fn set_return_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.return_path = input;
             self
@@ -8315,6 +8914,17 @@ pub mod send_templated_email_input {
             self.source_arn = Some(input.into());
             self
         }
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
+        /// that is associated with the sending authorization policy that permits you to send for
+        /// the email address specified in the <code>Source</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
+        /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
+        /// would specify the <code>SourceArn</code> to be
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
+        /// <code>Source</code> to be <code>user@example.com</code>.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+        /// Guide</a>.</p>
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_arn = input;
             self
@@ -8334,6 +8944,17 @@ pub mod send_templated_email_input {
             self.return_path_arn = Some(input.into());
             self
         }
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
+        /// that is associated with the sending authorization policy that permits you to use the
+        /// email address specified in the <code>ReturnPath</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
+        /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
+        /// would specify the <code>ReturnPathArn</code> to be
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
+        /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+        /// Guide</a>.</p>
         pub fn set_return_path_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8341,12 +8962,22 @@ pub mod send_templated_email_input {
             self.return_path_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
+        /// using <code>SendTemplatedEmail</code>. Tags correspond to characteristics of the email
+        /// that you define, so that you can publish email sending events.</p>
         pub fn tags(mut self, input: impl Into<crate::model::MessageTag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
+        /// using <code>SendTemplatedEmail</code>. Tags correspond to characteristics of the email
+        /// that you define, so that you can publish email sending events.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
@@ -8360,6 +8991,8 @@ pub mod send_templated_email_input {
             self.configuration_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration set to use when you send an email using
+        /// <code>SendTemplatedEmail</code>.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8372,6 +9005,7 @@ pub mod send_templated_email_input {
             self.template = Some(input.into());
             self
         }
+        /// <p>The template to use when sending this email.</p>
         pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template = input;
             self
@@ -8381,6 +9015,7 @@ pub mod send_templated_email_input {
             self.template_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the template to use when sending this email.</p>
         pub fn set_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_arn = input;
             self
@@ -8392,6 +9027,9 @@ pub mod send_templated_email_input {
             self.template_data = Some(input.into());
             self
         }
+        /// <p>A list of replacement values to apply to the template. This parameter is a JSON
+        /// object, typically consisting of key-value pairs in which the keys correspond to
+        /// replacement tags in the email template.</p>
         pub fn set_template_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8404,7 +9042,7 @@ pub mod send_templated_email_input {
             self,
         ) -> std::result::Result<
             crate::input::SendTemplatedEmailInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SendTemplatedEmailInput {
                 source: self.source,
@@ -8433,16 +9071,16 @@ impl SendTemplatedEmailInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SendTemplatedEmail,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SendTemplatedEmailInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8450,7 +9088,7 @@ impl SendTemplatedEmailInput {
         fn update_http_builder(
             input: &crate::input::SendTemplatedEmailInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8459,25 +9097,27 @@ impl SendTemplatedEmailInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SendTemplatedEmailInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_send_templated_email(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8500,15 +9140,15 @@ impl SendTemplatedEmailInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SendTemplatedEmail::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SendTemplatedEmail",
             "ses",
         ));
@@ -8517,10 +9157,10 @@ impl SendTemplatedEmailInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8549,6 +9189,8 @@ pub mod set_active_receipt_rule_set_input {
             self.rule_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the receipt rule set to make active. Setting this value to null disables
+        /// all email receiving.</p>
         pub fn set_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8561,7 +9203,7 @@ pub mod set_active_receipt_rule_set_input {
             self,
         ) -> std::result::Result<
             crate::input::SetActiveReceiptRuleSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetActiveReceiptRuleSetInput {
                 rule_set_name: self.rule_set_name,
@@ -8581,16 +9223,16 @@ impl SetActiveReceiptRuleSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetActiveReceiptRuleSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetActiveReceiptRuleSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8598,7 +9240,7 @@ impl SetActiveReceiptRuleSetInput {
         fn update_http_builder(
             input: &crate::input::SetActiveReceiptRuleSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8607,27 +9249,29 @@ impl SetActiveReceiptRuleSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetActiveReceiptRuleSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_active_receipt_rule_set(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8650,15 +9294,15 @@ impl SetActiveReceiptRuleSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetActiveReceiptRuleSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetActiveReceiptRuleSet",
             "ses",
         ));
@@ -8667,10 +9311,10 @@ impl SetActiveReceiptRuleSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8699,6 +9343,7 @@ pub mod set_identity_dkim_enabled_input {
             self.identity = Some(input.into());
             self
         }
+        /// <p>The identity for which DKIM signing should be enabled or disabled.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
@@ -8709,6 +9354,8 @@ pub mod set_identity_dkim_enabled_input {
             self.dkim_enabled = Some(input);
             self
         }
+        /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to
+        /// enable DKIM signing for this identity; <code>false</code> to disable it. </p>
         pub fn set_dkim_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.dkim_enabled = input;
             self
@@ -8718,7 +9365,7 @@ pub mod set_identity_dkim_enabled_input {
             self,
         ) -> std::result::Result<
             crate::input::SetIdentityDkimEnabledInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetIdentityDkimEnabledInput {
                 identity: self.identity,
@@ -8738,16 +9385,16 @@ impl SetIdentityDkimEnabledInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetIdentityDkimEnabled,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetIdentityDkimEnabledInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8755,7 +9402,7 @@ impl SetIdentityDkimEnabledInput {
         fn update_http_builder(
             input: &crate::input::SetIdentityDkimEnabledInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8764,27 +9411,29 @@ impl SetIdentityDkimEnabledInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetIdentityDkimEnabledInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_identity_dkim_enabled(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8807,15 +9456,15 @@ impl SetIdentityDkimEnabledInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetIdentityDkimEnabled::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetIdentityDkimEnabled",
             "ses",
         ));
@@ -8824,10 +9473,10 @@ impl SetIdentityDkimEnabledInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8857,6 +9506,8 @@ pub mod set_identity_feedback_forwarding_enabled_input {
             self.identity = Some(input.into());
             self
         }
+        /// <p>The identity for which to set bounce and complaint notification forwarding. Examples:
+        /// <code>user@example.com</code>, <code>example.com</code>.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
@@ -8872,6 +9523,13 @@ pub mod set_identity_feedback_forwarding_enabled_input {
             self.forwarding_enabled = Some(input);
             self
         }
+        /// <p>Sets whether Amazon SES will forward bounce and complaint notifications as email.
+        /// <code>true</code> specifies that Amazon SES will forward bounce and complaint
+        /// notifications as email, in addition to any Amazon SNS topic publishing otherwise specified.
+        /// <code>false</code> specifies that Amazon SES will publish bounce and complaint
+        /// notifications only through Amazon SNS. This value can only be set to <code>false</code> when
+        /// Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code>
+        /// notification types.</p>
         pub fn set_forwarding_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.forwarding_enabled = input;
             self
@@ -8881,7 +9539,7 @@ pub mod set_identity_feedback_forwarding_enabled_input {
             self,
         ) -> std::result::Result<
             crate::input::SetIdentityFeedbackForwardingEnabledInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetIdentityFeedbackForwardingEnabledInput {
                 identity: self.identity,
@@ -8903,16 +9561,16 @@ impl SetIdentityFeedbackForwardingEnabledInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetIdentityFeedbackForwardingEnabled,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetIdentityFeedbackForwardingEnabledInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8920,7 +9578,7 @@ impl SetIdentityFeedbackForwardingEnabledInput {
         fn update_http_builder(
             input: &crate::input::SetIdentityFeedbackForwardingEnabledInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8929,25 +9587,25 @@ impl SetIdentityFeedbackForwardingEnabledInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetIdentityFeedbackForwardingEnabledInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_identity_feedback_forwarding_enabled(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_set_identity_feedback_forwarding_enabled(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8970,15 +9628,15 @@ impl SetIdentityFeedbackForwardingEnabledInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetIdentityFeedbackForwardingEnabled::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetIdentityFeedbackForwardingEnabled",
             "ses",
         ));
@@ -8987,10 +9645,10 @@ impl SetIdentityFeedbackForwardingEnabledInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9021,6 +9679,8 @@ pub mod set_identity_headers_in_notifications_enabled_input {
             self.identity = Some(input.into());
             self
         }
+        /// <p>The identity for which to enable or disable headers in notifications. Examples:
+        /// <code>user@example.com</code>, <code>example.com</code>.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
@@ -9030,6 +9690,7 @@ pub mod set_identity_headers_in_notifications_enabled_input {
             self.notification_type = Some(input);
             self
         }
+        /// <p>The notification type for which to enable or disable headers in notifications. </p>
         pub fn set_notification_type(
             mut self,
             input: std::option::Option<crate::model::NotificationType>,
@@ -9047,6 +9708,12 @@ pub mod set_identity_headers_in_notifications_enabled_input {
             self.enabled = Some(input);
             self
         }
+        /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the
+        /// specified notification type. A value of <code>true</code> specifies that Amazon SES will
+        /// include headers in notifications, and a value of <code>false</code> specifies that Amazon SES
+        /// will not include headers in notifications.</p>
+        /// <p>This value can only be set when <code>NotificationType</code> is already set to use a
+        /// particular Amazon SNS topic.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -9056,7 +9723,7 @@ pub mod set_identity_headers_in_notifications_enabled_input {
             self,
         ) -> std::result::Result<
             crate::input::SetIdentityHeadersInNotificationsEnabledInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::SetIdentityHeadersInNotificationsEnabledInput {
@@ -9081,16 +9748,16 @@ impl SetIdentityHeadersInNotificationsEnabledInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetIdentityHeadersInNotificationsEnabled,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetIdentityHeadersInNotificationsEnabledInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9098,7 +9765,7 @@ impl SetIdentityHeadersInNotificationsEnabledInput {
         fn update_http_builder(
             input: &crate::input::SetIdentityHeadersInNotificationsEnabledInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9107,25 +9774,25 @@ impl SetIdentityHeadersInNotificationsEnabledInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetIdentityHeadersInNotificationsEnabledInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_identity_headers_in_notifications_enabled(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_set_identity_headers_in_notifications_enabled(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9148,15 +9815,15 @@ impl SetIdentityHeadersInNotificationsEnabledInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetIdentityHeadersInNotificationsEnabled::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetIdentityHeadersInNotificationsEnabled",
             "ses",
         ));
@@ -9165,10 +9832,10 @@ impl SetIdentityHeadersInNotificationsEnabledInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9199,6 +9866,8 @@ pub mod set_identity_mail_from_domain_input {
             self.identity = Some(input.into());
             self
         }
+        /// <p>The verified identity for which you want to enable or disable the specified custom
+        /// MAIL FROM domain.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
@@ -9213,6 +9882,12 @@ pub mod set_identity_mail_from_domain_input {
             self.mail_from_domain = Some(input.into());
             self
         }
+        /// <p>The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM
+        /// domain must 1) be a subdomain of the verified identity, 2) not be used in a "From"
+        /// address if the MAIL FROM domain is the destination of email feedback forwarding (for
+        /// more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and
+        /// 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL
+        /// FROM setting for the identity.</p>
         pub fn set_mail_from_domain(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9232,6 +9907,14 @@ pub mod set_identity_mail_from_domain_input {
             self.behavior_on_mx_failure = Some(input);
             self
         }
+        /// <p>The action that you want Amazon SES to take if it cannot successfully read the required MX
+        /// record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES will
+        /// use amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose
+        /// <code>RejectMessage</code>, Amazon SES will return a
+        /// <code>MailFromDomainNotVerified</code> error and not send the email.</p>
+        /// <p>The action specified in <code>BehaviorOnMXFailure</code> is taken when the custom MAIL
+        /// FROM domain setup is in the <code>Pending</code>, <code>Failed</code>, and
+        /// <code>TemporaryFailure</code> states.</p>
         pub fn set_behavior_on_mx_failure(
             mut self,
             input: std::option::Option<crate::model::BehaviorOnMxFailure>,
@@ -9244,7 +9927,7 @@ pub mod set_identity_mail_from_domain_input {
             self,
         ) -> std::result::Result<
             crate::input::SetIdentityMailFromDomainInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetIdentityMailFromDomainInput {
                 identity: self.identity,
@@ -9266,16 +9949,16 @@ impl SetIdentityMailFromDomainInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetIdentityMailFromDomain,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetIdentityMailFromDomainInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9283,7 +9966,7 @@ impl SetIdentityMailFromDomainInput {
         fn update_http_builder(
             input: &crate::input::SetIdentityMailFromDomainInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9292,25 +9975,25 @@ impl SetIdentityMailFromDomainInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetIdentityMailFromDomainInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_identity_mail_from_domain(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_set_identity_mail_from_domain(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9333,15 +10016,15 @@ impl SetIdentityMailFromDomainInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetIdentityMailFromDomain::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetIdentityMailFromDomain",
             "ses",
         ));
@@ -9350,10 +10033,10 @@ impl SetIdentityMailFromDomainInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9391,6 +10074,15 @@ pub mod set_identity_notification_topic_input {
             self.identity = Some(input.into());
             self
         }
+        /// <p>The identity (email address or domain) that you want to set the Amazon SNS topic
+        /// for.</p>
+        /// <important>
+        /// <p>You can only specify a verified identity for this parameter.</p>
+        /// </important>
+        /// <p>You can specify an identity by using its name or by using its Amazon Resource Name
+        /// (ARN). The following examples are all valid identities: <code>sender@example.com</code>,
+        /// <code>example.com</code>,
+        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
@@ -9400,6 +10092,7 @@ pub mod set_identity_notification_topic_input {
             self.notification_type = Some(input);
             self
         }
+        /// <p>The type of notifications that will be published to the specified Amazon SNS topic.</p>
         pub fn set_notification_type(
             mut self,
             input: std::option::Option<crate::model::NotificationType>,
@@ -9414,6 +10107,9 @@ pub mod set_identity_notification_topic_input {
             self.sns_topic = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from
+        /// the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing
+        /// is disabled.</p>
         pub fn set_sns_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sns_topic = input;
             self
@@ -9423,7 +10119,7 @@ pub mod set_identity_notification_topic_input {
             self,
         ) -> std::result::Result<
             crate::input::SetIdentityNotificationTopicInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetIdentityNotificationTopicInput {
                 identity: self.identity,
@@ -9445,16 +10141,16 @@ impl SetIdentityNotificationTopicInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetIdentityNotificationTopic,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetIdentityNotificationTopicInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9462,7 +10158,7 @@ impl SetIdentityNotificationTopicInput {
         fn update_http_builder(
             input: &crate::input::SetIdentityNotificationTopicInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9471,25 +10167,25 @@ impl SetIdentityNotificationTopicInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetIdentityNotificationTopicInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_identity_notification_topic(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_set_identity_notification_topic(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9512,15 +10208,15 @@ impl SetIdentityNotificationTopicInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetIdentityNotificationTopic::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetIdentityNotificationTopic",
             "ses",
         ));
@@ -9529,10 +10225,10 @@ impl SetIdentityNotificationTopicInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9562,6 +10258,7 @@ pub mod set_receipt_rule_position_input {
             self.rule_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the receipt rule set that contains the receipt rule to reposition.</p>
         pub fn set_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9574,6 +10271,7 @@ pub mod set_receipt_rule_position_input {
             self.rule_name = Some(input.into());
             self
         }
+        /// <p>The name of the receipt rule to reposition.</p>
         pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_name = input;
             self
@@ -9583,6 +10281,7 @@ pub mod set_receipt_rule_position_input {
             self.after = Some(input.into());
             self
         }
+        /// <p>The name of the receipt rule after which to place the specified receipt rule.</p>
         pub fn set_after(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.after = input;
             self
@@ -9592,7 +10291,7 @@ pub mod set_receipt_rule_position_input {
             self,
         ) -> std::result::Result<
             crate::input::SetReceiptRulePositionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetReceiptRulePositionInput {
                 rule_set_name: self.rule_set_name,
@@ -9613,16 +10312,16 @@ impl SetReceiptRulePositionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetReceiptRulePosition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetReceiptRulePositionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9630,7 +10329,7 @@ impl SetReceiptRulePositionInput {
         fn update_http_builder(
             input: &crate::input::SetReceiptRulePositionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9639,27 +10338,29 @@ impl SetReceiptRulePositionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetReceiptRulePositionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_receipt_rule_position(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9682,15 +10383,15 @@ impl SetReceiptRulePositionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetReceiptRulePosition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetReceiptRulePosition",
             "ses",
         ));
@@ -9699,10 +10400,10 @@ impl SetReceiptRulePositionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9731,6 +10432,7 @@ pub mod test_render_template_input {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the template that you want to render.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9745,6 +10447,9 @@ pub mod test_render_template_input {
             self.template_data = Some(input.into());
             self
         }
+        /// <p>A list of replacement values to apply to the template. This parameter is a JSON
+        /// object, typically consisting of key-value pairs in which the keys correspond to
+        /// replacement tags in the email template.</p>
         pub fn set_template_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9757,7 +10462,7 @@ pub mod test_render_template_input {
             self,
         ) -> std::result::Result<
             crate::input::TestRenderTemplateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::TestRenderTemplateInput {
                 template_name: self.template_name,
@@ -9777,16 +10482,16 @@ impl TestRenderTemplateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TestRenderTemplate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TestRenderTemplateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9794,7 +10499,7 @@ impl TestRenderTemplateInput {
         fn update_http_builder(
             input: &crate::input::TestRenderTemplateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9803,25 +10508,27 @@ impl TestRenderTemplateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TestRenderTemplateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_test_render_template(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9844,15 +10551,15 @@ impl TestRenderTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::TestRenderTemplate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "TestRenderTemplate",
             "ses",
         ));
@@ -9861,10 +10568,10 @@ impl TestRenderTemplateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9893,6 +10600,8 @@ pub mod update_account_sending_enabled_input {
             self.enabled = Some(input);
             self
         }
+        /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the
+        /// current AWS Region.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -9902,7 +10611,7 @@ pub mod update_account_sending_enabled_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateAccountSendingEnabledInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateAccountSendingEnabledInput {
                 enabled: self.enabled.unwrap_or_default(),
@@ -9922,16 +10631,16 @@ impl UpdateAccountSendingEnabledInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateAccountSendingEnabled,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateAccountSendingEnabledInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9939,7 +10648,7 @@ impl UpdateAccountSendingEnabledInput {
         fn update_http_builder(
             input: &crate::input::UpdateAccountSendingEnabledInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9948,25 +10657,25 @@ impl UpdateAccountSendingEnabledInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateAccountSendingEnabledInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_account_sending_enabled(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_account_sending_enabled(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9989,15 +10698,15 @@ impl UpdateAccountSendingEnabledInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateAccountSendingEnabled::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateAccountSendingEnabled",
             "ses",
         ));
@@ -10006,10 +10715,10 @@ impl UpdateAccountSendingEnabledInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10039,6 +10748,8 @@ pub mod update_configuration_set_event_destination_input {
             self.configuration_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration set that contains the event destination that you want to
+        /// update.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10052,6 +10763,8 @@ pub mod update_configuration_set_event_destination_input {
             self.event_destination = Some(input);
             self
         }
+        /// <p>The event destination object that you want to apply to the specified configuration
+        /// set.</p>
         pub fn set_event_destination(
             mut self,
             input: std::option::Option<crate::model::EventDestination>,
@@ -10064,7 +10777,7 @@ pub mod update_configuration_set_event_destination_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateConfigurationSetEventDestinationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateConfigurationSetEventDestinationInput {
                 configuration_set_name: self.configuration_set_name,
@@ -10086,16 +10799,16 @@ impl UpdateConfigurationSetEventDestinationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateConfigurationSetEventDestination,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateConfigurationSetEventDestinationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10103,7 +10816,7 @@ impl UpdateConfigurationSetEventDestinationInput {
         fn update_http_builder(
             input: &crate::input::UpdateConfigurationSetEventDestinationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10112,25 +10825,25 @@ impl UpdateConfigurationSetEventDestinationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateConfigurationSetEventDestinationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_event_destination(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_event_destination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10153,15 +10866,15 @@ impl UpdateConfigurationSetEventDestinationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateConfigurationSetEventDestination::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateConfigurationSetEventDestination",
             "ses",
         ));
@@ -10170,10 +10883,10 @@ impl UpdateConfigurationSetEventDestinationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10202,6 +10915,7 @@ pub mod update_configuration_set_reputation_metrics_enabled_input {
             self.configuration_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration set that you want to update.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10215,6 +10929,8 @@ pub mod update_configuration_set_reputation_metrics_enabled_input {
             self.enabled = Some(input);
             self
         }
+        /// <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration
+        /// set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -10224,7 +10940,7 @@ pub mod update_configuration_set_reputation_metrics_enabled_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateConfigurationSetReputationMetricsEnabledInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::UpdateConfigurationSetReputationMetricsEnabledInput {
@@ -10248,16 +10964,16 @@ impl UpdateConfigurationSetReputationMetricsEnabledInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateConfigurationSetReputationMetricsEnabled,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateConfigurationSetReputationMetricsEnabledInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10265,7 +10981,7 @@ impl UpdateConfigurationSetReputationMetricsEnabledInput {
         fn update_http_builder(
             input: &crate::input::UpdateConfigurationSetReputationMetricsEnabledInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10274,25 +10990,25 @@ impl UpdateConfigurationSetReputationMetricsEnabledInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateConfigurationSetReputationMetricsEnabledInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_reputation_metrics_enabled(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_reputation_metrics_enabled(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10315,15 +11031,15 @@ impl UpdateConfigurationSetReputationMetricsEnabledInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateConfigurationSetReputationMetricsEnabled::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateConfigurationSetReputationMetricsEnabled",
             "ses",
         ));
@@ -10332,10 +11048,10 @@ impl UpdateConfigurationSetReputationMetricsEnabledInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10365,6 +11081,7 @@ pub mod update_configuration_set_sending_enabled_input {
             self.configuration_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration set that you want to update.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10378,6 +11095,8 @@ pub mod update_configuration_set_sending_enabled_input {
             self.enabled = Some(input);
             self
         }
+        /// <p>Describes whether email sending is enabled or disabled for the configuration set.
+        /// </p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -10387,7 +11106,7 @@ pub mod update_configuration_set_sending_enabled_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateConfigurationSetSendingEnabledInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateConfigurationSetSendingEnabledInput {
                 configuration_set_name: self.configuration_set_name,
@@ -10409,16 +11128,16 @@ impl UpdateConfigurationSetSendingEnabledInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateConfigurationSetSendingEnabled,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateConfigurationSetSendingEnabledInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10426,7 +11145,7 @@ impl UpdateConfigurationSetSendingEnabledInput {
         fn update_http_builder(
             input: &crate::input::UpdateConfigurationSetSendingEnabledInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10435,25 +11154,25 @@ impl UpdateConfigurationSetSendingEnabledInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateConfigurationSetSendingEnabledInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_sending_enabled(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_sending_enabled(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10476,15 +11195,15 @@ impl UpdateConfigurationSetSendingEnabledInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateConfigurationSetSendingEnabled::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateConfigurationSetSendingEnabled",
             "ses",
         ));
@@ -10493,10 +11212,10 @@ impl UpdateConfigurationSetSendingEnabledInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10526,6 +11245,8 @@ pub mod update_configuration_set_tracking_options_input {
             self.configuration_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration set for which you want to update the custom tracking
+        /// domain.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10542,6 +11263,11 @@ pub mod update_configuration_set_tracking_options_input {
             self.tracking_options = Some(input);
             self
         }
+        /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This
+        /// domain captures open and click events generated by Amazon SES emails.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+        /// Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES
+        /// Developer Guide</i>.</p>
         pub fn set_tracking_options(
             mut self,
             input: std::option::Option<crate::model::TrackingOptions>,
@@ -10554,7 +11280,7 @@ pub mod update_configuration_set_tracking_options_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateConfigurationSetTrackingOptionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateConfigurationSetTrackingOptionsInput {
                 configuration_set_name: self.configuration_set_name,
@@ -10576,16 +11302,16 @@ impl UpdateConfigurationSetTrackingOptionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateConfigurationSetTrackingOptions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateConfigurationSetTrackingOptionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10593,7 +11319,7 @@ impl UpdateConfigurationSetTrackingOptionsInput {
         fn update_http_builder(
             input: &crate::input::UpdateConfigurationSetTrackingOptionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10602,25 +11328,25 @@ impl UpdateConfigurationSetTrackingOptionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateConfigurationSetTrackingOptionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_tracking_options(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_configuration_set_tracking_options(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10643,15 +11369,15 @@ impl UpdateConfigurationSetTrackingOptionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateConfigurationSetTrackingOptions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateConfigurationSetTrackingOptions",
             "ses",
         ));
@@ -10660,10 +11386,10 @@ impl UpdateConfigurationSetTrackingOptionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10696,6 +11422,7 @@ pub mod update_custom_verification_email_template_input {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the custom verification email template that you want to update.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10708,6 +11435,7 @@ pub mod update_custom_verification_email_template_input {
             self.from_email_address = Some(input.into());
             self
         }
+        /// <p>The email address that the custom verification email is sent from.</p>
         pub fn set_from_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10720,6 +11448,7 @@ pub mod update_custom_verification_email_template_input {
             self.template_subject = Some(input.into());
             self
         }
+        /// <p>The subject line of the custom verification email.</p>
         pub fn set_template_subject(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10735,6 +11464,10 @@ pub mod update_custom_verification_email_template_input {
             self.template_content = Some(input.into());
             self
         }
+        /// <p>The content of the custom verification email. The total size of the email must be less
+        /// than 10 MB. The message body may contain HTML, with some limitations. For more
+        /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
+        /// Developer Guide</i>.</p>
         pub fn set_template_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10748,6 +11481,8 @@ pub mod update_custom_verification_email_template_input {
             self.success_redirection_url = Some(input.into());
             self
         }
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address
+        /// is successfully verified.</p>
         pub fn set_success_redirection_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10761,6 +11496,8 @@ pub mod update_custom_verification_email_template_input {
             self.failure_redirection_url = Some(input.into());
             self
         }
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address
+        /// is not successfully verified.</p>
         pub fn set_failure_redirection_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10773,7 +11510,7 @@ pub mod update_custom_verification_email_template_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateCustomVerificationEmailTemplateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateCustomVerificationEmailTemplateInput {
                 template_name: self.template_name,
@@ -10799,16 +11536,16 @@ impl UpdateCustomVerificationEmailTemplateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateCustomVerificationEmailTemplate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateCustomVerificationEmailTemplateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10816,7 +11553,7 @@ impl UpdateCustomVerificationEmailTemplateInput {
         fn update_http_builder(
             input: &crate::input::UpdateCustomVerificationEmailTemplateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10825,25 +11562,25 @@ impl UpdateCustomVerificationEmailTemplateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateCustomVerificationEmailTemplateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_custom_verification_email_template(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_custom_verification_email_template(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10866,15 +11603,15 @@ impl UpdateCustomVerificationEmailTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateCustomVerificationEmailTemplate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateCustomVerificationEmailTemplate",
             "ses",
         ));
@@ -10883,10 +11620,10 @@ impl UpdateCustomVerificationEmailTemplateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10915,6 +11652,7 @@ pub mod update_receipt_rule_input {
             self.rule_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
         pub fn set_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10927,6 +11665,7 @@ pub mod update_receipt_rule_input {
             self.rule = Some(input);
             self
         }
+        /// <p>A data structure that contains the updated receipt rule information.</p>
         pub fn set_rule(mut self, input: std::option::Option<crate::model::ReceiptRule>) -> Self {
             self.rule = input;
             self
@@ -10936,7 +11675,7 @@ pub mod update_receipt_rule_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateReceiptRuleInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateReceiptRuleInput {
                 rule_set_name: self.rule_set_name,
@@ -10956,16 +11695,16 @@ impl UpdateReceiptRuleInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateReceiptRule,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateReceiptRuleInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10973,7 +11712,7 @@ impl UpdateReceiptRuleInput {
         fn update_http_builder(
             input: &crate::input::UpdateReceiptRuleInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10982,27 +11721,27 @@ impl UpdateReceiptRuleInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateReceiptRuleInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_receipt_rule(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11025,15 +11764,15 @@ impl UpdateReceiptRuleInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateReceiptRule::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateReceiptRule",
             "ses",
         ));
@@ -11042,10 +11781,10 @@ impl UpdateReceiptRuleInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11074,6 +11813,8 @@ pub mod update_template_input {
             self.template = Some(input);
             self
         }
+        /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
+        /// part.</p>
         pub fn set_template(mut self, input: std::option::Option<crate::model::Template>) -> Self {
             self.template = input;
             self
@@ -11083,7 +11824,7 @@ pub mod update_template_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateTemplateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateTemplateInput {
                 template: self.template,
@@ -11102,16 +11843,16 @@ impl UpdateTemplateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateTemplate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateTemplateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11119,7 +11860,7 @@ impl UpdateTemplateInput {
         fn update_http_builder(
             input: &crate::input::UpdateTemplateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11128,24 +11869,26 @@ impl UpdateTemplateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateTemplateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_template(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11168,15 +11911,15 @@ impl UpdateTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateTemplate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateTemplate",
             "ses",
         ));
@@ -11185,10 +11928,10 @@ impl UpdateTemplateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11216,6 +11959,7 @@ pub mod verify_domain_dkim_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The name of the domain to be verified for Easy DKIM signing.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -11225,7 +11969,7 @@ pub mod verify_domain_dkim_input {
             self,
         ) -> std::result::Result<
             crate::input::VerifyDomainDkimInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::VerifyDomainDkimInput {
                 domain: self.domain,
@@ -11244,16 +11988,16 @@ impl VerifyDomainDkimInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::VerifyDomainDkim,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::VerifyDomainDkimInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11261,7 +12005,7 @@ impl VerifyDomainDkimInput {
         fn update_http_builder(
             input: &crate::input::VerifyDomainDkimInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11270,27 +12014,27 @@ impl VerifyDomainDkimInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::VerifyDomainDkimInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_verify_domain_dkim(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11313,15 +12057,15 @@ impl VerifyDomainDkimInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::VerifyDomainDkim::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "VerifyDomainDkim",
             "ses",
         ));
@@ -11330,10 +12074,10 @@ impl VerifyDomainDkimInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11361,6 +12105,7 @@ pub mod verify_domain_identity_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The domain to be verified.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -11370,7 +12115,7 @@ pub mod verify_domain_identity_input {
             self,
         ) -> std::result::Result<
             crate::input::VerifyDomainIdentityInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::VerifyDomainIdentityInput {
                 domain: self.domain,
@@ -11389,16 +12134,16 @@ impl VerifyDomainIdentityInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::VerifyDomainIdentity,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::VerifyDomainIdentityInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11406,7 +12151,7 @@ impl VerifyDomainIdentityInput {
         fn update_http_builder(
             input: &crate::input::VerifyDomainIdentityInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11415,27 +12160,27 @@ impl VerifyDomainIdentityInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::VerifyDomainIdentityInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_verify_domain_identity(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11458,15 +12203,15 @@ impl VerifyDomainIdentityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::VerifyDomainIdentity::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "VerifyDomainIdentity",
             "ses",
         ));
@@ -11475,10 +12220,10 @@ impl VerifyDomainIdentityInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11506,6 +12251,7 @@ pub mod verify_email_address_input {
             self.email_address = Some(input.into());
             self
         }
+        /// <p>The email address to be verified.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11518,7 +12264,7 @@ pub mod verify_email_address_input {
             self,
         ) -> std::result::Result<
             crate::input::VerifyEmailAddressInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::VerifyEmailAddressInput {
                 email_address: self.email_address,
@@ -11537,16 +12283,16 @@ impl VerifyEmailAddressInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::VerifyEmailAddress,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::VerifyEmailAddressInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11554,7 +12300,7 @@ impl VerifyEmailAddressInput {
         fn update_http_builder(
             input: &crate::input::VerifyEmailAddressInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11563,25 +12309,27 @@ impl VerifyEmailAddressInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::VerifyEmailAddressInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_verify_email_address(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11604,15 +12352,15 @@ impl VerifyEmailAddressInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::VerifyEmailAddress::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "VerifyEmailAddress",
             "ses",
         ));
@@ -11621,10 +12369,10 @@ impl VerifyEmailAddressInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11652,6 +12400,7 @@ pub mod verify_email_identity_input {
             self.email_address = Some(input.into());
             self
         }
+        /// <p>The email address to be verified.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11664,7 +12413,7 @@ pub mod verify_email_identity_input {
             self,
         ) -> std::result::Result<
             crate::input::VerifyEmailIdentityInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::VerifyEmailIdentityInput {
                 email_address: self.email_address,
@@ -11683,16 +12432,16 @@ impl VerifyEmailIdentityInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::VerifyEmailIdentity,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::VerifyEmailIdentityInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11700,7 +12449,7 @@ impl VerifyEmailIdentityInput {
         fn update_http_builder(
             input: &crate::input::VerifyEmailIdentityInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11709,27 +12458,27 @@ impl VerifyEmailIdentityInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::VerifyEmailIdentityInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_verify_email_identity(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11752,15 +12501,15 @@ impl VerifyEmailIdentityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::VerifyEmailIdentity::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "VerifyEmailIdentity",
             "ses",
         ));
@@ -11769,10 +12518,10 @@ impl VerifyEmailIdentityInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11855,6 +12604,7 @@ impl std::fmt::Debug for VerifyDomainDkimInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTemplateInput {
@@ -12028,6 +12778,7 @@ impl std::fmt::Debug for UpdateAccountSendingEnabledInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestRenderTemplateInput {
@@ -12353,6 +13104,7 @@ pub struct SendRawEmailInput {
     /// syntax uses the following form:
     /// <code>=?charset?encoding?encoded-text?=</code>.</p>
     /// </note>
+    ///
     /// <p>If you specify the <code>Source</code> parameter and have feedback forwarding enabled,
     /// then bounces and complaints will be sent to this email address. This takes precedence
     /// over any Return-Path header that you might include in the raw text of the
@@ -12793,6 +13545,7 @@ impl std::fmt::Debug for PutConfigurationSetDeliveryOptionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVerifiedEmailAddressesInput {}
@@ -12803,6 +13556,7 @@ impl std::fmt::Debug for ListVerifiedEmailAddressesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTemplatesInput {
@@ -12950,6 +13704,7 @@ impl std::fmt::Debug for ListConfigurationSetsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTemplateInput {
@@ -12964,6 +13719,7 @@ impl std::fmt::Debug for GetTemplateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSendStatisticsInput {}
@@ -12974,6 +13730,7 @@ impl std::fmt::Debug for GetSendStatisticsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSendQuotaInput {}
@@ -13100,6 +13857,7 @@ impl std::fmt::Debug for GetCustomVerificationEmailTemplateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountSendingEnabledInput {}

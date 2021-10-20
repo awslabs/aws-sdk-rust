@@ -27,7 +27,7 @@ pub fn parse_accept_qualification_request_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -48,7 +48,7 @@ pub fn parse_accept_qualification_request_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -102,7 +102,7 @@ pub fn parse_approve_assignment_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -123,7 +123,7 @@ pub fn parse_approve_assignment_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -179,7 +179,7 @@ pub fn parse_associate_qualification_with_worker_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -200,7 +200,7 @@ pub fn parse_associate_qualification_with_worker_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -259,7 +259,7 @@ pub fn parse_create_additional_assignments_for_hit_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -280,7 +280,7 @@ pub fn parse_create_additional_assignments_for_hit_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -334,7 +334,7 @@ pub fn parse_create_hit_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -355,7 +355,7 @@ pub fn parse_create_hit_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -410,7 +410,7 @@ pub fn parse_create_hit_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -431,7 +431,7 @@ pub fn parse_create_hit_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -489,7 +489,7 @@ pub fn parse_create_hit_with_hit_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -510,7 +510,7 @@ pub fn parse_create_hit_with_hit_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -575,7 +575,7 @@ pub fn parse_create_qualification_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -596,7 +596,7 @@ pub fn parse_create_qualification_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -655,7 +655,7 @@ pub fn parse_create_worker_block_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -676,7 +676,7 @@ pub fn parse_create_worker_block_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -727,7 +727,7 @@ pub fn parse_delete_hit_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -748,7 +748,7 @@ pub fn parse_delete_hit_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -805,7 +805,7 @@ pub fn parse_delete_qualification_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -826,7 +826,7 @@ pub fn parse_delete_qualification_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -880,7 +880,7 @@ pub fn parse_delete_worker_block_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -901,7 +901,7 @@ pub fn parse_delete_worker_block_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -957,7 +957,7 @@ pub fn parse_disassociate_qualification_from_worker_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -978,7 +978,7 @@ pub fn parse_disassociate_qualification_from_worker_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1033,7 +1033,7 @@ pub fn parse_get_account_balance_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1054,7 +1054,7 @@ pub fn parse_get_account_balance_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1110,7 +1110,7 @@ pub fn parse_get_assignment_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1131,7 +1131,7 @@ pub fn parse_get_assignment_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1187,7 +1187,7 @@ pub fn parse_get_file_upload_url_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1208,7 +1208,7 @@ pub fn parse_get_file_upload_url_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1264,7 +1264,7 @@ pub fn parse_get_hit_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1285,7 +1285,7 @@ pub fn parse_get_hit_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1343,7 +1343,7 @@ pub fn parse_get_qualification_score_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1364,7 +1364,7 @@ pub fn parse_get_qualification_score_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1425,7 +1425,7 @@ pub fn parse_get_qualification_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1446,7 +1446,7 @@ pub fn parse_get_qualification_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1507,7 +1507,7 @@ pub fn parse_list_assignments_for_hit_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1528,7 +1528,7 @@ pub fn parse_list_assignments_for_hit_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1587,7 +1587,7 @@ pub fn parse_list_bonus_payments_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1608,7 +1608,7 @@ pub fn parse_list_bonus_payments_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1664,7 +1664,7 @@ pub fn parse_list_hi_ts_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1685,7 +1685,7 @@ pub fn parse_list_hi_ts_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1747,7 +1747,7 @@ pub fn parse_list_hi_ts_for_qualification_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1768,7 +1768,7 @@ pub fn parse_list_hi_ts_for_qualification_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1835,7 +1835,7 @@ pub fn parse_list_qualification_requests_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1856,7 +1856,7 @@ pub fn parse_list_qualification_requests_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1921,7 +1921,7 @@ pub fn parse_list_qualification_types_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -1942,7 +1942,7 @@ pub fn parse_list_qualification_types_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2003,7 +2003,7 @@ pub fn parse_list_reviewable_hi_ts_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2024,7 +2024,7 @@ pub fn parse_list_reviewable_hi_ts_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2089,7 +2089,7 @@ pub fn parse_list_review_policy_results_for_hit_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2110,7 +2110,7 @@ pub fn parse_list_review_policy_results_for_hit_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2171,7 +2171,7 @@ pub fn parse_list_worker_blocks_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2192,7 +2192,7 @@ pub fn parse_list_worker_blocks_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2253,7 +2253,7 @@ pub fn parse_list_workers_with_qualification_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2274,7 +2274,7 @@ pub fn parse_list_workers_with_qualification_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2329,7 +2329,7 @@ pub fn parse_notify_workers_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2350,7 +2350,7 @@ pub fn parse_notify_workers_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2406,7 +2406,7 @@ pub fn parse_reject_assignment_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2427,7 +2427,7 @@ pub fn parse_reject_assignment_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2485,7 +2485,7 @@ pub fn parse_reject_qualification_request_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2506,7 +2506,7 @@ pub fn parse_reject_qualification_request_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2559,7 +2559,7 @@ pub fn parse_send_bonus_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2580,7 +2580,7 @@ pub fn parse_send_bonus_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2637,7 +2637,7 @@ pub fn parse_send_test_event_notification_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2658,7 +2658,7 @@ pub fn parse_send_test_event_notification_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2718,7 +2718,7 @@ pub fn parse_update_expiration_for_hit_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2739,7 +2739,7 @@ pub fn parse_update_expiration_for_hit_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2795,7 +2795,7 @@ pub fn parse_update_hit_review_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2816,7 +2816,7 @@ pub fn parse_update_hit_review_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2872,7 +2872,7 @@ pub fn parse_update_hit_type_of_hit_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2893,7 +2893,7 @@ pub fn parse_update_hit_type_of_hit_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2953,7 +2953,7 @@ pub fn parse_update_notification_settings_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -2974,7 +2974,7 @@ pub fn parse_update_notification_settings_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -3034,7 +3034,7 @@ pub fn parse_update_qualification_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_error::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_errorjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -3055,7 +3055,7 @@ pub fn parse_update_qualification_type_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_faultjson_err(
+                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
                         response.body().as_ref(),
                         output,
                     )

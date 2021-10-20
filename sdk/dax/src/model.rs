@@ -51,6 +51,7 @@ pub mod subnet_group {
             self.subnet_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the subnet group.</p>
         pub fn set_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -63,6 +64,7 @@ pub mod subnet_group {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the subnet group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -72,16 +74,23 @@ pub mod subnet_group {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
         }
+        /// Appends an item to `subnets`.
+        ///
+        /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
+        ///
+        /// <p>A list of subnets associated with the subnet group. </p>
         pub fn subnets(mut self, input: impl Into<crate::model::Subnet>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
             v.push(input.into());
             self.subnets = Some(v);
             self
         }
+        /// <p>A list of subnets associated with the subnet group. </p>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
@@ -141,6 +150,7 @@ pub mod subnet {
             self.subnet_identifier = Some(input.into());
             self
         }
+        /// <p>The system-assigned identifier for the subnet.</p>
         pub fn set_subnet_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -153,6 +163,7 @@ pub mod subnet {
             self.subnet_availability_zone = Some(input.into());
             self
         }
+        /// <p>The Availability Zone (AZ) for the subnet.</p>
         pub fn set_subnet_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -209,6 +220,7 @@ pub mod parameter_group {
             self.parameter_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the parameter group.</p>
         pub fn set_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -221,6 +233,7 @@ pub mod parameter_group {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the parameter group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -273,6 +286,7 @@ pub mod parameter_name_value {
             self.parameter_name = Some(input.into());
             self
         }
+        /// <p>The name of the parameter.</p>
         pub fn set_parameter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -285,6 +299,7 @@ pub mod parameter_name_value {
             self.parameter_value = Some(input.into());
             self
         }
+        /// <p>The value of the parameter.</p>
         pub fn set_parameter_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -439,6 +454,7 @@ pub mod cluster {
             self.cluster_name = Some(input.into());
             self
         }
+        /// <p>The name of the DAX cluster.</p>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_name = input;
             self
@@ -448,6 +464,7 @@ pub mod cluster {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the cluster.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -458,6 +475,8 @@ pub mod cluster {
             self.cluster_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+        /// </p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_arn = input;
             self
@@ -467,6 +486,7 @@ pub mod cluster {
             self.total_nodes = Some(input);
             self
         }
+        /// <p>The total number of nodes in the cluster.</p>
         pub fn set_total_nodes(mut self, input: std::option::Option<i32>) -> Self {
             self.total_nodes = input;
             self
@@ -477,6 +497,8 @@ pub mod cluster {
             self.active_nodes = Some(input);
             self
         }
+        /// <p>The number of nodes in the cluster that are active (i.e., capable of serving
+        /// requests).</p>
         pub fn set_active_nodes(mut self, input: std::option::Option<i32>) -> Self {
             self.active_nodes = input;
             self
@@ -487,6 +509,8 @@ pub mod cluster {
             self.node_type = Some(input.into());
             self
         }
+        /// <p>The node type for the nodes in the cluster. (All nodes in a DAX cluster are of
+        /// the same type.)</p>
         pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.node_type = input;
             self
@@ -496,6 +520,7 @@ pub mod cluster {
             self.status = Some(input.into());
             self
         }
+        /// <p>The current status of the cluster.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -507,6 +532,9 @@ pub mod cluster {
             self.cluster_discovery_endpoint = Some(input);
             self
         }
+        /// <p>The endpoint for this DAX cluster, consisting of a DNS name, a port number,
+        /// and a URL. Applications should use the URL to configure the DAX client to find
+        /// their cluster.</p>
         pub fn set_cluster_discovery_endpoint(
             mut self,
             input: std::option::Option<crate::model::Endpoint>,
@@ -514,12 +542,18 @@ pub mod cluster {
             self.cluster_discovery_endpoint = input;
             self
         }
+        /// Appends an item to `node_ids_to_remove`.
+        ///
+        /// To override the contents of this collection use [`set_node_ids_to_remove`](Self::set_node_ids_to_remove).
+        ///
+        /// <p>A list of nodes to be removed from the cluster.</p>
         pub fn node_ids_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.node_ids_to_remove.unwrap_or_default();
             v.push(input.into());
             self.node_ids_to_remove = Some(v);
             self
         }
+        /// <p>A list of nodes to be removed from the cluster.</p>
         pub fn set_node_ids_to_remove(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -527,12 +561,18 @@ pub mod cluster {
             self.node_ids_to_remove = input;
             self
         }
+        /// Appends an item to `nodes`.
+        ///
+        /// To override the contents of this collection use [`set_nodes`](Self::set_nodes).
+        ///
+        /// <p>A list of nodes that are currently in the cluster.</p>
         pub fn nodes(mut self, input: impl Into<crate::model::Node>) -> Self {
             let mut v = self.nodes.unwrap_or_default();
             v.push(input.into());
             self.nodes = Some(v);
             self
         }
+        /// <p>A list of nodes that are currently in the cluster.</p>
         pub fn set_nodes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Node>>,
@@ -550,6 +590,9 @@ pub mod cluster {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
+        /// <p>A range of time when maintenance of DAX cluster software will be performed. For
+        /// example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than
+        /// 30 minutes, and is performed automatically within the maintenance window.</p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -567,6 +610,9 @@ pub mod cluster {
             self.notification_configuration = Some(input);
             self
         }
+        /// <p>Describes a notification topic and its status. Notification topics are used for
+        /// publishing DAX events to subscribers using Amazon Simple Notification Service
+        /// (SNS).</p>
         pub fn set_notification_configuration(
             mut self,
             input: std::option::Option<crate::model::NotificationConfiguration>,
@@ -579,10 +625,16 @@ pub mod cluster {
             self.subnet_group = Some(input.into());
             self
         }
+        /// <p>The subnet group where the DAX cluster is running.</p>
         pub fn set_subnet_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_group = input;
             self
         }
+        /// Appends an item to `security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+        ///
+        /// <p>A list of security groups, and the status of each, for the nodes in the cluster.</p>
         pub fn security_groups(
             mut self,
             input: impl Into<crate::model::SecurityGroupMembership>,
@@ -592,6 +644,7 @@ pub mod cluster {
             self.security_groups = Some(v);
             self
         }
+        /// <p>A list of security groups, and the status of each, for the nodes in the cluster.</p>
         pub fn set_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SecurityGroupMembership>>,
@@ -606,6 +659,9 @@ pub mod cluster {
             self.iam_role_arn = Some(input.into());
             self
         }
+        /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX
+        /// will assume this role and use the role's permissions to access DynamoDB on your
+        /// behalf.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -615,6 +671,7 @@ pub mod cluster {
             self.parameter_group = Some(input);
             self
         }
+        /// <p>The parameter group being used by nodes in the cluster.</p>
         pub fn set_parameter_group(
             mut self,
             input: std::option::Option<crate::model::ParameterGroupStatus>,
@@ -627,6 +684,7 @@ pub mod cluster {
             self.sse_description = Some(input);
             self
         }
+        /// <p>The description of the server-side encryption status on the specified DAX cluster.</p>
         pub fn set_sse_description(
             mut self,
             input: std::option::Option<crate::model::SseDescription>,
@@ -650,6 +708,15 @@ pub mod cluster {
             self.cluster_endpoint_encryption_type = Some(input);
             self
         }
+        /// <p>The type of encryption supported by the cluster's endpoint. Values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code> for no encryption</p>
+        /// <p>
+        /// <code>TLS</code> for Transport Layer Security</p>
+        /// </li>
+        /// </ul>
         pub fn set_cluster_endpoint_encryption_type(
             mut self,
             input: std::option::Option<crate::model::ClusterEndpointEncryptionType>,
@@ -689,6 +756,7 @@ impl Cluster {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -700,7 +768,9 @@ impl Cluster {
     std::hash::Hash,
 )]
 pub enum ClusterEndpointEncryptionType {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Tls,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -722,6 +792,7 @@ impl std::str::FromStr for ClusterEndpointEncryptionType {
     }
 }
 impl ClusterEndpointEncryptionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ClusterEndpointEncryptionType::None => "NONE",
@@ -729,6 +800,7 @@ impl ClusterEndpointEncryptionType {
             ClusterEndpointEncryptionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "TLS"]
     }
@@ -803,6 +875,25 @@ pub mod sse_description {
             self.status = Some(input);
             self
         }
+        /// <p>The current state of server-side encryption:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ENABLING</code> - Server-side encryption is being enabled.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ENABLED</code> - Server-side encryption is enabled.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLING</code> - Server-side encryption is being disabled.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLED</code> - Server-side encryption is disabled.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::SseStatus>) -> Self {
             self.status = input;
             self
@@ -822,6 +913,7 @@ impl SseDescription {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -833,9 +925,13 @@ impl SseDescription {
     std::hash::Hash,
 )]
 pub enum SseStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Disabling,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabling,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -859,6 +955,7 @@ impl std::str::FromStr for SseStatus {
     }
 }
 impl SseStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SseStatus::Disabled => "DISABLED",
@@ -868,6 +965,7 @@ impl SseStatus {
             SseStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "DISABLING", "ENABLED", "ENABLING"]
     }
@@ -914,6 +1012,7 @@ pub mod parameter_group_status {
             self.parameter_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the parameter group.</p>
         pub fn set_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -926,6 +1025,7 @@ pub mod parameter_group_status {
             self.parameter_apply_status = Some(input.into());
             self
         }
+        /// <p>The status of parameter updates. </p>
         pub fn set_parameter_apply_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -933,12 +1033,18 @@ pub mod parameter_group_status {
             self.parameter_apply_status = input;
             self
         }
+        /// Appends an item to `node_ids_to_reboot`.
+        ///
+        /// To override the contents of this collection use [`set_node_ids_to_reboot`](Self::set_node_ids_to_reboot).
+        ///
+        /// <p>The node IDs of one or more nodes to be rebooted.</p>
         pub fn node_ids_to_reboot(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.node_ids_to_reboot.unwrap_or_default();
             v.push(input.into());
             self.node_ids_to_reboot = Some(v);
             self
         }
+        /// <p>The node IDs of one or more nodes to be rebooted.</p>
         pub fn set_node_ids_to_reboot(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -995,6 +1101,7 @@ pub mod security_group_membership {
             self.security_group_identifier = Some(input.into());
             self
         }
+        /// <p>The unique ID for this security group.</p>
         pub fn set_security_group_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1007,6 +1114,7 @@ pub mod security_group_membership {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of this security group.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -1063,6 +1171,7 @@ pub mod notification_configuration {
             self.topic_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that identifies the topic. </p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -1074,6 +1183,9 @@ pub mod notification_configuration {
             self.topic_status = Some(input.into());
             self
         }
+        /// <p>The current state of the topic. A value of “active” means that notifications will
+        /// be sent to the topic. A value of “inactive” means that notifications will not be sent to the
+        /// topic.</p>
         pub fn set_topic_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_status = input;
             self
@@ -1106,7 +1218,7 @@ pub struct Node {
     /// the DAX cluster.</p>
     pub endpoint: std::option::Option<crate::model::Endpoint>,
     /// <p>The date and time (in UNIX epoch format) when the node was launched.</p>
-    pub node_create_time: std::option::Option<smithy_types::Instant>,
+    pub node_create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Availability Zone (AZ) in which the node has been deployed.</p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The current status of the node. For example: <code>available</code>.</p>
@@ -1135,7 +1247,7 @@ pub mod node {
     pub struct Builder {
         pub(crate) node_id: std::option::Option<std::string::String>,
         pub(crate) endpoint: std::option::Option<crate::model::Endpoint>,
-        pub(crate) node_create_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) node_create_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) availability_zone: std::option::Option<std::string::String>,
         pub(crate) node_status: std::option::Option<std::string::String>,
         pub(crate) parameter_group_status: std::option::Option<std::string::String>,
@@ -1146,6 +1258,7 @@ pub mod node {
             self.node_id = Some(input.into());
             self
         }
+        /// <p>A system-generated identifier for the node.</p>
         pub fn set_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.node_id = input;
             self
@@ -1158,18 +1271,23 @@ pub mod node {
             self.endpoint = Some(input);
             self
         }
+        /// <p>The endpoint for the node, consisting of a DNS name and a port number. Client
+        /// applications can connect directly to a node endpoint, if desired (as an alternative to
+        /// allowing DAX client software to intelligently route requests and responses to nodes in
+        /// the DAX cluster.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<crate::model::Endpoint>) -> Self {
             self.endpoint = input;
             self
         }
         /// <p>The date and time (in UNIX epoch format) when the node was launched.</p>
-        pub fn node_create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn node_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.node_create_time = Some(input);
             self
         }
+        /// <p>The date and time (in UNIX epoch format) when the node was launched.</p>
         pub fn set_node_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.node_create_time = input;
             self
@@ -1179,6 +1297,7 @@ pub mod node {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>The Availability Zone (AZ) in which the node has been deployed.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1191,6 +1310,7 @@ pub mod node {
             self.node_status = Some(input.into());
             self
         }
+        /// <p>The current status of the node. For example: <code>available</code>.</p>
         pub fn set_node_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.node_status = input;
             self
@@ -1201,6 +1321,8 @@ pub mod node {
             self.parameter_group_status = Some(input.into());
             self
         }
+        /// <p>The status of the parameter group associated with this node. For example,
+        /// <code>in-sync</code>.</p>
         pub fn set_parameter_group_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1266,6 +1388,7 @@ pub mod endpoint {
             self.address = Some(input.into());
             self
         }
+        /// <p>The DNS hostname of the endpoint.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address = input;
             self
@@ -1275,6 +1398,7 @@ pub mod endpoint {
             self.port = Some(input);
             self
         }
+        /// <p>The port number that applications should use to connect to the endpoint.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -1285,6 +1409,8 @@ pub mod endpoint {
             self.url = Some(input.into());
             self
         }
+        /// <p>The URL that applications should use to connect to the endpoint. The default
+        /// ports are 8111 for the "dax" protocol and 9111 for the "daxs" protocol.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -1347,6 +1473,9 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key for the tag.  Tag keys are case sensitive. Every DAX cluster can only have
+        /// one tag with the same key. If you try to add an existing tag (same key), the
+        /// existing tag value will be updated to the new value.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -1356,6 +1485,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the tag. Tag values are case-sensitive and can be null. </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1447,6 +1577,7 @@ pub mod parameter {
             self.parameter_name = Some(input.into());
             self
         }
+        /// <p>The name of the parameter.</p>
         pub fn set_parameter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1460,6 +1591,8 @@ pub mod parameter {
             self.parameter_type = Some(input);
             self
         }
+        /// <p>Determines whether the parameter can be applied to any nodes, or only nodes of a
+        /// particular type.</p>
         pub fn set_parameter_type(
             mut self,
             input: std::option::Option<crate::model::ParameterType>,
@@ -1472,6 +1605,7 @@ pub mod parameter {
             self.parameter_value = Some(input.into());
             self
         }
+        /// <p>The value for the parameter.</p>
         pub fn set_parameter_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1479,6 +1613,11 @@ pub mod parameter {
             self.parameter_value = input;
             self
         }
+        /// Appends an item to `node_type_specific_values`.
+        ///
+        /// To override the contents of this collection use [`set_node_type_specific_values`](Self::set_node_type_specific_values).
+        ///
+        /// <p>A list of node types, and specific parameter values for each node.</p>
         pub fn node_type_specific_values(
             mut self,
             input: impl Into<crate::model::NodeTypeSpecificValue>,
@@ -1488,6 +1627,7 @@ pub mod parameter {
             self.node_type_specific_values = Some(v);
             self
         }
+        /// <p>A list of node types, and specific parameter values for each node.</p>
         pub fn set_node_type_specific_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NodeTypeSpecificValue>>,
@@ -1500,6 +1640,7 @@ pub mod parameter {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the parameter</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1510,6 +1651,8 @@ pub mod parameter {
             self.source = Some(input.into());
             self
         }
+        /// <p>How the parameter is defined. For example, <code>system</code> denotes a
+        /// system-defined parameter.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -1519,6 +1662,7 @@ pub mod parameter {
             self.data_type = Some(input.into());
             self
         }
+        /// <p>The data type of the parameter. For example, <code>integer</code>:</p>
         pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_type = input;
             self
@@ -1528,6 +1672,7 @@ pub mod parameter {
             self.allowed_values = Some(input.into());
             self
         }
+        /// <p>A range of values within which the parameter can be set.</p>
         pub fn set_allowed_values(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1540,6 +1685,7 @@ pub mod parameter {
             self.is_modifiable = Some(input);
             self
         }
+        /// <p>Whether the customer is allowed to modify the parameter.</p>
         pub fn set_is_modifiable(
             mut self,
             input: std::option::Option<crate::model::IsModifiable>,
@@ -1554,6 +1700,9 @@ pub mod parameter {
             self.change_type = Some(input);
             self
         }
+        /// <p>The conditions under which changes to this parameter can be applied. For example,
+        /// <code>requires-reboot</code> indicates that a new value for this parameter will only
+        /// take effect if a node is rebooted.</p>
         pub fn set_change_type(
             mut self,
             input: std::option::Option<crate::model::ChangeType>,
@@ -1585,6 +1734,7 @@ impl Parameter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1596,7 +1746,9 @@ impl Parameter {
     std::hash::Hash,
 )]
 pub enum ChangeType {
+    #[allow(missing_docs)] // documentation missing in model
     Immediate,
+    #[allow(missing_docs)] // documentation missing in model
     RequiresReboot,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1618,6 +1770,7 @@ impl std::str::FromStr for ChangeType {
     }
 }
 impl ChangeType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChangeType::Immediate => "IMMEDIATE",
@@ -1625,6 +1778,7 @@ impl ChangeType {
             ChangeType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["IMMEDIATE", "REQUIRES_REBOOT"]
     }
@@ -1635,6 +1789,7 @@ impl AsRef<str> for ChangeType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1646,8 +1801,11 @@ impl AsRef<str> for ChangeType {
     std::hash::Hash,
 )]
 pub enum IsModifiable {
+    #[allow(missing_docs)] // documentation missing in model
     Conditional,
+    #[allow(missing_docs)] // documentation missing in model
     False,
+    #[allow(missing_docs)] // documentation missing in model
     True,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1670,6 +1828,7 @@ impl std::str::FromStr for IsModifiable {
     }
 }
 impl IsModifiable {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IsModifiable::Conditional => "CONDITIONAL",
@@ -1678,6 +1837,7 @@ impl IsModifiable {
             IsModifiable::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONDITIONAL", "FALSE", "TRUE"]
     }
@@ -1721,6 +1881,7 @@ pub mod node_type_specific_value {
             self.node_type = Some(input.into());
             self
         }
+        /// <p>A node type to which the parameter value applies.</p>
         pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.node_type = input;
             self
@@ -1730,6 +1891,7 @@ pub mod node_type_specific_value {
             self.value = Some(input.into());
             self
         }
+        /// <p>The parameter value for this node type.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1750,6 +1912,7 @@ impl NodeTypeSpecificValue {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1761,7 +1924,9 @@ impl NodeTypeSpecificValue {
     std::hash::Hash,
 )]
 pub enum ParameterType {
+    #[allow(missing_docs)] // documentation missing in model
     Default,
+    #[allow(missing_docs)] // documentation missing in model
     NodeTypeSpecific,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1783,6 +1948,7 @@ impl std::str::FromStr for ParameterType {
     }
 }
 impl ParameterType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ParameterType::Default => "DEFAULT",
@@ -1790,6 +1956,7 @@ impl ParameterType {
             ParameterType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEFAULT", "NODE_TYPE_SPECIFIC"]
     }
@@ -1815,7 +1982,7 @@ pub struct Event {
     /// <p>A user-defined message associated with the event.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The date and time when the event occurred.</p>
-    pub date: std::option::Option<smithy_types::Instant>,
+    pub date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Event {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1836,7 +2003,7 @@ pub mod event {
         pub(crate) source_name: std::option::Option<std::string::String>,
         pub(crate) source_type: std::option::Option<crate::model::SourceType>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) date: std::option::Option<smithy_types::Instant>,
+        pub(crate) date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The source of the event. For example, if the event occurred at the node level, the
@@ -1845,6 +2012,8 @@ pub mod event {
             self.source_name = Some(input.into());
             self
         }
+        /// <p>The source of the event. For example, if the event occurred at the node level, the
+        /// source would be the node ID.</p>
         pub fn set_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_name = input;
             self
@@ -1855,6 +2024,8 @@ pub mod event {
             self.source_type = Some(input);
             self
         }
+        /// <p>Specifies the origin of this event - a cluster, a parameter group, a node ID,
+        /// etc.</p>
         pub fn set_source_type(
             mut self,
             input: std::option::Option<crate::model::SourceType>,
@@ -1867,16 +2038,18 @@ pub mod event {
             self.message = Some(input.into());
             self
         }
+        /// <p>A user-defined message associated with the event.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
         /// <p>The date and time when the event occurred.</p>
-        pub fn date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date = Some(input);
             self
         }
-        pub fn set_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time when the event occurred.</p>
+        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
             self.date = input;
             self
         }
@@ -1898,6 +2071,7 @@ impl Event {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1909,8 +2083,11 @@ impl Event {
     std::hash::Hash,
 )]
 pub enum SourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Cluster,
+    #[allow(missing_docs)] // documentation missing in model
     ParameterGroup,
+    #[allow(missing_docs)] // documentation missing in model
     SubnetGroup,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1933,6 +2110,7 @@ impl std::str::FromStr for SourceType {
     }
 }
 impl SourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SourceType::Cluster => "CLUSTER",
@@ -1941,6 +2119,7 @@ impl SourceType {
             SourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CLUSTER", "PARAMETER_GROUP", "SUBNET_GROUP"]
     }
@@ -1979,6 +2158,7 @@ pub mod sse_specification {
             self.enabled = Some(input);
             self
         }
+        /// <p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self

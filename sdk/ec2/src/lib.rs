@@ -6,6 +6,7 @@
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(rustdoc::bare_urls)]
+#![warn(missing_docs)]
 //! <fullname>Amazon Elastic Compute Cloud</fullname>
 //! <p>Amazon Elastic Compute Cloud (Amazon EC2) provides secure and resizable computing capacity in the AWS Cloud.
 //! Using Amazon EC2 eliminates the need to invest in hardware up front, so you can develop and deploy applications
@@ -39,31 +40,39 @@ pub use error_meta::Error;
 pub use config::Config;
 
 mod aws_endpoint;
+/// Client and fluent builders for calling the service.
 #[cfg(feature = "client")]
 pub mod client;
+/// Configuration for the service.
 pub mod config;
 mod ec2_query_errors;
+/// Errors that can occur when calling the service.
 pub mod error;
 mod error_meta;
 mod idempotency_token;
+/// Input structures for operations.
 pub mod input;
+/// Data structures used by operation inputs/outputs.
 pub mod model;
 mod no_credentials;
+/// All operations that this crate can perform.
 pub mod operation;
 mod operation_deser;
 mod operation_ser;
+/// Output structures for operations.
 pub mod output;
 mod query_ser;
 mod xml_deser;
+/// Crate version number.
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
-pub use smithy_http::byte_stream::ByteStream;
-pub use smithy_http::result::SdkError;
-pub use smithy_types::Blob;
+pub use aws_smithy_http::byte_stream::ByteStream;
+pub use aws_smithy_http::result::SdkError;
+pub use aws_smithy_types::Blob;
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("ec2", PKG_VERSION);
+pub use aws_smithy_http::endpoint::Endpoint;
+pub use aws_smithy_types::retry::RetryConfig;
 pub use aws_types::region::Region;
 pub use aws_types::Credentials;
 #[cfg(feature = "client")]
 pub use client::Client;
-pub use smithy_http::endpoint::Endpoint;
-pub use smithy_types::retry::RetryConfig;

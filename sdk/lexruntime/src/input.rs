@@ -16,6 +16,7 @@ pub mod delete_session_input {
             self.bot_name = Some(input.into());
             self
         }
+        /// <p>The name of the bot that contains the session data.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_name = input;
             self
@@ -25,6 +26,7 @@ pub mod delete_session_input {
             self.bot_alias = Some(input.into());
             self
         }
+        /// <p>The alias in use for the bot that contains the session data.</p>
         pub fn set_bot_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_alias = input;
             self
@@ -34,6 +36,7 @@ pub mod delete_session_input {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the user associated with the session data.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -41,8 +44,10 @@ pub mod delete_session_input {
         /// Consumes the builder and constructs a [`DeleteSessionInput`](crate::input::DeleteSessionInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteSessionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteSessionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteSessionInput {
                 bot_name: self.bot_name,
                 bot_alias: self.bot_alias,
@@ -62,27 +67,27 @@ impl DeleteSessionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteSession,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteSessionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.bot_name;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_name",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_name = smithy_http::label::fmt_string(input_1, false);
+            let bot_name = aws_smithy_http::label::fmt_string(input_1, false);
             if bot_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_name",
                     details: "cannot be empty or unset",
                 });
@@ -91,13 +96,13 @@ impl DeleteSessionInput {
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_alias",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_alias = smithy_http::label::fmt_string(input_2, false);
+            let bot_alias = aws_smithy_http::label::fmt_string(input_2, false);
             if bot_alias.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_alias",
                     details: "cannot be empty or unset",
                 });
@@ -106,13 +111,13 @@ impl DeleteSessionInput {
             let input_3 =
                 input_3
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = smithy_http::label::fmt_string(input_3, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_3, false);
             if user_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
                     details: "cannot be empty or unset",
                 });
@@ -131,7 +136,7 @@ impl DeleteSessionInput {
         fn update_http_builder(
             input: &crate::input::DeleteSessionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -140,23 +145,23 @@ impl DeleteSessionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteSessionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -179,25 +184,27 @@ impl DeleteSessionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteSession::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteSession",
-                    "lexruntimeservice",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteSession::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteSession",
+            "lexruntimeservice",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -228,6 +235,7 @@ pub mod get_session_input {
             self.bot_name = Some(input.into());
             self
         }
+        /// <p>The name of the bot that contains the session data.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_name = input;
             self
@@ -237,6 +245,7 @@ pub mod get_session_input {
             self.bot_alias = Some(input.into());
             self
         }
+        /// <p>The alias in use for the bot that contains the session data.</p>
         pub fn set_bot_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_alias = input;
             self
@@ -247,6 +256,8 @@ pub mod get_session_input {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The ID of the client application user. Amazon Lex uses this to identify a
+        /// user's conversation with your bot. </p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -260,6 +271,11 @@ pub mod get_session_input {
             self.checkpoint_label_filter = Some(input.into());
             self
         }
+        /// <p>A string used to filter the intents returned in the
+        /// <code>recentIntentSummaryView</code> structure. </p>
+        /// <p>When you specify a filter, only intents with their
+        /// <code>checkpointLabel</code> field set to that string are
+        /// returned.</p>
         pub fn set_checkpoint_label_filter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -270,8 +286,10 @@ pub mod get_session_input {
         /// Consumes the builder and constructs a [`GetSessionInput`](crate::input::GetSessionInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetSessionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetSessionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetSessionInput {
                 bot_name: self.bot_name,
                 bot_alias: self.bot_alias,
@@ -292,27 +310,27 @@ impl GetSessionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetSession,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetSessionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_4 = &_input.bot_name;
             let input_4 =
                 input_4
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_name",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_name = smithy_http::label::fmt_string(input_4, false);
+            let bot_name = aws_smithy_http::label::fmt_string(input_4, false);
             if bot_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_name",
                     details: "cannot be empty or unset",
                 });
@@ -321,13 +339,13 @@ impl GetSessionInput {
             let input_5 =
                 input_5
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_alias",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_alias = smithy_http::label::fmt_string(input_5, false);
+            let bot_alias = aws_smithy_http::label::fmt_string(input_5, false);
             if bot_alias.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_alias",
                     details: "cannot be empty or unset",
                 });
@@ -336,13 +354,13 @@ impl GetSessionInput {
             let input_6 =
                 input_6
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = smithy_http::label::fmt_string(input_6, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_6, false);
             if user_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
                     details: "cannot be empty or unset",
                 });
@@ -358,11 +376,11 @@ impl GetSessionInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::GetSessionInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_7) = &_input.checkpoint_label_filter {
                 query.push_kv(
                     "checkpointLabelFilter",
-                    &smithy_http::query::fmt_string(&inner_7),
+                    &aws_smithy_http::query::fmt_string(&inner_7),
                 );
             }
         }
@@ -370,7 +388,7 @@ impl GetSessionInput {
         fn update_http_builder(
             input: &crate::input::GetSessionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -380,23 +398,23 @@ impl GetSessionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetSessionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -419,25 +437,27 @@ impl GetSessionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetSession::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetSession",
-                    "lexruntimeservice",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetSession::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetSession",
+            "lexruntimeservice",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -464,7 +484,7 @@ pub mod post_content_input {
         pub(crate) request_attributes: std::option::Option<std::string::String>,
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) accept: std::option::Option<std::string::String>,
-        pub(crate) input_stream: std::option::Option<smithy_http::byte_stream::ByteStream>,
+        pub(crate) input_stream: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
         pub(crate) active_contexts: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -473,6 +493,7 @@ pub mod post_content_input {
             self.bot_name = Some(input.into());
             self
         }
+        /// <p>Name of the Amazon Lex bot.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_name = input;
             self
@@ -482,6 +503,7 @@ pub mod post_content_input {
             self.bot_alias = Some(input.into());
             self
         }
+        /// <p>Alias of the Amazon Lex bot.</p>
         pub fn set_bot_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_alias = input;
             self
@@ -519,6 +541,35 @@ pub mod post_content_input {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The ID of the client application user. Amazon Lex uses this to identify a
+        /// user's conversation with your bot. At runtime, each request must contain
+        /// the <code>userID</code> field.</p>
+        /// <p>To decide the user ID to use for your application, consider the
+        /// following factors.</p>
+        /// <ul>
+        /// <li>
+        /// <p>The <code>userID</code> field must not contain any personally
+        /// identifiable information of the user, for example, name, personal
+        /// identification numbers, or other end user personal information.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you want a user to start a conversation on one device and
+        /// continue on another device, use a user-specific identifier.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you want the same user to be able to have two independent
+        /// conversations on two different devices, choose a device-specific
+        /// identifier.</p>
+        /// </li>
+        /// <li>
+        /// <p>A user can't have two independent conversations with two different
+        /// versions of the same bot. For example, a user can't have a
+        /// conversation with the PROD and BETA versions of the same bot. If you
+        /// anticipate that a user will need to have conversation with two
+        /// different versions, for example, while testing, include the bot alias
+        /// in the user ID to separate the two conversations.</p>
+        /// </li>
+        /// </ul>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -535,6 +586,14 @@ pub mod post_content_input {
             self.session_attributes = Some(input.into());
             self
         }
+        /// <p>You pass this value as the <code>x-amz-lex-session-attributes</code>
+        /// HTTP header.</p>
+        /// <p>Application-specific information passed between Amazon Lex and a client
+        /// application. The value must be a JSON serialized and base64 encoded map
+        /// with string keys and values. The total size of the
+        /// <code>sessionAttributes</code> and <code>requestAttributes</code>
+        /// headers is limited to 12 KB.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p>
         pub fn set_session_attributes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -557,6 +616,17 @@ pub mod post_content_input {
             self.request_attributes = Some(input.into());
             self
         }
+        /// <p>You pass this value as the <code>x-amz-lex-request-attributes</code>
+        /// HTTP header.</p>
+        /// <p>Request-specific information passed between Amazon Lex and a client
+        /// application. The value must be a JSON serialized and base64 encoded map
+        /// with string keys and values. The total size of the
+        /// <code>requestAttributes</code> and <code>sessionAttributes</code>
+        /// headers is limited to 12 KB.</p>
+        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
+        /// attributes. Don't create any request attributes with the prefix
+        /// <code>x-amz-lex:</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p>
         pub fn set_request_attributes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -605,6 +675,43 @@ pub mod post_content_input {
             self.content_type = Some(input.into());
             self
         }
+        /// <p> You pass this value as the <code>Content-Type</code> HTTP header. </p>
+        /// <p> Indicates the audio format or text. The header value must start with
+        /// one of the following prefixes: </p>
+        /// <ul>
+        /// <li>
+        /// <p>PCM format, audio data must be in little-endian byte order.</p>
+        /// <ul>
+        /// <li>
+        /// <p>audio/l16; rate=16000; channels=1</p>
+        /// </li>
+        /// <li>
+        /// <p>audio/x-l16; sample-rate=16000; channel-count=1</p>
+        /// </li>
+        /// <li>
+        /// <p>audio/lpcm; sample-rate=8000; sample-size-bits=16;
+        /// channel-count=1; is-big-endian=false </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Opus format</p>
+        /// <ul>
+        /// <li>
+        /// <p>audio/x-cbr-opus-with-preamble; preamble-size=0;
+        /// bit-rate=256000; frame-size-milliseconds=4</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Text format</p>
+        /// <ul>
+        /// <li>
+        /// <p>text/plain; charset=utf-8</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -654,6 +761,47 @@ pub mod post_content_input {
             self.accept = Some(input.into());
             self
         }
+        /// <p> You pass this value as the <code>Accept</code> HTTP header. </p>
+        /// <p> The message Amazon Lex returns in the response can be either text or
+        /// speech based on the <code>Accept</code> HTTP header value in the request. </p>
+        /// <ul>
+        /// <li>
+        /// <p> If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex
+        /// returns text in the response. </p>
+        /// </li>
+        /// <li>
+        /// <p> If the value begins with <code>audio/</code>, Amazon Lex returns
+        /// speech in the response. Amazon Lex uses Amazon Polly to generate the speech
+        /// (using the configuration you specified in the <code>Accept</code>
+        /// header). For example, if you specify <code>audio/mpeg</code> as the
+        /// value, Amazon Lex returns speech in the MPEG format.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the value is <code>audio/pcm</code>, the speech returned is
+        /// <code>audio/pcm</code> in 16-bit, little endian format.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>The following are the accepted values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>audio/mpeg</p>
+        /// </li>
+        /// <li>
+        /// <p>audio/ogg</p>
+        /// </li>
+        /// <li>
+        /// <p>audio/pcm</p>
+        /// </li>
+        /// <li>
+        /// <p>text/plain; charset=utf-8</p>
+        /// </li>
+        /// <li>
+        /// <p>audio/* (defaults to mpeg)</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn set_accept(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.accept = input;
             self
@@ -664,13 +812,19 @@ pub mod post_content_input {
         /// that captures all of the audio data before sending. In general, you get
         /// better performance if you stream audio data rather than buffering the data
         /// locally.</p>
-        pub fn input_stream(mut self, input: smithy_http::byte_stream::ByteStream) -> Self {
+        pub fn input_stream(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
             self.input_stream = Some(input);
             self
         }
+        /// <p> User input in PCM or Opus audio format or text format as described in
+        /// the <code>Content-Type</code> HTTP header. </p>
+        /// <p>You can stream audio data to Amazon Lex or you can create a local buffer
+        /// that captures all of the audio data before sending. In general, you get
+        /// better performance if you stream audio data rather than buffering the data
+        /// locally.</p>
         pub fn set_input_stream(
             mut self,
-            input: std::option::Option<smithy_http::byte_stream::ByteStream>,
+            input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
         ) -> Self {
             self.input_stream = input;
             self
@@ -685,6 +839,12 @@ pub mod post_content_input {
             self.active_contexts = Some(input.into());
             self
         }
+        /// <p>A list of contexts active for the request. A context can be activated
+        /// when a previous intent is fulfilled, or by including the context in the
+        /// request,</p>
+        /// <p>If you don't specify a list of contexts, Amazon Lex will use the current
+        /// list of contexts for the session. If you specify an empty list, all
+        /// contexts for the session are cleared.</p>
         pub fn set_active_contexts(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -695,8 +855,10 @@ pub mod post_content_input {
         /// Consumes the builder and constructs a [`PostContentInput`](crate::input::PostContentInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::PostContentInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PostContentInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PostContentInput {
                 bot_name: self.bot_name,
                 bot_alias: self.bot_alias,
@@ -722,27 +884,27 @@ impl PostContentInput {
         self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PostContent,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PostContentInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_8 = &_input.bot_name;
             let input_8 =
                 input_8
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_name",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_name = smithy_http::label::fmt_string(input_8, false);
+            let bot_name = aws_smithy_http::label::fmt_string(input_8, false);
             if bot_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_name",
                     details: "cannot be empty or unset",
                 });
@@ -751,13 +913,13 @@ impl PostContentInput {
             let input_9 =
                 input_9
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_alias",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_alias = smithy_http::label::fmt_string(input_9, false);
+            let bot_alias = aws_smithy_http::label::fmt_string(input_9, false);
             if bot_alias.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_alias",
                     details: "cannot be empty or unset",
                 });
@@ -766,13 +928,13 @@ impl PostContentInput {
             let input_10 =
                 input_10
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = smithy_http::label::fmt_string(input_10, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_10, false);
             if user_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
                     details: "cannot be empty or unset",
                 });
@@ -790,15 +952,15 @@ impl PostContentInput {
         fn add_headers(
             _input: &crate::input::PostContentInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_11) = &_input.session_attributes {
-                let formatted_12 = smithy_types::base64::encode(&inner_11);
+                let formatted_12 = aws_smithy_types::base64::encode(&inner_11);
                 if !formatted_12.is_empty() {
                     use std::convert::TryFrom;
                     let header_value = formatted_12;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "session_attributes",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -809,12 +971,12 @@ impl PostContentInput {
                 }
             }
             if let Some(inner_13) = &_input.request_attributes {
-                let formatted_14 = smithy_types::base64::encode(&inner_13);
+                let formatted_14 = aws_smithy_types::base64::encode(&inner_13);
                 if !formatted_14.is_empty() {
                     use std::convert::TryFrom;
                     let header_value = formatted_14;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "request_attributes",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -830,7 +992,7 @@ impl PostContentInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_16;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "content_type",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -846,7 +1008,7 @@ impl PostContentInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_18;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "accept",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -857,12 +1019,12 @@ impl PostContentInput {
                 }
             }
             if let Some(inner_19) = &_input.active_contexts {
-                let formatted_20 = smithy_types::base64::encode(&inner_19);
+                let formatted_20 = aws_smithy_types::base64::encode(&inner_19);
                 if !formatted_20.is_empty() {
                     use std::convert::TryFrom;
                     let header_value = formatted_20;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "active_contexts",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -878,7 +1040,7 @@ impl PostContentInput {
         fn update_http_builder(
             input: &crate::input::PostContentInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -888,23 +1050,23 @@ impl PostContentInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PostContentInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/octet-stream",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::ser_payload_post_content_input(self.input_stream)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -931,25 +1093,27 @@ impl PostContentInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::PostContent::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "PostContent",
-                    "lexruntimeservice",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PostContent::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PostContent",
+            "lexruntimeservice",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -987,6 +1151,7 @@ pub mod post_text_input {
             self.bot_name = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon Lex bot.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_name = input;
             self
@@ -996,6 +1161,7 @@ pub mod post_text_input {
             self.bot_alias = Some(input.into());
             self
         }
+        /// <p>The alias of the Amazon Lex bot.</p>
         pub fn set_bot_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_alias = input;
             self
@@ -1033,10 +1199,46 @@ pub mod post_text_input {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The ID of the client application user. Amazon Lex uses this to identify a
+        /// user's conversation with your bot. At runtime, each request must contain
+        /// the <code>userID</code> field.</p>
+        /// <p>To decide the user ID to use for your application, consider the
+        /// following factors.</p>
+        /// <ul>
+        /// <li>
+        /// <p>The <code>userID</code> field must not contain any personally
+        /// identifiable information of the user, for example, name, personal
+        /// identification numbers, or other end user personal information.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you want a user to start a conversation on one device and
+        /// continue on another device, use a user-specific identifier.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you want the same user to be able to have two independent
+        /// conversations on two different devices, choose a device-specific
+        /// identifier.</p>
+        /// </li>
+        /// <li>
+        /// <p>A user can't have two independent conversations with two different
+        /// versions of the same bot. For example, a user can't have a
+        /// conversation with the PROD and BETA versions of the same bot. If you
+        /// anticipate that a user will need to have conversation with two
+        /// different versions, for example, while testing, include the bot alias
+        /// in the user ID to separate the two conversations.</p>
+        /// </li>
+        /// </ul>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
         }
+        /// Adds a key-value pair to `session_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_session_attributes`](Self::set_session_attributes).
+        ///
+        /// <p>Application-specific information passed between Amazon Lex and a client
+        /// application.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p>
         pub fn session_attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -1047,6 +1249,9 @@ pub mod post_text_input {
             self.session_attributes = Some(hash_map);
             self
         }
+        /// <p>Application-specific information passed between Amazon Lex and a client
+        /// application.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p>
         pub fn set_session_attributes(
             mut self,
             input: std::option::Option<
@@ -1056,6 +1261,16 @@ pub mod post_text_input {
             self.session_attributes = input;
             self
         }
+        /// Adds a key-value pair to `request_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_request_attributes`](Self::set_request_attributes).
+        ///
+        /// <p>Request-specific information passed between Amazon Lex and a client
+        /// application.</p>
+        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
+        /// attributes. Don't create any request attributes with the prefix
+        /// <code>x-amz-lex:</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p>
         pub fn request_attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -1066,6 +1281,12 @@ pub mod post_text_input {
             self.request_attributes = Some(hash_map);
             self
         }
+        /// <p>Request-specific information passed between Amazon Lex and a client
+        /// application.</p>
+        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
+        /// attributes. Don't create any request attributes with the prefix
+        /// <code>x-amz-lex:</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p>
         pub fn set_request_attributes(
             mut self,
             input: std::option::Option<
@@ -1080,16 +1301,33 @@ pub mod post_text_input {
             self.input_text = Some(input.into());
             self
         }
+        /// <p>The text that the user entered (Amazon Lex interprets this text).</p>
         pub fn set_input_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_text = input;
             self
         }
+        /// Appends an item to `active_contexts`.
+        ///
+        /// To override the contents of this collection use [`set_active_contexts`](Self::set_active_contexts).
+        ///
+        /// <p>A list of contexts active for the request. A context can be activated
+        /// when a previous intent is fulfilled, or by including the context in the
+        /// request,</p>
+        /// <p>If you don't specify a list of contexts, Amazon Lex will use the current
+        /// list of contexts for the session. If you specify an empty list, all
+        /// contexts for the session are cleared.</p>
         pub fn active_contexts(mut self, input: impl Into<crate::model::ActiveContext>) -> Self {
             let mut v = self.active_contexts.unwrap_or_default();
             v.push(input.into());
             self.active_contexts = Some(v);
             self
         }
+        /// <p>A list of contexts active for the request. A context can be activated
+        /// when a previous intent is fulfilled, or by including the context in the
+        /// request,</p>
+        /// <p>If you don't specify a list of contexts, Amazon Lex will use the current
+        /// list of contexts for the session. If you specify an empty list, all
+        /// contexts for the session are cleared.</p>
         pub fn set_active_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>,
@@ -1100,7 +1338,7 @@ pub mod post_text_input {
         /// Consumes the builder and constructs a [`PostTextInput`](crate::input::PostTextInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::PostTextInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::PostTextInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::PostTextInput {
                 bot_name: self.bot_name,
@@ -1125,27 +1363,27 @@ impl PostTextInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PostText,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PostTextInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_21 = &_input.bot_name;
             let input_21 =
                 input_21
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_name",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_name = smithy_http::label::fmt_string(input_21, false);
+            let bot_name = aws_smithy_http::label::fmt_string(input_21, false);
             if bot_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_name",
                     details: "cannot be empty or unset",
                 });
@@ -1154,13 +1392,13 @@ impl PostTextInput {
             let input_22 =
                 input_22
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_alias",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_alias = smithy_http::label::fmt_string(input_22, false);
+            let bot_alias = aws_smithy_http::label::fmt_string(input_22, false);
             if bot_alias.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_alias",
                     details: "cannot be empty or unset",
                 });
@@ -1169,13 +1407,13 @@ impl PostTextInput {
             let input_23 =
                 input_23
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = smithy_http::label::fmt_string(input_23, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_23, false);
             if user_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
                     details: "cannot be empty or unset",
                 });
@@ -1194,7 +1432,7 @@ impl PostTextInput {
         fn update_http_builder(
             input: &crate::input::PostTextInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1203,24 +1441,26 @@ impl PostTextInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PostTextInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_post_text(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1243,24 +1483,25 @@ impl PostTextInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::PostText::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "PostText",
-                "lexruntimeservice",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::PostText::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "PostText",
+                    "lexruntimeservice",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1298,6 +1539,7 @@ pub mod put_session_input {
             self.bot_name = Some(input.into());
             self
         }
+        /// <p>The name of the bot that contains the session data.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_name = input;
             self
@@ -1307,6 +1549,7 @@ pub mod put_session_input {
             self.bot_alias = Some(input.into());
             self
         }
+        /// <p>The alias in use for the bot that contains the session data.</p>
         pub fn set_bot_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_alias = input;
             self
@@ -1317,10 +1560,19 @@ pub mod put_session_input {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The ID of the client application user. Amazon Lex uses this to identify a
+        /// user's conversation with your bot. </p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
         }
+        /// Adds a key-value pair to `session_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_session_attributes`](Self::set_session_attributes).
+        ///
+        /// <p>Map of key/value pairs representing the session-specific context
+        /// information. It contains application information passed between Amazon Lex and
+        /// a client application.</p>
         pub fn session_attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -1331,6 +1583,9 @@ pub mod put_session_input {
             self.session_attributes = Some(hash_map);
             self
         }
+        /// <p>Map of key/value pairs representing the session-specific context
+        /// information. It contains application information passed between Amazon Lex and
+        /// a client application.</p>
         pub fn set_session_attributes(
             mut self,
             input: std::option::Option<
@@ -1346,6 +1601,8 @@ pub mod put_session_input {
             self.dialog_action = Some(input);
             self
         }
+        /// <p>Sets the next action that the bot should take to fulfill the
+        /// conversation.</p>
         pub fn set_dialog_action(
             mut self,
             input: std::option::Option<crate::model::DialogAction>,
@@ -1353,6 +1610,38 @@ pub mod put_session_input {
             self.dialog_action = input;
             self
         }
+        /// Appends an item to `recent_intent_summary_view`.
+        ///
+        /// To override the contents of this collection use [`set_recent_intent_summary_view`](Self::set_recent_intent_summary_view).
+        ///
+        /// <p>A summary of the recent intents for the bot. You can use the intent
+        /// summary view to set a checkpoint label on an intent and modify attributes
+        /// of intents. You can also use it to remove or add intent summary objects to
+        /// the list.</p>
+        /// <p>An intent that you modify or add to the list must make sense for the
+        /// bot. For example, the intent name must be valid for the bot. You must
+        /// provide valid values for:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>intentName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>slot names</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>slotToElict</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>If you send the <code>recentIntentSummaryView</code> parameter in a
+        /// <code>PutSession</code> request, the contents of the new summary view
+        /// replaces the old summary view. For example, if a <code>GetSession</code>
+        /// request returns three intents in the summary view and you call
+        /// <code>PutSession</code> with one intent in the summary view, the next
+        /// call to <code>GetSession</code> will only return one intent.</p>
         pub fn recent_intent_summary_view(
             mut self,
             input: impl Into<crate::model::IntentSummary>,
@@ -1362,6 +1651,34 @@ pub mod put_session_input {
             self.recent_intent_summary_view = Some(v);
             self
         }
+        /// <p>A summary of the recent intents for the bot. You can use the intent
+        /// summary view to set a checkpoint label on an intent and modify attributes
+        /// of intents. You can also use it to remove or add intent summary objects to
+        /// the list.</p>
+        /// <p>An intent that you modify or add to the list must make sense for the
+        /// bot. For example, the intent name must be valid for the bot. You must
+        /// provide valid values for:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>intentName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>slot names</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>slotToElict</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>If you send the <code>recentIntentSummaryView</code> parameter in a
+        /// <code>PutSession</code> request, the contents of the new summary view
+        /// replaces the old summary view. For example, if a <code>GetSession</code>
+        /// request returns three intents in the summary view and you call
+        /// <code>PutSession</code> with one intent in the summary view, the next
+        /// call to <code>GetSession</code> will only return one intent.</p>
         pub fn set_recent_intent_summary_view(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IntentSummary>>,
@@ -1421,16 +1738,80 @@ pub mod put_session_input {
             self.accept = Some(input.into());
             self
         }
+        /// <p>The message that Amazon Lex returns in the response can be either text or
+        /// speech based depending on the value of this field.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex
+        /// returns text in the response.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the value begins with <code>audio/</code>, Amazon Lex returns speech
+        /// in the response. Amazon Lex uses Amazon Polly to generate the speech in the
+        /// configuration that you specify. For example, if you specify
+        /// <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the
+        /// MPEG format.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the value is <code>audio/pcm</code>, the speech is returned as
+        /// <code>audio/pcm</code> in 16-bit, little endian format.</p>
+        /// </li>
+        /// <li>
+        /// <p>The following are the accepted values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>audio/mpeg</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>audio/ogg</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>audio/pcm</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>audio/*</code> (defaults to mpeg)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>text/plain; charset=utf-8</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn set_accept(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.accept = input;
             self
         }
+        /// Appends an item to `active_contexts`.
+        ///
+        /// To override the contents of this collection use [`set_active_contexts`](Self::set_active_contexts).
+        ///
+        /// <p>A list of contexts active for the request. A context can be activated
+        /// when a previous intent is fulfilled, or by including the context in the
+        /// request,</p>
+        /// <p>If you don't specify a list of contexts, Amazon Lex will use the current
+        /// list of contexts for the session. If you specify an empty list, all
+        /// contexts for the session are cleared.</p>
         pub fn active_contexts(mut self, input: impl Into<crate::model::ActiveContext>) -> Self {
             let mut v = self.active_contexts.unwrap_or_default();
             v.push(input.into());
             self.active_contexts = Some(v);
             self
         }
+        /// <p>A list of contexts active for the request. A context can be activated
+        /// when a previous intent is fulfilled, or by including the context in the
+        /// request,</p>
+        /// <p>If you don't specify a list of contexts, Amazon Lex will use the current
+        /// list of contexts for the session. If you specify an empty list, all
+        /// contexts for the session are cleared.</p>
         pub fn set_active_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>,
@@ -1441,8 +1822,10 @@ pub mod put_session_input {
         /// Consumes the builder and constructs a [`PutSessionInput`](crate::input::PutSessionInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::PutSessionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutSessionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutSessionInput {
                 bot_name: self.bot_name,
                 bot_alias: self.bot_alias,
@@ -1467,27 +1850,27 @@ impl PutSessionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutSession,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutSessionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_24 = &_input.bot_name;
             let input_24 =
                 input_24
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_name",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_name = smithy_http::label::fmt_string(input_24, false);
+            let bot_name = aws_smithy_http::label::fmt_string(input_24, false);
             if bot_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_name",
                     details: "cannot be empty or unset",
                 });
@@ -1496,13 +1879,13 @@ impl PutSessionInput {
             let input_25 =
                 input_25
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_alias",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_alias = smithy_http::label::fmt_string(input_25, false);
+            let bot_alias = aws_smithy_http::label::fmt_string(input_25, false);
             if bot_alias.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_alias",
                     details: "cannot be empty or unset",
                 });
@@ -1511,13 +1894,13 @@ impl PutSessionInput {
             let input_26 =
                 input_26
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = smithy_http::label::fmt_string(input_26, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_26, false);
             if user_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
                     details: "cannot be empty or unset",
                 });
@@ -1535,7 +1918,7 @@ impl PutSessionInput {
         fn add_headers(
             _input: &crate::input::PutSessionInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_27) = &_input.accept {
                 let formatted_28 = AsRef::<str>::as_ref(inner_27);
@@ -1543,7 +1926,7 @@ impl PutSessionInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_28;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "accept",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -1559,7 +1942,7 @@ impl PutSessionInput {
         fn update_http_builder(
             input: &crate::input::PutSessionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1569,24 +1952,26 @@ impl PutSessionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutSessionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_put_session(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1609,25 +1994,27 @@ impl PutSessionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::PutSession::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "PutSession",
-                    "lexruntimeservice",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutSession::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutSession",
+            "lexruntimeservice",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1641,6 +2028,7 @@ impl PutSessionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutSessionInput {
@@ -1763,6 +2151,7 @@ impl std::fmt::Debug for PutSessionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PostTextInput {
@@ -1837,6 +2226,7 @@ impl std::fmt::Debug for PostTextInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 pub struct PostContentInput {
     /// <p>Name of the Amazon Lex bot.</p>
@@ -1980,7 +2370,7 @@ pub struct PostContentInput {
     /// that captures all of the audio data before sending. In general, you get
     /// better performance if you stream audio data rather than buffering the data
     /// locally.</p>
-    pub input_stream: smithy_http::byte_stream::ByteStream,
+    pub input_stream: aws_smithy_http::byte_stream::ByteStream,
     /// <p>A list of contexts active for the request. A context can be activated
     /// when a previous intent is fulfilled, or by including the context in the
     /// request,</p>
@@ -2005,6 +2395,7 @@ impl std::fmt::Debug for PostContentInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSessionInput {
@@ -2033,6 +2424,7 @@ impl std::fmt::Debug for GetSessionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSessionInput {

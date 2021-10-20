@@ -6,13 +6,17 @@
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(rustdoc::bare_urls)]
+#![warn(missing_docs)]
 //! <fullname>Storage Gateway Service</fullname>
+//!
 //! <p>Storage Gateway is the service that connects an on-premises software appliance
 //! with cloud-based storage to provide seamless and secure integration between an
 //! organization's on-premises IT environment and the Amazon Web Services storage
 //! infrastructure. The service enables you to securely upload data to the Amazon Web Services Cloud for cost effective backup and rapid disaster recovery.</p>
+//!
 //! <p>Use the following links to get started using the <i>Storage Gateway
 //! Service API Reference</i>:</p>
+//!
 //! <ul>
 //! <li>
 //! <p>
@@ -40,6 +44,7 @@
 //! and the endpoints available for use with Storage Gateway.</p>
 //! </li>
 //! </ul>
+//!
 //! <note>
 //! <p>Storage Gateway resource IDs are in uppercase. When you use these resource IDs
 //! with the Amazon EC2 API, EC2 expects resource IDs in lowercase. You must change
@@ -48,6 +53,7 @@
 //! this ID with the EC2 API, you must change it to <code>vol-aa22bb012345daf670</code>.
 //! Otherwise, the EC2 API might not behave as expected.</p>
 //! </note>
+//!
 //! <important>
 //! <p>IDs for Storage Gateway volumes and Amazon EBS snapshots created from gateway
 //! volumes are changing to a longer format. Starting in December 2016, all new volumes and
@@ -55,12 +61,16 @@
 //! be able to use these longer IDs so you can test your systems with the new format. For
 //! more information, see <a href="http://aws.amazon.com/ec2/faqs/#longer-ids">Longer EC2 and
 //! EBS resource IDs</a>.</p>
+//!
 //! <p>For example, a volume Amazon Resource Name (ARN) with the longer volume ID format
 //! looks like the following:</p>
+//!
 //! <p>
 //! <code>arn:aws:storagegateway:us-west-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABBCCDDEEFFG</code>.</p>
+//!
 //! <p>A snapshot ID with the longer ID format looks like the following:
 //! <code>snap-78e226633445566ee</code>.</p>
+//!
 //! <p>For more information, see <a href="http://forums.aws.amazon.com/ann.jspa?annID=3557">Announcement:
 //! Heads-up – Longer Storage Gateway volume and snapshot IDs coming in
 //! 2016</a>.</p>
@@ -72,30 +82,38 @@ pub use error_meta::Error;
 pub use config::Config;
 
 mod aws_endpoint;
+/// Client and fluent builders for calling the service.
 #[cfg(feature = "client")]
 pub mod client;
+/// Configuration for the service.
 pub mod config;
+/// Errors that can occur when calling the service.
 pub mod error;
 mod error_meta;
+/// Input structures for operations.
 pub mod input;
 mod json_deser;
 mod json_errors;
 mod json_ser;
+/// Data structures used by operation inputs/outputs.
 pub mod model;
 mod no_credentials;
+/// All operations that this crate can perform.
 pub mod operation;
 mod operation_deser;
 mod operation_ser;
+/// Output structures for operations.
 pub mod output;
+/// Crate version number.
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
-pub use smithy_http::byte_stream::ByteStream;
-pub use smithy_http::result::SdkError;
-pub use smithy_types::Blob;
+pub use aws_smithy_http::byte_stream::ByteStream;
+pub use aws_smithy_http::result::SdkError;
+pub use aws_smithy_types::Blob;
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("storagegateway", PKG_VERSION);
+pub use aws_smithy_http::endpoint::Endpoint;
+pub use aws_smithy_types::retry::RetryConfig;
 pub use aws_types::region::Region;
 pub use aws_types::Credentials;
 #[cfg(feature = "client")]
 pub use client::Client;
-pub use smithy_http::endpoint::Endpoint;
-pub use smithy_types::retry::RetryConfig;

@@ -20,8 +20,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.0.21-alpha"
-aws-sdk-appstream = "0.0.21-alpha"
+aws-config = "0.0.22-alpha"
+aws-sdk-appstream = "0.0.22-alpha"
 tokio = { version = "1", features = ["full"] }
 ```
 

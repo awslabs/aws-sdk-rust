@@ -35,6 +35,7 @@ pub mod rule {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The detector for which the rule is associated.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -44,6 +45,7 @@ pub mod rule {
             self.rule_id = Some(input.into());
             self
         }
+        /// <p>The rule ID.</p>
         pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_id = input;
             self
@@ -53,6 +55,7 @@ pub mod rule {
             self.rule_version = Some(input.into());
             self
         }
+        /// <p>The rule version.</p>
         pub fn set_rule_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_version = input;
             self
@@ -106,6 +109,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>A tag key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -115,6 +119,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>A value assigned to a tag key.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -135,6 +140,7 @@ impl Tag {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -146,6 +152,7 @@ impl Tag {
     std::hash::Hash,
 )]
 pub enum Language {
+    #[allow(missing_docs)] // documentation missing in model
     Detectorpl,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -166,12 +173,14 @@ impl std::str::FromStr for Language {
     }
 }
 impl Language {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Language::Detectorpl => "DETECTORPL",
             Language::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DETECTORPL"]
     }
@@ -182,6 +191,7 @@ impl AsRef<str> for Language {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -193,8 +203,11 @@ impl AsRef<str> for Language {
     std::hash::Hash,
 )]
 pub enum ModelVersionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
+    #[allow(missing_docs)] // documentation missing in model
     TrainingCancelled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -217,6 +230,7 @@ impl std::str::FromStr for ModelVersionStatus {
     }
 }
 impl ModelVersionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ModelVersionStatus::Active => "ACTIVE",
@@ -225,6 +239,7 @@ impl ModelVersionStatus {
             ModelVersionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE", "TRAINING_CANCELLED"]
     }
@@ -235,6 +250,7 @@ impl AsRef<str> for ModelVersionStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -246,7 +262,9 @@ impl AsRef<str> for ModelVersionStatus {
     std::hash::Hash,
 )]
 pub enum ModelTypeEnum {
+    #[allow(missing_docs)] // documentation missing in model
     OnlineFraudInsights,
+    #[allow(missing_docs)] // documentation missing in model
     TransactionFraudInsights,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -268,6 +286,7 @@ impl std::str::FromStr for ModelTypeEnum {
     }
 }
 impl ModelTypeEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ModelTypeEnum::OnlineFraudInsights => "ONLINE_FRAUD_INSIGHTS",
@@ -275,6 +294,7 @@ impl ModelTypeEnum {
             ModelTypeEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ONLINE_FRAUD_INSIGHTS", "TRANSACTION_FRAUD_INSIGHTS"]
     }
@@ -320,6 +340,7 @@ pub mod ingested_events_detail {
             self.ingested_events_time_window = Some(input);
             self
         }
+        /// <p>The start and stop time of the ingested events.</p>
         pub fn set_ingested_events_time_window(
             mut self,
             input: std::option::Option<crate::model::IngestedEventsTimeWindow>,
@@ -374,6 +395,7 @@ pub mod ingested_events_time_window {
             self.start_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of the first ingensted event.</p>
         pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_time = input;
             self
@@ -383,6 +405,7 @@ pub mod ingested_events_time_window {
             self.end_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of the final ingested event.</p>
         pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end_time = input;
             self
@@ -435,6 +458,7 @@ pub mod external_events_detail {
             self.data_location = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 bucket location for the data.</p>
         pub fn set_data_location(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -447,6 +471,7 @@ pub mod external_events_detail {
             self.data_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -470,6 +495,7 @@ impl ExternalEventsDetail {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -481,8 +507,11 @@ impl ExternalEventsDetail {
     std::hash::Hash,
 )]
 pub enum DetectorVersionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Draft,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -505,6 +534,7 @@ impl std::str::FromStr for DetectorVersionStatus {
     }
 }
 impl DetectorVersionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DetectorVersionStatus::Active => "ACTIVE",
@@ -513,6 +543,7 @@ impl DetectorVersionStatus {
             DetectorVersionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "DRAFT", "INACTIVE"]
     }
@@ -523,6 +554,7 @@ impl AsRef<str> for DetectorVersionStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -534,7 +566,9 @@ impl AsRef<str> for DetectorVersionStatus {
     std::hash::Hash,
 )]
 pub enum RuleExecutionMode {
+    #[allow(missing_docs)] // documentation missing in model
     AllMatched,
+    #[allow(missing_docs)] // documentation missing in model
     FirstMatched,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -556,6 +590,7 @@ impl std::str::FromStr for RuleExecutionMode {
     }
 }
 impl RuleExecutionMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RuleExecutionMode::AllMatched => "ALL_MATCHED",
@@ -563,6 +598,7 @@ impl RuleExecutionMode {
             RuleExecutionMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL_MATCHED", "FIRST_MATCHED"]
     }
@@ -613,6 +649,7 @@ pub mod model_version {
             self.model_id = Some(input.into());
             self
         }
+        /// <p>The model ID.</p>
         pub fn set_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_id = input;
             self
@@ -622,6 +659,7 @@ pub mod model_version {
             self.model_type = Some(input);
             self
         }
+        /// <p>The model type.</p>
         pub fn set_model_type(
             mut self,
             input: std::option::Option<crate::model::ModelTypeEnum>,
@@ -634,6 +672,7 @@ pub mod model_version {
             self.model_version_number = Some(input.into());
             self
         }
+        /// <p>The model version number.</p>
         pub fn set_model_version_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -646,6 +685,7 @@ pub mod model_version {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The model version ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -700,6 +740,7 @@ pub mod entity {
             self.entity_type = Some(input.into());
             self
         }
+        /// <p>The entity type.</p>
         pub fn set_entity_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_type = input;
             self
@@ -709,6 +750,7 @@ pub mod entity {
             self.entity_id = Some(input.into());
             self
         }
+        /// <p>The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>, which is areserved string literal.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
@@ -729,6 +771,7 @@ impl Entity {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -740,7 +783,9 @@ impl Entity {
     std::hash::Hash,
 )]
 pub enum ModelEndpointStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Associated,
+    #[allow(missing_docs)] // documentation missing in model
     Dissociated,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -762,6 +807,7 @@ impl std::str::FromStr for ModelEndpointStatus {
     }
 }
 impl ModelEndpointStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ModelEndpointStatus::Associated => "ASSOCIATED",
@@ -769,6 +815,7 @@ impl ModelEndpointStatus {
             ModelEndpointStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ASSOCIATED", "DISSOCIATED"]
     }
@@ -821,6 +868,7 @@ pub mod model_output_configuration {
             self.format = Some(input);
             self
         }
+        /// <p>The format of the model output configuration.</p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::ModelOutputDataFormat>,
@@ -828,6 +876,11 @@ pub mod model_output_configuration {
             self.format = input;
             self
         }
+        /// Adds a key-value pair to `json_key_to_variable_map`.
+        ///
+        /// To override the contents of this collection use [`set_json_key_to_variable_map`](Self::set_json_key_to_variable_map).
+        ///
+        /// <p>A map of JSON keys in response from SageMaker to the Amazon Fraud Detector variables. </p>
         pub fn json_key_to_variable_map(
             mut self,
             k: impl Into<std::string::String>,
@@ -838,6 +891,7 @@ pub mod model_output_configuration {
             self.json_key_to_variable_map = Some(hash_map);
             self
         }
+        /// <p>A map of JSON keys in response from SageMaker to the Amazon Fraud Detector variables. </p>
         pub fn set_json_key_to_variable_map(
             mut self,
             input: std::option::Option<
@@ -847,6 +901,11 @@ pub mod model_output_configuration {
             self.json_key_to_variable_map = input;
             self
         }
+        /// Adds a key-value pair to `csv_index_to_variable_map`.
+        ///
+        /// To override the contents of this collection use [`set_csv_index_to_variable_map`](Self::set_csv_index_to_variable_map).
+        ///
+        /// <p>A map of CSV index values in the SageMaker response to the Amazon Fraud Detector variables. </p>
         pub fn csv_index_to_variable_map(
             mut self,
             k: impl Into<std::string::String>,
@@ -857,6 +916,7 @@ pub mod model_output_configuration {
             self.csv_index_to_variable_map = Some(hash_map);
             self
         }
+        /// <p>A map of CSV index values in the SageMaker response to the Amazon Fraud Detector variables. </p>
         pub fn set_csv_index_to_variable_map(
             mut self,
             input: std::option::Option<
@@ -883,6 +943,7 @@ impl ModelOutputConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -894,7 +955,9 @@ impl ModelOutputConfiguration {
     std::hash::Hash,
 )]
 pub enum ModelOutputDataFormat {
+    #[allow(missing_docs)] // documentation missing in model
     Jsonlines,
+    #[allow(missing_docs)] // documentation missing in model
     Csv,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -916,6 +979,7 @@ impl std::str::FromStr for ModelOutputDataFormat {
     }
 }
 impl ModelOutputDataFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ModelOutputDataFormat::Jsonlines => "APPLICATION_JSONLINES",
@@ -923,6 +987,7 @@ impl ModelOutputDataFormat {
             ModelOutputDataFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["APPLICATION_JSONLINES", "TEXT_CSV"]
     }
@@ -982,6 +1047,7 @@ pub mod model_input_configuration {
             self.event_type_name = Some(input.into());
             self
         }
+        /// <p>The event type name.</p>
         pub fn set_event_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -995,6 +1061,8 @@ pub mod model_input_configuration {
             self.format = Some(input);
             self
         }
+        /// <p> The format of the model input configuration. The format differs depending on if it is
+        /// passed through to SageMaker or constructed by Amazon Fraud Detector.</p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::ModelInputDataFormat>,
@@ -1007,6 +1075,7 @@ pub mod model_input_configuration {
             self.use_event_variables = Some(input);
             self
         }
+        /// <p>The event variables.</p>
         pub fn set_use_event_variables(mut self, input: std::option::Option<bool>) -> Self {
             self.use_event_variables = input;
             self
@@ -1018,6 +1087,9 @@ pub mod model_input_configuration {
             self.json_input_template = Some(input.into());
             self
         }
+        /// <p> Template for constructing the JSON input-data sent to SageMaker. At event-evaluation,
+        /// the placeholders for variable names in the template will be replaced with the variable
+        /// values before being sent to SageMaker. </p>
         pub fn set_json_input_template(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1032,6 +1104,9 @@ pub mod model_input_configuration {
             self.csv_input_template = Some(input.into());
             self
         }
+        /// <p> Template for constructing the CSV input-data sent to SageMaker. At event-evaluation,
+        /// the placeholders for variable-names in the template will be replaced with the variable
+        /// values before being sent to SageMaker. </p>
         pub fn set_csv_input_template(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1058,6 +1133,7 @@ impl ModelInputConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1069,7 +1145,9 @@ impl ModelInputConfiguration {
     std::hash::Hash,
 )]
 pub enum ModelInputDataFormat {
+    #[allow(missing_docs)] // documentation missing in model
     Json,
+    #[allow(missing_docs)] // documentation missing in model
     Csv,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1091,6 +1169,7 @@ impl std::str::FromStr for ModelInputDataFormat {
     }
 }
 impl ModelInputDataFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ModelInputDataFormat::Json => "APPLICATION_JSON",
@@ -1098,6 +1177,7 @@ impl ModelInputDataFormat {
             ModelInputDataFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["APPLICATION_JSON", "TEXT_CSV"]
     }
@@ -1108,6 +1188,7 @@ impl AsRef<str> for ModelInputDataFormat {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1119,6 +1200,7 @@ impl AsRef<str> for ModelInputDataFormat {
     std::hash::Hash,
 )]
 pub enum ModelSource {
+    #[allow(missing_docs)] // documentation missing in model
     Sagemaker,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1139,12 +1221,14 @@ impl std::str::FromStr for ModelSource {
     }
 }
 impl ModelSource {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ModelSource::Sagemaker => "SAGEMAKER",
             ModelSource::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SAGEMAKER"]
     }
@@ -1155,6 +1239,7 @@ impl AsRef<str> for ModelSource {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1166,7 +1251,9 @@ impl AsRef<str> for ModelSource {
     std::hash::Hash,
 )]
 pub enum EventIngestion {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1188,6 +1275,7 @@ impl std::str::FromStr for EventIngestion {
     }
 }
 impl EventIngestion {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EventIngestion::Disabled => "DISABLED",
@@ -1195,6 +1283,7 @@ impl EventIngestion {
             EventIngestion::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -1267,6 +1356,7 @@ pub mod variable {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the variable.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1276,6 +1366,7 @@ pub mod variable {
             self.data_type = Some(input);
             self
         }
+        /// <p>The data type of the variable. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
         pub fn set_data_type(mut self, input: std::option::Option<crate::model::DataType>) -> Self {
             self.data_type = input;
             self
@@ -1285,6 +1376,7 @@ pub mod variable {
             self.data_source = Some(input);
             self
         }
+        /// <p>The data source of the variable.</p>
         pub fn set_data_source(
             mut self,
             input: std::option::Option<crate::model::DataSource>,
@@ -1297,6 +1389,7 @@ pub mod variable {
             self.default_value = Some(input.into());
             self
         }
+        /// <p>The default value of the variable.</p>
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1309,6 +1402,7 @@ pub mod variable {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the variable. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1320,6 +1414,9 @@ pub mod variable {
             self.variable_type = Some(input.into());
             self
         }
+        /// <p>The variable type of the variable.</p>
+        /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT </code>
+        /// </p>
         pub fn set_variable_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1332,6 +1429,7 @@ pub mod variable {
             self.last_updated_time = Some(input.into());
             self
         }
+        /// <p>The time when variable was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1344,6 +1442,7 @@ pub mod variable {
             self.created_time = Some(input.into());
             self
         }
+        /// <p>The time when the variable was created.</p>
         pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_time = input;
             self
@@ -1353,6 +1452,7 @@ pub mod variable {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the variable.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1380,6 +1480,7 @@ impl Variable {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1391,8 +1492,11 @@ impl Variable {
     std::hash::Hash,
 )]
 pub enum DataSource {
+    #[allow(missing_docs)] // documentation missing in model
     Event,
+    #[allow(missing_docs)] // documentation missing in model
     ExternalModelScore,
+    #[allow(missing_docs)] // documentation missing in model
     ModelScore,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1415,6 +1519,7 @@ impl std::str::FromStr for DataSource {
     }
 }
 impl DataSource {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataSource::Event => "EVENT",
@@ -1423,6 +1528,7 @@ impl DataSource {
             DataSource::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EVENT", "EXTERNAL_MODEL_SCORE", "MODEL_SCORE"]
     }
@@ -1433,6 +1539,7 @@ impl AsRef<str> for DataSource {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1444,9 +1551,13 @@ impl AsRef<str> for DataSource {
     std::hash::Hash,
 )]
 pub enum DataType {
+    #[allow(missing_docs)] // documentation missing in model
     Boolean,
+    #[allow(missing_docs)] // documentation missing in model
     Float,
+    #[allow(missing_docs)] // documentation missing in model
     Integer,
+    #[allow(missing_docs)] // documentation missing in model
     String,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1470,6 +1581,7 @@ impl std::str::FromStr for DataType {
     }
 }
 impl DataType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataType::Boolean => "BOOLEAN",
@@ -1479,6 +1591,7 @@ impl DataType {
             DataType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BOOLEAN", "FLOAT", "INTEGER", "STRING"]
     }
@@ -1553,6 +1666,7 @@ pub mod rule_detail {
             self.rule_id = Some(input.into());
             self
         }
+        /// <p>The rule ID.</p>
         pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_id = input;
             self
@@ -1562,6 +1676,7 @@ pub mod rule_detail {
             self.description = Some(input.into());
             self
         }
+        /// <p>The rule description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1571,6 +1686,7 @@ pub mod rule_detail {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The detector for which the rule is associated.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -1580,6 +1696,7 @@ pub mod rule_detail {
             self.rule_version = Some(input.into());
             self
         }
+        /// <p>The rule version.</p>
         pub fn set_rule_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_version = input;
             self
@@ -1589,6 +1706,7 @@ pub mod rule_detail {
             self.expression = Some(input.into());
             self
         }
+        /// <p>The rule expression.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expression = input;
             self
@@ -1598,16 +1716,23 @@ pub mod rule_detail {
             self.language = Some(input);
             self
         }
+        /// <p>The rule language.</p>
         pub fn set_language(mut self, input: std::option::Option<crate::model::Language>) -> Self {
             self.language = input;
             self
         }
+        /// Appends an item to `outcomes`.
+        ///
+        /// To override the contents of this collection use [`set_outcomes`](Self::set_outcomes).
+        ///
+        /// <p>The rule outcomes.</p>
         pub fn outcomes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.outcomes.unwrap_or_default();
             v.push(input.into());
             self.outcomes = Some(v);
             self
         }
+        /// <p>The rule outcomes.</p>
         pub fn set_outcomes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1620,6 +1745,7 @@ pub mod rule_detail {
             self.last_updated_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of the last time the rule was updated.</p>
         pub fn set_last_updated_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1632,6 +1758,7 @@ pub mod rule_detail {
             self.created_time = Some(input.into());
             self
         }
+        /// <p>The timestamp of when the rule was created.</p>
         pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_time = input;
             self
@@ -1641,6 +1768,7 @@ pub mod rule_detail {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The rule ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1713,6 +1841,7 @@ pub mod outcome {
             self.name = Some(input.into());
             self
         }
+        /// <p>The outcome name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1722,6 +1851,7 @@ pub mod outcome {
             self.description = Some(input.into());
             self
         }
+        /// <p>The outcome description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1731,6 +1861,7 @@ pub mod outcome {
             self.last_updated_time = Some(input.into());
             self
         }
+        /// <p>The timestamp when the outcome was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1743,6 +1874,7 @@ pub mod outcome {
             self.created_time = Some(input.into());
             self
         }
+        /// <p>The timestamp when the outcome was created.</p>
         pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_time = input;
             self
@@ -1752,6 +1884,7 @@ pub mod outcome {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The outcome ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1802,12 +1935,18 @@ pub mod training_data_schema {
         pub(crate) label_schema: std::option::Option<crate::model::LabelSchema>,
     }
     impl Builder {
+        /// Appends an item to `model_variables`.
+        ///
+        /// To override the contents of this collection use [`set_model_variables`](Self::set_model_variables).
+        ///
+        /// <p>The training data schema variables.</p>
         pub fn model_variables(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.model_variables.unwrap_or_default();
             v.push(input.into());
             self.model_variables = Some(v);
             self
         }
+        /// <p>The training data schema variables.</p>
         pub fn set_model_variables(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1820,6 +1959,7 @@ pub mod training_data_schema {
             self.label_schema = Some(input);
             self
         }
+        /// <p>The label schema.</p>
         pub fn set_label_schema(
             mut self,
             input: std::option::Option<crate::model::LabelSchema>,
@@ -1879,6 +2019,12 @@ pub mod label_schema {
             std::option::Option<crate::model::UnlabeledEventsTreatment>,
     }
     impl Builder {
+        /// Adds a key-value pair to `label_mapper`.
+        ///
+        /// To override the contents of this collection use [`set_label_mapper`](Self::set_label_mapper).
+        ///
+        /// <p>The label mapper maps the Amazon Fraud Detector supported model classification labels (<code>FRAUD</code>, <code>LEGIT</code>) to the appropriate event type labels. For example, if "<code>FRAUD</code>" and "<code>LEGIT</code>" are Amazon Fraud Detector supported labels, this mapper could be: <code>{"FRAUD" => ["0"]</code>, <code>"LEGIT" => ["1"]}</code> or <code>{"FRAUD" => ["false"]</code>, <code>"LEGIT" => ["true"]}</code> or <code>{"FRAUD" => ["fraud", "abuse"]</code>, <code>"LEGIT" => ["legit", "safe"]}</code>. The value part of the mapper is a list, because you may have multiple label variants from your event type for a single Amazon Fraud Detector label.
+        /// </p>
         pub fn label_mapper(
             mut self,
             k: impl Into<std::string::String>,
@@ -1889,6 +2035,8 @@ pub mod label_schema {
             self.label_mapper = Some(hash_map);
             self
         }
+        /// <p>The label mapper maps the Amazon Fraud Detector supported model classification labels (<code>FRAUD</code>, <code>LEGIT</code>) to the appropriate event type labels. For example, if "<code>FRAUD</code>" and "<code>LEGIT</code>" are Amazon Fraud Detector supported labels, this mapper could be: <code>{"FRAUD" => ["0"]</code>, <code>"LEGIT" => ["1"]}</code> or <code>{"FRAUD" => ["false"]</code>, <code>"LEGIT" => ["true"]}</code> or <code>{"FRAUD" => ["fraud", "abuse"]</code>, <code>"LEGIT" => ["legit", "safe"]}</code>. The value part of the mapper is a list, because you may have multiple label variants from your event type for a single Amazon Fraud Detector label.
+        /// </p>
         pub fn set_label_mapper(
             mut self,
             input: std::option::Option<
@@ -1906,6 +2054,7 @@ pub mod label_schema {
             self.unlabeled_events_treatment = Some(input);
             self
         }
+        /// <p>The action to take for unlabeled events.</p>
         pub fn set_unlabeled_events_treatment(
             mut self,
             input: std::option::Option<crate::model::UnlabeledEventsTreatment>,
@@ -1929,6 +2078,7 @@ impl LabelSchema {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1940,8 +2090,11 @@ impl LabelSchema {
     std::hash::Hash,
 )]
 pub enum UnlabeledEventsTreatment {
+    #[allow(missing_docs)] // documentation missing in model
     Fraud,
+    #[allow(missing_docs)] // documentation missing in model
     Ignore,
+    #[allow(missing_docs)] // documentation missing in model
     Legit,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1964,6 +2117,7 @@ impl std::str::FromStr for UnlabeledEventsTreatment {
     }
 }
 impl UnlabeledEventsTreatment {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UnlabeledEventsTreatment::Fraud => "FRAUD",
@@ -1972,6 +2126,7 @@ impl UnlabeledEventsTreatment {
             UnlabeledEventsTreatment::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FRAUD", "IGNORE", "LEGIT"]
     }
@@ -1982,6 +2137,7 @@ impl AsRef<str> for UnlabeledEventsTreatment {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1993,7 +2149,9 @@ impl AsRef<str> for UnlabeledEventsTreatment {
     std::hash::Hash,
 )]
 pub enum TrainingDataSourceEnum {
+    #[allow(missing_docs)] // documentation missing in model
     ExternalEvents,
+    #[allow(missing_docs)] // documentation missing in model
     IngestedEvents,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2015,6 +2173,7 @@ impl std::str::FromStr for TrainingDataSourceEnum {
     }
 }
 impl TrainingDataSourceEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TrainingDataSourceEnum::ExternalEvents => "EXTERNAL_EVENTS",
@@ -2022,6 +2181,7 @@ impl TrainingDataSourceEnum {
             TrainingDataSourceEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EXTERNAL_EVENTS", "INGESTED_EVENTS"]
     }
@@ -2084,6 +2244,7 @@ pub mod model {
             self.model_id = Some(input.into());
             self
         }
+        /// <p>The model ID.</p>
         pub fn set_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_id = input;
             self
@@ -2093,6 +2254,7 @@ pub mod model {
             self.model_type = Some(input);
             self
         }
+        /// <p>The model type.</p>
         pub fn set_model_type(
             mut self,
             input: std::option::Option<crate::model::ModelTypeEnum>,
@@ -2105,6 +2267,7 @@ pub mod model {
             self.description = Some(input.into());
             self
         }
+        /// <p>The model description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2114,6 +2277,7 @@ pub mod model {
             self.event_type_name = Some(input.into());
             self
         }
+        /// <p>The name of the event type.</p>
         pub fn set_event_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2126,6 +2290,7 @@ pub mod model {
             self.created_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of when the model was created.</p>
         pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_time = input;
             self
@@ -2135,6 +2300,7 @@ pub mod model {
             self.last_updated_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of last time the model was updated.</p>
         pub fn set_last_updated_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2147,6 +2313,7 @@ pub mod model {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the model.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2216,6 +2383,7 @@ pub mod label {
             self.name = Some(input.into());
             self
         }
+        /// <p>The label name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2225,6 +2393,7 @@ pub mod label {
             self.description = Some(input.into());
             self
         }
+        /// <p>The label description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2234,6 +2403,7 @@ pub mod label {
             self.last_updated_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of when the label was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2246,6 +2416,7 @@ pub mod label {
             self.created_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of when the event type was created.</p>
         pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_time = input;
             self
@@ -2255,6 +2426,7 @@ pub mod label {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The label ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2306,6 +2478,7 @@ pub mod kms_key {
             self.kms_encryption_key_arn = Some(input.into());
             self
         }
+        /// <p>The encryption key ARN.</p>
         pub fn set_kms_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2392,6 +2565,7 @@ pub mod external_model {
             self.model_endpoint = Some(input.into());
             self
         }
+        /// <p>The Amazon SageMaker model endpoints.</p>
         pub fn set_model_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2404,6 +2578,7 @@ pub mod external_model {
             self.model_source = Some(input);
             self
         }
+        /// <p>The source of the model.</p>
         pub fn set_model_source(
             mut self,
             input: std::option::Option<crate::model::ModelSource>,
@@ -2419,6 +2594,7 @@ pub mod external_model {
             self.invoke_model_endpoint_role_arn = Some(input.into());
             self
         }
+        /// <p>The role used to invoke the model. </p>
         pub fn set_invoke_model_endpoint_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2431,6 +2607,7 @@ pub mod external_model {
             self.input_configuration = Some(input);
             self
         }
+        /// <p>The input configuration.</p>
         pub fn set_input_configuration(
             mut self,
             input: std::option::Option<crate::model::ModelInputConfiguration>,
@@ -2446,6 +2623,7 @@ pub mod external_model {
             self.output_configuration = Some(input);
             self
         }
+        /// <p>The output configuration.</p>
         pub fn set_output_configuration(
             mut self,
             input: std::option::Option<crate::model::ModelOutputConfiguration>,
@@ -2458,6 +2636,7 @@ pub mod external_model {
             self.model_endpoint_status = Some(input);
             self
         }
+        /// <p>The Amazon Fraud Detector status for the external model endpoint</p>
         pub fn set_model_endpoint_status(
             mut self,
             input: std::option::Option<crate::model::ModelEndpointStatus>,
@@ -2470,6 +2649,7 @@ pub mod external_model {
             self.last_updated_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of when the model was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2482,6 +2662,7 @@ pub mod external_model {
             self.created_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of when the model was last created.</p>
         pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_time = input;
             self
@@ -2491,6 +2672,7 @@ pub mod external_model {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The model ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2583,6 +2765,7 @@ pub mod event_type {
             self.name = Some(input.into());
             self
         }
+        /// <p>The event type name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2592,16 +2775,23 @@ pub mod event_type {
             self.description = Some(input.into());
             self
         }
+        /// <p>The event type description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `event_variables`.
+        ///
+        /// To override the contents of this collection use [`set_event_variables`](Self::set_event_variables).
+        ///
+        /// <p>The event type event variables.</p>
         pub fn event_variables(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_variables.unwrap_or_default();
             v.push(input.into());
             self.event_variables = Some(v);
             self
         }
+        /// <p>The event type event variables.</p>
         pub fn set_event_variables(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2609,12 +2799,18 @@ pub mod event_type {
             self.event_variables = input;
             self
         }
+        /// Appends an item to `labels`.
+        ///
+        /// To override the contents of this collection use [`set_labels`](Self::set_labels).
+        ///
+        /// <p>The event type labels.</p>
         pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.labels.unwrap_or_default();
             v.push(input.into());
             self.labels = Some(v);
             self
         }
+        /// <p>The event type labels.</p>
         pub fn set_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2622,12 +2818,18 @@ pub mod event_type {
             self.labels = input;
             self
         }
+        /// Appends an item to `entity_types`.
+        ///
+        /// To override the contents of this collection use [`set_entity_types`](Self::set_entity_types).
+        ///
+        /// <p>The event type entity types.</p>
         pub fn entity_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.entity_types.unwrap_or_default();
             v.push(input.into());
             self.entity_types = Some(v);
             self
         }
+        /// <p>The event type entity types.</p>
         pub fn set_entity_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2640,6 +2842,7 @@ pub mod event_type {
             self.event_ingestion = Some(input);
             self
         }
+        /// <p>If <code>Enabled</code>, Amazon Fraud Detector stores event data when you generate a prediction and uses that data to update calculated variables in near real-time. Amazon Fraud Detector uses this data, known as <code>INGESTED_EVENTS</code>, to train your model and  improve fraud predictions.</p>
         pub fn set_event_ingestion(
             mut self,
             input: std::option::Option<crate::model::EventIngestion>,
@@ -2655,6 +2858,7 @@ pub mod event_type {
             self.ingested_event_statistics = Some(input);
             self
         }
+        /// <p>Data about the stored events.</p>
         pub fn set_ingested_event_statistics(
             mut self,
             input: std::option::Option<crate::model::IngestedEventStatistics>,
@@ -2667,6 +2871,7 @@ pub mod event_type {
             self.last_updated_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of when the event type was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2679,6 +2884,7 @@ pub mod event_type {
             self.created_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of when the event type was created.</p>
         pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_time = input;
             self
@@ -2688,6 +2894,7 @@ pub mod event_type {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The entity type ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2761,6 +2968,7 @@ pub mod ingested_event_statistics {
             self.number_of_events = Some(input);
             self
         }
+        /// <p>The number of stored events.</p>
         pub fn set_number_of_events(mut self, input: std::option::Option<i64>) -> Self {
             self.number_of_events = input;
             self
@@ -2770,6 +2978,7 @@ pub mod ingested_event_statistics {
             self.event_data_size_in_bytes = Some(input);
             self
         }
+        /// <p>The total size of the stored events.</p>
         pub fn set_event_data_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.event_data_size_in_bytes = input;
             self
@@ -2779,6 +2988,7 @@ pub mod ingested_event_statistics {
             self.least_recent_event = Some(input.into());
             self
         }
+        /// <p>The oldest stored event.</p>
         pub fn set_least_recent_event(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2791,6 +3001,7 @@ pub mod ingested_event_statistics {
             self.most_recent_event = Some(input.into());
             self
         }
+        /// <p>The newest stored event.</p>
         pub fn set_most_recent_event(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2804,6 +3015,8 @@ pub mod ingested_event_statistics {
             self.last_updated_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of when the stored event was last updated.    
+        /// </p>
         pub fn set_last_updated_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2865,6 +3078,7 @@ pub mod external_model_outputs {
             self.external_model = Some(input);
             self
         }
+        /// <p>The Amazon SageMaker model.</p>
         pub fn set_external_model(
             mut self,
             input: std::option::Option<crate::model::ExternalModelSummary>,
@@ -2872,6 +3086,11 @@ pub mod external_model_outputs {
             self.external_model = input;
             self
         }
+        /// Adds a key-value pair to `outputs`.
+        ///
+        /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
+        ///
+        /// <p>The fraud prediction scores from Amazon SageMaker model.</p>
         pub fn outputs(
             mut self,
             k: impl Into<std::string::String>,
@@ -2882,6 +3101,7 @@ pub mod external_model_outputs {
             self.outputs = Some(hash_map);
             self
         }
+        /// <p>The fraud prediction scores from Amazon SageMaker model.</p>
         pub fn set_outputs(
             mut self,
             input: std::option::Option<
@@ -2939,6 +3159,7 @@ pub mod external_model_summary {
             self.model_endpoint = Some(input.into());
             self
         }
+        /// <p>The endpoint of the Amazon SageMaker model.</p>
         pub fn set_model_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2951,6 +3172,7 @@ pub mod external_model_summary {
             self.model_source = Some(input);
             self
         }
+        /// <p>The source of the model.</p>
         pub fn set_model_source(
             mut self,
             input: std::option::Option<crate::model::ModelSource>,
@@ -3006,16 +3228,23 @@ pub mod rule_result {
             self.rule_id = Some(input.into());
             self
         }
+        /// <p>The rule ID that was matched, based on the rule execution mode.</p>
         pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_id = input;
             self
         }
+        /// Appends an item to `outcomes`.
+        ///
+        /// To override the contents of this collection use [`set_outcomes`](Self::set_outcomes).
+        ///
+        /// <p>The outcomes of the matched rule, based on the rule execution mode.</p>
         pub fn outcomes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.outcomes.unwrap_or_default();
             v.push(input.into());
             self.outcomes = Some(v);
             self
         }
+        /// <p>The outcomes of the matched rule, based on the rule execution mode.</p>
         pub fn set_outcomes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3071,6 +3300,7 @@ pub mod model_scores {
             self.model_version = Some(input);
             self
         }
+        /// <p>The model version.</p>
         pub fn set_model_version(
             mut self,
             input: std::option::Option<crate::model::ModelVersion>,
@@ -3078,12 +3308,18 @@ pub mod model_scores {
             self.model_version = input;
             self
         }
+        /// Adds a key-value pair to `scores`.
+        ///
+        /// To override the contents of this collection use [`set_scores`](Self::set_scores).
+        ///
+        /// <p>The model's fraud prediction scores.</p>
         pub fn scores(mut self, k: impl Into<std::string::String>, v: impl Into<f32>) -> Self {
             let mut hash_map = self.scores.unwrap_or_default();
             hash_map.insert(k.into(), v.into());
             self.scores = Some(hash_map);
             self
         }
+        /// <p>The model's fraud prediction scores.</p>
         pub fn set_scores(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, f32>>,
@@ -3112,7 +3348,7 @@ impl ModelScores {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModelEndpointDataBlob {
     /// <p>The byte buffer of the Amazon SageMaker model endpoint input data blob.</p>
-    pub byte_buffer: std::option::Option<smithy_types::Blob>,
+    pub byte_buffer: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
     pub content_type: std::option::Option<std::string::String>,
 }
@@ -3130,16 +3366,20 @@ pub mod model_endpoint_data_blob {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) byte_buffer: std::option::Option<smithy_types::Blob>,
+        pub(crate) byte_buffer: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) content_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The byte buffer of the Amazon SageMaker model endpoint input data blob.</p>
-        pub fn byte_buffer(mut self, input: smithy_types::Blob) -> Self {
+        pub fn byte_buffer(mut self, input: aws_smithy_types::Blob) -> Self {
             self.byte_buffer = Some(input);
             self
         }
-        pub fn set_byte_buffer(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The byte buffer of the Amazon SageMaker model endpoint input data blob.</p>
+        pub fn set_byte_buffer(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
             self.byte_buffer = input;
             self
         }
@@ -3148,6 +3388,7 @@ pub mod model_endpoint_data_blob {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -3223,6 +3464,7 @@ pub mod event {
             self.event_id = Some(input.into());
             self
         }
+        /// <p>The event ID.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_id = input;
             self
@@ -3232,6 +3474,7 @@ pub mod event {
             self.event_type_name = Some(input.into());
             self
         }
+        /// <p>The event type.</p>
         pub fn set_event_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3244,6 +3487,7 @@ pub mod event {
             self.event_timestamp = Some(input.into());
             self
         }
+        /// <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
         pub fn set_event_timestamp(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3251,6 +3495,11 @@ pub mod event {
             self.event_timestamp = input;
             self
         }
+        /// Adds a key-value pair to `event_variables`.
+        ///
+        /// To override the contents of this collection use [`set_event_variables`](Self::set_event_variables).
+        ///
+        /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
         pub fn event_variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -3261,6 +3510,7 @@ pub mod event {
             self.event_variables = Some(hash_map);
             self
         }
+        /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
         pub fn set_event_variables(
             mut self,
             input: std::option::Option<
@@ -3275,6 +3525,7 @@ pub mod event {
             self.current_label = Some(input.into());
             self
         }
+        /// <p>The label associated with the event.</p>
         pub fn set_current_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3287,6 +3538,7 @@ pub mod event {
             self.label_timestamp = Some(input.into());
             self
         }
+        /// <p>The timestamp associated with the label to update. The timestamp must be specified using ISO 8601 standard in UTC.</p>
         pub fn set_label_timestamp(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3294,12 +3546,18 @@ pub mod event {
             self.label_timestamp = input;
             self
         }
+        /// Appends an item to `entities`.
+        ///
+        /// To override the contents of this collection use [`set_entities`](Self::set_entities).
+        ///
+        /// <p>The event entities.</p>
         pub fn entities(mut self, input: impl Into<crate::model::Entity>) -> Self {
             let mut v = self.entities.unwrap_or_default();
             v.push(input.into());
             self.entities = Some(v);
             self
         }
+        /// <p>The event entities.</p>
         pub fn set_entities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Entity>>,
@@ -3372,6 +3630,7 @@ pub mod entity_type {
             self.name = Some(input.into());
             self
         }
+        /// <p>The entity type name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3381,6 +3640,7 @@ pub mod entity_type {
             self.description = Some(input.into());
             self
         }
+        /// <p>The entity type description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3390,6 +3650,7 @@ pub mod entity_type {
             self.last_updated_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of when the entity type was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3402,6 +3663,7 @@ pub mod entity_type {
             self.created_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of when the entity type was created.</p>
         pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_time = input;
             self
@@ -3411,6 +3673,7 @@ pub mod entity_type {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The entity type ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3482,6 +3745,7 @@ pub mod detector {
             self.detector_id = Some(input.into());
             self
         }
+        /// <p>The detector ID.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detector_id = input;
             self
@@ -3491,6 +3755,7 @@ pub mod detector {
             self.description = Some(input.into());
             self
         }
+        /// <p>The detector description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3500,6 +3765,7 @@ pub mod detector {
             self.event_type_name = Some(input.into());
             self
         }
+        /// <p>The name of the event type.</p>
         pub fn set_event_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3512,6 +3778,7 @@ pub mod detector {
             self.last_updated_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of when the detector was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3524,6 +3791,7 @@ pub mod detector {
             self.created_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of when the detector was created.</p>
         pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_time = input;
             self
@@ -3533,6 +3801,7 @@ pub mod detector {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The detector ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3557,6 +3826,7 @@ impl Detector {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3568,11 +3838,17 @@ impl Detector {
     std::hash::Hash,
 )]
 pub enum AsyncJobStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Canceled,
+    #[allow(missing_docs)] // documentation missing in model
     CancelInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Complete,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     InProgressInitializing,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3598,6 +3874,7 @@ impl std::str::FromStr for AsyncJobStatus {
     }
 }
 impl AsyncJobStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AsyncJobStatus::Canceled => "CANCELED",
@@ -3609,6 +3886,7 @@ impl AsyncJobStatus {
             AsyncJobStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CANCELED",
@@ -3710,6 +3988,7 @@ pub mod batch_prediction {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The job ID for the batch prediction.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -3719,6 +3998,7 @@ pub mod batch_prediction {
             self.status = Some(input);
             self
         }
+        /// <p>The batch prediction status.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AsyncJobStatus>,
@@ -3731,6 +4011,7 @@ pub mod batch_prediction {
             self.failure_reason = Some(input.into());
             self
         }
+        /// <p>The reason a batch prediction job failed.</p>
         pub fn set_failure_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3743,6 +4024,7 @@ pub mod batch_prediction {
             self.start_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of when the batch prediction job started.</p>
         pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_time = input;
             self
@@ -3752,6 +4034,7 @@ pub mod batch_prediction {
             self.completion_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of when the batch prediction job completed.</p>
         pub fn set_completion_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3764,6 +4047,7 @@ pub mod batch_prediction {
             self.last_heartbeat_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of most recent heartbeat indicating the batch prediction job was making progress.</p>
         pub fn set_last_heartbeat_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3776,6 +4060,7 @@ pub mod batch_prediction {
             self.input_path = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 location of your training file.</p>
         pub fn set_input_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_path = input;
             self
@@ -3785,6 +4070,7 @@ pub mod batch_prediction {
             self.output_path = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 location of your output file.</p>
         pub fn set_output_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output_path = input;
             self
@@ -3794,6 +4080,7 @@ pub mod batch_prediction {
             self.event_type_name = Some(input.into());
             self
         }
+        /// <p>The name of the event type.</p>
         pub fn set_event_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3806,6 +4093,7 @@ pub mod batch_prediction {
             self.detector_name = Some(input.into());
             self
         }
+        /// <p>The name of the detector.</p>
         pub fn set_detector_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3818,6 +4106,7 @@ pub mod batch_prediction {
             self.detector_version = Some(input.into());
             self
         }
+        /// <p>The detector version. </p>
         pub fn set_detector_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3830,6 +4119,7 @@ pub mod batch_prediction {
             self.iam_role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role to use for this job request.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -3839,6 +4129,7 @@ pub mod batch_prediction {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of batch prediction job.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3848,6 +4139,7 @@ pub mod batch_prediction {
             self.processed_records_count = Some(input);
             self
         }
+        /// <p>The number of records processed by the batch prediction job.</p>
         pub fn set_processed_records_count(mut self, input: std::option::Option<i32>) -> Self {
             self.processed_records_count = input;
             self
@@ -3857,6 +4149,7 @@ pub mod batch_prediction {
             self.total_records_count = Some(input);
             self
         }
+        /// <p>The total number of records in the batch prediction job.</p>
         pub fn set_total_records_count(mut self, input: std::option::Option<i32>) -> Self {
             self.total_records_count = input;
             self
@@ -3966,6 +4259,7 @@ pub mod batch_import {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The ID of the batch import job. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -3975,6 +4269,7 @@ pub mod batch_import {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the batch import job.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AsyncJobStatus>,
@@ -3987,6 +4282,7 @@ pub mod batch_import {
             self.failure_reason = Some(input.into());
             self
         }
+        /// <p>The reason batch import job failed.</p>
         pub fn set_failure_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3999,6 +4295,7 @@ pub mod batch_import {
             self.start_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of when the batch import job started.</p>
         pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_time = input;
             self
@@ -4008,6 +4305,7 @@ pub mod batch_import {
             self.completion_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of when batch import job completed.</p>
         pub fn set_completion_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4020,6 +4318,7 @@ pub mod batch_import {
             self.input_path = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 location of your data file for batch import.</p>
         pub fn set_input_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_path = input;
             self
@@ -4029,6 +4328,7 @@ pub mod batch_import {
             self.output_path = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 location of your output file.</p>
         pub fn set_output_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output_path = input;
             self
@@ -4038,6 +4338,7 @@ pub mod batch_import {
             self.event_type_name = Some(input.into());
             self
         }
+        /// <p>The name of the event type.</p>
         pub fn set_event_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4050,6 +4351,7 @@ pub mod batch_import {
             self.iam_role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role to use for this job request.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -4059,6 +4361,7 @@ pub mod batch_import {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the batch import job.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -4068,6 +4371,7 @@ pub mod batch_import {
             self.processed_records_count = Some(input);
             self
         }
+        /// <p>The number of records processed by batch import job.</p>
         pub fn set_processed_records_count(mut self, input: std::option::Option<i32>) -> Self {
             self.processed_records_count = input;
             self
@@ -4077,6 +4381,7 @@ pub mod batch_import {
             self.failed_records_count = Some(input);
             self
         }
+        /// <p>The number of records that failed to import. </p>
         pub fn set_failed_records_count(mut self, input: std::option::Option<i32>) -> Self {
             self.failed_records_count = input;
             self
@@ -4086,6 +4391,7 @@ pub mod batch_import {
             self.total_records_count = Some(input);
             self
         }
+        /// <p>The total number of records in the batch import job.</p>
         pub fn set_total_records_count(mut self, input: std::option::Option<i32>) -> Self {
             self.total_records_count = input;
             self
@@ -4189,6 +4495,7 @@ pub mod model_version_detail {
             self.model_id = Some(input.into());
             self
         }
+        /// <p>The model ID.</p>
         pub fn set_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_id = input;
             self
@@ -4198,6 +4505,7 @@ pub mod model_version_detail {
             self.model_type = Some(input);
             self
         }
+        /// <p>The model type.</p>
         pub fn set_model_type(
             mut self,
             input: std::option::Option<crate::model::ModelTypeEnum>,
@@ -4210,6 +4518,7 @@ pub mod model_version_detail {
             self.model_version_number = Some(input.into());
             self
         }
+        /// <p>The model version number.</p>
         pub fn set_model_version_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4222,6 +4531,7 @@ pub mod model_version_detail {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the model version.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -4231,6 +4541,7 @@ pub mod model_version_detail {
             self.training_data_source = Some(input);
             self
         }
+        /// <p>The model version training data source.</p>
         pub fn set_training_data_source(
             mut self,
             input: std::option::Option<crate::model::TrainingDataSourceEnum>,
@@ -4243,6 +4554,7 @@ pub mod model_version_detail {
             self.training_data_schema = Some(input);
             self
         }
+        /// <p>The training data schema.</p>
         pub fn set_training_data_schema(
             mut self,
             input: std::option::Option<crate::model::TrainingDataSchema>,
@@ -4255,6 +4567,7 @@ pub mod model_version_detail {
             self.external_events_detail = Some(input);
             self
         }
+        /// <p>The external events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as  <code>EXTERNAL_EVENTS</code>.</p>
         pub fn set_external_events_detail(
             mut self,
             input: std::option::Option<crate::model::ExternalEventsDetail>,
@@ -4267,6 +4580,7 @@ pub mod model_version_detail {
             self.ingested_events_detail = Some(input);
             self
         }
+        /// <p>The ingested events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as  <code>INGESTED_EVENTS</code>.</p>
         pub fn set_ingested_events_detail(
             mut self,
             input: std::option::Option<crate::model::IngestedEventsDetail>,
@@ -4279,6 +4593,7 @@ pub mod model_version_detail {
             self.training_result = Some(input);
             self
         }
+        /// <p>The training results.</p>
         pub fn set_training_result(
             mut self,
             input: std::option::Option<crate::model::TrainingResult>,
@@ -4291,6 +4606,7 @@ pub mod model_version_detail {
             self.last_updated_time = Some(input.into());
             self
         }
+        /// <p>The timestamp when the model was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4303,6 +4619,7 @@ pub mod model_version_detail {
             self.created_time = Some(input.into());
             self
         }
+        /// <p>The timestamp when the model was created.</p>
         pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_time = input;
             self
@@ -4312,6 +4629,7 @@ pub mod model_version_detail {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The model version ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -4386,6 +4704,7 @@ pub mod training_result {
             self.data_validation_metrics = Some(input);
             self
         }
+        /// <p>The validation metrics.</p>
         pub fn set_data_validation_metrics(
             mut self,
             input: std::option::Option<crate::model::DataValidationMetrics>,
@@ -4398,6 +4717,7 @@ pub mod training_result {
             self.training_metrics = Some(input);
             self
         }
+        /// <p>The training metric details.</p>
         pub fn set_training_metrics(
             mut self,
             input: std::option::Option<crate::model::TrainingMetrics>,
@@ -4413,6 +4733,7 @@ pub mod training_result {
             self.variable_importance_metrics = Some(input);
             self
         }
+        /// <p>The variable importance metrics.</p>
         pub fn set_variable_importance_metrics(
             mut self,
             input: std::option::Option<crate::model::VariableImportanceMetrics>,
@@ -4461,12 +4782,18 @@ pub mod variable_importance_metrics {
             std::option::Option<std::vec::Vec<crate::model::LogOddsMetric>>,
     }
     impl Builder {
+        /// Appends an item to `log_odds_metrics`.
+        ///
+        /// To override the contents of this collection use [`set_log_odds_metrics`](Self::set_log_odds_metrics).
+        ///
+        /// <p>List of variable metrics.</p>
         pub fn log_odds_metrics(mut self, input: impl Into<crate::model::LogOddsMetric>) -> Self {
             let mut v = self.log_odds_metrics.unwrap_or_default();
             v.push(input.into());
             self.log_odds_metrics = Some(v);
             self
         }
+        /// <p>List of variable metrics.</p>
         pub fn set_log_odds_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LogOddsMetric>>,
@@ -4525,6 +4852,7 @@ pub mod log_odds_metric {
             self.variable_name = Some(input.into());
             self
         }
+        /// <p>The name of the variable.</p>
         pub fn set_variable_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4537,6 +4865,7 @@ pub mod log_odds_metric {
             self.variable_type = Some(input.into());
             self
         }
+        /// <p>The type of variable.</p>
         pub fn set_variable_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4549,6 +4878,7 @@ pub mod log_odds_metric {
             self.variable_importance = Some(input);
             self
         }
+        /// <p>The relative importance of the variable. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/model-variable-importance.html">Model variable importance</a>.</p>
         pub fn set_variable_importance(mut self, input: std::option::Option<f32>) -> Self {
             self.variable_importance = input;
             self
@@ -4603,10 +4933,16 @@ pub mod training_metrics {
             self.auc = Some(input);
             self
         }
+        /// <p>The area under the curve. This summarizes true positive rate (TPR) and false positive rate (FPR) across all possible model score thresholds. A model with no predictive power has an AUC of 0.5, whereas a perfect model has a score of 1.0.</p>
         pub fn set_auc(mut self, input: std::option::Option<f32>) -> Self {
             self.auc = input;
             self
         }
+        /// Appends an item to `metric_data_points`.
+        ///
+        /// To override the contents of this collection use [`set_metric_data_points`](Self::set_metric_data_points).
+        ///
+        /// <p>The data points details.</p>
         pub fn metric_data_points(
             mut self,
             input: impl Into<crate::model::MetricDataPoint>,
@@ -4616,6 +4952,7 @@ pub mod training_metrics {
             self.metric_data_points = Some(v);
             self
         }
+        /// <p>The data points details.</p>
         pub fn set_metric_data_points(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricDataPoint>>,
@@ -4679,6 +5016,7 @@ pub mod metric_data_point {
             self.fpr = Some(input);
             self
         }
+        /// <p>The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud.</p>
         pub fn set_fpr(mut self, input: std::option::Option<f32>) -> Self {
             self.fpr = input;
             self
@@ -4688,6 +5026,7 @@ pub mod metric_data_point {
             self.precision = Some(input);
             self
         }
+        /// <p>The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent.</p>
         pub fn set_precision(mut self, input: std::option::Option<f32>) -> Self {
             self.precision = input;
             self
@@ -4697,6 +5036,7 @@ pub mod metric_data_point {
             self.tpr = Some(input);
             self
         }
+        /// <p>The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate.</p>
         pub fn set_tpr(mut self, input: std::option::Option<f32>) -> Self {
             self.tpr = input;
             self
@@ -4706,6 +5046,7 @@ pub mod metric_data_point {
             self.threshold = Some(input);
             self
         }
+        /// <p>The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud.</p>
         pub fn set_threshold(mut self, input: std::option::Option<f32>) -> Self {
             self.threshold = input;
             self
@@ -4759,6 +5100,11 @@ pub mod data_validation_metrics {
             std::option::Option<std::vec::Vec<crate::model::FieldValidationMessage>>,
     }
     impl Builder {
+        /// Appends an item to `file_level_messages`.
+        ///
+        /// To override the contents of this collection use [`set_file_level_messages`](Self::set_file_level_messages).
+        ///
+        /// <p>The file-specific model training validation messages.</p>
         pub fn file_level_messages(
             mut self,
             input: impl Into<crate::model::FileValidationMessage>,
@@ -4768,6 +5114,7 @@ pub mod data_validation_metrics {
             self.file_level_messages = Some(v);
             self
         }
+        /// <p>The file-specific model training validation messages.</p>
         pub fn set_file_level_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FileValidationMessage>>,
@@ -4775,6 +5122,11 @@ pub mod data_validation_metrics {
             self.file_level_messages = input;
             self
         }
+        /// Appends an item to `field_level_messages`.
+        ///
+        /// To override the contents of this collection use [`set_field_level_messages`](Self::set_field_level_messages).
+        ///
+        /// <p>The field-specific model training validation messages.</p>
         pub fn field_level_messages(
             mut self,
             input: impl Into<crate::model::FieldValidationMessage>,
@@ -4784,6 +5136,7 @@ pub mod data_validation_metrics {
             self.field_level_messages = Some(v);
             self
         }
+        /// <p>The field-specific model training validation messages.</p>
         pub fn set_field_level_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FieldValidationMessage>>,
@@ -4851,6 +5204,7 @@ pub mod field_validation_message {
             self.field_name = Some(input.into());
             self
         }
+        /// <p>The field name.</p>
         pub fn set_field_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.field_name = input;
             self
@@ -4860,6 +5214,7 @@ pub mod field_validation_message {
             self.identifier = Some(input.into());
             self
         }
+        /// <p>The message ID.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
             self
@@ -4869,6 +5224,7 @@ pub mod field_validation_message {
             self.title = Some(input.into());
             self
         }
+        /// <p>The message title.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -4878,6 +5234,7 @@ pub mod field_validation_message {
             self.content = Some(input.into());
             self
         }
+        /// <p>The message content.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -4887,6 +5244,7 @@ pub mod field_validation_message {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The message type.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -4946,6 +5304,7 @@ pub mod file_validation_message {
             self.title = Some(input.into());
             self
         }
+        /// <p>The message title.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -4955,6 +5314,7 @@ pub mod file_validation_message {
             self.content = Some(input.into());
             self
         }
+        /// <p>The message content.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -4964,6 +5324,7 @@ pub mod file_validation_message {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The message type.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -5025,6 +5386,7 @@ pub mod detector_version_summary {
             self.detector_version_id = Some(input.into());
             self
         }
+        /// <p>The detector version ID. </p>
         pub fn set_detector_version_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5037,6 +5399,7 @@ pub mod detector_version_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The detector version status. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DetectorVersionStatus>,
@@ -5049,6 +5412,7 @@ pub mod detector_version_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>The detector version description. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5058,6 +5422,7 @@ pub mod detector_version_summary {
             self.last_updated_time = Some(input.into());
             self
         }
+        /// <p>Timestamp of when the detector version was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5119,6 +5484,7 @@ pub mod batch_get_variable_error {
             self.name = Some(input.into());
             self
         }
+        /// <p>The error name. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5128,6 +5494,7 @@ pub mod batch_get_variable_error {
             self.code = Some(input);
             self
         }
+        /// <p>The error code. </p>
         pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
             self.code = input;
             self
@@ -5137,6 +5504,7 @@ pub mod batch_get_variable_error {
             self.message = Some(input.into());
             self
         }
+        /// <p>The error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5194,6 +5562,7 @@ pub mod batch_create_variable_error {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5203,6 +5572,7 @@ pub mod batch_create_variable_error {
             self.code = Some(input);
             self
         }
+        /// <p>The error code. </p>
         pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
             self.code = input;
             self
@@ -5212,6 +5582,7 @@ pub mod batch_create_variable_error {
             self.message = Some(input.into());
             self
         }
+        /// <p>The error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5283,6 +5654,7 @@ pub mod variable_entry {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the variable.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5292,6 +5664,7 @@ pub mod variable_entry {
             self.data_type = Some(input.into());
             self
         }
+        /// <p>The data type of the variable.</p>
         pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_type = input;
             self
@@ -5301,6 +5674,7 @@ pub mod variable_entry {
             self.data_source = Some(input.into());
             self
         }
+        /// <p>The data source of the variable.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_source = input;
             self
@@ -5310,6 +5684,7 @@ pub mod variable_entry {
             self.default_value = Some(input.into());
             self
         }
+        /// <p>The default value of the variable.</p>
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5322,6 +5697,7 @@ pub mod variable_entry {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the variable.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5333,6 +5709,9 @@ pub mod variable_entry {
             self.variable_type = Some(input.into());
             self
         }
+        /// <p>The type of the variable. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
+        /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT </code>
+        /// </p>
         pub fn set_variable_type(
             mut self,
             input: std::option::Option<std::string::String>,

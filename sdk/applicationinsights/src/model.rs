@@ -45,6 +45,8 @@ pub mod log_pattern {
             self.pattern_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot
+        /// be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
         pub fn set_pattern_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -58,6 +60,8 @@ pub mod log_pattern {
             self.pattern_name = Some(input.into());
             self
         }
+        /// <p>The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot
+        /// be empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.</p>
         pub fn set_pattern_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pattern_name = input;
             self
@@ -68,6 +72,8 @@ pub mod log_pattern {
             self.pattern = Some(input.into());
             self
         }
+        /// <p>A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and it cannot
+        /// be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
         pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pattern = input;
             self
@@ -79,6 +85,9 @@ pub mod log_pattern {
             self.rank = Some(input);
             self
         }
+        /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
+        /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
+        /// </p>
         pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
             self.rank = input;
             self
@@ -101,6 +110,7 @@ impl LogPattern {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -112,17 +122,29 @@ impl LogPattern {
     std::hash::Hash,
 )]
 pub enum Tier {
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
+    #[allow(missing_docs)] // documentation missing in model
     Default,
+    #[allow(missing_docs)] // documentation missing in model
     DotNetCore,
+    #[allow(missing_docs)] // documentation missing in model
     DotNetWeb,
+    #[allow(missing_docs)] // documentation missing in model
     DotNetWebTier,
+    #[allow(missing_docs)] // documentation missing in model
     DotNetWorker,
+    #[allow(missing_docs)] // documentation missing in model
     JavaJmx,
+    #[allow(missing_docs)] // documentation missing in model
     Mysql,
+    #[allow(missing_docs)] // documentation missing in model
     Oracle,
+    #[allow(missing_docs)] // documentation missing in model
     Postgresql,
+    #[allow(missing_docs)] // documentation missing in model
     SqlServer,
+    #[allow(missing_docs)] // documentation missing in model
     SqlServerAlwaysonAvailabilityGroup,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -154,6 +176,7 @@ impl std::str::FromStr for Tier {
     }
 }
 impl Tier {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Tier::Custom => "CUSTOM",
@@ -171,6 +194,7 @@ impl Tier {
             Tier::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CUSTOM",
@@ -259,6 +283,7 @@ pub mod application_info {
             self.resource_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the resource group used for the application.</p>
         pub fn set_resource_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -271,6 +296,7 @@ pub mod application_info {
             self.life_cycle = Some(input.into());
             self
         }
+        /// <p>The lifecycle of the application. </p>
         pub fn set_life_cycle(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.life_cycle = input;
             self
@@ -283,6 +309,10 @@ pub mod application_info {
             self.ops_item_sns_topic_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications
+        /// for opsItem updates.
+        /// </p>
         pub fn set_ops_item_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -298,6 +328,10 @@ pub mod application_info {
             self.ops_center_enabled = Some(input);
             self
         }
+        /// <p>
+        /// Indicates whether Application Insights will create opsItems for any problem detected by Application
+        /// Insights for an application.
+        /// </p>
         pub fn set_ops_center_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.ops_center_enabled = input;
             self
@@ -309,6 +343,9 @@ pub mod application_info {
             self.cwe_monitor_enabled = Some(input);
             self
         }
+        /// <p>
+        /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
+        /// </p>
         pub fn set_cwe_monitor_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.cwe_monitor_enabled = input;
             self
@@ -327,6 +364,16 @@ pub mod application_info {
             self.remarks = Some(input.into());
             self
         }
+        /// <p>The issues on the user side that block Application Insights from successfully monitoring
+        /// an application. Example remarks include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>“Configuring application, detected 1 Errors, 3 Warnings”</p>
+        /// </li>
+        /// <li>
+        /// <p>“Configuring application, detected 1 Unconfigured Components”</p>
+        /// </li>
+        /// </ul>
         pub fn set_remarks(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.remarks = input;
             self
@@ -411,6 +458,8 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is
+        /// 128 characters. The minimum length is 1 character.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -422,6 +471,9 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag
+        /// value is 256 characters. The minimum length is 0 characters. If you don't want an
+        /// application to have a specific tag value, don't specify a value for this parameter.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -457,9 +509,9 @@ pub struct Problem {
     /// <p>The resource affected by the problem.</p>
     pub affected_resource: std::option::Option<std::string::String>,
     /// <p>The time when the problem started, in epoch seconds.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the problem ended, in epoch seconds.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A measure of the level of impact of the problem.</p>
     pub severity_level: std::option::Option<crate::model::SeverityLevel>,
     /// <p>The name of the resource group affected by the problem.</p>
@@ -496,8 +548,8 @@ pub mod problem {
         pub(crate) insights: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
         pub(crate) affected_resource: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) severity_level: std::option::Option<crate::model::SeverityLevel>,
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
         pub(crate) feedback: std::option::Option<
@@ -510,6 +562,7 @@ pub mod problem {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the problem.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -519,6 +572,7 @@ pub mod problem {
             self.title = Some(input.into());
             self
         }
+        /// <p>The name of the problem.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -528,6 +582,7 @@ pub mod problem {
             self.insights = Some(input.into());
             self
         }
+        /// <p>A detailed analysis of the problem using machine learning.</p>
         pub fn set_insights(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.insights = input;
             self
@@ -537,6 +592,7 @@ pub mod problem {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the problem.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
             self.status = input;
             self
@@ -546,6 +602,7 @@ pub mod problem {
             self.affected_resource = Some(input.into());
             self
         }
+        /// <p>The resource affected by the problem.</p>
         pub fn set_affected_resource(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -554,20 +611,28 @@ pub mod problem {
             self
         }
         /// <p>The time when the problem started, in epoch seconds.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when the problem started, in epoch seconds.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time when the problem ended, in epoch seconds.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when the problem ended, in epoch seconds.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -576,6 +641,7 @@ pub mod problem {
             self.severity_level = Some(input);
             self
         }
+        /// <p>A measure of the level of impact of the problem.</p>
         pub fn set_severity_level(
             mut self,
             input: std::option::Option<crate::model::SeverityLevel>,
@@ -588,6 +654,7 @@ pub mod problem {
             self.resource_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the resource group affected by the problem.</p>
         pub fn set_resource_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -595,6 +662,11 @@ pub mod problem {
             self.resource_group_name = input;
             self
         }
+        /// Adds a key-value pair to `feedback`.
+        ///
+        /// To override the contents of this collection use [`set_feedback`](Self::set_feedback).
+        ///
+        /// <p>Feedback provided by the user about the problem.</p>
         pub fn feedback(
             mut self,
             k: impl Into<crate::model::FeedbackKey>,
@@ -605,6 +677,7 @@ pub mod problem {
             self.feedback = Some(hash_map);
             self
         }
+        /// <p>Feedback provided by the user about the problem.</p>
         pub fn set_feedback(
             mut self,
             input: std::option::Option<
@@ -638,6 +711,7 @@ impl Problem {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -649,8 +723,11 @@ impl Problem {
     std::hash::Hash,
 )]
 pub enum FeedbackValue {
+    #[allow(missing_docs)] // documentation missing in model
     NotSpecified,
+    #[allow(missing_docs)] // documentation missing in model
     NotUseful,
+    #[allow(missing_docs)] // documentation missing in model
     Useful,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -673,6 +750,7 @@ impl std::str::FromStr for FeedbackValue {
     }
 }
 impl FeedbackValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FeedbackValue::NotSpecified => "NOT_SPECIFIED",
@@ -681,6 +759,7 @@ impl FeedbackValue {
             FeedbackValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NOT_SPECIFIED", "NOT_USEFUL", "USEFUL"]
     }
@@ -691,6 +770,7 @@ impl AsRef<str> for FeedbackValue {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -702,6 +782,7 @@ impl AsRef<str> for FeedbackValue {
     std::hash::Hash,
 )]
 pub enum FeedbackKey {
+    #[allow(missing_docs)] // documentation missing in model
     InsightsFeedback,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -722,12 +803,14 @@ impl std::str::FromStr for FeedbackKey {
     }
 }
 impl FeedbackKey {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FeedbackKey::InsightsFeedback => "INSIGHTS_FEEDBACK",
             FeedbackKey::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["INSIGHTS_FEEDBACK"]
     }
@@ -738,6 +821,7 @@ impl AsRef<str> for FeedbackKey {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -749,8 +833,11 @@ impl AsRef<str> for FeedbackKey {
     std::hash::Hash,
 )]
 pub enum SeverityLevel {
+    #[allow(missing_docs)] // documentation missing in model
     High,
+    #[allow(missing_docs)] // documentation missing in model
     Low,
+    #[allow(missing_docs)] // documentation missing in model
     Medium,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -773,6 +860,7 @@ impl std::str::FromStr for SeverityLevel {
     }
 }
 impl SeverityLevel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SeverityLevel::High => "High",
@@ -781,6 +869,7 @@ impl SeverityLevel {
             SeverityLevel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["High", "Low", "Medium"]
     }
@@ -791,6 +880,7 @@ impl AsRef<str> for SeverityLevel {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -802,8 +892,11 @@ impl AsRef<str> for SeverityLevel {
     std::hash::Hash,
 )]
 pub enum Status {
+    #[allow(missing_docs)] // documentation missing in model
     Ignore,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Resolved,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -826,6 +919,7 @@ impl std::str::FromStr for Status {
     }
 }
 impl Status {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Status::Ignore => "IGNORE",
@@ -834,6 +928,7 @@ impl Status {
             Status::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["IGNORE", "PENDING", "RESOLVED"]
     }
@@ -865,7 +960,7 @@ pub struct ConfigurationEvent {
     /// <p>
     /// The timestamp of the event.
     /// </p>
-    pub event_time: std::option::Option<smithy_types::Instant>,
+    pub event_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// The details of the event in plain text.
     /// </p>
@@ -897,7 +992,7 @@ pub mod configuration_event {
         pub(crate) event_status: std::option::Option<crate::model::ConfigurationEventStatus>,
         pub(crate) event_resource_type:
             std::option::Option<crate::model::ConfigurationEventResourceType>,
-        pub(crate) event_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) event_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) event_detail: std::option::Option<std::string::String>,
         pub(crate) event_resource_name: std::option::Option<std::string::String>,
     }
@@ -909,6 +1004,9 @@ pub mod configuration_event {
             self.monitored_resource_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The resource monitored by Application Insights.
+        /// </p>
         pub fn set_monitored_resource_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -923,6 +1021,9 @@ pub mod configuration_event {
             self.event_status = Some(input);
             self
         }
+        /// <p>
+        /// The status of the configuration update event. Possible values include INFO, WARN, and ERROR.
+        /// </p>
         pub fn set_event_status(
             mut self,
             input: std::option::Option<crate::model::ConfigurationEventStatus>,
@@ -940,6 +1041,9 @@ pub mod configuration_event {
             self.event_resource_type = Some(input);
             self
         }
+        /// <p>
+        /// The resource type that Application Insights attempted to configure, for example, CLOUDWATCH_ALARM.
+        /// </p>
         pub fn set_event_resource_type(
             mut self,
             input: std::option::Option<crate::model::ConfigurationEventResourceType>,
@@ -950,11 +1054,17 @@ pub mod configuration_event {
         /// <p>
         /// The timestamp of the event.
         /// </p>
-        pub fn event_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn event_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.event_time = Some(input);
             self
         }
-        pub fn set_event_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The timestamp of the event.
+        /// </p>
+        pub fn set_event_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.event_time = input;
             self
         }
@@ -965,6 +1075,9 @@ pub mod configuration_event {
             self.event_detail = Some(input.into());
             self
         }
+        /// <p>
+        /// The details of the event in plain text.
+        /// </p>
         pub fn set_event_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_detail = input;
             self
@@ -976,6 +1089,9 @@ pub mod configuration_event {
             self.event_resource_name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the resource Application Insights attempted to configure.
+        /// </p>
         pub fn set_event_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1003,6 +1119,7 @@ impl ConfigurationEvent {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1014,9 +1131,13 @@ impl ConfigurationEvent {
     std::hash::Hash,
 )]
 pub enum ConfigurationEventResourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Cloudformation,
+    #[allow(missing_docs)] // documentation missing in model
     CloudwatchAlarm,
+    #[allow(missing_docs)] // documentation missing in model
     CloudwatchLog,
+    #[allow(missing_docs)] // documentation missing in model
     SsmAssociation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1040,6 +1161,7 @@ impl std::str::FromStr for ConfigurationEventResourceType {
     }
 }
 impl ConfigurationEventResourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfigurationEventResourceType::Cloudformation => "CLOUDFORMATION",
@@ -1049,6 +1171,7 @@ impl ConfigurationEventResourceType {
             ConfigurationEventResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CLOUDFORMATION",
@@ -1064,6 +1187,7 @@ impl AsRef<str> for ConfigurationEventResourceType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1075,8 +1199,11 @@ impl AsRef<str> for ConfigurationEventResourceType {
     std::hash::Hash,
 )]
 pub enum ConfigurationEventStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Info,
+    #[allow(missing_docs)] // documentation missing in model
     Warn,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1099,6 +1226,7 @@ impl std::str::FromStr for ConfigurationEventStatus {
     }
 }
 impl ConfigurationEventStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfigurationEventStatus::Error => "ERROR",
@@ -1107,6 +1235,7 @@ impl ConfigurationEventStatus {
             ConfigurationEventStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ERROR", "INFO", "WARN"]
     }
@@ -1186,6 +1315,7 @@ pub mod application_component {
             self.component_name = Some(input.into());
             self
         }
+        /// <p>The name of the component.</p>
         pub fn set_component_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1200,6 +1330,9 @@ pub mod application_component {
             self.component_remarks = Some(input.into());
             self
         }
+        /// <p>
+        /// If logging is supported for the resource type, indicates whether the component has configured logs to be monitored.
+        /// </p>
         pub fn set_component_remarks(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1212,6 +1345,7 @@ pub mod application_component {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The resource type. Supported resource types include EC2 instances, Auto Scaling group, Classic ELB, Application ELB, and SQS Queue.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1226,6 +1360,9 @@ pub mod application_component {
             self.os_type = Some(input);
             self
         }
+        /// <p>
+        /// The operating system of the component.
+        /// </p>
         pub fn set_os_type(mut self, input: std::option::Option<crate::model::OsType>) -> Self {
             self.os_type = input;
             self
@@ -1235,6 +1372,7 @@ pub mod application_component {
             self.tier = Some(input);
             self
         }
+        /// <p>The stack tier of the application component.</p>
         pub fn set_tier(mut self, input: std::option::Option<crate::model::Tier>) -> Self {
             self.tier = input;
             self
@@ -1244,10 +1382,18 @@ pub mod application_component {
             self.monitor = Some(input);
             self
         }
+        /// <p>Indicates whether the application component is monitored. </p>
         pub fn set_monitor(mut self, input: std::option::Option<bool>) -> Self {
             self.monitor = input;
             self
         }
+        /// Adds a key-value pair to `detected_workload`.
+        ///
+        /// To override the contents of this collection use [`set_detected_workload`](Self::set_detected_workload).
+        ///
+        /// <p>
+        /// Workloads detected in the application component.
+        /// </p>
         pub fn detected_workload(
             mut self,
             k: impl Into<crate::model::Tier>,
@@ -1258,6 +1404,9 @@ pub mod application_component {
             self.detected_workload = Some(hash_map);
             self
         }
+        /// <p>
+        /// Workloads detected in the application component.
+        /// </p>
         pub fn set_detected_workload(
             mut self,
             input: std::option::Option<
@@ -1291,6 +1440,7 @@ impl ApplicationComponent {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1302,7 +1452,9 @@ impl ApplicationComponent {
     std::hash::Hash,
 )]
 pub enum OsType {
+    #[allow(missing_docs)] // documentation missing in model
     Linux,
+    #[allow(missing_docs)] // documentation missing in model
     Windows,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1324,6 +1476,7 @@ impl std::str::FromStr for OsType {
     }
 }
 impl OsType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OsType::Linux => "LINUX",
@@ -1331,6 +1484,7 @@ impl OsType {
             OsType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LINUX", "WINDOWS"]
     }
@@ -1364,12 +1518,18 @@ pub mod related_observations {
         pub(crate) observation_list: std::option::Option<std::vec::Vec<crate::model::Observation>>,
     }
     impl Builder {
+        /// Appends an item to `observation_list`.
+        ///
+        /// To override the contents of this collection use [`set_observation_list`](Self::set_observation_list).
+        ///
+        /// <p>The list of observations related to the problem.</p>
         pub fn observation_list(mut self, input: impl Into<crate::model::Observation>) -> Self {
             let mut v = self.observation_list.unwrap_or_default();
             v.push(input.into());
             self.observation_list = Some(v);
             self
         }
+        /// <p>The list of observations related to the problem.</p>
         pub fn set_observation_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Observation>>,
@@ -1399,9 +1559,9 @@ pub struct Observation {
     /// <p>The ID of the observation type.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The time when the observation was  first detected, in epoch seconds.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the observation ended, in epoch seconds.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The source type of the observation.</p>
     pub source_type: std::option::Option<std::string::String>,
     /// <p>The source resource ARN of the observation.</p>
@@ -1409,7 +1569,7 @@ pub struct Observation {
     /// <p>The log group name.</p>
     pub log_group: std::option::Option<std::string::String>,
     /// <p>The timestamp in the CloudWatch Logs that specifies when the matched line occurred.</p>
-    pub line_time: std::option::Option<smithy_types::Instant>,
+    pub line_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The log text of the observation.</p>
     pub log_text: std::option::Option<std::string::String>,
     /// <p>The log filter of the observation.</p>
@@ -1607,12 +1767,12 @@ pub mod observation {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) source_type: std::option::Option<std::string::String>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
         pub(crate) log_group: std::option::Option<std::string::String>,
-        pub(crate) line_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) line_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) log_text: std::option::Option<std::string::String>,
         pub(crate) log_filter: std::option::Option<crate::model::LogFilter>,
         pub(crate) metric_namespace: std::option::Option<std::string::String>,
@@ -1659,25 +1819,34 @@ pub mod observation {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the observation type.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
         /// <p>The time when the observation was  first detected, in epoch seconds.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when the observation was  first detected, in epoch seconds.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time when the observation ended, in epoch seconds.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when the observation ended, in epoch seconds.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -1686,6 +1855,7 @@ pub mod observation {
             self.source_type = Some(input.into());
             self
         }
+        /// <p>The source type of the observation.</p>
         pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_type = input;
             self
@@ -1695,6 +1865,7 @@ pub mod observation {
             self.source_arn = Some(input.into());
             self
         }
+        /// <p>The source resource ARN of the observation.</p>
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_arn = input;
             self
@@ -1704,16 +1875,21 @@ pub mod observation {
             self.log_group = Some(input.into());
             self
         }
+        /// <p>The log group name.</p>
         pub fn set_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_group = input;
             self
         }
         /// <p>The timestamp in the CloudWatch Logs that specifies when the matched line occurred.</p>
-        pub fn line_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn line_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.line_time = Some(input);
             self
         }
-        pub fn set_line_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp in the CloudWatch Logs that specifies when the matched line occurred.</p>
+        pub fn set_line_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.line_time = input;
             self
         }
@@ -1722,6 +1898,7 @@ pub mod observation {
             self.log_text = Some(input.into());
             self
         }
+        /// <p>The log text of the observation.</p>
         pub fn set_log_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_text = input;
             self
@@ -1731,6 +1908,7 @@ pub mod observation {
             self.log_filter = Some(input);
             self
         }
+        /// <p>The log filter of the observation.</p>
         pub fn set_log_filter(
             mut self,
             input: std::option::Option<crate::model::LogFilter>,
@@ -1743,6 +1921,7 @@ pub mod observation {
             self.metric_namespace = Some(input.into());
             self
         }
+        /// <p>The namespace of the observation metric.</p>
         pub fn set_metric_namespace(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1755,6 +1934,7 @@ pub mod observation {
             self.metric_name = Some(input.into());
             self
         }
+        /// <p>The name of the observation metric.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -1764,6 +1944,7 @@ pub mod observation {
             self.unit = Some(input.into());
             self
         }
+        /// <p>The unit of the source observation metric.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unit = input;
             self
@@ -1773,6 +1954,7 @@ pub mod observation {
             self.value = Some(input);
             self
         }
+        /// <p>The value of the source observation metric.</p>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
             self.value = input;
             self
@@ -1782,6 +1964,7 @@ pub mod observation {
             self.cloud_watch_event_id = Some(input.into());
             self
         }
+        /// <p> The ID of the CloudWatch Event-based observation related to the detected problem. </p>
         pub fn set_cloud_watch_event_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1797,6 +1980,7 @@ pub mod observation {
             self.cloud_watch_event_source = Some(input);
             self
         }
+        /// <p> The source of the CloudWatch Event. </p>
         pub fn set_cloud_watch_event_source(
             mut self,
             input: std::option::Option<crate::model::CloudWatchEventSource>,
@@ -1813,6 +1997,8 @@ pub mod observation {
             self.cloud_watch_event_detail_type = Some(input.into());
             self
         }
+        /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2
+        /// Instance State-change Notification</code>. </p>
         pub fn set_cloud_watch_event_detail_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1825,6 +2011,7 @@ pub mod observation {
             self.health_event_arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) of the AWS Health Event-based observation.</p>
         pub fn set_health_event_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1837,6 +2024,7 @@ pub mod observation {
             self.health_service = Some(input.into());
             self
         }
+        /// <p> The service to which the AWS Health Event belongs, such as EC2. </p>
         pub fn set_health_service(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1850,6 +2038,8 @@ pub mod observation {
             self.health_event_type_code = Some(input.into());
             self
         }
+        /// <p> The type of the AWS Health event, for example,
+        /// <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>. </p>
         pub fn set_health_event_type_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1862,6 +2052,7 @@ pub mod observation {
             self.health_event_type_category = Some(input.into());
             self
         }
+        /// <p> The category of the AWS Health event, such as <code>issue</code>. </p>
         pub fn set_health_event_type_category(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1874,6 +2065,7 @@ pub mod observation {
             self.health_event_description = Some(input.into());
             self
         }
+        /// <p> The description of the AWS Health event provided by the service, such as Amazon EC2. </p>
         pub fn set_health_event_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1886,6 +2078,7 @@ pub mod observation {
             self.code_deploy_deployment_id = Some(input.into());
             self
         }
+        /// <p> The deployment ID of the CodeDeploy-based observation related to the detected problem. </p>
         pub fn set_code_deploy_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1903,6 +2096,9 @@ pub mod observation {
             self.code_deploy_deployment_group = Some(input.into());
             self
         }
+        /// <p>
+        /// The deployment group to which the CodeDeploy deployment belongs.
+        /// </p>
         pub fn set_code_deploy_deployment_group(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1917,6 +2113,9 @@ pub mod observation {
             self.code_deploy_state = Some(input.into());
             self
         }
+        /// <p>
+        /// The status of the CodeDeploy deployment, for example <code>SUCCESS</code> or <code> FAILURE</code>.
+        /// </p>
         pub fn set_code_deploy_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1931,6 +2130,9 @@ pub mod observation {
             self.code_deploy_application = Some(input.into());
             self
         }
+        /// <p>
+        /// The CodeDeploy application to which the deployment belongs.
+        /// </p>
         pub fn set_code_deploy_application(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1948,6 +2150,9 @@ pub mod observation {
             self.code_deploy_instance_group_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The instance group to which the CodeDeploy instance belongs.
+        /// </p>
         pub fn set_code_deploy_instance_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1962,6 +2167,9 @@ pub mod observation {
             self.ec2_state = Some(input.into());
             self
         }
+        /// <p>
+        /// The state of the instance, such as <code>STOPPING</code> or <code>TERMINATING</code>.
+        /// </p>
         pub fn set_ec2_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ec2_state = input;
             self
@@ -1973,6 +2181,9 @@ pub mod observation {
             self.rds_event_categories = Some(input.into());
             self
         }
+        /// <p>
+        /// The category of an RDS event.
+        /// </p>
         pub fn set_rds_event_categories(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1987,6 +2198,9 @@ pub mod observation {
             self.rds_event_message = Some(input.into());
             self
         }
+        /// <p>
+        /// The message of an RDS event.
+        /// </p>
         pub fn set_rds_event_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2001,6 +2215,9 @@ pub mod observation {
             self.s3_event_name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the S3 CloudWatch Event-based observation.
+        /// </p>
         pub fn set_s3_event_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2015,6 +2232,9 @@ pub mod observation {
             self.states_execution_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the step function execution-based observation.
+        /// </p>
         pub fn set_states_execution_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2029,6 +2249,9 @@ pub mod observation {
             self.states_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The Amazon Resource Name (ARN)  of the step function-based observation.
+        /// </p>
         pub fn set_states_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.states_arn = input;
             self
@@ -2040,6 +2263,9 @@ pub mod observation {
             self.states_status = Some(input.into());
             self
         }
+        /// <p>
+        /// The status of the step function-related observation.
+        /// </p>
         pub fn set_states_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2054,6 +2280,9 @@ pub mod observation {
             self.states_input = Some(input.into());
             self
         }
+        /// <p>
+        /// The input to the step function-based observation.
+        /// </p>
         pub fn set_states_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.states_input = input;
             self
@@ -2065,6 +2294,9 @@ pub mod observation {
             self.ebs_event = Some(input.into());
             self
         }
+        /// <p>
+        /// The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or <code>attachVolume</code>.
+        /// </p>
         pub fn set_ebs_event(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ebs_event = input;
             self
@@ -2076,6 +2308,9 @@ pub mod observation {
             self.ebs_result = Some(input.into());
             self
         }
+        /// <p>
+        /// The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>.
+        /// </p>
         pub fn set_ebs_result(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ebs_result = input;
             self
@@ -2087,6 +2322,9 @@ pub mod observation {
             self.ebs_cause = Some(input.into());
             self
         }
+        /// <p>
+        /// The cause of an EBS CloudWatch event.
+        /// </p>
         pub fn set_ebs_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ebs_cause = input;
             self
@@ -2098,6 +2336,9 @@ pub mod observation {
             self.ebs_request_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The request ID of an EBS CloudWatch event.
+        /// </p>
         pub fn set_ebs_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2112,6 +2353,9 @@ pub mod observation {
             self.x_ray_fault_percent = Some(input);
             self
         }
+        /// <p>
+        /// The X-Ray request fault percentage for this node.
+        /// </p>
         pub fn set_x_ray_fault_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.x_ray_fault_percent = input;
             self
@@ -2123,6 +2367,9 @@ pub mod observation {
             self.x_ray_throttle_percent = Some(input);
             self
         }
+        /// <p>
+        /// The X-Ray request throttle percentage for this node.
+        /// </p>
         pub fn set_x_ray_throttle_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.x_ray_throttle_percent = input;
             self
@@ -2134,6 +2381,9 @@ pub mod observation {
             self.x_ray_error_percent = Some(input);
             self
         }
+        /// <p>
+        /// The X-Ray request error percentage for this node.
+        /// </p>
         pub fn set_x_ray_error_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.x_ray_error_percent = input;
             self
@@ -2145,6 +2395,9 @@ pub mod observation {
             self.x_ray_request_count = Some(input);
             self
         }
+        /// <p>
+        /// The X-Ray request count for this node.
+        /// </p>
         pub fn set_x_ray_request_count(mut self, input: std::option::Option<i32>) -> Self {
             self.x_ray_request_count = input;
             self
@@ -2156,6 +2409,9 @@ pub mod observation {
             self.x_ray_request_average_latency = Some(input);
             self
         }
+        /// <p>
+        /// The X-Ray node request average latency for this node.
+        /// </p>
         pub fn set_x_ray_request_average_latency(
             mut self,
             input: std::option::Option<i64>,
@@ -2170,6 +2426,9 @@ pub mod observation {
             self.x_ray_node_name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the X-Ray node.
+        /// </p>
         pub fn set_x_ray_node_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2183,6 +2442,8 @@ pub mod observation {
             self.x_ray_node_type = Some(input.into());
             self
         }
+        /// <p>
+        /// The type of the  X-Ray node.      </p>
         pub fn set_x_ray_node_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2249,6 +2510,7 @@ impl Observation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2260,9 +2522,13 @@ impl Observation {
     std::hash::Hash,
 )]
 pub enum CloudWatchEventSource {
+    #[allow(missing_docs)] // documentation missing in model
     CodeDeploy,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2,
+    #[allow(missing_docs)] // documentation missing in model
     Health,
+    #[allow(missing_docs)] // documentation missing in model
     Rds,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2286,6 +2552,7 @@ impl std::str::FromStr for CloudWatchEventSource {
     }
 }
 impl CloudWatchEventSource {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CloudWatchEventSource::CodeDeploy => "CODE_DEPLOY",
@@ -2295,6 +2562,7 @@ impl CloudWatchEventSource {
             CloudWatchEventSource::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CODE_DEPLOY", "EC2", "HEALTH", "RDS"]
     }
@@ -2305,6 +2573,7 @@ impl AsRef<str> for CloudWatchEventSource {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2316,8 +2585,11 @@ impl AsRef<str> for CloudWatchEventSource {
     std::hash::Hash,
 )]
 pub enum LogFilter {
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Info,
+    #[allow(missing_docs)] // documentation missing in model
     Warn,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2340,6 +2612,7 @@ impl std::str::FromStr for LogFilter {
     }
 }
 impl LogFilter {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LogFilter::Error => "ERROR",
@@ -2348,6 +2621,7 @@ impl LogFilter {
             LogFilter::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ERROR", "INFO", "WARN"]
     }

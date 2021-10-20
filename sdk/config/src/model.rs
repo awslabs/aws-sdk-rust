@@ -33,6 +33,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -42,6 +43,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -95,6 +97,7 @@ pub mod resource_key {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The resource type.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -107,6 +110,7 @@ pub mod resource_key {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the resource (for example., sg-xxxxxx). </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -127,6 +131,7 @@ impl ResourceKey {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -138,114 +143,223 @@ impl ResourceKey {
     std::hash::Hash,
 )]
 pub enum ResourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Certificate,
+    #[allow(missing_docs)] // documentation missing in model
     RestApi,
+    #[allow(missing_docs)] // documentation missing in model
     Stage,
+    #[allow(missing_docs)] // documentation missing in model
     Api,
+    #[allow(missing_docs)] // documentation missing in model
     StageV2,
+    #[allow(missing_docs)] // documentation missing in model
     AutoScalingGroup,
+    #[allow(missing_docs)] // documentation missing in model
     LaunchConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     ScalingPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     ScheduledAction,
+    #[allow(missing_docs)] // documentation missing in model
     BackupPlan,
+    #[allow(missing_docs)] // documentation missing in model
     BackupSelection,
+    #[allow(missing_docs)] // documentation missing in model
     BackupVault,
+    #[allow(missing_docs)] // documentation missing in model
     BackupRecoveryPoint,
+    #[allow(missing_docs)] // documentation missing in model
     Stack,
+    #[allow(missing_docs)] // documentation missing in model
     Distribution,
+    #[allow(missing_docs)] // documentation missing in model
     StreamingDistribution,
+    #[allow(missing_docs)] // documentation missing in model
     Trail,
+    #[allow(missing_docs)] // documentation missing in model
     Alarm,
+    #[allow(missing_docs)] // documentation missing in model
     Project,
+    #[allow(missing_docs)] // documentation missing in model
     Pipeline,
+    #[allow(missing_docs)] // documentation missing in model
     ConformancePackCompliance,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceCompliance,
+    #[allow(missing_docs)] // documentation missing in model
     Table,
+    #[allow(missing_docs)] // documentation missing in model
     CustomerGateway,
+    #[allow(missing_docs)] // documentation missing in model
     Eip,
+    #[allow(missing_docs)] // documentation missing in model
     EgressOnlyInternetGateway,
+    #[allow(missing_docs)] // documentation missing in model
     FlowLog,
+    #[allow(missing_docs)] // documentation missing in model
     Host,
+    #[allow(missing_docs)] // documentation missing in model
     Instance,
+    #[allow(missing_docs)] // documentation missing in model
     InternetGateway,
+    #[allow(missing_docs)] // documentation missing in model
     NatGateway,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkAcl,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkInterface,
+    #[allow(missing_docs)] // documentation missing in model
     RegisteredHaInstance,
+    #[allow(missing_docs)] // documentation missing in model
     RouteTable,
+    #[allow(missing_docs)] // documentation missing in model
     SecurityGroup,
+    #[allow(missing_docs)] // documentation missing in model
     Subnet,
+    #[allow(missing_docs)] // documentation missing in model
     Vpc,
+    #[allow(missing_docs)] // documentation missing in model
     VpcEndpoint,
+    #[allow(missing_docs)] // documentation missing in model
     VpcEndpointService,
+    #[allow(missing_docs)] // documentation missing in model
     VpcPeeringConnection,
+    #[allow(missing_docs)] // documentation missing in model
     VpnConnection,
+    #[allow(missing_docs)] // documentation missing in model
     VpnGateway,
+    #[allow(missing_docs)] // documentation missing in model
     Volume,
+    #[allow(missing_docs)] // documentation missing in model
     EcrRepository,
+    #[allow(missing_docs)] // documentation missing in model
     EcsCluster,
+    #[allow(missing_docs)] // documentation missing in model
     EcsService,
+    #[allow(missing_docs)] // documentation missing in model
     EcsTaskDefinition,
+    #[allow(missing_docs)] // documentation missing in model
     EfsAccessPoint,
+    #[allow(missing_docs)] // documentation missing in model
     EfsFileSystem,
+    #[allow(missing_docs)] // documentation missing in model
     EksCluster,
+    #[allow(missing_docs)] // documentation missing in model
     Application,
+    #[allow(missing_docs)] // documentation missing in model
     ApplicationVersion,
+    #[allow(missing_docs)] // documentation missing in model
     Environment,
+    #[allow(missing_docs)] // documentation missing in model
     LoadBalancer,
+    #[allow(missing_docs)] // documentation missing in model
     LoadBalancerV2,
+    #[allow(missing_docs)] // documentation missing in model
     Domain,
+    #[allow(missing_docs)] // documentation missing in model
     Group,
+    #[allow(missing_docs)] // documentation missing in model
     Policy,
+    #[allow(missing_docs)] // documentation missing in model
     Role,
+    #[allow(missing_docs)] // documentation missing in model
     User,
+    #[allow(missing_docs)] // documentation missing in model
     Key,
+    #[allow(missing_docs)] // documentation missing in model
     Function,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkFirewallFirewall,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkFirewallFirewallPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkFirewallRuleGroup,
+    #[allow(missing_docs)] // documentation missing in model
     OpenSearchDomain,
+    #[allow(missing_docs)] // documentation missing in model
     QldbLedger,
+    #[allow(missing_docs)] // documentation missing in model
     DbCluster,
+    #[allow(missing_docs)] // documentation missing in model
     DbClusterSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     DbInstance,
+    #[allow(missing_docs)] // documentation missing in model
     DbSecurityGroup,
+    #[allow(missing_docs)] // documentation missing in model
     DbSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     DbSubnetGroup,
+    #[allow(missing_docs)] // documentation missing in model
     EventSubscription,
+    #[allow(missing_docs)] // documentation missing in model
     Cluster,
+    #[allow(missing_docs)] // documentation missing in model
     ClusterParameterGroup,
+    #[allow(missing_docs)] // documentation missing in model
     ClusterSecurityGroup,
+    #[allow(missing_docs)] // documentation missing in model
     ClusterSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     ClusterSubnetGroup,
+    #[allow(missing_docs)] // documentation missing in model
     RedshiftEventSubscription,
+    #[allow(missing_docs)] // documentation missing in model
     AccountPublicAccessBlock,
+    #[allow(missing_docs)] // documentation missing in model
     Bucket,
+    #[allow(missing_docs)] // documentation missing in model
     Topic,
+    #[allow(missing_docs)] // documentation missing in model
     Queue,
+    #[allow(missing_docs)] // documentation missing in model
     AssociationCompliance,
+    #[allow(missing_docs)] // documentation missing in model
     FileData,
+    #[allow(missing_docs)] // documentation missing in model
     ManagedInstanceInventory,
+    #[allow(missing_docs)] // documentation missing in model
     PatchCompliance,
+    #[allow(missing_docs)] // documentation missing in model
     Secret,
+    #[allow(missing_docs)] // documentation missing in model
     CloudFormationProduct,
+    #[allow(missing_docs)] // documentation missing in model
     CloudFormationProvisionedProduct,
+    #[allow(missing_docs)] // documentation missing in model
     Portfolio,
+    #[allow(missing_docs)] // documentation missing in model
     Protection,
+    #[allow(missing_docs)] // documentation missing in model
     RegionalProtection,
+    #[allow(missing_docs)] // documentation missing in model
     RateBasedRule,
+    #[allow(missing_docs)] // documentation missing in model
     Rule,
+    #[allow(missing_docs)] // documentation missing in model
     RuleGroup,
+    #[allow(missing_docs)] // documentation missing in model
     WebAcl,
+    #[allow(missing_docs)] // documentation missing in model
     RegionalRateBasedRule,
+    #[allow(missing_docs)] // documentation missing in model
     RegionalRule,
+    #[allow(missing_docs)] // documentation missing in model
     RegionalRuleGroup,
+    #[allow(missing_docs)] // documentation missing in model
     RegionalWebAcl,
+    #[allow(missing_docs)] // documentation missing in model
     IpSetV2,
+    #[allow(missing_docs)] // documentation missing in model
     ManagedRuleSetV2,
+    #[allow(missing_docs)] // documentation missing in model
     RegexPatternSetV2,
+    #[allow(missing_docs)] // documentation missing in model
     RuleGroupV2,
+    #[allow(missing_docs)] // documentation missing in model
     WebAclv2,
+    #[allow(missing_docs)] // documentation missing in model
     EncryptionConfig,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -376,6 +490,7 @@ impl std::str::FromStr for ResourceType {
     }
 }
 impl ResourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Certificate => "AWS::ACM::Certificate",
@@ -492,6 +607,7 @@ impl ResourceType {
             ResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AWS::ACM::Certificate",
@@ -635,12 +751,18 @@ pub mod query_info {
         pub(crate) select_fields: std::option::Option<std::vec::Vec<crate::model::FieldInfo>>,
     }
     impl Builder {
+        /// Appends an item to `select_fields`.
+        ///
+        /// To override the contents of this collection use [`set_select_fields`](Self::set_select_fields).
+        ///
+        /// <p>Returns a <code>FieldInfo</code> object.</p>
         pub fn select_fields(mut self, input: impl Into<crate::model::FieldInfo>) -> Self {
             let mut v = self.select_fields.unwrap_or_default();
             v.push(input.into());
             self.select_fields = Some(v);
             self
         }
+        /// <p>Returns a <code>FieldInfo</code> object.</p>
         pub fn set_select_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FieldInfo>>,
@@ -691,6 +813,7 @@ pub mod field_info {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name of the field.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -759,6 +882,7 @@ pub mod stored_query {
             self.query_id = Some(input.into());
             self
         }
+        /// <p>The ID of the query.</p>
         pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_id = input;
             self
@@ -768,6 +892,7 @@ pub mod stored_query {
             self.query_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
         pub fn set_query_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_arn = input;
             self
@@ -777,6 +902,7 @@ pub mod stored_query {
             self.query_name = Some(input.into());
             self
         }
+        /// <p>The name of the query.</p>
         pub fn set_query_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_name = input;
             self
@@ -786,6 +912,7 @@ pub mod stored_query {
             self.description = Some(input.into());
             self
         }
+        /// <p>A unique description for the query.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -802,6 +929,14 @@ pub mod stored_query {
             self.expression = Some(input.into());
             self
         }
+        /// <p>The expression of the query. For example, <code>SELECT
+        /// resourceId,
+        /// resourceType,
+        /// supplementaryConfiguration.BucketVersioningConfiguration.status
+        /// WHERE
+        /// resourceType = 'AWS::S3::Bucket'
+        /// AND supplementaryConfiguration.BucketVersioningConfiguration.status = 'Off'.</code>
+        /// </p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expression = input;
             self
@@ -860,6 +995,7 @@ pub mod retention_configuration {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the retention configuration object.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -872,6 +1008,10 @@ pub mod retention_configuration {
             self.retention_period_in_days = Some(input);
             self
         }
+        /// <p>Number of days Config stores your historical information.</p>
+        /// <note>
+        /// <p>Currently, only applicable to the configuration item history.</p>
+        /// </note>
         pub fn set_retention_period_in_days(mut self, input: std::option::Option<i32>) -> Self {
             self.retention_period_in_days = input;
             self
@@ -925,6 +1065,7 @@ pub mod failed_remediation_exception_batch {
             self.failure_message = Some(input.into());
             self
         }
+        /// <p>Returns a failure message. For example, the auto-remediation has failed.</p>
         pub fn set_failure_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -932,6 +1073,11 @@ pub mod failed_remediation_exception_batch {
             self.failure_message = input;
             self
         }
+        /// Appends an item to `failed_items`.
+        ///
+        /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
+        ///
+        /// <p>Returns remediation exception resource key object of the failed items.</p>
         pub fn failed_items(
             mut self,
             input: impl Into<crate::model::RemediationException>,
@@ -941,6 +1087,7 @@ pub mod failed_remediation_exception_batch {
             self.failed_items = Some(v);
             self
         }
+        /// <p>Returns remediation exception resource key object of the failed items.</p>
         pub fn set_failed_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RemediationException>>,
@@ -977,7 +1124,7 @@ pub struct RemediationException {
     /// <p>An explanation of an remediation exception.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time when the remediation exception will be deleted.</p>
-    pub expiration_time: std::option::Option<smithy_types::Instant>,
+    pub expiration_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for RemediationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1000,7 +1147,7 @@ pub mod remediation_exception {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) expiration_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) expiration_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the Config rule.</p>
@@ -1008,6 +1155,7 @@ pub mod remediation_exception {
             self.config_rule_name = Some(input.into());
             self
         }
+        /// <p>The name of the Config rule.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1020,6 +1168,7 @@ pub mod remediation_exception {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The type of a resource.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1032,6 +1181,7 @@ pub mod remediation_exception {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -1041,18 +1191,20 @@ pub mod remediation_exception {
             self.message = Some(input.into());
             self
         }
+        /// <p>An explanation of an remediation exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
         /// <p>The time when the remediation exception will be deleted.</p>
-        pub fn expiration_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn expiration_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.expiration_time = Some(input);
             self
         }
+        /// <p>The time when the remediation exception will be deleted.</p>
         pub fn set_expiration_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.expiration_time = input;
             self
@@ -1108,6 +1260,7 @@ pub mod remediation_exception_resource_key {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The type of a resource.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1120,6 +1273,7 @@ pub mod remediation_exception_resource_key {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -1173,6 +1327,7 @@ pub mod failed_remediation_batch {
             self.failure_message = Some(input.into());
             self
         }
+        /// <p>Returns a failure message. For example, the resource is already compliant.</p>
         pub fn set_failure_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1180,6 +1335,11 @@ pub mod failed_remediation_batch {
             self.failure_message = input;
             self
         }
+        /// Appends an item to `failed_items`.
+        ///
+        /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
+        ///
+        /// <p>Returns remediation configurations of the failed items.</p>
         pub fn failed_items(
             mut self,
             input: impl Into<crate::model::RemediationConfiguration>,
@@ -1189,6 +1349,7 @@ pub mod failed_remediation_batch {
             self.failed_items = Some(v);
             self
         }
+        /// <p>Returns remediation configurations of the failed items.</p>
         pub fn set_failed_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RemediationConfiguration>>,
@@ -1240,6 +1401,7 @@ pub struct RemediationConfiguration {
     pub execution_controls: std::option::Option<crate::model::ExecutionControls>,
     /// <p>The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.</p>
     /// <p>For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds,
+    ///
     /// Config will put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50 seconds.</p>
     pub maximum_automatic_attempts: std::option::Option<i32>,
     /// <p>Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60 seconds. </p>
@@ -1299,6 +1461,7 @@ pub mod remediation_configuration {
             self.config_rule_name = Some(input.into());
             self
         }
+        /// <p>The name of the Config rule.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1311,6 +1474,7 @@ pub mod remediation_configuration {
             self.target_type = Some(input);
             self
         }
+        /// <p>The type of the target. Target executes remediation. For example, SSM document.</p>
         pub fn set_target_type(
             mut self,
             input: std::option::Option<crate::model::RemediationTargetType>,
@@ -1323,6 +1487,7 @@ pub mod remediation_configuration {
             self.target_id = Some(input.into());
             self
         }
+        /// <p>Target ID is the name of the public document.</p>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_id = input;
             self
@@ -1336,6 +1501,11 @@ pub mod remediation_configuration {
             self.target_version = Some(input.into());
             self
         }
+        /// <p>Version of the target. For example, version of the SSM document.</p>
+        /// <note>
+        /// <p>If you make backward incompatible changes to the SSM document,
+        /// you must call PutRemediationConfiguration API again to ensure the remediations can run.</p>
+        /// </note>
         pub fn set_target_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1343,6 +1513,11 @@ pub mod remediation_configuration {
             self.target_version = input;
             self
         }
+        /// Adds a key-value pair to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>An object of the RemediationParameterValue.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -1353,6 +1528,7 @@ pub mod remediation_configuration {
             self.parameters = Some(hash_map);
             self
         }
+        /// <p>An object of the RemediationParameterValue.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -1370,6 +1546,7 @@ pub mod remediation_configuration {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The type of a resource. </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1382,6 +1559,7 @@ pub mod remediation_configuration {
             self.automatic = Some(input);
             self
         }
+        /// <p>The remediation is triggered automatically.</p>
         pub fn set_automatic(mut self, input: std::option::Option<bool>) -> Self {
             self.automatic = input;
             self
@@ -1391,6 +1569,7 @@ pub mod remediation_configuration {
             self.execution_controls = Some(input);
             self
         }
+        /// <p>An ExecutionControls object.</p>
         pub fn set_execution_controls(
             mut self,
             input: std::option::Option<crate::model::ExecutionControls>,
@@ -1400,11 +1579,16 @@ pub mod remediation_configuration {
         }
         /// <p>The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.</p>
         /// <p>For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds,
+        ///
         /// Config will put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50 seconds.</p>
         pub fn maximum_automatic_attempts(mut self, input: i32) -> Self {
             self.maximum_automatic_attempts = Some(input);
             self
         }
+        /// <p>The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.</p>
+        /// <p>For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds,
+        ///
+        /// Config will put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50 seconds.</p>
         pub fn set_maximum_automatic_attempts(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_automatic_attempts = input;
             self
@@ -1416,6 +1600,9 @@ pub mod remediation_configuration {
             self.retry_attempt_seconds = Some(input);
             self
         }
+        /// <p>Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60 seconds. </p>
+        /// <p>For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5,
+        /// Config will run auto-remediations 5 times within 50 seconds before throwing an exception.</p>
         pub fn set_retry_attempt_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.retry_attempt_seconds = input;
             self
@@ -1425,6 +1612,7 @@ pub mod remediation_configuration {
             self.arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of remediation configuration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1434,6 +1622,7 @@ pub mod remediation_configuration {
             self.created_by_service = Some(input.into());
             self
         }
+        /// <p>Name of the service that owns the service linked rule, if applicable.</p>
         pub fn set_created_by_service(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1495,6 +1684,7 @@ pub mod execution_controls {
             self.ssm_controls = Some(input);
             self
         }
+        /// <p>A SsmControls object.</p>
         pub fn set_ssm_controls(
             mut self,
             input: std::option::Option<crate::model::SsmControls>,
@@ -1554,6 +1744,7 @@ pub mod ssm_controls {
             self.concurrent_execution_rate_percentage = Some(input);
             self
         }
+        /// <p>The maximum percentage of remediation actions allowed to run in parallel on the non-compliant resources for that specific rule. You can specify a percentage, such as 10%. The default value is 10. </p>
         pub fn set_concurrent_execution_rate_percentage(
             mut self,
             input: std::option::Option<i32>,
@@ -1568,6 +1759,9 @@ pub mod ssm_controls {
             self.error_percentage = Some(input);
             self
         }
+        /// <p>The percentage of errors that are allowed before SSM stops running automations on non-compliant resources for that specific rule.
+        /// You can specify a percentage of errors, for example 10%. If you do not specifiy a percentage, the default is 50%.
+        /// For example, if you set the ErrorPercentage to 40% for 10 non-compliant resources, then SSM stops running the automations when the fifth error is received. </p>
         pub fn set_error_percentage(mut self, input: std::option::Option<i32>) -> Self {
             self.error_percentage = input;
             self
@@ -1620,6 +1814,7 @@ pub mod remediation_parameter_value {
             self.resource_value = Some(input);
             self
         }
+        /// <p>The value is dynamic and changes at run-time.</p>
         pub fn set_resource_value(
             mut self,
             input: std::option::Option<crate::model::ResourceValue>,
@@ -1632,6 +1827,7 @@ pub mod remediation_parameter_value {
             self.static_value = Some(input);
             self
         }
+        /// <p>The value is static and does not change at run-time.</p>
         pub fn set_static_value(
             mut self,
             input: std::option::Option<crate::model::StaticValue>,
@@ -1678,12 +1874,18 @@ pub mod static_value {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>A list of values. For example, the ARN of the assumed role. </p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>A list of values. For example, the ARN of the assumed role. </p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1734,6 +1936,7 @@ pub mod resource_value {
             self.value = Some(input);
             self
         }
+        /// <p>The value is a resource ID.</p>
         pub fn set_value(
             mut self,
             input: std::option::Option<crate::model::ResourceValueType>,
@@ -1754,6 +1957,7 @@ impl ResourceValue {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1765,6 +1969,7 @@ impl ResourceValue {
     std::hash::Hash,
 )]
 pub enum ResourceValueType {
+    #[allow(missing_docs)] // documentation missing in model
     ResourceId,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1785,12 +1990,14 @@ impl std::str::FromStr for ResourceValueType {
     }
 }
 impl ResourceValueType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceValueType::ResourceId => "RESOURCE_ID",
             ResourceValueType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["RESOURCE_ID"]
     }
@@ -1801,6 +2008,7 @@ impl AsRef<str> for ResourceValueType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1812,6 +2020,7 @@ impl AsRef<str> for ResourceValueType {
     std::hash::Hash,
 )]
 pub enum RemediationTargetType {
+    #[allow(missing_docs)] // documentation missing in model
     SsmDocument,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1832,12 +2041,14 @@ impl std::str::FromStr for RemediationTargetType {
     }
 }
 impl RemediationTargetType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RemediationTargetType::SsmDocument => "SSM_DOCUMENT",
             RemediationTargetType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SSM_DOCUMENT"]
     }
@@ -1881,6 +2092,7 @@ pub mod conformance_pack_input_parameter {
             self.parameter_name = Some(input.into());
             self
         }
+        /// <p>One part of a key-value pair.</p>
         pub fn set_parameter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1893,6 +2105,7 @@ pub mod conformance_pack_input_parameter {
             self.parameter_value = Some(input.into());
             self
         }
+        /// <p>Another part of the key-value pair. </p>
         pub fn set_parameter_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1927,6 +2140,7 @@ pub struct OrganizationCustomRuleMetadata {
     /// <p>The lambda function ARN.</p>
     pub lambda_function_arn: std::option::Option<std::string::String>,
     /// <p>The type of notification that triggers Config to run an evaluation for a rule. You can specify the following notification types:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -2009,6 +2223,7 @@ pub mod organization_custom_rule_metadata {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description that you provide for organization config rule.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2018,6 +2233,7 @@ pub mod organization_custom_rule_metadata {
             self.lambda_function_arn = Some(input.into());
             self
         }
+        /// <p>The lambda function ARN.</p>
         pub fn set_lambda_function_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2025,6 +2241,27 @@ pub mod organization_custom_rule_metadata {
             self.lambda_function_arn = input;
             self
         }
+        /// Appends an item to `organization_config_rule_trigger_types`.
+        ///
+        /// To override the contents of this collection use [`set_organization_config_rule_trigger_types`](Self::set_organization_config_rule_trigger_types).
+        ///
+        /// <p>The type of notification that triggers Config to run an evaluation for a rule. You can specify the following notification types:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item.
+        /// Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ScheduledNotification</code> - Triggers a periodic evaluation at the frequency specified for <code>MaximumExecutionFrequency</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn organization_config_rule_trigger_types(
             mut self,
             input: impl Into<crate::model::OrganizationConfigRuleTriggerType>,
@@ -2036,6 +2273,23 @@ pub mod organization_custom_rule_metadata {
             self.organization_config_rule_trigger_types = Some(v);
             self
         }
+        /// <p>The type of notification that triggers Config to run an evaluation for a rule. You can specify the following notification types:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item.
+        /// Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ScheduledNotification</code> - Triggers a periodic evaluation at the frequency specified for <code>MaximumExecutionFrequency</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_organization_config_rule_trigger_types(
             mut self,
             input: std::option::Option<
@@ -2050,6 +2304,7 @@ pub mod organization_custom_rule_metadata {
             self.input_parameters = Some(input.into());
             self
         }
+        /// <p>A string, in JSON format, that is passed to organization config rule Lambda function.</p>
         pub fn set_input_parameters(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2070,6 +2325,12 @@ pub mod organization_custom_rule_metadata {
             self.maximum_execution_frequency = Some(input);
             self
         }
+        /// <p>The maximum frequency with which Config runs evaluations for a rule.
+        /// Your custom rule is triggered when Config delivers the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p>
+        /// <note>
+        /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+        /// value for the <code>MaximumExecutionFrequency</code> parameter.</p>
+        /// </note>
         pub fn set_maximum_execution_frequency(
             mut self,
             input: std::option::Option<crate::model::MaximumExecutionFrequency>,
@@ -2077,12 +2338,18 @@ pub mod organization_custom_rule_metadata {
             self.maximum_execution_frequency = input;
             self
         }
+        /// Appends an item to `resource_types_scope`.
+        ///
+        /// To override the contents of this collection use [`set_resource_types_scope`](Self::set_resource_types_scope).
+        ///
+        /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
         pub fn resource_types_scope(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types_scope.unwrap_or_default();
             v.push(input.into());
             self.resource_types_scope = Some(v);
             self
         }
+        /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
         pub fn set_resource_types_scope(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2095,6 +2362,7 @@ pub mod organization_custom_rule_metadata {
             self.resource_id_scope = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
         pub fn set_resource_id_scope(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2108,6 +2376,8 @@ pub mod organization_custom_rule_metadata {
             self.tag_key_scope = Some(input.into());
             self
         }
+        /// <p>One part of a key-value pair that make up a tag.
+        /// A key is a general label that acts like a category for more specific tag values. </p>
         pub fn set_tag_key_scope(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2121,6 +2391,8 @@ pub mod organization_custom_rule_metadata {
             self.tag_value_scope = Some(input.into());
             self
         }
+        /// <p>The optional part of a key-value pair that make up a tag.
+        /// A value acts as a descriptor within a tag category (key). </p>
         pub fn set_tag_value_scope(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2151,6 +2423,7 @@ impl OrganizationCustomRuleMetadata {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2162,10 +2435,15 @@ impl OrganizationCustomRuleMetadata {
     std::hash::Hash,
 )]
 pub enum MaximumExecutionFrequency {
+    #[allow(missing_docs)] // documentation missing in model
     OneHour,
+    #[allow(missing_docs)] // documentation missing in model
     SixHours,
+    #[allow(missing_docs)] // documentation missing in model
     ThreeHours,
+    #[allow(missing_docs)] // documentation missing in model
     TwelveHours,
+    #[allow(missing_docs)] // documentation missing in model
     TwentyFourHours,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2190,6 +2468,7 @@ impl std::str::FromStr for MaximumExecutionFrequency {
     }
 }
 impl MaximumExecutionFrequency {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MaximumExecutionFrequency::OneHour => "One_Hour",
@@ -2200,6 +2479,7 @@ impl MaximumExecutionFrequency {
             MaximumExecutionFrequency::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "One_Hour",
@@ -2216,6 +2496,7 @@ impl AsRef<str> for MaximumExecutionFrequency {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2227,8 +2508,11 @@ impl AsRef<str> for MaximumExecutionFrequency {
     std::hash::Hash,
 )]
 pub enum OrganizationConfigRuleTriggerType {
+    #[allow(missing_docs)] // documentation missing in model
     ConfigurationItemChangeNotification,
+    #[allow(missing_docs)] // documentation missing in model
     OversizedConfigurationItemChangeNotifcation,
+    #[allow(missing_docs)] // documentation missing in model
     ScheduledNotification,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2255,6 +2539,7 @@ impl std::str::FromStr for OrganizationConfigRuleTriggerType {
     }
 }
 impl OrganizationConfigRuleTriggerType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrganizationConfigRuleTriggerType::ConfigurationItemChangeNotification => {
@@ -2267,6 +2552,7 @@ impl OrganizationConfigRuleTriggerType {
             OrganizationConfigRuleTriggerType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ConfigurationItemChangeNotification",
@@ -2350,6 +2636,7 @@ pub mod organization_managed_rule_metadata {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description that you provide for organization config rule.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2361,6 +2648,9 @@ pub mod organization_managed_rule_metadata {
             self.rule_identifier = Some(input.into());
             self
         }
+        /// <p>For organization config managed rules, a predefined identifier from a
+        /// list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed
+        /// rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using Config managed rules</a>.</p>
         pub fn set_rule_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2373,6 +2663,7 @@ pub mod organization_managed_rule_metadata {
             self.input_parameters = Some(input.into());
             self
         }
+        /// <p>A string, in JSON format, that is passed to organization config rule Lambda function.</p>
         pub fn set_input_parameters(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2392,6 +2683,11 @@ pub mod organization_managed_rule_metadata {
             self.maximum_execution_frequency = Some(input);
             self
         }
+        /// <p>The maximum frequency with which Config runs evaluations for a rule. You are using an Config managed rule that is triggered at a periodic frequency.</p>
+        /// <note>
+        /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+        /// value for the <code>MaximumExecutionFrequency</code> parameter.</p>
+        /// </note>
         pub fn set_maximum_execution_frequency(
             mut self,
             input: std::option::Option<crate::model::MaximumExecutionFrequency>,
@@ -2399,12 +2695,18 @@ pub mod organization_managed_rule_metadata {
             self.maximum_execution_frequency = input;
             self
         }
+        /// Appends an item to `resource_types_scope`.
+        ///
+        /// To override the contents of this collection use [`set_resource_types_scope`](Self::set_resource_types_scope).
+        ///
+        /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
         pub fn resource_types_scope(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types_scope.unwrap_or_default();
             v.push(input.into());
             self.resource_types_scope = Some(v);
             self
         }
+        /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
         pub fn set_resource_types_scope(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2417,6 +2719,7 @@ pub mod organization_managed_rule_metadata {
             self.resource_id_scope = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
         pub fn set_resource_id_scope(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2430,6 +2733,8 @@ pub mod organization_managed_rule_metadata {
             self.tag_key_scope = Some(input.into());
             self
         }
+        /// <p>One part of a key-value pair that make up a tag.
+        /// A key is a general label that acts like a category for more specific tag values. </p>
         pub fn set_tag_key_scope(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2443,6 +2748,8 @@ pub mod organization_managed_rule_metadata {
             self.tag_value_scope = Some(input.into());
             self
         }
+        /// <p>The optional part of a key-value pair that make up a tag.
+        /// A value acts as a descriptor within a tag category (key).</p>
         pub fn set_tag_value_scope(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2485,7 +2792,7 @@ pub struct ExternalEvaluation {
     /// <p>Supplementary information about the reason of compliance. For example, this task was completed on a specific date.</p>
     pub annotation: std::option::Option<std::string::String>,
     /// <p>The time when the compliance was recorded. </p>
-    pub ordering_timestamp: std::option::Option<smithy_types::Instant>,
+    pub ordering_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ExternalEvaluation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2508,7 +2815,7 @@ pub mod external_evaluation {
         pub(crate) compliance_resource_id: std::option::Option<std::string::String>,
         pub(crate) compliance_type: std::option::Option<crate::model::ComplianceType>,
         pub(crate) annotation: std::option::Option<std::string::String>,
-        pub(crate) ordering_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) ordering_timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The evaluated compliance resource type. Config accepts <code>AWS::::Account</code> resource type.</p>
@@ -2516,6 +2823,7 @@ pub mod external_evaluation {
             self.compliance_resource_type = Some(input.into());
             self
         }
+        /// <p>The evaluated compliance resource type. Config accepts <code>AWS::::Account</code> resource type.</p>
         pub fn set_compliance_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2528,6 +2836,7 @@ pub mod external_evaluation {
             self.compliance_resource_id = Some(input.into());
             self
         }
+        /// <p>The evaluated compliance resource ID. Config accepts only Amazon Web Services account ID.</p>
         pub fn set_compliance_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2540,6 +2849,7 @@ pub mod external_evaluation {
             self.compliance_type = Some(input);
             self
         }
+        /// <p>The compliance of the Amazon Web Services resource. The valid values are <code>COMPLIANT, NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.</p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<crate::model::ComplianceType>,
@@ -2552,18 +2862,20 @@ pub mod external_evaluation {
             self.annotation = Some(input.into());
             self
         }
+        /// <p>Supplementary information about the reason of compliance. For example, this task was completed on a specific date.</p>
         pub fn set_annotation(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.annotation = input;
             self
         }
         /// <p>The time when the compliance was recorded. </p>
-        pub fn ordering_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn ordering_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.ordering_timestamp = Some(input);
             self
         }
+        /// <p>The time when the compliance was recorded. </p>
         pub fn set_ordering_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.ordering_timestamp = input;
             self
@@ -2587,6 +2899,7 @@ impl ExternalEvaluation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2598,9 +2911,13 @@ impl ExternalEvaluation {
     std::hash::Hash,
 )]
 pub enum ComplianceType {
+    #[allow(missing_docs)] // documentation missing in model
     Compliant,
+    #[allow(missing_docs)] // documentation missing in model
     InsufficientData,
+    #[allow(missing_docs)] // documentation missing in model
     NonCompliant,
+    #[allow(missing_docs)] // documentation missing in model
     NotApplicable,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2624,6 +2941,7 @@ impl std::str::FromStr for ComplianceType {
     }
 }
 impl ComplianceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComplianceType::Compliant => "COMPLIANT",
@@ -2633,6 +2951,7 @@ impl ComplianceType {
             ComplianceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "COMPLIANT",
@@ -2678,7 +2997,7 @@ pub struct Evaluation {
     /// For periodic evaluations, the time indicates when Config
     /// triggered the evaluation at the frequency that you specified (for
     /// example, every 24 hours).</p>
-    pub ordering_timestamp: std::option::Option<smithy_types::Instant>,
+    pub ordering_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Evaluation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2701,7 +3020,7 @@ pub mod evaluation {
         pub(crate) compliance_resource_id: std::option::Option<std::string::String>,
         pub(crate) compliance_type: std::option::Option<crate::model::ComplianceType>,
         pub(crate) annotation: std::option::Option<std::string::String>,
-        pub(crate) ordering_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) ordering_timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The type of Amazon Web Services resource that was evaluated.</p>
@@ -2709,6 +3028,7 @@ pub mod evaluation {
             self.compliance_resource_type = Some(input.into());
             self
         }
+        /// <p>The type of Amazon Web Services resource that was evaluated.</p>
         pub fn set_compliance_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2721,6 +3041,7 @@ pub mod evaluation {
             self.compliance_resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
         pub fn set_compliance_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2744,6 +3065,18 @@ pub mod evaluation {
             self.compliance_type = Some(input);
             self
         }
+        /// <p>Indicates whether the Amazon Web Services resource complies with the Config
+        /// rule that it was evaluated against.</p>
+        /// <p>For the <code>Evaluation</code> data type, Config supports
+        /// only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+        /// <code>NOT_APPLICABLE</code> values. Config does not support
+        /// the <code>INSUFFICIENT_DATA</code> value for this data
+        /// type.</p>
+        /// <p>Similarly, Config does not accept
+        /// <code>INSUFFICIENT_DATA</code> as the value for
+        /// <code>ComplianceType</code> from a <code>PutEvaluations</code>
+        /// request. For example, an Lambda function for a custom Config
+        /// rule cannot pass an <code>INSUFFICIENT_DATA</code> value to Config.</p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<crate::model::ComplianceType>,
@@ -2757,6 +3090,8 @@ pub mod evaluation {
             self.annotation = Some(input.into());
             self
         }
+        /// <p>Supplementary information about how the evaluation determined
+        /// the compliance.</p>
         pub fn set_annotation(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.annotation = input;
             self
@@ -2766,13 +3101,18 @@ pub mod evaluation {
         /// For periodic evaluations, the time indicates when Config
         /// triggered the evaluation at the frequency that you specified (for
         /// example, every 24 hours).</p>
-        pub fn ordering_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn ordering_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.ordering_timestamp = Some(input);
             self
         }
+        /// <p>The time of the event in Config that triggered the
+        /// evaluation. For event-based evaluations, the time indicates when Config created the configuration item that triggered the evaluation.
+        /// For periodic evaluations, the time indicates when Config
+        /// triggered the evaluation at the frequency that you specified (for
+        /// example, every 24 hours).</p>
         pub fn set_ordering_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.ordering_timestamp = input;
             self
@@ -2872,6 +3212,12 @@ pub mod delivery_channel {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the delivery channel. By default, Config
+        /// assigns the name "default" when creating the delivery channel. To
+        /// change the delivery channel name, you must use the
+        /// DeleteDeliveryChannel action to delete your current delivery
+        /// channel, and then you must use the PutDeliveryChannel command to
+        /// create a delivery channel that has the desired name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2885,6 +3231,11 @@ pub mod delivery_channel {
             self.s3_bucket_name = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon S3 bucket to which Config delivers
+        /// configuration snapshots and configuration history files.</p>
+        /// <p>If you specify a bucket that belongs to another Amazon Web Services account,
+        /// that bucket must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon S3 Bucket</a> in the Config
+        /// Developer Guide.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2897,6 +3248,7 @@ pub mod delivery_channel {
             self.s3_key_prefix = Some(input.into());
             self
         }
+        /// <p>The prefix for the specified Amazon S3 bucket.</p>
         pub fn set_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2910,6 +3262,8 @@ pub mod delivery_channel {
             self.s3_kms_key_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS ) KMS key (KMS key) used to encrypt objects delivered by Config.
+        /// Must belong to the same Region as the destination S3 bucket.</p>
         pub fn set_s3_kms_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2928,6 +3282,13 @@ pub mod delivery_channel {
             self.sns_topic_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which
+        /// Config sends notifications about configuration
+        /// changes.</p>
+        /// <p>If you choose a topic from another account, the topic must have
+        /// policies that grant access permissions to Config. For more
+        /// information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon SNS Topic</a> in the Config
+        /// Developer Guide.</p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2944,6 +3305,8 @@ pub mod delivery_channel {
             self.config_snapshot_delivery_properties = Some(input);
             self
         }
+        /// <p>The options for how often Config delivers configuration
+        /// snapshots to the Amazon S3 bucket.</p>
         pub fn set_config_snapshot_delivery_properties(
             mut self,
             input: std::option::Option<crate::model::ConfigSnapshotDeliveryProperties>,
@@ -2974,9 +3337,14 @@ impl DeliveryChannel {
 /// <p>Provides options for how often Config delivers
 /// configuration snapshots to the Amazon S3 bucket in your delivery
 /// channel.</p>
+///
+///
+///
+///
 /// <p>The frequency for a rule that triggers evaluations for your
 /// resources when Config delivers the configuration snapshot is set
 /// by one of two values, depending on which is less frequent:</p>
+///
 /// <ul>
 /// <li>
 /// <p>The value for the <code>deliveryFrequency</code>
@@ -2992,10 +3360,12 @@ impl DeliveryChannel {
 /// evaluations for the rule. For more information, see <a>ConfigRule</a>.</p>
 /// </li>
 /// </ul>
+///
 /// <p>If the <code>deliveryFrequency</code> value is less frequent
 /// than the <code>MaximumExecutionFrequency</code> value for a rule,
 /// Config invokes the rule only as often as the
 /// <code>deliveryFrequency</code> value.</p>
+///
 /// <ol>
 /// <li>
 /// <p>For example, you want your rule to run evaluations when
@@ -3017,10 +3387,13 @@ impl DeliveryChannel {
 /// </p>
 /// </li>
 /// </ol>
+///
+///
 /// <p>You should set the <code>MaximumExecutionFrequency</code> value
 /// to be at least as frequent as the <code>deliveryFrequency</code>
 /// value. You can view the <code>deliveryFrequency</code> value by
 /// using the <code>DescribeDeliveryChannnels</code> action.</p>
+///
 /// <p>To update the <code>deliveryFrequency</code> with which Config delivers your configuration snapshots, use the
 /// <code>PutDeliveryChannel</code> action.</p>
 #[non_exhaustive]
@@ -3055,6 +3428,8 @@ pub mod config_snapshot_delivery_properties {
             self.delivery_frequency = Some(input);
             self
         }
+        /// <p>The frequency with which Config delivers configuration
+        /// snapshots.</p>
         pub fn set_delivery_frequency(
             mut self,
             input: std::option::Option<crate::model::MaximumExecutionFrequency>,
@@ -3120,6 +3495,9 @@ pub mod configuration_recorder {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the recorder. By default, Config automatically
+        /// assigns the name "default" when creating the configuration recorder.
+        /// You cannot change the assigned name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3130,6 +3508,8 @@ pub mod configuration_recorder {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the IAM role used to describe the
+        /// Amazon Web Services resources associated with the account.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -3140,6 +3520,8 @@ pub mod configuration_recorder {
             self.recording_group = Some(input);
             self
         }
+        /// <p>Specifies the types of Amazon Web Services resources for which Config
+        /// records configuration changes.</p>
         pub fn set_recording_group(
             mut self,
             input: std::option::Option<crate::model::RecordingGroup>,
@@ -3269,6 +3651,13 @@ pub mod recording_group {
             self.all_supported = Some(input);
             self
         }
+        /// <p>Specifies whether Config records configuration changes for
+        /// every supported type of regional resource.</p>
+        /// <p>If you set this option to <code>true</code>, when Config
+        /// adds support for a new type of regional resource, it starts
+        /// recording resources of that type automatically.</p>
+        /// <p>If you set this option to <code>true</code>, you cannot
+        /// enumerate a list of <code>resourceTypes</code>.</p>
         pub fn set_all_supported(mut self, input: std::option::Option<bool>) -> Self {
             self.all_supported = input;
             self
@@ -3290,6 +3679,19 @@ pub mod recording_group {
             self.include_global_resource_types = Some(input);
             self
         }
+        /// <p>Specifies whether Config includes all supported types of
+        /// global resources (for example, IAM resources) with the resources
+        /// that it records.</p>
+        /// <p>Before you can set this option to <code>true</code>, you must
+        /// set the <code>allSupported</code> option to
+        /// <code>true</code>.</p>
+        /// <p>If you set this option to <code>true</code>, when Config
+        /// adds support for a new type of global resource, it starts recording
+        /// resources of that type automatically.</p>
+        /// <p>The configuration details for any global resource are the same
+        /// in all regions. To prevent duplicate configuration items, you should
+        /// consider customizing Config in only one region to record global
+        /// resources.</p>
         pub fn set_include_global_resource_types(
             mut self,
             input: std::option::Option<bool>,
@@ -3297,12 +3699,44 @@ pub mod recording_group {
             self.include_global_resource_types = input;
             self
         }
+        /// Appends an item to `resource_types`.
+        ///
+        /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
+        ///
+        /// <p>A comma-separated list that specifies the types of Amazon Web Services
+        /// resources for which Config records configuration changes (for
+        /// example, <code>AWS::EC2::Instance</code> or
+        /// <code>AWS::CloudTrail::Trail</code>).</p>
+        /// <p>To record all configuration changes, you must
+        /// set the <code>allSupported</code> option to
+        /// <code>true</code>.</p>
+        /// <p>If you set this option to <code>false</code>, when Config
+        /// adds support for a new type of resource, it will not record
+        /// resources of that type unless you manually add that type to your
+        /// recording group.</p>
+        /// <p>For a list of valid <code>resourceTypes</code> values, see the
+        /// <b>resourceType Value</b> column in
+        /// <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Amazon Web Services resource Types</a>.</p>
         pub fn resource_types(mut self, input: impl Into<crate::model::ResourceType>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
             v.push(input.into());
             self.resource_types = Some(v);
             self
         }
+        /// <p>A comma-separated list that specifies the types of Amazon Web Services
+        /// resources for which Config records configuration changes (for
+        /// example, <code>AWS::EC2::Instance</code> or
+        /// <code>AWS::CloudTrail::Trail</code>).</p>
+        /// <p>To record all configuration changes, you must
+        /// set the <code>allSupported</code> option to
+        /// <code>true</code>.</p>
+        /// <p>If you set this option to <code>false</code>, when Config
+        /// adds support for a new type of resource, it will not record
+        /// resources of that type unless you manually add that type to your
+        /// recording group.</p>
+        /// <p>For a list of valid <code>resourceTypes</code> values, see the
+        /// <b>resourceType Value</b> column in
+        /// <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Amazon Web Services resource Types</a>.</p>
         pub fn set_resource_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceType>>,
@@ -3349,9 +3783,9 @@ pub struct ConfigurationAggregator {
         std::option::Option<crate::model::OrganizationAggregationSource>,
     /// <p>The time stamp when the configuration aggregator was
     /// created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time of the last update.</p>
-    pub last_updated_time: std::option::Option<smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Amazon Web Services service that created the configuration aggregator.</p>
     pub created_by: std::option::Option<std::string::String>,
 }
@@ -3392,8 +3826,8 @@ pub mod configuration_aggregator {
             std::option::Option<std::vec::Vec<crate::model::AccountAggregationSource>>,
         pub(crate) organization_aggregation_source:
             std::option::Option<crate::model::OrganizationAggregationSource>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) created_by: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3405,6 +3839,7 @@ pub mod configuration_aggregator {
             self.configuration_aggregator_name = Some(input.into());
             self
         }
+        /// <p>The name of the aggregator.</p>
         pub fn set_configuration_aggregator_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3420,6 +3855,7 @@ pub mod configuration_aggregator {
             self.configuration_aggregator_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the aggregator.</p>
         pub fn set_configuration_aggregator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3427,6 +3863,12 @@ pub mod configuration_aggregator {
             self.configuration_aggregator_arn = input;
             self
         }
+        /// Appends an item to `account_aggregation_sources`.
+        ///
+        /// To override the contents of this collection use [`set_account_aggregation_sources`](Self::set_account_aggregation_sources).
+        ///
+        /// <p>Provides a list of source accounts and regions to be
+        /// aggregated.</p>
         pub fn account_aggregation_sources(
             mut self,
             input: impl Into<crate::model::AccountAggregationSource>,
@@ -3436,6 +3878,8 @@ pub mod configuration_aggregator {
             self.account_aggregation_sources = Some(v);
             self
         }
+        /// <p>Provides a list of source accounts and regions to be
+        /// aggregated.</p>
         pub fn set_account_aggregation_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccountAggregationSource>>,
@@ -3452,6 +3896,8 @@ pub mod configuration_aggregator {
             self.organization_aggregation_source = Some(input);
             self
         }
+        /// <p>Provides an organization and list of regions to be
+        /// aggregated.</p>
         pub fn set_organization_aggregation_source(
             mut self,
             input: std::option::Option<crate::model::OrganizationAggregationSource>,
@@ -3461,25 +3907,28 @@ pub mod configuration_aggregator {
         }
         /// <p>The time stamp when the configuration aggregator was
         /// created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time stamp when the configuration aggregator was
+        /// created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time of the last update.</p>
-        pub fn last_updated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_time = Some(input);
             self
         }
+        /// <p>The time of the last update.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -3489,6 +3938,7 @@ pub mod configuration_aggregator {
             self.created_by = Some(input.into());
             self
         }
+        /// <p>Amazon Web Services service that created the configuration aggregator.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_by = input;
             self
@@ -3554,16 +4004,24 @@ pub mod organization_aggregation_source {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details
+        /// associated with the aggregator account.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
+        /// Appends an item to `aws_regions`.
+        ///
+        /// To override the contents of this collection use [`set_aws_regions`](Self::set_aws_regions).
+        ///
+        /// <p>The source regions being aggregated.</p>
         pub fn aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.aws_regions.unwrap_or_default();
             v.push(input.into());
             self.aws_regions = Some(v);
             self
         }
+        /// <p>The source regions being aggregated.</p>
         pub fn set_aws_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3577,6 +4035,8 @@ pub mod organization_aggregation_source {
             self.all_aws_regions = Some(input);
             self
         }
+        /// <p>If true, aggregate existing Config regions and future
+        /// regions.</p>
         pub fn set_all_aws_regions(mut self, input: std::option::Option<bool>) -> Self {
             self.all_aws_regions = input;
             self
@@ -3631,12 +4091,20 @@ pub mod account_aggregation_source {
         pub(crate) aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The 12-digit account ID of the account being aggregated.
+        /// </p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
+        /// <p>The 12-digit account ID of the account being aggregated.
+        /// </p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3650,16 +4118,24 @@ pub mod account_aggregation_source {
             self.all_aws_regions = Some(input);
             self
         }
+        /// <p>If true, aggregate existing Config regions and future
+        /// regions.</p>
         pub fn set_all_aws_regions(mut self, input: std::option::Option<bool>) -> Self {
             self.all_aws_regions = input;
             self
         }
+        /// Appends an item to `aws_regions`.
+        ///
+        /// To override the contents of this collection use [`set_aws_regions`](Self::set_aws_regions).
+        ///
+        /// <p>The source regions being aggregated.</p>
         pub fn aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.aws_regions.unwrap_or_default();
             v.push(input.into());
             self.aws_regions = Some(v);
             self
         }
+        /// <p>The source regions being aggregated.</p>
         pub fn set_aws_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3691,6 +4167,7 @@ impl AccountAggregationSource {
 /// function can run when Config detects a configuration change to
 /// an Amazon Web Services resource and at a periodic frequency that you choose (for
 /// example, every 24 hours).</p>
+///
 /// <note>
 /// <p>You can use the Amazon Web Services CLI and Amazon Web Services SDKs if you want to create
 /// a rule that triggers evaluations for your resources when Config delivers the configuration snapshot. For more
@@ -3744,6 +4221,9 @@ pub struct ConfigRule {
     /// the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p>
     /// </li>
     /// </ul>
+    ///
+    ///
+    ///
     /// <note>
     /// <p>By default, rules with a periodic trigger are evaluated
     /// every 24 hours. To change the frequency, specify a valid value
@@ -3754,14 +4234,17 @@ pub struct ConfigRule {
     /// <p>Indicates whether the Config rule is active or is currently
     /// being deleted by Config. It can also indicate the evaluation
     /// status for the Config rule.</p>
+    ///
     /// <p>Config sets the state of the rule to
     /// <code>EVALUATING</code> temporarily after you use the
     /// <code>StartConfigRulesEvaluation</code> request to evaluate your
     /// resources against the Config rule.</p>
+    ///
     /// <p>Config sets the state of the rule to
     /// <code>DELETING_RESULTS</code> temporarily after you use the
     /// <code>DeleteEvaluationResults</code> request to delete the
     /// current evaluation results for the Config rule.</p>
+    ///
     /// <p>Config temporarily sets the state of a rule to
     /// <code>DELETING</code> after you use the
     /// <code>DeleteConfigRule</code> request to delete the rule. After
@@ -3821,6 +4304,8 @@ pub mod config_rule {
             self.config_rule_name = Some(input.into());
             self
         }
+        /// <p>The name that you assign to the Config rule. The name is
+        /// required if you are adding a new rule.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3834,6 +4319,8 @@ pub mod config_rule {
             self.config_rule_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Config
+        /// rule.</p>
         pub fn set_config_rule_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3846,6 +4333,7 @@ pub mod config_rule {
             self.config_rule_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Config rule.</p>
         pub fn set_config_rule_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3859,6 +4347,8 @@ pub mod config_rule {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description that you provide for the Config
+        /// rule.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3877,6 +4367,16 @@ pub mod config_rule {
             self.scope = Some(input);
             self
         }
+        /// <p>Defines which resources can trigger an evaluation for the rule.
+        /// The scope can include one or more resource types, a combination of
+        /// one resource type and one resource ID, or a combination of a tag key
+        /// and value. Specify a scope to constrain the resources that can
+        /// trigger an evaluation for the rule. If you do not specify a scope,
+        /// evaluations are triggered when any resource in the recording group
+        /// changes.</p>
+        /// <note>
+        /// <p>The scope can be empty. </p>
+        /// </note>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -3888,6 +4388,9 @@ pub mod config_rule {
             self.source = Some(input);
             self
         }
+        /// <p>Provides the rule owner (Amazon Web Services or customer), the rule identifier,
+        /// and the notifications that cause the function to evaluate your Amazon Web Services
+        /// resources.</p>
         pub fn set_source(mut self, input: std::option::Option<crate::model::Source>) -> Self {
             self.source = input;
             self
@@ -3898,6 +4401,8 @@ pub mod config_rule {
             self.input_parameters = Some(input.into());
             self
         }
+        /// <p>A string, in JSON format, that is passed to the Config rule
+        /// Lambda function.</p>
         pub fn set_input_parameters(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3918,6 +4423,9 @@ pub mod config_rule {
         /// the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p>
         /// </li>
         /// </ul>
+        ///
+        ///
+        ///
         /// <note>
         /// <p>By default, rules with a periodic trigger are evaluated
         /// every 24 hours. To change the frequency, specify a valid value
@@ -3931,6 +4439,28 @@ pub mod config_rule {
             self.maximum_execution_frequency = Some(input);
             self
         }
+        /// <p>The maximum frequency with which Config runs evaluations
+        /// for a rule. You can specify a value for
+        /// <code>MaximumExecutionFrequency</code> when:</p>
+        /// <ul>
+        /// <li>
+        /// <p>You are using an Config managed rule that is triggered at
+        /// a periodic frequency.</p>
+        /// </li>
+        /// <li>
+        /// <p>Your custom rule is triggered when Config delivers
+        /// the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p>
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        ///
+        /// <note>
+        /// <p>By default, rules with a periodic trigger are evaluated
+        /// every 24 hours. To change the frequency, specify a valid value
+        /// for the <code>MaximumExecutionFrequency</code>
+        /// parameter.</p>
+        /// </note>
         pub fn set_maximum_execution_frequency(
             mut self,
             input: std::option::Option<crate::model::MaximumExecutionFrequency>,
@@ -3941,14 +4471,17 @@ pub mod config_rule {
         /// <p>Indicates whether the Config rule is active or is currently
         /// being deleted by Config. It can also indicate the evaluation
         /// status for the Config rule.</p>
+        ///
         /// <p>Config sets the state of the rule to
         /// <code>EVALUATING</code> temporarily after you use the
         /// <code>StartConfigRulesEvaluation</code> request to evaluate your
         /// resources against the Config rule.</p>
+        ///
         /// <p>Config sets the state of the rule to
         /// <code>DELETING_RESULTS</code> temporarily after you use the
         /// <code>DeleteEvaluationResults</code> request to delete the
         /// current evaluation results for the Config rule.</p>
+        ///
         /// <p>Config temporarily sets the state of a rule to
         /// <code>DELETING</code> after you use the
         /// <code>DeleteConfigRule</code> request to delete the rule. After
@@ -3958,6 +4491,25 @@ pub mod config_rule {
             self.config_rule_state = Some(input);
             self
         }
+        /// <p>Indicates whether the Config rule is active or is currently
+        /// being deleted by Config. It can also indicate the evaluation
+        /// status for the Config rule.</p>
+        ///
+        /// <p>Config sets the state of the rule to
+        /// <code>EVALUATING</code> temporarily after you use the
+        /// <code>StartConfigRulesEvaluation</code> request to evaluate your
+        /// resources against the Config rule.</p>
+        ///
+        /// <p>Config sets the state of the rule to
+        /// <code>DELETING_RESULTS</code> temporarily after you use the
+        /// <code>DeleteEvaluationResults</code> request to delete the
+        /// current evaluation results for the Config rule.</p>
+        ///
+        /// <p>Config temporarily sets the state of a rule to
+        /// <code>DELETING</code> after you use the
+        /// <code>DeleteConfigRule</code> request to delete the rule. After
+        /// Config deletes the rule, the rule and all of its evaluations are
+        /// erased and are no longer available.</p>
         pub fn set_config_rule_state(
             mut self,
             input: std::option::Option<crate::model::ConfigRuleState>,
@@ -3976,6 +4528,13 @@ pub mod config_rule {
             self.created_by = Some(input.into());
             self
         }
+        /// <p>Service principal name of the service that created the
+        /// rule.</p>
+        /// <note>
+        /// <p>The field is populated only if the service linked rule is
+        /// created by a service. The field is empty if you create your own
+        /// rule.</p>
+        /// </note>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_by = input;
             self
@@ -4004,6 +4563,7 @@ impl ConfigRule {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4015,9 +4575,13 @@ impl ConfigRule {
     std::hash::Hash,
 )]
 pub enum ConfigRuleState {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     DeletingResults,
+    #[allow(missing_docs)] // documentation missing in model
     Evaluating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4041,6 +4605,7 @@ impl std::str::FromStr for ConfigRuleState {
     }
 }
 impl ConfigRuleState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfigRuleState::Active => "ACTIVE",
@@ -4050,6 +4615,7 @@ impl ConfigRuleState {
             ConfigRuleState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETING", "DELETING_RESULTS", "EVALUATING"]
     }
@@ -4103,6 +4669,7 @@ pub mod source {
             self.owner = Some(input);
             self
         }
+        /// <p>Indicates whether Amazon Web Services or the customer owns and manages the Config rule.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Owner>) -> Self {
             self.owner = input;
             self
@@ -4117,6 +4684,12 @@ pub mod source {
             self.source_identifier = Some(input.into());
             self
         }
+        /// <p>For Config managed rules, a predefined identifier from a
+        /// list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed
+        /// rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using Config managed rules</a>.</p>
+        /// <p>For custom rules, the identifier is the Amazon Resource Name
+        /// (ARN) of the rule's Lambda function, such as
+        /// <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
         pub fn set_source_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4124,12 +4697,18 @@ pub mod source {
             self.source_identifier = input;
             self
         }
+        /// Appends an item to `source_details`.
+        ///
+        /// To override the contents of this collection use [`set_source_details`](Self::set_source_details).
+        ///
+        /// <p>Provides the source and type of the event that causes Config to evaluate your Amazon Web Services resources.</p>
         pub fn source_details(mut self, input: impl Into<crate::model::SourceDetail>) -> Self {
             let mut v = self.source_details.unwrap_or_default();
             v.push(input.into());
             self.source_details = Some(v);
             self
         }
+        /// <p>Provides the source and type of the event that causes Config to evaluate your Amazon Web Services resources.</p>
         pub fn set_source_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SourceDetail>>,
@@ -4168,6 +4747,8 @@ pub struct SourceDetail {
     /// <p>The type of notification that triggers Config to run an
     /// evaluation for a rule. You can specify the following notification
     /// types:</p>
+    ///
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -4197,6 +4778,7 @@ pub struct SourceDetail {
     /// configuration snapshot.</p>
     /// </li>
     /// </ul>
+    ///
     /// <p>If you want your custom rule to be triggered by configuration
     /// changes, specify two SourceDetail objects, one for
     /// <code>ConfigurationItemChangeNotification</code> and one for
@@ -4207,6 +4789,11 @@ pub struct SourceDetail {
     /// for <code>MaximumExecutionFrequency</code>, then
     /// <code>MessageType</code> must use the
     /// <code>ScheduledNotification</code> value.</p>
+    ///
+    ///
+    ///
+    ///
+    ///
     /// <note>
     /// <p>By default, rules with a periodic trigger are evaluated
     /// every 24 hours. To change the frequency, specify a valid value
@@ -4250,6 +4837,8 @@ pub mod source_detail {
             self.event_source = Some(input);
             self
         }
+        /// <p>The source of the event, such as an Amazon Web Services service, that triggers
+        /// Config to evaluate your Amazon Web Services resources.</p>
         pub fn set_event_source(
             mut self,
             input: std::option::Option<crate::model::EventSource>,
@@ -4260,6 +4849,8 @@ pub mod source_detail {
         /// <p>The type of notification that triggers Config to run an
         /// evaluation for a rule. You can specify the following notification
         /// types:</p>
+        ///
+        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -4289,6 +4880,7 @@ pub mod source_detail {
         /// configuration snapshot.</p>
         /// </li>
         /// </ul>
+        ///
         /// <p>If you want your custom rule to be triggered by configuration
         /// changes, specify two SourceDetail objects, one for
         /// <code>ConfigurationItemChangeNotification</code> and one for
@@ -4297,6 +4889,45 @@ pub mod source_detail {
             self.message_type = Some(input);
             self
         }
+        /// <p>The type of notification that triggers Config to run an
+        /// evaluation for a rule. You can specify the following notification
+        /// types:</p>
+        ///
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ConfigurationItemChangeNotification</code> - Triggers
+        /// an evaluation when Config delivers a configuration item
+        /// as a result of a resource change.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OversizedConfigurationItemChangeNotification</code>
+        /// - Triggers an evaluation when Config delivers an
+        /// oversized configuration item. Config may generate this
+        /// notification type when a resource changes and the
+        /// notification exceeds the maximum size allowed by Amazon
+        /// SNS.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ScheduledNotification</code> - Triggers a
+        /// periodic evaluation at the frequency specified for
+        /// <code>MaximumExecutionFrequency</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ConfigurationSnapshotDeliveryCompleted</code> -
+        /// Triggers a periodic evaluation when Config delivers a
+        /// configuration snapshot.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>If you want your custom rule to be triggered by configuration
+        /// changes, specify two SourceDetail objects, one for
+        /// <code>ConfigurationItemChangeNotification</code> and one for
+        /// <code>OversizedConfigurationItemChangeNotification</code>.</p>
         pub fn set_message_type(
             mut self,
             input: std::option::Option<crate::model::MessageType>,
@@ -4309,6 +4940,11 @@ pub mod source_detail {
         /// for <code>MaximumExecutionFrequency</code>, then
         /// <code>MessageType</code> must use the
         /// <code>ScheduledNotification</code> value.</p>
+        ///
+        ///
+        ///
+        ///
+        ///
         /// <note>
         /// <p>By default, rules with a periodic trigger are evaluated
         /// every 24 hours. To change the frequency, specify a valid value
@@ -4327,6 +4963,27 @@ pub mod source_detail {
             self.maximum_execution_frequency = Some(input);
             self
         }
+        /// <p>The frequency at which you want Config to run evaluations
+        /// for a custom rule with a periodic trigger. If you specify a value
+        /// for <code>MaximumExecutionFrequency</code>, then
+        /// <code>MessageType</code> must use the
+        /// <code>ScheduledNotification</code> value.</p>
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// <note>
+        /// <p>By default, rules with a periodic trigger are evaluated
+        /// every 24 hours. To change the frequency, specify a valid value
+        /// for the <code>MaximumExecutionFrequency</code>
+        /// parameter.</p>
+        /// <p>Based on the valid value you choose, Config runs
+        /// evaluations once for each valid value. For example, if you
+        /// choose <code>Three_Hours</code>, Config runs evaluations
+        /// once every three hours. In this case, <code>Three_Hours</code>
+        /// is the frequency of this rule. </p>
+        /// </note>
         pub fn set_maximum_execution_frequency(
             mut self,
             input: std::option::Option<crate::model::MaximumExecutionFrequency>,
@@ -4351,6 +5008,7 @@ impl SourceDetail {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4362,9 +5020,13 @@ impl SourceDetail {
     std::hash::Hash,
 )]
 pub enum MessageType {
+    #[allow(missing_docs)] // documentation missing in model
     ConfigurationItemChangeNotification,
+    #[allow(missing_docs)] // documentation missing in model
     ConfigurationSnapshotDeliveryCompleted,
+    #[allow(missing_docs)] // documentation missing in model
     OversizedConfigurationItemChangeNotification,
+    #[allow(missing_docs)] // documentation missing in model
     ScheduledNotification,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4394,6 +5056,7 @@ impl std::str::FromStr for MessageType {
     }
 }
 impl MessageType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MessageType::ConfigurationItemChangeNotification => {
@@ -4409,6 +5072,7 @@ impl MessageType {
             MessageType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ConfigurationItemChangeNotification",
@@ -4424,6 +5088,7 @@ impl AsRef<str> for MessageType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4435,6 +5100,7 @@ impl AsRef<str> for MessageType {
     std::hash::Hash,
 )]
 pub enum EventSource {
+    #[allow(missing_docs)] // documentation missing in model
     AwsConfig,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4455,12 +5121,14 @@ impl std::str::FromStr for EventSource {
     }
 }
 impl EventSource {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EventSource::AwsConfig => "aws.config",
             EventSource::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["aws.config"]
     }
@@ -4471,6 +5139,7 @@ impl AsRef<str> for EventSource {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4482,7 +5151,9 @@ impl AsRef<str> for EventSource {
     std::hash::Hash,
 )]
 pub enum Owner {
+    #[allow(missing_docs)] // documentation missing in model
     Aws,
+    #[allow(missing_docs)] // documentation missing in model
     CustomLambda,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4504,6 +5175,7 @@ impl std::str::FromStr for Owner {
     }
 }
 impl Owner {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Owner::Aws => "AWS",
@@ -4511,6 +5183,7 @@ impl Owner {
             Owner::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AWS", "CUSTOM_LAMBDA"]
     }
@@ -4573,12 +5246,24 @@ pub mod scope {
         pub(crate) compliance_resource_id: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `compliance_resource_types`.
+        ///
+        /// To override the contents of this collection use [`set_compliance_resource_types`](Self::set_compliance_resource_types).
+        ///
+        /// <p>The resource types of only those Amazon Web Services resources that you want to
+        /// trigger an evaluation for the rule. You can only specify one type if
+        /// you also specify a resource ID for
+        /// <code>ComplianceResourceId</code>.</p>
         pub fn compliance_resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.compliance_resource_types.unwrap_or_default();
             v.push(input.into());
             self.compliance_resource_types = Some(v);
             self
         }
+        /// <p>The resource types of only those Amazon Web Services resources that you want to
+        /// trigger an evaluation for the rule. You can only specify one type if
+        /// you also specify a resource ID for
+        /// <code>ComplianceResourceId</code>.</p>
         pub fn set_compliance_resource_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4592,6 +5277,8 @@ pub mod scope {
             self.tag_key = Some(input.into());
             self
         }
+        /// <p>The tag key that is applied to only those Amazon Web Services resources that
+        /// you want to trigger an evaluation for the rule.</p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tag_key = input;
             self
@@ -4604,6 +5291,10 @@ pub mod scope {
             self.tag_value = Some(input.into());
             self
         }
+        /// <p>The tag value applied to only those Amazon Web Services resources that you want
+        /// to trigger an evaluation for the rule. If you specify a value for
+        /// <code>TagValue</code>, you must also specify a value for
+        /// <code>TagKey</code>.</p>
         pub fn set_tag_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tag_value = input;
             self
@@ -4616,6 +5307,10 @@ pub mod scope {
             self.compliance_resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the only Amazon Web Services resource that you want to trigger an
+        /// evaluation for the rule. If you specify a resource ID, you must
+        /// specify one resource type for
+        /// <code>ComplianceResourceTypes</code>.</p>
         pub fn set_compliance_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4656,7 +5351,7 @@ pub struct AggregationAuthorization {
     pub authorized_aws_region: std::option::Option<std::string::String>,
     /// <p>The time stamp when the aggregation authorization was
     /// created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for AggregationAuthorization {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4680,7 +5375,7 @@ pub mod aggregation_authorization {
         pub(crate) aggregation_authorization_arn: std::option::Option<std::string::String>,
         pub(crate) authorized_account_id: std::option::Option<std::string::String>,
         pub(crate) authorized_aws_region: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the aggregation
@@ -4692,6 +5387,8 @@ pub mod aggregation_authorization {
             self.aggregation_authorization_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the aggregation
+        /// object.</p>
         pub fn set_aggregation_authorization_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4705,6 +5402,8 @@ pub mod aggregation_authorization {
             self.authorized_account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit account ID of the account authorized to aggregate
+        /// data.</p>
         pub fn set_authorized_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4717,6 +5416,7 @@ pub mod aggregation_authorization {
             self.authorized_aws_region = Some(input.into());
             self
         }
+        /// <p>The region authorized to collect aggregated data.</p>
         pub fn set_authorized_aws_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4726,13 +5426,15 @@ pub mod aggregation_authorization {
         }
         /// <p>The time stamp when the aggregation authorization was
         /// created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time stamp when the aggregation authorization was
+        /// created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -4795,6 +5497,7 @@ pub mod stored_query_metadata {
             self.query_id = Some(input.into());
             self
         }
+        /// <p>The ID of the query. </p>
         pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_id = input;
             self
@@ -4804,6 +5507,7 @@ pub mod stored_query_metadata {
             self.query_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
         pub fn set_query_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_arn = input;
             self
@@ -4813,6 +5517,7 @@ pub mod stored_query_metadata {
             self.query_name = Some(input.into());
             self
         }
+        /// <p>The name of the query.</p>
         pub fn set_query_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_name = input;
             self
@@ -4822,6 +5527,7 @@ pub mod stored_query_metadata {
             self.description = Some(input.into());
             self
         }
+        /// <p>A unique description for the query.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -4857,7 +5563,7 @@ pub struct ResourceIdentifier {
     /// <p>The custom name of the resource (if available).</p>
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>The time that the resource was deleted.</p>
-    pub resource_deletion_time: std::option::Option<smithy_types::Instant>,
+    pub resource_deletion_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ResourceIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4878,7 +5584,7 @@ pub mod resource_identifier {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) resource_name: std::option::Option<std::string::String>,
-        pub(crate) resource_deletion_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) resource_deletion_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The type of resource.</p>
@@ -4886,6 +5592,7 @@ pub mod resource_identifier {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The type of resource.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -4899,6 +5606,8 @@ pub mod resource_identifier {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the resource (for example,
+        /// <code>sg-xxxxxx</code>).</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -4908,6 +5617,7 @@ pub mod resource_identifier {
             self.resource_name = Some(input.into());
             self
         }
+        /// <p>The custom name of the resource (if available).</p>
         pub fn set_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4916,13 +5626,14 @@ pub mod resource_identifier {
             self
         }
         /// <p>The time that the resource was deleted.</p>
-        pub fn resource_deletion_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn resource_deletion_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.resource_deletion_time = Some(input);
             self
         }
+        /// <p>The time that the resource was deleted.</p>
         pub fn set_resource_deletion_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.resource_deletion_time = input;
             self
@@ -4989,6 +5700,7 @@ pub mod aggregate_resource_identifier {
             self.source_account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit account ID of the source account.</p>
         pub fn set_source_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5001,6 +5713,7 @@ pub mod aggregate_resource_identifier {
             self.source_region = Some(input.into());
             self
         }
+        /// <p>The source region where data is aggregated.</p>
         pub fn set_source_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5013,6 +5726,7 @@ pub mod aggregate_resource_identifier {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon Web Services resource.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -5022,6 +5736,7 @@ pub mod aggregate_resource_identifier {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The type of the Amazon Web Services resource.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -5034,6 +5749,7 @@ pub mod aggregate_resource_identifier {
             self.resource_name = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon Web Services resource.</p>
         pub fn set_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5100,6 +5816,7 @@ pub mod resource_filters {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit source account ID.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -5109,6 +5826,7 @@ pub mod resource_filters {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the resource.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -5118,6 +5836,7 @@ pub mod resource_filters {
             self.resource_name = Some(input.into());
             self
         }
+        /// <p>The name of the resource.</p>
         pub fn set_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5130,6 +5849,7 @@ pub mod resource_filters {
             self.region = Some(input.into());
             self
         }
+        /// <p>The source region.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -5164,8 +5884,9 @@ pub struct ConfigurationItem {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The time when the configuration recording was
     /// initiated.</p>
-    pub configuration_item_capture_time: std::option::Option<smithy_types::Instant>,
+    pub configuration_item_capture_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The configuration item status. The valid values are:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>OK – The resource configuration has been updated</p>
@@ -5210,7 +5931,7 @@ pub struct ConfigurationItem {
     /// <p>The Availability Zone associated with the resource.</p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The time stamp when the resource was created.</p>
-    pub resource_creation_time: std::option::Option<smithy_types::Instant>,
+    pub resource_creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A mapping of key value tags associated with the
     /// resource.</p>
     pub tags:
@@ -5274,7 +5995,7 @@ pub mod configuration_item {
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
-        pub(crate) configuration_item_capture_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) configuration_item_capture_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) configuration_item_status:
             std::option::Option<crate::model::ConfigurationItemStatus>,
         pub(crate) configuration_state_id: std::option::Option<std::string::String>,
@@ -5285,7 +6006,7 @@ pub mod configuration_item {
         pub(crate) resource_name: std::option::Option<std::string::String>,
         pub(crate) aws_region: std::option::Option<std::string::String>,
         pub(crate) availability_zone: std::option::Option<std::string::String>,
-        pub(crate) resource_creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) resource_creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -5302,6 +6023,7 @@ pub mod configuration_item {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version number of the resource configuration.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -5312,24 +6034,29 @@ pub mod configuration_item {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit Amazon Web Services account ID associated with the
+        /// resource.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
         }
         /// <p>The time when the configuration recording was
         /// initiated.</p>
-        pub fn configuration_item_capture_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn configuration_item_capture_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.configuration_item_capture_time = Some(input);
             self
         }
+        /// <p>The time when the configuration recording was
+        /// initiated.</p>
         pub fn set_configuration_item_capture_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.configuration_item_capture_time = input;
             self
         }
         /// <p>The configuration item status. The valid values are:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>OK – The resource configuration has been updated</p>
@@ -5357,6 +6084,28 @@ pub mod configuration_item {
             self.configuration_item_status = Some(input);
             self
         }
+        /// <p>The configuration item status. The valid values are:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>OK – The resource configuration has been updated</p>
+        /// </li>
+        /// <li>
+        /// <p>ResourceDiscovered – The resource was newly discovered</p>
+        /// </li>
+        /// <li>
+        /// <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p>
+        /// </li>
+        /// <li>
+        /// <p>ResourceDeleted – The resource was deleted</p>
+        /// </li>
+        /// <li>
+        /// <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>The CIs do not incur any cost.</p>
+        /// </note>
         pub fn set_configuration_item_status(
             mut self,
             input: std::option::Option<crate::model::ConfigurationItemStatus>,
@@ -5370,6 +6119,8 @@ pub mod configuration_item {
             self.configuration_state_id = Some(input.into());
             self
         }
+        /// <p>An identifier that indicates the ordering of the configuration
+        /// items of a resource.</p>
         pub fn set_configuration_state_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5389,6 +6140,11 @@ pub mod configuration_item {
             self.configuration_item_md5_hash = Some(input.into());
             self
         }
+        /// <p>Unique MD5 hash that represents the configuration item's
+        /// state.</p>
+        /// <p>You can use MD5 hash to compare the states of two or more
+        /// configuration items that are associated with the same
+        /// resource.</p>
         pub fn set_configuration_item_md5_hash(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5401,6 +6157,7 @@ pub mod configuration_item {
             self.arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) associated with the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5410,6 +6167,7 @@ pub mod configuration_item {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The type of Amazon Web Services resource.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -5423,6 +6181,8 @@ pub mod configuration_item {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the resource (for example,
+        /// <code>sg-xxxxxx</code>).</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -5432,6 +6192,7 @@ pub mod configuration_item {
             self.resource_name = Some(input.into());
             self
         }
+        /// <p>The custom name of the resource, if available.</p>
         pub fn set_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5444,6 +6205,7 @@ pub mod configuration_item {
             self.aws_region = Some(input.into());
             self
         }
+        /// <p>The region where the resource resides.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.aws_region = input;
             self
@@ -5453,6 +6215,7 @@ pub mod configuration_item {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>The Availability Zone associated with the resource.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5461,17 +6224,24 @@ pub mod configuration_item {
             self
         }
         /// <p>The time stamp when the resource was created.</p>
-        pub fn resource_creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn resource_creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.resource_creation_time = Some(input);
             self
         }
+        /// <p>The time stamp when the resource was created.</p>
         pub fn set_resource_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.resource_creation_time = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A mapping of key value tags associated with the
+        /// resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5482,6 +6252,8 @@ pub mod configuration_item {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A mapping of key value tags associated with the
+        /// resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5491,12 +6263,30 @@ pub mod configuration_item {
             self.tags = input;
             self
         }
+        /// Appends an item to `related_events`.
+        ///
+        /// To override the contents of this collection use [`set_related_events`](Self::set_related_events).
+        ///
+        /// <p>A list of CloudTrail event IDs.</p>
+        /// <p>A populated field indicates that the current configuration was
+        /// initiated by the events recorded in the CloudTrail log. For more
+        /// information about CloudTrail, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What Is CloudTrail</a>.</p>
+        /// <p>An empty field indicates that the current configuration was not
+        /// initiated by any event. As of Version 1.3, the relatedEvents field is empty.
+        /// You can access the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents API</a> in the <i>CloudTrail API Reference</i> to retrieve the events for the resource.</p>
         pub fn related_events(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.related_events.unwrap_or_default();
             v.push(input.into());
             self.related_events = Some(v);
             self
         }
+        /// <p>A list of CloudTrail event IDs.</p>
+        /// <p>A populated field indicates that the current configuration was
+        /// initiated by the events recorded in the CloudTrail log. For more
+        /// information about CloudTrail, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What Is CloudTrail</a>.</p>
+        /// <p>An empty field indicates that the current configuration was not
+        /// initiated by any event. As of Version 1.3, the relatedEvents field is empty.
+        /// You can access the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents API</a> in the <i>CloudTrail API Reference</i> to retrieve the events for the resource.</p>
         pub fn set_related_events(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5504,12 +6294,18 @@ pub mod configuration_item {
             self.related_events = input;
             self
         }
+        /// Appends an item to `relationships`.
+        ///
+        /// To override the contents of this collection use [`set_relationships`](Self::set_relationships).
+        ///
+        /// <p>A list of related Amazon Web Services resources.</p>
         pub fn relationships(mut self, input: impl Into<crate::model::Relationship>) -> Self {
             let mut v = self.relationships.unwrap_or_default();
             v.push(input.into());
             self.relationships = Some(v);
             self
         }
+        /// <p>A list of related Amazon Web Services resources.</p>
         pub fn set_relationships(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Relationship>>,
@@ -5522,6 +6318,7 @@ pub mod configuration_item {
             self.configuration = Some(input.into());
             self
         }
+        /// <p>The description of the resource configuration.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5529,6 +6326,13 @@ pub mod configuration_item {
             self.configuration = input;
             self
         }
+        /// Adds a key-value pair to `supplementary_configuration`.
+        ///
+        /// To override the contents of this collection use [`set_supplementary_configuration`](Self::set_supplementary_configuration).
+        ///
+        /// <p>Configuration attributes that Config returns for certain
+        /// resource types to supplement the information returned for the
+        /// <code>configuration</code> parameter.</p>
         pub fn supplementary_configuration(
             mut self,
             k: impl Into<std::string::String>,
@@ -5539,6 +6343,9 @@ pub mod configuration_item {
             self.supplementary_configuration = Some(hash_map);
             self
         }
+        /// <p>Configuration attributes that Config returns for certain
+        /// resource types to supplement the information returned for the
+        /// <code>configuration</code> parameter.</p>
         pub fn set_supplementary_configuration(
             mut self,
             input: std::option::Option<
@@ -5623,6 +6430,7 @@ pub mod relationship {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The resource type of the related resource.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -5636,6 +6444,8 @@ pub mod relationship {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the related resource (for example,
+        /// <code>sg-xxxxxx</code>).</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -5646,6 +6456,8 @@ pub mod relationship {
             self.resource_name = Some(input.into());
             self
         }
+        /// <p>The custom name of the related resource, if
+        /// available.</p>
         pub fn set_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5658,6 +6470,7 @@ pub mod relationship {
             self.relationship_name = Some(input.into());
             self
         }
+        /// <p>The type of relationship with the related resource.</p>
         pub fn set_relationship_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5683,6 +6496,7 @@ impl Relationship {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5694,10 +6508,15 @@ impl Relationship {
     std::hash::Hash,
 )]
 pub enum ConfigurationItemStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Ok,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceDeleted,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceDeletedNotRecorded,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceDiscovered,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceNotRecorded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5722,6 +6541,7 @@ impl std::str::FromStr for ConfigurationItemStatus {
     }
 }
 impl ConfigurationItemStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfigurationItemStatus::Ok => "OK",
@@ -5732,6 +6552,7 @@ impl ConfigurationItemStatus {
             ConfigurationItemStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "OK",
@@ -5748,6 +6569,7 @@ impl AsRef<str> for ConfigurationItemStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5759,7 +6581,9 @@ impl AsRef<str> for ConfigurationItemStatus {
     std::hash::Hash,
 )]
 pub enum ChronologicalOrder {
+    #[allow(missing_docs)] // documentation missing in model
     Forward,
+    #[allow(missing_docs)] // documentation missing in model
     Reverse,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5781,6 +6605,7 @@ impl std::str::FromStr for ChronologicalOrder {
     }
 }
 impl ChronologicalOrder {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChronologicalOrder::Forward => "Forward",
@@ -5788,6 +6613,7 @@ impl ChronologicalOrder {
             ChronologicalOrder::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Forward", "Reverse"]
     }
@@ -5860,7 +6686,7 @@ pub struct OrganizationConformancePackDetailedStatus {
     /// has failed due to an error in the member account. </p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The timestamp of the last status update.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for OrganizationConformancePackDetailedStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5885,7 +6711,7 @@ pub mod organization_conformance_pack_detailed_status {
         pub(crate) status: std::option::Option<crate::model::OrganizationResourceDetailedStatus>,
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The 12-digit account ID of a member account.</p>
@@ -5893,6 +6719,7 @@ pub mod organization_conformance_pack_detailed_status {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit account ID of a member account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -5902,6 +6729,7 @@ pub mod organization_conformance_pack_detailed_status {
             self.conformance_pack_name = Some(input.into());
             self
         }
+        /// <p>The name of conformance pack deployed in the member account.</p>
         pub fn set_conformance_pack_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5957,6 +6785,50 @@ pub mod organization_conformance_pack_detailed_status {
             self.status = Some(input);
             self
         }
+        /// <p>Indicates deployment status for conformance pack in a member account.
+        /// When master account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account.
+        /// When master account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account.   
+        /// Conformance pack status is deleted when the master account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
+        /// </p>
+        /// <p> Config sets the state of the conformance pack to:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the member account. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_IN_PROGRESS</code> when conformance pack is being created in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_FAILED</code> when conformance pack creation has failed in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_FAILED</code> when conformance pack deletion has failed in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_IN_PROGRESS</code> when conformance pack is being deleted in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_SUCCESSFUL</code> when conformance pack has been deleted in the member account. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATE_SUCCESSFUL</code> when conformance pack has been updated in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATE_IN_PROGRESS</code> when conformance pack is being updated in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the member account.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OrganizationResourceDetailedStatus>,
@@ -5970,6 +6842,8 @@ pub mod organization_conformance_pack_detailed_status {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>An error code that is returned when conformance pack creation or
+        /// deletion failed in the member account. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -5980,6 +6854,8 @@ pub mod organization_conformance_pack_detailed_status {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>An error message indicating that conformance pack account creation or deletion
+        /// has failed due to an error in the member account. </p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5988,13 +6864,14 @@ pub mod organization_conformance_pack_detailed_status {
             self
         }
         /// <p>The timestamp of the last status update.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The timestamp of the last status update.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -6019,6 +6896,7 @@ impl OrganizationConformancePackDetailedStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6030,14 +6908,23 @@ impl OrganizationConformancePackDetailedStatus {
     std::hash::Hash,
 )]
 pub enum OrganizationResourceDetailedStatus {
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     CreateSuccessful,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteSuccessful,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateSuccessful,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6066,6 +6953,7 @@ impl std::str::FromStr for OrganizationResourceDetailedStatus {
     }
 }
 impl OrganizationResourceDetailedStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrganizationResourceDetailedStatus::CreateFailed => "CREATE_FAILED",
@@ -6080,6 +6968,7 @@ impl OrganizationResourceDetailedStatus {
             OrganizationResourceDetailedStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -6175,6 +7064,7 @@ pub mod organization_resource_detailed_status_filters {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit account ID of the member account within an organization.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -6227,6 +7117,50 @@ pub mod organization_resource_detailed_status_filters {
             self.status = Some(input);
             self
         }
+        /// <p>Indicates deployment status for conformance pack in a member account.
+        /// When master account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account.
+        /// When master account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account.   
+        /// Conformance pack status is deleted when the master account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
+        /// </p>
+        /// <p> Config sets the state of the conformance pack to:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the member account. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_IN_PROGRESS</code> when conformance pack is being created in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_FAILED</code> when conformance pack creation has failed in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_FAILED</code> when conformance pack deletion has failed in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_IN_PROGRESS</code> when conformance pack is being deleted in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_SUCCESSFUL</code> when conformance pack has been deleted in the member account. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATE_SUCCESSFUL</code> when conformance pack has been updated in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATE_IN_PROGRESS</code> when conformance pack is being updated in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the member account.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OrganizationResourceDetailedStatus>,
@@ -6308,7 +7242,7 @@ pub struct MemberAccountStatus {
     /// <p>An error message indicating that config rule account creation or deletion has failed due to an error in the member account.</p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The timestamp of the last status update.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for MemberAccountStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6337,7 +7271,7 @@ pub mod member_account_status {
             std::option::Option<crate::model::MemberAccountRuleStatus>,
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The 12-digit account ID of a member account.</p>
@@ -6345,6 +7279,7 @@ pub mod member_account_status {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit account ID of a member account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -6354,6 +7289,7 @@ pub mod member_account_status {
             self.config_rule_name = Some(input.into());
             self
         }
+        /// <p>The name of config rule deployed in the member account.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6412,6 +7348,50 @@ pub mod member_account_status {
             self.member_account_rule_status = Some(input);
             self
         }
+        /// <p>Indicates deployment status for config rule in the member account.
+        /// When master account calls <code>PutOrganizationConfigRule</code> action for the first time, config rule status is created in the member account.
+        /// When master account calls <code>PutOrganizationConfigRule</code> action for the second time, config rule status is updated in the member account.   
+        /// Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
+        /// </p>
+        /// <p> Config sets the state of the rule to:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member account. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_IN_PROGRESS</code> when config rule is being created in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_FAILED</code> when config rule creation has failed in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_FAILED</code> when config rule deletion has failed in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_IN_PROGRESS</code> when config rule is being deleted in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_SUCCESSFUL</code> when config rule has been deleted in the member account. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATE_SUCCESSFUL</code> when config rule has been updated in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATE_IN_PROGRESS</code> when config rule is being updated in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATE_FAILED</code> when config rule deletion has failed in the member account.</p>
+        /// </li>
+        /// </ul>
         pub fn set_member_account_rule_status(
             mut self,
             input: std::option::Option<crate::model::MemberAccountRuleStatus>,
@@ -6424,6 +7404,7 @@ pub mod member_account_status {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>An error code that is returned when config rule creation or deletion failed in the member account.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -6433,6 +7414,7 @@ pub mod member_account_status {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>An error message indicating that config rule account creation or deletion has failed due to an error in the member account.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6441,13 +7423,14 @@ pub mod member_account_status {
             self
         }
         /// <p>The timestamp of the last status update.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The timestamp of the last status update.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -6472,6 +7455,7 @@ impl MemberAccountStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6483,14 +7467,23 @@ impl MemberAccountStatus {
     std::hash::Hash,
 )]
 pub enum MemberAccountRuleStatus {
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     CreateSuccessful,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteSuccessful,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateSuccessful,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6519,6 +7512,7 @@ impl std::str::FromStr for MemberAccountRuleStatus {
     }
 }
 impl MemberAccountRuleStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MemberAccountRuleStatus::CreateFailed => "CREATE_FAILED",
@@ -6533,6 +7527,7 @@ impl MemberAccountRuleStatus {
             MemberAccountRuleStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -6632,6 +7627,7 @@ pub mod status_detail_filters {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit account ID of the member account within an organization.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -6687,6 +7683,50 @@ pub mod status_detail_filters {
             self.member_account_rule_status = Some(input);
             self
         }
+        /// <p>Indicates deployment status for config rule in the member account.
+        /// When master account calls <code>PutOrganizationConfigRule</code> action for the first time, config rule status is created in the member account.
+        /// When master account calls <code>PutOrganizationConfigRule</code> action for the second time, config rule status is updated in the member account.   
+        /// Config rule status is deleted when the master account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
+        /// </p>
+        /// <p>Config sets the state of the rule to:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_SUCCESSFUL</code> when config rule has been created in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_IN_PROGRESS</code> when config rule is being created in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_FAILED</code> when config rule creation has failed in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_FAILED</code> when config rule deletion has failed in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_IN_PROGRESS</code> when config rule is being deleted in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_SUCCESSFUL</code> when config rule has been deleted in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATE_SUCCESSFUL</code> when config rule has been updated in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATE_IN_PROGRESS</code> when config rule is being updated in the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATE_FAILED</code> when config rule deletion has failed in the member account.</p>
+        /// </li>
+        /// </ul>
         pub fn set_member_account_rule_status(
             mut self,
             input: std::option::Option<crate::model::MemberAccountRuleStatus>,
@@ -6745,6 +7785,8 @@ pub mod resource_count {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The resource type (for example,
+        /// <code>"AWS::EC2::Instance"</code>).</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -6757,6 +7799,7 @@ pub mod resource_count {
             self.count = Some(input);
             self
         }
+        /// <p>The number of resources.</p>
         pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
             self.count = input;
             self
@@ -6814,6 +7857,7 @@ pub mod conformance_pack_compliance_summary {
             self.conformance_pack_name = Some(input.into());
             self
         }
+        /// <p>The name of the conformance pack name.</p>
         pub fn set_conformance_pack_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6829,6 +7873,7 @@ pub mod conformance_pack_compliance_summary {
             self.conformance_pack_compliance_status = Some(input);
             self
         }
+        /// <p>The status of the conformance pack. The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and <code>INSUFFICIENT_DATA</code>.</p>
         pub fn set_conformance_pack_compliance_status(
             mut self,
             input: std::option::Option<crate::model::ConformancePackComplianceType>,
@@ -6852,6 +7897,7 @@ impl ConformancePackComplianceSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6863,8 +7909,11 @@ impl ConformancePackComplianceSummary {
     std::hash::Hash,
 )]
 pub enum ConformancePackComplianceType {
+    #[allow(missing_docs)] // documentation missing in model
     Compliant,
+    #[allow(missing_docs)] // documentation missing in model
     InsufficientData,
+    #[allow(missing_docs)] // documentation missing in model
     NonCompliant,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6887,6 +7936,7 @@ impl std::str::FromStr for ConformancePackComplianceType {
     }
 }
 impl ConformancePackComplianceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConformancePackComplianceType::Compliant => "COMPLIANT",
@@ -6895,6 +7945,7 @@ impl ConformancePackComplianceType {
             ConformancePackComplianceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COMPLIANT", "INSUFFICIENT_DATA", "NON_COMPLIANT"]
     }
@@ -6914,9 +7965,9 @@ pub struct ConformancePackEvaluationResult {
     /// <p>Uniquely identifies an evaluation result.</p>
     pub evaluation_result_identifier: std::option::Option<crate::model::EvaluationResultIdentifier>,
     /// <p>The time when Config rule evaluated Amazon Web Services resource.</p>
-    pub config_rule_invoked_time: std::option::Option<smithy_types::Instant>,
+    pub config_rule_invoked_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when Config recorded the evaluation result. </p>
-    pub result_recorded_time: std::option::Option<smithy_types::Instant>,
+    pub result_recorded_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Supplementary information about how the evaluation determined the compliance. </p>
     pub annotation: std::option::Option<std::string::String>,
 }
@@ -6944,8 +7995,8 @@ pub mod conformance_pack_evaluation_result {
             std::option::Option<crate::model::ConformancePackComplianceType>,
         pub(crate) evaluation_result_identifier:
             std::option::Option<crate::model::EvaluationResultIdentifier>,
-        pub(crate) config_rule_invoked_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) result_recorded_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) config_rule_invoked_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) result_recorded_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) annotation: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6957,6 +8008,7 @@ pub mod conformance_pack_evaluation_result {
             self.compliance_type = Some(input);
             self
         }
+        /// <p>The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<crate::model::ConformancePackComplianceType>,
@@ -6972,6 +8024,7 @@ pub mod conformance_pack_evaluation_result {
             self.evaluation_result_identifier = Some(input);
             self
         }
+        /// <p>Uniquely identifies an evaluation result.</p>
         pub fn set_evaluation_result_identifier(
             mut self,
             input: std::option::Option<crate::model::EvaluationResultIdentifier>,
@@ -6980,25 +8033,27 @@ pub mod conformance_pack_evaluation_result {
             self
         }
         /// <p>The time when Config rule evaluated Amazon Web Services resource.</p>
-        pub fn config_rule_invoked_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn config_rule_invoked_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.config_rule_invoked_time = Some(input);
             self
         }
+        /// <p>The time when Config rule evaluated Amazon Web Services resource.</p>
         pub fn set_config_rule_invoked_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.config_rule_invoked_time = input;
             self
         }
         /// <p>The time when Config recorded the evaluation result. </p>
-        pub fn result_recorded_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn result_recorded_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.result_recorded_time = Some(input);
             self
         }
+        /// <p>The time when Config recorded the evaluation result. </p>
         pub fn set_result_recorded_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.result_recorded_time = input;
             self
@@ -7008,6 +8063,7 @@ pub mod conformance_pack_evaluation_result {
             self.annotation = Some(input.into());
             self
         }
+        /// <p>Supplementary information about how the evaluation determined the compliance. </p>
         pub fn set_annotation(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.annotation = input;
             self
@@ -7042,7 +8098,7 @@ pub struct EvaluationResultIdentifier {
     /// resources. The time can indicate when Config delivered a
     /// configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which
     /// event triggered the evaluation.</p>
-    pub ordering_timestamp: std::option::Option<smithy_types::Instant>,
+    pub ordering_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for EvaluationResultIdentifier {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7063,7 +8119,7 @@ pub mod evaluation_result_identifier {
     pub struct Builder {
         pub(crate) evaluation_result_qualifier:
             std::option::Option<crate::model::EvaluationResultQualifier>,
-        pub(crate) ordering_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) ordering_timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Identifies an Config rule used to evaluate an Amazon Web Services resource,
@@ -7075,6 +8131,8 @@ pub mod evaluation_result_identifier {
             self.evaluation_result_qualifier = Some(input);
             self
         }
+        /// <p>Identifies an Config rule used to evaluate an Amazon Web Services resource,
+        /// and provides the type and ID of the evaluated resource.</p>
         pub fn set_evaluation_result_qualifier(
             mut self,
             input: std::option::Option<crate::model::EvaluationResultQualifier>,
@@ -7086,13 +8144,17 @@ pub mod evaluation_result_identifier {
         /// resources. The time can indicate when Config delivered a
         /// configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which
         /// event triggered the evaluation.</p>
-        pub fn ordering_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn ordering_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.ordering_timestamp = Some(input);
             self
         }
+        /// <p>The time of the event that triggered the evaluation of your Amazon Web Services
+        /// resources. The time can indicate when Config delivered a
+        /// configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which
+        /// event triggered the evaluation.</p>
         pub fn set_ordering_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.ordering_timestamp = input;
             self
@@ -7153,6 +8215,8 @@ pub mod evaluation_result_qualifier {
             self.config_rule_name = Some(input.into());
             self
         }
+        /// <p>The name of the Config rule that was used in the
+        /// evaluation.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7165,6 +8229,7 @@ pub mod evaluation_result_qualifier {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The type of Amazon Web Services resource that was evaluated.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7177,6 +8242,7 @@ pub mod evaluation_result_qualifier {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the evaluated Amazon Web Services resource.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -7238,12 +8304,18 @@ pub mod conformance_pack_evaluation_filters {
         pub(crate) resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `config_rule_names`.
+        ///
+        /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
+        ///
+        /// <p>Filters the results by Config rule names.</p>
         pub fn config_rule_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.config_rule_names.unwrap_or_default();
             v.push(input.into());
             self.config_rule_names = Some(v);
             self
         }
+        /// <p>Filters the results by Config rule names.</p>
         pub fn set_config_rule_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7260,6 +8332,8 @@ pub mod conformance_pack_evaluation_filters {
             self.compliance_type = Some(input);
             self
         }
+        /// <p>Filters the results by compliance.</p>
+        /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<crate::model::ConformancePackComplianceType>,
@@ -7272,6 +8346,7 @@ pub mod conformance_pack_evaluation_filters {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>). </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7279,12 +8354,24 @@ pub mod conformance_pack_evaluation_filters {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `resource_ids`.
+        ///
+        /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
+        ///
+        /// <p>Filters the results by resource IDs.</p>
+        /// <note>
+        /// <p>This is valid only when you provide resource type. If there is no resource type, you will see an error.</p>
+        /// </note>
         pub fn resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_ids.unwrap_or_default();
             v.push(input.into());
             self.resource_ids = Some(v);
             self
         }
+        /// <p>Filters the results by resource IDs.</p>
+        /// <note>
+        /// <p>This is valid only when you provide resource type. If there is no resource type, you will see an error.</p>
+        /// </note>
         pub fn set_resource_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7345,6 +8432,7 @@ pub mod compliance_summary_by_resource_type {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The type of Amazon Web Services resource.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7358,6 +8446,8 @@ pub mod compliance_summary_by_resource_type {
             self.compliance_summary = Some(input);
             self
         }
+        /// <p>The number of Amazon Web Services resources that are compliant or noncompliant,
+        /// up to a maximum of 100 for each.</p>
         pub fn set_compliance_summary(
             mut self,
             input: std::option::Option<crate::model::ComplianceSummary>,
@@ -7396,7 +8486,7 @@ pub struct ComplianceSummary {
     pub non_compliant_resource_count: std::option::Option<crate::model::ComplianceContributorCount>,
     /// <p>The time that Config created the compliance
     /// summary.</p>
-    pub compliance_summary_timestamp: std::option::Option<smithy_types::Instant>,
+    pub compliance_summary_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ComplianceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7423,7 +8513,7 @@ pub mod compliance_summary {
             std::option::Option<crate::model::ComplianceContributorCount>,
         pub(crate) non_compliant_resource_count:
             std::option::Option<crate::model::ComplianceContributorCount>,
-        pub(crate) compliance_summary_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) compliance_summary_timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The number of Config rules or Amazon Web Services resources that are
@@ -7436,6 +8526,9 @@ pub mod compliance_summary {
             self.compliant_resource_count = Some(input);
             self
         }
+        /// <p>The number of Config rules or Amazon Web Services resources that are
+        /// compliant, up to a maximum of 25 for rules and 100 for
+        /// resources.</p>
         pub fn set_compliant_resource_count(
             mut self,
             input: std::option::Option<crate::model::ComplianceContributorCount>,
@@ -7453,6 +8546,9 @@ pub mod compliance_summary {
             self.non_compliant_resource_count = Some(input);
             self
         }
+        /// <p>The number of Config rules or Amazon Web Services resources that are
+        /// noncompliant, up to a maximum of 25 for rules and 100 for
+        /// resources.</p>
         pub fn set_non_compliant_resource_count(
             mut self,
             input: std::option::Option<crate::model::ComplianceContributorCount>,
@@ -7462,13 +8558,15 @@ pub mod compliance_summary {
         }
         /// <p>The time that Config created the compliance
         /// summary.</p>
-        pub fn compliance_summary_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn compliance_summary_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.compliance_summary_timestamp = Some(input);
             self
         }
+        /// <p>The time that Config created the compliance
+        /// summary.</p>
         pub fn set_compliance_summary_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.compliance_summary_timestamp = input;
             self
@@ -7526,6 +8624,8 @@ pub mod compliance_contributor_count {
             self.capped_count = Some(input);
             self
         }
+        /// <p>The number of Amazon Web Services resources or Config rules responsible for
+        /// the current compliance of the item.</p>
         pub fn set_capped_count(mut self, input: std::option::Option<i32>) -> Self {
             self.capped_count = input;
             self
@@ -7535,6 +8635,7 @@ pub mod compliance_contributor_count {
             self.cap_exceeded = Some(input);
             self
         }
+        /// <p>Indicates whether the maximum count is reached.</p>
         pub fn set_cap_exceeded(mut self, input: std::option::Option<bool>) -> Self {
             self.cap_exceeded = input;
             self
@@ -7573,10 +8674,10 @@ pub struct EvaluationResult {
     pub compliance_type: std::option::Option<crate::model::ComplianceType>,
     /// <p>The time when Config recorded the evaluation
     /// result.</p>
-    pub result_recorded_time: std::option::Option<smithy_types::Instant>,
+    pub result_recorded_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the Config rule evaluated the Amazon Web Services
     /// resource.</p>
-    pub config_rule_invoked_time: std::option::Option<smithy_types::Instant>,
+    pub config_rule_invoked_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Supplementary information about how the evaluation determined
     /// the compliance.</p>
     pub annotation: std::option::Option<std::string::String>,
@@ -7608,8 +8709,8 @@ pub mod evaluation_result {
         pub(crate) evaluation_result_identifier:
             std::option::Option<crate::model::EvaluationResultIdentifier>,
         pub(crate) compliance_type: std::option::Option<crate::model::ComplianceType>,
-        pub(crate) result_recorded_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) config_rule_invoked_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) result_recorded_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) config_rule_invoked_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) annotation: std::option::Option<std::string::String>,
         pub(crate) result_token: std::option::Option<std::string::String>,
     }
@@ -7622,6 +8723,7 @@ pub mod evaluation_result {
             self.evaluation_result_identifier = Some(input);
             self
         }
+        /// <p>Uniquely identifies the evaluation result.</p>
         pub fn set_evaluation_result_identifier(
             mut self,
             input: std::option::Option<crate::model::EvaluationResultIdentifier>,
@@ -7640,6 +8742,13 @@ pub mod evaluation_result {
             self.compliance_type = Some(input);
             self
         }
+        /// <p>Indicates whether the Amazon Web Services resource complies with the Config
+        /// rule that evaluated it.</p>
+        /// <p>For the <code>EvaluationResult</code> data type, Config
+        /// supports only the <code>COMPLIANT</code>,
+        /// <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values.
+        /// Config does not support the <code>INSUFFICIENT_DATA</code> value
+        /// for the <code>EvaluationResult</code> data type.</p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<crate::model::ComplianceType>,
@@ -7649,26 +8758,30 @@ pub mod evaluation_result {
         }
         /// <p>The time when Config recorded the evaluation
         /// result.</p>
-        pub fn result_recorded_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn result_recorded_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.result_recorded_time = Some(input);
             self
         }
+        /// <p>The time when Config recorded the evaluation
+        /// result.</p>
         pub fn set_result_recorded_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.result_recorded_time = input;
             self
         }
         /// <p>The time when the Config rule evaluated the Amazon Web Services
         /// resource.</p>
-        pub fn config_rule_invoked_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn config_rule_invoked_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.config_rule_invoked_time = Some(input);
             self
         }
+        /// <p>The time when the Config rule evaluated the Amazon Web Services
+        /// resource.</p>
         pub fn set_config_rule_invoked_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.config_rule_invoked_time = input;
             self
@@ -7679,6 +8792,8 @@ pub mod evaluation_result {
             self.annotation = Some(input.into());
             self
         }
+        /// <p>Supplementary information about how the evaluation determined
+        /// the compliance.</p>
         pub fn set_annotation(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.annotation = input;
             self
@@ -7689,6 +8804,8 @@ pub mod evaluation_result {
             self.result_token = Some(input.into());
             self
         }
+        /// <p>An encrypted token that associates an evaluation with an Config rule. The token identifies the rule, the Amazon Web Services resource being
+        /// evaluated, and the event that triggered the evaluation.</p>
         pub fn set_result_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.result_token = input;
             self
@@ -7745,6 +8862,7 @@ pub mod grouped_resource_count {
             self.group_name = Some(input.into());
             self
         }
+        /// <p>The name of the group that can be region, account ID, or resource type. For example, region1, region2 if the region was chosen as <code>GroupByKey</code>.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -7754,6 +8872,7 @@ pub mod grouped_resource_count {
             self.resource_count = Some(input);
             self
         }
+        /// <p>The number of resources in the group.</p>
         pub fn set_resource_count(mut self, input: std::option::Option<i64>) -> Self {
             self.resource_count = input;
             self
@@ -7774,6 +8893,7 @@ impl GroupedResourceCount {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7785,8 +8905,11 @@ impl GroupedResourceCount {
     std::hash::Hash,
 )]
 pub enum ResourceCountGroupKey {
+    #[allow(missing_docs)] // documentation missing in model
     AccountId,
+    #[allow(missing_docs)] // documentation missing in model
     AwsRegion,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceType,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7809,6 +8932,7 @@ impl std::str::FromStr for ResourceCountGroupKey {
     }
 }
 impl ResourceCountGroupKey {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceCountGroupKey::AccountId => "ACCOUNT_ID",
@@ -7817,6 +8941,7 @@ impl ResourceCountGroupKey {
             ResourceCountGroupKey::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACCOUNT_ID", "AWS_REGION", "RESOURCE_TYPE"]
     }
@@ -7863,6 +8988,7 @@ pub mod resource_count_filters {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The type of the Amazon Web Services resource.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -7875,6 +9001,7 @@ pub mod resource_count_filters {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit ID of the account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -7884,6 +9011,7 @@ pub mod resource_count_filters {
             self.region = Some(input.into());
             self
         }
+        /// <p>The region where the account is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -7942,6 +9070,7 @@ pub mod aggregate_conformance_pack_compliance_summary {
             self.compliance_summary = Some(input);
             self
         }
+        /// <p>Returns an <code>AggregateConformancePackComplianceCount</code> object. </p>
         pub fn set_compliance_summary(
             mut self,
             input: std::option::Option<crate::model::AggregateConformancePackComplianceCount>,
@@ -7954,6 +9083,7 @@ pub mod aggregate_conformance_pack_compliance_summary {
             self.group_name = Some(input.into());
             self
         }
+        /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -8012,6 +9142,7 @@ pub mod aggregate_conformance_pack_compliance_count {
             self.compliant_conformance_pack_count = Some(input);
             self
         }
+        /// <p>Number of compliant conformance packs.</p>
         pub fn set_compliant_conformance_pack_count(
             mut self,
             input: std::option::Option<i32>,
@@ -8024,6 +9155,7 @@ pub mod aggregate_conformance_pack_compliance_count {
             self.non_compliant_conformance_pack_count = Some(input);
             self
         }
+        /// <p>Number of noncompliant conformance packs.</p>
         pub fn set_non_compliant_conformance_pack_count(
             mut self,
             input: std::option::Option<i32>,
@@ -8051,6 +9183,7 @@ impl AggregateConformancePackComplianceCount {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8062,7 +9195,9 @@ impl AggregateConformancePackComplianceCount {
     std::hash::Hash,
 )]
 pub enum AggregateConformancePackComplianceSummaryGroupKey {
+    #[allow(missing_docs)] // documentation missing in model
     AccountId,
+    #[allow(missing_docs)] // documentation missing in model
     AwsRegion,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8084,6 +9219,7 @@ impl std::str::FromStr for AggregateConformancePackComplianceSummaryGroupKey {
     }
 }
 impl AggregateConformancePackComplianceSummaryGroupKey {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AggregateConformancePackComplianceSummaryGroupKey::AccountId => "ACCOUNT_ID",
@@ -8091,6 +9227,7 @@ impl AggregateConformancePackComplianceSummaryGroupKey {
             AggregateConformancePackComplianceSummaryGroupKey::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACCOUNT_ID", "AWS_REGION"]
     }
@@ -8133,6 +9270,7 @@ pub mod aggregate_conformance_pack_compliance_summary_filters {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -8142,6 +9280,7 @@ pub mod aggregate_conformance_pack_compliance_summary_filters {
             self.aws_region = Some(input.into());
             self
         }
+        /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.aws_region = input;
             self
@@ -8199,6 +9338,8 @@ pub mod aggregate_compliance_count {
             self.group_name = Some(input.into());
             self
         }
+        /// <p>The 12-digit account ID or region based on the GroupByKey
+        /// value.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -8209,6 +9350,8 @@ pub mod aggregate_compliance_count {
             self.compliance_summary = Some(input);
             self
         }
+        /// <p>The number of compliant and noncompliant Config
+        /// rules.</p>
         pub fn set_compliance_summary(
             mut self,
             input: std::option::Option<crate::model::ComplianceSummary>,
@@ -8232,6 +9375,7 @@ impl AggregateComplianceCount {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8243,7 +9387,9 @@ impl AggregateComplianceCount {
     std::hash::Hash,
 )]
 pub enum ConfigRuleComplianceSummaryGroupKey {
+    #[allow(missing_docs)] // documentation missing in model
     AccountId,
+    #[allow(missing_docs)] // documentation missing in model
     AwsRegion,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8265,6 +9411,7 @@ impl std::str::FromStr for ConfigRuleComplianceSummaryGroupKey {
     }
 }
 impl ConfigRuleComplianceSummaryGroupKey {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfigRuleComplianceSummaryGroupKey::AccountId => "ACCOUNT_ID",
@@ -8272,6 +9419,7 @@ impl ConfigRuleComplianceSummaryGroupKey {
             ConfigRuleComplianceSummaryGroupKey::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACCOUNT_ID", "AWS_REGION"]
     }
@@ -8315,6 +9463,7 @@ pub mod config_rule_compliance_summary_filters {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit account ID of the source account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -8324,6 +9473,7 @@ pub mod config_rule_compliance_summary_filters {
             self.aws_region = Some(input.into());
             self
         }
+        /// <p>The source region where the data is aggregated.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.aws_region = input;
             self
@@ -8361,10 +9511,10 @@ pub struct AggregateEvaluationResult {
     pub compliance_type: std::option::Option<crate::model::ComplianceType>,
     /// <p>The time when Config recorded the aggregate evaluation
     /// result.</p>
-    pub result_recorded_time: std::option::Option<smithy_types::Instant>,
+    pub result_recorded_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the Config rule evaluated the Amazon Web Services
     /// resource.</p>
-    pub config_rule_invoked_time: std::option::Option<smithy_types::Instant>,
+    pub config_rule_invoked_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Supplementary information about how the agrregate evaluation
     /// determined the compliance.</p>
     pub annotation: std::option::Option<std::string::String>,
@@ -8398,8 +9548,8 @@ pub mod aggregate_evaluation_result {
         pub(crate) evaluation_result_identifier:
             std::option::Option<crate::model::EvaluationResultIdentifier>,
         pub(crate) compliance_type: std::option::Option<crate::model::ComplianceType>,
-        pub(crate) result_recorded_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) config_rule_invoked_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) result_recorded_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) config_rule_invoked_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) annotation: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) aws_region: std::option::Option<std::string::String>,
@@ -8413,6 +9563,7 @@ pub mod aggregate_evaluation_result {
             self.evaluation_result_identifier = Some(input);
             self
         }
+        /// <p>Uniquely identifies the evaluation result.</p>
         pub fn set_evaluation_result_identifier(
             mut self,
             input: std::option::Option<crate::model::EvaluationResultIdentifier>,
@@ -8429,6 +9580,11 @@ pub mod aggregate_evaluation_result {
             self.compliance_type = Some(input);
             self
         }
+        /// <p>The resource compliance status.</p>
+        /// <p>For the <code>AggregationEvaluationResult</code> data type, Config supports only the <code>COMPLIANT</code> and
+        /// <code>NON_COMPLIANT</code>. Config does not support the
+        /// <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code>
+        /// value.</p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<crate::model::ComplianceType>,
@@ -8438,26 +9594,30 @@ pub mod aggregate_evaluation_result {
         }
         /// <p>The time when Config recorded the aggregate evaluation
         /// result.</p>
-        pub fn result_recorded_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn result_recorded_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.result_recorded_time = Some(input);
             self
         }
+        /// <p>The time when Config recorded the aggregate evaluation
+        /// result.</p>
         pub fn set_result_recorded_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.result_recorded_time = input;
             self
         }
         /// <p>The time when the Config rule evaluated the Amazon Web Services
         /// resource.</p>
-        pub fn config_rule_invoked_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn config_rule_invoked_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.config_rule_invoked_time = Some(input);
             self
         }
+        /// <p>The time when the Config rule evaluated the Amazon Web Services
+        /// resource.</p>
         pub fn set_config_rule_invoked_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.config_rule_invoked_time = input;
             self
@@ -8468,6 +9628,8 @@ pub mod aggregate_evaluation_result {
             self.annotation = Some(input.into());
             self
         }
+        /// <p>Supplementary information about how the agrregate evaluation
+        /// determined the compliance.</p>
         pub fn set_annotation(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.annotation = input;
             self
@@ -8477,6 +9639,7 @@ pub mod aggregate_evaluation_result {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit account ID of the source account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -8486,6 +9649,7 @@ pub mod aggregate_evaluation_result {
             self.aws_region = Some(input.into());
             self
         }
+        /// <p>The source region from where the data is aggregated.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.aws_region = input;
             self
@@ -8523,9 +9687,9 @@ pub struct RemediationExecutionStatus {
     /// <p>Details of every step.</p>
     pub step_details: std::option::Option<std::vec::Vec<crate::model::RemediationExecutionStep>>,
     /// <p>Start time when the remediation was executed.</p>
-    pub invocation_time: std::option::Option<smithy_types::Instant>,
+    pub invocation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the remediation execution was last updated.</p>
-    pub last_updated_time: std::option::Option<smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for RemediationExecutionStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8548,8 +9712,8 @@ pub mod remediation_execution_status {
         pub(crate) state: std::option::Option<crate::model::RemediationExecutionState>,
         pub(crate) step_details:
             std::option::Option<std::vec::Vec<crate::model::RemediationExecutionStep>>,
-        pub(crate) invocation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) invocation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The details that identify a resource within Config, including
@@ -8558,6 +9722,8 @@ pub mod remediation_execution_status {
             self.resource_key = Some(input);
             self
         }
+        /// <p>The details that identify a resource within Config, including
+        /// the resource type and resource ID.</p>
         pub fn set_resource_key(
             mut self,
             input: std::option::Option<crate::model::ResourceKey>,
@@ -8570,6 +9736,7 @@ pub mod remediation_execution_status {
             self.state = Some(input);
             self
         }
+        /// <p>ENUM of the values.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::RemediationExecutionState>,
@@ -8577,6 +9744,11 @@ pub mod remediation_execution_status {
             self.state = input;
             self
         }
+        /// Appends an item to `step_details`.
+        ///
+        /// To override the contents of this collection use [`set_step_details`](Self::set_step_details).
+        ///
+        /// <p>Details of every step.</p>
         pub fn step_details(
             mut self,
             input: impl Into<crate::model::RemediationExecutionStep>,
@@ -8586,6 +9758,7 @@ pub mod remediation_execution_status {
             self.step_details = Some(v);
             self
         }
+        /// <p>Details of every step.</p>
         pub fn set_step_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RemediationExecutionStep>>,
@@ -8594,25 +9767,27 @@ pub mod remediation_execution_status {
             self
         }
         /// <p>Start time when the remediation was executed.</p>
-        pub fn invocation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn invocation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.invocation_time = Some(input);
             self
         }
+        /// <p>Start time when the remediation was executed.</p>
         pub fn set_invocation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.invocation_time = input;
             self
         }
         /// <p>The time when the remediation execution was last updated.</p>
-        pub fn last_updated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_time = Some(input);
             self
         }
+        /// <p>The time when the remediation execution was last updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -8647,9 +9822,9 @@ pub struct RemediationExecutionStep {
     /// <p>An error message if the step was interrupted during execution.</p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The time when the step started.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the step stopped.</p>
-    pub stop_time: std::option::Option<smithy_types::Instant>,
+    pub stop_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for RemediationExecutionStep {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8671,8 +9846,8 @@ pub mod remediation_execution_step {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::RemediationExecutionStepState>,
         pub(crate) error_message: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) stop_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) stop_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The details of the step.</p>
@@ -8680,6 +9855,7 @@ pub mod remediation_execution_step {
             self.name = Some(input.into());
             self
         }
+        /// <p>The details of the step.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8689,6 +9865,7 @@ pub mod remediation_execution_step {
             self.state = Some(input);
             self
         }
+        /// <p>The valid status of the step.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::RemediationExecutionStepState>,
@@ -8701,6 +9878,7 @@ pub mod remediation_execution_step {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>An error message if the step was interrupted during execution.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8709,20 +9887,28 @@ pub mod remediation_execution_step {
             self
         }
         /// <p>The time when the step started.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when the step started.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time when the step stopped.</p>
-        pub fn stop_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn stop_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.stop_time = Some(input);
             self
         }
-        pub fn set_stop_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when the step stopped.</p>
+        pub fn set_stop_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.stop_time = input;
             self
         }
@@ -8745,6 +9931,7 @@ impl RemediationExecutionStep {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8756,8 +9943,11 @@ impl RemediationExecutionStep {
     std::hash::Hash,
 )]
 pub enum RemediationExecutionStepState {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8780,6 +9970,7 @@ impl std::str::FromStr for RemediationExecutionStepState {
     }
 }
 impl RemediationExecutionStepState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RemediationExecutionStepState::Failed => "FAILED",
@@ -8788,6 +9979,7 @@ impl RemediationExecutionStepState {
             RemediationExecutionStepState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "PENDING", "SUCCEEDED"]
     }
@@ -8798,6 +9990,7 @@ impl AsRef<str> for RemediationExecutionStepState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8809,9 +10002,13 @@ impl AsRef<str> for RemediationExecutionStepState {
     std::hash::Hash,
 )]
 pub enum RemediationExecutionState {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Queued,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8835,6 +10032,7 @@ impl std::str::FromStr for RemediationExecutionState {
     }
 }
 impl RemediationExecutionState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RemediationExecutionState::Failed => "FAILED",
@@ -8844,6 +10042,7 @@ impl RemediationExecutionState {
             RemediationExecutionState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "QUEUED", "SUCCEEDED"]
     }
@@ -8890,6 +10089,8 @@ pub mod pending_aggregation_request {
             self.requester_account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit account ID of the account requesting to aggregate
+        /// data.</p>
         pub fn set_requester_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8902,6 +10103,7 @@ pub mod pending_aggregation_request {
             self.requester_aws_region = Some(input.into());
             self
         }
+        /// <p>The region requesting to aggregate data. </p>
         pub fn set_requester_aws_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8986,7 +10188,7 @@ pub struct OrganizationConformancePackStatus {
     /// <p>An error message indicating that organization conformance pack creation or deletion failed due to an error. </p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The timestamp of the last update.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for OrganizationConformancePackStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9012,7 +10214,7 @@ pub mod organization_conformance_pack_status {
         pub(crate) status: std::option::Option<crate::model::OrganizationResourceStatus>,
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name that you assign to organization conformance pack.</p>
@@ -9023,6 +10225,7 @@ pub mod organization_conformance_pack_status {
             self.organization_conformance_pack_name = Some(input.into());
             self
         }
+        /// <p>The name that you assign to organization conformance pack.</p>
         pub fn set_organization_conformance_pack_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9083,6 +10286,55 @@ pub mod organization_conformance_pack_status {
             self.status = Some(input);
             self
         }
+        /// <p>Indicates deployment status of an organization conformance pack.
+        /// When master account calls PutOrganizationConformancePack for the first time,
+        /// conformance pack status is created in all the member accounts.
+        /// When master account calls PutOrganizationConformancePack for the second time,
+        /// conformance pack status is updated in all the member accounts.
+        /// Additionally, conformance pack status is updated when one or more member accounts join or leave an
+        /// organization.   
+        /// Conformance pack status is deleted when the master account deletes
+        /// OrganizationConformancePack in all the member accounts and disables service
+        /// access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+        /// <p>Config sets the state of the conformance pack to:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been successfully created in all the member accounts. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_IN_PROGRESS</code> when an organization conformance pack creation is in progress.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_FAILED</code> when an organization conformance pack creation failed in one or more member accounts within that organization.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_FAILED</code> when an organization conformance pack deletion failed in one or more member accounts within that organization.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_IN_PROGRESS</code> when an organization conformance pack deletion is in progress.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_SUCCESSFUL</code> when an organization conformance pack has been successfully deleted from all the member accounts.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATE_SUCCESSFUL</code> when an organization conformance pack has been successfully updated in all the member accounts.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATE_IN_PROGRESS</code> when an organization conformance pack update is in progress.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATE_FAILED</code> when an organization conformance pack update failed in one or more member accounts within that organization.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OrganizationResourceStatus>,
@@ -9095,6 +10347,7 @@ pub mod organization_conformance_pack_status {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>An error code that is returned when organization conformance pack creation or deletion has failed in a member account. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -9104,6 +10357,7 @@ pub mod organization_conformance_pack_status {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>An error message indicating that organization conformance pack creation or deletion failed due to an error. </p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9112,13 +10366,14 @@ pub mod organization_conformance_pack_status {
             self
         }
         /// <p>The timestamp of the last update.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The timestamp of the last update.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -9142,6 +10397,7 @@ impl OrganizationConformancePackStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9153,14 +10409,23 @@ impl OrganizationConformancePackStatus {
     std::hash::Hash,
 )]
 pub enum OrganizationResourceStatus {
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     CreateSuccessful,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteSuccessful,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateSuccessful,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9189,6 +10454,7 @@ impl std::str::FromStr for OrganizationResourceStatus {
     }
 }
 impl OrganizationResourceStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrganizationResourceStatus::CreateFailed => "CREATE_FAILED",
@@ -9203,6 +10469,7 @@ impl OrganizationResourceStatus {
             OrganizationResourceStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -9247,7 +10514,7 @@ pub struct OrganizationConformancePack {
     /// <p>A comma-separated list of accounts excluded from organization conformance pack.</p>
     pub excluded_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Last time when organization conformation pack was updated.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for OrganizationConformancePack {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9284,7 +10551,7 @@ pub mod organization_conformance_pack {
         pub(crate) conformance_pack_input_parameters:
             std::option::Option<std::vec::Vec<crate::model::ConformancePackInputParameter>>,
         pub(crate) excluded_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name you assign to an organization conformance pack.</p>
@@ -9295,6 +10562,7 @@ pub mod organization_conformance_pack {
             self.organization_conformance_pack_name = Some(input.into());
             self
         }
+        /// <p>The name you assign to an organization conformance pack.</p>
         pub fn set_organization_conformance_pack_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9310,6 +10578,7 @@ pub mod organization_conformance_pack {
             self.organization_conformance_pack_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of organization conformance pack.</p>
         pub fn set_organization_conformance_pack_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9325,6 +10594,10 @@ pub mod organization_conformance_pack {
             self.delivery_s3_bucket = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.  </p>
+        /// <note>
+        /// <p>This field is optional.</p>
+        /// </note>
         pub fn set_delivery_s3_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9340,6 +10613,10 @@ pub mod organization_conformance_pack {
             self.delivery_s3_key_prefix = Some(input.into());
             self
         }
+        /// <p>Any folder structure you want to add to an Amazon S3 bucket.</p>
+        /// <note>
+        /// <p>This field is optional.</p>
+        /// </note>
         pub fn set_delivery_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9347,6 +10624,11 @@ pub mod organization_conformance_pack {
             self.delivery_s3_key_prefix = input;
             self
         }
+        /// Appends an item to `conformance_pack_input_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_conformance_pack_input_parameters`](Self::set_conformance_pack_input_parameters).
+        ///
+        /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
         pub fn conformance_pack_input_parameters(
             mut self,
             input: impl Into<crate::model::ConformancePackInputParameter>,
@@ -9356,6 +10638,7 @@ pub mod organization_conformance_pack {
             self.conformance_pack_input_parameters = Some(v);
             self
         }
+        /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
         pub fn set_conformance_pack_input_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConformancePackInputParameter>>,
@@ -9363,12 +10646,18 @@ pub mod organization_conformance_pack {
             self.conformance_pack_input_parameters = input;
             self
         }
+        /// Appends an item to `excluded_accounts`.
+        ///
+        /// To override the contents of this collection use [`set_excluded_accounts`](Self::set_excluded_accounts).
+        ///
+        /// <p>A comma-separated list of accounts excluded from organization conformance pack.</p>
         pub fn excluded_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.excluded_accounts.unwrap_or_default();
             v.push(input.into());
             self.excluded_accounts = Some(v);
             self
         }
+        /// <p>A comma-separated list of accounts excluded from organization conformance pack.</p>
         pub fn set_excluded_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9377,13 +10666,14 @@ pub mod organization_conformance_pack {
             self
         }
         /// <p>Last time when organization conformation pack was updated.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>Last time when organization conformation pack was updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -9464,7 +10754,7 @@ pub struct OrganizationConfigRuleStatus {
     /// <p>An error message indicating that organization config rule creation or deletion failed due to an error.</p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The timestamp of the last update.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for OrganizationConfigRuleStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9491,7 +10781,7 @@ pub mod organization_config_rule_status {
             std::option::Option<crate::model::OrganizationRuleStatus>,
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name that you assign to organization config rule.</p>
@@ -9502,6 +10792,7 @@ pub mod organization_config_rule_status {
             self.organization_config_rule_name = Some(input.into());
             self
         }
+        /// <p>The name that you assign to organization config rule.</p>
         pub fn set_organization_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9559,6 +10850,49 @@ pub mod organization_config_rule_status {
             self.organization_rule_status = Some(input);
             self
         }
+        /// <p>Indicates deployment status of an organization config rule.
+        /// When master account calls PutOrganizationConfigRule action for the first time, config rule status is created in all the member accounts.
+        /// When master account calls PutOrganizationConfigRule action for the second time, config rule status is updated in all the member accounts. Additionally, config rule status is updated when one or more member accounts join or leave an organization.   
+        /// Config rule status is deleted when the master account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+        /// <p>Config sets the state of the rule to:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_SUCCESSFUL</code> when an organization config rule has been successfully created in all the member accounts. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_IN_PROGRESS</code> when an organization config rule creation is in progress.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_FAILED</code> when an organization config rule creation failed in one or more member accounts within that organization.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_FAILED</code> when an organization config rule deletion failed in one or more member accounts within that organization.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_IN_PROGRESS</code> when an organization config rule deletion is in progress.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_SUCCESSFUL</code> when an organization config rule has been successfully deleted from all the member accounts.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATE_SUCCESSFUL</code> when an organization config rule has been successfully updated in all the member accounts.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATE_IN_PROGRESS</code> when an organization config rule update is in progress.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATE_FAILED</code> when an organization config rule update failed in one or more member accounts within that organization.</p>
+        /// </li>
+        /// </ul>
         pub fn set_organization_rule_status(
             mut self,
             input: std::option::Option<crate::model::OrganizationRuleStatus>,
@@ -9571,6 +10905,7 @@ pub mod organization_config_rule_status {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>An error code that is returned when organization config rule creation or deletion has failed.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -9580,6 +10915,7 @@ pub mod organization_config_rule_status {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>An error message indicating that organization config rule creation or deletion failed due to an error.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9588,13 +10924,14 @@ pub mod organization_config_rule_status {
             self
         }
         /// <p>The timestamp of the last update.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The timestamp of the last update.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -9618,6 +10955,7 @@ impl OrganizationConfigRuleStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9629,14 +10967,23 @@ impl OrganizationConfigRuleStatus {
     std::hash::Hash,
 )]
 pub enum OrganizationRuleStatus {
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     CreateSuccessful,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteSuccessful,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateSuccessful,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9665,6 +11012,7 @@ impl std::str::FromStr for OrganizationRuleStatus {
     }
 }
 impl OrganizationRuleStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrganizationRuleStatus::CreateFailed => "CREATE_FAILED",
@@ -9679,6 +11027,7 @@ impl OrganizationRuleStatus {
             OrganizationRuleStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -9716,7 +11065,7 @@ pub struct OrganizationConfigRule {
     /// <p>A comma-separated list of accounts excluded from organization config rule.</p>
     pub excluded_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The timestamp of the last update.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for OrganizationConfigRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9755,7 +11104,7 @@ pub mod organization_config_rule {
         pub(crate) organization_custom_rule_metadata:
             std::option::Option<crate::model::OrganizationCustomRuleMetadata>,
         pub(crate) excluded_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name that you assign to organization config rule.</p>
@@ -9766,6 +11115,7 @@ pub mod organization_config_rule {
             self.organization_config_rule_name = Some(input.into());
             self
         }
+        /// <p>The name that you assign to organization config rule.</p>
         pub fn set_organization_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9781,6 +11131,7 @@ pub mod organization_config_rule {
             self.organization_config_rule_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of organization config rule.</p>
         pub fn set_organization_config_rule_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9796,6 +11147,7 @@ pub mod organization_config_rule {
             self.organization_managed_rule_metadata = Some(input);
             self
         }
+        /// <p>An <code>OrganizationManagedRuleMetadata</code> object.</p>
         pub fn set_organization_managed_rule_metadata(
             mut self,
             input: std::option::Option<crate::model::OrganizationManagedRuleMetadata>,
@@ -9811,6 +11163,7 @@ pub mod organization_config_rule {
             self.organization_custom_rule_metadata = Some(input);
             self
         }
+        /// <p>An <code>OrganizationCustomRuleMetadata</code> object.</p>
         pub fn set_organization_custom_rule_metadata(
             mut self,
             input: std::option::Option<crate::model::OrganizationCustomRuleMetadata>,
@@ -9818,12 +11171,18 @@ pub mod organization_config_rule {
             self.organization_custom_rule_metadata = input;
             self
         }
+        /// Appends an item to `excluded_accounts`.
+        ///
+        /// To override the contents of this collection use [`set_excluded_accounts`](Self::set_excluded_accounts).
+        ///
+        /// <p>A comma-separated list of accounts excluded from organization config rule.</p>
         pub fn excluded_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.excluded_accounts.unwrap_or_default();
             v.push(input.into());
             self.excluded_accounts = Some(v);
             self
         }
+        /// <p>A comma-separated list of accounts excluded from organization config rule.</p>
         pub fn set_excluded_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9832,13 +11191,14 @@ pub mod organization_config_rule {
             self
         }
         /// <p>The timestamp of the last update.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The timestamp of the last update.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -9921,6 +11281,7 @@ pub mod delivery_channel_status {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the delivery channel.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9934,6 +11295,8 @@ pub mod delivery_channel_status {
             self.config_snapshot_delivery_info = Some(input);
             self
         }
+        /// <p>A list containing the status of the delivery of the snapshot to
+        /// the specified Amazon S3 bucket.</p>
         pub fn set_config_snapshot_delivery_info(
             mut self,
             input: std::option::Option<crate::model::ConfigExportDeliveryInfo>,
@@ -9950,6 +11313,8 @@ pub mod delivery_channel_status {
             self.config_history_delivery_info = Some(input);
             self
         }
+        /// <p>A list that contains the status of the delivery of the
+        /// configuration history to the specified Amazon S3 bucket.</p>
         pub fn set_config_history_delivery_info(
             mut self,
             input: std::option::Option<crate::model::ConfigExportDeliveryInfo>,
@@ -9967,6 +11332,9 @@ pub mod delivery_channel_status {
             self.config_stream_delivery_info = Some(input);
             self
         }
+        /// <p>A list containing the status of the delivery of the
+        /// configuration stream notification to the specified Amazon SNS
+        /// topic.</p>
         pub fn set_config_stream_delivery_info(
             mut self,
             input: std::option::Option<crate::model::ConfigStreamDeliveryInfo>,
@@ -10008,7 +11376,7 @@ pub struct ConfigStreamDeliveryInfo {
     /// <p>The error message from the last attempted delivery.</p>
     pub last_error_message: std::option::Option<std::string::String>,
     /// <p>The time from the last status change.</p>
-    pub last_status_change_time: std::option::Option<smithy_types::Instant>,
+    pub last_status_change_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ConfigStreamDeliveryInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10029,7 +11397,7 @@ pub mod config_stream_delivery_info {
         pub(crate) last_status: std::option::Option<crate::model::DeliveryStatus>,
         pub(crate) last_error_code: std::option::Option<std::string::String>,
         pub(crate) last_error_message: std::option::Option<std::string::String>,
-        pub(crate) last_status_change_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_status_change_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Status of the last attempted delivery.</p>
@@ -10041,6 +11409,11 @@ pub mod config_stream_delivery_info {
             self.last_status = Some(input);
             self
         }
+        /// <p>Status of the last attempted delivery.</p>
+        /// <p>
+        /// <b>Note</b> Providing an SNS topic on a
+        /// <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a> for Config is optional. If the SNS
+        /// delivery is turned off, the last status will be <b>Not_Applicable</b>.</p>
         pub fn set_last_status(
             mut self,
             input: std::option::Option<crate::model::DeliveryStatus>,
@@ -10053,6 +11426,7 @@ pub mod config_stream_delivery_info {
             self.last_error_code = Some(input.into());
             self
         }
+        /// <p>The error code from the last attempted delivery.</p>
         pub fn set_last_error_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10065,6 +11439,7 @@ pub mod config_stream_delivery_info {
             self.last_error_message = Some(input.into());
             self
         }
+        /// <p>The error message from the last attempted delivery.</p>
         pub fn set_last_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10073,13 +11448,14 @@ pub mod config_stream_delivery_info {
             self
         }
         /// <p>The time from the last status change.</p>
-        pub fn last_status_change_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_status_change_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_status_change_time = Some(input);
             self
         }
+        /// <p>The time from the last status change.</p>
         pub fn set_last_status_change_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_status_change_time = input;
             self
@@ -10102,6 +11478,7 @@ impl ConfigStreamDeliveryInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10113,8 +11490,11 @@ impl ConfigStreamDeliveryInfo {
     std::hash::Hash,
 )]
 pub enum DeliveryStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failure,
+    #[allow(missing_docs)] // documentation missing in model
     NotApplicable,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10137,6 +11517,7 @@ impl std::str::FromStr for DeliveryStatus {
     }
 }
 impl DeliveryStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeliveryStatus::Failure => "Failure",
@@ -10145,6 +11526,7 @@ impl DeliveryStatus {
             DeliveryStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Failure", "Not_Applicable", "Success"]
     }
@@ -10169,11 +11551,11 @@ pub struct ConfigExportDeliveryInfo {
     /// <p>The error message from the last attempted delivery.</p>
     pub last_error_message: std::option::Option<std::string::String>,
     /// <p>The time of the last attempted delivery.</p>
-    pub last_attempt_time: std::option::Option<smithy_types::Instant>,
+    pub last_attempt_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time of the last successful delivery.</p>
-    pub last_successful_time: std::option::Option<smithy_types::Instant>,
+    pub last_successful_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the next delivery occurs.</p>
-    pub next_delivery_time: std::option::Option<smithy_types::Instant>,
+    pub next_delivery_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ConfigExportDeliveryInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10196,9 +11578,9 @@ pub mod config_export_delivery_info {
         pub(crate) last_status: std::option::Option<crate::model::DeliveryStatus>,
         pub(crate) last_error_code: std::option::Option<std::string::String>,
         pub(crate) last_error_message: std::option::Option<std::string::String>,
-        pub(crate) last_attempt_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_successful_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) next_delivery_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_attempt_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_successful_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) next_delivery_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Status of the last attempted delivery.</p>
@@ -10206,6 +11588,7 @@ pub mod config_export_delivery_info {
             self.last_status = Some(input);
             self
         }
+        /// <p>Status of the last attempted delivery.</p>
         pub fn set_last_status(
             mut self,
             input: std::option::Option<crate::model::DeliveryStatus>,
@@ -10218,6 +11601,7 @@ pub mod config_export_delivery_info {
             self.last_error_code = Some(input.into());
             self
         }
+        /// <p>The error code from the last attempted delivery.</p>
         pub fn set_last_error_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10230,6 +11614,7 @@ pub mod config_export_delivery_info {
             self.last_error_message = Some(input.into());
             self
         }
+        /// <p>The error message from the last attempted delivery.</p>
         pub fn set_last_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10238,37 +11623,40 @@ pub mod config_export_delivery_info {
             self
         }
         /// <p>The time of the last attempted delivery.</p>
-        pub fn last_attempt_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_attempt_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_attempt_time = Some(input);
             self
         }
+        /// <p>The time of the last attempted delivery.</p>
         pub fn set_last_attempt_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_attempt_time = input;
             self
         }
         /// <p>The time of the last successful delivery.</p>
-        pub fn last_successful_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_successful_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_successful_time = Some(input);
             self
         }
+        /// <p>The time of the last successful delivery.</p>
         pub fn set_last_successful_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_successful_time = input;
             self
         }
         /// <p>The time that the next delivery occurs.</p>
-        pub fn next_delivery_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn next_delivery_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.next_delivery_time = Some(input);
             self
         }
+        /// <p>The time that the next delivery occurs.</p>
         pub fn set_next_delivery_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.next_delivery_time = input;
             self
@@ -10328,9 +11716,9 @@ pub struct ConformancePackStatusDetail {
     /// <p>The reason of conformance pack creation failure.</p>
     pub conformance_pack_status_reason: std::option::Option<std::string::String>,
     /// <p>Last time when conformation pack creation and update was requested.</p>
-    pub last_update_requested_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_requested_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Last time when conformation pack creation and update was successful.</p>
-    pub last_update_completed_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_completed_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ConformancePackStatusDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10367,8 +11755,8 @@ pub mod conformance_pack_status_detail {
         pub(crate) conformance_pack_state: std::option::Option<crate::model::ConformancePackState>,
         pub(crate) stack_arn: std::option::Option<std::string::String>,
         pub(crate) conformance_pack_status_reason: std::option::Option<std::string::String>,
-        pub(crate) last_update_requested_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_completed_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_update_requested_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_completed_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Name of the conformance pack.</p>
@@ -10376,6 +11764,7 @@ pub mod conformance_pack_status_detail {
             self.conformance_pack_name = Some(input.into());
             self
         }
+        /// <p>Name of the conformance pack.</p>
         pub fn set_conformance_pack_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10388,6 +11777,7 @@ pub mod conformance_pack_status_detail {
             self.conformance_pack_id = Some(input.into());
             self
         }
+        /// <p>ID of the conformance pack.</p>
         pub fn set_conformance_pack_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10400,6 +11790,7 @@ pub mod conformance_pack_status_detail {
             self.conformance_pack_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of comformance pack.</p>
         pub fn set_conformance_pack_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10430,6 +11821,25 @@ pub mod conformance_pack_status_detail {
             self.conformance_pack_state = Some(input);
             self
         }
+        /// <p>Indicates deployment status of conformance pack.</p>
+        /// <p>Config sets the state of the conformance pack to:</p>
+        /// <ul>
+        /// <li>
+        /// <p>CREATE_IN_PROGRESS when a conformance pack creation is in progress for an account.</p>
+        /// </li>
+        /// <li>
+        /// <p>CREATE_COMPLETE when a conformance pack has been successfully created in your account.</p>
+        /// </li>
+        /// <li>
+        /// <p>CREATE_FAILED when a conformance pack creation failed in your account.</p>
+        /// </li>
+        /// <li>
+        /// <p>DELETE_IN_PROGRESS when a conformance pack deletion is in progress. </p>
+        /// </li>
+        /// <li>
+        /// <p>DELETE_FAILED when a conformance pack deletion failed in your account.</p>
+        /// </li>
+        /// </ul>
         pub fn set_conformance_pack_state(
             mut self,
             input: std::option::Option<crate::model::ConformancePackState>,
@@ -10442,6 +11852,7 @@ pub mod conformance_pack_status_detail {
             self.stack_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of CloudFormation stack. </p>
         pub fn set_stack_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_arn = input;
             self
@@ -10454,6 +11865,7 @@ pub mod conformance_pack_status_detail {
             self.conformance_pack_status_reason = Some(input.into());
             self
         }
+        /// <p>The reason of conformance pack creation failure.</p>
         pub fn set_conformance_pack_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10462,25 +11874,27 @@ pub mod conformance_pack_status_detail {
             self
         }
         /// <p>Last time when conformation pack creation and update was requested.</p>
-        pub fn last_update_requested_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_requested_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_requested_time = Some(input);
             self
         }
+        /// <p>Last time when conformation pack creation and update was requested.</p>
         pub fn set_last_update_requested_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_requested_time = input;
             self
         }
         /// <p>Last time when conformation pack creation and update was successful.</p>
-        pub fn last_update_completed_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_completed_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_completed_time = Some(input);
             self
         }
+        /// <p>Last time when conformation pack creation and update was successful.</p>
         pub fn set_last_update_completed_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_completed_time = input;
             self
@@ -10507,6 +11921,7 @@ impl ConformancePackStatusDetail {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10518,10 +11933,15 @@ impl ConformancePackStatusDetail {
     std::hash::Hash,
 )]
 pub enum ConformancePackState {
+    #[allow(missing_docs)] // documentation missing in model
     CreateComplete,
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10546,6 +11966,7 @@ impl std::str::FromStr for ConformancePackState {
     }
 }
 impl ConformancePackState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConformancePackState::CreateComplete => "CREATE_COMPLETE",
@@ -10556,6 +11977,7 @@ impl ConformancePackState {
             ConformancePackState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATE_COMPLETE",
@@ -10596,7 +12018,7 @@ pub struct ConformancePackDetail {
     pub conformance_pack_input_parameters:
         std::option::Option<std::vec::Vec<crate::model::ConformancePackInputParameter>>,
     /// <p>Last time when conformation pack update was requested. </p>
-    pub last_update_requested_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_requested_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Amazon Web Services service that created the conformance pack.</p>
     pub created_by: std::option::Option<std::string::String>,
 }
@@ -10633,7 +12055,7 @@ pub mod conformance_pack_detail {
         pub(crate) delivery_s3_key_prefix: std::option::Option<std::string::String>,
         pub(crate) conformance_pack_input_parameters:
             std::option::Option<std::vec::Vec<crate::model::ConformancePackInputParameter>>,
-        pub(crate) last_update_requested_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_update_requested_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) created_by: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -10642,6 +12064,7 @@ pub mod conformance_pack_detail {
             self.conformance_pack_name = Some(input.into());
             self
         }
+        /// <p>Name of the conformance pack.</p>
         pub fn set_conformance_pack_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10654,6 +12077,7 @@ pub mod conformance_pack_detail {
             self.conformance_pack_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the conformance pack.</p>
         pub fn set_conformance_pack_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10666,6 +12090,7 @@ pub mod conformance_pack_detail {
             self.conformance_pack_id = Some(input.into());
             self
         }
+        /// <p>ID of the conformance pack.</p>
         pub fn set_conformance_pack_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10681,6 +12106,10 @@ pub mod conformance_pack_detail {
             self.delivery_s3_bucket = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates. </p>
+        /// <note>
+        /// <p>This field is optional.</p>
+        /// </note>
         pub fn set_delivery_s3_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10696,6 +12125,10 @@ pub mod conformance_pack_detail {
             self.delivery_s3_key_prefix = Some(input.into());
             self
         }
+        /// <p>The prefix for the Amazon S3 bucket.</p>
+        /// <note>
+        /// <p>This field is optional.</p>
+        /// </note>
         pub fn set_delivery_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10703,6 +12136,11 @@ pub mod conformance_pack_detail {
             self.delivery_s3_key_prefix = input;
             self
         }
+        /// Appends an item to `conformance_pack_input_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_conformance_pack_input_parameters`](Self::set_conformance_pack_input_parameters).
+        ///
+        /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
         pub fn conformance_pack_input_parameters(
             mut self,
             input: impl Into<crate::model::ConformancePackInputParameter>,
@@ -10712,6 +12150,7 @@ pub mod conformance_pack_detail {
             self.conformance_pack_input_parameters = Some(v);
             self
         }
+        /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
         pub fn set_conformance_pack_input_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConformancePackInputParameter>>,
@@ -10720,13 +12159,14 @@ pub mod conformance_pack_detail {
             self
         }
         /// <p>Last time when conformation pack update was requested. </p>
-        pub fn last_update_requested_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_requested_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_requested_time = Some(input);
             self
         }
+        /// <p>Last time when conformation pack update was requested. </p>
         pub fn set_last_update_requested_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_requested_time = input;
             self
@@ -10736,6 +12176,7 @@ pub mod conformance_pack_detail {
             self.created_by = Some(input.into());
             self
         }
+        /// <p>Amazon Web Services service that created the conformance pack.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_by = input;
             self
@@ -10801,6 +12242,7 @@ pub mod conformance_pack_rule_compliance {
             self.config_rule_name = Some(input.into());
             self
         }
+        /// <p>Name of the config rule.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10817,6 +12259,8 @@ pub mod conformance_pack_rule_compliance {
             self.compliance_type = Some(input);
             self
         }
+        /// <p>Compliance of the Config rule.</p>
+        /// <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.</p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<crate::model::ConformancePackComplianceType>,
@@ -10824,12 +12268,20 @@ pub mod conformance_pack_rule_compliance {
             self.compliance_type = input;
             self
         }
+        /// Appends an item to `controls`.
+        ///
+        /// To override the contents of this collection use [`set_controls`](Self::set_controls).
+        ///
+        /// <p>Controls for the conformance pack. A control is a process to prevent or detect problems while meeting objectives.
+        /// A control can align with a specific compliance regime or map to internal controls defined by an organization.</p>
         pub fn controls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.controls.unwrap_or_default();
             v.push(input.into());
             self.controls = Some(v);
             self
         }
+        /// <p>Controls for the conformance pack. A control is a process to prevent or detect problems while meeting objectives.
+        /// A control can align with a specific compliance regime or map to internal controls defined by an organization.</p>
         pub fn set_controls(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10883,12 +12335,18 @@ pub mod conformance_pack_compliance_filters {
             std::option::Option<crate::model::ConformancePackComplianceType>,
     }
     impl Builder {
+        /// Appends an item to `config_rule_names`.
+        ///
+        /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
+        ///
+        /// <p>Filters the results by Config rule names.</p>
         pub fn config_rule_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.config_rule_names.unwrap_or_default();
             v.push(input.into());
             self.config_rule_names = Some(v);
             self
         }
+        /// <p>Filters the results by Config rule names.</p>
         pub fn set_config_rule_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10905,6 +12363,8 @@ pub mod conformance_pack_compliance_filters {
             self.compliance_type = Some(input);
             self
         }
+        /// <p>Filters the results by compliance.</p>
+        /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<crate::model::ConformancePackComplianceType>,
@@ -10935,9 +12395,9 @@ pub struct ConfigurationRecorderStatus {
     /// <p>The name of the configuration recorder.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The time the recorder was last started.</p>
-    pub last_start_time: std::option::Option<smithy_types::Instant>,
+    pub last_start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time the recorder was last stopped.</p>
-    pub last_stop_time: std::option::Option<smithy_types::Instant>,
+    pub last_stop_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies whether or not the recorder is currently
     /// recording.</p>
     pub recording: bool,
@@ -10949,7 +12409,7 @@ pub struct ConfigurationRecorderStatus {
     /// error.</p>
     pub last_error_message: std::option::Option<std::string::String>,
     /// <p>The time when the status was last changed.</p>
-    pub last_status_change_time: std::option::Option<smithy_types::Instant>,
+    pub last_status_change_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ConfigurationRecorderStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10972,13 +12432,13 @@ pub mod configuration_recorder_status {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) last_start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_stop_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_stop_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) recording: std::option::Option<bool>,
         pub(crate) last_status: std::option::Option<crate::model::RecorderStatus>,
         pub(crate) last_error_code: std::option::Option<std::string::String>,
         pub(crate) last_error_message: std::option::Option<std::string::String>,
-        pub(crate) last_status_change_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_status_change_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the configuration recorder.</p>
@@ -10986,30 +12446,33 @@ pub mod configuration_recorder_status {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration recorder.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
         /// <p>The time the recorder was last started.</p>
-        pub fn last_start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_start_time = Some(input);
             self
         }
+        /// <p>The time the recorder was last started.</p>
         pub fn set_last_start_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_start_time = input;
             self
         }
         /// <p>The time the recorder was last stopped.</p>
-        pub fn last_stop_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_stop_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_stop_time = Some(input);
             self
         }
+        /// <p>The time the recorder was last stopped.</p>
         pub fn set_last_stop_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_stop_time = input;
             self
@@ -11020,6 +12483,8 @@ pub mod configuration_recorder_status {
             self.recording = Some(input);
             self
         }
+        /// <p>Specifies whether or not the recorder is currently
+        /// recording.</p>
         pub fn set_recording(mut self, input: std::option::Option<bool>) -> Self {
             self.recording = input;
             self
@@ -11029,6 +12494,7 @@ pub mod configuration_recorder_status {
             self.last_status = Some(input);
             self
         }
+        /// <p>The last (previous) status of the recorder.</p>
         pub fn set_last_status(
             mut self,
             input: std::option::Option<crate::model::RecorderStatus>,
@@ -11041,6 +12507,7 @@ pub mod configuration_recorder_status {
             self.last_error_code = Some(input.into());
             self
         }
+        /// <p>The error code indicating that the recording failed.</p>
         pub fn set_last_error_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11054,6 +12521,8 @@ pub mod configuration_recorder_status {
             self.last_error_message = Some(input.into());
             self
         }
+        /// <p>The message indicating that the recording failed due to an
+        /// error.</p>
         pub fn set_last_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11062,13 +12531,14 @@ pub mod configuration_recorder_status {
             self
         }
         /// <p>The time when the status was last changed.</p>
-        pub fn last_status_change_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_status_change_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_status_change_time = Some(input);
             self
         }
+        /// <p>The time when the status was last changed.</p>
         pub fn set_last_status_change_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_status_change_time = input;
             self
@@ -11095,6 +12565,7 @@ impl ConfigurationRecorderStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11106,8 +12577,11 @@ impl ConfigurationRecorderStatus {
     std::hash::Hash,
 )]
 pub enum RecorderStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failure,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11130,6 +12604,7 @@ impl std::str::FromStr for RecorderStatus {
     }
 }
 impl RecorderStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RecorderStatus::Failure => "Failure",
@@ -11138,6 +12613,7 @@ impl RecorderStatus {
             RecorderStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Failure", "Pending", "Success"]
     }
@@ -11176,7 +12652,7 @@ pub struct AggregatedSourceStatus {
     /// </ul>
     pub last_update_status: std::option::Option<crate::model::AggregatedSourceStatusType>,
     /// <p>The time of the last update.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The error code that Config returned when the source account
     /// aggregation last failed.</p>
     pub last_error_code: std::option::Option<std::string::String>,
@@ -11208,7 +12684,7 @@ pub mod aggregated_source_status {
         pub(crate) aws_region: std::option::Option<std::string::String>,
         pub(crate) last_update_status:
             std::option::Option<crate::model::AggregatedSourceStatusType>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) last_error_code: std::option::Option<std::string::String>,
         pub(crate) last_error_message: std::option::Option<std::string::String>,
     }
@@ -11218,6 +12694,7 @@ pub mod aggregated_source_status {
             self.source_id = Some(input.into());
             self
         }
+        /// <p>The source account ID or an organization.</p>
         pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_id = input;
             self
@@ -11227,6 +12704,7 @@ pub mod aggregated_source_status {
             self.source_type = Some(input);
             self
         }
+        /// <p>The source account or an organization.</p>
         pub fn set_source_type(
             mut self,
             input: std::option::Option<crate::model::AggregatedSourceType>,
@@ -11239,6 +12717,7 @@ pub mod aggregated_source_status {
             self.aws_region = Some(input.into());
             self
         }
+        /// <p>The region authorized to collect aggregated data.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.aws_region = input;
             self
@@ -11265,6 +12744,21 @@ pub mod aggregated_source_status {
             self.last_update_status = Some(input);
             self
         }
+        /// <p>Filters the last updated status type.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Valid value FAILED indicates errors while moving
+        /// data.</p>
+        /// </li>
+        /// <li>
+        /// <p>Valid value SUCCEEDED indicates the data was
+        /// successfully moved.</p>
+        /// </li>
+        /// <li>
+        /// <p>Valid value OUTDATED indicates the data is not the most
+        /// recent.</p>
+        /// </li>
+        /// </ul>
         pub fn set_last_update_status(
             mut self,
             input: std::option::Option<crate::model::AggregatedSourceStatusType>,
@@ -11273,13 +12767,14 @@ pub mod aggregated_source_status {
             self
         }
         /// <p>The time of the last update.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The time of the last update.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -11290,6 +12785,8 @@ pub mod aggregated_source_status {
             self.last_error_code = Some(input.into());
             self
         }
+        /// <p>The error code that Config returned when the source account
+        /// aggregation last failed.</p>
         pub fn set_last_error_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11303,6 +12800,8 @@ pub mod aggregated_source_status {
             self.last_error_message = Some(input.into());
             self
         }
+        /// <p>The message indicating that the source account aggregation
+        /// failed due to an error.</p>
         pub fn set_last_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11331,6 +12830,7 @@ impl AggregatedSourceStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11342,8 +12842,11 @@ impl AggregatedSourceStatus {
     std::hash::Hash,
 )]
 pub enum AggregatedSourceStatusType {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Outdated,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11366,6 +12869,7 @@ impl std::str::FromStr for AggregatedSourceStatusType {
     }
 }
 impl AggregatedSourceStatusType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AggregatedSourceStatusType::Failed => "FAILED",
@@ -11374,6 +12878,7 @@ impl AggregatedSourceStatusType {
             AggregatedSourceStatusType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "OUTDATED", "SUCCEEDED"]
     }
@@ -11384,6 +12889,7 @@ impl AsRef<str> for AggregatedSourceStatusType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11395,7 +12901,9 @@ impl AsRef<str> for AggregatedSourceStatusType {
     std::hash::Hash,
 )]
 pub enum AggregatedSourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Account,
+    #[allow(missing_docs)] // documentation missing in model
     Organization,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11417,6 +12925,7 @@ impl std::str::FromStr for AggregatedSourceType {
     }
 }
 impl AggregatedSourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AggregatedSourceType::Account => "ACCOUNT",
@@ -11424,6 +12933,7 @@ impl AggregatedSourceType {
             AggregatedSourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACCOUNT", "ORGANIZATION"]
     }
@@ -11450,21 +12960,21 @@ pub struct ConfigRuleEvaluationStatus {
     /// <p>The ID of the Config rule.</p>
     pub config_rule_id: std::option::Option<std::string::String>,
     /// <p>The time that Config last successfully invoked the Config rule to evaluate your Amazon Web Services resources.</p>
-    pub last_successful_invocation_time: std::option::Option<smithy_types::Instant>,
+    pub last_successful_invocation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that Config last failed to invoke the Config
     /// rule to evaluate your Amazon Web Services resources.</p>
-    pub last_failed_invocation_time: std::option::Option<smithy_types::Instant>,
+    pub last_failed_invocation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that Config last successfully evaluated your Amazon Web Services
     /// resources against the rule.</p>
-    pub last_successful_evaluation_time: std::option::Option<smithy_types::Instant>,
+    pub last_successful_evaluation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that Config last failed to evaluate your Amazon Web Services
     /// resources against the rule.</p>
-    pub last_failed_evaluation_time: std::option::Option<smithy_types::Instant>,
+    pub last_failed_evaluation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that you first activated the Config
     /// rule.</p>
-    pub first_activated_time: std::option::Option<smithy_types::Instant>,
+    pub first_activated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that you last turned off the Config rule.</p>
-    pub last_deactivated_time: std::option::Option<smithy_types::Instant>,
+    pub last_deactivated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The error code that Config returned when the rule last
     /// failed.</p>
     pub last_error_code: std::option::Option<std::string::String>,
@@ -11526,12 +13036,12 @@ pub mod config_rule_evaluation_status {
         pub(crate) config_rule_name: std::option::Option<std::string::String>,
         pub(crate) config_rule_arn: std::option::Option<std::string::String>,
         pub(crate) config_rule_id: std::option::Option<std::string::String>,
-        pub(crate) last_successful_invocation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_failed_invocation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_successful_evaluation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_failed_evaluation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) first_activated_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_deactivated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_successful_invocation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_failed_invocation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_successful_evaluation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_failed_evaluation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) first_activated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_deactivated_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) last_error_code: std::option::Option<std::string::String>,
         pub(crate) last_error_message: std::option::Option<std::string::String>,
         pub(crate) first_evaluation_started: std::option::Option<bool>,
@@ -11542,6 +13052,7 @@ pub mod config_rule_evaluation_status {
             self.config_rule_name = Some(input.into());
             self
         }
+        /// <p>The name of the Config rule.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11555,6 +13066,8 @@ pub mod config_rule_evaluation_status {
             self.config_rule_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Config
+        /// rule.</p>
         pub fn set_config_rule_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11567,6 +13080,7 @@ pub mod config_rule_evaluation_status {
             self.config_rule_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Config rule.</p>
         pub fn set_config_rule_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11575,77 +13089,87 @@ pub mod config_rule_evaluation_status {
             self
         }
         /// <p>The time that Config last successfully invoked the Config rule to evaluate your Amazon Web Services resources.</p>
-        pub fn last_successful_invocation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_successful_invocation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_successful_invocation_time = Some(input);
             self
         }
+        /// <p>The time that Config last successfully invoked the Config rule to evaluate your Amazon Web Services resources.</p>
         pub fn set_last_successful_invocation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_successful_invocation_time = input;
             self
         }
         /// <p>The time that Config last failed to invoke the Config
         /// rule to evaluate your Amazon Web Services resources.</p>
-        pub fn last_failed_invocation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_failed_invocation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_failed_invocation_time = Some(input);
             self
         }
+        /// <p>The time that Config last failed to invoke the Config
+        /// rule to evaluate your Amazon Web Services resources.</p>
         pub fn set_last_failed_invocation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_failed_invocation_time = input;
             self
         }
         /// <p>The time that Config last successfully evaluated your Amazon Web Services
         /// resources against the rule.</p>
-        pub fn last_successful_evaluation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_successful_evaluation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_successful_evaluation_time = Some(input);
             self
         }
+        /// <p>The time that Config last successfully evaluated your Amazon Web Services
+        /// resources against the rule.</p>
         pub fn set_last_successful_evaluation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_successful_evaluation_time = input;
             self
         }
         /// <p>The time that Config last failed to evaluate your Amazon Web Services
         /// resources against the rule.</p>
-        pub fn last_failed_evaluation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_failed_evaluation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_failed_evaluation_time = Some(input);
             self
         }
+        /// <p>The time that Config last failed to evaluate your Amazon Web Services
+        /// resources against the rule.</p>
         pub fn set_last_failed_evaluation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_failed_evaluation_time = input;
             self
         }
         /// <p>The time that you first activated the Config
         /// rule.</p>
-        pub fn first_activated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn first_activated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.first_activated_time = Some(input);
             self
         }
+        /// <p>The time that you first activated the Config
+        /// rule.</p>
         pub fn set_first_activated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.first_activated_time = input;
             self
         }
         /// <p>The time that you last turned off the Config rule.</p>
-        pub fn last_deactivated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_deactivated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_deactivated_time = Some(input);
             self
         }
+        /// <p>The time that you last turned off the Config rule.</p>
         pub fn set_last_deactivated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_deactivated_time = input;
             self
@@ -11656,6 +13180,8 @@ pub mod config_rule_evaluation_status {
             self.last_error_code = Some(input.into());
             self
         }
+        /// <p>The error code that Config returned when the rule last
+        /// failed.</p>
         pub fn set_last_error_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11669,6 +13195,8 @@ pub mod config_rule_evaluation_status {
             self.last_error_message = Some(input.into());
             self
         }
+        /// <p>The error message that Config returned when the rule last
+        /// failed.</p>
         pub fn set_last_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11694,6 +13222,20 @@ pub mod config_rule_evaluation_status {
             self.first_evaluation_started = Some(input);
             self
         }
+        /// <p>Indicates whether Config has evaluated your resources
+        /// against the rule at least once.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>true</code> - Config has evaluated your Amazon Web Services
+        /// resources against the rule at least once.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>false</code> - Config has not once finished
+        /// evaluating your Amazon Web Services resources against the rule.</p>
+        /// </li>
+        /// </ul>
         pub fn set_first_evaluation_started(mut self, input: std::option::Option<bool>) -> Self {
             self.first_evaluation_started = input;
             self
@@ -11764,6 +13306,7 @@ pub mod compliance_by_resource {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11776,6 +13319,7 @@ pub mod compliance_by_resource {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -11785,6 +13329,7 @@ pub mod compliance_by_resource {
             self.compliance = Some(input);
             self
         }
+        /// <p>Indicates whether the Amazon Web Services resource complies with all of the Config rules that evaluated it.</p>
         pub fn set_compliance(
             mut self,
             input: std::option::Option<crate::model::Compliance>,
@@ -11875,6 +13420,20 @@ pub mod compliance {
             self.compliance_type = Some(input);
             self
         }
+        /// <p>Indicates whether an Amazon Web Services resource or Config rule is
+        /// compliant.</p>
+        /// <p>A resource is compliant if it complies with all of the Config rules that evaluate it. A resource is noncompliant if it does
+        /// not comply with one or more of these rules.</p>
+        /// <p>A rule is compliant if all of the resources that the rule
+        /// evaluates comply with it. A rule is noncompliant if any of these
+        /// resources do not comply.</p>
+        /// <p>Config returns the <code>INSUFFICIENT_DATA</code> value
+        /// when no evaluation results are available for the Amazon Web Services resource or Config rule.</p>
+        /// <p>For the <code>Compliance</code> data type, Config supports
+        /// only <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+        /// <code>INSUFFICIENT_DATA</code> values. Config does not
+        /// support the <code>NOT_APPLICABLE</code> value for the
+        /// <code>Compliance</code> data type.</p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<crate::model::ComplianceType>,
@@ -11892,6 +13451,9 @@ pub mod compliance {
             self.compliance_contributor_count = Some(input);
             self
         }
+        /// <p>The number of Amazon Web Services resources or Config rules that cause a
+        /// result of <code>NON_COMPLIANT</code>, up to a maximum
+        /// number.</p>
         pub fn set_compliance_contributor_count(
             mut self,
             input: std::option::Option<crate::model::ComplianceContributorCount>,
@@ -11950,6 +13512,7 @@ pub mod compliance_by_config_rule {
             self.config_rule_name = Some(input.into());
             self
         }
+        /// <p>The name of the Config rule.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11962,6 +13525,7 @@ pub mod compliance_by_config_rule {
             self.compliance = Some(input);
             self
         }
+        /// <p>Indicates whether the Config rule is compliant.</p>
         pub fn set_compliance(
             mut self,
             input: std::option::Option<crate::model::Compliance>,
@@ -12029,6 +13593,7 @@ pub mod aggregate_compliance_by_conformance_pack {
             self.conformance_pack_name = Some(input.into());
             self
         }
+        /// <p>The name of the conformance pack.</p>
         pub fn set_conformance_pack_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12044,6 +13609,7 @@ pub mod aggregate_compliance_by_conformance_pack {
             self.compliance = Some(input);
             self
         }
+        /// <p>The compliance status of the conformance pack.</p>
         pub fn set_compliance(
             mut self,
             input: std::option::Option<crate::model::AggregateConformancePackCompliance>,
@@ -12056,6 +13622,7 @@ pub mod aggregate_compliance_by_conformance_pack {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -12065,6 +13632,7 @@ pub mod aggregate_compliance_by_conformance_pack {
             self.aws_region = Some(input.into());
             self
         }
+        /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.aws_region = input;
             self
@@ -12089,6 +13657,7 @@ impl AggregateComplianceByConformancePack {
 
 /// <p>Provides the number of compliant and noncompliant rules within a conformance pack.
 /// Also provides the compliance status of the conformance pack and the total rule count which includes compliant rules, noncompliant rules, and rules that cannot be evaluated due to insufficient data.</p>
+///
 /// <p>A conformance pack is compliant if all of the rules in a conformance packs are compliant. It is noncompliant if any of the rules are not compliant.
 /// The compliance status of a conformance pack is INSUFFICIENT_DATA only if all rules within a conformance pack cannot be evaluated due to insufficient data.
 /// If some of the rules in a conformance pack are compliant but the compliance status of other rules in that same conformance pack is INSUFFICIENT_DATA, the conformance pack shows compliant.</p>
@@ -12135,6 +13704,7 @@ pub mod aggregate_conformance_pack_compliance {
             self.compliance_type = Some(input);
             self
         }
+        /// <p>The compliance status of the conformance pack.</p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<crate::model::ConformancePackComplianceType>,
@@ -12147,6 +13717,7 @@ pub mod aggregate_conformance_pack_compliance {
             self.compliant_rule_count = Some(input);
             self
         }
+        /// <p>The number of compliant Config Rules.</p>
         pub fn set_compliant_rule_count(mut self, input: std::option::Option<i32>) -> Self {
             self.compliant_rule_count = input;
             self
@@ -12156,6 +13727,7 @@ pub mod aggregate_conformance_pack_compliance {
             self.non_compliant_rule_count = Some(input);
             self
         }
+        /// <p>The number of noncompliant Config Rules.</p>
         pub fn set_non_compliant_rule_count(mut self, input: std::option::Option<i32>) -> Self {
             self.non_compliant_rule_count = input;
             self
@@ -12165,6 +13737,7 @@ pub mod aggregate_conformance_pack_compliance {
             self.total_rule_count = Some(input);
             self
         }
+        /// <p>Total number of compliant rules, noncompliant rules, and the rules that do not have any applicable resources to evaluate upon resulting in insufficient data.</p>
         pub fn set_total_rule_count(mut self, input: std::option::Option<i32>) -> Self {
             self.total_rule_count = input;
             self
@@ -12228,6 +13801,7 @@ pub mod aggregate_conformance_pack_compliance_filters {
             self.conformance_pack_name = Some(input.into());
             self
         }
+        /// <p>The name of the conformance pack.</p>
         pub fn set_conformance_pack_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12243,6 +13817,7 @@ pub mod aggregate_conformance_pack_compliance_filters {
             self.compliance_type = Some(input);
             self
         }
+        /// <p>The compliance status of the conformance pack.</p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<crate::model::ConformancePackComplianceType>,
@@ -12255,6 +13830,7 @@ pub mod aggregate_conformance_pack_compliance_filters {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -12264,6 +13840,7 @@ pub mod aggregate_conformance_pack_compliance_filters {
             self.aws_region = Some(input.into());
             self
         }
+        /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.aws_region = input;
             self
@@ -12332,6 +13909,7 @@ pub mod aggregate_compliance_by_config_rule {
             self.config_rule_name = Some(input.into());
             self
         }
+        /// <p>The name of the Config rule.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12346,6 +13924,9 @@ pub mod aggregate_compliance_by_config_rule {
             self.compliance = Some(input);
             self
         }
+        /// <p>Indicates whether an Amazon Web Services resource or Config rule is
+        /// compliant and provides the number of contributors that affect the
+        /// compliance.</p>
         pub fn set_compliance(
             mut self,
             input: std::option::Option<crate::model::Compliance>,
@@ -12358,6 +13939,7 @@ pub mod aggregate_compliance_by_config_rule {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit account ID of the source account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -12367,6 +13949,7 @@ pub mod aggregate_compliance_by_config_rule {
             self.aws_region = Some(input.into());
             self
         }
+        /// <p>The source region from where the data is aggregated.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.aws_region = input;
             self
@@ -12436,6 +14019,7 @@ pub mod config_rule_compliance_filters {
             self.config_rule_name = Some(input.into());
             self
         }
+        /// <p>The name of the Config rule.</p>
         pub fn set_config_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12452,6 +14036,11 @@ pub mod config_rule_compliance_filters {
             self.compliance_type = Some(input);
             self
         }
+        /// <p>The rule compliance status.</p>
+        /// <p>For the <code>ConfigRuleComplianceFilters</code> data type, Config supports only <code>COMPLIANT</code> and
+        /// <code>NON_COMPLIANT</code>. Config does not support the
+        /// <code>NOT_APPLICABLE</code> and the
+        /// <code>INSUFFICIENT_DATA</code> values.</p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<crate::model::ComplianceType>,
@@ -12465,6 +14054,8 @@ pub mod config_rule_compliance_filters {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit account ID of the source account.
+        /// </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -12475,6 +14066,8 @@ pub mod config_rule_compliance_filters {
             self.aws_region = Some(input.into());
             self
         }
+        /// <p>The source region where the data is aggregated.
+        /// </p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.aws_region = input;
             self
@@ -12531,6 +14124,7 @@ pub mod failed_delete_remediation_exceptions_batch {
             self.failure_message = Some(input.into());
             self
         }
+        /// <p>Returns a failure message for delete remediation exception. For example, Config creates an exception due to an internal error.</p>
         pub fn set_failure_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12538,6 +14132,11 @@ pub mod failed_delete_remediation_exceptions_batch {
             self.failure_message = input;
             self
         }
+        /// Appends an item to `failed_items`.
+        ///
+        /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
+        ///
+        /// <p>Returns remediation exception resource key object of the failed items.</p>
         pub fn failed_items(
             mut self,
             input: impl Into<crate::model::RemediationExceptionResourceKey>,
@@ -12547,6 +14146,7 @@ pub mod failed_delete_remediation_exceptions_batch {
             self.failed_items = Some(v);
             self
         }
+        /// <p>Returns remediation exception resource key object of the failed items.</p>
         pub fn set_failed_items(
             mut self,
             input: std::option::Option<
@@ -12581,8 +14181,9 @@ pub struct BaseConfigurationItem {
     /// <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The time when the configuration recording was initiated.</p>
-    pub configuration_item_capture_time: std::option::Option<smithy_types::Instant>,
+    pub configuration_item_capture_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The configuration item status. The valid values are:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>OK – The resource configuration has been updated</p>
@@ -12620,7 +14221,7 @@ pub struct BaseConfigurationItem {
     /// <p>The Availability Zone associated with the resource.</p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The time stamp when the resource was created.</p>
-    pub resource_creation_time: std::option::Option<smithy_types::Instant>,
+    pub resource_creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The description of the resource configuration.</p>
     pub configuration: std::option::Option<std::string::String>,
     /// <p>Configuration attributes that Config returns for certain
@@ -12663,7 +14264,7 @@ pub mod base_configuration_item {
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
-        pub(crate) configuration_item_capture_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) configuration_item_capture_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) configuration_item_status:
             std::option::Option<crate::model::ConfigurationItemStatus>,
         pub(crate) configuration_state_id: std::option::Option<std::string::String>,
@@ -12673,7 +14274,7 @@ pub mod base_configuration_item {
         pub(crate) resource_name: std::option::Option<std::string::String>,
         pub(crate) aws_region: std::option::Option<std::string::String>,
         pub(crate) availability_zone: std::option::Option<std::string::String>,
-        pub(crate) resource_creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) resource_creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) configuration: std::option::Option<std::string::String>,
         pub(crate) supplementary_configuration: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -12685,6 +14286,7 @@ pub mod base_configuration_item {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version number of the resource configuration.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -12694,23 +14296,26 @@ pub mod base_configuration_item {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
         }
         /// <p>The time when the configuration recording was initiated.</p>
-        pub fn configuration_item_capture_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn configuration_item_capture_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.configuration_item_capture_time = Some(input);
             self
         }
+        /// <p>The time when the configuration recording was initiated.</p>
         pub fn set_configuration_item_capture_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.configuration_item_capture_time = input;
             self
         }
         /// <p>The configuration item status. The valid values are:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>OK – The resource configuration has been updated</p>
@@ -12738,6 +14343,28 @@ pub mod base_configuration_item {
             self.configuration_item_status = Some(input);
             self
         }
+        /// <p>The configuration item status. The valid values are:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>OK – The resource configuration has been updated</p>
+        /// </li>
+        /// <li>
+        /// <p>ResourceDiscovered – The resource was newly discovered</p>
+        /// </li>
+        /// <li>
+        /// <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p>
+        /// </li>
+        /// <li>
+        /// <p>ResourceDeleted – The resource was deleted</p>
+        /// </li>
+        /// <li>
+        /// <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>The CIs do not incur any cost.</p>
+        /// </note>
         pub fn set_configuration_item_status(
             mut self,
             input: std::option::Option<crate::model::ConfigurationItemStatus>,
@@ -12751,6 +14378,8 @@ pub mod base_configuration_item {
             self.configuration_state_id = Some(input.into());
             self
         }
+        /// <p>An identifier that indicates the ordering of the configuration
+        /// items of a resource.</p>
         pub fn set_configuration_state_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12763,6 +14392,7 @@ pub mod base_configuration_item {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -12772,6 +14402,7 @@ pub mod base_configuration_item {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The type of Amazon Web Services resource.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -12784,6 +14415,7 @@ pub mod base_configuration_item {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -12793,6 +14425,7 @@ pub mod base_configuration_item {
             self.resource_name = Some(input.into());
             self
         }
+        /// <p>The custom name of the resource, if available.</p>
         pub fn set_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12805,6 +14438,7 @@ pub mod base_configuration_item {
             self.aws_region = Some(input.into());
             self
         }
+        /// <p>The region where the resource resides.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.aws_region = input;
             self
@@ -12814,6 +14448,7 @@ pub mod base_configuration_item {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>The Availability Zone associated with the resource.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12822,13 +14457,14 @@ pub mod base_configuration_item {
             self
         }
         /// <p>The time stamp when the resource was created.</p>
-        pub fn resource_creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn resource_creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.resource_creation_time = Some(input);
             self
         }
+        /// <p>The time stamp when the resource was created.</p>
         pub fn set_resource_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.resource_creation_time = input;
             self
@@ -12838,6 +14474,7 @@ pub mod base_configuration_item {
             self.configuration = Some(input.into());
             self
         }
+        /// <p>The description of the resource configuration.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12845,6 +14482,13 @@ pub mod base_configuration_item {
             self.configuration = input;
             self
         }
+        /// Adds a key-value pair to `supplementary_configuration`.
+        ///
+        /// To override the contents of this collection use [`set_supplementary_configuration`](Self::set_supplementary_configuration).
+        ///
+        /// <p>Configuration attributes that Config returns for certain
+        /// resource types to supplement the information returned for the
+        /// configuration parameter.</p>
         pub fn supplementary_configuration(
             mut self,
             k: impl Into<std::string::String>,
@@ -12855,6 +14499,9 @@ pub mod base_configuration_item {
             self.supplementary_configuration = Some(hash_map);
             self
         }
+        /// <p>Configuration attributes that Config returns for certain
+        /// resource types to supplement the information returned for the
+        /// configuration parameter.</p>
         pub fn set_supplementary_configuration(
             mut self,
             input: std::option::Option<

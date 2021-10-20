@@ -25,6 +25,11 @@ pub mod send_command_input {
             self.session_token = Some(input.into());
             self
         }
+        /// <p>Specifies the session token for the current command. A session token is constant
+        /// throughout the life of the session.</p>
+        /// <p>To obtain a session token, run the <code>StartSession</code> command. This
+        /// <code>SessionToken</code> is required for every subsequent command that is issued during
+        /// the current session.</p>
         pub fn set_session_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -38,6 +43,8 @@ pub mod send_command_input {
             self.start_session = Some(input);
             self
         }
+        /// <p>Command to start a new session. A session token is obtained as part of the
+        /// response.</p>
         pub fn set_start_session(
             mut self,
             input: std::option::Option<crate::model::StartSessionRequest>,
@@ -50,6 +57,7 @@ pub mod send_command_input {
             self.start_transaction = Some(input);
             self
         }
+        /// <p>Command to start a new transaction.</p>
         pub fn set_start_transaction(
             mut self,
             input: std::option::Option<crate::model::StartTransactionRequest>,
@@ -62,6 +70,7 @@ pub mod send_command_input {
             self.end_session = Some(input);
             self
         }
+        /// <p>Command to end the current session.</p>
         pub fn set_end_session(
             mut self,
             input: std::option::Option<crate::model::EndSessionRequest>,
@@ -74,6 +83,7 @@ pub mod send_command_input {
             self.commit_transaction = Some(input);
             self
         }
+        /// <p>Command to commit the specified transaction.</p>
         pub fn set_commit_transaction(
             mut self,
             input: std::option::Option<crate::model::CommitTransactionRequest>,
@@ -86,6 +96,7 @@ pub mod send_command_input {
             self.abort_transaction = Some(input);
             self
         }
+        /// <p>Command to abort the current transaction.</p>
         pub fn set_abort_transaction(
             mut self,
             input: std::option::Option<crate::model::AbortTransactionRequest>,
@@ -98,6 +109,7 @@ pub mod send_command_input {
             self.execute_statement = Some(input);
             self
         }
+        /// <p>Command to execute a statement in the specified transaction.</p>
         pub fn set_execute_statement(
             mut self,
             input: std::option::Option<crate::model::ExecuteStatementRequest>,
@@ -110,6 +122,7 @@ pub mod send_command_input {
             self.fetch_page = Some(input);
             self
         }
+        /// <p>Command to fetch a page.</p>
         pub fn set_fetch_page(
             mut self,
             input: std::option::Option<crate::model::FetchPageRequest>,
@@ -120,8 +133,10 @@ pub mod send_command_input {
         /// Consumes the builder and constructs a [`SendCommandInput`](crate::input::SendCommandInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::SendCommandInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::SendCommandInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SendCommandInput {
                 session_token: self.session_token,
                 start_session: self.start_session,
@@ -146,16 +161,16 @@ impl SendCommandInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SendCommand,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SendCommandInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -163,7 +178,7 @@ impl SendCommandInput {
         fn update_http_builder(
             input: &crate::input::SendCommandInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -172,29 +187,31 @@ impl SendCommandInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SendCommandInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.0",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "QLDBSession.SendCommand",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_send_command(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -217,25 +234,27 @@ impl SendCommandInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::SendCommand::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "SendCommand",
-                    "qldbsession",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SendCommand::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SendCommand",
+            "qldbsession",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -249,6 +268,7 @@ impl SendCommandInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendCommandInput {

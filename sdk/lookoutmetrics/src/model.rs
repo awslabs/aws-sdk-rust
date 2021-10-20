@@ -31,6 +31,7 @@ pub mod validation_exception_field {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the field.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -40,6 +41,7 @@ pub mod validation_exception_field {
             self.message = Some(input.into());
             self
         }
+        /// <p>The message with more information about the validation exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -60,6 +62,7 @@ impl ValidationExceptionField {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -71,9 +74,13 @@ impl ValidationExceptionField {
     std::hash::Hash,
 )]
 pub enum ValidationExceptionReason {
+    #[allow(missing_docs)] // documentation missing in model
     CannotParse,
+    #[allow(missing_docs)] // documentation missing in model
     FieldValidationFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Other,
+    #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -97,6 +104,7 @@ impl std::str::FromStr for ValidationExceptionReason {
     }
 }
 impl ValidationExceptionReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ValidationExceptionReason::CannotParse => "CANNOT_PARSE",
@@ -106,6 +114,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
@@ -165,6 +174,7 @@ pub mod metric_source {
             self.s3_source_config = Some(input);
             self
         }
+        /// <p>Contains information about the configuration of the S3 bucket that contains source files.</p>
         pub fn set_s3_source_config(
             mut self,
             input: std::option::Option<crate::model::S3SourceConfig>,
@@ -177,6 +187,7 @@ pub mod metric_source {
             self.app_flow_config = Some(input);
             self
         }
+        /// <p>An object containing information about the AppFlow configuration.</p>
         pub fn set_app_flow_config(
             mut self,
             input: std::option::Option<crate::model::AppFlowConfig>,
@@ -189,6 +200,7 @@ pub mod metric_source {
             self.cloud_watch_config = Some(input);
             self
         }
+        /// <p>An object containing information about the Amazon CloudWatch monitoring configuration.</p>
         pub fn set_cloud_watch_config(
             mut self,
             input: std::option::Option<crate::model::CloudWatchConfig>,
@@ -201,6 +213,7 @@ pub mod metric_source {
             self.rds_source_config = Some(input);
             self
         }
+        /// <p>An object containing information about the Amazon Relational Database Service (RDS) configuration.</p>
         pub fn set_rds_source_config(
             mut self,
             input: std::option::Option<crate::model::RdsSourceConfig>,
@@ -213,6 +226,7 @@ pub mod metric_source {
             self.redshift_source_config = Some(input);
             self
         }
+        /// <p>An object containing information about the Amazon Redshift database configuration.</p>
         pub fn set_redshift_source_config(
             mut self,
             input: std::option::Option<crate::model::RedshiftSourceConfig>,
@@ -295,6 +309,7 @@ pub mod redshift_source_config {
             self.cluster_identifier = Some(input.into());
             self
         }
+        /// <p>A string identifying the Redshift cluster.</p>
         pub fn set_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -307,6 +322,7 @@ pub mod redshift_source_config {
             self.database_host = Some(input.into());
             self
         }
+        /// <p>The name of the database host.</p>
         pub fn set_database_host(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -319,6 +335,7 @@ pub mod redshift_source_config {
             self.database_port = Some(input);
             self
         }
+        /// <p>The port number where the database can be accessed.</p>
         pub fn set_database_port(mut self, input: std::option::Option<i32>) -> Self {
             self.database_port = input;
             self
@@ -328,6 +345,7 @@ pub mod redshift_source_config {
             self.secret_manager_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
         pub fn set_secret_manager_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -340,6 +358,7 @@ pub mod redshift_source_config {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>The Redshift database name.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -352,6 +371,7 @@ pub mod redshift_source_config {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The table name of the Redshift database.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -361,6 +381,7 @@ pub mod redshift_source_config {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the role providing access to the database.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -370,6 +391,7 @@ pub mod redshift_source_config {
             self.vpc_configuration = Some(input);
             self
         }
+        /// <p>Contains information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
         pub fn set_vpc_configuration(
             mut self,
             input: std::option::Option<crate::model::VpcConfiguration>,
@@ -426,12 +448,18 @@ pub mod vpc_configuration {
         pub(crate) security_group_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `subnet_id_list`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_id_list`](Self::set_subnet_id_list).
+        ///
+        /// <p>An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.</p>
         pub fn subnet_id_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_id_list.unwrap_or_default();
             v.push(input.into());
             self.subnet_id_list = Some(v);
             self
         }
+        /// <p>An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.</p>
         pub fn set_subnet_id_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -439,12 +467,18 @@ pub mod vpc_configuration {
             self.subnet_id_list = input;
             self
         }
+        /// Appends an item to `security_group_id_list`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_id_list`](Self::set_security_group_id_list).
+        ///
+        /// <p>An array of strings containing the list of security groups.</p>
         pub fn security_group_id_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_id_list.unwrap_or_default();
             v.push(input.into());
             self.security_group_id_list = Some(v);
             self
         }
+        /// <p>An array of strings containing the list of security groups.</p>
         pub fn set_security_group_id_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -524,6 +558,7 @@ pub mod rds_source_config {
             self.db_instance_identifier = Some(input.into());
             self
         }
+        /// <p>A string identifying the database instance.</p>
         pub fn set_db_instance_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -536,6 +571,7 @@ pub mod rds_source_config {
             self.database_host = Some(input.into());
             self
         }
+        /// <p>The host name of the database.</p>
         pub fn set_database_host(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -548,6 +584,7 @@ pub mod rds_source_config {
             self.database_port = Some(input);
             self
         }
+        /// <p>The port number where the database can be accessed.</p>
         pub fn set_database_port(mut self, input: std::option::Option<i32>) -> Self {
             self.database_port = input;
             self
@@ -557,6 +594,7 @@ pub mod rds_source_config {
             self.secret_manager_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
         pub fn set_secret_manager_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -569,6 +607,7 @@ pub mod rds_source_config {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>The name of the RDS database.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -581,6 +620,7 @@ pub mod rds_source_config {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table in the database.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -590,6 +630,7 @@ pub mod rds_source_config {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the role.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -599,6 +640,7 @@ pub mod rds_source_config {
             self.vpc_configuration = Some(input);
             self
         }
+        /// <p>An object containing information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
         pub fn set_vpc_configuration(
             mut self,
             input: std::option::Option<crate::model::VpcConfiguration>,
@@ -656,6 +698,7 @@ pub mod cloud_watch_config {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access data in Amazon CloudWatch.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -707,6 +750,7 @@ pub mod app_flow_config {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the flow.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -716,6 +760,7 @@ pub mod app_flow_config {
             self.flow_name = Some(input.into());
             self
         }
+        /// <p> name of the flow.</p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_name = input;
             self
@@ -777,16 +822,23 @@ pub mod s3_source_config {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of an IAM role that has read and write access permissions to the source S3 bucket.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
+        /// Appends an item to `templated_path_list`.
+        ///
+        /// To override the contents of this collection use [`set_templated_path_list`](Self::set_templated_path_list).
+        ///
+        /// <p>A list of templated paths to the source files.</p>
         pub fn templated_path_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.templated_path_list.unwrap_or_default();
             v.push(input.into());
             self.templated_path_list = Some(v);
             self
         }
+        /// <p>A list of templated paths to the source files.</p>
         pub fn set_templated_path_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -794,12 +846,18 @@ pub mod s3_source_config {
             self.templated_path_list = input;
             self
         }
+        /// Appends an item to `historical_data_path_list`.
+        ///
+        /// To override the contents of this collection use [`set_historical_data_path_list`](Self::set_historical_data_path_list).
+        ///
+        /// <p>A list of paths to the historical data files.</p>
         pub fn historical_data_path_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.historical_data_path_list.unwrap_or_default();
             v.push(input.into());
             self.historical_data_path_list = Some(v);
             self
         }
+        /// <p>A list of paths to the historical data files.</p>
         pub fn set_historical_data_path_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -812,6 +870,7 @@ pub mod s3_source_config {
             self.file_format_descriptor = Some(input);
             self
         }
+        /// <p>Contains information about a source file's formatting.</p>
         pub fn set_file_format_descriptor(
             mut self,
             input: std::option::Option<crate::model::FileFormatDescriptor>,
@@ -869,6 +928,7 @@ pub mod file_format_descriptor {
             self.csv_format_descriptor = Some(input);
             self
         }
+        /// <p>Contains information about how a source CSV data file should be analyzed.</p>
         pub fn set_csv_format_descriptor(
             mut self,
             input: std::option::Option<crate::model::CsvFormatDescriptor>,
@@ -881,6 +941,7 @@ pub mod file_format_descriptor {
             self.json_format_descriptor = Some(input);
             self
         }
+        /// <p>Contains information about how a source JSON data file should be analyzed.</p>
         pub fn set_json_format_descriptor(
             mut self,
             input: std::option::Option<crate::model::JsonFormatDescriptor>,
@@ -936,6 +997,7 @@ pub mod json_format_descriptor {
             self.file_compression = Some(input);
             self
         }
+        /// <p>The level of compression of the source CSV file.</p>
         pub fn set_file_compression(
             mut self,
             input: std::option::Option<crate::model::JsonFileCompression>,
@@ -948,6 +1010,7 @@ pub mod json_format_descriptor {
             self.charset = Some(input.into());
             self
         }
+        /// <p>The character set in which the source JSON file is written.</p>
         pub fn set_charset(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.charset = input;
             self
@@ -968,6 +1031,7 @@ impl JsonFormatDescriptor {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -979,7 +1043,9 @@ impl JsonFormatDescriptor {
     std::hash::Hash,
 )]
 pub enum JsonFileCompression {
+    #[allow(missing_docs)] // documentation missing in model
     Gzip,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1001,6 +1067,7 @@ impl std::str::FromStr for JsonFileCompression {
     }
 }
 impl JsonFileCompression {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JsonFileCompression::Gzip => "GZIP",
@@ -1008,6 +1075,7 @@ impl JsonFileCompression {
             JsonFileCompression::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GZIP", "NONE"]
     }
@@ -1066,6 +1134,7 @@ pub mod csv_format_descriptor {
             self.file_compression = Some(input);
             self
         }
+        /// <p>The level of compression of the source CSV file.</p>
         pub fn set_file_compression(
             mut self,
             input: std::option::Option<crate::model::CsvFileCompression>,
@@ -1078,6 +1147,7 @@ pub mod csv_format_descriptor {
             self.charset = Some(input.into());
             self
         }
+        /// <p>The character set in which the source CSV file is written.</p>
         pub fn set_charset(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.charset = input;
             self
@@ -1087,6 +1157,7 @@ pub mod csv_format_descriptor {
             self.contains_header = Some(input);
             self
         }
+        /// <p>Whether or not the source CSV file contains a header.</p>
         pub fn set_contains_header(mut self, input: std::option::Option<bool>) -> Self {
             self.contains_header = input;
             self
@@ -1096,16 +1167,23 @@ pub mod csv_format_descriptor {
             self.delimiter = Some(input.into());
             self
         }
+        /// <p>The character used to delimit the source CSV file.</p>
         pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.delimiter = input;
             self
         }
+        /// Appends an item to `header_list`.
+        ///
+        /// To override the contents of this collection use [`set_header_list`](Self::set_header_list).
+        ///
+        /// <p>A list of the source CSV file's headers, if any.</p>
         pub fn header_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.header_list.unwrap_or_default();
             v.push(input.into());
             self.header_list = Some(v);
             self
         }
+        /// <p>A list of the source CSV file's headers, if any.</p>
         pub fn set_header_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1118,6 +1196,7 @@ pub mod csv_format_descriptor {
             self.quote_symbol = Some(input.into());
             self
         }
+        /// <p>The character used as a quote character.</p>
         pub fn set_quote_symbol(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.quote_symbol = input;
             self
@@ -1142,6 +1221,7 @@ impl CsvFormatDescriptor {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1153,7 +1233,9 @@ impl CsvFormatDescriptor {
     std::hash::Hash,
 )]
 pub enum CsvFileCompression {
+    #[allow(missing_docs)] // documentation missing in model
     Gzip,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1175,6 +1257,7 @@ impl std::str::FromStr for CsvFileCompression {
     }
 }
 impl CsvFileCompression {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CsvFileCompression::Gzip => "GZIP",
@@ -1182,6 +1265,7 @@ impl CsvFileCompression {
             CsvFileCompression::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GZIP", "NONE"]
     }
@@ -1192,6 +1276,7 @@ impl AsRef<str> for CsvFileCompression {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1203,9 +1288,13 @@ impl AsRef<str> for CsvFileCompression {
     std::hash::Hash,
 )]
 pub enum Frequency {
+    #[allow(missing_docs)] // documentation missing in model
     P1D,
+    #[allow(missing_docs)] // documentation missing in model
     Pt10M,
+    #[allow(missing_docs)] // documentation missing in model
     Pt1H,
+    #[allow(missing_docs)] // documentation missing in model
     Pt5M,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1229,6 +1318,7 @@ impl std::str::FromStr for Frequency {
     }
 }
 impl Frequency {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Frequency::P1D => "P1D",
@@ -1238,6 +1328,7 @@ impl Frequency {
             Frequency::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["P1D", "PT10M", "PT1H", "PT5M"]
     }
@@ -1280,6 +1371,7 @@ pub mod timestamp_column {
             self.column_name = Some(input.into());
             self
         }
+        /// <p>The name of the timestamp column.</p>
         pub fn set_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.column_name = input;
             self
@@ -1289,6 +1381,7 @@ pub mod timestamp_column {
             self.column_format = Some(input.into());
             self
         }
+        /// <p>The format of the timestamp column.</p>
         pub fn set_column_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1348,6 +1441,7 @@ pub mod metric {
             self.metric_name = Some(input.into());
             self
         }
+        /// <p>The name of the metric.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -1357,6 +1451,7 @@ pub mod metric {
             self.aggregation_function = Some(input);
             self
         }
+        /// <p>The function with which the metric is calculated.</p>
         pub fn set_aggregation_function(
             mut self,
             input: std::option::Option<crate::model::AggregationFunction>,
@@ -1369,6 +1464,7 @@ pub mod metric {
             self.namespace = Some(input.into());
             self
         }
+        /// <p>The namespace for the metric.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
@@ -1390,6 +1486,7 @@ impl Metric {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1401,7 +1498,9 @@ impl Metric {
     std::hash::Hash,
 )]
 pub enum AggregationFunction {
+    #[allow(missing_docs)] // documentation missing in model
     Avg,
+    #[allow(missing_docs)] // documentation missing in model
     Sum,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1423,6 +1522,7 @@ impl std::str::FromStr for AggregationFunction {
     }
 }
 impl AggregationFunction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AggregationFunction::Avg => "AVG",
@@ -1430,6 +1530,7 @@ impl AggregationFunction {
             AggregationFunction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVG", "SUM"]
     }
@@ -1471,6 +1572,7 @@ pub mod anomaly_detector_config {
             self.anomaly_detector_frequency = Some(input);
             self
         }
+        /// <p>The frequency at which the detector analyzes its source data.</p>
         pub fn set_anomaly_detector_frequency(
             mut self,
             input: std::option::Option<crate::model::Frequency>,
@@ -1529,6 +1631,7 @@ pub mod anomaly_group_time_series_feedback {
             self.anomaly_group_id = Some(input.into());
             self
         }
+        /// <p>The ID of the anomaly group.</p>
         pub fn set_anomaly_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1541,6 +1644,7 @@ pub mod anomaly_group_time_series_feedback {
             self.time_series_id = Some(input.into());
             self
         }
+        /// <p>The ID of the metric.</p>
         pub fn set_time_series_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1553,6 +1657,7 @@ pub mod anomaly_group_time_series_feedback {
             self.is_anomaly = Some(input);
             self
         }
+        /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
         pub fn set_is_anomaly(mut self, input: std::option::Option<bool>) -> Self {
             self.is_anomaly = input;
             self
@@ -1587,9 +1692,9 @@ pub struct MetricSetSummary {
     /// <p>The name of the dataset.</p>
     pub metric_set_name: std::option::Option<std::string::String>,
     /// <p>The time at which the dataset was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time at which the dataset was last modified.</p>
-    pub last_modification_time: std::option::Option<smithy_types::Instant>,
+    pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The dataset's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1617,8 +1722,8 @@ pub mod metric_set_summary {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
         pub(crate) metric_set_description: std::option::Option<std::string::String>,
         pub(crate) metric_set_name: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_modification_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -1629,6 +1734,7 @@ pub mod metric_set_summary {
             self.metric_set_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the dataset.</p>
         pub fn set_metric_set_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1641,6 +1747,7 @@ pub mod metric_set_summary {
             self.anomaly_detector_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the detector to which the dataset belongs.</p>
         pub fn set_anomaly_detector_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1653,6 +1760,7 @@ pub mod metric_set_summary {
             self.metric_set_description = Some(input.into());
             self
         }
+        /// <p>The description of the dataset.</p>
         pub fn set_metric_set_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1665,6 +1773,7 @@ pub mod metric_set_summary {
             self.metric_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the dataset.</p>
         pub fn set_metric_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1673,29 +1782,36 @@ pub mod metric_set_summary {
             self
         }
         /// <p>The time at which the dataset was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time at which the dataset was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time at which the dataset was last modified.</p>
-        pub fn last_modification_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modification_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modification_time = Some(input);
             self
         }
+        /// <p>The time at which the dataset was last modified.</p>
         pub fn set_last_modification_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modification_time = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The dataset's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1706,6 +1822,7 @@ pub mod metric_set_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The dataset's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1774,6 +1891,7 @@ pub mod time_series {
             self.time_series_id = Some(input.into());
             self
         }
+        /// <p>The ID of the metric.</p>
         pub fn set_time_series_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1781,6 +1899,11 @@ pub mod time_series {
             self.time_series_id = input;
             self
         }
+        /// Appends an item to `dimension_list`.
+        ///
+        /// To override the contents of this collection use [`set_dimension_list`](Self::set_dimension_list).
+        ///
+        /// <p>The dimensions of the metric.</p>
         pub fn dimension_list(
             mut self,
             input: impl Into<crate::model::DimensionNameValue>,
@@ -1790,6 +1913,7 @@ pub mod time_series {
             self.dimension_list = Some(v);
             self
         }
+        /// <p>The dimensions of the metric.</p>
         pub fn set_dimension_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DimensionNameValue>>,
@@ -1797,12 +1921,18 @@ pub mod time_series {
             self.dimension_list = input;
             self
         }
+        /// Appends an item to `metric_value_list`.
+        ///
+        /// To override the contents of this collection use [`set_metric_value_list`](Self::set_metric_value_list).
+        ///
+        /// <p>The values for the metric.</p>
         pub fn metric_value_list(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.metric_value_list.unwrap_or_default();
             v.push(input.into());
             self.metric_value_list = Some(v);
             self
         }
+        /// <p>The values for the metric.</p>
         pub fn set_metric_value_list(
             mut self,
             input: std::option::Option<std::vec::Vec<f64>>,
@@ -1859,6 +1989,7 @@ pub mod dimension_name_value {
             self.dimension_name = Some(input.into());
             self
         }
+        /// <p>The name of the dimension.</p>
         pub fn set_dimension_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1871,6 +2002,7 @@ pub mod dimension_name_value {
             self.dimension_value = Some(input.into());
             self
         }
+        /// <p>The value of the dimension.</p>
         pub fn set_dimension_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1935,6 +2067,7 @@ pub mod anomaly_group_statistics {
             self.evaluation_start_date = Some(input.into());
             self
         }
+        /// <p>The start of the time range that was searched.</p>
         pub fn set_evaluation_start_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1947,10 +2080,16 @@ pub mod anomaly_group_statistics {
             self.total_count = Some(input);
             self
         }
+        /// <p>The number of groups found.</p>
         pub fn set_total_count(mut self, input: std::option::Option<i32>) -> Self {
             self.total_count = input;
             self
         }
+        /// Appends an item to `itemized_metric_stats_list`.
+        ///
+        /// To override the contents of this collection use [`set_itemized_metric_stats_list`](Self::set_itemized_metric_stats_list).
+        ///
+        /// <p>Statistics for individual metrics within the group.</p>
         pub fn itemized_metric_stats_list(
             mut self,
             input: impl Into<crate::model::ItemizedMetricStats>,
@@ -1960,6 +2099,7 @@ pub mod anomaly_group_statistics {
             self.itemized_metric_stats_list = Some(v);
             self
         }
+        /// <p>Statistics for individual metrics within the group.</p>
         pub fn set_itemized_metric_stats_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ItemizedMetricStats>>,
@@ -2016,6 +2156,7 @@ pub mod itemized_metric_stats {
             self.metric_name = Some(input.into());
             self
         }
+        /// <p>The name of the measure.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -2025,6 +2166,7 @@ pub mod itemized_metric_stats {
             self.occurrence_count = Some(input);
             self
         }
+        /// <p>The number of times that the measure appears.</p>
         pub fn set_occurrence_count(mut self, input: std::option::Option<i32>) -> Self {
             self.occurrence_count = input;
             self
@@ -2089,6 +2231,7 @@ pub mod anomaly_group_summary {
             self.start_time = Some(input.into());
             self
         }
+        /// <p>The start time for the group.</p>
         pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_time = input;
             self
@@ -2098,6 +2241,7 @@ pub mod anomaly_group_summary {
             self.end_time = Some(input.into());
             self
         }
+        /// <p>The end time for the group.</p>
         pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end_time = input;
             self
@@ -2107,6 +2251,7 @@ pub mod anomaly_group_summary {
             self.anomaly_group_id = Some(input.into());
             self
         }
+        /// <p>The ID of the anomaly group.</p>
         pub fn set_anomaly_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2119,6 +2264,7 @@ pub mod anomaly_group_summary {
             self.anomaly_group_score = Some(input);
             self
         }
+        /// <p>The severity score of the group.</p>
         pub fn set_anomaly_group_score(mut self, input: std::option::Option<f64>) -> Self {
             self.anomaly_group_score = input;
             self
@@ -2128,6 +2274,7 @@ pub mod anomaly_group_summary {
             self.primary_metric_name = Some(input.into());
             self
         }
+        /// <p>The name of the primary affected measure for the group.</p>
         pub fn set_primary_metric_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2165,9 +2312,9 @@ pub struct AnomalyDetectorSummary {
     /// <p>A description of the detector.</p>
     pub anomaly_detector_description: std::option::Option<std::string::String>,
     /// <p>The time at which the detector was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time at which the detector was last modified.</p>
-    pub last_modification_time: std::option::Option<smithy_types::Instant>,
+    pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of detector.</p>
     pub status: std::option::Option<crate::model::AnomalyDetectorStatus>,
     /// <p>The detector's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
@@ -2199,8 +2346,8 @@ pub mod anomaly_detector_summary {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
         pub(crate) anomaly_detector_name: std::option::Option<std::string::String>,
         pub(crate) anomaly_detector_description: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_modification_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::AnomalyDetectorStatus>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -2212,6 +2359,7 @@ pub mod anomaly_detector_summary {
             self.anomaly_detector_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the detector.</p>
         pub fn set_anomaly_detector_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2224,6 +2372,7 @@ pub mod anomaly_detector_summary {
             self.anomaly_detector_name = Some(input.into());
             self
         }
+        /// <p>The name of the detector.</p>
         pub fn set_anomaly_detector_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2239,6 +2388,7 @@ pub mod anomaly_detector_summary {
             self.anomaly_detector_description = Some(input.into());
             self
         }
+        /// <p>A description of the detector.</p>
         pub fn set_anomaly_detector_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2247,25 +2397,27 @@ pub mod anomaly_detector_summary {
             self
         }
         /// <p>The time at which the detector was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time at which the detector was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time at which the detector was last modified.</p>
-        pub fn last_modification_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modification_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modification_time = Some(input);
             self
         }
+        /// <p>The time at which the detector was last modified.</p>
         pub fn set_last_modification_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modification_time = input;
             self
@@ -2275,6 +2427,7 @@ pub mod anomaly_detector_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of detector.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AnomalyDetectorStatus>,
@@ -2282,6 +2435,11 @@ pub mod anomaly_detector_summary {
             self.status = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The detector's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2292,6 +2450,7 @@ pub mod anomaly_detector_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The detector's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2322,6 +2481,7 @@ impl AnomalyDetectorSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2333,14 +2493,23 @@ impl AnomalyDetectorSummary {
     std::hash::Hash,
 )]
 pub enum AnomalyDetectorStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Activating,
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     BackTestActivating,
+    #[allow(missing_docs)] // documentation missing in model
     BackTestActive,
+    #[allow(missing_docs)] // documentation missing in model
     BackTestComplete,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
+    #[allow(missing_docs)] // documentation missing in model
     Learning,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2369,6 +2538,7 @@ impl std::str::FromStr for AnomalyDetectorStatus {
     }
 }
 impl AnomalyDetectorStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AnomalyDetectorStatus::Activating => "ACTIVATING",
@@ -2383,6 +2553,7 @@ impl AnomalyDetectorStatus {
             AnomalyDetectorStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVATING",
@@ -2420,9 +2591,9 @@ pub struct AlertSummary {
     /// <p>The status of the alert.</p>
     pub alert_status: std::option::Option<crate::model::AlertStatus>,
     /// <p>The time at which the alert was last modified.</p>
-    pub last_modification_time: std::option::Option<smithy_types::Instant>,
+    pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time at which the alert was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The alert's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -2457,8 +2628,8 @@ pub mod alert_summary {
         pub(crate) alert_sensitivity_threshold: std::option::Option<i32>,
         pub(crate) alert_type: std::option::Option<crate::model::AlertType>,
         pub(crate) alert_status: std::option::Option<crate::model::AlertStatus>,
-        pub(crate) last_modification_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -2469,6 +2640,7 @@ pub mod alert_summary {
             self.alert_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the alert.</p>
         pub fn set_alert_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alert_arn = input;
             self
@@ -2478,6 +2650,7 @@ pub mod alert_summary {
             self.anomaly_detector_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the detector to which the alert is attached.</p>
         pub fn set_anomaly_detector_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2490,6 +2663,7 @@ pub mod alert_summary {
             self.alert_name = Some(input.into());
             self
         }
+        /// <p>The name of the alert.</p>
         pub fn set_alert_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alert_name = input;
             self
@@ -2499,6 +2673,7 @@ pub mod alert_summary {
             self.alert_sensitivity_threshold = Some(input);
             self
         }
+        /// <p>The minimum severity for an anomaly to trigger the alert.</p>
         pub fn set_alert_sensitivity_threshold(mut self, input: std::option::Option<i32>) -> Self {
             self.alert_sensitivity_threshold = input;
             self
@@ -2508,6 +2683,7 @@ pub mod alert_summary {
             self.alert_type = Some(input);
             self
         }
+        /// <p>The type of the alert.</p>
         pub fn set_alert_type(
             mut self,
             input: std::option::Option<crate::model::AlertType>,
@@ -2520,6 +2696,7 @@ pub mod alert_summary {
             self.alert_status = Some(input);
             self
         }
+        /// <p>The status of the alert.</p>
         pub fn set_alert_status(
             mut self,
             input: std::option::Option<crate::model::AlertStatus>,
@@ -2528,29 +2705,36 @@ pub mod alert_summary {
             self
         }
         /// <p>The time at which the alert was last modified.</p>
-        pub fn last_modification_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modification_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modification_time = Some(input);
             self
         }
+        /// <p>The time at which the alert was last modified.</p>
         pub fn set_last_modification_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modification_time = input;
             self
         }
         /// <p>The time at which the alert was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time at which the alert was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The alert's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2561,6 +2745,7 @@ pub mod alert_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The alert's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2593,6 +2778,7 @@ impl AlertSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2604,7 +2790,9 @@ impl AlertSummary {
     std::hash::Hash,
 )]
 pub enum AlertStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2626,6 +2814,7 @@ impl std::str::FromStr for AlertStatus {
     }
 }
 impl AlertStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AlertStatus::Active => "ACTIVE",
@@ -2633,6 +2822,7 @@ impl AlertStatus {
             AlertStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
@@ -2643,6 +2833,7 @@ impl AsRef<str> for AlertStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2654,7 +2845,9 @@ impl AsRef<str> for AlertStatus {
     std::hash::Hash,
 )]
 pub enum AlertType {
+    #[allow(missing_docs)] // documentation missing in model
     Lambda,
+    #[allow(missing_docs)] // documentation missing in model
     Sns,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2676,6 +2869,7 @@ impl std::str::FromStr for AlertType {
     }
 }
 impl AlertType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AlertType::Lambda => "LAMBDA",
@@ -2683,6 +2877,7 @@ impl AlertType {
             AlertType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LAMBDA", "SNS"]
     }
@@ -2734,16 +2929,23 @@ pub mod sample_data_s3_source_config {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the role.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
+        /// Appends an item to `templated_path_list`.
+        ///
+        /// To override the contents of this collection use [`set_templated_path_list`](Self::set_templated_path_list).
+        ///
+        /// <p>An array of strings containing the list of templated paths.</p>
         pub fn templated_path_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.templated_path_list.unwrap_or_default();
             v.push(input.into());
             self.templated_path_list = Some(v);
             self
         }
+        /// <p>An array of strings containing the list of templated paths.</p>
         pub fn set_templated_path_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2751,12 +2953,18 @@ pub mod sample_data_s3_source_config {
             self.templated_path_list = input;
             self
         }
+        /// Appends an item to `historical_data_path_list`.
+        ///
+        /// To override the contents of this collection use [`set_historical_data_path_list`](Self::set_historical_data_path_list).
+        ///
+        /// <p>An array of strings containing the historical set of data paths.</p>
         pub fn historical_data_path_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.historical_data_path_list.unwrap_or_default();
             v.push(input.into());
             self.historical_data_path_list = Some(v);
             self
         }
+        /// <p>An array of strings containing the historical set of data paths.</p>
         pub fn set_historical_data_path_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2769,6 +2977,7 @@ pub mod sample_data_s3_source_config {
             self.file_format_descriptor = Some(input);
             self
         }
+        /// <p>Contains information about a source file's formatting.</p>
         pub fn set_file_format_descriptor(
             mut self,
             input: std::option::Option<crate::model::FileFormatDescriptor>,
@@ -2826,6 +3035,7 @@ pub mod time_series_feedback {
             self.time_series_id = Some(input.into());
             self
         }
+        /// <p>The ID of the metric.</p>
         pub fn set_time_series_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2838,6 +3048,7 @@ pub mod time_series_feedback {
             self.is_anomaly = Some(input);
             self
         }
+        /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
         pub fn set_is_anomaly(mut self, input: std::option::Option<bool>) -> Self {
             self.is_anomaly = input;
             self
@@ -2890,6 +3101,7 @@ pub mod anomaly_group_time_series {
             self.anomaly_group_id = Some(input.into());
             self
         }
+        /// <p>The ID of the anomaly group.</p>
         pub fn set_anomaly_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2902,6 +3114,7 @@ pub mod anomaly_group_time_series {
             self.time_series_id = Some(input.into());
             self
         }
+        /// <p>The ID of the metric.</p>
         pub fn set_time_series_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2975,6 +3188,7 @@ pub mod anomaly_group {
             self.start_time = Some(input.into());
             self
         }
+        /// <p>The start time for the group.</p>
         pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_time = input;
             self
@@ -2984,6 +3198,7 @@ pub mod anomaly_group {
             self.end_time = Some(input.into());
             self
         }
+        /// <p>The end time for the group.</p>
         pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end_time = input;
             self
@@ -2993,6 +3208,7 @@ pub mod anomaly_group {
             self.anomaly_group_id = Some(input.into());
             self
         }
+        /// <p>The ID of the anomaly group.</p>
         pub fn set_anomaly_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3005,6 +3221,7 @@ pub mod anomaly_group {
             self.anomaly_group_score = Some(input);
             self
         }
+        /// <p>The severity score of the group.</p>
         pub fn set_anomaly_group_score(mut self, input: std::option::Option<f64>) -> Self {
             self.anomaly_group_score = input;
             self
@@ -3014,6 +3231,7 @@ pub mod anomaly_group {
             self.primary_metric_name = Some(input.into());
             self
         }
+        /// <p>The name of the primary affected measure for the group.</p>
         pub fn set_primary_metric_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3021,6 +3239,11 @@ pub mod anomaly_group {
             self.primary_metric_name = input;
             self
         }
+        /// Appends an item to `metric_level_impact_list`.
+        ///
+        /// To override the contents of this collection use [`set_metric_level_impact_list`](Self::set_metric_level_impact_list).
+        ///
+        /// <p>A list of measures affected by the anomaly.</p>
         pub fn metric_level_impact_list(
             mut self,
             input: impl Into<crate::model::MetricLevelImpact>,
@@ -3030,6 +3253,7 @@ pub mod anomaly_group {
             self.metric_level_impact_list = Some(v);
             self
         }
+        /// <p>A list of measures affected by the anomaly.</p>
         pub fn set_metric_level_impact_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricLevelImpact>>,
@@ -3093,6 +3317,7 @@ pub mod metric_level_impact {
             self.metric_name = Some(input.into());
             self
         }
+        /// <p>The name of the measure.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -3102,6 +3327,7 @@ pub mod metric_level_impact {
             self.num_time_series = Some(input);
             self
         }
+        /// <p>The number of anomalous metrics for the measure.</p>
         pub fn set_num_time_series(mut self, input: std::option::Option<i32>) -> Self {
             self.num_time_series = input;
             self
@@ -3111,6 +3337,7 @@ pub mod metric_level_impact {
             self.contribution_matrix = Some(input);
             self
         }
+        /// <p>Details about the dimensions that contributed to the anomaly.</p>
         pub fn set_contribution_matrix(
             mut self,
             input: std::option::Option<crate::model::ContributionMatrix>,
@@ -3163,6 +3390,11 @@ pub mod contribution_matrix {
             std::option::Option<std::vec::Vec<crate::model::DimensionContribution>>,
     }
     impl Builder {
+        /// Appends an item to `dimension_contribution_list`.
+        ///
+        /// To override the contents of this collection use [`set_dimension_contribution_list`](Self::set_dimension_contribution_list).
+        ///
+        /// <p>A list of contributing dimensions.</p>
         pub fn dimension_contribution_list(
             mut self,
             input: impl Into<crate::model::DimensionContribution>,
@@ -3172,6 +3404,7 @@ pub mod contribution_matrix {
             self.dimension_contribution_list = Some(v);
             self
         }
+        /// <p>A list of contributing dimensions.</p>
         pub fn set_dimension_contribution_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DimensionContribution>>,
@@ -3231,6 +3464,7 @@ pub mod dimension_contribution {
             self.dimension_name = Some(input.into());
             self
         }
+        /// <p>The name of the dimension.</p>
         pub fn set_dimension_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3238,6 +3472,11 @@ pub mod dimension_contribution {
             self.dimension_name = input;
             self
         }
+        /// Appends an item to `dimension_value_contribution_list`.
+        ///
+        /// To override the contents of this collection use [`set_dimension_value_contribution_list`](Self::set_dimension_value_contribution_list).
+        ///
+        /// <p>A list of dimension values that contributed to the anomaly.</p>
         pub fn dimension_value_contribution_list(
             mut self,
             input: impl Into<crate::model::DimensionValueContribution>,
@@ -3247,6 +3486,7 @@ pub mod dimension_contribution {
             self.dimension_value_contribution_list = Some(v);
             self
         }
+        /// <p>A list of dimension values that contributed to the anomaly.</p>
         pub fn set_dimension_value_contribution_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DimensionValueContribution>>,
@@ -3302,6 +3542,7 @@ pub mod dimension_value_contribution {
             self.dimension_value = Some(input.into());
             self
         }
+        /// <p>The value of the dimension.</p>
         pub fn set_dimension_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3314,6 +3555,7 @@ pub mod dimension_value_contribution {
             self.contribution_score = Some(input);
             self
         }
+        /// <p>The severity score of the value.</p>
         pub fn set_contribution_score(mut self, input: std::option::Option<f64>) -> Self {
             self.contribution_score = input;
             self
@@ -3365,6 +3607,7 @@ pub mod anomaly_detector_config_summary {
             self.anomaly_detector_frequency = Some(input);
             self
         }
+        /// <p>The interval at which the detector analyzes its source data.</p>
         pub fn set_anomaly_detector_frequency(
             mut self,
             input: std::option::Option<crate::model::Frequency>,
@@ -3423,6 +3666,7 @@ pub mod execution_status {
             self.timestamp = Some(input.into());
             self
         }
+        /// <p>The run's timestamp.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timestamp = input;
             self
@@ -3432,6 +3676,7 @@ pub mod execution_status {
             self.status = Some(input);
             self
         }
+        /// <p>The run's status.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AnomalyDetectionTaskStatus>,
@@ -3444,6 +3689,7 @@ pub mod execution_status {
             self.failure_reason = Some(input.into());
             self
         }
+        /// <p>The reason that the run failed, if applicable.</p>
         pub fn set_failure_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3468,6 +3714,7 @@ impl ExecutionStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3479,10 +3726,15 @@ impl ExecutionStatus {
     std::hash::Hash,
 )]
 pub enum AnomalyDetectionTaskStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     FailedToSchedule,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3507,6 +3759,7 @@ impl std::str::FromStr for AnomalyDetectionTaskStatus {
     }
 }
 impl AnomalyDetectionTaskStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AnomalyDetectionTaskStatus::Completed => "COMPLETED",
@@ -3517,6 +3770,7 @@ impl AnomalyDetectionTaskStatus {
             AnomalyDetectionTaskStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -3554,9 +3808,9 @@ pub struct Alert {
     /// <p>The status of the alert.</p>
     pub alert_status: std::option::Option<crate::model::AlertStatus>,
     /// <p>The time at which the alert was last modified.</p>
-    pub last_modification_time: std::option::Option<smithy_types::Instant>,
+    pub last_modification_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time at which the alert was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Alert {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3591,8 +3845,8 @@ pub mod alert {
         pub(crate) alert_sensitivity_threshold: std::option::Option<i32>,
         pub(crate) alert_type: std::option::Option<crate::model::AlertType>,
         pub(crate) alert_status: std::option::Option<crate::model::AlertStatus>,
-        pub(crate) last_modification_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modification_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Action that will be triggered when there is an alert.</p>
@@ -3600,6 +3854,7 @@ pub mod alert {
             self.action = Some(input);
             self
         }
+        /// <p>Action that will be triggered when there is an alert.</p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.action = input;
             self
@@ -3609,6 +3864,7 @@ pub mod alert {
             self.alert_description = Some(input.into());
             self
         }
+        /// <p>A description of the alert.</p>
         pub fn set_alert_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3621,6 +3877,7 @@ pub mod alert {
             self.alert_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the alert.</p>
         pub fn set_alert_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alert_arn = input;
             self
@@ -3630,6 +3887,7 @@ pub mod alert {
             self.anomaly_detector_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the detector to which the alert is attached.</p>
         pub fn set_anomaly_detector_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3642,6 +3900,7 @@ pub mod alert {
             self.alert_name = Some(input.into());
             self
         }
+        /// <p>The name of the alert.</p>
         pub fn set_alert_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alert_name = input;
             self
@@ -3651,6 +3910,7 @@ pub mod alert {
             self.alert_sensitivity_threshold = Some(input);
             self
         }
+        /// <p>The minimum severity for an anomaly to trigger the alert.</p>
         pub fn set_alert_sensitivity_threshold(mut self, input: std::option::Option<i32>) -> Self {
             self.alert_sensitivity_threshold = input;
             self
@@ -3660,6 +3920,7 @@ pub mod alert {
             self.alert_type = Some(input);
             self
         }
+        /// <p>The type of the alert.</p>
         pub fn set_alert_type(
             mut self,
             input: std::option::Option<crate::model::AlertType>,
@@ -3672,6 +3933,7 @@ pub mod alert {
             self.alert_status = Some(input);
             self
         }
+        /// <p>The status of the alert.</p>
         pub fn set_alert_status(
             mut self,
             input: std::option::Option<crate::model::AlertStatus>,
@@ -3680,25 +3942,27 @@ pub mod alert {
             self
         }
         /// <p>The time at which the alert was last modified.</p>
-        pub fn last_modification_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modification_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modification_time = Some(input);
             self
         }
+        /// <p>The time at which the alert was last modified.</p>
         pub fn set_last_modification_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modification_time = input;
             self
         }
         /// <p>The time at which the alert was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time at which the alert was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -3759,6 +4023,7 @@ pub mod action {
             self.sns_configuration = Some(input);
             self
         }
+        /// <p>A configuration for an Amazon SNS channel.</p>
         pub fn set_sns_configuration(
             mut self,
             input: std::option::Option<crate::model::SnsConfiguration>,
@@ -3771,6 +4036,7 @@ pub mod action {
             self.lambda_configuration = Some(input);
             self
         }
+        /// <p>A configuration for an AWS Lambda channel.</p>
         pub fn set_lambda_configuration(
             mut self,
             input: std::option::Option<crate::model::LambdaConfiguration>,
@@ -3826,6 +4092,7 @@ pub mod lambda_configuration {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -3835,6 +4102,7 @@ pub mod lambda_configuration {
             self.lambda_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the Lambda function.</p>
         pub fn set_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lambda_arn = input;
             self
@@ -3888,6 +4156,7 @@ pub mod sns_configuration {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role that has access to the target SNS topic.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -3897,6 +4166,7 @@ pub mod sns_configuration {
             self.sns_topic_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the target SNS topic.</p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
